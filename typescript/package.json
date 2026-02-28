@@ -1,0 +1,48 @@
+{
+  "name": "parent-time",
+  "version": "0.1.0",
+  "description": "Human-friendly age formatting the way parents actually talk — weeks+days for newborns, months for babies, years+months for toddlers",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "age",
+    "baby",
+    "infant",
+    "child",
+    "format",
+    "human-readable",
+    "pediatric",
+    "weeks",
+    "months",
+    "days",
+    "parent",
+    "toddler",
+    "newborn"
+  ],
+  "author": "Don Neufeld",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donalvarez/parent-time.git",
+    "directory": "typescript"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
