@@ -5,7 +5,8 @@
  * - 7 days–<3 months → "2 weeks, 4 days"
  * - 3–23 months → "14 months"
  * - 24–35 months → "2 years, 3 months"
- * - 3+ years → "7 years"
+ * - 3–6 years → "3 years", "3½ years", "4 years", …
+ * - 7+ years → "7 years"
  *
  * Calendar-month boundaries use day-of-month clamping: a child born on the
  * 31st turns N months on the last day of a 30-day (or shorter) month.
@@ -72,6 +73,13 @@ export function formatAge(dateOfBirth: string | null | undefined, asOf?: string)
       : `${String(years)} years, ${String(rem)} months`;
   }
 
-  // Tier 5: 3+ years
+  // Tier 5: 3–6 years → years with ½ marker
+  if (months < 84) {
+    const years = Math.floor(months / 12);
+    const rem = months % 12;
+    return rem >= 6 ? `${String(years)}\u00BD years` : `${String(years)} years`;
+  }
+
+  // Tier 6: 7+ years
   return `${String(Math.floor(months / 12))} years`;
 }

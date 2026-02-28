@@ -288,23 +288,72 @@ describe('formatAge', () => {
   });
 
   // ================================================================
-  // Integer tier: 3+ years
+  // Half-year tier: 3–6 years
   // ================================================================
-  describe('integer tier (3+ years)', () => {
+  describe('half-year tier (3–6 years)', () => {
     it('"3 years" at exactly 3 years', () => {
       expect(formatAge('2022-06-15', '2025-06-15')).toBe('3 years');
     });
 
-    it('"7 years" at 7 years', () => {
+    it('"3 years" at 3 years 5 months (just under half)', () => {
+      expect(formatAge('2022-06-15', '2025-11-15')).toBe('3 years');
+    });
+
+    it('"3½ years" at 3 years 6 months', () => {
+      expect(formatAge('2022-06-15', '2025-12-15')).toBe('3½ years');
+    });
+
+    it('"3½ years" at 3 years 11 months', () => {
+      expect(formatAge('2022-06-15', '2026-05-15')).toBe('3½ years');
+    });
+
+    it('"4 years" at exactly 4 years', () => {
+      expect(formatAge('2021-06-15', '2025-06-15')).toBe('4 years');
+    });
+
+    it('"4½ years" at 4 years 6 months', () => {
+      expect(formatAge('2021-06-15', '2025-12-15')).toBe('4½ years');
+    });
+
+    it('"5 years" at exactly 5 years', () => {
+      expect(formatAge('2020-06-15', '2025-06-15')).toBe('5 years');
+    });
+
+    it('"5½ years" at 5 years 8 months', () => {
+      expect(formatAge('2020-06-15', '2026-02-15')).toBe('5½ years');
+    });
+
+    it('"6 years" at exactly 6 years', () => {
+      expect(formatAge('2019-06-15', '2025-06-15')).toBe('6 years');
+    });
+
+    it('"6½ years" at 6 years 6 months', () => {
+      expect(formatAge('2019-06-15', '2025-12-15')).toBe('6½ years');
+    });
+
+    it('"6½ years" at 6 years 11 months (last month before 7)', () => {
+      expect(formatAge('2019-06-15', '2026-05-15')).toBe('6½ years');
+    });
+
+    it('one day before 3rd birthday stays in years+months tier', () => {
+      expect(formatAge('2022-06-15', '2025-06-14')).toBe('2 years, 11 months');
+    });
+  });
+
+  // ================================================================
+  // Integer tier: 7+ years
+  // ================================================================
+  describe('integer tier (7+ years)', () => {
+    it('"7 years" at exactly 7 years', () => {
+      expect(formatAge('2018-06-15', '2025-06-15')).toBe('7 years');
+    });
+
+    it('"7 years" at 7 years 6 months (no ½ at 7+)', () => {
       expect(formatAge('2018-03-20', '2025-06-15')).toBe('7 years');
     });
 
     it('"45 years" for an adult', () => {
       expect(formatAge('1980-01-01', '2025-06-15')).toBe('45 years');
-    });
-
-    it('one day before 3rd birthday stays in years+months tier', () => {
-      expect(formatAge('2022-06-15', '2025-06-14')).toBe('2 years, 11 months');
     });
   });
 

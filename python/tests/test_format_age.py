@@ -220,20 +220,58 @@ class TestYearsMonthsTier:
 
 
 # ================================================================
-# Integer tier: 3+ years
+# Half-year tier: 3–6 years
 # ================================================================
-class TestIntegerTier:
+class TestHalfYearTier:
     def test_3_years_exact(self) -> None:
         assert format_age("2022-06-15", "2025-06-15") == "3 years"
 
-    def test_7_years(self) -> None:
+    def test_3_years_5_months(self) -> None:
+        assert format_age("2022-06-15", "2025-11-15") == "3 years"
+
+    def test_3_and_half_years(self) -> None:
+        assert format_age("2022-06-15", "2025-12-15") == "3½ years"
+
+    def test_3_years_11_months(self) -> None:
+        assert format_age("2022-06-15", "2026-05-15") == "3½ years"
+
+    def test_4_years_exact(self) -> None:
+        assert format_age("2021-06-15", "2025-06-15") == "4 years"
+
+    def test_4_and_half_years(self) -> None:
+        assert format_age("2021-06-15", "2025-12-15") == "4½ years"
+
+    def test_5_years_exact(self) -> None:
+        assert format_age("2020-06-15", "2025-06-15") == "5 years"
+
+    def test_5_and_half_years(self) -> None:
+        assert format_age("2020-06-15", "2026-02-15") == "5½ years"
+
+    def test_6_years_exact(self) -> None:
+        assert format_age("2019-06-15", "2025-06-15") == "6 years"
+
+    def test_6_and_half_years(self) -> None:
+        assert format_age("2019-06-15", "2025-12-15") == "6½ years"
+
+    def test_6_years_11_months(self) -> None:
+        assert format_age("2019-06-15", "2026-05-15") == "6½ years"
+
+    def test_one_day_before_3rd_birthday(self) -> None:
+        assert format_age("2022-06-15", "2025-06-14") == "2 years, 11 months"
+
+
+# ================================================================
+# Integer tier: 7+ years
+# ================================================================
+class TestIntegerTier:
+    def test_7_years_exact(self) -> None:
+        assert format_age("2018-06-15", "2025-06-15") == "7 years"
+
+    def test_7_years_6_months_no_half(self) -> None:
         assert format_age("2018-03-20", "2025-06-15") == "7 years"
 
     def test_45_years_adult(self) -> None:
         assert format_age("1980-01-01", "2025-06-15") == "45 years"
-
-    def test_one_day_before_3rd_birthday(self) -> None:
-        assert format_age("2022-06-15", "2025-06-14") == "2 years, 11 months"
 
 
 # ================================================================
