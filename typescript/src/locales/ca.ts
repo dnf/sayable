@@ -1,0 +1,19 @@
+import type { AgeLocale } from '../locale.js';
+
+export const ca: AgeLocale = {
+  code: 'ca',
+  plural: (n) => (n === 1 ? 'one' : 'other'),
+  units: {
+    day:   { one: '{n} dia', other: '{n} dies' },
+    week:  { one: '{n} setmana', other: '{n} setmanes' },
+    month: { one: '{n} mes', other: '{n} mesos' },
+    year:  { one: '{n} any', other: '{n} anys' },
+  },
+  half: '{n} i mig',
+  delimiter: ', ',
+  justBorn: 'Nounat',
+  stages: {
+    newborn: 'Nounat', infant: 'Nadó', toddler: 'Infant',
+    child: 'Nen', teenager: 'Adolescent', adult: 'Adult',
+  },
+};

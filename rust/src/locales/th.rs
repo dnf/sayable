@@ -1,0 +1,30 @@
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+
+/// Thai locale.
+pub fn locale() -> AgeLocale {
+    AgeLocale {
+        code: "th".to_string(),
+        plural: |_n| PluralCategory::Other,
+        units: Units {
+            day: UnitForms::simple("{n} วัน"),
+            week: UnitForms::simple("{n} สัปดาห์"),
+            month: UnitForms::simple("{n} เดือน"),
+            year: UnitForms::simple("{n} ปี"),
+        },
+        half: "{0}ครึ่ง".to_string(),
+        delimiter: " ".to_string(),
+        just_born: "แรกเกิด".to_string(),
+        stages: Stages {
+            newborn: "แรกเกิด".to_string(),
+            infant: "ทารก".to_string(),
+            toddler: "เด็กวัยเตาะแตะ".to_string(),
+            child: "เด็ก".to_string(),
+            teenager: "วัยรุ่น".to_string(),
+            adult: "ผู้ใหญ่".to_string(),
+        },
+        short: None,
+        compact: None,
+        format_number: None,
+        format_unit: None,
+    }
+}

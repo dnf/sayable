@@ -1,0 +1,34 @@
+"""Czech locale."""
+
+from parent_time.locale import AgeLocale, PluralCategory
+
+
+def _plural(n: int) -> PluralCategory:
+    if n == 1:
+        return "one"
+    if 2 <= n <= 4:
+        return "few"
+    return "other"
+
+
+CS = AgeLocale(
+    code="cs",
+    plural=_plural,
+    units={
+        "day": {"one": "{n} den", "few": "{n} dny", "other": "{n} dní"},
+        "week": {"one": "{n} týden", "few": "{n} týdny", "other": "{n} týdnů"},
+        "month": {"one": "{n} měsíc", "few": "{n} měsíce", "other": "{n} měsíců"},
+        "year": {"one": "{n} rok", "few": "{n} roky", "other": "{n} let"},
+    },
+    half="{n}\u00bd",
+    delimiter=", ",
+    just_born="Novorozenec",
+    stages={
+        "newborn": "Novorozenec",
+        "infant": "Kojenec",
+        "toddler": "Batole",
+        "child": "Dítě",
+        "teenager": "Teenager",
+        "adult": "Dospělý",
+    },
+)

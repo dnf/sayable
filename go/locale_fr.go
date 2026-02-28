@@ -1,0 +1,29 @@
+package parenttime
+
+// FR is the French locale.
+var FR = AgeLocale{
+	Code: "fr",
+	Plural: func(n int) PluralCategory {
+		if n == 0 || n == 1 {
+			return One
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} jour", Other: "{n} jours"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} semaine", Other: "{n} semaines"}),
+		Month: SimpleUnit("{n} mois"),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} an", Other: "{n} ans"}),
+	},
+	Half:      "{0} et demi",
+	Delimiter: ", ",
+	JustBorn:  "Nouveau-né",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Nouveau-né",
+		Infant:   "Nourrisson",
+		Toddler:  "Bambin",
+		Child:    "Enfant",
+		Teenager: "Adolescent",
+		Adult:    "Adulte",
+	},
+}

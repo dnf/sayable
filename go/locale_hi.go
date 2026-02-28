@@ -1,0 +1,29 @@
+package parenttime
+
+// HI is the Hindi locale.
+var HI = AgeLocale{
+	Code: "hi",
+	Plural: func(n int) PluralCategory {
+		if n == 0 || n == 1 {
+			return One
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} दिन", Other: "{n} दिन"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} सप्ताह", Other: "{n} सप्ताह"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} महीना", Other: "{n} महीने"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} साल", Other: "{n} साल"}),
+	},
+	Half:      "साढ़े {n}",
+	Delimiter: ", ",
+	JustBorn:  "नवजात",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "नवजात",
+		Infant:   "शिशु",
+		Toddler:  "छोटा बच्चा",
+		Child:    "बच्चा",
+		Teenager: "किशोर",
+		Adult:    "वयस्क",
+	},
+}

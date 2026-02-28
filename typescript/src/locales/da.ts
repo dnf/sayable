@@ -1,0 +1,19 @@
+import type { AgeLocale } from '../locale.js';
+
+export const da: AgeLocale = {
+  code: 'da',
+  plural: (n) => (n === 1 ? 'one' : 'other'),
+  units: {
+    day:   { one: '{n} dag', other: '{n} dage' },
+    week:  { one: '{n} uge', other: '{n} uger' },
+    month: { one: '{n} måned', other: '{n} måneder' },
+    year:  { one: '{n} år', other: '{n} år' },
+  },
+  half: '{n}½',
+  delimiter: ', ',
+  justBorn: 'Nyfødt',
+  stages: {
+    newborn: 'Nyfødt', infant: 'Spædbarn', toddler: 'Småbarn',
+    child: 'Barn', teenager: 'Teenager', adult: 'Voksen',
+  },
+};

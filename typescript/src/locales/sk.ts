@@ -1,0 +1,25 @@
+import type { AgeLocale, PluralCategory } from '../locale.js';
+
+function plural(n: number): PluralCategory {
+  if (n === 1) return 'one';
+  if (n >= 2 && n <= 4) return 'few';
+  return 'other';
+}
+
+export const sk: AgeLocale = {
+  code: 'sk',
+  plural,
+  units: {
+    day:   { one: '{n} deň', few: '{n} dni', other: '{n} dní' },
+    week:  { one: '{n} týždeň', few: '{n} týždne', other: '{n} týždňov' },
+    month: { one: '{n} mesiac', few: '{n} mesiace', other: '{n} mesiacov' },
+    year:  { one: '{n} rok', few: '{n} roky', other: '{n} rokov' },
+  },
+  half: '{n}½',
+  delimiter: ', ',
+  justBorn: 'Novorodenec',
+  stages: {
+    newborn: 'Novorodenec', infant: 'Dojča', toddler: 'Batoľa',
+    child: 'Dieťa', teenager: 'Tínedžer', adult: 'Dospelý',
+  },
+};

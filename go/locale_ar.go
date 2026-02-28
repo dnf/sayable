@@ -1,0 +1,42 @@
+package parenttime
+
+// AR is the Arabic locale.
+var AR = AgeLocale{
+	Code: "ar",
+	Plural: func(n int) PluralCategory {
+		if n == 0 {
+			return Zero
+		}
+		if n == 1 {
+			return One
+		}
+		if n == 2 {
+			return Two
+		}
+		mod100 := n % 100
+		if mod100 >= 3 && mod100 <= 10 {
+			return Few
+		}
+		if mod100 >= 11 && mod100 <= 99 {
+			return Many
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{Zero: "{n} يوم", One: "يوم", Two: "يومان", Few: "{n} أيام", Many: "{n} يومًا", Other: "{n} يوم"}),
+		Week:  PluralUnit(map[PluralCategory]string{Zero: "{n} أسبوع", One: "أسبوع", Two: "أسبوعان", Few: "{n} أسابيع", Many: "{n} أسبوعًا", Other: "{n} أسبوع"}),
+		Month: PluralUnit(map[PluralCategory]string{Zero: "{n} شهر", One: "شهر", Two: "شهران", Few: "{n} أشهر", Many: "{n} شهرًا", Other: "{n} شهر"}),
+		Year:  PluralUnit(map[PluralCategory]string{Zero: "{n} سنة", One: "سنة", Two: "سنتان", Few: "{n} سنوات", Many: "{n} سنة", Other: "{n} سنة"}),
+	},
+	Half:      "{0} ونصف",
+	Delimiter: " و",
+	JustBorn:  "حديث الولادة",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "حديث الولادة",
+		Infant:   "رضيع",
+		Toddler:  "طفل صغير",
+		Child:    "طفل",
+		Teenager: "مراهق",
+		Adult:    "بالغ",
+	},
+}

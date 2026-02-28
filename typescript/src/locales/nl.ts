@@ -1,0 +1,19 @@
+import type { AgeLocale } from '../locale.js';
+
+export const nl: AgeLocale = {
+  code: 'nl',
+  plural: (n) => (n === 1 ? 'one' : 'other'),
+  units: {
+    day:   { one: '{n} dag', other: '{n} dagen' },
+    week:  { one: '{n} week', other: '{n} weken' },
+    month: { one: '{n} maand', other: '{n} maanden' },
+    year:  { one: '{n} jaar', other: '{n} jaar' },
+  },
+  half: '{n}½',
+  delimiter: ', ',
+  justBorn: 'Pasgeboren',
+  stages: {
+    newborn: 'Pasgeborene', infant: 'Baby', toddler: 'Peuter',
+    child: 'Kind', teenager: 'Tiener', adult: 'Volwassene',
+  },
+};

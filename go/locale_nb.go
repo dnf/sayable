@@ -1,0 +1,29 @@
+package parenttime
+
+// NB is the Norwegian Bokmål locale.
+var NB = AgeLocale{
+	Code: "nb",
+	Plural: func(n int) PluralCategory {
+		if n == 1 {
+			return One
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} dag", Other: "{n} dager"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} uke", Other: "{n} uker"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} måned", Other: "{n} måneder"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} år", Other: "{n} år"}),
+	},
+	Half:      "{n}\u00BD",
+	Delimiter: ", ",
+	JustBorn:  "Nyfødt",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Nyfødt",
+		Infant:   "Spedbarn",
+		Toddler:  "Småbarn",
+		Child:    "Barn",
+		Teenager: "Tenåring",
+		Adult:    "Voksen",
+	},
+}

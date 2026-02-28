@@ -1,0 +1,19 @@
+import type { AgeLocale } from '../locale.js';
+
+export const hu: AgeLocale = {
+  code: 'hu',
+  plural: () => 'other',
+  units: {
+    day:   '{n} nap',
+    week:  '{n} hét',
+    month: '{n} hónap',
+    year:  '{n} év',
+  },
+  half: '{n} és fél',
+  delimiter: ', ',
+  justBorn: 'Újszülött',
+  stages: {
+    newborn: 'Újszülött', infant: 'Csecsemő', toddler: 'Kisgyermek',
+    child: 'Gyermek', teenager: 'Tinédzser', adult: 'Felnőtt',
+  },
+};

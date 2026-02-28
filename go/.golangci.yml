@@ -1,0 +1,30 @@
+version: "2"
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - staticcheck
+    - unused
+    - ineffassign
+    - gocritic
+    - misspell
+    - unconvert
+    - unparam
+    - prealloc
+  exclusions:
+    rules:
+      - linters: [unparam]
+        path: "_test\\.go$"
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+
+linters-settings:
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - style
+      - performance

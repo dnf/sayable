@@ -1,0 +1,25 @@
+"""Bulgarian locale."""
+
+from parent_time.locale import AgeLocale
+
+BG = AgeLocale(
+    code="bg",
+    plural=lambda n: "one" if n == 1 else "other",
+    units={
+        "day": {"one": "{n} ден", "other": "{n} дни"},
+        "week": {"one": "{n} седмица", "other": "{n} седмици"},
+        "month": {"one": "{n} месец", "other": "{n} месеца"},
+        "year": {"one": "{n} година", "other": "{n} години"},
+    },
+    half="{0} и половина",
+    delimiter=", ",
+    just_born="Новородено",
+    stages={
+        "newborn": "Новородено",
+        "infant": "Бебе",
+        "toddler": "Малко дете",
+        "child": "Дете",
+        "teenager": "Тийнейджър",
+        "adult": "Възрастен",
+    },
+)

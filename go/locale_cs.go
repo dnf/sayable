@@ -1,0 +1,32 @@
+package parenttime
+
+// CS is the Czech locale.
+var CS = AgeLocale{
+	Code: "cs",
+	Plural: func(n int) PluralCategory {
+		if n == 1 {
+			return One
+		}
+		if n >= 2 && n <= 4 {
+			return Few
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} den", Few: "{n} dny", Other: "{n} dní"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} týden", Few: "{n} týdny", Other: "{n} týdnů"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} měsíc", Few: "{n} měsíce", Other: "{n} měsíců"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} rok", Few: "{n} roky", Other: "{n} let"}),
+	},
+	Half:      "{n}\u00BD",
+	Delimiter: ", ",
+	JustBorn:  "Novorozenec",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Novorozenec",
+		Infant:   "Kojenec",
+		Toddler:  "Batole",
+		Child:    "Dítě",
+		Teenager: "Teenager",
+		Adult:    "Dospělý",
+	},
+}

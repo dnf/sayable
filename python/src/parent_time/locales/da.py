@@ -1,0 +1,25 @@
+"""Danish locale."""
+
+from parent_time.locale import AgeLocale
+
+DA = AgeLocale(
+    code="da",
+    plural=lambda n: "one" if n == 1 else "other",
+    units={
+        "day": {"one": "{n} dag", "other": "{n} dage"},
+        "week": {"one": "{n} uge", "other": "{n} uger"},
+        "month": {"one": "{n} måned", "other": "{n} måneder"},
+        "year": {"one": "{n} år", "other": "{n} år"},
+    },
+    half="{n}\u00bd",
+    delimiter=", ",
+    just_born="Nyfødt",
+    stages={
+        "newborn": "Nyfødt",
+        "infant": "Spædbarn",
+        "toddler": "Småbarn",
+        "child": "Barn",
+        "teenager": "Teenager",
+        "adult": "Voksen",
+    },
+)

@@ -1,0 +1,34 @@
+package parenttime
+
+// BS is the Bosnian locale.
+var BS = AgeLocale{
+	Code: "bs",
+	Plural: func(n int) PluralCategory {
+		mod10 := n % 10
+		mod100 := n % 100
+		if mod10 == 1 && mod100 != 11 {
+			return One
+		}
+		if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) {
+			return Few
+		}
+		return Many
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} dan", Few: "{n} dana", Many: "{n} dana", Other: "{n} dana"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} sedmica", Few: "{n} sedmice", Many: "{n} sedmica", Other: "{n} sedmica"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} mjesec", Few: "{n} mjeseca", Many: "{n} mjeseci", Other: "{n} mjeseci"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} godina", Few: "{n} godine", Many: "{n} godina", Other: "{n} godina"}),
+	},
+	Half:      "{0} i po",
+	Delimiter: ", ",
+	JustBorn:  "Novorođenče",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Novorođenče",
+		Infant:   "Beba",
+		Toddler:  "Malo dijete",
+		Child:    "Dijete",
+		Teenager: "Tinejdžer",
+		Adult:    "Odrasla osoba",
+	},
+}

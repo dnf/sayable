@@ -1,0 +1,36 @@
+"""Lithuanian locale."""
+
+from parent_time.locale import AgeLocale, PluralCategory
+
+
+def _plural(n: int) -> PluralCategory:
+    mod10 = n % 10
+    mod100 = n % 100
+    if mod10 == 1 and mod100 != 11:
+        return "one"
+    if 2 <= mod10 <= 9 and not (12 <= mod100 <= 19):
+        return "few"
+    return "other"
+
+
+LT = AgeLocale(
+    code="lt",
+    plural=_plural,
+    units={
+        "day": {"one": "{n} diena", "few": "{n} dienos", "other": "{n} dienų"},
+        "week": {"one": "{n} savaitė", "few": "{n} savaitės", "other": "{n} savaičių"},
+        "month": {"one": "{n} mėnuo", "few": "{n} mėnesiai", "other": "{n} mėnesių"},
+        "year": {"one": "{n} metai", "few": "{n} metai", "other": "{n} metų"},
+    },
+    half="{n}\u00bd",
+    delimiter=", ",
+    just_born="Naujagimis",
+    stages={
+        "newborn": "Naujagimis",
+        "infant": "Kūdikis",
+        "toddler": "Mažylis",
+        "child": "Vaikas",
+        "teenager": "Paauglys",
+        "adult": "Suaugęs",
+    },
+)

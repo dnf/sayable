@@ -1,0 +1,29 @@
+package parenttime
+
+// NL is the Dutch locale.
+var NL = AgeLocale{
+	Code: "nl",
+	Plural: func(n int) PluralCategory {
+		if n == 1 {
+			return One
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} dag", Other: "{n} dagen"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} week", Other: "{n} weken"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} maand", Other: "{n} maanden"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} jaar", Other: "{n} jaar"}),
+	},
+	Half:      "{n}\u00BD",
+	Delimiter: ", ",
+	JustBorn:  "Pasgeboren",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Pasgeborene",
+		Infant:   "Baby",
+		Toddler:  "Peuter",
+		Child:    "Kind",
+		Teenager: "Tiener",
+		Adult:    "Volwassene",
+	},
+}

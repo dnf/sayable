@@ -1,0 +1,36 @@
+"""Croatian locale."""
+
+from parent_time.locale import AgeLocale, PluralCategory
+
+
+def _plural(n: int) -> PluralCategory:
+    mod10 = n % 10
+    mod100 = n % 100
+    if mod10 == 1 and mod100 != 11:
+        return "one"
+    if 2 <= mod10 <= 4 and (mod100 < 12 or mod100 > 14):
+        return "few"
+    return "many"
+
+
+HR = AgeLocale(
+    code="hr",
+    plural=_plural,
+    units={
+        "day": {"one": "{n} dan", "few": "{n} dana", "many": "{n} dana", "other": "{n} dana"},
+        "week": {"one": "{n} tjedan", "few": "{n} tjedna", "many": "{n} tjedana", "other": "{n} tjedana"},
+        "month": {"one": "{n} mjesec", "few": "{n} mjeseca", "many": "{n} mjeseci", "other": "{n} mjeseci"},
+        "year": {"one": "{n} godina", "few": "{n} godine", "many": "{n} godina", "other": "{n} godina"},
+    },
+    half="{0} i pol",
+    delimiter=", ",
+    just_born="Novorođenče",
+    stages={
+        "newborn": "Novorođenče",
+        "infant": "Dojenče",
+        "toddler": "Malo dijete",
+        "child": "Dijete",
+        "teenager": "Tinejdžer",
+        "adult": "Odrasla osoba",
+    },
+)

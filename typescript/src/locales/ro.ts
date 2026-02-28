@@ -1,0 +1,25 @@
+import type { AgeLocale, PluralCategory } from '../locale.js';
+
+function plural(n: number): PluralCategory {
+  if (n === 1) return 'one';
+  if (n === 0 || (n % 100 >= 1 && n % 100 <= 19)) return 'few';
+  return 'other';
+}
+
+export const ro: AgeLocale = {
+  code: 'ro',
+  plural,
+  units: {
+    day:   { one: '{n} zi', few: '{n} zile', other: '{n} de zile' },
+    week:  { one: '{n} săptămână', few: '{n} săptămâni', other: '{n} de săptămâni' },
+    month: { one: '{n} lună', few: '{n} luni', other: '{n} de luni' },
+    year:  { one: '{n} an', few: '{n} ani', other: '{n} de ani' },
+  },
+  half: '{0} și jumătate',
+  delimiter: ', ',
+  justBorn: 'Nou-născut',
+  stages: {
+    newborn: 'Nou-născut', infant: 'Sugar', toddler: 'Copil mic',
+    child: 'Copil', teenager: 'Adolescent', adult: 'Adult',
+  },
+};

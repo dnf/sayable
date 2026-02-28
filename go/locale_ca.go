@@ -1,0 +1,29 @@
+package parenttime
+
+// CA is the Catalan locale.
+var CA = AgeLocale{
+	Code: "ca",
+	Plural: func(n int) PluralCategory {
+		if n == 1 {
+			return One
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} dia", Other: "{n} dies"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} setmana", Other: "{n} setmanes"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} mes", Other: "{n} mesos"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} any", Other: "{n} anys"}),
+	},
+	Half:      "{n} i mig",
+	Delimiter: ", ",
+	JustBorn:  "Nounat",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Nounat",
+		Infant:   "Nadó",
+		Toddler:  "Infant",
+		Child:    "Nen",
+		Teenager: "Adolescent",
+		Adult:    "Adult",
+	},
+}

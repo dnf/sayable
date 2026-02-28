@@ -1,0 +1,44 @@
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+
+/// Bulgarian locale.
+pub fn locale() -> AgeLocale {
+    AgeLocale {
+        code: "bg".to_string(),
+        plural: |n| {
+            if n == 1 { PluralCategory::One } else { PluralCategory::Other }
+        },
+        units: Units {
+            day: UnitForms::plural(&[
+                (PluralCategory::One, "{n} ден"),
+                (PluralCategory::Other, "{n} дни"),
+            ]),
+            week: UnitForms::plural(&[
+                (PluralCategory::One, "{n} седмица"),
+                (PluralCategory::Other, "{n} седмици"),
+            ]),
+            month: UnitForms::plural(&[
+                (PluralCategory::One, "{n} месец"),
+                (PluralCategory::Other, "{n} месеца"),
+            ]),
+            year: UnitForms::plural(&[
+                (PluralCategory::One, "{n} година"),
+                (PluralCategory::Other, "{n} години"),
+            ]),
+        },
+        half: "{0} и половина".to_string(),
+        delimiter: ", ".to_string(),
+        just_born: "Новородено".to_string(),
+        stages: Stages {
+            newborn: "Новородено".to_string(),
+            infant: "Бебе".to_string(),
+            toddler: "Малко дете".to_string(),
+            child: "Дете".to_string(),
+            teenager: "Тийнейджър".to_string(),
+            adult: "Възрастен".to_string(),
+        },
+        short: None,
+        compact: None,
+        format_number: None,
+        format_unit: None,
+    }
+}

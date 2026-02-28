@@ -38,4 +38,35 @@ packages = ["src/parent_time"]
 testpaths = ["tests"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0"]
+dev = ["pytest>=8.0", "ruff>=0.8", "pyright>=1.1"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+  "E", "W",    # pycodestyle
+  "F",         # pyflakes
+  "I",         # isort
+  "N",         # pep8-naming
+  "UP",        # pyupgrade
+  "B",         # flake8-bugbear
+  "A",         # flake8-builtins
+  "SIM",       # flake8-simplify
+  "TCH",       # flake8-type-checking
+  "RUF",       # ruff-specific
+]
+ignore = [
+  "RUF001",   # ambiguous Unicode chars — expected in i18n locale strings
+  "RUF003",   # ambiguous Unicode in comments — cosmetic EN DASH usage
+  "SIM108",   # ternary suggestions — if/else with isinstance is more readable
+]
+
+[tool.ruff.lint.per-file-ignores]
+"src/parent_time/locales/*.py" = ["E501"]  # long lines in locale data are unavoidable
+
+[tool.pyright]
+pythonVersion = "3.10"
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false

@@ -1,0 +1,34 @@
+package parenttime
+
+// RU is the Russian locale.
+var RU = AgeLocale{
+	Code: "ru",
+	Plural: func(n int) PluralCategory {
+		mod10 := n % 10
+		mod100 := n % 100
+		if mod10 == 1 && mod100 != 11 {
+			return One
+		}
+		if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) {
+			return Few
+		}
+		return Many
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} день", Few: "{n} дня", Many: "{n} дней", Other: "{n} дней"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} неделя", Few: "{n} недели", Many: "{n} недель", Other: "{n} недель"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} месяц", Few: "{n} месяца", Many: "{n} месяцев", Other: "{n} месяцев"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} год", Few: "{n} года", Many: "{n} лет", Other: "{n} лет"}),
+	},
+	Half:      "{n} с половиной",
+	Delimiter: ", ",
+	JustBorn:  "Новорождённый",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Новорождённый",
+		Infant:   "Младенец",
+		Toddler:  "Малыш",
+		Child:    "Ребёнок",
+		Teenager: "Подросток",
+		Adult:    "Взрослый",
+	},
+}

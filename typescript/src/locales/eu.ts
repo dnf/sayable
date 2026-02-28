@@ -1,0 +1,19 @@
+import type { AgeLocale } from '../locale.js';
+
+export const eu: AgeLocale = {
+  code: 'eu',
+  plural: () => 'other',
+  units: {
+    day:   '{n} egun',
+    week:  '{n} aste',
+    month: '{n} hilabete',
+    year:  '{n} urte',
+  },
+  half: '{0} eta erdi',
+  delimiter: ', ',
+  justBorn: 'Jaioberria',
+  stages: {
+    newborn: 'Jaioberria', infant: 'Haurra', toddler: 'Haur txikia',
+    child: 'Umea', teenager: 'Nerabea', adult: 'Heldua',
+  },
+};

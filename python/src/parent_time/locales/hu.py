@@ -1,0 +1,25 @@
+"""Hungarian locale."""
+
+from parent_time.locale import AgeLocale
+
+HU = AgeLocale(
+    code="hu",
+    plural=lambda _n: "other",
+    units={
+        "day": "{n} nap",
+        "week": "{n} hét",
+        "month": "{n} hónap",
+        "year": "{n} év",
+    },
+    half="{n} és fél",
+    delimiter=", ",
+    just_born="Újszülött",
+    stages={
+        "newborn": "Újszülött",
+        "infant": "Csecsemő",
+        "toddler": "Kisgyermek",
+        "child": "Gyermek",
+        "teenager": "Tinédzser",
+        "adult": "Felnőtt",
+    },
+)

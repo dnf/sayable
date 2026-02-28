@@ -1,0 +1,25 @@
+"""Estonian locale."""
+
+from parent_time.locale import AgeLocale
+
+ET = AgeLocale(
+    code="et",
+    plural=lambda n: "one" if n == 1 else "other",
+    units={
+        "day": {"one": "{n} päev", "other": "{n} päeva"},
+        "week": {"one": "{n} nädal", "other": "{n} nädalat"},
+        "month": {"one": "{n} kuu", "other": "{n} kuud"},
+        "year": {"one": "{n} aasta", "other": "{n} aastat"},
+    },
+    half="{n}\u00bd",
+    delimiter=", ",
+    just_born="Vastsündinu",
+    stages={
+        "newborn": "Vastsündinu",
+        "infant": "Imik",
+        "toddler": "Väikelaps",
+        "child": "Laps",
+        "teenager": "Teismeline",
+        "adult": "Täiskasvanu",
+    },
+)

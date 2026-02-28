@@ -1,0 +1,34 @@
+package parenttime
+
+// SR is the Serbian (Cyrillic) locale.
+var SR = AgeLocale{
+	Code: "sr",
+	Plural: func(n int) PluralCategory {
+		mod10 := n % 10
+		mod100 := n % 100
+		if mod10 == 1 && mod100 != 11 {
+			return One
+		}
+		if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) {
+			return Few
+		}
+		return Many
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} дан", Few: "{n} дана", Many: "{n} дана", Other: "{n} дана"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} недеља", Few: "{n} недеље", Many: "{n} недеља", Other: "{n} недеља"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} месец", Few: "{n} месеца", Many: "{n} месеци", Other: "{n} месеци"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} година", Few: "{n} године", Many: "{n} година", Other: "{n} година"}),
+	},
+	Half:      "{0} и по",
+	Delimiter: ", ",
+	JustBorn:  "Новорођенче",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Новорођенче",
+		Infant:   "Одојче",
+		Toddler:  "Мало дете",
+		Child:    "Дете",
+		Teenager: "Тинејџер",
+		Adult:    "Одрасла особа",
+	},
+}

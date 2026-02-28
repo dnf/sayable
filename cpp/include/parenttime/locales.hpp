@@ -1,0 +1,62 @@
+#ifndef PARENTTIME_LOCALES_HPP
+#define PARENTTIME_LOCALES_HPP
+
+#include "types.hpp"
+
+namespace parenttime {
+namespace locales {
+
+const AgeLocale& AR();
+const AgeLocale& BG();
+const AgeLocale& BN();
+const AgeLocale& BS();
+const AgeLocale& CA();
+const AgeLocale& CS();
+const AgeLocale& DA();
+const AgeLocale& DE();
+const AgeLocale& EL();
+const AgeLocale& EN();
+const AgeLocale& ES();
+const AgeLocale& ET();
+const AgeLocale& EU();
+const AgeLocale& FA();
+const AgeLocale& FI();
+const AgeLocale& FR();
+const AgeLocale& GA();
+const AgeLocale& GU();
+const AgeLocale& HI();
+const AgeLocale& HR();
+const AgeLocale& HU();
+const AgeLocale& IT();
+const AgeLocale& JA();
+const AgeLocale& JV();
+const AgeLocale& KO();
+const AgeLocale& LT();
+const AgeLocale& LV();
+const AgeLocale& MR();
+const AgeLocale& MS();
+const AgeLocale& NB();
+const AgeLocale& NL();
+const AgeLocale& PA();
+const AgeLocale& PL();
+const AgeLocale& PT();
+const AgeLocale& RO();
+const AgeLocale& RU();
+const AgeLocale& SK();
+const AgeLocale& SL();
+const AgeLocale& SQ();
+const AgeLocale& SR();
+const AgeLocale& SV();
+const AgeLocale& TA();
+const AgeLocale& TE();
+const AgeLocale& TH();
+const AgeLocale& TR();
+const AgeLocale& UK();
+const AgeLocale& UR();
+const AgeLocale& VI();
+const AgeLocale& ZH();
+
+} // namespace locales
+} // namespace parenttime
+
+#endif // PARENTTIME_LOCALES_HPP

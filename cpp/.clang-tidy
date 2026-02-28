@@ -1,0 +1,36 @@
+---
+Checks: >
+  -*,
+  bugprone-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  misc-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  -modernize-use-trailing-return-type,
+  -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -readability-identifier-length,
+  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+  -misc-no-recursion,
+  -readability-function-cognitive-complexity,
+  -bugprone-easily-swappable-parameters,
+  -cppcoreguidelines-pro-type-union-access,
+  -misc-use-anonymous-namespace
+
+WarningsAsErrors: ''
+
+HeaderFilterRegex: 'include/parenttime/.*'
+
+CheckOptions:
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+  - key: readability-identifier-naming.FunctionCase
+    value: lower_case
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+  - key: readability-identifier-naming.PrivateMemberSuffix
+    value: '_'

@@ -1,0 +1,36 @@
+"""Serbian locale (Cyrillic)."""
+
+from parent_time.locale import AgeLocale, PluralCategory
+
+
+def _plural(n: int) -> PluralCategory:
+    mod10 = n % 10
+    mod100 = n % 100
+    if mod10 == 1 and mod100 != 11:
+        return "one"
+    if 2 <= mod10 <= 4 and (mod100 < 12 or mod100 > 14):
+        return "few"
+    return "many"
+
+
+SR = AgeLocale(
+    code="sr",
+    plural=_plural,
+    units={
+        "day": {"one": "{n} дан", "few": "{n} дана", "many": "{n} дана", "other": "{n} дана"},
+        "week": {"one": "{n} недеља", "few": "{n} недеље", "many": "{n} недеља", "other": "{n} недеља"},
+        "month": {"one": "{n} месец", "few": "{n} месеца", "many": "{n} месеци", "other": "{n} месеци"},
+        "year": {"one": "{n} година", "few": "{n} године", "many": "{n} година", "other": "{n} година"},
+    },
+    half="{0} и по",
+    delimiter=", ",
+    just_born="Новорођенче",
+    stages={
+        "newborn": "Новорођенче",
+        "infant": "Одојче",
+        "toddler": "Мало дете",
+        "child": "Дете",
+        "teenager": "Тинејџер",
+        "adult": "Одрасла особа",
+    },
+)

@@ -1,0 +1,29 @@
+package parenttime
+
+// TE is the Telugu locale.
+var TE = AgeLocale{
+	Code: "te",
+	Plural: func(n int) PluralCategory {
+		if n == 1 {
+			return One
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} రోజు", Other: "{n} రోజులు"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} వారం", Other: "{n} వారాలు"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} నెల", Other: "{n} నెలలు"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} సంవత్సరం", Other: "{n} సంవత్సరాలు"}),
+	},
+	Half:      "{0}న్నర",
+	Delimiter: ", ",
+	JustBorn:  "నవజాత శిశువు",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "నవజాత శిశువు",
+		Infant:   "శిశువు",
+		Toddler:  "చిన్న పిల్లవాడు",
+		Child:    "పిల్లవాడు",
+		Teenager: "కౌమారదశ",
+		Adult:    "వయోజనుడు",
+	},
+}

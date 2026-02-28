@@ -6,3 +6,24 @@ __pycache__/
 *.egg-info/
 .venv/
 .pytest_cache/
+
+# Go
+go/bin/
+
+# Ruby
+ruby/*.gem
+ruby/.bundle/
+ruby/vendor/
+ruby/Gemfile.lock
+ruby/pkg/
+ruby/tmp/
+
+# Rust
+rust/target/
+
+# Kotlin
+kotlin/build/
+kotlin/.gradle/
+
+# C++
+cpp/build/

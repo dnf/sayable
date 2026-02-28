@@ -15,10 +15,16 @@ function parseAge(dateOfBirth: string | null | undefined, asOf?: string): AgeCom
   if (!dateOfBirth) return null;
 
   // Parse YYYY-MM-DD as integers to avoid timezone/DST issues
-  const [dobY, dobM, dobD] = dateOfBirth.split('-').map(Number);
+  const dobParts = dateOfBirth.split('-').map(Number);
+  const dobY = dobParts[0] ?? 0;
+  const dobM = dobParts[1] ?? 0;
+  const dobD = dobParts[2] ?? 0;
   let refY: number, refM: number, refD: number;
   if (asOf) {
-    [refY, refM, refD] = asOf.split('-').map(Number);
+    const refParts = asOf.split('-').map(Number);
+    refY = refParts[0] ?? 0;
+    refM = refParts[1] ?? 0;
+    refD = refParts[2] ?? 0;
   } else {
     const now = new Date();
     refY = now.getFullYear();

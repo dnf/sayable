@@ -1,0 +1,25 @@
+import type { AgeLocale, PluralCategory } from '../locale.js';
+
+function plural(n: number): PluralCategory {
+  if (n === 1) return 'one';
+  if (n >= 2 && n <= 4) return 'few';
+  return 'other';
+}
+
+export const cs: AgeLocale = {
+  code: 'cs',
+  plural,
+  units: {
+    day:   { one: '{n} den', few: '{n} dny', other: '{n} dní' },
+    week:  { one: '{n} týden', few: '{n} týdny', other: '{n} týdnů' },
+    month: { one: '{n} měsíc', few: '{n} měsíce', other: '{n} měsíců' },
+    year:  { one: '{n} rok', few: '{n} roky', other: '{n} let' },
+  },
+  half: '{n}½',
+  delimiter: ', ',
+  justBorn: 'Novorozenec',
+  stages: {
+    newborn: 'Novorozenec', infant: 'Kojenec', toddler: 'Batole',
+    child: 'Dítě', teenager: 'Teenager', adult: 'Dospělý',
+  },
+};

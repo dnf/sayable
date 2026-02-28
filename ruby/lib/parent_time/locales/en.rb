@@ -1,0 +1,44 @@
+# frozen_string_literal: true
+
+module ParentTime
+  module Locales
+    EN = AgeLocale.new(
+      code: 'en',
+      plural: ->(n) { n == 1 ? :one : :other },
+      units: {
+        'day' => { one: '{n} day', other: '{n} days' },
+        'week' => { one: '{n} week', other: '{n} weeks' },
+        'month' => { one: '{n} month', other: '{n} months' },
+        'year' => { one: '{n} year', other: '{n} years' }
+      },
+      half: "{n}\u00BD",
+      delimiter: ', ',
+      just_born: 'Newborn',
+      stages: {
+        newborn: 'Newborn',
+        infant: 'Infant',
+        toddler: 'Toddler',
+        child: 'Child',
+        teenager: 'Teenager',
+        adult: 'Adult'
+      },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} d',
+          'week' => '{n} wk',
+          'month' => '{n} mo',
+          'year' => '{n} yr'
+        }
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}d',
+          'week' => '{n}w',
+          'month' => '{n}m',
+          'year' => '{n}y'
+        },
+        delimiter: ''
+      )
+    )
+  end
+end

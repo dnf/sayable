@@ -1,0 +1,64 @@
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, CompactnessOverride};
+
+/// English locale.
+pub fn locale() -> AgeLocale {
+    AgeLocale {
+        code: "en".to_string(),
+        plural: |n| {
+            if n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
+        },
+        units: Units {
+            day: UnitForms::plural(&[
+                (PluralCategory::One, "{n} day"),
+                (PluralCategory::Other, "{n} days"),
+            ]),
+            week: UnitForms::plural(&[
+                (PluralCategory::One, "{n} week"),
+                (PluralCategory::Other, "{n} weeks"),
+            ]),
+            month: UnitForms::plural(&[
+                (PluralCategory::One, "{n} month"),
+                (PluralCategory::Other, "{n} months"),
+            ]),
+            year: UnitForms::plural(&[
+                (PluralCategory::One, "{n} year"),
+                (PluralCategory::Other, "{n} years"),
+            ]),
+        },
+        half: "{n}\u{00BD}".to_string(),
+        delimiter: ", ".to_string(),
+        just_born: "Newborn".to_string(),
+        stages: Stages {
+            newborn: "Newborn".to_string(),
+            infant: "Infant".to_string(),
+            toddler: "Toddler".to_string(),
+            child: "Child".to_string(),
+            teenager: "Teenager".to_string(),
+            adult: "Adult".to_string(),
+        },
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d")),
+            week: Some(UnitForms::simple("{n} wk")),
+            month: Some(UnitForms::simple("{n} mo")),
+            year: Some(UnitForms::simple("{n} yr")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}d")),
+            week: Some(UnitForms::simple("{n}w")),
+            month: Some(UnitForms::simple("{n}m")),
+            year: Some(UnitForms::simple("{n}y")),
+            half: None,
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
+        format_number: None,
+        format_unit: None,
+    }
+}

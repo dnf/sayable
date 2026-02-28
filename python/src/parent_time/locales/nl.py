@@ -1,0 +1,25 @@
+"""Dutch locale."""
+
+from parent_time.locale import AgeLocale
+
+NL = AgeLocale(
+    code="nl",
+    plural=lambda n: "one" if n == 1 else "other",
+    units={
+        "day": {"one": "{n} dag", "other": "{n} dagen"},
+        "week": {"one": "{n} week", "other": "{n} weken"},
+        "month": {"one": "{n} maand", "other": "{n} maanden"},
+        "year": {"one": "{n} jaar", "other": "{n} jaar"},
+    },
+    half="{n}\u00bd",
+    delimiter=", ",
+    just_born="Pasgeboren",
+    stages={
+        "newborn": "Pasgeborene",
+        "infant": "Baby",
+        "toddler": "Peuter",
+        "child": "Kind",
+        "teenager": "Tiener",
+        "adult": "Volwassene",
+    },
+)

@@ -1,0 +1,36 @@
+package parenttime
+
+// SL is the Slovenian locale.
+var SL = AgeLocale{
+	Code: "sl",
+	Plural: func(n int) PluralCategory {
+		mod100 := n % 100
+		if mod100 == 1 {
+			return One
+		}
+		if mod100 == 2 {
+			return Two
+		}
+		if mod100 == 3 || mod100 == 4 {
+			return Few
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} dan", Two: "{n} dneva", Few: "{n} dni", Other: "{n} dni"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} teden", Two: "{n} tedna", Few: "{n} tedne", Other: "{n} tednov"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} mesec", Two: "{n} meseca", Few: "{n} mesece", Other: "{n} mesecev"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} leto", Two: "{n} leti", Few: "{n} leta", Other: "{n} let"}),
+	},
+	Half:      "{0} in pol",
+	Delimiter: ", ",
+	JustBorn:  "Novorojenček",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Novorojenček",
+		Infant:   "Dojenček",
+		Toddler:  "Malček",
+		Child:    "Otrok",
+		Teenager: "Najstnik",
+		Adult:    "Odrasel",
+	},
+}

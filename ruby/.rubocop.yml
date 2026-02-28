@@ -1,0 +1,67 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  SuggestExtensions: false
+
+# Line length — locale data and test files have long lines
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'lib/parent_time/locales/*.rb'
+    - 'test/**/*.rb'
+
+# Frozen string literal — enforce immutability
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+# Documentation — not needed for locale data or internal modules
+Style/Documentation:
+  Exclude:
+    - 'lib/parent_time/locales/*.rb'
+    - 'lib/parent_time.rb'
+    - 'lib/parent_time/formatter.rb'
+    - 'lib/parent_time/locale.rb'
+    - 'test/**/*.rb'
+
+# Allow hash rockets in locale data (more readable for symbol keys)
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+
+# Multiple test classes per file is standard Minitest pattern
+Style/OneClassPerFile:
+  Exclude:
+    - 'test/**/*.rb'
+
+# Method length — formatter methods and locale builder are intentionally long
+Metrics/MethodLength:
+  Max: 30
+  Exclude:
+    - 'test/**/*.rb'
+
+# Class length — test files are long
+Metrics/ClassLength:
+  Exclude:
+    - 'test/**/*.rb'
+
+# Block length for tests
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*.rb'
+    - 'Rakefile'
+    - '*.gemspec'
+
+# ABC size — formatter algorithm is complex but clear
+Metrics/AbcSize:
+  Max: 45
+
+# Cyclomatic complexity for format_age
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+# Perceived complexity
+Metrics/PerceivedComplexity:
+  Max: 20
+
+# Struct#compact override is intentional — our field is named "compact"
+Lint/StructNewOverride:
+  Enabled: false

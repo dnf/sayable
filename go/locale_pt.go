@@ -1,0 +1,29 @@
+package parenttime
+
+// PT is the Portuguese locale.
+var PT = AgeLocale{
+	Code: "pt",
+	Plural: func(n int) PluralCategory {
+		if n == 0 || n == 1 {
+			return One
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} dia", Other: "{n} dias"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} semana", Other: "{n} semanas"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} mês", Other: "{n} meses"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} ano", Other: "{n} anos"}),
+	},
+	Half:      "{0} e meio",
+	Delimiter: ", ",
+	JustBorn:  "Recém-nascido",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Recém-nascido",
+		Infant:   "Bebê",
+		Toddler:  "Criança pequena",
+		Child:    "Criança",
+		Teenager: "Adolescente",
+		Adult:    "Adulto",
+	},
+}

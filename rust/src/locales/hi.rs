@@ -1,0 +1,44 @@
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+
+/// Hindi locale.
+pub fn locale() -> AgeLocale {
+    AgeLocale {
+        code: "hi".to_string(),
+        plural: |n| {
+            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+        },
+        units: Units {
+            day: UnitForms::plural(&[
+                (PluralCategory::One, "{n} दिन"),
+                (PluralCategory::Other, "{n} दिन"),
+            ]),
+            week: UnitForms::plural(&[
+                (PluralCategory::One, "{n} सप्ताह"),
+                (PluralCategory::Other, "{n} सप्ताह"),
+            ]),
+            month: UnitForms::plural(&[
+                (PluralCategory::One, "{n} महीना"),
+                (PluralCategory::Other, "{n} महीने"),
+            ]),
+            year: UnitForms::plural(&[
+                (PluralCategory::One, "{n} साल"),
+                (PluralCategory::Other, "{n} साल"),
+            ]),
+        },
+        half: "साढ़े {n}".to_string(),
+        delimiter: ", ".to_string(),
+        just_born: "नवजात".to_string(),
+        stages: Stages {
+            newborn: "नवजात".to_string(),
+            infant: "शिशु".to_string(),
+            toddler: "छोटा बच्चा".to_string(),
+            child: "बच्चा".to_string(),
+            teenager: "किशोर".to_string(),
+            adult: "वयस्क".to_string(),
+        },
+        short: None,
+        compact: None,
+        format_number: None,
+        format_unit: None,
+    }
+}

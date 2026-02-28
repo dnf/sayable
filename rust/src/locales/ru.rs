@@ -1,0 +1,60 @@
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+
+/// Russian locale.
+pub fn locale() -> AgeLocale {
+    AgeLocale {
+        code: "ru".to_string(),
+        plural: |n| {
+            let mod10 = n % 10;
+            let mod100 = n % 100;
+            if mod10 == 1 && mod100 != 11 {
+                PluralCategory::One
+            } else if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Many
+            }
+        },
+        units: Units {
+            day: UnitForms::plural(&[
+                (PluralCategory::One, "{n} день"),
+                (PluralCategory::Few, "{n} дня"),
+                (PluralCategory::Many, "{n} дней"),
+                (PluralCategory::Other, "{n} дней"),
+            ]),
+            week: UnitForms::plural(&[
+                (PluralCategory::One, "{n} неделя"),
+                (PluralCategory::Few, "{n} недели"),
+                (PluralCategory::Many, "{n} недель"),
+                (PluralCategory::Other, "{n} недель"),
+            ]),
+            month: UnitForms::plural(&[
+                (PluralCategory::One, "{n} месяц"),
+                (PluralCategory::Few, "{n} месяца"),
+                (PluralCategory::Many, "{n} месяцев"),
+                (PluralCategory::Other, "{n} месяцев"),
+            ]),
+            year: UnitForms::plural(&[
+                (PluralCategory::One, "{n} год"),
+                (PluralCategory::Few, "{n} года"),
+                (PluralCategory::Many, "{n} лет"),
+                (PluralCategory::Other, "{n} лет"),
+            ]),
+        },
+        half: "{n} с половиной".to_string(),
+        delimiter: ", ".to_string(),
+        just_born: "Новорождённый".to_string(),
+        stages: Stages {
+            newborn: "Новорождённый".to_string(),
+            infant: "Младенец".to_string(),
+            toddler: "Малыш".to_string(),
+            child: "Ребёнок".to_string(),
+            teenager: "Подросток".to_string(),
+            adult: "Взрослый".to_string(),
+        },
+        short: None,
+        compact: None,
+        format_number: None,
+        format_unit: None,
+    }
+}

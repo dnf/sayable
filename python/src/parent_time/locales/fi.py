@@ -1,0 +1,25 @@
+"""Finnish locale."""
+
+from parent_time.locale import AgeLocale
+
+FI = AgeLocale(
+    code="fi",
+    plural=lambda n: "one" if n == 1 else "other",
+    units={
+        "day": {"one": "{n} päivä", "other": "{n} päivää"},
+        "week": {"one": "{n} viikko", "other": "{n} viikkoa"},
+        "month": {"one": "{n} kuukausi", "other": "{n} kuukautta"},
+        "year": {"one": "{n} vuosi", "other": "{n} vuotta"},
+    },
+    half="{n} ja puoli",
+    delimiter=", ",
+    just_born="Vastasyntynyt",
+    stages={
+        "newborn": "Vastasyntynyt",
+        "infant": "Vauva",
+        "toddler": "Taapero",
+        "child": "Lapsi",
+        "teenager": "Teini",
+        "adult": "Aikuinen",
+    },
+)

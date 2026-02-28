@@ -10,7 +10,7 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 
 ## Functions
 
-### `formatAge` / `format_age`
+### `formatAge` / `format_age` / `FormatAge`
 
 Returns a human-readable age string with granularity that matches the child's developmental stage:
 
@@ -26,7 +26,7 @@ Returns a human-readable age string with granularity that matches the child's de
 
 Calendar-month boundaries use **day-of-month clamping**: a child born on the 31st turns N months old on the last day of a shorter month (e.g., Feb 28/29, Apr 30).
 
-### `formatStage` / `format_stage`
+### `formatStage` / `format_stage` / `FormatStage`
 
 Returns the developmental stage label (AAP/CDC consensus boundaries):
 
@@ -51,6 +51,19 @@ npm install parent-time
 
 ```bash
 pip install parent-time
+```
+
+### Go
+
+```bash
+go get github.com/dnf/parent-time/go
+```
+
+### Ruby
+
+```ruby
+# Gemfile
+gem "parent_time"
 ```
 
 ## Usage
@@ -117,6 +130,52 @@ format_age("2020-01-01")                # "5 years" (if today is 2025-06-15)
 # Returns None for None/empty/future dates
 format_age(None)                        # None
 format_stage("2030-01-01", "2025-06-15")  # None
+```
+
+### Go
+
+```go
+package main
+
+import (
+    "fmt"
+    parenttime "github.com/dnf/parent-time/go"
+)
+
+func main() {
+    // Package-level functions — English default
+    age := parenttime.FormatAge("2025-01-15", "2025-07-15")
+    fmt.Println(*age)  // "6 months"
+
+    stage := parenttime.FormatStage("2025-01-15", "2025-06-15")
+    fmt.Println(*stage)  // "Infant"
+
+    // Returns nil for empty/future dates
+    fmt.Println(parenttime.FormatAge(""))  // <nil>
+
+    // Class-based with locale
+    pt := parenttime.NewParentTime(parenttime.EN)
+    fmt.Println(*pt.FormatAge("2022-06-15", "2025-12-15"))  // "3½ years"
+    fmt.Println(*pt.FormatStage("2022-06-15", "2025-06-15")) // "Child"
+}
+```
+
+### Ruby
+
+```ruby
+require "parent_time"
+
+# Module-level methods — English default
+ParentTime.format_age("2025-01-15", "2025-07-15")  # "6 months"
+ParentTime.format_stage("2025-01-15", "2025-06-15") # "Infant"
+
+# Returns nil for nil/empty/future dates
+ParentTime.format_age(nil)  # nil
+
+# Class-based with locale
+pt = ParentTime::Formatter.new(ParentTime::Locales::EN)
+pt.format_age("2022-06-15", "2025-12-15")   # "3½ years"
+pt.format_stage("2022-06-15", "2025-06-15") # "Child"
 ```
 
 ## Internationalization (i18n)
@@ -189,7 +248,22 @@ pt_ja.format_age("2025-01-01", "2025-07-15")   # "6ヶ月"
 pt_ja.format_stage("2025-01-01", "2025-07-15") # "乳児"
 ```
 
-The standalone `formatAge` / `format_age` and `formatStage` / `format_stage` functions default to English and are fully backward compatible.
+### Go
+
+```go
+pt := parenttime.NewParentTime(parenttime.JA)
+age := pt.FormatAge("2025-01-01", "2025-07-15")
+fmt.Println(*age)  // "6ヶ月"
+```
+
+### Ruby
+
+```ruby
+pt = ParentTime::Formatter.new(ParentTime::Locales::JA)
+pt.format_age("2025-01-01", "2025-07-15")  # "6ヶ月"
+```
+
+The standalone `formatAge` / `format_age` / `FormatAge` and `formatStage` / `format_stage` / `FormatStage` functions default to English and are fully backward compatible.
 
 ### Compactness
 
@@ -211,13 +285,25 @@ short   = ParentTime(EN, "short")        # "3 mo", "2 yr, 1 mo"
 compact = ParentTime(EN, "compact")      # "3m", "2y1m"
 ```
 
+```go
+normal  := parenttime.NewParentTime(parenttime.EN)              // "3 months", "2 years, 1 month"
+short   := parenttime.NewParentTime(parenttime.EN, parenttime.Short)   // "3 mo", "2 yr, 1 mo"
+compact := parenttime.NewParentTime(parenttime.EN, parenttime.Compact) // "3m", "2y1m"
+```
+
+```ruby
+normal  = ParentTime::Formatter.new(ParentTime::Locales::EN)                       # "3 months", "2 years, 1 month"
+short   = ParentTime::Formatter.new(ParentTime::Locales::EN, compactness: :short)   # "3 mo", "2 yr, 1 mo"
+compact = ParentTime::Formatter.new(ParentTime::Locales::EN, compactness: :compact) # "3m", "2y1m"
+```
+
 Compactness overrides are defined per-locale. Currently the English locale provides distinct short and compact forms; all other built-in locales return the same output for all three levels (you can add overrides for any locale via the `short` and `compact` fields).
 
 ### Built-in locales
 
 | Code | Language | Import |
 |------|----------|--------|
-| `en` | English | `en` (TypeScript) / `EN` (Python) |
+| `en` | English | `en` (TS) / `EN` (Python/Go/Ruby) |
 | `ar` | Arabic | `ar` / `AR` |
 | `bn` | Bengali | `bn` / `BN` |
 | `de` | German | `de` / `DE` |
@@ -252,6 +338,16 @@ pt.formatAge('2025-01-01', '2025-07-15'); // "6ヶ月"
 ```python
 from parent_time import ParentTime, JA
 pt = ParentTime(JA)
+pt.format_age("2025-01-01", "2025-07-15")  # "6ヶ月"
+```
+
+```go
+pt := parenttime.NewParentTime(parenttime.JA)
+fmt.Println(*pt.FormatAge("2025-01-01", "2025-07-15"))  // "6ヶ月"
+```
+
+```ruby
+pt = ParentTime::Formatter.new(ParentTime::Locales::JA)
 pt.format_age("2025-01-01", "2025-07-15")  # "6ヶ月"
 ```
 
@@ -302,12 +398,41 @@ def format_age(date_of_birth: str | None, as_of: str | None = None) -> str | Non
 def format_stage(date_of_birth: str | None, as_of: str | None = None) -> str | None
 ```
 
+### Go
+
+```go
+// Struct — locale set once at construction
+type ParentTime struct { ... }
+func NewParentTime(locale AgeLocale, compactness ...Compactness) *ParentTime
+func (pt *ParentTime) FormatAge(dateOfBirth string, asOf ...string) *string
+func (pt *ParentTime) FormatStage(dateOfBirth string, asOf ...string) *string
+
+// Package-level functions — English default
+func FormatAge(dateOfBirth string, asOf ...string) *string
+func FormatStage(dateOfBirth string, asOf ...string) *string
+```
+
+### Ruby
+
+```ruby
+# Class — locale set once at construction
+class ParentTime::Formatter
+  def initialize(locale, compactness: :normal)
+  def format_age(date_of_birth, as_of = nil) # => String or nil
+  def format_stage(date_of_birth, as_of = nil) # => String or nil
+end
+
+# Module-level methods — English default
+ParentTime.format_age(date_of_birth, as_of = nil) # => String or nil
+ParentTime.format_stage(date_of_birth, as_of = nil) # => String or nil
+```
+
 **Parameters:**
 
-- `dateOfBirth` / `date_of_birth` — Date of birth as a `YYYY-MM-DD` string. Returns `null`/`None` if `null`, `undefined`, `None`, or empty.
+- `dateOfBirth` / `date_of_birth` — Date of birth as a `YYYY-MM-DD` string. Returns `null`/`None`/`nil` if `null`, `undefined`, `None`, `nil`, or empty.
 - `asOf` / `as_of` — Reference date as a `YYYY-MM-DD` string. Defaults to today.
 
-**Returns:** A human-readable string, or `null`/`None` if the input is missing or the date of birth is in the future.
+**Returns:** A human-readable string, or `null`/`None`/`nil` if the input is missing or the date of birth is in the future.
 
 ## Why not just use moment/dayjs/date-fns?
 
@@ -317,7 +442,7 @@ That's exactly what `parent-time` does, in two zero-dependency functions, tested
 
 ## Design decisions
 
-- **Zero dependencies.** Pure date arithmetic — no runtime deps in either language.
+- **Zero dependencies.** Pure date arithmetic — no runtime deps in any language.
 - **Deterministic.** Every test uses explicit `(dob, asOf)` pairs. No flaky tests from "today."
 - **Calendar-month clamping.** Born Jan 31 → turns 1 month on Feb 28 (or 29 in a leap year). This matches how hospitals and pediatricians count months.
 - **"Months" not "1 year" at 12 months.** Parents say "he's 14 months" until about 2 years. The library follows this convention.
@@ -328,7 +453,7 @@ That's exactly what `parent-time` does, in two zero-dependency functions, tested
 
 ## Contributing
 
-Both implementations share identical test cases. If you add a test, add it in both `typescript/tests/` and `python/tests/`.
+All four implementations share identical test cases. If you add a test, add it in all directories.
 
 ```bash
 # TypeScript
@@ -336,6 +461,12 @@ cd typescript && npm test
 
 # Python
 cd python && pytest
+
+# Go
+cd go && go test -v ./...
+
+# Ruby
+cd ruby && bundle exec rake test
 ```
 
 ## License

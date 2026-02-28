@@ -1,0 +1,29 @@
+package parenttime
+
+// EL is the Greek locale.
+var EL = AgeLocale{
+	Code: "el",
+	Plural: func(n int) PluralCategory {
+		if n == 1 {
+			return One
+		}
+		return Other
+	},
+	Units: struct{ Day, Week, Month, Year UnitForms }{
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} μέρα", Other: "{n} μέρες"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} εβδομάδα", Other: "{n} εβδομάδες"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} μήνας", Other: "{n} μήνες"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} χρόνος", Other: "{n} χρόνια"}),
+	},
+	Half:      "{0} και μισό",
+	Delimiter: ", ",
+	JustBorn:  "Νεογέννητο",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
+		Newborn:  "Νεογέννητο",
+		Infant:   "Βρέφος",
+		Toddler:  "Νήπιο",
+		Child:    "Παιδί",
+		Teenager: "Έφηβος",
+		Adult:    "Ενήλικας",
+	},
+}
