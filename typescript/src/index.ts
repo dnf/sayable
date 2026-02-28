@@ -1,1 +1,1 @@
-export { formatAge } from './format-age.js';
+export { formatAge, formatStage } from './format-age.js';

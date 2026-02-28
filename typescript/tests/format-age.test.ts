@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { formatAge } from '../src/format-age';
+import { formatAge, formatStage } from '../src/format-age';
 
 // All tests use explicit (dob, asOf) pairs for determinism.
 
@@ -421,6 +421,182 @@ describe('formatAge', () => {
       vi.setSystemTime(new Date(2025, 5, 15)); // Jun 15 2025
       expect(formatAge('2020-01-01')).toBe('5 years');
       expect(formatAge('2025-06-10')).toBe('5 days');
+    });
+  });
+});
+
+// ================================================================
+// formatStage
+// ================================================================
+describe('formatStage', () => {
+  // Null / edge cases
+  it('returns null for null input', () => {
+    expect(formatStage(null, '2025-06-15')).toBeNull();
+  });
+
+  it('returns null for undefined input', () => {
+    expect(formatStage(undefined, '2025-06-15')).toBeNull();
+  });
+
+  it('returns null for future date of birth', () => {
+    expect(formatStage('2025-07-01', '2025-06-15')).toBeNull();
+  });
+
+  it('returns null for empty string', () => {
+    expect(formatStage('', '2025-06-15')).toBeNull();
+  });
+
+  // Newborn: 0–1 months (< 2 calendar months)
+  describe('Newborn (0–1 months)', () => {
+    it('born today', () => {
+      expect(formatStage('2025-06-15', '2025-06-15')).toBe('Newborn');
+    });
+
+    it('1 day old', () => {
+      expect(formatStage('2025-06-14', '2025-06-15')).toBe('Newborn');
+    });
+
+    it('3 weeks old', () => {
+      expect(formatStage('2025-05-25', '2025-06-15')).toBe('Newborn');
+    });
+
+    it('1 month old', () => {
+      expect(formatStage('2025-05-15', '2025-06-15')).toBe('Newborn');
+    });
+
+    it('1 month 29 days — still Newborn', () => {
+      expect(formatStage('2025-04-16', '2025-06-15')).toBe('Newborn');
+    });
+
+    it('exactly 2 months → Infant', () => {
+      expect(formatStage('2025-04-15', '2025-06-15')).toBe('Infant');
+    });
+  });
+
+  // Infant: 2–11 months
+  describe('Infant (2–11 months)', () => {
+    it('2 months', () => {
+      expect(formatStage('2025-04-15', '2025-06-15')).toBe('Infant');
+    });
+
+    it('6 months', () => {
+      expect(formatStage('2024-12-15', '2025-06-15')).toBe('Infant');
+    });
+
+    it('11 months', () => {
+      expect(formatStage('2024-07-15', '2025-06-15')).toBe('Infant');
+    });
+
+    it('exactly 12 months → Toddler', () => {
+      expect(formatStage('2024-06-15', '2025-06-15')).toBe('Toddler');
+    });
+  });
+
+  // Toddler: 1–2 years (12–35 months)
+  describe('Toddler (1–2 years)', () => {
+    it('12 months', () => {
+      expect(formatStage('2024-06-15', '2025-06-15')).toBe('Toddler');
+    });
+
+    it('18 months', () => {
+      expect(formatStage('2024-01-15', '2025-07-15')).toBe('Toddler');
+    });
+
+    it('2 years (24 months)', () => {
+      expect(formatStage('2023-06-15', '2025-06-15')).toBe('Toddler');
+    });
+
+    it('35 months — still Toddler', () => {
+      expect(formatStage('2023-06-15', '2026-05-15')).toBe('Toddler');
+    });
+
+    it('exactly 36 months → Preschooler', () => {
+      expect(formatStage('2022-06-15', '2025-06-15')).toBe('Preschooler');
+    });
+  });
+
+  // Preschooler: 3–5 years (36–71 months)
+  describe('Preschooler (3–5 years)', () => {
+    it('3 years', () => {
+      expect(formatStage('2022-06-15', '2025-06-15')).toBe('Preschooler');
+    });
+
+    it('4 years', () => {
+      expect(formatStage('2021-06-15', '2025-06-15')).toBe('Preschooler');
+    });
+
+    it('5 years 11 months — still Preschooler', () => {
+      expect(formatStage('2020-06-15', '2026-05-15')).toBe('Preschooler');
+    });
+
+    it('exactly 6 years → School-age', () => {
+      expect(formatStage('2019-06-15', '2025-06-15')).toBe('School-age');
+    });
+  });
+
+  // School-age: 6–12 years (72–155 months)
+  describe('School-age (6–12 years)', () => {
+    it('6 years', () => {
+      expect(formatStage('2019-06-15', '2025-06-15')).toBe('School-age');
+    });
+
+    it('9 years', () => {
+      expect(formatStage('2016-06-15', '2025-06-15')).toBe('School-age');
+    });
+
+    it('12 years 11 months — still School-age', () => {
+      expect(formatStage('2013-06-15', '2026-05-15')).toBe('School-age');
+    });
+
+    it('exactly 13 years → Teenager', () => {
+      expect(formatStage('2012-06-15', '2025-06-15')).toBe('Teenager');
+    });
+  });
+
+  // Teenager: 13–17 years (156–215 months)
+  describe('Teenager (13–17 years)', () => {
+    it('13 years', () => {
+      expect(formatStage('2012-06-15', '2025-06-15')).toBe('Teenager');
+    });
+
+    it('15 years', () => {
+      expect(formatStage('2010-06-15', '2025-06-15')).toBe('Teenager');
+    });
+
+    it('17 years 11 months — still Teenager', () => {
+      expect(formatStage('2008-06-15', '2026-05-15')).toBe('Teenager');
+    });
+
+    it('exactly 18 years → Adult', () => {
+      expect(formatStage('2007-06-15', '2025-06-15')).toBe('Adult');
+    });
+  });
+
+  // Adult: 18+ years (216+ months)
+  describe('Adult (18+ years)', () => {
+    it('18 years', () => {
+      expect(formatStage('2007-06-15', '2025-06-15')).toBe('Adult');
+    });
+
+    it('25 years', () => {
+      expect(formatStage('2000-06-15', '2025-06-15')).toBe('Adult');
+    });
+
+    it('45 years', () => {
+      expect(formatStage('1980-01-01', '2025-06-15')).toBe('Adult');
+    });
+  });
+
+  // Default asOf
+  describe('default asOf uses current date', () => {
+    afterEach(() => { vi.useRealTimers(); });
+
+    it('returns correct stage when no asOf is provided', () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2025, 5, 15)); // Jun 15 2025
+      expect(formatStage('2025-06-15')).toBe('Newborn');
+      expect(formatStage('2020-01-01')).toBe('Preschooler');
+      expect(formatStage('1980-01-01')).toBe('Adult');
     });
   });
 });

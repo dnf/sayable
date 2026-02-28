@@ -1,20 +1,14 @@
+/** Parsed date components and derived calendar months / elapsed days. */
+interface AgeComponents {
+  months: number;
+  diffDays: number;
+}
+
 /**
- * Human-friendly age string for young children (≤3 years).
- * - 0 days    → "Newborn"
- * - 1–6 days  → "3 days"
- * - 7 days–<3 months → "2 weeks, 4 days"
- * - 3–23 months → "14 months"
- * - 24–35 months → "2 years, 3 months"
- * - 3–6 years → "3 years", "3½ years", "4 years", …
- * - 7+ years → "7 years"
- *
- * Calendar-month boundaries use day-of-month clamping: a child born on the
- * 31st turns N months on the last day of a 30-day (or shorter) month.
- *
- * @param dateOfBirth - YYYY-MM-DD date string
- * @param asOf - YYYY-MM-DD reference date (defaults to today)
+ * Parse two YYYY-MM-DD strings into calendar months and elapsed days.
+ * Returns null if dateOfBirth is falsy or in the future relative to asOf.
  */
-export function formatAge(dateOfBirth: string | null | undefined, asOf?: string): string | null {
+function parseAge(dateOfBirth: string | null | undefined, asOf?: string): AgeComponents | null {
   if (!dateOfBirth) return null;
 
   // Parse YYYY-MM-DD as integers to avoid timezone/DST issues
@@ -35,17 +29,41 @@ export function formatAge(dateOfBirth: string | null | undefined, asOf?: string)
   );
   if (diffDays < 0) return null;
 
-  // Tier 1: 0–6 days
-  if (diffDays === 0) return 'Newborn';
-  if (diffDays < 7) {
-    return diffDays === 1 ? '1 day' : `${String(diffDays)} days`;
-  }
-
   // Calendar months with clamping for short months
   const lastDay = new Date(refY, refM, 0).getDate();
   const clampedBirthday = Math.min(dobD, lastDay);
   let months = (refY - dobY) * 12 + (refM - dobM);
   if (refD < clampedBirthday) months--;
+
+  return { months, diffDays };
+}
+
+/**
+ * Human-friendly age string for young children (≤3 years).
+ * - 0 days    → "Newborn"
+ * - 1–6 days  → "3 days"
+ * - 7 days–<3 months → "2 weeks, 4 days"
+ * - 3–23 months → "14 months"
+ * - 24–35 months → "2 years, 3 months"
+ * - 3–6 years → "3 years", "3½ years", "4 years", …
+ * - 7+ years → "7 years"
+ *
+ * Calendar-month boundaries use day-of-month clamping: a child born on the
+ * 31st turns N months on the last day of a 30-day (or shorter) month.
+ *
+ * @param dateOfBirth - YYYY-MM-DD date string
+ * @param asOf - YYYY-MM-DD reference date (defaults to today)
+ */
+export function formatAge(dateOfBirth: string | null | undefined, asOf?: string): string | null {
+  const age = parseAge(dateOfBirth, asOf);
+  if (!age) return null;
+  const { months, diffDays } = age;
+
+  // Tier 1: 0–6 days
+  if (diffDays === 0) return 'Newborn';
+  if (diffDays < 7) {
+    return diffDays === 1 ? '1 day' : `${String(diffDays)} days`;
+  }
 
   // Tier 2: weeks + days until 3 calendar months
   if (months < 3) {
@@ -82,4 +100,36 @@ export function formatAge(dateOfBirth: string | null | undefined, asOf?: string)
 
   // Tier 6: 7+ years
   return `${String(Math.floor(months / 12))} years`;
+}
+
+/**
+ * Developmental stage label based on age.
+ *
+ * | Stage        | Age range          |
+ * |--------------|--------------------|
+ * | Newborn      | 0–1 months         |
+ * | Infant       | 2–11 months        |
+ * | Toddler      | 1–2 years          |
+ * | Preschooler  | 3–5 years          |
+ * | School-age   | 6–12 years         |
+ * | Teenager     | 13–17 years        |
+ * | Adult        | 18+ years          |
+ *
+ * Boundaries follow AAP/CDC consensus.
+ *
+ * @param dateOfBirth - YYYY-MM-DD date string
+ * @param asOf - YYYY-MM-DD reference date (defaults to today)
+ */
+export function formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null {
+  const age = parseAge(dateOfBirth, asOf);
+  if (!age) return null;
+  const { months } = age;
+
+  if (months < 2) return 'Newborn';
+  if (months < 12) return 'Infant';
+  if (months < 36) return 'Toddler';
+  if (months < 72) return 'Preschooler';
+  if (months < 156) return 'School-age';
+  if (months < 216) return 'Teenager';
+  return 'Adult';
 }

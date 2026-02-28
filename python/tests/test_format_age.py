@@ -1,4 +1,4 @@
-"""Tests for format_age — mirrors the TypeScript test suite exactly."""
+"""Tests for format_age and format_stage — mirrors the TypeScript test suite."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 import pytest
 
-from parent_time import format_age
+from parent_time import format_age, format_stage
 
 
 # ================================================================
@@ -323,3 +323,133 @@ class TestDefaultAsOf:
             mock_date.side_effect = lambda *args, **kw: date(*args, **kw)
             assert format_age("2020-01-01") == "5 years"
             assert format_age("2025-06-10") == "5 days"
+
+
+# ================================================================
+# format_stage
+# ================================================================
+
+
+class TestStageEdgeCases:
+    def test_returns_none_for_none(self) -> None:
+        assert format_stage(None, "2025-06-15") is None
+
+    def test_returns_none_for_future_dob(self) -> None:
+        assert format_stage("2025-07-01", "2025-06-15") is None
+
+    def test_returns_none_for_empty_string(self) -> None:
+        assert format_stage("", "2025-06-15") is None
+
+
+class TestStageNewborn:
+    def test_born_today(self) -> None:
+        assert format_stage("2025-06-15", "2025-06-15") == "Newborn"
+
+    def test_1_day_old(self) -> None:
+        assert format_stage("2025-06-14", "2025-06-15") == "Newborn"
+
+    def test_3_weeks_old(self) -> None:
+        assert format_stage("2025-05-25", "2025-06-15") == "Newborn"
+
+    def test_1_month_old(self) -> None:
+        assert format_stage("2025-05-15", "2025-06-15") == "Newborn"
+
+    def test_1_month_29_days_still_newborn(self) -> None:
+        assert format_stage("2025-04-16", "2025-06-15") == "Newborn"
+
+    def test_exactly_2_months_becomes_infant(self) -> None:
+        assert format_stage("2025-04-15", "2025-06-15") == "Infant"
+
+
+class TestStageInfant:
+    def test_2_months(self) -> None:
+        assert format_stage("2025-04-15", "2025-06-15") == "Infant"
+
+    def test_6_months(self) -> None:
+        assert format_stage("2024-12-15", "2025-06-15") == "Infant"
+
+    def test_11_months(self) -> None:
+        assert format_stage("2024-07-15", "2025-06-15") == "Infant"
+
+    def test_exactly_12_months_becomes_toddler(self) -> None:
+        assert format_stage("2024-06-15", "2025-06-15") == "Toddler"
+
+
+class TestStageToddler:
+    def test_12_months(self) -> None:
+        assert format_stage("2024-06-15", "2025-06-15") == "Toddler"
+
+    def test_18_months(self) -> None:
+        assert format_stage("2024-01-15", "2025-07-15") == "Toddler"
+
+    def test_24_months(self) -> None:
+        assert format_stage("2023-06-15", "2025-06-15") == "Toddler"
+
+    def test_35_months_still_toddler(self) -> None:
+        assert format_stage("2023-06-15", "2026-05-15") == "Toddler"
+
+    def test_exactly_36_months_becomes_preschooler(self) -> None:
+        assert format_stage("2022-06-15", "2025-06-15") == "Preschooler"
+
+
+class TestStagePreschooler:
+    def test_3_years(self) -> None:
+        assert format_stage("2022-06-15", "2025-06-15") == "Preschooler"
+
+    def test_4_years(self) -> None:
+        assert format_stage("2021-06-15", "2025-06-15") == "Preschooler"
+
+    def test_5_years_11_months_still_preschooler(self) -> None:
+        assert format_stage("2020-06-15", "2026-05-15") == "Preschooler"
+
+    def test_exactly_6_years_becomes_school_age(self) -> None:
+        assert format_stage("2019-06-15", "2025-06-15") == "School-age"
+
+
+class TestStageSchoolAge:
+    def test_6_years(self) -> None:
+        assert format_stage("2019-06-15", "2025-06-15") == "School-age"
+
+    def test_9_years(self) -> None:
+        assert format_stage("2016-06-15", "2025-06-15") == "School-age"
+
+    def test_12_years_11_months_still_school_age(self) -> None:
+        assert format_stage("2013-06-15", "2026-05-15") == "School-age"
+
+    def test_exactly_13_years_becomes_teenager(self) -> None:
+        assert format_stage("2012-06-15", "2025-06-15") == "Teenager"
+
+
+class TestStageTeenager:
+    def test_13_years(self) -> None:
+        assert format_stage("2012-06-15", "2025-06-15") == "Teenager"
+
+    def test_15_years(self) -> None:
+        assert format_stage("2010-06-15", "2025-06-15") == "Teenager"
+
+    def test_17_years_11_months_still_teenager(self) -> None:
+        assert format_stage("2008-06-15", "2026-05-15") == "Teenager"
+
+    def test_exactly_18_years_becomes_adult(self) -> None:
+        assert format_stage("2007-06-15", "2025-06-15") == "Adult"
+
+
+class TestStageAdult:
+    def test_18_years(self) -> None:
+        assert format_stage("2007-06-15", "2025-06-15") == "Adult"
+
+    def test_25_years(self) -> None:
+        assert format_stage("2000-06-15", "2025-06-15") == "Adult"
+
+    def test_45_years(self) -> None:
+        assert format_stage("1980-01-01", "2025-06-15") == "Adult"
+
+
+class TestStageDefaultAsOf:
+    def test_returns_correct_stage_without_as_of(self) -> None:
+        with patch("parent_time.format_age.date") as mock_date:
+            mock_date.today.return_value = date(2025, 6, 15)
+            mock_date.side_effect = lambda *args, **kw: date(*args, **kw)
+            assert format_stage("2025-06-15") == "Newborn"
+            assert format_stage("2020-01-01") == "Preschooler"
+            assert format_stage("1980-01-01") == "Adult"

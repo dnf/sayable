@@ -6,11 +6,45 @@ import calendar
 from datetime import date
 
 
+def _parse_age(
+    date_of_birth: str | None,
+    as_of: str | None = None,
+) -> tuple[int, int] | None:
+    """Parse two YYYY-MM-DD strings into (calendar_months, elapsed_days).
+
+    Returns None if date_of_birth is falsy or in the future relative to as_of.
+    """
+    if not date_of_birth:
+        return None
+
+    dob_parts = date_of_birth.split("-")
+    dob_y, dob_m, dob_d = int(dob_parts[0]), int(dob_parts[1]), int(dob_parts[2])
+
+    if as_of:
+        ref_parts = as_of.split("-")
+        ref_y, ref_m, ref_d = int(ref_parts[0]), int(ref_parts[1]), int(ref_parts[2])
+    else:
+        today = date.today()
+        ref_y, ref_m, ref_d = today.year, today.month, today.day
+
+    diff_days = (date(ref_y, ref_m, ref_d) - date(dob_y, dob_m, dob_d)).days
+    if diff_days < 0:
+        return None
+
+    last_day = calendar.monthrange(ref_y, ref_m)[1]
+    clamped_birthday = min(dob_d, last_day)
+    months = (ref_y - dob_y) * 12 + (ref_m - dob_m)
+    if ref_d < clamped_birthday:
+        months -= 1
+
+    return months, diff_days
+
+
 def format_age(
     date_of_birth: str | None,
     as_of: str | None = None,
 ) -> str | None:
-    """Human-friendly age string for young children (≤3 years).
+    """Human-friendly age string for young children.
 
     - 0 days    → "Newborn"
     - 1–6 days  → "3 days"
@@ -27,37 +61,16 @@ def format_age(
         date_of_birth: YYYY-MM-DD date string.
         as_of: YYYY-MM-DD reference date (defaults to today).
     """
-    if not date_of_birth:
+    parsed = _parse_age(date_of_birth, as_of)
+    if parsed is None:
         return None
-
-    # Parse YYYY-MM-DD
-    dob_parts = date_of_birth.split("-")
-    dob_y, dob_m, dob_d = int(dob_parts[0]), int(dob_parts[1]), int(dob_parts[2])
-
-    if as_of:
-        ref_parts = as_of.split("-")
-        ref_y, ref_m, ref_d = int(ref_parts[0]), int(ref_parts[1]), int(ref_parts[2])
-    else:
-        today = date.today()
-        ref_y, ref_m, ref_d = today.year, today.month, today.day
-
-    # Total elapsed days
-    diff_days = (date(ref_y, ref_m, ref_d) - date(dob_y, dob_m, dob_d)).days
-    if diff_days < 0:
-        return None
+    months, diff_days = parsed
 
     # Tier 1: 0–6 days
     if diff_days == 0:
         return "Newborn"
     if diff_days < 7:
         return "1 day" if diff_days == 1 else f"{diff_days} days"
-
-    # Calendar months with clamping for short months
-    last_day = calendar.monthrange(ref_y, ref_m)[1]
-    clamped_birthday = min(dob_d, last_day)
-    months = (ref_y - dob_y) * 12 + (ref_m - dob_m)
-    if ref_d < clamped_birthday:
-        months -= 1
 
     # Tier 2: weeks + days until 3 calendar months
     if months < 3:
@@ -90,3 +103,45 @@ def format_age(
 
     # Tier 6: 7+ years
     return f"{months // 12} years"
+
+
+def format_stage(
+    date_of_birth: str | None,
+    as_of: str | None = None,
+) -> str | None:
+    """Developmental stage label based on age.
+
+    | Stage        | Age range          |
+    |--------------|--------------------|
+    | Newborn      | 0–1 months         |
+    | Infant       | 2–11 months        |
+    | Toddler      | 1–2 years          |
+    | Preschooler  | 3–5 years          |
+    | School-age   | 6–12 years         |
+    | Teenager     | 13–17 years        |
+    | Adult        | 18+ years          |
+
+    Boundaries follow AAP/CDC consensus.
+
+    Args:
+        date_of_birth: YYYY-MM-DD date string.
+        as_of: YYYY-MM-DD reference date (defaults to today).
+    """
+    parsed = _parse_age(date_of_birth, as_of)
+    if parsed is None:
+        return None
+    months = parsed[0]
+
+    if months < 2:
+        return "Newborn"
+    if months < 12:
+        return "Infant"
+    if months < 36:
+        return "Toddler"
+    if months < 72:
+        return "Preschooler"
+    if months < 156:
+        return "School-age"
+    if months < 216:
+        return "Teenager"
+    return "Adult"
