@@ -1,0 +1,31 @@
+import type { AgeLocale, PluralCategory } from '../locale.js';
+
+function plural(n: number): PluralCategory {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return 'one';
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return 'few';
+  return 'many';
+}
+
+export const ru: AgeLocale = {
+  code: 'ru',
+  plural,
+  units: {
+    day:   { one: '{n} день', few: '{n} дня', many: '{n} дней', other: '{n} дней' },
+    week:  { one: '{n} неделя', few: '{n} недели', many: '{n} недель', other: '{n} недель' },
+    month: { one: '{n} месяц', few: '{n} месяца', many: '{n} месяцев', other: '{n} месяцев' },
+    year:  { one: '{n} год', few: '{n} года', many: '{n} лет', other: '{n} лет' },
+  },
+  half: '{n} с половиной',
+  delimiter: ', ',
+  justBorn: 'Новорождённый',
+  stages: {
+    newborn: 'Новорождённый',
+    infant: 'Младенец',
+    toddler: 'Малыш',
+    child: 'Ребёнок',
+    teenager: 'Подросток',
+    adult: 'Взрослый',
+  },
+};

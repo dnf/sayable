@@ -1,0 +1,116 @@
+"""Locale definitions for age formatting."""
+
+from __future__ import annotations
+
+from collections.abc import Callable
+from dataclasses import dataclass
+from typing import Literal
+
+PluralCategory = Literal["zero", "one", "two", "few", "many", "other"]
+
+Compactness = Literal["normal", "short", "compact"]
+
+UnitForms = str | dict[str, str]
+"""A unit's display forms: either a single ``{n}``-template string
+or a dict mapping :data:`PluralCategory` keys to templates
+(``"other"`` is required, rest optional)."""
+
+
+@dataclass(frozen=True)
+class CompactnessOverride:
+    """Optional overrides for short/compact display modes."""
+
+    units: dict[str, UnitForms] | None = None
+    half: str | None = None
+    delimiter: str | None = None
+    just_born: str | None = None
+
+
+@dataclass(frozen=True)
+class AgeLocale:
+    """Locale definition for age formatting."""
+
+    code: str
+    plural: Callable[[int], PluralCategory]
+    units: dict[str, UnitForms]
+    half: str
+    delimiter: str
+    just_born: str
+    stages: dict[str, str]
+    short: CompactnessOverride | None = None
+    compact: CompactnessOverride | None = None
+    format_number: Callable[[int], str] | None = None
+    format_unit: Callable[[int, str], str] | None = None
+
+
+def resolve_unit(
+    count: int,
+    unit_forms: UnitForms,
+    locale: AgeLocale,
+    half: str = "",
+) -> str:
+    """Resolve a unit count to its display string using locale rules.
+
+    The ``half`` template supports two placeholders:
+
+    * ``{n}`` — replaces the formatted number *before* unit substitution
+      (e.g. ``"{n}½"`` → "3½ years", ``"साढ़े {n}"`` → "साढ़े 3 साल")
+    * ``{0}`` — wraps the fully resolved expression *after* unit substitution
+      (e.g. ``"{0}半"`` → "3歳半", ``"{0} et demi"`` → "3 ans et demi")
+    """
+    base_n = locale.format_number(count) if locale.format_number else str(count)
+    n = half.replace("{n}", base_n) if (half and "{n}" in half) else base_n
+    if isinstance(unit_forms, str):
+        template = unit_forms
+    else:
+        template = unit_forms.get(locale.plural(count), unit_forms["other"])
+    result = template.replace("{n}", n)
+    if locale.format_unit:
+        result = locale.format_unit(count, result)
+    if half and "{0}" in half:
+        result = half.replace("{0}", result)
+    return result
+
+
+def _en_plural(n: int) -> PluralCategory:
+    return "one" if n == 1 else "other"
+
+
+EN = AgeLocale(
+    code="en",
+    plural=_en_plural,
+    units={
+        "day": {"one": "{n} day", "other": "{n} days"},
+        "week": {"one": "{n} week", "other": "{n} weeks"},
+        "month": {"one": "{n} month", "other": "{n} months"},
+        "year": {"one": "{n} year", "other": "{n} years"},
+    },
+    half="{n}\u00bd",
+    delimiter=", ",
+    just_born="Newborn",
+    stages={
+        "newborn": "Newborn",
+        "infant": "Infant",
+        "toddler": "Toddler",
+        "child": "Child",
+        "teenager": "Teenager",
+        "adult": "Adult",
+    },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} wk",
+            "month": "{n} mo",
+            "year": "{n} yr",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}d",
+            "week": "{n}w",
+            "month": "{n}m",
+            "year": "{n}y",
+        },
+        delimiter="",
+    ),
+)

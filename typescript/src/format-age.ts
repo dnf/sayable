@@ -1,3 +1,6 @@
+import type { AgeLocale, Compactness, UnitForms } from './locale.js';
+import { en, resolveUnit } from './locale.js';
+
 /** Parsed date components and derived calendar months / elapsed days. */
 interface AgeComponents {
   months: number;
@@ -38,96 +41,145 @@ function parseAge(dateOfBirth: string | null | undefined, asOf?: string): AgeCom
   return { months, diffDays };
 }
 
+/** Stage key derived from calendar months. */
+type StageKey = 'newborn' | 'infant' | 'toddler' | 'child' | 'teenager' | 'adult';
+
+function stageKey(months: number): StageKey {
+  if (months < 2) return 'newborn';
+  if (months < 12) return 'infant';
+  if (months < 36) return 'toddler';
+  if (months < 156) return 'child';
+  if (months < 216) return 'teenager';
+  return 'adult';
+}
+
+/** Resolved unit set for a given compactness level. */
+interface ResolvedUnits {
+  day: UnitForms;
+  week: UnitForms;
+  month: UnitForms;
+  year: UnitForms;
+}
+
 /**
- * Human-friendly age string for young children (≤3 years).
- * - 0 days    → "Newborn"
- * - 1–6 days  → "3 days"
- * - 7 days–<3 months → "2 weeks, 4 days"
- * - 3–23 months → "14 months"
- * - 24–35 months → "2 years, 3 months"
- * - 3–6 years → "3 years", "3½ years", "4 years", …
- * - 7+ years → "7 years"
+ * Locale-aware age formatter.
  *
- * Calendar-month boundaries use day-of-month clamping: a child born on the
- * 31st turns N months on the last day of a 30-day (or shorter) month.
+ * @example
+ * ```ts
+ * const pt = new ParentTime(en);
+ * pt.formatAge('2025-01-01', '2025-07-15');   // "6 months"
+ *
+ * const ptShort = new ParentTime(en, 'short');
+ * ptShort.formatAge('2025-01-01', '2025-07-15'); // "6 mo"
+ *
+ * const ptCompact = new ParentTime(en, 'compact');
+ * ptCompact.formatAge('2025-01-01', '2025-07-15'); // "6m"
+ * ```
+ */
+export class ParentTime {
+  private readonly locale: AgeLocale;
+  private readonly units: ResolvedUnits;
+  private readonly half: string;
+  private readonly delimiter: string;
+  private readonly justBorn: string;
+
+  constructor(locale: AgeLocale, compactness: Compactness = 'normal') {
+    this.locale = locale;
+    const ovr = compactness === 'short' ? locale.short
+      : compactness === 'compact' ? locale.compact
+        : undefined;
+    this.units = {
+      day:   ovr?.units?.day   ?? locale.units.day,
+      week:  ovr?.units?.week  ?? locale.units.week,
+      month: ovr?.units?.month ?? locale.units.month,
+      year:  ovr?.units?.year  ?? locale.units.year,
+    };
+    this.half = ovr?.half ?? locale.half;
+    this.delimiter = ovr?.delimiter ?? locale.delimiter;
+    this.justBorn = ovr?.justBorn ?? locale.justBorn;
+  }
+
+  /**
+   * Human-friendly age string.
+   *
+   * @param dateOfBirth - YYYY-MM-DD date string
+   * @param asOf - YYYY-MM-DD reference date (defaults to today)
+   */
+  formatAge(dateOfBirth: string | null | undefined, asOf?: string): string | null {
+    const age = parseAge(dateOfBirth, asOf);
+    if (!age) return null;
+    const { months, diffDays } = age;
+    const loc = this.locale;
+
+    // Tier 1: 0–6 days
+    if (diffDays === 0) return this.justBorn;
+    if (diffDays < 7) return resolveUnit(diffDays, this.units.day, loc);
+
+    // Tier 2: weeks + days until 3 calendar months
+    if (months < 3) {
+      const weeks = Math.floor(diffDays / 7);
+      const days = diffDays % 7;
+      let result = resolveUnit(weeks, this.units.week, loc);
+      if (days > 0) result += this.delimiter + resolveUnit(days, this.units.day, loc);
+      return result;
+    }
+
+    // Tier 3: 3–23 months
+    if (months < 24) return resolveUnit(months, this.units.month, loc);
+
+    // Tier 4: 24–35 months → years + months
+    if (months < 36) {
+      const years = Math.floor(months / 12);
+      const rem = months % 12;
+      if (rem === 0) return resolveUnit(years, this.units.year, loc);
+      return resolveUnit(years, this.units.year, loc) + this.delimiter + resolveUnit(rem, this.units.month, loc);
+    }
+
+    // Tier 5: 3–6 years → years with half marker
+    if (months < 84) {
+      const years = Math.floor(months / 12);
+      const rem = months % 12;
+      return rem >= 6
+        ? resolveUnit(years, this.units.year, loc, this.half)
+        : resolveUnit(years, this.units.year, loc);
+    }
+
+    // Tier 6: 7+ years
+    return resolveUnit(Math.floor(months / 12), this.units.year, loc);
+  }
+
+  /**
+   * Developmental stage label based on age.
+   *
+   * @param dateOfBirth - YYYY-MM-DD date string
+   * @param asOf - YYYY-MM-DD reference date (defaults to today)
+   */
+  formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null {
+    const age = parseAge(dateOfBirth, asOf);
+    if (!age) return null;
+    return this.locale.stages[stageKey(age.months)];
+  }
+}
+
+// Default English instance for bare convenience functions
+const _default = new ParentTime(en);
+
+/**
+ * Human-friendly age string using the default English locale (normal compactness).
  *
  * @param dateOfBirth - YYYY-MM-DD date string
  * @param asOf - YYYY-MM-DD reference date (defaults to today)
  */
 export function formatAge(dateOfBirth: string | null | undefined, asOf?: string): string | null {
-  const age = parseAge(dateOfBirth, asOf);
-  if (!age) return null;
-  const { months, diffDays } = age;
-
-  // Tier 1: 0–6 days
-  if (diffDays === 0) return 'Newborn';
-  if (diffDays < 7) {
-    return diffDays === 1 ? '1 day' : `${String(diffDays)} days`;
-  }
-
-  // Tier 2: weeks + days until 3 calendar months
-  if (months < 3) {
-    const weeks = Math.floor(diffDays / 7);
-    const days = diffDays % 7;
-    let result = weeks === 1 ? '1 week' : `${String(weeks)} weeks`;
-    if (days > 0) {
-      result += days === 1 ? ', 1 day' : `, ${String(days)} days`;
-    }
-    return result;
-  }
-
-  // Tier 3: 3–23 months
-  if (months < 24) {
-    return `${String(months)} months`;
-  }
-
-  // Tier 4: 24–35 months → years + months
-  if (months < 36) {
-    const years = Math.floor(months / 12);
-    const rem = months % 12;
-    if (rem === 0) return `${String(years)} years`;
-    return rem === 1
-      ? `${String(years)} years, 1 month`
-      : `${String(years)} years, ${String(rem)} months`;
-  }
-
-  // Tier 5: 3–6 years → years with ½ marker
-  if (months < 84) {
-    const years = Math.floor(months / 12);
-    const rem = months % 12;
-    return rem >= 6 ? `${String(years)}\u00BD years` : `${String(years)} years`;
-  }
-
-  // Tier 6: 7+ years
-  return `${String(Math.floor(months / 12))} years`;
+  return _default.formatAge(dateOfBirth, asOf);
 }
 
 /**
- * Developmental stage label based on age.
- *
- * | Stage        | Age range          |
- * |--------------|--------------------|
- * | Newborn      | 0–1 months         |
- * | Infant       | 2–11 months        |
- * | Toddler      | 1–2 years          |
- * | Child        | 3–12 years         |
- * | Teenager     | 13–17 years        |
- * | Adult        | 18+ years          |
- *
- * Boundaries follow AAP/CDC consensus.
+ * Developmental stage label using the default English locale.
  *
  * @param dateOfBirth - YYYY-MM-DD date string
  * @param asOf - YYYY-MM-DD reference date (defaults to today)
  */
 export function formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null {
-  const age = parseAge(dateOfBirth, asOf);
-  if (!age) return null;
-  const { months } = age;
-
-  if (months < 2) return 'Newborn';
-  if (months < 12) return 'Infant';
-  if (months < 36) return 'Toddler';
-  if (months < 156) return 'Child';
-  if (months < 216) return 'Teenager';
-  return 'Adult';
+  return _default.formatStage(dateOfBirth, asOf);
 }

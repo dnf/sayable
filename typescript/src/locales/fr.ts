@@ -1,0 +1,23 @@
+import type { AgeLocale } from '../locale.js';
+
+export const fr: AgeLocale = {
+  code: 'fr',
+  plural: (n) => (n === 0 || n === 1 ? 'one' : 'other'),
+  units: {
+    day:   { one: '{n} jour', other: '{n} jours' },
+    week:  { one: '{n} semaine', other: '{n} semaines' },
+    month: '{n} mois',
+    year:  { one: '{n} an', other: '{n} ans' },
+  },
+  half: '{0} et demi',
+  delimiter: ', ',
+  justBorn: 'Nouveau-né',
+  stages: {
+    newborn: 'Nouveau-né',
+    infant: 'Nourrisson',
+    toddler: 'Bambin',
+    child: 'Enfant',
+    teenager: 'Adolescent',
+    adult: 'Adulte',
+  },
+};

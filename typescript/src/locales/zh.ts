@@ -1,0 +1,23 @@
+import type { AgeLocale } from '../locale.js';
+
+export const zh: AgeLocale = {
+  code: 'zh',
+  plural: () => 'other',
+  units: {
+    day:   '{n}天',
+    week:  '{n}周',
+    month: '{n}个月',
+    year:  '{n}岁',
+  },
+  half: '{0}半',
+  delimiter: '',
+  justBorn: '新生儿',
+  stages: {
+    newborn: '新生儿',
+    infant: '婴儿',
+    toddler: '幼儿',
+    child: '儿童',
+    teenager: '青少年',
+    adult: '成人',
+  },
+};

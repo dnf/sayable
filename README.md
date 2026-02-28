@@ -119,11 +119,171 @@ format_age(None)                        # None
 format_stage("2030-01-01", "2025-06-15")  # None
 ```
 
+## Internationalization (i18n)
+
+`parent-time` supports formatting ages in any language via locale objects. The `ParentTime` class takes a locale at construction time:
+
+### TypeScript
+
+```typescript
+import { ParentTime, en, type AgeLocale } from 'parent-time';
+
+// Use built-in English locale
+const pt = new ParentTime(en);
+pt.formatAge('2025-01-01', '2025-07-15');   // "6 months"
+pt.formatStage('2025-01-01', '2025-07-15'); // "Infant"
+
+// Create a custom locale
+const ja: AgeLocale = {
+  code: 'ja',
+  plural: () => 'other',  // Japanese has no plural forms
+  units: {
+    day:   '{n}日',
+    week:  '{n}週',
+    month: '{n}ヶ月',
+    year:  '{n}歳',
+  },
+  half: '半',
+  delimiter: '',
+  justBorn: '新生児',
+  stages: {
+    newborn: '新生児', infant: '乳児', toddler: '幼児',
+    child: '子供', teenager: '十代', adult: '成人',
+  },
+};
+
+const ptJa = new ParentTime(ja);
+ptJa.formatAge('2025-01-01', '2025-07-15');   // "6ヶ月"
+ptJa.formatStage('2025-01-01', '2025-07-15'); // "乳児"
+```
+
+### Python
+
+```python
+from parent_time import ParentTime, EN, AgeLocale
+
+# Use built-in English locale
+pt = ParentTime(EN)
+pt.format_age("2025-01-01", "2025-07-15")   # "6 months"
+pt.format_stage("2025-01-01", "2025-07-15") # "Infant"
+
+# Create a custom locale
+ja = AgeLocale(
+    code="ja",
+    plural=lambda _: "other",
+    units={
+        "day": "{n}日", "week": "{n}週",
+        "month": "{n}ヶ月", "year": "{n}歳",
+    },
+    half="半",
+    delimiter="",
+    just_born="新生児",
+    stages={
+        "newborn": "新生児", "infant": "乳児", "toddler": "幼児",
+        "child": "子供", "teenager": "十代", "adult": "成人",
+    },
+)
+
+pt_ja = ParentTime(ja)
+pt_ja.format_age("2025-01-01", "2025-07-15")   # "6ヶ月"
+pt_ja.format_stage("2025-01-01", "2025-07-15") # "乳児"
+```
+
+The standalone `formatAge` / `format_age` and `formatStage` / `format_stage` functions default to English and are fully backward compatible.
+
+### Compactness
+
+Each `ParentTime` instance can use one of three compactness levels:
+
+```typescript
+import { ParentTime, en } from 'parent-time';
+
+const normal  = new ParentTime(en);            // "3 months", "2 years, 1 month"
+const short   = new ParentTime(en, 'short');   // "3 mo", "2 yr, 1 mo"
+const compact = new ParentTime(en, 'compact'); // "3m", "2y1m"
+```
+
+```python
+from parent_time import ParentTime, EN
+
+normal  = ParentTime(EN)                 # "3 months", "2 years, 1 month"
+short   = ParentTime(EN, "short")        # "3 mo", "2 yr, 1 mo"
+compact = ParentTime(EN, "compact")      # "3m", "2y1m"
+```
+
+Compactness overrides are defined per-locale. Currently the English locale provides distinct short and compact forms; all other built-in locales return the same output for all three levels (you can add overrides for any locale via the `short` and `compact` fields).
+
+### Built-in locales
+
+| Code | Language | Import |
+|------|----------|--------|
+| `en` | English | `en` (TypeScript) / `EN` (Python) |
+| `ar` | Arabic | `ar` / `AR` |
+| `bn` | Bengali | `bn` / `BN` |
+| `de` | German | `de` / `DE` |
+| `es` | Spanish | `es` / `ES` |
+| `fa` | Persian (Farsi) | `fa` / `FA` |
+| `fr` | French | `fr` / `FR` |
+| `gu` | Gujarati | `gu` / `GU` |
+| `hi` | Hindi | `hi` / `HI` |
+| `it` | Italian | `it` / `IT` |
+| `ja` | Japanese | `ja` / `JA` |
+| `jv` | Javanese | `jv` / `JV` |
+| `ko` | Korean | `ko` / `KO` |
+| `mr` | Marathi | `mr` / `MR` |
+| `ms` | Malay | `ms` / `MS` |
+| `pa` | Punjabi | `pa` / `PA` |
+| `pt` | Portuguese | `pt` / `PT` |
+| `ru` | Russian | `ru` / `RU` |
+| `ta` | Tamil | `ta` / `TA` |
+| `te` | Telugu | `te` / `TE` |
+| `th` | Thai | `th` / `TH` |
+| `tr` | Turkish | `tr` / `TR` |
+| `ur` | Urdu | `ur` / `UR` |
+| `vi` | Vietnamese | `vi` / `VI` |
+| `zh` | Chinese | `zh` / `ZH` |
+
+```typescript
+import { ParentTime, ja } from 'parent-time';
+const pt = new ParentTime(ja);
+pt.formatAge('2025-01-01', '2025-07-15'); // "6ヶ月"
+```
+
+```python
+from parent_time import ParentTime, JA
+pt = ParentTime(JA)
+pt.format_age("2025-01-01", "2025-07-15")  # "6ヶ月"
+```
+
+### Locale object
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `code` | `string` | BCP 47 language tag |
+| `plural` | `(count) → PluralCategory` | CLDR plural rule (`zero`, `one`, `two`, `few`, `many`, `other`) |
+| `units` | `{ day, week, month, year }` | `string` template or `{ one, other, … }` map — use `{n}` as placeholder |
+| `half` | `string` | Half-year template — `{n}` modifies the number (e.g. `"{n}½"` → "3½ years"), `{0}` wraps the expression (e.g. `"{0}半"` → "3歳半") |
+| `short?` | `CompactnessOverride` | Optional overrides for short display mode |
+| `compact?` | `CompactnessOverride` | Optional overrides for compact display mode |
+| `delimiter` | `string` | Separator between compound parts (e.g. `", "`) |
+| `justBorn` | `string` | Day-zero label (e.g. `"Newborn"`) |
+| `stages` | `{ newborn, infant, … }` | Stage name strings |
+| `formatNumber?` | `(n) → string` | Override number rendering (e.g. for non-Latin digits) |
+| `formatUnit?` | `(count, label) → string` | Override final unit assembly (e.g. for word order) |
+
 ## API
 
 ### TypeScript
 
 ```typescript
+// Class — locale set once at construction
+class ParentTime {
+  constructor(locale: AgeLocale, compactness?: Compactness);
+  formatAge(dateOfBirth: string | null | undefined, asOf?: string): string | null;
+  formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null;
+}
+
+// Bare functions — English default, backward compatible
 function formatAge(dateOfBirth: string | null | undefined, asOf?: string): string | null
 function formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null
 ```
@@ -131,6 +291,13 @@ function formatStage(dateOfBirth: string | null | undefined, asOf?: string): str
 ### Python
 
 ```python
+# Class — locale set once at construction
+class ParentTime:
+    def __init__(self, locale: AgeLocale, compactness: Compactness = "normal") -> None: ...
+    def format_age(self, date_of_birth: str | None, as_of: str | None = None) -> str | None: ...
+    def format_stage(self, date_of_birth: str | None, as_of: str | None = None) -> str | None: ...
+
+# Bare functions — English default, backward compatible
 def format_age(date_of_birth: str | None, as_of: str | None = None) -> str | None
 def format_stage(date_of_birth: str | None, as_of: str | None = None) -> str | None
 ```
@@ -146,7 +313,7 @@ def format_stage(date_of_birth: str | None, as_of: str | None = None) -> str | N
 
 Those libraries calculate precise durations, but none of them format ages the way parents talk. You'd need to write the tiered logic yourself — handle the newborn case, switch from weeks to months at 3 months, keep saying "months" until 24 months instead of switching to years, show years+months for toddlers... and get the short-month clamping right for February and 30-day months.
 
-That's exactly what `parent-time` does, in two zero-dependency functions, tested against 115 deterministic date pairs including leap years, born-on-31st edge cases, and cross-year February boundaries.
+That's exactly what `parent-time` does, in two zero-dependency functions, tested against 145+ deterministic date pairs including leap years, born-on-31st edge cases, and cross-year February boundaries.
 
 ## Design decisions
 
@@ -157,6 +324,7 @@ That's exactly what `parent-time` does, in two zero-dependency functions, tested
 - **½ marker for 3–6 year olds.** Parents say "she's four and a half." The ½ character (U+00BD) kicks in at 6+ months and drops off at age 7.
 - **"Newborn" at 0 days.** Because nobody says "0 days old."
 - **Stage boundaries follow AAP/CDC.** Newborn (<2 mo), Infant (2–11 mo), Toddler (1–2 yr), Child (3–12 yr), Teenager (13–17 yr), Adult (18+).
+- **i18n via locale objects.** No framework, no dependency — just a plain data object with a pluralization callback. Supports any language's plural rules, number formatting, and word order.
 
 ## Contributing
 

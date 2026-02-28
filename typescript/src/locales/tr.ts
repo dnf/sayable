@@ -1,0 +1,23 @@
+import type { AgeLocale } from '../locale.js';
+
+export const tr: AgeLocale = {
+  code: 'tr',
+  plural: (n) => (n === 1 ? 'one' : 'other'),
+  units: {
+    day:   { one: '{n} gün', other: '{n} gün' },
+    week:  { one: '{n} hafta', other: '{n} hafta' },
+    month: { one: '{n} ay', other: '{n} ay' },
+    year:  { one: '{n} yaş', other: '{n} yaş' },
+  },
+  half: '{n} buçuk',
+  delimiter: ', ',
+  justBorn: 'Yeni doğan',
+  stages: {
+    newborn: 'Yeni doğan',
+    infant: 'Bebek',
+    toddler: 'Küçük çocuk',
+    child: 'Çocuk',
+    teenager: 'Ergen',
+    adult: 'Yetişkin',
+  },
+};

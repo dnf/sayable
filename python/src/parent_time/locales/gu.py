@@ -1,0 +1,25 @@
+"""Gujarati locale."""
+
+from parent_time.locale import AgeLocale
+
+GU = AgeLocale(
+    code="gu",
+    plural=lambda n: "one" if n in (0, 1) else "other",
+    units={
+        "day": {"one": "{n} દિવસ", "other": "{n} દિવસ"},
+        "week": {"one": "{n} અઠવાડિયું", "other": "{n} અઠવાડિયા"},
+        "month": {"one": "{n} મહિનો", "other": "{n} મહિના"},
+        "year": {"one": "{n} વર્ષ", "other": "{n} વર્ષ"},
+    },
+    half="સાડા {n}",
+    delimiter=", ",
+    just_born="નવજાત",
+    stages={
+        "newborn": "નવજાત",
+        "infant": "શિશુ",
+        "toddler": "નાનું બાળક",
+        "child": "બાળક",
+        "teenager": "કિશોર",
+        "adult": "પુખ્ત",
+    },
+)

@@ -5,9 +5,7 @@ from __future__ import annotations
 from datetime import date
 from unittest.mock import patch
 
-import pytest
-
-from parent_time import format_age, format_stage
+from parent_time import EN, AgeLocale, ParentTime, format_age, format_stage
 
 
 # ================================================================
@@ -445,3 +443,179 @@ class TestStageDefaultAsOf:
             assert format_stage("2025-06-15") == "Newborn"
             assert format_stage("2020-01-01") == "Child"
             assert format_stage("1980-01-01") == "Adult"
+
+
+# ================================================================
+# ParentTime class
+# ================================================================
+
+
+class TestParentTimeEnglish:
+    """ParentTime with built-in English locale produces identical output."""
+
+    def test_format_age_delegates(self) -> None:
+        pt = ParentTime(EN)
+        assert pt.format_age("2025-06-15", "2025-06-15") == "Newborn"
+        assert pt.format_age("2025-06-12", "2025-06-15") == "3 days"
+        assert pt.format_age("2025-06-07", "2025-06-15") == "1 week, 1 day"
+        assert pt.format_age("2025-01-15", "2025-07-15") == "6 months"
+        assert pt.format_age("2023-06-15", "2025-07-15") == "2 years, 1 month"
+        assert pt.format_age("2022-06-15", "2025-12-15") == "3½ years"
+        assert pt.format_age("2018-06-15", "2025-06-15") == "7 years"
+
+    def test_format_stage_delegates(self) -> None:
+        pt = ParentTime(EN)
+        assert pt.format_stage("2025-06-15", "2025-06-15") == "Newborn"
+        assert pt.format_stage("2025-01-15", "2025-06-15") == "Infant"
+        assert pt.format_stage("2024-06-15", "2025-06-15") == "Toddler"
+        assert pt.format_stage("2022-06-15", "2025-06-15") == "Child"
+        assert pt.format_stage("2012-06-15", "2025-06-15") == "Teenager"
+        assert pt.format_stage("2007-06-15", "2025-06-15") == "Adult"
+
+    def test_returns_none_for_invalid(self) -> None:
+        pt = ParentTime(EN)
+        assert pt.format_age(None, "2025-06-15") is None
+        assert pt.format_stage(None, "2025-06-15") is None
+
+
+class TestParentTimeSpanish:
+    """ParentTime with a mock Spanish-like locale."""
+
+    ES = AgeLocale(
+        code="es",
+        plural=lambda n: "one" if n == 1 else "other",
+        units={
+            "day": {"one": "{n} día", "other": "{n} días"},
+            "week": {"one": "{n} semana", "other": "{n} semanas"},
+            "month": {"one": "{n} mes", "other": "{n} meses"},
+            "year": {"one": "{n} año", "other": "{n} años"},
+        },
+        half="{n} y medio",
+        delimiter=", ",
+        just_born="Recién nacido",
+        stages={
+            "newborn": "Recién nacido",
+            "infant": "Bebé",
+            "toddler": "Niño pequeño",
+            "child": "Niño",
+            "teenager": "Adolescente",
+            "adult": "Adulto",
+        },
+    )
+
+    def setup_method(self) -> None:
+        self.pt = ParentTime(self.ES)
+
+    def test_just_born_label(self) -> None:
+        assert self.pt.format_age("2025-06-15", "2025-06-15") == "Recién nacido"
+
+    def test_singular_day(self) -> None:
+        assert self.pt.format_age("2025-06-14", "2025-06-15") == "1 día"
+
+    def test_plural_days(self) -> None:
+        assert self.pt.format_age("2025-06-12", "2025-06-15") == "3 días"
+
+    def test_singular_week(self) -> None:
+        assert self.pt.format_age("2025-06-08", "2025-06-15") == "1 semana"
+
+    def test_compound_weeks_days(self) -> None:
+        assert self.pt.format_age("2025-06-07", "2025-06-15") == "1 semana, 1 día"
+
+    def test_plural_weeks_plural_days(self) -> None:
+        assert self.pt.format_age("2025-05-26", "2025-06-15") == "2 semanas, 6 días"
+
+    def test_months(self) -> None:
+        assert self.pt.format_age("2025-01-15", "2025-07-15") == "6 meses"
+
+    def test_singular_month_in_compound(self) -> None:
+        assert self.pt.format_age("2023-06-15", "2025-07-15") == "2 años, 1 mes"
+
+    def test_years_months_compound(self) -> None:
+        assert self.pt.format_age("2023-06-15", "2025-12-15") == "2 años, 6 meses"
+
+    def test_half_marker(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 y medio años"
+
+    def test_integer_years(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-06-15") == "3 años"
+
+    def test_7_plus_years(self) -> None:
+        assert self.pt.format_age("2018-06-15", "2025-06-15") == "7 años"
+
+    def test_stage_labels(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15") == "Recién nacido"
+        assert self.pt.format_stage("2025-01-15", "2025-06-15") == "Bebé"
+        assert self.pt.format_stage("2024-06-15", "2025-06-15") == "Niño pequeño"
+        assert self.pt.format_stage("2022-06-15", "2025-06-15") == "Niño"
+        assert self.pt.format_stage("2012-06-15", "2025-06-15") == "Adolescente"
+        assert self.pt.format_stage("2007-06-15", "2025-06-15") == "Adulto"
+
+    def test_null_handling(self) -> None:
+        assert self.pt.format_age(None, "2025-06-15") is None
+        assert self.pt.format_stage(None, "2025-06-15") is None
+
+
+# ================================================================
+# Compactness levels
+# ================================================================
+
+
+class TestCompactnessShort:
+    def setup_method(self) -> None:
+        self.pt = ParentTime(EN, "short")
+
+    def test_days(self) -> None:
+        assert self.pt.format_age("2025-06-12", "2025-06-15") == "3 d"
+
+    def test_weeks(self) -> None:
+        assert self.pt.format_age("2025-06-08", "2025-06-15") == "1 wk"
+
+    def test_weeks_days(self) -> None:
+        assert self.pt.format_age("2025-06-07", "2025-06-15") == "1 wk, 1 d"
+
+    def test_months(self) -> None:
+        assert self.pt.format_age("2025-01-15", "2025-07-15") == "6 mo"
+
+    def test_years_months(self) -> None:
+        assert self.pt.format_age("2023-06-15", "2025-07-15") == "2 yr, 1 mo"
+
+    def test_half_years(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3½ yr"
+
+    def test_integer_years(self) -> None:
+        assert self.pt.format_age("2018-06-15", "2025-06-15") == "7 yr"
+
+    def test_just_born_unchanged(self) -> None:
+        assert self.pt.format_age("2025-06-15", "2025-06-15") == "Newborn"
+
+    def test_stages_unchanged(self) -> None:
+        assert self.pt.format_stage("2025-01-15", "2025-06-15") == "Infant"
+
+
+class TestCompactnessCompact:
+    def setup_method(self) -> None:
+        self.pt = ParentTime(EN, "compact")
+
+    def test_days(self) -> None:
+        assert self.pt.format_age("2025-06-12", "2025-06-15") == "3d"
+
+    def test_weeks(self) -> None:
+        assert self.pt.format_age("2025-06-08", "2025-06-15") == "1w"
+
+    def test_weeks_days_no_delimiter(self) -> None:
+        assert self.pt.format_age("2025-06-07", "2025-06-15") == "1w1d"
+
+    def test_months(self) -> None:
+        assert self.pt.format_age("2025-01-15", "2025-07-15") == "6m"
+
+    def test_years_months_no_delimiter(self) -> None:
+        assert self.pt.format_age("2023-06-15", "2025-07-15") == "2y1m"
+
+    def test_half_years(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3½y"
+
+    def test_integer_years(self) -> None:
+        assert self.pt.format_age("2018-06-15", "2025-06-15") == "7y"
+
+    def test_just_born_unchanged(self) -> None:
+        assert self.pt.format_age("2025-06-15", "2025-06-15") == "Newborn"

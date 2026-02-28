@@ -1,0 +1,25 @@
+"""Korean locale."""
+
+from parent_time.locale import AgeLocale
+
+KO = AgeLocale(
+    code="ko",
+    plural=lambda _n: "other",
+    units={
+        "day": "{n}일",
+        "week": "{n}주",
+        "month": "{n}개월",
+        "year": "{n}살",
+    },
+    half="{0} 반",
+    delimiter=" ",
+    just_born="신생아",
+    stages={
+        "newborn": "신생아",
+        "infant": "영아",
+        "toddler": "유아",
+        "child": "아동",
+        "teenager": "청소년",
+        "adult": "성인",
+    },
+)

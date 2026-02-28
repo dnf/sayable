@@ -1,0 +1,25 @@
+"""Bengali locale."""
+
+from parent_time.locale import AgeLocale
+
+BN = AgeLocale(
+    code="bn",
+    plural=lambda n: "one" if n in (0, 1) else "other",
+    units={
+        "day": {"one": "{n} দিন", "other": "{n} দিন"},
+        "week": {"one": "{n} সপ্তাহ", "other": "{n} সপ্তাহ"},
+        "month": {"one": "{n} মাস", "other": "{n} মাস"},
+        "year": {"one": "{n} বছর", "other": "{n} বছর"},
+    },
+    half="সাড়ে {n}",
+    delimiter=", ",
+    just_born="নবজাতক",
+    stages={
+        "newborn": "নবজাতক",
+        "infant": "শিশু",
+        "toddler": "ছোট শিশু",
+        "child": "শিশু",
+        "teenager": "কিশোর",
+        "adult": "প্রাপ্তবয়স্ক",
+    },
+)

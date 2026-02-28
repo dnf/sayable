@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { formatAge, formatStage } from '../src/format-age';
+import { formatAge, formatStage, ParentTime } from '../src/format-age';
+import { en, type AgeLocale } from '../src/locale';
 
 // All tests use explicit (dob, asOf) pairs for determinism.
 
@@ -586,6 +587,206 @@ describe('formatStage', () => {
       expect(formatStage('2025-06-15')).toBe('Newborn');
       expect(formatStage('2020-01-01')).toBe('Child');
       expect(formatStage('1980-01-01')).toBe('Adult');
+    });
+  });
+});
+
+// ================================================================
+// ParentTime class
+// ================================================================
+describe('ParentTime', () => {
+  describe('with English locale', () => {
+    const pt = new ParentTime(en);
+
+    it('formatAge delegates correctly', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('Newborn');
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('3 days');
+      expect(pt.formatAge('2025-06-07', '2025-06-15')).toBe('1 week, 1 day');
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('6 months');
+      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('2 years, 1 month');
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3½ years');
+      expect(pt.formatAge('2018-06-15', '2025-06-15')).toBe('7 years');
+    });
+
+    it('formatStage delegates correctly', () => {
+      expect(pt.formatStage('2025-06-15', '2025-06-15')).toBe('Newborn');
+      expect(pt.formatStage('2025-01-15', '2025-06-15')).toBe('Infant');
+      expect(pt.formatStage('2024-06-15', '2025-06-15')).toBe('Toddler');
+      expect(pt.formatStage('2022-06-15', '2025-06-15')).toBe('Child');
+      expect(pt.formatStage('2012-06-15', '2025-06-15')).toBe('Teenager');
+      expect(pt.formatStage('2007-06-15', '2025-06-15')).toBe('Adult');
+    });
+
+    it('returns null for invalid input', () => {
+      expect(pt.formatAge(null, '2025-06-15')).toBeNull();
+      expect(pt.formatStage(undefined, '2025-06-15')).toBeNull();
+    });
+  });
+
+  describe('with Spanish-like locale', () => {
+    const es: AgeLocale = {
+      code: 'es',
+      plural: (n) => (n === 1 ? 'one' : 'other'),
+      units: {
+        day:   { one: '{n} día',    other: '{n} días' },
+        week:  { one: '{n} semana', other: '{n} semanas' },
+        month: { one: '{n} mes',    other: '{n} meses' },
+        year:  { one: '{n} año',    other: '{n} años' },
+      },
+      half: '{n} y medio',
+      delimiter: ', ',
+      justBorn: 'Recién nacido',
+      stages: {
+        newborn: 'Recién nacido',
+        infant: 'Bebé',
+        toddler: 'Niño pequeño',
+        child: 'Niño',
+        teenager: 'Adolescente',
+        adult: 'Adulto',
+      },
+    };
+
+    const pt = new ParentTime(es);
+
+    it('justBorn label', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('Recién nacido');
+    });
+
+    it('singular day', () => {
+      expect(pt.formatAge('2025-06-14', '2025-06-15')).toBe('1 día');
+    });
+
+    it('plural days', () => {
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('3 días');
+    });
+
+    it('singular week', () => {
+      expect(pt.formatAge('2025-06-08', '2025-06-15')).toBe('1 semana');
+    });
+
+    it('compound weeks+days with delimiter', () => {
+      expect(pt.formatAge('2025-06-07', '2025-06-15')).toBe('1 semana, 1 día');
+    });
+
+    it('plural weeks + plural days', () => {
+      expect(pt.formatAge('2025-05-26', '2025-06-15')).toBe('2 semanas, 6 días');
+    });
+
+    it('months', () => {
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('6 meses');
+    });
+
+    it('singular month in compound', () => {
+      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('2 años, 1 mes');
+    });
+
+    it('years + months compound', () => {
+      expect(pt.formatAge('2023-06-15', '2025-12-15')).toBe('2 años, 6 meses');
+    });
+
+    it('half marker', () => {
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 y medio años');
+    });
+
+    it('integer years (no half)', () => {
+      expect(pt.formatAge('2022-06-15', '2025-06-15')).toBe('3 años');
+    });
+
+    it('7+ years', () => {
+      expect(pt.formatAge('2018-06-15', '2025-06-15')).toBe('7 años');
+    });
+
+    it('stage labels', () => {
+      expect(pt.formatStage('2025-06-15', '2025-06-15')).toBe('Recién nacido');
+      expect(pt.formatStage('2025-01-15', '2025-06-15')).toBe('Bebé');
+      expect(pt.formatStage('2024-06-15', '2025-06-15')).toBe('Niño pequeño');
+      expect(pt.formatStage('2022-06-15', '2025-06-15')).toBe('Niño');
+      expect(pt.formatStage('2012-06-15', '2025-06-15')).toBe('Adolescente');
+      expect(pt.formatStage('2007-06-15', '2025-06-15')).toBe('Adulto');
+    });
+
+    it('null handling', () => {
+      expect(pt.formatAge(null, '2025-06-15')).toBeNull();
+      expect(pt.formatStage(null, '2025-06-15')).toBeNull();
+    });
+  });
+
+  // ================================================================
+  // Compactness levels
+  // ================================================================
+  describe('compactness: short', () => {
+    const pt = new ParentTime(en, 'short');
+
+    it('days', () => {
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('3 d');
+    });
+
+    it('weeks', () => {
+      expect(pt.formatAge('2025-06-08', '2025-06-15')).toBe('1 wk');
+    });
+
+    it('weeks + days', () => {
+      expect(pt.formatAge('2025-06-07', '2025-06-15')).toBe('1 wk, 1 d');
+    });
+
+    it('months', () => {
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('6 mo');
+    });
+
+    it('years + months', () => {
+      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('2 yr, 1 mo');
+    });
+
+    it('half years', () => {
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3½ yr');
+    });
+
+    it('integer years', () => {
+      expect(pt.formatAge('2018-06-15', '2025-06-15')).toBe('7 yr');
+    });
+
+    it('justBorn unchanged', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('Newborn');
+    });
+
+    it('stages unchanged', () => {
+      expect(pt.formatStage('2025-01-15', '2025-06-15')).toBe('Infant');
+    });
+  });
+
+  describe('compactness: compact', () => {
+    const pt = new ParentTime(en, 'compact');
+
+    it('days', () => {
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('3d');
+    });
+
+    it('weeks', () => {
+      expect(pt.formatAge('2025-06-08', '2025-06-15')).toBe('1w');
+    });
+
+    it('weeks + days (no delimiter)', () => {
+      expect(pt.formatAge('2025-06-07', '2025-06-15')).toBe('1w1d');
+    });
+
+    it('months', () => {
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('6m');
+    });
+
+    it('years + months (no delimiter)', () => {
+      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('2y1m');
+    });
+
+    it('half years', () => {
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3½y');
+    });
+
+    it('integer years', () => {
+      expect(pt.formatAge('2018-06-15', '2025-06-15')).toBe('7y');
+    });
+
+    it('justBorn unchanged', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('Newborn');
     });
   });
 });

@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import calendar
 from datetime import date
+from typing import Literal
+
+from parent_time.locale import EN, AgeLocale, UnitForms, resolve_unit
 
 
 def _parse_age(
@@ -40,105 +43,155 @@ def _parse_age(
     return months, diff_days
 
 
+def _stage_key(months: int) -> str:
+    """Map calendar months to a stage key."""
+    if months < 2:
+        return "newborn"
+    if months < 12:
+        return "infant"
+    if months < 36:
+        return "toddler"
+    if months < 156:
+        return "child"
+    if months < 216:
+        return "teenager"
+    return "adult"
+
+
+def _pick(override: object | None, attr: str, default: object) -> object:
+    """Pick override value if set (not None), else default."""
+    if override is not None:
+        val = getattr(override, attr, None)
+        if val is not None:
+            return val
+    return default
+
+
+class ParentTime:
+    """Locale-aware age formatter.
+
+    Example::
+
+        pt = ParentTime(EN)
+        pt.format_age("2025-01-01", "2025-07-15")   # "6 months"
+
+        pt_short = ParentTime(EN, "short")
+        pt_short.format_age("2025-01-01", "2025-07-15")  # "6 mo"
+
+        pt_compact = ParentTime(EN, "compact")
+        pt_compact.format_age("2025-01-01", "2025-07-15")  # "6m"
+    """
+
+    def __init__(
+        self,
+        locale: AgeLocale,
+        compactness: Literal["normal", "short", "compact"] = "normal",
+    ) -> None:
+        self._locale = locale
+        ovr = (
+            locale.short if compactness == "short"
+            else locale.compact if compactness == "compact"
+            else None
+        )
+        ovr_units = ovr.units if ovr else None
+        self._units: dict[str, UnitForms] = {
+            k: (ovr_units.get(k) if ovr_units else None) or locale.units[k]
+            for k in ("day", "week", "month", "year")
+        }
+        self._half: str = str(_pick(ovr, "half", locale.half))
+        self._delimiter: str = str(_pick(ovr, "delimiter", locale.delimiter))
+        self._just_born: str = str(_pick(ovr, "just_born", locale.just_born))
+
+    def format_age(
+        self,
+        date_of_birth: str | None,
+        as_of: str | None = None,
+    ) -> str | None:
+        """Human-friendly age string.
+
+        Args:
+            date_of_birth: YYYY-MM-DD date string.
+            as_of: YYYY-MM-DD reference date (defaults to today).
+        """
+        parsed = _parse_age(date_of_birth, as_of)
+        if parsed is None:
+            return None
+        months, diff_days = parsed
+        loc = self._locale
+
+        # Tier 1: 0–6 days
+        if diff_days == 0:
+            return self._just_born
+        if diff_days < 7:
+            return resolve_unit(diff_days, self._units["day"], loc)
+
+        # Tier 2: weeks + days until 3 calendar months
+        if months < 3:
+            weeks = diff_days // 7
+            days = diff_days % 7
+            result = resolve_unit(weeks, self._units["week"], loc)
+            if days > 0:
+                result += self._delimiter + resolve_unit(days, self._units["day"], loc)
+            return result
+
+        # Tier 3: 3–23 months
+        if months < 24:
+            return resolve_unit(months, self._units["month"], loc)
+
+        # Tier 4: 24–35 months → years + months
+        if months < 36:
+            years = months // 12
+            rem = months % 12
+            if rem == 0:
+                return resolve_unit(years, self._units["year"], loc)
+            return (
+                resolve_unit(years, self._units["year"], loc)
+                + self._delimiter
+                + resolve_unit(rem, self._units["month"], loc)
+            )
+
+        # Tier 5: 3–6 years → years with half marker
+        if months < 84:
+            years = months // 12
+            rem = months % 12
+            if rem >= 6:
+                return resolve_unit(years, self._units["year"], loc, self._half)
+            return resolve_unit(years, self._units["year"], loc)
+
+        # Tier 6: 7+ years
+        return resolve_unit(months // 12, self._units["year"], loc)
+
+    def format_stage(
+        self,
+        date_of_birth: str | None,
+        as_of: str | None = None,
+    ) -> str | None:
+        """Developmental stage label based on age.
+
+        Args:
+            date_of_birth: YYYY-MM-DD date string.
+            as_of: YYYY-MM-DD reference date (defaults to today).
+        """
+        parsed = _parse_age(date_of_birth, as_of)
+        if parsed is None:
+            return None
+        return self._locale.stages[_stage_key(parsed[0])]
+
+
+_default = ParentTime(EN)
+
+
 def format_age(
     date_of_birth: str | None,
     as_of: str | None = None,
 ) -> str | None:
-    """Human-friendly age string for young children.
-
-    - 0 days    → "Newborn"
-    - 1–6 days  → "3 days"
-    - 7 days–<3 months → "2 weeks, 4 days"
-    - 3–23 months → "14 months"
-    - 24–35 months → "2 years, 3 months"
-    - 3–6 years → "3 years", "3½ years", "4 years", …
-    - 7+ years → "7 years"
-
-    Calendar-month boundaries use day-of-month clamping: a child born on the
-    31st turns N months on the last day of a 30-day (or shorter) month.
-
-    Args:
-        date_of_birth: YYYY-MM-DD date string.
-        as_of: YYYY-MM-DD reference date (defaults to today).
-    """
-    parsed = _parse_age(date_of_birth, as_of)
-    if parsed is None:
-        return None
-    months, diff_days = parsed
-
-    # Tier 1: 0–6 days
-    if diff_days == 0:
-        return "Newborn"
-    if diff_days < 7:
-        return "1 day" if diff_days == 1 else f"{diff_days} days"
-
-    # Tier 2: weeks + days until 3 calendar months
-    if months < 3:
-        weeks = diff_days // 7
-        days = diff_days % 7
-        result = "1 week" if weeks == 1 else f"{weeks} weeks"
-        if days > 0:
-            result += ", 1 day" if days == 1 else f", {days} days"
-        return result
-
-    # Tier 3: 3–23 months
-    if months < 24:
-        return f"{months} months"
-
-    # Tier 4: 24–35 months → years + months
-    if months < 36:
-        years = months // 12
-        rem = months % 12
-        if rem == 0:
-            return f"{years} years"
-        if rem == 1:
-            return f"{years} years, 1 month"
-        return f"{years} years, {rem} months"
-
-    # Tier 5: 3–6 years → years with ½ marker
-    if months < 84:
-        years = months // 12
-        rem = months % 12
-        return f"{years}\u00bd years" if rem >= 6 else f"{years} years"
-
-    # Tier 6: 7+ years
-    return f"{months // 12} years"
+    """Human-friendly age string using the default English locale."""
+    return _default.format_age(date_of_birth, as_of)
 
 
 def format_stage(
     date_of_birth: str | None,
     as_of: str | None = None,
 ) -> str | None:
-    """Developmental stage label based on age.
-
-    | Stage        | Age range          |
-    |--------------|--------------------|
-    | Newborn      | 0–1 months         |
-    | Infant       | 2–11 months        |
-    | Toddler      | 1–2 years          |
-    | Child        | 3–12 years         |
-    | Teenager     | 13–17 years        |
-    | Adult        | 18+ years          |
-
-    Boundaries follow AAP/CDC consensus.
-
-    Args:
-        date_of_birth: YYYY-MM-DD date string.
-        as_of: YYYY-MM-DD reference date (defaults to today).
-    """
-    parsed = _parse_age(date_of_birth, as_of)
-    if parsed is None:
-        return None
-    months = parsed[0]
-
-    if months < 2:
-        return "Newborn"
-    if months < 12:
-        return "Infant"
-    if months < 36:
-        return "Toddler"
-    if months < 156:
-        return "Child"
-    if months < 216:
-        return "Teenager"
-    return "Adult"
+    """Developmental stage label using the default English locale."""
+    return _default.format_stage(date_of_birth, as_of)

@@ -1,0 +1,25 @@
+"""Thai locale."""
+
+from parent_time.locale import AgeLocale
+
+TH = AgeLocale(
+    code="th",
+    plural=lambda _n: "other",
+    units={
+        "day": "{n} วัน",
+        "week": "{n} สัปดาห์",
+        "month": "{n} เดือน",
+        "year": "{n} ปี",
+    },
+    half="{0}ครึ่ง",
+    delimiter=" ",
+    just_born="แรกเกิด",
+    stages={
+        "newborn": "แรกเกิด",
+        "infant": "ทารก",
+        "toddler": "เด็กวัยเตาะแตะ",
+        "child": "เด็ก",
+        "teenager": "วัยรุ่น",
+        "adult": "ผู้ใหญ่",
+    },
+)
