@@ -116,8 +116,7 @@ def format_stage(
     | Newborn      | 0–1 months         |
     | Infant       | 2–11 months        |
     | Toddler      | 1–2 years          |
-    | Preschooler  | 3–5 years          |
-    | School-age   | 6–12 years         |
+    | Child        | 3–12 years         |
     | Teenager     | 13–17 years        |
     | Adult        | 18+ years          |
 
@@ -138,10 +137,8 @@ def format_stage(
         return "Infant"
     if months < 36:
         return "Toddler"
-    if months < 72:
-        return "Preschooler"
     if months < 156:
-        return "School-age"
+        return "Child"
     if months < 216:
         return "Teenager"
     return "Adult"

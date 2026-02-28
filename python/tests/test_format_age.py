@@ -388,33 +388,25 @@ class TestStageToddler:
     def test_35_months_still_toddler(self) -> None:
         assert format_stage("2023-06-15", "2026-05-15") == "Toddler"
 
-    def test_exactly_36_months_becomes_preschooler(self) -> None:
-        assert format_stage("2022-06-15", "2025-06-15") == "Preschooler"
+    def test_exactly_36_months_becomes_child(self) -> None:
+        assert format_stage("2022-06-15", "2025-06-15") == "Child"
 
 
-class TestStagePreschooler:
+class TestStageChild:
     def test_3_years(self) -> None:
-        assert format_stage("2022-06-15", "2025-06-15") == "Preschooler"
+        assert format_stage("2022-06-15", "2025-06-15") == "Child"
 
     def test_4_years(self) -> None:
-        assert format_stage("2021-06-15", "2025-06-15") == "Preschooler"
+        assert format_stage("2021-06-15", "2025-06-15") == "Child"
 
-    def test_5_years_11_months_still_preschooler(self) -> None:
-        assert format_stage("2020-06-15", "2026-05-15") == "Preschooler"
-
-    def test_exactly_6_years_becomes_school_age(self) -> None:
-        assert format_stage("2019-06-15", "2025-06-15") == "School-age"
-
-
-class TestStageSchoolAge:
     def test_6_years(self) -> None:
-        assert format_stage("2019-06-15", "2025-06-15") == "School-age"
+        assert format_stage("2019-06-15", "2025-06-15") == "Child"
 
     def test_9_years(self) -> None:
-        assert format_stage("2016-06-15", "2025-06-15") == "School-age"
+        assert format_stage("2016-06-15", "2025-06-15") == "Child"
 
-    def test_12_years_11_months_still_school_age(self) -> None:
-        assert format_stage("2013-06-15", "2026-05-15") == "School-age"
+    def test_12_years_11_months_still_child(self) -> None:
+        assert format_stage("2013-06-15", "2026-05-15") == "Child"
 
     def test_exactly_13_years_becomes_teenager(self) -> None:
         assert format_stage("2012-06-15", "2025-06-15") == "Teenager"
@@ -451,5 +443,5 @@ class TestStageDefaultAsOf:
             mock_date.today.return_value = date(2025, 6, 15)
             mock_date.side_effect = lambda *args, **kw: date(*args, **kw)
             assert format_stage("2025-06-15") == "Newborn"
-            assert format_stage("2020-01-01") == "Preschooler"
+            assert format_stage("2020-01-01") == "Child"
             assert format_stage("1980-01-01") == "Adult"

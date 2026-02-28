@@ -510,42 +510,31 @@ describe('formatStage', () => {
       expect(formatStage('2023-06-15', '2026-05-15')).toBe('Toddler');
     });
 
-    it('exactly 36 months → Preschooler', () => {
-      expect(formatStage('2022-06-15', '2025-06-15')).toBe('Preschooler');
+    it('exactly 36 months → Child', () => {
+      expect(formatStage('2022-06-15', '2025-06-15')).toBe('Child');
     });
   });
 
-  // Preschooler: 3–5 years (36–71 months)
-  describe('Preschooler (3–5 years)', () => {
+  // Child: 3–12 years (36–155 months)
+  describe('Child (3–12 years)', () => {
     it('3 years', () => {
-      expect(formatStage('2022-06-15', '2025-06-15')).toBe('Preschooler');
+      expect(formatStage('2022-06-15', '2025-06-15')).toBe('Child');
     });
 
     it('4 years', () => {
-      expect(formatStage('2021-06-15', '2025-06-15')).toBe('Preschooler');
+      expect(formatStage('2021-06-15', '2025-06-15')).toBe('Child');
     });
 
-    it('5 years 11 months — still Preschooler', () => {
-      expect(formatStage('2020-06-15', '2026-05-15')).toBe('Preschooler');
-    });
-
-    it('exactly 6 years → School-age', () => {
-      expect(formatStage('2019-06-15', '2025-06-15')).toBe('School-age');
-    });
-  });
-
-  // School-age: 6–12 years (72–155 months)
-  describe('School-age (6–12 years)', () => {
     it('6 years', () => {
-      expect(formatStage('2019-06-15', '2025-06-15')).toBe('School-age');
+      expect(formatStage('2019-06-15', '2025-06-15')).toBe('Child');
     });
 
     it('9 years', () => {
-      expect(formatStage('2016-06-15', '2025-06-15')).toBe('School-age');
+      expect(formatStage('2016-06-15', '2025-06-15')).toBe('Child');
     });
 
-    it('12 years 11 months — still School-age', () => {
-      expect(formatStage('2013-06-15', '2026-05-15')).toBe('School-age');
+    it('12 years 11 months — still Child', () => {
+      expect(formatStage('2013-06-15', '2026-05-15')).toBe('Child');
     });
 
     it('exactly 13 years → Teenager', () => {
@@ -595,7 +584,7 @@ describe('formatStage', () => {
       vi.useFakeTimers();
       vi.setSystemTime(new Date(2025, 5, 15)); // Jun 15 2025
       expect(formatStage('2025-06-15')).toBe('Newborn');
-      expect(formatStage('2020-01-01')).toBe('Preschooler');
+      expect(formatStage('2020-01-01')).toBe('Child');
       expect(formatStage('1980-01-01')).toBe('Adult');
     });
   });

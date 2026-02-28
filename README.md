@@ -35,8 +35,7 @@ Returns the developmental stage label (AAP/CDC consensus boundaries):
 | Newborn | 0–1 months |
 | Infant | 2–11 months |
 | Toddler | 1–2 years |
-| Preschooler | 3–5 years |
-| School-age | 6–12 years |
+| Child | 3–12 years |
 | Teenager | 13–17 years |
 | Adult | 18+ years |
 
@@ -75,8 +74,8 @@ formatAge('2018-06-15', '2025-06-15');  // "7 years"
 formatStage('2025-06-15', '2025-06-15');  // "Newborn"
 formatStage('2025-01-15', '2025-06-15');  // "Infant"
 formatStage('2024-06-15', '2025-06-15');  // "Toddler"
-formatStage('2022-06-15', '2025-06-15');  // "Preschooler"
-formatStage('2019-06-15', '2025-06-15');  // "School-age"
+formatStage('2022-06-15', '2025-06-15');  // "Child"
+formatStage('2019-06-15', '2025-06-15');  // "Child"
 formatStage('2012-06-15', '2025-06-15');  // "Teenager"
 formatStage('2007-06-15', '2025-06-15');  // "Adult"
 
@@ -107,8 +106,8 @@ format_age("2018-06-15", "2025-06-15")  # "7 years"
 format_stage("2025-06-15", "2025-06-15")  # "Newborn"
 format_stage("2025-01-15", "2025-06-15")  # "Infant"
 format_stage("2024-06-15", "2025-06-15")  # "Toddler"
-format_stage("2022-06-15", "2025-06-15")  # "Preschooler"
-format_stage("2019-06-15", "2025-06-15")  # "School-age"
+format_stage("2022-06-15", "2025-06-15")  # "Child"
+format_stage("2019-06-15", "2025-06-15")  # "Child"
 format_stage("2012-06-15", "2025-06-15")  # "Teenager"
 format_stage("2007-06-15", "2025-06-15")  # "Adult"
 
@@ -157,7 +156,7 @@ That's exactly what `parent-time` does, in two zero-dependency functions, tested
 - **"Months" not "1 year" at 12 months.** Parents say "he's 14 months" until about 2 years. The library follows this convention.
 - **½ marker for 3–6 year olds.** Parents say "she's four and a half." The ½ character (U+00BD) kicks in at 6+ months and drops off at age 7.
 - **"Newborn" at 0 days.** Because nobody says "0 days old."
-- **Stage boundaries follow AAP/CDC.** Newborn (<2 mo), Infant (2–11 mo), Toddler (1–2 yr), Preschooler (3–5 yr), School-age (6–12 yr), Teenager (13–17 yr), Adult (18+).
+- **Stage boundaries follow AAP/CDC.** Newborn (<2 mo), Infant (2–11 mo), Toddler (1–2 yr), Child (3–12 yr), Teenager (13–17 yr), Adult (18+).
 
 ## Contributing
 
