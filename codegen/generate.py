@@ -2,9 +2,12 @@
 """Generate locale source files for all 8 languages from canonical JSON.
 
 Usage:
-    python -m codegen.generate          # generate all
-    python -m codegen.generate --check  # dry-run, exit 1 if files would change
-    python -m codegen.generate --lang typescript  # generate one language only
+    python -m codegen.generate                      # generate all
+    python -m codegen.generate --check              # dry-run, exit 1 if files would change
+    python -m codegen.generate --lang typescript     # generate one language only
+    python -m codegen.generate --locales core        # top 10 locales only
+    python -m codegen.generate --locales core,ja,ko  # combine groups and codes
+    python -m codegen.generate --list-groups         # print available groups
 """
 
 from __future__ import annotations
@@ -43,6 +46,72 @@ def _write_or_check(path: str, content: str, check: bool, diffs: list[str]) -> N
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             f.write(content)
+
+
+def _remove_or_check_stale(path: str, check: bool, diffs: list[str]) -> None:
+    """Remove a stale generated file, or flag it in check mode."""
+    if os.path.exists(path):
+        if check:
+            diffs.append(path)
+        else:
+            os.remove(path)
+
+
+# --- Per-file languages: stale file cleanup helpers ---
+
+_PER_FILE_CLEANERS: dict[str, callable] = {}
+
+
+def _clean_stale_per_file(
+    lang: str,
+    selected_codes: set[str],
+    all_codes: set[str],
+    check: bool,
+    diffs: list[str],
+) -> None:
+    """Delete (or flag) locale files for codes not in the selected set."""
+    cleaner = _PER_FILE_CLEANERS.get(lang)
+    if cleaner:
+        cleaner(selected_codes, all_codes, check, diffs)
+
+
+def _clean_typescript(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.typescript.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_python(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.python.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_go(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.go.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_ruby(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.ruby.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_rust(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.rust.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+_PER_FILE_CLEANERS = {
+    "typescript": _clean_typescript,
+    "python": _clean_python,
+    "go": _clean_go,
+    "ruby": _clean_ruby,
+    "rust": _clean_rust,
+}
 
 
 def generate_typescript(locales: list[dict], check: bool, diffs: list[str]) -> None:
@@ -150,17 +219,52 @@ def main() -> None:
                         help="Check files are up-to-date (exit 1 if not)")
     parser.add_argument("--lang", choices=list(_GENERATORS.keys()),
                         help="Generate only this language")
+    parser.add_argument("--locales",
+                        help="Comma-separated locale codes and/or group names (default: all)")
+    parser.add_argument("--list-groups", action="store_true",
+                        help="Print available locale groups and exit")
     args = parser.parse_args()
 
-    locales = load_locales()
-    print(f"Loaded {len(locales)} locales from {JSON_DIR}")
+    if args.list_groups:
+        from codegen.locale_groups import list_groups
+        print(list_groups())
+        return
+
+    all_locales = load_locales()
+    all_codes = {loc["code"] for loc in all_locales}
+
+    if args.locales:
+        from codegen.locale_groups import GROUPS, REQUIRED_LOCALES, resolve_locales
+        try:
+            selected = resolve_locales(args.locales, all_codes)
+        except ValueError as e:
+            print(f"Error: {e}", file=sys.stderr)
+            sys.exit(1)
+        selected_set = set(selected)
+        # Check if en was only added by REQUIRED_LOCALES (not explicit or via group)
+        explicit_codes: set[str] = set()
+        for token in args.locales.split(","):
+            token = token.strip()
+            if token in GROUPS:
+                explicit_codes.update(GROUPS[token])
+            elif token in all_codes:
+                explicit_codes.add(token)
+        if REQUIRED_LOCALES - explicit_codes:
+            print("Note: 'en' auto-included (required fallback locale)")
+        all_locales = [loc for loc in all_locales if loc["code"] in selected_set]
+        print(f"Selected {len(all_locales)} of {len(all_codes)} locales: {', '.join(selected)}")
+    else:
+        selected_set = None
+        print(f"Loaded {len(all_locales)} locales from {JSON_DIR}")
 
     diffs: list[str] = []
     generators = {args.lang: _GENERATORS[args.lang]} if args.lang else _GENERATORS
 
     for lang, gen in generators.items():
         print(f"  {'Checking' if args.check else 'Generating'} {lang}...")
-        gen(locales, args.check, diffs)
+        gen(all_locales, args.check, diffs)
+        if selected_set is not None:
+            _clean_stale_per_file(lang, selected_set, all_codes, args.check, diffs)
 
     if args.check:
         if diffs:

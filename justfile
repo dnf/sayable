@@ -35,9 +35,11 @@ test *lang:
         cd cpp/build && ctest --output-on-failure
     elif [ "{{lang}}" = "php" ]; then
         cd php && php vendor/bin/phpunit tests/
+    elif [ "{{lang}}" = "codegen" ]; then
+        {{python}} -m unittest codegen.test_locale_groups -v
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php"
+        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, codegen"
         exit 1
     fi
 
@@ -65,8 +67,8 @@ build *lang:
 
 # Regenerate all locale files from canonical JSON
 [group('codegen')]
-generate:
-    {{python}} -m codegen.generate
+generate *args:
+    {{python}} -m codegen.generate {{args}}
 
 # Generate locale documentation (one markdown file per locale)
 [group('codegen')]
@@ -77,6 +79,11 @@ docgen *args:
 [group('codegen')]
 check:
     {{python}} -m codegen.generate --check
+
+# List available locale groups for --locales flag
+[group('codegen')]
+list-groups:
+    {{python}} -m codegen.generate --list-groups
 
 # Run all available linters
 [group('lint')]

@@ -17,6 +17,9 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 | C++ | `cd cpp && cmake -B build && cmake --build build && cd build && ctest --output-on-failure` |
 | PHP | `cd php && php vendor/bin/phpunit tests/` |
 | Codegen check | `python -m codegen.generate --check` |
+| Codegen subset | `python -m codegen.generate --locales core` |
+| Codegen tests | `just test codegen` |
+| List groups | `python -m codegen.generate --list-groups` |
 | Clean artifacts | `just clean` or `just clean <lang\|codegen>` |
 
 ## Key rules

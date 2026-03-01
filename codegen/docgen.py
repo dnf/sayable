@@ -2,9 +2,11 @@
 """Generate per-locale documentation showing actual formatter output.
 
 Usage:
-    python -m codegen.docgen              # generate all
-    python -m codegen.docgen --check      # dry-run, exit 1 if files would change
-    python -m codegen.docgen --locale fr  # generate one locale only
+    python -m codegen.docgen                       # generate all
+    python -m codegen.docgen --check               # dry-run, exit 1 if files would change
+    python -m codegen.docgen --locale fr           # generate one locale only
+    python -m codegen.docgen --locales core        # generate for a group
+    python -m codegen.docgen --list-groups         # print available groups
 """
 
 from __future__ import annotations
@@ -169,14 +171,38 @@ def main() -> None:
                         help="Check files are up-to-date (exit 1 if not)")
     parser.add_argument("--locale",
                         help="Generate only this locale (e.g. 'fr')")
+    parser.add_argument("--locales",
+                        help="Comma-separated locale codes and/or group names (default: all)")
+    parser.add_argument("--list-groups", action="store_true",
+                        help="Print available locale groups and exit")
     args = parser.parse_args()
 
+    if args.list_groups:
+        from codegen.locale_groups import list_groups
+        print(list_groups())
+        return
+
+    if args.locale and args.locales:
+        print("Error: --locale and --locales are mutually exclusive", file=sys.stderr)
+        sys.exit(1)
+
     all_locales = load_locales()
+
     if args.locale:
         all_locales = [loc for loc in all_locales if loc["code"] == args.locale]
         if not all_locales:
             print(f"Unknown locale: {args.locale}")
             sys.exit(1)
+    elif args.locales:
+        from codegen.locale_groups import resolve_locales
+        all_codes = {loc["code"] for loc in all_locales}
+        try:
+            selected = resolve_locales(args.locales, all_codes)
+        except ValueError as e:
+            print(f"Error: {e}", file=sys.stderr)
+            sys.exit(1)
+        selected_set = set(selected)
+        all_locales = [loc for loc in all_locales if loc["code"] in selected_set]
 
     print(f"{'Checking' if args.check else 'Generating'} docs for {len(all_locales)} locale(s)...")
 

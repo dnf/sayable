@@ -104,6 +104,32 @@ python -m codegen.generate --lang go
 # etc.
 ```
 
+### Subsetting with `--locales`
+
+By default all 71 locales are generated. Use `--locales` to generate only what you need:
+
+```bash
+python -m codegen.generate --locales core         # top 10 by internet users
+python -m codegen.generate --locales core,ja,ko   # core group + extras
+python -m codegen.generate --locales cjk,romance  # combine groups
+python -m codegen.generate --locales fr            # just en + fr (en always included)
+```
+
+Tokens are comma-separated. Each token is either a named group or a locale code. Use `--list-groups` to see all groups:
+
+```bash
+python -m codegen.generate --list-groups
+```
+
+Works with other flags:
+
+```bash
+python -m codegen.generate --locales core --lang typescript
+python -m codegen.generate --locales core --check
+```
+
+When subsetting, stale locale files from previous full generations are automatically deleted (or flagged in `--check` mode).
+
 ### Check for drift (CI mode)
 
 ```bash
