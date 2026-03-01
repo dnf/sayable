@@ -33,7 +33,6 @@ func parseAge(dateOfBirth string, asOf ...string) *ageComponents {
 		refD = now.Day()
 	}
 
-	// Total elapsed days (UTC avoids DST shifts)
 	dobTime := time.Date(dobY, time.Month(dobM), dobD, 0, 0, 0, 0, time.UTC)
 	refTime := time.Date(refY, time.Month(refM), refD, 0, 0, 0, 0, time.UTC)
 	diffDays := int(refTime.Sub(dobTime).Hours() / 24)
@@ -41,8 +40,8 @@ func parseAge(dateOfBirth string, asOf ...string) *ageComponents {
 		return nil
 	}
 
-	// Calendar months with clamping for short months
-	// Last day of the reference month
+	// Calendar months: clamp birthday to last day of reference month so that
+	// e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
 	lastDay := time.Date(refY, time.Month(refM)+1, 0, 0, 0, 0, 0, time.UTC).Day()
 	clampedBirthday := dobD
 	if clampedBirthday > lastDay {
@@ -67,7 +66,6 @@ func parseDateParts(s string) (int, int, int) {
 	return y, m, d
 }
 
-// atoi converts a string of digits to an int.
 func atoi(s string) int {
 	n := 0
 	for _, c := range s {

@@ -68,8 +68,9 @@ fn days_in_month(y: i32, m: i32) -> i32 {
     }
 }
 
-/// Computes total elapsed days between two dates using a Julian Day Number approach.
-/// This avoids needing the `time` crate.
+/// Computes total elapsed days between two dates using Julian Day Numbers.
+/// Uses the standard JDN algorithm (see <https://en.wikipedia.org/wiki/Julian_day#Converting_Gregorian_calendar_date_to_JDN>)
+/// to avoid needing the `time` crate.
 fn days_between(y1: i32, m1: i32, d1: i32, y2: i32, m2: i32, d2: i32) -> i32 {
     fn to_jdn(y: i32, m: i32, d: i32) -> i32 {
         let a = (14 - m) / 12;
@@ -81,6 +82,8 @@ fn days_between(y1: i32, m1: i32, d1: i32, y2: i32, m2: i32, d2: i32) -> i32 {
 }
 
 /// Returns today's date as (year, month, day) using `SystemTime`.
+/// Uses Howard Hinnant's civil_from_days algorithm
+/// (see <http://howardhinnant.github.io/date_algorithms.html>).
 fn today() -> (i32, i32, i32) {
     if let Some(date) = *NOW_OVERRIDE.lock().unwrap() {
         return date;
@@ -91,9 +94,7 @@ fn today() -> (i32, i32, i32) {
         .unwrap()
         .as_secs() as i64;
 
-    // Convert Unix timestamp to date
     let days = (secs / 86400) as i32;
-    // Algorithm from http://howardhinnant.github.io/date_algorithms.html
     let z = days + 719468;
     let era = if z >= 0 { z } else { z - 146096 } / 146097;
     let doe = z - era * 146097;
@@ -121,13 +122,13 @@ fn parse_age(dob: &str, as_of: Option<&str>) -> Option<AgeComponents> {
         _ => today(),
     };
 
-    // Total elapsed days
     let diff_days = days_between(dob_y, dob_m, dob_d, ref_y, ref_m, ref_d);
     if diff_days < 0 {
         return None;
     }
 
-    // Calendar months with clamping for short months
+    // Calendar months: clamp birthday to last day of reference month so that
+    // e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
     let last_day = days_in_month(ref_y, ref_m);
     let clamped_birthday = if dob_d > last_day { last_day } else { dob_d };
     let mut months = (ref_y - dob_y) * 12 + (ref_m - dob_m);
@@ -147,8 +148,11 @@ fn itoa(n: i32) -> String {
 }
 
 /// Formats a count with the given unit forms, locale, and optional half marker.
+///
+/// The half template supports two placeholder styles:
+/// - `{n}` modifies the formatted number before unit substitution (e.g. "3½" instead of "3")
+/// - `{0}` wraps the fully resolved expression after unit substitution (e.g. "3 years and a half")
 fn resolve_unit(count: i32, uf: &UnitForms, loc: &AgeLocale, half: &str) -> String {
-    // Formatted number
     let base_n = if let Some(fmt_fn) = loc.format_number {
         fmt_fn(count)
     } else {
@@ -178,10 +182,8 @@ fn resolve_unit(count: i32, uf: &UnitForms, loc: &AgeLocale, half: &str) -> Stri
         }
     };
 
-    // Substitute {n} in template
     let mut result = template.replace("{n}", &n);
 
-    // Apply formatUnit callback
     if let Some(fmt_fn) = loc.format_unit {
         result = fmt_fn(count, &result);
     }

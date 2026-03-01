@@ -36,13 +36,13 @@ internal fun parseAge(dateOfBirth: String, asOf: String? = null): AgeComponents?
     }
     val (refY, refM, refD) = refParts
 
-    // Total elapsed days
     val dobDate = LocalDate.of(dobY, dobM, dobD)
     val refDate = LocalDate.of(refY, refM, refD)
     val diffDays = ChronoUnit.DAYS.between(dobDate, refDate).toInt()
     if (diffDays < 0) return null
 
-    // Calendar months with clamping for short months
+    // Calendar months: clamp birthday to last day of reference month so that
+    // e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
     val lastDay = YearMonth.of(refY, refM).lengthOfMonth()
     val clampedBirthday = minOf(dobD, lastDay)
     var months = (refY - dobY) * 12 + (refM - dobM)
@@ -89,9 +89,12 @@ internal fun stageKey(months: Int): String = when {
 
 /**
  * Formats a count with the given unit forms, locale, and optional half marker.
+ *
+ * The half template supports two placeholder styles:
+ * - `{n}` modifies the formatted number before unit substitution (e.g. "3½" instead of "3")
+ * - `{0}` wraps the fully resolved expression after unit substitution (e.g. "3 years and a half")
  */
 internal fun resolveUnit(count: Int, uf: UnitForms, loc: AgeLocale, half: String): String {
-    // Formatted number
     val baseN = if (loc.formatNumber != null) {
         loc.formatNumber.invoke(count)
     } else {
@@ -113,10 +116,8 @@ internal fun resolveUnit(count: Int, uf: UnitForms, loc: AgeLocale, half: String
         uf.forms?.get(cat) ?: uf.forms?.get(PluralCategory.OTHER) ?: "{n}"
     }
 
-    // Substitute {n} in template
     var result = template.replace("{n}", n)
 
-    // Apply formatUnit callback
     if (loc.formatUnit != null) {
         result = loc.formatUnit.invoke(count, result)
     }

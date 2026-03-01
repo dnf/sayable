@@ -34,13 +34,11 @@ void clear_today() {
 
 namespace {
 
-/// Convert int to decimal string.
 std::string itoa(int n) {
     if (n < 0) return "-" + itoa(-n);
     return std::to_string(n);
 }
 
-/// Replace first occurrence of `from` with `to` in `str`.
 std::string replace_first(const std::string& str, const std::string& from,
                           const std::string& to) {
     auto pos = str.find(from);
@@ -50,7 +48,6 @@ std::string replace_first(const std::string& str, const std::string& from,
     return result;
 }
 
-/// Check if string contains substring.
 bool contains(const std::string& str, const std::string& substr) {
     return str.find(substr) != std::string::npos;
 }
@@ -91,7 +88,8 @@ int days_in_month(int year, int month) {
     return 31;
 }
 
-/// Julian Day Number for a date (for computing day differences).
+/// Julian Day Number for computing day differences between dates.
+/// See https://en.wikipedia.org/wiki/Julian_day#Converting_Gregorian_calendar_date_to_JDN
 int julian_day(int year, int month, int day) {
     int a = (14 - month) / 12;
     int y = year + 4800 - a;
@@ -140,11 +138,11 @@ std::optional<AgeComponents> parse_age(const std::string& date_of_birth,
         get_today(ref_y, ref_m, ref_d);
     }
 
-    // Total elapsed days
     int diff_days = julian_day(ref_y, ref_m, ref_d) - julian_day(dob_y, dob_m, dob_d);
     if (diff_days < 0) return std::nullopt;
 
-    // Calendar months with clamping for short months
+    // Calendar months: clamp birthday to last day of reference month so that
+    // e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
     int last_day = days_in_month(ref_y, ref_m);
     int clamped_birthday = std::min(dob_d, last_day);
     int months = (ref_y - dob_y) * 12 + (ref_m - dob_m);
@@ -164,9 +162,12 @@ std::string stage_key(int months) {
 }
 
 /// Format a count with unit forms, locale, and optional half marker.
+///
+/// The half template supports two placeholder styles:
+///   {n} — modifies the formatted number before unit substitution (e.g. "3½" instead of "3")
+///   {0} — wraps the fully resolved expression after unit substitution (e.g. "3 years and a half")
 std::string resolve_unit(int count, const UnitForms& uf, const AgeLocale* loc,
                          const std::string& half) {
-    // Formatted number
     std::string base_n;
     if (loc->format_number) {
         base_n = loc->format_number(count);
@@ -197,10 +198,8 @@ std::string resolve_unit(int count, const UnitForms& uf, const AgeLocale* loc,
         }
     }
 
-    // Substitute {n} in template
     std::string result = replace_first(tmpl, "{n}", n);
 
-    // Apply formatUnit callback
     if (loc->format_unit) {
         result = loc->format_unit(count, result);
     }

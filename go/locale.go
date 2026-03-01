@@ -97,12 +97,14 @@ func G(m, f string) StageLabel {
 	return StageLabel{M: m, F: f}
 }
 
-// strPtr returns a pointer to the given string.
 func strPtr(s string) *string { return &s }
 
 // resolveUnit formats a count with the given unit forms, locale, and optional half marker.
+//
+// The half template supports two placeholder styles:
+//   - {n} modifies the formatted number before unit substitution (e.g. "3½" instead of "3")
+//   - {0} wraps the fully resolved expression after unit substitution (e.g. "3 years and a half")
 func resolveUnit(count int, uf UnitForms, loc *AgeLocale, half string) string {
-	// Formatted number
 	baseN := ""
 	if loc.FormatNumber != nil {
 		baseN = loc.FormatNumber(count)
@@ -129,10 +131,8 @@ func resolveUnit(count int, uf UnitForms, loc *AgeLocale, half string) string {
 		}
 	}
 
-	// Substitute {n} in template
 	result := strings.Replace(template, "{n}", n, 1)
 
-	// Apply formatUnit callback
 	if loc.FormatUnit != nil {
 		result = loc.FormatUnit(count, result)
 	}

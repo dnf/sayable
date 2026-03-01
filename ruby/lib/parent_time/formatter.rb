@@ -106,13 +106,13 @@ module ParentTime
         ref_d = today.day
       end
 
-      # Total elapsed days
       dob_date = Date.new(dob_y, dob_m, dob_d)
       ref_date = Date.new(ref_y, ref_m, ref_d)
       diff_days = (ref_date - dob_date).to_i
       return nil if diff_days.negative?
 
-      # Calendar months with clamping for short months
+      # Calendar months: clamp birthday to last day of reference month so that
+      # e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
       last_day = Date.new(ref_y, ref_m, -1).day
       clamped_birthday = [dob_d, last_day].min
       months = ((ref_y - dob_y) * 12) + (ref_m - dob_m)

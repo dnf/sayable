@@ -191,7 +191,6 @@ final class ParentTime
             }
         }
 
-        // Total elapsed days (UTC avoids DST shifts)
         $dobJdn = self::julianDay($dobY, $dobM, $dobD);
         $refJdn = self::julianDay($refY, $refM, $refD);
         $diffDays = $refJdn - $dobJdn;
@@ -199,7 +198,8 @@ final class ParentTime
             return null;
         }
 
-        // Calendar months with clamping for short months
+        // Calendar months: clamp birthday to last day of reference month so that
+        // e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
         $lastDay = self::daysInMonth($refY, $refM);
         $clampedBirthday = \min($dobD, $lastDay);
         $months = ($refY - $dobY) * 12 + ($refM - $dobM);
@@ -232,7 +232,6 @@ final class ParentTime
         return [$y, $m, $d];
     }
 
-    /** Julian Day Number for day-difference computation. */
     private static function julianDay(int $y, int $m, int $d): int
     {
         $a = \intdiv(14 - $m, 12);
@@ -241,7 +240,6 @@ final class ParentTime
         return $d + \intdiv(153 * $mm + 2, 5) + 365 * $yy + \intdiv($yy, 4) - \intdiv($yy, 100) + \intdiv($yy, 400) - 32045;
     }
 
-    /** Days in a given month. */
     private static function daysInMonth(int $year, int $month): int
     {
         if ($month === 2) {
@@ -255,6 +253,10 @@ final class ParentTime
 
     /**
      * Resolve a unit count to its display string using locale rules.
+     *
+     * The $half template supports two placeholder styles:
+     * - {n} modifies the formatted number before unit substitution (e.g. "3½" instead of "3")
+     * - {0} wraps the fully resolved expression after unit substitution (e.g. "3 years and a half")
      *
      * @param array<string, string>|string $unitForms
      */
