@@ -11,7 +11,7 @@ repositories {
     mavenCentral()
 }
 
-description = "Human-friendly age formatting the way parents actually talk"
+description = "A thoughtful time formatting library that reflects how we think about little ones"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -45,7 +45,7 @@ publishing {
 
             pom {
                 name.set("parent-time")
-                description.set("Human-friendly age formatting the way parents actually talk")
+                description.set("A thoughtful time formatting library that reflects how we think about little ones")
                 url.set("https://github.com/dnf/parent-time")
 
                 licenses {

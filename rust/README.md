@@ -1,6 +1,6 @@
 # parent-time — Rust
 
-Human-friendly age formatting the way parents actually talk.
+A thoughtful time formatting library that reflects how we think about little ones.
 
 ```rust
 use parent_time::{format_age, format_stage};

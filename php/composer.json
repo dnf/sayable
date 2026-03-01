@@ -1,6 +1,6 @@
 {
     "name": "dnf/parent-time",
-    "description": "Human-friendly age formatting the way parents actually talk",
+    "description": "A thoughtful time formatting library that reflects how we think about little ones",
     "type": "library",
     "license": "MIT",
     "authors": [

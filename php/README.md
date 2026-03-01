@@ -1,6 +1,6 @@
 # parent-time — PHP
 
-Human-friendly age formatting the way parents actually talk.
+A thoughtful time formatting library that reflects how we think about little ones.
 
 ```php
 use function ParentTime\formatAge;

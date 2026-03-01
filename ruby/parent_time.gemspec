@@ -3,8 +3,8 @@ require_relative "lib/parent_time/version"
 Gem::Specification.new do |s|
   s.name        = "parent_time"
   s.version     = ParentTime::VERSION
-  s.summary     = "Human-friendly age formatting the way parents actually talk"
-  s.description = "Formats ages the way parents and pediatricians actually talk. " \
+  s.summary     = "A thoughtful time formatting library that reflects how we think about little ones"
+  s.description = "A thoughtful time formatting library that reflects how we think about little ones. " \
                   "Zero dependencies, 71 built-in locales, 3 compactness levels."
   s.authors     = ["Don Neufeld"]
   s.license     = "MIT"

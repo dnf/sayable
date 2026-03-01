@@ -1,6 +1,6 @@
 # parent-time — C++
 
-Human-friendly age formatting the way parents actually talk.
+A thoughtful time formatting library that reflects how we think about little ones.
 
 ```cpp
 #include <parenttime/parenttime.hpp>

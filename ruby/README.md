@@ -1,6 +1,6 @@
 # parent-time — Ruby
 
-Human-friendly age formatting the way parents actually talk.
+A thoughtful time formatting library that reflects how we think about little ones.
 
 ```ruby
 ParentTime.format_age("2025-06-01", "2025-06-15")  # "2 weeks"
