@@ -16,6 +16,7 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 | Kotlin | `cd kotlin && ./gradlew test` |
 | C++ | `cd cpp && cmake -B build && cmake --build build && cd build && ctest --output-on-failure` |
 | PHP | `cd php && php vendor/bin/phpunit tests/` |
+| Codegen check | `python -m codegen.generate --check` |
 
 ## Key rules
 
@@ -23,6 +24,7 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 - **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all 8 languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero runtime dependencies.** No exceptions in any language.
 - **TypeScript is the reference.** When implementations disagree, TypeScript is correct.
+- **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all 8 language implementations. Never edit generated locale files by hand.
 
 ## Project layout
 
@@ -35,6 +37,7 @@ rust/          # Rust
 kotlin/        # Kotlin
 cpp/           # C++
 php/           # PHP
+codegen/       # Locale code generator (JSON → all 8 languages)
 docs/          # Shared docs, test spec, locale docs
 ```
 

@@ -82,42 +82,4 @@ export function resolveStage(label: StageLabel, gender?: Gender): string {
   return gender === 'f' ? label.f : label.m;
 }
 
-/** English locale. */
-export const en: AgeLocale = {
-  code: 'en',
-  plural: (n) => (n === 1 ? 'one' : 'other'),
-  units: {
-    day:   { one: '{n} day',   other: '{n} days' },
-    week:  { one: '{n} week',  other: '{n} weeks' },
-    month: { one: '{n} month', other: '{n} months' },
-    year:  { one: '{n} year',  other: '{n} years' },
-  },
-  half: '{n}\u00BD',
-  delimiter: ', ',
-  justBorn: 'Newborn',
-  stages: {
-    newborn: 'Newborn',
-    infant: 'Infant',
-    toddler: 'Toddler',
-    child: 'Child',
-    teenager: 'Teenager',
-    adult: 'Adult',
-  },
-  short: {
-    units: {
-      day:   '{n} d',
-      week:  '{n} wk',
-      month: '{n} mo',
-      year:  '{n} yr',
-    },
-  },
-  compact: {
-    units: {
-      day:   '{n}d',
-      week:  '{n}w',
-      month: '{n}m',
-      year:  '{n}y',
-    },
-    delimiter: '',
-  },
-};
+export { en } from './locales/en.js';

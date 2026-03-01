@@ -26,6 +26,10 @@ rust/          # Rust
 kotlin/        # Kotlin
 cpp/           # C++
 php/           # PHP
+codegen/       # Locale code generator (JSON → all 8 languages)
+  locales/     # 49 JSON files — single source of truth for locale data
+  emitters/    # One module per target language
+  generate.py  # Orchestrator: loads JSON, runs emitters, writes files
 docs/          # Shared documentation and test specifications
 ```
 
@@ -49,7 +53,15 @@ To save you time, here's what falls outside the project's scope:
 
 ### Locale improvements
 
-Native speaker feedback is especially welcome. If a translation sounds unnatural, a plural rule is wrong, or a stage label uses the wrong register, please open an issue or PR. You only need to fix the locales you know — we'll propagate to the other 7 languages.
+Native speaker feedback is especially welcome. If a translation sounds unnatural, a plural rule is wrong, or a stage label uses the wrong register, please open an issue or PR.
+
+To fix a locale:
+
+1. Edit the JSON file in `codegen/locales/{code}.json`
+2. Run `python -m codegen.generate` to regenerate all 8 language implementations
+3. Run the test suites to verify
+
+Never edit the generated locale files (e.g. `typescript/src/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`codegen/README.md`](codegen/README.md) for full details.
 
 See [`docs/gender-and-stages.md`](docs/gender-and-stages.md) for the gender analysis of stage labels.
 
@@ -57,9 +69,11 @@ See [`docs/gender-and-stages.md`](docs/gender-and-stages.md) for the gender anal
 
 To add a new locale:
 
-1. Define the locale data (plural rules, unit templates, stage labels, half-year marker)
-2. Add it to all 8 implementations
-3. Add a test verifying basic output
+1. Create `codegen/locales/{code}.json` with the locale data (see existing files for the format)
+2. Add the locale's plural rule to `codegen/plural_rules.py` (or use an existing rule)
+3. Run `python -m codegen.generate` to generate locale files in all 8 languages
+4. Add test cases to `docs/testing.md` and implement them in all 8 test files
+5. Run all test suites
 
 ### Bug fixes
 
@@ -95,6 +109,8 @@ Before submitting a PR, verify:
 - [ ] Tests pass in all affected languages
 - [ ] New test cases added to `docs/testing.md` first (if applicable)
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
+- [ ] Locale changes made in `codegen/locales/*.json` and regenerated (not hand-edited)
+- [ ] `python -m codegen.generate --check` passes
 - [ ] All 8 implementations updated (for logic/feature changes)
 - [ ] No runtime dependencies added
 

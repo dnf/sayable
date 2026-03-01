@@ -121,6 +121,7 @@ The test specification in `docs/testing.md` is the single source of truth. Each 
 
 - [Test cases](docs/testing.md) — canonical test specification for all implementations
 - [Locale configuration](docs/locales.md) — CLDR plural rules, per-language details
+- [Code generator](codegen/README.md) — how locale files are generated from canonical JSON
 - [Code quality](docs/code-quality.md) — linting, type checking, and static analysis configuration
 
 ## Contributing

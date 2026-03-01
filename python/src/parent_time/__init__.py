@@ -1,7 +1,8 @@
 """parent-time: Human-friendly age formatting the way parents actually talk."""
 
 from parent_time.format_age import ParentTime, format_age, format_stage
-from parent_time.locale import EN, AgeLocale, StageLabel, resolve_stage
+from parent_time.locale import AgeLocale, StageLabel, resolve_stage
+from parent_time.locales.en import EN
 from parent_time.locales import (
     AR,
     BG,

@@ -1,0 +1,41 @@
+{
+  "code": "sk",
+  "name": "Slovak",
+  "pluralRule": "cs_sk",
+  "units": {
+    "day": {
+      "one": "{n} deň",
+      "few": "{n} dni",
+      "other": "{n} dní"
+    },
+    "week": {
+      "one": "{n} týždeň",
+      "few": "{n} týždne",
+      "other": "{n} týždňov"
+    },
+    "month": {
+      "one": "{n} mesiac",
+      "few": "{n} mesiace",
+      "other": "{n} mesiacov"
+    },
+    "year": {
+      "one": "{n} rok",
+      "few": "{n} roky",
+      "other": "{n} rokov"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justBorn": "Novorodenec",
+  "stages": {
+    "newborn": "Novorodenec",
+    "infant": "Dojča",
+    "toddler": "Batoľa",
+    "child": "Dieťa",
+    "teenager": "Tínedžer",
+    "adult": {
+      "m": "Dospelý",
+      "f": "Dospelá"
+    }
+  }
+}

@@ -6,7 +6,8 @@ import calendar
 from datetime import date
 from typing import Literal
 
-from parent_time.locale import EN, AgeLocale, UnitForms, resolve_stage, resolve_unit
+from parent_time.locale import AgeLocale, UnitForms, resolve_stage, resolve_unit
+from parent_time.locales.en import EN
 
 
 def _parse_age(

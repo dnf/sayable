@@ -1,0 +1,37 @@
+{
+  "code": "fr",
+  "name": "French",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "day": {
+      "one": "{n} jour",
+      "other": "{n} jours"
+    },
+    "week": {
+      "one": "{n} semaine",
+      "other": "{n} semaines"
+    },
+    "month": "{n} mois",
+    "year": {
+      "one": "{n} an",
+      "other": "{n} ans"
+    }
+  },
+  "half": "{0} et demi",
+  "delimiter": ", ",
+  "justBorn": "Nouveau-né",
+  "stages": {
+    "newborn": {
+      "m": "Nouveau-né",
+      "f": "Nouveau-née"
+    },
+    "infant": "Nourrisson",
+    "toddler": "Tout-petit",
+    "child": "Enfant",
+    "teenager": {
+      "m": "Adolescent",
+      "f": "Adolescente"
+    },
+    "adult": "Adulte"
+  }
+}
