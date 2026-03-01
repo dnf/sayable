@@ -33,7 +33,7 @@ Match whatever is idiomatic.
 
 ## 2. Define types
 
-Implement these types to match the TypeScript reference (`typescript/src/locale.ts`):
+Implement these types (see `typescript/src/locale.ts` or `python/src/parent_time/locale.py` for examples):
 
 - **`PluralCategory`** — `"zero" | "one" | "two" | "few" | "many" | "other"`
 - **`UnitForms`** — either a single template string or a map of PluralCategory to template string
@@ -139,8 +139,8 @@ Run `python -m codegen.generate --lang newlang` to generate just your language.
 
 ## 6. Implement the core formatter
 
-Port the formatting logic from the TypeScript reference
-(`typescript/src/format-age.ts`). The algorithm:
+Port the formatting logic from an existing implementation
+(e.g. `typescript/src/format-age.ts` or `python/src/parent_time/format_age.py`). The algorithm:
 
 1. Parse ISO date strings into year/month/day
 2. Compute calendar differences (years, months, days)
@@ -214,7 +214,7 @@ just test               # run all 8+ languages to confirm nothing broke
 - [ ] Plural rules in `codegen/targets/<lang>/plural_rules.py` (all 12 patterns)
 - [ ] Generator function registered in `codegen/generate.py`
 - [ ] Generated locale files pass the language's linter
-- [ ] Core formatter ported from TypeScript reference
+- [ ] Core formatter ported from an existing implementation
 - [ ] All test cases from `docs/testing.md` implemented
 - [ ] justfile updated (test, build, lint, clean recipes)
 - [ ] Linter configured with zero warnings

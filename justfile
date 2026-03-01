@@ -68,6 +68,11 @@ build *lang:
 generate:
     {{python}} -m codegen.generate
 
+# Generate locale documentation (one markdown file per locale)
+[group('codegen')]
+docgen *args:
+    uv run --project python {{python}} -m codegen.docgen {{args}}
+
 # Check that generated locale files are up-to-date (CI mode)
 [group('codegen')]
 check:

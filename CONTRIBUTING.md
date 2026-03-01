@@ -18,7 +18,7 @@ The only exception: if you're a native speaker fixing a translation or plural ru
 ## Project structure
 
 ```
-typescript/    # TypeScript (reference implementation)
+typescript/    # TypeScript
 python/        # Python
 go/            # Go
 ruby/          # Ruby
@@ -77,7 +77,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for a detailed guide. I
 
 ### Bug fixes
 
-If you find a discrepancy between implementations, the TypeScript version is the reference. File an issue with the input and the differing outputs.
+If you find a discrepancy between implementations, file an issue with the input and the differing outputs. All implementations must match the spec in `docs/testing.md`.
 
 ### New features
 

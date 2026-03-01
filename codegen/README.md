@@ -144,7 +144,7 @@ The generated locale files are committed to each language's directory rather tha
 
 ## How it was bootstrapped
 
-The `extract.py` script was a one-time tool that read the 49 original TypeScript locale files (the reference implementation) and produced the canonical JSON files. It does not need to be run again — the JSON files are now the source of truth, and the TypeScript files are generated from them.
+The `extract.py` script was a one-time tool that read the original TypeScript locale files and produced the canonical JSON files. It does not need to be run again — the JSON files are now the source of truth, and all locale files are generated from them.
 
 ## Requirements
 

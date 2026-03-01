@@ -1,0 +1,43 @@
+# Urdu (ur)
+
+Plural rule: `one_other` — categories: one, other
+
+## Age formatting
+
+| Age | Output |
+|-----|--------|
+| Born today | نومولود |
+| 1 day | 1 دن |
+| 3 days | 3 دن |
+| 6 days | 6 دن |
+| 1 week | 1 ہفتہ |
+| 1 week, 1 day | 1 ہفتہ، 1 دن |
+| 2 weeks | 2 ہفتے |
+| 2 weeks, 3 days | 2 ہفتے، 3 دن |
+| 3 months | 3 مہینے |
+| 6 months | 6 مہینے |
+| 11 months | 11 مہینے |
+| 12 months | 12 مہینے |
+| 23 months | 23 مہینے |
+| 2 years | 2 سال |
+| 2 years, 1 month | 2 سال، 1 مہینہ |
+| 2 years, 6 months | 2 سال، 6 مہینے |
+| 3 years | 3 سال |
+| 3½ years | ساڑھے 3 سال |
+| 5 years | 5 سال |
+| 5½ years | ساڑھے 5 سال |
+| 7 years | 7 سال |
+| 10 years | 10 سال |
+| 18 years | 18 سال |
+| 45 years | 45 سال |
+
+## Stages
+
+| Stage | Label |
+|-------|-------|
+| Newborn | نومولود |
+| Infant | شیرخوار |
+| Toddler | چھوٹا بچہ / چھوٹی بچی |
+| Child | بچہ / بچی |
+| Teenager | نوجوان |
+| Adult | بالغ |

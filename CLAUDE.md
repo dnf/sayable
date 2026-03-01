@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 8 identical implementations (TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP) and 71 locales. TypeScript is the reference implementation.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 8 identical implementations (TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP) and 71 locales.
 
 ## Build and test commands
 
@@ -24,13 +24,12 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 - **All 8 implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
 - **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all 8 languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero runtime dependencies.** No exceptions in any language.
-- **TypeScript is the reference.** When implementations disagree, TypeScript is correct.
 - **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all 8 language implementations. Never edit generated locale files by hand.
 
 ## Project layout
 
 ```
-typescript/    # Reference implementation
+typescript/    # TypeScript
 python/        # Python
 go/            # Go
 ruby/          # Ruby
@@ -71,7 +70,7 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 1. Create `codegen/targets/<lang>/emitter.py` — emits locale source files from JSON
 2. Create `codegen/targets/<lang>/plural_rules.py` with all 23 plural patterns
 3. Register the generator in `codegen/generate.py` (`_GENERATORS` dict)
-4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from `typescript/src/format-age.ts`)
+4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from an existing implementation)
 5. Implement all test cases from `docs/testing.md`
 6. Add to `justfile` (test, build, lint, clean recipes)
 7. Configure the language's standard linter with zero warnings

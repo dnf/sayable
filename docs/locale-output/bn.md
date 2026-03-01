@@ -1,0 +1,43 @@
+# Bengali (bn)
+
+Plural rule: `one_other_zero_one` — categories: one, other
+
+## Age formatting
+
+| Age | Output |
+|-----|--------|
+| Born today | নবজাতক |
+| 1 day | 1 দিন |
+| 3 days | 3 দিন |
+| 6 days | 6 দিন |
+| 1 week | 1 সপ্তাহ |
+| 1 week, 1 day | 1 সপ্তাহ, 1 দিন |
+| 2 weeks | 2 সপ্তাহ |
+| 2 weeks, 3 days | 2 সপ্তাহ, 3 দিন |
+| 3 months | 3 মাস |
+| 6 months | 6 মাস |
+| 11 months | 11 মাস |
+| 12 months | 12 মাস |
+| 23 months | 23 মাস |
+| 2 years | 2 বছর |
+| 2 years, 1 month | 2 বছর, 1 মাস |
+| 2 years, 6 months | 2 বছর, 6 মাস |
+| 3 years | 3 বছর |
+| 3½ years | সাড়ে 3 বছর |
+| 5 years | 5 বছর |
+| 5½ years | সাড়ে 5 বছর |
+| 7 years | 7 বছর |
+| 10 years | 10 বছর |
+| 18 years | 18 বছর |
+| 45 years | 45 বছর |
+
+## Stages
+
+| Stage | Label |
+|-------|-------|
+| Newborn | নবজাতক |
+| Infant | শিশু |
+| Toddler | ছোট শিশু |
+| Child | শিশু |
+| Teenager | কিশোর / কিশোরী |
+| Adult | প্রাপ্তবয়স্ক |
