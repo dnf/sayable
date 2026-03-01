@@ -1,0 +1,46 @@
+{
+  "code": "br",
+  "name": "Breton",
+  "pluralRule": "br",
+  "units": {
+    "day": {
+      "one": "{n} devezh",
+      "two": "{n} zevezh",
+      "few": "{n} devezh",
+      "many": "{n} devezh",
+      "other": "{n} devezh"
+    },
+    "week": {
+      "one": "{n} sizhun",
+      "two": "{n} sizhun",
+      "few": "{n} sizhun",
+      "many": "{n} sizhun",
+      "other": "{n} sizhun"
+    },
+    "month": {
+      "one": "{n} miz",
+      "two": "{n} viz",
+      "few": "{n} miz",
+      "many": "{n} miz",
+      "other": "{n} miz"
+    },
+    "year": {
+      "one": "{n} bloaz",
+      "two": "{n} vloaz",
+      "few": "{n} bloaz",
+      "many": "{n} bloaz",
+      "other": "{n} bloaz"
+    }
+  },
+  "half": "{0} hag un hanter",
+  "delimiter": ", ",
+  "justBorn": "Nevez ganet",
+  "stages": {
+    "newborn": "Nevez ganet",
+    "infant": "Babig",
+    "toddler": "Bugel bihan",
+    "child": "Bugel",
+    "teenager": "Den yaouank",
+    "adult": "Den deuet da vad"
+  }
+}

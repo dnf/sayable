@@ -122,6 +122,32 @@ const AgeLocale& MS() {
     return loc;
 }
 
+const AgeLocale& MT() {
+    static const AgeLocale loc{
+        "mt",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            if (n == 2) return PluralCategory::Two;
+            int mod100 = n % 100;
+            if (n == 0 || (mod100 >= 3 && mod100 <= 10)) return PluralCategory::Few;
+            if (mod100 >= 11 && mod100 <= 19) return PluralCategory::Many;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "ġurnata"}, {PluralCategory::Two, "jumejn"}, {PluralCategory::Few, "{n} ijiem"}, {PluralCategory::Many, "{n}-il jum"}, {PluralCategory::Other, "{n} jum"}}),
+            UnitForms::Plural({{PluralCategory::One, "ġimgħa"}, {PluralCategory::Two, "ġimgħatejn"}, {PluralCategory::Few, "{n} ġimgħat"}, {PluralCategory::Many, "{n}-il ġimgħa"}, {PluralCategory::Other, "{n} ġimgħa"}}),
+            UnitForms::Plural({{PluralCategory::One, "xahar"}, {PluralCategory::Two, "xahrejn"}, {PluralCategory::Few, "{n} xhur"}, {PluralCategory::Many, "{n}-il xahar"}, {PluralCategory::Other, "{n} xahar"}}),
+            UnitForms::Plural({{PluralCategory::One, "sena"}, {PluralCategory::Two, "sentejn"}, {PluralCategory::Few, "{n} snin"}, {PluralCategory::Many, "{n}-il sena"}, {PluralCategory::Other, "{n} sena"}})
+        },
+        "{0} u nofs", " u ", "Tarbija ġdida",
+        StageLabels{{"Tarbija ġdida", ""}, {"Tarbija", ""}, {"Tifel żgħir", "Tifla żgħira"}, {"Tifel", "Tifla"}, {"Adolexxent", "Adolexxenta"}, {"Adult", "Adulta"}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& MY() {
     static const AgeLocale loc{
         "my",

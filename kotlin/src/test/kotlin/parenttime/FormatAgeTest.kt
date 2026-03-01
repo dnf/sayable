@@ -770,19 +770,20 @@ class FormatAgeTest {
     }
 
     // ================================================================
-    // All 63 locales exist and have correct codes
+    // All 71 locales exist and have correct codes
     // ================================================================
     @Test
-    fun `all 63 locales exist`() {
-        assertEquals(63, Locales.ALL.size)
+    fun `all 71 locales exist`() {
+        assertEquals(71, Locales.ALL.size)
         val expectedCodes = listOf(
-            "am", "ar", "az", "bg", "bn", "bs", "ca", "cs", "da", "de",
-            "el", "en", "es", "et", "eu", "fa", "fi", "fil", "fr", "ga",
-            "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "jv", "ka",
-            "kk", "km", "ko", "lt", "lv", "mk", "mr", "ms", "my", "nb",
-            "ne", "nl", "pa", "pl", "pt", "ro", "ru", "si", "sk", "sl",
-            "sq", "sr", "sv", "sw", "ta", "te", "th", "tr", "uk", "ur",
-            "uz", "vi", "zh"
+            "am", "ar", "az", "bg", "bn", "br", "bs", "ca", "cs", "cy",
+            "da", "de", "el", "en", "es", "et", "eu", "fa", "fi", "fil",
+            "fr", "ga", "gd", "gu", "gv", "he", "hi", "hr", "hu", "id",
+            "it", "ja", "jv", "ka", "kk", "km", "ko", "kw", "lt", "lv",
+            "mk", "mr", "ms", "mt", "my", "nb", "ne", "nl", "pa", "pl",
+            "pt", "ro", "ru", "shi", "si", "sk", "sl", "sq", "sr", "sv",
+            "sw", "ta", "te", "th", "tr", "tzm", "uk", "ur", "uz", "vi",
+            "zh"
         )
         for (code in expectedCodes) {
             val locale = Locales.ALL[code]

@@ -1,4 +1,4 @@
-"""TypeScript plural rule definitions for all 14 patterns."""
+"""TypeScript plural rule definitions for all 23 patterns."""
 
 from __future__ import annotations
 
@@ -89,6 +89,79 @@ _TS = {
     if (mod10 === 1 && mod100 !== 11) return 'one';
     return 'other';
   }""",
+    "cy": """\
+(n) => {
+    if (n === 0) return 'zero';
+    if (n === 1) return 'one';
+    if (n === 2) return 'two';
+    if (n === 3) return 'few';
+    if (n === 6) return 'many';
+    return 'other';
+  }""",
+    "gv": """\
+(n) => {
+    const mod10 = n % 10;
+    const mod100 = n % 100;
+    if (mod10 === 1) return 'one';
+    if (mod10 === 2) return 'two';
+    if (mod100 === 0 || mod100 === 20 || mod100 === 40 || mod100 === 60 || mod100 === 80) return 'few';
+    return 'other';
+  }""",
+    "gd": """\
+(n) => {
+    if (n === 1 || n === 11) return 'one';
+    if (n === 2 || n === 12) return 'two';
+    if ((n >= 3 && n <= 10) || (n >= 13 && n <= 19)) return 'few';
+    return 'other';
+  }""",
+    "ga": """\
+(n) => {
+    if (n === 1) return 'one';
+    if (n === 2) return 'two';
+    if (n >= 3 && n <= 6) return 'few';
+    if (n >= 7 && n <= 10) return 'many';
+    return 'other';
+  }""",
+    "mt": """\
+(n) => {
+    if (n === 1) return 'one';
+    if (n === 2) return 'two';
+    const mod100 = n % 100;
+    if (n === 0 || (mod100 >= 3 && mod100 <= 10)) return 'few';
+    if (mod100 >= 11 && mod100 <= 19) return 'many';
+    return 'other';
+  }""",
+    "br": """\
+(n) => {
+    const mod10 = n % 10;
+    const mod100 = n % 100;
+    if (mod10 === 1 && mod100 !== 11 && mod100 !== 71 && mod100 !== 91) return 'one';
+    if (mod10 === 2 && mod100 !== 12 && mod100 !== 72 && mod100 !== 92) return 'two';
+    if ((mod10 === 3 || mod10 === 4 || mod10 === 9) && !(mod100 >= 10 && mod100 <= 19) && !(mod100 >= 70 && mod100 <= 79) && !(mod100 >= 90 && mod100 <= 99)) return 'few';
+    if (n !== 0 && n % 1000000 === 0) return 'many';
+    return 'other';
+  }""",
+    "kw": """\
+(n) => {
+    if (n === 0) return 'zero';
+    if (n === 1) return 'one';
+    const mod100 = n % 100;
+    if (mod100 === 2 || mod100 === 22 || mod100 === 42 || mod100 === 62 || mod100 === 82) return 'two';
+    if (mod100 === 3 || mod100 === 23 || mod100 === 43 || mod100 === 63 || mod100 === 83) return 'few';
+    if (n !== 1 && (mod100 === 1 || mod100 === 21 || mod100 === 41 || mod100 === 61 || mod100 === 81)) return 'many';
+    return 'other';
+  }""",
+    "shi": """\
+(n) => {
+    if (n === 0 || n === 1) return 'one';
+    if (n >= 2 && n <= 10) return 'few';
+    return 'other';
+  }""",
+    "tzm": """\
+(n) => {
+    if (n === 0 || n === 1 || (n >= 11 && n <= 99)) return 'one';
+    return 'other';
+  }""",
 }
 
 _TS_NAMED = {
@@ -173,6 +246,79 @@ function plural(n: number): PluralCategory {
   const mod10 = n % 10;
   const mod100 = n % 100;
   if (mod10 === 1 && mod100 !== 11) return 'one';
+  return 'other';
+}""",
+    "cy": """\
+function plural(n: number): PluralCategory {
+  if (n === 0) return 'zero';
+  if (n === 1) return 'one';
+  if (n === 2) return 'two';
+  if (n === 3) return 'few';
+  if (n === 6) return 'many';
+  return 'other';
+}""",
+    "gv": """\
+function plural(n: number): PluralCategory {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1) return 'one';
+  if (mod10 === 2) return 'two';
+  if (mod100 === 0 || mod100 === 20 || mod100 === 40 || mod100 === 60 || mod100 === 80) return 'few';
+  return 'other';
+}""",
+    "gd": """\
+function plural(n: number): PluralCategory {
+  if (n === 1 || n === 11) return 'one';
+  if (n === 2 || n === 12) return 'two';
+  if ((n >= 3 && n <= 10) || (n >= 13 && n <= 19)) return 'few';
+  return 'other';
+}""",
+    "ga": """\
+function plural(n: number): PluralCategory {
+  if (n === 1) return 'one';
+  if (n === 2) return 'two';
+  if (n >= 3 && n <= 6) return 'few';
+  if (n >= 7 && n <= 10) return 'many';
+  return 'other';
+}""",
+    "mt": """\
+function plural(n: number): PluralCategory {
+  if (n === 1) return 'one';
+  if (n === 2) return 'two';
+  const mod100 = n % 100;
+  if (n === 0 || (mod100 >= 3 && mod100 <= 10)) return 'few';
+  if (mod100 >= 11 && mod100 <= 19) return 'many';
+  return 'other';
+}""",
+    "br": """\
+function plural(n: number): PluralCategory {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11 && mod100 !== 71 && mod100 !== 91) return 'one';
+  if (mod10 === 2 && mod100 !== 12 && mod100 !== 72 && mod100 !== 92) return 'two';
+  if ((mod10 === 3 || mod10 === 4 || mod10 === 9) && !(mod100 >= 10 && mod100 <= 19) && !(mod100 >= 70 && mod100 <= 79) && !(mod100 >= 90 && mod100 <= 99)) return 'few';
+  if (n !== 0 && n % 1000000 === 0) return 'many';
+  return 'other';
+}""",
+    "kw": """\
+function plural(n: number): PluralCategory {
+  if (n === 0) return 'zero';
+  if (n === 1) return 'one';
+  const mod100 = n % 100;
+  if (mod100 === 2 || mod100 === 22 || mod100 === 42 || mod100 === 62 || mod100 === 82) return 'two';
+  if (mod100 === 3 || mod100 === 23 || mod100 === 43 || mod100 === 63 || mod100 === 83) return 'few';
+  if (n !== 1 && (mod100 === 1 || mod100 === 21 || mod100 === 41 || mod100 === 61 || mod100 === 81)) return 'many';
+  return 'other';
+}""",
+    "shi": """\
+function plural(n: number): PluralCategory {
+  if (n === 0 || n === 1) return 'one';
+  if (n >= 2 && n <= 10) return 'few';
+  return 'other';
+}""",
+    "tzm": """\
+function plural(n: number): PluralCategory {
+  if (n === 0 || n === 1 || (n >= 11 && n <= 99)) return 'one';
   return 'other';
 }""",
 }

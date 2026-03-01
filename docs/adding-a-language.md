@@ -6,7 +6,7 @@ build integration.
 
 ## Overview
 
-parent-time uses a codegen system where 63 locale JSON files are the single
+parent-time uses a codegen system where 71 locale JSON files are the single
 source of truth. A Python emitter for each language converts these JSON files
 into native locale definitions. You write the emitter, the core formatter, and
 the tests; codegen handles the locale data.
@@ -102,30 +102,17 @@ Each locale's JSON is passed as a dict with these keys:
 
 ## 4. Add plural rules
 
-Create `codegen/targets/<lang>/plural_rules.py`. There are 12 plural rule
-patterns, each defined as a code string for your target language.
+Create `codegen/targets/<lang>/plural_rules.py`. There are 23 plural rule
+patterns (covering all CLDR cardinal patterns), each defined as a code
+string for your target language.
 
-1. Add a `_<LANG>` dict with code strings for all 12 rules
+1. Add a `_<LANG>` dict with code strings for all 23 rules
 2. Add a getter function: `def get_<lang>_plural(rule: str) -> str`
 3. If any rules need named functions (not inline), add a `_<LANG>_NAMED` dict
 4. If your language distinguishes simple vs complex plurals, add `is_simple_plural()`
 
-Use the existing entries as templates. The 12 rules are:
-
-| Rule | Languages using it | Categories used |
-|------|--------------------|-----------------|
-| `other_only` | ja, ko, zh, th, vi, ms, jv, hu, eu, ga | other |
-| `one_other` | en, de, es, it, nl, etc. | one, other |
-| `one_other_zero_one` | fr, pt, hi, bn, etc. | one, other |
-| `cs_sk` | cs, sk | one, few, other |
-| `lt` | lt | one, few, other |
-| `ro` | ro | one, few, other |
-| `slavic_bcs` | bs, hr, sr | one, few, other |
-| `pl` | pl | one, few, many |
-| `ru_uk` | ru, uk | one, few, many |
-| `sl` | sl | one, two, few, other |
-| `ar` | ar | zero, one, two, few, many, other |
-| `lv` | lv | zero, one, other |
+Use the existing entries in any `codegen/targets/*/plural_rules.py` as
+templates. See `docs/adding-a-locale.md` for the full rule table.
 
 ## 5. Register in codegen/generate.py
 

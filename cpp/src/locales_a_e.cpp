@@ -120,6 +120,33 @@ const AgeLocale& BN() {
     return loc;
 }
 
+const AgeLocale& BR() {
+    static const AgeLocale loc{
+        "br",
+        [](int n) -> PluralCategory {
+            int mod10 = n % 10;
+            int mod100 = n % 100;
+            if (mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91) return PluralCategory::One;
+            if (mod10 == 2 && mod100 != 12 && mod100 != 72 && mod100 != 92) return PluralCategory::Two;
+            if ((mod10 == 3 || mod10 == 4 || mod10 == 9) && !(mod100 >= 10 && mod100 <= 19) && !(mod100 >= 70 && mod100 <= 79) && !(mod100 >= 90 && mod100 <= 99)) return PluralCategory::Few;
+            if (n != 0 && n % 1000000 == 0) return PluralCategory::Many;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} devezh"}, {PluralCategory::Two, "{n} zevezh"}, {PluralCategory::Few, "{n} devezh"}, {PluralCategory::Many, "{n} devezh"}, {PluralCategory::Other, "{n} devezh"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} sizhun"}, {PluralCategory::Two, "{n} sizhun"}, {PluralCategory::Few, "{n} sizhun"}, {PluralCategory::Many, "{n} sizhun"}, {PluralCategory::Other, "{n} sizhun"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} miz"}, {PluralCategory::Two, "{n} viz"}, {PluralCategory::Few, "{n} miz"}, {PluralCategory::Many, "{n} miz"}, {PluralCategory::Other, "{n} miz"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} bloaz"}, {PluralCategory::Two, "{n} vloaz"}, {PluralCategory::Few, "{n} bloaz"}, {PluralCategory::Many, "{n} bloaz"}, {PluralCategory::Other, "{n} bloaz"}})
+        },
+        "{0} hag un hanter", ", ", "Nevez ganet",
+        StageLabels{{"Nevez ganet", ""}, {"Babig", ""}, {"Bugel bihan", ""}, {"Bugel", ""}, {"Den yaouank", ""}, {"Den deuet da vad", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& BS() {
     static const AgeLocale loc{
         "bs",
@@ -183,6 +210,32 @@ const AgeLocale& CS() {
         },
         "{n}½", ", ", "Novorozenec",
         StageLabels{{"Novorozenec", ""}, {"Kojenec", ""}, {"Batole", ""}, {"Dítě", ""}, {"Teenager", ""}, {"Dospělý", "Dospělá"}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& CY() {
+    static const AgeLocale loc{
+        "cy",
+        [](int n) -> PluralCategory {
+            if (n == 0) return PluralCategory::Zero;
+            if (n == 1) return PluralCategory::One;
+            if (n == 2) return PluralCategory::Two;
+            if (n == 3) return PluralCategory::Few;
+            if (n == 6) return PluralCategory::Many;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::Zero, "{n} diwrnod"}, {PluralCategory::One, "{n} diwrnod"}, {PluralCategory::Two, "{n} ddiwrnod"}, {PluralCategory::Few, "{n} diwrnod"}, {PluralCategory::Many, "{n} niwrnod"}, {PluralCategory::Other, "{n} diwrnod"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} wythnos"}, {PluralCategory::One, "{n} wythnos"}, {PluralCategory::Two, "{n} wythnos"}, {PluralCategory::Few, "{n} wythnos"}, {PluralCategory::Many, "{n} wythnos"}, {PluralCategory::Other, "{n} wythnos"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} mis"}, {PluralCategory::One, "{n} mis"}, {PluralCategory::Two, "{n} fis"}, {PluralCategory::Few, "{n} mis"}, {PluralCategory::Many, "{n} mis"}, {PluralCategory::Other, "{n} mis"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} blwyddyn"}, {PluralCategory::One, "{n} blwyddyn"}, {PluralCategory::Two, "{n} flynedd"}, {PluralCategory::Few, "{n} blynedd"}, {PluralCategory::Many, "{n} blynedd"}, {PluralCategory::Other, "{n} blynedd"}})
+        },
+        "{0} a hanner", ", ", "Newydd-anedig",
+        StageLabels{{"Newydd-anedig", ""}, {"Baban", ""}, {"Plentyn bach", ""}, {"Plentyn", ""}, {"Glaslanc", ""}, {"Oedolyn", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr

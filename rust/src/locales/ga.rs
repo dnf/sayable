@@ -6,12 +6,42 @@ use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLab
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "ga".to_string(),
-        plural: |_n| PluralCategory::Other,
+        plural: |n| {
+            if n == 1 { return PluralCategory::One; }
+            if n == 2 { return PluralCategory::Two; }
+            if (3..=6).contains(&n) { PluralCategory::Few }
+            else if (7..=10).contains(&n) { PluralCategory::Many }
+            else { PluralCategory::Other }
+        },
         units: Units {
-            day: UnitForms::simple("{n} lá"),
-            week: UnitForms::simple("{n} seachtain"),
-            month: UnitForms::simple("{n} mí"),
-            year: UnitForms::simple("{n} bliain"),
+            day: UnitForms::plural(&[
+                (PluralCategory::One, "{n} lá"),
+                (PluralCategory::Two, "{n} lá"),
+                (PluralCategory::Few, "{n} lá"),
+                (PluralCategory::Many, "{n} lá"),
+                (PluralCategory::Other, "{n} lá"),
+            ]),
+            week: UnitForms::plural(&[
+                (PluralCategory::One, "{n} seachtain"),
+                (PluralCategory::Two, "{n} sheachtain"),
+                (PluralCategory::Few, "{n} seachtaine"),
+                (PluralCategory::Many, "{n} seachtaine"),
+                (PluralCategory::Other, "{n} seachtain"),
+            ]),
+            month: UnitForms::plural(&[
+                (PluralCategory::One, "{n} mhí"),
+                (PluralCategory::Two, "{n} mhí"),
+                (PluralCategory::Few, "{n} mhí"),
+                (PluralCategory::Many, "{n} mí"),
+                (PluralCategory::Other, "{n} mí"),
+            ]),
+            year: UnitForms::plural(&[
+                (PluralCategory::One, "{n} bhliain"),
+                (PluralCategory::Two, "{n} bhliain"),
+                (PluralCategory::Few, "{n} bliana"),
+                (PluralCategory::Many, "{n} mbliana"),
+                (PluralCategory::Other, "{n} bliain"),
+            ]),
         },
         half: "{0} go leith".to_string(),
         delimiter: ", ".to_string(),

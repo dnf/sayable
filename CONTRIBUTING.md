@@ -27,7 +27,7 @@ kotlin/        # Kotlin
 cpp/           # C++
 php/           # PHP
 codegen/       # Locale code generator (JSON → all 8 languages)
-  locales/     # 63 JSON files — single source of truth for locale data
+  locales/     # 71 JSON files — single source of truth for locale data
   targets/     # One directory per target language (emitter + plural rules)
   generate.py  # Orchestrator: loads JSON, runs emitters, writes files
 docs/          # Shared documentation and test specifications

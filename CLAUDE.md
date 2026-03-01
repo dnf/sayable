@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 8 identical implementations (TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP) and 63 locales. TypeScript is the reference implementation.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 8 identical implementations (TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP) and 71 locales. TypeScript is the reference implementation.
 
 ## Build and test commands
 
@@ -58,7 +58,7 @@ Core files per language follow a consistent pattern:
 
 See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Summary:
 
-1. Identify the CLDR plural rule — one of the 12 existing rules usually fits
+1. Identify the CLDR plural rule — one of the 23 existing rules covers every CLDR cardinal pattern
 2. Create `codegen/locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
 3. Run `python -m codegen.generate` — generates locale files in all 8 languages
 4. Run `just test && just lint` to verify
@@ -69,7 +69,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Sum
 See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide. Summary:
 
 1. Create `codegen/targets/<lang>/emitter.py` — emits locale source files from JSON
-2. Create `codegen/targets/<lang>/plural_rules.py` with all 12 plural patterns
+2. Create `codegen/targets/<lang>/plural_rules.py` with all 23 plural patterns
 3. Register the generator in `codegen/generate.py` (`_GENERATORS` dict)
 4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from `typescript/src/format-age.ts`)
 5. Implement all test cases from `docs/testing.md`

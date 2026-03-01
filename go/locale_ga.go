@@ -5,14 +5,26 @@ package parenttime
 // GA is the Irish locale.
 var GA = AgeLocale{
 	Code: "ga",
-	Plural: func(_ int) PluralCategory {
+	Plural: func(n int) PluralCategory {
+		if n == 1 {
+			return One
+		}
+		if n == 2 {
+			return Two
+		}
+		if n >= 3 && n <= 6 {
+			return Few
+		}
+		if n >= 7 && n <= 10 {
+			return Many
+		}
 		return Other
 	},
 	Units: struct{ Day, Week, Month, Year UnitForms }{
-		Day:   SimpleUnit("{n} lá"),
-		Week:  SimpleUnit("{n} seachtain"),
-		Month: SimpleUnit("{n} mí"),
-		Year:  SimpleUnit("{n} bliain"),
+		Day:   PluralUnit(map[PluralCategory]string{One: "{n} lá", Two: "{n} lá", Few: "{n} lá", Many: "{n} lá", Other: "{n} lá"}),
+		Week:  PluralUnit(map[PluralCategory]string{One: "{n} seachtain", Two: "{n} sheachtain", Few: "{n} seachtaine", Many: "{n} seachtaine", Other: "{n} seachtain"}),
+		Month: PluralUnit(map[PluralCategory]string{One: "{n} mhí", Two: "{n} mhí", Few: "{n} mhí", Many: "{n} mí", Other: "{n} mí"}),
+		Year:  PluralUnit(map[PluralCategory]string{One: "{n} bhliain", Two: "{n} bhliain", Few: "{n} bliana", Many: "{n} mbliana", Other: "{n} bliain"}),
 	},
 	Half:      "{0} go leith",
 	Delimiter: ", ",

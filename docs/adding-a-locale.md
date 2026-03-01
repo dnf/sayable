@@ -12,27 +12,37 @@ You create one JSON file and codegen generates all 8 language implementations.
 
 ## 1. Identify the plural rule
 
-The project has 12 plural rule patterns. Find the one that matches your
+The project has 23 plural rule patterns. Find the one that matches your
 language's CLDR integer plural categories:
 
 | Rule name | Categories | Languages using it |
 |-----------|-----------|-------------------|
-| `other_only` | other | ja, ko, zh, th, vi, ms, jv, hu, eu, ga |
+| `ar` | zero, one, two, few, many, other | ar |
+| `br` | one, two, few, many, other | br |
+| `cs_sk` | one, few, other | cs, sk |
+| `cy` | zero, one, two, few, many, other | cy |
+| `ga` | one, two, few, many, other | ga |
+| `gd` | one, two, few, other | gd |
+| `gv` | one, two, few, other | gv |
+| `he` | one, two, other | he |
+| `kw` | zero, one, two, few, many, other | kw |
+| `lt` | one, few, other | lt |
+| `lv` | zero, one, other | lv |
+| `mk` | one, other | mk |
+| `mt` | one, two, few, many, other | mt |
 | `one_other` | one, other | en, de, es, it, nl, bg, da, nb, sv, etc. |
 | `one_other_zero_one` | one, other (0 and 1 are both "one") | fr, pt, hi, bn, fa, etc. |
-| `cs_sk` | one, few, other | cs, sk |
-| `lt` | one, few, other | lt |
-| `ro` | one, few, other | ro |
-| `slavic_bcs` | one, few, other | bs, hr, sr |
+| `other_only` | other | ja, ko, zh, th, vi, ms, jv, hu, eu |
 | `pl` | one, few, many | pl |
+| `ro` | one, few, other | ro |
 | `ru_uk` | one, few, many | ru, uk |
+| `shi` | one, few, other | shi |
 | `sl` | one, two, few, other | sl |
-| `ar` | zero, one, two, few, many, other | ar |
-| `lv` | zero, one, other | lv |
+| `slavic_bcs` | one, few, other | bs, hr, sr |
+| `tzm` | one, other | tzm |
 
-If your language's plural rule matches one of these (check the CLDR), use
-that rule name. If it requires a new pattern, you'll need to add it — see
-[Adding a new plural rule](#adding-a-new-plural-rule) below.
+These 23 rules cover every CLDR cardinal plural pattern. Your language's
+CLDR rule will match one of these — use that rule name.
 
 ## 2. Create the JSON file
 
@@ -221,19 +231,6 @@ For new locales in widely-spoken languages, add locale-specific test cases
 to `docs/testing.md` and implement them in all 8 test suites. At minimum,
 test that the locale produces correct output for a few representative counts
 that exercise the plural rules.
-
-## Adding a new plural rule
-
-If your language needs a plural rule not in the table above:
-
-1. Create the rule's code string for all 8 languages in each
-   `codegen/targets/<lang>/plural_rules.py` file
-2. Add the rule name to the appropriate dict in each file
-3. Add a getter function or extend the existing one
-4. Reference the CLDR specification for the exact rule logic:
-   https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-
-This is uncommon — the 12 existing rules cover most of the world's languages.
 
 ## Native speaker policy
 

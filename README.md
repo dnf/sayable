@@ -59,7 +59,7 @@ Returns the developmental stage label (AAP/CDC consensus boundaries):
 
 ## Localization
 
-63 built-in locales with CLDR-compliant plural rules. See the [locale documentation](docs/locales.md) for details on each language.
+71 built-in locales with CLDR-compliant plural rules. See the [locale documentation](docs/locales.md) for details on each language.
 
 A core goal of this project is **localization**, not just internationalization. The library seeks to respect and align with the culture of each language — local customs about children may not always be reflected in sources such as CLDR. We actively welcome feedback and pull requests from native speakers of languages we support, or from native speakers who wish to add languages we do not currently support.
 

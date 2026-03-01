@@ -5,12 +5,19 @@ module ParentTime
   module Locales
     GA = AgeLocale.new(
       code: 'ga',
-      plural: ->(n) { :other },
+      plural: lambda { |n|
+        if n == 1 then :one
+        elsif n == 2 then :two
+        elsif n >= 3 && n <= 6 then :few
+        elsif n >= 7 && n <= 10 then :many
+        else :other
+        end
+      },
       units: {
-        'day' => '{n} lá',
-        'week' => '{n} seachtain',
-        'month' => '{n} mí',
-        'year' => '{n} bliain',
+        'day' => { one: '{n} lá', two: '{n} lá', few: '{n} lá', many: '{n} lá', other: '{n} lá' },
+        'week' => { one: '{n} seachtain', two: '{n} sheachtain', few: '{n} seachtaine', many: '{n} seachtaine', other: '{n} seachtain' },
+        'month' => { one: '{n} mhí', two: '{n} mhí', few: '{n} mhí', many: '{n} mí', other: '{n} mí' },
+        'year' => { one: '{n} bhliain', two: '{n} bhliain', few: '{n} bliana', many: '{n} mbliana', other: '{n} bliain' },
       },
       half: '{0} go leith',
       delimiter: ', ',

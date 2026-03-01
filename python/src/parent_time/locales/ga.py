@@ -2,16 +2,29 @@
 
 """Irish locale."""
 
-from parent_time.locale import AgeLocale
+from parent_time.locale import AgeLocale, PluralCategory
+
+
+def _plural(n: int) -> PluralCategory:
+    if n == 1:
+        return "one"
+    if n == 2:
+        return "two"
+    if 3 <= n <= 6:
+        return "few"
+    if 7 <= n <= 10:
+        return "many"
+    return "other"
+
 
 GA = AgeLocale(
     code="ga",
-    plural=lambda _n: "other",
+    plural=_plural,
     units={
-        "day": "{n} lá",
-        "week": "{n} seachtain",
-        "month": "{n} mí",
-        "year": "{n} bliain",
+        "day": {"one": "{n} lá", "two": "{n} lá", "few": "{n} lá", "many": "{n} lá", "other": "{n} lá"},
+        "week": {"one": "{n} seachtain", "two": "{n} sheachtain", "few": "{n} seachtaine", "many": "{n} seachtaine", "other": "{n} seachtain"},
+        "month": {"one": "{n} mhí", "two": "{n} mhí", "few": "{n} mhí", "many": "{n} mí", "other": "{n} mí"},
+        "year": {"one": "{n} bhliain", "two": "{n} bhliain", "few": "{n} bliana", "many": "{n} mbliana", "other": "{n} bliain"},
     },
     half="{0} go leith",
     delimiter=", ",

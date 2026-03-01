@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version     = ParentTime::VERSION
   s.summary     = "Human-friendly age formatting the way parents actually talk"
   s.description = "Formats ages the way parents, pediatricians, and baby apps actually talk. " \
-                  "Zero dependencies, 63 built-in locales, 3 compactness levels."
+                  "Zero dependencies, 71 built-in locales, 3 compactness levels."
   s.authors     = ["Don Neufeld"]
   s.license     = "MIT"
   s.homepage    = "https://github.com/dnf/parent-time"

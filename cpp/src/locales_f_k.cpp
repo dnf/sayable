@@ -95,17 +95,45 @@ const AgeLocale& FR() {
 const AgeLocale& GA() {
     static const AgeLocale loc{
         "ga",
-        [](int) -> PluralCategory {
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            if (n == 2) return PluralCategory::Two;
+            if (n >= 3 && n <= 6) return PluralCategory::Few;
+            if (n >= 7 && n <= 10) return PluralCategory::Many;
             return PluralCategory::Other;
         },
         UnitSet{
-            UnitForms::Simple("{n} lá"),
-            UnitForms::Simple("{n} seachtain"),
-            UnitForms::Simple("{n} mí"),
-            UnitForms::Simple("{n} bliain")
+            UnitForms::Plural({{PluralCategory::One, "{n} lá"}, {PluralCategory::Two, "{n} lá"}, {PluralCategory::Few, "{n} lá"}, {PluralCategory::Many, "{n} lá"}, {PluralCategory::Other, "{n} lá"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} seachtain"}, {PluralCategory::Two, "{n} sheachtain"}, {PluralCategory::Few, "{n} seachtaine"}, {PluralCategory::Many, "{n} seachtaine"}, {PluralCategory::Other, "{n} seachtain"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} mhí"}, {PluralCategory::Two, "{n} mhí"}, {PluralCategory::Few, "{n} mhí"}, {PluralCategory::Many, "{n} mí"}, {PluralCategory::Other, "{n} mí"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} bhliain"}, {PluralCategory::Two, "{n} bhliain"}, {PluralCategory::Few, "{n} bliana"}, {PluralCategory::Many, "{n} mbliana"}, {PluralCategory::Other, "{n} bliain"}})
         },
         "{0} go leith", ", ", "Nuabheirthe",
         StageLabels{{"Nuabheirthe", ""}, {"Naíonán", ""}, {"Lapadán", ""}, {"Páiste", ""}, {"Déagóir", ""}, {"Duine fásta", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& GD() {
+    static const AgeLocale loc{
+        "gd",
+        [](int n) -> PluralCategory {
+            if (n == 1 || n == 11) return PluralCategory::One;
+            if (n == 2 || n == 12) return PluralCategory::Two;
+            if ((n >= 3 && n <= 10) || (n >= 13 && n <= 19)) return PluralCategory::Few;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} latha"}, {PluralCategory::Two, "{n} latha"}, {PluralCategory::Few, "{n} làithean"}, {PluralCategory::Other, "{n} latha"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} sheachdain"}, {PluralCategory::Two, "{n} sheachdain"}, {PluralCategory::Few, "{n} seachdainean"}, {PluralCategory::Other, "{n} seachdain"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} mhìos"}, {PluralCategory::Two, "{n} mhìos"}, {PluralCategory::Few, "{n} mìosan"}, {PluralCategory::Other, "{n} mìos"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} bhliadhna"}, {PluralCategory::Two, "{n} bhliadhna"}, {PluralCategory::Few, "{n} bliadhna"}, {PluralCategory::Other, "{n} bliadhna"}})
+        },
+        "{0} gu leth", ", ", "Ùr-bhreith",
+        StageLabels{{"Ùr-bhreith", ""}, {"Naoidhean", ""}, {"Pàiste beag", ""}, {"Pàiste", ""}, {"Deugaire", ""}, {"Inbheach", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr
@@ -128,6 +156,32 @@ const AgeLocale& GU() {
         },
         "સાડા {n}", ", ", "નવજાત",
         StageLabels{{"નવજાત", ""}, {"શિશુ", ""}, {"નાનું બાળક", ""}, {"બાળક", ""}, {"કિશોર", "કિશોરી"}, {"પુખ્ત", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& GV() {
+    static const AgeLocale loc{
+        "gv",
+        [](int n) -> PluralCategory {
+            int mod10 = n % 10;
+            int mod100 = n % 100;
+            if (mod10 == 1) return PluralCategory::One;
+            if (mod10 == 2) return PluralCategory::Two;
+            if (mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80) return PluralCategory::Few;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} laa"}, {PluralCategory::Two, "{n} laa"}, {PluralCategory::Few, "{n} laa"}, {PluralCategory::Other, "{n} laa"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} hiaghtin"}, {PluralCategory::Two, "{n} hiaghtin"}, {PluralCategory::Few, "{n} shiaghtin"}, {PluralCategory::Other, "{n} shiaghtin"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} vee"}, {PluralCategory::Two, "{n} vee"}, {PluralCategory::Few, "{n} mee"}, {PluralCategory::Other, "{n} mee"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} vlein"}, {PluralCategory::Two, "{n} vlein"}, {PluralCategory::Few, "{n} blein"}, {PluralCategory::Other, "{n} blein"}})
+        },
+        "{0} as lieh", ", ", "Ruggit noa",
+        StageLabels{{"Ruggit noa", ""}, {"Oikanagh", ""}, {"Lhiannoo", ""}, {"Paitchey", ""}, {"Fer aeg", ""}, {"Dooinney aasit", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr
@@ -390,6 +444,33 @@ const AgeLocale& KO() {
         },
         "{0} 반", " ", "신생아",
         StageLabels{{"신생아", ""}, {"영아", ""}, {"유아", ""}, {"아동", ""}, {"청소년", ""}, {"성인", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& KW() {
+    static const AgeLocale loc{
+        "kw",
+        [](int n) -> PluralCategory {
+            if (n == 0) return PluralCategory::Zero;
+            if (n == 1) return PluralCategory::One;
+            int mod100 = n % 100;
+            if (mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82) return PluralCategory::Two;
+            if (mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83) return PluralCategory::Few;
+            if (n != 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81)) return PluralCategory::Many;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::Zero, "{n} dydh"}, {PluralCategory::One, "dydh"}, {PluralCategory::Two, "{n} dhydh"}, {PluralCategory::Few, "{n} dydh"}, {PluralCategory::Many, "{n} dydh"}, {PluralCategory::Other, "{n} dydh"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} seythun"}, {PluralCategory::One, "seythun"}, {PluralCategory::Two, "{n} seythun"}, {PluralCategory::Few, "{n} seythun"}, {PluralCategory::Many, "{n} seythun"}, {PluralCategory::Other, "{n} seythun"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} mis"}, {PluralCategory::One, "mis"}, {PluralCategory::Two, "{n} vis"}, {PluralCategory::Few, "{n} mis"}, {PluralCategory::Many, "{n} mis"}, {PluralCategory::Other, "{n} mis"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} blydhen"}, {PluralCategory::One, "blydhen"}, {PluralCategory::Two, "{n} vlydhen"}, {PluralCategory::Few, "{n} blydhen"}, {PluralCategory::Many, "{n} blydhen"}, {PluralCategory::Other, "{n} blydhen"}})
+        },
+        "{0} hag hanter", ", ", "Nowyth genys",
+        StageLabels{{"Nowyth genys", ""}, {"Babi", ""}, {"Flogh byhan", ""}, {"Flogh", ""}, {"Den yowynk", ""}, {"Den tevys", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr

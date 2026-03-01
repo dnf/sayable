@@ -3,7 +3,7 @@
 package parenttime
 
 /**
- * All 63 locale definitions for parent-time.
+ * All 71 locale definitions for parent-time.
  */
 public object Locales {
 
@@ -142,6 +142,41 @@ public object Locales {
     )
 
     // ================================================================
+    // BR — Breton
+    // ================================================================
+    public val BR: AgeLocale = AgeLocale(
+        code = "br",
+        plural = { n ->
+            val mod10 = n % 10
+            val mod100 = n % 100
+            when {
+                mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91 -> PluralCategory.ONE
+                mod10 == 2 && mod100 != 12 && mod100 != 72 && mod100 != 92 -> PluralCategory.TWO
+                (mod10 == 3 || mod10 == 4 || mod10 == 9) && mod100 !in 10..19 && mod100 !in 70..79 && mod100 !in 90..99 -> PluralCategory.FEW
+                n != 0 && n % 1000000 == 0 -> PluralCategory.MANY
+                else -> PluralCategory.OTHER
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} devezh", PluralCategory.TWO to "{n} zevezh", PluralCategory.FEW to "{n} devezh", PluralCategory.MANY to "{n} devezh", PluralCategory.OTHER to "{n} devezh")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} sizhun", PluralCategory.TWO to "{n} sizhun", PluralCategory.FEW to "{n} sizhun", PluralCategory.MANY to "{n} sizhun", PluralCategory.OTHER to "{n} sizhun")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} miz", PluralCategory.TWO to "{n} viz", PluralCategory.FEW to "{n} miz", PluralCategory.MANY to "{n} miz", PluralCategory.OTHER to "{n} miz")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} bloaz", PluralCategory.TWO to "{n} vloaz", PluralCategory.FEW to "{n} bloaz", PluralCategory.MANY to "{n} bloaz", PluralCategory.OTHER to "{n} bloaz")),
+        ),
+        half = "{0} hag un hanter",
+        delimiter = ", ",
+        justBorn = "Nevez ganet",
+        stages = Stages(
+            newborn = s("Nevez ganet"),
+            infant = s("Babig"),
+            toddler = s("Bugel bihan"),
+            child = s("Bugel"),
+            teenager = s("Den yaouank"),
+            adult = s("Den deuet da vad"),
+        ),
+    )
+
+    // ================================================================
     // BS — Bosnian
     // ================================================================
     public val BS: AgeLocale = AgeLocale(
@@ -227,6 +262,40 @@ public object Locales {
             child = s("Dítě"),
             teenager = s("Teenager"),
             adult = g("Dospělý", "Dospělá"),
+        ),
+    )
+
+    // ================================================================
+    // CY — Welsh
+    // ================================================================
+    public val CY: AgeLocale = AgeLocale(
+        code = "cy",
+        plural = { n ->
+            when (n) {
+                0 -> PluralCategory.ZERO
+                1 -> PluralCategory.ONE
+                2 -> PluralCategory.TWO
+                3 -> PluralCategory.FEW
+                6 -> PluralCategory.MANY
+                else -> PluralCategory.OTHER
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ZERO to "{n} diwrnod", PluralCategory.ONE to "{n} diwrnod", PluralCategory.TWO to "{n} ddiwrnod", PluralCategory.FEW to "{n} diwrnod", PluralCategory.MANY to "{n} niwrnod", PluralCategory.OTHER to "{n} diwrnod")),
+            week = pluralUnit(mapOf(PluralCategory.ZERO to "{n} wythnos", PluralCategory.ONE to "{n} wythnos", PluralCategory.TWO to "{n} wythnos", PluralCategory.FEW to "{n} wythnos", PluralCategory.MANY to "{n} wythnos", PluralCategory.OTHER to "{n} wythnos")),
+            month = pluralUnit(mapOf(PluralCategory.ZERO to "{n} mis", PluralCategory.ONE to "{n} mis", PluralCategory.TWO to "{n} fis", PluralCategory.FEW to "{n} mis", PluralCategory.MANY to "{n} mis", PluralCategory.OTHER to "{n} mis")),
+            year = pluralUnit(mapOf(PluralCategory.ZERO to "{n} blwyddyn", PluralCategory.ONE to "{n} blwyddyn", PluralCategory.TWO to "{n} flynedd", PluralCategory.FEW to "{n} blynedd", PluralCategory.MANY to "{n} blynedd", PluralCategory.OTHER to "{n} blynedd")),
+        ),
+        half = "{0} a hanner",
+        delimiter = ", ",
+        justBorn = "Newydd-anedig",
+        stages = Stages(
+            newborn = s("Newydd-anedig"),
+            infant = s("Baban"),
+            toddler = s("Plentyn bach"),
+            child = s("Plentyn"),
+            teenager = s("Glaslanc"),
+            adult = s("Oedolyn"),
         ),
     )
 
@@ -523,12 +592,20 @@ public object Locales {
     // ================================================================
     public val GA: AgeLocale = AgeLocale(
         code = "ga",
-        plural = { _ -> PluralCategory.OTHER },
+        plural = { n ->
+            when {
+                n == 1 -> PluralCategory.ONE
+                n == 2 -> PluralCategory.TWO
+                n in 3..6 -> PluralCategory.FEW
+                n in 7..10 -> PluralCategory.MANY
+                else -> PluralCategory.OTHER
+            }
+        },
         units = Units(
-            day = simpleUnit("{n} lá"),
-            week = simpleUnit("{n} seachtain"),
-            month = simpleUnit("{n} mí"),
-            year = simpleUnit("{n} bliain"),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} lá", PluralCategory.TWO to "{n} lá", PluralCategory.FEW to "{n} lá", PluralCategory.MANY to "{n} lá", PluralCategory.OTHER to "{n} lá")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} seachtain", PluralCategory.TWO to "{n} sheachtain", PluralCategory.FEW to "{n} seachtaine", PluralCategory.MANY to "{n} seachtaine", PluralCategory.OTHER to "{n} seachtain")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mhí", PluralCategory.TWO to "{n} mhí", PluralCategory.FEW to "{n} mhí", PluralCategory.MANY to "{n} mí", PluralCategory.OTHER to "{n} mí")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} bhliain", PluralCategory.TWO to "{n} bhliain", PluralCategory.FEW to "{n} bliana", PluralCategory.MANY to "{n} mbliana", PluralCategory.OTHER to "{n} bliain")),
         ),
         half = "{0} go leith",
         delimiter = ", ",
@@ -540,6 +617,38 @@ public object Locales {
             child = s("Páiste"),
             teenager = s("Déagóir"),
             adult = s("Duine fásta"),
+        ),
+    )
+
+    // ================================================================
+    // GD — Scottish Gaelic
+    // ================================================================
+    public val GD: AgeLocale = AgeLocale(
+        code = "gd",
+        plural = { n ->
+            when {
+                n == 1 || n == 11 -> PluralCategory.ONE
+                n == 2 || n == 12 -> PluralCategory.TWO
+                n in 3..10 || n in 13..19 -> PluralCategory.FEW
+                else -> PluralCategory.OTHER
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} latha", PluralCategory.TWO to "{n} latha", PluralCategory.FEW to "{n} làithean", PluralCategory.OTHER to "{n} latha")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} sheachdain", PluralCategory.TWO to "{n} sheachdain", PluralCategory.FEW to "{n} seachdainean", PluralCategory.OTHER to "{n} seachdain")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mhìos", PluralCategory.TWO to "{n} mhìos", PluralCategory.FEW to "{n} mìosan", PluralCategory.OTHER to "{n} mìos")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} bhliadhna", PluralCategory.TWO to "{n} bhliadhna", PluralCategory.FEW to "{n} bliadhna", PluralCategory.OTHER to "{n} bliadhna")),
+        ),
+        half = "{0} gu leth",
+        delimiter = ", ",
+        justBorn = "Ùr-bhreith",
+        stages = Stages(
+            newborn = s("Ùr-bhreith"),
+            infant = s("Naoidhean"),
+            toddler = s("Pàiste beag"),
+            child = s("Pàiste"),
+            teenager = s("Deugaire"),
+            adult = s("Inbheach"),
         ),
     )
 
@@ -565,6 +674,40 @@ public object Locales {
             child = s("બાળક"),
             teenager = g("કિશોર", "કિશોરી"),
             adult = s("પુખ્ત"),
+        ),
+    )
+
+    // ================================================================
+    // GV — Manx
+    // ================================================================
+    public val GV: AgeLocale = AgeLocale(
+        code = "gv",
+        plural = { n ->
+            val mod10 = n % 10
+            val mod100 = n % 100
+            when {
+                mod10 == 1 -> PluralCategory.ONE
+                mod10 == 2 -> PluralCategory.TWO
+                mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80 -> PluralCategory.FEW
+                else -> PluralCategory.OTHER
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} laa", PluralCategory.TWO to "{n} laa", PluralCategory.FEW to "{n} laa", PluralCategory.OTHER to "{n} laa")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} hiaghtin", PluralCategory.TWO to "{n} hiaghtin", PluralCategory.FEW to "{n} shiaghtin", PluralCategory.OTHER to "{n} shiaghtin")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} vee", PluralCategory.TWO to "{n} vee", PluralCategory.FEW to "{n} mee", PluralCategory.OTHER to "{n} mee")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} vlein", PluralCategory.TWO to "{n} vlein", PluralCategory.FEW to "{n} blein", PluralCategory.OTHER to "{n} blein")),
+        ),
+        half = "{0} as lieh",
+        delimiter = ", ",
+        justBorn = "Ruggit noa",
+        stages = Stages(
+            newborn = s("Ruggit noa"),
+            infant = s("Oikanagh"),
+            toddler = s("Lhiannoo"),
+            child = s("Paitchey"),
+            teenager = s("Fer aeg"),
+            adult = s("Dooinney aasit"),
         ),
     )
 
@@ -883,6 +1026,45 @@ public object Locales {
     )
 
     // ================================================================
+    // KW — Cornish
+    // ================================================================
+    public val KW: AgeLocale = AgeLocale(
+        code = "kw",
+        plural = { n ->
+            when {
+                n == 0 -> PluralCategory.ZERO
+                n == 1 -> PluralCategory.ONE
+                else -> {
+                    val mod100 = n % 100
+                    when {
+                        mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82 -> PluralCategory.TWO
+                        mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83 -> PluralCategory.FEW
+                        n != 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81) -> PluralCategory.MANY
+                        else -> PluralCategory.OTHER
+                    }
+                }
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ZERO to "{n} dydh", PluralCategory.ONE to "dydh", PluralCategory.TWO to "{n} dhydh", PluralCategory.FEW to "{n} dydh", PluralCategory.MANY to "{n} dydh", PluralCategory.OTHER to "{n} dydh")),
+            week = pluralUnit(mapOf(PluralCategory.ZERO to "{n} seythun", PluralCategory.ONE to "seythun", PluralCategory.TWO to "{n} seythun", PluralCategory.FEW to "{n} seythun", PluralCategory.MANY to "{n} seythun", PluralCategory.OTHER to "{n} seythun")),
+            month = pluralUnit(mapOf(PluralCategory.ZERO to "{n} mis", PluralCategory.ONE to "mis", PluralCategory.TWO to "{n} vis", PluralCategory.FEW to "{n} mis", PluralCategory.MANY to "{n} mis", PluralCategory.OTHER to "{n} mis")),
+            year = pluralUnit(mapOf(PluralCategory.ZERO to "{n} blydhen", PluralCategory.ONE to "blydhen", PluralCategory.TWO to "{n} vlydhen", PluralCategory.FEW to "{n} blydhen", PluralCategory.MANY to "{n} blydhen", PluralCategory.OTHER to "{n} blydhen")),
+        ),
+        half = "{0} hag hanter",
+        delimiter = ", ",
+        justBorn = "Nowyth genys",
+        stages = Stages(
+            newborn = s("Nowyth genys"),
+            infant = s("Babi"),
+            toddler = s("Flogh byhan"),
+            child = s("Flogh"),
+            teenager = s("Den yowynk"),
+            adult = s("Den tevys"),
+        ),
+    )
+
+    // ================================================================
     // LT — Lithuanian
     // ================================================================
     public val LT: AgeLocale = AgeLocale(
@@ -1024,6 +1206,39 @@ public object Locales {
             child = s("Kanak-kanak"),
             teenager = s("Remaja"),
             adult = s("Dewasa"),
+        ),
+    )
+
+    // ================================================================
+    // MT — Maltese
+    // ================================================================
+    public val MT: AgeLocale = AgeLocale(
+        code = "mt",
+        plural = { n ->
+            when {
+                n == 1 -> PluralCategory.ONE
+                n == 2 -> PluralCategory.TWO
+                n == 0 || n % 100 in 3..10 -> PluralCategory.FEW
+                n % 100 in 11..19 -> PluralCategory.MANY
+                else -> PluralCategory.OTHER
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "ġurnata", PluralCategory.TWO to "jumejn", PluralCategory.FEW to "{n} ijiem", PluralCategory.MANY to "{n}-il jum", PluralCategory.OTHER to "{n} jum")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "ġimgħa", PluralCategory.TWO to "ġimgħatejn", PluralCategory.FEW to "{n} ġimgħat", PluralCategory.MANY to "{n}-il ġimgħa", PluralCategory.OTHER to "{n} ġimgħa")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "xahar", PluralCategory.TWO to "xahrejn", PluralCategory.FEW to "{n} xhur", PluralCategory.MANY to "{n}-il xahar", PluralCategory.OTHER to "{n} xahar")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "sena", PluralCategory.TWO to "sentejn", PluralCategory.FEW to "{n} snin", PluralCategory.MANY to "{n}-il sena", PluralCategory.OTHER to "{n} sena")),
+        ),
+        half = "{0} u nofs",
+        delimiter = " u ",
+        justBorn = "Tarbija ġdida",
+        stages = Stages(
+            newborn = s("Tarbija ġdida"),
+            infant = s("Tarbija"),
+            toddler = g("Tifel żgħir", "Tifla żgħira"),
+            child = g("Tifel", "Tifla"),
+            teenager = g("Adolexxent", "Adolexxenta"),
+            adult = g("Adult", "Adulta"),
         ),
     )
 
@@ -1271,6 +1486,37 @@ public object Locales {
             child = s("Ребёнок"),
             teenager = s("Подросток"),
             adult = g("Взрослый", "Взрослая"),
+        ),
+    )
+
+    // ================================================================
+    // SHI — Tachelhit
+    // ================================================================
+    public val SHI: AgeLocale = AgeLocale(
+        code = "shi",
+        plural = { n ->
+            when {
+                n == 0 || n == 1 -> PluralCategory.ONE
+                n in 2..10 -> PluralCategory.FEW
+                else -> PluralCategory.OTHER
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} ass", PluralCategory.FEW to "{n} ussan", PluralCategory.OTHER to "{n} ass")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} imalass", PluralCategory.FEW to "{n} imalassn", PluralCategory.OTHER to "{n} imalass")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} ayyur", PluralCategory.FEW to "{n} ayyurn", PluralCategory.OTHER to "{n} ayyur")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} aseggas", PluralCategory.FEW to "{n} iseggasen", PluralCategory.OTHER to "{n} aseggas")),
+        ),
+        half = "{0} d uzgen",
+        delimiter = ", ",
+        justBorn = "Iɣ d illul",
+        stages = Stages(
+            newborn = s("Iɣ d illul"),
+            infant = s("Agellid"),
+            toddler = g("Aḥenjir", "Taḥenjirt"),
+            child = g("Afrux", "Tafruxṭ"),
+            teenager = g("Aɛrim", "Taɛrimt"),
+            adult = g("Argaz", "Tamṭṭuṭ"),
         ),
     )
 
@@ -1572,6 +1818,36 @@ public object Locales {
     )
 
     // ================================================================
+    // TZM — Central Atlas Tamazight
+    // ================================================================
+    public val TZM: AgeLocale = AgeLocale(
+        code = "tzm",
+        plural = { n ->
+            when {
+                n == 0 || n == 1 || n in 11..99 -> PluralCategory.ONE
+                else -> PluralCategory.OTHER
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} ass", PluralCategory.OTHER to "{n} ussan")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} imalass", PluralCategory.OTHER to "{n} imalassn")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} ayyur", PluralCategory.OTHER to "{n} ayyurn")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} aseggas", PluralCategory.OTHER to "{n} iseggasen")),
+        ),
+        half = "{0} d uzgen",
+        delimiter = ", ",
+        justBorn = "Iɣ d illul",
+        stages = Stages(
+            newborn = s("Iɣ d illul"),
+            infant = s("Agellid"),
+            toddler = g("Aḥenjir", "Taḥenjirt"),
+            child = g("Afrux", "Tafruxṭ"),
+            teenager = g("Aɛrim", "Taɛrimt"),
+            adult = g("Argaz", "Tamṭṭuṭ"),
+        ),
+    )
+
+    // ================================================================
     // UK — Ukrainian
     // ================================================================
     public val UK: AgeLocale = AgeLocale(
@@ -1706,17 +1982,19 @@ public object Locales {
 
     public val ALL: Map<String, AgeLocale> = mapOf(
         "am" to AM, "ar" to AR, "az" to AZ, "bg" to BG, "bn" to BN,
-        "bs" to BS, "ca" to CA, "cs" to CS, "da" to DA, "de" to DE,
-        "el" to EL, "en" to EN, "es" to ES, "et" to ET, "eu" to EU,
-        "fa" to FA, "fi" to FI, "fil" to FIL, "fr" to FR, "ga" to GA,
-        "gu" to GU, "he" to HE, "hi" to HI, "hr" to HR, "hu" to HU,
-        "id" to ID, "it" to IT, "ja" to JA, "jv" to JV, "ka" to KA,
-        "kk" to KK, "km" to KM, "ko" to KO, "lt" to LT, "lv" to LV,
-        "mk" to MK, "mr" to MR, "ms" to MS, "my" to MY, "nb" to NB,
-        "ne" to NE, "nl" to NL, "pa" to PA, "pl" to PL, "pt" to PT,
-        "ro" to RO, "ru" to RU, "si" to SI, "sk" to SK, "sl" to SL,
-        "sq" to SQ, "sr" to SR, "sv" to SV, "sw" to SW, "ta" to TA,
-        "te" to TE, "th" to TH, "tr" to TR, "uk" to UK, "ur" to UR,
-        "uz" to UZ, "vi" to VI, "zh" to ZH
+        "br" to BR, "bs" to BS, "ca" to CA, "cs" to CS, "cy" to CY,
+        "da" to DA, "de" to DE, "el" to EL, "en" to EN, "es" to ES,
+        "et" to ET, "eu" to EU, "fa" to FA, "fi" to FI, "fil" to FIL,
+        "fr" to FR, "ga" to GA, "gd" to GD, "gu" to GU, "gv" to GV,
+        "he" to HE, "hi" to HI, "hr" to HR, "hu" to HU, "id" to ID,
+        "it" to IT, "ja" to JA, "jv" to JV, "ka" to KA, "kk" to KK,
+        "km" to KM, "ko" to KO, "kw" to KW, "lt" to LT, "lv" to LV,
+        "mk" to MK, "mr" to MR, "ms" to MS, "mt" to MT, "my" to MY,
+        "nb" to NB, "ne" to NE, "nl" to NL, "pa" to PA, "pl" to PL,
+        "pt" to PT, "ro" to RO, "ru" to RU, "shi" to SHI, "si" to SI,
+        "sk" to SK, "sl" to SL, "sq" to SQ, "sr" to SR, "sv" to SV,
+        "sw" to SW, "ta" to TA, "te" to TE, "th" to TH, "tr" to TR,
+        "tzm" to TZM, "uk" to UK, "ur" to UR, "uz" to UZ, "vi" to VI,
+        "zh" to ZH
     )
 }

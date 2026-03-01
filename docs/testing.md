@@ -393,12 +393,12 @@ Using the English locale with `compactness = "compact"`.
 
 ---
 
-## 29. Locale-specific edge cases — new plural rules
+## 29. Locale-specific edge cases — plural rules
 
-Test locales from the 14 new additions that exercise distinct plural rule
-families: Hebrew dual forms (`he`), Macedonian mod-based plurals (`mk`),
-Swahili noun-class changes (`sw`), Indonesian other-only (`id`), and
-Amharic zero-one rule with Ethiopic delimiter (`am`).
+Test locales that exercise distinct plural rule families: Hebrew dual forms
+(`he`), Macedonian mod-based plurals (`mk`), Swahili noun-class changes
+(`sw`), Indonesian other-only (`id`), and Amharic zero-one rule with
+Ethiopic delimiter (`am`).
 
 ### 29.1 — Hebrew (`he`) — dual forms
 

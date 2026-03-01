@@ -52,7 +52,7 @@ pt = ParentTime::Formatter.new(ParentTime::Locales::JA)
 pt.format_age("2025-01-01", "2025-07-15")  # "6ヶ月"
 ```
 
-63 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
 
 ## Compactness
 

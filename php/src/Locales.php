@@ -141,6 +141,48 @@ final class Locales
         );
     }
 
+    // ── Breton ──────────────────────────────────────────────────────
+
+    private static function pluralBR(int $n): PluralCategory
+    {
+        $mod10 = $n % 10;
+        $mod100 = $n % 100;
+        if ($mod10 === 1 && $mod100 !== 11 && $mod100 !== 71 && $mod100 !== 91) {
+            return PluralCategory::One;
+        }
+        if ($mod10 === 2 && $mod100 !== 12 && $mod100 !== 72 && $mod100 !== 92) {
+            return PluralCategory::Two;
+        }
+        if (($mod10 === 3 || $mod10 === 4 || $mod10 === 9) && !($mod100 >= 10 && $mod100 <= 19) && !($mod100 >= 70 && $mod100 <= 79) && !($mod100 >= 90 && $mod100 <= 99)) {
+            return PluralCategory::Few;
+        }
+        if ($n !== 0 && $n % 1000000 === 0) {
+            return PluralCategory::Many;
+        }
+
+        return PluralCategory::Other;
+    }
+
+    public static function BR(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'br',
+            plural: static fn(int $n): PluralCategory => self::pluralBR($n),
+            units: new Units(
+                day: ['one' => '{n} devezh', 'two' => '{n} zevezh', 'few' => '{n} devezh', 'many' => '{n} devezh', 'other' => '{n} devezh'],
+                week: ['one' => '{n} sizhun', 'two' => '{n} sizhun', 'few' => '{n} sizhun', 'many' => '{n} sizhun', 'other' => '{n} sizhun'],
+                month: ['one' => '{n} miz', 'two' => '{n} viz', 'few' => '{n} miz', 'many' => '{n} miz', 'other' => '{n} miz'],
+                year: ['one' => '{n} bloaz', 'two' => '{n} vloaz', 'few' => '{n} bloaz', 'many' => '{n} bloaz', 'other' => '{n} bloaz'],
+            ),
+            half: '{0} hag un hanter',
+            delimiter: ', ',
+            justBorn: 'Nevez ganet',
+            stages: new Stages(new StageLabel('Nevez ganet'), new StageLabel('Babig'), new StageLabel('Bugel bihan'), new StageLabel('Bugel'), new StageLabel('Den yaouank'), new StageLabel('Den deuet da vad')),
+        );
+    }
+
     // ── Bosnian ─────────────────────────────────────────────────────
 
     private static function pluralBS(int $n): PluralCategory
@@ -230,6 +272,49 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Novorozenec',
             stages: new Stages(new StageLabel('Novorozenec'), new StageLabel('Kojenec'), new StageLabel('Batole'), new StageLabel('Dítě'), new StageLabel('Teenager'), new StageLabel('Dospělý', 'Dospělá')),
+        );
+    }
+
+    // ── Welsh ───────────────────────────────────────────────────────
+
+    private static function pluralCY(int $n): PluralCategory
+    {
+        if ($n === 0) {
+            return PluralCategory::Zero;
+        }
+        if ($n === 1) {
+            return PluralCategory::One;
+        }
+        if ($n === 2) {
+            return PluralCategory::Two;
+        }
+        if ($n === 3) {
+            return PluralCategory::Few;
+        }
+        if ($n === 6) {
+            return PluralCategory::Many;
+        }
+
+        return PluralCategory::Other;
+    }
+
+    public static function CY(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'cy',
+            plural: static fn(int $n): PluralCategory => self::pluralCY($n),
+            units: new Units(
+                day: ['zero' => '{n} diwrnod', 'one' => '{n} diwrnod', 'two' => '{n} ddiwrnod', 'few' => '{n} diwrnod', 'many' => '{n} niwrnod', 'other' => '{n} diwrnod'],
+                week: ['zero' => '{n} wythnos', 'one' => '{n} wythnos', 'two' => '{n} wythnos', 'few' => '{n} wythnos', 'many' => '{n} wythnos', 'other' => '{n} wythnos'],
+                month: ['zero' => '{n} mis', 'one' => '{n} mis', 'two' => '{n} fis', 'few' => '{n} mis', 'many' => '{n} mis', 'other' => '{n} mis'],
+                year: ['zero' => '{n} blwyddyn', 'one' => '{n} blwyddyn', 'two' => '{n} flynedd', 'few' => '{n} blynedd', 'many' => '{n} blynedd', 'other' => '{n} blynedd'],
+            ),
+            half: '{0} a hanner',
+            delimiter: ', ',
+            justBorn: 'Newydd-anedig',
+            stages: new Stages(new StageLabel('Newydd-anedig'), new StageLabel('Baban'), new StageLabel('Plentyn bach'), new StageLabel('Plentyn'), new StageLabel('Glaslanc'), new StageLabel('Oedolyn')),
         );
     }
 
@@ -490,23 +575,78 @@ final class Locales
 
     // ── Irish ───────────────────────────────────────────────────────
 
+    private static function pluralGA(int $n): PluralCategory
+    {
+        if ($n === 1) {
+            return PluralCategory::One;
+        }
+        if ($n === 2) {
+            return PluralCategory::Two;
+        }
+        if ($n >= 3 && $n <= 6) {
+            return PluralCategory::Few;
+        }
+        if ($n >= 7 && $n <= 10) {
+            return PluralCategory::Many;
+        }
+
+        return PluralCategory::Other;
+    }
+
     public static function GA(): AgeLocale
     {
         static $locale = null;
 
         return $locale ??= new AgeLocale(
             code: 'ga',
-            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            plural: static fn(int $n): PluralCategory => self::pluralGA($n),
             units: new Units(
-                day: '{n} lá',
-                week: '{n} seachtain',
-                month: '{n} mí',
-                year: '{n} bliain',
+                day: ['one' => '{n} lá', 'two' => '{n} lá', 'few' => '{n} lá', 'many' => '{n} lá', 'other' => '{n} lá'],
+                week: ['one' => '{n} seachtain', 'two' => '{n} sheachtain', 'few' => '{n} seachtaine', 'many' => '{n} seachtaine', 'other' => '{n} seachtain'],
+                month: ['one' => '{n} mhí', 'two' => '{n} mhí', 'few' => '{n} mhí', 'many' => '{n} mí', 'other' => '{n} mí'],
+                year: ['one' => '{n} bhliain', 'two' => '{n} bhliain', 'few' => '{n} bliana', 'many' => '{n} mbliana', 'other' => '{n} bliain'],
             ),
             half: '{0} go leith',
             delimiter: ', ',
             justBorn: 'Nuabheirthe',
             stages: new Stages(new StageLabel('Nuabheirthe'), new StageLabel('Naíonán'), new StageLabel('Lapadán'), new StageLabel('Páiste'), new StageLabel('Déagóir'), new StageLabel('Duine fásta')),
+        );
+    }
+
+    // ── Scottish Gaelic ─────────────────────────────────────────────
+
+    private static function pluralGD(int $n): PluralCategory
+    {
+        if ($n === 1 || $n === 11) {
+            return PluralCategory::One;
+        }
+        if ($n === 2 || $n === 12) {
+            return PluralCategory::Two;
+        }
+        if (($n >= 3 && $n <= 10) || ($n >= 13 && $n <= 19)) {
+            return PluralCategory::Few;
+        }
+
+        return PluralCategory::Other;
+    }
+
+    public static function GD(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'gd',
+            plural: static fn(int $n): PluralCategory => self::pluralGD($n),
+            units: new Units(
+                day: ['one' => '{n} latha', 'two' => '{n} latha', 'few' => '{n} làithean', 'other' => '{n} latha'],
+                week: ['one' => '{n} sheachdain', 'two' => '{n} sheachdain', 'few' => '{n} seachdainean', 'other' => '{n} seachdain'],
+                month: ['one' => '{n} mhìos', 'two' => '{n} mhìos', 'few' => '{n} mìosan', 'other' => '{n} mìos'],
+                year: ['one' => '{n} bhliadhna', 'two' => '{n} bhliadhna', 'few' => '{n} bliadhna', 'other' => '{n} bliadhna'],
+            ),
+            half: '{0} gu leth',
+            delimiter: ', ',
+            justBorn: 'Ùr-bhreith',
+            stages: new Stages(new StageLabel('Ùr-bhreith'), new StageLabel('Naoidhean'), new StageLabel('Pàiste beag'), new StageLabel('Pàiste'), new StageLabel('Deugaire'), new StageLabel('Inbheach')),
         );
     }
 
@@ -529,6 +669,45 @@ final class Locales
             delimiter: ', ',
             justBorn: 'નવજાત',
             stages: new Stages(new StageLabel('નવજાત'), new StageLabel('શિશુ'), new StageLabel('નાનું બાળક'), new StageLabel('બાળક'), new StageLabel('કિશોર', 'કિશોરી'), new StageLabel('પુખ્ત')),
+        );
+    }
+
+    // ── Manx ────────────────────────────────────────────────────────
+
+    private static function pluralGV(int $n): PluralCategory
+    {
+        $mod10 = $n % 10;
+        $mod100 = $n % 100;
+        if ($mod10 === 1) {
+            return PluralCategory::One;
+        }
+        if ($mod10 === 2) {
+            return PluralCategory::Two;
+        }
+        if ($mod100 === 0 || $mod100 === 20 || $mod100 === 40 || $mod100 === 60 || $mod100 === 80) {
+            return PluralCategory::Few;
+        }
+
+        return PluralCategory::Other;
+    }
+
+    public static function GV(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'gv',
+            plural: static fn(int $n): PluralCategory => self::pluralGV($n),
+            units: new Units(
+                day: ['one' => '{n} laa', 'two' => '{n} laa', 'few' => '{n} laa', 'other' => '{n} laa'],
+                week: ['one' => '{n} hiaghtin', 'two' => '{n} hiaghtin', 'few' => '{n} shiaghtin', 'other' => '{n} shiaghtin'],
+                month: ['one' => '{n} vee', 'two' => '{n} vee', 'few' => '{n} mee', 'other' => '{n} mee'],
+                year: ['one' => '{n} vlein', 'two' => '{n} vlein', 'few' => '{n} blein', 'other' => '{n} blein'],
+            ),
+            half: '{0} as lieh',
+            delimiter: ', ',
+            justBorn: 'Ruggit noa',
+            stages: new Stages(new StageLabel('Ruggit noa'), new StageLabel('Oikanagh'), new StageLabel('Lhiannoo'), new StageLabel('Paitchey'), new StageLabel('Fer aeg'), new StageLabel('Dooinney aasit')),
         );
     }
 
@@ -822,6 +1001,50 @@ final class Locales
         );
     }
 
+    // ── Cornish ─────────────────────────────────────────────────────
+
+    private static function pluralKW(int $n): PluralCategory
+    {
+        if ($n === 0) {
+            return PluralCategory::Zero;
+        }
+        if ($n === 1) {
+            return PluralCategory::One;
+        }
+        $mod100 = $n % 100;
+        if ($mod100 === 2 || $mod100 === 22 || $mod100 === 42 || $mod100 === 62 || $mod100 === 82) {
+            return PluralCategory::Two;
+        }
+        if ($mod100 === 3 || $mod100 === 23 || $mod100 === 43 || $mod100 === 63 || $mod100 === 83) {
+            return PluralCategory::Few;
+        }
+        if ($n !== 1 && ($mod100 === 1 || $mod100 === 21 || $mod100 === 41 || $mod100 === 61 || $mod100 === 81)) {
+            return PluralCategory::Many;
+        }
+
+        return PluralCategory::Other;
+    }
+
+    public static function KW(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'kw',
+            plural: static fn(int $n): PluralCategory => self::pluralKW($n),
+            units: new Units(
+                day: ['zero' => '{n} dydh', 'one' => 'dydh', 'two' => '{n} dhydh', 'few' => '{n} dydh', 'many' => '{n} dydh', 'other' => '{n} dydh'],
+                week: ['zero' => '{n} seythun', 'one' => 'seythun', 'two' => '{n} seythun', 'few' => '{n} seythun', 'many' => '{n} seythun', 'other' => '{n} seythun'],
+                month: ['zero' => '{n} mis', 'one' => 'mis', 'two' => '{n} vis', 'few' => '{n} mis', 'many' => '{n} mis', 'other' => '{n} mis'],
+                year: ['zero' => '{n} blydhen', 'one' => 'blydhen', 'two' => '{n} vlydhen', 'few' => '{n} blydhen', 'many' => '{n} blydhen', 'other' => '{n} blydhen'],
+            ),
+            half: '{0} hag hanter',
+            delimiter: ', ',
+            justBorn: 'Nowyth genys',
+            stages: new Stages(new StageLabel('Nowyth genys'), new StageLabel('Babi'), new StageLabel('Flogh byhan'), new StageLabel('Flogh'), new StageLabel('Den yowynk'), new StageLabel('Den tevys')),
+        );
+    }
+
     // ── Lithuanian ──────────────────────────────────────────────────
 
     private static function pluralLT(int $n): PluralCategory
@@ -968,6 +1191,47 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Baru lahir',
             stages: new Stages(new StageLabel('Baru lahir'), new StageLabel('Bayi'), new StageLabel('Kanak-kanak kecil'), new StageLabel('Kanak-kanak'), new StageLabel('Remaja'), new StageLabel('Dewasa')),
+        );
+    }
+
+    // ── Maltese ─────────────────────────────────────────────────────
+
+    private static function pluralMT(int $n): PluralCategory
+    {
+        if ($n === 1) {
+            return PluralCategory::One;
+        }
+        if ($n === 2) {
+            return PluralCategory::Two;
+        }
+        $mod100 = $n % 100;
+        if ($n === 0 || ($mod100 >= 3 && $mod100 <= 10)) {
+            return PluralCategory::Few;
+        }
+        if ($mod100 >= 11 && $mod100 <= 19) {
+            return PluralCategory::Many;
+        }
+
+        return PluralCategory::Other;
+    }
+
+    public static function MT(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'mt',
+            plural: static fn(int $n): PluralCategory => self::pluralMT($n),
+            units: new Units(
+                day: ['one' => 'ġurnata', 'two' => 'jumejn', 'few' => '{n} ijiem', 'many' => '{n}-il jum', 'other' => '{n} jum'],
+                week: ['one' => 'ġimgħa', 'two' => 'ġimgħatejn', 'few' => '{n} ġimgħat', 'many' => '{n}-il ġimgħa', 'other' => '{n} ġimgħa'],
+                month: ['one' => 'xahar', 'two' => 'xahrejn', 'few' => '{n} xhur', 'many' => '{n}-il xahar', 'other' => '{n} xahar'],
+                year: ['one' => 'sena', 'two' => 'sentejn', 'few' => '{n} snin', 'many' => '{n}-il sena', 'other' => '{n} sena'],
+            ),
+            half: '{0} u nofs',
+            delimiter: ' u ',
+            justBorn: 'Tarbija ġdida',
+            stages: new Stages(new StageLabel('Tarbija ġdida'), new StageLabel('Tarbija'), new StageLabel('Tifel żgħir', 'Tifla żgħira'), new StageLabel('Tifel', 'Tifla'), new StageLabel('Adolexxent', 'Adolexxenta'), new StageLabel('Adult', 'Adulta')),
         );
     }
 
@@ -1206,6 +1470,40 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Новорождённый',
             stages: new Stages(new StageLabel('Новорождённый', 'Новорождённая'), new StageLabel('Младенец'), new StageLabel('Малыш', 'Малышка'), new StageLabel('Ребёнок'), new StageLabel('Подросток'), new StageLabel('Взрослый', 'Взрослая')),
+        );
+    }
+
+    // ── Tachelhit ───────────────────────────────────────────────────
+
+    private static function pluralSHI(int $n): PluralCategory
+    {
+        if ($n === 0 || $n === 1) {
+            return PluralCategory::One;
+        }
+        if ($n >= 2 && $n <= 10) {
+            return PluralCategory::Few;
+        }
+
+        return PluralCategory::Other;
+    }
+
+    public static function SHI(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'shi',
+            plural: static fn(int $n): PluralCategory => self::pluralSHI($n),
+            units: new Units(
+                day: ['one' => '{n} ass', 'few' => '{n} ussan', 'other' => '{n} ass'],
+                week: ['one' => '{n} imalass', 'few' => '{n} imalassn', 'other' => '{n} imalass'],
+                month: ['one' => '{n} ayyur', 'few' => '{n} ayyurn', 'other' => '{n} ayyur'],
+                year: ['one' => '{n} aseggas', 'few' => '{n} iseggasen', 'other' => '{n} aseggas'],
+            ),
+            half: '{0} d uzgen',
+            delimiter: ', ',
+            justBorn: 'Iɣ d illul',
+            stages: new Stages(new StageLabel('Iɣ d illul'), new StageLabel('Agellid'), new StageLabel('Aḥenjir', 'Taḥenjirt'), new StageLabel('Afrux', 'Tafruxṭ'), new StageLabel('Aɛrim', 'Taɛrimt'), new StageLabel('Argaz', 'Tamṭṭuṭ')),
         );
     }
 
@@ -1490,6 +1788,37 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Yeni doğan',
             stages: new Stages(new StageLabel('Yeni doğan'), new StageLabel('Bebek'), new StageLabel('Küçük çocuk'), new StageLabel('Çocuk'), new StageLabel('Ergen'), new StageLabel('Yetişkin')),
+        );
+    }
+
+    // ── Central Atlas Tamazight ─────────────────────────────────────
+
+    private static function pluralTZM(int $n): PluralCategory
+    {
+        if ($n === 0 || $n === 1 || ($n >= 11 && $n <= 99)) {
+            return PluralCategory::One;
+        }
+
+        return PluralCategory::Other;
+    }
+
+    public static function TZM(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'tzm',
+            plural: static fn(int $n): PluralCategory => self::pluralTZM($n),
+            units: new Units(
+                day: ['one' => '{n} ass', 'other' => '{n} ussan'],
+                week: ['one' => '{n} imalass', 'other' => '{n} imalassn'],
+                month: ['one' => '{n} ayyur', 'other' => '{n} ayyurn'],
+                year: ['one' => '{n} aseggas', 'other' => '{n} iseggasen'],
+            ),
+            half: '{0} d uzgen',
+            delimiter: ', ',
+            justBorn: 'Iɣ d illul',
+            stages: new Stages(new StageLabel('Iɣ d illul'), new StageLabel('Agellid'), new StageLabel('Aḥenjir', 'Taḥenjirt'), new StageLabel('Afrux', 'Tafruxṭ'), new StageLabel('Aɛrim', 'Taɛrimt'), new StageLabel('Argaz', 'Tamṭṭuṭ')),
         );
     }
 

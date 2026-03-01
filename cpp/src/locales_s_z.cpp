@@ -5,6 +5,29 @@
 namespace parenttime {
 namespace locales {
 
+const AgeLocale& SHI() {
+    static const AgeLocale loc{
+        "shi",
+        [](int n) -> PluralCategory {
+            if (n == 0 || n == 1) return PluralCategory::One;
+            if (n >= 2 && n <= 10) return PluralCategory::Few;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} ass"}, {PluralCategory::Few, "{n} ussan"}, {PluralCategory::Other, "{n} ass"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} imalass"}, {PluralCategory::Few, "{n} imalassn"}, {PluralCategory::Other, "{n} imalass"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ayyur"}, {PluralCategory::Few, "{n} ayyurn"}, {PluralCategory::Other, "{n} ayyur"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} aseggas"}, {PluralCategory::Few, "{n} iseggasen"}, {PluralCategory::Other, "{n} aseggas"}})
+        },
+        "{0} d uzgen", ", ", "Iɣ d illul",
+        StageLabels{{"Iɣ d illul", ""}, {"Agellid", ""}, {"Aḥenjir", "Taḥenjirt"}, {"Afrux", "Tafruxṭ"}, {"Aɛrim", "Taɛrimt"}, {"Argaz", "Tamṭṭuṭ"}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& SI() {
     static const AgeLocale loc{
         "si",
@@ -246,6 +269,28 @@ const AgeLocale& TR() {
         },
         "{n} buçuk", ", ", "Yeni doğan",
         StageLabels{{"Yeni doğan", ""}, {"Bebek", ""}, {"Küçük çocuk", ""}, {"Çocuk", ""}, {"Ergen", ""}, {"Yetişkin", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& TZM() {
+    static const AgeLocale loc{
+        "tzm",
+        [](int n) -> PluralCategory {
+            if (n == 0 || n == 1 || (n >= 11 && n <= 99)) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} ass"}, {PluralCategory::Other, "{n} ussan"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} imalass"}, {PluralCategory::Other, "{n} imalassn"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ayyur"}, {PluralCategory::Other, "{n} ayyurn"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} aseggas"}, {PluralCategory::Other, "{n} iseggasen"}})
+        },
+        "{0} d uzgen", ", ", "Iɣ d illul",
+        StageLabels{{"Iɣ d illul", ""}, {"Agellid", ""}, {"Aḥenjir", "Taḥenjirt"}, {"Afrux", "Tafruxṭ"}, {"Aɛrim", "Taɛrimt"}, {"Argaz", "Tamṭṭuṭ"}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr

@@ -27,7 +27,7 @@ codebase are suppressed with a documented rationale.
 
 ### i18n locale data
 
-All eight implementations contain 63 locale files with Unicode string literals
+All eight implementations contain 71 locale files with Unicode string literals
 (Arabic, Chinese, Devanagari, Cyrillic, etc.). This creates predictable
 friction with certain lint rules:
 
