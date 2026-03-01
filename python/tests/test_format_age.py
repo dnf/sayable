@@ -5,7 +5,11 @@ from __future__ import annotations
 from datetime import date
 from unittest.mock import patch
 
+from importlib import import_module
+
 from parent_time import EN, AgeLocale, ParentTime, format_age, format_stage, get_locale, resolve_stage
+
+_format_age_mod = import_module("parent_time.format_age")
 from parent_time.locales import AM, AR, ES, HE, ID, MK, SW
 
 
@@ -326,7 +330,7 @@ class TestBornOn31stProgression:
 # ================================================================
 class TestDefaultAsOf:
     def test_returns_correct_age_without_as_of(self) -> None:
-        with patch("parent_time.format_age.date", wraps=date) as mock_date:
+        with patch.object(_format_age_mod, "date", wraps=date) as mock_date:
             mock_date.today.return_value = date(2025, 6, 15)
             assert format_age("2020-01-01") == "5 years"
             assert format_age("2025-06-10") == "5 days"
@@ -452,7 +456,7 @@ class TestStageAdult:
 
 class TestStageDefaultAsOf:
     def test_returns_correct_stage_without_as_of(self) -> None:
-        with patch("parent_time.format_age.date", wraps=date) as mock_date:
+        with patch.object(_format_age_mod, "date", wraps=date) as mock_date:
             mock_date.today.return_value = date(2025, 6, 15)
             assert format_stage("2025-06-15") == "Newborn"
             assert format_stage("2020-01-01") == "Child"
