@@ -4,7 +4,6 @@
 
 from parent_time.locale import AgeLocale
 
-
 FA = AgeLocale(
     code="fa",
     plural=lambda n: "one" if n in (0, 1) else "other",

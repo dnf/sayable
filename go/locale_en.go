@@ -35,10 +35,10 @@ var EN = AgeLocale{
 		Year:  &UnitForms{Simple: "{n} yr"},
 	},
 	Compact: &CompactnessOverride{
-		Day:   &UnitForms{Simple: "{n}d"},
-		Week:  &UnitForms{Simple: "{n}w"},
-		Month: &UnitForms{Simple: "{n}m"},
-		Year:  &UnitForms{Simple: "{n}y"},
+		Day:       &UnitForms{Simple: "{n}d"},
+		Week:      &UnitForms{Simple: "{n}w"},
+		Month:     &UnitForms{Simple: "{n}m"},
+		Year:      &UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
 	},
 }

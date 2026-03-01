@@ -4,7 +4,6 @@
 
 from parent_time.locale import AgeLocale
 
-
 TH = AgeLocale(
     code="th",
     plural=lambda _n: "other",

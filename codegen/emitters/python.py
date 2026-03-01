@@ -40,19 +40,25 @@ def emit_locale(data: dict) -> str:
 
     # Imports
     needs_compactness = "short" in data or "compact" in data
+    needs_named_plural = get_py_named_function(rule) is not None
+    imports = ["AgeLocale"]
     if needs_compactness:
-        lines.append("from parent_time.locale import AgeLocale, CompactnessOverride\n")
-    else:
-        lines.append("from parent_time.locale import AgeLocale\n")
+        imports.append("CompactnessOverride")
+    if needs_named_plural:
+        imports.append("PluralCategory")
+    lines.append(f"from parent_time.locale import {', '.join(imports)}")
 
     # Named plural function
     named_fn = get_py_named_function(rule)
     if named_fn:
         lines.append("")
+        lines.append("")
         lines.append(named_fn)
 
     # Locale constant
     lines.append("")
+    if named_fn:
+        lines.append("")
     lines.append(f"{code.upper()} = AgeLocale(")
     lines.append(f"    code={_quote(code)},")
 

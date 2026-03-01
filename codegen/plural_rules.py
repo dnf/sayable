@@ -103,14 +103,14 @@ _PY = {
 # Complex rules need named functions
 _PY_NAMED = {
     "cs_sk": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     if n == 1:
         return "one"
     if 2 <= n <= 4:
         return "few"
     return "other"''',
     "lt": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     mod10 = n % 10
     mod100 = n % 100
     if mod10 == 1 and mod100 != 11:
@@ -119,14 +119,14 @@ def _plural(n: int) -> str:
         return "few"
     return "other"''',
     "ro": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     if n == 1:
         return "one"
     if n == 0 or 1 <= n % 100 <= 19:
         return "few"
     return "other"''',
     "slavic_bcs": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     mod10 = n % 10
     mod100 = n % 100
     if mod10 == 1 and mod100 != 11:
@@ -135,7 +135,7 @@ def _plural(n: int) -> str:
         return "few"
     return "other"''',
     "pl": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     if n == 1:
         return "one"
     mod10 = n % 10
@@ -144,7 +144,7 @@ def _plural(n: int) -> str:
         return "few"
     return "many"''',
     "ru_uk": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     mod10 = n % 10
     mod100 = n % 100
     if mod10 == 1 and mod100 != 11:
@@ -153,7 +153,7 @@ def _plural(n: int) -> str:
         return "few"
     return "many"''',
     "sl": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     mod100 = n % 100
     if mod100 == 1:
         return "one"
@@ -163,7 +163,7 @@ def _plural(n: int) -> str:
         return "few"
     return "other"''',
     "ar": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     if n == 0:
         return "zero"
     if n == 1:
@@ -177,7 +177,7 @@ def _plural(n: int) -> str:
         return "many"
     return "other"''',
     "lv": '''\
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     mod10 = n % 10
     mod100 = n % 100
     if mod10 == 0 or 11 <= mod100 <= 19:
@@ -434,7 +434,7 @@ _RS = {
     "cs_sk": """\
 |n| {
             if n == 1 { PluralCategory::One }
-            else if n >= 2 && n <= 4 { PluralCategory::Few }
+            else if (2..=4).contains(&n) { PluralCategory::Few }
             else { PluralCategory::Other }
         }""",
     "lt": """\
@@ -442,13 +442,13 @@ _RS = {
             let mod10 = n % 10;
             let mod100 = n % 100;
             if mod10 == 1 && mod100 != 11 { PluralCategory::One }
-            else if mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19) { PluralCategory::Few }
+            else if (2..=9).contains(&mod10) && !(12..=19).contains(&mod100) { PluralCategory::Few }
             else { PluralCategory::Other }
         }""",
     "ro": """\
 |n| {
             if n == 1 { PluralCategory::One }
-            else if n == 0 || (n % 100 >= 1 && n % 100 <= 19) { PluralCategory::Few }
+            else if n == 0 || (1..=19).contains(&(n % 100)) { PluralCategory::Few }
             else { PluralCategory::Other }
         }""",
     "slavic_bcs": """\
@@ -456,7 +456,7 @@ _RS = {
             let mod10 = n % 10;
             let mod100 = n % 100;
             if mod10 == 1 && mod100 != 11 { PluralCategory::One }
-            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) { PluralCategory::Few }
+            else if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) { PluralCategory::Few }
             else { PluralCategory::Other }
         }""",
     "pl": """\
@@ -464,7 +464,7 @@ _RS = {
             if n == 1 { return PluralCategory::One; }
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) { PluralCategory::Few }
+            if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) { PluralCategory::Few }
             else { PluralCategory::Many }
         }""",
     "ru_uk": """\
@@ -472,7 +472,7 @@ _RS = {
             let mod10 = n % 10;
             let mod100 = n % 100;
             if mod10 == 1 && mod100 != 11 { PluralCategory::One }
-            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) { PluralCategory::Few }
+            else if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) { PluralCategory::Few }
             else { PluralCategory::Many }
         }""",
     "sl": """\
@@ -489,15 +489,15 @@ _RS = {
             if n == 1 { return PluralCategory::One; }
             if n == 2 { return PluralCategory::Two; }
             let mod100 = n % 100;
-            if mod100 >= 3 && mod100 <= 10 { PluralCategory::Few }
-            else if mod100 >= 11 && mod100 <= 99 { PluralCategory::Many }
+            if (3..=10).contains(&mod100) { PluralCategory::Few }
+            else if (11..=99).contains(&mod100) { PluralCategory::Many }
             else { PluralCategory::Other }
         }""",
     "lv": """\
 |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 0 || (mod100 >= 11 && mod100 <= 19) { PluralCategory::Zero }
+            if mod10 == 0 || (11..=19).contains(&mod100) { PluralCategory::Zero }
             else if mod10 == 1 && mod100 != 11 { PluralCategory::One }
             else { PluralCategory::Other }
         }""",

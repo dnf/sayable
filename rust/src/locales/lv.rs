@@ -9,7 +9,7 @@ pub fn locale() -> AgeLocale {
         plural: |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 0 || (mod100 >= 11 && mod100 <= 19) { PluralCategory::Zero }
+            if mod10 == 0 || (11..=19).contains(&mod100) { PluralCategory::Zero }
             else if mod10 == 1 && mod100 != 11 { PluralCategory::One }
             else { PluralCategory::Other }
         },

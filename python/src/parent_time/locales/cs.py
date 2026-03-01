@@ -2,15 +2,16 @@
 
 """Czech locale."""
 
-from parent_time.locale import AgeLocale
+from parent_time.locale import AgeLocale, PluralCategory
 
 
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     if n == 1:
         return "one"
     if 2 <= n <= 4:
         return "few"
     return "other"
+
 
 CS = AgeLocale(
     code="cs",

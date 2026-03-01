@@ -2,10 +2,10 @@
 
 """Polish locale."""
 
-from parent_time.locale import AgeLocale
+from parent_time.locale import AgeLocale, PluralCategory
 
 
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     if n == 1:
         return "one"
     mod10 = n % 10
@@ -13,6 +13,7 @@ def _plural(n: int) -> str:
     if 2 <= mod10 <= 4 and (mod100 < 12 or mod100 > 14):
         return "few"
     return "many"
+
 
 PL = AgeLocale(
     code="pl",

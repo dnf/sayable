@@ -2,7 +2,6 @@
 
 from parent_time.format_age import ParentTime, format_age, format_stage
 from parent_time.locale import AgeLocale, StageLabel, resolve_stage
-from parent_time.locales.en import EN
 from parent_time.locales import (
     AR,
     BG,
@@ -53,6 +52,7 @@ from parent_time.locales import (
     VI,
     ZH,
 )
+from parent_time.locales.en import EN
 
 __all__ = [
     "AR",

@@ -2,10 +2,10 @@
 
 """Arabic locale."""
 
-from parent_time.locale import AgeLocale
+from parent_time.locale import AgeLocale, PluralCategory
 
 
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     if n == 0:
         return "zero"
     if n == 1:
@@ -18,6 +18,7 @@ def _plural(n: int) -> str:
     if 11 <= mod100 <= 99:
         return "many"
     return "other"
+
 
 AR = AgeLocale(
     code="ar",

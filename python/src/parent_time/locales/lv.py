@@ -2,10 +2,10 @@
 
 """Latvian locale."""
 
-from parent_time.locale import AgeLocale
+from parent_time.locale import AgeLocale, PluralCategory
 
 
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     mod10 = n % 10
     mod100 = n % 100
     if mod10 == 0 or 11 <= mod100 <= 19:
@@ -13,6 +13,7 @@ def _plural(n: int) -> str:
     if mod10 == 1 and mod100 != 11:
         return "one"
     return "other"
+
 
 LV = AgeLocale(
     code="lv",

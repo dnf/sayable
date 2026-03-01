@@ -79,22 +79,36 @@ def emit_locale(data: dict) -> str:
             ovr = data[mode]
             cap = mode.capitalize()
             lines.append(f"\t{cap}: &CompactnessOverride{{")
+            # Collect all field names to compute uniform padding
+            field_names = []
+            if "units" in ovr:
+                for unit_name in ("day", "week", "month", "year"):
+                    if unit_name in ovr["units"]:
+                        field_names.append(unit_name.capitalize())
+            for key, go_name in (("delimiter", "Delimiter"), ("half", "Half"), ("justBorn", "JustBorn")):
+                if key in ovr:
+                    field_names.append(go_name)
+            max_field_len = max(len(f) for f in field_names) if field_names else 0
             if "units" in ovr:
                 for unit_name in ("day", "week", "month", "year"):
                     if unit_name in ovr["units"]:
                         ucap = unit_name.capitalize()
+                        pad = " " * (max_field_len - len(ucap) + 1)
                         val = ovr["units"][unit_name]
                         if isinstance(val, str):
-                            lines.append(f"\t\t{ucap}:{' ' * (6 - len(ucap))}&UnitForms{{Simple: {_quote(val)}}},")
+                            lines.append(f"\t\t{ucap}:{pad}&UnitForms{{Simple: {_quote(val)}}},")
                         else:
                             # Plural override — unusual but support it
-                            lines.append(f"\t\t{ucap}:{' ' * (6 - len(ucap))}&{_unit_forms(val)},")
+                            lines.append(f"\t\t{ucap}:{pad}&{_unit_forms(val)},")
             if "delimiter" in ovr:
-                lines.append(f'\t\tDelimiter: strPtr({_quote(ovr["delimiter"])}),')
+                pad = " " * (max_field_len - len("Delimiter") + 1)
+                lines.append(f'\t\tDelimiter:{pad}strPtr({_quote(ovr["delimiter"])}),')
             if "half" in ovr:
-                lines.append(f'\t\tHalf:      strPtr({_quote(ovr["half"])}),')
+                pad = " " * (max_field_len - len("Half") + 1)
+                lines.append(f'\t\tHalf:{pad}strPtr({_quote(ovr["half"])}),')
             if "justBorn" in ovr:
-                lines.append(f'\t\tJustBorn:  strPtr({_quote(ovr["justBorn"])}),')
+                pad = " " * (max_field_len - len("JustBorn") + 1)
+                lines.append(f'\t\tJustBorn:{pad}strPtr({_quote(ovr["justBorn"])}),')
             lines.append("\t},")
 
     lines.append("}")

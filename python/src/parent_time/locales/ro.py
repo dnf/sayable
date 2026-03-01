@@ -2,15 +2,16 @@
 
 """Romanian locale."""
 
-from parent_time.locale import AgeLocale
+from parent_time.locale import AgeLocale, PluralCategory
 
 
-def _plural(n: int) -> str:
+def _plural(n: int) -> PluralCategory:
     if n == 1:
         return "one"
     if n == 0 or 1 <= n % 100 <= 19:
         return "few"
     return "other"
+
 
 RO = AgeLocale(
     code="ro",

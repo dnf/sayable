@@ -8,7 +8,7 @@ pub fn locale() -> AgeLocale {
         code: "ro".to_string(),
         plural: |n| {
             if n == 1 { PluralCategory::One }
-            else if n == 0 || (n % 100 >= 1 && n % 100 <= 19) { PluralCategory::Few }
+            else if n == 0 || (1..=19).contains(&(n % 100)) { PluralCategory::Few }
             else { PluralCategory::Other }
         },
         units: Units {

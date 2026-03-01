@@ -10,7 +10,7 @@ pub fn locale() -> AgeLocale {
             if n == 1 { return PluralCategory::One; }
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) { PluralCategory::Few }
+            if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) { PluralCategory::Few }
             else { PluralCategory::Many }
         },
         units: Units {

@@ -11,8 +11,8 @@ pub fn locale() -> AgeLocale {
             if n == 1 { return PluralCategory::One; }
             if n == 2 { return PluralCategory::Two; }
             let mod100 = n % 100;
-            if mod100 >= 3 && mod100 <= 10 { PluralCategory::Few }
-            else if mod100 >= 11 && mod100 <= 99 { PluralCategory::Many }
+            if (3..=10).contains(&mod100) { PluralCategory::Few }
+            else if (11..=99).contains(&mod100) { PluralCategory::Many }
             else { PluralCategory::Other }
         },
         units: Units {
