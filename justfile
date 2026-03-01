@@ -8,19 +8,11 @@ python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "pyt
 test *lang:
     #!/usr/bin/env bash
     set -euo pipefail
-    if [ -z "{{lang}}" ]; then
-        just test typescript
-        just test python
-        just test go
-        just test ruby
-        just test rust
-        just test kotlin
-        just test cpp
-        just test php
-        just test java
-        just test csharp
-        just test swift
-        just check
+    if [ -z "{{lang}}" ] || [ "{{lang}}" = "--logs" ]; then
+        scripts/run-parallel.sh {{lang}} \
+            "check" "test cpp" "test csharp" "test go" "test java" \
+            "test kotlin" "test php" "test python" "test ruby" \
+            "test rust" "test swift" "test typescript"
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd src/typescript && npx vitest run
     elif [ "{{lang}}" = "python" ] || [ "{{lang}}" = "py" ]; then
@@ -57,14 +49,10 @@ test *lang:
 build *lang:
     #!/usr/bin/env bash
     set -euo pipefail
-    if [ -z "{{lang}}" ]; then
-        just build typescript
-        just build rust
-        just build kotlin
-        just build cpp
-        just build java
-        just build csharp
-        just build swift
+    if [ -z "{{lang}}" ] || [ "{{lang}}" = "--logs" ]; then
+        scripts/run-parallel.sh {{lang}} \
+            "build cpp" "build csharp" "build java" "build kotlin" \
+            "build rust" "build swift" "build typescript"
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd src/typescript && npm run build
     elif [ "{{lang}}" = "rust" ] || [ "{{lang}}" = "rs" ]; then
@@ -108,16 +96,10 @@ list-groups:
 lint *lang:
     #!/usr/bin/env bash
     set -euo pipefail
-    if [ -z "{{lang}}" ]; then
-        just lint typescript
-        just lint python
-        just lint go
-        just lint ruby
-        just lint rust
-        just lint php
-        just lint java
-        just lint csharp
-        just lint swift
+    if [ -z "{{lang}}" ] || [ "{{lang}}" = "--logs" ]; then
+        scripts/run-parallel.sh {{lang}} \
+            "lint csharp" "lint go" "lint java" "lint php" "lint python" \
+            "lint ruby" "lint rust" "lint swift" "lint typescript"
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd src/typescript && npm run lint
     elif [ "{{lang}}" = "python" ] || [ "{{lang}}" = "py" ]; then
@@ -152,15 +134,10 @@ clean *lang:
     #!/usr/bin/env bash
     set -euo pipefail
     if [ -z "{{lang}}" ]; then
-        just clean typescript
-        just clean python
-        just clean rust
-        just clean kotlin
-        just clean cpp
-        just clean java
-        just clean csharp
-        just clean swift
-        just clean codegen
+        scripts/run-parallel.sh \
+            "clean codegen" "clean cpp" "clean csharp" "clean java" \
+            "clean kotlin" "clean python" "clean rust" "clean swift" \
+            "clean typescript"
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         rm -rf src/typescript/dist
     elif [ "{{lang}}" = "python" ] || [ "{{lang}}" = "py" ]; then

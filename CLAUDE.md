@@ -6,20 +6,26 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 
 ## Build and test commands
 
-| Language | Test command |
-|----------|-------------|
-| TypeScript | `cd src/typescript && npx vitest run` |
-| Python | `cd src/python && uv run pytest tests/` |
-| Go | `cd src/go && go test ./...` |
-| Ruby | `cd src/ruby && ruby -Ilib test/test_formatter.rb` |
-| Rust | `cd src/rust && cargo test` |
-| Kotlin | `cd src/kotlin && ./gradlew test` |
-| C++ | `cd src/cpp && cmake -B build && cmake --build build && cd build && ctest --output-on-failure` |
-| PHP | `cd src/php && php vendor/bin/phpunit tests/` |
-| Java | `cd src/java && ./gradlew test` |
-| C# | `cd src/csharp && dotnet test` |
-| Swift | `cd src/swift && swift test` |
-| Codegen check | `python -m codegen.generate --check` |
+The `justfile` is the primary task runner. Running `just test`, `just build`, or `just lint` with no arguments runs all languages **in parallel**, capturing output to log files and printing a summary:
+
+```
+just test          # all 11 test suites + codegen check, in parallel
+just build         # all compiled languages, in parallel
+just lint          # all linters, in parallel
+just test --logs   # same, but keep log directory (prints path)
+```
+
+Single-language commands run directly with streaming output:
+
+```
+just test go       # run one suite
+just build rust    # build one language
+just lint python   # lint one language
+```
+
+| Shortcut | Command |
+|----------|---------|
+| Codegen check | `just check` or `python -m codegen.generate --check` |
 | Codegen subset | `python -m codegen.generate --locales core` |
 | Codegen tests | `just test codegen` |
 | List groups | `python -m codegen.generate --list-groups` |

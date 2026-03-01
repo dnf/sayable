@@ -120,19 +120,24 @@ Before submitting a PR, verify:
 
 ## Running tests
 
-| Language | Command |
-|----------|---------|
-| TypeScript | `cd src/typescript && npx vitest run` |
-| Python | `cd src/python && uv run pytest tests/` |
-| Go | `cd src/go && go test ./...` |
-| Ruby | `cd src/ruby && ruby -Ilib test/test_formatter.rb` |
-| Rust | `cd src/rust && cargo test` |
-| Kotlin | `cd src/kotlin && ./gradlew test` |
-| C++ | `cd src/cpp && mkdir -p build && cd build && cmake .. && make && ./test_parenttime` |
-| PHP | `cd src/php && php vendor/bin/phpunit tests/` |
-| Java | `cd src/java && ./gradlew test` |
-| C# | `cd src/csharp && dotnet test` |
-| Swift | `cd src/swift && swift test` |
+The `justfile` is the primary task runner. With no arguments, `just test`, `just build`, and `just lint` run all languages in parallel and print a pass/fail summary:
+
+```
+just test              # all 11 suites + codegen check
+just build             # all compiled languages
+just lint              # all linters
+just test --logs       # same, but preserve log files (prints path)
+```
+
+To run a single language with direct streaming output:
+
+```
+just test python       # one suite
+just build rust        # one language
+just lint go           # one linter
+```
+
+Language aliases work too: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`.
 
 CI runs all 11 language test suites on every pull request. PRs that break any language will not be merged.
 
