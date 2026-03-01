@@ -76,10 +76,10 @@ fi
 
 # ---- Project dependencies ----
 echo "==> Installing project dependencies..."
-(cd typescript && npm install)
-(cd python && uv sync --extra dev)
-(cd ruby && bundle install)
-(cd php && composer install)
+(cd src/typescript && npm install)
+(cd src/python && uv sync --extra dev)
+(cd src/ruby && bundle install)
+(cd src/php && composer install)
 
 echo ""
 echo "==> Setup complete! Verify with: just test"

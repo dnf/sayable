@@ -11,18 +11,18 @@ docker build -t parent-time-linux .
 DOCKER_OPTS=(
     --rm
     -v "$(pwd)":/workspace
-    -v /workspace/typescript/node_modules
-    -v /workspace/python/.venv
-    -v /workspace/rust/target
-    -v /workspace/cpp/build
-    -v /workspace/kotlin/.gradle
-    -v /workspace/java/.gradle
+    -v /workspace/src/typescript/node_modules
+    -v /workspace/src/python/.venv
+    -v /workspace/src/rust/target
+    -v /workspace/src/cpp/build
+    -v /workspace/src/kotlin/.gradle
+    -v /workspace/src/java/.gradle
 )
 
 if [ $# -eq 0 ]; then
     docker run "${DOCKER_OPTS[@]}" parent-time-linux bash -c '
-        (cd typescript && npm install --no-audit --no-fund) &&
-        (cd python && uv sync --extra dev --quiet) &&
+        (cd src/typescript && npm install --no-audit --no-fund) &&
+        (cd src/python && uv sync --extra dev --quiet) &&
         just test
     '
 else

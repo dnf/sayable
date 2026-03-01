@@ -57,7 +57,7 @@ pt.formatAge("2025-01-01", "2025-07-15")   // "6ヶ月"
 pt.formatStage("2025-01-01", "2025-07-15") // "乳児"
 ```
 
-71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 
@@ -103,8 +103,8 @@ swift build   # Build
 - `StrictConcurrency` enabled -- all concurrency warnings are errors
 - Swift 6.0 -- structured concurrency, typed throws
 - Swift Testing for tests
-- See [code quality docs](../docs/code-quality-compiled.md#swift) for details
+- See [code quality docs](../../docs/code-quality-compiled.md#swift) for details
 
 ## License
 
-[MIT](../LICENSE.md)
+[MIT](../../LICENSE.md)

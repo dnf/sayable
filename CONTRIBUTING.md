@@ -18,17 +18,18 @@ The only exception: if you're a native speaker fixing a translation or plural ru
 ## Project structure
 
 ```
-typescript/    # TypeScript
-python/        # Python
-go/            # Go
-ruby/          # Ruby
-rust/          # Rust
-kotlin/        # Kotlin
-cpp/           # C++
-php/           # PHP
-java/          # Java
-csharp/        # C#
-swift/         # Swift
+src/
+  typescript/  # TypeScript
+  python/      # Python
+  go/          # Go
+  ruby/        # Ruby
+  rust/        # Rust
+  kotlin/      # Kotlin
+  cpp/         # C++
+  php/         # PHP
+  java/        # Java
+  csharp/      # C#
+  swift/       # Swift
 codegen/       # Locale code generator (JSON → all 11 languages)
   locales/     # 71 JSON files — single source of truth for locale data
   targets/     # One directory per target language (emitter + plural rules)
@@ -64,7 +65,7 @@ To fix a locale:
 2. Run `python -m codegen.generate` to regenerate all 11 language implementations
 3. Run the test suites to verify
 
-Never edit the generated locale files (e.g. `typescript/src/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`codegen/README.md`](codegen/README.md) for full details.
+Never edit the generated locale files (e.g. `src/typescript/src/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`codegen/README.md`](codegen/README.md) for full details.
 
 See [`docs/gender-and-stages.md`](docs/gender-and-stages.md) for the gender analysis of stage labels.
 
@@ -121,17 +122,17 @@ Before submitting a PR, verify:
 
 | Language | Command |
 |----------|---------|
-| TypeScript | `cd typescript && npx vitest run` |
-| Python | `cd python && uv run pytest tests/` |
-| Go | `cd go && go test ./...` |
-| Ruby | `cd ruby && ruby -Ilib test/test_formatter.rb` |
-| Rust | `cd rust && cargo test` |
-| Kotlin | `cd kotlin && ./gradlew test` |
-| C++ | `cd cpp && mkdir -p build && cd build && cmake .. && make && ./test_parenttime` |
-| PHP | `cd php && php vendor/bin/phpunit tests/` |
-| Java | `cd java && ./gradlew test` |
-| C# | `cd csharp && dotnet test` |
-| Swift | `cd swift && swift test` |
+| TypeScript | `cd src/typescript && npx vitest run` |
+| Python | `cd src/python && uv run pytest tests/` |
+| Go | `cd src/go && go test ./...` |
+| Ruby | `cd src/ruby && ruby -Ilib test/test_formatter.rb` |
+| Rust | `cd src/rust && cargo test` |
+| Kotlin | `cd src/kotlin && ./gradlew test` |
+| C++ | `cd src/cpp && mkdir -p build && cd build && cmake .. && make && ./test_parenttime` |
+| PHP | `cd src/php && php vendor/bin/phpunit tests/` |
+| Java | `cd src/java && ./gradlew test` |
+| C# | `cd src/csharp && dotnet test` |
+| Swift | `cd src/swift && swift test` |
 
 CI runs all 11 language test suites on every pull request. PRs that break any language will not be merged.
 

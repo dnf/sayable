@@ -41,7 +41,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/dnf/parent-time.git",
-    "directory": "typescript"
+    "directory": "src/typescript"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.56.1",

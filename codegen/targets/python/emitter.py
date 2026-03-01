@@ -154,9 +154,9 @@ def emit_barrel(all_locales: list[dict]) -> str:
 
 def output_path(code: str, root: str) -> str:
     import os
-    return os.path.join(root, "python", "src", "parent_time", "locales", f"{code}.py")
+    return os.path.join(root, "src", "python", "src", "parent_time", "locales", f"{code}.py")
 
 
 def barrel_path(root: str) -> str:
     import os
-    return os.path.join(root, "python", "src", "parent_time", "locales", "__init__.py")
+    return os.path.join(root, "src", "python", "src", "parent_time", "locales", "__init__.py")

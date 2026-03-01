@@ -54,7 +54,7 @@ pt.formatAge('2025-01-01', '2025-07-15');   // "6ヶ月"
 pt.formatStage('2025-01-01', '2025-07-15'); // "乳児"
 ```
 
-71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 
@@ -100,8 +100,8 @@ npm test         # Run vitest
 
 - TypeScript `strict` + 7 additional flags (see `tsconfig.json`)
 - ESLint with `@typescript-eslint/strict-type-checked`
-- See [code quality docs](../docs/code-quality-dynamic.md#typescript) for details
+- See [code quality docs](../../docs/code-quality-dynamic.md#typescript) for details
 
 ## License
 
-[MIT](../LICENSE.md)
+[MIT](../../LICENSE.md)

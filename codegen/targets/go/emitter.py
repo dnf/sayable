@@ -142,12 +142,12 @@ def emit_registry(all_locales: list[dict]) -> str:
 
 def output_path(code: str, root: str) -> str:
     import os
-    return os.path.join(root, "go", f"locale_{code}.go")
+    return os.path.join(root, "src", "go", f"locale_{code}.go")
 
 
 def registry_path(root: str) -> str:
     import os
-    return os.path.join(root, "go", "locale_registry.go")
+    return os.path.join(root, "src", "go", "locale_registry.go")
 
 
 def barrel_path(root: str) -> str | None:

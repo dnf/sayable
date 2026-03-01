@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 3.0"
 
   s.metadata = {
-    "source_code_uri" => "https://github.com/dnf/parent-time/tree/main/ruby",
+    "source_code_uri" => "https://github.com/dnf/parent-time/tree/main/src/ruby",
     "bug_tracker_uri" => "https://github.com/dnf/parent-time/issues",
     "homepage_uri" => "https://github.com/dnf/parent-time",
   }

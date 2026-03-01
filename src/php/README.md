@@ -62,7 +62,7 @@ $pt->formatAge('2025-01-01', '2025-07-15');   // "6ヶ月"
 $pt->formatStage('2025-01-01', '2025-07-15'); // "乳児"
 ```
 
-71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 
@@ -116,8 +116,8 @@ composer cs-fix        # Fix code style
 - `declare(strict_types=1)` in every file
 - `readonly` classes for immutable data types
 - PHPUnit with `failOnRisky` and `failOnWarning` enabled
-- See [code quality docs](../docs/code-quality-dynamic.md#php) for details
+- See [code quality docs](../../docs/code-quality-dynamic.md#php) for details
 
 ## License
 
-[MIT](../LICENSE.md)
+[MIT](../../LICENSE.md)

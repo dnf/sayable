@@ -64,7 +64,7 @@ auto age = pt.format_age("2025-01-01", "2025-07-15");
 // *age == "6ヶ月"
 ```
 
-71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 
@@ -121,8 +121,8 @@ ctest --test-dir build --output-on-failure
 - 16 compiler warning flags + `-Werror`
 - clang-tidy with 7 check categories and naming conventions
 - `CMAKE_CXX_EXTENSIONS OFF` for portable C++17
-- See [code quality docs](../docs/code-quality-compiled.md#c) for details
+- See [code quality docs](../../docs/code-quality-compiled.md#c) for details
 
 ## License
 
-[MIT](../LICENSE.md)
+[MIT](../../LICENSE.md)

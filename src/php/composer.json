@@ -49,6 +49,6 @@
     ],
     "support": {
         "issues": "https://github.com/dnf/parent-time/issues",
-        "source": "https://github.com/dnf/parent-time/tree/main/php"
+        "source": "https://github.com/dnf/parent-time/tree/main/src/php"
     }
 }

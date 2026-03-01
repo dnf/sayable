@@ -12,9 +12,9 @@ into native locale definitions. You write the emitter, the core formatter, and
 the tests; codegen handles the locale data.
 
 ```
-codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  <lang>/locales/*
+codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  src/<lang>/locales/*
                                                                     (per-file emitters)
-codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  <lang>/.../Locales.<ext>
+codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  src/<lang>/.../Locales.<ext>
                                                                     (single-file emitters)
 ```
 
@@ -23,7 +23,7 @@ codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──► 
 Follow the project layout convention:
 
 ```
-<lang>/
+src/<lang>/
   src/ or lib/          # Source files (varies by convention)
     locales/            # Generated locale files go here
     formatter.<ext>     # Core format_age / format_stage logic
@@ -36,7 +36,7 @@ Match whatever is idiomatic.
 
 ## 2. Define types
 
-Implement these types (see `typescript/src/locale.ts` or `python/src/parent_time/locale.py` for examples):
+Implement these types (see `src/typescript/src/locale.ts` or `src/python/src/parent_time/locale.py` for examples):
 
 - **`PluralCategory`** — `"zero" | "one" | "two" | "few" | "many" | "other"`
 - **`UnitForms`** — either a single template string or a map of PluralCategory to template string
@@ -143,7 +143,7 @@ Run `python -m codegen.generate --lang newlang` to generate just your language.
 ## 6. Implement the core formatter
 
 Port the formatting logic from an existing implementation
-(e.g. `typescript/src/format-age.ts` or `python/src/parent_time/format_age.py`). The algorithm:
+(e.g. `src/typescript/src/format-age.ts` or `src/python/src/parent_time/format_age.py`). The algorithm:
 
 1. Parse ISO date strings into year/month/day
 2. Compute calendar differences (years, months, days)
@@ -181,7 +181,7 @@ Register the new language in all four recipes (`test`, `build`, `lint`,
 ```bash
 # In the test recipe:
 elif [ "{{lang}}" = "newlang" ] || [ "{{lang}}" = "nl" ]; then
-    cd newlang && <test-command>
+    cd src/newlang && <test-command>
 ```
 
 Add the language to the bare (no-arg) branch of each recipe so `just test`,

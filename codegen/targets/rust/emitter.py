@@ -165,9 +165,9 @@ def emit_barrel(all_locales: list[dict]) -> str:
 
 def output_path(code: str, root: str) -> str:
     import os
-    return os.path.join(root, "rust", "src", "locales", f"{code}.rs")
+    return os.path.join(root, "src", "rust", "src", "locales", f"{code}.rs")
 
 
 def barrel_path(root: str) -> str:
     import os
-    return os.path.join(root, "rust", "src", "locales", "mod.rs")
+    return os.path.join(root, "src", "rust", "src", "locales", "mod.rs")

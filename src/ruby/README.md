@@ -52,7 +52,7 @@ pt = ParentTime::Formatter.new(ParentTime::Locales::JA)
 pt.format_age("2025-01-01", "2025-07-15")  # "6ヶ月"
 ```
 
-71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 
@@ -93,8 +93,8 @@ bundle exec rake test   # Run minitest
 ## Code quality
 
 - RuboCop with `NewCops: enable`, frozen string literals, practical metric thresholds
-- See [code quality docs](../docs/code-quality-dynamic.md#ruby) for details
+- See [code quality docs](../../docs/code-quality-dynamic.md#ruby) for details
 
 ## License
 
-[MIT](../LICENSE.md)
+[MIT](../../LICENSE.md)

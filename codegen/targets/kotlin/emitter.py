@@ -129,4 +129,4 @@ def emit_all(all_locales: list[dict]) -> str:
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "kotlin", "src", "main", "kotlin", "parenttime", "Locales.kt")
+    return os.path.join(root, "src", "kotlin", "src", "main", "kotlin", "parenttime", "Locales.kt")

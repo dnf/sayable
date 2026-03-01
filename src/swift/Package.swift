@@ -2,6 +2,9 @@
 
 import PackageDescription
 
+// The swift-testing package dependency is required because the built-in Testing
+// framework needs a deployment target newer than macOS 13. On Swift 6.2+ this
+// produces deprecation warnings — they are expected and harmless.
 let package = Package(
     name: "ParentTime",
     platforms: [.macOS(.v13)],

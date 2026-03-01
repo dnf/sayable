@@ -53,7 +53,7 @@ pt.formatAge("2025-01-01", "2025-07-15")   // "6ヶ月"
 pt.formatStage("2025-01-01", "2025-07-15") // "乳児"
 ```
 
-71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 
@@ -100,8 +100,8 @@ class ParentTime(locale: AgeLocale, compactness: Compactness = Compactness.NORMA
 - `progressiveMode` — opt into stricter future behavior
 - `-Xjsr305=strict` — strict Java nullability interop
 - JVM target: 17 (current LTS)
-- See [code quality docs](../docs/code-quality-compiled.md#kotlin) for details
+- See [code quality docs](../../docs/code-quality-compiled.md#kotlin) for details
 
 ## License
 
-[MIT](../LICENSE.md)
+[MIT](../../LICENSE.md)

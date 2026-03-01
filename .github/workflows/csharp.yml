@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: csharp
+        working-directory: src/csharp
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4

@@ -49,7 +49,7 @@ pt.FormatAge("2025-01-01", "2025-07-15");   // "6ヶ月"
 pt.FormatStage("2025-01-01", "2025-07-15"); // "乳児"
 ```
 
-71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 
@@ -98,8 +98,8 @@ dotnet build   # Build
 - `TreatWarningsAsErrors` -- all compiler warnings are errors
 - .NET 8.0 -- nullable reference types, pattern matching
 - xUnit for testing
-- See [code quality docs](../docs/code-quality-compiled.md#csharp) for details
+- See [code quality docs](../../docs/code-quality-compiled.md#csharp) for details
 
 ## License
 
-[MIT](../LICENSE.md)
+[MIT](../../LICENSE.md)

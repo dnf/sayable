@@ -134,4 +134,4 @@ def emit_all(all_locales: list[dict]) -> str:
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "php", "src", "Locales.php")
+    return os.path.join(root, "src", "php", "src", "Locales.php")

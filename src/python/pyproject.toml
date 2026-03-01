@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "parent-time"
 version = "0.1.0"
 description = "A thoughtful time formatting library that reflects how we think about little ones"
-readme = "../README.md"
+readme = "../../README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [{ name = "Don Neufeld" }]
@@ -30,7 +30,7 @@ classifiers = [
 
 [project.urls]
 Repository = "https://github.com/dnf/parent-time"
-Documentation = "https://github.com/dnf/parent-time/tree/main/python#readme"
+Documentation = "https://github.com/dnf/parent-time/tree/main/src/python#readme"
 Issues = "https://github.com/dnf/parent-time/issues"
 
 [tool.hatch.build.targets.wheel]

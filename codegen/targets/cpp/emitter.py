@@ -198,7 +198,7 @@ def emit_registry(all_locales: list[dict]) -> str:
 
 def registry_source_path(root: str) -> str:
     import os
-    return os.path.join(root, "cpp", "src", "locales_registry.cpp")
+    return os.path.join(root, "src", "cpp", "src", "locales_registry.cpp")
 
 
 def split_by_range(all_locales: list[dict]) -> dict[str, list[dict]]:
@@ -214,9 +214,9 @@ def split_by_range(all_locales: list[dict]) -> dict[str, list[dict]]:
 
 def source_path(suffix: str, root: str) -> str:
     import os
-    return os.path.join(root, "cpp", "src", f"locales_{suffix}.cpp")
+    return os.path.join(root, "src", "cpp", "src", f"locales_{suffix}.cpp")
 
 
 def header_path(root: str) -> str:
     import os
-    return os.path.join(root, "cpp", "include", "parenttime", "locales.hpp")
+    return os.path.join(root, "src", "cpp", "include", "parenttime", "locales.hpp")

@@ -8,17 +8,17 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 
 | Language | Test command |
 |----------|-------------|
-| TypeScript | `cd typescript && npx vitest run` |
-| Python | `cd python && uv run pytest tests/` |
-| Go | `cd go && go test ./...` |
-| Ruby | `cd ruby && ruby -Ilib test/test_formatter.rb` |
-| Rust | `cd rust && cargo test` |
-| Kotlin | `cd kotlin && ./gradlew test` |
-| C++ | `cd cpp && cmake -B build && cmake --build build && cd build && ctest --output-on-failure` |
-| PHP | `cd php && php vendor/bin/phpunit tests/` |
-| Java | `cd java && ./gradlew test` |
-| C# | `cd csharp && dotnet test` |
-| Swift | `cd swift && swift test` |
+| TypeScript | `cd src/typescript && npx vitest run` |
+| Python | `cd src/python && uv run pytest tests/` |
+| Go | `cd src/go && go test ./...` |
+| Ruby | `cd src/ruby && ruby -Ilib test/test_formatter.rb` |
+| Rust | `cd src/rust && cargo test` |
+| Kotlin | `cd src/kotlin && ./gradlew test` |
+| C++ | `cd src/cpp && cmake -B build && cmake --build build && cd build && ctest --output-on-failure` |
+| PHP | `cd src/php && php vendor/bin/phpunit tests/` |
+| Java | `cd src/java && ./gradlew test` |
+| C# | `cd src/csharp && dotnet test` |
+| Swift | `cd src/swift && swift test` |
 | Codegen check | `python -m codegen.generate --check` |
 | Codegen subset | `python -m codegen.generate --locales core` |
 | Codegen tests | `just test codegen` |
@@ -35,17 +35,18 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 ## Project layout
 
 ```
-typescript/    # TypeScript
-python/        # Python
-go/            # Go
-ruby/          # Ruby
-rust/          # Rust
-kotlin/        # Kotlin
-cpp/           # C++
-php/           # PHP
-java/          # Java
-csharp/        # C#
-swift/         # Swift
+src/
+  typescript/  # TypeScript
+  python/      # Python
+  go/          # Go
+  ruby/        # Ruby
+  rust/        # Rust
+  kotlin/      # Kotlin
+  cpp/         # C++
+  php/         # PHP
+  java/        # Java
+  csharp/      # C#
+  swift/       # Swift
 codegen/       # Locale code generator (JSON → all 11 languages)
 docs/          # Shared docs, test spec, locale docs
 ```

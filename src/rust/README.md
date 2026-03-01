@@ -55,7 +55,7 @@ let age = pt.format_age("2025-01-01", Some("2025-07-15"));
 assert_eq!(age, Some("6ヶ月".to_string()));
 ```
 
-71 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 
@@ -100,8 +100,8 @@ cargo doc        # Generate docs
 
 - `unsafe_code = "forbid"` — no unsafe code permitted
 - clippy: `all = deny`, `pedantic = warn` with targeted allows
-- See [code quality docs](../docs/code-quality-compiled.md#rust) for details
+- See [code quality docs](../../docs/code-quality-compiled.md#rust) for details
 
 ## License
 
-[MIT](../LICENSE.md)
+[MIT](../../LICENSE.md)
