@@ -148,6 +148,18 @@ def emit_barrel(all_locales: list[dict]) -> str:
 
     lines.append("")
 
+    # Lookup function
+    lines.append("/// Look up a locale by its code string.")
+    lines.append("pub fn get(code: &str) -> Option<&'static AgeLocale> {")
+    lines.append("    match code {")
+    for loc in sorted_locs:
+        code = loc["code"]
+        lines.append(f'        "{code}" => Some(&*{code.upper()}),')
+    lines.append("        _ => None,")
+    lines.append("    }")
+    lines.append("}")
+    lines.append("")
+
     return "\n".join(lines)
 
 

@@ -477,6 +477,21 @@ Tests `one_other_zero_one` rule (n∈{0,1}→one) and Ethiopic comma delimiter `
 
 ---
 
+## 30. Locale lookup by code string
+
+These test the `getLocale` / `get_locale` / `GetLocale` lookup function that
+returns a locale object given a code string.
+
+| # | Call | Expected | Notes |
+|---|------|----------|-------|
+| 30.1 | `getLocale("en")` | locale with code `"en"` | Known locale |
+| 30.2 | `getLocale("fr")` | locale with code `"fr"` | Another known locale |
+| 30.3 | `getLocale("xx")` | null/nil/None/undefined | Unknown code |
+| 30.4 | `getLocale("")` | null/nil/None/undefined | Empty string |
+| 30.5 | `getLocale("EN")` | null/nil/None/undefined | Case-sensitive |
+
+---
+
 ## Test count summary
 
 | Section | Count |
@@ -504,7 +519,8 @@ Tests `one_other_zero_one` rule (n∈{0,1}→one) and Ethiopic comma delimiter `
 | 26. Compactness short | 9 |
 | 27. Compactness compact | 8 |
 | 29. Locale-specific edge cases | 39 |
-| **Total** | **202** |
+| 30. Locale lookup | 5 |
+| **Total** | **207** |
 
 ### Implementation notes
 

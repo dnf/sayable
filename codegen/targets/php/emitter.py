@@ -114,6 +114,18 @@ def emit_all(all_locales: list[dict]) -> str:
         if i < len(sorted_locs) - 1:
             lines.append("")
 
+    # get() method
+    lines.append("")
+    lines.append("    public static function get(string $code): ?AgeLocale")
+    lines.append("    {")
+    lines.append("        return match ($code) {")
+    for loc in sorted_locs:
+        code = loc["code"]
+        lines.append(f"            {_quote(code)} => self::{code.upper()}(),")
+    lines.append("            default => null,")
+    lines.append("        };")
+    lines.append("    }")
+
     lines.append("}")
     lines.append("")
 

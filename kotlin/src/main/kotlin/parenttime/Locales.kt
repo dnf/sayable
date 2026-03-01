@@ -1997,4 +1997,6 @@ public object Locales {
         "tzm" to TZM, "uk" to UK, "ur" to UR, "uz" to UZ, "vi" to VI,
         "zh" to ZH
     )
+
+    public fun get(code: String): AgeLocale? = ALL[code]
 }

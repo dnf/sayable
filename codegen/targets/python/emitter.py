@@ -117,17 +117,35 @@ def emit_barrel(all_locales: list[dict]) -> str:
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER, '"""Locale definitions for all supported languages."""\n']
 
+    lines.append("from parent_time.locale import AgeLocale\n")
+
     for loc in sorted_locs:
         code = loc["code"]
         lines.append(f"from parent_time.locales.{code} import {code.upper()}")
 
     lines.append("")
+
+    # Lookup dict + function
+    lines.append("_ALL: dict[str, AgeLocale] = {")
+    entries = [f'"{loc["code"]}": {loc["code"].upper()}' for loc in sorted_locs]
+    for i in range(0, len(entries), 4):
+        chunk = ", ".join(entries[i : i + 4])
+        lines.append(f"    {chunk},")
+    lines.append("}")
+    lines.append("")
+    lines.append("")
+    lines.append("def get_locale(code: str) -> AgeLocale | None:")
+    lines.append('    """Look up a locale by its code string."""')
+    lines.append("    return _ALL.get(code)")
+    lines.append("")
+
     lines.append("__all__ = [")
     # Format in rows of 8
     codes = [f'"{loc["code"].upper()}"' for loc in sorted_locs]
     for i in range(0, len(codes), 8):
         chunk = ", ".join(codes[i : i + 8])
         lines.append(f"    {chunk},")
+    lines.append('    "get_locale",')
     lines.append("]")
     lines.append("")
 

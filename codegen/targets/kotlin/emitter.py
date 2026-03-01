@@ -117,6 +117,10 @@ def emit_all(all_locales: list[dict]) -> str:
         lines.append(f"        {chunk}{comma}")
     lines.append("    )")
 
+    # get() method
+    lines.append("")
+    lines.append("    public fun get(code: String): AgeLocale? = ALL[code]")
+
     lines.append("}")
     lines.append("")
 

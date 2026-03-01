@@ -4,6 +4,7 @@
 #define PARENTTIME_LOCALES_HPP
 
 #include "types.hpp"
+#include <string>
 
 namespace parenttime {
 namespace locales {
@@ -79,6 +80,8 @@ const AgeLocale& UR();
 const AgeLocale& UZ();
 const AgeLocale& VI();
 const AgeLocale& ZH();
+
+const AgeLocale* get(const std::string& code);
 
 } // namespace locales
 } // namespace parenttime

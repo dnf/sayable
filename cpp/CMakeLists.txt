@@ -17,6 +17,7 @@ add_library(parenttime
     src/locales_f_k.cpp
     src/locales_l_r.cpp
     src/locales_s_z.cpp
+    src/locales_registry.cpp
 )
 target_include_directories(parenttime PUBLIC include)
 

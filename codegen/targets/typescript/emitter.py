@@ -110,10 +110,28 @@ def emit_locale(data: dict) -> str:
 
 def emit_barrel(all_locales: list[dict]) -> str:
     """Generate the locales/index.ts barrel file."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER]
-    for loc in sorted(all_locales, key=lambda d: d["code"]):
+
+    lines.append("import type { AgeLocale } from '../locale.js';")
+
+    for loc in sorted_locs:
         code = loc["code"]
-        lines.append(f"export {{ {code} }} from './{code}.js';")
+        lines.append(f"import {{ {code} }} from './{code}.js';")
+
+    lines.append("")
+
+    # Lookup map + function
+    codes = ", ".join(loc["code"] for loc in sorted_locs)
+    lines.append(f"const _ALL: Record<string, AgeLocale> = {{ {codes} }};")
+    lines.append("")
+    lines.append("export function getLocale(code: string): AgeLocale | undefined {")
+    lines.append("  return _ALL[code];")
+    lines.append("}")
+    lines.append("")
+
+    # Re-export all locale constants
+    lines.append(f"export {{ {codes} }};")
     lines.append("")
     return "\n".join(lines)
 

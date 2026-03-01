@@ -1469,4 +1469,37 @@ final class FormatAgeTest extends TestCase
         $pt = new ParentTime(Locales::AM());
         $this->assertSame('3 ዓመታት ተኩል', $pt->formatAge('2022-06-15', '2025-12-15'));
     }
+
+    // ================================================================
+    // Section 30: Locale lookup by code string
+    // ================================================================
+
+    public function test_30_1_get_locale_en(): void
+    {
+        $loc = Locales::get('en');
+        $this->assertNotNull($loc);
+        $this->assertSame('en', $loc->code);
+    }
+
+    public function test_30_2_get_locale_fr(): void
+    {
+        $loc = Locales::get('fr');
+        $this->assertNotNull($loc);
+        $this->assertSame('fr', $loc->code);
+    }
+
+    public function test_30_3_get_locale_unknown(): void
+    {
+        $this->assertNull(Locales::get('xx'));
+    }
+
+    public function test_30_4_get_locale_empty(): void
+    {
+        $this->assertNull(Locales::get(''));
+    }
+
+    public function test_30_5_get_locale_case_sensitive(): void
+    {
+        $this->assertNull(Locales::get('EN'));
+    }
 }

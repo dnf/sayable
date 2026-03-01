@@ -1007,4 +1007,37 @@ class FormatAgeTest {
         assertEquals("6 ወራት", pt.formatAge("2025-01-15", "2025-07-15"))
         assertEquals("3 ዓመታት ተኩል", pt.formatAge("2022-06-15", "2025-12-15"))
     }
+
+    // ================================================================
+    // Section 30: Locale lookup by code string
+    // ================================================================
+
+    @Test
+    fun `getLocale returns en locale`() {
+        val loc = Locales.get("en")
+        assertNotNull(loc)
+        assertEquals("en", loc!!.code)
+    }
+
+    @Test
+    fun `getLocale returns fr locale`() {
+        val loc = Locales.get("fr")
+        assertNotNull(loc)
+        assertEquals("fr", loc!!.code)
+    }
+
+    @Test
+    fun `getLocale returns null for unknown code`() {
+        assertNull(Locales.get("xx"))
+    }
+
+    @Test
+    fun `getLocale returns null for empty string`() {
+        assertNull(Locales.get(""))
+    }
+
+    @Test
+    fun `getLocale is case-sensitive`() {
+        assertNull(Locales.get("EN"))
+    }
 }

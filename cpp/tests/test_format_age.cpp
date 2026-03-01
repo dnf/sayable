@@ -29,6 +29,13 @@ static int tests_failed = 0;
     } else { tests_passed++; } \
 } while(0)
 
+#define ASSERT_TRUE(name, cond) do { \
+    if (!(cond)) { \
+        std::cerr << "FAIL [" << (name) << "]: condition was false" << std::endl; \
+        tests_failed++; \
+    } else { tests_passed++; } \
+} while(0)
+
 #define ASSERT_CONTAINS(name, got, substr) do { \
     auto _got = (got); \
     std::string _sub = (substr); \
@@ -506,6 +513,30 @@ void test_locale_amharic() {
     ASSERT_EQ("am 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "3 ዓመታት ተኩል");
 }
 
+// ================================================================
+// Section 30: Locale lookup by code string
+// ================================================================
+void test_locale_lookup() {
+    // 30.1 Known locale
+    const auto* en_loc = locales::get("en");
+    ASSERT_TRUE("get(en) not null", en_loc != nullptr);
+    ASSERT_TRUE("get(en) code", en_loc->code == "en");
+
+    // 30.2 Another known locale
+    const auto* fr_loc = locales::get("fr");
+    ASSERT_TRUE("get(fr) not null", fr_loc != nullptr);
+    ASSERT_TRUE("get(fr) code", fr_loc->code == "fr");
+
+    // 30.3 Unknown code
+    ASSERT_TRUE("get(xx) null", locales::get("xx") == nullptr);
+
+    // 30.4 Empty string
+    ASSERT_TRUE("get('') null", locales::get("") == nullptr);
+
+    // 30.5 Case-sensitive
+    ASSERT_TRUE("get(EN) null", locales::get("EN") == nullptr);
+}
+
 int main() {
     test_null_edge_cases();
     test_days_tier();
@@ -544,6 +575,7 @@ int main() {
     test_locale_swahili();
     test_locale_indonesian();
     test_locale_amharic();
+    test_locale_lookup();
 
     std::cout << "\n=== Results ===" << std::endl;
     std::cout << "Passed: " << tests_passed << std::endl;

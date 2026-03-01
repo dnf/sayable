@@ -643,3 +643,42 @@ func TestLocale_Amharic(t *testing.T) {
 	assertAge(t, "am 6 months", pt.FormatAge("2025-01-15", "2025-07-15"), "6 ወራት")
 	assertAge(t, "am 3.5y half", pt.FormatAge("2022-06-15", "2025-12-15"), "3 ዓመታት ተኩል")
 }
+
+// ================================================================
+// Section 30: Locale lookup by code string
+// ================================================================
+
+func TestGetLocale(t *testing.T) {
+	// 30.1 Known locale
+	loc := GetLocale("en")
+	if loc == nil {
+		t.Fatal("GetLocale(\"en\") returned nil")
+	}
+	if loc.Code != "en" {
+		t.Errorf("GetLocale(\"en\").Code = %q, want %q", loc.Code, "en")
+	}
+
+	// 30.2 Another known locale
+	loc = GetLocale("fr")
+	if loc == nil {
+		t.Fatal("GetLocale(\"fr\") returned nil")
+	}
+	if loc.Code != "fr" {
+		t.Errorf("GetLocale(\"fr\").Code = %q, want %q", loc.Code, "fr")
+	}
+
+	// 30.3 Unknown code
+	if GetLocale("xx") != nil {
+		t.Error("GetLocale(\"xx\") should be nil")
+	}
+
+	// 30.4 Empty string
+	if GetLocale("") != nil {
+		t.Error("GetLocale(\"\") should be nil")
+	}
+
+	// 30.5 Case-sensitive
+	if GetLocale("EN") != nil {
+		t.Error("GetLocale(\"EN\") should be nil (case-sensitive)")
+	}
+}

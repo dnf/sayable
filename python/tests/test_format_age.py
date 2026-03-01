@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date
 from unittest.mock import patch
 
-from parent_time import EN, AgeLocale, ParentTime, format_age, format_stage, resolve_stage
+from parent_time import EN, AgeLocale, ParentTime, format_age, format_stage, get_locale, resolve_stage
 from parent_time.locales import AM, AR, ES, HE, ID, MK, SW
 
 
@@ -918,3 +918,29 @@ class TestLocaleAmharic:
 
     def test_29_39_half_years(self) -> None:
         assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 ዓመታት ተኩል"
+
+
+# ================================================================
+# Section 30: Locale lookup by code string
+# ================================================================
+
+
+class TestLocaleLookup:
+    def test_30_1_known_locale_en(self) -> None:
+        loc = get_locale("en")
+        assert loc is not None
+        assert loc.code == "en"
+
+    def test_30_2_known_locale_fr(self) -> None:
+        loc = get_locale("fr")
+        assert loc is not None
+        assert loc.code == "fr"
+
+    def test_30_3_unknown_code(self) -> None:
+        assert get_locale("xx") is None
+
+    def test_30_4_empty_string(self) -> None:
+        assert get_locale("") is None
+
+    def test_30_5_case_sensitive(self) -> None:
+        assert get_locale("EN") is None

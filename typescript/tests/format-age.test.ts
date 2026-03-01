@@ -8,6 +8,7 @@ import { mk } from '../src/locales/mk';
 import { sw } from '../src/locales/sw';
 import { id } from '../src/locales/id';
 import { am } from '../src/locales/am';
+import { getLocale } from '../src/locales/index';
 
 // All tests use explicit (dob, asOf) pairs for determinism.
 
@@ -1042,6 +1043,35 @@ describe('ParentTime', () => {
 
     it('3½ years — half marker', () => {
       expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 ዓመታት ተኩል');
+    });
+  });
+
+  // ================================================================
+  // Section 30: Locale lookup by code string
+  // ================================================================
+  describe('getLocale', () => {
+    it('returns en locale for "en"', () => {
+      const loc = getLocale('en');
+      expect(loc).toBeDefined();
+      expect(loc!.code).toBe('en');
+    });
+
+    it('returns fr locale for "fr"', () => {
+      const loc = getLocale('fr');
+      expect(loc).toBeDefined();
+      expect(loc!.code).toBe('fr');
+    });
+
+    it('returns undefined for unknown code', () => {
+      expect(getLocale('xx')).toBeUndefined();
+    });
+
+    it('returns undefined for empty string', () => {
+      expect(getLocale('')).toBeUndefined();
+    });
+
+    it('returns undefined for uppercase (case-sensitive)', () => {
+      expect(getLocale('EN')).toBeUndefined();
     });
   });
 });

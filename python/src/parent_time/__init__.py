@@ -51,6 +51,7 @@ from parent_time.locales import (
     UR,
     VI,
     ZH,
+    get_locale,
 )
 from parent_time.locales.en import EN
 
@@ -109,5 +110,6 @@ __all__ = [
     "StageLabel",
     "format_age",
     "format_stage",
+    "get_locale",
     "resolve_stage",
 ]

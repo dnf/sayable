@@ -121,9 +121,33 @@ def emit_barrel(all_locales: list[dict]) -> str | None:
     return None  # Go doesn't have barrel files
 
 
+def emit_registry(all_locales: list[dict]) -> str:
+    """Generate locale_registry.go with GetLocale function."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    lines = [HEADER, "package parenttime\n"]
+    lines.append("// GetLocale returns the locale for the given code, or nil if not found.")
+    lines.append("func GetLocale(code string) *AgeLocale {")
+    lines.append("\tswitch code {")
+    for loc in sorted_locs:
+        code = loc["code"]
+        lines.append(f'\tcase {_quote(code)}:')
+        lines.append(f"\t\treturn &{code.upper()}")
+    lines.append("\tdefault:")
+    lines.append("\t\treturn nil")
+    lines.append("\t}")
+    lines.append("}")
+    lines.append("")
+    return "\n".join(lines)
+
+
 def output_path(code: str, root: str) -> str:
     import os
     return os.path.join(root, "go", f"locale_{code}.go")
+
+
+def registry_path(root: str) -> str:
+    import os
+    return os.path.join(root, "go", "locale_registry.go")
 
 
 def barrel_path(root: str) -> str | None:

@@ -141,21 +141,29 @@ def generate_python(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_go(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.targets.go.emitter import emit_locale, output_path
+    from codegen.targets.go.emitter import emit_locale, emit_registry, output_path, registry_path
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
         content = emit_locale(loc)
         _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
 
 
 def generate_ruby(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.targets.ruby.emitter import emit_locale, output_path
+    from codegen.targets.ruby.emitter import emit_locale, emit_registry, output_path, registry_path
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
         content = emit_locale(loc)
         _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
 
 
 def generate_rust(locales: list[dict], check: bool, diffs: list[str]) -> None:
@@ -180,7 +188,10 @@ def generate_kotlin(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_cpp(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.targets.cpp.emitter import emit_header, emit_source_file, header_path, source_path, split_by_range
+    from codegen.targets.cpp.emitter import (
+        emit_header, emit_registry, emit_source_file, header_path,
+        registry_source_path, source_path, split_by_range,
+    )
 
     ranges = split_by_range(locales)
     for suffix, range_locales in ranges.items():
@@ -190,6 +201,10 @@ def generate_cpp(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
     path = header_path(ROOT)
     content = emit_header(locales)
+    _write_or_check(path, content, check, diffs)
+
+    path = registry_source_path(ROOT)
+    content = emit_registry(locales)
     _write_or_check(path, content, check, diffs)
 
 

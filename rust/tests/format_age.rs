@@ -1690,3 +1690,29 @@ fn test_locale_amharic() {
     assert_age("am 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 ወራት");
     assert_age("am 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 ዓመታት ተኩል");
 }
+
+// ================================================================
+// Section 30: Locale lookup by code string
+// ================================================================
+
+#[test]
+fn test_locale_lookup() {
+    // 30.1 Known locale
+    let loc = locales::get("en");
+    assert!(loc.is_some(), "get(\"en\") should return Some");
+    assert_eq!(loc.unwrap().code, "en");
+
+    // 30.2 Another known locale
+    let loc = locales::get("fr");
+    assert!(loc.is_some(), "get(\"fr\") should return Some");
+    assert_eq!(loc.unwrap().code, "fr");
+
+    // 30.3 Unknown code
+    assert!(locales::get("xx").is_none(), "get(\"xx\") should be None");
+
+    // 30.4 Empty string
+    assert!(locales::get("").is_none(), "get(\"\") should be None");
+
+    // 30.5 Case-sensitive
+    assert!(locales::get("EN").is_none(), "get(\"EN\") should be None (case-sensitive)");
+}

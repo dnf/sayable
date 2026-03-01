@@ -154,12 +154,15 @@ def emit_header(all_locales: list[dict]) -> str:
     lines.append("#define PARENTTIME_LOCALES_HPP")
     lines.append("")
     lines.append('#include "types.hpp"')
+    lines.append("#include <string>")
     lines.append("")
     lines.append("namespace parenttime {")
     lines.append("namespace locales {")
     lines.append("")
     for loc in sorted_locs:
         lines.append(f"const AgeLocale& {loc['code'].upper()}();")
+    lines.append("")
+    lines.append("const AgeLocale* get(const std::string& code);")
     lines.append("")
     lines.append("} // namespace locales")
     lines.append("} // namespace parenttime")
@@ -168,6 +171,34 @@ def emit_header(all_locales: list[dict]) -> str:
     lines.append("")
 
     return "\n".join(lines)
+
+
+def emit_registry(all_locales: list[dict]) -> str:
+    """Emit locales_registry.cpp with the get() lookup function."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    lines = [
+        "// -*- coding: utf-8 -*-",
+        HEADER.rstrip(),
+        '#include "parenttime/locales.hpp"\n',
+        "namespace parenttime {",
+        "namespace locales {\n",
+        "const AgeLocale* get(const std::string& code) {",
+    ]
+    for loc in sorted_locs:
+        code = loc["code"]
+        lines.append(f'    if (code == {_quote(code)}) return &{code.upper()}();')
+    lines.append("    return nullptr;")
+    lines.append("}")
+    lines.append("")
+    lines.append("} // namespace locales")
+    lines.append("} // namespace parenttime")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def registry_source_path(root: str) -> str:
+    import os
+    return os.path.join(root, "cpp", "src", "locales_registry.cpp")
 
 
 def split_by_range(all_locales: list[dict]) -> dict[str, list[dict]]:

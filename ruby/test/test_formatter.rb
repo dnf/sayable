@@ -940,4 +940,32 @@ class TestFormatter < Minitest::Test
     pt = ParentTime::Formatter.new(ParentTime::Locales::AM)
     assert_equal '3 ዓመታት ተኩል', pt.format_age('2022-06-15', '2025-12-15')
   end
+
+  # ================================================================
+  # Section 30: Locale lookup by code string
+  # ================================================================
+
+  def test_30_1_get_locale_en
+    loc = ParentTime::Locales.get('en')
+    refute_nil loc
+    assert_equal 'en', loc.code
+  end
+
+  def test_30_2_get_locale_fr
+    loc = ParentTime::Locales.get('fr')
+    refute_nil loc
+    assert_equal 'fr', loc.code
+  end
+
+  def test_30_3_get_locale_unknown
+    assert_nil ParentTime::Locales.get('xx')
+  end
+
+  def test_30_4_get_locale_empty
+    assert_nil ParentTime::Locales.get('')
+  end
+
+  def test_30_5_get_locale_case_sensitive
+    assert_nil ParentTime::Locales.get('EN')
+  end
 end

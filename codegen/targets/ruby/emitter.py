@@ -97,9 +97,33 @@ def emit_barrel(all_locales: list[dict]) -> str | None:
     return None  # Ruby auto-loads via require
 
 
+def emit_registry(all_locales: list[dict]) -> str:
+    """Generate locales/registry.rb with self.get(code) method."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    lines = ["# frozen_string_literal: true", "", HEADER.rstrip()]
+    lines.append("module ParentTime")
+    lines.append("  module Locales")
+    lines.append("    def self.get(code)")
+    lines.append("      case code")
+    for loc in sorted_locs:
+        code = loc["code"]
+        lines.append(f"      when {_quote(code)} then {code.upper()}")
+    lines.append("      end")
+    lines.append("    end")
+    lines.append("  end")
+    lines.append("end")
+    lines.append("")
+    return "\n".join(lines)
+
+
 def output_path(code: str, root: str) -> str:
     import os
     return os.path.join(root, "ruby", "lib", "parent_time", "locales", f"{code}.rb")
+
+
+def registry_path(root: str) -> str:
+    import os
+    return os.path.join(root, "ruby", "lib", "parent_time", "locales", "registry.rb")
 
 
 def barrel_path(root: str) -> str | None:

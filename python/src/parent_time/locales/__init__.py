@@ -2,6 +2,8 @@
 
 """Locale definitions for all supported languages."""
 
+from parent_time.locale import AgeLocale
+
 from parent_time.locales.am import AM
 from parent_time.locales.ar import AR
 from parent_time.locales.az import AZ
@@ -74,6 +76,32 @@ from parent_time.locales.uz import UZ
 from parent_time.locales.vi import VI
 from parent_time.locales.zh import ZH
 
+_ALL: dict[str, AgeLocale] = {
+    "am": AM, "ar": AR, "az": AZ, "bg": BG,
+    "bn": BN, "br": BR, "bs": BS, "ca": CA,
+    "cs": CS, "cy": CY, "da": DA, "de": DE,
+    "el": EL, "en": EN, "es": ES, "et": ET,
+    "eu": EU, "fa": FA, "fi": FI, "fil": FIL,
+    "fr": FR, "ga": GA, "gd": GD, "gu": GU,
+    "gv": GV, "he": HE, "hi": HI, "hr": HR,
+    "hu": HU, "id": ID, "it": IT, "ja": JA,
+    "jv": JV, "ka": KA, "kk": KK, "km": KM,
+    "ko": KO, "kw": KW, "lt": LT, "lv": LV,
+    "mk": MK, "mr": MR, "ms": MS, "mt": MT,
+    "my": MY, "nb": NB, "ne": NE, "nl": NL,
+    "pa": PA, "pl": PL, "pt": PT, "ro": RO,
+    "ru": RU, "shi": SHI, "si": SI, "sk": SK,
+    "sl": SL, "sq": SQ, "sr": SR, "sv": SV,
+    "sw": SW, "ta": TA, "te": TE, "th": TH,
+    "tr": TR, "tzm": TZM, "uk": UK, "ur": UR,
+    "uz": UZ, "vi": VI, "zh": ZH,
+}
+
+
+def get_locale(code: str) -> AgeLocale | None:
+    """Look up a locale by its code string."""
+    return _ALL.get(code)
+
 __all__ = [
     "AM", "AR", "AZ", "BG", "BN", "BR", "BS", "CA",
     "CS", "CY", "DA", "DE", "EL", "EN", "ES", "ET",
@@ -84,4 +112,5 @@ __all__ = [
     "PA", "PL", "PT", "RO", "RU", "SHI", "SI", "SK",
     "SL", "SQ", "SR", "SV", "SW", "TA", "TE", "TH",
     "TR", "TZM", "UK", "UR", "UZ", "VI", "ZH",
+    "get_locale",
 ]
