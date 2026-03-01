@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # Runs just recipes in parallel with live progress display.
-# Usage: run-parallel.sh [--logs] "test typescript" "test python" "check" ...
-# Each argument is passed to `just` as a complete command.
+# Usage: run-parallel.sh <name> "test typescript" "test python" "check" ...
+# <name> is used for the log directory: .logs/<name>/
+# Each subsequent argument is passed to `just` as a complete command.
 # The label shown in output is the last word of each argument.
-# With --logs, preserves the log directory and prints its path.
 set -uo pipefail
 
-keep_logs=false
-if [ "${1:-}" = "--logs" ]; then keep_logs=true; shift; fi
-if [ $# -eq 0 ]; then echo "Usage: $0 [--logs] 'cmd args'..." >&2; exit 1; fi
+if [ $# -lt 2 ]; then echo "Usage: $0 <name> 'cmd args'..." >&2; exit 1; fi
 
-logdir=$(mktemp -d)
+name="$1"; shift
+logdir=".logs/$name"
+mkdir -p "$logdir"
 
 cmds=("$@")
 labels=()
@@ -26,7 +26,7 @@ cleanup() {
     printf "\033[?25h" 2>/dev/null
     kill $(jobs -p) 2>/dev/null
     wait 2>/dev/null
-    if [ "$keep_logs" = false ]; then rm -rf "$logdir"; fi
+    for label in "${labels[@]}"; do rm -f "$logdir/$label.result"; done
 }
 trap cleanup EXIT
 trap 'exit 130' INT
@@ -120,10 +120,7 @@ done
 passed=$(( n - failed ))
 echo ""
 echo "$passed/$n passed (${wall}s wall time)"
-
-if [ "$keep_logs" = true ]; then
-    echo "Logs: $logdir"
-fi
+echo "Logs: $logdir/"
 
 if [ "$failed" -gt 0 ]; then
     echo ""

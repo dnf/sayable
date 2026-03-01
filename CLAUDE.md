@@ -12,16 +12,17 @@ The `justfile` is the primary task runner. Running `just test`, `just build`, or
 just test          # all 11 test suites + codegen check, in parallel
 just build         # all compiled languages, in parallel
 just lint          # all linters, in parallel
-just test --logs   # same, but keep log directory (prints path)
 ```
 
-Single-language commands run directly with streaming output:
+Single-language commands stream to terminal and save to a log file:
 
 ```
-just test go       # run one suite
-just build rust    # build one language
-just lint python   # lint one language
+just test go       # run one suite   → .logs/test/go.log
+just build rust    # build one       → .logs/build/rust.log
+just lint python   # lint one        → .logs/lint/python.log
 ```
+
+All output is captured to `.logs/<command>/<language>.log` — both parallel and single-language runs.
 
 | Shortcut | Command |
 |----------|---------|
