@@ -79,7 +79,7 @@ fast tool. We enable 11 rule categories:
 
 | Rule | Reason |
 |------|--------|
-| RUF001 | Ambiguous Unicode characters (Cyrillic "а" vs Latin "a"). Expected in i18n locale strings with 49 languages. |
+| RUF001 | Ambiguous Unicode characters (Cyrillic "а" vs Latin "a"). Expected in i18n locale strings with 63 languages. |
 | RUF003 | Ambiguous Unicode in comments. We use EN DASH (–) in doc comments for readability. |
 | SIM108 | Ternary expression suggestions. `if isinstance(x, str): ... else: ...` is more readable than a ternary when the branches are complex. |
 | E501 (locale files only) | Long lines in locale data are unavoidable — a single `PluralUnit({"one": "...", "other": "...", "few": "..."})` call naturally exceeds 120 chars. |

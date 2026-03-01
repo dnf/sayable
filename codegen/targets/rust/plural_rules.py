@@ -1,4 +1,4 @@
-"""Rust plural rule definitions for all 12 patterns."""
+"""Rust plural rule definitions for all 14 patterns."""
 
 from __future__ import annotations
 
@@ -84,6 +84,19 @@ _RS = {
             let mod100 = n % 100;
             if mod10 == 0 || (11..=19).contains(&mod100) { PluralCategory::Zero }
             else if mod10 == 1 && mod100 != 11 { PluralCategory::One }
+            else { PluralCategory::Other }
+        }""",
+    "he": """\
+|n| {
+            if n == 1 { PluralCategory::One }
+            else if n == 2 { PluralCategory::Two }
+            else { PluralCategory::Other }
+        }""",
+    "mk": """\
+|n| {
+            let mod10 = n % 10;
+            let mod100 = n % 100;
+            if mod10 == 1 && mod100 != 11 { PluralCategory::One }
             else { PluralCategory::Other }
         }""",
 }

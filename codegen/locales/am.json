@@ -1,0 +1,34 @@
+{
+  "code": "am",
+  "name": "Amharic",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "day": {
+      "one": "{n} ቀን",
+      "other": "{n} ቀናት"
+    },
+    "week": {
+      "one": "{n} ሳምንት",
+      "other": "{n} ሳምንታት"
+    },
+    "month": {
+      "one": "{n} ወር",
+      "other": "{n} ወራት"
+    },
+    "year": {
+      "one": "{n} ዓመት",
+      "other": "{n} ዓመታት"
+    }
+  },
+  "half": "{0} ተኩል",
+  "delimiter": "፣ ",
+  "justBorn": "አዲስ የተወለደ",
+  "stages": {
+    "newborn": "አዲስ የተወለደ",
+    "infant": "ሕፃን",
+    "toddler": "ሕፃን ልጅ",
+    "child": "ልጅ",
+    "teenager": "ታዳጊ",
+    "adult": "አዋቂ"
+  }
+}

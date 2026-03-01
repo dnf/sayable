@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 8 identical implementations (TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP) and 49 locales. TypeScript is the reference implementation.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 8 identical implementations (TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP) and 63 locales. TypeScript is the reference implementation.
 
 ## Build and test commands
 
@@ -53,6 +53,16 @@ Core files per language follow a consistent pattern:
 - Zero warnings in CI. When suppressing a lint, document why.
 - Don't add comments that restate the code. Comments should explain "why", not "what."
 - Locale data files will have long lines — that's expected.
+
+## Adding a new locale
+
+See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Summary:
+
+1. Identify the CLDR plural rule — one of the 12 existing rules usually fits
+2. Create `codegen/locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
+3. Run `python -m codegen.generate` — generates locale files in all 8 languages
+4. Run `just test && just lint` to verify
+5. Optionally add locale-specific test cases to `docs/testing.md`
 
 ## Adding a new language
 

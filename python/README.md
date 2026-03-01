@@ -56,7 +56,7 @@ pt.format_age("2025-01-01", "2025-07-15")   # "6ヶ月"
 pt.format_stage("2025-01-01", "2025-07-15") # "乳児"
 ```
 
-49 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+63 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
 
 ## Compactness
 

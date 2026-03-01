@@ -51,7 +51,7 @@ age := pt.FormatAge("2025-01-01", "2025-07-15")
 fmt.Println(*age)  // "6ヶ月"
 ```
 
-49 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+63 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
 
 ## Compactness
 

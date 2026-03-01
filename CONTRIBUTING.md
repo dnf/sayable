@@ -27,8 +27,8 @@ kotlin/        # Kotlin
 cpp/           # C++
 php/           # PHP
 codegen/       # Locale code generator (JSON → all 8 languages)
-  locales/     # 49 JSON files — single source of truth for locale data
-  emitters/    # One module per target language
+  locales/     # 63 JSON files — single source of truth for locale data
+  targets/     # One directory per target language (emitter + plural rules)
   generate.py  # Orchestrator: loads JSON, runs emitters, writes files
 docs/          # Shared documentation and test specifications
 ```
@@ -67,10 +67,10 @@ See [`docs/gender-and-stages.md`](docs/gender-and-stages.md) for the gender anal
 
 ### New locales
 
-To add a new locale:
+See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for a detailed guide. In short:
 
-1. Create `codegen/locales/{code}.json` with the locale data (see existing files for the format)
-2. Ensure the locale's plural rule exists in `codegen/targets/*/plural_rules.py` (or use an existing rule)
+1. Identify the CLDR plural rule for the language (one of the 12 existing rules usually fits)
+2. Create `codegen/locales/{code}.json` with the locale data
 3. Run `python -m codegen.generate` to generate locale files in all 8 languages
 4. Add test cases to `docs/testing.md` and implement them in all 8 test files
 5. Run all test suites

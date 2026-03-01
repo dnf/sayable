@@ -1,0 +1,34 @@
+{
+  "code": "ne",
+  "name": "Nepali",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "{n} दिन",
+      "other": "{n} दिन"
+    },
+    "week": {
+      "one": "{n} हप्ता",
+      "other": "{n} हप्ता"
+    },
+    "month": {
+      "one": "{n} महिना",
+      "other": "{n} महिना"
+    },
+    "year": {
+      "one": "{n} वर्ष",
+      "other": "{n} वर्ष"
+    }
+  },
+  "half": "साढे {n}",
+  "delimiter": ", ",
+  "justBorn": "नवजात शिशु",
+  "stages": {
+    "newborn": "नवजात शिशु",
+    "infant": "शिशु",
+    "toddler": "बाल्यकाल",
+    "child": "बालक",
+    "teenager": "किशोर",
+    "adult": "वयस्क"
+  }
+}

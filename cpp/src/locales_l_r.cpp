@@ -55,6 +55,30 @@ const AgeLocale& LV() {
     return loc;
 }
 
+const AgeLocale& MK() {
+    static const AgeLocale loc{
+        "mk",
+        [](int n) -> PluralCategory {
+            int mod10 = n % 10;
+            int mod100 = n % 100;
+            if (mod10 == 1 && mod100 != 11) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} ден"}, {PluralCategory::Other, "{n} дена"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} недела"}, {PluralCategory::Other, "{n} недели"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} месец"}, {PluralCategory::Other, "{n} месеци"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} година"}, {PluralCategory::Other, "{n} години"}})
+        },
+        "{0} и пол", ", ", "Новороденче",
+        StageLabels{{"Новороденче", ""}, {"Бебе", ""}, {"Мало дете", ""}, {"Дете", ""}, {"Тинејџер", ""}, {"Возрасен", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& MR() {
     static const AgeLocale loc{
         "mr",
@@ -98,6 +122,27 @@ const AgeLocale& MS() {
     return loc;
 }
 
+const AgeLocale& MY() {
+    static const AgeLocale loc{
+        "my",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} ရက်"),
+            UnitForms::Simple("{n} ပတ်"),
+            UnitForms::Simple("{n} လ"),
+            UnitForms::Simple("{n} နှစ်")
+        },
+        "{0}ခွဲ", "၊ ", "မွေးကင်းစ",
+        StageLabels{{"မွေးကင်းစ", ""}, {"နို့စို့ကလေး", ""}, {"ခြေဦးသလျှား", ""}, {"ကလေး", ""}, {"ဆယ်ကျော်သက်", ""}, {"အရွယ်ရောက်", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& NB() {
     static const AgeLocale loc{
         "nb",
@@ -113,6 +158,28 @@ const AgeLocale& NB() {
         },
         "{n}½", ", ", "Nyfødt",
         StageLabels{{"Nyfødt", ""}, {"Spedbarn", ""}, {"Småbarn", ""}, {"Barn", ""}, {"Tenåring", ""}, {"Voksen", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& NE() {
+    static const AgeLocale loc{
+        "ne",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} दिन"}, {PluralCategory::Other, "{n} दिन"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} हप्ता"}, {PluralCategory::Other, "{n} हप्ता"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} महिना"}, {PluralCategory::Other, "{n} महिना"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} वर्ष"}, {PluralCategory::Other, "{n} वर्ष"}})
+        },
+        "साढे {n}", ", ", "नवजात शिशु",
+        StageLabels{{"नवजात शिशु", ""}, {"शिशु", ""}, {"बाल्यकाल", ""}, {"बालक", ""}, {"किशोर", ""}, {"वयस्क", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr

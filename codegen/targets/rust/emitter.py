@@ -123,7 +123,7 @@ def emit_barrel(all_locales: list[dict]) -> str:
     """Generate the locales/mod.rs barrel file."""
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER]
-    lines.append("//! Built-in locale definitions for 49 languages.")
+    lines.append(f"//! Built-in locale definitions for {len(all_locales)} languages.")
     lines.append("//!")
     lines.append("//! Each submodule exports a `locale()` function returning an [`AgeLocale`].")
     lines.append("//! Prefer using the static constants (e.g., [`EN`], [`JA`]) for lazy-initialized access.")

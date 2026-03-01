@@ -49,6 +49,27 @@ const AgeLocale& FI() {
     return loc;
 }
 
+const AgeLocale& FIL() {
+    static const AgeLocale loc{
+        "fil",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} araw"),
+            UnitForms::Simple("{n} linggo"),
+            UnitForms::Simple("{n} buwan"),
+            UnitForms::Simple("{n} taon")
+        },
+        "{0} at kalahati", ", ", "Bagong silang",
+        StageLabels{{"Bagong silang", ""}, {"Sanggol", ""}, {"Batang paslit", ""}, {"Bata", ""}, {"Tinedyer", ""}, {"Matanda", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& FR() {
     static const AgeLocale loc{
         "fr",
@@ -107,6 +128,29 @@ const AgeLocale& GU() {
         },
         "સાડા {n}", ", ", "નવજાત",
         StageLabels{{"નવજાત", ""}, {"શિશુ", ""}, {"નાનું બાળક", ""}, {"બાળક", ""}, {"કિશોર", "કિશોરી"}, {"પુખ્ત", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& HE() {
+    static const AgeLocale loc{
+        "he",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            if (n == 2) return PluralCategory::Two;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "יום {n}"}, {PluralCategory::Two, "יומיים"}, {PluralCategory::Other, "{n} ימים"}}),
+            UnitForms::Plural({{PluralCategory::One, "שבוע {n}"}, {PluralCategory::Two, "שבועיים"}, {PluralCategory::Other, "{n} שבועות"}}),
+            UnitForms::Plural({{PluralCategory::One, "חודש {n}"}, {PluralCategory::Two, "חודשיים"}, {PluralCategory::Other, "{n} חודשים"}}),
+            UnitForms::Plural({{PluralCategory::One, "שנה"}, {PluralCategory::Two, "שנתיים"}, {PluralCategory::Other, "{n} שנים"}})
+        },
+        "{0} וחצי", ", ", "רק נולד",
+        StageLabels{{"רק נולד", "רק נולדה"}, {"תינוק", ""}, {"פעוט", ""}, {"ילד", "ילדה"}, {"נער", "נערה"}, {"מבוגר", "מבוגרת"}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr
@@ -182,6 +226,27 @@ const AgeLocale& HU() {
     return loc;
 }
 
+const AgeLocale& ID() {
+    static const AgeLocale loc{
+        "id",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} hari"),
+            UnitForms::Simple("{n} minggu"),
+            UnitForms::Simple("{n} bulan"),
+            UnitForms::Simple("{n} tahun")
+        },
+        "{0} setengah", ", ", "Baru lahir",
+        StageLabels{{"Baru lahir", ""}, {"Bayi", ""}, {"Balita", ""}, {"Anak-anak", ""}, {"Remaja", ""}, {"Dewasa", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& IT() {
     static const AgeLocale loc{
         "it",
@@ -239,6 +304,71 @@ const AgeLocale& JV() {
         },
         "{0} setengah", ", ", "Bayi anyar",
         StageLabels{{"Bayi anyar", ""}, {"Bayi", ""}, {"Balita", ""}, {"Bocah", ""}, {"Remaja", ""}, {"Diwasa", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& KA() {
+    static const AgeLocale loc{
+        "ka",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} დღე"}, {PluralCategory::Other, "{n} დღე"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} კვირა"}, {PluralCategory::Other, "{n} კვირა"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} თვე"}, {PluralCategory::Other, "{n} თვე"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} წელი"}, {PluralCategory::Other, "{n} წელი"}})
+        },
+        "{0} და ნახევარი", ", ", "ახალშობილი",
+        StageLabels{{"ახალშობილი", ""}, {"ჩვილი", ""}, {"პატარა ბავშვი", ""}, {"ბავშვი", ""}, {"მოზარდი", ""}, {"ზრდასრული", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& KK() {
+    static const AgeLocale loc{
+        "kk",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} күн"}, {PluralCategory::Other, "{n} күн"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} апта"}, {PluralCategory::Other, "{n} апта"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ай"}, {PluralCategory::Other, "{n} ай"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} жас"}, {PluralCategory::Other, "{n} жас"}})
+        },
+        "{n} жарым", ", ", "Жаңа туған",
+        StageLabels{{"Жаңа туған", ""}, {"Нәресте", ""}, {"Сәби", ""}, {"Бала", ""}, {"Жасөспірім", ""}, {"Ересек", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& KM() {
+    static const AgeLocale loc{
+        "km",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} ថ្ងៃ"),
+            UnitForms::Simple("{n} សប្ដាហ៍"),
+            UnitForms::Simple("{n} ខែ"),
+            UnitForms::Simple("{n} ឆ្នាំ")
+        },
+        "{0}កន្លះ", ", ", "ទើបនឹងកើត",
+        StageLabels{{"ទើបនឹងកើត", ""}, {"ទារក", ""}, {"កុមារតូច", ""}, {"កុមារ", ""}, {"យុវវ័យ", ""}, {"មនុស្សពេញវ័យ", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr

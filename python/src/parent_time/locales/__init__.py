@@ -2,7 +2,9 @@
 
 """Locale definitions for all supported languages."""
 
+from parent_time.locales.am import AM
 from parent_time.locales.ar import AR
+from parent_time.locales.az import AZ
 from parent_time.locales.bg import BG
 from parent_time.locales.bn import BN
 from parent_time.locales.bs import BS
@@ -17,47 +19,60 @@ from parent_time.locales.et import ET
 from parent_time.locales.eu import EU
 from parent_time.locales.fa import FA
 from parent_time.locales.fi import FI
+from parent_time.locales.fil import FIL
 from parent_time.locales.fr import FR
 from parent_time.locales.ga import GA
 from parent_time.locales.gu import GU
+from parent_time.locales.he import HE
 from parent_time.locales.hi import HI
 from parent_time.locales.hr import HR
 from parent_time.locales.hu import HU
+from parent_time.locales.id import ID
 from parent_time.locales.it import IT
 from parent_time.locales.ja import JA
 from parent_time.locales.jv import JV
+from parent_time.locales.ka import KA
+from parent_time.locales.kk import KK
+from parent_time.locales.km import KM
 from parent_time.locales.ko import KO
 from parent_time.locales.lt import LT
 from parent_time.locales.lv import LV
+from parent_time.locales.mk import MK
 from parent_time.locales.mr import MR
 from parent_time.locales.ms import MS
+from parent_time.locales.my import MY
 from parent_time.locales.nb import NB
+from parent_time.locales.ne import NE
 from parent_time.locales.nl import NL
 from parent_time.locales.pa import PA
 from parent_time.locales.pl import PL
 from parent_time.locales.pt import PT
 from parent_time.locales.ro import RO
 from parent_time.locales.ru import RU
+from parent_time.locales.si import SI
 from parent_time.locales.sk import SK
 from parent_time.locales.sl import SL
 from parent_time.locales.sq import SQ
 from parent_time.locales.sr import SR
 from parent_time.locales.sv import SV
+from parent_time.locales.sw import SW
 from parent_time.locales.ta import TA
 from parent_time.locales.te import TE
 from parent_time.locales.th import TH
 from parent_time.locales.tr import TR
 from parent_time.locales.uk import UK
 from parent_time.locales.ur import UR
+from parent_time.locales.uz import UZ
 from parent_time.locales.vi import VI
 from parent_time.locales.zh import ZH
 
 __all__ = [
-    "AR", "BG", "BN", "BS", "CA", "CS", "DA", "DE",
-    "EL", "EN", "ES", "ET", "EU", "FA", "FI", "FR",
-    "GA", "GU", "HI", "HR", "HU", "IT", "JA", "JV",
-    "KO", "LT", "LV", "MR", "MS", "NB", "NL", "PA",
-    "PL", "PT", "RO", "RU", "SK", "SL", "SQ", "SR",
-    "SV", "TA", "TE", "TH", "TR", "UK", "UR", "VI",
-    "ZH",
+    "AM", "AR", "AZ", "BG", "BN", "BS", "CA", "CS",
+    "DA", "DE", "EL", "EN", "ES", "ET", "EU", "FA",
+    "FI", "FIL", "FR", "GA", "GU", "HE", "HI", "HR",
+    "HU", "ID", "IT", "JA", "JV", "KA", "KK", "KM",
+    "KO", "LT", "LV", "MK", "MR", "MS", "MY", "NB",
+    "NE", "NL", "PA", "PL", "PT", "RO", "RU", "SI",
+    "SK", "SL", "SQ", "SR", "SV", "SW", "TA", "TE",
+    "TH", "TR", "UK", "UR", "UZ", "VI", "ZH",
 ]

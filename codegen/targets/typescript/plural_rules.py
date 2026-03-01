@@ -1,4 +1,4 @@
-"""TypeScript plural rule definitions for all 12 patterns."""
+"""TypeScript plural rule definitions for all 14 patterns."""
 
 from __future__ import annotations
 
@@ -76,6 +76,19 @@ _TS = {
     if (mod10 === 1 && mod100 !== 11) return 'one';
     return 'other';
   }""",
+    "he": """\
+(n) => {
+    if (n === 1) return 'one';
+    if (n === 2) return 'two';
+    return 'other';
+  }""",
+    "mk": """\
+(n) => {
+    const mod10 = n % 10;
+    const mod100 = n % 100;
+    if (mod10 === 1 && mod100 !== 11) return 'one';
+    return 'other';
+  }""",
 }
 
 _TS_NAMED = {
@@ -146,6 +159,19 @@ function plural(n: number): PluralCategory {
   const mod10 = n % 10;
   const mod100 = n % 100;
   if (mod10 === 0 || (mod100 >= 11 && mod100 <= 19)) return 'zero';
+  if (mod10 === 1 && mod100 !== 11) return 'one';
+  return 'other';
+}""",
+    "he": """\
+function plural(n: number): PluralCategory {
+  if (n === 1) return 'one';
+  if (n === 2) return 'two';
+  return 'other';
+}""",
+    "mk": """\
+function plural(n: number): PluralCategory {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
   if (mod10 === 1 && mod100 !== 11) return 'one';
   return 'other';
 }""",

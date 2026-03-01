@@ -1,6 +1,6 @@
 # Locale Configuration
 
-This document describes the 49 built-in locales in parent-time: how their
+This document describes the 63 built-in locales in parent-time: how their
 plural rules work, why specific choices were made, and how the implementation
 relates to the authoritative CLDR (Unicode Common Locale Data Repository) data.
 
@@ -113,6 +113,23 @@ The half-year marker supports two placeholder styles:
 | `ur` | Urdu | one/other | n=1→one | `ساڑھے {n}` |
 | `vi` | Vietnamese | other | always other | `{0} rưỡi` |
 | `zh` | Chinese | other | always other | `{0}半` |
+| `am` | Amharic | one/other | n∈{0,1}→one | `{0} ተኩል` |
+| `az` | Azerbaijani | one/other | n=1→one | `{n} yarım` |
+| `fil` | Filipino | other | always other | `{0} at kalahati` |
+| `he` | Hebrew | one/two/other | n=1→one, n=2→two | `{0} וחצי` |
+| `id` | Indonesian | other | always other | `{0} setengah` |
+| `ka` | Georgian | one/other | n=1→one | `{0} და ნახევარი` |
+| `kk` | Kazakh | one/other | n=1→one | `{n} жарым` |
+| `km` | Khmer | other | always other | `{0}កន្លះ` |
+| `mk` | Macedonian | one/other | n%10=1,n%100≠11→one | `{0} и пол` |
+| `my` | Burmese | other | always other | `{0}ခွဲ` |
+| `ne` | Nepali | one/other | n=1→one | `साढे {n}` |
+| `si` | Sinhala | one/other | n∈{0,1}→one | `{0}යි භාගයයි` |
+| `sw` | Swahili | one/other | n=1→one | `{0} na nusu` |
+| `uz` | Uzbek | one/other | n=1→one | `{n} yarim` |
+
+For the full quick-reference table (with speaker counts, countries, and plural rule
+details), see **[locale-reference.md](locale-reference.md)**.
 
 ## Locale details by plural family
 

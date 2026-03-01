@@ -1,4 +1,4 @@
-"""Ruby plural rule definitions for all 12 patterns."""
+"""Ruby plural rule definitions for all 14 patterns."""
 
 from __future__ import annotations
 
@@ -86,6 +86,21 @@ lambda { |n|
         mod100 = n % 100
         if mod10 == 0 || (mod100 >= 11 && mod100 <= 19) then :zero
         elsif mod10 == 1 && mod100 != 11 then :one
+        else :other
+        end
+      }""",
+    "he": """\
+lambda { |n|
+        if n == 1 then :one
+        elsif n == 2 then :two
+        else :other
+        end
+      }""",
+    "mk": """\
+lambda { |n|
+        mod10 = n % 10
+        mod100 = n % 100
+        if mod10 == 1 && mod100 != 11 then :one
         else :other
         end
       }""",

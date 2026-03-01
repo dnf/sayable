@@ -1,4 +1,4 @@
-"""Go plural rule definitions for all 12 patterns."""
+"""Go plural rule definitions for all 14 patterns."""
 
 from __future__ import annotations
 
@@ -130,6 +130,25 @@ _GO = {
 \t\tif mod10 == 0 || (mod100 >= 11 && mod100 <= 19) {
 \t\t\treturn Zero
 \t\t}
+\t\tif mod10 == 1 && mod100 != 11 {
+\t\t\treturn One
+\t\t}
+\t\treturn Other
+\t}""",
+    "he": """\
+\tfunc(n int) PluralCategory {
+\t\tif n == 1 {
+\t\t\treturn One
+\t\t}
+\t\tif n == 2 {
+\t\t\treturn Two
+\t\t}
+\t\treturn Other
+\t}""",
+    "mk": """\
+\tfunc(n int) PluralCategory {
+\t\tmod10 := n % 10
+\t\tmod100 := n % 100
 \t\tif mod10 == 1 && mod100 != 11 {
 \t\t\treturn One
 \t\t}

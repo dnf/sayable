@@ -1,4 +1,4 @@
-"""C++ plural rule definitions for all 12 patterns."""
+"""C++ plural rule definitions for all 14 patterns."""
 
 from __future__ import annotations
 
@@ -84,6 +84,19 @@ _CPP = {
             int mod10 = n % 10;
             int mod100 = n % 100;
             if (mod10 == 0 || (mod100 >= 11 && mod100 <= 19)) return PluralCategory::Zero;
+            if (mod10 == 1 && mod100 != 11) return PluralCategory::One;
+            return PluralCategory::Other;
+        }""",
+    "he": """\
+[](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            if (n == 2) return PluralCategory::Two;
+            return PluralCategory::Other;
+        }""",
+    "mk": """\
+[](int n) -> PluralCategory {
+            int mod10 = n % 10;
+            int mod100 = n % 100;
             if (mod10 == 1 && mod100 != 11) return PluralCategory::One;
             return PluralCategory::Other;
         }""",

@@ -1,6 +1,6 @@
 # Gender Analysis of `formatStage` Labels
 
-This document analyzes the 49 supported locales for gender issues in the developmental stage labels returned by `formatStage()`. Since there are no users yet, we can freely change any label to a better alternative.
+This document analyzes the 63 supported locales for gender issues in the developmental stage labels returned by `formatStage()`. Since there are no users yet, we can freely change any label to a better alternative.
 
 ## Background
 
@@ -292,7 +292,7 @@ stages: {
 
 ## Social Class Considerations
 
-Stage terminology is **not** class-stratified in any of the 49 locales. The only observable variation is **register** (formal/clinical vs. colloquial/warm):
+Stage terminology is **not** class-stratified in any of the 63 locales. The only observable variation is **register** (formal/clinical vs. colloquial/warm):
 
 - Russian "Малыш" (toddler) is warm/affectionate; a clinical alternative would be "ребёнок раннего возраста"
 - Several languages use borrowed English terms (Czech "Teenager", Croatian "Tinejdžer") which may carry a slightly more modern/casual register vs. native equivalents

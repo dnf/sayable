@@ -1,0 +1,22 @@
+{
+  "code": "id",
+  "name": "Indonesian",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "{n} hari",
+    "week": "{n} minggu",
+    "month": "{n} bulan",
+    "year": "{n} tahun"
+  },
+  "half": "{0} setengah",
+  "delimiter": ", ",
+  "justBorn": "Baru lahir",
+  "stages": {
+    "newborn": "Baru lahir",
+    "infant": "Bayi",
+    "toddler": "Balita",
+    "child": "Anak-anak",
+    "teenager": "Remaja",
+    "adult": "Dewasa"
+  }
+}

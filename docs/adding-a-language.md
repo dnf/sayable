@@ -6,7 +6,7 @@ build integration.
 
 ## Overview
 
-parent-time uses a codegen system where 49 locale JSON files are the single
+parent-time uses a codegen system where 63 locale JSON files are the single
 source of truth. A Python emitter for each language converts these JSON files
 into native locale definitions. You write the emitter, the core formatter, and
 the tests; codegen handles the locale data.

@@ -5,6 +5,28 @@
 namespace parenttime {
 namespace locales {
 
+const AgeLocale& AM() {
+    static const AgeLocale loc{
+        "am",
+        [](int n) -> PluralCategory {
+            if (n == 0 || n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} ቀን"}, {PluralCategory::Other, "{n} ቀናት"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ሳምንት"}, {PluralCategory::Other, "{n} ሳምንታት"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ወር"}, {PluralCategory::Other, "{n} ወራት"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ዓመት"}, {PluralCategory::Other, "{n} ዓመታት"}})
+        },
+        "{0} ተኩል", "፣ ", "አዲስ የተወለደ",
+        StageLabels{{"አዲስ የተወለደ", ""}, {"ሕፃን", ""}, {"ሕፃን ልጅ", ""}, {"ልጅ", ""}, {"ታዳጊ", ""}, {"አዋቂ", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& AR() {
     static const AgeLocale loc{
         "ar",
@@ -25,6 +47,28 @@ const AgeLocale& AR() {
         },
         "{0} ونصف", " و", "حديث الولادة",
         StageLabels{{"حديث الولادة", "حديثة الولادة"}, {"رضيع", "رضيعة"}, {"طفل صغير", "طفلة صغيرة"}, {"طفل", "طفلة"}, {"مراهق", "مراهقة"}, {"بالغ", "بالغة"}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& AZ() {
+    static const AgeLocale loc{
+        "az",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} gün"}, {PluralCategory::Other, "{n} gün"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} həftə"}, {PluralCategory::Other, "{n} həftə"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} ay"}, {PluralCategory::Other, "{n} ay"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} yaş"}, {PluralCategory::Other, "{n} yaş"}})
+        },
+        "{n} yarım", ", ", "Təzə doğulub",
+        StageLabels{{"Təzə doğulub", ""}, {"Körpə", ""}, {"Azyaşlı", ""}, {"Uşaq", ""}, {"Yeniyetmə", ""}, {"Böyük", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr

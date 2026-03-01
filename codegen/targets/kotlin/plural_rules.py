@@ -1,4 +1,4 @@
-"""Kotlin plural rule definitions for all 12 patterns."""
+"""Kotlin plural rule definitions for all 14 patterns."""
 
 from __future__ import annotations
 
@@ -92,6 +92,20 @@ _KT = {
                 mod10 == 1 && mod100 != 11 -> PluralCategory.ONE
                 else -> PluralCategory.OTHER
             }
+        }""",
+    "he": """\
+{ n ->
+            when (n) {
+                1 -> PluralCategory.ONE
+                2 -> PluralCategory.TWO
+                else -> PluralCategory.OTHER
+            }
+        }""",
+    "mk": """\
+{ n ->
+            val mod10 = n % 10
+            val mod100 = n % 100
+            if (mod10 == 1 && mod100 != 11) PluralCategory.ONE else PluralCategory.OTHER
         }""",
 }
 

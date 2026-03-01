@@ -1,0 +1,22 @@
+{
+  "code": "fil",
+  "name": "Filipino",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "{n} araw",
+    "week": "{n} linggo",
+    "month": "{n} buwan",
+    "year": "{n} taon"
+  },
+  "half": "{0} at kalahati",
+  "delimiter": ", ",
+  "justBorn": "Bagong silang",
+  "stages": {
+    "newborn": "Bagong silang",
+    "infant": "Sanggol",
+    "toddler": "Batang paslit",
+    "child": "Bata",
+    "teenager": "Tinedyer",
+    "adult": "Matanda"
+  }
+}

@@ -3,9 +3,34 @@
 package parenttime
 
 /**
- * All 49 locale definitions for parent-time.
+ * All 63 locale definitions for parent-time.
  */
 public object Locales {
+
+    // ================================================================
+    // AM — Amharic
+    // ================================================================
+    public val AM: AgeLocale = AgeLocale(
+        code = "am",
+        plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} ቀን", PluralCategory.OTHER to "{n} ቀናት")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} ሳምንት", PluralCategory.OTHER to "{n} ሳምንታት")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} ወር", PluralCategory.OTHER to "{n} ወራት")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} ዓመት", PluralCategory.OTHER to "{n} ዓመታት")),
+        ),
+        half = "{0} ተኩል",
+        delimiter = "፣ ",
+        justBorn = "አዲስ የተወለደ",
+        stages = Stages(
+            newborn = s("አዲስ የተወለደ"),
+            infant = s("ሕፃን"),
+            toddler = s("ሕፃን ልጅ"),
+            child = s("ልጅ"),
+            teenager = s("ታዳጊ"),
+            adult = s("አዋቂ"),
+        ),
+    )
 
     // ================================================================
     // AR — Arabic
@@ -38,6 +63,31 @@ public object Locales {
             child = g("طفل", "طفلة"),
             teenager = g("مراهق", "مراهقة"),
             adult = g("بالغ", "بالغة"),
+        ),
+    )
+
+    // ================================================================
+    // AZ — Azerbaijani
+    // ================================================================
+    public val AZ: AgeLocale = AgeLocale(
+        code = "az",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} gün", PluralCategory.OTHER to "{n} gün")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} həftə", PluralCategory.OTHER to "{n} həftə")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} ay", PluralCategory.OTHER to "{n} ay")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} yaş", PluralCategory.OTHER to "{n} yaş")),
+        ),
+        half = "{n} yarım",
+        delimiter = ", ",
+        justBorn = "Təzə doğulub",
+        stages = Stages(
+            newborn = s("Təzə doğulub"),
+            infant = s("Körpə"),
+            toddler = s("Azyaşlı"),
+            child = s("Uşaq"),
+            teenager = s("Yeniyetmə"),
+            adult = s("Böyük"),
         ),
     )
 
@@ -419,6 +469,31 @@ public object Locales {
     )
 
     // ================================================================
+    // FIL — Filipino
+    // ================================================================
+    public val FIL: AgeLocale = AgeLocale(
+        code = "fil",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            day = simpleUnit("{n} araw"),
+            week = simpleUnit("{n} linggo"),
+            month = simpleUnit("{n} buwan"),
+            year = simpleUnit("{n} taon"),
+        ),
+        half = "{0} at kalahati",
+        delimiter = ", ",
+        justBorn = "Bagong silang",
+        stages = Stages(
+            newborn = s("Bagong silang"),
+            infant = s("Sanggol"),
+            toddler = s("Batang paslit"),
+            child = s("Bata"),
+            teenager = s("Tinedyer"),
+            adult = s("Matanda"),
+        ),
+    )
+
+    // ================================================================
     // FR — French
     // ================================================================
     public val FR: AgeLocale = AgeLocale(
@@ -490,6 +565,37 @@ public object Locales {
             child = s("બાળક"),
             teenager = g("કિશોર", "કિશોરી"),
             adult = s("પુખ્ત"),
+        ),
+    )
+
+    // ================================================================
+    // HE — Hebrew
+    // ================================================================
+    public val HE: AgeLocale = AgeLocale(
+        code = "he",
+        plural = { n ->
+            when (n) {
+                1 -> PluralCategory.ONE
+                2 -> PluralCategory.TWO
+                else -> PluralCategory.OTHER
+            }
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "יום {n}", PluralCategory.TWO to "יומיים", PluralCategory.OTHER to "{n} ימים")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "שבוע {n}", PluralCategory.TWO to "שבועיים", PluralCategory.OTHER to "{n} שבועות")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "חודש {n}", PluralCategory.TWO to "חודשיים", PluralCategory.OTHER to "{n} חודשים")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "שנה", PluralCategory.TWO to "שנתיים", PluralCategory.OTHER to "{n} שנים")),
+        ),
+        half = "{0} וחצי",
+        delimiter = ", ",
+        justBorn = "רק נולד",
+        stages = Stages(
+            newborn = g("רק נולד", "רק נולדה"),
+            infant = s("תינוק"),
+            toddler = s("פעוט"),
+            child = g("ילד", "ילדה"),
+            teenager = g("נער", "נערה"),
+            adult = g("מבוגר", "מבוגרת"),
         ),
     )
 
@@ -577,6 +683,31 @@ public object Locales {
     )
 
     // ================================================================
+    // ID — Indonesian
+    // ================================================================
+    public val ID: AgeLocale = AgeLocale(
+        code = "id",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            day = simpleUnit("{n} hari"),
+            week = simpleUnit("{n} minggu"),
+            month = simpleUnit("{n} bulan"),
+            year = simpleUnit("{n} tahun"),
+        ),
+        half = "{0} setengah",
+        delimiter = ", ",
+        justBorn = "Baru lahir",
+        stages = Stages(
+            newborn = s("Baru lahir"),
+            infant = s("Bayi"),
+            toddler = s("Balita"),
+            child = s("Anak-anak"),
+            teenager = s("Remaja"),
+            adult = s("Dewasa"),
+        ),
+    )
+
+    // ================================================================
     // IT — Italian
     // ================================================================
     public val IT: AgeLocale = AgeLocale(
@@ -648,6 +779,81 @@ public object Locales {
             child = s("Bocah"),
             teenager = s("Remaja"),
             adult = s("Diwasa"),
+        ),
+    )
+
+    // ================================================================
+    // KA — Georgian
+    // ================================================================
+    public val KA: AgeLocale = AgeLocale(
+        code = "ka",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} დღე", PluralCategory.OTHER to "{n} დღე")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} კვირა", PluralCategory.OTHER to "{n} კვირა")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} თვე", PluralCategory.OTHER to "{n} თვე")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} წელი", PluralCategory.OTHER to "{n} წელი")),
+        ),
+        half = "{0} და ნახევარი",
+        delimiter = ", ",
+        justBorn = "ახალშობილი",
+        stages = Stages(
+            newborn = s("ახალშობილი"),
+            infant = s("ჩვილი"),
+            toddler = s("პატარა ბავშვი"),
+            child = s("ბავშვი"),
+            teenager = s("მოზარდი"),
+            adult = s("ზრდასრული"),
+        ),
+    )
+
+    // ================================================================
+    // KK — Kazakh
+    // ================================================================
+    public val KK: AgeLocale = AgeLocale(
+        code = "kk",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} күн", PluralCategory.OTHER to "{n} күн")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} апта", PluralCategory.OTHER to "{n} апта")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} ай", PluralCategory.OTHER to "{n} ай")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} жас", PluralCategory.OTHER to "{n} жас")),
+        ),
+        half = "{n} жарым",
+        delimiter = ", ",
+        justBorn = "Жаңа туған",
+        stages = Stages(
+            newborn = s("Жаңа туған"),
+            infant = s("Нәресте"),
+            toddler = s("Сәби"),
+            child = s("Бала"),
+            teenager = s("Жасөспірім"),
+            adult = s("Ересек"),
+        ),
+    )
+
+    // ================================================================
+    // KM — Khmer
+    // ================================================================
+    public val KM: AgeLocale = AgeLocale(
+        code = "km",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            day = simpleUnit("{n} ថ្ងៃ"),
+            week = simpleUnit("{n} សប្ដាហ៍"),
+            month = simpleUnit("{n} ខែ"),
+            year = simpleUnit("{n} ឆ្នាំ"),
+        ),
+        half = "{0}កន្លះ",
+        delimiter = ", ",
+        justBorn = "ទើបនឹងកើត",
+        stages = Stages(
+            newborn = s("ទើបនឹងកើត"),
+            infant = s("ទារក"),
+            toddler = s("កុមារតូច"),
+            child = s("កុមារ"),
+            teenager = s("យុវវ័យ"),
+            adult = s("មនុស្សពេញវ័យ"),
         ),
     )
 
@@ -743,6 +949,35 @@ public object Locales {
     )
 
     // ================================================================
+    // MK — Macedonian
+    // ================================================================
+    public val MK: AgeLocale = AgeLocale(
+        code = "mk",
+        plural = { n ->
+            val mod10 = n % 10
+            val mod100 = n % 100
+            if (mod10 == 1 && mod100 != 11) PluralCategory.ONE else PluralCategory.OTHER
+        },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} ден", PluralCategory.OTHER to "{n} дена")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} недела", PluralCategory.OTHER to "{n} недели")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} месец", PluralCategory.OTHER to "{n} месеци")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} година", PluralCategory.OTHER to "{n} години")),
+        ),
+        half = "{0} и пол",
+        delimiter = ", ",
+        justBorn = "Новороденче",
+        stages = Stages(
+            newborn = s("Новороденче"),
+            infant = s("Бебе"),
+            toddler = s("Мало дете"),
+            child = s("Дете"),
+            teenager = s("Тинејџер"),
+            adult = s("Возрасен"),
+        ),
+    )
+
+    // ================================================================
     // MR — Marathi
     // ================================================================
     public val MR: AgeLocale = AgeLocale(
@@ -793,6 +1028,31 @@ public object Locales {
     )
 
     // ================================================================
+    // MY — Burmese
+    // ================================================================
+    public val MY: AgeLocale = AgeLocale(
+        code = "my",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            day = simpleUnit("{n} ရက်"),
+            week = simpleUnit("{n} ပတ်"),
+            month = simpleUnit("{n} လ"),
+            year = simpleUnit("{n} နှစ်"),
+        ),
+        half = "{0}ခွဲ",
+        delimiter = "၊ ",
+        justBorn = "မွေးကင်းစ",
+        stages = Stages(
+            newborn = s("မွေးကင်းစ"),
+            infant = s("နို့စို့ကလေး"),
+            toddler = s("ခြေဦးသလျှား"),
+            child = s("ကလေး"),
+            teenager = s("ဆယ်ကျော်သက်"),
+            adult = s("အရွယ်ရောက်"),
+        ),
+    )
+
+    // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
     public val NB: AgeLocale = AgeLocale(
@@ -814,6 +1074,31 @@ public object Locales {
             child = s("Barn"),
             teenager = s("Tenåring"),
             adult = s("Voksen"),
+        ),
+    )
+
+    // ================================================================
+    // NE — Nepali
+    // ================================================================
+    public val NE: AgeLocale = AgeLocale(
+        code = "ne",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} दिन", PluralCategory.OTHER to "{n} दिन")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} हप्ता", PluralCategory.OTHER to "{n} हप्ता")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} महिना", PluralCategory.OTHER to "{n} महिना")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} वर्ष", PluralCategory.OTHER to "{n} वर्ष")),
+        ),
+        half = "साढे {n}",
+        delimiter = ", ",
+        justBorn = "नवजात शिशु",
+        stages = Stages(
+            newborn = s("नवजात शिशु"),
+            infant = s("शिशु"),
+            toddler = s("बाल्यकाल"),
+            child = s("बालक"),
+            teenager = s("किशोर"),
+            adult = s("वयस्क"),
         ),
     )
 
@@ -990,6 +1275,31 @@ public object Locales {
     )
 
     // ================================================================
+    // SI — Sinhala
+    // ================================================================
+    public val SI: AgeLocale = AgeLocale(
+        code = "si",
+        plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "දින {n}", PluralCategory.OTHER to "දින {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "සති {n}", PluralCategory.OTHER to "සති {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "මාස {n}", PluralCategory.OTHER to "මාස {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "වසර {n}", PluralCategory.OTHER to "වසර {n}")),
+        ),
+        half = "{0}යි භාගයයි",
+        delimiter = ", ",
+        justBorn = "අලුත උපන්",
+        stages = Stages(
+            newborn = s("අලුත උපන්"),
+            infant = s("බිළිඳා"),
+            toddler = s("ගමන් යන දරුවා"),
+            child = s("ළමයා"),
+            teenager = s("නව යොවුන්"),
+            adult = s("වැඩිහිටි"),
+        ),
+    )
+
+    // ================================================================
     // SK — Slovak
     // ================================================================
     public val SK: AgeLocale = AgeLocale(
@@ -1133,6 +1443,31 @@ public object Locales {
             child = s("Barn"),
             teenager = s("Tonåring"),
             adult = s("Vuxen"),
+        ),
+    )
+
+    // ================================================================
+    // SW — Swahili
+    // ================================================================
+    public val SW: AgeLocale = AgeLocale(
+        code = "sw",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "siku {n}", PluralCategory.OTHER to "siku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "wiki {n}", PluralCategory.OTHER to "wiki {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "mwezi {n}", PluralCategory.OTHER to "miezi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mwaka {n}", PluralCategory.OTHER to "miaka {n}")),
+        ),
+        half = "{0} na nusu",
+        delimiter = ", ",
+        justBorn = "Mzaliwa mpya",
+        stages = Stages(
+            newborn = s("Mzaliwa mpya"),
+            infant = s("Mtoto mchanga"),
+            toddler = s("Mtoto mdogo"),
+            child = s("Mtoto"),
+            teenager = s("Kijana"),
+            adult = s("Mtu mzima"),
         ),
     )
 
@@ -1295,6 +1630,31 @@ public object Locales {
     )
 
     // ================================================================
+    // UZ — Uzbek
+    // ================================================================
+    public val UZ: AgeLocale = AgeLocale(
+        code = "uz",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} kun", PluralCategory.OTHER to "{n} kun")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} hafta", PluralCategory.OTHER to "{n} hafta")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} oy", PluralCategory.OTHER to "{n} oy")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} yosh", PluralCategory.OTHER to "{n} yosh")),
+        ),
+        half = "{n} yarim",
+        delimiter = ", ",
+        justBorn = "Yangi tugʻilgan",
+        stages = Stages(
+            newborn = s("Yangi tugʻilgan"),
+            infant = s("Chaqaloq"),
+            toddler = s("Kichkintoy"),
+            child = s("Bola"),
+            teenager = s("Oʻsmir"),
+            adult = s("Katta"),
+        ),
+    )
+
+    // ================================================================
     // VI — Vietnamese
     // ================================================================
     public val VI: AgeLocale = AgeLocale(
@@ -1345,15 +1705,18 @@ public object Locales {
     )
 
     public val ALL: Map<String, AgeLocale> = mapOf(
-        "ar" to AR, "bg" to BG, "bn" to BN, "bs" to BS, "ca" to CA,
-        "cs" to CS, "da" to DA, "de" to DE, "el" to EL, "en" to EN,
-        "es" to ES, "et" to ET, "eu" to EU, "fa" to FA, "fi" to FI,
-        "fr" to FR, "ga" to GA, "gu" to GU, "hi" to HI, "hr" to HR,
-        "hu" to HU, "it" to IT, "ja" to JA, "jv" to JV, "ko" to KO,
-        "lt" to LT, "lv" to LV, "mr" to MR, "ms" to MS, "nb" to NB,
-        "nl" to NL, "pa" to PA, "pl" to PL, "pt" to PT, "ro" to RO,
-        "ru" to RU, "sk" to SK, "sl" to SL, "sq" to SQ, "sr" to SR,
-        "sv" to SV, "ta" to TA, "te" to TE, "th" to TH, "tr" to TR,
-        "uk" to UK, "ur" to UR, "vi" to VI, "zh" to ZH
+        "am" to AM, "ar" to AR, "az" to AZ, "bg" to BG, "bn" to BN,
+        "bs" to BS, "ca" to CA, "cs" to CS, "da" to DA, "de" to DE,
+        "el" to EL, "en" to EN, "es" to ES, "et" to ET, "eu" to EU,
+        "fa" to FA, "fi" to FI, "fil" to FIL, "fr" to FR, "ga" to GA,
+        "gu" to GU, "he" to HE, "hi" to HI, "hr" to HR, "hu" to HU,
+        "id" to ID, "it" to IT, "ja" to JA, "jv" to JV, "ka" to KA,
+        "kk" to KK, "km" to KM, "ko" to KO, "lt" to LT, "lv" to LV,
+        "mk" to MK, "mr" to MR, "ms" to MS, "my" to MY, "nb" to NB,
+        "ne" to NE, "nl" to NL, "pa" to PA, "pl" to PL, "pt" to PT,
+        "ro" to RO, "ru" to RU, "si" to SI, "sk" to SK, "sl" to SL,
+        "sq" to SQ, "sr" to SR, "sv" to SV, "sw" to SW, "ta" to TA,
+        "te" to TE, "th" to TH, "tr" to TR, "uk" to UK, "ur" to UR,
+        "uz" to UZ, "vi" to VI, "zh" to ZH
     )
 }

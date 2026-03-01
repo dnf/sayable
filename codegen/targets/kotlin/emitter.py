@@ -40,7 +40,7 @@ def emit_all(all_locales: list[dict]) -> str:
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER, "package parenttime\n"]
     lines.append("/**")
-    lines.append(" * All 49 locale definitions for parent-time.")
+    lines.append(f" * All {len(all_locales)} locale definitions for parent-time.")
     lines.append(" */")
     lines.append("public object Locales {\n")
 

@@ -5,6 +5,28 @@
 namespace parenttime {
 namespace locales {
 
+const AgeLocale& SI() {
+    static const AgeLocale loc{
+        "si",
+        [](int n) -> PluralCategory {
+            if (n == 0 || n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "දින {n}"}, {PluralCategory::Other, "දින {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "සති {n}"}, {PluralCategory::Other, "සති {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "මාස {n}"}, {PluralCategory::Other, "මාස {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "වසර {n}"}, {PluralCategory::Other, "වසර {n}"}})
+        },
+        "{0}යි භාගයයි", ", ", "අලුත උපන්",
+        StageLabels{{"අලුත උපන්", ""}, {"බිළිඳා", ""}, {"ගමන් යන දරුවා", ""}, {"ළමයා", ""}, {"නව යොවුන්", ""}, {"වැඩිහිටි", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 const AgeLocale& SK() {
     static const AgeLocale loc{
         "sk",
@@ -115,6 +137,28 @@ const AgeLocale& SV() {
         },
         "{n}½", ", ", "Nyfödd",
         StageLabels{{"Nyfödd", ""}, {"Spädbarn", ""}, {"Litet barn", ""}, {"Barn", ""}, {"Tonåring", ""}, {"Vuxen", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& SW() {
+    static const AgeLocale loc{
+        "sw",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "siku {n}"}, {PluralCategory::Other, "siku {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "wiki {n}"}, {PluralCategory::Other, "wiki {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mwezi {n}"}, {PluralCategory::Other, "miezi {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mwaka {n}"}, {PluralCategory::Other, "miaka {n}"}})
+        },
+        "{0} na nusu", ", ", "Mzaliwa mpya",
+        StageLabels{{"Mzaliwa mpya", ""}, {"Mtoto mchanga", ""}, {"Mtoto mdogo", ""}, {"Mtoto", ""}, {"Kijana", ""}, {"Mtu mzima", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr
@@ -249,6 +293,28 @@ const AgeLocale& UR() {
         },
         "ساڑھے {n}", "، ", "نومولود",
         StageLabels{{"نومولود", ""}, {"شیرخوار", ""}, {"چھوٹا بچہ", "چھوٹی بچی"}, {"بچہ", "بچی"}, {"نوجوان", ""}, {"بالغ", ""}},
+        std::nullopt,
+        std::nullopt,
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+const AgeLocale& UZ() {
+    static const AgeLocale loc{
+        "uz",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "{n} kun"}, {PluralCategory::Other, "{n} kun"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} hafta"}, {PluralCategory::Other, "{n} hafta"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} oy"}, {PluralCategory::Other, "{n} oy"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} yosh"}, {PluralCategory::Other, "{n} yosh"}})
+        },
+        "{n} yarim", ", ", "Yangi tugʻilgan",
+        StageLabels{{"Yangi tugʻilgan", ""}, {"Chaqaloq", ""}, {"Kichkintoy", ""}, {"Bola", ""}, {"Oʻsmir", ""}, {"Katta", ""}},
         std::nullopt,
         std::nullopt,
         nullptr, nullptr

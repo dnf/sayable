@@ -1,4 +1,4 @@
-"""PHP plural rule definitions for all 12 patterns."""
+"""PHP plural rule definitions for all 14 patterns."""
 
 from __future__ import annotations
 
@@ -135,6 +135,29 @@ _PHP_NAMED = {
         if ($mod10 === 0 || ($mod100 >= 11 && $mod100 <= 19)) {{
             return PluralCategory::Zero;
         }}
+        if ($mod10 === 1 && $mod100 !== 11) {{
+            return PluralCategory::One;
+        }}
+
+        return PluralCategory::Other;
+    }}""",
+    "he": """\
+    private static function plural{CODE}(int $n): PluralCategory
+    {{
+        if ($n === 1) {{
+            return PluralCategory::One;
+        }}
+        if ($n === 2) {{
+            return PluralCategory::Two;
+        }}
+
+        return PluralCategory::Other;
+    }}""",
+    "mk": """\
+    private static function plural{CODE}(int $n): PluralCategory
+    {{
+        $mod10 = $n % 10;
+        $mod100 = $n % 100;
         if ($mod10 === 1 && $mod100 !== 11) {{
             return PluralCategory::One;
         }}

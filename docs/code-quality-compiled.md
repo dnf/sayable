@@ -93,7 +93,7 @@ lints, `warn` for pedantic — then selectively allow the false positives.
 | `missing_panics_doc` | No public functions panic, but clippy can't prove it. |
 | `missing_errors_doc` | Same — functions return `Option`, not `Result`. |
 | `return_self_not_must_use` | Builder pattern suggestion. Not applicable. |
-| `wildcard_imports` | `use crate::locales::*` is the intended pattern for re-exporting all 49 locales. |
+| `wildcard_imports` | `use crate::locales::*` is the intended pattern for re-exporting all 63 locales. |
 | `unreadable_literal` | Date arithmetic constants (e.g., `146097` for Julian Day calculations) are clearer without underscores. |
 | `match_same_arms` | Month-length match arms intentionally list each month explicitly (`1 => 31, 2 => 28, 3 => 31, ...`) for clarity rather than combining identical arms. |
 | `cast_possible_truncation` | `i64` → `i32` casts for year values. Years are always in the 0–9999 range, well within i32. |
@@ -129,7 +129,7 @@ public surface explicit and treating any compiler warning as a potential bug.
 
 | Setting | What it does |
 |---------|-------------|
-| `explicitApi()` | **The most impactful setting.** Requires explicit `public`, `internal`, or `private` visibility on every declaration. Without this, everything defaults to `public`, which leads to accidental API surface. This required adding `public` to all types in `Types.kt`, all methods in `ParentTime.kt`, the `Locales` object, and all 49 locale `val` declarations with explicit `: AgeLocale` type annotations. |
+| `explicitApi()` | **The most impactful setting.** Requires explicit `public`, `internal`, or `private` visibility on every declaration. Without this, everything defaults to `public`, which leads to accidental API surface. This required adding `public` to all types in `Types.kt`, all methods in `ParentTime.kt`, the `Locales` object, and all 63 locale `val` declarations with explicit `: AgeLocale` type annotations. |
 | `allWarningsAsErrors` | Treats all compiler warnings as errors. Kotlin warnings include unused variables, deprecated API usage, and platform-specific issues. Promoting them to errors ensures they're addressed immediately. |
 | `progressiveMode` | Opts into stricter behavior from newer Kotlin versions even when targeting an older language version. This catches code that relies on language quirks that will be fixed in future releases. |
 | `-Xjsr305=strict` | Makes JSR-305 `@Nonnull`/`@Nullable` annotations from Java libraries strict. Without this, Kotlin treats Java types as "platform types" (implicitly nullable). With it, nullability violations from Java interop become compile errors. Important for library consumers who might call parent-time from Java. |

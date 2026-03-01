@@ -1,4 +1,4 @@
-"""Python plural rule definitions for all 12 patterns."""
+"""Python plural rule definitions for all 14 patterns."""
 
 from __future__ import annotations
 
@@ -89,6 +89,20 @@ def _plural(n: int) -> PluralCategory:
     mod100 = n % 100
     if mod10 == 0 or 11 <= mod100 <= 19:
         return "zero"
+    if mod10 == 1 and mod100 != 11:
+        return "one"
+    return "other"''',
+    "he": '''\
+def _plural(n: int) -> PluralCategory:
+    if n == 1:
+        return "one"
+    if n == 2:
+        return "two"
+    return "other"''',
+    "mk": '''\
+def _plural(n: int) -> PluralCategory:
+    mod10 = n % 10
+    mod100 = n % 100
     if mod10 == 1 and mod100 != 11:
         return "one"
     return "other"''',
