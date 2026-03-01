@@ -17,6 +17,7 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 | C++ | `cd cpp && cmake -B build && cmake --build build && cd build && ctest --output-on-failure` |
 | PHP | `cd php && php vendor/bin/phpunit tests/` |
 | Codegen check | `python -m codegen.generate --check` |
+| Clean artifacts | `just clean` or `just clean <lang\|codegen>` |
 
 ## Key rules
 
@@ -52,6 +53,19 @@ Core files per language follow a consistent pattern:
 - Zero warnings in CI. When suppressing a lint, document why.
 - Don't add comments that restate the code. Comments should explain "why", not "what."
 - Locale data files will have long lines — that's expected.
+
+## Adding a new language
+
+See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide. Summary:
+
+1. Create `codegen/targets/<lang>/emitter.py` — emits locale source files from JSON
+2. Create `codegen/targets/<lang>/plural_rules.py` with all 12 plural patterns
+3. Register the generator in `codegen/generate.py` (`_GENERATORS` dict)
+4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from `typescript/src/format-age.ts`)
+5. Implement all test cases from `docs/testing.md`
+6. Add to `justfile` (test, build, lint, clean recipes)
+7. Configure the language's standard linter with zero warnings
+8. Verify: `just generate && just check && just test && just lint`
 
 ## Commit conventions
 

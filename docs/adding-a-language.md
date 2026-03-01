@@ -1,0 +1,236 @@
+# Adding a New Language Implementation
+
+This guide covers everything needed to add a new language to parent-time.
+The process has four parts: codegen emitter, plural rules, core library, and
+build integration.
+
+## Overview
+
+parent-time uses a codegen system where 49 locale JSON files are the single
+source of truth. A Python emitter for each language converts these JSON files
+into native locale definitions. You write the emitter, the core formatter, and
+the tests; codegen handles the locale data.
+
+```
+codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  <lang>/locales/*
+```
+
+## 1. Create the language directory
+
+Follow the project layout convention:
+
+```
+<lang>/
+  src/ or lib/          # Source files (varies by convention)
+    locales/            # Generated locale files go here
+    formatter.<ext>     # Core format_age / format_stage logic
+    types.<ext>         # AgeLocale, PluralCategory, CompactnessOverride types
+  tests/                # Test files
+```
+
+Some languages use a flat layout (Go puts everything in the package root).
+Match whatever is idiomatic.
+
+## 2. Define types
+
+Implement these types to match the TypeScript reference (`typescript/src/locale.ts`):
+
+- **`PluralCategory`** — `"zero" | "one" | "two" | "few" | "many" | "other"`
+- **`UnitForms`** — either a single template string or a map of PluralCategory to template string
+- **`StageLabel`** — either a string or `{m: string, f: string}` for gendered locales
+- **`CompactnessOverride`** — optional overrides for short/compact modes (units, half, delimiter, justBorn)
+- **`AgeLocale`** — the full locale record: code, plural function, units, half, delimiter, justBorn, stages, and optional short/compact overrides
+
+The `plural` field is a function `(int) -> PluralCategory`.
+
+## 3. Write the codegen emitter
+
+Create `codegen/targets/<lang>/emitter.py`. Use an existing emitter as a
+reference — `codegen/targets/python/emitter.py` for per-file output,
+`codegen/targets/kotlin/emitter.py` for single-file output.
+
+### Required exports
+
+**Per-file emitters** (one file per locale):
+
+```python
+def emit_locale(data: dict) -> str:
+    """Generate one locale file from canonical JSON data."""
+
+def output_path(code: str, root: str) -> str:
+    """Return the output path for a locale file."""
+
+def emit_barrel(all_locales: list[dict]) -> str | None:
+    """Generate an index/barrel file, or None if not needed."""
+
+def barrel_path(root: str) -> str | None:
+    """Return the barrel file path, or None."""
+```
+
+**Single-file emitters** (all locales in one file, like Kotlin/PHP):
+
+```python
+def emit_all(all_locales: list[dict]) -> str:
+    """Generate a single file containing all locales."""
+
+def output_path(root: str) -> str:
+    """Return the output path."""
+```
+
+### Key helpers to implement
+
+- `_quote(s)` — string escaping in the target language
+- `_unit_forms(unit)` — emit a UnitForms value (simple string or plural map)
+- `_stage_label(stage)` — emit a StageLabel value (plain or gendered)
+
+### The `data` dict
+
+Each locale's JSON is passed as a dict with these keys:
+
+| Key | Type | Description |
+|-----|------|-------------|
+| `code` | `str` | ISO 639-1 code (e.g. `"en"`) |
+| `name` | `str` | Display name (e.g. `"English"`) |
+| `pluralRule` | `str` | One of the 12 rule names (e.g. `"one_other"`) |
+| `units` | `dict` | `{day, week, month, year}` — each a string or plural map |
+| `half` | `str` | Template for half values (e.g. `"{n}½"`) |
+| `delimiter` | `str` | Separator between parts (e.g. `", "`) |
+| `justBorn` | `str` | Label for age 0 (e.g. `"Newborn"`) |
+| `stages` | `dict` | `{newborn, infant, toddler, child, teenager, adult}` |
+| `short` | `dict?` | Optional short-form overrides |
+| `compact` | `dict?` | Optional compact-form overrides |
+
+## 4. Add plural rules
+
+Create `codegen/targets/<lang>/plural_rules.py`. There are 12 plural rule
+patterns, each defined as a code string for your target language.
+
+1. Add a `_<LANG>` dict with code strings for all 12 rules
+2. Add a getter function: `def get_<lang>_plural(rule: str) -> str`
+3. If any rules need named functions (not inline), add a `_<LANG>_NAMED` dict
+4. If your language distinguishes simple vs complex plurals, add `is_simple_plural()`
+
+Use the existing entries as templates. The 12 rules are:
+
+| Rule | Languages using it | Categories used |
+|------|--------------------|-----------------|
+| `other_only` | ja, ko, zh, th, vi, ms, jv, hu, eu, ga | other |
+| `one_other` | en, de, es, it, nl, etc. | one, other |
+| `one_other_zero_one` | fr, pt, hi, bn, etc. | one, other |
+| `cs_sk` | cs, sk | one, few, other |
+| `lt` | lt | one, few, other |
+| `ro` | ro | one, few, other |
+| `slavic_bcs` | bs, hr, sr | one, few, other |
+| `pl` | pl | one, few, many |
+| `ru_uk` | ru, uk | one, few, many |
+| `sl` | sl | one, two, few, other |
+| `ar` | ar | zero, one, two, few, many, other |
+| `lv` | lv | zero, one, other |
+
+## 5. Register in codegen/generate.py
+
+Add a generator function and register it in `_GENERATORS`:
+
+```python
+def generate_newlang(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.newlang.emitter import emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    # Add barrel file handling here if needed
+
+_GENERATORS = {
+    ...
+    "newlang": generate_newlang,
+}
+```
+
+Run `python -m codegen.generate --lang newlang` to generate just your language.
+
+## 6. Implement the core formatter
+
+Port the formatting logic from the TypeScript reference
+(`typescript/src/format-age.ts`). The algorithm:
+
+1. Parse ISO date strings into year/month/day
+2. Compute calendar differences (years, months, days)
+3. Apply tier logic: days (0-6d) → weeks+days (7d to <3mo) → months (3-23mo) → half years (12-23mo with .5) → years+months (24-35mo) → integer years (3+yr)
+4. Look up the locale's unit forms, apply plural rules, format the string
+5. Handle short/compact overrides when requested
+
+Also implement `format_stage` — maps age to developmental stage (newborn,
+infant, toddler, child, teenager, adult) using fixed month boundaries.
+
+**Key constraint:** zero runtime dependencies. Date arithmetic must be
+hand-implemented.
+
+## 7. Write tests
+
+All tests come from `docs/testing.md`. Implement every test case using the
+language's standard test framework. The test structure across languages:
+
+- Null/edge cases
+- Days tier, weeks+days tier, months tier
+- Half-year tier, years+months tier, integer years tier
+- Month boundary edge cases, leap year handling
+- `format_stage` with gender support
+- Multi-locale tests (at minimum: English, Arabic, Chinese, French, German,
+  Japanese, Korean, Polish, Russian, Spanish)
+- Compactness modes (short, compact)
+
+Use explicit `(dateOfBirth, asOf)` pairs — never use the current date.
+
+## 8. Add to the justfile
+
+Register the new language in all four recipes (`test`, `build`, `lint`,
+`clean`). Follow the existing pattern with alias support:
+
+```bash
+# In the test recipe:
+elif [ "{{lang}}" = "newlang" ] || [ "{{lang}}" = "nl" ]; then
+    cd newlang && <test-command>
+```
+
+Add the language to the bare (no-arg) branch of each recipe so `just test`,
+`just build`, `just lint`, and `just clean` include it.
+
+## 9. Add linting
+
+Set up the language's standard linter with strict settings. See
+`docs/code-quality.md` for the project's linting philosophy:
+
+- Zero warnings in CI
+- Suppress with a documented reason, never a blanket ignore
+- Match ecosystem conventions
+
+Add a `just lint newlang` entry and document the configuration in
+`docs/code-quality-compiled.md` or `docs/code-quality-dynamic.md`.
+
+## 10. Verify
+
+```bash
+just generate           # regenerate all (includes new language)
+just check              # verify generated files match
+just test newlang       # run new language's tests
+just lint newlang       # run new language's linter
+just test               # run all 8+ languages to confirm nothing broke
+```
+
+## Checklist
+
+- [ ] Language directory with idiomatic structure
+- [ ] Type definitions (AgeLocale, PluralCategory, etc.)
+- [ ] Codegen emitter in `codegen/targets/<lang>/emitter.py`
+- [ ] Plural rules in `codegen/targets/<lang>/plural_rules.py` (all 12 patterns)
+- [ ] Generator function registered in `codegen/generate.py`
+- [ ] Generated locale files pass the language's linter
+- [ ] Core formatter ported from TypeScript reference
+- [ ] All test cases from `docs/testing.md` implemented
+- [ ] justfile updated (test, build, lint, clean recipes)
+- [ ] Linter configured with zero warnings
+- [ ] `just test` passes for all languages
+- [ ] `just check` reports no drift
+- [ ] CLAUDE.md updated with new test/build commands

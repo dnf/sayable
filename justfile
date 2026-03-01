@@ -106,3 +106,36 @@ lint *lang:
         echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php"
         exit 1
     fi
+
+# Remove build artifacts (keeps installed dependencies)
+[group('build')]
+clean *lang:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if [ -z "{{lang}}" ]; then
+        just clean typescript
+        just clean python
+        just clean rust
+        just clean kotlin
+        just clean cpp
+        just clean codegen
+    elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
+        rm -rf typescript/dist
+    elif [ "{{lang}}" = "python" ] || [ "{{lang}}" = "py" ]; then
+        find python -type d -name __pycache__ -not -path '*/\.venv/*' -exec rm -rf {} + 2>/dev/null || true
+        rm -rf python/.pytest_cache
+    elif [ "{{lang}}" = "rust" ] || [ "{{lang}}" = "rs" ]; then
+        rm -rf rust/target
+    elif [ "{{lang}}" = "kotlin" ] || [ "{{lang}}" = "kt" ]; then
+        rm -rf kotlin/build kotlin/.gradle
+    elif [ "{{lang}}" = "cpp" ] || [ "{{lang}}" = "c++" ]; then
+        rm -rf cpp/build
+    elif [ "{{lang}}" = "codegen" ]; then
+        find codegen -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+    elif [ "{{lang}}" = "go" ] || [ "{{lang}}" = "ruby" ] || [ "{{lang}}" = "rb" ] || [ "{{lang}}" = "php" ]; then
+        echo "No build artifacts for: {{lang}}"
+    else
+        echo "Unknown language: {{lang}}"
+        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, codegen"
+        exit 1
+    fi

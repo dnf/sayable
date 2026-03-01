@@ -46,7 +46,7 @@ def _write_or_check(path: str, content: str, check: bool, diffs: list[str]) -> N
 
 
 def generate_typescript(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.emitters.typescript import barrel_path, emit_barrel, emit_locale, output_path
+    from codegen.targets.typescript.emitter import barrel_path, emit_barrel, emit_locale, output_path
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
@@ -59,7 +59,7 @@ def generate_typescript(locales: list[dict], check: bool, diffs: list[str]) -> N
 
 
 def generate_python(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.emitters.python import barrel_path, emit_barrel, emit_locale, output_path
+    from codegen.targets.python.emitter import barrel_path, emit_barrel, emit_locale, output_path
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
@@ -72,7 +72,7 @@ def generate_python(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_go(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.emitters.go import emit_locale, output_path
+    from codegen.targets.go.emitter import emit_locale, output_path
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
@@ -81,7 +81,7 @@ def generate_go(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_ruby(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.emitters.ruby import emit_locale, output_path
+    from codegen.targets.ruby.emitter import emit_locale, output_path
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
@@ -90,7 +90,7 @@ def generate_ruby(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_rust(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.emitters.rust import barrel_path, emit_barrel, emit_locale, output_path
+    from codegen.targets.rust.emitter import barrel_path, emit_barrel, emit_locale, output_path
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
@@ -103,7 +103,7 @@ def generate_rust(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_kotlin(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.emitters.kotlin import emit_all, output_path
+    from codegen.targets.kotlin.emitter import emit_all, output_path
 
     path = output_path(ROOT)
     content = emit_all(locales)
@@ -111,7 +111,7 @@ def generate_kotlin(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_cpp(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.emitters.cpp import emit_header, emit_source_file, header_path, source_path, split_by_range
+    from codegen.targets.cpp.emitter import emit_header, emit_source_file, header_path, source_path, split_by_range
 
     ranges = split_by_range(locales)
     for suffix, range_locales in ranges.items():
@@ -125,7 +125,7 @@ def generate_cpp(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_php(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.emitters.php import emit_all, output_path
+    from codegen.targets.php.emitter import emit_all, output_path
 
     path = output_path(ROOT)
     content = emit_all(locales)

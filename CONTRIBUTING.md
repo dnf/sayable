@@ -70,7 +70,7 @@ See [`docs/gender-and-stages.md`](docs/gender-and-stages.md) for the gender anal
 To add a new locale:
 
 1. Create `codegen/locales/{code}.json` with the locale data (see existing files for the format)
-2. Add the locale's plural rule to `codegen/plural_rules.py` (or use an existing rule)
+2. Ensure the locale's plural rule exists in `codegen/targets/*/plural_rules.py` (or use an existing rule)
 3. Run `python -m codegen.generate` to generate locale files in all 8 languages
 4. Add test cases to `docs/testing.md` and implement them in all 8 test files
 5. Run all test suites
