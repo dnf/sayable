@@ -1,0 +1,6 @@
+**/node_modules
+**/dist
+**/build
+**/target
+**/.gradle
+**/__pycache__

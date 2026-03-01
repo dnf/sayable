@@ -126,28 +126,46 @@ The test specification in `docs/testing.md` is the single source of truth. Each 
 
 ## Development
 
-A top-level [`justfile`](https://github.com/casey/just) provides a single entry point for building, testing, and linting across all nine languages.
+### Getting started
 
-### Install just
+You can develop and test all nine implementations either natively on macOS/Linux or inside a Docker container.
+
+#### Option A: Docker (no local toolchain setup)
+
+Requires only [Docker](https://www.docker.com/). Builds a Linux container with all nine toolchains and runs the full test suite against your local checkout:
 
 ```bash
-brew install just        # macOS
-cargo install just       # or via Cargo
+./scripts/docker-test.sh          # build image + run all tests
+./scripts/docker-test.sh bash     # interactive shell inside the container
 ```
 
-See [just installation docs](https://github.com/casey/just#installation) for other platforms.
+Your repo is bind-mounted into the container. Anonymous volumes keep platform-specific build artifacts isolated, so nothing on your host is modified.
+
+#### Option B: Native setup
+
+Bootstrap scripts install all nine language toolchains and project dependencies in one step:
+
+```bash
+# macOS (uses Homebrew)
+./scripts/bootstrap-macos.sh
+
+# Ubuntu / Debian
+./scripts/bootstrap-linux.sh
+```
+
+The scripts are idempotent — safe to re-run if you need to pick up a missing tool later.
 
 ### Commands
+
+A top-level [`justfile`](https://github.com/casey/just) provides a single entry point for building, testing, and linting across all nine languages:
 
 ```bash
 just test                # run all 9 test suites + codegen check
 just test go             # run one language's tests
 just build               # build all languages with a build step
-just build rust           # build one language
 just generate            # regenerate locale files from canonical JSON
 just check               # verify generated files are up-to-date
 just lint                # run all available linters
-just lint python         # lint one language
 just --list              # see all available commands
 ```
 

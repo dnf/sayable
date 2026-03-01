@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+docker build -t parent-time-linux .
+
+# Anonymous volumes shadow host directories that contain platform-specific
+# artifacts (native binaries, build caches). This avoids macOS/Linux
+# conflicts without modifying the host filesystem.
+DOCKER_OPTS=(
+    --rm
+    -v "$(pwd)":/workspace
+    -v /workspace/typescript/node_modules
+    -v /workspace/python/.venv
+    -v /workspace/rust/target
+    -v /workspace/cpp/build
+    -v /workspace/kotlin/.gradle
+    -v /workspace/java/.gradle
+)
+
+if [ $# -eq 0 ]; then
+    docker run "${DOCKER_OPTS[@]}" parent-time-linux bash -c '
+        (cd typescript && npm install --no-audit --no-fund) &&
+        (cd python && uv sync --extra dev --quiet) &&
+        just test
+    '
+else
+    docker run "${DOCKER_OPTS[@]}" parent-time-linux "$@"
+fi
