@@ -43,7 +43,9 @@
         "format",
         "parent",
         "pediatric",
-        "newborn"
+        "newborn",
+        "i18n",
+        "localization"
     ],
     "support": {
         "issues": "https://github.com/dnf/parent-time/issues",

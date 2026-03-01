@@ -1,5 +1,8 @@
 # parent-time
 
+[![CI](https://github.com/dnf/parent-time/actions/workflows/ci.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+
 Human-friendly age formatting the way parents actually talk.
 
 ```
@@ -10,16 +13,16 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 
 ## Implementations
 
-| Language | Directory | Install | Docs |
-|----------|-----------|---------|------|
-| TypeScript | [`typescript/`](typescript/) | `npm install parent-time` | [README](typescript/README.md) |
-| Python | [`python/`](python/) | `pip install parent-time` | [README](python/README.md) |
-| Go | [`go/`](go/) | `go get github.com/dnf/parent-time/go` | [README](go/README.md) |
-| Ruby | [`ruby/`](ruby/) | `gem "parent_time"` | [README](ruby/README.md) |
-| Rust | [`rust/`](rust/) | `parent-time = "0.1"` | [README](rust/README.md) |
-| Kotlin | [`kotlin/`](kotlin/) | Gradle/Maven | [README](kotlin/README.md) |
-| C++ | [`cpp/`](cpp/) | CMake | [README](cpp/README.md) |
-| PHP | [`php/`](php/) | `composer require dnf/parent-time` | [README](php/README.md) |
+| Language | Package | Install | Docs |
+|----------|---------|---------|------|
+| TypeScript | [![npm](https://img.shields.io/npm/v/parent-time?logo=npm&label=npm)](https://www.npmjs.com/package/parent-time) | `npm install parent-time` | [README](typescript/README.md) |
+| Python | [![PyPI](https://img.shields.io/pypi/v/parent-time?logo=python&label=pypi)](https://pypi.org/project/parent-time/) | `pip install parent-time` | [README](python/README.md) |
+| Go | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=go%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/go) | `go get github.com/dnf/parent-time/go` | [README](go/README.md) |
+| Ruby | [![Gem](https://img.shields.io/gem/v/parent_time?logo=rubygems&label=gem)](https://rubygems.org/gems/parent_time) | `gem install parent_time` | [README](ruby/README.md) |
+| Rust | [![Crates.io](https://img.shields.io/crates/v/parent-time?logo=rust&label=crates.io)](https://crates.io/crates/parent-time) | `parent-time = "0.1"` | [README](rust/README.md) |
+| Kotlin | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](kotlin/README.md) |
+| C++ | — | CMake ([`FetchContent`](cpp/README.md)) | [README](cpp/README.md) |
+| PHP | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time) | `composer require dnf/parent-time` | [README](php/README.md) |
 
 All eight implementations produce identical output for the same inputs. See each language's README for installation, usage, and API details.
 

@@ -1,5 +1,7 @@
 plugins {
     kotlin("jvm") version "2.1.10"
+    `maven-publish`
+    signing
 }
 
 group = "com.github.dnf"
@@ -14,6 +16,8 @@ description = "Human-friendly age formatting the way parents actually talk"
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+    withSourcesJar()
+    withJavadocJar()
 }
 
 kotlin {
@@ -38,4 +42,43 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+
+            pom {
+                name.set("parent-time")
+                description.set("Human-friendly age formatting the way parents actually talk")
+                url.set("https://github.com/dnf/parent-time")
+
+                licenses {
+                    license {
+                        name.set("MIT License")
+                        url.set("https://opensource.org/licenses/MIT")
+                    }
+                }
+
+                developers {
+                    developer {
+                        name.set("Don Neufeld")
+                    }
+                }
+
+                scm {
+                    url.set("https://github.com/dnf/parent-time")
+                    connection.set("scm:git:git://github.com/dnf/parent-time.git")
+                    developerConnection.set("scm:git:ssh://github.com/dnf/parent-time.git")
+                }
+            }
+        }
+    }
+}
+
+signing {
+    // Only sign when publishing to Maven Central (requires GPG key)
+    isRequired = gradle.taskGraph.hasTask("publishToSonatype")
+    sign(publishing.publications["maven"])
 }
