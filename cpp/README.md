@@ -125,4 +125,4 @@ ctest --test-dir build --output-on-failure
 
 ## License
 
-MIT
+[MIT](../LICENSE.md)

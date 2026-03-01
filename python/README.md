@@ -105,4 +105,4 @@ pyright                   # Type check
 
 ## License
 
-MIT
+[MIT](../LICENSE.md)

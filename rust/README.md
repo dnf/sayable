@@ -104,4 +104,4 @@ cargo doc        # Generate docs
 
 ## License
 
-MIT
+[MIT](../LICENSE.md)

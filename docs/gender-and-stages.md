@@ -327,4 +327,4 @@ The Sanskrit-derived word किशोर (kishor, "adolescent boy") appears acr
 | Gendered variants only | Yes | All 27 affected | High | Full correctness |
 | Hybrid (neutral where possible, gendered where not) | Yes | All 27 affected | Medium | Best balance |
 
-Since there are no users of this library yet, backwards compatibility is not a concern.
+Since there are no users of this library yet, the type system can be freely changed to accommodate this.

@@ -120,4 +120,4 @@ composer cs-fix        # Fix code style
 
 ## License
 
-MIT
+[MIT](../LICENSE.md)

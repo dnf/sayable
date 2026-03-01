@@ -104,4 +104,4 @@ class ParentTime(locale: AgeLocale, compactness: Compactness = Compactness.NORMA
 
 ## License
 
-MIT
+[MIT](../LICENSE.md)

@@ -76,7 +76,7 @@ class ParentTime {
   formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null;
 }
 
-// Bare functions — English default, backward compatible
+// Bare functions — English default
 function formatAge(dateOfBirth: string | null | undefined, asOf?: string): string | null
 function formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null
 ```
@@ -104,4 +104,4 @@ npm test         # Run vitest
 
 ## License
 
-MIT
+[MIT](../LICENSE.md)

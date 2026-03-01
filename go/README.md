@@ -98,4 +98,4 @@ go vet ./...         # Static analysis
 
 ## License
 
-MIT
+[MIT](../LICENSE.md)

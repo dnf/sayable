@@ -97,4 +97,4 @@ bundle exec rake test   # Run minitest
 
 ## License
 
-MIT
+[MIT](../LICENSE.md)

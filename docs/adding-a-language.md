@@ -196,7 +196,21 @@ Set up the language's standard linter with strict settings. See
 Add a `just lint newlang` entry and document the configuration in
 `docs/code-quality-compiled.md` or `docs/code-quality-dynamic.md`.
 
-## 10. Verify
+## 10. Update cross-language documentation
+
+Several docs contain per-language tables that must include every implementation.
+Add a row for the new language in each:
+
+| Document | Table(s) to update |
+|----------|--------------------|
+| [`docs/code-quality.md`](code-quality.md) | Naming conventions, Immutability, Quick reference |
+| [`docs/packaging.md`](packaging.md) | File layout / initialization, Tree-shaking action table |
+| [`codegen/README.md`](../codegen/README.md) | Output per language |
+
+Also add a `## License` section to the new language's README linking to
+[`LICENSE.md`](../LICENSE.md).
+
+## 11. Verify
 
 ```bash
 just generate           # regenerate all (includes new language)
@@ -220,4 +234,6 @@ just test               # run all 8+ languages to confirm nothing broke
 - [ ] Linter configured with zero warnings
 - [ ] `just test` passes for all languages
 - [ ] `just check` reports no drift
+- [ ] Cross-language tables updated (code-quality.md, packaging.md, codegen/README.md)
+- [ ] README with license link added
 - [ ] CLAUDE.md updated with new test/build commands
