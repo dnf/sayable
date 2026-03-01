@@ -41,7 +41,7 @@ format_stage("2007-06-15", "2025-06-15")  # "Adult"
 # Defaults to today if no reference date given
 format_age("2020-01-01")  # "5 years" (if today is 2025-06-15)
 
-# Returns None for None/empty/future dates
+# Returns None for None/empty/future dates or ages exceeding 500 years
 format_age(None)                          # None
 format_stage("2030-01-01", "2025-06-15")  # None
 ```
@@ -86,7 +86,7 @@ def format_stage(date_of_birth: str | None, as_of: str | None = None) -> str | N
 - `date_of_birth` — `YYYY-MM-DD` string. Returns `None` if `None` or empty.
 - `as_of` — Reference date as `YYYY-MM-DD`. Defaults to today.
 
-**Returns:** A human-readable string, or `None` if input is missing or DOB is in the future.
+**Returns:** A human-readable string, or `None` if input is missing, DOB is in the future, or age exceeds 500 years.
 
 ## Development
 

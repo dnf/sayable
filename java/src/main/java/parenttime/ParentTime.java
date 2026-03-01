@@ -7,6 +7,8 @@ import java.util.function.Supplier;
 
 public final class ParentTime {
 
+    private static final int MAX_AGE_MONTHS = 6000;
+
     private final AgeLocale locale;
     private final UnitForms day;
     private final UnitForms week;
@@ -94,6 +96,7 @@ public final class ParentTime {
         int clampedBirthday = Math.min(dobD, lastDay);
         int months = (refY - dobY) * 12 + (refM - dobM);
         if (refD < clampedBirthday) months--;
+        if (months > MAX_AGE_MONTHS) return null;
 
         return new AgeComponents(months, diffDays);
     }

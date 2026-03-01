@@ -1,6 +1,8 @@
 import type { AgeLocale, Compactness, Gender, UnitForms } from './locale.js';
 import { en, resolveStage, resolveUnit } from './locale.js';
 
+const MAX_AGE_MONTHS = 6000;
+
 /** Parsed date components and derived calendar months / elapsed days. */
 interface AgeComponents {
   months: number;
@@ -43,6 +45,7 @@ function parseAge(dateOfBirth: string | null | undefined, asOf?: string): AgeCom
   const clampedBirthday = Math.min(dobD, lastDay);
   let months = (refY - dobY) * 12 + (refM - dobM);
   if (refD < clampedBirthday) months--;
+  if (months > MAX_AGE_MONTHS) return null;
 
   return { months, diffDays };
 }

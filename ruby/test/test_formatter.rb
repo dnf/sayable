@@ -21,6 +21,18 @@ class TestFormatAge < Minitest::Test
     assert_nil ParentTime.format_age('2025-07-01', '2025-06-15')
   end
 
+  def test_exactly_500_years_is_allowed
+    assert_equal '500 years', ParentTime.format_age('1525-06-15', '2025-06-15')
+  end
+
+  def test_501_years_exceeds_max_age
+    assert_nil ParentTime.format_age('1524-06-15', '2025-06-15')
+  end
+
+  def test_1000_years_exceeds_max_age
+    assert_nil ParentTime.format_age('1025-06-15', '2025-06-15')
+  end
+
   # ================================================================
   # Days tier: 0-6 days
   # ================================================================
@@ -387,6 +399,14 @@ class TestFormatStage < Minitest::Test
 
   def test_returns_nil_for_future
     assert_nil ParentTime.format_stage('2025-07-01', '2025-06-15')
+  end
+
+  def test_exactly_500_years_returns_adult
+    assert_equal 'Adult', ParentTime.format_stage('1525-06-15', '2025-06-15')
+  end
+
+  def test_501_years_exceeds_max_age
+    assert_nil ParentTime.format_stage('1524-06-15', '2025-06-15')
   end
 
   # Newborn: 0-1 months

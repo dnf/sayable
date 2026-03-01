@@ -41,6 +41,9 @@ fn assert_contains(name: &str, got: Option<String>, substr: &str) {
 fn test_format_age_null_edge_cases() {
     assert_nil("empty string", format_age("", Some("2025-06-15")));
     assert_nil("future dob", format_age("2025-07-01", Some("2025-06-15")));
+    assert_age("exactly 500 years", format_age("1525-06-15", Some("2025-06-15")), "500 years");
+    assert_nil("501 years exceeds max", format_age("1524-06-15", Some("2025-06-15")));
+    assert_nil("1000 years exceeds max", format_age("1025-06-15", Some("2025-06-15")));
 }
 
 // ================================================================
@@ -506,6 +509,8 @@ fn test_format_stage_null_edge_cases() {
         "future dob",
         format_stage("2025-07-01", Some("2025-06-15"), None),
     );
+    assert_age("stage 500 years", format_stage("1525-06-15", Some("2025-06-15"), None), "Adult");
+    assert_nil("stage 501 years exceeds max", format_stage("1524-06-15", Some("2025-06-15"), None));
 }
 
 // ================================================================

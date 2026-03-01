@@ -18,12 +18,18 @@ https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.ht
 These test that invalid inputs return null (or the language equivalent:
 `None`, `nil`, `std::nullopt`, etc.).
 
+The library supports ages from 0 through 500 years (6000 months). Inputs
+that produce an age outside this range return null.
+
 | # | Input | Expected |
 |---|-------|----------|
 | 1.1 | `dateOfBirth = null` | null |
 | 1.2 | `dateOfBirth = undefined` (where applicable) | null |
 | 1.3 | `dateOfBirth = ""` (empty string) | null |
 | 1.4 | `dateOfBirth = "2025-07-01"`, `asOf = "2025-06-15"` (future DOB) | null |
+| 1.5 | `dateOfBirth = "1525-06-15"`, `asOf = "2025-06-15"` (exactly 500 years) | "500 years" |
+| 1.6 | `dateOfBirth = "1524-06-15"`, `asOf = "2025-06-15"` (501 years) | null |
+| 1.7 | `dateOfBirth = "1025-06-15"`, `asOf = "2025-06-15"` (1000 years) | null |
 
 ---
 
@@ -220,6 +226,8 @@ This requires mocking or overriding the system clock.
 | 16.2 | `dateOfBirth = undefined` (where applicable) | null |
 | 16.3 | `dateOfBirth = ""` | null |
 | 16.4 | `dateOfBirth = "2025-07-01"`, `asOf = "2025-06-15"` | null |
+| 16.5 | `dateOfBirth = "1525-06-15"`, `asOf = "2025-06-15"` (exactly 500 years) | "Adult" |
+| 16.6 | `dateOfBirth = "1524-06-15"`, `asOf = "2025-06-15"` (501 years) | null |
 
 ---
 
@@ -496,7 +504,7 @@ returns a locale object given a code string.
 
 | Section | Count |
 |---------|-------|
-| 1. Null/edge | 4 |
+| 1. Null/edge | 7 |
 | 2. Days tier | 5 |
 | 3. Weeks+days tier | 12 |
 | 4. Month boundaries — standard | 5 |
@@ -511,7 +519,7 @@ returns a locale object given a code string.
 | 13. Cross-year transitions | 4 |
 | 14. Born-on-31st progression | 5 |
 | 15. Default asOf (formatAge) | 2 |
-| 16. formatStage null/edge | 4 |
+| 16. formatStage null/edge | 6 |
 | 17–22. formatStage stages | 25 |
 | 23. formatStage default asOf | 3 |
 | 24. Class delegation | 15 |
@@ -520,7 +528,7 @@ returns a locale object given a code string.
 | 27. Compactness compact | 8 |
 | 29. Locale-specific edge cases | 39 |
 | 30. Locale lookup | 5 |
-| **Total** | **207** |
+| **Total** | **212** |
 
 ### Implementation notes
 

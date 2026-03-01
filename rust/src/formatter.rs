@@ -14,6 +14,8 @@ pub fn _set_now_for_testing(date: Option<(i32, i32, i32)>) {
 }
 
 
+const MAX_AGE_MONTHS: i32 = 6000;
+
 /// Parsed age components.
 struct AgeComponents {
     months: i32,
@@ -134,6 +136,9 @@ fn parse_age(dob: &str, as_of: Option<&str>) -> Option<AgeComponents> {
     let mut months = (ref_y - dob_y) * 12 + (ref_m - dob_m);
     if ref_d < clamped_birthday {
         months -= 1;
+    }
+    if months > MAX_AGE_MONTHS {
+        return None;
     }
 
     Some(AgeComponents { months, diff_days })

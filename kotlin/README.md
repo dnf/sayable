@@ -33,7 +33,7 @@ val age4 = ParentTime.formatAge("2022-06-15", "2025-12-15")   // "3½ years"
 
 val stage = ParentTime.formatStage("2025-01-15", "2025-06-15")  // "Infant"
 
-// Returns null for empty/future dates
+// Returns null for empty/future dates or ages exceeding 500 years
 val nothing = ParentTime.formatAge("")  // null
 
 // Class-based with locale
@@ -84,7 +84,7 @@ class ParentTime(locale: AgeLocale, compactness: Compactness = Compactness.NORMA
 - `dateOfBirth` — `YYYY-MM-DD` string. Returns `null` for empty strings.
 - `asOf` — Optional reference date. Defaults to today.
 
-**Returns:** `String?` — the formatted string, or `null` if input is invalid or DOB is in the future.
+**Returns:** `String?` — the formatted string, or `null` if input is invalid, DOB is in the future, or age exceeds 500 years.
 
 ## Development
 

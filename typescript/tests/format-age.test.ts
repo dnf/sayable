@@ -32,6 +32,18 @@ describe('formatAge', () => {
     expect(formatAge('', '2025-06-15')).toBeNull();
   });
 
+  it('exactly 500 years is allowed', () => {
+    expect(formatAge('1525-06-15', '2025-06-15')).toBe('500 years');
+  });
+
+  it('501 years exceeds max age', () => {
+    expect(formatAge('1524-06-15', '2025-06-15')).toBeNull();
+  });
+
+  it('1000 years exceeds max age', () => {
+    expect(formatAge('1025-06-15', '2025-06-15')).toBeNull();
+  });
+
   // ================================================================
   // Days tier: 0–6 days
   // ================================================================
@@ -453,6 +465,14 @@ describe('formatStage', () => {
 
   it('returns null for empty string', () => {
     expect(formatStage('', '2025-06-15')).toBeNull();
+  });
+
+  it('exactly 500 years returns Adult', () => {
+    expect(formatStage('1525-06-15', '2025-06-15')).toBe('Adult');
+  });
+
+  it('501 years exceeds max age', () => {
+    expect(formatStage('1524-06-15', '2025-06-15')).toBeNull();
   });
 
   // Newborn: 0–1 months (< 2 calendar months)

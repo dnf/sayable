@@ -39,7 +39,7 @@ formatStage('2007-06-15', '2025-06-15');  // "Adult"
 // Defaults to today if no reference date given
 formatAge('2020-01-01');  // "5 years" (if today is 2025-06-15)
 
-// Returns null for null/undefined/empty/future dates
+// Returns null for null/undefined/empty/future dates or ages exceeding 500 years
 formatAge(null);                          // null
 formatStage('2030-01-01', '2025-06-15');  // null
 ```
@@ -86,7 +86,7 @@ function formatStage(dateOfBirth: string | null | undefined, asOf?: string): str
 - `dateOfBirth` — `YYYY-MM-DD` string. Returns `null` if `null`, `undefined`, or empty.
 - `asOf` — Reference date as `YYYY-MM-DD`. Defaults to today.
 
-**Returns:** A human-readable string, or `null` if input is missing or DOB is in the future.
+**Returns:** A human-readable string, or `null` if input is missing, DOB is in the future, or age exceeds 500 years.
 
 ## Development
 

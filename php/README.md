@@ -41,7 +41,7 @@ formatStage('2025-06-15', '2025-06-15');  // "Newborn"
 formatStage('2025-01-15', '2025-06-15');  // "Infant"
 formatStage('2024-06-15', '2025-06-15');  // "Toddler"
 
-// Returns null for null/empty/future dates
+// Returns null for null/empty/future dates or ages exceeding 500 years
 formatAge(null);   // null
 formatAge('');     // null
 
@@ -97,7 +97,7 @@ function formatStage(?string $dateOfBirth, ?string $asOf = null): ?string;
 - `$dateOfBirth` — `YYYY-MM-DD` string. Returns `null` for `null` or empty strings.
 - `$asOf` — Optional reference date as `YYYY-MM-DD`. Defaults to today.
 
-**Returns:** `?string` — the formatted string, or `null` if input is invalid or DOB is in the future.
+**Returns:** `?string` — the formatted string, or `null` if input is invalid, DOB is in the future, or age exceeds 500 years.
 
 ## Development
 

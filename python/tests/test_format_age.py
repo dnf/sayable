@@ -22,6 +22,15 @@ class TestEdgeCases:
     def test_returns_none_for_empty_string(self) -> None:
         assert format_age("", "2025-06-15") is None
 
+    def test_exactly_500_years_is_allowed(self) -> None:
+        assert format_age("1525-06-15", "2025-06-15") == "500 years"
+
+    def test_501_years_exceeds_max_age(self) -> None:
+        assert format_age("1524-06-15", "2025-06-15") is None
+
+    def test_1000_years_exceeds_max_age(self) -> None:
+        assert format_age("1025-06-15", "2025-06-15") is None
+
 
 # ================================================================
 # Days tier: 0–6 days
@@ -338,6 +347,12 @@ class TestStageEdgeCases:
 
     def test_returns_none_for_empty_string(self) -> None:
         assert format_stage("", "2025-06-15") is None
+
+    def test_exactly_500_years_returns_adult(self) -> None:
+        assert format_stage("1525-06-15", "2025-06-15") == "Adult"
+
+    def test_501_years_exceeds_max_age(self) -> None:
+        assert format_stage("1524-06-15", "2025-06-15") is None
 
 
 class TestStageNewborn:

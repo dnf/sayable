@@ -28,6 +28,21 @@ class FormatAgeTest {
         assertNull(ParentTime.formatAge("2025-07-01", "2025-06-15"))
     }
 
+    @Test
+    fun `exactly 500 years is allowed`() {
+        assertEquals("500 years", ParentTime.formatAge("1525-06-15", "2025-06-15"))
+    }
+
+    @Test
+    fun `501 years exceeds max age`() {
+        assertNull(ParentTime.formatAge("1524-06-15", "2025-06-15"))
+    }
+
+    @Test
+    fun `1000 years exceeds max age`() {
+        assertNull(ParentTime.formatAge("1025-06-15", "2025-06-15"))
+    }
+
     // ================================================================
     // formatAge -- days tier (0-6)
     // ================================================================
@@ -485,6 +500,16 @@ class FormatAgeTest {
     @Test
     fun `stage future dob returns null`() {
         assertNull(ParentTime.formatStage("2025-07-01", "2025-06-15"))
+    }
+
+    @Test
+    fun `stage exactly 500 years returns Adult`() {
+        assertEquals("Adult", ParentTime.formatStage("1525-06-15", "2025-06-15"))
+    }
+
+    @Test
+    fun `stage 501 years exceeds max age`() {
+        assertNull(ParentTime.formatStage("1524-06-15", "2025-06-15"))
     }
 
     // ================================================================

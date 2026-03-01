@@ -41,7 +41,7 @@ int main() {
     auto stage = parenttime::format_stage("2025-01-15", "2025-06-15");
     if (stage) std::cout << *stage << std::endl;  // "Infant"
 
-    // Returns std::nullopt for empty/future dates
+    // Returns std::nullopt for empty/future dates or ages exceeding 500 years
     auto nothing = parenttime::format_age("");  // std::nullopt
 
     // Class-based with locale
@@ -106,7 +106,7 @@ std::optional<std::string> format_stage(const std::string& date_of_birth,
 - `date_of_birth` — `YYYY-MM-DD` string. Returns `std::nullopt` for empty strings.
 - `as_of` — Reference date as `YYYY-MM-DD`. Empty string defaults to today.
 
-**Returns:** `std::optional<std::string>` — the formatted string, or `std::nullopt` if input is invalid or DOB is in the future.
+**Returns:** `std::optional<std::string>` — the formatted string, or `std::nullopt` if input is invalid, DOB is in the future, or age exceeds 500 years.
 
 ## Development
 

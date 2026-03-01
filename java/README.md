@@ -33,7 +33,7 @@ String age4 = ParentTime.formatAgeDefault("2022-06-15", "2025-12-15");   // "3½
 
 String stage = ParentTime.formatStageDefault("2025-01-15", "2025-06-15");  // "Infant"
 
-// Returns null for empty/future dates
+// Returns null for empty/future dates or ages exceeding 500 years
 String nothing = ParentTime.formatAgeDefault("");  // null
 
 // Instance-based with locale
@@ -92,7 +92,7 @@ public final class ParentTime {
 - `dateOfBirth` — `YYYY-MM-DD` string. Returns `null` for empty strings.
 - `asOf` — Optional reference date. Defaults to today.
 
-**Returns:** `String` (nullable) — the formatted string, or `null` if input is invalid or DOB is in the future.
+**Returns:** `String` (nullable) — the formatted string, or `null` if input is invalid, DOB is in the future, or age exceeds 500 years.
 
 ## Development
 

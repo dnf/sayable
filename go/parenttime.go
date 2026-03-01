@@ -5,6 +5,8 @@ import "time"
 // timeNow is a package-level variable for testable "today" default.
 var timeNow = time.Now
 
+const maxAgeMonths = 6000
+
 // ageComponents holds parsed date components.
 type ageComponents struct {
 	months   int
@@ -50,6 +52,9 @@ func parseAge(dateOfBirth string, asOf ...string) *ageComponents {
 	months := (refY-dobY)*12 + (refM - dobM)
 	if refD < clampedBirthday {
 		months--
+	}
+	if months > maxAgeMonths {
+		return nil
 	}
 
 	return &ageComponents{months: months, diffDays: diffDays}

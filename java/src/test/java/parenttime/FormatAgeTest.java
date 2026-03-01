@@ -26,6 +26,18 @@ class FormatAgeTest {
         assertNull(ParentTime.formatAgeDefault("2025-07-01", "2025-06-15"));
     }
 
+    @Test void exactly500YearsIsAllowed() {
+        assertEquals("500 years", ParentTime.formatAgeDefault("1525-06-15", "2025-06-15"));
+    }
+
+    @Test void years501ExceedsMaxAge() {
+        assertNull(ParentTime.formatAgeDefault("1524-06-15", "2025-06-15"));
+    }
+
+    @Test void years1000ExceedsMaxAge() {
+        assertNull(ParentTime.formatAgeDefault("1025-06-15", "2025-06-15"));
+    }
+
     // ================================================================
     // formatAge -- days tier (0-6)
     // ================================================================
@@ -405,6 +417,14 @@ class FormatAgeTest {
 
     @Test void stageFutureDobReturnsNull() {
         assertNull(ParentTime.formatStageDefault("2025-07-01", "2025-06-15"));
+    }
+
+    @Test void stageExactly500YearsReturnsAdult() {
+        assertEquals("Adult", ParentTime.formatStageDefault("1525-06-15", "2025-06-15"));
+    }
+
+    @Test void stage501YearsExceedsMaxAge() {
+        assertNull(ParentTime.formatStageDefault("1524-06-15", "2025-06-15"));
     }
 
     // ================================================================

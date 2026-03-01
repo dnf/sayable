@@ -36,7 +36,7 @@ assert_eq!(age, Some("2 weeks".to_string()));
 let stage = format_stage("2025-01-15", Some("2025-06-15"));
 assert_eq!(stage, Some("Infant".to_string()));
 
-// Returns None for empty/future dates
+// Returns None for empty/future dates or ages exceeding 500 years
 assert_eq!(format_age("", None), None);
 
 // Struct-based with locale
@@ -86,7 +86,7 @@ pub fn format_stage(dob: &str, as_of: Option<&str>) -> Option<String>;
 - `dob` — Date of birth as `YYYY-MM-DD`. Returns `None` for empty strings.
 - `as_of` — Optional reference date. `None` defaults to today.
 
-**Returns:** `Option<String>` — `Some(formatted)` or `None` if input is invalid or DOB is in the future.
+**Returns:** `Option<String>` — `Some(formatted)` or `None` if input is invalid, DOB is in the future, or age exceeds 500 years.
 
 ## Development
 

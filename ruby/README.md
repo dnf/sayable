@@ -36,7 +36,7 @@ ParentTime.format_stage("2025-06-15", "2025-06-15")  # "Newborn"
 ParentTime.format_stage("2025-01-15", "2025-06-15")  # "Infant"
 ParentTime.format_stage("2024-06-15", "2025-06-15")  # "Toddler"
 
-# Returns nil for nil/empty/future dates
+# Returns nil for nil/empty/future dates or ages exceeding 500 years
 ParentTime.format_age(nil)  # nil
 
 # Class-based with locale
@@ -81,7 +81,7 @@ ParentTime.format_stage(date_of_birth, as_of = nil) # => String or nil
 - `date_of_birth` — `YYYY-MM-DD` string. Returns `nil` if `nil` or empty.
 - `as_of` — Reference date as `YYYY-MM-DD`. Defaults to today.
 
-**Returns:** A `String`, or `nil` if input is missing or DOB is in the future.
+**Returns:** A `String`, or `nil` if input is missing, DOB is in the future, or age exceeds 500 years.
 
 ## Development
 

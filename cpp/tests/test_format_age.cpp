@@ -56,6 +56,9 @@ using namespace parenttime;
 void test_null_edge_cases() {
     ASSERT_NULL("empty string", format_age("", "2025-06-15"));
     ASSERT_NULL("future dob", format_age("2025-07-01", "2025-06-15"));
+    ASSERT_EQ("exactly 500 years", format_age("1525-06-15", "2025-06-15"), "500 years");
+    ASSERT_NULL("501 years exceeds max", format_age("1524-06-15", "2025-06-15"));
+    ASSERT_NULL("1000 years exceeds max", format_age("1025-06-15", "2025-06-15"));
 }
 
 // ================================================================
@@ -217,6 +220,8 @@ void test_born_on_31st() {
 void test_stage_null_edge_cases() {
     ASSERT_NULL("stage empty", format_stage("", "2025-06-15"));
     ASSERT_NULL("stage future", format_stage("2025-07-01", "2025-06-15"));
+    ASSERT_EQ("stage 500 years", format_stage("1525-06-15", "2025-06-15"), "Adult");
+    ASSERT_NULL("stage 501 years exceeds max", format_stage("1524-06-15", "2025-06-15"));
 }
 
 void test_stage_newborn() {

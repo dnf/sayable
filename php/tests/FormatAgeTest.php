@@ -47,6 +47,21 @@ final class FormatAgeTest extends TestCase
         $this->assertNull(formatAge('2025-07-01', '2025-06-15'));
     }
 
+    public function test_1_5_exactly_500_years_is_allowed(): void
+    {
+        $this->assertSame('500 years', formatAge('1525-06-15', '2025-06-15'));
+    }
+
+    public function test_1_6_501_years_exceeds_max_age(): void
+    {
+        $this->assertNull(formatAge('1524-06-15', '2025-06-15'));
+    }
+
+    public function test_1_7_1000_years_exceeds_max_age(): void
+    {
+        $this->assertNull(formatAge('1025-06-15', '2025-06-15'));
+    }
+
     // ================================================================
     // Section 2: Days tier — 0–6 days (5 tests)
     // ================================================================
@@ -543,6 +558,16 @@ final class FormatAgeTest extends TestCase
     public function test_16_4_stage_future_dob(): void
     {
         $this->assertNull(formatStage('2025-07-01', '2025-06-15'));
+    }
+
+    public function test_16_5_stage_exactly_500_years_returns_adult(): void
+    {
+        $this->assertSame('Adult', formatStage('1525-06-15', '2025-06-15'));
+    }
+
+    public function test_16_6_stage_501_years_exceeds_max_age(): void
+    {
+        $this->assertNull(formatStage('1524-06-15', '2025-06-15'));
     }
 
     // ================================================================

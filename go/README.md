@@ -33,7 +33,7 @@ func main() {
     stage := parenttime.FormatStage("2025-01-15", "2025-06-15")
     fmt.Println(*stage)  // "Infant"
 
-    // Returns nil for empty/future dates
+    // Returns nil for empty/future dates or ages exceeding 500 years
     fmt.Println(parenttime.FormatAge(""))  // <nil>
 
     // Struct-based with locale
@@ -80,7 +80,7 @@ func FormatStage(dateOfBirth string, asOf ...string) *string
 - `dateOfBirth` — `YYYY-MM-DD` string. Returns `nil` for empty strings.
 - `asOf` — Optional reference date. Defaults to today.
 
-**Returns:** `*string` (pointer to string), or `nil` if input is missing or DOB is in the future.
+**Returns:** `*string` (pointer to string), or `nil` if input is missing, DOB is in the future, or age exceeds 500 years.
 
 **Go idioms:** Uses `*string` for nullable returns. Uses variadic `asOf ...string` for the optional parameter.
 

@@ -54,6 +54,9 @@ func contains(s, substr string) bool {
 func TestFormatAge_NullEdgeCases(t *testing.T) {
 	assertNil(t, "empty string", FormatAge("", "2025-06-15"))
 	assertNil(t, "future dob", FormatAge("2025-07-01", "2025-06-15"))
+	assertAge(t, "exactly 500 years", FormatAge("1525-06-15", "2025-06-15"), "500 years")
+	assertNil(t, "501 years exceeds max", FormatAge("1524-06-15", "2025-06-15"))
+	assertNil(t, "1000 years exceeds max", FormatAge("1025-06-15", "2025-06-15"))
 }
 
 // ================================================================
@@ -300,6 +303,8 @@ func TestFormatAge_DefaultAsOf(t *testing.T) {
 func TestFormatStage_NullEdgeCases(t *testing.T) {
 	assertNil(t, "empty string", FormatStage("", "2025-06-15"))
 	assertNil(t, "future dob", FormatStage("2025-07-01", "2025-06-15"))
+	assertAge(t, "stage 500 years", FormatStage("1525-06-15", "2025-06-15"), "Adult")
+	assertNil(t, "stage 501 years exceeds max", FormatStage("1524-06-15", "2025-06-15"))
 }
 
 func TestFormatStage_Newborn(t *testing.T) {

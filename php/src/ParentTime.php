@@ -7,6 +7,8 @@ namespace ParentTime;
 /** Locale-aware age formatter. */
 final class ParentTime
 {
+    private const MAX_AGE_MONTHS = 6000;
+
     private readonly AgeLocale $locale;
     /** @var array<string, string>|string */
     private readonly string|array $day;
@@ -205,6 +207,9 @@ final class ParentTime
         $months = ($refY - $dobY) * 12 + ($refM - $dobM);
         if ($refD < $clampedBirthday) {
             $months--;
+        }
+        if ($months > self::MAX_AGE_MONTHS) {
+            return null;
         }
 
         return [$months, $diffDays];

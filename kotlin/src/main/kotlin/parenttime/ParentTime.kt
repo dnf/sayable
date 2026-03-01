@@ -4,6 +4,8 @@ import java.time.LocalDate
 import java.time.YearMonth
 import java.time.temporal.ChronoUnit
 
+private const val MAX_AGE_MONTHS = 6000
+
 /**
  * Package-level function for getting "today". Can be overridden in tests.
  */
@@ -47,6 +49,7 @@ internal fun parseAge(dateOfBirth: String, asOf: String? = null): AgeComponents?
     val clampedBirthday = minOf(dobD, lastDay)
     var months = (refY - dobY) * 12 + (refM - dobM)
     if (refD < clampedBirthday) months--
+    if (months > MAX_AGE_MONTHS) return null
 
     return AgeComponents(months = months, diffDays = diffDays)
 }

@@ -3,6 +3,8 @@
 require 'date'
 
 module ParentTime
+  MAX_AGE_MONTHS = 6000
+
   class Formatter
     def initialize(locale, compactness: :normal)
       @locale = locale
@@ -118,6 +120,7 @@ module ParentTime
       clamped_birthday = [dob_d, last_day].min
       months = ((ref_y - dob_y) * 12) + (ref_m - dob_m)
       months -= 1 if ref_d < clamped_birthday
+      return nil if months > MAX_AGE_MONTHS
 
       [months, diff_days]
     end

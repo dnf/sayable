@@ -9,6 +9,8 @@ from typing import Literal
 from parent_time.locale import AgeLocale, UnitForms, resolve_stage, resolve_unit
 from parent_time.locales.en import EN
 
+MAX_AGE_MONTHS = 6000
+
 
 def _parse_age(
     date_of_birth: str | None,
@@ -40,6 +42,8 @@ def _parse_age(
     months = (ref_y - dob_y) * 12 + (ref_m - dob_m)
     if ref_d < clamped_birthday:
         months -= 1
+    if months > MAX_AGE_MONTHS:
+        return None
 
     return months, diff_days
 

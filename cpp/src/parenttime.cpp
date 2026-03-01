@@ -97,6 +97,8 @@ int julian_day(int year, int month, int day) {
     return day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045;
 }
 
+constexpr int MAX_AGE_MONTHS = 6000;
+
 struct AgeComponents {
     const int months;
     const int diff_days;
@@ -147,6 +149,7 @@ std::optional<AgeComponents> parse_age(const std::string& date_of_birth,
     const int clamped_birthday = std::min(dob_d, last_day);
     int months = (ref_y - dob_y) * 12 + (ref_m - dob_m);
     if (ref_d < clamped_birthday) months--;
+    if (months > MAX_AGE_MONTHS) return std::nullopt;
 
     return AgeComponents{months, diff_days};
 }
