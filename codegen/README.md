@@ -146,6 +146,15 @@ Exits with code 1 if any generated file would change. This runs in CI to ensure 
 2. Run `python -m codegen.generate`
 3. Run all test suites
 
+## Why generated files are checked into source control
+
+The generated locale files are committed to each language's directory rather than being `.gitignore`d and rebuilt on demand:
+
+- **Each language's locale files are part of its published package.** npm, PyPI, crates.io, etc. ship what's in the repo — there's no codegen step in the downstream build.
+- **Consumers can browse source on GitHub** without running the generator to see what a locale looks like.
+- **Contributors can clone and test immediately** without installing Python or running the generator first.
+- **CI `--check` mode prevents drift.** `python -m codegen.generate --check` exits non-zero if any generated file would change, so the canonical JSON and the checked-in files can never get out of sync.
+
 ## How it was bootstrapped
 
 The `extract.py` script was a one-time tool that read the 49 TypeScript locale files (the reference implementation) and produced the canonical JSON files. It does not need to be run again — the JSON files are now the source of truth, and the TypeScript files are generated from them.

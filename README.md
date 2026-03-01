@@ -124,9 +124,38 @@ The test specification in `docs/testing.md` is the single source of truth. Each 
 - [Code generator](codegen/README.md) — how locale files are generated from canonical JSON
 - [Code quality](docs/code-quality.md) — linting, type checking, and static analysis configuration
 
+## Development
+
+A top-level [`justfile`](https://github.com/casey/just) provides a single entry point for building, testing, and linting across all eight languages.
+
+### Install just
+
+```bash
+brew install just        # macOS
+cargo install just       # or via Cargo
+```
+
+See [just installation docs](https://github.com/casey/just#installation) for other platforms.
+
+### Commands
+
+```bash
+just test                # run all 8 test suites + codegen check
+just test go             # run one language's tests
+just build               # build all languages with a build step
+just build rust           # build one language
+just generate            # regenerate locale files from canonical JSON
+just check               # verify generated files are up-to-date
+just lint                # run all available linters
+just lint python         # lint one language
+just --list              # see all available commands
+```
+
+Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++` are accepted alongside full names.
+
 ## Contributing
 
-All eight implementations share identical test cases. If you add a test, add it in all directories. See each language's README for build and test commands.
+All eight implementations share identical test cases. If you add a test, add it in all directories. See each language's README for build and test commands, or use `just test <lang>` from the project root.
 
 ## License
 
