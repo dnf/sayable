@@ -28,6 +28,23 @@ $SUDO apt-get install -y \
     openjdk-17-jdk-headless \
     python3 python3-venv
 
+# ---- .NET SDK 8.0 ----
+if ! command -v dotnet &>/dev/null; then
+    echo "==> Installing .NET SDK 8.0..."
+    curl -fsSL https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -o /tmp/ms.deb
+    $SUDO dpkg -i /tmp/ms.deb && rm /tmp/ms.deb
+    $SUDO apt-get update
+    $SUDO apt-get install -y dotnet-sdk-8.0
+fi
+
+# ---- Swift ----
+if ! command -v swift &>/dev/null; then
+    echo "==> Installing Swift..."
+    ARCH="$(dpkg --print-architecture)"
+    SWIFT_URL="https://download.swift.org/swift-5.10.1-release/ubuntu2404/${ARCH}/swift-5.10.1-RELEASE-ubuntu24.04-${ARCH}.tar.gz"
+    curl -fsSL "$SWIFT_URL" | $SUDO tar -C /usr/local --strip-components=2 -xz
+fi
+
 # ---- Node.js 22 via NodeSource ----
 if ! command -v node &>/dev/null || ! node -v | grep -q '^v2[2-9]'; then
     echo "==> Installing Node.js 22..."

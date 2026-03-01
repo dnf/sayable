@@ -16,7 +16,7 @@ fi
 echo "==> Installing toolchains via Homebrew..."
 # brew install may return non-zero if a formula is already installed but
 # can't be linked (e.g. python, composer). The tools are still usable.
-brew install node python uv go ruby cmake php composer just openjdk@17 || true
+brew install node python uv go ruby cmake php composer just openjdk@17 dotnet || true
 
 # Make Java 17 available to /usr/libexec/java_home
 OPENJDK_PATH="$(brew --prefix openjdk@17)/libexec/openjdk.jdk"
@@ -60,6 +60,8 @@ command -v cmake &>/dev/null   || MISSING+=(cmake)
 command -v php &>/dev/null     || MISSING+=(php)
 command -v composer &>/dev/null || MISSING+=(composer)
 command -v java &>/dev/null    || MISSING+=(java)
+command -v dotnet &>/dev/null  || MISSING+=(dotnet)
+command -v swift &>/dev/null   || MISSING+=(swift)
 command -v just &>/dev/null    || MISSING+=(just)
 
 if [ ${#MISSING[@]} -gt 0 ]; then

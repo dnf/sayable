@@ -223,7 +223,7 @@ just generate           # regenerate all (includes new language)
 just check              # verify generated files match
 just test newlang       # run new language's tests
 just lint newlang       # run new language's linter
-just test               # run all 8+ languages to confirm nothing broke
+just test               # run all languages to confirm nothing broke
 ```
 
 ## Checklist

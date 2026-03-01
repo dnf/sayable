@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate locale source files for all 9 languages from canonical JSON.
+"""Generate locale source files for all 11 languages from canonical JSON.
 
 Usage:
     python -m codegen.generate                      # generate all
@@ -224,6 +224,22 @@ def generate_java(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_csharp(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.csharp.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_swift(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.swift.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 _GENERATORS = {
     "typescript": generate_typescript,
     "python": generate_python,
@@ -234,6 +250,8 @@ _GENERATORS = {
     "cpp": generate_cpp,
     "php": generate_php,
     "java": generate_java,
+    "csharp": generate_csharp,
+    "swift": generate_swift,
 }
 
 

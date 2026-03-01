@@ -1,7 +1,7 @@
 # Code Quality Configuration
 
 This document describes the static analysis, type checking, and linting
-configuration for each of the nine parent-time implementations. The goal is
+configuration for each of the eleven parent-time implementations. The goal is
 "worthwhile strictness" — every check that catches real bugs or improves
 readability is enabled, while checks that produce noise for this specific
 codebase are suppressed with a documented rationale.
@@ -26,7 +26,7 @@ codebase are suppressed with a documented rationale.
 ## Naming conventions
 
 Each language follows its community's standard naming conventions. The table
-below summarizes the patterns across all nine implementations:
+below summarizes the patterns across all eleven implementations:
 
 | Language   | Classes/Types | Functions/Methods | Constants          | Fields/Properties | Enum variants      |
 |------------|---------------|-------------------|--------------------|-------------------|--------------------|
@@ -39,6 +39,8 @@ below summarizes the patterns across all nine implementations:
 | C++        | PascalCase    | snake_case        | UPPER_CASE (`EN()`) | snake_case  | PascalCase         |
 | PHP        | PascalCase    | camelCase         | UPPER_CASE (`EN()`) | camelCase   | PascalCase         |
 | Java       | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | UPPER_CASE         |
+| C#         | PascalCase    | PascalCase        | UPPER_CASE (`EN`)  | PascalCase  | PascalCase         |
+| Swift      | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | camelCase          |
 
 The locale JSON source files use camelCase keys (`justBorn`, `formatNumber`).
 The code generator translates these to each language's idiomatic convention
@@ -58,7 +60,7 @@ details for rationale.
 
 ## Immutability
 
-All nine implementations treat the `ParentTime` formatter as immutable after
+All eleven implementations treat the `ParentTime` formatter as immutable after
 construction. Fields are set once during `__init__` / the constructor and never
 modified — every formatting method is a pure read. The table below summarizes
 how each language enforces this:
@@ -74,12 +76,14 @@ how each language enforces this:
 | C++        | `const` methods + `const` locals | Methods are `const`-qualified; local variables use `const` where assigned once |
 | PHP        | `readonly` class | PHP 8.2 `readonly` prevents field reassignment after construction |
 | Java       | `private final` fields | Fields set in constructor, never modified; all formatting methods are pure reads |
+| C#         | `private readonly` fields | Fields set in constructor; `TreatWarningsAsErrors` in project |
+| Swift      | `private let` fields + `Sendable` | `let` is compile-time immutable; struct conforms to `Sendable` |
 
 ## Cross-cutting considerations
 
 ### i18n locale data
 
-All nine implementations contain 71 locale files with Unicode string literals
+All eleven implementations contain 71 locale files with Unicode string literals
 (Arabic, Chinese, Devanagari, Cyrillic, etc.). This creates predictable
 friction with certain lint rules:
 
@@ -130,8 +134,10 @@ language family:
 | C++        | Compiler flags + clang-tidy | `-Wall -Wextra -Wpedantic -Werror` + 13 more; clang-tidy config |   164 |        167 |
 | PHP        | PHPStan + PHP-CS-Fixer      | PHPStan level 9; PER-CS2.0 + risky; `declare(strict_types=1)` |   168 |        179 |
 | Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records      |   135 |        191 |
+| C#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                 |   140 |        191 |
+| Swift      | Swift compiler              | `StrictConcurrency`; Swift Testing                              |   140 |        191 |
 
-All nine implementations cover the same [163 canonical test cases](testing.md).
+All eleven implementations cover the same [163 canonical test cases](testing.md).
 **Tests** is what each framework reports when you run the suite. **Assertions** is
 the count of individual assertion calls in the test source. These numbers differ
 across languages because each ecosystem has its own idiomatic test granularity —

@@ -21,6 +21,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 python3-venv \
     && rm -rf /var/lib/apt/lists/*
 
+# .NET SDK 8.0 via Microsoft's apt repo
+RUN curl -fsSL https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -o /tmp/ms.deb \
+    && dpkg -i /tmp/ms.deb && rm /tmp/ms.deb \
+    && apt-get update && apt-get install -y --no-install-recommends dotnet-sdk-8.0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Swift 5.10
+RUN ARCH="$(dpkg --print-architecture)" && \
+    SWIFT_URL="https://download.swift.org/swift-5.10.1-release/ubuntu2404/${ARCH}/swift-5.10.1-RELEASE-ubuntu24.04-${ARCH}.tar.gz" && \
+    curl -fsSL "$SWIFT_URL" | tar -C /usr/local --strip-components=2 -xz
+
 # Node.js 22 via NodeSource
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \

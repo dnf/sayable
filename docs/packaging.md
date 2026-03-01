@@ -17,6 +17,8 @@ The table below summarizes how each language structures its locale data:
 | C++ | 4 source files by alpha range + header | Lazy (function-scoped `static`) | `if`-chain |
 | PHP | Single file (`Locales.php`) | Lazy (`??=` pattern) | `match` expression |
 | Java | Single file (`Locales.java`) | Eager (`static final` fields) | `ALL` map lookup |
+| C# | Single file (`Locales.cs`) | Eager (`static readonly` fields) | `All` dictionary lookup |
+| Swift | Single file (`Locales.swift`) | Eager (static `let` properties) | `all` dictionary lookup |
 
 ## Rationale
 
@@ -26,7 +28,7 @@ This design optimizes for simplicity and correctness:
 
 2. **Zero runtime dependencies.** Everything is self-contained data. No ICU, no CLDR runtime, no i18n framework.
 
-3. **Identical behavior across all 9 languages.** The codegen system generates locale data from a single set of JSON source files. Every language gets the same locales with the same data. Codegen subsetting (below) applies equally to all 9 targets.
+3. **Identical behavior across all 11 languages.** The codegen system generates locale data from a single set of JSON source files. Every language gets the same locales with the same data. Codegen subsetting (below) applies equally to all 11 targets.
 
 4. **Predictability.** There is no lazy network fetch, no dynamic `require`, and no locale-not-found error at runtime for published locales. If the code compiles, the locale is available.
 
@@ -54,11 +56,11 @@ export { am, ar, /* ... */ };
 
 The `_ALL` map captures a reference to every locale constant. A bundler cannot remove any locale from the map because `getLocale` accepts an arbitrary string — the bundler cannot prove at build time that `getLocale("sw")` will never be called. This makes `_ALL` and all 71 imports it depends on non-tree-shakeable.
 
-The same problem exists in every language: Go's `switch`, Rust's `match`, C++'s `if`-chain, and the equivalent structures in Python, Ruby, Kotlin, and PHP all reference every locale, making them all reachable from the lookup function.
+The same problem exists in every language: Go's `switch`, Rust's `match`, C++'s `if`-chain, and the equivalent structures in Python, Ruby, Kotlin, PHP, C#, Java, and Swift all reference every locale, making them all reachable from the lookup function.
 
 **TypeScript is the only language where this distinction matters at the bundler level.** When a user imports individual locale constants (`import { en, fr } from 'parent-time'`) without importing `getLocale`, a bundler with tree shaking (webpack, Rollup, esbuild) can eliminate the 69 unused locales — the `sideEffects: false` declaration in `package.json` enables this. But importing `getLocale` from the same barrel pulls in the entire `_ALL` map and with it every locale.
 
-The other 8 languages have no equivalent mechanism. Their package managers and runtimes load entire modules, packages, or classes — not individual symbols.
+The other 10 languages have no equivalent mechanism. Their package managers and runtimes load entire modules, packages, or classes — not individual symbols.
 
 ## Does the engineer need to do anything?
 
@@ -73,12 +75,14 @@ The other 8 languages have no equivalent mechanism. Their package managers and r
 | C++ | No in library builds; partial in optimized binaries with `-ffunction-sections` + `--gc-sections` if `get()` is unused | Use codegen subsetting |
 | PHP | No | Use codegen subsetting |
 | Java | No | Use codegen subsetting |
+| C# | No | Use codegen subsetting |
+| Swift | No | Use codegen subsetting |
 
-In practice, **codegen subsetting is the only reliable way to eliminate unused locales** and it works identically for all 9 languages.
+In practice, **codegen subsetting is the only reliable way to eliminate unused locales** and it works identically for all 11 languages.
 
 ## Codegen subsetting
 
-The `--locales` flag on the code generator rebuilds all 9 language targets with only the locales you specify:
+The `--locales` flag on the code generator rebuilds all 11 language targets with only the locales you specify:
 
 ```bash
 python -m codegen.generate --locales fr          # en + fr (en is always included)

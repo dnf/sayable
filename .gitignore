@@ -43,3 +43,13 @@ php/composer.lock
 php/.phpunit.cache/
 php/.php-cs-fixer.cache
 php/.phpstan.cache/
+
+# C#
+csharp/ParentTime/bin/
+csharp/ParentTime/obj/
+csharp/ParentTime.Tests/bin/
+csharp/ParentTime.Tests/obj/
+
+# Swift
+swift/.build/
+swift/Package.resolved

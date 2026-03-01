@@ -18,6 +18,8 @@ test *lang:
         just test cpp
         just test php
         just test java
+        just test csharp
+        just test swift
         just check
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd typescript && npx vitest run
@@ -38,11 +40,15 @@ test *lang:
         cd php && php vendor/bin/phpunit tests/
     elif [ "{{lang}}" = "java" ]; then
         cd java && ./gradlew test
+    elif [ "{{lang}}" = "csharp" ] || [ "{{lang}}" = "cs" ]; then
+        cd csharp && dotnet test
+    elif [ "{{lang}}" = "swift" ] || [ "{{lang}}" = "sw" ]; then
+        cd swift && swift test
     elif [ "{{lang}}" = "codegen" ]; then
         {{python}} -m unittest codegen.test_locale_groups -v
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, codegen"
+        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), codegen"
         exit 1
     fi
 
@@ -57,6 +63,8 @@ build *lang:
         just build kotlin
         just build cpp
         just build java
+        just build csharp
+        just build swift
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd typescript && npm run build
     elif [ "{{lang}}" = "rust" ] || [ "{{lang}}" = "rs" ]; then
@@ -67,6 +75,10 @@ build *lang:
         cd cpp && cmake -B build && cmake --build build
     elif [ "{{lang}}" = "java" ]; then
         cd java && ./gradlew build
+    elif [ "{{lang}}" = "csharp" ] || [ "{{lang}}" = "cs" ]; then
+        cd csharp && dotnet build
+    elif [ "{{lang}}" = "swift" ] || [ "{{lang}}" = "sw" ]; then
+        cd swift && swift build
     else
         echo "No build step for: {{lang}}"
     fi
@@ -104,6 +116,8 @@ lint *lang:
         just lint rust
         just lint php
         just lint java
+        just lint csharp
+        just lint swift
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd typescript && npm run lint
     elif [ "{{lang}}" = "python" ] || [ "{{lang}}" = "py" ]; then
@@ -122,9 +136,13 @@ lint *lang:
         echo "C++ uses warnings-as-errors in build (no separate linter)"
     elif [ "{{lang}}" = "java" ]; then
         echo "Java uses warnings-as-errors in build (no separate linter)"
+    elif [ "{{lang}}" = "csharp" ] || [ "{{lang}}" = "cs" ]; then
+        echo "C# uses TreatWarningsAsErrors in build (no separate linter)"
+    elif [ "{{lang}}" = "swift" ] || [ "{{lang}}" = "sw" ]; then
+        echo "Swift uses warnings-as-errors in build (no separate linter)"
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java"
+        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw)"
         exit 1
     fi
 
@@ -140,6 +158,8 @@ clean *lang:
         just clean kotlin
         just clean cpp
         just clean java
+        just clean csharp
+        just clean swift
         just clean codegen
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         rm -rf typescript/dist
@@ -154,12 +174,16 @@ clean *lang:
         rm -rf cpp/build
     elif [ "{{lang}}" = "java" ]; then
         rm -rf java/build java/.gradle
+    elif [ "{{lang}}" = "csharp" ] || [ "{{lang}}" = "cs" ]; then
+        rm -rf csharp/ParentTime/bin csharp/ParentTime/obj csharp/ParentTime.Tests/bin csharp/ParentTime.Tests/obj
+    elif [ "{{lang}}" = "swift" ] || [ "{{lang}}" = "sw" ]; then
+        rm -rf swift/.build
     elif [ "{{lang}}" = "codegen" ]; then
         find codegen -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
     elif [ "{{lang}}" = "go" ] || [ "{{lang}}" = "ruby" ] || [ "{{lang}}" = "rb" ] || [ "{{lang}}" = "php" ]; then
         echo "No build artifacts for: {{lang}}"
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, codegen"
+        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), codegen"
         exit 1
     fi
