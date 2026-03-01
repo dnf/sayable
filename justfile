@@ -1,6 +1,8 @@
 # parent-time task runner
 # Run `just --list` to see all available commands.
 
+python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "python" }
+
 # Run all test suites + codegen check
 [group('test')]
 test *lang:
@@ -23,7 +25,7 @@ test *lang:
     elif [ "{{lang}}" = "go" ]; then
         cd go && go test ./...
     elif [ "{{lang}}" = "ruby" ] || [ "{{lang}}" = "rb" ]; then
-        cd ruby && bundle exec rake test
+        cd ruby && ruby -Ilib test/test_formatter.rb
     elif [ "{{lang}}" = "rust" ] || [ "{{lang}}" = "rs" ]; then
         cd rust && cargo test
     elif [ "{{lang}}" = "kotlin" ] || [ "{{lang}}" = "kt" ]; then
@@ -64,12 +66,12 @@ build *lang:
 # Regenerate all locale files from canonical JSON
 [group('codegen')]
 generate:
-    python -m codegen.generate
+    {{python}} -m codegen.generate
 
 # Check that generated locale files are up-to-date (CI mode)
 [group('codegen')]
 check:
-    python -m codegen.generate --check
+    {{python}} -m codegen.generate --check
 
 # Run all available linters
 [group('lint')]

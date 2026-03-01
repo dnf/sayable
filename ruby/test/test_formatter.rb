@@ -364,10 +364,12 @@ class TestFormatAge < Minitest::Test
   # Default as_of (uses current date)
   # ================================================================
   def test_default_as_of
-    Date.stub(:today, Date.new(2025, 6, 15)) do
-      assert_equal '5 years', ParentTime.format_age('2020-01-01')
-      assert_equal '5 days', ParentTime.format_age('2025-06-10')
-    end
+    original = Date.method(:today)
+    Date.define_singleton_method(:today) { Date.new(2025, 6, 15) }
+    assert_equal '5 years', ParentTime.format_age('2020-01-01')
+    assert_equal '5 days', ParentTime.format_age('2025-06-10')
+  ensure
+    Date.define_singleton_method(:today, original)
   end
 end
 
@@ -506,11 +508,13 @@ class TestFormatStage < Minitest::Test
   end
 
   def test_stage_default_as_of
-    Date.stub(:today, Date.new(2025, 6, 15)) do
-      assert_equal 'Newborn', ParentTime.format_stage('2025-06-15')
-      assert_equal 'Child', ParentTime.format_stage('2020-01-01')
-      assert_equal 'Adult', ParentTime.format_stage('1980-01-01')
-    end
+    original = Date.method(:today)
+    Date.define_singleton_method(:today) { Date.new(2025, 6, 15) }
+    assert_equal 'Newborn', ParentTime.format_stage('2025-06-15')
+    assert_equal 'Child', ParentTime.format_stage('2020-01-01')
+    assert_equal 'Adult', ParentTime.format_stage('1980-01-01')
+  ensure
+    Date.define_singleton_method(:today, original)
   end
 end
 
