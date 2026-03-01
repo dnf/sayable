@@ -180,6 +180,14 @@ follow, we raise the limits:
   intentional — the field name matches the `Compactness::COMPACT` enum value
   and is the natural name for the concept.
 
+### Immutability
+
+The `Formatter` class calls `freeze` at the end of `initialize`, making the
+instance immutable after construction. This matches the pattern already used by
+`AgeLocale` (which also freezes itself). Since no method on `Formatter` modifies
+`self`, freezing is a free safety net — any accidental mutation raises a
+`FrozenError` at runtime.
+
 ### Compatibility note
 
 RuboCop 1.85 introduced automatic plugin detection that tries to load

@@ -19,6 +19,7 @@ module ParentTime
       @half      = ovr && !ovr.half.nil?      ? ovr.half      : locale.half
       @delimiter = ovr && !ovr.delimiter.nil? ? ovr.delimiter : locale.delimiter
       @just_born = ovr && !ovr.just_born.nil? ? ovr.just_born : locale.just_born
+      freeze
     end
 
     # Human-friendly age string.

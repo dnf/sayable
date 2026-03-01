@@ -55,6 +55,24 @@ are lazy singleton accessors that semantically behave like constants, and the
 naming matches every other language's `EN` constant. See the per-language
 details for rationale.
 
+## Immutability
+
+All eight implementations treat the `ParentTime` formatter as immutable after
+construction. Fields are set once during `__init__` / the constructor and never
+modified — every formatting method is a pure read. The table below summarizes
+how each language enforces this:
+
+| Language   | Mechanism | Notes |
+|------------|-----------|-------|
+| TypeScript | `private readonly` fields | Compiler error on reassignment |
+| Python     | `_`-prefixed fields + pyright strict | Convention-based; pyright prevents external access to `_` members |
+| Go         | Unexported fields | Only the package can access them; methods use value receivers |
+| Ruby       | `freeze` in `initialize` | Runtime error on any mutation after construction |
+| Rust       | `&self` on all methods | Borrow checker prevents mutation through shared references |
+| Kotlin     | `private val` fields | `val` is compile-time immutable; `private` hides from consumers |
+| C++        | `const` methods + `const` locals | Methods are `const`-qualified; local variables use `const` where assigned once |
+| PHP        | `readonly` class | PHP 8.2 `readonly` prevents field reassignment after construction |
+
 ## Cross-cutting considerations
 
 ### i18n locale data

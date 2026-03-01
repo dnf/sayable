@@ -266,6 +266,27 @@ semantically behave like constants, and the naming matches every other language'
 enforce `lower_case` for functions generally, but the locale accessor functions
 in generated code are excluded from this check.
 
+### Const correctness
+
+The C++ implementation uses `const` at every level to prevent accidental
+mutation:
+
+- **Methods** — `format_age` and `format_stage` are `const`-qualified, so
+  they cannot modify any member fields.
+- **Parameters** — all function parameters that aren't modified are `const`
+  references (`const std::string&`, `const AgeLocale*`).
+- **Local variables** — every local variable that is assigned once and only
+  read afterward is declared `const`. This covers ~25 variables across the
+  implementation (date components, parsed ages, plural categories, iterators,
+  computed week/month/year values).
+- **Struct fields** — `AgeComponents` (the internal struct returned by
+  `parse_age`) has `const` fields since instances are created via aggregate
+  initialization and never modified.
+
+Member fields (`day_`, `week_`, etc.) are intentionally *not* `const`. Making
+them `const` would require restructuring the constructor for marginal gain —
+the `const` method qualifiers already prevent mutation through the public API.
+
 ### What compiled clean with no changes
 
 The C++ implementation was written with these warning flags in mind from the

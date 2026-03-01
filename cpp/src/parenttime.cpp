@@ -41,7 +41,7 @@ std::string itoa(int n) {
 
 std::string replace_first(const std::string& str, const std::string& from,
                           const std::string& to) {
-    auto pos = str.find(from);
+    const auto pos = str.find(from);
     if (pos == std::string::npos) return str;
     std::string result = str;
     result.replace(pos, from.size(), to);
@@ -60,19 +60,19 @@ bool parse_date_parts(const std::string& s, int& y, int& m, int& d) {
     }
     y = 0;
     for (int i = 0; i < 4; ++i) {
-        char c = s[static_cast<size_t>(i)];
+        const char c = s[static_cast<size_t>(i)];
         if (c < '0' || c > '9') { y = m = d = 0; return false; }
         y = y * 10 + (c - '0');
     }
     m = 0;
     for (int i = 5; i < 7; ++i) {
-        char c = s[static_cast<size_t>(i)];
+        const char c = s[static_cast<size_t>(i)];
         if (c < '0' || c > '9') { y = m = d = 0; return false; }
         m = m * 10 + (c - '0');
     }
     d = 0;
     for (int i = 8; i < 10; ++i) {
-        char c = s[static_cast<size_t>(i)];
+        const char c = s[static_cast<size_t>(i)];
         if (c < '0' || c > '9') { y = m = d = 0; return false; }
         d = d * 10 + (c - '0');
     }
@@ -91,15 +91,15 @@ int days_in_month(int year, int month) {
 /// Julian Day Number for computing day differences between dates.
 /// See https://en.wikipedia.org/wiki/Julian_day#Converting_Gregorian_calendar_date_to_JDN
 int julian_day(int year, int month, int day) {
-    int a = (14 - month) / 12;
-    int y = year + 4800 - a;
-    int m = month + 12 * a - 3;
+    const int a = (14 - month) / 12;
+    const int y = year + 4800 - a;
+    const int m = month + 12 * a - 3;
     return day + (153 * m + 2) / 5 + 365 * y + y / 4 - y / 100 + y / 400 - 32045;
 }
 
 struct AgeComponents {
-    int months;
-    int diff_days;
+    const int months;
+    const int diff_days;
 };
 
 /// Get current date as (year, month, day).
@@ -110,8 +110,8 @@ void get_today(int& y, int& m, int& d) {
         d = testing::today_override_d;
         return;
     }
-    auto now = std::chrono::system_clock::now();
-    std::time_t t = std::chrono::system_clock::to_time_t(now);
+    const auto now = std::chrono::system_clock::now();
+    const std::time_t t = std::chrono::system_clock::to_time_t(now);
     std::tm tm_buf{};
 #if defined(_WIN32)
     gmtime_s(&tm_buf, &t);
@@ -138,13 +138,13 @@ std::optional<AgeComponents> parse_age(const std::string& date_of_birth,
         get_today(ref_y, ref_m, ref_d);
     }
 
-    int diff_days = julian_day(ref_y, ref_m, ref_d) - julian_day(dob_y, dob_m, dob_d);
+    const int diff_days = julian_day(ref_y, ref_m, ref_d) - julian_day(dob_y, dob_m, dob_d);
     if (diff_days < 0) return std::nullopt;
 
     // Calendar months: clamp birthday to last day of reference month so that
     // e.g. a child born Jan 31 turns 1 month old on Feb 28 (or 29 in a leap year).
-    int last_day = days_in_month(ref_y, ref_m);
-    int clamped_birthday = std::min(dob_d, last_day);
+    const int last_day = days_in_month(ref_y, ref_m);
+    const int clamped_birthday = std::min(dob_d, last_day);
     int months = (ref_y - dob_y) * 12 + (ref_m - dob_m);
     if (ref_d < clamped_birthday) months--;
 
@@ -168,30 +168,24 @@ std::string stage_key(int months) {
 ///   {0} — wraps the fully resolved expression after unit substitution (e.g. "3 years and a half")
 std::string resolve_unit(int count, const UnitForms& uf, const AgeLocale* loc,
                          const std::string& half) {
-    std::string base_n;
-    if (loc->format_number) {
-        base_n = loc->format_number(count);
-    } else {
-        base_n = itoa(count);
-    }
+    const std::string base_n = loc->format_number
+        ? loc->format_number(count) : itoa(count);
 
     // Apply {n}-style half marker to the number
-    std::string n = base_n;
-    if (!half.empty() && contains(half, "{n}")) {
-        n = replace_first(half, "{n}", base_n);
-    }
+    const std::string n = (!half.empty() && contains(half, "{n}"))
+        ? replace_first(half, "{n}", base_n) : base_n;
 
     // Select template
     std::string tmpl;
     if (!uf.simple.empty()) {
         tmpl = uf.simple;
     } else {
-        PluralCategory cat = loc->plural(count);
-        auto it = uf.forms.find(cat);
+        const PluralCategory cat = loc->plural(count);
+        const auto it = uf.forms.find(cat);
         if (it != uf.forms.end()) {
             tmpl = it->second;
         } else {
-            auto ot = uf.forms.find(PluralCategory::Other);
+            const auto ot = uf.forms.find(PluralCategory::Other);
             if (ot != uf.forms.end()) {
                 tmpl = ot->second;
             }
@@ -253,11 +247,11 @@ ParentTime::ParentTime(const AgeLocale& locale, Compactness compactness)
 std::optional<std::string> ParentTime::format_age(
     const std::string& date_of_birth, const std::string& as_of) const {
 
-    auto age = parse_age(date_of_birth, as_of);
+    const auto age = parse_age(date_of_birth, as_of);
     if (!age.has_value()) return std::nullopt;
 
-    int months = age->months;
-    int diff_days = age->diff_days;
+    const int months = age->months;
+    const int diff_days = age->diff_days;
 
     // Tier 1: 0 days
     if (diff_days == 0) {
@@ -271,8 +265,8 @@ std::optional<std::string> ParentTime::format_age(
 
     // Tier 2: weeks + days until 3 calendar months
     if (months < 3) {
-        int weeks = diff_days / 7;
-        int days = diff_days % 7;
+        const int weeks = diff_days / 7;
+        const int days = diff_days % 7;
         std::string result = resolve_unit(weeks, week_, locale_, "");
         if (days > 0) {
             result += delimiter_ + resolve_unit(days, day_, locale_, "");
@@ -287,8 +281,8 @@ std::optional<std::string> ParentTime::format_age(
 
     // Tier 4: 24-35 months -> years + months
     if (months < 36) {
-        int years = months / 12;
-        int rem = months % 12;
+        const int years = months / 12;
+        const int rem = months % 12;
         if (rem == 0) {
             return resolve_unit(years, year_, locale_, "");
         }
@@ -298,8 +292,8 @@ std::optional<std::string> ParentTime::format_age(
 
     // Tier 5: 3-6 years -> years with half marker
     if (months < 84) {
-        int years = months / 12;
-        int rem = months % 12;
+        const int years = months / 12;
+        const int rem = months % 12;
         if (rem >= 6) {
             return resolve_unit(years, year_, locale_, half_);
         }
@@ -307,7 +301,7 @@ std::optional<std::string> ParentTime::format_age(
     }
 
     // Tier 6: 7+ years
-    int years = months / 12;
+    const int years = months / 12;
     return resolve_unit(years, year_, locale_, "");
 }
 
@@ -315,10 +309,10 @@ std::optional<std::string> ParentTime::format_stage(
     const std::string& date_of_birth, const std::string& as_of,
     const std::string& gender) const {
 
-    auto age = parse_age(date_of_birth, as_of);
+    const auto age = parse_age(date_of_birth, as_of);
     if (!age.has_value()) return std::nullopt;
 
-    std::string key = stage_key(age->months);
+    const std::string key = stage_key(age->months);
     const StageLabel* label = nullptr;
     if (key == "newborn") label = &locale_->stages.newborn;
     else if (key == "infant") label = &locale_->stages.infant;
