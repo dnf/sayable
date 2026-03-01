@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Turkish locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Yeni doğan".to_string(),
         stages: Stages {
-            newborn: "Yeni doğan".to_string(),
-            infant: "Bebek".to_string(),
-            toddler: "Küçük çocuk".to_string(),
-            child: "Çocuk".to_string(),
-            teenager: "Ergen".to_string(),
-            adult: "Yetişkin".to_string(),
+            newborn: StageLabel::Neutral("Yeni doğan".to_string()),
+            infant: StageLabel::Neutral("Bebek".to_string()),
+            toddler: StageLabel::Neutral("Küçük çocuk".to_string()),
+            child: StageLabel::Neutral("Çocuk".to_string()),
+            teenager: StageLabel::Neutral("Ergen".to_string()),
+            adult: StageLabel::Neutral("Yetişkin".to_string()),
         },
         short: None,
         compact: None,

@@ -18,12 +18,12 @@ var GU = AgeLocale{
 	Half:      "સાડે {n}",
 	Delimiter: ", ",
 	JustBorn:  "નવજાત",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "નવજાત",
-		Infant:   "શિશુ",
-		Toddler:  "નાનું બાળક",
-		Child:    "બાળક",
-		Teenager: "કિશોર",
-		Adult:    "પુખ્ત",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("નવજાત"),
+		Infant:   S("શિશુ"),
+		Toddler:  S("નાનું બાળક"),
+		Child:    S("બાળક"),
+		Teenager: G("કિશોર", "કિશોરી"),
+		Adult:    S("પુખ્ત"),
 	},
 }

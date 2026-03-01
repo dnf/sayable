@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.14)
-project(parent-time VERSION 0.1.0 LANGUAGES CXX)
+project(parent-time
+    VERSION 0.1.0
+    DESCRIPTION "Human-friendly age formatting the way parents actually talk"
+    HOMEPAGE_URL "https://github.com/dnf/parent-time"
+    LANGUAGES CXX
+)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -34,6 +39,16 @@ target_compile_options(parenttime PRIVATE
     -Wformat=2
     -Wimplicit-fallthrough
 )
+
+# Installation
+include(GNUInstallDirs)
+
+install(TARGETS parenttime
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 # Tests
 enable_testing()

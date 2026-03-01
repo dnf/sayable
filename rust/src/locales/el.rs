@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Greek locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Νεογέννητο".to_string(),
         stages: Stages {
-            newborn: "Νεογέννητο".to_string(),
-            infant: "Βρέφος".to_string(),
-            toddler: "Νήπιο".to_string(),
-            child: "Παιδί".to_string(),
-            teenager: "Έφηβος".to_string(),
-            adult: "Ενήλικας".to_string(),
+            newborn: StageLabel::Neutral("Νεογέννητο".to_string()),
+            infant: StageLabel::Neutral("Βρέφος".to_string()),
+            toddler: StageLabel::Neutral("Νήπιο".to_string()),
+            child: StageLabel::Neutral("Παιδί".to_string()),
+            teenager: StageLabel::Gendered { m: "Έφηβος".to_string(), f: "Έφηβη".to_string() },
+            adult: StageLabel::Gendered { m: "Ενήλικας".to_string(), f: "Ενήλικη".to_string() },
         },
         short: None,
         compact: None,

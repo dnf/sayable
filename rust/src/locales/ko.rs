@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Korean locale.
 pub fn locale() -> AgeLocale {
@@ -15,12 +15,12 @@ pub fn locale() -> AgeLocale {
         delimiter: " ".to_string(),
         just_born: "신생아".to_string(),
         stages: Stages {
-            newborn: "신생아".to_string(),
-            infant: "영아".to_string(),
-            toddler: "유아".to_string(),
-            child: "아동".to_string(),
-            teenager: "청소년".to_string(),
-            adult: "성인".to_string(),
+            newborn: StageLabel::Neutral("신생아".to_string()),
+            infant: StageLabel::Neutral("영아".to_string()),
+            toddler: StageLabel::Neutral("유아".to_string()),
+            child: StageLabel::Neutral("아동".to_string()),
+            teenager: StageLabel::Neutral("청소년".to_string()),
+            adult: StageLabel::Neutral("성인".to_string()),
         },
         short: None,
         compact: None,

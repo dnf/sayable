@@ -79,14 +79,15 @@ module ParentTime
     #
     # @param date_of_birth [String, nil] YYYY-MM-DD date string
     # @param as_of [String, nil] YYYY-MM-DD reference date (defaults to today)
+    # @param gender [String, nil] 'm' or 'f' for gendered locales
     # @return [String, nil] stage label or nil
-    def format_stage(date_of_birth, as_of = nil)
+    def format_stage(date_of_birth, as_of = nil, gender: nil)
       age = parse_age(date_of_birth, as_of)
       return nil if age.nil?
 
       months = age[0]
       key = stage_key(months)
-      @locale.stages[key]
+      ParentTime.resolve_stage(@locale.stages[key], gender)
     end
 
     private

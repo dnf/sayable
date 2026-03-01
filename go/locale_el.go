@@ -18,12 +18,12 @@ var EL = AgeLocale{
 	Half:      "{0} και μισό",
 	Delimiter: ", ",
 	JustBorn:  "Νεογέννητο",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Νεογέννητο",
-		Infant:   "Βρέφος",
-		Toddler:  "Νήπιο",
-		Child:    "Παιδί",
-		Teenager: "Έφηβος",
-		Adult:    "Ενήλικας",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Νεογέννητο"),
+		Infant:   S("Βρέφος"),
+		Toddler:  S("Νήπιο"),
+		Child:    S("Παιδί"),
+		Teenager: G("Έφηβος", "Έφηβη"),
+		Adult:    G("Ενήλικας", "Ενήλικη"),
 	},
 }

@@ -19,7 +19,11 @@ export const cs: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Novorozenec',
   stages: {
-    newborn: 'Novorozenec', infant: 'Kojenec', toddler: 'Batole',
-    child: 'Dítě', teenager: 'Teenager', adult: 'Dospělý',
+    newborn: 'Novorozenec',
+    infant: 'Kojenec',
+    toddler: 'Batole',
+    child: 'Dítě',
+    teenager: 'Teenager',
+    adult: { m: 'Dospělý', f: 'Dospělá' },
   },
 };

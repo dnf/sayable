@@ -15,12 +15,12 @@ var TH = AgeLocale{
 	Half:      "{0}ครึ่ง",
 	Delimiter: " ",
 	JustBorn:  "แรกเกิด",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "แรกเกิด",
-		Infant:   "ทารก",
-		Toddler:  "เด็กวัยเตาะแตะ",
-		Child:    "เด็ก",
-		Teenager: "วัยรุ่น",
-		Adult:    "ผู้ใหญ่",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("แรกเกิด"),
+		Infant:   S("ทารก"),
+		Toddler:  S("เด็กวัยเตาะแตะ"),
+		Child:    S("เด็ก"),
+		Teenager: S("วัยรุ่น"),
+		Adult:    S("ผู้ใหญ่"),
 	},
 }

@@ -624,4 +624,112 @@ class TestFormatter < Minitest::Test
     assert_equal '7y', pt.format_age('2018-06-15', '2025-06-15')
     assert_equal 'Newborn', pt.format_age('2025-06-15', '2025-06-15')
   end
+
+  # ================================================================
+  # Gender support for format_stage
+  # ================================================================
+
+  # English stages are plain strings — gender param is ignored
+  def test_english_stage_ignores_gender
+    pt = ParentTime::Formatter.new(ParentTime::Locales::EN)
+    assert_equal 'Newborn', pt.format_stage('2025-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'Newborn', pt.format_stage('2025-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'Newborn', pt.format_stage('2025-06-15', '2025-06-15', gender: nil)
+    assert_equal 'Adult', pt.format_stage('2007-06-15', '2025-06-15', gender: 'f')
+  end
+
+  # Spanish: gendered stages (newborn, toddler, child, adult) + neutral (infant, teenager)
+  def test_spanish_gendered_stages
+    pt = ParentTime::Formatter.new(ParentTime::Locales::ES)
+
+    # Gendered: defaults to masculine when no gender
+    assert_equal 'Recién nacido', pt.format_stage('2025-06-15', '2025-06-15')
+    assert_equal 'Recién nacido', pt.format_stage('2025-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'Recién nacida', pt.format_stage('2025-06-15', '2025-06-15', gender: 'f')
+
+    # Neutral: stays the same regardless of gender
+    assert_equal 'Bebé', pt.format_stage('2025-01-15', '2025-06-15', gender: 'f')
+    assert_equal 'Bebé', pt.format_stage('2025-01-15', '2025-06-15', gender: 'm')
+
+    # Toddler gendered
+    assert_equal 'Niño pequeño', pt.format_stage('2024-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'Niña pequeña', pt.format_stage('2024-06-15', '2025-06-15', gender: 'f')
+
+    # Child gendered
+    assert_equal 'Niño', pt.format_stage('2022-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'Niña', pt.format_stage('2022-06-15', '2025-06-15', gender: 'f')
+
+    # Teenager neutral
+    assert_equal 'Adolescente', pt.format_stage('2012-06-15', '2025-06-15', gender: 'f')
+
+    # Adult gendered
+    assert_equal 'Adulto', pt.format_stage('2007-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'Adulta', pt.format_stage('2007-06-15', '2025-06-15', gender: 'f')
+  end
+
+  # Arabic: all 6 stages are gendered
+  def test_arabic_all_gendered_stages
+    pt = ParentTime::Formatter.new(ParentTime::Locales::AR)
+
+    assert_equal 'حديث الولادة', pt.format_stage('2025-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'حديثة الولادة', pt.format_stage('2025-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'رضيع', pt.format_stage('2025-01-15', '2025-06-15', gender: 'm')
+    assert_equal 'رضيعة', pt.format_stage('2025-01-15', '2025-06-15', gender: 'f')
+    assert_equal 'طفل صغير', pt.format_stage('2024-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'طفلة صغيرة', pt.format_stage('2024-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'طفل', pt.format_stage('2022-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'طفلة', pt.format_stage('2022-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'مراهق', pt.format_stage('2012-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'مراهقة', pt.format_stage('2012-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'بالغ', pt.format_stage('2007-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'بالغة', pt.format_stage('2007-06-15', '2025-06-15', gender: 'f')
+  end
+
+  # German: only adult is gendered
+  def test_german_adult_gendered
+    pt = ParentTime::Formatter.new(ParentTime::Locales::DE)
+    assert_equal 'Erwachsener', pt.format_stage('2007-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'Erwachsene', pt.format_stage('2007-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'Erwachsener', pt.format_stage('2007-06-15', '2025-06-15')
+  end
+
+  # French: newborn gendered, toddler neutral swap, teenager gendered
+  def test_french_gendered_stages
+    pt = ParentTime::Formatter.new(ParentTime::Locales::FR)
+    assert_equal 'Nouveau-né', pt.format_stage('2025-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'Nouveau-née', pt.format_stage('2025-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'Tout-petit', pt.format_stage('2024-06-15', '2025-06-15')
+    assert_equal 'Adolescent', pt.format_stage('2012-06-15', '2025-06-15', gender: 'm')
+    assert_equal 'Adolescente', pt.format_stage('2012-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'Adulte', pt.format_stage('2007-06-15', '2025-06-15', gender: 'f')
+  end
+
+  # Module-level convenience with gender
+  def test_module_level_format_stage_with_gender
+    # English is ungendered, so result is same regardless
+    assert_equal 'Adult', ParentTime.format_stage('2007-06-15', '2025-06-15', gender: 'f')
+    assert_equal 'Adult', ParentTime.format_stage('2007-06-15', '2025-06-15', gender: 'm')
+  end
+
+  # resolve_stage helper
+  def test_resolve_stage_with_string
+    assert_equal 'Adult', ParentTime.resolve_stage('Adult', 'm')
+    assert_equal 'Adult', ParentTime.resolve_stage('Adult', 'f')
+    assert_equal 'Adult', ParentTime.resolve_stage('Adult', nil)
+  end
+
+  def test_resolve_stage_with_hash
+    label = { m: 'Adulto', f: 'Adulta' }
+    assert_equal 'Adulto', ParentTime.resolve_stage(label, 'm')
+    assert_equal 'Adulta', ParentTime.resolve_stage(label, 'f')
+    assert_equal 'Adulto', ParentTime.resolve_stage(label, nil)
+    assert_equal 'Adulto', ParentTime.resolve_stage(label)
+  end
+
+  # Nil handling with gender
+  def test_format_stage_nil_with_gender
+    pt = ParentTime::Formatter.new(ParentTime::Locales::ES)
+    assert_nil pt.format_stage(nil, '2025-06-15', gender: 'f')
+    assert_nil pt.format_stage('', '2025-06-15', gender: 'm')
+  end
 end

@@ -21,11 +21,11 @@ export const ru: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Новорождённый',
   stages: {
-    newborn: 'Новорождённый',
+    newborn: { m: 'Новорождённый', f: 'Новорождённая' },
     infant: 'Младенец',
-    toddler: 'Малыш',
+    toddler: { m: 'Малыш', f: 'Малышка' },
     child: 'Ребёнок',
     teenager: 'Подросток',
-    adult: 'Взрослый',
+    adult: { m: 'Взрослый', f: 'Взрослая' },
   },
 };

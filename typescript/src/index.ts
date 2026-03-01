@@ -3,9 +3,12 @@ export {
   type AgeLocale,
   type Compactness,
   type CompactnessOverride,
+  type Gender,
   type PluralCategory,
+  type StageLabel,
   type UnitForms,
   en,
+  resolveStage,
   resolveUnit,
 } from './locale.js';
 export {

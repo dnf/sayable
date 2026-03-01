@@ -15,12 +15,12 @@ var VI = AgeLocale{
 	Half:      "{0} rưỡi",
 	Delimiter: ", ",
 	JustBorn:  "Sơ sinh",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Sơ sinh",
-		Infant:   "Trẻ sơ sinh",
-		Toddler:  "Trẻ mới biết đi",
-		Child:    "Trẻ em",
-		Teenager: "Thiếu niên",
-		Adult:    "Người lớn",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Sơ sinh"),
+		Infant:   S("Trẻ sơ sinh"),
+		Toddler:  S("Trẻ mới biết đi"),
+		Child:    S("Trẻ em"),
+		Teenager: S("Thiếu niên"),
+		Adult:    S("Người lớn"),
 	},
 }

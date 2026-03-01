@@ -15,11 +15,11 @@ ES = AgeLocale(
     delimiter=", ",
     just_born="Reci\u00e9n nacido",
     stages={
-        "newborn": "Reci\u00e9n nacido",
-        "infant": "Beb\u00e9",
-        "toddler": "Ni\u00f1o peque\u00f1o",
-        "child": "Ni\u00f1o",
+        "newborn": {"m": "Recién nacido", "f": "Recién nacida"},
+        "infant": "Bebé",
+        "toddler": {"m": "Niño pequeño", "f": "Niña pequeña"},
+        "child": {"m": "Niño", "f": "Niña"},
         "teenager": "Adolescente",
-        "adult": "Adulto",
+        "adult": {"m": "Adulto", "f": "Adulta"},
     },
 )

@@ -30,12 +30,12 @@ public object Locales {
         delimiter = " \u0648",
         justBorn = "\u062D\u062F\u064A\u062B \u0627\u0644\u0648\u0644\u0627\u062F\u0629",
         stages = Stages(
-            newborn = "\u062D\u062F\u064A\u062B \u0627\u0644\u0648\u0644\u0627\u062F\u0629",
-            infant = "\u0631\u0636\u064A\u0639",
-            toddler = "\u0637\u0641\u0644 \u0635\u063A\u064A\u0631",
-            child = "\u0637\u0641\u0644",
-            teenager = "\u0645\u0631\u0627\u0647\u0642",
-            adult = "\u0628\u0627\u0644\u063A"
+            newborn = g("\u062D\u062F\u064A\u062B \u0627\u0644\u0648\u0644\u0627\u062F\u0629", "\u062D\u062F\u064A\u062B\u0629 \u0627\u0644\u0648\u0644\u0627\u062F\u0629"),
+            infant = g("\u0631\u0636\u064A\u0639", "\u0631\u0636\u064A\u0639\u0629"),
+            toddler = g("\u0637\u0641\u0644 \u0635\u063A\u064A\u0631", "\u0637\u0641\u0644\u0629 \u0635\u063A\u064A\u0631\u0629"),
+            child = g("\u0637\u0641\u0644", "\u0637\u0641\u0644\u0629"),
+            teenager = g("\u0645\u0631\u0627\u0647\u0642", "\u0645\u0631\u0627\u0647\u0642\u0629"),
+            adult = g("\u0628\u0627\u0644\u063A", "\u0628\u0627\u0644\u063A\u0629")
         )
     )
 
@@ -55,12 +55,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u041D\u043E\u0432\u043E\u0440\u043E\u0434\u0435\u043D\u043E",
         stages = Stages(
-            newborn = "\u041D\u043E\u0432\u043E\u0440\u043E\u0434\u0435\u043D\u043E",
-            infant = "\u0411\u0435\u0431\u0435",
-            toddler = "\u041C\u0430\u043B\u043A\u043E \u0434\u0435\u0442\u0435",
-            child = "\u0414\u0435\u0442\u0435",
-            teenager = "\u0422\u0438\u0439\u043D\u0435\u0439\u0434\u0436\u044A\u0440",
-            adult = "\u0412\u044A\u0437\u0440\u0430\u0441\u0442\u0435\u043D"
+            newborn = s("\u041D\u043E\u0432\u043E\u0440\u043E\u0434\u0435\u043D\u043E"),
+            infant = s("\u0411\u0435\u0431\u0435"),
+            toddler = s("\u041C\u0430\u043B\u043A\u043E \u0434\u0435\u0442\u0435"),
+            child = s("\u0414\u0435\u0442\u0435"),
+            teenager = s("\u0422\u0438\u0439\u043D\u0435\u0439\u0434\u0436\u044A\u0440"),
+            adult = g("\u0412\u044A\u0437\u0440\u0430\u0441\u0442\u0435\u043D", "\u0412\u044A\u0437\u0440\u0430\u0441\u0442\u043D\u0430")
         )
     )
 
@@ -80,12 +80,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u09A8\u09AC\u099C\u09BE\u09A4\u0995",
         stages = Stages(
-            newborn = "\u09A8\u09AC\u099C\u09BE\u09A4\u0995",
-            infant = "\u09B6\u09BF\u09B6\u09C1",
-            toddler = "\u099B\u09CB\u099F \u09B6\u09BF\u09B6\u09C1",
-            child = "\u09B6\u09BF\u09B6\u09C1",
-            teenager = "\u0995\u09BF\u09B6\u09CB\u09B0",
-            adult = "\u09AA\u09CD\u09B0\u09BE\u09AA\u09CD\u09A4\u09AC\u09AF\u09BC\u09B8\u09CD\u0995"
+            newborn = s("\u09A8\u09AC\u099C\u09BE\u09A4\u0995"),
+            infant = s("\u09B6\u09BF\u09B6\u09C1"),
+            toddler = s("\u099B\u09CB\u099F \u09B6\u09BF\u09B6\u09C1"),
+            child = s("\u09B6\u09BF\u09B6\u09C1"),
+            teenager = g("\u0995\u09BF\u09B6\u09CB\u09B0", "\u0995\u09BF\u09B6\u09CB\u09B0\u09C0"),
+            adult = s("\u09AA\u09CD\u09B0\u09BE\u09AA\u09CD\u09A4\u09AC\u09AF\u09BC\u09B8\u09CD\u0995")
         )
     )
 
@@ -100,7 +100,7 @@ public object Locales {
             when {
                 mod10 == 1 && mod100 != 11 -> PluralCategory.ONE
                 mod10 in 2..4 && (mod100 < 12 || mod100 > 14) -> PluralCategory.FEW
-                else -> PluralCategory.MANY
+                else -> PluralCategory.OTHER
             }
         },
         units = Units(
@@ -113,12 +113,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Novoro\u0111en\u010De",
         stages = Stages(
-            newborn = "Novoro\u0111en\u010De",
-            infant = "Beba",
-            toddler = "Malo dijete",
-            child = "Dijete",
-            teenager = "Tinejd\u017Eer",
-            adult = "Odrasla osoba"
+            newborn = s("Novoro\u0111en\u010De"),
+            infant = s("Beba"),
+            toddler = s("Malo dijete"),
+            child = s("Dijete"),
+            teenager = s("Tinejd\u017Eer"),
+            adult = s("Odrasla osoba")
         )
     )
 
@@ -138,12 +138,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Nounat",
         stages = Stages(
-            newborn = "Nounat",
-            infant = "Nad\u00F3",
-            toddler = "Infant",
-            child = "Nen",
-            teenager = "Adolescent",
-            adult = "Adult"
+            newborn = g("Nounat", "Nounada"),
+            infant = s("Nad\u00F3"),
+            toddler = s("Infant"),
+            child = s("Criatura"),
+            teenager = s("Adolescent"),
+            adult = g("Adult", "Adulta")
         )
     )
 
@@ -169,12 +169,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Novorozenec",
         stages = Stages(
-            newborn = "Novorozenec",
-            infant = "Kojenec",
-            toddler = "Batole",
-            child = "D\u00EDt\u011B",
-            teenager = "Teenager",
-            adult = "Dosp\u011Bl\u00FD"
+            newborn = s("Novorozenec"),
+            infant = s("Kojenec"),
+            toddler = s("Batole"),
+            child = s("D\u00EDt\u011B"),
+            teenager = s("Teenager"),
+            adult = g("Dosp\u011Bl\u00FD", "Dosp\u011Bl\u00E1")
         )
     )
 
@@ -194,12 +194,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Nyf\u00F8dt",
         stages = Stages(
-            newborn = "Nyf\u00F8dt",
-            infant = "Sp\u00E6dbarn",
-            toddler = "Sm\u00E5barn",
-            child = "Barn",
-            teenager = "Teenager",
-            adult = "Voksen"
+            newborn = s("Nyf\u00F8dt"),
+            infant = s("Sp\u00E6dbarn"),
+            toddler = s("Sm\u00E5barn"),
+            child = s("Barn"),
+            teenager = s("Teenager"),
+            adult = s("Voksen")
         )
     )
 
@@ -219,12 +219,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Neugeboren",
         stages = Stages(
-            newborn = "Neugeborenes",
-            infant = "S\u00E4ugling",
-            toddler = "Kleinkind",
-            child = "Kind",
-            teenager = "Teenager",
-            adult = "Erwachsener"
+            newborn = s("Neugeborenes"),
+            infant = s("S\u00E4ugling"),
+            toddler = s("Kleinkind"),
+            child = s("Kind"),
+            teenager = s("Teenager"),
+            adult = g("Erwachsener", "Erwachsene")
         )
     )
 
@@ -244,12 +244,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u039D\u03B5\u03BF\u03B3\u03AD\u03BD\u03BD\u03B7\u03C4\u03BF",
         stages = Stages(
-            newborn = "\u039D\u03B5\u03BF\u03B3\u03AD\u03BD\u03BD\u03B7\u03C4\u03BF",
-            infant = "\u0392\u03C1\u03AD\u03C6\u03BF\u03C2",
-            toddler = "\u039D\u03AE\u03C0\u03B9\u03BF",
-            child = "\u03A0\u03B1\u03B9\u03B4\u03AF",
-            teenager = "\u0388\u03C6\u03B7\u03B2\u03BF\u03C2",
-            adult = "\u0395\u03BD\u03AE\u03BB\u03B9\u03BA\u03B1\u03C2"
+            newborn = s("\u039D\u03B5\u03BF\u03B3\u03AD\u03BD\u03BD\u03B7\u03C4\u03BF"),
+            infant = s("\u0392\u03C1\u03AD\u03C6\u03BF\u03C2"),
+            toddler = s("\u039D\u03AE\u03C0\u03B9\u03BF"),
+            child = s("\u03A0\u03B1\u03B9\u03B4\u03AF"),
+            teenager = g("\u0388\u03C6\u03B7\u03B2\u03BF\u03C2", "\u0388\u03C6\u03B7\u03B2\u03B7"),
+            adult = g("\u0395\u03BD\u03AE\u03BB\u03B9\u03BA\u03B1\u03C2", "\u0395\u03BD\u03AE\u03BB\u03B9\u03BA\u03B7")
         )
     )
 
@@ -269,12 +269,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Newborn",
         stages = Stages(
-            newborn = "Newborn",
-            infant = "Infant",
-            toddler = "Toddler",
-            child = "Child",
-            teenager = "Teenager",
-            adult = "Adult"
+            newborn = s("Newborn"),
+            infant = s("Infant"),
+            toddler = s("Toddler"),
+            child = s("Child"),
+            teenager = s("Teenager"),
+            adult = s("Adult")
         ),
         short = CompactnessOverride(
             day = simpleUnit("{n} d"),
@@ -307,12 +307,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Reci\u00E9n nacido",
         stages = Stages(
-            newborn = "Reci\u00E9n nacido",
-            infant = "Beb\u00E9",
-            toddler = "Ni\u00F1o peque\u00F1o",
-            child = "Ni\u00F1o",
-            teenager = "Adolescente",
-            adult = "Adulto"
+            newborn = g("Reci\u00E9n nacido", "Reci\u00E9n nacida"),
+            infant = s("Beb\u00E9"),
+            toddler = g("Ni\u00F1o peque\u00F1o", "Ni\u00F1a peque\u00F1a"),
+            child = g("Ni\u00F1o", "Ni\u00F1a"),
+            teenager = s("Adolescente"),
+            adult = g("Adulto", "Adulta")
         )
     )
 
@@ -332,12 +332,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Vasts\u00FCndinu",
         stages = Stages(
-            newborn = "Vasts\u00FCndinu",
-            infant = "Imik",
-            toddler = "V\u00E4ikelaps",
-            child = "Laps",
-            teenager = "Teismeline",
-            adult = "T\u00E4iskasvanu"
+            newborn = s("Vasts\u00FCndinu"),
+            infant = s("Imik"),
+            toddler = s("V\u00E4ikelaps"),
+            child = s("Laps"),
+            teenager = s("Teismeline"),
+            adult = s("T\u00E4iskasvanu")
         )
     )
 
@@ -357,12 +357,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Jaioberria",
         stages = Stages(
-            newborn = "Jaioberria",
-            infant = "Haurra",
-            toddler = "Haur txikia",
-            child = "Umea",
-            teenager = "Nerabea",
-            adult = "Heldua"
+            newborn = s("Jaioberria"),
+            infant = s("Haurra"),
+            toddler = s("Haur txikia"),
+            child = s("Umea"),
+            teenager = s("Nerabea"),
+            adult = s("Heldua")
         )
     )
 
@@ -382,12 +382,12 @@ public object Locales {
         delimiter = " \u0648 ",
         justBorn = "\u0646\u0648\u0632\u0627\u062F",
         stages = Stages(
-            newborn = "\u0646\u0648\u0632\u0627\u062F",
-            infant = "\u0634\u06CC\u0631\u062E\u0648\u0627\u0631",
-            toddler = "\u0646\u0648\u067E\u0627",
-            child = "\u06A9\u0648\u062F\u06A9",
-            teenager = "\u0646\u0648\u062C\u0648\u0627\u0646",
-            adult = "\u0628\u0632\u0631\u06AF\u0633\u0627\u0644"
+            newborn = s("\u0646\u0648\u0632\u0627\u062F"),
+            infant = s("\u0634\u06CC\u0631\u062E\u0648\u0627\u0631"),
+            toddler = s("\u0646\u0648\u067E\u0627"),
+            child = s("\u06A9\u0648\u062F\u06A9"),
+            teenager = s("\u0646\u0648\u062C\u0648\u0627\u0646"),
+            adult = s("\u0628\u0632\u0631\u06AF\u0633\u0627\u0644")
         )
     )
 
@@ -407,12 +407,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Vastasyntynyt",
         stages = Stages(
-            newborn = "Vastasyntynyt",
-            infant = "Vauva",
-            toddler = "Taapero",
-            child = "Lapsi",
-            teenager = "Teini",
-            adult = "Aikuinen"
+            newborn = s("Vastasyntynyt"),
+            infant = s("Vauva"),
+            toddler = s("Taapero"),
+            child = s("Lapsi"),
+            teenager = s("Teini"),
+            adult = s("Aikuinen")
         )
     )
 
@@ -432,12 +432,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Nouveau-n\u00E9",
         stages = Stages(
-            newborn = "Nouveau-n\u00E9",
-            infant = "Nourrisson",
-            toddler = "Bambin",
-            child = "Enfant",
-            teenager = "Adolescent",
-            adult = "Adulte"
+            newborn = g("Nouveau-n\u00E9", "Nouveau-n\u00E9e"),
+            infant = s("Nourrisson"),
+            toddler = s("Tout-petit"),
+            child = s("Enfant"),
+            teenager = g("Adolescent", "Adolescente"),
+            adult = s("Adulte")
         )
     )
 
@@ -457,12 +457,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Nuabheirthe",
         stages = Stages(
-            newborn = "Nuabheirthe",
-            infant = "Na\u00EDon\u00E1n",
-            toddler = "Lapad\u00E1n",
-            child = "P\u00E1iste",
-            teenager = "D\u00E9ag\u00F3ir",
-            adult = "Duine f\u00E1sta"
+            newborn = s("Nuabheirthe"),
+            infant = s("Na\u00EDon\u00E1n"),
+            toddler = s("Lapad\u00E1n"),
+            child = s("P\u00E1iste"),
+            teenager = s("D\u00E9ag\u00F3ir"),
+            adult = s("Duine f\u00E1sta")
         )
     )
 
@@ -482,12 +482,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u0AA8\u0AB5\u0A9C\u0ABE\u0AA4",
         stages = Stages(
-            newborn = "\u0AA8\u0AB5\u0A9C\u0ABE\u0AA4",
-            infant = "\u0AB6\u0ABF\u0AB6\u0AC1",
-            toddler = "\u0AA8\u0ABE\u0AA8\u0AC1\u0A82 \u0AAC\u0ABE\u0AB3\u0A95",
-            child = "\u0AAC\u0ABE\u0AB3\u0A95",
-            teenager = "\u0A95\u0ABF\u0AB6\u0ACB\u0AB0",
-            adult = "\u0AAA\u0AC1\u0A96\u0ACD\u0AA4"
+            newborn = s("\u0AA8\u0AB5\u0A9C\u0ABE\u0AA4"),
+            infant = s("\u0AB6\u0ABF\u0AB6\u0AC1"),
+            toddler = s("\u0AA8\u0ABE\u0AA8\u0AC1\u0A82 \u0AAC\u0ABE\u0AB3\u0A95"),
+            child = s("\u0AAC\u0ABE\u0AB3\u0A95"),
+            teenager = g("\u0A95\u0ABF\u0AB6\u0ACB\u0AB0", "\u0A95\u0ABF\u0AB6\u0ACB\u0AB0\u0AC0"),
+            adult = s("\u0AAA\u0AC1\u0A96\u0ACD\u0AA4")
         )
     )
 
@@ -507,12 +507,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u0928\u0935\u091C\u093E\u0924",
         stages = Stages(
-            newborn = "\u0928\u0935\u091C\u093E\u0924",
-            infant = "\u0936\u093F\u0936\u0941",
-            toddler = "\u091B\u094B\u091F\u093E \u092C\u091A\u094D\u091A\u093E",
-            child = "\u092C\u091A\u094D\u091A\u093E",
-            teenager = "\u0915\u093F\u0936\u094B\u0930",
-            adult = "\u0935\u092F\u0938\u094D\u0915"
+            newborn = s("\u0928\u0935\u091C\u093E\u0924"),
+            infant = s("\u0936\u093F\u0936\u0941"),
+            toddler = g("\u091B\u094B\u091F\u093E \u092C\u091A\u094D\u091A\u093E", "\u091B\u094B\u091F\u0940 \u092C\u091A\u094D\u091A\u0940"),
+            child = g("\u092C\u091A\u094D\u091A\u093E", "\u092C\u091A\u094D\u091A\u0940"),
+            teenager = g("\u0915\u093F\u0936\u094B\u0930", "\u0915\u093F\u0936\u094B\u0930\u0940"),
+            adult = s("\u0935\u092F\u0938\u094D\u0915")
         )
     )
 
@@ -527,7 +527,7 @@ public object Locales {
             when {
                 mod10 == 1 && mod100 != 11 -> PluralCategory.ONE
                 mod10 in 2..4 && (mod100 < 12 || mod100 > 14) -> PluralCategory.FEW
-                else -> PluralCategory.MANY
+                else -> PluralCategory.OTHER
             }
         },
         units = Units(
@@ -540,12 +540,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Novoro\u0111en\u010De",
         stages = Stages(
-            newborn = "Novoro\u0111en\u010De",
-            infant = "Dojen\u010De",
-            toddler = "Malo dijete",
-            child = "Dijete",
-            teenager = "Tinejd\u017Eer",
-            adult = "Odrasla osoba"
+            newborn = s("Novoro\u0111en\u010De"),
+            infant = s("Dojen\u010De"),
+            toddler = s("Malo dijete"),
+            child = s("Dijete"),
+            teenager = s("Tinejd\u017Eer"),
+            adult = s("Odrasla osoba")
         )
     )
 
@@ -565,12 +565,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u00DAjsz\u00FCl\u00F6tt",
         stages = Stages(
-            newborn = "\u00DAjsz\u00FCl\u00F6tt",
-            infant = "Csecsem\u0151",
-            toddler = "Kisgyermek",
-            child = "Gyermek",
-            teenager = "Tin\u00E9dzser",
-            adult = "Feln\u0151tt"
+            newborn = s("\u00DAjsz\u00FCl\u00F6tt"),
+            infant = s("Csecsem\u0151"),
+            toddler = s("Kisgyermek"),
+            child = s("Gyermek"),
+            teenager = s("Tin\u00E9dzser"),
+            adult = s("Feln\u0151tt")
         )
     )
 
@@ -590,12 +590,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Neonato",
         stages = Stages(
-            newborn = "Neonato",
-            infant = "Lattante",
-            toddler = "Bimbo",
-            child = "Bambino",
-            teenager = "Adolescente",
-            adult = "Adulto"
+            newborn = g("Neonato", "Neonata"),
+            infant = s("Lattante"),
+            toddler = g("Bimbo", "Bimba"),
+            child = g("Bambino", "Bambina"),
+            teenager = s("Adolescente"),
+            adult = g("Adulto", "Adulta")
         )
     )
 
@@ -615,12 +615,12 @@ public object Locales {
         delimiter = "",
         justBorn = "\u65B0\u751F\u5150",
         stages = Stages(
-            newborn = "\u65B0\u751F\u5150",
-            infant = "\u4E73\u5150",
-            toddler = "\u5E7C\u5150",
-            child = "\u5150\u7AE5",
-            teenager = "\u9752\u5C11\u5E74",
-            adult = "\u6210\u4EBA"
+            newborn = s("\u65B0\u751F\u5150"),
+            infant = s("\u4E73\u5150"),
+            toddler = s("\u5E7C\u5150"),
+            child = s("\u5150\u7AE5"),
+            teenager = s("\u9752\u5C11\u5E74"),
+            adult = s("\u6210\u4EBA")
         )
     )
 
@@ -640,12 +640,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Bayi anyar",
         stages = Stages(
-            newborn = "Bayi anyar",
-            infant = "Bayi",
-            toddler = "Balita",
-            child = "Bocah",
-            teenager = "Remaja",
-            adult = "Diwasa"
+            newborn = s("Bayi anyar"),
+            infant = s("Bayi"),
+            toddler = s("Balita"),
+            child = s("Bocah"),
+            teenager = s("Remaja"),
+            adult = s("Diwasa")
         )
     )
 
@@ -665,12 +665,12 @@ public object Locales {
         delimiter = " ",
         justBorn = "\uC2E0\uC0DD\uC544",
         stages = Stages(
-            newborn = "\uC2E0\uC0DD\uC544",
-            infant = "\uC601\uC544",
-            toddler = "\uC720\uC544",
-            child = "\uC544\uB3D9",
-            teenager = "\uCCAD\uC18C\uB144",
-            adult = "\uC131\uC778"
+            newborn = s("\uC2E0\uC0DD\uC544"),
+            infant = s("\uC601\uC544"),
+            toddler = s("\uC720\uC544"),
+            child = s("\uC544\uB3D9"),
+            teenager = s("\uCCAD\uC18C\uB144"),
+            adult = s("\uC131\uC778")
         )
     )
 
@@ -698,12 +698,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Naujagimis",
         stages = Stages(
-            newborn = "Naujagimis",
-            infant = "K\u016Bdikis",
-            toddler = "Ma\u017Eylis",
-            child = "Vaikas",
-            teenager = "Paauglys",
-            adult = "Suaug\u0119s"
+            newborn = g("Naujagimis", "Naujagim\u0117"),
+            infant = g("K\u016Bdikis", "K\u016Bdik\u0117"),
+            toddler = g("Ma\u017Eylis", "Ma\u017Eyl\u0117"),
+            child = s("Vaikas"),
+            teenager = g("Paauglys", "Paaugl\u0117"),
+            adult = g("Suaug\u0119s", "Suaugusi")
         )
     )
 
@@ -714,7 +714,7 @@ public object Locales {
         code = "lv",
         plural = { n ->
             when {
-                n == 0 -> PluralCategory.ZERO
+                n % 10 == 0 || n % 100 in 11..19 -> PluralCategory.ZERO
                 n % 10 == 1 && n % 100 != 11 -> PluralCategory.ONE
                 else -> PluralCategory.OTHER
             }
@@ -729,12 +729,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Jaundzimu\u0161ais",
         stages = Stages(
-            newborn = "Jaundzimu\u0161ais",
-            infant = "Z\u012Bdainis",
-            toddler = "Mazulis",
-            child = "B\u0113rns",
-            teenager = "Pusaudzis",
-            adult = "Pieaugu\u0161ais"
+            newborn = g("Jaundzimu\u0161ais", "Jaundzimu\u0161\u0101"),
+            infant = g("Z\u012Bdainis", "Z\u012Bdaine"),
+            toddler = g("Mazulis", "Mazule"),
+            child = s("B\u0113rns"),
+            teenager = g("Pusaudzis", "Pusaudze"),
+            adult = g("Pieaugu\u0161ais", "Pieaugus\u012B")
         )
     )
 
@@ -743,7 +743,7 @@ public object Locales {
     // ================================================================
     public val MR: AgeLocale = AgeLocale(
         code = "mr",
-        plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
             day = pluralUnit(mapOf(PluralCategory.ONE to "{n} \u0926\u093F\u0935\u0938", PluralCategory.OTHER to "{n} \u0926\u093F\u0935\u0938")),
             week = pluralUnit(mapOf(PluralCategory.ONE to "{n} \u0906\u0920\u0935\u0921\u093E", PluralCategory.OTHER to "{n} \u0906\u0920\u0935\u0921\u0947")),
@@ -754,12 +754,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u0928\u0935\u091C\u093E\u0924",
         stages = Stages(
-            newborn = "\u0928\u0935\u091C\u093E\u0924",
-            infant = "\u0905\u0930\u094D\u092D\u0915",
-            toddler = "\u092C\u093E\u0933",
-            child = "\u092E\u0942\u0932",
-            teenager = "\u0915\u093F\u0936\u094B\u0930",
-            adult = "\u092A\u094D\u0930\u094C\u0922"
+            newborn = s("\u0928\u0935\u091C\u093E\u0924"),
+            infant = s("\u0905\u0930\u094D\u092D\u0915"),
+            toddler = s("\u092C\u093E\u0933"),
+            child = s("\u092E\u0942\u0932"),
+            teenager = g("\u0915\u093F\u0936\u094B\u0930", "\u0915\u093F\u0936\u094B\u0930\u0940"),
+            adult = s("\u092A\u094D\u0930\u094C\u0922")
         )
     )
 
@@ -779,12 +779,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Baru lahir",
         stages = Stages(
-            newborn = "Baru lahir",
-            infant = "Bayi",
-            toddler = "Kanak-kanak kecil",
-            child = "Kanak-kanak",
-            teenager = "Remaja",
-            adult = "Dewasa"
+            newborn = s("Baru lahir"),
+            infant = s("Bayi"),
+            toddler = s("Kanak-kanak kecil"),
+            child = s("Kanak-kanak"),
+            teenager = s("Remaja"),
+            adult = s("Dewasa")
         )
     )
 
@@ -804,12 +804,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Nyf\u00F8dt",
         stages = Stages(
-            newborn = "Nyf\u00F8dt",
-            infant = "Spedbarn",
-            toddler = "Sm\u00E5barn",
-            child = "Barn",
-            teenager = "Ten\u00E5ring",
-            adult = "Voksen"
+            newborn = s("Nyf\u00F8dt"),
+            infant = s("Spedbarn"),
+            toddler = s("Sm\u00E5barn"),
+            child = s("Barn"),
+            teenager = s("Ten\u00E5ring"),
+            adult = s("Voksen")
         )
     )
 
@@ -829,12 +829,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Pasgeboren",
         stages = Stages(
-            newborn = "Pasgeborene",
-            infant = "Baby",
-            toddler = "Peuter",
-            child = "Kind",
-            teenager = "Tiener",
-            adult = "Volwassene"
+            newborn = s("Pasgeborene"),
+            infant = s("Baby"),
+            toddler = s("Peuter"),
+            child = s("Kind"),
+            teenager = s("Tiener"),
+            adult = s("Volwassene")
         )
     )
 
@@ -854,12 +854,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u0A28\u0A35\u0A1C\u0A70\u0A2E\u0A3F\u0A06",
         stages = Stages(
-            newborn = "\u0A28\u0A35\u0A1C\u0A70\u0A2E\u0A3F\u0A06",
-            infant = "\u0A36\u0A3F\u0A36\u0A42",
-            toddler = "\u0A1B\u0A4B\u0A1F\u0A3E \u0A2C\u0A71\u0A1A\u0A3E",
-            child = "\u0A2C\u0A71\u0A1A\u0A3E",
-            teenager = "\u0A15\u0A3F\u0A36\u0A4B\u0A30",
-            adult = "\u0A2C\u0A3E\u0A32\u0A17"
+            newborn = g("\u0A28\u0A35\u0A1C\u0A70\u0A2E\u0A3F\u0A06", "\u0A28\u0A35\u0A1C\u0A70\u0A2E\u0A40"),
+            infant = s("\u0A36\u0A3F\u0A36\u0A42"),
+            toddler = g("\u0A1B\u0A4B\u0A1F\u0A3E \u0A2C\u0A71\u0A1A\u0A3E", "\u0A1B\u0A4B\u0A1F\u0A40 \u0A2C\u0A71\u0A1A\u0A40"),
+            child = g("\u0A2C\u0A71\u0A1A\u0A3E", "\u0A2C\u0A71\u0A1A\u0A40"),
+            teenager = g("\u0A15\u0A3F\u0A36\u0A4B\u0A30", "\u0A15\u0A3F\u0A36\u0A4B\u0A30\u0A40"),
+            adult = s("\u0A2C\u0A3E\u0A32\u0A17")
         )
     )
 
@@ -885,12 +885,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Noworodek",
         stages = Stages(
-            newborn = "Noworodek",
-            infant = "Niemowl\u0119",
-            toddler = "Maluch",
-            child = "Dziecko",
-            teenager = "Nastolatek",
-            adult = "Doros\u0142y"
+            newborn = s("Noworodek"),
+            infant = s("Niemowl\u0119"),
+            toddler = s("Maluch"),
+            child = s("Dziecko"),
+            teenager = g("Nastolatek", "Nastolatka"),
+            adult = g("Doros\u0142y", "Doros\u0142a")
         )
     )
 
@@ -910,12 +910,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Rec\u00E9m-nascido",
         stages = Stages(
-            newborn = "Rec\u00E9m-nascido",
-            infant = "Beb\u00EA",
-            toddler = "Crian\u00E7a pequena",
-            child = "Crian\u00E7a",
-            teenager = "Adolescente",
-            adult = "Adulto"
+            newborn = g("Rec\u00E9m-nascido", "Rec\u00E9m-nascida"),
+            infant = s("Beb\u00EA"),
+            toddler = s("Crian\u00E7a pequena"),
+            child = s("Crian\u00E7a"),
+            teenager = s("Adolescente"),
+            adult = g("Adulto", "Adulta")
         )
     )
 
@@ -942,12 +942,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Nou-n\u0103scut",
         stages = Stages(
-            newborn = "Nou-n\u0103scut",
-            infant = "Sugar",
-            toddler = "Copil mic",
-            child = "Copil",
-            teenager = "Adolescent",
-            adult = "Adult"
+            newborn = g("Nou-n\u0103scut", "Nou-n\u0103scut\u0103"),
+            infant = s("Sugar"),
+            toddler = s("Copil mic"),
+            child = s("Copil"),
+            teenager = g("Adolescent", "Adolescent\u0103"),
+            adult = g("Adult", "Adult\u0103")
         )
     )
 
@@ -975,12 +975,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u041D\u043E\u0432\u043E\u0440\u043E\u0436\u0434\u0451\u043D\u043D\u044B\u0439",
         stages = Stages(
-            newborn = "\u041D\u043E\u0432\u043E\u0440\u043E\u0436\u0434\u0451\u043D\u043D\u044B\u0439",
-            infant = "\u041C\u043B\u0430\u0434\u0435\u043D\u0435\u0446",
-            toddler = "\u041C\u0430\u043B\u044B\u0448",
-            child = "\u0420\u0435\u0431\u0451\u043D\u043E\u043A",
-            teenager = "\u041F\u043E\u0434\u0440\u043E\u0441\u0442\u043E\u043A",
-            adult = "\u0412\u0437\u0440\u043E\u0441\u043B\u044B\u0439"
+            newborn = g("\u041D\u043E\u0432\u043E\u0440\u043E\u0436\u0434\u0451\u043D\u043D\u044B\u0439", "\u041D\u043E\u0432\u043E\u0440\u043E\u0436\u0434\u0451\u043D\u043D\u0430\u044F"),
+            infant = s("\u041C\u043B\u0430\u0434\u0435\u043D\u0435\u0446"),
+            toddler = g("\u041C\u0430\u043B\u044B\u0448", "\u041C\u0430\u043B\u044B\u0448\u043A\u0430"),
+            child = s("\u0420\u0435\u0431\u0451\u043D\u043E\u043A"),
+            teenager = s("\u041F\u043E\u0434\u0440\u043E\u0441\u0442\u043E\u043A"),
+            adult = g("\u0412\u0437\u0440\u043E\u0441\u043B\u044B\u0439", "\u0412\u0437\u0440\u043E\u0441\u043B\u0430\u044F")
         )
     )
 
@@ -1006,12 +1006,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Novorodenec",
         stages = Stages(
-            newborn = "Novorodenec",
-            infant = "Doj\u010Da",
-            toddler = "Bato\u013Ea",
-            child = "Die\u0165a",
-            teenager = "T\u00EDned\u017Eer",
-            adult = "Dospel\u00FD"
+            newborn = s("Novorodenec"),
+            infant = s("Doj\u010Da"),
+            toddler = s("Bato\u013Ea"),
+            child = s("Die\u0165a"),
+            teenager = s("T\u00EDned\u017Eer"),
+            adult = g("Dospel\u00FD", "Dospel\u00E1")
         )
     )
 
@@ -1039,12 +1039,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Novorojen\u010Dek",
         stages = Stages(
-            newborn = "Novorojen\u010Dek",
-            infant = "Dojen\u010Dek",
-            toddler = "Mal\u010Dek",
-            child = "Otrok",
-            teenager = "Najstnik",
-            adult = "Odrasel"
+            newborn = g("Novorojen\u010Dek", "Novorojen\u010Dica"),
+            infant = g("Dojen\u010Dek", "Dojen\u010Dica"),
+            toddler = g("Mal\u010Dek", "Mal\u010Dica"),
+            child = s("Otrok"),
+            teenager = g("Najstnik", "Najstnica"),
+            adult = g("Odrasel", "Odrasla")
         )
     )
 
@@ -1064,12 +1064,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Sapolindur",
         stages = Stages(
-            newborn = "Sapolindur",
-            infant = "Foshnj\u00EB",
-            toddler = "F\u00EBmij\u00EB i vog\u00EBl",
-            child = "F\u00EBmij\u00EB",
-            teenager = "Adoleshent",
-            adult = "I rritur"
+            newborn = g("Sapolindur", "Sapolindure"),
+            infant = s("Foshnj\u00EB"),
+            toddler = g("F\u00EBmij\u00EB i vog\u00EBl", "F\u00EBmij\u00EB e vog\u00EBl"),
+            child = s("F\u00EBmij\u00EB"),
+            teenager = g("Adoleshent", "Adoleshente"),
+            adult = g("I rritur", "E rritur")
         )
     )
 
@@ -1084,7 +1084,7 @@ public object Locales {
             when {
                 mod10 == 1 && mod100 != 11 -> PluralCategory.ONE
                 mod10 in 2..4 && (mod100 < 12 || mod100 > 14) -> PluralCategory.FEW
-                else -> PluralCategory.MANY
+                else -> PluralCategory.OTHER
             }
         },
         units = Units(
@@ -1097,12 +1097,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u041D\u043E\u0432\u043E\u0440\u043E\u0452\u0435\u043D\u0447\u0435",
         stages = Stages(
-            newborn = "\u041D\u043E\u0432\u043E\u0440\u043E\u0452\u0435\u043D\u0447\u0435",
-            infant = "\u041E\u0434\u043E\u0458\u0447\u0435",
-            toddler = "\u041C\u0430\u043B\u043E \u0434\u0435\u0442\u0435",
-            child = "\u0414\u0435\u0442\u0435",
-            teenager = "\u0422\u0438\u043D\u0435\u0458\u045F\u0435\u0440",
-            adult = "\u041E\u0434\u0440\u0430\u0441\u043B\u0430 \u043E\u0441\u043E\u0431\u0430"
+            newborn = s("\u041D\u043E\u0432\u043E\u0440\u043E\u0452\u0435\u043D\u0447\u0435"),
+            infant = s("\u041E\u0434\u043E\u0458\u0447\u0435"),
+            toddler = s("\u041C\u0430\u043B\u043E \u0434\u0435\u0442\u0435"),
+            child = s("\u0414\u0435\u0442\u0435"),
+            teenager = s("\u0422\u0438\u043D\u0435\u0458\u045F\u0435\u0440"),
+            adult = s("\u041E\u0434\u0440\u0430\u0441\u043B\u0430 \u043E\u0441\u043E\u0431\u0430")
         )
     )
 
@@ -1122,12 +1122,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Nyf\u00F6dd",
         stages = Stages(
-            newborn = "Nyf\u00F6dd",
-            infant = "Sp\u00E4dbarn",
-            toddler = "Litet barn",
-            child = "Barn",
-            teenager = "Ton\u00E5ring",
-            adult = "Vuxen"
+            newborn = s("Nyf\u00F6dd"),
+            infant = s("Sp\u00E4dbarn"),
+            toddler = s("Litet barn"),
+            child = s("Barn"),
+            teenager = s("Ton\u00E5ring"),
+            adult = s("Vuxen")
         )
     )
 
@@ -1147,12 +1147,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u0BAA\u0BBF\u0BB1\u0BA8\u0BCD\u0BA4 \u0B95\u0BC1\u0BB4\u0BA8\u0BCD\u0BA4\u0BC8",
         stages = Stages(
-            newborn = "\u0BAA\u0BBF\u0BB1\u0BA8\u0BCD\u0BA4 \u0B95\u0BC1\u0BB4\u0BA8\u0BCD\u0BA4\u0BC8",
-            infant = "\u0B95\u0BC1\u0BB4\u0BA8\u0BCD\u0BA4\u0BC8",
-            toddler = "\u0B9A\u0BBF\u0BB1\u0BC1 \u0B95\u0BC1\u0BB4\u0BA8\u0BCD\u0BA4\u0BC8",
-            child = "\u0B9A\u0BBF\u0BB1\u0BC1\u0BB5\u0BB0\u0BCD",
-            teenager = "\u0B87\u0BB3\u0BAE\u0BCD\u0BAA\u0BB0\u0BC1\u0BB5\u0BAE\u0BCD",
-            adult = "\u0BAA\u0BC6\u0BB0\u0BBF\u0BAF\u0BB5\u0BB0\u0BCD"
+            newborn = s("\u0BAA\u0BBF\u0BB1\u0BA8\u0BCD\u0BA4 \u0B95\u0BC1\u0BB4\u0BA8\u0BCD\u0BA4\u0BC8"),
+            infant = s("\u0B95\u0BC1\u0BB4\u0BA8\u0BCD\u0BA4\u0BC8"),
+            toddler = s("\u0B9A\u0BBF\u0BB1\u0BC1 \u0B95\u0BC1\u0BB4\u0BA8\u0BCD\u0BA4\u0BC8"),
+            child = s("\u0B9A\u0BBF\u0BB1\u0BBE\u0BB0\u0BCD"),
+            teenager = s("\u0B87\u0BB3\u0BAE\u0BCD\u0BAA\u0BB0\u0BC1\u0BB5\u0BAE\u0BCD"),
+            adult = s("\u0BAA\u0BC6\u0BB0\u0BBF\u0BAF\u0BB5\u0BB0\u0BCD")
         )
     )
 
@@ -1172,12 +1172,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u0C28\u0C35\u0C1C\u0C3E\u0C24 \u0C36\u0C3F\u0C36\u0C41\u0C35\u0C41",
         stages = Stages(
-            newborn = "\u0C28\u0C35\u0C1C\u0C3E\u0C24 \u0C36\u0C3F\u0C36\u0C41\u0C35\u0C41",
-            infant = "\u0C36\u0C3F\u0C36\u0C41\u0C35\u0C41",
-            toddler = "\u0C1A\u0C3F\u0C28\u0C4D\u0C28 \u0C2A\u0C3F\u0C32\u0C4D\u0C32\u0C35\u0C3E\u0C21\u0C41",
-            child = "\u0C2A\u0C3F\u0C32\u0C4D\u0C32\u0C35\u0C3E\u0C21\u0C41",
-            teenager = "\u0C15\u0C4C\u0C2E\u0C3E\u0C30\u0C26\u0C36",
-            adult = "\u0C35\u0C2F\u0C4B\u0C1C\u0C28\u0C41\u0C21\u0C41"
+            newborn = s("\u0C28\u0C35\u0C1C\u0C3E\u0C24 \u0C36\u0C3F\u0C36\u0C41\u0C35\u0C41"),
+            infant = s("\u0C36\u0C3F\u0C36\u0C41\u0C35\u0C41"),
+            toddler = s("\u0C1A\u0C3F\u0C28\u0C4D\u0C28 \u0C2C\u0C3F\u0C21\u0C4D\u0C21"),
+            child = s("\u0C2C\u0C3F\u0C21\u0C4D\u0C21"),
+            teenager = s("\u0C15\u0C4C\u0C2E\u0C3E\u0C30\u0C26\u0C36"),
+            adult = s("\u0C35\u0C2F\u0C4B\u0C1C\u0C28\u0C41\u0C32\u0C41")
         )
     )
 
@@ -1197,12 +1197,12 @@ public object Locales {
         delimiter = " ",
         justBorn = "\u0E41\u0E23\u0E01\u0E40\u0E01\u0E34\u0E14",
         stages = Stages(
-            newborn = "\u0E41\u0E23\u0E01\u0E40\u0E01\u0E34\u0E14",
-            infant = "\u0E17\u0E32\u0E23\u0E01",
-            toddler = "\u0E40\u0E14\u0E47\u0E01\u0E27\u0E31\u0E22\u0E40\u0E15\u0E32\u0E30\u0E41\u0E15\u0E30",
-            child = "\u0E40\u0E14\u0E47\u0E01",
-            teenager = "\u0E27\u0E31\u0E22\u0E23\u0E38\u0E48\u0E19",
-            adult = "\u0E1C\u0E39\u0E49\u0E43\u0E2B\u0E0D\u0E48"
+            newborn = s("\u0E41\u0E23\u0E01\u0E40\u0E01\u0E34\u0E14"),
+            infant = s("\u0E17\u0E32\u0E23\u0E01"),
+            toddler = s("\u0E40\u0E14\u0E47\u0E01\u0E27\u0E31\u0E22\u0E40\u0E15\u0E32\u0E30\u0E41\u0E15\u0E30"),
+            child = s("\u0E40\u0E14\u0E47\u0E01"),
+            teenager = s("\u0E27\u0E31\u0E22\u0E23\u0E38\u0E48\u0E19"),
+            adult = s("\u0E1C\u0E39\u0E49\u0E43\u0E2B\u0E0D\u0E48")
         )
     )
 
@@ -1222,12 +1222,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "Yeni do\u011Fan",
         stages = Stages(
-            newborn = "Yeni do\u011Fan",
-            infant = "Bebek",
-            toddler = "K\u00FC\u00E7\u00FCk \u00E7ocuk",
-            child = "\u00C7ocuk",
-            teenager = "Ergen",
-            adult = "Yeti\u015Fkin"
+            newborn = s("Yeni do\u011Fan"),
+            infant = s("Bebek"),
+            toddler = s("K\u00FC\u00E7\u00FCk \u00E7ocuk"),
+            child = s("\u00C7ocuk"),
+            teenager = s("Ergen"),
+            adult = s("Yeti\u015Fkin")
         )
     )
 
@@ -1255,12 +1255,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "\u041D\u043E\u0432\u043E\u043D\u0430\u0440\u043E\u0434\u0436\u0435\u043D\u0438\u0439",
         stages = Stages(
-            newborn = "\u041D\u043E\u0432\u043E\u043D\u0430\u0440\u043E\u0434\u0436\u0435\u043D\u0438\u0439",
-            infant = "\u041D\u0435\u043C\u043E\u0432\u043B\u044F",
-            toddler = "\u041C\u0430\u043B\u044E\u043A",
-            child = "\u0414\u0438\u0442\u0438\u043D\u0430",
-            teenager = "\u041F\u0456\u0434\u043B\u0456\u0442\u043E\u043A",
-            adult = "\u0414\u043E\u0440\u043E\u0441\u043B\u0438\u0439"
+            newborn = g("\u041D\u043E\u0432\u043E\u043D\u0430\u0440\u043E\u0434\u0436\u0435\u043D\u0438\u0439", "\u041D\u043E\u0432\u043E\u043D\u0430\u0440\u043E\u0434\u0436\u0435\u043D\u0430"),
+            infant = s("\u041D\u0435\u043C\u043E\u0432\u043B\u044F"),
+            toddler = s("\u041C\u0430\u043B\u044E\u043A"),
+            child = s("\u0414\u0438\u0442\u0438\u043D\u0430"),
+            teenager = s("\u041F\u0456\u0434\u043B\u0456\u0442\u043E\u043A"),
+            adult = g("\u0414\u043E\u0440\u043E\u0441\u043B\u0438\u0439", "\u0414\u043E\u0440\u043E\u0441\u043B\u0430")
         )
     )
 
@@ -1269,7 +1269,7 @@ public object Locales {
     // ================================================================
     public val UR: AgeLocale = AgeLocale(
         code = "ur",
-        plural = { n -> if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
         units = Units(
             day = pluralUnit(mapOf(PluralCategory.ONE to "{n} \u062F\u0646", PluralCategory.OTHER to "{n} \u062F\u0646")),
             week = pluralUnit(mapOf(PluralCategory.ONE to "{n} \u06C1\u0641\u062A\u06C1", PluralCategory.OTHER to "{n} \u06C1\u0641\u062A\u06D2")),
@@ -1280,12 +1280,12 @@ public object Locales {
         delimiter = "\u060C ",
         justBorn = "\u0646\u0648\u0645\u0648\u0644\u0648\u062F",
         stages = Stages(
-            newborn = "\u0646\u0648\u0645\u0648\u0644\u0648\u062F",
-            infant = "\u0634\u06CC\u0631\u062E\u0648\u0627\u0631",
-            toddler = "\u0686\u06BE\u0648\u0679\u0627 \u0628\u0686\u06C1",
-            child = "\u0628\u0686\u06C1",
-            teenager = "\u0646\u0648\u062C\u0648\u0627\u0646",
-            adult = "\u0628\u0627\u0644\u063A"
+            newborn = s("\u0646\u0648\u0645\u0648\u0644\u0648\u062F"),
+            infant = s("\u0634\u06CC\u0631\u062E\u0648\u0627\u0631"),
+            toddler = g("\u0686\u06BE\u0648\u0679\u0627 \u0628\u0686\u06C1", "\u0686\u06BE\u0648\u0679\u06CC \u0628\u0686\u06CC"),
+            child = g("\u0628\u0686\u06C1", "\u0628\u0686\u06CC"),
+            teenager = s("\u0646\u0648\u062C\u0648\u0627\u0646"),
+            adult = s("\u0628\u0627\u0644\u063A")
         )
     )
 
@@ -1305,12 +1305,12 @@ public object Locales {
         delimiter = ", ",
         justBorn = "S\u01A1 sinh",
         stages = Stages(
-            newborn = "S\u01A1 sinh",
-            infant = "Tr\u1EBB s\u01A1 sinh",
-            toddler = "Tr\u1EBB m\u1EDBi bi\u1EBFt \u0111i",
-            child = "Tr\u1EBB em",
-            teenager = "Thi\u1EBFu ni\u00EAn",
-            adult = "Ng\u01B0\u1EDDi l\u1EDBn"
+            newborn = s("S\u01A1 sinh"),
+            infant = s("Tr\u1EBB s\u01A1 sinh"),
+            toddler = s("Tr\u1EBB m\u1EDBi bi\u1EBFt \u0111i"),
+            child = s("Tr\u1EBB em"),
+            teenager = s("Thi\u1EBFu ni\u00EAn"),
+            adult = s("Ng\u01B0\u1EDDi l\u1EDBn")
         )
     )
 
@@ -1330,12 +1330,12 @@ public object Locales {
         delimiter = "",
         justBorn = "\u65B0\u751F\u513F",
         stages = Stages(
-            newborn = "\u65B0\u751F\u513F",
-            infant = "\u5A74\u513F",
-            toddler = "\u5E7C\u513F",
-            child = "\u513F\u7AE5",
-            teenager = "\u9752\u5C11\u5E74",
-            adult = "\u6210\u4EBA"
+            newborn = s("\u65B0\u751F\u513F"),
+            infant = s("\u5A74\u513F"),
+            toddler = s("\u5E7C\u513F"),
+            child = s("\u513F\u7AE5"),
+            teenager = s("\u9752\u5C11\u5E74"),
+            adult = s("\u6210\u4EBA")
         )
     )
 

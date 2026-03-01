@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Persian (Farsi) locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: " و ".to_string(),
         just_born: "نوزاد".to_string(),
         stages: Stages {
-            newborn: "نوزاد".to_string(),
-            infant: "شیرخوار".to_string(),
-            toddler: "نوپا".to_string(),
-            child: "کودک".to_string(),
-            teenager: "نوجوان".to_string(),
-            adult: "بزرگسال".to_string(),
+            newborn: StageLabel::Neutral("نوزاد".to_string()),
+            infant: StageLabel::Neutral("شیرخوار".to_string()),
+            toddler: StageLabel::Neutral("نوپا".to_string()),
+            child: StageLabel::Neutral("کودک".to_string()),
+            teenager: StageLabel::Neutral("نوجوان".to_string()),
+            adult: StageLabel::Neutral("بزرگسال".to_string()),
         },
         short: None,
         compact: None,

@@ -15,12 +15,12 @@ var HU = AgeLocale{
 	Half:      "{n} és fél",
 	Delimiter: ", ",
 	JustBorn:  "Újszülött",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Újszülött",
-		Infant:   "Csecsemő",
-		Toddler:  "Kisgyermek",
-		Child:    "Gyermek",
-		Teenager: "Tinédzser",
-		Adult:    "Felnőtt",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Újszülött"),
+		Infant:   S("Csecsemő"),
+		Toddler:  S("Kisgyermek"),
+		Child:    S("Gyermek"),
+		Teenager: S("Tinédzser"),
+		Adult:    S("Felnőtt"),
 	},
 }

@@ -18,6 +18,6 @@ export const de: AgeLocale = {
     toddler: 'Kleinkind',
     child: 'Kind',
     teenager: 'Teenager',
-    adult: 'Erwachsener',
+    adult: { m: 'Erwachsener', f: 'Erwachsene' },
   },
 };

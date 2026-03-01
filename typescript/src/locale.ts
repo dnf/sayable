@@ -1,6 +1,12 @@
 /** CLDR-inspired plural categories. */
 export type PluralCategory = 'zero' | 'one' | 'two' | 'few' | 'many' | 'other';
 
+/** Grammatical gender for stage labels. */
+export type Gender = 'm' | 'f';
+
+/** A stage label: plain string (gender-neutral) or gendered pair. */
+export type StageLabel = string | { m: string; f: string };
+
 /** A unit's display forms: either a single template or per-plural-category templates. */
 export type UnitForms = string | (Record<'other', string> & Partial<Record<PluralCategory, string>>);
 
@@ -34,12 +40,12 @@ export interface AgeLocale {
   delimiter: string;
   justBorn: string;
   stages: {
-    newborn: string;
-    infant: string;
-    toddler: string;
-    child: string;
-    teenager: string;
-    adult: string;
+    newborn: StageLabel;
+    infant: StageLabel;
+    toddler: StageLabel;
+    child: StageLabel;
+    teenager: StageLabel;
+    adult: StageLabel;
   };
   short?: CompactnessOverride;
   compact?: CompactnessOverride;
@@ -68,6 +74,12 @@ export function resolveUnit(count: number, unitForms: UnitForms, locale: AgeLoca
     result = half.replace('{0}', result);
   }
   return result;
+}
+
+/** Resolve a StageLabel to a plain string given an optional gender. */
+export function resolveStage(label: StageLabel, gender?: Gender): string {
+  if (typeof label === 'string') return label;
+  return gender === 'f' ? label.f : label.m;
 }
 
 /** English locale. */

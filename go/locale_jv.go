@@ -15,12 +15,12 @@ var JV = AgeLocale{
 	Half:      "{0} setengah",
 	Delimiter: ", ",
 	JustBorn:  "Bayi anyar",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Bayi anyar",
-		Infant:   "Bayi",
-		Toddler:  "Balita",
-		Child:    "Bocah",
-		Teenager: "Remaja",
-		Adult:    "Diwasa",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Bayi anyar"),
+		Infant:   S("Bayi"),
+		Toddler:  S("Balita"),
+		Child:    S("Bocah"),
+		Teenager: S("Remaja"),
+		Adult:    S("Diwasa"),
 	},
 }

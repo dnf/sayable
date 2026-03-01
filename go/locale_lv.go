@@ -4,10 +4,12 @@ package parenttime
 var LV = AgeLocale{
 	Code: "lv",
 	Plural: func(n int) PluralCategory {
-		if n == 0 {
+		mod10 := n % 10
+		mod100 := n % 100
+		if mod10 == 0 || (mod100 >= 11 && mod100 <= 19) {
 			return Zero
 		}
-		if n%10 == 1 && n%100 != 11 {
+		if mod10 == 1 && mod100 != 11 {
 			return One
 		}
 		return Other
@@ -21,12 +23,12 @@ var LV = AgeLocale{
 	Half:      "{n}\u00BD",
 	Delimiter: ", ",
 	JustBorn:  "Jaundzimušais",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Jaundzimušais",
-		Infant:   "Zīdainis",
-		Toddler:  "Mazulis",
-		Child:    "Bērns",
-		Teenager: "Pusaudzis",
-		Adult:    "Pieaugušais",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("Jaundzimušais", "Jaundzimušā"),
+		Infant:   G("Zīdainis", "Zīdaine"),
+		Toddler:  G("Mazulis", "Mazule"),
+		Child:    S("Bērns"),
+		Teenager: G("Pusaudzis", "Pusaudze"),
+		Adult:    G("Pieaugušais", "Pieaugusī"),
 	},
 }

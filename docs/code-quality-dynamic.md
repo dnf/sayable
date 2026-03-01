@@ -1,6 +1,6 @@
 # Code Quality: Dynamic Languages
 
-Detailed configuration rationale for TypeScript, Python, and Ruby.
+Detailed configuration rationale for TypeScript, Python, Ruby, and PHP.
 
 ---
 
@@ -171,3 +171,41 @@ RuboCop 1.85 introduced automatic plugin detection that tries to load
 their corresponding libraries. This works well on Ruby 3.x in CI. On Ruby 4.0
 (which extracted several stdlib gems), additional `gem` declarations may be
 needed in the Gemfile to satisfy rubocop's transitive dependencies.
+
+---
+
+## PHP
+
+### PHPStan
+
+PHPStan runs at **level 9** (maximum), configured in `phpstan.neon`:
+
+- Level 9 enables all checks including strict union type analysis
+- CLDR plural range checks suppressed: `smallerOrEqual.alwaysTrue` and `notIdentical.alwaysTrue` in `Locales.php` — these are intentional CLDR-faithful range bounds that PHPStan proves redundant from prior conditions
+
+### PHP-CS-Fixer
+
+Configured in `.php-cs-fixer.php`:
+
+- **PER-CS2.0** coding standard (PHP-FIG's latest)
+- **Risky rules enabled** — includes rules that may change code behavior
+- `native_function_invocation` — backslash-prefixes all native PHP function calls for opcache optimization
+- `declare_strict_types` — enforced in every file
+- `no_unused_imports` — dead import detection
+- `ordered_imports` — alphabetical ordering
+
+### PHPUnit
+
+Configured in `phpunit.xml`:
+
+- `failOnRisky="true"` — tests that don't assert anything fail
+- `failOnWarning="true"` — PHPUnit warnings treated as failures
+- `executionOrder="depends,defects"` — run dependent tests in order, failed tests first
+
+### Language-level strictness
+
+- `declare(strict_types=1)` in every file — no implicit type coercion
+- `readonly` classes for all immutable data types (`AgeLocale`, `Stages`, `Units`, `CompactnessOverride`)
+- PHP 8.1+ enums for `PluralCategory` and `Compactness` (type-safe, no magic strings)
+- `final` classes — prevents inheritance of data types
+- Named arguments throughout — explicit constructor parameter binding

@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Thai locale.
 pub fn locale() -> AgeLocale {
@@ -15,12 +15,12 @@ pub fn locale() -> AgeLocale {
         delimiter: " ".to_string(),
         just_born: "แรกเกิด".to_string(),
         stages: Stages {
-            newborn: "แรกเกิด".to_string(),
-            infant: "ทารก".to_string(),
-            toddler: "เด็กวัยเตาะแตะ".to_string(),
-            child: "เด็ก".to_string(),
-            teenager: "วัยรุ่น".to_string(),
-            adult: "ผู้ใหญ่".to_string(),
+            newborn: StageLabel::Neutral("แรกเกิด".to_string()),
+            infant: StageLabel::Neutral("ทารก".to_string()),
+            toddler: StageLabel::Neutral("เด็กวัยเตาะแตะ".to_string()),
+            child: StageLabel::Neutral("เด็ก".to_string()),
+            teenager: StageLabel::Neutral("วัยรุ่น".to_string()),
+            adult: StageLabel::Neutral("ผู้ใหญ่".to_string()),
         },
         short: None,
         compact: None,

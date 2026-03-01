@@ -23,12 +23,12 @@ var RU = AgeLocale{
 	Half:      "{n} с половиной",
 	Delimiter: ", ",
 	JustBorn:  "Новорождённый",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Новорождённый",
-		Infant:   "Младенец",
-		Toddler:  "Малыш",
-		Child:    "Ребёнок",
-		Teenager: "Подросток",
-		Adult:    "Взрослый",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("Новорождённый", "Новорождённая"),
+		Infant:   S("Младенец"),
+		Toddler:  G("Малыш", "Малышка"),
+		Child:    S("Ребёнок"),
+		Teenager: S("Подросток"),
+		Adult:    G("Взрослый", "Взрослая"),
 	},
 }

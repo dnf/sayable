@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Albanian locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Sapolindur".to_string(),
         stages: Stages {
-            newborn: "Sapolindur".to_string(),
-            infant: "Foshnjë".to_string(),
-            toddler: "Fëmijë i vogël".to_string(),
-            child: "Fëmijë".to_string(),
-            teenager: "Adoleshent".to_string(),
-            adult: "I rritur".to_string(),
+            newborn: StageLabel::Gendered { m: "Sapolindur".to_string(), f: "Sapolindure".to_string() },
+            infant: StageLabel::Neutral("Foshnjë".to_string()),
+            toddler: StageLabel::Gendered { m: "Fëmijë i vogël".to_string(), f: "Fëmijë e vogël".to_string() },
+            child: StageLabel::Neutral("Fëmijë".to_string()),
+            teenager: StageLabel::Gendered { m: "Adoleshent".to_string(), f: "Adoleshente".to_string() },
+            adult: StageLabel::Gendered { m: "I rritur".to_string(), f: "E rritur".to_string() },
         },
         short: None,
         compact: None,

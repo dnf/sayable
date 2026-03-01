@@ -18,12 +18,12 @@ var FA = AgeLocale{
 	Half:      "{0} و نیم",
 	Delimiter: " و ",
 	JustBorn:  "نوزاد",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "نوزاد",
-		Infant:   "شیرخوار",
-		Toddler:  "نوپا",
-		Child:    "کودک",
-		Teenager: "نوجوان",
-		Adult:    "بزرگسال",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("نوزاد"),
+		Infant:   S("شیرخوار"),
+		Toddler:  S("نوپا"),
+		Child:    S("کودک"),
+		Teenager: S("نوجوان"),
+		Adult:    S("بزرگسال"),
 	},
 }

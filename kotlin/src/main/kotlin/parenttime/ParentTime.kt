@@ -236,18 +236,20 @@ public class ParentTime(
     /**
      * Returns the developmental stage label based on age.
      * Returns null if dateOfBirth is empty or in the future.
+     * [gender] can be "m" or "f" for gendered locales; null defaults to masculine.
      */
-    public fun formatStage(dateOfBirth: String, asOf: String? = null): String? {
+    public fun formatStage(dateOfBirth: String, asOf: String? = null, gender: String? = null): String? {
         val age = parseAge(dateOfBirth, asOf) ?: return null
-        return when (stageKey(age.months)) {
+        val label = when (stageKey(age.months)) {
             "newborn" -> locale.stages.newborn
             "infant" -> locale.stages.infant
             "toddler" -> locale.stages.toddler
             "child" -> locale.stages.child
             "teenager" -> locale.stages.teenager
             "adult" -> locale.stages.adult
-            else -> null
+            else -> return null
         }
+        return label.resolve(gender)
     }
 
     public companion object {
@@ -262,7 +264,7 @@ public class ParentTime(
         /**
          * Returns the developmental stage using the default English locale.
          */
-        public fun formatStage(dateOfBirth: String, asOf: String? = null): String? =
-            defaultPt.formatStage(dateOfBirth, asOf)
+        public fun formatStage(dateOfBirth: String, asOf: String? = null, gender: String? = null): String? =
+            defaultPt.formatStage(dateOfBirth, asOf, gender)
     }
 }

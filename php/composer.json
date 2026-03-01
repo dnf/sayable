@@ -1,0 +1,52 @@
+{
+    "name": "dnf/parent-time",
+    "description": "Human-friendly age formatting the way parents actually talk",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Don Neufeld"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0 || ^11.0",
+        "phpstan/phpstan": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ParentTime\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ParentTime\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse",
+        "cs-fix": "php-cs-fixer fix",
+        "cs-check": "php-cs-fixer fix --dry-run --diff"
+    },
+    "homepage": "https://github.com/dnf/parent-time",
+    "keywords": [
+        "age",
+        "baby",
+        "infant",
+        "format",
+        "parent",
+        "pediatric",
+        "newborn"
+    ],
+    "support": {
+        "issues": "https://github.com/dnf/parent-time/issues",
+        "source": "https://github.com/dnf/parent-time/tree/main/php"
+    }
+}

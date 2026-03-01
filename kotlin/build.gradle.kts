@@ -9,6 +9,8 @@ repositories {
     mavenCentral()
 }
 
+description = "Human-friendly age formatting the way parents actually talk"
+
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17

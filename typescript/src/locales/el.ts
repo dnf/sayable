@@ -13,7 +13,11 @@ export const el: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Νεογέννητο',
   stages: {
-    newborn: 'Νεογέννητο', infant: 'Βρέφος', toddler: 'Νήπιο',
-    child: 'Παιδί', teenager: 'Έφηβος', adult: 'Ενήλικας',
+    newborn: 'Νεογέννητο',
+    infant: 'Βρέφος',
+    toddler: 'Νήπιο',
+    child: 'Παιδί',
+    teenager: { m: 'Έφηβος', f: 'Έφηβη' },
+    adult: { m: 'Ενήλικας', f: 'Ενήλικη' },
   },
 };

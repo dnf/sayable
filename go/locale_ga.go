@@ -15,12 +15,12 @@ var GA = AgeLocale{
 	Half:      "{0} go leith",
 	Delimiter: ", ",
 	JustBorn:  "Nuabheirthe",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Nuabheirthe",
-		Infant:   "Naíonán",
-		Toddler:  "Lapadán",
-		Child:    "Páiste",
-		Teenager: "Déagóir",
-		Adult:    "Duine fásta",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Nuabheirthe"),
+		Infant:   S("Naíonán"),
+		Toddler:  S("Lapadán"),
+		Child:    S("Páiste"),
+		Teenager: S("Déagóir"),
+		Adult:    S("Duine fásta"),
 	},
 }

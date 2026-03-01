@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Vietnamese locale.
 pub fn locale() -> AgeLocale {
@@ -15,12 +15,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Sơ sinh".to_string(),
         stages: Stages {
-            newborn: "Sơ sinh".to_string(),
-            infant: "Trẻ sơ sinh".to_string(),
-            toddler: "Trẻ mới biết đi".to_string(),
-            child: "Trẻ em".to_string(),
-            teenager: "Thiếu niên".to_string(),
-            adult: "Người lớn".to_string(),
+            newborn: StageLabel::Neutral("Sơ sinh".to_string()),
+            infant: StageLabel::Neutral("Trẻ sơ sinh".to_string()),
+            toddler: StageLabel::Neutral("Trẻ mới biết đi".to_string()),
+            child: StageLabel::Neutral("Trẻ em".to_string()),
+            teenager: StageLabel::Neutral("Thiếu niên".to_string()),
+            adult: StageLabel::Neutral("Người lớn".to_string()),
         },
         short: None,
         compact: None,

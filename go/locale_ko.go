@@ -15,12 +15,12 @@ var KO = AgeLocale{
 	Half:      "{0} 반",
 	Delimiter: " ",
 	JustBorn:  "신생아",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "신생아",
-		Infant:   "영아",
-		Toddler:  "유아",
-		Child:    "아동",
-		Teenager: "청소년",
-		Adult:    "성인",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("신생아"),
+		Infant:   S("영아"),
+		Toddler:  S("유아"),
+		Child:    S("아동"),
+		Teenager: S("청소년"),
+		Adult:    S("성인"),
 	},
 }

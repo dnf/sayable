@@ -31,12 +31,12 @@ var AR = AgeLocale{
 	Half:      "{0} ونصف",
 	Delimiter: " و",
 	JustBorn:  "حديث الولادة",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "حديث الولادة",
-		Infant:   "رضيع",
-		Toddler:  "طفل صغير",
-		Child:    "طفل",
-		Teenager: "مراهق",
-		Adult:    "بالغ",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("حديث الولادة", "حديثة الولادة"),
+		Infant:   G("رضيع", "رضيعة"),
+		Toddler:  G("طفل صغير", "طفلة صغيرة"),
+		Child:    G("طفل", "طفلة"),
+		Teenager: G("مراهق", "مراهقة"),
+		Adult:    G("بالغ", "بالغة"),
 	},
 }

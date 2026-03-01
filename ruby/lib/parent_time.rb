@@ -16,8 +16,8 @@ module ParentTime
     @default_formatter.format_age(date_of_birth, as_of)
   end
 
-  def self.format_stage(date_of_birth, as_of = nil)
+  def self.format_stage(date_of_birth, as_of = nil, gender: nil)
     @default_formatter ||= Formatter.new(Locales::EN)
-    @default_formatter.format_stage(date_of_birth, as_of)
+    @default_formatter.format_stage(date_of_birth, as_of, gender: gender)
   end
 end

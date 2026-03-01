@@ -3,6 +3,7 @@
 use parent_time::formatter::{format_age, format_stage, ParentTime};
 use parent_time::locales;
 use parent_time::types::*;
+use parent_time::Gender;
 
 // ================================================================
 // Helper functions
@@ -487,16 +488,12 @@ fn test_format_age_born_on_31st() {
 // formatAge -- default asOf (uses current date)
 // ================================================================
 // Note: We can't easily mock time in Rust without test-specific machinery.
-// Instead, we test that format_age with None as_of returns Some (not None)
-// for a DOB in the past.
 #[test]
 fn test_format_age_default_as_of() {
-    // A DOB far in the past should always return Some
-    let result = format_age("2020-01-01", None);
-    assert!(result.is_some(), "Expected Some for past DOB with default asOf");
-
-    let result = format_age("1980-01-01", None);
-    assert!(result.is_some(), "Expected Some for 1980 DOB with default asOf");
+    parent_time::_set_now_for_testing(Some((2025, 6, 15)));
+    assert_age("5 years from today", format_age("2020-01-01", None), "5 years");
+    assert_age("5 days from today", format_age("2025-06-10", None), "5 days");
+    parent_time::_set_now_for_testing(None);
 }
 
 // ================================================================
@@ -504,10 +501,10 @@ fn test_format_age_default_as_of() {
 // ================================================================
 #[test]
 fn test_format_stage_null_edge_cases() {
-    assert_nil("empty string", format_stage("", Some("2025-06-15")));
+    assert_nil("empty string", format_stage("", Some("2025-06-15"), None));
     assert_nil(
         "future dob",
-        format_stage("2025-07-01", Some("2025-06-15")),
+        format_stage("2025-07-01", Some("2025-06-15"), None),
     );
 }
 
@@ -518,32 +515,32 @@ fn test_format_stage_null_edge_cases() {
 fn test_format_stage_newborn() {
     assert_age(
         "born today",
-        format_stage("2025-06-15", Some("2025-06-15")),
+        format_stage("2025-06-15", Some("2025-06-15"), None),
         "Newborn",
     );
     assert_age(
         "1 day old",
-        format_stage("2025-06-14", Some("2025-06-15")),
+        format_stage("2025-06-14", Some("2025-06-15"), None),
         "Newborn",
     );
     assert_age(
         "3 weeks old",
-        format_stage("2025-05-25", Some("2025-06-15")),
+        format_stage("2025-05-25", Some("2025-06-15"), None),
         "Newborn",
     );
     assert_age(
         "1 month old",
-        format_stage("2025-05-15", Some("2025-06-15")),
+        format_stage("2025-05-15", Some("2025-06-15"), None),
         "Newborn",
     );
     assert_age(
         "1 month 29 days",
-        format_stage("2025-04-16", Some("2025-06-15")),
+        format_stage("2025-04-16", Some("2025-06-15"), None),
         "Newborn",
     );
     assert_age(
         "exactly 2 months -> Infant",
-        format_stage("2025-04-15", Some("2025-06-15")),
+        format_stage("2025-04-15", Some("2025-06-15"), None),
         "Infant",
     );
 }
@@ -555,22 +552,22 @@ fn test_format_stage_newborn() {
 fn test_format_stage_infant() {
     assert_age(
         "2 months",
-        format_stage("2025-04-15", Some("2025-06-15")),
+        format_stage("2025-04-15", Some("2025-06-15"), None),
         "Infant",
     );
     assert_age(
         "6 months",
-        format_stage("2024-12-15", Some("2025-06-15")),
+        format_stage("2024-12-15", Some("2025-06-15"), None),
         "Infant",
     );
     assert_age(
         "11 months",
-        format_stage("2024-07-15", Some("2025-06-15")),
+        format_stage("2024-07-15", Some("2025-06-15"), None),
         "Infant",
     );
     assert_age(
         "exactly 12mo -> Toddler",
-        format_stage("2024-06-15", Some("2025-06-15")),
+        format_stage("2024-06-15", Some("2025-06-15"), None),
         "Toddler",
     );
 }
@@ -582,27 +579,27 @@ fn test_format_stage_infant() {
 fn test_format_stage_toddler() {
     assert_age(
         "12 months",
-        format_stage("2024-06-15", Some("2025-06-15")),
+        format_stage("2024-06-15", Some("2025-06-15"), None),
         "Toddler",
     );
     assert_age(
         "18 months",
-        format_stage("2024-01-15", Some("2025-07-15")),
+        format_stage("2024-01-15", Some("2025-07-15"), None),
         "Toddler",
     );
     assert_age(
         "24 months",
-        format_stage("2023-06-15", Some("2025-06-15")),
+        format_stage("2023-06-15", Some("2025-06-15"), None),
         "Toddler",
     );
     assert_age(
         "35 months",
-        format_stage("2023-06-15", Some("2026-05-15")),
+        format_stage("2023-06-15", Some("2026-05-15"), None),
         "Toddler",
     );
     assert_age(
         "exactly 36mo -> Child",
-        format_stage("2022-06-15", Some("2025-06-15")),
+        format_stage("2022-06-15", Some("2025-06-15"), None),
         "Child",
     );
 }
@@ -614,32 +611,32 @@ fn test_format_stage_toddler() {
 fn test_format_stage_child() {
     assert_age(
         "3 years",
-        format_stage("2022-06-15", Some("2025-06-15")),
+        format_stage("2022-06-15", Some("2025-06-15"), None),
         "Child",
     );
     assert_age(
         "4 years",
-        format_stage("2021-06-15", Some("2025-06-15")),
+        format_stage("2021-06-15", Some("2025-06-15"), None),
         "Child",
     );
     assert_age(
         "6 years",
-        format_stage("2019-06-15", Some("2025-06-15")),
+        format_stage("2019-06-15", Some("2025-06-15"), None),
         "Child",
     );
     assert_age(
         "9 years",
-        format_stage("2016-06-15", Some("2025-06-15")),
+        format_stage("2016-06-15", Some("2025-06-15"), None),
         "Child",
     );
     assert_age(
         "12y 11mo",
-        format_stage("2013-06-15", Some("2026-05-15")),
+        format_stage("2013-06-15", Some("2026-05-15"), None),
         "Child",
     );
     assert_age(
         "exactly 13y -> Teenager",
-        format_stage("2012-06-15", Some("2025-06-15")),
+        format_stage("2012-06-15", Some("2025-06-15"), None),
         "Teenager",
     );
 }
@@ -651,22 +648,22 @@ fn test_format_stage_child() {
 fn test_format_stage_teenager() {
     assert_age(
         "13 years",
-        format_stage("2012-06-15", Some("2025-06-15")),
+        format_stage("2012-06-15", Some("2025-06-15"), None),
         "Teenager",
     );
     assert_age(
         "15 years",
-        format_stage("2010-06-15", Some("2025-06-15")),
+        format_stage("2010-06-15", Some("2025-06-15"), None),
         "Teenager",
     );
     assert_age(
         "17y 11mo",
-        format_stage("2008-06-15", Some("2026-05-15")),
+        format_stage("2008-06-15", Some("2026-05-15"), None),
         "Teenager",
     );
     assert_age(
         "exactly 18y -> Adult",
-        format_stage("2007-06-15", Some("2025-06-15")),
+        format_stage("2007-06-15", Some("2025-06-15"), None),
         "Adult",
     );
 }
@@ -678,17 +675,17 @@ fn test_format_stage_teenager() {
 fn test_format_stage_adult() {
     assert_age(
         "18 years",
-        format_stage("2007-06-15", Some("2025-06-15")),
+        format_stage("2007-06-15", Some("2025-06-15"), None),
         "Adult",
     );
     assert_age(
         "25 years",
-        format_stage("2000-06-15", Some("2025-06-15")),
+        format_stage("2000-06-15", Some("2025-06-15"), None),
         "Adult",
     );
     assert_age(
         "45 years",
-        format_stage("1980-01-01", Some("2025-06-15")),
+        format_stage("1980-01-01", Some("2025-06-15"), None),
         "Adult",
     );
 }
@@ -698,9 +695,11 @@ fn test_format_stage_adult() {
 // ================================================================
 #[test]
 fn test_format_stage_default_as_of() {
-    // A DOB far in the past should always return Some
-    let result = format_stage("1980-01-01", None);
-    assert!(result.is_some(), "Expected Some for past DOB stage");
+    parent_time::_set_now_for_testing(Some((2025, 6, 15)));
+    assert_age("Newborn", format_stage("2025-06-15", None, None), "Newborn");
+    assert_age("Child", format_stage("2020-01-01", None, None), "Child");
+    assert_age("Adult", format_stage("1980-01-01", None, None), "Adult");
+    parent_time::_set_now_for_testing(None);
 }
 
 // ================================================================
@@ -747,37 +746,37 @@ fn test_parent_time_english() {
 
     assert_age(
         "stage Newborn",
-        pt.format_stage("2025-06-15", Some("2025-06-15")),
+        pt.format_stage("2025-06-15", Some("2025-06-15"), None),
         "Newborn",
     );
     assert_age(
         "stage Infant",
-        pt.format_stage("2025-01-15", Some("2025-06-15")),
+        pt.format_stage("2025-01-15", Some("2025-06-15"), None),
         "Infant",
     );
     assert_age(
         "stage Toddler",
-        pt.format_stage("2024-06-15", Some("2025-06-15")),
+        pt.format_stage("2024-06-15", Some("2025-06-15"), None),
         "Toddler",
     );
     assert_age(
         "stage Child",
-        pt.format_stage("2022-06-15", Some("2025-06-15")),
+        pt.format_stage("2022-06-15", Some("2025-06-15"), None),
         "Child",
     );
     assert_age(
         "stage Teenager",
-        pt.format_stage("2012-06-15", Some("2025-06-15")),
+        pt.format_stage("2012-06-15", Some("2025-06-15"), None),
         "Teenager",
     );
     assert_age(
         "stage Adult",
-        pt.format_stage("2007-06-15", Some("2025-06-15")),
+        pt.format_stage("2007-06-15", Some("2025-06-15"), None),
         "Adult",
     );
 
     assert_nil("null age", pt.format_age("", None));
-    assert_nil("null stage", pt.format_stage("", None));
+    assert_nil("null stage", pt.format_stage("", None, None));
 }
 
 // ================================================================
@@ -816,12 +815,12 @@ fn test_parent_time_spanish() {
         delimiter: ", ".to_string(),
         just_born: "Reci\u{00E9}n nacido".to_string(),
         stages: Stages {
-            newborn: "Reci\u{00E9}n nacido".to_string(),
-            infant: "Beb\u{00E9}".to_string(),
-            toddler: "Ni\u{00F1}o peque\u{00F1}o".to_string(),
-            child: "Ni\u{00F1}o".to_string(),
-            teenager: "Adolescente".to_string(),
-            adult: "Adulto".to_string(),
+            newborn: StageLabel::Gendered { m: "Reci\u{00E9}n nacido".to_string(), f: "Reci\u{00E9}n nacida".to_string() },
+            infant: StageLabel::Neutral("Beb\u{00E9}".to_string()),
+            toddler: StageLabel::Gendered { m: "Ni\u{00F1}o peque\u{00F1}o".to_string(), f: "Ni\u{00F1}a peque\u{00F1}a".to_string() },
+            child: StageLabel::Gendered { m: "Ni\u{00F1}o".to_string(), f: "Ni\u{00F1}a".to_string() },
+            teenager: StageLabel::Neutral("Adolescente".to_string()),
+            adult: StageLabel::Gendered { m: "Adulto".to_string(), f: "Adulta".to_string() },
         },
         short: None,
         compact: None,
@@ -894,37 +893,37 @@ fn test_parent_time_spanish() {
 
     assert_age(
         "stage newborn",
-        pt.format_stage("2025-06-15", Some("2025-06-15")),
+        pt.format_stage("2025-06-15", Some("2025-06-15"), None),
         "Recién nacido",
     );
     assert_age(
         "stage infant",
-        pt.format_stage("2025-01-15", Some("2025-06-15")),
+        pt.format_stage("2025-01-15", Some("2025-06-15"), None),
         "Bebé",
     );
     assert_age(
         "stage toddler",
-        pt.format_stage("2024-06-15", Some("2025-06-15")),
+        pt.format_stage("2024-06-15", Some("2025-06-15"), None),
         "Niño pequeño",
     );
     assert_age(
         "stage child",
-        pt.format_stage("2022-06-15", Some("2025-06-15")),
+        pt.format_stage("2022-06-15", Some("2025-06-15"), None),
         "Niño",
     );
     assert_age(
         "stage teenager",
-        pt.format_stage("2012-06-15", Some("2025-06-15")),
+        pt.format_stage("2012-06-15", Some("2025-06-15"), None),
         "Adolescente",
     );
     assert_age(
         "stage adult",
-        pt.format_stage("2007-06-15", Some("2025-06-15")),
+        pt.format_stage("2007-06-15", Some("2025-06-15"), None),
         "Adulto",
     );
 
     assert_nil("null", pt.format_age("", None));
-    assert_nil("null stage", pt.format_stage("", None));
+    assert_nil("null stage", pt.format_stage("", None, None));
 }
 
 // ================================================================
@@ -976,7 +975,7 @@ fn test_parent_time_compact_short() {
     );
     assert_age(
         "stages unchanged",
-        pt.format_stage("2025-01-15", Some("2025-06-15")),
+        pt.format_stage("2025-01-15", Some("2025-06-15"), None),
         "Infant",
     );
 }
@@ -1340,11 +1339,281 @@ fn test_all_locales_construct() {
         );
 
         // stage
-        let result = pt.format_stage("2025-06-15", Some("2025-06-15"));
+        let result = pt.format_stage("2025-06-15", Some("2025-06-15"), None);
         assert!(
             result.is_some(),
             "Locale {} should return Some for stage",
             locale.code
         );
     }
+}
+
+// ================================================================
+// formatStage -- gender support
+// ================================================================
+#[test]
+fn test_format_stage_gender_neutral_locale() {
+    // English has no gendered stages — gender param should be ignored
+    let pt = ParentTime::new(&locales::EN, Compactness::Normal);
+    assert_age(
+        "EN newborn None",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), None),
+        "Newborn",
+    );
+    assert_age(
+        "EN newborn M",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Newborn",
+    );
+    assert_age(
+        "EN newborn F",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Newborn",
+    );
+    assert_age(
+        "EN adult None",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), None),
+        "Adult",
+    );
+    assert_age(
+        "EN adult M",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Adult",
+    );
+    assert_age(
+        "EN adult F",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Adult",
+    );
+}
+
+#[test]
+fn test_format_stage_gender_spanish() {
+    // Spanish has gendered newborn, toddler, child, adult; neutral infant, teenager
+    let pt = ParentTime::new(&locales::ES, Compactness::Normal);
+
+    // Gendered: newborn
+    assert_age(
+        "ES newborn None -> M",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), None),
+        "Recién nacido",
+    );
+    assert_age(
+        "ES newborn M",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Recién nacido",
+    );
+    assert_age(
+        "ES newborn F",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Recién nacida",
+    );
+
+    // Neutral: infant
+    assert_age(
+        "ES infant None",
+        pt.format_stage("2025-01-15", Some("2025-06-15"), None),
+        "Bebé",
+    );
+    assert_age(
+        "ES infant F",
+        pt.format_stage("2025-01-15", Some("2025-06-15"), Some(Gender::F)),
+        "Bebé",
+    );
+
+    // Gendered: toddler
+    assert_age(
+        "ES toddler M",
+        pt.format_stage("2024-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Niño pequeño",
+    );
+    assert_age(
+        "ES toddler F",
+        pt.format_stage("2024-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Niña pequeña",
+    );
+
+    // Gendered: child
+    assert_age(
+        "ES child M",
+        pt.format_stage("2022-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Niño",
+    );
+    assert_age(
+        "ES child F",
+        pt.format_stage("2022-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Niña",
+    );
+
+    // Neutral: teenager
+    assert_age(
+        "ES teenager None",
+        pt.format_stage("2012-06-15", Some("2025-06-15"), None),
+        "Adolescente",
+    );
+    assert_age(
+        "ES teenager F",
+        pt.format_stage("2012-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Adolescente",
+    );
+
+    // Gendered: adult
+    assert_age(
+        "ES adult M",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Adulto",
+    );
+    assert_age(
+        "ES adult F",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Adulta",
+    );
+}
+
+#[test]
+fn test_format_stage_gender_arabic() {
+    // Arabic has all 6 stages gendered
+    let pt = ParentTime::new(&locales::AR, Compactness::Normal);
+
+    assert_age(
+        "AR newborn M",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "حديث الولادة",
+    );
+    assert_age(
+        "AR newborn F",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "حديثة الولادة",
+    );
+    assert_age(
+        "AR infant M",
+        pt.format_stage("2025-01-15", Some("2025-06-15"), Some(Gender::M)),
+        "رضيع",
+    );
+    assert_age(
+        "AR infant F",
+        pt.format_stage("2025-01-15", Some("2025-06-15"), Some(Gender::F)),
+        "رضيعة",
+    );
+    assert_age(
+        "AR toddler M",
+        pt.format_stage("2024-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "طفل صغير",
+    );
+    assert_age(
+        "AR toddler F",
+        pt.format_stage("2024-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "طفلة صغيرة",
+    );
+    assert_age(
+        "AR child M",
+        pt.format_stage("2022-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "طفل",
+    );
+    assert_age(
+        "AR child F",
+        pt.format_stage("2022-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "طفلة",
+    );
+    assert_age(
+        "AR teenager M",
+        pt.format_stage("2012-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "مراهق",
+    );
+    assert_age(
+        "AR teenager F",
+        pt.format_stage("2012-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "مراهقة",
+    );
+    assert_age(
+        "AR adult M",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "بالغ",
+    );
+    assert_age(
+        "AR adult F",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "بالغة",
+    );
+}
+
+#[test]
+fn test_format_stage_gender_french() {
+    let pt = ParentTime::new(&locales::FR, Compactness::Normal);
+
+    // Gendered: newborn
+    assert_age(
+        "FR newborn M",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Nouveau-né",
+    );
+    assert_age(
+        "FR newborn F",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Nouveau-née",
+    );
+
+    // Neutral: toddler (changed from Bambin to Tout-petit)
+    assert_age(
+        "FR toddler None",
+        pt.format_stage("2024-06-15", Some("2025-06-15"), None),
+        "Tout-petit",
+    );
+
+    // Gendered: teenager
+    assert_age(
+        "FR teenager M",
+        pt.format_stage("2012-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Adolescent",
+    );
+    assert_age(
+        "FR teenager F",
+        pt.format_stage("2012-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Adolescente",
+    );
+
+    // Neutral: adult
+    assert_age(
+        "FR adult None",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), None),
+        "Adulte",
+    );
+}
+
+#[test]
+fn test_format_stage_gender_german() {
+    let pt = ParentTime::new(&locales::DE, Compactness::Normal);
+
+    // All neutral except adult
+    assert_age(
+        "DE adult M",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "Erwachsener",
+    );
+    assert_age(
+        "DE adult F",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Erwachsene",
+    );
+    assert_age(
+        "DE newborn (neutral)",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "Neugeborenes",
+    );
+}
+
+#[test]
+fn test_format_stage_gender_defaults_to_masculine() {
+    // When gender is None, gendered labels should default to masculine
+    let pt = ParentTime::new(&locales::ES, Compactness::Normal);
+    assert_age(
+        "ES newborn None defaults to M",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), None),
+        "Recién nacido",
+    );
+    assert_age(
+        "ES adult None defaults to M",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), None),
+        "Adulto",
+    );
 }

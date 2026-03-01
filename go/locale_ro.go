@@ -22,12 +22,12 @@ var RO = AgeLocale{
 	Half:      "{0} și jumătate",
 	Delimiter: ", ",
 	JustBorn:  "Nou-născut",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Nou-născut",
-		Infant:   "Sugar",
-		Toddler:  "Copil mic",
-		Child:    "Copil",
-		Teenager: "Adolescent",
-		Adult:    "Adult",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("Nou-născut", "Nou-născută"),
+		Infant:   S("Sugar"),
+		Toddler:  S("Copil mic"),
+		Child:    S("Copil"),
+		Teenager: G("Adolescent", "Adolescentă"),
+		Adult:    G("Adult", "Adultă"),
 	},
 }

@@ -14,7 +14,7 @@
 //! // Using the default English locale
 //! assert_eq!(format_age("2025-06-15", Some("2025-06-15")), Some("Newborn".to_string()));
 //! assert_eq!(format_age("2025-06-12", Some("2025-06-15")), Some("3 days".to_string()));
-//! assert_eq!(format_stage("2020-01-01", Some("2025-06-15")), Some("Child".to_string()));
+//! assert_eq!(format_stage("2020-01-01", Some("2025-06-15"), None), Some("Child".to_string()));
 //! ```
 //!
 //! ## Custom Locale
@@ -34,5 +34,5 @@ pub mod locales;
 pub mod types;
 
 // Re-export the main public API
-pub use formatter::{format_age, format_stage, ParentTime};
-pub use types::{AgeLocale, Compactness, CompactnessOverride, PluralCategory, Stages, UnitForms, Units};
+pub use formatter::{format_age, format_stage, ParentTime, _set_now_for_testing};
+pub use types::{AgeLocale, Compactness, CompactnessOverride, Gender, PluralCategory, StageLabel, Stages, UnitForms, Units};

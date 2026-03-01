@@ -22,12 +22,12 @@ module ParentTime
       delimiter: ', ',
       just_born: 'Novorojenček',
       stages: {
-        newborn: 'Novorojenček',
-        infant: 'Dojenček',
-        toddler: 'Malček',
+        newborn: { m: 'Novorojenček', f: 'Novorojenčica' },
+        infant: { m: 'Dojenček', f: 'Dojenčica' },
+        toddler: { m: 'Malček', f: 'Malčica' },
         child: 'Otrok',
-        teenager: 'Najstnik',
-        adult: 'Odrasel'
+        teenager: { m: 'Najstnik', f: 'Najstnica' },
+        adult: { m: 'Odrasel', f: 'Odrasla' }
       }
     )
   end

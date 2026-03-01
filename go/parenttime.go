@@ -233,28 +233,43 @@ func (pt *ParentTime) FormatAge(dateOfBirth string, asOf ...string) *string {
 }
 
 // FormatStage returns the developmental stage label based on age.
+// opts may contain: asOf (YYYY-MM-DD string), gender ("m" or "f").
 // Returns nil if dateOfBirth is empty or in the future.
-func (pt *ParentTime) FormatStage(dateOfBirth string, asOf ...string) *string {
-	age := parseAge(dateOfBirth, asOf...)
+func (pt *ParentTime) FormatStage(dateOfBirth string, opts ...string) *string {
+	var asOfStr string
+	var gender string
+	if len(opts) > 0 {
+		asOfStr = opts[0]
+	}
+	if len(opts) > 1 {
+		gender = opts[1]
+	}
+
+	var asOfArgs []string
+	if asOfStr != "" {
+		asOfArgs = []string{asOfStr}
+	}
+	age := parseAge(dateOfBirth, asOfArgs...)
 	if age == nil {
 		return nil
 	}
 	key := stageKey(age.months)
-	var s string
+	var sl StageLabel
 	switch key {
 	case "newborn":
-		s = pt.locale.Stages.Newborn
+		sl = pt.locale.Stages.Newborn
 	case "infant":
-		s = pt.locale.Stages.Infant
+		sl = pt.locale.Stages.Infant
 	case "toddler":
-		s = pt.locale.Stages.Toddler
+		sl = pt.locale.Stages.Toddler
 	case "child":
-		s = pt.locale.Stages.Child
+		sl = pt.locale.Stages.Child
 	case "teenager":
-		s = pt.locale.Stages.Teenager
+		sl = pt.locale.Stages.Teenager
 	case "adult":
-		s = pt.locale.Stages.Adult
+		sl = pt.locale.Stages.Adult
 	}
+	s := ResolveStage(sl, gender)
 	return &s
 }
 
@@ -267,6 +282,7 @@ func FormatAge(dateOfBirth string, asOf ...string) *string {
 }
 
 // FormatStage returns the developmental stage using the default English locale.
-func FormatStage(dateOfBirth string, asOf ...string) *string {
-	return defaultPT.FormatStage(dateOfBirth, asOf...)
+// opts may contain: asOf (YYYY-MM-DD string), gender ("m" or "f").
+func FormatStage(dateOfBirth string, opts ...string) *string {
+	return defaultPT.FormatStage(dateOfBirth, opts...)
 }

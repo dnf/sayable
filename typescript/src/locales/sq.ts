@@ -13,7 +13,11 @@ export const sq: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Sapolindur',
   stages: {
-    newborn: 'Sapolindur', infant: 'Foshnjë', toddler: 'Fëmijë i vogël',
-    child: 'Fëmijë', teenager: 'Adoleshent', adult: 'I rritur',
+    newborn: { m: 'Sapolindur', f: 'Sapolindure' },
+    infant: 'Foshnjë',
+    toddler: { m: 'Fëmijë i vogël', f: 'Fëmijë e vogël' },
+    child: 'Fëmijë',
+    teenager: { m: 'Adoleshent', f: 'Adoleshente' },
+    adult: { m: 'I rritur', f: 'E rritur' },
   },
 };

@@ -15,12 +15,12 @@ module ParentTime
       delimiter: ', ',
       just_born: "Rec\u00E9m-nascido",
       stages: {
-        newborn: "Rec\u00E9m-nascido",
-        infant: "Beb\u00EA",
-        toddler: "Crian\u00E7a pequena",
-        child: "Crian\u00E7a",
+        newborn: { m: 'Recém-nascido', f: 'Recém-nascida' },
+        infant: 'Bebê',
+        toddler: 'Criança pequena',
+        child: 'Criança',
         teenager: 'Adolescente',
-        adult: 'Adulto'
+        adult: { m: 'Adulto', f: 'Adulta' }
       }
     )
   end

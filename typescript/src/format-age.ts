@@ -1,5 +1,5 @@
-import type { AgeLocale, Compactness, UnitForms } from './locale.js';
-import { en, resolveUnit } from './locale.js';
+import type { AgeLocale, Compactness, Gender, UnitForms } from './locale.js';
+import { en, resolveStage, resolveUnit } from './locale.js';
 
 /** Parsed date components and derived calendar months / elapsed days. */
 interface AgeComponents {
@@ -159,11 +159,12 @@ export class ParentTime {
    *
    * @param dateOfBirth - YYYY-MM-DD date string
    * @param asOf - YYYY-MM-DD reference date (defaults to today)
+   * @param gender - optional grammatical gender ('m' or 'f')
    */
-  formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null {
+  formatStage(dateOfBirth: string | null | undefined, asOf?: string, gender?: Gender): string | null {
     const age = parseAge(dateOfBirth, asOf);
     if (!age) return null;
-    return this.locale.stages[stageKey(age.months)];
+    return resolveStage(this.locale.stages[stageKey(age.months)], gender);
   }
 }
 
@@ -185,7 +186,8 @@ export function formatAge(dateOfBirth: string | null | undefined, asOf?: string)
  *
  * @param dateOfBirth - YYYY-MM-DD date string
  * @param asOf - YYYY-MM-DD reference date (defaults to today)
+ * @param gender - optional grammatical gender ('m' or 'f')
  */
-export function formatStage(dateOfBirth: string | null | undefined, asOf?: string): string | null {
-  return _default.formatStage(dateOfBirth, asOf);
+export function formatStage(dateOfBirth: string | null | undefined, asOf?: string, gender?: Gender): string | null {
+  return _default.formatStage(dateOfBirth, asOf, gender);
 }

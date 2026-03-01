@@ -35,14 +35,26 @@ struct UnitForms {
     }
 };
 
+/// A stage label with optional feminine form.
+struct StageLabel {
+    std::string label;   // neutral or masculine form
+    std::string f;       // feminine form (empty = use label)
+
+    /// Resolve to a string given an optional gender.
+    const std::string& resolve(const std::string& gender = "") const {
+        if (!f.empty() && gender == "f") return f;
+        return label;
+    }
+};
+
 /// Stage labels for developmental stages.
 struct StageLabels {
-    std::string newborn;
-    std::string infant;
-    std::string toddler;
-    std::string child;
-    std::string teenager;
-    std::string adult;
+    StageLabel newborn;
+    StageLabel infant;
+    StageLabel toddler;
+    StageLabel child;
+    StageLabel teenager;
+    StageLabel adult;
 };
 
 /// Unit set (day, week, month, year).

@@ -1,6 +1,8 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { formatAge, formatStage, ParentTime } from '../src/format-age';
-import { en, type AgeLocale } from '../src/locale';
+import { en, resolveStage, type AgeLocale, type StageLabel } from '../src/locale';
+import { ar } from '../src/locales/ar';
+import { es } from '../src/locales/es';
 
 // All tests use explicit (dob, asOf) pairs for determinism.
 
@@ -587,6 +589,75 @@ describe('formatStage', () => {
       expect(formatStage('2025-06-15')).toBe('Newborn');
       expect(formatStage('2020-01-01')).toBe('Child');
       expect(formatStage('1980-01-01')).toBe('Adult');
+    });
+  });
+});
+
+// ================================================================
+// resolveStage
+// ================================================================
+describe('resolveStage', () => {
+  it('returns plain string unchanged regardless of gender', () => {
+    expect(resolveStage('Adult')).toBe('Adult');
+    expect(resolveStage('Adult', 'm')).toBe('Adult');
+    expect(resolveStage('Adult', 'f')).toBe('Adult');
+  });
+
+  it('returns masculine form by default for gendered label', () => {
+    const label: StageLabel = { m: 'Adulto', f: 'Adulta' };
+    expect(resolveStage(label)).toBe('Adulto');
+    expect(resolveStage(label, 'm')).toBe('Adulto');
+  });
+
+  it('returns feminine form when gender is f', () => {
+    const label: StageLabel = { m: 'Adulto', f: 'Adulta' };
+    expect(resolveStage(label, 'f')).toBe('Adulta');
+  });
+});
+
+// ================================================================
+// formatStage with gender
+// ================================================================
+describe('formatStage with gender', () => {
+  it('English locale ignores gender (all stages neutral)', () => {
+    expect(formatStage('2007-06-15', '2025-06-15', 'f')).toBe('Adult');
+    expect(formatStage('2025-06-15', '2025-06-15', 'f')).toBe('Newborn');
+  });
+
+  describe('Arabic locale (all stages gendered)', () => {
+    const pt = new ParentTime(ar);
+
+    it('returns masculine by default', () => {
+      expect(pt.formatStage('2007-06-15', '2025-06-15')).toBe('بالغ');
+      expect(pt.formatStage('2025-06-15', '2025-06-15')).toBe('حديث الولادة');
+    });
+
+    it('returns masculine with explicit m', () => {
+      expect(pt.formatStage('2007-06-15', '2025-06-15', 'm')).toBe('بالغ');
+    });
+
+    it('returns feminine with f', () => {
+      expect(pt.formatStage('2025-06-15', '2025-06-15', 'f')).toBe('حديثة الولادة');
+      expect(pt.formatStage('2025-01-15', '2025-06-15', 'f')).toBe('رضيعة');
+      expect(pt.formatStage('2024-06-15', '2025-06-15', 'f')).toBe('طفلة صغيرة');
+      expect(pt.formatStage('2022-06-15', '2025-06-15', 'f')).toBe('طفلة');
+      expect(pt.formatStage('2012-06-15', '2025-06-15', 'f')).toBe('مراهقة');
+      expect(pt.formatStage('2007-06-15', '2025-06-15', 'f')).toBe('بالغة');
+    });
+  });
+
+  describe('Spanish locale (partial gendering)', () => {
+    const pt = new ParentTime(es);
+
+    it('gendered stages return feminine with f', () => {
+      expect(pt.formatStage('2025-06-15', '2025-06-15', 'f')).toBe('Recién nacida');
+      expect(pt.formatStage('2022-06-15', '2025-06-15', 'f')).toBe('Niña');
+      expect(pt.formatStage('2007-06-15', '2025-06-15', 'f')).toBe('Adulta');
+    });
+
+    it('neutral stages return same string regardless of gender', () => {
+      expect(pt.formatStage('2025-01-15', '2025-06-15', 'f')).toBe('Bebé');
+      expect(pt.formatStage('2012-06-15', '2025-06-15', 'f')).toBe('Adolescente');
     });
   });
 });

@@ -699,12 +699,12 @@ class FormatAgeTest {
             delimiter = ", ",
             justBorn = "Reci\u00E9n nacido",
             stages = Stages(
-                newborn = "Reci\u00E9n nacido",
-                infant = "Beb\u00E9",
-                toddler = "Ni\u00F1o peque\u00F1o",
-                child = "Ni\u00F1o",
-                teenager = "Adolescente",
-                adult = "Adulto"
+                newborn = g("Reci\u00E9n nacido", "Reci\u00E9n nacida"),
+                infant = s("Beb\u00E9"),
+                toddler = g("Ni\u00F1o peque\u00F1o", "Ni\u00F1a peque\u00F1a"),
+                child = g("Ni\u00F1o", "Ni\u00F1a"),
+                teenager = s("Adolescente"),
+                adult = g("Adulto", "Adulta")
             )
         )
 
@@ -830,5 +830,110 @@ class FormatAgeTest {
             val stage = pt.formatStage("2020-01-01", "2025-06-15")
             assertNotNull(stage, "$code: stage should not be null")
         }
+    }
+
+    // ================================================================
+    // formatStage -- gender support
+    // ================================================================
+    @Test
+    fun `gender null defaults to masculine for gendered locales`() {
+        val pt = ParentTime(Locales.ES)
+        assertEquals("Reci\u00E9n nacido", pt.formatStage("2025-06-15", "2025-06-15"))
+        assertEquals("Ni\u00F1o peque\u00F1o", pt.formatStage("2024-06-15", "2025-06-15"))
+        assertEquals("Ni\u00F1o", pt.formatStage("2022-06-15", "2025-06-15"))
+        assertEquals("Adulto", pt.formatStage("2007-06-15", "2025-06-15"))
+    }
+
+    @Test
+    fun `gender m returns masculine`() {
+        val pt = ParentTime(Locales.ES)
+        assertEquals("Reci\u00E9n nacido", pt.formatStage("2025-06-15", "2025-06-15", "m"))
+        assertEquals("Ni\u00F1o peque\u00F1o", pt.formatStage("2024-06-15", "2025-06-15", "m"))
+        assertEquals("Ni\u00F1o", pt.formatStage("2022-06-15", "2025-06-15", "m"))
+        assertEquals("Adulto", pt.formatStage("2007-06-15", "2025-06-15", "m"))
+    }
+
+    @Test
+    fun `gender f returns feminine`() {
+        val pt = ParentTime(Locales.ES)
+        assertEquals("Reci\u00E9n nacida", pt.formatStage("2025-06-15", "2025-06-15", "f"))
+        assertEquals("Ni\u00F1a peque\u00F1a", pt.formatStage("2024-06-15", "2025-06-15", "f"))
+        assertEquals("Ni\u00F1a", pt.formatStage("2022-06-15", "2025-06-15", "f"))
+        assertEquals("Adulta", pt.formatStage("2007-06-15", "2025-06-15", "f"))
+    }
+
+    @Test
+    fun `gender neutral stages unaffected by gender`() {
+        val pt = ParentTime(Locales.ES)
+        assertEquals("Beb\u00E9", pt.formatStage("2025-01-15", "2025-06-15", "f"))
+        assertEquals("Beb\u00E9", pt.formatStage("2025-01-15", "2025-06-15", "m"))
+        assertEquals("Adolescente", pt.formatStage("2012-06-15", "2025-06-15", "f"))
+        assertEquals("Adolescente", pt.formatStage("2012-06-15", "2025-06-15", "m"))
+    }
+
+    @Test
+    fun `gender has no effect on neutral locales`() {
+        val pt = ParentTime(Locales.EN)
+        assertEquals("Newborn", pt.formatStage("2025-06-15", "2025-06-15", "f"))
+        assertEquals("Newborn", pt.formatStage("2025-06-15", "2025-06-15", "m"))
+        assertEquals("Adult", pt.formatStage("2007-06-15", "2025-06-15", "f"))
+        assertEquals("Adult", pt.formatStage("2007-06-15", "2025-06-15", "m"))
+    }
+
+    @Test
+    fun `gender French stages`() {
+        val pt = ParentTime(Locales.FR)
+        assertEquals("Nouveau-n\u00E9", pt.formatStage("2025-06-15", "2025-06-15", "m"))
+        assertEquals("Nouveau-n\u00E9e", pt.formatStage("2025-06-15", "2025-06-15", "f"))
+        assertEquals("Nourrisson", pt.formatStage("2025-01-15", "2025-06-15", "f"))
+        assertEquals("Tout-petit", pt.formatStage("2024-06-15", "2025-06-15", "f"))
+        assertEquals("Enfant", pt.formatStage("2022-06-15", "2025-06-15", "f"))
+        assertEquals("Adolescent", pt.formatStage("2012-06-15", "2025-06-15", "m"))
+        assertEquals("Adolescente", pt.formatStage("2012-06-15", "2025-06-15", "f"))
+        assertEquals("Adulte", pt.formatStage("2007-06-15", "2025-06-15", "f"))
+    }
+
+    @Test
+    fun `gender Italian stages`() {
+        val pt = ParentTime(Locales.IT)
+        assertEquals("Neonato", pt.formatStage("2025-06-15", "2025-06-15", "m"))
+        assertEquals("Neonata", pt.formatStage("2025-06-15", "2025-06-15", "f"))
+        assertEquals("Bimbo", pt.formatStage("2024-06-15", "2025-06-15", "m"))
+        assertEquals("Bimba", pt.formatStage("2024-06-15", "2025-06-15", "f"))
+        assertEquals("Bambino", pt.formatStage("2022-06-15", "2025-06-15", "m"))
+        assertEquals("Bambina", pt.formatStage("2022-06-15", "2025-06-15", "f"))
+        assertEquals("Adulto", pt.formatStage("2007-06-15", "2025-06-15", "m"))
+        assertEquals("Adulta", pt.formatStage("2007-06-15", "2025-06-15", "f"))
+    }
+
+    @Test
+    fun `gender Arabic all stages`() {
+        val pt = ParentTime(Locales.AR)
+        assertEquals("\u062D\u062F\u064A\u062B \u0627\u0644\u0648\u0644\u0627\u062F\u0629", pt.formatStage("2025-06-15", "2025-06-15", "m"))
+        assertEquals("\u062D\u062F\u064A\u062B\u0629 \u0627\u0644\u0648\u0644\u0627\u062F\u0629", pt.formatStage("2025-06-15", "2025-06-15", "f"))
+        assertEquals("\u0631\u0636\u064A\u0639", pt.formatStage("2025-01-15", "2025-06-15", "m"))
+        assertEquals("\u0631\u0636\u064A\u0639\u0629", pt.formatStage("2025-01-15", "2025-06-15", "f"))
+        assertEquals("\u0637\u0641\u0644 \u0635\u063A\u064A\u0631", pt.formatStage("2024-06-15", "2025-06-15", "m"))
+        assertEquals("\u0637\u0641\u0644\u0629 \u0635\u063A\u064A\u0631\u0629", pt.formatStage("2024-06-15", "2025-06-15", "f"))
+        assertEquals("\u0637\u0641\u0644", pt.formatStage("2022-06-15", "2025-06-15", "m"))
+        assertEquals("\u0637\u0641\u0644\u0629", pt.formatStage("2022-06-15", "2025-06-15", "f"))
+        assertEquals("\u0645\u0631\u0627\u0647\u0642", pt.formatStage("2012-06-15", "2025-06-15", "m"))
+        assertEquals("\u0645\u0631\u0627\u0647\u0642\u0629", pt.formatStage("2012-06-15", "2025-06-15", "f"))
+        assertEquals("\u0628\u0627\u0644\u063A", pt.formatStage("2007-06-15", "2025-06-15", "m"))
+        assertEquals("\u0628\u0627\u0644\u063A\u0629", pt.formatStage("2007-06-15", "2025-06-15", "f"))
+    }
+
+    @Test
+    fun `gender German adult only`() {
+        val pt = ParentTime(Locales.DE)
+        assertEquals("Erwachsener", pt.formatStage("2007-06-15", "2025-06-15", "m"))
+        assertEquals("Erwachsene", pt.formatStage("2007-06-15", "2025-06-15", "f"))
+        assertEquals("Neugeborenes", pt.formatStage("2025-06-15", "2025-06-15", "f"))
+    }
+
+    @Test
+    fun `gender companion method`() {
+        assertEquals("Newborn", ParentTime.formatStage("2025-06-15", "2025-06-15", "f"))
+        assertEquals("Adult", ParentTime.formatStage("2007-06-15", "2025-06-15", "f"))
     }
 }

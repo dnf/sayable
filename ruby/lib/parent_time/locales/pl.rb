@@ -24,8 +24,8 @@ module ParentTime
         infant: 'Niemowlę',
         toddler: 'Maluch',
         child: 'Dziecko',
-        teenager: 'Nastolatek',
-        adult: 'Dorosły'
+        teenager: { m: 'Nastolatek', f: 'Nastolatka' },
+        adult: { m: 'Dorosły', f: 'Dorosła' }
       }
     )
   end

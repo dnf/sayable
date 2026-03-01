@@ -1,4 +1,18 @@
-use crate::types::{AgeLocale, Compactness, PluralCategory, UnitForms};
+
+use std::sync::Mutex;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+use crate::types::{AgeLocale, Compactness, Gender, PluralCategory, UnitForms};
+
+static NOW_OVERRIDE: Mutex<Option<(i32, i32, i32)>> = Mutex::new(None);
+
+/// Override the "today" date for testing purposes.
+/// Pass `Some((y, m, d))` to freeze time, `None` to restore system clock.
+#[doc(hidden)]
+pub fn _set_now_for_testing(date: Option<(i32, i32, i32)>) {
+    *NOW_OVERRIDE.lock().unwrap() = date;
+}
+
 
 /// Parsed age components.
 struct AgeComponents {
@@ -68,7 +82,10 @@ fn days_between(y1: i32, m1: i32, d1: i32, y2: i32, m2: i32, d2: i32) -> i32 {
 
 /// Returns today's date as (year, month, day) using `SystemTime`.
 fn today() -> (i32, i32, i32) {
-    use std::time::{SystemTime, UNIX_EPOCH};
+    if let Some(date) = *NOW_OVERRIDE.lock().unwrap() {
+        return date;
+    }
+
     let secs = SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .unwrap()
@@ -313,11 +330,12 @@ impl ParentTime {
     }
 
     /// Returns the developmental stage label based on age.
+    /// Pass an optional `gender` to select masculine/feminine forms in gendered locales.
     /// Returns `None` if `dob` is empty or in the future.
-    pub fn format_stage(&self, dob: &str, as_of: Option<&str>) -> Option<String> {
+    pub fn format_stage(&self, dob: &str, as_of: Option<&str>, gender: Option<Gender>) -> Option<String> {
         let age = parse_age(dob, as_of)?;
         let key = stage_key(age.months);
-        let s = match key {
+        let label = match key {
             "newborn" => &self.locale.stages.newborn,
             "infant" => &self.locale.stages.infant,
             "toddler" => &self.locale.stages.toddler,
@@ -326,7 +344,7 @@ impl ParentTime {
             "adult" => &self.locale.stages.adult,
             _ => return None,
         };
-        Some(s.clone())
+        Some(label.resolve(gender).to_string())
     }
 }
 
@@ -337,7 +355,7 @@ pub fn format_age(dob: &str, as_of: Option<&str>) -> Option<String> {
 }
 
 /// Returns the developmental stage using the default English locale.
-pub fn format_stage(dob: &str, as_of: Option<&str>) -> Option<String> {
+pub fn format_stage(dob: &str, as_of: Option<&str>, gender: Option<Gender>) -> Option<String> {
     let pt = ParentTime::new(&crate::locales::EN, Compactness::Normal);
-    pt.format_stage(dob, as_of)
+    pt.format_stage(dob, as_of, gender)
 }

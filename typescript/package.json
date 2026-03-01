@@ -1,7 +1,7 @@
 {
   "name": "parent-time",
   "version": "0.1.0",
-  "description": "Human-friendly age formatting the way parents actually talk — weeks+days for newborns, months for babies, years+months for toddlers",
+  "description": "Human-friendly age formatting the way parents actually talk \u2014 weeks+days for newborns, months for babies, years+months for toddlers",
   "type": "module",
   "exports": {
     ".": {
@@ -40,7 +40,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/donalvarez/parent-time.git",
+    "url": "https://github.com/dnf/parent-time.git",
     "directory": "typescript"
   },
   "devDependencies": {
@@ -50,5 +50,11 @@
     "tsup": "^8.0.0",
     "typescript": "^5.7.0",
     "vitest": "^3.0.0"
+  },
+  "homepage": "https://github.com/dnf/parent-time",
+  "bugs": "https://github.com/dnf/parent-time/issues",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
   }
 }

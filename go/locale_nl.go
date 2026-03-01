@@ -18,12 +18,12 @@ var NL = AgeLocale{
 	Half:      "{n}\u00BD",
 	Delimiter: ", ",
 	JustBorn:  "Pasgeboren",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Pasgeborene",
-		Infant:   "Baby",
-		Toddler:  "Peuter",
-		Child:    "Kind",
-		Teenager: "Tiener",
-		Adult:    "Volwassene",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Pasgeborene"),
+		Infant:   S("Baby"),
+		Toddler:  S("Peuter"),
+		Child:    S("Kind"),
+		Teenager: S("Tiener"),
+		Adult:    S("Volwassene"),
 	},
 }

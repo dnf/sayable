@@ -9,7 +9,7 @@ module ParentTime
         mod100 = n % 100
         if mod10 == 1 && mod100 != 11 then :one
         elsif mod10.between?(2, 4) && (mod100 < 12 || mod100 > 14) then :few
-        else :many
+        else :other
         end
       },
       units: {

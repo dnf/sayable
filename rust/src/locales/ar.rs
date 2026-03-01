@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Arabic locale.
 pub fn locale() -> AgeLocale {
@@ -60,12 +60,12 @@ pub fn locale() -> AgeLocale {
         delimiter: " \u{0648}".to_string(),
         just_born: "\u{062D}\u{062F}\u{064A}\u{062B} \u{0627}\u{0644}\u{0648}\u{0644}\u{0627}\u{062F}\u{0629}".to_string(),
         stages: Stages {
-            newborn: "\u{062D}\u{062F}\u{064A}\u{062B} \u{0627}\u{0644}\u{0648}\u{0644}\u{0627}\u{062F}\u{0629}".to_string(),
-            infant: "\u{0631}\u{0636}\u{064A}\u{0639}".to_string(),
-            toddler: "\u{0637}\u{0641}\u{0644} \u{0635}\u{063A}\u{064A}\u{0631}".to_string(),
-            child: "\u{0637}\u{0641}\u{0644}".to_string(),
-            teenager: "\u{0645}\u{0631}\u{0627}\u{0647}\u{0642}".to_string(),
-            adult: "\u{0628}\u{0627}\u{0644}\u{063A}".to_string(),
+            newborn: StageLabel::Gendered { m: "حديث الولادة".to_string(), f: "حديثة الولادة".to_string() },
+            infant: StageLabel::Gendered { m: "رضيع".to_string(), f: "رضيعة".to_string() },
+            toddler: StageLabel::Gendered { m: "طفل صغير".to_string(), f: "طفلة صغيرة".to_string() },
+            child: StageLabel::Gendered { m: "طفل".to_string(), f: "طفلة".to_string() },
+            teenager: StageLabel::Gendered { m: "مراهق".to_string(), f: "مراهقة".to_string() },
+            adult: StageLabel::Gendered { m: "بالغ".to_string(), f: "بالغة".to_string() },
         },
         short: None,
         compact: None,

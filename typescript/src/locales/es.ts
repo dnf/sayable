@@ -13,11 +13,11 @@ export const es: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Recién nacido',
   stages: {
-    newborn: 'Recién nacido',
+    newborn: { m: 'Recién nacido', f: 'Recién nacida' },
     infant: 'Bebé',
-    toddler: 'Niño pequeño',
-    child: 'Niño',
+    toddler: { m: 'Niño pequeño', f: 'Niña pequeña' },
+    child: { m: 'Niño', f: 'Niña' },
     teenager: 'Adolescente',
-    adult: 'Adulto',
+    adult: { m: 'Adulto', f: 'Adulta' },
   },
 };

@@ -18,13 +18,13 @@ var EN = AgeLocale{
 	Half:      "{n}\u00BD",
 	Delimiter: ", ",
 	JustBorn:  "Newborn",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Newborn",
-		Infant:   "Infant",
-		Toddler:  "Toddler",
-		Child:    "Child",
-		Teenager: "Teenager",
-		Adult:    "Adult",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Newborn"),
+		Infant:   S("Infant"),
+		Toddler:  S("Toddler"),
+		Child:    S("Child"),
+		Teenager: S("Teenager"),
+		Adult:    S("Adult"),
 	},
 	Short: &CompactnessOverride{
 		Day:   &UnitForms{Simple: "{n} d"},

@@ -22,12 +22,12 @@ module ParentTime
       delimiter: ', ',
       just_born: "\u041D\u043E\u0432\u043E\u0440\u043E\u0436\u0434\u0451\u043D\u043D\u044B\u0439",
       stages: {
-        newborn: "\u041D\u043E\u0432\u043E\u0440\u043E\u0436\u0434\u0451\u043D\u043D\u044B\u0439",
-        infant: "\u041C\u043B\u0430\u0434\u0435\u043D\u0435\u0446",
-        toddler: "\u041C\u0430\u043B\u044B\u0448",
-        child: "\u0420\u0435\u0431\u0451\u043D\u043E\u043A",
-        teenager: "\u041F\u043E\u0434\u0440\u043E\u0441\u0442\u043E\u043A",
-        adult: "\u0412\u0437\u0440\u043E\u0441\u043B\u044B\u0439"
+        newborn: { m: 'Новорождённый', f: 'Новорождённая' },
+        infant: 'Младенец',
+        toddler: { m: 'Малыш', f: 'Малышка' },
+        child: 'Ребёнок',
+        teenager: 'Подросток',
+        adult: { m: 'Взрослый', f: 'Взрослая' }
       }
     )
   end

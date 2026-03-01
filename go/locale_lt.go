@@ -23,12 +23,12 @@ var LT = AgeLocale{
 	Half:      "{n}\u00BD",
 	Delimiter: ", ",
 	JustBorn:  "Naujagimis",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Naujagimis",
-		Infant:   "Kūdikis",
-		Toddler:  "Mažylis",
-		Child:    "Vaikas",
-		Teenager: "Paauglys",
-		Adult:    "Suaugęs",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("Naujagimis", "Naujagimė"),
+		Infant:   G("Kūdikis", "Kūdikė"),
+		Toddler:  G("Mažylis", "Mažylė"),
+		Child:    S("Vaikas"),
+		Teenager: G("Paauglys", "Paauglė"),
+		Adult:    G("Suaugęs", "Suaugusi"),
 	},
 }

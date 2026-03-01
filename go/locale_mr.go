@@ -4,7 +4,7 @@ package parenttime
 var MR = AgeLocale{
 	Code: "mr",
 	Plural: func(n int) PluralCategory {
-		if n == 0 || n == 1 {
+		if n == 1 {
 			return One
 		}
 		return Other
@@ -18,12 +18,12 @@ var MR = AgeLocale{
 	Half:      "साडे {n}",
 	Delimiter: ", ",
 	JustBorn:  "नवजात",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "नवजात",
-		Infant:   "अर्भक",
-		Toddler:  "बाळ",
-		Child:    "मूल",
-		Teenager: "किशोर",
-		Adult:    "प्रौढ",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("नवजात"),
+		Infant:   S("अर्भक"),
+		Toddler:  S("बाळ"),
+		Child:    S("मूल"),
+		Teenager: G("किशोर", "किशोरी"),
+		Adult:    S("प्रौढ"),
 	},
 }

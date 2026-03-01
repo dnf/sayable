@@ -49,15 +49,38 @@ public data class CompactnessOverride(
 )
 
 /**
+ * A stage label that may be gender-neutral or have masculine/feminine variants.
+ */
+public sealed class StageLabel {
+    public data class Neutral(val label: String) : StageLabel()
+    public data class Gendered(val m: String, val f: String) : StageLabel()
+
+    public fun resolve(gender: String? = null): String = when (this) {
+        is Neutral -> label
+        is Gendered -> if (gender == "f") f else m
+    }
+}
+
+/**
+ * Shorthand for creating a gender-neutral stage label.
+ */
+public fun s(label: String): StageLabel.Neutral = StageLabel.Neutral(label)
+
+/**
+ * Shorthand for creating a gendered stage label with masculine and feminine forms.
+ */
+public fun g(m: String, f: String): StageLabel.Gendered = StageLabel.Gendered(m, f)
+
+/**
  * Developmental stage labels.
  */
 public data class Stages(
-    val newborn: String,
-    val infant: String,
-    val toddler: String,
-    val child: String,
-    val teenager: String,
-    val adult: String
+    val newborn: StageLabel,
+    val infant: StageLabel,
+    val toddler: StageLabel,
+    val child: StageLabel,
+    val teenager: StageLabel,
+    val adult: StageLabel
 )
 
 /**

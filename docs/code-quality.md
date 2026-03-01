@@ -1,7 +1,7 @@
 # Code Quality Configuration
 
 This document describes the static analysis, type checking, and linting
-configuration for each of the seven parent-time implementations. The goal is
+configuration for each of the eight parent-time implementations. The goal is
 "worthwhile strictness" — every check that catches real bugs or improves
 readability is enabled, while checks that produce noise for this specific
 codebase are suppressed with a documented rationale.
@@ -27,7 +27,7 @@ codebase are suppressed with a documented rationale.
 
 ### i18n locale data
 
-All seven implementations contain 49 locale files with Unicode string literals
+All eight implementations contain 49 locale files with Unicode string literals
 (Arabic, Chinese, Devanagari, Cyrillic, etc.). This creates predictable
 friction with certain lint rules:
 
@@ -62,17 +62,25 @@ functions with fixed parameters are all expected patterns.
 The configurations are documented in detail in separate files, grouped by
 language family:
 
-- **[Dynamic languages](code-quality-dynamic.md)** — TypeScript, Python, Ruby
+- **[Dynamic languages](code-quality-dynamic.md)** — TypeScript, Python, Ruby, PHP
 - **[Compiled languages](code-quality-compiled.md)** — Go, Rust, Kotlin, C++
 
 ## Quick reference
 
-| Language   | Tools                    | Key strictness                                                 | Tests   |
-|------------|--------------------------|----------------------------------------------------------------|---------|
-| TypeScript | tsc + ESLint             | `strict` + 7 extra flags; `strict-type-checked` ESLint rules  | 147     |
-| Python     | ruff + pyright           | 11 rule categories; pyright `strict`                           | 145     |
-| Ruby       | RuboCop                  | NewCops enabled; frozen strings; practical metric thresholds   | 117/178 |
-| Go         | golangci-lint v2         | 10 linters + gofmt/goimports formatters                        | all     |
-| Rust       | clippy + rustc lints     | `unsafe_code = forbid`; `clippy::all = deny`; pedantic = warn  | 36+2    |
-| Kotlin     | Kotlin compiler          | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`      | 115     |
-| C++        | Compiler flags + clang-tidy | `-Wall -Wextra -Wpedantic -Werror` + 13 more; clang-tidy config | 159   |
+| Language   | Tools                       | Key strictness                                                 | Tests | Assertions |
+|------------|-----------------------------|----------------------------------------------------------------|------:|-----------:|
+| TypeScript | tsc + ESLint                | `strict` + 7 extra flags; `strict-type-checked` ESLint rules  |   147 |        168 |
+| Python     | ruff + pyright              | 11 rule categories; pyright `strict`                           |   145 |        166 |
+| Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                        |    72 |        128 |
+| Ruby       | RuboCop                     | NewCops enabled; frozen strings; practical metric thresholds   |   117 |        173 |
+| Rust       | clippy + rustc lints        | `unsafe_code = forbid`; `clippy::all = deny`; pedantic = warn  |    38 |        172 |
+| Kotlin     | Kotlin compiler             | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`      |   115 |        191 |
+| C++        | Compiler flags + clang-tidy | `-Wall -Wextra -Wpedantic -Werror` + 13 more; clang-tidy config |   164 |        167 |
+| PHP        | PHPStan + PHP-CS-Fixer      | PHPStan level 9; PER-CS2.0 + risky; `declare(strict_types=1)` |   168 |        179 |
+
+All eight implementations cover the same [163 canonical test cases](testing.md).
+**Tests** is what each framework reports when you run the suite. **Assertions** is
+the count of individual assertion calls in the test source. These numbers differ
+across languages because each ecosystem has its own idiomatic test granularity —
+Go uses table-driven tests (many assertions per function), PHP uses
+one-assertion-per-method — but the underlying spec coverage is identical.

@@ -13,7 +13,11 @@ export const bg: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Новородено',
   stages: {
-    newborn: 'Новородено', infant: 'Бебе', toddler: 'Малко дете',
-    child: 'Дете', teenager: 'Тийнейджър', adult: 'Възрастен',
+    newborn: 'Новородено',
+    infant: 'Бебе',
+    toddler: 'Малко дете',
+    child: 'Дете',
+    teenager: 'Тийнейджър',
+    adult: { m: 'Възрастен', f: 'Възрастна' },
   },
 };

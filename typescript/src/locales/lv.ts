@@ -1,8 +1,10 @@
 import type { AgeLocale, PluralCategory } from '../locale.js';
 
 function plural(n: number): PluralCategory {
-  if (n === 0) return 'zero';
-  if (n % 10 === 1 && n % 100 !== 11) return 'one';
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+  if (mod10 === 0 || (mod100 >= 11 && mod100 <= 19)) return 'zero';
+  if (mod10 === 1 && mod100 !== 11) return 'one';
   return 'other';
 }
 
@@ -19,7 +21,11 @@ export const lv: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Jaundzimušais',
   stages: {
-    newborn: 'Jaundzimušais', infant: 'Zīdainis', toddler: 'Mazulis',
-    child: 'Bērns', teenager: 'Pusaudzis', adult: 'Pieaugušais',
+    newborn: { m: 'Jaundzimušais', f: 'Jaundzimušā' },
+    infant: { m: 'Zīdainis', f: 'Zīdaine' },
+    toddler: { m: 'Mazulis', f: 'Mazule' },
+    child: 'Bērns',
+    teenager: { m: 'Pusaudzis', f: 'Pusaudze' },
+    adult: { m: 'Pieaugušais', f: 'Pieaugusī' },
   },
 };

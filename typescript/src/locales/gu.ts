@@ -17,7 +17,7 @@ export const gu: AgeLocale = {
     infant: 'શિશુ',
     toddler: 'નાનું બાળક',
     child: 'બાળક',
-    teenager: 'કિશોર',
+    teenager: { m: 'કિશોર', f: 'કિશોરી' },
     adult: 'પુખ્ત',
   },
 };

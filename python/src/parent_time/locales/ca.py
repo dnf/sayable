@@ -15,11 +15,11 @@ CA = AgeLocale(
     delimiter=", ",
     just_born="Nounat",
     stages={
-        "newborn": "Nounat",
+        "newborn": {"m": "Nounat", "f": "Nounada"},
         "infant": "Nadó",
         "toddler": "Infant",
-        "child": "Nen",
+        "child": "Criatura",
         "teenager": "Adolescent",
-        "adult": "Adult",
+        "adult": {"m": "Adult", "f": "Adulta"},
     },
 )

@@ -17,9 +17,9 @@ module ParentTime
       stages: {
         newborn: "\u0928\u0935\u091C\u093E\u0924",
         infant: "\u0936\u093F\u0936\u0941",
-        toddler: "\u091B\u094B\u091F\u093E \u092C\u091A\u094D\u091A\u093E",
-        child: "\u092C\u091A\u094D\u091A\u093E",
-        teenager: "\u0915\u093F\u0936\u094B\u0930",
+        toddler: { m: 'छोटा बच्चा', f: 'छोटी बच्ची' },
+        child: { m: 'बच्चा', f: 'बच्ची' },
+        teenager: { m: 'किशोर', f: 'किशोरी' },
         adult: "\u0935\u092F\u0938\u094D\u0915"
       }
     )

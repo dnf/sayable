@@ -17,10 +17,10 @@ module ParentTime
       stages: {
         newborn: "\u0C28\u0C35\u0C1C\u0C3E\u0C24 \u0C36\u0C3F\u0C36\u0C41\u0C35\u0C41",
         infant: "\u0C36\u0C3F\u0C36\u0C41\u0C35\u0C41",
-        toddler: "\u0C1A\u0C3F\u0C28\u0C4D\u0C28 \u0C2A\u0C3F\u0C32\u0C4D\u0C32\u0C35\u0C3E\u0C21\u0C41",
-        child: "\u0C2A\u0C3F\u0C32\u0C4D\u0C32\u0C35\u0C3E\u0C21\u0C41",
+        toddler: 'చిన్న బిడ్డ',
+        child: 'బిడ్డ',
         teenager: "\u0C15\u0C4C\u0C2E\u0C3E\u0C30\u0C26\u0C36",
-        adult: "\u0C35\u0C2F\u0C4B\u0C1C\u0C28\u0C41\u0C21\u0C41"
+        adult: 'వయోజనులు'
       }
     )
   end

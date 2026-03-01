@@ -27,12 +27,12 @@ module ParentTime
       delimiter: " \u0648",
       just_born: "\u062D\u062F\u064A\u062B \u0627\u0644\u0648\u0644\u0627\u062F\u0629",
       stages: {
-        newborn: "\u062D\u062F\u064A\u062B \u0627\u0644\u0648\u0644\u0627\u062F\u0629",
-        infant: "\u0631\u0636\u064A\u0639",
-        toddler: "\u0637\u0641\u0644 \u0635\u063A\u064A\u0631",
-        child: "\u0637\u0641\u0644",
-        teenager: "\u0645\u0631\u0627\u0647\u0642",
-        adult: "\u0628\u0627\u0644\u063A"
+        newborn: { m: 'حديث الولادة', f: 'حديثة الولادة' },
+        infant: { m: 'رضيع', f: 'رضيعة' },
+        toddler: { m: 'طفل صغير', f: 'طفلة صغيرة' },
+        child: { m: 'طفل', f: 'طفلة' },
+        teenager: { m: 'مراهق', f: 'مراهقة' },
+        adult: { m: 'بالغ', f: 'بالغة' }
       }
     )
   end

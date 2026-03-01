@@ -15,12 +15,12 @@ var ZH = AgeLocale{
 	Half:      "{0}半",
 	Delimiter: "",
 	JustBorn:  "新生儿",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "新生儿",
-		Infant:   "婴儿",
-		Toddler:  "幼儿",
-		Child:    "儿童",
-		Teenager: "青少年",
-		Adult:    "成人",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("新生儿"),
+		Infant:   S("婴儿"),
+		Toddler:  S("幼儿"),
+		Child:    S("儿童"),
+		Teenager: S("青少年"),
+		Adult:    S("成人"),
 	},
 }

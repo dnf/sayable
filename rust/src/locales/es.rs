@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Spanish locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Recién nacido".to_string(),
         stages: Stages {
-            newborn: "Recién nacido".to_string(),
-            infant: "Bebé".to_string(),
-            toddler: "Niño pequeño".to_string(),
-            child: "Niño".to_string(),
-            teenager: "Adolescente".to_string(),
-            adult: "Adulto".to_string(),
+            newborn: StageLabel::Gendered { m: "Recién nacido".to_string(), f: "Recién nacida".to_string() },
+            infant: StageLabel::Neutral("Bebé".to_string()),
+            toddler: StageLabel::Gendered { m: "Niño pequeño".to_string(), f: "Niña pequeña".to_string() },
+            child: StageLabel::Gendered { m: "Niño".to_string(), f: "Niña".to_string() },
+            teenager: StageLabel::Neutral("Adolescente".to_string()),
+            adult: StageLabel::Gendered { m: "Adulto".to_string(), f: "Adulta".to_string() },
         },
         short: None,
         compact: None,

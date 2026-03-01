@@ -4,7 +4,7 @@ from parent_time.locale import AgeLocale, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
-    if n == 0:
+    if n % 10 == 0 or (n % 100 >= 11 and n % 100 <= 19):
         return "zero"
     if n % 10 == 1 and n % 100 != 11:
         return "one"
@@ -24,11 +24,11 @@ LV = AgeLocale(
     delimiter=", ",
     just_born="Jaundzimušais",
     stages={
-        "newborn": "Jaundzimušais",
-        "infant": "Zīdainis",
-        "toddler": "Mazulis",
+        "newborn": {"m": "Jaundzimušais", "f": "Jaundzimušā"},
+        "infant": {"m": "Zīdainis", "f": "Zīdaine"},
+        "toddler": {"m": "Mazulis", "f": "Mazule"},
         "child": "Bērns",
-        "teenager": "Pusaudzis",
-        "adult": "Pieaugušais",
+        "teenager": {"m": "Pusaudzis", "f": "Pusaudze"},
+        "adult": {"m": "Pieaugušais", "f": "Pieaugusī"},
     },
 )

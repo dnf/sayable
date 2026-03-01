@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Bulgarian locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Новородено".to_string(),
         stages: Stages {
-            newborn: "Новородено".to_string(),
-            infant: "Бебе".to_string(),
-            toddler: "Малко дете".to_string(),
-            child: "Дете".to_string(),
-            teenager: "Тийнейджър".to_string(),
-            adult: "Възрастен".to_string(),
+            newborn: StageLabel::Neutral("Новородено".to_string()),
+            infant: StageLabel::Neutral("Бебе".to_string()),
+            toddler: StageLabel::Neutral("Малко дете".to_string()),
+            child: StageLabel::Neutral("Дете".to_string()),
+            teenager: StageLabel::Neutral("Тийнейджър".to_string()),
+            adult: StageLabel::Gendered { m: "Възрастен".to_string(), f: "Възрастна".to_string() },
         },
         short: None,
         compact: None,

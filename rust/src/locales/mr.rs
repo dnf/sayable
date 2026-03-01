@@ -1,11 +1,11 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Marathi locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "mr".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 1 { PluralCategory::One } else { PluralCategory::Other }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "नवजात".to_string(),
         stages: Stages {
-            newborn: "नवजात".to_string(),
-            infant: "अर्भक".to_string(),
-            toddler: "बाळ".to_string(),
-            child: "मूल".to_string(),
-            teenager: "किशोर".to_string(),
-            adult: "प्रौढ".to_string(),
+            newborn: StageLabel::Neutral("नवजात".to_string()),
+            infant: StageLabel::Neutral("अर्भक".to_string()),
+            toddler: StageLabel::Neutral("बाळ".to_string()),
+            child: StageLabel::Neutral("मूल".to_string()),
+            teenager: StageLabel::Gendered { m: "किशोर".to_string(), f: "किशोरी".to_string() },
+            adult: StageLabel::Neutral("प्रौढ".to_string()),
         },
         short: None,
         compact: None,

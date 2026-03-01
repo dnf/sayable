@@ -21,7 +21,7 @@ const AgeLocale& LT() {
             UnitForms::Plural({{PluralCategory::One, "{n} metai"}, {PluralCategory::Few, "{n} metai"}, {PluralCategory::Other, "{n} metų"}})
         },
         "{n}\xC2\xBD", ", ", "Naujagimis",
-        StageLabels{"Naujagimis", "Kūdikis", "Mažylis", "Vaikas", "Paauglys", "Suaugęs"},
+        StageLabels{{"Naujagimis", "Naujagimė"}, {"Kūdikis", "Kūdikė"}, {"Mažylis", "Mažylė"}, {"Vaikas", ""}, {"Paauglys", "Paauglė"}, {"Suaugęs", "Suaugusi"}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -31,8 +31,10 @@ const AgeLocale& LV() {
     static const AgeLocale loc{
         "lv",
         [](int n) -> PluralCategory {
-            if (n == 0) return PluralCategory::Zero;
-            if (n % 10 == 1 && n % 100 != 11) return PluralCategory::One;
+            int mod10 = n % 10;
+            int mod100 = n % 100;
+            if (mod10 == 0 || (mod100 >= 11 && mod100 <= 19)) return PluralCategory::Zero;
+            if (mod10 == 1 && mod100 != 11) return PluralCategory::One;
             return PluralCategory::Other;
         },
         UnitSet{
@@ -42,7 +44,7 @@ const AgeLocale& LV() {
             UnitForms::Plural({{PluralCategory::Zero, "{n} gadu"}, {PluralCategory::One, "{n} gads"}, {PluralCategory::Other, "{n} gadi"}})
         },
         "{n}\xC2\xBD", ", ", "Jaundzimušais",
-        StageLabels{"Jaundzimušais", "Zīdainis", "Mazulis", "Bērns", "Pusaudzis", "Pieaugušais"},
+        StageLabels{{"Jaundzimušais", "Jaundzimušā"}, {"Zīdainis", "Zīdaine"}, {"Mazulis", "Mazule"}, {"Bērns", ""}, {"Pusaudzis", "Pusaudze"}, {"Pieaugušais", "Pieaugusī"}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -52,7 +54,7 @@ const AgeLocale& MR() {
     static const AgeLocale loc{
         "mr",
         [](int n) -> PluralCategory {
-            if (n == 0 || n == 1) return PluralCategory::One;
+            if (n == 1) return PluralCategory::One;
             return PluralCategory::Other;
         },
         UnitSet{
@@ -62,7 +64,7 @@ const AgeLocale& MR() {
             UnitForms::Plural({{PluralCategory::One, "{n} वर्ष"}, {PluralCategory::Other, "{n} वर्षे"}})
         },
         "साडे {n}", ", ", "नवजात",
-        StageLabels{"नवजात", "अर्भक", "बाळ", "मूल", "किशोर", "प्रौढ"},
+        StageLabels{{"नवजात", ""}, {"अर्भक", ""}, {"बाळ", ""}, {"मूल", ""}, {"किशोर", "किशोरी"}, {"प्रौढ", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -79,7 +81,7 @@ const AgeLocale& MS() {
             UnitForms::Simple("{n} tahun")
         },
         "{0} setengah", ", ", "Baru lahir",
-        StageLabels{"Baru lahir", "Bayi", "Kanak-kanak kecil", "Kanak-kanak", "Remaja", "Dewasa"},
+        StageLabels{{"Baru lahir", ""}, {"Bayi", ""}, {"Kanak-kanak kecil", ""}, {"Kanak-kanak", ""}, {"Remaja", ""}, {"Dewasa", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -99,7 +101,7 @@ const AgeLocale& NB() {
             UnitForms::Plural({{PluralCategory::One, "{n} år"}, {PluralCategory::Other, "{n} år"}})
         },
         "{n}\xC2\xBD", ", ", "Nyfødt",
-        StageLabels{"Nyfødt", "Spedbarn", "Småbarn", "Barn", "Tenåring", "Voksen"},
+        StageLabels{{"Nyfødt", ""}, {"Spedbarn", ""}, {"Småbarn", ""}, {"Barn", ""}, {"Tenåring", ""}, {"Voksen", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -119,7 +121,7 @@ const AgeLocale& NL() {
             UnitForms::Plural({{PluralCategory::One, "{n} jaar"}, {PluralCategory::Other, "{n} jaar"}})
         },
         "{n}\xC2\xBD", ", ", "Pasgeboren",
-        StageLabels{"Pasgeborene", "Baby", "Peuter", "Kind", "Tiener", "Volwassene"},
+        StageLabels{{"Pasgeborene", ""}, {"Baby", ""}, {"Peuter", ""}, {"Kind", ""}, {"Tiener", ""}, {"Volwassene", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -139,7 +141,7 @@ const AgeLocale& PA() {
             UnitForms::Plural({{PluralCategory::One, "{n} ਸਾਲ"}, {PluralCategory::Other, "{n} ਸਾਲ"}})
         },
         "ਸਾਢੇ {n}", ", ", "ਨਵਜੰਮਿਆ",
-        StageLabels{"ਨਵਜੰਮਿਆ", "ਸ਼ਿਸ਼ੂ", "ਛੋਟਾ ਬੱਚਾ", "ਬੱਚਾ", "ਕਿਸ਼ੋਰ", "ਬਾਲਗ"},
+        StageLabels{{"ਨਵਜੰਮਿਆ", "ਨਵਜੰਮੀ"}, {"ਸ਼ਿਸ਼ੂ", ""}, {"ਛੋਟਾ ਬੱਚਾ", "ਛੋਟੀ ਬੱਚੀ"}, {"ਬੱਚਾ", "ਬੱਚੀ"}, {"ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ"}, {"ਬਾਲਗ", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -162,7 +164,7 @@ const AgeLocale& PL() {
             UnitForms::Plural({{PluralCategory::One, "{n} rok"}, {PluralCategory::Few, "{n} lata"}, {PluralCategory::Many, "{n} lat"}, {PluralCategory::Other, "{n} lat"}})
         },
         "{n} i pół", ", ", "Noworodek",
-        StageLabels{"Noworodek", "Niemowlę", "Maluch", "Dziecko", "Nastolatek", "Dorosły"},
+        StageLabels{{"Noworodek", ""}, {"Niemowlę", ""}, {"Maluch", ""}, {"Dziecko", ""}, {"Nastolatek", "Nastolatka"}, {"Dorosły", "Dorosła"}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -182,7 +184,7 @@ const AgeLocale& PT() {
             UnitForms::Plural({{PluralCategory::One, "{n} ano"}, {PluralCategory::Other, "{n} anos"}})
         },
         "{0} e meio", ", ", "Recém-nascido",
-        StageLabels{"Recém-nascido", "Bebê", "Criança pequena", "Criança", "Adolescente", "Adulto"},
+        StageLabels{{"Recém-nascido", "Recém-nascida"}, {"Bebê", ""}, {"Criança pequena", ""}, {"Criança", ""}, {"Adolescente", ""}, {"Adulto", "Adulta"}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -204,7 +206,7 @@ const AgeLocale& RO() {
             UnitForms::Plural({{PluralCategory::One, "{n} an"}, {PluralCategory::Few, "{n} ani"}, {PluralCategory::Other, "{n} de ani"}})
         },
         "{0} și jumătate", ", ", "Nou-născut",
-        StageLabels{"Nou-născut", "Sugar", "Copil mic", "Copil", "Adolescent", "Adult"},
+        StageLabels{{"Nou-născut", "Nou-născută"}, {"Sugar", ""}, {"Copil mic", ""}, {"Copil", ""}, {"Adolescent", "Adolescentă"}, {"Adult", "Adultă"}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -227,7 +229,7 @@ const AgeLocale& RU() {
             UnitForms::Plural({{PluralCategory::One, "{n} год"}, {PluralCategory::Few, "{n} года"}, {PluralCategory::Many, "{n} лет"}, {PluralCategory::Other, "{n} лет"}})
         },
         "{n} с половиной", ", ", "Новорождённый",
-        StageLabels{"Новорождённый", "Младенец", "Малыш", "Ребёнок", "Подросток", "Взрослый"},
+        StageLabels{{"Новорождённый", "Новорождённая"}, {"Младенец", ""}, {"Малыш", "Малышка"}, {"Ребёнок", ""}, {"Подросток", ""}, {"Взрослый", "Взрослая"}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;

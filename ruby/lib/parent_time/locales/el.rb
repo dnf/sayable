@@ -19,8 +19,8 @@ module ParentTime
         infant: 'Βρέφος',
         toddler: 'Νήπιο',
         child: 'Παιδί',
-        teenager: 'Έφηβος',
-        adult: 'Ενήλικας'
+        teenager: { m: 'Έφηβος', f: 'Έφηβη' },
+        adult: { m: 'Ενήλικας', f: 'Ενήλικη' }
       }
     )
   end

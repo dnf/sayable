@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Irish locale.
 pub fn locale() -> AgeLocale {
@@ -15,12 +15,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Nuabheirthe".to_string(),
         stages: Stages {
-            newborn: "Nuabheirthe".to_string(),
-            infant: "Naíonán".to_string(),
-            toddler: "Lapadán".to_string(),
-            child: "Páiste".to_string(),
-            teenager: "Déagóir".to_string(),
-            adult: "Duine fásta".to_string(),
+            newborn: StageLabel::Neutral("Nuabheirthe".to_string()),
+            infant: StageLabel::Neutral("Naíonán".to_string()),
+            toddler: StageLabel::Neutral("Lapadán".to_string()),
+            child: StageLabel::Neutral("Páiste".to_string()),
+            teenager: StageLabel::Neutral("Déagóir".to_string()),
+            adult: StageLabel::Neutral("Duine fásta".to_string()),
         },
         short: None,
         compact: None,

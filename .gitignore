@@ -17,6 +17,11 @@ ruby/vendor/
 ruby/Gemfile.lock
 ruby/pkg/
 ruby/tmp/
+ruby/bin/
+ruby/cache/
+ruby/extensions/
+ruby/gems/
+ruby/specifications/
 
 # Rust
 rust/target/
@@ -27,3 +32,10 @@ kotlin/.gradle/
 
 # C++
 cpp/build/
+
+# PHP
+php/vendor/
+php/composer.lock
+php/.phpunit.cache/
+php/.php-cs-fixer.cache
+php/.phpstan.cache/

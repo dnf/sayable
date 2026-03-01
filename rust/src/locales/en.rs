@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, CompactnessOverride};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// English locale.
 pub fn locale() -> AgeLocale {
@@ -33,12 +33,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Newborn".to_string(),
         stages: Stages {
-            newborn: "Newborn".to_string(),
-            infant: "Infant".to_string(),
-            toddler: "Toddler".to_string(),
-            child: "Child".to_string(),
-            teenager: "Teenager".to_string(),
-            adult: "Adult".to_string(),
+            newborn: StageLabel::Neutral("Newborn".to_string()),
+            infant: StageLabel::Neutral("Infant".to_string()),
+            toddler: StageLabel::Neutral("Toddler".to_string()),
+            child: StageLabel::Neutral("Child".to_string()),
+            teenager: StageLabel::Neutral("Teenager".to_string()),
+            adult: StageLabel::Neutral("Adult".to_string()),
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} d")),

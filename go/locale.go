@@ -62,11 +62,39 @@ type AgeLocale struct {
 	Half         string
 	Delimiter    string
 	JustBorn     string
-	Stages       struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }
+	Stages       struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }
 	Short        *CompactnessOverride
 	Compact      *CompactnessOverride
 	FormatNumber func(n int) string
 	FormatUnit   func(count int, label string) string
+}
+
+// StageLabel represents a stage label that may be gender-neutral or gendered.
+type StageLabel struct {
+	Label string // gender-neutral form (used directly if M is empty)
+	M     string // masculine form
+	F     string // feminine form
+}
+
+// ResolveStage returns the appropriate string for the given gender.
+func ResolveStage(sl StageLabel, gender string) string {
+	if sl.M == "" {
+		return sl.Label
+	}
+	if gender == "f" {
+		return sl.F
+	}
+	return sl.M
+}
+
+// S creates a gender-neutral StageLabel from a plain string.
+func S(s string) StageLabel {
+	return StageLabel{Label: s}
+}
+
+// G creates a gendered StageLabel with masculine and feminine forms.
+func G(m, f string) StageLabel {
+	return StageLabel{M: m, F: f}
 }
 
 // strPtr returns a pointer to the given string.

@@ -1,5 +1,6 @@
 #include "parenttime/parenttime.hpp"
 #include "parenttime/locales.hpp"
+#include "parenttime/testing.hpp"
 
 #include <iostream>
 #include <optional>
@@ -258,6 +259,78 @@ void test_stage_adult() {
 }
 
 // ================================================================
+// formatStage -- gender support
+// ================================================================
+void test_stage_gender_spanish() {
+    ParentTime pt(locales::ES());
+
+    // Default (masculine/neutral)
+    ASSERT_EQ("ES stage newborn m", pt.format_stage("2025-06-15", "2025-06-15"), "Recién nacido");
+    ASSERT_EQ("ES stage toddler m", pt.format_stage("2024-06-15", "2025-06-15"), "Niño pequeño");
+    ASSERT_EQ("ES stage child m", pt.format_stage("2022-06-15", "2025-06-15"), "Niño");
+    ASSERT_EQ("ES stage adult m", pt.format_stage("2007-06-15", "2025-06-15"), "Adulto");
+
+    // Feminine
+    ASSERT_EQ("ES stage newborn f", pt.format_stage("2025-06-15", "2025-06-15", "f"), "Recién nacida");
+    ASSERT_EQ("ES stage infant f", pt.format_stage("2025-01-15", "2025-06-15", "f"), "Bebé");
+    ASSERT_EQ("ES stage toddler f", pt.format_stage("2024-06-15", "2025-06-15", "f"), "Niña pequeña");
+    ASSERT_EQ("ES stage child f", pt.format_stage("2022-06-15", "2025-06-15", "f"), "Niña");
+    ASSERT_EQ("ES stage teenager f", pt.format_stage("2012-06-15", "2025-06-15", "f"), "Adolescente");
+    ASSERT_EQ("ES stage adult f", pt.format_stage("2007-06-15", "2025-06-15", "f"), "Adulta");
+}
+
+void test_stage_gender_italian() {
+    ParentTime pt(locales::IT());
+
+    // Default (masculine)
+    ASSERT_EQ("IT stage newborn m", pt.format_stage("2025-06-15", "2025-06-15"), "Neonato");
+    ASSERT_EQ("IT stage toddler m", pt.format_stage("2024-06-15", "2025-06-15"), "Bimbo");
+    ASSERT_EQ("IT stage child m", pt.format_stage("2022-06-15", "2025-06-15"), "Bambino");
+
+    // Feminine
+    ASSERT_EQ("IT stage newborn f", pt.format_stage("2025-06-15", "2025-06-15", "f"), "Neonata");
+    ASSERT_EQ("IT stage infant f", pt.format_stage("2025-01-15", "2025-06-15", "f"), "Lattante");
+    ASSERT_EQ("IT stage toddler f", pt.format_stage("2024-06-15", "2025-06-15", "f"), "Bimba");
+    ASSERT_EQ("IT stage child f", pt.format_stage("2022-06-15", "2025-06-15", "f"), "Bambina");
+    ASSERT_EQ("IT stage adult f", pt.format_stage("2007-06-15", "2025-06-15", "f"), "Adulta");
+}
+
+void test_stage_gender_arabic() {
+    ParentTime pt(locales::AR());
+
+    // Default (masculine)
+    ASSERT_EQ("AR stage newborn m", pt.format_stage("2025-06-15", "2025-06-15"), "حديث الولادة");
+    ASSERT_EQ("AR stage infant m", pt.format_stage("2025-01-15", "2025-06-15"), "رضيع");
+    ASSERT_EQ("AR stage teenager m", pt.format_stage("2012-06-15", "2025-06-15"), "مراهق");
+
+    // Feminine
+    ASSERT_EQ("AR stage newborn f", pt.format_stage("2025-06-15", "2025-06-15", "f"), "حديثة الولادة");
+    ASSERT_EQ("AR stage infant f", pt.format_stage("2025-01-15", "2025-06-15", "f"), "رضيعة");
+    ASSERT_EQ("AR stage toddler f", pt.format_stage("2024-06-15", "2025-06-15", "f"), "طفلة صغيرة");
+    ASSERT_EQ("AR stage child f", pt.format_stage("2022-06-15", "2025-06-15", "f"), "طفلة");
+    ASSERT_EQ("AR stage teenager f", pt.format_stage("2012-06-15", "2025-06-15", "f"), "مراهقة");
+    ASSERT_EQ("AR stage adult f", pt.format_stage("2007-06-15", "2025-06-15", "f"), "بالغة");
+}
+
+void test_stage_gender_neutral_locale() {
+    // English has no gendered forms - "f" should still return default
+    ParentTime pt(locales::EN());
+    ASSERT_EQ("EN stage newborn f", pt.format_stage("2025-06-15", "2025-06-15", "f"), "Newborn");
+    ASSERT_EQ("EN stage adult f", pt.format_stage("2007-06-15", "2025-06-15", "f"), "Adult");
+}
+
+void test_stage_gender_slovenian() {
+    ParentTime pt(locales::SL());
+
+    ASSERT_EQ("SL stage newborn m", pt.format_stage("2025-06-15", "2025-06-15"), "Novorojenček");
+    ASSERT_EQ("SL stage newborn f", pt.format_stage("2025-06-15", "2025-06-15", "f"), "Novorojenčica");
+    ASSERT_EQ("SL stage child m", pt.format_stage("2022-06-15", "2025-06-15"), "Otrok");
+    ASSERT_EQ("SL stage child f", pt.format_stage("2022-06-15", "2025-06-15", "f"), "Otrok");
+    ASSERT_EQ("SL stage adult m", pt.format_stage("2007-06-15", "2025-06-15"), "Odrasel");
+    ASSERT_EQ("SL stage adult f", pt.format_stage("2007-06-15", "2025-06-15", "f"), "Odrasla");
+}
+
+// ================================================================
 // ParentTime class with English locale
 // ================================================================
 void test_parenttime_english() {
@@ -344,6 +417,27 @@ void test_compact_compact() {
     ASSERT_EQ("compact justBorn unchanged", pt.format_age("2025-06-15", "2025-06-15"), "Newborn");
 }
 
+// ================================================================
+// formatAge -- default asOf (uses current date)
+// ================================================================
+void test_default_as_of() {
+    parenttime::testing::set_today(2025, 6, 15);
+    ASSERT_EQ("default asOf 5 years", format_age("2020-01-01"), "5 years");
+    ASSERT_EQ("default asOf 5 days", format_age("2025-06-10"), "5 days");
+    parenttime::testing::clear_today();
+}
+
+// ================================================================
+// formatStage -- default asOf (uses current date)
+// ================================================================
+void test_stage_default_as_of() {
+    parenttime::testing::set_today(2025, 6, 15);
+    ASSERT_EQ("stage default Newborn", format_stage("2025-06-15"), "Newborn");
+    ASSERT_EQ("stage default Child", format_stage("2020-01-01"), "Child");
+    ASSERT_EQ("stage default Adult", format_stage("1980-01-01"), "Adult");
+    parenttime::testing::clear_today();
+}
+
 int main() {
     test_null_edge_cases();
     test_days_tier();
@@ -366,10 +460,17 @@ int main() {
     test_stage_child();
     test_stage_teenager();
     test_stage_adult();
+    test_stage_gender_spanish();
+    test_stage_gender_italian();
+    test_stage_gender_arabic();
+    test_stage_gender_neutral_locale();
+    test_stage_gender_slovenian();
     test_parenttime_english();
     test_parenttime_spanish();
     test_compact_short();
     test_compact_compact();
+    test_default_as_of();
+    test_stage_default_as_of();
 
     std::cout << "\n=== Results ===" << std::endl;
     std::cout << "Passed: " << tests_passed << std::endl;

@@ -6,7 +6,7 @@ import calendar
 from datetime import date
 from typing import Literal
 
-from parent_time.locale import EN, AgeLocale, UnitForms, resolve_unit
+from parent_time.locale import EN, AgeLocale, UnitForms, resolve_stage, resolve_unit
 
 
 def _parse_age(
@@ -165,17 +165,19 @@ class ParentTime:
         self,
         date_of_birth: str | None,
         as_of: str | None = None,
+        gender: str | None = None,
     ) -> str | None:
         """Developmental stage label based on age.
 
         Args:
             date_of_birth: YYYY-MM-DD date string.
             as_of: YYYY-MM-DD reference date (defaults to today).
+            gender: ``"m"`` or ``"f"`` for gendered locales (default masculine/neutral).
         """
         parsed = _parse_age(date_of_birth, as_of)
         if parsed is None:
             return None
-        return self._locale.stages[_stage_key(parsed[0])]
+        return resolve_stage(self._locale.stages[_stage_key(parsed[0])], gender)
 
 
 _default = ParentTime(EN)
@@ -192,6 +194,7 @@ def format_age(
 def format_stage(
     date_of_birth: str | None,
     as_of: str | None = None,
+    gender: str | None = None,
 ) -> str | None:
     """Developmental stage label using the default English locale."""
-    return _default.format_stage(date_of_birth, as_of)
+    return _default.format_stage(date_of_birth, as_of, gender)

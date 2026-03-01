@@ -5,7 +5,7 @@ module ParentTime
     LV = AgeLocale.new(
       code: 'lv',
       plural: lambda { |n|
-        if n.zero? then :zero
+        if n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19 then :zero
         elsif n % 10 == 1 && n % 100 != 11 then :one
         else :other
         end
@@ -20,12 +20,12 @@ module ParentTime
       delimiter: ', ',
       just_born: 'Jaundzimušais',
       stages: {
-        newborn: 'Jaundzimušais',
-        infant: 'Zīdainis',
-        toddler: 'Mazulis',
+        newborn: { m: 'Jaundzimušais', f: 'Jaundzimušā' },
+        infant: { m: 'Zīdainis', f: 'Zīdaine' },
+        toddler: { m: 'Mazulis', f: 'Mazule' },
         child: 'Bērns',
-        teenager: 'Pusaudzis',
-        adult: 'Pieaugušais'
+        teenager: { m: 'Pusaudzis', f: 'Pusaudze' },
+        adult: { m: 'Pieaugušais', f: 'Pieaugusī' }
       }
     )
   end

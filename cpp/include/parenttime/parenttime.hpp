@@ -23,8 +23,10 @@ public:
 
     /// Return the developmental stage label based on age.
     /// Returns std::nullopt if dateOfBirth is empty or in the future.
+    /// gender: "f" for feminine forms (where available), "" for default.
     std::optional<std::string> format_stage(const std::string& date_of_birth,
-                                            const std::string& as_of = "") const;
+                                            const std::string& as_of = "",
+                                            const std::string& gender = "") const;
 
 private:
     const AgeLocale* locale_;
@@ -45,7 +47,8 @@ std::optional<std::string> format_age(const std::string& date_of_birth,
 
 /// Return the developmental stage using the default English locale.
 std::optional<std::string> format_stage(const std::string& date_of_birth,
-                                        const std::string& as_of = "");
+                                        const std::string& as_of = "",
+                                        const std::string& gender = "");
 
 } // namespace parenttime
 

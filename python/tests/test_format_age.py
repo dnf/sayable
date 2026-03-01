@@ -5,7 +5,8 @@ from __future__ import annotations
 from datetime import date
 from unittest.mock import patch
 
-from parent_time import EN, AgeLocale, ParentTime, format_age, format_stage
+from parent_time import EN, AgeLocale, ParentTime, format_age, format_stage, resolve_stage
+from parent_time.locales import AR, ES
 
 
 # ================================================================
@@ -619,3 +620,144 @@ class TestCompactnessCompact:
 
     def test_just_born_unchanged(self) -> None:
         assert self.pt.format_age("2025-06-15", "2025-06-15") == "Newborn"
+
+
+# ================================================================
+# resolve_stage helper
+# ================================================================
+
+
+class TestResolveStage:
+    def test_plain_string_returns_as_is(self) -> None:
+        assert resolve_stage("Newborn") == "Newborn"
+
+    def test_plain_string_ignores_gender(self) -> None:
+        assert resolve_stage("Newborn", "f") == "Newborn"
+        assert resolve_stage("Newborn", "m") == "Newborn"
+
+    def test_gendered_dict_returns_masculine_by_default(self) -> None:
+        label = {"m": "Adulto", "f": "Adulta"}
+        assert resolve_stage(label) == "Adulto"
+
+    def test_gendered_dict_returns_masculine_for_m(self) -> None:
+        label = {"m": "Adulto", "f": "Adulta"}
+        assert resolve_stage(label, "m") == "Adulto"
+
+    def test_gendered_dict_returns_feminine_for_f(self) -> None:
+        label = {"m": "Adulto", "f": "Adulta"}
+        assert resolve_stage(label, "f") == "Adulta"
+
+    def test_gendered_dict_returns_masculine_for_none(self) -> None:
+        label = {"m": "Adulto", "f": "Adulta"}
+        assert resolve_stage(label, None) == "Adulto"
+
+
+# ================================================================
+# format_stage with gender — Arabic (fully gendered)
+# ================================================================
+
+
+class TestStageGenderArabic:
+    def setup_method(self) -> None:
+        self.pt = ParentTime(AR)
+
+    def test_newborn_masculine(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15") == "حديث الولادة"
+
+    def test_newborn_feminine(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15", gender="f") == "حديثة الولادة"
+
+    def test_infant_masculine(self) -> None:
+        assert self.pt.format_stage("2025-04-15", "2025-06-15") == "رضيع"
+
+    def test_infant_feminine(self) -> None:
+        assert self.pt.format_stage("2025-04-15", "2025-06-15", gender="f") == "رضيعة"
+
+    def test_toddler_masculine(self) -> None:
+        assert self.pt.format_stage("2024-06-15", "2025-06-15") == "طفل صغير"
+
+    def test_toddler_feminine(self) -> None:
+        assert self.pt.format_stage("2024-06-15", "2025-06-15", gender="f") == "طفلة صغيرة"
+
+    def test_child_masculine(self) -> None:
+        assert self.pt.format_stage("2022-06-15", "2025-06-15") == "طفل"
+
+    def test_child_feminine(self) -> None:
+        assert self.pt.format_stage("2022-06-15", "2025-06-15", gender="f") == "طفلة"
+
+    def test_teenager_masculine(self) -> None:
+        assert self.pt.format_stage("2012-06-15", "2025-06-15") == "مراهق"
+
+    def test_teenager_feminine(self) -> None:
+        assert self.pt.format_stage("2012-06-15", "2025-06-15", gender="f") == "مراهقة"
+
+    def test_adult_masculine(self) -> None:
+        assert self.pt.format_stage("2007-06-15", "2025-06-15") == "بالغ"
+
+    def test_adult_feminine(self) -> None:
+        assert self.pt.format_stage("2007-06-15", "2025-06-15", gender="f") == "بالغة"
+
+
+# ================================================================
+# format_stage with gender — English (no gendered stages)
+# ================================================================
+
+
+class TestStageGenderEnglish:
+    def setup_method(self) -> None:
+        self.pt = ParentTime(EN)
+
+    def test_english_ignores_gender_f(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15", gender="f") == "Newborn"
+        assert self.pt.format_stage("2024-06-15", "2025-06-15", gender="f") == "Toddler"
+        assert self.pt.format_stage("2007-06-15", "2025-06-15", gender="f") == "Adult"
+
+    def test_english_ignores_gender_m(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15", gender="m") == "Newborn"
+        assert self.pt.format_stage("2007-06-15", "2025-06-15", gender="m") == "Adult"
+
+
+# ================================================================
+# format_stage with gender — Spanish (partial gendering)
+# ================================================================
+
+
+class TestStageGenderSpanish:
+    def setup_method(self) -> None:
+        self.pt = ParentTime(ES)
+
+    def test_newborn_masculine(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15") == "Recién nacido"
+
+    def test_newborn_feminine(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15", gender="f") == "Recién nacida"
+
+    def test_infant_ungendered(self) -> None:
+        assert self.pt.format_stage("2025-04-15", "2025-06-15") == "Bebé"
+        assert self.pt.format_stage("2025-04-15", "2025-06-15", gender="f") == "Bebé"
+
+    def test_toddler_feminine(self) -> None:
+        assert self.pt.format_stage("2024-06-15", "2025-06-15", gender="f") == "Niña pequeña"
+
+    def test_child_feminine(self) -> None:
+        assert self.pt.format_stage("2022-06-15", "2025-06-15", gender="f") == "Niña"
+
+    def test_teenager_ungendered(self) -> None:
+        assert self.pt.format_stage("2012-06-15", "2025-06-15") == "Adolescente"
+        assert self.pt.format_stage("2012-06-15", "2025-06-15", gender="f") == "Adolescente"
+
+    def test_adult_feminine(self) -> None:
+        assert self.pt.format_stage("2007-06-15", "2025-06-15", gender="f") == "Adulta"
+
+
+# ================================================================
+# Module-level format_stage with gender
+# ================================================================
+
+
+class TestModuleLevelFormatStageGender:
+    def test_module_level_format_stage_accepts_gender(self) -> None:
+        # English has no gendered stages, so result is the same
+        assert format_stage("2007-06-15", "2025-06-15", gender="f") == "Adult"
+        assert format_stage("2007-06-15", "2025-06-15", gender="m") == "Adult"
+        assert format_stage("2007-06-15", "2025-06-15") == "Adult"

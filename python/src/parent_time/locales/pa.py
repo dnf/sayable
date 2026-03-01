@@ -15,11 +15,11 @@ PA = AgeLocale(
     delimiter=", ",
     just_born="ਨਵਜੰਮਿਆ",
     stages={
-        "newborn": "ਨਵਜੰਮਿਆ",
+        "newborn": {"m": "ਨਵਜੰਮਿਆ", "f": "ਨਵਜੰਮੀ"},
         "infant": "ਸ਼ਿਸ਼ੂ",
-        "toddler": "ਛੋਟਾ ਬੱਚਾ",
-        "child": "ਬੱਚਾ",
-        "teenager": "ਕਿਸ਼ੋਰ",
+        "toddler": {"m": "ਛੋਟਾ ਬੱਚਾ", "f": "ਛੋਟੀ ਬੱਚੀ"},
+        "child": {"m": "ਬੱਚਾ", "f": "ਬੱਚੀ"},
+        "teenager": {"m": "ਕਿਸ਼ੋਰ", "f": "ਕਿਸ਼ੋਰੀ"},
         "adult": "ਬਾਲਗ",
     },
 )

@@ -1,0 +1,107 @@
+# parent-time — Kotlin
+
+Human-friendly age formatting the way parents actually talk.
+
+```kotlin
+val age = ParentTime.formatAge("2025-06-01", "2025-06-15")  // "2 weeks"
+val stage = ParentTime.formatStage("2025-01-15", "2025-06-15")  // "Infant"
+```
+
+## Installation
+
+Add to your `build.gradle.kts`:
+
+```kotlin
+dependencies {
+    implementation("com.github.dnf:parent-time:0.1.0")
+}
+```
+
+Requires JVM 17+. Zero external dependencies.
+
+## Usage
+
+```kotlin
+import parenttime.ParentTime
+import parenttime.Locales
+
+// Companion object functions — English default
+val age = ParentTime.formatAge("2025-06-15", "2025-06-15")    // "Newborn"
+val age2 = ParentTime.formatAge("2025-06-01", "2025-06-15")   // "2 weeks"
+val age3 = ParentTime.formatAge("2025-01-15", "2025-07-15")   // "6 months"
+val age4 = ParentTime.formatAge("2022-06-15", "2025-12-15")   // "3½ years"
+
+val stage = ParentTime.formatStage("2025-01-15", "2025-06-15")  // "Infant"
+
+// Returns null for empty/future dates
+val nothing = ParentTime.formatAge("")  // null
+
+// Class-based with locale
+val pt = ParentTime(Locales.EN)
+pt.formatAge("2022-06-15", "2025-12-15")   // "3½ years"
+pt.formatStage("2022-06-15", "2025-06-15") // "Child"
+```
+
+## Internationalization
+
+```kotlin
+import parenttime.ParentTime
+import parenttime.Locales
+
+val pt = ParentTime(Locales.JA)
+pt.formatAge("2025-01-01", "2025-07-15")   // "6ヶ月"
+pt.formatStage("2025-01-01", "2025-07-15") // "乳児"
+```
+
+49 built-in locales are available. See the [locale documentation](../docs/locales.md) for details.
+
+## Compactness
+
+```kotlin
+import parenttime.Compactness
+
+val normal  = ParentTime(Locales.EN)                       // "3 months"
+val short   = ParentTime(Locales.EN, Compactness.SHORT)    // "3 mo"
+val compact = ParentTime(Locales.EN, Compactness.COMPACT)  // "3m"
+```
+
+## API
+
+```kotlin
+class ParentTime(locale: AgeLocale, compactness: Compactness = Compactness.NORMAL) {
+    fun formatAge(dateOfBirth: String, asOf: String? = null): String?
+    fun formatStage(dateOfBirth: String, asOf: String? = null): String?
+
+    companion object {
+        fun formatAge(dateOfBirth: String, asOf: String? = null): String?
+        fun formatStage(dateOfBirth: String, asOf: String? = null): String?
+    }
+}
+```
+
+**Parameters:**
+
+- `dateOfBirth` — `YYYY-MM-DD` string. Returns `null` for empty strings.
+- `asOf` — Optional reference date. Defaults to today.
+
+**Returns:** `String?` — the formatted string, or `null` if input is invalid or DOB is in the future.
+
+## Development
+
+```bash
+./gradlew test    # Run tests
+./gradlew build   # Build
+```
+
+## Code quality
+
+- `explicitApi()` — all declarations must have explicit visibility
+- `allWarningsAsErrors` — zero warnings policy
+- `progressiveMode` — opt into stricter future behavior
+- `-Xjsr305=strict` — strict Java nullability interop
+- JVM target: 17 (current LTS)
+- See [code quality docs](../docs/code-quality-compiled.md#kotlin) for details
+
+## License
+
+MIT

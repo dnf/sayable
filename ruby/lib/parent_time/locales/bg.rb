@@ -20,7 +20,7 @@ module ParentTime
         toddler: 'Малко дете',
         child: 'Дете',
         teenager: 'Тийнейджър',
-        adult: 'Възрастен'
+        adult: { m: 'Възрастен', f: 'Възрастна' }
       }
     )
   end

@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Malay locale.
 pub fn locale() -> AgeLocale {
@@ -15,12 +15,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Baru lahir".to_string(),
         stages: Stages {
-            newborn: "Baru lahir".to_string(),
-            infant: "Bayi".to_string(),
-            toddler: "Kanak-kanak kecil".to_string(),
-            child: "Kanak-kanak".to_string(),
-            teenager: "Remaja".to_string(),
-            adult: "Dewasa".to_string(),
+            newborn: StageLabel::Neutral("Baru lahir".to_string()),
+            infant: StageLabel::Neutral("Bayi".to_string()),
+            toddler: StageLabel::Neutral("Kanak-kanak kecil".to_string()),
+            child: StageLabel::Neutral("Kanak-kanak".to_string()),
+            teenager: StageLabel::Neutral("Remaja".to_string()),
+            adult: StageLabel::Neutral("Dewasa".to_string()),
         },
         short: None,
         compact: None,

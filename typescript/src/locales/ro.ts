@@ -19,7 +19,11 @@ export const ro: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Nou-născut',
   stages: {
-    newborn: 'Nou-născut', infant: 'Sugar', toddler: 'Copil mic',
-    child: 'Copil', teenager: 'Adolescent', adult: 'Adult',
+    newborn: { m: 'Nou-născut', f: 'Nou-născută' },
+    infant: 'Sugar',
+    toddler: 'Copil mic',
+    child: 'Copil',
+    teenager: { m: 'Adolescent', f: 'Adolescentă' },
+    adult: { m: 'Adult', f: 'Adultă' },
   },
 };

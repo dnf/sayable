@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Basque locale.
 pub fn locale() -> AgeLocale {
@@ -15,12 +15,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Jaioberria".to_string(),
         stages: Stages {
-            newborn: "Jaioberria".to_string(),
-            infant: "Haurra".to_string(),
-            toddler: "Haur txikia".to_string(),
-            child: "Umea".to_string(),
-            teenager: "Nerabea".to_string(),
-            adult: "Heldua".to_string(),
+            newborn: StageLabel::Neutral("Jaioberria".to_string()),
+            infant: StageLabel::Neutral("Haurra".to_string()),
+            toddler: StageLabel::Neutral("Haur txikia".to_string()),
+            child: StageLabel::Neutral("Umea".to_string()),
+            teenager: StageLabel::Neutral("Nerabea".to_string()),
+            adult: StageLabel::Neutral("Heldua".to_string()),
         },
         short: None,
         compact: None,

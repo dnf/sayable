@@ -8,6 +8,28 @@
 
 namespace parenttime {
 
+// ---------- testing clock override ----------
+
+namespace testing {
+
+static bool today_override_set = false;
+static int today_override_y = 0;
+static int today_override_m = 0;
+static int today_override_d = 0;
+
+void set_today(int year, int month, int day) {
+    today_override_set = true;
+    today_override_y = year;
+    today_override_m = month;
+    today_override_d = day;
+}
+
+void clear_today() {
+    today_override_set = false;
+}
+
+} // namespace testing
+
 // ---------- internal helpers ----------
 
 namespace {
@@ -84,6 +106,12 @@ struct AgeComponents {
 
 /// Get current date as (year, month, day).
 void get_today(int& y, int& m, int& d) {
+    if (testing::today_override_set) {
+        y = testing::today_override_y;
+        m = testing::today_override_m;
+        d = testing::today_override_d;
+        return;
+    }
     auto now = std::chrono::system_clock::now();
     std::time_t t = std::chrono::system_clock::to_time_t(now);
     std::tm tm_buf{};
@@ -285,19 +313,22 @@ std::optional<std::string> ParentTime::format_age(
 }
 
 std::optional<std::string> ParentTime::format_stage(
-    const std::string& date_of_birth, const std::string& as_of) const {
+    const std::string& date_of_birth, const std::string& as_of,
+    const std::string& gender) const {
 
     auto age = parse_age(date_of_birth, as_of);
     if (!age.has_value()) return std::nullopt;
 
     std::string key = stage_key(age->months);
-    if (key == "newborn") return locale_->stages.newborn;
-    if (key == "infant") return locale_->stages.infant;
-    if (key == "toddler") return locale_->stages.toddler;
-    if (key == "child") return locale_->stages.child;
-    if (key == "teenager") return locale_->stages.teenager;
-    if (key == "adult") return locale_->stages.adult;
-    return std::nullopt;
+    const StageLabel* label = nullptr;
+    if (key == "newborn") label = &locale_->stages.newborn;
+    else if (key == "infant") label = &locale_->stages.infant;
+    else if (key == "toddler") label = &locale_->stages.toddler;
+    else if (key == "child") label = &locale_->stages.child;
+    else if (key == "teenager") label = &locale_->stages.teenager;
+    else if (key == "adult") label = &locale_->stages.adult;
+    if (!label) return std::nullopt;
+    return label->resolve(gender);
 }
 
 // ---------- Free functions ----------
@@ -313,8 +344,9 @@ std::optional<std::string> format_age(const std::string& date_of_birth,
 }
 
 std::optional<std::string> format_stage(const std::string& date_of_birth,
-                                        const std::string& as_of) {
-    return default_pt().format_stage(date_of_birth, as_of);
+                                        const std::string& as_of,
+                                        const std::string& gender) {
+    return default_pt().format_stage(date_of_birth, as_of, gender);
 }
 
 } // namespace parenttime

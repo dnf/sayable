@@ -21,7 +21,11 @@ export const lt: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Naujagimis',
   stages: {
-    newborn: 'Naujagimis', infant: 'Kūdikis', toddler: 'Mažylis',
-    child: 'Vaikas', teenager: 'Paauglys', adult: 'Suaugęs',
+    newborn: { m: 'Naujagimis', f: 'Naujagimė' },
+    infant: { m: 'Kūdikis', f: 'Kūdikė' },
+    toddler: { m: 'Mažylis', f: 'Mažylė' },
+    child: 'Vaikas',
+    teenager: { m: 'Paauglys', f: 'Paauglė' },
+    adult: { m: 'Suaugęs', f: 'Suaugusi' },
   },
 };

@@ -1,11 +1,11 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Urdu locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "ur".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 1 { PluralCategory::One } else { PluralCategory::Other }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: "، ".to_string(),
         just_born: "نومولود".to_string(),
         stages: Stages {
-            newborn: "نومولود".to_string(),
-            infant: "شیرخوار".to_string(),
-            toddler: "چھوٹا بچہ".to_string(),
-            child: "بچہ".to_string(),
-            teenager: "نوجوان".to_string(),
-            adult: "بالغ".to_string(),
+            newborn: StageLabel::Neutral("نومولود".to_string()),
+            infant: StageLabel::Neutral("شیرخوار".to_string()),
+            toddler: StageLabel::Gendered { m: "چھوٹا بچہ".to_string(), f: "چھوٹی بچی".to_string() },
+            child: StageLabel::Gendered { m: "بچہ".to_string(), f: "بچی".to_string() },
+            teenager: StageLabel::Neutral("نوجوان".to_string()),
+            adult: StageLabel::Neutral("بالغ".to_string()),
         },
         short: None,
         compact: None,

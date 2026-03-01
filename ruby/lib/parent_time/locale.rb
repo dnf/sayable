@@ -35,6 +35,13 @@ module ParentTime
     end
   end
 
+  # Resolve a stage label, which may be a plain String or a Hash { m: "...", f: "..." }.
+  def self.resolve_stage(label, gender = nil)
+    return label if label.is_a?(String)
+
+    gender == 'f' ? label[:f] : label[:m]
+  end
+
   # Resolve a unit count to its display string using locale rules.
   #
   # The `half` template supports two placeholders:

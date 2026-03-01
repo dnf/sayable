@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Finnish locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Vastasyntynyt".to_string(),
         stages: Stages {
-            newborn: "Vastasyntynyt".to_string(),
-            infant: "Vauva".to_string(),
-            toddler: "Taapero".to_string(),
-            child: "Lapsi".to_string(),
-            teenager: "Teini".to_string(),
-            adult: "Aikuinen".to_string(),
+            newborn: StageLabel::Neutral("Vastasyntynyt".to_string()),
+            infant: StageLabel::Neutral("Vauva".to_string()),
+            toddler: StageLabel::Neutral("Taapero".to_string()),
+            child: StageLabel::Neutral("Lapsi".to_string()),
+            teenager: StageLabel::Neutral("Teini".to_string()),
+            adult: StageLabel::Neutral("Aikuinen".to_string()),
         },
         short: None,
         compact: None,

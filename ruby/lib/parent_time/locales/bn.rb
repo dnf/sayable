@@ -19,7 +19,7 @@ module ParentTime
         infant: "\u09B6\u09BF\u09B6\u09C1",
         toddler: "\u099B\u09CB\u099F \u09B6\u09BF\u09B6\u09C1",
         child: "\u09B6\u09BF\u09B6\u09C1",
-        teenager: "\u0995\u09BF\u09B6\u09CB\u09B0",
+        teenager: { m: 'কিশোর', f: 'কিশোরী' },
         adult: "\u09AA\u09CD\u09B0\u09BE\u09AA\u09CD\u09A4\u09AC\u09AF\u09BC\u09B8\u09CD\u0995"
       }
     )

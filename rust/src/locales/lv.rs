@@ -1,11 +1,11 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Latvian locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "lv".to_string(),
         plural: |n| {
-            if n == 0 {
+            if n % 10 == 0 || (n % 100 >= 11 && n % 100 <= 19) {
                 PluralCategory::Zero
             } else if n % 10 == 1 && n % 100 != 11 {
                 PluralCategory::One
@@ -39,12 +39,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Jaundzimušais".to_string(),
         stages: Stages {
-            newborn: "Jaundzimušais".to_string(),
-            infant: "Zīdainis".to_string(),
-            toddler: "Mazulis".to_string(),
-            child: "Bērns".to_string(),
-            teenager: "Pusaudzis".to_string(),
-            adult: "Pieaugušais".to_string(),
+            newborn: StageLabel::Gendered { m: "Jaundzimušais".to_string(), f: "Jaundzimušā".to_string() },
+            infant: StageLabel::Gendered { m: "Zīdainis".to_string(), f: "Zīdaine".to_string() },
+            toddler: StageLabel::Gendered { m: "Mazulis".to_string(), f: "Mazule".to_string() },
+            child: StageLabel::Neutral("Bērns".to_string()),
+            teenager: StageLabel::Gendered { m: "Pusaudzis".to_string(), f: "Pusaudze".to_string() },
+            adult: StageLabel::Gendered { m: "Pieaugušais".to_string(), f: "Pieaugusī".to_string() },
         },
         short: None,
         compact: None,

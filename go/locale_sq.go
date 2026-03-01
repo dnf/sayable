@@ -18,12 +18,12 @@ var SQ = AgeLocale{
 	Half:      "{0} e gjysmë",
 	Delimiter: ", ",
 	JustBorn:  "Sapolindur",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Sapolindur",
-		Infant:   "Foshnjë",
-		Toddler:  "Fëmijë i vogël",
-		Child:    "Fëmijë",
-		Teenager: "Adoleshent",
-		Adult:    "I rritur",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("Sapolindur", "Sapolindure"),
+		Infant:   S("Foshnjë"),
+		Toddler:  G("Fëmijë i vogël", "Fëmijë e vogël"),
+		Child:    S("Fëmijë"),
+		Teenager: G("Adoleshent", "Adoleshente"),
+		Adult:    G("I rritur", "E rritur"),
 	},
 }

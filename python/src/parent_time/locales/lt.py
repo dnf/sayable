@@ -26,11 +26,11 @@ LT = AgeLocale(
     delimiter=", ",
     just_born="Naujagimis",
     stages={
-        "newborn": "Naujagimis",
-        "infant": "Kūdikis",
-        "toddler": "Mažylis",
+        "newborn": {"m": "Naujagimis", "f": "Naujagimė"},
+        "infant": {"m": "Kūdikis", "f": "Kūdikė"},
+        "toddler": {"m": "Mažylis", "f": "Mažylė"},
         "child": "Vaikas",
-        "teenager": "Paauglys",
-        "adult": "Suaugęs",
+        "teenager": {"m": "Paauglys", "f": "Paauglė"},
+        "adult": {"m": "Suaugęs", "f": "Suaugusi"},
     },
 )

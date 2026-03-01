@@ -13,11 +13,11 @@ export const it: AgeLocale = {
   delimiter: ', ',
   justBorn: 'Neonato',
   stages: {
-    newborn: 'Neonato',
+    newborn: { m: 'Neonato', f: 'Neonata' },
     infant: 'Lattante',
-    toddler: 'Bimbo',
-    child: 'Bambino',
+    toddler: { m: 'Bimbo', f: 'Bimba' },
+    child: { m: 'Bambino', f: 'Bambina' },
     teenager: 'Adolescente',
-    adult: 'Adulto',
+    adult: { m: 'Adulto', f: 'Adulta' },
   },
 };

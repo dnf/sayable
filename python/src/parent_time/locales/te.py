@@ -17,9 +17,9 @@ TE = AgeLocale(
     stages={
         "newborn": "నవజాత శిశువు",
         "infant": "శిశువు",
-        "toddler": "చిన్న పిల్లవాడు",
-        "child": "పిల్లవాడు",
+        "toddler": "చిన్న బిడ్డ",
+        "child": "బిడ్డ",
         "teenager": "కౌమారదశ",
-        "adult": "వయోజనుడు",
+        "adult": "వయోజనులు",
     },
 )

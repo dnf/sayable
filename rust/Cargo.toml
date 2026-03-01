@@ -7,6 +7,11 @@ description = "Human-friendly age formatting the way parents actually talk"
 license = "MIT"
 authors = ["Don Neufeld"]
 repository = "https://github.com/dnf/parent-time"
+homepage = "https://github.com/dnf/parent-time"
+documentation = "https://docs.rs/parent-time"
+readme = "README.md"
+keywords = ["age", "format", "parent", "baby", "time"]
+categories = ["date-and-time"]
 
 [dependencies]
 # Zero dependencies — uses only std library

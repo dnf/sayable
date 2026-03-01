@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Serbian (Cyrillic) locale.
 pub fn locale() -> AgeLocale {
@@ -12,7 +12,7 @@ pub fn locale() -> AgeLocale {
             } else if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) {
                 PluralCategory::Few
             } else {
-                PluralCategory::Many
+                PluralCategory::Other
             }
         },
         units: Units {
@@ -45,12 +45,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Новорођенче".to_string(),
         stages: Stages {
-            newborn: "Новорођенче".to_string(),
-            infant: "Одојче".to_string(),
-            toddler: "Мало дете".to_string(),
-            child: "Дете".to_string(),
-            teenager: "Тинејџер".to_string(),
-            adult: "Одрасла особа".to_string(),
+            newborn: StageLabel::Neutral("Новорођенче".to_string()),
+            infant: StageLabel::Neutral("Одојче".to_string()),
+            toddler: StageLabel::Neutral("Мало дете".to_string()),
+            child: StageLabel::Neutral("Дете".to_string()),
+            teenager: StageLabel::Neutral("Тинејџер".to_string()),
+            adult: StageLabel::Neutral("Одрасла особа".to_string()),
         },
         short: None,
         compact: None,

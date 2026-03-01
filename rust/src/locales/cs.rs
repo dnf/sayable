@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Czech locale.
 pub fn locale() -> AgeLocale {
@@ -39,12 +39,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Novorozenec".to_string(),
         stages: Stages {
-            newborn: "Novorozenec".to_string(),
-            infant: "Kojenec".to_string(),
-            toddler: "Batole".to_string(),
-            child: "Dítě".to_string(),
-            teenager: "Teenager".to_string(),
-            adult: "Dospělý".to_string(),
+            newborn: StageLabel::Neutral("Novorozenec".to_string()),
+            infant: StageLabel::Neutral("Kojenec".to_string()),
+            toddler: StageLabel::Neutral("Batole".to_string()),
+            child: StageLabel::Neutral("Dítě".to_string()),
+            teenager: StageLabel::Neutral("Teenager".to_string()),
+            adult: StageLabel::Gendered { m: "Dospělý".to_string(), f: "Dospělá".to_string() },
         },
         short: None,
         compact: None,

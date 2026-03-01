@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Lithuanian locale.
 pub fn locale() -> AgeLocale {
@@ -41,12 +41,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Naujagimis".to_string(),
         stages: Stages {
-            newborn: "Naujagimis".to_string(),
-            infant: "Kūdikis".to_string(),
-            toddler: "Mažylis".to_string(),
-            child: "Vaikas".to_string(),
-            teenager: "Paauglys".to_string(),
-            adult: "Suaugęs".to_string(),
+            newborn: StageLabel::Gendered { m: "Naujagimis".to_string(), f: "Naujagimė".to_string() },
+            infant: StageLabel::Gendered { m: "Kūdikis".to_string(), f: "Kūdikė".to_string() },
+            toddler: StageLabel::Gendered { m: "Mažylis".to_string(), f: "Mažylė".to_string() },
+            child: StageLabel::Neutral("Vaikas".to_string()),
+            teenager: StageLabel::Gendered { m: "Paauglys".to_string(), f: "Paauglė".to_string() },
+            adult: StageLabel::Gendered { m: "Suaugęs".to_string(), f: "Suaugusi".to_string() },
         },
         short: None,
         compact: None,

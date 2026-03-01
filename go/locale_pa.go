@@ -18,12 +18,12 @@ var PA = AgeLocale{
 	Half:      "ਸਾਢੇ {n}",
 	Delimiter: ", ",
 	JustBorn:  "ਨਵਜੰਮਿਆ",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "ਨਵਜੰਮਿਆ",
-		Infant:   "ਸ਼ਿਸ਼ੂ",
-		Toddler:  "ਛੋਟਾ ਬੱਚਾ",
-		Child:    "ਬੱਚਾ",
-		Teenager: "ਕਿਸ਼ੋਰ",
-		Adult:    "ਬਾਲਗ",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("ਨਵਜੰਮਿਆ", "ਨਵਜੰਮੀ"),
+		Infant:   S("ਸ਼ਿਸ਼ੂ"),
+		Toddler:  G("ਛੋਟਾ ਬੱਚਾ", "ਛੋਟੀ ਬੱਚੀ"),
+		Child:    G("ਬੱਚਾ", "ਬੱਚੀ"),
+		Teenager: G("ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ"),
+		Adult:    S("ਬਾਲਗ"),
 	},
 }

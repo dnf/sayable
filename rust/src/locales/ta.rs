@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Tamil locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "பிறந்த குழந்தை".to_string(),
         stages: Stages {
-            newborn: "பிறந்த குழந்தை".to_string(),
-            infant: "குழந்தை".to_string(),
-            toddler: "சிறு குழந்தை".to_string(),
-            child: "சிறுவர்".to_string(),
-            teenager: "இளம்பருவம்".to_string(),
-            adult: "பெரியவர்".to_string(),
+            newborn: StageLabel::Neutral("பிறந்த குழந்தை".to_string()),
+            infant: StageLabel::Neutral("குழந்தை".to_string()),
+            toddler: StageLabel::Neutral("சிறு குழந்தை".to_string()),
+            child: StageLabel::Neutral("சிறார்".to_string()),
+            teenager: StageLabel::Neutral("இளம்பருவம்".to_string()),
+            adult: StageLabel::Neutral("பெரியவர்".to_string()),
         },
         short: None,
         compact: None,

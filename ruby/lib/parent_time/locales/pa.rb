@@ -15,11 +15,11 @@ module ParentTime
       delimiter: ', ',
       just_born: "\u0A28\u0A35\u0A1C\u0A70\u0A2E\u0A3F\u0A06",
       stages: {
-        newborn: "\u0A28\u0A35\u0A1C\u0A70\u0A2E\u0A3F\u0A06",
-        infant: "\u0A36\u0A3F\u0A36\u0A42",
-        toddler: "\u0A1B\u0A4B\u0A1F\u0A3E \u0A2C\u0A71\u0A1A\u0A3E",
-        child: "\u0A2C\u0A71\u0A1A\u0A3E",
-        teenager: "\u0A15\u0A3F\u0A36\u0A4B\u0A30",
+        newborn: { m: 'ਨਵਜੰਮਿਆ', f: 'ਨਵਜੰਮੀ' },
+        infant: 'ਸ਼ਿਸ਼ੂ',
+        toddler: { m: 'ਛੋਟਾ ਬੱਚਾ', f: 'ਛੋਟੀ ਬੱਚੀ' },
+        child: { m: 'ਬੱਚਾ', f: 'ਬੱਚੀ' },
+        teenager: { m: 'ਕਿਸ਼ੋਰ', f: 'ਕਿਸ਼ੋਰੀ' },
         adult: "\u0A2C\u0A3E\u0A32\u0A17"
       }
     )

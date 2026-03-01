@@ -18,12 +18,12 @@ var CA = AgeLocale{
 	Half:      "{n} i mig",
 	Delimiter: ", ",
 	JustBorn:  "Nounat",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Nounat",
-		Infant:   "Nadó",
-		Toddler:  "Infant",
-		Child:    "Nen",
-		Teenager: "Adolescent",
-		Adult:    "Adult",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("Nounat", "Nounada"),
+		Infant:   S("Nadó"),
+		Toddler:  S("Infant"),
+		Child:    S("Criatura"),
+		Teenager: S("Adolescent"),
+		Adult:    G("Adult", "Adulta"),
 	},
 }

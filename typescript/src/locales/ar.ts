@@ -23,11 +23,11 @@ export const ar: AgeLocale = {
   delimiter: ' و',
   justBorn: 'حديث الولادة',
   stages: {
-    newborn: 'حديث الولادة',
-    infant: 'رضيع',
-    toddler: 'طفل صغير',
-    child: 'طفل',
-    teenager: 'مراهق',
-    adult: 'بالغ',
+    newborn: { m: 'حديث الولادة', f: 'حديثة الولادة' },
+    infant: { m: 'رضيع', f: 'رضيعة' },
+    toddler: { m: 'طفل صغير', f: 'طفلة صغيرة' },
+    child: { m: 'طفل', f: 'طفلة' },
+    teenager: { m: 'مراهق', f: 'مراهقة' },
+    adult: { m: 'بالغ', f: 'بالغة' },
   },
 };

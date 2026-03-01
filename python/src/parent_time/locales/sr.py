@@ -10,7 +10,7 @@ def _plural(n: int) -> PluralCategory:
         return "one"
     if 2 <= mod10 <= 4 and (mod100 < 12 or mod100 > 14):
         return "few"
-    return "many"
+    return "other"
 
 
 SR = AgeLocale(

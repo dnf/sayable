@@ -18,7 +18,7 @@ const AgeLocale& FA() {
             UnitForms::Plural({{PluralCategory::One, "{n} سال"}, {PluralCategory::Other, "{n} سال"}})
         },
         "{0} و نیم", " و ", "نوزاد",
-        StageLabels{"نوزاد", "شیرخوار", "نوپا", "کودک", "نوجوان", "بزرگسال"},
+        StageLabels{{"نوزاد", ""}, {"شیرخوار", ""}, {"نوپا", ""}, {"کودک", ""}, {"نوجوان", ""}, {"بزرگسال", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -38,7 +38,7 @@ const AgeLocale& FI() {
             UnitForms::Plural({{PluralCategory::One, "{n} vuosi"}, {PluralCategory::Other, "{n} vuotta"}})
         },
         "{n} ja puoli", ", ", "Vastasyntynyt",
-        StageLabels{"Vastasyntynyt", "Vauva", "Taapero", "Lapsi", "Teini", "Aikuinen"},
+        StageLabels{{"Vastasyntynyt", ""}, {"Vauva", ""}, {"Taapero", ""}, {"Lapsi", ""}, {"Teini", ""}, {"Aikuinen", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -58,7 +58,7 @@ const AgeLocale& FR() {
             UnitForms::Plural({{PluralCategory::One, "{n} an"}, {PluralCategory::Other, "{n} ans"}})
         },
         "{0} et demi", ", ", "Nouveau-né",
-        StageLabels{"Nouveau-né", "Nourrisson", "Bambin", "Enfant", "Adolescent", "Adulte"},
+        StageLabels{{"Nouveau-né", "Nouveau-née"}, {"Nourrisson", ""}, {"Tout-petit", ""}, {"Enfant", ""}, {"Adolescent", "Adolescente"}, {"Adulte", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -75,7 +75,7 @@ const AgeLocale& GA() {
             UnitForms::Simple("{n} bliain")
         },
         "{0} go leith", ", ", "Nuabheirthe",
-        StageLabels{"Nuabheirthe", "Naíonán", "Lapadán", "Páiste", "Déagóir", "Duine fásta"},
+        StageLabels{{"Nuabheirthe", ""}, {"Naíonán", ""}, {"Lapadán", ""}, {"Páiste", ""}, {"Déagóir", ""}, {"Duine fásta", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -95,7 +95,7 @@ const AgeLocale& GU() {
             UnitForms::Plural({{PluralCategory::One, "{n} વર્ષ"}, {PluralCategory::Other, "{n} વર્ષ"}})
         },
         "સાડે {n}", ", ", "નવજાત",
-        StageLabels{"નવજાત", "શિશુ", "નાનું બાળક", "બાળક", "કિશોર", "પુખ્ત"},
+        StageLabels{{"નવજાત", ""}, {"શિશુ", ""}, {"નાનું બાળક", ""}, {"બાળક", ""}, {"કિશોર", "કિશોરી"}, {"પુખ્ત", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -115,7 +115,7 @@ const AgeLocale& HI() {
             UnitForms::Plural({{PluralCategory::One, "{n} साल"}, {PluralCategory::Other, "{n} साल"}})
         },
         "साढ़े {n}", ", ", "नवजात",
-        StageLabels{"नवजात", "शिशु", "छोटा बच्चा", "बच्चा", "किशोर", "वयस्क"},
+        StageLabels{{"नवजात", ""}, {"शिशु", ""}, {"छोटा बच्चा", "छोटी बच्ची"}, {"बच्चा", "बच्ची"}, {"किशोर", "किशोरी"}, {"वयस्क", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -129,7 +129,7 @@ const AgeLocale& HR() {
             int mod100 = n % 100;
             if (mod10 == 1 && mod100 != 11) return PluralCategory::One;
             if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory::Few;
-            return PluralCategory::Many;
+            return PluralCategory::Other;
         },
         UnitSet{
             UnitForms::Plural({{PluralCategory::One, "{n} dan"}, {PluralCategory::Few, "{n} dana"}, {PluralCategory::Many, "{n} dana"}, {PluralCategory::Other, "{n} dana"}}),
@@ -138,7 +138,7 @@ const AgeLocale& HR() {
             UnitForms::Plural({{PluralCategory::One, "{n} godina"}, {PluralCategory::Few, "{n} godine"}, {PluralCategory::Many, "{n} godina"}, {PluralCategory::Other, "{n} godina"}})
         },
         "{0} i pol", ", ", "Novorođenče",
-        StageLabels{"Novorođenče", "Dojenče", "Malo dijete", "Dijete", "Tinejdžer", "Odrasla osoba"},
+        StageLabels{{"Novorođenče", ""}, {"Dojenče", ""}, {"Malo dijete", ""}, {"Dijete", ""}, {"Tinejdžer", ""}, {"Odrasla osoba", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -155,7 +155,7 @@ const AgeLocale& HU() {
             UnitForms::Simple("{n} év")
         },
         "{n} és fél", ", ", "Újszülött",
-        StageLabels{"Újszülött", "Csecsemő", "Kisgyermek", "Gyermek", "Tinédzser", "Felnőtt"},
+        StageLabels{{"Újszülött", ""}, {"Csecsemő", ""}, {"Kisgyermek", ""}, {"Gyermek", ""}, {"Tinédzser", ""}, {"Felnőtt", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -175,7 +175,7 @@ const AgeLocale& IT() {
             UnitForms::Plural({{PluralCategory::One, "{n} anno"}, {PluralCategory::Other, "{n} anni"}})
         },
         "{0} e mezzo", ", ", "Neonato",
-        StageLabels{"Neonato", "Lattante", "Bimbo", "Bambino", "Adolescente", "Adulto"},
+        StageLabels{{"Neonato", "Neonata"}, {"Lattante", ""}, {"Bimbo", "Bimba"}, {"Bambino", "Bambina"}, {"Adolescente", ""}, {"Adulto", "Adulta"}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -192,7 +192,7 @@ const AgeLocale& JA() {
             UnitForms::Simple("{n}歳")
         },
         "{0}半", "", "新生児",
-        StageLabels{"新生児", "乳児", "幼児", "児童", "青少年", "成人"},
+        StageLabels{{"新生児", ""}, {"乳児", ""}, {"幼児", ""}, {"児童", ""}, {"青少年", ""}, {"成人", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -209,7 +209,7 @@ const AgeLocale& JV() {
             UnitForms::Simple("{n} taun")
         },
         "{0} setengah", ", ", "Bayi anyar",
-        StageLabels{"Bayi anyar", "Bayi", "Balita", "Bocah", "Remaja", "Diwasa"},
+        StageLabels{{"Bayi anyar", ""}, {"Bayi", ""}, {"Balita", ""}, {"Bocah", ""}, {"Remaja", ""}, {"Diwasa", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;
@@ -226,7 +226,7 @@ const AgeLocale& KO() {
             UnitForms::Simple("{n}살")
         },
         "{0} 반", " ", "신생아",
-        StageLabels{"신생아", "영아", "유아", "아동", "청소년", "성인"},
+        StageLabels{{"신생아", ""}, {"영아", ""}, {"유아", ""}, {"아동", ""}, {"청소년", ""}, {"성인", ""}},
         std::nullopt, std::nullopt, nullptr, nullptr
     };
     return loc;

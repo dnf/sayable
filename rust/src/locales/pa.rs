@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Punjabi locale.
 pub fn locale() -> AgeLocale {
@@ -29,12 +29,12 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "ਨਵਜੰਮਿਆ".to_string(),
         stages: Stages {
-            newborn: "ਨਵਜੰਮਿਆ".to_string(),
-            infant: "ਸ਼ਿਸ਼ੂ".to_string(),
-            toddler: "ਛੋਟਾ ਬੱਚਾ".to_string(),
-            child: "ਬੱਚਾ".to_string(),
-            teenager: "ਕਿਸ਼ੋਰ".to_string(),
-            adult: "ਬਾਲਗ".to_string(),
+            newborn: StageLabel::Gendered { m: "ਨਵਜੰਮਿਆ".to_string(), f: "ਨਵਜੰਮੀ".to_string() },
+            infant: StageLabel::Neutral("ਸ਼ਿਸ਼ੂ".to_string()),
+            toddler: StageLabel::Gendered { m: "ਛੋਟਾ ਬੱਚਾ".to_string(), f: "ਛੋਟੀ ਬੱਚੀ".to_string() },
+            child: StageLabel::Gendered { m: "ਬੱਚਾ".to_string(), f: "ਬੱਚੀ".to_string() },
+            teenager: StageLabel::Gendered { m: "ਕਿਸ਼ੋਰ".to_string(), f: "ਕਿਸ਼ੋਰੀ".to_string() },
+            adult: StageLabel::Neutral("ਬਾਲਗ".to_string()),
         },
         short: None,
         compact: None,

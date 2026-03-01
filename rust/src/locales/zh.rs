@@ -1,4 +1,4 @@
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 
 /// Chinese locale.
 pub fn locale() -> AgeLocale {
@@ -15,12 +15,12 @@ pub fn locale() -> AgeLocale {
         delimiter: String::new(),
         just_born: "新生儿".to_string(),
         stages: Stages {
-            newborn: "新生儿".to_string(),
-            infant: "婴儿".to_string(),
-            toddler: "幼儿".to_string(),
-            child: "儿童".to_string(),
-            teenager: "青少年".to_string(),
-            adult: "成人".to_string(),
+            newborn: StageLabel::Neutral("新生儿".to_string()),
+            infant: StageLabel::Neutral("婴儿".to_string()),
+            toddler: StageLabel::Neutral("幼儿".to_string()),
+            child: StageLabel::Neutral("儿童".to_string()),
+            teenager: StageLabel::Neutral("青少年".to_string()),
+            adult: StageLabel::Neutral("成人".to_string()),
         },
         short: None,
         compact: None,

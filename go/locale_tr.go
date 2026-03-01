@@ -18,12 +18,12 @@ var TR = AgeLocale{
 	Half:      "{n} buçuk",
 	Delimiter: ", ",
 	JustBorn:  "Yeni doğan",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Yeni doğan",
-		Infant:   "Bebek",
-		Toddler:  "Küçük çocuk",
-		Child:    "Çocuk",
-		Teenager: "Ergen",
-		Adult:    "Yetişkin",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Yeni doğan"),
+		Infant:   S("Bebek"),
+		Toddler:  S("Küçük çocuk"),
+		Child:    S("Çocuk"),
+		Teenager: S("Ergen"),
+		Adult:    S("Yetişkin"),
 	},
 }

@@ -29,6 +29,6 @@ SK = AgeLocale(
         "toddler": "Batoľa",
         "child": "Dieťa",
         "teenager": "Tínedžer",
-        "adult": "Dospelý",
+        "adult": {"m": "Dospelý", "f": "Dospelá"},
     },
 )

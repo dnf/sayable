@@ -29,7 +29,9 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "https://github.com/donalvarez/parent-time"
+Repository = "https://github.com/dnf/parent-time"
+Documentation = "https://github.com/dnf/parent-time/tree/main/python#readme"
+Issues = "https://github.com/dnf/parent-time/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/parent_time"]

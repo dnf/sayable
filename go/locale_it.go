@@ -18,12 +18,12 @@ var IT = AgeLocale{
 	Half:      "{0} e mezzo",
 	Delimiter: ", ",
 	JustBorn:  "Neonato",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Neonato",
-		Infant:   "Lattante",
-		Toddler:  "Bimbo",
-		Child:    "Bambino",
-		Teenager: "Adolescente",
-		Adult:    "Adulto",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  G("Neonato", "Neonata"),
+		Infant:   S("Lattante"),
+		Toddler:  G("Bimbo", "Bimba"),
+		Child:    G("Bambino", "Bambina"),
+		Teenager: S("Adolescente"),
+		Adult:    G("Adulto", "Adulta"),
 	},
 }

@@ -17,6 +17,10 @@ UnitForms = str | dict[str, str]
 or a dict mapping :data:`PluralCategory` keys to templates
 (``"other"`` is required, rest optional)."""
 
+StageLabel = str | dict[str, str]
+"""A stage label: either a plain string or ``{"m": ..., "f": ...}``
+for gendered variants."""
+
 
 @dataclass(frozen=True)
 class CompactnessOverride:
@@ -38,7 +42,7 @@ class AgeLocale:
     half: str
     delimiter: str
     just_born: str
-    stages: dict[str, str]
+    stages: dict[str, StageLabel]
     short: CompactnessOverride | None = None
     compact: CompactnessOverride | None = None
     format_number: Callable[[int], str] | None = None
@@ -72,6 +76,18 @@ def resolve_unit(
     if half and "{0}" in half:
         result = half.replace("{0}", result)
     return result
+
+
+def resolve_stage(label: StageLabel, gender: str | None = None) -> str:
+    """Resolve a stage label, optionally selecting a gendered variant.
+
+    If *label* is a plain string it is returned as-is.  If it is a dict
+    with ``"m"`` / ``"f"`` keys, the feminine form is returned when
+    *gender* is ``"f"``; otherwise the masculine form is returned.
+    """
+    if isinstance(label, str):
+        return label
+    return label["f"] if gender == "f" else label["m"]
 
 
 def _en_plural(n: int) -> PluralCategory:

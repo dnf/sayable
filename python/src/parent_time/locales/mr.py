@@ -4,7 +4,7 @@ from parent_time.locale import AgeLocale
 
 MR = AgeLocale(
     code="mr",
-    plural=lambda n: "one" if n in (0, 1) else "other",
+    plural=lambda n: "one" if n == 1 else "other",
     units={
         "day": {"one": "{n} दिवस", "other": "{n} दिवस"},
         "week": {"one": "{n} आठवडा", "other": "{n} आठवडे"},
@@ -19,7 +19,7 @@ MR = AgeLocale(
         "infant": "अर्भक",
         "toddler": "बाळ",
         "child": "मूल",
-        "teenager": "किशोर",
+        "teenager": {"m": "किशोर", "f": "किशोरी"},
         "adult": "प्रौढ",
     },
 )

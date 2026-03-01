@@ -15,12 +15,12 @@ module ParentTime
       delimiter: ', ',
       just_born: 'Sapolindur',
       stages: {
-        newborn: 'Sapolindur',
+        newborn: { m: 'Sapolindur', f: 'Sapolindure' },
         infant: 'Foshnjë',
-        toddler: 'Fëmijë i vogël',
+        toddler: { m: 'Fëmijë i vogël', f: 'Fëmijë e vogël' },
         child: 'Fëmijë',
-        teenager: 'Adoleshent',
-        adult: 'I rritur'
+        teenager: { m: 'Adoleshent', f: 'Adoleshente' },
+        adult: { m: 'I rritur', f: 'E rritur' }
       }
     )
   end

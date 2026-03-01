@@ -17,7 +17,7 @@ export const bn: AgeLocale = {
     infant: 'শিশু',
     toddler: 'ছোট শিশু',
     child: 'শিশু',
-    teenager: 'কিশোর',
+    teenager: { m: 'কিশোর', f: 'কিশোরী' },
     adult: 'প্রাপ্তবয়স্ক',
   },
 };

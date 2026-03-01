@@ -12,7 +12,7 @@ var SR = AgeLocale{
 		if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) {
 			return Few
 		}
-		return Many
+		return Other
 	},
 	Units: struct{ Day, Week, Month, Year UnitForms }{
 		Day:   PluralUnit(map[PluralCategory]string{One: "{n} дан", Few: "{n} дана", Many: "{n} дана", Other: "{n} дана"}),
@@ -23,12 +23,12 @@ var SR = AgeLocale{
 	Half:      "{0} и по",
 	Delimiter: ", ",
 	JustBorn:  "Новорођенче",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "Новорођенче",
-		Infant:   "Одојче",
-		Toddler:  "Мало дете",
-		Child:    "Дете",
-		Teenager: "Тинејџер",
-		Adult:    "Одрасла особа",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("Новорођенче"),
+		Infant:   S("Одојче"),
+		Toddler:  S("Мало дете"),
+		Child:    S("Дете"),
+		Teenager: S("Тинејџер"),
+		Adult:    S("Одрасла особа"),
 	},
 }

@@ -18,12 +18,12 @@ var TE = AgeLocale{
 	Half:      "{0}న్నర",
 	Delimiter: ", ",
 	JustBorn:  "నవజాత శిశువు",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "నవజాత శిశువు",
-		Infant:   "శిశువు",
-		Toddler:  "చిన్న పిల్లవాడు",
-		Child:    "పిల్లవాడు",
-		Teenager: "కౌమారదశ",
-		Adult:    "వయోజనుడు",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("నవజాత శిశువు"),
+		Infant:   S("శిశువు"),
+		Toddler:  S("చిన్న బిడ్డ"),
+		Child:    S("బిడ్డ"),
+		Teenager: S("కౌమారదశ"),
+		Adult:    S("వయోజనులు"),
 	},
 }

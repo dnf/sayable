@@ -404,13 +404,13 @@ func TestParentTime_Spanish(t *testing.T) {
 		Half:      "{n} y medio",
 		Delimiter: ", ",
 		JustBorn:  "Recién nacido",
-		Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-			Newborn:  "Recién nacido",
-			Infant:   "Bebé",
-			Toddler:  "Niño pequeño",
-			Child:    "Niño",
-			Teenager: "Adolescente",
-			Adult:    "Adulto",
+		Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+			Newborn:  G("Recién nacido", "Recién nacida"),
+			Infant:   S("Bebé"),
+			Toddler:  G("Niño pequeño", "Niña pequeña"),
+			Child:    G("Niño", "Niña"),
+			Teenager: S("Adolescente"),
+			Adult:    G("Adulto", "Adulta"),
 		},
 	}
 
@@ -471,4 +471,107 @@ func TestParentTime_CompactCompact(t *testing.T) {
 	assertAge(t, "half years", pt.FormatAge("2022-06-15", "2025-12-15"), "3\u00BDy")
 	assertAge(t, "integer years", pt.FormatAge("2018-06-15", "2025-06-15"), "7y")
 	assertAge(t, "justBorn unchanged", pt.FormatAge("2025-06-15", "2025-06-15"), "Newborn")
+}
+
+// ================================================================
+// formatStage — gender support
+// ================================================================
+func TestFormatStage_GenderNeutralLocale(t *testing.T) {
+	pt := NewParentTime(EN)
+	// English has all S() labels — gender param should have no effect
+	assertAge(t, "en no gender", pt.FormatStage("2025-06-15", "2025-06-15"), "Newborn")
+	assertAge(t, "en masculine", pt.FormatStage("2025-06-15", "2025-06-15", "m"), "Newborn")
+	assertAge(t, "en feminine", pt.FormatStage("2025-06-15", "2025-06-15", "f"), "Newborn")
+	assertAge(t, "en adult no gender", pt.FormatStage("2007-06-15", "2025-06-15"), "Adult")
+	assertAge(t, "en adult m", pt.FormatStage("2007-06-15", "2025-06-15", "m"), "Adult")
+	assertAge(t, "en adult f", pt.FormatStage("2007-06-15", "2025-06-15", "f"), "Adult")
+}
+
+func TestFormatStage_GenderedLocaleSpanish(t *testing.T) {
+	pt := NewParentTime(ES)
+
+	// Default (no gender) returns masculine for gendered labels
+	assertAge(t, "es newborn default", pt.FormatStage("2025-06-15", "2025-06-15"), "Recién nacido")
+	assertAge(t, "es toddler default", pt.FormatStage("2024-06-15", "2025-06-15"), "Niño pequeño")
+	assertAge(t, "es child default", pt.FormatStage("2022-06-15", "2025-06-15"), "Niño")
+	assertAge(t, "es adult default", pt.FormatStage("2007-06-15", "2025-06-15"), "Adulto")
+
+	// Masculine
+	assertAge(t, "es newborn m", pt.FormatStage("2025-06-15", "2025-06-15", "m"), "Recién nacido")
+	assertAge(t, "es toddler m", pt.FormatStage("2024-06-15", "2025-06-15", "m"), "Niño pequeño")
+	assertAge(t, "es child m", pt.FormatStage("2022-06-15", "2025-06-15", "m"), "Niño")
+	assertAge(t, "es adult m", pt.FormatStage("2007-06-15", "2025-06-15", "m"), "Adulto")
+
+	// Feminine
+	assertAge(t, "es newborn f", pt.FormatStage("2025-06-15", "2025-06-15", "f"), "Recién nacida")
+	assertAge(t, "es toddler f", pt.FormatStage("2024-06-15", "2025-06-15", "f"), "Niña pequeña")
+	assertAge(t, "es child f", pt.FormatStage("2022-06-15", "2025-06-15", "f"), "Niña")
+	assertAge(t, "es adult f", pt.FormatStage("2007-06-15", "2025-06-15", "f"), "Adulta")
+
+	// Gender-neutral labels (S()) ignore gender
+	assertAge(t, "es infant neutral", pt.FormatStage("2025-01-15", "2025-06-15"), "Bebé")
+	assertAge(t, "es infant m", pt.FormatStage("2025-01-15", "2025-06-15", "m"), "Bebé")
+	assertAge(t, "es infant f", pt.FormatStage("2025-01-15", "2025-06-15", "f"), "Bebé")
+	assertAge(t, "es teenager neutral", pt.FormatStage("2012-06-15", "2025-06-15"), "Adolescente")
+	assertAge(t, "es teenager m", pt.FormatStage("2012-06-15", "2025-06-15", "m"), "Adolescente")
+	assertAge(t, "es teenager f", pt.FormatStage("2012-06-15", "2025-06-15", "f"), "Adolescente")
+}
+
+func TestFormatStage_GenderedLocaleArabic(t *testing.T) {
+	pt := NewParentTime(AR)
+
+	// All stages are gendered in Arabic
+	assertAge(t, "ar newborn m", pt.FormatStage("2025-06-15", "2025-06-15", "m"), "حديث الولادة")
+	assertAge(t, "ar newborn f", pt.FormatStage("2025-06-15", "2025-06-15", "f"), "حديثة الولادة")
+	assertAge(t, "ar infant m", pt.FormatStage("2025-01-15", "2025-06-15", "m"), "رضيع")
+	assertAge(t, "ar infant f", pt.FormatStage("2025-01-15", "2025-06-15", "f"), "رضيعة")
+	assertAge(t, "ar toddler m", pt.FormatStage("2024-06-15", "2025-06-15", "m"), "طفل صغير")
+	assertAge(t, "ar toddler f", pt.FormatStage("2024-06-15", "2025-06-15", "f"), "طفلة صغيرة")
+	assertAge(t, "ar child m", pt.FormatStage("2022-06-15", "2025-06-15", "m"), "طفل")
+	assertAge(t, "ar child f", pt.FormatStage("2022-06-15", "2025-06-15", "f"), "طفلة")
+	assertAge(t, "ar teenager m", pt.FormatStage("2012-06-15", "2025-06-15", "m"), "مراهق")
+	assertAge(t, "ar teenager f", pt.FormatStage("2012-06-15", "2025-06-15", "f"), "مراهقة")
+	assertAge(t, "ar adult m", pt.FormatStage("2007-06-15", "2025-06-15", "m"), "بالغ")
+	assertAge(t, "ar adult f", pt.FormatStage("2007-06-15", "2025-06-15", "f"), "بالغة")
+}
+
+func TestFormatStage_GenderEdgeCases(t *testing.T) {
+	pt := NewParentTime(ES)
+
+	// Nil for invalid input
+	assertNil(t, "empty dob", pt.FormatStage(""))
+	assertNil(t, "empty dob with gender", pt.FormatStage("", "", "f"))
+	assertNil(t, "future dob with gender", pt.FormatStage("2025-07-01", "2025-06-15", "f"))
+}
+
+func TestFormatStage_PackageLevelGender(t *testing.T) {
+	// Package-level FormatStage with gender — EN is all neutral
+	assertAge(t, "pkg FormatStage no gender", FormatStage("2007-06-15", "2025-06-15"), "Adult")
+	assertAge(t, "pkg FormatStage m", FormatStage("2007-06-15", "2025-06-15", "m"), "Adult")
+	assertAge(t, "pkg FormatStage f", FormatStage("2007-06-15", "2025-06-15", "f"), "Adult")
+}
+
+func TestResolveStage_Direct(t *testing.T) {
+	// Test the ResolveStage function directly
+	neutral := S("Newborn")
+	if got := ResolveStage(neutral, ""); got != "Newborn" {
+		t.Errorf("neutral no gender: got %q, want %q", got, "Newborn")
+	}
+	if got := ResolveStage(neutral, "m"); got != "Newborn" {
+		t.Errorf("neutral m: got %q, want %q", got, "Newborn")
+	}
+	if got := ResolveStage(neutral, "f"); got != "Newborn" {
+		t.Errorf("neutral f: got %q, want %q", got, "Newborn")
+	}
+
+	gendered := G("Adulto", "Adulta")
+	if got := ResolveStage(gendered, ""); got != "Adulto" {
+		t.Errorf("gendered no gender: got %q, want %q", got, "Adulto")
+	}
+	if got := ResolveStage(gendered, "m"); got != "Adulto" {
+		t.Errorf("gendered m: got %q, want %q", got, "Adulto")
+	}
+	if got := ResolveStage(gendered, "f"); got != "Adulta" {
+		t.Errorf("gendered f: got %q, want %q", got, "Adulta")
+	}
 }

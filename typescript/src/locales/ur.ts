@@ -2,7 +2,7 @@ import type { AgeLocale } from '../locale.js';
 
 export const ur: AgeLocale = {
   code: 'ur',
-  plural: (n) => (n === 0 || n === 1 ? 'one' : 'other'),
+  plural: (n) => (n === 1 ? 'one' : 'other'),
   units: {
     day:   { one: '{n} دن', other: '{n} دن' },
     week:  { one: '{n} ہفتہ', other: '{n} ہفتے' },
@@ -15,8 +15,8 @@ export const ur: AgeLocale = {
   stages: {
     newborn: 'نومولود',
     infant: 'شیرخوار',
-    toddler: 'چھوٹا بچہ',
-    child: 'بچہ',
+    toddler: { m: 'چھوٹا بچہ', f: 'چھوٹی بچی' },
+    child: { m: 'بچہ', f: 'بچی' },
     teenager: 'نوجوان',
     adult: 'بالغ',
   },

@@ -2,7 +2,7 @@ import type { AgeLocale } from '../locale.js';
 
 export const mr: AgeLocale = {
   code: 'mr',
-  plural: (n) => (n === 0 || n === 1 ? 'one' : 'other'),
+  plural: (n) => (n === 1 ? 'one' : 'other'),
   units: {
     day:   { one: '{n} दिवस', other: '{n} दिवस' },
     week:  { one: '{n} आठवडा', other: '{n} आठवडे' },
@@ -17,7 +17,7 @@ export const mr: AgeLocale = {
     infant: 'अर्भक',
     toddler: 'बाळ',
     child: 'मूल',
-    teenager: 'किशोर',
+    teenager: { m: 'किशोर', f: 'किशोरी' },
     adult: 'प्रौढ',
   },
 };

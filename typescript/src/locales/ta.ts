@@ -16,7 +16,7 @@ export const ta: AgeLocale = {
     newborn: 'பிறந்த குழந்தை',
     infant: 'குழந்தை',
     toddler: 'சிறு குழந்தை',
-    child: 'சிறுவர்',
+    child: 'சிறார்',
     teenager: 'இளம்பருவம்',
     adult: 'பெரியவர்',
   },

@@ -17,9 +17,9 @@ HI = AgeLocale(
     stages={
         "newborn": "नवजात",
         "infant": "शिशु",
-        "toddler": "छोटा बच्चा",
-        "child": "बच्चा",
-        "teenager": "किशोर",
+        "toddler": {"m": "छोटा बच्चा", "f": "छोटी बच्ची"},
+        "child": {"m": "बच्चा", "f": "बच्ची"},
+        "teenager": {"m": "किशोर", "f": "किशोरी"},
         "adult": "वयस्क",
     },
 )

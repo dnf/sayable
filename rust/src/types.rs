@@ -74,21 +74,56 @@ pub struct CompactnessOverride {
     pub just_born: Option<String>,
 }
 
+/// Grammatical gender for stage labels.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Gender {
+    /// Masculine.
+    M,
+    /// Feminine.
+    F,
+}
+
+/// A stage label: either gender-neutral or a gendered pair.
+#[derive(Debug, Clone)]
+pub enum StageLabel {
+    /// A single label used regardless of gender.
+    Neutral(String),
+    /// A pair of labels: masculine and feminine.
+    Gendered {
+        /// Masculine form.
+        m: String,
+        /// Feminine form.
+        f: String,
+    },
+}
+
+impl StageLabel {
+    /// Resolve to a string given an optional gender.
+    pub fn resolve(&self, gender: Option<Gender>) -> &str {
+        match self {
+            StageLabel::Neutral(s) => s,
+            StageLabel::Gendered { m, f } => {
+                if gender == Some(Gender::F) { f } else { m }
+            }
+        }
+    }
+}
+
 /// Stage labels for developmental stages.
 #[derive(Debug, Clone)]
 pub struct Stages {
     /// Label for age 0–1 months.
-    pub newborn: String,
+    pub newborn: StageLabel,
     /// Label for age 2–11 months.
-    pub infant: String,
+    pub infant: StageLabel,
     /// Label for age 12–35 months.
-    pub toddler: String,
+    pub toddler: StageLabel,
     /// Label for age 36–155 months (3–12 years).
-    pub child: String,
+    pub child: StageLabel,
     /// Label for age 156–215 months (13–17 years).
-    pub teenager: String,
+    pub teenager: StageLabel,
     /// Label for age 216+ months (18+ years).
-    pub adult: String,
+    pub adult: StageLabel,
 }
 
 /// Unit forms for all four time units.

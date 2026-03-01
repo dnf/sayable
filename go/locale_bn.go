@@ -18,12 +18,12 @@ var BN = AgeLocale{
 	Half:      "সাড়ে {n}",
 	Delimiter: ", ",
 	JustBorn:  "নবজাতক",
-	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult string }{
-		Newborn:  "নবজাতক",
-		Infant:   "শিশু",
-		Toddler:  "ছোট শিশু",
-		Child:    "শিশু",
-		Teenager: "কিশোর",
-		Adult:    "প্রাপ্তবয়স্ক",
+	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{
+		Newborn:  S("নবজাতক"),
+		Infant:   S("শিশু"),
+		Toddler:  S("ছোট শিশু"),
+		Child:    S("শিশু"),
+		Teenager: G("কিশোর", "কিশোরী"),
+		Adult:    S("প্রাপ্তবয়স্ক"),
 	},
 }
