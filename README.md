@@ -1,6 +1,5 @@
 # parent-time
 
-[![CI](https://github.com/dnf/parent-time/actions/workflows/ci.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
 Human-friendly age formatting the way parents actually talk.
@@ -13,17 +12,17 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 
 ## Implementations
 
-| Language | Package | Install | Docs |
-|----------|---------|---------|------|
-| TypeScript | [![npm](https://img.shields.io/npm/v/parent-time?logo=npm&label=npm)](https://www.npmjs.com/package/parent-time) | `npm install parent-time` | [README](typescript/README.md) |
-| Python | [![PyPI](https://img.shields.io/pypi/v/parent-time?logo=python&label=pypi)](https://pypi.org/project/parent-time/) | `pip install parent-time` | [README](python/README.md) |
-| Go | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=go%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/go) | `go get github.com/dnf/parent-time/go` | [README](go/README.md) |
-| Ruby | [![Gem](https://img.shields.io/gem/v/parent_time?logo=rubygems&label=gem)](https://rubygems.org/gems/parent_time) | `gem install parent_time` | [README](ruby/README.md) |
-| Rust | [![Crates.io](https://img.shields.io/crates/v/parent-time?logo=rust&label=crates.io)](https://crates.io/crates/parent-time) | `parent-time = "0.1"` | [README](rust/README.md) |
-| Kotlin | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](kotlin/README.md) |
-| C++ | — | CMake ([`FetchContent`](cpp/README.md)) | [README](cpp/README.md) |
-| PHP | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time) | `composer require dnf/parent-time` | [README](php/README.md) |
-| Java | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](java/README.md) |
+| Language | CI | Package | Install | Docs |
+|----------|----|---------|---------|----- |
+| TypeScript | [![TypeScript](https://github.com/dnf/parent-time/actions/workflows/typescript.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/typescript.yml) | [![npm](https://img.shields.io/npm/v/parent-time?logo=npm&label=npm)](https://www.npmjs.com/package/parent-time) | `npm install parent-time` | [README](typescript/README.md) |
+| Python | [![Python](https://github.com/dnf/parent-time/actions/workflows/python.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/python.yml) | [![PyPI](https://img.shields.io/pypi/v/parent-time?logo=python&label=pypi)](https://pypi.org/project/parent-time/) | `pip install parent-time` | [README](python/README.md) |
+| Go | [![Go](https://github.com/dnf/parent-time/actions/workflows/go.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/go.yml) | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=go%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/go) | `go get github.com/dnf/parent-time/go` | [README](go/README.md) |
+| Ruby | [![Ruby](https://github.com/dnf/parent-time/actions/workflows/ruby.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/ruby.yml) | [![Gem](https://img.shields.io/gem/v/parent_time?logo=rubygems&label=gem)](https://rubygems.org/gems/parent_time) | `gem install parent_time` | [README](ruby/README.md) |
+| Rust | [![Rust](https://github.com/dnf/parent-time/actions/workflows/rust.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/rust.yml) | [![Crates.io](https://img.shields.io/crates/v/parent-time?logo=rust&label=crates.io)](https://crates.io/crates/parent-time) | `parent-time = "0.1"` | [README](rust/README.md) |
+| Kotlin | [![Kotlin](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](kotlin/README.md) |
+| C++ | [![C++](https://github.com/dnf/parent-time/actions/workflows/cpp.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/cpp.yml) | — | CMake ([`FetchContent`](cpp/README.md)) | [README](cpp/README.md) |
+| PHP | [![PHP](https://github.com/dnf/parent-time/actions/workflows/php.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/php.yml) | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time) | `composer require dnf/parent-time` | [README](php/README.md) |
+| Java | [![Java](https://github.com/dnf/parent-time/actions/workflows/java.yml/badge.svg)](https://github.com/dnf/parent-time/actions/workflows/java.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](java/README.md) |
 
 All nine implementations produce identical output for the same inputs. See each language's README for installation, usage, and API details.
 
