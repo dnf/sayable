@@ -6,7 +6,7 @@ from datetime import date
 from unittest.mock import patch
 
 from parent_time import EN, AgeLocale, ParentTime, format_age, format_stage, resolve_stage
-from parent_time.locales import AR, ES
+from parent_time.locales import AM, AR, ES, HE, ID, MK, SW
 
 
 # ================================================================
@@ -761,3 +761,160 @@ class TestModuleLevelFormatStageGender:
         assert format_stage("2007-06-15", "2025-06-15", gender="f") == "Adult"
         assert format_stage("2007-06-15", "2025-06-15", gender="m") == "Adult"
         assert format_stage("2007-06-15", "2025-06-15") == "Adult"
+
+
+# ================================================================
+# Section 29: Locale-specific edge cases — new plural rules
+# ================================================================
+
+
+class TestLocaleHebrew:
+    """Hebrew (he) — dual forms."""
+
+    def setup_method(self) -> None:
+        self.pt = ParentTime(HE)
+
+    def test_29_1_just_born(self) -> None:
+        assert self.pt.format_age("2025-06-15", "2025-06-15") == "רק נולד"
+
+    def test_29_2_one_day(self) -> None:
+        assert self.pt.format_age("2025-06-14", "2025-06-15") == "יום 1"
+
+    def test_29_3_three_days(self) -> None:
+        assert self.pt.format_age("2025-06-12", "2025-06-15") == "3 ימים"
+
+    def test_29_4_two_weeks_dual(self) -> None:
+        assert self.pt.format_age("2025-06-01", "2025-06-15") == "שבועיים"
+
+    def test_29_5_three_weeks(self) -> None:
+        assert self.pt.format_age("2025-05-25", "2025-06-15") == "3 שבועות"
+
+    def test_29_6_six_months(self) -> None:
+        assert self.pt.format_age("2025-01-15", "2025-07-15") == "6 חודשים"
+
+    def test_29_7_three_months(self) -> None:
+        assert self.pt.format_age("2025-03-15", "2025-06-15") == "3 חודשים"
+
+    def test_29_8_two_years_dual_one_month(self) -> None:
+        assert self.pt.format_age("2023-06-15", "2025-07-15") == "שנתיים, חודש 1"
+
+    def test_29_9_half_years(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 שנים וחצי"
+
+    def test_29_10_seven_years(self) -> None:
+        assert self.pt.format_age("2018-06-15", "2025-06-15") == "7 שנים"
+
+    def test_29_11_stage_masculine_newborn(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15", gender="m") == "רק נולד"
+
+    def test_29_12_stage_feminine_newborn(self) -> None:
+        assert self.pt.format_stage("2025-06-15", "2025-06-15", gender="f") == "רק נולדה"
+
+    def test_29_13_stage_masculine_adult(self) -> None:
+        assert self.pt.format_stage("2007-06-15", "2025-06-15", gender="m") == "מבוגר"
+
+    def test_29_14_stage_feminine_adult(self) -> None:
+        assert self.pt.format_stage("2007-06-15", "2025-06-15", gender="f") == "מבוגרת"
+
+
+class TestLocaleMacedonian:
+    """Macedonian (mk) — mod10/mod100 rule."""
+
+    def setup_method(self) -> None:
+        self.pt = ParentTime(MK)
+
+    def test_29_15_just_born(self) -> None:
+        assert self.pt.format_age("2025-06-15", "2025-06-15") == "Новороденче"
+
+    def test_29_16_one_day(self) -> None:
+        assert self.pt.format_age("2025-06-14", "2025-06-15") == "1 ден"
+
+    def test_29_17_three_days(self) -> None:
+        assert self.pt.format_age("2025-06-12", "2025-06-15") == "3 дена"
+
+    def test_29_18_six_months(self) -> None:
+        assert self.pt.format_age("2025-01-15", "2025-07-15") == "6 месеци"
+
+    def test_29_19_two_years_one_month(self) -> None:
+        assert self.pt.format_age("2023-06-15", "2025-07-15") == "2 години, 1 месец"
+
+    def test_29_20_half_years(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 години и пол"
+
+    def test_29_21_seven_years(self) -> None:
+        assert self.pt.format_age("2018-06-15", "2025-06-15") == "7 години"
+
+
+class TestLocaleSwahili:
+    """Swahili (sw) — noun class changes."""
+
+    def setup_method(self) -> None:
+        self.pt = ParentTime(SW)
+
+    def test_29_22_just_born(self) -> None:
+        assert self.pt.format_age("2025-06-15", "2025-06-15") == "Mzaliwa mpya"
+
+    def test_29_23_one_day(self) -> None:
+        assert self.pt.format_age("2025-06-14", "2025-06-15") == "siku 1"
+
+    def test_29_24_three_days(self) -> None:
+        assert self.pt.format_age("2025-06-12", "2025-06-15") == "siku 3"
+
+    def test_29_25_six_months(self) -> None:
+        assert self.pt.format_age("2025-01-15", "2025-07-15") == "miezi 6"
+
+    def test_29_26_two_years_one_month(self) -> None:
+        assert self.pt.format_age("2023-06-15", "2025-07-15") == "miaka 2, mwezi 1"
+
+    def test_29_27_half_years(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "miaka 3 na nusu"
+
+
+class TestLocaleIndonesian:
+    """Indonesian (id) — other_only (no plural forms)."""
+
+    def setup_method(self) -> None:
+        self.pt = ParentTime(ID)
+
+    def test_29_28_just_born(self) -> None:
+        assert self.pt.format_age("2025-06-15", "2025-06-15") == "Baru lahir"
+
+    def test_29_29_one_day(self) -> None:
+        assert self.pt.format_age("2025-06-14", "2025-06-15") == "1 hari"
+
+    def test_29_30_three_days(self) -> None:
+        assert self.pt.format_age("2025-06-12", "2025-06-15") == "3 hari"
+
+    def test_29_31_six_months(self) -> None:
+        assert self.pt.format_age("2025-01-15", "2025-07-15") == "6 bulan"
+
+    def test_29_32_half_years(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 tahun setengah"
+
+    def test_29_33_seven_years(self) -> None:
+        assert self.pt.format_age("2018-06-15", "2025-06-15") == "7 tahun"
+
+
+class TestLocaleAmharic:
+    """Amharic (am) — Ethiopic delimiter."""
+
+    def setup_method(self) -> None:
+        self.pt = ParentTime(AM)
+
+    def test_29_34_just_born(self) -> None:
+        assert self.pt.format_age("2025-06-15", "2025-06-15") == "አዲስ የተወለደ"
+
+    def test_29_35_one_day(self) -> None:
+        assert self.pt.format_age("2025-06-14", "2025-06-15") == "1 ቀን"
+
+    def test_29_36_three_days(self) -> None:
+        assert self.pt.format_age("2025-06-12", "2025-06-15") == "3 ቀናት"
+
+    def test_29_37_one_week_one_day_ethiopic_delimiter(self) -> None:
+        assert self.pt.format_age("2025-06-07", "2025-06-15") == "1 ሳምንት፣ 1 ቀን"
+
+    def test_29_38_six_months(self) -> None:
+        assert self.pt.format_age("2025-01-15", "2025-07-15") == "6 ወራት"
+
+    def test_29_39_half_years(self) -> None:
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 ዓመታት ተኩል"

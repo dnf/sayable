@@ -438,6 +438,74 @@ void test_stage_default_as_of() {
     parenttime::testing::clear_today();
 }
 
+// ================================================================
+// Section 29: Locale-specific edge cases — new plural rules
+// ================================================================
+
+void test_locale_hebrew() {
+    ParentTime pt(locales::HE());
+
+    ASSERT_EQ("he justBorn", pt.format_age("2025-06-15", "2025-06-15"), "רק נולד");
+    ASSERT_EQ("he 1 day one", pt.format_age("2025-06-14", "2025-06-15"), "יום 1");
+    ASSERT_EQ("he 3 days other", pt.format_age("2025-06-12", "2025-06-15"), "3 ימים");
+    ASSERT_EQ("he 2 weeks dual", pt.format_age("2025-06-01", "2025-06-15"), "שבועיים");
+    ASSERT_EQ("he 3 weeks other", pt.format_age("2025-05-25", "2025-06-15"), "3 שבועות");
+    ASSERT_EQ("he 6 months", pt.format_age("2025-01-15", "2025-07-15"), "6 חודשים");
+    ASSERT_EQ("he 3 months", pt.format_age("2025-03-15", "2025-06-15"), "3 חודשים");
+    ASSERT_EQ("he 2y dual 1m one", pt.format_age("2023-06-15", "2025-07-15"), "שנתיים, חודש 1");
+    ASSERT_EQ("he 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "3 שנים וחצי");
+    ASSERT_EQ("he 7y other", pt.format_age("2018-06-15", "2025-06-15"), "7 שנים");
+    ASSERT_EQ("he stage m newborn", pt.format_stage("2025-06-15", "2025-06-15", "m"), "רק נולד");
+    ASSERT_EQ("he stage f newborn", pt.format_stage("2025-06-15", "2025-06-15", "f"), "רק נולדה");
+    ASSERT_EQ("he stage m adult", pt.format_stage("2007-06-15", "2025-06-15", "m"), "מבוגר");
+    ASSERT_EQ("he stage f adult", pt.format_stage("2007-06-15", "2025-06-15", "f"), "מבוגרת");
+}
+
+void test_locale_macedonian() {
+    ParentTime pt(locales::MK());
+
+    ASSERT_EQ("mk justBorn", pt.format_age("2025-06-15", "2025-06-15"), "Новороденче");
+    ASSERT_EQ("mk 1 day one", pt.format_age("2025-06-14", "2025-06-15"), "1 ден");
+    ASSERT_EQ("mk 3 days other", pt.format_age("2025-06-12", "2025-06-15"), "3 дена");
+    ASSERT_EQ("mk 6 months", pt.format_age("2025-01-15", "2025-07-15"), "6 месеци");
+    ASSERT_EQ("mk 2y1m one month", pt.format_age("2023-06-15", "2025-07-15"), "2 години, 1 месец");
+    ASSERT_EQ("mk 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "3 години и пол");
+    ASSERT_EQ("mk 7y", pt.format_age("2018-06-15", "2025-06-15"), "7 години");
+}
+
+void test_locale_swahili() {
+    ParentTime pt(locales::SW());
+
+    ASSERT_EQ("sw justBorn", pt.format_age("2025-06-15", "2025-06-15"), "Mzaliwa mpya");
+    ASSERT_EQ("sw 1 day", pt.format_age("2025-06-14", "2025-06-15"), "siku 1");
+    ASSERT_EQ("sw 3 days", pt.format_age("2025-06-12", "2025-06-15"), "siku 3");
+    ASSERT_EQ("sw 6 months", pt.format_age("2025-01-15", "2025-07-15"), "miezi 6");
+    ASSERT_EQ("sw 2y 1m", pt.format_age("2023-06-15", "2025-07-15"), "miaka 2, mwezi 1");
+    ASSERT_EQ("sw 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "miaka 3 na nusu");
+}
+
+void test_locale_indonesian() {
+    ParentTime pt(locales::ID());
+
+    ASSERT_EQ("id justBorn", pt.format_age("2025-06-15", "2025-06-15"), "Baru lahir");
+    ASSERT_EQ("id 1 day", pt.format_age("2025-06-14", "2025-06-15"), "1 hari");
+    ASSERT_EQ("id 3 days", pt.format_age("2025-06-12", "2025-06-15"), "3 hari");
+    ASSERT_EQ("id 6 months", pt.format_age("2025-01-15", "2025-07-15"), "6 bulan");
+    ASSERT_EQ("id 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "3 tahun setengah");
+    ASSERT_EQ("id 7y", pt.format_age("2018-06-15", "2025-06-15"), "7 tahun");
+}
+
+void test_locale_amharic() {
+    ParentTime pt(locales::AM());
+
+    ASSERT_EQ("am justBorn", pt.format_age("2025-06-15", "2025-06-15"), "አዲስ የተወለደ");
+    ASSERT_EQ("am 1 day", pt.format_age("2025-06-14", "2025-06-15"), "1 ቀን");
+    ASSERT_EQ("am 3 days", pt.format_age("2025-06-12", "2025-06-15"), "3 ቀናት");
+    ASSERT_EQ("am 1w1d ethiopic", pt.format_age("2025-06-07", "2025-06-15"), "1 ሳምንት፣ 1 ቀን");
+    ASSERT_EQ("am 6 months", pt.format_age("2025-01-15", "2025-07-15"), "6 ወራት");
+    ASSERT_EQ("am 3.5y half", pt.format_age("2022-06-15", "2025-12-15"), "3 ዓመታት ተኩል");
+}
+
 int main() {
     test_null_edge_cases();
     test_days_tier();
@@ -471,6 +539,11 @@ int main() {
     test_compact_compact();
     test_default_as_of();
     test_stage_default_as_of();
+    test_locale_hebrew();
+    test_locale_macedonian();
+    test_locale_swahili();
+    test_locale_indonesian();
+    test_locale_amharic();
 
     std::cout << "\n=== Results ===" << std::endl;
     std::cout << "Passed: " << tests_passed << std::endl;

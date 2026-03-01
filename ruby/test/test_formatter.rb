@@ -736,4 +736,208 @@ class TestFormatter < Minitest::Test
     assert_nil pt.format_stage(nil, '2025-06-15', gender: 'f')
     assert_nil pt.format_stage('', '2025-06-15', gender: 'm')
   end
+
+  # ================================================================
+  # Section 29: Locale-specific edge cases — new plural rules
+  # ================================================================
+
+  # Hebrew (he) — dual forms
+  def test_29_1_he_just_born
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal 'רק נולד', pt.format_age('2025-06-15', '2025-06-15')
+  end
+
+  def test_29_2_he_one_day
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal 'יום 1', pt.format_age('2025-06-14', '2025-06-15')
+  end
+
+  def test_29_3_he_three_days
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal '3 ימים', pt.format_age('2025-06-12', '2025-06-15')
+  end
+
+  def test_29_4_he_two_weeks_dual
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal 'שבועיים', pt.format_age('2025-06-01', '2025-06-15')
+  end
+
+  def test_29_5_he_three_weeks
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal '3 שבועות', pt.format_age('2025-05-25', '2025-06-15')
+  end
+
+  def test_29_6_he_six_months
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal '6 חודשים', pt.format_age('2025-01-15', '2025-07-15')
+  end
+
+  def test_29_7_he_three_months
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal '3 חודשים', pt.format_age('2025-03-15', '2025-06-15')
+  end
+
+  def test_29_8_he_two_years_dual_one_month
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal 'שנתיים, חודש 1', pt.format_age('2023-06-15', '2025-07-15')
+  end
+
+  def test_29_9_he_half_years
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal '3 שנים וחצי', pt.format_age('2022-06-15', '2025-12-15')
+  end
+
+  def test_29_10_he_seven_years
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal '7 שנים', pt.format_age('2018-06-15', '2025-06-15')
+  end
+
+  def test_29_11_he_stage_masculine_newborn
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal 'רק נולד', pt.format_stage('2025-06-15', '2025-06-15', gender: 'm')
+  end
+
+  def test_29_12_he_stage_feminine_newborn
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal 'רק נולדה', pt.format_stage('2025-06-15', '2025-06-15', gender: 'f')
+  end
+
+  def test_29_13_he_stage_masculine_adult
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal 'מבוגר', pt.format_stage('2007-06-15', '2025-06-15', gender: 'm')
+  end
+
+  def test_29_14_he_stage_feminine_adult
+    pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
+    assert_equal 'מבוגרת', pt.format_stage('2007-06-15', '2025-06-15', gender: 'f')
+  end
+
+  # Macedonian (mk) — mod10/mod100 rule
+  def test_29_15_mk_just_born
+    pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
+    assert_equal 'Новороденче', pt.format_age('2025-06-15', '2025-06-15')
+  end
+
+  def test_29_16_mk_one_day
+    pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
+    assert_equal '1 ден', pt.format_age('2025-06-14', '2025-06-15')
+  end
+
+  def test_29_17_mk_three_days
+    pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
+    assert_equal '3 дена', pt.format_age('2025-06-12', '2025-06-15')
+  end
+
+  def test_29_18_mk_six_months
+    pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
+    assert_equal '6 месеци', pt.format_age('2025-01-15', '2025-07-15')
+  end
+
+  def test_29_19_mk_two_years_one_month
+    pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
+    assert_equal '2 години, 1 месец', pt.format_age('2023-06-15', '2025-07-15')
+  end
+
+  def test_29_20_mk_half_years
+    pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
+    assert_equal '3 години и пол', pt.format_age('2022-06-15', '2025-12-15')
+  end
+
+  def test_29_21_mk_seven_years
+    pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
+    assert_equal '7 години', pt.format_age('2018-06-15', '2025-06-15')
+  end
+
+  # Swahili (sw) — noun class changes
+  def test_29_22_sw_just_born
+    pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
+    assert_equal 'Mzaliwa mpya', pt.format_age('2025-06-15', '2025-06-15')
+  end
+
+  def test_29_23_sw_one_day
+    pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
+    assert_equal 'siku 1', pt.format_age('2025-06-14', '2025-06-15')
+  end
+
+  def test_29_24_sw_three_days
+    pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
+    assert_equal 'siku 3', pt.format_age('2025-06-12', '2025-06-15')
+  end
+
+  def test_29_25_sw_six_months
+    pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
+    assert_equal 'miezi 6', pt.format_age('2025-01-15', '2025-07-15')
+  end
+
+  def test_29_26_sw_two_years_one_month
+    pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
+    assert_equal 'miaka 2, mwezi 1', pt.format_age('2023-06-15', '2025-07-15')
+  end
+
+  def test_29_27_sw_half_years
+    pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
+    assert_equal 'miaka 3 na nusu', pt.format_age('2022-06-15', '2025-12-15')
+  end
+
+  # Indonesian (id) — other_only
+  def test_29_28_id_just_born
+    pt = ParentTime::Formatter.new(ParentTime::Locales::ID)
+    assert_equal 'Baru lahir', pt.format_age('2025-06-15', '2025-06-15')
+  end
+
+  def test_29_29_id_one_day
+    pt = ParentTime::Formatter.new(ParentTime::Locales::ID)
+    assert_equal '1 hari', pt.format_age('2025-06-14', '2025-06-15')
+  end
+
+  def test_29_30_id_three_days
+    pt = ParentTime::Formatter.new(ParentTime::Locales::ID)
+    assert_equal '3 hari', pt.format_age('2025-06-12', '2025-06-15')
+  end
+
+  def test_29_31_id_six_months
+    pt = ParentTime::Formatter.new(ParentTime::Locales::ID)
+    assert_equal '6 bulan', pt.format_age('2025-01-15', '2025-07-15')
+  end
+
+  def test_29_32_id_half_years
+    pt = ParentTime::Formatter.new(ParentTime::Locales::ID)
+    assert_equal '3 tahun setengah', pt.format_age('2022-06-15', '2025-12-15')
+  end
+
+  def test_29_33_id_seven_years
+    pt = ParentTime::Formatter.new(ParentTime::Locales::ID)
+    assert_equal '7 tahun', pt.format_age('2018-06-15', '2025-06-15')
+  end
+
+  # Amharic (am) — Ethiopic delimiter
+  def test_29_34_am_just_born
+    pt = ParentTime::Formatter.new(ParentTime::Locales::AM)
+    assert_equal 'አዲስ የተወለደ', pt.format_age('2025-06-15', '2025-06-15')
+  end
+
+  def test_29_35_am_one_day
+    pt = ParentTime::Formatter.new(ParentTime::Locales::AM)
+    assert_equal '1 ቀን', pt.format_age('2025-06-14', '2025-06-15')
+  end
+
+  def test_29_36_am_three_days
+    pt = ParentTime::Formatter.new(ParentTime::Locales::AM)
+    assert_equal '3 ቀናት', pt.format_age('2025-06-12', '2025-06-15')
+  end
+
+  def test_29_37_am_one_week_one_day_ethiopic
+    pt = ParentTime::Formatter.new(ParentTime::Locales::AM)
+    assert_equal '1 ሳምንት፣ 1 ቀን', pt.format_age('2025-06-07', '2025-06-15')
+  end
+
+  def test_29_38_am_six_months
+    pt = ParentTime::Formatter.new(ParentTime::Locales::AM)
+    assert_equal '6 ወራት', pt.format_age('2025-01-15', '2025-07-15')
+  end
+
+  def test_29_39_am_half_years
+    pt = ParentTime::Formatter.new(ParentTime::Locales::AM)
+    assert_equal '3 ዓመታት ተኩል', pt.format_age('2022-06-15', '2025-12-15')
+  end
 end

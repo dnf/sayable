@@ -1617,3 +1617,76 @@ fn test_format_stage_gender_defaults_to_masculine() {
         "Adulto",
     );
 }
+
+// ================================================================
+// Section 29: Locale-specific edge cases — new plural rules
+// ================================================================
+
+#[test]
+fn test_locale_hebrew() {
+    let pt = ParentTime::new(&locales::HE, Compactness::Normal);
+
+    assert_age("he justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "רק נולד");
+    assert_age("he 1 day one", pt.format_age("2025-06-14", Some("2025-06-15")), "יום 1");
+    assert_age("he 3 days other", pt.format_age("2025-06-12", Some("2025-06-15")), "3 ימים");
+    assert_age("he 2 weeks dual", pt.format_age("2025-06-01", Some("2025-06-15")), "שבועיים");
+    assert_age("he 3 weeks other", pt.format_age("2025-05-25", Some("2025-06-15")), "3 שבועות");
+    assert_age("he 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 חודשים");
+    assert_age("he 3 months", pt.format_age("2025-03-15", Some("2025-06-15")), "3 חודשים");
+    assert_age("he 2y dual 1m one", pt.format_age("2023-06-15", Some("2025-07-15")), "שנתיים, חודש 1");
+    assert_age("he 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 שנים וחצי");
+    assert_age("he 7y other", pt.format_age("2018-06-15", Some("2025-06-15")), "7 שנים");
+    assert_age("he stage m newborn", pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::M)), "רק נולד");
+    assert_age("he stage f newborn", pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::F)), "רק נולדה");
+    assert_age("he stage m adult", pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::M)), "מבוגר");
+    assert_age("he stage f adult", pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::F)), "מבוגרת");
+}
+
+#[test]
+fn test_locale_macedonian() {
+    let pt = ParentTime::new(&locales::MK, Compactness::Normal);
+
+    assert_age("mk justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "Новороденче");
+    assert_age("mk 1 day one", pt.format_age("2025-06-14", Some("2025-06-15")), "1 ден");
+    assert_age("mk 3 days other", pt.format_age("2025-06-12", Some("2025-06-15")), "3 дена");
+    assert_age("mk 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 месеци");
+    assert_age("mk 2y1m one month", pt.format_age("2023-06-15", Some("2025-07-15")), "2 години, 1 месец");
+    assert_age("mk 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 години и пол");
+    assert_age("mk 7y", pt.format_age("2018-06-15", Some("2025-06-15")), "7 години");
+}
+
+#[test]
+fn test_locale_swahili() {
+    let pt = ParentTime::new(&locales::SW, Compactness::Normal);
+
+    assert_age("sw justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "Mzaliwa mpya");
+    assert_age("sw 1 day", pt.format_age("2025-06-14", Some("2025-06-15")), "siku 1");
+    assert_age("sw 3 days", pt.format_age("2025-06-12", Some("2025-06-15")), "siku 3");
+    assert_age("sw 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "miezi 6");
+    assert_age("sw 2y 1m", pt.format_age("2023-06-15", Some("2025-07-15")), "miaka 2, mwezi 1");
+    assert_age("sw 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "miaka 3 na nusu");
+}
+
+#[test]
+fn test_locale_indonesian() {
+    let pt = ParentTime::new(&locales::ID, Compactness::Normal);
+
+    assert_age("id justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "Baru lahir");
+    assert_age("id 1 day", pt.format_age("2025-06-14", Some("2025-06-15")), "1 hari");
+    assert_age("id 3 days", pt.format_age("2025-06-12", Some("2025-06-15")), "3 hari");
+    assert_age("id 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 bulan");
+    assert_age("id 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 tahun setengah");
+    assert_age("id 7y", pt.format_age("2018-06-15", Some("2025-06-15")), "7 tahun");
+}
+
+#[test]
+fn test_locale_amharic() {
+    let pt = ParentTime::new(&locales::AM, Compactness::Normal);
+
+    assert_age("am justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "አዲስ የተወለደ");
+    assert_age("am 1 day", pt.format_age("2025-06-14", Some("2025-06-15")), "1 ቀን");
+    assert_age("am 3 days", pt.format_age("2025-06-12", Some("2025-06-15")), "3 ቀናት");
+    assert_age("am 1w1d ethiopic", pt.format_age("2025-06-07", Some("2025-06-15")), "1 ሳምንት፣ 1 ቀን");
+    assert_age("am 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 ወራት");
+    assert_age("am 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 ዓመታት ተኩል");
+}

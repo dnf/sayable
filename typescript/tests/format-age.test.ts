@@ -3,6 +3,11 @@ import { formatAge, formatStage, ParentTime } from '../src/format-age';
 import { en, resolveStage, type AgeLocale, type StageLabel } from '../src/locale';
 import { ar } from '../src/locales/ar';
 import { es } from '../src/locales/es';
+import { he } from '../src/locales/he';
+import { mk } from '../src/locales/mk';
+import { sw } from '../src/locales/sw';
+import { id } from '../src/locales/id';
+import { am } from '../src/locales/am';
 
 // All tests use explicit (dob, asOf) pairs for determinism.
 
@@ -858,6 +863,185 @@ describe('ParentTime', () => {
 
     it('justBorn unchanged', () => {
       expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('Newborn');
+    });
+  });
+
+  // ================================================================
+  // Section 29: Locale-specific edge cases — new plural rules
+  // ================================================================
+  describe('Hebrew locale (he) — dual forms', () => {
+    const pt = new ParentTime(he);
+
+    it('justBorn', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('רק נולד');
+    });
+
+    it('1 day — one form', () => {
+      expect(pt.formatAge('2025-06-14', '2025-06-15')).toBe('יום 1');
+    });
+
+    it('3 days — other form', () => {
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('3 ימים');
+    });
+
+    it('2 weeks — dual form', () => {
+      expect(pt.formatAge('2025-06-01', '2025-06-15')).toBe('שבועיים');
+    });
+
+    it('3 weeks — other form', () => {
+      expect(pt.formatAge('2025-05-25', '2025-06-15')).toBe('3 שבועות');
+    });
+
+    it('6 months — other', () => {
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('6 חודשים');
+    });
+
+    it('3 months — other', () => {
+      expect(pt.formatAge('2025-03-15', '2025-06-15')).toBe('3 חודשים');
+    });
+
+    it('2y dual + 1m one', () => {
+      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('שנתיים, חודש 1');
+    });
+
+    it('3½ years — half marker', () => {
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 שנים וחצי');
+    });
+
+    it('7+ years — other', () => {
+      expect(pt.formatAge('2018-06-15', '2025-06-15')).toBe('7 שנים');
+    });
+
+    it('masculine newborn stage', () => {
+      expect(pt.formatStage('2025-06-15', '2025-06-15', 'm')).toBe('רק נולד');
+    });
+
+    it('feminine newborn stage', () => {
+      expect(pt.formatStage('2025-06-15', '2025-06-15', 'f')).toBe('רק נולדה');
+    });
+
+    it('masculine adult stage', () => {
+      expect(pt.formatStage('2007-06-15', '2025-06-15', 'm')).toBe('מבוגר');
+    });
+
+    it('feminine adult stage', () => {
+      expect(pt.formatStage('2007-06-15', '2025-06-15', 'f')).toBe('מבוגרת');
+    });
+  });
+
+  describe('Macedonian locale (mk) — mod10/mod100 rule', () => {
+    const pt = new ParentTime(mk);
+
+    it('justBorn', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('Новороденче');
+    });
+
+    it('1 day — one', () => {
+      expect(pt.formatAge('2025-06-14', '2025-06-15')).toBe('1 ден');
+    });
+
+    it('3 days — other', () => {
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('3 дена');
+    });
+
+    it('6 months — other', () => {
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('6 месеци');
+    });
+
+    it('2y1m — one for month', () => {
+      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('2 години, 1 месец');
+    });
+
+    it('3½ years — half marker', () => {
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 години и пол');
+    });
+
+    it('7+ years — other', () => {
+      expect(pt.formatAge('2018-06-15', '2025-06-15')).toBe('7 години');
+    });
+  });
+
+  describe('Swahili locale (sw) — noun class changes', () => {
+    const pt = new ParentTime(sw);
+
+    it('justBorn', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('Mzaliwa mpya');
+    });
+
+    it('1 day — one', () => {
+      expect(pt.formatAge('2025-06-14', '2025-06-15')).toBe('siku 1');
+    });
+
+    it('3 days — other', () => {
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('siku 3');
+    });
+
+    it('6 months — other (noun class change)', () => {
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('miezi 6');
+    });
+
+    it('2y other + 1m one', () => {
+      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('miaka 2, mwezi 1');
+    });
+
+    it('3½ years — half marker', () => {
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('miaka 3 na nusu');
+    });
+  });
+
+  describe('Indonesian locale (id) — other_only', () => {
+    const pt = new ParentTime(id);
+
+    it('justBorn', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('Baru lahir');
+    });
+
+    it('1 day', () => {
+      expect(pt.formatAge('2025-06-14', '2025-06-15')).toBe('1 hari');
+    });
+
+    it('3 days (same unit)', () => {
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('3 hari');
+    });
+
+    it('6 months', () => {
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('6 bulan');
+    });
+
+    it('3½ years — half marker', () => {
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 tahun setengah');
+    });
+
+    it('7+ years', () => {
+      expect(pt.formatAge('2018-06-15', '2025-06-15')).toBe('7 tahun');
+    });
+  });
+
+  describe('Amharic locale (am) — Ethiopic delimiter', () => {
+    const pt = new ParentTime(am);
+
+    it('justBorn', () => {
+      expect(pt.formatAge('2025-06-15', '2025-06-15')).toBe('አዲስ የተወለደ');
+    });
+
+    it('1 day — one form', () => {
+      expect(pt.formatAge('2025-06-14', '2025-06-15')).toBe('1 ቀን');
+    });
+
+    it('3 days — other form', () => {
+      expect(pt.formatAge('2025-06-12', '2025-06-15')).toBe('3 ቀናት');
+    });
+
+    it('1w1d with Ethiopic delimiter', () => {
+      expect(pt.formatAge('2025-06-07', '2025-06-15')).toBe('1 ሳምንት፣ 1 ቀን');
+    });
+
+    it('6 months — other form', () => {
+      expect(pt.formatAge('2025-01-15', '2025-07-15')).toBe('6 ወራት');
+    });
+
+    it('3½ years — half marker', () => {
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 ዓመታት ተኩል');
     });
   });
 });

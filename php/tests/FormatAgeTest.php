@@ -1226,4 +1226,247 @@ final class FormatAgeTest extends TestCase
         $pt = new ParentTime(Locales::PL());
         $this->assertSame('Dorosła', $pt->formatStage('2007-06-15', '2025-06-15', 'f'));
     }
+
+    // ================================================================
+    // Section 29: Locale-specific edge cases — new plural rules (39 tests)
+    // ================================================================
+
+    // Hebrew (he) — dual forms
+    public function test_29_1_he_just_born(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('רק נולד', $pt->formatAge('2025-06-15', '2025-06-15'));
+    }
+
+    public function test_29_2_he_one_day(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('יום 1', $pt->formatAge('2025-06-14', '2025-06-15'));
+    }
+
+    public function test_29_3_he_three_days(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('3 ימים', $pt->formatAge('2025-06-12', '2025-06-15'));
+    }
+
+    public function test_29_4_he_two_weeks_dual(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('שבועיים', $pt->formatAge('2025-06-01', '2025-06-15'));
+    }
+
+    public function test_29_5_he_three_weeks(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('3 שבועות', $pt->formatAge('2025-05-25', '2025-06-15'));
+    }
+
+    public function test_29_6_he_six_months(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('6 חודשים', $pt->formatAge('2025-01-15', '2025-07-15'));
+    }
+
+    public function test_29_7_he_three_months(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('3 חודשים', $pt->formatAge('2025-03-15', '2025-06-15'));
+    }
+
+    public function test_29_8_he_two_years_dual_one_month(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('שנתיים, חודש 1', $pt->formatAge('2023-06-15', '2025-07-15'));
+    }
+
+    public function test_29_9_he_half_years(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('3 שנים וחצי', $pt->formatAge('2022-06-15', '2025-12-15'));
+    }
+
+    public function test_29_10_he_seven_years(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('7 שנים', $pt->formatAge('2018-06-15', '2025-06-15'));
+    }
+
+    public function test_29_11_he_stage_masculine_newborn(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('רק נולד', $pt->formatStage('2025-06-15', '2025-06-15', 'm'));
+    }
+
+    public function test_29_12_he_stage_feminine_newborn(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('רק נולדה', $pt->formatStage('2025-06-15', '2025-06-15', 'f'));
+    }
+
+    public function test_29_13_he_stage_masculine_adult(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('מבוגר', $pt->formatStage('2007-06-15', '2025-06-15', 'm'));
+    }
+
+    public function test_29_14_he_stage_feminine_adult(): void
+    {
+        $pt = new ParentTime(Locales::HE());
+        $this->assertSame('מבוגרת', $pt->formatStage('2007-06-15', '2025-06-15', 'f'));
+    }
+
+    // Macedonian (mk) — mod10/mod100 rule
+    public function test_29_15_mk_just_born(): void
+    {
+        $pt = new ParentTime(Locales::MK());
+        $this->assertSame('Новороденче', $pt->formatAge('2025-06-15', '2025-06-15'));
+    }
+
+    public function test_29_16_mk_one_day(): void
+    {
+        $pt = new ParentTime(Locales::MK());
+        $this->assertSame('1 ден', $pt->formatAge('2025-06-14', '2025-06-15'));
+    }
+
+    public function test_29_17_mk_three_days(): void
+    {
+        $pt = new ParentTime(Locales::MK());
+        $this->assertSame('3 дена', $pt->formatAge('2025-06-12', '2025-06-15'));
+    }
+
+    public function test_29_18_mk_six_months(): void
+    {
+        $pt = new ParentTime(Locales::MK());
+        $this->assertSame('6 месеци', $pt->formatAge('2025-01-15', '2025-07-15'));
+    }
+
+    public function test_29_19_mk_two_years_one_month(): void
+    {
+        $pt = new ParentTime(Locales::MK());
+        $this->assertSame('2 години, 1 месец', $pt->formatAge('2023-06-15', '2025-07-15'));
+    }
+
+    public function test_29_20_mk_half_years(): void
+    {
+        $pt = new ParentTime(Locales::MK());
+        $this->assertSame('3 години и пол', $pt->formatAge('2022-06-15', '2025-12-15'));
+    }
+
+    public function test_29_21_mk_seven_years(): void
+    {
+        $pt = new ParentTime(Locales::MK());
+        $this->assertSame('7 години', $pt->formatAge('2018-06-15', '2025-06-15'));
+    }
+
+    // Swahili (sw) — noun class changes
+    public function test_29_22_sw_just_born(): void
+    {
+        $pt = new ParentTime(Locales::SW());
+        $this->assertSame('Mzaliwa mpya', $pt->formatAge('2025-06-15', '2025-06-15'));
+    }
+
+    public function test_29_23_sw_one_day(): void
+    {
+        $pt = new ParentTime(Locales::SW());
+        $this->assertSame('siku 1', $pt->formatAge('2025-06-14', '2025-06-15'));
+    }
+
+    public function test_29_24_sw_three_days(): void
+    {
+        $pt = new ParentTime(Locales::SW());
+        $this->assertSame('siku 3', $pt->formatAge('2025-06-12', '2025-06-15'));
+    }
+
+    public function test_29_25_sw_six_months(): void
+    {
+        $pt = new ParentTime(Locales::SW());
+        $this->assertSame('miezi 6', $pt->formatAge('2025-01-15', '2025-07-15'));
+    }
+
+    public function test_29_26_sw_two_years_one_month(): void
+    {
+        $pt = new ParentTime(Locales::SW());
+        $this->assertSame('miaka 2, mwezi 1', $pt->formatAge('2023-06-15', '2025-07-15'));
+    }
+
+    public function test_29_27_sw_half_years(): void
+    {
+        $pt = new ParentTime(Locales::SW());
+        $this->assertSame('miaka 3 na nusu', $pt->formatAge('2022-06-15', '2025-12-15'));
+    }
+
+    // Indonesian (id) — other_only
+    public function test_29_28_id_just_born(): void
+    {
+        $pt = new ParentTime(Locales::ID());
+        $this->assertSame('Baru lahir', $pt->formatAge('2025-06-15', '2025-06-15'));
+    }
+
+    public function test_29_29_id_one_day(): void
+    {
+        $pt = new ParentTime(Locales::ID());
+        $this->assertSame('1 hari', $pt->formatAge('2025-06-14', '2025-06-15'));
+    }
+
+    public function test_29_30_id_three_days(): void
+    {
+        $pt = new ParentTime(Locales::ID());
+        $this->assertSame('3 hari', $pt->formatAge('2025-06-12', '2025-06-15'));
+    }
+
+    public function test_29_31_id_six_months(): void
+    {
+        $pt = new ParentTime(Locales::ID());
+        $this->assertSame('6 bulan', $pt->formatAge('2025-01-15', '2025-07-15'));
+    }
+
+    public function test_29_32_id_half_years(): void
+    {
+        $pt = new ParentTime(Locales::ID());
+        $this->assertSame('3 tahun setengah', $pt->formatAge('2022-06-15', '2025-12-15'));
+    }
+
+    public function test_29_33_id_seven_years(): void
+    {
+        $pt = new ParentTime(Locales::ID());
+        $this->assertSame('7 tahun', $pt->formatAge('2018-06-15', '2025-06-15'));
+    }
+
+    // Amharic (am) — Ethiopic delimiter
+    public function test_29_34_am_just_born(): void
+    {
+        $pt = new ParentTime(Locales::AM());
+        $this->assertSame('አዲስ የተወለደ', $pt->formatAge('2025-06-15', '2025-06-15'));
+    }
+
+    public function test_29_35_am_one_day(): void
+    {
+        $pt = new ParentTime(Locales::AM());
+        $this->assertSame('1 ቀን', $pt->formatAge('2025-06-14', '2025-06-15'));
+    }
+
+    public function test_29_36_am_three_days(): void
+    {
+        $pt = new ParentTime(Locales::AM());
+        $this->assertSame('3 ቀናት', $pt->formatAge('2025-06-12', '2025-06-15'));
+    }
+
+    public function test_29_37_am_one_week_one_day_ethiopic(): void
+    {
+        $pt = new ParentTime(Locales::AM());
+        $this->assertSame('1 ሳምንት፣ 1 ቀን', $pt->formatAge('2025-06-07', '2025-06-15'));
+    }
+
+    public function test_29_38_am_six_months(): void
+    {
+        $pt = new ParentTime(Locales::AM());
+        $this->assertSame('6 ወራት', $pt->formatAge('2025-01-15', '2025-07-15'));
+    }
+
+    public function test_29_39_am_half_years(): void
+    {
+        $pt = new ParentTime(Locales::AM());
+        $this->assertSame('3 ዓመታት ተኩል', $pt->formatAge('2022-06-15', '2025-12-15'));
+    }
 }

@@ -770,17 +770,19 @@ class FormatAgeTest {
     }
 
     // ================================================================
-    // All 49 locales exist and have correct codes
+    // All 63 locales exist and have correct codes
     // ================================================================
     @Test
-    fun `all 49 locales exist`() {
-        assertEquals(49, Locales.ALL.size)
+    fun `all 63 locales exist`() {
+        assertEquals(63, Locales.ALL.size)
         val expectedCodes = listOf(
-            "ar", "bg", "bn", "bs", "ca", "cs", "da", "de", "el", "en",
-            "es", "et", "eu", "fa", "fi", "fr", "ga", "gu", "hi", "hr",
-            "hu", "it", "ja", "jv", "ko", "lt", "lv", "mr", "ms", "nb",
-            "nl", "pa", "pl", "pt", "ro", "ru", "sk", "sl", "sq", "sr",
-            "sv", "ta", "te", "th", "tr", "uk", "ur", "vi", "zh"
+            "am", "ar", "az", "bg", "bn", "bs", "ca", "cs", "da", "de",
+            "el", "en", "es", "et", "eu", "fa", "fi", "fil", "fr", "ga",
+            "gu", "he", "hi", "hr", "hu", "id", "it", "ja", "jv", "ka",
+            "kk", "km", "ko", "lt", "lv", "mk", "mr", "ms", "my", "nb",
+            "ne", "nl", "pa", "pl", "pt", "ro", "ru", "si", "sk", "sl",
+            "sq", "sr", "sv", "sw", "ta", "te", "th", "tr", "uk", "ur",
+            "uz", "vi", "zh"
         )
         for (code in expectedCodes) {
             val locale = Locales.ALL[code]
@@ -935,5 +937,73 @@ class FormatAgeTest {
     fun `gender companion method`() {
         assertEquals("Newborn", ParentTime.formatStage("2025-06-15", "2025-06-15", "f"))
         assertEquals("Adult", ParentTime.formatStage("2007-06-15", "2025-06-15", "f"))
+    }
+
+    // ================================================================
+    // Section 29: Locale-specific edge cases — new plural rules
+    // ================================================================
+
+    @Test
+    fun `Hebrew locale — dual forms`() {
+        val pt = ParentTime(Locales.HE)
+        assertEquals("רק נולד", pt.formatAge("2025-06-15", "2025-06-15"))
+        assertEquals("יום 1", pt.formatAge("2025-06-14", "2025-06-15"))
+        assertEquals("3 ימים", pt.formatAge("2025-06-12", "2025-06-15"))
+        assertEquals("שבועיים", pt.formatAge("2025-06-01", "2025-06-15"))
+        assertEquals("3 שבועות", pt.formatAge("2025-05-25", "2025-06-15"))
+        assertEquals("6 חודשים", pt.formatAge("2025-01-15", "2025-07-15"))
+        assertEquals("3 חודשים", pt.formatAge("2025-03-15", "2025-06-15"))
+        assertEquals("שנתיים, חודש 1", pt.formatAge("2023-06-15", "2025-07-15"))
+        assertEquals("3 שנים וחצי", pt.formatAge("2022-06-15", "2025-12-15"))
+        assertEquals("7 שנים", pt.formatAge("2018-06-15", "2025-06-15"))
+        assertEquals("רק נולד", pt.formatStage("2025-06-15", "2025-06-15", "m"))
+        assertEquals("רק נולדה", pt.formatStage("2025-06-15", "2025-06-15", "f"))
+        assertEquals("מבוגר", pt.formatStage("2007-06-15", "2025-06-15", "m"))
+        assertEquals("מבוגרת", pt.formatStage("2007-06-15", "2025-06-15", "f"))
+    }
+
+    @Test
+    fun `Macedonian locale — mod10 mod100 rule`() {
+        val pt = ParentTime(Locales.MK)
+        assertEquals("Новороденче", pt.formatAge("2025-06-15", "2025-06-15"))
+        assertEquals("1 ден", pt.formatAge("2025-06-14", "2025-06-15"))
+        assertEquals("3 дена", pt.formatAge("2025-06-12", "2025-06-15"))
+        assertEquals("6 месеци", pt.formatAge("2025-01-15", "2025-07-15"))
+        assertEquals("2 години, 1 месец", pt.formatAge("2023-06-15", "2025-07-15"))
+        assertEquals("3 години и пол", pt.formatAge("2022-06-15", "2025-12-15"))
+        assertEquals("7 години", pt.formatAge("2018-06-15", "2025-06-15"))
+    }
+
+    @Test
+    fun `Swahili locale — noun class changes`() {
+        val pt = ParentTime(Locales.SW)
+        assertEquals("Mzaliwa mpya", pt.formatAge("2025-06-15", "2025-06-15"))
+        assertEquals("siku 1", pt.formatAge("2025-06-14", "2025-06-15"))
+        assertEquals("siku 3", pt.formatAge("2025-06-12", "2025-06-15"))
+        assertEquals("miezi 6", pt.formatAge("2025-01-15", "2025-07-15"))
+        assertEquals("miaka 2, mwezi 1", pt.formatAge("2023-06-15", "2025-07-15"))
+        assertEquals("miaka 3 na nusu", pt.formatAge("2022-06-15", "2025-12-15"))
+    }
+
+    @Test
+    fun `Indonesian locale — other only`() {
+        val pt = ParentTime(Locales.ID)
+        assertEquals("Baru lahir", pt.formatAge("2025-06-15", "2025-06-15"))
+        assertEquals("1 hari", pt.formatAge("2025-06-14", "2025-06-15"))
+        assertEquals("3 hari", pt.formatAge("2025-06-12", "2025-06-15"))
+        assertEquals("6 bulan", pt.formatAge("2025-01-15", "2025-07-15"))
+        assertEquals("3 tahun setengah", pt.formatAge("2022-06-15", "2025-12-15"))
+        assertEquals("7 tahun", pt.formatAge("2018-06-15", "2025-06-15"))
+    }
+
+    @Test
+    fun `Amharic locale — Ethiopic delimiter`() {
+        val pt = ParentTime(Locales.AM)
+        assertEquals("አዲስ የተወለደ", pt.formatAge("2025-06-15", "2025-06-15"))
+        assertEquals("1 ቀን", pt.formatAge("2025-06-14", "2025-06-15"))
+        assertEquals("3 ቀናት", pt.formatAge("2025-06-12", "2025-06-15"))
+        assertEquals("1 ሳምንት፣ 1 ቀን", pt.formatAge("2025-06-07", "2025-06-15"))
+        assertEquals("6 ወራት", pt.formatAge("2025-01-15", "2025-07-15"))
+        assertEquals("3 ዓመታት ተኩል", pt.formatAge("2022-06-15", "2025-12-15"))
     }
 }

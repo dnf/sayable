@@ -393,6 +393,90 @@ Using the English locale with `compactness = "compact"`.
 
 ---
 
+## 29. Locale-specific edge cases — new plural rules
+
+Test locales from the 14 new additions that exercise distinct plural rule
+families: Hebrew dual forms (`he`), Macedonian mod-based plurals (`mk`),
+Swahili noun-class changes (`sw`), Indonesian other-only (`id`), and
+Amharic zero-one rule with Ethiopic delimiter (`am`).
+
+### 29.1 — Hebrew (`he`) — dual forms
+
+The `he` rule: n=1→one, n=2→two, else→other. Hebrew uses special dual-number
+forms (שבועיים, חודשיים, שנתיים) when n=2. Also has gendered stages.
+
+| # | Method | DOB | asOf | Expected | Notes |
+|---|--------|-----|------|----------|-------|
+| 29.1 | formatAge | 2025-06-15 | 2025-06-15 | `רק נולד` | justBorn |
+| 29.2 | formatAge | 2025-06-14 | 2025-06-15 | `יום 1` | 1 day — one form |
+| 29.3 | formatAge | 2025-06-12 | 2025-06-15 | `3 ימים` | 3 days — other form |
+| 29.4 | formatAge | 2025-06-01 | 2025-06-15 | `שבועיים` | 2 weeks — dual form |
+| 29.5 | formatAge | 2025-05-25 | 2025-06-15 | `3 שבועות` | 3 weeks — other form |
+| 29.6 | formatAge | 2025-01-15 | 2025-07-15 | `6 חודשים` | 6 months — other |
+| 29.7 | formatAge | 2025-03-15 | 2025-06-15 | `3 חודשים` | 3 months — other |
+| 29.8 | formatAge | 2023-06-15 | 2025-07-15 | `שנתיים, חודש 1` | 2y dual + 1m one |
+| 29.9 | formatAge | 2022-06-15 | 2025-12-15 | `3 שנים וחצי` | 3½ years — half marker |
+| 29.10 | formatAge | 2018-06-15 | 2025-06-15 | `7 שנים` | 7+ years — other |
+| 29.11 | formatStage | 2025-06-15 | 2025-06-15, m | `רק נולד` | masculine newborn |
+| 29.12 | formatStage | 2025-06-15 | 2025-06-15, f | `רק נולדה` | feminine newborn |
+| 29.13 | formatStage | 2007-06-15 | 2025-06-15, m | `מבוגר` | masculine adult |
+| 29.14 | formatStage | 2007-06-15 | 2025-06-15, f | `מבוגרת` | feminine adult |
+
+### 29.2 — Macedonian (`mk`) — mod10/mod100 rule
+
+The `mk` rule: n%10=1 and n%100≠11 → one, else other.
+
+| # | Method | DOB | asOf | Expected | Notes |
+|---|--------|-----|------|----------|-------|
+| 29.15 | formatAge | 2025-06-15 | 2025-06-15 | `Новороденче` | justBorn |
+| 29.16 | formatAge | 2025-06-14 | 2025-06-15 | `1 ден` | 1 day — one |
+| 29.17 | formatAge | 2025-06-12 | 2025-06-15 | `3 дена` | 3 days — other |
+| 29.18 | formatAge | 2025-01-15 | 2025-07-15 | `6 месеци` | 6 months — other |
+| 29.19 | formatAge | 2023-06-15 | 2025-07-15 | `2 години, 1 месец` | 2y1m — one for month |
+| 29.20 | formatAge | 2022-06-15 | 2025-12-15 | `3 години и пол` | 3½ years — half marker |
+| 29.21 | formatAge | 2018-06-15 | 2025-06-15 | `7 години` | 7+ years — other |
+
+### 29.3 — Swahili (`sw`) — one_other with noun class changes
+
+Swahili changes noun prefixes between singular/plural: mwezi/miezi, mwaka/miaka.
+
+| # | Method | DOB | asOf | Expected | Notes |
+|---|--------|-----|------|----------|-------|
+| 29.22 | formatAge | 2025-06-15 | 2025-06-15 | `Mzaliwa mpya` | justBorn |
+| 29.23 | formatAge | 2025-06-14 | 2025-06-15 | `siku 1` | 1 day — one |
+| 29.24 | formatAge | 2025-06-12 | 2025-06-15 | `siku 3` | 3 days — other (same word) |
+| 29.25 | formatAge | 2025-01-15 | 2025-07-15 | `miezi 6` | 6 months — other (noun class) |
+| 29.26 | formatAge | 2023-06-15 | 2025-07-15 | `miaka 2, mwezi 1` | 2y other + 1m one |
+| 29.27 | formatAge | 2022-06-15 | 2025-12-15 | `miaka 3 na nusu` | 3½ years — half marker |
+
+### 29.4 — Indonesian (`id`) — other_only (no plural forms)
+
+Every count uses the same unit string.
+
+| # | Method | DOB | asOf | Expected | Notes |
+|---|--------|-----|------|----------|-------|
+| 29.28 | formatAge | 2025-06-15 | 2025-06-15 | `Baru lahir` | justBorn |
+| 29.29 | formatAge | 2025-06-14 | 2025-06-15 | `1 hari` | 1 day |
+| 29.30 | formatAge | 2025-06-12 | 2025-06-15 | `3 hari` | 3 days (same unit) |
+| 29.31 | formatAge | 2025-01-15 | 2025-07-15 | `6 bulan` | 6 months |
+| 29.32 | formatAge | 2022-06-15 | 2025-12-15 | `3 tahun setengah` | 3½ years — half marker |
+| 29.33 | formatAge | 2018-06-15 | 2025-06-15 | `7 tahun` | 7+ years |
+
+### 29.5 — Amharic (`am`) — one_other_zero_one with Ethiopic delimiter
+
+Tests `one_other_zero_one` rule (n∈{0,1}→one) and Ethiopic comma delimiter `፣ `.
+
+| # | Method | DOB | asOf | Expected | Notes |
+|---|--------|-----|------|----------|-------|
+| 29.34 | formatAge | 2025-06-15 | 2025-06-15 | `አዲስ የተወለደ` | justBorn |
+| 29.35 | formatAge | 2025-06-14 | 2025-06-15 | `1 ቀን` | 1 day — one form |
+| 29.36 | formatAge | 2025-06-12 | 2025-06-15 | `3 ቀናት` | 3 days — other form |
+| 29.37 | formatAge | 2025-06-07 | 2025-06-15 | `1 ሳምንት፣ 1 ቀን` | 1w1d with Ethiopic delimiter |
+| 29.38 | formatAge | 2025-01-15 | 2025-07-15 | `6 ወራት` | 6 months — other form |
+| 29.39 | formatAge | 2022-06-15 | 2025-12-15 | `3 ዓመታት ተኩል` | 3½ years — half marker |
+
+---
+
 ## Test count summary
 
 | Section | Count |
@@ -419,7 +503,8 @@ Using the English locale with `compactness = "compact"`.
 | 25. i18n locale | 20 |
 | 26. Compactness short | 9 |
 | 27. Compactness compact | 8 |
-| **Total** | **163** |
+| 29. Locale-specific edge cases | 39 |
+| **Total** | **202** |
 
 ### Implementation notes
 

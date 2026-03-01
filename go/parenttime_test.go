@@ -575,3 +575,71 @@ func TestResolveStage_Direct(t *testing.T) {
 		t.Errorf("gendered f: got %q, want %q", got, "Adulta")
 	}
 }
+
+// ================================================================
+// Section 29: Locale-specific edge cases — new plural rules
+// ================================================================
+
+func TestLocale_Hebrew(t *testing.T) {
+	pt := NewParentTime(HE)
+
+	assertAge(t, "he justBorn", pt.FormatAge("2025-06-15", "2025-06-15"), "רק נולד")
+	assertAge(t, "he 1 day one", pt.FormatAge("2025-06-14", "2025-06-15"), "יום 1")
+	assertAge(t, "he 3 days other", pt.FormatAge("2025-06-12", "2025-06-15"), "3 ימים")
+	assertAge(t, "he 2 weeks dual", pt.FormatAge("2025-06-01", "2025-06-15"), "שבועיים")
+	assertAge(t, "he 3 weeks other", pt.FormatAge("2025-05-25", "2025-06-15"), "3 שבועות")
+	assertAge(t, "he 6 months", pt.FormatAge("2025-01-15", "2025-07-15"), "6 חודשים")
+	assertAge(t, "he 3 months", pt.FormatAge("2025-03-15", "2025-06-15"), "3 חודשים")
+	assertAge(t, "he 2y dual 1m one", pt.FormatAge("2023-06-15", "2025-07-15"), "שנתיים, חודש 1")
+	assertAge(t, "he 3.5y half", pt.FormatAge("2022-06-15", "2025-12-15"), "3 שנים וחצי")
+	assertAge(t, "he 7y other", pt.FormatAge("2018-06-15", "2025-06-15"), "7 שנים")
+	assertAge(t, "he stage m newborn", pt.FormatStage("2025-06-15", "2025-06-15", "m"), "רק נולד")
+	assertAge(t, "he stage f newborn", pt.FormatStage("2025-06-15", "2025-06-15", "f"), "רק נולדה")
+	assertAge(t, "he stage m adult", pt.FormatStage("2007-06-15", "2025-06-15", "m"), "מבוגר")
+	assertAge(t, "he stage f adult", pt.FormatStage("2007-06-15", "2025-06-15", "f"), "מבוגרת")
+}
+
+func TestLocale_Macedonian(t *testing.T) {
+	pt := NewParentTime(MK)
+
+	assertAge(t, "mk justBorn", pt.FormatAge("2025-06-15", "2025-06-15"), "Новороденче")
+	assertAge(t, "mk 1 day one", pt.FormatAge("2025-06-14", "2025-06-15"), "1 ден")
+	assertAge(t, "mk 3 days other", pt.FormatAge("2025-06-12", "2025-06-15"), "3 дена")
+	assertAge(t, "mk 6 months", pt.FormatAge("2025-01-15", "2025-07-15"), "6 месеци")
+	assertAge(t, "mk 2y1m one month", pt.FormatAge("2023-06-15", "2025-07-15"), "2 години, 1 месец")
+	assertAge(t, "mk 3.5y half", pt.FormatAge("2022-06-15", "2025-12-15"), "3 години и пол")
+	assertAge(t, "mk 7y", pt.FormatAge("2018-06-15", "2025-06-15"), "7 години")
+}
+
+func TestLocale_Swahili(t *testing.T) {
+	pt := NewParentTime(SW)
+
+	assertAge(t, "sw justBorn", pt.FormatAge("2025-06-15", "2025-06-15"), "Mzaliwa mpya")
+	assertAge(t, "sw 1 day", pt.FormatAge("2025-06-14", "2025-06-15"), "siku 1")
+	assertAge(t, "sw 3 days", pt.FormatAge("2025-06-12", "2025-06-15"), "siku 3")
+	assertAge(t, "sw 6 months", pt.FormatAge("2025-01-15", "2025-07-15"), "miezi 6")
+	assertAge(t, "sw 2y 1m", pt.FormatAge("2023-06-15", "2025-07-15"), "miaka 2, mwezi 1")
+	assertAge(t, "sw 3.5y half", pt.FormatAge("2022-06-15", "2025-12-15"), "miaka 3 na nusu")
+}
+
+func TestLocale_Indonesian(t *testing.T) {
+	pt := NewParentTime(ID)
+
+	assertAge(t, "id justBorn", pt.FormatAge("2025-06-15", "2025-06-15"), "Baru lahir")
+	assertAge(t, "id 1 day", pt.FormatAge("2025-06-14", "2025-06-15"), "1 hari")
+	assertAge(t, "id 3 days", pt.FormatAge("2025-06-12", "2025-06-15"), "3 hari")
+	assertAge(t, "id 6 months", pt.FormatAge("2025-01-15", "2025-07-15"), "6 bulan")
+	assertAge(t, "id 3.5y half", pt.FormatAge("2022-06-15", "2025-12-15"), "3 tahun setengah")
+	assertAge(t, "id 7y", pt.FormatAge("2018-06-15", "2025-06-15"), "7 tahun")
+}
+
+func TestLocale_Amharic(t *testing.T) {
+	pt := NewParentTime(AM)
+
+	assertAge(t, "am justBorn", pt.FormatAge("2025-06-15", "2025-06-15"), "አዲስ የተወለደ")
+	assertAge(t, "am 1 day", pt.FormatAge("2025-06-14", "2025-06-15"), "1 ቀን")
+	assertAge(t, "am 3 days", pt.FormatAge("2025-06-12", "2025-06-15"), "3 ቀናት")
+	assertAge(t, "am 1w1d ethiopic", pt.FormatAge("2025-06-07", "2025-06-15"), "1 ሳምንት፣ 1 ቀን")
+	assertAge(t, "am 6 months", pt.FormatAge("2025-01-15", "2025-07-15"), "6 ወራት")
+	assertAge(t, "am 3.5y half", pt.FormatAge("2022-06-15", "2025-12-15"), "3 ዓመታት ተኩል")
+}
