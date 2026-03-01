@@ -49,6 +49,13 @@ type-aware linting that uses the TypeScript compiler's type information.
   compiler and Prettier (if used). Adding ESLint stylistic rules would create
   conflicts.
 
+### Naming
+
+camelCase for functions and properties, PascalCase for types and interfaces.
+Locale constants use lowercase (`en`, `fr`) because they are module-level
+`const` bindings — the TypeScript convention for exported values, as opposed to
+class-level `static readonly` constants which sometimes use UPPER_CASE.
+
 ---
 
 ## Python
@@ -106,6 +113,15 @@ block.
   but excessive for locale data files. Would require too many per-file ignores.
 - **S rules** (bandit/security) — no user input, no network calls, no file I/O.
   Security linting would be pure noise for a date-formatting library.
+
+### Naming
+
+PEP 8 prescribes different conventions for different entity types: PascalCase
+for classes (`AgeLocale`, `PluralUnit`), snake_case for functions and variables
+(`format_age`, `month_diff`), and UPPER_CASE for module-level constants (`EN`,
+`FR`). This is not "mixed case" — it is intentional differentiation that makes
+entity types visually distinguishable. Enforced by ruff's N category
+(pep8-naming).
 
 ---
 
@@ -172,6 +188,12 @@ their corresponding libraries. This works well on Ruby 3.x in CI. On Ruby 4.0
 (which extracted several stdlib gems), additional `gem` declarations may be
 needed in the Gemfile to satisfy rubocop's transitive dependencies.
 
+### Naming
+
+snake_case for methods and variables, PascalCase for classes and modules,
+UPPER_CASE for constants (`EN`, `FR`). Enforced by RuboCop's Naming cops
+(`Naming/MethodName`, `Naming/VariableName`, `Naming/ConstantName`).
+
 ---
 
 ## PHP
@@ -209,3 +231,11 @@ Configured in `phpunit.xml`:
 - PHP 8.1+ enums for `PluralCategory` and `Compactness` (type-safe, no magic strings)
 - `final` classes — prevents inheritance of data types
 - Named arguments throughout — explicit constructor parameter binding
+
+### Naming
+
+PER-CS2.0 prescribes camelCase for methods and PascalCase for classes. Locale
+accessors (`Locales::EN()`, `Locales::FR()`) use UPPER_CASE for method
+names — a deliberate deviation to signal constant-like semantics. These are lazy
+singleton methods that return the same `AgeLocale` instance on every call,
+matching the `EN` constant naming used in all seven other languages.

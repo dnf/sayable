@@ -23,6 +23,38 @@ codebase are suppressed with a documented rationale.
    checkers are dev-only. The shipped library in every language has zero
    runtime dependencies.
 
+## Naming conventions
+
+Each language follows its community's standard naming conventions. The table
+below summarizes the patterns across all eight implementations:
+
+| Language   | Classes/Types | Functions/Methods | Constants          | Fields/Properties | Enum variants      |
+|------------|---------------|-------------------|--------------------|-------------------|--------------------|
+| TypeScript | PascalCase    | camelCase         | lowercase (`en`)   | camelCase         | n/a (string literals) |
+| Python     | PascalCase    | snake_case        | UPPER_CASE (`EN`)  | snake_case        | n/a (string literals) |
+| Go         | PascalCase    | PascalCase (exported) | UPPER_CASE (`EN`) | PascalCase (exported) | PascalCase    |
+| Ruby       | PascalCase    | snake_case        | UPPER_CASE (`EN`)  | snake_case symbols | n/a               |
+| Rust       | PascalCase    | snake_case        | UPPER_CASE (`EN`) | snake_case     | PascalCase         |
+| Kotlin     | PascalCase    | camelCase         | UPPER_CASE (`EN`) | camelCase      | UPPER_CASE         |
+| C++        | PascalCase    | snake_case        | UPPER_CASE (`EN()`) | snake_case  | PascalCase         |
+| PHP        | PascalCase    | camelCase         | UPPER_CASE (`EN()`) | camelCase   | PascalCase         |
+
+The locale JSON source files use camelCase keys (`justBorn`, `formatNumber`).
+The code generator translates these to each language's idiomatic convention
+during generation — for example, `justBorn` becomes `just_born` in Python and
+Rust, stays `justBorn` in TypeScript and Kotlin, and so on.
+
+**TypeScript locale constants** use lowercase (`en`, `fr`) rather than
+UPPER_CASE because they are module-level `const` bindings — plain values, not
+class-level or "true" constants in the Python/Go sense. Lowercase is the
+TypeScript community norm for exported `const` values.
+
+**Two deliberate deviations:** C++ locale accessors (`locales::EN()`) and PHP
+locale accessors (`Locales::EN()`) use UPPER_CASE for function names. These
+are lazy singleton accessors that semantically behave like constants, and the
+naming matches every other language's `EN` constant. See the per-language
+details for rationale.
+
 ## Cross-cutting considerations
 
 ### i18n locale data

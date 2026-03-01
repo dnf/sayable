@@ -55,6 +55,14 @@ golangci-lint v2 separates formatters from linters:
 - **`wsl`/`nlreturn`** — whitespace linters. Too opinionated about blank line
   placement; would fight with `gofmt`.
 
+### Naming
+
+PascalCase for exported identifiers, camelCase for unexported ones — this is
+enforced by the language itself, since Go determines visibility from
+capitalization. Locale variables use UPPER_CASE (`EN`, `FR`), which is idiomatic
+for Go package-level variables that act as constants (Go has no `const` for
+non-primitive types).
+
 ---
 
 ## Rust
@@ -111,6 +119,14 @@ lints, `warn` for pedantic — then selectively allow the false positives.
 - Uninlined format arguments in test assertions (auto-fixed).
 - Several uses of `ref` bindings in `if let` patterns that could use `&` instead.
 
+### Naming
+
+snake_case for functions and fields, PascalCase for types and enum variants,
+SCREAMING_SNAKE_CASE for statics and constants. All enforced by compiler
+warnings (`non_snake_case`, `non_camel_case_types`, `non_upper_case_globals`) —
+violating any of these conventions produces a warning, which our
+`clippy::all = deny` setting promotes to an error.
+
 ---
 
 ## Kotlin
@@ -150,6 +166,14 @@ public surface explicit and treating any compiler warning as a potential bug.
 - **`-Xjvm-default=all`** — generates default method implementations in
   interfaces. Not relevant since the library doesn't use interfaces with default
   methods.
+
+### Naming
+
+camelCase for functions and properties, PascalCase for classes and objects,
+UPPER_CASE for enum entries and locale `val` declarations. The
+`explicitApi()` setting ensures all declarations have explicit visibility
+modifiers, which reinforces naming discipline by making every public symbol a
+deliberate choice.
 
 ---
 
@@ -234,6 +258,13 @@ configuration enables seven check categories:
 | Functions | `lower_case` |
 | Variables | `lower_case` |
 | Private members | `lower_case_` (trailing underscore) |
+
+The `locales::EN()` accessor functions use UPPER_CASE despite being
+functions. This is a deliberate choice — these are lazy singleton accessors that
+semantically behave like constants, and the naming matches every other language's
+`EN` constant. clang-tidy's `readability-identifier-naming` is configured to
+enforce `lower_case` for functions generally, but the locale accessor functions
+in generated code are excluded from this check.
 
 ### What compiled clean with no changes
 
