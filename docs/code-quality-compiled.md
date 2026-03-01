@@ -1,6 +1,6 @@
 # Code Quality: Compiled Languages
 
-Detailed configuration rationale for Go, Rust, Kotlin, and C++.
+Detailed configuration rationale for Go, Rust, Kotlin, C++, and Java.
 
 ---
 
@@ -295,3 +295,45 @@ library and tests — compiled with **zero warnings**. This is notable because
 `-Wconversion` and `-Wsign-conversion` are aggressive flags that often require
 explicit casts in numeric code, and the date arithmetic in this library involves
 significant integer manipulation.
+
+---
+
+## Java
+
+**Tools:** Java compiler flags
+
+**Config file:** `build.gradle.kts`
+
+### Philosophy
+
+Java's compiler warnings are less aggressive than Kotlin's by default, but
+`-Xlint:all -Werror` enables all standard lint checks and treats them as errors.
+Combined with Java 17's modern features (sealed interfaces, records, pattern
+matching), the implementation achieves type safety and immutability without
+external tools.
+
+### Compiler settings
+
+| Setting | What it does |
+|---------|-------------|
+| `-Xlint:all` | Enables all standard javac lint warnings: unchecked operations, deprecation, fallthrough, rawtypes, varargs, etc. |
+| `-Werror` | Treats all warnings as errors. Nothing slips through. |
+| Java 17 target | Matches Kotlin's JVM target. Provides sealed interfaces, records, and pattern matching for switch. |
+| UTF-8 encoding | Explicit `options.encoding = "UTF-8"` ensures consistent handling of Unicode locale data. |
+
+### What was considered but not added
+
+- **Checkstyle/PMD/SpotBugs** — these are the Java equivalents of ESLint or
+  rubocop. For a library this size, `-Xlint:all -Werror` catches the important
+  issues without adding build complexity. If the implementation grows, SpotBugs
+  would be the first addition.
+
+- **Error Prone** — Google's compile-time bug checker. Excellent tool, but adds
+  a dependency on the Error Prone compiler plugin. The zero-dependency philosophy
+  extends to the build where practical.
+
+### Naming
+
+camelCase for methods and fields, PascalCase for classes and interfaces,
+UPPER_CASE for enum entries and locale constants. This matches standard Java
+conventions and is consistent with the Kotlin implementation's naming.

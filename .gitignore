@@ -30,6 +30,10 @@ rust/target/
 kotlin/build/
 kotlin/.gradle/
 
+# Java
+java/build/
+java/.gradle/
+
 # C++
 cpp/build/
 

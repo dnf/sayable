@@ -1,10 +1,10 @@
 # Contributing to parent-time
 
-Thanks for your interest in contributing! This project maintains identical implementations across 8 languages, so contributions follow a few specific patterns.
+Thanks for your interest in contributing! This project maintains identical implementations across 9 languages, so contributions follow a few specific patterns.
 
 ## Discuss before implementing
 
-Because every change must work across 8 languages, please **open an issue before starting work** on anything beyond a small locale correction. This applies to new features, API changes, new locales, and non-trivial bug fixes. A quick discussion upfront prevents 8x wasted effort if the approach needs adjustment.
+Because every change must work across 9 languages, please **open an issue before starting work** on anything beyond a small locale correction. This applies to new features, API changes, new locales, and non-trivial bug fixes. A quick discussion upfront prevents 8x wasted effort if the approach needs adjustment.
 
 The only exception: if you're a native speaker fixing a translation or plural rule in a locale you know, go ahead and open a PR directly.
 
@@ -26,7 +26,8 @@ rust/          # Rust
 kotlin/        # Kotlin
 cpp/           # C++
 php/           # PHP
-codegen/       # Locale code generator (JSON → all 8 languages)
+java/          # Java
+codegen/       # Locale code generator (JSON → all 9 languages)
   locales/     # 71 JSON files — single source of truth for locale data
   targets/     # One directory per target language (emitter + plural rules)
   generate.py  # Orchestrator: loads JSON, runs emitters, writes files
@@ -35,16 +36,16 @@ docs/          # Shared documentation and test specifications
 
 ## Key principles
 
-- **All 8 implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
+- **All 9 implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
 - **Deterministic tests.** Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero dependencies.** No runtime dependencies in any language. Pure date arithmetic.
-- **Spec-first testing.** The canonical test specification lives in [`docs/testing.md`](docs/testing.md). Add new test cases there first, then implement in all 8 languages.
+- **Spec-first testing.** The canonical test specification lives in [`docs/testing.md`](docs/testing.md). Add new test cases there first, then implement in all 9 languages.
 
 ## What we won't merge
 
 To save you time, here's what falls outside the project's scope:
 
-- **Features that can't be implemented consistently across all 8 languages.** If it relies on a language-specific capability, it doesn't fit.
+- **Features that can't be implemented consistently across all 9 languages.** If it relies on a language-specific capability, it doesn't fit.
 - **Runtime dependencies.** The library is zero-dependency in every language. No exceptions.
 - **Timezone or system locale detection.** The library takes explicit date strings and locale objects. It does not sniff the environment.
 - **Date parsing or manipulation.** This library formats ages, not dates.
@@ -58,7 +59,7 @@ Native speaker feedback is especially welcome. If a translation sounds unnatural
 To fix a locale:
 
 1. Edit the JSON file in `codegen/locales/{code}.json`
-2. Run `python -m codegen.generate` to regenerate all 8 language implementations
+2. Run `python -m codegen.generate` to regenerate all 9 language implementations
 3. Run the test suites to verify
 
 Never edit the generated locale files (e.g. `typescript/src/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`codegen/README.md`](codegen/README.md) for full details.
@@ -69,10 +70,10 @@ See [`docs/gender-and-stages.md`](docs/gender-and-stages.md) for the gender anal
 
 See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for a detailed guide. In short:
 
-1. Identify the CLDR plural rule for the language (one of the 12 existing rules usually fits)
+1. Identify the CLDR plural rule for the language (one of the 23 existing rules usually fits)
 2. Create `codegen/locales/{code}.json` with the locale data
-3. Run `python -m codegen.generate` to generate locale files in all 8 languages
-4. Add test cases to `docs/testing.md` and implement them in all 8 test files
+3. Run `python -m codegen.generate` to generate locale files in all 9 languages
+4. Add test cases to `docs/testing.md` and implement them in all 9 test files
 5. Run all test suites
 
 ### Bug fixes
@@ -81,7 +82,7 @@ If you find a discrepancy between implementations, file an issue with the input 
 
 ### New features
 
-Open an issue to discuss before implementing. Features must work across all 8 languages, so design discussions help avoid wasted effort.
+Open an issue to discuss before implementing. Features must work across all 9 languages, so design discussions help avoid wasted effort.
 
 ## Reporting bugs
 
@@ -111,7 +112,7 @@ Before submitting a PR, verify:
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
 - [ ] Locale changes made in `codegen/locales/*.json` and regenerated (not hand-edited)
 - [ ] `python -m codegen.generate --check` passes
-- [ ] All 8 implementations updated (for logic/feature changes)
+- [ ] All 9 implementations updated (for logic/feature changes)
 - [ ] No runtime dependencies added
 
 ## Running tests
@@ -126,8 +127,9 @@ Before submitting a PR, verify:
 | Kotlin | `cd kotlin && ./gradlew test` |
 | C++ | `cd cpp && mkdir -p build && cd build && cmake .. && make && ./test_parenttime` |
 | PHP | `cd php && php vendor/bin/phpunit tests/` |
+| Java | `cd java && ./gradlew test` |
 
-CI runs all 8 language test suites on every pull request. PRs that break any language will not be merged.
+CI runs all 9 language test suites on every pull request. PRs that break any language will not be merged.
 
 ## Commit messages
 

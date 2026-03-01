@@ -17,6 +17,7 @@ test *lang:
         just test kotlin
         just test cpp
         just test php
+        just test java
         just check
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd typescript && npx vitest run
@@ -35,11 +36,13 @@ test *lang:
         cd cpp/build && ctest --output-on-failure
     elif [ "{{lang}}" = "php" ]; then
         cd php && php vendor/bin/phpunit tests/
+    elif [ "{{lang}}" = "java" ]; then
+        cd java && ./gradlew test
     elif [ "{{lang}}" = "codegen" ]; then
         {{python}} -m unittest codegen.test_locale_groups -v
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, codegen"
+        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, codegen"
         exit 1
     fi
 
@@ -53,6 +56,7 @@ build *lang:
         just build rust
         just build kotlin
         just build cpp
+        just build java
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd typescript && npm run build
     elif [ "{{lang}}" = "rust" ] || [ "{{lang}}" = "rs" ]; then
@@ -61,6 +65,8 @@ build *lang:
         cd kotlin && ./gradlew build
     elif [ "{{lang}}" = "cpp" ] || [ "{{lang}}" = "c++" ]; then
         cd cpp && cmake -B build && cmake --build build
+    elif [ "{{lang}}" = "java" ]; then
+        cd java && ./gradlew build
     else
         echo "No build step for: {{lang}}"
     fi
@@ -97,6 +103,7 @@ lint *lang:
         just lint ruby
         just lint rust
         just lint php
+        just lint java
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         cd typescript && npm run lint
     elif [ "{{lang}}" = "python" ] || [ "{{lang}}" = "py" ]; then
@@ -113,9 +120,11 @@ lint *lang:
         echo "Kotlin uses warnings-as-errors in build (no separate linter)"
     elif [ "{{lang}}" = "cpp" ] || [ "{{lang}}" = "c++" ]; then
         echo "C++ uses warnings-as-errors in build (no separate linter)"
+    elif [ "{{lang}}" = "java" ]; then
+        echo "Java uses warnings-as-errors in build (no separate linter)"
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php"
+        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java"
         exit 1
     fi
 
@@ -130,6 +139,7 @@ clean *lang:
         just clean rust
         just clean kotlin
         just clean cpp
+        just clean java
         just clean codegen
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
         rm -rf typescript/dist
@@ -142,12 +152,14 @@ clean *lang:
         rm -rf kotlin/build kotlin/.gradle
     elif [ "{{lang}}" = "cpp" ] || [ "{{lang}}" = "c++" ]; then
         rm -rf cpp/build
+    elif [ "{{lang}}" = "java" ]; then
+        rm -rf java/build java/.gradle
     elif [ "{{lang}}" = "codegen" ]; then
         find codegen -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
     elif [ "{{lang}}" = "go" ] || [ "{{lang}}" = "ruby" ] || [ "{{lang}}" = "rb" ] || [ "{{lang}}" = "php" ]; then
         echo "No build artifacts for: {{lang}}"
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, codegen"
+        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, codegen"
         exit 1
     fi

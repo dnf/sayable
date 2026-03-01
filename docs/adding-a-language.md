@@ -13,6 +13,9 @@ the tests; codegen handles the locale data.
 
 ```
 codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  <lang>/locales/*
+                                                                    (per-file emitters)
+codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  <lang>/.../Locales.<ext>
+                                                                    (single-file emitters)
 ```
 
 ## 1. Create the language directory
@@ -39,7 +42,7 @@ Implement these types (see `typescript/src/locale.ts` or `python/src/parent_time
 - **`UnitForms`** — either a single template string or a map of PluralCategory to template string
 - **`StageLabel`** — either a string or `{m: string, f: string}` for gendered locales
 - **`CompactnessOverride`** — optional overrides for short/compact modes (units, half, delimiter, justBorn)
-- **`AgeLocale`** — the full locale record: code, plural function, units, half, delimiter, justBorn, stages, and optional short/compact overrides
+- **`AgeLocale`** — the full locale record: code, plural function, units, half, delimiter, justBorn, stages, optional short/compact overrides, and optional `formatNumber` / `formatUnit` callbacks
 
 The `plural` field is a function `(int) -> PluralCategory`.
 
@@ -91,7 +94,7 @@ Each locale's JSON is passed as a dict with these keys:
 |-----|------|-------------|
 | `code` | `str` | ISO 639-1 code (e.g. `"en"`) |
 | `name` | `str` | Display name (e.g. `"English"`) |
-| `pluralRule` | `str` | One of the 12 rule names (e.g. `"one_other"`) |
+| `pluralRule` | `str` | One of the 23 rule names (e.g. `"one_other"`) |
 | `units` | `dict` | `{day, week, month, year}` — each a string or plural map |
 | `half` | `str` | Template for half values (e.g. `"{n}½"`) |
 | `delimiter` | `str` | Separator between parts (e.g. `", "`) |
@@ -144,7 +147,7 @@ Port the formatting logic from an existing implementation
 
 1. Parse ISO date strings into year/month/day
 2. Compute calendar differences (years, months, days)
-3. Apply tier logic: days (0-6d) → weeks+days (7d to <3mo) → months (3-23mo) → half years (12-23mo with .5) → years+months (24-35mo) → integer years (3+yr)
+3. Apply tier logic: days (0-6d) → weeks+days (7d to <3mo) → months (3-23mo) → years+months (24-35mo) → years with ½ (3-6yr) → integer years (7+yr)
 4. Look up the locale's unit forms, apply plural rules, format the string
 5. Handle short/compact overrides when requested
 
@@ -206,6 +209,9 @@ Add a row for the new language in each:
 | [`docs/code-quality.md`](code-quality.md) | Naming conventions, Immutability, Quick reference |
 | [`docs/packaging.md`](packaging.md) | File layout / initialization, Tree-shaking action table |
 | [`codegen/README.md`](../codegen/README.md) | Output per language |
+| [`README.md`](../README.md) | Implementations table |
+| [`CONTRIBUTING.md`](../CONTRIBUTING.md) | Test commands table |
+| [`CLAUDE.md`](../CLAUDE.md) | Test command table |
 
 Also add a `## License` section to the new language's README linking to
 [`LICENSE.md`](../LICENSE.md).
@@ -225,7 +231,7 @@ just test               # run all 8+ languages to confirm nothing broke
 - [ ] Language directory with idiomatic structure
 - [ ] Type definitions (AgeLocale, PluralCategory, etc.)
 - [ ] Codegen emitter in `codegen/targets/<lang>/emitter.py`
-- [ ] Plural rules in `codegen/targets/<lang>/plural_rules.py` (all 12 patterns)
+- [ ] Plural rules in `codegen/targets/<lang>/plural_rules.py` (all 23 patterns)
 - [ ] Generator function registered in `codegen/generate.py`
 - [ ] Generated locale files pass the language's linter
 - [ ] Core formatter ported from an existing implementation

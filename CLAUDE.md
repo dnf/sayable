@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 8 identical implementations (TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 9 identical implementations (TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP, Java) and 71 locales.
 
 ## Build and test commands
 
@@ -16,6 +16,7 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 | Kotlin | `cd kotlin && ./gradlew test` |
 | C++ | `cd cpp && cmake -B build && cmake --build build && cd build && ctest --output-on-failure` |
 | PHP | `cd php && php vendor/bin/phpunit tests/` |
+| Java | `cd java && ./gradlew test` |
 | Codegen check | `python -m codegen.generate --check` |
 | Codegen subset | `python -m codegen.generate --locales core` |
 | Codegen tests | `just test codegen` |
@@ -24,10 +25,10 @@ parent-time is a zero-dependency library that formats ages the way parents talk 
 
 ## Key rules
 
-- **All 8 implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
-- **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all 8 languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
+- **All 9 implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
+- **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all 9 languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero runtime dependencies.** No exceptions in any language.
-- **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all 8 language implementations. Never edit generated locale files by hand.
+- **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all 9 language implementations. Never edit generated locale files by hand.
 
 ## Project layout
 
@@ -40,13 +41,14 @@ rust/          # Rust
 kotlin/        # Kotlin
 cpp/           # C++
 php/           # PHP
-codegen/       # Locale code generator (JSON → all 8 languages)
+java/          # Java
+codegen/       # Locale code generator (JSON → all 9 languages)
 docs/          # Shared docs, test spec, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `format-age.ts`, `format_age.py`, `parenttime.go`, `formatter.rb`, `formatter.rs`, `ParentTime.kt`, `parenttime.cpp`, `ParentTime.php`
-- Types/Locale: `locale.ts`, `locale.py`, `locale.go`, `locale.rb`, `types.rs`, `Types.kt`, `types.hpp`, `AgeLocale.php`
+- Formatter: `format-age.ts`, `format_age.py`, `parenttime.go`, `formatter.rb`, `formatter.rs`, `ParentTime.kt`, `parenttime.cpp`, `ParentTime.php`, `ParentTime.java`
+- Types/Locale: `locale.ts`, `locale.py`, `locale.go`, `locale.rb`, `types.rs`, `Types.kt`, `types.hpp`, `AgeLocale.php`, `AgeLocale.java`
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style
@@ -62,7 +64,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Sum
 
 1. Identify the CLDR plural rule — one of the 23 existing rules covers every CLDR cardinal pattern
 2. Create `codegen/locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
-3. Run `python -m codegen.generate` — generates locale files in all 8 languages
+3. Run `python -m codegen.generate` — generates locale files in all 9 languages
 4. Run `just test && just lint` to verify
 5. Optionally add locale-specific test cases to `docs/testing.md`
 
