@@ -7,7 +7,7 @@ namespace ParentTime;
 use Closure;
 
 /** Locale definition for age formatting. */
-final readonly class AgeLocale
+final class AgeLocale
 {
     /**
      * @param Closure(int): PluralCategory $plural
@@ -15,16 +15,16 @@ final readonly class AgeLocale
      * @param (Closure(int, string): string)|null $formatUnit
      */
     public function __construct(
-        public string $code,
-        public Closure $plural,
-        public Units $units,
-        public string $half,
-        public string $delimiter,
-        public string $justBorn,
-        public Stages $stages,
-        public ?CompactnessOverride $short = null,
-        public ?CompactnessOverride $compact = null,
-        public ?Closure $formatNumber = null,
-        public ?Closure $formatUnit = null,
+        public readonly string $code,
+        public readonly Closure $plural,
+        public readonly Units $units,
+        public readonly string $half,
+        public readonly string $delimiter,
+        public readonly string $justBorn,
+        public readonly Stages $stages,
+        public readonly ?CompactnessOverride $short = null,
+        public readonly ?CompactnessOverride $compact = null,
+        public readonly ?Closure $formatNumber = null,
+        public readonly ?Closure $formatUnit = null,
     ) {}
 }

@@ -326,9 +326,8 @@ class TestBornOn31stProgression:
 # ================================================================
 class TestDefaultAsOf:
     def test_returns_correct_age_without_as_of(self) -> None:
-        with patch("parent_time.format_age.date") as mock_date:
+        with patch("parent_time.format_age.date", wraps=date) as mock_date:
             mock_date.today.return_value = date(2025, 6, 15)
-            mock_date.side_effect = date
             assert format_age("2020-01-01") == "5 years"
             assert format_age("2025-06-10") == "5 days"
 
@@ -453,9 +452,8 @@ class TestStageAdult:
 
 class TestStageDefaultAsOf:
     def test_returns_correct_stage_without_as_of(self) -> None:
-        with patch("parent_time.format_age.date") as mock_date:
+        with patch("parent_time.format_age.date", wraps=date) as mock_date:
             mock_date.today.return_value = date(2025, 6, 15)
-            mock_date.side_effect = date
             assert format_stage("2025-06-15") == "Newborn"
             assert format_stage("2020-01-01") == "Child"
             assert format_stage("1980-01-01") == "Adult"
