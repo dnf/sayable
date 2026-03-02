@@ -27,6 +27,18 @@ if [ -d "$OPENJDK_PATH" ] && [ ! -e "$JVM_DIR" ]; then
         echo "   Skipped (run manually: sudo ln -sfn $OPENJDK_PATH $JVM_DIR)"
 fi
 
+# Haskell via ghcup (GHC + cabal)
+if ! command -v ghc &>/dev/null; then
+    echo "==> Installing Haskell via ghcup..."
+    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
+        BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
+        BOOTSTRAP_HASKELL_INSTALL_CABAL=1 \
+        BOOTSTRAP_HASKELL_INSTALL_GHC=1 \
+        sh
+    # shellcheck source=/dev/null
+    [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+fi
+
 # Rust via rustup (consistent across platforms, avoids conflicts with brew rust)
 if ! command -v rustc &>/dev/null; then
     echo "==> Installing Rust via rustup..."
@@ -65,6 +77,8 @@ command -v swift &>/dev/null   || MISSING+=(swift)
 command -v erl &>/dev/null     || MISSING+=(erl)
 command -v rebar3 &>/dev/null  || MISSING+=(rebar3)
 command -v clojure &>/dev/null || MISSING+=(clojure)
+command -v ghc &>/dev/null     || MISSING+=(ghc)
+command -v cabal &>/dev/null   || MISSING+=(cabal)
 command -v just &>/dev/null    || MISSING+=(just)
 
 if [ ${#MISSING[@]} -gt 0 ]; then

@@ -83,6 +83,18 @@ if ! command -v composer &>/dev/null; then
     curl -sS https://getcomposer.org/installer | $SUDO php -- --install-dir=/usr/local/bin --filename=composer
 fi
 
+# ---- Haskell via ghcup (GHC + cabal) ----
+if ! command -v ghc &>/dev/null; then
+    echo "==> Installing Haskell via ghcup..."
+    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
+        BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
+        BOOTSTRAP_HASKELL_INSTALL_CABAL=1 \
+        BOOTSTRAP_HASKELL_INSTALL_GHC=1 \
+        sh
+    # shellcheck source=/dev/null
+    [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+fi
+
 # ---- Clojure CLI ----
 if ! command -v clojure &>/dev/null; then
     echo "==> Installing Clojure CLI..."
@@ -110,6 +122,7 @@ SHELL_RC="$HOME/.bashrc"
     echo '# Added by parent-time bootstrap'
     echo 'export PATH="/usr/local/go/bin:$PATH"'
     echo '[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"'
+    echo '[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"'
     echo 'export PATH="$HOME/.local/bin:$PATH"'
 } >> "$SHELL_RC"
 

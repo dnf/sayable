@@ -57,6 +57,14 @@ ENV PATH="/root/.local/bin:${PATH}"
 # Composer (PHP package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Haskell (GHC + cabal) via ghcup
+RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
+    BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
+    BOOTSTRAP_HASKELL_INSTALL_CABAL=1 \
+    BOOTSTRAP_HASKELL_INSTALL_GHC=1 \
+    sh
+ENV PATH="/root/.ghcup/bin:${PATH}"
+
 # Clojure CLI
 RUN curl -fsSL https://download.clojure.org/install/linux-install.sh | bash
 
