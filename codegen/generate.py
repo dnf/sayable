@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate locale source files for all 11 languages from canonical JSON.
+"""Generate locale source files for all 12 languages from canonical JSON.
 
 Usage:
     python -m codegen.generate                      # generate all
@@ -105,12 +105,19 @@ def _clean_rust(selected: set[str], all_codes: set[str], check: bool, diffs: lis
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_c(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.c.emitter import locale_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(locale_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
     "typescript": _clean_typescript,
     "python": _clean_python,
     "go": _clean_go,
     "ruby": _clean_ruby,
     "rust": _clean_rust,
+    "c": _clean_c,
 }
 
 
@@ -240,6 +247,24 @@ def generate_swift(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_c(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.c.emitter import (
+        emit_formatter, emit_header, emit_locale, emit_locales_header,
+        emit_registry, formatter_path, header_path, locale_path,
+        locales_header_path, registry_path,
+    )
+
+    for loc in locales:
+        path = locale_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    _write_or_check(header_path(ROOT), emit_header(locales), check, diffs)
+    _write_or_check(locales_header_path(ROOT), emit_locales_header(locales), check, diffs)
+    _write_or_check(registry_path(ROOT), emit_registry(locales), check, diffs)
+    _write_or_check(formatter_path(ROOT), emit_formatter(), check, diffs)
+
+
 _GENERATORS = {
     "typescript": generate_typescript,
     "python": generate_python,
@@ -252,6 +277,7 @@ _GENERATORS = {
     "java": generate_java,
     "csharp": generate_csharp,
     "swift": generate_swift,
+    "c": generate_c,
 }
 
 

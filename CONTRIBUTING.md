@@ -1,18 +1,18 @@
 # Contributing to parent-time
 
-Thanks for your interest in contributing! This project maintains identical implementations across 11 languages, so contributions follow a few specific patterns.
+Thanks for your interest in contributing! This project maintains identical implementations across 12 languages, so contributions follow a few specific patterns.
 
 ## Getting started
 
 1. Fork and clone the repository
 2. Install [just](https://github.com/casey/just) (the task runner)
-3. Run `just test` to verify everything works — this runs all 11 test suites in parallel
+3. Run `just test` to verify everything works — this runs all 12 test suites in parallel
 
 ## Project structure
 
 ```
 src/
-  typescript/  python/  go/  ruby/  rust/
+  c/  typescript/  python/  go/  ruby/  rust/
   kotlin/  cpp/  php/  java/  csharp/  swift/
 codegen/
   locales/     # 71 JSON files — single source of truth for locale data
@@ -26,7 +26,7 @@ docs/          # Shared documentation and test specifications
 The `justfile` is the primary task runner. With no arguments, commands run all languages in parallel:
 
 ```
-just test          # all 11 test suites + codegen check
+just test          # all 12 test suites + codegen check
 just build         # all compiled languages
 just lint          # all linters
 just clean         # remove build artifacts
@@ -38,6 +38,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 
 | Language   | test | build | lint | clean |
 |------------|------|-------|------|-------|
+| C          | `test c` | `build c` | 🛠️ | `clean c` |
 | C++        | `test cpp`<br>`test c++` | `build cpp`<br>`build c++` | 🛠️ | `clean cpp`<br>`clean c++` |
 | C#         | `test csharp`<br>`test cs` | `build csharp`<br>`build cs` | 🛠️ | `clean csharp`<br>`clean cs` |
 | Go         | `test go` | ⚡ | `lint go` | ⚡ |
@@ -61,10 +62,10 @@ Every run captures output to `.logs/<action>/<language>.log` (e.g., `.logs/test/
 
 ## Key principles
 
-- **All 11 implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
+- **All 12 implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
 - **Deterministic tests.** Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero dependencies.** No runtime dependencies in any language. Pure date arithmetic.
-- **Spec-first testing.** The canonical test specification lives in [`docs/testing.md`](docs/testing.md). Add new test cases there first, then implement in all 11 languages.
+- **Spec-first testing.** The canonical test specification lives in [`docs/testing.md`](docs/testing.md). Add new test cases there first, then implement in all 12 languages.
 
 ## Discuss before implementing
 
@@ -94,8 +95,8 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for a detailed guide. I
 
 1. Identify the CLDR plural rule for the language (one of the 23 existing rules usually fits)
 2. Create `codegen/locales/{code}.json` with the locale data
-3. Run `python -m codegen.generate` to generate locale files in all 11 languages
-4. Add test cases to `docs/testing.md` and implement them in all 11 test files
+3. Run `python -m codegen.generate` to generate locale files in all 12 languages
+4. Add test cases to `docs/testing.md` and implement them in all 12 test files
 5. Run `just test`
 
 ### Bug fixes
@@ -106,7 +107,7 @@ The fastest way to get a bug fixed is to include a failing test case in the form
 
 ### New features
 
-Open an issue to discuss before implementing. Features must work across all 11 languages, so design discussions help avoid wasted effort.
+Open an issue to discuss before implementing. Features must work across all 12 languages, so design discussions help avoid wasted effort.
 
 ## What we won't merge
 
@@ -136,7 +137,7 @@ Before submitting a PR, verify:
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
 - [ ] Locale changes made in `codegen/locales/*.json` and regenerated (not hand-edited)
 - [ ] `just check` passes (codegen files up to date)
-- [ ] All 11 implementations updated (for logic/feature changes)
+- [ ] All 12 implementations updated (for logic/feature changes)
 - [ ] No runtime dependencies added
 
 ### Commit messages
@@ -149,7 +150,7 @@ Before submitting a PR, verify:
 
 Each language follows its community conventions. There are no strict formatting requirements beyond what each language's linter enforces. See [`docs/code-quality.md`](docs/code-quality.md) for details.
 
-CI runs all 11 language test suites on every pull request. PRs that break any language will not be merged.
+CI runs all 12 language test suites on every pull request. PRs that break any language will not be merged.
 
 ## License
 

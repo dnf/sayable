@@ -11,7 +11,7 @@ test *lang:
     _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; *) echo "$1";; esac; }
     if [ -z "{{lang}}" ]; then
         scripts/run-parallel.sh test \
-            "check" "test cpp" "test csharp" "test go" "test java" \
+            "check" "test c" "test cpp" "test csharp" "test go" "test java" \
             "test kotlin" "test php" "test python" "test ruby" \
             "test rust" "test swift" "test typescript"
     else
@@ -33,6 +33,9 @@ test *lang:
             elif [ "{{lang}}" = "cpp" ] || [ "{{lang}}" = "c++" ]; then
                 just build cpp
                 cd src/cpp/build && ctest --output-on-failure
+            elif [ "{{lang}}" = "c" ]; then
+                just build c
+                cd src/c/build && ctest --output-on-failure
             elif [ "{{lang}}" = "php" ]; then
                 cd src/php && php vendor/bin/phpunit tests/
             elif [ "{{lang}}" = "java" ]; then
@@ -45,7 +48,7 @@ test *lang:
                 {{python}} -m unittest codegen.test_locale_groups -v
             else
                 echo "Unknown language: {{lang}}"
-                echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), codegen"
+                echo "Valid: c, typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), codegen"
                 exit 1
             fi
         ) 2>&1 | tee ".logs/test/$name.log"
@@ -59,7 +62,7 @@ build *lang:
     _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; *) echo "$1";; esac; }
     if [ -z "{{lang}}" ]; then
         scripts/run-parallel.sh build \
-            "build cpp" "build csharp" "build java" "build kotlin" \
+            "build c" "build cpp" "build csharp" "build java" "build kotlin" \
             "build rust" "build swift" "build typescript"
     else
         name=$(_name "{{lang}}")
@@ -73,6 +76,8 @@ build *lang:
                 cd src/kotlin && ./gradlew build
             elif [ "{{lang}}" = "cpp" ] || [ "{{lang}}" = "c++" ]; then
                 cd src/cpp && cmake -B build && cmake --build build
+            elif [ "{{lang}}" = "c" ]; then
+                cd src/c && cmake -B build && cmake --build build
             elif [ "{{lang}}" = "java" ]; then
                 cd src/java && ./gradlew build
             elif [ "{{lang}}" = "csharp" ] || [ "{{lang}}" = "cs" ]; then
@@ -133,6 +138,8 @@ lint *lang:
                 cd src/php && composer analyse && composer cs-check
             elif [ "{{lang}}" = "kotlin" ] || [ "{{lang}}" = "kt" ]; then
                 echo "Kotlin uses warnings-as-errors in build (no separate linter)"
+            elif [ "{{lang}}" = "c" ]; then
+                echo "C uses warnings-as-errors in build (no separate linter)"
             elif [ "{{lang}}" = "cpp" ] || [ "{{lang}}" = "c++" ]; then
                 echo "C++ uses warnings-as-errors in build (no separate linter)"
             elif [ "{{lang}}" = "java" ]; then
@@ -143,7 +150,7 @@ lint *lang:
                 echo "Swift uses warnings-as-errors in build (no separate linter)"
             else
                 echo "Unknown language: {{lang}}"
-                echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw)"
+                echo "Valid: c, typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw)"
                 exit 1
             fi
         ) 2>&1 | tee ".logs/lint/$name.log"
@@ -156,7 +163,7 @@ clean *lang:
     set -euo pipefail
     if [ -z "{{lang}}" ]; then
         scripts/run-parallel.sh clean \
-            "clean codegen" "clean cpp" "clean csharp" "clean java" \
+            "clean c" "clean codegen" "clean cpp" "clean csharp" "clean java" \
             "clean kotlin" "clean python" "clean rust" "clean swift" \
             "clean typescript"
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
@@ -168,6 +175,8 @@ clean *lang:
         rm -rf src/rust/target
     elif [ "{{lang}}" = "kotlin" ] || [ "{{lang}}" = "kt" ]; then
         rm -rf src/kotlin/build src/kotlin/.gradle
+    elif [ "{{lang}}" = "c" ]; then
+        rm -rf src/c/build
     elif [ "{{lang}}" = "cpp" ] || [ "{{lang}}" = "c++" ]; then
         rm -rf src/cpp/build
     elif [ "{{lang}}" = "java" ]; then
@@ -182,6 +191,6 @@ clean *lang:
         echo "No build artifacts for: {{lang}}"
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), codegen"
+        echo "Valid: c, typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), codegen"
         exit 1
     fi
