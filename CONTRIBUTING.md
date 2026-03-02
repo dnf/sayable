@@ -13,7 +13,7 @@ Thanks for your interest in contributing! This project maintains identical imple
 ```
 src/
   c/  clojure/  cpp/  csharp/  elm/  erlang/  go/  haskell/
-  java/  kotlin/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
+  java/  kotlin/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 locales/       # 71 JSON files — single source of truth for locale data
 codegen/
   targets/     # One emitter + plural rules per target language
@@ -50,6 +50,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 | Haskell    | `test haskell`<br>`test hs`    | `build haskell`<br>`build hs`    | 🛠️                             | `clean haskell`<br>`clean hs`    |
 | Java       | `test java`                    | `build java`                     | 🛠️                             | `clean java`                     |
 | Kotlin     | `test kotlin`<br>`test kt`     | `build kotlin`<br>`build kt`     | 🛠️                             | `clean kotlin`<br>`clean kt`     |
+| Perl       | `test perl`<br>`test pl`       | ⚡                                | 🛠️                             | ⚡                                |
 | PHP        | `test php`                     | ⚡                                | `lint php`                     | ⚡                                |
 | Python     | `test python`<br>`test py`     | ⚡                                | `lint python`<br>`lint py`     | `clean python`<br>`clean py`     |
 | Ruby       | `test ruby`<br>`test rb`       | ⚡                                | `lint ruby`<br>`lint rb`       | ⚡                                |

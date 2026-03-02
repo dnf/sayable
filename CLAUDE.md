@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 18 identical implementations (C, C#, C++, Clojure, Elm, Erlang, Go, Haskell, Java, Kotlin, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 19 identical implementations (C, C#, C++, Clojure, Elm, Erlang, Go, Haskell, Java, Kotlin, Perl, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
 
 ## Build and test commands
 
@@ -56,6 +56,7 @@ src/
   haskell/     # Haskell
   java/        # Java
   kotlin/      # Kotlin
+  perl/        # Perl
   php/         # PHP
   python/      # Python
   ruby/        # Ruby
@@ -71,8 +72,8 @@ docs/          # Shared docs, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `Formatter.elm`, `parenttime_formatter.erl`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
-- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `Types.elm`, `parenttime.hrl`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
+- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `Formatter.elm`, `parenttime_formatter.erl`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `Formatter.pm`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
+- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `Types.elm`, `parenttime.hrl`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `Locale.pm`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style

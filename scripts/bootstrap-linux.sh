@@ -23,6 +23,7 @@ $SUDO apt-get install -y \
     git \
     gnupg \
     unzip \
+    perl \
     ruby ruby-bundler \
     php-cli php-xml php-mbstring \
     openjdk-17-jdk-headless \

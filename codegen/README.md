@@ -21,6 +21,7 @@ codegen/
     typescript/      #   emitter.py + plural_rules.py
     python/
     go/
+    perl/
     ruby/
     rust/
     scala/
@@ -89,6 +90,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 | Kotlin     | `Locales.kt`                                    | single file, all 71             |
 | Scala      | `Locales.scala`                                 | single file, all 71             |
 | C++        | `locales_{a_e,f_k,l_r,s_z}.cpp` + `locales.hpp` | 4 files by alpha range + header |
+| Perl       | `Locales/{CODE}.pm` + `Locales.pm`              | one per locale + registry       |
 | PHP        | `Locales.php`                                   | single file, all 71             |
 | Java       | `Locales.java`                                  | single file, all 71             |
 | C#         | `Locales.cs`                                    | single file, all 71             |

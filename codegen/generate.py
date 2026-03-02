@@ -135,6 +135,12 @@ def _clean_elm(selected: set[str], all_codes: set[str], check: bool, diffs: list
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_perl(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.perl.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
     "typescript": _clean_typescript,
     "python": _clean_python,
@@ -146,6 +152,7 @@ _PER_FILE_CLEANERS = {
     "erlang": _clean_erlang,
     "clojure": _clean_clojure,
     "elm": _clean_elm,
+    "perl": _clean_perl,
 }
 
 
@@ -353,6 +360,19 @@ def generate_elm(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_perl(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.perl.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_zig(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.zig.emitter import emit_all, output_path
 
@@ -380,6 +400,7 @@ _GENERATORS = {
     "scala": generate_scala,
     "zig": generate_zig,
     "elm": generate_elm,
+    "perl": generate_perl,
 }
 
 

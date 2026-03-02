@@ -88,6 +88,7 @@ command -v elm &>/dev/null     || MISSING+=(elm)
 command -v elm-test &>/dev/null || MISSING+=(elm-test)
 command -v ghc &>/dev/null     || MISSING+=(ghc)
 command -v cabal &>/dev/null   || MISSING+=(cabal)
+command -v perl &>/dev/null    || MISSING+=(perl)
 command -v just &>/dev/null    || MISSING+=(just)
 
 if [ ${#MISSING[@]} -gt 0 ]; then
