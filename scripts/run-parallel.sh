@@ -12,14 +12,23 @@ name="$1"; shift
 logdir=".logs/$name"
 mkdir -p "$logdir"
 
-cmds=("$@")
+# Partition args into runnable commands and skipped entries
+cmds=()
 labels=()
-for cmd in "${cmds[@]}"; do labels+=("${cmd##* }"); done
+skip_labels=()
+for arg in "$@"; do
+    if [[ "$arg" == skip:* ]]; then
+        skip_labels+=("${arg#skip:}")
+    else
+        cmds+=("$arg")
+        labels+=("${arg##* }")
+    fi
+done
 n=${#labels[@]}
 
-# Compute label column width from actual labels (min 6)
+# Compute label column width from both runnable and skipped labels (min 6)
 label_w=6
-for label in "${labels[@]}"; do
+for label in ${labels[@]+"${labels[@]}"} ${skip_labels[@]+"${skip_labels[@]}"}; do
     (( ${#label} > label_w )) && label_w=${#label}
 done
 
@@ -32,6 +41,22 @@ fi
 prefix_w=$((label_w + 10))
 max_bar=$((term_w - prefix_w))
 (( max_bar < 10 )) && max_bar=10
+
+# If all entries are skipped, print skip lines and exit early
+if [ "$n" -eq 0 ]; then
+    skip_n=${#skip_labels[@]}
+    for label in "${skip_labels[@]}"; do
+        if [ -t 1 ]; then
+            printf "  \033[2m- %-${label_w}s not installed\033[0m\n" "$label"
+        else
+            printf "  - %-${label_w}s not installed\n" "$label"
+        fi
+    done
+    echo ""
+    echo "0/0 passed, $skip_n not installed"
+    echo "Logs: $logdir/"
+    exit 0
+fi
 
 blocks="████████████████████████████████████████████████████████████████"
 
@@ -113,6 +138,10 @@ if [ -t 1 ]; then
     done
 
     printf "\033[?25h"  # restore cursor
+
+    for label in ${skip_labels[@]+"${skip_labels[@]}"}; do
+        printf "  \033[2m- %-${label_w}s not installed\033[0m\n" "$label"
+    done
 else
     # Non-interactive (CI, piped): wait then print
     for pid in "${pids[@]}"; do wait "$pid" || true; done
@@ -124,6 +153,10 @@ else
         else
             printf "  ✗ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
         fi
+    done
+
+    for label in ${skip_labels[@]+"${skip_labels[@]}"}; do
+        printf "  - %-${label_w}s not installed\n" "$label"
     done
 fi
 
@@ -137,8 +170,13 @@ for label in "${labels[@]}"; do
 done
 
 passed=$(( n - failed ))
+skip_n=${#skip_labels[@]}
+skip_msg=""
+if [ "$skip_n" -gt 0 ]; then
+    skip_msg=", $skip_n not installed"
+fi
 echo ""
-echo "$passed/$n passed (${wall}s wall time)"
+echo "$passed/$n passed${skip_msg} (${wall}s wall time)"
 echo "Logs: $logdir/"
 
 if [ "$failed" -gt 0 ]; then

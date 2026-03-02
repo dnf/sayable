@@ -10,10 +10,17 @@ test *lang:
     set -euo pipefail
     _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; *) echo "$1";; esac; }
     if [ -z "{{lang}}" ]; then
-        scripts/run-parallel.sh test \
-            "check" "test c" "test clojure" "test cpp" "test csharp" "test elixir" "test elm" "test erlang" "test go" \
-            "test haskell" "test java" "test kotlin" "test perl" "test php" "test python" \
-            "test ruby" "test rust" "test scala" "test swift" "test typescript" "test zig"
+        _tool() { case "$1" in c|cpp) echo cmake;; clojure) echo clojure;; csharp) echo dotnet;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+        args=("check")
+        for lang in c clojure cpp csharp elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig; do
+            tool=$(_tool "$lang")
+            if [ -z "$tool" ] || command -v "$tool" &>/dev/null; then
+                args+=("test $lang")
+            else
+                args+=("skip:$lang")
+            fi
+        done
+        scripts/run-parallel.sh test "${args[@]}"
     else
         name=$(_name "{{lang}}")
         mkdir -p .logs/test
@@ -77,9 +84,17 @@ build *lang:
     set -euo pipefail
     _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; *) echo "$1";; esac; }
     if [ -z "{{lang}}" ]; then
-        scripts/run-parallel.sh build \
-            "build c" "build cpp" "build csharp" "build elixir" "build erlang" "build haskell" \
-            "build java" "build kotlin" "build rust" "build scala" "build swift" "build typescript" "build zig"
+        _tool() { case "$1" in c|cpp) echo cmake;; csharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+        args=()
+        for lang in c cpp csharp elixir erlang haskell java kotlin rust scala swift typescript zig; do
+            tool=$(_tool "$lang")
+            if [ -z "$tool" ] || command -v "$tool" &>/dev/null; then
+                args+=("build $lang")
+            else
+                args+=("skip:$lang")
+            fi
+        done
+        scripts/run-parallel.sh build "${args[@]}"
     else
         name=$(_name "{{lang}}")
         mkdir -p .logs/build
@@ -171,9 +186,17 @@ lint *lang:
     set -euo pipefail
     _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; *) echo "$1";; esac; }
     if [ -z "{{lang}}" ]; then
-        scripts/run-parallel.sh lint \
-            "lint csharp" "lint go" "lint java" "lint php" "lint python" \
-            "lint ruby" "lint rust" "lint swift" "lint typescript"
+        _tool() { case "$1" in csharp) echo dotnet;; go) echo golangci-lint;; java) echo java;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; esac; }
+        args=()
+        for lang in csharp go java php python ruby rust swift typescript; do
+            tool=$(_tool "$lang")
+            if [ -z "$tool" ] || command -v "$tool" &>/dev/null; then
+                args+=("lint $lang")
+            else
+                args+=("skip:$lang")
+            fi
+        done
+        scripts/run-parallel.sh lint "${args[@]}"
     else
         name=$(_name "{{lang}}")
         mkdir -p .logs/lint
