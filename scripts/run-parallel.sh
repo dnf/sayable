@@ -17,10 +17,29 @@ labels=()
 for cmd in "${cmds[@]}"; do labels+=("${cmd##* }"); done
 n=${#labels[@]}
 
-# 60 block characters — one per second of elapsed time
+# Compute label column width from actual labels (min 6)
+label_w=6
+for label in "${labels[@]}"; do
+    (( ${#label} > label_w )) && label_w=${#label}
+done
+
+# Terminal width (default 80) — cap bar so lines never wrap
+term_w=80
+if [ -t 1 ] && command -v tput &>/dev/null; then
+    term_w=$(tput cols 2>/dev/null || echo 80)
+fi
+# Layout: "  X <label> <dur>s <bar>"  →  2 + 1 + 1 + label_w + 1 + 4 + 1 = label_w + 10
+prefix_w=$((label_w + 10))
+max_bar=$((term_w - prefix_w))
+(( max_bar < 10 )) && max_bar=10
+
 blocks="████████████████████████████████████████████████████████████████"
 
-bar() { printf "%s" "${blocks:0:$1}"; }
+bar() {
+    local len=$1
+    (( len > max_bar )) && len=$max_bar
+    printf "%s" "${blocks:0:$len}"
+}
 
 cleanup() {
     printf "\033[?25h" 2>/dev/null
@@ -77,14 +96,14 @@ if [ -t 1 ]; then
                 done_count=$((done_count + 1))
                 dur="${done_durs[$i]}"
                 if [ "${done_rcs[$i]}" -eq 0 ]; then
-                    printf "  \033[32m✓\033[0m %-12s %2ds \033[32m%s\033[0m\033[K\n" "$label" "$dur" "$(bar "$dur")"
+                    printf "  \033[32m✓\033[0m %-${label_w}s %3ds \033[32m%s\033[0m\033[K\n" "$label" "$dur" "$(bar "$dur")"
                 else
-                    printf "  \033[31m✗\033[0m %-12s %2ds \033[31m%s\033[0m\033[K\n" "$label" "$dur" "$(bar "$dur")"
+                    printf "  \033[31m✗\033[0m %-${label_w}s %3ds \033[31m%s\033[0m\033[K\n" "$label" "$dur" "$(bar "$dur")"
                 fi
             else
                 c="${spin:frame%${#spin}:1}"
                 elapsed=$((SECONDS - global_start))
-                printf "  \033[33m%s\033[0m %-12s %2ds \033[33m%s\033[0m\033[K\n" "$c" "$label" "$elapsed" "$(bar "$elapsed")"
+                printf "  \033[33m%s\033[0m %-${label_w}s %3ds \033[33m%s\033[0m\033[K\n" "$c" "$label" "$elapsed" "$(bar "$elapsed")"
             fi
         done
 
@@ -101,9 +120,9 @@ else
     for label in "${labels[@]}"; do
         read -r dur rc < "$logdir/$label.result"
         if [ "$rc" -eq 0 ]; then
-            printf "  ✓ %-12s %2ds %s\n" "$label" "$dur" "$(bar "$dur")"
+            printf "  ✓ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
         else
-            printf "  ✗ %-12s %2ds %s\n" "$label" "$dur" "$(bar "$dur")"
+            printf "  ✗ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
         fi
     done
 fi

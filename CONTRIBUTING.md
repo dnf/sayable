@@ -13,7 +13,7 @@ Thanks for your interest in contributing! This project maintains identical imple
 ```
 src/
   c/  clojure/  cpp/  csharp/  erlang/  go/  haskell/
-  java/  kotlin/  php/  python/  ruby/  rust/  scala/  swift/  typescript/
+  java/  kotlin/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 codegen/
   locales/     # 71 JSON files — single source of truth for locale data
   targets/     # One emitter + plural rules per target language
@@ -55,6 +55,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 | Scala      | `test scala`<br>`test sc` | `build scala`<br>`build sc` | 🛠️ | `clean scala`<br>`clean sc` |
 | Swift      | `test swift`<br>`test sw` | `build swift`<br>`build sw` | 🛠️ | `clean swift`<br>`clean sw` |
 | TypeScript | `test typescript`<br>`test ts` | `build typescript`<br>`build ts` | `lint typescript`<br>`lint ts` | `clean typescript`<br>`clean ts` |
+| Zig        | `test zig`<br>`test zg` | `build zig`<br>`build zg` | 🛠️ | `clean zig`<br>`clean zg` |
 
 ⚡ = interpreted, no build step needed · 🛠️ = linted via warnings-as-errors in build
 

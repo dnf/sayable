@@ -101,6 +101,16 @@ if ! command -v clojure &>/dev/null; then
     curl -fsSL https://download.clojure.org/install/linux-install.sh | $SUDO bash
 fi
 
+# ---- Zig ----
+if ! command -v zig &>/dev/null; then
+    echo "==> Installing Zig..."
+    ARCH="$(dpkg --print-architecture)"
+    ZIG_ARCH="$ARCH"
+    if [ "$ARCH" = "amd64" ]; then ZIG_ARCH="x86_64"; fi
+    if [ "$ARCH" = "arm64" ]; then ZIG_ARCH="aarch64"; fi
+    curl -fsSL "https://ziglang.org/download/0.14.1/zig-linux-${ZIG_ARCH}-0.14.1.tar.xz" | $SUDO tar -C /usr/local --strip-components=1 -xJ
+fi
+
 # ---- just (task runner) ----
 if ! command -v just &>/dev/null; then
     echo "==> Installing just..."

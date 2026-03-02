@@ -1,0 +1,10 @@
+.{
+    .name = .parenttime,
+    .version = "1.0.0",
+    .fingerprint = 0x195ce2da315472f3,
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}

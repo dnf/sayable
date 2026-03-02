@@ -68,6 +68,13 @@ ENV PATH="/root/.ghcup/bin:${PATH}"
 # Clojure CLI
 RUN curl -fsSL https://download.clojure.org/install/linux-install.sh | bash
 
+# Zig
+RUN ARCH="$(dpkg --print-architecture)" && \
+    ZIG_ARCH="$ARCH" && \
+    if [ "$ARCH" = "amd64" ]; then ZIG_ARCH="x86_64"; fi && \
+    if [ "$ARCH" = "arm64" ]; then ZIG_ARCH="aarch64"; fi && \
+    curl -fsSL "https://ziglang.org/download/0.14.1/zig-linux-${ZIG_ARCH}-0.14.1.tar.xz" | tar -C /usr/local --strip-components=1 -xJ
+
 # just (task runner)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
 

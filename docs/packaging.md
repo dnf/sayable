@@ -20,6 +20,7 @@ The table below summarizes how each language structures its locale data:
 | C# | Single file (`Locales.cs`) | Eager (`static readonly` fields) | `All` dictionary lookup |
 | Scala | Single file (`Locales.scala`) | Eager (`val` on `object`) | `ALL` map lookup |
 | Swift | Single file (`Locales.swift`) | Eager (static `let` properties) | `all` dictionary lookup |
+| Zig | Single file (`locales.zig`) | Eager (comptime `const`) | `if`-chain |
 
 ## Rationale
 
@@ -79,6 +80,7 @@ The other languages have no equivalent mechanism. Their package managers and run
 | C# | No | Use codegen subsetting |
 | Scala | No | Use codegen subsetting |
 | Swift | No | Use codegen subsetting |
+| Zig | No | Use codegen subsetting |
 
 In practice, **codegen subsetting is the only reliable way to eliminate unused locales** and it works identically for all languages.
 

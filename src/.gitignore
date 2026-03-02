@@ -60,3 +60,7 @@ clojure/.cpcache/
 # Scala
 scala/build/
 scala/.gradle/
+
+# Zig
+zig/zig-out/
+zig/.zig-cache/

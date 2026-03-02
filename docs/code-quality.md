@@ -42,6 +42,7 @@ below summarizes the patterns across all implementations:
 | C#         | PascalCase    | PascalCase        | UPPER_CASE (`EN`)  | PascalCase  | PascalCase         |
 | Scala      | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | UPPER_CASE         |
 | Swift      | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | camelCase          |
+| Zig        | PascalCase    | camelCase         | lowercase (`en`)   | snake_case  | .snake_case        |
 
 The locale JSON source files use camelCase keys (`justBorn`, `formatNumber`).
 The code generator translates these to each language's idiomatic convention
@@ -139,6 +140,7 @@ language family:
 | C#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                 |   140 |        191 |
 | Scala      | Scala compiler              | `-Werror`; Scala 3 enums, sealed traits                         |   115 |        191 |
 | Swift      | Swift compiler              | `StrictConcurrency`; Swift Testing                              |   140 |        191 |
+| Zig        | Zig compiler                | Warnings-as-errors; built-in test framework                     |   163 |        163 |
 
 All implementations cover the same [163 canonical test cases](testing.md).
 **Tests** is what each framework reports when you run the suite. **Assertions** is

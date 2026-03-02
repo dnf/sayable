@@ -16,7 +16,7 @@ fi
 echo "==> Installing toolchains via Homebrew..."
 # brew install may return non-zero if a formula is already installed but
 # can't be linked (e.g. python, composer). The tools are still usable.
-brew install node python uv go ruby cmake php composer just openjdk@17 dotnet erlang rebar3 clojure/tools/clojure || true
+brew install node python uv go ruby cmake php composer just openjdk@17 dotnet erlang rebar3 clojure/tools/clojure zig || true
 
 # Make Java 17 available to /usr/libexec/java_home
 OPENJDK_PATH="$(brew --prefix openjdk@17)/libexec/openjdk.jdk"
@@ -77,6 +77,7 @@ command -v swift &>/dev/null   || MISSING+=(swift)
 command -v erl &>/dev/null     || MISSING+=(erl)
 command -v rebar3 &>/dev/null  || MISSING+=(rebar3)
 command -v clojure &>/dev/null || MISSING+=(clojure)
+command -v zig &>/dev/null     || MISSING+=(zig)
 command -v ghc &>/dev/null     || MISSING+=(ghc)
 command -v cabal &>/dev/null   || MISSING+=(cabal)
 command -v just &>/dev/null    || MISSING+=(just)

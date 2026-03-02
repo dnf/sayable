@@ -333,6 +333,14 @@ def generate_scala(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_zig(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.zig.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 _GENERATORS = {
     "typescript": generate_typescript,
     "python": generate_python,
@@ -350,6 +358,7 @@ _GENERATORS = {
     "erlang": generate_erlang,
     "clojure": generate_clojure,
     "scala": generate_scala,
+    "zig": generate_zig,
 }
 
 
