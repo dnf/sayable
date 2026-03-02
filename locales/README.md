@@ -101,76 +101,76 @@ After your JSON edit is merged, a maintainer runs the code generator (`python -m
 
 Speaker counts are approximate and include L1 and L2 speakers.
 
-| Language                | Code  | Speakers | Main countries                    | Source file          | Example output                         |
-| ----------------------- | ----- | -------- | --------------------------------- | -------------------- | -------------------------------------- |
-| Albanian                | `sq`  | ~7.5M    | Albania, Kosovo                   | [sq.json](sq.json)   | [output](../docs/locale-output/sq.md)  |
-| Amharic                 | `am`  | ~57M     | Ethiopia                          | [am.json](am.json)   | [output](../docs/locale-output/am.md)  |
-| Arabic                  | `ar`  | ~420M    | Middle East, North Africa         | [ar.json](ar.json)   | [output](../docs/locale-output/ar.md)  |
-| Azerbaijani             | `az`  | ~23M     | Azerbaijan, Iran                  | [az.json](az.json)   | [output](../docs/locale-output/az.md)  |
-| Basque                  | `eu`  | ~750K    | Spain (Basque Country), France    | [eu.json](eu.json)   | [output](../docs/locale-output/eu.md)  |
-| Bengali                 | `bn`  | ~300M    | Bangladesh, India                 | [bn.json](bn.json)   | [output](../docs/locale-output/bn.md)  |
-| Bosnian                 | `bs`  | ~2.5M    | Bosnia and Herzegovina            | [bs.json](bs.json)   | [output](../docs/locale-output/bs.md)  |
-| Breton                  | `br`  | ~210K    | France (Brittany)                 | [br.json](br.json)   | [output](../docs/locale-output/br.md)  |
-| Bulgarian               | `bg`  | ~8M      | Bulgaria                          | [bg.json](bg.json)   | [output](../docs/locale-output/bg.md)  |
-| Burmese                 | `my`  | ~33M     | Myanmar                           | [my.json](my.json)   | [output](../docs/locale-output/my.md)  |
-| Catalan                 | `ca`  | ~10M     | Spain (Catalonia), Andorra        | [ca.json](ca.json)   | [output](../docs/locale-output/ca.md)  |
-| Central Atlas Tamazight | `tzm` | ~4.7M    | Morocco, Algeria                  | [tzm.json](tzm.json) | [output](../docs/locale-output/tzm.md) |
-| Chinese                 | `zh`  | ~1.1B    | China, Taiwan, Singapore          | [zh.json](zh.json)   | [output](../docs/locale-output/zh.md)  |
-| Cornish                 | `kw`  | ~3.5K    | United Kingdom (Cornwall)         | [kw.json](kw.json)   | [output](../docs/locale-output/kw.md)  |
-| Croatian                | `hr`  | ~5.6M    | Croatia                           | [hr.json](hr.json)   | [output](../docs/locale-output/hr.md)  |
-| Czech                   | `cs`  | ~11M     | Czech Republic                    | [cs.json](cs.json)   | [output](../docs/locale-output/cs.md)  |
-| Danish                  | `da`  | ~6M      | Denmark                           | [da.json](da.json)   | [output](../docs/locale-output/da.md)  |
-| Dutch                   | `nl`  | ~25M     | Netherlands, Belgium              | [nl.json](nl.json)   | [output](../docs/locale-output/nl.md)  |
-| English                 | `en`  | ~1.5B    | Worldwide                         | [en.json](en.json)   | [output](../docs/locale-output/en.md)  |
-| Estonian                | `et`  | ~1.1M    | Estonia                           | [et.json](et.json)   | [output](../docs/locale-output/et.md)  |
-| Filipino                | `fil` | ~82M     | Philippines                       | [fil.json](fil.json) | [output](../docs/locale-output/fil.md) |
-| Finnish                 | `fi`  | ~5.8M    | Finland                           | [fi.json](fi.json)   | [output](../docs/locale-output/fi.md)  |
-| French                  | `fr`  | ~310M    | France, West Africa, Canada       | [fr.json](fr.json)   | [output](../docs/locale-output/fr.md)  |
-| Georgian                | `ka`  | ~3.7M    | Georgia                           | [ka.json](ka.json)   | [output](../docs/locale-output/ka.md)  |
-| German                  | `de`  | ~100M    | Germany, Austria, Switzerland     | [de.json](de.json)   | [output](../docs/locale-output/de.md)  |
-| Greek                   | `el`  | ~13M     | Greece, Cyprus                    | [el.json](el.json)   | [output](../docs/locale-output/el.md)  |
-| Gujarati                | `gu`  | ~57M     | India (Gujarat)                   | [gu.json](gu.json)   | [output](../docs/locale-output/gu.md)  |
-| Hebrew                  | `he`  | ~9M      | Israel                            | [he.json](he.json)   | [output](../docs/locale-output/he.md)  |
-| Hindi                   | `hi`  | ~600M    | India                             | [hi.json](hi.json)   | [output](../docs/locale-output/hi.md)  |
-| Hungarian               | `hu`  | ~13M     | Hungary                           | [hu.json](hu.json)   | [output](../docs/locale-output/hu.md)  |
-| Indonesian              | `id`  | ~200M    | Indonesia                         | [id.json](id.json)   | [output](../docs/locale-output/id.md)  |
-| Irish                   | `ga`  | ~1.8M    | Ireland                           | [ga.json](ga.json)   | [output](../docs/locale-output/ga.md)  |
-| Italian                 | `it`  | ~68M     | Italy, Switzerland                | [it.json](it.json)   | [output](../docs/locale-output/it.md)  |
-| Japanese                | `ja`  | ~125M    | Japan                             | [ja.json](ja.json)   | [output](../docs/locale-output/ja.md)  |
-| Javanese                | `jv`  | ~82M     | Indonesia (Java)                  | [jv.json](jv.json)   | [output](../docs/locale-output/jv.md)  |
-| Kazakh                  | `kk`  | ~13M     | Kazakhstan                        | [kk.json](kk.json)   | [output](../docs/locale-output/kk.md)  |
-| Khmer                   | `km`  | ~16M     | Cambodia                          | [km.json](km.json)   | [output](../docs/locale-output/km.md)  |
-| Korean                  | `ko`  | ~77M     | South Korea, North Korea          | [ko.json](ko.json)   | [output](../docs/locale-output/ko.md)  |
-| Latvian                 | `lv`  | ~1.7M    | Latvia                            | [lv.json](lv.json)   | [output](../docs/locale-output/lv.md)  |
-| Lithuanian              | `lt`  | ~2.8M    | Lithuania                         | [lt.json](lt.json)   | [output](../docs/locale-output/lt.md)  |
-| Macedonian              | `mk`  | ~2M      | North Macedonia                   | [mk.json](mk.json)   | [output](../docs/locale-output/mk.md)  |
-| Malay                   | `ms`  | ~290M    | Malaysia, Indonesia, Brunei       | [ms.json](ms.json)   | [output](../docs/locale-output/ms.md)  |
-| Maltese                 | `mt`  | ~520K    | Malta                             | [mt.json](mt.json)   | [output](../docs/locale-output/mt.md)  |
-| Manx                    | `gv`  | ~2.5K    | Isle of Man                       | [gv.json](gv.json)   | [output](../docs/locale-output/gv.md)  |
-| Marathi                 | `mr`  | ~83M     | India (Maharashtra)               | [mr.json](mr.json)   | [output](../docs/locale-output/mr.md)  |
-| Nepali                  | `ne`  | ~25M     | Nepal                             | [ne.json](ne.json)   | [output](../docs/locale-output/ne.md)  |
-| Norwegian Bokm&aring;l  | `nb`  | ~5.3M    | Norway                            | [nb.json](nb.json)   | [output](../docs/locale-output/nb.md)  |
-| Persian                 | `fa`  | ~110M    | Iran, Afghanistan, Tajikistan     | [fa.json](fa.json)   | [output](../docs/locale-output/fa.md)  |
-| Polish                  | `pl`  | ~45M     | Poland                            | [pl.json](pl.json)   | [output](../docs/locale-output/pl.md)  |
-| Portuguese              | `pt`  | ~260M    | Brazil, Portugal                  | [pt.json](pt.json)   | [output](../docs/locale-output/pt.md)  |
-| Punjabi                 | `pa`  | ~150M    | India (Punjab), Pakistan          | [pa.json](pa.json)   | [output](../docs/locale-output/pa.md)  |
-| Romanian                | `ro`  | ~26M     | Romania, Moldova                  | [ro.json](ro.json)   | [output](../docs/locale-output/ro.md)  |
-| Russian                 | `ru`  | ~255M    | Russia, Central Asia              | [ru.json](ru.json)   | [output](../docs/locale-output/ru.md)  |
-| Scottish Gaelic         | `gd`  | ~57K     | United Kingdom (Scotland)         | [gd.json](gd.json)   | [output](../docs/locale-output/gd.md)  |
-| Serbian                 | `sr`  | ~12M     | Serbia                            | [sr.json](sr.json)   | [output](../docs/locale-output/sr.md)  |
-| Sinhala                 | `si`  | ~17M     | Sri Lanka                         | [si.json](si.json)   | [output](../docs/locale-output/si.md)  |
-| Slovak                  | `sk`  | ~5.2M    | Slovakia                          | [sk.json](sk.json)   | [output](../docs/locale-output/sk.md)  |
-| Slovenian               | `sl`  | ~2.5M    | Slovenia                          | [sl.json](sl.json)   | [output](../docs/locale-output/sl.md)  |
-| Spanish                 | `es`  | ~560M    | Spain, Latin America              | [es.json](es.json)   | [output](../docs/locale-output/es.md)  |
-| Swahili                 | `sw`  | ~200M    | East Africa                       | [sw.json](sw.json)   | [output](../docs/locale-output/sw.md)  |
-| Swedish                 | `sv`  | ~10M     | Sweden, Finland                   | [sv.json](sv.json)   | [output](../docs/locale-output/sv.md)  |
-| Tachelhit               | `shi` | ~7M      | Morocco                           | [shi.json](shi.json) | [output](../docs/locale-output/shi.md) |
-| Tamil                   | `ta`  | ~85M     | India (Tamil Nadu), Sri Lanka     | [ta.json](ta.json)   | [output](../docs/locale-output/ta.md)  |
-| Telugu                  | `te`  | ~83M     | India (Andhra Pradesh, Telangana) | [te.json](te.json)   | [output](../docs/locale-output/te.md)  |
-| Thai                    | `th`  | ~61M     | Thailand                          | [th.json](th.json)   | [output](../docs/locale-output/th.md)  |
-| Turkish                 | `tr`  | ~80M     | Turkey                            | [tr.json](tr.json)   | [output](../docs/locale-output/tr.md)  |
-| Ukrainian               | `uk`  | ~40M     | Ukraine                           | [uk.json](uk.json)   | [output](../docs/locale-output/uk.md)  |
-| Urdu                    | `ur`  | ~230M    | Pakistan, India                   | [ur.json](ur.json)   | [output](../docs/locale-output/ur.md)  |
-| Uzbek                   | `uz`  | ~35M     | Uzbekistan                        | [uz.json](uz.json)   | [output](../docs/locale-output/uz.md)  |
-| Vietnamese              | `vi`  | ~85M     | Vietnam                           | [vi.json](vi.json)   | [output](../docs/locale-output/vi.md)  |
-| Welsh                   | `cy`  | ~880K    | United Kingdom (Wales)            | [cy.json](cy.json)   | [output](../docs/locale-output/cy.md)  |
+| Language                | Code  | Speakers | Main countries                    | Source file              | Example output                  |
+| ----------------------- | ----- | -------- | --------------------------------- | ------------------------ | ------------------------------- |
+| Albanian                | `sq`  | ~7.5M    | Albania, Kosovo                   | [sq.json](src/sq.json)   | [output](example-output/sq.md)  |
+| Amharic                 | `am`  | ~57M     | Ethiopia                          | [am.json](src/am.json)   | [output](example-output/am.md)  |
+| Arabic                  | `ar`  | ~420M    | Middle East, North Africa         | [ar.json](src/ar.json)   | [output](example-output/ar.md)  |
+| Azerbaijani             | `az`  | ~23M     | Azerbaijan, Iran                  | [az.json](src/az.json)   | [output](example-output/az.md)  |
+| Basque                  | `eu`  | ~750K    | Spain (Basque Country), France    | [eu.json](src/eu.json)   | [output](example-output/eu.md)  |
+| Bengali                 | `bn`  | ~300M    | Bangladesh, India                 | [bn.json](src/bn.json)   | [output](example-output/bn.md)  |
+| Bosnian                 | `bs`  | ~2.5M    | Bosnia and Herzegovina            | [bs.json](src/bs.json)   | [output](example-output/bs.md)  |
+| Breton                  | `br`  | ~210K    | France (Brittany)                 | [br.json](src/br.json)   | [output](example-output/br.md)  |
+| Bulgarian               | `bg`  | ~8M      | Bulgaria                          | [bg.json](src/bg.json)   | [output](example-output/bg.md)  |
+| Burmese                 | `my`  | ~33M     | Myanmar                           | [my.json](src/my.json)   | [output](example-output/my.md)  |
+| Catalan                 | `ca`  | ~10M     | Spain (Catalonia), Andorra        | [ca.json](src/ca.json)   | [output](example-output/ca.md)  |
+| Central Atlas Tamazight | `tzm` | ~4.7M    | Morocco, Algeria                  | [tzm.json](src/tzm.json) | [output](example-output/tzm.md) |
+| Chinese                 | `zh`  | ~1.1B    | China, Taiwan, Singapore          | [zh.json](src/zh.json)   | [output](example-output/zh.md)  |
+| Cornish                 | `kw`  | ~3.5K    | United Kingdom (Cornwall)         | [kw.json](src/kw.json)   | [output](example-output/kw.md)  |
+| Croatian                | `hr`  | ~5.6M    | Croatia                           | [hr.json](src/hr.json)   | [output](example-output/hr.md)  |
+| Czech                   | `cs`  | ~11M     | Czech Republic                    | [cs.json](src/cs.json)   | [output](example-output/cs.md)  |
+| Danish                  | `da`  | ~6M      | Denmark                           | [da.json](src/da.json)   | [output](example-output/da.md)  |
+| Dutch                   | `nl`  | ~25M     | Netherlands, Belgium              | [nl.json](src/nl.json)   | [output](example-output/nl.md)  |
+| English                 | `en`  | ~1.5B    | Worldwide                         | [en.json](src/en.json)   | [output](example-output/en.md)  |
+| Estonian                | `et`  | ~1.1M    | Estonia                           | [et.json](src/et.json)   | [output](example-output/et.md)  |
+| Filipino                | `fil` | ~82M     | Philippines                       | [fil.json](src/fil.json) | [output](example-output/fil.md) |
+| Finnish                 | `fi`  | ~5.8M    | Finland                           | [fi.json](src/fi.json)   | [output](example-output/fi.md)  |
+| French                  | `fr`  | ~310M    | France, West Africa, Canada       | [fr.json](src/fr.json)   | [output](example-output/fr.md)  |
+| Georgian                | `ka`  | ~3.7M    | Georgia                           | [ka.json](src/ka.json)   | [output](example-output/ka.md)  |
+| German                  | `de`  | ~100M    | Germany, Austria, Switzerland     | [de.json](src/de.json)   | [output](example-output/de.md)  |
+| Greek                   | `el`  | ~13M     | Greece, Cyprus                    | [el.json](src/el.json)   | [output](example-output/el.md)  |
+| Gujarati                | `gu`  | ~57M     | India (Gujarat)                   | [gu.json](src/gu.json)   | [output](example-output/gu.md)  |
+| Hebrew                  | `he`  | ~9M      | Israel                            | [he.json](src/he.json)   | [output](example-output/he.md)  |
+| Hindi                   | `hi`  | ~600M    | India                             | [hi.json](src/hi.json)   | [output](example-output/hi.md)  |
+| Hungarian               | `hu`  | ~13M     | Hungary                           | [hu.json](src/hu.json)   | [output](example-output/hu.md)  |
+| Indonesian              | `id`  | ~200M    | Indonesia                         | [id.json](src/id.json)   | [output](example-output/id.md)  |
+| Irish                   | `ga`  | ~1.8M    | Ireland                           | [ga.json](src/ga.json)   | [output](example-output/ga.md)  |
+| Italian                 | `it`  | ~68M     | Italy, Switzerland                | [it.json](src/it.json)   | [output](example-output/it.md)  |
+| Japanese                | `ja`  | ~125M    | Japan                             | [ja.json](src/ja.json)   | [output](example-output/ja.md)  |
+| Javanese                | `jv`  | ~82M     | Indonesia (Java)                  | [jv.json](src/jv.json)   | [output](example-output/jv.md)  |
+| Kazakh                  | `kk`  | ~13M     | Kazakhstan                        | [kk.json](src/kk.json)   | [output](example-output/kk.md)  |
+| Khmer                   | `km`  | ~16M     | Cambodia                          | [km.json](src/km.json)   | [output](example-output/km.md)  |
+| Korean                  | `ko`  | ~77M     | South Korea, North Korea          | [ko.json](src/ko.json)   | [output](example-output/ko.md)  |
+| Latvian                 | `lv`  | ~1.7M    | Latvia                            | [lv.json](src/lv.json)   | [output](example-output/lv.md)  |
+| Lithuanian              | `lt`  | ~2.8M    | Lithuania                         | [lt.json](src/lt.json)   | [output](example-output/lt.md)  |
+| Macedonian              | `mk`  | ~2M      | North Macedonia                   | [mk.json](src/mk.json)   | [output](example-output/mk.md)  |
+| Malay                   | `ms`  | ~290M    | Malaysia, Indonesia, Brunei       | [ms.json](src/ms.json)   | [output](example-output/ms.md)  |
+| Maltese                 | `mt`  | ~520K    | Malta                             | [mt.json](src/mt.json)   | [output](example-output/mt.md)  |
+| Manx                    | `gv`  | ~2.5K    | Isle of Man                       | [gv.json](src/gv.json)   | [output](example-output/gv.md)  |
+| Marathi                 | `mr`  | ~83M     | India (Maharashtra)               | [mr.json](src/mr.json)   | [output](example-output/mr.md)  |
+| Nepali                  | `ne`  | ~25M     | Nepal                             | [ne.json](src/ne.json)   | [output](example-output/ne.md)  |
+| Norwegian Bokm&aring;l  | `nb`  | ~5.3M    | Norway                            | [nb.json](src/nb.json)   | [output](example-output/nb.md)  |
+| Persian                 | `fa`  | ~110M    | Iran, Afghanistan, Tajikistan     | [fa.json](src/fa.json)   | [output](example-output/fa.md)  |
+| Polish                  | `pl`  | ~45M     | Poland                            | [pl.json](src/pl.json)   | [output](example-output/pl.md)  |
+| Portuguese              | `pt`  | ~260M    | Brazil, Portugal                  | [pt.json](src/pt.json)   | [output](example-output/pt.md)  |
+| Punjabi                 | `pa`  | ~150M    | India (Punjab), Pakistan          | [pa.json](src/pa.json)   | [output](example-output/pa.md)  |
+| Romanian                | `ro`  | ~26M     | Romania, Moldova                  | [ro.json](src/ro.json)   | [output](example-output/ro.md)  |
+| Russian                 | `ru`  | ~255M    | Russia, Central Asia              | [ru.json](src/ru.json)   | [output](example-output/ru.md)  |
+| Scottish Gaelic         | `gd`  | ~57K     | United Kingdom (Scotland)         | [gd.json](src/gd.json)   | [output](example-output/gd.md)  |
+| Serbian                 | `sr`  | ~12M     | Serbia                            | [sr.json](src/sr.json)   | [output](example-output/sr.md)  |
+| Sinhala                 | `si`  | ~17M     | Sri Lanka                         | [si.json](src/si.json)   | [output](example-output/si.md)  |
+| Slovak                  | `sk`  | ~5.2M    | Slovakia                          | [sk.json](src/sk.json)   | [output](example-output/sk.md)  |
+| Slovenian               | `sl`  | ~2.5M    | Slovenia                          | [sl.json](src/sl.json)   | [output](example-output/sl.md)  |
+| Spanish                 | `es`  | ~560M    | Spain, Latin America              | [es.json](src/es.json)   | [output](example-output/es.md)  |
+| Swahili                 | `sw`  | ~200M    | East Africa                       | [sw.json](src/sw.json)   | [output](example-output/sw.md)  |
+| Swedish                 | `sv`  | ~10M     | Sweden, Finland                   | [sv.json](src/sv.json)   | [output](example-output/sv.md)  |
+| Tachelhit               | `shi` | ~7M      | Morocco                           | [shi.json](src/shi.json) | [output](example-output/shi.md) |
+| Tamil                   | `ta`  | ~85M     | India (Tamil Nadu), Sri Lanka     | [ta.json](src/ta.json)   | [output](example-output/ta.md)  |
+| Telugu                  | `te`  | ~83M     | India (Andhra Pradesh, Telangana) | [te.json](src/te.json)   | [output](example-output/te.md)  |
+| Thai                    | `th`  | ~61M     | Thailand                          | [th.json](src/th.json)   | [output](example-output/th.md)  |
+| Turkish                 | `tr`  | ~80M     | Turkey                            | [tr.json](src/tr.json)   | [output](example-output/tr.md)  |
+| Ukrainian               | `uk`  | ~40M     | Ukraine                           | [uk.json](src/uk.json)   | [output](example-output/uk.md)  |
+| Urdu                    | `ur`  | ~230M    | Pakistan, India                   | [ur.json](src/ur.json)   | [output](example-output/ur.md)  |
+| Uzbek                   | `uz`  | ~35M     | Uzbekistan                        | [uz.json](src/uz.json)   | [output](example-output/uz.md)  |
+| Vietnamese              | `vi`  | ~85M     | Vietnam                           | [vi.json](src/vi.json)   | [output](example-output/vi.md)  |
+| Welsh                   | `cy`  | ~880K    | United Kingdom (Wales)            | [cy.json](src/cy.json)   | [output](example-output/cy.md)  |
