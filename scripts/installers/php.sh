@@ -12,7 +12,9 @@ install_linux() {
 
 uninstall_macos() { brew uninstall php composer 2>/dev/null || true; }
 uninstall_linux() {
-    $SUDO apt-get remove -y php-cli php-xml php-mbstring 2>/dev/null || true
+    # Remove both metapackages and versioned packages (e.g. php8.3-cli)
+    $SUDO apt-get remove -y 'php*' 2>/dev/null || true
+    $SUDO apt-get autoremove -y 2>/dev/null || true
     $SUDO rm -f /usr/local/bin/composer
 }
 

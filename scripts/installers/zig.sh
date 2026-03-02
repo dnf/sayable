@@ -9,13 +9,15 @@ install_linux() {
         ZIG_ARCH="$ARCH"
         if [ "$ARCH" = "amd64" ]; then ZIG_ARCH="x86_64"; fi
         if [ "$ARCH" = "arm64" ]; then ZIG_ARCH="aarch64"; fi
-        curl -fsSL "https://ziglang.org/download/0.14.1/zig-linux-${ZIG_ARCH}-0.14.1.tar.xz" | \
-            $SUDO tar -C /usr/local --strip-components=1 -xJ
+        $SUDO mkdir -p /opt/zig
+        curl -fsSL "https://ziglang.org/download/0.14.0/zig-linux-${ZIG_ARCH}-0.14.0.tar.xz" | \
+            $SUDO tar -C /opt/zig --strip-components=1 -xJ
+        $SUDO ln -sf /opt/zig/zig /usr/local/bin/zig
     fi
 }
 
 uninstall_macos() { brew uninstall zig 2>/dev/null || true; }
-uninstall_linux() { echo "Manual Zig install — remove from /usr/local manually if needed."; }
+uninstall_linux() { $SUDO rm -rf /opt/zig /usr/local/bin/zig; }
 
 deps() { :; }
 

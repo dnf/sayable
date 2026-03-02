@@ -25,4 +25,13 @@ has() { command -v "$1" &>/dev/null; }
 
 brew_install() { brew install "$@" || true; }
 
-apt_install() { $SUDO apt-get install -y "$@"; }
+apt_install() {
+    # Refresh package list if stale (>1 hour) or missing
+    local stamp="/var/lib/apt/lists/partial"
+    if [ ! -d "/var/lib/apt/lists" ] || \
+       [ -z "$(find /var/lib/apt/lists -maxdepth 1 -name '*.Release' 2>/dev/null | head -1)" ] || \
+       [ -n "$(find "$stamp" -maxdepth 0 -mmin +60 2>/dev/null)" ]; then
+        $SUDO apt-get update -qq
+    fi
+    $SUDO apt-get install -y "$@"
+}

@@ -40,6 +40,19 @@ _tool() {
 
 ALL_LANGS=(c clojure cpp csharp elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig)
 
+# Languages unavailable on certain architectures
+_unavailable() {
+    local lang="$1"
+    # Elm has no arm64 Linux binary (https://github.com/elm/compiler/issues/2292)
+    if [ "$lang" = "elm" ] && [ "$OS" = "linux" ]; then
+        local arch; arch="$(uname -m)"
+        if [ "$arch" = "aarch64" ] || [ "$arch" = "arm64" ]; then
+            return 0
+        fi
+    fi
+    return 1
+}
+
 # Display name (for the status table)
 _display() {
     case "$1" in
@@ -58,14 +71,20 @@ _display() {
 
 installed=()
 missing=()
+unavailable=()
 for lang in "${ALL_LANGS[@]}"; do
-    tool=$(_tool "$lang")
-    if has "$tool"; then
-        installed+=("$lang")
+    if _unavailable "$lang"; then
+        unavailable+=("$lang")
     else
-        missing+=("$lang")
+        tool=$(_tool "$lang")
+        if has "$tool"; then
+            installed+=("$lang")
+        else
+            missing+=("$lang")
+        fi
     fi
 done
+available_total=$(( ${#ALL_LANGS[@]} - ${#unavailable[@]} ))
 
 # --- CLI flags ---------------------------------------------------------------
 
@@ -103,12 +122,16 @@ _print_status() {
     for lang in "${ALL_LANGS[@]}"; do
         local display
         display=$(_display "$lang")
-        local tool
-        tool=$(_tool "$lang")
-        if has "$tool"; then
-            printf "  ${GREEN}%-2s${RESET} %-${col_w}s" "✓" "$display"
+        if _unavailable "$lang"; then
+            printf "  ${DIM}%-2s %-${col_w}s${RESET}" "–" "$display"
         else
-            printf "  ${DIM}%-2s %-${col_w}s${RESET}" "✗" "$display"
+            local tool
+            tool=$(_tool "$lang")
+            if has "$tool"; then
+                printf "  ${GREEN}%-2s${RESET} %-${col_w}s" "✓" "$display"
+            else
+                printf "  ${DIM}%-2s %-${col_w}s${RESET}" "✗" "$display"
+            fi
         fi
         i=$((i + 1))
         if (( i % cols == 0 )); then
@@ -120,7 +143,11 @@ _print_status() {
     fi
 
     echo ""
-    echo -e "${BOLD}${#installed[@]}/${#ALL_LANGS[@]}${RESET} installed"
+    if [ ${#unavailable[@]} -gt 0 ]; then
+        echo -e "${BOLD}${#installed[@]}/${available_total}${RESET} installed (${#unavailable[@]} unavailable on $(uname -m))"
+    else
+        echo -e "${BOLD}${#installed[@]}/${#ALL_LANGS[@]}${RESET} installed"
+    fi
     echo ""
 }
 
@@ -146,16 +173,22 @@ if [ $# -gt 0 ]; then
             exit 0
             ;;
         --check)
-            if [ ${#missing[@]} -eq 0 ]; then
-                exit 0
-            else
+            rc=0
+            if [ ${#missing[@]} -gt 0 ]; then
                 echo "missing: ${missing[*]}"
-                exit 1
+                rc=1
             fi
+            if [ ${#unavailable[@]} -gt 0 ]; then
+                echo "unavailable on $(uname -m): ${unavailable[*]}"
+            fi
+            exit $rc
             ;;
         --install-all)
             if [ ${#missing[@]} -eq 0 ]; then
-                echo "All languages already installed."
+                echo "All available languages already installed."
+                if [ ${#unavailable[@]} -gt 0 ]; then
+                    echo "Unavailable on $(uname -m): ${unavailable[*]}"
+                fi
                 exit 0
             fi
             echo -e "Installing ${BOLD}${#missing[@]}${RESET} languages: ${missing[*]}"
@@ -185,7 +218,7 @@ fi
 _print_intro
 _print_status
 
-# All installed → done
+# All available languages installed → done
 if [ ${#missing[@]} -eq 0 ]; then
     echo -e "${GREEN}You're all set!${RESET} Quick-start commands:"
     echo ""

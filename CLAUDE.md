@@ -26,6 +26,9 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 
 | Shortcut         | Command                             |
 | ---------------- | ----------------------------------- |
+| Onboarding       | `just get-started`                  |
+| Install langs    | `just install` or `just install go` |
+| Uninstall langs  | `just uninstall go rust`            |
 | Generate locales | `just generate locales`             |
 | Quality check    | `just check`                        |
 | Codegen tests    | `just test codegen`                 |
@@ -44,6 +47,11 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON.
 - **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
 - **Every language must have a CI workflow** at `.github/workflows/<lang>.yml` that runs tests on push and PR to `main`. Use a version matrix when the language supports it.
+- **Installer scripts** live in `scripts/installers/<lang>.sh`. See [`docs/installers.md`](docs/installers.md) for the full reference. Key points:
+  - Shared toolchains (cmake→C/C++, JDK→Java/Kotlin/Scala, Node→TypeScript/Elm) mean uninstalling one language can break another.
+  - JDK uninstall is a no-op (shared by 3 languages). Perl and Swift on macOS are also no-ops (system-provided).
+  - `just install` (all) continues past individual failures and reports them at the end.
+  - Elm has no arm64 Linux binary; the installer detects this and skips with a message.
 
 ## Project layout
 
@@ -72,6 +80,7 @@ src/
 tests/         # Canonical test specification (testing.md)
 locales/       # Canonical locale JSON files (single source of truth)
 codegen/       # Locale code generator (JSON → all languages)
+scripts/       # Shared scripts (run-parallel, get-started, installers/)
 docs/          # Shared docs, locale docs
 ```
 

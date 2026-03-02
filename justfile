@@ -356,13 +356,25 @@ install *langs:
         exit 1
     }
     langs="{{langs}}"
+    install_all=false
     if [ -z "$langs" ]; then
         langs="$_all"
+        install_all=true
     fi
+    failed=""
     for lang in $langs; do
         name=$(_check "$lang")
-        bash "scripts/installers/${name}.sh" install
+        if $install_all; then
+            bash "scripts/installers/${name}.sh" install || failed="$failed $lang"
+        else
+            bash "scripts/installers/${name}.sh" install
+        fi
     done
+    if [ -n "$failed" ]; then
+        echo "" >&2
+        echo "Failed to install:$failed" >&2
+        exit 1
+    fi
 
 # Interactive onboarding: show project info, installed languages, and install menu
 [group('setup')]

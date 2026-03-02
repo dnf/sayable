@@ -14,6 +14,13 @@ install_linux() {
     if ! has node; then
         bash "$(dirname "$0")/typescript.sh" install
     fi
+    ARCH="$(dpkg --print-architecture)"
+    if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ]; then
+        echo "WARNING: Elm does not provide pre-built arm64 Linux binaries." >&2
+        echo "See https://github.com/elm/compiler/issues/2292 for details." >&2
+        echo "Skipping Elm installation on arm64." >&2
+        return 1
+    fi
     npm install -g elm elm-test
 }
 

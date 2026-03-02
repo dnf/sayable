@@ -33,10 +33,15 @@ RUN curl -fsSL https://packages.microsoft.com/config/ubuntu/24.04/packages-micro
     && apt-get update && apt-get install -y --no-install-recommends dotnet-sdk-8.0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Swift 5.10
+# Swift 5.10 (URL pattern differs by architecture)
 RUN ARCH="$(dpkg --print-architecture)" && \
-    SWIFT_URL="https://download.swift.org/swift-5.10.1-release/ubuntu2404/${ARCH}/swift-5.10.1-RELEASE-ubuntu24.04-${ARCH}.tar.gz" && \
-    curl -fsSL "$SWIFT_URL" | tar -C /usr/local --strip-components=2 -xz
+    VER="5.10.1" && \
+    if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ]; then \
+      URL="https://download.swift.org/swift-${VER}-release/ubuntu2404-aarch64/swift-${VER}-RELEASE/swift-${VER}-RELEASE-ubuntu24.04-aarch64.tar.gz"; \
+    else \
+      URL="https://download.swift.org/swift-${VER}-release/ubuntu2404/swift-${VER}-RELEASE/swift-${VER}-RELEASE-ubuntu24.04.tar.gz"; \
+    fi && \
+    curl -fsSL "$URL" | tar -C /usr/local --strip-components=2 -xz
 
 # Node.js 22 via NodeSource
 RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
@@ -59,8 +64,13 @@ ENV PATH="/root/.local/bin:${PATH}"
 # Composer (PHP package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Elm via npm (after Node.js)
-RUN npm install -g elm elm-test
+# Elm via npm (after Node.js) — no arm64 Linux binary available
+RUN ARCH="$(dpkg --print-architecture)" && \
+    if [ "$ARCH" != "arm64" ] && [ "$ARCH" != "aarch64" ]; then \
+      npm install -g elm elm-test; \
+    else \
+      echo "Skipping Elm: no arm64 Linux binary available"; \
+    fi
 
 # Haskell (GHC + cabal) via ghcup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
@@ -73,12 +83,14 @@ ENV PATH="/root/.ghcup/bin:${PATH}"
 # Clojure CLI
 RUN curl -fsSL https://download.clojure.org/install/linux-install.sh | bash
 
-# Zig
+# Zig (extract to /opt/zig, symlink binary to /usr/local/bin)
 RUN ARCH="$(dpkg --print-architecture)" && \
     ZIG_ARCH="$ARCH" && \
     if [ "$ARCH" = "amd64" ]; then ZIG_ARCH="x86_64"; fi && \
     if [ "$ARCH" = "arm64" ]; then ZIG_ARCH="aarch64"; fi && \
-    curl -fsSL "https://ziglang.org/download/0.14.1/zig-linux-${ZIG_ARCH}-0.14.1.tar.xz" | tar -C /usr/local --strip-components=1 -xJ
+    mkdir -p /opt/zig && \
+    curl -fsSL "https://ziglang.org/download/0.14.0/zig-linux-${ZIG_ARCH}-0.14.0.tar.xz" | tar -C /opt/zig --strip-components=1 -xJ && \
+    ln -sf /opt/zig/zig /usr/local/bin/zig
 
 # just (task runner)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
