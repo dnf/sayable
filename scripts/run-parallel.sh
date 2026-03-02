@@ -4,6 +4,8 @@
 # <name> is used for the log directory: .logs/<name>/
 # Each subsequent argument is passed to `just` as a complete command.
 # The label shown in output is the last word of each argument.
+# Entries prefixed with "skip:" are shown as "not installed" in their
+# original position without launching a job.
 set -uo pipefail
 
 if [ $# -lt 2 ]; then echo "Usage: $0 <name> 'cmd args'..." >&2; exit 1; fi
@@ -12,23 +14,43 @@ name="$1"; shift
 logdir=".logs/$name"
 mkdir -p "$logdir"
 
-# Partition args into runnable commands and skipped entries
-cmds=()
-labels=()
-skip_labels=()
+# Prevent concurrent runs of the same command
+lockdir="$logdir/.lock"
+if ! mkdir "$lockdir" 2>/dev/null; then
+    # Clean up stale locks older than 2 minutes
+    if find "$lockdir" -maxdepth 0 -mmin +2 2>/dev/null | grep -q .; then
+        rmdir "$lockdir" 2>/dev/null
+    fi
+    if ! mkdir "$lockdir" 2>/dev/null; then
+        echo "error: just $name is already running (lock: $lockdir)" >&2
+        exit 1
+    fi
+fi
+
+# Build unified ordered list — each entry is either runnable or skipped
+all_labels=()
+all_cmds=()   # empty string for skipped entries
+all_skip=()   # 1 = skipped, 0 = runnable
+run_n=0
+skip_n=0
 for arg in "$@"; do
     if [[ "$arg" == skip:* ]]; then
-        skip_labels+=("${arg#skip:}")
+        all_labels+=("${arg#skip:}")
+        all_cmds+=("")
+        all_skip+=(1)
+        skip_n=$((skip_n + 1))
     else
-        cmds+=("$arg")
-        labels+=("${arg##* }")
+        all_labels+=("${arg##* }")
+        all_cmds+=("$arg")
+        all_skip+=(0)
+        run_n=$((run_n + 1))
     fi
 done
-n=${#labels[@]}
+total=${#all_labels[@]}
 
-# Compute label column width from both runnable and skipped labels (min 6)
+# Compute label column width (min 6)
 label_w=6
-for label in ${labels[@]+"${labels[@]}"} ${skip_labels[@]+"${skip_labels[@]}"}; do
+for label in "${all_labels[@]}"; do
     (( ${#label} > label_w )) && label_w=${#label}
 done
 
@@ -43,18 +65,18 @@ max_bar=$((term_w - prefix_w))
 (( max_bar < 10 )) && max_bar=10
 
 # If all entries are skipped, print skip lines and exit early
-if [ "$n" -eq 0 ]; then
-    skip_n=${#skip_labels[@]}
-    for label in "${skip_labels[@]}"; do
+if [ "$run_n" -eq 0 ]; then
+    for label in "${all_labels[@]}"; do
         if [ -t 1 ]; then
-            printf "  \033[2m- %-${label_w}s not installed\033[0m\n" "$label"
+            printf "  \033[2m- %-${label_w}s    - not installed\033[0m\n" "$label"
         else
-            printf "  - %-${label_w}s not installed\n" "$label"
+            printf "  - %-${label_w}s    - not installed\n" "$label"
         fi
     done
     echo ""
     echo "0/0 passed, $skip_n not installed"
     echo "Logs: $logdir/"
+    rmdir "$lockdir" 2>/dev/null
     exit 0
 fi
 
@@ -70,20 +92,24 @@ cleanup() {
     printf "\033[?25h" 2>/dev/null
     kill $(jobs -p) 2>/dev/null
     wait 2>/dev/null
-    for label in "${labels[@]}"; do rm -f "$logdir/$label.result"; done
+    for i in "${!all_labels[@]}"; do
+        [ "${all_skip[$i]}" -eq 0 ] && rm -f "$logdir/${all_labels[$i]}.result"
+    done
+    rmdir "$lockdir" 2>/dev/null
 }
 trap cleanup EXIT
 trap 'exit 130' INT
 
-# Start all jobs
+# Start jobs for runnable entries only
 global_start=$SECONDS
 pids=()
-for i in "${!cmds[@]}"; do
-    label="${labels[$i]}"
+for i in "${!all_labels[@]}"; do
+    [ "${all_skip[$i]}" -eq 1 ] && continue
+    label="${all_labels[$i]}"
     (
         rc=0
         s=$SECONDS
-        just ${cmds[$i]} > "$logdir/$label.log" 2>&1 || rc=$?
+        just ${all_cmds[$i]} > "$logdir/$label.log" 2>&1 || rc=$?
         echo "$((SECONDS - s)) $rc" > "$logdir/$label.result"
     ) &
     pids+=($!)
@@ -96,7 +122,7 @@ if [ -t 1 ]; then
     done_flags=()
     done_durs=()
     done_rcs=()
-    for i in "${!labels[@]}"; do
+    for i in "${!all_labels[@]}"; do
         echo
         done_flags[$i]=""
         done_durs[$i]=0
@@ -106,11 +132,16 @@ if [ -t 1 ]; then
     printf "\033[?25l"  # hide cursor
 
     while true; do
-        printf "\033[${n}A"  # move up N lines
+        printf "\033[${total}A"  # move up N lines
 
         done_count=0
-        for i in "${!labels[@]}"; do
-            label="${labels[$i]}"
+        for i in "${!all_labels[@]}"; do
+            label="${all_labels[$i]}"
+
+            if [ "${all_skip[$i]}" -eq 1 ]; then
+                printf "  \033[2m- %-${label_w}s    - not installed\033[0m\033[K\n" "$label"
+                continue
+            fi
 
             if [ -z "${done_flags[$i]}" ] && [ -f "$logdir/$label.result" ]; then
                 read -r done_durs[$i] done_rcs[$i] < "$logdir/$label.result"
@@ -132,56 +163,56 @@ if [ -t 1 ]; then
             fi
         done
 
-        [ "$done_count" -eq "$n" ] && break
+        [ "$done_count" -eq "$run_n" ] && break
         frame=$((frame + 1))
         sleep 0.08
     done
 
     printf "\033[?25h"  # restore cursor
-
-    for label in ${skip_labels[@]+"${skip_labels[@]}"}; do
-        printf "  \033[2m- %-${label_w}s not installed\033[0m\n" "$label"
-    done
 else
     # Non-interactive (CI, piped): wait then print
     for pid in "${pids[@]}"; do wait "$pid" || true; done
 
-    for label in "${labels[@]}"; do
-        read -r dur rc < "$logdir/$label.result"
-        if [ "$rc" -eq 0 ]; then
-            printf "  ✓ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
+    for i in "${!all_labels[@]}"; do
+        label="${all_labels[$i]}"
+        if [ "${all_skip[$i]}" -eq 1 ]; then
+            printf "  - %-${label_w}s    - not installed\n" "$label"
         else
-            printf "  ✗ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
+            read -r dur rc < "$logdir/$label.result"
+            if [ "$rc" -eq 0 ]; then
+                printf "  ✓ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
+            else
+                printf "  ✗ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
+            fi
         fi
-    done
-
-    for label in ${skip_labels[@]+"${skip_labels[@]}"}; do
-        printf "  - %-${label_w}s not installed\n" "$label"
     done
 fi
 
 # --- Summary ---
 failed=0
 wall=0
-for label in "${labels[@]}"; do
+for i in "${!all_labels[@]}"; do
+    [ "${all_skip[$i]}" -eq 1 ] && continue
+    label="${all_labels[$i]}"
     read -r dur rc < "$logdir/$label.result"
     (( dur > wall )) && wall=$dur
     [ "$rc" -ne 0 ] && failed=$((failed + 1))
 done
 
-passed=$(( n - failed ))
-skip_n=${#skip_labels[@]}
+passed=$(( run_n - failed ))
 skip_msg=""
 if [ "$skip_n" -gt 0 ]; then
     skip_msg=", $skip_n not installed"
 fi
 echo ""
-echo "$passed/$n passed${skip_msg} (${wall}s wall time)"
+echo "$passed/$run_n passed${skip_msg} (${wall}s wall time)"
 echo "Logs: $logdir/"
 
 if [ "$failed" -gt 0 ]; then
     echo ""
-    for label in "${labels[@]}"; do
+    for i in "${!all_labels[@]}"; do
+        [ "${all_skip[$i]}" -eq 1 ] && continue
+        label="${all_labels[$i]}"
         read -r dur rc < "$logdir/$label.result"
         if [ "$rc" -ne 0 ]; then
             echo "=== $label ==="
