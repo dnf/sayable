@@ -1,10 +1,10 @@
 # Locale Code Generator
 
-The `codegen/` directory contains a code generator that maintains all 71 locale definitions across the 11 language implementations from a single canonical source.
+The `codegen/` directory contains a code generator that maintains all 71 locale definitions across the language implementations from a single canonical source.
 
 ## Why
 
-71 locales across 11 languages means 781 locale files. Before this generator, every locale change required editing up to 11 files by hand. The generator eliminates that by deriving all locale source files from one set of JSON definitions.
+71 locales across many languages means hundreds of locale files. Before this generator, every locale change required editing files by hand across every language. The generator eliminates that by deriving all locale source files from one set of JSON definitions.
 
 ## Architecture
 
@@ -23,6 +23,7 @@ codegen/
     go/
     ruby/
     rust/
+    scala/
     kotlin/
     cpp/
     php/
@@ -84,6 +85,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 | Ruby | `locales/{code}.rb` | one per locale |
 | Rust | `locales/{code}.rs` + `locales/mod.rs` | one per locale + barrel |
 | Kotlin | `Locales.kt` | single file, all 71 |
+| Scala | `Locales.scala` | single file, all 71 |
 | C++ | `locales_{a_e,f_k,l_r,s_z}.cpp` + `locales.hpp` | 4 files by alpha range + header |
 | PHP | `Locales.php` | single file, all 71 |
 | Java | `Locales.java` | single file, all 71 |
@@ -155,7 +157,7 @@ Exits with code 1 if any generated file would change. This runs in CI to ensure 
 
 1. Create `codegen/locales/{code}.json` with the locale data (use an existing plural rule — all 23 CLDR patterns are supported)
 2. Run `python -m codegen.generate`
-4. Add test cases to `docs/testing.md` and implement them in all 11 test files
+4. Add test cases to `docs/testing.md` and implement them in all test files
 5. Run all test suites
 
 ### Fixing a plural rule

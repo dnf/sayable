@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 15 identical implementations (C, C#, C++, Clojure, Erlang, Go, Haskell, Java, Kotlin, PHP, Python, Ruby, Rust, Swift, TypeScript) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 16 identical implementations (C, C#, C++, Clojure, Erlang, Go, Haskell, Java, Kotlin, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript) and 71 locales.
 
 ## Build and test commands
 
@@ -56,6 +56,7 @@ src/
   python/      # Python
   ruby/        # Ruby
   rust/        # Rust
+  scala/       # Scala
   swift/       # Swift
   typescript/  # TypeScript
 codegen/       # Locale code generator (JSON → all languages)
@@ -63,8 +64,8 @@ docs/          # Shared docs, test spec, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `parenttime_formatter.erl`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.swift`, `format-age.ts`
-- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `parenttime.hrl`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `AgeLocale.swift`, `locale.ts`
+- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `parenttime_formatter.erl`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`
+- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `parenttime.hrl`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style

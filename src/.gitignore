@@ -56,3 +56,7 @@ c/build/
 
 # Clojure
 clojure/.cpcache/
+
+# Scala
+scala/build/
+scala/.gradle/

@@ -8,7 +8,7 @@
 "Newborn" · "2 weeks, 4 days" · "14 months" · "2 years, 3 months" · "4½ years"
 ```
 
-Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 15 languages, 71 locales, and three compactness levels.
+Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 16 languages, 71 locales, and three compactness levels.
 
 ## Implementations
 
@@ -27,6 +27,7 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 | Python | [![Python](https://github.com/dnf/parent-time/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/python.yml) | [![PyPI](https://img.shields.io/pypi/v/parent-time?logo=python&label=pypi)](https://pypi.org/project/parent-time/) | `pip install parent-time` | [README](src/python/README.md) |
 | Ruby | [![Ruby](https://github.com/dnf/parent-time/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/ruby.yml) | [![Gem](https://img.shields.io/gem/v/parent_time?logo=rubygems&label=gem)](https://rubygems.org/gems/parent_time) | `gem install parent_time` | [README](src/ruby/README.md) |
 | Rust | [![Rust](https://github.com/dnf/parent-time/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/rust.yml) | [![Crates.io](https://img.shields.io/crates/v/parent-time?logo=rust&label=crates.io)](https://crates.io/crates/parent-time) | `parent-time = "0.1"` | [README](src/rust/README.md) |
+| Scala | [![Scala](https://github.com/dnf/parent-time/actions/workflows/scala.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/scala.yml) | — | Gradle | [README](src/scala/README.md) |
 | Swift | [![Swift](https://github.com/dnf/parent-time/actions/workflows/swift.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/swift.yml) | — | SPM | [README](src/swift/README.md) |
 | TypeScript | [![TypeScript](https://github.com/dnf/parent-time/actions/workflows/typescript.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/typescript.yml) | [![npm](https://img.shields.io/npm/v/parent-time?logo=npm&label=npm)](https://www.npmjs.com/package/parent-time) | `npm install parent-time` | [README](src/typescript/README.md) |
 
@@ -175,7 +176,7 @@ just lint                # run all available linters
 just --list              # see all available commands
 ```
 
-Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`, `hs`, `erl`, `clj` are accepted alongside full names.
+Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`, `hs`, `erl`, `clj`, `sc` are accepted alongside full names.
 
 ## Contributing
 
