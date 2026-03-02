@@ -1,0 +1,9 @@
+{application, parenttime, [
+    {description, "Format ages the way parents talk"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []},
+    {modules, []},
+    {licenses, ["MIT"]}
+]}.

@@ -1,19 +1,19 @@
 # Contributing to parent-time
 
-Thanks for your interest in contributing! This project maintains identical implementations across 13 languages, so contributions follow a few specific patterns.
+Thanks for your interest in contributing! This project maintains identical implementations across 14 languages, so contributions follow a few specific patterns.
 
 ## Getting started
 
 1. Fork and clone the repository
 2. Install [just](https://github.com/casey/just) (the task runner)
-3. Run `just test` to verify everything works — this runs all 13 test suites in parallel
+3. Run `just test` to verify everything works — this runs all 14 test suites in parallel
 
 ## Project structure
 
 ```
 src/
   c/  typescript/  python/  go/  ruby/  rust/
-  kotlin/  cpp/  php/  java/  csharp/  swift/  haskell/
+  kotlin/  cpp/  php/  java/  csharp/  swift/  haskell/  erlang/
 codegen/
   locales/     # 71 JSON files — single source of truth for locale data
   targets/     # One emitter + plural rules per target language
@@ -26,10 +26,11 @@ docs/          # Shared documentation and test specifications
 The `justfile` is the primary task runner. With no arguments, commands run all languages in parallel:
 
 ```
-just test          # all 13 test suites + codegen check
+just test          # all 14 test suites + codegen check
 just build         # all compiled languages
 just lint          # all linters
 just clean         # remove build artifacts
+
 ```
 
 ### Single-language commands
@@ -51,6 +52,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 | Rust       | `test rust`<br>`test rs` | `build rust`<br>`build rs` | `lint rust`<br>`lint rs` | `clean rust`<br>`clean rs` |
 | Swift      | `test swift`<br>`test sw` | `build swift`<br>`build sw` | 🛠️ | `clean swift`<br>`clean sw` |
 | TypeScript | `test typescript`<br>`test ts` | `build typescript`<br>`build ts` | `lint typescript`<br>`lint ts` | `clean typescript`<br>`clean ts` |
+| Erlang     | `test erlang`<br>`test erl` | `build erlang`<br>`build erl` | 🛠️ | `clean erlang`<br>`clean erl` |
 
 ⚡ = interpreted, no build step needed · 🛠️ = linted via warnings-as-errors in build
 
@@ -63,14 +65,14 @@ Every run captures output to `.logs/<action>/<language>.log` (e.g., `.logs/test/
 
 ## Key principles
 
-- **All 13 implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
+- **All 14 implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
 - **Deterministic tests.** Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero dependencies.** No runtime dependencies in any language. Pure date arithmetic.
-- **Spec-first testing.** The canonical test specification lives in [`docs/testing.md`](docs/testing.md). Add new test cases there first, then implement in all 13 languages.
+- **Spec-first testing.** The canonical test specification lives in [`docs/testing.md`](docs/testing.md). Add new test cases there first, then implement in all 14 languages.
 
 ## Discuss before implementing
 
-Because every change must work across 13 languages, please **open an issue before starting work** on anything beyond a small locale correction. This applies to new features, API changes, new locales, and non-trivial bug fixes. A quick discussion upfront prevents 10x wasted effort if the approach needs adjustment.
+Because every change must work across 14 languages, please **open an issue before starting work** on anything beyond a small locale correction. This applies to new features, API changes, new locales, and non-trivial bug fixes. A quick discussion upfront prevents 10x wasted effort if the approach needs adjustment.
 
 The only exception: if you're a native speaker fixing a translation or plural rule in a locale you know, go ahead and open a PR directly.
 
@@ -83,7 +85,7 @@ Native speaker feedback is especially welcome. If a translation sounds unnatural
 To fix a locale:
 
 1. Edit the JSON file in `codegen/locales/{code}.json`
-2. Run `python -m codegen.generate` to regenerate all 13 language implementations
+2. Run `python -m codegen.generate` to regenerate all 14 language implementations
 3. Run `just test` to verify
 
 Never edit the generated locale files (e.g. `src/typescript/src/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`codegen/README.md`](codegen/README.md) for full details.
@@ -96,7 +98,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for a detailed guide. I
 
 1. Identify the CLDR plural rule for the language (one of the 23 existing rules usually fits)
 2. Create `codegen/locales/{code}.json` with the locale data
-3. Run `python -m codegen.generate` to generate locale files in all 13 languages
+3. Run `python -m codegen.generate` to generate locale files in all 14 languages
 4. Add test cases to `docs/testing.md` and implement them in all 13 test files
 5. Run `just test`
 
@@ -108,7 +110,7 @@ The fastest way to get a bug fixed is to include a failing test case in the form
 
 ### New features
 
-Open an issue to discuss before implementing. Features must work across all 13 languages, so design discussions help avoid wasted effort.
+Open an issue to discuss before implementing. Features must work across all 14 languages, so design discussions help avoid wasted effort.
 
 ## What we won't merge
 
@@ -138,7 +140,7 @@ Before submitting a PR, verify:
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
 - [ ] Locale changes made in `codegen/locales/*.json` and regenerated (not hand-edited)
 - [ ] `just check` passes (codegen files up to date)
-- [ ] All 13 implementations updated (for logic/feature changes)
+- [ ] All 14 implementations updated (for logic/feature changes)
 - [ ] No runtime dependencies added
 
 ### Commit messages
@@ -151,7 +153,7 @@ Before submitting a PR, verify:
 
 Each language follows its community conventions. There are no strict formatting requirements beyond what each language's linter enforces. See [`docs/code-quality.md`](docs/code-quality.md) for details.
 
-CI runs all 13 language test suites on every pull request. PRs that break any language will not be merged.
+CI runs all 14 language test suites on every pull request. PRs that break any language will not be merged.
 
 ## License
 

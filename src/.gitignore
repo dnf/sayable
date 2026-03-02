@@ -44,3 +44,12 @@ csharp/ParentTime.Tests/obj/
 # Swift
 swift/.build/
 swift/Package.resolved
+
+# Haskell
+haskell/dist-newstyle/
+
+# Erlang
+erlang/_build/
+
+# C
+c/build/

@@ -26,7 +26,8 @@ $SUDO apt-get install -y \
     ruby ruby-bundler \
     php-cli php-xml php-mbstring \
     openjdk-17-jdk-headless \
-    python3 python3-venv
+    python3 python3-venv \
+    erlang-dev erlang-tools rebar3
 
 # ---- .NET SDK 8.0 ----
 if ! command -v dotnet &>/dev/null; then

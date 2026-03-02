@@ -199,7 +199,20 @@ Set up the language's standard linter with strict settings. See
 Add a `just lint newlang` entry and document the configuration in
 `docs/code-quality-compiled.md` or `docs/code-quality-dynamic.md`.
 
-## 10. Update cross-language documentation
+## 10. Update cross-language files
+
+### `.gitignore`
+
+Add build artifact patterns to `src/.gitignore` (not the root `.gitignore`).
+The root `.gitignore` is reserved for cross-language patterns (`__pycache__/`,
+`.logs/`, etc.). Language-specific entries go in `src/.gitignore` with a comment:
+
+```gitignore
+# NewLang
+newlang/build/
+```
+
+### Documentation
 
 Several docs contain per-language tables that must include every implementation.
 Add a row for the new language in each:
@@ -237,6 +250,7 @@ just test               # run all languages to confirm nothing broke
 - [ ] Core formatter ported from an existing implementation
 - [ ] All test cases from `docs/testing.md` implemented
 - [ ] justfile updated (test, build, lint, clean recipes)
+- [ ] Build artifacts added to `src/.gitignore`
 - [ ] Linter configured with zero warnings
 - [ ] `just test` passes for all languages
 - [ ] `just check` reports no drift
