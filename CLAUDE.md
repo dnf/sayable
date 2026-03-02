@@ -43,6 +43,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Markdown tables must be aligned.** Run `just maintain docs` after editing any documentation tables. `just check` verifies alignment in CI.
 - **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON.
 - **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
+- **Every language must have a CI workflow** at `.github/workflows/<lang>.yml` that runs tests on push and PR to `main`. Use a version matrix when the language supports it.
 
 ## Project layout
 
@@ -111,8 +112,9 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 7. Configure the language's standard linter with zero warnings
 8. Update bootstrap scripts (`Dockerfile`, `scripts/bootstrap-macos.sh`, `scripts/bootstrap-linux.sh`)
 9. Create `src/<lang>/README.md` with a `## License` section linking to `LICENSE.md`
-10. Update cross-language doc tables (keep rows sorted alphabetically; don't hardcode counts in prose — update only the `CLAUDE.md` project description)
-11. Verify: `just generate locales && just check && just test && just lint`
+10. Create `.github/workflows/<lang>.yml` CI workflow with a version matrix
+11. Update cross-language doc tables (keep rows sorted alphabetically; don't hardcode counts in prose — update only the `CLAUDE.md` project description)
+12. Verify: `just generate locales && just check && just test && just lint`
 
 ## Commit conventions
 

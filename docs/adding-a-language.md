@@ -199,7 +199,40 @@ Set up the language's standard linter with strict settings. See
 Add a `just lint newlang` entry and document the configuration in
 `docs/code-quality-compiled.md` or `docs/code-quality-dynamic.md`.
 
-## 10. Update cross-language files
+## 10. Add a CI workflow
+
+Create `.github/workflows/<lang>.yml` to run tests on push and PR to `main`.
+Use an existing workflow as a template (e.g., `ruby.yml` for interpreted
+languages, `rust.yml` for compiled ones). Include a version matrix when the
+language supports it.
+
+```yaml
+name: NewLang
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        newlang-version: ["1.0", "1.1", "1.2"]
+    defaults:
+      run:
+        working-directory: src/newlang
+    steps:
+      - uses: actions/checkout@v4
+      - uses: <setup-action>
+        with:
+          newlang-version: ${{ matrix.newlang-version }}
+      - run: <test-command>
+```
+
+## 11. Update cross-language files
 
 ### `.gitignore`
 
@@ -246,7 +279,7 @@ use "all" instead. The count only appears in two places: the `CLAUDE.md` project
 | [`CONTRIBUTING.md`](../CONTRIBUTING.md)     | Test commands table                                     |
 | [`CLAUDE.md`](../CLAUDE.md)                 | Test command table                                      |
 
-## 11. Verify
+## 12. Verify
 
 ```bash
 just generate           # regenerate all (includes new language)
@@ -272,6 +305,7 @@ just test               # run all languages to confirm nothing broke
 - [ ] `just test` passes for all languages
 - [ ] `just check` reports no drift
 - [ ] Bootstrap scripts updated (Dockerfile, bootstrap-macos.sh, bootstrap-linux.sh)
+- [ ] CI workflow at `.github/workflows/<lang>.yml` with version matrix
 - [ ] Language-specific README with license link added
 - [ ] Cross-language tables updated and sorted alphabetically
 - [ ] CLAUDE.md updated with new test/build commands
