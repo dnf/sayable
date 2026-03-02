@@ -12,7 +12,7 @@ Thanks for your interest in contributing! This project maintains identical imple
 
 ```
 src/
-  c/  clojure/  cpp/  csharp/  erlang/  go/  haskell/
+  c/  clojure/  cpp/  csharp/  elm/  erlang/  go/  haskell/
   java/  kotlin/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 codegen/
   locales/     # 71 JSON files — single source of truth for locale data
@@ -43,6 +43,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 | C#         | `test csharp`<br>`test cs` | `build csharp`<br>`build cs` | 🛠️ | `clean csharp`<br>`clean cs` |
 | C++        | `test cpp`<br>`test c++` | `build cpp`<br>`build c++` | 🛠️ | `clean cpp`<br>`clean c++` |
 | Clojure    | `test clojure`<br>`test clj` | ⚡ | 🛠️ | `clean clojure`<br>`clean clj` |
+| Elm        | `test elm`<br>`test el` | ⚡ | 🛠️ | `clean elm`<br>`clean el` |
 | Erlang     | `test erlang`<br>`test erl` | `build erlang`<br>`build erl` | 🛠️ | `clean erlang`<br>`clean erl` |
 | Go         | `test go` | ⚡ | `lint go` | ⚡ |
 | Haskell    | `test haskell`<br>`test hs` | `build haskell`<br>`build hs` | 🛠️ | `clean haskell`<br>`clean hs` |

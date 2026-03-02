@@ -57,6 +57,9 @@ ENV PATH="/root/.local/bin:${PATH}"
 # Composer (PHP package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Elm via npm (after Node.js)
+RUN npm install -g elm elm-test
+
 # Haskell (GHC + cabal) via ghcup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
     BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \

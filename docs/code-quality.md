@@ -40,6 +40,7 @@ below summarizes the patterns across all implementations:
 | PHP        | PascalCase    | camelCase         | UPPER_CASE (`EN()`) | camelCase   | PascalCase         |
 | Java       | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | UPPER_CASE         |
 | C#         | PascalCase    | PascalCase        | UPPER_CASE (`EN`)  | PascalCase  | PascalCase         |
+| Elm        | PascalCase    | camelCase         | lowercase (`en`)   | camelCase   | PascalCase         |
 | Scala      | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | UPPER_CASE         |
 | Swift      | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | camelCase          |
 | Zig        | PascalCase    | camelCase         | lowercase (`en`)   | snake_case  | .snake_case        |
@@ -79,6 +80,7 @@ how each language enforces this:
 | PHP        | `readonly` class | PHP 8.2 `readonly` prevents field reassignment after construction |
 | Java       | `private final` fields | Fields set in constructor, never modified; all formatting methods are pure reads |
 | C#         | `private readonly` fields | Fields set in constructor; `TreatWarningsAsErrors` in project |
+| Elm        | Pure functions (no mutable state) | Elm has no mutable state; all functions are pure by language design |
 | Scala      | `private val` fields | `val` is compile-time immutable; `private` hides from consumers |
 | Swift      | `private let` fields + `Sendable` | `let` is compile-time immutable; struct conforms to `Sendable` |
 
@@ -138,6 +140,7 @@ language family:
 | PHP        | PHPStan + PHP-CS-Fixer      | PHPStan level 9; PER-CS2.0 + risky; `declare(strict_types=1)` |   168 |        179 |
 | Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records      |   135 |        191 |
 | C#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                 |   140 |        191 |
+| Elm        | Elm compiler                | Compiler warnings-as-errors; `elm-explorations/test`            |   209 |        209 |
 | Scala      | Scala compiler              | `-Werror`; Scala 3 enums, sealed traits                         |   115 |        191 |
 | Swift      | Swift compiler              | `StrictConcurrency`; Swift Testing                              |   140 |        191 |
 | Zig        | Zig compiler                | Warnings-as-errors; built-in test framework                     |   163 |        163 |

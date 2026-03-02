@@ -8,7 +8,7 @@
 "Newborn" · "2 weeks, 4 days" · "14 months" · "2 years, 3 months" · "4½ years"
 ```
 
-Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 17 languages, 71 locales, and three compactness levels.
+Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 18 languages, 71 locales, and three compactness levels.
 
 ## Implementations
 
@@ -17,10 +17,11 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 | C | [![C](https://github.com/dnf/parent-time/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/c.yml) | — | CMake (freestanding) | [README](src/c/README.md) |
 | C# | [![C#](https://github.com/dnf/parent-time/actions/workflows/csharp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/csharp.yml) | — | NuGet | [README](src/csharp/README.md) |
 | C++ | [![C++](https://github.com/dnf/parent-time/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/cpp.yml) | — | CMake ([`FetchContent`](src/cpp/README.md)) | [README](src/cpp/README.md) |
-| Clojure | [![Clojure](https://github.com/dnf/parent-time/actions/workflows/clojure.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/clojure.yml) | — | deps.edn | — |
-| Erlang | [![Erlang](https://github.com/dnf/parent-time/actions/workflows/erlang.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/erlang.yml) | — | Rebar3 | — |
+| Clojure | [![Clojure](https://github.com/dnf/parent-time/actions/workflows/clojure.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/clojure.yml) | — | deps.edn | [README](src/clojure/README.md) |
+| Elm | [![Elm](https://github.com/dnf/parent-time/actions/workflows/elm.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/elm.yml) | — | elm.json (application) | [README](src/elm/README.md) |
+| Erlang | [![Erlang](https://github.com/dnf/parent-time/actions/workflows/erlang.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/erlang.yml) | — | Rebar3 | [README](src/erlang/README.md) |
 | Go | [![Go](https://github.com/dnf/parent-time/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/go.yml) | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=src%2Fgo%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/src/go) | `go get github.com/dnf/parent-time/src/go` | [README](src/go/README.md) |
-| Haskell | [![Haskell](https://github.com/dnf/parent-time/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/haskell.yml) | — | Cabal | — |
+| Haskell | [![Haskell](https://github.com/dnf/parent-time/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/haskell.yml) | — | Cabal | [README](src/haskell/README.md) |
 | Java | [![Java](https://github.com/dnf/parent-time/actions/workflows/java.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/java.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](src/java/README.md) |
 | Kotlin | [![Kotlin](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](src/kotlin/README.md) |
 | PHP | [![PHP](https://github.com/dnf/parent-time/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/php.yml) | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time) | `composer require dnf/parent-time` | [README](src/php/README.md) |
@@ -177,7 +178,7 @@ just lint                # run all available linters
 just --list              # see all available commands
 ```
 
-Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`, `hs`, `erl`, `clj`, `sc`, `zg` are accepted alongside full names.
+Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`, `hs`, `erl`, `clj`, `el`, `sc`, `zg` are accepted alongside full names.
 
 ## Contributing
 

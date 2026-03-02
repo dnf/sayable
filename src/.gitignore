@@ -48,6 +48,9 @@ swift/Package.resolved
 # Haskell
 haskell/dist-newstyle/
 
+# Elm
+elm/elm-stuff/
+
 # Erlang
 erlang/_build/
 

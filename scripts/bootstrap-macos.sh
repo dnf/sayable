@@ -27,6 +27,12 @@ if [ -d "$OPENJDK_PATH" ] && [ ! -e "$JVM_DIR" ]; then
         echo "   Skipped (run manually: sudo ln -sfn $OPENJDK_PATH $JVM_DIR)"
 fi
 
+# Elm via npm
+if ! command -v elm &>/dev/null; then
+    echo "==> Installing Elm via npm..."
+    npm install -g elm elm-test
+fi
+
 # Haskell via ghcup (GHC + cabal)
 if ! command -v ghc &>/dev/null; then
     echo "==> Installing Haskell via ghcup..."
@@ -78,6 +84,8 @@ command -v erl &>/dev/null     || MISSING+=(erl)
 command -v rebar3 &>/dev/null  || MISSING+=(rebar3)
 command -v clojure &>/dev/null || MISSING+=(clojure)
 command -v zig &>/dev/null     || MISSING+=(zig)
+command -v elm &>/dev/null     || MISSING+=(elm)
+command -v elm-test &>/dev/null || MISSING+=(elm-test)
 command -v ghc &>/dev/null     || MISSING+=(ghc)
 command -v cabal &>/dev/null   || MISSING+=(cabal)
 command -v just &>/dev/null    || MISSING+=(just)

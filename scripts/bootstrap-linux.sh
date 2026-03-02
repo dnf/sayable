@@ -83,6 +83,12 @@ if ! command -v composer &>/dev/null; then
     curl -sS https://getcomposer.org/installer | $SUDO php -- --install-dir=/usr/local/bin --filename=composer
 fi
 
+# ---- Elm via npm ----
+if ! command -v elm &>/dev/null; then
+    echo "==> Installing Elm via npm..."
+    npm install -g elm elm-test
+fi
+
 # ---- Haskell via ghcup (GHC + cabal) ----
 if ! command -v ghc &>/dev/null; then
     echo "==> Installing Haskell via ghcup..."

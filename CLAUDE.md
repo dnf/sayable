@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 17 identical implementations (C, C#, C++, Clojure, Erlang, Go, Haskell, Java, Kotlin, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 18 identical implementations (C, C#, C++, Clojure, Elm, Erlang, Go, Haskell, Java, Kotlin, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
 
 ## Build and test commands
 
@@ -38,6 +38,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero runtime dependencies.** No exceptions in any language.
 - **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all language implementations. Never edit generated locale files by hand.
+- **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
 
 ## Project layout
 
@@ -47,6 +48,7 @@ src/
   clojure/     # Clojure
   cpp/         # C++
   csharp/      # C#
+  elm/         # Elm
   erlang/      # Erlang
   go/          # Go
   haskell/     # Haskell
@@ -65,8 +67,8 @@ docs/          # Shared docs, test spec, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `parenttime_formatter.erl`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
-- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `parenttime.hrl`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
+- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `Formatter.elm`, `parenttime_formatter.erl`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
+- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `Types.elm`, `parenttime.hrl`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style

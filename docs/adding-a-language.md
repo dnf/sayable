@@ -222,9 +222,12 @@ Add the new language's toolchain to all three environment setup files:
 
 ### Language-specific README
 
-Create a `src/<lang>/README.md` with installation, usage, and API docs. Include
+Every language implementation **must** have a `src/<lang>/README.md`. This is a
+project rule — the root `README.md` table must link to it in the Docs column.
+
+Create `src/<lang>/README.md` with installation, usage, and API docs. Include
 a `## License` section linking to [`LICENSE.md`](../LICENSE.md). Use an existing
-language's README as a template (e.g., `src/typescript/README.md`).
+language's README as a template (e.g., `src/go/README.md`).
 
 ### Documentation
 
