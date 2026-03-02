@@ -116,25 +116,53 @@ build *lang:
         ) 2>&1 | tee ".logs/build/$name.log"
     fi
 
-# Regenerate all locale files from canonical JSON
+# Generate locale source files and documentation from canonical JSON
 [group('codegen')]
-generate *args:
-    {{python}} -m codegen.generate {{args}}
+generate target *args:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    case "{{target}}" in
+        locales)
+            {{python}} -m codegen.generate {{args}}
+            uv run --project src/python {{python}} -m codegen.docgen {{args}}
+            ;;
+        *)
+            echo "error: unknown generate target '{{target}}'" >&2
+            echo "Valid targets: locales" >&2
+            exit 1
+            ;;
+    esac
 
-# Generate locale documentation (one markdown file per locale)
-[group('codegen')]
-docgen *args:
-    uv run --project src/python {{python}} -m codegen.docgen {{args}}
+# Maintain project documentation (table alignment, formatting)
+[group('maintain')]
+maintain target *args:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    case "{{target}}" in
+        docs)
+            {{python}} -m codegen.align_tables {{args}} \
+                README.md CLAUDE.md CONTRIBUTING.md \
+                codegen/README.md locales/README.md tests/README.md tests/testing.md \
+                docs/*.md src/*/README.md
+            ;;
+        *)
+            echo "error: unknown maintain target '{{target}}'" >&2
+            echo "Valid targets: docs" >&2
+            exit 1
+            ;;
+    esac
 
-# Check that generated locale files are up-to-date (CI mode)
+# Verify all generated files and documentation are up-to-date (CI mode)
 [group('codegen')]
 check:
+    #!/usr/bin/env bash
+    set -euo pipefail
     {{python}} -m codegen.generate --check
-
-# List available locale groups for --locales flag
-[group('codegen')]
-list-groups:
-    {{python}} -m codegen.generate --list-groups
+    uv run --project src/python {{python}} -m codegen.docgen --check
+    {{python}} -m codegen.align_tables --check \
+        README.md CLAUDE.md CONTRIBUTING.md \
+        codegen/README.md locales/README.md tests/README.md tests/testing.md \
+        docs/*.md src/*/README.md
 
 # Run all available linters
 [group('lint')]

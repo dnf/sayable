@@ -24,13 +24,13 @@ just lint python   # lint one        → .logs/lint/python.log
 
 All output is captured to `.logs/<command>/<language>.log` — both parallel and single-language runs.
 
-| Shortcut        | Command                                              |
-| --------------- | ---------------------------------------------------- |
-| Codegen check   | `just check` or `python -m codegen.generate --check` |
-| Codegen subset  | `python -m codegen.generate --locales core`          |
-| Codegen tests   | `just test codegen`                                  |
-| List groups     | `python -m codegen.generate --list-groups`           |
-| Clean artifacts | `just clean` or `just clean <lang\|codegen>`         |
+| Shortcut         | Command                             |
+| ---------------- | ----------------------------------- |
+| Generate locales | `just generate locales`             |
+| Quality check    | `just check`                        |
+| Codegen tests    | `just test codegen`                 |
+| Maintain docs    | `just maintain docs`                |
+| Clean artifacts  | `just clean` or `just clean <lang>` |
 
 ## Key rules
 
@@ -38,7 +38,9 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Spec-first testing.** New test cases go in `tests/testing.md` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Canonical test IDs.** Every test must be annotated with the ID(s) from `tests/testing.md` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
-- **Locale data lives in `locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all language implementations. Never edit generated locale files by hand.
+- **Locale data lives in `locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `just generate locales` to regenerate all language implementations. Never edit generated locale files by hand.
+- **Generated locale files and docs must be current.** Run `just generate locales` after editing `locales/*.json`. `just check` verifies this in CI.
+- **Markdown tables must be aligned.** Run `just maintain docs` after editing any documentation tables. `just check` verifies alignment in CI.
 - **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON.
 - **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
 
@@ -83,7 +85,7 @@ Core files per language follow a consistent pattern:
 - Zero warnings in CI. When suppressing a lint, document why.
 - Don't add comments that restate the code. Comments should explain "why", not "what."
 - Locale data files will have long lines — that's expected.
-- Markdown tables must be column-aligned with spaces so pipe delimiters line up vertically in raw text.
+- Markdown tables must be column-aligned with spaces so pipe delimiters line up vertically in raw text. Run `just maintain docs` to fix alignment automatically.
 - Language-specific build artifacts (e.g., `_build/`, `dist-newstyle/`, `build/`) go in `src/.gitignore`, not the root `.gitignore`. The root `.gitignore` is for cross-language patterns only (e.g., `__pycache__/`, `.logs/`).
 
 ## Adding a new locale
@@ -92,7 +94,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Sum
 
 1. Identify the CLDR plural rule — one of the 23 existing rules covers every CLDR cardinal pattern
 2. Create `locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
-3. Run `python -m codegen.generate` — generates locale files in all languages
+3. Run `just generate locales` — generates locale files and docs in all languages
 4. Run `just test && just lint` to verify
 5. Optionally add locale-specific test cases to `tests/testing.md`
 
@@ -110,7 +112,7 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 8. Update bootstrap scripts (`Dockerfile`, `scripts/bootstrap-macos.sh`, `scripts/bootstrap-linux.sh`)
 9. Create `src/<lang>/README.md` with a `## License` section linking to `LICENSE.md`
 10. Update cross-language doc tables (keep rows sorted alphabetically; don't hardcode counts in prose — update only the `CLAUDE.md` project description)
-11. Verify: `just generate && just check && just test && just lint`
+11. Verify: `just generate locales && just check && just test && just lint`
 
 ## Commit conventions
 

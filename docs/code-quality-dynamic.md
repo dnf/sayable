@@ -16,16 +16,16 @@ TypeScript's `"strict": true` is the baseline — it enables `strictNullChecks`,
 `noImplicitAny`, `strictFunctionTypes`, and several others. On top of that, we
 enable seven additional flags:
 
-| Flag | Why |
-|------|-----|
-| `noUncheckedIndexedAccess` | Array element access (`arr[i]`) returns `T \| undefined` instead of `T`. This caught a real bug: `.split('-').map(Number)` destructuring assumed exactly 3 elements. The fix uses explicit indexed access with `?? 0` defaults. |
-| `noFallthroughCasesInSwitch` | Prevents accidental case fallthrough. Free safety with no false positives. |
-| `exactOptionalPropertyTypes` | Distinguishes `{ x?: string }` (missing) from `{ x: string \| undefined }` (present but undefined). Catches subtle bugs in locale override merging. |
-| `noImplicitOverride` | Requires `override` keyword. Not currently triggered (no class inheritance) but prevents future mistakes. |
-| `noPropertyAccessFromIndexSignature` | Forces bracket notation for index signatures, making dynamic access explicit. |
-| `forceConsistentCasingInFileNames` | Prevents import path casing mismatches between macOS (case-insensitive) and Linux CI (case-sensitive). |
-| `isolatedModules` | Ensures every file can be transpiled independently, which is required by esbuild/swc bundlers. |
-| `verbatimModuleSyntax` | Requires `import type` for type-only imports. Makes the type/value boundary explicit and enables better tree-shaking. |
+| Flag                                 | Why                                                                                                                                                                                                                             |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `noUncheckedIndexedAccess`           | Array element access (`arr[i]`) returns `T \| undefined` instead of `T`. This caught a real bug: `.split('-').map(Number)` destructuring assumed exactly 3 elements. The fix uses explicit indexed access with `?? 0` defaults. |
+| `noFallthroughCasesInSwitch`         | Prevents accidental case fallthrough. Free safety with no false positives.                                                                                                                                                      |
+| `exactOptionalPropertyTypes`         | Distinguishes `{ x?: string }` (missing) from `{ x: string \| undefined }` (present but undefined). Catches subtle bugs in locale override merging.                                                                             |
+| `noImplicitOverride`                 | Requires `override` keyword. Not currently triggered (no class inheritance) but prevents future mistakes.                                                                                                                       |
+| `noPropertyAccessFromIndexSignature` | Forces bracket notation for index signatures, making dynamic access explicit.                                                                                                                                                   |
+| `forceConsistentCasingInFileNames`   | Prevents import path casing mismatches between macOS (case-insensitive) and Linux CI (case-sensitive).                                                                                                                          |
+| `isolatedModules`                    | Ensures every file can be transpiled independently, which is required by esbuild/swc bundlers.                                                                                                                                  |
+| `verbatimModuleSyntax`               | Requires `import type` for type-only imports. Makes the type/value boundary explicit and enables better tree-shaking.                                                                                                           |
 
 ### ESLint (eslint.config.js)
 
@@ -69,26 +69,26 @@ class-level `static readonly` constants which sometimes use UPPER_CASE.
 ruff replaces flake8, isort, pyupgrade, and several flake8 plugins in a single
 fast tool. We enable 11 rule categories:
 
-| Code | Plugin | Why |
-|------|--------|-----|
-| E, W | pycodestyle | Standard PEP 8 style (whitespace, indentation, line length). |
-| F | pyflakes | Unused imports, undefined names, redefined variables. |
-| I | isort | Import ordering. Deterministic, zero-effort. |
-| N | pep8-naming | Class/function/variable naming conventions. |
-| UP | pyupgrade | Flags Python 2 idioms and pre-3.10 patterns. Keeps code modern. |
-| B | flake8-bugbear | Catches common bugs: mutable default arguments, `assert` in production, `except Exception`. |
-| A | flake8-builtins | Prevents shadowing built-in names (`list`, `type`, `id`). |
-| SIM | flake8-simplify | Suggests cleaner alternatives (e.g., `x if cond else y`). |
-| TCH | flake8-type-checking | Moves type-only imports into `TYPE_CHECKING` blocks, reducing runtime import cost. |
-| RUF | ruff-specific | Ruff's own rules for ambiguous Unicode, `__all__` sorting, etc. |
+| Code | Plugin               | Why                                                                                         |
+| ---- | -------------------- | ------------------------------------------------------------------------------------------- |
+| E, W | pycodestyle          | Standard PEP 8 style (whitespace, indentation, line length).                                |
+| F    | pyflakes             | Unused imports, undefined names, redefined variables.                                       |
+| I    | isort                | Import ordering. Deterministic, zero-effort.                                                |
+| N    | pep8-naming          | Class/function/variable naming conventions.                                                 |
+| UP   | pyupgrade            | Flags Python 2 idioms and pre-3.10 patterns. Keeps code modern.                             |
+| B    | flake8-bugbear       | Catches common bugs: mutable default arguments, `assert` in production, `except Exception`. |
+| A    | flake8-builtins      | Prevents shadowing built-in names (`list`, `type`, `id`).                                   |
+| SIM  | flake8-simplify      | Suggests cleaner alternatives (e.g., `x if cond else y`).                                   |
+| TCH  | flake8-type-checking | Moves type-only imports into `TYPE_CHECKING` blocks, reducing runtime import cost.          |
+| RUF  | ruff-specific        | Ruff's own rules for ambiguous Unicode, `__all__` sorting, etc.                             |
 
 **Suppressed rules:**
 
-| Rule | Reason |
-|------|--------|
-| RUF001 | Ambiguous Unicode characters (Cyrillic "а" vs Latin "a"). Expected in i18n locale strings with 71 languages. |
-| RUF003 | Ambiguous Unicode in comments. We use EN DASH (–) in doc comments for readability. |
-| SIM108 | Ternary expression suggestions. `if isinstance(x, str): ... else: ...` is more readable than a ternary when the branches are complex. |
+| Rule                     | Reason                                                                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RUF001                   | Ambiguous Unicode characters (Cyrillic "а" vs Latin "a"). Expected in i18n locale strings with 71 languages.                                      |
+| RUF003                   | Ambiguous Unicode in comments. We use EN DASH (–) in doc comments for readability.                                                                |
+| SIM108                   | Ternary expression suggestions. `if isinstance(x, str): ... else: ...` is more readable than a ternary when the branches are complex.             |
 | E501 (locale files only) | Long lines in locale data are unavoidable — a single `PluralUnit({"one": "...", "other": "...", "few": "..."})` call naturally exceeds 120 chars. |
 
 ### pyright
@@ -151,12 +151,12 @@ actual mistakes while respecting Ruby's expressive idioms.
 
 **Style choices:**
 
-| Cop | Setting | Reason |
-|-----|---------|--------|
-| `FrozenStringLiteralComment` | Enabled | Enforces `# frozen_string_literal: true` on every file. Immutable strings are faster and catch accidental mutation bugs. Required for Ruby 4.0 compatibility. |
-| `Documentation` | Excluded for core files | Locale data files, formatter internals, and test files don't benefit from class-level documentation comments. The public API is documented in the README. |
-| `HashSyntax` | `EnforcedShorthandSyntax: either` | Allows both `{ key: value }` and `{ key => value }` syntax. Locale data uses symbol keys with hash rockets for visual alignment. |
-| `OneClassPerFile` | Excluded for tests | Minitest pattern uses multiple test classes per file, organized by feature. |
+| Cop                          | Setting                           | Reason                                                                                                                                                        |
+| ---------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `FrozenStringLiteralComment` | Enabled                           | Enforces `# frozen_string_literal: true` on every file. Immutable strings are faster and catch accidental mutation bugs. Required for Ruby 4.0 compatibility. |
+| `Documentation`              | Excluded for core files           | Locale data files, formatter internals, and test files don't benefit from class-level documentation comments. The public API is documented in the README.     |
+| `HashSyntax`                 | `EnforcedShorthandSyntax: either` | Allows both `{ key: value }` and `{ key => value }` syntax. Locale data uses symbol keys with hash rockets for visual alignment.                              |
+| `OneClassPerFile`            | Excluded for tests                | Minitest pattern uses multiple test classes per file, organized by feature.                                                                                   |
 
 **Metrics thresholds:**
 
@@ -165,12 +165,12 @@ age tiers with locale-aware formatting, plural resolution, and half-marker
 substitution. Rather than breaking it into tiny methods that would be harder to
 follow, we raise the limits:
 
-| Metric | Default | Our setting | Justification |
-|--------|---------|-------------|---------------|
-| `AbcSize` | 17 | 45 | The formatter does many assignments and branches but follows a linear flow. |
-| `CyclomaticComplexity` | 7 | 20 | Seven age tiers = seven branches + subbranches for plural/half logic. |
-| `PerceivedComplexity` | 8 | 20 | Same as cyclomatic — the tiers are simple individually. |
-| `MethodLength` | 10 | 30 | The formatter method is ~25 lines. Breaking it up would scatter the tier logic. |
+| Metric                 | Default | Our setting | Justification                                                                   |
+| ---------------------- | ------- | ----------- | ------------------------------------------------------------------------------- |
+| `AbcSize`              | 17      | 45          | The formatter does many assignments and branches but follows a linear flow.     |
+| `CyclomaticComplexity` | 7       | 20          | Seven age tiers = seven branches + subbranches for plural/half logic.           |
+| `PerceivedComplexity`  | 8       | 20          | Same as cyclomatic — the tiers are simple individually.                         |
+| `MethodLength`         | 10      | 30          | The formatter method is ~25 lines. Breaking it up would scatter the tier logic. |
 
 **Special case:**
 

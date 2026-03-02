@@ -23,12 +23,12 @@ many:  n % 100 = 11..99
 other: (everything else — n ≥ 100 where n%100 ∈ {0,1,2})
 ```
 
-| Unit | zero | one | two | few | many | other |
-|------|------|-----|-----|-----|------|-------|
-| day | 0 يوم | يوم | يومان | {n} أيام | {n} يومًا | {n} يوم |
-| week | 0 أسبوع | أسبوع | أسبوعان | {n} أسابيع | {n} أسبوعًا | {n} أسبوع |
-| month | 0 شهر | شهر | شهران | {n} أشهر | {n} شهرًا | {n} شهر |
-| year | 0 سنة | سنة | سنتان | {n} سنوات | {n} سنة | {n} سنة |
+| Unit  | zero    | one   | two     | few        | many        | other     |
+| ----- | ------- | ----- | ------- | ---------- | ----------- | --------- |
+| day   | 0 يوم   | يوم   | يومان   | {n} أيام   | {n} يومًا   | {n} يوم   |
+| week  | 0 أسبوع | أسبوع | أسبوعان | {n} أسابيع | {n} أسبوعًا | {n} أسبوع |
+| month | 0 شهر   | شهر   | شهران   | {n} أشهر   | {n} شهرًا   | {n} شهر   |
+| year  | 0 سنة   | سنة   | سنتان   | {n} سنوات  | {n} سنة     | {n} سنة   |
 
 **Key features:**
 - **Dual form** (`two`): Arabic has a grammatical dual number. "2 days" =
@@ -62,23 +62,23 @@ these numbers historically used a different grammatical construction.
 
 ### Bosnian (`bs`)
 
-| Unit | one | few | other |
-|------|-----|-----|-------|
-| day | 1 dan | {n} dana | {n} dana |
-| week | 1 sedmica | {n} sedmice | {n} sedmica |
-| month | 1 mjesec | {n} mjeseca | {n} mjeseci |
-| year | 1 godina | {n} godine | {n} godina |
+| Unit  | one       | few         | other       |
+| ----- | --------- | ----------- | ----------- |
+| day   | 1 dan     | {n} dana    | {n} dana    |
+| week  | 1 sedmica | {n} sedmice | {n} sedmica |
+| month | 1 mjesec  | {n} mjeseca | {n} mjeseci |
+| year  | 1 godina  | {n} godine  | {n} godina  |
 
 **Half:** `{0} i po` — "3 godine i po".
 
 ### Croatian (`hr`)
 
-| Unit | one | few | other |
-|------|-----|-----|-------|
-| day | 1 dan | {n} dana | {n} dana |
-| week | 1 tjedan | {n} tjedna | {n} tjedana |
+| Unit  | one      | few         | other       |
+| ----- | -------- | ----------- | ----------- |
+| day   | 1 dan    | {n} dana    | {n} dana    |
+| week  | 1 tjedan | {n} tjedna  | {n} tjedana |
 | month | 1 mjesec | {n} mjeseca | {n} mjeseci |
-| year | 1 godina | {n} godine | {n} godina |
+| year  | 1 godina | {n} godine  | {n} godina  |
 
 **Half:** `{0} i pol` — "3 godine i pol".
 
@@ -90,12 +90,12 @@ vocabulary for some common words.
 
 Written in Cyrillic script.
 
-| Unit | one | few | other |
-|------|-----|-----|-------|
-| day | 1 дан | {n} дана | {n} дана |
-| week | 1 недеља | {n} недеље | {n} недеља |
-| month | 1 месец | {n} месеца | {n} месеци |
-| year | 1 година | {n} године | {n} година |
+| Unit  | one      | few        | other      |
+| ----- | -------- | ---------- | ---------- |
+| day   | 1 дан    | {n} дана   | {n} дана   |
+| week  | 1 недеља | {n} недеље | {n} недеља |
+| month | 1 месец  | {n} месеца | {n} месеци |
+| year  | 1 година | {n} године | {n} година |
 
 **Half:** `{0} и по` — "3 године и по".
 
@@ -120,12 +120,12 @@ this category is unreachable and not implemented.
 
 ### Czech (`cs`)
 
-| Unit | one | few | other |
-|------|-----|-----|-------|
-| day | 1 den | {n} dny | {n} dní |
-| week | 1 týden | {n} týdny | {n} týdnů |
+| Unit  | one     | few        | other      |
+| ----- | ------- | ---------- | ---------- |
+| day   | 1 den   | {n} dny    | {n} dní    |
+| week  | 1 týden | {n} týdny  | {n} týdnů  |
 | month | 1 měsíc | {n} měsíce | {n} měsíců |
-| year | 1 rok | {n} roky | {n} let |
+| year  | 1 rok   | {n} roky   | {n} let    |
 
 **Half:** `{n}½` — "3½ let".
 
@@ -135,12 +135,12 @@ form unrelated to the singular "rok". This is similar to how Russian uses
 
 ### Slovak (`sk`)
 
-| Unit | one | few | other |
-|------|-----|-----|-------|
-| day | 1 deň | {n} dni | {n} dní |
-| week | 1 týždeň | {n} týždne | {n} týždňov |
+| Unit  | one      | few         | other        |
+| ----- | -------- | ----------- | ------------ |
+| day   | 1 deň    | {n} dni     | {n} dní      |
+| week  | 1 týždeň | {n} týždne  | {n} týždňov  |
 | month | 1 mesiac | {n} mesiace | {n} mesiacov |
-| year | 1 rok | {n} roky | {n} rokov |
+| year  | 1 rok    | {n} roky    | {n} rokov    |
 
 **Half:** `{n}½` — "3½ rokov".
 
@@ -164,12 +164,12 @@ The implementation returns `'many'` as the default, which is functionally correc
 
 ### Russian (`ru`)
 
-| Unit | one | few | many |
-|------|-----|-----|------|
-| day | 1 день | {n} дня | {n} дней |
-| week | 1 неделя | {n} недели | {n} недель |
-| month | 1 месяц | {n} месяца | {n} месяцев |
-| year | 1 год | {n} года | {n} лет |
+| Unit  | one      | few        | many        |
+| ----- | -------- | ---------- | ----------- |
+| day   | 1 день   | {n} дня    | {n} дней    |
+| week  | 1 неделя | {n} недели | {n} недель  |
+| month | 1 месяц  | {n} месяца | {n} месяцев |
+| year  | 1 год    | {n} года   | {n} лет     |
 
 **Half:** `{n} с половиной` — "3 с половиной года".
 
@@ -179,12 +179,12 @@ The implementation returns `'many'` as the default, which is functionally correc
 
 ### Ukrainian (`uk`)
 
-| Unit | one | few | many |
-|------|-----|-----|------|
-| day | 1 день | {n} дні | {n} днів |
-| week | 1 тиждень | {n} тижні | {n} тижнів |
-| month | 1 місяць | {n} місяці | {n} місяців |
-| year | 1 рік | {n} роки | {n} років |
+| Unit  | one       | few        | many        |
+| ----- | --------- | ---------- | ----------- |
+| day   | 1 день    | {n} дні    | {n} днів    |
+| week  | 1 тиждень | {n} тижні  | {n} тижнів  |
+| month | 1 місяць  | {n} місяці | {n} місяців |
+| year  | 1 рік     | {n} роки   | {n} років   |
 
 **Half:** `{n} з половиною` — "3 з половиною роки".
 
@@ -202,12 +202,12 @@ few:   i % 10 = 2..4 and i % 100 ∉ 12..14
 many:  (everything else)
 ```
 
-| Unit | one | few | many |
-|------|-----|-----|------|
-| day | 1 dzień | {n} dni | {n} dni |
-| week | 1 tydzień | {n} tygodnie | {n} tygodni |
+| Unit  | one       | few          | many         |
+| ----- | --------- | ------------ | ------------ |
+| day   | 1 dzień   | {n} dni      | {n} dni      |
+| week  | 1 tydzień | {n} tygodnie | {n} tygodni  |
 | month | 1 miesiąc | {n} miesiące | {n} miesięcy |
-| year | 1 rok | {n} lata | {n} lat |
+| year  | 1 rok     | {n} lata     | {n} lat      |
 
 **Half:** `{n} i pół` — "3 i pół roku".
 
@@ -228,12 +228,12 @@ few:   n % 10 = 2..9 and n % 100 ∉ 11..19
 other: (everything else — n%10 = 0, or n%100 ∈ 10..19)
 ```
 
-| Unit | one | few | other |
-|------|-----|-----|-------|
-| day | 1 diena | {n} dienos | {n} dienų |
-| week | 1 savaitė | {n} savaitės | {n} savaičių |
-| month | 1 mėnuo | {n} mėnesiai | {n} mėnesių |
-| year | 1 metai | {n} metai | {n} metų |
+| Unit  | one       | few          | other        |
+| ----- | --------- | ------------ | ------------ |
+| day   | 1 diena   | {n} dienos   | {n} dienų    |
+| week  | 1 savaitė | {n} savaitės | {n} savaičių |
+| month | 1 mėnuo   | {n} mėnesiai | {n} mėnesių  |
+| year  | 1 metai   | {n} metai    | {n} metų     |
 
 **Half:** `{n}½` — "3½ metų".
 
@@ -260,12 +260,12 @@ one:   n % 10 = 1 and n % 100 ≠ 11
 other: (everything else — n%10 = 2..9 except teens)
 ```
 
-| Unit | zero | one | other |
-|------|------|-----|-------|
-| day | {n} dienu | 1 diena | {n} dienas |
-| week | {n} nedēļu | 1 nedēļa | {n} nedēļas |
-| month | {n} mēnešu | 1 mēnesis | {n} mēneši |
-| year | {n} gadu | 1 gads | {n} gadi |
+| Unit  | zero       | one       | other       |
+| ----- | ---------- | --------- | ----------- |
+| day   | {n} dienu  | 1 diena   | {n} dienas  |
+| week  | {n} nedēļu | 1 nedēļa  | {n} nedēļas |
+| month | {n} mēnešu | 1 mēnesis | {n} mēneši  |
+| year  | {n} gadu   | 1 gads    | {n} gadi    |
 
 **Half:** `{n}½` — "3½ gadi".
 
@@ -294,12 +294,12 @@ few:   n = 0 or (n ≠ 1 and n % 100 = 1..19)
 other: (everything else — n % 100 ≥ 20 and n % 100 = 0)
 ```
 
-| Unit | one | few | other |
-|------|-----|-----|-------|
-| day | 1 zi | {n} zile | {n} de zile |
-| week | 1 săptămână | {n} săptămâni | {n} de săptămâni |
-| month | 1 lună | {n} luni | {n} de luni |
-| year | 1 an | {n} ani | {n} de ani |
+| Unit  | one         | few           | other            |
+| ----- | ----------- | ------------- | ---------------- |
+| day   | 1 zi        | {n} zile      | {n} de zile      |
+| week  | 1 săptămână | {n} săptămâni | {n} de săptămâni |
+| month | 1 lună      | {n} luni      | {n} de luni      |
+| year  | 1 an        | {n} ani       | {n} de ani       |
 
 **Half:** `{0} și jumătate` — "3 ani și jumătate".
 
@@ -326,12 +326,12 @@ few:   i % 100 = 3..4
 other: (everything else)
 ```
 
-| Unit | one | two | few | other |
-|------|-----|-----|-----|-------|
-| day | 1 dan | {n} dneva | {n} dni | {n} dni |
-| week | 1 teden | {n} tedna | {n} tedne | {n} tednov |
+| Unit  | one     | two        | few        | other       |
+| ----- | ------- | ---------- | ---------- | ----------- |
+| day   | 1 dan   | {n} dneva  | {n} dni    | {n} dni     |
+| week  | 1 teden | {n} tedna  | {n} tedne  | {n} tednov  |
 | month | 1 mesec | {n} meseca | {n} mesece | {n} mesecev |
-| year | 1 leto | {n} leti | {n} leta | {n} let |
+| year  | 1 leto  | {n} leti   | {n} leta   | {n} let     |
 
 **Half:** `{0} in pol` — "3 leta in pol".
 

@@ -19,12 +19,12 @@ form based on count. The CLDR defines only the `other` category.
 Japanese uses counter words (助数詞) rather than plural inflection. The unit
 suffixes are single strings, not plural-form maps:
 
-| Unit | Form | Example |
-|------|------|---------|
-| day | `{n}日` | 5日 |
-| week | `{n}週` | 2週 |
-| month | `{n}ヶ月` | 6ヶ月 |
-| year | `{n}歳` | 3歳 |
+| Unit  | Form    | Example |
+| ----- | ------- | ------- |
+| day   | `{n}日`  | 5日      |
+| week  | `{n}週`  | 2週      |
+| month | `{n}ヶ月` | 6ヶ月     |
+| year  | `{n}歳`  | 3歳      |
 
 **Half marker:** `{0}半` (postfix) — "3歳半" (3 and a half years old).
 
@@ -39,12 +39,12 @@ suffixes are single strings, not plural-form maps:
 
 Korean does not inflect nouns for number. Like Japanese, it uses counters.
 
-| Unit | Form | Example |
-|------|------|---------|
-| day | `{n}일` | 5일 |
-| week | `{n}주` | 2주 |
-| month | `{n}개월` | 6개월 |
-| year | `{n}살` | 3살 |
+| Unit  | Form    | Example |
+| ----- | ------- | ------- |
+| day   | `{n}일`  | 5일      |
+| week  | `{n}주`  | 2주      |
+| month | `{n}개월` | 6개월     |
+| year  | `{n}살`  | 3살      |
 
 **Half marker:** `{0} 반` — "3살 반" (3 and a half years old).
 
@@ -60,12 +60,12 @@ used in formal/medical contexts but `살` is what parents say.
 Chinese (Simplified) has no plural morphology. Measure words serve a similar
 role to Japanese counters.
 
-| Unit | Form | Example |
-|------|------|---------|
-| day | `{n}天` | 5天 |
-| week | `{n}周` | 2周 |
-| month | `{n}个月` | 6个月 |
-| year | `{n}岁` | 3岁 |
+| Unit  | Form    | Example |
+| ----- | ------- | ------- |
+| day   | `{n}天`  | 5天      |
+| week  | `{n}周`  | 2周      |
+| month | `{n}个月` | 6个月     |
+| year  | `{n}岁`  | 3岁      |
 
 **Half marker:** `{0}半` (postfix) — "3岁半".
 
@@ -80,12 +80,12 @@ role to Japanese counters.
 Thai has no plural forms. Classifiers are used with numerals but the noun
 itself does not change.
 
-| Unit | Form | Example |
-|------|------|---------|
-| day | `{n} วัน` | 5 วัน |
-| week | `{n} สัปดาห์` | 2 สัปดาห์ |
-| month | `{n} เดือน` | 6 เดือน |
-| year | `{n} ปี` | 3 ปี |
+| Unit  | Form          | Example   |
+| ----- | ------------- | --------- |
+| day   | `{n} วัน`     | 5 วัน     |
+| week  | `{n} สัปดาห์` | 2 สัปดาห์ |
+| month | `{n} เดือน`   | 6 เดือน   |
+| year  | `{n} ปี`      | 3 ปี      |
 
 **Half marker:** `{0}ครึ่ง` (postfix, no space) — "3 ปีครึ่ง".
 
@@ -95,12 +95,12 @@ itself does not change.
 
 Vietnamese is an analytic language with no inflectional morphology.
 
-| Unit | Form | Example |
-|------|------|---------|
-| day | `{n} ngày` | 5 ngày |
-| week | `{n} tuần` | 2 tuần |
+| Unit  | Form        | Example |
+| ----- | ----------- | ------- |
+| day   | `{n} ngày`  | 5 ngày  |
+| week  | `{n} tuần`  | 2 tuần  |
 | month | `{n} tháng` | 6 tháng |
-| year | `{n} tuổi` | 3 tuổi |
+| year  | `{n} tuổi`  | 3 tuổi  |
 
 **Half marker:** `{0} rưỡi` — "3 tuổi rưỡi".
 
@@ -115,12 +115,12 @@ Malay does not mark grammatical number on nouns. Reduplication (e.g.,
 *hari-hari*) expresses plurality in some contexts but is not used with
 numerals.
 
-| Unit | Form | Example |
-|------|------|---------|
-| day | `{n} hari` | 5 hari |
-| week | `{n} minggu` | 2 minggu |
-| month | `{n} bulan` | 6 bulan |
-| year | `{n} tahun` | 3 tahun |
+| Unit  | Form         | Example  |
+| ----- | ------------ | -------- |
+| day   | `{n} hari`   | 5 hari   |
+| week  | `{n} minggu` | 2 minggu |
+| month | `{n} bulan`  | 6 bulan  |
+| year  | `{n} tahun`  | 3 tahun  |
 
 **Half marker:** `{0} setengah` — "3 tahun setengah".
 
@@ -132,12 +132,12 @@ Javanese, like Malay, does not mark plural on nouns. The language uses a
 complex system of speech levels (ngoko, madya, krama) but none affect
 number agreement.
 
-| Unit | Form | Example |
-|------|------|---------|
-| day | `{n} dino` | 5 dino |
-| week | `{n} minggu` | 2 minggu |
-| month | `{n} sasi` | 6 sasi |
-| year | `{n} taun` | 3 taun |
+| Unit  | Form         | Example  |
+| ----- | ------------ | -------- |
+| day   | `{n} dino`   | 5 dino   |
+| week  | `{n} minggu` | 2 minggu |
+| month | `{n} sasi`   | 6 sasi   |
+| year  | `{n} taun`   | 3 taun   |
 
 **Half marker:** `{0} setengah` — "3 taun setengah".
 

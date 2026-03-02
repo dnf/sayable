@@ -17,12 +17,12 @@ across world languages.
 
 ### English (`en`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 day | {n} days |
-| week | 1 week | {n} weeks |
+| Unit  | one     | other      |
+| ----- | ------- | ---------- |
+| day   | 1 day   | {n} days   |
+| week  | 1 week  | {n} weeks  |
 | month | 1 month | {n} months |
-| year | 1 year | {n} years |
+| year  | 1 year  | {n} years  |
 
 **Half:** `{n}½` — "3½ years". Uses Unicode ½ (U+00BD).
 
@@ -35,23 +35,23 @@ across world languages.
 
 ### German (`de`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 Tag | {n} Tage |
-| week | 1 Woche | {n} Wochen |
+| Unit  | one     | other      |
+| ----- | ------- | ---------- |
+| day   | 1 Tag   | {n} Tage   |
+| week  | 1 Woche | {n} Wochen |
 | month | 1 Monat | {n} Monate |
-| year | 1 Jahr | {n} Jahre |
+| year  | 1 Jahr  | {n} Jahre  |
 
 **Half:** `{n}½` — "3½ Jahre".
 
 ### Spanish (`es`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 día | {n} días |
-| week | 1 semana | {n} semanas |
-| month | 1 mes | {n} meses |
-| year | 1 año | {n} años |
+| Unit  | one      | other       |
+| ----- | -------- | ----------- |
+| day   | 1 día    | {n} días    |
+| week  | 1 semana | {n} semanas |
+| month | 1 mes    | {n} meses   |
+| year  | 1 año    | {n} años    |
 
 **Half:** `{n} y medio` — "3 y medio años".
 
@@ -61,34 +61,34 @@ notation (1 million → "1M"). Since parent-time only uses integer counts, the
 
 ### Italian (`it`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 giorno | {n} giorni |
-| week | 1 settimana | {n} settimane |
-| month | 1 mese | {n} mesi |
-| year | 1 anno | {n} anni |
+| Unit  | one         | other         |
+| ----- | ----------- | ------------- |
+| day   | 1 giorno    | {n} giorni    |
+| week  | 1 settimana | {n} settimane |
+| month | 1 mese      | {n} mesi      |
+| year  | 1 anno      | {n} anni      |
 
 **Half:** `{0} e mezzo` — "3 anni e mezzo".
 
 ### Catalan (`ca`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 dia | {n} dies |
-| week | 1 setmana | {n} setmanes |
-| month | 1 mes | {n} mesos |
-| year | 1 any | {n} anys |
+| Unit  | one       | other        |
+| ----- | --------- | ------------ |
+| day   | 1 dia     | {n} dies     |
+| week  | 1 setmana | {n} setmanes |
+| month | 1 mes     | {n} mesos    |
+| year  | 1 any     | {n} anys     |
 
 **Half:** `{n} i mig` — "3 i mig anys".
 
 ### Dutch (`nl`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 dag | {n} dagen |
-| week | 1 week | {n} weken |
+| Unit  | one     | other       |
+| ----- | ------- | ----------- |
+| day   | 1 dag   | {n} dagen   |
+| week  | 1 week  | {n} weken   |
 | month | 1 maand | {n} maanden |
-| year | 1 jaar | {n} jaar |
+| year  | 1 jaar  | {n} jaar    |
 
 **Half:** `{n}½` — "3½ jaar".
 
@@ -96,23 +96,23 @@ notation (1 million → "1M"). Since parent-time only uses integer counts, the
 
 ### Swedish (`sv`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 dag | {n} dagar |
-| week | 1 vecka | {n} veckor |
+| Unit  | one     | other       |
+| ----- | ------- | ----------- |
+| day   | 1 dag   | {n} dagar   |
+| week  | 1 vecka | {n} veckor  |
 | month | 1 månad | {n} månader |
-| year | 1 år | {n} år |
+| year  | 1 år    | {n} år      |
 
 **Half:** `{n}½` — "3½ år".
 
 ### Danish (`da`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 dag | {n} dage |
-| week | 1 uge | {n} uger |
+| Unit  | one     | other       |
+| ----- | ------- | ----------- |
+| day   | 1 dag   | {n} dage    |
+| week  | 1 uge   | {n} uger    |
 | month | 1 måned | {n} måneder |
-| year | 1 år | {n} år |
+| year  | 1 år    | {n} år      |
 
 **Half:** `{n}½` — "3½ år".
 
@@ -122,23 +122,23 @@ integers, the rule simplifies to `n = 1`.
 
 ### Norwegian Bokmål (`nb`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 dag | {n} dager |
-| week | 1 uke | {n} uker |
+| Unit  | one     | other       |
+| ----- | ------- | ----------- |
+| day   | 1 dag   | {n} dager   |
+| week  | 1 uke   | {n} uker    |
 | month | 1 måned | {n} måneder |
-| year | 1 år | {n} år |
+| year  | 1 år    | {n} år      |
 
 **Half:** `{n}½` — "3½ år".
 
 ### Finnish (`fi`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 päivä | {n} päivää |
-| week | 1 viikko | {n} viikkoa |
+| Unit  | one        | other         |
+| ----- | ---------- | ------------- |
+| day   | 1 päivä    | {n} päivää    |
+| week  | 1 viikko   | {n} viikkoa   |
 | month | 1 kuukausi | {n} kuukautta |
-| year | 1 vuosi | {n} vuotta |
+| year  | 1 vuosi    | {n} vuotta    |
 
 **Half:** `{n} ja puoli` — "3 ja puoli vuotta".
 
@@ -147,12 +147,12 @@ integers, the rule simplifies to `n = 1`.
 
 ### Estonian (`et`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 päev | {n} päeva |
-| week | 1 nädal | {n} nädalat |
-| month | 1 kuu | {n} kuud |
-| year | 1 aasta | {n} aastat |
+| Unit  | one     | other       |
+| ----- | ------- | ----------- |
+| day   | 1 päev  | {n} päeva   |
+| week  | 1 nädal | {n} nädalat |
+| month | 1 kuu   | {n} kuud    |
+| year  | 1 aasta | {n} aastat  |
 
 **Half:** `{n}½` — "3½ aastat".
 
@@ -160,34 +160,34 @@ integers, the rule simplifies to `n = 1`.
 
 ### Greek (`el`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 μέρα | {n} μέρες |
-| week | 1 εβδομάδα | {n} εβδομάδες |
-| month | 1 μήνας | {n} μήνες |
-| year | 1 χρόνος | {n} χρόνια |
+| Unit  | one        | other         |
+| ----- | ---------- | ------------- |
+| day   | 1 μέρα     | {n} μέρες     |
+| week  | 1 εβδομάδα | {n} εβδομάδες |
+| month | 1 μήνας    | {n} μήνες     |
+| year  | 1 χρόνος   | {n} χρόνια    |
 
 **Half:** `{0} και μισό` — "3 χρόνια και μισό".
 
 ### Bulgarian (`bg`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 ден | {n} дни |
-| week | 1 седмица | {n} седмици |
-| month | 1 месец | {n} месеца |
-| year | 1 година | {n} години |
+| Unit  | one       | other       |
+| ----- | --------- | ----------- |
+| day   | 1 ден     | {n} дни     |
+| week  | 1 седмица | {n} седмици |
+| month | 1 месец   | {n} месеца  |
+| year  | 1 година  | {n} години  |
 
 **Half:** `{0} и половина` — "3 години и половина".
 
 ### Albanian (`sq`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 ditë | {n} ditë |
-| week | 1 javë | {n} javë |
+| Unit  | one    | other    |
+| ----- | ------ | -------- |
+| day   | 1 ditë | {n} ditë |
+| week  | 1 javë | {n} javë |
 | month | 1 muaj | {n} muaj |
-| year | 1 vit | {n} vjet |
+| year  | 1 vit  | {n} vjet |
 
 **Half:** `{0} e gjysmë` — "3 vjet e gjysmë".
 
@@ -196,12 +196,12 @@ integers, the rule simplifies to `n = 1`.
 
 ### Turkish (`tr`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 gün | {n} gün |
-| week | 1 hafta | {n} hafta |
-| month | 1 ay | {n} ay |
-| year | 1 yaş | {n} yaş |
+| Unit  | one     | other     |
+| ----- | ------- | --------- |
+| day   | 1 gün   | {n} gün   |
+| week  | 1 hafta | {n} hafta |
+| month | 1 ay    | {n} ay    |
+| year  | 1 yaş   | {n} yaş   |
 
 **Half:** `{n} buçuk` — "3 buçuk yaş".
 
@@ -211,12 +211,12 @@ still implemented for correctness, but it produces the same output.
 
 ### Tamil (`ta`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 நாள் | {n} நாட்கள் |
-| week | 1 வாரம் | {n} வாரங்கள் |
+| Unit  | one     | other        |
+| ----- | ------- | ------------ |
+| day   | 1 நாள்  | {n} நாட்கள்  |
+| week  | 1 வாரம் | {n} வாரங்கள் |
 | month | 1 மாதம் | {n} மாதங்கள் |
-| year | 1 வயது | {n} வயது |
+| year  | 1 வயது  | {n} வயது     |
 
 **Half:** `{0}ரை` (suffix) — "3 வயதுரை".
 
@@ -224,23 +224,23 @@ still implemented for correctness, but it produces the same output.
 
 ### Telugu (`te`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 రోజు | {n} రోజులు |
-| week | 1 వారం | {n} వారాలు |
-| month | 1 నెల | {n} నెలలు |
-| year | 1 సంవత్సరం | {n} సంవత్సరాలు |
+| Unit  | one        | other          |
+| ----- | ---------- | -------------- |
+| day   | 1 రోజు     | {n} రోజులు     |
+| week  | 1 వారం     | {n} వారాలు     |
+| month | 1 నెల      | {n} నెలలు      |
+| year  | 1 సంవత్సరం | {n} సంవత్సరాలు |
 
 **Half:** `{0}న్నర` (suffix) — "3 సంవత్సరాలున్నర".
 
 ### Marathi (`mr`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 दिवस | {n} दिवस |
-| week | 1 आठवडा | {n} आठवडे |
+| Unit  | one     | other     |
+| ----- | ------- | --------- |
+| day   | 1 दिवस  | {n} दिवस  |
+| week  | 1 आठवडा | {n} आठवडे |
 | month | 1 महिना | {n} महिने |
-| year | 1 वर्ष | {n} वर्षे |
+| year  | 1 वर्ष  | {n} वर्षे |
 
 **Half:** `साडे {n}` (prefix) — "साडे 3 वर्षे".
 
@@ -249,12 +249,12 @@ n=1). This differs from other South Asian languages like Hindi and Bengali.
 
 ### Urdu (`ur`)
 
-| Unit | one | other |
-|------|-----|-------|
-| day | 1 دن | {n} دن |
-| week | 1 ہفتہ | {n} ہفتے |
+| Unit  | one     | other     |
+| ----- | ------- | --------- |
+| day   | 1 دن    | {n} دن    |
+| week  | 1 ہفتہ  | {n} ہفتے  |
 | month | 1 مہینہ | {n} مہینے |
-| year | 1 سال | {n} سال |
+| year  | 1 سال   | {n} سال   |
 
 **Half:** `ساڑھے {n}` (prefix) — "ساڑھے 3 سال".
 
@@ -274,12 +274,12 @@ n=0 and n=1; `other` for everything else.
 
 **CLDR rule:** `i = 0,1` — the `one` category covers integer values 0 and 1.
 
-| Unit | one | other |
-|------|-----|-------|
-| day | {n} jour | {n} jours |
-| week | {n} semaine | {n} semaines |
-| month | invariant: `{n} mois` | |
-| year | {n} an | {n} ans |
+| Unit  | one                   | other        |
+| ----- | --------------------- | ------------ |
+| day   | {n} jour              | {n} jours    |
+| week  | {n} semaine           | {n} semaines |
+| month | invariant: `{n} mois` |              |
+| year  | {n} an                | {n} ans      |
 
 **Half:** `{0} et demi` — "3 ans et demi".
 
@@ -290,12 +290,12 @@ plural. It uses a plain string template instead of a plural-form map.
 
 **CLDR rule:** `i = 0..1` — same as French, 0 and 1 are singular.
 
-| Unit | one | other |
-|------|-----|-------|
-| day | {n} dia | {n} dias |
-| week | {n} semana | {n} semanas |
-| month | {n} mês | {n} meses |
-| year | {n} ano | {n} anos |
+| Unit  | one        | other       |
+| ----- | ---------- | ----------- |
+| day   | {n} dia    | {n} dias    |
+| week  | {n} semana | {n} semanas |
+| month | {n} mês    | {n} meses   |
+| year  | {n} ano    | {n} anos    |
 
 **Half:** `{0} e meio` — "3 anos e meio".
 
@@ -308,12 +308,12 @@ because Brazil has a larger Portuguese-speaking population.
 
 **CLDR rule:** `i = 0 or n = 1` — 0 and 1 are both `one`.
 
-| Unit | one | other |
-|------|-----|-------|
-| day | {n} दिन | {n} दिन |
-| week | {n} सप्ताह | {n} सप्ताह |
-| month | {n} महीना | {n} महीने |
-| year | {n} साल | {n} साल |
+| Unit  | one        | other      |
+| ----- | ---------- | ---------- |
+| day   | {n} दिन    | {n} दिन    |
+| week  | {n} सप्ताह | {n} सप्ताह |
+| month | {n} महीना  | {n} महीने  |
+| year  | {n} साल    | {n} साल    |
 
 **Half:** `साढ़े {n}` (prefix) — "साढ़े 3 साल".
 
@@ -324,12 +324,12 @@ because Brazil has a larger Portuguese-speaking population.
 
 **CLDR rule:** `i = 0 or n = 1` — same as Hindi.
 
-| Unit | one | other |
-|------|-----|-------|
-| day | {n} দিন | {n} দিন |
-| week | {n} সপ্তাহ | {n} সপ্তাহ |
-| month | {n} মাস | {n} মাস |
-| year | {n} বছর | {n} বছর |
+| Unit  | one        | other      |
+| ----- | ---------- | ---------- |
+| day   | {n} দিন    | {n} দিন    |
+| week  | {n} সপ্তাহ | {n} সপ্তাহ |
+| month | {n} মাস    | {n} মাস    |
+| year  | {n} বছর    | {n} বছর    |
 
 **Half:** `সাড়ে {n}` (prefix) — "সাড়ে 3 বছর".
 
@@ -341,12 +341,12 @@ is still implemented for CLDR compliance.
 
 **CLDR rule:** `i = 0 or n = 1` — same as Hindi.
 
-| Unit | one | other |
-|------|-----|-------|
-| day | {n} દિવસ | {n} દિવસ |
-| week | {n} અઠવાડિયું | {n} અઠવાડિયા |
-| month | {n} મહિનો | {n} મહિના |
-| year | {n} વર્ષ | {n} વર્ષ |
+| Unit  | one           | other        |
+| ----- | ------------- | ------------ |
+| day   | {n} દિવસ      | {n} દિવસ     |
+| week  | {n} અઠવાડિયું | {n} અઠવાડિયા |
+| month | {n} મહિનો     | {n} મહિના    |
+| year  | {n} વર્ષ      | {n} વર્ષ     |
 
 **Half:** `સાડા {n}` (prefix) — "સાડા 3 વર્ષ".
 
@@ -354,12 +354,12 @@ is still implemented for CLDR compliance.
 
 **CLDR rule:** `i = 0 or n = 1` — same as Hindi.
 
-| Unit | one | other |
-|------|-----|-------|
-| day | {n} روز | {n} روز |
-| week | {n} هفته | {n} هفته |
-| month | {n} ماه | {n} ماه |
-| year | {n} سال | {n} سال |
+| Unit  | one      | other    |
+| ----- | -------- | -------- |
+| day   | {n} روز  | {n} روز  |
+| week  | {n} هفته | {n} هفته |
+| month | {n} ماه  | {n} ماه  |
+| year  | {n} سال  | {n} سال  |
 
 **Half:** `{0} و نیم` — "3 سال و نیم".
 
@@ -371,11 +371,11 @@ implemented for correctness.
 
 **CLDR rule:** `n = 0..1` — 0 and 1 are both `one`.
 
-| Unit | one | other |
-|------|-----|-------|
-| day | {n} ਦਿਨ | {n} ਦਿਨ |
-| week | {n} ਹਫ਼ਤਾ | {n} ਹਫ਼ਤੇ |
+| Unit  | one       | other     |
+| ----- | --------- | --------- |
+| day   | {n} ਦਿਨ   | {n} ਦਿਨ   |
+| week  | {n} ਹਫ਼ਤਾ | {n} ਹਫ਼ਤੇ |
 | month | {n} ਮਹੀਨਾ | {n} ਮਹੀਨੇ |
-| year | {n} ਸਾਲ | {n} ਸਾਲ |
+| year  | {n} ਸਾਲ   | {n} ਸਾਲ   |
 
 **Half:** `ਸਾਢੇ {n}` (prefix) — "ਸਾਢੇ 3 ਸਾਲ".

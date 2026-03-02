@@ -137,6 +137,20 @@ prioritizes readability of test cases over production code standards — long
 table-driven test arrays, multiple assertions per function, and helper
 functions with fixed parameters are all expected patterns.
 
+### Documentation formatting
+
+Markdown tables across all project documentation are enforced to be
+column-aligned so pipe delimiters line up vertically in raw text.
+`codegen/align_tables.py` handles alignment automatically.
+
+- `just maintain docs` — aligns all project-owned markdown files
+- `just check` — verifies table alignment (exits non-zero if misaligned)
+- Files covered: `README.md`, `CLAUDE.md`, `CONTRIBUTING.md`,
+  `codegen/README.md`, `locales/README.md`, `tests/README.md`,
+  `tests/testing.md`, `docs/*.md`, `src/*/README.md`
+- Generated files (`locales/example-output/*.md`) are excluded — they are
+  maintained by `codegen/docgen.py`
+
 ### Canonical test IDs
 
 Every test must be annotated with the ID(s) from [`tests/testing.md`](../tests/testing.md)
