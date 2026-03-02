@@ -1,7 +1,7 @@
 # Adding a New Locale
 
 This guide covers everything needed to add a new locale to parent-time.
-You create one JSON file and codegen generates all 11 language implementations.
+You create one JSON file and codegen generates all 20 language implementations.
 
 ## Before you start
 
@@ -136,7 +136,7 @@ Provide a form for every category the plural rule can return:
 | ------------ | ------- | ---------------------------------------------------------- |
 | `code`       | string  | ISO 639-1 language code                                    |
 | `name`       | string  | English name of the language                               |
-| `pluralRule` | string  | One of the 12 rule names (see table above)                 |
+| `pluralRule` | string  | One of the 23 rule names (see table above)                 |
 | `units`      | object  | `{day, week, month, year}` — each a string or category map |
 | `half`       | string  | Half-year template (see below)                             |
 | `delimiter`  | string  | Separator between parts (e.g. `", "`)                      |
@@ -216,7 +216,7 @@ Many languages skip short/compact overrides entirely — that's fine.
 ## 3. Generate and verify
 
 ```bash
-python -m codegen.generate          # generate all 11 languages
+python -m codegen.generate          # generate all 20 languages
 python -m codegen.generate --check  # verify no drift
 just test                           # run all test suites
 just lint                           # run all linters
@@ -228,7 +228,7 @@ locale data are expected and acceptable.
 ## 4. Add tests (optional but encouraged)
 
 For new locales in widely-spoken languages, add locale-specific test cases
-to `tests/testing.md` and implement them in all 18 test suites. At minimum,
+to `tests/testing.md` and implement them in all 20 test suites. At minimum,
 test that the locale produces correct output for a few representative counts
 that exercise the plural rules.
 

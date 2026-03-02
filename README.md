@@ -74,26 +74,32 @@ Returns the developmental stage label (AAP/CDC consensus boundaries):
 
 A core goal of this project is **localization**, not just internationalization. The library seeks to respect and align with the culture of each language — local customs about children may not always be reflected in sources such as CLDR. We actively welcome feedback and pull requests from native speakers of languages we support, or from native speakers who wish to add languages we do not currently support.
 
-| Code | Language  | Code | Language   | Code | Language   |
-| ---- | --------- | ---- | ---------- | ---- | ---------- |
-| `ar` | Arabic    | `ga` | Irish      | `pa` | Punjabi    |
-| `bg` | Bulgarian | `gu` | Gujarati   | `pl` | Polish     |
-| `bn` | Bengali   | `hi` | Hindi      | `pt` | Portuguese |
-| `bs` | Bosnian   | `hr` | Croatian   | `ro` | Romanian   |
-| `ca` | Catalan   | `hu` | Hungarian  | `ru` | Russian    |
-| `cs` | Czech     | `it` | Italian    | `sk` | Slovak     |
-| `da` | Danish    | `ja` | Japanese   | `sl` | Slovenian  |
-| `de` | German    | `jv` | Javanese   | `sq` | Albanian   |
-| `el` | Greek     | `ko` | Korean     | `sr` | Serbian    |
-| `en` | English   | `lt` | Lithuanian | `sv` | Swedish    |
-| `es` | Spanish   | `lv` | Latvian    | `ta` | Tamil      |
-| `et` | Estonian  | `mr` | Marathi    | `te` | Telugu     |
-| `eu` | Basque    | `ms` | Malay      | `th` | Thai       |
-| `fa` | Persian   | `nb` | Norwegian  | `tr` | Turkish    |
-| `fi` | Finnish   | `nl` | Dutch      | `uk` | Ukrainian  |
-| `fr` | French    |      |            | `ur` | Urdu       |
-|      |           |      |            | `vi` | Vietnamese |
-|      |           |      |            | `zh` | Chinese    |
+| Language                | Code  | Language   | Code | Language        | Code  |
+| ----------------------- | ----- | ---------- | ---- | --------------- | ----- |
+| Albanian                | `sq`  | German     | `de` | Polish          | `pl`  |
+| Amharic                 | `am`  | Greek      | `el` | Portuguese      | `pt`  |
+| Arabic                  | `ar`  | Gujarati   | `gu` | Punjabi         | `pa`  |
+| Azerbaijani             | `az`  | Hebrew     | `he` | Romanian        | `ro`  |
+| Basque                  | `eu`  | Hindi      | `hi` | Russian         | `ru`  |
+| Bengali                 | `bn`  | Hungarian  | `hu` | Scottish Gaelic | `gd`  |
+| Bosnian                 | `bs`  | Indonesian | `id` | Serbian         | `sr`  |
+| Breton                  | `br`  | Irish      | `ga` | Sinhala         | `si`  |
+| Bulgarian               | `bg`  | Italian    | `it` | Slovak          | `sk`  |
+| Burmese                 | `my`  | Japanese   | `ja` | Slovenian       | `sl`  |
+| Catalan                 | `ca`  | Javanese   | `jv` | Spanish         | `es`  |
+| Central Atlas Tamazight | `tzm` | Kazakh     | `kk` | Swahili         | `sw`  |
+| Chinese                 | `zh`  | Khmer      | `km` | Swedish         | `sv`  |
+| Cornish                 | `kw`  | Korean     | `ko` | Tachelhit       | `shi` |
+| Croatian                | `hr`  | Latvian    | `lv` | Tamil           | `ta`  |
+| Czech                   | `cs`  | Lithuanian | `lt` | Telugu          | `te`  |
+| Danish                  | `da`  | Macedonian | `mk` | Thai            | `th`  |
+| Dutch                   | `nl`  | Malay      | `ms` | Turkish         | `tr`  |
+| English                 | `en`  | Maltese    | `mt` | Ukrainian       | `uk`  |
+| Estonian                | `et`  | Manx       | `gv` | Urdu            | `ur`  |
+| Filipino                | `fil` | Marathi    | `mr` | Uzbek           | `uz`  |
+| Finnish                 | `fi`  | Nepali     | `ne` | Vietnamese      | `vi`  |
+| French                  | `fr`  | Norwegian  | `nb` | Welsh           | `cy`  |
+| Georgian                | `ka`  | Persian    | `fa` |                 |       |
 
 ### Compactness
 

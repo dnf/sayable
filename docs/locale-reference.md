@@ -7,79 +7,79 @@ see [locales.md](locales.md).
 
 ## All locales
 
-| Code  | Language                | Speakers | Countries                                      | Plural rule          | Categories                       |
-| ----- | ----------------------- | -------- | ---------------------------------------------- | -------------------- | -------------------------------- |
-| `am`  | Amharic                 | 57M      | Ethiopia                                       | `one_other_zero_one` | one, other                       |
-| `ar`  | Arabic                  | 400M     | Egypt, Saudi Arabia, Iraq, Morocco + 20 more   | `ar`                 | zero, one, two, few, many, other |
-| `az`  | Azerbaijani             | 23M      | Azerbaijan, Iran                               | `one_other`          | one, other                       |
-| `bg`  | Bulgarian               | 8M       | Bulgaria                                       | `one_other`          | one, other                       |
-| `bn`  | Bengali                 | 300M     | Bangladesh, India                              | `one_other_zero_one` | one, other                       |
-| `br`  | Breton                  | 210K     | Brittany (France)                              | `br`                 | one, two, few, many, other       |
-| `bs`  | Bosnian                 | 2.5M     | Bosnia and Herzegovina                         | `slavic_bcs`         | one, few, other                  |
-| `ca`  | Catalan                 | 10M      | Spain (Catalonia), Andorra                     | `one_other`          | one, other                       |
-| `cs`  | Czech                   | 11M      | Czech Republic                                 | `cs_sk`              | one, few, other                  |
-| `cy`  | Welsh                   | 880K     | Wales                                          | `cy`                 | zero, one, two, few, many, other |
-| `da`  | Danish                  | 6M       | Denmark                                        | `one_other`          | one, other                       |
-| `de`  | German                  | 100M     | Germany, Austria, Switzerland + 3 more         | `one_other`          | one, other                       |
-| `el`  | Greek                   | 13M      | Greece, Cyprus                                 | `one_other`          | one, other                       |
-| `en`  | English                 | 1.5B     | US, UK, Australia, Canada + 50 more            | `one_other`          | one, other                       |
-| `es`  | Spanish                 | 560M     | Spain, Mexico, Colombia, Argentina + 17 more   | `one_other`          | one, other                       |
-| `et`  | Estonian                | 1.1M     | Estonia                                        | `one_other`          | one, other                       |
-| `eu`  | Basque                  | 750K     | Spain (Basque Country), France                 | `other_only`         | other                            |
-| `fa`  | Persian                 | 110M     | Iran, Afghanistan, Tajikistan                  | `one_other_zero_one` | one, other                       |
-| `fi`  | Finnish                 | 5.8M     | Finland                                        | `one_other`          | one, other                       |
-| `fil` | Filipino                | 82M      | Philippines                                    | `other_only`         | other                            |
-| `fr`  | French                  | 310M     | France, Canada, Belgium, Switzerland + 25 more | `one_other_zero_one` | one, other                       |
-| `ga`  | Irish                   | 1.8M     | Ireland                                        | `ga`                 | one, two, few, many, other       |
-| `gd`  | Scottish Gaelic         | 57K      | Scotland                                       | `gd`                 | one, two, few, other             |
-| `gu`  | Gujarati                | 57M      | India (Gujarat)                                | `one_other_zero_one` | one, other                       |
-| `gv`  | Manx                    | 2K       | Isle of Man                                    | `gv`                 | one, two, few, other             |
-| `he`  | Hebrew                  | 9M       | Israel                                         | `he`                 | one, two, other                  |
-| `hi`  | Hindi                   | 600M     | India                                          | `one_other_zero_one` | one, other                       |
-| `hr`  | Croatian                | 5.5M     | Croatia                                        | `slavic_bcs`         | one, few, other                  |
-| `hu`  | Hungarian               | 13M      | Hungary                                        | `other_only`         | other                            |
-| `id`  | Indonesian              | 200M     | Indonesia                                      | `other_only`         | other                            |
-| `it`  | Italian                 | 68M      | Italy, Switzerland                             | `one_other`          | one, other                       |
-| `ja`  | Japanese                | 125M     | Japan                                          | `other_only`         | other                            |
-| `jv`  | Javanese                | 82M      | Indonesia (Java)                               | `other_only`         | other                            |
-| `ka`  | Georgian                | 3.7M     | Georgia                                        | `one_other`          | one, other                       |
-| `kk`  | Kazakh                  | 13M      | Kazakhstan                                     | `one_other`          | one, other                       |
-| `km`  | Khmer                   | 16M      | Cambodia                                       | `other_only`         | other                            |
-| `ko`  | Korean                  | 81M      | South Korea, North Korea                       | `other_only`         | other                            |
-| `kw`  | Cornish                 | 3K       | Cornwall                                       | `kw`                 | zero, one, two, few, many, other |
-| `lt`  | Lithuanian              | 2.8M     | Lithuania                                      | `lt`                 | one, few, other                  |
-| `lv`  | Latvian                 | 1.5M     | Latvia                                         | `lv`                 | zero, one, other                 |
-| `mk`  | Macedonian              | 1.4M     | North Macedonia                                | `mk`                 | one, other                       |
-| `mr`  | Marathi                 | 83M      | India (Maharashtra)                            | `one_other`          | one, other                       |
-| `ms`  | Malay                   | 77M      | Malaysia, Brunei, Singapore                    | `other_only`         | other                            |
-| `mt`  | Maltese                 | 520K     | Malta                                          | `mt`                 | one, two, few, many, other       |
-| `my`  | Burmese                 | 33M      | Myanmar                                        | `other_only`         | other                            |
-| `nb`  | Norwegian Bokmal        | 5M       | Norway                                         | `one_other`          | one, other                       |
-| `ne`  | Nepali                  | 25M      | Nepal                                          | `one_other`          | one, other                       |
-| `nl`  | Dutch                   | 25M      | Netherlands, Belgium                           | `one_other`          | one, other                       |
-| `pa`  | Punjabi                 | 125M     | Pakistan, India (Punjab)                       | `one_other_zero_one` | one, other                       |
-| `pl`  | Polish                  | 45M      | Poland                                         | `pl`                 | one, few, many                   |
-| `pt`  | Portuguese              | 260M     | Brazil, Portugal, Angola, Mozambique + 5 more  | `one_other_zero_one` | one, other                       |
-| `ro`  | Romanian                | 26M      | Romania, Moldova                               | `ro`                 | one, few, other                  |
-| `ru`  | Russian                 | 258M     | Russia, Belarus, Kazakhstan + 5 more           | `ru_uk`              | one, few, many                   |
-| `shi` | Tachelhit               | 4M       | Morocco                                        | `shi`                | one, few, other                  |
-| `si`  | Sinhala                 | 17M      | Sri Lanka                                      | `one_other_zero_one` | one, other                       |
-| `sk`  | Slovak                  | 5.2M     | Slovakia                                       | `cs_sk`              | one, few, other                  |
-| `sl`  | Slovenian               | 2.5M     | Slovenia                                       | `sl`                 | one, two, few, other             |
-| `sq`  | Albanian                | 7.5M     | Albania, Kosovo, North Macedonia               | `one_other`          | one, other                       |
-| `sr`  | Serbian                 | 9M       | Serbia                                         | `slavic_bcs`         | one, few, other                  |
-| `sv`  | Swedish                 | 13M      | Sweden, Finland                                | `one_other`          | one, other                       |
-| `sw`  | Swahili                 | 200M     | Tanzania, Kenya, Uganda, DRC + 5 more          | `one_other`          | one, other                       |
-| `ta`  | Tamil                   | 78M      | India (Tamil Nadu), Sri Lanka, Singapore       | `one_other`          | one, other                       |
-| `te`  | Telugu                  | 83M      | India (Andhra Pradesh, Telangana)              | `one_other`          | one, other                       |
-| `th`  | Thai                    | 61M      | Thailand                                       | `other_only`         | other                            |
-| `tr`  | Turkish                 | 88M      | Turkey, Cyprus                                 | `one_other`          | one, other                       |
-| `tzm` | Central Atlas Tamazight | 5M       | Morocco                                        | `tzm`                | one, other                       |
-| `uk`  | Ukrainian               | 33M      | Ukraine                                        | `ru_uk`              | one, few, many                   |
-| `ur`  | Urdu                    | 230M     | Pakistan, India                                | `one_other`          | one, other                       |
-| `uz`  | Uzbek                   | 35M      | Uzbekistan                                     | `one_other`          | one, other                       |
-| `vi`  | Vietnamese              | 85M      | Vietnam                                        | `other_only`         | other                            |
-| `zh`  | Chinese                 | 1.1B     | China, Taiwan, Singapore, Malaysia + 3 more    | `other_only`         | other                            |
+| Language                | Code  | Speakers | Countries                                      | Plural rule          | Categories                       |
+| ----------------------- | ----- | -------- | ---------------------------------------------- | -------------------- | -------------------------------- |
+| Albanian                | `sq`  | 7.5M     | Albania, Kosovo, North Macedonia               | `one_other`          | one, other                       |
+| Amharic                 | `am`  | 57M      | Ethiopia                                       | `one_other_zero_one` | one, other                       |
+| Arabic                  | `ar`  | 400M     | Egypt, Saudi Arabia, Iraq, Morocco + 20 more   | `ar`                 | zero, one, two, few, many, other |
+| Azerbaijani             | `az`  | 23M      | Azerbaijan, Iran                               | `one_other`          | one, other                       |
+| Basque                  | `eu`  | 750K     | Spain (Basque Country), France                 | `other_only`         | other                            |
+| Bengali                 | `bn`  | 300M     | Bangladesh, India                              | `one_other_zero_one` | one, other                       |
+| Bosnian                 | `bs`  | 2.5M     | Bosnia and Herzegovina                         | `slavic_bcs`         | one, few, other                  |
+| Breton                  | `br`  | 210K     | Brittany (France)                              | `br`                 | one, two, few, many, other       |
+| Bulgarian               | `bg`  | 8M       | Bulgaria                                       | `one_other`          | one, other                       |
+| Burmese                 | `my`  | 33M      | Myanmar                                        | `other_only`         | other                            |
+| Catalan                 | `ca`  | 10M      | Spain (Catalonia), Andorra                     | `one_other`          | one, other                       |
+| Central Atlas Tamazight | `tzm` | 5M       | Morocco                                        | `tzm`                | one, other                       |
+| Chinese                 | `zh`  | 1.1B     | China, Taiwan, Singapore, Malaysia + 3 more    | `other_only`         | other                            |
+| Cornish                 | `kw`  | 3K       | Cornwall                                       | `kw`                 | zero, one, two, few, many, other |
+| Croatian                | `hr`  | 5.5M     | Croatia                                        | `slavic_bcs`         | one, few, other                  |
+| Czech                   | `cs`  | 11M      | Czech Republic                                 | `cs_sk`              | one, few, other                  |
+| Danish                  | `da`  | 6M       | Denmark                                        | `one_other`          | one, other                       |
+| Dutch                   | `nl`  | 25M      | Netherlands, Belgium                           | `one_other`          | one, other                       |
+| English                 | `en`  | 1.5B     | US, UK, Australia, Canada + 50 more            | `one_other`          | one, other                       |
+| Estonian                | `et`  | 1.1M     | Estonia                                        | `one_other`          | one, other                       |
+| Filipino                | `fil` | 82M      | Philippines                                    | `other_only`         | other                            |
+| Finnish                 | `fi`  | 5.8M     | Finland                                        | `one_other`          | one, other                       |
+| French                  | `fr`  | 310M     | France, Canada, Belgium, Switzerland + 25 more | `one_other_zero_one` | one, other                       |
+| Georgian                | `ka`  | 3.7M     | Georgia                                        | `one_other`          | one, other                       |
+| German                  | `de`  | 100M     | Germany, Austria, Switzerland + 3 more         | `one_other`          | one, other                       |
+| Greek                   | `el`  | 13M      | Greece, Cyprus                                 | `one_other`          | one, other                       |
+| Gujarati                | `gu`  | 57M      | India (Gujarat)                                | `one_other_zero_one` | one, other                       |
+| Hebrew                  | `he`  | 9M       | Israel                                         | `he`                 | one, two, other                  |
+| Hindi                   | `hi`  | 600M     | India                                          | `one_other_zero_one` | one, other                       |
+| Hungarian               | `hu`  | 13M      | Hungary                                        | `other_only`         | other                            |
+| Indonesian              | `id`  | 200M     | Indonesia                                      | `other_only`         | other                            |
+| Irish                   | `ga`  | 1.8M     | Ireland                                        | `ga`                 | one, two, few, many, other       |
+| Italian                 | `it`  | 68M      | Italy, Switzerland                             | `one_other`          | one, other                       |
+| Japanese                | `ja`  | 125M     | Japan                                          | `other_only`         | other                            |
+| Javanese                | `jv`  | 82M      | Indonesia (Java)                               | `other_only`         | other                            |
+| Kazakh                  | `kk`  | 13M      | Kazakhstan                                     | `one_other`          | one, other                       |
+| Khmer                   | `km`  | 16M      | Cambodia                                       | `other_only`         | other                            |
+| Korean                  | `ko`  | 81M      | South Korea, North Korea                       | `other_only`         | other                            |
+| Latvian                 | `lv`  | 1.5M     | Latvia                                         | `lv`                 | zero, one, other                 |
+| Lithuanian              | `lt`  | 2.8M     | Lithuania                                      | `lt`                 | one, few, other                  |
+| Macedonian              | `mk`  | 1.4M     | North Macedonia                                | `mk`                 | one, other                       |
+| Malay                   | `ms`  | 77M      | Malaysia, Brunei, Singapore                    | `other_only`         | other                            |
+| Maltese                 | `mt`  | 520K     | Malta                                          | `mt`                 | one, two, few, many, other       |
+| Manx                    | `gv`  | 2K       | Isle of Man                                    | `gv`                 | one, two, few, other             |
+| Marathi                 | `mr`  | 83M      | India (Maharashtra)                            | `one_other`          | one, other                       |
+| Nepali                  | `ne`  | 25M      | Nepal                                          | `one_other`          | one, other                       |
+| Norwegian Bokmal        | `nb`  | 5M       | Norway                                         | `one_other`          | one, other                       |
+| Persian                 | `fa`  | 110M     | Iran, Afghanistan, Tajikistan                  | `one_other_zero_one` | one, other                       |
+| Polish                  | `pl`  | 45M      | Poland                                         | `pl`                 | one, few, many                   |
+| Portuguese              | `pt`  | 260M     | Brazil, Portugal, Angola, Mozambique + 5 more  | `one_other_zero_one` | one, other                       |
+| Punjabi                 | `pa`  | 125M     | Pakistan, India (Punjab)                       | `one_other_zero_one` | one, other                       |
+| Romanian                | `ro`  | 26M      | Romania, Moldova                               | `ro`                 | one, few, other                  |
+| Russian                 | `ru`  | 258M     | Russia, Belarus, Kazakhstan + 5 more           | `ru_uk`              | one, few, many                   |
+| Scottish Gaelic         | `gd`  | 57K      | Scotland                                       | `gd`                 | one, two, few, other             |
+| Serbian                 | `sr`  | 9M       | Serbia                                         | `slavic_bcs`         | one, few, other                  |
+| Sinhala                 | `si`  | 17M      | Sri Lanka                                      | `one_other_zero_one` | one, other                       |
+| Slovak                  | `sk`  | 5.2M     | Slovakia                                       | `cs_sk`              | one, few, other                  |
+| Slovenian               | `sl`  | 2.5M     | Slovenia                                       | `sl`                 | one, two, few, other             |
+| Spanish                 | `es`  | 560M     | Spain, Mexico, Colombia, Argentina + 17 more   | `one_other`          | one, other                       |
+| Swahili                 | `sw`  | 200M     | Tanzania, Kenya, Uganda, DRC + 5 more          | `one_other`          | one, other                       |
+| Swedish                 | `sv`  | 13M      | Sweden, Finland                                | `one_other`          | one, other                       |
+| Tachelhit               | `shi` | 4M       | Morocco                                        | `shi`                | one, few, other                  |
+| Tamil                   | `ta`  | 78M      | India (Tamil Nadu), Sri Lanka, Singapore       | `one_other`          | one, other                       |
+| Telugu                  | `te`  | 83M      | India (Andhra Pradesh, Telangana)              | `one_other`          | one, other                       |
+| Thai                    | `th`  | 61M      | Thailand                                       | `other_only`         | other                            |
+| Turkish                 | `tr`  | 88M      | Turkey, Cyprus                                 | `one_other`          | one, other                       |
+| Ukrainian               | `uk`  | 33M      | Ukraine                                        | `ru_uk`              | one, few, many                   |
+| Urdu                    | `ur`  | 230M     | Pakistan, India                                | `one_other`          | one, other                       |
+| Uzbek                   | `uz`  | 35M      | Uzbekistan                                     | `one_other`          | one, other                       |
+| Vietnamese              | `vi`  | 85M      | Vietnam                                        | `other_only`         | other                            |
+| Welsh                   | `cy`  | 880K     | Wales                                          | `cy`                 | zero, one, two, few, many, other |
 
 Speaker counts include both native and L2 speakers (approximate).
 
