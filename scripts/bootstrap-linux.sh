@@ -12,112 +12,10 @@ if [ "$(id -u)" -ne 0 ]; then
     SUDO="sudo"
 fi
 
-# ---- System packages ----
-echo "==> Installing system packages..."
+# ---- Base packages ----
+echo "==> Installing base packages..."
 $SUDO apt-get update
-$SUDO apt-get install -y \
-    build-essential \
-    cmake \
-    curl \
-    ca-certificates \
-    git \
-    gnupg \
-    unzip \
-    perl \
-    ruby ruby-bundler \
-    php-cli php-xml php-mbstring \
-    openjdk-17-jdk-headless \
-    python3 python3-venv \
-    elixir \
-    erlang-dev erlang-tools rebar3 \
-    rlwrap
-
-# ---- .NET SDK 8.0 ----
-if ! command -v dotnet &>/dev/null; then
-    echo "==> Installing .NET SDK 8.0..."
-    curl -fsSL https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -o /tmp/ms.deb
-    $SUDO dpkg -i /tmp/ms.deb && rm /tmp/ms.deb
-    $SUDO apt-get update
-    $SUDO apt-get install -y dotnet-sdk-8.0
-fi
-
-# ---- Swift ----
-if ! command -v swift &>/dev/null; then
-    echo "==> Installing Swift..."
-    ARCH="$(dpkg --print-architecture)"
-    SWIFT_URL="https://download.swift.org/swift-5.10.1-release/ubuntu2404/${ARCH}/swift-5.10.1-RELEASE-ubuntu24.04-${ARCH}.tar.gz"
-    curl -fsSL "$SWIFT_URL" | $SUDO tar -C /usr/local --strip-components=2 -xz
-fi
-
-# ---- Node.js 22 via NodeSource ----
-if ! command -v node &>/dev/null || ! node -v | grep -q '^v2[2-9]'; then
-    echo "==> Installing Node.js 22..."
-    curl -fsSL https://deb.nodesource.com/setup_22.x | $SUDO bash -
-    $SUDO apt-get install -y nodejs
-fi
-
-# ---- Go ----
-if ! command -v go &>/dev/null; then
-    echo "==> Installing Go..."
-    ARCH="$(dpkg --print-architecture)"
-    curl -fsSL "https://go.dev/dl/go1.21.13.linux-${ARCH}.tar.gz" | $SUDO tar -C /usr/local -xz
-fi
-export PATH="/usr/local/go/bin:$PATH"
-
-# ---- Rust via rustup ----
-if ! command -v rustc &>/dev/null; then
-    echo "==> Installing Rust via rustup..."
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    # shellcheck source=/dev/null
-    source "$HOME/.cargo/env"
-fi
-
-# ---- uv (Python package manager) ----
-if ! command -v uv &>/dev/null; then
-    echo "==> Installing uv..."
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-    export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# ---- Composer (PHP package manager) ----
-if ! command -v composer &>/dev/null; then
-    echo "==> Installing Composer..."
-    curl -sS https://getcomposer.org/installer | $SUDO php -- --install-dir=/usr/local/bin --filename=composer
-fi
-
-# ---- Elm via npm ----
-if ! command -v elm &>/dev/null; then
-    echo "==> Installing Elm via npm..."
-    npm install -g elm elm-test
-fi
-
-# ---- Haskell via ghcup (GHC + cabal) ----
-if ! command -v ghc &>/dev/null; then
-    echo "==> Installing Haskell via ghcup..."
-    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
-        BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
-        BOOTSTRAP_HASKELL_INSTALL_CABAL=1 \
-        BOOTSTRAP_HASKELL_INSTALL_GHC=1 \
-        sh
-    # shellcheck source=/dev/null
-    [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
-fi
-
-# ---- Clojure CLI ----
-if ! command -v clojure &>/dev/null; then
-    echo "==> Installing Clojure CLI..."
-    curl -fsSL https://download.clojure.org/install/linux-install.sh | $SUDO bash
-fi
-
-# ---- Zig ----
-if ! command -v zig &>/dev/null; then
-    echo "==> Installing Zig..."
-    ARCH="$(dpkg --print-architecture)"
-    ZIG_ARCH="$ARCH"
-    if [ "$ARCH" = "amd64" ]; then ZIG_ARCH="x86_64"; fi
-    if [ "$ARCH" = "arm64" ]; then ZIG_ARCH="aarch64"; fi
-    curl -fsSL "https://ziglang.org/download/0.14.1/zig-linux-${ZIG_ARCH}-0.14.1.tar.xz" | $SUDO tar -C /usr/local --strip-components=1 -xJ
-fi
+$SUDO apt-get install -y curl ca-certificates git gnupg unzip
 
 # ---- just (task runner) ----
 if ! command -v just &>/dev/null; then
@@ -125,12 +23,8 @@ if ! command -v just &>/dev/null; then
     curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | $SUDO bash -s -- --to /usr/local/bin
 fi
 
-# ---- Project dependencies ----
-echo "==> Installing project dependencies..."
-(cd src/typescript && npm install)
-(cd src/python && uv sync --extra dev)
-(cd src/ruby && bundle install)
-(cd src/php && composer install --ignore-platform-reqs)
+# ---- Install all language toolchains ----
+just install
 
 # ---- Persist PATH for future shells ----
 SHELL_RC="$HOME/.bashrc"

@@ -166,6 +166,15 @@ Bootstrap scripts install all language toolchains and project dependencies in on
 
 The scripts are idempotent — safe to re-run if you need to pick up a missing tool later.
 
+You can also install or uninstall individual languages:
+
+```bash
+just install go          # single language
+just install ts py rb    # multiple (aliases work)
+just install             # all languages
+just uninstall go        # remove a language
+```
+
 ### Commands
 
 A top-level [`justfile`](https://github.com/casey/just) provides a single entry point for building, testing, and linting across all languages:

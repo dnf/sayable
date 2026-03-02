@@ -245,13 +245,14 @@ The root `.gitignore` is reserved for cross-language patterns (`__pycache__/`,
 newlang/build/
 ```
 
-### Bootstrap scripts and Dockerfile
+### Installer script and Dockerfile
 
-Add the new language's toolchain to all three environment setup files:
+Create a per-language installer at `scripts/installers/<lang>.sh` that handles
+both macOS and Linux. Use an existing installer as a template (e.g.,
+`scripts/installers/go.sh`). The script must accept `install` and `uninstall`
+subcommands and source `_common.sh` for shared helpers.
 
-- **`Dockerfile`** — add `apt-get install` or download step
-- **`scripts/bootstrap-macos.sh`** — add `brew install` and verification check
-- **`scripts/bootstrap-linux.sh`** — add `apt-get install` or download step
+Also add the new language's toolchain to the **`Dockerfile`**.
 
 ### Language-specific README
 
@@ -304,7 +305,8 @@ just test               # run all languages to confirm nothing broke
 - [ ] Linter configured with zero warnings
 - [ ] `just test` passes for all languages
 - [ ] `just check` reports no drift
-- [ ] Bootstrap scripts updated (Dockerfile, bootstrap-macos.sh, bootstrap-linux.sh)
+- [ ] Installer script created at `scripts/installers/<lang>.sh`
+- [ ] Dockerfile updated
 - [ ] CI workflow at `.github/workflows/<lang>.yml` with version matrix
 - [ ] Language-specific README with license link added
 - [ ] Cross-language tables updated and sorted alphabetically

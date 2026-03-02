@@ -110,7 +110,7 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 5. Implement all test cases from `tests/testing.md`
 6. Add to `justfile` (test, build, lint, clean recipes)
 7. Configure the language's standard linter with zero warnings
-8. Update bootstrap scripts (`Dockerfile`, `scripts/bootstrap-macos.sh`, `scripts/bootstrap-linux.sh`)
+8. Create installer script at `scripts/installers/<lang>.sh` and update `Dockerfile`
 9. Create `src/<lang>/README.md` with a `## License` section linking to `LICENSE.md`
 10. Create `.github/workflows/<lang>.yml` CI workflow with a version matrix
 11. Update cross-language doc tables (keep rows sorted alphabetically; don't hardcode counts in prose — update only the `CLAUDE.md` project description)

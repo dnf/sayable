@@ -301,3 +301,134 @@ clean *lang:
         echo "Valid: c, clojure (clj), elixir (ex), elm (el), typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), perl (pl), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl), scala (sc), zig (zg), codegen"
         exit 1
     fi
+
+# Install language toolchains (all if no args, or specific languages)
+[group('setup')]
+install *langs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; *) echo "$1";; esac; }
+    _all="c clojure cpp csharp elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig"
+    _suggest() {
+        local input; input="$(echo "$1" | tr '[:upper:]' '[:lower:]')"
+        case "$input" in
+            elixer|elixr|exlir|exilir)         echo elixir  ;;
+            haskel|haskle|haslkell)             echo haskell ;;
+            closure|clojur|clojre|cojure)       echo clojure ;;
+            erland|erlng|earland|earlang)       echo erlang  ;;
+            typscript|tyepscript|typesript|tsc) echo typescript ;;
+            golang|goland)                      echo go      ;;
+            scalar|scalla)                      echo scala   ;;
+            kotlint|koltin|kotln)               echo kotlin  ;;
+            pyton|pyhton|pythn)                 echo python  ;;
+            phpp)                               echo php     ;;
+            rubby)                              echo ruby    ;;
+            swft|siwft)                         echo swift   ;;
+            *)
+                if [ ${#input} -ge 3 ]; then
+                    for name in $_all; do
+                        if [[ "$name" == "$input"* || "$name" == *"$input" ]]; then
+                            echo "$name"; return
+                        fi
+                    done
+                fi ;;
+        esac
+    }
+    _check() {
+        local lang="$1" name script suggest
+        name=$(_name "$lang")
+        script="scripts/installers/${name}.sh"
+        if [ -f "$script" ]; then echo "$name"; return; fi
+        suggest=$(_suggest "$lang")
+        if [ -n "$suggest" ]; then
+            if [ -t 0 ]; then
+                read -rp "Unknown language '$lang'. Did you mean '$suggest'? [Y/n] " answer </dev/tty
+                case "$(echo "$answer" | tr '[:upper:]' '[:lower:]')" in
+                    ""|y|yes) echo "$suggest"; return ;;
+                esac
+            else
+                echo "Unknown language '$lang'. Did you mean '$suggest'?" >&2
+            fi
+        else
+            echo "Unknown language: $lang" >&2
+        fi
+        echo "Valid: c, clojure (clj), cpp (c++), csharp (cs), elixir (ex), elm (el), erlang (erl), go, haskell (hs), java, kotlin (kt), perl (pl), php, python (py), ruby (rb), rust (rs), scala (sc), swift (sw), typescript (ts), zig (zg)" >&2
+        exit 1
+    }
+    langs="{{langs}}"
+    if [ -z "$langs" ]; then
+        langs="$_all"
+    fi
+    for lang in $langs; do
+        name=$(_check "$lang")
+        bash "scripts/installers/${name}.sh" install
+    done
+
+# Interactive onboarding: show project info, installed languages, and install menu
+[group('setup')]
+get-started *args:
+    @bash scripts/get-started.sh {{args}}
+
+# Uninstall language toolchains
+[group('setup')]
+uninstall *langs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; *) echo "$1";; esac; }
+    _all="c clojure cpp csharp elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig"
+    _suggest() {
+        local input; input="$(echo "$1" | tr '[:upper:]' '[:lower:]')"
+        case "$input" in
+            elixer|elixr|exlir|exilir)         echo elixir  ;;
+            haskel|haskle|haslkell)             echo haskell ;;
+            closure|clojur|clojre|cojure)       echo clojure ;;
+            erland|erlng|earland|earlang)       echo erlang  ;;
+            typscript|tyepscript|typesript|tsc) echo typescript ;;
+            golang|goland)                      echo go      ;;
+            scalar|scalla)                      echo scala   ;;
+            kotlint|koltin|kotln)               echo kotlin  ;;
+            pyton|pyhton|pythn)                 echo python  ;;
+            phpp)                               echo php     ;;
+            rubby)                              echo ruby    ;;
+            swft|siwft)                         echo swift   ;;
+            *)
+                if [ ${#input} -ge 3 ]; then
+                    for name in $_all; do
+                        if [[ "$name" == "$input"* || "$name" == *"$input" ]]; then
+                            echo "$name"; return
+                        fi
+                    done
+                fi ;;
+        esac
+    }
+    _check() {
+        local lang="$1" name script suggest
+        name=$(_name "$lang")
+        script="scripts/installers/${name}.sh"
+        if [ -f "$script" ]; then echo "$name"; return; fi
+        suggest=$(_suggest "$lang")
+        if [ -n "$suggest" ]; then
+            if [ -t 0 ]; then
+                read -rp "Unknown language '$lang'. Did you mean '$suggest'? [Y/n] " answer </dev/tty
+                case "$(echo "$answer" | tr '[:upper:]' '[:lower:]')" in
+                    ""|y|yes) echo "$suggest"; return ;;
+                esac
+            else
+                echo "Unknown language '$lang'. Did you mean '$suggest'?" >&2
+            fi
+        else
+            echo "Unknown language: $lang" >&2
+        fi
+        echo "Valid: c, clojure (clj), cpp (c++), csharp (cs), elixir (ex), elm (el), erlang (erl), go, haskell (hs), java, kotlin (kt), perl (pl), php, python (py), ruby (rb), rust (rs), scala (sc), swift (sw), typescript (ts), zig (zg)" >&2
+        exit 1
+    }
+    langs="{{langs}}"
+    if [ -z "$langs" ]; then
+        echo "Usage: just uninstall <lang> [lang...]" >&2
+        echo "Valid: c, clojure (clj), cpp (c++), csharp (cs), elixir (ex), elm (el), erlang (erl), go, haskell (hs), java, kotlin (kt), perl (pl), php, python (py), ruby (rb), rust (rs), scala (sc), swift (sw), typescript (ts), zig (zg)" >&2
+        exit 1
+    fi
+    for lang in $langs; do
+        name=$(_check "$lang")
+        bash "scripts/installers/${name}.sh" uninstall
+    done
