@@ -236,15 +236,21 @@ if [ "$max_jobs" -gt 0 ]; then
         _label_ci[${_run_queue[$_q]}]=$((_q % _npal))
     done
 
-    # --- History-based duration prediction ---
+    # --- History-based duration prediction + error tracking ---
     _predicted_dur=()
-    for i in "${!all_labels[@]}"; do _predicted_dur[$i]=0; done
+    _error_last=()
+    for i in "${!all_labels[@]}"; do
+        _predicted_dur[$i]=0
+        _error_last[$i]=0
+    done
     _histfile="$logdir/history.log"
     if [ -f "$_histfile" ]; then
         _hist_lines=()
         while IFS= read -r _hl; do
             _hist_lines+=("$_hl")
         done < <(tail -5 "$_histfile")
+
+        # Duration prediction (median of last 5 runs)
         for i in "${!all_labels[@]}"; do
             [ "${all_skip[$i]}" -eq 1 ] && continue
             label="${all_labels[$i]}"
@@ -252,7 +258,8 @@ if [ "$max_jobs" -gt 0 ]; then
             for _hl in "${_hist_lines[@]}"; do
                 for _pair in $_hl; do
                     if [[ "$_pair" == "${label}="* ]]; then
-                        _durs+=("${_pair#*=}")
+                        _val="${_pair#*=}"
+                        _durs+=("${_val%%:*}")  # strip :rc if present
                     fi
                 done
             done
@@ -261,39 +268,33 @@ if [ "$max_jobs" -gt 0 ]; then
                 _predicted_dur[$i]=${_sorted_d[$(( ${#_sorted_d[@]} / 2 ))]}
             fi
         done
+
+        # Error tracking (jobs that failed in the most recent run)
+        _last_run="${_hist_lines[${#_hist_lines[@]}-1]}"
+        for _pair in $_last_run; do
+            _elabel="${_pair%%=*}"
+            _edata="${_pair#*=}"
+            _erc="${_edata#*:}"
+            if [ "$_erc" != "$_edata" ] && [ "$_erc" -ne 0 ] 2>/dev/null; then
+                for i in "${!all_labels[@]}"; do
+                    [ "${all_labels[$i]}" = "$_elabel" ] && _error_last[$i]=1
+                done
+            fi
+        done
     fi
 
-    # Sort _run_queue by predicted duration (descending — longest first)
+    # Sort _run_queue: errors first, then by predicted duration descending
+    # Composite key: error * 10000000 + predicted_dur
     for (( _i=1; _i<${#_run_queue[@]}; _i++ )); do
         _key=${_run_queue[$_i]}
-        _kval=${_predicted_dur[$_key]}
+        _kval=$(( ${_error_last[$_key]} * 10000000 + ${_predicted_dur[$_key]} ))
         _j=$((_i - 1))
-        while [ "$_j" -ge 0 ] && [ "${_predicted_dur[${_run_queue[$_j]}]}" -lt "$_kval" ]; do
+        while [ "$_j" -ge 0 ] && [ "$(( ${_error_last[${_run_queue[$_j]}]} * 10000000 + ${_predicted_dur[${_run_queue[$_j]}]} ))" -lt "$_kval" ]; do
             _run_queue[$((_j + 1))]=${_run_queue[$_j]}
             _j=$((_j - 1))
         done
         _run_queue[$((_j + 1))]=$_key
     done
-
-    # Classify jobs: short (at or below median prediction) vs long
-    _all_preds=()
-    for _qi in "${_run_queue[@]}"; do
-        _all_preds+=("${_predicted_dur[$_qi]}")
-    done
-    IFS=$'\n' _sorted_preds=($(sort -n <<<"${_all_preds[*]}")); unset IFS
-    _short_threshold=${_sorted_preds[$(( ${#_sorted_preds[@]} / 2 ))]}
-    _job_short=()
-    for i in "${!all_labels[@]}"; do
-        if [ "${_predicted_dur[$i]}" -le "$_short_threshold" ]; then
-            _job_short[$i]=1
-        else
-            _job_short[$i]=0
-        fi
-    done
-
-    # Reserve one slot for short jobs (limit long to max_jobs-1, min 1)
-    _long_limit=$((max_jobs - 1))
-    (( _long_limit < 1 )) && _long_limit=$max_jobs
 
     # Slot tracking
     _slot_pids=()
@@ -361,27 +362,31 @@ if [ "$max_jobs" -gt 0 ]; then
             done
 
             # Launch new jobs into empty slots
+            # Slot 0 is the "fast slot": picks shortest job (errors first)
+            # Other slots pick longest job (errors first)
             for (( _s=0; _s<max_jobs; _s++ )); do
                 [ "${_slot_pids[$_s]}" -ne 0 ] && continue
 
-                # Count running long jobs
-                _count_long=0
-                for (( _cs=0; _cs<max_jobs; _cs++ )); do
-                    if [ "${_slot_pids[$_cs]}" -ne 0 ] && [ "${_slot_job[$_cs]}" -ge 0 ] && [ "${_job_short[${_slot_job[$_cs]}]}" -eq 0 ]; then
-                        _count_long=$((_count_long + 1))
-                    fi
-                done
-
-                # Find next launchable job (skip long jobs if reservation full)
                 _found_qi=-1
-                for _fq in "${_run_queue[@]}"; do
-                    [ "${_job_started[$_fq]}" -eq 1 ] && continue
-                    if [ "${_job_short[$_fq]}" -eq 0 ] && [ "$_count_long" -ge "$_long_limit" ]; then
-                        continue
-                    fi
-                    _found_qi=$_fq
-                    break
-                done
+                if [ "$_s" -eq 0 ]; then
+                    # Fast slot: prefer shortest error, then shortest non-error
+                    _fallback=-1
+                    for (( _fqi=${#_run_queue[@]}-1; _fqi>=0; _fqi-- )); do
+                        _fq=${_run_queue[$_fqi]}
+                        [ "${_job_started[$_fq]}" -eq 1 ] && continue
+                        [ "$_fallback" -lt 0 ] && _fallback=$_fq
+                        if [ "${_error_last[$_fq]}" -eq 1 ]; then
+                            _found_qi=$_fq; break
+                        fi
+                    done
+                    [ "$_found_qi" -lt 0 ] && _found_qi=$_fallback
+                else
+                    # Regular slot: pick first unstarted (errors first, longest first)
+                    for _fq in "${_run_queue[@]}"; do
+                        [ "${_job_started[$_fq]}" -eq 1 ] && continue
+                        _found_qi=$_fq; break
+                    done
+                fi
                 [ "$_found_qi" -lt 0 ] && continue
 
                 qi=$_found_qi
@@ -548,26 +553,28 @@ if [ "$max_jobs" -gt 0 ]; then
                 fi
             done
 
-            # Launch new jobs into empty slots
+            # Launch new jobs into empty slots (same fast-slot logic as interactive)
             for (( _s=0; _s<max_jobs; _s++ )); do
                 [ "${_slot_pids[$_s]}" -ne 0 ] && continue
 
-                _count_long=0
-                for (( _cs=0; _cs<max_jobs; _cs++ )); do
-                    if [ "${_slot_pids[$_cs]}" -ne 0 ] && [ "${_slot_job[$_cs]}" -ge 0 ] && [ "${_job_short[${_slot_job[$_cs]}]}" -eq 0 ]; then
-                        _count_long=$((_count_long + 1))
-                    fi
-                done
-
                 _found_qi=-1
-                for _fq in "${_run_queue[@]}"; do
-                    [ "${_job_started[$_fq]}" -eq 1 ] && continue
-                    if [ "${_job_short[$_fq]}" -eq 0 ] && [ "$_count_long" -ge "$_long_limit" ]; then
-                        continue
-                    fi
-                    _found_qi=$_fq
-                    break
-                done
+                if [ "$_s" -eq 0 ]; then
+                    _fallback=-1
+                    for (( _fqi=${#_run_queue[@]}-1; _fqi>=0; _fqi-- )); do
+                        _fq=${_run_queue[$_fqi]}
+                        [ "${_job_started[$_fq]}" -eq 1 ] && continue
+                        [ "$_fallback" -lt 0 ] && _fallback=$_fq
+                        if [ "${_error_last[$_fq]}" -eq 1 ]; then
+                            _found_qi=$_fq; break
+                        fi
+                    done
+                    [ "$_found_qi" -lt 0 ] && _found_qi=$_fallback
+                else
+                    for _fq in "${_run_queue[@]}"; do
+                        [ "${_job_started[$_fq]}" -eq 1 ] && continue
+                        _found_qi=$_fq; break
+                    done
+                fi
                 [ "$_found_qi" -lt 0 ] && continue
 
                 qi=$_found_qi
@@ -770,7 +777,7 @@ for i in "${!all_labels[@]}"; do
     [ "${all_skip[$i]}" -eq 1 ] && continue
     label="${all_labels[$i]}"
     read -r dur_ds _rc < "$logdir/$label.result"
-    _hist_line="${_hist_line}${_hist_line:+ }${label}=${dur_ds}"
+    _hist_line="${_hist_line}${_hist_line:+ }${label}=${dur_ds}:${_rc}"
 done
 echo "$_hist_line" >> "$logdir/history.log"
 # Keep last 50 runs
