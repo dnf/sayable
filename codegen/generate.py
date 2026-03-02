@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate locale source files for all 12 languages from canonical JSON.
+"""Generate locale source files for all 13 languages from canonical JSON.
 
 Usage:
     python -m codegen.generate                      # generate all
@@ -111,6 +111,12 @@ def _clean_c(selected: set[str], all_codes: set[str], check: bool, diffs: list[s
         _remove_or_check_stale(locale_path(code, ROOT), check, diffs)
 
 
+def _clean_haskell(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.haskell.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
     "typescript": _clean_typescript,
     "python": _clean_python,
@@ -118,6 +124,7 @@ _PER_FILE_CLEANERS = {
     "ruby": _clean_ruby,
     "rust": _clean_rust,
     "c": _clean_c,
+    "haskell": _clean_haskell,
 }
 
 
@@ -247,6 +254,19 @@ def generate_swift(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_haskell(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.haskell.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_c(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.c.emitter import (
         emit_formatter, emit_header, emit_locale, emit_locales_header,
@@ -278,6 +298,7 @@ _GENERATORS = {
     "csharp": generate_csharp,
     "swift": generate_swift,
     "c": generate_c,
+    "haskell": generate_haskell,
 }
 
 

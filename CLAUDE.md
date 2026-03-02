@@ -2,14 +2,14 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 12 identical implementations (C, TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP, Java, C#, Swift) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 13 identical implementations (C, TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP, Java, C#, Swift, Haskell) and 71 locales.
 
 ## Build and test commands
 
 The `justfile` is the primary task runner. Running `just test`, `just build`, or `just lint` with no arguments runs all languages **in parallel**, capturing output to log files and printing a summary:
 
 ```
-just test          # all 12 test suites + codegen check, in parallel
+just test          # all 13 test suites + codegen check, in parallel
 just build         # all compiled languages, in parallel
 just lint          # all linters, in parallel
 ```
@@ -34,10 +34,10 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 
 ## Key rules
 
-- **All 12 implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
-- **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all 12 languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
+- **All 13 implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
+- **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all 13 languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero runtime dependencies.** No exceptions in any language.
-- **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all 12 language implementations. Never edit generated locale files by hand.
+- **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all 13 language implementations. Never edit generated locale files by hand.
 
 ## Project layout
 
@@ -55,13 +55,14 @@ src/
   java/        # Java
   csharp/      # C#
   swift/       # Swift
-codegen/       # Locale code generator (JSON → all 12 languages)
+  haskell/     # Haskell
+codegen/       # Locale code generator (JSON → all 13 languages)
 docs/          # Shared docs, test spec, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `parenttime.c` (generated), `format-age.ts`, `format_age.py`, `parenttime.go`, `formatter.rb`, `formatter.rs`, `ParentTime.kt`, `parenttime.cpp`, `ParentTime.php`, `ParentTime.java`, `ParentTime.cs`, `ParentTime.swift`
-- Types/Locale: `parenttime.h` (generated), `locale.ts`, `locale.py`, `locale.go`, `locale.rb`, `types.rs`, `Types.kt`, `types.hpp`, `AgeLocale.php`, `AgeLocale.java`, `AgeLocale.cs`, `AgeLocale.swift`
+- Formatter: `parenttime.c` (generated), `format-age.ts`, `format_age.py`, `parenttime.go`, `formatter.rb`, `formatter.rs`, `ParentTime.kt`, `parenttime.cpp`, `ParentTime.php`, `ParentTime.java`, `ParentTime.cs`, `ParentTime.swift`, `Formatter.hs`
+- Types/Locale: `parenttime.h` (generated), `locale.ts`, `locale.py`, `locale.go`, `locale.rb`, `types.rs`, `Types.kt`, `types.hpp`, `AgeLocale.php`, `AgeLocale.java`, `AgeLocale.cs`, `AgeLocale.swift`, `Types.hs`
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style
@@ -77,7 +78,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Sum
 
 1. Identify the CLDR plural rule — one of the 23 existing rules covers every CLDR cardinal pattern
 2. Create `codegen/locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
-3. Run `python -m codegen.generate` — generates locale files in all 12 languages
+3. Run `python -m codegen.generate` — generates locale files in all 13 languages
 4. Run `just test && just lint` to verify
 5. Optionally add locale-specific test cases to `docs/testing.md`
 
