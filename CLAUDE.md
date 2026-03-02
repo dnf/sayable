@@ -2,14 +2,14 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 14 identical implementations (C, TypeScript, Python, Go, Ruby, Rust, Kotlin, C++, PHP, Java, C#, Swift, Haskell, Erlang) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 15 identical implementations (C, C#, C++, Clojure, Erlang, Go, Haskell, Java, Kotlin, PHP, Python, Ruby, Rust, Swift, TypeScript) and 71 locales.
 
 ## Build and test commands
 
 The `justfile` is the primary task runner. Running `just test`, `just build`, or `just lint` with no arguments runs all languages **in parallel**, capturing output to log files and printing a summary:
 
 ```
-just test          # all 14 test suites + codegen check, in parallel
+just test          # all test suites + codegen check, in parallel
 just build         # all compiled languages, in parallel
 just lint          # all linters, in parallel
 ```
@@ -34,36 +34,37 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 
 ## Key rules
 
-- **All 14 implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
-- **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all 14 languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
+- **All implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
+- **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero runtime dependencies.** No exceptions in any language.
-- **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all 14 language implementations. Never edit generated locale files by hand.
+- **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all language implementations. Never edit generated locale files by hand.
 
 ## Project layout
 
 ```
 src/
   c/           # C (freestanding)
-  typescript/  # TypeScript
-  python/      # Python
+  clojure/     # Clojure
+  cpp/         # C++
+  csharp/      # C#
+  erlang/      # Erlang
   go/          # Go
+  haskell/     # Haskell
+  java/        # Java
+  kotlin/      # Kotlin
+  php/         # PHP
+  python/      # Python
   ruby/        # Ruby
   rust/        # Rust
-  kotlin/      # Kotlin
-  cpp/         # C++
-  php/         # PHP
-  java/        # Java
-  csharp/      # C#
   swift/       # Swift
-  haskell/     # Haskell
-  erlang/      # Erlang
-codegen/       # Locale code generator (JSON → all 14 languages)
+  typescript/  # TypeScript
+codegen/       # Locale code generator (JSON → all languages)
 docs/          # Shared docs, test spec, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `parenttime.c` (generated), `format-age.ts`, `format_age.py`, `parenttime.go`, `formatter.rb`, `formatter.rs`, `ParentTime.kt`, `parenttime.cpp`, `ParentTime.php`, `ParentTime.java`, `ParentTime.cs`, `ParentTime.swift`, `Formatter.hs`, `parenttime_formatter.erl`
-- Types/Locale: `parenttime.h` (generated), `locale.ts`, `locale.py`, `locale.go`, `locale.rb`, `types.rs`, `Types.kt`, `types.hpp`, `AgeLocale.php`, `AgeLocale.java`, `AgeLocale.cs`, `AgeLocale.swift`, `Types.hs`, `parenttime.hrl`
+- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `parenttime_formatter.erl`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.swift`, `format-age.ts`
+- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `parenttime.hrl`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `AgeLocale.swift`, `locale.ts`
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style
@@ -80,7 +81,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Sum
 
 1. Identify the CLDR plural rule — one of the 23 existing rules covers every CLDR cardinal pattern
 2. Create `codegen/locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
-3. Run `python -m codegen.generate` — generates locale files in all 14 languages
+3. Run `python -m codegen.generate` — generates locale files in all languages
 4. Run `just test && just lint` to verify
 5. Optionally add locale-specific test cases to `docs/testing.md`
 
@@ -95,7 +96,10 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 5. Implement all test cases from `docs/testing.md`
 6. Add to `justfile` (test, build, lint, clean recipes)
 7. Configure the language's standard linter with zero warnings
-8. Verify: `just generate && just check && just test && just lint`
+8. Update bootstrap scripts (`Dockerfile`, `scripts/bootstrap-macos.sh`, `scripts/bootstrap-linux.sh`)
+9. Create `src/<lang>/README.md` with a `## License` section linking to `LICENSE.md`
+10. Update cross-language doc tables (keep rows sorted alphabetically; don't hardcode counts in prose — update only the `CLAUDE.md` project description)
+11. Verify: `just generate && just check && just test && just lint`
 
 ## Commit conventions
 

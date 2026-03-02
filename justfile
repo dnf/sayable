@@ -8,10 +8,10 @@ python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "pyt
 test *lang:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; erl) echo erlang;; *) echo "$1";; esac; }
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; erl) echo erlang;; clj) echo clojure;; *) echo "$1";; esac; }
     if [ -z "{{lang}}" ]; then
         scripts/run-parallel.sh test \
-            "check" "test c" "test cpp" "test csharp" "test erlang" "test go" \
+            "check" "test c" "test clojure" "test cpp" "test csharp" "test erlang" "test go" \
             "test haskell" "test java" "test kotlin" "test php" "test python" \
             "test ruby" "test rust" "test swift" "test typescript"
     else
@@ -48,11 +48,13 @@ test *lang:
                 cd src/haskell && cabal test
             elif [ "{{lang}}" = "erlang" ] || [ "{{lang}}" = "erl" ]; then
                 cd src/erlang && rebar3 eunit
+            elif [ "{{lang}}" = "clojure" ] || [ "{{lang}}" = "clj" ]; then
+                cd src/clojure && clojure -M:test
             elif [ "{{lang}}" = "codegen" ]; then
                 {{python}} -m unittest codegen.test_locale_groups -v
             else
                 echo "Unknown language: {{lang}}"
-                echo "Valid: c, typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl), codegen"
+                echo "Valid: c, clojure (clj), typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl), codegen"
                 exit 1
             fi
         ) 2>&1 | tee ".logs/test/$name.log"
@@ -63,7 +65,7 @@ test *lang:
 build *lang:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; erl) echo erlang;; *) echo "$1";; esac; }
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; erl) echo erlang;; clj) echo clojure;; *) echo "$1";; esac; }
     if [ -z "{{lang}}" ]; then
         scripts/run-parallel.sh build \
             "build c" "build cpp" "build csharp" "build erlang" "build haskell" \
@@ -123,7 +125,7 @@ list-groups:
 lint *lang:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; erl) echo erlang;; *) echo "$1";; esac; }
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; erl) echo erlang;; clj) echo clojure;; *) echo "$1";; esac; }
     if [ -z "{{lang}}" ]; then
         scripts/run-parallel.sh lint \
             "lint csharp" "lint go" "lint java" "lint php" "lint python" \
@@ -160,9 +162,11 @@ lint *lang:
                 echo "Haskell uses -Wall -Werror in build (no separate linter)"
             elif [ "{{lang}}" = "erlang" ] || [ "{{lang}}" = "erl" ]; then
                 echo "Erlang uses warnings-as-errors in build (no separate linter)"
+            elif [ "{{lang}}" = "clojure" ] || [ "{{lang}}" = "clj" ]; then
+                echo "Clojure uses *warn-on-reflection* in build (no separate linter)"
             else
                 echo "Unknown language: {{lang}}"
-                echo "Valid: c, typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl)"
+                echo "Valid: c, clojure (clj), typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl)"
                 exit 1
             fi
         ) 2>&1 | tee ".logs/lint/$name.log"
@@ -175,7 +179,7 @@ clean *lang:
     set -euo pipefail
     if [ -z "{{lang}}" ]; then
         scripts/run-parallel.sh clean \
-            "clean c" "clean codegen" "clean cpp" "clean csharp" "clean erlang" \
+            "clean c" "clean clojure" "clean codegen" "clean cpp" "clean csharp" "clean erlang" \
             "clean haskell" "clean java" "clean kotlin" "clean python" "clean rust" \
             "clean swift" "clean typescript"
     elif [ "{{lang}}" = "typescript" ] || [ "{{lang}}" = "ts" ]; then
@@ -201,12 +205,14 @@ clean *lang:
         rm -rf src/haskell/dist-newstyle
     elif [ "{{lang}}" = "erlang" ] || [ "{{lang}}" = "erl" ]; then
         rm -rf src/erlang/_build
+    elif [ "{{lang}}" = "clojure" ] || [ "{{lang}}" = "clj" ]; then
+        rm -rf src/clojure/.cpcache
     elif [ "{{lang}}" = "codegen" ]; then
         find codegen -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
     elif [ "{{lang}}" = "go" ] || [ "{{lang}}" = "ruby" ] || [ "{{lang}}" = "rb" ] || [ "{{lang}}" = "php" ]; then
         echo "No build artifacts for: {{lang}}"
     else
         echo "Unknown language: {{lang}}"
-        echo "Valid: c, typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl), codegen"
+        echo "Valid: c, clojure (clj), typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl), codegen"
         exit 1
     fi

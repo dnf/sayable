@@ -27,7 +27,8 @@ $SUDO apt-get install -y \
     php-cli php-xml php-mbstring \
     openjdk-17-jdk-headless \
     python3 python3-venv \
-    erlang-dev erlang-tools rebar3
+    erlang-dev erlang-tools rebar3 \
+    rlwrap
 
 # ---- .NET SDK 8.0 ----
 if ! command -v dotnet &>/dev/null; then
@@ -80,6 +81,12 @@ fi
 if ! command -v composer &>/dev/null; then
     echo "==> Installing Composer..."
     curl -sS https://getcomposer.org/installer | $SUDO php -- --install-dir=/usr/local/bin --filename=composer
+fi
+
+# ---- Clojure CLI ----
+if ! command -v clojure &>/dev/null; then
+    echo "==> Installing Clojure CLI..."
+    curl -fsSL https://download.clojure.org/install/linux-install.sh | $SUDO bash
 fi
 
 # ---- just (task runner) ----

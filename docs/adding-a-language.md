@@ -212,10 +212,27 @@ The root `.gitignore` is reserved for cross-language patterns (`__pycache__/`,
 newlang/build/
 ```
 
+### Bootstrap scripts and Dockerfile
+
+Add the new language's toolchain to all three environment setup files:
+
+- **`Dockerfile`** — add `apt-get install` or download step
+- **`scripts/bootstrap-macos.sh`** — add `brew install` and verification check
+- **`scripts/bootstrap-linux.sh`** — add `apt-get install` or download step
+
+### Language-specific README
+
+Create a `src/<lang>/README.md` with installation, usage, and API docs. Include
+a `## License` section linking to [`LICENSE.md`](../LICENSE.md). Use an existing
+language's README as a template (e.g., `src/typescript/README.md`).
+
 ### Documentation
 
 Several docs contain per-language tables that must include every implementation.
-Add a row for the new language in each:
+Add a row for the new language in each. **Keep table rows sorted alphabetically
+by language name.** Do not hardcode the number of implementations in prose —
+use "all" instead. The count only appears in two places: the `CLAUDE.md` project description
+(with the enumerated list) and the `README.md` intro paragraph.
 
 | Document | Table(s) to update |
 |----------|--------------------|
@@ -225,9 +242,6 @@ Add a row for the new language in each:
 | [`README.md`](../README.md) | Implementations table |
 | [`CONTRIBUTING.md`](../CONTRIBUTING.md) | Test commands table |
 | [`CLAUDE.md`](../CLAUDE.md) | Test command table |
-
-Also add a `## License` section to the new language's README linking to
-[`LICENSE.md`](../LICENSE.md).
 
 ## 11. Verify
 
@@ -254,6 +268,7 @@ just test               # run all languages to confirm nothing broke
 - [ ] Linter configured with zero warnings
 - [ ] `just test` passes for all languages
 - [ ] `just check` reports no drift
-- [ ] Cross-language tables updated (code-quality.md, packaging.md, codegen/README.md)
-- [ ] README with license link added
+- [ ] Bootstrap scripts updated (Dockerfile, bootstrap-macos.sh, bootstrap-linux.sh)
+- [ ] Language-specific README with license link added
+- [ ] Cross-language tables updated and sorted alphabetically
 - [ ] CLAUDE.md updated with new test/build commands

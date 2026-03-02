@@ -8,28 +8,29 @@
 "Newborn" · "2 weeks, 4 days" · "14 months" · "2 years, 3 months" · "4½ years"
 ```
 
-Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 71 locales and three compactness levels.
+Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 15 languages, 71 locales, and three compactness levels.
 
 ## Implementations
 
 | Language | CI | Package | Install | Docs |
 |----------|----|---------|---------|----- |
-| TypeScript | [![TypeScript](https://github.com/dnf/parent-time/actions/workflows/typescript.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/typescript.yml) | [![npm](https://img.shields.io/npm/v/parent-time?logo=npm&label=npm)](https://www.npmjs.com/package/parent-time) | `npm install parent-time` | [README](src/typescript/README.md) |
-| Python | [![Python](https://github.com/dnf/parent-time/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/python.yml) | [![PyPI](https://img.shields.io/pypi/v/parent-time?logo=python&label=pypi)](https://pypi.org/project/parent-time/) | `pip install parent-time` | [README](src/python/README.md) |
+| C | [![C](https://github.com/dnf/parent-time/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/c.yml) | — | CMake (freestanding) | [README](src/c/README.md) |
+| C# | [![C#](https://github.com/dnf/parent-time/actions/workflows/csharp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/csharp.yml) | — | NuGet | [README](src/csharp/README.md) |
+| C++ | [![C++](https://github.com/dnf/parent-time/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/cpp.yml) | — | CMake ([`FetchContent`](src/cpp/README.md)) | [README](src/cpp/README.md) |
+| Clojure | [![Clojure](https://github.com/dnf/parent-time/actions/workflows/clojure.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/clojure.yml) | — | deps.edn | — |
+| Erlang | [![Erlang](https://github.com/dnf/parent-time/actions/workflows/erlang.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/erlang.yml) | — | Rebar3 | — |
 | Go | [![Go](https://github.com/dnf/parent-time/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/go.yml) | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=src%2Fgo%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/src/go) | `go get github.com/dnf/parent-time/src/go` | [README](src/go/README.md) |
+| Haskell | [![Haskell](https://github.com/dnf/parent-time/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/haskell.yml) | — | Cabal | — |
+| Java | [![Java](https://github.com/dnf/parent-time/actions/workflows/java.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/java.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](src/java/README.md) |
+| Kotlin | [![Kotlin](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](src/kotlin/README.md) |
+| PHP | [![PHP](https://github.com/dnf/parent-time/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/php.yml) | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time) | `composer require dnf/parent-time` | [README](src/php/README.md) |
+| Python | [![Python](https://github.com/dnf/parent-time/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/python.yml) | [![PyPI](https://img.shields.io/pypi/v/parent-time?logo=python&label=pypi)](https://pypi.org/project/parent-time/) | `pip install parent-time` | [README](src/python/README.md) |
 | Ruby | [![Ruby](https://github.com/dnf/parent-time/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/ruby.yml) | [![Gem](https://img.shields.io/gem/v/parent_time?logo=rubygems&label=gem)](https://rubygems.org/gems/parent_time) | `gem install parent_time` | [README](src/ruby/README.md) |
 | Rust | [![Rust](https://github.com/dnf/parent-time/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/rust.yml) | [![Crates.io](https://img.shields.io/crates/v/parent-time?logo=rust&label=crates.io)](https://crates.io/crates/parent-time) | `parent-time = "0.1"` | [README](src/rust/README.md) |
-| Kotlin | [![Kotlin](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](src/kotlin/README.md) |
-| C | [![C](https://github.com/dnf/parent-time/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/c.yml) | — | CMake (freestanding) | [README](src/c/README.md) |
-| C++ | [![C++](https://github.com/dnf/parent-time/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/cpp.yml) | — | CMake ([`FetchContent`](src/cpp/README.md)) | [README](src/cpp/README.md) |
-| PHP | [![PHP](https://github.com/dnf/parent-time/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/php.yml) | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time) | `composer require dnf/parent-time` | [README](src/php/README.md) |
-| Java | [![Java](https://github.com/dnf/parent-time/actions/workflows/java.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/java.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](src/java/README.md) |
-| C# | [![C#](https://github.com/dnf/parent-time/actions/workflows/csharp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/csharp.yml) | — | NuGet | [README](src/csharp/README.md) |
 | Swift | [![Swift](https://github.com/dnf/parent-time/actions/workflows/swift.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/swift.yml) | — | SPM | [README](src/swift/README.md) |
-| Haskell | [![Haskell](https://github.com/dnf/parent-time/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/haskell.yml) | — | Cabal | — |
-| Erlang | [![Erlang](https://github.com/dnf/parent-time/actions/workflows/erlang.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/erlang.yml) | — | Rebar3 | — |
+| TypeScript | [![TypeScript](https://github.com/dnf/parent-time/actions/workflows/typescript.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/typescript.yml) | [![npm](https://img.shields.io/npm/v/parent-time?logo=npm&label=npm)](https://www.npmjs.com/package/parent-time) | `npm install parent-time` | [README](src/typescript/README.md) |
 
-All fourteen implementations produce identical output for the same inputs. See each language's README for installation, usage, and API details.
+All implementations produce identical output for the same inputs. See each language's README for installation, usage, and API details.
 
 ## Functions
 
@@ -118,9 +119,9 @@ Every implementation supports user-defined locale objects. See your language's R
 
 ## Testing
 
-All fourteen implementations share a [canonical set of 163 test cases](docs/testing.md) covering null handling, all six age tiers, month-boundary clamping (including February and leap years), born-on-31st progression, stage labels, compactness levels, and i18n locale support.
+All implementations share a [canonical set of 163 test cases](docs/testing.md) covering null handling, all six age tiers, month-boundary clamping (including February and leap years), born-on-31st progression, stage labels, compactness levels, and i18n locale support.
 
-The test specification in `docs/testing.md` is the single source of truth. Each implementation translates these cases into its native test framework. When adding a new test case, add it to the specification first, then implement it in all fourteen languages.
+The test specification in `docs/testing.md` is the single source of truth. Each implementation translates these cases into its native test framework. When adding a new test case, add it to the specification first, then implement it in all languages.
 
 ## Documentation
 
@@ -133,11 +134,11 @@ The test specification in `docs/testing.md` is the single source of truth. Each 
 
 ### Getting started
 
-You can develop and test all fourteen implementations either natively on macOS/Linux or inside a Docker container.
+You can develop and test all implementations either natively on macOS/Linux or inside a Docker container.
 
 #### Option A: Docker (no local toolchain setup)
 
-Requires only [Docker](https://www.docker.com/). Builds a Linux container with all fourteen toolchains and runs the full test suite against your local checkout:
+Requires only [Docker](https://www.docker.com/). Builds a Linux container with all toolchains and runs the full test suite against your local checkout:
 
 ```bash
 ./scripts/docker-test.sh          # build image + run all tests
@@ -148,7 +149,7 @@ Your repo is bind-mounted into the container. Anonymous volumes keep platform-sp
 
 #### Option B: Native setup
 
-Bootstrap scripts install all fourteen language toolchains and project dependencies in one step:
+Bootstrap scripts install all language toolchains and project dependencies in one step:
 
 ```bash
 # macOS (uses Homebrew)
@@ -162,10 +163,10 @@ The scripts are idempotent — safe to re-run if you need to pick up a missing t
 
 ### Commands
 
-A top-level [`justfile`](https://github.com/casey/just) provides a single entry point for building, testing, and linting across all fourteen languages:
+A top-level [`justfile`](https://github.com/casey/just) provides a single entry point for building, testing, and linting across all languages:
 
 ```bash
-just test                # run all 14 test suites + codegen check
+just test                # run all test suites + codegen check
 just test go             # run one language's tests
 just build               # build all languages with a build step
 just generate            # regenerate locale files from canonical JSON
@@ -174,11 +175,11 @@ just lint                # run all available linters
 just --list              # see all available commands
 ```
 
-Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`, `hs`, `erl` are accepted alongside full names.
+Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`, `hs`, `erl`, `clj` are accepted alongside full names.
 
 ## Contributing
 
-All fourteen implementations share identical test cases. If you add a test, add it in all directories. See each language's README for build and test commands, or use `just test <lang>` from the project root.
+All implementations share identical test cases. If you add a test, add it in all directories. See each language's README for build and test commands, or use `just test <lang>` from the project root.
 
 ## License
 

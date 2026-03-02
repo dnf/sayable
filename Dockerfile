@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 python3-venv \
     # Erlang/OTP + rebar3
     erlang-dev erlang-tools rebar3 \
+    # rlwrap for Clojure REPL
+    rlwrap \
     && rm -rf /var/lib/apt/lists/*
 
 # .NET SDK 8.0 via Microsoft's apt repo
@@ -54,6 +56,9 @@ ENV PATH="/root/.local/bin:${PATH}"
 
 # Composer (PHP package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Clojure CLI
+RUN curl -fsSL https://download.clojure.org/install/linux-install.sh | bash
 
 # just (task runner)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin

@@ -53,3 +53,6 @@ erlang/_build/
 
 # C
 c/build/
+
+# Clojure
+clojure/.cpcache/
