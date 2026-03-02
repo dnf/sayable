@@ -17,14 +17,14 @@ import sys
 
 # Add python/src to path so we can import parent_time
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "python", "src"))
+sys.path.insert(0, os.path.join(ROOT, "src", "python", "src"))
 
 from codegen.generate import _write_or_check, load_locales
 from parent_time.format_age import ParentTime
 from parent_time.locale import resolve_stage
 import parent_time.locales as locale_mod
 
-OUTPUT_DIR = os.path.join(ROOT, "docs", "locale-output")
+OUTPUT_DIR = os.path.join(ROOT, "locales", "example-output")
 
 # Age formatting date pairs: (label, dob, asOf)
 _AGE_PAIRS: list[tuple[str, str, str]] = [
@@ -113,6 +113,24 @@ def _plural_categories(plural_rule: str) -> str:
     return cats.get(plural_rule, plural_rule)
 
 
+def _aligned_table(headers: list[str], rows: list[list[str]]) -> list[str]:
+    """Build an aligned markdown table from headers and rows."""
+    num_cols = len(headers)
+    col_widths = [len(h) for h in headers]
+    for row in rows:
+        for j in range(num_cols):
+            col_widths[j] = max(col_widths[j], len(row[j]))
+    # Minimum width of 3 for separator dashes
+    col_widths = [max(w, 3) for w in col_widths]
+
+    lines: list[str] = []
+    lines.append("| " + " | ".join(h.ljust(col_widths[j]) for j, h in enumerate(headers)) + " |")
+    lines.append("| " + " | ".join("-" * w for w in col_widths) + " |")
+    for row in rows:
+        lines.append("| " + " | ".join(row[j].ljust(col_widths[j]) for j in range(num_cols)) + " |")
+    return lines
+
+
 def generate_locale_doc(locale_json: dict) -> str:
     """Generate markdown documentation for one locale."""
     code = locale_json["code"]
@@ -133,33 +151,30 @@ def generate_locale_doc(locale_json: dict) -> str:
     # Age formatting table
     lines.append("## Age formatting")
     lines.append("")
-    lines.append("| Age | Output |")
-    lines.append("|-----|--------|")
+    age_rows: list[list[str]] = []
     for label, dob, as_of in _AGE_PAIRS:
         output = pt.format_age(dob, as_of)
-        lines.append(f"| {label} | {output} |")
+        age_rows.append([label, output])
+    lines.extend(_aligned_table(["Age", "Output"], age_rows))
     lines.append("")
 
     # Stages table
     lines.append("## Stages")
     lines.append("")
-
+    stage_rows: list[list[str]] = []
     if gendered:
-        lines.append("| Stage | Label |")
-        lines.append("|-------|-------|")
         for stage_name, dob, as_of in _STAGE_PAIRS:
             stage_m = pt.format_stage(dob, as_of, "m")
             stage_f = pt.format_stage(dob, as_of, "f")
             if stage_m == stage_f:
-                lines.append(f"| {stage_name} | {stage_m} |")
+                stage_rows.append([stage_name, stage_m])
             else:
-                lines.append(f"| {stage_name} | {stage_m} / {stage_f} |")
+                stage_rows.append([stage_name, f"{stage_m} / {stage_f}"])
     else:
-        lines.append("| Stage | Label |")
-        lines.append("|-------|-------|")
         for stage_name, dob, as_of in _STAGE_PAIRS:
             stage_label = pt.format_stage(dob, as_of)
-            lines.append(f"| {stage_name} | {stage_label} |")
+            stage_rows.append([stage_name, stage_label])
+    lines.extend(_aligned_table(["Stage", "Label"], stage_rows))
 
     lines.append("")
     return "\n".join(lines)
@@ -224,7 +239,7 @@ def main() -> None:
         else:
             print("All files up to date.")
     else:
-        print(f"Generated {len(all_locales)} file(s) in docs/locale-output/")
+        print(f"Generated {len(all_locales)} file(s) in locales/example-output/")
 
 
 if __name__ == "__main__":

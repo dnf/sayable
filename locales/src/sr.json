@@ -1,0 +1,42 @@
+{
+  "code": "sr",
+  "name": "Serbian",
+  "pluralRule": "slavic_bcs",
+  "units": {
+    "day": {
+      "one": "{n} дан",
+      "few": "{n} дана",
+      "many": "{n} дана",
+      "other": "{n} дана"
+    },
+    "week": {
+      "one": "{n} недеља",
+      "few": "{n} недеље",
+      "many": "{n} недеља",
+      "other": "{n} недеља"
+    },
+    "month": {
+      "one": "{n} месец",
+      "few": "{n} месеца",
+      "many": "{n} месеци",
+      "other": "{n} месеци"
+    },
+    "year": {
+      "one": "{n} година",
+      "few": "{n} године",
+      "many": "{n} година",
+      "other": "{n} година"
+    }
+  },
+  "half": "{0} и по",
+  "delimiter": ", ",
+  "justBorn": "Новорођенче",
+  "stages": {
+    "newborn": "Новорођенче",
+    "infant": "Одојче",
+    "toddler": "Мало дете",
+    "child": "Дете",
+    "teenager": "Тинејџер",
+    "adult": "Одрасла особа"
+  }
+}

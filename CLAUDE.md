@@ -24,13 +24,13 @@ just lint python   # lint one        → .logs/lint/python.log
 
 All output is captured to `.logs/<command>/<language>.log` — both parallel and single-language runs.
 
-| Shortcut | Command |
-|----------|---------|
-| Codegen check | `just check` or `python -m codegen.generate --check` |
-| Codegen subset | `python -m codegen.generate --locales core` |
-| Codegen tests | `just test codegen` |
-| List groups | `python -m codegen.generate --list-groups` |
-| Clean artifacts | `just clean` or `just clean <lang\|codegen>` |
+| Shortcut        | Command                                              |
+| --------------- | ---------------------------------------------------- |
+| Codegen check   | `just check` or `python -m codegen.generate --check` |
+| Codegen subset  | `python -m codegen.generate --locales core`          |
+| Codegen tests   | `just test codegen`                                  |
+| List groups     | `python -m codegen.generate --list-groups`           |
+| Clean artifacts | `just clean` or `just clean <lang\|codegen>`         |
 
 ## Key rules
 
@@ -81,6 +81,7 @@ Core files per language follow a consistent pattern:
 - Zero warnings in CI. When suppressing a lint, document why.
 - Don't add comments that restate the code. Comments should explain "why", not "what."
 - Locale data files will have long lines — that's expected.
+- Markdown tables must be column-aligned with spaces so pipe delimiters line up vertically in raw text.
 - Language-specific build artifacts (e.g., `_build/`, `dist-newstyle/`, `build/`) go in `src/.gitignore`, not the root `.gitignore`. The root `.gitignore` is for cross-language patterns only (e.g., `__pycache__/`, `.logs/`).
 
 ## Adding a new locale

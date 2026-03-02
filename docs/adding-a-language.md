@@ -90,18 +90,18 @@ def output_path(root: str) -> str:
 
 Each locale's JSON is passed as a dict with these keys:
 
-| Key | Type | Description |
-|-----|------|-------------|
-| `code` | `str` | ISO 639-1 code (e.g. `"en"`) |
-| `name` | `str` | Display name (e.g. `"English"`) |
-| `pluralRule` | `str` | One of the 23 rule names (e.g. `"one_other"`) |
-| `units` | `dict` | `{day, week, month, year}` — each a string or plural map |
-| `half` | `str` | Template for half values (e.g. `"{n}½"`) |
-| `delimiter` | `str` | Separator between parts (e.g. `", "`) |
-| `justBorn` | `str` | Label for age 0 (e.g. `"Newborn"`) |
-| `stages` | `dict` | `{newborn, infant, toddler, child, teenager, adult}` |
-| `short` | `dict?` | Optional short-form overrides |
-| `compact` | `dict?` | Optional compact-form overrides |
+| Key          | Type    | Description                                              |
+| ------------ | ------- | -------------------------------------------------------- |
+| `code`       | `str`   | ISO 639-1 code (e.g. `"en"`)                             |
+| `name`       | `str`   | Display name (e.g. `"English"`)                          |
+| `pluralRule` | `str`   | One of the 23 rule names (e.g. `"one_other"`)            |
+| `units`      | `dict`  | `{day, week, month, year}` — each a string or plural map |
+| `half`       | `str`   | Template for half values (e.g. `"{n}½"`)                 |
+| `delimiter`  | `str`   | Separator between parts (e.g. `", "`)                    |
+| `justBorn`   | `str`   | Label for age 0 (e.g. `"Newborn"`)                       |
+| `stages`     | `dict`  | `{newborn, infant, toddler, child, teenager, adult}`     |
+| `short`      | `dict?` | Optional short-form overrides                            |
+| `compact`    | `dict?` | Optional compact-form overrides                          |
 
 ## 4. Add plural rules
 
@@ -237,14 +237,14 @@ by language name.** Do not hardcode the number of implementations in prose —
 use "all" instead. The count only appears in two places: the `CLAUDE.md` project description
 (with the enumerated list) and the `README.md` intro paragraph.
 
-| Document | Table(s) to update |
-|----------|--------------------|
-| [`docs/code-quality.md`](code-quality.md) | Naming conventions, Immutability, Quick reference |
-| [`docs/packaging.md`](packaging.md) | File layout / initialization, Tree-shaking action table |
-| [`codegen/README.md`](../codegen/README.md) | Output per language |
-| [`README.md`](../README.md) | Implementations table |
-| [`CONTRIBUTING.md`](../CONTRIBUTING.md) | Test commands table |
-| [`CLAUDE.md`](../CLAUDE.md) | Test command table |
+| Document                                    | Table(s) to update                                      |
+| ------------------------------------------- | ------------------------------------------------------- |
+| [`docs/code-quality.md`](code-quality.md)   | Naming conventions, Immutability, Quick reference       |
+| [`docs/packaging.md`](packaging.md)         | File layout / initialization, Tree-shaking action table |
+| [`codegen/README.md`](../codegen/README.md) | Output per language                                     |
+| [`README.md`](../README.md)                 | Implementations table                                   |
+| [`CONTRIBUTING.md`](../CONTRIBUTING.md)     | Test commands table                                     |
+| [`CLAUDE.md`](../CLAUDE.md)                 | Test command table                                      |
 
 ## 11. Verify
 

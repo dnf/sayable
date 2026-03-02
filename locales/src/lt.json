@@ -1,0 +1,53 @@
+{
+  "code": "lt",
+  "name": "Lithuanian",
+  "pluralRule": "lt",
+  "units": {
+    "day": {
+      "one": "{n} diena",
+      "few": "{n} dienos",
+      "other": "{n} dienų"
+    },
+    "week": {
+      "one": "{n} savaitė",
+      "few": "{n} savaitės",
+      "other": "{n} savaičių"
+    },
+    "month": {
+      "one": "{n} mėnuo",
+      "few": "{n} mėnesiai",
+      "other": "{n} mėnesių"
+    },
+    "year": {
+      "one": "{n} metai",
+      "few": "{n} metai",
+      "other": "{n} metų"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justBorn": "Naujagimis",
+  "stages": {
+    "newborn": {
+      "m": "Naujagimis",
+      "f": "Naujagimė"
+    },
+    "infant": {
+      "m": "Kūdikis",
+      "f": "Kūdikė"
+    },
+    "toddler": {
+      "m": "Mažylis",
+      "f": "Mažylė"
+    },
+    "child": "Vaikas",
+    "teenager": {
+      "m": "Paauglys",
+      "f": "Paauglė"
+    },
+    "adult": {
+      "m": "Suaugęs",
+      "f": "Suaugusi"
+    }
+  }
+}

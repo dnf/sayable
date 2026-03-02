@@ -12,26 +12,26 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 
 ## Implementations
 
-| Language | CI | Package | Install | Docs |
-|----------|----|---------|---------|----- |
-| C | [![C](https://github.com/dnf/parent-time/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/c.yml) | — | CMake (freestanding) | [README](src/c/README.md) |
-| C# | [![C#](https://github.com/dnf/parent-time/actions/workflows/csharp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/csharp.yml) | — | NuGet | [README](src/csharp/README.md) |
-| C++ | [![C++](https://github.com/dnf/parent-time/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/cpp.yml) | — | CMake ([`FetchContent`](src/cpp/README.md)) | [README](src/cpp/README.md) |
-| Clojure | [![Clojure](https://github.com/dnf/parent-time/actions/workflows/clojure.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/clojure.yml) | — | deps.edn | [README](src/clojure/README.md) |
-| Elm | [![Elm](https://github.com/dnf/parent-time/actions/workflows/elm.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/elm.yml) | — | elm.json (application) | [README](src/elm/README.md) |
-| Erlang | [![Erlang](https://github.com/dnf/parent-time/actions/workflows/erlang.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/erlang.yml) | — | Rebar3 | [README](src/erlang/README.md) |
-| Go | [![Go](https://github.com/dnf/parent-time/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/go.yml) | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=src%2Fgo%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/src/go) | `go get github.com/dnf/parent-time/src/go` | [README](src/go/README.md) |
-| Haskell | [![Haskell](https://github.com/dnf/parent-time/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/haskell.yml) | — | Cabal | [README](src/haskell/README.md) |
-| Java | [![Java](https://github.com/dnf/parent-time/actions/workflows/java.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/java.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](src/java/README.md) |
-| Kotlin | [![Kotlin](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml) | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven | [README](src/kotlin/README.md) |
-| PHP | [![PHP](https://github.com/dnf/parent-time/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/php.yml) | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time) | `composer require dnf/parent-time` | [README](src/php/README.md) |
-| Python | [![Python](https://github.com/dnf/parent-time/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/python.yml) | [![PyPI](https://img.shields.io/pypi/v/parent-time?logo=python&label=pypi)](https://pypi.org/project/parent-time/) | `pip install parent-time` | [README](src/python/README.md) |
-| Ruby | [![Ruby](https://github.com/dnf/parent-time/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/ruby.yml) | [![Gem](https://img.shields.io/gem/v/parent_time?logo=rubygems&label=gem)](https://rubygems.org/gems/parent_time) | `gem install parent_time` | [README](src/ruby/README.md) |
-| Rust | [![Rust](https://github.com/dnf/parent-time/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/rust.yml) | [![Crates.io](https://img.shields.io/crates/v/parent-time?logo=rust&label=crates.io)](https://crates.io/crates/parent-time) | `parent-time = "0.1"` | [README](src/rust/README.md) |
-| Scala | [![Scala](https://github.com/dnf/parent-time/actions/workflows/scala.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/scala.yml) | — | Gradle | [README](src/scala/README.md) |
-| Swift | [![Swift](https://github.com/dnf/parent-time/actions/workflows/swift.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/swift.yml) | — | SPM | [README](src/swift/README.md) |
-| TypeScript | [![TypeScript](https://github.com/dnf/parent-time/actions/workflows/typescript.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/typescript.yml) | [![npm](https://img.shields.io/npm/v/parent-time?logo=npm&label=npm)](https://www.npmjs.com/package/parent-time) | `npm install parent-time` | [README](src/typescript/README.md) |
-| Zig | [![Zig](https://github.com/dnf/parent-time/actions/workflows/zig.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/zig.yml) | — | Zig build system | [README](src/zig/README.md) |
+| Language   | CI                                                                                                                                                                              | Package                                                                                                                                                                          | Install                                     | Docs                               |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ---------------------------------- |
+| C          | [![C](https://github.com/dnf/parent-time/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/c.yml)                            | —                                                                                                                                                                                | CMake (freestanding)                        | [README](src/c/README.md)          |
+| C#         | [![C#](https://github.com/dnf/parent-time/actions/workflows/csharp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/csharp.yml)                 | —                                                                                                                                                                                | NuGet                                       | [README](src/csharp/README.md)     |
+| C++        | [![C++](https://github.com/dnf/parent-time/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/cpp.yml)                      | —                                                                                                                                                                                | CMake ([`FetchContent`](src/cpp/README.md)) | [README](src/cpp/README.md)        |
+| Clojure    | [![Clojure](https://github.com/dnf/parent-time/actions/workflows/clojure.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/clojure.yml)          | —                                                                                                                                                                                | deps.edn                                    | [README](src/clojure/README.md)    |
+| Elm        | [![Elm](https://github.com/dnf/parent-time/actions/workflows/elm.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/elm.yml)                      | —                                                                                                                                                                                | elm.json (application)                      | [README](src/elm/README.md)        |
+| Erlang     | [![Erlang](https://github.com/dnf/parent-time/actions/workflows/erlang.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/erlang.yml)             | —                                                                                                                                                                                | Rebar3                                      | [README](src/erlang/README.md)     |
+| Go         | [![Go](https://github.com/dnf/parent-time/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/go.yml)                         | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=src%2Fgo%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/src/go)       | `go get github.com/dnf/parent-time/src/go`  | [README](src/go/README.md)         |
+| Haskell    | [![Haskell](https://github.com/dnf/parent-time/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/haskell.yml)          | —                                                                                                                                                                                | Cabal                                       | [README](src/haskell/README.md)    |
+| Java       | [![Java](https://github.com/dnf/parent-time/actions/workflows/java.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/java.yml)                   | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven                                | [README](src/java/README.md)       |
+| Kotlin     | [![Kotlin](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml)             | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time)  | Gradle/Maven                                | [README](src/kotlin/README.md)     |
+| PHP        | [![PHP](https://github.com/dnf/parent-time/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/php.yml)                      | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time)                                | `composer require dnf/parent-time`          | [README](src/php/README.md)        |
+| Python     | [![Python](https://github.com/dnf/parent-time/actions/workflows/python.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/python.yml)             | [![PyPI](https://img.shields.io/pypi/v/parent-time?logo=python&label=pypi)](https://pypi.org/project/parent-time/)                                                               | `pip install parent-time`                   | [README](src/python/README.md)     |
+| Ruby       | [![Ruby](https://github.com/dnf/parent-time/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/ruby.yml)                   | [![Gem](https://img.shields.io/gem/v/parent_time?logo=rubygems&label=gem)](https://rubygems.org/gems/parent_time)                                                                | `gem install parent_time`                   | [README](src/ruby/README.md)       |
+| Rust       | [![Rust](https://github.com/dnf/parent-time/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/rust.yml)                   | [![Crates.io](https://img.shields.io/crates/v/parent-time?logo=rust&label=crates.io)](https://crates.io/crates/parent-time)                                                      | `parent-time = "0.1"`                       | [README](src/rust/README.md)       |
+| Scala      | [![Scala](https://github.com/dnf/parent-time/actions/workflows/scala.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/scala.yml)                | —                                                                                                                                                                                | Gradle                                      | [README](src/scala/README.md)      |
+| Swift      | [![Swift](https://github.com/dnf/parent-time/actions/workflows/swift.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/swift.yml)                | —                                                                                                                                                                                | SPM                                         | [README](src/swift/README.md)      |
+| TypeScript | [![TypeScript](https://github.com/dnf/parent-time/actions/workflows/typescript.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/typescript.yml) | [![npm](https://img.shields.io/npm/v/parent-time?logo=npm&label=npm)](https://www.npmjs.com/package/parent-time)                                                                 | `npm install parent-time`                   | [README](src/typescript/README.md) |
+| Zig        | [![Zig](https://github.com/dnf/parent-time/actions/workflows/zig.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/zig.yml)                      | —                                                                                                                                                                                | Zig build system                            | [README](src/zig/README.md)        |
 
 All implementations produce identical output for the same inputs. See each language's README for installation, usage, and API details.
 
@@ -41,15 +41,15 @@ All implementations produce identical output for the same inputs. See each langu
 
 Returns a human-readable age string with granularity that matches the child's developmental stage:
 
-| Age range | Format | Examples |
-|---|---|---|
-| Born today | `"Newborn"` | Newborn |
-| 1–6 days | `"N days"` | 1 day, 5 days |
-| 1 week – <3 months | `"N weeks, N days"` | 2 weeks, 3 weeks, 4 days |
-| 3–23 months | `"N months"` | 3 months, 14 months |
-| 24–35 months | `"N years, N months"` | 2 years, 2 years, 7 months |
-| 3–6 years | `"N years"` / `"N½ years"` | 3 years, 3½ years, 5½ years |
-| 7+ years | `"N years"` | 7 years, 45 years |
+| Age range          | Format                     | Examples                    |
+| ------------------ | -------------------------- | --------------------------- |
+| Born today         | `"Newborn"`                | Newborn                     |
+| 1–6 days           | `"N days"`                 | 1 day, 5 days               |
+| 1 week – <3 months | `"N weeks, N days"`        | 2 weeks, 3 weeks, 4 days    |
+| 3–23 months        | `"N months"`               | 3 months, 14 months         |
+| 24–35 months       | `"N years, N months"`      | 2 years, 2 years, 7 months  |
+| 3–6 years          | `"N years"` / `"N½ years"` | 3 years, 3½ years, 5½ years |
+| 7+ years           | `"N years"`                | 7 years, 45 years           |
 
 Calendar-month boundaries use **day-of-month clamping**: a child born on the 31st turns N months old on the last day of a shorter month (e.g., Feb 28/29, Apr 30).
 
@@ -57,14 +57,14 @@ Calendar-month boundaries use **day-of-month clamping**: a child born on the 31s
 
 Returns the developmental stage label (AAP/CDC consensus boundaries):
 
-| Stage | Age range |
-|---|---|
-| Newborn | 0–1 months |
-| Infant | 2–11 months |
-| Toddler | 1–2 years |
-| Child | 3–12 years |
+| Stage    | Age range   |
+| -------- | ----------- |
+| Newborn  | 0–1 months  |
+| Infant   | 2–11 months |
+| Toddler  | 1–2 years   |
+| Child    | 3–12 years  |
 | Teenager | 13–17 years |
-| Adult | 18+ years |
+| Adult    | 18+ years   |
 
 ## Localization
 
@@ -72,36 +72,36 @@ Returns the developmental stage label (AAP/CDC consensus boundaries):
 
 A core goal of this project is **localization**, not just internationalization. The library seeks to respect and align with the culture of each language — local customs about children may not always be reflected in sources such as CLDR. We actively welcome feedback and pull requests from native speakers of languages we support, or from native speakers who wish to add languages we do not currently support.
 
-| Code | Language | Code | Language | Code | Language |
-|------|----------|------|----------|------|----------|
-| `ar` | Arabic | `ga` | Irish | `pa` | Punjabi |
-| `bg` | Bulgarian | `gu` | Gujarati | `pl` | Polish |
-| `bn` | Bengali | `hi` | Hindi | `pt` | Portuguese |
-| `bs` | Bosnian | `hr` | Croatian | `ro` | Romanian |
-| `ca` | Catalan | `hu` | Hungarian | `ru` | Russian |
-| `cs` | Czech | `it` | Italian | `sk` | Slovak |
-| `da` | Danish | `ja` | Japanese | `sl` | Slovenian |
-| `de` | German | `jv` | Javanese | `sq` | Albanian |
-| `el` | Greek | `ko` | Korean | `sr` | Serbian |
-| `en` | English | `lt` | Lithuanian | `sv` | Swedish |
-| `es` | Spanish | `lv` | Latvian | `ta` | Tamil |
-| `et` | Estonian | `mr` | Marathi | `te` | Telugu |
-| `eu` | Basque | `ms` | Malay | `th` | Thai |
-| `fa` | Persian | `nb` | Norwegian | `tr` | Turkish |
-| `fi` | Finnish | `nl` | Dutch | `uk` | Ukrainian |
-| `fr` | French | | | `ur` | Urdu |
-| | | | | `vi` | Vietnamese |
-| | | | | `zh` | Chinese |
+| Code | Language  | Code | Language   | Code | Language   |
+| ---- | --------- | ---- | ---------- | ---- | ---------- |
+| `ar` | Arabic    | `ga` | Irish      | `pa` | Punjabi    |
+| `bg` | Bulgarian | `gu` | Gujarati   | `pl` | Polish     |
+| `bn` | Bengali   | `hi` | Hindi      | `pt` | Portuguese |
+| `bs` | Bosnian   | `hr` | Croatian   | `ro` | Romanian   |
+| `ca` | Catalan   | `hu` | Hungarian  | `ru` | Russian    |
+| `cs` | Czech     | `it` | Italian    | `sk` | Slovak     |
+| `da` | Danish    | `ja` | Japanese   | `sl` | Slovenian  |
+| `de` | German    | `jv` | Javanese   | `sq` | Albanian   |
+| `el` | Greek     | `ko` | Korean     | `sr` | Serbian    |
+| `en` | English   | `lt` | Lithuanian | `sv` | Swedish    |
+| `es` | Spanish   | `lv` | Latvian    | `ta` | Tamil      |
+| `et` | Estonian  | `mr` | Marathi    | `te` | Telugu     |
+| `eu` | Basque    | `ms` | Malay      | `th` | Thai       |
+| `fa` | Persian   | `nb` | Norwegian  | `tr` | Turkish    |
+| `fi` | Finnish   | `nl` | Dutch      | `uk` | Ukrainian  |
+| `fr` | French    |      |            | `ur` | Urdu       |
+|      |           |      |            | `vi` | Vietnamese |
+|      |           |      |            | `zh` | Chinese    |
 
 ### Compactness
 
 Each implementation supports three compactness levels:
 
-| Level | Example output |
-|-------|---------------|
-| Normal | "3 months", "2 years, 1 month" |
-| Short | "3 mo", "2 yr, 1 mo" |
-| Compact | "3m", "2y1m" |
+| Level   | Example output                 |
+| ------- | ------------------------------ |
+| Normal  | "3 months", "2 years, 1 month" |
+| Short   | "3 mo", "2 yr, 1 mo"           |
+| Compact | "3m", "2y1m"                   |
 
 Currently only the English locale defines distinct short/compact forms. Other locales return normal output for all three levels; you can add overrides via the locale's `short` and `compact` fields.
 

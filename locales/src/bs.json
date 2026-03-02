@@ -1,0 +1,42 @@
+{
+  "code": "bs",
+  "name": "Bosnian",
+  "pluralRule": "slavic_bcs",
+  "units": {
+    "day": {
+      "one": "{n} dan",
+      "few": "{n} dana",
+      "many": "{n} dana",
+      "other": "{n} dana"
+    },
+    "week": {
+      "one": "{n} sedmica",
+      "few": "{n} sedmice",
+      "many": "{n} sedmica",
+      "other": "{n} sedmica"
+    },
+    "month": {
+      "one": "{n} mjesec",
+      "few": "{n} mjeseca",
+      "many": "{n} mjeseci",
+      "other": "{n} mjeseci"
+    },
+    "year": {
+      "one": "{n} godina",
+      "few": "{n} godine",
+      "many": "{n} godina",
+      "other": "{n} godina"
+    }
+  },
+  "half": "{0} i po",
+  "delimiter": ", ",
+  "justBorn": "Novorođenče",
+  "stages": {
+    "newborn": "Novorođenče",
+    "infant": "Beba",
+    "toddler": "Malo dijete",
+    "child": "Dijete",
+    "teenager": "Tinejdžer",
+    "adult": "Odrasla osoba"
+  }
+}

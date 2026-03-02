@@ -1,0 +1,34 @@
+{
+  "code": "sw",
+  "name": "Swahili",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "siku {n}",
+      "other": "siku {n}"
+    },
+    "week": {
+      "one": "wiki {n}",
+      "other": "wiki {n}"
+    },
+    "month": {
+      "one": "mwezi {n}",
+      "other": "miezi {n}"
+    },
+    "year": {
+      "one": "mwaka {n}",
+      "other": "miaka {n}"
+    }
+  },
+  "half": "{0} na nusu",
+  "delimiter": ", ",
+  "justBorn": "Mzaliwa mpya",
+  "stages": {
+    "newborn": "Mzaliwa mpya",
+    "infant": "Mtoto mchanga",
+    "toddler": "Mtoto mdogo",
+    "child": "Mtoto",
+    "teenager": "Kijana",
+    "adult": "Mtu mzima"
+  }
+}

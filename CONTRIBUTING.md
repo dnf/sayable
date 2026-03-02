@@ -38,26 +38,26 @@ just clean         # remove build artifacts
 
 All commands below are prefixed with `just` (e.g., `just test cpp`):
 
-| Language   | test | build | lint | clean |
-|------------|------|-------|------|-------|
-| C          | `test c` | `build c` | 🛠️ | `clean c` |
-| C#         | `test csharp`<br>`test cs` | `build csharp`<br>`build cs` | 🛠️ | `clean csharp`<br>`clean cs` |
-| C++        | `test cpp`<br>`test c++` | `build cpp`<br>`build c++` | 🛠️ | `clean cpp`<br>`clean c++` |
-| Clojure    | `test clojure`<br>`test clj` | ⚡ | 🛠️ | `clean clojure`<br>`clean clj` |
-| Elm        | `test elm`<br>`test el` | ⚡ | 🛠️ | `clean elm`<br>`clean el` |
-| Erlang     | `test erlang`<br>`test erl` | `build erlang`<br>`build erl` | 🛠️ | `clean erlang`<br>`clean erl` |
-| Go         | `test go` | ⚡ | `lint go` | ⚡ |
-| Haskell    | `test haskell`<br>`test hs` | `build haskell`<br>`build hs` | 🛠️ | `clean haskell`<br>`clean hs` |
-| Java       | `test java` | `build java` | 🛠️ | `clean java` |
-| Kotlin     | `test kotlin`<br>`test kt` | `build kotlin`<br>`build kt` | 🛠️ | `clean kotlin`<br>`clean kt` |
-| PHP        | `test php` | ⚡ | `lint php` | ⚡ |
-| Python     | `test python`<br>`test py` | ⚡ | `lint python`<br>`lint py` | `clean python`<br>`clean py` |
-| Ruby       | `test ruby`<br>`test rb` | ⚡ | `lint ruby`<br>`lint rb` | ⚡ |
-| Rust       | `test rust`<br>`test rs` | `build rust`<br>`build rs` | `lint rust`<br>`lint rs` | `clean rust`<br>`clean rs` |
-| Scala      | `test scala`<br>`test sc` | `build scala`<br>`build sc` | 🛠️ | `clean scala`<br>`clean sc` |
-| Swift      | `test swift`<br>`test sw` | `build swift`<br>`build sw` | 🛠️ | `clean swift`<br>`clean sw` |
+| Language   | test                           | build                            | lint                           | clean                            |
+| ---------- | ------------------------------ | -------------------------------- | ------------------------------ | -------------------------------- |
+| C          | `test c`                       | `build c`                        | 🛠️                             | `clean c`                        |
+| C#         | `test csharp`<br>`test cs`     | `build csharp`<br>`build cs`     | 🛠️                             | `clean csharp`<br>`clean cs`     |
+| C++        | `test cpp`<br>`test c++`       | `build cpp`<br>`build c++`       | 🛠️                             | `clean cpp`<br>`clean c++`       |
+| Clojure    | `test clojure`<br>`test clj`   | ⚡                                | 🛠️                             | `clean clojure`<br>`clean clj`   |
+| Elm        | `test elm`<br>`test el`        | ⚡                                | 🛠️                             | `clean elm`<br>`clean el`        |
+| Erlang     | `test erlang`<br>`test erl`    | `build erlang`<br>`build erl`    | 🛠️                             | `clean erlang`<br>`clean erl`    |
+| Go         | `test go`                      | ⚡                                | `lint go`                      | ⚡                                |
+| Haskell    | `test haskell`<br>`test hs`    | `build haskell`<br>`build hs`    | 🛠️                             | `clean haskell`<br>`clean hs`    |
+| Java       | `test java`                    | `build java`                     | 🛠️                             | `clean java`                     |
+| Kotlin     | `test kotlin`<br>`test kt`     | `build kotlin`<br>`build kt`     | 🛠️                             | `clean kotlin`<br>`clean kt`     |
+| PHP        | `test php`                     | ⚡                                | `lint php`                     | ⚡                                |
+| Python     | `test python`<br>`test py`     | ⚡                                | `lint python`<br>`lint py`     | `clean python`<br>`clean py`     |
+| Ruby       | `test ruby`<br>`test rb`       | ⚡                                | `lint ruby`<br>`lint rb`       | ⚡                                |
+| Rust       | `test rust`<br>`test rs`       | `build rust`<br>`build rs`       | `lint rust`<br>`lint rs`       | `clean rust`<br>`clean rs`       |
+| Scala      | `test scala`<br>`test sc`      | `build scala`<br>`build sc`      | 🛠️                             | `clean scala`<br>`clean sc`      |
+| Swift      | `test swift`<br>`test sw`      | `build swift`<br>`build sw`      | 🛠️                             | `clean swift`<br>`clean sw`      |
 | TypeScript | `test typescript`<br>`test ts` | `build typescript`<br>`build ts` | `lint typescript`<br>`lint ts` | `clean typescript`<br>`clean ts` |
-| Zig        | `test zig`<br>`test zg` | `build zig`<br>`build zg` | 🛠️ | `clean zig`<br>`clean zg` |
+| Zig        | `test zig`<br>`test zg`        | `build zig`<br>`build zg`        | 🛠️                             | `clean zig`<br>`clean zg`        |
 
 ⚡ = interpreted, no build step needed · 🛠️ = linted via warnings-as-errors in build
 

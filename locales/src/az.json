@@ -1,0 +1,34 @@
+{
+  "code": "az",
+  "name": "Azerbaijani",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "{n} gün",
+      "other": "{n} gün"
+    },
+    "week": {
+      "one": "{n} həftə",
+      "other": "{n} həftə"
+    },
+    "month": {
+      "one": "{n} ay",
+      "other": "{n} ay"
+    },
+    "year": {
+      "one": "{n} yaş",
+      "other": "{n} yaş"
+    }
+  },
+  "half": "{n} yarım",
+  "delimiter": ", ",
+  "justBorn": "Təzə doğulub",
+  "stages": {
+    "newborn": "Təzə doğulub",
+    "infant": "Körpə",
+    "toddler": "Azyaşlı",
+    "child": "Uşaq",
+    "teenager": "Yeniyetmə",
+    "adult": "Böyük"
+  }
+}

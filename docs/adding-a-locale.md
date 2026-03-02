@@ -15,31 +15,31 @@ You create one JSON file and codegen generates all 11 language implementations.
 The project has 23 plural rule patterns. Find the one that matches your
 language's CLDR integer plural categories:
 
-| Rule name | Categories | Languages using it |
-|-----------|-----------|-------------------|
-| `ar` | zero, one, two, few, many, other | ar |
-| `br` | one, two, few, many, other | br |
-| `cs_sk` | one, few, other | cs, sk |
-| `cy` | zero, one, two, few, many, other | cy |
-| `ga` | one, two, few, many, other | ga |
-| `gd` | one, two, few, other | gd |
-| `gv` | one, two, few, other | gv |
-| `he` | one, two, other | he |
-| `kw` | zero, one, two, few, many, other | kw |
-| `lt` | one, few, other | lt |
-| `lv` | zero, one, other | lv |
-| `mk` | one, other | mk |
-| `mt` | one, two, few, many, other | mt |
-| `one_other` | one, other | en, de, es, it, nl, bg, da, nb, sv, etc. |
-| `one_other_zero_one` | one, other (0 and 1 are both "one") | fr, pt, hi, bn, fa, etc. |
-| `other_only` | other | ja, ko, zh, th, vi, ms, jv, hu, eu |
-| `pl` | one, few, many | pl |
-| `ro` | one, few, other | ro |
-| `ru_uk` | one, few, many | ru, uk |
-| `shi` | one, few, other | shi |
-| `sl` | one, two, few, other | sl |
-| `slavic_bcs` | one, few, other | bs, hr, sr |
-| `tzm` | one, other | tzm |
+| Rule name            | Categories                          | Languages using it                       |
+| -------------------- | ----------------------------------- | ---------------------------------------- |
+| `ar`                 | zero, one, two, few, many, other    | ar                                       |
+| `br`                 | one, two, few, many, other          | br                                       |
+| `cs_sk`              | one, few, other                     | cs, sk                                   |
+| `cy`                 | zero, one, two, few, many, other    | cy                                       |
+| `ga`                 | one, two, few, many, other          | ga                                       |
+| `gd`                 | one, two, few, other                | gd                                       |
+| `gv`                 | one, two, few, other                | gv                                       |
+| `he`                 | one, two, other                     | he                                       |
+| `kw`                 | zero, one, two, few, many, other    | kw                                       |
+| `lt`                 | one, few, other                     | lt                                       |
+| `lv`                 | zero, one, other                    | lv                                       |
+| `mk`                 | one, other                          | mk                                       |
+| `mt`                 | one, two, few, many, other          | mt                                       |
+| `one_other`          | one, other                          | en, de, es, it, nl, bg, da, nb, sv, etc. |
+| `one_other_zero_one` | one, other (0 and 1 are both "one") | fr, pt, hi, bn, fa, etc.                 |
+| `other_only`         | other                               | ja, ko, zh, th, vi, ms, jv, hu, eu       |
+| `pl`                 | one, few, many                      | pl                                       |
+| `ro`                 | one, few, other                     | ro                                       |
+| `ru_uk`              | one, few, many                      | ru, uk                                   |
+| `shi`                | one, few, other                     | shi                                      |
+| `sl`                 | one, two, few, other                | sl                                       |
+| `slavic_bcs`         | one, few, other                     | bs, hr, sr                               |
+| `tzm`                | one, other                          | tzm                                      |
 
 These 23 rules cover every CLDR cardinal plural pattern. Your language's
 CLDR rule will match one of these — use that rule name.
@@ -132,18 +132,18 @@ Provide a form for every category the plural rule can return:
 
 ### Field reference
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `code` | string | ISO 639-1 language code |
-| `name` | string | English name of the language |
-| `pluralRule` | string | One of the 12 rule names (see table above) |
-| `units` | object | `{day, week, month, year}` — each a string or category map |
-| `half` | string | Half-year template (see below) |
-| `delimiter` | string | Separator between parts (e.g. `", "`) |
-| `justBorn` | string | Label for age 0 (born today) |
-| `stages` | object | `{newborn, infant, toddler, child, teenager, adult}` |
-| `short` | object? | Optional short-form overrides |
-| `compact` | object? | Optional compact-form overrides |
+| Field        | Type    | Description                                                |
+| ------------ | ------- | ---------------------------------------------------------- |
+| `code`       | string  | ISO 639-1 language code                                    |
+| `name`       | string  | English name of the language                               |
+| `pluralRule` | string  | One of the 12 rule names (see table above)                 |
+| `units`      | object  | `{day, week, month, year}` — each a string or category map |
+| `half`       | string  | Half-year template (see below)                             |
+| `delimiter`  | string  | Separator between parts (e.g. `", "`)                      |
+| `justBorn`   | string  | Label for age 0 (born today)                               |
+| `stages`     | object  | `{newborn, infant, toddler, child, teenager, adult}`       |
+| `short`      | object? | Optional short-form overrides                              |
+| `compact`    | object? | Optional compact-form overrides                            |
 
 ### Units
 

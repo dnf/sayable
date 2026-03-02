@@ -28,22 +28,22 @@ codebase are suppressed with a documented rationale.
 Each language follows its community's standard naming conventions. The table
 below summarizes the patterns across all implementations:
 
-| Language   | Classes/Types | Functions/Methods | Constants          | Fields/Properties | Enum variants      |
-|------------|---------------|-------------------|--------------------|-------------------|--------------------|
-| TypeScript | PascalCase    | camelCase         | lowercase (`en`)   | camelCase         | n/a (string literals) |
-| Python     | PascalCase    | snake_case        | UPPER_CASE (`EN`)  | snake_case        | n/a (string literals) |
-| Go         | PascalCase    | PascalCase (exported) | UPPER_CASE (`EN`) | PascalCase (exported) | PascalCase    |
-| Ruby       | PascalCase    | snake_case        | UPPER_CASE (`EN`)  | snake_case symbols | n/a               |
-| Rust       | PascalCase    | snake_case        | UPPER_CASE (`EN`) | snake_case     | PascalCase         |
-| Kotlin     | PascalCase    | camelCase         | UPPER_CASE (`EN`) | camelCase      | UPPER_CASE         |
-| C++        | PascalCase    | snake_case        | UPPER_CASE (`EN()`) | snake_case  | PascalCase         |
-| PHP        | PascalCase    | camelCase         | UPPER_CASE (`EN()`) | camelCase   | PascalCase         |
-| Java       | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | UPPER_CASE         |
-| C#         | PascalCase    | PascalCase        | UPPER_CASE (`EN`)  | PascalCase  | PascalCase         |
-| Elm        | PascalCase    | camelCase         | lowercase (`en`)   | camelCase   | PascalCase         |
-| Scala      | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | UPPER_CASE         |
-| Swift      | PascalCase    | camelCase         | UPPER_CASE (`EN`)  | camelCase   | camelCase          |
-| Zig        | PascalCase    | camelCase         | lowercase (`en`)   | snake_case  | .snake_case        |
+| Language   | Classes/Types | Functions/Methods     | Constants           | Fields/Properties     | Enum variants         |
+| ---------- | ------------- | --------------------- | ------------------- | --------------------- | --------------------- |
+| TypeScript | PascalCase    | camelCase             | lowercase (`en`)    | camelCase             | n/a (string literals) |
+| Python     | PascalCase    | snake_case            | UPPER_CASE (`EN`)   | snake_case            | n/a (string literals) |
+| Go         | PascalCase    | PascalCase (exported) | UPPER_CASE (`EN`)   | PascalCase (exported) | PascalCase            |
+| Ruby       | PascalCase    | snake_case            | UPPER_CASE (`EN`)   | snake_case symbols    | n/a                   |
+| Rust       | PascalCase    | snake_case            | UPPER_CASE (`EN`)   | snake_case            | PascalCase            |
+| Kotlin     | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
+| C++        | PascalCase    | snake_case            | UPPER_CASE (`EN()`) | snake_case            | PascalCase            |
+| PHP        | PascalCase    | camelCase             | UPPER_CASE (`EN()`) | camelCase             | PascalCase            |
+| Java       | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
+| C#         | PascalCase    | PascalCase            | UPPER_CASE (`EN`)   | PascalCase            | PascalCase            |
+| Elm        | PascalCase    | camelCase             | lowercase (`en`)    | camelCase             | PascalCase            |
+| Scala      | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
+| Swift      | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | camelCase             |
+| Zig        | PascalCase    | camelCase             | lowercase (`en`)    | snake_case            | .snake_case           |
 
 The locale JSON source files use camelCase keys (`justBorn`, `formatNumber`).
 The code generator translates these to each language's idiomatic convention
@@ -68,21 +68,21 @@ construction. Fields are set once during `__init__` / the constructor and never
 modified — every formatting method is a pure read. The table below summarizes
 how each language enforces this:
 
-| Language   | Mechanism | Notes |
-|------------|-----------|-------|
-| TypeScript | `private readonly` fields | Compiler error on reassignment |
-| Python     | `_`-prefixed fields + pyright strict | Convention-based; pyright prevents external access to `_` members |
-| Go         | Unexported fields | Only the package can access them; methods use value receivers |
-| Ruby       | `freeze` in `initialize` | Runtime error on any mutation after construction |
-| Rust       | `&self` on all methods | Borrow checker prevents mutation through shared references |
-| Kotlin     | `private val` fields | `val` is compile-time immutable; `private` hides from consumers |
-| C++        | `const` methods + `const` locals | Methods are `const`-qualified; local variables use `const` where assigned once |
-| PHP        | `readonly` class | PHP 8.2 `readonly` prevents field reassignment after construction |
-| Java       | `private final` fields | Fields set in constructor, never modified; all formatting methods are pure reads |
-| C#         | `private readonly` fields | Fields set in constructor; `TreatWarningsAsErrors` in project |
-| Elm        | Pure functions (no mutable state) | Elm has no mutable state; all functions are pure by language design |
-| Scala      | `private val` fields | `val` is compile-time immutable; `private` hides from consumers |
-| Swift      | `private let` fields + `Sendable` | `let` is compile-time immutable; struct conforms to `Sendable` |
+| Language   | Mechanism                            | Notes                                                                            |
+| ---------- | ------------------------------------ | -------------------------------------------------------------------------------- |
+| TypeScript | `private readonly` fields            | Compiler error on reassignment                                                   |
+| Python     | `_`-prefixed fields + pyright strict | Convention-based; pyright prevents external access to `_` members                |
+| Go         | Unexported fields                    | Only the package can access them; methods use value receivers                    |
+| Ruby       | `freeze` in `initialize`             | Runtime error on any mutation after construction                                 |
+| Rust       | `&self` on all methods               | Borrow checker prevents mutation through shared references                       |
+| Kotlin     | `private val` fields                 | `val` is compile-time immutable; `private` hides from consumers                  |
+| C++        | `const` methods + `const` locals     | Methods are `const`-qualified; local variables use `const` where assigned once   |
+| PHP        | `readonly` class                     | PHP 8.2 `readonly` prevents field reassignment after construction                |
+| Java       | `private final` fields               | Fields set in constructor, never modified; all formatting methods are pure reads |
+| C#         | `private readonly` fields            | Fields set in constructor; `TreatWarningsAsErrors` in project                    |
+| Elm        | Pure functions (no mutable state)    | Elm has no mutable state; all functions are pure by language design              |
+| Scala      | `private val` fields                 | `val` is compile-time immutable; `private` hides from consumers                  |
+| Swift      | `private let` fields + `Sendable`    | `let` is compile-time immutable; struct conforms to `Sendable`                   |
 
 ## Cross-cutting considerations
 
@@ -151,22 +151,22 @@ language family:
 
 ## Quick reference
 
-| Language   | Tools                       | Key strictness                                                 | Tests | Assertions |
-|------------|-----------------------------|----------------------------------------------------------------|------:|-----------:|
-| TypeScript | tsc + ESLint                | `strict` + 7 extra flags; `strict-type-checked` ESLint rules  |   147 |        168 |
-| Python     | ruff + pyright              | 11 rule categories; pyright `strict`                           |   145 |        166 |
-| Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                        |    72 |        128 |
-| Ruby       | RuboCop                     | NewCops enabled; frozen strings; practical metric thresholds   |   117 |        173 |
-| Rust       | clippy + rustc lints        | `unsafe_code = forbid`; `clippy::all = deny`; pedantic = warn  |    38 |        172 |
-| Kotlin     | Kotlin compiler             | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`      |   115 |        191 |
-| C++        | Compiler flags + clang-tidy | `-Wall -Wextra -Wpedantic -Werror` + 13 more; clang-tidy config |   164 |        167 |
-| PHP        | PHPStan + PHP-CS-Fixer      | PHPStan level 9; PER-CS2.0 + risky; `declare(strict_types=1)` |   168 |        179 |
-| Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records      |   135 |        191 |
-| C#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                 |   140 |        191 |
-| Elm        | Elm compiler                | Compiler warnings-as-errors; `elm-explorations/test`            |   209 |        209 |
-| Scala      | Scala compiler              | `-Werror`; Scala 3 enums, sealed traits                         |   115 |        191 |
-| Swift      | Swift compiler              | `StrictConcurrency`; Swift Testing                              |   140 |        191 |
-| Zig        | Zig compiler                | Warnings-as-errors; built-in test framework                     |   163 |        163 |
+| Language   | Tools                       | Key strictness                                                  | Tests | Assertions |
+| ---------- | --------------------------- | --------------------------------------------------------------- | ----: | ---------: |
+| TypeScript | tsc + ESLint                | `strict` + 7 extra flags; `strict-type-checked` ESLint rules    | 147   | 168        |
+| Python     | ruff + pyright              | 11 rule categories; pyright `strict`                            | 145   | 166        |
+| Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                         | 72    | 128        |
+| Ruby       | RuboCop                     | NewCops enabled; frozen strings; practical metric thresholds    | 117   | 173        |
+| Rust       | clippy + rustc lints        | `unsafe_code = forbid`; `clippy::all = deny`; pedantic = warn   | 38    | 172        |
+| Kotlin     | Kotlin compiler             | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`       | 115   | 191        |
+| C++        | Compiler flags + clang-tidy | `-Wall -Wextra -Wpedantic -Werror` + 13 more; clang-tidy config | 164   | 167        |
+| PHP        | PHPStan + PHP-CS-Fixer      | PHPStan level 9; PER-CS2.0 + risky; `declare(strict_types=1)`   | 168   | 179        |
+| Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records       | 135   | 191        |
+| C#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 140   | 191        |
+| Elm        | Elm compiler                | Compiler warnings-as-errors; `elm-explorations/test`            | 209   | 209        |
+| Scala      | Scala compiler              | `-Werror`; Scala 3 enums, sealed traits                         | 115   | 191        |
+| Swift      | Swift compiler              | `StrictConcurrency`; Swift Testing                              | 140   | 191        |
+| Zig        | Zig compiler                | Warnings-as-errors; built-in test framework                     | 163   | 163        |
 
 All implementations cover the same [212 canonical test cases](../tests/testing.md).
 **Tests** is what each framework reports when you run the suite. **Assertions** is
