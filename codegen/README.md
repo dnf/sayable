@@ -161,7 +161,7 @@ Exits with code 1 if any generated file would change. This runs in CI to ensure 
 
 1. Create `locales/{code}.json` with the locale data (use an existing plural rule — all 23 CLDR patterns are supported)
 2. Run `python -m codegen.generate`
-4. Add test cases to `docs/testing.md` and implement them in all test files
+4. Add test cases to `tests/testing.md` and implement them in all test files
 5. Run all test suites
 
 ### Fixing a plural rule

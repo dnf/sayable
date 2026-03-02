@@ -35,8 +35,8 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 ## Key rules
 
 - **All implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
-- **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
-- **Canonical test IDs.** Every test must be annotated with the ID(s) from `docs/testing.md` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
+- **Spec-first testing.** New test cases go in `tests/testing.md` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
+- **Canonical test IDs.** Every test must be annotated with the ID(s) from `tests/testing.md` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
 - **Locale data lives in `locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all language implementations. Never edit generated locale files by hand.
 - **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON.
@@ -64,9 +64,10 @@ src/
   swift/       # Swift
   typescript/  # TypeScript
   zig/         # Zig
+tests/         # Canonical test specification (testing.md)
 locales/       # Canonical locale JSON files (single source of truth)
 codegen/       # Locale code generator (JSON → all languages)
-docs/          # Shared docs, test spec, locale docs
+docs/          # Shared docs, locale docs
 ```
 
 Core files per language follow a consistent pattern:
@@ -90,7 +91,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Sum
 2. Create `locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
 3. Run `python -m codegen.generate` — generates locale files in all languages
 4. Run `just test && just lint` to verify
-5. Optionally add locale-specific test cases to `docs/testing.md`
+5. Optionally add locale-specific test cases to `tests/testing.md`
 
 ## Adding a new language
 
@@ -100,7 +101,7 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 2. Create `codegen/targets/<lang>/plural_rules.py` with all 23 plural patterns
 3. Register the generator in `codegen/generate.py` (`_GENERATORS` dict)
 4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from an existing implementation)
-5. Implement all test cases from `docs/testing.md`
+5. Implement all test cases from `tests/testing.md`
 6. Add to `justfile` (test, build, lint, clean recipes)
 7. Configure the language's standard linter with zero warnings
 8. Update bootstrap scripts (`Dockerfile`, `scripts/bootstrap-macos.sh`, `scripts/bootstrap-linux.sh`)

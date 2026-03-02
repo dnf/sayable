@@ -228,7 +228,7 @@ locale data are expected and acceptable.
 ## 4. Add tests (optional but encouraged)
 
 For new locales in widely-spoken languages, add locale-specific test cases
-to `docs/testing.md` and implement them in all 11 test suites. At minimum,
+to `tests/testing.md` and implement them in all 18 test suites. At minimum,
 test that the locale produces correct output for a few representative counts
 that exercise the plural rules.
 

@@ -135,10 +135,10 @@ functions with fixed parameters are all expected patterns.
 
 ### Canonical test IDs
 
-Every test must be annotated with the ID(s) from [`docs/testing.md`](testing.md)
+Every test must be annotated with the ID(s) from [`tests/testing.md`](../tests/testing.md)
 that it implements. This enables cross-language verification that all
 implementations cover the same spec. See the "Test ID convention" section of
-`docs/testing.md` for the three placement patterns (comment above, trailing
+`tests/testing.md` for the three placement patterns (comment above, trailing
 comment, or inline comment) used across languages.
 
 ## Per-language details
@@ -168,7 +168,7 @@ language family:
 | Swift      | Swift compiler              | `StrictConcurrency`; Swift Testing                              |   140 |        191 |
 | Zig        | Zig compiler                | Warnings-as-errors; built-in test framework                     |   163 |        163 |
 
-All implementations cover the same [163 canonical test cases](testing.md).
+All implementations cover the same [212 canonical test cases](../tests/testing.md).
 **Tests** is what each framework reports when you run the suite. **Assertions** is
 the count of individual assertion calls in the test source. These numbers differ
 across languages because each ecosystem has its own idiomatic test granularity —
