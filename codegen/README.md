@@ -30,6 +30,7 @@ codegen/
     php/
     java/
     csharp/
+    elixir/
     elm/
     swift/
     zig/
@@ -94,6 +95,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 | PHP        | `Locales.php`                                   | single file, all 71             |
 | Java       | `Locales.java`                                  | single file, all 71             |
 | C#         | `Locales.cs`                                    | single file, all 71             |
+| Elixir     | `locales/{code}.ex` + `locales.ex`              | one per locale + registry       |
 | Elm        | `Locales/{Code}.elm` + `Locales.elm`            | one per locale + barrel         |
 | Swift      | `Locales.swift`                                 | single file, all 71             |
 | Zig        | `locales.zig`                                   | single file, all 71             |

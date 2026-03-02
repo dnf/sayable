@@ -48,6 +48,9 @@ swift/Package.resolved
 # Haskell
 haskell/dist-newstyle/
 
+# Elixir
+elixir/_build/
+
 # Elm
 elm/elm-stuff/
 

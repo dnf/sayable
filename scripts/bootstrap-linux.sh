@@ -28,6 +28,7 @@ $SUDO apt-get install -y \
     php-cli php-xml php-mbstring \
     openjdk-17-jdk-headless \
     python3 python3-venv \
+    elixir \
     erlang-dev erlang-tools rebar3 \
     rlwrap
 

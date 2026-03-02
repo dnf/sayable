@@ -8,7 +8,7 @@
 "Newborn" · "2 weeks, 4 days" · "14 months" · "2 years, 3 months" · "4½ years"
 ```
 
-Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 19 languages, 71 locales, and three compactness levels.
+Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 20 languages, 71 locales, and three compactness levels.
 
 ## Implementations
 
@@ -18,6 +18,7 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 | C#         | [![C#](https://github.com/dnf/parent-time/actions/workflows/csharp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/csharp.yml)                 | —                                                                                                                                                                                | NuGet                                       | [README](src/csharp/README.md)     |
 | C++        | [![C++](https://github.com/dnf/parent-time/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/cpp.yml)                      | —                                                                                                                                                                                | CMake ([`FetchContent`](src/cpp/README.md)) | [README](src/cpp/README.md)        |
 | Clojure    | [![Clojure](https://github.com/dnf/parent-time/actions/workflows/clojure.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/clojure.yml)          | —                                                                                                                                                                                | deps.edn                                    | [README](src/clojure/README.md)    |
+| Elixir     | [![Elixir](https://github.com/dnf/parent-time/actions/workflows/elixir.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/elixir.yml)             | —                                                                                                                                                                                | Mix                                         | [README](src/elixir/README.md)     |
 | Elm        | [![Elm](https://github.com/dnf/parent-time/actions/workflows/elm.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/elm.yml)                      | —                                                                                                                                                                                | elm.json (application)                      | [README](src/elm/README.md)        |
 | Erlang     | [![Erlang](https://github.com/dnf/parent-time/actions/workflows/erlang.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/erlang.yml)             | —                                                                                                                                                                                | Rebar3                                      | [README](src/erlang/README.md)     |
 | Go         | [![Go](https://github.com/dnf/parent-time/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/go.yml)                         | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=src%2Fgo%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/src/go)       | `go get github.com/dnf/parent-time/src/go`  | [README](src/go/README.md)         |
@@ -179,7 +180,7 @@ just lint                # run all available linters
 just --list              # see all available commands
 ```
 
-Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`, `hs`, `erl`, `clj`, `el`, `sc`, `zg` are accepted alongside full names.
+Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `c++`, `cs`, `sw`, `hs`, `ex`, `erl`, `clj`, `el`, `sc`, `zg` are accepted alongside full names.
 
 ## Contributing
 

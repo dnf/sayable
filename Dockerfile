@@ -19,6 +19,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     openjdk-17-jdk-headless \
     # Python 3.12
     python3 python3-venv \
+    # Elixir (pulls in Erlang/OTP as dependency)
+    elixir \
     # Erlang/OTP + rebar3
     erlang-dev erlang-tools rebar3 \
     # rlwrap for Clojure REPL
