@@ -7,7 +7,7 @@
 %% ║ Changes will be overwritten the next time codegen runs.      ║
 %% ║ Edit the generator or locale JSON instead.                   ║
 %% ╚══════════════════════════════════════════════════════════════╝
-%% Source: locales/pa.json
+%% Source: locales/src/pa.json
 
 -module(parenttime_locales_pa).
 -include("parenttime.hrl").

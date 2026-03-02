@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: locales/ka.json
+-- Source: locales/src/ka.json
 
 module ParentTime.Locales.Ka (locale) where
 

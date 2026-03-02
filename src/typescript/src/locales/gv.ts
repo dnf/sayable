@@ -7,7 +7,7 @@
 // ║ Changes will be overwritten the next time codegen runs.      ║
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
-// Source: locales/gv.json
+// Source: locales/src/gv.json
 
 import type { AgeLocale, PluralCategory } from '../locale.js';
 

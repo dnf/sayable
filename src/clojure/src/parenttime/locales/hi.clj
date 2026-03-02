@@ -7,7 +7,7 @@
 ;; ║ Changes will be overwritten the next time codegen runs.      ║
 ;; ║ Edit the generator or locale JSON instead.                   ║
 ;; ╚══════════════════════════════════════════════════════════════╝
-;; Source: locales/hi.json
+;; Source: locales/src/hi.json
 
 (ns parenttime.locales.hi)
 

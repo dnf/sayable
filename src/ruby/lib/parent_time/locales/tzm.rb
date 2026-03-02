@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: locales/tzm.json
+# Source: locales/src/tzm.json
 module ParentTime
   module Locales
     TZM = AgeLocale.new(

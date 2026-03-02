@@ -8,7 +8,7 @@
 /* ║ Changes will be overwritten the next time codegen runs.      ║ */
 /* ║ Edit the generator or locale JSON instead.                   ║ */
 /* ╚══════════════════════════════════════════════════════════════╝ */
-/* Source: locales/pl.json */
+/* Source: locales/src/pl.json */
 #include "parenttime/parenttime.h"
 
 static PtPluralCategory plural_pl(int n) {

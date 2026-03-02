@@ -181,7 +181,7 @@ fn plural_tzm(n: i32) parenttime.PluralCategory {
     return .other;
 }
 
-// Source: locales/am.json
+// Source: locales/src/am.json
 pub const am: parenttime.Locale = .{
     .code = "am",
     .plural = plural_one_other_zero_one,
@@ -206,7 +206,7 @@ pub const am: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ar.json
+// Source: locales/src/ar.json
 pub const ar: parenttime.Locale = .{
     .code = "ar",
     .plural = plural_ar,
@@ -231,7 +231,7 @@ pub const ar: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/az.json
+// Source: locales/src/az.json
 pub const az: parenttime.Locale = .{
     .code = "az",
     .plural = plural_one_other,
@@ -256,7 +256,7 @@ pub const az: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/bg.json
+// Source: locales/src/bg.json
 pub const bg: parenttime.Locale = .{
     .code = "bg",
     .plural = plural_one_other,
@@ -281,7 +281,7 @@ pub const bg: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/bn.json
+// Source: locales/src/bn.json
 pub const bn: parenttime.Locale = .{
     .code = "bn",
     .plural = plural_one_other_zero_one,
@@ -306,7 +306,7 @@ pub const bn: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/br.json
+// Source: locales/src/br.json
 pub const br: parenttime.Locale = .{
     .code = "br",
     .plural = plural_br,
@@ -331,7 +331,7 @@ pub const br: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/bs.json
+// Source: locales/src/bs.json
 pub const bs: parenttime.Locale = .{
     .code = "bs",
     .plural = plural_slavic_bcs,
@@ -356,7 +356,7 @@ pub const bs: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ca.json
+// Source: locales/src/ca.json
 pub const ca: parenttime.Locale = .{
     .code = "ca",
     .plural = plural_one_other,
@@ -381,7 +381,7 @@ pub const ca: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/cs.json
+// Source: locales/src/cs.json
 pub const cs: parenttime.Locale = .{
     .code = "cs",
     .plural = plural_cs_sk,
@@ -406,7 +406,7 @@ pub const cs: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/cy.json
+// Source: locales/src/cy.json
 pub const cy: parenttime.Locale = .{
     .code = "cy",
     .plural = plural_cy,
@@ -431,7 +431,7 @@ pub const cy: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/da.json
+// Source: locales/src/da.json
 pub const da: parenttime.Locale = .{
     .code = "da",
     .plural = plural_one_other,
@@ -456,7 +456,7 @@ pub const da: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/de.json
+// Source: locales/src/de.json
 pub const de: parenttime.Locale = .{
     .code = "de",
     .plural = plural_one_other,
@@ -481,7 +481,7 @@ pub const de: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/el.json
+// Source: locales/src/el.json
 pub const el: parenttime.Locale = .{
     .code = "el",
     .plural = plural_one_other,
@@ -506,7 +506,7 @@ pub const el: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/en.json
+// Source: locales/src/en.json
 pub const en: parenttime.Locale = .{
     .code = "en",
     .plural = plural_one_other,
@@ -531,7 +531,7 @@ pub const en: parenttime.Locale = .{
     .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .just_born = null },
 };
 
-// Source: locales/es.json
+// Source: locales/src/es.json
 pub const es: parenttime.Locale = .{
     .code = "es",
     .plural = plural_one_other,
@@ -556,7 +556,7 @@ pub const es: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/et.json
+// Source: locales/src/et.json
 pub const et: parenttime.Locale = .{
     .code = "et",
     .plural = plural_one_other,
@@ -581,7 +581,7 @@ pub const et: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/eu.json
+// Source: locales/src/eu.json
 pub const eu: parenttime.Locale = .{
     .code = "eu",
     .plural = plural_other_only,
@@ -606,7 +606,7 @@ pub const eu: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/fa.json
+// Source: locales/src/fa.json
 pub const fa: parenttime.Locale = .{
     .code = "fa",
     .plural = plural_one_other_zero_one,
@@ -631,7 +631,7 @@ pub const fa: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/fi.json
+// Source: locales/src/fi.json
 pub const fi: parenttime.Locale = .{
     .code = "fi",
     .plural = plural_one_other,
@@ -656,7 +656,7 @@ pub const fi: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/fil.json
+// Source: locales/src/fil.json
 pub const fil: parenttime.Locale = .{
     .code = "fil",
     .plural = plural_other_only,
@@ -681,7 +681,7 @@ pub const fil: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/fr.json
+// Source: locales/src/fr.json
 pub const fr: parenttime.Locale = .{
     .code = "fr",
     .plural = plural_one_other_zero_one,
@@ -706,7 +706,7 @@ pub const fr: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ga.json
+// Source: locales/src/ga.json
 pub const ga: parenttime.Locale = .{
     .code = "ga",
     .plural = plural_ga,
@@ -731,7 +731,7 @@ pub const ga: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/gd.json
+// Source: locales/src/gd.json
 pub const gd: parenttime.Locale = .{
     .code = "gd",
     .plural = plural_gd,
@@ -756,7 +756,7 @@ pub const gd: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/gu.json
+// Source: locales/src/gu.json
 pub const gu: parenttime.Locale = .{
     .code = "gu",
     .plural = plural_one_other_zero_one,
@@ -781,7 +781,7 @@ pub const gu: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/gv.json
+// Source: locales/src/gv.json
 pub const gv: parenttime.Locale = .{
     .code = "gv",
     .plural = plural_gv,
@@ -806,7 +806,7 @@ pub const gv: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/he.json
+// Source: locales/src/he.json
 pub const he: parenttime.Locale = .{
     .code = "he",
     .plural = plural_he,
@@ -831,7 +831,7 @@ pub const he: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/hi.json
+// Source: locales/src/hi.json
 pub const hi: parenttime.Locale = .{
     .code = "hi",
     .plural = plural_one_other_zero_one,
@@ -856,7 +856,7 @@ pub const hi: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/hr.json
+// Source: locales/src/hr.json
 pub const hr: parenttime.Locale = .{
     .code = "hr",
     .plural = plural_slavic_bcs,
@@ -881,7 +881,7 @@ pub const hr: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/hu.json
+// Source: locales/src/hu.json
 pub const hu: parenttime.Locale = .{
     .code = "hu",
     .plural = plural_other_only,
@@ -906,7 +906,7 @@ pub const hu: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/id.json
+// Source: locales/src/id.json
 pub const id: parenttime.Locale = .{
     .code = "id",
     .plural = plural_other_only,
@@ -931,7 +931,7 @@ pub const id: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/it.json
+// Source: locales/src/it.json
 pub const it: parenttime.Locale = .{
     .code = "it",
     .plural = plural_one_other,
@@ -956,7 +956,7 @@ pub const it: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ja.json
+// Source: locales/src/ja.json
 pub const ja: parenttime.Locale = .{
     .code = "ja",
     .plural = plural_other_only,
@@ -981,7 +981,7 @@ pub const ja: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/jv.json
+// Source: locales/src/jv.json
 pub const jv: parenttime.Locale = .{
     .code = "jv",
     .plural = plural_other_only,
@@ -1006,7 +1006,7 @@ pub const jv: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ka.json
+// Source: locales/src/ka.json
 pub const ka: parenttime.Locale = .{
     .code = "ka",
     .plural = plural_one_other,
@@ -1031,7 +1031,7 @@ pub const ka: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/kk.json
+// Source: locales/src/kk.json
 pub const kk: parenttime.Locale = .{
     .code = "kk",
     .plural = plural_one_other,
@@ -1056,7 +1056,7 @@ pub const kk: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/km.json
+// Source: locales/src/km.json
 pub const km: parenttime.Locale = .{
     .code = "km",
     .plural = plural_other_only,
@@ -1081,7 +1081,7 @@ pub const km: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ko.json
+// Source: locales/src/ko.json
 pub const ko: parenttime.Locale = .{
     .code = "ko",
     .plural = plural_other_only,
@@ -1106,7 +1106,7 @@ pub const ko: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/kw.json
+// Source: locales/src/kw.json
 pub const kw: parenttime.Locale = .{
     .code = "kw",
     .plural = plural_kw,
@@ -1131,7 +1131,7 @@ pub const kw: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/lt.json
+// Source: locales/src/lt.json
 pub const lt: parenttime.Locale = .{
     .code = "lt",
     .plural = plural_lt,
@@ -1156,7 +1156,7 @@ pub const lt: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/lv.json
+// Source: locales/src/lv.json
 pub const lv: parenttime.Locale = .{
     .code = "lv",
     .plural = plural_lv,
@@ -1181,7 +1181,7 @@ pub const lv: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/mk.json
+// Source: locales/src/mk.json
 pub const mk: parenttime.Locale = .{
     .code = "mk",
     .plural = plural_mk,
@@ -1206,7 +1206,7 @@ pub const mk: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/mr.json
+// Source: locales/src/mr.json
 pub const mr: parenttime.Locale = .{
     .code = "mr",
     .plural = plural_one_other,
@@ -1231,7 +1231,7 @@ pub const mr: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ms.json
+// Source: locales/src/ms.json
 pub const ms: parenttime.Locale = .{
     .code = "ms",
     .plural = plural_other_only,
@@ -1256,7 +1256,7 @@ pub const ms: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/mt.json
+// Source: locales/src/mt.json
 pub const mt: parenttime.Locale = .{
     .code = "mt",
     .plural = plural_mt,
@@ -1281,7 +1281,7 @@ pub const mt: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/my.json
+// Source: locales/src/my.json
 pub const my: parenttime.Locale = .{
     .code = "my",
     .plural = plural_other_only,
@@ -1306,7 +1306,7 @@ pub const my: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/nb.json
+// Source: locales/src/nb.json
 pub const nb: parenttime.Locale = .{
     .code = "nb",
     .plural = plural_one_other,
@@ -1331,7 +1331,7 @@ pub const nb: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ne.json
+// Source: locales/src/ne.json
 pub const ne: parenttime.Locale = .{
     .code = "ne",
     .plural = plural_one_other,
@@ -1356,7 +1356,7 @@ pub const ne: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/nl.json
+// Source: locales/src/nl.json
 pub const nl: parenttime.Locale = .{
     .code = "nl",
     .plural = plural_one_other,
@@ -1381,7 +1381,7 @@ pub const nl: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/pa.json
+// Source: locales/src/pa.json
 pub const pa: parenttime.Locale = .{
     .code = "pa",
     .plural = plural_one_other_zero_one,
@@ -1406,7 +1406,7 @@ pub const pa: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/pl.json
+// Source: locales/src/pl.json
 pub const pl: parenttime.Locale = .{
     .code = "pl",
     .plural = plural_pl,
@@ -1431,7 +1431,7 @@ pub const pl: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/pt.json
+// Source: locales/src/pt.json
 pub const pt: parenttime.Locale = .{
     .code = "pt",
     .plural = plural_one_other_zero_one,
@@ -1456,7 +1456,7 @@ pub const pt: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ro.json
+// Source: locales/src/ro.json
 pub const ro: parenttime.Locale = .{
     .code = "ro",
     .plural = plural_ro,
@@ -1481,7 +1481,7 @@ pub const ro: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ru.json
+// Source: locales/src/ru.json
 pub const ru: parenttime.Locale = .{
     .code = "ru",
     .plural = plural_ru_uk,
@@ -1506,7 +1506,7 @@ pub const ru: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/shi.json
+// Source: locales/src/shi.json
 pub const shi: parenttime.Locale = .{
     .code = "shi",
     .plural = plural_shi,
@@ -1531,7 +1531,7 @@ pub const shi: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/si.json
+// Source: locales/src/si.json
 pub const si: parenttime.Locale = .{
     .code = "si",
     .plural = plural_one_other_zero_one,
@@ -1556,7 +1556,7 @@ pub const si: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/sk.json
+// Source: locales/src/sk.json
 pub const sk: parenttime.Locale = .{
     .code = "sk",
     .plural = plural_cs_sk,
@@ -1581,7 +1581,7 @@ pub const sk: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/sl.json
+// Source: locales/src/sl.json
 pub const sl: parenttime.Locale = .{
     .code = "sl",
     .plural = plural_sl,
@@ -1606,7 +1606,7 @@ pub const sl: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/sq.json
+// Source: locales/src/sq.json
 pub const sq: parenttime.Locale = .{
     .code = "sq",
     .plural = plural_one_other,
@@ -1631,7 +1631,7 @@ pub const sq: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/sr.json
+// Source: locales/src/sr.json
 pub const sr: parenttime.Locale = .{
     .code = "sr",
     .plural = plural_slavic_bcs,
@@ -1656,7 +1656,7 @@ pub const sr: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/sv.json
+// Source: locales/src/sv.json
 pub const sv: parenttime.Locale = .{
     .code = "sv",
     .plural = plural_one_other,
@@ -1681,7 +1681,7 @@ pub const sv: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/sw.json
+// Source: locales/src/sw.json
 pub const sw: parenttime.Locale = .{
     .code = "sw",
     .plural = plural_one_other,
@@ -1706,7 +1706,7 @@ pub const sw: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ta.json
+// Source: locales/src/ta.json
 pub const ta: parenttime.Locale = .{
     .code = "ta",
     .plural = plural_one_other,
@@ -1731,7 +1731,7 @@ pub const ta: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/te.json
+// Source: locales/src/te.json
 pub const te: parenttime.Locale = .{
     .code = "te",
     .plural = plural_one_other,
@@ -1756,7 +1756,7 @@ pub const te: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/th.json
+// Source: locales/src/th.json
 pub const th: parenttime.Locale = .{
     .code = "th",
     .plural = plural_other_only,
@@ -1781,7 +1781,7 @@ pub const th: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/tr.json
+// Source: locales/src/tr.json
 pub const tr: parenttime.Locale = .{
     .code = "tr",
     .plural = plural_one_other,
@@ -1806,7 +1806,7 @@ pub const tr: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/tzm.json
+// Source: locales/src/tzm.json
 pub const tzm: parenttime.Locale = .{
     .code = "tzm",
     .plural = plural_tzm,
@@ -1831,7 +1831,7 @@ pub const tzm: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/uk.json
+// Source: locales/src/uk.json
 pub const uk: parenttime.Locale = .{
     .code = "uk",
     .plural = plural_ru_uk,
@@ -1856,7 +1856,7 @@ pub const uk: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/ur.json
+// Source: locales/src/ur.json
 pub const ur: parenttime.Locale = .{
     .code = "ur",
     .plural = plural_one_other,
@@ -1881,7 +1881,7 @@ pub const ur: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/uz.json
+// Source: locales/src/uz.json
 pub const uz: parenttime.Locale = .{
     .code = "uz",
     .plural = plural_one_other,
@@ -1906,7 +1906,7 @@ pub const uz: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/vi.json
+// Source: locales/src/vi.json
 pub const vi: parenttime.Locale = .{
     .code = "vi",
     .plural = plural_other_only,
@@ -1931,7 +1931,7 @@ pub const vi: parenttime.Locale = .{
     .compact_override = null,
 };
 
-// Source: locales/zh.json
+// Source: locales/src/zh.json
 pub const zh: parenttime.Locale = .{
     .code = "zh",
     .plural = plural_other_only,
