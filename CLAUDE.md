@@ -39,6 +39,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Canonical test IDs.** Every test must be annotated with the ID(s) from `docs/testing.md` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
 - **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all language implementations. Never edit generated locale files by hand.
+- **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: codegen/locales/{code}.json` comment linking to the canonical JSON.
 - **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
 
 ## Project layout

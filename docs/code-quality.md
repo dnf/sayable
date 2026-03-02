@@ -86,6 +86,21 @@ how each language enforces this:
 
 ## Cross-cutting considerations
 
+### Generated file headers
+
+Every file produced by `codegen/generate.py` carries two markers:
+
+1. **Box-frame banner** — a 9-line ASCII box (`codegen/banner.py`) that names
+   the generator path and warns against manual edits. Each language uses its
+   native comment syntax (`//`, `#`, `/* */`, `--`, `%%`, `;;`).
+2. **Locale source comment** — a single line
+   `Source: codegen/locales/{code}.json` linking to the canonical JSON.
+   Per-file languages place it after the banner; single-file languages place it
+   above each locale block.
+
+Barrel, registry, and header files carry only the banner (they don't correspond
+to a single locale).
+
 ### i18n locale data
 
 All implementations contain 71 locale files with Unicode string literals
