@@ -11,7 +11,6 @@
 """Locale definitions for all supported languages."""
 
 from parent_time.locale import AgeLocale
-
 from parent_time.locales.am import AM
 from parent_time.locales.ar import AR
 from parent_time.locales.az import AZ

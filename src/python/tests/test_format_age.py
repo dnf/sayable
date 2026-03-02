@@ -3,14 +3,13 @@
 from __future__ import annotations
 
 from datetime import date
+from importlib import import_module
 from unittest.mock import patch
 
-from importlib import import_module
-
 from parent_time import EN, AgeLocale, ParentTime, format_age, format_stage, get_locale, resolve_stage
+from parent_time.locales import AM, AR, ES, HE, ID, MK, SW
 
 _format_age_mod = import_module("parent_time.format_age")
-from parent_time.locales import AM, AR, ES, HE, ID, MK, SW
 
 
 # ================================================================

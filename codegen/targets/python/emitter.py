@@ -118,7 +118,7 @@ def emit_barrel(all_locales: list[dict]) -> str:
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER, '"""Locale definitions for all supported languages."""\n']
 
-    lines.append("from parent_time.locale import AgeLocale\n")
+    lines.append("from parent_time.locale import AgeLocale")
 
     for loc in sorted_locs:
         code = loc["code"]
