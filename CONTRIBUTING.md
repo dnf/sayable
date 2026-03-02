@@ -14,8 +14,8 @@ Thanks for your interest in contributing! This project maintains identical imple
 src/
   c/  clojure/  cpp/  csharp/  elm/  erlang/  go/  haskell/
   java/  kotlin/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
+locales/       # 71 JSON files — single source of truth for locale data
 codegen/
-  locales/     # 71 JSON files — single source of truth for locale data
   targets/     # One emitter + plural rules per target language
   generate.py  # Orchestrator: loads JSON, runs emitters, writes files
 docs/          # Shared documentation and test specifications
@@ -88,7 +88,7 @@ Native speaker feedback is especially welcome. If a translation sounds unnatural
 
 To fix a locale:
 
-1. Edit the JSON file in `codegen/locales/{code}.json`
+1. Edit the JSON file in `locales/{code}.json`
 2. Run `python -m codegen.generate` to regenerate all language implementations
 3. Run `just test` to verify
 
@@ -101,7 +101,7 @@ See [`docs/gender-and-stages.md`](docs/gender-and-stages.md) for the gender anal
 See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for a detailed guide. In short:
 
 1. Identify the CLDR plural rule for the language (one of the 23 existing rules usually fits)
-2. Create `codegen/locales/{code}.json` with the locale data
+2. Create `locales/{code}.json` with the locale data
 3. Run `python -m codegen.generate` to generate locale files in all languages
 4. Add test cases to `docs/testing.md` and implement them in all test files
 5. Run `just test`
@@ -142,7 +142,7 @@ Before submitting a PR, verify:
 - [ ] Tests pass in all affected languages (`just test`)
 - [ ] New test cases added to `docs/testing.md` first (if applicable)
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
-- [ ] Locale changes made in `codegen/locales/*.json` and regenerated (not hand-edited)
+- [ ] Locale changes made in `locales/*.json` and regenerated (not hand-edited)
 - [ ] `just check` passes (codegen files up to date)
 - [ ] All implementations updated (for logic/feature changes)
 - [ ] No runtime dependencies added

@@ -6,7 +6,7 @@ relates to the authoritative CLDR (Unicode Common Locale Data Repository) data.
 
 ## Canonical source
 
-All locale data is maintained in `codegen/locales/*.json` — one JSON file per
+All locale data is maintained in `locales/*.json` — one JSON file per
 locale. These are the single source of truth. The locale files in each language
 implementation (e.g. `typescript/src/locales/fr.ts`) are generated from these
 JSON definitions by `codegen/generate.py`. See [`codegen/README.md`](../codegen/README.md)

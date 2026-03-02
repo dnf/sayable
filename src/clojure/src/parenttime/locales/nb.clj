@@ -7,7 +7,7 @@
 ;; ║ Changes will be overwritten the next time codegen runs.      ║
 ;; ║ Edit the generator or locale JSON instead.                   ║
 ;; ╚══════════════════════════════════════════════════════════════╝
-;; Source: codegen/locales/nb.json
+;; Source: locales/nb.json
 
 (ns parenttime.locales.nb)
 

@@ -163,7 +163,7 @@ public final class Locales {
         return PluralCategory.OTHER;
     }
 
-    // Source: codegen/locales/am.json
+    // Source: locales/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
@@ -193,7 +193,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ar.json
+    // Source: locales/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
@@ -223,7 +223,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/az.json
+    // Source: locales/az.json
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
@@ -253,7 +253,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/bg.json
+    // Source: locales/bg.json
     // ================================================================
     // BG — Bulgarian
     // ================================================================
@@ -283,7 +283,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/bn.json
+    // Source: locales/bn.json
     // ================================================================
     // BN — Bengali
     // ================================================================
@@ -313,7 +313,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/br.json
+    // Source: locales/br.json
     // ================================================================
     // BR — Breton
     // ================================================================
@@ -343,7 +343,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/bs.json
+    // Source: locales/bs.json
     // ================================================================
     // BS — Bosnian
     // ================================================================
@@ -373,7 +373,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ca.json
+    // Source: locales/ca.json
     // ================================================================
     // CA — Catalan
     // ================================================================
@@ -403,7 +403,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/cs.json
+    // Source: locales/cs.json
     // ================================================================
     // CS — Czech
     // ================================================================
@@ -433,7 +433,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/cy.json
+    // Source: locales/cy.json
     // ================================================================
     // CY — Welsh
     // ================================================================
@@ -463,7 +463,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/da.json
+    // Source: locales/da.json
     // ================================================================
     // DA — Danish
     // ================================================================
@@ -493,7 +493,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/de.json
+    // Source: locales/de.json
     // ================================================================
     // DE — German
     // ================================================================
@@ -523,7 +523,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/el.json
+    // Source: locales/el.json
     // ================================================================
     // EL — Greek
     // ================================================================
@@ -553,7 +553,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/en.json
+    // Source: locales/en.json
     // ================================================================
     // EN — English
     // ================================================================
@@ -599,7 +599,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/es.json
+    // Source: locales/es.json
     // ================================================================
     // ES — Spanish
     // ================================================================
@@ -629,7 +629,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/et.json
+    // Source: locales/et.json
     // ================================================================
     // ET — Estonian
     // ================================================================
@@ -659,7 +659,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/eu.json
+    // Source: locales/eu.json
     // ================================================================
     // EU — Basque
     // ================================================================
@@ -689,7 +689,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/fa.json
+    // Source: locales/fa.json
     // ================================================================
     // FA — Persian
     // ================================================================
@@ -719,7 +719,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/fi.json
+    // Source: locales/fi.json
     // ================================================================
     // FI — Finnish
     // ================================================================
@@ -749,7 +749,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/fil.json
+    // Source: locales/fil.json
     // ================================================================
     // FIL — Filipino
     // ================================================================
@@ -779,7 +779,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/fr.json
+    // Source: locales/fr.json
     // ================================================================
     // FR — French
     // ================================================================
@@ -809,7 +809,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ga.json
+    // Source: locales/ga.json
     // ================================================================
     // GA — Irish
     // ================================================================
@@ -839,7 +839,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/gd.json
+    // Source: locales/gd.json
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
@@ -869,7 +869,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/gu.json
+    // Source: locales/gu.json
     // ================================================================
     // GU — Gujarati
     // ================================================================
@@ -899,7 +899,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/gv.json
+    // Source: locales/gv.json
     // ================================================================
     // GV — Manx
     // ================================================================
@@ -929,7 +929,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/he.json
+    // Source: locales/he.json
     // ================================================================
     // HE — Hebrew
     // ================================================================
@@ -959,7 +959,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/hi.json
+    // Source: locales/hi.json
     // ================================================================
     // HI — Hindi
     // ================================================================
@@ -989,7 +989,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/hr.json
+    // Source: locales/hr.json
     // ================================================================
     // HR — Croatian
     // ================================================================
@@ -1019,7 +1019,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/hu.json
+    // Source: locales/hu.json
     // ================================================================
     // HU — Hungarian
     // ================================================================
@@ -1049,7 +1049,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/id.json
+    // Source: locales/id.json
     // ================================================================
     // ID — Indonesian
     // ================================================================
@@ -1079,7 +1079,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/it.json
+    // Source: locales/it.json
     // ================================================================
     // IT — Italian
     // ================================================================
@@ -1109,7 +1109,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ja.json
+    // Source: locales/ja.json
     // ================================================================
     // JA — Japanese
     // ================================================================
@@ -1139,7 +1139,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/jv.json
+    // Source: locales/jv.json
     // ================================================================
     // JV — Javanese
     // ================================================================
@@ -1169,7 +1169,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ka.json
+    // Source: locales/ka.json
     // ================================================================
     // KA — Georgian
     // ================================================================
@@ -1199,7 +1199,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/kk.json
+    // Source: locales/kk.json
     // ================================================================
     // KK — Kazakh
     // ================================================================
@@ -1229,7 +1229,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/km.json
+    // Source: locales/km.json
     // ================================================================
     // KM — Khmer
     // ================================================================
@@ -1259,7 +1259,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ko.json
+    // Source: locales/ko.json
     // ================================================================
     // KO — Korean
     // ================================================================
@@ -1289,7 +1289,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/kw.json
+    // Source: locales/kw.json
     // ================================================================
     // KW — Cornish
     // ================================================================
@@ -1319,7 +1319,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/lt.json
+    // Source: locales/lt.json
     // ================================================================
     // LT — Lithuanian
     // ================================================================
@@ -1349,7 +1349,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/lv.json
+    // Source: locales/lv.json
     // ================================================================
     // LV — Latvian
     // ================================================================
@@ -1379,7 +1379,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/mk.json
+    // Source: locales/mk.json
     // ================================================================
     // MK — Macedonian
     // ================================================================
@@ -1409,7 +1409,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/mr.json
+    // Source: locales/mr.json
     // ================================================================
     // MR — Marathi
     // ================================================================
@@ -1439,7 +1439,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ms.json
+    // Source: locales/ms.json
     // ================================================================
     // MS — Malay
     // ================================================================
@@ -1469,7 +1469,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/mt.json
+    // Source: locales/mt.json
     // ================================================================
     // MT — Maltese
     // ================================================================
@@ -1499,7 +1499,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/my.json
+    // Source: locales/my.json
     // ================================================================
     // MY — Burmese
     // ================================================================
@@ -1529,7 +1529,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/nb.json
+    // Source: locales/nb.json
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
@@ -1559,7 +1559,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ne.json
+    // Source: locales/ne.json
     // ================================================================
     // NE — Nepali
     // ================================================================
@@ -1589,7 +1589,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/nl.json
+    // Source: locales/nl.json
     // ================================================================
     // NL — Dutch
     // ================================================================
@@ -1619,7 +1619,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/pa.json
+    // Source: locales/pa.json
     // ================================================================
     // PA — Punjabi
     // ================================================================
@@ -1649,7 +1649,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/pl.json
+    // Source: locales/pl.json
     // ================================================================
     // PL — Polish
     // ================================================================
@@ -1679,7 +1679,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/pt.json
+    // Source: locales/pt.json
     // ================================================================
     // PT — Portuguese
     // ================================================================
@@ -1709,7 +1709,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ro.json
+    // Source: locales/ro.json
     // ================================================================
     // RO — Romanian
     // ================================================================
@@ -1739,7 +1739,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ru.json
+    // Source: locales/ru.json
     // ================================================================
     // RU — Russian
     // ================================================================
@@ -1769,7 +1769,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/shi.json
+    // Source: locales/shi.json
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
@@ -1799,7 +1799,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/si.json
+    // Source: locales/si.json
     // ================================================================
     // SI — Sinhala
     // ================================================================
@@ -1829,7 +1829,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/sk.json
+    // Source: locales/sk.json
     // ================================================================
     // SK — Slovak
     // ================================================================
@@ -1859,7 +1859,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/sl.json
+    // Source: locales/sl.json
     // ================================================================
     // SL — Slovenian
     // ================================================================
@@ -1889,7 +1889,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/sq.json
+    // Source: locales/sq.json
     // ================================================================
     // SQ — Albanian
     // ================================================================
@@ -1919,7 +1919,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/sr.json
+    // Source: locales/sr.json
     // ================================================================
     // SR — Serbian
     // ================================================================
@@ -1949,7 +1949,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/sv.json
+    // Source: locales/sv.json
     // ================================================================
     // SV — Swedish
     // ================================================================
@@ -1979,7 +1979,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/sw.json
+    // Source: locales/sw.json
     // ================================================================
     // SW — Swahili
     // ================================================================
@@ -2009,7 +2009,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ta.json
+    // Source: locales/ta.json
     // ================================================================
     // TA — Tamil
     // ================================================================
@@ -2039,7 +2039,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/te.json
+    // Source: locales/te.json
     // ================================================================
     // TE — Telugu
     // ================================================================
@@ -2069,7 +2069,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/th.json
+    // Source: locales/th.json
     // ================================================================
     // TH — Thai
     // ================================================================
@@ -2099,7 +2099,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/tr.json
+    // Source: locales/tr.json
     // ================================================================
     // TR — Turkish
     // ================================================================
@@ -2129,7 +2129,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/tzm.json
+    // Source: locales/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
@@ -2159,7 +2159,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/uk.json
+    // Source: locales/uk.json
     // ================================================================
     // UK — Ukrainian
     // ================================================================
@@ -2189,7 +2189,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/ur.json
+    // Source: locales/ur.json
     // ================================================================
     // UR — Urdu
     // ================================================================
@@ -2219,7 +2219,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/uz.json
+    // Source: locales/uz.json
     // ================================================================
     // UZ — Uzbek
     // ================================================================
@@ -2249,7 +2249,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/vi.json
+    // Source: locales/vi.json
     // ================================================================
     // VI — Vietnamese
     // ================================================================
@@ -2279,7 +2279,7 @@ public final class Locales {
         null
     );
 
-    // Source: codegen/locales/zh.json
+    // Source: locales/zh.json
     // ================================================================
     // ZH — Chinese
     // ================================================================

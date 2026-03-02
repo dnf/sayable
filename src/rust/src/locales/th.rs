@@ -7,7 +7,7 @@
 // ║ Changes will be overwritten the next time codegen runs.      ║
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
-// Source: codegen/locales/th.json
+// Source: locales/th.json
 
 use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
 

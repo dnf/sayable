@@ -7,7 +7,7 @@
 -- ║ Changes will be overwritten the next time codegen runs.      ║
 -- ║ Edit the generator or locale JSON instead.                   ║
 -- ╚══════════════════════════════════════════════════════════════╝
--- Source: codegen/locales/fr.json
+-- Source: locales/fr.json
 
 
 module ParentTime.Locales.Fr exposing (locale)

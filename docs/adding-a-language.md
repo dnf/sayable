@@ -12,9 +12,9 @@ into native locale definitions. You write the emitter, the core formatter, and
 the tests; codegen handles the locale data.
 
 ```
-codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  src/<lang>/locales/*
+locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  src/<lang>/locales/*
                                                                     (per-file emitters)
-codegen/locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  src/<lang>/.../Locales.<ext>
+locales/*.json  ──►  codegen/targets/<lang>/emitter.py  ──►  src/<lang>/.../Locales.<ext>
                                                                     (single-file emitters)
 ```
 

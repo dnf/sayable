@@ -94,7 +94,7 @@ Every file produced by `codegen/generate.py` carries two markers:
    the generator path and warns against manual edits. Each language uses its
    native comment syntax (`//`, `#`, `/* */`, `--`, `%%`, `;;`).
 2. **Locale source comment** — a single line
-   `Source: codegen/locales/{code}.json` linking to the canonical JSON.
+   `Source: locales/{code}.json` linking to the canonical JSON.
    Per-file languages place it after the banner; single-file languages place it
    above each locale block.
 

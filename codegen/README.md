@@ -9,12 +9,12 @@ The `codegen/` directory contains a code generator that maintains all 71 locale 
 ## Architecture
 
 ```
+locales/             # 71 JSON files — the single source of truth
+  en.json
+  fr.json
+  ar.json
+  ...
 codegen/
-  locales/           # 71 JSON files — the single source of truth
-    en.json
-    fr.json
-    ar.json
-    ...
   generate.py        # Orchestrator: loads JSON, runs emitters, writes files
   extract.py         # One-time bootstrap: read TS files → JSON (already run)
   targets/           # One subdirectory per target language
@@ -153,13 +153,13 @@ Exits with code 1 if any generated file would change. This runs in CI to ensure 
 
 ### Modifying an existing locale
 
-1. Edit the JSON file in `codegen/locales/{code}.json`
+1. Edit the JSON file in `locales/{code}.json`
 2. Run `python -m codegen.generate`
 3. Run the test suites to verify
 
 ### Adding a new locale
 
-1. Create `codegen/locales/{code}.json` with the locale data (use an existing plural rule — all 23 CLDR patterns are supported)
+1. Create `locales/{code}.json` with the locale data (use an existing plural rule — all 23 CLDR patterns are supported)
 2. Run `python -m codegen.generate`
 4. Add test cases to `docs/testing.md` and implement them in all test files
 5. Run all test suites

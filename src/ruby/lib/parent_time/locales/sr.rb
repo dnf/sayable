@@ -9,7 +9,7 @@
 # ║ Changes will be overwritten the next time codegen runs.      ║
 # ║ Edit the generator or locale JSON instead.                   ║
 # ╚══════════════════════════════════════════════════════════════╝
-# Source: codegen/locales/sr.json
+# Source: locales/sr.json
 module ParentTime
   module Locales
     SR = AgeLocale.new(

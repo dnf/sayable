@@ -154,7 +154,7 @@ public enum Locales {
         return .other
     }
 
-    // Source: codegen/locales/am.json
+    // Source: locales/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
@@ -182,7 +182,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ar.json
+    // Source: locales/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
@@ -210,7 +210,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/az.json
+    // Source: locales/az.json
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
@@ -238,7 +238,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/bg.json
+    // Source: locales/bg.json
     // ================================================================
     // BG — Bulgarian
     // ================================================================
@@ -266,7 +266,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/bn.json
+    // Source: locales/bn.json
     // ================================================================
     // BN — Bengali
     // ================================================================
@@ -294,7 +294,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/br.json
+    // Source: locales/br.json
     // ================================================================
     // BR — Breton
     // ================================================================
@@ -322,7 +322,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/bs.json
+    // Source: locales/bs.json
     // ================================================================
     // BS — Bosnian
     // ================================================================
@@ -350,7 +350,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ca.json
+    // Source: locales/ca.json
     // ================================================================
     // CA — Catalan
     // ================================================================
@@ -378,7 +378,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/cs.json
+    // Source: locales/cs.json
     // ================================================================
     // CS — Czech
     // ================================================================
@@ -406,7 +406,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/cy.json
+    // Source: locales/cy.json
     // ================================================================
     // CY — Welsh
     // ================================================================
@@ -434,7 +434,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/da.json
+    // Source: locales/da.json
     // ================================================================
     // DA — Danish
     // ================================================================
@@ -462,7 +462,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/de.json
+    // Source: locales/de.json
     // ================================================================
     // DE — German
     // ================================================================
@@ -490,7 +490,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/el.json
+    // Source: locales/el.json
     // ================================================================
     // EL — Greek
     // ================================================================
@@ -518,7 +518,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/en.json
+    // Source: locales/en.json
     // ================================================================
     // EN — English
     // ================================================================
@@ -562,7 +562,7 @@ public enum Locales {
         )
     )
 
-    // Source: codegen/locales/es.json
+    // Source: locales/es.json
     // ================================================================
     // ES — Spanish
     // ================================================================
@@ -590,7 +590,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/et.json
+    // Source: locales/et.json
     // ================================================================
     // ET — Estonian
     // ================================================================
@@ -618,7 +618,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/eu.json
+    // Source: locales/eu.json
     // ================================================================
     // EU — Basque
     // ================================================================
@@ -646,7 +646,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/fa.json
+    // Source: locales/fa.json
     // ================================================================
     // FA — Persian
     // ================================================================
@@ -674,7 +674,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/fi.json
+    // Source: locales/fi.json
     // ================================================================
     // FI — Finnish
     // ================================================================
@@ -702,7 +702,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/fil.json
+    // Source: locales/fil.json
     // ================================================================
     // FIL — Filipino
     // ================================================================
@@ -730,7 +730,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/fr.json
+    // Source: locales/fr.json
     // ================================================================
     // FR — French
     // ================================================================
@@ -758,7 +758,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ga.json
+    // Source: locales/ga.json
     // ================================================================
     // GA — Irish
     // ================================================================
@@ -786,7 +786,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/gd.json
+    // Source: locales/gd.json
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
@@ -814,7 +814,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/gu.json
+    // Source: locales/gu.json
     // ================================================================
     // GU — Gujarati
     // ================================================================
@@ -842,7 +842,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/gv.json
+    // Source: locales/gv.json
     // ================================================================
     // GV — Manx
     // ================================================================
@@ -870,7 +870,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/he.json
+    // Source: locales/he.json
     // ================================================================
     // HE — Hebrew
     // ================================================================
@@ -898,7 +898,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/hi.json
+    // Source: locales/hi.json
     // ================================================================
     // HI — Hindi
     // ================================================================
@@ -926,7 +926,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/hr.json
+    // Source: locales/hr.json
     // ================================================================
     // HR — Croatian
     // ================================================================
@@ -954,7 +954,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/hu.json
+    // Source: locales/hu.json
     // ================================================================
     // HU — Hungarian
     // ================================================================
@@ -982,7 +982,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/id.json
+    // Source: locales/id.json
     // ================================================================
     // ID — Indonesian
     // ================================================================
@@ -1010,7 +1010,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/it.json
+    // Source: locales/it.json
     // ================================================================
     // IT — Italian
     // ================================================================
@@ -1038,7 +1038,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ja.json
+    // Source: locales/ja.json
     // ================================================================
     // JA — Japanese
     // ================================================================
@@ -1066,7 +1066,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/jv.json
+    // Source: locales/jv.json
     // ================================================================
     // JV — Javanese
     // ================================================================
@@ -1094,7 +1094,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ka.json
+    // Source: locales/ka.json
     // ================================================================
     // KA — Georgian
     // ================================================================
@@ -1122,7 +1122,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/kk.json
+    // Source: locales/kk.json
     // ================================================================
     // KK — Kazakh
     // ================================================================
@@ -1150,7 +1150,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/km.json
+    // Source: locales/km.json
     // ================================================================
     // KM — Khmer
     // ================================================================
@@ -1178,7 +1178,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ko.json
+    // Source: locales/ko.json
     // ================================================================
     // KO — Korean
     // ================================================================
@@ -1206,7 +1206,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/kw.json
+    // Source: locales/kw.json
     // ================================================================
     // KW — Cornish
     // ================================================================
@@ -1234,7 +1234,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/lt.json
+    // Source: locales/lt.json
     // ================================================================
     // LT — Lithuanian
     // ================================================================
@@ -1262,7 +1262,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/lv.json
+    // Source: locales/lv.json
     // ================================================================
     // LV — Latvian
     // ================================================================
@@ -1290,7 +1290,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/mk.json
+    // Source: locales/mk.json
     // ================================================================
     // MK — Macedonian
     // ================================================================
@@ -1318,7 +1318,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/mr.json
+    // Source: locales/mr.json
     // ================================================================
     // MR — Marathi
     // ================================================================
@@ -1346,7 +1346,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ms.json
+    // Source: locales/ms.json
     // ================================================================
     // MS — Malay
     // ================================================================
@@ -1374,7 +1374,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/mt.json
+    // Source: locales/mt.json
     // ================================================================
     // MT — Maltese
     // ================================================================
@@ -1402,7 +1402,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/my.json
+    // Source: locales/my.json
     // ================================================================
     // MY — Burmese
     // ================================================================
@@ -1430,7 +1430,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/nb.json
+    // Source: locales/nb.json
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
@@ -1458,7 +1458,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ne.json
+    // Source: locales/ne.json
     // ================================================================
     // NE — Nepali
     // ================================================================
@@ -1486,7 +1486,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/nl.json
+    // Source: locales/nl.json
     // ================================================================
     // NL — Dutch
     // ================================================================
@@ -1514,7 +1514,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/pa.json
+    // Source: locales/pa.json
     // ================================================================
     // PA — Punjabi
     // ================================================================
@@ -1542,7 +1542,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/pl.json
+    // Source: locales/pl.json
     // ================================================================
     // PL — Polish
     // ================================================================
@@ -1570,7 +1570,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/pt.json
+    // Source: locales/pt.json
     // ================================================================
     // PT — Portuguese
     // ================================================================
@@ -1598,7 +1598,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ro.json
+    // Source: locales/ro.json
     // ================================================================
     // RO — Romanian
     // ================================================================
@@ -1626,7 +1626,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ru.json
+    // Source: locales/ru.json
     // ================================================================
     // RU — Russian
     // ================================================================
@@ -1654,7 +1654,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/shi.json
+    // Source: locales/shi.json
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
@@ -1682,7 +1682,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/si.json
+    // Source: locales/si.json
     // ================================================================
     // SI — Sinhala
     // ================================================================
@@ -1710,7 +1710,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/sk.json
+    // Source: locales/sk.json
     // ================================================================
     // SK — Slovak
     // ================================================================
@@ -1738,7 +1738,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/sl.json
+    // Source: locales/sl.json
     // ================================================================
     // SL — Slovenian
     // ================================================================
@@ -1766,7 +1766,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/sq.json
+    // Source: locales/sq.json
     // ================================================================
     // SQ — Albanian
     // ================================================================
@@ -1794,7 +1794,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/sr.json
+    // Source: locales/sr.json
     // ================================================================
     // SR — Serbian
     // ================================================================
@@ -1822,7 +1822,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/sv.json
+    // Source: locales/sv.json
     // ================================================================
     // SV — Swedish
     // ================================================================
@@ -1850,7 +1850,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/sw.json
+    // Source: locales/sw.json
     // ================================================================
     // SW — Swahili
     // ================================================================
@@ -1878,7 +1878,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ta.json
+    // Source: locales/ta.json
     // ================================================================
     // TA — Tamil
     // ================================================================
@@ -1906,7 +1906,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/te.json
+    // Source: locales/te.json
     // ================================================================
     // TE — Telugu
     // ================================================================
@@ -1934,7 +1934,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/th.json
+    // Source: locales/th.json
     // ================================================================
     // TH — Thai
     // ================================================================
@@ -1962,7 +1962,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/tr.json
+    // Source: locales/tr.json
     // ================================================================
     // TR — Turkish
     // ================================================================
@@ -1990,7 +1990,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/tzm.json
+    // Source: locales/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
@@ -2018,7 +2018,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/uk.json
+    // Source: locales/uk.json
     // ================================================================
     // UK — Ukrainian
     // ================================================================
@@ -2046,7 +2046,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/ur.json
+    // Source: locales/ur.json
     // ================================================================
     // UR — Urdu
     // ================================================================
@@ -2074,7 +2074,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/uz.json
+    // Source: locales/uz.json
     // ================================================================
     // UZ — Uzbek
     // ================================================================
@@ -2102,7 +2102,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/vi.json
+    // Source: locales/vi.json
     // ================================================================
     // VI — Vietnamese
     // ================================================================
@@ -2130,7 +2130,7 @@ public enum Locales {
         compactOverride: nil
     )
 
-    // Source: codegen/locales/zh.json
+    // Source: locales/zh.json
     // ================================================================
     // ZH — Chinese
     // ================================================================

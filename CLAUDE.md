@@ -38,8 +38,8 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Canonical test IDs.** Every test must be annotated with the ID(s) from `docs/testing.md` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
-- **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all language implementations. Never edit generated locale files by hand.
-- **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: codegen/locales/{code}.json` comment linking to the canonical JSON.
+- **Locale data lives in `locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all language implementations. Never edit generated locale files by hand.
+- **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON.
 - **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
 
 ## Project layout
@@ -64,6 +64,7 @@ src/
   swift/       # Swift
   typescript/  # TypeScript
   zig/         # Zig
+locales/       # Canonical locale JSON files (single source of truth)
 codegen/       # Locale code generator (JSON → all languages)
 docs/          # Shared docs, test spec, locale docs
 ```
@@ -86,7 +87,7 @@ Core files per language follow a consistent pattern:
 See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Summary:
 
 1. Identify the CLDR plural rule — one of the 23 existing rules covers every CLDR cardinal pattern
-2. Create `codegen/locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
+2. Create `locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
 3. Run `python -m codegen.generate` — generates locale files in all languages
 4. Run `just test && just lint` to verify
 5. Optionally add locale-specific test cases to `docs/testing.md`

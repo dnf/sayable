@@ -5,7 +5,7 @@ You create one JSON file and codegen generates all 11 language implementations.
 
 ## Before you start
 
-1. Check `codegen/locales/` to make sure the locale doesn't already exist
+1. Check `locales/` to make sure the locale doesn't already exist
 2. Identify the ISO 639-1 code (e.g. `sw` for Swahili)
 3. Determine the CLDR plural rule for the language:
    https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
@@ -46,7 +46,7 @@ CLDR rule will match one of these — use that rule name.
 
 ## 2. Create the JSON file
 
-Create `codegen/locales/{code}.json`. The structure depends on the plural
+Create `locales/{code}.json`. The structure depends on the plural
 rule complexity.
 
 ### No-plural language (e.g. `other_only`)
@@ -242,7 +242,7 @@ tagged for native speaker review before merging.
 
 - [ ] ISO 639-1 code confirmed
 - [ ] CLDR plural rule identified (existing or new)
-- [ ] `codegen/locales/{code}.json` created with all required fields
+- [ ] `locales/{code}.json` created with all required fields
 - [ ] Stage labels reviewed for gender (see `docs/gender-and-stages.md`)
 - [ ] `python -m codegen.generate` succeeds
 - [ ] `python -m codegen.generate --check` passes

@@ -18,7 +18,7 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-JSON_DIR = os.path.join(ROOT, "codegen", "locales")
+JSON_DIR = os.path.join(ROOT, "locales")
 
 
 def load_locales() -> list[dict]:

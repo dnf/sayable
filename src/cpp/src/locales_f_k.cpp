@@ -13,7 +13,7 @@
 namespace parenttime {
 namespace locales {
 
-// Source: codegen/locales/fa.json
+// Source: locales/fa.json
 const AgeLocale& FA() {
     static const AgeLocale loc{
         "fa",
@@ -36,7 +36,7 @@ const AgeLocale& FA() {
     return loc;
 }
 
-// Source: codegen/locales/fi.json
+// Source: locales/fi.json
 const AgeLocale& FI() {
     static const AgeLocale loc{
         "fi",
@@ -59,7 +59,7 @@ const AgeLocale& FI() {
     return loc;
 }
 
-// Source: codegen/locales/fil.json
+// Source: locales/fil.json
 const AgeLocale& FIL() {
     static const AgeLocale loc{
         "fil",
@@ -81,7 +81,7 @@ const AgeLocale& FIL() {
     return loc;
 }
 
-// Source: codegen/locales/fr.json
+// Source: locales/fr.json
 const AgeLocale& FR() {
     static const AgeLocale loc{
         "fr",
@@ -104,7 +104,7 @@ const AgeLocale& FR() {
     return loc;
 }
 
-// Source: codegen/locales/ga.json
+// Source: locales/ga.json
 const AgeLocale& GA() {
     static const AgeLocale loc{
         "ga",
@@ -130,7 +130,7 @@ const AgeLocale& GA() {
     return loc;
 }
 
-// Source: codegen/locales/gd.json
+// Source: locales/gd.json
 const AgeLocale& GD() {
     static const AgeLocale loc{
         "gd",
@@ -155,7 +155,7 @@ const AgeLocale& GD() {
     return loc;
 }
 
-// Source: codegen/locales/gu.json
+// Source: locales/gu.json
 const AgeLocale& GU() {
     static const AgeLocale loc{
         "gu",
@@ -178,7 +178,7 @@ const AgeLocale& GU() {
     return loc;
 }
 
-// Source: codegen/locales/gv.json
+// Source: locales/gv.json
 const AgeLocale& GV() {
     static const AgeLocale loc{
         "gv",
@@ -205,7 +205,7 @@ const AgeLocale& GV() {
     return loc;
 }
 
-// Source: codegen/locales/he.json
+// Source: locales/he.json
 const AgeLocale& HE() {
     static const AgeLocale loc{
         "he",
@@ -229,7 +229,7 @@ const AgeLocale& HE() {
     return loc;
 }
 
-// Source: codegen/locales/hi.json
+// Source: locales/hi.json
 const AgeLocale& HI() {
     static const AgeLocale loc{
         "hi",
@@ -252,7 +252,7 @@ const AgeLocale& HI() {
     return loc;
 }
 
-// Source: codegen/locales/hr.json
+// Source: locales/hr.json
 const AgeLocale& HR() {
     static const AgeLocale loc{
         "hr",
@@ -278,7 +278,7 @@ const AgeLocale& HR() {
     return loc;
 }
 
-// Source: codegen/locales/hu.json
+// Source: locales/hu.json
 const AgeLocale& HU() {
     static const AgeLocale loc{
         "hu",
@@ -300,7 +300,7 @@ const AgeLocale& HU() {
     return loc;
 }
 
-// Source: codegen/locales/id.json
+// Source: locales/id.json
 const AgeLocale& ID() {
     static const AgeLocale loc{
         "id",
@@ -322,7 +322,7 @@ const AgeLocale& ID() {
     return loc;
 }
 
-// Source: codegen/locales/it.json
+// Source: locales/it.json
 const AgeLocale& IT() {
     static const AgeLocale loc{
         "it",
@@ -345,7 +345,7 @@ const AgeLocale& IT() {
     return loc;
 }
 
-// Source: codegen/locales/ja.json
+// Source: locales/ja.json
 const AgeLocale& JA() {
     static const AgeLocale loc{
         "ja",
@@ -367,7 +367,7 @@ const AgeLocale& JA() {
     return loc;
 }
 
-// Source: codegen/locales/jv.json
+// Source: locales/jv.json
 const AgeLocale& JV() {
     static const AgeLocale loc{
         "jv",
@@ -389,7 +389,7 @@ const AgeLocale& JV() {
     return loc;
 }
 
-// Source: codegen/locales/ka.json
+// Source: locales/ka.json
 const AgeLocale& KA() {
     static const AgeLocale loc{
         "ka",
@@ -412,7 +412,7 @@ const AgeLocale& KA() {
     return loc;
 }
 
-// Source: codegen/locales/kk.json
+// Source: locales/kk.json
 const AgeLocale& KK() {
     static const AgeLocale loc{
         "kk",
@@ -435,7 +435,7 @@ const AgeLocale& KK() {
     return loc;
 }
 
-// Source: codegen/locales/km.json
+// Source: locales/km.json
 const AgeLocale& KM() {
     static const AgeLocale loc{
         "km",
@@ -457,7 +457,7 @@ const AgeLocale& KM() {
     return loc;
 }
 
-// Source: codegen/locales/ko.json
+// Source: locales/ko.json
 const AgeLocale& KO() {
     static const AgeLocale loc{
         "ko",
@@ -479,7 +479,7 @@ const AgeLocale& KO() {
     return loc;
 }
 
-// Source: codegen/locales/kw.json
+// Source: locales/kw.json
 const AgeLocale& KW() {
     static const AgeLocale loc{
         "kw",
