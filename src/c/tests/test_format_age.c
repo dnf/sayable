@@ -56,12 +56,12 @@ static int fmt(char *buf, size_t sz, const char *dob, const char *as_of) {
 static void test_null_edge_cases(void) {
     char buf[256];
     int rc;
-    ASSERT_NULL("empty string", fmt(buf, sizeof(buf), "", "2025-06-15"));
-    ASSERT_NULL("future dob", fmt(buf, sizeof(buf), "2025-07-01", "2025-06-15"));
+    ASSERT_NULL("empty string", fmt(buf, sizeof(buf), "", "2025-06-15")); // 1.1, 1.3
+    ASSERT_NULL("future dob", fmt(buf, sizeof(buf), "2025-07-01", "2025-06-15")); // 1.4
     rc = fmt(buf, sizeof(buf), "1525-06-15", "2025-06-15");
-    ASSERT_EQ("exactly 500 years", rc, buf, "500 years");
-    ASSERT_NULL("501 years exceeds max", fmt(buf, sizeof(buf), "1524-06-15", "2025-06-15"));
-    ASSERT_NULL("1000 years exceeds max", fmt(buf, sizeof(buf), "1025-06-15", "2025-06-15"));
+    ASSERT_EQ("exactly 500 years", rc, buf, "500 years"); // 1.5
+    ASSERT_NULL("501 years exceeds max", fmt(buf, sizeof(buf), "1524-06-15", "2025-06-15")); // 1.6
+    ASSERT_NULL("1000 years exceeds max", fmt(buf, sizeof(buf), "1025-06-15", "2025-06-15")); // 1.7
 }
 
 /* ================================================================ */
@@ -71,15 +71,15 @@ static void test_days_tier(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2025-06-15", "2025-06-15");
-    ASSERT_EQ("born today", rc, buf, "Newborn");
+    ASSERT_EQ("born today", rc, buf, "Newborn"); // 2.1
     rc = fmt(buf, sizeof(buf), "2025-06-14", "2025-06-15");
-    ASSERT_EQ("1 day ago", rc, buf, "1 day");
+    ASSERT_EQ("1 day ago", rc, buf, "1 day"); // 2.2
     rc = fmt(buf, sizeof(buf), "2025-06-12", "2025-06-15");
-    ASSERT_EQ("3 days ago", rc, buf, "3 days");
+    ASSERT_EQ("3 days ago", rc, buf, "3 days"); // 2.3
     rc = fmt(buf, sizeof(buf), "2025-06-09", "2025-06-15");
-    ASSERT_EQ("6 days ago", rc, buf, "6 days");
+    ASSERT_EQ("6 days ago", rc, buf, "6 days"); // 2.4
     rc = fmt(buf, sizeof(buf), "2025-06-08", "2025-06-15");
-    ASSERT_EQ("7 days -> 1 week", rc, buf, "1 week");
+    ASSERT_EQ("7 days -> 1 week", rc, buf, "1 week"); // 2.5
 }
 
 /* ================================================================ */
@@ -89,29 +89,29 @@ static void test_weeks_days_tier(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2025-06-08", "2025-06-15");
-    ASSERT_EQ("7 days", rc, buf, "1 week");
+    ASSERT_EQ("7 days", rc, buf, "1 week"); // 3.1
     rc = fmt(buf, sizeof(buf), "2025-06-07", "2025-06-15");
-    ASSERT_EQ("8 days", rc, buf, "1 week, 1 day");
+    ASSERT_EQ("8 days", rc, buf, "1 week, 1 day"); // 3.2
     rc = fmt(buf, sizeof(buf), "2025-06-06", "2025-06-15");
-    ASSERT_EQ("9 days", rc, buf, "1 week, 2 days");
+    ASSERT_EQ("9 days", rc, buf, "1 week, 2 days"); // 3.3
     rc = fmt(buf, sizeof(buf), "2025-06-02", "2025-06-15");
-    ASSERT_EQ("13 days", rc, buf, "1 week, 6 days");
+    ASSERT_EQ("13 days", rc, buf, "1 week, 6 days"); // 3.4
     rc = fmt(buf, sizeof(buf), "2025-06-01", "2025-06-15");
-    ASSERT_EQ("14 days", rc, buf, "2 weeks");
+    ASSERT_EQ("14 days", rc, buf, "2 weeks"); // 3.5
     rc = fmt(buf, sizeof(buf), "2025-05-31", "2025-06-15");
-    ASSERT_EQ("15 days", rc, buf, "2 weeks, 1 day");
+    ASSERT_EQ("15 days", rc, buf, "2 weeks, 1 day"); // 3.6
     rc = fmt(buf, sizeof(buf), "2025-05-26", "2025-06-15");
-    ASSERT_EQ("20 days", rc, buf, "2 weeks, 6 days");
+    ASSERT_EQ("20 days", rc, buf, "2 weeks, 6 days"); // 3.7
     rc = fmt(buf, sizeof(buf), "2025-05-25", "2025-06-15");
-    ASSERT_EQ("21 days", rc, buf, "3 weeks");
+    ASSERT_EQ("21 days", rc, buf, "3 weeks"); // 3.8
     rc = fmt(buf, sizeof(buf), "2025-05-15", "2025-06-15");
-    ASSERT_EQ("at 1 cal month still weeks+days", rc, buf, "4 weeks, 3 days");
+    ASSERT_EQ("at 1 cal month still weeks+days", rc, buf, "4 weeks, 3 days"); // 3.9
     rc = fmt(buf, sizeof(buf), "2025-04-15", "2025-06-15");
-    ASSERT_EQ("at 2 cal months still weeks+days", rc, buf, "8 weeks, 5 days");
+    ASSERT_EQ("at 2 cal months still weeks+days", rc, buf, "8 weeks, 5 days"); // 3.10
     rc = fmt(buf, sizeof(buf), "2025-03-15", "2025-06-14");
-    ASSERT_EQ("one day before 3mo still weeks", rc, buf, "13 weeks");
+    ASSERT_EQ("one day before 3mo still weeks", rc, buf, "13 weeks"); // 3.11
     rc = fmt(buf, sizeof(buf), "2025-03-15", "2025-06-15");
-    ASSERT_EQ("on 3mo birthday switches", rc, buf, "3 months");
+    ASSERT_EQ("on 3mo birthday switches", rc, buf, "3 months"); // 3.12
 }
 
 /* ================================================================ */
@@ -121,15 +121,15 @@ static void test_month_boundary_standard(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2025-01-01", "2025-04-01");
-    ASSERT_EQ("Jan1->Apr1=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Jan1->Apr1=3mo", rc, buf, "3 months"); // 4.1
     rc = fmt(buf, sizeof(buf), "2025-01-01", "2025-03-31");
-    ASSERT_CONTAINS("Jan1->Mar31 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Jan1->Mar31 still weeks", rc, buf, "weeks"); // 4.2
     rc = fmt(buf, sizeof(buf), "2025-06-15", "2025-09-15");
-    ASSERT_EQ("Jun15->Sep15=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Jun15->Sep15=3mo", rc, buf, "3 months"); // 4.3
     rc = fmt(buf, sizeof(buf), "2025-06-15", "2025-09-14");
-    ASSERT_CONTAINS("Jun15->Sep14 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Jun15->Sep14 still weeks", rc, buf, "weeks"); // 4.4
     rc = fmt(buf, sizeof(buf), "2025-06-15", "2025-12-15");
-    ASSERT_EQ("Jun15->Dec15=6mo", rc, buf, "6 months");
+    ASSERT_EQ("Jun15->Dec15=6mo", rc, buf, "6 months"); // 4.5
 }
 
 /* ================================================================ */
@@ -139,15 +139,15 @@ static void test_month_boundary_feb_non_leap(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2025-01-31", "2025-02-28");
-    ASSERT_EQ("Jan31->Feb28 non-leap", rc, buf, "4 weeks");
+    ASSERT_EQ("Jan31->Feb28 non-leap", rc, buf, "4 weeks"); // 5.1
     rc = fmt(buf, sizeof(buf), "2025-01-31", "2025-04-30");
-    ASSERT_EQ("Jan31->Apr30=3mo(clamp)", rc, buf, "3 months");
+    ASSERT_EQ("Jan31->Apr30=3mo(clamp)", rc, buf, "3 months"); // 5.2
     rc = fmt(buf, sizeof(buf), "2025-01-31", "2025-04-29");
-    ASSERT_CONTAINS("Jan31->Apr29 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Jan31->Apr29 still weeks", rc, buf, "weeks"); // 5.3
     rc = fmt(buf, sizeof(buf), "2025-02-01", "2025-05-01");
-    ASSERT_EQ("Feb1->May1=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Feb1->May1=3mo", rc, buf, "3 months"); // 5.4
     rc = fmt(buf, sizeof(buf), "2025-02-01", "2025-04-30");
-    ASSERT_CONTAINS("Feb1->Apr30 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Feb1->Apr30 still weeks", rc, buf, "weeks"); // 5.5
 }
 
 /* ================================================================ */
@@ -157,15 +157,15 @@ static void test_month_boundary_feb_leap(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2024-01-31", "2024-02-29");
-    ASSERT_EQ("Jan31->Feb29 leap", rc, buf, "4 weeks, 1 day");
+    ASSERT_EQ("Jan31->Feb29 leap", rc, buf, "4 weeks, 1 day"); // 6.1
     rc = fmt(buf, sizeof(buf), "2024-01-31", "2024-02-28");
-    ASSERT_EQ("Jan31->Feb28 leap", rc, buf, "4 weeks");
+    ASSERT_EQ("Jan31->Feb28 leap", rc, buf, "4 weeks"); // 6.2
     rc = fmt(buf, sizeof(buf), "2024-01-31", "2024-04-30");
-    ASSERT_EQ("Jan31->Apr30 leap=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Jan31->Apr30 leap=3mo", rc, buf, "3 months"); // 6.3
     rc = fmt(buf, sizeof(buf), "2024-01-30", "2024-02-29");
-    ASSERT_CONTAINS("Jan30->Feb29 leap still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Jan30->Feb29 leap still weeks", rc, buf, "weeks"); // 6.4
     rc = fmt(buf, sizeof(buf), "2024-01-30", "2024-02-28");
-    ASSERT_CONTAINS("Jan30->Feb28 leap still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Jan30->Feb28 leap still weeks", rc, buf, "weeks"); // 6.5
 }
 
 /* ================================================================ */
@@ -175,13 +175,13 @@ static void test_month_boundary_30day(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2025-03-31", "2025-06-30");
-    ASSERT_EQ("Mar31->Jun30=3mo(clamped)", rc, buf, "3 months");
+    ASSERT_EQ("Mar31->Jun30=3mo(clamped)", rc, buf, "3 months"); // 7.1
     rc = fmt(buf, sizeof(buf), "2025-03-31", "2025-06-29");
-    ASSERT_CONTAINS("Mar31->Jun29 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Mar31->Jun29 still weeks", rc, buf, "weeks"); // 7.2
     rc = fmt(buf, sizeof(buf), "2025-08-31", "2025-11-30");
-    ASSERT_EQ("Aug31->Nov30=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Aug31->Nov30=3mo", rc, buf, "3 months"); // 7.3
     rc = fmt(buf, sizeof(buf), "2025-08-31", "2025-11-29");
-    ASSERT_CONTAINS("Aug31->Nov29 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Aug31->Nov29 still weeks", rc, buf, "weeks"); // 7.4
 }
 
 /* ================================================================ */
@@ -191,13 +191,13 @@ static void test_leap_year_baby(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2024-02-29", "2024-05-29");
-    ASSERT_EQ("Feb29->May29=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Feb29->May29=3mo", rc, buf, "3 months"); // 8.1
     rc = fmt(buf, sizeof(buf), "2024-02-29", "2024-05-28");
-    ASSERT_CONTAINS("Feb29->May28 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Feb29->May28 still weeks", rc, buf, "weeks"); // 8.2
     rc = fmt(buf, sizeof(buf), "2024-02-29", "2025-02-28");
-    ASSERT_EQ("Feb29 2024->Feb28 2025=12mo", rc, buf, "12 months");
+    ASSERT_EQ("Feb29 2024->Feb28 2025=12mo", rc, buf, "12 months"); // 8.3
     rc = fmt(buf, sizeof(buf), "2024-02-29", "2025-03-01");
-    ASSERT_EQ("Feb29 2024->Mar1 2025=12mo", rc, buf, "12 months");
+    ASSERT_EQ("Feb29 2024->Mar1 2025=12mo", rc, buf, "12 months"); // 8.4
 }
 
 /* ================================================================ */
@@ -207,17 +207,17 @@ static void test_months_tier(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2025-01-15", "2025-04-15");
-    ASSERT_EQ("3 months at transition", rc, buf, "3 months");
+    ASSERT_EQ("3 months at transition", rc, buf, "3 months"); // 9.1
     rc = fmt(buf, sizeof(buf), "2025-01-15", "2025-07-15");
-    ASSERT_EQ("6 months", rc, buf, "6 months");
+    ASSERT_EQ("6 months", rc, buf, "6 months"); // 9.2
     rc = fmt(buf, sizeof(buf), "2024-06-15", "2025-06-15");
-    ASSERT_EQ("12 months (not 1 year)", rc, buf, "12 months");
+    ASSERT_EQ("12 months (not 1 year)", rc, buf, "12 months"); // 9.3
     rc = fmt(buf, sizeof(buf), "2024-01-15", "2025-12-15");
-    ASSERT_EQ("23 months at upper", rc, buf, "23 months");
+    ASSERT_EQ("23 months at upper", rc, buf, "23 months"); // 9.4
     rc = fmt(buf, sizeof(buf), "2025-01-15", "2025-07-14");
-    ASSERT_EQ("one day before boundary", rc, buf, "5 months");
+    ASSERT_EQ("one day before boundary", rc, buf, "5 months"); // 9.5
     rc = fmt(buf, sizeof(buf), "2024-11-10", "2025-04-10");
-    ASSERT_EQ("crossing year boundary", rc, buf, "5 months");
+    ASSERT_EQ("crossing year boundary", rc, buf, "5 months"); // 9.6
 }
 
 /* ================================================================ */
@@ -227,15 +227,15 @@ static void test_years_months_tier(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2023-06-15", "2025-06-15");
-    ASSERT_EQ("2 years at 24mo", rc, buf, "2 years");
+    ASSERT_EQ("2 years at 24mo", rc, buf, "2 years"); // 10.1
     rc = fmt(buf, sizeof(buf), "2023-06-15", "2025-07-15");
-    ASSERT_EQ("2 years 1 month", rc, buf, "2 years, 1 month");
+    ASSERT_EQ("2 years 1 month", rc, buf, "2 years, 1 month"); // 10.2
     rc = fmt(buf, sizeof(buf), "2023-06-15", "2025-12-15");
-    ASSERT_EQ("2 years 6 months", rc, buf, "2 years, 6 months");
+    ASSERT_EQ("2 years 6 months", rc, buf, "2 years, 6 months"); // 10.3
     rc = fmt(buf, sizeof(buf), "2023-06-15", "2026-05-15");
-    ASSERT_EQ("2 years 11 months", rc, buf, "2 years, 11 months");
+    ASSERT_EQ("2 years 11 months", rc, buf, "2 years, 11 months"); // 10.4
     rc = fmt(buf, sizeof(buf), "2023-06-15", "2025-06-14");
-    ASSERT_EQ("one day before 24mo", rc, buf, "23 months");
+    ASSERT_EQ("one day before 24mo", rc, buf, "23 months"); // 10.5
 }
 
 /* ================================================================ */
@@ -245,29 +245,29 @@ static void test_half_year_tier(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2022-06-15", "2025-06-15");
-    ASSERT_EQ("3 years exactly", rc, buf, "3 years");
+    ASSERT_EQ("3 years exactly", rc, buf, "3 years"); // 11.1
     rc = fmt(buf, sizeof(buf), "2022-06-15", "2025-11-15");
-    ASSERT_EQ("3 years 5 months", rc, buf, "3 years");
+    ASSERT_EQ("3 years 5 months", rc, buf, "3 years"); // 11.2
     rc = fmt(buf, sizeof(buf), "2022-06-15", "2025-12-15");
-    ASSERT_EQ("3.5 years at 3y6m", rc, buf, "3\xc2\xbd years");
+    ASSERT_EQ("3.5 years at 3y6m", rc, buf, "3\xc2\xbd years"); // 11.3
     rc = fmt(buf, sizeof(buf), "2022-06-15", "2026-05-15");
-    ASSERT_EQ("3.5 years at 3y11m", rc, buf, "3\xc2\xbd years");
+    ASSERT_EQ("3.5 years at 3y11m", rc, buf, "3\xc2\xbd years"); // 11.4
     rc = fmt(buf, sizeof(buf), "2021-06-15", "2025-06-15");
-    ASSERT_EQ("4 years exactly", rc, buf, "4 years");
+    ASSERT_EQ("4 years exactly", rc, buf, "4 years"); // 11.5
     rc = fmt(buf, sizeof(buf), "2021-06-15", "2025-12-15");
-    ASSERT_EQ("4.5 years", rc, buf, "4\xc2\xbd years");
+    ASSERT_EQ("4.5 years", rc, buf, "4\xc2\xbd years"); // 11.6
     rc = fmt(buf, sizeof(buf), "2020-06-15", "2025-06-15");
-    ASSERT_EQ("5 years", rc, buf, "5 years");
+    ASSERT_EQ("5 years", rc, buf, "5 years"); // 11.7
     rc = fmt(buf, sizeof(buf), "2020-06-15", "2026-02-15");
-    ASSERT_EQ("5.5 years at 5y8m", rc, buf, "5\xc2\xbd years");
+    ASSERT_EQ("5.5 years at 5y8m", rc, buf, "5\xc2\xbd years"); // 11.8
     rc = fmt(buf, sizeof(buf), "2019-06-15", "2025-06-15");
-    ASSERT_EQ("6 years", rc, buf, "6 years");
+    ASSERT_EQ("6 years", rc, buf, "6 years"); // 11.9
     rc = fmt(buf, sizeof(buf), "2019-06-15", "2025-12-15");
-    ASSERT_EQ("6.5 years", rc, buf, "6\xc2\xbd years");
+    ASSERT_EQ("6.5 years", rc, buf, "6\xc2\xbd years"); // 11.10
     rc = fmt(buf, sizeof(buf), "2019-06-15", "2026-05-15");
-    ASSERT_EQ("6.5 years at 6y11m", rc, buf, "6\xc2\xbd years");
+    ASSERT_EQ("6.5 years at 6y11m", rc, buf, "6\xc2\xbd years"); // 11.11
     rc = fmt(buf, sizeof(buf), "2022-06-15", "2025-06-14");
-    ASSERT_EQ("one day before 3rd bday", rc, buf, "2 years, 11 months");
+    ASSERT_EQ("one day before 3rd bday", rc, buf, "2 years, 11 months"); // 11.12
 }
 
 /* ================================================================ */
@@ -277,11 +277,11 @@ static void test_integer_tier(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2018-06-15", "2025-06-15");
-    ASSERT_EQ("7 years exactly", rc, buf, "7 years");
+    ASSERT_EQ("7 years exactly", rc, buf, "7 years"); // 12.1
     rc = fmt(buf, sizeof(buf), "2018-03-20", "2025-06-15");
-    ASSERT_EQ("7 years 6 months (no half)", rc, buf, "7 years");
+    ASSERT_EQ("7 years 6 months (no half)", rc, buf, "7 years"); // 12.2
     rc = fmt(buf, sizeof(buf), "1980-01-01", "2025-06-15");
-    ASSERT_EQ("45 years", rc, buf, "45 years");
+    ASSERT_EQ("45 years", rc, buf, "45 years"); // 12.3
 }
 
 /* ================================================================ */
@@ -291,13 +291,13 @@ static void test_cross_year_feb(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2024-12-31", "2025-03-31");
-    ASSERT_EQ("Dec31->Mar31=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Dec31->Mar31=3mo", rc, buf, "3 months"); // 13.1
     rc = fmt(buf, sizeof(buf), "2024-12-31", "2025-03-30");
-    ASSERT_CONTAINS("Dec31->Mar30 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Dec31->Mar30 still weeks", rc, buf, "weeks"); // 13.2
     rc = fmt(buf, sizeof(buf), "2024-11-30", "2025-02-28");
-    ASSERT_EQ("Nov30->Feb28=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Nov30->Feb28=3mo", rc, buf, "3 months"); // 13.3
     rc = fmt(buf, sizeof(buf), "2024-11-30", "2025-02-27");
-    ASSERT_CONTAINS("Nov30->Feb27 still weeks", rc, buf, "weeks");
+    ASSERT_CONTAINS("Nov30->Feb27 still weeks", rc, buf, "weeks"); // 13.4
 }
 
 /* ================================================================ */
@@ -307,86 +307,92 @@ static void test_born_on_31st(void) {
     char buf[256];
     int rc;
     rc = fmt(buf, sizeof(buf), "2025-01-31", "2025-04-30");
-    ASSERT_EQ("Jan31->Apr30=3mo", rc, buf, "3 months");
+    ASSERT_EQ("Jan31->Apr30=3mo", rc, buf, "3 months"); // 14.1
     rc = fmt(buf, sizeof(buf), "2025-01-31", "2025-05-31");
-    ASSERT_EQ("Jan31->May31=4mo", rc, buf, "4 months");
+    ASSERT_EQ("Jan31->May31=4mo", rc, buf, "4 months"); // 14.2
     rc = fmt(buf, sizeof(buf), "2025-01-31", "2025-06-30");
-    ASSERT_EQ("Jan31->Jun30=5mo(clamped)", rc, buf, "5 months");
+    ASSERT_EQ("Jan31->Jun30=5mo(clamped)", rc, buf, "5 months"); // 14.3
     rc = fmt(buf, sizeof(buf), "2025-01-31", "2025-07-01");
-    ASSERT_EQ("Jan31->Jul1=5mo", rc, buf, "5 months");
+    ASSERT_EQ("Jan31->Jul1=5mo", rc, buf, "5 months"); // 14.4
     rc = fmt(buf, sizeof(buf), "2025-01-31", "2025-07-31");
-    ASSERT_EQ("Jan31->Jul31=6mo", rc, buf, "6 months");
+    ASSERT_EQ("Jan31->Jul31=6mo", rc, buf, "6 months"); // 14.5
 }
 
 /* ================================================================ */
 /* formatStage                                                      */
 /* ================================================================ */
 static void test_stage_null_edge_cases(void) {
-    ASSERT_TRUE("stage empty", pt_stage(&pt_locale_en, "", "2025-06-15", "") == NULL);
-    ASSERT_TRUE("stage future", pt_stage(&pt_locale_en, "2025-07-01", "2025-06-15", "") == NULL);
-    ASSERT_TRUE("stage 500 years", strcmp(pt_stage(&pt_locale_en, "1525-06-15", "2025-06-15", ""), "Adult") == 0);
-    ASSERT_TRUE("stage 501 years exceeds max", pt_stage(&pt_locale_en, "1524-06-15", "2025-06-15", "") == NULL);
+    ASSERT_TRUE("stage empty", pt_stage(&pt_locale_en, "", "2025-06-15", "") == NULL); // 16.1, 16.3
+    ASSERT_TRUE("stage future", pt_stage(&pt_locale_en, "2025-07-01", "2025-06-15", "") == NULL); // 16.4
+    ASSERT_TRUE("stage 500 years", strcmp(pt_stage(&pt_locale_en, "1525-06-15", "2025-06-15", ""), "Adult") == 0); // 16.5
+    ASSERT_TRUE("stage 501 years exceeds max", pt_stage(&pt_locale_en, "1524-06-15", "2025-06-15", "") == NULL); // 16.6
 }
 
 static void test_stage_newborn(void) {
-    ASSERT_TRUE("stage born today", strcmp(pt_stage(&pt_locale_en, "2025-06-15", "2025-06-15", ""), "Newborn") == 0);
-    ASSERT_TRUE("stage 1 day old", strcmp(pt_stage(&pt_locale_en, "2025-06-14", "2025-06-15", ""), "Newborn") == 0);
-    ASSERT_TRUE("stage 3 weeks old", strcmp(pt_stage(&pt_locale_en, "2025-05-25", "2025-06-15", ""), "Newborn") == 0);
-    ASSERT_TRUE("stage 1 month old", strcmp(pt_stage(&pt_locale_en, "2025-05-15", "2025-06-15", ""), "Newborn") == 0);
-    ASSERT_TRUE("stage 1 month 29 days", strcmp(pt_stage(&pt_locale_en, "2025-04-16", "2025-06-15", ""), "Newborn") == 0);
-    ASSERT_TRUE("stage exactly 2 months -> Infant", strcmp(pt_stage(&pt_locale_en, "2025-04-15", "2025-06-15", ""), "Infant") == 0);
+    ASSERT_TRUE("stage born today", strcmp(pt_stage(&pt_locale_en, "2025-06-15", "2025-06-15", ""), "Newborn") == 0); // 17.1
+    ASSERT_TRUE("stage 1 day old", strcmp(pt_stage(&pt_locale_en, "2025-06-14", "2025-06-15", ""), "Newborn") == 0); // 17.2
+    ASSERT_TRUE("stage 3 weeks old", strcmp(pt_stage(&pt_locale_en, "2025-05-25", "2025-06-15", ""), "Newborn") == 0); // 17.3
+    ASSERT_TRUE("stage 1 month old", strcmp(pt_stage(&pt_locale_en, "2025-05-15", "2025-06-15", ""), "Newborn") == 0); // 17.4
+    ASSERT_TRUE("stage 1 month 29 days", strcmp(pt_stage(&pt_locale_en, "2025-04-16", "2025-06-15", ""), "Newborn") == 0); // 17.5
+    ASSERT_TRUE("stage exactly 2 months -> Infant", strcmp(pt_stage(&pt_locale_en, "2025-04-15", "2025-06-15", ""), "Infant") == 0); // 17.6
 }
 
 static void test_stage_infant(void) {
-    ASSERT_TRUE("stage 2 months", strcmp(pt_stage(&pt_locale_en, "2025-04-15", "2025-06-15", ""), "Infant") == 0);
-    ASSERT_TRUE("stage 6 months", strcmp(pt_stage(&pt_locale_en, "2024-12-15", "2025-06-15", ""), "Infant") == 0);
-    ASSERT_TRUE("stage 11 months", strcmp(pt_stage(&pt_locale_en, "2024-07-15", "2025-06-15", ""), "Infant") == 0);
-    ASSERT_TRUE("stage exactly 12mo -> Toddler", strcmp(pt_stage(&pt_locale_en, "2024-06-15", "2025-06-15", ""), "Toddler") == 0);
+    ASSERT_TRUE("stage 2 months", strcmp(pt_stage(&pt_locale_en, "2025-04-15", "2025-06-15", ""), "Infant") == 0); // 18.1
+    ASSERT_TRUE("stage 6 months", strcmp(pt_stage(&pt_locale_en, "2024-12-15", "2025-06-15", ""), "Infant") == 0); // 18.2
+    ASSERT_TRUE("stage 11 months", strcmp(pt_stage(&pt_locale_en, "2024-07-15", "2025-06-15", ""), "Infant") == 0); // 18.3
+    ASSERT_TRUE("stage exactly 12mo -> Toddler", strcmp(pt_stage(&pt_locale_en, "2024-06-15", "2025-06-15", ""), "Toddler") == 0); // 18.4
 }
 
 static void test_stage_toddler(void) {
-    ASSERT_TRUE("stage 12 months", strcmp(pt_stage(&pt_locale_en, "2024-06-15", "2025-06-15", ""), "Toddler") == 0);
-    ASSERT_TRUE("stage 18 months", strcmp(pt_stage(&pt_locale_en, "2024-01-15", "2025-07-15", ""), "Toddler") == 0);
-    ASSERT_TRUE("stage 24 months", strcmp(pt_stage(&pt_locale_en, "2023-06-15", "2025-06-15", ""), "Toddler") == 0);
-    ASSERT_TRUE("stage 35 months", strcmp(pt_stage(&pt_locale_en, "2023-06-15", "2026-05-15", ""), "Toddler") == 0);
-    ASSERT_TRUE("stage exactly 36mo -> Child", strcmp(pt_stage(&pt_locale_en, "2022-06-15", "2025-06-15", ""), "Child") == 0);
+    ASSERT_TRUE("stage 12 months", strcmp(pt_stage(&pt_locale_en, "2024-06-15", "2025-06-15", ""), "Toddler") == 0); // 19.1
+    ASSERT_TRUE("stage 18 months", strcmp(pt_stage(&pt_locale_en, "2024-01-15", "2025-07-15", ""), "Toddler") == 0); // 19.2
+    ASSERT_TRUE("stage 24 months", strcmp(pt_stage(&pt_locale_en, "2023-06-15", "2025-06-15", ""), "Toddler") == 0); // 19.3
+    ASSERT_TRUE("stage 35 months", strcmp(pt_stage(&pt_locale_en, "2023-06-15", "2026-05-15", ""), "Toddler") == 0); // 19.4
+    ASSERT_TRUE("stage exactly 36mo -> Child", strcmp(pt_stage(&pt_locale_en, "2022-06-15", "2025-06-15", ""), "Child") == 0); // 19.5
 }
 
 static void test_stage_child(void) {
-    ASSERT_TRUE("stage 3 years", strcmp(pt_stage(&pt_locale_en, "2022-06-15", "2025-06-15", ""), "Child") == 0);
-    ASSERT_TRUE("stage 4 years", strcmp(pt_stage(&pt_locale_en, "2021-06-15", "2025-06-15", ""), "Child") == 0);
-    ASSERT_TRUE("stage 6 years", strcmp(pt_stage(&pt_locale_en, "2019-06-15", "2025-06-15", ""), "Child") == 0);
-    ASSERT_TRUE("stage 9 years", strcmp(pt_stage(&pt_locale_en, "2016-06-15", "2025-06-15", ""), "Child") == 0);
-    ASSERT_TRUE("stage 12y11mo", strcmp(pt_stage(&pt_locale_en, "2013-06-15", "2026-05-15", ""), "Child") == 0);
-    ASSERT_TRUE("stage exactly 13y -> Teenager", strcmp(pt_stage(&pt_locale_en, "2012-06-15", "2025-06-15", ""), "Teenager") == 0);
+    ASSERT_TRUE("stage 3 years", strcmp(pt_stage(&pt_locale_en, "2022-06-15", "2025-06-15", ""), "Child") == 0); // 20.1
+    ASSERT_TRUE("stage 4 years", strcmp(pt_stage(&pt_locale_en, "2021-06-15", "2025-06-15", ""), "Child") == 0); // 20.2
+    ASSERT_TRUE("stage 6 years", strcmp(pt_stage(&pt_locale_en, "2019-06-15", "2025-06-15", ""), "Child") == 0); // 20.3
+    ASSERT_TRUE("stage 9 years", strcmp(pt_stage(&pt_locale_en, "2016-06-15", "2025-06-15", ""), "Child") == 0); // 20.4
+    ASSERT_TRUE("stage 12y11mo", strcmp(pt_stage(&pt_locale_en, "2013-06-15", "2026-05-15", ""), "Child") == 0); // 20.5
+    ASSERT_TRUE("stage exactly 13y -> Teenager", strcmp(pt_stage(&pt_locale_en, "2012-06-15", "2025-06-15", ""), "Teenager") == 0); // 20.6
 }
 
 static void test_stage_teenager(void) {
-    ASSERT_TRUE("stage 13 years", strcmp(pt_stage(&pt_locale_en, "2012-06-15", "2025-06-15", ""), "Teenager") == 0);
-    ASSERT_TRUE("stage 15 years", strcmp(pt_stage(&pt_locale_en, "2010-06-15", "2025-06-15", ""), "Teenager") == 0);
-    ASSERT_TRUE("stage 17y11mo", strcmp(pt_stage(&pt_locale_en, "2008-06-15", "2026-05-15", ""), "Teenager") == 0);
-    ASSERT_TRUE("stage exactly 18y -> Adult", strcmp(pt_stage(&pt_locale_en, "2007-06-15", "2025-06-15", ""), "Adult") == 0);
+    ASSERT_TRUE("stage 13 years", strcmp(pt_stage(&pt_locale_en, "2012-06-15", "2025-06-15", ""), "Teenager") == 0); // 21.1
+    ASSERT_TRUE("stage 15 years", strcmp(pt_stage(&pt_locale_en, "2010-06-15", "2025-06-15", ""), "Teenager") == 0); // 21.2
+    ASSERT_TRUE("stage 17y11mo", strcmp(pt_stage(&pt_locale_en, "2008-06-15", "2026-05-15", ""), "Teenager") == 0); // 21.3
+    ASSERT_TRUE("stage exactly 18y -> Adult", strcmp(pt_stage(&pt_locale_en, "2007-06-15", "2025-06-15", ""), "Adult") == 0); // 21.4
 }
 
 static void test_stage_adult(void) {
-    ASSERT_TRUE("stage 18 years", strcmp(pt_stage(&pt_locale_en, "2007-06-15", "2025-06-15", ""), "Adult") == 0);
-    ASSERT_TRUE("stage 25 years", strcmp(pt_stage(&pt_locale_en, "2000-06-15", "2025-06-15", ""), "Adult") == 0);
-    ASSERT_TRUE("stage 45 years", strcmp(pt_stage(&pt_locale_en, "1980-01-01", "2025-06-15", ""), "Adult") == 0);
+    ASSERT_TRUE("stage 18 years", strcmp(pt_stage(&pt_locale_en, "2007-06-15", "2025-06-15", ""), "Adult") == 0); // 22.1
+    ASSERT_TRUE("stage 25 years", strcmp(pt_stage(&pt_locale_en, "2000-06-15", "2025-06-15", ""), "Adult") == 0); // 22.2
+    ASSERT_TRUE("stage 45 years", strcmp(pt_stage(&pt_locale_en, "1980-01-01", "2025-06-15", ""), "Adult") == 0); // 22.3
 }
 
 /* ================================================================ */
 /* formatStage -- gender support                                    */
 /* ================================================================ */
 static void test_stage_gender_spanish(void) {
+    // 25.13
     ASSERT_TRUE("ES stage newborn m", strcmp(pt_stage(&pt_locale_es, "2025-06-15", "2025-06-15", ""), "Reci\xc3\xa9n nacido") == 0);
+    // 25.15
     ASSERT_TRUE("ES stage toddler m", strcmp(pt_stage(&pt_locale_es, "2024-06-15", "2025-06-15", ""), "Ni\xc3\xb1o peque\xc3\xb1o") == 0);
+    // 25.16
     ASSERT_TRUE("ES stage child m", strcmp(pt_stage(&pt_locale_es, "2022-06-15", "2025-06-15", ""), "Ni\xc3\xb1o") == 0);
+    // 25.18
     ASSERT_TRUE("ES stage adult m", strcmp(pt_stage(&pt_locale_es, "2007-06-15", "2025-06-15", ""), "Adulto") == 0);
 
     ASSERT_TRUE("ES stage newborn f", strcmp(pt_stage(&pt_locale_es, "2025-06-15", "2025-06-15", "f"), "Reci\xc3\xa9n nacida") == 0);
+    // 25.14
     ASSERT_TRUE("ES stage infant f", strcmp(pt_stage(&pt_locale_es, "2025-01-15", "2025-06-15", "f"), "Beb\xc3\xa9") == 0);
     ASSERT_TRUE("ES stage toddler f", strcmp(pt_stage(&pt_locale_es, "2024-06-15", "2025-06-15", "f"), "Ni\xc3\xb1" "a peque\xc3\xb1" "a") == 0);
     ASSERT_TRUE("ES stage child f", strcmp(pt_stage(&pt_locale_es, "2022-06-15", "2025-06-15", "f"), "Ni\xc3\xb1" "a") == 0);
+    // 25.17
     ASSERT_TRUE("ES stage teenager f", strcmp(pt_stage(&pt_locale_es, "2012-06-15", "2025-06-15", "f"), "Adolescente") == 0);
     ASSERT_TRUE("ES stage adult f", strcmp(pt_stage(&pt_locale_es, "2007-06-15", "2025-06-15", "f"), "Adulta") == 0);
 }
@@ -437,29 +443,29 @@ static void test_parenttime_english(void) {
     char buf[256];
     int rc;
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("PT Newborn", rc, buf, "Newborn");
+    ASSERT_EQ("PT Newborn", rc, buf, "Newborn"); // 24.1
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("PT 3 days", rc, buf, "3 days");
+    ASSERT_EQ("PT 3 days", rc, buf, "3 days"); // 24.2
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "2025-06-07", "2025-06-15");
-    ASSERT_EQ("PT 1w1d", rc, buf, "1 week, 1 day");
+    ASSERT_EQ("PT 1w1d", rc, buf, "1 week, 1 day"); // 24.3
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("PT 6 months", rc, buf, "6 months");
+    ASSERT_EQ("PT 6 months", rc, buf, "6 months"); // 24.4
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "2023-06-15", "2025-07-15");
-    ASSERT_EQ("PT 2y1mo", rc, buf, "2 years, 1 month");
+    ASSERT_EQ("PT 2y1mo", rc, buf, "2 years, 1 month"); // 24.5
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("PT 3.5 years", rc, buf, "3\xc2\xbd years");
+    ASSERT_EQ("PT 3.5 years", rc, buf, "3\xc2\xbd years"); // 24.6
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "2018-06-15", "2025-06-15");
-    ASSERT_EQ("PT 7 years", rc, buf, "7 years");
+    ASSERT_EQ("PT 7 years", rc, buf, "7 years"); // 24.7
 
-    ASSERT_TRUE("PT stage Newborn", strcmp(pt_stage(&pt_locale_en, "2025-06-15", "2025-06-15", ""), "Newborn") == 0);
-    ASSERT_TRUE("PT stage Infant", strcmp(pt_stage(&pt_locale_en, "2025-01-15", "2025-06-15", ""), "Infant") == 0);
-    ASSERT_TRUE("PT stage Toddler", strcmp(pt_stage(&pt_locale_en, "2024-06-15", "2025-06-15", ""), "Toddler") == 0);
-    ASSERT_TRUE("PT stage Child", strcmp(pt_stage(&pt_locale_en, "2022-06-15", "2025-06-15", ""), "Child") == 0);
-    ASSERT_TRUE("PT stage Teenager", strcmp(pt_stage(&pt_locale_en, "2012-06-15", "2025-06-15", ""), "Teenager") == 0);
-    ASSERT_TRUE("PT stage Adult", strcmp(pt_stage(&pt_locale_en, "2007-06-15", "2025-06-15", ""), "Adult") == 0);
+    ASSERT_TRUE("PT stage Newborn", strcmp(pt_stage(&pt_locale_en, "2025-06-15", "2025-06-15", ""), "Newborn") == 0); // 24.8
+    ASSERT_TRUE("PT stage Infant", strcmp(pt_stage(&pt_locale_en, "2025-01-15", "2025-06-15", ""), "Infant") == 0); // 24.9
+    ASSERT_TRUE("PT stage Toddler", strcmp(pt_stage(&pt_locale_en, "2024-06-15", "2025-06-15", ""), "Toddler") == 0); // 24.10
+    ASSERT_TRUE("PT stage Child", strcmp(pt_stage(&pt_locale_en, "2022-06-15", "2025-06-15", ""), "Child") == 0); // 24.11
+    ASSERT_TRUE("PT stage Teenager", strcmp(pt_stage(&pt_locale_en, "2012-06-15", "2025-06-15", ""), "Teenager") == 0); // 24.12
+    ASSERT_TRUE("PT stage Adult", strcmp(pt_stage(&pt_locale_en, "2007-06-15", "2025-06-15", ""), "Adult") == 0); // 24.13
 
-    ASSERT_NULL("PT null age", pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "", "2025-06-15"));
-    ASSERT_TRUE("PT null stage", pt_stage(&pt_locale_en, "", "2025-06-15", "") == NULL);
+    ASSERT_NULL("PT null age", pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_NORMAL, "", "2025-06-15")); // 24.14
+    ASSERT_TRUE("PT null stage", pt_stage(&pt_locale_en, "", "2025-06-15", "") == NULL); // 24.15
 }
 
 /* ================================================================ */
@@ -469,32 +475,32 @@ static void test_parenttime_spanish(void) {
     char buf[256];
     int rc;
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("ES justBorn", rc, buf, "Reci\xc3\xa9n nacido");
+    ASSERT_EQ("ES justBorn", rc, buf, "Reci\xc3\xa9n nacido"); // 25.1
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2025-06-14", "2025-06-15");
-    ASSERT_EQ("ES singular day", rc, buf, "1 d\xc3\xad" "a");
+    ASSERT_EQ("ES singular day", rc, buf, "1 d\xc3\xad" "a"); // 25.2
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("ES plural days", rc, buf, "3 d\xc3\xad" "as");
+    ASSERT_EQ("ES plural days", rc, buf, "3 d\xc3\xad" "as"); // 25.3
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2025-06-08", "2025-06-15");
-    ASSERT_EQ("ES singular week", rc, buf, "1 semana");
+    ASSERT_EQ("ES singular week", rc, buf, "1 semana"); // 25.4
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2025-06-07", "2025-06-15");
-    ASSERT_EQ("ES weeks+days", rc, buf, "1 semana, 1 d\xc3\xad" "a");
+    ASSERT_EQ("ES weeks+days", rc, buf, "1 semana, 1 d\xc3\xad" "a"); // 25.5
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2025-05-26", "2025-06-15");
-    ASSERT_EQ("ES plural weeks+days", rc, buf, "2 semanas, 6 d\xc3\xad" "as");
+    ASSERT_EQ("ES plural weeks+days", rc, buf, "2 semanas, 6 d\xc3\xad" "as"); // 25.6
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("ES months", rc, buf, "6 meses");
+    ASSERT_EQ("ES months", rc, buf, "6 meses"); // 25.7
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2023-06-15", "2025-07-15");
-    ASSERT_EQ("ES singular month compound", rc, buf, "2 a\xc3\xb1os, 1 mes");
+    ASSERT_EQ("ES singular month compound", rc, buf, "2 a\xc3\xb1os, 1 mes"); // 25.8
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2023-06-15", "2025-12-15");
-    ASSERT_EQ("ES years+months", rc, buf, "2 a\xc3\xb1os, 6 meses");
+    ASSERT_EQ("ES years+months", rc, buf, "2 a\xc3\xb1os, 6 meses"); // 25.9
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("ES half marker", rc, buf, "3 y medio a\xc3\xb1os");
+    ASSERT_EQ("ES half marker", rc, buf, "3 y medio a\xc3\xb1os"); // 25.10
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2022-06-15", "2025-06-15");
-    ASSERT_EQ("ES integer years", rc, buf, "3 a\xc3\xb1os");
+    ASSERT_EQ("ES integer years", rc, buf, "3 a\xc3\xb1os"); // 25.11
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "2018-06-15", "2025-06-15");
-    ASSERT_EQ("ES 7+ years", rc, buf, "7 a\xc3\xb1os");
+    ASSERT_EQ("ES 7+ years", rc, buf, "7 a\xc3\xb1os"); // 25.12
 
-    ASSERT_NULL("ES null", pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "", "2025-06-15"));
-    ASSERT_TRUE("ES null stage", pt_stage(&pt_locale_es, "", "2025-06-15", "") == NULL);
+    ASSERT_NULL("ES null", pt_format_age(buf, sizeof(buf), &pt_locale_es, PT_NORMAL, "", "2025-06-15")); // 25.19
+    ASSERT_TRUE("ES null stage", pt_stage(&pt_locale_es, "", "2025-06-15", "") == NULL); // 25.20
 }
 
 /* ================================================================ */
@@ -504,22 +510,22 @@ static void test_compact_short(void) {
     char buf[256];
     int rc;
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_SHORT, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("short days", rc, buf, "3 d");
+    ASSERT_EQ("short days", rc, buf, "3 d"); // 26.1
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_SHORT, "2025-06-08", "2025-06-15");
-    ASSERT_EQ("short weeks", rc, buf, "1 wk");
+    ASSERT_EQ("short weeks", rc, buf, "1 wk"); // 26.2
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_SHORT, "2025-06-07", "2025-06-15");
-    ASSERT_EQ("short weeks+days", rc, buf, "1 wk, 1 d");
+    ASSERT_EQ("short weeks+days", rc, buf, "1 wk, 1 d"); // 26.3
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_SHORT, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("short months", rc, buf, "6 mo");
+    ASSERT_EQ("short months", rc, buf, "6 mo"); // 26.4
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_SHORT, "2023-06-15", "2025-07-15");
-    ASSERT_EQ("short years+months", rc, buf, "2 yr, 1 mo");
+    ASSERT_EQ("short years+months", rc, buf, "2 yr, 1 mo"); // 26.5
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_SHORT, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("short half years", rc, buf, "3\xc2\xbd yr");
+    ASSERT_EQ("short half years", rc, buf, "3\xc2\xbd yr"); // 26.6
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_SHORT, "2018-06-15", "2025-06-15");
-    ASSERT_EQ("short integer years", rc, buf, "7 yr");
+    ASSERT_EQ("short integer years", rc, buf, "7 yr"); // 26.7
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_SHORT, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("short justBorn unchanged", rc, buf, "Newborn");
-    ASSERT_TRUE("short stages unchanged", strcmp(pt_stage(&pt_locale_en, "2025-01-15", "2025-06-15", ""), "Infant") == 0);
+    ASSERT_EQ("short justBorn unchanged", rc, buf, "Newborn"); // 26.8
+    ASSERT_TRUE("short stages unchanged", strcmp(pt_stage(&pt_locale_en, "2025-01-15", "2025-06-15", ""), "Infant") == 0); // 26.9
 }
 
 /* ================================================================ */
@@ -529,21 +535,21 @@ static void test_compact_compact(void) {
     char buf[256];
     int rc;
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_COMPACT, "2025-06-12", "2025-06-15");
-    ASSERT_EQ("compact days", rc, buf, "3d");
+    ASSERT_EQ("compact days", rc, buf, "3d"); // 27.1
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_COMPACT, "2025-06-08", "2025-06-15");
-    ASSERT_EQ("compact weeks", rc, buf, "1w");
+    ASSERT_EQ("compact weeks", rc, buf, "1w"); // 27.2
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_COMPACT, "2025-06-07", "2025-06-15");
-    ASSERT_EQ("compact weeks+days no delimiter", rc, buf, "1w1d");
+    ASSERT_EQ("compact weeks+days no delimiter", rc, buf, "1w1d"); // 27.3
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_COMPACT, "2025-01-15", "2025-07-15");
-    ASSERT_EQ("compact months", rc, buf, "6m");
+    ASSERT_EQ("compact months", rc, buf, "6m"); // 27.4
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_COMPACT, "2023-06-15", "2025-07-15");
-    ASSERT_EQ("compact years+months no delimiter", rc, buf, "2y1m");
+    ASSERT_EQ("compact years+months no delimiter", rc, buf, "2y1m"); // 27.5
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_COMPACT, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("compact half years", rc, buf, "3\xc2\xbd" "y");
+    ASSERT_EQ("compact half years", rc, buf, "3\xc2\xbd" "y"); // 27.6
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_COMPACT, "2018-06-15", "2025-06-15");
-    ASSERT_EQ("compact integer years", rc, buf, "7y");
+    ASSERT_EQ("compact integer years", rc, buf, "7y"); // 27.7
     rc = pt_format_age(buf, sizeof(buf), &pt_locale_en, PT_COMPACT, "2025-06-15", "2025-06-15");
-    ASSERT_EQ("compact justBorn unchanged", rc, buf, "Newborn");
+    ASSERT_EQ("compact justBorn unchanged", rc, buf, "Newborn"); // 27.8
 }
 
 /* ================================================================ */

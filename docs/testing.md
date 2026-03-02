@@ -13,6 +13,39 @@ https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.ht
 
 ---
 
+## Test ID convention
+
+Every test in every language must be annotated with the canonical ID(s) from
+this document. This enables cross-language verification that all implementations
+cover the same spec. Three placement patterns are used depending on the
+language's test structure:
+
+**Pattern A — Comment above the test declaration** (TypeScript, Python, Ruby,
+Kotlin, Java, C#, Swift, Scala):
+
+```python
+# 9.3
+def test_twelve_months_not_one_year(self) -> None:
+```
+
+**Pattern B — Trailing comment on table entries** (Go, Rust):
+
+```go
+{"born today", "2025-06-15", "2025-06-15", "Newborn"}, // 2.1
+```
+
+**Pattern C — Comment above or trailing on assertions** (C, C++, Zig):
+
+```c
+ASSERT_NULL("empty string", fmt(buf, sizeof(buf), "", "2025-06-15")); // 1.1, 1.3
+```
+
+When a single test covers multiple canonical IDs, list them with commas:
+`// 1.1, 1.3`. Tests that go beyond the canonical set (e.g., extra
+locale-specific tests) are left unannotated.
+
+---
+
 ## 1. Null / edge cases
 
 These test that invalid inputs return null (or the language equivalent:

@@ -9,26 +9,32 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Null / edge cases
   # ================================================================
+  # 1.1
   def test_returns_nil_for_nil_input
     assert_nil ParentTime.format_age(nil, '2025-06-15')
   end
 
+  # 1.3
   def test_returns_nil_for_empty_string
     assert_nil ParentTime.format_age('', '2025-06-15')
   end
 
+  # 1.4
   def test_returns_nil_for_future_dob
     assert_nil ParentTime.format_age('2025-07-01', '2025-06-15')
   end
 
+  # 1.5
   def test_exactly_500_years_is_allowed
     assert_equal '500 years', ParentTime.format_age('1525-06-15', '2025-06-15')
   end
 
+  # 1.6
   def test_501_years_exceeds_max_age
     assert_nil ParentTime.format_age('1524-06-15', '2025-06-15')
   end
 
+  # 1.7
   def test_1000_years_exceeds_max_age
     assert_nil ParentTime.format_age('1025-06-15', '2025-06-15')
   end
@@ -36,22 +42,27 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Days tier: 0-6 days
   # ================================================================
+  # 2.1
   def test_born_today_newborn
     assert_equal 'Newborn', ParentTime.format_age('2025-06-15', '2025-06-15')
   end
 
+  # 2.2
   def test_1_day_singular
     assert_equal '1 day', ParentTime.format_age('2025-06-14', '2025-06-15')
   end
 
+  # 2.3
   def test_3_days
     assert_equal '3 days', ParentTime.format_age('2025-06-12', '2025-06-15')
   end
 
+  # 2.4
   def test_6_days
     assert_equal '6 days', ParentTime.format_age('2025-06-09', '2025-06-15')
   end
 
+  # 2.5
   def test_7_days_becomes_1_week
     assert_equal '1 week', ParentTime.format_age('2025-06-08', '2025-06-15')
   end
@@ -59,50 +70,62 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Weeks+days tier: 7 days to <3 months
   # ================================================================
+  # 3.1
   def test_7_days
     assert_equal '1 week', ParentTime.format_age('2025-06-08', '2025-06-15')
   end
 
+  # 3.2
   def test_8_days
     assert_equal '1 week, 1 day', ParentTime.format_age('2025-06-07', '2025-06-15')
   end
 
+  # 3.3
   def test_9_days
     assert_equal '1 week, 2 days', ParentTime.format_age('2025-06-06', '2025-06-15')
   end
 
+  # 3.4
   def test_13_days
     assert_equal '1 week, 6 days', ParentTime.format_age('2025-06-02', '2025-06-15')
   end
 
+  # 3.5
   def test_14_days
     assert_equal '2 weeks', ParentTime.format_age('2025-06-01', '2025-06-15')
   end
 
+  # 3.6
   def test_15_days
     assert_equal '2 weeks, 1 day', ParentTime.format_age('2025-05-31', '2025-06-15')
   end
 
+  # 3.7
   def test_20_days
     assert_equal '2 weeks, 6 days', ParentTime.format_age('2025-05-26', '2025-06-15')
   end
 
+  # 3.8
   def test_21_days
     assert_equal '3 weeks', ParentTime.format_age('2025-05-25', '2025-06-15')
   end
 
+  # 3.9
   def test_at_1_cal_month_still_weeks_days
     assert_equal '4 weeks, 3 days', ParentTime.format_age('2025-05-15', '2025-06-15')
   end
 
+  # 3.10
   def test_at_2_cal_months_still_weeks_days
     assert_equal '8 weeks, 5 days', ParentTime.format_age('2025-04-15', '2025-06-15')
   end
 
+  # 3.11
   def test_one_day_before_3mo_still_weeks
     assert_equal '13 weeks', ParentTime.format_age('2025-03-15', '2025-06-14')
   end
 
+  # 3.12
   def test_on_3mo_birthday_switches
     assert_equal '3 months', ParentTime.format_age('2025-03-15', '2025-06-15')
   end
@@ -110,22 +133,27 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Month boundaries: standard months
   # ================================================================
+  # 4.1
   def test_jan1_apr1_3mo
     assert_equal '3 months', ParentTime.format_age('2025-01-01', '2025-04-01')
   end
 
+  # 4.2
   def test_jan1_mar31_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2025-01-01', '2025-03-31'))
   end
 
+  # 4.3
   def test_jun15_sep15_3mo
     assert_equal '3 months', ParentTime.format_age('2025-06-15', '2025-09-15')
   end
 
+  # 4.4
   def test_jun15_sep14_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2025-06-15', '2025-09-14'))
   end
 
+  # 4.5
   def test_jun15_dec15_6mo
     assert_equal '6 months', ParentTime.format_age('2025-06-15', '2025-12-15')
   end
@@ -133,22 +161,27 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Month boundaries: February non-leap
   # ================================================================
+  # 5.1
   def test_jan31_feb28_non_leap
     assert_equal '4 weeks', ParentTime.format_age('2025-01-31', '2025-02-28')
   end
 
+  # 5.2
   def test_jan31_apr30_3mo_clamp
     assert_equal '3 months', ParentTime.format_age('2025-01-31', '2025-04-30')
   end
 
+  # 5.3
   def test_jan31_apr29_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2025-01-31', '2025-04-29'))
   end
 
+  # 5.4
   def test_feb1_may1_3mo
     assert_equal '3 months', ParentTime.format_age('2025-02-01', '2025-05-01')
   end
 
+  # 5.5
   def test_feb1_apr30_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2025-02-01', '2025-04-30'))
   end
@@ -156,22 +189,27 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Month boundaries: February leap year
   # ================================================================
+  # 6.1
   def test_jan31_feb29_leap
     assert_equal '4 weeks, 1 day', ParentTime.format_age('2024-01-31', '2024-02-29')
   end
 
+  # 6.2
   def test_jan31_feb28_leap
     assert_equal '4 weeks', ParentTime.format_age('2024-01-31', '2024-02-28')
   end
 
+  # 6.3
   def test_jan31_apr30_leap_3mo
     assert_equal '3 months', ParentTime.format_age('2024-01-31', '2024-04-30')
   end
 
+  # 6.4
   def test_jan30_feb29_leap_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2024-01-30', '2024-02-29'))
   end
 
+  # 6.5
   def test_jan30_feb28_leap_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2024-01-30', '2024-02-28'))
   end
@@ -179,18 +217,22 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Month boundaries: 30-day months
   # ================================================================
+  # 7.1
   def test_mar31_jun30_3mo
     assert_equal '3 months', ParentTime.format_age('2025-03-31', '2025-06-30')
   end
 
+  # 7.2
   def test_mar31_jun29_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2025-03-31', '2025-06-29'))
   end
 
+  # 7.3
   def test_aug31_nov30_3mo
     assert_equal '3 months', ParentTime.format_age('2025-08-31', '2025-11-30')
   end
 
+  # 7.4
   def test_aug31_nov29_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2025-08-31', '2025-11-29'))
   end
@@ -198,18 +240,22 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Month boundaries: leap year baby (born Feb 29)
   # ================================================================
+  # 8.1
   def test_feb29_may29_3mo
     assert_equal '3 months', ParentTime.format_age('2024-02-29', '2024-05-29')
   end
 
+  # 8.2
   def test_feb29_may28_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2024-02-29', '2024-05-28'))
   end
 
+  # 8.3
   def test_feb29_2024_feb28_2025_12mo
     assert_equal '12 months', ParentTime.format_age('2024-02-29', '2025-02-28')
   end
 
+  # 8.4
   def test_feb29_2024_mar1_2025_12mo
     assert_equal '12 months', ParentTime.format_age('2024-02-29', '2025-03-01')
   end
@@ -217,26 +263,32 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Months tier: 3-23 months
   # ================================================================
+  # 9.1
   def test_3_months_at_transition
     assert_equal '3 months', ParentTime.format_age('2025-01-15', '2025-04-15')
   end
 
+  # 9.2
   def test_6_months
     assert_equal '6 months', ParentTime.format_age('2025-01-15', '2025-07-15')
   end
 
+  # 9.3
   def test_12_months_not_1_year
     assert_equal '12 months', ParentTime.format_age('2024-06-15', '2025-06-15')
   end
 
+  # 9.4
   def test_23_months_upper_boundary
     assert_equal '23 months', ParentTime.format_age('2024-01-15', '2025-12-15')
   end
 
+  # 9.5
   def test_one_day_before_month_boundary
     assert_equal '5 months', ParentTime.format_age('2025-01-15', '2025-07-14')
   end
 
+  # 9.6
   def test_crossing_year_boundary
     assert_equal '5 months', ParentTime.format_age('2024-11-10', '2025-04-10')
   end
@@ -244,22 +296,27 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Years+months tier: 24-35 months
   # ================================================================
+  # 10.1
   def test_2_years_at_24mo
     assert_equal '2 years', ParentTime.format_age('2023-06-15', '2025-06-15')
   end
 
+  # 10.2
   def test_2_years_1_month
     assert_equal '2 years, 1 month', ParentTime.format_age('2023-06-15', '2025-07-15')
   end
 
+  # 10.3
   def test_2_years_6_months
     assert_equal '2 years, 6 months', ParentTime.format_age('2023-06-15', '2025-12-15')
   end
 
+  # 10.4
   def test_2_years_11_months
     assert_equal '2 years, 11 months', ParentTime.format_age('2023-06-15', '2026-05-15')
   end
 
+  # 10.5
   def test_one_day_before_24mo_stays_months
     assert_equal '23 months', ParentTime.format_age('2023-06-15', '2025-06-14')
   end
@@ -267,50 +324,62 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Half-year tier: 3-6 years
   # ================================================================
+  # 11.1
   def test_3_years_exactly
     assert_equal '3 years', ParentTime.format_age('2022-06-15', '2025-06-15')
   end
 
+  # 11.2
   def test_3_years_5_months
     assert_equal '3 years', ParentTime.format_age('2022-06-15', '2025-11-15')
   end
 
+  # 11.3
   def test_3_half_years_at_3y6m
     assert_equal "3\u00BD years", ParentTime.format_age('2022-06-15', '2025-12-15')
   end
 
+  # 11.4
   def test_3_half_years_at_3y11m
     assert_equal "3\u00BD years", ParentTime.format_age('2022-06-15', '2026-05-15')
   end
 
+  # 11.5
   def test_4_years_exactly
     assert_equal '4 years', ParentTime.format_age('2021-06-15', '2025-06-15')
   end
 
+  # 11.6
   def test_4_half_years
     assert_equal "4\u00BD years", ParentTime.format_age('2021-06-15', '2025-12-15')
   end
 
+  # 11.7
   def test_5_years
     assert_equal '5 years', ParentTime.format_age('2020-06-15', '2025-06-15')
   end
 
+  # 11.8
   def test_5_half_years_at_5y8m
     assert_equal "5\u00BD years", ParentTime.format_age('2020-06-15', '2026-02-15')
   end
 
+  # 11.9
   def test_6_years
     assert_equal '6 years', ParentTime.format_age('2019-06-15', '2025-06-15')
   end
 
+  # 11.10
   def test_6_half_years
     assert_equal "6\u00BD years", ParentTime.format_age('2019-06-15', '2025-12-15')
   end
 
+  # 11.11
   def test_6_half_years_at_6y11m
     assert_equal "6\u00BD years", ParentTime.format_age('2019-06-15', '2026-05-15')
   end
 
+  # 11.12
   def test_one_day_before_3rd_bday
     assert_equal '2 years, 11 months', ParentTime.format_age('2022-06-15', '2025-06-14')
   end
@@ -318,14 +387,17 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Integer tier: 7+ years
   # ================================================================
+  # 12.1
   def test_7_years_exactly
     assert_equal '7 years', ParentTime.format_age('2018-06-15', '2025-06-15')
   end
 
+  # 12.2
   def test_7_years_6_months_no_half
     assert_equal '7 years', ParentTime.format_age('2018-03-20', '2025-06-15')
   end
 
+  # 12.3
   def test_45_years
     assert_equal '45 years', ParentTime.format_age('1980-01-01', '2025-06-15')
   end
@@ -333,18 +405,22 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Cross-year transitions with Feb
   # ================================================================
+  # 13.1
   def test_dec31_mar31_3mo
     assert_equal '3 months', ParentTime.format_age('2024-12-31', '2025-03-31')
   end
 
+  # 13.2
   def test_dec31_mar30_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2024-12-31', '2025-03-30'))
   end
 
+  # 13.3
   def test_nov30_feb28_3mo
     assert_equal '3 months', ParentTime.format_age('2024-11-30', '2025-02-28')
   end
 
+  # 13.4
   def test_nov30_feb27_still_weeks
     assert_match(/weeks/, ParentTime.format_age('2024-11-30', '2025-02-27'))
   end
@@ -352,22 +428,27 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Born-on-31st progression
   # ================================================================
+  # 14.1
   def test_jan31_apr30_3mo
     assert_equal '3 months', ParentTime.format_age('2025-01-31', '2025-04-30')
   end
 
+  # 14.2
   def test_jan31_may31_4mo
     assert_equal '4 months', ParentTime.format_age('2025-01-31', '2025-05-31')
   end
 
+  # 14.3
   def test_jan31_jun30_5mo_clamped
     assert_equal '5 months', ParentTime.format_age('2025-01-31', '2025-06-30')
   end
 
+  # 14.4
   def test_jan31_jul1_5mo
     assert_equal '5 months', ParentTime.format_age('2025-01-31', '2025-07-01')
   end
 
+  # 14.5
   def test_jan31_jul31_6mo
     assert_equal '6 months', ParentTime.format_age('2025-01-31', '2025-07-31')
   end
@@ -375,6 +456,7 @@ class TestFormatAge < Minitest::Test
   # ================================================================
   # Default as_of (uses current date)
   # ================================================================
+  # 15.1, 15.2
   def test_default_as_of
     original = Date.method(:today)
     Date.define_singleton_method(:today) { Date.new(2025, 6, 15) }
@@ -389,144 +471,178 @@ end
 # formatStage
 # ================================================================
 class TestFormatStage < Minitest::Test
+  # 16.1
   def test_returns_nil_for_nil
     assert_nil ParentTime.format_stage(nil, '2025-06-15')
   end
 
+  # 16.3
   def test_returns_nil_for_empty
     assert_nil ParentTime.format_stage('', '2025-06-15')
   end
 
+  # 16.4
   def test_returns_nil_for_future
     assert_nil ParentTime.format_stage('2025-07-01', '2025-06-15')
   end
 
+  # 16.5
   def test_exactly_500_years_returns_adult
     assert_equal 'Adult', ParentTime.format_stage('1525-06-15', '2025-06-15')
   end
 
+  # 16.6
   def test_501_years_exceeds_max_age
     assert_nil ParentTime.format_stage('1524-06-15', '2025-06-15')
   end
 
   # Newborn: 0-1 months
+  # 17.1
   def test_newborn_born_today
     assert_equal 'Newborn', ParentTime.format_stage('2025-06-15', '2025-06-15')
   end
 
+  # 17.2
   def test_newborn_1_day
     assert_equal 'Newborn', ParentTime.format_stage('2025-06-14', '2025-06-15')
   end
 
+  # 17.3
   def test_newborn_3_weeks
     assert_equal 'Newborn', ParentTime.format_stage('2025-05-25', '2025-06-15')
   end
 
+  # 17.4
   def test_newborn_1_month
     assert_equal 'Newborn', ParentTime.format_stage('2025-05-15', '2025-06-15')
   end
 
+  # 17.5
   def test_newborn_1_month_29_days
     assert_equal 'Newborn', ParentTime.format_stage('2025-04-16', '2025-06-15')
   end
 
+  # 17.6
   def test_exactly_2_months_infant
     assert_equal 'Infant', ParentTime.format_stage('2025-04-15', '2025-06-15')
   end
 
   # Infant: 2-11 months
+  # 18.1
   def test_infant_2_months
     assert_equal 'Infant', ParentTime.format_stage('2025-04-15', '2025-06-15')
   end
 
+  # 18.2
   def test_infant_6_months
     assert_equal 'Infant', ParentTime.format_stage('2024-12-15', '2025-06-15')
   end
 
+  # 18.3
   def test_infant_11_months
     assert_equal 'Infant', ParentTime.format_stage('2024-07-15', '2025-06-15')
   end
 
+  # 18.4
   def test_exactly_12_months_toddler
     assert_equal 'Toddler', ParentTime.format_stage('2024-06-15', '2025-06-15')
   end
 
   # Toddler: 12-35 months
+  # 19.1
   def test_toddler_12_months
     assert_equal 'Toddler', ParentTime.format_stage('2024-06-15', '2025-06-15')
   end
 
+  # 19.2
   def test_toddler_18_months
     assert_equal 'Toddler', ParentTime.format_stage('2024-01-15', '2025-07-15')
   end
 
+  # 19.3
   def test_toddler_24_months
     assert_equal 'Toddler', ParentTime.format_stage('2023-06-15', '2025-06-15')
   end
 
+  # 19.4
   def test_toddler_35_months
     assert_equal 'Toddler', ParentTime.format_stage('2023-06-15', '2026-05-15')
   end
 
+  # 19.5
   def test_exactly_36_months_child
     assert_equal 'Child', ParentTime.format_stage('2022-06-15', '2025-06-15')
   end
 
   # Child: 36-155 months
+  # 20.1
   def test_child_3_years
     assert_equal 'Child', ParentTime.format_stage('2022-06-15', '2025-06-15')
   end
 
+  # 20.2
   def test_child_4_years
     assert_equal 'Child', ParentTime.format_stage('2021-06-15', '2025-06-15')
   end
 
+  # 20.3
   def test_child_6_years
     assert_equal 'Child', ParentTime.format_stage('2019-06-15', '2025-06-15')
   end
 
+  # 20.4
   def test_child_9_years
     assert_equal 'Child', ParentTime.format_stage('2016-06-15', '2025-06-15')
   end
 
+  # 20.5
   def test_child_12y11m
     assert_equal 'Child', ParentTime.format_stage('2013-06-15', '2026-05-15')
   end
 
+  # 20.6
   def test_exactly_13_years_teenager
     assert_equal 'Teenager', ParentTime.format_stage('2012-06-15', '2025-06-15')
   end
 
   # Teenager: 156-215 months
+  # 21.1
   def test_teenager_13_years
     assert_equal 'Teenager', ParentTime.format_stage('2012-06-15', '2025-06-15')
   end
 
+  # 21.2
   def test_teenager_15_years
     assert_equal 'Teenager', ParentTime.format_stage('2010-06-15', '2025-06-15')
   end
 
+  # 21.3
   def test_teenager_17y11m
     assert_equal 'Teenager', ParentTime.format_stage('2008-06-15', '2026-05-15')
   end
 
+  # 21.4
   def test_exactly_18_years_adult
     assert_equal 'Adult', ParentTime.format_stage('2007-06-15', '2025-06-15')
   end
 
   # Adult: 216+ months
+  # 22.1
   def test_adult_18_years
     assert_equal 'Adult', ParentTime.format_stage('2007-06-15', '2025-06-15')
   end
 
+  # 22.2
   def test_adult_25_years
     assert_equal 'Adult', ParentTime.format_stage('2000-06-15', '2025-06-15')
   end
 
+  # 22.3
   def test_adult_45_years
     assert_equal 'Adult', ParentTime.format_stage('1980-01-01', '2025-06-15')
   end
 
+  # 23.1, 23.2, 23.3
   def test_stage_default_as_of
     original = Date.method(:today)
     Date.define_singleton_method(:today) { Date.new(2025, 6, 15) }
@@ -542,6 +658,7 @@ end
 # ParentTime::Formatter class
 # ================================================================
 class TestFormatter < Minitest::Test
+  # 24.1, 24.2, 24.3, 24.4, 24.5, 24.6, 24.7
   def test_english_format_age
     pt = ParentTime::Formatter.new(ParentTime::Locales::EN)
     assert_equal 'Newborn', pt.format_age('2025-06-15', '2025-06-15')
@@ -553,6 +670,7 @@ class TestFormatter < Minitest::Test
     assert_equal '7 years', pt.format_age('2018-06-15', '2025-06-15')
   end
 
+  # 24.8, 24.9, 24.10, 24.11, 24.12, 24.13
   def test_english_format_stage
     pt = ParentTime::Formatter.new(ParentTime::Locales::EN)
     assert_equal 'Newborn', pt.format_stage('2025-06-15', '2025-06-15')
@@ -563,6 +681,7 @@ class TestFormatter < Minitest::Test
     assert_equal 'Adult', pt.format_stage('2007-06-15', '2025-06-15')
   end
 
+  # 24.14, 24.15
   def test_null_handling
     pt = ParentTime::Formatter.new(ParentTime::Locales::EN)
     assert_nil pt.format_age(nil, '2025-06-15')
@@ -571,6 +690,7 @@ class TestFormatter < Minitest::Test
   end
 
   # Spanish-like locale
+  # 25.1, 25.2, 25.3, 25.4, 25.5, 25.6, 25.7, 25.8, 25.9, 25.10, 25.11, 25.12, 25.13, 25.14, 25.15, 25.16, 25.17, 25.18, 25.19, 25.20
   def test_spanish_locale
     es = ParentTime::AgeLocale.new(
       code: 'es',
@@ -621,6 +741,7 @@ class TestFormatter < Minitest::Test
   end
 
   # Compactness: short
+  # 26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7, 26.8, 26.9
   def test_compactness_short
     pt = ParentTime::Formatter.new(ParentTime::Locales::EN, compactness: :short)
 
@@ -636,6 +757,7 @@ class TestFormatter < Minitest::Test
   end
 
   # Compactness: compact
+  # 27.1, 27.2, 27.3, 27.4, 27.5, 27.6, 27.7, 27.8
   def test_compactness_compact
     pt = ParentTime::Formatter.new(ParentTime::Locales::EN, compactness: :compact)
 
@@ -762,144 +884,172 @@ class TestFormatter < Minitest::Test
   # ================================================================
 
   # Hebrew (he) — dual forms
+  # 29.1
   def test_29_1_he_just_born
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal 'רק נולד', pt.format_age('2025-06-15', '2025-06-15')
   end
 
+  # 29.2
   def test_29_2_he_one_day
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal 'יום 1', pt.format_age('2025-06-14', '2025-06-15')
   end
 
+  # 29.3
   def test_29_3_he_three_days
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal '3 ימים', pt.format_age('2025-06-12', '2025-06-15')
   end
 
+  # 29.4
   def test_29_4_he_two_weeks_dual
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal 'שבועיים', pt.format_age('2025-06-01', '2025-06-15')
   end
 
+  # 29.5
   def test_29_5_he_three_weeks
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal '3 שבועות', pt.format_age('2025-05-25', '2025-06-15')
   end
 
+  # 29.6
   def test_29_6_he_six_months
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal '6 חודשים', pt.format_age('2025-01-15', '2025-07-15')
   end
 
+  # 29.7
   def test_29_7_he_three_months
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal '3 חודשים', pt.format_age('2025-03-15', '2025-06-15')
   end
 
+  # 29.8
   def test_29_8_he_two_years_dual_one_month
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal 'שנתיים, חודש 1', pt.format_age('2023-06-15', '2025-07-15')
   end
 
+  # 29.9
   def test_29_9_he_half_years
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal '3 שנים וחצי', pt.format_age('2022-06-15', '2025-12-15')
   end
 
+  # 29.10
   def test_29_10_he_seven_years
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal '7 שנים', pt.format_age('2018-06-15', '2025-06-15')
   end
 
+  # 29.11
   def test_29_11_he_stage_masculine_newborn
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal 'רק נולד', pt.format_stage('2025-06-15', '2025-06-15', gender: 'm')
   end
 
+  # 29.12
   def test_29_12_he_stage_feminine_newborn
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal 'רק נולדה', pt.format_stage('2025-06-15', '2025-06-15', gender: 'f')
   end
 
+  # 29.13
   def test_29_13_he_stage_masculine_adult
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal 'מבוגר', pt.format_stage('2007-06-15', '2025-06-15', gender: 'm')
   end
 
+  # 29.14
   def test_29_14_he_stage_feminine_adult
     pt = ParentTime::Formatter.new(ParentTime::Locales::HE)
     assert_equal 'מבוגרת', pt.format_stage('2007-06-15', '2025-06-15', gender: 'f')
   end
 
   # Macedonian (mk) — mod10/mod100 rule
+  # 29.15
   def test_29_15_mk_just_born
     pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
     assert_equal 'Новороденче', pt.format_age('2025-06-15', '2025-06-15')
   end
 
+  # 29.16
   def test_29_16_mk_one_day
     pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
     assert_equal '1 ден', pt.format_age('2025-06-14', '2025-06-15')
   end
 
+  # 29.17
   def test_29_17_mk_three_days
     pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
     assert_equal '3 дена', pt.format_age('2025-06-12', '2025-06-15')
   end
 
+  # 29.18
   def test_29_18_mk_six_months
     pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
     assert_equal '6 месеци', pt.format_age('2025-01-15', '2025-07-15')
   end
 
+  # 29.19
   def test_29_19_mk_two_years_one_month
     pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
     assert_equal '2 години, 1 месец', pt.format_age('2023-06-15', '2025-07-15')
   end
 
+  # 29.20
   def test_29_20_mk_half_years
     pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
     assert_equal '3 години и пол', pt.format_age('2022-06-15', '2025-12-15')
   end
 
+  # 29.21
   def test_29_21_mk_seven_years
     pt = ParentTime::Formatter.new(ParentTime::Locales::MK)
     assert_equal '7 години', pt.format_age('2018-06-15', '2025-06-15')
   end
 
   # Swahili (sw) — noun class changes
+  # 29.22
   def test_29_22_sw_just_born
     pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
     assert_equal 'Mzaliwa mpya', pt.format_age('2025-06-15', '2025-06-15')
   end
 
+  # 29.23
   def test_29_23_sw_one_day
     pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
     assert_equal 'siku 1', pt.format_age('2025-06-14', '2025-06-15')
   end
 
+  # 29.24
   def test_29_24_sw_three_days
     pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
     assert_equal 'siku 3', pt.format_age('2025-06-12', '2025-06-15')
   end
 
+  # 29.25
   def test_29_25_sw_six_months
     pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
     assert_equal 'miezi 6', pt.format_age('2025-01-15', '2025-07-15')
   end
 
+  # 29.26
   def test_29_26_sw_two_years_one_month
     pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
     assert_equal 'miaka 2, mwezi 1', pt.format_age('2023-06-15', '2025-07-15')
   end
 
+  # 29.27
   def test_29_27_sw_half_years
     pt = ParentTime::Formatter.new(ParentTime::Locales::SW)
     assert_equal 'miaka 3 na nusu', pt.format_age('2022-06-15', '2025-12-15')
   end
 
   # Indonesian (id) — other_only
+  # 29.28
   def test_29_28_id_just_born
     pt = ParentTime::Formatter.new(ParentTime::Locales::ID)
     assert_equal 'Baru lahir', pt.format_age('2025-06-15', '2025-06-15')

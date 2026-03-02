@@ -30,26 +30,31 @@ fn expectContains(actual: ?[]const u8, substr: []const u8) !void {
 // ================================================================
 // formatAge -- null/edge cases
 // ================================================================
+// 1.3
 test "empty string" {
     var buf: [256]u8 = undefined;
     try expectNull(fmt(&buf, "", "2025-06-15"));
 }
 
+// 1.4
 test "future dob" {
     var buf: [256]u8 = undefined;
     try expectNull(fmt(&buf, "2025-07-01", "2025-06-15"));
 }
 
+// 1.5
 test "exactly 500 years" {
     var buf: [256]u8 = undefined;
     try expectStr("500 years", fmt(&buf, "1525-06-15", "2025-06-15"));
 }
 
+// 1.6
 test "501 years exceeds max" {
     var buf: [256]u8 = undefined;
     try expectNull(fmt(&buf, "1524-06-15", "2025-06-15"));
 }
 
+// 1.7
 test "1000 years exceeds max" {
     var buf: [256]u8 = undefined;
     try expectNull(fmt(&buf, "1025-06-15", "2025-06-15"));
@@ -58,26 +63,31 @@ test "1000 years exceeds max" {
 // ================================================================
 // formatAge -- days tier (0-6)
 // ================================================================
+// 2.1
 test "born today" {
     var buf: [256]u8 = undefined;
     try expectStr("Newborn", fmt(&buf, "2025-06-15", "2025-06-15"));
 }
 
+// 2.2
 test "1 day ago" {
     var buf: [256]u8 = undefined;
     try expectStr("1 day", fmt(&buf, "2025-06-14", "2025-06-15"));
 }
 
+// 2.3
 test "3 days ago" {
     var buf: [256]u8 = undefined;
     try expectStr("3 days", fmt(&buf, "2025-06-12", "2025-06-15"));
 }
 
+// 2.4
 test "6 days ago" {
     var buf: [256]u8 = undefined;
     try expectStr("6 days", fmt(&buf, "2025-06-09", "2025-06-15"));
 }
 
+// 2.5
 test "7 days -> 1 week" {
     var buf: [256]u8 = undefined;
     try expectStr("1 week", fmt(&buf, "2025-06-08", "2025-06-15"));
@@ -86,61 +96,73 @@ test "7 days -> 1 week" {
 // ================================================================
 // formatAge -- weeks+days tier
 // ================================================================
+// 3.1
 test "7 days" {
     var buf: [256]u8 = undefined;
     try expectStr("1 week", fmt(&buf, "2025-06-08", "2025-06-15"));
 }
 
+// 3.2
 test "8 days" {
     var buf: [256]u8 = undefined;
     try expectStr("1 week, 1 day", fmt(&buf, "2025-06-07", "2025-06-15"));
 }
 
+// 3.3
 test "9 days" {
     var buf: [256]u8 = undefined;
     try expectStr("1 week, 2 days", fmt(&buf, "2025-06-06", "2025-06-15"));
 }
 
+// 3.4
 test "13 days" {
     var buf: [256]u8 = undefined;
     try expectStr("1 week, 6 days", fmt(&buf, "2025-06-02", "2025-06-15"));
 }
 
+// 3.5
 test "14 days" {
     var buf: [256]u8 = undefined;
     try expectStr("2 weeks", fmt(&buf, "2025-06-01", "2025-06-15"));
 }
 
+// 3.6
 test "15 days" {
     var buf: [256]u8 = undefined;
     try expectStr("2 weeks, 1 day", fmt(&buf, "2025-05-31", "2025-06-15"));
 }
 
+// 3.7
 test "20 days" {
     var buf: [256]u8 = undefined;
     try expectStr("2 weeks, 6 days", fmt(&buf, "2025-05-26", "2025-06-15"));
 }
 
+// 3.8
 test "21 days" {
     var buf: [256]u8 = undefined;
     try expectStr("3 weeks", fmt(&buf, "2025-05-25", "2025-06-15"));
 }
 
+// 3.9
 test "at 1 cal month still weeks+days" {
     var buf: [256]u8 = undefined;
     try expectStr("4 weeks, 3 days", fmt(&buf, "2025-05-15", "2025-06-15"));
 }
 
+// 3.10
 test "at 2 cal months still weeks+days" {
     var buf: [256]u8 = undefined;
     try expectStr("8 weeks, 5 days", fmt(&buf, "2025-04-15", "2025-06-15"));
 }
 
+// 3.11
 test "one day before 3mo still weeks" {
     var buf: [256]u8 = undefined;
     try expectStr("13 weeks", fmt(&buf, "2025-03-15", "2025-06-14"));
 }
 
+// 3.12
 test "on 3mo birthday switches" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-03-15", "2025-06-15"));
@@ -149,26 +171,31 @@ test "on 3mo birthday switches" {
 // ================================================================
 // formatAge -- month boundaries: standard months
 // ================================================================
+// 4.1
 test "Jan1->Apr1=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-01-01", "2025-04-01"));
 }
 
+// 4.2
 test "Jan1->Mar31 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2025-01-01", "2025-03-31"), "weeks");
 }
 
+// 4.3
 test "Jun15->Sep15=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-06-15", "2025-09-15"));
 }
 
+// 4.4
 test "Jun15->Sep14 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2025-06-15", "2025-09-14"), "weeks");
 }
 
+// 4.5
 test "Jun15->Dec15=6mo" {
     var buf: [256]u8 = undefined;
     try expectStr("6 months", fmt(&buf, "2025-06-15", "2025-12-15"));
@@ -177,26 +204,31 @@ test "Jun15->Dec15=6mo" {
 // ================================================================
 // formatAge -- month boundaries: February non-leap
 // ================================================================
+// 5.1
 test "Jan31->Feb28 non-leap" {
     var buf: [256]u8 = undefined;
     try expectStr("4 weeks", fmt(&buf, "2025-01-31", "2025-02-28"));
 }
 
+// 5.2
 test "Jan31->Apr30=3mo(clamp)" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-01-31", "2025-04-30"));
 }
 
+// 5.3
 test "Jan31->Apr29 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2025-01-31", "2025-04-29"), "weeks");
 }
 
+// 5.4
 test "Feb1->May1=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-02-01", "2025-05-01"));
 }
 
+// 5.5
 test "Feb1->Apr30 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2025-02-01", "2025-04-30"), "weeks");
@@ -205,26 +237,31 @@ test "Feb1->Apr30 still weeks" {
 // ================================================================
 // formatAge -- month boundaries: February leap year
 // ================================================================
+// 6.1
 test "Jan31->Feb29 leap" {
     var buf: [256]u8 = undefined;
     try expectStr("4 weeks, 1 day", fmt(&buf, "2024-01-31", "2024-02-29"));
 }
 
+// 6.2
 test "Jan31->Feb28 leap" {
     var buf: [256]u8 = undefined;
     try expectStr("4 weeks", fmt(&buf, "2024-01-31", "2024-02-28"));
 }
 
+// 6.3
 test "Jan31->Apr30 leap=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2024-01-31", "2024-04-30"));
 }
 
+// 6.4
 test "Jan30->Feb29 leap still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2024-01-30", "2024-02-29"), "weeks");
 }
 
+// 6.5
 test "Jan30->Feb28 leap still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2024-01-30", "2024-02-28"), "weeks");
@@ -233,21 +270,25 @@ test "Jan30->Feb28 leap still weeks" {
 // ================================================================
 // formatAge -- month boundaries: 30-day months
 // ================================================================
+// 7.1
 test "Mar31->Jun30=3mo(clamped)" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-03-31", "2025-06-30"));
 }
 
+// 7.2
 test "Mar31->Jun29 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2025-03-31", "2025-06-29"), "weeks");
 }
 
+// 7.3
 test "Aug31->Nov30=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-08-31", "2025-11-30"));
 }
 
+// 7.4
 test "Aug31->Nov29 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2025-08-31", "2025-11-29"), "weeks");
@@ -256,21 +297,25 @@ test "Aug31->Nov29 still weeks" {
 // ================================================================
 // formatAge -- leap year baby (born Feb 29)
 // ================================================================
+// 8.1
 test "Feb29->May29=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2024-02-29", "2024-05-29"));
 }
 
+// 8.2
 test "Feb29->May28 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2024-02-29", "2024-05-28"), "weeks");
 }
 
+// 8.3
 test "Feb29 2024->Feb28 2025=12mo" {
     var buf: [256]u8 = undefined;
     try expectStr("12 months", fmt(&buf, "2024-02-29", "2025-02-28"));
 }
 
+// 8.4
 test "Feb29 2024->Mar1 2025=12mo" {
     var buf: [256]u8 = undefined;
     try expectStr("12 months", fmt(&buf, "2024-02-29", "2025-03-01"));
@@ -279,31 +324,37 @@ test "Feb29 2024->Mar1 2025=12mo" {
 // ================================================================
 // formatAge -- months tier (3-23)
 // ================================================================
+// 9.1
 test "3 months at transition" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-01-15", "2025-04-15"));
 }
 
+// 9.2
 test "6 months" {
     var buf: [256]u8 = undefined;
     try expectStr("6 months", fmt(&buf, "2025-01-15", "2025-07-15"));
 }
 
+// 9.3
 test "12 months (not 1 year)" {
     var buf: [256]u8 = undefined;
     try expectStr("12 months", fmt(&buf, "2024-06-15", "2025-06-15"));
 }
 
+// 9.4
 test "23 months at upper" {
     var buf: [256]u8 = undefined;
     try expectStr("23 months", fmt(&buf, "2024-01-15", "2025-12-15"));
 }
 
+// 9.5
 test "one day before boundary" {
     var buf: [256]u8 = undefined;
     try expectStr("5 months", fmt(&buf, "2025-01-15", "2025-07-14"));
 }
 
+// 9.6
 test "crossing year boundary" {
     var buf: [256]u8 = undefined;
     try expectStr("5 months", fmt(&buf, "2024-11-10", "2025-04-10"));
@@ -312,26 +363,31 @@ test "crossing year boundary" {
 // ================================================================
 // formatAge -- years+months tier (24-35 months)
 // ================================================================
+// 10.1
 test "2 years at 24mo" {
     var buf: [256]u8 = undefined;
     try expectStr("2 years", fmt(&buf, "2023-06-15", "2025-06-15"));
 }
 
+// 10.2
 test "2 years 1 month" {
     var buf: [256]u8 = undefined;
     try expectStr("2 years, 1 month", fmt(&buf, "2023-06-15", "2025-07-15"));
 }
 
+// 10.3
 test "2 years 6 months" {
     var buf: [256]u8 = undefined;
     try expectStr("2 years, 6 months", fmt(&buf, "2023-06-15", "2025-12-15"));
 }
 
+// 10.4
 test "2 years 11 months" {
     var buf: [256]u8 = undefined;
     try expectStr("2 years, 11 months", fmt(&buf, "2023-06-15", "2026-05-15"));
 }
 
+// 10.5
 test "one day before 24mo" {
     var buf: [256]u8 = undefined;
     try expectStr("23 months", fmt(&buf, "2023-06-15", "2025-06-14"));
@@ -340,61 +396,73 @@ test "one day before 24mo" {
 // ================================================================
 // formatAge -- half-year tier (3-6 years)
 // ================================================================
+// 11.1
 test "3 years exactly" {
     var buf: [256]u8 = undefined;
     try expectStr("3 years", fmt(&buf, "2022-06-15", "2025-06-15"));
 }
 
+// 11.2
 test "3 years 5 months" {
     var buf: [256]u8 = undefined;
     try expectStr("3 years", fmt(&buf, "2022-06-15", "2025-11-15"));
 }
 
+// 11.3
 test "3.5 years at 3y6m" {
     var buf: [256]u8 = undefined;
     try expectStr("3\xc2\xbd years", fmt(&buf, "2022-06-15", "2025-12-15"));
 }
 
+// 11.4
 test "3.5 years at 3y11m" {
     var buf: [256]u8 = undefined;
     try expectStr("3\xc2\xbd years", fmt(&buf, "2022-06-15", "2026-05-15"));
 }
 
+// 11.5
 test "4 years exactly" {
     var buf: [256]u8 = undefined;
     try expectStr("4 years", fmt(&buf, "2021-06-15", "2025-06-15"));
 }
 
+// 11.6
 test "4.5 years" {
     var buf: [256]u8 = undefined;
     try expectStr("4\xc2\xbd years", fmt(&buf, "2021-06-15", "2025-12-15"));
 }
 
+// 11.7
 test "5 years" {
     var buf: [256]u8 = undefined;
     try expectStr("5 years", fmt(&buf, "2020-06-15", "2025-06-15"));
 }
 
+// 11.8
 test "5.5 years at 5y8m" {
     var buf: [256]u8 = undefined;
     try expectStr("5\xc2\xbd years", fmt(&buf, "2020-06-15", "2026-02-15"));
 }
 
+// 11.9
 test "6 years" {
     var buf: [256]u8 = undefined;
     try expectStr("6 years", fmt(&buf, "2019-06-15", "2025-06-15"));
 }
 
+// 11.10
 test "6.5 years" {
     var buf: [256]u8 = undefined;
     try expectStr("6\xc2\xbd years", fmt(&buf, "2019-06-15", "2025-12-15"));
 }
 
+// 11.11
 test "6.5 years at 6y11m" {
     var buf: [256]u8 = undefined;
     try expectStr("6\xc2\xbd years", fmt(&buf, "2019-06-15", "2026-05-15"));
 }
 
+// 11.12
 test "one day before 3rd bday" {
     var buf: [256]u8 = undefined;
     try expectStr("2 years, 11 months", fmt(&buf, "2022-06-15", "2025-06-14"));
@@ -403,16 +471,19 @@ test "one day before 3rd bday" {
 // ================================================================
 // formatAge -- integer tier (7+ years)
 // ================================================================
+// 12.1
 test "7 years exactly" {
     var buf: [256]u8 = undefined;
     try expectStr("7 years", fmt(&buf, "2018-06-15", "2025-06-15"));
 }
 
+// 12.2
 test "7 years 6 months (no half)" {
     var buf: [256]u8 = undefined;
     try expectStr("7 years", fmt(&buf, "2018-03-20", "2025-06-15"));
 }
 
+// 12.3
 test "45 years" {
     var buf: [256]u8 = undefined;
     try expectStr("45 years", fmt(&buf, "1980-01-01", "2025-06-15"));
@@ -421,21 +492,25 @@ test "45 years" {
 // ================================================================
 // formatAge -- cross-year with Feb
 // ================================================================
+// 13.1
 test "Dec31->Mar31=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2024-12-31", "2025-03-31"));
 }
 
+// 13.2
 test "Dec31->Mar30 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2024-12-31", "2025-03-30"), "weeks");
 }
 
+// 13.3
 test "Nov30->Feb28=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2024-11-30", "2025-02-28"));
 }
 
+// 13.4
 test "Nov30->Feb27 still weeks" {
     var buf: [256]u8 = undefined;
     try expectContains(fmt(&buf, "2024-11-30", "2025-02-27"), "weeks");
@@ -444,26 +519,31 @@ test "Nov30->Feb27 still weeks" {
 // ================================================================
 // formatAge -- born-on-31st progression
 // ================================================================
+// 14.1
 test "Jan31->Apr30=3mo" {
     var buf: [256]u8 = undefined;
     try expectStr("3 months", fmt(&buf, "2025-01-31", "2025-04-30"));
 }
 
+// 14.2
 test "Jan31->May31=4mo" {
     var buf: [256]u8 = undefined;
     try expectStr("4 months", fmt(&buf, "2025-01-31", "2025-05-31"));
 }
 
+// 14.3
 test "Jan31->Jun30=5mo(clamped)" {
     var buf: [256]u8 = undefined;
     try expectStr("5 months", fmt(&buf, "2025-01-31", "2025-06-30"));
 }
 
+// 14.4
 test "Jan31->Jul1=5mo" {
     var buf: [256]u8 = undefined;
     try expectStr("5 months", fmt(&buf, "2025-01-31", "2025-07-01"));
 }
 
+// 14.5
 test "Jan31->Jul31=6mo" {
     var buf: [256]u8 = undefined;
     try expectStr("6 months", fmt(&buf, "2025-01-31", "2025-07-31"));
@@ -472,18 +552,22 @@ test "Jan31->Jul31=6mo" {
 // ================================================================
 // formatStage -- null/edge cases
 // ================================================================
+// 16.3
 test "stage empty" {
     try expectNull(pt.formatStage(&pt.locales.en, "", "2025-06-15", ""));
 }
 
+// 16.4
 test "stage future" {
     try expectNull(pt.formatStage(&pt.locales.en, "2025-07-01", "2025-06-15", ""));
 }
 
+// 16.5
 test "stage 500 years" {
     try expectStr("Adult", pt.formatStage(&pt.locales.en, "1525-06-15", "2025-06-15", ""));
 }
 
+// 16.6
 test "stage 501 years exceeds max" {
     try expectNull(pt.formatStage(&pt.locales.en, "1524-06-15", "2025-06-15", ""));
 }
@@ -491,26 +575,32 @@ test "stage 501 years exceeds max" {
 // ================================================================
 // formatStage -- newborn
 // ================================================================
+// 17.1
 test "stage born today" {
     try expectStr("Newborn", pt.formatStage(&pt.locales.en, "2025-06-15", "2025-06-15", ""));
 }
 
+// 17.2
 test "stage 1 day old" {
     try expectStr("Newborn", pt.formatStage(&pt.locales.en, "2025-06-14", "2025-06-15", ""));
 }
 
+// 17.3
 test "stage 3 weeks old" {
     try expectStr("Newborn", pt.formatStage(&pt.locales.en, "2025-05-25", "2025-06-15", ""));
 }
 
+// 17.4
 test "stage 1 month old" {
     try expectStr("Newborn", pt.formatStage(&pt.locales.en, "2025-05-15", "2025-06-15", ""));
 }
 
+// 17.5
 test "stage 1 month 29 days" {
     try expectStr("Newborn", pt.formatStage(&pt.locales.en, "2025-04-16", "2025-06-15", ""));
 }
 
+// 17.6
 test "stage exactly 2 months -> Infant" {
     try expectStr("Infant", pt.formatStage(&pt.locales.en, "2025-04-15", "2025-06-15", ""));
 }
@@ -518,18 +608,22 @@ test "stage exactly 2 months -> Infant" {
 // ================================================================
 // formatStage -- infant
 // ================================================================
+// 18.1
 test "stage 2 months" {
     try expectStr("Infant", pt.formatStage(&pt.locales.en, "2025-04-15", "2025-06-15", ""));
 }
 
+// 18.2
 test "stage 6 months" {
     try expectStr("Infant", pt.formatStage(&pt.locales.en, "2024-12-15", "2025-06-15", ""));
 }
 
+// 18.3
 test "stage 11 months" {
     try expectStr("Infant", pt.formatStage(&pt.locales.en, "2024-07-15", "2025-06-15", ""));
 }
 
+// 18.4
 test "stage exactly 12mo -> Toddler" {
     try expectStr("Toddler", pt.formatStage(&pt.locales.en, "2024-06-15", "2025-06-15", ""));
 }
@@ -537,22 +631,27 @@ test "stage exactly 12mo -> Toddler" {
 // ================================================================
 // formatStage -- toddler
 // ================================================================
+// 19.1
 test "stage 12 months" {
     try expectStr("Toddler", pt.formatStage(&pt.locales.en, "2024-06-15", "2025-06-15", ""));
 }
 
+// 19.2
 test "stage 18 months" {
     try expectStr("Toddler", pt.formatStage(&pt.locales.en, "2024-01-15", "2025-07-15", ""));
 }
 
+// 19.3
 test "stage 24 months" {
     try expectStr("Toddler", pt.formatStage(&pt.locales.en, "2023-06-15", "2025-06-15", ""));
 }
 
+// 19.4
 test "stage 35 months" {
     try expectStr("Toddler", pt.formatStage(&pt.locales.en, "2023-06-15", "2026-05-15", ""));
 }
 
+// 19.5
 test "stage exactly 36mo -> Child" {
     try expectStr("Child", pt.formatStage(&pt.locales.en, "2022-06-15", "2025-06-15", ""));
 }
@@ -560,26 +659,32 @@ test "stage exactly 36mo -> Child" {
 // ================================================================
 // formatStage -- child
 // ================================================================
+// 20.1
 test "stage 3 years" {
     try expectStr("Child", pt.formatStage(&pt.locales.en, "2022-06-15", "2025-06-15", ""));
 }
 
+// 20.2
 test "stage 4 years" {
     try expectStr("Child", pt.formatStage(&pt.locales.en, "2021-06-15", "2025-06-15", ""));
 }
 
+// 20.3
 test "stage 6 years" {
     try expectStr("Child", pt.formatStage(&pt.locales.en, "2019-06-15", "2025-06-15", ""));
 }
 
+// 20.4
 test "stage 9 years" {
     try expectStr("Child", pt.formatStage(&pt.locales.en, "2016-06-15", "2025-06-15", ""));
 }
 
+// 20.5
 test "stage 12y11mo" {
     try expectStr("Child", pt.formatStage(&pt.locales.en, "2013-06-15", "2026-05-15", ""));
 }
 
+// 20.6
 test "stage exactly 13y -> Teenager" {
     try expectStr("Teenager", pt.formatStage(&pt.locales.en, "2012-06-15", "2025-06-15", ""));
 }
@@ -587,18 +692,22 @@ test "stage exactly 13y -> Teenager" {
 // ================================================================
 // formatStage -- teenager
 // ================================================================
+// 21.1
 test "stage 13 years" {
     try expectStr("Teenager", pt.formatStage(&pt.locales.en, "2012-06-15", "2025-06-15", ""));
 }
 
+// 21.2
 test "stage 15 years" {
     try expectStr("Teenager", pt.formatStage(&pt.locales.en, "2010-06-15", "2025-06-15", ""));
 }
 
+// 21.3
 test "stage 17y11mo" {
     try expectStr("Teenager", pt.formatStage(&pt.locales.en, "2008-06-15", "2026-05-15", ""));
 }
 
+// 21.4
 test "stage exactly 18y -> Adult" {
     try expectStr("Adult", pt.formatStage(&pt.locales.en, "2007-06-15", "2025-06-15", ""));
 }
@@ -606,14 +715,17 @@ test "stage exactly 18y -> Adult" {
 // ================================================================
 // formatStage -- adult
 // ================================================================
+// 22.1
 test "stage 18 years" {
     try expectStr("Adult", pt.formatStage(&pt.locales.en, "2007-06-15", "2025-06-15", ""));
 }
 
+// 22.2
 test "stage 25 years" {
     try expectStr("Adult", pt.formatStage(&pt.locales.en, "2000-06-15", "2025-06-15", ""));
 }
 
+// 22.3
 test "stage 45 years" {
     try expectStr("Adult", pt.formatStage(&pt.locales.en, "1980-01-01", "2025-06-15", ""));
 }
@@ -776,70 +888,85 @@ test "SL stage adult f" {
 // ================================================================
 // ParentTime with English locale
 // ================================================================
+// 24.1
 test "PT Newborn" {
     var buf: [256]u8 = undefined;
     try expectStr("Newborn", fmtWith(&buf, &pt.locales.en, .normal, "2025-06-15", "2025-06-15"));
 }
 
+// 24.2
 test "PT 3 days" {
     var buf: [256]u8 = undefined;
     try expectStr("3 days", fmtWith(&buf, &pt.locales.en, .normal, "2025-06-12", "2025-06-15"));
 }
 
+// 24.3
 test "PT 1w1d" {
     var buf: [256]u8 = undefined;
     try expectStr("1 week, 1 day", fmtWith(&buf, &pt.locales.en, .normal, "2025-06-07", "2025-06-15"));
 }
 
+// 24.4
 test "PT 6 months" {
     var buf: [256]u8 = undefined;
     try expectStr("6 months", fmtWith(&buf, &pt.locales.en, .normal, "2025-01-15", "2025-07-15"));
 }
 
+// 24.5
 test "PT 2y1mo" {
     var buf: [256]u8 = undefined;
     try expectStr("2 years, 1 month", fmtWith(&buf, &pt.locales.en, .normal, "2023-06-15", "2025-07-15"));
 }
 
+// 24.6
 test "PT 3.5 years" {
     var buf: [256]u8 = undefined;
     try expectStr("3\xc2\xbd years", fmtWith(&buf, &pt.locales.en, .normal, "2022-06-15", "2025-12-15"));
 }
 
+// 24.7
 test "PT 7 years" {
     var buf: [256]u8 = undefined;
     try expectStr("7 years", fmtWith(&buf, &pt.locales.en, .normal, "2018-06-15", "2025-06-15"));
 }
 
+// 24.8
 test "PT stage Newborn" {
     try expectStr("Newborn", pt.formatStage(&pt.locales.en, "2025-06-15", "2025-06-15", ""));
 }
 
+// 24.9
 test "PT stage Infant" {
     try expectStr("Infant", pt.formatStage(&pt.locales.en, "2025-01-15", "2025-06-15", ""));
 }
 
+// 24.10
 test "PT stage Toddler" {
     try expectStr("Toddler", pt.formatStage(&pt.locales.en, "2024-06-15", "2025-06-15", ""));
 }
 
+// 24.11
 test "PT stage Child" {
     try expectStr("Child", pt.formatStage(&pt.locales.en, "2022-06-15", "2025-06-15", ""));
 }
 
+// 24.12
 test "PT stage Teenager" {
     try expectStr("Teenager", pt.formatStage(&pt.locales.en, "2012-06-15", "2025-06-15", ""));
 }
 
+// 24.13
 test "PT stage Adult" {
     try expectStr("Adult", pt.formatStage(&pt.locales.en, "2007-06-15", "2025-06-15", ""));
 }
 
+// 24.14
 test "PT null age" {
     var buf: [256]u8 = undefined;
     try expectNull(fmtWith(&buf, &pt.locales.en, .normal, "", "2025-06-15"));
 }
 
+// 24.15
 test "PT null stage" {
     try expectNull(pt.formatStage(&pt.locales.en, "", "2025-06-15", ""));
 }

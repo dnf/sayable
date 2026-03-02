@@ -36,6 +36,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 
 - **All implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
 - **Spec-first testing.** New test cases go in `docs/testing.md` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
+- **Canonical test IDs.** Every test must be annotated with the ID(s) from `docs/testing.md` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
 - **Locale data lives in `codegen/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `python -m codegen.generate` to regenerate all language implementations. Never edit generated locale files by hand.
 - **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.

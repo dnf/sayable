@@ -18,26 +18,31 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- null/edge cases
     // ================================================================
+    // 1.3
     @Test
     fun `empty string returns null`() {
         assertNull(ParentTime.formatAge("", "2025-06-15"))
     }
 
+    // 1.4
     @Test
     fun `future dob returns null`() {
         assertNull(ParentTime.formatAge("2025-07-01", "2025-06-15"))
     }
 
+    // 1.5
     @Test
     fun `exactly 500 years is allowed`() {
         assertEquals("500 years", ParentTime.formatAge("1525-06-15", "2025-06-15"))
     }
 
+    // 1.6
     @Test
     fun `501 years exceeds max age`() {
         assertNull(ParentTime.formatAge("1524-06-15", "2025-06-15"))
     }
 
+    // 1.7
     @Test
     fun `1000 years exceeds max age`() {
         assertNull(ParentTime.formatAge("1025-06-15", "2025-06-15"))
@@ -46,26 +51,31 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- days tier (0-6)
     // ================================================================
+    // 2.1
     @Test
     fun `born today`() {
         assertEquals("Newborn", ParentTime.formatAge("2025-06-15", "2025-06-15"))
     }
 
+    // 2.2
     @Test
     fun `1 day ago (singular)`() {
         assertEquals("1 day", ParentTime.formatAge("2025-06-14", "2025-06-15"))
     }
 
+    // 2.3
     @Test
     fun `3 days ago`() {
         assertEquals("3 days", ParentTime.formatAge("2025-06-12", "2025-06-15"))
     }
 
+    // 2.4
     @Test
     fun `6 days ago`() {
         assertEquals("6 days", ParentTime.formatAge("2025-06-09", "2025-06-15"))
     }
 
+    // 2.5
     @Test
     fun `7 days becomes 1 week`() {
         assertEquals("1 week", ParentTime.formatAge("2025-06-08", "2025-06-15"))
@@ -74,61 +84,73 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- weeks+days tier (7 days to less than 3 months)
     // ================================================================
+    // 3.1
     @Test
     fun `7 days is 1 week`() {
         assertEquals("1 week", ParentTime.formatAge("2025-06-08", "2025-06-15"))
     }
 
+    // 3.2
     @Test
     fun `8 days is 1 week 1 day`() {
         assertEquals("1 week, 1 day", ParentTime.formatAge("2025-06-07", "2025-06-15"))
     }
 
+    // 3.3
     @Test
     fun `9 days is 1 week 2 days`() {
         assertEquals("1 week, 2 days", ParentTime.formatAge("2025-06-06", "2025-06-15"))
     }
 
+    // 3.4
     @Test
     fun `13 days is 1 week 6 days`() {
         assertEquals("1 week, 6 days", ParentTime.formatAge("2025-06-02", "2025-06-15"))
     }
 
+    // 3.5
     @Test
     fun `14 days is 2 weeks`() {
         assertEquals("2 weeks", ParentTime.formatAge("2025-06-01", "2025-06-15"))
     }
 
+    // 3.6
     @Test
     fun `15 days is 2 weeks 1 day`() {
         assertEquals("2 weeks, 1 day", ParentTime.formatAge("2025-05-31", "2025-06-15"))
     }
 
+    // 3.7
     @Test
     fun `20 days is 2 weeks 6 days`() {
         assertEquals("2 weeks, 6 days", ParentTime.formatAge("2025-05-26", "2025-06-15"))
     }
 
+    // 3.8
     @Test
     fun `21 days is 3 weeks`() {
         assertEquals("3 weeks", ParentTime.formatAge("2025-05-25", "2025-06-15"))
     }
 
+    // 3.9
     @Test
     fun `at 1 cal month still weeks+days`() {
         assertEquals("4 weeks, 3 days", ParentTime.formatAge("2025-05-15", "2025-06-15"))
     }
 
+    // 3.10
     @Test
     fun `at 2 cal months still weeks+days`() {
         assertEquals("8 weeks, 5 days", ParentTime.formatAge("2025-04-15", "2025-06-15"))
     }
 
+    // 3.11
     @Test
     fun `one day before 3mo still weeks`() {
         assertEquals("13 weeks", ParentTime.formatAge("2025-03-15", "2025-06-14"))
     }
 
+    // 3.12
     @Test
     fun `on 3mo birthday switches`() {
         assertEquals("3 months", ParentTime.formatAge("2025-03-15", "2025-06-15"))
@@ -137,11 +159,13 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: standard months
     // ================================================================
+    // 4.1
     @Test
     fun `Jan1 to Apr1 is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2025-01-01", "2025-04-01"))
     }
 
+    // 4.2
     @Test
     fun `Jan1 to Mar31 still weeks`() {
         val result = ParentTime.formatAge("2025-01-01", "2025-03-31")
@@ -149,11 +173,13 @@ class FormatAgeTest {
         assertTrue(result!!.contains("weeks"))
     }
 
+    // 4.3
     @Test
     fun `Jun15 to Sep15 is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2025-06-15", "2025-09-15"))
     }
 
+    // 4.4
     @Test
     fun `Jun15 to Sep14 still weeks`() {
         val result = ParentTime.formatAge("2025-06-15", "2025-09-14")
@@ -161,6 +187,7 @@ class FormatAgeTest {
         assertTrue(result!!.contains("weeks"))
     }
 
+    // 4.5
     @Test
     fun `Jun15 to Dec15 is 6mo`() {
         assertEquals("6 months", ParentTime.formatAge("2025-06-15", "2025-12-15"))
@@ -169,16 +196,19 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: February non-leap
     // ================================================================
+    // 5.1
     @Test
     fun `Jan31 to Feb28 non-leap`() {
         assertEquals("4 weeks", ParentTime.formatAge("2025-01-31", "2025-02-28"))
     }
 
+    // 5.2
     @Test
     fun `Jan31 to Apr30 is 3mo (clamp)`() {
         assertEquals("3 months", ParentTime.formatAge("2025-01-31", "2025-04-30"))
     }
 
+    // 5.3
     @Test
     fun `Jan31 to Apr29 still weeks`() {
         val result = ParentTime.formatAge("2025-01-31", "2025-04-29")
@@ -186,11 +216,13 @@ class FormatAgeTest {
         assertTrue(result!!.contains("weeks"))
     }
 
+    // 5.4
     @Test
     fun `Feb1 to May1 is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2025-02-01", "2025-05-01"))
     }
 
+    // 5.5
     @Test
     fun `Feb1 to Apr30 still weeks`() {
         val result = ParentTime.formatAge("2025-02-01", "2025-04-30")
@@ -201,21 +233,25 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: February leap year
     // ================================================================
+    // 6.1
     @Test
     fun `Jan31 to Feb29 leap`() {
         assertEquals("4 weeks, 1 day", ParentTime.formatAge("2024-01-31", "2024-02-29"))
     }
 
+    // 6.2
     @Test
     fun `Jan31 to Feb28 leap`() {
         assertEquals("4 weeks", ParentTime.formatAge("2024-01-31", "2024-02-28"))
     }
 
+    // 6.3
     @Test
     fun `Jan31 to Apr30 leap is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2024-01-31", "2024-04-30"))
     }
 
+    // 6.4
     @Test
     fun `Jan30 to Feb29 leap still weeks`() {
         val result = ParentTime.formatAge("2024-01-30", "2024-02-29")
@@ -223,6 +259,7 @@ class FormatAgeTest {
         assertTrue(result!!.contains("weeks"))
     }
 
+    // 6.5
     @Test
     fun `Jan30 to Feb28 leap still weeks`() {
         val result = ParentTime.formatAge("2024-01-30", "2024-02-28")
@@ -233,11 +270,13 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: 30-day months
     // ================================================================
+    // 7.1
     @Test
     fun `Mar31 to Jun30 is 3mo (clamped)`() {
         assertEquals("3 months", ParentTime.formatAge("2025-03-31", "2025-06-30"))
     }
 
+    // 7.2
     @Test
     fun `Mar31 to Jun29 still weeks`() {
         val result = ParentTime.formatAge("2025-03-31", "2025-06-29")
@@ -245,11 +284,13 @@ class FormatAgeTest {
         assertTrue(result!!.contains("weeks"))
     }
 
+    // 7.3
     @Test
     fun `Aug31 to Nov30 is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2025-08-31", "2025-11-30"))
     }
 
+    // 7.4
     @Test
     fun `Aug31 to Nov29 still weeks`() {
         val result = ParentTime.formatAge("2025-08-31", "2025-11-29")
@@ -260,11 +301,13 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: leap year baby (born Feb 29)
     // ================================================================
+    // 8.1
     @Test
     fun `Feb29 to May29 is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2024-02-29", "2024-05-29"))
     }
 
+    // 8.2
     @Test
     fun `Feb29 to May28 still weeks`() {
         val result = ParentTime.formatAge("2024-02-29", "2024-05-28")
@@ -272,11 +315,13 @@ class FormatAgeTest {
         assertTrue(result!!.contains("weeks"))
     }
 
+    // 8.3
     @Test
     fun `Feb29 2024 to Feb28 2025 is 12mo`() {
         assertEquals("12 months", ParentTime.formatAge("2024-02-29", "2025-02-28"))
     }
 
+    // 8.4
     @Test
     fun `Feb29 2024 to Mar1 2025 is 12mo`() {
         assertEquals("12 months", ParentTime.formatAge("2024-02-29", "2025-03-01"))
@@ -285,31 +330,37 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- months tier (3-23)
     // ================================================================
+    // 9.1
     @Test
     fun `3 months at transition`() {
         assertEquals("3 months", ParentTime.formatAge("2025-01-15", "2025-04-15"))
     }
 
+    // 9.2
     @Test
     fun `6 months`() {
         assertEquals("6 months", ParentTime.formatAge("2025-01-15", "2025-07-15"))
     }
 
+    // 9.3
     @Test
     fun `12 months (not 1 year)`() {
         assertEquals("12 months", ParentTime.formatAge("2024-06-15", "2025-06-15"))
     }
 
+    // 9.4
     @Test
     fun `23 months at upper`() {
         assertEquals("23 months", ParentTime.formatAge("2024-01-15", "2025-12-15"))
     }
 
+    // 9.5
     @Test
     fun `one day before boundary`() {
         assertEquals("5 months", ParentTime.formatAge("2025-01-15", "2025-07-14"))
     }
 
+    // 9.6
     @Test
     fun `crossing year boundary`() {
         assertEquals("5 months", ParentTime.formatAge("2024-11-10", "2025-04-10"))
@@ -318,26 +369,31 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- years+months tier (24-35 months)
     // ================================================================
+    // 10.1
     @Test
     fun `2 years at 24mo`() {
         assertEquals("2 years", ParentTime.formatAge("2023-06-15", "2025-06-15"))
     }
 
+    // 10.2
     @Test
     fun `2 years 1 month`() {
         assertEquals("2 years, 1 month", ParentTime.formatAge("2023-06-15", "2025-07-15"))
     }
 
+    // 10.3
     @Test
     fun `2 years 6 months`() {
         assertEquals("2 years, 6 months", ParentTime.formatAge("2023-06-15", "2025-12-15"))
     }
 
+    // 10.4
     @Test
     fun `2 years 11 months`() {
         assertEquals("2 years, 11 months", ParentTime.formatAge("2023-06-15", "2026-05-15"))
     }
 
+    // 10.5
     @Test
     fun `one day before 24mo`() {
         assertEquals("23 months", ParentTime.formatAge("2023-06-15", "2025-06-14"))
@@ -346,61 +402,73 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- half-year tier (3-6 years)
     // ================================================================
+    // 11.1
     @Test
     fun `3 years exactly`() {
         assertEquals("3 years", ParentTime.formatAge("2022-06-15", "2025-06-15"))
     }
 
+    // 11.2
     @Test
     fun `3 years 5 months`() {
         assertEquals("3 years", ParentTime.formatAge("2022-06-15", "2025-11-15"))
     }
 
+    // 11.3
     @Test
     fun `3 and half years at 3y6m`() {
         assertEquals("3\u00BD years", ParentTime.formatAge("2022-06-15", "2025-12-15"))
     }
 
+    // 11.4
     @Test
     fun `3 and half years at 3y11m`() {
         assertEquals("3\u00BD years", ParentTime.formatAge("2022-06-15", "2026-05-15"))
     }
 
+    // 11.5
     @Test
     fun `4 years exactly`() {
         assertEquals("4 years", ParentTime.formatAge("2021-06-15", "2025-06-15"))
     }
 
+    // 11.6
     @Test
     fun `4 and half years`() {
         assertEquals("4\u00BD years", ParentTime.formatAge("2021-06-15", "2025-12-15"))
     }
 
+    // 11.7
     @Test
     fun `5 years`() {
         assertEquals("5 years", ParentTime.formatAge("2020-06-15", "2025-06-15"))
     }
 
+    // 11.8
     @Test
     fun `5 and half years at 5y8m`() {
         assertEquals("5\u00BD years", ParentTime.formatAge("2020-06-15", "2026-02-15"))
     }
 
+    // 11.9
     @Test
     fun `6 years`() {
         assertEquals("6 years", ParentTime.formatAge("2019-06-15", "2025-06-15"))
     }
 
+    // 11.10
     @Test
     fun `6 and half years`() {
         assertEquals("6\u00BD years", ParentTime.formatAge("2019-06-15", "2025-12-15"))
     }
 
+    // 11.11
     @Test
     fun `6 and half years at 6y11m`() {
         assertEquals("6\u00BD years", ParentTime.formatAge("2019-06-15", "2026-05-15"))
     }
 
+    // 11.12
     @Test
     fun `one day before 3rd bday`() {
         assertEquals("2 years, 11 months", ParentTime.formatAge("2022-06-15", "2025-06-14"))
@@ -409,16 +477,19 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- integer tier (7+ years)
     // ================================================================
+    // 12.1
     @Test
     fun `7 years exactly`() {
         assertEquals("7 years", ParentTime.formatAge("2018-06-15", "2025-06-15"))
     }
 
+    // 12.2
     @Test
     fun `7 years 6 months no half`() {
         assertEquals("7 years", ParentTime.formatAge("2018-03-20", "2025-06-15"))
     }
 
+    // 12.3
     @Test
     fun `45 years`() {
         assertEquals("45 years", ParentTime.formatAge("1980-01-01", "2025-06-15"))
@@ -427,11 +498,13 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- cross-year transitions with Feb
     // ================================================================
+    // 13.1
     @Test
     fun `Dec31 to Mar31 is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2024-12-31", "2025-03-31"))
     }
 
+    // 13.2
     @Test
     fun `Dec31 to Mar30 still weeks`() {
         val result = ParentTime.formatAge("2024-12-31", "2025-03-30")
@@ -439,11 +512,13 @@ class FormatAgeTest {
         assertTrue(result!!.contains("weeks"))
     }
 
+    // 13.3
     @Test
     fun `Nov30 to Feb28 is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2024-11-30", "2025-02-28"))
     }
 
+    // 13.4
     @Test
     fun `Nov30 to Feb27 still weeks`() {
         val result = ParentTime.formatAge("2024-11-30", "2025-02-27")
@@ -454,26 +529,31 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- born-on-31st progression
     // ================================================================
+    // 14.1
     @Test
     fun `Jan31 to Apr30 is 3mo`() {
         assertEquals("3 months", ParentTime.formatAge("2025-01-31", "2025-04-30"))
     }
 
+    // 14.2
     @Test
     fun `Jan31 to May31 is 4mo`() {
         assertEquals("4 months", ParentTime.formatAge("2025-01-31", "2025-05-31"))
     }
 
+    // 14.3
     @Test
     fun `Jan31 to Jun30 is 5mo (clamped)`() {
         assertEquals("5 months", ParentTime.formatAge("2025-01-31", "2025-06-30"))
     }
 
+    // 14.4
     @Test
     fun `Jan31 to Jul1 is 5mo`() {
         assertEquals("5 months", ParentTime.formatAge("2025-01-31", "2025-07-01"))
     }
 
+    // 14.5
     @Test
     fun `Jan31 to Jul31 is 6mo`() {
         assertEquals("6 months", ParentTime.formatAge("2025-01-31", "2025-07-31"))
@@ -482,6 +562,7 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- default asOf (uses current date)
     // ================================================================
+    // 15.1, 15.2
     @Test
     fun `default asOf uses mocked today`() {
         timeNow = { LocalDate.of(2025, 6, 15) }
@@ -492,21 +573,25 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- null/edge cases
     // ================================================================
+    // 16.3
     @Test
     fun `stage empty string returns null`() {
         assertNull(ParentTime.formatStage("", "2025-06-15"))
     }
 
+    // 16.4
     @Test
     fun `stage future dob returns null`() {
         assertNull(ParentTime.formatStage("2025-07-01", "2025-06-15"))
     }
 
+    // 16.5
     @Test
     fun `stage exactly 500 years returns Adult`() {
         assertEquals("Adult", ParentTime.formatStage("1525-06-15", "2025-06-15"))
     }
 
+    // 16.6
     @Test
     fun `stage 501 years exceeds max age`() {
         assertNull(ParentTime.formatStage("1524-06-15", "2025-06-15"))
@@ -515,31 +600,37 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- newborn
     // ================================================================
+    // 17.1
     @Test
     fun `stage born today`() {
         assertEquals("Newborn", ParentTime.formatStage("2025-06-15", "2025-06-15"))
     }
 
+    // 17.2
     @Test
     fun `stage 1 day old`() {
         assertEquals("Newborn", ParentTime.formatStage("2025-06-14", "2025-06-15"))
     }
 
+    // 17.3
     @Test
     fun `stage 3 weeks old`() {
         assertEquals("Newborn", ParentTime.formatStage("2025-05-25", "2025-06-15"))
     }
 
+    // 17.4
     @Test
     fun `stage 1 month old`() {
         assertEquals("Newborn", ParentTime.formatStage("2025-05-15", "2025-06-15"))
     }
 
+    // 17.5
     @Test
     fun `stage 1 month 29 days`() {
         assertEquals("Newborn", ParentTime.formatStage("2025-04-16", "2025-06-15"))
     }
 
+    // 17.6
     @Test
     fun `stage exactly 2 months becomes Infant`() {
         assertEquals("Infant", ParentTime.formatStage("2025-04-15", "2025-06-15"))
@@ -548,21 +639,25 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- infant
     // ================================================================
+    // 18.1
     @Test
     fun `stage 2 months`() {
         assertEquals("Infant", ParentTime.formatStage("2025-04-15", "2025-06-15"))
     }
 
+    // 18.2
     @Test
     fun `stage 6 months`() {
         assertEquals("Infant", ParentTime.formatStage("2024-12-15", "2025-06-15"))
     }
 
+    // 18.3
     @Test
     fun `stage 11 months`() {
         assertEquals("Infant", ParentTime.formatStage("2024-07-15", "2025-06-15"))
     }
 
+    // 18.4
     @Test
     fun `stage exactly 12mo becomes Toddler`() {
         assertEquals("Toddler", ParentTime.formatStage("2024-06-15", "2025-06-15"))
@@ -571,26 +666,31 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- toddler
     // ================================================================
+    // 19.1
     @Test
     fun `stage 12 months`() {
         assertEquals("Toddler", ParentTime.formatStage("2024-06-15", "2025-06-15"))
     }
 
+    // 19.2
     @Test
     fun `stage 18 months`() {
         assertEquals("Toddler", ParentTime.formatStage("2024-01-15", "2025-07-15"))
     }
 
+    // 19.3
     @Test
     fun `stage 24 months`() {
         assertEquals("Toddler", ParentTime.formatStage("2023-06-15", "2025-06-15"))
     }
 
+    // 19.4
     @Test
     fun `stage 35 months`() {
         assertEquals("Toddler", ParentTime.formatStage("2023-06-15", "2026-05-15"))
     }
 
+    // 19.5
     @Test
     fun `stage exactly 36mo becomes Child`() {
         assertEquals("Child", ParentTime.formatStage("2022-06-15", "2025-06-15"))
@@ -599,31 +699,37 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- child
     // ================================================================
+    // 20.1
     @Test
     fun `stage 3 years`() {
         assertEquals("Child", ParentTime.formatStage("2022-06-15", "2025-06-15"))
     }
 
+    // 20.2
     @Test
     fun `stage 4 years`() {
         assertEquals("Child", ParentTime.formatStage("2021-06-15", "2025-06-15"))
     }
 
+    // 20.3
     @Test
     fun `stage 6 years`() {
         assertEquals("Child", ParentTime.formatStage("2019-06-15", "2025-06-15"))
     }
 
+    // 20.4
     @Test
     fun `stage 9 years`() {
         assertEquals("Child", ParentTime.formatStage("2016-06-15", "2025-06-15"))
     }
 
+    // 20.5
     @Test
     fun `stage 12y 11mo`() {
         assertEquals("Child", ParentTime.formatStage("2013-06-15", "2026-05-15"))
     }
 
+    // 20.6
     @Test
     fun `stage exactly 13y becomes Teenager`() {
         assertEquals("Teenager", ParentTime.formatStage("2012-06-15", "2025-06-15"))
@@ -632,21 +738,25 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- teenager
     // ================================================================
+    // 21.1
     @Test
     fun `stage 13 years`() {
         assertEquals("Teenager", ParentTime.formatStage("2012-06-15", "2025-06-15"))
     }
 
+    // 21.2
     @Test
     fun `stage 15 years`() {
         assertEquals("Teenager", ParentTime.formatStage("2010-06-15", "2025-06-15"))
     }
 
+    // 21.3
     @Test
     fun `stage 17y 11mo`() {
         assertEquals("Teenager", ParentTime.formatStage("2008-06-15", "2026-05-15"))
     }
 
+    // 21.4
     @Test
     fun `stage exactly 18y becomes Adult`() {
         assertEquals("Adult", ParentTime.formatStage("2007-06-15", "2025-06-15"))
@@ -655,16 +765,19 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- adult
     // ================================================================
+    // 22.1
     @Test
     fun `stage 18 years`() {
         assertEquals("Adult", ParentTime.formatStage("2007-06-15", "2025-06-15"))
     }
 
+    // 22.2
     @Test
     fun `stage 25 years`() {
         assertEquals("Adult", ParentTime.formatStage("2000-06-15", "2025-06-15"))
     }
 
+    // 22.3
     @Test
     fun `stage 45 years`() {
         assertEquals("Adult", ParentTime.formatStage("1980-01-01", "2025-06-15"))
@@ -673,6 +786,7 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- default asOf
     // ================================================================
+    // 23.1, 23.2, 23.3
     @Test
     fun `stage default asOf`() {
         timeNow = { LocalDate.of(2025, 6, 15) }
@@ -684,6 +798,7 @@ class FormatAgeTest {
     // ================================================================
     // ParentTime class with English locale
     // ================================================================
+    // 24.1, 24.2, 24.3, 24.4, 24.5, 24.6, 24.7, 24.8, 24.9, 24.10, 24.11, 24.12, 24.13, 24.14, 24.15
     @Test
     fun `ParentTime English all tiers`() {
         val pt = ParentTime(Locales.EN)
@@ -709,6 +824,7 @@ class FormatAgeTest {
     // ================================================================
     // ParentTime with Spanish locale
     // ================================================================
+    // 25.1, 25.2, 25.3, 25.4, 25.5, 25.6, 25.7, 25.8, 25.9, 25.10, 25.11, 25.12, 25.13, 25.14, 25.15, 25.16, 25.17, 25.18, 25.19, 25.20
     @Test
     fun `ParentTime Spanish inline locale`() {
         val es = AgeLocale(
@@ -762,6 +878,7 @@ class FormatAgeTest {
     // ================================================================
     // Compactness: short
     // ================================================================
+    // 26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7, 26.8, 26.9
     @Test
     fun `compact short`() {
         val pt = ParentTime(Locales.EN, Compactness.SHORT)
@@ -780,6 +897,7 @@ class FormatAgeTest {
     // ================================================================
     // Compactness: compact
     // ================================================================
+    // 27.1, 27.2, 27.3, 27.4, 27.5, 27.6, 27.7, 27.8
     @Test
     fun `compact compact`() {
         val pt = ParentTime(Locales.EN, Compactness.COMPACT)
@@ -969,6 +1087,7 @@ class FormatAgeTest {
     // Section 29: Locale-specific edge cases — new plural rules
     // ================================================================
 
+    // 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7, 29.8, 29.9, 29.10, 29.11, 29.12, 29.13, 29.14
     @Test
     fun `Hebrew locale — dual forms`() {
         val pt = ParentTime(Locales.HE)
@@ -988,6 +1107,7 @@ class FormatAgeTest {
         assertEquals("מבוגרת", pt.formatStage("2007-06-15", "2025-06-15", "f"))
     }
 
+    // 29.15, 29.16, 29.17, 29.18, 29.19, 29.20, 29.21
     @Test
     fun `Macedonian locale — mod10 mod100 rule`() {
         val pt = ParentTime(Locales.MK)
@@ -1000,6 +1120,7 @@ class FormatAgeTest {
         assertEquals("7 години", pt.formatAge("2018-06-15", "2025-06-15"))
     }
 
+    // 29.22, 29.23, 29.24, 29.25, 29.26, 29.27
     @Test
     fun `Swahili locale — noun class changes`() {
         val pt = ParentTime(Locales.SW)
@@ -1011,6 +1132,7 @@ class FormatAgeTest {
         assertEquals("miaka 3 na nusu", pt.formatAge("2022-06-15", "2025-12-15"))
     }
 
+    // 29.28, 29.29, 29.30, 29.31, 29.32, 29.33
     @Test
     fun `Indonesian locale — other only`() {
         val pt = ParentTime(Locales.ID)
@@ -1022,6 +1144,7 @@ class FormatAgeTest {
         assertEquals("7 tahun", pt.formatAge("2018-06-15", "2025-06-15"))
     }
 
+    // 29.34, 29.35, 29.36, 29.37, 29.38, 29.39
     @Test
     fun `Amharic locale — Ethiopic delimiter`() {
         val pt = ParentTime(Locales.AM)
@@ -1037,6 +1160,7 @@ class FormatAgeTest {
     // Section 30: Locale lookup by code string
     // ================================================================
 
+    // 30.1
     @Test
     fun `getLocale returns en locale`() {
         val loc = Locales.get("en")
@@ -1044,6 +1168,7 @@ class FormatAgeTest {
         assertEquals("en", loc!!.code)
     }
 
+    // 30.2
     @Test
     fun `getLocale returns fr locale`() {
         val loc = Locales.get("fr")
@@ -1051,16 +1176,19 @@ class FormatAgeTest {
         assertEquals("fr", loc!!.code)
     }
 
+    // 30.3
     @Test
     fun `getLocale returns null for unknown code`() {
         assertNull(Locales.get("xx"))
     }
 
+    // 30.4
     @Test
     fun `getLocale returns null for empty string`() {
         assertNull(Locales.get(""))
     }
 
+    // 30.5
     @Test
     fun `getLocale is case-sensitive`() {
         assertNull(Locales.get("EN"))

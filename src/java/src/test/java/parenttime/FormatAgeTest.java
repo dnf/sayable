@@ -18,22 +18,27 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- null/edge cases
     // ================================================================
+    // 1.3
     @Test void emptyStringReturnsNull() {
         assertNull(ParentTime.formatAgeDefault("", "2025-06-15"));
     }
 
+    // 1.4
     @Test void futureDobReturnsNull() {
         assertNull(ParentTime.formatAgeDefault("2025-07-01", "2025-06-15"));
     }
 
+    // 1.5
     @Test void exactly500YearsIsAllowed() {
         assertEquals("500 years", ParentTime.formatAgeDefault("1525-06-15", "2025-06-15"));
     }
 
+    // 1.6
     @Test void years501ExceedsMaxAge() {
         assertNull(ParentTime.formatAgeDefault("1524-06-15", "2025-06-15"));
     }
 
+    // 1.7
     @Test void years1000ExceedsMaxAge() {
         assertNull(ParentTime.formatAgeDefault("1025-06-15", "2025-06-15"));
     }
@@ -41,22 +46,27 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- days tier (0-6)
     // ================================================================
+    // 2.1
     @Test void bornToday() {
         assertEquals("Newborn", ParentTime.formatAgeDefault("2025-06-15", "2025-06-15"));
     }
 
+    // 2.2
     @Test void oneDayAgo() {
         assertEquals("1 day", ParentTime.formatAgeDefault("2025-06-14", "2025-06-15"));
     }
 
+    // 2.3
     @Test void threeDaysAgo() {
         assertEquals("3 days", ParentTime.formatAgeDefault("2025-06-12", "2025-06-15"));
     }
 
+    // 2.4
     @Test void sixDaysAgo() {
         assertEquals("6 days", ParentTime.formatAgeDefault("2025-06-09", "2025-06-15"));
     }
 
+    // 2.5
     @Test void sevenDaysBecomesOneWeek() {
         assertEquals("1 week", ParentTime.formatAgeDefault("2025-06-08", "2025-06-15"));
     }
@@ -64,50 +74,62 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- weeks+days tier (7 days to less than 3 months)
     // ================================================================
+    // 3.1
     @Test void sevenDaysIsOneWeek() {
         assertEquals("1 week", ParentTime.formatAgeDefault("2025-06-08", "2025-06-15"));
     }
 
+    // 3.2
     @Test void eightDaysIsOneWeekOneDay() {
         assertEquals("1 week, 1 day", ParentTime.formatAgeDefault("2025-06-07", "2025-06-15"));
     }
 
+    // 3.3
     @Test void nineDaysIsOneWeekTwoDays() {
         assertEquals("1 week, 2 days", ParentTime.formatAgeDefault("2025-06-06", "2025-06-15"));
     }
 
+    // 3.4
     @Test void thirteenDaysIsOneWeekSixDays() {
         assertEquals("1 week, 6 days", ParentTime.formatAgeDefault("2025-06-02", "2025-06-15"));
     }
 
+    // 3.5
     @Test void fourteenDaysIsTwoWeeks() {
         assertEquals("2 weeks", ParentTime.formatAgeDefault("2025-06-01", "2025-06-15"));
     }
 
+    // 3.6
     @Test void fifteenDaysIsTwoWeeksOneDay() {
         assertEquals("2 weeks, 1 day", ParentTime.formatAgeDefault("2025-05-31", "2025-06-15"));
     }
 
+    // 3.7
     @Test void twentyDaysIsTwoWeeksSixDays() {
         assertEquals("2 weeks, 6 days", ParentTime.formatAgeDefault("2025-05-26", "2025-06-15"));
     }
 
+    // 3.8
     @Test void twentyOneDaysIsThreeWeeks() {
         assertEquals("3 weeks", ParentTime.formatAgeDefault("2025-05-25", "2025-06-15"));
     }
 
+    // 3.9
     @Test void atOneCalMonthStillWeeksDays() {
         assertEquals("4 weeks, 3 days", ParentTime.formatAgeDefault("2025-05-15", "2025-06-15"));
     }
 
+    // 3.10
     @Test void atTwoCalMonthsStillWeeksDays() {
         assertEquals("8 weeks, 5 days", ParentTime.formatAgeDefault("2025-04-15", "2025-06-15"));
     }
 
+    // 3.11
     @Test void oneDayBefore3moStillWeeks() {
         assertEquals("13 weeks", ParentTime.formatAgeDefault("2025-03-15", "2025-06-14"));
     }
 
+    // 3.12
     @Test void on3moBirthdaySwitches() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-03-15", "2025-06-15"));
     }
@@ -115,26 +137,31 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: standard months
     // ================================================================
+    // 4.1
     @Test void jan1ToApr1Is3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-01-01", "2025-04-01"));
     }
 
+    // 4.2
     @Test void jan1ToMar31StillWeeks() {
         String result = ParentTime.formatAgeDefault("2025-01-01", "2025-03-31");
         assertNotNull(result);
         assertTrue(result.contains("weeks"));
     }
 
+    // 4.3
     @Test void jun15ToSep15Is3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-06-15", "2025-09-15"));
     }
 
+    // 4.4
     @Test void jun15ToSep14StillWeeks() {
         String result = ParentTime.formatAgeDefault("2025-06-15", "2025-09-14");
         assertNotNull(result);
         assertTrue(result.contains("weeks"));
     }
 
+    // 4.5
     @Test void jun15ToDec15Is6mo() {
         assertEquals("6 months", ParentTime.formatAgeDefault("2025-06-15", "2025-12-15"));
     }
@@ -142,24 +169,29 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: February non-leap
     // ================================================================
+    // 5.1
     @Test void jan31ToFeb28NonLeap() {
         assertEquals("4 weeks", ParentTime.formatAgeDefault("2025-01-31", "2025-02-28"));
     }
 
+    // 5.2
     @Test void jan31ToApr30Is3moClamp() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-01-31", "2025-04-30"));
     }
 
+    // 5.3
     @Test void jan31ToApr29StillWeeks() {
         String result = ParentTime.formatAgeDefault("2025-01-31", "2025-04-29");
         assertNotNull(result);
         assertTrue(result.contains("weeks"));
     }
 
+    // 5.4
     @Test void feb1ToMay1Is3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-02-01", "2025-05-01"));
     }
 
+    // 5.5
     @Test void feb1ToApr30StillWeeks() {
         String result = ParentTime.formatAgeDefault("2025-02-01", "2025-04-30");
         assertNotNull(result);
@@ -169,24 +201,29 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: February leap year
     // ================================================================
+    // 6.1
     @Test void jan31ToFeb29Leap() {
         assertEquals("4 weeks, 1 day", ParentTime.formatAgeDefault("2024-01-31", "2024-02-29"));
     }
 
+    // 6.2
     @Test void jan31ToFeb28Leap() {
         assertEquals("4 weeks", ParentTime.formatAgeDefault("2024-01-31", "2024-02-28"));
     }
 
+    // 6.3
     @Test void jan31ToApr30LeapIs3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2024-01-31", "2024-04-30"));
     }
 
+    // 6.4
     @Test void jan30ToFeb29LeapStillWeeks() {
         String result = ParentTime.formatAgeDefault("2024-01-30", "2024-02-29");
         assertNotNull(result);
         assertTrue(result.contains("weeks"));
     }
 
+    // 6.5
     @Test void jan30ToFeb28LeapStillWeeks() {
         String result = ParentTime.formatAgeDefault("2024-01-30", "2024-02-28");
         assertNotNull(result);
@@ -196,20 +233,24 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: 30-day months
     // ================================================================
+    // 7.1
     @Test void mar31ToJun30Is3moClamped() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-03-31", "2025-06-30"));
     }
 
+    // 7.2
     @Test void mar31ToJun29StillWeeks() {
         String result = ParentTime.formatAgeDefault("2025-03-31", "2025-06-29");
         assertNotNull(result);
         assertTrue(result.contains("weeks"));
     }
 
+    // 7.3
     @Test void aug31ToNov30Is3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-08-31", "2025-11-30"));
     }
 
+    // 7.4
     @Test void aug31ToNov29StillWeeks() {
         String result = ParentTime.formatAgeDefault("2025-08-31", "2025-11-29");
         assertNotNull(result);
@@ -219,20 +260,24 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- month boundaries: leap year baby (born Feb 29)
     // ================================================================
+    // 8.1
     @Test void feb29ToMay29Is3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2024-02-29", "2024-05-29"));
     }
 
+    // 8.2
     @Test void feb29ToMay28StillWeeks() {
         String result = ParentTime.formatAgeDefault("2024-02-29", "2024-05-28");
         assertNotNull(result);
         assertTrue(result.contains("weeks"));
     }
 
+    // 8.3
     @Test void feb29_2024ToFeb28_2025Is12mo() {
         assertEquals("12 months", ParentTime.formatAgeDefault("2024-02-29", "2025-02-28"));
     }
 
+    // 8.4
     @Test void feb29_2024ToMar1_2025Is12mo() {
         assertEquals("12 months", ParentTime.formatAgeDefault("2024-02-29", "2025-03-01"));
     }
@@ -240,26 +285,32 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- months tier (3-23)
     // ================================================================
+    // 9.1
     @Test void threeMonthsAtTransition() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-01-15", "2025-04-15"));
     }
 
+    // 9.2
     @Test void sixMonths() {
         assertEquals("6 months", ParentTime.formatAgeDefault("2025-01-15", "2025-07-15"));
     }
 
+    // 9.3
     @Test void twelveMonthsNotOneYear() {
         assertEquals("12 months", ParentTime.formatAgeDefault("2024-06-15", "2025-06-15"));
     }
 
+    // 9.4
     @Test void twentyThreeMonthsAtUpper() {
         assertEquals("23 months", ParentTime.formatAgeDefault("2024-01-15", "2025-12-15"));
     }
 
+    // 9.5
     @Test void oneDayBeforeBoundary() {
         assertEquals("5 months", ParentTime.formatAgeDefault("2025-01-15", "2025-07-14"));
     }
 
+    // 9.6
     @Test void crossingYearBoundary() {
         assertEquals("5 months", ParentTime.formatAgeDefault("2024-11-10", "2025-04-10"));
     }
@@ -267,22 +318,27 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- years+months tier (24-35 months)
     // ================================================================
+    // 10.1
     @Test void twoYearsAt24mo() {
         assertEquals("2 years", ParentTime.formatAgeDefault("2023-06-15", "2025-06-15"));
     }
 
+    // 10.2
     @Test void twoYearsOneMonth() {
         assertEquals("2 years, 1 month", ParentTime.formatAgeDefault("2023-06-15", "2025-07-15"));
     }
 
+    // 10.3
     @Test void twoYearsSixMonths() {
         assertEquals("2 years, 6 months", ParentTime.formatAgeDefault("2023-06-15", "2025-12-15"));
     }
 
+    // 10.4
     @Test void twoYearsElevenMonths() {
         assertEquals("2 years, 11 months", ParentTime.formatAgeDefault("2023-06-15", "2026-05-15"));
     }
 
+    // 10.5
     @Test void oneDayBefore24mo() {
         assertEquals("23 months", ParentTime.formatAgeDefault("2023-06-15", "2025-06-14"));
     }
@@ -290,50 +346,62 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- half-year tier (3-6 years)
     // ================================================================
+    // 11.1
     @Test void threeYearsExactly() {
         assertEquals("3 years", ParentTime.formatAgeDefault("2022-06-15", "2025-06-15"));
     }
 
+    // 11.2
     @Test void threeYearsFiveMonths() {
         assertEquals("3 years", ParentTime.formatAgeDefault("2022-06-15", "2025-11-15"));
     }
 
+    // 11.3
     @Test void threeAndHalfYearsAt3y6m() {
         assertEquals("3\u00BD years", ParentTime.formatAgeDefault("2022-06-15", "2025-12-15"));
     }
 
+    // 11.4
     @Test void threeAndHalfYearsAt3y11m() {
         assertEquals("3\u00BD years", ParentTime.formatAgeDefault("2022-06-15", "2026-05-15"));
     }
 
+    // 11.5
     @Test void fourYearsExactly() {
         assertEquals("4 years", ParentTime.formatAgeDefault("2021-06-15", "2025-06-15"));
     }
 
+    // 11.6
     @Test void fourAndHalfYears() {
         assertEquals("4\u00BD years", ParentTime.formatAgeDefault("2021-06-15", "2025-12-15"));
     }
 
+    // 11.7
     @Test void fiveYears() {
         assertEquals("5 years", ParentTime.formatAgeDefault("2020-06-15", "2025-06-15"));
     }
 
+    // 11.8
     @Test void fiveAndHalfYearsAt5y8m() {
         assertEquals("5\u00BD years", ParentTime.formatAgeDefault("2020-06-15", "2026-02-15"));
     }
 
+    // 11.9
     @Test void sixYears() {
         assertEquals("6 years", ParentTime.formatAgeDefault("2019-06-15", "2025-06-15"));
     }
 
+    // 11.10
     @Test void sixAndHalfYears() {
         assertEquals("6\u00BD years", ParentTime.formatAgeDefault("2019-06-15", "2025-12-15"));
     }
 
+    // 11.11
     @Test void sixAndHalfYearsAt6y11m() {
         assertEquals("6\u00BD years", ParentTime.formatAgeDefault("2019-06-15", "2026-05-15"));
     }
 
+    // 11.12
     @Test void oneDayBefore3rdBday() {
         assertEquals("2 years, 11 months", ParentTime.formatAgeDefault("2022-06-15", "2025-06-14"));
     }
@@ -341,14 +409,17 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- integer tier (7+ years)
     // ================================================================
+    // 12.1
     @Test void sevenYearsExactly() {
         assertEquals("7 years", ParentTime.formatAgeDefault("2018-06-15", "2025-06-15"));
     }
 
+    // 12.2
     @Test void sevenYearsSixMonthsNoHalf() {
         assertEquals("7 years", ParentTime.formatAgeDefault("2018-03-20", "2025-06-15"));
     }
 
+    // 12.3
     @Test void fortyFiveYears() {
         assertEquals("45 years", ParentTime.formatAgeDefault("1980-01-01", "2025-06-15"));
     }
@@ -356,20 +427,24 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- cross-year transitions with Feb
     // ================================================================
+    // 13.1
     @Test void dec31ToMar31Is3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2024-12-31", "2025-03-31"));
     }
 
+    // 13.2
     @Test void dec31ToMar30StillWeeks() {
         String result = ParentTime.formatAgeDefault("2024-12-31", "2025-03-30");
         assertNotNull(result);
         assertTrue(result.contains("weeks"));
     }
 
+    // 13.3
     @Test void nov30ToFeb28Is3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2024-11-30", "2025-02-28"));
     }
 
+    // 13.4
     @Test void nov30ToFeb27StillWeeks() {
         String result = ParentTime.formatAgeDefault("2024-11-30", "2025-02-27");
         assertNotNull(result);
@@ -379,22 +454,27 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- born-on-31st progression
     // ================================================================
+    // 14.1
     @Test void jan31ToApr30Is3mo() {
         assertEquals("3 months", ParentTime.formatAgeDefault("2025-01-31", "2025-04-30"));
     }
 
+    // 14.2
     @Test void jan31ToMay31Is4mo() {
         assertEquals("4 months", ParentTime.formatAgeDefault("2025-01-31", "2025-05-31"));
     }
 
+    // 14.3
     @Test void jan31ToJun30Is5moClamped() {
         assertEquals("5 months", ParentTime.formatAgeDefault("2025-01-31", "2025-06-30"));
     }
 
+    // 14.4
     @Test void jan31ToJul1Is5mo() {
         assertEquals("5 months", ParentTime.formatAgeDefault("2025-01-31", "2025-07-01"));
     }
 
+    // 14.5
     @Test void jan31ToJul31Is6mo() {
         assertEquals("6 months", ParentTime.formatAgeDefault("2025-01-31", "2025-07-31"));
     }
@@ -402,6 +482,7 @@ class FormatAgeTest {
     // ================================================================
     // formatAge -- default asOf (uses current date)
     // ================================================================
+    // 15.1, 15.2
     @Test void defaultAsOfUsesMockedToday() {
         ParentTime.timeNow = () -> LocalDate.of(2025, 6, 15);
         assertEquals("5 years", ParentTime.formatAgeDefault("2020-01-01"));
@@ -411,18 +492,22 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- null/edge cases
     // ================================================================
+    // 16.1, 16.3
     @Test void stageEmptyStringReturnsNull() {
         assertNull(ParentTime.formatStageDefault("", "2025-06-15"));
     }
 
+    // 16.4
     @Test void stageFutureDobReturnsNull() {
         assertNull(ParentTime.formatStageDefault("2025-07-01", "2025-06-15"));
     }
 
+    // 16.5
     @Test void stageExactly500YearsReturnsAdult() {
         assertEquals("Adult", ParentTime.formatStageDefault("1525-06-15", "2025-06-15"));
     }
 
+    // 16.6
     @Test void stage501YearsExceedsMaxAge() {
         assertNull(ParentTime.formatStageDefault("1524-06-15", "2025-06-15"));
     }
@@ -430,26 +515,32 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- newborn
     // ================================================================
+    // 17.1
     @Test void stageBornToday() {
         assertEquals("Newborn", ParentTime.formatStageDefault("2025-06-15", "2025-06-15"));
     }
 
+    // 17.2
     @Test void stageOneDayOld() {
         assertEquals("Newborn", ParentTime.formatStageDefault("2025-06-14", "2025-06-15"));
     }
 
+    // 17.3
     @Test void stageThreeWeeksOld() {
         assertEquals("Newborn", ParentTime.formatStageDefault("2025-05-25", "2025-06-15"));
     }
 
+    // 17.4
     @Test void stageOneMonthOld() {
         assertEquals("Newborn", ParentTime.formatStageDefault("2025-05-15", "2025-06-15"));
     }
 
+    // 17.5
     @Test void stageOneMonth29Days() {
         assertEquals("Newborn", ParentTime.formatStageDefault("2025-04-16", "2025-06-15"));
     }
 
+    // 17.6
     @Test void stageExactly2MonthsBecomesInfant() {
         assertEquals("Infant", ParentTime.formatStageDefault("2025-04-15", "2025-06-15"));
     }
@@ -457,18 +548,22 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- infant
     // ================================================================
+    // 18.1
     @Test void stageTwoMonths() {
         assertEquals("Infant", ParentTime.formatStageDefault("2025-04-15", "2025-06-15"));
     }
 
+    // 18.2
     @Test void stageSixMonths() {
         assertEquals("Infant", ParentTime.formatStageDefault("2024-12-15", "2025-06-15"));
     }
 
+    // 18.3
     @Test void stageElevenMonths() {
         assertEquals("Infant", ParentTime.formatStageDefault("2024-07-15", "2025-06-15"));
     }
 
+    // 18.4
     @Test void stageExactly12moBecomesToddler() {
         assertEquals("Toddler", ParentTime.formatStageDefault("2024-06-15", "2025-06-15"));
     }
@@ -476,22 +571,27 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- toddler
     // ================================================================
+    // 19.1
     @Test void stageTwelveMonths() {
         assertEquals("Toddler", ParentTime.formatStageDefault("2024-06-15", "2025-06-15"));
     }
 
+    // 19.2
     @Test void stageEighteenMonths() {
         assertEquals("Toddler", ParentTime.formatStageDefault("2024-01-15", "2025-07-15"));
     }
 
+    // 19.3
     @Test void stageTwentyFourMonths() {
         assertEquals("Toddler", ParentTime.formatStageDefault("2023-06-15", "2025-06-15"));
     }
 
+    // 19.4
     @Test void stageThirtyFiveMonths() {
         assertEquals("Toddler", ParentTime.formatStageDefault("2023-06-15", "2026-05-15"));
     }
 
+    // 19.5
     @Test void stageExactly36moBecomesChild() {
         assertEquals("Child", ParentTime.formatStageDefault("2022-06-15", "2025-06-15"));
     }
@@ -499,26 +599,32 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- child
     // ================================================================
+    // 20.1
     @Test void stageThreeYears() {
         assertEquals("Child", ParentTime.formatStageDefault("2022-06-15", "2025-06-15"));
     }
 
+    // 20.2
     @Test void stageFourYears() {
         assertEquals("Child", ParentTime.formatStageDefault("2021-06-15", "2025-06-15"));
     }
 
+    // 20.3
     @Test void stageSixYears() {
         assertEquals("Child", ParentTime.formatStageDefault("2019-06-15", "2025-06-15"));
     }
 
+    // 20.4
     @Test void stageNineYears() {
         assertEquals("Child", ParentTime.formatStageDefault("2016-06-15", "2025-06-15"));
     }
 
+    // 20.5
     @Test void stage12y11mo() {
         assertEquals("Child", ParentTime.formatStageDefault("2013-06-15", "2026-05-15"));
     }
 
+    // 20.6
     @Test void stageExactly13yBecomesTeenager() {
         assertEquals("Teenager", ParentTime.formatStageDefault("2012-06-15", "2025-06-15"));
     }
@@ -526,18 +632,22 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- teenager
     // ================================================================
+    // 21.1
     @Test void stageThirteenYears() {
         assertEquals("Teenager", ParentTime.formatStageDefault("2012-06-15", "2025-06-15"));
     }
 
+    // 21.2
     @Test void stageFifteenYears() {
         assertEquals("Teenager", ParentTime.formatStageDefault("2010-06-15", "2025-06-15"));
     }
 
+    // 21.3
     @Test void stage17y11mo() {
         assertEquals("Teenager", ParentTime.formatStageDefault("2008-06-15", "2026-05-15"));
     }
 
+    // 21.4
     @Test void stageExactly18yBecomesAdult() {
         assertEquals("Adult", ParentTime.formatStageDefault("2007-06-15", "2025-06-15"));
     }
@@ -545,14 +655,17 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- adult
     // ================================================================
+    // 22.1
     @Test void stageEighteenYears() {
         assertEquals("Adult", ParentTime.formatStageDefault("2007-06-15", "2025-06-15"));
     }
 
+    // 22.2
     @Test void stageTwentyFiveYears() {
         assertEquals("Adult", ParentTime.formatStageDefault("2000-06-15", "2025-06-15"));
     }
 
+    // 22.3
     @Test void stageFortyFiveYears() {
         assertEquals("Adult", ParentTime.formatStageDefault("1980-01-01", "2025-06-15"));
     }
@@ -560,6 +673,7 @@ class FormatAgeTest {
     // ================================================================
     // formatStage -- default asOf
     // ================================================================
+    // 23.1, 23.2, 23.3
     @Test void stageDefaultAsOf() {
         ParentTime.timeNow = () -> LocalDate.of(2025, 6, 15);
         assertEquals("Newborn", ParentTime.formatStageDefault("2025-06-15"));
@@ -570,6 +684,7 @@ class FormatAgeTest {
     // ================================================================
     // ParentTime class with English locale
     // ================================================================
+    // 24.1, 24.2, 24.3, 24.4, 24.5, 24.6, 24.7, 24.8, 24.9, 24.10, 24.11, 24.12, 24.13, 24.14, 24.15
     @Test void parentTimeEnglishAllTiers() {
         ParentTime pt = new ParentTime(Locales.EN);
         assertEquals("Newborn", pt.formatAge("2025-06-15", "2025-06-15"));
@@ -594,6 +709,7 @@ class FormatAgeTest {
     // ================================================================
     // ParentTime with Spanish locale
     // ================================================================
+    // 25.1, 25.2, 25.3, 25.4, 25.5, 25.6, 25.7, 25.8, 25.9, 25.10, 25.11, 25.12, 25.13, 25.14, 25.15, 25.16, 25.17, 25.18, 25.19, 25.20
     @Test void parentTimeSpanishInlineLocale() {
         AgeLocale es = new AgeLocale(
             "es",
@@ -646,6 +762,7 @@ class FormatAgeTest {
     // ================================================================
     // Compactness: short
     // ================================================================
+    // 26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7, 26.8, 26.9
     @Test void compactShort() {
         ParentTime pt = new ParentTime(Locales.EN, Compactness.SHORT);
 
@@ -663,6 +780,7 @@ class FormatAgeTest {
     // ================================================================
     // Compactness: compact
     // ================================================================
+    // 27.1, 27.2, 27.3, 27.4, 27.5, 27.6, 27.7, 27.8
     @Test void compactCompact() {
         ParentTime pt = new ParentTime(Locales.EN, Compactness.COMPACT);
 
@@ -819,6 +937,7 @@ class FormatAgeTest {
     // ================================================================
     // Locale-specific edge cases — new plural rules
     // ================================================================
+    // 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7, 29.8, 29.9, 29.10, 29.11, 29.12, 29.13, 29.14
     @Test void hebrewLocaleDualForms() {
         ParentTime pt = new ParentTime(Locales.HE);
         assertEquals("\u05E8\u05E7 \u05E0\u05D5\u05DC\u05D3", pt.formatAge("2025-06-15", "2025-06-15"));
@@ -837,6 +956,7 @@ class FormatAgeTest {
         assertEquals("\u05DE\u05D1\u05D5\u05D2\u05E8\u05EA", pt.formatStage("2007-06-15", "2025-06-15", "f"));
     }
 
+    // 29.15, 29.16, 29.17, 29.18, 29.19, 29.20, 29.21
     @Test void macedonianLocaleMod10Mod100Rule() {
         ParentTime pt = new ParentTime(Locales.MK);
         assertEquals("\u041D\u043E\u0432\u043E\u0440\u043E\u0434\u0435\u043D\u0447\u0435", pt.formatAge("2025-06-15", "2025-06-15"));
@@ -848,6 +968,7 @@ class FormatAgeTest {
         assertEquals("7 \u0433\u043E\u0434\u0438\u043D\u0438", pt.formatAge("2018-06-15", "2025-06-15"));
     }
 
+    // 29.22, 29.23, 29.24, 29.25, 29.26, 29.27
     @Test void swahiliLocaleNounClassChanges() {
         ParentTime pt = new ParentTime(Locales.SW);
         assertEquals("Mzaliwa mpya", pt.formatAge("2025-06-15", "2025-06-15"));
@@ -858,6 +979,7 @@ class FormatAgeTest {
         assertEquals("miaka 3 na nusu", pt.formatAge("2022-06-15", "2025-12-15"));
     }
 
+    // 29.28, 29.29, 29.30, 29.31, 29.32, 29.33
     @Test void indonesianLocaleOtherOnly() {
         ParentTime pt = new ParentTime(Locales.ID);
         assertEquals("Baru lahir", pt.formatAge("2025-06-15", "2025-06-15"));
@@ -868,6 +990,7 @@ class FormatAgeTest {
         assertEquals("7 tahun", pt.formatAge("2018-06-15", "2025-06-15"));
     }
 
+    // 29.34, 29.35, 29.36, 29.37, 29.38, 29.39
     @Test void amharicLocaleEthiopicDelimiter() {
         ParentTime pt = new ParentTime(Locales.AM);
         assertEquals("\u12A0\u12F2\u1235 \u12E8\u1270\u12C8\u1208\u12F0", pt.formatAge("2025-06-15", "2025-06-15"));
@@ -881,26 +1004,31 @@ class FormatAgeTest {
     // ================================================================
     // Locale lookup by code string
     // ================================================================
+    // 30.1
     @Test void getLocaleReturnsEnLocale() {
         AgeLocale loc = Locales.get("en");
         assertNotNull(loc);
         assertEquals("en", loc.code());
     }
 
+    // 30.2
     @Test void getLocaleReturnsFrLocale() {
         AgeLocale loc = Locales.get("fr");
         assertNotNull(loc);
         assertEquals("fr", loc.code());
     }
 
+    // 30.3
     @Test void getLocaleReturnsNullForUnknownCode() {
         assertNull(Locales.get("xx"));
     }
 
+    // 30.4
     @Test void getLocaleReturnsNullForEmptyString() {
         assertNull(Locales.get(""));
     }
 
+    // 30.5
     @Test void getLocaleIsCaseSensitive() {
         assertNull(Locales.get("EN"));
     }

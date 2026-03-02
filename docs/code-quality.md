@@ -118,6 +118,14 @@ prioritizes readability of test cases over production code standards — long
 table-driven test arrays, multiple assertions per function, and helper
 functions with fixed parameters are all expected patterns.
 
+### Canonical test IDs
+
+Every test must be annotated with the ID(s) from [`docs/testing.md`](testing.md)
+that it implements. This enables cross-language verification that all
+implementations cover the same spec. See the "Test ID convention" section of
+`docs/testing.md` for the three placement patterns (comment above, trailing
+comment, or inline comment) used across languages.
+
 ## Per-language details
 
 The configurations are documented in detail in separate files, grouped by

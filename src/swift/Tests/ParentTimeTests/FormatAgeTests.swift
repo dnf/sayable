@@ -19,22 +19,27 @@ import Testing
     // ================================================================
     // formatAge -- null/edge cases
     // ================================================================
+    // 1.3
     @Test func emptyStringReturnsNil() {
         #expect(ParentTimeFormatter.formatAgeDefault("", "2025-06-15") == nil)
     }
 
+    // 1.4
     @Test func futureDobReturnsNil() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-07-01", "2025-06-15") == nil)
     }
 
+    // 1.5
     @Test func exactly500YearsIsAllowed() {
         #expect(ParentTimeFormatter.formatAgeDefault("1525-06-15", "2025-06-15") == "500 years")
     }
 
+    // 1.6
     @Test func years501ExceedsMaxAge() {
         #expect(ParentTimeFormatter.formatAgeDefault("1524-06-15", "2025-06-15") == nil)
     }
 
+    // 1.7
     @Test func years1000ExceedsMaxAge() {
         #expect(ParentTimeFormatter.formatAgeDefault("1025-06-15", "2025-06-15") == nil)
     }
@@ -42,22 +47,27 @@ import Testing
     // ================================================================
     // formatAge -- days tier (0-6)
     // ================================================================
+    // 2.1
     @Test func bornToday() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-15", "2025-06-15") == "Newborn")
     }
 
+    // 2.2
     @Test func oneDayAgo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-14", "2025-06-15") == "1 day")
     }
 
+    // 2.3
     @Test func threeDaysAgo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-12", "2025-06-15") == "3 days")
     }
 
+    // 2.4
     @Test func sixDaysAgo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-09", "2025-06-15") == "6 days")
     }
 
+    // 2.5
     @Test func sevenDaysBecomesOneWeek() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-08", "2025-06-15") == "1 week")
     }
@@ -65,50 +75,62 @@ import Testing
     // ================================================================
     // formatAge -- weeks+days tier
     // ================================================================
+    // 3.1
     @Test func sevenDaysIsOneWeek() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-08", "2025-06-15") == "1 week")
     }
 
+    // 3.2
     @Test func eightDaysIsOneWeekOneDay() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-07", "2025-06-15") == "1 week, 1 day")
     }
 
+    // 3.3
     @Test func nineDaysIsOneWeekTwoDays() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-06", "2025-06-15") == "1 week, 2 days")
     }
 
+    // 3.4
     @Test func thirteenDaysIsOneWeekSixDays() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-02", "2025-06-15") == "1 week, 6 days")
     }
 
+    // 3.5
     @Test func fourteenDaysIsTwoWeeks() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-01", "2025-06-15") == "2 weeks")
     }
 
+    // 3.6
     @Test func fifteenDaysIsTwoWeeksOneDay() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-05-31", "2025-06-15") == "2 weeks, 1 day")
     }
 
+    // 3.7
     @Test func twentyDaysIsTwoWeeksSixDays() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-05-26", "2025-06-15") == "2 weeks, 6 days")
     }
 
+    // 3.8
     @Test func twentyOneDaysIsThreeWeeks() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-05-25", "2025-06-15") == "3 weeks")
     }
 
+    // 3.9
     @Test func atOneCalMonthStillWeeksDays() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-05-15", "2025-06-15") == "4 weeks, 3 days")
     }
 
+    // 3.10
     @Test func atTwoCalMonthsStillWeeksDays() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-04-15", "2025-06-15") == "8 weeks, 5 days")
     }
 
+    // 3.11
     @Test func oneDayBefore3moStillWeeks() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-03-15", "2025-06-14") == "13 weeks")
     }
 
+    // 3.12
     @Test func on3moBirthdaySwitches() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-03-15", "2025-06-15") == "3 months")
     }
@@ -116,26 +138,31 @@ import Testing
     // ================================================================
     // formatAge -- month boundaries: standard months
     // ================================================================
+    // 4.1
     @Test func jan1ToApr1Is3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-01", "2025-04-01") == "3 months")
     }
 
+    // 4.2
     @Test func jan1ToMar31StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2025-01-01", "2025-03-31")
         #expect(result != nil)
         #expect(result!.contains("weeks"))
     }
 
+    // 4.3
     @Test func jun15ToSep15Is3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-15", "2025-09-15") == "3 months")
     }
 
+    // 4.4
     @Test func jun15ToSep14StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2025-06-15", "2025-09-14")
         #expect(result != nil)
         #expect(result!.contains("weeks"))
     }
 
+    // 4.5
     @Test func jun15ToDec15Is6mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-06-15", "2025-12-15") == "6 months")
     }
@@ -143,24 +170,29 @@ import Testing
     // ================================================================
     // formatAge -- month boundaries: February non-leap
     // ================================================================
+    // 5.1
     @Test func jan31ToFeb28NonLeap() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-31", "2025-02-28") == "4 weeks")
     }
 
+    // 5.2
     @Test func jan31ToApr30Is3moClamp() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-31", "2025-04-30") == "3 months")
     }
 
+    // 5.3
     @Test func jan31ToApr29StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2025-01-31", "2025-04-29")
         #expect(result != nil)
         #expect(result!.contains("weeks"))
     }
 
+    // 5.4
     @Test func feb1ToMay1Is3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-02-01", "2025-05-01") == "3 months")
     }
 
+    // 5.5
     @Test func feb1ToApr30StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2025-02-01", "2025-04-30")
         #expect(result != nil)
@@ -170,24 +202,29 @@ import Testing
     // ================================================================
     // formatAge -- month boundaries: February leap year
     // ================================================================
+    // 6.1
     @Test func jan31ToFeb29Leap() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-01-31", "2024-02-29") == "4 weeks, 1 day")
     }
 
+    // 6.2
     @Test func jan31ToFeb28Leap() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-01-31", "2024-02-28") == "4 weeks")
     }
 
+    // 6.3
     @Test func jan31ToApr30LeapIs3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-01-31", "2024-04-30") == "3 months")
     }
 
+    // 6.4
     @Test func jan30ToFeb29LeapStillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2024-01-30", "2024-02-29")
         #expect(result != nil)
         #expect(result!.contains("weeks"))
     }
 
+    // 6.5
     @Test func jan30ToFeb28LeapStillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2024-01-30", "2024-02-28")
         #expect(result != nil)
@@ -197,20 +234,24 @@ import Testing
     // ================================================================
     // formatAge -- month boundaries: 30-day months
     // ================================================================
+    // 7.1
     @Test func mar31ToJun30Is3moClamped() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-03-31", "2025-06-30") == "3 months")
     }
 
+    // 7.2
     @Test func mar31ToJun29StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2025-03-31", "2025-06-29")
         #expect(result != nil)
         #expect(result!.contains("weeks"))
     }
 
+    // 7.3
     @Test func aug31ToNov30Is3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-08-31", "2025-11-30") == "3 months")
     }
 
+    // 7.4
     @Test func aug31ToNov29StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2025-08-31", "2025-11-29")
         #expect(result != nil)
@@ -220,20 +261,24 @@ import Testing
     // ================================================================
     // formatAge -- month boundaries: leap year baby (born Feb 29)
     // ================================================================
+    // 8.1
     @Test func feb29ToMay29Is3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-02-29", "2024-05-29") == "3 months")
     }
 
+    // 8.2
     @Test func feb29ToMay28StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2024-02-29", "2024-05-28")
         #expect(result != nil)
         #expect(result!.contains("weeks"))
     }
 
+    // 8.3
     @Test func feb29_2024ToFeb28_2025Is12mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-02-29", "2025-02-28") == "12 months")
     }
 
+    // 8.4
     @Test func feb29_2024ToMar1_2025Is12mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-02-29", "2025-03-01") == "12 months")
     }
@@ -241,26 +286,32 @@ import Testing
     // ================================================================
     // formatAge -- months tier (3-23)
     // ================================================================
+    // 9.1
     @Test func threeMonthsAtTransition() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-15", "2025-04-15") == "3 months")
     }
 
+    // 9.2
     @Test func sixMonths() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-15", "2025-07-15") == "6 months")
     }
 
+    // 9.3
     @Test func twelveMonthsNotOneYear() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-06-15", "2025-06-15") == "12 months")
     }
 
+    // 9.4
     @Test func twentyThreeMonthsAtUpper() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-01-15", "2025-12-15") == "23 months")
     }
 
+    // 9.5
     @Test func oneDayBeforeBoundary() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-15", "2025-07-14") == "5 months")
     }
 
+    // 9.6
     @Test func crossingYearBoundary() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-11-10", "2025-04-10") == "5 months")
     }
@@ -268,22 +319,27 @@ import Testing
     // ================================================================
     // formatAge -- years+months tier (24-35 months)
     // ================================================================
+    // 10.1
     @Test func twoYearsAt24mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2023-06-15", "2025-06-15") == "2 years")
     }
 
+    // 10.2
     @Test func twoYearsOneMonth() {
         #expect(ParentTimeFormatter.formatAgeDefault("2023-06-15", "2025-07-15") == "2 years, 1 month")
     }
 
+    // 10.3
     @Test func twoYearsSixMonths() {
         #expect(ParentTimeFormatter.formatAgeDefault("2023-06-15", "2025-12-15") == "2 years, 6 months")
     }
 
+    // 10.4
     @Test func twoYearsElevenMonths() {
         #expect(ParentTimeFormatter.formatAgeDefault("2023-06-15", "2026-05-15") == "2 years, 11 months")
     }
 
+    // 10.5
     @Test func oneDayBefore24mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2023-06-15", "2025-06-14") == "23 months")
     }
@@ -291,50 +347,62 @@ import Testing
     // ================================================================
     // formatAge -- half-year tier (3-6 years)
     // ================================================================
+    // 11.1
     @Test func threeYearsExactly() {
         #expect(ParentTimeFormatter.formatAgeDefault("2022-06-15", "2025-06-15") == "3 years")
     }
 
+    // 11.2
     @Test func threeYearsFiveMonths() {
         #expect(ParentTimeFormatter.formatAgeDefault("2022-06-15", "2025-11-15") == "3 years")
     }
 
+    // 11.3
     @Test func threeAndHalfYearsAt3y6m() {
         #expect(ParentTimeFormatter.formatAgeDefault("2022-06-15", "2025-12-15") == "3\u{00BD} years")
     }
 
+    // 11.4
     @Test func threeAndHalfYearsAt3y11m() {
         #expect(ParentTimeFormatter.formatAgeDefault("2022-06-15", "2026-05-15") == "3\u{00BD} years")
     }
 
+    // 11.5
     @Test func fourYearsExactly() {
         #expect(ParentTimeFormatter.formatAgeDefault("2021-06-15", "2025-06-15") == "4 years")
     }
 
+    // 11.6
     @Test func fourAndHalfYears() {
         #expect(ParentTimeFormatter.formatAgeDefault("2021-06-15", "2025-12-15") == "4\u{00BD} years")
     }
 
+    // 11.7
     @Test func fiveYears() {
         #expect(ParentTimeFormatter.formatAgeDefault("2020-06-15", "2025-06-15") == "5 years")
     }
 
+    // 11.8
     @Test func fiveAndHalfYearsAt5y8m() {
         #expect(ParentTimeFormatter.formatAgeDefault("2020-06-15", "2026-02-15") == "5\u{00BD} years")
     }
 
+    // 11.9
     @Test func sixYears() {
         #expect(ParentTimeFormatter.formatAgeDefault("2019-06-15", "2025-06-15") == "6 years")
     }
 
+    // 11.10
     @Test func sixAndHalfYears() {
         #expect(ParentTimeFormatter.formatAgeDefault("2019-06-15", "2025-12-15") == "6\u{00BD} years")
     }
 
+    // 11.11
     @Test func sixAndHalfYearsAt6y11m() {
         #expect(ParentTimeFormatter.formatAgeDefault("2019-06-15", "2026-05-15") == "6\u{00BD} years")
     }
 
+    // 11.12
     @Test func oneDayBefore3rdBday() {
         #expect(ParentTimeFormatter.formatAgeDefault("2022-06-15", "2025-06-14") == "2 years, 11 months")
     }
@@ -342,14 +410,17 @@ import Testing
     // ================================================================
     // formatAge -- integer tier (7+ years)
     // ================================================================
+    // 12.1
     @Test func sevenYearsExactly() {
         #expect(ParentTimeFormatter.formatAgeDefault("2018-06-15", "2025-06-15") == "7 years")
     }
 
+    // 12.2
     @Test func sevenYearsSixMonthsNoHalf() {
         #expect(ParentTimeFormatter.formatAgeDefault("2018-03-20", "2025-06-15") == "7 years")
     }
 
+    // 12.3
     @Test func fortyFiveYears() {
         #expect(ParentTimeFormatter.formatAgeDefault("1980-01-01", "2025-06-15") == "45 years")
     }
@@ -357,20 +428,24 @@ import Testing
     // ================================================================
     // formatAge -- cross-year transitions with Feb
     // ================================================================
+    // 13.1
     @Test func dec31ToMar31Is3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-12-31", "2025-03-31") == "3 months")
     }
 
+    // 13.2
     @Test func dec31ToMar30StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2024-12-31", "2025-03-30")
         #expect(result != nil)
         #expect(result!.contains("weeks"))
     }
 
+    // 13.3
     @Test func nov30ToFeb28Is3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2024-11-30", "2025-02-28") == "3 months")
     }
 
+    // 13.4
     @Test func nov30ToFeb27StillWeeks() {
         let result = ParentTimeFormatter.formatAgeDefault("2024-11-30", "2025-02-27")
         #expect(result != nil)
@@ -380,22 +455,27 @@ import Testing
     // ================================================================
     // formatAge -- born-on-31st progression
     // ================================================================
+    // 14.1
     @Test func jan31ToApr30Is3mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-31", "2025-04-30") == "3 months")
     }
 
+    // 14.2
     @Test func jan31ToMay31Is4mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-31", "2025-05-31") == "4 months")
     }
 
+    // 14.3
     @Test func jan31ToJun30Is5moClamped() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-31", "2025-06-30") == "5 months")
     }
 
+    // 14.4
     @Test func jan31ToJul1Is5mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-31", "2025-07-01") == "5 months")
     }
 
+    // 14.5
     @Test func jan31ToJul31Is6mo() {
         #expect(ParentTimeFormatter.formatAgeDefault("2025-01-31", "2025-07-31") == "6 months")
     }
@@ -403,10 +483,11 @@ import Testing
     // ================================================================
     // formatAge -- default asOf (uses current date)
     // ================================================================
+    // 15.1, 15.2
     @Test func defaultAsOfUsesMockedToday() {
         ParentTimeFormatter._timeNow = { (2025, 6, 15) }
-        #expect(ParentTimeFormatter.formatAgeDefault("2020-01-01") == "5 years")
-        #expect(ParentTimeFormatter.formatAgeDefault("2025-06-10") == "5 days")
+        #expect(ParentTimeFormatter.formatAgeDefault("2020-01-01") == "5 years") // 15.1
+        #expect(ParentTimeFormatter.formatAgeDefault("2025-06-10") == "5 days") // 15.2
     }
 
     // ================================================================
