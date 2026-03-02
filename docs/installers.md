@@ -21,21 +21,21 @@ Misspelled names get a "did you mean?" prompt (e.g. `just install elixer` sugges
 
 Some languages share a toolchain. Uninstalling one affects the others.
 
-| Toolchain | Languages      | Effect of uninstalling any one                                    |
-| --------- | -------------- | ----------------------------------------------------------------- |
-| cmake     | C, C++         | Both lose build capability until reinstalled                      |
-| JDK 17    | Java, Kt, Scala | Protected: `just uninstall java` is a no-op (prints a message)   |
-| Node.js   | TypeScript, Elm | Elm depends on npm; Elm installer auto-installs Node if missing  |
-| Erlang/OTP | Erlang, Elixir | Elixir depends on Erlang runtime; uninstall Erlang breaks Elixir |
+| Toolchain  | Languages       | Effect of uninstalling any one                                   |
+| ---------- | --------------- | ---------------------------------------------------------------- |
+| cmake      | C, C++          | Both lose build capability until reinstalled                     |
+| JDK 17     | Java, Kt, Scala | Protected: `just uninstall java` is a no-op (prints a message)   |
+| Node.js    | TypeScript, Elm | Elm depends on npm; Elm installer auto-installs Node if missing  |
+| Erlang/OTP | Erlang, Elixir  | Elixir depends on Erlang runtime; uninstall Erlang breaks Elixir |
 
 ## Architecture limitations
 
 Some languages lack pre-built binaries on certain architectures. The installer system detects this and skips unavailable languages with a clear message.
 
-| Language | x86_64 Linux | arm64 Linux | macOS (any) | Notes                                       |
-| -------- | ------------ | ----------- | ----------- | ------------------------------------------- |
-| Elm      | Yes          | No          | Yes         | No arm64 Linux binary (elm/compiler#2292)   |
-| All others | Yes        | Yes         | Yes         |                                             |
+| Language   | x86_64 Linux | arm64 Linux | macOS (any) | Notes                                     |
+| ---------- | ------------ | ----------- | ----------- | ----------------------------------------- |
+| Elm        | Yes          | No          | Yes         | No arm64 Linux binary (elm/compiler#2292) |
+| All others | Yes          | Yes         | Yes         |                                           |
 
 `just get-started` shows unavailable languages with `–` instead of `✓`/`✗` in the status table.
 
@@ -54,21 +54,21 @@ Most languages install via Homebrew. Exceptions:
 
 Languages install via a mix of apt packages and direct downloads:
 
-| Method           | Languages                                               |
-| ---------------- | ------------------------------------------------------- |
+| Method           | Languages                                                   |
+| ---------------- | ----------------------------------------------------------- |
 | apt packages     | C/C++ (cmake), C# (dotnet), Elixir, Erlang, Perl, PHP, Ruby |
-| Direct download  | Go, Swift, Zig                                          |
-| Installer script | Clojure, Haskell (ghcup), Rust (rustup), Python (uv)   |
-| npm global       | Elm, TypeScript (Node via NodeSource apt)               |
-| Shared           | Java/Kotlin/Scala (OpenJDK 17 via apt)                  |
+| Direct download  | Go, Swift, Zig                                              |
+| Installer script | Clojure, Haskell (ghcup), Rust (rustup), Python (uv)        |
+| npm global       | Elm, TypeScript (Node via NodeSource apt)                   |
+| Shared           | Java/Kotlin/Scala (OpenJDK 17 via apt)                      |
 
 ### Uninstall caveats
 
-| Language      | Caveat                                                                     |
-| ------------- | -------------------------------------------------------------------------- |
-| Java/Kt/Scala | No-op — JDK is shared; prints message instead of removing                 |
-| Perl          | No-op on macOS (system Perl); removed on Linux                            |
-| Swift (Linux) | No-op — Swift installs many files in /usr/local; manual cleanup needed    |
+| Language      | Caveat                                                                 |
+| ------------- | ---------------------------------------------------------------------- |
+| Java/Kt/Scala | No-op — JDK is shared; prints message instead of removing              |
+| Perl          | No-op on macOS (system Perl); removed on Linux                         |
+| Swift (Linux) | No-op — Swift installs many files in /usr/local; manual cleanup needed |
 
 ## Installer script structure
 
