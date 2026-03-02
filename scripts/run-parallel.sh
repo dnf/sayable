@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Runs just recipes in parallel with live progress display.
-# Usage: run-parallel.sh <name> "test typescript" "test python" "check" ...
+# Usage: run-parallel.sh [-j N] [-s full|zoom] <name> "cmd" ...
+# -j N limits concurrent jobs to N slots (0 or omitted = unlimited).
+# -s MODE sets visualization: scroll (default), full, or zoom.
 # <name> is used for the log directory: .logs/<name>/
 # Each subsequent argument is passed to `just` as a complete command.
 # The label shown in output is the last word of each argument.
@@ -8,7 +10,23 @@
 # original position without launching a job.
 set -uo pipefail
 
-if [ $# -lt 2 ]; then echo "Usage: $0 <name> 'cmd args'..." >&2; exit 1; fi
+max_jobs=0
+_viz_mode=scroll  # scroll (default), full, or zoom
+_tick_ds=2        # base: 0.2s per column (for scroll/zoom modes)
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -j) max_jobs="${2:-0}"; shift 2 ;;
+        -s) case "${2:-}" in
+                full)    _viz_mode=full ;;
+                scroll)  _viz_mode=scroll ;;
+                zoom)    _viz_mode=zoom ;;
+                *) echo "error: -s accepts full, scroll, or zoom (got '${2:-}')" >&2; exit 1 ;;
+            esac; shift 2 ;;
+        *) break ;;
+    esac
+done
+
+if [ $# -lt 2 ]; then echo "Usage: $0 [-j N] [-s full|zoom] <name> 'cmd args'..." >&2; exit 1; fi
 
 name="$1"; shift
 logdir=".logs/$name"
@@ -59,8 +77,8 @@ term_w=80
 if [ -t 1 ] && command -v tput &>/dev/null; then
     term_w=$(tput cols 2>/dev/null || echo 80)
 fi
-# Layout: "  X <label> <dur>s <bar>"  →  2 + 1 + 1 + label_w + 1 + 4 + 1 = label_w + 10
-prefix_w=$((label_w + 10))
+# Layout: "  X label dur_str bar" → 2+1+1 + label_w + 1 + 6 + 1 = label_w + 12
+prefix_w=$((label_w + 12))
 max_bar=$((term_w - prefix_w))
 (( max_bar < 10 )) && max_bar=10
 
@@ -80,16 +98,112 @@ if [ "$run_n" -eq 0 ]; then
     exit 0
 fi
 
-blocks="████████████████████████████████████████████████████████████████"
+# Pre-built block string (wide enough for any terminal)
+blocks=""
+for (( _i=0; _i<512; _i++ )); do blocks+="█"; done
 
 bar() {
     local len=$1
     (( len > max_bar )) && len=$max_bar
+    (( len < 1 )) && len=1
     printf "%s" "${blocks:0:$len}"
 }
 
+# Decisecond timer (0.1s precision via perl Time::HiRes)
+_now_ds() { perl -MTime::HiRes=time -e 'printf "%d\n", time*10'; }
+
+# Format deciseconds as "X.Ys"
+_fmt_ds() { echo "$((${1} / 10)).$((${1} % 10))s"; }
+
+# --- Swim lane color palette (256-color, 20 distinct) ---
+_palette=(196 46 33 208 129 214 39 161 82 166 63 203 48 99 215 35 197 118 57 172)
+_npal=${#_palette[@]}
+
+# Render swim lane chart (supports full/scroll/zoom modes).
+# Every line ends with \033[K for live-refresh compatibility.
+# Expects: max_jobs, max_bar, _viz_mode, _total_ds, _eff_tick_ds,
+#          _display_offset_ds, _max_ds, _lane_ci[], _slot_labels[],
+#          _palette[], prefix_w, label_w, term_w
+_render_lanes() {
+    printf "\033[K\n"
+
+    # Header rule line
+    local _ri
+    for (( _ri=0; _ri<term_w; _ri++ )); do printf "─"; done
+    printf "\033[K\n"
+
+    # Time axis
+    printf "%*s" "$prefix_w" ""
+    local _prev_end=0 _t _label_interval _tick_col
+    if [ "$_viz_mode" = "full" ]; then
+        local _total_sec=$((_total_ds / 10 + 1))
+        if [ "$_total_sec" -lt 10 ]; then _label_interval=1
+        elif [ "$_total_sec" -lt 60 ]; then _label_interval=5
+        else _label_interval=30; fi
+        for (( _t=0; _t<=_total_sec; _t+=_label_interval )); do
+            _tick_col=$((_t * 10 * max_bar / _total_ds))
+            if [ "$_tick_col" -ge "$_prev_end" ] && [ "$_tick_col" -lt "$max_bar" ]; then
+                local _pad=$((_tick_col - _prev_end))
+                (( _pad > 0 )) && printf "%*s" "$_pad" ""
+                printf "%d" "$_t"
+                _prev_end=$((_tick_col + ${#_t}))
+            fi
+        done
+    else
+        if [ "$_eff_tick_ds" -le 2 ]; then _label_interval=1
+        elif [ "$_eff_tick_ds" -le 10 ]; then _label_interval=5
+        elif [ "$_eff_tick_ds" -le 50 ]; then _label_interval=30
+        else _label_interval=60; fi
+        local _first_sec=$(( (_display_offset_ds + 9) / 10 ))
+        _first_sec=$(( (_first_sec + _label_interval - 1) / _label_interval * _label_interval ))
+        local _last_ds=$((_display_offset_ds + max_bar * _eff_tick_ds))
+        local _last_sec=$((_last_ds / 10))
+        for (( _t=_first_sec; _t<=_last_sec; _t+=_label_interval )); do
+            _tick_col=$(( (_t * 10 - _display_offset_ds) / _eff_tick_ds ))
+            if [ "$_tick_col" -ge "$_prev_end" ] && [ "$_tick_col" -lt "$max_bar" ]; then
+                local _pad=$((_tick_col - _prev_end))
+                (( _pad > 0 )) && printf "%*s" "$_pad" ""
+                printf "%d" "$_t"
+                _prev_end=$((_tick_col + ${#_t}))
+            fi
+        done
+    fi
+    if [ "$_prev_end" -lt "$max_bar" ]; then
+        printf "%*s" "$((max_bar - _prev_end))" ""
+    fi
+    printf "\033[K\n"
+
+    # Lane rows (label in prefix area)
+    local _s _lt _ds
+    for (( _s=0; _s<max_jobs; _s++ )); do
+        if [ -n "${_slot_labels[$_s]}" ]; then
+            printf "  %-*s" "$((prefix_w - 2))" "${_slot_labels[$_s]}"
+        else
+            printf "%*s" "$prefix_w" ""
+        fi
+        for (( _lt=0; _lt<max_bar; _lt++ )); do
+            if [ "$_viz_mode" = "full" ]; then
+                _ds=$((_lt * _total_ds / max_bar))
+            else
+                _ds=$((_display_offset_ds + _lt * _eff_tick_ds))
+            fi
+            if (( _ds >= _max_ds )); then
+                printf " "
+            else
+                local ci="${_lane_ci[$((_s * _max_ds + _ds))]:--1}"
+                if [ "$ci" -ge 0 ]; then
+                    printf "\033[48;5;%dm \033[0m" "${_palette[$((ci % _npal))]}"
+                else
+                    printf " "
+                fi
+            fi
+        done
+        printf "\033[K\n"
+    done
+}
+
 cleanup() {
-    printf "\033[?25h" 2>/dev/null
+    [ -t 1 ] && printf "\033[?25h" 2>/dev/null
     kill $(jobs -p) 2>/dev/null
     wait 2>/dev/null
     for i in "${!all_labels[@]}"; do
@@ -100,120 +214,577 @@ cleanup() {
 trap cleanup EXIT
 trap 'exit 130' INT
 
-# Start jobs for runnable entries only
+# ===================================================================
+# Job scheduling + progress display
+# ===================================================================
 global_start=$SECONDS
+global_start_ds=$(_now_ds)
 pids=()
-for i in "${!all_labels[@]}"; do
-    [ "${all_skip[$i]}" -eq 1 ] && continue
-    label="${all_labels[$i]}"
-    (
-        rc=0
-        s=$SECONDS
-        just ${all_cmds[$i]} > "$logdir/$label.log" 2>&1 || rc=$?
-        echo "$((SECONDS - s)) $rc" > "$logdir/$label.result"
-    ) &
-    pids+=($!)
-done
 
-# --- Progress display ---
-if [ -t 1 ]; then
-    spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
-    frame=0
-    done_flags=()
-    done_durs=()
-    done_rcs=()
+if [ "$max_jobs" -gt 0 ]; then
+    # --- Slot-based scheduling ---
+
+    # Build queue of runnable job indices (alphabetical order initially)
+    _run_queue=()
     for i in "${!all_labels[@]}"; do
-        echo
-        done_flags[$i]=""
-        done_durs[$i]=0
-        done_rcs[$i]=0
+        [ "${all_skip[$i]}" -eq 0 ] && _run_queue+=("$i")
     done
 
-    printf "\033[?25l"  # hide cursor
+    # Color index per label: position in the queue (alphabetical, stable across sorts)
+    _label_ci=()
+    for _q in "${!_run_queue[@]}"; do
+        _label_ci[${_run_queue[$_q]}]=$((_q % _npal))
+    done
 
-    while true; do
-        printf "\033[${total}A"  # move up N lines
-
-        done_count=0
+    # --- History-based duration prediction ---
+    _predicted_dur=()
+    for i in "${!all_labels[@]}"; do _predicted_dur[$i]=0; done
+    _histfile="$logdir/history.log"
+    if [ -f "$_histfile" ]; then
+        _hist_lines=()
+        while IFS= read -r _hl; do
+            _hist_lines+=("$_hl")
+        done < <(tail -5 "$_histfile")
         for i in "${!all_labels[@]}"; do
+            [ "${all_skip[$i]}" -eq 1 ] && continue
             label="${all_labels[$i]}"
-
-            if [ "${all_skip[$i]}" -eq 1 ]; then
-                printf "  \033[2m- %-${label_w}s    - not installed\033[0m\033[K\n" "$label"
-                continue
-            fi
-
-            if [ -z "${done_flags[$i]}" ] && [ -f "$logdir/$label.result" ]; then
-                read -r done_durs[$i] done_rcs[$i] < "$logdir/$label.result"
-                done_flags[$i]=1
-            fi
-
-            if [ -n "${done_flags[$i]}" ]; then
-                done_count=$((done_count + 1))
-                dur="${done_durs[$i]}"
-                if [ "${done_rcs[$i]}" -eq 0 ]; then
-                    printf "  \033[32m✓\033[0m %-${label_w}s %3ds \033[32m%s\033[0m\033[K\n" "$label" "$dur" "$(bar "$dur")"
-                else
-                    printf "  \033[31m✗\033[0m %-${label_w}s %3ds \033[31m%s\033[0m\033[K\n" "$label" "$dur" "$(bar "$dur")"
-                fi
-            else
-                c="${spin:frame%${#spin}:1}"
-                elapsed=$((SECONDS - global_start))
-                printf "  \033[33m%s\033[0m %-${label_w}s %3ds \033[33m%s\033[0m\033[K\n" "$c" "$label" "$elapsed" "$(bar "$elapsed")"
+            _durs=()
+            for _hl in "${_hist_lines[@]}"; do
+                for _pair in $_hl; do
+                    if [[ "$_pair" == "${label}="* ]]; then
+                        _durs+=("${_pair#*=}")
+                    fi
+                done
+            done
+            if [ ${#_durs[@]} -gt 0 ]; then
+                IFS=$'\n' _sorted_d=($(sort -n <<<"${_durs[*]}")); unset IFS
+                _predicted_dur[$i]=${_sorted_d[$(( ${#_sorted_d[@]} / 2 ))]}
             fi
         done
+    fi
 
-        [ "$done_count" -eq "$run_n" ] && break
-        frame=$((frame + 1))
-        sleep 0.08
+    # Sort _run_queue by predicted duration (descending — longest first)
+    for (( _i=1; _i<${#_run_queue[@]}; _i++ )); do
+        _key=${_run_queue[$_i]}
+        _kval=${_predicted_dur[$_key]}
+        _j=$((_i - 1))
+        while [ "$_j" -ge 0 ] && [ "${_predicted_dur[${_run_queue[$_j]}]}" -lt "$_kval" ]; do
+            _run_queue[$((_j + 1))]=${_run_queue[$_j]}
+            _j=$((_j - 1))
+        done
+        _run_queue[$((_j + 1))]=$_key
     done
 
-    printf "\033[?25h"  # restore cursor
-else
-    # Non-interactive (CI, piped): wait then print
-    for pid in "${pids[@]}"; do wait "$pid" || true; done
-
+    # Classify jobs: short (at or below median prediction) vs long
+    _all_preds=()
+    for _qi in "${_run_queue[@]}"; do
+        _all_preds+=("${_predicted_dur[$_qi]}")
+    done
+    IFS=$'\n' _sorted_preds=($(sort -n <<<"${_all_preds[*]}")); unset IFS
+    _short_threshold=${_sorted_preds[$(( ${#_sorted_preds[@]} / 2 ))]}
+    _job_short=()
     for i in "${!all_labels[@]}"; do
-        label="${all_labels[$i]}"
-        if [ "${all_skip[$i]}" -eq 1 ]; then
-            printf "  - %-${label_w}s    - not installed\n" "$label"
+        if [ "${_predicted_dur[$i]}" -le "$_short_threshold" ]; then
+            _job_short[$i]=1
         else
-            read -r dur rc < "$logdir/$label.result"
-            if [ "$rc" -eq 0 ]; then
-                printf "  ✓ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
-            else
-                printf "  ✗ %-${label_w}s %3ds %s\n" "$label" "$dur" "$(bar "$dur")"
-            fi
+            _job_short[$i]=0
         fi
     done
+
+    # Reserve one slot for short jobs (limit long to max_jobs-1, min 1)
+    _long_limit=$((max_jobs - 1))
+    (( _long_limit < 1 )) && _long_limit=$max_jobs
+
+    # Slot tracking
+    _slot_pids=()
+    _slot_labels=()
+    _slot_ci=()       # color index per slot (-1 = empty)
+    _slot_job=()      # job index per slot (-1 = empty)
+    for (( _s=0; _s<max_jobs; _s++ )); do
+        _slot_pids[$_s]=0
+        _slot_labels[$_s]=""
+        _slot_ci[$_s]=-1
+        _slot_job[$_s]=-1
+    done
+
+    # Job tracking
+    _job_started=()
+    _job_start_ds=()
+    for i in "${!all_labels[@]}"; do
+        _job_started[$i]=0
+        _job_start_ds[$i]=0
+    done
+
+    # Timeline data: flat array [slot * _max_ds + decisecond] → color index
+    _max_ds=6000  # 10 minutes at decisecond resolution
+    _lane_ci=()
+
+    # Adjust prefix width for color block in bar chart
+    # "  X ██ label dur_str bar" → 2+1+1+2+1 + label_w + 1 + 6 + 1 = label_w + 15
+    prefix_w=$((label_w + 15))
+    max_bar=$((term_w - prefix_w))
+    (( max_bar < 10 )) && max_bar=10
+
+    _last_rec_ds=-1
+
+    if [ -t 1 ]; then
+        # --- Interactive slot-based loop with live swim lanes ---
+        spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+        frame=0
+        done_flags=()
+        done_durs=()
+        done_rcs=()
+
+        # Swim lane height: blank + header + axis + lane rows
+        _swim_height=$((3 + max_jobs))
+        _display_height=$((total + _swim_height))
+
+        for (( _i=0; _i<_display_height; _i++ )); do echo; done
+        for i in "${!all_labels[@]}"; do
+            done_flags[$i]=""
+            done_durs[$i]=0
+            done_rcs[$i]=0
+        done
+
+        printf "\033[?25l"  # hide cursor
+
+        while true; do
+            # Check for finished slots
+            for (( _s=0; _s<max_jobs; _s++ )); do
+                if [ "${_slot_pids[$_s]}" -ne 0 ] && ! kill -0 "${_slot_pids[$_s]}" 2>/dev/null; then
+                    wait "${_slot_pids[$_s]}" 2>/dev/null || true
+                    _slot_pids[$_s]=0
+                    _slot_labels[$_s]=""
+                    _slot_ci[$_s]=-1
+                    _slot_job[$_s]=-1
+                fi
+            done
+
+            # Launch new jobs into empty slots
+            for (( _s=0; _s<max_jobs; _s++ )); do
+                [ "${_slot_pids[$_s]}" -ne 0 ] && continue
+
+                # Count running long jobs
+                _count_long=0
+                for (( _cs=0; _cs<max_jobs; _cs++ )); do
+                    if [ "${_slot_pids[$_cs]}" -ne 0 ] && [ "${_slot_job[$_cs]}" -ge 0 ] && [ "${_job_short[${_slot_job[$_cs]}]}" -eq 0 ]; then
+                        _count_long=$((_count_long + 1))
+                    fi
+                done
+
+                # Find next launchable job (skip long jobs if reservation full)
+                _found_qi=-1
+                for _fq in "${_run_queue[@]}"; do
+                    [ "${_job_started[$_fq]}" -eq 1 ] && continue
+                    if [ "${_job_short[$_fq]}" -eq 0 ] && [ "$_count_long" -ge "$_long_limit" ]; then
+                        continue
+                    fi
+                    _found_qi=$_fq
+                    break
+                done
+                [ "$_found_qi" -lt 0 ] && continue
+
+                qi=$_found_qi
+                _job_started[$qi]=1
+                label="${all_labels[$qi]}"
+                (
+                    rc=0; _st=$(_now_ds)
+                    just ${all_cmds[$qi]} > "$logdir/$label.log" 2>&1 || rc=$?
+                    _et=$(_now_ds)
+                    echo "$((_et - _st)) $rc" > "$logdir/$label.result"
+                ) &
+                _slot_pids[$_s]=$!
+                _slot_labels[$_s]="$label"
+                _slot_ci[$_s]=${_label_ci[$qi]}
+                _slot_job[$_s]=$qi
+                _job_start_ds[$qi]=$(_now_ds)
+                pids+=($!)
+            done
+
+            # Record timeline (decisecond resolution)
+            _frame_ds=$(_now_ds)
+            _cur_ds=$((_frame_ds - global_start_ds))
+            if [ "$_cur_ds" -gt "$_last_rec_ds" ] && [ "$_cur_ds" -lt "$_max_ds" ]; then
+                for (( _rd=_last_rec_ds+1; _rd<=_cur_ds && _rd<_max_ds; _rd++ )); do
+                    for (( _s=0; _s<max_jobs; _s++ )); do
+                        if [ "${_slot_ci[$_s]}" -ge 0 ]; then
+                            _lane_ci[$((_s * _max_ds + _rd))]=${_slot_ci[$_s]}
+                        fi
+                    done
+                done
+                _last_rec_ds=$_cur_ds
+            fi
+
+            # Check for results
+            done_count=0
+            for i in "${!all_labels[@]}"; do
+                [ "${all_skip[$i]}" -eq 1 ] && continue
+                label="${all_labels[$i]}"
+                if [ -z "${done_flags[$i]}" ] && [ -f "$logdir/$label.result" ]; then
+                    read -r done_durs[$i] done_rcs[$i] < "$logdir/$label.result"
+                    done_flags[$i]=1
+                fi
+                [ -n "${done_flags[$i]}" ] && done_count=$((done_count + 1))
+            done
+
+            # Dynamic terminal width (check every 10 frames)
+            if (( frame % 10 == 0 )) && command -v tput &>/dev/null; then
+                term_w=$(tput cols 2>/dev/null || echo "$term_w")
+                max_bar=$((term_w - prefix_w))
+                (( max_bar < 10 )) && max_bar=10
+            fi
+
+            # Display parameters (per-frame, based on visualization mode)
+            _display_offset_ds=0
+            case "$_viz_mode" in
+                full)
+                    _total_ds=$((_cur_ds + 1))
+                    (( _total_ds < 1 )) && _total_ds=1
+                    ;;
+                scroll)
+                    _eff_tick_ds=$_tick_ds
+                    if [ $((_cur_ds / _eff_tick_ds)) -ge "$max_bar" ]; then
+                        _display_offset_ds=$(( (_cur_ds / _eff_tick_ds - max_bar + 1) * _eff_tick_ds ))
+                    fi
+                    ;;
+                zoom)
+                    _eff_tick_ds=$_tick_ds
+                    while [ $((_cur_ds / _eff_tick_ds)) -ge "$max_bar" ]; do
+                        _eff_tick_ds=$((_eff_tick_ds * 2))
+                    done
+                    ;;
+            esac
+
+            # Render: bar chart + swim lanes (full redraw)
+            printf "\033[${_display_height}A"
+            for i in "${!all_labels[@]}"; do
+                label="${all_labels[$i]}"
+                if [ "${all_skip[$i]}" -eq 1 ]; then
+                    printf "  \033[2m-    %-${label_w}s      - not installed\033[0m\033[K\n" "$label"
+                    continue
+                fi
+                ci=${_label_ci[$i]}
+                if [ -n "${done_flags[$i]}" ]; then
+                    dur_ds="${done_durs[$i]}"
+                    dur_str=$(_fmt_ds "$dur_ds")
+                    if [ "${done_rcs[$i]}" -eq 0 ]; then
+                        printf "  \033[32m✓\033[0m \033[48;5;%dm  \033[0m %-${label_w}s %6s " "${_palette[$ci]}" "$label" "$dur_str"
+                    else
+                        printf "  \033[31m✗\033[0m \033[48;5;%dm  \033[0m %-${label_w}s %6s " "${_palette[$ci]}" "$label" "$dur_str"
+                    fi
+                    _ws_ds=$((_job_start_ds[$i] - global_start_ds))
+                    _we_ds=$((_ws_ds + dur_ds))
+                    if [ "$_viz_mode" = "full" ]; then
+                        _col_s=$((_ws_ds * max_bar / _total_ds))
+                        _col_e=$((_we_ds * max_bar / _total_ds))
+                    else
+                        if [ "$_we_ds" -le "$_display_offset_ds" ]; then
+                            printf "%*s" "$max_bar" ""
+                            printf "\033[K\n"
+                            continue
+                        fi
+                        _col_s=$(((_ws_ds - _display_offset_ds) / _eff_tick_ds))
+                        _col_e=$(((_we_ds - _display_offset_ds + _eff_tick_ds - 1) / _eff_tick_ds))
+                    fi
+                    (( _col_s < 0 )) && _col_s=0
+                    (( _col_e > max_bar )) && _col_e=$max_bar
+                    (( _col_e <= _col_s )) && _col_e=$((_col_s + 1))
+                    (( _col_e > max_bar )) && _col_e=$max_bar
+                    (( _col_s > 0 )) && printf "%*s" "$_col_s" ""
+                    _blen=$((_col_e - _col_s))
+                    printf "\033[38;5;%dm%s\033[0m" "${_palette[$ci]}" "${blocks:0:$_blen}"
+                    _rem=$((max_bar - _col_e))
+                    (( _rem > 0 )) && printf "%*s" "$_rem" ""
+                    printf "\033[K\n"
+                elif [ "${_job_start_ds[$i]}" -gt 0 ]; then
+                    # Running
+                    c="${spin:frame%${#spin}:1}"
+                    elapsed_ds=$((_frame_ds - _job_start_ds[$i]))
+                    dur_str=$(_fmt_ds "$elapsed_ds")
+                    printf "  \033[33m%s\033[0m \033[48;5;%dm  \033[0m %-${label_w}s %6s " "$c" "${_palette[$ci]}" "$label" "$dur_str"
+                    _ws_ds=$((_job_start_ds[$i] - global_start_ds))
+                    if [ "$_viz_mode" = "full" ]; then
+                        _col_s=$((_ws_ds * max_bar / _total_ds))
+                        _col_e=$((_cur_ds * max_bar / _total_ds + 1))
+                    else
+                        _col_s=$(((_ws_ds - _display_offset_ds) / _eff_tick_ds))
+                        _col_e=$(((_cur_ds - _display_offset_ds) / _eff_tick_ds + 1))
+                    fi
+                    (( _col_s < 0 )) && _col_s=0
+                    (( _col_e > max_bar )) && _col_e=$max_bar
+                    (( _col_e <= _col_s )) && _col_e=$((_col_s + 1))
+                    (( _col_e > max_bar )) && _col_e=$max_bar
+                    (( _col_s > 0 )) && printf "%*s" "$_col_s" ""
+                    _blen=$((_col_e - _col_s))
+                    printf "\033[38;5;%dm%s\033[0m" "${_palette[$ci]}" "${blocks:0:$_blen}"
+                    _rem=$((max_bar - _col_e))
+                    (( _rem > 0 )) && printf "%*s" "$_rem" ""
+                    printf "\033[K\n"
+                else
+                    # Queued (not yet launched)
+                    printf "  \033[2m◌\033[0m \033[48;5;%dm  \033[0m %-${label_w}s       " "${_palette[$ci]}" "$label"
+                    printf "%*s" "$max_bar" ""
+                    printf "\033[K\n"
+                fi
+            done
+            _render_lanes
+
+            [ "$done_count" -eq "$run_n" ] && break
+            frame=$((frame + 1))
+            sleep 0.1
+        done
+
+        printf "\033[?25h"  # restore cursor
+    else
+        # --- Non-interactive slot-based loop (CI / piped) ---
+        while true; do
+            # Check for finished slots
+            for (( _s=0; _s<max_jobs; _s++ )); do
+                if [ "${_slot_pids[$_s]}" -ne 0 ] && ! kill -0 "${_slot_pids[$_s]}" 2>/dev/null; then
+                    wait "${_slot_pids[$_s]}" 2>/dev/null || true
+                    _slot_pids[$_s]=0
+                    _slot_labels[$_s]=""
+                    _slot_job[$_s]=-1
+                fi
+            done
+
+            # Launch new jobs into empty slots
+            for (( _s=0; _s<max_jobs; _s++ )); do
+                [ "${_slot_pids[$_s]}" -ne 0 ] && continue
+
+                _count_long=0
+                for (( _cs=0; _cs<max_jobs; _cs++ )); do
+                    if [ "${_slot_pids[$_cs]}" -ne 0 ] && [ "${_slot_job[$_cs]}" -ge 0 ] && [ "${_job_short[${_slot_job[$_cs]}]}" -eq 0 ]; then
+                        _count_long=$((_count_long + 1))
+                    fi
+                done
+
+                _found_qi=-1
+                for _fq in "${_run_queue[@]}"; do
+                    [ "${_job_started[$_fq]}" -eq 1 ] && continue
+                    if [ "${_job_short[$_fq]}" -eq 0 ] && [ "$_count_long" -ge "$_long_limit" ]; then
+                        continue
+                    fi
+                    _found_qi=$_fq
+                    break
+                done
+                [ "$_found_qi" -lt 0 ] && continue
+
+                qi=$_found_qi
+                _job_started[$qi]=1
+                label="${all_labels[$qi]}"
+                (
+                    rc=0; _st=$(_now_ds)
+                    just ${all_cmds[$qi]} > "$logdir/$label.log" 2>&1 || rc=$?
+                    _et=$(_now_ds)
+                    echo "$((_et - _st)) $rc" > "$logdir/$label.result"
+                ) &
+                _slot_pids[$_s]=$!
+                _slot_labels[$_s]="$label"
+                _slot_job[$_s]=$qi
+                pids+=($!)
+            done
+
+            done_count=0
+            for i in "${!all_labels[@]}"; do
+                [ "${all_skip[$i]}" -eq 1 ] && continue
+                [ -f "$logdir/${all_labels[$i]}.result" ] && done_count=$((done_count + 1))
+            done
+            [ "$done_count" -eq "$run_n" ] && break
+            sleep 0.2
+        done
+
+        # Print results (scaled bars: longest job fills max_bar)
+        _max_dur_ds=1
+        for i in "${!all_labels[@]}"; do
+            [ "${all_skip[$i]}" -eq 1 ] && continue
+            read -r dur_ds _rc < "$logdir/${all_labels[$i]}.result"
+            (( dur_ds > _max_dur_ds )) && _max_dur_ds=$dur_ds
+        done
+        for i in "${!all_labels[@]}"; do
+            label="${all_labels[$i]}"
+            if [ "${all_skip[$i]}" -eq 1 ]; then
+                printf "  - %-${label_w}s      - not installed\n" "$label"
+            else
+                read -r dur_ds rc < "$logdir/$label.result"
+                dur_str=$(_fmt_ds "$dur_ds")
+                bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
+                (( bar_len < 1 )) && bar_len=1
+                if [ "$rc" -eq 0 ]; then
+                    printf "  ✓ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                else
+                    printf "  ✗ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                fi
+            fi
+        done
+    fi
+else
+    # --- Unlimited parallelism (existing behavior) ---
+
+    # Start jobs for runnable entries only
+    for i in "${!all_labels[@]}"; do
+        [ "${all_skip[$i]}" -eq 1 ] && continue
+        label="${all_labels[$i]}"
+        (
+            rc=0
+            _st=$(_now_ds)
+            just ${all_cmds[$i]} > "$logdir/$label.log" 2>&1 || rc=$?
+            _et=$(_now_ds)
+            echo "$((_et - _st)) $rc" > "$logdir/$label.result"
+        ) &
+        pids+=($!)
+    done
+
+    # --- Progress display ---
+    if [ -t 1 ]; then
+        spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+        frame=0
+        done_flags=()
+        done_durs=()
+        done_rcs=()
+        for i in "${!all_labels[@]}"; do
+            echo
+            done_flags[$i]=""
+            done_durs[$i]=0
+            done_rcs[$i]=0
+        done
+
+        printf "\033[?25l"  # hide cursor
+
+        while true; do
+            printf "\033[${total}A"  # move up N lines
+
+            _frame_ds=$(_now_ds)
+            # Find max duration for scaling (completed jobs or current elapsed)
+            _max_dur_ds=1
+            elapsed_ds=$((_frame_ds - global_start_ds))
+            for i in "${!all_labels[@]}"; do
+                [ "${all_skip[$i]}" -eq 1 ] && continue
+                if [ -n "${done_flags[$i]}" ]; then
+                    (( done_durs[$i] > _max_dur_ds )) && _max_dur_ds=${done_durs[$i]}
+                else
+                    (( elapsed_ds > _max_dur_ds )) && _max_dur_ds=$elapsed_ds
+                fi
+            done
+
+            done_count=0
+            for i in "${!all_labels[@]}"; do
+                label="${all_labels[$i]}"
+
+                if [ "${all_skip[$i]}" -eq 1 ]; then
+                    printf "  \033[2m- %-${label_w}s      - not installed\033[0m\033[K\n" "$label"
+                    continue
+                fi
+
+                if [ -z "${done_flags[$i]}" ] && [ -f "$logdir/$label.result" ]; then
+                    read -r done_durs[$i] done_rcs[$i] < "$logdir/$label.result"
+                    done_flags[$i]=1
+                fi
+
+                if [ -n "${done_flags[$i]}" ]; then
+                    done_count=$((done_count + 1))
+                    dur_ds="${done_durs[$i]}"
+                    dur_str=$(_fmt_ds "$dur_ds")
+                    bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
+                    (( bar_len < 1 )) && bar_len=1
+                    if [ "${done_rcs[$i]}" -eq 0 ]; then
+                        printf "  \033[32m✓\033[0m %-${label_w}s %6s \033[32m%s\033[0m\033[K\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                    else
+                        printf "  \033[31m✗\033[0m %-${label_w}s %6s \033[31m%s\033[0m\033[K\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                    fi
+                else
+                    elapsed_ds=$((_frame_ds - global_start_ds))
+                    dur_str=$(_fmt_ds "$elapsed_ds")
+                    bar_len=$(( elapsed_ds * max_bar / _max_dur_ds ))
+                    (( bar_len < 1 )) && bar_len=1
+                    c="${spin:frame%${#spin}:1}"
+                    printf "  \033[33m%s\033[0m %-${label_w}s %6s \033[33m%s\033[0m\033[K\n" "$c" "$label" "$dur_str" "$(bar "$bar_len")"
+                fi
+            done
+
+            [ "$done_count" -eq "$run_n" ] && break
+            frame=$((frame + 1))
+            sleep 0.1
+        done
+
+        printf "\033[?25h"  # restore cursor
+    else
+        # Non-interactive (CI, piped): wait then print
+        for pid in "${pids[@]}"; do wait "$pid" || true; done
+
+        # Find max duration for scaling
+        _max_dur_ds=1
+        for i in "${!all_labels[@]}"; do
+            [ "${all_skip[$i]}" -eq 1 ] && continue
+            read -r dur_ds _rc < "$logdir/${all_labels[$i]}.result"
+            (( dur_ds > _max_dur_ds )) && _max_dur_ds=$dur_ds
+        done
+
+        for i in "${!all_labels[@]}"; do
+            label="${all_labels[$i]}"
+            if [ "${all_skip[$i]}" -eq 1 ]; then
+                printf "  - %-${label_w}s      - not installed\n" "$label"
+            else
+                read -r dur_ds rc < "$logdir/$label.result"
+                dur_str=$(_fmt_ds "$dur_ds")
+                bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
+                (( bar_len < 1 )) && bar_len=1
+                if [ "$rc" -eq 0 ]; then
+                    printf "  ✓ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                else
+                    printf "  ✗ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                fi
+            fi
+        done
+    fi
 fi
 
 # --- Summary ---
 failed=0
-wall=0
+wall_ds=0
 for i in "${!all_labels[@]}"; do
     [ "${all_skip[$i]}" -eq 1 ] && continue
     label="${all_labels[$i]}"
-    read -r dur rc < "$logdir/$label.result"
-    (( dur > wall )) && wall=$dur
+    read -r dur_ds rc < "$logdir/$label.result"
+    (( dur_ds > wall_ds )) && wall_ds=$dur_ds
     [ "$rc" -ne 0 ] && failed=$((failed + 1))
 done
 
 passed=$(( run_n - failed ))
+# When using slot-based scheduling, wall time is total elapsed (not max individual)
+if [ "$max_jobs" -gt 0 ]; then
+    wall_ds=$(($(_now_ds) - global_start_ds))
+fi
+wall_str=$(_fmt_ds "$wall_ds")
 skip_msg=""
 if [ "$skip_n" -gt 0 ]; then
     skip_msg=", $skip_n not installed"
 fi
 echo ""
-echo "$passed/$run_n passed${skip_msg} (${wall}s wall time)"
+echo "$passed/$run_n passed${skip_msg} ($wall_str wall time)"
 echo "Logs: $logdir/"
+
+# --- Write run history (for duration prediction) ---
+_hist_line=""
+for i in "${!all_labels[@]}"; do
+    [ "${all_skip[$i]}" -eq 1 ] && continue
+    label="${all_labels[$i]}"
+    read -r dur_ds _rc < "$logdir/$label.result"
+    _hist_line="${_hist_line}${_hist_line:+ }${label}=${dur_ds}"
+done
+echo "$_hist_line" >> "$logdir/history.log"
+# Keep last 50 runs
+if [ -f "$logdir/history.log" ]; then
+    tail -50 "$logdir/history.log" > "$logdir/history.log.tmp" && \
+        mv "$logdir/history.log.tmp" "$logdir/history.log"
+fi
 
 if [ "$failed" -gt 0 ]; then
     echo ""
     for i in "${!all_labels[@]}"; do
         [ "${all_skip[$i]}" -eq 1 ] && continue
         label="${all_labels[$i]}"
-        read -r dur rc < "$logdir/$label.result"
+        read -r dur_ds rc < "$logdir/$label.result"
         if [ "$rc" -ne 0 ]; then
             echo "=== $label ==="
             cat "$logdir/$label.log"
