@@ -53,6 +53,7 @@ elm/elm-stuff/
 
 # Erlang
 erlang/_build/
+erlang/rebar.lock
 
 # C
 c/build/
