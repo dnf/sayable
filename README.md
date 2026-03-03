@@ -38,6 +38,31 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 
 All implementations produce identical output for the same inputs. See each language's README for installation, usage, and API details.
 
+## CLI
+
+A command-line tool for quick lookups, built on the C library:
+
+```bash
+just cli                                    # build cli/build/parent-time
+```
+
+```bash
+parent-time age 2020-06-15                  # "5½ years"
+parent-time age 2020-06-15 -l fr            # "5 ans et demi"
+parent-time age 2020-06-15 --compact        # "5½y"
+parent-time age 2020-06-15 -d 2021-01-01    # "6 months"
+parent-time stage 2024-01-10 -l es -g f     # "Niña pequeña"
+parent-time locales                         # list all 71 locale codes
+```
+
+| Flag              | Short | Default | Description                   |
+| ----------------- | ----- | ------- | ----------------------------- |
+| `--locale <code>` | `-l`  | `en`    | Locale code (e.g. `fr`, `ja`) |
+| `--as-of <date>`  | `-d`  | today   | Reference date (YYYY-MM-DD)   |
+| `--short`         |       |         | Short format                  |
+| `--compact`       |       |         | Compact format                |
+| `--gender <m\|f>` | `-g`  |         | Gender for stage labels       |
+
 ## Functions
 
 ### `formatAge` / `format_age` / `FormatAge`
