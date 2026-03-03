@@ -91,22 +91,30 @@ if ! mkdir "$lockdir" 2>/dev/null; then
     fi
 fi
 
-# Build unified ordered list — each entry is either runnable or skipped
+# Build unified ordered list — each entry is runnable, skipped, or a separator
 all_labels=()
-all_cmds=()   # empty string for skipped entries
-all_skip=()   # 1 = skipped, 0 = runnable
+all_cmds=()   # empty string for skipped/separator entries
+all_skip=()   # 1 = skipped/separator, 0 = runnable
+all_sep=()    # 1 = separator (blank line), 0 = normal entry
 run_n=0
 skip_n=0
 for arg in "$@"; do
-    if [[ "$arg" == skip:* ]]; then
+    if [[ "$arg" == "---" ]]; then
+        all_labels+=("---")
+        all_cmds+=("")
+        all_skip+=(1)
+        all_sep+=(1)
+    elif [[ "$arg" == skip:* ]]; then
         all_labels+=("${arg#skip:}")
         all_cmds+=("")
         all_skip+=(1)
+        all_sep+=(0)
         skip_n=$((skip_n + 1))
     else
         all_labels+=("${arg##* }")
         all_cmds+=("$arg")
         all_skip+=(0)
+        all_sep+=(0)
         run_n=$((run_n + 1))
     fi
 done
@@ -114,15 +122,26 @@ total=${#all_labels[@]}
 
 # Compute label column width (min 6)
 label_w=6
-for label in "${all_labels[@]}"; do
-    (( ${#label} > label_w )) && label_w=${#label}
+for i in "${!all_labels[@]}"; do
+    [ "${all_sep[$i]}" -eq 1 ] && continue
+    (( ${#all_labels[$i]} > label_w )) && label_w=${#all_labels[$i]}
 done
 
-# Terminal width (default 80) — cap bar so lines never wrap
-term_w=80
-if [ -t 1 ] && command -v tput &>/dev/null; then
-    term_w=$(tput cols 2>/dev/null || echo 80)
-fi
+# Detect terminal width via multiple methods (tput alone often returns 80)
+_term_width() {
+    local w=0
+    if [ -t 0 ]; then
+        w=$(stty size 2>/dev/null | awk '{print $2}')
+        [ "${w:-0}" -gt 0 ] 2>/dev/null && echo "$w" && return
+    fi
+    if command -v tput &>/dev/null; then
+        w=$(tput cols 2>/dev/null)
+        [ "${w:-0}" -gt 0 ] 2>/dev/null && echo "$w" && return
+    fi
+    [ "${COLUMNS:-0}" -gt 0 ] 2>/dev/null && echo "$COLUMNS" && return
+    echo 80
+}
+term_w=$(_term_width)
 # Layout: "  X label dur_str bar" → 2+1+1 + label_w + 1 + 6 + 1 = label_w + 12
 prefix_w=$((label_w + 12))
 max_bar=$((term_w - prefix_w))
@@ -130,7 +149,9 @@ max_bar=$((term_w - prefix_w))
 
 # If all entries are skipped, print skip lines and exit early
 if [ "$run_n" -eq 0 ]; then
-    for label in "${all_labels[@]}"; do
+    for i in "${!all_labels[@]}"; do
+        if [ "${all_sep[$i]}" -eq 1 ]; then echo; continue; fi
+        label="${all_labels[$i]}"
         if [ -t 1 ]; then
             printf "  \033[2m- %-${label_w}s    - not installed\033[0m\n" "$label"
         else
@@ -161,6 +182,75 @@ _now_ds() { perl -MTime::HiRes=time -e 'printf "%d\n", time*10'; }
 # Format deciseconds as "X.Ys"
 _fmt_ds() { echo "$((${1} / 10)).$((${1} % 10))s"; }
 
+# Print a duration-scaled time axis above bar charts.
+# $1 = max duration in deciseconds, $2 = 1 if interactive (adds \033[K)
+_print_duration_axis() {
+    local _max_ds=$1 _is_tty=${2:-0}
+    (( _max_ds < 1 )) && _max_ds=1
+    printf "%*s" "$prefix_w" ""
+    local _max_sec=$(( (_max_ds + 9) / 10 ))
+    local _interval _prev_end=0 _t _tick_col _pad
+    if [ "$_max_sec" -le 5 ]; then _interval=1
+    elif [ "$_max_sec" -le 20 ]; then _interval=5
+    elif [ "$_max_sec" -le 60 ]; then _interval=10
+    else _interval=30; fi
+    for (( _t=0; _t<=_max_sec; _t+=_interval )); do
+        _tick_col=$(( _t * 10 * max_bar / _max_ds ))
+        if [ "$_tick_col" -ge "$_prev_end" ] && [ "$((_tick_col + ${#_t}))" -le "$max_bar" ]; then
+            _pad=$((_tick_col - _prev_end))
+            (( _pad > 0 )) && printf "%*s" "$_pad" ""
+            printf "%d" "$_t"
+            _prev_end=$((_tick_col + ${#_t}))
+        fi
+    done
+    [ "$_is_tty" -eq 1 ] && printf "\033[K"
+    echo
+}
+
+# Print a timeline axis for slot-based visualization.
+# Reads globals: _viz_mode, _total_ds, _eff_tick_ds, _display_offset_ds, max_bar, prefix_w
+_print_time_axis() {
+    printf "%*s" "$prefix_w" ""
+    local _prev_end=0 _t _label_interval _tick_col _pad
+    if [ "$_viz_mode" = "full" ]; then
+        local _total_sec=$((_total_ds / 10 + 1))
+        if [ "$_total_sec" -lt 10 ]; then _label_interval=1
+        elif [ "$_total_sec" -lt 60 ]; then _label_interval=5
+        else _label_interval=30; fi
+        for (( _t=0; _t<=_total_sec; _t+=_label_interval )); do
+            _tick_col=$((_t * 10 * max_bar / _total_ds))
+            if [ "$_tick_col" -ge "$_prev_end" ] && [ "$((_tick_col + ${#_t}))" -le "$max_bar" ]; then
+                _pad=$((_tick_col - _prev_end))
+                (( _pad > 0 )) && printf "%*s" "$_pad" ""
+                printf "%d" "$_t"
+                _prev_end=$((_tick_col + ${#_t}))
+            fi
+        done
+    else
+        if [ "$_eff_tick_ds" -le 2 ]; then _label_interval=1
+        elif [ "$_eff_tick_ds" -le 10 ]; then _label_interval=5
+        elif [ "$_eff_tick_ds" -le 50 ]; then _label_interval=30
+        else _label_interval=60; fi
+        local _first_sec=$(( (_display_offset_ds + 9) / 10 ))
+        _first_sec=$(( (_first_sec + _label_interval - 1) / _label_interval * _label_interval ))
+        local _last_ds=$((_display_offset_ds + max_bar * _eff_tick_ds))
+        local _last_sec=$((_last_ds / 10))
+        for (( _t=_first_sec; _t<=_last_sec; _t+=_label_interval )); do
+            _tick_col=$(( (_t * 10 - _display_offset_ds) / _eff_tick_ds ))
+            if [ "$_tick_col" -ge "$_prev_end" ] && [ "$((_tick_col + ${#_t}))" -le "$max_bar" ]; then
+                _pad=$((_tick_col - _prev_end))
+                (( _pad > 0 )) && printf "%*s" "$_pad" ""
+                printf "%d" "$_t"
+                _prev_end=$((_tick_col + ${#_t}))
+            fi
+        done
+    fi
+    if [ "$_prev_end" -lt "$max_bar" ]; then
+        printf "%*s" "$((max_bar - _prev_end))" ""
+    fi
+    printf "\033[K\n"
+}
+
 # --- Swim lane color palette (256-color, 20 distinct) ---
 _palette=(196 46 33 208 129 214 39 161 82 166 63 203 48 99 215 35 197 118 57 172)
 _npal=${#_palette[@]}
@@ -179,51 +269,14 @@ _render_lanes() {
     printf "\033[K\n"
 
     # Time axis
-    printf "%*s" "$prefix_w" ""
-    local _prev_end=0 _t _label_interval _tick_col
-    if [ "$_viz_mode" = "full" ]; then
-        local _total_sec=$((_total_ds / 10 + 1))
-        if [ "$_total_sec" -lt 10 ]; then _label_interval=1
-        elif [ "$_total_sec" -lt 60 ]; then _label_interval=5
-        else _label_interval=30; fi
-        for (( _t=0; _t<=_total_sec; _t+=_label_interval )); do
-            _tick_col=$((_t * 10 * max_bar / _total_ds))
-            if [ "$_tick_col" -ge "$_prev_end" ] && [ "$_tick_col" -lt "$max_bar" ]; then
-                local _pad=$((_tick_col - _prev_end))
-                (( _pad > 0 )) && printf "%*s" "$_pad" ""
-                printf "%d" "$_t"
-                _prev_end=$((_tick_col + ${#_t}))
-            fi
-        done
-    else
-        if [ "$_eff_tick_ds" -le 2 ]; then _label_interval=1
-        elif [ "$_eff_tick_ds" -le 10 ]; then _label_interval=5
-        elif [ "$_eff_tick_ds" -le 50 ]; then _label_interval=30
-        else _label_interval=60; fi
-        local _first_sec=$(( (_display_offset_ds + 9) / 10 ))
-        _first_sec=$(( (_first_sec + _label_interval - 1) / _label_interval * _label_interval ))
-        local _last_ds=$((_display_offset_ds + max_bar * _eff_tick_ds))
-        local _last_sec=$((_last_ds / 10))
-        for (( _t=_first_sec; _t<=_last_sec; _t+=_label_interval )); do
-            _tick_col=$(( (_t * 10 - _display_offset_ds) / _eff_tick_ds ))
-            if [ "$_tick_col" -ge "$_prev_end" ] && [ "$_tick_col" -lt "$max_bar" ]; then
-                local _pad=$((_tick_col - _prev_end))
-                (( _pad > 0 )) && printf "%*s" "$_pad" ""
-                printf "%d" "$_t"
-                _prev_end=$((_tick_col + ${#_t}))
-            fi
-        done
-    fi
-    if [ "$_prev_end" -lt "$max_bar" ]; then
-        printf "%*s" "$((max_bar - _prev_end))" ""
-    fi
+    _print_time_axis
     printf "\033[K\n"
 
-    # Lane rows (label in prefix area)
+    # Lane rows (label + color block aligned with bar chart labels)
     local _s _lt _ds
     for (( _s=0; _s<max_jobs; _s++ )); do
-        if [ -n "${_slot_labels[$_s]}" ]; then
-            printf "  %-*s" "$((prefix_w - 2))" "${_slot_labels[$_s]}"
+        if [ -n "${_slot_labels[$_s]}" ] && [ "${_slot_ci[$_s]}" -ge 0 ]; then
+            printf "    \033[48;5;%dm  \033[0m %-${label_w}s        " "${_palette[${_slot_ci[$_s]}]}" "${_slot_labels[$_s]}"
         else
             printf "%*s" "$prefix_w" ""
         fi
@@ -240,7 +293,7 @@ _render_lanes() {
                 if [ "$ci" -ge 0 ]; then
                     printf "\033[48;5;%dm \033[0m" "${_palette[$((ci % _npal))]}"
                 else
-                    printf " "
+                    printf "\033[48;5;236m \033[0m"
                 fi
             fi
         done
@@ -383,8 +436,8 @@ if [ "$max_jobs" -gt 0 ]; then
         done_rcs=()
 
         # Swim lane height: blank + header + axis + lane rows
-        _swim_height=$((3 + max_jobs))
-        _display_height=$((total + _swim_height))
+        _swim_height=$((4 + max_jobs))
+        _display_height=$((total + _swim_height + 2))
 
         for (( _i=0; _i<_display_height; _i++ )); do echo; done
         for i in "${!all_labels[@]}"; do
@@ -478,11 +531,14 @@ if [ "$max_jobs" -gt 0 ]; then
                 [ -n "${done_flags[$i]}" ] && done_count=$((done_count + 1))
             done
 
-            # Dynamic terminal width (check every 10 frames)
-            if (( frame % 10 == 0 )) && command -v tput &>/dev/null; then
-                term_w=$(tput cols 2>/dev/null || echo "$term_w")
-                max_bar=$((term_w - prefix_w))
-                (( max_bar < 10 )) && max_bar=10
+            # Dynamic terminal width
+            _old_tw=$term_w
+            term_w=$(_term_width)
+            max_bar=$((term_w - prefix_w))
+            (( max_bar < 10 )) && max_bar=10
+            if (( term_w < _old_tw )); then
+                printf "\033[2J\033[H"  # clear screen, cursor to top-left
+                for (( _i=0; _i<_display_height; _i++ )); do echo; done
             fi
 
             # Display parameters (per-frame, based on visualization mode)
@@ -508,8 +564,13 @@ if [ "$max_jobs" -gt 0 ]; then
 
             # Render: bar chart + swim lanes (full redraw)
             printf "\033[${_display_height}A"
+            _print_time_axis
+            printf "\033[K\n"
             for i in "${!all_labels[@]}"; do
                 label="${all_labels[$i]}"
+                if [ "${all_sep[$i]}" -eq 1 ]; then
+                    printf "\033[K\n"; continue
+                fi
                 if [ "${all_skip[$i]}" -eq 1 ]; then
                     printf "  \033[2m-    %-${label_w}s      - not installed\033[0m\033[K\n" "$label"
                     continue
@@ -519,9 +580,9 @@ if [ "$max_jobs" -gt 0 ]; then
                     dur_ds="${done_durs[$i]}"
                     dur_str=$(_fmt_ds "$dur_ds")
                     if [ "${done_rcs[$i]}" -eq 0 ]; then
-                        printf "  \033[32m✓\033[0m \033[48;5;%dm  \033[0m %-${label_w}s %6s " "${_palette[$ci]}" "$label" "$dur_str"
+                        printf "  \033[32m✓\033[0m \033[48;5;%dm  \033[0m \033[32m%-${label_w}s %6s\033[0m " "${_palette[$ci]}" "$label" "$dur_str"
                     else
-                        printf "  \033[31m✗\033[0m \033[48;5;%dm  \033[0m %-${label_w}s %6s " "${_palette[$ci]}" "$label" "$dur_str"
+                        printf "  \033[31m✗\033[0m \033[48;5;%dm  \033[0m \033[31m%-${label_w}s %6s\033[0m " "${_palette[$ci]}" "$label" "$dur_str"
                     fi
                     _ws_ds=$((_job_start_ds[$i] - global_start_ds))
                     _we_ds=$((_ws_ds + dur_ds))
@@ -552,7 +613,7 @@ if [ "$max_jobs" -gt 0 ]; then
                     c="${spin:frame%${#spin}:1}"
                     elapsed_ds=$((_frame_ds - _job_start_ds[$i]))
                     dur_str=$(_fmt_ds "$elapsed_ds")
-                    printf "  \033[33m%s\033[0m \033[48;5;%dm  \033[0m %-${label_w}s %6s " "$c" "${_palette[$ci]}" "$label" "$dur_str"
+                    printf "  \033[93m%s\033[0m \033[48;5;%dm  \033[0m \033[93m%-${label_w}s %6s\033[0m " "$c" "${_palette[$ci]}" "$label" "$dur_str"
                     _ws_ds=$((_job_start_ds[$i] - global_start_ds))
                     if [ "$_viz_mode" = "full" ]; then
                         _col_s=$((_ws_ds * max_bar / _total_ds))
@@ -573,7 +634,7 @@ if [ "$max_jobs" -gt 0 ]; then
                     printf "\033[K\n"
                 else
                     # Queued (not yet launched)
-                    printf "  \033[2m◌\033[0m \033[48;5;%dm  \033[0m %-${label_w}s       " "${_palette[$ci]}" "$label"
+                    printf "  \033[2m◌\033[0m \033[48;5;%dm  \033[0m \033[2m%-${label_w}s\033[0m       " "${_palette[$ci]}" "$label"
                     printf "%*s" "$max_bar" ""
                     printf "\033[K\n"
                 fi
@@ -647,6 +708,11 @@ if [ "$max_jobs" -gt 0 ]; then
             sleep 0.2
         done
 
+        # Re-check width before printing (terminal may have been resized)
+        term_w=$(_term_width)
+        max_bar=$((term_w - prefix_w))
+        (( max_bar < 10 )) && max_bar=10
+
         # Print results (scaled bars: longest job fills max_bar)
         _max_dur_ds=1
         for i in "${!all_labels[@]}"; do
@@ -654,8 +720,12 @@ if [ "$max_jobs" -gt 0 ]; then
             read -r dur_ds _rc < "$logdir/${all_labels[$i]}.result"
             (( dur_ds > _max_dur_ds )) && _max_dur_ds=$dur_ds
         done
+        _print_duration_axis "$_max_dur_ds"
         for i in "${!all_labels[@]}"; do
             label="${all_labels[$i]}"
+            if [ "${all_sep[$i]}" -eq 1 ]; then
+                echo; continue
+            fi
             if [ "${all_skip[$i]}" -eq 1 ]; then
                 printf "  - %-${label_w}s      - not installed\n" "$label"
             else
@@ -695,6 +765,7 @@ else
         done_flags=()
         done_durs=()
         done_rcs=()
+        echo  # axis line placeholder
         for i in "${!all_labels[@]}"; do
             echo
             done_flags[$i]=""
@@ -705,7 +776,17 @@ else
         printf "\033[?25l"  # hide cursor
 
         while true; do
-            printf "\033[${total}A"  # move up N lines
+            # Dynamic terminal width
+            _old_tw=$term_w
+            term_w=$(_term_width)
+            max_bar=$((term_w - prefix_w))
+            (( max_bar < 10 )) && max_bar=10
+            if (( term_w < _old_tw )); then
+                printf "\033[2J\033[H"  # clear screen, cursor to top-left
+                for (( _i=0; _i<total+1; _i++ )); do echo; done
+            fi
+
+            printf "\033[%dA" "$((total + 1))"  # move up N+1 lines (axis + entries)
 
             _frame_ds=$(_now_ds)
             # Find max duration for scaling (completed jobs or current elapsed)
@@ -720,10 +801,14 @@ else
                 fi
             done
 
+            _print_duration_axis "$_max_dur_ds" 1
             done_count=0
             for i in "${!all_labels[@]}"; do
                 label="${all_labels[$i]}"
 
+                if [ "${all_sep[$i]}" -eq 1 ]; then
+                    printf "\033[K\n"; continue
+                fi
                 if [ "${all_skip[$i]}" -eq 1 ]; then
                     printf "  \033[2m- %-${label_w}s      - not installed\033[0m\033[K\n" "$label"
                     continue
@@ -741,9 +826,9 @@ else
                     bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
                     (( bar_len < 1 )) && bar_len=1
                     if [ "${done_rcs[$i]}" -eq 0 ]; then
-                        printf "  \033[32m✓\033[0m %-${label_w}s %6s \033[32m%s\033[0m\033[K\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                        printf "  \033[32m✓ %-${label_w}s %6s %s\033[0m\033[K\n" "$label" "$dur_str" "$(bar "$bar_len")"
                     else
-                        printf "  \033[31m✗\033[0m %-${label_w}s %6s \033[31m%s\033[0m\033[K\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                        printf "  \033[31m✗ %-${label_w}s %6s %s\033[0m\033[K\n" "$label" "$dur_str" "$(bar "$bar_len")"
                     fi
                 else
                     elapsed_ds=$((_frame_ds - global_start_ds))
@@ -751,7 +836,7 @@ else
                     bar_len=$(( elapsed_ds * max_bar / _max_dur_ds ))
                     (( bar_len < 1 )) && bar_len=1
                     c="${spin:frame%${#spin}:1}"
-                    printf "  \033[33m%s\033[0m %-${label_w}s %6s \033[33m%s\033[0m\033[K\n" "$c" "$label" "$dur_str" "$(bar "$bar_len")"
+                    printf "  \033[93m%s %-${label_w}s %6s %s\033[0m\033[K\n" "$c" "$label" "$dur_str" "$(bar "$bar_len")"
                 fi
             done
 
@@ -765,6 +850,11 @@ else
         # Non-interactive (CI, piped): wait then print
         for pid in "${pids[@]}"; do wait "$pid" || true; done
 
+        # Re-check width before printing (terminal may have been resized)
+        term_w=$(_term_width)
+        max_bar=$((term_w - prefix_w))
+        (( max_bar < 10 )) && max_bar=10
+
         # Find max duration for scaling
         _max_dur_ds=1
         for i in "${!all_labels[@]}"; do
@@ -773,8 +863,12 @@ else
             (( dur_ds > _max_dur_ds )) && _max_dur_ds=$dur_ds
         done
 
+        _print_duration_axis "$_max_dur_ds"
         for i in "${!all_labels[@]}"; do
             label="${all_labels[$i]}"
+            if [ "${all_sep[$i]}" -eq 1 ]; then
+                echo; continue
+            fi
             if [ "${all_skip[$i]}" -eq 1 ]; then
                 printf "  - %-${label_w}s      - not installed\n" "$label"
             else

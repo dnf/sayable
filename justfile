@@ -5,23 +5,23 @@ python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "pyt
 
 # Run all test suites + codegen check
 [group('test')]
-test *lang:
+test *target:
     #!/usr/bin/env bash
     set -euo pipefail
     _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; *) echo "$1";; esac; }
-    _jflag=""; _sflag=""; _langs=""; _prev=""
-    for _a in {{lang}}; do
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
         if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
         if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _langs="${_langs:+$_langs }$_a"
+        _target="${_target:+$_target }$_a"
     done
-    if [ "$_langs" = "help" ] || [ "$_langs" = "--help" ]; then
+    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
         printf '%s\n' \
-            "Usage: just test [flags] [language]" \
+            "Usage: just test [flags] [target]" \
             "" \
-            "Run all test suites in parallel, or a single language's tests." \
+            "Run all test suites in parallel, or a single target's tests." \
             "" \
             "Languages (21):" \
             "  c          clojure (clj)   cpp (c++)    csharp (cs)   dart (dt)" \
@@ -30,6 +30,9 @@ test *lang:
             "  ruby (rb)  rust (rs)       scala (sc)   swift (sw)    typescript (ts)" \
             "  zig (zg)" \
             "" \
+            "Tools:" \
+            "  cli        CLI integration tests" \
+            "" \
             "  codegen    Run codegen unit tests only" \
             "" \
             "Flags:" \
@@ -37,164 +40,196 @@ test *lang:
             "  -s MODE    Visualization: scroll (default), full, or zoom" \
             "" \
             "Examples:" \
-            "  just test              Run all 21 suites + codegen check in parallel" \
+            "  just test              Run all suites + codegen check in parallel" \
             "  just test go           Run Go tests only" \
             "  just test rs           Run Rust tests (abbreviation)" \
+            "  just test cli          Run CLI integration tests" \
             "  just test -j 4         Run all in parallel with 4 job slots" \
             "  just test -j 2 -s full Run with 2 slots, full-width visualization"
         exit 0
     fi
-    if [ -z "$_langs" ]; then
-        _tool() { case "$1" in c|cpp) echo cmake;; clojure) echo clojure;; csharp) echo dotnet;; dart) echo dart;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+    if [ -z "$_target" ]; then
+        _langs="c clojure cpp csharp dart elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig"
+        _tools="cli codegen"
+        _dep() { case "$1" in c|cli|cpp) echo cmake;; clojure) echo clojure;; csharp) echo dotnet;; dart) echo dart;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
         args=("check")
-        for lang in c clojure cpp csharp dart elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig; do
-            tool=$(_tool "$lang")
-            if [ -z "$tool" ] || command -v "$tool" &>/dev/null; then
-                args+=("test $lang")
+        for target in $_langs; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("test $target")
             else
-                args+=("skip:$lang")
+                args+=("skip:$target")
+            fi
+        done
+        args+=("---")
+        for target in $_tools; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("test $target")
+            else
+                args+=("skip:$target")
             fi
         done
         scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} test "${args[@]}"
     else
-        name=$(_name "$_langs")
+        name=$(_name "$_target")
         mkdir -p .logs/test
         (
-            if [ "$_langs" = "typescript" ] || [ "$_langs" = "ts" ]; then
+            if [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
                 cd src/typescript && npx vitest run
-            elif [ "$_langs" = "python" ] || [ "$_langs" = "py" ]; then
+            elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
                 cd src/python && uv run --extra dev pytest tests/
-            elif [ "$_langs" = "go" ]; then
+            elif [ "$_target" = "go" ]; then
                 cd src/go && go test ./...
-            elif [ "$_langs" = "ruby" ] || [ "$_langs" = "rb" ]; then
+            elif [ "$_target" = "ruby" ] || [ "$_target" = "rb" ]; then
                 cd src/ruby && ruby -Ilib test/test_formatter.rb
-            elif [ "$_langs" = "rust" ] || [ "$_langs" = "rs" ]; then
+            elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
                 cd src/rust && cargo test
-            elif [ "$_langs" = "kotlin" ] || [ "$_langs" = "kt" ]; then
+            elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
                 cd src/kotlin && ./gradlew test
-            elif [ "$_langs" = "cpp" ] || [ "$_langs" = "c++" ]; then
+            elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
                 just build cpp
                 cd src/cpp/build && ctest --output-on-failure
-            elif [ "$_langs" = "c" ]; then
+            elif [ "$_target" = "c" ]; then
                 just build c
                 cd src/c/build && ctest --output-on-failure
-            elif [ "$_langs" = "php" ]; then
+            elif [ "$_target" = "cli" ]; then
+                just build cli
+                bash cli/test.sh
+            elif [ "$_target" = "php" ]; then
                 cd src/php && php vendor/bin/phpunit tests/
-            elif [ "$_langs" = "java" ]; then
+            elif [ "$_target" = "java" ]; then
                 cd src/java && ./gradlew test
-            elif [ "$_langs" = "csharp" ] || [ "$_langs" = "cs" ]; then
+            elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
                 cd src/csharp && dotnet test
-            elif [ "$_langs" = "dart" ] || [ "$_langs" = "dt" ]; then
+            elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
                 cd src/dart && dart test
-            elif [ "$_langs" = "swift" ] || [ "$_langs" = "sw" ]; then
+            elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
                 cd src/swift && swift test
-            elif [ "$_langs" = "haskell" ] || [ "$_langs" = "hs" ]; then
+            elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
                 cd src/haskell && cabal test
-            elif [ "$_langs" = "erlang" ] || [ "$_langs" = "erl" ]; then
+            elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
                 cd src/erlang && rebar3 eunit
-            elif [ "$_langs" = "clojure" ] || [ "$_langs" = "clj" ]; then
+            elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
                 cd src/clojure && clojure -M:test
-            elif [ "$_langs" = "scala" ] || [ "$_langs" = "sc" ]; then
+            elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
                 cd src/scala && ./gradlew test
-            elif [ "$_langs" = "elixir" ] || [ "$_langs" = "ex" ]; then
+            elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
                 cd src/elixir && mix test
-            elif [ "$_langs" = "elm" ] || [ "$_langs" = "el" ]; then
+            elif [ "$_target" = "elm" ] || [ "$_target" = "el" ]; then
                 cd src/elm && elm-test
-            elif [ "$_langs" = "perl" ] || [ "$_langs" = "pl" ]; then
+            elif [ "$_target" = "perl" ] || [ "$_target" = "pl" ]; then
                 cd src/perl && prove -Ilib t/
-            elif [ "$_langs" = "zig" ] || [ "$_langs" = "zg" ]; then
+            elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 cd src/zig && zig build test
-            elif [ "$_langs" = "codegen" ]; then
+            elif [ "$_target" = "codegen" ]; then
                 {{python}} -m unittest codegen.test_locale_groups -v
             else
-                echo "Unknown language: $_langs (try 'just test help')" >&2
+                echo "Unknown target: $_target (try 'just test help')" >&2
                 exit 1
             fi
         ) 2>&1 | tee ".logs/test/$name.log"
     fi
 
-# Build all languages that have a build step
+# Build all compiled targets (languages + tools)
 [group('build')]
-build *lang:
+build *target:
     #!/usr/bin/env bash
     set -euo pipefail
     _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; *) echo "$1";; esac; }
-    _jflag=""; _sflag=""; _langs=""; _prev=""
-    for _a in {{lang}}; do
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
         if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
         if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _langs="${_langs:+$_langs }$_a"
+        _target="${_target:+$_target }$_a"
     done
-    if [ "$_langs" = "help" ] || [ "$_langs" = "--help" ]; then
+    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
         printf '%s\n' \
-            "Usage: just build [flags] [language]" \
+            "Usage: just build [flags] [target]" \
             "" \
-            "Build all compiled languages in parallel, or a single language." \
+            "Build all compiled targets in parallel, or a single target." \
             "" \
             "Languages (13):" \
             "  c          cpp (c++)       csharp (cs)  elixir (ex)   erlang (erl)" \
             "  haskell (hs)  java         kotlin (kt)  rust (rs)     scala (sc)" \
             "  swift (sw)    typescript (ts)  zig (zg)" \
             "" \
-            "  Languages without a build step: clojure, dart, elm, go, perl, php, python, ruby" \
+            "Tools:" \
+            "  cli        CLI tool (links against C library)" \
+            "" \
+            "  Targets without a build step: clojure, dart, elm, go, perl, php, python, ruby" \
             "" \
             "Flags:" \
             "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
             "  -s MODE    Visualization: scroll (default), full, or zoom" \
             "" \
             "Examples:" \
-            "  just build             Build all 13 compiled languages in parallel" \
+            "  just build             Build all compiled languages + tools in parallel" \
             "  just build rust        Build Rust only" \
             "  just build c++         Build C++ (abbreviation)" \
+            "  just build cli         Build the CLI tool only" \
             "  just build -j 2        Build all with 2 job slots"
         exit 0
     fi
-    if [ -z "$_langs" ]; then
-        _tool() { case "$1" in c|cpp) echo cmake;; csharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+    if [ -z "$_target" ]; then
+        _langs="c cpp csharp elixir erlang haskell java kotlin rust scala swift typescript zig"
+        _tools="cli"
+        _dep() { case "$1" in c|cli|cpp) echo cmake;; csharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
         args=()
-        for lang in c cpp csharp elixir erlang haskell java kotlin rust scala swift typescript zig; do
-            tool=$(_tool "$lang")
-            if [ -z "$tool" ] || command -v "$tool" &>/dev/null; then
-                args+=("build $lang")
+        for target in $_langs; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("build $target")
             else
-                args+=("skip:$lang")
+                args+=("skip:$target")
+            fi
+        done
+        args+=("---")
+        for target in $_tools; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("build $target")
+            else
+                args+=("skip:$target")
             fi
         done
         scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} build "${args[@]}"
     else
-        name=$(_name "$_langs")
+        name=$(_name "$_target")
         mkdir -p .logs/build
         (
-            if [ "$_langs" = "typescript" ] || [ "$_langs" = "ts" ]; then
+            if [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
                 cd src/typescript && npm run build
-            elif [ "$_langs" = "rust" ] || [ "$_langs" = "rs" ]; then
+            elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
                 cd src/rust && cargo build
-            elif [ "$_langs" = "kotlin" ] || [ "$_langs" = "kt" ]; then
+            elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
                 cd src/kotlin && ./gradlew build
-            elif [ "$_langs" = "cpp" ] || [ "$_langs" = "c++" ]; then
+            elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
                 cd src/cpp && cmake -B build && cmake --build build
-            elif [ "$_langs" = "c" ]; then
+            elif [ "$_target" = "c" ]; then
                 cd src/c && cmake -B build && cmake --build build
-            elif [ "$_langs" = "java" ]; then
+            elif [ "$_target" = "cli" ]; then
+                cd cli && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
+            elif [ "$_target" = "java" ]; then
                 cd src/java && ./gradlew build
-            elif [ "$_langs" = "csharp" ] || [ "$_langs" = "cs" ]; then
+            elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
                 cd src/csharp && dotnet build
-            elif [ "$_langs" = "swift" ] || [ "$_langs" = "sw" ]; then
+            elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
                 cd src/swift && swift build
-            elif [ "$_langs" = "haskell" ] || [ "$_langs" = "hs" ]; then
+            elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
                 cd src/haskell && cabal build
-            elif [ "$_langs" = "elixir" ] || [ "$_langs" = "ex" ]; then
+            elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
                 cd src/elixir && mix compile --warnings-as-errors
-            elif [ "$_langs" = "erlang" ] || [ "$_langs" = "erl" ]; then
+            elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
                 cd src/erlang && rebar3 compile
-            elif [ "$_langs" = "scala" ] || [ "$_langs" = "sc" ]; then
+            elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
                 cd src/scala && ./gradlew build
-            elif [ "$_langs" = "zig" ] || [ "$_langs" = "zg" ]; then
+            elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 cd src/zig && zig build
             else
-                echo "No build step for: $_langs"
+                echo "No build step for: $_target"
             fi
         ) 2>&1 | tee ".logs/build/$name.log"
     fi
@@ -249,27 +284,30 @@ check:
 
 # Run all available linters
 [group('lint')]
-lint *lang:
+lint *target:
     #!/usr/bin/env bash
     set -euo pipefail
     _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; *) echo "$1";; esac; }
-    _jflag=""; _sflag=""; _langs=""; _prev=""
-    for _a in {{lang}}; do
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
         if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
         if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _langs="${_langs:+$_langs }$_a"
+        _target="${_target:+$_target }$_a"
     done
-    if [ "$_langs" = "help" ] || [ "$_langs" = "--help" ]; then
+    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
         printf '%s\n' \
-            "Usage: just lint [flags] [language]" \
+            "Usage: just lint [flags] [target]" \
             "" \
-            "Run all linters in parallel, or a single language's linter." \
+            "Run all linters in parallel, or a single target's linter." \
             "" \
             "Languages with separate linters (10):" \
             "  csharp (cs)  dart (dt)    go           java         php" \
             "  python (py)  ruby (rb)    rust (rs)    swift (sw)   typescript (ts)" \
+            "" \
+            "Tools:" \
+            "  cli        Warnings-as-errors in build" \
             "" \
             "  Other languages use warnings-as-errors in their build step (no separate linter)." \
             "" \
@@ -284,66 +322,68 @@ lint *lang:
             "  just lint -j 3         Run all with 3 job slots"
         exit 0
     fi
-    if [ -z "$_langs" ]; then
-        _tool() { case "$1" in csharp) echo dotnet;; dart) echo dart;; go) echo golangci-lint;; java) echo java;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; esac; }
+    if [ -z "$_target" ]; then
+        _dep() { case "$1" in csharp) echo dotnet;; dart) echo dart;; go) echo golangci-lint;; java) echo java;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; esac; }
         args=()
-        for lang in csharp dart go java php python ruby rust swift typescript; do
-            tool=$(_tool "$lang")
-            if [ -z "$tool" ] || command -v "$tool" &>/dev/null; then
-                args+=("lint $lang")
+        for target in csharp dart go java php python ruby rust swift typescript; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("lint $target")
             else
-                args+=("skip:$lang")
+                args+=("skip:$target")
             fi
         done
         scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} lint "${args[@]}"
     else
-        name=$(_name "$_langs")
+        name=$(_name "$_target")
         mkdir -p .logs/lint
         (
-            if [ "$_langs" = "typescript" ] || [ "$_langs" = "ts" ]; then
+            if [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
                 cd src/typescript && npm run lint
-            elif [ "$_langs" = "dart" ] || [ "$_langs" = "dt" ]; then
+            elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
                 cd src/dart && dart analyze
-            elif [ "$_langs" = "python" ] || [ "$_langs" = "py" ]; then
+            elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
                 cd src/python && uv run --extra dev ruff check . && uv run --extra dev pyright
-            elif [ "$_langs" = "go" ]; then
+            elif [ "$_target" = "go" ]; then
                 cd src/go && golangci-lint run
-            elif [ "$_langs" = "ruby" ] || [ "$_langs" = "rb" ]; then
+            elif [ "$_target" = "ruby" ] || [ "$_target" = "rb" ]; then
                 cd src/ruby && bundle exec rubocop
-            elif [ "$_langs" = "rust" ] || [ "$_langs" = "rs" ]; then
+            elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
                 cd src/rust && cargo clippy
-            elif [ "$_langs" = "php" ]; then
+            elif [ "$_target" = "php" ]; then
                 cd src/php && composer analyse && composer cs-check
-            elif [ "$_langs" = "kotlin" ] || [ "$_langs" = "kt" ]; then
+            elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
                 echo "Kotlin uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_langs" = "c" ]; then
+            elif [ "$_target" = "c" ]; then
                 echo "C uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_langs" = "cpp" ] || [ "$_langs" = "c++" ]; then
+            elif [ "$_target" = "cli" ]; then
+                echo "CLI uses warnings-as-errors in build (no separate linter)"
+            elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
                 echo "C++ uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_langs" = "java" ]; then
+            elif [ "$_target" = "java" ]; then
                 echo "Java uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_langs" = "csharp" ] || [ "$_langs" = "cs" ]; then
+            elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
                 echo "C# uses TreatWarningsAsErrors in build (no separate linter)"
-            elif [ "$_langs" = "swift" ] || [ "$_langs" = "sw" ]; then
+            elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
                 echo "Swift uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_langs" = "haskell" ] || [ "$_langs" = "hs" ]; then
+            elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
                 echo "Haskell uses -Wall -Werror in build (no separate linter)"
-            elif [ "$_langs" = "erlang" ] || [ "$_langs" = "erl" ]; then
+            elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
                 echo "Erlang uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_langs" = "clojure" ] || [ "$_langs" = "clj" ]; then
+            elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
                 echo "Clojure uses *warn-on-reflection* in build (no separate linter)"
-            elif [ "$_langs" = "scala" ] || [ "$_langs" = "sc" ]; then
+            elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
                 echo "Scala uses -Werror in build (no separate linter)"
-            elif [ "$_langs" = "elixir" ] || [ "$_langs" = "ex" ]; then
+            elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
                 echo "Elixir uses warnings-as-errors in build (no separate linter)"
-            elif [ "$_langs" = "elm" ] || [ "$_langs" = "el" ]; then
+            elif [ "$_target" = "elm" ] || [ "$_target" = "el" ]; then
                 echo "Elm compiler is warnings-as-errors (no separate linter)"
-            elif [ "$_langs" = "perl" ] || [ "$_langs" = "pl" ]; then
+            elif [ "$_target" = "perl" ] || [ "$_target" = "pl" ]; then
                 echo "Perl uses strict/warnings (no separate linter)"
-            elif [ "$_langs" = "zig" ] || [ "$_langs" = "zg" ]; then
+            elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 echo "Zig uses warnings-as-errors in build (no separate linter)"
             else
-                echo "Unknown language: $_langs (try 'just lint help')" >&2
+                echo "Unknown target: $_target (try 'just lint help')" >&2
                 exit 1
             fi
         ) 2>&1 | tee ".logs/lint/$name.log"
@@ -351,22 +391,22 @@ lint *lang:
 
 # Remove build artifacts (keeps installed dependencies)
 [group('build')]
-clean *lang:
+clean *target:
     #!/usr/bin/env bash
     set -euo pipefail
-    _jflag=""; _sflag=""; _langs=""; _prev=""
-    for _a in {{lang}}; do
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
         if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
         if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
-        _langs="${_langs:+$_langs }$_a"
+        _target="${_target:+$_target }$_a"
     done
-    if [ "$_langs" = "help" ] || [ "$_langs" = "--help" ]; then
+    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
         printf '%s\n' \
-            "Usage: just clean [flags] [language]" \
+            "Usage: just clean [flags] [target]" \
             "" \
-            "Remove build artifacts for all languages in parallel, or a single language." \
+            "Remove build artifacts for all targets in parallel, or a single target." \
             "Keeps installed dependencies (node_modules, .venv, etc.)." \
             "" \
             "Languages (21):" \
@@ -376,6 +416,9 @@ clean *lang:
             "  ruby (rb)  rust (rs)       scala (sc)   swift (sw)    typescript (ts)" \
             "  zig (zg)" \
             "" \
+            "Tools:" \
+            "  cli        CLI build artifacts" \
+            "" \
             "  codegen    Clean codegen __pycache__ directories" \
             "" \
             "Flags:" \
@@ -383,58 +426,67 @@ clean *lang:
             "  -s MODE    Visualization: scroll (default), full, or zoom" \
             "" \
             "Examples:" \
-            "  just clean             Clean all languages in parallel" \
+            "  just clean             Clean all targets in parallel" \
             "  just clean rust        Clean Rust build artifacts only" \
             "  just clean ts          Clean TypeScript (abbreviation)" \
             "  just clean -j 4        Clean all with 4 job slots"
         exit 0
     fi
-    if [ -z "$_langs" ]; then
-        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} clean \
-            "clean c" "clean clojure" "clean codegen" "clean cpp" "clean csharp" "clean dart" "clean elixir" "clean elm" "clean erlang" \
-            "clean haskell" "clean java" "clean kotlin" "clean python" "clean rust" \
-            "clean scala" "clean swift" "clean typescript" "clean zig"
-    elif [ "$_langs" = "typescript" ] || [ "$_langs" = "ts" ]; then
+    if [ -z "$_target" ]; then
+        _langs="c clojure cpp csharp dart elixir elm erlang haskell java kotlin python rust scala swift typescript zig"
+        _tools="cli"
+        args=()
+        for target in $_langs; do
+            args+=("clean $target")
+        done
+        args+=("---")
+        for target in $_tools codegen; do
+            args+=("clean $target")
+        done
+        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} clean "${args[@]}"
+    elif [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
         rm -rf src/typescript/dist
-    elif [ "$_langs" = "python" ] || [ "$_langs" = "py" ]; then
+    elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
         find src/python -type d -name __pycache__ -not -path '*/\.venv/*' -exec rm -rf {} + 2>/dev/null || true
         rm -rf src/python/.pytest_cache
-    elif [ "$_langs" = "rust" ] || [ "$_langs" = "rs" ]; then
+    elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
         rm -rf src/rust/target
-    elif [ "$_langs" = "kotlin" ] || [ "$_langs" = "kt" ]; then
+    elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
         rm -rf src/kotlin/build src/kotlin/.gradle
-    elif [ "$_langs" = "c" ]; then
+    elif [ "$_target" = "c" ]; then
         rm -rf src/c/build
-    elif [ "$_langs" = "cpp" ] || [ "$_langs" = "c++" ]; then
+    elif [ "$_target" = "cli" ]; then
+        rm -rf cli/build
+    elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
         rm -rf src/cpp/build
-    elif [ "$_langs" = "java" ]; then
+    elif [ "$_target" = "java" ]; then
         rm -rf src/java/build src/java/.gradle
-    elif [ "$_langs" = "csharp" ] || [ "$_langs" = "cs" ]; then
+    elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
         rm -rf src/csharp/ParentTime/bin src/csharp/ParentTime/obj src/csharp/ParentTime.Tests/bin src/csharp/ParentTime.Tests/obj
-    elif [ "$_langs" = "swift" ] || [ "$_langs" = "sw" ]; then
+    elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
         rm -rf src/swift/.build
-    elif [ "$_langs" = "haskell" ] || [ "$_langs" = "hs" ]; then
+    elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
         rm -rf src/haskell/dist-newstyle
-    elif [ "$_langs" = "erlang" ] || [ "$_langs" = "erl" ]; then
+    elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
         rm -rf src/erlang/_build
-    elif [ "$_langs" = "clojure" ] || [ "$_langs" = "clj" ]; then
+    elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
         rm -rf src/clojure/.cpcache
-    elif [ "$_langs" = "scala" ] || [ "$_langs" = "sc" ]; then
+    elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
         rm -rf src/scala/build src/scala/.gradle
-    elif [ "$_langs" = "zig" ] || [ "$_langs" = "zg" ]; then
+    elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
         rm -rf src/zig/zig-out src/zig/.zig-cache
-    elif [ "$_langs" = "elixir" ] || [ "$_langs" = "ex" ]; then
+    elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
         rm -rf src/elixir/_build
-    elif [ "$_langs" = "elm" ] || [ "$_langs" = "el" ]; then
+    elif [ "$_target" = "elm" ] || [ "$_target" = "el" ]; then
         rm -rf src/elm/elm-stuff
-    elif [ "$_langs" = "dart" ] || [ "$_langs" = "dt" ]; then
+    elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
         rm -rf src/dart/.dart_tool
-    elif [ "$_langs" = "codegen" ]; then
+    elif [ "$_target" = "codegen" ]; then
         find codegen -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
-    elif [ "$_langs" = "go" ] || [ "$_langs" = "ruby" ] || [ "$_langs" = "rb" ] || [ "$_langs" = "perl" ] || [ "$_langs" = "pl" ] || [ "$_langs" = "php" ]; then
-        echo "No build artifacts for: $_langs"
+    elif [ "$_target" = "go" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ]; then
+        echo "No build artifacts for: $_target"
     else
-        echo "Unknown language: $_langs (try 'just clean help')" >&2
+        echo "Unknown target: $_target (try 'just clean help')" >&2
         exit 1
     fi
 
@@ -529,6 +581,154 @@ install *langs:
         echo "" >&2
         echo "Failed to install:$failed" >&2
         exit 1
+    fi
+
+# Build the CLI tool
+[group('build')]
+cli:
+    cd cli && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
+
+# Internal: clean then build a single target
+[private]
+_rebuild target:
+    just clean {{target}} && just build {{target}}
+
+# Internal: clean then test a single target
+[private]
+_retest target:
+    just clean {{target}} && just test {{target}}
+
+# Clean then build all compiled targets, or a single target
+[group('build')]
+rebuild *target:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; *) echo "$1";; esac; }
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
+        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
+        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
+        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
+        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
+        _target="${_target:+$_target }$_a"
+    done
+    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just rebuild [flags] [target]" \
+            "" \
+            "Clean then build all compiled targets in parallel, or a single target." \
+            "" \
+            "Languages (13):" \
+            "  c          cpp (c++)       csharp (cs)  elixir (ex)   erlang (erl)" \
+            "  haskell (hs)  java         kotlin (kt)  rust (rs)     scala (sc)" \
+            "  swift (sw)    typescript (ts)  zig (zg)" \
+            "" \
+            "Tools:" \
+            "  cli        CLI tool (links against C library)" \
+            "" \
+            "Flags:" \
+            "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just rebuild           Clean + build all compiled targets in parallel" \
+            "  just rebuild rust      Clean + build Rust only" \
+            "  just rebuild -j 2      Clean + build all with 2 job slots"
+        exit 0
+    fi
+    if [ -z "$_target" ]; then
+        _langs="c cpp csharp elixir erlang haskell java kotlin rust scala swift typescript zig"
+        _tools="cli"
+        _dep() { case "$1" in c|cli|cpp) echo cmake;; csharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+        args=()
+        for target in $_langs; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("_rebuild $target")
+            else
+                args+=("skip:$target")
+            fi
+        done
+        args+=("---")
+        for target in $_tools; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("_rebuild $target")
+            else
+                args+=("skip:$target")
+            fi
+        done
+        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} rebuild "${args[@]}"
+    else
+        name=$(_name "$_target")
+        just clean "$_target" && just build "$_target"
+    fi
+
+# Clean then test all targets, or a single target
+[group('test')]
+retest *target:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; *) echo "$1";; esac; }
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
+        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
+        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
+        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
+        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
+        _target="${_target:+$_target }$_a"
+    done
+    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just retest [flags] [target]" \
+            "" \
+            "Clean then test all targets in parallel, or a single target." \
+            "" \
+            "Languages (21):" \
+            "  c          clojure (clj)   cpp (c++)    csharp (cs)   dart (dt)" \
+            "  elixir (ex)  elm (el)      erlang (erl) go            haskell (hs)" \
+            "  java       kotlin (kt)     perl (pl)    php           python (py)" \
+            "  ruby (rb)  rust (rs)       scala (sc)   swift (sw)    typescript (ts)" \
+            "  zig (zg)" \
+            "" \
+            "Tools:" \
+            "  cli        CLI integration tests" \
+            "" \
+            "Flags:" \
+            "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just retest            Clean + test all targets in parallel" \
+            "  just retest go         Clean + test Go only" \
+            "  just retest -j 4       Clean + test all with 4 job slots"
+        exit 0
+    fi
+    if [ -z "$_target" ]; then
+        _langs="c clojure cpp csharp dart elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig"
+        _tools="cli codegen"
+        _dep() { case "$1" in c|cli|cpp) echo cmake;; clojure) echo clojure;; csharp) echo dotnet;; dart) echo dart;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+        args=("check")
+        for target in $_langs; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("_retest $target")
+            else
+                args+=("skip:$target")
+            fi
+        done
+        args+=("---")
+        for target in $_tools; do
+            dep=$(_dep "$target")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("_retest $target")
+            else
+                args+=("skip:$target")
+            fi
+        done
+        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} retest "${args[@]}"
+    else
+        just clean "$_target" && just test "$_target"
     fi
 
 # Interactive onboarding: show project info, installed languages, and install menu
