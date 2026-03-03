@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Runs just recipes in parallel with live progress display.
-# Usage: run-parallel.sh [-j N] [-s full|zoom] <name> "cmd" ...
-# -j N limits concurrent jobs to N slots (0 or omitted = unlimited).
+# Usage: run-parallel.sh [-j N|P%|unlimited] [-s full|zoom] <name> "cmd" ...
+# -j VALUE limits concurrent jobs (default: 50% of CPUs).
 # -s MODE sets visualization: scroll (default), full, or zoom.
 # <name> is used for the log directory: .logs/<name>/
 # Each subsequent argument is passed to `just` as a complete command.
@@ -10,7 +10,7 @@
 # original position without launching a job.
 set -uo pipefail
 
-max_jobs=0
+max_jobs=50%
 _viz_mode=scroll  # scroll (default), full, or zoom
 _tick_ds=2        # base: 0.2s per column (for scroll/zoom modes)
 _show_help() {
@@ -26,11 +26,12 @@ Arguments:
                     not installed (e.g. "skip:haskell").
 
 Flags:
-  -j N              Limit concurrent jobs to N slots (0 or omitted = unlimited)
+  -j VALUE          Set concurrency: integer, percentage (default 50%),
+                    or 'unlimited' (all at once, no swimlanes)
   -s MODE           Visualization mode: scroll (default), full, or zoom
   -h, --help        Show this help and exit
 
-Scheduling (slot-based, -j N where N > 0):
+Scheduling (slot-based, the default and -j N where N > 0):
   Jobs are queued by predicted duration (longest first) with errors from
   the previous run promoted to the front. Slot 0 is the "fast slot" — it
   picks the shortest available job so quick jobs finish and report early.
@@ -61,7 +62,17 @@ HELP
 while [ $# -gt 0 ]; do
     case "$1" in
         -h|--help) _show_help ;;
-        -j) max_jobs="${2:-0}"; shift 2 ;;
+        -j) case "${2:-50%}" in
+                unlimited|0) max_jobs=0 ;;
+                *%)
+                    _pct="${2%\%}"
+                    if ! [ "$_pct" -ge 1 ] 2>/dev/null || ! [ "$_pct" -le 200 ] 2>/dev/null; then
+                        echo "error: -j percentage must be 1%-200% (got '$2')" >&2; exit 1
+                    fi
+                    max_jobs="$2" ;;
+                *[!0-9]*)    echo "error: -j accepts integer, percentage (1%-200%), or 'unlimited'" >&2; exit 1 ;;
+                *)           max_jobs="$2" ;;
+            esac; shift 2 ;;
         -s) case "${2:-}" in
                 full)    _viz_mode=full ;;
                 scroll)  _viz_mode=scroll ;;
@@ -72,7 +83,7 @@ while [ $# -gt 0 ]; do
     esac
 done
 
-if [ $# -lt 2 ]; then echo "Usage: $0 [-j N] [-s full|zoom] <name> 'cmd args'..." >&2; exit 1; fi
+if [ $# -lt 2 ]; then echo "Usage: $0 [-j N|P%|unlimited] [-s full|zoom] <name> 'cmd args'..." >&2; exit 1; fi
 
 name="$1"; shift
 logdir=".logs/$name"
@@ -98,21 +109,21 @@ all_skip=()   # 1 = skipped/separator, 0 = runnable
 all_sep=()    # 1 = separator (blank line), 0 = normal entry
 run_n=0
 skip_n=0
-for arg in "$@"; do
-    if [[ "$arg" == "---" ]]; then
+for _arg in "$@"; do
+    if [[ "$_arg" == "---" ]]; then
         all_labels+=("---")
         all_cmds+=("")
         all_skip+=(1)
         all_sep+=(1)
-    elif [[ "$arg" == skip:* ]]; then
-        all_labels+=("${arg#skip:}")
+    elif [[ "$_arg" == skip:* ]]; then
+        all_labels+=("${_arg#skip:}")
         all_cmds+=("")
         all_skip+=(1)
         all_sep+=(0)
         skip_n=$((skip_n + 1))
     else
-        all_labels+=("${arg##* }")
-        all_cmds+=("$arg")
+        all_labels+=("${_arg##* }")
+        all_cmds+=("$_arg")
         all_skip+=(0)
         all_sep+=(0)
         run_n=$((run_n + 1))
@@ -159,8 +170,34 @@ _term_height() {
     [ "${LINES:-0}" -gt 0 ] 2>/dev/null && echo "$LINES" && return
     echo 24
 }
+_cpu_count() {
+    local n=0
+    n=$(sysctl -n hw.logicalcpu 2>/dev/null) && [ "${n:-0}" -gt 0 ] && echo "$n" && return
+    n=$(nproc 2>/dev/null) && [ "${n:-0}" -gt 0 ] && echo "$n" && return
+    [ -f /proc/cpuinfo ] && n=$(grep -c '^processor' /proc/cpuinfo 2>/dev/null)
+    [ "${n:-0}" -gt 0 ] && echo "$n" && return
+    echo 4
+}
+
+# Resolve percentage -j values to integers
+if [[ "$max_jobs" == *% ]]; then
+    _pct="${max_jobs%\%}"
+    _cpus=$(_cpu_count)
+    if [ "$_pct" -eq 100 ]; then
+        max_jobs=$_cpus
+    else
+        max_jobs=$(( (_cpus * _pct + 50) / 100 ))
+    fi
+    (( max_jobs < 1 )) && max_jobs=1
+fi
+
+# More slots than jobs → no scheduling benefit; use unlimited mode
+if [ "$max_jobs" -gt 0 ] && [ "$max_jobs" -ge "$run_n" ]; then
+    max_jobs=0
+fi
+
 term_w=$(_term_width)
-# Layout: "  X label dur_str bar" → 2+1+1 + label_w + 1 + 6 + 1 = label_w + 12
+# Layout: "  X label _dur_str _bar" → 2+1+1 + label_w + 1 + 6 + 1 = label_w + 12
 prefix_w=$((label_w + 12))
 max_bar=$((term_w - prefix_w))
 (( max_bar < 10 )) && max_bar=10
@@ -184,14 +221,14 @@ if [ "$run_n" -eq 0 ]; then
 fi
 
 # Pre-built block string (wide enough for any terminal)
-blocks=""
-for (( _i=0; _i<512; _i++ )); do blocks+="█"; done
+_blocks=""
+for (( _i=0; _i<512; _i++ )); do _blocks+="█"; done
 
-bar() {
+_bar() {
     local len=$1
     (( len > max_bar )) && len=$max_bar
     (( len < 1 )) && len=1
-    printf "%s" "${blocks:0:$len}"
+    printf "%s" "${_blocks:0:$len}"
 }
 
 _now_ds() { perl -MTime::HiRes=time -e 'printf "%d\n", time*10'; }
@@ -287,11 +324,19 @@ _render_lanes() {
     _print_time_axis
     printf "\033[K\n"
 
-    # Lane rows (label + color block aligned with bar chart labels)
+    # Count unstarted jobs to decide whether idle slots show a gear
+    local _queued=0
+    for _qi in "${_run_queue[@]}"; do
+        [ "${_job_started[$_qi]}" -eq 0 ] && _queued=$((_queued + 1))
+    done
+
+    # Lane rows (gear icon + color block aligned with bar chart labels)
     local _s _lt _ds
     for (( _s=0; _s<max_jobs; _s++ )); do
         if [ -n "${_slot_labels[$_s]}" ] && [ "${_slot_ci[$_s]}" -ge 0 ]; then
-            printf "    \033[48;5;%dm  \033[0m %-${label_w}s        " "${_palette[${_slot_ci[$_s]}]}" "${_slot_labels[$_s]}"
+            printf "  \033[93m⚙\033[0m \033[48;5;%dm  \033[0m %-${label_w}s        " "${_palette[${_slot_ci[$_s]}]}" "${_slot_labels[$_s]}"
+        elif [ "$_queued" -gt 0 ]; then
+            printf "  \033[90m⚙\033[0m%*s" "$((prefix_w - 3))" ""
         else
             printf "%*s" "$prefix_w" ""
         fi
@@ -304,9 +349,9 @@ _render_lanes() {
             if (( _ds >= _max_ds )); then
                 printf " "
             else
-                local ci="${_lane_ci[$((_s * _max_ds + _ds))]:--1}"
-                if [ "$ci" -ge 0 ]; then
-                    printf "\033[48;5;%dm \033[0m" "${_palette[$((ci % _npal))]}"
+                local _ci="${_lane_ci[$((_s * _max_ds + _ds))]:--1}"
+                if [ "$_ci" -ge 0 ]; then
+                    printf "\033[48;5;%dm \033[0m" "${_palette[$((_ci % _npal))]}"
                 else
                     printf "\033[48;5;236m \033[0m"
                 fi
@@ -393,8 +438,8 @@ _enable_raw_input() {
 # Set up the interactive display: spinner, result arrays, viewport, cursor.
 # Usage: _init_interactive_display <swim_height>
 _init_interactive_display() {
-    spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
-    frame=0
+    _spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+    _frame=0
     done_flags=()
     done_durs=()
     done_rcs=()
@@ -484,8 +529,8 @@ _print_final_results() {
     _max_dur_ds=1
     for i in "${!all_labels[@]}"; do
         [ "${all_skip[$i]}" -eq 1 ] && continue
-        read -r dur_ds _rc < "$logdir/${all_labels[$i]}.result"
-        (( dur_ds > _max_dur_ds )) && _max_dur_ds=$dur_ds
+        read -r _dur_ds _rc < "$logdir/${all_labels[$i]}.result"
+        (( _dur_ds > _max_dur_ds )) && _max_dur_ds=$_dur_ds
     done
 
     _print_duration_axis "$_max_dur_ds"
@@ -497,20 +542,20 @@ _print_final_results() {
         if [ "${all_skip[$i]}" -eq 1 ]; then
             printf "  - %-${label_w}s      - not installed\n" "$label"
         else
-            read -r dur_ds rc < "$logdir/$label.result"
-            dur_str=$(_fmt_ds "$dur_ds")
-            bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
-            (( bar_len < 1 )) && bar_len=1
-            if [ "$rc" -eq 0 ]; then
-                printf "  ✓ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
+            read -r _dur_ds _rc < "$logdir/$label.result"
+            _dur_str=$(_fmt_ds "$_dur_ds")
+            _bar_len=$(( _dur_ds * max_bar / _max_dur_ds ))
+            (( _bar_len < 1 )) && _bar_len=1
+            if [ "$_rc" -eq 0 ]; then
+                printf "  ✓ %-${label_w}s %6s %s\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
             else
-                printf "  ✗ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                printf "  ✗ %-${label_w}s %6s %s\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
             fi
         fi
     done
 }
 
-cleanup() {
+_cleanup() {
     if [ -n "${_old_stty:-}" ]; then
         stty "$_old_stty" </dev/tty 2>/dev/null || stty "$_old_stty" 2>/dev/null
     fi
@@ -523,7 +568,7 @@ cleanup() {
     done
     rmdir "$lockdir" 2>/dev/null
 }
-trap cleanup EXIT
+trap _cleanup EXIT
 trap 'exit 130' INT
 
 # ===================================================================
@@ -571,7 +616,7 @@ if [ "$max_jobs" -gt 0 ]; then
                 for _pair in $_hl; do
                     if [[ "$_pair" == "${label}="* ]]; then
                         _val="${_pair#*=}"
-                        _durs+=("${_val%%:*}")  # strip :rc if present
+                        _durs+=("${_val%%:*}")  # strip :_rc if present
                     fi
                 done
             done
@@ -633,7 +678,7 @@ if [ "$max_jobs" -gt 0 ]; then
     _lane_ci=()
 
     # Adjust prefix width for color block in bar chart
-    # "  X ██ label dur_str bar" → 2+1+1+2+1 + label_w + 1 + 6 + 1 = label_w + 15
+    # "  X ██ label _dur_str _bar" → 2+1+1+2+1 + label_w + 1 + 6 + 1 = label_w + 15
     prefix_w=$((label_w + 15))
     max_bar=$((term_w - prefix_w))
     (( max_bar < 10 )) && max_bar=10
@@ -666,20 +711,20 @@ if [ "$max_jobs" -gt 0 ]; then
                 _select_next_job "$_s"
                 [ "$_found_qi" -lt 0 ] && continue
 
-                qi=$_found_qi
-                _job_started[$qi]=1
-                label="${all_labels[$qi]}"
+                _qi=$_found_qi
+                _job_started[$_qi]=1
+                label="${all_labels[$_qi]}"
                 (
-                    rc=0; _st=$(_now_ds)
-                    just ${all_cmds[$qi]} > "$logdir/$label.log" 2>&1 || rc=$?
+                    _rc=0; _st=$(_now_ds)
+                    just ${all_cmds[$_qi]} > "$logdir/$label.log" 2>&1 || _rc=$?
                     _et=$(_now_ds)
-                    echo "$((_et - _st)) $rc" > "$logdir/$label.result"
+                    echo "$((_et - _st)) $_rc" > "$logdir/$label.result"
                 ) &
                 _slot_pids[$_s]=$!
                 _slot_labels[$_s]="$label"
-                _slot_ci[$_s]=${_label_ci[$qi]}
-                _slot_job[$_s]=$qi
-                _job_start_ds[$qi]=$(_now_ds)
+                _slot_ci[$_s]=${_label_ci[$_qi]}
+                _slot_job[$_s]=$_qi
+                _job_start_ds[$_qi]=$(_now_ds)
                 pids+=($!)
             done
 
@@ -698,7 +743,7 @@ if [ "$max_jobs" -gt 0 ]; then
             fi
 
             # Check for results
-            done_count=0
+            _done_count=0
             for i in "${!all_labels[@]}"; do
                 [ "${all_skip[$i]}" -eq 1 ] && continue
                 label="${all_labels[$i]}"
@@ -706,7 +751,7 @@ if [ "$max_jobs" -gt 0 ]; then
                     read -r done_durs[$i] done_rcs[$i] < "$logdir/$label.result"
                     done_flags[$i]=1
                 fi
-                [ -n "${done_flags[$i]}" ] && done_count=$((done_count + 1))
+                [ -n "${done_flags[$i]}" ] && _done_count=$((_done_count + 1))
             done
 
             _drain_keys
@@ -761,17 +806,17 @@ if [ "$max_jobs" -gt 0 ]; then
                     printf "  \033[2m-    %-${label_w}s      - not installed\033[0m\033[K\n" "$label"
                     continue
                 fi
-                ci=${_label_ci[$i]}
+                _ci=${_label_ci[$i]}
                 if [ -n "${done_flags[$i]}" ]; then
-                    dur_ds="${done_durs[$i]}"
-                    dur_str=$(_fmt_ds "$dur_ds")
+                    _dur_ds="${done_durs[$i]}"
+                    _dur_str=$(_fmt_ds "$_dur_ds")
                     if [ "${done_rcs[$i]}" -eq 0 ]; then
-                        printf "  \033[32m✓\033[0m \033[48;5;%dm  \033[0m \033[32m%-${label_w}s %6s\033[0m " "${_palette[$ci]}" "$label" "$dur_str"
+                        printf "  \033[32m✓\033[0m \033[48;5;%dm  \033[0m \033[32m%-${label_w}s %6s\033[0m " "${_palette[$_ci]}" "$label" "$_dur_str"
                     else
-                        printf "  \033[31m✗\033[0m \033[48;5;%dm  \033[0m \033[31m%-${label_w}s %6s\033[0m " "${_palette[$ci]}" "$label" "$dur_str"
+                        printf "  \033[31m✗\033[0m \033[48;5;%dm  \033[0m \033[31m%-${label_w}s %6s\033[0m " "${_palette[$_ci]}" "$label" "$_dur_str"
                     fi
                     _ws_ds=$((_job_start_ds[$i] - global_start_ds))
-                    _we_ds=$((_ws_ds + dur_ds))
+                    _we_ds=$((_ws_ds + _dur_ds))
                     if [ "$_viz_mode" = "full" ]; then
                         _col_s=$((_ws_ds * max_bar / _total_ds))
                         _col_e=$((_we_ds * max_bar / _total_ds))
@@ -790,16 +835,16 @@ if [ "$max_jobs" -gt 0 ]; then
                     (( _col_e > max_bar )) && _col_e=$max_bar
                     (( _col_s > 0 )) && printf "%*s" "$_col_s" ""
                     _blen=$((_col_e - _col_s))
-                    printf "\033[38;5;%dm%s\033[0m" "${_palette[$ci]}" "${blocks:0:$_blen}"
+                    printf "\033[38;5;%dm%s\033[0m" "${_palette[$_ci]}" "${_blocks:0:$_blen}"
                     _rem=$((max_bar - _col_e))
                     (( _rem > 0 )) && printf "%*s" "$_rem" ""
                     printf "\033[K\n"
                 elif [ "${_job_start_ds[$i]}" -gt 0 ]; then
                     # Running
-                    c="${spin:frame%${#spin}:1}"
-                    elapsed_ds=$((_frame_ds - _job_start_ds[$i]))
-                    dur_str=$(_fmt_ds "$elapsed_ds")
-                    printf "  \033[93m%s\033[0m \033[48;5;%dm  \033[0m \033[93m%-${label_w}s %6s\033[0m " "$c" "${_palette[$ci]}" "$label" "$dur_str"
+                    _c="${_spin:_frame%${#_spin}:1}"
+                    _elapsed_ds=$((_frame_ds - _job_start_ds[$i]))
+                    _dur_str=$(_fmt_ds "$_elapsed_ds")
+                    printf "  \033[93m%s\033[0m \033[48;5;%dm  \033[0m \033[93m%-${label_w}s %6s\033[0m " "$_c" "${_palette[$_ci]}" "$label" "$_dur_str"
                     _ws_ds=$((_job_start_ds[$i] - global_start_ds))
                     if [ "$_viz_mode" = "full" ]; then
                         _col_s=$((_ws_ds * max_bar / _total_ds))
@@ -814,13 +859,13 @@ if [ "$max_jobs" -gt 0 ]; then
                     (( _col_e > max_bar )) && _col_e=$max_bar
                     (( _col_s > 0 )) && printf "%*s" "$_col_s" ""
                     _blen=$((_col_e - _col_s))
-                    printf "\033[38;5;%dm%s\033[0m" "${_palette[$ci]}" "${blocks:0:$_blen}"
+                    printf "\033[38;5;%dm%s\033[0m" "${_palette[$_ci]}" "${_blocks:0:$_blen}"
                     _rem=$((max_bar - _col_e))
                     (( _rem > 0 )) && printf "%*s" "$_rem" ""
                     printf "\033[K\n"
                 else
                     # Queued (not yet launched)
-                    printf "  \033[2m◌\033[0m \033[48;5;%dm  \033[0m \033[2m%-${label_w}s\033[0m       " "${_palette[$ci]}" "$label"
+                    printf "  \033[2m◌\033[0m \033[48;5;%dm  \033[0m \033[2m%-${label_w}s\033[0m       " "${_palette[$_ci]}" "$label"
                     printf "%*s" "$max_bar" ""
                     printf "\033[K\n"
                 fi
@@ -830,8 +875,8 @@ if [ "$max_jobs" -gt 0 ]; then
 
             _render_lanes
 
-            [ "$done_count" -eq "$run_n" ] && break
-            frame=$((frame + 1))
+            [ "$_done_count" -eq "$run_n" ] && break
+            _frame=$((_frame + 1))
             sleep 0.1
         done
 
@@ -856,27 +901,27 @@ if [ "$max_jobs" -gt 0 ]; then
                 _select_next_job "$_s"
                 [ "$_found_qi" -lt 0 ] && continue
 
-                qi=$_found_qi
-                _job_started[$qi]=1
-                label="${all_labels[$qi]}"
+                _qi=$_found_qi
+                _job_started[$_qi]=1
+                label="${all_labels[$_qi]}"
                 (
-                    rc=0; _st=$(_now_ds)
-                    just ${all_cmds[$qi]} > "$logdir/$label.log" 2>&1 || rc=$?
+                    _rc=0; _st=$(_now_ds)
+                    just ${all_cmds[$_qi]} > "$logdir/$label.log" 2>&1 || _rc=$?
                     _et=$(_now_ds)
-                    echo "$((_et - _st)) $rc" > "$logdir/$label.result"
+                    echo "$((_et - _st)) $_rc" > "$logdir/$label.result"
                 ) &
                 _slot_pids[$_s]=$!
                 _slot_labels[$_s]="$label"
-                _slot_job[$_s]=$qi
+                _slot_job[$_s]=$_qi
                 pids+=($!)
             done
 
-            done_count=0
+            _done_count=0
             for i in "${!all_labels[@]}"; do
                 [ "${all_skip[$i]}" -eq 1 ] && continue
-                [ -f "$logdir/${all_labels[$i]}.result" ] && done_count=$((done_count + 1))
+                [ -f "$logdir/${all_labels[$i]}.result" ] && _done_count=$((_done_count + 1))
             done
-            [ "$done_count" -eq "$run_n" ] && break
+            [ "$_done_count" -eq "$run_n" ] && break
             sleep 0.2
         done
 
@@ -890,11 +935,11 @@ else
         [ "${all_skip[$i]}" -eq 1 ] && continue
         label="${all_labels[$i]}"
         (
-            rc=0
+            _rc=0
             _st=$(_now_ds)
-            just ${all_cmds[$i]} > "$logdir/$label.log" 2>&1 || rc=$?
+            just ${all_cmds[$i]} > "$logdir/$label.log" 2>&1 || _rc=$?
             _et=$(_now_ds)
-            echo "$((_et - _st)) $rc" > "$logdir/$label.result"
+            echo "$((_et - _st)) $_rc" > "$logdir/$label.result"
         ) &
         pids+=($!)
     done
@@ -912,13 +957,13 @@ else
             _frame_ds=$(_now_ds)
             # Find max duration for scaling (completed jobs or current elapsed)
             _max_dur_ds=1
-            elapsed_ds=$((_frame_ds - global_start_ds))
+            _elapsed_ds=$((_frame_ds - global_start_ds))
             for i in "${!all_labels[@]}"; do
                 [ "${all_skip[$i]}" -eq 1 ] && continue
                 if [ -n "${done_flags[$i]}" ]; then
                     (( done_durs[$i] > _max_dur_ds )) && _max_dur_ds=${done_durs[$i]}
                 else
-                    (( elapsed_ds > _max_dur_ds )) && _max_dur_ds=$elapsed_ds
+                    (( _elapsed_ds > _max_dur_ds )) && _max_dur_ds=$_elapsed_ds
                 fi
             done
 
@@ -926,7 +971,7 @@ else
 
             _print_scroll_top
 
-            done_count=0
+            _done_count=0
             # Check all results first (even non-visible ones)
             for i in "${!all_labels[@]}"; do
                 [ "${all_skip[$i]}" -eq 1 ] && continue
@@ -935,7 +980,7 @@ else
                     read -r done_durs[$i] done_rcs[$i] < "$logdir/$label.result"
                     done_flags[$i]=1
                 fi
-                [ -n "${done_flags[$i]}" ] && done_count=$((done_count + 1))
+                [ -n "${done_flags[$i]}" ] && _done_count=$((_done_count + 1))
             done
 
             # Entry rendering (viewport-aware)
@@ -960,36 +1005,36 @@ else
                 fi
 
                 if [ -n "${done_flags[$i]}" ]; then
-                    dur_ds="${done_durs[$i]}"
-                    dur_str=$(_fmt_ds "$dur_ds")
-                    bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
-                    (( bar_len < 1 )) && bar_len=1
+                    _dur_ds="${done_durs[$i]}"
+                    _dur_str=$(_fmt_ds "$_dur_ds")
+                    _bar_len=$(( _dur_ds * max_bar / _max_dur_ds ))
+                    (( _bar_len < 1 )) && _bar_len=1
                     if [ "${done_rcs[$i]}" -eq 0 ]; then
-                        printf "  \033[32m✓ %-${label_w}s %6s %s\033[0m\033[K\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                        printf "  \033[32m✓ %-${label_w}s %6s %s\033[0m\033[K\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
                     else
-                        printf "  \033[31m✗ %-${label_w}s %6s %s\033[0m\033[K\n" "$label" "$dur_str" "$(bar "$bar_len")"
+                        printf "  \033[31m✗ %-${label_w}s %6s %s\033[0m\033[K\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
                     fi
                 else
-                    elapsed_ds=$((_frame_ds - global_start_ds))
-                    dur_str=$(_fmt_ds "$elapsed_ds")
-                    bar_len=$(( elapsed_ds * max_bar / _max_dur_ds ))
-                    (( bar_len < 1 )) && bar_len=1
-                    c="${spin:frame%${#spin}:1}"
-                    printf "  \033[93m%s %-${label_w}s %6s %s\033[0m\033[K\n" "$c" "$label" "$dur_str" "$(bar "$bar_len")"
+                    _elapsed_ds=$((_frame_ds - global_start_ds))
+                    _dur_str=$(_fmt_ds "$_elapsed_ds")
+                    _bar_len=$(( _elapsed_ds * max_bar / _max_dur_ds ))
+                    (( _bar_len < 1 )) && _bar_len=1
+                    _c="${_spin:_frame%${#_spin}:1}"
+                    printf "  \033[93m%s %-${label_w}s %6s %s\033[0m\033[K\n" "$_c" "$label" "$_dur_str" "$(_bar "$_bar_len")"
                 fi
             done
 
             _print_scroll_bottom
 
-            [ "$done_count" -eq "$run_n" ] && break
-            frame=$((frame + 1))
+            [ "$_done_count" -eq "$run_n" ] && break
+            _frame=$((_frame + 1))
             sleep 0.1
         done
 
         _show_cursor
     else
         # Non-interactive (CI, piped): wait then print
-        for pid in "${pids[@]}"; do wait "$pid" || true; done
+        for _pid in "${pids[@]}"; do wait "$_pid" || true; done
         _print_final_results
     fi
 fi
@@ -1000,9 +1045,9 @@ wall_ds=0
 for i in "${!all_labels[@]}"; do
     [ "${all_skip[$i]}" -eq 1 ] && continue
     label="${all_labels[$i]}"
-    read -r dur_ds rc < "$logdir/$label.result"
-    (( dur_ds > wall_ds )) && wall_ds=$dur_ds
-    [ "$rc" -ne 0 ] && failed=$((failed + 1))
+    read -r _dur_ds _rc < "$logdir/$label.result"
+    (( _dur_ds > wall_ds )) && wall_ds=$_dur_ds
+    [ "$_rc" -ne 0 ] && failed=$((failed + 1))
 done
 
 passed=$(( run_n - failed ))
@@ -1024,8 +1069,8 @@ _hist_line=""
 for i in "${!all_labels[@]}"; do
     [ "${all_skip[$i]}" -eq 1 ] && continue
     label="${all_labels[$i]}"
-    read -r dur_ds _rc < "$logdir/$label.result"
-    _hist_line="${_hist_line}${_hist_line:+ }${label}=${dur_ds}:${_rc}"
+    read -r _dur_ds _rc < "$logdir/$label.result"
+    _hist_line="${_hist_line}${_hist_line:+ }${label}=${_dur_ds}:${_rc}"
 done
 echo "$_hist_line" >> "$logdir/history.log"
 # Keep last 50 runs
@@ -1039,8 +1084,8 @@ if [ "$failed" -gt 0 ]; then
     for i in "${!all_labels[@]}"; do
         [ "${all_skip[$i]}" -eq 1 ] && continue
         label="${all_labels[$i]}"
-        read -r dur_ds rc < "$logdir/$label.result"
-        if [ "$rc" -ne 0 ]; then
+        read -r _dur_ds _rc < "$logdir/$label.result"
+        if [ "$_rc" -ne 0 ]; then
             echo "=== $label ==="
             cat "$logdir/$label.log"
             echo ""

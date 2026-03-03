@@ -6,19 +6,22 @@ Internal design documentation for contributors. For usage, see [README.md](READM
 
 The script has two top-level execution paths:
 
-| Mode       | Condition         | Scheduling                 | Display                |
-| ---------- | ----------------- | -------------------------- | ---------------------- |
-| Unlimited  | `-j` omitted or 0 | All jobs start at once     | Bar chart only         |
-| Slot-based | `-j N` (N > 0)    | N concurrent slots, queued | Bar chart + swim lanes |
+| Mode       | Condition                | Scheduling                 | Display                |
+| ---------- | ------------------------ | -------------------------- | ---------------------- |
+| Slot-based | Default (`50%` of CPUs)  | N concurrent slots, queued | Bar chart + swim lanes |
+| Slot-based | `-j N`, `-j P%`          | N concurrent slots, queued | Bar chart + swim lanes |
+| Unlimited  | `-j unlimited` or `-j 0` | All jobs start at once     | Bar chart only         |
+
+The `-j` flag accepts: an integer, a percentage (`1%`–`200%`, default `50%`), or `unlimited`. Percentages are resolved to slot counts at startup via `_cpu_count()`. `100%` always equals the exact CPU count; other percentages round to the nearest core with a minimum of 1 slot.
 
 Each mode has an interactive (tty) and non-interactive (piped/CI) sub-path:
 
 ```
 max_jobs > 0?
-├── yes (slot-based)
-│   ├── tty?  → interactive loop with swim lanes
+├── yes (slot-based — default)
+│   ├── tty?  → interactive loop with swim lanes (⚙ gear symbols)
 │   └── no    → poll loop, print static bars at end
-└── no (unlimited)
+└── no (unlimited — via -j unlimited)
     ├── tty?  → interactive loop with bar chart
     └── no    → wait all, print static bars
 ```

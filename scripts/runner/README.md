@@ -15,11 +15,14 @@ A bash script that runs just recipes in parallel with live progress display, his
 ## Quick start
 
 ```bash
-# Run 3 jobs in parallel, unlimited concurrency
+# Run 3 jobs with default concurrency (nproc/2 slots)
 ./scripts/runner/run-parallel.sh test "test go" "test rust" "test python"
 
 # Limit to 2 concurrent slots
 ./scripts/runner/run-parallel.sh -j 2 test "test go" "test rust" "test python"
+
+# All jobs at once (no swimlanes)
+./scripts/runner/run-parallel.sh -j unlimited test "test go" "test rust" "test python"
 
 # Mark a language as not installed
 ./scripts/runner/run-parallel.sh test "test go" "skip:haskell" "test rust"
@@ -41,16 +44,16 @@ Usage: run-parallel.sh [flags] <name> "cmd args" ...
 
 ### Flags
 
-| Flag      | Description                                                 |
-| --------- | ----------------------------------------------------------- |
-| `-j N`    | Limit concurrent jobs to N slots (0 or omitted = unlimited) |
-| `-s MODE` | Visualization mode: `scroll` (default), `full`, or `zoom`   |
-| `-h`      | Show help and exit                                          |
-| `--help`  | Show help and exit                                          |
+| Flag       | Description                                                          |
+| ---------- | -------------------------------------------------------------------- |
+| `-j VALUE` | Set concurrency: integer, percentage (default `50%`), or `unlimited` |
+| `-s MODE`  | Visualization mode: `scroll` (default), `full`, or `zoom`            |
+| `-h`       | Show help and exit                                                   |
+| `--help`   | Show help and exit                                                   |
 
 ## Scheduling
 
-When `-j N` is specified (N > 0), the runner uses slot-based scheduling instead of launching all jobs at once.
+By default the runner uses slot-based scheduling with 50% of available CPUs. Use `-j unlimited` for the legacy behavior of launching all jobs at once. Percentages from `1%` to `200%` are supported (e.g. `-j 100%` = all CPUs, `-j 150%` = 1.5x CPUs).
 
 ### Queue sorting
 
@@ -115,10 +118,10 @@ Each job gets one row showing:
 ### Swim lanes (slot-based only)
 
 Below the bar chart, a horizontal timeline shows which job occupied each slot over time:
-- Each slot is one row
+- Each slot is one row with a gear icon (⚙) aligned with the bar chart status icons
+- Active slots show a bright yellow gear, idle slots show a grey gear
 - Colored blocks show which job was running in that slot at each point
 - A time axis with second labels appears above the lanes
-- 20-color palette ensures adjacent jobs are visually distinct
 
 ### Non-interactive output
 
