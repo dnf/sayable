@@ -8,6 +8,7 @@ The table below summarizes how each language structures its locale data:
 
 | Language   | File layout                                      | Initialization                      | Lookup via `getLocale`  |
 | ---------- | ------------------------------------------------ | ----------------------------------- | ----------------------- |
+| Ada        | Single file (`parenttime_locales.adb`)           | Lazy (first-call init)              | `if`-chain              |
 | TypeScript | 71 individual ES modules + barrel `index.ts`     | Eager (module-level `const`)        | `_ALL` Record           |
 | Python     | 71 individual modules + `__init__.py` barrel     | Eager (module-level assignment)     | `_ALL` dict             |
 | Go         | 71 individual files in one package               | Eager (package-level `var`)         | `switch` statement      |
@@ -75,6 +76,7 @@ The other languages have no equivalent mechanism. Their package managers and run
 
 | Language   | Unused locales eliminated automatically?                                                                              | Action required                                                     |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Ada        | No                                                                                                                    | Use codegen subsetting                                              |
 | TypeScript | **Yes**, if you import individual locales without `getLocale` and use a tree-shaking bundler                          | None, *unless* you import `getLocale` — then use codegen subsetting |
 | Python     | No                                                                                                                    | Use codegen subsetting                                              |
 | Go         | No                                                                                                                    | Use codegen subsetting                                              |

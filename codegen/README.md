@@ -18,6 +18,7 @@ codegen/
   generate.py        # Orchestrator: loads JSON, runs emitters, writes files
   extract.py         # One-time bootstrap: read TS files → JSON (already run)
   targets/           # One subdirectory per target language
+    ada/             #   emitter.py + plural_rules.py
     typescript/      #   emitter.py + plural_rules.py
     python/
     go/
@@ -89,6 +90,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 
 | Language   | Output files                                     | Pattern                         |
 | ---------- | ------------------------------------------------ | ------------------------------- |
+| Ada        | `parenttime_locales.ads` + `.adb`                | single file, all 71             |
 | TypeScript | `locales/{code}.ts` + `locales/index.ts`         | one per locale + barrel         |
 | Python     | `locales/{code}.py` + `locales/__init__.py`      | one per locale + barrel         |
 | Go         | `locale_{code}.go`                               | one per locale                  |
@@ -99,7 +101,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 | Lua        | `locales/{code}.lua` + `locales/init.lua`        | one per locale + barrel         |
 | OCaml      | `locales/{code}.ml` + `locales/locales.ml`       | one per locale + barrel         |
 | Scala      | `Locales.scala`                                  | single file, all 71             |
-| C++        | `locales_{a_e,f_k,l_r,s_z}.cpp` + `locales.hpp` | 4 files by alpha range + header |
+| C++        | `locales_{a_e,f_k,l_r,s_z}.cpp` + `locales.hpp`  | 4 files by alpha range + header |
 | Perl       | `Locales/{CODE}.pm` + `Locales.pm`               | one per locale + registry       |
 | PHP        | `Locales.php`                                    | single file, all 71             |
 | Java       | `Locales.java`                                   | single file, all 71             |

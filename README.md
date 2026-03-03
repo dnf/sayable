@@ -14,6 +14,7 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 
 | Language   | CI                                                                                                                                                                              | Package                                                                                                                                                                          | Install                                     | Docs                               |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ---------------------------------- |
+| Ada        | [![Ada](https://github.com/dnf/parent-time/actions/workflows/ada.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/ada.yml)                      | —                                                                                                                                                                                | GPRbuild                                    | [README](src/ada/README.md)        |
 | C          | [![C](https://github.com/dnf/parent-time/actions/workflows/c.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/c.yml)                            | —                                                                                                                                                                                | CMake (freestanding)                        | [README](src/c/README.md)          |
 | C#         | [![C#](https://github.com/dnf/parent-time/actions/workflows/csharp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/csharp.yml)                 | —                                                                                                                                                                                | NuGet                                       | [README](src/csharp/README.md)     |
 | C++        | [![C++](https://github.com/dnf/parent-time/actions/workflows/cpp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/cpp.yml)                      | —                                                                                                                                                                                | CMake ([`FetchContent`](src/cpp/README.md)) | [README](src/cpp/README.md)        |
@@ -227,7 +228,7 @@ just lint                # run all available linters
 just --list              # see all available commands
 ```
 
-Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `gy`, `lu`, `ml`, `ft`, `c++`, `cs`, `fs`, `sw`, `hs`, `ex`, `erl`, `clj`, `el`, `gm`, `sc`, `zg` are accepted alongside full names.
+Language shortcuts: `ad`, `ts`, `py`, `rb`, `rs`, `kt`, `gy`, `lu`, `ml`, `ft`, `c++`, `cs`, `fs`, `sw`, `hs`, `ex`, `erl`, `clj`, `el`, `gm`, `sc`, `zg` are accepted alongside full names.
 
 ## Contributing
 

@@ -12,7 +12,7 @@ Thanks for your interest in contributing! This project maintains identical imple
 
 ```
 src/
-  c/  clojure/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
+  ada/  c/  clojure/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
   java/  kotlin/  lua/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 locales/       # 71 JSON files — single source of truth for locale data
 codegen/
@@ -40,6 +40,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 
 | Language   | test                           | build                            | lint                           | clean                            |
 | ---------- | ------------------------------ | -------------------------------- | ------------------------------ | -------------------------------- |
+| Ada        | `test ada`<br>`test ad`        | `build ada`<br>`build ad`        | 🛠️                             | `clean ada`<br>`clean ad`        |
 | C          | `test c`                       | `build c`                        | 🛠️                             | `clean c`                        |
 | C#         | `test csharp`<br>`test cs`     | `build csharp`<br>`build cs`     | 🛠️                             | `clean csharp`<br>`clean cs`     |
 | C++        | `test cpp`<br>`test c++`       | `build cpp`<br>`build c++`       | 🛠️                             | `clean cpp`<br>`clean c++`       |

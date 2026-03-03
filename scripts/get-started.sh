@@ -22,6 +22,7 @@ source "$SCRIPT_DIR/installers/_common.sh"
 # Language → detection tool (matches justfile _tool())
 _tool() {
     case "$1" in
+        ada)         echo gnat    ;;
         c|cpp)       echo cmake   ;;
         clojure)     echo clojure ;;
         csharp)      echo dotnet  ;;
@@ -46,7 +47,7 @@ _tool() {
     esac
 }
 
-ALL_LANGS=(c clojure cpp csharp dart elixir elm erlang fsharp fortran go groovy haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig)
+ALL_LANGS=(ada c clojure cpp csharp dart elixir elm erlang fsharp fortran gleam go groovy haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig)
 
 # Languages unavailable on certain architectures
 _unavailable() {

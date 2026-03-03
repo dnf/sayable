@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 27 identical implementations (C, C#, C++, Clojure, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, OCaml, Perl, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 28 identical implementations (Ada, C, C#, C++, Clojure, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, OCaml, Perl, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
 
 ## Build and test commands
 
@@ -59,6 +59,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 
 ```
 src/
+  ada/         # Ada
   c/           # C (freestanding)
   clojure/     # Clojure
   cpp/         # C++
@@ -94,8 +95,8 @@ docs/          # Shared docs, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `format_age.dart`, `formatter.ex`, `Formatter.elm`, `parenttime_formatter.erl`, `Formatter.fs`, `parenttime.f90`, `formatter.gleam`, `parenttime.go`, `ParentTime.groovy`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `parenttime.lua`, `formatter.ml`, `Formatter.pm`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
-- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `types.dart`, `locale.ex`, `Types.elm`, `parenttime.hrl`, `Types.fs`, `parenttime_types.f90`, `types.gleam`, `locale.go`, `AgeLocale.groovy`, `Types.hs`, `AgeLocale.java`, `Types.kt`, (tables), `types.ml`, `Locale.pm`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
+- Formatter: `parenttime.adb`, `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `format_age.dart`, `formatter.ex`, `Formatter.elm`, `parenttime_formatter.erl`, `Formatter.fs`, `parenttime.f90`, `formatter.gleam`, `parenttime.go`, `ParentTime.groovy`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `parenttime.lua`, `formatter.ml`, `Formatter.pm`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
+- Types/Locale: `parenttime_types.ads`, `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `types.dart`, `locale.ex`, `Types.elm`, `parenttime.hrl`, `Types.fs`, `parenttime_types.f90`, `types.gleam`, `locale.go`, `AgeLocale.groovy`, `Types.hs`, `AgeLocale.java`, `Types.kt`, (tables), `types.ml`, `Locale.pm`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style
@@ -107,6 +108,7 @@ Core files per language follow a consistent pattern:
 - Markdown tables must be column-aligned with spaces so pipe delimiters line up vertically in raw text. Run `just maintain docs` to fix alignment automatically.
 - Language-specific build artifacts (e.g., `_build/`, `dist-newstyle/`, `build/`) go in `src/.gitignore`, not the root `.gitignore`. The root `.gitignore` is for cross-language patterns only (e.g., `__pycache__/`, `.logs/`).
 - **Gitignore sections must be alphabetically ordered.** In `src/.gitignore`, language sections are ordered alphabetically by language name (C, C#, C++, Clojure, …, Zig). In the root `.gitignore`, entries are also kept in alphabetical order.
+- **One language per line in justfile lists.** Language lists (`_ALL_LANGS`, `_COMPILED_LANGS`, etc.), abbreviation maps (`_name()`, `_abbr()`), and dependency maps (`_dep()`) all live in `scripts/_lang-helpers.sh` with one entry per `case` arm. This prevents merge conflicts when multiple branches add languages concurrently. Help text grids are generated dynamically from these lists — never hardcode multi-language grid rows.
 
 ## Adding a new locale
 
@@ -127,7 +129,7 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 3. Register the generator in `codegen/generate.py` (`_GENERATORS` dict)
 4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from an existing implementation)
 5. Implement all test cases from `tests/testing.md`
-6. Add to `justfile` (test, build, lint, clean recipes)
+6. Add to `scripts/_lang-helpers.sh` (language lists, abbreviation, dependency) and `justfile` (test, build, lint, clean recipe handlers)
 7. Configure the language's standard linter with zero warnings
 8. Create installer script at `scripts/installers/<lang>.sh` and update `Dockerfile`
 9. Create `src/<lang>/README.md` with a `## License` section linking to `LICENSE.md`

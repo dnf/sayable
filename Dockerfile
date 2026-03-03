@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     cmake \
     gfortran \
+    # Ada (GNAT + GPRbuild)
+    gnat gprbuild \
     curl \
     ca-certificates \
     git \

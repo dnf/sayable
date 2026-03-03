@@ -495,6 +495,18 @@ def generate_perl(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_ada(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.ada.emitter import body_path, emit_body, emit_spec, spec_path
+
+    path = spec_path(ROOT)
+    content = emit_spec(locales)
+    _write_or_check(path, content, check, diffs)
+
+    path = body_path(ROOT)
+    content = emit_body(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_groovy(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.groovy.emitter import emit_all, output_path
 
@@ -512,6 +524,7 @@ def generate_zig(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 _GENERATORS = {
+    "ada": generate_ada,
     "typescript": generate_typescript,
     "python": generate_python,
     "go": generate_go,

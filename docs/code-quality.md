@@ -35,6 +35,7 @@ below summarizes the patterns across all implementations:
 
 | Language   | Classes/Types | Functions/Methods     | Constants           | Fields/Properties     | Enum variants         |
 | ---------- | ------------- | --------------------- | ------------------- | --------------------- | --------------------- |
+| Ada        | PascalCase    | PascalCase            | PascalCase (`EN`)   | PascalCase (record)   | PascalCase            |
 | C#         | PascalCase    | PascalCase            | UPPER_CASE (`EN`)   | PascalCase            | PascalCase            |
 | C++        | PascalCase    | snake_case            | UPPER_CASE (`EN()`) | snake_case            | PascalCase            |
 | Elixir     | PascalCase    | snake_case            | UPPER_CASE (`EN`)   | atom keys             | n/a (atom literals)   |
@@ -83,6 +84,7 @@ how each language enforces this:
 
 | Language   | Mechanism                             | Notes                                                                             |
 | ---------- | ------------------------------------- | --------------------------------------------------------------------------------- |
+| Ada        | `in` mode parameters                  | Locale passed as `in` mode; record fields set at initialization, not modified     |
 | C#         | `private readonly` fields             | Fields set in constructor; `TreatWarningsAsErrors` in project                     |
 | C++        | `const` methods + `const` locals      | Methods are `const`-qualified; local variables use `const` where assigned once    |
 | Elixir     | Immutable by language design          | All data is immutable in Elixir; functions are pure by convention                 |
@@ -188,6 +190,7 @@ language family:
 
 | Language   | Tools                       | Key strictness                                                  | Tests | Assertions |
 | ---------- | --------------------------- | --------------------------------------------------------------- | ----: | ---------: |
+| Ada        | GNAT compiler               | `-gnatwa -gnatwe -gnata -gnatVa`; CTest-style harness           | 214   | 214        |
 | C#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 140   | 191        |
 | C++        | Compiler flags + clang-tidy | `-Wall -Wextra -Wpedantic -Werror` + 13 more; clang-tidy config | 164   | 167        |
 | Elixir     | Mix compiler                | `warnings_as_errors: true`; ExUnit                              | 209   | 209        |
