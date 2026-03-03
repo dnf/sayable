@@ -8,7 +8,7 @@
 "Newborn" · "2 weeks, 4 days" · "14 months" · "2 years, 3 months" · "4½ years"
 ```
 
-Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 23 languages, 71 locales, and three compactness levels.
+Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 25 languages, 71 locales, and three compactness levels.
 
 ## Implementations
 
@@ -28,6 +28,7 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 | Haskell    | [![Haskell](https://github.com/dnf/parent-time/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/haskell.yml)          | —                                                                                                                                                                                | Cabal                                       | [README](src/haskell/README.md)    |
 | Java       | [![Java](https://github.com/dnf/parent-time/actions/workflows/java.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/java.yml)                   | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven                                | [README](src/java/README.md)       |
 | Kotlin     | [![Kotlin](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml)             | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time)  | Gradle/Maven                                | [README](src/kotlin/README.md)     |
+| Lua        | [![Lua](https://github.com/dnf/parent-time/actions/workflows/lua.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/lua.yml)                      | —                                                                                                                                                                                | Plain module (local)                        | [README](src/lua/README.md)        |
 | OCaml      | [![OCaml](https://github.com/dnf/parent-time/actions/workflows/ocaml.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/ocaml.yml)                | —                                                                                                                                                                                | Dune                                        | [README](src/ocaml/README.md)      |
 | Perl       | [![Perl](https://github.com/dnf/parent-time/actions/workflows/perl.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/perl.yml)                   | —                                                                                                                                                                                | `prove -Ilib`                               | [README](src/perl/README.md)       |
 | PHP        | [![PHP](https://github.com/dnf/parent-time/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/php.yml)                      | [![Packagist](https://img.shields.io/packagist/v/dnf/parent-time?logo=packagist&label=packagist)](https://packagist.org/packages/dnf/parent-time)                                | `composer require dnf/parent-time`          | [README](src/php/README.md)        |
@@ -224,7 +225,7 @@ just lint                # run all available linters
 just --list              # see all available commands
 ```
 
-Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `ml`, `ft`, `c++`, `cs`, `fs`, `sw`, `hs`, `ex`, `erl`, `clj`, `el`, `sc`, `zg` are accepted alongside full names.
+Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `lu`, `ml`, `ft`, `c++`, `cs`, `fs`, `sw`, `hs`, `ex`, `erl`, `clj`, `el`, `sc`, `zg` are accepted alongside full names.
 
 ## Contributing
 

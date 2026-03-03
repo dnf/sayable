@@ -26,6 +26,7 @@ codegen/
     rust/
     scala/
     kotlin/
+    lua/
     ocaml/
     cpp/
     php/
@@ -92,6 +93,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 | Ruby       | `locales/{code}.rb`                             | one per locale                  |
 | Rust       | `locales/{code}.rs` + `locales/mod.rs`          | one per locale + barrel         |
 | Kotlin     | `Locales.kt`                                    | single file, all 71             |
+| Lua        | `locales/{code}.lua` + `locales/init.lua`       | one per locale + barrel         |
 | OCaml      | `locales/{code}.ml` + `locales/locales.ml`      | one per locale + barrel         |
 | Scala      | `Locales.scala`                                 | single file, all 71             |
 | C++        | `locales_{a_e,f_k,l_r,s_z}.cpp` + `locales.hpp` | 4 files by alpha range + header |

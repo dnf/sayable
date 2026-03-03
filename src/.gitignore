@@ -53,6 +53,9 @@ java/.gradle/
 kotlin/build/
 kotlin/.gradle/
 
+# Lua
+lua/luarocks/
+
 # OCaml
 ocaml/_build/
 ocaml/_opam/

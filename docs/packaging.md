@@ -14,6 +14,7 @@ The table below summarizes how each language structures its locale data:
 | Ruby       | 71 individual files, glob-required           | Eager (`Dir[].each { require }`)    | `case`/`when`           |
 | Rust       | 71 individual modules + `mod.rs` barrel      | Lazy (`LazyLock`)                   | `match` expression      |
 | Kotlin     | Single file (`Locales.kt`)                   | Eager (`val` on `object`)           | `ALL` map lookup        |
+| Lua        | 71 individual modules + `locales/init.lua`   | Lazy (`require` on first access)    | Registry lookup         |
 | OCaml      | 71 individual modules + `locales.ml` barrel  | Eager (module-level `let` binding)  | `match` expression      |
 | C++        | 4 source files by alpha range + header       | Lazy (function-scoped `static`)     | `if`-chain              |
 | PHP        | Single file (`Locales.php`)                  | Lazy (`??=` pattern)                | `match` expression      |
@@ -78,6 +79,7 @@ The other languages have no equivalent mechanism. Their package managers and run
 | Ruby       | No                                                                                                                    | Use codegen subsetting                                              |
 | Rust       | No in library builds; partial in optimized binaries via LLVM LTO if `get()` is unused                                 | Use codegen subsetting                                              |
 | Kotlin     | No                                                                                                                    | Use codegen subsetting                                              |
+| Lua        | No                                                                                                                    | Use codegen subsetting                                              |
 | OCaml      | No                                                                                                                    | Use codegen subsetting                                              |
 | C++        | No in library builds; partial in optimized binaries with `-ffunction-sections` + `--gc-sections` if `get()` is unused | Use codegen subsetting                                              |
 | PHP        | No                                                                                                                    | Use codegen subsetting                                              |

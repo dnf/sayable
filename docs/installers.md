@@ -13,7 +13,7 @@ just get-started --status   # print language status table
 just get-started --check    # exit 0 if all installed, 1 if missing
 ```
 
-Short aliases work everywhere: `just install ts py rb rs kt ft c++ cs fs sw hs ex erl clj sc zg el pl dt`
+Short aliases work everywhere: `just install ts py rb rs kt lu ft c++ cs fs sw hs ex erl clj sc zg el pl dt ml`
 
 Misspelled names get a "did you mean?" prompt (e.g. `just install elixer` suggests `elixir`).
 
@@ -55,13 +55,13 @@ Most languages install via Homebrew (including Dart via `dart-sdk`). Exceptions:
 
 Languages install via a mix of apt packages and direct downloads:
 
-| Method           | Languages                                                                    |
-| ---------------- | ---------------------------------------------------------------------------- |
-| apt packages     | C/C++ (cmake), C#/F# (dotnet), Elixir, Erlang, Fortran, Perl, PHP, Ruby      |
-| Direct download  | Dart, Go, Swift, Zig                                                         |
-| Installer script | Clojure, Haskell (ghcup), Rust (rustup), Python (uv)                         |
-| npm global       | Elm, TypeScript (Node via NodeSource apt)                                    |
-| Shared           | Java/Kotlin/Scala (OpenJDK 17 via apt)                                       |
+| Method           | Languages                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------- |
+| apt packages     | C/C++ (cmake), C#/F# (dotnet), Elixir, Erlang, Fortran, Lua, Perl, PHP, Ruby       |
+| Direct download  | Dart, Go, Swift, Zig                                                               |
+| Installer script | Clojure, Haskell (ghcup), Rust (rustup), Python (uv)                               |
+| npm global       | Elm, TypeScript (Node via NodeSource apt)                                          |
+| Shared           | Java/Kotlin/Scala (OpenJDK 17 via apt)                                             |
 
 ### Uninstall caveats
 

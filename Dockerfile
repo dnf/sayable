@@ -24,6 +24,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     elixir \
     # Erlang/OTP + rebar3
     erlang-dev erlang-tools rebar3 \
+    # Lua 5.4 + LuaRocks
+    lua5.4 liblua5.4-dev luarocks \
     # rlwrap for Clojure REPL
     rlwrap \
     && rm -rf /var/lib/apt/lists/*
@@ -106,6 +108,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends opam \
     && eval $(opam env) \
     && opam install dune alcotest --yes
 ENV PATH="/root/.opam/default/bin:${PATH}"
+
+# Lua testing framework (busted) via LuaRocks
+RUN luarocks install busted
 
 # just (task runner)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin

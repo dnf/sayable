@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 24 identical implementations (C, C#, C++, Clojure, Dart, Elixir, Elm, Erlang, F#, Fortran, Go, Haskell, Java, Kotlin, OCaml, Perl, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 25 identical implementations (C, C#, C++, Clojure, Dart, Elixir, Elm, Erlang, F#, Fortran, Go, Haskell, Java, Kotlin, Lua, OCaml, Perl, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
 
 ## Build and test commands
 
@@ -73,6 +73,7 @@ src/
   haskell/     # Haskell
   java/        # Java
   kotlin/      # Kotlin
+  lua/         # Lua
   ocaml/       # OCaml
   perl/        # Perl
   php/         # PHP
@@ -91,8 +92,8 @@ docs/          # Shared docs, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `format_age.dart`, `formatter.ex`, `Formatter.elm`, `parenttime_formatter.erl`, `Formatter.fs`, `parenttime.f90`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `formatter.ml`, `Formatter.pm`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
-- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `types.dart`, `locale.ex`, `Types.elm`, `parenttime.hrl`, `Types.fs`, `parenttime_types.f90`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `types.ml`, `Locale.pm`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
+- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `format_age.dart`, `formatter.ex`, `Formatter.elm`, `parenttime_formatter.erl`, `Formatter.fs`, `parenttime.f90`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `parenttime.lua`, `formatter.ml`, `Formatter.pm`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
+- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `types.dart`, `locale.ex`, `Types.elm`, `parenttime.hrl`, `Types.fs`, `parenttime_types.f90`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, (tables), `types.ml`, `Locale.pm`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style
