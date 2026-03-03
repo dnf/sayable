@@ -222,9 +222,11 @@ A top-level [`justfile`](https://github.com/casey/just) provides a single entry 
 just test                # run all test suites + codegen check
 just test go             # run one language's tests
 just build               # build all languages with a build step
+just lint                # run all available linters
+just disable hs ada      # skip languages from parallel runs
+just enable --all        # re-enable all disabled languages
 just generate            # regenerate locale files from canonical JSON
 just check               # verify generated files are up-to-date
-just lint                # run all available linters
 just --list              # see all available commands
 ```
 

@@ -1,6 +1,6 @@
 # Code Quality: Compiled Languages
 
-Detailed configuration rationale for Go, Groovy, Rust, Kotlin, C++, and Java.
+Detailed configuration rationale for languages with complex linter setups. See below for per-language sections.
 
 ---
 

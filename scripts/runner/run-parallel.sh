@@ -10,6 +10,29 @@
 # original position without launching a job.
 set -uo pipefail
 
+# --- ANSI color codes ---
+_c_reset=$'\033[0m'
+_c_dim=$'\033[2m'
+_c_green=$'\033[32m'
+_c_red=$'\033[31m'
+_c_yellow=$'\033[93m'
+_c_orange=$'\033[38;5;208m'
+_c_gray=$'\033[90m'
+_c_erase=$'\033[K'
+_c_bg256=$'\033[48;5;'   # append "${color}m"
+_c_fg256=$'\033[38;5;'   # append "${color}m"
+_c_lane_idle=$'\033[48;5;236m'
+
+# --- Semantic colors (built from base colors) ---
+_s_pass="$_c_green"
+_s_fail="$_c_red"
+_s_run="$_c_yellow"
+_s_disable="$_c_orange"
+_s_skip="$_c_dim"
+_s_queued="$_c_dim"
+_s_idle="$_c_gray"
+_s_scroll="$_c_dim"
+
 max_jobs=50%
 _viz_mode=scroll  # scroll (default), full, or zoom
 _tick_ds=2        # base: 0.2s per column (for scroll/zoom modes)
@@ -102,30 +125,42 @@ if ! mkdir "$lockdir" 2>/dev/null; then
     fi
 fi
 
-# Build unified ordered list — each entry is runnable, skipped, or a separator
+# Build unified ordered list — each entry is runnable, skipped, disabled, or a separator
 all_labels=()
-all_cmds=()   # empty string for skipped/separator entries
-all_skip=()   # 1 = skipped/separator, 0 = runnable
-all_sep=()    # 1 = separator (blank line), 0 = normal entry
+all_cmds=()      # empty string for skipped/separator/disabled entries
+all_skip=()      # 1 = skipped/separator/disabled, 0 = runnable
+all_sep=()       # 1 = separator (blank line), 0 = normal entry
+all_disable=()   # 1 = disabled by user, 0 = not disabled
 run_n=0
 skip_n=0
+disable_n=0
 for _arg in "$@"; do
     if [[ "$_arg" == "---" ]]; then
         all_labels+=("---")
         all_cmds+=("")
         all_skip+=(1)
         all_sep+=(1)
+        all_disable+=(0)
+    elif [[ "$_arg" == disable:* ]]; then
+        all_labels+=("${_arg#disable:}")
+        all_cmds+=("")
+        all_skip+=(1)
+        all_sep+=(0)
+        all_disable+=(1)
+        disable_n=$((disable_n + 1))
     elif [[ "$_arg" == skip:* ]]; then
         all_labels+=("${_arg#skip:}")
         all_cmds+=("")
         all_skip+=(1)
         all_sep+=(0)
+        all_disable+=(0)
         skip_n=$((skip_n + 1))
     else
         all_labels+=("${_arg##* }")
         all_cmds+=("$_arg")
         all_skip+=(0)
         all_sep+=(0)
+        all_disable+=(0)
         run_n=$((run_n + 1))
     fi
 done
@@ -207,14 +242,25 @@ if [ "$run_n" -eq 0 ]; then
     for i in "${!all_labels[@]}"; do
         if [ "${all_sep[$i]}" -eq 1 ]; then echo; continue; fi
         label="${all_labels[$i]}"
-        if [ -t 1 ]; then
-            printf "  \033[2m- %-${label_w}s    - not installed\033[0m\n" "$label"
+        if [ "${all_disable[$i]}" -eq 1 ]; then
+            if [ -t 1 ]; then
+                printf "  ${_s_disable}⊘ %-${label_w}s      ⊘ disabled$_c_reset\n" "$label"
+            else
+                printf "  ⊘ %-${label_w}s      ⊘ disabled\n" "$label"
+            fi
         else
-            printf "  - %-${label_w}s    - not installed\n" "$label"
+            if [ -t 1 ]; then
+                printf "  $_s_skip- %-${label_w}s    - not installed$_c_reset\n" "$label"
+            else
+                printf "  - %-${label_w}s    - not installed\n" "$label"
+            fi
         fi
     done
     echo ""
-    echo "0/0 passed, $skip_n not installed"
+    _summary="0/0 passed"
+    [ "$skip_n" -gt 0 ] && _summary="$_summary, $skip_n not installed"
+    [ "$disable_n" -gt 0 ] && _summary="$_summary, $disable_n disabled"
+    echo "$_summary"
     echo "Logs: $logdir/"
     rmdir "$lockdir" 2>/dev/null
     exit 0
@@ -235,7 +281,7 @@ _now_ds() { perl -MTime::HiRes=time -e 'printf "%d\n", time*10'; }
 _fmt_ds() { echo "$((${1} / 10)).$((${1} % 10))s"; }
 
 # Print a duration-scaled time axis above bar charts.
-# $1 = max duration in deciseconds, $2 = 1 if interactive (adds \033[K)
+# $1 = max duration in deciseconds, $2 = 1 if interactive (adds $_c_erase)
 _print_duration_axis() {
     local _max_ds=$1 _is_tty=${2:-0}
     (( _max_ds < 1 )) && _max_ds=1
@@ -255,7 +301,7 @@ _print_duration_axis() {
             _prev_end=$((_tick_col + ${#_t}))
         fi
     done
-    [ "$_is_tty" -eq 1 ] && printf "\033[K"
+    [ "$_is_tty" -eq 1 ] && printf "$_c_erase"
     echo
 }
 
@@ -300,7 +346,7 @@ _print_time_axis() {
     if [ "$_prev_end" -lt "$max_bar" ]; then
         printf "%*s" "$((max_bar - _prev_end))" ""
     fi
-    printf "\033[K\n"
+    printf "$_c_erase\n"
 }
 
 # --- Swim lane color palette (256-color, 20 distinct) ---
@@ -308,21 +354,21 @@ _palette=(196 46 33 208 129 214 39 161 82 166 63 203 48 99 215 35 197 118 57 172
 _npal=${#_palette[@]}
 
 # Render swim lane chart (supports full/scroll/zoom modes).
-# Every line ends with \033[K for live-refresh compatibility.
+# Every line ends with $_c_erase for live-refresh compatibility.
 # Expects: max_jobs, max_bar, _viz_mode, _total_ds, _eff_tick_ds,
 #          _display_offset_ds, _max_ds, _lane_ci[], _slot_labels[],
 #          _palette[], prefix_w, label_w, term_w
 _render_lanes() {
-    printf "\033[K\n"
+    printf "$_c_erase\n"
 
     # Header rule line
     local _ri
     for (( _ri=0; _ri<term_w; _ri++ )); do printf "─"; done
-    printf "\033[K\n"
+    printf "$_c_erase\n"
 
     # Time axis
     _print_time_axis
-    printf "\033[K\n"
+    printf "$_c_erase\n"
 
     # Count unstarted jobs to decide whether idle slots show a gear
     local _queued=0
@@ -334,9 +380,9 @@ _render_lanes() {
     local _s _lt _ds
     for (( _s=0; _s<max_jobs; _s++ )); do
         if [ -n "${_slot_labels[$_s]}" ] && [ "${_slot_ci[$_s]}" -ge 0 ]; then
-            printf "  \033[93m⚙\033[0m \033[48;5;%dm  \033[0m %-${label_w}s        " "${_palette[${_slot_ci[$_s]}]}" "${_slot_labels[$_s]}"
+            printf "  ${_s_run}⚙$_c_reset ${_c_bg256}%dm  $_c_reset %-${label_w}s        " "${_palette[${_slot_ci[$_s]}]}" "${_slot_labels[$_s]}"
         elif [ "$_queued" -gt 0 ]; then
-            printf "  \033[90m⚙\033[0m%*s" "$((prefix_w - 3))" ""
+            printf "  ${_s_idle}⚙$_c_reset%*s" "$((prefix_w - 3))" ""
         else
             printf "%*s" "$prefix_w" ""
         fi
@@ -351,13 +397,13 @@ _render_lanes() {
             else
                 local _ci="${_lane_ci[$((_s * _max_ds + _ds))]:--1}"
                 if [ "$_ci" -ge 0 ]; then
-                    printf "\033[48;5;%dm \033[0m" "${_palette[$((_ci % _npal))]}"
+                    printf "${_c_bg256}%dm $_c_reset" "${_palette[$((_ci % _npal))]}"
                 else
-                    printf "\033[48;5;236m \033[0m"
+                    printf "${_c_lane_idle} $_c_reset"
                 fi
             fi
         done
-        printf "\033[K\n"
+        printf "$_c_erase\n"
     done
 }
 
@@ -423,7 +469,9 @@ _drain_keys() {
 # Open the terminal for raw key input. Prefers /dev/tty (works under just(1)
 # where stdin is not a terminal), falls back to stdin when it is a tty.
 _enable_raw_input() {
-    if exec 9</dev/tty 2>/dev/null; then
+    # Test /dev/tty in a subshell to avoid permanently redirecting stderr
+    if (exec 9</dev/tty) 2>/dev/null; then
+        exec 9</dev/tty
         _key_fd=1
         _old_stty=$(stty -g </dev/tty 2>/dev/null)
         stty -icanon -echo </dev/tty 2>/dev/null
@@ -476,9 +524,9 @@ _update_terminal_size() {
 _print_scroll_top() {
     if [ "$_scroll_active" -eq 1 ]; then
         if [ "$_scroll_offset" -gt 0 ]; then
-            printf "  \033[2m▲ %d more\033[0m\033[K\n" "$_scroll_offset"
+            printf "  ${_s_scroll}▲ %d more$_c_reset$_c_erase\n" "$_scroll_offset"
         else
-            printf "\033[K\n"
+            printf "$_c_erase\n"
         fi
     fi
 }
@@ -487,9 +535,9 @@ _print_scroll_bottom() {
     if [ "$_scroll_active" -eq 1 ]; then
         _below=$((total - _scroll_offset - _vis_count))
         if [ "$_below" -gt 0 ]; then
-            printf "  \033[2m▼ %d more\033[0m\033[K\n" "$_below"
+            printf "  ${_s_scroll}▼ %d more$_c_reset$_c_erase\n" "$_below"
         else
-            printf "\033[K\n"
+            printf "$_c_erase\n"
         fi
     fi
 }
@@ -539,7 +587,9 @@ _print_final_results() {
         if [ "${all_sep[$i]}" -eq 1 ]; then
             echo; continue
         fi
-        if [ "${all_skip[$i]}" -eq 1 ]; then
+        if [ "${all_disable[$i]}" -eq 1 ]; then
+            printf "  ⊘ %-${label_w}s      ⊘ disabled\n" "$label"
+        elif [ "${all_skip[$i]}" -eq 1 ]; then
             printf "  - %-${label_w}s      - not installed\n" "$label"
         else
             read -r _dur_ds _rc < "$logdir/$label.result"
@@ -781,7 +831,7 @@ if [ "$max_jobs" -gt 0 ]; then
             # Render: bar chart + swim lanes (full redraw)
             _cursor_up "$_display_height"
             _print_time_axis
-            printf "\033[K\n"
+            printf "$_c_erase\n"
 
             _print_scroll_top
 
@@ -800,10 +850,14 @@ if [ "$max_jobs" -gt 0 ]; then
 
                 label="${all_labels[$i]}"
                 if [ "${all_sep[$i]}" -eq 1 ]; then
-                    printf "\033[K\n"; continue
+                    printf "$_c_erase\n"; continue
+                fi
+                if [ "${all_disable[$i]}" -eq 1 ]; then
+                    printf "  ${_s_disable}⊘    %-${label_w}s      ⊘ disabled$_c_reset$_c_erase\n" "$label"
+                    continue
                 fi
                 if [ "${all_skip[$i]}" -eq 1 ]; then
-                    printf "  \033[2m-    %-${label_w}s      - not installed\033[0m\033[K\n" "$label"
+                    printf "  $_s_skip-    %-${label_w}s      - not installed$_c_reset$_c_erase\n" "$label"
                     continue
                 fi
                 _ci=${_label_ci[$i]}
@@ -811,9 +865,9 @@ if [ "$max_jobs" -gt 0 ]; then
                     _dur_ds="${done_durs[$i]}"
                     _dur_str=$(_fmt_ds "$_dur_ds")
                     if [ "${done_rcs[$i]}" -eq 0 ]; then
-                        printf "  \033[32m✓\033[0m \033[48;5;%dm  \033[0m \033[32m%-${label_w}s %6s\033[0m " "${_palette[$_ci]}" "$label" "$_dur_str"
+                        printf "  ${_s_pass}✓$_c_reset ${_c_bg256}%dm  $_c_reset $_s_pass%-${label_w}s %6s$_c_reset " "${_palette[$_ci]}" "$label" "$_dur_str"
                     else
-                        printf "  \033[31m✗\033[0m \033[48;5;%dm  \033[0m \033[31m%-${label_w}s %6s\033[0m " "${_palette[$_ci]}" "$label" "$_dur_str"
+                        printf "  ${_s_fail}✗$_c_reset ${_c_bg256}%dm  $_c_reset $_s_fail%-${label_w}s %6s$_c_reset " "${_palette[$_ci]}" "$label" "$_dur_str"
                     fi
                     _ws_ds=$((_job_start_ds[$i] - global_start_ds))
                     _we_ds=$((_ws_ds + _dur_ds))
@@ -823,7 +877,7 @@ if [ "$max_jobs" -gt 0 ]; then
                     else
                         if [ "$_we_ds" -le "$_display_offset_ds" ]; then
                             printf "%*s" "$max_bar" ""
-                            printf "\033[K\n"
+                            printf "$_c_erase\n"
                             continue
                         fi
                         _col_s=$(((_ws_ds - _display_offset_ds) / _eff_tick_ds))
@@ -835,16 +889,16 @@ if [ "$max_jobs" -gt 0 ]; then
                     (( _col_e > max_bar )) && _col_e=$max_bar
                     (( _col_s > 0 )) && printf "%*s" "$_col_s" ""
                     _blen=$((_col_e - _col_s))
-                    printf "\033[38;5;%dm%s\033[0m" "${_palette[$_ci]}" "${_blocks:0:$_blen}"
+                    printf "${_c_fg256}%dm%s$_c_reset" "${_palette[$_ci]}" "${_blocks:0:$_blen}"
                     _rem=$((max_bar - _col_e))
                     (( _rem > 0 )) && printf "%*s" "$_rem" ""
-                    printf "\033[K\n"
+                    printf "$_c_erase\n"
                 elif [ "${_job_start_ds[$i]}" -gt 0 ]; then
                     # Running
                     _c="${_spin:_frame%${#_spin}:1}"
                     _elapsed_ds=$((_frame_ds - _job_start_ds[$i]))
                     _dur_str=$(_fmt_ds "$_elapsed_ds")
-                    printf "  \033[93m%s\033[0m \033[48;5;%dm  \033[0m \033[93m%-${label_w}s %6s\033[0m " "$_c" "${_palette[$_ci]}" "$label" "$_dur_str"
+                    printf "  $_s_run%s$_c_reset ${_c_bg256}%dm  $_c_reset $_s_run%-${label_w}s %6s$_c_reset " "$_c" "${_palette[$_ci]}" "$label" "$_dur_str"
                     _ws_ds=$((_job_start_ds[$i] - global_start_ds))
                     if [ "$_viz_mode" = "full" ]; then
                         _col_s=$((_ws_ds * max_bar / _total_ds))
@@ -859,15 +913,15 @@ if [ "$max_jobs" -gt 0 ]; then
                     (( _col_e > max_bar )) && _col_e=$max_bar
                     (( _col_s > 0 )) && printf "%*s" "$_col_s" ""
                     _blen=$((_col_e - _col_s))
-                    printf "\033[38;5;%dm%s\033[0m" "${_palette[$_ci]}" "${_blocks:0:$_blen}"
+                    printf "${_c_fg256}%dm%s$_c_reset" "${_palette[$_ci]}" "${_blocks:0:$_blen}"
                     _rem=$((max_bar - _col_e))
                     (( _rem > 0 )) && printf "%*s" "$_rem" ""
-                    printf "\033[K\n"
+                    printf "$_c_erase\n"
                 else
                     # Queued (not yet launched)
-                    printf "  \033[2m◌\033[0m \033[48;5;%dm  \033[0m \033[2m%-${label_w}s\033[0m       " "${_palette[$_ci]}" "$label"
+                    printf "  ${_s_queued}◌${_c_reset} ${_c_bg256}%dm  ${_c_reset} ${_s_queued}%-${label_w}s${_c_reset}       " "${_palette[$_ci]}" "$label"
                     printf "%*s" "$max_bar" ""
-                    printf "\033[K\n"
+                    printf "$_c_erase\n"
                 fi
             done
 
@@ -997,10 +1051,14 @@ else
                 label="${all_labels[$i]}"
 
                 if [ "${all_sep[$i]}" -eq 1 ]; then
-                    printf "\033[K\n"; continue
+                    printf "$_c_erase\n"; continue
+                fi
+                if [ "${all_disable[$i]}" -eq 1 ]; then
+                    printf "  ${_s_disable}⊘ %-${label_w}s      ⊘ disabled$_c_reset$_c_erase\n" "$label"
+                    continue
                 fi
                 if [ "${all_skip[$i]}" -eq 1 ]; then
-                    printf "  \033[2m- %-${label_w}s      - not installed\033[0m\033[K\n" "$label"
+                    printf "  $_s_skip- %-${label_w}s      - not installed$_c_reset$_c_erase\n" "$label"
                     continue
                 fi
 
@@ -1010,9 +1068,9 @@ else
                     _bar_len=$(( _dur_ds * max_bar / _max_dur_ds ))
                     (( _bar_len < 1 )) && _bar_len=1
                     if [ "${done_rcs[$i]}" -eq 0 ]; then
-                        printf "  \033[32m✓ %-${label_w}s %6s %s\033[0m\033[K\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
+                        printf "  ${_s_pass}✓ %-${label_w}s %6s %s$_c_reset$_c_erase\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
                     else
-                        printf "  \033[31m✗ %-${label_w}s %6s %s\033[0m\033[K\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
+                        printf "  ${_s_fail}✗ %-${label_w}s %6s %s$_c_reset$_c_erase\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
                     fi
                 else
                     _elapsed_ds=$((_frame_ds - global_start_ds))
@@ -1020,7 +1078,7 @@ else
                     _bar_len=$(( _elapsed_ds * max_bar / _max_dur_ds ))
                     (( _bar_len < 1 )) && _bar_len=1
                     _c="${_spin:_frame%${#_spin}:1}"
-                    printf "  \033[93m%s %-${label_w}s %6s %s\033[0m\033[K\n" "$_c" "$label" "$_dur_str" "$(_bar "$_bar_len")"
+                    printf "  $_s_run%s %-${label_w}s %6s %s$_c_reset$_c_erase\n" "$_c" "$label" "$_dur_str" "$(_bar "$_bar_len")"
                 fi
             done
 
@@ -1056,12 +1114,11 @@ if [ "$max_jobs" -gt 0 ]; then
     wall_ds=$(($(_now_ds) - global_start_ds))
 fi
 wall_str=$(_fmt_ds "$wall_ds")
-skip_msg=""
-if [ "$skip_n" -gt 0 ]; then
-    skip_msg=", $skip_n not installed"
-fi
+_extra=""
+[ "$skip_n" -gt 0 ] && _extra="$_extra, $skip_n not installed"
+[ "$disable_n" -gt 0 ] && _extra="$_extra, $disable_n disabled"
 echo ""
-echo "$passed/$run_n passed${skip_msg} ($wall_str wall time)"
+echo "$passed/$run_n passed${_extra} ($wall_str wall time)"
 echo "Logs: $logdir/"
 
 # --- Write run history (for duration prediction) ---

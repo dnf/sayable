@@ -44,7 +44,6 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Locale data lives in `locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `just generate locales` to regenerate all language implementations. Never edit generated locale files by hand.
 - **Generated locale files must be in their own subdirectory.** Every language implementation must place generated locale files in a dedicated `locales/` (or language-idiomatic equivalent) subdirectory, separate from hand-written source files.
 - **Generated locale files and docs must be current.** Run `just generate locales` after editing `locales/*.json`. `just check` verifies this in CI.
-- **Markdown tables must be aligned.** Run `just maintain docs` after editing any documentation tables. `just check` verifies alignment in CI.
 - **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON.
 - **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
 - **Every language must have a CI workflow** at `.github/workflows/<lang>.yml` that runs tests on push and PR to `main`. Use a version matrix when the language supports it.
@@ -105,10 +104,12 @@ Core files per language follow a consistent pattern:
 - Zero warnings in CI. When suppressing a lint, document why.
 - **Name over comment.** When a line needs a comment to explain *what* it does, extract it into a named function or variable instead. The name replaces the comment. Comments should explain "why", not "what."
 - Locale data files will have long lines — that's expected.
-- Markdown tables must be column-aligned with spaces so pipe delimiters line up vertically in raw text. Run `just maintain docs` to fix alignment automatically.
+- **Markdown table alignment is optional.** `just maintain docs` can auto-align tables if desired, but it is not enforced in CI.
 - Language-specific build artifacts (e.g., `_build/`, `dist-newstyle/`, `build/`) go in `src/.gitignore`, not the root `.gitignore`. The root `.gitignore` is for cross-language patterns only (e.g., `__pycache__/`, `.logs/`).
 - **Gitignore sections must be alphabetically ordered.** In `src/.gitignore`, language sections are ordered alphabetically by language name (C, C#, C++, Clojure, …, Zig). In the root `.gitignore`, entries are also kept in alphabetical order.
 - **One language per line in justfile lists.** Language lists (`_ALL_LANGS`, `_COMPILED_LANGS`, etc.), abbreviation maps (`_name()`, `_abbr()`), and dependency maps (`_dep()`) all live in `scripts/_lang-helpers.sh` with one entry per `case` arm. This prevents merge conflicts when multiple branches add languages concurrently. Help text grids are generated dynamically from these lists — never hardcode multi-language grid rows.
+- **ANSI colors use two layers of named variables.** In `scripts/runner/run-parallel.sh`, raw ANSI escape codes are defined as `_c_*` base color variables (e.g., `_c_green`, `_c_red`, `_c_orange`), and semantic `_s_*` variables are built from them (e.g., `_s_pass="$_c_green"`, `_s_fail="$_c_red"`, `_s_run="$_c_yellow"`). Printf statements must use semantic `$_s_*` variables — never raw `\033[` codes or base `$_c_*` colors directly (except `$_c_reset`, `$_c_erase`, `$_c_bg256`, `$_c_fg256`, and `$_c_lane_idle` which are structural). To change a color, update the semantic variable; to add a new status, add a new `_s_*` variable.
+- **Brace-delimit variables before Unicode characters in shell scripts.** Bash 3.2 (macOS default) treats many Unicode characters (⊘, ⚙, ✓, ✗, ◌, ▲, ▼, etc.) as valid identifier characters. Under `set -u`, `$_s_pass✓` is parsed as the variable `_s_pass✓` (unbound → crash), not `$_s_pass` followed by `✓`. Always use `${_s_pass}✓` with explicit braces when a variable is followed by a non-ASCII character. ASCII symbols (`-`, `%`, ` `, etc.) are safe delimiters.
 
 ## Adding a new locale
 

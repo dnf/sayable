@@ -31,7 +31,8 @@ just test          # all test suites + codegen check
 just build         # all compiled languages
 just lint          # all linters
 just clean         # remove build artifacts
-
+just disable hs    # temporarily skip a language from parallel runs
+just enable --all  # re-enable all disabled languages
 ```
 
 ### Single-language commands

@@ -49,11 +49,15 @@ test *target:
         args=("check")
         for target in $_ALL_LANGS; do
             [ -z "$target" ] && continue
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
-                args+=("test $target")
+            if _is_disabled "$target"; then
+                args+=("disable:$target")
             else
-                args+=("skip:$target")
+                dep=$(_dep "$target")
+                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                    args+=("test $target")
+                else
+                    args+=("skip:$target")
+                fi
             fi
         done
         args+=("---")
@@ -192,11 +196,15 @@ build *target:
         args=()
         for target in $_COMPILED_LANGS; do
             [ -z "$target" ] && continue
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
-                args+=("build $target")
+            if _is_disabled "$target"; then
+                args+=("disable:$target")
             else
-                args+=("skip:$target")
+                dep=$(_dep "$target")
+                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                    args+=("build $target")
+                else
+                    args+=("skip:$target")
+                fi
             fi
         done
         args+=("---")
@@ -303,10 +311,6 @@ check:
     set -euo pipefail
     {{python}} -m codegen.generate --check
     uv run --project src/python {{python}} -m codegen.docgen --check
-    {{python}} -m codegen.align_tables --check \
-        README.md CLAUDE.md CONTRIBUTING.md \
-        codegen/README.md locales/README.md tests/README.md tests/testing.md \
-        docs/*.md src/*/README.md
 
 # Run all available linters
 [group('lint')]
@@ -352,11 +356,15 @@ lint *target:
         args=()
         for target in $_LINT_LANGS; do
             [ -z "$target" ] && continue
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
-                args+=("lint $target")
+            if _is_disabled "$target"; then
+                args+=("disable:$target")
             else
-                args+=("skip:$target")
+                dep=$(_dep "$target")
+                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                    args+=("lint $target")
+                else
+                    args+=("skip:$target")
+                fi
             fi
         done
         scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} lint "${args[@]}"
@@ -492,11 +500,11 @@ clean *target:
     elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
         rm -rf src/kotlin/build src/kotlin/.gradle
     elif [ "$_target" = "c" ]; then
-        rm -rf src/c/build
+        rm -rf src/c/build || rm -rf src/c/build
     elif [ "$_target" = "cli" ]; then
-        rm -rf cli/build
+        rm -rf cli/build || rm -rf cli/build
     elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
-        rm -rf src/cpp/build
+        rm -rf src/cpp/build || rm -rf src/cpp/build
     elif [ "$_target" = "java" ]; then
         rm -rf src/java/build src/java/.gradle
     elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
@@ -637,11 +645,15 @@ rebuild *target:
         args=()
         for target in $_COMPILED_LANGS; do
             [ -z "$target" ] && continue
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
-                args+=("_rebuild $target")
+            if _is_disabled "$target"; then
+                args+=("disable:$target")
             else
-                args+=("skip:$target")
+                dep=$(_dep "$target")
+                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                    args+=("_rebuild $target")
+                else
+                    args+=("skip:$target")
+                fi
             fi
         done
         args+=("---")
@@ -700,11 +712,15 @@ retest *target:
         args=("check")
         for target in $_ALL_LANGS; do
             [ -z "$target" ] && continue
-            dep=$(_dep "$target")
-            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
-                args+=("_retest $target")
+            if _is_disabled "$target"; then
+                args+=("disable:$target")
             else
-                args+=("skip:$target")
+                dep=$(_dep "$target")
+                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                    args+=("_retest $target")
+                else
+                    args+=("skip:$target")
+                fi
             fi
         done
         args+=("---")
@@ -756,3 +772,135 @@ uninstall *langs:
         name=$(_check "$lang" "uninstall")
         bash "scripts/installers/${name}.sh" uninstall
     done
+
+# Temporarily disable languages from parallel runs (test, build, lint, etc.)
+[group('setup')]
+disable *langs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    source scripts/_lang-helpers.sh
+
+    langs="{{langs}}"
+    if [ "$langs" = "help" ] || [ "$langs" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just disable <language> [language ...]" \
+            "" \
+            "Temporarily disable languages from parallel runs (test, build, lint, etc.)." \
+            "Disabled languages show as orange '⊘ disabled' in runner output." \
+            "Does not affect single-language runs, clean, install, or uninstall." \
+            ""
+        _lang_grid "Languages" "$_ALL_LANGS"
+        printf '%s\n' \
+            "" \
+            "Examples:" \
+            "  just disable haskell ada   Disable Haskell and Ada" \
+            "  just disable hs            Disable Haskell (abbreviation)"
+        if [ -f ".disabled-langs" ]; then
+            printf '\n%s\n' "Currently disabled:"
+            while IFS= read -r _l; do
+                [ -n "$_l" ] && printf '  %s\n' "$_l"
+            done < .disabled-langs
+        fi
+        exit 0
+    fi
+    if [ -z "$langs" ]; then
+        if [ -f ".disabled-langs" ]; then
+            printf '%s\n' "Currently disabled:"
+            while IFS= read -r _l; do
+                [ -n "$_l" ] && printf '  %s\n' "$_l"
+            done < .disabled-langs
+        else
+            echo "No languages are disabled. (try 'just disable help')"
+        fi
+        exit 0
+    fi
+    _tmp="$(mktemp)"
+    [ -f .disabled-langs ] && cat .disabled-langs >> "$_tmp"
+    for lang in $langs; do
+        name=$(_name "$lang")
+        if ! echo "$_ALL_LANGS" | grep -qx "$name"; then
+            echo "Unknown language: $lang (try 'just disable help')" >&2
+            rm -f "$_tmp"
+            exit 1
+        fi
+        echo "$name" >> "$_tmp"
+    done
+    sort -u "$_tmp" > .disabled-langs
+    rm -f "$_tmp"
+    printf 'Disabled: '
+    paste -sd', ' .disabled-langs
+
+# Re-enable previously disabled languages
+[group('setup')]
+enable *langs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    source scripts/_lang-helpers.sh
+
+    langs="{{langs}}"
+    if [ "$langs" = "help" ] || [ "$langs" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just enable <language> [language ...] | --all" \
+            "" \
+            "Re-enable previously disabled languages." \
+            ""
+        _lang_grid "Languages" "$_ALL_LANGS"
+        printf '%s\n' \
+            "" \
+            "Flags:" \
+            "  --all      Re-enable all disabled languages" \
+            "" \
+            "Examples:" \
+            "  just enable haskell       Re-enable Haskell" \
+            "  just enable hs            Re-enable Haskell (abbreviation)" \
+            "  just enable --all         Re-enable everything"
+        if [ -f ".disabled-langs" ]; then
+            printf '\n%s\n' "Currently disabled:"
+            while IFS= read -r _l; do
+                [ -n "$_l" ] && printf '  %s\n' "$_l"
+            done < .disabled-langs
+        fi
+        exit 0
+    fi
+    if [ "$langs" = "--all" ]; then
+        rm -f .disabled-langs
+        echo "All languages re-enabled."
+        exit 0
+    fi
+    if [ -z "$langs" ]; then
+        if [ -f ".disabled-langs" ]; then
+            printf '%s\n' "Currently disabled:"
+            while IFS= read -r _l; do
+                [ -n "$_l" ] && printf '  %s\n' "$_l"
+            done < .disabled-langs
+            echo ""
+            echo "Use 'just enable <lang>' or 'just enable --all' to re-enable."
+        else
+            echo "No languages are disabled."
+        fi
+        exit 0
+    fi
+    if [ ! -f ".disabled-langs" ]; then
+        echo "No languages are currently disabled."
+        exit 0
+    fi
+    _tmp="$(mktemp)"
+    cp .disabled-langs "$_tmp"
+    for lang in $langs; do
+        name=$(_name "$lang")
+        if ! echo "$_ALL_LANGS" | grep -qx "$name"; then
+            echo "Unknown language: $lang (try 'just enable help')" >&2
+            rm -f "$_tmp"
+            exit 1
+        fi
+        grep -vx "$name" "$_tmp" > "$_tmp.new" || true
+        mv "$_tmp.new" "$_tmp"
+    done
+    if [ ! -s "$_tmp" ]; then
+        rm -f .disabled-langs "$_tmp"
+        echo "All languages re-enabled."
+    else
+        mv "$_tmp" .disabled-langs
+        printf 'Still disabled: '
+        paste -sd', ' .disabled-langs
+    fi

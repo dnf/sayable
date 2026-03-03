@@ -120,6 +120,17 @@ ruby
 "
 
 # ---------------------------------------------------------------------------
+# Disabled languages (local-only, .disabled-langs in project root)
+# ---------------------------------------------------------------------------
+
+_DISABLED_LANGS=""
+[ -f ".disabled-langs" ] && _DISABLED_LANGS="$(cat .disabled-langs)"
+
+_is_disabled() {
+    echo "$_DISABLED_LANGS" | grep -qx "$1"
+}
+
+# ---------------------------------------------------------------------------
 # Abbreviation maps (one entry per line for merge safety)
 # ---------------------------------------------------------------------------
 

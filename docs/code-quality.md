@@ -36,15 +36,20 @@ below summarizes the patterns across all implementations:
 | Language   | Classes/Types | Functions/Methods     | Constants           | Fields/Properties     | Enum variants         |
 | ---------- | ------------- | --------------------- | ------------------- | --------------------- | --------------------- |
 | Ada        | PascalCase    | PascalCase            | PascalCase (`EN`)   | PascalCase (record)   | PascalCase            |
+| C          | PascalCase    | snake_case            | UPPER_CASE (`PT_*`) | snake_case            | UPPER_CASE            |
 | C#         | PascalCase    | PascalCase            | UPPER_CASE (`EN`)   | PascalCase            | PascalCase            |
 | C++        | PascalCase    | snake_case            | UPPER_CASE (`EN()`) | snake_case            | PascalCase            |
+| Clojure    | n/a           | kebab-case            | n/a (keywords)      | keyword keys          | n/a (keywords)        |
+| Dart       | PascalCase    | camelCase             | lowerCamelCase      | camelCase             | camelCase             |
 | Elixir     | PascalCase    | snake_case            | UPPER_CASE (`EN`)   | atom keys             | n/a (atom literals)   |
 | Elm        | PascalCase    | camelCase             | lowercase (`en`)    | camelCase             | PascalCase            |
+| Erlang     | PascalCase    | snake_case            | UPPER_CASE macros   | snake_case (record)   | atom literals         |
 | F#         | PascalCase    | camelCase             | PascalCase (`En`)   | PascalCase (record)   | PascalCase            |
 | Fortran    | n/a (modules) | snake_case            | UPPER_CASE (`PT_*`) | snake_case (%)        | integer parameters    |
 | Gleam      | PascalCase    | snake_case            | lowercase (`en`)    | snake_case (record)   | PascalCase            |
 | Go         | PascalCase    | PascalCase (exported) | UPPER_CASE (`EN`)   | PascalCase (exported) | PascalCase            |
 | Groovy     | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
+| Haskell    | PascalCase    | camelCase             | lowercase (`en`)    | camelCase (record)    | PascalCase            |
 | Java       | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
 | Kotlin     | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
 | Lua        | n/a (tables)  | snake_case            | UPPER_CASE (`EN`)   | snake_case (table)    | n/a (string literals) |
@@ -85,15 +90,20 @@ how each language enforces this:
 | Language   | Mechanism                             | Notes                                                                             |
 | ---------- | ------------------------------------- | --------------------------------------------------------------------------------- |
 | Ada        | `in` mode parameters                  | Locale passed as `in` mode; record fields set at initialization, not modified     |
+| C          | `const` pointers and data             | Parameters marked `const char *`, `const PtLocale *`; buffer ownership explicit   |
 | C#         | `private readonly` fields             | Fields set in constructor; `TreatWarningsAsErrors` in project                     |
 | C++        | `const` methods + `const` locals      | Methods are `const`-qualified; local variables use `const` where assigned once    |
+| Clojure    | Immutable by language design          | All data structures are persistent and immutable; no mutable state used           |
+| Dart       | `const` constructors + `final` fields | All fields `final`; `const` constructors where possible; null safety              |
 | Elixir     | Immutable by language design          | All data is immutable in Elixir; functions are pure by convention                 |
 | Elm        | Pure functions (no mutable state)     | Elm has no mutable state; all functions are pure by language design               |
+| Erlang     | Immutable by language design          | Pure functional; all data passed through function parameters; no mutable state   |
 | F#         | `private` fields + immutable records  | Records are immutable by default; fields set in constructor                       |
 | Fortran    | `intent(in)` on all locale args       | Derived types passed as `intent(in)` prevent modification; pure where possible    |
 | Gleam      | Immutable by language design          | All data is immutable in Gleam; custom types and records are immutable by default |
 | Go         | Unexported fields                     | Only the package can access them; methods use value receivers                     |
 | Groovy     | `@Immutable` + `private final` fields | Groovy `@Immutable` generates immutable class; fields set in constructor          |
+| Haskell    | Immutable by language design          | Pure functional; all values immutable; algebraic data types; `Maybe` for optional |
 | Java       | `private final` fields                | Fields set in constructor, never modified; all formatting methods are pure reads  |
 | Kotlin     | `private val` fields                  | `val` is compile-time immutable; `private` hides from consumers                   |
 | Lua        | Closure-captured locals               | Upvalues captured at construction; no public field access                         |
@@ -106,6 +116,7 @@ how each language enforces this:
 | Scala      | `private val` fields                  | `val` is compile-time immutable; `private` hides from consumers                   |
 | Swift      | `private let` fields + `Sendable`     | `let` is compile-time immutable; struct conforms to `Sendable`                    |
 | TypeScript | `private readonly` fields             | Compiler error on reassignment                                                    |
+| Zig        | `const` pointers + immutable slices   | `*const Locale`, `[]const u8`; explicit mutability through pointer types          |
 
 ## Cross-cutting considerations
 
@@ -158,12 +169,11 @@ functions with fixed parameters are all expected patterns.
 
 ### Documentation formatting
 
-Markdown tables across all project documentation are enforced to be
-column-aligned so pipe delimiters line up vertically in raw text.
-`codegen/align_tables.py` handles alignment automatically.
+`codegen/align_tables.py` can auto-align markdown tables so pipe
+delimiters line up vertically in raw text. This is available as a
+convenience but is **not enforced in CI** — unaligned tables are fine.
 
 - `just maintain docs` — aligns all project-owned markdown files
-- `just check` — verifies table alignment (exits non-zero if misaligned)
 - Files covered: `README.md`, `CLAUDE.md`, `CONTRIBUTING.md`,
   `codegen/README.md`, `locales/README.md`, `tests/README.md`,
   `tests/testing.md`, `docs/*.md`, `src/*/README.md`
@@ -178,28 +188,69 @@ implementations cover the same spec. See the "Test ID convention" section of
 `tests/testing.md` for the three placement patterns (comment above, trailing
 comment, or inline comment) used across languages.
 
+## Shell scripts
+
+The project's runner (`scripts/runner/run-parallel.sh`) and helpers
+(`scripts/_lang-helpers.sh`) follow these conventions:
+
+### ANSI color variables
+
+All ANSI escape codes are defined in two layers at the top of
+`run-parallel.sh`:
+
+1. **Base colors** (`_c_*`) — raw ANSI codes, each defined once:
+   `_c_reset`, `_c_dim`, `_c_green`, `_c_red`, `_c_yellow`, `_c_orange`,
+   `_c_gray`, `_c_erase`, `_c_bg256`, `_c_fg256`, `_c_lane_idle`
+
+2. **Semantic colors** (`_s_*`) — built from base colors, used in all
+   printf statements:
+   `_s_pass`, `_s_fail`, `_s_run`, `_s_disable`, `_s_skip`, `_s_queued`,
+   `_s_idle`, `_s_scroll`
+
+Printf statements must use semantic `$_s_*` variables. To change a color
+for a specific status, edit the semantic variable. To add a new status, add
+a new `_s_*` variable built from a `_c_*` base color. Never use raw
+`\033[` codes inline.
+
+### Disable/enable
+
+Languages can be temporarily disabled from parallel runs using
+`just disable <lang>` (stored in `.disabled-langs`, gitignored). Disabled
+languages appear as orange `⊘ disabled` in runner output. Single-language
+runs, `clean`, `install`, and `uninstall` are not affected.
+
 ## Per-language details
 
-The configurations are documented in detail in separate files, grouped by
-language family:
+Detailed configuration rationale is documented for languages with complex
+linter/analyzer setups:
 
-- **[Dynamic languages](code-quality-dynamic.md)** — TypeScript, Python, Ruby, PHP
-- **[Compiled languages](code-quality-compiled.md)** — Go, Rust, Kotlin, C++, Java
+- **[Dynamic languages](code-quality-dynamic.md)**
+- **[Compiled languages](code-quality-compiled.md)**
+
+Languages not listed above enforce quality through compiler flags
+(warnings-as-errors) or are inherently strict (pure functional languages).
+See the quick reference table below for each language's tools and
+strictness settings.
 
 ## Quick reference
 
 | Language   | Tools                       | Key strictness                                                  | Tests | Assertions |
 | ---------- | --------------------------- | --------------------------------------------------------------- | ----: | ---------: |
 | Ada        | GNAT compiler               | `-gnatwa -gnatwe -gnata -gnatVa`; CTest-style harness           | 214   | 214        |
+| C          | CMake + GCC/Clang           | `-Wall -Wextra -Wpedantic -Werror -Wconversion`; freestanding   |  36   | 243        |
 | C#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 140   | 191        |
 | C++        | Compiler flags + clang-tidy | `-Wall -Wextra -Wpedantic -Werror` + 13 more; clang-tidy config | 164   | 167        |
+| Clojure    | Clojure CLI                 | `*warn-on-reflection*`; cognitect test-runner                   |  30   | 241        |
+| Dart       | Dart analyzer               | strict-casts, strict-raw-types; 30+ lint rules                  |  45   | 521        |
 | Elixir     | Mix compiler                | `warnings_as_errors: true`; ExUnit                              | 209   | 209        |
 | Elm        | Elm compiler                | Compiler warnings-as-errors; `elm-explorations/test`            | 209   | 209        |
+| Erlang     | Rebar3 + OTP compiler       | `warnings_as_errors`; EUnit                                     |  24   | 240        |
 | F#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 215   | 208        |
 | Fortran    | gfortran compiler           | `-Wall -Wextra -Wpedantic -Werror -std=f2008`; CTest            | 214   | 214        |
 | Gleam      | Gleam compiler              | Warnings-as-errors; gleeunit                                    | 208   | 208        |
 | Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                         | 72    | 128        |
 | Groovy     | Groovy + Java compiler      | `-Werror`; Java 17; `@Immutable` data classes                   | 140   | 291        |
+| Haskell    | GHC compiler                | `-Wall -Werror`; Hspec                                          |  40   | 240        |
 | Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records       | 135   | 191        |
 | Kotlin     | Kotlin compiler             | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`       | 115   | 191        |
 | Lua        | luacheck                    | Lua 5.4 std; busted globals for tests                           | 194   | 194        |
