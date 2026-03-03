@@ -20,6 +20,7 @@ The table below summarizes how each language structures its locale data:
 | Java       | Single file (`Locales.java`)                 | Eager (`static final` fields)       | `ALL` map lookup        |
 | C#         | Single file (`Locales.cs`)                   | Eager (`static readonly` fields)    | `All` dictionary lookup |
 | Elm        | 71 individual modules + `Locales.elm` barrel | Eager (module-level `locale` value) | `Dict.get` lookup       |
+| F#         | Single file (`Locales.fs`)                   | Eager (module-level `let` bindings) | `All` map lookup        |
 | Scala      | Single file (`Locales.scala`)                | Eager (`val` on `object`)           | `ALL` map lookup        |
 | Swift      | Single file (`Locales.swift`)                | Eager (static `let` properties)     | `all` dictionary lookup |
 | Zig        | Single file (`locales.zig`)                  | Eager (comptime `const`)            | `if`-chain              |
@@ -82,6 +83,7 @@ The other languages have no equivalent mechanism. Their package managers and run
 | Java       | No                                                                                                                    | Use codegen subsetting                                              |
 | C#         | No                                                                                                                    | Use codegen subsetting                                              |
 | Elm        | No                                                                                                                    | Use codegen subsetting                                              |
+| F#         | No                                                                                                                    | Use codegen subsetting                                              |
 | Scala      | No                                                                                                                    | Use codegen subsetting                                              |
 | Swift      | No                                                                                                                    | Use codegen subsetting                                              |
 | Zig        | No                                                                                                                    | Use codegen subsetting                                              |

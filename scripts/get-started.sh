@@ -29,9 +29,11 @@ _tool() {
         elixir)      echo mix     ;;
         elm)         echo elm     ;;
         erlang)      echo rebar3  ;;
+        fsharp)      echo dotnet  ;;
         go)          echo go      ;;
         haskell)     echo cabal   ;;
         java|kotlin|scala) echo java ;;
+        ocaml)       echo opam    ;;
         perl)        echo perl    ;;
         php)         echo php     ;;
         python)      echo uv      ;;
@@ -43,7 +45,7 @@ _tool() {
     esac
 }
 
-ALL_LANGS=(c clojure cpp csharp dart elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig)
+ALL_LANGS=(c clojure cpp csharp dart elixir elm erlang fsharp go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig)
 
 # Languages unavailable on certain architectures
 _unavailable() {
@@ -63,6 +65,8 @@ _display() {
     case "$1" in
         cpp)        echo "C++"        ;;
         csharp)     echo "C#"         ;;
+        fsharp)     echo "F#"         ;;
+        ocaml)      echo "OCaml"      ;;
         php)        echo "PHP"        ;;
         typescript) echo "TypeScript" ;;
         *)          # Capitalize first letter
@@ -112,7 +116,7 @@ _print_intro() {
     echo ""
     echo -e "${BOLD}parent-time${RESET}"
     echo "Formats ages the way parents talk — \"6 weeks\", \"14 months\", \"3½ years\"."
-    echo "21 identical implementations, 71 locales, zero dependencies."
+    echo "23 identical implementations, 71 locales, zero dependencies."
     echo ""
 }
 

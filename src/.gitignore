@@ -30,6 +30,12 @@ erlang/_build/
 erlang/rebar.lock
 erlang/rebar3.crashdump
 
+# F#
+fsharp/ParentTime/bin/
+fsharp/ParentTime/obj/
+fsharp/ParentTime.Tests/bin/
+fsharp/ParentTime.Tests/obj/
+
 # Go
 go/bin/
 

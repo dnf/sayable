@@ -413,6 +413,14 @@ def generate_dart(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_fsharp(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.fsharp.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_ocaml(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.ocaml.emitter import barrel_path, emit_barrel, emit_locale, output_path
 
@@ -462,6 +470,7 @@ _GENERATORS = {
     "c": generate_c,
     "haskell": generate_haskell,
     "erlang": generate_erlang,
+    "fsharp": generate_fsharp,
     "clojure": generate_clojure,
     "scala": generate_scala,
     "zig": generate_zig,

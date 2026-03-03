@@ -8,7 +8,7 @@ python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "pyt
 test *target:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; fs) echo fsharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
     _jflag=""; _sflag=""; _target=""; _prev=""
     for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
@@ -23,12 +23,12 @@ test *target:
             "" \
             "Run all test suites in parallel, or a single target's tests." \
             "" \
-            "Languages (22):" \
+            "Languages (23):" \
             "  c          clojure (clj)   cpp (c++)    csharp (cs)   dart (dt)" \
-            "  elixir (ex)  elm (el)      erlang (erl) go            haskell (hs)" \
-            "  java       kotlin (kt)     ocaml (ml)   perl (pl)     php" \
-            "  python (py)  ruby (rb)     rust (rs)    scala (sc)    swift (sw)" \
-            "  typescript (ts)  zig (zg)" \
+            "  elixir (ex)  elm (el)      erlang (erl) fsharp (fs)   go" \
+            "  haskell (hs)  java         kotlin (kt)  ocaml (ml)    perl (pl)" \
+            "  php        python (py)     ruby (rb)    rust (rs)     scala (sc)" \
+            "  swift (sw)   typescript (ts)  zig (zg)" \
             "" \
             "Tools:" \
             "  cli        CLI integration tests" \
@@ -49,9 +49,9 @@ test *target:
         exit 0
     fi
     if [ -z "$_target" ]; then
-        _langs="c clojure cpp csharp dart elixir elm erlang go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig"
+        _langs="c clojure cpp csharp dart elixir elm erlang fsharp go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig"
         _tools="cli codegen"
-        _dep() { case "$1" in c|cli|cpp) echo cmake;; clojure) echo clojure;; csharp) echo dotnet;; dart) echo dart;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; ocaml) echo opam;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+        _dep() { case "$1" in c|cli|cpp) echo cmake;; clojure) echo clojure;; csharp|fsharp) echo dotnet;; dart) echo dart;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; ocaml) echo opam;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
         args=("check")
         for target in $_langs; do
             dep=$(_dep "$target")
@@ -104,6 +104,8 @@ test *target:
                 cd src/csharp && dotnet test
             elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
                 cd src/dart && dart test
+            elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
+                cd src/fsharp && dotnet test
             elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
                 cd src/swift && swift test
             elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
@@ -138,7 +140,7 @@ test *target:
 build *target:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; fs) echo fsharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
     _jflag=""; _sflag=""; _target=""; _prev=""
     for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
@@ -153,10 +155,10 @@ build *target:
             "" \
             "Build all compiled targets in parallel, or a single target." \
             "" \
-            "Languages (14):" \
+            "Languages (15):" \
             "  c          cpp (c++)       csharp (cs)  elixir (ex)   erlang (erl)" \
-            "  haskell (hs)  java         kotlin (kt)  ocaml (ml)    rust (rs)" \
-            "  scala (sc)    swift (sw)   typescript (ts)  zig (zg)" \
+            "  fsharp (fs)  haskell (hs)  java         kotlin (kt)   ocaml (ml)" \
+            "  rust (rs)    scala (sc)    swift (sw)   typescript (ts)  zig (zg)" \
             "" \
             "Tools:" \
             "  cli        CLI tool (links against C library)" \
@@ -176,9 +178,9 @@ build *target:
         exit 0
     fi
     if [ -z "$_target" ]; then
-        _langs="c cpp csharp elixir erlang haskell java kotlin ocaml rust scala swift typescript zig"
+        _langs="c cpp csharp elixir erlang fsharp haskell java kotlin ocaml rust scala swift typescript zig"
         _tools="cli"
-        _dep() { case "$1" in c|cli|cpp) echo cmake;; csharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; ocaml) echo opam;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+        _dep() { case "$1" in c|cli|cpp) echo cmake;; csharp|fsharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; ocaml) echo opam;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
         args=()
         for target in $_langs; do
             dep=$(_dep "$target")
@@ -218,6 +220,8 @@ build *target:
                 cd src/java && ./gradlew build
             elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
                 cd src/csharp && dotnet build
+            elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
+                cd src/fsharp && dotnet build
             elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
                 cd src/swift && swift build
             elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
@@ -291,7 +295,7 @@ check:
 lint *target:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; fs) echo fsharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
     _jflag=""; _sflag=""; _target=""; _prev=""
     for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
@@ -306,9 +310,10 @@ lint *target:
             "" \
             "Run all linters in parallel, or a single target's linter." \
             "" \
-            "Languages with separate linters (10):" \
-            "  csharp (cs)  dart (dt)    go           java         php" \
-            "  python (py)  ruby (rb)    rust (rs)    swift (sw)   typescript (ts)" \
+            "Languages with separate linters (11):" \
+            "  csharp (cs)  dart (dt)    fsharp (fs)  go           java" \
+            "  php        python (py)    ruby (rb)    rust (rs)    swift (sw)" \
+            "  typescript (ts)" \
             "" \
             "Tools:" \
             "  cli        Warnings-as-errors in build" \
@@ -320,16 +325,16 @@ lint *target:
             "  -s MODE    Visualization: scroll (default), full, or zoom" \
             "" \
             "Examples:" \
-            "  just lint              Run all 10 linters in parallel" \
+            "  just lint              Run all 11 linters in parallel" \
             "  just lint python       Run Python linter only (ruff + pyright)" \
             "  just lint rs           Run Rust linter (clippy, abbreviation)" \
             "  just lint -j 3         Run all with 3 job slots"
         exit 0
     fi
     if [ -z "$_target" ]; then
-        _dep() { case "$1" in csharp) echo dotnet;; dart) echo dart;; go) echo golangci-lint;; java) echo java;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; esac; }
+        _dep() { case "$1" in csharp|fsharp) echo dotnet;; dart) echo dart;; go) echo golangci-lint;; java) echo java;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; esac; }
         args=()
-        for target in csharp dart go java php python ruby rust swift typescript; do
+        for target in csharp dart fsharp go java php python ruby rust swift typescript; do
             dep=$(_dep "$target")
             if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
                 args+=("lint $target")
@@ -368,6 +373,8 @@ lint *target:
                 echo "Java uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
                 echo "C# uses TreatWarningsAsErrors in build (no separate linter)"
+            elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
+                echo "F# uses TreatWarningsAsErrors in build (no separate linter)"
             elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
                 echo "Swift uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
@@ -415,12 +422,12 @@ clean *target:
             "Remove build artifacts for all targets in parallel, or a single target." \
             "Keeps installed dependencies (node_modules, .venv, etc.)." \
             "" \
-            "Languages (22):" \
+            "Languages (23):" \
             "  c          clojure (clj)   cpp (c++)    csharp (cs)   dart (dt)" \
-            "  elixir (ex)  elm (el)      erlang (erl) go            haskell (hs)" \
-            "  java       kotlin (kt)     ocaml (ml)   perl (pl)     php" \
-            "  python (py)  ruby (rb)     rust (rs)    scala (sc)    swift (sw)" \
-            "  typescript (ts)  zig (zg)" \
+            "  elixir (ex)  elm (el)      erlang (erl) fsharp (fs)   go" \
+            "  haskell (hs)  java         kotlin (kt)  ocaml (ml)    perl (pl)" \
+            "  php        python (py)     ruby (rb)    rust (rs)     scala (sc)" \
+            "  swift (sw)   typescript (ts)  zig (zg)" \
             "" \
             "Tools:" \
             "  cli        CLI build artifacts" \
@@ -439,7 +446,7 @@ clean *target:
         exit 0
     fi
     if [ -z "$_target" ]; then
-        _langs="c clojure cpp csharp dart elixir elm erlang haskell java kotlin ocaml python rust scala swift typescript zig"
+        _langs="c clojure cpp csharp dart elixir elm erlang fsharp haskell java kotlin ocaml python rust scala swift typescript zig"
         _tools="cli"
         args=()
         for target in $_langs; do
@@ -469,6 +476,8 @@ clean *target:
         rm -rf src/java/build src/java/.gradle
     elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
         rm -rf src/csharp/ParentTime/bin src/csharp/ParentTime/obj src/csharp/ParentTime.Tests/bin src/csharp/ParentTime.Tests/obj
+    elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
+        rm -rf src/fsharp/ParentTime/bin src/fsharp/ParentTime/obj src/fsharp/ParentTime.Tests/bin src/fsharp/ParentTime.Tests/obj
     elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
         rm -rf src/swift/.build
     elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
@@ -503,8 +512,8 @@ clean *target:
 install *langs:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
-    _all="c clojure cpp csharp dart elixir elm erlang go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig"
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; fs) echo fsharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
+    _all="c clojure cpp csharp dart elixir elm erlang fsharp go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig"
     _suggest() {
         local input; input="$(echo "$1" | tr '[:upper:]' '[:lower:]')"
         case "$input" in
@@ -513,6 +522,7 @@ install *langs:
             haskel|haskle|haslkell)             echo haskell ;;
             closure|clojur|clojre|cojure)       echo clojure ;;
             erland|erlng|earland|earlang)       echo erlang  ;;
+            f-sharp|f-#)                        echo fsharp  ;;
             typscript|tyepscript|typesript|tsc) echo typescript ;;
             golang|goland)                      echo go      ;;
             scalar|scalla)                      echo scala   ;;
@@ -559,15 +569,15 @@ install *langs:
             "" \
             "Install language toolchains. With no arguments, installs all." \
             "" \
-            "Languages (22):" \
+            "Languages (23):" \
             "  c          clojure (clj)   cpp (c++)    csharp (cs)   dart (dt)" \
-            "  elixir (ex)  elm (el)      erlang (erl) go            haskell (hs)" \
-            "  java       kotlin (kt)     ocaml (ml)   perl (pl)     php" \
-            "  python (py)  ruby (rb)     rust (rs)    scala (sc)    swift (sw)" \
-            "  typescript (ts)  zig (zg)" \
+            "  elixir (ex)  elm (el)      erlang (erl) fsharp (fs)   go" \
+            "  haskell (hs)  java         kotlin (kt)  ocaml (ml)    perl (pl)" \
+            "  php        python (py)     ruby (rb)    rust (rs)     scala (sc)" \
+            "  swift (sw)   typescript (ts)  zig (zg)" \
             "" \
             "Examples:" \
-            "  just install           Install all 22 language toolchains" \
+            "  just install           Install all 23 language toolchains" \
             "  just install go rust   Install Go and Rust only" \
             "  just install rs        Install Rust (abbreviation)"
         exit 0
@@ -612,7 +622,7 @@ _retest target:
 rebuild *target:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; fs) echo fsharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
     _jflag=""; _sflag=""; _target=""; _prev=""
     for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
@@ -627,10 +637,10 @@ rebuild *target:
             "" \
             "Clean then build all compiled targets in parallel, or a single target." \
             "" \
-            "Languages (14):" \
+            "Languages (15):" \
             "  c          cpp (c++)       csharp (cs)  elixir (ex)   erlang (erl)" \
-            "  haskell (hs)  java         kotlin (kt)  ocaml (ml)    rust (rs)" \
-            "  scala (sc)    swift (sw)   typescript (ts)  zig (zg)" \
+            "  fsharp (fs)  haskell (hs)  java         kotlin (kt)   ocaml (ml)" \
+            "  rust (rs)    scala (sc)    swift (sw)   typescript (ts)  zig (zg)" \
             "" \
             "Tools:" \
             "  cli        CLI tool (links against C library)" \
@@ -646,9 +656,9 @@ rebuild *target:
         exit 0
     fi
     if [ -z "$_target" ]; then
-        _langs="c cpp csharp elixir erlang haskell java kotlin ocaml rust scala swift typescript zig"
+        _langs="c cpp csharp elixir erlang fsharp haskell java kotlin ocaml rust scala swift typescript zig"
         _tools="cli"
-        _dep() { case "$1" in c|cli|cpp) echo cmake;; csharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; ocaml) echo opam;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+        _dep() { case "$1" in c|cli|cpp) echo cmake;; csharp|fsharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; ocaml) echo opam;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
         args=()
         for target in $_langs; do
             dep=$(_dep "$target")
@@ -678,7 +688,7 @@ rebuild *target:
 retest *target:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; fs) echo fsharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
     _jflag=""; _sflag=""; _target=""; _prev=""
     for _a in {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
@@ -693,12 +703,12 @@ retest *target:
             "" \
             "Clean then test all targets in parallel, or a single target." \
             "" \
-            "Languages (22):" \
+            "Languages (23):" \
             "  c          clojure (clj)   cpp (c++)    csharp (cs)   dart (dt)" \
-            "  elixir (ex)  elm (el)      erlang (erl) go            haskell (hs)" \
-            "  java       kotlin (kt)     ocaml (ml)   perl (pl)     php" \
-            "  python (py)  ruby (rb)     rust (rs)    scala (sc)    swift (sw)" \
-            "  typescript (ts)  zig (zg)" \
+            "  elixir (ex)  elm (el)      erlang (erl) fsharp (fs)   go" \
+            "  haskell (hs)  java         kotlin (kt)  ocaml (ml)    perl (pl)" \
+            "  php        python (py)     ruby (rb)    rust (rs)     scala (sc)" \
+            "  swift (sw)   typescript (ts)  zig (zg)" \
             "" \
             "Tools:" \
             "  cli        CLI integration tests" \
@@ -714,9 +724,9 @@ retest *target:
         exit 0
     fi
     if [ -z "$_target" ]; then
-        _langs="c clojure cpp csharp dart elixir elm erlang go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig"
+        _langs="c clojure cpp csharp dart elixir elm erlang fsharp go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig"
         _tools="cli codegen"
-        _dep() { case "$1" in c|cli|cpp) echo cmake;; clojure) echo clojure;; csharp) echo dotnet;; dart) echo dart;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; ocaml) echo opam;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
+        _dep() { case "$1" in c|cli|cpp) echo cmake;; clojure) echo clojure;; csharp|fsharp) echo dotnet;; dart) echo dart;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; ocaml) echo opam;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
         args=("check")
         for target in $_langs; do
             dep=$(_dep "$target")
@@ -750,8 +760,8 @@ get-started *args:
 uninstall *langs:
     #!/usr/bin/env bash
     set -euo pipefail
-    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
-    _all="c clojure cpp csharp dart elixir elm erlang go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig"
+    _name() { case "$1" in ts) echo typescript;; py) echo python;; rb) echo ruby;; rs) echo rust;; kt) echo kotlin;; c++) echo cpp;; cs) echo csharp;; fs) echo fsharp;; sw) echo swift;; hs) echo haskell;; ex) echo elixir;; erl) echo erlang;; clj) echo clojure;; sc) echo scala;; zg) echo zig;; el) echo elm;; pl) echo perl;; dt) echo dart;; ml) echo ocaml;; *) echo "$1";; esac; }
+    _all="c clojure cpp csharp dart elixir elm erlang fsharp go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig"
     _suggest() {
         local input; input="$(echo "$1" | tr '[:upper:]' '[:lower:]')"
         case "$input" in
@@ -760,6 +770,7 @@ uninstall *langs:
             haskel|haskle|haslkell)             echo haskell ;;
             closure|clojur|clojre|cojure)       echo clojure ;;
             erland|erlng|earland|earlang)       echo erlang  ;;
+            f-sharp|f-#)                        echo fsharp  ;;
             typscript|tyepscript|typesript|tsc) echo typescript ;;
             golang|goland)                      echo go      ;;
             scalar|scalla)                      echo scala   ;;
@@ -806,12 +817,12 @@ uninstall *langs:
             "" \
             "Uninstall language toolchains." \
             "" \
-            "Languages (22):" \
+            "Languages (23):" \
             "  c          clojure (clj)   cpp (c++)    csharp (cs)   dart (dt)" \
-            "  elixir (ex)  elm (el)      erlang (erl) go            haskell (hs)" \
-            "  java       kotlin (kt)     ocaml (ml)   perl (pl)     php" \
-            "  python (py)  ruby (rb)     rust (rs)    scala (sc)    swift (sw)" \
-            "  typescript (ts)  zig (zg)" \
+            "  elixir (ex)  elm (el)      erlang (erl) fsharp (fs)   go" \
+            "  haskell (hs)  java         kotlin (kt)  ocaml (ml)    perl (pl)" \
+            "  php        python (py)     ruby (rb)    rust (rs)     scala (sc)" \
+            "  swift (sw)   typescript (ts)  zig (zg)" \
             "" \
             "Examples:" \
             "  just uninstall go rust   Uninstall Go and Rust" \

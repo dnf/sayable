@@ -33,6 +33,7 @@ codegen/
     csharp/
     elixir/
     elm/
+    fsharp/
     swift/
     zig/
 ```
@@ -99,6 +100,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 | C#         | `Locales.cs`                                    | single file, all 71             |
 | Elixir     | `locales/{code}.ex` + `locales.ex`              | one per locale + registry       |
 | Elm        | `Locales/{Code}.elm` + `Locales.elm`            | one per locale + barrel         |
+| F#         | `Locales/Locales.fs`                            | single file, all 71             |
 | Swift      | `Locales.swift`                                 | single file, all 71             |
 | Zig        | `locales.zig`                                   | single file, all 71             |
 
