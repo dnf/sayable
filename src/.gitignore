@@ -42,6 +42,10 @@ fortran/build/
 # Go
 go/bin/
 
+# Groovy
+groovy/build/
+groovy/.gradle/
+
 # Haskell
 haskell/dist-newstyle/
 

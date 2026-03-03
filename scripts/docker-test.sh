@@ -15,8 +15,9 @@ DOCKER_OPTS=(
     -v /workspace/src/python/.venv
     -v /workspace/src/rust/target
     -v /workspace/src/cpp/build
-    -v /workspace/src/kotlin/.gradle
+    -v /workspace/src/groovy/.gradle
     -v /workspace/src/java/.gradle
+    -v /workspace/src/kotlin/.gradle
 )
 
 if [ $# -eq 0 ]; then

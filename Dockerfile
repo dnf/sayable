@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ruby \
     # PHP 8.3
     php-cli php-xml php-mbstring \
-    # OpenJDK 17 (for Kotlin + Java)
+    # OpenJDK 17 (for Java, Kotlin, Scala, Groovy)
     openjdk-17-jdk-headless \
     # Python 3.12
     python3 python3-venv \

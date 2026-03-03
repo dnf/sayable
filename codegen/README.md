@@ -21,6 +21,7 @@ codegen/
     typescript/      #   emitter.py + plural_rules.py
     python/
     go/
+    groovy/
     perl/
     ruby/
     rust/
@@ -90,6 +91,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 | TypeScript | `locales/{code}.ts` + `locales/index.ts`        | one per locale + barrel         |
 | Python     | `locales/{code}.py` + `locales/__init__.py`     | one per locale + barrel         |
 | Go         | `locale_{code}.go`                              | one per locale                  |
+| Groovy     | `Locales.groovy`                                | single file, all 71             |
 | Ruby       | `locales/{code}.rb`                             | one per locale                  |
 | Rust       | `locales/{code}.rs` + `locales/mod.rs`          | one per locale + barrel         |
 | Kotlin     | `Locales.kt`                                    | single file, all 71             |

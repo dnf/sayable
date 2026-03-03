@@ -13,7 +13,7 @@ just get-started --status   # print language status table
 just get-started --check    # exit 0 if all installed, 1 if missing
 ```
 
-Short aliases work everywhere: `just install ts py rb rs kt lu ft c++ cs fs sw hs ex erl clj sc zg el pl dt ml`
+Short aliases work everywhere: `just install ts py rb rs kt gy lu ft c++ cs fs sw hs ex erl clj sc zg el pl dt ml`
 
 Misspelled names get a "did you mean?" prompt (e.g. `just install elixer` suggests `elixir`).
 
@@ -25,7 +25,7 @@ Some languages share a toolchain. Uninstalling one affects the others.
 | ---------- | --------------- | ---------------------------------------------------------------- |
 | .NET SDK   | C#, F#          | Both share the same SDK; uninstalling one removes the other      |
 | cmake      | C, C++, Fortran | All three lose build capability until reinstalled                |
-| JDK 17     | Java, Kt, Scala | Protected: `just uninstall java` is a no-op (prints a message)   |
+| JDK 17     | Java, Kt, Scala, Gy | Protected: `just uninstall java` is a no-op (prints a message)   |
 | Node.js    | TypeScript, Elm | Elm depends on npm; Elm installer auto-installs Node if missing  |
 | Erlang/OTP | Erlang, Elixir  | Elixir depends on Erlang runtime; uninstall Erlang breaks Elixir |
 
@@ -55,19 +55,19 @@ Most languages install via Homebrew (including Dart via `dart-sdk`). Exceptions:
 
 Languages install via a mix of apt packages and direct downloads:
 
-| Method           | Languages                                                                          |
-| ---------------- | ---------------------------------------------------------------------------------- |
-| apt packages     | C/C++ (cmake), C#/F# (dotnet), Elixir, Erlang, Fortran, Lua, Perl, PHP, Ruby       |
-| Direct download  | Dart, Go, Swift, Zig                                                               |
-| Installer script | Clojure, Haskell (ghcup), Rust (rustup), Python (uv)                               |
-| npm global       | Elm, TypeScript (Node via NodeSource apt)                                          |
-| Shared           | Java/Kotlin/Scala (OpenJDK 17 via apt)                                             |
+| Method           | Languages                                                                                |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| apt packages     | C/C++ (cmake), C#/F# (dotnet), Elixir, Erlang, Fortran, Lua, Perl, PHP, Ruby             |
+| Direct download  | Dart, Go, Swift, Zig                                                                     |
+| Installer script | Clojure, Haskell (ghcup), Rust (rustup), Python (uv)                                     |
+| npm global       | Elm, TypeScript (Node via NodeSource apt)                                                |
+| Shared           | Java/Kotlin/Scala/Groovy (OpenJDK 17 via apt)                                            |
 
 ### Uninstall caveats
 
 | Language      | Caveat                                                                 |
 | ------------- | ---------------------------------------------------------------------- |
-| Java/Kt/Scala | No-op — JDK is shared; prints message instead of removing              |
+| Java/Kt/Scala/Gy | No-op — JDK is shared; prints message instead of removing              |
 | Perl          | No-op on macOS (system Perl); removed on Linux                         |
 | Swift (Linux) | No-op — Swift installs many files in /usr/local; manual cleanup needed |
 

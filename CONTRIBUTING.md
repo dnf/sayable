@@ -12,7 +12,7 @@ Thanks for your interest in contributing! This project maintains identical imple
 
 ```
 src/
-  c/  clojure/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  go/  haskell/
+  c/  clojure/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  go/  groovy/  haskell/
   java/  kotlin/  lua/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 locales/       # 71 JSON files — single source of truth for locale data
 codegen/
@@ -51,6 +51,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 | F#         | `test fsharp`<br>`test fs`     | `build fsharp`<br>`build fs`     | 🛠️                             | `clean fsharp`<br>`clean fs`     |
 | Fortran    | `test fortran`<br>`test ft`    | `build fortran`<br>`build ft`    | 🛠️                             | `clean fortran`<br>`clean ft`    |
 | Go         | `test go`                      | ⚡                                | `lint go`                      | ⚡                                |
+| Groovy     | `test groovy`<br>`test gy`     | `build groovy`<br>`build gy`     | 🛠️                             | `clean groovy`<br>`clean gy`     |
 | Haskell    | `test haskell`<br>`test hs`    | `build haskell`<br>`build hs`    | 🛠️                             | `clean haskell`<br>`clean hs`    |
 | Java       | `test java`                    | `build java`                     | 🛠️                             | `clean java`                     |
 | Kotlin     | `test kotlin`<br>`test kt`     | `build kotlin`<br>`build kt`     | 🛠️                             | `clean kotlin`<br>`clean kt`     |

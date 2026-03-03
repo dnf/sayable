@@ -8,7 +8,7 @@
 "Newborn" · "2 weeks, 4 days" · "14 months" · "2 years, 3 months" · "4½ years"
 ```
 
-Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 25 languages, 71 locales, and three compactness levels.
+Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `parent-time` formats ages the way parents and pediatricians actually talk, with human-friendly output in 26 languages, 71 locales, and three compactness levels.
 
 ## Implementations
 
@@ -25,6 +25,7 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 | F#         | [![F#](https://github.com/dnf/parent-time/actions/workflows/fsharp.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/fsharp.yml)                 | —                                                                                                                                                                                | NuGet                                       | [README](src/fsharp/README.md)     |
 | Fortran    | [![Fortran](https://github.com/dnf/parent-time/actions/workflows/fortran.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/fortran.yml)          | —                                                                                                                                                                                | CMake (Modern Fortran 2008+)                | [README](src/fortran/README.md)    |
 | Go         | [![Go](https://github.com/dnf/parent-time/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/go.yml)                         | [![Go](https://img.shields.io/github/go-mod/go-version/dnf/parent-time?filename=src%2Fgo%2Fgo.mod&logo=go&label=go)](https://pkg.go.dev/github.com/dnf/parent-time/src/go)       | `go get github.com/dnf/parent-time/src/go`  | [README](src/go/README.md)         |
+| Groovy     | [![Groovy](https://github.com/dnf/parent-time/actions/workflows/groovy.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/groovy.yml)             | —                                                                                                                                                                                | Gradle                                      | [README](src/groovy/README.md)     |
 | Haskell    | [![Haskell](https://github.com/dnf/parent-time/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/haskell.yml)          | —                                                                                                                                                                                | Cabal                                       | [README](src/haskell/README.md)    |
 | Java       | [![Java](https://github.com/dnf/parent-time/actions/workflows/java.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/java.yml)                   | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=openjdk&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time) | Gradle/Maven                                | [README](src/java/README.md)       |
 | Kotlin     | [![Kotlin](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml/badge.svg?branch=main)](https://github.com/dnf/parent-time/actions/workflows/kotlin.yml)             | [![Maven Central](https://img.shields.io/maven-central/v/com.github.dnf/parent-time?logo=kotlin&label=maven)](https://central.sonatype.com/artifact/com.github.dnf/parent-time)  | Gradle/Maven                                | [README](src/kotlin/README.md)     |
@@ -225,7 +226,7 @@ just lint                # run all available linters
 just --list              # see all available commands
 ```
 
-Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `lu`, `ml`, `ft`, `c++`, `cs`, `fs`, `sw`, `hs`, `ex`, `erl`, `clj`, `el`, `sc`, `zg` are accepted alongside full names.
+Language shortcuts: `ts`, `py`, `rb`, `rs`, `kt`, `gy`, `lu`, `ml`, `ft`, `c++`, `cs`, `fs`, `sw`, `hs`, `ex`, `erl`, `clj`, `el`, `sc`, `zg` are accepted alongside full names.
 
 ## Contributing
 

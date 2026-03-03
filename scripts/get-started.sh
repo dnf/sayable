@@ -33,7 +33,7 @@ _tool() {
         fortran)     echo gfortran ;;
         go)          echo go      ;;
         haskell)     echo cabal   ;;
-        java|kotlin|scala) echo java ;;
+        groovy|java|kotlin|scala) echo java ;;
         ocaml)       echo opam    ;;
         perl)        echo perl    ;;
         php)         echo php     ;;
@@ -46,7 +46,7 @@ _tool() {
     esac
 }
 
-ALL_LANGS=(c clojure cpp csharp dart elixir elm erlang fsharp fortran go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig)
+ALL_LANGS=(c clojure cpp csharp dart elixir elm erlang fsharp fortran go groovy haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig)
 
 # Languages unavailable on certain architectures
 _unavailable() {

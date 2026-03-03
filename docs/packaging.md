@@ -11,6 +11,7 @@ The table below summarizes how each language structures its locale data:
 | TypeScript | 71 individual ES modules + barrel `index.ts` | Eager (module-level `const`)        | `_ALL` Record           |
 | Python     | 71 individual modules + `__init__.py` barrel | Eager (module-level assignment)     | `_ALL` dict             |
 | Go         | 71 individual files in one package           | Eager (package-level `var`)         | `switch` statement      |
+| Groovy     | Single file (`Locales.groovy`)               | Eager (static fields on class)      | `ALL` map lookup        |
 | Ruby       | 71 individual files, glob-required           | Eager (`Dir[].each { require }`)    | `case`/`when`           |
 | Rust       | 71 individual modules + `mod.rs` barrel      | Lazy (`LazyLock`)                   | `match` expression      |
 | Kotlin     | Single file (`Locales.kt`)                   | Eager (`val` on `object`)           | `ALL` map lookup        |
@@ -76,6 +77,7 @@ The other languages have no equivalent mechanism. Their package managers and run
 | TypeScript | **Yes**, if you import individual locales without `getLocale` and use a tree-shaking bundler                          | None, *unless* you import `getLocale` — then use codegen subsetting |
 | Python     | No                                                                                                                    | Use codegen subsetting                                              |
 | Go         | No                                                                                                                    | Use codegen subsetting                                              |
+| Groovy     | No                                                                                                                    | Use codegen subsetting                                              |
 | Ruby       | No                                                                                                                    | Use codegen subsetting                                              |
 | Rust       | No in library builds; partial in optimized binaries via LLVM LTO if `get()` is unused                                 | Use codegen subsetting                                              |
 | Kotlin     | No                                                                                                                    | Use codegen subsetting                                              |

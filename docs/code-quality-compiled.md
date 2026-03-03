@@ -1,6 +1,6 @@
 # Code Quality: Compiled Languages
 
-Detailed configuration rationale for Go, Rust, Kotlin, C++, and Java.
+Detailed configuration rationale for Go, Groovy, Rust, Kotlin, C++, and Java.
 
 ---
 
@@ -337,3 +337,51 @@ external tools.
 camelCase for methods and fields, PascalCase for classes and interfaces,
 UPPER_CASE for enum entries and locale constants. This matches standard Java
 conventions and is consistent with the Kotlin implementation's naming.
+
+---
+
+## Groovy
+
+**Tools:** Groovy compiler + Java compiler flags
+
+**Config file:** `build.gradle`, `compiler-config.groovy`
+
+### Philosophy
+
+Groovy is a dynamic JVM language that shares Java's toolchain. The Groovy
+implementation follows the same JVM 17 target as Java, Kotlin, and Scala.
+Strictness is enforced through Java compiler `-Werror` flags and Groovy's
+`@Immutable` annotation for data classes.
+
+### Compiler settings
+
+| Setting                  | What it does                                                                                |
+| ------------------------ | ------------------------------------------------------------------------------------------- |
+| `-Werror`                | Treats Java compiler warnings as errors. Applied to all `GroovyCompile` tasks.              |
+| `compiler-config.groovy` | Groovy compiler configuration script. Applied via `groovyOptions.configurationScript`.      |
+| Java 17 target           | Matches Kotlin/Java/Scala JVM target. Provides maximum compatibility for library consumers. |
+| `localGroovy()`          | Uses the Groovy runtime bundled with Gradle. Zero external dependencies.                    |
+
+### Key patterns
+
+- **`@Immutable` data classes** — `UnitForms`, `StageLabel`, `Stages`, `Units`,
+  `CompactnessOverride` use Groovy's `@Immutable` annotation, which generates
+  immutable classes with constructor, equals/hashCode, and toString.
+- **Closure-based plural rules** — locale plural functions are Groovy closures
+  (`{ int n -> ... }`), matching the language's idiomatic approach to lambdas.
+- **Static convenience methods** — `formatAgeDefault` and `formatStageDefault`
+  provide English-default access without instantiation (Groovy has no companion
+  objects like Kotlin).
+
+### What was considered but not added
+
+- **CodeNarc** (static analyzer) — CodeNarc is the Groovy equivalent of
+  Checkstyle or PMD. For a library this size, `-Werror` and Groovy's dynamic
+  nature make CodeNarc less impactful than its Java counterparts. If the
+  implementation grows, CodeNarc would be the first addition.
+
+### Naming
+
+camelCase for methods and properties, PascalCase for classes,
+UPPER_CASE for enum entries and locale constants. This matches standard
+Groovy/Java conventions and is consistent with the other JVM implementations.

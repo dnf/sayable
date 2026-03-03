@@ -42,6 +42,7 @@ below summarizes the patterns across all implementations:
 | F#         | PascalCase    | camelCase             | PascalCase (`En`)   | PascalCase (record)   | PascalCase            |
 | Fortran    | n/a (modules) | snake_case            | UPPER_CASE (`PT_*`) | snake_case (%)        | integer parameters    |
 | Go         | PascalCase    | PascalCase (exported) | UPPER_CASE (`EN`)   | PascalCase (exported) | PascalCase            |
+| Groovy     | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
 | Java       | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
 | Kotlin     | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
 | Lua        | n/a (tables)  | snake_case            | UPPER_CASE (`EN`)   | snake_case (table)    | n/a (string literals) |
@@ -88,6 +89,7 @@ how each language enforces this:
 | F#         | `private` fields + immutable records | Records are immutable by default; fields set in constructor                      |
 | Fortran    | `intent(in)` on all locale args      | Derived types passed as `intent(in)` prevent modification; pure where possible   |
 | Go         | Unexported fields                    | Only the package can access them; methods use value receivers                    |
+| Groovy     | `@Immutable` + `private final` fields | Groovy `@Immutable` generates immutable class; fields set in constructor         |
 | Java       | `private final` fields               | Fields set in constructor, never modified; all formatting methods are pure reads |
 | Kotlin     | `private val` fields                 | `val` is compile-time immutable; `private` hides from consumers                  |
 | Lua        | Closure-captured locals              | Upvalues captured at construction; no public field access                        |
@@ -191,6 +193,7 @@ language family:
 | F#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 215   | 208        |
 | Fortran    | gfortran compiler           | `-Wall -Wextra -Wpedantic -Werror -std=f2008`; CTest            | 214   | 214        |
 | Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                         | 72    | 128        |
+| Groovy     | Groovy + Java compiler      | `-Werror`; Java 17; `@Immutable` data classes                   | 140   | 291        |
 | Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records       | 135   | 191        |
 | Kotlin     | Kotlin compiler             | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`       | 115   | 191        |
 | Lua        | luacheck                    | Lua 5.4 std; busted globals for tests                           | 194   | 194        |
