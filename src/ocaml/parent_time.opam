@@ -3,10 +3,10 @@ opam-version: "2.0"
 name: "parent_time"
 version: "0.1.0"
 synopsis: "Format ages the way parents talk"
+maintainer: ["parent-time contributors"]
 depends: [
   "ocaml" {>= "4.14"}
   "dune" {>= "3.0"}
-  "unix"
   "alcotest" {with-test}
 ]
 build: [
