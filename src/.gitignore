@@ -1,5 +1,59 @@
+# C
+c/build/
+
+# C#
+csharp/ParentTime/bin/
+csharp/ParentTime/obj/
+csharp/ParentTime.Tests/bin/
+csharp/ParentTime.Tests/obj/
+
+# C++
+cpp/build/
+cpp/.cache/
+
+# Clojure
+clojure/.cpcache/
+
+# Dart
+dart/.dart_tool/
+dart/.packages
+dart/pubspec.lock
+
+# Elixir
+elixir/_build/
+
+# Elm
+elm/elm-stuff/
+
+# Erlang
+erlang/_build/
+erlang/rebar.lock
+erlang/rebar3.crashdump
+
 # Go
 go/bin/
+
+# Haskell
+haskell/dist-newstyle/
+
+# Java
+java/build/
+java/.gradle/
+
+# Kotlin
+kotlin/build/
+kotlin/.gradle/
+
+# OCaml
+ocaml/_build/
+ocaml/_opam/
+
+# PHP
+php/vendor/
+php/composer.lock
+php/.phpunit.cache/
+php/.php-cs-fixer.cache
+php/.phpstan.cache/
 
 # Ruby
 ruby/*.gem
@@ -17,63 +71,13 @@ ruby/specifications/
 # Rust
 rust/target/
 
-# Kotlin
-kotlin/build/
-kotlin/.gradle/
-
-# Java
-java/build/
-java/.gradle/
-
-# C++
-cpp/build/
-cpp/.cache/
-
-# PHP
-php/vendor/
-php/composer.lock
-php/.phpunit.cache/
-php/.php-cs-fixer.cache
-php/.phpstan.cache/
-
-# C#
-csharp/ParentTime/bin/
-csharp/ParentTime/obj/
-csharp/ParentTime.Tests/bin/
-csharp/ParentTime.Tests/obj/
+# Scala
+scala/build/
+scala/.gradle/
 
 # Swift
 swift/.build/
 swift/Package.resolved
-
-# Haskell
-haskell/dist-newstyle/
-
-# Elixir
-elixir/_build/
-
-# Elm
-elm/elm-stuff/
-
-# Erlang
-erlang/_build/
-erlang/rebar.lock
-erlang/rebar3.crashdump
-
-# C
-c/build/
-
-# Dart
-dart/.dart_tool/
-dart/.packages
-dart/pubspec.lock
-
-# Clojure
-clojure/.cpcache/
-
-# Scala
-scala/build/
-scala/.gradle/
 
 # Zig
 zig/zig-out/

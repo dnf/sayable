@@ -141,6 +141,12 @@ def _clean_elm(selected: set[str], all_codes: set[str], check: bool, diffs: list
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_ocaml(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.ocaml.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 def _clean_perl(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
     from codegen.targets.perl.emitter import output_path
     for code in sorted(all_codes - selected):
@@ -165,6 +171,7 @@ _PER_FILE_CLEANERS = {
     "clojure": _clean_clojure,
     "elixir": _clean_elixir,
     "elm": _clean_elm,
+    "ocaml": _clean_ocaml,
     "perl": _clean_perl,
     "dart": _clean_dart,
 }
@@ -406,6 +413,19 @@ def generate_dart(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_ocaml(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.ocaml.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_perl(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.perl.emitter import emit_locale, emit_registry, output_path, registry_path
 
@@ -447,6 +467,7 @@ _GENERATORS = {
     "zig": generate_zig,
     "elixir": generate_elixir,
     "elm": generate_elm,
+    "ocaml": generate_ocaml,
     "perl": generate_perl,
     "dart": generate_dart,
 }

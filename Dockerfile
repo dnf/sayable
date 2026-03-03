@@ -98,6 +98,14 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     unzip -q /tmp/dart.zip -d /opt && rm /tmp/dart.zip
 ENV PATH="/opt/dart-sdk/bin:${PATH}"
 
+# OCaml via opam
+RUN apt-get update && apt-get install -y --no-install-recommends opam \
+    && rm -rf /var/lib/apt/lists/* \
+    && opam init --disable-sandboxing --yes \
+    && eval $(opam env) \
+    && opam install dune alcotest --yes
+ENV PATH="/root/.opam/default/bin:${PATH}"
+
 # just (task runner)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
 

@@ -37,6 +37,7 @@ below summarizes the patterns across all implementations:
 | Go         | PascalCase    | PascalCase (exported) | UPPER_CASE (`EN`)   | PascalCase (exported) | PascalCase            |
 | Java       | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
 | Kotlin     | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
+| OCaml      | PascalCase    | snake_case            | PascalCase (`En`)   | snake_case (record)   | PascalCase            |
 | Perl       | PascalCase    | snake_case            | UPPER_CASE (`EN`)   | snake_case (hashref)  | n/a (string literals) |
 | PHP        | PascalCase    | camelCase             | UPPER_CASE (`EN()`) | camelCase             | PascalCase            |
 | Python     | PascalCase    | snake_case            | UPPER_CASE (`EN`)   | snake_case            | n/a (string literals) |
@@ -79,6 +80,7 @@ how each language enforces this:
 | Go         | Unexported fields                    | Only the package can access them; methods use value receivers                    |
 | Java       | `private final` fields               | Fields set in constructor, never modified; all formatting methods are pure reads |
 | Kotlin     | `private val` fields                 | `val` is compile-time immutable; `private` hides from consumers                  |
+| OCaml      | Immutable by language design         | All data is immutable in OCaml; records and ADTs are immutable by default        |
 | Perl       | Hashref-based (convention)           | Fields set in constructor; `use strict` prevents undeclared variable access      |
 | PHP        | `readonly` class                     | PHP 8.2 `readonly` prevents field reassignment after construction                |
 | Python     | `_`-prefixed fields + pyright strict | Convention-based; pyright prevents external access to `_` members                |
@@ -178,6 +180,7 @@ language family:
 | Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                         | 72    | 128        |
 | Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records       | 135   | 191        |
 | Kotlin     | Kotlin compiler             | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`       | 115   | 191        |
+| OCaml      | Dune + OCaml compiler       | `-warn-error +a`; Alcotest                                      | 209   | 209        |
 | Perl       | strict + warnings           | `use strict; use warnings` in all modules                       | 261   | 261        |
 | PHP        | PHPStan + PHP-CS-Fixer      | PHPStan level 9; PER-CS2.0 + risky; `declare(strict_types=1)`   | 168   | 179        |
 | Python     | ruff + pyright              | 11 rule categories; pyright `strict`                            | 145   | 166        |
