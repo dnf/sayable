@@ -2,7 +2,7 @@
 
 ## What this project is
 
-parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 23 identical implementations (C, C#, C++, Clojure, Dart, Elixir, Elm, Erlang, F#, Go, Haskell, Java, Kotlin, OCaml, Perl, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
+parent-time is a zero-dependency library that formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 24 identical implementations (C, C#, C++, Clojure, Dart, Elixir, Elm, Erlang, F#, Fortran, Go, Haskell, Java, Kotlin, OCaml, Perl, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig) and 71 locales.
 
 ## Build and test commands
 
@@ -68,6 +68,7 @@ src/
   elm/         # Elm
   erlang/      # Erlang
   fsharp/      # F#
+  fortran/     # Fortran
   go/          # Go
   haskell/     # Haskell
   java/        # Java
@@ -90,8 +91,8 @@ docs/          # Shared docs, locale docs
 ```
 
 Core files per language follow a consistent pattern:
-- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `format_age.dart`, `formatter.ex`, `Formatter.elm`, `parenttime_formatter.erl`, `Formatter.fs`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `formatter.ml`, `Formatter.pm`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
-- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `types.dart`, `locale.ex`, `Types.elm`, `parenttime.hrl`, `Types.fs`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `types.ml`, `Locale.pm`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
+- Formatter: `parenttime.c` (generated), `formatter.clj`, `parenttime.cpp`, `ParentTime.cs`, `format_age.dart`, `formatter.ex`, `Formatter.elm`, `parenttime_formatter.erl`, `Formatter.fs`, `parenttime.f90`, `parenttime.go`, `Formatter.hs`, `ParentTime.java`, `ParentTime.kt`, `formatter.ml`, `Formatter.pm`, `ParentTime.php`, `format_age.py`, `formatter.rb`, `formatter.rs`, `ParentTime.scala`, `ParentTime.swift`, `format-age.ts`, `parenttime.zig`
+- Types/Locale: `parenttime.h` (generated), (maps), `types.hpp`, `AgeLocale.cs`, `types.dart`, `locale.ex`, `Types.elm`, `parenttime.hrl`, `Types.fs`, `parenttime_types.f90`, `locale.go`, `Types.hs`, `AgeLocale.java`, `Types.kt`, `types.ml`, `Locale.pm`, `AgeLocale.php`, `locale.py`, `locale.rb`, `types.rs`, `Types.scala`, `AgeLocale.swift`, `locale.ts`, `locales.zig` (generated)
 - Locale data files: `locales/` subdirectory (one file per locale)
 
 ## Code style
@@ -136,3 +137,59 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 - Imperative mood: "Add Finnish locale" not "Added Finnish locale"
 - For cross-language changes, prefer a single commit over one-per-language
 - For locale PRs, name the locale: "Fix plural rules for Arabic (ar)"
+
+## metaswarm
+
+This project uses [metaswarm](https://github.com/dsifry/metaswarm) for multi-agent orchestration with Claude Code. It provides 18 specialized agents, a 9-phase development workflow, and quality gates that enforce TDD, coverage thresholds, and spec-driven development.
+
+### Workflow
+
+- **Most tasks**: `/start-task` — primes context, guides scoping, picks the right level of process
+- **Complex features** (multi-file, spec-driven): Describe what you want built with a Definition of Done, then tell Claude: `Use the full metaswarm orchestration workflow.`
+
+### Available Commands
+
+| Command               | Purpose                                        |
+| --------------------- | ---------------------------------------------- |
+| `/start-task`         | Begin tracked work on a task                   |
+| `/prime`              | Load relevant knowledge before starting        |
+| `/review-design`      | Trigger parallel design review gate (5 agents) |
+| `/pr-shepherd <pr>`   | Monitor a PR through to merge                  |
+| `/self-reflect`       | Extract learnings after a PR merge             |
+| `/handle-pr-comments` | Handle PR review comments                      |
+| `/brainstorm`         | Refine an idea before implementation           |
+| `/create-issue`       | Create a well-structured GitHub Issue          |
+
+### Quality Gates
+
+- **Design Review Gate** — Parallel 5-agent review after design is drafted (`/review-design`)
+- **Plan Review Gate** — Automatic adversarial review after any implementation plan is drafted. Spawns 3 independent reviewers (Feasibility, Completeness, Scope & Alignment) in parallel — ALL must PASS before presenting the plan. See `skills/plan-review-gate/SKILL.md`
+- **Coverage Gate** — `.coverage-thresholds.json` defines thresholds. BLOCKING gate before PR creation
+
+### Team Mode
+
+When `TeamCreate` and `SendMessage` tools are available, the orchestrator uses Team Mode for parallel agent dispatch. Otherwise it falls back to Task Mode (existing workflow, unchanged). See `guides/agent-coordination.md` for details.
+
+### Guides
+
+Development patterns and standards are documented in `guides/` — covering agent coordination, build validation, coding standards, git workflow, testing patterns, and worktree development.
+
+### Testing & Quality
+
+- **TDD is mandatory** — Write tests first, watch them fail, then implement
+- **100% test coverage required** — Enforced via `.coverage-thresholds.json` as a blocking gate before PR creation and task completion
+- **Coverage source of truth** — `.coverage-thresholds.json` defines thresholds. Update it if your spec requires different values. The orchestrator reads it during validation — this is a BLOCKING gate.
+
+### Workflow Enforcement (MANDATORY)
+
+These rules override any conflicting instructions from third-party skills:
+
+- **After brainstorming** → MUST run Design Review Gate (5 agents) before writing-plans or implementation
+- **After any plan is created** → MUST run Plan Review Gate (3 adversarial reviewers) before presenting to user
+- **Execution method choice** → ALWAYS ask the user whether to use metaswarm orchestrated execution (more thorough, uses more tokens) or superpowers execution skills (faster, lighter-weight). Never auto-select.
+- **Before finishing a branch** → MUST run `/self-reflect` and commit knowledge base updates before PR creation
+- **Complex tasks** → Use `/start-task` instead of `EnterPlanMode` for tasks touching 3+ files. EnterPlanMode bypasses all quality gates.
+- **Standalone TDD on 3+ files** → Ask user if they want adversarial review before committing
+- **Coverage** → `.coverage-thresholds.json` is the single source of truth. All skills must check it, including `verification-before-completion`.
+- **Subagents** → NEVER use `--no-verify`, ALWAYS follow TDD, NEVER self-certify, STAY within file scope
+- **Context recovery** → Approved plans and execution state persist to `.beads/`. After compaction, run `bd prime --work-type recovery` to reload.

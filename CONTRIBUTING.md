@@ -12,8 +12,8 @@ Thanks for your interest in contributing! This project maintains identical imple
 
 ```
 src/
-  c/  clojure/  cpp/  csharp/  elixir/  elm/  erlang/  fsharp/  go/  haskell/
-  java/  kotlin/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
+  c/  clojure/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  go/  haskell/
+  java/  kotlin/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 locales/       # 71 JSON files — single source of truth for locale data
 codegen/
   targets/     # One emitter + plural rules per target language
@@ -44,14 +44,17 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 | C#         | `test csharp`<br>`test cs`     | `build csharp`<br>`build cs`     | 🛠️                             | `clean csharp`<br>`clean cs`     |
 | C++        | `test cpp`<br>`test c++`       | `build cpp`<br>`build c++`       | 🛠️                             | `clean cpp`<br>`clean c++`       |
 | Clojure    | `test clojure`<br>`test clj`   | ⚡                                | 🛠️                             | `clean clojure`<br>`clean clj`   |
+| Dart       | `test dart`<br>`test dt`       | ⚡                                | `lint dart`<br>`lint dt`       | `clean dart`<br>`clean dt`       |
 | Elixir     | `test elixir`<br>`test ex`     | `build elixir`<br>`build ex`     | 🛠️                             | `clean elixir`<br>`clean ex`     |
 | Elm        | `test elm`<br>`test el`        | ⚡                                | 🛠️                             | `clean elm`<br>`clean el`        |
 | Erlang     | `test erlang`<br>`test erl`    | `build erlang`<br>`build erl`    | 🛠️                             | `clean erlang`<br>`clean erl`    |
 | F#         | `test fsharp`<br>`test fs`     | `build fsharp`<br>`build fs`     | 🛠️                             | `clean fsharp`<br>`clean fs`     |
+| Fortran    | `test fortran`<br>`test ft`    | `build fortran`<br>`build ft`    | 🛠️                             | `clean fortran`<br>`clean ft`    |
 | Go         | `test go`                      | ⚡                                | `lint go`                      | ⚡                                |
 | Haskell    | `test haskell`<br>`test hs`    | `build haskell`<br>`build hs`    | 🛠️                             | `clean haskell`<br>`clean hs`    |
 | Java       | `test java`                    | `build java`                     | 🛠️                             | `clean java`                     |
 | Kotlin     | `test kotlin`<br>`test kt`     | `build kotlin`<br>`build kt`     | 🛠️                             | `clean kotlin`<br>`clean kt`     |
+| OCaml      | `test ocaml`<br>`test ml`      | `build ocaml`<br>`build ml`      | 🛠️                             | `clean ocaml`<br>`clean ml`      |
 | Perl       | `test perl`<br>`test pl`       | ⚡                                | 🛠️                             | ⚡                                |
 | PHP        | `test php`                     | ⚡                                | `lint php`                     | ⚡                                |
 | Python     | `test python`<br>`test py`     | ⚡                                | `lint python`<br>`lint py`     | `clean python`<br>`clean py`     |

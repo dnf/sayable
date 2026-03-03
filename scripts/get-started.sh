@@ -30,6 +30,7 @@ _tool() {
         elm)         echo elm     ;;
         erlang)      echo rebar3  ;;
         fsharp)      echo dotnet  ;;
+        fortran)     echo gfortran ;;
         go)          echo go      ;;
         haskell)     echo cabal   ;;
         java|kotlin|scala) echo java ;;
@@ -45,7 +46,7 @@ _tool() {
     esac
 }
 
-ALL_LANGS=(c clojure cpp csharp dart elixir elm erlang fsharp go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig)
+ALL_LANGS=(c clojure cpp csharp dart elixir elm erlang fsharp fortran go haskell java kotlin ocaml perl php python ruby rust scala swift typescript zig)
 
 # Languages unavailable on certain architectures
 _unavailable() {

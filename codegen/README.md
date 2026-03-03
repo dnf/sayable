@@ -34,6 +34,7 @@ codegen/
     elixir/
     elm/
     fsharp/
+    fortran/
     swift/
     zig/
 ```
@@ -101,6 +102,7 @@ Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a 
 | Elixir     | `locales/{code}.ex` + `locales.ex`              | one per locale + registry       |
 | Elm        | `Locales/{Code}.elm` + `Locales.elm`            | one per locale + barrel         |
 | F#         | `Locales/Locales.fs`                            | single file, all 71             |
+| Fortran    | `parenttime_locales.f90`                        | single file, all 71             |
 | Swift      | `Locales.swift`                                 | single file, all 71             |
 | Zig        | `locales.zig`                                   | single file, all 71             |
 

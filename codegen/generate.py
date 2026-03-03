@@ -434,6 +434,14 @@ def generate_ocaml(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_fortran(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.fortran.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_perl(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.perl.emitter import emit_locale, emit_registry, output_path, registry_path
 
@@ -476,6 +484,7 @@ _GENERATORS = {
     "zig": generate_zig,
     "elixir": generate_elixir,
     "elm": generate_elm,
+    "fortran": generate_fortran,
     "ocaml": generate_ocaml,
     "perl": generate_perl,
     "dart": generate_dart,

@@ -40,6 +40,7 @@ below summarizes the patterns across all implementations:
 | Elixir     | PascalCase    | snake_case            | UPPER_CASE (`EN`)   | atom keys             | n/a (atom literals)   |
 | Elm        | PascalCase    | camelCase             | lowercase (`en`)    | camelCase             | PascalCase            |
 | F#         | PascalCase    | camelCase             | PascalCase (`En`)   | PascalCase (record)   | PascalCase            |
+| Fortran    | n/a (modules) | snake_case            | UPPER_CASE (`PT_*`) | snake_case (%)        | integer parameters    |
 | Go         | PascalCase    | PascalCase (exported) | UPPER_CASE (`EN`)   | PascalCase (exported) | PascalCase            |
 | Java       | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
 | Kotlin     | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
@@ -84,6 +85,7 @@ how each language enforces this:
 | Elixir     | Immutable by language design         | All data is immutable in Elixir; functions are pure by convention                |
 | Elm        | Pure functions (no mutable state)    | Elm has no mutable state; all functions are pure by language design              |
 | F#         | `private` fields + immutable records | Records are immutable by default; fields set in constructor                      |
+| Fortran    | `intent(in)` on all locale args      | Derived types passed as `intent(in)` prevent modification; pure where possible   |
 | Go         | Unexported fields                    | Only the package can access them; methods use value receivers                    |
 | Java       | `private final` fields               | Fields set in constructor, never modified; all formatting methods are pure reads |
 | Kotlin     | `private val` fields                 | `val` is compile-time immutable; `private` hides from consumers                  |
@@ -185,6 +187,7 @@ language family:
 | Elixir     | Mix compiler                | `warnings_as_errors: true`; ExUnit                              | 209   | 209        |
 | Elm        | Elm compiler                | Compiler warnings-as-errors; `elm-explorations/test`            | 209   | 209        |
 | F#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 215   | 208        |
+| Fortran    | gfortran compiler           | `-Wall -Wextra -Wpedantic -Werror -std=f2008`; CTest            | 214   | 214        |
 | Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                         | 72    | 128        |
 | Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records       | 135   | 191        |
 | Kotlin     | Kotlin compiler             | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`       | 115   | 191        |

@@ -36,6 +36,9 @@ fsharp/ParentTime/obj/
 fsharp/ParentTime.Tests/bin/
 fsharp/ParentTime.Tests/obj/
 
+# Fortran
+fortran/build/
+
 # Go
 go/bin/
 
