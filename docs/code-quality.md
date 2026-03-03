@@ -23,6 +23,11 @@ codebase are suppressed with a documented rationale.
    checkers are dev-only. The shipped library in every language has zero
    runtime dependencies.
 
+5. **Name over comment.** When a line of code needs a comment to explain *what*
+   it does (not *why*), extract it into a named function or variable. The name
+   replaces the comment. This applies especially to raw escape sequences, magic
+   numbers, and opaque shell idioms.
+
 ## Naming conventions
 
 Each language follows its community's standard naming conventions. The table

@@ -11,6 +11,10 @@ GREEN='\033[32m'
 CYAN='\033[36m'
 RESET='\033[0m'
 
+_hide_cursor() { printf '\033[?25l'; }
+_show_cursor() { printf '\033[?25h'; }
+_cursor_up() { printf '\033[%dA' "$1"; }
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=installers/_common.sh
 source "$SCRIPT_DIR/installers/_common.sh"
@@ -235,7 +239,7 @@ cursor=0
 
 _draw_menu() {
     if [ "${1:-}" = "redraw" ]; then
-        printf "\033[${n_actions}A"
+        _cursor_up "$n_actions"
     fi
     for (( i=0; i<n_actions; i++ )); do
         if [ "$i" -eq "$cursor" ]; then
@@ -250,8 +254,8 @@ echo "Some toolchains are missing. What would you like to do?"
 echo -e "${DIM}  ↑/↓ navigate  ·  enter select${RESET}"
 echo ""
 
-printf "\033[?25l"
-_cleanup() { printf "\033[?25h"; }
+_hide_cursor
+_cleanup() { _show_cursor; }
 trap _cleanup EXIT
 
 _draw_menu first
@@ -271,7 +275,7 @@ while true; do
     _draw_menu redraw
 done
 
-printf "\033[?25h"
+_show_cursor
 trap - EXIT
 echo ""
 
@@ -291,7 +295,7 @@ case "$cursor" in
 
         _draw_select() {
             if [ "${1:-}" = "redraw" ]; then
-                printf "\033[${n}A"
+                _cursor_up "$n"
             fi
             for (( i=0; i<n; i++ )); do
                 local display
@@ -316,7 +320,7 @@ case "$cursor" in
         echo -e "${DIM}  ↑/↓ navigate  ·  space toggle  ·  a all  ·  n none  ·  enter confirm${RESET}"
         echo ""
 
-        printf "\033[?25l"
+        _hide_cursor
         trap _cleanup EXIT
 
         _draw_select first
@@ -345,7 +349,7 @@ case "$cursor" in
             _draw_select redraw
         done
 
-        printf "\033[?25h"
+        _show_cursor
         trap - EXIT
         echo ""
 

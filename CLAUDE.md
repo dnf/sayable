@@ -97,7 +97,7 @@ Core files per language follow a consistent pattern:
 
 - Each language follows its community conventions — no cross-language style mandates.
 - Zero warnings in CI. When suppressing a lint, document why.
-- Don't add comments that restate the code. Comments should explain "why", not "what."
+- **Name over comment.** When a line needs a comment to explain *what* it does, extract it into a named function or variable instead. The name replaces the comment. Comments should explain "why", not "what."
 - Locale data files will have long lines — that's expected.
 - Markdown tables must be column-aligned with spaces so pipe delimiters line up vertically in raw text. Run `just maintain docs` to fix alignment automatically.
 - Language-specific build artifacts (e.g., `_build/`, `dist-newstyle/`, `build/`) go in `src/.gitignore`, not the root `.gitignore`. The root `.gitignore` is for cross-language patterns only (e.g., `__pycache__/`, `.logs/`).
