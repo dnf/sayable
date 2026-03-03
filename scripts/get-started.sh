@@ -21,6 +21,7 @@ _tool() {
         c|cpp)       echo cmake   ;;
         clojure)     echo clojure ;;
         csharp)      echo dotnet  ;;
+        dart)        echo dart    ;;
         elixir)      echo mix     ;;
         elm)         echo elm     ;;
         erlang)      echo rebar3  ;;
@@ -38,7 +39,7 @@ _tool() {
     esac
 }
 
-ALL_LANGS=(c clojure cpp csharp elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig)
+ALL_LANGS=(c clojure cpp csharp dart elixir elm erlang go haskell java kotlin perl php python ruby rust scala swift typescript zig)
 
 # Languages unavailable on certain architectures
 _unavailable() {
@@ -107,7 +108,7 @@ _print_intro() {
     echo ""
     echo -e "${BOLD}parent-time${RESET}"
     echo "Formats ages the way parents talk — \"6 weeks\", \"14 months\", \"3½ years\"."
-    echo "20 identical implementations, 71 locales, zero dependencies."
+    echo "21 identical implementations, 71 locales, zero dependencies."
     echo ""
 }
 

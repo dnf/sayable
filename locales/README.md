@@ -6,7 +6,7 @@ This directory contains the canonical JSON definitions for all 71 locales suppor
 
 ## How it works
 
-When you edit a source file in this directory, a code generator reads it and produces locale files for all 20 language implementations automatically:
+When you edit a source file in this directory, a code generator reads it and produces locale files for all 21 language implementations automatically:
 
 ```
                           locales/fr.json
@@ -21,7 +21,7 @@ When you edit a source file in this directory, a code generator reads it and pro
           +----------+----------+----------+--- ... ---+
           |          |          |          |            |
           v          v          v          v            v
-      src/typescript  src/python  src/go  src/rust    (20 languages)
+      src/typescript  src/python  src/go  src/rust    (21 languages)
        locales/fr.ts  locales/   locale_  locales/
                        fr.py     fr.go    fr.rs
 ```
@@ -95,7 +95,7 @@ If you're not comfortable with Git, open an issue describing the correction and 
 
 ### 5. What happens next
 
-After your JSON edit is merged, a maintainer runs the code generator (`python -m codegen.generate`), which automatically updates the locale files in all 20 language implementations. You only need to edit one file.
+After your JSON edit is merged, a maintainer runs the code generator (`python -m codegen.generate`), which automatically updates the locale files in all 21 language implementations. You only need to edit one file.
 
 ## Locale index
 

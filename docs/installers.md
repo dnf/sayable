@@ -13,7 +13,7 @@ just get-started --status   # print language status table
 just get-started --check    # exit 0 if all installed, 1 if missing
 ```
 
-Short aliases work everywhere: `just install ts py rb rs kt c++ cs sw hs ex erl clj sc zg el pl`
+Short aliases work everywhere: `just install ts py rb rs kt c++ cs sw hs ex erl clj sc zg el pl dt`
 
 Misspelled names get a "did you mean?" prompt (e.g. `just install elixer` suggests `elixir`).
 
@@ -43,7 +43,7 @@ Some languages lack pre-built binaries on certain architectures. The installer s
 
 ### macOS
 
-Most languages install via Homebrew. Exceptions:
+Most languages install via Homebrew (including Dart via `dart-sdk`). Exceptions:
 - **Perl** — uses system Perl (no install needed)
 - **Swift** — uses Xcode Swift (no install needed)
 - **Rust** — installed via rustup (not Homebrew, to avoid conflicts)
@@ -57,7 +57,7 @@ Languages install via a mix of apt packages and direct downloads:
 | Method           | Languages                                                   |
 | ---------------- | ----------------------------------------------------------- |
 | apt packages     | C/C++ (cmake), C# (dotnet), Elixir, Erlang, Perl, PHP, Ruby |
-| Direct download  | Go, Swift, Zig                                              |
+| Direct download  | Dart, Go, Swift, Zig                                        |
 | Installer script | Clojure, Haskell (ghcup), Rust (rustup), Python (uv)        |
 | npm global       | Elm, TypeScript (Node via NodeSource apt)                   |
 | Shared           | Java/Kotlin/Scala (OpenJDK 17 via apt)                      |

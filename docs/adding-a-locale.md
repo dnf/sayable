@@ -1,7 +1,7 @@
 # Adding a New Locale
 
 This guide covers everything needed to add a new locale to parent-time.
-You create one JSON file and codegen generates all 20 language implementations.
+You create one JSON file and codegen generates all 21 language implementations.
 
 ## Before you start
 
@@ -216,7 +216,7 @@ Many languages skip short/compact overrides entirely — that's fine.
 ## 3. Generate and verify
 
 ```bash
-python -m codegen.generate          # generate all 20 languages
+python -m codegen.generate          # generate all 21 languages
 python -m codegen.generate --check  # verify no drift
 just test                           # run all test suites
 just lint                           # run all linters

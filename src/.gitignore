@@ -62,6 +62,11 @@ erlang/rebar3.crashdump
 # C
 c/build/
 
+# Dart
+dart/.dart_tool/
+dart/.packages
+dart/pubspec.lock
+
 # Clojure
 clojure/.cpcache/
 

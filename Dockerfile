@@ -92,6 +92,12 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     curl -fsSL "https://ziglang.org/download/0.14.0/zig-linux-${ZIG_ARCH}-0.14.0.tar.xz" | tar -C /opt/zig --strip-components=1 -xJ && \
     ln -sf /opt/zig/zig /usr/local/bin/zig
 
+# Dart SDK
+RUN ARCH="$(dpkg --print-architecture)" && \
+    curl -fsSL "https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-${ARCH}-release.zip" -o /tmp/dart.zip && \
+    unzip -q /tmp/dart.zip -d /opt && rm /tmp/dart.zip
+ENV PATH="/opt/dart-sdk/bin:${PATH}"
+
 # just (task runner)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
 
