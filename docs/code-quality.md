@@ -41,6 +41,7 @@ below summarizes the patterns across all implementations:
 | Elm        | PascalCase    | camelCase             | lowercase (`en`)    | camelCase             | PascalCase            |
 | F#         | PascalCase    | camelCase             | PascalCase (`En`)   | PascalCase (record)   | PascalCase            |
 | Fortran    | n/a (modules) | snake_case            | UPPER_CASE (`PT_*`) | snake_case (%)        | integer parameters    |
+| Gleam      | PascalCase    | snake_case            | lowercase (`en`)    | snake_case (record)   | PascalCase            |
 | Go         | PascalCase    | PascalCase (exported) | UPPER_CASE (`EN`)   | PascalCase (exported) | PascalCase            |
 | Groovy     | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
 | Java       | PascalCase    | camelCase             | UPPER_CASE (`EN`)   | camelCase             | UPPER_CASE            |
@@ -80,28 +81,29 @@ construction. Fields are set once during `__init__` / the constructor and never
 modified — every formatting method is a pure read. The table below summarizes
 how each language enforces this:
 
-| Language   | Mechanism                            | Notes                                                                            |
-| ---------- | ------------------------------------ | -------------------------------------------------------------------------------- |
-| C#         | `private readonly` fields            | Fields set in constructor; `TreatWarningsAsErrors` in project                    |
-| C++        | `const` methods + `const` locals     | Methods are `const`-qualified; local variables use `const` where assigned once   |
-| Elixir     | Immutable by language design         | All data is immutable in Elixir; functions are pure by convention                |
-| Elm        | Pure functions (no mutable state)    | Elm has no mutable state; all functions are pure by language design              |
-| F#         | `private` fields + immutable records | Records are immutable by default; fields set in constructor                      |
-| Fortran    | `intent(in)` on all locale args      | Derived types passed as `intent(in)` prevent modification; pure where possible   |
-| Go         | Unexported fields                    | Only the package can access them; methods use value receivers                    |
-| Groovy     | `@Immutable` + `private final` fields | Groovy `@Immutable` generates immutable class; fields set in constructor         |
-| Java       | `private final` fields               | Fields set in constructor, never modified; all formatting methods are pure reads |
-| Kotlin     | `private val` fields                 | `val` is compile-time immutable; `private` hides from consumers                  |
-| Lua        | Closure-captured locals              | Upvalues captured at construction; no public field access                        |
-| OCaml      | Immutable by language design         | All data is immutable in OCaml; records and ADTs are immutable by default        |
-| Perl       | Hashref-based (convention)           | Fields set in constructor; `use strict` prevents undeclared variable access      |
-| PHP        | `readonly` class                     | PHP 8.2 `readonly` prevents field reassignment after construction                |
-| Python     | `_`-prefixed fields + pyright strict | Convention-based; pyright prevents external access to `_` members                |
-| Ruby       | `freeze` in `initialize`             | Runtime error on any mutation after construction                                 |
-| Rust       | `&self` on all methods               | Borrow checker prevents mutation through shared references                       |
-| Scala      | `private val` fields                 | `val` is compile-time immutable; `private` hides from consumers                  |
-| Swift      | `private let` fields + `Sendable`    | `let` is compile-time immutable; struct conforms to `Sendable`                   |
-| TypeScript | `private readonly` fields            | Compiler error on reassignment                                                   |
+| Language   | Mechanism                             | Notes                                                                             |
+| ---------- | ------------------------------------- | --------------------------------------------------------------------------------- |
+| C#         | `private readonly` fields             | Fields set in constructor; `TreatWarningsAsErrors` in project                     |
+| C++        | `const` methods + `const` locals      | Methods are `const`-qualified; local variables use `const` where assigned once    |
+| Elixir     | Immutable by language design          | All data is immutable in Elixir; functions are pure by convention                 |
+| Elm        | Pure functions (no mutable state)     | Elm has no mutable state; all functions are pure by language design               |
+| F#         | `private` fields + immutable records  | Records are immutable by default; fields set in constructor                       |
+| Fortran    | `intent(in)` on all locale args       | Derived types passed as `intent(in)` prevent modification; pure where possible    |
+| Gleam      | Immutable by language design          | All data is immutable in Gleam; custom types and records are immutable by default |
+| Go         | Unexported fields                     | Only the package can access them; methods use value receivers                     |
+| Groovy     | `@Immutable` + `private final` fields | Groovy `@Immutable` generates immutable class; fields set in constructor          |
+| Java       | `private final` fields                | Fields set in constructor, never modified; all formatting methods are pure reads  |
+| Kotlin     | `private val` fields                  | `val` is compile-time immutable; `private` hides from consumers                   |
+| Lua        | Closure-captured locals               | Upvalues captured at construction; no public field access                         |
+| OCaml      | Immutable by language design          | All data is immutable in OCaml; records and ADTs are immutable by default         |
+| Perl       | Hashref-based (convention)            | Fields set in constructor; `use strict` prevents undeclared variable access       |
+| PHP        | `readonly` class                      | PHP 8.2 `readonly` prevents field reassignment after construction                 |
+| Python     | `_`-prefixed fields + pyright strict  | Convention-based; pyright prevents external access to `_` members                 |
+| Ruby       | `freeze` in `initialize`              | Runtime error on any mutation after construction                                  |
+| Rust       | `&self` on all methods                | Borrow checker prevents mutation through shared references                        |
+| Scala      | `private val` fields                  | `val` is compile-time immutable; `private` hides from consumers                   |
+| Swift      | `private let` fields + `Sendable`     | `let` is compile-time immutable; struct conforms to `Sendable`                    |
+| TypeScript | `private readonly` fields             | Compiler error on reassignment                                                    |
 
 ## Cross-cutting considerations
 
@@ -192,6 +194,7 @@ language family:
 | Elm        | Elm compiler                | Compiler warnings-as-errors; `elm-explorations/test`            | 209   | 209        |
 | F#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 215   | 208        |
 | Fortran    | gfortran compiler           | `-Wall -Wextra -Wpedantic -Werror -std=f2008`; CTest            | 214   | 214        |
+| Gleam      | Gleam compiler              | Warnings-as-errors; gleeunit                                    | 208   | 208        |
 | Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                         | 72    | 128        |
 | Groovy     | Groovy + Java compiler      | `-Werror`; Java 17; `@Immutable` data classes                   | 140   | 291        |
 | Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records       | 135   | 191        |

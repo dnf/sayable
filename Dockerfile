@@ -101,6 +101,12 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     unzip -q /tmp/dart.zip -d /opt && rm /tmp/dart.zip
 ENV PATH="/opt/dart-sdk/bin:${PATH}"
 
+# Gleam (requires Erlang/OTP, already installed above)
+RUN ARCH="$(dpkg --print-architecture)" && \
+    GLEAM_ARCH="$(uname -m)" && \
+    curl -fsSL "https://github.com/gleam-lang/gleam/releases/download/v1.6.1/gleam-v1.6.1-${GLEAM_ARCH}-unknown-linux-musl.tar.gz" \
+    | tar xz -C /usr/local/bin gleam
+
 # OCaml via opam
 RUN apt-get update && apt-get install -y --no-install-recommends opam \
     && rm -rf /var/lib/apt/lists/* \

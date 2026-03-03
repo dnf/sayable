@@ -6,27 +6,28 @@ Every implementation ships all 71 locales by default. Each locale is a data obje
 
 The table below summarizes how each language structures its locale data:
 
-| Language   | File layout                                  | Initialization                      | Lookup via `getLocale`  |
-| ---------- | -------------------------------------------- | ----------------------------------- | ----------------------- |
-| TypeScript | 71 individual ES modules + barrel `index.ts` | Eager (module-level `const`)        | `_ALL` Record           |
-| Python     | 71 individual modules + `__init__.py` barrel | Eager (module-level assignment)     | `_ALL` dict             |
-| Go         | 71 individual files in one package           | Eager (package-level `var`)         | `switch` statement      |
-| Groovy     | Single file (`Locales.groovy`)               | Eager (static fields on class)      | `ALL` map lookup        |
-| Ruby       | 71 individual files, glob-required           | Eager (`Dir[].each { require }`)    | `case`/`when`           |
-| Rust       | 71 individual modules + `mod.rs` barrel      | Lazy (`LazyLock`)                   | `match` expression      |
-| Kotlin     | Single file (`Locales.kt`)                   | Eager (`val` on `object`)           | `ALL` map lookup        |
-| Lua        | 71 individual modules + `locales/init.lua`   | Lazy (`require` on first access)    | Registry lookup         |
-| OCaml      | 71 individual modules + `locales.ml` barrel  | Eager (module-level `let` binding)  | `match` expression      |
-| C++        | 4 source files by alpha range + header       | Lazy (function-scoped `static`)     | `if`-chain              |
-| PHP        | Single file (`Locales.php`)                  | Lazy (`??=` pattern)                | `match` expression      |
-| Java       | Single file (`Locales.java`)                 | Eager (`static final` fields)       | `ALL` map lookup        |
-| C#         | Single file (`Locales.cs`)                   | Eager (`static readonly` fields)    | `All` dictionary lookup |
-| Elm        | 71 individual modules + `Locales.elm` barrel | Eager (module-level `locale` value) | `Dict.get` lookup       |
-| F#         | Single file (`Locales.fs`)                   | Eager (module-level `let` bindings) | `All` map lookup        |
-| Fortran    | Single file (`parenttime_locales.f90`)       | Lazy (first-call init)              | `if`-chain              |
-| Scala      | Single file (`Locales.scala`)                | Eager (`val` on `object`)           | `ALL` map lookup        |
-| Swift      | Single file (`Locales.swift`)                | Eager (static `let` properties)     | `all` dictionary lookup |
-| Zig        | Single file (`locales.zig`)                  | Eager (comptime `const`)            | `if`-chain              |
+| Language   | File layout                                      | Initialization                      | Lookup via `getLocale`  |
+| ---------- | ------------------------------------------------ | ----------------------------------- | ----------------------- |
+| TypeScript | 71 individual ES modules + barrel `index.ts`     | Eager (module-level `const`)        | `_ALL` Record           |
+| Python     | 71 individual modules + `__init__.py` barrel     | Eager (module-level assignment)     | `_ALL` dict             |
+| Go         | 71 individual files in one package               | Eager (package-level `var`)         | `switch` statement      |
+| Groovy     | Single file (`Locales.groovy`)                   | Eager (static fields on class)      | `ALL` map lookup        |
+| Ruby       | 71 individual files, glob-required               | Eager (`Dir[].each { require }`)    | `case`/`when`           |
+| Rust       | 71 individual modules + `mod.rs` barrel          | Lazy (`LazyLock`)                   | `match` expression      |
+| Kotlin     | Single file (`Locales.kt`)                       | Eager (`val` on `object`)           | `ALL` map lookup        |
+| Lua        | 71 individual modules + `locales/init.lua`       | Lazy (`require` on first access)    | Registry lookup         |
+| OCaml      | 71 individual modules + `locales.ml` barrel      | Eager (module-level `let` binding)  | `match` expression      |
+| C++        | 4 source files by alpha range + header           | Lazy (function-scoped `static`)     | `if`-chain              |
+| PHP        | Single file (`Locales.php`)                      | Lazy (`??=` pattern)                | `match` expression      |
+| Java       | Single file (`Locales.java`)                     | Eager (`static final` fields)       | `ALL` map lookup        |
+| C#         | Single file (`Locales.cs`)                       | Eager (`static readonly` fields)    | `All` dictionary lookup |
+| Elm        | 71 individual modules + `Locales.elm` barrel     | Eager (module-level `locale` value) | `Dict.get` lookup       |
+| F#         | Single file (`Locales.fs`)                       | Eager (module-level `let` bindings) | `All` map lookup        |
+| Fortran    | Single file (`parenttime_locales.f90`)           | Lazy (first-call init)              | `if`-chain              |
+| Gleam      | 71 individual modules + `locales.gleam` registry | Eager (module-level function)       | `case` expression       |
+| Scala      | Single file (`Locales.scala`)                    | Eager (`val` on `object`)           | `ALL` map lookup        |
+| Swift      | Single file (`Locales.swift`)                    | Eager (static `let` properties)     | `all` dictionary lookup |
+| Zig        | Single file (`locales.zig`)                      | Eager (comptime `const`)            | `if`-chain              |
 
 ## Rationale
 
@@ -90,6 +91,7 @@ The other languages have no equivalent mechanism. Their package managers and run
 | Elm        | No                                                                                                                    | Use codegen subsetting                                              |
 | F#         | No                                                                                                                    | Use codegen subsetting                                              |
 | Fortran    | No                                                                                                                    | Use codegen subsetting                                              |
+| Gleam      | No                                                                                                                    | Use codegen subsetting                                              |
 | Scala      | No                                                                                                                    | Use codegen subsetting                                              |
 | Swift      | No                                                                                                                    | Use codegen subsetting                                              |
 | Zig        | No                                                                                                                    | Use codegen subsetting                                              |

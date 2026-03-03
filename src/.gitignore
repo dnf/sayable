@@ -39,6 +39,10 @@ fsharp/ParentTime.Tests/obj/
 # Fortran
 fortran/build/
 
+# Gleam
+gleam/build/
+gleam/manifest.toml
+
 # Go
 go/bin/
 

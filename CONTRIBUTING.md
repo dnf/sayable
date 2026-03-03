@@ -12,7 +12,7 @@ Thanks for your interest in contributing! This project maintains identical imple
 
 ```
 src/
-  c/  clojure/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  go/  groovy/  haskell/
+  c/  clojure/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
   java/  kotlin/  lua/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 locales/       # 71 JSON files — single source of truth for locale data
 codegen/
@@ -50,6 +50,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 | Erlang     | `test erlang`<br>`test erl`    | `build erlang`<br>`build erl`    | 🛠️                             | `clean erlang`<br>`clean erl`    |
 | F#         | `test fsharp`<br>`test fs`     | `build fsharp`<br>`build fs`     | 🛠️                             | `clean fsharp`<br>`clean fs`     |
 | Fortran    | `test fortran`<br>`test ft`    | `build fortran`<br>`build ft`    | 🛠️                             | `clean fortran`<br>`clean ft`    |
+| Gleam      | `test gleam`<br>`test gm`      | `build gleam`<br>`build gm`      | 🛠️                             | `clean gleam`<br>`clean gm`      |
 | Go         | `test go`                      | ⚡                                | `lint go`                      | ⚡                                |
 | Groovy     | `test groovy`<br>`test gy`     | `build groovy`<br>`build gy`     | 🛠️                             | `clean groovy`<br>`clean gy`     |
 | Haskell    | `test haskell`<br>`test hs`    | `build haskell`<br>`build hs`    | 🛠️                             | `clean haskell`<br>`clean hs`    |
