@@ -12,7 +12,7 @@ Thanks for your interest in contributing! This project maintains identical imple
 
 ```
 src/
-  ada/  c/  clojure/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
+  ada/  c/  clojure/  cobol/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
   java/  kotlin/  lua/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 locales/       # 71 JSON files — single source of truth for locale data
 codegen/
@@ -46,6 +46,7 @@ All commands below are prefixed with `just` (e.g., `just test cpp`):
 | C#         | `test csharp`<br>`test cs`     | `build csharp`<br>`build cs`     | 🛠️                             | `clean csharp`<br>`clean cs`     |
 | C++        | `test cpp`<br>`test c++`       | `build cpp`<br>`build c++`       | 🛠️                             | `clean cpp`<br>`clean c++`       |
 | Clojure    | `test clojure`<br>`test clj`   | ⚡                                | 🛠️                             | `clean clojure`<br>`clean clj`   |
+| COBOL      | `test cobol`<br>`test cb`      | `build cobol`<br>`build cb`      | 🛠️                             | `clean cobol`<br>`clean cb`      |
 | Dart       | `test dart`<br>`test dt`       | ⚡                                | `lint dart`<br>`lint dt`       | `clean dart`<br>`clean dt`       |
 | Elixir     | `test elixir`<br>`test ex`     | `build elixir`<br>`build ex`     | 🛠️                             | `clean elixir`<br>`clean ex`     |
 | Elm        | `test elm`<br>`test el`        | ⚡                                | 🛠️                             | `clean elm`<br>`clean el`        |

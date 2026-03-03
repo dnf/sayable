@@ -7,11 +7,12 @@
 # Language lists (one per line, alphabetical)
 # ---------------------------------------------------------------------------
 
-# All 28 language implementations
+# All 29 language implementations
 _ALL_LANGS="
 ada
 c
 clojure
+cobol
 cpp
 csharp
 dart
@@ -39,10 +40,11 @@ typescript
 zig
 "
 
-# Languages with a compiled build step (19)
+# Languages with a compiled build step (20)
 _COMPILED_LANGS="
 ada
 c
+cobol
 cpp
 csharp
 elixir
@@ -62,11 +64,12 @@ typescript
 zig
 "
 
-# Languages with build artifacts to clean (25 — excludes go, perl, php)
+# Languages with build artifacts to clean (26 — excludes go, perl, php)
 _CLEAN_LANGS="
 ada
 c
 clojure
+cobol
 cpp
 csharp
 dart
@@ -138,6 +141,7 @@ _is_disabled() {
 _name() {
     case "$1" in
         ad)  echo ada ;;
+        cb)  echo cobol ;;
         clj) echo clojure ;;
         c++) echo cpp ;;
         cs)  echo csharp ;;
@@ -169,6 +173,7 @@ _name() {
 _abbr() {
     case "$1" in
         ada)        echo "ad" ;;
+        cobol)      echo "cb" ;;
         clojure)    echo "clj" ;;
         cpp)        echo "c++" ;;
         csharp)     echo "cs" ;;
@@ -205,6 +210,7 @@ _dep() {
         ada)                       echo gnat ;;
         c|cli|cpp|fortran)         echo cmake ;;
         clojure)                   echo clojure ;;
+        cobol)                     echo cobc ;;
         csharp|fsharp)             echo dotnet ;;
         dart)                      echo dart ;;
         elixir)                    echo mix ;;
@@ -323,6 +329,8 @@ _suggest() {
             echo groovy ;;
         haskel|haskle|haslkell)
             echo haskell ;;
+        cobbol|coball|cbl|cobel)
+            echo cobol ;;
         closure|clojur|clojre|cojure)
             echo clojure ;;
         erland|erlng|earland|earlang)

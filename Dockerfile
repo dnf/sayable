@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gfortran \
     # Ada (GNAT + GPRbuild)
     gnat gprbuild \
+    # COBOL (GnuCOBOL)
+    gnucobol \
     curl \
     ca-certificates \
     git \

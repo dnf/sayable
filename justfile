@@ -118,6 +118,9 @@ test *target:
                 cd src/groovy && ./gradlew test
             elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
                 cd src/clojure && clojure -M:test
+            elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
+                just build cobol
+                cd src/cobol/build && ctest --output-on-failure
             elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
                 cd src/scala && ./gradlew test
             elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
@@ -234,6 +237,8 @@ build *target:
                 cd src/cpp && cmake -B build && cmake --build build
             elif [ "$_target" = "c" ]; then
                 cd src/c && cmake -B build && cmake --build build
+            elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
+                cd src/cobol && cmake -B build && cmake --build build
             elif [ "$_target" = "cli" ]; then
                 cd cli && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
             elif [ "$_target" = "java" ]; then
@@ -416,6 +421,8 @@ lint *target:
                 echo "Groovy uses -Werror in build (no separate linter)"
             elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
                 echo "Clojure uses *warn-on-reflection* in build (no separate linter)"
+            elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
+                echo "COBOL uses -Wall in build (no separate linter)"
             elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
                 echo "Scala uses -Werror in build (no separate linter)"
             elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
@@ -521,6 +528,8 @@ clean *target:
         rm -rf src/erlang/_build
     elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
         rm -rf src/clojure/.cpcache
+    elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
+        rm -rf src/cobol/build
     elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
         rm -rf src/scala/build src/scala/.gradle
     elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
@@ -564,7 +573,7 @@ install *langs:
         printf '%s\n' \
             "" \
             "Examples:" \
-            "  just install           Install all 28 language toolchains" \
+            "  just install           Install all 29 language toolchains" \
             "  just install go rust   Install Go and Rust only" \
             "  just install rs        Install Rust (abbreviation)"
         exit 0

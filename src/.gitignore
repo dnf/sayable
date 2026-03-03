@@ -18,6 +18,9 @@ cpp/.cache/
 # Clojure
 clojure/.cpcache/
 
+# COBOL
+cobol/build/
+
 # Dart
 dart/.dart_tool/
 dart/.packages

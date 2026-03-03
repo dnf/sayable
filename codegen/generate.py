@@ -380,6 +380,14 @@ def generate_c(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(formatter_path(ROOT), emit_formatter(), check, diffs)
 
 
+def generate_cobol(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.cobol.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_scala(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.scala.emitter import emit_all, output_path
 
@@ -537,6 +545,7 @@ _GENERATORS = {
     "csharp": generate_csharp,
     "swift": generate_swift,
     "c": generate_c,
+    "cobol": generate_cobol,
     "haskell": generate_haskell,
     "erlang": generate_erlang,
     "fsharp": generate_fsharp,
