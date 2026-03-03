@@ -39,7 +39,8 @@ def _stage_label(stage: object) -> str:
 def emit_all(all_locales: list[dict]) -> str:
     """Generate the single Locales.scala file with all locales."""
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
-    lines = [HEADER, "package parenttime\n"]
+    lines = [HEADER, "package parenttime.locales\n"]
+    lines.append("import parenttime._\n")
     lines.append("/**")
     lines.append(f" * All {len(all_locales)} locale definitions for parent-time.")
     lines.append(" */")
@@ -131,4 +132,4 @@ def emit_all(all_locales: list[dict]) -> str:
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "scala", "src", "main", "scala", "parenttime", "Locales.scala")
+    return os.path.join(root, "src", "scala", "src", "main", "scala", "parenttime", "locales", "Locales.scala")

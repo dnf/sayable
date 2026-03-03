@@ -27,6 +27,7 @@ java/.gradle/
 
 # C++
 cpp/build/
+cpp/.cache/
 
 # PHP
 php/vendor/

@@ -42,6 +42,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Canonical test IDs.** Every test must be annotated with the ID(s) from `tests/testing.md` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
 - **Locale data lives in `locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `just generate locales` to regenerate all language implementations. Never edit generated locale files by hand.
+- **Generated locale files must be in their own subdirectory.** Every language implementation must place generated locale files in a dedicated `locales/` (or language-idiomatic equivalent) subdirectory, separate from hand-written source files.
 - **Generated locale files and docs must be current.** Run `just generate locales` after editing `locales/*.json`. `just check` verifies this in CI.
 - **Markdown tables must be aligned.** Run `just maintain docs` after editing any documentation tables. `just check` verifies alignment in CI.
 - **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON.

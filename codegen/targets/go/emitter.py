@@ -7,10 +7,10 @@ from codegen.targets.go.plural_rules import get_go_plural
 
 HEADER = make_header("codegen/targets/go/emitter.py")
 
-# Plural category name mapping
+# Plural category name mapping (qualified with pt. for locales subpackage)
 _CAT_MAP = {
-    "zero": "Zero", "one": "One", "two": "Two",
-    "few": "Few", "many": "Many", "other": "Other",
+    "zero": "pt.Zero", "one": "pt.One", "two": "pt.Two",
+    "few": "pt.Few", "many": "pt.Many", "other": "pt.Other",
 }
 
 
@@ -21,19 +21,19 @@ def _quote(s: str) -> str:
 
 def _unit_forms(unit: object) -> str:
     if isinstance(unit, str):
-        return f"SimpleUnit({_quote(unit)})"
+        return f"pt.SimpleUnit({_quote(unit)})"
     cats = ["zero", "one", "two", "few", "many", "other"]
     pairs = []
     for cat in cats:
         if cat in unit:
             pairs.append(f"{_CAT_MAP[cat]}: {_quote(unit[cat])}")
-    return "PluralUnit(map[PluralCategory]string{" + ", ".join(pairs) + "})"
+    return "pt.PluralUnit(map[pt.PluralCategory]string{" + ", ".join(pairs) + "})"
 
 
 def _stage_label(stage: object) -> str:
     if isinstance(stage, str):
-        return f"S({_quote(stage)})"
-    return f"G({_quote(stage['m'])}, {_quote(stage['f'])})"
+        return f"pt.S({_quote(stage)})"
+    return f"pt.G({_quote(stage['m'])}, {_quote(stage['f'])})"
 
 
 def emit_locale(data: dict) -> str:
@@ -42,9 +42,10 @@ def emit_locale(data: dict) -> str:
     name = data["name"]
     uc = code.upper()
 
-    lines = [HEADER + locale_source_comment(code), "package parenttime\n"]
+    lines = [HEADER + locale_source_comment(code), "package locales\n"]
+    lines.append('import pt "github.com/dnf/parent-time/src/go"\n')
     lines.append(f"// {uc} is the {name} locale.")
-    lines.append(f"var {uc} = AgeLocale{{")
+    lines.append(f"var {uc} = pt.AgeLocale{{")
 
     # Code
     lines.append(f"\tCode: {_quote(code)},")
@@ -54,7 +55,7 @@ def emit_locale(data: dict) -> str:
     lines.append(f"\tPlural: {plural.lstrip()},")
 
     # Units
-    lines.append("\tUnits: struct{ Day, Week, Month, Year UnitForms }{")
+    lines.append("\tUnits: struct{ Day, Week, Month, Year pt.UnitForms }{")
     for unit_name in ("day", "week", "month", "year"):
         cap = unit_name.capitalize()
         val = _unit_forms(data["units"][unit_name])
@@ -67,7 +68,7 @@ def emit_locale(data: dict) -> str:
     lines.append(f"\tJustBorn:  {_quote(data['justBorn'])},")
 
     # Stages
-    lines.append("\tStages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult StageLabel }{")
+    lines.append("\tStages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult pt.StageLabel }{")
     for stage in ("newborn", "infant", "toddler", "child", "teenager", "adult"):
         cap = stage.capitalize()
         val = _stage_label(data["stages"][stage])
@@ -79,7 +80,7 @@ def emit_locale(data: dict) -> str:
         if mode in data:
             ovr = data[mode]
             cap = mode.capitalize()
-            lines.append(f"\t{cap}: &CompactnessOverride{{")
+            lines.append(f"\t{cap}: &pt.CompactnessOverride{{")
             # Collect all field names to compute uniform padding
             field_names = []
             if "units" in ovr:
@@ -97,7 +98,7 @@ def emit_locale(data: dict) -> str:
                         pad = " " * (max_field_len - len(ucap) + 1)
                         val = ovr["units"][unit_name]
                         if isinstance(val, str):
-                            lines.append(f"\t\t{ucap}:{pad}&UnitForms{{Simple: {_quote(val)}}},")
+                            lines.append(f"\t\t{ucap}:{pad}&pt.UnitForms{{Simple: {_quote(val)}}},")
                         else:
                             # Plural override — unusual but support it
                             lines.append(f"\t\t{ucap}:{pad}&{_unit_forms(val)},")
@@ -125,9 +126,10 @@ def emit_barrel(all_locales: list[dict]) -> str | None:
 def emit_registry(all_locales: list[dict]) -> str:
     """Generate locale_registry.go with GetLocale function."""
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
-    lines = [HEADER, "package parenttime\n"]
+    lines = [HEADER, "package locales\n"]
+    lines.append('import pt "github.com/dnf/parent-time/src/go"\n')
     lines.append("// GetLocale returns the locale for the given code, or nil if not found.")
-    lines.append("func GetLocale(code string) *AgeLocale {")
+    lines.append("func GetLocale(code string) *pt.AgeLocale {")
     lines.append("\tswitch code {")
     for loc in sorted_locs:
         code = loc["code"]
@@ -141,14 +143,27 @@ def emit_registry(all_locales: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def emit_helpers() -> str:
+    """Generate helpers.go with strPtr for the locales subpackage."""
+    lines = [HEADER, "package locales\n"]
+    lines.append("func strPtr(s string) *string { return &s }")
+    lines.append("")
+    return "\n".join(lines)
+
+
 def output_path(code: str, root: str) -> str:
     import os
-    return os.path.join(root, "src", "go", f"locale_{code}.go")
+    return os.path.join(root, "src", "go", "locales", f"locale_{code}.go")
 
 
 def registry_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "go", "locale_registry.go")
+    return os.path.join(root, "src", "go", "locales", "locale_registry.go")
+
+
+def helpers_path(root: str) -> str:
+    import os
+    return os.path.join(root, "src", "go", "locales", "helpers.go")
 
 
 def barrel_path(root: str) -> str | None:

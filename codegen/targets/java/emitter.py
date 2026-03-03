@@ -53,10 +53,11 @@ def emit_all(all_locales: list[dict]) -> str:
         if not is_simple_plural(rule) and rule in all_named:
             needed_methods[rule] = all_named[rule]
 
-    lines = [HEADER, "package parenttime;\n"]
+    lines = [HEADER, "package parenttime.locales;\n"]
     lines.append("import java.util.Map;")
     lines.append("import java.util.LinkedHashMap;")
     lines.append("import java.util.Collections;\n")
+    lines.append("import parenttime.*;\n")
     lines.append("/**")
     lines.append(f" * All {len(all_locales)} locale definitions for parent-time.")
     lines.append(" */")
@@ -183,4 +184,4 @@ def _emit_compactness_override(lines: list[str], ovr: dict, trailing_comma: bool
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "java", "src", "main", "java", "parenttime", "Locales.java")
+    return os.path.join(root, "src", "java", "src", "main", "java", "parenttime", "locales", "Locales.java")

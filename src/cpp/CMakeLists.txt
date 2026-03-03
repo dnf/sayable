@@ -13,11 +13,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(parenttime
     src/parenttime.cpp
-    src/locales_a_e.cpp
-    src/locales_f_k.cpp
-    src/locales_l_r.cpp
-    src/locales_s_z.cpp
-    src/locales_registry.cpp
+    src/locales/locales_a_e.cpp
+    src/locales/locales_f_k.cpp
+    src/locales/locales_l_r.cpp
+    src/locales/locales_s_z.cpp
+    src/locales/locales_registry.cpp
 )
 target_include_directories(parenttime PUBLIC include)
 

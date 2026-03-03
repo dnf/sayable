@@ -8,6 +8,6 @@ parameters:
         # matching the authoritative specification. PHPStan infers tighter
         # integer ranges from prior conditions, making some bounds redundant.
         - identifier: smallerOrEqual.alwaysTrue
-          path: src/Locales.php
+          path: src/Locales/Locales.php
         - identifier: notIdentical.alwaysTrue
-          path: src/Locales.php
+          path: src/Locales/Locales.php

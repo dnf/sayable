@@ -176,4 +176,4 @@ def _emit_compactness_override(lines: list[str], ovr: dict, trailing_comma: bool
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "csharp", "ParentTime", "Locales.cs")
+    return os.path.join(root, "src", "csharp", "ParentTime", "Locales", "Locales.cs")

@@ -275,17 +275,3 @@ func (pt *ParentTime) FormatStage(dateOfBirth string, opts ...string) *string {
 	s := ResolveStage(sl, gender)
 	return &s
 }
-
-// defaultPT is the default English ParentTime instance.
-var defaultPT = NewParentTime(EN)
-
-// FormatAge formats an age using the default English locale (normal compactness).
-func FormatAge(dateOfBirth string, asOf ...string) *string {
-	return defaultPT.FormatAge(dateOfBirth, asOf...)
-}
-
-// FormatStage returns the developmental stage using the default English locale.
-// opts may contain: asOf (YYYY-MM-DD string), gender ("m" or "f").
-func FormatStage(dateOfBirth string, opts ...string) *string {
-	return defaultPT.FormatStage(dateOfBirth, opts...)
-}

@@ -59,7 +59,7 @@ def emit_all(all_locales: list[dict]) -> str:
     """Generate the single locales.zig file with all locales."""
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER]
-    lines.append('const parenttime = @import("parenttime.zig");')
+    lines.append('const parenttime = @import("../parenttime.zig");')
     lines.append("")
 
     # Collect unique plural rules
@@ -163,4 +163,4 @@ def emit_all(all_locales: list[dict]) -> str:
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "zig", "src", "locales.zig")
+    return os.path.join(root, "src", "zig", "src", "locales", "locales.zig")

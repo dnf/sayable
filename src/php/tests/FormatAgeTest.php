@@ -9,7 +9,7 @@ use ParentTime\Compactness;
 use function ParentTime\formatAge;
 use function ParentTime\formatStage;
 
-use ParentTime\Locales;
+use ParentTime\Locales\Locales;
 use ParentTime\ParentTime;
 use PHPUnit\Framework\TestCase;
 

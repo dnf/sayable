@@ -1,5 +1,5 @@
 #include "parenttime/parenttime.hpp"
-#include "parenttime/locales.hpp"
+#include "parenttime/locales/locales.hpp"
 #include "parenttime/testing.hpp"
 
 #include <iostream>

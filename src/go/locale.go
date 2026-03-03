@@ -97,8 +97,6 @@ func G(m, f string) StageLabel {
 	return StageLabel{M: m, F: f}
 }
 
-func strPtr(s string) *string { return &s }
-
 // resolveUnit formats a count with the given unit forms, locale, and optional half marker.
 //
 // The half template supports two placeholder styles:

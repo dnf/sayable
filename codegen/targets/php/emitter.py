@@ -35,7 +35,14 @@ def emit_all(all_locales: list[dict]) -> str:
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
 
     lines = ["<?php", "", "declare(strict_types=1);", ""]
-    lines.append("namespace ParentTime;")
+    lines.append("namespace ParentTime\\Locales;")
+    lines.append("")
+    lines.append("use ParentTime\\AgeLocale;")
+    lines.append("use ParentTime\\CompactnessOverride;")
+    lines.append("use ParentTime\\PluralCategory;")
+    lines.append("use ParentTime\\StageLabel;")
+    lines.append("use ParentTime\\Stages;")
+    lines.append("use ParentTime\\Units;")
     lines.append("")
     lines.append(HEADER.rstrip())
     lines.append("")
@@ -136,4 +143,4 @@ def emit_all(all_locales: list[dict]) -> str:
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "php", "src", "Locales.php")
+    return os.path.join(root, "src", "php", "src", "Locales", "Locales.php")

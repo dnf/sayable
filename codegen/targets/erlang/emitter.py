@@ -133,9 +133,9 @@ def emit_barrel(all_locales: list[dict]) -> str:
 def output_path(code: str, root: str) -> str:
     import os
     mod = _module_name(code)
-    return os.path.join(root, "src", "erlang", "src", f"parenttime_locales_{mod}.erl")
+    return os.path.join(root, "src", "erlang", "src", "locales", f"parenttime_locales_{mod}.erl")
 
 
 def barrel_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "erlang", "src", "parenttime_locales.erl")
+    return os.path.join(root, "src", "erlang", "src", "locales", "parenttime_locales.erl")

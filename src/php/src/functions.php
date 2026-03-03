@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ParentTime;
 
+use ParentTime\Locales\Locales;
+
 /**
  * Human-friendly age string using the default English locale (normal compactness).
  *

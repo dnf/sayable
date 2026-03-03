@@ -1,5 +1,5 @@
 #include "parenttime/parenttime.hpp"
-#include "parenttime/locales.hpp"
+#include "parenttime/locales/locales.hpp"
 
 #include <algorithm>
 #include <chrono>

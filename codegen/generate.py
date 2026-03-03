@@ -197,7 +197,9 @@ def generate_python(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_go(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.targets.go.emitter import emit_locale, emit_registry, output_path, registry_path
+    from codegen.targets.go.emitter import (
+        emit_helpers, emit_locale, emit_registry, helpers_path, output_path, registry_path,
+    )
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
@@ -206,6 +208,10 @@ def generate_go(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
     path = registry_path(ROOT)
     content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+    path = helpers_path(ROOT)
+    content = emit_helpers()
     _write_or_check(path, content, check, diffs)
 
 

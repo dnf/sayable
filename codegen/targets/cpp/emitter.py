@@ -129,7 +129,7 @@ def emit_source_file(locales_in_range: list[dict]) -> str:
     lines = [
         "// -*- coding: utf-8 -*-",
         HEADER.rstrip(),
-        '#include "parenttime/locales.hpp"\n',
+        '#include "parenttime/locales/locales.hpp"\n',
         "namespace parenttime {",
         "namespace locales {\n",
     ]
@@ -155,7 +155,7 @@ def emit_header(all_locales: list[dict]) -> str:
     lines.append("#ifndef PARENTTIME_LOCALES_HPP")
     lines.append("#define PARENTTIME_LOCALES_HPP")
     lines.append("")
-    lines.append('#include "types.hpp"')
+    lines.append('#include "../types.hpp"')
     lines.append("#include <string>")
     lines.append("")
     lines.append("namespace parenttime {")
@@ -181,7 +181,7 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines = [
         "// -*- coding: utf-8 -*-",
         HEADER.rstrip(),
-        '#include "parenttime/locales.hpp"\n',
+        '#include "parenttime/locales/locales.hpp"\n',
         "namespace parenttime {",
         "namespace locales {\n",
         "const AgeLocale* get(const std::string& code) {",
@@ -200,7 +200,7 @@ def emit_registry(all_locales: list[dict]) -> str:
 
 def registry_source_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "cpp", "src", "locales_registry.cpp")
+    return os.path.join(root, "src", "cpp", "src", "locales", "locales_registry.cpp")
 
 
 def split_by_range(all_locales: list[dict]) -> dict[str, list[dict]]:
@@ -216,9 +216,9 @@ def split_by_range(all_locales: list[dict]) -> dict[str, list[dict]]:
 
 def source_path(suffix: str, root: str) -> str:
     import os
-    return os.path.join(root, "src", "cpp", "src", f"locales_{suffix}.cpp")
+    return os.path.join(root, "src", "cpp", "src", "locales", f"locales_{suffix}.cpp")
 
 
 def header_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "cpp", "include", "parenttime", "locales.hpp")
+    return os.path.join(root, "src", "cpp", "include", "parenttime", "locales", "locales.hpp")
