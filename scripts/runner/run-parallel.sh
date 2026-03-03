@@ -13,8 +13,54 @@ set -uo pipefail
 max_jobs=0
 _viz_mode=scroll  # scroll (default), full, or zoom
 _tick_ds=2        # base: 0.2s per column (for scroll/zoom modes)
+_show_help() {
+    cat <<'HELP'
+Usage: run-parallel.sh [flags] <name> "cmd args" ...
+
+Run just recipes in parallel with live progress display.
+
+Arguments:
+  <name>            Log directory name — output goes to .logs/<name>/
+  "cmd args" ...    Commands passed to `just`. The last word of each becomes
+                    the display label. Prefix with "skip:" to mark as
+                    not installed (e.g. "skip:haskell").
+
+Flags:
+  -j N              Limit concurrent jobs to N slots (0 or omitted = unlimited)
+  -s MODE           Visualization mode: scroll (default), full, or zoom
+  -h, --help        Show this help and exit
+
+Scheduling (slot-based, -j N where N > 0):
+  Jobs are queued by predicted duration (longest first) with errors from
+  the previous run promoted to the front. Slot 0 is the "fast slot" — it
+  picks the shortest available job so quick jobs finish and report early.
+  Duration predictions use the median of the last 5 runs from history.log.
+
+Visualization modes:
+  scroll    Fixed time scale, window scrolls right as time advances (default)
+  full      Entire run fits in the terminal width, rescales every frame
+  zoom      Fixed origin, time scale doubles when the chart would overflow
+
+Output format:
+  Interactive (tty)     Live-updating bar chart with spinner, color-coded bars,
+                        and swim lane timeline (slot-based mode only)
+  Non-interactive       Waits for completion, then prints a scaled bar chart
+
+Log files:
+  .logs/<name>/<label>.log       Captured stdout+stderr for each job
+  .logs/<name>/<label>.result    "duration_ds return_code" (internal)
+  .logs/<name>/history.log       Duration history for prediction (last 50 runs)
+
+Requirements:
+  bash 4+, perl (Time::HiRes for sub-second timing), tput (optional, for
+  terminal width detection and cursor control)
+HELP
+    exit 0
+}
+
 while [ $# -gt 0 ]; do
     case "$1" in
+        -h|--help) _show_help ;;
         -j) max_jobs="${2:-0}"; shift 2 ;;
         -s) case "${2:-}" in
                 full)    _viz_mode=full ;;

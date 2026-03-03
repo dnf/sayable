@@ -17,6 +17,32 @@ test *lang:
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
         _langs="${_langs:+$_langs }$_a"
     done
+    if [ "$_langs" = "help" ] || [ "$_langs" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just test [flags] [language]" \
+            "" \
+            "Run all test suites in parallel, or a single language's tests." \
+            "" \
+            "Languages (20):" \
+            "  c          clojure (clj)   cpp (c++)    csharp (cs)   elixir (ex)" \
+            "  elm (el)   erlang (erl)    go           haskell (hs)  java" \
+            "  kotlin (kt)  perl (pl)     php          python (py)   ruby (rb)" \
+            "  rust (rs)  scala (sc)      swift (sw)   typescript (ts)  zig (zg)" \
+            "" \
+            "  codegen    Run codegen unit tests only" \
+            "" \
+            "Flags:" \
+            "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just test              Run all 20 suites + codegen check in parallel" \
+            "  just test go           Run Go tests only" \
+            "  just test rs           Run Rust tests (abbreviation)" \
+            "  just test -j 4         Run all in parallel with 4 job slots" \
+            "  just test -j 2 -s full Run with 2 slots, full-width visualization"
+        exit 0
+    fi
     if [ -z "$_langs" ]; then
         _tool() { case "$1" in c|cpp) echo cmake;; clojure) echo clojure;; csharp) echo dotnet;; elixir) echo mix;; elm) echo elm;; erlang) echo rebar3;; go) echo go;; haskell) echo cabal;; java|kotlin|scala) echo java;; perl) echo perl;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
         args=("check")
@@ -28,7 +54,7 @@ test *lang:
                 args+=("skip:$lang")
             fi
         done
-        scripts/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} test "${args[@]}"
+        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} test "${args[@]}"
     else
         name=$(_name "$_langs")
         mkdir -p .logs/test
@@ -78,8 +104,7 @@ test *lang:
             elif [ "$_langs" = "codegen" ]; then
                 {{python}} -m unittest codegen.test_locale_groups -v
             else
-                echo "Unknown language: $_langs"
-                echo "Valid: c, clojure (clj), elixir (ex), elm (el), typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), perl (pl), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl), scala (sc), zig (zg), codegen"
+                echo "Unknown language: $_langs (try 'just test help')" >&2
                 exit 1
             fi
         ) 2>&1 | tee ".logs/test/$name.log"
@@ -99,6 +124,30 @@ build *lang:
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
         _langs="${_langs:+$_langs }$_a"
     done
+    if [ "$_langs" = "help" ] || [ "$_langs" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just build [flags] [language]" \
+            "" \
+            "Build all compiled languages in parallel, or a single language." \
+            "" \
+            "Languages (13):" \
+            "  c          cpp (c++)       csharp (cs)  elixir (ex)   erlang (erl)" \
+            "  haskell (hs)  java         kotlin (kt)  rust (rs)     scala (sc)" \
+            "  swift (sw)    typescript (ts)  zig (zg)" \
+            "" \
+            "  Languages without a build step: clojure, elm, go, perl, php, python, ruby" \
+            "" \
+            "Flags:" \
+            "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just build             Build all 13 compiled languages in parallel" \
+            "  just build rust        Build Rust only" \
+            "  just build c++         Build C++ (abbreviation)" \
+            "  just build -j 2        Build all with 2 job slots"
+        exit 0
+    fi
     if [ -z "$_langs" ]; then
         _tool() { case "$1" in c|cpp) echo cmake;; csharp) echo dotnet;; elixir) echo mix;; erlang) echo rebar3;; haskell) echo cabal;; java|kotlin|scala) echo java;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; zig) echo zig;; esac; }
         args=()
@@ -110,7 +159,7 @@ build *lang:
                 args+=("skip:$lang")
             fi
         done
-        scripts/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} build "${args[@]}"
+        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} build "${args[@]}"
     else
         name=$(_name "$_langs")
         mkdir -p .logs/build
@@ -209,6 +258,29 @@ lint *lang:
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
         _langs="${_langs:+$_langs }$_a"
     done
+    if [ "$_langs" = "help" ] || [ "$_langs" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just lint [flags] [language]" \
+            "" \
+            "Run all linters in parallel, or a single language's linter." \
+            "" \
+            "Languages with separate linters (9):" \
+            "  csharp (cs)  go           java         php          python (py)" \
+            "  ruby (rb)    rust (rs)    swift (sw)   typescript (ts)" \
+            "" \
+            "  Other languages use warnings-as-errors in their build step (no separate linter)." \
+            "" \
+            "Flags:" \
+            "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just lint              Run all 9 linters in parallel" \
+            "  just lint python       Run Python linter only (ruff + pyright)" \
+            "  just lint rs           Run Rust linter (clippy, abbreviation)" \
+            "  just lint -j 3         Run all with 3 job slots"
+        exit 0
+    fi
     if [ -z "$_langs" ]; then
         _tool() { case "$1" in csharp) echo dotnet;; go) echo golangci-lint;; java) echo java;; php) echo php;; python) echo uv;; ruby) echo ruby;; rust) echo cargo;; swift) echo swift;; typescript) echo npm;; esac; }
         args=()
@@ -220,7 +292,7 @@ lint *lang:
                 args+=("skip:$lang")
             fi
         done
-        scripts/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} lint "${args[@]}"
+        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} lint "${args[@]}"
     else
         name=$(_name "$_langs")
         mkdir -p .logs/lint
@@ -266,8 +338,7 @@ lint *lang:
             elif [ "$_langs" = "zig" ] || [ "$_langs" = "zg" ]; then
                 echo "Zig uses warnings-as-errors in build (no separate linter)"
             else
-                echo "Unknown language: $_langs"
-                echo "Valid: c, clojure (clj), elixir (ex), elm (el), typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), perl (pl), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl), scala (sc), zig (zg)"
+                echo "Unknown language: $_langs (try 'just lint help')" >&2
                 exit 1
             fi
         ) 2>&1 | tee ".logs/lint/$name.log"
@@ -286,8 +357,34 @@ clean *lang:
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
         _langs="${_langs:+$_langs }$_a"
     done
+    if [ "$_langs" = "help" ] || [ "$_langs" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just clean [flags] [language]" \
+            "" \
+            "Remove build artifacts for all languages in parallel, or a single language." \
+            "Keeps installed dependencies (node_modules, .venv, etc.)." \
+            "" \
+            "Languages (20):" \
+            "  c          clojure (clj)   cpp (c++)    csharp (cs)   elixir (ex)" \
+            "  elm (el)   erlang (erl)    go           haskell (hs)  java" \
+            "  kotlin (kt)  perl (pl)     php          python (py)   ruby (rb)" \
+            "  rust (rs)  scala (sc)      swift (sw)   typescript (ts)  zig (zg)" \
+            "" \
+            "  codegen    Clean codegen __pycache__ directories" \
+            "" \
+            "Flags:" \
+            "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just clean             Clean all languages in parallel" \
+            "  just clean rust        Clean Rust build artifacts only" \
+            "  just clean ts          Clean TypeScript (abbreviation)" \
+            "  just clean -j 4        Clean all with 4 job slots"
+        exit 0
+    fi
     if [ -z "$_langs" ]; then
-        scripts/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} clean \
+        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} clean \
             "clean c" "clean clojure" "clean codegen" "clean cpp" "clean csharp" "clean elixir" "clean elm" "clean erlang" \
             "clean haskell" "clean java" "clean kotlin" "clean python" "clean rust" \
             "clean scala" "clean swift" "clean typescript" "clean zig"
@@ -329,8 +426,7 @@ clean *lang:
     elif [ "$_langs" = "go" ] || [ "$_langs" = "ruby" ] || [ "$_langs" = "rb" ] || [ "$_langs" = "perl" ] || [ "$_langs" = "pl" ] || [ "$_langs" = "php" ]; then
         echo "No build artifacts for: $_langs"
     else
-        echo "Unknown language: $_langs"
-        echo "Valid: c, clojure (clj), elixir (ex), elm (el), typescript (ts), python (py), go, ruby (rb), rust (rs), kotlin (kt), cpp (c++), perl (pl), php, java, csharp (cs), swift (sw), haskell (hs), erlang (erl), scala (sc), zig (zg), codegen"
+        echo "Unknown language: $_langs (try 'just clean help')" >&2
         exit 1
     fi
 
@@ -382,12 +478,29 @@ install *langs:
                 echo "Unknown language '$lang'. Did you mean '$suggest'?" >&2
             fi
         else
-            echo "Unknown language: $lang" >&2
+            echo "Unknown language: $lang (try 'just install help')" >&2
         fi
-        echo "Valid: c, clojure (clj), cpp (c++), csharp (cs), elixir (ex), elm (el), erlang (erl), go, haskell (hs), java, kotlin (kt), perl (pl), php, python (py), ruby (rb), rust (rs), scala (sc), swift (sw), typescript (ts), zig (zg)" >&2
         exit 1
     }
     langs="{{langs}}"
+    if [ "$langs" = "help" ] || [ "$langs" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just install [language ...]" \
+            "" \
+            "Install language toolchains. With no arguments, installs all." \
+            "" \
+            "Languages (20):" \
+            "  c          clojure (clj)   cpp (c++)    csharp (cs)   elixir (ex)" \
+            "  elm (el)   erlang (erl)    go           haskell (hs)  java" \
+            "  kotlin (kt)  perl (pl)     php          python (py)   ruby (rb)" \
+            "  rust (rs)  scala (sc)      swift (sw)   typescript (ts)  zig (zg)" \
+            "" \
+            "Examples:" \
+            "  just install           Install all 20 language toolchains" \
+            "  just install go rust   Install Go and Rust only" \
+            "  just install rs        Install Rust (abbreviation)"
+        exit 0
+    fi
     install_all=false
     if [ -z "$langs" ]; then
         langs="$_all"
@@ -461,15 +574,30 @@ uninstall *langs:
                 echo "Unknown language '$lang'. Did you mean '$suggest'?" >&2
             fi
         else
-            echo "Unknown language: $lang" >&2
+            echo "Unknown language: $lang (try 'just uninstall help')" >&2
         fi
-        echo "Valid: c, clojure (clj), cpp (c++), csharp (cs), elixir (ex), elm (el), erlang (erl), go, haskell (hs), java, kotlin (kt), perl (pl), php, python (py), ruby (rb), rust (rs), scala (sc), swift (sw), typescript (ts), zig (zg)" >&2
         exit 1
     }
     langs="{{langs}}"
+    if [ "$langs" = "help" ] || [ "$langs" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just uninstall <language> [language ...]" \
+            "" \
+            "Uninstall language toolchains." \
+            "" \
+            "Languages (20):" \
+            "  c          clojure (clj)   cpp (c++)    csharp (cs)   elixir (ex)" \
+            "  elm (el)   erlang (erl)    go           haskell (hs)  java" \
+            "  kotlin (kt)  perl (pl)     php          python (py)   ruby (rb)" \
+            "  rust (rs)  scala (sc)      swift (sw)   typescript (ts)  zig (zg)" \
+            "" \
+            "Examples:" \
+            "  just uninstall go rust   Uninstall Go and Rust" \
+            "  just uninstall rs        Uninstall Rust (abbreviation)"
+        exit 0
+    fi
     if [ -z "$langs" ]; then
-        echo "Usage: just uninstall <lang> [lang...]" >&2
-        echo "Valid: c, clojure (clj), cpp (c++), csharp (cs), elixir (ex), elm (el), erlang (erl), go, haskell (hs), java, kotlin (kt), perl (pl), php, python (py), ruby (rb), rust (rs), scala (sc), swift (sw), typescript (ts), zig (zg)" >&2
+        echo "Usage: just uninstall <lang> [lang...] (try 'just uninstall help')" >&2
         exit 1
     fi
     for lang in $langs; do

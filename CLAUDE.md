@@ -52,6 +52,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
   - JDK uninstall is a no-op (shared by 3 languages). Perl and Swift on macOS are also no-ops (system-provided).
   - `just install` (all) continues past individual failures and reports them at the end.
   - Elm has no arm64 Linux binary; the installer detects this and skips with a message.
+- **Justfile recipes must support `help`/`--help`.** Every recipe that accepts language arguments (test, build, lint, clean, install, uninstall) must handle `help` and `--help` as a first argument, printing usage with a consistent structure: Usage line, description, language list (alphabetical, with abbreviations), flags (if applicable), and examples. Error messages for unknown languages should print to stderr and point to help (e.g. `"try 'just test help'"`), not dump inline language lists.
 
 ## Project layout
 
@@ -80,7 +81,7 @@ src/
 tests/         # Canonical test specification (testing.md)
 locales/       # Canonical locale JSON files (single source of truth)
 codegen/       # Locale code generator (JSON → all languages)
-scripts/       # Shared scripts (run-parallel, get-started, installers/)
+scripts/       # Shared scripts (runner/, get-started, installers/)
 docs/          # Shared docs, locale docs
 ```
 
