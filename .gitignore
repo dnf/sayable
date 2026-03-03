@@ -9,6 +9,10 @@ __pycache__/
 .metaswarm/
 .pytest_cache/
 .venv/
+benchmarks/build/reports/
+benchmarks/build/results/
+benchmarks/cpu/reports/
+benchmarks/cpu/results/
 cli/build/
 dist/
 node_modules/

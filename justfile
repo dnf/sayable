@@ -913,3 +913,226 @@ enable *langs:
         printf 'Still disabled: '
         paste -sd', ' .disabled-langs
     fi
+
+# Run benchmarks across all or individual language implementations
+[group('benchmark')]
+benchmark type="cpu" *target:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    source scripts/_lang-helpers.sh
+    # Benchmark-eligible languages (all except elm — no native timing primitives)
+    _BENCH_LANGS=$(echo "$_ALL_LANGS" | grep -vx elm)
+    if [ "{{type}}" = "report" ]; then
+        set -- {{target}}
+        _rtype="${1:-cpu}"; shift 2>/dev/null || true
+        case "$_rtype" in
+            cpu)   uv run --with matplotlib python3 benchmarks/cpu/report.py "$@" ;;
+            build) uv run --with matplotlib python3 benchmarks/build/report.py "$@" ;;
+            *)     echo "error: unknown report type '$_rtype'" >&2; exit 1 ;;
+        esac
+        exit 0
+    fi
+    if [ "{{type}}" = "build" ]; then
+        _jflag="1"; _sflag=""; _target=""; _prev=""
+        for _a in {{target}}; do
+            if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
+            if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
+            if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
+            if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
+            _target="${_target:+$_target }$_a"
+        done
+        if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
+            printf '%s\n' \
+                "Usage: just benchmark build [flags] [target]" \
+                "" \
+                "Measure clean build time for compiled languages (serial by default)." \
+                ""
+            _lang_grid "Compiled languages" "$_COMPILED_LANGS"
+            printf '%s\n' \
+                "" \
+                "Flags:" \
+                "  -j N       Parallel jobs (default 1 — serial, since concurrent builds distort timings)" \
+                "  -s MODE    Visualization: scroll (default), full, or zoom" \
+                "" \
+                "Examples:" \
+                "  just benchmark build          Run all build benchmarks (serial)" \
+                "  just benchmark build zig      Run Zig build benchmark only" \
+                "  just benchmark build rs       Run Rust build benchmark (abbreviation)" \
+                "  just benchmark build -j 4     Run with 4 parallel slots"
+            exit 0
+        fi
+        if [ -z "$_target" ]; then
+            args=()
+            while read -r lang; do
+                [ -z "$lang" ] && continue
+                dep=$(_dep "$lang")
+                if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                    args+=("benchmark build $lang")
+                else
+                    args+=("skip:$lang")
+                fi
+            done <<< "$_COMPILED_LANGS"
+            scripts/runner/run-parallel.sh -j "$_jflag" ${_sflag:+-s "$_sflag"} benchmark "${args[@]}"
+        else
+            name=$(_name "$_target")
+            if ! echo "$_COMPILED_LANGS" | grep -qx "$name"; then
+                echo "error: '$_target' is not a compiled language (try 'just benchmark build help')" >&2
+                exit 1
+            fi
+            mkdir -p .logs/benchmark
+            python3 benchmarks/build/bench_build.py "$name" 2>&1 | tee ".logs/benchmark/build-$name.log"
+        fi
+        exit 0
+    fi
+    if [ "{{type}}" != "cpu" ]; then
+        echo "error: unknown benchmark type '{{type}}'" >&2
+        echo "Valid types: build, cpu, report" >&2
+        exit 1
+    fi
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
+        if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
+        if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
+        if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
+        if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
+        _target="${_target:+$_target }$_a"
+    done
+    if [ "$_target" = "help" ] || [ "$_target" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just benchmark cpu [flags] [target]" \
+            "" \
+            "Run CPU benchmarks for all languages in parallel, or a single language." \
+            ""
+        _lang_grid "Languages" "$_BENCH_LANGS"
+        printf '%s\n' \
+            "" \
+            "  Elm is excluded (no native timing primitives)." \
+            "" \
+            "Flags:" \
+            "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just benchmark cpu          Run all benchmarks in parallel" \
+            "  just benchmark cpu go       Run Go benchmark only" \
+            "  just benchmark cpu rs       Run Rust benchmark (abbreviation)" \
+            "  just benchmark cpu -j 4     Run all with 4 job slots"
+        exit 0
+    fi
+    if [ -z "$_target" ]; then
+        args=()
+        while read -r lang; do
+            [ -z "$lang" ] && continue
+            dep=$(_dep "$lang")
+            if [ -z "$dep" ] || command -v "$dep" &>/dev/null; then
+                args+=("benchmark cpu $lang")
+            else
+                args+=("skip:$lang")
+            fi
+        done <<< "$_BENCH_LANGS"
+        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} benchmark "${args[@]}"
+    else
+        name=$(_name "$_target")
+        mkdir -p .logs/benchmark
+        (
+            case "$name" in
+                ada)
+                    _ada_env
+                    _largs=""
+                    if [ "$(uname -s)" = "Darwin" ]; then
+                        _sdk="$(xcrun --show-sdk-path 2>/dev/null)"
+                        [ -n "$_sdk" ] && _largs="-largs -L$_sdk/usr/lib"
+                    fi
+                    cd src/ada && gprbuild -P parenttime.gpr -XBUILD_MODE=bench $_largs && ./build/bench_parenttime
+                    ;;
+                c)
+                    cd src/c && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_parenttime && ./build/bench_parenttime
+                    ;;
+                clojure)
+                    cd src/clojure && clojure -M:bench -m bench-parenttime
+                    ;;
+                cobol)
+                    cd src/cobol && cmake -B build && cmake --build build --target cobol_bench_target && ./build/bench_parenttime_cobol
+                    ;;
+                cpp)
+                    cd src/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_parenttime && ./build/bench_parenttime
+                    ;;
+                csharp)
+                    cd src/csharp && dotnet run --project ParentTime.Bench -c Release
+                    ;;
+                dart)
+                    cd src/dart && dart run benchmark/bench_parenttime.dart
+                    ;;
+                elixir)
+                    cd src/elixir && mix run bench/bench_parenttime.exs
+                    ;;
+                elm)
+                    echo "Elm benchmarking is not supported (no native timing primitives)."
+                    ;;
+                erlang)
+                    cd src/erlang && rebar3 compile && erlc -pa _build/default/lib/parenttime/ebin -o _build/default/lib/parenttime/ebin bench/bench_parenttime.erl && erl -pa _build/default/lib/parenttime/ebin -noshell -eval 'bench_parenttime:main()' -s init stop
+                    ;;
+                fortran)
+                    cd src/fortran && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_parenttime && ./build/bench_parenttime
+                    ;;
+                fsharp)
+                    cd src/fsharp && dotnet run --project ParentTime.Bench -c Release
+                    ;;
+                gleam)
+                    cd src/gleam && gleam build && erl -pa build/dev/erlang/parenttime/ebin -pa build/dev/erlang/gleam_stdlib/ebin -noshell -eval 'bench_parenttime:main()' -s init stop
+                    ;;
+                go)
+                    cd src/go && go run ./cmd/bench/
+                    ;;
+                groovy)
+                    cd src/groovy && ./gradlew -q classes && groovy -cp build/classes/groovy/main src/main/groovy/parenttime/bench/Benchmark.groovy
+                    ;;
+                haskell)
+                    cd src/haskell && cabal run bench-parenttime
+                    ;;
+                java)
+                    cd src/java && ./gradlew -q classes && java -cp build/classes/java/main parenttime.bench.Benchmark
+                    ;;
+                kotlin)
+                    cd src/kotlin && ./gradlew -q classes && java -cp "build/classes/kotlin/main:$(find ~/.gradle/caches -name 'kotlin-stdlib-*.jar' 2>/dev/null | head -1)" parenttime.bench.BenchmarkKt
+                    ;;
+                lua)
+                    cd src/lua && lua5.4 bench/bench_parenttime.lua
+                    ;;
+                ocaml)
+                    cd src/ocaml && eval "$(opam env 2>/dev/null)" && dune exec bench/bench_parenttime.exe
+                    ;;
+                perl)
+                    cd src/perl && perl bench/bench_parenttime.pl
+                    ;;
+                php)
+                    cd src/php && php bench/bench_parenttime.php
+                    ;;
+                python)
+                    cd src/python && uv run python benchmarks/bench_parenttime.py
+                    ;;
+                ruby)
+                    cd src/ruby && ruby bench/bench_parenttime.rb
+                    ;;
+                rust)
+                    cd src/rust && cargo run --release --bin bench_parenttime
+                    ;;
+                scala)
+                    cd src/scala && ./gradlew -q classes && java -cp "build/classes/scala/main:$(find ~/.gradle/caches -name 'scala3-library_3-*.jar' 2>/dev/null | head -1):$(find ~/.gradle/caches -name 'scala-library-*.jar' 2>/dev/null | head -1)" parenttime.bench.Benchmark
+                    ;;
+                swift)
+                    cd src/swift && swift run -c release Benchmark
+                    ;;
+                typescript)
+                    cd src/typescript && npx tsx bench/bench_parenttime.ts
+                    ;;
+                zig)
+                    cd src/zig && zig build -Doptimize=ReleaseFast && ./zig-out/bin/bench_parenttime
+                    ;;
+                *)
+                    echo "Unknown target: $_target (try 'just benchmark cpu help')" >&2
+                    exit 1
+                    ;;
+            esac
+        ) 2>&1 | tee ".logs/benchmark/$name.log"
+    fi
