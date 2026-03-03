@@ -141,6 +141,24 @@ _term_width() {
     [ "${COLUMNS:-0}" -gt 0 ] 2>/dev/null && echo "$COLUMNS" && return
     echo 80
 }
+_clear_screen() { printf "\033[2J\033[H"; }
+_hide_cursor() { printf "\033[?25l"; }
+_show_cursor() { printf "\033[?25h"; }
+_cursor_up() { printf "\033[%dA" "$1"; }
+
+_term_height() {
+    local h=0
+    if [ -t 0 ]; then
+        h=$(stty size 2>/dev/null | awk '{print $1}')
+        [ "${h:-0}" -gt 0 ] 2>/dev/null && echo "$h" && return
+    fi
+    if command -v tput &>/dev/null; then
+        h=$(tput lines 2>/dev/null)
+        [ "${h:-0}" -gt 0 ] 2>/dev/null && echo "$h" && return
+    fi
+    [ "${LINES:-0}" -gt 0 ] 2>/dev/null && echo "$LINES" && return
+    echo 24
+}
 term_w=$(_term_width)
 # Layout: "  X label dur_str bar" → 2+1+1 + label_w + 1 + 6 + 1 = label_w + 12
 prefix_w=$((label_w + 12))
@@ -176,10 +194,7 @@ bar() {
     printf "%s" "${blocks:0:$len}"
 }
 
-# Decisecond timer (0.1s precision via perl Time::HiRes)
 _now_ds() { perl -MTime::HiRes=time -e 'printf "%d\n", time*10'; }
-
-# Format deciseconds as "X.Ys"
 _fmt_ds() { echo "$((${1} / 10)).$((${1} % 10))s"; }
 
 # Print a duration-scaled time axis above bar charts.
@@ -301,8 +316,206 @@ _render_lanes() {
     done
 }
 
+# Scroll state (set by _calc_viewport)
+_scroll_offset=0
+_scroll_active=0
+_vis_count=0
+_scroll_max=0
+
+# Compute viewport dimensions. Sets _scroll_active, _vis_count, _scroll_max,
+# _display_height. Reads: total, _swim_height, term_h.
+_calc_viewport() {
+    local _full_h
+    if [ "${_swim_height:-0}" -gt 0 ]; then
+        _full_h=$((2 + total + _swim_height))  # axis + blank + entries + lanes
+    else
+        _full_h=$((1 + total))                  # axis + entries
+    fi
+    if [ "$_full_h" -lt "$term_h" ]; then
+        _scroll_active=0
+        _vis_count=$total
+        _display_height=$_full_h
+    else
+        _scroll_active=1
+        local _fixed
+        if [ "${_swim_height:-0}" -gt 0 ]; then
+            _fixed=$((2 + 2 + _swim_height))    # axis+blank + 2 indicator lines + lanes
+        else
+            _fixed=$((1 + 2))                    # axis + 2 indicator lines
+        fi
+        _vis_count=$((term_h - _fixed - 1))
+        (( _vis_count < 1 )) && _vis_count=1
+        _scroll_max=$((total - _vis_count))
+        (( _scroll_max < 0 )) && _scroll_max=0
+        _display_height=$((_fixed + _vis_count))
+        (( _scroll_offset > _scroll_max )) && _scroll_offset=$_scroll_max
+    fi
+}
+
+_old_stty=""
+_key_fd=""
+
+# Drain all pending keystrokes and update _scroll_offset.
+# Only effective when _scroll_active=1 and fd 9 is open on the terminal.
+_drain_keys() {
+    [ "$_scroll_active" -eq 0 ] && return
+    [ -z "${_key_fd:-}" ] && return
+    local _key _rest
+    while IFS= read -rsn1 -t 0 _key <&9 2>/dev/null; do
+        case "$_key" in
+            k) (( _scroll_offset > 0 )) && (( _scroll_offset-- )) ;;
+            j) (( _scroll_offset < _scroll_max )) && (( _scroll_offset++ )) ;;
+            $'\033')
+                IFS= read -rsn2 -t 0.05 _rest <&9 2>/dev/null || true
+                case "$_rest" in
+                    '[A') (( _scroll_offset > 0 )) && (( _scroll_offset-- )) ;;
+                    '[B') (( _scroll_offset < _scroll_max )) && (( _scroll_offset++ )) ;;
+                esac ;;
+        esac
+    done
+}
+
+# Open the terminal for raw key input. Prefers /dev/tty (works under just(1)
+# where stdin is not a terminal), falls back to stdin when it is a tty.
+_enable_raw_input() {
+    if exec 9</dev/tty 2>/dev/null; then
+        _key_fd=1
+        _old_stty=$(stty -g </dev/tty 2>/dev/null)
+        stty -icanon -echo </dev/tty 2>/dev/null
+    elif [ -t 0 ]; then
+        exec 9<&0
+        _key_fd=1
+        _old_stty=$(stty -g 2>/dev/null)
+        stty -icanon -echo 2>/dev/null
+    fi
+}
+
+# Set up the interactive display: spinner, result arrays, viewport, cursor.
+# Usage: _init_interactive_display <swim_height>
+_init_interactive_display() {
+    spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
+    frame=0
+    done_flags=()
+    done_durs=()
+    done_rcs=()
+    _swim_height=$1
+    term_h=$(_term_height)
+    _calc_viewport
+    _clear_screen
+    for (( _i=0; _i<_display_height; _i++ )); do echo; done
+    for i in "${!all_labels[@]}"; do
+        done_flags[$i]=""
+        done_durs[$i]=0
+        done_rcs[$i]=0
+    done
+    _hide_cursor
+    _enable_raw_input
+}
+
+# Re-read terminal dimensions, recalculate viewport, and redraw if size changed.
+_update_terminal_size() {
+    _old_dh=$_display_height
+    _old_tw=$term_w
+    term_w=$(_term_width)
+    term_h=$(_term_height)
+    max_bar=$((term_w - prefix_w))
+    (( max_bar < 10 )) && max_bar=10
+    _calc_viewport
+    (( _scroll_offset > _scroll_max )) && _scroll_offset=$_scroll_max
+    if (( _display_height != _old_dh || term_w < _old_tw )); then
+        _clear_screen
+        for (( _i=0; _i<_display_height; _i++ )); do echo; done
+    fi
+}
+
+_print_scroll_top() {
+    if [ "$_scroll_active" -eq 1 ]; then
+        if [ "$_scroll_offset" -gt 0 ]; then
+            printf "  \033[2m▲ %d more\033[0m\033[K\n" "$_scroll_offset"
+        else
+            printf "\033[K\n"
+        fi
+    fi
+}
+
+_print_scroll_bottom() {
+    if [ "$_scroll_active" -eq 1 ]; then
+        _below=$((total - _scroll_offset - _vis_count))
+        if [ "$_below" -gt 0 ]; then
+            printf "  \033[2m▼ %d more\033[0m\033[K\n" "$_below"
+        else
+            printf "\033[K\n"
+        fi
+    fi
+}
+
+# Pick the next job for a given slot. Slot 0 is the "fast slot" (picks shortest
+# job, errors first); other slots pick the first unstarted job (longest first).
+# Sets _found_qi (-1 if none available).
+_select_next_job() {
+    local _s=$1
+    _found_qi=-1
+    if [ "$_s" -eq 0 ]; then
+        local _fallback=-1 _fqi _fq
+        for (( _fqi=${#_run_queue[@]}-1; _fqi>=0; _fqi-- )); do
+            _fq=${_run_queue[$_fqi]}
+            [ "${_job_started[$_fq]}" -eq 1 ] && continue
+            [ "$_fallback" -lt 0 ] && _fallback=$_fq
+            if [ "${_error_last[$_fq]}" -eq 1 ]; then
+                _found_qi=$_fq; break
+            fi
+        done
+        [ "$_found_qi" -lt 0 ] && _found_qi=$_fallback
+    else
+        local _fq
+        for _fq in "${_run_queue[@]}"; do
+            [ "${_job_started[$_fq]}" -eq 1 ] && continue
+            _found_qi=$_fq; break
+        done
+    fi
+}
+
+# Print final results (non-interactive). Reads result files and prints scaled bars.
+_print_final_results() {
+    term_w=$(_term_width)
+    max_bar=$((term_w - prefix_w))
+    (( max_bar < 10 )) && max_bar=10
+
+    _max_dur_ds=1
+    for i in "${!all_labels[@]}"; do
+        [ "${all_skip[$i]}" -eq 1 ] && continue
+        read -r dur_ds _rc < "$logdir/${all_labels[$i]}.result"
+        (( dur_ds > _max_dur_ds )) && _max_dur_ds=$dur_ds
+    done
+
+    _print_duration_axis "$_max_dur_ds"
+    for i in "${!all_labels[@]}"; do
+        label="${all_labels[$i]}"
+        if [ "${all_sep[$i]}" -eq 1 ]; then
+            echo; continue
+        fi
+        if [ "${all_skip[$i]}" -eq 1 ]; then
+            printf "  - %-${label_w}s      - not installed\n" "$label"
+        else
+            read -r dur_ds rc < "$logdir/$label.result"
+            dur_str=$(_fmt_ds "$dur_ds")
+            bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
+            (( bar_len < 1 )) && bar_len=1
+            if [ "$rc" -eq 0 ]; then
+                printf "  ✓ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
+            else
+                printf "  ✗ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
+            fi
+        fi
+    done
+}
+
 cleanup() {
-    [ -t 1 ] && printf "\033[?25h" 2>/dev/null
+    if [ -n "${_old_stty:-}" ]; then
+        stty "$_old_stty" </dev/tty 2>/dev/null || stty "$_old_stty" 2>/dev/null
+    fi
+    [ -n "${_key_fd:-}" ] && exec 9<&- 2>/dev/null
+    [ -t 1 ] && _show_cursor 2>/dev/null
     kill $(jobs -p) 2>/dev/null
     wait 2>/dev/null
     for i in "${!all_labels[@]}"; do
@@ -429,24 +642,8 @@ if [ "$max_jobs" -gt 0 ]; then
 
     if [ -t 1 ]; then
         # --- Interactive slot-based loop with live swim lanes ---
-        spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
-        frame=0
-        done_flags=()
-        done_durs=()
-        done_rcs=()
-
         # Swim lane height: blank + header + axis + lane rows
-        _swim_height=$((4 + max_jobs))
-        _display_height=$((total + _swim_height + 2))
-
-        for (( _i=0; _i<_display_height; _i++ )); do echo; done
-        for i in "${!all_labels[@]}"; do
-            done_flags[$i]=""
-            done_durs[$i]=0
-            done_rcs[$i]=0
-        done
-
-        printf "\033[?25l"  # hide cursor
+        _init_interactive_display "$((4 + max_jobs))"
 
         while true; do
             # Check for finished slots
@@ -466,26 +663,7 @@ if [ "$max_jobs" -gt 0 ]; then
             for (( _s=0; _s<max_jobs; _s++ )); do
                 [ "${_slot_pids[$_s]}" -ne 0 ] && continue
 
-                _found_qi=-1
-                if [ "$_s" -eq 0 ]; then
-                    # Fast slot: prefer shortest error, then shortest non-error
-                    _fallback=-1
-                    for (( _fqi=${#_run_queue[@]}-1; _fqi>=0; _fqi-- )); do
-                        _fq=${_run_queue[$_fqi]}
-                        [ "${_job_started[$_fq]}" -eq 1 ] && continue
-                        [ "$_fallback" -lt 0 ] && _fallback=$_fq
-                        if [ "${_error_last[$_fq]}" -eq 1 ]; then
-                            _found_qi=$_fq; break
-                        fi
-                    done
-                    [ "$_found_qi" -lt 0 ] && _found_qi=$_fallback
-                else
-                    # Regular slot: pick first unstarted (errors first, longest first)
-                    for _fq in "${_run_queue[@]}"; do
-                        [ "${_job_started[$_fq]}" -eq 1 ] && continue
-                        _found_qi=$_fq; break
-                    done
-                fi
+                _select_next_job "$_s"
                 [ "$_found_qi" -lt 0 ] && continue
 
                 qi=$_found_qi
@@ -531,15 +709,8 @@ if [ "$max_jobs" -gt 0 ]; then
                 [ -n "${done_flags[$i]}" ] && done_count=$((done_count + 1))
             done
 
-            # Dynamic terminal width
-            _old_tw=$term_w
-            term_w=$(_term_width)
-            max_bar=$((term_w - prefix_w))
-            (( max_bar < 10 )) && max_bar=10
-            if (( term_w < _old_tw )); then
-                printf "\033[2J\033[H"  # clear screen, cursor to top-left
-                for (( _i=0; _i<_display_height; _i++ )); do echo; done
-            fi
+            _drain_keys
+            _update_terminal_size
 
             # Display parameters (per-frame, based on visualization mode)
             _display_offset_ds=0
@@ -563,10 +734,25 @@ if [ "$max_jobs" -gt 0 ]; then
             esac
 
             # Render: bar chart + swim lanes (full redraw)
-            printf "\033[${_display_height}A"
+            _cursor_up "$_display_height"
             _print_time_axis
             printf "\033[K\n"
+
+            _print_scroll_top
+
+            # Entry rendering (viewport-aware)
+            _ve=0  # visible entries rendered
             for i in "${!all_labels[@]}"; do
+                if [ "$_scroll_active" -eq 1 ]; then
+                    # Skip entries before scroll offset
+                    if [ "$_ve" -lt "$_scroll_offset" ]; then
+                        _ve=$((_ve + 1)); continue
+                    fi
+                    # Stop after _vis_count visible entries
+                    if [ "$((_ve - _scroll_offset))" -ge "$_vis_count" ]; then break; fi
+                fi
+                _ve=$((_ve + 1))
+
                 label="${all_labels[$i]}"
                 if [ "${all_sep[$i]}" -eq 1 ]; then
                     printf "\033[K\n"; continue
@@ -639,6 +825,9 @@ if [ "$max_jobs" -gt 0 ]; then
                     printf "\033[K\n"
                 fi
             done
+
+            _print_scroll_bottom
+
             _render_lanes
 
             [ "$done_count" -eq "$run_n" ] && break
@@ -646,7 +835,7 @@ if [ "$max_jobs" -gt 0 ]; then
             sleep 0.1
         done
 
-        printf "\033[?25h"  # restore cursor
+        _show_cursor
     else
         # --- Non-interactive slot-based loop (CI / piped) ---
         while true; do
@@ -664,24 +853,7 @@ if [ "$max_jobs" -gt 0 ]; then
             for (( _s=0; _s<max_jobs; _s++ )); do
                 [ "${_slot_pids[$_s]}" -ne 0 ] && continue
 
-                _found_qi=-1
-                if [ "$_s" -eq 0 ]; then
-                    _fallback=-1
-                    for (( _fqi=${#_run_queue[@]}-1; _fqi>=0; _fqi-- )); do
-                        _fq=${_run_queue[$_fqi]}
-                        [ "${_job_started[$_fq]}" -eq 1 ] && continue
-                        [ "$_fallback" -lt 0 ] && _fallback=$_fq
-                        if [ "${_error_last[$_fq]}" -eq 1 ]; then
-                            _found_qi=$_fq; break
-                        fi
-                    done
-                    [ "$_found_qi" -lt 0 ] && _found_qi=$_fallback
-                else
-                    for _fq in "${_run_queue[@]}"; do
-                        [ "${_job_started[$_fq]}" -eq 1 ] && continue
-                        _found_qi=$_fq; break
-                    done
-                fi
+                _select_next_job "$_s"
                 [ "$_found_qi" -lt 0 ] && continue
 
                 qi=$_found_qi
@@ -708,38 +880,7 @@ if [ "$max_jobs" -gt 0 ]; then
             sleep 0.2
         done
 
-        # Re-check width before printing (terminal may have been resized)
-        term_w=$(_term_width)
-        max_bar=$((term_w - prefix_w))
-        (( max_bar < 10 )) && max_bar=10
-
-        # Print results (scaled bars: longest job fills max_bar)
-        _max_dur_ds=1
-        for i in "${!all_labels[@]}"; do
-            [ "${all_skip[$i]}" -eq 1 ] && continue
-            read -r dur_ds _rc < "$logdir/${all_labels[$i]}.result"
-            (( dur_ds > _max_dur_ds )) && _max_dur_ds=$dur_ds
-        done
-        _print_duration_axis "$_max_dur_ds"
-        for i in "${!all_labels[@]}"; do
-            label="${all_labels[$i]}"
-            if [ "${all_sep[$i]}" -eq 1 ]; then
-                echo; continue
-            fi
-            if [ "${all_skip[$i]}" -eq 1 ]; then
-                printf "  - %-${label_w}s      - not installed\n" "$label"
-            else
-                read -r dur_ds rc < "$logdir/$label.result"
-                dur_str=$(_fmt_ds "$dur_ds")
-                bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
-                (( bar_len < 1 )) && bar_len=1
-                if [ "$rc" -eq 0 ]; then
-                    printf "  ✓ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
-                else
-                    printf "  ✗ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
-                fi
-            fi
-        done
+        _print_final_results
     fi
 else
     # --- Unlimited parallelism (existing behavior) ---
@@ -760,33 +901,13 @@ else
 
     # --- Progress display ---
     if [ -t 1 ]; then
-        spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
-        frame=0
-        done_flags=()
-        done_durs=()
-        done_rcs=()
-        echo  # axis line placeholder
-        for i in "${!all_labels[@]}"; do
-            echo
-            done_flags[$i]=""
-            done_durs[$i]=0
-            done_rcs[$i]=0
-        done
-
-        printf "\033[?25l"  # hide cursor
+        _init_interactive_display 0
 
         while true; do
-            # Dynamic terminal width
-            _old_tw=$term_w
-            term_w=$(_term_width)
-            max_bar=$((term_w - prefix_w))
-            (( max_bar < 10 )) && max_bar=10
-            if (( term_w < _old_tw )); then
-                printf "\033[2J\033[H"  # clear screen, cursor to top-left
-                for (( _i=0; _i<total+1; _i++ )); do echo; done
-            fi
+            _drain_keys
+            _update_terminal_size
 
-            printf "\033[%dA" "$((total + 1))"  # move up N+1 lines (axis + entries)
+            _cursor_up "$_display_height"
 
             _frame_ds=$(_now_ds)
             # Find max duration for scaling (completed jobs or current elapsed)
@@ -802,8 +923,32 @@ else
             done
 
             _print_duration_axis "$_max_dur_ds" 1
+
+            _print_scroll_top
+
             done_count=0
+            # Check all results first (even non-visible ones)
             for i in "${!all_labels[@]}"; do
+                [ "${all_skip[$i]}" -eq 1 ] && continue
+                label="${all_labels[$i]}"
+                if [ -z "${done_flags[$i]}" ] && [ -f "$logdir/$label.result" ]; then
+                    read -r done_durs[$i] done_rcs[$i] < "$logdir/$label.result"
+                    done_flags[$i]=1
+                fi
+                [ -n "${done_flags[$i]}" ] && done_count=$((done_count + 1))
+            done
+
+            # Entry rendering (viewport-aware)
+            _ve=0
+            for i in "${!all_labels[@]}"; do
+                if [ "$_scroll_active" -eq 1 ]; then
+                    if [ "$_ve" -lt "$_scroll_offset" ]; then
+                        _ve=$((_ve + 1)); continue
+                    fi
+                    if [ "$((_ve - _scroll_offset))" -ge "$_vis_count" ]; then break; fi
+                fi
+                _ve=$((_ve + 1))
+
                 label="${all_labels[$i]}"
 
                 if [ "${all_sep[$i]}" -eq 1 ]; then
@@ -814,13 +959,7 @@ else
                     continue
                 fi
 
-                if [ -z "${done_flags[$i]}" ] && [ -f "$logdir/$label.result" ]; then
-                    read -r done_durs[$i] done_rcs[$i] < "$logdir/$label.result"
-                    done_flags[$i]=1
-                fi
-
                 if [ -n "${done_flags[$i]}" ]; then
-                    done_count=$((done_count + 1))
                     dur_ds="${done_durs[$i]}"
                     dur_str=$(_fmt_ds "$dur_ds")
                     bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
@@ -840,49 +979,18 @@ else
                 fi
             done
 
+            _print_scroll_bottom
+
             [ "$done_count" -eq "$run_n" ] && break
             frame=$((frame + 1))
             sleep 0.1
         done
 
-        printf "\033[?25h"  # restore cursor
+        _show_cursor
     else
         # Non-interactive (CI, piped): wait then print
         for pid in "${pids[@]}"; do wait "$pid" || true; done
-
-        # Re-check width before printing (terminal may have been resized)
-        term_w=$(_term_width)
-        max_bar=$((term_w - prefix_w))
-        (( max_bar < 10 )) && max_bar=10
-
-        # Find max duration for scaling
-        _max_dur_ds=1
-        for i in "${!all_labels[@]}"; do
-            [ "${all_skip[$i]}" -eq 1 ] && continue
-            read -r dur_ds _rc < "$logdir/${all_labels[$i]}.result"
-            (( dur_ds > _max_dur_ds )) && _max_dur_ds=$dur_ds
-        done
-
-        _print_duration_axis "$_max_dur_ds"
-        for i in "${!all_labels[@]}"; do
-            label="${all_labels[$i]}"
-            if [ "${all_sep[$i]}" -eq 1 ]; then
-                echo; continue
-            fi
-            if [ "${all_skip[$i]}" -eq 1 ]; then
-                printf "  - %-${label_w}s      - not installed\n" "$label"
-            else
-                read -r dur_ds rc < "$logdir/$label.result"
-                dur_str=$(_fmt_ds "$dur_ds")
-                bar_len=$(( dur_ds * max_bar / _max_dur_ds ))
-                (( bar_len < 1 )) && bar_len=1
-                if [ "$rc" -eq 0 ]; then
-                    printf "  ✓ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
-                else
-                    printf "  ✗ %-${label_w}s %6s %s\n" "$label" "$dur_str" "$(bar "$bar_len")"
-                fi
-            fi
-        done
+        _print_final_results
     fi
 fi
 
