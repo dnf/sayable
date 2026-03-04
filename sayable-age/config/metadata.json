@@ -1,0 +1,7 @@
+{
+  "name": "sayable-age",
+  "description": "Human-friendly age formatting — how parents actually talk about little ones",
+  "author": "Don Neufeld",
+  "license": "MIT",
+  "repository": "https://github.com/dnf/sayable"
+}

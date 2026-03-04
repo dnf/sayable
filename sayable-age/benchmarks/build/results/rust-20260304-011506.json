@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "language": "rust",
+    "language_version": "rustc 1.93.1 (01f6ddf75 2026-02-11) (Homebrew)",
+    "timestamp": "2026-03-04T01:15:06Z",
+    "system": {
+      "os": "Darwin 26.3",
+      "arch": "arm64",
+      "cpu": "Apple M1 Max",
+      "cpu_cores": 10,
+      "memory_gb": 32
+    }
+  },
+  "config": {
+    "iterations": 3,
+    "type": "clean_build"
+  },
+  "results": {
+    "timings_s": [
+      1.08,
+      0.625,
+      0.632
+    ],
+    "median_s": 0.632,
+    "min_s": 0.625,
+    "max_s": 1.08
+  }
+}

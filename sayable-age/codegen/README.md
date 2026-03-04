@@ -1,0 +1,210 @@
+# Locale Code Generator
+
+The `codegen/` directory contains a code generator that maintains all 71 locale definitions across the language implementations from a single canonical source.
+
+## Why
+
+71 locales across many languages means hundreds of locale files. Before this generator, every locale change required editing files by hand across every language. The generator eliminates that by deriving all locale source files from one set of JSON definitions.
+
+## Architecture
+
+```
+locales/             # 71 JSON files — the single source of truth
+  en.json
+  fr.json
+  ar.json
+  ...
+codegen/
+  generate.py        # Orchestrator: loads JSON, runs emitters, writes files
+  extract.py         # One-time bootstrap: read TS files → JSON (already run)
+  targets/           # One subdirectory per target language
+    ada/             #   emitter.py + plural_rules.py
+    typescript/      #   emitter.py + plural_rules.py
+    python/
+    go/
+    groovy/
+    perl/
+    ruby/
+    rust/
+    scala/
+    kotlin/
+    lua/
+    ocaml/
+    cpp/
+    php/
+    java/
+    csharp/
+    elixir/
+    elm/
+    fsharp/
+    fortran/
+    gleam/
+    swift/
+    zig/
+```
+
+## Canonical JSON format
+
+One file per locale. Example (`fr.json`):
+
+```json
+{
+  "code": "fr",
+  "name": "French",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "day":   { "one": "{n} jour", "other": "{n} jours" },
+    "week":  { "one": "{n} semaine", "other": "{n} semaines" },
+    "month": "{n} mois",
+    "year":  { "one": "{n} an", "other": "{n} ans" }
+  },
+  "half": "{0} et demi",
+  "delimiter": ", ",
+  "justBorn": "Nouveau-né",
+  "stages": {
+    "newborn": { "m": "Nouveau-né", "f": "Nouveau-née" },
+    "infant": "Nourrisson",
+    "toddler": "Tout-petit",
+    "child": "Enfant",
+    "teenager": { "m": "Adolescent", "f": "Adolescente" },
+    "adult": "Adulte"
+  }
+}
+```
+
+### Field rules
+
+- **`units`**: A string value means no plural forms (e.g. `"{n} mois"` for French months). An object maps plural categories to templates (`"other"` is required, rest optional).
+- **`stages`**: A string means gender-neutral. An `{"m": ..., "f": ...}` object means gendered.
+- **`pluralRule`**: One of the 23 named rules below. The rule's logic lives in each `targets/<lang>/plural_rules.py`, not in the JSON.
+- **`short`** / **`compact`**: Optional compactness overrides (same structure as `units`). Currently only English uses these.
+
+## 23 plural rules
+
+All CLDR cardinal plural patterns are supported. See
+[`docs/adding-a-locale.md`](../docs/adding-a-locale.md) for the full rule table.
+
+Each rule is defined once per language in `targets/<lang>/plural_rules.py` as a code string in the target language.
+
+## Output per language
+
+| Language   | Output files                                     | Pattern                         |
+| ---------- | ------------------------------------------------ | ------------------------------- |
+| Ada        | `sayableage_locales.ads` + `.adb`                | single file, all 71             |
+| TypeScript | `locales/{code}.ts` + `locales/index.ts`         | one per locale + barrel         |
+| Python     | `locales/{code}.py` + `locales/__init__.py`      | one per locale + barrel         |
+| Go         | `locale_{code}.go`                               | one per locale                  |
+| Groovy     | `Locales.groovy`                                 | single file, all 71             |
+| Ruby       | `locales/{code}.rb`                              | one per locale                  |
+| Rust       | `locales/{code}.rs` + `locales/mod.rs`           | one per locale + barrel         |
+| Kotlin     | `Locales.kt`                                     | single file, all 71             |
+| Lua        | `locales/{code}.lua` + `locales/init.lua`        | one per locale + barrel         |
+| OCaml      | `locales/{code}.ml` + `locales/locales.ml`       | one per locale + barrel         |
+| Scala      | `Locales.scala`                                  | single file, all 71             |
+| C++        | `locales_{a_e,f_k,l_r,s_z}.cpp` + `locales.hpp`  | 4 files by alpha range + header |
+| Perl       | `Locales/{CODE}.pm` + `Locales.pm`               | one per locale + registry       |
+| PHP        | `Locales.php`                                    | single file, all 71             |
+| Java       | `Locales.java`                                   | single file, all 71             |
+| C#         | `Locales.cs`                                     | single file, all 71             |
+| Elixir     | `locales/{code}.ex` + `locales.ex`               | one per locale + registry       |
+| Elm        | `Locales/{Code}.elm` + `Locales.elm`             | one per locale + barrel         |
+| F#         | `Locales/Locales.fs`                             | single file, all 71             |
+| Fortran    | `sayableage_locales.f90`                         | single file, all 71             |
+| Gleam      | `locales/{code}.gleam` + `locales/locales.gleam` | one per locale + registry       |
+| Swift      | `Locales.swift`                                  | single file, all 71             |
+| Zig        | `locales.zig`                                    | single file, all 71             |
+
+Every generated file begins with a comment: `// This file is auto-generated by codegen/generate.py — do not edit manually.`
+
+## Usage
+
+### Generate all locale files and docs
+
+```bash
+just generate locales
+```
+
+This runs both `codegen/generate.py` (locale source files) and `codegen/docgen.py` (locale documentation) in sequence.
+
+### Generate for one language only
+
+For language-specific codegen, use the underlying command directly (docgen doesn't support `--lang`):
+
+```bash
+python -m codegen.generate --lang typescript
+python -m codegen.generate --lang python
+python -m codegen.generate --lang go
+# etc.
+```
+
+### Subsetting with `--locales`
+
+By default all 71 locales are generated. Use `--locales` to generate only what you need:
+
+```bash
+just generate locales --locales core         # top 10 by internet users
+just generate locales --locales core,ja,ko   # core group + extras
+just generate locales --locales cjk,romance  # combine groups
+just generate locales --locales fr            # just en + fr (en always included)
+```
+
+Tokens are comma-separated. Each token is either a named group or a locale code. Use `--list-groups` to see all groups:
+
+```bash
+python -m codegen.generate --list-groups
+```
+
+Works with other flags:
+
+```bash
+python -m codegen.generate --locales core --lang typescript
+just generate locales --locales core --check
+```
+
+When subsetting, stale locale files from previous full generations are automatically deleted (or flagged in `--check` mode).
+
+### Check for drift (CI mode)
+
+```bash
+just check
+```
+
+Runs all three checks: locale codegen, locale docs, and markdown table alignment. Exits with code 1 if any generated or maintained file would change. This runs in CI to ensure locale files stay in sync with the canonical JSON.
+
+## Workflows
+
+### Modifying an existing locale
+
+1. Edit the JSON file in `locales/{code}.json`
+2. Run `just generate locales`
+3. Run the test suites to verify
+
+### Adding a new locale
+
+1. Create `locales/{code}.json` with the locale data (use an existing plural rule — all 23 CLDR patterns are supported)
+2. Run `just generate locales`
+4. Add test cases to `config/tests.json` and implement them in all test files
+5. Run all test suites
+
+### Fixing a plural rule
+
+1. Edit the rule in `plural_rules.py` (it has per-language code strings)
+2. Run `just generate locales`
+3. Run all test suites
+
+## Why generated files are checked into source control
+
+The generated locale files are committed to each language's directory rather than being `.gitignore`d and rebuilt on demand:
+
+- **Each language's locale files are part of its published package.** npm, PyPI, crates.io, etc. ship what's in the repo — there's no codegen step in the downstream build.
+- **Consumers can browse source on GitHub** without running the generator to see what a locale looks like.
+- **Contributors can clone and test immediately** without installing Python or running the generator first.
+- **CI `--check` mode prevents drift.** `just check` exits non-zero if any generated file would change, so the canonical JSON and the checked-in files can never get out of sync.
+
+## How it was bootstrapped
+
+The `extract.py` script was a one-time tool that read the original TypeScript locale files and produced the canonical JSON files. It does not need to be run again — the JSON files are now the source of truth, and all locale files are generated from them.
+
+## Requirements
+
+Python 3.10+ (stdlib only, no dependencies).

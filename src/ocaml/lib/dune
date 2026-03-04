@@ -1,7 +1,0 @@
-(include_subdirs unqualified)
-
-(library
- (name parent_time)
- (libraries unix)
- (ocamlopt_flags
-  (:standard -w +a-4-40-41-42-44-45-48-58-66-67-70 -warn-error +a)))

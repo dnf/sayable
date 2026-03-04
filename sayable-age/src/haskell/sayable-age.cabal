@@ -1,0 +1,97 @@
+cabal-version: 2.4
+name:          sayable-age
+version:       0.5.0.0
+license:       MIT
+build-type:    Simple
+
+library
+  exposed-modules:
+    SayableAge
+    SayableAge.Types
+    SayableAge.Formatter
+    SayableAge.Locales
+    SayableAge.Locales.Am
+    SayableAge.Locales.Ar
+    SayableAge.Locales.Az
+    SayableAge.Locales.Bg
+    SayableAge.Locales.Bn
+    SayableAge.Locales.Br
+    SayableAge.Locales.Bs
+    SayableAge.Locales.Ca
+    SayableAge.Locales.Cs
+    SayableAge.Locales.Cy
+    SayableAge.Locales.Da
+    SayableAge.Locales.De
+    SayableAge.Locales.El
+    SayableAge.Locales.En
+    SayableAge.Locales.Es
+    SayableAge.Locales.Et
+    SayableAge.Locales.Eu
+    SayableAge.Locales.Fa
+    SayableAge.Locales.Fi
+    SayableAge.Locales.Fil
+    SayableAge.Locales.Fr
+    SayableAge.Locales.Ga
+    SayableAge.Locales.Gd
+    SayableAge.Locales.Gu
+    SayableAge.Locales.Gv
+    SayableAge.Locales.He
+    SayableAge.Locales.Hi
+    SayableAge.Locales.Hr
+    SayableAge.Locales.Hu
+    SayableAge.Locales.Id
+    SayableAge.Locales.It
+    SayableAge.Locales.Ja
+    SayableAge.Locales.Jv
+    SayableAge.Locales.Ka
+    SayableAge.Locales.Kk
+    SayableAge.Locales.Km
+    SayableAge.Locales.Ko
+    SayableAge.Locales.Kw
+    SayableAge.Locales.Lt
+    SayableAge.Locales.Lv
+    SayableAge.Locales.Mk
+    SayableAge.Locales.Mr
+    SayableAge.Locales.Ms
+    SayableAge.Locales.Mt
+    SayableAge.Locales.My
+    SayableAge.Locales.Nb
+    SayableAge.Locales.Ne
+    SayableAge.Locales.Nl
+    SayableAge.Locales.Pa
+    SayableAge.Locales.Pl
+    SayableAge.Locales.Pt
+    SayableAge.Locales.Ro
+    SayableAge.Locales.Ru
+    SayableAge.Locales.Shi
+    SayableAge.Locales.Si
+    SayableAge.Locales.Sk
+    SayableAge.Locales.Sl
+    SayableAge.Locales.Sq
+    SayableAge.Locales.Sr
+    SayableAge.Locales.Sv
+    SayableAge.Locales.Sw
+    SayableAge.Locales.Ta
+    SayableAge.Locales.Te
+    SayableAge.Locales.Th
+    SayableAge.Locales.Tr
+    SayableAge.Locales.Tzm
+    SayableAge.Locales.Uk
+    SayableAge.Locales.Ur
+    SayableAge.Locales.Uz
+    SayableAge.Locales.Vi
+    SayableAge.Locales.Zh
+  other-modules:
+    SayableAge.Internal
+  hs-source-dirs: src
+  build-depends:  base >= 4.16 && < 5
+  default-language: Haskell2010
+  ghc-options: -Wall -Wcompat -Werror
+
+test-suite sayable-age-test
+  type:           exitcode-stdio-1.0
+  main-is:        Main.hs
+  hs-source-dirs: test
+  build-depends:  base >= 4.16 && < 5, sayable-age, hspec >= 2.0
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror

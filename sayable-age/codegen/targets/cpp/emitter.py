@@ -1,0 +1,224 @@
+"""C++ locale emitter — 4 source files by alpha range + header."""
+
+from __future__ import annotations
+
+from codegen.banner import locale_source_comment, make_header
+from codegen.targets.cpp.plural_rules import get_cpp_plural
+
+HEADER = make_header("codegen/targets/cpp/emitter.py")
+
+_CAT_MAP = {
+    "zero": "PluralCategory::Zero", "one": "PluralCategory::One",
+    "two": "PluralCategory::Two", "few": "PluralCategory::Few",
+    "many": "PluralCategory::Many", "other": "PluralCategory::Other",
+}
+
+# Alpha ranges for the 4 source files
+_RANGES = [
+    ("a_e", "a", "e"),
+    ("f_k", "f", "k"),
+    ("l_r", "l", "r"),
+    ("s_z", "s", "z"),
+]
+
+
+def _quote(s: str) -> str:
+    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
+
+
+def _unit_forms(unit: object) -> str:
+    if isinstance(unit, str):
+        return f"UnitForms::Simple({_quote(unit)})"
+    cats = ["zero", "one", "two", "few", "many", "other"]
+    pairs = []
+    for cat in cats:
+        if cat in unit:
+            pairs.append(f"{{{_CAT_MAP[cat]}, {_quote(unit[cat])}}}")
+    return "UnitForms::Plural({" + ", ".join(pairs) + "})"
+
+
+def _stage_label(stage: object) -> str:
+    if isinstance(stage, str):
+        return "{" + _quote(stage) + ', ""}'
+    return "{" + _quote(stage["m"]) + ", " + _quote(stage["f"]) + "}"
+
+
+def _emit_one_locale(data: dict) -> str:
+    """Emit a single locale function body."""
+    code = data["code"]
+    rule = data["pluralRule"]
+    uc = code.upper()
+
+    lines = []
+    lines.append(f"const AgeLocale& {uc}() {{")
+    lines.append("    static const AgeLocale loc{")
+    lines.append(f"        {_quote(code)},")
+
+    # Plural
+    plural = get_cpp_plural(rule)
+    lines.append(f"        {plural},")
+
+    # Units
+    units_parts = []
+    for unit_name in ("day", "week", "month", "year"):
+        units_parts.append(f"            {_unit_forms(data['units'][unit_name])}")
+    lines.append("        UnitSet{")
+    lines.append(",\n".join(units_parts))
+    lines.append("        },")
+
+    # Half, delimiter, justBorn — on one line where possible
+    lines.append(f"        {_quote(data['half'])}, {_quote(data['delimiter'])}, {_quote(data['justBorn'])},")
+
+    # Stages
+    stage_parts = []
+    for stage in ("newborn", "infant", "toddler", "child", "teenager", "adult"):
+        stage_parts.append(_stage_label(data["stages"][stage]))
+    lines.append("        StageLabels{" + ", ".join(stage_parts) + "},")
+
+    # Short/compact
+    for mode in ("short", "compact"):
+        if mode in data:
+            ovr = data[mode]
+            parts = []
+            if "units" in ovr:
+                for unit_name in ("day", "week", "month", "year"):
+                    if unit_name in ovr["units"]:
+                        val = ovr["units"][unit_name]
+                        if isinstance(val, str):
+                            parts.append(f"            UnitForms::Simple({_quote(val)})")
+                        else:
+                            parts.append(f"            {_unit_forms(val)}")
+                    else:
+                        parts.append("            std::nullopt")
+            else:
+                parts.extend(["            std::nullopt"] * 4)
+
+            # half, delimiter, justBorn overrides
+            if "half" in ovr:
+                parts.append(f"            std::string({_quote(ovr['half'])})")
+            else:
+                parts.append("            std::nullopt")
+            if "delimiter" in ovr:
+                parts.append(f"            std::string({_quote(ovr['delimiter'])})")
+            else:
+                parts.append("            std::nullopt")
+            if "justBorn" in ovr:
+                parts.append(f"            std::string({_quote(ovr['justBorn'])})")
+            else:
+                parts.append("            std::nullopt")
+
+            lines.append("        CompactnessOverride{")
+            lines.append(",\n".join(parts))
+            lines.append("        },")
+        else:
+            lines.append("        std::nullopt,")
+
+    # format_number, format_unit
+    lines.append("        nullptr, nullptr")
+
+    lines.append("    };")
+    lines.append("    return loc;")
+    lines.append("}")
+
+    return "\n".join(lines)
+
+
+def emit_source_file(locales_in_range: list[dict]) -> str:
+    """Emit one of the 4 source files."""
+    lines = [
+        "// -*- coding: utf-8 -*-",
+        HEADER.rstrip(),
+        '#include "sayableage/locales/locales.hpp"\n',
+        "namespace sayableage {",
+        "namespace locales {\n",
+    ]
+
+    for i, data in enumerate(locales_in_range):
+        lines.append(locale_source_comment(data["code"]).rstrip())
+        lines.append(_emit_one_locale(data))
+        if i < len(locales_in_range) - 1:
+            lines.append("")
+
+    lines.append("")
+    lines.append("} // namespace locales")
+    lines.append("} // namespace sayableage")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+def emit_header(all_locales: list[dict]) -> str:
+    """Emit the locales.hpp header."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    lines = [HEADER]
+    lines.append("#ifndef SAYABLEAGE_LOCALES_HPP")
+    lines.append("#define SAYABLEAGE_LOCALES_HPP")
+    lines.append("")
+    lines.append('#include "../types.hpp"')
+    lines.append("#include <string>")
+    lines.append("")
+    lines.append("namespace sayableage {")
+    lines.append("namespace locales {")
+    lines.append("")
+    for loc in sorted_locs:
+        lines.append(f"const AgeLocale& {loc['code'].upper()}();")
+    lines.append("")
+    lines.append("const AgeLocale* get(const std::string& code);")
+    lines.append("")
+    lines.append("} // namespace locales")
+    lines.append("} // namespace sayableage")
+    lines.append("")
+    lines.append("#endif // SAYABLEAGE_LOCALES_HPP")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+def emit_registry(all_locales: list[dict]) -> str:
+    """Emit locales_registry.cpp with the get() lookup function."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    lines = [
+        "// -*- coding: utf-8 -*-",
+        HEADER.rstrip(),
+        '#include "sayableage/locales/locales.hpp"\n',
+        "namespace sayableage {",
+        "namespace locales {\n",
+        "const AgeLocale* get(const std::string& code) {",
+    ]
+    for loc in sorted_locs:
+        code = loc["code"]
+        lines.append(f'    if (code == {_quote(code)}) return &{code.upper()}();')
+    lines.append("    return nullptr;")
+    lines.append("}")
+    lines.append("")
+    lines.append("} // namespace locales")
+    lines.append("} // namespace sayableage")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def registry_source_path(root: str) -> str:
+    import os
+    return os.path.join(root, "src", "cpp", "src", "locales", "locales_registry.cpp")
+
+
+def split_by_range(all_locales: list[dict]) -> dict[str, list[dict]]:
+    """Split locales into the 4 alpha ranges."""
+    result: dict[str, list[dict]] = {}
+    for suffix, start, end in _RANGES:
+        result[suffix] = [
+            d for d in sorted(all_locales, key=lambda x: x["code"])
+            if start <= d["code"][0] <= end
+        ]
+    return result
+
+
+def source_path(suffix: str, root: str) -> str:
+    import os
+    return os.path.join(root, "src", "cpp", "src", "locales", f"locales_{suffix}.cpp")
+
+
+def header_path(root: str) -> str:
+    import os
+    return os.path.join(root, "src", "cpp", "include", "sayableage", "locales", "locales.hpp")

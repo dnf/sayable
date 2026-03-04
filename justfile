@@ -1,4 +1,4 @@
-# parent-time task runner
+# sayable-age task runner
 # Run `just --list` to see all available commands.
 
 python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "python" }
@@ -79,66 +79,66 @@ test *target:
         mkdir -p .logs/test
         (
             if [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-                cd src/typescript && npx vitest run
+                cd sayable-age/src/typescript && npx vitest run
             elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
-                cd src/python && uv run --extra dev pytest tests/
+                cd sayable-age/src/python && uv run --extra dev pytest tests/
             elif [ "$_target" = "go" ]; then
-                cd src/go && go test ./...
+                cd sayable-age/src/go && go test ./...
             elif [ "$_target" = "ruby" ] || [ "$_target" = "rb" ]; then
-                cd src/ruby && ruby -Ilib test/test_formatter.rb
+                cd sayable-age/src/ruby && ruby -Ilib test/test_formatter.rb
             elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-                cd src/rust && cargo test
+                cd sayable-age/src/rust && cargo test
             elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
-                cd src/kotlin && ./gradlew test
+                cd sayable-age/src/kotlin && ./gradlew test
             elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
                 just build cpp
-                cd src/cpp/build && ctest --output-on-failure
+                cd sayable-age/src/cpp/build && ctest --output-on-failure
             elif [ "$_target" = "c" ]; then
                 just build c
-                cd src/c/build && ctest --output-on-failure
+                cd sayable-age/src/c/build && ctest --output-on-failure
             elif [ "$_target" = "cli" ]; then
                 just build cli
-                bash cli/test.sh
+                bash sayable-age/cli/test.sh
             elif [ "$_target" = "php" ]; then
-                cd src/php && php vendor/bin/phpunit tests/
+                cd sayable-age/src/php && php vendor/bin/phpunit tests/
             elif [ "$_target" = "java" ]; then
-                cd src/java && ./gradlew test
+                cd sayable-age/src/java && ./gradlew test
             elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
-                cd src/csharp && dotnet test
+                cd sayable-age/src/csharp && dotnet test
             elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
-                cd src/dart && dart test
+                cd sayable-age/src/dart && dart test
             elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
-                cd src/fsharp && dotnet test
+                cd sayable-age/src/fsharp && dotnet test
             elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
-                cd src/swift && swift test
+                cd sayable-age/src/swift && swift test
             elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
-                cd src/haskell && cabal test
+                cd sayable-age/src/haskell && cabal test
             elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
-                cd src/erlang && rebar3 eunit
+                cd sayable-age/src/erlang && rebar3 eunit
             elif [ "$_target" = "fortran" ] || [ "$_target" = "ft" ]; then
                 just build fortran
-                cd src/fortran/build && ctest --output-on-failure
+                cd sayable-age/src/fortran/build && ctest --output-on-failure
             elif [ "$_target" = "groovy" ] || [ "$_target" = "gy" ]; then
-                cd src/groovy && ./gradlew test
+                cd sayable-age/src/groovy && ./gradlew test
             elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
-                cd src/clojure && clojure -M:test
+                cd sayable-age/src/clojure && clojure -M:test
             elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
                 just build cobol
-                cd src/cobol/build && ctest --output-on-failure
+                cd sayable-age/src/cobol/build && ctest --output-on-failure
             elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
-                cd src/scala && ./gradlew test
+                cd sayable-age/src/scala && ./gradlew test
             elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
-                cd src/elixir && mix test
+                cd sayable-age/src/elixir && mix test
             elif [ "$_target" = "gleam" ] || [ "$_target" = "gm" ]; then
-                cd src/gleam && gleam test
+                cd sayable-age/src/gleam && gleam test
             elif [ "$_target" = "elm" ] || [ "$_target" = "el" ]; then
-                cd src/elm && elm-test
+                cd sayable-age/src/elm && elm-test
             elif [ "$_target" = "lua" ] || [ "$_target" = "lu" ]; then
-                cd src/lua && busted test_parenttime.lua
+                cd sayable-age/src/lua && busted test_sayableage.lua
             elif [ "$_target" = "ocaml" ] || [ "$_target" = "ml" ]; then
-                cd src/ocaml && eval "$(opam env 2>/dev/null)" && dune runtest
+                cd sayable-age/src/ocaml && eval "$(opam env 2>/dev/null)" && dune runtest
             elif [ "$_target" = "perl" ] || [ "$_target" = "pl" ]; then
-                cd src/perl && prove -Ilib t/
+                cd sayable-age/src/perl && prove -Ilib t/
             elif [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
                 _ada_env
                 _largs=""
@@ -146,11 +146,11 @@ test *target:
                     _sdk="$(xcrun --show-sdk-path 2>/dev/null)"
                     [ -n "$_sdk" ] && _largs="-largs -L$_sdk/usr/lib"
                 fi
-                cd src/ada && gprbuild -P parenttime.gpr -XBUILD_MODE=test $_largs && ./build/test_format_age
+                cd sayable-age/src/ada && gprbuild -P sayableage.gpr -XBUILD_MODE=test $_largs && ./build/test_format_age
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
-                cd src/zig && zig build test
+                cd sayable-age/src/zig && zig build test
             elif [ "$_target" = "codegen" ]; then
-                {{python}} -m unittest codegen.test_locale_groups -v
+                cd sayable-age && {{python}} -m unittest codegen.test_locale_groups -v
             else
                 echo "Unknown target: $_target (try 'just test help')" >&2
                 exit 1
@@ -234,47 +234,47 @@ build *target:
         (
             if [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
                 _ada_env
-                cd src/ada && gprbuild -P parenttime.gpr -XBUILD_MODE=build
+                cd sayable-age/src/ada && gprbuild -P sayableage.gpr -XBUILD_MODE=build
             elif [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-                cd src/typescript && npm run build
+                cd sayable-age/src/typescript && npm run build
             elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-                cd src/rust && cargo build
+                cd sayable-age/src/rust && cargo build
             elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
-                cd src/kotlin && ./gradlew build
+                cd sayable-age/src/kotlin && ./gradlew build
             elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
-                cd src/cpp && cmake -B build && cmake --build build
+                cd sayable-age/src/cpp && cmake -B build && cmake --build build
             elif [ "$_target" = "c" ]; then
-                cd src/c && cmake -B build && cmake --build build
+                cd sayable-age/src/c && cmake -B build && cmake --build build
             elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
-                cd src/cobol && cmake -B build && cmake --build build
+                cd sayable-age/src/cobol && cmake -B build && cmake --build build
             elif [ "$_target" = "cli" ]; then
                 cd cli && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
             elif [ "$_target" = "java" ]; then
-                cd src/java && ./gradlew build
+                cd sayable-age/src/java && ./gradlew build
             elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
-                cd src/csharp && dotnet build
+                cd sayable-age/src/csharp && dotnet build
             elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
-                cd src/fsharp && dotnet build
+                cd sayable-age/src/fsharp && dotnet build
             elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
-                cd src/swift && swift build
+                cd sayable-age/src/swift && swift build
             elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
-                cd src/haskell && cabal build
+                cd sayable-age/src/haskell && cabal build
             elif [ "$_target" = "ocaml" ] || [ "$_target" = "ml" ]; then
-                cd src/ocaml && eval "$(opam env 2>/dev/null)" && dune build
+                cd sayable-age/src/ocaml && eval "$(opam env 2>/dev/null)" && dune build
             elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
-                cd src/elixir && mix compile --warnings-as-errors
+                cd sayable-age/src/elixir && mix compile --warnings-as-errors
             elif [ "$_target" = "gleam" ] || [ "$_target" = "gm" ]; then
-                cd src/gleam && gleam build
+                cd sayable-age/src/gleam && gleam build
             elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
-                cd src/erlang && rebar3 compile
+                cd sayable-age/src/erlang && rebar3 compile
             elif [ "$_target" = "fortran" ] || [ "$_target" = "ft" ]; then
-                cd src/fortran && cmake -B build && cmake --build build
+                cd sayable-age/src/fortran && cmake -B build && cmake --build build
             elif [ "$_target" = "groovy" ] || [ "$_target" = "gy" ]; then
-                cd src/groovy && ./gradlew build
+                cd sayable-age/src/groovy && ./gradlew build
             elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
-                cd src/scala && ./gradlew build
+                cd sayable-age/src/scala && ./gradlew build
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
-                cd src/zig && zig build
+                cd sayable-age/src/zig && zig build
             else
                 echo "No build step for: $_target"
             fi
@@ -288,8 +288,8 @@ generate target *args:
     set -euo pipefail
     case "{{target}}" in
         locales)
-            {{python}} -m codegen.generate {{args}}
-            uv run --project src/python {{python}} -m codegen.docgen {{args}}
+            cd sayable-age && {{python}} -m codegen.generate {{args}}
+            cd sayable-age && uv run --project src/python {{python}} -m codegen.docgen {{args}}
             ;;
         *)
             echo "error: unknown generate target '{{target}}'" >&2
@@ -305,8 +305,8 @@ maintain target *args:
     set -euo pipefail
     case "{{target}}" in
         docs)
-            {{python}} -m codegen.align_tables {{args}} \
-                README.md CLAUDE.md CONTRIBUTING.md \
+            cd sayable-age && {{python}} -m codegen.align_tables {{args}} \
+                ../README.md ../CLAUDE.md ../CONTRIBUTING.md \
                 codegen/README.md config/README.md locales/README.md tests/README.md \
                 docs/*.md src/*/README.md
             ;;
@@ -322,8 +322,8 @@ maintain target *args:
 check:
     #!/usr/bin/env bash
     set -euo pipefail
-    {{python}} -m codegen.generate --check
-    uv run --project src/python {{python}} -m codegen.docgen --check
+    cd sayable-age && {{python}} -m codegen.generate --check
+    cd sayable-age && uv run --project src/python {{python}} -m codegen.docgen --check
     {{python}} .hecatron/tools/codegen/dockerfile.py --check
 
 # Generate Dockerfile from per-language snippets
@@ -340,7 +340,7 @@ version *ver:
 
     ver="{{ver}}"
     if [ -z "${ver}" ]; then
-        {{python}} -c "import json; print(json.load(open('config/version.json'))['version'])"
+        {{python}} -c "import json; print(json.load(open('sayable-age/config/version.json'))['version'])"
         exit 0
     fi
     if [[ ! "${ver}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
@@ -348,7 +348,7 @@ version *ver:
         exit 1
     fi
 
-    old="$({{python}} -c "import json; print(json.load(open('config/version.json'))['version'])")"
+    old="$({{python}} -c "import json; print(json.load(open('sayable-age/config/version.json'))['version'])")"
     if [ "${ver}" = "${old}" ]; then
         echo "Version is already ${ver}" >&2
         exit 0
@@ -357,8 +357,8 @@ version *ver:
     echo "Bumping version: ${old} → ${ver}"
 
     # 1. Update version.json
-    printf '{\n  "version": "%s"\n}\n' "${ver}" > config/version.json
-    echo "  updated config/version.json"
+    printf '{\n  "version": "%s"\n}\n' "${ver}" > sayable-age/config/version.json
+    echo "  updated sayable-age/config/version.json"
 
     # 2. Update all language implementations via their installer scripts
     for lang in ${_ALL_LANGS}; do
@@ -368,11 +368,11 @@ version *ver:
     done
 
     # 3. Regenerate C header (uses updated emitter.py)
-    {{python}} -m codegen.generate
-    uv run --project src/python {{python}} -m codegen.docgen
+    cd sayable-age && {{python}} -m codegen.generate
+    cd sayable-age && uv run --project src/python {{python}} -m codegen.docgen
     echo "  regenerated locale files"
 
-    # 4. Update docs/versioning.md
+    # 4. Update sayable-age/docs/versioning.md
     _sed_i() {
         if [ "$(uname -s)" = "Darwin" ]; then
             sed -i '' "$@"
@@ -380,13 +380,13 @@ version *ver:
             sed -i "$@"
         fi
     }
-    _sed_i "s/\"version\": \"${old}\"/\"version\": \"${ver}\"/" docs/versioning.md
-    _sed_i "s/#define PARENTTIME_VERSION \"${old}\"/#define PARENTTIME_VERSION \"${ver}\"/" docs/versioning.md
-    _sed_i "s/(def version \"${old}\")/(def version \"${ver}\")/" docs/versioning.md
-    _sed_i "s/version = \"${old}\"/version = \"${ver}\"/g" docs/versioning.md
-    _sed_i "s/-define(VERSION, \"${old}\")/-define(VERSION, \"${ver}\")/" docs/versioning.md
-    _sed_i "s/__version__ = \"${old}\"/__version__ = \"${ver}\"/" docs/versioning.md
-    echo "  updated docs/versioning.md"
+    _sed_i "s/\"version\": \"${old}\"/\"version\": \"${ver}\"/" sayable-age/docs/versioning.md
+    _sed_i "s/#define SAYABLEAGE_VERSION \"${old}\"/#define SAYABLEAGE_VERSION \"${ver}\"/" sayable-age/docs/versioning.md
+    _sed_i "s/(def version \"${old}\")/(def version \"${ver}\")/" sayable-age/docs/versioning.md
+    _sed_i "s/version = \"${old}\"/version = \"${ver}\"/g" sayable-age/docs/versioning.md
+    _sed_i "s/-define(VERSION, \"${old}\")/-define(VERSION, \"${ver}\")/" sayable-age/docs/versioning.md
+    _sed_i "s/__version__ = \"${old}\"/__version__ = \"${ver}\"/" sayable-age/docs/versioning.md
+    echo "  updated sayable-age/docs/versioning.md"
 
     echo ""
     echo "Done. Version is now ${ver}."
@@ -464,21 +464,21 @@ lint *target:
         mkdir -p .logs/lint
         (
             if [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-                cd src/typescript && npm run lint
+                cd sayable-age/src/typescript && npm run lint
             elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
-                cd src/dart && dart analyze
+                cd sayable-age/src/dart && dart analyze
             elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
-                cd src/python && uv run --extra dev ruff check . && uv run --extra dev pyright
+                cd sayable-age/src/python && uv run --extra dev ruff check . && uv run --extra dev pyright
             elif [ "$_target" = "go" ]; then
-                cd src/go && golangci-lint run
+                cd sayable-age/src/go && golangci-lint run
             elif [ "$_target" = "ruby" ] || [ "$_target" = "rb" ]; then
-                cd src/ruby && bundle exec rubocop
+                cd sayable-age/src/ruby && bundle exec rubocop
             elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-                cd src/rust && cargo clippy
+                cd sayable-age/src/rust && cargo clippy
             elif [ "$_target" = "php" ]; then
-                cd src/php && composer analyse && composer cs-check
+                cd sayable-age/src/php && composer analyse && composer cs-check
             elif [ "$_target" = "lua" ] || [ "$_target" = "lu" ]; then
-                cd src/lua && luacheck parenttime.lua locales/
+                cd sayable-age/src/lua && luacheck sayableage.lua locales/
             elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
                 echo "Kotlin uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "c" ]; then
@@ -589,56 +589,56 @@ clean *target:
             exit 1
         fi
         if [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
-        rm -rf src/ada/build src/ada/obj
+        rm -rf sayable-age/src/ada/build src/ada/obj
     elif [ "$_target" = "typescript" ] || [ "$_target" = "ts" ]; then
-        rm -rf src/typescript/dist
+        rm -rf sayable-age/src/typescript/dist
     elif [ "$_target" = "python" ] || [ "$_target" = "py" ]; then
-        find src/python -type d -name __pycache__ -not -path '*/\.venv/*' -exec rm -rf {} + 2>/dev/null || true
-        rm -rf src/python/.pytest_cache
+        find sayable-age/src/python -type d -name __pycache__ -not -path '*/\.venv/*' -exec rm -rf {} + 2>/dev/null || true
+        rm -rf sayable-age/src/python/.pytest_cache
     elif [ "$_target" = "rust" ] || [ "$_target" = "rs" ]; then
-        rm -rf src/rust/target
+        rm -rf sayable-age/src/rust/target
     elif [ "$_target" = "kotlin" ] || [ "$_target" = "kt" ]; then
-        rm -rf src/kotlin/build src/kotlin/.gradle
+        rm -rf sayable-age/src/kotlin/build src/kotlin/.gradle
     elif [ "$_target" = "c" ]; then
-        rm -rf src/c/build || rm -rf src/c/build
+        rm -rf sayable-age/src/c/build || rm -rf sayable-age/src/c/build
     elif [ "$_target" = "cli" ]; then
-        rm -rf cli/build || rm -rf cli/build
+        rm -rf sayable-age/cli/build || rm -rf sayable-age/cli/build
     elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
-        rm -rf src/cpp/build || rm -rf src/cpp/build
+        rm -rf sayable-age/src/cpp/build || rm -rf sayable-age/src/cpp/build
     elif [ "$_target" = "java" ]; then
-        rm -rf src/java/build src/java/.gradle
+        rm -rf sayable-age/src/java/build src/java/.gradle
     elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
-        rm -rf src/csharp/ParentTime/bin src/csharp/ParentTime/obj src/csharp/ParentTime.Tests/bin src/csharp/ParentTime.Tests/obj
+        rm -rf sayable-age/src/csharp/SayableAge/bin src/csharp/SayableAge/obj src/csharp/SayableAge.Tests/bin src/csharp/SayableAge.Tests/obj
     elif [ "$_target" = "fsharp" ] || [ "$_target" = "fs" ]; then
-        rm -rf src/fsharp/ParentTime/bin src/fsharp/ParentTime/obj src/fsharp/ParentTime.Tests/bin src/fsharp/ParentTime.Tests/obj
+        rm -rf sayable-age/src/fsharp/SayableAge/bin src/fsharp/SayableAge/obj src/fsharp/SayableAge.Tests/bin src/fsharp/SayableAge.Tests/obj
     elif [ "$_target" = "swift" ] || [ "$_target" = "sw" ]; then
-        rm -rf src/swift/.build
+        rm -rf sayable-age/src/swift/.build
     elif [ "$_target" = "haskell" ] || [ "$_target" = "hs" ]; then
-        rm -rf src/haskell/dist-newstyle
+        rm -rf sayable-age/src/haskell/dist-newstyle
     elif [ "$_target" = "ocaml" ] || [ "$_target" = "ml" ]; then
-        rm -rf src/ocaml/_build
+        rm -rf sayable-age/src/ocaml/_build
     elif [ "$_target" = "erlang" ] || [ "$_target" = "erl" ]; then
-        rm -rf src/erlang/_build
+        rm -rf sayable-age/src/erlang/_build
     elif [ "$_target" = "clojure" ] || [ "$_target" = "clj" ]; then
-        rm -rf src/clojure/.cpcache
+        rm -rf sayable-age/src/clojure/.cpcache
     elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
-        rm -rf src/cobol/build
+        rm -rf sayable-age/src/cobol/build
     elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
-        rm -rf src/scala/build src/scala/.gradle
+        rm -rf sayable-age/src/scala/build src/scala/.gradle
     elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
-        rm -rf src/zig/zig-out src/zig/.zig-cache
+        rm -rf sayable-age/src/zig/zig-out src/zig/.zig-cache
     elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then
-        rm -rf src/elixir/_build
+        rm -rf sayable-age/src/elixir/_build
     elif [ "$_target" = "gleam" ] || [ "$_target" = "gm" ]; then
-        rm -rf src/gleam/build
+        rm -rf sayable-age/src/gleam/build
     elif [ "$_target" = "elm" ] || [ "$_target" = "el" ]; then
-        rm -rf src/elm/elm-stuff
+        rm -rf sayable-age/src/elm/elm-stuff
     elif [ "$_target" = "fortran" ] || [ "$_target" = "ft" ]; then
-        rm -rf src/fortran/build
+        rm -rf sayable-age/src/fortran/build
     elif [ "$_target" = "groovy" ] || [ "$_target" = "gy" ]; then
-        rm -rf src/groovy/build src/groovy/.gradle
+        rm -rf sayable-age/src/groovy/build src/groovy/.gradle
     elif [ "$_target" = "dart" ] || [ "$_target" = "dt" ]; then
-        rm -rf src/dart/.dart_tool
+        rm -rf sayable-age/src/dart/.dart_tool
     elif [ "$_target" = "codegen" ]; then
         find codegen -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
     elif [ "$_target" = "go" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ]; then
@@ -994,8 +994,8 @@ benchmark type="cpu" *target:
         set -- {{target}}
         _rtype="${1:-cpu}"; shift 2>/dev/null || true
         case "$_rtype" in
-            cpu)   uv run --with matplotlib python3 benchmarks/cpu/report.py "$@" ;;
-            build) uv run --with matplotlib python3 benchmarks/build/report.py "$@" ;;
+            cpu)   uv run --with matplotlib python3 sayable-age/benchmarks/cpu/report.py "$@" ;;
+            build) uv run --with matplotlib python3 sayable-age/benchmarks/build/report.py "$@" ;;
             *)     echo "error: unknown report type '$_rtype'" >&2; exit 1 ;;
         esac
         exit 0
@@ -1057,8 +1057,8 @@ benchmark type="cpu" *target:
             if [ "${_nflag}" != "0" ] && sudo -n true 2>/dev/null; then
                 _nice_cmd="sudo -n nice -n ${_nflag}"
             fi
-            ${_nice_cmd} python3 benchmarks/build/bench_build.py "${name}" 2>&1 | tee ".logs/benchmark/build-${name}.log"
-            if [ -n "${SUDO_USER:-}" ]; then chown -R "${SUDO_USER}" .logs/benchmark benchmarks/build/results 2>/dev/null; fi
+            ${_nice_cmd} python3 sayable-age/benchmarks/build/bench_build.py "${name}" 2>&1 | tee ".logs/benchmark/build-${name}.log"
+            if [ -n "${SUDO_USER:-}" ]; then chown -R "${SUDO_USER}" .logs/benchmark sayable-age/benchmarks/build/results 2>/dev/null; fi
         fi
         exit 0
     fi
@@ -1129,91 +1129,91 @@ benchmark type="cpu" *target:
                         _sdk="$(xcrun --show-sdk-path 2>/dev/null)"
                         [ -n "$_sdk" ] && _largs="-largs -L$_sdk/usr/lib"
                     fi
-                    cd src/ada && gprbuild -P parenttime.gpr -XBUILD_MODE=bench $_largs && ./build/bench_parenttime
+                    cd sayable-age/src/ada && gprbuild -P sayableage.gpr -XBUILD_MODE=bench $_largs && ./build/bench_sayableage
                     ;;
                 c)
-                    cd src/c && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_parenttime && ./build/bench_parenttime
+                    cd sayable-age/src/c && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_sayableage && ./build/bench_sayableage
                     ;;
                 clojure)
-                    cd src/clojure && clojure -M:bench -m bench-parenttime
+                    cd sayable-age/src/clojure && clojure -M:bench -m bench-sayableage
                     ;;
                 cobol)
-                    cd src/cobol && cmake -B build && cmake --build build --target cobol_bench_target && ./build/bench_parenttime_cobol
+                    cd sayable-age/src/cobol && cmake -B build && cmake --build build --target cobol_bench_target && ./build/bench_sayableage_cobol
                     ;;
                 cpp)
-                    cd src/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_parenttime && ./build/bench_parenttime
+                    cd sayable-age/src/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_sayableage && ./build/bench_sayableage
                     ;;
                 csharp)
-                    cd src/csharp && dotnet run --project ParentTime.Bench -c Release
+                    cd sayable-age/src/csharp && dotnet run --project SayableAge.Bench -c Release
                     ;;
                 dart)
-                    cd src/dart && dart run benchmark/bench_parenttime.dart
+                    cd sayable-age/src/dart && dart run benchmark/bench_sayableage.dart
                     ;;
                 elixir)
-                    cd src/elixir && mix run bench/bench_parenttime.exs
+                    cd sayable-age/src/elixir && mix run bench/bench_sayableage.exs
                     ;;
                 elm)
                     echo "Elm benchmarking is not supported (no native timing primitives)."
                     ;;
                 erlang)
-                    cd src/erlang && rebar3 compile && erlc -pa _build/default/lib/parenttime/ebin -o _build/default/lib/parenttime/ebin bench/bench_parenttime.erl && erl -pa _build/default/lib/parenttime/ebin -noshell -eval 'bench_parenttime:main()' -s init stop
+                    cd sayable-age/src/erlang && rebar3 compile && erlc -pa _build/default/lib/sayableage/ebin -o _build/default/lib/sayableage/ebin bench/bench_sayableage.erl && erl -pa _build/default/lib/sayableage/ebin -noshell -eval 'bench_sayableage:main()' -s init stop
                     ;;
                 fortran)
-                    cd src/fortran && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_parenttime && ./build/bench_parenttime
+                    cd sayable-age/src/fortran && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target bench_sayableage && ./build/bench_sayableage
                     ;;
                 fsharp)
-                    cd src/fsharp && dotnet run --project ParentTime.Bench -c Release
+                    cd sayable-age/src/fsharp && dotnet run --project SayableAge.Bench -c Release
                     ;;
                 gleam)
-                    cd src/gleam && gleam build && erl -pa build/dev/erlang/parenttime/ebin -pa build/dev/erlang/gleam_stdlib/ebin -noshell -eval 'bench_parenttime:main()' -s init stop
+                    cd sayable-age/src/gleam && gleam build && erl -pa build/dev/erlang/sayableage/ebin -pa build/dev/erlang/gleam_stdlib/ebin -noshell -eval 'bench_sayableage:main()' -s init stop
                     ;;
                 go)
-                    cd src/go && go run ./cmd/bench/
+                    cd sayable-age/src/go && go run ./cmd/bench/
                     ;;
                 groovy)
-                    cd src/groovy && ./gradlew -q classes && groovy -cp build/classes/groovy/main src/main/groovy/parenttime/bench/Benchmark.groovy
+                    cd sayable-age/src/groovy && ./gradlew -q classes && groovy -cp build/classes/groovy/main src/main/groovy/sayableage/bench/Benchmark.groovy
                     ;;
                 haskell)
-                    cd src/haskell && cabal run bench-parenttime
+                    cd sayable-age/src/haskell && cabal run bench-sayableage
                     ;;
                 java)
-                    cd src/java && ./gradlew -q classes && java -cp build/classes/java/main parenttime.bench.Benchmark
+                    cd sayable-age/src/java && ./gradlew -q classes && java -cp build/classes/java/main sayableage.bench.Benchmark
                     ;;
                 kotlin)
-                    cd src/kotlin && ./gradlew -q classes && java -cp "build/classes/kotlin/main:$(find ~/.gradle/caches -name 'kotlin-stdlib-*.jar' 2>/dev/null | head -1)" parenttime.bench.BenchmarkKt
+                    cd sayable-age/src/kotlin && ./gradlew -q classes && java -cp "build/classes/kotlin/main:$(find ~/.gradle/caches -name 'kotlin-stdlib-*.jar' 2>/dev/null | head -1)" sayableage.bench.BenchmarkKt
                     ;;
                 lua)
-                    cd src/lua && lua5.4 bench/bench_parenttime.lua
+                    cd sayable-age/src/lua && lua5.4 bench/bench_sayableage.lua
                     ;;
                 ocaml)
-                    cd src/ocaml && eval "$(opam env 2>/dev/null)" && dune exec bench/bench_parenttime.exe
+                    cd sayable-age/src/ocaml && eval "$(opam env 2>/dev/null)" && dune exec bench/bench_sayableage.exe
                     ;;
                 perl)
-                    cd src/perl && perl bench/bench_parenttime.pl
+                    cd sayable-age/src/perl && perl bench/bench_sayableage.pl
                     ;;
                 php)
-                    cd src/php && php bench/bench_parenttime.php
+                    cd sayable-age/src/php && php bench/bench_sayableage.php
                     ;;
                 python)
-                    cd src/python && uv run python benchmarks/bench_parenttime.py
+                    cd sayable-age/src/python && uv run python benchmarks/bench_sayableage.py
                     ;;
                 ruby)
-                    cd src/ruby && ruby bench/bench_parenttime.rb
+                    cd sayable-age/src/ruby && ruby bench/bench_sayableage.rb
                     ;;
                 rust)
-                    cd src/rust && cargo run --release --bin bench_parenttime
+                    cd sayable-age/src/rust && cargo run --release --bin bench_sayableage
                     ;;
                 scala)
-                    cd src/scala && ./gradlew -q classes && java -cp "build/classes/scala/main:$(find ~/.gradle/caches -name 'scala3-library_3-*.jar' 2>/dev/null | head -1):$(find ~/.gradle/caches -name 'scala-library-*.jar' 2>/dev/null | head -1)" parenttime.bench.Benchmark
+                    cd sayable-age/src/scala && ./gradlew -q classes && java -cp "build/classes/scala/main:$(find ~/.gradle/caches -name 'scala3-library_3-*.jar' 2>/dev/null | head -1):$(find ~/.gradle/caches -name 'scala-library-*.jar' 2>/dev/null | head -1)" sayableage.bench.Benchmark
                     ;;
                 swift)
-                    cd src/swift && swift run -c release Benchmark
+                    cd sayable-age/src/swift && swift run -c release Benchmark
                     ;;
                 typescript)
-                    cd src/typescript && npx tsx bench/bench_parenttime.ts
+                    cd sayable-age/src/typescript && npx tsx bench/bench_sayableage.ts
                     ;;
                 zig)
-                    cd src/zig && zig build -Doptimize=ReleaseFast && ./zig-out/bin/bench_parenttime
+                    cd sayable-age/src/zig && zig build -Doptimize=ReleaseFast && ./zig-out/bin/bench_sayableage
                     ;;
                 *)
                     echo "Unknown target: $_target (try 'just benchmark cpu help')" >&2

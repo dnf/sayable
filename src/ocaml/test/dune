@@ -1,3 +1,0 @@
-(test
- (name test_format_age)
- (libraries parent_time alcotest))
