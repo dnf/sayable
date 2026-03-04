@@ -1,4 +1,4 @@
-module ParentTime.Formatter exposing (formatAge, formatStage)
+module ParentTime.Formatter exposing (formatAge, formatStage, version)
 
 import ParentTime.Internal exposing (computeAge)
 import ParentTime.Types
@@ -12,6 +12,11 @@ import ParentTime.Types
         , lookupUnitForm
         , resolveStageLabel
         )
+
+
+version : String
+version =
+    "0.5.0"
 
 
 formatAge : Locale -> Compactness -> String -> String -> Maybe String

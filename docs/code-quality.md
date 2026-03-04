@@ -97,7 +97,7 @@ how each language enforces this:
 | Dart       | `const` constructors + `final` fields | All fields `final`; `const` constructors where possible; null safety              |
 | Elixir     | Immutable by language design          | All data is immutable in Elixir; functions are pure by convention                 |
 | Elm        | Pure functions (no mutable state)     | Elm has no mutable state; all functions are pure by language design               |
-| Erlang     | Immutable by language design          | Pure functional; all data passed through function parameters; no mutable state   |
+| Erlang     | Immutable by language design          | Pure functional; all data passed through function parameters; no mutable state    |
 | F#         | `private` fields + immutable records  | Records are immutable by default; fields set in constructor                       |
 | Fortran    | `intent(in)` on all locale args       | Derived types passed as `intent(in)` prevent modification; pure where possible    |
 | Gleam      | Immutable by language design          | All data is immutable in Gleam; custom types and records are immutable by default |
@@ -176,16 +176,16 @@ convenience but is **not enforced in CI** — unaligned tables are fine.
 - `just maintain docs` — aligns all project-owned markdown files
 - Files covered: `README.md`, `CLAUDE.md`, `CONTRIBUTING.md`,
   `codegen/README.md`, `locales/README.md`, `tests/README.md`,
-  `tests/testing.md`, `docs/*.md`, `src/*/README.md`
+  `config/tests.json`, `docs/*.md`, `src/*/README.md`
 - Generated files (`locales/example-output/*.md`) are excluded — they are
   maintained by `codegen/docgen.py`
 
 ### Canonical test IDs
 
-Every test must be annotated with the ID(s) from [`tests/testing.md`](../tests/testing.md)
+Every test must be annotated with the ID(s) from [`config/tests.json`](../config/tests.json)
 that it implements. This enables cross-language verification that all
 implementations cover the same spec. See the "Test ID convention" section of
-`tests/testing.md` for the three placement patterns (comment above, trailing
+`config/tests.json` for the three placement patterns (comment above, trailing
 comment, or inline comment) used across languages.
 
 ## Shell scripts
@@ -237,20 +237,20 @@ strictness settings.
 | Language   | Tools                       | Key strictness                                                  | Tests | Assertions |
 | ---------- | --------------------------- | --------------------------------------------------------------- | ----: | ---------: |
 | Ada        | GNAT compiler               | `-gnatwa -gnatwe -gnata -gnatVa`; CTest-style harness           | 214   | 214        |
-| C          | CMake + GCC/Clang           | `-Wall -Wextra -Wpedantic -Werror -Wconversion`; freestanding   |  36   | 243        |
+| C          | CMake + GCC/Clang           | `-Wall -Wextra -Wpedantic -Werror -Wconversion`; freestanding   | 36    | 243        |
 | C#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 140   | 191        |
 | C++        | Compiler flags + clang-tidy | `-Wall -Wextra -Wpedantic -Werror` + 13 more; clang-tidy config | 164   | 167        |
-| Clojure    | Clojure CLI                 | `*warn-on-reflection*`; cognitect test-runner                   |  30   | 241        |
-| Dart       | Dart analyzer               | strict-casts, strict-raw-types; 30+ lint rules                  |  45   | 521        |
+| Clojure    | Clojure CLI                 | `*warn-on-reflection*`; cognitect test-runner                   | 30    | 241        |
+| Dart       | Dart analyzer               | strict-casts, strict-raw-types; 30+ lint rules                  | 45    | 521        |
 | Elixir     | Mix compiler                | `warnings_as_errors: true`; ExUnit                              | 209   | 209        |
 | Elm        | Elm compiler                | Compiler warnings-as-errors; `elm-explorations/test`            | 209   | 209        |
-| Erlang     | Rebar3 + OTP compiler       | `warnings_as_errors`; EUnit                                     |  24   | 240        |
+| Erlang     | Rebar3 + OTP compiler       | `warnings_as_errors`; EUnit                                     | 24    | 240        |
 | F#         | .NET compiler               | `TreatWarningsAsErrors`; xUnit                                  | 215   | 208        |
 | Fortran    | gfortran compiler           | `-Wall -Wextra -Wpedantic -Werror -std=f2008`; CTest            | 214   | 214        |
 | Gleam      | Gleam compiler              | Warnings-as-errors; gleeunit                                    | 208   | 208        |
 | Go         | golangci-lint v2            | 10 linters + gofmt/goimports formatters                         | 72    | 128        |
 | Groovy     | Groovy + Java compiler      | `-Werror`; Java 17; `@Immutable` data classes                   | 140   | 291        |
-| Haskell    | GHC compiler                | `-Wall -Werror`; Hspec                                          |  40   | 240        |
+| Haskell    | GHC compiler                | `-Wall -Werror`; Hspec                                          | 40    | 240        |
 | Java       | Java compiler               | `-Xlint:all -Werror`; Java 17; sealed interfaces, records       | 135   | 191        |
 | Kotlin     | Kotlin compiler             | `explicitApi()`; `allWarningsAsErrors`; `-Xjsr305=strict`       | 115   | 191        |
 | Lua        | luacheck                    | Lua 5.4 std; busted globals for tests                           | 194   | 194        |
@@ -265,7 +265,7 @@ strictness settings.
 | TypeScript | tsc + ESLint                | `strict` + 7 extra flags; `strict-type-checked` ESLint rules    | 147   | 168        |
 | Zig        | Zig compiler                | Warnings-as-errors; built-in test framework                     | 163   | 163        |
 
-All implementations cover the same [212 canonical test cases](../tests/testing.md).
+All implementations cover the same [217 canonical test cases](../config/tests.json).
 **Tests** is what each framework reports when you run the suite. **Assertions** is
 the count of individual assertion calls in the test source. These numbers differ
 across languages because each ecosystem has its own idiomatic test granularity —

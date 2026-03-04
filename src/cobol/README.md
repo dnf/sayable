@@ -78,12 +78,12 @@ Formats a child's age as a human-readable string.
 
 **Inputs:**
 
-| Variable               | Type     | Description                                        |
-| ---------------------- | -------- | -------------------------------------------------- |
-| `WS-LOOKUP-CODE`       | `X(8)`   | Locale code (call `GET-LOCALE` first)              |
-| `WS-FMT-COMPACTNESS`   | `9`      | `PT-NORMAL` (0), `PT-SHORT` (1), or `PT-COMPACT` (2) |
-| `WS-FMT-DOB`           | `X(10)`  | Date of birth (`YYYY-MM-DD`)                       |
-| `WS-FMT-AS-OF`         | `X(10)`  | Reference date (`YYYY-MM-DD`)                      |
+| Variable             | Type    | Description                                          |
+| -------------------- | ------- | ---------------------------------------------------- |
+| `WS-LOOKUP-CODE`     | `X(8)`  | Locale code (call `GET-LOCALE` first)                |
+| `WS-FMT-COMPACTNESS` | `9`     | `PT-NORMAL` (0), `PT-SHORT` (1), or `PT-COMPACT` (2) |
+| `WS-FMT-DOB`         | `X(10)` | Date of birth (`YYYY-MM-DD`)                         |
+| `WS-FMT-AS-OF`       | `X(10)` | Reference date (`YYYY-MM-DD`)                        |
 
 **Output:** `WS-FORMAT-RESULT` (`X(256)`) -- use `FUNCTION TRIM(... TRAILING)` to get the meaningful content.
 
@@ -93,8 +93,8 @@ Determines the child's life stage.
 
 **Inputs:** Same as FORMAT-AGE, plus:
 
-| Variable        | Type   | Description                               |
-| --------------- | ------ | ----------------------------------------- |
+| Variable        | Type   | Description                                              |
+| --------------- | ------ | -------------------------------------------------------- |
 | `WS-FMT-GENDER` | `X(1)` | `"m"` or `"f"` for gendered labels, or space for neutral |
 
 **Output:** `WS-STAGE-RESULT` (`X(256)`)

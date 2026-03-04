@@ -1,6 +1,8 @@
 import 'types.dart';
 import 'locales/locales.dart';
 
+const String version = '0.5.0';
+
 const _maxAgeMonths = 6000;
 
 class _AgeComponents {

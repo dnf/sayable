@@ -26,8 +26,20 @@ uninstall_linux() {
 
 deps() { :; }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/static final String VERSION = "[^"]*"/static final String VERSION = "'"${ver}"'"/' \
+        "${ROOT}/src/groovy/src/main/groovy/parenttime/ParentTime.groovy"
+    _sed_i "s/^version = '[^']*'/version = '${ver}'/" \
+        "${ROOT}/src/groovy/build.gradle"
+}
+
 case "${1:-}" in
-    install)   log "Installing Groovy (JDK 17)..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Groovy..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Groovy (JDK 17)..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Groovy..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata)
+        _set_metadata_gradle_groovy "${ROOT}/src/groovy/build.gradle"
+        ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

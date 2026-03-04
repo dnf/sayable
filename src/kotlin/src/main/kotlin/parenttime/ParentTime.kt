@@ -5,6 +5,8 @@ import java.time.YearMonth
 import java.time.temporal.ChronoUnit
 import parenttime.locales.Locales
 
+public const val VERSION: String = "0.5.0"
+
 private const val MAX_AGE_MONTHS = 6000
 
 /**

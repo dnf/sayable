@@ -2,6 +2,8 @@ with Parenttime_Types; use Parenttime_Types;
 
 package Parenttime is
 
+   Version : constant String := "0.5.0";
+
    function Format_Age
      (Loc  : Locale;
       Comp : Compactness;

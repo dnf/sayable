@@ -15,8 +15,16 @@ uninstall_linux() { $SUDO rm -rf /usr/local/go; }
 
 deps() { :; }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/const Version = "[^"]*"/const Version = "'"${ver}"'"/' \
+        "${ROOT}/src/go/parenttime.go"
+}
+
 case "${1:-}" in
-    install)   log "Installing Go..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Go..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Go..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Go..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata) ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

@@ -7,6 +7,8 @@ namespace ParentTime;
 /** Locale-aware age formatter. */
 final class ParentTime
 {
+    public const VERSION = '0.5.0';
+
     private const MAX_AGE_MONTHS = 6000;
 
     private readonly AgeLocale $locale;

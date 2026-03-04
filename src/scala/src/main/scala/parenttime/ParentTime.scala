@@ -5,6 +5,8 @@ import java.time.YearMonth
 import java.time.temporal.ChronoUnit
 import parenttime.locales.Locales
 
+val Version = "0.5.0"
+
 private val MaxAgeMonths = 6000
 
 private[parenttime] var timeNow: () => LocalDate = () => LocalDate.now()

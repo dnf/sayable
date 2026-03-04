@@ -5,6 +5,8 @@ open ParentTimeLib.Types
 
 module Formatter =
 
+    let [<Literal>] Version = "0.5.0"
+
     let [<Literal>] private MaxAgeMonths = 6000
 
     let mutable internal timeNow: unit -> DateTime = fun () -> DateTime.Today

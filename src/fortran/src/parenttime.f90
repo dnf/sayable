@@ -3,6 +3,8 @@ module parenttime
   implicit none
   private
 
+  character(len=*), parameter, public :: PT_VERSION = "0.5.0"
+
   public :: pt_format_age, pt_format_stage
 
 contains

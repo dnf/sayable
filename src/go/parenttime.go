@@ -2,6 +2,8 @@ package parenttime
 
 import "time"
 
+const Version = "0.5.0"
+
 // timeNow is a package-level variable for testable "today" default.
 var timeNow = time.Now
 

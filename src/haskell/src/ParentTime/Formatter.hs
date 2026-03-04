@@ -3,10 +3,14 @@ module ParentTime.Formatter
     , formatStagePure
     , formatAge
     , formatStage
+    , version
     ) where
 
 import ParentTime.Internal (computeAge, today)
 import ParentTime.Types
+
+version :: String
+version = "0.5.0"
 
 maxAgeMonths :: Int
 maxAgeMonths = 6000

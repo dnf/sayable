@@ -7,6 +7,8 @@ import parenttime.locales.Locales
 
 class ParentTime {
 
+    static final String VERSION = "0.5.0"
+
     private static final int MAX_AGE_MONTHS = 6000
 
     // Package-visible for test clock override

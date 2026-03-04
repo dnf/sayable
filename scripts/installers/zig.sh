@@ -21,8 +21,18 @@ uninstall_linux() { $SUDO rm -rf /opt/zig /usr/local/bin/zig; }
 
 deps() { :; }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/pub const version = "[^"]*"/pub const version = "'"${ver}"'"/' \
+        "${ROOT}/src/zig/src/parenttime.zig"
+    _sed_i 's/\.version = "[^"]*"/.version = "'"${ver}"'"/' \
+        "${ROOT}/src/zig/build.zig.zon"
+}
+
 case "${1:-}" in
-    install)   log "Installing Zig..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Zig..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Zig..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Zig..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata) ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

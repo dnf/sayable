@@ -183,7 +183,7 @@ Runs all three checks: locale codegen, locale docs, and markdown table alignment
 
 1. Create `locales/{code}.json` with the locale data (use an existing plural rule — all 23 CLDR patterns are supported)
 2. Run `just generate locales`
-4. Add test cases to `tests/testing.md` and implement them in all test files
+4. Add test cases to `config/tests.json` and implement them in all test files
 5. Run all test suites
 
 ### Fixing a plural rule

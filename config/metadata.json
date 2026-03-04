@@ -1,0 +1,7 @@
+{
+  "name": "parent-time",
+  "description": "A thoughtful time formatting library that reflects how we think about little ones",
+  "author": "Don Neufeld",
+  "license": "MIT",
+  "repository": "https://github.com/dnf/parent-time"
+}

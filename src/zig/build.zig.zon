@@ -1,6 +1,6 @@
 .{
     .name = .parenttime,
-    .version = "1.0.0",
+    .version = "0.5.0",
     .fingerprint = 0x195ce2da315472f3,
     .paths = .{
         "build.zig",

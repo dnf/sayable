@@ -150,6 +150,8 @@ def emit_header(all_locales: list[dict]) -> str:
     lines.append("#ifndef PARENTTIME_H")
     lines.append("#define PARENTTIME_H")
     lines.append("")
+    lines.append('#define PARENTTIME_VERSION "0.5.0"')
+    lines.append("")
     lines.append("#include <stddef.h>")
     lines.append("#include <stdint.h>")
     lines.append("#include <stdbool.h>")

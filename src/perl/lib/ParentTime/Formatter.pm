@@ -7,6 +7,8 @@ package ParentTime::Formatter;
 use Time::Local qw(timegm);
 use ParentTime::Locale;
 
+our $VERSION = '0.5.0';
+
 my $MAX_AGE_MONTHS = 6000;
 
 sub new {

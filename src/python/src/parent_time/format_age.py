@@ -9,6 +9,8 @@ from typing import Literal
 from parent_time.locale import AgeLocale, UnitForms, resolve_stage, resolve_unit
 from parent_time.locales.en import EN
 
+__version__ = "0.5.0"
+
 MAX_AGE_MONTHS = 6000
 
 

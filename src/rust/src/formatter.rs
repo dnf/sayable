@@ -4,6 +4,9 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use crate::types::{AgeLocale, Compactness, Gender, PluralCategory, UnitForms};
 
+/// Library version.
+pub const VERSION: &str = "0.5.0";
+
 static NOW_OVERRIDE: Mutex<Option<(i32, i32, i32)>> = Mutex::new(None);
 
 /// Override the "today" date for testing purposes.

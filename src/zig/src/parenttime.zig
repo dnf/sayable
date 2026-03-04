@@ -1,5 +1,7 @@
 // parent-time Zig implementation — types and formatter.
 
+pub const version = "0.5.0";
+
 pub const locales = @import("locales/locales.zig");
 
 // ---- Types ----

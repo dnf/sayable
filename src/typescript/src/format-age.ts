@@ -1,6 +1,8 @@
 import type { AgeLocale, Compactness, Gender, UnitForms } from './locale.js';
 import { en, resolveStage, resolveUnit } from './locale.js';
 
+export const VERSION = "0.5.0";
+
 const MAX_AGE_MONTHS = 6000;
 
 /** Parsed date components and derived calendar months / elapsed days. */

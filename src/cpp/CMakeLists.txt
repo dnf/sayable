@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 project(parent-time
-    VERSION 0.1.0
+    VERSION 0.5.0
     DESCRIPTION "A thoughtful time formatting library that reflects how we think about little ones"
     HOMEPAGE_URL "https://github.com/dnf/parent-time"
     LANGUAGES CXX

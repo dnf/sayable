@@ -21,8 +21,23 @@ uninstall_linux() { $SUDO rm -f /usr/local/bin/gleam; }
 
 deps() { :; }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/pub const version = "[^"]*"/pub const version = "'"${ver}"'"/' \
+        "${ROOT}/src/gleam/src/parenttime/formatter.gleam"
+    _sed_i 's/^version = "[^"]*"/version = "'"${ver}"'"/' \
+        "${ROOT}/src/gleam/gleam.toml"
+}
+
 case "${1:-}" in
-    install)   log "Installing Gleam..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Gleam..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Gleam..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Gleam..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata)
+        _sed_i 's/^description = "[^"]*"/description = "'"${PT_DESCRIPTION}"'"/' \
+            "${ROOT}/src/gleam/gleam.toml"
+        _sed_i 's/^licences = \["[^"]*"\]/licences = ["'"${PT_LICENSE}"'"]/' \
+            "${ROOT}/src/gleam/gleam.toml"
+        ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

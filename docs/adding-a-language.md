@@ -159,7 +159,7 @@ hand-implemented.
 
 ## 7. Write tests
 
-All tests come from `tests/testing.md`. Implement every test case using the
+All tests come from `config/tests.json`. Implement every test case using the
 language's standard test framework. The test structure across languages:
 
 - Null/edge cases
@@ -299,7 +299,7 @@ just test               # run all languages to confirm nothing broke
 - [ ] Generator function registered in `codegen/generate.py`
 - [ ] Generated locale files pass the language's linter
 - [ ] Core formatter ported from an existing implementation
-- [ ] All test cases from `tests/testing.md` implemented
+- [ ] All test cases from `config/tests.json` implemented
 - [ ] justfile updated (test, build, lint, clean recipes)
 - [ ] Build artifacts added to `src/.gitignore`
 - [ ] Linter configured with zero warnings

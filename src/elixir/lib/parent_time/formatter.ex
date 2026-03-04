@@ -3,6 +3,9 @@ defmodule ParentTime.Formatter do
 
   alias ParentTime.Locale
 
+  @version "0.5.0"
+  def version, do: @version
+
   @max_age_months 6000
 
   def format_age(locale, compactness, dob, as_of) do

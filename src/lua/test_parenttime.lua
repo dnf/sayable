@@ -1,5 +1,5 @@
 --- Tests for parenttime — mirrors the canonical test specification.
--- All test IDs reference tests/testing.md.
+-- All test IDs reference config/tests.json.
 
 local parenttime = require("parenttime")
 local format_age = parenttime.format_age

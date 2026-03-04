@@ -2,6 +2,7 @@
 *> Included via COPY in the main test program
 
 *> Constants
+ 01 PT-VERSION              PIC X(10) VALUE "0.5.0".
  01 PT-MAX-AGE-MONTHS      PIC 9(4) VALUE 6000.
  01 PT-NORMAL              PIC 9 VALUE 0.
  01 PT-SHORT               PIC 9 VALUE 1.

@@ -20,8 +20,31 @@ uninstall_linux() {
 
 deps() { (cd "$ROOT/src/php" && composer install); }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i "s/public const VERSION = '[^']*'/public const VERSION = '${ver}'/" \
+        "${ROOT}/src/php/src/ParentTime.php"
+}
+
 case "${1:-}" in
-    install)   log "Installing PHP..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling PHP..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing PHP..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling PHP..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata)
+        python3 -c "
+import json, os
+f = os.path.join('${ROOT}', 'src', 'php', 'composer.json')
+with open(f) as fh: data = json.load(fh)
+data['description'] = os.environ['PT_DESCRIPTION']
+data['license'] = os.environ['PT_LICENSE']
+data['authors'] = [{'name': os.environ['PT_AUTHOR']}]
+data['homepage'] = os.environ['PT_REPOSITORY']
+data['support']['source'] = os.environ['PT_REPOSITORY'] + '/tree/main/src/php'
+data['support']['issues'] = os.environ['PT_REPOSITORY'] + '/issues'
+with open(f, 'w') as fh:
+    json.dump(data, fh, indent=4, ensure_ascii=False)
+    fh.write('\n')
+"
+        ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

@@ -3,6 +3,8 @@
 
 local M = {}
 
+M.VERSION = "0.5.0"
+
 local MAX_AGE_MONTHS = 6000
 
 local function is_leap_year(y)

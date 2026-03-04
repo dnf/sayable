@@ -299,7 +299,7 @@ maintain target *args:
         docs)
             {{python}} -m codegen.align_tables {{args}} \
                 README.md CLAUDE.md CONTRIBUTING.md \
-                codegen/README.md locales/README.md tests/README.md tests/testing.md \
+                codegen/README.md config/README.md locales/README.md tests/README.md \
                 docs/*.md src/*/README.md
             ;;
         *)
@@ -316,6 +316,74 @@ check:
     set -euo pipefail
     {{python}} -m codegen.generate --check
     uv run --project src/python {{python}} -m codegen.docgen --check
+
+# Show or set the library version across all implementations
+[group('codegen')]
+version *ver:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    source scripts/_lang-helpers.sh
+
+    ver="{{ver}}"
+    if [ -z "${ver}" ]; then
+        {{python}} -c "import json; print(json.load(open('config/version.json'))['version'])"
+        exit 0
+    fi
+    if [[ ! "${ver}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        echo "error: version must be semver (X.Y.Z), got '${ver}'" >&2
+        exit 1
+    fi
+
+    old="$({{python}} -c "import json; print(json.load(open('config/version.json'))['version'])")"
+    if [ "${ver}" = "${old}" ]; then
+        echo "Version is already ${ver}" >&2
+        exit 0
+    fi
+
+    echo "Bumping version: ${old} → ${ver}"
+
+    # 1. Update version.json
+    printf '{\n  "version": "%s"\n}\n' "${ver}" > config/version.json
+    echo "  updated config/version.json"
+
+    # 2. Update all language implementations via their installer scripts
+    for lang in ${_ALL_LANGS}; do
+        [ -z "${lang}" ] && continue
+        bash "scripts/installers/${lang}.sh" set-version "${ver}"
+        echo "  updated ${lang}"
+    done
+
+    # 3. Regenerate C header (uses updated emitter.py)
+    {{python}} -m codegen.generate
+    uv run --project src/python {{python}} -m codegen.docgen
+    echo "  regenerated locale files"
+
+    # 4. Update docs/versioning.md
+    _sed_i() {
+        if [ "$(uname -s)" = "Darwin" ]; then
+            sed -i '' "$@"
+        else
+            sed -i "$@"
+        fi
+    }
+    _sed_i "s/\"version\": \"${old}\"/\"version\": \"${ver}\"/" docs/versioning.md
+    _sed_i "s/#define PARENTTIME_VERSION \"${old}\"/#define PARENTTIME_VERSION \"${ver}\"/" docs/versioning.md
+    _sed_i "s/(def version \"${old}\")/(def version \"${ver}\")/" docs/versioning.md
+    _sed_i "s/version = \"${old}\"/version = \"${ver}\"/g" docs/versioning.md
+    _sed_i "s/-define(VERSION, \"${old}\")/-define(VERSION, \"${ver}\")/" docs/versioning.md
+    _sed_i "s/__version__ = \"${old}\"/__version__ = \"${ver}\"/" docs/versioning.md
+    echo "  updated docs/versioning.md"
+
+    echo ""
+    echo "Done. Version is now ${ver}."
+    echo "Run 'just test' to verify, then commit."
+
+# Update project metadata across all manifests
+[group('codegen')]
+metadata:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    bash scripts/set-metadata.sh
 
 # Run all available linters
 [group('lint')]

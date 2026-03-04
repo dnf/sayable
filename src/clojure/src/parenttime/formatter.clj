@@ -2,6 +2,8 @@
   (:require [clojure.string :as str]
             [parenttime.internal :as internal]))
 
+(def version "0.5.0")
+
 (defn- lookup-unit-form [cat forms]
   (or (get forms cat) (get forms :other) ""))
 

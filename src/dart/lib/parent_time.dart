@@ -2,5 +2,5 @@
 library parent_time;
 
 export 'src/types.dart';
-export 'src/format_age.dart' show ParentTime, formatAge, formatStage;
+export 'src/format_age.dart' show ParentTime, formatAge, formatStage, version;
 export 'src/locales/locales.dart' show getLocale;

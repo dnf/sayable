@@ -1,4 +1,4 @@
-export { ParentTime, formatAge, formatStage } from './format-age.js';
+export { ParentTime, VERSION, formatAge, formatStage } from './format-age.js';
 export {
   type AgeLocale,
   type Compactness,

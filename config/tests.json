@@ -1,0 +1,2332 @@
+{
+  "meta": {
+    "description": "Canonical test cases for parent-time. This is the single source of truth — every test case listed here must be implemented in every language. Each implementation translates these specifications into its native test framework.",
+    "totalTests": 217,
+    "annotationPatterns": {
+      "A": "Comment above the test declaration (TypeScript, Python, Ruby, Kotlin, Java, C#, Swift, Scala)",
+      "B": "Trailing comment on table entries (Go, Rust)",
+      "C": "Comment above or trailing on assertions (C, C++, Zig)"
+    },
+    "cldrSource": "https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html",
+    "notes": [
+      "All test cases use explicit (dateOfBirth, asOf) pairs for determinism. No test depends on the current date except where specifically noted.",
+      "When a single test covers multiple canonical IDs, list them with commas: // 1.1, 1.3",
+      "Tests that go beyond the canonical set (e.g., extra locale-specific tests) are left unannotated."
+    ]
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Null / edge cases",
+      "description": "These test that invalid inputs return null (or the language equivalent:\n`None`, `nil`, `std::nullopt`, etc.).\n\nThe library supports ages from 0 through 500 years (6000 months). Inputs\nthat produce an age outside this range return null.",
+      "tests": [
+        {
+          "id": "1.1",
+          "input": {
+            "dateOfBirth": null
+          },
+          "expected": null,
+          "notes": ""
+        },
+        {
+          "id": "1.2",
+          "input": {
+            "dateOfBirth": "undefined"
+          },
+          "expected": null,
+          "notes": "where applicable"
+        },
+        {
+          "id": "1.3",
+          "input": {
+            "dateOfBirth": ""
+          },
+          "expected": null,
+          "notes": "empty string"
+        },
+        {
+          "id": "1.4",
+          "input": {
+            "dateOfBirth": "2025-07-01",
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": "future DOB"
+        },
+        {
+          "id": "1.5",
+          "input": {
+            "dateOfBirth": "1525-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "500 years",
+          "notes": "exactly 500 years"
+        },
+        {
+          "id": "1.6",
+          "input": {
+            "dateOfBirth": "1524-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": "501 years"
+        },
+        {
+          "id": "1.7",
+          "input": {
+            "dateOfBirth": "1025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": "1000 years"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Days tier (0–6 days)",
+      "description": "",
+      "tests": [
+        {
+          "id": "2.1",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": "Born today, 0 days"
+        },
+        {
+          "id": "2.2",
+          "input": {
+            "dateOfBirth": "2025-06-14",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 day",
+          "notes": "Singular"
+        },
+        {
+          "id": "2.3",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 days",
+          "notes": "Plural"
+        },
+        {
+          "id": "2.4",
+          "input": {
+            "dateOfBirth": "2025-06-09",
+            "asOf": "2025-06-15"
+          },
+          "expected": "6 days",
+          "notes": "Maximum days before weeks"
+        },
+        {
+          "id": "2.5",
+          "input": {
+            "dateOfBirth": "2025-06-08",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 week",
+          "notes": "7 days = transition to weeks"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Weeks+days tier (7 days to <3 calendar months)",
+      "description": "",
+      "tests": [
+        {
+          "id": "3.1",
+          "input": {
+            "dateOfBirth": "2025-06-08",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 week",
+          "notes": "Exactly 7 days"
+        },
+        {
+          "id": "3.2",
+          "input": {
+            "dateOfBirth": "2025-06-07",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 week, 1 day",
+          "notes": "Singular day remainder"
+        },
+        {
+          "id": "3.3",
+          "input": {
+            "dateOfBirth": "2025-06-06",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 week, 2 days",
+          "notes": "Plural day remainder"
+        },
+        {
+          "id": "3.4",
+          "input": {
+            "dateOfBirth": "2025-06-02",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 week, 6 days",
+          "notes": "Max days in week"
+        },
+        {
+          "id": "3.5",
+          "input": {
+            "dateOfBirth": "2025-06-01",
+            "asOf": "2025-06-15"
+          },
+          "expected": "2 weeks",
+          "notes": "Exactly 14 days"
+        },
+        {
+          "id": "3.6",
+          "input": {
+            "dateOfBirth": "2025-05-31",
+            "asOf": "2025-06-15"
+          },
+          "expected": "2 weeks, 1 day",
+          "notes": "15 days"
+        },
+        {
+          "id": "3.7",
+          "input": {
+            "dateOfBirth": "2025-05-26",
+            "asOf": "2025-06-15"
+          },
+          "expected": "2 weeks, 6 days",
+          "notes": "20 days"
+        },
+        {
+          "id": "3.8",
+          "input": {
+            "dateOfBirth": "2025-05-25",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 weeks",
+          "notes": "21 days"
+        },
+        {
+          "id": "3.9",
+          "input": {
+            "dateOfBirth": "2025-05-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "4 weeks, 3 days",
+          "notes": "1 calendar month, still weeks"
+        },
+        {
+          "id": "3.10",
+          "input": {
+            "dateOfBirth": "2025-04-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "8 weeks, 5 days",
+          "notes": "2 calendar months, still weeks"
+        },
+        {
+          "id": "3.11",
+          "input": {
+            "dateOfBirth": "2025-03-15",
+            "asOf": "2025-06-14"
+          },
+          "expected": "13 weeks",
+          "notes": "Day before 3-month birthday"
+        },
+        {
+          "id": "3.12",
+          "input": {
+            "dateOfBirth": "2025-03-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 months",
+          "notes": "Exactly 3 months = transition"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Month boundaries — standard months",
+      "description": "",
+      "tests": [
+        {
+          "id": "4.1",
+          "input": {
+            "dateOfBirth": "2025-01-01",
+            "asOf": "2025-04-01"
+          },
+          "expected": "3 months",
+          "notes": "Standard 3-month boundary"
+        },
+        {
+          "id": "4.2",
+          "input": {
+            "dateOfBirth": "2025-01-01",
+            "asOf": "2025-03-31"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Not yet 3 months"
+        },
+        {
+          "id": "4.3",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-09-15"
+          },
+          "expected": "3 months",
+          "notes": "Mid-month boundary"
+        },
+        {
+          "id": "4.4",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-09-14"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Day before 3-month mark"
+        },
+        {
+          "id": "4.5",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "6 months",
+          "notes": "6 months"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Month boundaries — February non-leap year",
+      "description": "2025 is not a leap year (Feb has 28 days).",
+      "tests": [
+        {
+          "id": "5.1",
+          "input": {
+            "dateOfBirth": "2025-01-31",
+            "asOf": "2025-02-28"
+          },
+          "expected": "4 weeks",
+          "notes": "1 cal month (clamped to Feb 28)"
+        },
+        {
+          "id": "5.2",
+          "input": {
+            "dateOfBirth": "2025-01-31",
+            "asOf": "2025-04-30"
+          },
+          "expected": "3 months",
+          "notes": "Apr has no 31st, clamp to 30"
+        },
+        {
+          "id": "5.3",
+          "input": {
+            "dateOfBirth": "2025-01-31",
+            "asOf": "2025-04-29"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Day before 3-month mark"
+        },
+        {
+          "id": "5.4",
+          "input": {
+            "dateOfBirth": "2025-02-01",
+            "asOf": "2025-05-01"
+          },
+          "expected": "3 months",
+          "notes": "Standard 3-month from Feb"
+        },
+        {
+          "id": "5.5",
+          "input": {
+            "dateOfBirth": "2025-02-01",
+            "asOf": "2025-04-30"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Day before 3 months from Feb"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Month boundaries — February leap year",
+      "description": "2024 is a leap year (Feb has 29 days).",
+      "tests": [
+        {
+          "id": "6.1",
+          "input": {
+            "dateOfBirth": "2024-01-31",
+            "asOf": "2024-02-29"
+          },
+          "expected": "4 weeks, 1 day",
+          "notes": "Leap year, Feb 29 exists"
+        },
+        {
+          "id": "6.2",
+          "input": {
+            "dateOfBirth": "2024-01-31",
+            "asOf": "2024-02-28"
+          },
+          "expected": "4 weeks",
+          "notes": "28 days"
+        },
+        {
+          "id": "6.3",
+          "input": {
+            "dateOfBirth": "2024-01-31",
+            "asOf": "2024-04-30"
+          },
+          "expected": "3 months",
+          "notes": "3 months with Apr clamp"
+        },
+        {
+          "id": "6.4",
+          "input": {
+            "dateOfBirth": "2024-01-30",
+            "asOf": "2024-02-29"
+          },
+          "expected": "weeks_pattern",
+          "notes": "1 month (clamped to 29)"
+        },
+        {
+          "id": "6.5",
+          "input": {
+            "dateOfBirth": "2024-01-30",
+            "asOf": "2024-02-28"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Not yet 1 month"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Month boundaries — 30-day months",
+      "description": "",
+      "tests": [
+        {
+          "id": "7.1",
+          "input": {
+            "dateOfBirth": "2025-03-31",
+            "asOf": "2025-06-30"
+          },
+          "expected": "3 months",
+          "notes": "Jun 30 is 3mo (clamped from 31)"
+        },
+        {
+          "id": "7.2",
+          "input": {
+            "dateOfBirth": "2025-03-31",
+            "asOf": "2025-06-29"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Day before 3-month mark"
+        },
+        {
+          "id": "7.3",
+          "input": {
+            "dateOfBirth": "2025-08-31",
+            "asOf": "2025-11-30"
+          },
+          "expected": "3 months",
+          "notes": "Nov 30 is 3mo (clamped from 31)"
+        },
+        {
+          "id": "7.4",
+          "input": {
+            "dateOfBirth": "2025-08-31",
+            "asOf": "2025-11-29"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Day before 3-month mark"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Month boundaries — leap year baby (born Feb 29)",
+      "description": "",
+      "tests": [
+        {
+          "id": "8.1",
+          "input": {
+            "dateOfBirth": "2024-02-29",
+            "asOf": "2024-05-29"
+          },
+          "expected": "3 months",
+          "notes": "3 months from Feb 29"
+        },
+        {
+          "id": "8.2",
+          "input": {
+            "dateOfBirth": "2024-02-29",
+            "asOf": "2024-05-28"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Day before 3 months"
+        },
+        {
+          "id": "8.3",
+          "input": {
+            "dateOfBirth": "2024-02-29",
+            "asOf": "2025-02-28"
+          },
+          "expected": "12 months",
+          "notes": "Non-leap: birthday clamps to 28"
+        },
+        {
+          "id": "8.4",
+          "input": {
+            "dateOfBirth": "2024-02-29",
+            "asOf": "2025-03-01"
+          },
+          "expected": "12 months",
+          "notes": "Day after clamped birthday"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Months tier (3–23 months)",
+      "description": "",
+      "tests": [
+        {
+          "id": "9.1",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-04-15"
+          },
+          "expected": "3 months",
+          "notes": "Transition point"
+        },
+        {
+          "id": "9.2",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6 months",
+          "notes": ""
+        },
+        {
+          "id": "9.3",
+          "input": {
+            "dateOfBirth": "2024-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "12 months",
+          "notes": "Not \"1 year\""
+        },
+        {
+          "id": "9.4",
+          "input": {
+            "dateOfBirth": "2024-01-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "23 months",
+          "notes": "Upper boundary"
+        },
+        {
+          "id": "9.5",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-14"
+          },
+          "expected": "5 months",
+          "notes": "Day before boundary"
+        },
+        {
+          "id": "9.6",
+          "input": {
+            "dateOfBirth": "2024-11-10",
+            "asOf": "2025-04-10"
+          },
+          "expected": "5 months",
+          "notes": "Cross-year boundary"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Years+months tier (24–35 months)",
+      "description": "",
+      "tests": [
+        {
+          "id": "10.1",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "2 years",
+          "notes": "Exactly 24 months"
+        },
+        {
+          "id": "10.2",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "2 years, 1 month",
+          "notes": "Singular month"
+        },
+        {
+          "id": "10.3",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "2 years, 6 months",
+          "notes": ""
+        },
+        {
+          "id": "10.4",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2026-05-15"
+          },
+          "expected": "2 years, 11 months",
+          "notes": "Upper boundary"
+        },
+        {
+          "id": "10.5",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-06-14"
+          },
+          "expected": "23 months",
+          "notes": "Day before 24 months"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Half-year tier (3–6 years)",
+      "description": "",
+      "tests": [
+        {
+          "id": "11.1",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 years",
+          "notes": "Exactly 3 years"
+        },
+        {
+          "id": "11.2",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-11-15"
+          },
+          "expected": "3 years",
+          "notes": "3y5m (under half)"
+        },
+        {
+          "id": "11.3",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3½ years",
+          "notes": "3y6m"
+        },
+        {
+          "id": "11.4",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2026-05-15"
+          },
+          "expected": "3½ years",
+          "notes": "3y11m"
+        },
+        {
+          "id": "11.5",
+          "input": {
+            "dateOfBirth": "2021-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "4 years",
+          "notes": "Exactly 4 years"
+        },
+        {
+          "id": "11.6",
+          "input": {
+            "dateOfBirth": "2021-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "4½ years",
+          "notes": "4y6m"
+        },
+        {
+          "id": "11.7",
+          "input": {
+            "dateOfBirth": "2020-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "5 years",
+          "notes": "Exactly 5 years"
+        },
+        {
+          "id": "11.8",
+          "input": {
+            "dateOfBirth": "2020-06-15",
+            "asOf": "2026-02-15"
+          },
+          "expected": "5½ years",
+          "notes": "5y8m"
+        },
+        {
+          "id": "11.9",
+          "input": {
+            "dateOfBirth": "2019-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "6 years",
+          "notes": "Exactly 6 years"
+        },
+        {
+          "id": "11.10",
+          "input": {
+            "dateOfBirth": "2019-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "6½ years",
+          "notes": "6y6m"
+        },
+        {
+          "id": "11.11",
+          "input": {
+            "dateOfBirth": "2019-06-15",
+            "asOf": "2026-05-15"
+          },
+          "expected": "6½ years",
+          "notes": "6y11m (last month before 7)"
+        },
+        {
+          "id": "11.12",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-06-14"
+          },
+          "expected": "2 years, 11 months",
+          "notes": "Day before 3rd birthday"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Integer tier (7+ years)",
+      "description": "",
+      "tests": [
+        {
+          "id": "12.1",
+          "input": {
+            "dateOfBirth": "2018-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7 years",
+          "notes": "Exactly 7 years"
+        },
+        {
+          "id": "12.2",
+          "input": {
+            "dateOfBirth": "2018-03-20",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7 years",
+          "notes": "7y3m — no ½ at 7+"
+        },
+        {
+          "id": "12.3",
+          "input": {
+            "dateOfBirth": "1980-01-01",
+            "asOf": "2025-06-15"
+          },
+          "expected": "45 years",
+          "notes": "Adult"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Cross-year transitions with February",
+      "description": "",
+      "tests": [
+        {
+          "id": "13.1",
+          "input": {
+            "dateOfBirth": "2024-12-31",
+            "asOf": "2025-03-31"
+          },
+          "expected": "3 months",
+          "notes": "Dec→Jan→Feb(28)→Mar"
+        },
+        {
+          "id": "13.2",
+          "input": {
+            "dateOfBirth": "2024-12-31",
+            "asOf": "2025-03-30"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Day before 3mo from Dec 31"
+        },
+        {
+          "id": "13.3",
+          "input": {
+            "dateOfBirth": "2024-11-30",
+            "asOf": "2025-02-28"
+          },
+          "expected": "3 months",
+          "notes": "Nov→Dec→Jan→Feb(28 clamp)"
+        },
+        {
+          "id": "13.4",
+          "input": {
+            "dateOfBirth": "2024-11-30",
+            "asOf": "2025-02-27"
+          },
+          "expected": "weeks_pattern",
+          "notes": "Day before 3mo from Nov 30"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Born-on-31st progression",
+      "description": "Tracks a child born Jan 31, 2025 through their first year, verifying\nmonth-count clamping at each step.",
+      "tests": [
+        {
+          "id": "14.1",
+          "input": {
+            "dateOfBirth": "2025-01-31",
+            "asOf": "2025-04-30"
+          },
+          "expected": "3 months",
+          "notes": "Apr clamp"
+        },
+        {
+          "id": "14.2",
+          "input": {
+            "dateOfBirth": "2025-01-31",
+            "asOf": "2025-05-31"
+          },
+          "expected": "4 months",
+          "notes": "May has 31"
+        },
+        {
+          "id": "14.3",
+          "input": {
+            "dateOfBirth": "2025-01-31",
+            "asOf": "2025-06-30"
+          },
+          "expected": "5 months",
+          "notes": "Jun clamp"
+        },
+        {
+          "id": "14.4",
+          "input": {
+            "dateOfBirth": "2025-01-31",
+            "asOf": "2025-07-01"
+          },
+          "expected": "5 months",
+          "notes": "Before Jul 31"
+        },
+        {
+          "id": "14.5",
+          "input": {
+            "dateOfBirth": "2025-01-31",
+            "asOf": "2025-07-31"
+          },
+          "expected": "6 months",
+          "notes": "Jul has 31"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Default asOf (current date)",
+      "description": "Test that when `asOf` is omitted, the function uses the current date.\nThis requires mocking or overriding the system clock.",
+      "tests": [
+        {
+          "id": "15.1",
+          "input": {
+            "dateOfBirth": "2020-01-01",
+            "systemDate": "2025-06-15"
+          },
+          "expected": "5 years",
+          "notes": ""
+        },
+        {
+          "id": "15.2",
+          "input": {
+            "dateOfBirth": "2025-06-10",
+            "systemDate": "2025-06-15"
+          },
+          "expected": "5 days",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "formatStage — null / edge cases",
+      "description": "",
+      "tests": [
+        {
+          "id": "16.1",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": null
+          },
+          "expected": null,
+          "notes": ""
+        },
+        {
+          "id": "16.2",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "undefined"
+          },
+          "expected": null,
+          "notes": "where applicable"
+        },
+        {
+          "id": "16.3",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": ""
+          },
+          "expected": null,
+          "notes": ""
+        },
+        {
+          "id": "16.4",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-07-01",
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": ""
+        },
+        {
+          "id": "16.5",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "1525-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Adult",
+          "notes": "exactly 500 years"
+        },
+        {
+          "id": "16.6",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "1524-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": "501 years"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "formatStage — Newborn (0–1 months, <2 calendar months)",
+      "description": "",
+      "tests": [
+        {
+          "id": "17.1",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": "Born today"
+        },
+        {
+          "id": "17.2",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-06-14",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": "1 day"
+        },
+        {
+          "id": "17.3",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-05-25",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": "3 weeks"
+        },
+        {
+          "id": "17.4",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-05-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": "1 month"
+        },
+        {
+          "id": "17.5",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-04-16",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": "1 month 29 days"
+        },
+        {
+          "id": "17.6",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-04-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Infant",
+          "notes": "Exactly 2 months = transition"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "formatStage — Infant (2–11 months)",
+      "description": "",
+      "tests": [
+        {
+          "id": "18.1",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-04-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Infant",
+          "notes": "2 months"
+        },
+        {
+          "id": "18.2",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2024-12-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Infant",
+          "notes": "6 months"
+        },
+        {
+          "id": "18.3",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2024-07-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Infant",
+          "notes": "11 months"
+        },
+        {
+          "id": "18.4",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2024-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Toddler",
+          "notes": "12 months = transition"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "formatStage — Toddler (12–35 months)",
+      "description": "",
+      "tests": [
+        {
+          "id": "19.1",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2024-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Toddler",
+          "notes": "12 months"
+        },
+        {
+          "id": "19.2",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2024-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "Toddler",
+          "notes": "18 months"
+        },
+        {
+          "id": "19.3",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Toddler",
+          "notes": "24 months"
+        },
+        {
+          "id": "19.4",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2026-05-15"
+          },
+          "expected": "Toddler",
+          "notes": "35 months"
+        },
+        {
+          "id": "19.5",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Child",
+          "notes": "36 months = transition"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "formatStage — Child (36–155 months, 3–12 years)",
+      "description": "",
+      "tests": [
+        {
+          "id": "20.1",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Child",
+          "notes": "3 years"
+        },
+        {
+          "id": "20.2",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2021-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Child",
+          "notes": "4 years"
+        },
+        {
+          "id": "20.3",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2019-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Child",
+          "notes": "6 years"
+        },
+        {
+          "id": "20.4",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2016-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Child",
+          "notes": "9 years"
+        },
+        {
+          "id": "20.5",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2013-06-15",
+            "asOf": "2026-05-15"
+          },
+          "expected": "Child",
+          "notes": "12y11m"
+        },
+        {
+          "id": "20.6",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2012-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Teenager",
+          "notes": "13 years = transition"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "formatStage — Teenager (156–215 months, 13–17 years)",
+      "description": "",
+      "tests": [
+        {
+          "id": "21.1",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2012-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Teenager",
+          "notes": "13 years"
+        },
+        {
+          "id": "21.2",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2010-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Teenager",
+          "notes": "15 years"
+        },
+        {
+          "id": "21.3",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2008-06-15",
+            "asOf": "2026-05-15"
+          },
+          "expected": "Teenager",
+          "notes": "17y11m"
+        },
+        {
+          "id": "21.4",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2007-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Adult",
+          "notes": "18 years = transition"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "formatStage — Adult (216+ months, 18+ years)",
+      "description": "",
+      "tests": [
+        {
+          "id": "22.1",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2007-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Adult",
+          "notes": "18 years"
+        },
+        {
+          "id": "22.2",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2000-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Adult",
+          "notes": "25 years"
+        },
+        {
+          "id": "22.3",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "1980-01-01",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Adult",
+          "notes": "45 years"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "formatStage — default asOf",
+      "description": "",
+      "tests": [
+        {
+          "id": "23.1",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "systemDate": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": ""
+        },
+        {
+          "id": "23.2",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2020-01-01",
+            "systemDate": "2025-06-15"
+          },
+          "expected": "Child",
+          "notes": ""
+        },
+        {
+          "id": "23.3",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "1980-01-01",
+            "systemDate": "2025-06-15"
+          },
+          "expected": "Adult",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "ParentTime class — English locale delegation",
+      "description": "Verify that the class-based API produces the same results as the bare functions.",
+      "tests": [
+        {
+          "id": "24.1",
+          "method": "formatAge",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": ""
+        },
+        {
+          "id": "24.2",
+          "method": "formatAge",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 days",
+          "notes": ""
+        },
+        {
+          "id": "24.3",
+          "method": "formatAge",
+          "input": {
+            "dateOfBirth": "2025-06-07",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 week, 1 day",
+          "notes": ""
+        },
+        {
+          "id": "24.4",
+          "method": "formatAge",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6 months",
+          "notes": ""
+        },
+        {
+          "id": "24.5",
+          "method": "formatAge",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "2 years, 1 month",
+          "notes": ""
+        },
+        {
+          "id": "24.6",
+          "method": "formatAge",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3½ years",
+          "notes": ""
+        },
+        {
+          "id": "24.7",
+          "method": "formatAge",
+          "input": {
+            "dateOfBirth": "2018-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7 years",
+          "notes": ""
+        },
+        {
+          "id": "24.8",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": ""
+        },
+        {
+          "id": "24.9",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Infant",
+          "notes": ""
+        },
+        {
+          "id": "24.10",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2024-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Toddler",
+          "notes": ""
+        },
+        {
+          "id": "24.11",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Child",
+          "notes": ""
+        },
+        {
+          "id": "24.12",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2012-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Teenager",
+          "notes": ""
+        },
+        {
+          "id": "24.13",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2007-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Adult",
+          "notes": ""
+        },
+        {
+          "id": "24.14",
+          "method": "formatAge",
+          "input": {
+            "dateOfBirth": null,
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": ""
+        },
+        {
+          "id": "24.15",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": null,
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "i18n — locale with all plural features",
+      "description": "Test with a locale that exercises singular/plural forms, half marker, delimiter,\njustBorn label, and stage labels. The TypeScript tests use an inline\nSpanish-like locale for this purpose.",
+      "tests": [
+        {
+          "id": "25.1",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Recién nacido",
+          "notes": "justBorn"
+        },
+        {
+          "id": "25.2",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-06-14",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 día",
+          "notes": "Singular day"
+        },
+        {
+          "id": "25.3",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 días",
+          "notes": "Plural days"
+        },
+        {
+          "id": "25.4",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-06-08",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 semana",
+          "notes": "Singular week"
+        },
+        {
+          "id": "25.5",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-06-07",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 semana, 1 día",
+          "notes": "Compound"
+        },
+        {
+          "id": "25.6",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-05-26",
+            "asOf": "2025-06-15"
+          },
+          "expected": "2 semanas, 6 días",
+          "notes": "Plural compound"
+        },
+        {
+          "id": "25.7",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6 meses",
+          "notes": "Months"
+        },
+        {
+          "id": "25.8",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "2 años, 1 mes",
+          "notes": "Singular month"
+        },
+        {
+          "id": "25.9",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "2 años, 6 meses",
+          "notes": "Years+months"
+        },
+        {
+          "id": "25.10",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3 y medio años",
+          "notes": "Half marker"
+        },
+        {
+          "id": "25.11",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 años",
+          "notes": "No half"
+        },
+        {
+          "id": "25.12",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2018-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7 años",
+          "notes": "7+ years"
+        },
+        {
+          "id": "25.13",
+          "method": "formatStage",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Recién nacido",
+          "notes": "Stage label"
+        },
+        {
+          "id": "25.14",
+          "method": "formatStage",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Bebé",
+          "notes": ""
+        },
+        {
+          "id": "25.15",
+          "method": "formatStage",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2024-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Niño pequeño",
+          "notes": ""
+        },
+        {
+          "id": "25.16",
+          "method": "formatStage",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Niño",
+          "notes": ""
+        },
+        {
+          "id": "25.17",
+          "method": "formatStage",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2012-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Adolescente",
+          "notes": ""
+        },
+        {
+          "id": "25.18",
+          "method": "formatStage",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": "2007-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Adulto",
+          "notes": ""
+        },
+        {
+          "id": "25.19",
+          "method": "formatAge",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": null,
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": "Null handling"
+        },
+        {
+          "id": "25.20",
+          "method": "formatStage",
+          "locale": "es",
+          "input": {
+            "dateOfBirth": null,
+            "asOf": "2025-06-15"
+          },
+          "expected": null,
+          "notes": "Null handling"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Compactness — short",
+      "description": "Using the English locale with `compactness = \"short\"`.",
+      "tests": [
+        {
+          "id": "26.1",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 d",
+          "notes": "Short days"
+        },
+        {
+          "id": "26.2",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2025-06-08",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 wk",
+          "notes": "Short week"
+        },
+        {
+          "id": "26.3",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2025-06-07",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 wk, 1 d",
+          "notes": "Short compound"
+        },
+        {
+          "id": "26.4",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6 mo",
+          "notes": "Short months"
+        },
+        {
+          "id": "26.5",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "2 yr, 1 mo",
+          "notes": "Short years+months"
+        },
+        {
+          "id": "26.6",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3½ yr",
+          "notes": "Short half"
+        },
+        {
+          "id": "26.7",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2018-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7 yr",
+          "notes": "Short years"
+        },
+        {
+          "id": "26.8",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": "justBorn unchanged"
+        },
+        {
+          "id": "26.9",
+          "method": "formatStage",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Infant",
+          "notes": "Stages unchanged"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Compactness — compact",
+      "description": "Using the English locale with `compactness = \"compact\"`.",
+      "tests": [
+        {
+          "id": "27.1",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3d",
+          "notes": "Compact days"
+        },
+        {
+          "id": "27.2",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2025-06-08",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1w",
+          "notes": "Compact week"
+        },
+        {
+          "id": "27.3",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2025-06-07",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1w1d",
+          "notes": "No delimiter"
+        },
+        {
+          "id": "27.4",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6m",
+          "notes": "Compact months"
+        },
+        {
+          "id": "27.5",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "2y1m",
+          "notes": "No delimiter"
+        },
+        {
+          "id": "27.6",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3½y",
+          "notes": "Compact half"
+        },
+        {
+          "id": "27.7",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2018-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7y",
+          "notes": "Compact years"
+        },
+        {
+          "id": "27.8",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Newborn",
+          "notes": "justBorn unchanged"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Locale-specific edge cases — plural rules",
+      "description": "Test locales that exercise distinct plural rule families: Hebrew dual forms\n(`he`), Macedonian mod-based plurals (`mk`), Swahili noun-class changes\n(`sw`), Indonesian other-only (`id`), and Amharic zero-one rule with\nEthiopic delimiter (`am`).",
+      "tests": [
+        {
+          "id": "29.1",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "רק נולד",
+          "notes": "justBorn"
+        },
+        {
+          "id": "29.2",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-06-14",
+            "asOf": "2025-06-15"
+          },
+          "expected": "יום 1",
+          "notes": "1 day — one form"
+        },
+        {
+          "id": "29.3",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 ימים",
+          "notes": "3 days — other form"
+        },
+        {
+          "id": "29.4",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-06-01",
+            "asOf": "2025-06-15"
+          },
+          "expected": "שבועיים",
+          "notes": "2 weeks — dual form"
+        },
+        {
+          "id": "29.5",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-05-25",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 שבועות",
+          "notes": "3 weeks — other form"
+        },
+        {
+          "id": "29.6",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6 חודשים",
+          "notes": "6 months — other"
+        },
+        {
+          "id": "29.7",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-03-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 חודשים",
+          "notes": "3 months — other"
+        },
+        {
+          "id": "29.8",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "שנתיים, חודש 1",
+          "notes": "2y dual + 1m one"
+        },
+        {
+          "id": "29.9",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3 שנים וחצי",
+          "notes": "3½ years — half marker"
+        },
+        {
+          "id": "29.10",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2018-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7 שנים",
+          "notes": "7+ years — other"
+        },
+        {
+          "id": "29.11",
+          "method": "formatStage",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "רק נולד",
+          "notes": "masculine newborn",
+          "gender": "m"
+        },
+        {
+          "id": "29.12",
+          "method": "formatStage",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "רק נולדה",
+          "notes": "feminine newborn",
+          "gender": "f"
+        },
+        {
+          "id": "29.13",
+          "method": "formatStage",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2007-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "מבוגר",
+          "notes": "masculine adult",
+          "gender": "m"
+        },
+        {
+          "id": "29.14",
+          "method": "formatStage",
+          "locale": "he",
+          "input": {
+            "dateOfBirth": "2007-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "מבוגרת",
+          "notes": "feminine adult",
+          "gender": "f"
+        },
+        {
+          "id": "29.15",
+          "locale": "mk",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Новороденче",
+          "notes": "justBorn"
+        },
+        {
+          "id": "29.16",
+          "locale": "mk",
+          "input": {
+            "dateOfBirth": "2025-06-14",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 ден",
+          "notes": "1 day — one"
+        },
+        {
+          "id": "29.17",
+          "locale": "mk",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 дена",
+          "notes": "3 days — other"
+        },
+        {
+          "id": "29.18",
+          "locale": "mk",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6 месеци",
+          "notes": "6 months — other"
+        },
+        {
+          "id": "29.19",
+          "locale": "mk",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "2 години, 1 месец",
+          "notes": "2y1m — one for month"
+        },
+        {
+          "id": "29.20",
+          "locale": "mk",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3 години и пол",
+          "notes": "3½ years — half marker"
+        },
+        {
+          "id": "29.21",
+          "locale": "mk",
+          "input": {
+            "dateOfBirth": "2018-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7 години",
+          "notes": "7+ years — other"
+        },
+        {
+          "id": "29.22",
+          "locale": "sw",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Mzaliwa mpya",
+          "notes": "justBorn"
+        },
+        {
+          "id": "29.23",
+          "locale": "sw",
+          "input": {
+            "dateOfBirth": "2025-06-14",
+            "asOf": "2025-06-15"
+          },
+          "expected": "siku 1",
+          "notes": "1 day — one"
+        },
+        {
+          "id": "29.24",
+          "locale": "sw",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "siku 3",
+          "notes": "3 days — other (same word)"
+        },
+        {
+          "id": "29.25",
+          "locale": "sw",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "miezi 6",
+          "notes": "6 months — other (noun class)"
+        },
+        {
+          "id": "29.26",
+          "locale": "sw",
+          "input": {
+            "dateOfBirth": "2023-06-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "miaka 2, mwezi 1",
+          "notes": "2y other + 1m one"
+        },
+        {
+          "id": "29.27",
+          "locale": "sw",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "miaka 3 na nusu",
+          "notes": "3½ years — half marker"
+        },
+        {
+          "id": "29.28",
+          "locale": "id",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "Baru lahir",
+          "notes": "justBorn"
+        },
+        {
+          "id": "29.29",
+          "locale": "id",
+          "input": {
+            "dateOfBirth": "2025-06-14",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 hari",
+          "notes": "1 day"
+        },
+        {
+          "id": "29.30",
+          "locale": "id",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 hari",
+          "notes": "3 days (same unit)"
+        },
+        {
+          "id": "29.31",
+          "locale": "id",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6 bulan",
+          "notes": "6 months"
+        },
+        {
+          "id": "29.32",
+          "locale": "id",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3 tahun setengah",
+          "notes": "3½ years — half marker"
+        },
+        {
+          "id": "29.33",
+          "locale": "id",
+          "input": {
+            "dateOfBirth": "2018-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "7 tahun",
+          "notes": "7+ years"
+        },
+        {
+          "id": "29.34",
+          "locale": "am",
+          "input": {
+            "dateOfBirth": "2025-06-15",
+            "asOf": "2025-06-15"
+          },
+          "expected": "አዲስ የተወለደ",
+          "notes": "justBorn"
+        },
+        {
+          "id": "29.35",
+          "locale": "am",
+          "input": {
+            "dateOfBirth": "2025-06-14",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 ቀን",
+          "notes": "1 day — one form"
+        },
+        {
+          "id": "29.36",
+          "locale": "am",
+          "input": {
+            "dateOfBirth": "2025-06-12",
+            "asOf": "2025-06-15"
+          },
+          "expected": "3 ቀናት",
+          "notes": "3 days — other form"
+        },
+        {
+          "id": "29.37",
+          "locale": "am",
+          "input": {
+            "dateOfBirth": "2025-06-07",
+            "asOf": "2025-06-15"
+          },
+          "expected": "1 ሳምንት፣ 1 ቀን",
+          "notes": "1w1d with Ethiopic delimiter"
+        },
+        {
+          "id": "29.38",
+          "locale": "am",
+          "input": {
+            "dateOfBirth": "2025-01-15",
+            "asOf": "2025-07-15"
+          },
+          "expected": "6 ወራት",
+          "notes": "6 months — other form"
+        },
+        {
+          "id": "29.39",
+          "locale": "am",
+          "input": {
+            "dateOfBirth": "2022-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "3 ዓመታት ተኩል",
+          "notes": "3½ years — half marker"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Locale lookup by code string",
+      "description": "These test the `getLocale` / `get_locale` / `GetLocale` lookup function that\nreturns a locale object given a code string.",
+      "tests": [
+        {
+          "id": "30.1",
+          "method": "getLocale",
+          "input": {
+            "code": "en"
+          },
+          "expected": {
+            "type": "locale",
+            "code": "en"
+          },
+          "notes": "Known locale"
+        },
+        {
+          "id": "30.2",
+          "method": "getLocale",
+          "input": {
+            "code": "fr"
+          },
+          "expected": {
+            "type": "locale",
+            "code": "fr"
+          },
+          "notes": "Another known locale"
+        },
+        {
+          "id": "30.3",
+          "method": "getLocale",
+          "input": {
+            "code": "xx"
+          },
+          "expected": null,
+          "notes": "Unknown code"
+        },
+        {
+          "id": "30.4",
+          "method": "getLocale",
+          "input": {
+            "code": ""
+          },
+          "expected": null,
+          "notes": "Empty string"
+        },
+        {
+          "id": "30.5",
+          "method": "getLocale",
+          "input": {
+            "code": "EN"
+          },
+          "expected": null,
+          "notes": "Case-sensitive"
+        }
+      ]
+    }
+  ]
+}

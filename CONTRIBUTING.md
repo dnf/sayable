@@ -85,7 +85,7 @@ Every run captures output to `.logs/<action>/<language>.log` (e.g., `.logs/test/
 - **All implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
 - **Deterministic tests.** Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero dependencies.** No runtime dependencies in any language. Pure date arithmetic.
-- **Spec-first testing.** The canonical test specification lives in [`tests/testing.md`](tests/testing.md). Add new test cases there first, then implement in all languages.
+- **Spec-first testing.** The canonical test specification lives in [`config/tests.json`](config/tests.json). Add new test cases there first, then implement in all languages.
 
 ## Discuss before implementing
 
@@ -116,14 +116,14 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for a detailed guide. I
 1. Identify the CLDR plural rule for the language (one of the 23 existing rules usually fits)
 2. Create `locales/{code}.json` with the locale data
 3. Run `python -m codegen.generate` to generate locale files in all languages
-4. Add test cases to `tests/testing.md` and implement them in all test files
+4. Add test cases to `config/tests.json` and implement them in all test files
 5. Run `just test`
 
 ### Bug fixes
 
-If you find a discrepancy between implementations, file an issue with the input and the differing outputs. All implementations must match the spec in `tests/testing.md`.
+If you find a discrepancy between implementations, file an issue with the input and the differing outputs. All implementations must match the spec in `config/tests.json`.
 
-The fastest way to get a bug fixed is to include a failing test case in the format used by [`tests/testing.md`](tests/testing.md). If you can't reproduce it with a specific date pair, we probably can't either.
+The fastest way to get a bug fixed is to include a failing test case in the format used by [`config/tests.json`](config/tests.json). If you can't reproduce it with a specific date pair, we probably can't either.
 
 ### New features
 
@@ -153,7 +153,7 @@ Locale changes require native speaker verification before merging:
 Before submitting a PR, verify:
 
 - [ ] Tests pass in all affected languages (`just test`)
-- [ ] New test cases added to `tests/testing.md` first (if applicable)
+- [ ] New test cases added to `config/tests.json` first (if applicable)
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
 - [ ] Locale changes made in `locales/*.json` and regenerated (not hand-edited)
 - [ ] `just check` passes (codegen files up to date)

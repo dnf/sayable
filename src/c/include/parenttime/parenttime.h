@@ -11,6 +11,8 @@
 #ifndef PARENTTIME_H
 #define PARENTTIME_H
 
+#define PARENTTIME_VERSION "0.5.0"
+
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>

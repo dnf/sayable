@@ -29,8 +29,16 @@ uninstall_linux() { npm uninstall -g elm elm-test 2>/dev/null || true; }
 
 deps() { :; }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/^    "[0-9][^"]*"/    "'"${ver}"'"/' \
+        "${ROOT}/src/elm/src/ParentTime/Formatter.elm"
+}
+
 case "${1:-}" in
-    install)   log "Installing Elm..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Elm..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Elm..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Elm..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata) ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

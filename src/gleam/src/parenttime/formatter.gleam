@@ -8,6 +8,8 @@ import parenttime/types.{
   GenderedStage, NeutralStage, Normal, PluralUnit, Short, SimpleUnit,
 }
 
+pub const version = "0.5.0"
+
 const max_age_months = 6000
 
 // --- Public API ---

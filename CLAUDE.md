@@ -32,14 +32,15 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 | Generate locales | `just generate locales`             |
 | Quality check    | `just check`                        |
 | Codegen tests    | `just test codegen`                 |
+| Update metadata  | `just metadata`                     |
 | Maintain docs    | `just maintain docs`                |
 | Clean artifacts  | `just clean` or `just clean <lang>` |
 
 ## Key rules
 
 - **All implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
-- **Spec-first testing.** New test cases go in `tests/testing.md` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
-- **Canonical test IDs.** Every test must be annotated with the ID(s) from `tests/testing.md` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
+- **Spec-first testing.** New test cases go in `config/tests.json` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
+- **Canonical test IDs.** Every test must be annotated with the ID(s) from `config/tests.json` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
 - **Locale data lives in `locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `just generate locales` to regenerate all language implementations. Never edit generated locale files by hand.
 - **Generated locale files must be in their own subdirectory.** Every language implementation must place generated locale files in a dedicated `locales/` (or language-idiomatic equivalent) subdirectory, separate from hand-written source files.
@@ -53,6 +54,19 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
   - `just install` (all) continues past individual failures and reports them at the end.
   - Elm has no arm64 Linux binary; the installer detects this and skips with a message.
 - **Justfile recipes must support `help`/`--help`.** Every recipe that accepts language arguments (test, build, lint, clean, install, uninstall) must handle `help` and `--help` as a first argument, printing usage with a consistent structure: Usage line, description, language list (alphabetical, with abbreviations), flags (if applicable), and examples. Error messages for unknown languages should print to stderr and point to help (e.g. `"try 'just test help'"`), not dump inline language lists.
+
+## Versioning
+
+- **`config/version.json` is the single source of truth** for the library version. All implementations and their package manifests must match it.
+- **Every implementation exposes a version constant** using the idiomatic pattern for that language. See [`docs/versioning.md`](docs/versioning.md) for the full list.
+- **The C version define lives in the codegen emitter** (`codegen/targets/c/emitter.py`) because `parenttime.h` is auto-generated. Run `just generate locales` after changing it.
+- When bumping the version, update `config/version.json`, all source constants, all package manifests, and the C codegen emitter.
+
+## Metadata
+
+- **`config/metadata.json` is the single source of truth** for project metadata (description, author, license, repository URL). See [`docs/metadata.md`](docs/metadata.md) for details.
+- Run `just metadata` to interactively update metadata across all package manifests.
+- `just metadata` and `just version` are separate commands — different concerns, different sources of truth (`config/metadata.json` and `config/version.json`), different change frequencies.
 
 ## Project layout
 
@@ -87,7 +101,8 @@ src/
   swift/       # Swift
   typescript/  # TypeScript
   zig/         # Zig
-tests/         # Canonical test specification (testing.md)
+config/        # Project configuration (version.json, metadata.json, tests.json)
+tests/         # Test documentation
 locales/       # Canonical locale JSON files (single source of truth)
 codegen/       # Locale code generator (JSON → all languages)
 scripts/       # Shared scripts (runner/, get-started, installers/)
@@ -121,7 +136,7 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Sum
 2. Create `locales/{code}.json` with units, half marker, delimiter, justBorn, and stages
 3. Run `just generate locales` — generates locale files and docs in all languages
 4. Run `just test && just lint` to verify
-5. Optionally add locale-specific test cases to `tests/testing.md`
+5. Optionally add locale-specific test cases to `config/tests.json`
 
 ## Adding a new language
 
@@ -131,7 +146,7 @@ See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide.
 2. Create `codegen/targets/<lang>/plural_rules.py` with all 23 plural patterns
 3. Register the generator in `codegen/generate.py` (`_GENERATORS` dict)
 4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from an existing implementation)
-5. Implement all test cases from `tests/testing.md`
+5. Implement all test cases from `config/tests.json`
 6. Add to `scripts/_lang-helpers.sh` (language lists, abbreviation, dependency) and `justfile` (test, build, lint, clean recipe handlers)
 7. Configure the language's standard linter with zero warnings
 8. Create installer script at `scripts/installers/<lang>.sh` and update `Dockerfile`

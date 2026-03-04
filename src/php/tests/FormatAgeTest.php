@@ -14,7 +14,7 @@ use ParentTime\ParentTime;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Canonical test suite — 212 test cases from tests/testing.md.
+ * Canonical test suite — test cases from config/tests.json.
  *
  * All tests use explicit (dateOfBirth, asOf) pairs for determinism
  * except sections 15 and 23 which test the default-asOf clock override.

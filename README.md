@@ -164,13 +164,13 @@ Every implementation supports user-defined locale objects. See your language's R
 
 ## Testing
 
-All implementations share a [canonical set of 212 test cases](tests/testing.md) covering null handling, all six age tiers, month-boundary clamping (including February and leap years), born-on-31st progression, stage labels, compactness levels, and i18n locale support.
+All implementations share a [canonical set of test cases](config/tests.json) covering null handling, all six age tiers, month-boundary clamping (including February and leap years), born-on-31st progression, stage labels, compactness levels, and i18n locale support.
 
-The test specification in `tests/testing.md` is the single source of truth. Each implementation translates these cases into its native test framework. When adding a new test case, add it to the specification first, then implement it in all languages.
+The test specification in `config/tests.json` is the single source of truth. Each implementation translates these cases into its native test framework. When adding a new test case, add it to the specification first, then implement it in all languages.
 
 ## Documentation
 
-- [Test cases](tests/testing.md) — canonical test specification for all implementations
+- [Test cases](config/tests.json) — canonical test specification for all implementations
 - [Locale configuration](docs/locales.md) — CLDR plural rules, per-language details
 - [Code generator](codegen/README.md) — how locale files are generated from canonical JSON
 - [Code quality](docs/code-quality.md) — linting, type checking, and static analysis configuration

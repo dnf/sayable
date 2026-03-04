@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Integration tests for the parent-time CLI.
-# All test cases use canonical IDs from tests/testing.md.
+# All test cases use canonical IDs from config/tests.json.
 set -uo pipefail
 
 CLI="$(cd "$(dirname "$0")" && pwd)/build/parent-time"

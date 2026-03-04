@@ -4,6 +4,8 @@ namespace ParentTimeLib;
 
 public sealed class ParentTimeFormatter
 {
+    public const string Version = "0.5.0";
+
     private const int MaxAgeMonths = 6000;
 
     private readonly AgeLocale _locale;

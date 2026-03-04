@@ -1,6 +1,8 @@
 -ifndef(PARENTTIME_HRL).
 -define(PARENTTIME_HRL, true).
 
+-define(VERSION, "0.5.0").
+
 -type plural_category() :: zero | one | two | few | many | other.
 -type compactness() :: normal | short | compact.
 -type gender() :: male | female.

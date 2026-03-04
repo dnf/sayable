@@ -22,8 +22,21 @@ deps() {
     fi
 }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i "s/const String version = '[^']*'/const String version = '${ver}'/" \
+        "${ROOT}/src/dart/lib/src/format_age.dart"
+    _sed_i "s/^version: .*/version: ${ver}/" \
+        "${ROOT}/src/dart/pubspec.yaml"
+}
+
 case "${1:-}" in
-    install)   log "Installing Dart..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Dart..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Dart..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Dart..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata)
+        _sed_i "s/^description: .*/description: ${PT_DESCRIPTION}/" \
+            "${ROOT}/src/dart/pubspec.yaml"
+        ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

@@ -21,8 +21,16 @@ deps() {
     luarocks install luacheck
 }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/M\.VERSION = "[^"]*"/M.VERSION = "'"${ver}"'"/' \
+        "${ROOT}/src/lua/parenttime.lua"
+}
+
 case "${1:-}" in
-    install)   log "Installing Lua..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Lua..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Lua..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Lua..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata) ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

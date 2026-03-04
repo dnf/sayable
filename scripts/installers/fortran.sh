@@ -11,8 +11,16 @@ uninstall_linux() { $SUDO apt-get remove -y gfortran 2>/dev/null || true; }
 
 deps() { :; }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/PT_VERSION = "[^"]*"/PT_VERSION = "'"${ver}"'"/' \
+        "${ROOT}/src/fortran/src/parenttime.f90"
+}
+
 case "${1:-}" in
-    install)   log "Installing Fortran..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Fortran..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Fortran..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Fortran..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata) ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

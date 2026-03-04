@@ -1,5 +1,7 @@
 open Types
 
+let version = "0.5.0"
+
 let string_replace ~needle ~replacement haystack =
   let nlen = String.length needle in
   if nlen = 0 then haystack

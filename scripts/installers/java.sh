@@ -28,8 +28,20 @@ uninstall_linux() {
 
 deps() { :; }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/public static final String VERSION = "[^"]*"/public static final String VERSION = "'"${ver}"'"/' \
+        "${ROOT}/src/java/src/main/java/parenttime/ParentTime.java"
+    _sed_i 's/^version = "[^"]*"/version = "'"${ver}"'"/' \
+        "${ROOT}/src/java/build.gradle.kts"
+}
+
 case "${1:-}" in
-    install)   log "Installing Java (OpenJDK 17)..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Java..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Java (OpenJDK 17)..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Java..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata)
+        _set_metadata_gradle_kts "${ROOT}/src/java/build.gradle.kts"
+        ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac

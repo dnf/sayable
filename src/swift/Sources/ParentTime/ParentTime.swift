@@ -38,6 +38,8 @@ private func stringReplace(_ s: String, _ target: String, _ replacement: String)
 
 public struct ParentTimeFormatter: Sendable {
 
+    public static let version = "0.5.0"
+
     private static let maxAgeMonths = 6000
 
     private let locale: AgeLocale

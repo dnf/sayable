@@ -24,8 +24,16 @@ uninstall_linux() { echo "Manual Swift install — remove from /usr/local manual
 
 deps() { :; }
 
+set_version() {
+    local ver="${1:?version required}"
+    _sed_i 's/public static let version = "[^"]*"/public static let version = "'"${ver}"'"/' \
+        "${ROOT}/src/swift/Sources/ParentTime/ParentTime.swift"
+}
+
 case "${1:-}" in
-    install)   log "Installing Swift..."; "install_${OS}"; deps ;;
-    uninstall) log "Uninstalling Swift..."; "uninstall_${OS}" ;;
-    *)         echo "Usage: $0 {install|uninstall}" >&2; exit 1 ;;
+    install)     log "Installing Swift..."; "install_${OS}"; deps ;;
+    uninstall)   log "Uninstalling Swift..."; "uninstall_${OS}" ;;
+    set-version)  set_version "$2" ;;
+    set-metadata) ;;
+    *)            echo "Usage: $0 {install|uninstall|set-version|set-metadata}" >&2; exit 1 ;;
 esac
