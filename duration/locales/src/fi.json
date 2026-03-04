@@ -1,0 +1,67 @@
+{
+  "code": "fi",
+  "name": "Finnish",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "{n} sekunti",
+      "other": "{n} sekuntia"
+    },
+    "minute": {
+      "one": "{n} minuutti",
+      "other": "{n} minuuttia"
+    },
+    "hour": {
+      "one": "{n} tunti",
+      "other": "{n} tuntia"
+    },
+    "day": {
+      "one": "{n} päivä",
+      "other": "{n} päivää"
+    },
+    "week": {
+      "one": "{n} viikko",
+      "other": "{n} viikkoa"
+    },
+    "month": {
+      "one": "{n} kuukausi",
+      "other": "{n} kuukautta"
+    },
+    "year": {
+      "one": "{n} vuosi",
+      "other": "{n} vuotta"
+    }
+  },
+  "half": "{n} ja puoli",
+  "delimiter": ", ",
+  "justNow": "juuri nyt",
+  "ago": "{0} sitten",
+  "inFuture": "{0} kuluttua",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} sitten",
+    "inFuture": "{0} kuluttua"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} sitten",
+    "inFuture": "{0} kuluttua"
+  }
+}

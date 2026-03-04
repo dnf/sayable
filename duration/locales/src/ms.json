@@ -1,0 +1,46 @@
+{
+  "code": "ms",
+  "name": "Malay",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "{n} saat",
+    "minute": "{n} minit",
+    "hour": "{n} jam",
+    "day": "{n} hari",
+    "week": "{n} minggu",
+    "month": "{n} bulan",
+    "year": "{n} tahun"
+  },
+  "half": "{0} setengah",
+  "delimiter": ", ",
+  "justNow": "baru sahaja",
+  "ago": "{0} lalu",
+  "inFuture": "dalam {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} lalu",
+    "inFuture": "dalam {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} lalu",
+    "inFuture": "dalam {0}"
+  }
+}

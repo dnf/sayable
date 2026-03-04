@@ -1,0 +1,67 @@
+{
+  "code": "nl",
+  "name": "Dutch",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "{n} seconde",
+      "other": "{n} seconden"
+    },
+    "minute": {
+      "one": "{n} minuut",
+      "other": "{n} minuten"
+    },
+    "hour": {
+      "one": "{n} uur",
+      "other": "{n} uur"
+    },
+    "day": {
+      "one": "{n} dag",
+      "other": "{n} dagen"
+    },
+    "week": {
+      "one": "{n} week",
+      "other": "{n} weken"
+    },
+    "month": {
+      "one": "{n} maand",
+      "other": "{n} maanden"
+    },
+    "year": {
+      "one": "{n} jaar",
+      "other": "{n} jaar"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "zojuist",
+  "ago": "{0} geleden",
+  "inFuture": "over {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} geleden",
+    "inFuture": "over {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} geleden",
+    "inFuture": "over {0}"
+  }
+}

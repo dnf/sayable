@@ -1,0 +1,38 @@
+{
+  "code": "ko",
+  "name": "Korean",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "{n}초",
+    "minute": "{n}분",
+    "hour": "{n}시간",
+    "day": "{n}일",
+    "week": "{n}주",
+    "month": "{n}개월",
+    "year": "{n}살"
+  },
+  "half": "{0} 반",
+  "delimiter": " ",
+  "justNow": "방금",
+  "ago": "{0} 전",
+  "inFuture": "{0} 후",
+  "short": {
+    "units": {
+      "second": "{n}초",
+      "minute": "{n}분",
+      "hour": "{n}시간"
+    },
+    "ago": "{0} 전",
+    "inFuture": "{0} 후"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}초",
+      "minute": "{n}분",
+      "hour": "{n}시간"
+    },
+    "delimiter": "",
+    "ago": "{0} 전",
+    "inFuture": "{0} 후"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "code": "bn",
+  "name": "Bengali",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": "{n} সেকেন্ড",
+    "minute": "{n} মিনিট",
+    "hour": "{n} ঘন্টা",
+    "day": {
+      "one": "{n} দিন",
+      "other": "{n} দিন"
+    },
+    "week": {
+      "one": "{n} সপ্তাহ",
+      "other": "{n} সপ্তাহ"
+    },
+    "month": {
+      "one": "{n} মাস",
+      "other": "{n} মাস"
+    },
+    "year": {
+      "one": "{n} বছর",
+      "other": "{n} বছর"
+    }
+  },
+  "half": "সাড়ে {n}",
+  "delimiter": ", ",
+  "justNow": "এইমাত্র",
+  "ago": "{0} আগে",
+  "inFuture": "{0} পরে",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} আগে",
+    "inFuture": "{0} পরে"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} আগে",
+    "inFuture": "{0} পরে"
+  }
+}

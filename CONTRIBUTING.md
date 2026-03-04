@@ -11,15 +11,15 @@ Thanks for your interest in contributing! Sayable maintains identical implementa
 ## Project structure
 
 ```
-sayable-age/src/
+age/src/
   ada/  c/  clojure/  cobol/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
   java/  kotlin/  lua/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
-sayable-age/locales/       # 71 JSON files — single source of truth for locale data
-sayable-age/codegen/
+age/locales/       # 71 JSON files — single source of truth for locale data
+age/codegen/
   targets/     # One emitter + plural rules per target language
   generate.py  # Orchestrator: loads JSON, runs emitters, writes files
-sayable-age/tests/         # Canonical test specification
-sayable-age/docs/          # Shared documentation
+age/tests/         # Canonical test specification
+age/docs/          # Shared documentation
 ```
 
 ## Development workflow
@@ -85,7 +85,7 @@ Every run captures output to `.logs/<action>/<language>.log` (e.g., `.logs/test/
 - **All implementations produce identical output** for the same inputs. Changes to formatting logic must be applied to all languages.
 - **Deterministic tests.** Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero dependencies.** No runtime dependencies in any language. Pure date arithmetic.
-- **Spec-first testing.** The canonical test specification lives in [`sayable-age/config/tests.json`](sayable-age/config/tests.json). Add new test cases there first, then implement in all languages.
+- **Spec-first testing.** The canonical test specification lives in [`age/config/tests.json`](age/config/tests.json). Add new test cases there first, then implement in all languages.
 
 ## Discuss before implementing
 
@@ -101,29 +101,29 @@ Native speaker feedback is especially welcome. If a translation sounds unnatural
 
 To fix a locale:
 
-1. Edit the JSON file in `sayable-age/locales/{code}.json`
+1. Edit the JSON file in `age/locales/{code}.json`
 2. Run `python -m codegen.generate` to regenerate all language implementations
 3. Run `just test` to verify
 
-Never edit the generated locale files (e.g. `sayable-age/src/typescript/sayable-age/src/sayable-age/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`sayable-age/codegen/README.md`](sayable-age/codegen/README.md) for full details.
+Never edit the generated locale files (e.g. `age/src/typescript/age/src/age/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`age/codegen/README.md`](age/codegen/README.md) for full details.
 
-See [`sayable-age/docs/gender-and-stages.md`](sayable-age/docs/gender-and-stages.md) for the gender analysis of stage labels.
+See [`age/docs/gender-and-stages.md`](age/docs/gender-and-stages.md) for the gender analysis of stage labels.
 
 ### New locales
 
-See [`sayable-age/docs/adding-a-locale.md`](sayable-age/docs/adding-a-locale.md) for a detailed guide. In short:
+See [`age/docs/adding-a-locale.md`](age/docs/adding-a-locale.md) for a detailed guide. In short:
 
 1. Identify the CLDR plural rule for the language (one of the 23 existing rules usually fits)
-2. Create `sayable-age/locales/{code}.json` with the locale data
+2. Create `age/locales/{code}.json` with the locale data
 3. Run `python -m codegen.generate` to generate locale files in all languages
-4. Add test cases to `sayable-age/config/tests.json` and implement them in all test files
+4. Add test cases to `age/config/tests.json` and implement them in all test files
 5. Run `just test`
 
 ### Bug fixes
 
-If you find a discrepancy between implementations, file an issue with the input and the differing outputs. All implementations must match the spec in `sayable-age/config/tests.json`.
+If you find a discrepancy between implementations, file an issue with the input and the differing outputs. All implementations must match the spec in `age/config/tests.json`.
 
-The fastest way to get a bug fixed is to include a failing test case in the format used by [`sayable-age/config/tests.json`](sayable-age/config/tests.json). If you can't reproduce it with a specific date pair, we probably can't either.
+The fastest way to get a bug fixed is to include a failing test case in the format used by [`age/config/tests.json`](age/config/tests.json). If you can't reproduce it with a specific date pair, we probably can't either.
 
 ### New features
 
@@ -153,9 +153,9 @@ Locale changes require native speaker verification before merging:
 Before submitting a PR, verify:
 
 - [ ] Tests pass in all affected languages (`just test`)
-- [ ] New test cases added to `sayable-age/config/tests.json` first (if applicable)
+- [ ] New test cases added to `age/config/tests.json` first (if applicable)
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
-- [ ] Locale changes made in `sayable-age/locales/*.json` and regenerated (not hand-edited)
+- [ ] Locale changes made in `age/locales/*.json` and regenerated (not hand-edited)
 - [ ] `just check` passes (codegen files up to date)
 - [ ] All implementations updated (for logic/feature changes)
 - [ ] No runtime dependencies added
@@ -168,7 +168,7 @@ Before submitting a PR, verify:
 
 ### Code style
 
-Each language follows its community conventions. There are no strict formatting requirements beyond what each language's linter enforces. See [`sayable-age/docs/code-quality.md`](sayable-age/docs/code-quality.md) for details.
+Each language follows its community conventions. There are no strict formatting requirements beyond what each language's linter enforces. See [`age/docs/code-quality.md`](age/docs/code-quality.md) for details.
 
 CI runs all language test suites on every pull request. PRs that break any language will not be merged.
 

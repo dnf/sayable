@@ -1,0 +1,46 @@
+{
+  "code": "vi",
+  "name": "Vietnamese",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "{n} giây",
+    "minute": "{n} phút",
+    "hour": "{n} giờ",
+    "day": "{n} ngày",
+    "week": "{n} tuần",
+    "month": "{n} tháng",
+    "year": "{n} tuổi"
+  },
+  "half": "{0} rưỡi",
+  "delimiter": ", ",
+  "justNow": "vừa xong",
+  "ago": "{0} trước",
+  "inFuture": "trong {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} trước",
+    "inFuture": "trong {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} trước",
+    "inFuture": "trong {0}"
+  }
+}

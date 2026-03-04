@@ -1,0 +1,67 @@
+{
+  "code": "el",
+  "name": "Greek",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "{n} δευτερόλεπτο",
+      "other": "{n} δευτερόλεπτα"
+    },
+    "minute": {
+      "one": "{n} λεπτό",
+      "other": "{n} λεπτά"
+    },
+    "hour": {
+      "one": "{n} ώρα",
+      "other": "{n} ώρες"
+    },
+    "day": {
+      "one": "{n} μέρα",
+      "other": "{n} μέρες"
+    },
+    "week": {
+      "one": "{n} εβδομάδα",
+      "other": "{n} εβδομάδες"
+    },
+    "month": {
+      "one": "{n} μήνας",
+      "other": "{n} μήνες"
+    },
+    "year": {
+      "one": "{n} χρόνος",
+      "other": "{n} χρόνια"
+    }
+  },
+  "half": "{0} και μισό",
+  "delimiter": ", ",
+  "justNow": "μόλις τώρα",
+  "ago": "πριν από {0}",
+  "inFuture": "σε {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "πριν από {0}",
+    "inFuture": "σε {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "πριν από {0}",
+    "inFuture": "σε {0}"
+  }
+}

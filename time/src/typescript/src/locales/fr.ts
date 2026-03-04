@@ -1,0 +1,30 @@
+import type { TimeLocale } from '../locale.js';
+
+export const fr: TimeLocale = {
+  code: 'fr',
+  clock: {
+    hours: ['douze', 'une', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze'],
+    midnight: 'minuit',
+    noon: 'midi',
+    patterns: {
+      0:  '{h} heures',
+      5:  '{h} heures cinq',
+      10: '{h} heures dix',
+      15: '{h} heures et quart',
+      20: '{h} heures vingt',
+      25: '{h} heures vingt-cinq',
+      30: '{h} heures et demie',
+      35: '{h} heures trente-cinq',
+      40: '{h} heures quarante',
+      45: '{h} heures moins le quart',
+      50: '{h} heures cinquante',
+      55: '{h} heures cinquante-cinq',
+    },
+  },
+  short: {
+    clock: { use24h: true, format: '{h}:{mm}' },
+  },
+  compact: {
+    clock: { use24h: true, format: '{h}h{mm}' },
+  },
+};

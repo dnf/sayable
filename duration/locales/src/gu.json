@@ -1,0 +1,58 @@
+{
+  "code": "gu",
+  "name": "Gujarati",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": "{n} સેકન્ડ",
+    "minute": "{n} મિનિટ",
+    "hour": "{n} કલાક",
+    "day": {
+      "one": "{n} દિવસ",
+      "other": "{n} દિવસ"
+    },
+    "week": {
+      "one": "{n} અઠવાડિયું",
+      "other": "{n} અઠવાડિયા"
+    },
+    "month": {
+      "one": "{n} મહિનો",
+      "other": "{n} મહિના"
+    },
+    "year": {
+      "one": "{n} વર્ષ",
+      "other": "{n} વર્ષ"
+    }
+  },
+  "half": "સાડા {n}",
+  "delimiter": ", ",
+  "justNow": "હમણાં",
+  "ago": "{0} પહેલાં",
+  "inFuture": "{0} પછી",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} પહેલાં",
+    "inFuture": "{0} પછી"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} પહેલાં",
+    "inFuture": "{0} પછી"
+  }
+}

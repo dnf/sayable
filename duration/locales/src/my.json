@@ -1,0 +1,38 @@
+{
+  "code": "my",
+  "name": "Burmese",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "{n} စက္ကန့်",
+    "minute": "{n} မိနစ်",
+    "hour": "{n} နာရီ",
+    "day": "{n} ရက်",
+    "week": "{n} ပတ်",
+    "month": "{n} လ",
+    "year": "{n} နှစ်"
+  },
+  "half": "{0}ခွဲ",
+  "delimiter": "၊ ",
+  "justNow": "ယခုလေးတင်",
+  "ago": "လွန်ခဲ့သော {0}",
+  "inFuture": "{0} အတွင်း",
+  "short": {
+    "units": {
+      "second": "{n} စက္ကန့်",
+      "minute": "{n} မိနစ်",
+      "hour": "{n} နာရီ"
+    },
+    "ago": "လွန်ခဲ့သော {0}",
+    "inFuture": "{0} အတွင်း"
+  },
+  "compact": {
+    "units": {
+      "second": "{n} စက္ကန့်",
+      "minute": "{n} မိနစ်",
+      "hour": "{n} နာရီ"
+    },
+    "delimiter": "",
+    "ago": "လွန်ခဲ့သော {0}",
+    "inFuture": "{0} အတွင်း"
+  }
+}

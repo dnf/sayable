@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "description": "Canonical test cases for sayable-time. This is the single source of truth — every test case listed here must be implemented in every language.",
+    "totalTests": 27,
+    "notes": [
+      "All test cases use explicit inputs for determinism.",
+      "When a single test covers multiple canonical IDs, list them with commas."
+    ]
+  },
+  "sections": [
+    {
+      "id": 1,
+      "title": "Null / edge cases",
+      "tests": [
+        {"id": "1.1", "function": "format_time", "input": {"time": null}, "expected": null},
+        {"id": "1.2", "function": "format_time", "input": {"time": ""}, "expected": null},
+        {"id": "1.3", "function": "format_time", "input": {"time": "invalid"}, "expected": null},
+        {"id": "1.4", "function": "format_time", "input": {"time": "25:00"}, "expected": null}
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Clock time (normal compactness)",
+      "tests": [
+        {"id": "2.1", "function": "format_time", "input": {"time": "00:00"}, "expected": "midnight"},
+        {"id": "2.2", "function": "format_time", "input": {"time": "12:00"}, "expected": "noon"},
+        {"id": "2.3", "function": "format_time", "input": {"time": "15:00"}, "expected": "three o'clock"},
+        {"id": "2.4", "function": "format_time", "input": {"time": "14:15"}, "expected": "a quarter past two"},
+        {"id": "2.5", "function": "format_time", "input": {"time": "09:30"}, "expected": "half past nine"},
+        {"id": "2.6", "function": "format_time", "input": {"time": "10:45"}, "expected": "a quarter to eleven"},
+        {"id": "2.7", "function": "format_time", "input": {"time": "08:05"}, "expected": "five past eight"},
+        {"id": "2.8", "function": "format_time", "input": {"time": "16:55"}, "expected": "five to five"},
+        {"id": "2.9", "function": "format_time", "input": {"time": "23:58"}, "expected": "midnight", "notes": "rounds to 0:00 of next day"},
+        {"id": "2.10", "function": "format_time", "input": {"time": "07:22"}, "expected": "twenty past seven", "notes": "22 rounds to 20"},
+        {"id": "2.11", "function": "format_time", "input": {"time": "2025-01-15T14:15:00"}, "expected": "a quarter past two", "notes": "ISO datetime input"}
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Clock time (short compactness)",
+      "compactness": "short",
+      "tests": [
+        {"id": "3.1", "function": "format_time", "input": {"time": "14:15"}, "expected": "2:15 PM"},
+        {"id": "3.2", "function": "format_time", "input": {"time": "09:30"}, "expected": "9:30 AM"},
+        {"id": "3.3", "function": "format_time", "input": {"time": "00:00"}, "expected": "12:00 AM"},
+        {"id": "3.4", "function": "format_time", "input": {"time": "12:00"}, "expected": "12:00 PM"}
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Clock time (compact)",
+      "compactness": "compact",
+      "tests": [
+        {"id": "4.1", "function": "format_time", "input": {"time": "14:15"}, "expected": "2:15p"},
+        {"id": "4.2", "function": "format_time", "input": {"time": "09:30"}, "expected": "9:30a"}
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Locale — German",
+      "locale": "de",
+      "tests": [
+        {"id": "5.1", "function": "format_time", "input": {"time": "15:30"}, "expected": "halb vier", "notes": "German half-to pattern"}
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Locale — French",
+      "locale": "fr",
+      "tests": [
+        {"id": "6.1", "function": "format_time", "input": {"time": "15:15"}, "expected": "trois heures et quart"}
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Locale — Japanese",
+      "locale": "ja",
+      "tests": [
+        {"id": "7.1", "function": "format_time", "input": {"time": "15:30"}, "expected": "三時半"}
+      ]
+    }
+  ]
+}

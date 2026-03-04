@@ -1,0 +1,58 @@
+{
+  "code": "ka",
+  "name": "Georgian",
+  "pluralRule": "one_other",
+  "units": {
+    "second": "{n} წამი",
+    "minute": "{n} წუთი",
+    "hour": "{n} საათი",
+    "day": {
+      "one": "{n} დღე",
+      "other": "{n} დღე"
+    },
+    "week": {
+      "one": "{n} კვირა",
+      "other": "{n} კვირა"
+    },
+    "month": {
+      "one": "{n} თვე",
+      "other": "{n} თვე"
+    },
+    "year": {
+      "one": "{n} წელი",
+      "other": "{n} წელი"
+    }
+  },
+  "half": "{0} და ნახევარი",
+  "delimiter": ", ",
+  "justNow": "ახლახანს",
+  "ago": "{0} წინ",
+  "inFuture": "{0} შემდეგ",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} წინ",
+    "inFuture": "{0} შემდეგ"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} წინ",
+    "inFuture": "{0} შემდეგ"
+  }
+}

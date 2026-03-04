@@ -1,0 +1,58 @@
+{
+  "code": "ne",
+  "name": "Nepali",
+  "pluralRule": "one_other",
+  "units": {
+    "second": "{n} सेकेन्ड",
+    "minute": "{n} मिनेट",
+    "hour": "{n} घण्टा",
+    "day": {
+      "one": "{n} दिन",
+      "other": "{n} दिन"
+    },
+    "week": {
+      "one": "{n} हप्ता",
+      "other": "{n} हप्ता"
+    },
+    "month": {
+      "one": "{n} महिना",
+      "other": "{n} महिना"
+    },
+    "year": {
+      "one": "{n} वर्ष",
+      "other": "{n} वर्ष"
+    }
+  },
+  "half": "साढे {n}",
+  "delimiter": ", ",
+  "justNow": "भर्खरै",
+  "ago": "{0} अगाडि",
+  "inFuture": "{0} पछि",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} अगाडि",
+    "inFuture": "{0} पछि"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} अगाडि",
+    "inFuture": "{0} पछि"
+  }
+}

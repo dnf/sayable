@@ -1,0 +1,74 @@
+{
+  "code": "he",
+  "name": "Hebrew",
+  "pluralRule": "he",
+  "units": {
+    "second": {
+      "one": "שנייה {n}",
+      "two": "שתי שניות",
+      "other": "{n} שניות"
+    },
+    "minute": {
+      "one": "דקה {n}",
+      "two": "שתי דקות",
+      "other": "{n} דקות"
+    },
+    "hour": {
+      "one": "שעה {n}",
+      "two": "שעתיים",
+      "other": "{n} שעות"
+    },
+    "day": {
+      "one": "יום {n}",
+      "two": "יומיים",
+      "other": "{n} ימים"
+    },
+    "week": {
+      "one": "שבוע {n}",
+      "two": "שבועיים",
+      "other": "{n} שבועות"
+    },
+    "month": {
+      "one": "חודש {n}",
+      "two": "חודשיים",
+      "other": "{n} חודשים"
+    },
+    "year": {
+      "one": "שנה",
+      "two": "שנתיים",
+      "other": "{n} שנים"
+    }
+  },
+  "half": "{0} וחצי",
+  "delimiter": ", ",
+  "justNow": "הרגע",
+  "ago": "לפני {0}",
+  "inFuture": "בעוד {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "לפני {0}",
+    "inFuture": "בעוד {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "לפני {0}",
+    "inFuture": "בעוד {0}"
+  }
+}

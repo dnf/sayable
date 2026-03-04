@@ -1,0 +1,67 @@
+{
+  "code": "es",
+  "name": "Spanish",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "{n} segundo",
+      "other": "{n} segundos"
+    },
+    "minute": {
+      "one": "{n} minuto",
+      "other": "{n} minutos"
+    },
+    "hour": {
+      "one": "{n} hora",
+      "other": "{n} horas"
+    },
+    "day": {
+      "one": "{n} día",
+      "other": "{n} días"
+    },
+    "week": {
+      "one": "{n} semana",
+      "other": "{n} semanas"
+    },
+    "month": {
+      "one": "{n} mes",
+      "other": "{n} meses"
+    },
+    "year": {
+      "one": "{n} año",
+      "other": "{n} años"
+    }
+  },
+  "half": "{n} y medio",
+  "delimiter": ", ",
+  "justNow": "ahora mismo",
+  "ago": "hace {0}",
+  "inFuture": "en {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "hace {0}",
+    "inFuture": "en {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "hace {0}",
+    "inFuture": "en {0}"
+  }
+}

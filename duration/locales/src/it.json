@@ -1,0 +1,67 @@
+{
+  "code": "it",
+  "name": "Italian",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "{n} secondo",
+      "other": "{n} secondi"
+    },
+    "minute": {
+      "one": "{n} minuto",
+      "other": "{n} minuti"
+    },
+    "hour": {
+      "one": "{n} ora",
+      "other": "{n} ore"
+    },
+    "day": {
+      "one": "{n} giorno",
+      "other": "{n} giorni"
+    },
+    "week": {
+      "one": "{n} settimana",
+      "other": "{n} settimane"
+    },
+    "month": {
+      "one": "{n} mese",
+      "other": "{n} mesi"
+    },
+    "year": {
+      "one": "{n} anno",
+      "other": "{n} anni"
+    }
+  },
+  "half": "{0} e mezzo",
+  "delimiter": ", ",
+  "justNow": "proprio ora",
+  "ago": "{0} fa",
+  "inFuture": "tra {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} fa",
+    "inFuture": "tra {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} fa",
+    "inFuture": "tra {0}"
+  }
+}

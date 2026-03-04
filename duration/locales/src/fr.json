@@ -1,0 +1,64 @@
+{
+  "code": "fr",
+  "name": "French",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": {
+      "one": "{n} seconde",
+      "other": "{n} secondes"
+    },
+    "minute": {
+      "one": "{n} minute",
+      "other": "{n} minutes"
+    },
+    "hour": {
+      "one": "{n} heure",
+      "other": "{n} heures"
+    },
+    "day": {
+      "one": "{n} jour",
+      "other": "{n} jours"
+    },
+    "week": {
+      "one": "{n} semaine",
+      "other": "{n} semaines"
+    },
+    "month": "{n} mois",
+    "year": {
+      "one": "{n} an",
+      "other": "{n} ans"
+    }
+  },
+  "half": "{0} et demi",
+  "delimiter": ", ",
+  "justNow": "à l'instant",
+  "ago": "il y a {0}",
+  "inFuture": "dans {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "il y a {0}",
+    "inFuture": "dans {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "il y a {0}",
+    "inFuture": "dans {0}"
+  }
+}

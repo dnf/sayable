@@ -1,0 +1,81 @@
+{
+  "code": "gd",
+  "name": "Scottish Gaelic",
+  "pluralRule": "gd",
+  "units": {
+    "second": {
+      "one": "{n} diog",
+      "two": "{n} dhiog",
+      "few": "{n} diogan",
+      "other": "{n} diog"
+    },
+    "minute": {
+      "one": "{n} mhionaid",
+      "two": "{n} mhionaid",
+      "few": "{n} mionaidean",
+      "other": "{n} mionaid"
+    },
+    "hour": {
+      "one": "{n} uair",
+      "two": "{n} uair",
+      "few": "{n} uairean",
+      "other": "{n} uair"
+    },
+    "day": {
+      "one": "{n} latha",
+      "two": "{n} latha",
+      "few": "{n} làithean",
+      "other": "{n} latha"
+    },
+    "week": {
+      "one": "{n} sheachdain",
+      "two": "{n} sheachdain",
+      "few": "{n} seachdainean",
+      "other": "{n} seachdain"
+    },
+    "month": {
+      "one": "{n} mhìos",
+      "two": "{n} mhìos",
+      "few": "{n} mìosan",
+      "other": "{n} mìos"
+    },
+    "year": {
+      "one": "{n} bhliadhna",
+      "two": "{n} bhliadhna",
+      "few": "{n} bliadhna",
+      "other": "{n} bliadhna"
+    }
+  },
+  "half": "{0} gu leth",
+  "delimiter": ", ",
+  "justNow": "an-dràsta",
+  "ago": "o chionn {0}",
+  "inFuture": "an ceann {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "o chionn {0}",
+    "inFuture": "an ceann {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "o chionn {0}",
+    "inFuture": "an ceann {0}"
+  }
+}

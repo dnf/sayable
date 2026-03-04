@@ -1,0 +1,58 @@
+{
+  "code": "sw",
+  "name": "Swahili",
+  "pluralRule": "one_other",
+  "units": {
+    "second": "{n} sekunde",
+    "minute": "{n} dakika",
+    "hour": "{n} saa",
+    "day": {
+      "one": "siku {n}",
+      "other": "siku {n}"
+    },
+    "week": {
+      "one": "wiki {n}",
+      "other": "wiki {n}"
+    },
+    "month": {
+      "one": "mwezi {n}",
+      "other": "miezi {n}"
+    },
+    "year": {
+      "one": "mwaka {n}",
+      "other": "miaka {n}"
+    }
+  },
+  "half": "{0} na nusu",
+  "delimiter": ", ",
+  "justNow": "sasa hivi",
+  "ago": "{0} iliyopita",
+  "inFuture": "baada ya {0}",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "{0} iliyopita",
+    "inFuture": "baada ya {0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} iliyopita",
+    "inFuture": "baada ya {0}"
+  }
+}

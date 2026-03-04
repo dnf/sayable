@@ -1,0 +1,38 @@
+{
+  "code": "th",
+  "name": "Thai",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "{n} วินาที",
+    "minute": "{n} นาที",
+    "hour": "{n} ชั่วโมง",
+    "day": "{n} วัน",
+    "week": "{n} สัปดาห์",
+    "month": "{n} เดือน",
+    "year": "{n} ปี"
+  },
+  "half": "{0}ครึ่ง",
+  "delimiter": " ",
+  "justNow": "เมื่อกี้",
+  "ago": "{0}ที่แล้ว",
+  "inFuture": "ใน{0}",
+  "short": {
+    "units": {
+      "second": "{n} วินาที",
+      "minute": "{n} นาที",
+      "hour": "{n} ชั่วโมง"
+    },
+    "ago": "{0}ที่แล้ว",
+    "inFuture": "ใน{0}"
+  },
+  "compact": {
+    "units": {
+      "second": "{n} วินาที",
+      "minute": "{n} นาที",
+      "hour": "{n} ชั่วโมง"
+    },
+    "delimiter": "",
+    "ago": "{0}ที่แล้ว",
+    "inFuture": "ใน{0}"
+  }
+}

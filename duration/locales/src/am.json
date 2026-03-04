@@ -1,0 +1,67 @@
+{
+  "code": "am",
+  "name": "Amharic",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": {
+      "one": "{n} ሰከንድ",
+      "other": "{n} ሰከንዶች"
+    },
+    "minute": {
+      "one": "{n} ደቂቃ",
+      "other": "{n} ደቂቃዎች"
+    },
+    "hour": {
+      "one": "{n} ሰዓት",
+      "other": "{n} ሰዓቶች"
+    },
+    "day": {
+      "one": "{n} ቀን",
+      "other": "{n} ቀናት"
+    },
+    "week": {
+      "one": "{n} ሳምንት",
+      "other": "{n} ሳምንታት"
+    },
+    "month": {
+      "one": "{n} ወር",
+      "other": "{n} ወራት"
+    },
+    "year": {
+      "one": "{n} ዓመት",
+      "other": "{n} ዓመታት"
+    }
+  },
+  "half": "{0} ተኩል",
+  "delimiter": "፣ ",
+  "justNow": "አሁን",
+  "ago": "ከ{0} በፊት",
+  "inFuture": "በ{0} ውስጥ",
+  "short": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "ago": "ከ{0} በፊት",
+    "inFuture": "በ{0} ውስጥ"
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}mo",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "ከ{0} በፊት",
+    "inFuture": "በ{0} ውስጥ"
+  }
+}
