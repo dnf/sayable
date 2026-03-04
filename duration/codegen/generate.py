@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Generate locale source files for Python and TypeScript from canonical JSON.
+"""Generate locale source files for C++, Go, Kotlin, Python, Ruby, Rust, and TypeScript from canonical JSON.
 
 Usage:
     python -m codegen.generate                      # generate all
     python -m codegen.generate --check              # dry-run, exit 1 if files would change
-    python -m codegen.generate --lang typescript     # generate one language only
+    python -m codegen.generate --lang go             # generate one language only
 """
 
 from __future__ import annotations
@@ -66,10 +66,52 @@ def _clean_python(selected: set[str], all_codes: set[str], check: bool, diffs: l
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_go(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.go.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_ruby(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.ruby.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_rust(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.rust.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
-    "typescript": _clean_typescript,
+    "go": _clean_go,
     "python": _clean_python,
+    "ruby": _clean_ruby,
+    "rust": _clean_rust,
+    "typescript": _clean_typescript,
 }
+
+
+def generate_cpp(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.cpp.emitter import (
+        emit_header, emit_registry, emit_source_file, header_path,
+        registry_source_path, source_path, split_by_range,
+    )
+
+    ranges = split_by_range(locales)
+    for suffix, range_locales in ranges.items():
+        path = source_path(suffix, ROOT)
+        content = emit_source_file(range_locales)
+        _write_or_check(path, content, check, diffs)
+
+    path = header_path(ROOT)
+    content = emit_header(locales)
+    _write_or_check(path, content, check, diffs)
+
+    path = registry_source_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
 
 
 def generate_typescript(locales: list[dict], check: bool, diffs: list[str]) -> None:
@@ -98,8 +140,66 @@ def generate_python(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_go(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.go.emitter import (
+        emit_helpers, emit_locale, emit_registry, helpers_path, output_path, registry_path,
+    )
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+    path = helpers_path(ROOT)
+    content = emit_helpers()
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_ruby(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.ruby.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_kotlin(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.kotlin.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_rust(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.rust.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 _GENERATORS = {
+    "cpp": generate_cpp,
+    "go": generate_go,
+    "kotlin": generate_kotlin,
     "python": generate_python,
+    "ruby": generate_ruby,
+    "rust": generate_rust,
     "typescript": generate_typescript,
 }
 

@@ -11,7 +11,12 @@ _runner := "../.hecatron/tools/runner/run-parallel.sh"
 _name target:
     #!/usr/bin/env bash
     case "{{target}}" in
+        c++|cpp)       echo "cpp" ;;
+        go)            echo "go" ;;
+        kt|kotlin)     echo "kotlin" ;;
         py|python)     echo "python" ;;
+        rb|ruby)       echo "ruby" ;;
+        rs|rust)       echo "rust" ;;
         ts|typescript) echo "typescript" ;;
         *)             echo "{{target}}" ;;
     esac
@@ -36,7 +41,12 @@ test *target:
             "Run all test suites + codegen check in parallel, or a single target." \
             "" \
             "Languages:" \
+            "  c++ (cpp)        C++ tests via cmake/ctest" \
+            "  go               Go tests via go test" \
+            "  kotlin (kt)      Kotlin tests via Gradle" \
             "  python (py)      Python tests via pytest" \
+            "  ruby (rb)        Ruby tests via ruby" \
+            "  rust (rs)        Rust tests via cargo" \
             "  typescript (ts)  TypeScript tests via vitest" \
             "" \
             "Flags:" \
@@ -46,19 +56,41 @@ test *target:
             "Examples:" \
             "  just test        Run all test suites + codegen check in parallel" \
             "  just test py     Run Python tests only" \
-            "  just test ts     Run TypeScript tests only"
+            "  just test go     Run Go tests only"
         exit 0
     fi
     if [ -z "${_target}" ]; then
         {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} test \
-            "check" "test python" "test typescript"
+            "check" \
+            "test cpp" \
+            "test go" \
+            "test kotlin" \
+            "test python" \
+            "test ruby" \
+            "test rust" \
+            "test typescript"
     else
         _name="$(just _name "${_target}")"
         mkdir -p .logs/test
         (
             case "${_target}" in
+                c++|cpp)
+                    cd impl/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release 2>&1 && cmake --build build 2>&1 && cd build && ctest --output-on-failure
+                    ;;
+                go)
+                    cd impl/go && go test ./...
+                    ;;
+                kotlin|kt)
+                    cd impl/kotlin && ./gradlew test
+                    ;;
                 python|py)
                     cd impl/python && uv run --extra dev python -m pytest tests/
+                    ;;
+                ruby|rb)
+                    cd impl/ruby && ruby -Ilib test/test_formatter.rb
+                    ;;
+                rust|rs)
+                    cd impl/rust && cargo test
                     ;;
                 typescript|ts)
                     cd impl/typescript && npx vitest run
@@ -88,10 +120,15 @@ build *target:
         printf '%s\n' \
             "Usage: just build [flags] [target]" \
             "" \
-            "Build one or both targets in parallel, or a single target." \
+            "Build all targets in parallel, or a single target." \
             "" \
             "Languages:" \
+            "  c++ (cpp)        Build via cmake" \
+            "  go               Build via go build" \
+            "  kotlin (kt)      Build via Gradle" \
             "  python (py)      No-op (pure Python)" \
+            "  ruby (rb)        No-op (interpreted)" \
+            "  rust (rs)        Build via cargo" \
             "  typescript (ts)  Build via tsup" \
             "" \
             "Flags:" \
@@ -100,19 +137,40 @@ build *target:
             "" \
             "Examples:" \
             "  just build       Build all targets in parallel" \
-            "  just build ts    Build TypeScript only"
+            "  just build rs    Build Rust only"
         exit 0
     fi
     if [ -z "${_target}" ]; then
         {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} build \
-            "build python" "build typescript"
+            "build cpp" \
+            "build go" \
+            "build kotlin" \
+            "build python" \
+            "build ruby" \
+            "build rust" \
+            "build typescript"
     else
         _name="$(just _name "${_target}")"
         mkdir -p .logs/build
         (
             case "${_target}" in
+                c++|cpp)
+                    cd impl/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release 2>&1 && cmake --build build 2>&1
+                    ;;
+                go)
+                    cd impl/go && go build ./...
+                    ;;
+                kotlin|kt)
+                    cd impl/kotlin && ./gradlew build
+                    ;;
                 python|py)
                     echo "No build step needed — pure Python package."
+                    ;;
+                ruby|rb)
+                    echo "No build step needed — interpreted language."
+                    ;;
+                rust|rs)
+                    cd impl/rust && cargo build
                     ;;
                 typescript|ts)
                     cd impl/typescript && npm run build
@@ -142,10 +200,15 @@ lint *target:
         printf '%s\n' \
             "Usage: just lint [flags] [target]" \
             "" \
-            "Run linters for one or both languages in parallel, or a single target." \
+            "Run linters for all languages in parallel, or a single target." \
             "" \
             "Languages:" \
+            "  c++ (cpp)        Compiler warnings (cmake build)" \
+            "  go               golangci-lint" \
+            "  kotlin (kt)      Gradle build (compiler warnings)" \
             "  python (py)      Ruff + Pyright" \
+            "  ruby (rb)        No-op" \
+            "  rust (rs)        cargo clippy" \
             "  typescript (ts)  tsc + ESLint" \
             "" \
             "Flags:" \
@@ -154,20 +217,40 @@ lint *target:
             "" \
             "Examples:" \
             "  just lint        Lint all languages in parallel" \
-            "  just lint py     Lint Python only" \
-            "  just lint ts     Lint TypeScript only"
+            "  just lint py     Lint Python only"
         exit 0
     fi
     if [ -z "${_target}" ]; then
         {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} lint \
-            "lint python" "lint typescript"
+            "lint cpp" \
+            "lint go" \
+            "lint kotlin" \
+            "lint python" \
+            "lint ruby" \
+            "lint rust" \
+            "lint typescript"
     else
         _name="$(just _name "${_target}")"
         mkdir -p .logs/lint
         (
             case "${_target}" in
+                c++|cpp)
+                    cd impl/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release 2>&1 && cmake --build build 2>&1
+                    ;;
+                go)
+                    cd impl/go && golangci-lint run
+                    ;;
+                kotlin|kt)
+                    cd impl/kotlin && ./gradlew build
+                    ;;
                 python|py)
                     cd impl/python && uv run --extra dev ruff check . && uv run --extra dev pyright
+                    ;;
+                ruby|rb)
+                    echo "No linter configured for Ruby."
+                    ;;
+                rust|rs)
+                    cd impl/rust && cargo clippy -- -D warnings
                     ;;
                 typescript|ts)
                     cd impl/typescript && npm run lint
@@ -237,10 +320,15 @@ clean *target:
         printf '%s\n' \
             "Usage: just clean [flags] [target]" \
             "" \
-            "Remove build artifacts for one or both languages." \
+            "Remove build artifacts for all or one language." \
             "" \
             "Languages:" \
+            "  c++ (cpp)        Remove build/" \
+            "  go               No artifacts to clean" \
+            "  kotlin (kt)      Gradle clean" \
             "  python (py)      Remove .venv, dist, egg-info, caches" \
+            "  ruby (rb)        No artifacts to clean" \
+            "  rust (rs)        cargo clean" \
             "  typescript (ts)  Remove node_modules, dist, tsbuildinfo" \
             "" \
             "Flags:" \
@@ -249,18 +337,38 @@ clean *target:
             "" \
             "Examples:" \
             "  just clean       Clean all artifacts in parallel" \
-            "  just clean py    Clean Python artifacts only" \
-            "  just clean ts    Clean TypeScript artifacts only"
+            "  just clean py    Clean Python artifacts only"
         exit 0
     fi
     if [ -z "${_target}" ]; then
         {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} clean \
-            "clean python" "clean typescript"
+            "clean cpp" \
+            "clean go" \
+            "clean kotlin" \
+            "clean python" \
+            "clean ruby" \
+            "clean rust" \
+            "clean typescript"
     else
         case "${_target}" in
+            c++|cpp)
+                rm -rf impl/cpp/build
+                ;;
+            go)
+                echo "No artifacts to clean for Go."
+                ;;
+            kotlin|kt)
+                cd impl/kotlin && ./gradlew clean
+                ;;
             python|py)
                 rm -rf impl/python/.venv impl/python/dist impl/python/*.egg-info impl/python/.pytest_cache
                 find impl/python -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+                ;;
+            ruby|rb)
+                echo "No artifacts to clean for Ruby."
+                ;;
+            rust|rs)
+                cd impl/rust && cargo clean
                 ;;
             typescript|ts)
                 rm -rf impl/typescript/node_modules impl/typescript/dist impl/typescript/.tsbuildinfo

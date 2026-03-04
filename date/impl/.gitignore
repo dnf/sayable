@@ -1,0 +1,9 @@
+# C++
+cpp/build/
+
+# Kotlin
+kotlin/.gradle/
+kotlin/build/
+
+# Rust
+rust/target/
