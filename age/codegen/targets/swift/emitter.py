@@ -172,4 +172,4 @@ def _emit_compactness_override(lines: list[str], label: str, ovr: dict, trailing
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "swift", "Sources", "SayableAge", "Locales", "Locales.swift")
+    return os.path.join(root, "impl", "swift", "Sources", "SayableAge", "Locales", "Locales.swift")

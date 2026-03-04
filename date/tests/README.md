@@ -8,8 +8,8 @@ Every implementation must pass the full canonical test suite. Test files annotat
 
 ```bash
 # Python
-cd date/src/python && uv run --extra dev pytest tests/ -v
+cd date/impl/python && uv run --extra dev pytest tests/ -v
 
 # TypeScript
-cd date/src/typescript && npx vitest run
+cd date/impl/typescript && npx vitest run
 ```

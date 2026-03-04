@@ -138,9 +138,9 @@ def emit_barrel(all_locales: list[dict]) -> str:
 
 def output_path(code: str, root: str) -> str:
     import os
-    return os.path.join(root, "src", "ocaml", "lib", "locales", f"{code}.ml")
+    return os.path.join(root, "impl", "ocaml", "lib", "locales", f"{code}.ml")
 
 
 def barrel_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "ocaml", "lib", "locales", "locales.ml")
+    return os.path.join(root, "impl", "ocaml", "lib", "locales", "locales.ml")

@@ -134,12 +134,12 @@ def emit_registry(all_locales: list[dict]) -> str:
 
 def output_path(code: str, root: str) -> str:
     import os
-    return os.path.join(root, "src", "dart", "lib", "src", "locales", f"{code}.dart")
+    return os.path.join(root, "impl", "dart", "lib", "src", "locales", f"{code}.dart")
 
 
 def registry_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "dart", "lib", "src", "locales", "locales.dart")
+    return os.path.join(root, "impl", "dart", "lib", "src", "locales", "locales.dart")
 
 
 def barrel_path(root: str) -> str | None:

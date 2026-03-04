@@ -14,7 +14,7 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "src", "python", "src"))
+sys.path.insert(0, os.path.join(ROOT, "impl", "python", "src"))
 
 from codegen.generate import _write_or_check, load_locales
 from sayable_duration.format_duration import SayableDuration

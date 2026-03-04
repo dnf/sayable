@@ -136,9 +136,9 @@ def emit_registry(all_locales: list[dict]) -> str:
 def output_path(code: str, root: str) -> str:
     import os
     mod = code.replace("-", "_")
-    return os.path.join(root, "src", "elixir", "lib", "sayable_age", "locales", f"{mod}.ex")
+    return os.path.join(root, "impl", "elixir", "lib", "sayable_age", "locales", f"{mod}.ex")
 
 
 def registry_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "elixir", "lib", "sayable_age", "locales.ex")
+    return os.path.join(root, "impl", "elixir", "lib", "sayable_age", "locales.ex")

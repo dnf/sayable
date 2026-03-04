@@ -231,8 +231,8 @@ def emit_body(all_locales: list[dict]) -> str:
 
 
 def spec_path(root: str) -> str:
-    return os.path.join(root, "src", "ada", "src", "locales", "sayableage_locales.ads")
+    return os.path.join(root, "impl", "ada", "src", "locales", "sayableage_locales.ads")
 
 
 def body_path(root: str) -> str:
-    return os.path.join(root, "src", "ada", "src", "locales", "sayableage_locales.adb")
+    return os.path.join(root, "impl", "ada", "src", "locales", "sayableage_locales.adb")

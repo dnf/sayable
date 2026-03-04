@@ -11,7 +11,7 @@ Thanks for your interest in contributing! Sayable maintains identical implementa
 ## Project structure
 
 ```
-age/src/
+age/impl/
   ada/  c/  clojure/  cobol/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
   java/  kotlin/  lua/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
 age/locales/       # 71 JSON files — single source of truth for locale data
@@ -105,7 +105,7 @@ To fix a locale:
 2. Run `python -m codegen.generate` to regenerate all language implementations
 3. Run `just test` to verify
 
-Never edit the generated locale files (e.g. `age/src/typescript/age/src/age/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`age/codegen/README.md`](age/codegen/README.md) for full details.
+Never edit the generated locale files (e.g. `age/impl/typescript/age/impl/age/locales/fr.ts`) by hand — they will be overwritten by the generator. See [`age/codegen/README.md`](age/codegen/README.md) for full details.
 
 See [`age/docs/gender-and-stages.md`](age/docs/gender-and-stages.md) for the gender analysis of stage labels.
 

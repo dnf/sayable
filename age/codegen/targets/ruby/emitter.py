@@ -119,12 +119,12 @@ def emit_registry(all_locales: list[dict]) -> str:
 
 def output_path(code: str, root: str) -> str:
     import os
-    return os.path.join(root, "src", "ruby", "lib", "sayable_age", "locales", f"{code}.rb")
+    return os.path.join(root, "impl", "ruby", "lib", "sayable_age", "locales", f"{code}.rb")
 
 
 def registry_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "ruby", "lib", "sayable_age", "locales", "registry.rb")
+    return os.path.join(root, "impl", "ruby", "lib", "sayable_age", "locales", "registry.rb")
 
 
 def barrel_path(root: str) -> str | None:

@@ -259,4 +259,4 @@ def emit_all(all_locales: list[dict]) -> str:
 
 
 def output_path(root: str) -> str:
-    return os.path.join(root, "src", "fortran", "src", "locales", "sayableage_locales.f90")
+    return os.path.join(root, "impl", "fortran", "src", "locales", "sayableage_locales.f90")

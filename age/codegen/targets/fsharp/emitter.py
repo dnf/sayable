@@ -167,4 +167,4 @@ def _compactness_override(ovr: dict) -> str:
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "fsharp", "SayableAge", "Locales", "Locales.fs")
+    return os.path.join(root, "impl", "fsharp", "SayableAge", "Locales", "Locales.fs")

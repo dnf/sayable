@@ -153,4 +153,4 @@ def _emit_compactness_override(lines: list[str], ovr: dict) -> None:
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "groovy", "src", "main", "groovy", "sayableage", "locales", "Locales.groovy")
+    return os.path.join(root, "impl", "groovy", "src", "main", "groovy", "sayableage", "locales", "Locales.groovy")

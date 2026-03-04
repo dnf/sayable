@@ -163,4 +163,4 @@ def emit_all(all_locales: list[dict]) -> str:
 
 def output_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "zig", "src", "locales", "locales.zig")
+    return os.path.join(root, "impl", "zig", "src", "locales", "locales.zig")

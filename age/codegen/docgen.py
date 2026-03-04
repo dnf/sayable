@@ -17,7 +17,7 @@ import sys
 
 # Add python/src to path so we can import sayable_age
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "src", "python", "src"))
+sys.path.insert(0, os.path.join(ROOT, "impl", "python", "src"))
 
 from codegen.generate import _write_or_check, load_locales
 from sayable_age.format_age import SayableAge

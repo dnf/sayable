@@ -43,7 +43,7 @@ def emit_locale(data: dict) -> str:
     uc = code.upper()
 
     lines = [HEADER + locale_source_comment(code), "package locales\n"]
-    lines.append('import sa "github.com/dnf/sayable/age/src/go"\n')
+    lines.append('import sa "github.com/dnf/sayable/age/impl/go"\n')
     lines.append(f"// {uc} is the {name} locale.")
     lines.append(f"var {uc} = sa.AgeLocale{{")
 
@@ -127,7 +127,7 @@ def emit_registry(all_locales: list[dict]) -> str:
     """Generate locale_registry.go with GetLocale function."""
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER, "package locales\n"]
-    lines.append('import sa "github.com/dnf/sayable/age/src/go"\n')
+    lines.append('import sa "github.com/dnf/sayable/age/impl/go"\n')
     lines.append("// GetLocale returns the locale for the given code, or nil if not found.")
     lines.append("func GetLocale(code string) *sa.AgeLocale {")
     lines.append("\tswitch code {")
@@ -153,17 +153,17 @@ def emit_helpers() -> str:
 
 def output_path(code: str, root: str) -> str:
     import os
-    return os.path.join(root, "src", "go", "locales", f"locale_{code}.go")
+    return os.path.join(root, "impl", "go", "locales", f"locale_{code}.go")
 
 
 def registry_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "go", "locales", "locale_registry.go")
+    return os.path.join(root, "impl", "go", "locales", "locale_registry.go")
 
 
 def helpers_path(root: str) -> str:
     import os
-    return os.path.join(root, "src", "go", "locales", "helpers.go")
+    return os.path.join(root, "impl", "go", "locales", "helpers.go")
 
 
 def barrel_path(root: str) -> str | None:

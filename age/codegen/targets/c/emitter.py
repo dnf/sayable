@@ -253,23 +253,23 @@ def emit_formatter() -> str:
 
 
 def locale_path(code: str, root: str) -> str:
-    return os.path.join(root, "src", "c", "src", "locales", f"{code}.c")
+    return os.path.join(root, "impl", "c", "src", "locales", f"{code}.c")
 
 
 def header_path(root: str) -> str:
-    return os.path.join(root, "src", "c", "include", "sayableage", "sayableage.h")
+    return os.path.join(root, "impl", "c", "include", "sayableage", "sayableage.h")
 
 
 def locales_header_path(root: str) -> str:
-    return os.path.join(root, "src", "c", "include", "sayableage", "locales.h")
+    return os.path.join(root, "impl", "c", "include", "sayableage", "locales.h")
 
 
 def registry_path(root: str) -> str:
-    return os.path.join(root, "src", "c", "src", "locales_registry.c")
+    return os.path.join(root, "impl", "c", "src", "locales_registry.c")
 
 
 def formatter_path(root: str) -> str:
-    return os.path.join(root, "src", "c", "src", "sayableage.c")
+    return os.path.join(root, "impl", "c", "src", "sayableage.c")
 
 
 _FORMATTER_SOURCE = "/* -*- coding: utf-8 -*- */\n" + HEADER.rstrip() + """

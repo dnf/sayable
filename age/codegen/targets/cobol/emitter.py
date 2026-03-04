@@ -211,4 +211,4 @@ def emit_all(all_locales: list[dict]) -> str:
 
 
 def output_path(root: str) -> str:
-    return os.path.join(root, "src", "cobol", "src", "locales", "Locales.cbl")
+    return os.path.join(root, "impl", "cobol", "src", "locales", "Locales.cbl")
