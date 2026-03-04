@@ -1,0 +1,70 @@
+{
+  "code": "si",
+  "name": "Sinhala",
+  "months": [
+    "ජනවාරි",
+    "පෙබරවාරි",
+    "මාර්තු",
+    "අප්‍රේල්",
+    "මැයි",
+    "ජූනි",
+    "ජූලි",
+    "අගෝස්තු",
+    "සැප්තැම්බර්",
+    "ඔක්තෝබර්",
+    "නොවැම්බර්",
+    "දෙසැම්බර්"
+  ],
+  "weekdays": [
+    "ඉරිදා",
+    "සඳුදා",
+    "අඟහරුවාදා",
+    "බදාදා",
+    "බ්‍රහස්පතින්දා",
+    "සිකුරාදා",
+    "සෙනසුරාදා"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "අද",
+  "tomorrow": "හෙට",
+  "yesterday": "ඊයේ",
+  "dayAfterTomorrow": "අනිද්දා",
+  "dayBeforeYesterday": "පෙරේදා",
+  "thisWeekday": "මේ {weekday}",
+  "nextWeekday": "ඊළඟ {weekday}",
+  "lastWeekday": "පසුගිය {weekday}",
+  "short": {
+    "months": [
+      "ජන",
+      "පෙබ",
+      "මාර්",
+      "අප්‍",
+      "මැයි",
+      "ජූනි",
+      "ජූලි",
+      "අගෝ",
+      "සැප්",
+      "ඔක්",
+      "නොවැ",
+      "දෙසැ"
+    ],
+    "weekdays": [
+      "ඉරි",
+      "සඳු",
+      "අඟ",
+      "බදා",
+      "බ්‍ර",
+      "සිකු",
+      "සෙන"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

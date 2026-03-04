@@ -1,0 +1,84 @@
+{
+  "code": "cs",
+  "name": "Czech",
+  "months": [
+    "leden",
+    "únor",
+    "březen",
+    "duben",
+    "květen",
+    "červen",
+    "červenec",
+    "srpen",
+    "září",
+    "říjen",
+    "listopad",
+    "prosinec"
+  ],
+  "weekdays": [
+    "neděle",
+    "pondělí",
+    "úterý",
+    "středa",
+    "čtvrtek",
+    "pátek",
+    "sobota"
+  ],
+  "dayFormat": "{n}.",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "dnes",
+  "tomorrow": "zítra",
+  "yesterday": "včera",
+  "dayAfterTomorrow": "pozítří",
+  "dayBeforeYesterday": "předevčírem",
+  "thisWeekday": "toto {weekday}",
+  "nextWeekday": "příští {weekday}",
+  "lastWeekday": "minulé {weekday}",
+  "monthsInDate": [
+    "ledna",
+    "února",
+    "března",
+    "dubna",
+    "května",
+    "června",
+    "července",
+    "srpna",
+    "září",
+    "října",
+    "listopadu",
+    "prosince"
+  ],
+  "short": {
+    "months": [
+      "led",
+      "úno",
+      "bře",
+      "dub",
+      "kvě",
+      "čvn",
+      "čvc",
+      "srp",
+      "zář",
+      "říj",
+      "lis",
+      "pro"
+    ],
+    "weekdays": [
+      "ne",
+      "po",
+      "út",
+      "st",
+      "čt",
+      "pá",
+      "so"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}.{m}.",
+    "datePatternWithYear": "{d}.{m}.{yy}"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "code": "hu",
+  "name": "Hungarian",
+  "months": [
+    "január",
+    "február",
+    "március",
+    "április",
+    "május",
+    "június",
+    "július",
+    "augusztus",
+    "szeptember",
+    "október",
+    "november",
+    "december"
+  ],
+  "weekdays": [
+    "vasárnap",
+    "hétfő",
+    "kedd",
+    "szerda",
+    "csütörtök",
+    "péntek",
+    "szombat"
+  ],
+  "dayFormat": "{n}.",
+  "datePattern": "{month} {day}",
+  "datePatternWithYear": "{year}. {month} {day}",
+  "today": "ma",
+  "tomorrow": "holnap",
+  "yesterday": "tegnap",
+  "dayAfterTomorrow": "holnapután",
+  "dayBeforeYesterday": "tegnapelőtt",
+  "thisWeekday": "ezen a {weekday}",
+  "nextWeekday": "jövő {weekday}",
+  "lastWeekday": "múlt {weekday}",
+  "short": {
+    "months": [
+      "jan",
+      "feb",
+      "már",
+      "ápr",
+      "máj",
+      "jún",
+      "júl",
+      "aug",
+      "szept",
+      "okt",
+      "nov",
+      "dec"
+    ],
+    "weekdays": [
+      "V",
+      "H",
+      "K",
+      "Sze",
+      "Cs",
+      "P",
+      "Szo"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{month} {day}",
+    "datePatternWithYear": "{year}. {month} {day}"
+  },
+  "compact": {
+    "datePattern": "{m}.{d}.",
+    "datePatternWithYear": "{yy}.{m}.{d}."
+  }
+}

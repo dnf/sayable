@@ -1,0 +1,70 @@
+{
+  "code": "fa",
+  "name": "Persian",
+  "months": [
+    "ژانویه",
+    "فوریه",
+    "مارس",
+    "آوریل",
+    "مه",
+    "ژوئن",
+    "ژوئیه",
+    "اوت",
+    "سپتامبر",
+    "اکتبر",
+    "نوامبر",
+    "دسامبر"
+  ],
+  "weekdays": [
+    "یکشنبه",
+    "دوشنبه",
+    "سه‌شنبه",
+    "چهارشنبه",
+    "پنجشنبه",
+    "جمعه",
+    "شنبه"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "امروز",
+  "tomorrow": "فردا",
+  "yesterday": "دیروز",
+  "dayAfterTomorrow": "پس‌فردا",
+  "dayBeforeYesterday": "پریروز",
+  "thisWeekday": "این {weekday}",
+  "nextWeekday": "{weekday} آینده",
+  "lastWeekday": "{weekday} گذشته",
+  "short": {
+    "months": [
+      "ژان",
+      "فور",
+      "مار",
+      "آور",
+      "مه",
+      "ژوئن",
+      "ژوئیه",
+      "اوت",
+      "سپت",
+      "اکت",
+      "نوا",
+      "دسا"
+    ],
+    "weekdays": [
+      "یکش",
+      "دوش",
+      "سه‌ش",
+      "چهار",
+      "پنجش",
+      "جمعه",
+      "شنبه"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

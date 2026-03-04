@@ -1,0 +1,70 @@
+{
+  "code": "km",
+  "name": "Khmer",
+  "months": [
+    "មករា",
+    "កុម្ភៈ",
+    "មីនា",
+    "មេសា",
+    "ឧសភា",
+    "មិថុនា",
+    "កក្កដា",
+    "សីហា",
+    "កញ្ញា",
+    "តុលា",
+    "វិច្ឆិកា",
+    "ធ្នូ"
+  ],
+  "weekdays": [
+    "អាទិត្យ",
+    "ចន្ទ",
+    "អង្គារ",
+    "ពុធ",
+    "ព្រហស្បតិ៍",
+    "សុក្រ",
+    "សៅរ៍"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "ថ្ងៃនេះ",
+  "tomorrow": "ថ្ងៃស្អែក",
+  "yesterday": "ម្សិលមិញ",
+  "dayAfterTomorrow": "ខានស្អែក",
+  "dayBeforeYesterday": "ម្សិលម៉្ង៉ៃ",
+  "thisWeekday": "{weekday}នេះ",
+  "nextWeekday": "{weekday}ក្រោយ",
+  "lastWeekday": "{weekday}មុន",
+  "short": {
+    "months": [
+      "មករា",
+      "កុម្ភៈ",
+      "មីនា",
+      "មេសា",
+      "ឧសភា",
+      "មិថុ",
+      "កក្ក",
+      "សីហា",
+      "កញ្ញា",
+      "តុលា",
+      "វិច្ឆិ",
+      "ធ្នូ"
+    ],
+    "weekdays": [
+      "អា",
+      "ច",
+      "អ",
+      "ពុ",
+      "ព្រ",
+      "សុ",
+      "ស"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

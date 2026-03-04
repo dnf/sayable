@@ -1,0 +1,70 @@
+{
+  "code": "te",
+  "name": "Telugu",
+  "months": [
+    "జనవరి",
+    "ఫిబ్రవరి",
+    "మార్చి",
+    "ఏప్రిల్",
+    "మే",
+    "జూన్",
+    "జులై",
+    "ఆగస్టు",
+    "సెప్టెంబర్",
+    "అక్టోబర్",
+    "నవంబర్",
+    "డిసెంబర్"
+  ],
+  "weekdays": [
+    "ఆదివారం",
+    "సోమవారం",
+    "మంగళవారం",
+    "బుధవారం",
+    "గురువారం",
+    "శుక్రవారం",
+    "శనివారం"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "ఈ రోజు",
+  "tomorrow": "రేపు",
+  "yesterday": "నిన్న",
+  "dayAfterTomorrow": "ఎల్లుండి",
+  "dayBeforeYesterday": "మొన్న",
+  "thisWeekday": "ఈ {weekday}",
+  "nextWeekday": "వచ్చే {weekday}",
+  "lastWeekday": "గత {weekday}",
+  "short": {
+    "months": [
+      "జన",
+      "ఫిబ్ర",
+      "మార్చి",
+      "ఏప్రి",
+      "మే",
+      "జూన్",
+      "జులై",
+      "ఆగ",
+      "సెప్టెం",
+      "అక్టో",
+      "నవం",
+      "డిసెం"
+    ],
+    "weekdays": [
+      "ఆది",
+      "సోమ",
+      "మంగ",
+      "బుధ",
+      "గురు",
+      "శుక్ర",
+      "శని"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

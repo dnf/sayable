@@ -1,0 +1,70 @@
+{
+  "code": "ur",
+  "name": "Urdu",
+  "months": [
+    "جنوری",
+    "فروری",
+    "مارچ",
+    "اپریل",
+    "مئی",
+    "جون",
+    "جولائی",
+    "اگست",
+    "ستمبر",
+    "اکتوبر",
+    "نومبر",
+    "دسمبر"
+  ],
+  "weekdays": [
+    "اتوار",
+    "پیر",
+    "منگل",
+    "بدھ",
+    "جمعرات",
+    "جمعہ",
+    "ہفتہ"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "آج",
+  "tomorrow": "کل",
+  "yesterday": "کل",
+  "dayAfterTomorrow": "پرسوں",
+  "dayBeforeYesterday": "پرسوں",
+  "thisWeekday": "اس {weekday}",
+  "nextWeekday": "اگلے {weekday}",
+  "lastWeekday": "پچھلے {weekday}",
+  "short": {
+    "months": [
+      "جن",
+      "فر",
+      "مار",
+      "اپر",
+      "مئی",
+      "جون",
+      "جول",
+      "اگ",
+      "ست",
+      "اکت",
+      "نو",
+      "دس"
+    ],
+    "weekdays": [
+      "اتو",
+      "پیر",
+      "منگ",
+      "بدھ",
+      "جمع",
+      "جمعہ",
+      "ہفتہ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

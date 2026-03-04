@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "note": "Canonical test cases for sayable-date. All implementations must pass these.",
+    "dateFormat": "YYYY-MM-DD"
+  },
+  "sections": [
+    {
+      "name": "Null / edge cases",
+      "tests": [
+        {"id": "1.1", "function": "format_date", "input": {"date": null}, "expected": null},
+        {"id": "1.2", "function": "format_date", "input": {"date": ""}, "expected": null},
+        {"id": "1.3", "function": "format_date", "input": {"date": "invalid"}, "expected": null},
+        {"id": "1.4", "function": "format_relative", "input": {"date": "2025-03-15", "asOf": null}, "expected": null},
+        {"id": "1.5", "function": "format_relative", "input": {"date": null, "asOf": "2025-03-15"}, "expected": null}
+      ]
+    },
+    {
+      "name": "format_date — normal compactness (English)",
+      "tests": [
+        {"id": "2.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "en", "expected": "March 15th"},
+        {"id": "2.2", "function": "format_date", "input": {"date": "2025-01-01"}, "locale": "en", "expected": "January 1st"},
+        {"id": "2.3", "function": "format_date", "input": {"date": "2025-05-22"}, "locale": "en", "expected": "May 22nd"},
+        {"id": "2.4", "function": "format_date", "input": {"date": "2025-07-03"}, "locale": "en", "expected": "July 3rd"},
+        {"id": "2.5", "function": "format_date", "input": {"date": "2025-12-31"}, "locale": "en", "expected": "December 31st"},
+        {"id": "2.6", "function": "format_date", "input": {"date": "2025-06-11"}, "locale": "en", "expected": "June 11th", "notes": "No exception for 11"},
+        {"id": "2.7", "function": "format_date", "input": {"date": "2025-03-15T14:30:00"}, "locale": "en", "expected": "March 15th", "notes": "ISO datetime input"}
+      ]
+    },
+    {
+      "name": "format_date — short compactness (English)",
+      "tests": [
+        {"id": "3.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "en", "compactness": "short", "expected": "Mar 15"},
+        {"id": "3.2", "function": "format_date", "input": {"date": "2025-01-01"}, "locale": "en", "compactness": "short", "expected": "Jan 1"},
+        {"id": "3.3", "function": "format_date", "input": {"date": "2025-12-25"}, "locale": "en", "compactness": "short", "expected": "Dec 25"}
+      ]
+    },
+    {
+      "name": "format_date — compact (English)",
+      "tests": [
+        {"id": "4.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "en", "compactness": "compact", "expected": "3/15"},
+        {"id": "4.2", "function": "format_date", "input": {"date": "2025-01-01"}, "locale": "en", "compactness": "compact", "expected": "1/1"}
+      ]
+    },
+    {
+      "name": "format_relative — proximity tiers (English)",
+      "tests": [
+        {"id": "5.1", "function": "format_relative", "input": {"date": "2025-03-15", "asOf": "2025-03-15"}, "locale": "en", "expected": "today"},
+        {"id": "5.2", "function": "format_relative", "input": {"date": "2025-03-16", "asOf": "2025-03-15"}, "locale": "en", "expected": "tomorrow"},
+        {"id": "5.3", "function": "format_relative", "input": {"date": "2025-03-14", "asOf": "2025-03-15"}, "locale": "en", "expected": "yesterday"},
+        {"id": "5.4", "function": "format_relative", "input": {"date": "2025-03-17", "asOf": "2025-03-15"}, "locale": "en", "expected": "the day after tomorrow", "notes": "+2 special tier"},
+        {"id": "5.5", "function": "format_relative", "input": {"date": "2025-03-13", "asOf": "2025-03-15"}, "locale": "en", "expected": "the day before yesterday", "notes": "-2 special tier"},
+        {"id": "5.6", "function": "format_relative", "input": {"date": "2025-03-19", "asOf": "2025-03-15"}, "locale": "en", "expected": "this Wednesday", "notes": "+4 days, this weekday tier"},
+        {"id": "5.7", "function": "format_relative", "input": {"date": "2025-03-20", "asOf": "2025-03-15"}, "locale": "en", "expected": "this Thursday", "notes": "+5 days, this weekday tier"},
+        {"id": "5.8", "function": "format_relative", "input": {"date": "2025-03-11", "asOf": "2025-03-15"}, "locale": "en", "expected": "last Tuesday", "notes": "-4 days, last weekday tier"},
+        {"id": "5.9", "function": "format_relative", "input": {"date": "2025-03-22", "asOf": "2025-03-15"}, "locale": "en", "expected": "next Saturday", "notes": "+7 days, next weekday tier"},
+        {"id": "5.10", "function": "format_relative", "input": {"date": "2025-03-27", "asOf": "2025-03-15"}, "locale": "en", "expected": "next Thursday", "notes": "+12 days, next weekday tier"},
+        {"id": "5.11", "function": "format_relative", "input": {"date": "2025-03-01", "asOf": "2025-03-15"}, "locale": "en", "expected": "March 1st", "notes": "-14 days, calendar fallback (same year)"},
+        {"id": "5.12", "function": "format_relative", "input": {"date": "2025-04-10", "asOf": "2025-03-15"}, "locale": "en", "expected": "April 10th", "notes": "+26 days, calendar fallback (same year)"},
+        {"id": "5.13", "function": "format_relative", "input": {"date": "2026-01-05", "asOf": "2025-03-15"}, "locale": "en", "expected": "January 5th, 2026", "notes": "Different year includes year"},
+        {"id": "5.14", "function": "format_relative", "input": {"date": "2024-12-25", "asOf": "2025-03-15"}, "locale": "en", "expected": "December 25th, 2024", "notes": "Past year includes year"}
+      ]
+    },
+    {
+      "name": "format_relative — compact skips weekday tiers",
+      "tests": [
+        {"id": "6.1", "function": "format_relative", "input": {"date": "2025-03-15", "asOf": "2025-03-15"}, "locale": "en", "compactness": "compact", "expected": "today"},
+        {"id": "6.2", "function": "format_relative", "input": {"date": "2025-03-16", "asOf": "2025-03-15"}, "locale": "en", "compactness": "compact", "expected": "tomorrow"},
+        {"id": "6.3", "function": "format_relative", "input": {"date": "2025-03-19", "asOf": "2025-03-15"}, "locale": "en", "compactness": "compact", "expected": "3/19", "notes": "Compact goes straight to numeric"},
+        {"id": "6.4", "function": "format_relative", "input": {"date": "2026-01-05", "asOf": "2025-03-15"}, "locale": "en", "compactness": "compact", "expected": "1/5/26"}
+      ]
+    },
+    {
+      "name": "Locale — German",
+      "tests": [
+        {"id": "7.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "de", "expected": "15. März"},
+        {"id": "7.2", "function": "format_relative", "input": {"date": "2025-03-16", "asOf": "2025-03-15"}, "locale": "de", "expected": "morgen"},
+        {"id": "7.3", "function": "format_relative", "input": {"date": "2025-03-17", "asOf": "2025-03-15"}, "locale": "de", "expected": "übermorgen"},
+        {"id": "7.4", "function": "format_relative", "input": {"date": "2025-03-19", "asOf": "2025-03-15"}, "locale": "de", "expected": "diesen Mittwoch"}
+      ]
+    },
+    {
+      "name": "Locale — French",
+      "tests": [
+        {"id": "8.1", "function": "format_date", "input": {"date": "2025-03-01"}, "locale": "fr", "expected": "1er mars"},
+        {"id": "8.2", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "fr", "expected": "15 mars"},
+        {"id": "8.3", "function": "format_relative", "input": {"date": "2025-03-16", "asOf": "2025-03-15"}, "locale": "fr", "expected": "demain"}
+      ]
+    },
+    {
+      "name": "Locale — Japanese",
+      "tests": [
+        {"id": "9.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "ja", "expected": "3月15日"},
+        {"id": "9.2", "function": "format_relative", "input": {"date": "2025-03-16", "asOf": "2025-03-15"}, "locale": "ja", "expected": "明日"},
+        {"id": "9.3", "function": "format_relative", "input": {"date": "2025-03-19", "asOf": "2025-03-15"}, "locale": "ja", "expected": "今度の水曜日"}
+      ]
+    },
+    {
+      "name": "Locale — Russian (genitive months)",
+      "tests": [
+        {"id": "10.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "ru", "expected": "15 марта", "notes": "Uses genitive form марта not nominative март"},
+        {"id": "10.2", "function": "format_relative", "input": {"date": "2025-03-16", "asOf": "2025-03-15"}, "locale": "ru", "expected": "завтра"}
+      ]
+    },
+    {
+      "name": "Locale — Arabic",
+      "tests": [
+        {"id": "11.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "ar", "expected": "15 مارس"},
+        {"id": "11.2", "function": "format_relative", "input": {"date": "2025-03-16", "asOf": "2025-03-15"}, "locale": "ar", "expected": "غداً"}
+      ]
+    },
+    {
+      "name": "Locale — Spanish",
+      "tests": [
+        {"id": "12.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "es", "expected": "15 de marzo"},
+        {"id": "12.2", "function": "format_relative", "input": {"date": "2025-03-17", "asOf": "2025-03-15"}, "locale": "es", "expected": "pasado mañana"}
+      ]
+    }
+  ]
+}

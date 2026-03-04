@@ -1,0 +1,7 @@
+{
+  "name": "sayable-date",
+  "description": "Human-friendly date formatting — how people reference dates in conversation",
+  "author": "Don Neufeld",
+  "license": "MIT",
+  "repository": "https://github.com/dnf/sayable"
+}

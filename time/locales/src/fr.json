@@ -2,12 +2,25 @@
   "code": "fr",
   "name": "French",
   "clock": {
-    "hours": ["douze", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze"],
+    "hours": [
+      "douze",
+      "une",
+      "deux",
+      "trois",
+      "quatre",
+      "cinq",
+      "six",
+      "sept",
+      "huit",
+      "neuf",
+      "dix",
+      "onze"
+    ],
     "midnight": "minuit",
     "noon": "midi",
     "patterns": {
-      "0":  "{h} heures",
-      "5":  "{h} heures cinq",
+      "0": "{h} heures",
+      "5": "{h} heures cinq",
       "10": "{h} heures dix",
       "15": "{h} heures et quart",
       "20": "{h} heures vingt",

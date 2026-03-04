@@ -1,0 +1,70 @@
+{
+  "code": "mk",
+  "name": "Macedonian",
+  "months": [
+    "јануари",
+    "февруари",
+    "март",
+    "април",
+    "мај",
+    "јуни",
+    "јули",
+    "август",
+    "септември",
+    "октомври",
+    "ноември",
+    "декември"
+  ],
+  "weekdays": [
+    "недела",
+    "понеделник",
+    "вторник",
+    "среда",
+    "четврток",
+    "петок",
+    "сабота"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "денес",
+  "tomorrow": "утре",
+  "yesterday": "вчера",
+  "dayAfterTomorrow": "задутре",
+  "dayBeforeYesterday": "завчера",
+  "thisWeekday": "оваа {weekday}",
+  "nextWeekday": "следната {weekday}",
+  "lastWeekday": "минатата {weekday}",
+  "short": {
+    "months": [
+      "јан",
+      "фев",
+      "мар",
+      "апр",
+      "мај",
+      "јун",
+      "јул",
+      "авг",
+      "сеп",
+      "окт",
+      "ное",
+      "дек"
+    ],
+    "weekdays": [
+      "нед",
+      "пон",
+      "вто",
+      "сре",
+      "чет",
+      "пет",
+      "саб"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}.{m}.",
+    "datePatternWithYear": "{d}.{m}.{yy}"
+  }
+}

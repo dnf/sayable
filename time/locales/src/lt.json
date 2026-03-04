@@ -1,0 +1,48 @@
+{
+  "code": "lt",
+  "name": "Lithuanian",
+  "clock": {
+    "hours": [
+      "dvylika",
+      "viena",
+      "dvi",
+      "trys",
+      "keturios",
+      "penkios",
+      "šešios",
+      "septynios",
+      "aštuonios",
+      "devynios",
+      "dešimt",
+      "vienuolika"
+    ],
+    "midnight": "vidurnaktis",
+    "noon": "vidurdienis",
+    "patterns": {
+      "0": "{h}",
+      "5": "penkios minuta {h}",
+      "10": "dešimt minuta {h}",
+      "15": "penkiolika minuta {h}",
+      "20": "dvidešimt minuta {h}",
+      "25": "dvidešimt penkios minuta {h}",
+      "30": "trisdešimt minuta {h}",
+      "35": "dvidešimt penkios iki {next_h}",
+      "40": "dvidešimt iki {next_h}",
+      "45": "penkiolika iki {next_h}",
+      "50": "dešimt iki {next_h}",
+      "55": "penkios iki {next_h}"
+    }
+  },
+  "short": {
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  },
+  "compact": {
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  }
+}

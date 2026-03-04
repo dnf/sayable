@@ -2,12 +2,25 @@
   "code": "en",
   "name": "English",
   "clock": {
-    "hours": ["twelve", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"],
+    "hours": [
+      "twelve",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "eleven"
+    ],
     "midnight": "midnight",
     "noon": "noon",
     "patterns": {
-      "0":  "{h} o'clock",
-      "5":  "five past {h}",
+      "0": "{h} o'clock",
+      "5": "five past {h}",
       "10": "ten past {h}",
       "15": "a quarter past {h}",
       "20": "twenty past {h}",
@@ -23,14 +36,20 @@
   "short": {
     "clock": {
       "use24h": false,
-      "amPm": ["AM", "PM"],
+      "amPm": [
+        "AM",
+        "PM"
+      ],
       "format": "{h}:{mm} {ampm}"
     }
   },
   "compact": {
     "clock": {
       "use24h": false,
-      "amPm": ["a", "p"],
+      "amPm": [
+        "a",
+        "p"
+      ],
       "format": "{h}:{mm}{ampm}"
     }
   }

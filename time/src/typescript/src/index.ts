@@ -5,6 +5,6 @@ export {
   type CompactnessOverride,
   type ShortClockConfig,
   type TimeLocale,
-  en,
 } from './locale.js';
-export { de, fr, getLocale, ja } from './locales/index.js';
+export { en } from './locales/en.js';
+export * from './locales/index.js';

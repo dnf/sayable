@@ -1,0 +1,70 @@
+{
+  "code": "bs",
+  "name": "Bosnian",
+  "months": [
+    "januar",
+    "februar",
+    "mart",
+    "april",
+    "maj",
+    "juni",
+    "juli",
+    "august",
+    "septembar",
+    "oktobar",
+    "novembar",
+    "decembar"
+  ],
+  "weekdays": [
+    "nedjelja",
+    "ponedjeljak",
+    "utorak",
+    "srijeda",
+    "četvrtak",
+    "petak",
+    "subota"
+  ],
+  "dayFormat": "{n}.",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "danas",
+  "tomorrow": "sutra",
+  "yesterday": "jučer",
+  "dayAfterTomorrow": "prekosutra",
+  "dayBeforeYesterday": "prekjučer",
+  "thisWeekday": "ovaj {weekday}",
+  "nextWeekday": "sljedeći {weekday}",
+  "lastWeekday": "prošli {weekday}",
+  "short": {
+    "months": [
+      "jan",
+      "feb",
+      "mar",
+      "apr",
+      "maj",
+      "jun",
+      "jul",
+      "aug",
+      "sep",
+      "okt",
+      "nov",
+      "dec"
+    ],
+    "weekdays": [
+      "ned",
+      "pon",
+      "uto",
+      "sri",
+      "čet",
+      "pet",
+      "sub"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}.{m}.",
+    "datePatternWithYear": "{d}.{m}.{yy}"
+  }
+}

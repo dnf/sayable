@@ -1,0 +1,70 @@
+{
+  "code": "ka",
+  "name": "Georgian",
+  "months": [
+    "იანვარი",
+    "თებერვალი",
+    "მარტი",
+    "აპრილი",
+    "მაისი",
+    "ივნისი",
+    "ივლისი",
+    "აგვისტო",
+    "სექტემბერი",
+    "ოქტომბერი",
+    "ნოემბერი",
+    "დეკემბერი"
+  ],
+  "weekdays": [
+    "კვირა",
+    "ორშაბათი",
+    "სამშაბათი",
+    "ოთხშაბათი",
+    "ხუთშაბათი",
+    "პარასკევი",
+    "შაბათი"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "დღეს",
+  "tomorrow": "ხვალ",
+  "yesterday": "გუშინ",
+  "dayAfterTomorrow": "ზეგ",
+  "dayBeforeYesterday": "გუშინწინ",
+  "thisWeekday": "ამ {weekday}",
+  "nextWeekday": "მომავალ {weekday}",
+  "lastWeekday": "გასულ {weekday}",
+  "short": {
+    "months": [
+      "იან",
+      "თებ",
+      "მარ",
+      "აპრ",
+      "მაი",
+      "ივნ",
+      "ივლ",
+      "აგვ",
+      "სექ",
+      "ოქტ",
+      "ნოე",
+      "დეკ"
+    ],
+    "weekdays": [
+      "კვი",
+      "ორშ",
+      "სამ",
+      "ოთხ",
+      "ხუთ",
+      "პარ",
+      "შაბ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

@@ -177,7 +177,7 @@ convenience but is **not enforced in CI** — unaligned tables are fine.
 - Files covered: `README.md`, `CLAUDE.md`, `CONTRIBUTING.md`,
   `codegen/README.md`, `locales/README.md`, `tests/README.md`,
   `config/tests.json`, `docs/*.md`, `src/*/README.md`
-- Generated files (`locales/example-output/*.md`) are excluded — they are
+- Generated files (`locales/examples/*.md`) are excluded — they are
   maintained by `codegen/docgen.py`
 
 ### Canonical test IDs

@@ -6,13 +6,10 @@ from sayable_time.format_time import (
     format_time,
 )
 from sayable_time.locale import TimeLocale
-from sayable_time.locales import (
-    DE, EN, FR, JA,
-    get_locale,
-)
+from sayable_time.locales import *  # noqa: F401,F403
+from sayable_time.locales import get_locale
 
 __all__ = [
-    "DE", "EN", "FR", "JA",
     "SayableTime", "TimeLocale", "__version__",
     "format_time",
     "get_locale",

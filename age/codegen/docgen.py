@@ -24,7 +24,7 @@ from sayable_age.format_age import SayableAge
 from sayable_age.locale import resolve_stage
 import sayable_age.locales as locale_mod
 
-OUTPUT_DIR = os.path.join(ROOT, "locales", "example-output")
+OUTPUT_DIR = os.path.join(ROOT, "locales", "examples")
 
 # Age formatting date pairs: (label, dob, asOf)
 _AGE_PAIRS: list[tuple[str, str, str]] = [
@@ -145,6 +145,8 @@ def generate_locale_doc(locale_json: dict) -> str:
     lines: list[str] = []
     lines.append(f"# {name} ({code})")
     lines.append("")
+    lines.append(f"[Edit source](../src/{code}.json)")
+    lines.append("")
     lines.append(f"Plural rule: `{plural_rule}` — categories: {_plural_categories(plural_rule)}")
     lines.append("")
 
@@ -239,7 +241,7 @@ def main() -> None:
         else:
             print("All files up to date.")
     else:
-        print(f"Generated {len(all_locales)} file(s) in locales/example-output/")
+        print(f"Generated {len(all_locales)} file(s) in locales/examples/")
 
 
 if __name__ == "__main__":

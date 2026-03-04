@@ -1,0 +1,68 @@
+{
+  "code": "kw",
+  "name": "Cornish",
+  "months": [
+    "Genver",
+    "Hwevrer",
+    "Meurth",
+    "Ebrel",
+    "Me",
+    "Metheven",
+    "Gortheren",
+    "Est",
+    "Gwynngala",
+    "Hedra",
+    "Du",
+    "Kevardhu"
+  ],
+  "weekdays": [
+    "De Sul",
+    "De Lun",
+    "De Merth",
+    "De Merher",
+    "De Yow",
+    "De Gwener",
+    "De Sadorn"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "hedhyw",
+  "tomorrow": "a-vorow",
+  "yesterday": "de",
+  "thisWeekday": "an {weekday} ma",
+  "nextWeekday": "{weekday} a dheu",
+  "lastWeekday": "{weekday} eus passyes",
+  "short": {
+    "months": [
+      "Gen",
+      "Hwe",
+      "Meu",
+      "Ebr",
+      "Me",
+      "Met",
+      "Gor",
+      "Est",
+      "Gwy",
+      "Hed",
+      "Du",
+      "Kev"
+    ],
+    "weekdays": [
+      "Sul",
+      "Lun",
+      "Mth",
+      "Mhr",
+      "Yow",
+      "Gwe",
+      "Sad"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

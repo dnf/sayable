@@ -1,0 +1,84 @@
+{
+  "code": "hr",
+  "name": "Croatian",
+  "months": [
+    "siječanj",
+    "veljača",
+    "ožujak",
+    "travanj",
+    "svibanj",
+    "lipanj",
+    "srpanj",
+    "kolovoz",
+    "rujan",
+    "listopad",
+    "studeni",
+    "prosinac"
+  ],
+  "weekdays": [
+    "nedjelja",
+    "ponedjeljak",
+    "utorak",
+    "srijeda",
+    "četvrtak",
+    "petak",
+    "subota"
+  ],
+  "dayFormat": "{n}.",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "danas",
+  "tomorrow": "sutra",
+  "yesterday": "jučer",
+  "dayAfterTomorrow": "prekosutra",
+  "dayBeforeYesterday": "prekjučer",
+  "thisWeekday": "ovaj {weekday}",
+  "nextWeekday": "sljedeći {weekday}",
+  "lastWeekday": "prošli {weekday}",
+  "monthsInDate": [
+    "siječnja",
+    "veljače",
+    "ožujka",
+    "travnja",
+    "svibnja",
+    "lipnja",
+    "srpnja",
+    "kolovoza",
+    "rujna",
+    "listopada",
+    "studenoga",
+    "prosinca"
+  ],
+  "short": {
+    "months": [
+      "sij",
+      "velj",
+      "ožu",
+      "tra",
+      "svi",
+      "lip",
+      "srp",
+      "kol",
+      "ruj",
+      "lis",
+      "stu",
+      "pro"
+    ],
+    "weekdays": [
+      "ned",
+      "pon",
+      "uto",
+      "sri",
+      "čet",
+      "pet",
+      "sub"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}.{m}.",
+    "datePatternWithYear": "{d}.{m}.{yy}"
+  }
+}
