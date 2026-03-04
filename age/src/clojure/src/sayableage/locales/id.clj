@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Baru lahir"
    :stages {:newborn {:type :neutral :label "Baru lahir"} :infant {:type :neutral :label "Bayi"} :toddler {:type :neutral :label "Balita"} :child {:type :neutral :label "Anak-anak"} :teenager {:type :neutral :label "Remaja"} :adult {:type :neutral :label "Dewasa"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} hr"} :week {:type :simple :form "{n} mgg"} :month {:type :simple :form "{n} bln"} :year {:type :simple :form "{n} thn"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} hr"} :week {:type :simple :form "{n} mgg"} :month {:type :simple :form "{n} bln"} :year {:type :simple :form "{n} thn"} :half "{n}½" :delimiter "" :just-born nil}})

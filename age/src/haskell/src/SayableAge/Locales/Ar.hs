@@ -60,6 +60,59 @@ locale = Locale
         , stageTeenager = Gendered "مراهق" "مراهقة"
         , stageAdult = Gendered "بالغ" "بالغة"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (Zero, "{n} يوم")
+              , (One, "يوم")
+              , (Two, "يومان")
+              , (Few, "{n} أيام")
+              , (Many, "{n} يومًا")
+              , (Other, "{n} يوم")
+              ])
+            , ovrWeek = Just (Pluralized
+              [ (Zero, "{n} أسبوع")
+              , (One, "أسبوع")
+              , (Two, "أسبوعان")
+              , (Few, "{n} أسابيع")
+              , (Many, "{n} أسبوعًا")
+              , (Other, "{n} أسبوع")
+              ])
+            , ovrMonth = Just (Pluralized
+              [ (Zero, "{n} شهر")
+              , (One, "شهر")
+              , (Two, "شهران")
+              , (Few, "{n} أشهر")
+              , (Many, "{n} شهرًا")
+              , (Other, "{n} شهر")
+              ])
+            , ovrYear = Just (Pluralized
+              [ (Zero, "{n} سنة")
+              , (One, "سنة واحدة")
+              , (Two, "سنتان")
+              , (Few, "{n} سنوات")
+              , (Many, "{n} سنة")
+              , (Other, "{n} سنة")
+              ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} ي")
+            , ovrWeek = Just (Simple "{n} أ")
+            , ovrMonth = Just (Pluralized
+              [ (Zero, "{n} شهر")
+              , (One, "شهر")
+              , (Two, "شهران")
+              , (Few, "{n} أشهر")
+              , (Many, "{n} شهرًا")
+              , (Other, "{n} شهر")
+              ])
+            , ovrYear = Just (Simple "{n} سنة")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -47,6 +47,24 @@ locale =
         , teenager = Gendered "किशोर" "किशोरी"
         , adult = Neutral "वयस्क"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} दिन")
+            , ovrWeek = Just (Simple "{n} सप्ताह")
+            , ovrMonth = Just (Simple "{n} माह")
+            , ovrYear = Just (Simple "{n} वर्ष")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} दि")
+            , ovrWeek = Just (Simple "{n} सप्ताह")
+            , ovrMonth = Just (Simple "{n} माह")
+            , ovrYear = Just (Simple "{n} व")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

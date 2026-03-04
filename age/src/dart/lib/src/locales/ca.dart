@@ -31,4 +31,18 @@ final ca = AgeLocale(
   child: stageNeutral('Criatura'),
   teenager: stageNeutral('Adolescent'),
   adult: stageGendered('Adult', 'Adulta'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} dia', PluralCategory.other: '{n} dies'}),
+    week: simpleUnit('{n} setm.'),
+    month: pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} m'}),
+    year: pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} setm.'),
+    month: simpleUnit('{n} m'),
+    year: pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

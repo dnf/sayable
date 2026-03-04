@@ -35,4 +35,18 @@ final mt = AgeLocale(
   child: stageGendered('Tifel', 'Tifla'),
   teenager: stageGendered('Adolexxent', 'Adolexxenta'),
   adult: stageGendered('Adult', 'Adulta'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} w'),
+    month: simpleUnit('{n} m'),
+    year: simpleUnit('{n} y'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} w'),
+    month: simpleUnit('{n} m'),
+    year: simpleUnit('{n} y'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -41,6 +41,24 @@ sub locale {{
     teenager => 'Подросток',
     adult => { m => 'Взрослый', f => 'Взрослая' },
   },
+  short => {
+    units => {
+      day => '{n} дн.',
+      week => '{n} нед.',
+      month => '{n} мес.',
+      year => { one => '{n} г.', few => '{n} г.', many => '{n} л.', other => '{n} г.' },
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} д.',
+      week => '{n} н.',
+      month => '{n} м.',
+      year => { one => '{n} г.', few => '{n} г.', many => '{n} л.', other => '{n} г.' },
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

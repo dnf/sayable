@@ -47,6 +47,30 @@ locale =
         , teenager = Gendered "Adoleshent" "Adoleshente"
         , adult = Gendered "I rritur" "E rritur"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} ditë")
+            , ovrWeek = Just (Simple "{n} javë")
+            , ovrMonth = Just (Simple "{n} muaj")
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} vit" )
+                  , ( Other, "{n} vjet" )
+                  ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} ditë")
+            , ovrWeek = Just (Simple "{n} javë")
+            , ovrMonth = Just (Simple "{n} muaj")
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} vit" )
+                  , ( Other, "{n} vjet" )
+                  ])
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

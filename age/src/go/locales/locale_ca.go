@@ -39,4 +39,18 @@ var CA = sa.AgeLocale{
 		Teenager: sa.S("Adolescent"),
 		Adult:    sa.G("Adult", "Adulta"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} dia", sa.Other: "{n} dies"}),
+		Week:  &sa.UnitForms{Simple: "{n} setm."},
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mes", sa.Other: "{n} m"}),
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} any", sa.Other: "{n} anys"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} d"},
+		Week:      &sa.UnitForms{Simple: "{n} setm."},
+		Month:     &sa.UnitForms{Simple: "{n} m"},
+		Year:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} any", sa.Other: "{n} anys"}),
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

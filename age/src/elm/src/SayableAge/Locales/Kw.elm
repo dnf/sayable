@@ -69,6 +69,24 @@ locale =
         , teenager = Neutral "Den yowynk"
         , adult = Neutral "Den tevys"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} wk")
+            , ovrMonth = Just (Simple "{n} mo")
+            , ovrYear = Just (Simple "{n} yr")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}d")
+            , ovrWeek = Just (Simple "{n}w")
+            , ovrMonth = Just (Simple "{n}m")
+            , ovrYear = Just (Simple "{n}y")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

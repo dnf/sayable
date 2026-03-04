@@ -39,6 +39,6 @@ const SaLocale sa_locale_ar = {
         { "مراهق", "مراهقة" },
         { "بالغ", "بالغة" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { "{n} يوم", "يوم", "يومان", "{n} أيام", "{n} يومًا", "{n} يوم" } }, true, { NULL, { "{n} أسبوع", "أسبوع", "أسبوعان", "{n} أسابيع", "{n} أسبوعًا", "{n} أسبوع" } }, true, { NULL, { "{n} شهر", "شهر", "شهران", "{n} أشهر", "{n} شهرًا", "{n} شهر" } }, true, { NULL, { "{n} سنة", "سنة واحدة", "سنتان", "{n} سنوات", "{n} سنة", "{n} سنة" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} ي", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} أ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { "{n} شهر", "شهر", "شهران", "{n} أشهر", "{n} شهرًا", "{n} شهر" } }, true, { "{n} سنة", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

@@ -36,5 +36,23 @@ M.stages = {
     teenager = { m = "Adolescent", f = "Adolescentă" },
     adult = { m = "Adult", f = "Adultă" },
 }
+M.short = {
+    units = {
+        day = { one = "{n} zi", few = "{n} zile", other = "{n} zile" },
+        week = "{n} săpt.",
+        month = { one = "{n} lună", few = "{n} luni", other = "{n} luni" },
+        year = { one = "{n} an", few = "{n} ani", other = "{n} ani" },
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} z",
+        week = "{n} săpt.",
+        month = "{n} l",
+        year = "{n} a",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

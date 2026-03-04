@@ -39,4 +39,18 @@ var ES = sa.AgeLocale{
 		Teenager: sa.S("Adolescente"),
 		Adult:    sa.G("Adulto", "Adulta"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} d"},
+		Week:  &sa.UnitForms{Simple: "{n} sem."},
+		Month: &sa.UnitForms{Simple: "{n} m."},
+		Year:  &sa.UnitForms{Simple: "{n} a"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}d"},
+		Week:      &sa.UnitForms{Simple: "{n}sem"},
+		Month:     &sa.UnitForms{Simple: "{n}m"},
+		Year:      &sa.UnitForms{Simple: "{n}a"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

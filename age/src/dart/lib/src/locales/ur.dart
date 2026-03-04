@@ -31,4 +31,18 @@ final ur = AgeLocale(
   child: stageGendered('بچہ', 'بچی'),
   teenager: stageNeutral('نوجوان'),
   adult: stageNeutral('بالغ'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} دن'),
+    week: pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
+    month: pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),
+    year: simpleUnit('{n} سال'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} دن'),
+    week: pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
+    month: pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),
+    year: simpleUnit('{n} سال'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

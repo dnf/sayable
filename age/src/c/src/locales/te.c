@@ -34,6 +34,6 @@ const SaLocale sa_locale_te = {
         { "కౌమారదశ", "" },
         { "వయోజనులు", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} రోజు", NULL, NULL, NULL, "{n} రోజులు" } }, true, { "{n} వా.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} నె.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} సం.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}రో", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}వా", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}నె", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}సం", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

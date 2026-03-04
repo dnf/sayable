@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.KK do
         child: "Бала",
         teenager: "Жасөспірім",
         adult: "Ересек"
+      },
+      short: %{
+        units: %{
+          day: "{n} күн",
+          week: "{n} ап.",
+          month: "{n} ай",
+          year: "{n} ж."
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} к.",
+          week: "{n} ап.",
+          month: "{n} ай",
+          year: "{n} ж."
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

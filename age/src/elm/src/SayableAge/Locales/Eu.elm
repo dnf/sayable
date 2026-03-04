@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "Nerabea"
         , adult = Neutral "Heldua"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} egun")
+            , ovrWeek = Just (Simple "{n} aste")
+            , ovrMonth = Just (Simple "{n} hilabete")
+            , ovrYear = Just (Simple "{n} urte")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} e.")
+            , ovrWeek = Just (Simple "{n} aste")
+            , ovrMonth = Just (Simple "{n} hil")
+            , ovrYear = Just (Simple "{n} u.")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -39,4 +39,18 @@ var UZ = sa.AgeLocale{
 		Teenager: sa.S("Oʻsmir"),
 		Adult:    sa.S("Katta"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} kun"},
+		Week:  &sa.UnitForms{Simple: "{n} hafta"},
+		Month: &sa.UnitForms{Simple: "{n} oy"},
+		Year:  &sa.UnitForms{Simple: "{n} yil"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} kun"},
+		Week:      &sa.UnitForms{Simple: "{n} hafta"},
+		Month:     &sa.UnitForms{Simple: "{n} oy"},
+		Year:      &sa.UnitForms{Simple: "{n} yil"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

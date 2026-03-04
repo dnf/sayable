@@ -45,6 +45,34 @@ let locale : locale =
     ; teenager = Gendered ("נער", "נערה")
     ; adult = Gendered ("מבוגר", "מבוגרת")
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} יום")
+          ; (Two, "יומיים")
+          ; (Other, "{n} ימ׳")
+          ])
+      ; ovr_week = Some (Pluralized
+          [ (One, "{n} שבוע")
+          ; (Two, "שבועיים")
+          ; (Other, "{n} שבועות")
+          ])
+      ; ovr_month = Some (Simple "{n} ח׳")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} שנה")
+          ; (Two, "{n} שנים")
+          ; (Other, "{n} שנים")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} י׳")
+      ; ovr_week = Some (Simple "{n} ש′")
+      ; ovr_month = Some (Simple "{n} ח׳")
+      ; ovr_year = Some (Simple "{n} ש′")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

@@ -25,6 +25,6 @@ locale() ->
         delimiter = ", ",
         just_born = "Noworodek",
         stages = #stages{newborn = {neutral, "Noworodek"}, infant = {neutral, "Niemowlę"}, toddler = {neutral, "Maluch"}, child = {neutral, "Dziecko"}, teenager = {gendered, "Nastolatek", "Nastolatka"}, adult = {gendered, "Dorosły", "Dorosła"}},
-        short = nothing,
-        compact = nothing
+        short = {just, #compactness_override{day = {just, {pluralized, [{one, "{n} dzień"}, {few, "{n} dni"}, {many, "{n} dni"}, {other, "{n} dnia"}]}}, week = {just, {pluralized, [{one, "{n} tydz."}, {few, "{n} tyg."}, {many, "{n} tyg."}, {other, "{n} tyg."}]}}, month = {just, {simple, "{n} mies."}}, year = {just, {pluralized, [{one, "{n} rok"}, {few, "{n} lata"}, {many, "{n} lat"}, {other, "{n} roku"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n} d."}}, week = {just, {simple, "{n} t."}}, month = {just, {pluralized, [{one, "{n} m-c"}, {few, "{n} m-ce"}, {many, "{n} m-cy"}, {other, "{n} m-ca"}]}}, year = {just, {pluralized, [{one, "{n} r."}, {few, "{n} l."}, {many, "{n} l."}, {other, "{n} r."}]}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

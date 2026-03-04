@@ -34,6 +34,6 @@ const SaLocale sa_locale_vi = {
         { "Thiếu niên", "" },
         { "Người lớn", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} ngày", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tuần", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tháng", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} năm", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} ngày", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tuần", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tháng", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} năm", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

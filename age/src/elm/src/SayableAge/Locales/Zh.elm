@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "青少年"
         , adult = Neutral "成人"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n}天")
+            , ovrWeek = Just (Simple "{n}周")
+            , ovrMonth = Just (Simple "{n}个月")
+            , ovrYear = Just (Simple "{n}年")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}天")
+            , ovrWeek = Just (Simple "{n}周")
+            , ovrMonth = Just (Simple "{n}个月")
+            , ovrYear = Just (Simple "{n}年")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
     }

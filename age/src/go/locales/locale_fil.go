@@ -36,4 +36,18 @@ var FIL = sa.AgeLocale{
 		Teenager: sa.S("Tinedyer"),
 		Adult:    sa.S("Matanda"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} araw"},
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} linggo", sa.Other: "{n} na linggo"}),
+		Month: &sa.UnitForms{Simple: "{n} buwan"},
+		Year:  &sa.UnitForms{Simple: "{n} taon"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} araw", sa.Other: "{n} na araw"}),
+		Week:      &sa.UnitForms{Simple: "{n}linggo"},
+		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n}buwan", sa.Other: "{n} buwan"}),
+		Year:      &sa.UnitForms{Simple: "{n}taon"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

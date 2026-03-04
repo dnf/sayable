@@ -30,4 +30,18 @@ final th = AgeLocale(
   child: stageNeutral('เด็ก'),
   teenager: stageNeutral('วัยรุ่น'),
   adult: stageNeutral('ผู้ใหญ่'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} วัน'),
+    week: simpleUnit('{n} สัปดาห์'),
+    month: simpleUnit('{n} เดือน'),
+    year: simpleUnit('{n} ปี'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}วัน'),
+    week: simpleUnit('{n}สัปดาห์'),
+    month: simpleUnit('{n}เดือน'),
+    year: simpleUnit('{n}ปี'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

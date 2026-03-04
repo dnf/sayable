@@ -34,6 +34,6 @@ const SaLocale sa_locale_nl = {
         { "Tiener", "" },
         { "Volwassene", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} dag", NULL, NULL, NULL, "{n} dagen" } }, true, { NULL, { NULL, "{n} wk", NULL, NULL, NULL, "{n} wkn" } }, true, { "{n} mnd", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} jr", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} jr", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
 };

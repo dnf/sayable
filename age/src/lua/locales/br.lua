@@ -40,5 +40,23 @@ M.stages = {
     teenager = "Den yaouank",
     adult = "Den deuet da vad",
 }
+M.short = {
+    units = {
+        day = "{n} d",
+        week = "{n} sizh.",
+        month = "{n} m.",
+        year = "{n} bl.",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n}d",
+        week = "{n}sizh.",
+        month = "{n}m",
+        year = "{n}b",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

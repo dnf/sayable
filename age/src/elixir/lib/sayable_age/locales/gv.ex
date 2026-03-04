@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.GV do
         child: "Paitchey",
         teenager: "Fer aeg",
         adult: "Dooinney aasit"
+      },
+      short: %{
+        units: %{
+          day: "{n} d",
+          week: "{n} wk",
+          month: "{n} mo",
+          year: "{n} yr"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}d",
+          week: "{n}w",
+          month: "{n}m",
+          year: "{n}y"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

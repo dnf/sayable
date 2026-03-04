@@ -41,6 +41,22 @@ let locale : locale =
     ; teenager = Neutral "Teini"
     ; adult = Neutral "Aikuinen"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} pv")
+      ; ovr_week = Some (Simple "{n} vk")
+      ; ovr_month = Some (Simple "{n} kk")
+      ; ovr_year = Some (Simple "{n} v")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n}pv")
+      ; ovr_week = Some (Simple "{n}vk")
+      ; ovr_month = Some (Simple "{n}kk")
+      ; ovr_year = Some (Simple "{n}v")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

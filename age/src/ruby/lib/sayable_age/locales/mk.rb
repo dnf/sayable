@@ -38,6 +38,24 @@ module SayableAge
         teenager: 'Тинејџер',
         adult: 'Возрасен',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => { one: '{n} ден', other: '{n} дена' },
+          'week' => '{n} сед.',
+          'month' => '{n} мес.',
+          'year' => '{n} год.',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} д.',
+          'week' => '{n} с.',
+          'month' => '{n} м.',
+          'year' => '{n} г.',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

@@ -37,6 +37,24 @@ sub locale {{
     teenager => { m => 'কিশোর', f => 'কিশোরী' },
     adult => 'প্রাপ্তবয়স্ক',
   },
+  short => {
+    units => {
+      day => '{n} দিন',
+      week => '{n} সপ্তাহ',
+      month => '{n} মাস',
+      year => '{n} বছর',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} দিন',
+      week => '{n} সপ্তাহ',
+      month => '{n} মাস',
+      year => '{n} বছর',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

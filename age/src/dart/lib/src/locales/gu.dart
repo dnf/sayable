@@ -31,4 +31,18 @@ final gu = AgeLocale(
   child: stageNeutral('બાળક'),
   teenager: stageGendered('કિશોર', 'કિશોરી'),
   adult: stageNeutral('પુખ્ત'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} દિવસ'),
+    week: simpleUnit('{n} અઠ.'),
+    month: pluralUnit({PluralCategory.one: '{n} મહિનો', PluralCategory.other: '{n} મહિના'}),
+    year: simpleUnit('{n} વર્ષ'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} દિ'),
+    week: simpleUnit('{n} અઠ.'),
+    month: simpleUnit('{n} મ'),
+    year: simpleUnit('{n} વ'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

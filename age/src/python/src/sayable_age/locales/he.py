@@ -11,7 +11,7 @@
 
 """Hebrew locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -42,4 +42,22 @@ HE = AgeLocale(
         "teenager": {"m": "נער", "f": "נערה"},
         "adult": {"m": "מבוגר", "f": "מבוגרת"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} יום", "two": "יומיים", "other": "{n} ימ׳"},
+            "week": {"one": "{n} שבוע", "two": "שבועיים", "other": "{n} שבועות"},
+            "month": "{n} ח׳",
+            "year": {"one": "{n} שנה", "two": "{n} שנים", "other": "{n} שנים"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} י׳",
+            "week": "{n} ש′",
+            "month": "{n} ח׳",
+            "year": "{n} ש′",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

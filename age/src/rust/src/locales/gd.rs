@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/gd.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Scottish Gaelic locale.
 pub fn locale() -> AgeLocale {
@@ -58,8 +58,39 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Deugaire".to_string()),
             adult: StageLabel::Neutral("Inbheach".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} là")),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} shn"),
+                (PluralCategory::Two, "{n} shn"),
+                (PluralCategory::Few, "{n} sn"),
+                (PluralCategory::Other, "{n} sn"),
+            ])),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} mhìos"),
+                (PluralCategory::Two, "{n} mhìos"),
+                (PluralCategory::Few, "{n} mìos"),
+                (PluralCategory::Other, "{n} mìos"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} bhlia"),
+                (PluralCategory::Two, "{n} bhlia"),
+                (PluralCategory::Few, "{n} blia"),
+                (PluralCategory::Other, "{n} blia"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}là")),
+            week: Some(UnitForms::simple("{n}s")),
+            month: Some(UnitForms::simple("{n}m")),
+            year: Some(UnitForms::simple("{n}bl")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

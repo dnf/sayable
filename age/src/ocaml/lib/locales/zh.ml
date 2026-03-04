@@ -29,6 +29,22 @@ let locale : locale =
     ; teenager = Neutral "青少年"
     ; adult = Neutral "成人"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n}天")
+      ; ovr_week = Some (Simple "{n}周")
+      ; ovr_month = Some (Simple "{n}个月")
+      ; ovr_year = Some (Simple "{n}年")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n}天")
+      ; ovr_week = Some (Simple "{n}周")
+      ; ovr_month = Some (Simple "{n}个月")
+      ; ovr_year = Some (Simple "{n}年")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
   }

@@ -39,4 +39,18 @@ var NE = sa.AgeLocale{
 		Teenager: sa.S("किशोर"),
 		Adult:    sa.S("वयस्क"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} दिन"},
+		Week:  &sa.UnitForms{Simple: "{n} हप्ता"},
+		Month: &sa.UnitForms{Simple: "{n} महिना"},
+		Year:  &sa.UnitForms{Simple: "{n} वर्ष"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} दिन"},
+		Week:      &sa.UnitForms{Simple: "{n} हप्ता"},
+		Month:     &sa.UnitForms{Simple: "{n} महिना"},
+		Year:      &sa.UnitForms{Simple: "{n} वर्ष"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

@@ -30,5 +30,21 @@ M.stages = {
     teenager = "青少年",
     adult = "成人",
 }
+M.short = {
+    units = {
+        day = "{n}天",
+        week = "{n}周",
+        month = "{n}个月",
+        year = "{n}年",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n}天",
+        week = "{n}周",
+        month = "{n}个月",
+        year = "{n}年",
+    },
+}
 
 return M

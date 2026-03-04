@@ -30,4 +30,18 @@ final hu = AgeLocale(
   child: stageNeutral('Gyermek'),
   teenager: stageNeutral('Tinédzser'),
   adult: stageNeutral('Felnőtt'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} nap'),
+    week: simpleUnit('{n} hét'),
+    month: simpleUnit('{n} hónap'),
+    year: simpleUnit('{n} év'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} nap'),
+    week: simpleUnit('{n} hét'),
+    month: simpleUnit('{n} h.'),
+    year: simpleUnit('{n} év'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

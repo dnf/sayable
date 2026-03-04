@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.NeutralStage("ကလေး"),
     teenager: types.NeutralStage("ဆယ်ကျော်သက်"),
     adult: types.NeutralStage("အရွယ်ရောက်"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} ရက်")),
+      week: Ok(types.SimpleUnit("{n} ပတ်")),
+      month: Ok(types.SimpleUnit("{n} လ")),
+      year: Ok(types.SimpleUnit("{n} နှစ်")),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} ရက်")),
+      week: Ok(types.SimpleUnit("{n} ပတ်")),
+      month: Ok(types.SimpleUnit("{n} လ")),
+      year: Ok(types.SimpleUnit("{n} နှစ်")),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

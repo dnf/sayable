@@ -63,6 +63,28 @@ locale =
         , teenager = Neutral "Tinejdžer"
         , adult = Neutral "Odrasla osoba"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} dan" )
+                  , ( Few, "{n} dana" )
+                  , ( Other, "{n} dana" )
+                  ])
+            , ovrWeek = Just (Simple "{n} tj.")
+            , ovrMonth = Just (Simple "{n} mj.")
+            , ovrYear = Just (Simple "{n} g.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} tj.")
+            , ovrMonth = Just (Simple "{n} mj.")
+            , ovrYear = Just (Simple "{n} g.")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

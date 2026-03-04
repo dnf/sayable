@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.CY do
         child: "Plentyn",
         teenager: "Glaslanc",
         adult: "Oedolyn"
+      },
+      short: %{
+        units: %{
+          day: %{zero: "{n} diwrnod", one: "{n} diwrnod", two: "{n} ddiwrnod", few: "{n} diwrnod", many: "{n} diwrnod", other: "{n} diwrnod"},
+          week: "{n} ws",
+          month: %{zero: "{n} mis", one: "{n} mis", two: "{n} fis", few: "{n} mis", many: "{n} mis", other: "{n} mis"},
+          year: "{n} bl"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}d",
+          week: %{zero: "{n} ws", one: "{n}w", two: "{n} ws", few: "{n} ws", many: "{n} ws", other: "{n}w"},
+          month: "{n}m",
+          year: "{n}bl"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

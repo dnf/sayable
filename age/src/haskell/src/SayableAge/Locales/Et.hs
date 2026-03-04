@@ -44,6 +44,30 @@ locale = Locale
         , stageTeenager = Neutral "Teismeline"
         , stageAdult = Neutral "Täiskasvanu"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} päev")
+              , (Other, "{n} päeva")
+              ])
+            , ovrWeek = Just (Simple "{n} näd")
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n} kuu")
+              , (Other, "{n} kuud")
+              ])
+            , ovrYear = Just (Simple "{n} a")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} p")
+            , ovrWeek = Just (Simple "{n} n")
+            , ovrMonth = Just (Simple "{n} k")
+            , ovrYear = Just (Simple "{n} a")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

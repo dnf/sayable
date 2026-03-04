@@ -55,6 +55,27 @@ locale =
         , teenager = Neutral "Тинејџер"
         , adult = Neutral "Возрасен"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} ден" )
+                  , ( Other, "{n} дена" )
+                  ])
+            , ovrWeek = Just (Simple "{n} сед.")
+            , ovrMonth = Just (Simple "{n} мес.")
+            , ovrYear = Just (Simple "{n} год.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} д.")
+            , ovrWeek = Just (Simple "{n} с.")
+            , ovrMonth = Just (Simple "{n} м.")
+            , ovrYear = Just (Simple "{n} г.")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

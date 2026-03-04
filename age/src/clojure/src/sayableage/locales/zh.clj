@@ -22,5 +22,5 @@
    :delimiter ""
    :just-born "新生儿"
    :stages {:newborn {:type :neutral :label "新生儿"} :infant {:type :neutral :label "婴儿"} :toddler {:type :neutral :label "幼儿"} :child {:type :neutral :label "儿童"} :teenager {:type :neutral :label "青少年"} :adult {:type :neutral :label "成人"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n}天"} :week {:type :simple :form "{n}周"} :month {:type :simple :form "{n}个月"} :year {:type :simple :form "{n}年"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}天"} :week {:type :simple :form "{n}周"} :month {:type :simple :form "{n}个月"} :year {:type :simple :form "{n}年"} :half nil :delimiter nil :just-born nil}})

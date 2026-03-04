@@ -34,6 +34,6 @@ const SaLocale sa_locale_bg = {
         { "Тийнейджър", "" },
         { "Възрастен", "Възрастна" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} д", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} седм.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} мес.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} год.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} д", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} седм.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} мес.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} г.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

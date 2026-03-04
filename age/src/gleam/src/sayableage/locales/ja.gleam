@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.NeutralStage("児童"),
     teenager: types.NeutralStage("青少年"),
     adult: types.NeutralStage("成人"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} 日")),
+      week: Ok(types.SimpleUnit("{n} 週間")),
+      month: Ok(types.SimpleUnit("{n} か月")),
+      year: Ok(types.SimpleUnit("{n} 年")),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n}d")),
+      week: Ok(types.SimpleUnit("{n}w")),
+      month: Ok(types.SimpleUnit("{n}m")),
+      year: Ok(types.SimpleUnit("{n}y")),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
   )
 }

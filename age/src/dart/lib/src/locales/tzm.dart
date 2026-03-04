@@ -31,4 +31,18 @@ final tzm = AgeLocale(
   child: stageGendered('Afrux', 'Tafruxṭ'),
   teenager: stageGendered('Aɛrim', 'Taɛrimt'),
   adult: stageGendered('Argaz', 'Tamṭṭuṭ'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} wk'),
+    month: simpleUnit('{n} mo'),
+    year: simpleUnit('{n} yr'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}d'),
+    week: simpleUnit('{n}w'),
+    month: simpleUnit('{n}m'),
+    year: simpleUnit('{n}y'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

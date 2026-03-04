@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'Oʻsmir',
         adult: 'Katta',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} kun',
+          'week' => '{n} hafta',
+          'month' => '{n} oy',
+          'year' => '{n} yil',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} kun',
+          'week' => '{n} hafta',
+          'month' => '{n} oy',
+          'year' => '{n} yil',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

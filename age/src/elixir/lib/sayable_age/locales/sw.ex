@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.SW do
         child: "Mtoto",
         teenager: "Kijana",
         adult: "Mtu mzima"
+      },
+      short: %{
+        units: %{
+          day: "siku {n}",
+          week: "wiki {n}",
+          month: %{one: "mwezi {n}", other: "miezi {n}"},
+          year: %{one: "mwaka {n}", other: "miaka {n}"}
+        }
+      },
+      compact: %{
+        units: %{
+          day: "siku {n}",
+          week: "wiki {n}",
+          month: %{one: "mwezi {n}", other: "miezi {n}"},
+          year: %{one: "mwaka {n}", other: "miaka {n}"}
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

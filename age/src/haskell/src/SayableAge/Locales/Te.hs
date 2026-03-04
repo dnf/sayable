@@ -44,6 +44,27 @@ locale = Locale
         , stageTeenager = Neutral "కౌమారదశ"
         , stageAdult = Neutral "వయోజనులు"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} రోజు")
+              , (Other, "{n} రోజులు")
+              ])
+            , ovrWeek = Just (Simple "{n} వా.")
+            , ovrMonth = Just (Simple "{n} నె.")
+            , ovrYear = Just (Simple "{n} సం.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}రో")
+            , ovrWeek = Just (Simple "{n}వా")
+            , ovrMonth = Just (Simple "{n}నె")
+            , ovrYear = Just (Simple "{n}సం")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

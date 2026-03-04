@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ar.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Arabic locale.
 pub fn locale() -> AgeLocale {
@@ -69,8 +69,59 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "مراهق".to_string(), f: "مراهقة".to_string() },
             adult: StageLabel::Gendered { m: "بالغ".to_string(), f: "بالغة".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::Zero, "{n} يوم"),
+                (PluralCategory::One, "يوم"),
+                (PluralCategory::Two, "يومان"),
+                (PluralCategory::Few, "{n} أيام"),
+                (PluralCategory::Many, "{n} يومًا"),
+                (PluralCategory::Other, "{n} يوم"),
+            ])),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::Zero, "{n} أسبوع"),
+                (PluralCategory::One, "أسبوع"),
+                (PluralCategory::Two, "أسبوعان"),
+                (PluralCategory::Few, "{n} أسابيع"),
+                (PluralCategory::Many, "{n} أسبوعًا"),
+                (PluralCategory::Other, "{n} أسبوع"),
+            ])),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::Zero, "{n} شهر"),
+                (PluralCategory::One, "شهر"),
+                (PluralCategory::Two, "شهران"),
+                (PluralCategory::Few, "{n} أشهر"),
+                (PluralCategory::Many, "{n} شهرًا"),
+                (PluralCategory::Other, "{n} شهر"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::Zero, "{n} سنة"),
+                (PluralCategory::One, "سنة واحدة"),
+                (PluralCategory::Two, "سنتان"),
+                (PluralCategory::Few, "{n} سنوات"),
+                (PluralCategory::Many, "{n} سنة"),
+                (PluralCategory::Other, "{n} سنة"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} ي")),
+            week: Some(UnitForms::simple("{n} أ")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::Zero, "{n} شهر"),
+                (PluralCategory::One, "شهر"),
+                (PluralCategory::Two, "شهران"),
+                (PluralCategory::Few, "{n} أشهر"),
+                (PluralCategory::Many, "{n} شهرًا"),
+                (PluralCategory::Other, "{n} شهر"),
+            ])),
+            year: Some(UnitForms::simple("{n} سنة")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

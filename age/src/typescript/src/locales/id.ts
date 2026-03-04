@@ -31,4 +31,22 @@ export const id: AgeLocale = {
     teenager: 'Remaja',
     adult: 'Dewasa',
   },
+  short: {
+    units: {
+      day:   '{n} hr',
+      week:  '{n} mgg',
+      month: '{n} bln',
+      year:  '{n} thn',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n} hr',
+      week:  '{n} mgg',
+      month: '{n} bln',
+      year:  '{n} thn',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

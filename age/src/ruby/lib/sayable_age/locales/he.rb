@@ -37,6 +37,24 @@ module SayableAge
         teenager: { m: 'נער', f: 'נערה' },
         adult: { m: 'מבוגר', f: 'מבוגרת' },
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => { one: '{n} יום', two: 'יומיים', other: '{n} ימ׳' },
+          'week' => { one: '{n} שבוע', two: 'שבועיים', other: '{n} שבועות' },
+          'month' => '{n} ח׳',
+          'year' => { one: '{n} שנה', two: '{n} שנים', other: '{n} שנים' },
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} י׳',
+          'week' => '{n} ש′',
+          'month' => '{n} ח׳',
+          'year' => '{n} ש′',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

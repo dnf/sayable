@@ -44,6 +44,33 @@ locale = Locale
         , stageTeenager = Neutral "Teenager"
         , stageAdult = Neutral "Voksen"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} dag")
+              , (Other, "{n} dage")
+              ])
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} uge")
+              , (Other, "{n} uger")
+              ])
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n} md.")
+              , (Other, "{n} mdr.")
+              ])
+            , ovrYear = Just (Simple "{n} år")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} u")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n} år")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

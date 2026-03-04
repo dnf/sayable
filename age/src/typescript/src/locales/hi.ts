@@ -31,4 +31,22 @@ export const hi: AgeLocale = {
     teenager: { m: 'किशोर', f: 'किशोरी' },
     adult: 'वयस्क',
   },
+  short: {
+    units: {
+      day:   '{n} दिन',
+      week:  '{n} सप्ताह',
+      month: '{n} माह',
+      year:  '{n} वर्ष',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n} दि',
+      week:  '{n} सप्ताह',
+      month: '{n} माह',
+      year:  '{n} व',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

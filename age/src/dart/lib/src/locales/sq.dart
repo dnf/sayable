@@ -31,4 +31,18 @@ final sq = AgeLocale(
   child: stageNeutral('Fëmijë'),
   teenager: stageGendered('Adoleshent', 'Adoleshente'),
   adult: stageGendered('I rritur', 'E rritur'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} ditë'),
+    week: simpleUnit('{n} javë'),
+    month: simpleUnit('{n} muaj'),
+    year: pluralUnit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} ditë'),
+    week: simpleUnit('{n} javë'),
+    month: simpleUnit('{n} muaj'),
+    year: pluralUnit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'}),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

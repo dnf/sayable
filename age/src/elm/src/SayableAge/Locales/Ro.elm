@@ -51,6 +51,36 @@ locale =
         , teenager = Gendered "Adolescent" "Adolescentă"
         , adult = Gendered "Adult" "Adultă"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} zi" )
+                  , ( Few, "{n} zile" )
+                  , ( Other, "{n} zile" )
+                  ])
+            , ovrWeek = Just (Simple "{n} săpt.")
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} lună" )
+                  , ( Few, "{n} luni" )
+                  , ( Other, "{n} luni" )
+                  ])
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} an" )
+                  , ( Few, "{n} ani" )
+                  , ( Other, "{n} ani" )
+                  ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} z")
+            , ovrWeek = Just (Simple "{n} săpt.")
+            , ovrMonth = Just (Simple "{n} l")
+            , ovrYear = Just (Simple "{n} a")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

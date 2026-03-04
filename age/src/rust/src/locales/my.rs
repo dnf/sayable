@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/my.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Burmese locale.
 pub fn locale() -> AgeLocale {
@@ -33,8 +33,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("ဆယ်ကျော်သက်".to_string()),
             adult: StageLabel::Neutral("အရွယ်ရောက်".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} ရက်")),
+            week: Some(UnitForms::simple("{n} ပတ်")),
+            month: Some(UnitForms::simple("{n} လ")),
+            year: Some(UnitForms::simple("{n} နှစ်")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} ရက်")),
+            week: Some(UnitForms::simple("{n} ပတ်")),
+            month: Some(UnitForms::simple("{n} လ")),
+            year: Some(UnitForms::simple("{n} နှစ်")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

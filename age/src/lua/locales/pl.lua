@@ -38,5 +38,23 @@ M.stages = {
     teenager = { m = "Nastolatek", f = "Nastolatka" },
     adult = { m = "Dorosły", f = "Dorosła" },
 }
+M.short = {
+    units = {
+        day = { one = "{n} dzień", few = "{n} dni", many = "{n} dni", other = "{n} dnia" },
+        week = { one = "{n} tydz.", few = "{n} tyg.", many = "{n} tyg.", other = "{n} tyg." },
+        month = "{n} mies.",
+        year = { one = "{n} rok", few = "{n} lata", many = "{n} lat", other = "{n} roku" },
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} d.",
+        week = "{n} t.",
+        month = { one = "{n} m-c", few = "{n} m-ce", many = "{n} m-cy", other = "{n} m-ca" },
+        year = { one = "{n} r.", few = "{n} l.", many = "{n} l.", other = "{n} r." },
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

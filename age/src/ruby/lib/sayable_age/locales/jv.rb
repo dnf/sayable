@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'Remaja',
         adult: 'Diwasa',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} dina',
+          'week' => '{n} peken',
+          'month' => '{n} sasi',
+          'year' => '{n} taun',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}d',
+          'week' => '{n} peken',
+          'month' => '{n} sasi',
+          'year' => '{n} taun',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

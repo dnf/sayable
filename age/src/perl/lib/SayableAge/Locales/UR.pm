@@ -34,6 +34,24 @@ sub locale {{
     teenager => 'نوجوان',
     adult => 'بالغ',
   },
+  short => {
+    units => {
+      day => '{n} دن',
+      week => { one => '{n} ہفتہ', other => '{n} ہفتے' },
+      month => { one => '{n} مہینہ', other => '{n} مہینے' },
+      year => '{n} سال',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} دن',
+      week => { one => '{n} ہفتہ', other => '{n} ہفتے' },
+      month => { one => '{n} مہینہ', other => '{n} مہینے' },
+      year => '{n} سال',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

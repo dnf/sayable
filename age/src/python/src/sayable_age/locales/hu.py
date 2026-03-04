@@ -11,7 +11,7 @@
 
 """Hungarian locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 HU = AgeLocale(
     code="hu",
@@ -33,4 +33,22 @@ HU = AgeLocale(
         "teenager": "Tinédzser",
         "adult": "Felnőtt",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} nap",
+            "week": "{n} hét",
+            "month": "{n} hónap",
+            "year": "{n} év",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} nap",
+            "week": "{n} hét",
+            "month": "{n} h.",
+            "year": "{n} év",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

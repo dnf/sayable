@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Iɣ d illul"
    :stages {:newborn {:type :neutral :label "Iɣ d illul"} :infant {:type :neutral :label "Agellid"} :toddler {:type :gendered :m "Aḥenjir" :f "Taḥenjirt"} :child {:type :gendered :m "Afrux" :f "Tafruxṭ"} :teenager {:type :gendered :m "Aɛrim" :f "Taɛrimt"} :adult {:type :gendered :m "Argaz" :f "Tamṭṭuṭ"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} wk"} :month {:type :simple :form "{n} mo"} :year {:type :simple :form "{n} yr"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

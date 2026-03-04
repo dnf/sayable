@@ -36,4 +36,18 @@ var MY = sa.AgeLocale{
 		Teenager: sa.S("ဆယ်ကျော်သက်"),
 		Adult:    sa.S("အရွယ်ရောက်"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} ရက်"},
+		Week:  &sa.UnitForms{Simple: "{n} ပတ်"},
+		Month: &sa.UnitForms{Simple: "{n} လ"},
+		Year:  &sa.UnitForms{Simple: "{n} နှစ်"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} ရက်"},
+		Week:      &sa.UnitForms{Simple: "{n} ပတ်"},
+		Month:     &sa.UnitForms{Simple: "{n} လ"},
+		Year:      &sa.UnitForms{Simple: "{n} နှစ်"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

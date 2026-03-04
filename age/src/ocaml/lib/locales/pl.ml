@@ -49,6 +49,47 @@ let locale : locale =
     ; teenager = Gendered ("Nastolatek", "Nastolatka")
     ; adult = Gendered ("Dorosły", "Dorosła")
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} dzień")
+          ; (Few, "{n} dni")
+          ; (Many, "{n} dni")
+          ; (Other, "{n} dnia")
+          ])
+      ; ovr_week = Some (Pluralized
+          [ (One, "{n} tydz.")
+          ; (Few, "{n} tyg.")
+          ; (Many, "{n} tyg.")
+          ; (Other, "{n} tyg.")
+          ])
+      ; ovr_month = Some (Simple "{n} mies.")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} rok")
+          ; (Few, "{n} lata")
+          ; (Many, "{n} lat")
+          ; (Other, "{n} roku")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} d.")
+      ; ovr_week = Some (Simple "{n} t.")
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} m-c")
+          ; (Few, "{n} m-ce")
+          ; (Many, "{n} m-cy")
+          ; (Other, "{n} m-ca")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} r.")
+          ; (Few, "{n} l.")
+          ; (Many, "{n} l.")
+          ; (Other, "{n} r.")
+          ])
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

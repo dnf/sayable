@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/et.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Estonian locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,30 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Teismeline".to_string()),
             adult: StageLabel::Neutral("Täiskasvanu".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} päev"),
+                (PluralCategory::Other, "{n} päeva"),
+            ])),
+            week: Some(UnitForms::simple("{n} näd")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} kuu"),
+                (PluralCategory::Other, "{n} kuud"),
+            ])),
+            year: Some(UnitForms::simple("{n} a")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} p")),
+            week: Some(UnitForms::simple("{n} n")),
+            month: Some(UnitForms::simple("{n} k")),
+            year: Some(UnitForms::simple("{n} a")),
+            half: None,
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

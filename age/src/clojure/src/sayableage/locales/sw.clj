@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Mzaliwa mpya"
    :stages {:newborn {:type :neutral :label "Mzaliwa mpya"} :infant {:type :neutral :label "Mtoto mchanga"} :toddler {:type :neutral :label "Mtoto mdogo"} :child {:type :neutral :label "Mtoto"} :teenager {:type :neutral :label "Kijana"} :adult {:type :neutral :label "Mtu mzima"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "siku {n}"} :week {:type :simple :form "wiki {n}"} :month {:type :pluralized :forms {:one "mwezi {n}" :other "miezi {n}"}} :year {:type :pluralized :forms {:one "mwaka {n}" :other "miaka {n}"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "siku {n}"} :week {:type :simple :form "wiki {n}"} :month {:type :pluralized :forms {:one "mwezi {n}" :other "miezi {n}"}} :year {:type :pluralized :forms {:one "mwaka {n}" :other "miaka {n}"}} :half "{n}½" :delimiter "" :just-born nil}})

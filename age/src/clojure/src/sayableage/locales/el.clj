@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Νεογέννητο"
    :stages {:newborn {:type :neutral :label "Νεογέννητο"} :infant {:type :neutral :label "Βρέφος"} :toddler {:type :neutral :label "Νήπιο"} :child {:type :neutral :label "Παιδί"} :teenager {:type :gendered :m "Έφηβος" :f "Έφηβη"} :adult {:type :gendered :m "Ενήλικας" :f "Ενήλικη"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} ημέρα" :other "{n} ημέρες"}} :week {:type :simple :form "{n} εβδ."} :month {:type :simple :form "{n} μήν."} :year {:type :simple :form "{n} έτ."} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} η"} :week {:type :simple :form "{n} ε"} :month {:type :simple :form "{n} μ"} :year {:type :simple :form "{n} έ"} :half "{n}½" :delimiter "" :just-born nil}})

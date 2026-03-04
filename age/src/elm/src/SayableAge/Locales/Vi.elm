@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "Thiếu niên"
         , adult = Neutral "Người lớn"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} ngày")
+            , ovrWeek = Just (Simple "{n} tuần")
+            , ovrMonth = Just (Simple "{n} tháng")
+            , ovrYear = Just (Simple "{n} năm")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} ngày")
+            , ovrWeek = Just (Simple "{n} tuần")
+            , ovrMonth = Just (Simple "{n} tháng")
+            , ovrYear = Just (Simple "{n} năm")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

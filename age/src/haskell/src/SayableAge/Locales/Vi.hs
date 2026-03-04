@@ -32,6 +32,24 @@ locale = Locale
         , stageTeenager = Neutral "Thiếu niên"
         , stageAdult = Neutral "Người lớn"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} ngày")
+            , ovrWeek = Just (Simple "{n} tuần")
+            , ovrMonth = Just (Simple "{n} tháng")
+            , ovrYear = Just (Simple "{n} năm")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} ngày")
+            , ovrWeek = Just (Simple "{n} tuần")
+            , ovrMonth = Just (Simple "{n} tháng")
+            , ovrYear = Just (Simple "{n} năm")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

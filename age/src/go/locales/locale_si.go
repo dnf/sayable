@@ -39,4 +39,18 @@ var SI = sa.AgeLocale{
 		Teenager: sa.S("නව යොවුන්"),
 		Adult:    sa.S("වැඩිහිටි"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "දින {n}"},
+		Week:  &sa.UnitForms{Simple: "සති {n}"},
+		Month: &sa.UnitForms{Simple: "මාස {n}"},
+		Year:  &sa.UnitForms{Simple: "වසර {n}"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "දි {n}"},
+		Week:      &sa.UnitForms{Simple: "ස {n}"},
+		Month:     &sa.UnitForms{Simple: "මා {n}"},
+		Year:      &sa.UnitForms{Simple: "ව {n}"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.EU do
         child: "Umea",
         teenager: "Nerabea",
         adult: "Heldua"
+      },
+      short: %{
+        units: %{
+          day: "{n} egun",
+          week: "{n} aste",
+          month: "{n} hilabete",
+          year: "{n} urte"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} e.",
+          week: "{n} aste",
+          month: "{n} hil",
+          year: "{n} u."
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

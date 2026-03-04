@@ -11,7 +11,7 @@
 
 """Gujarati locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 GU = AgeLocale(
     code="gu",
@@ -33,4 +33,22 @@ GU = AgeLocale(
         "teenager": {"m": "કિશોર", "f": "કિશોરી"},
         "adult": "પુખ્ત",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} દિવસ",
+            "week": "{n} અઠ.",
+            "month": {"one": "{n} મહિનો", "other": "{n} મહિના"},
+            "year": "{n} વર્ષ",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} દિ",
+            "week": "{n} અઠ.",
+            "month": "{n} મ",
+            "year": "{n} વ",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

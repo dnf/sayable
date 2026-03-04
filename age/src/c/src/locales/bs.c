@@ -37,6 +37,6 @@ const SaLocale sa_locale_bs = {
         { "Tinejdžer", "" },
         { "Odrasla osoba", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} dan", NULL, "{n} dana", NULL, "{n} dana" } }, true, { "{n} sedm.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mj.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} god.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} d.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sedm.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mj.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} god.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

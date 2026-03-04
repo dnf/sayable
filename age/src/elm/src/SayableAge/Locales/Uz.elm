@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "Oʻsmir"
         , adult = Neutral "Katta"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} kun")
+            , ovrWeek = Just (Simple "{n} hafta")
+            , ovrMonth = Just (Simple "{n} oy")
+            , ovrYear = Just (Simple "{n} yil")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} kun")
+            , ovrWeek = Just (Simple "{n} hafta")
+            , ovrMonth = Just (Simple "{n} oy")
+            , ovrYear = Just (Simple "{n} yil")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

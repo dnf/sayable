@@ -39,4 +39,18 @@ var EL = sa.AgeLocale{
 		Teenager: sa.G("Έφηβος", "Έφηβη"),
 		Adult:    sa.G("Ενήλικας", "Ενήλικη"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ημέρα", sa.Other: "{n} ημέρες"}),
+		Week:  &sa.UnitForms{Simple: "{n} εβδ."},
+		Month: &sa.UnitForms{Simple: "{n} μήν."},
+		Year:  &sa.UnitForms{Simple: "{n} έτ."},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} η"},
+		Week:      &sa.UnitForms{Simple: "{n} ε"},
+		Month:     &sa.UnitForms{Simple: "{n} μ"},
+		Year:      &sa.UnitForms{Simple: "{n} έ"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

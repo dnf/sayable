@@ -34,6 +34,6 @@ const SaLocale sa_locale_fi = {
         { "Teini", "" },
         { "Aikuinen", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} pv", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} vk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} kk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} v", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}pv", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}vk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}kk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}v", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

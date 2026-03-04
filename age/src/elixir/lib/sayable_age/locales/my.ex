@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.MY do
         child: "ကလေး",
         teenager: "ဆယ်ကျော်သက်",
         adult: "အရွယ်ရောက်"
+      },
+      short: %{
+        units: %{
+          day: "{n} ရက်",
+          week: "{n} ပတ်",
+          month: "{n} လ",
+          year: "{n} နှစ်"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} ရက်",
+          week: "{n} ပတ်",
+          month: "{n} လ",
+          year: "{n} နှစ်"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

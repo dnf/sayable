@@ -30,5 +30,23 @@ M.stages = {
     teenager = "Thiếu niên",
     adult = "Người lớn",
 }
+M.short = {
+    units = {
+        day = "{n} ngày",
+        week = "{n} tuần",
+        month = "{n} tháng",
+        year = "{n} năm",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} ngày",
+        week = "{n} tuần",
+        month = "{n} tháng",
+        year = "{n} năm",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

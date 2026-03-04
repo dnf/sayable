@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/pt.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Portuguese locale.
 pub fn locale() -> AgeLocale {
@@ -47,8 +47,42 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Adolescente".to_string()),
             adult: StageLabel::Gendered { m: "Adulto".to_string(), f: "Adulta".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} dia"),
+                (PluralCategory::Other, "{n} dias"),
+            ])),
+            week: Some(UnitForms::simple("{n} sem.")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} mês"),
+                (PluralCategory::Other, "{n} meses"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ano"),
+                (PluralCategory::Other, "{n} anos"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} dia"),
+                (PluralCategory::Other, "{n} dias"),
+            ])),
+            week: Some(UnitForms::simple("{n} sem.")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} mês"),
+                (PluralCategory::Other, "{n} meses"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ano"),
+                (PluralCategory::Other, "{n} anos"),
+            ])),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

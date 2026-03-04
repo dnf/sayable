@@ -31,4 +31,22 @@ export const sw: AgeLocale = {
     teenager: 'Kijana',
     adult: 'Mtu mzima',
   },
+  short: {
+    units: {
+      day:   'siku {n}',
+      week:  'wiki {n}',
+      month: { one: 'mwezi {n}', other: 'miezi {n}' },
+      year:  { one: 'mwaka {n}', other: 'miaka {n}' },
+    },
+  },
+  compact: {
+    units: {
+      day:   'siku {n}',
+      week:  'wiki {n}',
+      month: { one: 'mwezi {n}', other: 'miezi {n}' },
+      year:  { one: 'mwaka {n}', other: 'miaka {n}' },
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

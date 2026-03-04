@@ -37,6 +37,6 @@ const SaLocale sa_locale_ga = {
         { "Déagóir", "" },
         { "Duine fásta", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} lá", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} scht", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} mí", "{n} mí", "{n} mí", "{n} mí", "{n} m" } }, true, { "{n} bl", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} lá", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} scht", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n}m", "{n}m", "{n}m", "{n}m", "{n} m" } }, true, { "{n} bl", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

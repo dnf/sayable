@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/lt.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Lithuanian locale.
 pub fn locale() -> AgeLocale {
@@ -55,8 +55,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "Paauglys".to_string(), f: "Paauglė".to_string() },
             adult: StageLabel::Gendered { m: "Suaugęs".to_string(), f: "Suaugusi".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d.")),
+            week: Some(UnitForms::simple("{n} sav.")),
+            month: Some(UnitForms::simple("{n} mėn.")),
+            year: Some(UnitForms::simple("{n} m.")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d.")),
+            week: Some(UnitForms::simple("{n} sav.")),
+            month: Some(UnitForms::simple("{n} mėn.")),
+            year: Some(UnitForms::simple("{n} m.")),
+            half: None,
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

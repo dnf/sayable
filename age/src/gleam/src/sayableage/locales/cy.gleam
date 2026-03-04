@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.NeutralStage("Plentyn"),
     teenager: types.NeutralStage("Glaslanc"),
     adult: types.NeutralStage("Oedolyn"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.PluralUnit([#(types.Zero, "{n} diwrnod"), #(types.One, "{n} diwrnod"), #(types.Two, "{n} ddiwrnod"), #(types.Few, "{n} diwrnod"), #(types.Many, "{n} diwrnod"), #(types.Other, "{n} diwrnod")])),
+      week: Ok(types.SimpleUnit("{n} ws")),
+      month: Ok(types.PluralUnit([#(types.Zero, "{n} mis"), #(types.One, "{n} mis"), #(types.Two, "{n} fis"), #(types.Few, "{n} mis"), #(types.Many, "{n} mis"), #(types.Other, "{n} mis")])),
+      year: Ok(types.SimpleUnit("{n} bl")),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n}d")),
+      week: Ok(types.PluralUnit([#(types.Zero, "{n} ws"), #(types.One, "{n}w"), #(types.Two, "{n} ws"), #(types.Few, "{n} ws"), #(types.Many, "{n} ws"), #(types.Other, "{n}w")])),
+      month: Ok(types.SimpleUnit("{n}m")),
+      year: Ok(types.SimpleUnit("{n}bl")),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

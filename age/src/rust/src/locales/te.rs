@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/te.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Telugu locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,27 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("కౌమారదశ".to_string()),
             adult: StageLabel::Neutral("వయోజనులు".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} రోజు"),
+                (PluralCategory::Other, "{n} రోజులు"),
+            ])),
+            week: Some(UnitForms::simple("{n} వా.")),
+            month: Some(UnitForms::simple("{n} నె.")),
+            year: Some(UnitForms::simple("{n} సం.")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}రో")),
+            week: Some(UnitForms::simple("{n}వా")),
+            month: Some(UnitForms::simple("{n}నె")),
+            year: Some(UnitForms::simple("{n}సం")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

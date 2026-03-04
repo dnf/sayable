@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Neutral "მოზარდი"
         , stageAdult = Neutral "ზრდასრული"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} დღე")
+            , ovrWeek = Just (Simple "{n} კვრ")
+            , ovrMonth = Just (Simple "{n} თვე")
+            , ovrYear = Just (Simple "{n} წ")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} დღე")
+            , ovrWeek = Just (Simple "{n} კვრ")
+            , ovrMonth = Just (Simple "{n} თვე")
+            , ovrYear = Just (Simple "{n} წ")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

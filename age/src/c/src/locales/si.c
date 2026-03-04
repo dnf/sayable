@@ -34,6 +34,6 @@ const SaLocale sa_locale_si = {
         { "නව යොවුන්", "" },
         { "වැඩිහිටි", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "දින {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "සති {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "මාස {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "වසර {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "දි {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ස {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "මා {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ව {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

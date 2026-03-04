@@ -37,6 +37,6 @@ const SaLocale sa_locale_lt = {
         { "Paauglys", "Paauglė" },
         { "Suaugęs", "Suaugusi" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} d.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sav.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mėn.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} d.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sav.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mėn.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
 };

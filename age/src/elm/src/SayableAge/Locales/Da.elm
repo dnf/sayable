@@ -47,6 +47,33 @@ locale =
         , teenager = Neutral "Teenager"
         , adult = Neutral "Voksen"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} dag" )
+                  , ( Other, "{n} dage" )
+                  ])
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} uge" )
+                  , ( Other, "{n} uger" )
+                  ])
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} md." )
+                  , ( Other, "{n} mdr." )
+                  ])
+            , ovrYear = Just (Simple "{n} år")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} u")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n} år")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

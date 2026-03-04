@@ -32,4 +32,18 @@ final ro = AgeLocale(
   child: stageNeutral('Copil'),
   teenager: stageGendered('Adolescent', 'Adolescentă'),
   adult: stageGendered('Adult', 'Adultă'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} zi', PluralCategory.few: '{n} zile', PluralCategory.other: '{n} zile'}),
+    week: simpleUnit('{n} săpt.'),
+    month: pluralUnit({PluralCategory.one: '{n} lună', PluralCategory.few: '{n} luni', PluralCategory.other: '{n} luni'}),
+    year: pluralUnit({PluralCategory.one: '{n} an', PluralCategory.few: '{n} ani', PluralCategory.other: '{n} ani'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} z'),
+    week: simpleUnit('{n} săpt.'),
+    month: simpleUnit('{n} l'),
+    year: simpleUnit('{n} a'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

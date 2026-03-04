@@ -36,4 +36,16 @@ var JA = sa.AgeLocale{
 		Teenager: sa.S("青少年"),
 		Adult:    sa.S("成人"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} 日"},
+		Week:  &sa.UnitForms{Simple: "{n} 週間"},
+		Month: &sa.UnitForms{Simple: "{n} か月"},
+		Year:  &sa.UnitForms{Simple: "{n} 年"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n}d"},
+		Week:  &sa.UnitForms{Simple: "{n}w"},
+		Month: &sa.UnitForms{Simple: "{n}m"},
+		Year:  &sa.UnitForms{Simple: "{n}y"},
+	},
 }

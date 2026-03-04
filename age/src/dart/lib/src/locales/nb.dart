@@ -31,4 +31,17 @@ final nb = AgeLocale(
   child: stageNeutral('Barn'),
   teenager: stageNeutral('Tenåring'),
   adult: stageNeutral('Voksen'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} u'),
+    month: simpleUnit('{n} md.'),
+    year: simpleUnit('{n} år'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}d'),
+    week: simpleUnit('{n}u'),
+    month: simpleUnit('{n} m'),
+    year: simpleUnit('{n}å'),
+    delimiter: '',
+  ),
 );

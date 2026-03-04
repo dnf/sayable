@@ -51,4 +51,18 @@ var CY = sa.AgeLocale{
 		Teenager: sa.S("Glaslanc"),
 		Adult:    sa.S("Oedolyn"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} diwrnod", sa.One: "{n} diwrnod", sa.Two: "{n} ddiwrnod", sa.Few: "{n} diwrnod", sa.Many: "{n} diwrnod", sa.Other: "{n} diwrnod"}),
+		Week:  &sa.UnitForms{Simple: "{n} ws"},
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} mis", sa.One: "{n} mis", sa.Two: "{n} fis", sa.Few: "{n} mis", sa.Many: "{n} mis", sa.Other: "{n} mis"}),
+		Year:  &sa.UnitForms{Simple: "{n} bl"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}d"},
+		Week:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} ws", sa.One: "{n}w", sa.Two: "{n} ws", sa.Few: "{n} ws", sa.Many: "{n} ws", sa.Other: "{n}w"}),
+		Month:     &sa.UnitForms{Simple: "{n}m"},
+		Year:      &sa.UnitForms{Simple: "{n}bl"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

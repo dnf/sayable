@@ -39,4 +39,17 @@ var ET = sa.AgeLocale{
 		Teenager: sa.S("Teismeline"),
 		Adult:    sa.S("Täiskasvanu"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} päev", sa.Other: "{n} päeva"}),
+		Week:  &sa.UnitForms{Simple: "{n} näd"},
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} kuu", sa.Other: "{n} kuud"}),
+		Year:  &sa.UnitForms{Simple: "{n} a"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} p"},
+		Week:      &sa.UnitForms{Simple: "{n} n"},
+		Month:     &sa.UnitForms{Simple: "{n} k"},
+		Year:      &sa.UnitForms{Simple: "{n} a"},
+		Delimiter: strPtr(""),
+	},
 }

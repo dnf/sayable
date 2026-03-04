@@ -22,5 +22,5 @@
    :delimiter " u "
    :just-born "Tarbija ġdida"
    :stages {:newborn {:type :neutral :label "Tarbija ġdida"} :infant {:type :neutral :label "Tarbija"} :toddler {:type :gendered :m "Tifel żgħir" :f "Tifla żgħira"} :child {:type :gendered :m "Tifel" :f "Tifla"} :teenager {:type :gendered :m "Adolexxent" :f "Adolexxenta"} :adult {:type :gendered :m "Adult" :f "Adulta"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} w"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} y"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} w"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} y"} :half "{n}½" :delimiter "" :just-born nil}})

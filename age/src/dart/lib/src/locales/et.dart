@@ -31,4 +31,17 @@ final et = AgeLocale(
   child: stageNeutral('Laps'),
   teenager: stageNeutral('Teismeline'),
   adult: stageNeutral('Täiskasvanu'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} päev', PluralCategory.other: '{n} päeva'}),
+    week: simpleUnit('{n} näd'),
+    month: pluralUnit({PluralCategory.one: '{n} kuu', PluralCategory.other: '{n} kuud'}),
+    year: simpleUnit('{n} a'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} p'),
+    week: simpleUnit('{n} n'),
+    month: simpleUnit('{n} k'),
+    year: simpleUnit('{n} a'),
+    delimiter: '',
+  ),
 );

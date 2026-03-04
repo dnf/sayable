@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "Тийнейджър"
         , adult = Gendered "Възрастен" "Възрастна"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} д")
+            , ovrWeek = Just (Simple "{n} седм.")
+            , ovrMonth = Just (Simple "{n} мес.")
+            , ovrYear = Just (Simple "{n} год.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} д")
+            , ovrWeek = Just (Simple "{n} седм.")
+            , ovrMonth = Just (Simple "{n} мес.")
+            , ovrYear = Just (Simple "{n} г.")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -11,7 +11,7 @@
 
 """Chinese locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 ZH = AgeLocale(
     code="zh",
@@ -33,4 +33,20 @@ ZH = AgeLocale(
         "teenager": "青少年",
         "adult": "成人",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n}天",
+            "week": "{n}周",
+            "month": "{n}个月",
+            "year": "{n}年",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}天",
+            "week": "{n}周",
+            "month": "{n}个月",
+            "year": "{n}年",
+        },
+    ),
 )

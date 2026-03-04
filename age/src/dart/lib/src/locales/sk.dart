@@ -32,4 +32,17 @@ final sk = AgeLocale(
   child: stageNeutral('Dieťa'),
   teenager: stageNeutral('Tínedžer'),
   adult: stageGendered('Dospelý', 'Dospelá'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} deň', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dňa', PluralCategory.other: '{n} dní'}),
+    week: simpleUnit('{n} týž.'),
+    month: simpleUnit('{n} mes.'),
+    year: simpleUnit('{n} r.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} d.'),
+    week: simpleUnit('{n} t.'),
+    month: simpleUnit('{n} m.'),
+    year: simpleUnit('{n} r.'),
+    delimiter: '',
+  ),
 );

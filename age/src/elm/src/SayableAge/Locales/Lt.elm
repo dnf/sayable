@@ -59,6 +59,24 @@ locale =
         , teenager = Gendered "Paauglys" "Paauglė"
         , adult = Gendered "Suaugęs" "Suaugusi"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} sav.")
+            , ovrMonth = Just (Simple "{n} mėn.")
+            , ovrYear = Just (Simple "{n} m.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} sav.")
+            , ovrMonth = Just (Simple "{n} mėn.")
+            , ovrYear = Just (Simple "{n} m.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

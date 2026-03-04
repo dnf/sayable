@@ -39,4 +39,18 @@ var SW = sa.AgeLocale{
 		Teenager: sa.S("Kijana"),
 		Adult:    sa.S("Mtu mzima"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "siku {n}"},
+		Week:  &sa.UnitForms{Simple: "wiki {n}"},
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "mwezi {n}", sa.Other: "miezi {n}"}),
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "mwaka {n}", sa.Other: "miaka {n}"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "siku {n}"},
+		Week:      &sa.UnitForms{Simple: "wiki {n}"},
+		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "mwezi {n}", sa.Other: "miezi {n}"}),
+		Year:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "mwaka {n}", sa.Other: "miaka {n}"}),
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

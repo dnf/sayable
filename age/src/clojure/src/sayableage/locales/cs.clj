@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Novorozenec"
    :stages {:newborn {:type :neutral :label "Novorozenec"} :infant {:type :neutral :label "Kojenec"} :toddler {:type :neutral :label "Batole"} :child {:type :neutral :label "Dítě"} :teenager {:type :neutral :label "Teenager"} :adult {:type :gendered :m "Dospělý" :f "Dospělá"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} den" :few "{n} dny" :many "{n} dne" :other "{n} dnů"}} :week {:type :simple :form "{n} týd."} :month {:type :simple :form "{n} měs."} :year {:type :pluralized :forms {:one "{n} rok" :few "{n} roky" :many "{n} roku" :other "{n} let"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} d."} :week {:type :simple :form "{n} t."} :month {:type :simple :form "{n} m."} :year {:type :pluralized :forms {:one "{n} r." :few "{n} r." :many "{n} r." :other "{n} l."}} :half nil :delimiter "" :just-born nil}})

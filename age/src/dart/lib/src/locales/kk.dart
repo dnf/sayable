@@ -31,4 +31,18 @@ final kk = AgeLocale(
   child: stageNeutral('Бала'),
   teenager: stageNeutral('Жасөспірім'),
   adult: stageNeutral('Ересек'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} күн'),
+    week: simpleUnit('{n} ап.'),
+    month: simpleUnit('{n} ай'),
+    year: simpleUnit('{n} ж.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} к.'),
+    week: simpleUnit('{n} ап.'),
+    month: simpleUnit('{n} ай'),
+    year: simpleUnit('{n} ж.'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'Thiếu niên',
         adult: 'Người lớn',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} ngày',
+          'week' => '{n} tuần',
+          'month' => '{n} tháng',
+          'year' => '{n} năm',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} ngày',
+          'week' => '{n} tuần',
+          'month' => '{n} tháng',
+          'year' => '{n} năm',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

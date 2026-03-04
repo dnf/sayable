@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "วัยรุ่น"
         , adult = Neutral "ผู้ใหญ่"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} วัน")
+            , ovrWeek = Just (Simple "{n} สัปดาห์")
+            , ovrMonth = Just (Simple "{n} เดือน")
+            , ovrYear = Just (Simple "{n} ปี")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}วัน")
+            , ovrWeek = Just (Simple "{n}สัปดาห์")
+            , ovrMonth = Just (Simple "{n}เดือน")
+            , ovrYear = Just (Simple "{n}ปี")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

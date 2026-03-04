@@ -31,4 +31,18 @@ final pa = AgeLocale(
   child: stageGendered('ਬੱਚਾ', 'ਬੱਚੀ'),
   teenager: stageGendered('ਕਿਸ਼ੋਰ', 'ਕਿਸ਼ੋਰੀ'),
   adult: stageNeutral('ਬਾਲਗ'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} ਦਿਨ'),
+    week: pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
+    month: pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),
+    year: simpleUnit('{n} ਸਾਲ'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} ਦਿਨ'),
+    week: pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
+    month: pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),
+    year: simpleUnit('{n} ਸਾਲ'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

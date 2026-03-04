@@ -30,4 +30,18 @@ final km = AgeLocale(
   child: stageNeutral('កុមារ'),
   teenager: stageNeutral('យុវវ័យ'),
   adult: stageNeutral('មនុស្សពេញវ័យ'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} ថ្ងៃ'),
+    week: simpleUnit('{n} សប្ដាហ៍'),
+    month: simpleUnit('{n} ខែ'),
+    year: simpleUnit('{n} ឆ្នាំ'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} ថ្ងៃ'),
+    week: simpleUnit('{n} សប្ដាហ៍'),
+    month: simpleUnit('{n} ខែ'),
+    year: simpleUnit('{n} ឆ្នាំ'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.NeutralStage("Παιδί"),
     teenager: types.GenderedStage("Έφηβος", "Έφηβη"),
     adult: types.GenderedStage("Ενήλικας", "Ενήλικη"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.PluralUnit([#(types.One, "{n} ημέρα"), #(types.Other, "{n} ημέρες")])),
+      week: Ok(types.SimpleUnit("{n} εβδ.")),
+      month: Ok(types.SimpleUnit("{n} μήν.")),
+      year: Ok(types.SimpleUnit("{n} έτ.")),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} η")),
+      week: Ok(types.SimpleUnit("{n} ε")),
+      month: Ok(types.SimpleUnit("{n} μ")),
+      year: Ok(types.SimpleUnit("{n} έ")),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

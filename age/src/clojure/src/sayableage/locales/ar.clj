@@ -22,5 +22,5 @@
    :delimiter " و"
    :just-born "حديث الولادة"
    :stages {:newborn {:type :gendered :m "حديث الولادة" :f "حديثة الولادة"} :infant {:type :gendered :m "رضيع" :f "رضيعة"} :toddler {:type :gendered :m "طفل صغير" :f "طفلة صغيرة"} :child {:type :gendered :m "طفل" :f "طفلة"} :teenager {:type :gendered :m "مراهق" :f "مراهقة"} :adult {:type :gendered :m "بالغ" :f "بالغة"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:zero "{n} يوم" :one "يوم" :two "يومان" :few "{n} أيام" :many "{n} يومًا" :other "{n} يوم"}} :week {:type :pluralized :forms {:zero "{n} أسبوع" :one "أسبوع" :two "أسبوعان" :few "{n} أسابيع" :many "{n} أسبوعًا" :other "{n} أسبوع"}} :month {:type :pluralized :forms {:zero "{n} شهر" :one "شهر" :two "شهران" :few "{n} أشهر" :many "{n} شهرًا" :other "{n} شهر"}} :year {:type :pluralized :forms {:zero "{n} سنة" :one "سنة واحدة" :two "سنتان" :few "{n} سنوات" :many "{n} سنة" :other "{n} سنة"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} ي"} :week {:type :simple :form "{n} أ"} :month {:type :pluralized :forms {:zero "{n} شهر" :one "شهر" :two "شهران" :few "{n} أشهر" :many "{n} شهرًا" :other "{n} شهر"}} :year {:type :simple :form "{n} سنة"} :half "{n}½" :delimiter "" :just-born nil}})

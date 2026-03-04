@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.TH do
         child: "เด็ก",
         teenager: "วัยรุ่น",
         adult: "ผู้ใหญ่"
+      },
+      short: %{
+        units: %{
+          day: "{n} วัน",
+          week: "{n} สัปดาห์",
+          month: "{n} เดือน",
+          year: "{n} ปี"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}วัน",
+          week: "{n}สัปดาห์",
+          month: "{n}เดือน",
+          year: "{n}ปี"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

@@ -34,6 +34,6 @@ const SaLocale sa_locale_ta = {
         { "இளம்பருவம்", "" },
         { "பெரியவர்", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} நாள்", NULL, NULL, NULL, "{n} நாட்கள்" } }, true, { NULL, { NULL, "{n} வாரம்", NULL, NULL, NULL, "{n} வார." } }, true, { NULL, { NULL, "{n} மாதம்", NULL, NULL, NULL, "{n} மாத." } }, true, { NULL, { NULL, "{n} ஆண்டு", NULL, NULL, NULL, "{n} ஆண்டு." } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} நா", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} வா", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} மா", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ஆ", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
 };

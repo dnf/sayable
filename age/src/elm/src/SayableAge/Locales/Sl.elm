@@ -61,6 +61,24 @@ locale =
         , teenager = Gendered "Najstnik" "Najstnica"
         , adult = Gendered "Odrasel" "Odrasla"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} t")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n} l")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} t")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n} l")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

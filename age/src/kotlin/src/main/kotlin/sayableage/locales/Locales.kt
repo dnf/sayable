@@ -41,6 +41,20 @@ public object Locales {
             teenager = s("ታዳጊ"),
             adult = s("አዋቂ"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} ቀናት"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} ሳምንት", PluralCategory.OTHER to "{n} ሳምንታት")),
+            month = simpleUnit("{n} ወራት"),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} ዓመት", PluralCategory.OTHER to "{n} ዓመታት")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} ቀ"),
+            week = simpleUnit("{n} ሳምንት"),
+            month = simpleUnit("{n} ወር"),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} ዓመት", PluralCategory.OTHER to "{n} ዓ")),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/ar.json
@@ -76,6 +90,20 @@ public object Locales {
             teenager = g("مراهق", "مراهقة"),
             adult = g("بالغ", "بالغة"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ZERO to "{n} يوم", PluralCategory.ONE to "يوم", PluralCategory.TWO to "يومان", PluralCategory.FEW to "{n} أيام", PluralCategory.MANY to "{n} يومًا", PluralCategory.OTHER to "{n} يوم")),
+            week = pluralUnit(mapOf(PluralCategory.ZERO to "{n} أسبوع", PluralCategory.ONE to "أسبوع", PluralCategory.TWO to "أسبوعان", PluralCategory.FEW to "{n} أسابيع", PluralCategory.MANY to "{n} أسبوعًا", PluralCategory.OTHER to "{n} أسبوع")),
+            month = pluralUnit(mapOf(PluralCategory.ZERO to "{n} شهر", PluralCategory.ONE to "شهر", PluralCategory.TWO to "شهران", PluralCategory.FEW to "{n} أشهر", PluralCategory.MANY to "{n} شهرًا", PluralCategory.OTHER to "{n} شهر")),
+            year = pluralUnit(mapOf(PluralCategory.ZERO to "{n} سنة", PluralCategory.ONE to "سنة واحدة", PluralCategory.TWO to "سنتان", PluralCategory.FEW to "{n} سنوات", PluralCategory.MANY to "{n} سنة", PluralCategory.OTHER to "{n} سنة")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} ي"),
+            week = simpleUnit("{n} أ"),
+            month = pluralUnit(mapOf(PluralCategory.ZERO to "{n} شهر", PluralCategory.ONE to "شهر", PluralCategory.TWO to "شهران", PluralCategory.FEW to "{n} أشهر", PluralCategory.MANY to "{n} شهرًا", PluralCategory.OTHER to "{n} شهر")),
+            year = simpleUnit("{n} سنة"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/az.json
@@ -101,6 +129,20 @@ public object Locales {
             child = s("Uşaq"),
             teenager = s("Yeniyetmə"),
             adult = s("Böyük"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} gün"),
+            week = simpleUnit("{n} hft"),
+            month = simpleUnit("{n} ay"),
+            year = simpleUnit("{n} il"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} gün"),
+            week = simpleUnit("{n} hft"),
+            month = simpleUnit("{n} ay"),
+            year = simpleUnit("{n} il"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -128,6 +170,20 @@ public object Locales {
             teenager = s("Тийнейджър"),
             adult = g("Възрастен", "Възрастна"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} д"),
+            week = simpleUnit("{n} седм."),
+            month = simpleUnit("{n} мес."),
+            year = simpleUnit("{n} год."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} д"),
+            week = simpleUnit("{n} седм."),
+            month = simpleUnit("{n} мес."),
+            year = simpleUnit("{n} г."),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/bn.json
@@ -153,6 +209,20 @@ public object Locales {
             child = s("শিশু"),
             teenager = g("কিশোর", "কিশোরী"),
             adult = s("প্রাপ্তবয়স্ক"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} দিন"),
+            week = simpleUnit("{n} সপ্তাহ"),
+            month = simpleUnit("{n} মাস"),
+            year = simpleUnit("{n} বছর"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} দিন"),
+            week = simpleUnit("{n} সপ্তাহ"),
+            month = simpleUnit("{n} মাস"),
+            year = simpleUnit("{n} বছর"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -190,6 +260,20 @@ public object Locales {
             teenager = s("Den yaouank"),
             adult = s("Den deuet da vad"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} sizh."),
+            month = simpleUnit("{n} m."),
+            year = simpleUnit("{n} bl."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}sizh."),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}b"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/bs.json
@@ -224,6 +308,20 @@ public object Locales {
             teenager = s("Tinejdžer"),
             adult = s("Odrasla osoba"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} dan", PluralCategory.FEW to "{n} dana", PluralCategory.OTHER to "{n} dana")),
+            week = simpleUnit("{n} sedm."),
+            month = simpleUnit("{n} mj."),
+            year = simpleUnit("{n} god."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} sedm."),
+            month = simpleUnit("{n} mj."),
+            year = simpleUnit("{n} god."),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/ca.json
@@ -249,6 +347,20 @@ public object Locales {
             child = s("Criatura"),
             teenager = s("Adolescent"),
             adult = g("Adult", "Adulta"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} dia", PluralCategory.OTHER to "{n} dies")),
+            week = simpleUnit("{n} setm."),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mes", PluralCategory.OTHER to "{n} m")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} any", PluralCategory.OTHER to "{n} anys")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} setm."),
+            month = simpleUnit("{n} m"),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} any", PluralCategory.OTHER to "{n} anys")),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -281,6 +393,19 @@ public object Locales {
             child = s("Dítě"),
             teenager = s("Teenager"),
             adult = g("Dospělý", "Dospělá"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} den", PluralCategory.FEW to "{n} dny", PluralCategory.MANY to "{n} dne", PluralCategory.OTHER to "{n} dnů")),
+            week = simpleUnit("{n} týd."),
+            month = simpleUnit("{n} měs."),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} rok", PluralCategory.FEW to "{n} roky", PluralCategory.MANY to "{n} roku", PluralCategory.OTHER to "{n} let")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} t."),
+            month = simpleUnit("{n} m."),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} r.", PluralCategory.FEW to "{n} r.", PluralCategory.MANY to "{n} r.", PluralCategory.OTHER to "{n} l.")),
+            delimiter = "",
         ),
     )
 
@@ -317,6 +442,20 @@ public object Locales {
             teenager = s("Glaslanc"),
             adult = s("Oedolyn"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ZERO to "{n} diwrnod", PluralCategory.ONE to "{n} diwrnod", PluralCategory.TWO to "{n} ddiwrnod", PluralCategory.FEW to "{n} diwrnod", PluralCategory.MANY to "{n} diwrnod", PluralCategory.OTHER to "{n} diwrnod")),
+            week = simpleUnit("{n} ws"),
+            month = pluralUnit(mapOf(PluralCategory.ZERO to "{n} mis", PluralCategory.ONE to "{n} mis", PluralCategory.TWO to "{n} fis", PluralCategory.FEW to "{n} mis", PluralCategory.MANY to "{n} mis", PluralCategory.OTHER to "{n} mis")),
+            year = simpleUnit("{n} bl"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = pluralUnit(mapOf(PluralCategory.ZERO to "{n} ws", PluralCategory.ONE to "{n}w", PluralCategory.TWO to "{n} ws", PluralCategory.FEW to "{n} ws", PluralCategory.MANY to "{n} ws", PluralCategory.OTHER to "{n}w")),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}bl"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/da.json
@@ -342,6 +481,19 @@ public object Locales {
             child = s("Barn"),
             teenager = s("Teenager"),
             adult = s("Voksen"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} dag", PluralCategory.OTHER to "{n} dage")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} uge", PluralCategory.OTHER to "{n} uger")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} md.", PluralCategory.OTHER to "{n} mdr.")),
+            year = simpleUnit("{n} år"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} u"),
+            month = simpleUnit("{n} m"),
+            year = simpleUnit("{n} år"),
+            delimiter = "",
         ),
     )
 
@@ -369,6 +521,19 @@ public object Locales {
             teenager = s("Teenager"),
             adult = g("Erwachsener", "Erwachsene"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} Tg."),
+            week = simpleUnit("{n} Wo."),
+            month = simpleUnit("{n} Mon."),
+            year = simpleUnit("{n} J"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} T"),
+            week = simpleUnit("{n} W"),
+            month = simpleUnit("{n} M"),
+            year = simpleUnit("{n} J"),
+            delimiter = "",
+        ),
     )
 
     // Source: age/locales/src/el.json
@@ -394,6 +559,20 @@ public object Locales {
             child = s("Παιδί"),
             teenager = g("Έφηβος", "Έφηβη"),
             adult = g("Ενήλικας", "Ενήλικη"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} ημέρα", PluralCategory.OTHER to "{n} ημέρες")),
+            week = simpleUnit("{n} εβδ."),
+            month = simpleUnit("{n} μήν."),
+            year = simpleUnit("{n} έτ."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} η"),
+            week = simpleUnit("{n} ε"),
+            month = simpleUnit("{n} μ"),
+            year = simpleUnit("{n} έ"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -460,6 +639,20 @@ public object Locales {
             teenager = s("Adolescente"),
             adult = g("Adulto", "Adulta"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} sem."),
+            month = simpleUnit("{n} m."),
+            year = simpleUnit("{n} a"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}sem"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}a"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/et.json
@@ -485,6 +678,19 @@ public object Locales {
             child = s("Laps"),
             teenager = s("Teismeline"),
             adult = s("Täiskasvanu"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} päev", PluralCategory.OTHER to "{n} päeva")),
+            week = simpleUnit("{n} näd"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} kuu", PluralCategory.OTHER to "{n} kuud")),
+            year = simpleUnit("{n} a"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} p"),
+            week = simpleUnit("{n} n"),
+            month = simpleUnit("{n} k"),
+            year = simpleUnit("{n} a"),
+            delimiter = "",
         ),
     )
 
@@ -512,6 +718,20 @@ public object Locales {
             teenager = s("Nerabea"),
             adult = s("Heldua"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} egun"),
+            week = simpleUnit("{n} aste"),
+            month = simpleUnit("{n} hilabete"),
+            year = simpleUnit("{n} urte"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} e."),
+            week = simpleUnit("{n} aste"),
+            month = simpleUnit("{n} hil"),
+            year = simpleUnit("{n} u."),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/fa.json
@@ -537,6 +757,20 @@ public object Locales {
             child = s("کودک"),
             teenager = s("نوجوان"),
             adult = s("بزرگسال"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} روز"),
+            week = simpleUnit("{n} هفته"),
+            month = simpleUnit("{n} ماه"),
+            year = simpleUnit("{n} سال"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} روز"),
+            week = simpleUnit("{n} هفته"),
+            month = simpleUnit("{n} ماه"),
+            year = simpleUnit("{n} سال"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -564,6 +798,20 @@ public object Locales {
             teenager = s("Teini"),
             adult = s("Aikuinen"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} pv"),
+            week = simpleUnit("{n} vk"),
+            month = simpleUnit("{n} kk"),
+            year = simpleUnit("{n} v"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}pv"),
+            week = simpleUnit("{n}vk"),
+            month = simpleUnit("{n}kk"),
+            year = simpleUnit("{n}v"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/fil.json
@@ -590,6 +838,20 @@ public object Locales {
             teenager = s("Tinedyer"),
             adult = s("Matanda"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} araw"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} linggo", PluralCategory.OTHER to "{n} na linggo")),
+            month = simpleUnit("{n} buwan"),
+            year = simpleUnit("{n} taon"),
+        ),
+        compact = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} araw", PluralCategory.OTHER to "{n} na araw")),
+            week = simpleUnit("{n}linggo"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n}buwan", PluralCategory.OTHER to "{n} buwan")),
+            year = simpleUnit("{n}taon"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/fr.json
@@ -615,6 +877,20 @@ public object Locales {
             child = s("Enfant"),
             teenager = g("Adolescent", "Adolescente"),
             adult = s("Adulte"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} j"),
+            week = simpleUnit("{n} sem."),
+            month = simpleUnit("{n} m."),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} an", PluralCategory.OTHER to "{n} ans")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}j"),
+            week = simpleUnit("{n}sem."),
+            month = simpleUnit("{n}m."),
+            year = simpleUnit("{n}a"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -650,6 +926,20 @@ public object Locales {
             teenager = s("Déagóir"),
             adult = s("Duine fásta"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} lá"),
+            week = simpleUnit("{n} scht"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mí", PluralCategory.TWO to "{n} mí", PluralCategory.FEW to "{n} mí", PluralCategory.MANY to "{n} mí", PluralCategory.OTHER to "{n} m")),
+            year = simpleUnit("{n} bl"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} lá"),
+            week = simpleUnit("{n} scht"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n}m", PluralCategory.TWO to "{n}m", PluralCategory.FEW to "{n}m", PluralCategory.MANY to "{n}m", PluralCategory.OTHER to "{n} m")),
+            year = simpleUnit("{n} bl"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/gd.json
@@ -683,6 +973,20 @@ public object Locales {
             teenager = s("Deugaire"),
             adult = s("Inbheach"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} là"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} shn", PluralCategory.TWO to "{n} shn", PluralCategory.FEW to "{n} sn", PluralCategory.OTHER to "{n} sn")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mhìos", PluralCategory.TWO to "{n} mhìos", PluralCategory.FEW to "{n} mìos", PluralCategory.OTHER to "{n} mìos")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} bhlia", PluralCategory.TWO to "{n} bhlia", PluralCategory.FEW to "{n} blia", PluralCategory.OTHER to "{n} blia")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}là"),
+            week = simpleUnit("{n}s"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}bl"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/gu.json
@@ -708,6 +1012,20 @@ public object Locales {
             child = s("બાળક"),
             teenager = g("કિશોર", "કિશોરી"),
             adult = s("પુખ્ત"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} દિવસ"),
+            week = simpleUnit("{n} અઠ."),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} મહિનો", PluralCategory.OTHER to "{n} મહિના")),
+            year = simpleUnit("{n} વર્ષ"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} દિ"),
+            week = simpleUnit("{n} અઠ."),
+            month = simpleUnit("{n} મ"),
+            year = simpleUnit("{n} વ"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -744,6 +1062,20 @@ public object Locales {
             teenager = s("Fer aeg"),
             adult = s("Dooinney aasit"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} wk"),
+            month = simpleUnit("{n} mo"),
+            year = simpleUnit("{n} yr"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/he.json
@@ -776,6 +1108,20 @@ public object Locales {
             teenager = g("נער", "נערה"),
             adult = g("מבוגר", "מבוגרת"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} יום", PluralCategory.TWO to "יומיים", PluralCategory.OTHER to "{n} ימ׳")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} שבוע", PluralCategory.TWO to "שבועיים", PluralCategory.OTHER to "{n} שבועות")),
+            month = simpleUnit("{n} ח׳"),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} שנה", PluralCategory.TWO to "{n} שנים", PluralCategory.OTHER to "{n} שנים")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} י׳"),
+            week = simpleUnit("{n} ש′"),
+            month = simpleUnit("{n} ח׳"),
+            year = simpleUnit("{n} ש′"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/hi.json
@@ -801,6 +1147,20 @@ public object Locales {
             child = g("बच्चा", "बच्ची"),
             teenager = g("किशोर", "किशोरी"),
             adult = s("वयस्क"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} दिन"),
+            week = simpleUnit("{n} सप्ताह"),
+            month = simpleUnit("{n} माह"),
+            year = simpleUnit("{n} वर्ष"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} दि"),
+            week = simpleUnit("{n} सप्ताह"),
+            month = simpleUnit("{n} माह"),
+            year = simpleUnit("{n} व"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -836,6 +1196,20 @@ public object Locales {
             teenager = s("Tinejdžer"),
             adult = s("Odrasla osoba"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} dan", PluralCategory.FEW to "{n} dana", PluralCategory.OTHER to "{n} dana")),
+            week = simpleUnit("{n} tj."),
+            month = simpleUnit("{n} mj."),
+            year = simpleUnit("{n} g."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} tj."),
+            month = simpleUnit("{n} mj."),
+            year = simpleUnit("{n} g."),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/hu.json
@@ -861,6 +1235,20 @@ public object Locales {
             child = s("Gyermek"),
             teenager = s("Tinédzser"),
             adult = s("Felnőtt"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} nap"),
+            week = simpleUnit("{n} hét"),
+            month = simpleUnit("{n} hónap"),
+            year = simpleUnit("{n} év"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} nap"),
+            week = simpleUnit("{n} hét"),
+            month = simpleUnit("{n} h."),
+            year = simpleUnit("{n} év"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -888,6 +1276,20 @@ public object Locales {
             teenager = s("Remaja"),
             adult = s("Dewasa"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} hr"),
+            week = simpleUnit("{n} mgg"),
+            month = simpleUnit("{n} bln"),
+            year = simpleUnit("{n} thn"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} hr"),
+            week = simpleUnit("{n} mgg"),
+            month = simpleUnit("{n} bln"),
+            year = simpleUnit("{n} thn"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/it.json
@@ -913,6 +1315,20 @@ public object Locales {
             child = g("Bambino", "Bambina"),
             teenager = s("Adolescente"),
             adult = g("Adulto", "Adulta"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} giorno", PluralCategory.OTHER to "{n} giorni")),
+            week = simpleUnit("{n} sett."),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mese", PluralCategory.OTHER to "{n} mesi")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} anno", PluralCategory.OTHER to "{n} anni")),
+        ),
+        compact = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n}g", PluralCategory.OTHER to "{n}gg")),
+            week = simpleUnit("{n}sett."),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mese", PluralCategory.OTHER to "{n} mesi")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n}anno", PluralCategory.OTHER to "{n}anni")),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -940,6 +1356,18 @@ public object Locales {
             teenager = s("青少年"),
             adult = s("成人"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} 日"),
+            week = simpleUnit("{n} 週間"),
+            month = simpleUnit("{n} か月"),
+            year = simpleUnit("{n} 年"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+        ),
     )
 
     // Source: age/locales/src/jv.json
@@ -965,6 +1393,20 @@ public object Locales {
             child = s("Bocah"),
             teenager = s("Remaja"),
             adult = s("Diwasa"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} dina"),
+            week = simpleUnit("{n} peken"),
+            month = simpleUnit("{n} sasi"),
+            year = simpleUnit("{n} taun"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n} peken"),
+            month = simpleUnit("{n} sasi"),
+            year = simpleUnit("{n} taun"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -992,6 +1434,20 @@ public object Locales {
             teenager = s("მოზარდი"),
             adult = s("ზრდასრული"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} დღე"),
+            week = simpleUnit("{n} კვრ"),
+            month = simpleUnit("{n} თვე"),
+            year = simpleUnit("{n} წ"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} დღე"),
+            week = simpleUnit("{n} კვრ"),
+            month = simpleUnit("{n} თვე"),
+            year = simpleUnit("{n} წ"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/kk.json
@@ -1017,6 +1473,20 @@ public object Locales {
             child = s("Бала"),
             teenager = s("Жасөспірім"),
             adult = s("Ересек"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} күн"),
+            week = simpleUnit("{n} ап."),
+            month = simpleUnit("{n} ай"),
+            year = simpleUnit("{n} ж."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} к."),
+            week = simpleUnit("{n} ап."),
+            month = simpleUnit("{n} ай"),
+            year = simpleUnit("{n} ж."),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1044,6 +1514,20 @@ public object Locales {
             teenager = s("យុវវ័យ"),
             adult = s("មនុស្សពេញវ័យ"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} ថ្ងៃ"),
+            week = simpleUnit("{n} សប្ដាហ៍"),
+            month = simpleUnit("{n} ខែ"),
+            year = simpleUnit("{n} ឆ្នាំ"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} ថ្ងៃ"),
+            week = simpleUnit("{n} សប្ដាហ៍"),
+            month = simpleUnit("{n} ខែ"),
+            year = simpleUnit("{n} ឆ្នាំ"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/ko.json
@@ -1069,6 +1553,19 @@ public object Locales {
             child = s("아동"),
             teenager = s("청소년"),
             adult = s("성인"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n}일"),
+            week = simpleUnit("{n}주"),
+            month = simpleUnit("{n}개월"),
+            year = simpleUnit("{n}년"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}일"),
+            week = simpleUnit("{n}주"),
+            month = simpleUnit("{n}개월"),
+            year = simpleUnit("{n}년"),
+            delimiter = "",
         ),
     )
 
@@ -1110,6 +1607,20 @@ public object Locales {
             teenager = s("Den yowynk"),
             adult = s("Den tevys"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} wk"),
+            month = simpleUnit("{n} mo"),
+            year = simpleUnit("{n} yr"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/lt.json
@@ -1143,6 +1654,19 @@ public object Locales {
             child = s("Vaikas"),
             teenager = g("Paauglys", "Paauglė"),
             adult = g("Suaugęs", "Suaugusi"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} sav."),
+            month = simpleUnit("{n} mėn."),
+            year = simpleUnit("{n} m."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} sav."),
+            month = simpleUnit("{n} mėn."),
+            year = simpleUnit("{n} m."),
+            delimiter = "",
         ),
     )
 
@@ -1178,6 +1702,19 @@ public object Locales {
             teenager = g("Pusaudzis", "Pusaudze"),
             adult = g("Pieaugušais", "Pieaugusī"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} ned."),
+            month = simpleUnit("{n} mēn."),
+            year = simpleUnit("{n} g."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} n."),
+            month = simpleUnit("{n} m."),
+            year = simpleUnit("{n} g."),
+            delimiter = "",
+        ),
     )
 
     // Source: age/locales/src/mk.json
@@ -1208,6 +1745,20 @@ public object Locales {
             teenager = s("Тинејџер"),
             adult = s("Возрасен"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} ден", PluralCategory.OTHER to "{n} дена")),
+            week = simpleUnit("{n} сед."),
+            month = simpleUnit("{n} мес."),
+            year = simpleUnit("{n} год."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} д."),
+            week = simpleUnit("{n} с."),
+            month = simpleUnit("{n} м."),
+            year = simpleUnit("{n} г."),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/mr.json
@@ -1234,6 +1785,20 @@ public object Locales {
             teenager = g("किशोर", "किशोरी"),
             adult = s("प्रौढ"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} दिवस"),
+            week = simpleUnit("{n} आ"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} महिना", PluralCategory.OTHER to "{n} महिने")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} वर्ष", PluralCategory.OTHER to "{n} वर्षे")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}दि"),
+            week = simpleUnit("{n}आ"),
+            month = simpleUnit("{n}म"),
+            year = simpleUnit("{n}व"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/ms.json
@@ -1259,6 +1824,20 @@ public object Locales {
             child = s("Kanak-kanak"),
             teenager = s("Remaja"),
             adult = s("Dewasa"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} hari"),
+            week = simpleUnit("{n} mgu"),
+            month = simpleUnit("{n} bln"),
+            year = simpleUnit("{n} thn"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} h"),
+            week = simpleUnit("{n} mgu"),
+            month = simpleUnit("{n} bln"),
+            year = simpleUnit("{n} thn"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1294,6 +1873,20 @@ public object Locales {
             teenager = g("Adolexxent", "Adolexxenta"),
             adult = g("Adult", "Adulta"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} w"),
+            month = simpleUnit("{n} m"),
+            year = simpleUnit("{n} y"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} w"),
+            month = simpleUnit("{n} m"),
+            year = simpleUnit("{n} y"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/my.json
@@ -1319,6 +1912,20 @@ public object Locales {
             child = s("ကလေး"),
             teenager = s("ဆယ်ကျော်သက်"),
             adult = s("အရွယ်ရောက်"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} ရက်"),
+            week = simpleUnit("{n} ပတ်"),
+            month = simpleUnit("{n} လ"),
+            year = simpleUnit("{n} နှစ်"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} ရက်"),
+            week = simpleUnit("{n} ပတ်"),
+            month = simpleUnit("{n} လ"),
+            year = simpleUnit("{n} နှစ်"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1346,6 +1953,19 @@ public object Locales {
             teenager = s("Tenåring"),
             adult = s("Voksen"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} u"),
+            month = simpleUnit("{n} md."),
+            year = simpleUnit("{n} år"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}u"),
+            month = simpleUnit("{n} m"),
+            year = simpleUnit("{n}å"),
+            delimiter = "",
+        ),
     )
 
     // Source: age/locales/src/ne.json
@@ -1371,6 +1991,20 @@ public object Locales {
             child = s("बालक"),
             teenager = s("किशोर"),
             adult = s("वयस्क"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} दिन"),
+            week = simpleUnit("{n} हप्ता"),
+            month = simpleUnit("{n} महिना"),
+            year = simpleUnit("{n} वर्ष"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} दिन"),
+            week = simpleUnit("{n} हप्ता"),
+            month = simpleUnit("{n} महिना"),
+            year = simpleUnit("{n} वर्ष"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1398,6 +2032,19 @@ public object Locales {
             teenager = s("Tiener"),
             adult = s("Volwassene"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} dag", PluralCategory.OTHER to "{n} dagen")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} wk", PluralCategory.OTHER to "{n} wkn")),
+            month = simpleUnit("{n} mnd"),
+            year = simpleUnit("{n} jr"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} w"),
+            month = simpleUnit("{n} m"),
+            year = simpleUnit("{n} jr"),
+            delimiter = "",
+        ),
     )
 
     // Source: age/locales/src/pa.json
@@ -1423,6 +2070,20 @@ public object Locales {
             child = g("ਬੱਚਾ", "ਬੱਚੀ"),
             teenager = g("ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ"),
             adult = s("ਬਾਲਗ"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} ਦਿਨ"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} ਹਫ਼ਤਾ", PluralCategory.OTHER to "{n} ਹਫ਼ਤੇ")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} ਮਹੀਨਾ", PluralCategory.OTHER to "{n} ਮਹੀਨੇ")),
+            year = simpleUnit("{n} ਸਾਲ"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} ਦਿਨ"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} ਹਫ਼ਤਾ", PluralCategory.OTHER to "{n} ਹਫ਼ਤੇ")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} ਮਹੀਨਾ", PluralCategory.OTHER to "{n} ਮਹੀਨੇ")),
+            year = simpleUnit("{n} ਸਾਲ"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1458,6 +2119,20 @@ public object Locales {
             teenager = g("Nastolatek", "Nastolatka"),
             adult = g("Dorosły", "Dorosła"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} dzień", PluralCategory.FEW to "{n} dni", PluralCategory.MANY to "{n} dni", PluralCategory.OTHER to "{n} dnia")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} tydz.", PluralCategory.FEW to "{n} tyg.", PluralCategory.MANY to "{n} tyg.", PluralCategory.OTHER to "{n} tyg.")),
+            month = simpleUnit("{n} mies."),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} rok", PluralCategory.FEW to "{n} lata", PluralCategory.MANY to "{n} lat", PluralCategory.OTHER to "{n} roku")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} t."),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} m-c", PluralCategory.FEW to "{n} m-ce", PluralCategory.MANY to "{n} m-cy", PluralCategory.OTHER to "{n} m-ca")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} r.", PluralCategory.FEW to "{n} l.", PluralCategory.MANY to "{n} l.", PluralCategory.OTHER to "{n} r.")),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/pt.json
@@ -1483,6 +2158,20 @@ public object Locales {
             child = s("Criança"),
             teenager = s("Adolescente"),
             adult = g("Adulto", "Adulta"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} dia", PluralCategory.OTHER to "{n} dias")),
+            week = simpleUnit("{n} sem."),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mês", PluralCategory.OTHER to "{n} meses")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} ano", PluralCategory.OTHER to "{n} anos")),
+        ),
+        compact = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} dia", PluralCategory.OTHER to "{n} dias")),
+            week = simpleUnit("{n} sem."),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mês", PluralCategory.OTHER to "{n} meses")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} ano", PluralCategory.OTHER to "{n} anos")),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1515,6 +2204,20 @@ public object Locales {
             child = s("Copil"),
             teenager = g("Adolescent", "Adolescentă"),
             adult = g("Adult", "Adultă"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} zi", PluralCategory.FEW to "{n} zile", PluralCategory.OTHER to "{n} zile")),
+            week = simpleUnit("{n} săpt."),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} lună", PluralCategory.FEW to "{n} luni", PluralCategory.OTHER to "{n} luni")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} an", PluralCategory.FEW to "{n} ani", PluralCategory.OTHER to "{n} ani")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} z"),
+            week = simpleUnit("{n} săpt."),
+            month = simpleUnit("{n} l"),
+            year = simpleUnit("{n} a"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1550,6 +2253,20 @@ public object Locales {
             teenager = s("Подросток"),
             adult = g("Взрослый", "Взрослая"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} дн."),
+            week = simpleUnit("{n} нед."),
+            month = simpleUnit("{n} мес."),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} г.", PluralCategory.FEW to "{n} г.", PluralCategory.MANY to "{n} л.", PluralCategory.OTHER to "{n} г.")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} д."),
+            week = simpleUnit("{n} н."),
+            month = simpleUnit("{n} м."),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} г.", PluralCategory.FEW to "{n} г.", PluralCategory.MANY to "{n} л.", PluralCategory.OTHER to "{n} г.")),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/shi.json
@@ -1582,6 +2299,20 @@ public object Locales {
             teenager = g("Aɛrim", "Taɛrimt"),
             adult = g("Argaz", "Tamṭṭuṭ"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} wk"),
+            month = simpleUnit("{n} mo"),
+            year = simpleUnit("{n} yr"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/si.json
@@ -1607,6 +2338,20 @@ public object Locales {
             child = s("ළමයා"),
             teenager = s("නව යොවුන්"),
             adult = s("වැඩිහිටි"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("දින {n}"),
+            week = simpleUnit("සති {n}"),
+            month = simpleUnit("මාස {n}"),
+            year = simpleUnit("වසර {n}"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("දි {n}"),
+            week = simpleUnit("ස {n}"),
+            month = simpleUnit("මා {n}"),
+            year = simpleUnit("ව {n}"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1639,6 +2384,19 @@ public object Locales {
             child = s("Dieťa"),
             teenager = s("Tínedžer"),
             adult = g("Dospelý", "Dospelá"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} deň", PluralCategory.FEW to "{n} dni", PluralCategory.MANY to "{n} dňa", PluralCategory.OTHER to "{n} dní")),
+            week = simpleUnit("{n} týž."),
+            month = simpleUnit("{n} mes."),
+            year = simpleUnit("{n} r."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d."),
+            week = simpleUnit("{n} t."),
+            month = simpleUnit("{n} m."),
+            year = simpleUnit("{n} r."),
+            delimiter = "",
         ),
     )
 
@@ -1674,6 +2432,20 @@ public object Locales {
             teenager = g("Najstnik", "Najstnica"),
             adult = g("Odrasel", "Odrasla"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} t"),
+            month = simpleUnit("{n} m"),
+            year = simpleUnit("{n} l"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} t"),
+            month = simpleUnit("{n} m"),
+            year = simpleUnit("{n} l"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/sq.json
@@ -1699,6 +2471,20 @@ public object Locales {
             child = s("Fëmijë"),
             teenager = g("Adoleshent", "Adoleshente"),
             adult = g("I rritur", "E rritur"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} ditë"),
+            week = simpleUnit("{n} javë"),
+            month = simpleUnit("{n} muaj"),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} vit", PluralCategory.OTHER to "{n} vjet")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} ditë"),
+            week = simpleUnit("{n} javë"),
+            month = simpleUnit("{n} muaj"),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} vit", PluralCategory.OTHER to "{n} vjet")),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1734,6 +2520,20 @@ public object Locales {
             teenager = s("Тинејџер"),
             adult = s("Одрасла особа"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} дан", PluralCategory.FEW to "{n} дана", PluralCategory.OTHER to "{n} дана")),
+            week = simpleUnit("{n} нед."),
+            month = simpleUnit("{n} мес."),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} год", PluralCategory.FEW to "{n} год.", PluralCategory.OTHER to "{n} год.")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} д"),
+            week = simpleUnit("{n} н"),
+            month = simpleUnit("{n} м"),
+            year = simpleUnit("{n} г"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/sv.json
@@ -1759,6 +2559,19 @@ public object Locales {
             child = s("Barn"),
             teenager = s("Tonåring"),
             adult = s("Vuxen"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} v"),
+            month = simpleUnit("{n} mån"),
+            year = simpleUnit("{n} år"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}v"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}å"),
+            delimiter = "",
         ),
     )
 
@@ -1786,6 +2599,20 @@ public object Locales {
             teenager = s("Kijana"),
             adult = s("Mtu mzima"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("siku {n}"),
+            week = simpleUnit("wiki {n}"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "mwezi {n}", PluralCategory.OTHER to "miezi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mwaka {n}", PluralCategory.OTHER to "miaka {n}")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("siku {n}"),
+            week = simpleUnit("wiki {n}"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "mwezi {n}", PluralCategory.OTHER to "miezi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mwaka {n}", PluralCategory.OTHER to "miaka {n}")),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/ta.json
@@ -1811,6 +2638,19 @@ public object Locales {
             child = s("சிறார்"),
             teenager = s("இளம்பருவம்"),
             adult = s("பெரியவர்"),
+        ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} நாள்", PluralCategory.OTHER to "{n} நாட்கள்")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} வாரம்", PluralCategory.OTHER to "{n} வார.")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} மாதம்", PluralCategory.OTHER to "{n} மாத.")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "{n} ஆண்டு", PluralCategory.OTHER to "{n} ஆண்டு.")),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} நா"),
+            week = simpleUnit("{n} வா"),
+            month = simpleUnit("{n} மா"),
+            year = simpleUnit("{n} ஆ"),
+            delimiter = "",
         ),
     )
 
@@ -1838,6 +2678,20 @@ public object Locales {
             teenager = s("కౌమారదశ"),
             adult = s("వయోజనులు"),
         ),
+        short = CompactnessOverride(
+            day = pluralUnit(mapOf(PluralCategory.ONE to "{n} రోజు", PluralCategory.OTHER to "{n} రోజులు")),
+            week = simpleUnit("{n} వా."),
+            month = simpleUnit("{n} నె."),
+            year = simpleUnit("{n} సం."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}రో"),
+            week = simpleUnit("{n}వా"),
+            month = simpleUnit("{n}నె"),
+            year = simpleUnit("{n}సం"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/th.json
@@ -1864,6 +2718,20 @@ public object Locales {
             teenager = s("วัยรุ่น"),
             adult = s("ผู้ใหญ่"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} วัน"),
+            week = simpleUnit("{n} สัปดาห์"),
+            month = simpleUnit("{n} เดือน"),
+            year = simpleUnit("{n} ปี"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}วัน"),
+            week = simpleUnit("{n}สัปดาห์"),
+            month = simpleUnit("{n}เดือน"),
+            year = simpleUnit("{n}ปี"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/tr.json
@@ -1889,6 +2757,20 @@ public object Locales {
             child = s("Çocuk"),
             teenager = s("Ergen"),
             adult = s("Yetişkin"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} gün"),
+            week = simpleUnit("{n} hf."),
+            month = simpleUnit("{n} ay"),
+            year = simpleUnit("{n} yıl"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}g"),
+            week = simpleUnit("{n}h"),
+            month = simpleUnit("{n}a"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1920,6 +2802,20 @@ public object Locales {
             child = g("Afrux", "Tafruxṭ"),
             teenager = g("Aɛrim", "Taɛrimt"),
             adult = g("Argaz", "Tamṭṭuṭ"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} d"),
+            week = simpleUnit("{n} wk"),
+            month = simpleUnit("{n} mo"),
+            year = simpleUnit("{n} yr"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -1955,6 +2851,20 @@ public object Locales {
             teenager = s("Підліток"),
             adult = g("Дорослий", "Доросла"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} дн."),
+            week = simpleUnit("{n} тиж."),
+            month = simpleUnit("{n} міс."),
+            year = simpleUnit("{n} р."),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}д"),
+            week = simpleUnit("{n}т"),
+            month = simpleUnit("{n}м"),
+            year = simpleUnit("{n}р"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/ur.json
@@ -1980,6 +2890,20 @@ public object Locales {
             child = g("بچہ", "بچی"),
             teenager = s("نوجوان"),
             adult = s("بالغ"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} دن"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} ہفتہ", PluralCategory.OTHER to "{n} ہفتے")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} مہینہ", PluralCategory.OTHER to "{n} مہینے")),
+            year = simpleUnit("{n} سال"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} دن"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "{n} ہفتہ", PluralCategory.OTHER to "{n} ہفتے")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "{n} مہینہ", PluralCategory.OTHER to "{n} مہینے")),
+            year = simpleUnit("{n} سال"),
+            delimiter = "",
+            half = "{n}½",
         ),
     )
 
@@ -2007,6 +2931,20 @@ public object Locales {
             teenager = s("Oʻsmir"),
             adult = s("Katta"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} kun"),
+            week = simpleUnit("{n} hafta"),
+            month = simpleUnit("{n} oy"),
+            year = simpleUnit("{n} yil"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} kun"),
+            week = simpleUnit("{n} hafta"),
+            month = simpleUnit("{n} oy"),
+            year = simpleUnit("{n} yil"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/vi.json
@@ -2033,6 +2971,20 @@ public object Locales {
             teenager = s("Thiếu niên"),
             adult = s("Người lớn"),
         ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n} ngày"),
+            week = simpleUnit("{n} tuần"),
+            month = simpleUnit("{n} tháng"),
+            year = simpleUnit("{n} năm"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n} ngày"),
+            week = simpleUnit("{n} tuần"),
+            month = simpleUnit("{n} tháng"),
+            year = simpleUnit("{n} năm"),
+            delimiter = "",
+            half = "{n}½",
+        ),
     )
 
     // Source: age/locales/src/zh.json
@@ -2058,6 +3010,18 @@ public object Locales {
             child = s("儿童"),
             teenager = s("青少年"),
             adult = s("成人"),
+        ),
+        short = CompactnessOverride(
+            day = simpleUnit("{n}天"),
+            week = simpleUnit("{n}周"),
+            month = simpleUnit("{n}个月"),
+            year = simpleUnit("{n}年"),
+        ),
+        compact = CompactnessOverride(
+            day = simpleUnit("{n}天"),
+            week = simpleUnit("{n}周"),
+            month = simpleUnit("{n}个月"),
+            year = simpleUnit("{n}年"),
         ),
     )
 

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/mt.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Maltese locale.
 pub fn locale() -> AgeLocale {
@@ -64,8 +64,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "Adolexxent".to_string(), f: "Adolexxenta".to_string() },
             adult: StageLabel::Gendered { m: "Adult".to_string(), f: "Adulta".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d")),
+            week: Some(UnitForms::simple("{n} w")),
+            month: Some(UnitForms::simple("{n} m")),
+            year: Some(UnitForms::simple("{n} y")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d")),
+            week: Some(UnitForms::simple("{n} w")),
+            month: Some(UnitForms::simple("{n} m")),
+            year: Some(UnitForms::simple("{n} y")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

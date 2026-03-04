@@ -22,5 +22,5 @@
    :delimiter " و "
    :just-born "نوزاد"
    :stages {:newborn {:type :neutral :label "نوزاد"} :infant {:type :neutral :label "شیرخوار"} :toddler {:type :neutral :label "نوپا"} :child {:type :neutral :label "کودک"} :teenager {:type :neutral :label "نوجوان"} :adult {:type :neutral :label "بزرگسال"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} روز"} :week {:type :simple :form "{n} هفته"} :month {:type :simple :form "{n} ماه"} :year {:type :simple :form "{n} سال"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} روز"} :week {:type :simple :form "{n} هفته"} :month {:type :simple :form "{n} ماه"} :year {:type :simple :form "{n} سال"} :half "{n}½" :delimiter "" :just-born nil}})

@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Newydd-anedig"
    :stages {:newborn {:type :neutral :label "Newydd-anedig"} :infant {:type :neutral :label "Baban"} :toddler {:type :neutral :label "Plentyn bach"} :child {:type :neutral :label "Plentyn"} :teenager {:type :neutral :label "Glaslanc"} :adult {:type :neutral :label "Oedolyn"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:zero "{n} diwrnod" :one "{n} diwrnod" :two "{n} ddiwrnod" :few "{n} diwrnod" :many "{n} diwrnod" :other "{n} diwrnod"}} :week {:type :simple :form "{n} ws"} :month {:type :pluralized :forms {:zero "{n} mis" :one "{n} mis" :two "{n} fis" :few "{n} mis" :many "{n} mis" :other "{n} mis"}} :year {:type :simple :form "{n} bl"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :pluralized :forms {:zero "{n} ws" :one "{n}w" :two "{n} ws" :few "{n} ws" :many "{n} ws" :other "{n}w"}} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}bl"} :half "{n}½" :delimiter "" :just-born nil}})

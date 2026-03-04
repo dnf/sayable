@@ -41,6 +41,22 @@ let locale : locale =
     ; teenager = Neutral "නව යොවුන්"
     ; adult = Neutral "වැඩිහිටි"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "දින {n}")
+      ; ovr_week = Some (Simple "සති {n}")
+      ; ovr_month = Some (Simple "මාස {n}")
+      ; ovr_year = Some (Simple "වසර {n}")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "දි {n}")
+      ; ovr_week = Some (Simple "ස {n}")
+      ; ovr_month = Some (Simple "මා {n}")
+      ; ovr_year = Some (Simple "ව {n}")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

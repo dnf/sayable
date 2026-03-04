@@ -36,4 +36,18 @@ var HU = sa.AgeLocale{
 		Teenager: sa.S("Tinédzser"),
 		Adult:    sa.S("Felnőtt"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} nap"},
+		Week:  &sa.UnitForms{Simple: "{n} hét"},
+		Month: &sa.UnitForms{Simple: "{n} hónap"},
+		Year:  &sa.UnitForms{Simple: "{n} év"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} nap"},
+		Week:      &sa.UnitForms{Simple: "{n} hét"},
+		Month:     &sa.UnitForms{Simple: "{n} h."},
+		Year:      &sa.UnitForms{Simple: "{n} év"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

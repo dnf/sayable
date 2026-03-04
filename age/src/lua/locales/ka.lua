@@ -30,5 +30,23 @@ M.stages = {
     teenager = "მოზარდი",
     adult = "ზრდასრული",
 }
+M.short = {
+    units = {
+        day = "{n} დღე",
+        week = "{n} კვრ",
+        month = "{n} თვე",
+        year = "{n} წ",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} დღე",
+        week = "{n} კვრ",
+        month = "{n} თვე",
+        year = "{n} წ",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

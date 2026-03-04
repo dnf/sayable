@@ -52,6 +52,24 @@ locale = Locale
         , stageTeenager = Gendered "Najstnik" "Najstnica"
         , stageAdult = Gendered "Odrasel" "Odrasla"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} t")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n} l")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} t")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n} l")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

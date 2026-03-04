@@ -39,4 +39,18 @@ var KA = sa.AgeLocale{
 		Teenager: sa.S("მოზარდი"),
 		Adult:    sa.S("ზრდასრული"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} დღე"},
+		Week:  &sa.UnitForms{Simple: "{n} კვრ"},
+		Month: &sa.UnitForms{Simple: "{n} თვე"},
+		Year:  &sa.UnitForms{Simple: "{n} წ"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} დღე"},
+		Week:      &sa.UnitForms{Simple: "{n} კვრ"},
+		Month:     &sa.UnitForms{Simple: "{n} თვე"},
+		Year:      &sa.UnitForms{Simple: "{n} წ"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

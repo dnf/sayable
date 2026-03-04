@@ -11,7 +11,7 @@
 
 """German locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 DE = AgeLocale(
     code="de",
@@ -33,4 +33,21 @@ DE = AgeLocale(
         "teenager": "Teenager",
         "adult": {"m": "Erwachsener", "f": "Erwachsene"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} Tg.",
+            "week": "{n} Wo.",
+            "month": "{n} Mon.",
+            "year": "{n} J",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} T",
+            "week": "{n} W",
+            "month": "{n} M",
+            "year": "{n} J",
+        },
+        delimiter="",
+    ),
 )

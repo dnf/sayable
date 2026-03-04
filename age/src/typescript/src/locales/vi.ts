@@ -31,4 +31,22 @@ export const vi: AgeLocale = {
     teenager: 'Thiếu niên',
     adult: 'Người lớn',
   },
+  short: {
+    units: {
+      day:   '{n} ngày',
+      week:  '{n} tuần',
+      month: '{n} tháng',
+      year:  '{n} năm',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n} ngày',
+      week:  '{n} tuần',
+      month: '{n} tháng',
+      year:  '{n} năm',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

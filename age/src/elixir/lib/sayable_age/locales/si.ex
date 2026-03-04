@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.SI do
         child: "ළමයා",
         teenager: "නව යොවුන්",
         adult: "වැඩිහිටි"
+      },
+      short: %{
+        units: %{
+          day: "දින {n}",
+          week: "සති {n}",
+          month: "මාස {n}",
+          year: "වසර {n}"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "දි {n}",
+          week: "ස {n}",
+          month: "මා {n}",
+          year: "ව {n}"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

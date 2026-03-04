@@ -32,6 +32,23 @@ defmodule SayableAge.Locales.KO do
         child: "아동",
         teenager: "청소년",
         adult: "성인"
+      },
+      short: %{
+        units: %{
+          day: "{n}일",
+          week: "{n}주",
+          month: "{n}개월",
+          year: "{n}년"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}일",
+          week: "{n}주",
+          month: "{n}개월",
+          year: "{n}년"
+        },
+        delimiter: ""
       }
     }
   end

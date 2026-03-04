@@ -39,4 +39,18 @@ var SQ = sa.AgeLocale{
 		Teenager: sa.G("Adoleshent", "Adoleshente"),
 		Adult:    sa.G("I rritur", "E rritur"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} ditë"},
+		Week:  &sa.UnitForms{Simple: "{n} javë"},
+		Month: &sa.UnitForms{Simple: "{n} muaj"},
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} vit", sa.Other: "{n} vjet"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} ditë"},
+		Week:      &sa.UnitForms{Simple: "{n} javë"},
+		Month:     &sa.UnitForms{Simple: "{n} muaj"},
+		Year:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} vit", sa.Other: "{n} vjet"}),
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/tzm.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Central Atlas Tamazight locale.
 pub fn locale() -> AgeLocale {
@@ -48,8 +48,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "Aɛrim".to_string(), f: "Taɛrimt".to_string() },
             adult: StageLabel::Gendered { m: "Argaz".to_string(), f: "Tamṭṭuṭ".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d")),
+            week: Some(UnitForms::simple("{n} wk")),
+            month: Some(UnitForms::simple("{n} mo")),
+            year: Some(UnitForms::simple("{n} yr")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}d")),
+            week: Some(UnitForms::simple("{n}w")),
+            month: Some(UnitForms::simple("{n}m")),
+            year: Some(UnitForms::simple("{n}y")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

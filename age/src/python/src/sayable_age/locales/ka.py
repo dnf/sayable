@@ -11,7 +11,7 @@
 
 """Georgian locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 KA = AgeLocale(
     code="ka",
@@ -33,4 +33,22 @@ KA = AgeLocale(
         "teenager": "მოზარდი",
         "adult": "ზრდასრული",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} დღე",
+            "week": "{n} კვრ",
+            "month": "{n} თვე",
+            "year": "{n} წ",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} დღე",
+            "week": "{n} კვრ",
+            "month": "{n} თვე",
+            "year": "{n} წ",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

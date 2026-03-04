@@ -32,6 +32,24 @@ locale = Locale
         , stageTeenager = Neutral "青少年"
         , stageAdult = Neutral "成人"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} 日")
+            , ovrWeek = Just (Simple "{n} 週間")
+            , ovrMonth = Just (Simple "{n} か月")
+            , ovrYear = Just (Simple "{n} 年")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}d")
+            , ovrWeek = Just (Simple "{n}w")
+            , ovrMonth = Just (Simple "{n}m")
+            , ovrYear = Just (Simple "{n}y")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
     }

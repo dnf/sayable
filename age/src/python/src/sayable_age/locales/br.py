@@ -11,7 +11,7 @@
 
 """Breton locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -48,4 +48,22 @@ BR = AgeLocale(
         "teenager": "Den yaouank",
         "adult": "Den deuet da vad",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} sizh.",
+            "month": "{n} m.",
+            "year": "{n} bl.",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}d",
+            "week": "{n}sizh.",
+            "month": "{n}m",
+            "year": "{n}b",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

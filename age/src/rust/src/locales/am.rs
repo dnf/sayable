@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/am.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Amharic locale.
 pub fn locale() -> AgeLocale {
@@ -47,8 +47,33 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("ታዳጊ".to_string()),
             adult: StageLabel::Neutral("አዋቂ".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} ቀናት")),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ሳምንት"),
+                (PluralCategory::Other, "{n} ሳምንታት"),
+            ])),
+            month: Some(UnitForms::simple("{n} ወራት")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ዓመት"),
+                (PluralCategory::Other, "{n} ዓመታት"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} ቀ")),
+            week: Some(UnitForms::simple("{n} ሳምንት")),
+            month: Some(UnitForms::simple("{n} ወር")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ዓመት"),
+                (PluralCategory::Other, "{n} ዓ"),
+            ])),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.FIL do
         child: "Bata",
         teenager: "Tinedyer",
         adult: "Matanda"
+      },
+      short: %{
+        units: %{
+          day: "{n} araw",
+          week: %{one: "{n} linggo", other: "{n} na linggo"},
+          month: "{n} buwan",
+          year: "{n} taon"
+        }
+      },
+      compact: %{
+        units: %{
+          day: %{one: "{n} araw", other: "{n} na araw"},
+          week: "{n}linggo",
+          month: %{one: "{n}buwan", other: "{n} buwan"},
+          year: "{n}taon"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

@@ -39,5 +39,23 @@ M.stages = {
     teenager = { m = "Adolexxent", f = "Adolexxenta" },
     adult = { m = "Adult", f = "Adulta" },
 }
+M.short = {
+    units = {
+        day = "{n} d",
+        week = "{n} w",
+        month = "{n} m",
+        year = "{n} y",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} d",
+        week = "{n} w",
+        month = "{n} m",
+        year = "{n} y",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

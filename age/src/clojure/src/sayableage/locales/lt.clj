@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Naujagimis"
    :stages {:newborn {:type :gendered :m "Naujagimis" :f "Naujagimė"} :infant {:type :gendered :m "Kūdikis" :f "Kūdikė"} :toddler {:type :gendered :m "Mažylis" :f "Mažylė"} :child {:type :neutral :label "Vaikas"} :teenager {:type :gendered :m "Paauglys" :f "Paauglė"} :adult {:type :gendered :m "Suaugęs" :f "Suaugusi"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} d."} :week {:type :simple :form "{n} sav."} :month {:type :simple :form "{n} mėn."} :year {:type :simple :form "{n} m."} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} d."} :week {:type :simple :form "{n} sav."} :month {:type :simple :form "{n} mėn."} :year {:type :simple :form "{n} m."} :half nil :delimiter "" :just-born nil}})

@@ -11,7 +11,7 @@
 
 """Italian locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 IT = AgeLocale(
     code="it",
@@ -33,4 +33,22 @@ IT = AgeLocale(
         "teenager": "Adolescente",
         "adult": {"m": "Adulto", "f": "Adulta"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} giorno", "other": "{n} giorni"},
+            "week": "{n} sett.",
+            "month": {"one": "{n} mese", "other": "{n} mesi"},
+            "year": {"one": "{n} anno", "other": "{n} anni"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": {"one": "{n}g", "other": "{n}gg"},
+            "week": "{n}sett.",
+            "month": {"one": "{n} mese", "other": "{n} mesi"},
+            "year": {"one": "{n}anno", "other": "{n}anni"},
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

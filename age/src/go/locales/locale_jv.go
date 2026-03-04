@@ -36,4 +36,18 @@ var JV = sa.AgeLocale{
 		Teenager: sa.S("Remaja"),
 		Adult:    sa.S("Diwasa"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} dina"},
+		Week:  &sa.UnitForms{Simple: "{n} peken"},
+		Month: &sa.UnitForms{Simple: "{n} sasi"},
+		Year:  &sa.UnitForms{Simple: "{n} taun"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}d"},
+		Week:      &sa.UnitForms{Simple: "{n} peken"},
+		Month:     &sa.UnitForms{Simple: "{n} sasi"},
+		Year:      &sa.UnitForms{Simple: "{n} taun"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

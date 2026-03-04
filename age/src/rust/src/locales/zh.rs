@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/zh.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Chinese locale.
 pub fn locale() -> AgeLocale {
@@ -33,8 +33,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("青少年".to_string()),
             adult: StageLabel::Neutral("成人".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}天")),
+            week: Some(UnitForms::simple("{n}周")),
+            month: Some(UnitForms::simple("{n}个月")),
+            year: Some(UnitForms::simple("{n}年")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}天")),
+            week: Some(UnitForms::simple("{n}周")),
+            month: Some(UnitForms::simple("{n}个月")),
+            year: Some(UnitForms::simple("{n}年")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ta.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Tamil locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,36 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("இளம்பருவம்".to_string()),
             adult: StageLabel::Neutral("பெரியவர்".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} நாள்"),
+                (PluralCategory::Other, "{n} நாட்கள்"),
+            ])),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} வாரம்"),
+                (PluralCategory::Other, "{n} வார."),
+            ])),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} மாதம்"),
+                (PluralCategory::Other, "{n} மாத."),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ஆண்டு"),
+                (PluralCategory::Other, "{n} ஆண்டு."),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} நா")),
+            week: Some(UnitForms::simple("{n} வா")),
+            month: Some(UnitForms::simple("{n} மா")),
+            year: Some(UnitForms::simple("{n} ஆ")),
+            half: None,
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

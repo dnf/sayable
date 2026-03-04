@@ -36,4 +36,18 @@ var EU = sa.AgeLocale{
 		Teenager: sa.S("Nerabea"),
 		Adult:    sa.S("Heldua"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} egun"},
+		Week:  &sa.UnitForms{Simple: "{n} aste"},
+		Month: &sa.UnitForms{Simple: "{n} hilabete"},
+		Year:  &sa.UnitForms{Simple: "{n} urte"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} e."},
+		Week:      &sa.UnitForms{Simple: "{n} aste"},
+		Month:     &sa.UnitForms{Simple: "{n} hil"},
+		Year:      &sa.UnitForms{Simple: "{n} u."},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

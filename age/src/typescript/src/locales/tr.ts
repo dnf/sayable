@@ -31,4 +31,22 @@ export const tr: AgeLocale = {
     teenager: 'Ergen',
     adult: 'Yetişkin',
   },
+  short: {
+    units: {
+      day:   '{n} gün',
+      week:  '{n} hf.',
+      month: '{n} ay',
+      year:  '{n} yıl',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n}g',
+      week:  '{n}h',
+      month: '{n}a',
+      year:  '{n}y',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

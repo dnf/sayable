@@ -39,4 +39,18 @@ var UR = sa.AgeLocale{
 		Teenager: sa.S("نوجوان"),
 		Adult:    sa.S("بالغ"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} دن"},
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ہفتہ", sa.Other: "{n} ہفتے"}),
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} مہینہ", sa.Other: "{n} مہینے"}),
+		Year:  &sa.UnitForms{Simple: "{n} سال"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} دن"},
+		Week:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ہفتہ", sa.Other: "{n} ہفتے"}),
+		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} مہینہ", sa.Other: "{n} مہینے"}),
+		Year:      &sa.UnitForms{Simple: "{n} سال"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

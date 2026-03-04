@@ -31,4 +31,18 @@ final hi = AgeLocale(
   child: stageGendered('बच्चा', 'बच्ची'),
   teenager: stageGendered('किशोर', 'किशोरी'),
   adult: stageNeutral('वयस्क'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} दिन'),
+    week: simpleUnit('{n} सप्ताह'),
+    month: simpleUnit('{n} माह'),
+    year: simpleUnit('{n} वर्ष'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} दि'),
+    week: simpleUnit('{n} सप्ताह'),
+    month: simpleUnit('{n} माह'),
+    year: simpleUnit('{n} व'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

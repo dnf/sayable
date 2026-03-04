@@ -34,6 +34,6 @@ const SaLocale sa_locale_sq = {
         { "Adoleshent", "Adoleshente" },
         { "I rritur", "E rritur" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} ditë", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} javë", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} muaj", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} vit", NULL, NULL, NULL, "{n} vjet" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} ditë", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} javë", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} muaj", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} vit", NULL, NULL, NULL, "{n} vjet" } }, true, "{n}½", true, "", false, NULL }
 };

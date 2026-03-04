@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/kw.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Cornish locale.
 pub fn locale() -> AgeLocale {
@@ -69,8 +69,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Den yowynk".to_string()),
             adult: StageLabel::Neutral("Den tevys".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d")),
+            week: Some(UnitForms::simple("{n} wk")),
+            month: Some(UnitForms::simple("{n} mo")),
+            year: Some(UnitForms::simple("{n} yr")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}d")),
+            week: Some(UnitForms::simple("{n}w")),
+            month: Some(UnitForms::simple("{n}m")),
+            year: Some(UnitForms::simple("{n}y")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

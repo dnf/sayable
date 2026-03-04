@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "យុវវ័យ"
         , adult = Neutral "មនុស្សពេញវ័យ"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} ថ្ងៃ")
+            , ovrWeek = Just (Simple "{n} សប្ដាហ៍")
+            , ovrMonth = Just (Simple "{n} ខែ")
+            , ovrYear = Just (Simple "{n} ឆ្នាំ")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} ថ្ងៃ")
+            , ovrWeek = Just (Simple "{n} សប្ដាហ៍")
+            , ovrMonth = Just (Simple "{n} ខែ")
+            , ovrYear = Just (Simple "{n} ឆ្នាំ")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -36,4 +36,17 @@ var KO = sa.AgeLocale{
 		Teenager: sa.S("청소년"),
 		Adult:    sa.S("성인"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n}일"},
+		Week:  &sa.UnitForms{Simple: "{n}주"},
+		Month: &sa.UnitForms{Simple: "{n}개월"},
+		Year:  &sa.UnitForms{Simple: "{n}년"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}일"},
+		Week:      &sa.UnitForms{Simple: "{n}주"},
+		Month:     &sa.UnitForms{Simple: "{n}개월"},
+		Year:      &sa.UnitForms{Simple: "{n}년"},
+		Delimiter: strPtr(""),
+	},
 }

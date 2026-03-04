@@ -41,6 +41,34 @@ let locale : locale =
     ; teenager = Gendered ("ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ")
     ; adult = Neutral "ਬਾਲਗ"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} ਦਿਨ")
+      ; ovr_week = Some (Pluralized
+          [ (One, "{n} ਹਫ਼ਤਾ")
+          ; (Other, "{n} ਹਫ਼ਤੇ")
+          ])
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} ਮਹੀਨਾ")
+          ; (Other, "{n} ਮਹੀਨੇ")
+          ])
+      ; ovr_year = Some (Simple "{n} ਸਾਲ")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} ਦਿਨ")
+      ; ovr_week = Some (Pluralized
+          [ (One, "{n} ਹਫ਼ਤਾ")
+          ; (Other, "{n} ਹਫ਼ਤੇ")
+          ])
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} ਮਹੀਨਾ")
+          ; (Other, "{n} ਮਹੀਨੇ")
+          ])
+      ; ovr_year = Some (Simple "{n} ਸਾਲ")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

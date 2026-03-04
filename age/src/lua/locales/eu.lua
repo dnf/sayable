@@ -30,5 +30,23 @@ M.stages = {
     teenager = "Nerabea",
     adult = "Heldua",
 }
+M.short = {
+    units = {
+        day = "{n} egun",
+        week = "{n} aste",
+        month = "{n} hilabete",
+        year = "{n} urte",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} e.",
+        week = "{n} aste",
+        month = "{n} hil",
+        year = "{n} u.",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

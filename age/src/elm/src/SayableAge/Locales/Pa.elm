@@ -47,6 +47,36 @@ locale =
         , teenager = Gendered "ਕਿਸ਼ੋਰ" "ਕਿਸ਼ੋਰੀ"
         , adult = Neutral "ਬਾਲਗ"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} ਦਿਨ")
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} ਹਫ਼ਤਾ" )
+                  , ( Other, "{n} ਹਫ਼ਤੇ" )
+                  ])
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} ਮਹੀਨਾ" )
+                  , ( Other, "{n} ਮਹੀਨੇ" )
+                  ])
+            , ovrYear = Just (Simple "{n} ਸਾਲ")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} ਦਿਨ")
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} ਹਫ਼ਤਾ" )
+                  , ( Other, "{n} ਹਫ਼ਤੇ" )
+                  ])
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} ਮਹੀਨਾ" )
+                  , ( Other, "{n} ਮਹੀਨੇ" )
+                  ])
+            , ovrYear = Just (Simple "{n} ਸਾਲ")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.HE do
         child: %{m: "ילד", f: "ילדה"},
         teenager: %{m: "נער", f: "נערה"},
         adult: %{m: "מבוגר", f: "מבוגרת"}
+      },
+      short: %{
+        units: %{
+          day: %{one: "{n} יום", two: "יומיים", other: "{n} ימ׳"},
+          week: %{one: "{n} שבוע", two: "שבועיים", other: "{n} שבועות"},
+          month: "{n} ח׳",
+          year: %{one: "{n} שנה", two: "{n} שנים", other: "{n} שנים"}
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} י׳",
+          week: "{n} ש′",
+          month: "{n} ח׳",
+          year: "{n} ש′"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

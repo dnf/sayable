@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ru.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Russian locale.
 pub fn locale() -> AgeLocale {
@@ -59,8 +59,34 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Подросток".to_string()),
             adult: StageLabel::Gendered { m: "Взрослый".to_string(), f: "Взрослая".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} дн.")),
+            week: Some(UnitForms::simple("{n} нед.")),
+            month: Some(UnitForms::simple("{n} мес.")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} г."),
+                (PluralCategory::Few, "{n} г."),
+                (PluralCategory::Many, "{n} л."),
+                (PluralCategory::Other, "{n} г."),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} д.")),
+            week: Some(UnitForms::simple("{n} н.")),
+            month: Some(UnitForms::simple("{n} м.")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} г."),
+                (PluralCategory::Few, "{n} г."),
+                (PluralCategory::Many, "{n} л."),
+                (PluralCategory::Other, "{n} г."),
+            ])),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

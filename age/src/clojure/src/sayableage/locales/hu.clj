@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Újszülött"
    :stages {:newborn {:type :neutral :label "Újszülött"} :infant {:type :neutral :label "Csecsemő"} :toddler {:type :neutral :label "Kisgyermek"} :child {:type :neutral :label "Gyermek"} :teenager {:type :neutral :label "Tinédzser"} :adult {:type :neutral :label "Felnőtt"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} nap"} :week {:type :simple :form "{n} hét"} :month {:type :simple :form "{n} hónap"} :year {:type :simple :form "{n} év"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} nap"} :week {:type :simple :form "{n} hét"} :month {:type :simple :form "{n} h."} :year {:type :simple :form "{n} év"} :half "{n}½" :delimiter "" :just-born nil}})

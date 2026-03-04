@@ -34,4 +34,18 @@ final sr = AgeLocale(
   child: stageNeutral('Дете'),
   teenager: stageNeutral('Тинејџер'),
   adult: stageNeutral('Одрасла особа'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} дан', PluralCategory.few: '{n} дана', PluralCategory.other: '{n} дана'}),
+    week: simpleUnit('{n} нед.'),
+    month: simpleUnit('{n} мес.'),
+    year: pluralUnit({PluralCategory.one: '{n} год', PluralCategory.few: '{n} год.', PluralCategory.other: '{n} год.'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} д'),
+    week: simpleUnit('{n} н'),
+    month: simpleUnit('{n} м'),
+    year: simpleUnit('{n} г'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

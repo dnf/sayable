@@ -44,4 +44,18 @@ var UK = sa.AgeLocale{
 		Teenager: sa.S("Підліток"),
 		Adult:    sa.G("Дорослий", "Доросла"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} дн."},
+		Week:  &sa.UnitForms{Simple: "{n} тиж."},
+		Month: &sa.UnitForms{Simple: "{n} міс."},
+		Year:  &sa.UnitForms{Simple: "{n} р."},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}д"},
+		Week:      &sa.UnitForms{Simple: "{n}т"},
+		Month:     &sa.UnitForms{Simple: "{n}м"},
+		Year:      &sa.UnitForms{Simple: "{n}р"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

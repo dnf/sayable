@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/he.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Hebrew locale.
 pub fn locale() -> AgeLocale {
@@ -53,8 +53,36 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "נער".to_string(), f: "נערה".to_string() },
             adult: StageLabel::Gendered { m: "מבוגר".to_string(), f: "מבוגרת".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} יום"),
+                (PluralCategory::Two, "יומיים"),
+                (PluralCategory::Other, "{n} ימ׳"),
+            ])),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} שבוע"),
+                (PluralCategory::Two, "שבועיים"),
+                (PluralCategory::Other, "{n} שבועות"),
+            ])),
+            month: Some(UnitForms::simple("{n} ח׳")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} שנה"),
+                (PluralCategory::Two, "{n} שנים"),
+                (PluralCategory::Other, "{n} שנים"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} י׳")),
+            week: Some(UnitForms::simple("{n} ש′")),
+            month: Some(UnitForms::simple("{n} ח׳")),
+            year: Some(UnitForms::simple("{n} ש′")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

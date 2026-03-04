@@ -29,8 +29,24 @@ const AgeLocale& AM() {
         },
         "{0} ተኩል", "፣ ", "አዲስ የተወለደ",
         StageLabels{{"አዲስ የተወለደ", ""}, {"ሕፃን", ""}, {"ሕፃን ልጅ", ""}, {"ልጅ", ""}, {"ታዳጊ", ""}, {"አዋቂ", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Simple("{n} ቀናት"),
+            UnitForms::Plural({{PluralCategory::One, "{n} ሳምንት"}, {PluralCategory::Other, "{n} ሳምንታት"}}),
+            UnitForms::Simple("{n} ወራት"),
+            UnitForms::Plural({{PluralCategory::One, "{n} ዓመት"}, {PluralCategory::Other, "{n} ዓመታት"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} ቀ"),
+            UnitForms::Simple("{n} ሳምንት"),
+            UnitForms::Simple("{n} ወር"),
+            UnitForms::Plural({{PluralCategory::One, "{n} ዓመት"}, {PluralCategory::Other, "{n} ዓ"}}),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -57,8 +73,24 @@ const AgeLocale& AR() {
         },
         "{0} ونصف", " و", "حديث الولادة",
         StageLabels{{"حديث الولادة", "حديثة الولادة"}, {"رضيع", "رضيعة"}, {"طفل صغير", "طفلة صغيرة"}, {"طفل", "طفلة"}, {"مراهق", "مراهقة"}, {"بالغ", "بالغة"}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::Zero, "{n} يوم"}, {PluralCategory::One, "يوم"}, {PluralCategory::Two, "يومان"}, {PluralCategory::Few, "{n} أيام"}, {PluralCategory::Many, "{n} يومًا"}, {PluralCategory::Other, "{n} يوم"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} أسبوع"}, {PluralCategory::One, "أسبوع"}, {PluralCategory::Two, "أسبوعان"}, {PluralCategory::Few, "{n} أسابيع"}, {PluralCategory::Many, "{n} أسبوعًا"}, {PluralCategory::Other, "{n} أسبوع"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} شهر"}, {PluralCategory::One, "شهر"}, {PluralCategory::Two, "شهران"}, {PluralCategory::Few, "{n} أشهر"}, {PluralCategory::Many, "{n} شهرًا"}, {PluralCategory::Other, "{n} شهر"}}),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} سنة"}, {PluralCategory::One, "سنة واحدة"}, {PluralCategory::Two, "سنتان"}, {PluralCategory::Few, "{n} سنوات"}, {PluralCategory::Many, "{n} سنة"}, {PluralCategory::Other, "{n} سنة"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} ي"),
+            UnitForms::Simple("{n} أ"),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} شهر"}, {PluralCategory::One, "شهر"}, {PluralCategory::Two, "شهران"}, {PluralCategory::Few, "{n} أشهر"}, {PluralCategory::Many, "{n} شهرًا"}, {PluralCategory::Other, "{n} شهر"}}),
+            UnitForms::Simple("{n} سنة"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -80,8 +112,24 @@ const AgeLocale& AZ() {
         },
         "{n} yarım", ", ", "Təzə doğulub",
         StageLabels{{"Təzə doğulub", ""}, {"Körpə", ""}, {"Azyaşlı", ""}, {"Uşaq", ""}, {"Yeniyetmə", ""}, {"Böyük", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Simple("{n} gün"),
+            UnitForms::Simple("{n} hft"),
+            UnitForms::Simple("{n} ay"),
+            UnitForms::Simple("{n} il"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} gün"),
+            UnitForms::Simple("{n} hft"),
+            UnitForms::Simple("{n} ay"),
+            UnitForms::Simple("{n} il"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -103,8 +151,24 @@ const AgeLocale& BG() {
         },
         "{0} и половина", ", ", "Новородено",
         StageLabels{{"Новородено", ""}, {"Бебе", ""}, {"Малко дете", ""}, {"Дете", ""}, {"Тийнейджър", ""}, {"Възрастен", "Възрастна"}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Simple("{n} д"),
+            UnitForms::Simple("{n} седм."),
+            UnitForms::Simple("{n} мес."),
+            UnitForms::Simple("{n} год."),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} д"),
+            UnitForms::Simple("{n} седм."),
+            UnitForms::Simple("{n} мес."),
+            UnitForms::Simple("{n} г."),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -126,8 +190,24 @@ const AgeLocale& BN() {
         },
         "সাড়ে {n}", ", ", "নবজাতক",
         StageLabels{{"নবজাতক", ""}, {"শিশু", ""}, {"ছোট শিশু", ""}, {"শিশু", ""}, {"কিশোর", "কিশোরী"}, {"প্রাপ্তবয়স্ক", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Simple("{n} দিন"),
+            UnitForms::Simple("{n} সপ্তাহ"),
+            UnitForms::Simple("{n} মাস"),
+            UnitForms::Simple("{n} বছর"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} দিন"),
+            UnitForms::Simple("{n} সপ্তাহ"),
+            UnitForms::Simple("{n} মাস"),
+            UnitForms::Simple("{n} বছর"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -154,8 +234,24 @@ const AgeLocale& BR() {
         },
         "{0} hag un hanter", ", ", "Nevez ganet",
         StageLabels{{"Nevez ganet", ""}, {"Babig", ""}, {"Bugel bihan", ""}, {"Bugel", ""}, {"Den yaouank", ""}, {"Den deuet da vad", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Simple("{n} d"),
+            UnitForms::Simple("{n} sizh."),
+            UnitForms::Simple("{n} m."),
+            UnitForms::Simple("{n} bl."),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}sizh."),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}b"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -180,8 +276,24 @@ const AgeLocale& BS() {
         },
         "{0} i po", ", ", "Novorođenče",
         StageLabels{{"Novorođenče", ""}, {"Beba", ""}, {"Malo dijete", ""}, {"Dijete", ""}, {"Tinejdžer", ""}, {"Odrasla osoba", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "{n} dan"}, {PluralCategory::Few, "{n} dana"}, {PluralCategory::Other, "{n} dana"}}),
+            UnitForms::Simple("{n} sedm."),
+            UnitForms::Simple("{n} mj."),
+            UnitForms::Simple("{n} god."),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} d."),
+            UnitForms::Simple("{n} sedm."),
+            UnitForms::Simple("{n} mj."),
+            UnitForms::Simple("{n} god."),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -203,8 +315,24 @@ const AgeLocale& CA() {
         },
         "{n} i mig", ", ", "Nounat",
         StageLabels{{"Nounat", "Nounada"}, {"Nadó", ""}, {"Infant", ""}, {"Criatura", ""}, {"Adolescent", ""}, {"Adult", "Adulta"}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "{n} dia"}, {PluralCategory::Other, "{n} dies"}}),
+            UnitForms::Simple("{n} setm."),
+            UnitForms::Plural({{PluralCategory::One, "{n} mes"}, {PluralCategory::Other, "{n} m"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} any"}, {PluralCategory::Other, "{n} anys"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} d"),
+            UnitForms::Simple("{n} setm."),
+            UnitForms::Simple("{n} m"),
+            UnitForms::Plural({{PluralCategory::One, "{n} any"}, {PluralCategory::Other, "{n} anys"}}),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -227,8 +355,24 @@ const AgeLocale& CS() {
         },
         "{n}½", ", ", "Novorozenec",
         StageLabels{{"Novorozenec", ""}, {"Kojenec", ""}, {"Batole", ""}, {"Dítě", ""}, {"Teenager", ""}, {"Dospělý", "Dospělá"}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "{n} den"}, {PluralCategory::Few, "{n} dny"}, {PluralCategory::Many, "{n} dne"}, {PluralCategory::Other, "{n} dnů"}}),
+            UnitForms::Simple("{n} týd."),
+            UnitForms::Simple("{n} měs."),
+            UnitForms::Plural({{PluralCategory::One, "{n} rok"}, {PluralCategory::Few, "{n} roky"}, {PluralCategory::Many, "{n} roku"}, {PluralCategory::Other, "{n} let"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} d."),
+            UnitForms::Simple("{n} t."),
+            UnitForms::Simple("{n} m."),
+            UnitForms::Plural({{PluralCategory::One, "{n} r."}, {PluralCategory::Few, "{n} r."}, {PluralCategory::Many, "{n} r."}, {PluralCategory::Other, "{n} l."}}),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -254,8 +398,24 @@ const AgeLocale& CY() {
         },
         "{0} a hanner", ", ", "Newydd-anedig",
         StageLabels{{"Newydd-anedig", ""}, {"Baban", ""}, {"Plentyn bach", ""}, {"Plentyn", ""}, {"Glaslanc", ""}, {"Oedolyn", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::Zero, "{n} diwrnod"}, {PluralCategory::One, "{n} diwrnod"}, {PluralCategory::Two, "{n} ddiwrnod"}, {PluralCategory::Few, "{n} diwrnod"}, {PluralCategory::Many, "{n} diwrnod"}, {PluralCategory::Other, "{n} diwrnod"}}),
+            UnitForms::Simple("{n} ws"),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} mis"}, {PluralCategory::One, "{n} mis"}, {PluralCategory::Two, "{n} fis"}, {PluralCategory::Few, "{n} mis"}, {PluralCategory::Many, "{n} mis"}, {PluralCategory::Other, "{n} mis"}}),
+            UnitForms::Simple("{n} bl"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Plural({{PluralCategory::Zero, "{n} ws"}, {PluralCategory::One, "{n}w"}, {PluralCategory::Two, "{n} ws"}, {PluralCategory::Few, "{n} ws"}, {PluralCategory::Many, "{n} ws"}, {PluralCategory::Other, "{n}w"}}),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}bl"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -277,8 +437,24 @@ const AgeLocale& DA() {
         },
         "{n}½", ", ", "Nyfødt",
         StageLabels{{"Nyfødt", ""}, {"Spædbarn", ""}, {"Småbarn", ""}, {"Barn", ""}, {"Teenager", ""}, {"Voksen", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "{n} dag"}, {PluralCategory::Other, "{n} dage"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} uge"}, {PluralCategory::Other, "{n} uger"}}),
+            UnitForms::Plural({{PluralCategory::One, "{n} md."}, {PluralCategory::Other, "{n} mdr."}}),
+            UnitForms::Simple("{n} år"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} d"),
+            UnitForms::Simple("{n} u"),
+            UnitForms::Simple("{n} m"),
+            UnitForms::Simple("{n} år"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -300,8 +476,24 @@ const AgeLocale& DE() {
         },
         "{n}½", ", ", "Neugeboren",
         StageLabels{{"Neugeborenes", ""}, {"Säugling", ""}, {"Kleinkind", ""}, {"Kind", ""}, {"Teenager", ""}, {"Erwachsener", "Erwachsene"}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Simple("{n} Tg."),
+            UnitForms::Simple("{n} Wo."),
+            UnitForms::Simple("{n} Mon."),
+            UnitForms::Simple("{n} J"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} T"),
+            UnitForms::Simple("{n} W"),
+            UnitForms::Simple("{n} M"),
+            UnitForms::Simple("{n} J"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -323,8 +515,24 @@ const AgeLocale& EL() {
         },
         "{0} και μισό", ", ", "Νεογέννητο",
         StageLabels{{"Νεογέννητο", ""}, {"Βρέφος", ""}, {"Νήπιο", ""}, {"Παιδί", ""}, {"Έφηβος", "Έφηβη"}, {"Ενήλικας", "Ενήλικη"}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "{n} ημέρα"}, {PluralCategory::Other, "{n} ημέρες"}}),
+            UnitForms::Simple("{n} εβδ."),
+            UnitForms::Simple("{n} μήν."),
+            UnitForms::Simple("{n} έτ."),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} η"),
+            UnitForms::Simple("{n} ε"),
+            UnitForms::Simple("{n} μ"),
+            UnitForms::Simple("{n} έ"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -385,8 +593,24 @@ const AgeLocale& ES() {
         },
         "{n} y medio", ", ", "Recién nacido",
         StageLabels{{"Recién nacido", "Recién nacida"}, {"Bebé", ""}, {"Niño pequeño", "Niña pequeña"}, {"Niño", "Niña"}, {"Adolescente", ""}, {"Adulto", "Adulta"}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Simple("{n} d"),
+            UnitForms::Simple("{n} sem."),
+            UnitForms::Simple("{n} m."),
+            UnitForms::Simple("{n} a"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}sem"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}a"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -408,8 +632,24 @@ const AgeLocale& ET() {
         },
         "{n}½", ", ", "Vastsündinu",
         StageLabels{{"Vastsündinu", ""}, {"Imik", ""}, {"Väikelaps", ""}, {"Laps", ""}, {"Teismeline", ""}, {"Täiskasvanu", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "{n} päev"}, {PluralCategory::Other, "{n} päeva"}}),
+            UnitForms::Simple("{n} näd"),
+            UnitForms::Plural({{PluralCategory::One, "{n} kuu"}, {PluralCategory::Other, "{n} kuud"}}),
+            UnitForms::Simple("{n} a"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} p"),
+            UnitForms::Simple("{n} n"),
+            UnitForms::Simple("{n} k"),
+            UnitForms::Simple("{n} a"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;
@@ -430,8 +670,24 @@ const AgeLocale& EU() {
         },
         "{0} eta erdi", ", ", "Jaioberria",
         StageLabels{{"Jaioberria", ""}, {"Haurra", ""}, {"Haur txikia", ""}, {"Umea", ""}, {"Nerabea", ""}, {"Heldua", ""}},
-        std::nullopt,
-        std::nullopt,
+        CompactnessOverride{
+            UnitForms::Simple("{n} egun"),
+            UnitForms::Simple("{n} aste"),
+            UnitForms::Simple("{n} hilabete"),
+            UnitForms::Simple("{n} urte"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} e."),
+            UnitForms::Simple("{n} aste"),
+            UnitForms::Simple("{n} hil"),
+            UnitForms::Simple("{n} u."),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
         nullptr, nullptr
     };
     return loc;

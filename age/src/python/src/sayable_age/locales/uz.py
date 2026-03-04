@@ -11,7 +11,7 @@
 
 """Uzbek locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 UZ = AgeLocale(
     code="uz",
@@ -33,4 +33,22 @@ UZ = AgeLocale(
         "teenager": "Oʻsmir",
         "adult": "Katta",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} kun",
+            "week": "{n} hafta",
+            "month": "{n} oy",
+            "year": "{n} yil",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} kun",
+            "week": "{n} hafta",
+            "month": "{n} oy",
+            "year": "{n} yil",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

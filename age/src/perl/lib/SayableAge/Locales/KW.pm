@@ -45,6 +45,24 @@ sub locale {{
     teenager => 'Den yowynk',
     adult => 'Den tevys',
   },
+  short => {
+    units => {
+      day => '{n} d',
+      week => '{n} wk',
+      month => '{n} mo',
+      year => '{n} yr',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n}d',
+      week => '{n}w',
+      month => '{n}m',
+      year => '{n}y',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

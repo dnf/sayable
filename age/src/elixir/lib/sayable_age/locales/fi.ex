@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.FI do
         child: "Lapsi",
         teenager: "Teini",
         adult: "Aikuinen"
+      },
+      short: %{
+        units: %{
+          day: "{n} pv",
+          week: "{n} vk",
+          month: "{n} kk",
+          year: "{n} v"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}pv",
+          week: "{n}vk",
+          month: "{n}kk",
+          year: "{n}v"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

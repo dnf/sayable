@@ -34,6 +34,24 @@ sub locale {{
     teenager => 'Remaja',
     adult => 'Diwasa',
   },
+  short => {
+    units => {
+      day => '{n} dina',
+      week => '{n} peken',
+      month => '{n} sasi',
+      year => '{n} taun',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n}d',
+      week => '{n} peken',
+      month => '{n} sasi',
+      year => '{n} taun',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

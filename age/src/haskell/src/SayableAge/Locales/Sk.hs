@@ -48,6 +48,29 @@ locale = Locale
         , stageTeenager = Neutral "Tínedžer"
         , stageAdult = Gendered "Dospelý" "Dospelá"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} deň")
+              , (Few, "{n} dni")
+              , (Many, "{n} dňa")
+              , (Other, "{n} dní")
+              ])
+            , ovrWeek = Just (Simple "{n} týž.")
+            , ovrMonth = Just (Simple "{n} mes.")
+            , ovrYear = Just (Simple "{n} r.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} t.")
+            , ovrMonth = Just (Simple "{n} m.")
+            , ovrYear = Just (Simple "{n} r.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

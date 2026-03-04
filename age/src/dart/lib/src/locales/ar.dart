@@ -36,4 +36,18 @@ final ar = AgeLocale(
   child: stageGendered('طفل', 'طفلة'),
   teenager: stageGendered('مراهق', 'مراهقة'),
   adult: stageGendered('بالغ', 'بالغة'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.zero: '{n} يوم', PluralCategory.one: 'يوم', PluralCategory.two: 'يومان', PluralCategory.few: '{n} أيام', PluralCategory.many: '{n} يومًا', PluralCategory.other: '{n} يوم'}),
+    week: pluralUnit({PluralCategory.zero: '{n} أسبوع', PluralCategory.one: 'أسبوع', PluralCategory.two: 'أسبوعان', PluralCategory.few: '{n} أسابيع', PluralCategory.many: '{n} أسبوعًا', PluralCategory.other: '{n} أسبوع'}),
+    month: pluralUnit({PluralCategory.zero: '{n} شهر', PluralCategory.one: 'شهر', PluralCategory.two: 'شهران', PluralCategory.few: '{n} أشهر', PluralCategory.many: '{n} شهرًا', PluralCategory.other: '{n} شهر'}),
+    year: pluralUnit({PluralCategory.zero: '{n} سنة', PluralCategory.one: 'سنة واحدة', PluralCategory.two: 'سنتان', PluralCategory.few: '{n} سنوات', PluralCategory.many: '{n} سنة', PluralCategory.other: '{n} سنة'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} ي'),
+    week: simpleUnit('{n} أ'),
+    month: pluralUnit({PluralCategory.zero: '{n} شهر', PluralCategory.one: 'شهر', PluralCategory.two: 'شهران', PluralCategory.few: '{n} أشهر', PluralCategory.many: '{n} شهرًا', PluralCategory.other: '{n} شهر'}),
+    year: simpleUnit('{n} سنة'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

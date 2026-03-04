@@ -41,6 +41,40 @@ let locale : locale =
     ; teenager = Neutral "Adolescente"
     ; adult = Gendered ("Adulto", "Adulta")
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} giorno")
+          ; (Other, "{n} giorni")
+          ])
+      ; ovr_week = Some (Simple "{n} sett.")
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} mese")
+          ; (Other, "{n} mesi")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} anno")
+          ; (Other, "{n} anni")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n}g")
+          ; (Other, "{n}gg")
+          ])
+      ; ovr_week = Some (Simple "{n}sett.")
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} mese")
+          ; (Other, "{n} mesi")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n}anno")
+          ; (Other, "{n}anni")
+          ])
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

@@ -11,7 +11,7 @@
 
 """Irish locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -46,4 +46,22 @@ GA = AgeLocale(
         "teenager": "Déagóir",
         "adult": "Duine fásta",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} lá",
+            "week": "{n} scht",
+            "month": {"one": "{n} mí", "two": "{n} mí", "few": "{n} mí", "many": "{n} mí", "other": "{n} m"},
+            "year": "{n} bl",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} lá",
+            "week": "{n} scht",
+            "month": {"one": "{n}m", "two": "{n}m", "few": "{n}m", "many": "{n}m", "other": "{n} m"},
+            "year": "{n} bl",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

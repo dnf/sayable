@@ -34,6 +34,6 @@ const SaLocale sa_locale_th = {
         { "วัยรุ่น", "" },
         { "ผู้ใหญ่", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} วัน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} สัปดาห์", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} เดือน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ปี", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}วัน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}สัปดาห์", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}เดือน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}ปี", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

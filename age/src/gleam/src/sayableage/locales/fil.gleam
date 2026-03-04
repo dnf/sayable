@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.NeutralStage("Bata"),
     teenager: types.NeutralStage("Tinedyer"),
     adult: types.NeutralStage("Matanda"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} araw")),
+      week: Ok(types.PluralUnit([#(types.One, "{n} linggo"), #(types.Other, "{n} na linggo")])),
+      month: Ok(types.SimpleUnit("{n} buwan")),
+      year: Ok(types.SimpleUnit("{n} taon")),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.PluralUnit([#(types.One, "{n} araw"), #(types.Other, "{n} na araw")])),
+      week: Ok(types.SimpleUnit("{n}linggo")),
+      month: Ok(types.PluralUnit([#(types.One, "{n}buwan"), #(types.Other, "{n} buwan")])),
+      year: Ok(types.SimpleUnit("{n}taon")),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "Tinédzser"
         , adult = Neutral "Felnőtt"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} nap")
+            , ovrWeek = Just (Simple "{n} hét")
+            , ovrMonth = Just (Simple "{n} hónap")
+            , ovrYear = Just (Simple "{n} év")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} nap")
+            , ovrWeek = Just (Simple "{n} hét")
+            , ovrMonth = Just (Simple "{n} h.")
+            , ovrYear = Just (Simple "{n} év")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

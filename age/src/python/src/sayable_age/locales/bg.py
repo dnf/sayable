@@ -11,7 +11,7 @@
 
 """Bulgarian locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 BG = AgeLocale(
     code="bg",
@@ -33,4 +33,22 @@ BG = AgeLocale(
         "teenager": "Тийнейджър",
         "adult": {"m": "Възрастен", "f": "Възрастна"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} д",
+            "week": "{n} седм.",
+            "month": "{n} мес.",
+            "year": "{n} год.",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} д",
+            "week": "{n} седм.",
+            "month": "{n} мес.",
+            "year": "{n} г.",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

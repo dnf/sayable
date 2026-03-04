@@ -166,8 +166,24 @@ let AM: AgeLocale =
                 Teenager = Neutral "ታዳጊ"
                 Adult = Neutral "አዋቂ"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ቀናት")
+            Week = Some (Plural (Map.ofList [ (One, "{n} ሳምንት"); (Other, "{n} ሳምንታት") ]))
+            Month = Some (Simple "{n} ወራት")
+            Year = Some (Plural (Map.ofList [ (One, "{n} ዓመት"); (Other, "{n} ዓመታት") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ቀ")
+            Week = Some (Simple "{n} ሳምንት")
+            Month = Some (Simple "{n} ወር")
+            Year = Some (Plural (Map.ofList [ (One, "{n} ዓመት"); (Other, "{n} ዓ") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -199,8 +215,24 @@ let AR: AgeLocale =
                 Teenager = Gendered("مراهق", "مراهقة")
                 Adult = Gendered("بالغ", "بالغة")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (Zero, "{n} يوم"); (One, "يوم"); (Two, "يومان"); (Few, "{n} أيام"); (Many, "{n} يومًا"); (Other, "{n} يوم") ]))
+            Week = Some (Plural (Map.ofList [ (Zero, "{n} أسبوع"); (One, "أسبوع"); (Two, "أسبوعان"); (Few, "{n} أسابيع"); (Many, "{n} أسبوعًا"); (Other, "{n} أسبوع") ]))
+            Month = Some (Plural (Map.ofList [ (Zero, "{n} شهر"); (One, "شهر"); (Two, "شهران"); (Few, "{n} أشهر"); (Many, "{n} شهرًا"); (Other, "{n} شهر") ]))
+            Year = Some (Plural (Map.ofList [ (Zero, "{n} سنة"); (One, "سنة واحدة"); (Two, "سنتان"); (Few, "{n} سنوات"); (Many, "{n} سنة"); (Other, "{n} سنة") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ي")
+            Week = Some (Simple "{n} أ")
+            Month = Some (Plural (Map.ofList [ (Zero, "{n} شهر"); (One, "شهر"); (Two, "شهران"); (Few, "{n} أشهر"); (Many, "{n} شهرًا"); (Other, "{n} شهر") ]))
+            Year = Some (Simple "{n} سنة")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -232,8 +264,24 @@ let AZ: AgeLocale =
                 Teenager = Neutral "Yeniyetmə"
                 Adult = Neutral "Böyük"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} gün")
+            Week = Some (Simple "{n} hft")
+            Month = Some (Simple "{n} ay")
+            Year = Some (Simple "{n} il")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} gün")
+            Week = Some (Simple "{n} hft")
+            Month = Some (Simple "{n} ay")
+            Year = Some (Simple "{n} il")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -265,8 +313,24 @@ let BG: AgeLocale =
                 Teenager = Neutral "Тийнейджър"
                 Adult = Gendered("Възрастен", "Възрастна")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} д")
+            Week = Some (Simple "{n} седм.")
+            Month = Some (Simple "{n} мес.")
+            Year = Some (Simple "{n} год.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} д")
+            Week = Some (Simple "{n} седм.")
+            Month = Some (Simple "{n} мес.")
+            Year = Some (Simple "{n} г.")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -298,8 +362,24 @@ let BN: AgeLocale =
                 Teenager = Gendered("কিশোর", "কিশোরী")
                 Adult = Neutral "প্রাপ্তবয়স্ক"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} দিন")
+            Week = Some (Simple "{n} সপ্তাহ")
+            Month = Some (Simple "{n} মাস")
+            Year = Some (Simple "{n} বছর")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} দিন")
+            Week = Some (Simple "{n} সপ্তাহ")
+            Month = Some (Simple "{n} মাস")
+            Year = Some (Simple "{n} বছর")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -331,8 +411,24 @@ let BR: AgeLocale =
                 Teenager = Neutral "Den yaouank"
                 Adult = Neutral "Den deuet da vad"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} sizh.")
+            Month = Some (Simple "{n} m.")
+            Year = Some (Simple "{n} bl.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}sizh.")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}b")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -364,8 +460,24 @@ let BS: AgeLocale =
                 Teenager = Neutral "Tinejdžer"
                 Adult = Neutral "Odrasla osoba"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} dan"); (Few, "{n} dana"); (Other, "{n} dana") ]))
+            Week = Some (Simple "{n} sedm.")
+            Month = Some (Simple "{n} mj.")
+            Year = Some (Simple "{n} god.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} sedm.")
+            Month = Some (Simple "{n} mj.")
+            Year = Some (Simple "{n} god.")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -397,8 +509,24 @@ let CA: AgeLocale =
                 Teenager = Neutral "Adolescent"
                 Adult = Gendered("Adult", "Adulta")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} dia"); (Other, "{n} dies") ]))
+            Week = Some (Simple "{n} setm.")
+            Month = Some (Plural (Map.ofList [ (One, "{n} mes"); (Other, "{n} m") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} any"); (Other, "{n} anys") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} setm.")
+            Month = Some (Simple "{n} m")
+            Year = Some (Plural (Map.ofList [ (One, "{n} any"); (Other, "{n} anys") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -430,8 +558,24 @@ let CS: AgeLocale =
                 Teenager = Neutral "Teenager"
                 Adult = Gendered("Dospělý", "Dospělá")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} den"); (Few, "{n} dny"); (Many, "{n} dne"); (Other, "{n} dnů") ]))
+            Week = Some (Simple "{n} týd.")
+            Month = Some (Simple "{n} měs.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} rok"); (Few, "{n} roky"); (Many, "{n} roku"); (Other, "{n} let") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} t.")
+            Month = Some (Simple "{n} m.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} r."); (Few, "{n} r."); (Many, "{n} r."); (Other, "{n} l.") ]))
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -463,8 +607,24 @@ let CY: AgeLocale =
                 Teenager = Neutral "Glaslanc"
                 Adult = Neutral "Oedolyn"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (Zero, "{n} diwrnod"); (One, "{n} diwrnod"); (Two, "{n} ddiwrnod"); (Few, "{n} diwrnod"); (Many, "{n} diwrnod"); (Other, "{n} diwrnod") ]))
+            Week = Some (Simple "{n} ws")
+            Month = Some (Plural (Map.ofList [ (Zero, "{n} mis"); (One, "{n} mis"); (Two, "{n} fis"); (Few, "{n} mis"); (Many, "{n} mis"); (Other, "{n} mis") ]))
+            Year = Some (Simple "{n} bl")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Plural (Map.ofList [ (Zero, "{n} ws"); (One, "{n}w"); (Two, "{n} ws"); (Few, "{n} ws"); (Many, "{n} ws"); (Other, "{n}w") ]))
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}bl")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -496,8 +656,24 @@ let DA: AgeLocale =
                 Teenager = Neutral "Teenager"
                 Adult = Neutral "Voksen"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} dag"); (Other, "{n} dage") ]))
+            Week = Some (Plural (Map.ofList [ (One, "{n} uge"); (Other, "{n} uger") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} md."); (Other, "{n} mdr.") ]))
+            Year = Some (Simple "{n} år")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} u")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n} år")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -529,8 +705,24 @@ let DE: AgeLocale =
                 Teenager = Neutral "Teenager"
                 Adult = Gendered("Erwachsener", "Erwachsene")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} Tg.")
+            Week = Some (Simple "{n} Wo.")
+            Month = Some (Simple "{n} Mon.")
+            Year = Some (Simple "{n} J")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} T")
+            Week = Some (Simple "{n} W")
+            Month = Some (Simple "{n} M")
+            Year = Some (Simple "{n} J")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -562,8 +754,24 @@ let EL: AgeLocale =
                 Teenager = Gendered("Έφηβος", "Έφηβη")
                 Adult = Gendered("Ενήλικας", "Ενήλικη")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} ημέρα"); (Other, "{n} ημέρες") ]))
+            Week = Some (Simple "{n} εβδ.")
+            Month = Some (Simple "{n} μήν.")
+            Year = Some (Simple "{n} έτ.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} η")
+            Week = Some (Simple "{n} ε")
+            Month = Some (Simple "{n} μ")
+            Year = Some (Simple "{n} έ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -644,8 +852,24 @@ let ES: AgeLocale =
                 Teenager = Neutral "Adolescente"
                 Adult = Gendered("Adulto", "Adulta")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} sem.")
+            Month = Some (Simple "{n} m.")
+            Year = Some (Simple "{n} a")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}sem")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}a")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -677,8 +901,24 @@ let ET: AgeLocale =
                 Teenager = Neutral "Teismeline"
                 Adult = Neutral "Täiskasvanu"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} päev"); (Other, "{n} päeva") ]))
+            Week = Some (Simple "{n} näd")
+            Month = Some (Plural (Map.ofList [ (One, "{n} kuu"); (Other, "{n} kuud") ]))
+            Year = Some (Simple "{n} a")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} p")
+            Week = Some (Simple "{n} n")
+            Month = Some (Simple "{n} k")
+            Year = Some (Simple "{n} a")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -710,8 +950,24 @@ let EU: AgeLocale =
                 Teenager = Neutral "Nerabea"
                 Adult = Neutral "Heldua"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} egun")
+            Week = Some (Simple "{n} aste")
+            Month = Some (Simple "{n} hilabete")
+            Year = Some (Simple "{n} urte")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} e.")
+            Week = Some (Simple "{n} aste")
+            Month = Some (Simple "{n} hil")
+            Year = Some (Simple "{n} u.")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -743,8 +999,24 @@ let FA: AgeLocale =
                 Teenager = Neutral "نوجوان"
                 Adult = Neutral "بزرگسال"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} روز")
+            Week = Some (Simple "{n} هفته")
+            Month = Some (Simple "{n} ماه")
+            Year = Some (Simple "{n} سال")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} روز")
+            Week = Some (Simple "{n} هفته")
+            Month = Some (Simple "{n} ماه")
+            Year = Some (Simple "{n} سال")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -776,8 +1048,24 @@ let FI: AgeLocale =
                 Teenager = Neutral "Teini"
                 Adult = Neutral "Aikuinen"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} pv")
+            Week = Some (Simple "{n} vk")
+            Month = Some (Simple "{n} kk")
+            Year = Some (Simple "{n} v")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}pv")
+            Week = Some (Simple "{n}vk")
+            Month = Some (Simple "{n}kk")
+            Year = Some (Simple "{n}v")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -809,8 +1097,24 @@ let FIL: AgeLocale =
                 Teenager = Neutral "Tinedyer"
                 Adult = Neutral "Matanda"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} araw")
+            Week = Some (Plural (Map.ofList [ (One, "{n} linggo"); (Other, "{n} na linggo") ]))
+            Month = Some (Simple "{n} buwan")
+            Year = Some (Simple "{n} taon")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} araw"); (Other, "{n} na araw") ]))
+            Week = Some (Simple "{n}linggo")
+            Month = Some (Plural (Map.ofList [ (One, "{n}buwan"); (Other, "{n} buwan") ]))
+            Year = Some (Simple "{n}taon")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -842,8 +1146,24 @@ let FR: AgeLocale =
                 Teenager = Gendered("Adolescent", "Adolescente")
                 Adult = Neutral "Adulte"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} j")
+            Week = Some (Simple "{n} sem.")
+            Month = Some (Simple "{n} m.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} an"); (Other, "{n} ans") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}j")
+            Week = Some (Simple "{n}sem.")
+            Month = Some (Simple "{n}m.")
+            Year = Some (Simple "{n}a")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -875,8 +1195,24 @@ let GA: AgeLocale =
                 Teenager = Neutral "Déagóir"
                 Adult = Neutral "Duine fásta"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} lá")
+            Week = Some (Simple "{n} scht")
+            Month = Some (Plural (Map.ofList [ (One, "{n} mí"); (Two, "{n} mí"); (Few, "{n} mí"); (Many, "{n} mí"); (Other, "{n} m") ]))
+            Year = Some (Simple "{n} bl")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} lá")
+            Week = Some (Simple "{n} scht")
+            Month = Some (Plural (Map.ofList [ (One, "{n}m"); (Two, "{n}m"); (Few, "{n}m"); (Many, "{n}m"); (Other, "{n} m") ]))
+            Year = Some (Simple "{n} bl")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -908,8 +1244,24 @@ let GD: AgeLocale =
                 Teenager = Neutral "Deugaire"
                 Adult = Neutral "Inbheach"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} là")
+            Week = Some (Plural (Map.ofList [ (One, "{n} shn"); (Two, "{n} shn"); (Few, "{n} sn"); (Other, "{n} sn") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} mhìos"); (Two, "{n} mhìos"); (Few, "{n} mìos"); (Other, "{n} mìos") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} bhlia"); (Two, "{n} bhlia"); (Few, "{n} blia"); (Other, "{n} blia") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}là")
+            Week = Some (Simple "{n}s")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}bl")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -941,8 +1293,24 @@ let GU: AgeLocale =
                 Teenager = Gendered("કિશોર", "કિશોરી")
                 Adult = Neutral "પુખ્ત"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} દિવસ")
+            Week = Some (Simple "{n} અઠ.")
+            Month = Some (Plural (Map.ofList [ (One, "{n} મહિનો"); (Other, "{n} મહિના") ]))
+            Year = Some (Simple "{n} વર્ષ")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} દિ")
+            Week = Some (Simple "{n} અઠ.")
+            Month = Some (Simple "{n} મ")
+            Year = Some (Simple "{n} વ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -974,8 +1342,24 @@ let GV: AgeLocale =
                 Teenager = Neutral "Fer aeg"
                 Adult = Neutral "Dooinney aasit"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} wk")
+            Month = Some (Simple "{n} mo")
+            Year = Some (Simple "{n} yr")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1007,8 +1391,24 @@ let HE: AgeLocale =
                 Teenager = Gendered("נער", "נערה")
                 Adult = Gendered("מבוגר", "מבוגרת")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} יום"); (Two, "יומיים"); (Other, "{n} ימ׳") ]))
+            Week = Some (Plural (Map.ofList [ (One, "{n} שבוע"); (Two, "שבועיים"); (Other, "{n} שבועות") ]))
+            Month = Some (Simple "{n} ח׳")
+            Year = Some (Plural (Map.ofList [ (One, "{n} שנה"); (Two, "{n} שנים"); (Other, "{n} שנים") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} י׳")
+            Week = Some (Simple "{n} ש′")
+            Month = Some (Simple "{n} ח׳")
+            Year = Some (Simple "{n} ש′")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1040,8 +1440,24 @@ let HI: AgeLocale =
                 Teenager = Gendered("किशोर", "किशोरी")
                 Adult = Neutral "वयस्क"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} दिन")
+            Week = Some (Simple "{n} सप्ताह")
+            Month = Some (Simple "{n} माह")
+            Year = Some (Simple "{n} वर्ष")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} दि")
+            Week = Some (Simple "{n} सप्ताह")
+            Month = Some (Simple "{n} माह")
+            Year = Some (Simple "{n} व")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1073,8 +1489,24 @@ let HR: AgeLocale =
                 Teenager = Neutral "Tinejdžer"
                 Adult = Neutral "Odrasla osoba"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} dan"); (Few, "{n} dana"); (Other, "{n} dana") ]))
+            Week = Some (Simple "{n} tj.")
+            Month = Some (Simple "{n} mj.")
+            Year = Some (Simple "{n} g.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} tj.")
+            Month = Some (Simple "{n} mj.")
+            Year = Some (Simple "{n} g.")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1106,8 +1538,24 @@ let HU: AgeLocale =
                 Teenager = Neutral "Tinédzser"
                 Adult = Neutral "Felnőtt"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} nap")
+            Week = Some (Simple "{n} hét")
+            Month = Some (Simple "{n} hónap")
+            Year = Some (Simple "{n} év")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} nap")
+            Week = Some (Simple "{n} hét")
+            Month = Some (Simple "{n} h.")
+            Year = Some (Simple "{n} év")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1139,8 +1587,24 @@ let ID: AgeLocale =
                 Teenager = Neutral "Remaja"
                 Adult = Neutral "Dewasa"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} hr")
+            Week = Some (Simple "{n} mgg")
+            Month = Some (Simple "{n} bln")
+            Year = Some (Simple "{n} thn")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} hr")
+            Week = Some (Simple "{n} mgg")
+            Month = Some (Simple "{n} bln")
+            Year = Some (Simple "{n} thn")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1172,8 +1636,24 @@ let IT: AgeLocale =
                 Teenager = Neutral "Adolescente"
                 Adult = Gendered("Adulto", "Adulta")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} giorno"); (Other, "{n} giorni") ]))
+            Week = Some (Simple "{n} sett.")
+            Month = Some (Plural (Map.ofList [ (One, "{n} mese"); (Other, "{n} mesi") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} anno"); (Other, "{n} anni") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n}g"); (Other, "{n}gg") ]))
+            Week = Some (Simple "{n}sett.")
+            Month = Some (Plural (Map.ofList [ (One, "{n} mese"); (Other, "{n} mesi") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n}anno"); (Other, "{n}anni") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1205,8 +1685,24 @@ let JA: AgeLocale =
                 Teenager = Neutral "青少年"
                 Adult = Neutral "成人"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} 日")
+            Week = Some (Simple "{n} 週間")
+            Month = Some (Simple "{n} か月")
+            Year = Some (Simple "{n} 年")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1238,8 +1734,24 @@ let JV: AgeLocale =
                 Teenager = Neutral "Remaja"
                 Adult = Neutral "Diwasa"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} dina")
+            Week = Some (Simple "{n} peken")
+            Month = Some (Simple "{n} sasi")
+            Year = Some (Simple "{n} taun")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n} peken")
+            Month = Some (Simple "{n} sasi")
+            Year = Some (Simple "{n} taun")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1271,8 +1783,24 @@ let KA: AgeLocale =
                 Teenager = Neutral "მოზარდი"
                 Adult = Neutral "ზრდასრული"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} დღე")
+            Week = Some (Simple "{n} კვრ")
+            Month = Some (Simple "{n} თვე")
+            Year = Some (Simple "{n} წ")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} დღე")
+            Week = Some (Simple "{n} კვრ")
+            Month = Some (Simple "{n} თვე")
+            Year = Some (Simple "{n} წ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1304,8 +1832,24 @@ let KK: AgeLocale =
                 Teenager = Neutral "Жасөспірім"
                 Adult = Neutral "Ересек"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} күн")
+            Week = Some (Simple "{n} ап.")
+            Month = Some (Simple "{n} ай")
+            Year = Some (Simple "{n} ж.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} к.")
+            Week = Some (Simple "{n} ап.")
+            Month = Some (Simple "{n} ай")
+            Year = Some (Simple "{n} ж.")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1337,8 +1881,24 @@ let KM: AgeLocale =
                 Teenager = Neutral "យុវវ័យ"
                 Adult = Neutral "មនុស្សពេញវ័យ"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ថ្ងៃ")
+            Week = Some (Simple "{n} សប្ដាហ៍")
+            Month = Some (Simple "{n} ខែ")
+            Year = Some (Simple "{n} ឆ្នាំ")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ថ្ងៃ")
+            Week = Some (Simple "{n} សប្ដាហ៍")
+            Month = Some (Simple "{n} ខែ")
+            Year = Some (Simple "{n} ឆ្នាំ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1370,8 +1930,24 @@ let KO: AgeLocale =
                 Teenager = Neutral "청소년"
                 Adult = Neutral "성인"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n}일")
+            Week = Some (Simple "{n}주")
+            Month = Some (Simple "{n}개월")
+            Year = Some (Simple "{n}년")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}일")
+            Week = Some (Simple "{n}주")
+            Month = Some (Simple "{n}개월")
+            Year = Some (Simple "{n}년")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1403,8 +1979,24 @@ let KW: AgeLocale =
                 Teenager = Neutral "Den yowynk"
                 Adult = Neutral "Den tevys"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} wk")
+            Month = Some (Simple "{n} mo")
+            Year = Some (Simple "{n} yr")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1436,8 +2028,24 @@ let LT: AgeLocale =
                 Teenager = Gendered("Paauglys", "Paauglė")
                 Adult = Gendered("Suaugęs", "Suaugusi")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} sav.")
+            Month = Some (Simple "{n} mėn.")
+            Year = Some (Simple "{n} m.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} sav.")
+            Month = Some (Simple "{n} mėn.")
+            Year = Some (Simple "{n} m.")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1469,8 +2077,24 @@ let LV: AgeLocale =
                 Teenager = Gendered("Pusaudzis", "Pusaudze")
                 Adult = Gendered("Pieaugušais", "Pieaugusī")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} ned.")
+            Month = Some (Simple "{n} mēn.")
+            Year = Some (Simple "{n} g.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} n.")
+            Month = Some (Simple "{n} m.")
+            Year = Some (Simple "{n} g.")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1502,8 +2126,24 @@ let MK: AgeLocale =
                 Teenager = Neutral "Тинејџер"
                 Adult = Neutral "Возрасен"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} ден"); (Other, "{n} дена") ]))
+            Week = Some (Simple "{n} сед.")
+            Month = Some (Simple "{n} мес.")
+            Year = Some (Simple "{n} год.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} д.")
+            Week = Some (Simple "{n} с.")
+            Month = Some (Simple "{n} м.")
+            Year = Some (Simple "{n} г.")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1535,8 +2175,24 @@ let MR: AgeLocale =
                 Teenager = Gendered("किशोर", "किशोरी")
                 Adult = Neutral "प्रौढ"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} दिवस")
+            Week = Some (Simple "{n} आ")
+            Month = Some (Plural (Map.ofList [ (One, "{n} महिना"); (Other, "{n} महिने") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} वर्ष"); (Other, "{n} वर्षे") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}दि")
+            Week = Some (Simple "{n}आ")
+            Month = Some (Simple "{n}म")
+            Year = Some (Simple "{n}व")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1568,8 +2224,24 @@ let MS: AgeLocale =
                 Teenager = Neutral "Remaja"
                 Adult = Neutral "Dewasa"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} hari")
+            Week = Some (Simple "{n} mgu")
+            Month = Some (Simple "{n} bln")
+            Year = Some (Simple "{n} thn")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} h")
+            Week = Some (Simple "{n} mgu")
+            Month = Some (Simple "{n} bln")
+            Year = Some (Simple "{n} thn")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1601,8 +2273,24 @@ let MT: AgeLocale =
                 Teenager = Gendered("Adolexxent", "Adolexxenta")
                 Adult = Gendered("Adult", "Adulta")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} w")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n} y")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} w")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n} y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1634,8 +2322,24 @@ let MY: AgeLocale =
                 Teenager = Neutral "ဆယ်ကျော်သက်"
                 Adult = Neutral "အရွယ်ရောက်"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ရက်")
+            Week = Some (Simple "{n} ပတ်")
+            Month = Some (Simple "{n} လ")
+            Year = Some (Simple "{n} နှစ်")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ရက်")
+            Week = Some (Simple "{n} ပတ်")
+            Month = Some (Simple "{n} လ")
+            Year = Some (Simple "{n} နှစ်")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1667,8 +2371,24 @@ let NB: AgeLocale =
                 Teenager = Neutral "Tenåring"
                 Adult = Neutral "Voksen"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} u")
+            Month = Some (Simple "{n} md.")
+            Year = Some (Simple "{n} år")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}u")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n}å")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1700,8 +2420,24 @@ let NE: AgeLocale =
                 Teenager = Neutral "किशोर"
                 Adult = Neutral "वयस्क"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} दिन")
+            Week = Some (Simple "{n} हप्ता")
+            Month = Some (Simple "{n} महिना")
+            Year = Some (Simple "{n} वर्ष")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} दिन")
+            Week = Some (Simple "{n} हप्ता")
+            Month = Some (Simple "{n} महिना")
+            Year = Some (Simple "{n} वर्ष")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1733,8 +2469,24 @@ let NL: AgeLocale =
                 Teenager = Neutral "Tiener"
                 Adult = Neutral "Volwassene"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} dag"); (Other, "{n} dagen") ]))
+            Week = Some (Plural (Map.ofList [ (One, "{n} wk"); (Other, "{n} wkn") ]))
+            Month = Some (Simple "{n} mnd")
+            Year = Some (Simple "{n} jr")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} w")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n} jr")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1766,8 +2518,24 @@ let PA: AgeLocale =
                 Teenager = Gendered("ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ")
                 Adult = Neutral "ਬਾਲਗ"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ਦਿਨ")
+            Week = Some (Plural (Map.ofList [ (One, "{n} ਹਫ਼ਤਾ"); (Other, "{n} ਹਫ਼ਤੇ") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} ਮਹੀਨਾ"); (Other, "{n} ਮਹੀਨੇ") ]))
+            Year = Some (Simple "{n} ਸਾਲ")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ਦਿਨ")
+            Week = Some (Plural (Map.ofList [ (One, "{n} ਹਫ਼ਤਾ"); (Other, "{n} ਹਫ਼ਤੇ") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} ਮਹੀਨਾ"); (Other, "{n} ਮਹੀਨੇ") ]))
+            Year = Some (Simple "{n} ਸਾਲ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1799,8 +2567,24 @@ let PL: AgeLocale =
                 Teenager = Gendered("Nastolatek", "Nastolatka")
                 Adult = Gendered("Dorosły", "Dorosła")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} dzień"); (Few, "{n} dni"); (Many, "{n} dni"); (Other, "{n} dnia") ]))
+            Week = Some (Plural (Map.ofList [ (One, "{n} tydz."); (Few, "{n} tyg."); (Many, "{n} tyg."); (Other, "{n} tyg.") ]))
+            Month = Some (Simple "{n} mies.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} rok"); (Few, "{n} lata"); (Many, "{n} lat"); (Other, "{n} roku") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} t.")
+            Month = Some (Plural (Map.ofList [ (One, "{n} m-c"); (Few, "{n} m-ce"); (Many, "{n} m-cy"); (Other, "{n} m-ca") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} r."); (Few, "{n} l."); (Many, "{n} l."); (Other, "{n} r.") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1832,8 +2616,24 @@ let PT: AgeLocale =
                 Teenager = Neutral "Adolescente"
                 Adult = Gendered("Adulto", "Adulta")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} dia"); (Other, "{n} dias") ]))
+            Week = Some (Simple "{n} sem.")
+            Month = Some (Plural (Map.ofList [ (One, "{n} mês"); (Other, "{n} meses") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} ano"); (Other, "{n} anos") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} dia"); (Other, "{n} dias") ]))
+            Week = Some (Simple "{n} sem.")
+            Month = Some (Plural (Map.ofList [ (One, "{n} mês"); (Other, "{n} meses") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} ano"); (Other, "{n} anos") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1865,8 +2665,24 @@ let RO: AgeLocale =
                 Teenager = Gendered("Adolescent", "Adolescentă")
                 Adult = Gendered("Adult", "Adultă")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} zi"); (Few, "{n} zile"); (Other, "{n} zile") ]))
+            Week = Some (Simple "{n} săpt.")
+            Month = Some (Plural (Map.ofList [ (One, "{n} lună"); (Few, "{n} luni"); (Other, "{n} luni") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} an"); (Few, "{n} ani"); (Other, "{n} ani") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} z")
+            Week = Some (Simple "{n} săpt.")
+            Month = Some (Simple "{n} l")
+            Year = Some (Simple "{n} a")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1898,8 +2714,24 @@ let RU: AgeLocale =
                 Teenager = Neutral "Подросток"
                 Adult = Gendered("Взрослый", "Взрослая")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} дн.")
+            Week = Some (Simple "{n} нед.")
+            Month = Some (Simple "{n} мес.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} г."); (Few, "{n} г."); (Many, "{n} л."); (Other, "{n} г.") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} д.")
+            Week = Some (Simple "{n} н.")
+            Month = Some (Simple "{n} м.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} г."); (Few, "{n} г."); (Many, "{n} л."); (Other, "{n} г.") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1931,8 +2763,24 @@ let SHI: AgeLocale =
                 Teenager = Gendered("Aɛrim", "Taɛrimt")
                 Adult = Gendered("Argaz", "Tamṭṭuṭ")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} wk")
+            Month = Some (Simple "{n} mo")
+            Year = Some (Simple "{n} yr")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1964,8 +2812,24 @@ let SI: AgeLocale =
                 Teenager = Neutral "නව යොවුන්"
                 Adult = Neutral "වැඩිහිටි"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "දින {n}")
+            Week = Some (Simple "සති {n}")
+            Month = Some (Simple "මාස {n}")
+            Year = Some (Simple "වසර {n}")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "දි {n}")
+            Week = Some (Simple "ස {n}")
+            Month = Some (Simple "මා {n}")
+            Year = Some (Simple "ව {n}")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -1997,8 +2861,24 @@ let SK: AgeLocale =
                 Teenager = Neutral "Tínedžer"
                 Adult = Gendered("Dospelý", "Dospelá")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} deň"); (Few, "{n} dni"); (Many, "{n} dňa"); (Other, "{n} dní") ]))
+            Week = Some (Simple "{n} týž.")
+            Month = Some (Simple "{n} mes.")
+            Year = Some (Simple "{n} r.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} t.")
+            Month = Some (Simple "{n} m.")
+            Year = Some (Simple "{n} r.")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2030,8 +2910,24 @@ let SL: AgeLocale =
                 Teenager = Gendered("Najstnik", "Najstnica")
                 Adult = Gendered("Odrasel", "Odrasla")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} t")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n} l")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} t")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n} l")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2063,8 +2959,24 @@ let SQ: AgeLocale =
                 Teenager = Gendered("Adoleshent", "Adoleshente")
                 Adult = Gendered("I rritur", "E rritur")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ditë")
+            Week = Some (Simple "{n} javë")
+            Month = Some (Simple "{n} muaj")
+            Year = Some (Plural (Map.ofList [ (One, "{n} vit"); (Other, "{n} vjet") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ditë")
+            Week = Some (Simple "{n} javë")
+            Month = Some (Simple "{n} muaj")
+            Year = Some (Plural (Map.ofList [ (One, "{n} vit"); (Other, "{n} vjet") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2096,8 +3008,24 @@ let SR: AgeLocale =
                 Teenager = Neutral "Тинејџер"
                 Adult = Neutral "Одрасла особа"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} дан"); (Few, "{n} дана"); (Other, "{n} дана") ]))
+            Week = Some (Simple "{n} нед.")
+            Month = Some (Simple "{n} мес.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} год"); (Few, "{n} год."); (Other, "{n} год.") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} д")
+            Week = Some (Simple "{n} н")
+            Month = Some (Simple "{n} м")
+            Year = Some (Simple "{n} г")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2129,8 +3057,24 @@ let SV: AgeLocale =
                 Teenager = Neutral "Tonåring"
                 Adult = Neutral "Vuxen"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} v")
+            Month = Some (Simple "{n} mån")
+            Year = Some (Simple "{n} år")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}v")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}å")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2162,8 +3106,24 @@ let SW: AgeLocale =
                 Teenager = Neutral "Kijana"
                 Adult = Neutral "Mtu mzima"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "siku {n}")
+            Week = Some (Simple "wiki {n}")
+            Month = Some (Plural (Map.ofList [ (One, "mwezi {n}"); (Other, "miezi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mwaka {n}"); (Other, "miaka {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "siku {n}")
+            Week = Some (Simple "wiki {n}")
+            Month = Some (Plural (Map.ofList [ (One, "mwezi {n}"); (Other, "miezi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mwaka {n}"); (Other, "miaka {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2195,8 +3155,24 @@ let TA: AgeLocale =
                 Teenager = Neutral "இளம்பருவம்"
                 Adult = Neutral "பெரியவர்"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} நாள்"); (Other, "{n} நாட்கள்") ]))
+            Week = Some (Plural (Map.ofList [ (One, "{n} வாரம்"); (Other, "{n} வார.") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} மாதம்"); (Other, "{n} மாத.") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} ஆண்டு"); (Other, "{n} ஆண்டு.") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} நா")
+            Week = Some (Simple "{n} வா")
+            Month = Some (Simple "{n} மா")
+            Year = Some (Simple "{n} ஆ")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2228,8 +3204,24 @@ let TE: AgeLocale =
                 Teenager = Neutral "కౌమారదశ"
                 Adult = Neutral "వయోజనులు"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} రోజు"); (Other, "{n} రోజులు") ]))
+            Week = Some (Simple "{n} వా.")
+            Month = Some (Simple "{n} నె.")
+            Year = Some (Simple "{n} సం.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}రో")
+            Week = Some (Simple "{n}వా")
+            Month = Some (Simple "{n}నె")
+            Year = Some (Simple "{n}సం")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2261,8 +3253,24 @@ let TH: AgeLocale =
                 Teenager = Neutral "วัยรุ่น"
                 Adult = Neutral "ผู้ใหญ่"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} วัน")
+            Week = Some (Simple "{n} สัปดาห์")
+            Month = Some (Simple "{n} เดือน")
+            Year = Some (Simple "{n} ปี")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}วัน")
+            Week = Some (Simple "{n}สัปดาห์")
+            Month = Some (Simple "{n}เดือน")
+            Year = Some (Simple "{n}ปี")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2294,8 +3302,24 @@ let TR: AgeLocale =
                 Teenager = Neutral "Ergen"
                 Adult = Neutral "Yetişkin"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} gün")
+            Week = Some (Simple "{n} hf.")
+            Month = Some (Simple "{n} ay")
+            Year = Some (Simple "{n} yıl")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}g")
+            Week = Some (Simple "{n}h")
+            Month = Some (Simple "{n}a")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2327,8 +3351,24 @@ let TZM: AgeLocale =
                 Teenager = Gendered("Aɛrim", "Taɛrimt")
                 Adult = Gendered("Argaz", "Tamṭṭuṭ")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} wk")
+            Month = Some (Simple "{n} mo")
+            Year = Some (Simple "{n} yr")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2360,8 +3400,24 @@ let UK: AgeLocale =
                 Teenager = Neutral "Підліток"
                 Adult = Gendered("Дорослий", "Доросла")
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} дн.")
+            Week = Some (Simple "{n} тиж.")
+            Month = Some (Simple "{n} міс.")
+            Year = Some (Simple "{n} р.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}д")
+            Week = Some (Simple "{n}т")
+            Month = Some (Simple "{n}м")
+            Year = Some (Simple "{n}р")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2393,8 +3449,24 @@ let UR: AgeLocale =
                 Teenager = Neutral "نوجوان"
                 Adult = Neutral "بالغ"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} دن")
+            Week = Some (Plural (Map.ofList [ (One, "{n} ہفتہ"); (Other, "{n} ہفتے") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} مہینہ"); (Other, "{n} مہینے") ]))
+            Year = Some (Simple "{n} سال")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} دن")
+            Week = Some (Plural (Map.ofList [ (One, "{n} ہفتہ"); (Other, "{n} ہفتے") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} مہینہ"); (Other, "{n} مہینے") ]))
+            Year = Some (Simple "{n} سال")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2426,8 +3498,24 @@ let UZ: AgeLocale =
                 Teenager = Neutral "Oʻsmir"
                 Adult = Neutral "Katta"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} kun")
+            Week = Some (Simple "{n} hafta")
+            Month = Some (Simple "{n} oy")
+            Year = Some (Simple "{n} yil")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} kun")
+            Week = Some (Simple "{n} hafta")
+            Month = Some (Simple "{n} oy")
+            Year = Some (Simple "{n} yil")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2459,8 +3547,24 @@ let VI: AgeLocale =
                 Teenager = Neutral "Thiếu niên"
                 Adult = Neutral "Người lớn"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ngày")
+            Week = Some (Simple "{n} tuần")
+            Month = Some (Simple "{n} tháng")
+            Year = Some (Simple "{n} năm")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ngày")
+            Week = Some (Simple "{n} tuần")
+            Month = Some (Simple "{n} tháng")
+            Year = Some (Simple "{n} năm")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }
@@ -2492,8 +3596,24 @@ let ZH: AgeLocale =
                 Teenager = Neutral "青少年"
                 Adult = Neutral "成人"
             }
-        ShortOverride = None
-        CompactOverride = None
+        ShortOverride = Some {
+            Day = Some (Simple "{n}天")
+            Week = Some (Simple "{n}周")
+            Month = Some (Simple "{n}个月")
+            Year = Some (Simple "{n}年")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}天")
+            Week = Some (Simple "{n}周")
+            Month = Some (Simple "{n}个月")
+            Year = Some (Simple "{n}年")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
         FormatNumber = None
         FormatUnit = None
     }

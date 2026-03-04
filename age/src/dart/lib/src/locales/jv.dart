@@ -30,4 +30,18 @@ final jv = AgeLocale(
   child: stageNeutral('Bocah'),
   teenager: stageNeutral('Remaja'),
   adult: stageNeutral('Diwasa'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} dina'),
+    week: simpleUnit('{n} peken'),
+    month: simpleUnit('{n} sasi'),
+    year: simpleUnit('{n} taun'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}d'),
+    week: simpleUnit('{n} peken'),
+    month: simpleUnit('{n} sasi'),
+    year: simpleUnit('{n} taun'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

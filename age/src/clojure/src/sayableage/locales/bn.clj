@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "নবজাতক"
    :stages {:newborn {:type :neutral :label "নবজাতক"} :infant {:type :neutral :label "শিশু"} :toddler {:type :neutral :label "ছোট শিশু"} :child {:type :neutral :label "শিশু"} :teenager {:type :gendered :m "কিশোর" :f "কিশোরী"} :adult {:type :neutral :label "প্রাপ্তবয়স্ক"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} দিন"} :week {:type :simple :form "{n} সপ্তাহ"} :month {:type :simple :form "{n} মাস"} :year {:type :simple :form "{n} বছর"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} দিন"} :week {:type :simple :form "{n} সপ্তাহ"} :month {:type :simple :form "{n} মাস"} :year {:type :simple :form "{n} বছর"} :half "{n}½" :delimiter "" :just-born nil}})

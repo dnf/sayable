@@ -42,4 +42,18 @@ var HE = sa.AgeLocale{
 		Teenager: sa.G("נער", "נערה"),
 		Adult:    sa.G("מבוגר", "מבוגרת"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} יום", sa.Two: "יומיים", sa.Other: "{n} ימ׳"}),
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} שבוע", sa.Two: "שבועיים", sa.Other: "{n} שבועות"}),
+		Month: &sa.UnitForms{Simple: "{n} ח׳"},
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} שנה", sa.Two: "{n} שנים", sa.Other: "{n} שנים"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} י׳"},
+		Week:      &sa.UnitForms{Simple: "{n} ש′"},
+		Month:     &sa.UnitForms{Simple: "{n} ח׳"},
+		Year:      &sa.UnitForms{Simple: "{n} ש′"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

@@ -11,7 +11,7 @@
 
 """Nepali locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 NE = AgeLocale(
     code="ne",
@@ -33,4 +33,22 @@ NE = AgeLocale(
         "teenager": "किशोर",
         "adult": "वयस्क",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} दिन",
+            "week": "{n} हप्ता",
+            "month": "{n} महिना",
+            "year": "{n} वर्ष",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} दिन",
+            "week": "{n} हप्ता",
+            "month": "{n} महिना",
+            "year": "{n} वर्ष",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

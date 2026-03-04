@@ -51,6 +51,36 @@ locale =
         , teenager = Gendered "נער" "נערה"
         , adult = Gendered "מבוגר" "מבוגרת"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} יום" )
+                  , ( Two, "יומיים" )
+                  , ( Other, "{n} ימ׳" )
+                  ])
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} שבוע" )
+                  , ( Two, "שבועיים" )
+                  , ( Other, "{n} שבועות" )
+                  ])
+            , ovrMonth = Just (Simple "{n} ח׳")
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} שנה" )
+                  , ( Two, "{n} שנים" )
+                  , ( Other, "{n} שנים" )
+                  ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} י׳")
+            , ovrWeek = Just (Simple "{n} ש′")
+            , ovrMonth = Just (Simple "{n} ח׳")
+            , ovrYear = Just (Simple "{n} ש′")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -34,6 +34,6 @@ const SaLocale sa_locale_ur = {
         { "نوجوان", "" },
         { "بالغ", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} دن", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} ہفتہ", NULL, NULL, NULL, "{n} ہفتے" } }, true, { NULL, { NULL, "{n} مہینہ", NULL, NULL, NULL, "{n} مہینے" } }, true, { "{n} سال", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} دن", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} ہفتہ", NULL, NULL, NULL, "{n} ہفتے" } }, true, { NULL, { NULL, "{n} مہینہ", NULL, NULL, NULL, "{n} مہینے" } }, true, { "{n} سال", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

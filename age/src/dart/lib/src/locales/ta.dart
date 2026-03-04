@@ -31,4 +31,17 @@ final ta = AgeLocale(
   child: stageNeutral('சிறார்'),
   teenager: stageNeutral('இளம்பருவம்'),
   adult: stageNeutral('பெரியவர்'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} நாள்', PluralCategory.other: '{n} நாட்கள்'}),
+    week: pluralUnit({PluralCategory.one: '{n} வாரம்', PluralCategory.other: '{n} வார.'}),
+    month: pluralUnit({PluralCategory.one: '{n} மாதம்', PluralCategory.other: '{n} மாத.'}),
+    year: pluralUnit({PluralCategory.one: '{n} ஆண்டு', PluralCategory.other: '{n} ஆண்டு.'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} நா'),
+    week: simpleUnit('{n} வா'),
+    month: simpleUnit('{n} மா'),
+    year: simpleUnit('{n} ஆ'),
+    delimiter: '',
+  ),
 );

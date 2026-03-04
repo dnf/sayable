@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.SHI do
         child: %{m: "Afrux", f: "Tafruxṭ"},
         teenager: %{m: "Aɛrim", f: "Taɛrimt"},
         adult: %{m: "Argaz", f: "Tamṭṭuṭ"}
+      },
+      short: %{
+        units: %{
+          day: "{n} d",
+          week: "{n} wk",
+          month: "{n} mo",
+          year: "{n} yr"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}d",
+          week: "{n}w",
+          month: "{n}m",
+          year: "{n}y"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

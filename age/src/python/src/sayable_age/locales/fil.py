@@ -11,7 +11,7 @@
 
 """Filipino locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 FIL = AgeLocale(
     code="fil",
@@ -33,4 +33,22 @@ FIL = AgeLocale(
         "teenager": "Tinedyer",
         "adult": "Matanda",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} araw",
+            "week": {"one": "{n} linggo", "other": "{n} na linggo"},
+            "month": "{n} buwan",
+            "year": "{n} taon",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": {"one": "{n} araw", "other": "{n} na araw"},
+            "week": "{n}linggo",
+            "month": {"one": "{n}buwan", "other": "{n} buwan"},
+            "year": "{n}taon",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

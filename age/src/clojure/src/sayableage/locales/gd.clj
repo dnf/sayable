@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Ùr-bhreith"
    :stages {:newborn {:type :neutral :label "Ùr-bhreith"} :infant {:type :neutral :label "Naoidhean"} :toddler {:type :neutral :label "Pàiste beag"} :child {:type :neutral :label "Pàiste"} :teenager {:type :neutral :label "Deugaire"} :adult {:type :neutral :label "Inbheach"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} là"} :week {:type :pluralized :forms {:one "{n} shn" :two "{n} shn" :few "{n} sn" :other "{n} sn"}} :month {:type :pluralized :forms {:one "{n} mhìos" :two "{n} mhìos" :few "{n} mìos" :other "{n} mìos"}} :year {:type :pluralized :forms {:one "{n} bhlia" :two "{n} bhlia" :few "{n} blia" :other "{n} blia"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}là"} :week {:type :simple :form "{n}s"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}bl"} :half "{n}½" :delimiter "" :just-born nil}})

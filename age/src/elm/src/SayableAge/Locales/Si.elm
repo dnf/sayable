@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "නව යොවුන්"
         , adult = Neutral "වැඩිහිටි"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "දින {n}")
+            , ovrWeek = Just (Simple "සති {n}")
+            , ovrMonth = Just (Simple "මාස {n}")
+            , ovrYear = Just (Simple "වසර {n}")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "දි {n}")
+            , ovrWeek = Just (Simple "ස {n}")
+            , ovrMonth = Just (Simple "මා {n}")
+            , ovrYear = Just (Simple "ව {n}")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

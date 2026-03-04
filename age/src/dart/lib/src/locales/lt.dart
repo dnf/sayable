@@ -34,4 +34,17 @@ final lt = AgeLocale(
   child: stageNeutral('Vaikas'),
   teenager: stageGendered('Paauglys', 'Paauglė'),
   adult: stageGendered('Suaugęs', 'Suaugusi'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} d.'),
+    week: simpleUnit('{n} sav.'),
+    month: simpleUnit('{n} mėn.'),
+    year: simpleUnit('{n} m.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} d.'),
+    week: simpleUnit('{n} sav.'),
+    month: simpleUnit('{n} mėn.'),
+    year: simpleUnit('{n} m.'),
+    delimiter: '',
+  ),
 );

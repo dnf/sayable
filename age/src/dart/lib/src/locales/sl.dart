@@ -34,4 +34,18 @@ final sl = AgeLocale(
   child: stageNeutral('Otrok'),
   teenager: stageGendered('Najstnik', 'Najstnica'),
   adult: stageGendered('Odrasel', 'Odrasla'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} t'),
+    month: simpleUnit('{n} m'),
+    year: simpleUnit('{n} l'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} t'),
+    month: simpleUnit('{n} m'),
+    year: simpleUnit('{n} l'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

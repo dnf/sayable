@@ -57,6 +57,57 @@ let locale : locale =
     ; teenager = Gendered ("مراهق", "مراهقة")
     ; adult = Gendered ("بالغ", "بالغة")
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (Zero, "{n} يوم")
+          ; (One, "يوم")
+          ; (Two, "يومان")
+          ; (Few, "{n} أيام")
+          ; (Many, "{n} يومًا")
+          ; (Other, "{n} يوم")
+          ])
+      ; ovr_week = Some (Pluralized
+          [ (Zero, "{n} أسبوع")
+          ; (One, "أسبوع")
+          ; (Two, "أسبوعان")
+          ; (Few, "{n} أسابيع")
+          ; (Many, "{n} أسبوعًا")
+          ; (Other, "{n} أسبوع")
+          ])
+      ; ovr_month = Some (Pluralized
+          [ (Zero, "{n} شهر")
+          ; (One, "شهر")
+          ; (Two, "شهران")
+          ; (Few, "{n} أشهر")
+          ; (Many, "{n} شهرًا")
+          ; (Other, "{n} شهر")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (Zero, "{n} سنة")
+          ; (One, "سنة واحدة")
+          ; (Two, "سنتان")
+          ; (Few, "{n} سنوات")
+          ; (Many, "{n} سنة")
+          ; (Other, "{n} سنة")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} ي")
+      ; ovr_week = Some (Simple "{n} أ")
+      ; ovr_month = Some (Pluralized
+          [ (Zero, "{n} شهر")
+          ; (One, "شهر")
+          ; (Two, "شهران")
+          ; (Few, "{n} أشهر")
+          ; (Many, "{n} شهرًا")
+          ; (Other, "{n} شهر")
+          ])
+      ; ovr_year = Some (Simple "{n} سنة")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

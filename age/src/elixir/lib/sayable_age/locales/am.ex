@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.AM do
         child: "ልጅ",
         teenager: "ታዳጊ",
         adult: "አዋቂ"
+      },
+      short: %{
+        units: %{
+          day: "{n} ቀናት",
+          week: %{one: "{n} ሳምንት", other: "{n} ሳምንታት"},
+          month: "{n} ወራት",
+          year: %{one: "{n} ዓመት", other: "{n} ዓመታት"}
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} ቀ",
+          week: "{n} ሳምንት",
+          month: "{n} ወር",
+          year: %{one: "{n} ዓመት", other: "{n} ዓ"}
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

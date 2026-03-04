@@ -140,7 +140,9 @@ def generate_locale_doc(locale_json: dict) -> str:
     gendered = _is_gendered(stages_json)
 
     loc = _get_locale_object(code)
-    pt = SayableAge(loc)
+    pt_normal = SayableAge(loc, "normal")
+    pt_short = SayableAge(loc, "short")
+    pt_compact = SayableAge(loc, "compact")
 
     lines: list[str] = []
     lines.append(f"# {name} ({code})")
@@ -155,9 +157,13 @@ def generate_locale_doc(locale_json: dict) -> str:
     lines.append("")
     age_rows: list[list[str]] = []
     for label, dob, as_of in _AGE_PAIRS:
-        output = pt.format_age(dob, as_of)
-        age_rows.append([label, output])
-    lines.extend(_aligned_table(["Age", "Output"], age_rows))
+        age_rows.append([
+            label,
+            pt_normal.format_age(dob, as_of),
+            pt_short.format_age(dob, as_of),
+            pt_compact.format_age(dob, as_of),
+        ])
+    lines.extend(_aligned_table(["Age", "Normal", "Short", "Compact"], age_rows))
     lines.append("")
 
     # Stages table
@@ -166,15 +172,15 @@ def generate_locale_doc(locale_json: dict) -> str:
     stage_rows: list[list[str]] = []
     if gendered:
         for stage_name, dob, as_of in _STAGE_PAIRS:
-            stage_m = pt.format_stage(dob, as_of, "m")
-            stage_f = pt.format_stage(dob, as_of, "f")
+            stage_m = pt_normal.format_stage(dob, as_of, "m")
+            stage_f = pt_normal.format_stage(dob, as_of, "f")
             if stage_m == stage_f:
                 stage_rows.append([stage_name, stage_m])
             else:
                 stage_rows.append([stage_name, f"{stage_m} / {stage_f}"])
     else:
         for stage_name, dob, as_of in _STAGE_PAIRS:
-            stage_label = pt.format_stage(dob, as_of)
+            stage_label = pt_normal.format_stage(dob, as_of)
             stage_rows.append([stage_name, stage_label])
     lines.extend(_aligned_table(["Stage", "Label"], stage_rows))
 

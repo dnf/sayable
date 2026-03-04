@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/de.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// German locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Teenager".to_string()),
             adult: StageLabel::Gendered { m: "Erwachsener".to_string(), f: "Erwachsene".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} Tg.")),
+            week: Some(UnitForms::simple("{n} Wo.")),
+            month: Some(UnitForms::simple("{n} Mon.")),
+            year: Some(UnitForms::simple("{n} J")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} T")),
+            week: Some(UnitForms::simple("{n} W")),
+            month: Some(UnitForms::simple("{n} M")),
+            year: Some(UnitForms::simple("{n} J")),
+            half: None,
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

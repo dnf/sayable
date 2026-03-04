@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "ახალშობილი"
    :stages {:newborn {:type :neutral :label "ახალშობილი"} :infant {:type :neutral :label "ჩვილი"} :toddler {:type :neutral :label "პატარა ბავშვი"} :child {:type :neutral :label "ბავშვი"} :teenager {:type :neutral :label "მოზარდი"} :adult {:type :neutral :label "ზრდასრული"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} დღე"} :week {:type :simple :form "{n} კვრ"} :month {:type :simple :form "{n} თვე"} :year {:type :simple :form "{n} წ"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} დღე"} :week {:type :simple :form "{n} კვრ"} :month {:type :simple :form "{n} თვე"} :year {:type :simple :form "{n} წ"} :half "{n}½" :delimiter "" :just-born nil}})

@@ -44,4 +44,17 @@ var LT = sa.AgeLocale{
 		Teenager: sa.G("Paauglys", "Paauglė"),
 		Adult:    sa.G("Suaugęs", "Suaugusi"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} d."},
+		Week:  &sa.UnitForms{Simple: "{n} sav."},
+		Month: &sa.UnitForms{Simple: "{n} mėn."},
+		Year:  &sa.UnitForms{Simple: "{n} m."},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} d."},
+		Week:      &sa.UnitForms{Simple: "{n} sav."},
+		Month:     &sa.UnitForms{Simple: "{n} mėn."},
+		Year:      &sa.UnitForms{Simple: "{n} m."},
+		Delimiter: strPtr(""),
+	},
 }

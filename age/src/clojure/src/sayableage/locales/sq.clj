@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Sapolindur"
    :stages {:newborn {:type :gendered :m "Sapolindur" :f "Sapolindure"} :infant {:type :neutral :label "Foshnjë"} :toddler {:type :gendered :m "Fëmijë i vogël" :f "Fëmijë e vogël"} :child {:type :neutral :label "Fëmijë"} :teenager {:type :gendered :m "Adoleshent" :f "Adoleshente"} :adult {:type :gendered :m "I rritur" :f "E rritur"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} ditë"} :week {:type :simple :form "{n} javë"} :month {:type :simple :form "{n} muaj"} :year {:type :pluralized :forms {:one "{n} vit" :other "{n} vjet"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} ditë"} :week {:type :simple :form "{n} javë"} :month {:type :simple :form "{n} muaj"} :year {:type :pluralized :forms {:one "{n} vit" :other "{n} vjet"}} :half "{n}½" :delimiter "" :just-born nil}})

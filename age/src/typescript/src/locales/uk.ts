@@ -39,4 +39,22 @@ export const uk: AgeLocale = {
     teenager: 'Підліток',
     adult: { m: 'Дорослий', f: 'Доросла' },
   },
+  short: {
+    units: {
+      day:   '{n} дн.',
+      week:  '{n} тиж.',
+      month: '{n} міс.',
+      year:  '{n} р.',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n}д',
+      week:  '{n}т',
+      month: '{n}м',
+      year:  '{n}р',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

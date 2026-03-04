@@ -35,4 +35,18 @@ final cy = AgeLocale(
   child: stageNeutral('Plentyn'),
   teenager: stageNeutral('Glaslanc'),
   adult: stageNeutral('Oedolyn'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.zero: '{n} diwrnod', PluralCategory.one: '{n} diwrnod', PluralCategory.two: '{n} ddiwrnod', PluralCategory.few: '{n} diwrnod', PluralCategory.many: '{n} diwrnod', PluralCategory.other: '{n} diwrnod'}),
+    week: simpleUnit('{n} ws'),
+    month: pluralUnit({PluralCategory.zero: '{n} mis', PluralCategory.one: '{n} mis', PluralCategory.two: '{n} fis', PluralCategory.few: '{n} mis', PluralCategory.many: '{n} mis', PluralCategory.other: '{n} mis'}),
+    year: simpleUnit('{n} bl'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}d'),
+    week: pluralUnit({PluralCategory.zero: '{n} ws', PluralCategory.one: '{n}w', PluralCategory.two: '{n} ws', PluralCategory.few: '{n} ws', PluralCategory.many: '{n} ws', PluralCategory.other: '{n}w'}),
+    month: simpleUnit('{n}m'),
+    year: simpleUnit('{n}bl'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

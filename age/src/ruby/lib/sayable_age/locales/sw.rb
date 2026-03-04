@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'Kijana',
         adult: 'Mtu mzima',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => 'siku {n}',
+          'week' => 'wiki {n}',
+          'month' => { one: 'mwezi {n}', other: 'miezi {n}' },
+          'year' => { one: 'mwaka {n}', other: 'miaka {n}' },
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => 'siku {n}',
+          'week' => 'wiki {n}',
+          'month' => { one: 'mwezi {n}', other: 'miezi {n}' },
+          'year' => { one: 'mwaka {n}', other: 'miaka {n}' },
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

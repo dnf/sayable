@@ -11,7 +11,7 @@
 
 """Basque locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 EU = AgeLocale(
     code="eu",
@@ -33,4 +33,22 @@ EU = AgeLocale(
         "teenager": "Nerabea",
         "adult": "Heldua",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} egun",
+            "week": "{n} aste",
+            "month": "{n} hilabete",
+            "year": "{n} urte",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} e.",
+            "week": "{n} aste",
+            "month": "{n} hil",
+            "year": "{n} u.",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

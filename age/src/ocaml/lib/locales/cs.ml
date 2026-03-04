@@ -45,6 +45,37 @@ let locale : locale =
     ; teenager = Neutral "Teenager"
     ; adult = Gendered ("Dospělý", "Dospělá")
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} den")
+          ; (Few, "{n} dny")
+          ; (Many, "{n} dne")
+          ; (Other, "{n} dnů")
+          ])
+      ; ovr_week = Some (Simple "{n} týd.")
+      ; ovr_month = Some (Simple "{n} měs.")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} rok")
+          ; (Few, "{n} roky")
+          ; (Many, "{n} roku")
+          ; (Other, "{n} let")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} d.")
+      ; ovr_week = Some (Simple "{n} t.")
+      ; ovr_month = Some (Simple "{n} m.")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} r.")
+          ; (Few, "{n} r.")
+          ; (Many, "{n} r.")
+          ; (Other, "{n} l.")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

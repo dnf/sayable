@@ -32,6 +32,24 @@ module SayableAge
         teenager: { m: 'Adoleshent', f: 'Adoleshente' },
         adult: { m: 'I rritur', f: 'E rritur' },
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} ditë',
+          'week' => '{n} javë',
+          'month' => '{n} muaj',
+          'year' => { one: '{n} vit', other: '{n} vjet' },
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} ditë',
+          'week' => '{n} javë',
+          'month' => '{n} muaj',
+          'year' => { one: '{n} vit', other: '{n} vjet' },
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

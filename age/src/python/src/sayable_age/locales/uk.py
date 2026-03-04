@@ -11,7 +11,7 @@
 
 """Ukrainian locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -44,4 +44,22 @@ UK = AgeLocale(
         "teenager": "Підліток",
         "adult": {"m": "Дорослий", "f": "Доросла"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} дн.",
+            "week": "{n} тиж.",
+            "month": "{n} міс.",
+            "year": "{n} р.",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}д",
+            "week": "{n}т",
+            "month": "{n}м",
+            "year": "{n}р",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

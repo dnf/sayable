@@ -39,4 +39,18 @@ var AM = sa.AgeLocale{
 		Teenager: sa.S("ታዳጊ"),
 		Adult:    sa.S("አዋቂ"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} ቀናት"},
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ሳምንት", sa.Other: "{n} ሳምንታት"}),
+		Month: &sa.UnitForms{Simple: "{n} ወራት"},
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ዓመት", sa.Other: "{n} ዓመታት"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} ቀ"},
+		Week:      &sa.UnitForms{Simple: "{n} ሳምንት"},
+		Month:     &sa.UnitForms{Simple: "{n} ወር"},
+		Year:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ዓመት", sa.Other: "{n} ዓ"}),
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

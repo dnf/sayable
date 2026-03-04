@@ -11,7 +11,7 @@
 
 """Albanian locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 SQ = AgeLocale(
     code="sq",
@@ -33,4 +33,22 @@ SQ = AgeLocale(
         "teenager": {"m": "Adoleshent", "f": "Adoleshente"},
         "adult": {"m": "I rritur", "f": "E rritur"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} ditë",
+            "week": "{n} javë",
+            "month": "{n} muaj",
+            "year": {"one": "{n} vit", "other": "{n} vjet"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} ditë",
+            "week": "{n} javë",
+            "month": "{n} muaj",
+            "year": {"one": "{n} vit", "other": "{n} vjet"},
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

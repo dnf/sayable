@@ -44,6 +44,33 @@ locale = Locale
         , stageTeenager = Neutral "ታዳጊ"
         , stageAdult = Neutral "አዋቂ"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} ቀናት")
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} ሳምንት")
+              , (Other, "{n} ሳምንታት")
+              ])
+            , ovrMonth = Just (Simple "{n} ወራት")
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} ዓመት")
+              , (Other, "{n} ዓመታት")
+              ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} ቀ")
+            , ovrWeek = Just (Simple "{n} ሳምንት")
+            , ovrMonth = Just (Simple "{n} ወር")
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} ዓመት")
+              , (Other, "{n} ዓ")
+              ])
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

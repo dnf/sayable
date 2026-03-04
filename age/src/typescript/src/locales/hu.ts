@@ -31,4 +31,22 @@ export const hu: AgeLocale = {
     teenager: 'Tinédzser',
     adult: 'Felnőtt',
   },
+  short: {
+    units: {
+      day:   '{n} nap',
+      week:  '{n} hét',
+      month: '{n} hónap',
+      year:  '{n} év',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n} nap',
+      week:  '{n} hét',
+      month: '{n} h.',
+      year:  '{n} év',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

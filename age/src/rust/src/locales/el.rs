@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/el.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Greek locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,27 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "Έφηβος".to_string(), f: "Έφηβη".to_string() },
             adult: StageLabel::Gendered { m: "Ενήλικας".to_string(), f: "Ενήλικη".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ημέρα"),
+                (PluralCategory::Other, "{n} ημέρες"),
+            ])),
+            week: Some(UnitForms::simple("{n} εβδ.")),
+            month: Some(UnitForms::simple("{n} μήν.")),
+            year: Some(UnitForms::simple("{n} έτ.")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} η")),
+            week: Some(UnitForms::simple("{n} ε")),
+            month: Some(UnitForms::simple("{n} μ")),
+            year: Some(UnitForms::simple("{n} έ")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

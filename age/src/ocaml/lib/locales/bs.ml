@@ -49,6 +49,26 @@ let locale : locale =
     ; teenager = Neutral "Tinejdžer"
     ; adult = Neutral "Odrasla osoba"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} dan")
+          ; (Few, "{n} dana")
+          ; (Other, "{n} dana")
+          ])
+      ; ovr_week = Some (Simple "{n} sedm.")
+      ; ovr_month = Some (Simple "{n} mj.")
+      ; ovr_year = Some (Simple "{n} god.")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} d.")
+      ; ovr_week = Some (Simple "{n} sedm.")
+      ; ovr_month = Some (Simple "{n} mj.")
+      ; ovr_year = Some (Simple "{n} god.")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

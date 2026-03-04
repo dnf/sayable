@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/sr.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Serbian locale.
 pub fn locale() -> AgeLocale {
@@ -59,8 +59,32 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Тинејџер".to_string()),
             adult: StageLabel::Neutral("Одрасла особа".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} дан"),
+                (PluralCategory::Few, "{n} дана"),
+                (PluralCategory::Other, "{n} дана"),
+            ])),
+            week: Some(UnitForms::simple("{n} нед.")),
+            month: Some(UnitForms::simple("{n} мес.")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} год"),
+                (PluralCategory::Few, "{n} год."),
+                (PluralCategory::Other, "{n} год."),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} д")),
+            week: Some(UnitForms::simple("{n} н")),
+            month: Some(UnitForms::simple("{n} м")),
+            year: Some(UnitForms::simple("{n} г")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

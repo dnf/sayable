@@ -22,5 +22,5 @@
    :delimiter "၊ "
    :just-born "မွေးကင်းစ"
    :stages {:newborn {:type :neutral :label "မွေးကင်းစ"} :infant {:type :neutral :label "နို့စို့ကလေး"} :toddler {:type :neutral :label "ခြေဦးသလျှား"} :child {:type :neutral :label "ကလေး"} :teenager {:type :neutral :label "ဆယ်ကျော်သက်"} :adult {:type :neutral :label "အရွယ်ရောက်"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} ရက်"} :week {:type :simple :form "{n} ပတ်"} :month {:type :simple :form "{n} လ"} :year {:type :simple :form "{n} နှစ်"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} ရက်"} :week {:type :simple :form "{n} ပတ်"} :month {:type :simple :form "{n} လ"} :year {:type :simple :form "{n} နှစ်"} :half "{n}½" :delimiter "" :just-born nil}})

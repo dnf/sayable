@@ -36,4 +36,18 @@ var KM = sa.AgeLocale{
 		Teenager: sa.S("យុវវ័យ"),
 		Adult:    sa.S("មនុស្សពេញវ័យ"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} ថ្ងៃ"},
+		Week:  &sa.UnitForms{Simple: "{n} សប្ដាហ៍"},
+		Month: &sa.UnitForms{Simple: "{n} ខែ"},
+		Year:  &sa.UnitForms{Simple: "{n} ឆ្នាំ"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} ថ្ងៃ"},
+		Week:      &sa.UnitForms{Simple: "{n} សប្ដាហ៍"},
+		Month:     &sa.UnitForms{Simple: "{n} ខែ"},
+		Year:      &sa.UnitForms{Simple: "{n} ឆ្នាំ"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

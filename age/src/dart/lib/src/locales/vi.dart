@@ -30,4 +30,18 @@ final vi = AgeLocale(
   child: stageNeutral('Trẻ em'),
   teenager: stageNeutral('Thiếu niên'),
   adult: stageNeutral('Người lớn'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} ngày'),
+    week: simpleUnit('{n} tuần'),
+    month: simpleUnit('{n} tháng'),
+    year: simpleUnit('{n} năm'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} ngày'),
+    week: simpleUnit('{n} tuần'),
+    month: simpleUnit('{n} tháng'),
+    year: simpleUnit('{n} năm'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

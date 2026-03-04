@@ -41,6 +41,27 @@ locale = Locale
         , stageTeenager = Gendered "Adolescent" "Adolescente"
         , stageAdult = Neutral "Adulte"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} j")
+            , ovrWeek = Just (Simple "{n} sem.")
+            , ovrMonth = Just (Simple "{n} m.")
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} an")
+              , (Other, "{n} ans")
+              ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}j")
+            , ovrWeek = Just (Simple "{n}sem.")
+            , ovrMonth = Just (Simple "{n}m.")
+            , ovrYear = Just (Simple "{n}a")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -37,6 +37,6 @@ const SaLocale sa_locale_uk = {
         { "Підліток", "" },
         { "Дорослий", "Доросла" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} дн.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} тиж.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} міс.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} р.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}д", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}т", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}м", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}р", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

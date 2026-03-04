@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "Жасөспірім"
         , adult = Neutral "Ересек"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} күн")
+            , ovrWeek = Just (Simple "{n} ап.")
+            , ovrMonth = Just (Simple "{n} ай")
+            , ovrYear = Just (Simple "{n} ж.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} к.")
+            , ovrWeek = Just (Simple "{n} ап.")
+            , ovrMonth = Just (Simple "{n} ай")
+            , ovrYear = Just (Simple "{n} ж.")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

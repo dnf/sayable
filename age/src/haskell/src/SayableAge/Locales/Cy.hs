@@ -60,6 +60,45 @@ locale = Locale
         , stageTeenager = Neutral "Glaslanc"
         , stageAdult = Neutral "Oedolyn"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (Zero, "{n} diwrnod")
+              , (One, "{n} diwrnod")
+              , (Two, "{n} ddiwrnod")
+              , (Few, "{n} diwrnod")
+              , (Many, "{n} diwrnod")
+              , (Other, "{n} diwrnod")
+              ])
+            , ovrWeek = Just (Simple "{n} ws")
+            , ovrMonth = Just (Pluralized
+              [ (Zero, "{n} mis")
+              , (One, "{n} mis")
+              , (Two, "{n} fis")
+              , (Few, "{n} mis")
+              , (Many, "{n} mis")
+              , (Other, "{n} mis")
+              ])
+            , ovrYear = Just (Simple "{n} bl")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}d")
+            , ovrWeek = Just (Pluralized
+              [ (Zero, "{n} ws")
+              , (One, "{n}w")
+              , (Two, "{n} ws")
+              , (Few, "{n} ws")
+              , (Many, "{n} ws")
+              , (Other, "{n}w")
+              ])
+            , ovrMonth = Just (Simple "{n}m")
+            , ovrYear = Just (Simple "{n}bl")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

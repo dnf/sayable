@@ -201,8 +201,24 @@ public static class Locales
             StageLabel.Neutral("ታዳጊ"),
             StageLabel.Neutral("አዋቂ")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ቀናት"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ሳምንት" }, { PluralCategory.Other, "{n} ሳምንታት" } }),
+            UnitForms.Simple("{n} ወራት"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ዓመት" }, { PluralCategory.Other, "{n} ዓመታት" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ቀ"),
+            UnitForms.Simple("{n} ሳምንት"),
+            UnitForms.Simple("{n} ወር"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ዓመት" }, { PluralCategory.Other, "{n} ዓ" } }),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ar.json
@@ -229,8 +245,24 @@ public static class Locales
             StageLabel.Gendered("مراهق", "مراهقة"),
             StageLabel.Gendered("بالغ", "بالغة")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} يوم" }, { PluralCategory.One, "يوم" }, { PluralCategory.Two, "يومان" }, { PluralCategory.Few, "{n} أيام" }, { PluralCategory.Many, "{n} يومًا" }, { PluralCategory.Other, "{n} يوم" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} أسبوع" }, { PluralCategory.One, "أسبوع" }, { PluralCategory.Two, "أسبوعان" }, { PluralCategory.Few, "{n} أسابيع" }, { PluralCategory.Many, "{n} أسبوعًا" }, { PluralCategory.Other, "{n} أسبوع" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} شهر" }, { PluralCategory.One, "شهر" }, { PluralCategory.Two, "شهران" }, { PluralCategory.Few, "{n} أشهر" }, { PluralCategory.Many, "{n} شهرًا" }, { PluralCategory.Other, "{n} شهر" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} سنة" }, { PluralCategory.One, "سنة واحدة" }, { PluralCategory.Two, "سنتان" }, { PluralCategory.Few, "{n} سنوات" }, { PluralCategory.Many, "{n} سنة" }, { PluralCategory.Other, "{n} سنة" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ي"),
+            UnitForms.Simple("{n} أ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} شهر" }, { PluralCategory.One, "شهر" }, { PluralCategory.Two, "شهران" }, { PluralCategory.Few, "{n} أشهر" }, { PluralCategory.Many, "{n} شهرًا" }, { PluralCategory.Other, "{n} شهر" } }),
+            UnitForms.Simple("{n} سنة"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/az.json
@@ -257,8 +289,24 @@ public static class Locales
             StageLabel.Neutral("Yeniyetmə"),
             StageLabel.Neutral("Böyük")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} gün"),
+            UnitForms.Simple("{n} hft"),
+            UnitForms.Simple("{n} ay"),
+            UnitForms.Simple("{n} il"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} gün"),
+            UnitForms.Simple("{n} hft"),
+            UnitForms.Simple("{n} ay"),
+            UnitForms.Simple("{n} il"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/bg.json
@@ -285,8 +333,24 @@ public static class Locales
             StageLabel.Neutral("Тийнейджър"),
             StageLabel.Gendered("Възрастен", "Възрастна")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} д"),
+            UnitForms.Simple("{n} седм."),
+            UnitForms.Simple("{n} мес."),
+            UnitForms.Simple("{n} год."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} д"),
+            UnitForms.Simple("{n} седм."),
+            UnitForms.Simple("{n} мес."),
+            UnitForms.Simple("{n} г."),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/bn.json
@@ -313,8 +377,24 @@ public static class Locales
             StageLabel.Gendered("কিশোর", "কিশোরী"),
             StageLabel.Neutral("প্রাপ্তবয়স্ক")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} দিন"),
+            UnitForms.Simple("{n} সপ্তাহ"),
+            UnitForms.Simple("{n} মাস"),
+            UnitForms.Simple("{n} বছর"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} দিন"),
+            UnitForms.Simple("{n} সপ্তাহ"),
+            UnitForms.Simple("{n} মাস"),
+            UnitForms.Simple("{n} বছর"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/br.json
@@ -341,8 +421,24 @@ public static class Locales
             StageLabel.Neutral("Den yaouank"),
             StageLabel.Neutral("Den deuet da vad")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} sizh."),
+            UnitForms.Simple("{n} m."),
+            UnitForms.Simple("{n} bl."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}sizh."),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}b"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/bs.json
@@ -369,8 +465,24 @@ public static class Locales
             StageLabel.Neutral("Tinejdžer"),
             StageLabel.Neutral("Odrasla osoba")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dan" }, { PluralCategory.Few, "{n} dana" }, { PluralCategory.Other, "{n} dana" } }),
+            UnitForms.Simple("{n} sedm."),
+            UnitForms.Simple("{n} mj."),
+            UnitForms.Simple("{n} god."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} sedm."),
+            UnitForms.Simple("{n} mj."),
+            UnitForms.Simple("{n} god."),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ca.json
@@ -397,8 +509,24 @@ public static class Locales
             StageLabel.Neutral("Adolescent"),
             StageLabel.Gendered("Adult", "Adulta")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dia" }, { PluralCategory.Other, "{n} dies" } }),
+            UnitForms.Simple("{n} setm."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mes" }, { PluralCategory.Other, "{n} m" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} any" }, { PluralCategory.Other, "{n} anys" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} setm."),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} any" }, { PluralCategory.Other, "{n} anys" } }),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/cs.json
@@ -425,8 +553,24 @@ public static class Locales
             StageLabel.Neutral("Teenager"),
             StageLabel.Gendered("Dospělý", "Dospělá")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} den" }, { PluralCategory.Few, "{n} dny" }, { PluralCategory.Many, "{n} dne" }, { PluralCategory.Other, "{n} dnů" } }),
+            UnitForms.Simple("{n} týd."),
+            UnitForms.Simple("{n} měs."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} rok" }, { PluralCategory.Few, "{n} roky" }, { PluralCategory.Many, "{n} roku" }, { PluralCategory.Other, "{n} let" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} t."),
+            UnitForms.Simple("{n} m."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} r." }, { PluralCategory.Few, "{n} r." }, { PluralCategory.Many, "{n} r." }, { PluralCategory.Other, "{n} l." } }),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/cy.json
@@ -453,8 +597,24 @@ public static class Locales
             StageLabel.Neutral("Glaslanc"),
             StageLabel.Neutral("Oedolyn")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} diwrnod" }, { PluralCategory.One, "{n} diwrnod" }, { PluralCategory.Two, "{n} ddiwrnod" }, { PluralCategory.Few, "{n} diwrnod" }, { PluralCategory.Many, "{n} diwrnod" }, { PluralCategory.Other, "{n} diwrnod" } }),
+            UnitForms.Simple("{n} ws"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} mis" }, { PluralCategory.One, "{n} mis" }, { PluralCategory.Two, "{n} fis" }, { PluralCategory.Few, "{n} mis" }, { PluralCategory.Many, "{n} mis" }, { PluralCategory.Other, "{n} mis" } }),
+            UnitForms.Simple("{n} bl"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.Zero, "{n} ws" }, { PluralCategory.One, "{n}w" }, { PluralCategory.Two, "{n} ws" }, { PluralCategory.Few, "{n} ws" }, { PluralCategory.Many, "{n} ws" }, { PluralCategory.Other, "{n}w" } }),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}bl"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/da.json
@@ -481,8 +641,24 @@ public static class Locales
             StageLabel.Neutral("Teenager"),
             StageLabel.Neutral("Voksen")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dag" }, { PluralCategory.Other, "{n} dage" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} uge" }, { PluralCategory.Other, "{n} uger" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} md." }, { PluralCategory.Other, "{n} mdr." } }),
+            UnitForms.Simple("{n} år"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} u"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} år"),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/de.json
@@ -509,8 +685,24 @@ public static class Locales
             StageLabel.Neutral("Teenager"),
             StageLabel.Gendered("Erwachsener", "Erwachsene")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} Tg."),
+            UnitForms.Simple("{n} Wo."),
+            UnitForms.Simple("{n} Mon."),
+            UnitForms.Simple("{n} J"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} T"),
+            UnitForms.Simple("{n} W"),
+            UnitForms.Simple("{n} M"),
+            UnitForms.Simple("{n} J"),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/el.json
@@ -537,8 +729,24 @@ public static class Locales
             StageLabel.Gendered("Έφηβος", "Έφηβη"),
             StageLabel.Gendered("Ενήλικας", "Ενήλικη")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ημέρα" }, { PluralCategory.Other, "{n} ημέρες" } }),
+            UnitForms.Simple("{n} εβδ."),
+            UnitForms.Simple("{n} μήν."),
+            UnitForms.Simple("{n} έτ."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} η"),
+            UnitForms.Simple("{n} ε"),
+            UnitForms.Simple("{n} μ"),
+            UnitForms.Simple("{n} έ"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/en.json
@@ -609,8 +817,24 @@ public static class Locales
             StageLabel.Neutral("Adolescente"),
             StageLabel.Gendered("Adulto", "Adulta")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} sem."),
+            UnitForms.Simple("{n} m."),
+            UnitForms.Simple("{n} a"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}sem"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}a"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/et.json
@@ -637,8 +861,24 @@ public static class Locales
             StageLabel.Neutral("Teismeline"),
             StageLabel.Neutral("Täiskasvanu")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} päev" }, { PluralCategory.Other, "{n} päeva" } }),
+            UnitForms.Simple("{n} näd"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} kuu" }, { PluralCategory.Other, "{n} kuud" } }),
+            UnitForms.Simple("{n} a"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} p"),
+            UnitForms.Simple("{n} n"),
+            UnitForms.Simple("{n} k"),
+            UnitForms.Simple("{n} a"),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/eu.json
@@ -665,8 +905,24 @@ public static class Locales
             StageLabel.Neutral("Nerabea"),
             StageLabel.Neutral("Heldua")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} egun"),
+            UnitForms.Simple("{n} aste"),
+            UnitForms.Simple("{n} hilabete"),
+            UnitForms.Simple("{n} urte"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} e."),
+            UnitForms.Simple("{n} aste"),
+            UnitForms.Simple("{n} hil"),
+            UnitForms.Simple("{n} u."),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/fa.json
@@ -693,8 +949,24 @@ public static class Locales
             StageLabel.Neutral("نوجوان"),
             StageLabel.Neutral("بزرگسال")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} روز"),
+            UnitForms.Simple("{n} هفته"),
+            UnitForms.Simple("{n} ماه"),
+            UnitForms.Simple("{n} سال"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} روز"),
+            UnitForms.Simple("{n} هفته"),
+            UnitForms.Simple("{n} ماه"),
+            UnitForms.Simple("{n} سال"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/fi.json
@@ -721,8 +993,24 @@ public static class Locales
             StageLabel.Neutral("Teini"),
             StageLabel.Neutral("Aikuinen")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} pv"),
+            UnitForms.Simple("{n} vk"),
+            UnitForms.Simple("{n} kk"),
+            UnitForms.Simple("{n} v"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}pv"),
+            UnitForms.Simple("{n}vk"),
+            UnitForms.Simple("{n}kk"),
+            UnitForms.Simple("{n}v"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/fil.json
@@ -749,8 +1037,24 @@ public static class Locales
             StageLabel.Neutral("Tinedyer"),
             StageLabel.Neutral("Matanda")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} araw"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} linggo" }, { PluralCategory.Other, "{n} na linggo" } }),
+            UnitForms.Simple("{n} buwan"),
+            UnitForms.Simple("{n} taon"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} araw" }, { PluralCategory.Other, "{n} na araw" } }),
+            UnitForms.Simple("{n}linggo"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n}buwan" }, { PluralCategory.Other, "{n} buwan" } }),
+            UnitForms.Simple("{n}taon"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/fr.json
@@ -777,8 +1081,24 @@ public static class Locales
             StageLabel.Gendered("Adolescent", "Adolescente"),
             StageLabel.Neutral("Adulte")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} j"),
+            UnitForms.Simple("{n} sem."),
+            UnitForms.Simple("{n} m."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} an" }, { PluralCategory.Other, "{n} ans" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}j"),
+            UnitForms.Simple("{n}sem."),
+            UnitForms.Simple("{n}m."),
+            UnitForms.Simple("{n}a"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ga.json
@@ -805,8 +1125,24 @@ public static class Locales
             StageLabel.Neutral("Déagóir"),
             StageLabel.Neutral("Duine fásta")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} lá"),
+            UnitForms.Simple("{n} scht"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mí" }, { PluralCategory.Two, "{n} mí" }, { PluralCategory.Few, "{n} mí" }, { PluralCategory.Many, "{n} mí" }, { PluralCategory.Other, "{n} m" } }),
+            UnitForms.Simple("{n} bl"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} lá"),
+            UnitForms.Simple("{n} scht"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n}m" }, { PluralCategory.Two, "{n}m" }, { PluralCategory.Few, "{n}m" }, { PluralCategory.Many, "{n}m" }, { PluralCategory.Other, "{n} m" } }),
+            UnitForms.Simple("{n} bl"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/gd.json
@@ -833,8 +1169,24 @@ public static class Locales
             StageLabel.Neutral("Deugaire"),
             StageLabel.Neutral("Inbheach")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} là"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} shn" }, { PluralCategory.Two, "{n} shn" }, { PluralCategory.Few, "{n} sn" }, { PluralCategory.Other, "{n} sn" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mhìos" }, { PluralCategory.Two, "{n} mhìos" }, { PluralCategory.Few, "{n} mìos" }, { PluralCategory.Other, "{n} mìos" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} bhlia" }, { PluralCategory.Two, "{n} bhlia" }, { PluralCategory.Few, "{n} blia" }, { PluralCategory.Other, "{n} blia" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}là"),
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}bl"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/gu.json
@@ -861,8 +1213,24 @@ public static class Locales
             StageLabel.Gendered("કિશોર", "કિશોરી"),
             StageLabel.Neutral("પુખ્ત")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} દિવસ"),
+            UnitForms.Simple("{n} અઠ."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} મહિનો" }, { PluralCategory.Other, "{n} મહિના" } }),
+            UnitForms.Simple("{n} વર્ષ"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} દિ"),
+            UnitForms.Simple("{n} અઠ."),
+            UnitForms.Simple("{n} મ"),
+            UnitForms.Simple("{n} વ"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/gv.json
@@ -889,8 +1257,24 @@ public static class Locales
             StageLabel.Neutral("Fer aeg"),
             StageLabel.Neutral("Dooinney aasit")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} wk"),
+            UnitForms.Simple("{n} mo"),
+            UnitForms.Simple("{n} yr"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/he.json
@@ -917,8 +1301,24 @@ public static class Locales
             StageLabel.Gendered("נער", "נערה"),
             StageLabel.Gendered("מבוגר", "מבוגרת")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} יום" }, { PluralCategory.Two, "יומיים" }, { PluralCategory.Other, "{n} ימ׳" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} שבוע" }, { PluralCategory.Two, "שבועיים" }, { PluralCategory.Other, "{n} שבועות" } }),
+            UnitForms.Simple("{n} ח׳"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} שנה" }, { PluralCategory.Two, "{n} שנים" }, { PluralCategory.Other, "{n} שנים" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} י׳"),
+            UnitForms.Simple("{n} ש′"),
+            UnitForms.Simple("{n} ח׳"),
+            UnitForms.Simple("{n} ש′"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/hi.json
@@ -945,8 +1345,24 @@ public static class Locales
             StageLabel.Gendered("किशोर", "किशोरी"),
             StageLabel.Neutral("वयस्क")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} दिन"),
+            UnitForms.Simple("{n} सप्ताह"),
+            UnitForms.Simple("{n} माह"),
+            UnitForms.Simple("{n} वर्ष"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} दि"),
+            UnitForms.Simple("{n} सप्ताह"),
+            UnitForms.Simple("{n} माह"),
+            UnitForms.Simple("{n} व"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/hr.json
@@ -973,8 +1389,24 @@ public static class Locales
             StageLabel.Neutral("Tinejdžer"),
             StageLabel.Neutral("Odrasla osoba")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dan" }, { PluralCategory.Few, "{n} dana" }, { PluralCategory.Other, "{n} dana" } }),
+            UnitForms.Simple("{n} tj."),
+            UnitForms.Simple("{n} mj."),
+            UnitForms.Simple("{n} g."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} tj."),
+            UnitForms.Simple("{n} mj."),
+            UnitForms.Simple("{n} g."),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/hu.json
@@ -1001,8 +1433,24 @@ public static class Locales
             StageLabel.Neutral("Tinédzser"),
             StageLabel.Neutral("Felnőtt")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} nap"),
+            UnitForms.Simple("{n} hét"),
+            UnitForms.Simple("{n} hónap"),
+            UnitForms.Simple("{n} év"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} nap"),
+            UnitForms.Simple("{n} hét"),
+            UnitForms.Simple("{n} h."),
+            UnitForms.Simple("{n} év"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/id.json
@@ -1029,8 +1477,24 @@ public static class Locales
             StageLabel.Neutral("Remaja"),
             StageLabel.Neutral("Dewasa")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} hr"),
+            UnitForms.Simple("{n} mgg"),
+            UnitForms.Simple("{n} bln"),
+            UnitForms.Simple("{n} thn"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} hr"),
+            UnitForms.Simple("{n} mgg"),
+            UnitForms.Simple("{n} bln"),
+            UnitForms.Simple("{n} thn"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/it.json
@@ -1057,8 +1521,24 @@ public static class Locales
             StageLabel.Neutral("Adolescente"),
             StageLabel.Gendered("Adulto", "Adulta")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} giorno" }, { PluralCategory.Other, "{n} giorni" } }),
+            UnitForms.Simple("{n} sett."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mese" }, { PluralCategory.Other, "{n} mesi" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} anno" }, { PluralCategory.Other, "{n} anni" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n}g" }, { PluralCategory.Other, "{n}gg" } }),
+            UnitForms.Simple("{n}sett."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mese" }, { PluralCategory.Other, "{n} mesi" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n}anno" }, { PluralCategory.Other, "{n}anni" } }),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ja.json
@@ -1085,8 +1565,24 @@ public static class Locales
             StageLabel.Neutral("青少年"),
             StageLabel.Neutral("成人")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} 日"),
+            UnitForms.Simple("{n} 週間"),
+            UnitForms.Simple("{n} か月"),
+            UnitForms.Simple("{n} 年"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            null,
+            null,
+            null
+        )
     );
 
     // Source: age/locales/src/jv.json
@@ -1113,8 +1609,24 @@ public static class Locales
             StageLabel.Neutral("Remaja"),
             StageLabel.Neutral("Diwasa")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} dina"),
+            UnitForms.Simple("{n} peken"),
+            UnitForms.Simple("{n} sasi"),
+            UnitForms.Simple("{n} taun"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n} peken"),
+            UnitForms.Simple("{n} sasi"),
+            UnitForms.Simple("{n} taun"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ka.json
@@ -1141,8 +1653,24 @@ public static class Locales
             StageLabel.Neutral("მოზარდი"),
             StageLabel.Neutral("ზრდასრული")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} დღე"),
+            UnitForms.Simple("{n} კვრ"),
+            UnitForms.Simple("{n} თვე"),
+            UnitForms.Simple("{n} წ"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} დღე"),
+            UnitForms.Simple("{n} კვრ"),
+            UnitForms.Simple("{n} თვე"),
+            UnitForms.Simple("{n} წ"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/kk.json
@@ -1169,8 +1697,24 @@ public static class Locales
             StageLabel.Neutral("Жасөспірім"),
             StageLabel.Neutral("Ересек")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} күн"),
+            UnitForms.Simple("{n} ап."),
+            UnitForms.Simple("{n} ай"),
+            UnitForms.Simple("{n} ж."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} к."),
+            UnitForms.Simple("{n} ап."),
+            UnitForms.Simple("{n} ай"),
+            UnitForms.Simple("{n} ж."),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/km.json
@@ -1197,8 +1741,24 @@ public static class Locales
             StageLabel.Neutral("យុវវ័យ"),
             StageLabel.Neutral("មនុស្សពេញវ័យ")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ថ្ងៃ"),
+            UnitForms.Simple("{n} សប្ដាហ៍"),
+            UnitForms.Simple("{n} ខែ"),
+            UnitForms.Simple("{n} ឆ្នាំ"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ថ្ងៃ"),
+            UnitForms.Simple("{n} សប្ដាហ៍"),
+            UnitForms.Simple("{n} ខែ"),
+            UnitForms.Simple("{n} ឆ្នាំ"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ko.json
@@ -1225,8 +1785,24 @@ public static class Locales
             StageLabel.Neutral("청소년"),
             StageLabel.Neutral("성인")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n}일"),
+            UnitForms.Simple("{n}주"),
+            UnitForms.Simple("{n}개월"),
+            UnitForms.Simple("{n}년"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}일"),
+            UnitForms.Simple("{n}주"),
+            UnitForms.Simple("{n}개월"),
+            UnitForms.Simple("{n}년"),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/kw.json
@@ -1253,8 +1829,24 @@ public static class Locales
             StageLabel.Neutral("Den yowynk"),
             StageLabel.Neutral("Den tevys")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} wk"),
+            UnitForms.Simple("{n} mo"),
+            UnitForms.Simple("{n} yr"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/lt.json
@@ -1281,8 +1873,24 @@ public static class Locales
             StageLabel.Gendered("Paauglys", "Paauglė"),
             StageLabel.Gendered("Suaugęs", "Suaugusi")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} sav."),
+            UnitForms.Simple("{n} mėn."),
+            UnitForms.Simple("{n} m."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} sav."),
+            UnitForms.Simple("{n} mėn."),
+            UnitForms.Simple("{n} m."),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/lv.json
@@ -1309,8 +1917,24 @@ public static class Locales
             StageLabel.Gendered("Pusaudzis", "Pusaudze"),
             StageLabel.Gendered("Pieaugušais", "Pieaugusī")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} ned."),
+            UnitForms.Simple("{n} mēn."),
+            UnitForms.Simple("{n} g."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} n."),
+            UnitForms.Simple("{n} m."),
+            UnitForms.Simple("{n} g."),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/mk.json
@@ -1337,8 +1961,24 @@ public static class Locales
             StageLabel.Neutral("Тинејџер"),
             StageLabel.Neutral("Возрасен")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ден" }, { PluralCategory.Other, "{n} дена" } }),
+            UnitForms.Simple("{n} сед."),
+            UnitForms.Simple("{n} мес."),
+            UnitForms.Simple("{n} год."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} д."),
+            UnitForms.Simple("{n} с."),
+            UnitForms.Simple("{n} м."),
+            UnitForms.Simple("{n} г."),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/mr.json
@@ -1365,8 +2005,24 @@ public static class Locales
             StageLabel.Gendered("किशोर", "किशोरी"),
             StageLabel.Neutral("प्रौढ")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} दिवस"),
+            UnitForms.Simple("{n} आ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} महिना" }, { PluralCategory.Other, "{n} महिने" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} वर्ष" }, { PluralCategory.Other, "{n} वर्षे" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}दि"),
+            UnitForms.Simple("{n}आ"),
+            UnitForms.Simple("{n}म"),
+            UnitForms.Simple("{n}व"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ms.json
@@ -1393,8 +2049,24 @@ public static class Locales
             StageLabel.Neutral("Remaja"),
             StageLabel.Neutral("Dewasa")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} hari"),
+            UnitForms.Simple("{n} mgu"),
+            UnitForms.Simple("{n} bln"),
+            UnitForms.Simple("{n} thn"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} h"),
+            UnitForms.Simple("{n} mgu"),
+            UnitForms.Simple("{n} bln"),
+            UnitForms.Simple("{n} thn"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/mt.json
@@ -1421,8 +2093,24 @@ public static class Locales
             StageLabel.Gendered("Adolexxent", "Adolexxenta"),
             StageLabel.Gendered("Adult", "Adulta")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} w"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} y"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} w"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} y"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/my.json
@@ -1449,8 +2137,24 @@ public static class Locales
             StageLabel.Neutral("ဆယ်ကျော်သက်"),
             StageLabel.Neutral("အရွယ်ရောက်")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ရက်"),
+            UnitForms.Simple("{n} ပတ်"),
+            UnitForms.Simple("{n} လ"),
+            UnitForms.Simple("{n} နှစ်"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ရက်"),
+            UnitForms.Simple("{n} ပတ်"),
+            UnitForms.Simple("{n} လ"),
+            UnitForms.Simple("{n} နှစ်"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/nb.json
@@ -1477,8 +2181,24 @@ public static class Locales
             StageLabel.Neutral("Tenåring"),
             StageLabel.Neutral("Voksen")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} u"),
+            UnitForms.Simple("{n} md."),
+            UnitForms.Simple("{n} år"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}u"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n}å"),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ne.json
@@ -1505,8 +2225,24 @@ public static class Locales
             StageLabel.Neutral("किशोर"),
             StageLabel.Neutral("वयस्क")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} दिन"),
+            UnitForms.Simple("{n} हप्ता"),
+            UnitForms.Simple("{n} महिना"),
+            UnitForms.Simple("{n} वर्ष"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} दिन"),
+            UnitForms.Simple("{n} हप्ता"),
+            UnitForms.Simple("{n} महिना"),
+            UnitForms.Simple("{n} वर्ष"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/nl.json
@@ -1533,8 +2269,24 @@ public static class Locales
             StageLabel.Neutral("Tiener"),
             StageLabel.Neutral("Volwassene")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dag" }, { PluralCategory.Other, "{n} dagen" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} wk" }, { PluralCategory.Other, "{n} wkn" } }),
+            UnitForms.Simple("{n} mnd"),
+            UnitForms.Simple("{n} jr"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} w"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} jr"),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/pa.json
@@ -1561,8 +2313,24 @@ public static class Locales
             StageLabel.Gendered("ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ"),
             StageLabel.Neutral("ਬਾਲਗ")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ਦਿਨ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ਹਫ਼ਤਾ" }, { PluralCategory.Other, "{n} ਹਫ਼ਤੇ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ਮਹੀਨਾ" }, { PluralCategory.Other, "{n} ਮਹੀਨੇ" } }),
+            UnitForms.Simple("{n} ਸਾਲ"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ਦਿਨ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ਹਫ਼ਤਾ" }, { PluralCategory.Other, "{n} ਹਫ਼ਤੇ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ਮਹੀਨਾ" }, { PluralCategory.Other, "{n} ਮਹੀਨੇ" } }),
+            UnitForms.Simple("{n} ਸਾਲ"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/pl.json
@@ -1589,8 +2357,24 @@ public static class Locales
             StageLabel.Gendered("Nastolatek", "Nastolatka"),
             StageLabel.Gendered("Dorosły", "Dorosła")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dzień" }, { PluralCategory.Few, "{n} dni" }, { PluralCategory.Many, "{n} dni" }, { PluralCategory.Other, "{n} dnia" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} tydz." }, { PluralCategory.Few, "{n} tyg." }, { PluralCategory.Many, "{n} tyg." }, { PluralCategory.Other, "{n} tyg." } }),
+            UnitForms.Simple("{n} mies."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} rok" }, { PluralCategory.Few, "{n} lata" }, { PluralCategory.Many, "{n} lat" }, { PluralCategory.Other, "{n} roku" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} t."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} m-c" }, { PluralCategory.Few, "{n} m-ce" }, { PluralCategory.Many, "{n} m-cy" }, { PluralCategory.Other, "{n} m-ca" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} r." }, { PluralCategory.Few, "{n} l." }, { PluralCategory.Many, "{n} l." }, { PluralCategory.Other, "{n} r." } }),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/pt.json
@@ -1617,8 +2401,24 @@ public static class Locales
             StageLabel.Neutral("Adolescente"),
             StageLabel.Gendered("Adulto", "Adulta")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dia" }, { PluralCategory.Other, "{n} dias" } }),
+            UnitForms.Simple("{n} sem."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mês" }, { PluralCategory.Other, "{n} meses" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ano" }, { PluralCategory.Other, "{n} anos" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dia" }, { PluralCategory.Other, "{n} dias" } }),
+            UnitForms.Simple("{n} sem."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mês" }, { PluralCategory.Other, "{n} meses" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ano" }, { PluralCategory.Other, "{n} anos" } }),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ro.json
@@ -1645,8 +2445,24 @@ public static class Locales
             StageLabel.Gendered("Adolescent", "Adolescentă"),
             StageLabel.Gendered("Adult", "Adultă")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} zi" }, { PluralCategory.Few, "{n} zile" }, { PluralCategory.Other, "{n} zile" } }),
+            UnitForms.Simple("{n} săpt."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} lună" }, { PluralCategory.Few, "{n} luni" }, { PluralCategory.Other, "{n} luni" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} an" }, { PluralCategory.Few, "{n} ani" }, { PluralCategory.Other, "{n} ani" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} z"),
+            UnitForms.Simple("{n} săpt."),
+            UnitForms.Simple("{n} l"),
+            UnitForms.Simple("{n} a"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ru.json
@@ -1673,8 +2489,24 @@ public static class Locales
             StageLabel.Neutral("Подросток"),
             StageLabel.Gendered("Взрослый", "Взрослая")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} дн."),
+            UnitForms.Simple("{n} нед."),
+            UnitForms.Simple("{n} мес."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} г." }, { PluralCategory.Few, "{n} г." }, { PluralCategory.Many, "{n} л." }, { PluralCategory.Other, "{n} г." } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} д."),
+            UnitForms.Simple("{n} н."),
+            UnitForms.Simple("{n} м."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} г." }, { PluralCategory.Few, "{n} г." }, { PluralCategory.Many, "{n} л." }, { PluralCategory.Other, "{n} г." } }),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/shi.json
@@ -1701,8 +2533,24 @@ public static class Locales
             StageLabel.Gendered("Aɛrim", "Taɛrimt"),
             StageLabel.Gendered("Argaz", "Tamṭṭuṭ")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} wk"),
+            UnitForms.Simple("{n} mo"),
+            UnitForms.Simple("{n} yr"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/si.json
@@ -1729,8 +2577,24 @@ public static class Locales
             StageLabel.Neutral("නව යොවුන්"),
             StageLabel.Neutral("වැඩිහිටි")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("දින {n}"),
+            UnitForms.Simple("සති {n}"),
+            UnitForms.Simple("මාස {n}"),
+            UnitForms.Simple("වසර {n}"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("දි {n}"),
+            UnitForms.Simple("ස {n}"),
+            UnitForms.Simple("මා {n}"),
+            UnitForms.Simple("ව {n}"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/sk.json
@@ -1757,8 +2621,24 @@ public static class Locales
             StageLabel.Neutral("Tínedžer"),
             StageLabel.Gendered("Dospelý", "Dospelá")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} deň" }, { PluralCategory.Few, "{n} dni" }, { PluralCategory.Many, "{n} dňa" }, { PluralCategory.Other, "{n} dní" } }),
+            UnitForms.Simple("{n} týž."),
+            UnitForms.Simple("{n} mes."),
+            UnitForms.Simple("{n} r."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} t."),
+            UnitForms.Simple("{n} m."),
+            UnitForms.Simple("{n} r."),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/sl.json
@@ -1785,8 +2665,24 @@ public static class Locales
             StageLabel.Gendered("Najstnik", "Najstnica"),
             StageLabel.Gendered("Odrasel", "Odrasla")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} t"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} l"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} t"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} l"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/sq.json
@@ -1813,8 +2709,24 @@ public static class Locales
             StageLabel.Gendered("Adoleshent", "Adoleshente"),
             StageLabel.Gendered("I rritur", "E rritur")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ditë"),
+            UnitForms.Simple("{n} javë"),
+            UnitForms.Simple("{n} muaj"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} vit" }, { PluralCategory.Other, "{n} vjet" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ditë"),
+            UnitForms.Simple("{n} javë"),
+            UnitForms.Simple("{n} muaj"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} vit" }, { PluralCategory.Other, "{n} vjet" } }),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/sr.json
@@ -1841,8 +2753,24 @@ public static class Locales
             StageLabel.Neutral("Тинејџер"),
             StageLabel.Neutral("Одрасла особа")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} дан" }, { PluralCategory.Few, "{n} дана" }, { PluralCategory.Other, "{n} дана" } }),
+            UnitForms.Simple("{n} нед."),
+            UnitForms.Simple("{n} мес."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} год" }, { PluralCategory.Few, "{n} год." }, { PluralCategory.Other, "{n} год." } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} д"),
+            UnitForms.Simple("{n} н"),
+            UnitForms.Simple("{n} м"),
+            UnitForms.Simple("{n} г"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/sv.json
@@ -1869,8 +2797,24 @@ public static class Locales
             StageLabel.Neutral("Tonåring"),
             StageLabel.Neutral("Vuxen")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} v"),
+            UnitForms.Simple("{n} mån"),
+            UnitForms.Simple("{n} år"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}v"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}å"),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/sw.json
@@ -1897,8 +2841,24 @@ public static class Locales
             StageLabel.Neutral("Kijana"),
             StageLabel.Neutral("Mtu mzima")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("siku {n}"),
+            UnitForms.Simple("wiki {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwezi {n}" }, { PluralCategory.Other, "miezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwaka {n}" }, { PluralCategory.Other, "miaka {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("siku {n}"),
+            UnitForms.Simple("wiki {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwezi {n}" }, { PluralCategory.Other, "miezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwaka {n}" }, { PluralCategory.Other, "miaka {n}" } }),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ta.json
@@ -1925,8 +2885,24 @@ public static class Locales
             StageLabel.Neutral("இளம்பருவம்"),
             StageLabel.Neutral("பெரியவர்")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} நாள்" }, { PluralCategory.Other, "{n} நாட்கள்" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} வாரம்" }, { PluralCategory.Other, "{n} வார." } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} மாதம்" }, { PluralCategory.Other, "{n} மாத." } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ஆண்டு" }, { PluralCategory.Other, "{n} ஆண்டு." } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} நா"),
+            UnitForms.Simple("{n} வா"),
+            UnitForms.Simple("{n} மா"),
+            UnitForms.Simple("{n} ஆ"),
+            null,
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/te.json
@@ -1953,8 +2929,24 @@ public static class Locales
             StageLabel.Neutral("కౌమారదశ"),
             StageLabel.Neutral("వయోజనులు")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} రోజు" }, { PluralCategory.Other, "{n} రోజులు" } }),
+            UnitForms.Simple("{n} వా."),
+            UnitForms.Simple("{n} నె."),
+            UnitForms.Simple("{n} సం."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}రో"),
+            UnitForms.Simple("{n}వా"),
+            UnitForms.Simple("{n}నె"),
+            UnitForms.Simple("{n}సం"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/th.json
@@ -1981,8 +2973,24 @@ public static class Locales
             StageLabel.Neutral("วัยรุ่น"),
             StageLabel.Neutral("ผู้ใหญ่")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} วัน"),
+            UnitForms.Simple("{n} สัปดาห์"),
+            UnitForms.Simple("{n} เดือน"),
+            UnitForms.Simple("{n} ปี"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}วัน"),
+            UnitForms.Simple("{n}สัปดาห์"),
+            UnitForms.Simple("{n}เดือน"),
+            UnitForms.Simple("{n}ปี"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/tr.json
@@ -2009,8 +3017,24 @@ public static class Locales
             StageLabel.Neutral("Ergen"),
             StageLabel.Neutral("Yetişkin")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} gün"),
+            UnitForms.Simple("{n} hf."),
+            UnitForms.Simple("{n} ay"),
+            UnitForms.Simple("{n} yıl"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}g"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}a"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/tzm.json
@@ -2037,8 +3061,24 @@ public static class Locales
             StageLabel.Gendered("Aɛrim", "Taɛrimt"),
             StageLabel.Gendered("Argaz", "Tamṭṭuṭ")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} wk"),
+            UnitForms.Simple("{n} mo"),
+            UnitForms.Simple("{n} yr"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/uk.json
@@ -2065,8 +3105,24 @@ public static class Locales
             StageLabel.Neutral("Підліток"),
             StageLabel.Gendered("Дорослий", "Доросла")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} дн."),
+            UnitForms.Simple("{n} тиж."),
+            UnitForms.Simple("{n} міс."),
+            UnitForms.Simple("{n} р."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}д"),
+            UnitForms.Simple("{n}т"),
+            UnitForms.Simple("{n}м"),
+            UnitForms.Simple("{n}р"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/ur.json
@@ -2093,8 +3149,24 @@ public static class Locales
             StageLabel.Neutral("نوجوان"),
             StageLabel.Neutral("بالغ")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} دن"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ہفتہ" }, { PluralCategory.Other, "{n} ہفتے" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مہینہ" }, { PluralCategory.Other, "{n} مہینے" } }),
+            UnitForms.Simple("{n} سال"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} دن"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ہفتہ" }, { PluralCategory.Other, "{n} ہفتے" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مہینہ" }, { PluralCategory.Other, "{n} مہینے" } }),
+            UnitForms.Simple("{n} سال"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/uz.json
@@ -2121,8 +3193,24 @@ public static class Locales
             StageLabel.Neutral("Oʻsmir"),
             StageLabel.Neutral("Katta")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} kun"),
+            UnitForms.Simple("{n} hafta"),
+            UnitForms.Simple("{n} oy"),
+            UnitForms.Simple("{n} yil"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} kun"),
+            UnitForms.Simple("{n} hafta"),
+            UnitForms.Simple("{n} oy"),
+            UnitForms.Simple("{n} yil"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/vi.json
@@ -2149,8 +3237,24 @@ public static class Locales
             StageLabel.Neutral("Thiếu niên"),
             StageLabel.Neutral("Người lớn")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ngày"),
+            UnitForms.Simple("{n} tuần"),
+            UnitForms.Simple("{n} tháng"),
+            UnitForms.Simple("{n} năm"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ngày"),
+            UnitForms.Simple("{n} tuần"),
+            UnitForms.Simple("{n} tháng"),
+            UnitForms.Simple("{n} năm"),
+            "{n}½",
+            "",
+            null
+        )
     );
 
     // Source: age/locales/src/zh.json
@@ -2177,8 +3281,24 @@ public static class Locales
             StageLabel.Neutral("青少年"),
             StageLabel.Neutral("成人")
         ),
-        null,
-        null
+        new CompactnessOverride(
+            UnitForms.Simple("{n}天"),
+            UnitForms.Simple("{n}周"),
+            UnitForms.Simple("{n}个月"),
+            UnitForms.Simple("{n}年"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}天"),
+            UnitForms.Simple("{n}周"),
+            UnitForms.Simple("{n}个月"),
+            UnitForms.Simple("{n}年"),
+            null,
+            null,
+            null
+        )
     );
 
     public static readonly IReadOnlyDictionary<string, AgeLocale> All =

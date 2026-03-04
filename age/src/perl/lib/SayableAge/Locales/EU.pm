@@ -34,6 +34,24 @@ sub locale {{
     teenager => 'Nerabea',
     adult => 'Heldua',
   },
+  short => {
+    units => {
+      day => '{n} egun',
+      week => '{n} aste',
+      month => '{n} hilabete',
+      year => '{n} urte',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} e.',
+      week => '{n} aste',
+      month => '{n} hil',
+      year => '{n} u.',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

@@ -31,4 +31,18 @@ final fa = AgeLocale(
   child: stageNeutral('کودک'),
   teenager: stageNeutral('نوجوان'),
   adult: stageNeutral('بزرگسال'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} روز'),
+    week: simpleUnit('{n} هفته'),
+    month: simpleUnit('{n} ماه'),
+    year: simpleUnit('{n} سال'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} روز'),
+    week: simpleUnit('{n} هفته'),
+    month: simpleUnit('{n} ماه'),
+    year: simpleUnit('{n} سال'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -39,4 +39,18 @@ var TR = sa.AgeLocale{
 		Teenager: sa.S("Ergen"),
 		Adult:    sa.S("Yetişkin"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} gün"},
+		Week:  &sa.UnitForms{Simple: "{n} hf."},
+		Month: &sa.UnitForms{Simple: "{n} ay"},
+		Year:  &sa.UnitForms{Simple: "{n} yıl"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}g"},
+		Week:      &sa.UnitForms{Simple: "{n}h"},
+		Month:     &sa.UnitForms{Simple: "{n}a"},
+		Year:      &sa.UnitForms{Simple: "{n}y"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

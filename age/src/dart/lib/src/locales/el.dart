@@ -31,4 +31,18 @@ final el = AgeLocale(
   child: stageNeutral('Παιδί'),
   teenager: stageGendered('Έφηβος', 'Έφηβη'),
   adult: stageGendered('Ενήλικας', 'Ενήλικη'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} ημέρα', PluralCategory.other: '{n} ημέρες'}),
+    week: simpleUnit('{n} εβδ.'),
+    month: simpleUnit('{n} μήν.'),
+    year: simpleUnit('{n} έτ.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} η'),
+    week: simpleUnit('{n} ε'),
+    month: simpleUnit('{n} μ'),
+    year: simpleUnit('{n} έ'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

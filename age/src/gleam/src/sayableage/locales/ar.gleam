@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.GenderedStage("طفل", "طفلة"),
     teenager: types.GenderedStage("مراهق", "مراهقة"),
     adult: types.GenderedStage("بالغ", "بالغة"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.PluralUnit([#(types.Zero, "{n} يوم"), #(types.One, "يوم"), #(types.Two, "يومان"), #(types.Few, "{n} أيام"), #(types.Many, "{n} يومًا"), #(types.Other, "{n} يوم")])),
+      week: Ok(types.PluralUnit([#(types.Zero, "{n} أسبوع"), #(types.One, "أسبوع"), #(types.Two, "أسبوعان"), #(types.Few, "{n} أسابيع"), #(types.Many, "{n} أسبوعًا"), #(types.Other, "{n} أسبوع")])),
+      month: Ok(types.PluralUnit([#(types.Zero, "{n} شهر"), #(types.One, "شهر"), #(types.Two, "شهران"), #(types.Few, "{n} أشهر"), #(types.Many, "{n} شهرًا"), #(types.Other, "{n} شهر")])),
+      year: Ok(types.PluralUnit([#(types.Zero, "{n} سنة"), #(types.One, "سنة واحدة"), #(types.Two, "سنتان"), #(types.Few, "{n} سنوات"), #(types.Many, "{n} سنة"), #(types.Other, "{n} سنة")])),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} ي")),
+      week: Ok(types.SimpleUnit("{n} أ")),
+      month: Ok(types.PluralUnit([#(types.Zero, "{n} شهر"), #(types.One, "شهر"), #(types.Two, "شهران"), #(types.Few, "{n} أشهر"), #(types.Many, "{n} شهرًا"), #(types.Other, "{n} شهر")])),
+      year: Ok(types.SimpleUnit("{n} سنة")),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

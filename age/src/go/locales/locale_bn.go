@@ -39,4 +39,18 @@ var BN = sa.AgeLocale{
 		Teenager: sa.G("কিশোর", "কিশোরী"),
 		Adult:    sa.S("প্রাপ্তবয়স্ক"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} দিন"},
+		Week:  &sa.UnitForms{Simple: "{n} সপ্তাহ"},
+		Month: &sa.UnitForms{Simple: "{n} মাস"},
+		Year:  &sa.UnitForms{Simple: "{n} বছর"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} দিন"},
+		Week:      &sa.UnitForms{Simple: "{n} সপ্তাহ"},
+		Month:     &sa.UnitForms{Simple: "{n} মাস"},
+		Year:      &sa.UnitForms{Simple: "{n} বছর"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

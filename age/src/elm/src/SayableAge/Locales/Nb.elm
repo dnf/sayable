@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "Tenåring"
         , adult = Neutral "Voksen"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} u")
+            , ovrMonth = Just (Simple "{n} md.")
+            , ovrYear = Just (Simple "{n} år")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}d")
+            , ovrWeek = Just (Simple "{n}u")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Simple "{n}å")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -44,4 +44,18 @@ var BS = sa.AgeLocale{
 		Teenager: sa.S("Tinejdžer"),
 		Adult:    sa.S("Odrasla osoba"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} dan", sa.Few: "{n} dana", sa.Other: "{n} dana"}),
+		Week:  &sa.UnitForms{Simple: "{n} sedm."},
+		Month: &sa.UnitForms{Simple: "{n} mj."},
+		Year:  &sa.UnitForms{Simple: "{n} god."},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} d."},
+		Week:      &sa.UnitForms{Simple: "{n} sedm."},
+		Month:     &sa.UnitForms{Simple: "{n} mj."},
+		Year:      &sa.UnitForms{Simple: "{n} god."},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

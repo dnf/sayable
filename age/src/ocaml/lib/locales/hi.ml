@@ -41,6 +41,22 @@ let locale : locale =
     ; teenager = Gendered ("किशोर", "किशोरी")
     ; adult = Neutral "वयस्क"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} दिन")
+      ; ovr_week = Some (Simple "{n} सप्ताह")
+      ; ovr_month = Some (Simple "{n} माह")
+      ; ovr_year = Some (Simple "{n} वर्ष")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} दि")
+      ; ovr_week = Some (Simple "{n} सप्ताह")
+      ; ovr_month = Some (Simple "{n} माह")
+      ; ovr_year = Some (Simple "{n} व")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

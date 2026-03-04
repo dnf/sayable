@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.AR do
         child: %{m: "طفل", f: "طفلة"},
         teenager: %{m: "مراهق", f: "مراهقة"},
         adult: %{m: "بالغ", f: "بالغة"}
+      },
+      short: %{
+        units: %{
+          day: %{zero: "{n} يوم", one: "يوم", two: "يومان", few: "{n} أيام", many: "{n} يومًا", other: "{n} يوم"},
+          week: %{zero: "{n} أسبوع", one: "أسبوع", two: "أسبوعان", few: "{n} أسابيع", many: "{n} أسبوعًا", other: "{n} أسبوع"},
+          month: %{zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"},
+          year: %{zero: "{n} سنة", one: "سنة واحدة", two: "سنتان", few: "{n} سنوات", many: "{n} سنة", other: "{n} سنة"}
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} ي",
+          week: "{n} أ",
+          month: %{zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"},
+          year: "{n} سنة"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

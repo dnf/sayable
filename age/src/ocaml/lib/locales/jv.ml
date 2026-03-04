@@ -29,6 +29,22 @@ let locale : locale =
     ; teenager = Neutral "Remaja"
     ; adult = Neutral "Diwasa"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} dina")
+      ; ovr_week = Some (Simple "{n} peken")
+      ; ovr_month = Some (Simple "{n} sasi")
+      ; ovr_year = Some (Simple "{n} taun")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n}d")
+      ; ovr_week = Some (Simple "{n} peken")
+      ; ovr_month = Some (Simple "{n} sasi")
+      ; ovr_year = Some (Simple "{n} taun")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

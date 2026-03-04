@@ -44,4 +44,18 @@ var RU = sa.AgeLocale{
 		Teenager: sa.S("Подросток"),
 		Adult:    sa.G("Взрослый", "Взрослая"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} дн."},
+		Week:  &sa.UnitForms{Simple: "{n} нед."},
+		Month: &sa.UnitForms{Simple: "{n} мес."},
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} г.", sa.Few: "{n} г.", sa.Many: "{n} л.", sa.Other: "{n} г."}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} д."},
+		Week:      &sa.UnitForms{Simple: "{n} н."},
+		Month:     &sa.UnitForms{Simple: "{n} м."},
+		Year:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} г.", sa.Few: "{n} г.", sa.Many: "{n} л.", sa.Other: "{n} г."}),
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

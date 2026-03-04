@@ -36,4 +36,18 @@ final br = AgeLocale(
   child: stageNeutral('Bugel'),
   teenager: stageNeutral('Den yaouank'),
   adult: stageNeutral('Den deuet da vad'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} sizh.'),
+    month: simpleUnit('{n} m.'),
+    year: simpleUnit('{n} bl.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}d'),
+    week: simpleUnit('{n}sizh.'),
+    month: simpleUnit('{n}m'),
+    year: simpleUnit('{n}b'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

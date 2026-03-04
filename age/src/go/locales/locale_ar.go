@@ -52,4 +52,18 @@ var AR = sa.AgeLocale{
 		Teenager: sa.G("مراهق", "مراهقة"),
 		Adult:    sa.G("بالغ", "بالغة"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} يوم", sa.One: "يوم", sa.Two: "يومان", sa.Few: "{n} أيام", sa.Many: "{n} يومًا", sa.Other: "{n} يوم"}),
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} أسبوع", sa.One: "أسبوع", sa.Two: "أسبوعان", sa.Few: "{n} أسابيع", sa.Many: "{n} أسبوعًا", sa.Other: "{n} أسبوع"}),
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} شهر", sa.One: "شهر", sa.Two: "شهران", sa.Few: "{n} أشهر", sa.Many: "{n} شهرًا", sa.Other: "{n} شهر"}),
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} سنة", sa.One: "سنة واحدة", sa.Two: "سنتان", sa.Few: "{n} سنوات", sa.Many: "{n} سنة", sa.Other: "{n} سنة"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} ي"},
+		Week:      &sa.UnitForms{Simple: "{n} أ"},
+		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} شهر", sa.One: "شهر", sa.Two: "شهران", sa.Few: "{n} أشهر", sa.Many: "{n} شهرًا", sa.Other: "{n} شهر"}),
+		Year:      &sa.UnitForms{Simple: "{n} سنة"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

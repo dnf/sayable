@@ -34,6 +34,24 @@ sub locale {{
     teenager => 'მოზარდი',
     adult => 'ზრდასრული',
   },
+  short => {
+    units => {
+      day => '{n} დღე',
+      week => '{n} კვრ',
+      month => '{n} თვე',
+      year => '{n} წ',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} დღე',
+      week => '{n} კვრ',
+      month => '{n} თვე',
+      year => '{n} წ',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

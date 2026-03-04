@@ -11,7 +11,7 @@
 
 """Indonesian locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 ID = AgeLocale(
     code="id",
@@ -33,4 +33,22 @@ ID = AgeLocale(
         "teenager": "Remaja",
         "adult": "Dewasa",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} hr",
+            "week": "{n} mgg",
+            "month": "{n} bln",
+            "year": "{n} thn",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} hr",
+            "week": "{n} mgg",
+            "month": "{n} bln",
+            "year": "{n} thn",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

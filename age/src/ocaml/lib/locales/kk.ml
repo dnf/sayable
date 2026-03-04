@@ -41,6 +41,22 @@ let locale : locale =
     ; teenager = Neutral "Жасөспірім"
     ; adult = Neutral "Ересек"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} күн")
+      ; ovr_week = Some (Simple "{n} ап.")
+      ; ovr_month = Some (Simple "{n} ай")
+      ; ovr_year = Some (Simple "{n} ж.")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} к.")
+      ; ovr_week = Some (Simple "{n} ап.")
+      ; ovr_month = Some (Simple "{n} ай")
+      ; ovr_year = Some (Simple "{n} ж.")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

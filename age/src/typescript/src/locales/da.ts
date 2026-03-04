@@ -31,4 +31,21 @@ export const da: AgeLocale = {
     teenager: 'Teenager',
     adult: 'Voksen',
   },
+  short: {
+    units: {
+      day:   { one: '{n} dag', other: '{n} dage' },
+      week:  { one: '{n} uge', other: '{n} uger' },
+      month: { one: '{n} md.', other: '{n} mdr.' },
+      year:  '{n} år',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n} d',
+      week:  '{n} u',
+      month: '{n} m',
+      year:  '{n} år',
+    },
+    delimiter: '',
+  },
 };

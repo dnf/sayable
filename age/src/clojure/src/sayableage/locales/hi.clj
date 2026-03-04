@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "नवजात"
    :stages {:newborn {:type :neutral :label "नवजात"} :infant {:type :neutral :label "शिशु"} :toddler {:type :gendered :m "छोटा बच्चा" :f "छोटी बच्ची"} :child {:type :gendered :m "बच्चा" :f "बच्ची"} :teenager {:type :gendered :m "किशोर" :f "किशोरी"} :adult {:type :neutral :label "वयस्क"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} दिन"} :week {:type :simple :form "{n} सप्ताह"} :month {:type :simple :form "{n} माह"} :year {:type :simple :form "{n} वर्ष"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} दि"} :week {:type :simple :form "{n} सप्ताह"} :month {:type :simple :form "{n} माह"} :year {:type :simple :form "{n} व"} :half "{n}½" :delimiter "" :just-born nil}})

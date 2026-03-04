@@ -48,6 +48,36 @@ locale = Locale
         , stageTeenager = Gendered "נער" "נערה"
         , stageAdult = Gendered "מבוגר" "מבוגרת"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} יום")
+              , (Two, "יומיים")
+              , (Other, "{n} ימ׳")
+              ])
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} שבוע")
+              , (Two, "שבועיים")
+              , (Other, "{n} שבועות")
+              ])
+            , ovrMonth = Just (Simple "{n} ח׳")
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} שנה")
+              , (Two, "{n} שנים")
+              , (Other, "{n} שנים")
+              ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} י׳")
+            , ovrWeek = Just (Simple "{n} ש′")
+            , ovrMonth = Just (Simple "{n} ח׳")
+            , ovrYear = Just (Simple "{n} ש′")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -36,6 +36,6 @@ const SaLocale sa_locale_gd = {
         { "Deugaire", "" },
         { "Inbheach", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} là", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} shn", "{n} shn", "{n} sn", NULL, "{n} sn" } }, true, { NULL, { NULL, "{n} mhìos", "{n} mhìos", "{n} mìos", NULL, "{n} mìos" } }, true, { NULL, { NULL, "{n} bhlia", "{n} bhlia", "{n} blia", NULL, "{n} blia" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}là", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}bl", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

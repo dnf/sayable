@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/th.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Thai locale.
 pub fn locale() -> AgeLocale {
@@ -33,8 +33,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("วัยรุ่น".to_string()),
             adult: StageLabel::Neutral("ผู้ใหญ่".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} วัน")),
+            week: Some(UnitForms::simple("{n} สัปดาห์")),
+            month: Some(UnitForms::simple("{n} เดือน")),
+            year: Some(UnitForms::simple("{n} ปี")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}วัน")),
+            week: Some(UnitForms::simple("{n}สัปดาห์")),
+            month: Some(UnitForms::simple("{n}เดือน")),
+            year: Some(UnitForms::simple("{n}ปี")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

@@ -34,6 +34,6 @@ const SaLocale sa_locale_et = {
         { "Teismeline", "" },
         { "Täiskasvanu", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} päev", NULL, NULL, NULL, "{n} päeva" } }, true, { "{n} näd", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} kuu", NULL, NULL, NULL, "{n} kuud" } }, true, { "{n} a", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} p", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} n", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} k", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} a", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
 };

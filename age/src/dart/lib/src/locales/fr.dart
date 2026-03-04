@@ -31,4 +31,18 @@ final fr = AgeLocale(
   child: stageNeutral('Enfant'),
   teenager: stageGendered('Adolescent', 'Adolescente'),
   adult: stageNeutral('Adulte'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} j'),
+    week: simpleUnit('{n} sem.'),
+    month: simpleUnit('{n} m.'),
+    year: pluralUnit({PluralCategory.one: '{n} an', PluralCategory.other: '{n} ans'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}j'),
+    week: simpleUnit('{n}sem.'),
+    month: simpleUnit('{n}m.'),
+    year: simpleUnit('{n}a'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -34,6 +34,6 @@ const SaLocale sa_locale_zh = {
         { "青少年", "" },
         { "成人", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n}天", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}周", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}个月", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}年", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}天", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}周", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}个月", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}年", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
 };

@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "ទើបនឹងកើត"
    :stages {:newborn {:type :neutral :label "ទើបនឹងកើត"} :infant {:type :neutral :label "ទារក"} :toddler {:type :neutral :label "កុមារតូច"} :child {:type :neutral :label "កុមារ"} :teenager {:type :neutral :label "យុវវ័យ"} :adult {:type :neutral :label "មនុស្សពេញវ័យ"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} ថ្ងៃ"} :week {:type :simple :form "{n} សប្ដាហ៍"} :month {:type :simple :form "{n} ខែ"} :year {:type :simple :form "{n} ឆ្នាំ"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} ថ្ងៃ"} :week {:type :simple :form "{n} សប្ដាហ៍"} :month {:type :simple :form "{n} ខែ"} :year {:type :simple :form "{n} ឆ្នាំ"} :half "{n}½" :delimiter "" :just-born nil}})

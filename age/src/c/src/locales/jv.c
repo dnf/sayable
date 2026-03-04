@@ -34,6 +34,6 @@ const SaLocale sa_locale_jv = {
         { "Remaja", "" },
         { "Diwasa", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} dina", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} peken", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sasi", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} taun", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} peken", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sasi", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} taun", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

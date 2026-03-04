@@ -34,6 +34,24 @@ sub locale {{
     teenager => 'Kijana',
     adult => 'Mtu mzima',
   },
+  short => {
+    units => {
+      day => 'siku {n}',
+      week => 'wiki {n}',
+      month => { one => 'mwezi {n}', other => 'miezi {n}' },
+      year => { one => 'mwaka {n}', other => 'miaka {n}' },
+    },
+  },
+  compact => {
+    units => {
+      day => 'siku {n}',
+      week => 'wiki {n}',
+      month => { one => 'mwezi {n}', other => 'miezi {n}' },
+      year => { one => 'mwaka {n}', other => 'miaka {n}' },
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

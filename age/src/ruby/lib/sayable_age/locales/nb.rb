@@ -32,6 +32,23 @@ module SayableAge
         teenager: 'Tenåring',
         adult: 'Voksen',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} d',
+          'week' => '{n} u',
+          'month' => '{n} md.',
+          'year' => '{n} år',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}d',
+          'week' => '{n}u',
+          'month' => '{n} m',
+          'year' => '{n}å',
+        },
+        delimiter: '',
+      ),
     )
   end
 end

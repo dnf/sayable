@@ -49,6 +49,32 @@ let locale : locale =
     ; teenager = Neutral "Подросток"
     ; adult = Gendered ("Взрослый", "Взрослая")
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} дн.")
+      ; ovr_week = Some (Simple "{n} нед.")
+      ; ovr_month = Some (Simple "{n} мес.")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} г.")
+          ; (Few, "{n} г.")
+          ; (Many, "{n} л.")
+          ; (Other, "{n} г.")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} д.")
+      ; ovr_week = Some (Simple "{n} н.")
+      ; ovr_month = Some (Simple "{n} м.")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} г.")
+          ; (Few, "{n} г.")
+          ; (Many, "{n} л.")
+          ; (Other, "{n} г.")
+          ])
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

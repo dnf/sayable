@@ -41,6 +41,34 @@ let locale : locale =
     ; teenager = Neutral "இளம்பருவம்"
     ; adult = Neutral "பெரியவர்"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} நாள்")
+          ; (Other, "{n} நாட்கள்")
+          ])
+      ; ovr_week = Some (Pluralized
+          [ (One, "{n} வாரம்")
+          ; (Other, "{n} வார.")
+          ])
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} மாதம்")
+          ; (Other, "{n} மாத.")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} ஆண்டு")
+          ; (Other, "{n} ஆண்டு.")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} நா")
+      ; ovr_week = Some (Simple "{n} வா")
+      ; ovr_month = Some (Simple "{n} மா")
+      ; ovr_year = Some (Simple "{n} ஆ")
+      ; ovr_half = None
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

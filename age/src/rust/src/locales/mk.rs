@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/mk.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Macedonian locale.
 pub fn locale() -> AgeLocale {
@@ -50,8 +50,27 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Тинејџер".to_string()),
             adult: StageLabel::Neutral("Возрасен".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ден"),
+                (PluralCategory::Other, "{n} дена"),
+            ])),
+            week: Some(UnitForms::simple("{n} сед.")),
+            month: Some(UnitForms::simple("{n} мес.")),
+            year: Some(UnitForms::simple("{n} год.")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} д.")),
+            week: Some(UnitForms::simple("{n} с.")),
+            month: Some(UnitForms::simple("{n} м.")),
+            year: Some(UnitForms::simple("{n} г.")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

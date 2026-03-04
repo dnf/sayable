@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Nyfødt"
    :stages {:newborn {:type :neutral :label "Nyfødt"} :infant {:type :neutral :label "Spædbarn"} :toddler {:type :neutral :label "Småbarn"} :child {:type :neutral :label "Barn"} :teenager {:type :neutral :label "Teenager"} :adult {:type :neutral :label "Voksen"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} dag" :other "{n} dage"}} :week {:type :pluralized :forms {:one "{n} uge" :other "{n} uger"}} :month {:type :pluralized :forms {:one "{n} md." :other "{n} mdr."}} :year {:type :simple :form "{n} år"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} u"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} år"} :half nil :delimiter "" :just-born nil}})

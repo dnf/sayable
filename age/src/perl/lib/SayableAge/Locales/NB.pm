@@ -34,6 +34,23 @@ sub locale {{
     teenager => 'Tenåring',
     adult => 'Voksen',
   },
+  short => {
+    units => {
+      day => '{n} d',
+      week => '{n} u',
+      month => '{n} md.',
+      year => '{n} år',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n}d',
+      week => '{n}u',
+      month => '{n} m',
+      year => '{n}å',
+    },
+    delimiter => '',
+  },
 }}
 
 1;

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ms.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Malay locale.
 pub fn locale() -> AgeLocale {
@@ -33,8 +33,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Remaja".to_string()),
             adult: StageLabel::Neutral("Dewasa".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} hari")),
+            week: Some(UnitForms::simple("{n} mgu")),
+            month: Some(UnitForms::simple("{n} bln")),
+            year: Some(UnitForms::simple("{n} thn")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} h")),
+            week: Some(UnitForms::simple("{n} mgu")),
+            month: Some(UnitForms::simple("{n} bln")),
+            year: Some(UnitForms::simple("{n} thn")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

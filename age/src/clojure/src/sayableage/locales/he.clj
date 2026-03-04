@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "רק נולד"
    :stages {:newborn {:type :gendered :m "רק נולד" :f "רק נולדה"} :infant {:type :neutral :label "תינוק"} :toddler {:type :neutral :label "פעוט"} :child {:type :gendered :m "ילד" :f "ילדה"} :teenager {:type :gendered :m "נער" :f "נערה"} :adult {:type :gendered :m "מבוגר" :f "מבוגרת"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} יום" :two "יומיים" :other "{n} ימ׳"}} :week {:type :pluralized :forms {:one "{n} שבוע" :two "שבועיים" :other "{n} שבועות"}} :month {:type :simple :form "{n} ח׳"} :year {:type :pluralized :forms {:one "{n} שנה" :two "{n} שנים" :other "{n} שנים"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} י׳"} :week {:type :simple :form "{n} ש′"} :month {:type :simple :form "{n} ח׳"} :year {:type :simple :form "{n} ש′"} :half "{n}½" :delimiter "" :just-born nil}})

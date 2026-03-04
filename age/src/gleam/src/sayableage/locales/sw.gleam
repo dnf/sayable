@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.NeutralStage("Mtoto"),
     teenager: types.NeutralStage("Kijana"),
     adult: types.NeutralStage("Mtu mzima"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("siku {n}")),
+      week: Ok(types.SimpleUnit("wiki {n}")),
+      month: Ok(types.PluralUnit([#(types.One, "mwezi {n}"), #(types.Other, "miezi {n}")])),
+      year: Ok(types.PluralUnit([#(types.One, "mwaka {n}"), #(types.Other, "miaka {n}")])),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("siku {n}")),
+      week: Ok(types.SimpleUnit("wiki {n}")),
+      month: Ok(types.PluralUnit([#(types.One, "mwezi {n}"), #(types.Other, "miezi {n}")])),
+      year: Ok(types.PluralUnit([#(types.One, "mwaka {n}"), #(types.Other, "miaka {n}")])),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

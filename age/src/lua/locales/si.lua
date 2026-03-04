@@ -30,5 +30,23 @@ M.stages = {
     teenager = "නව යොවුන්",
     adult = "වැඩිහිටි",
 }
+M.short = {
+    units = {
+        day = "දින {n}",
+        week = "සති {n}",
+        month = "මාස {n}",
+        year = "වසර {n}",
+    },
+}
+M.compact = {
+    units = {
+        day = "දි {n}",
+        week = "ස {n}",
+        month = "මා {n}",
+        year = "ව {n}",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

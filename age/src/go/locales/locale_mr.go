@@ -39,4 +39,18 @@ var MR = sa.AgeLocale{
 		Teenager: sa.G("किशोर", "किशोरी"),
 		Adult:    sa.S("प्रौढ"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} दिवस"},
+		Week:  &sa.UnitForms{Simple: "{n} आ"},
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} महिना", sa.Other: "{n} महिने"}),
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} वर्ष", sa.Other: "{n} वर्षे"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}दि"},
+		Week:      &sa.UnitForms{Simple: "{n}आ"},
+		Month:     &sa.UnitForms{Simple: "{n}म"},
+		Year:      &sa.UnitForms{Simple: "{n}व"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

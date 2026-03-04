@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Neutral "Teini"
         , stageAdult = Neutral "Aikuinen"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} pv")
+            , ovrWeek = Just (Simple "{n} vk")
+            , ovrMonth = Just (Simple "{n} kk")
+            , ovrYear = Just (Simple "{n} v")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}pv")
+            , ovrWeek = Just (Simple "{n}vk")
+            , ovrMonth = Just (Simple "{n}kk")
+            , ovrYear = Just (Simple "{n}v")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

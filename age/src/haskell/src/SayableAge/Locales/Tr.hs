@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Neutral "Ergen"
         , stageAdult = Neutral "Yetişkin"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} gün")
+            , ovrWeek = Just (Simple "{n} hf.")
+            , ovrMonth = Just (Simple "{n} ay")
+            , ovrYear = Just (Simple "{n} yıl")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}g")
+            , ovrWeek = Just (Simple "{n}h")
+            , ovrMonth = Just (Simple "{n}a")
+            , ovrYear = Just (Simple "{n}y")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

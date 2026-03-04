@@ -47,6 +47,24 @@ locale =
         , teenager = Gendered "কিশোর" "কিশোরী"
         , adult = Neutral "প্রাপ্তবয়স্ক"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} দিন")
+            , ovrWeek = Just (Simple "{n} সপ্তাহ")
+            , ovrMonth = Just (Simple "{n} মাস")
+            , ovrYear = Just (Simple "{n} বছর")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} দিন")
+            , ovrWeek = Just (Simple "{n} সপ্তাহ")
+            , ovrMonth = Just (Simple "{n} মাস")
+            , ovrYear = Just (Simple "{n} বছর")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

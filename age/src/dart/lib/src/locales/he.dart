@@ -32,4 +32,18 @@ final he = AgeLocale(
   child: stageGendered('ילד', 'ילדה'),
   teenager: stageGendered('נער', 'נערה'),
   adult: stageGendered('מבוגר', 'מבוגרת'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} יום', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימ׳'}),
+    week: pluralUnit({PluralCategory.one: '{n} שבוע', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'}),
+    month: simpleUnit('{n} ח׳'),
+    year: pluralUnit({PluralCategory.one: '{n} שנה', PluralCategory.two: '{n} שנים', PluralCategory.other: '{n} שנים'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} י׳'),
+    week: simpleUnit('{n} ש′'),
+    month: simpleUnit('{n} ח׳'),
+    year: simpleUnit('{n} ש′'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

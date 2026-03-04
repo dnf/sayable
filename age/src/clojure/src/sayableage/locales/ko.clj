@@ -22,5 +22,5 @@
    :delimiter " "
    :just-born "신생아"
    :stages {:newborn {:type :neutral :label "신생아"} :infant {:type :neutral :label "영아"} :toddler {:type :neutral :label "유아"} :child {:type :neutral :label "아동"} :teenager {:type :neutral :label "청소년"} :adult {:type :neutral :label "성인"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n}일"} :week {:type :simple :form "{n}주"} :month {:type :simple :form "{n}개월"} :year {:type :simple :form "{n}년"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}일"} :week {:type :simple :form "{n}주"} :month {:type :simple :form "{n}개월"} :year {:type :simple :form "{n}년"} :half nil :delimiter "" :just-born nil}})

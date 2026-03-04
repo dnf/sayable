@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'Nerabea',
         adult: 'Heldua',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} egun',
+          'week' => '{n} aste',
+          'month' => '{n} hilabete',
+          'year' => '{n} urte',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} e.',
+          'week' => '{n} aste',
+          'month' => '{n} hil',
+          'year' => '{n} u.',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

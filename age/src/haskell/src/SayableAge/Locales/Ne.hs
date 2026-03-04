@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Neutral "किशोर"
         , stageAdult = Neutral "वयस्क"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} दिन")
+            , ovrWeek = Just (Simple "{n} हप्ता")
+            , ovrMonth = Just (Simple "{n} महिना")
+            , ovrYear = Just (Simple "{n} वर्ष")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} दिन")
+            , ovrWeek = Just (Simple "{n} हप्ता")
+            , ovrMonth = Just (Simple "{n} महिना")
+            , ovrYear = Just (Simple "{n} वर्ष")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

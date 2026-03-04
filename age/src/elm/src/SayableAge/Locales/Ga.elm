@@ -59,6 +59,36 @@ locale =
         , teenager = Neutral "Déagóir"
         , adult = Neutral "Duine fásta"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} lá")
+            , ovrWeek = Just (Simple "{n} scht")
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} mí" )
+                  , ( Two, "{n} mí" )
+                  , ( Few, "{n} mí" )
+                  , ( Many, "{n} mí" )
+                  , ( Other, "{n} m" )
+                  ])
+            , ovrYear = Just (Simple "{n} bl")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} lá")
+            , ovrWeek = Just (Simple "{n} scht")
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n}m" )
+                  , ( Two, "{n}m" )
+                  , ( Few, "{n}m" )
+                  , ( Many, "{n}m" )
+                  , ( Other, "{n} m" )
+                  ])
+            , ovrYear = Just (Simple "{n} bl")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -38,6 +38,25 @@ let locale : locale =
     ; teenager = Gendered ("Adolescent", "Adolescente")
     ; adult = Neutral "Adulte"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} j")
+      ; ovr_week = Some (Simple "{n} sem.")
+      ; ovr_month = Some (Simple "{n} m.")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} an")
+          ; (Other, "{n} ans")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n}j")
+      ; ovr_week = Some (Simple "{n}sem.")
+      ; ovr_month = Some (Simple "{n}m.")
+      ; ovr_year = Some (Simple "{n}a")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

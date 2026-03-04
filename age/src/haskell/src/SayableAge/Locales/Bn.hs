@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Gendered "কিশোর" "কিশোরী"
         , stageAdult = Neutral "প্রাপ্তবয়স্ক"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} দিন")
+            , ovrWeek = Just (Simple "{n} সপ্তাহ")
+            , ovrMonth = Just (Simple "{n} মাস")
+            , ovrYear = Just (Simple "{n} বছর")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} দিন")
+            , ovrWeek = Just (Simple "{n} সপ্তাহ")
+            , ovrMonth = Just (Simple "{n} মাস")
+            , ovrYear = Just (Simple "{n} বছর")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

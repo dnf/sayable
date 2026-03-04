@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ja.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Japanese locale.
 pub fn locale() -> AgeLocale {
@@ -33,8 +33,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("青少年".to_string()),
             adult: StageLabel::Neutral("成人".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} 日")),
+            week: Some(UnitForms::simple("{n} 週間")),
+            month: Some(UnitForms::simple("{n} か月")),
+            year: Some(UnitForms::simple("{n} 年")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}d")),
+            week: Some(UnitForms::simple("{n}w")),
+            month: Some(UnitForms::simple("{n}m")),
+            year: Some(UnitForms::simple("{n}y")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

@@ -59,6 +59,24 @@ locale =
         , teenager = Gendered "Pusaudzis" "Pusaudze"
         , adult = Gendered "Pieaugušais" "Pieaugusī"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} ned.")
+            , ovrMonth = Just (Simple "{n} mēn.")
+            , ovrYear = Just (Simple "{n} g.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} n.")
+            , ovrMonth = Just (Simple "{n} m.")
+            , ovrYear = Just (Simple "{n} g.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

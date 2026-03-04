@@ -11,7 +11,7 @@
 
 """French locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 FR = AgeLocale(
     code="fr",
@@ -33,4 +33,22 @@ FR = AgeLocale(
         "teenager": {"m": "Adolescent", "f": "Adolescente"},
         "adult": "Adulte",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} j",
+            "week": "{n} sem.",
+            "month": "{n} m.",
+            "year": {"one": "{n} an", "other": "{n} ans"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}j",
+            "week": "{n}sem.",
+            "month": "{n}m.",
+            "year": "{n}a",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'Teini',
         adult: 'Aikuinen',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} pv',
+          'week' => '{n} vk',
+          'month' => '{n} kk',
+          'year' => '{n} v',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}pv',
+          'week' => '{n}vk',
+          'month' => '{n}kk',
+          'year' => '{n}v',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

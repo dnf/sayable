@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.AZ do
         child: "Uşaq",
         teenager: "Yeniyetmə",
         adult: "Böyük"
+      },
+      short: %{
+        units: %{
+          day: "{n} gün",
+          week: "{n} hft",
+          month: "{n} ay",
+          year: "{n} il"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} gün",
+          week: "{n} hft",
+          month: "{n} ay",
+          year: "{n} il"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

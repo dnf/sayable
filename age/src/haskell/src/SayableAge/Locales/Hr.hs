@@ -52,6 +52,28 @@ locale = Locale
         , stageTeenager = Neutral "Tinejdžer"
         , stageAdult = Neutral "Odrasla osoba"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} dan")
+              , (Few, "{n} dana")
+              , (Other, "{n} dana")
+              ])
+            , ovrWeek = Just (Simple "{n} tj.")
+            , ovrMonth = Just (Simple "{n} mj.")
+            , ovrYear = Just (Simple "{n} g.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} tj.")
+            , ovrMonth = Just (Simple "{n} mj.")
+            , ovrYear = Just (Simple "{n} g.")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

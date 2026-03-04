@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ur.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Urdu locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,36 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("نوجوان".to_string()),
             adult: StageLabel::Neutral("بالغ".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} دن")),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ہفتہ"),
+                (PluralCategory::Other, "{n} ہفتے"),
+            ])),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} مہینہ"),
+                (PluralCategory::Other, "{n} مہینے"),
+            ])),
+            year: Some(UnitForms::simple("{n} سال")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} دن")),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ہفتہ"),
+                (PluralCategory::Other, "{n} ہفتے"),
+            ])),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} مہینہ"),
+                (PluralCategory::Other, "{n} مہینے"),
+            ])),
+            year: Some(UnitForms::simple("{n} سال")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

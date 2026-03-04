@@ -11,7 +11,7 @@
 
 """Khmer locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 KM = AgeLocale(
     code="km",
@@ -33,4 +33,22 @@ KM = AgeLocale(
         "teenager": "យុវវ័យ",
         "adult": "មនុស្សពេញវ័យ",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} ថ្ងៃ",
+            "week": "{n} សប្ដាហ៍",
+            "month": "{n} ខែ",
+            "year": "{n} ឆ្នាំ",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} ថ្ងៃ",
+            "week": "{n} សប្ដាហ៍",
+            "month": "{n} ខែ",
+            "year": "{n} ឆ្នាំ",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

@@ -38,6 +38,24 @@ module SayableAge
         teenager: 'Deugaire',
         adult: 'Inbheach',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} là',
+          'week' => { one: '{n} shn', two: '{n} shn', few: '{n} sn', other: '{n} sn' },
+          'month' => { one: '{n} mhìos', two: '{n} mhìos', few: '{n} mìos', other: '{n} mìos' },
+          'year' => { one: '{n} bhlia', two: '{n} bhlia', few: '{n} blia', other: '{n} blia' },
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}là',
+          'week' => '{n}s',
+          'month' => '{n}m',
+          'year' => '{n}bl',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

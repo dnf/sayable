@@ -39,4 +39,18 @@ var AZ = sa.AgeLocale{
 		Teenager: sa.S("Yeniyetmə"),
 		Adult:    sa.S("Böyük"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} gün"},
+		Week:  &sa.UnitForms{Simple: "{n} hft"},
+		Month: &sa.UnitForms{Simple: "{n} ay"},
+		Year:  &sa.UnitForms{Simple: "{n} il"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} gün"},
+		Week:      &sa.UnitForms{Simple: "{n} hft"},
+		Month:     &sa.UnitForms{Simple: "{n} ay"},
+		Year:      &sa.UnitForms{Simple: "{n} il"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

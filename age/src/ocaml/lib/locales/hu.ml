@@ -29,6 +29,22 @@ let locale : locale =
     ; teenager = Neutral "Tinédzser"
     ; adult = Neutral "Felnőtt"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} nap")
+      ; ovr_week = Some (Simple "{n} hét")
+      ; ovr_month = Some (Simple "{n} hónap")
+      ; ovr_year = Some (Simple "{n} év")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} nap")
+      ; ovr_week = Some (Simple "{n} hét")
+      ; ovr_month = Some (Simple "{n} h.")
+      ; ovr_year = Some (Simple "{n} év")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

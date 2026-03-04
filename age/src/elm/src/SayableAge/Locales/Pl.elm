@@ -63,6 +63,49 @@ locale =
         , teenager = Gendered "Nastolatek" "Nastolatka"
         , adult = Gendered "Dorosły" "Dorosła"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} dzień" )
+                  , ( Few, "{n} dni" )
+                  , ( Many, "{n} dni" )
+                  , ( Other, "{n} dnia" )
+                  ])
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} tydz." )
+                  , ( Few, "{n} tyg." )
+                  , ( Many, "{n} tyg." )
+                  , ( Other, "{n} tyg." )
+                  ])
+            , ovrMonth = Just (Simple "{n} mies.")
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} rok" )
+                  , ( Few, "{n} lata" )
+                  , ( Many, "{n} lat" )
+                  , ( Other, "{n} roku" )
+                  ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} t.")
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} m-c" )
+                  , ( Few, "{n} m-ce" )
+                  , ( Many, "{n} m-cy" )
+                  , ( Other, "{n} m-ca" )
+                  ])
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} r." )
+                  , ( Few, "{n} l." )
+                  , ( Many, "{n} l." )
+                  , ( Other, "{n} r." )
+                  ])
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

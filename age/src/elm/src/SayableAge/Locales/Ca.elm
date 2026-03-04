@@ -47,6 +47,36 @@ locale =
         , teenager = Neutral "Adolescent"
         , adult = Gendered "Adult" "Adulta"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} dia" )
+                  , ( Other, "{n} dies" )
+                  ])
+            , ovrWeek = Just (Simple "{n} setm.")
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} mes" )
+                  , ( Other, "{n} m" )
+                  ])
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} any" )
+                  , ( Other, "{n} anys" )
+                  ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} setm.")
+            , ovrMonth = Just (Simple "{n} m")
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} any" )
+                  , ( Other, "{n} anys" )
+                  ])
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -34,6 +34,6 @@ const SaLocale sa_locale_sw = {
         { "Kijana", "" },
         { "Mtu mzima", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "siku {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "wiki {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "mwezi {n}", NULL, NULL, NULL, "miezi {n}" } }, true, { NULL, { NULL, "mwaka {n}", NULL, NULL, NULL, "miaka {n}" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "siku {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "wiki {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "mwezi {n}", NULL, NULL, NULL, "miezi {n}" } }, true, { NULL, { NULL, "mwaka {n}", NULL, NULL, NULL, "miaka {n}" } }, true, "{n}½", true, "", false, NULL }
 };

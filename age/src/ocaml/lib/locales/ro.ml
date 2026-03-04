@@ -45,6 +45,34 @@ let locale : locale =
     ; teenager = Gendered ("Adolescent", "Adolescentă")
     ; adult = Gendered ("Adult", "Adultă")
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} zi")
+          ; (Few, "{n} zile")
+          ; (Other, "{n} zile")
+          ])
+      ; ovr_week = Some (Simple "{n} săpt.")
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} lună")
+          ; (Few, "{n} luni")
+          ; (Other, "{n} luni")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} an")
+          ; (Few, "{n} ani")
+          ; (Other, "{n} ani")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} z")
+      ; ovr_week = Some (Simple "{n} săpt.")
+      ; ovr_month = Some (Simple "{n} l")
+      ; ovr_year = Some (Simple "{n} a")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

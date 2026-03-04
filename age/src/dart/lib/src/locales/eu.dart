@@ -30,4 +30,18 @@ final eu = AgeLocale(
   child: stageNeutral('Umea'),
   teenager: stageNeutral('Nerabea'),
   adult: stageNeutral('Heldua'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} egun'),
+    week: simpleUnit('{n} aste'),
+    month: simpleUnit('{n} hilabete'),
+    year: simpleUnit('{n} urte'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} e.'),
+    week: simpleUnit('{n} aste'),
+    month: simpleUnit('{n} hil'),
+    year: simpleUnit('{n} u.'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

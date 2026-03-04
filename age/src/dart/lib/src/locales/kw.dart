@@ -36,4 +36,18 @@ final kw = AgeLocale(
   child: stageNeutral('Flogh'),
   teenager: stageNeutral('Den yowynk'),
   adult: stageNeutral('Den tevys'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} wk'),
+    month: simpleUnit('{n} mo'),
+    year: simpleUnit('{n} yr'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}d'),
+    week: simpleUnit('{n}w'),
+    month: simpleUnit('{n}m'),
+    year: simpleUnit('{n}y'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

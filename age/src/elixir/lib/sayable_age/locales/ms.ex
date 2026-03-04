@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.MS do
         child: "Kanak-kanak",
         teenager: "Remaja",
         adult: "Dewasa"
+      },
+      short: %{
+        units: %{
+          day: "{n} hari",
+          week: "{n} mgu",
+          month: "{n} bln",
+          year: "{n} thn"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} h",
+          week: "{n} mgu",
+          month: "{n} bln",
+          year: "{n} thn"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

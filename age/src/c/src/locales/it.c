@@ -34,6 +34,6 @@ const SaLocale sa_locale_it = {
         { "Adolescente", "" },
         { "Adulto", "Adulta" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} giorno", NULL, NULL, NULL, "{n} giorni" } }, true, { "{n} sett.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} mese", NULL, NULL, NULL, "{n} mesi" } }, true, { NULL, { NULL, "{n} anno", NULL, NULL, NULL, "{n} anni" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { NULL, { NULL, "{n}g", NULL, NULL, NULL, "{n}gg" } }, true, { "{n}sett.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} mese", NULL, NULL, NULL, "{n} mesi" } }, true, { NULL, { NULL, "{n}anno", NULL, NULL, NULL, "{n}anni" } }, true, "{n}½", true, "", false, NULL }
 };

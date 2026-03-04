@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Nou-născut"
    :stages {:newborn {:type :gendered :m "Nou-născut" :f "Nou-născută"} :infant {:type :neutral :label "Sugar"} :toddler {:type :neutral :label "Copil mic"} :child {:type :neutral :label "Copil"} :teenager {:type :gendered :m "Adolescent" :f "Adolescentă"} :adult {:type :gendered :m "Adult" :f "Adultă"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} zi" :few "{n} zile" :other "{n} zile"}} :week {:type :simple :form "{n} săpt."} :month {:type :pluralized :forms {:one "{n} lună" :few "{n} luni" :other "{n} luni"}} :year {:type :pluralized :forms {:one "{n} an" :few "{n} ani" :other "{n} ani"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} z"} :week {:type :simple :form "{n} săpt."} :month {:type :simple :form "{n} l"} :year {:type :simple :form "{n} a"} :half "{n}½" :delimiter "" :just-born nil}})

@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'Tinedyer',
         adult: 'Matanda',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} araw',
+          'week' => { one: '{n} linggo', other: '{n} na linggo' },
+          'month' => '{n} buwan',
+          'year' => '{n} taon',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => { one: '{n} araw', other: '{n} na araw' },
+          'week' => '{n}linggo',
+          'month' => { one: '{n}buwan', other: '{n} buwan' },
+          'year' => '{n}taon',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

@@ -31,4 +31,17 @@ final nl = AgeLocale(
   child: stageNeutral('Kind'),
   teenager: stageNeutral('Tiener'),
   adult: stageNeutral('Volwassene'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dagen'}),
+    week: pluralUnit({PluralCategory.one: '{n} wk', PluralCategory.other: '{n} wkn'}),
+    month: simpleUnit('{n} mnd'),
+    year: simpleUnit('{n} jr'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} d'),
+    week: simpleUnit('{n} w'),
+    month: simpleUnit('{n} m'),
+    year: simpleUnit('{n} jr'),
+    delimiter: '',
+  ),
 );

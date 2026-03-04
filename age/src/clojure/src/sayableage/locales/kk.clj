@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Жаңа туған"
    :stages {:newborn {:type :neutral :label "Жаңа туған"} :infant {:type :neutral :label "Нәресте"} :toddler {:type :neutral :label "Сәби"} :child {:type :neutral :label "Бала"} :teenager {:type :neutral :label "Жасөспірім"} :adult {:type :neutral :label "Ересек"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} күн"} :week {:type :simple :form "{n} ап."} :month {:type :simple :form "{n} ай"} :year {:type :simple :form "{n} ж."} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} к."} :week {:type :simple :form "{n} ап."} :month {:type :simple :form "{n} ай"} :year {:type :simple :form "{n} ж."} :half "{n}½" :delimiter "" :just-born nil}})

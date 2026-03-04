@@ -37,5 +37,23 @@ M.stages = {
     teenager = "Тинејџер",
     adult = "Возрасен",
 }
+M.short = {
+    units = {
+        day = { one = "{n} ден", other = "{n} дена" },
+        week = "{n} сед.",
+        month = "{n} мес.",
+        year = "{n} год.",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} д.",
+        week = "{n} с.",
+        month = "{n} м.",
+        year = "{n} г.",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

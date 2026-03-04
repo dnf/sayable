@@ -32,6 +32,24 @@ module SayableAge
         teenager: { m: 'Adolescent', f: 'Adolescente' },
         adult: 'Adulte',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} j',
+          'week' => '{n} sem.',
+          'month' => '{n} m.',
+          'year' => { one: '{n} an', other: '{n} ans' },
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}j',
+          'week' => '{n}sem.',
+          'month' => '{n}m.',
+          'year' => '{n}a',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

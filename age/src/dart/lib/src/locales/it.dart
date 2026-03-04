@@ -31,4 +31,18 @@ final it = AgeLocale(
   child: stageGendered('Bambino', 'Bambina'),
   teenager: stageNeutral('Adolescente'),
   adult: stageGendered('Adulto', 'Adulta'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} giorno', PluralCategory.other: '{n} giorni'}),
+    week: simpleUnit('{n} sett.'),
+    month: pluralUnit({PluralCategory.one: '{n} mese', PluralCategory.other: '{n} mesi'}),
+    year: pluralUnit({PluralCategory.one: '{n} anno', PluralCategory.other: '{n} anni'}),
+  ),
+  compact: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n}g', PluralCategory.other: '{n}gg'}),
+    week: simpleUnit('{n}sett.'),
+    month: pluralUnit({PluralCategory.one: '{n} mese', PluralCategory.other: '{n} mesi'}),
+    year: pluralUnit({PluralCategory.one: '{n}anno', PluralCategory.other: '{n}anni'}),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

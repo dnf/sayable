@@ -39,4 +39,18 @@ var FR = sa.AgeLocale{
 		Teenager: sa.G("Adolescent", "Adolescente"),
 		Adult:    sa.S("Adulte"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} j"},
+		Week:  &sa.UnitForms{Simple: "{n} sem."},
+		Month: &sa.UnitForms{Simple: "{n} m."},
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} an", sa.Other: "{n} ans"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}j"},
+		Week:      &sa.UnitForms{Simple: "{n}sem."},
+		Month:     &sa.UnitForms{Simple: "{n}m."},
+		Year:      &sa.UnitForms{Simple: "{n}a"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ga.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Irish locale.
 pub fn locale() -> AgeLocale {
@@ -63,8 +63,36 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Déagóir".to_string()),
             adult: StageLabel::Neutral("Duine fásta".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} lá")),
+            week: Some(UnitForms::simple("{n} scht")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} mí"),
+                (PluralCategory::Two, "{n} mí"),
+                (PluralCategory::Few, "{n} mí"),
+                (PluralCategory::Many, "{n} mí"),
+                (PluralCategory::Other, "{n} m"),
+            ])),
+            year: Some(UnitForms::simple("{n} bl")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} lá")),
+            week: Some(UnitForms::simple("{n} scht")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n}m"),
+                (PluralCategory::Two, "{n}m"),
+                (PluralCategory::Few, "{n}m"),
+                (PluralCategory::Many, "{n}m"),
+                (PluralCategory::Other, "{n} m"),
+            ])),
+            year: Some(UnitForms::simple("{n} bl")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

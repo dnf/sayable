@@ -35,6 +35,6 @@ const SaLocale sa_locale_he = {
         { "נער", "נערה" },
         { "מבוגר", "מבוגרת" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} יום", "יומיים", NULL, NULL, "{n} ימ׳" } }, true, { NULL, { NULL, "{n} שבוע", "שבועיים", NULL, NULL, "{n} שבועות" } }, true, { "{n} ח׳", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} שנה", "{n} שנים", NULL, NULL, "{n} שנים" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} י׳", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ש′", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ח׳", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ש′", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

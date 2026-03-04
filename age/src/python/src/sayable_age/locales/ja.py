@@ -11,7 +11,7 @@
 
 """Japanese locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 JA = AgeLocale(
     code="ja",
@@ -33,4 +33,20 @@ JA = AgeLocale(
         "teenager": "青少年",
         "adult": "成人",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} 日",
+            "week": "{n} 週間",
+            "month": "{n} か月",
+            "year": "{n} 年",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}d",
+            "week": "{n}w",
+            "month": "{n}m",
+            "year": "{n}y",
+        },
+    ),
 )

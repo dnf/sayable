@@ -39,4 +39,18 @@ var FA = sa.AgeLocale{
 		Teenager: sa.S("نوجوان"),
 		Adult:    sa.S("بزرگسال"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} روز"},
+		Week:  &sa.UnitForms{Simple: "{n} هفته"},
+		Month: &sa.UnitForms{Simple: "{n} ماه"},
+		Year:  &sa.UnitForms{Simple: "{n} سال"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} روز"},
+		Week:      &sa.UnitForms{Simple: "{n} هفته"},
+		Month:     &sa.UnitForms{Simple: "{n} ماه"},
+		Year:      &sa.UnitForms{Simple: "{n} سال"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

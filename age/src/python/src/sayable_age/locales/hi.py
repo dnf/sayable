@@ -11,7 +11,7 @@
 
 """Hindi locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 HI = AgeLocale(
     code="hi",
@@ -33,4 +33,22 @@ HI = AgeLocale(
         "teenager": {"m": "किशोर", "f": "किशोरी"},
         "adult": "वयस्क",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} दिन",
+            "week": "{n} सप्ताह",
+            "month": "{n} माह",
+            "year": "{n} वर्ष",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} दि",
+            "week": "{n} सप्ताह",
+            "month": "{n} माह",
+            "year": "{n} व",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

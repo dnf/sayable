@@ -29,6 +29,22 @@ let locale : locale =
     ; teenager = Neutral "วัยรุ่น"
     ; adult = Neutral "ผู้ใหญ่"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} วัน")
+      ; ovr_week = Some (Simple "{n} สัปดาห์")
+      ; ovr_month = Some (Simple "{n} เดือน")
+      ; ovr_year = Some (Simple "{n} ปี")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n}วัน")
+      ; ovr_week = Some (Simple "{n}สัปดาห์")
+      ; ovr_month = Some (Simple "{n}เดือน")
+      ; ovr_year = Some (Simple "{n}ปี")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

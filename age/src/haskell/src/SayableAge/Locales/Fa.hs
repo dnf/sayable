@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Neutral "نوجوان"
         , stageAdult = Neutral "بزرگسال"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} روز")
+            , ovrWeek = Just (Simple "{n} هفته")
+            , ovrMonth = Just (Simple "{n} ماه")
+            , ovrYear = Just (Simple "{n} سال")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} روز")
+            , ovrWeek = Just (Simple "{n} هفته")
+            , ovrMonth = Just (Simple "{n} ماه")
+            , ovrYear = Just (Simple "{n} سال")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

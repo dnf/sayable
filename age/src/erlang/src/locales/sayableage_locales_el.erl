@@ -25,6 +25,6 @@ locale() ->
         delimiter = ", ",
         just_born = "Νεογέννητο",
         stages = #stages{newborn = {neutral, "Νεογέννητο"}, infant = {neutral, "Βρέφος"}, toddler = {neutral, "Νήπιο"}, child = {neutral, "Παιδί"}, teenager = {gendered, "Έφηβος", "Έφηβη"}, adult = {gendered, "Ενήλικας", "Ενήλικη"}},
-        short = nothing,
-        compact = nothing
+        short = {just, #compactness_override{day = {just, {pluralized, [{one, "{n} ημέρα"}, {other, "{n} ημέρες"}]}}, week = {just, {simple, "{n} εβδ."}}, month = {just, {simple, "{n} μήν."}}, year = {just, {simple, "{n} έτ."}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n} η"}}, week = {just, {simple, "{n} ε"}}, month = {just, {simple, "{n} μ"}}, year = {just, {simple, "{n} έ"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

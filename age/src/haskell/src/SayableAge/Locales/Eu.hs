@@ -32,6 +32,24 @@ locale = Locale
         , stageTeenager = Neutral "Nerabea"
         , stageAdult = Neutral "Heldua"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} egun")
+            , ovrWeek = Just (Simple "{n} aste")
+            , ovrMonth = Just (Simple "{n} hilabete")
+            , ovrYear = Just (Simple "{n} urte")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} e.")
+            , ovrWeek = Just (Simple "{n} aste")
+            , ovrMonth = Just (Simple "{n} hil")
+            , ovrYear = Just (Simple "{n} u.")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

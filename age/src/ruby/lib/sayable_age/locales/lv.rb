@@ -39,6 +39,23 @@ module SayableAge
         teenager: { m: 'Pusaudzis', f: 'Pusaudze' },
         adult: { m: 'Pieaugušais', f: 'Pieaugusī' },
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} d.',
+          'week' => '{n} ned.',
+          'month' => '{n} mēn.',
+          'year' => '{n} g.',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} d.',
+          'week' => '{n} n.',
+          'month' => '{n} m.',
+          'year' => '{n} g.',
+        },
+        delimiter: '',
+      ),
     )
   end
 end

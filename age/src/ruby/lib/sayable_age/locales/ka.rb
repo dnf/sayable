@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'მოზარდი',
         adult: 'ზრდასრული',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} დღე',
+          'week' => '{n} კვრ',
+          'month' => '{n} თვე',
+          'year' => '{n} წ',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} დღე',
+          'week' => '{n} კვრ',
+          'month' => '{n} თვე',
+          'year' => '{n} წ',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

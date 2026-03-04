@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Neonato"
    :stages {:newborn {:type :gendered :m "Neonato" :f "Neonata"} :infant {:type :neutral :label "Lattante"} :toddler {:type :gendered :m "Bimbo" :f "Bimba"} :child {:type :gendered :m "Bambino" :f "Bambina"} :teenager {:type :neutral :label "Adolescente"} :adult {:type :gendered :m "Adulto" :f "Adulta"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} giorno" :other "{n} giorni"}} :week {:type :simple :form "{n} sett."} :month {:type :pluralized :forms {:one "{n} mese" :other "{n} mesi"}} :year {:type :pluralized :forms {:one "{n} anno" :other "{n} anni"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :pluralized :forms {:one "{n}g" :other "{n}gg"}} :week {:type :simple :form "{n}sett."} :month {:type :pluralized :forms {:one "{n} mese" :other "{n} mesi"}} :year {:type :pluralized :forms {:one "{n}anno" :other "{n}anni"}} :half "{n}½" :delimiter "" :just-born nil}})

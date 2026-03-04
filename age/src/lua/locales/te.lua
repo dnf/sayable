@@ -30,5 +30,23 @@ M.stages = {
     teenager = "కౌమారదశ",
     adult = "వయోజనులు",
 }
+M.short = {
+    units = {
+        day = { one = "{n} రోజు", other = "{n} రోజులు" },
+        week = "{n} వా.",
+        month = "{n} నె.",
+        year = "{n} సం.",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n}రో",
+        week = "{n}వా",
+        month = "{n}నె",
+        year = "{n}సం",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

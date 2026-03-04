@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/mr.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Marathi locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,30 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "किशोर".to_string(), f: "किशोरी".to_string() },
             adult: StageLabel::Neutral("प्रौढ".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} दिवस")),
+            week: Some(UnitForms::simple("{n} आ")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} महिना"),
+                (PluralCategory::Other, "{n} महिने"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} वर्ष"),
+                (PluralCategory::Other, "{n} वर्षे"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}दि")),
+            week: Some(UnitForms::simple("{n}आ")),
+            month: Some(UnitForms::simple("{n}म")),
+            year: Some(UnitForms::simple("{n}व")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

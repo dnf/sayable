@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.SL do
         child: "Otrok",
         teenager: %{m: "Najstnik", f: "Najstnica"},
         adult: %{m: "Odrasel", f: "Odrasla"}
+      },
+      short: %{
+        units: %{
+          day: "{n} d",
+          week: "{n} t",
+          month: "{n} m",
+          year: "{n} l"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} d",
+          week: "{n} t",
+          month: "{n} m",
+          year: "{n} l"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

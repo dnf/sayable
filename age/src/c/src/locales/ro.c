@@ -35,6 +35,6 @@ const SaLocale sa_locale_ro = {
         { "Adolescent", "Adolescentă" },
         { "Adult", "Adultă" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} zi", NULL, "{n} zile", NULL, "{n} zile" } }, true, { "{n} săpt.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} lună", NULL, "{n} luni", NULL, "{n} luni" } }, true, { NULL, { NULL, "{n} an", NULL, "{n} ani", NULL, "{n} ani" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} z", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} săpt.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} l", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} a", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

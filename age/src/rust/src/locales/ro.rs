@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ro.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Romanian locale.
 pub fn locale() -> AgeLocale {
@@ -53,8 +53,36 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "Adolescent".to_string(), f: "Adolescentă".to_string() },
             adult: StageLabel::Gendered { m: "Adult".to_string(), f: "Adultă".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} zi"),
+                (PluralCategory::Few, "{n} zile"),
+                (PluralCategory::Other, "{n} zile"),
+            ])),
+            week: Some(UnitForms::simple("{n} săpt.")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} lună"),
+                (PluralCategory::Few, "{n} luni"),
+                (PluralCategory::Other, "{n} luni"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} an"),
+                (PluralCategory::Few, "{n} ani"),
+                (PluralCategory::Other, "{n} ani"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} z")),
+            week: Some(UnitForms::simple("{n} săpt.")),
+            month: Some(UnitForms::simple("{n} l")),
+            year: Some(UnitForms::simple("{n} a")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

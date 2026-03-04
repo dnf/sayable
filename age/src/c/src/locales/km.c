@@ -34,6 +34,6 @@ const SaLocale sa_locale_km = {
         { "យុវវ័យ", "" },
         { "មនុស្សពេញវ័យ", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} ថ្ងៃ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} សប្ដាហ៍", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ខែ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ឆ្នាំ", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} ថ្ងៃ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} សប្ដាហ៍", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ខែ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ឆ្នាំ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

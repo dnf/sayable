@@ -34,6 +34,24 @@ sub locale {{
     teenager => 'Adolescent',
     adult => { m => 'Adult', f => 'Adulta' },
   },
+  short => {
+    units => {
+      day => { one => '{n} dia', other => '{n} dies' },
+      week => '{n} setm.',
+      month => { one => '{n} mes', other => '{n} m' },
+      year => { one => '{n} any', other => '{n} anys' },
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} d',
+      week => '{n} setm.',
+      month => '{n} m',
+      year => { one => '{n} any', other => '{n} anys' },
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

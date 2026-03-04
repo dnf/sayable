@@ -34,6 +34,6 @@ const SaLocale sa_locale_az = {
         { "Yeniyetmə", "" },
         { "Böyük", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} gün", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hft", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ay", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} il", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} gün", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hft", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ay", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} il", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

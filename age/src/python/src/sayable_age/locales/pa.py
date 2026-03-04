@@ -11,7 +11,7 @@
 
 """Punjabi locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 PA = AgeLocale(
     code="pa",
@@ -33,4 +33,22 @@ PA = AgeLocale(
         "teenager": {"m": "ਕਿਸ਼ੋਰ", "f": "ਕਿਸ਼ੋਰੀ"},
         "adult": "ਬਾਲਗ",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} ਦਿਨ",
+            "week": {"one": "{n} ਹਫ਼ਤਾ", "other": "{n} ਹਫ਼ਤੇ"},
+            "month": {"one": "{n} ਮਹੀਨਾ", "other": "{n} ਮਹੀਨੇ"},
+            "year": "{n} ਸਾਲ",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} ਦਿਨ",
+            "week": {"one": "{n} ਹਫ਼ਤਾ", "other": "{n} ਹਫ਼ਤੇ"},
+            "month": {"one": "{n} ਮਹੀਨਾ", "other": "{n} ਮਹੀਨੇ"},
+            "year": "{n} ਸਾਲ",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

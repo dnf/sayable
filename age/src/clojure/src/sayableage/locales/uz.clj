@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Yangi tugʻilgan"
    :stages {:newborn {:type :neutral :label "Yangi tugʻilgan"} :infant {:type :neutral :label "Chaqaloq"} :toddler {:type :neutral :label "Kichkintoy"} :child {:type :neutral :label "Bola"} :teenager {:type :neutral :label "Oʻsmir"} :adult {:type :neutral :label "Katta"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} kun"} :week {:type :simple :form "{n} hafta"} :month {:type :simple :form "{n} oy"} :year {:type :simple :form "{n} yil"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} kun"} :week {:type :simple :form "{n} hafta"} :month {:type :simple :form "{n} oy"} :year {:type :simple :form "{n} yil"} :half "{n}½" :delimiter "" :just-born nil}})

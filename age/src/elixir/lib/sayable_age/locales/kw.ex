@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.KW do
         child: "Flogh",
         teenager: "Den yowynk",
         adult: "Den tevys"
+      },
+      short: %{
+        units: %{
+          day: "{n} d",
+          week: "{n} wk",
+          month: "{n} mo",
+          year: "{n} yr"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}d",
+          week: "{n}w",
+          month: "{n}m",
+          year: "{n}y"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

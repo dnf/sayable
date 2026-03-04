@@ -11,7 +11,7 @@
 
 """Danish locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 DA = AgeLocale(
     code="da",
@@ -33,4 +33,21 @@ DA = AgeLocale(
         "teenager": "Teenager",
         "adult": "Voksen",
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} dag", "other": "{n} dage"},
+            "week": {"one": "{n} uge", "other": "{n} uger"},
+            "month": {"one": "{n} md.", "other": "{n} mdr."},
+            "year": "{n} år",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} u",
+            "month": "{n} m",
+            "year": "{n} år",
+        },
+        delimiter="",
+    ),
 )

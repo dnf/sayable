@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.SR do
         child: "Дете",
         teenager: "Тинејџер",
         adult: "Одрасла особа"
+      },
+      short: %{
+        units: %{
+          day: %{one: "{n} дан", few: "{n} дана", other: "{n} дана"},
+          week: "{n} нед.",
+          month: "{n} мес.",
+          year: %{one: "{n} год", few: "{n} год.", other: "{n} год."}
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} д",
+          week: "{n} н",
+          month: "{n} м",
+          year: "{n} г"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

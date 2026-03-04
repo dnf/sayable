@@ -39,4 +39,18 @@ var HI = sa.AgeLocale{
 		Teenager: sa.G("किशोर", "किशोरी"),
 		Adult:    sa.S("वयस्क"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} दिन"},
+		Week:  &sa.UnitForms{Simple: "{n} सप्ताह"},
+		Month: &sa.UnitForms{Simple: "{n} माह"},
+		Year:  &sa.UnitForms{Simple: "{n} वर्ष"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} दि"},
+		Week:      &sa.UnitForms{Simple: "{n} सप्ताह"},
+		Month:     &sa.UnitForms{Simple: "{n} माह"},
+		Year:      &sa.UnitForms{Simple: "{n} व"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

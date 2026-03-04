@@ -11,7 +11,7 @@
 
 """Scottish Gaelic locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -44,4 +44,22 @@ GD = AgeLocale(
         "teenager": "Deugaire",
         "adult": "Inbheach",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} là",
+            "week": {"one": "{n} shn", "two": "{n} shn", "few": "{n} sn", "other": "{n} sn"},
+            "month": {"one": "{n} mhìos", "two": "{n} mhìos", "few": "{n} mìos", "other": "{n} mìos"},
+            "year": {"one": "{n} bhlia", "two": "{n} bhlia", "few": "{n} blia", "other": "{n} blia"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}là",
+            "week": "{n}s",
+            "month": "{n}m",
+            "year": "{n}bl",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

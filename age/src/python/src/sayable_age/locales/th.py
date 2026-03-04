@@ -11,7 +11,7 @@
 
 """Thai locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 TH = AgeLocale(
     code="th",
@@ -33,4 +33,22 @@ TH = AgeLocale(
         "teenager": "วัยรุ่น",
         "adult": "ผู้ใหญ่",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} วัน",
+            "week": "{n} สัปดาห์",
+            "month": "{n} เดือน",
+            "year": "{n} ปี",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}วัน",
+            "week": "{n}สัปดาห์",
+            "month": "{n}เดือน",
+            "year": "{n}ปี",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

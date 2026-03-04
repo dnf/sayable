@@ -50,4 +50,18 @@ var BR = sa.AgeLocale{
 		Teenager: sa.S("Den yaouank"),
 		Adult:    sa.S("Den deuet da vad"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} d"},
+		Week:  &sa.UnitForms{Simple: "{n} sizh."},
+		Month: &sa.UnitForms{Simple: "{n} m."},
+		Year:  &sa.UnitForms{Simple: "{n} bl."},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}d"},
+		Week:      &sa.UnitForms{Simple: "{n}sizh."},
+		Month:     &sa.UnitForms{Simple: "{n}m"},
+		Year:      &sa.UnitForms{Simple: "{n}b"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

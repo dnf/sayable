@@ -11,7 +11,7 @@
 
 """Telugu locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 TE = AgeLocale(
     code="te",
@@ -33,4 +33,22 @@ TE = AgeLocale(
         "teenager": "కౌమారదశ",
         "adult": "వయోజనులు",
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} రోజు", "other": "{n} రోజులు"},
+            "week": "{n} వా.",
+            "month": "{n} నె.",
+            "year": "{n} సం.",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}రో",
+            "week": "{n}వా",
+            "month": "{n}నె",
+            "year": "{n}సం",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

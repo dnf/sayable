@@ -34,6 +34,6 @@ const SaLocale sa_locale_uz = {
         { "Oʻsmir", "" },
         { "Katta", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} kun", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hafta", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} oy", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yil", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} kun", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hafta", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} oy", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yil", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

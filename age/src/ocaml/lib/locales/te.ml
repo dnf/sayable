@@ -41,6 +41,25 @@ let locale : locale =
     ; teenager = Neutral "కౌమారదశ"
     ; adult = Neutral "వయోజనులు"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} రోజు")
+          ; (Other, "{n} రోజులు")
+          ])
+      ; ovr_week = Some (Simple "{n} వా.")
+      ; ovr_month = Some (Simple "{n} నె.")
+      ; ovr_year = Some (Simple "{n} సం.")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n}రో")
+      ; ovr_week = Some (Simple "{n}వా")
+      ; ovr_month = Some (Simple "{n}నె")
+      ; ovr_year = Some (Simple "{n}సం")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

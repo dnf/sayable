@@ -11,7 +11,7 @@
 
 """Swedish locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 SV = AgeLocale(
     code="sv",
@@ -33,4 +33,21 @@ SV = AgeLocale(
         "teenager": "Tonåring",
         "adult": "Vuxen",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} v",
+            "month": "{n} mån",
+            "year": "{n} år",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}d",
+            "week": "{n}v",
+            "month": "{n}m",
+            "year": "{n}å",
+        },
+        delimiter="",
+    ),
 )

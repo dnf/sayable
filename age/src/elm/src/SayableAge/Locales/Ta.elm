@@ -47,6 +47,36 @@ locale =
         , teenager = Neutral "இளம்பருவம்"
         , adult = Neutral "பெரியவர்"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} நாள்" )
+                  , ( Other, "{n} நாட்கள்" )
+                  ])
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} வாரம்" )
+                  , ( Other, "{n} வார." )
+                  ])
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} மாதம்" )
+                  , ( Other, "{n} மாத." )
+                  ])
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} ஆண்டு" )
+                  , ( Other, "{n} ஆண்டு." )
+                  ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} நா")
+            , ovrWeek = Just (Simple "{n} வா")
+            , ovrMonth = Just (Simple "{n} மா")
+            , ovrYear = Just (Simple "{n} ஆ")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

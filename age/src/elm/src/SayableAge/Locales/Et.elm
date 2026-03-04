@@ -47,6 +47,30 @@ locale =
         , teenager = Neutral "Teismeline"
         , adult = Neutral "Täiskasvanu"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} päev" )
+                  , ( Other, "{n} päeva" )
+                  ])
+            , ovrWeek = Just (Simple "{n} näd")
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} kuu" )
+                  , ( Other, "{n} kuud" )
+                  ])
+            , ovrYear = Just (Simple "{n} a")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} p")
+            , ovrWeek = Just (Simple "{n} n")
+            , ovrMonth = Just (Simple "{n} k")
+            , ovrYear = Just (Simple "{n} a")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -34,4 +34,18 @@ final ga = AgeLocale(
   child: stageNeutral('Páiste'),
   teenager: stageNeutral('Déagóir'),
   adult: stageNeutral('Duine fásta'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} lá'),
+    week: simpleUnit('{n} scht'),
+    month: pluralUnit({PluralCategory.one: '{n} mí', PluralCategory.two: '{n} mí', PluralCategory.few: '{n} mí', PluralCategory.many: '{n} mí', PluralCategory.other: '{n} m'}),
+    year: simpleUnit('{n} bl'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} lá'),
+    week: simpleUnit('{n} scht'),
+    month: pluralUnit({PluralCategory.one: '{n}m', PluralCategory.two: '{n}m', PluralCategory.few: '{n}m', PluralCategory.many: '{n}m', PluralCategory.other: '{n} m'}),
+    year: simpleUnit('{n} bl'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

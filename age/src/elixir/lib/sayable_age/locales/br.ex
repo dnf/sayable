@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.BR do
         child: "Bugel",
         teenager: "Den yaouank",
         adult: "Den deuet da vad"
+      },
+      short: %{
+        units: %{
+          day: "{n} d",
+          week: "{n} sizh.",
+          month: "{n} m.",
+          year: "{n} bl."
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}d",
+          week: "{n}sizh.",
+          month: "{n}m",
+          year: "{n}b"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

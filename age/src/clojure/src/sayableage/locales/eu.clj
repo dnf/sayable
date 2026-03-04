@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Jaioberria"
    :stages {:newborn {:type :neutral :label "Jaioberria"} :infant {:type :neutral :label "Haurra"} :toddler {:type :neutral :label "Haur txikia"} :child {:type :neutral :label "Umea"} :teenager {:type :neutral :label "Nerabea"} :adult {:type :neutral :label "Heldua"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} egun"} :week {:type :simple :form "{n} aste"} :month {:type :simple :form "{n} hilabete"} :year {:type :simple :form "{n} urte"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} e."} :week {:type :simple :form "{n} aste"} :month {:type :simple :form "{n} hil"} :year {:type :simple :form "{n} u."} :half "{n}½" :delimiter "" :just-born nil}})

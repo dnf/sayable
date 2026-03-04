@@ -52,6 +52,39 @@ locale = Locale
         , stageTeenager = Neutral "Deugaire"
         , stageAdult = Neutral "Inbheach"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} là")
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} shn")
+              , (Two, "{n} shn")
+              , (Few, "{n} sn")
+              , (Other, "{n} sn")
+              ])
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n} mhìos")
+              , (Two, "{n} mhìos")
+              , (Few, "{n} mìos")
+              , (Other, "{n} mìos")
+              ])
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} bhlia")
+              , (Two, "{n} bhlia")
+              , (Few, "{n} blia")
+              , (Other, "{n} blia")
+              ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}là")
+            , ovrWeek = Just (Simple "{n}s")
+            , ovrMonth = Just (Simple "{n}m")
+            , ovrYear = Just (Simple "{n}bl")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

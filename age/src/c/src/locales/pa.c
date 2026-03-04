@@ -34,6 +34,6 @@ const SaLocale sa_locale_pa = {
         { "ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ" },
         { "ਬਾਲਗ", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} ਦਿਨ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} ਹਫ਼ਤਾ", NULL, NULL, NULL, "{n} ਹਫ਼ਤੇ" } }, true, { NULL, { NULL, "{n} ਮਹੀਨਾ", NULL, NULL, NULL, "{n} ਮਹੀਨੇ" } }, true, { "{n} ਸਾਲ", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} ਦਿਨ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} ਹਫ਼ਤਾ", NULL, NULL, NULL, "{n} ਹਫ਼ਤੇ" } }, true, { NULL, { NULL, "{n} ਮਹੀਨਾ", NULL, NULL, NULL, "{n} ਮਹੀਨੇ" } }, true, { "{n} ਸਾਲ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

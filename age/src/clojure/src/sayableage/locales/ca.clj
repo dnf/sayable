@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Nounat"
    :stages {:newborn {:type :gendered :m "Nounat" :f "Nounada"} :infant {:type :neutral :label "Nadó"} :toddler {:type :neutral :label "Infant"} :child {:type :neutral :label "Criatura"} :teenager {:type :neutral :label "Adolescent"} :adult {:type :gendered :m "Adult" :f "Adulta"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} dia" :other "{n} dies"}} :week {:type :simple :form "{n} setm."} :month {:type :pluralized :forms {:one "{n} mes" :other "{n} m"}} :year {:type :pluralized :forms {:one "{n} any" :other "{n} anys"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} setm."} :month {:type :simple :form "{n} m"} :year {:type :pluralized :forms {:one "{n} any" :other "{n} anys"}} :half "{n}½" :delimiter "" :just-born nil}})

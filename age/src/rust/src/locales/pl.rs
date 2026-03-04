@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/pl.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Polish locale.
 pub fn locale() -> AgeLocale {
@@ -59,8 +59,49 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "Nastolatek".to_string(), f: "Nastolatka".to_string() },
             adult: StageLabel::Gendered { m: "Dorosły".to_string(), f: "Dorosła".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} dzień"),
+                (PluralCategory::Few, "{n} dni"),
+                (PluralCategory::Many, "{n} dni"),
+                (PluralCategory::Other, "{n} dnia"),
+            ])),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} tydz."),
+                (PluralCategory::Few, "{n} tyg."),
+                (PluralCategory::Many, "{n} tyg."),
+                (PluralCategory::Other, "{n} tyg."),
+            ])),
+            month: Some(UnitForms::simple("{n} mies.")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} rok"),
+                (PluralCategory::Few, "{n} lata"),
+                (PluralCategory::Many, "{n} lat"),
+                (PluralCategory::Other, "{n} roku"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d.")),
+            week: Some(UnitForms::simple("{n} t.")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} m-c"),
+                (PluralCategory::Few, "{n} m-ce"),
+                (PluralCategory::Many, "{n} m-cy"),
+                (PluralCategory::Other, "{n} m-ca"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} r."),
+                (PluralCategory::Few, "{n} l."),
+                (PluralCategory::Many, "{n} l."),
+                (PluralCategory::Other, "{n} r."),
+            ])),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

@@ -35,6 +35,6 @@ const SaLocale sa_locale_cs = {
         { "Teenager", "" },
         { "Dospělý", "Dospělá" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} den", NULL, "{n} dny", "{n} dne", "{n} dnů" } }, true, { "{n} týd.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} měs.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} rok", NULL, "{n} roky", "{n} roku", "{n} let" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} d.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} r.", NULL, "{n} r.", "{n} r.", "{n} l." } }, false, NULL, true, "", false, NULL }
 };

@@ -32,6 +32,24 @@ locale = Locale
         , stageTeenager = Neutral "วัยรุ่น"
         , stageAdult = Neutral "ผู้ใหญ่"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} วัน")
+            , ovrWeek = Just (Simple "{n} สัปดาห์")
+            , ovrMonth = Just (Simple "{n} เดือน")
+            , ovrYear = Just (Simple "{n} ปี")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}วัน")
+            , ovrWeek = Just (Simple "{n}สัปดาห์")
+            , ovrMonth = Just (Simple "{n}เดือน")
+            , ovrYear = Just (Simple "{n}ปี")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

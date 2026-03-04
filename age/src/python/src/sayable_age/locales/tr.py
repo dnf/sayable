@@ -11,7 +11,7 @@
 
 """Turkish locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 TR = AgeLocale(
     code="tr",
@@ -33,4 +33,22 @@ TR = AgeLocale(
         "teenager": "Ergen",
         "adult": "Yetişkin",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} gün",
+            "week": "{n} hf.",
+            "month": "{n} ay",
+            "year": "{n} yıl",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}g",
+            "week": "{n}h",
+            "month": "{n}a",
+            "year": "{n}y",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

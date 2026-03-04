@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Recém-nascido"
    :stages {:newborn {:type :gendered :m "Recém-nascido" :f "Recém-nascida"} :infant {:type :neutral :label "Bebê"} :toddler {:type :neutral :label "Criança pequena"} :child {:type :neutral :label "Criança"} :teenager {:type :neutral :label "Adolescente"} :adult {:type :gendered :m "Adulto" :f "Adulta"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} dia" :other "{n} dias"}} :week {:type :simple :form "{n} sem."} :month {:type :pluralized :forms {:one "{n} mês" :other "{n} meses"}} :year {:type :pluralized :forms {:one "{n} ano" :other "{n} anos"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :pluralized :forms {:one "{n} dia" :other "{n} dias"}} :week {:type :simple :form "{n} sem."} :month {:type :pluralized :forms {:one "{n} mês" :other "{n} meses"}} :year {:type :pluralized :forms {:one "{n} ano" :other "{n} anos"}} :half "{n}½" :delimiter "" :just-born nil}})

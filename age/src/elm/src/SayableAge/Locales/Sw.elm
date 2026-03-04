@@ -47,6 +47,36 @@ locale =
         , teenager = Neutral "Kijana"
         , adult = Neutral "Mtu mzima"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "siku {n}")
+            , ovrWeek = Just (Simple "wiki {n}")
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "mwezi {n}" )
+                  , ( Other, "miezi {n}" )
+                  ])
+            , ovrYear = Just (Pluralized
+                  [ ( One, "mwaka {n}" )
+                  , ( Other, "miaka {n}" )
+                  ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "siku {n}")
+            , ovrWeek = Just (Simple "wiki {n}")
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "mwezi {n}" )
+                  , ( Other, "miezi {n}" )
+                  ])
+            , ovrYear = Just (Pluralized
+                  [ ( One, "mwaka {n}" )
+                  , ( Other, "miaka {n}" )
+                  ])
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -34,6 +34,24 @@ sub locale {{
     teenager => 'ဆယ်ကျော်သက်',
     adult => 'အရွယ်ရောက်',
   },
+  short => {
+    units => {
+      day => '{n} ရက်',
+      week => '{n} ပတ်',
+      month => '{n} လ',
+      year => '{n} နှစ်',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} ရက်',
+      week => '{n} ပတ်',
+      month => '{n} လ',
+      year => '{n} နှစ်',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

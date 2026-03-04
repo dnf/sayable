@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "Teini"
         , adult = Neutral "Aikuinen"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} pv")
+            , ovrWeek = Just (Simple "{n} vk")
+            , ovrMonth = Just (Simple "{n} kk")
+            , ovrYear = Just (Simple "{n} v")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}pv")
+            , ovrWeek = Just (Simple "{n}vk")
+            , ovrMonth = Just (Simple "{n}kk")
+            , ovrYear = Just (Simple "{n}v")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

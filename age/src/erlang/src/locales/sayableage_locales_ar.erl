@@ -25,6 +25,6 @@ locale() ->
         delimiter = " و",
         just_born = "حديث الولادة",
         stages = #stages{newborn = {gendered, "حديث الولادة", "حديثة الولادة"}, infant = {gendered, "رضيع", "رضيعة"}, toddler = {gendered, "طفل صغير", "طفلة صغيرة"}, child = {gendered, "طفل", "طفلة"}, teenager = {gendered, "مراهق", "مراهقة"}, adult = {gendered, "بالغ", "بالغة"}},
-        short = nothing,
-        compact = nothing
+        short = {just, #compactness_override{day = {just, {pluralized, [{zero, "{n} يوم"}, {one, "يوم"}, {two, "يومان"}, {few, "{n} أيام"}, {many, "{n} يومًا"}, {other, "{n} يوم"}]}}, week = {just, {pluralized, [{zero, "{n} أسبوع"}, {one, "أسبوع"}, {two, "أسبوعان"}, {few, "{n} أسابيع"}, {many, "{n} أسبوعًا"}, {other, "{n} أسبوع"}]}}, month = {just, {pluralized, [{zero, "{n} شهر"}, {one, "شهر"}, {two, "شهران"}, {few, "{n} أشهر"}, {many, "{n} شهرًا"}, {other, "{n} شهر"}]}}, year = {just, {pluralized, [{zero, "{n} سنة"}, {one, "سنة واحدة"}, {two, "سنتان"}, {few, "{n} سنوات"}, {many, "{n} سنة"}, {other, "{n} سنة"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n} ي"}}, week = {just, {simple, "{n} أ"}}, month = {just, {pluralized, [{zero, "{n} شهر"}, {one, "شهر"}, {two, "شهران"}, {few, "{n} أشهر"}, {many, "{n} شهرًا"}, {other, "{n} شهر"}]}}, year = {just, {simple, "{n} سنة"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

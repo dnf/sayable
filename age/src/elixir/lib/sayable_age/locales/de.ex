@@ -32,6 +32,23 @@ defmodule SayableAge.Locales.DE do
         child: "Kind",
         teenager: "Teenager",
         adult: %{m: "Erwachsener", f: "Erwachsene"}
+      },
+      short: %{
+        units: %{
+          day: "{n} Tg.",
+          week: "{n} Wo.",
+          month: "{n} Mon.",
+          year: "{n} J"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} T",
+          week: "{n} W",
+          month: "{n} M",
+          year: "{n} J"
+        },
+        delimiter: ""
       }
     }
   end

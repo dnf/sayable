@@ -38,5 +38,23 @@ M.stages = {
     teenager = "Déagóir",
     adult = "Duine fásta",
 }
+M.short = {
+    units = {
+        day = "{n} lá",
+        week = "{n} scht",
+        month = { one = "{n} mí", two = "{n} mí", few = "{n} mí", many = "{n} mí", other = "{n} m" },
+        year = "{n} bl",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} lá",
+        week = "{n} scht",
+        month = { one = "{n}m", two = "{n}m", few = "{n}m", many = "{n}m", other = "{n} m" },
+        year = "{n} bl",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

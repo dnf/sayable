@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Nowyth genys"
    :stages {:newborn {:type :neutral :label "Nowyth genys"} :infant {:type :neutral :label "Babi"} :toddler {:type :neutral :label "Flogh byhan"} :child {:type :neutral :label "Flogh"} :teenager {:type :neutral :label "Den yowynk"} :adult {:type :neutral :label "Den tevys"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} wk"} :month {:type :simple :form "{n} mo"} :year {:type :simple :form "{n} yr"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

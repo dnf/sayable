@@ -39,4 +39,18 @@ var PA = sa.AgeLocale{
 		Teenager: sa.G("ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ"),
 		Adult:    sa.S("ਬਾਲਗ"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} ਦਿਨ"},
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ਹਫ਼ਤਾ", sa.Other: "{n} ਹਫ਼ਤੇ"}),
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ਮਹੀਨਾ", sa.Other: "{n} ਮਹੀਨੇ"}),
+		Year:  &sa.UnitForms{Simple: "{n} ਸਾਲ"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} ਦਿਨ"},
+		Week:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ਹਫ਼ਤਾ", sa.Other: "{n} ਹਫ਼ਤੇ"}),
+		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ਮਹੀਨਾ", sa.Other: "{n} ਮਹੀਨੇ"}),
+		Year:      &sa.UnitForms{Simple: "{n} ਸਾਲ"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

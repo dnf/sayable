@@ -11,7 +11,7 @@
 
 """Czech locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -42,4 +42,21 @@ CS = AgeLocale(
         "teenager": "Teenager",
         "adult": {"m": "Dospělý", "f": "Dospělá"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} den", "few": "{n} dny", "many": "{n} dne", "other": "{n} dnů"},
+            "week": "{n} týd.",
+            "month": "{n} měs.",
+            "year": {"one": "{n} rok", "few": "{n} roky", "many": "{n} roku", "other": "{n} let"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} d.",
+            "week": "{n} t.",
+            "month": "{n} m.",
+            "year": {"one": "{n} r.", "few": "{n} r.", "many": "{n} r.", "other": "{n} l."},
+        },
+        delimiter="",
+    ),
 )

@@ -44,4 +44,18 @@ var PL = sa.AgeLocale{
 		Teenager: sa.G("Nastolatek", "Nastolatka"),
 		Adult:    sa.G("Dorosły", "Dorosła"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} dzień", sa.Few: "{n} dni", sa.Many: "{n} dni", sa.Other: "{n} dnia"}),
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} tydz.", sa.Few: "{n} tyg.", sa.Many: "{n} tyg.", sa.Other: "{n} tyg."}),
+		Month: &sa.UnitForms{Simple: "{n} mies."},
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} rok", sa.Few: "{n} lata", sa.Many: "{n} lat", sa.Other: "{n} roku"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} d."},
+		Week:      &sa.UnitForms{Simple: "{n} t."},
+		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} m-c", sa.Few: "{n} m-ce", sa.Many: "{n} m-cy", sa.Other: "{n} m-ca"}),
+		Year:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} r.", sa.Few: "{n} l.", sa.Many: "{n} l.", sa.Other: "{n} r."}),
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

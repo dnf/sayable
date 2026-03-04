@@ -41,6 +41,31 @@ let locale : locale =
     ; teenager = Neutral "ታዳጊ"
     ; adult = Neutral "አዋቂ"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} ቀናት")
+      ; ovr_week = Some (Pluralized
+          [ (One, "{n} ሳምንት")
+          ; (Other, "{n} ሳምንታት")
+          ])
+      ; ovr_month = Some (Simple "{n} ወራት")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} ዓመት")
+          ; (Other, "{n} ዓመታት")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} ቀ")
+      ; ovr_week = Some (Simple "{n} ሳምንት")
+      ; ovr_month = Some (Simple "{n} ወር")
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} ዓመት")
+          ; (Other, "{n} ዓ")
+          ])
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

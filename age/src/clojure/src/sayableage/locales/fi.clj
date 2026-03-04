@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Vastasyntynyt"
    :stages {:newborn {:type :neutral :label "Vastasyntynyt"} :infant {:type :neutral :label "Vauva"} :toddler {:type :neutral :label "Taapero"} :child {:type :neutral :label "Lapsi"} :teenager {:type :neutral :label "Teini"} :adult {:type :neutral :label "Aikuinen"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} pv"} :week {:type :simple :form "{n} vk"} :month {:type :simple :form "{n} kk"} :year {:type :simple :form "{n} v"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}pv"} :week {:type :simple :form "{n}vk"} :month {:type :simple :form "{n}kk"} :year {:type :simple :form "{n}v"} :half "{n}½" :delimiter "" :just-born nil}})

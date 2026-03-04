@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Yeni doğan"
    :stages {:newborn {:type :neutral :label "Yeni doğan"} :infant {:type :neutral :label "Bebek"} :toddler {:type :neutral :label "Küçük çocuk"} :child {:type :neutral :label "Çocuk"} :teenager {:type :neutral :label "Ergen"} :adult {:type :neutral :label "Yetişkin"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} gün"} :week {:type :simple :form "{n} hf."} :month {:type :simple :form "{n} ay"} :year {:type :simple :form "{n} yıl"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}g"} :week {:type :simple :form "{n}h"} :month {:type :simple :form "{n}a"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

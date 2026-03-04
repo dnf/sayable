@@ -34,6 +34,6 @@ const SaLocale sa_locale_am = {
         { "ታዳጊ", "" },
         { "አዋቂ", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} ቀናት", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} ሳምንት", NULL, NULL, NULL, "{n} ሳምንታት" } }, true, { "{n} ወራት", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} ዓመት", NULL, NULL, NULL, "{n} ዓመታት" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} ቀ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ሳምንት", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ወር", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} ዓመት", NULL, NULL, NULL, "{n} ዓ" } }, true, "{n}½", true, "", false, NULL }
 };

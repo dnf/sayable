@@ -11,7 +11,7 @@
 
 """Tachelhit locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -42,4 +42,22 @@ SHI = AgeLocale(
         "teenager": {"m": "Aɛrim", "f": "Taɛrimt"},
         "adult": {"m": "Argaz", "f": "Tamṭṭuṭ"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} wk",
+            "month": "{n} mo",
+            "year": "{n} yr",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}d",
+            "week": "{n}w",
+            "month": "{n}m",
+            "year": "{n}y",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

@@ -31,4 +31,18 @@ final te = AgeLocale(
   child: stageNeutral('బిడ్డ'),
   teenager: stageNeutral('కౌమారదశ'),
   adult: stageNeutral('వయోజనులు'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} రోజు', PluralCategory.other: '{n} రోజులు'}),
+    week: simpleUnit('{n} వా.'),
+    month: simpleUnit('{n} నె.'),
+    year: simpleUnit('{n} సం.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}రో'),
+    week: simpleUnit('{n}వా'),
+    month: simpleUnit('{n}నె'),
+    year: simpleUnit('{n}సం'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -30,5 +30,23 @@ M.stages = {
     teenager = "Жасөспірім",
     adult = "Ересек",
 }
+M.short = {
+    units = {
+        day = "{n} күн",
+        week = "{n} ап.",
+        month = "{n} ай",
+        year = "{n} ж.",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} к.",
+        week = "{n} ап.",
+        month = "{n} ай",
+        year = "{n} ж.",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

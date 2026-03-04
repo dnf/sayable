@@ -36,4 +36,18 @@ var VI = sa.AgeLocale{
 		Teenager: sa.S("Thiếu niên"),
 		Adult:    sa.S("Người lớn"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} ngày"},
+		Week:  &sa.UnitForms{Simple: "{n} tuần"},
+		Month: &sa.UnitForms{Simple: "{n} tháng"},
+		Year:  &sa.UnitForms{Simple: "{n} năm"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} ngày"},
+		Week:      &sa.UnitForms{Simple: "{n} tuần"},
+		Month:     &sa.UnitForms{Simple: "{n} tháng"},
+		Year:      &sa.UnitForms{Simple: "{n} năm"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

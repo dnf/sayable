@@ -39,6 +39,24 @@ module SayableAge
         teenager: 'Déagóir',
         adult: 'Duine fásta',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} lá',
+          'week' => '{n} scht',
+          'month' => { one: '{n} mí', two: '{n} mí', few: '{n} mí', many: '{n} mí', other: '{n} m' },
+          'year' => '{n} bl',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} lá',
+          'week' => '{n} scht',
+          'month' => { one: '{n}m', two: '{n}m', few: '{n}m', many: '{n}m', other: '{n} m' },
+          'year' => '{n} bl',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

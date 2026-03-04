@@ -51,6 +51,29 @@ locale =
         , teenager = Neutral "Tínedžer"
         , adult = Gendered "Dospelý" "Dospelá"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} deň" )
+                  , ( Few, "{n} dni" )
+                  , ( Many, "{n} dňa" )
+                  , ( Other, "{n} dní" )
+                  ])
+            , ovrWeek = Just (Simple "{n} týž.")
+            , ovrMonth = Just (Simple "{n} mes.")
+            , ovrYear = Just (Simple "{n} r.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} t.")
+            , ovrMonth = Just (Simple "{n} m.")
+            , ovrYear = Just (Simple "{n} r.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

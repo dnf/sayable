@@ -41,6 +41,24 @@ sub locale {{
     teenager => 'Tinejdžer',
     adult => 'Odrasla osoba',
   },
+  short => {
+    units => {
+      day => { one => '{n} dan', few => '{n} dana', other => '{n} dana' },
+      week => '{n} tj.',
+      month => '{n} mj.',
+      year => '{n} g.',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} d.',
+      week => '{n} tj.',
+      month => '{n} mj.',
+      year => '{n} g.',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

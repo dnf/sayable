@@ -11,7 +11,7 @@
 
 """Sinhala locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 SI = AgeLocale(
     code="si",
@@ -33,4 +33,22 @@ SI = AgeLocale(
         "teenager": "නව යොවුන්",
         "adult": "වැඩිහිටි",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "දින {n}",
+            "week": "සති {n}",
+            "month": "මාස {n}",
+            "year": "වසර {n}",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "දි {n}",
+            "week": "ස {n}",
+            "month": "මා {n}",
+            "year": "ව {n}",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

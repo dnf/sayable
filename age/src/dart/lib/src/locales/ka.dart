@@ -31,4 +31,18 @@ final ka = AgeLocale(
   child: stageNeutral('ბავშვი'),
   teenager: stageNeutral('მოზარდი'),
   adult: stageNeutral('ზრდასრული'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} დღე'),
+    week: simpleUnit('{n} კვრ'),
+    month: simpleUnit('{n} თვე'),
+    year: simpleUnit('{n} წ'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} დღე'),
+    week: simpleUnit('{n} კვრ'),
+    month: simpleUnit('{n} თვე'),
+    year: simpleUnit('{n} წ'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

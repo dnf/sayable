@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Neutral "Тийнейджър"
         , stageAdult = Gendered "Възрастен" "Възрастна"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} д")
+            , ovrWeek = Just (Simple "{n} седм.")
+            , ovrMonth = Just (Simple "{n} мес.")
+            , ovrYear = Just (Simple "{n} год.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} д")
+            , ovrWeek = Just (Simple "{n} седм.")
+            , ovrMonth = Just (Simple "{n} мес.")
+            , ovrYear = Just (Simple "{n} г.")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

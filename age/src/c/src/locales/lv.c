@@ -37,6 +37,6 @@ const SaLocale sa_locale_lv = {
         { "Pusaudzis", "Pusaudze" },
         { "Pieaugušais", "Pieaugusī" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} d.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ned.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mēn.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} g.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} d.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} n.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} g.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
 };

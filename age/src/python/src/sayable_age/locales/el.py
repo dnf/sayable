@@ -11,7 +11,7 @@
 
 """Greek locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 EL = AgeLocale(
     code="el",
@@ -33,4 +33,22 @@ EL = AgeLocale(
         "teenager": {"m": "Έφηβος", "f": "Έφηβη"},
         "adult": {"m": "Ενήλικας", "f": "Ενήλικη"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} ημέρα", "other": "{n} ημέρες"},
+            "week": "{n} εβδ.",
+            "month": "{n} μήν.",
+            "year": "{n} έτ.",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} η",
+            "week": "{n} ε",
+            "month": "{n} μ",
+            "year": "{n} έ",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

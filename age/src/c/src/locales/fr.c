@@ -34,6 +34,6 @@ const SaLocale sa_locale_fr = {
         { "Adolescent", "Adolescente" },
         { "Adulte", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} j", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sem.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} an", NULL, NULL, NULL, "{n} ans" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}j", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}sem.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}a", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

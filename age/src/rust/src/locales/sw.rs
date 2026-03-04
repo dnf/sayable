@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/sw.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Swahili locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,36 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Kijana".to_string()),
             adult: StageLabel::Neutral("Mtu mzima".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("siku {n}")),
+            week: Some(UnitForms::simple("wiki {n}")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "mwezi {n}"),
+                (PluralCategory::Other, "miezi {n}"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "mwaka {n}"),
+                (PluralCategory::Other, "miaka {n}"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("siku {n}")),
+            week: Some(UnitForms::simple("wiki {n}")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "mwezi {n}"),
+                (PluralCategory::Other, "miezi {n}"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "mwaka {n}"),
+                (PluralCategory::Other, "miaka {n}"),
+            ])),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

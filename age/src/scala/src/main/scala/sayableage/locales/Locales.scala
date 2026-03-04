@@ -41,6 +41,20 @@ object Locales {
             teenager = s("ታዳጊ"),
             adult = s("አዋቂ"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ቀናት")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ሳምንት", PluralCategory.OTHER -> "{n} ሳምንታት"))),
+            month = Some(simpleUnit("{n} ወራት")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ዓመት", PluralCategory.OTHER -> "{n} ዓመታት"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ቀ")),
+            week = Some(simpleUnit("{n} ሳምንት")),
+            month = Some(simpleUnit("{n} ወር")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ዓመት", PluralCategory.OTHER -> "{n} ዓ"))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ar.json
@@ -74,6 +88,20 @@ object Locales {
             teenager = g("مراهق", "مراهقة"),
             adult = g("بالغ", "بالغة"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} يوم", PluralCategory.ONE -> "يوم", PluralCategory.TWO -> "يومان", PluralCategory.FEW -> "{n} أيام", PluralCategory.MANY -> "{n} يومًا", PluralCategory.OTHER -> "{n} يوم"))),
+            week = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} أسبوع", PluralCategory.ONE -> "أسبوع", PluralCategory.TWO -> "أسبوعان", PluralCategory.FEW -> "{n} أسابيع", PluralCategory.MANY -> "{n} أسبوعًا", PluralCategory.OTHER -> "{n} أسبوع"))),
+            month = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} شهر", PluralCategory.ONE -> "شهر", PluralCategory.TWO -> "شهران", PluralCategory.FEW -> "{n} أشهر", PluralCategory.MANY -> "{n} شهرًا", PluralCategory.OTHER -> "{n} شهر"))),
+            year = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} سنة", PluralCategory.ONE -> "سنة واحدة", PluralCategory.TWO -> "سنتان", PluralCategory.FEW -> "{n} سنوات", PluralCategory.MANY -> "{n} سنة", PluralCategory.OTHER -> "{n} سنة"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ي")),
+            week = Some(simpleUnit("{n} أ")),
+            month = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} شهر", PluralCategory.ONE -> "شهر", PluralCategory.TWO -> "شهران", PluralCategory.FEW -> "{n} أشهر", PluralCategory.MANY -> "{n} شهرًا", PluralCategory.OTHER -> "{n} شهر"))),
+            year = Some(simpleUnit("{n} سنة")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/az.json
@@ -100,6 +128,20 @@ object Locales {
             teenager = s("Yeniyetmə"),
             adult = s("Böyük"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} gün")),
+            week = Some(simpleUnit("{n} hft")),
+            month = Some(simpleUnit("{n} ay")),
+            year = Some(simpleUnit("{n} il")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} gün")),
+            week = Some(simpleUnit("{n} hft")),
+            month = Some(simpleUnit("{n} ay")),
+            year = Some(simpleUnit("{n} il")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/bg.json
@@ -126,6 +168,20 @@ object Locales {
             teenager = s("Тийнейджър"),
             adult = g("Възрастен", "Възрастна"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} д")),
+            week = Some(simpleUnit("{n} седм.")),
+            month = Some(simpleUnit("{n} мес.")),
+            year = Some(simpleUnit("{n} год.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} д")),
+            week = Some(simpleUnit("{n} седм.")),
+            month = Some(simpleUnit("{n} мес.")),
+            year = Some(simpleUnit("{n} г.")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/bn.json
@@ -152,6 +208,20 @@ object Locales {
             teenager = g("কিশোর", "কিশোরী"),
             adult = s("প্রাপ্তবয়স্ক"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} দিন")),
+            week = Some(simpleUnit("{n} সপ্তাহ")),
+            month = Some(simpleUnit("{n} মাস")),
+            year = Some(simpleUnit("{n} বছর")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} দিন")),
+            week = Some(simpleUnit("{n} সপ্তাহ")),
+            month = Some(simpleUnit("{n} মাস")),
+            year = Some(simpleUnit("{n} বছর")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/br.json
@@ -186,6 +256,20 @@ object Locales {
             teenager = s("Den yaouank"),
             adult = s("Den deuet da vad"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} sizh.")),
+            month = Some(simpleUnit("{n} m.")),
+            year = Some(simpleUnit("{n} bl.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}sizh.")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}b")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/bs.json
@@ -218,6 +302,20 @@ object Locales {
             teenager = s("Tinejdžer"),
             adult = s("Odrasla osoba"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} dan", PluralCategory.FEW -> "{n} dana", PluralCategory.OTHER -> "{n} dana"))),
+            week = Some(simpleUnit("{n} sedm.")),
+            month = Some(simpleUnit("{n} mj.")),
+            year = Some(simpleUnit("{n} god.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} sedm.")),
+            month = Some(simpleUnit("{n} mj.")),
+            year = Some(simpleUnit("{n} god.")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ca.json
@@ -244,6 +342,20 @@ object Locales {
             teenager = s("Adolescent"),
             adult = g("Adult", "Adulta"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} dia", PluralCategory.OTHER -> "{n} dies"))),
+            week = Some(simpleUnit("{n} setm.")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} mes", PluralCategory.OTHER -> "{n} m"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} any", PluralCategory.OTHER -> "{n} anys"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} setm.")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} any", PluralCategory.OTHER -> "{n} anys"))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/cs.json
@@ -274,6 +386,19 @@ object Locales {
             teenager = s("Teenager"),
             adult = g("Dospělý", "Dospělá"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} den", PluralCategory.FEW -> "{n} dny", PluralCategory.MANY -> "{n} dne", PluralCategory.OTHER -> "{n} dnů"))),
+            week = Some(simpleUnit("{n} týd.")),
+            month = Some(simpleUnit("{n} měs.")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} rok", PluralCategory.FEW -> "{n} roky", PluralCategory.MANY -> "{n} roku", PluralCategory.OTHER -> "{n} let"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} t.")),
+            month = Some(simpleUnit("{n} m.")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} r.", PluralCategory.FEW -> "{n} r.", PluralCategory.MANY -> "{n} r.", PluralCategory.OTHER -> "{n} l."))),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/cy.json
@@ -307,6 +432,20 @@ object Locales {
             teenager = s("Glaslanc"),
             adult = s("Oedolyn"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} diwrnod", PluralCategory.ONE -> "{n} diwrnod", PluralCategory.TWO -> "{n} ddiwrnod", PluralCategory.FEW -> "{n} diwrnod", PluralCategory.MANY -> "{n} diwrnod", PluralCategory.OTHER -> "{n} diwrnod"))),
+            week = Some(simpleUnit("{n} ws")),
+            month = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} mis", PluralCategory.ONE -> "{n} mis", PluralCategory.TWO -> "{n} fis", PluralCategory.FEW -> "{n} mis", PluralCategory.MANY -> "{n} mis", PluralCategory.OTHER -> "{n} mis"))),
+            year = Some(simpleUnit("{n} bl")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(pluralUnit(Map(PluralCategory.ZERO -> "{n} ws", PluralCategory.ONE -> "{n}w", PluralCategory.TWO -> "{n} ws", PluralCategory.FEW -> "{n} ws", PluralCategory.MANY -> "{n} ws", PluralCategory.OTHER -> "{n}w"))),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}bl")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/da.json
@@ -333,6 +472,19 @@ object Locales {
             teenager = s("Teenager"),
             adult = s("Voksen"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} dag", PluralCategory.OTHER -> "{n} dage"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} uge", PluralCategory.OTHER -> "{n} uger"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} md.", PluralCategory.OTHER -> "{n} mdr."))),
+            year = Some(simpleUnit("{n} år")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} u")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(simpleUnit("{n} år")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/de.json
@@ -359,6 +511,19 @@ object Locales {
             teenager = s("Teenager"),
             adult = g("Erwachsener", "Erwachsene"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} Tg.")),
+            week = Some(simpleUnit("{n} Wo.")),
+            month = Some(simpleUnit("{n} Mon.")),
+            year = Some(simpleUnit("{n} J")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} T")),
+            week = Some(simpleUnit("{n} W")),
+            month = Some(simpleUnit("{n} M")),
+            year = Some(simpleUnit("{n} J")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/el.json
@@ -385,6 +550,20 @@ object Locales {
             teenager = g("Έφηβος", "Έφηβη"),
             adult = g("Ενήλικας", "Ενήλικη"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ημέρα", PluralCategory.OTHER -> "{n} ημέρες"))),
+            week = Some(simpleUnit("{n} εβδ.")),
+            month = Some(simpleUnit("{n} μήν.")),
+            year = Some(simpleUnit("{n} έτ.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} η")),
+            week = Some(simpleUnit("{n} ε")),
+            month = Some(simpleUnit("{n} μ")),
+            year = Some(simpleUnit("{n} έ")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/en.json
@@ -450,6 +629,20 @@ object Locales {
             teenager = s("Adolescente"),
             adult = g("Adulto", "Adulta"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} sem.")),
+            month = Some(simpleUnit("{n} m.")),
+            year = Some(simpleUnit("{n} a")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}sem")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}a")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/et.json
@@ -476,6 +669,19 @@ object Locales {
             teenager = s("Teismeline"),
             adult = s("Täiskasvanu"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} päev", PluralCategory.OTHER -> "{n} päeva"))),
+            week = Some(simpleUnit("{n} näd")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} kuu", PluralCategory.OTHER -> "{n} kuud"))),
+            year = Some(simpleUnit("{n} a")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} p")),
+            week = Some(simpleUnit("{n} n")),
+            month = Some(simpleUnit("{n} k")),
+            year = Some(simpleUnit("{n} a")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/eu.json
@@ -502,6 +708,20 @@ object Locales {
             teenager = s("Nerabea"),
             adult = s("Heldua"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} egun")),
+            week = Some(simpleUnit("{n} aste")),
+            month = Some(simpleUnit("{n} hilabete")),
+            year = Some(simpleUnit("{n} urte")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} e.")),
+            week = Some(simpleUnit("{n} aste")),
+            month = Some(simpleUnit("{n} hil")),
+            year = Some(simpleUnit("{n} u.")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/fa.json
@@ -528,6 +748,20 @@ object Locales {
             teenager = s("نوجوان"),
             adult = s("بزرگسال"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} روز")),
+            week = Some(simpleUnit("{n} هفته")),
+            month = Some(simpleUnit("{n} ماه")),
+            year = Some(simpleUnit("{n} سال")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} روز")),
+            week = Some(simpleUnit("{n} هفته")),
+            month = Some(simpleUnit("{n} ماه")),
+            year = Some(simpleUnit("{n} سال")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/fi.json
@@ -554,6 +788,20 @@ object Locales {
             teenager = s("Teini"),
             adult = s("Aikuinen"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} pv")),
+            week = Some(simpleUnit("{n} vk")),
+            month = Some(simpleUnit("{n} kk")),
+            year = Some(simpleUnit("{n} v")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}pv")),
+            week = Some(simpleUnit("{n}vk")),
+            month = Some(simpleUnit("{n}kk")),
+            year = Some(simpleUnit("{n}v")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/fil.json
@@ -580,6 +828,20 @@ object Locales {
             teenager = s("Tinedyer"),
             adult = s("Matanda"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} araw")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} linggo", PluralCategory.OTHER -> "{n} na linggo"))),
+            month = Some(simpleUnit("{n} buwan")),
+            year = Some(simpleUnit("{n} taon")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} araw", PluralCategory.OTHER -> "{n} na araw"))),
+            week = Some(simpleUnit("{n}linggo")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n}buwan", PluralCategory.OTHER -> "{n} buwan"))),
+            year = Some(simpleUnit("{n}taon")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/fr.json
@@ -606,6 +868,20 @@ object Locales {
             teenager = g("Adolescent", "Adolescente"),
             adult = s("Adulte"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} j")),
+            week = Some(simpleUnit("{n} sem.")),
+            month = Some(simpleUnit("{n} m.")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} an", PluralCategory.OTHER -> "{n} ans"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}j")),
+            week = Some(simpleUnit("{n}sem.")),
+            month = Some(simpleUnit("{n}m.")),
+            year = Some(simpleUnit("{n}a")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ga.json
@@ -638,6 +914,20 @@ object Locales {
             teenager = s("Déagóir"),
             adult = s("Duine fásta"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} lá")),
+            week = Some(simpleUnit("{n} scht")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} mí", PluralCategory.TWO -> "{n} mí", PluralCategory.FEW -> "{n} mí", PluralCategory.MANY -> "{n} mí", PluralCategory.OTHER -> "{n} m"))),
+            year = Some(simpleUnit("{n} bl")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} lá")),
+            week = Some(simpleUnit("{n} scht")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n}m", PluralCategory.TWO -> "{n}m", PluralCategory.FEW -> "{n}m", PluralCategory.MANY -> "{n}m", PluralCategory.OTHER -> "{n} m"))),
+            year = Some(simpleUnit("{n} bl")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/gd.json
@@ -669,6 +959,20 @@ object Locales {
             teenager = s("Deugaire"),
             adult = s("Inbheach"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} là")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} shn", PluralCategory.TWO -> "{n} shn", PluralCategory.FEW -> "{n} sn", PluralCategory.OTHER -> "{n} sn"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} mhìos", PluralCategory.TWO -> "{n} mhìos", PluralCategory.FEW -> "{n} mìos", PluralCategory.OTHER -> "{n} mìos"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} bhlia", PluralCategory.TWO -> "{n} bhlia", PluralCategory.FEW -> "{n} blia", PluralCategory.OTHER -> "{n} blia"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}là")),
+            week = Some(simpleUnit("{n}s")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}bl")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/gu.json
@@ -695,6 +999,20 @@ object Locales {
             teenager = g("કિશોર", "કિશોરી"),
             adult = s("પુખ્ત"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} દિવસ")),
+            week = Some(simpleUnit("{n} અઠ.")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} મહિનો", PluralCategory.OTHER -> "{n} મહિના"))),
+            year = Some(simpleUnit("{n} વર્ષ")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} દિ")),
+            week = Some(simpleUnit("{n} અઠ.")),
+            month = Some(simpleUnit("{n} મ")),
+            year = Some(simpleUnit("{n} વ")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/gv.json
@@ -728,6 +1046,20 @@ object Locales {
             teenager = s("Fer aeg"),
             adult = s("Dooinney aasit"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} wk")),
+            month = Some(simpleUnit("{n} mo")),
+            year = Some(simpleUnit("{n} yr")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/he.json
@@ -758,6 +1090,20 @@ object Locales {
             teenager = g("נער", "נערה"),
             adult = g("מבוגר", "מבוגרת"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} יום", PluralCategory.TWO -> "יומיים", PluralCategory.OTHER -> "{n} ימ׳"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} שבוע", PluralCategory.TWO -> "שבועיים", PluralCategory.OTHER -> "{n} שבועות"))),
+            month = Some(simpleUnit("{n} ח׳")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} שנה", PluralCategory.TWO -> "{n} שנים", PluralCategory.OTHER -> "{n} שנים"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} י׳")),
+            week = Some(simpleUnit("{n} ש′")),
+            month = Some(simpleUnit("{n} ח׳")),
+            year = Some(simpleUnit("{n} ש′")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/hi.json
@@ -784,6 +1130,20 @@ object Locales {
             teenager = g("किशोर", "किशोरी"),
             adult = s("वयस्क"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} दिन")),
+            week = Some(simpleUnit("{n} सप्ताह")),
+            month = Some(simpleUnit("{n} माह")),
+            year = Some(simpleUnit("{n} वर्ष")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} दि")),
+            week = Some(simpleUnit("{n} सप्ताह")),
+            month = Some(simpleUnit("{n} माह")),
+            year = Some(simpleUnit("{n} व")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/hr.json
@@ -816,6 +1176,20 @@ object Locales {
             teenager = s("Tinejdžer"),
             adult = s("Odrasla osoba"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} dan", PluralCategory.FEW -> "{n} dana", PluralCategory.OTHER -> "{n} dana"))),
+            week = Some(simpleUnit("{n} tj.")),
+            month = Some(simpleUnit("{n} mj.")),
+            year = Some(simpleUnit("{n} g.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} tj.")),
+            month = Some(simpleUnit("{n} mj.")),
+            year = Some(simpleUnit("{n} g.")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/hu.json
@@ -842,6 +1216,20 @@ object Locales {
             teenager = s("Tinédzser"),
             adult = s("Felnőtt"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} nap")),
+            week = Some(simpleUnit("{n} hét")),
+            month = Some(simpleUnit("{n} hónap")),
+            year = Some(simpleUnit("{n} év")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} nap")),
+            week = Some(simpleUnit("{n} hét")),
+            month = Some(simpleUnit("{n} h.")),
+            year = Some(simpleUnit("{n} év")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/id.json
@@ -868,6 +1256,20 @@ object Locales {
             teenager = s("Remaja"),
             adult = s("Dewasa"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} hr")),
+            week = Some(simpleUnit("{n} mgg")),
+            month = Some(simpleUnit("{n} bln")),
+            year = Some(simpleUnit("{n} thn")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} hr")),
+            week = Some(simpleUnit("{n} mgg")),
+            month = Some(simpleUnit("{n} bln")),
+            year = Some(simpleUnit("{n} thn")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/it.json
@@ -894,6 +1296,20 @@ object Locales {
             teenager = s("Adolescente"),
             adult = g("Adulto", "Adulta"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} giorno", PluralCategory.OTHER -> "{n} giorni"))),
+            week = Some(simpleUnit("{n} sett.")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} mese", PluralCategory.OTHER -> "{n} mesi"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} anno", PluralCategory.OTHER -> "{n} anni"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n}g", PluralCategory.OTHER -> "{n}gg"))),
+            week = Some(simpleUnit("{n}sett.")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} mese", PluralCategory.OTHER -> "{n} mesi"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n}anno", PluralCategory.OTHER -> "{n}anni"))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ja.json
@@ -920,6 +1336,18 @@ object Locales {
             teenager = s("青少年"),
             adult = s("成人"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} 日")),
+            week = Some(simpleUnit("{n} 週間")),
+            month = Some(simpleUnit("{n} か月")),
+            year = Some(simpleUnit("{n} 年")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+        )),
     )
 
     // Source: age/locales/src/jv.json
@@ -946,6 +1374,20 @@ object Locales {
             teenager = s("Remaja"),
             adult = s("Diwasa"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} dina")),
+            week = Some(simpleUnit("{n} peken")),
+            month = Some(simpleUnit("{n} sasi")),
+            year = Some(simpleUnit("{n} taun")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n} peken")),
+            month = Some(simpleUnit("{n} sasi")),
+            year = Some(simpleUnit("{n} taun")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ka.json
@@ -972,6 +1414,20 @@ object Locales {
             teenager = s("მოზარდი"),
             adult = s("ზრდასრული"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} დღე")),
+            week = Some(simpleUnit("{n} კვრ")),
+            month = Some(simpleUnit("{n} თვე")),
+            year = Some(simpleUnit("{n} წ")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} დღე")),
+            week = Some(simpleUnit("{n} კვრ")),
+            month = Some(simpleUnit("{n} თვე")),
+            year = Some(simpleUnit("{n} წ")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/kk.json
@@ -998,6 +1454,20 @@ object Locales {
             teenager = s("Жасөспірім"),
             adult = s("Ересек"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} күн")),
+            week = Some(simpleUnit("{n} ап.")),
+            month = Some(simpleUnit("{n} ай")),
+            year = Some(simpleUnit("{n} ж.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} к.")),
+            week = Some(simpleUnit("{n} ап.")),
+            month = Some(simpleUnit("{n} ай")),
+            year = Some(simpleUnit("{n} ж.")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/km.json
@@ -1024,6 +1494,20 @@ object Locales {
             teenager = s("យុវវ័យ"),
             adult = s("មនុស្សពេញវ័យ"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ថ្ងៃ")),
+            week = Some(simpleUnit("{n} សប្ដាហ៍")),
+            month = Some(simpleUnit("{n} ខែ")),
+            year = Some(simpleUnit("{n} ឆ្នាំ")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ថ្ងៃ")),
+            week = Some(simpleUnit("{n} សប្ដាហ៍")),
+            month = Some(simpleUnit("{n} ខែ")),
+            year = Some(simpleUnit("{n} ឆ្នាំ")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ko.json
@@ -1050,6 +1534,19 @@ object Locales {
             teenager = s("청소년"),
             adult = s("성인"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}일")),
+            week = Some(simpleUnit("{n}주")),
+            month = Some(simpleUnit("{n}개월")),
+            year = Some(simpleUnit("{n}년")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}일")),
+            week = Some(simpleUnit("{n}주")),
+            month = Some(simpleUnit("{n}개월")),
+            year = Some(simpleUnit("{n}년")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/kw.json
@@ -1086,6 +1583,20 @@ object Locales {
             teenager = s("Den yowynk"),
             adult = s("Den tevys"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} wk")),
+            month = Some(simpleUnit("{n} mo")),
+            year = Some(simpleUnit("{n} yr")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/lt.json
@@ -1118,6 +1629,19 @@ object Locales {
             teenager = g("Paauglys", "Paauglė"),
             adult = g("Suaugęs", "Suaugusi"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} sav.")),
+            month = Some(simpleUnit("{n} mėn.")),
+            year = Some(simpleUnit("{n} m.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} sav.")),
+            month = Some(simpleUnit("{n} mėn.")),
+            year = Some(simpleUnit("{n} m.")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/lv.json
@@ -1150,6 +1674,19 @@ object Locales {
             teenager = g("Pusaudzis", "Pusaudze"),
             adult = g("Pieaugušais", "Pieaugusī"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} ned.")),
+            month = Some(simpleUnit("{n} mēn.")),
+            year = Some(simpleUnit("{n} g.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} n.")),
+            month = Some(simpleUnit("{n} m.")),
+            year = Some(simpleUnit("{n} g.")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/mk.json
@@ -1180,6 +1717,20 @@ object Locales {
             teenager = s("Тинејџер"),
             adult = s("Возрасен"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ден", PluralCategory.OTHER -> "{n} дена"))),
+            week = Some(simpleUnit("{n} сед.")),
+            month = Some(simpleUnit("{n} мес.")),
+            year = Some(simpleUnit("{n} год.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} д.")),
+            week = Some(simpleUnit("{n} с.")),
+            month = Some(simpleUnit("{n} м.")),
+            year = Some(simpleUnit("{n} г.")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/mr.json
@@ -1206,6 +1757,20 @@ object Locales {
             teenager = g("किशोर", "किशोरी"),
             adult = s("प्रौढ"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} दिवस")),
+            week = Some(simpleUnit("{n} आ")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} महिना", PluralCategory.OTHER -> "{n} महिने"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} वर्ष", PluralCategory.OTHER -> "{n} वर्षे"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}दि")),
+            week = Some(simpleUnit("{n}आ")),
+            month = Some(simpleUnit("{n}म")),
+            year = Some(simpleUnit("{n}व")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ms.json
@@ -1232,6 +1797,20 @@ object Locales {
             teenager = s("Remaja"),
             adult = s("Dewasa"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} hari")),
+            week = Some(simpleUnit("{n} mgu")),
+            month = Some(simpleUnit("{n} bln")),
+            year = Some(simpleUnit("{n} thn")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} h")),
+            week = Some(simpleUnit("{n} mgu")),
+            month = Some(simpleUnit("{n} bln")),
+            year = Some(simpleUnit("{n} thn")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/mt.json
@@ -1264,6 +1843,20 @@ object Locales {
             teenager = g("Adolexxent", "Adolexxenta"),
             adult = g("Adult", "Adulta"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} w")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(simpleUnit("{n} y")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} w")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(simpleUnit("{n} y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/my.json
@@ -1290,6 +1883,20 @@ object Locales {
             teenager = s("ဆယ်ကျော်သက်"),
             adult = s("အရွယ်ရောက်"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ရက်")),
+            week = Some(simpleUnit("{n} ပတ်")),
+            month = Some(simpleUnit("{n} လ")),
+            year = Some(simpleUnit("{n} နှစ်")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ရက်")),
+            week = Some(simpleUnit("{n} ပတ်")),
+            month = Some(simpleUnit("{n} လ")),
+            year = Some(simpleUnit("{n} နှစ်")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/nb.json
@@ -1316,6 +1923,19 @@ object Locales {
             teenager = s("Tenåring"),
             adult = s("Voksen"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} u")),
+            month = Some(simpleUnit("{n} md.")),
+            year = Some(simpleUnit("{n} år")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}u")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(simpleUnit("{n}å")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/ne.json
@@ -1342,6 +1962,20 @@ object Locales {
             teenager = s("किशोर"),
             adult = s("वयस्क"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} दिन")),
+            week = Some(simpleUnit("{n} हप्ता")),
+            month = Some(simpleUnit("{n} महिना")),
+            year = Some(simpleUnit("{n} वर्ष")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} दिन")),
+            week = Some(simpleUnit("{n} हप्ता")),
+            month = Some(simpleUnit("{n} महिना")),
+            year = Some(simpleUnit("{n} वर्ष")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/nl.json
@@ -1368,6 +2002,19 @@ object Locales {
             teenager = s("Tiener"),
             adult = s("Volwassene"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} dag", PluralCategory.OTHER -> "{n} dagen"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} wk", PluralCategory.OTHER -> "{n} wkn"))),
+            month = Some(simpleUnit("{n} mnd")),
+            year = Some(simpleUnit("{n} jr")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} w")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(simpleUnit("{n} jr")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/pa.json
@@ -1394,6 +2041,20 @@ object Locales {
             teenager = g("ਕਿਸ਼ੋਰ", "ਕਿਸ਼ੋਰੀ"),
             adult = s("ਬਾਲਗ"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ਦਿਨ")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ਹਫ਼ਤਾ", PluralCategory.OTHER -> "{n} ਹਫ਼ਤੇ"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ਮਹੀਨਾ", PluralCategory.OTHER -> "{n} ਮਹੀਨੇ"))),
+            year = Some(simpleUnit("{n} ਸਾਲ")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ਦਿਨ")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ਹਫ਼ਤਾ", PluralCategory.OTHER -> "{n} ਹਫ਼ਤੇ"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ਮਹੀਨਾ", PluralCategory.OTHER -> "{n} ਮਹੀਨੇ"))),
+            year = Some(simpleUnit("{n} ਸਾਲ")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/pl.json
@@ -1428,6 +2089,20 @@ object Locales {
             teenager = g("Nastolatek", "Nastolatka"),
             adult = g("Dorosły", "Dorosła"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} dzień", PluralCategory.FEW -> "{n} dni", PluralCategory.MANY -> "{n} dni", PluralCategory.OTHER -> "{n} dnia"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} tydz.", PluralCategory.FEW -> "{n} tyg.", PluralCategory.MANY -> "{n} tyg.", PluralCategory.OTHER -> "{n} tyg."))),
+            month = Some(simpleUnit("{n} mies.")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} rok", PluralCategory.FEW -> "{n} lata", PluralCategory.MANY -> "{n} lat", PluralCategory.OTHER -> "{n} roku"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} t.")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} m-c", PluralCategory.FEW -> "{n} m-ce", PluralCategory.MANY -> "{n} m-cy", PluralCategory.OTHER -> "{n} m-ca"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} r.", PluralCategory.FEW -> "{n} l.", PluralCategory.MANY -> "{n} l.", PluralCategory.OTHER -> "{n} r."))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/pt.json
@@ -1454,6 +2129,20 @@ object Locales {
             teenager = s("Adolescente"),
             adult = g("Adulto", "Adulta"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} dia", PluralCategory.OTHER -> "{n} dias"))),
+            week = Some(simpleUnit("{n} sem.")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} mês", PluralCategory.OTHER -> "{n} meses"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ano", PluralCategory.OTHER -> "{n} anos"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} dia", PluralCategory.OTHER -> "{n} dias"))),
+            week = Some(simpleUnit("{n} sem.")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} mês", PluralCategory.OTHER -> "{n} meses"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ano", PluralCategory.OTHER -> "{n} anos"))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ro.json
@@ -1484,6 +2173,20 @@ object Locales {
             teenager = g("Adolescent", "Adolescentă"),
             adult = g("Adult", "Adultă"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} zi", PluralCategory.FEW -> "{n} zile", PluralCategory.OTHER -> "{n} zile"))),
+            week = Some(simpleUnit("{n} săpt.")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} lună", PluralCategory.FEW -> "{n} luni", PluralCategory.OTHER -> "{n} luni"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} an", PluralCategory.FEW -> "{n} ani", PluralCategory.OTHER -> "{n} ani"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} z")),
+            week = Some(simpleUnit("{n} săpt.")),
+            month = Some(simpleUnit("{n} l")),
+            year = Some(simpleUnit("{n} a")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ru.json
@@ -1516,6 +2219,20 @@ object Locales {
             teenager = s("Подросток"),
             adult = g("Взрослый", "Взрослая"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} дн.")),
+            week = Some(simpleUnit("{n} нед.")),
+            month = Some(simpleUnit("{n} мес.")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} г.", PluralCategory.FEW -> "{n} г.", PluralCategory.MANY -> "{n} л.", PluralCategory.OTHER -> "{n} г."))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} д.")),
+            week = Some(simpleUnit("{n} н.")),
+            month = Some(simpleUnit("{n} м.")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} г.", PluralCategory.FEW -> "{n} г.", PluralCategory.MANY -> "{n} л.", PluralCategory.OTHER -> "{n} г."))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/shi.json
@@ -1546,6 +2263,20 @@ object Locales {
             teenager = g("Aɛrim", "Taɛrimt"),
             adult = g("Argaz", "Tamṭṭuṭ"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} wk")),
+            month = Some(simpleUnit("{n} mo")),
+            year = Some(simpleUnit("{n} yr")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/si.json
@@ -1572,6 +2303,20 @@ object Locales {
             teenager = s("නව යොවුන්"),
             adult = s("වැඩිහිටි"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("දින {n}")),
+            week = Some(simpleUnit("සති {n}")),
+            month = Some(simpleUnit("මාස {n}")),
+            year = Some(simpleUnit("වසර {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("දි {n}")),
+            week = Some(simpleUnit("ස {n}")),
+            month = Some(simpleUnit("මා {n}")),
+            year = Some(simpleUnit("ව {n}")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/sk.json
@@ -1602,6 +2347,19 @@ object Locales {
             teenager = s("Tínedžer"),
             adult = g("Dospelý", "Dospelá"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} deň", PluralCategory.FEW -> "{n} dni", PluralCategory.MANY -> "{n} dňa", PluralCategory.OTHER -> "{n} dní"))),
+            week = Some(simpleUnit("{n} týž.")),
+            month = Some(simpleUnit("{n} mes.")),
+            year = Some(simpleUnit("{n} r.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d.")),
+            week = Some(simpleUnit("{n} t.")),
+            month = Some(simpleUnit("{n} m.")),
+            year = Some(simpleUnit("{n} r.")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/sl.json
@@ -1634,6 +2392,20 @@ object Locales {
             teenager = g("Najstnik", "Najstnica"),
             adult = g("Odrasel", "Odrasla"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} t")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(simpleUnit("{n} l")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} t")),
+            month = Some(simpleUnit("{n} m")),
+            year = Some(simpleUnit("{n} l")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/sq.json
@@ -1660,6 +2432,20 @@ object Locales {
             teenager = g("Adoleshent", "Adoleshente"),
             adult = g("I rritur", "E rritur"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ditë")),
+            week = Some(simpleUnit("{n} javë")),
+            month = Some(simpleUnit("{n} muaj")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} vit", PluralCategory.OTHER -> "{n} vjet"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ditë")),
+            week = Some(simpleUnit("{n} javë")),
+            month = Some(simpleUnit("{n} muaj")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} vit", PluralCategory.OTHER -> "{n} vjet"))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/sr.json
@@ -1692,6 +2478,20 @@ object Locales {
             teenager = s("Тинејџер"),
             adult = s("Одрасла особа"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} дан", PluralCategory.FEW -> "{n} дана", PluralCategory.OTHER -> "{n} дана"))),
+            week = Some(simpleUnit("{n} нед.")),
+            month = Some(simpleUnit("{n} мес.")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} год", PluralCategory.FEW -> "{n} год.", PluralCategory.OTHER -> "{n} год."))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} д")),
+            week = Some(simpleUnit("{n} н")),
+            month = Some(simpleUnit("{n} м")),
+            year = Some(simpleUnit("{n} г")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/sv.json
@@ -1718,6 +2518,19 @@ object Locales {
             teenager = s("Tonåring"),
             adult = s("Vuxen"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} v")),
+            month = Some(simpleUnit("{n} mån")),
+            year = Some(simpleUnit("{n} år")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}v")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}å")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/sw.json
@@ -1744,6 +2557,20 @@ object Locales {
             teenager = s("Kijana"),
             adult = s("Mtu mzima"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("siku {n}")),
+            week = Some(simpleUnit("wiki {n}")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "mwezi {n}", PluralCategory.OTHER -> "miezi {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "mwaka {n}", PluralCategory.OTHER -> "miaka {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("siku {n}")),
+            week = Some(simpleUnit("wiki {n}")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "mwezi {n}", PluralCategory.OTHER -> "miezi {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "mwaka {n}", PluralCategory.OTHER -> "miaka {n}"))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ta.json
@@ -1770,6 +2597,19 @@ object Locales {
             teenager = s("இளம்பருவம்"),
             adult = s("பெரியவர்"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} நாள்", PluralCategory.OTHER -> "{n} நாட்கள்"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} வாரம்", PluralCategory.OTHER -> "{n} வார."))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} மாதம்", PluralCategory.OTHER -> "{n} மாத."))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ஆண்டு", PluralCategory.OTHER -> "{n} ஆண்டு."))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} நா")),
+            week = Some(simpleUnit("{n} வா")),
+            month = Some(simpleUnit("{n} மா")),
+            year = Some(simpleUnit("{n} ஆ")),
+            delimiter = Some(""),
+        )),
     )
 
     // Source: age/locales/src/te.json
@@ -1796,6 +2636,20 @@ object Locales {
             teenager = s("కౌమారదశ"),
             adult = s("వయోజనులు"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} రోజు", PluralCategory.OTHER -> "{n} రోజులు"))),
+            week = Some(simpleUnit("{n} వా.")),
+            month = Some(simpleUnit("{n} నె.")),
+            year = Some(simpleUnit("{n} సం.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}రో")),
+            week = Some(simpleUnit("{n}వా")),
+            month = Some(simpleUnit("{n}నె")),
+            year = Some(simpleUnit("{n}సం")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/th.json
@@ -1822,6 +2676,20 @@ object Locales {
             teenager = s("วัยรุ่น"),
             adult = s("ผู้ใหญ่"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} วัน")),
+            week = Some(simpleUnit("{n} สัปดาห์")),
+            month = Some(simpleUnit("{n} เดือน")),
+            year = Some(simpleUnit("{n} ปี")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}วัน")),
+            week = Some(simpleUnit("{n}สัปดาห์")),
+            month = Some(simpleUnit("{n}เดือน")),
+            year = Some(simpleUnit("{n}ปี")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/tr.json
@@ -1848,6 +2716,20 @@ object Locales {
             teenager = s("Ergen"),
             adult = s("Yetişkin"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} gün")),
+            week = Some(simpleUnit("{n} hf.")),
+            month = Some(simpleUnit("{n} ay")),
+            year = Some(simpleUnit("{n} yıl")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}g")),
+            week = Some(simpleUnit("{n}h")),
+            month = Some(simpleUnit("{n}a")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/tzm.json
@@ -1877,6 +2759,20 @@ object Locales {
             teenager = g("Aɛrim", "Taɛrimt"),
             adult = g("Argaz", "Tamṭṭuṭ"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} d")),
+            week = Some(simpleUnit("{n} wk")),
+            month = Some(simpleUnit("{n} mo")),
+            year = Some(simpleUnit("{n} yr")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/uk.json
@@ -1909,6 +2805,20 @@ object Locales {
             teenager = s("Підліток"),
             adult = g("Дорослий", "Доросла"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} дн.")),
+            week = Some(simpleUnit("{n} тиж.")),
+            month = Some(simpleUnit("{n} міс.")),
+            year = Some(simpleUnit("{n} р.")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}д")),
+            week = Some(simpleUnit("{n}т")),
+            month = Some(simpleUnit("{n}м")),
+            year = Some(simpleUnit("{n}р")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/ur.json
@@ -1935,6 +2845,20 @@ object Locales {
             teenager = s("نوجوان"),
             adult = s("بالغ"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} دن")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ہفتہ", PluralCategory.OTHER -> "{n} ہفتے"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} مہینہ", PluralCategory.OTHER -> "{n} مہینے"))),
+            year = Some(simpleUnit("{n} سال")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} دن")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} ہفتہ", PluralCategory.OTHER -> "{n} ہفتے"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} مہینہ", PluralCategory.OTHER -> "{n} مہینے"))),
+            year = Some(simpleUnit("{n} سال")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/uz.json
@@ -1961,6 +2885,20 @@ object Locales {
             teenager = s("Oʻsmir"),
             adult = s("Katta"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} kun")),
+            week = Some(simpleUnit("{n} hafta")),
+            month = Some(simpleUnit("{n} oy")),
+            year = Some(simpleUnit("{n} yil")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} kun")),
+            week = Some(simpleUnit("{n} hafta")),
+            month = Some(simpleUnit("{n} oy")),
+            year = Some(simpleUnit("{n} yil")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/vi.json
@@ -1987,6 +2925,20 @@ object Locales {
             teenager = s("Thiếu niên"),
             adult = s("Người lớn"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ngày")),
+            week = Some(simpleUnit("{n} tuần")),
+            month = Some(simpleUnit("{n} tháng")),
+            year = Some(simpleUnit("{n} năm")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} ngày")),
+            week = Some(simpleUnit("{n} tuần")),
+            month = Some(simpleUnit("{n} tháng")),
+            year = Some(simpleUnit("{n} năm")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
     )
 
     // Source: age/locales/src/zh.json
@@ -2013,6 +2965,18 @@ object Locales {
             teenager = s("青少年"),
             adult = s("成人"),
         ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}天")),
+            week = Some(simpleUnit("{n}周")),
+            month = Some(simpleUnit("{n}个月")),
+            year = Some(simpleUnit("{n}年")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}天")),
+            week = Some(simpleUnit("{n}周")),
+            month = Some(simpleUnit("{n}个月")),
+            year = Some(simpleUnit("{n}年")),
+        )),
     )
 
     val ALL: Map[String, AgeLocale] = Map(

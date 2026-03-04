@@ -30,5 +30,23 @@ M.stages = {
     teenager = "Oʻsmir",
     adult = "Katta",
 }
+M.short = {
+    units = {
+        day = "{n} kun",
+        week = "{n} hafta",
+        month = "{n} oy",
+        year = "{n} yil",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} kun",
+        week = "{n} hafta",
+        month = "{n} oy",
+        year = "{n} yil",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

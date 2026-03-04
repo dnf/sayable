@@ -34,6 +34,6 @@ const SaLocale sa_locale_eu = {
         { "Nerabea", "" },
         { "Heldua", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} egun", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} aste", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hilabete", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} urte", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} e.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} aste", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hil", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} u.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

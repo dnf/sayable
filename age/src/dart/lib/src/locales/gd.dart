@@ -33,4 +33,18 @@ final gd = AgeLocale(
   child: stageNeutral('Pàiste'),
   teenager: stageNeutral('Deugaire'),
   adult: stageNeutral('Inbheach'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} là'),
+    week: pluralUnit({PluralCategory.one: '{n} shn', PluralCategory.two: '{n} shn', PluralCategory.few: '{n} sn', PluralCategory.other: '{n} sn'}),
+    month: pluralUnit({PluralCategory.one: '{n} mhìos', PluralCategory.two: '{n} mhìos', PluralCategory.few: '{n} mìos', PluralCategory.other: '{n} mìos'}),
+    year: pluralUnit({PluralCategory.one: '{n} bhlia', PluralCategory.two: '{n} bhlia', PluralCategory.few: '{n} blia', PluralCategory.other: '{n} blia'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}là'),
+    week: simpleUnit('{n}s'),
+    month: simpleUnit('{n}m'),
+    year: simpleUnit('{n}bl'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/bn.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Bengali locale.
 pub fn locale() -> AgeLocale {
@@ -47,8 +47,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "কিশোর".to_string(), f: "কিশোরী".to_string() },
             adult: StageLabel::Neutral("প্রাপ্তবয়স্ক".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} দিন")),
+            week: Some(UnitForms::simple("{n} সপ্তাহ")),
+            month: Some(UnitForms::simple("{n} মাস")),
+            year: Some(UnitForms::simple("{n} বছর")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} দিন")),
+            week: Some(UnitForms::simple("{n} সপ্তাহ")),
+            month: Some(UnitForms::simple("{n} মাস")),
+            year: Some(UnitForms::simple("{n} বছর")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

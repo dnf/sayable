@@ -31,4 +31,21 @@ export const ta: AgeLocale = {
     teenager: 'இளம்பருவம்',
     adult: 'பெரியவர்',
   },
+  short: {
+    units: {
+      day:   { one: '{n} நாள்', other: '{n} நாட்கள்' },
+      week:  { one: '{n} வாரம்', other: '{n} வார.' },
+      month: { one: '{n} மாதம்', other: '{n} மாத.' },
+      year:  { one: '{n} ஆண்டு', other: '{n} ஆண்டு.' },
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n} நா',
+      week:  '{n} வா',
+      month: '{n} மா',
+      year:  '{n} ஆ',
+    },
+    delimiter: '',
+  },
 };

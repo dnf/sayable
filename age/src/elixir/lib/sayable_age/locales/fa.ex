@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.FA do
         child: "کودک",
         teenager: "نوجوان",
         adult: "بزرگسال"
+      },
+      short: %{
+        units: %{
+          day: "{n} روز",
+          week: "{n} هفته",
+          month: "{n} ماه",
+          year: "{n} سال"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} روز",
+          week: "{n} هفته",
+          month: "{n} ماه",
+          year: "{n} سال"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Neutral "Oʻsmir"
         , stageAdult = Neutral "Katta"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} kun")
+            , ovrWeek = Just (Simple "{n} hafta")
+            , ovrMonth = Just (Simple "{n} oy")
+            , ovrYear = Just (Simple "{n} yil")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} kun")
+            , ovrWeek = Just (Simple "{n} hafta")
+            , ovrMonth = Just (Simple "{n} oy")
+            , ovrYear = Just (Simple "{n} yil")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

@@ -30,4 +30,16 @@ final ja = AgeLocale(
   child: stageNeutral('児童'),
   teenager: stageNeutral('青少年'),
   adult: stageNeutral('成人'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} 日'),
+    week: simpleUnit('{n} 週間'),
+    month: simpleUnit('{n} か月'),
+    year: simpleUnit('{n} 年'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}d'),
+    week: simpleUnit('{n}w'),
+    month: simpleUnit('{n}m'),
+    year: simpleUnit('{n}y'),
+  ),
 );

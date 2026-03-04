@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/uz.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Uzbek locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Oʻsmir".to_string()),
             adult: StageLabel::Neutral("Katta".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} kun")),
+            week: Some(UnitForms::simple("{n} hafta")),
+            month: Some(UnitForms::simple("{n} oy")),
+            year: Some(UnitForms::simple("{n} yil")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} kun")),
+            week: Some(UnitForms::simple("{n} hafta")),
+            month: Some(UnitForms::simple("{n} oy")),
+            year: Some(UnitForms::simple("{n} yil")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

@@ -30,4 +30,18 @@ final my = AgeLocale(
   child: stageNeutral('ကလေး'),
   teenager: stageNeutral('ဆယ်ကျော်သက်'),
   adult: stageNeutral('အရွယ်ရောက်'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} ရက်'),
+    week: simpleUnit('{n} ပတ်'),
+    month: simpleUnit('{n} လ'),
+    year: simpleUnit('{n} နှစ်'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} ရက်'),
+    week: simpleUnit('{n} ပတ်'),
+    month: simpleUnit('{n} လ'),
+    year: simpleUnit('{n} နှစ်'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -31,4 +31,22 @@ export const te: AgeLocale = {
     teenager: 'కౌమారదశ',
     adult: 'వయోజనులు',
   },
+  short: {
+    units: {
+      day:   { one: '{n} రోజు', other: '{n} రోజులు' },
+      week:  '{n} వా.',
+      month: '{n} నె.',
+      year:  '{n} సం.',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n}రో',
+      week:  '{n}వా',
+      month: '{n}నె',
+      year:  '{n}సం',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

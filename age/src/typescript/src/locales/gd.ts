@@ -38,4 +38,22 @@ export const gd: AgeLocale = {
     teenager: 'Deugaire',
     adult: 'Inbheach',
   },
+  short: {
+    units: {
+      day:   '{n} là',
+      week:  { one: '{n} shn', two: '{n} shn', few: '{n} sn', other: '{n} sn' },
+      month: { one: '{n} mhìos', two: '{n} mhìos', few: '{n} mìos', other: '{n} mìos' },
+      year:  { one: '{n} bhlia', two: '{n} bhlia', few: '{n} blia', other: '{n} blia' },
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n}là',
+      week:  '{n}s',
+      month: '{n}m',
+      year:  '{n}bl',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

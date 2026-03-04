@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.NE do
         child: "बालक",
         teenager: "किशोर",
         adult: "वयस्क"
+      },
+      short: %{
+        units: %{
+          day: "{n} दिन",
+          week: "{n} हप्ता",
+          month: "{n} महिना",
+          year: "{n} वर्ष"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} दिन",
+          week: "{n} हप्ता",
+          month: "{n} महिना",
+          year: "{n} वर्ष"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

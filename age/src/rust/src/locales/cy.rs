@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/cy.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Welsh locale.
 pub fn locale() -> AgeLocale {
@@ -68,8 +68,45 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Glaslanc".to_string()),
             adult: StageLabel::Neutral("Oedolyn".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::Zero, "{n} diwrnod"),
+                (PluralCategory::One, "{n} diwrnod"),
+                (PluralCategory::Two, "{n} ddiwrnod"),
+                (PluralCategory::Few, "{n} diwrnod"),
+                (PluralCategory::Many, "{n} diwrnod"),
+                (PluralCategory::Other, "{n} diwrnod"),
+            ])),
+            week: Some(UnitForms::simple("{n} ws")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::Zero, "{n} mis"),
+                (PluralCategory::One, "{n} mis"),
+                (PluralCategory::Two, "{n} fis"),
+                (PluralCategory::Few, "{n} mis"),
+                (PluralCategory::Many, "{n} mis"),
+                (PluralCategory::Other, "{n} mis"),
+            ])),
+            year: Some(UnitForms::simple("{n} bl")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}d")),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::Zero, "{n} ws"),
+                (PluralCategory::One, "{n}w"),
+                (PluralCategory::Two, "{n} ws"),
+                (PluralCategory::Few, "{n} ws"),
+                (PluralCategory::Many, "{n} ws"),
+                (PluralCategory::Other, "{n}w"),
+            ])),
+            month: Some(UnitForms::simple("{n}m")),
+            year: Some(UnitForms::simple("{n}bl")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

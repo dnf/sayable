@@ -30,5 +30,23 @@ M.stages = {
     teenager = "Tinedyer",
     adult = "Matanda",
 }
+M.short = {
+    units = {
+        day = "{n} araw",
+        week = { one = "{n} linggo", other = "{n} na linggo" },
+        month = "{n} buwan",
+        year = "{n} taon",
+    },
+}
+M.compact = {
+    units = {
+        day = { one = "{n} araw", other = "{n} na araw" },
+        week = "{n}linggo",
+        month = { one = "{n}buwan", other = "{n} buwan" },
+        year = "{n}taon",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

@@ -39,4 +39,17 @@ var NL = sa.AgeLocale{
 		Teenager: sa.S("Tiener"),
 		Adult:    sa.S("Volwassene"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} dag", sa.Other: "{n} dagen"}),
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} wk", sa.Other: "{n} wkn"}),
+		Month: &sa.UnitForms{Simple: "{n} mnd"},
+		Year:  &sa.UnitForms{Simple: "{n} jr"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} d"},
+		Week:      &sa.UnitForms{Simple: "{n} w"},
+		Month:     &sa.UnitForms{Simple: "{n} m"},
+		Year:      &sa.UnitForms{Simple: "{n} jr"},
+		Delimiter: strPtr(""),
+	},
 }

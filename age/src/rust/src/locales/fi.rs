@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/fi.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Finnish locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Teini".to_string()),
             adult: StageLabel::Neutral("Aikuinen".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} pv")),
+            week: Some(UnitForms::simple("{n} vk")),
+            month: Some(UnitForms::simple("{n} kk")),
+            year: Some(UnitForms::simple("{n} v")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}pv")),
+            week: Some(UnitForms::simple("{n}vk")),
+            month: Some(UnitForms::simple("{n}kk")),
+            year: Some(UnitForms::simple("{n}v")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

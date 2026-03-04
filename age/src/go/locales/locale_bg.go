@@ -39,4 +39,18 @@ var BG = sa.AgeLocale{
 		Teenager: sa.S("Тийнейджър"),
 		Adult:    sa.G("Възрастен", "Възрастна"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} д"},
+		Week:  &sa.UnitForms{Simple: "{n} седм."},
+		Month: &sa.UnitForms{Simple: "{n} мес."},
+		Year:  &sa.UnitForms{Simple: "{n} год."},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} д"},
+		Week:      &sa.UnitForms{Simple: "{n} седм."},
+		Month:     &sa.UnitForms{Simple: "{n} мес."},
+		Year:      &sa.UnitForms{Simple: "{n} г."},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

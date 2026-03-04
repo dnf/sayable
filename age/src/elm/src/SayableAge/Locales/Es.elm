@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "Adolescente"
         , adult = Gendered "Adulto" "Adulta"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} sem.")
+            , ovrMonth = Just (Simple "{n} m.")
+            , ovrYear = Just (Simple "{n} a")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}d")
+            , ovrWeek = Just (Simple "{n}sem")
+            , ovrMonth = Just (Simple "{n}m")
+            , ovrYear = Just (Simple "{n}a")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

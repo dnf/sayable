@@ -41,6 +41,24 @@ module SayableAge
         teenager: 'Den yaouank',
         adult: 'Den deuet da vad',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} d',
+          'week' => '{n} sizh.',
+          'month' => '{n} m.',
+          'year' => '{n} bl.',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}d',
+          'week' => '{n}sizh.',
+          'month' => '{n}m',
+          'year' => '{n}b',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

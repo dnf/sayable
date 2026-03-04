@@ -31,4 +31,20 @@ export const ja: AgeLocale = {
     teenager: '青少年',
     adult: '成人',
   },
+  short: {
+    units: {
+      day:   '{n} 日',
+      week:  '{n} 週間',
+      month: '{n} か月',
+      year:  '{n} 年',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n}d',
+      week:  '{n}w',
+      month: '{n}m',
+      year:  '{n}y',
+    },
+  },
 };

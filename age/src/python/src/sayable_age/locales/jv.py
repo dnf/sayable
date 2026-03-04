@@ -11,7 +11,7 @@
 
 """Javanese locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 JV = AgeLocale(
     code="jv",
@@ -33,4 +33,22 @@ JV = AgeLocale(
         "teenager": "Remaja",
         "adult": "Diwasa",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} dina",
+            "week": "{n} peken",
+            "month": "{n} sasi",
+            "year": "{n} taun",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}d",
+            "week": "{n} peken",
+            "month": "{n} sasi",
+            "year": "{n} taun",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

@@ -37,6 +37,24 @@ module SayableAge
         teenager: { m: 'Aɛrim', f: 'Taɛrimt' },
         adult: { m: 'Argaz', f: 'Tamṭṭuṭ' },
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} d',
+          'week' => '{n} wk',
+          'month' => '{n} mo',
+          'year' => '{n} yr',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}d',
+          'week' => '{n}w',
+          'month' => '{n}m',
+          'year' => '{n}y',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

@@ -34,6 +34,6 @@ const SaLocale sa_locale_ka = {
         { "მოზარდი", "" },
         { "ზრდასრული", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} დღე", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} კვრ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} თვე", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} წ", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} დღე", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} კვრ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} თვე", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} წ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

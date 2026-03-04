@@ -56,6 +56,24 @@ locale = Locale
         , stageTeenager = Neutral "Den yaouank"
         , stageAdult = Neutral "Den deuet da vad"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} d")
+            , ovrWeek = Just (Simple "{n} sizh.")
+            , ovrMonth = Just (Simple "{n} m.")
+            , ovrYear = Just (Simple "{n} bl.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}d")
+            , ovrWeek = Just (Simple "{n}sizh.")
+            , ovrMonth = Just (Simple "{n}m")
+            , ovrYear = Just (Simple "{n}b")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

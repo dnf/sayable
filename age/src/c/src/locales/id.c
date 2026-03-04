@@ -34,6 +34,6 @@ const SaLocale sa_locale_id = {
         { "Remaja", "" },
         { "Dewasa", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} hr", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mgg", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} bln", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} thn", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} hr", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mgg", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} bln", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} thn", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

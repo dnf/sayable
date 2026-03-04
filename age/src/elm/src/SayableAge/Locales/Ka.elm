@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "მოზარდი"
         , adult = Neutral "ზრდასრული"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} დღე")
+            , ovrWeek = Just (Simple "{n} კვრ")
+            , ovrMonth = Just (Simple "{n} თვე")
+            , ovrYear = Just (Simple "{n} წ")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} დღე")
+            , ovrWeek = Just (Simple "{n} კვრ")
+            , ovrMonth = Just (Simple "{n} თვე")
+            , ovrYear = Just (Simple "{n} წ")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

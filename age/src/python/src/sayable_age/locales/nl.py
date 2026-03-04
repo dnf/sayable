@@ -11,7 +11,7 @@
 
 """Dutch locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 NL = AgeLocale(
     code="nl",
@@ -33,4 +33,21 @@ NL = AgeLocale(
         "teenager": "Tiener",
         "adult": "Volwassene",
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} dag", "other": "{n} dagen"},
+            "week": {"one": "{n} wk", "other": "{n} wkn"},
+            "month": "{n} mnd",
+            "year": "{n} jr",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} w",
+            "month": "{n} m",
+            "year": "{n} jr",
+        },
+        delimiter="",
+    ),
 )

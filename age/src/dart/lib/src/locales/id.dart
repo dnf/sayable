@@ -30,4 +30,18 @@ final id = AgeLocale(
   child: stageNeutral('Anak-anak'),
   teenager: stageNeutral('Remaja'),
   adult: stageNeutral('Dewasa'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} hr'),
+    week: simpleUnit('{n} mgg'),
+    month: simpleUnit('{n} bln'),
+    year: simpleUnit('{n} thn'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} hr'),
+    week: simpleUnit('{n} mgg'),
+    month: simpleUnit('{n} bln'),
+    year: simpleUnit('{n} thn'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

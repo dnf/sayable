@@ -32,6 +32,24 @@ module SayableAge
         teenager: { m: 'किशोर', f: 'किशोरी' },
         adult: 'प्रौढ',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} दिवस',
+          'week' => '{n} आ',
+          'month' => { one: '{n} महिना', other: '{n} महिने' },
+          'year' => { one: '{n} वर्ष', other: '{n} वर्षे' },
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}दि',
+          'week' => '{n}आ',
+          'month' => '{n}म',
+          'year' => '{n}व',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

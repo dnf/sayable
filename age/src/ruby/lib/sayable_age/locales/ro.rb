@@ -37,6 +37,24 @@ module SayableAge
         teenager: { m: 'Adolescent', f: 'Adolescentă' },
         adult: { m: 'Adult', f: 'Adultă' },
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => { one: '{n} zi', few: '{n} zile', other: '{n} zile' },
+          'week' => '{n} săpt.',
+          'month' => { one: '{n} lună', few: '{n} luni', other: '{n} luni' },
+          'year' => { one: '{n} an', few: '{n} ani', other: '{n} ani' },
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} z',
+          'week' => '{n} săpt.',
+          'month' => '{n} l',
+          'year' => '{n} a',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Nuabheirthe"
    :stages {:newborn {:type :neutral :label "Nuabheirthe"} :infant {:type :neutral :label "Naíonán"} :toddler {:type :neutral :label "Lapadán"} :child {:type :neutral :label "Páiste"} :teenager {:type :neutral :label "Déagóir"} :adult {:type :neutral :label "Duine fásta"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} lá"} :week {:type :simple :form "{n} scht"} :month {:type :pluralized :forms {:one "{n} mí" :two "{n} mí" :few "{n} mí" :many "{n} mí" :other "{n} m"}} :year {:type :simple :form "{n} bl"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} lá"} :week {:type :simple :form "{n} scht"} :month {:type :pluralized :forms {:one "{n}m" :two "{n}m" :few "{n}m" :many "{n}m" :other "{n} m"}} :year {:type :simple :form "{n} bl"} :half "{n}½" :delimiter "" :just-born nil}})

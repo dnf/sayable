@@ -30,5 +30,23 @@ M.stages = {
     teenager = "วัยรุ่น",
     adult = "ผู้ใหญ่",
 }
+M.short = {
+    units = {
+        day = "{n} วัน",
+        week = "{n} สัปดาห์",
+        month = "{n} เดือน",
+        year = "{n} ปี",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n}วัน",
+        week = "{n}สัปดาห์",
+        month = "{n}เดือน",
+        year = "{n}ปี",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

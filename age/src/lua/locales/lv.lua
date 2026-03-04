@@ -38,5 +38,22 @@ M.stages = {
     teenager = { m = "Pusaudzis", f = "Pusaudze" },
     adult = { m = "Pieaugušais", f = "Pieaugusī" },
 }
+M.short = {
+    units = {
+        day = "{n} d.",
+        week = "{n} ned.",
+        month = "{n} mēn.",
+        year = "{n} g.",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} d.",
+        week = "{n} n.",
+        month = "{n} m.",
+        year = "{n} g.",
+    },
+    delimiter = "",
+}
 
 return M

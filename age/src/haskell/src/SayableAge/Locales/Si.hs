@@ -44,6 +44,24 @@ locale = Locale
         , stageTeenager = Neutral "නව යොවුන්"
         , stageAdult = Neutral "වැඩිහිටි"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "දින {n}")
+            , ovrWeek = Just (Simple "සති {n}")
+            , ovrMonth = Just (Simple "මාස {n}")
+            , ovrYear = Just (Simple "වසර {n}")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "දි {n}")
+            , ovrWeek = Just (Simple "ස {n}")
+            , ovrMonth = Just (Simple "මා {n}")
+            , ovrYear = Just (Simple "ව {n}")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

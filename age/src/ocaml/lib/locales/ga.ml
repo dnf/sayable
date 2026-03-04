@@ -53,6 +53,34 @@ let locale : locale =
     ; teenager = Neutral "Déagóir"
     ; adult = Neutral "Duine fásta"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} lá")
+      ; ovr_week = Some (Simple "{n} scht")
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} mí")
+          ; (Two, "{n} mí")
+          ; (Few, "{n} mí")
+          ; (Many, "{n} mí")
+          ; (Other, "{n} m")
+          ])
+      ; ovr_year = Some (Simple "{n} bl")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} lá")
+      ; ovr_week = Some (Simple "{n} scht")
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n}m")
+          ; (Two, "{n}m")
+          ; (Few, "{n}m")
+          ; (Many, "{n}m")
+          ; (Other, "{n} m")
+          ])
+      ; ovr_year = Some (Simple "{n} bl")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Nevez ganet"
    :stages {:newborn {:type :neutral :label "Nevez ganet"} :infant {:type :neutral :label "Babig"} :toddler {:type :neutral :label "Bugel bihan"} :child {:type :neutral :label "Bugel"} :teenager {:type :neutral :label "Den yaouank"} :adult {:type :neutral :label "Den deuet da vad"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} sizh."} :month {:type :simple :form "{n} m."} :year {:type :simple :form "{n} bl."} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}sizh."} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}b"} :half "{n}½" :delimiter "" :just-born nil}})

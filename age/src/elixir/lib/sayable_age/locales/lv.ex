@@ -32,6 +32,23 @@ defmodule SayableAge.Locales.LV do
         child: "Bērns",
         teenager: %{m: "Pusaudzis", f: "Pusaudze"},
         adult: %{m: "Pieaugušais", f: "Pieaugusī"}
+      },
+      short: %{
+        units: %{
+          day: "{n} d.",
+          week: "{n} ned.",
+          month: "{n} mēn.",
+          year: "{n} g."
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} d.",
+          week: "{n} n.",
+          month: "{n} m.",
+          year: "{n} g."
+        },
+        delimiter: ""
       }
     }
   end

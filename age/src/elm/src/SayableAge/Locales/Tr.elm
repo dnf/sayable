@@ -47,6 +47,24 @@ locale =
         , teenager = Neutral "Ergen"
         , adult = Neutral "Yetişkin"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} gün")
+            , ovrWeek = Just (Simple "{n} hf.")
+            , ovrMonth = Just (Simple "{n} ay")
+            , ovrYear = Just (Simple "{n} yıl")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}g")
+            , ovrWeek = Just (Simple "{n}h")
+            , ovrMonth = Just (Simple "{n}a")
+            , ovrYear = Just (Simple "{n}y")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

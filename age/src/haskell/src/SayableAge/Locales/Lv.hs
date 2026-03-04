@@ -48,6 +48,24 @@ locale = Locale
         , stageTeenager = Gendered "Pusaudzis" "Pusaudze"
         , stageAdult = Gendered "Pieaugušais" "Pieaugusī"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} ned.")
+            , ovrMonth = Just (Simple "{n} mēn.")
+            , ovrYear = Just (Simple "{n} g.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} d.")
+            , ovrWeek = Just (Simple "{n} n.")
+            , ovrMonth = Just (Simple "{n} m.")
+            , ovrYear = Just (Simple "{n} g.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

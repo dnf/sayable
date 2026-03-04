@@ -11,7 +11,7 @@
 
 """Catalan locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 CA = AgeLocale(
     code="ca",
@@ -33,4 +33,22 @@ CA = AgeLocale(
         "teenager": "Adolescent",
         "adult": {"m": "Adult", "f": "Adulta"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} dia", "other": "{n} dies"},
+            "week": "{n} setm.",
+            "month": {"one": "{n} mes", "other": "{n} m"},
+            "year": {"one": "{n} any", "other": "{n} anys"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} setm.",
+            "month": "{n} m",
+            "year": {"one": "{n} any", "other": "{n} anys"},
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

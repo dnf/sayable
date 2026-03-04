@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.NeutralStage("Дитина"),
     teenager: types.NeutralStage("Підліток"),
     adult: types.GenderedStage("Дорослий", "Доросла"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} дн.")),
+      week: Ok(types.SimpleUnit("{n} тиж.")),
+      month: Ok(types.SimpleUnit("{n} міс.")),
+      year: Ok(types.SimpleUnit("{n} р.")),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n}д")),
+      week: Ok(types.SimpleUnit("{n}т")),
+      month: Ok(types.SimpleUnit("{n}м")),
+      year: Ok(types.SimpleUnit("{n}р")),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

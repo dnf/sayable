@@ -22,5 +22,5 @@
    :delimiter "، "
    :just-born "نومولود"
    :stages {:newborn {:type :neutral :label "نومولود"} :infant {:type :neutral :label "شیرخوار"} :toddler {:type :gendered :m "چھوٹا بچہ" :f "چھوٹی بچی"} :child {:type :gendered :m "بچہ" :f "بچی"} :teenager {:type :neutral :label "نوجوان"} :adult {:type :neutral :label "بالغ"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} دن"} :week {:type :pluralized :forms {:one "{n} ہفتہ" :other "{n} ہفتے"}} :month {:type :pluralized :forms {:one "{n} مہینہ" :other "{n} مہینے"}} :year {:type :simple :form "{n} سال"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} دن"} :week {:type :pluralized :forms {:one "{n} ہفتہ" :other "{n} ہفتے"}} :month {:type :pluralized :forms {:one "{n} مہینہ" :other "{n} مہینے"}} :year {:type :simple :form "{n} سال"} :half "{n}½" :delimiter "" :just-born nil}})

@@ -39,4 +39,18 @@ var KK = sa.AgeLocale{
 		Teenager: sa.S("Жасөспірім"),
 		Adult:    sa.S("Ересек"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} күн"},
+		Week:  &sa.UnitForms{Simple: "{n} ап."},
+		Month: &sa.UnitForms{Simple: "{n} ай"},
+		Year:  &sa.UnitForms{Simple: "{n} ж."},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} к."},
+		Week:      &sa.UnitForms{Simple: "{n} ап."},
+		Month:     &sa.UnitForms{Simple: "{n} ай"},
+		Year:      &sa.UnitForms{Simple: "{n} ж."},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/ne.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Nepali locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("किशोर".to_string()),
             adult: StageLabel::Neutral("वयस्क".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} दिन")),
+            week: Some(UnitForms::simple("{n} हप्ता")),
+            month: Some(UnitForms::simple("{n} महिना")),
+            year: Some(UnitForms::simple("{n} वर्ष")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} दिन")),
+            week: Some(UnitForms::simple("{n} हप्ता")),
+            month: Some(UnitForms::simple("{n} महिना")),
+            year: Some(UnitForms::simple("{n} वर्ष")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

@@ -11,7 +11,7 @@
 
 """Bengali locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 BN = AgeLocale(
     code="bn",
@@ -33,4 +33,22 @@ BN = AgeLocale(
         "teenager": {"m": "কিশোর", "f": "কিশোরী"},
         "adult": "প্রাপ্তবয়স্ক",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} দিন",
+            "week": "{n} সপ্তাহ",
+            "month": "{n} মাস",
+            "year": "{n} বছর",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} দিন",
+            "week": "{n} সপ্তাহ",
+            "month": "{n} মাস",
+            "year": "{n} বছর",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

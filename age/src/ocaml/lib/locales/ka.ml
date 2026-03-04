@@ -41,6 +41,22 @@ let locale : locale =
     ; teenager = Neutral "მოზარდი"
     ; adult = Neutral "ზრდასრული"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} დღე")
+      ; ovr_week = Some (Simple "{n} კვრ")
+      ; ovr_month = Some (Simple "{n} თვე")
+      ; ovr_year = Some (Simple "{n} წ")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} დღე")
+      ; ovr_week = Some (Simple "{n} კვრ")
+      ; ovr_month = Some (Simple "{n} თვე")
+      ; ovr_year = Some (Simple "{n} წ")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

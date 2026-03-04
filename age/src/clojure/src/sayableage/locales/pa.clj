@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "ਨਵਜੰਮਿਆ"
    :stages {:newborn {:type :gendered :m "ਨਵਜੰਮਿਆ" :f "ਨਵਜੰਮੀ"} :infant {:type :neutral :label "ਸ਼ਿਸ਼ੂ"} :toddler {:type :gendered :m "ਛੋਟਾ ਬੱਚਾ" :f "ਛੋਟੀ ਬੱਚੀ"} :child {:type :gendered :m "ਬੱਚਾ" :f "ਬੱਚੀ"} :teenager {:type :gendered :m "ਕਿਸ਼ੋਰ" :f "ਕਿਸ਼ੋਰੀ"} :adult {:type :neutral :label "ਬਾਲਗ"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} ਦਿਨ"} :week {:type :pluralized :forms {:one "{n} ਹਫ਼ਤਾ" :other "{n} ਹਫ਼ਤੇ"}} :month {:type :pluralized :forms {:one "{n} ਮਹੀਨਾ" :other "{n} ਮਹੀਨੇ"}} :year {:type :simple :form "{n} ਸਾਲ"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} ਦਿਨ"} :week {:type :pluralized :forms {:one "{n} ਹਫ਼ਤਾ" :other "{n} ਹਫ਼ਤੇ"}} :month {:type :pluralized :forms {:one "{n} ਮਹੀਨਾ" :other "{n} ਮਹੀਨੇ"}} :year {:type :simple :form "{n} ਸਾਲ"} :half "{n}½" :delimiter "" :just-born nil}})

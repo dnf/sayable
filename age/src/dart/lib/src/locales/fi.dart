@@ -31,4 +31,18 @@ final fi = AgeLocale(
   child: stageNeutral('Lapsi'),
   teenager: stageNeutral('Teini'),
   adult: stageNeutral('Aikuinen'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} pv'),
+    week: simpleUnit('{n} vk'),
+    month: simpleUnit('{n} kk'),
+    year: simpleUnit('{n} v'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}pv'),
+    week: simpleUnit('{n}vk'),
+    month: simpleUnit('{n}kk'),
+    year: simpleUnit('{n}v'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

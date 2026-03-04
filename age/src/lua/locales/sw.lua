@@ -30,5 +30,23 @@ M.stages = {
     teenager = "Kijana",
     adult = "Mtu mzima",
 }
+M.short = {
+    units = {
+        day = "siku {n}",
+        week = "wiki {n}",
+        month = { one = "mwezi {n}", other = "miezi {n}" },
+        year = { one = "mwaka {n}", other = "miaka {n}" },
+    },
+}
+M.compact = {
+    units = {
+        day = "siku {n}",
+        week = "wiki {n}",
+        month = { one = "mwezi {n}", other = "miezi {n}" },
+        year = { one = "mwaka {n}", other = "miaka {n}" },
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

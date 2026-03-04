@@ -30,5 +30,22 @@ M.stages = {
     teenager = "Teismeline",
     adult = "Täiskasvanu",
 }
+M.short = {
+    units = {
+        day = { one = "{n} päev", other = "{n} päeva" },
+        week = "{n} näd",
+        month = { one = "{n} kuu", other = "{n} kuud" },
+        year = "{n} a",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} p",
+        week = "{n} n",
+        month = "{n} k",
+        year = "{n} a",
+    },
+    delimiter = "",
+}
 
 return M

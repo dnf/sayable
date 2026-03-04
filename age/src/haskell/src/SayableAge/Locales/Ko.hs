@@ -32,6 +32,24 @@ locale = Locale
         , stageTeenager = Neutral "청소년"
         , stageAdult = Neutral "성인"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}일")
+            , ovrWeek = Just (Simple "{n}주")
+            , ovrMonth = Just (Simple "{n}개월")
+            , ovrYear = Just (Simple "{n}년")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n}일")
+            , ovrWeek = Just (Simple "{n}주")
+            , ovrMonth = Just (Simple "{n}개월")
+            , ovrYear = Just (Simple "{n}년")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

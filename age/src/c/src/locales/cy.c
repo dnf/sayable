@@ -38,6 +38,6 @@ const SaLocale sa_locale_cy = {
         { "Glaslanc", "" },
         { "Oedolyn", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { "{n} diwrnod", "{n} diwrnod", "{n} ddiwrnod", "{n} diwrnod", "{n} diwrnod", "{n} diwrnod" } }, true, { "{n} ws", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { "{n} mis", "{n} mis", "{n} fis", "{n} mis", "{n} mis", "{n} mis" } }, true, { "{n} bl", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { "{n} ws", "{n}w", "{n} ws", "{n} ws", "{n} ws", "{n}w" } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}bl", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

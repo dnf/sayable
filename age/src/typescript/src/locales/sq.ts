@@ -31,4 +31,22 @@ export const sq: AgeLocale = {
     teenager: { m: 'Adoleshent', f: 'Adoleshente' },
     adult: { m: 'I rritur', f: 'E rritur' },
   },
+  short: {
+    units: {
+      day:   '{n} ditë',
+      week:  '{n} javë',
+      month: '{n} muaj',
+      year:  { one: '{n} vit', other: '{n} vjet' },
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n} ditë',
+      week:  '{n} javë',
+      month: '{n} muaj',
+      year:  { one: '{n} vit', other: '{n} vjet' },
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

@@ -34,6 +34,6 @@ const SaLocale sa_locale_fil = {
         { "Tinedyer", "" },
         { "Matanda", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} araw", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} linggo", NULL, NULL, NULL, "{n} na linggo" } }, true, { "{n} buwan", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} taon", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { NULL, { NULL, "{n} araw", NULL, NULL, NULL, "{n} na araw" } }, true, { "{n}linggo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n}buwan", NULL, NULL, NULL, "{n} buwan" } }, true, { "{n}taon", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

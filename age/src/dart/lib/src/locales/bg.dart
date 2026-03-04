@@ -31,4 +31,18 @@ final bg = AgeLocale(
   child: stageNeutral('Дете'),
   teenager: stageNeutral('Тийнейджър'),
   adult: stageGendered('Възрастен', 'Възрастна'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} д'),
+    week: simpleUnit('{n} седм.'),
+    month: simpleUnit('{n} мес.'),
+    year: simpleUnit('{n} год.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} д'),
+    week: simpleUnit('{n} седм.'),
+    month: simpleUnit('{n} мес.'),
+    year: simpleUnit('{n} г.'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

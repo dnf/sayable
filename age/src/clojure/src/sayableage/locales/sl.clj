@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Novorojenček"
    :stages {:newborn {:type :gendered :m "Novorojenček" :f "Novorojenčica"} :infant {:type :gendered :m "Dojenček" :f "Dojenčica"} :toddler {:type :gendered :m "Malček" :f "Malčica"} :child {:type :neutral :label "Otrok"} :teenager {:type :gendered :m "Najstnik" :f "Najstnica"} :adult {:type :gendered :m "Odrasel" :f "Odrasla"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} t"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} l"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} t"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} l"} :half "{n}½" :delimiter "" :just-born nil}})

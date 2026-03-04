@@ -29,6 +29,22 @@ let locale : locale =
     ; teenager = Neutral "Thiếu niên"
     ; adult = Neutral "Người lớn"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "{n} ngày")
+      ; ovr_week = Some (Simple "{n} tuần")
+      ; ovr_month = Some (Simple "{n} tháng")
+      ; ovr_year = Some (Simple "{n} năm")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} ngày")
+      ; ovr_week = Some (Simple "{n} tuần")
+      ; ovr_month = Some (Simple "{n} tháng")
+      ; ovr_year = Some (Simple "{n} năm")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

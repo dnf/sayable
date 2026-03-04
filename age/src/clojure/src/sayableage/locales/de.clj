@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Neugeboren"
    :stages {:newborn {:type :neutral :label "Neugeborenes"} :infant {:type :neutral :label "Säugling"} :toddler {:type :neutral :label "Kleinkind"} :child {:type :neutral :label "Kind"} :teenager {:type :neutral :label "Teenager"} :adult {:type :gendered :m "Erwachsener" :f "Erwachsene"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} Tg."} :week {:type :simple :form "{n} Wo."} :month {:type :simple :form "{n} Mon."} :year {:type :simple :form "{n} J"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} T"} :week {:type :simple :form "{n} W"} :month {:type :simple :form "{n} M"} :year {:type :simple :form "{n} J"} :half nil :delimiter "" :just-born nil}})

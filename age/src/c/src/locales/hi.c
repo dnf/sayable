@@ -34,6 +34,6 @@ const SaLocale sa_locale_hi = {
         { "किशोर", "किशोरी" },
         { "वयस्क", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} दिन", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} सप्ताह", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} माह", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} वर्ष", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} दि", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} सप्ताह", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} माह", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} व", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

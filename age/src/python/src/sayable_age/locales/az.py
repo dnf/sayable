@@ -11,7 +11,7 @@
 
 """Azerbaijani locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 AZ = AgeLocale(
     code="az",
@@ -33,4 +33,22 @@ AZ = AgeLocale(
         "teenager": "Yeniyetmə",
         "adult": "Böyük",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} gün",
+            "week": "{n} hft",
+            "month": "{n} ay",
+            "year": "{n} il",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} gün",
+            "week": "{n} hft",
+            "month": "{n} ay",
+            "year": "{n} il",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

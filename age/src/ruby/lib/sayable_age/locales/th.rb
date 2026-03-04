@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'วัยรุ่น',
         adult: 'ผู้ใหญ่',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} วัน',
+          'week' => '{n} สัปดาห์',
+          'month' => '{n} เดือน',
+          'year' => '{n} ปี',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}วัน',
+          'week' => '{n}สัปดาห์',
+          'month' => '{n}เดือน',
+          'year' => '{n}ปี',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

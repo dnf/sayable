@@ -11,7 +11,7 @@
 
 """Finnish locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 FI = AgeLocale(
     code="fi",
@@ -33,4 +33,22 @@ FI = AgeLocale(
         "teenager": "Teini",
         "adult": "Aikuinen",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} pv",
+            "week": "{n} vk",
+            "month": "{n} kk",
+            "year": "{n} v",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}pv",
+            "week": "{n}vk",
+            "month": "{n}kk",
+            "year": "{n}v",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

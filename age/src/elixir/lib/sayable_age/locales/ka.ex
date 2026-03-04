@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.KA do
         child: "ბავშვი",
         teenager: "მოზარდი",
         adult: "ზრდასრული"
+      },
+      short: %{
+        units: %{
+          day: "{n} დღე",
+          week: "{n} კვრ",
+          month: "{n} თვე",
+          year: "{n} წ"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} დღე",
+          week: "{n} კვრ",
+          month: "{n} თვე",
+          year: "{n} წ"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

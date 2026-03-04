@@ -44,6 +44,27 @@ locale = Locale
         , stageTeenager = Gendered "કિશોર" "કિશોરી"
         , stageAdult = Neutral "પુખ્ત"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} દિવસ")
+            , ovrWeek = Just (Simple "{n} અઠ.")
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n} મહિનો")
+              , (Other, "{n} મહિના")
+              ])
+            , ovrYear = Just (Simple "{n} વર્ષ")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} દિ")
+            , ovrWeek = Just (Simple "{n} અઠ.")
+            , ovrMonth = Just (Simple "{n} મ")
+            , ovrYear = Just (Simple "{n} વ")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

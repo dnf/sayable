@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/sk.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Slovak locale.
 pub fn locale() -> AgeLocale {
@@ -53,8 +53,29 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Tínedžer".to_string()),
             adult: StageLabel::Gendered { m: "Dospelý".to_string(), f: "Dospelá".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} deň"),
+                (PluralCategory::Few, "{n} dni"),
+                (PluralCategory::Many, "{n} dňa"),
+                (PluralCategory::Other, "{n} dní"),
+            ])),
+            week: Some(UnitForms::simple("{n} týž.")),
+            month: Some(UnitForms::simple("{n} mes.")),
+            year: Some(UnitForms::simple("{n} r.")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d.")),
+            week: Some(UnitForms::simple("{n} t.")),
+            month: Some(UnitForms::simple("{n} m.")),
+            year: Some(UnitForms::simple("{n} r.")),
+            half: None,
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

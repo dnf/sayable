@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'కౌమారదశ',
         adult: 'వయోజనులు',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => { one: '{n} రోజు', other: '{n} రోజులు' },
+          'week' => '{n} వా.',
+          'month' => '{n} నె.',
+          'year' => '{n} సం.',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}రో',
+          'week' => '{n}వా',
+          'month' => '{n}నె',
+          'year' => '{n}సం',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

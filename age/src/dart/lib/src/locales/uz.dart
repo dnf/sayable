@@ -31,4 +31,18 @@ final uz = AgeLocale(
   child: stageNeutral('Bola'),
   teenager: stageNeutral('Oʻsmir'),
   adult: stageNeutral('Katta'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} kun'),
+    week: simpleUnit('{n} hafta'),
+    month: simpleUnit('{n} oy'),
+    year: simpleUnit('{n} yil'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} kun'),
+    week: simpleUnit('{n} hafta'),
+    month: simpleUnit('{n} oy'),
+    year: simpleUnit('{n} yil'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

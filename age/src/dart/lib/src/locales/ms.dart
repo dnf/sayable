@@ -30,4 +30,18 @@ final ms = AgeLocale(
   child: stageNeutral('Kanak-kanak'),
   teenager: stageNeutral('Remaja'),
   adult: stageNeutral('Dewasa'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} hari'),
+    week: simpleUnit('{n} mgu'),
+    month: simpleUnit('{n} bln'),
+    year: simpleUnit('{n} thn'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} h'),
+    week: simpleUnit('{n} mgu'),
+    month: simpleUnit('{n} bln'),
+    year: simpleUnit('{n} thn'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

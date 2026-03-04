@@ -39,4 +39,18 @@ var FI = sa.AgeLocale{
 		Teenager: sa.S("Teini"),
 		Adult:    sa.S("Aikuinen"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} pv"},
+		Week:  &sa.UnitForms{Simple: "{n} vk"},
+		Month: &sa.UnitForms{Simple: "{n} kk"},
+		Year:  &sa.UnitForms{Simple: "{n} v"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}pv"},
+		Week:      &sa.UnitForms{Simple: "{n}vk"},
+		Month:     &sa.UnitForms{Simple: "{n}kk"},
+		Year:      &sa.UnitForms{Simple: "{n}v"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

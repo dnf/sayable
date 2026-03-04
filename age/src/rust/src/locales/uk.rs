@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/uk.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Ukrainian locale.
 pub fn locale() -> AgeLocale {
@@ -59,8 +59,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Підліток".to_string()),
             adult: StageLabel::Gendered { m: "Дорослий".to_string(), f: "Доросла".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} дн.")),
+            week: Some(UnitForms::simple("{n} тиж.")),
+            month: Some(UnitForms::simple("{n} міс.")),
+            year: Some(UnitForms::simple("{n} р.")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n}д")),
+            week: Some(UnitForms::simple("{n}т")),
+            month: Some(UnitForms::simple("{n}м")),
+            year: Some(UnitForms::simple("{n}р")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/fil.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Filipino locale.
 pub fn locale() -> AgeLocale {
@@ -33,8 +33,33 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Tinedyer".to_string()),
             adult: StageLabel::Neutral("Matanda".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} araw")),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} linggo"),
+                (PluralCategory::Other, "{n} na linggo"),
+            ])),
+            month: Some(UnitForms::simple("{n} buwan")),
+            year: Some(UnitForms::simple("{n} taon")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} araw"),
+                (PluralCategory::Other, "{n} na araw"),
+            ])),
+            week: Some(UnitForms::simple("{n}linggo")),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n}buwan"),
+                (PluralCategory::Other, "{n} buwan"),
+            ])),
+            year: Some(UnitForms::simple("{n}taon")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

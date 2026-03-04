@@ -34,4 +34,18 @@ final uk = AgeLocale(
   child: stageNeutral('Дитина'),
   teenager: stageNeutral('Підліток'),
   adult: stageGendered('Дорослий', 'Доросла'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} дн.'),
+    week: simpleUnit('{n} тиж.'),
+    month: simpleUnit('{n} міс.'),
+    year: simpleUnit('{n} р.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}д'),
+    week: simpleUnit('{n}т'),
+    month: simpleUnit('{n}м'),
+    year: simpleUnit('{n}р'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

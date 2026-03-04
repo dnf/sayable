@@ -41,8 +41,24 @@ class Locales {
             StageLabel.neutral('ታዳጊ'),
             StageLabel.neutral('አዋቂ'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ቀናት'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሳምንት', (PluralCategory.OTHER): '{n} ሳምንታት']),
+            UnitForms.simpleUnit('{n} ወራት'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ቀ'),
+            UnitForms.simpleUnit('{n} ሳምንት'),
+            UnitForms.simpleUnit('{n} ወር'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓ']),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -78,8 +94,24 @@ class Locales {
             StageLabel.gendered('مراهق', 'مراهقة'),
             StageLabel.gendered('بالغ', 'بالغة'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} يوم', (PluralCategory.ONE): 'يوم', (PluralCategory.TWO): 'يومان', (PluralCategory.FEW): '{n} أيام', (PluralCategory.MANY): '{n} يومًا', (PluralCategory.OTHER): '{n} يوم']),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} أسبوع', (PluralCategory.ONE): 'أسبوع', (PluralCategory.TWO): 'أسبوعان', (PluralCategory.FEW): '{n} أسابيع', (PluralCategory.MANY): '{n} أسبوعًا', (PluralCategory.OTHER): '{n} أسبوع']),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} سنة', (PluralCategory.ONE): 'سنة واحدة', (PluralCategory.TWO): 'سنتان', (PluralCategory.FEW): '{n} سنوات', (PluralCategory.MANY): '{n} سنة', (PluralCategory.OTHER): '{n} سنة']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ي'),
+            UnitForms.simpleUnit('{n} أ'),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
+            UnitForms.simpleUnit('{n} سنة'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -108,8 +140,24 @@ class Locales {
             StageLabel.neutral('Yeniyetmə'),
             StageLabel.neutral('Böyük'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} gün'),
+            UnitForms.simpleUnit('{n} hft'),
+            UnitForms.simpleUnit('{n} ay'),
+            UnitForms.simpleUnit('{n} il'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} gün'),
+            UnitForms.simpleUnit('{n} hft'),
+            UnitForms.simpleUnit('{n} ay'),
+            UnitForms.simpleUnit('{n} il'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -138,8 +186,24 @@ class Locales {
             StageLabel.neutral('Тийнейджър'),
             StageLabel.gendered('Възрастен', 'Възрастна'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} д'),
+            UnitForms.simpleUnit('{n} седм.'),
+            UnitForms.simpleUnit('{n} мес.'),
+            UnitForms.simpleUnit('{n} год.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} д'),
+            UnitForms.simpleUnit('{n} седм.'),
+            UnitForms.simpleUnit('{n} мес.'),
+            UnitForms.simpleUnit('{n} г.'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -168,8 +232,24 @@ class Locales {
             StageLabel.gendered('কিশোর', 'কিশোরী'),
             StageLabel.neutral('প্রাপ্তবয়স্ক'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} দিন'),
+            UnitForms.simpleUnit('{n} সপ্তাহ'),
+            UnitForms.simpleUnit('{n} মাস'),
+            UnitForms.simpleUnit('{n} বছর'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} দিন'),
+            UnitForms.simpleUnit('{n} সপ্তাহ'),
+            UnitForms.simpleUnit('{n} মাস'),
+            UnitForms.simpleUnit('{n} বছর'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -206,8 +286,24 @@ class Locales {
             StageLabel.neutral('Den yaouank'),
             StageLabel.neutral('Den deuet da vad'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} sizh.'),
+            UnitForms.simpleUnit('{n} m.'),
+            UnitForms.simpleUnit('{n} bl.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}sizh.'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}b'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -242,8 +338,24 @@ class Locales {
             StageLabel.neutral('Tinejdžer'),
             StageLabel.neutral('Odrasla osoba'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
+            UnitForms.simpleUnit('{n} sedm.'),
+            UnitForms.simpleUnit('{n} mj.'),
+            UnitForms.simpleUnit('{n} god.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} sedm.'),
+            UnitForms.simpleUnit('{n} mj.'),
+            UnitForms.simpleUnit('{n} god.'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -272,8 +384,24 @@ class Locales {
             StageLabel.neutral('Adolescent'),
             StageLabel.gendered('Adult', 'Adulta'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dies']),
+            UnitForms.simpleUnit('{n} setm.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} m']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} any', (PluralCategory.OTHER): '{n} anys']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} setm.'),
+            UnitForms.simpleUnit('{n} m'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} any', (PluralCategory.OTHER): '{n} anys']),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -306,8 +434,24 @@ class Locales {
             StageLabel.neutral('Teenager'),
             StageLabel.gendered('Dospělý', 'Dospělá'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} den', (PluralCategory.FEW): '{n} dny', (PluralCategory.MANY): '{n} dne', (PluralCategory.OTHER): '{n} dnů']),
+            UnitForms.simpleUnit('{n} týd.'),
+            UnitForms.simpleUnit('{n} měs.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} roky', (PluralCategory.MANY): '{n} roku', (PluralCategory.OTHER): '{n} let']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} t.'),
+            UnitForms.simpleUnit('{n} m.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} r.', (PluralCategory.FEW): '{n} r.', (PluralCategory.MANY): '{n} r.', (PluralCategory.OTHER): '{n} l.']),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -345,8 +489,24 @@ class Locales {
             StageLabel.neutral('Glaslanc'),
             StageLabel.neutral('Oedolyn'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} diwrnod', (PluralCategory.ONE): '{n} diwrnod', (PluralCategory.TWO): '{n} ddiwrnod', (PluralCategory.FEW): '{n} diwrnod', (PluralCategory.MANY): '{n} diwrnod', (PluralCategory.OTHER): '{n} diwrnod']),
+            UnitForms.simpleUnit('{n} ws'),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mis', (PluralCategory.ONE): '{n} mis', (PluralCategory.TWO): '{n} fis', (PluralCategory.FEW): '{n} mis', (PluralCategory.MANY): '{n} mis', (PluralCategory.OTHER): '{n} mis']),
+            UnitForms.simpleUnit('{n} bl'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} ws', (PluralCategory.ONE): '{n}w', (PluralCategory.TWO): '{n} ws', (PluralCategory.FEW): '{n} ws', (PluralCategory.MANY): '{n} ws', (PluralCategory.OTHER): '{n}w']),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}bl'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -375,8 +535,24 @@ class Locales {
             StageLabel.neutral('Teenager'),
             StageLabel.neutral('Voksen'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dage']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} uge', (PluralCategory.OTHER): '{n} uger']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} md.', (PluralCategory.OTHER): '{n} mdr.']),
+            UnitForms.simpleUnit('{n} år'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} u'),
+            UnitForms.simpleUnit('{n} m'),
+            UnitForms.simpleUnit('{n} år'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -405,8 +581,24 @@ class Locales {
             StageLabel.neutral('Teenager'),
             StageLabel.gendered('Erwachsener', 'Erwachsene'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} Tg.'),
+            UnitForms.simpleUnit('{n} Wo.'),
+            UnitForms.simpleUnit('{n} Mon.'),
+            UnitForms.simpleUnit('{n} J'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} T'),
+            UnitForms.simpleUnit('{n} W'),
+            UnitForms.simpleUnit('{n} M'),
+            UnitForms.simpleUnit('{n} J'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -435,8 +627,24 @@ class Locales {
             StageLabel.gendered('Έφηβος', 'Έφηβη'),
             StageLabel.gendered('Ενήλικας', 'Ενήλικη'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ημέρα', (PluralCategory.OTHER): '{n} ημέρες']),
+            UnitForms.simpleUnit('{n} εβδ.'),
+            UnitForms.simpleUnit('{n} μήν.'),
+            UnitForms.simpleUnit('{n} έτ.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} η'),
+            UnitForms.simpleUnit('{n} ε'),
+            UnitForms.simpleUnit('{n} μ'),
+            UnitForms.simpleUnit('{n} έ'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -511,8 +719,24 @@ class Locales {
             StageLabel.neutral('Adolescente'),
             StageLabel.gendered('Adulto', 'Adulta'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} sem.'),
+            UnitForms.simpleUnit('{n} m.'),
+            UnitForms.simpleUnit('{n} a'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}sem'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}a'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -541,8 +765,24 @@ class Locales {
             StageLabel.neutral('Teismeline'),
             StageLabel.neutral('Täiskasvanu'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} päev', (PluralCategory.OTHER): '{n} päeva']),
+            UnitForms.simpleUnit('{n} näd'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kuu', (PluralCategory.OTHER): '{n} kuud']),
+            UnitForms.simpleUnit('{n} a'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} p'),
+            UnitForms.simpleUnit('{n} n'),
+            UnitForms.simpleUnit('{n} k'),
+            UnitForms.simpleUnit('{n} a'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -571,8 +811,24 @@ class Locales {
             StageLabel.neutral('Nerabea'),
             StageLabel.neutral('Heldua'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} egun'),
+            UnitForms.simpleUnit('{n} aste'),
+            UnitForms.simpleUnit('{n} hilabete'),
+            UnitForms.simpleUnit('{n} urte'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} e.'),
+            UnitForms.simpleUnit('{n} aste'),
+            UnitForms.simpleUnit('{n} hil'),
+            UnitForms.simpleUnit('{n} u.'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -601,8 +857,24 @@ class Locales {
             StageLabel.neutral('نوجوان'),
             StageLabel.neutral('بزرگسال'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} روز'),
+            UnitForms.simpleUnit('{n} هفته'),
+            UnitForms.simpleUnit('{n} ماه'),
+            UnitForms.simpleUnit('{n} سال'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} روز'),
+            UnitForms.simpleUnit('{n} هفته'),
+            UnitForms.simpleUnit('{n} ماه'),
+            UnitForms.simpleUnit('{n} سال'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -631,8 +903,24 @@ class Locales {
             StageLabel.neutral('Teini'),
             StageLabel.neutral('Aikuinen'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} pv'),
+            UnitForms.simpleUnit('{n} vk'),
+            UnitForms.simpleUnit('{n} kk'),
+            UnitForms.simpleUnit('{n} v'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}pv'),
+            UnitForms.simpleUnit('{n}vk'),
+            UnitForms.simpleUnit('{n}kk'),
+            UnitForms.simpleUnit('{n}v'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -661,8 +949,24 @@ class Locales {
             StageLabel.neutral('Tinedyer'),
             StageLabel.neutral('Matanda'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} araw'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} linggo', (PluralCategory.OTHER): '{n} na linggo']),
+            UnitForms.simpleUnit('{n} buwan'),
+            UnitForms.simpleUnit('{n} taon'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} araw', (PluralCategory.OTHER): '{n} na araw']),
+            UnitForms.simpleUnit('{n}linggo'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n}buwan', (PluralCategory.OTHER): '{n} buwan']),
+            UnitForms.simpleUnit('{n}taon'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -691,8 +995,24 @@ class Locales {
             StageLabel.gendered('Adolescent', 'Adolescente'),
             StageLabel.neutral('Adulte'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} j'),
+            UnitForms.simpleUnit('{n} sem.'),
+            UnitForms.simpleUnit('{n} m.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.OTHER): '{n} ans']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}j'),
+            UnitForms.simpleUnit('{n}sem.'),
+            UnitForms.simpleUnit('{n}m.'),
+            UnitForms.simpleUnit('{n}a'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -727,8 +1047,24 @@ class Locales {
             StageLabel.neutral('Déagóir'),
             StageLabel.neutral('Duine fásta'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} lá'),
+            UnitForms.simpleUnit('{n} scht'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mí', (PluralCategory.TWO): '{n} mí', (PluralCategory.FEW): '{n} mí', (PluralCategory.MANY): '{n} mí', (PluralCategory.OTHER): '{n} m']),
+            UnitForms.simpleUnit('{n} bl'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} lá'),
+            UnitForms.simpleUnit('{n} scht'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n}m', (PluralCategory.TWO): '{n}m', (PluralCategory.FEW): '{n}m', (PluralCategory.MANY): '{n}m', (PluralCategory.OTHER): '{n} m']),
+            UnitForms.simpleUnit('{n} bl'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -762,8 +1098,24 @@ class Locales {
             StageLabel.neutral('Deugaire'),
             StageLabel.neutral('Inbheach'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} là'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} shn', (PluralCategory.TWO): '{n} shn', (PluralCategory.FEW): '{n} sn', (PluralCategory.OTHER): '{n} sn']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mhìos', (PluralCategory.TWO): '{n} mhìos', (PluralCategory.FEW): '{n} mìos', (PluralCategory.OTHER): '{n} mìos']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bhlia', (PluralCategory.TWO): '{n} bhlia', (PluralCategory.FEW): '{n} blia', (PluralCategory.OTHER): '{n} blia']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}là'),
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}bl'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -792,8 +1144,24 @@ class Locales {
             StageLabel.gendered('કિશોર', 'કિશોરી'),
             StageLabel.neutral('પુખ્ત'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} દિવસ'),
+            UnitForms.simpleUnit('{n} અઠ.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} મહિનો', (PluralCategory.OTHER): '{n} મહિના']),
+            UnitForms.simpleUnit('{n} વર્ષ'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} દિ'),
+            UnitForms.simpleUnit('{n} અઠ.'),
+            UnitForms.simpleUnit('{n} મ'),
+            UnitForms.simpleUnit('{n} વ'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -829,8 +1197,24 @@ class Locales {
             StageLabel.neutral('Fer aeg'),
             StageLabel.neutral('Dooinney aasit'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} wk'),
+            UnitForms.simpleUnit('{n} mo'),
+            UnitForms.simpleUnit('{n} yr'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -859,8 +1243,24 @@ class Locales {
             StageLabel.gendered('נער', 'נערה'),
             StageLabel.gendered('מבוגר', 'מבוגרת'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} יום', (PluralCategory.TWO): 'יומיים', (PluralCategory.OTHER): '{n} ימ׳']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} שבוע', (PluralCategory.TWO): 'שבועיים', (PluralCategory.OTHER): '{n} שבועות']),
+            UnitForms.simpleUnit('{n} ח׳'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} שנה', (PluralCategory.TWO): '{n} שנים', (PluralCategory.OTHER): '{n} שנים']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} י׳'),
+            UnitForms.simpleUnit('{n} ש′'),
+            UnitForms.simpleUnit('{n} ח׳'),
+            UnitForms.simpleUnit('{n} ש′'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -889,8 +1289,24 @@ class Locales {
             StageLabel.gendered('किशोर', 'किशोरी'),
             StageLabel.neutral('वयस्क'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} दिन'),
+            UnitForms.simpleUnit('{n} सप्ताह'),
+            UnitForms.simpleUnit('{n} माह'),
+            UnitForms.simpleUnit('{n} वर्ष'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} दि'),
+            UnitForms.simpleUnit('{n} सप्ताह'),
+            UnitForms.simpleUnit('{n} माह'),
+            UnitForms.simpleUnit('{n} व'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -925,8 +1341,24 @@ class Locales {
             StageLabel.neutral('Tinejdžer'),
             StageLabel.neutral('Odrasla osoba'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
+            UnitForms.simpleUnit('{n} tj.'),
+            UnitForms.simpleUnit('{n} mj.'),
+            UnitForms.simpleUnit('{n} g.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} tj.'),
+            UnitForms.simpleUnit('{n} mj.'),
+            UnitForms.simpleUnit('{n} g.'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -955,8 +1387,24 @@ class Locales {
             StageLabel.neutral('Tinédzser'),
             StageLabel.neutral('Felnőtt'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} nap'),
+            UnitForms.simpleUnit('{n} hét'),
+            UnitForms.simpleUnit('{n} hónap'),
+            UnitForms.simpleUnit('{n} év'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} nap'),
+            UnitForms.simpleUnit('{n} hét'),
+            UnitForms.simpleUnit('{n} h.'),
+            UnitForms.simpleUnit('{n} év'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -985,8 +1433,24 @@ class Locales {
             StageLabel.neutral('Remaja'),
             StageLabel.neutral('Dewasa'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} hr'),
+            UnitForms.simpleUnit('{n} mgg'),
+            UnitForms.simpleUnit('{n} bln'),
+            UnitForms.simpleUnit('{n} thn'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} hr'),
+            UnitForms.simpleUnit('{n} mgg'),
+            UnitForms.simpleUnit('{n} bln'),
+            UnitForms.simpleUnit('{n} thn'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1015,8 +1479,24 @@ class Locales {
             StageLabel.neutral('Adolescente'),
             StageLabel.gendered('Adulto', 'Adulta'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} giorno', (PluralCategory.OTHER): '{n} giorni']),
+            UnitForms.simpleUnit('{n} sett.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mese', (PluralCategory.OTHER): '{n} mesi']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} anno', (PluralCategory.OTHER): '{n} anni']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n}g', (PluralCategory.OTHER): '{n}gg']),
+            UnitForms.simpleUnit('{n}sett.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mese', (PluralCategory.OTHER): '{n} mesi']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n}anno', (PluralCategory.OTHER): '{n}anni']),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1045,8 +1525,24 @@ class Locales {
             StageLabel.neutral('青少年'),
             StageLabel.neutral('成人'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} 日'),
+            UnitForms.simpleUnit('{n} 週間'),
+            UnitForms.simpleUnit('{n} か月'),
+            UnitForms.simpleUnit('{n} 年'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            null,
+            null
+        ),
         null,
         null
     )
@@ -1075,8 +1571,24 @@ class Locales {
             StageLabel.neutral('Remaja'),
             StageLabel.neutral('Diwasa'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} dina'),
+            UnitForms.simpleUnit('{n} peken'),
+            UnitForms.simpleUnit('{n} sasi'),
+            UnitForms.simpleUnit('{n} taun'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n} peken'),
+            UnitForms.simpleUnit('{n} sasi'),
+            UnitForms.simpleUnit('{n} taun'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1105,8 +1617,24 @@ class Locales {
             StageLabel.neutral('მოზარდი'),
             StageLabel.neutral('ზრდასრული'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} დღე'),
+            UnitForms.simpleUnit('{n} კვრ'),
+            UnitForms.simpleUnit('{n} თვე'),
+            UnitForms.simpleUnit('{n} წ'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} დღე'),
+            UnitForms.simpleUnit('{n} კვრ'),
+            UnitForms.simpleUnit('{n} თვე'),
+            UnitForms.simpleUnit('{n} წ'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1135,8 +1663,24 @@ class Locales {
             StageLabel.neutral('Жасөспірім'),
             StageLabel.neutral('Ересек'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} күн'),
+            UnitForms.simpleUnit('{n} ап.'),
+            UnitForms.simpleUnit('{n} ай'),
+            UnitForms.simpleUnit('{n} ж.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} к.'),
+            UnitForms.simpleUnit('{n} ап.'),
+            UnitForms.simpleUnit('{n} ай'),
+            UnitForms.simpleUnit('{n} ж.'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1165,8 +1709,24 @@ class Locales {
             StageLabel.neutral('យុវវ័យ'),
             StageLabel.neutral('មនុស្សពេញវ័យ'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ថ្ងៃ'),
+            UnitForms.simpleUnit('{n} សប្ដាហ៍'),
+            UnitForms.simpleUnit('{n} ខែ'),
+            UnitForms.simpleUnit('{n} ឆ្នាំ'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ថ្ងៃ'),
+            UnitForms.simpleUnit('{n} សប្ដាហ៍'),
+            UnitForms.simpleUnit('{n} ខែ'),
+            UnitForms.simpleUnit('{n} ឆ្នាំ'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1195,8 +1755,24 @@ class Locales {
             StageLabel.neutral('청소년'),
             StageLabel.neutral('성인'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}일'),
+            UnitForms.simpleUnit('{n}주'),
+            UnitForms.simpleUnit('{n}개월'),
+            UnitForms.simpleUnit('{n}년'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}일'),
+            UnitForms.simpleUnit('{n}주'),
+            UnitForms.simpleUnit('{n}개월'),
+            UnitForms.simpleUnit('{n}년'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1233,8 +1809,24 @@ class Locales {
             StageLabel.neutral('Den yowynk'),
             StageLabel.neutral('Den tevys'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} wk'),
+            UnitForms.simpleUnit('{n} mo'),
+            UnitForms.simpleUnit('{n} yr'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1269,8 +1861,24 @@ class Locales {
             StageLabel.gendered('Paauglys', 'Paauglė'),
             StageLabel.gendered('Suaugęs', 'Suaugusi'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} sav.'),
+            UnitForms.simpleUnit('{n} mėn.'),
+            UnitForms.simpleUnit('{n} m.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} sav.'),
+            UnitForms.simpleUnit('{n} mėn.'),
+            UnitForms.simpleUnit('{n} m.'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1305,8 +1913,24 @@ class Locales {
             StageLabel.gendered('Pusaudzis', 'Pusaudze'),
             StageLabel.gendered('Pieaugušais', 'Pieaugusī'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} ned.'),
+            UnitForms.simpleUnit('{n} mēn.'),
+            UnitForms.simpleUnit('{n} g.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} n.'),
+            UnitForms.simpleUnit('{n} m.'),
+            UnitForms.simpleUnit('{n} g.'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1335,8 +1959,24 @@ class Locales {
             StageLabel.neutral('Тинејџер'),
             StageLabel.neutral('Возрасен'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ден', (PluralCategory.OTHER): '{n} дена']),
+            UnitForms.simpleUnit('{n} сед.'),
+            UnitForms.simpleUnit('{n} мес.'),
+            UnitForms.simpleUnit('{n} год.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} д.'),
+            UnitForms.simpleUnit('{n} с.'),
+            UnitForms.simpleUnit('{n} м.'),
+            UnitForms.simpleUnit('{n} г.'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1365,8 +2005,24 @@ class Locales {
             StageLabel.gendered('किशोर', 'किशोरी'),
             StageLabel.neutral('प्रौढ'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} दिवस'),
+            UnitForms.simpleUnit('{n} आ'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महिना', (PluralCategory.OTHER): '{n} महिने']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} वर्ष', (PluralCategory.OTHER): '{n} वर्षे']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}दि'),
+            UnitForms.simpleUnit('{n}आ'),
+            UnitForms.simpleUnit('{n}म'),
+            UnitForms.simpleUnit('{n}व'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1395,8 +2051,24 @@ class Locales {
             StageLabel.neutral('Remaja'),
             StageLabel.neutral('Dewasa'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} hari'),
+            UnitForms.simpleUnit('{n} mgu'),
+            UnitForms.simpleUnit('{n} bln'),
+            UnitForms.simpleUnit('{n} thn'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} h'),
+            UnitForms.simpleUnit('{n} mgu'),
+            UnitForms.simpleUnit('{n} bln'),
+            UnitForms.simpleUnit('{n} thn'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1431,8 +2103,24 @@ class Locales {
             StageLabel.gendered('Adolexxent', 'Adolexxenta'),
             StageLabel.gendered('Adult', 'Adulta'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} w'),
+            UnitForms.simpleUnit('{n} m'),
+            UnitForms.simpleUnit('{n} y'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} w'),
+            UnitForms.simpleUnit('{n} m'),
+            UnitForms.simpleUnit('{n} y'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1461,8 +2149,24 @@ class Locales {
             StageLabel.neutral('ဆယ်ကျော်သက်'),
             StageLabel.neutral('အရွယ်ရောက်'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ရက်'),
+            UnitForms.simpleUnit('{n} ပတ်'),
+            UnitForms.simpleUnit('{n} လ'),
+            UnitForms.simpleUnit('{n} နှစ်'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ရက်'),
+            UnitForms.simpleUnit('{n} ပတ်'),
+            UnitForms.simpleUnit('{n} လ'),
+            UnitForms.simpleUnit('{n} နှစ်'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1491,8 +2195,24 @@ class Locales {
             StageLabel.neutral('Tenåring'),
             StageLabel.neutral('Voksen'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} u'),
+            UnitForms.simpleUnit('{n} md.'),
+            UnitForms.simpleUnit('{n} år'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}u'),
+            UnitForms.simpleUnit('{n} m'),
+            UnitForms.simpleUnit('{n}å'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1521,8 +2241,24 @@ class Locales {
             StageLabel.neutral('किशोर'),
             StageLabel.neutral('वयस्क'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} दिन'),
+            UnitForms.simpleUnit('{n} हप्ता'),
+            UnitForms.simpleUnit('{n} महिना'),
+            UnitForms.simpleUnit('{n} वर्ष'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} दिन'),
+            UnitForms.simpleUnit('{n} हप्ता'),
+            UnitForms.simpleUnit('{n} महिना'),
+            UnitForms.simpleUnit('{n} वर्ष'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1551,8 +2287,24 @@ class Locales {
             StageLabel.neutral('Tiener'),
             StageLabel.neutral('Volwassene'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dagen']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} wk', (PluralCategory.OTHER): '{n} wkn']),
+            UnitForms.simpleUnit('{n} mnd'),
+            UnitForms.simpleUnit('{n} jr'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} w'),
+            UnitForms.simpleUnit('{n} m'),
+            UnitForms.simpleUnit('{n} jr'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1581,8 +2333,24 @@ class Locales {
             StageLabel.gendered('ਕਿਸ਼ੋਰ', 'ਕਿਸ਼ੋਰੀ'),
             StageLabel.neutral('ਬਾਲਗ'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ਦਿਨ'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਹਫ਼ਤਾ', (PluralCategory.OTHER): '{n} ਹਫ਼ਤੇ']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਮਹੀਨਾ', (PluralCategory.OTHER): '{n} ਮਹੀਨੇ']),
+            UnitForms.simpleUnit('{n} ਸਾਲ'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ਦਿਨ'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਹਫ਼ਤਾ', (PluralCategory.OTHER): '{n} ਹਫ਼ਤੇ']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਮਹੀਨਾ', (PluralCategory.OTHER): '{n} ਮਹੀਨੇ']),
+            UnitForms.simpleUnit('{n} ਸਾਲ'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1617,8 +2385,24 @@ class Locales {
             StageLabel.gendered('Nastolatek', 'Nastolatka'),
             StageLabel.gendered('Dorosły', 'Dorosła'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dzień', (PluralCategory.FEW): '{n} dni', (PluralCategory.MANY): '{n} dni', (PluralCategory.OTHER): '{n} dnia']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} tydz.', (PluralCategory.FEW): '{n} tyg.', (PluralCategory.MANY): '{n} tyg.', (PluralCategory.OTHER): '{n} tyg.']),
+            UnitForms.simpleUnit('{n} mies.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} lata', (PluralCategory.MANY): '{n} lat', (PluralCategory.OTHER): '{n} roku']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} t.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} m-c', (PluralCategory.FEW): '{n} m-ce', (PluralCategory.MANY): '{n} m-cy', (PluralCategory.OTHER): '{n} m-ca']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} r.', (PluralCategory.FEW): '{n} l.', (PluralCategory.MANY): '{n} l.', (PluralCategory.OTHER): '{n} r.']),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1647,8 +2431,24 @@ class Locales {
             StageLabel.neutral('Adolescente'),
             StageLabel.gendered('Adulto', 'Adulta'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dias']),
+            UnitForms.simpleUnit('{n} sem.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mês', (PluralCategory.OTHER): '{n} meses']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dias']),
+            UnitForms.simpleUnit('{n} sem.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mês', (PluralCategory.OTHER): '{n} meses']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1681,8 +2481,24 @@ class Locales {
             StageLabel.gendered('Adolescent', 'Adolescentă'),
             StageLabel.gendered('Adult', 'Adultă'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} zi', (PluralCategory.FEW): '{n} zile', (PluralCategory.OTHER): '{n} zile']),
+            UnitForms.simpleUnit('{n} săpt.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} lună', (PluralCategory.FEW): '{n} luni', (PluralCategory.OTHER): '{n} luni']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.FEW): '{n} ani', (PluralCategory.OTHER): '{n} ani']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} z'),
+            UnitForms.simpleUnit('{n} săpt.'),
+            UnitForms.simpleUnit('{n} l'),
+            UnitForms.simpleUnit('{n} a'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1717,8 +2533,24 @@ class Locales {
             StageLabel.neutral('Подросток'),
             StageLabel.gendered('Взрослый', 'Взрослая'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} дн.'),
+            UnitForms.simpleUnit('{n} нед.'),
+            UnitForms.simpleUnit('{n} мес.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} л.', (PluralCategory.OTHER): '{n} г.']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} д.'),
+            UnitForms.simpleUnit('{n} н.'),
+            UnitForms.simpleUnit('{n} м.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} л.', (PluralCategory.OTHER): '{n} г.']),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1751,8 +2583,24 @@ class Locales {
             StageLabel.gendered('Aɛrim', 'Taɛrimt'),
             StageLabel.gendered('Argaz', 'Tamṭṭuṭ'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} wk'),
+            UnitForms.simpleUnit('{n} mo'),
+            UnitForms.simpleUnit('{n} yr'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1781,8 +2629,24 @@ class Locales {
             StageLabel.neutral('නව යොවුන්'),
             StageLabel.neutral('වැඩිහිටි'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('දින {n}'),
+            UnitForms.simpleUnit('සති {n}'),
+            UnitForms.simpleUnit('මාස {n}'),
+            UnitForms.simpleUnit('වසර {n}'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('දි {n}'),
+            UnitForms.simpleUnit('ස {n}'),
+            UnitForms.simpleUnit('මා {n}'),
+            UnitForms.simpleUnit('ව {n}'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1815,8 +2679,24 @@ class Locales {
             StageLabel.neutral('Tínedžer'),
             StageLabel.gendered('Dospelý', 'Dospelá'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} deň', (PluralCategory.FEW): '{n} dni', (PluralCategory.MANY): '{n} dňa', (PluralCategory.OTHER): '{n} dní']),
+            UnitForms.simpleUnit('{n} týž.'),
+            UnitForms.simpleUnit('{n} mes.'),
+            UnitForms.simpleUnit('{n} r.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d.'),
+            UnitForms.simpleUnit('{n} t.'),
+            UnitForms.simpleUnit('{n} m.'),
+            UnitForms.simpleUnit('{n} r.'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1851,8 +2731,24 @@ class Locales {
             StageLabel.gendered('Najstnik', 'Najstnica'),
             StageLabel.gendered('Odrasel', 'Odrasla'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} t'),
+            UnitForms.simpleUnit('{n} m'),
+            UnitForms.simpleUnit('{n} l'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} t'),
+            UnitForms.simpleUnit('{n} m'),
+            UnitForms.simpleUnit('{n} l'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1881,8 +2777,24 @@ class Locales {
             StageLabel.gendered('Adoleshent', 'Adoleshente'),
             StageLabel.gendered('I rritur', 'E rritur'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ditë'),
+            UnitForms.simpleUnit('{n} javë'),
+            UnitForms.simpleUnit('{n} muaj'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vit', (PluralCategory.OTHER): '{n} vjet']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ditë'),
+            UnitForms.simpleUnit('{n} javë'),
+            UnitForms.simpleUnit('{n} muaj'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vit', (PluralCategory.OTHER): '{n} vjet']),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1917,8 +2829,24 @@ class Locales {
             StageLabel.neutral('Тинејџер'),
             StageLabel.neutral('Одрасла особа'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дан', (PluralCategory.FEW): '{n} дана', (PluralCategory.OTHER): '{n} дана']),
+            UnitForms.simpleUnit('{n} нед.'),
+            UnitForms.simpleUnit('{n} мес.'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} год.', (PluralCategory.OTHER): '{n} год.']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} д'),
+            UnitForms.simpleUnit('{n} н'),
+            UnitForms.simpleUnit('{n} м'),
+            UnitForms.simpleUnit('{n} г'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1947,8 +2875,24 @@ class Locales {
             StageLabel.neutral('Tonåring'),
             StageLabel.neutral('Vuxen'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} v'),
+            UnitForms.simpleUnit('{n} mån'),
+            UnitForms.simpleUnit('{n} år'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}v'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}å'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -1977,8 +2921,24 @@ class Locales {
             StageLabel.neutral('Kijana'),
             StageLabel.neutral('Mtu mzima'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('siku {n}'),
+            UnitForms.simpleUnit('wiki {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miezi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miaka {n}']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('siku {n}'),
+            UnitForms.simpleUnit('wiki {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miezi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miaka {n}']),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2007,8 +2967,24 @@ class Locales {
             StageLabel.neutral('இளம்பருவம்'),
             StageLabel.neutral('பெரியவர்'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} நாள்', (PluralCategory.OTHER): '{n} நாட்கள்']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} வாரம்', (PluralCategory.OTHER): '{n} வார.']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} மாதம்', (PluralCategory.OTHER): '{n} மாத.']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ஆண்டு', (PluralCategory.OTHER): '{n} ஆண்டு.']),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} நா'),
+            UnitForms.simpleUnit('{n} வா'),
+            UnitForms.simpleUnit('{n} மா'),
+            UnitForms.simpleUnit('{n} ஆ'),
+            null,
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2037,8 +3013,24 @@ class Locales {
             StageLabel.neutral('కౌమారదశ'),
             StageLabel.neutral('వయోజనులు'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} రోజు', (PluralCategory.OTHER): '{n} రోజులు']),
+            UnitForms.simpleUnit('{n} వా.'),
+            UnitForms.simpleUnit('{n} నె.'),
+            UnitForms.simpleUnit('{n} సం.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}రో'),
+            UnitForms.simpleUnit('{n}వా'),
+            UnitForms.simpleUnit('{n}నె'),
+            UnitForms.simpleUnit('{n}సం'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2067,8 +3059,24 @@ class Locales {
             StageLabel.neutral('วัยรุ่น'),
             StageLabel.neutral('ผู้ใหญ่'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} วัน'),
+            UnitForms.simpleUnit('{n} สัปดาห์'),
+            UnitForms.simpleUnit('{n} เดือน'),
+            UnitForms.simpleUnit('{n} ปี'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}วัน'),
+            UnitForms.simpleUnit('{n}สัปดาห์'),
+            UnitForms.simpleUnit('{n}เดือน'),
+            UnitForms.simpleUnit('{n}ปี'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2097,8 +3105,24 @@ class Locales {
             StageLabel.neutral('Ergen'),
             StageLabel.neutral('Yetişkin'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} gün'),
+            UnitForms.simpleUnit('{n} hf.'),
+            UnitForms.simpleUnit('{n} ay'),
+            UnitForms.simpleUnit('{n} yıl'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}g'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}a'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2130,8 +3154,24 @@ class Locales {
             StageLabel.gendered('Aɛrim', 'Taɛrimt'),
             StageLabel.gendered('Argaz', 'Tamṭṭuṭ'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} d'),
+            UnitForms.simpleUnit('{n} wk'),
+            UnitForms.simpleUnit('{n} mo'),
+            UnitForms.simpleUnit('{n} yr'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2166,8 +3206,24 @@ class Locales {
             StageLabel.neutral('Підліток'),
             StageLabel.gendered('Дорослий', 'Доросла'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} дн.'),
+            UnitForms.simpleUnit('{n} тиж.'),
+            UnitForms.simpleUnit('{n} міс.'),
+            UnitForms.simpleUnit('{n} р.'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}д'),
+            UnitForms.simpleUnit('{n}т'),
+            UnitForms.simpleUnit('{n}м'),
+            UnitForms.simpleUnit('{n}р'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2196,8 +3252,24 @@ class Locales {
             StageLabel.neutral('نوجوان'),
             StageLabel.neutral('بالغ'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} دن'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ہفتہ', (PluralCategory.OTHER): '{n} ہفتے']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مہینہ', (PluralCategory.OTHER): '{n} مہینے']),
+            UnitForms.simpleUnit('{n} سال'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} دن'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ہفتہ', (PluralCategory.OTHER): '{n} ہفتے']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مہینہ', (PluralCategory.OTHER): '{n} مہینے']),
+            UnitForms.simpleUnit('{n} سال'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2226,8 +3298,24 @@ class Locales {
             StageLabel.neutral('Oʻsmir'),
             StageLabel.neutral('Katta'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} kun'),
+            UnitForms.simpleUnit('{n} hafta'),
+            UnitForms.simpleUnit('{n} oy'),
+            UnitForms.simpleUnit('{n} yil'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} kun'),
+            UnitForms.simpleUnit('{n} hafta'),
+            UnitForms.simpleUnit('{n} oy'),
+            UnitForms.simpleUnit('{n} yil'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2256,8 +3344,24 @@ class Locales {
             StageLabel.neutral('Thiếu niên'),
             StageLabel.neutral('Người lớn'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ngày'),
+            UnitForms.simpleUnit('{n} tuần'),
+            UnitForms.simpleUnit('{n} tháng'),
+            UnitForms.simpleUnit('{n} năm'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ngày'),
+            UnitForms.simpleUnit('{n} tuần'),
+            UnitForms.simpleUnit('{n} tháng'),
+            UnitForms.simpleUnit('{n} năm'),
+            '{n}½',
+            '',
+            null
+        ),
         null,
         null
     )
@@ -2286,8 +3390,24 @@ class Locales {
             StageLabel.neutral('青少年'),
             StageLabel.neutral('成人'),
         ),
-        null,
-        null,
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}天'),
+            UnitForms.simpleUnit('{n}周'),
+            UnitForms.simpleUnit('{n}个月'),
+            UnitForms.simpleUnit('{n}年'),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}天'),
+            UnitForms.simpleUnit('{n}周'),
+            UnitForms.simpleUnit('{n}个月'),
+            UnitForms.simpleUnit('{n}年'),
+            null,
+            null,
+            null
+        ),
         null,
         null
     )

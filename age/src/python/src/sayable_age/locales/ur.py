@@ -11,7 +11,7 @@
 
 """Urdu locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 UR = AgeLocale(
     code="ur",
@@ -33,4 +33,22 @@ UR = AgeLocale(
         "teenager": "نوجوان",
         "adult": "بالغ",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} دن",
+            "week": {"one": "{n} ہفتہ", "other": "{n} ہفتے"},
+            "month": {"one": "{n} مہینہ", "other": "{n} مہینے"},
+            "year": "{n} سال",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} دن",
+            "week": {"one": "{n} ہفتہ", "other": "{n} ہفتے"},
+            "month": {"one": "{n} مہینہ", "other": "{n} مہینے"},
+            "year": "{n} سال",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

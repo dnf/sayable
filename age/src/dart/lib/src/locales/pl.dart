@@ -34,4 +34,18 @@ final pl = AgeLocale(
   child: stageNeutral('Dziecko'),
   teenager: stageGendered('Nastolatek', 'Nastolatka'),
   adult: stageGendered('Dorosły', 'Dorosła'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} dzień', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dni', PluralCategory.other: '{n} dnia'}),
+    week: pluralUnit({PluralCategory.one: '{n} tydz.', PluralCategory.few: '{n} tyg.', PluralCategory.many: '{n} tyg.', PluralCategory.other: '{n} tyg.'}),
+    month: simpleUnit('{n} mies.'),
+    year: pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} lata', PluralCategory.many: '{n} lat', PluralCategory.other: '{n} roku'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} d.'),
+    week: simpleUnit('{n} t.'),
+    month: pluralUnit({PluralCategory.one: '{n} m-c', PluralCategory.few: '{n} m-ce', PluralCategory.many: '{n} m-cy', PluralCategory.other: '{n} m-ca'}),
+    year: pluralUnit({PluralCategory.one: '{n} r.', PluralCategory.few: '{n} l.', PluralCategory.many: '{n} l.', PluralCategory.other: '{n} r.'}),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

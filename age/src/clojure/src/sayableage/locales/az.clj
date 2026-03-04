@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Təzə doğulub"
    :stages {:newborn {:type :neutral :label "Təzə doğulub"} :infant {:type :neutral :label "Körpə"} :toddler {:type :neutral :label "Azyaşlı"} :child {:type :neutral :label "Uşaq"} :teenager {:type :neutral :label "Yeniyetmə"} :adult {:type :neutral :label "Böyük"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} gün"} :week {:type :simple :form "{n} hft"} :month {:type :simple :form "{n} ay"} :year {:type :simple :form "{n} il"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} gün"} :week {:type :simple :form "{n} hft"} :month {:type :simple :form "{n} ay"} :year {:type :simple :form "{n} il"} :half "{n}½" :delimiter "" :just-born nil}})

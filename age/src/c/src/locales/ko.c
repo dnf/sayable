@@ -34,6 +34,6 @@ const SaLocale sa_locale_ko = {
         { "청소년", "" },
         { "성인", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n}일", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}주", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}개월", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}년", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}일", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}주", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}개월", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}년", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
 };

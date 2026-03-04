@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/az.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Azerbaijani locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Yeniyetmə".to_string()),
             adult: StageLabel::Neutral("Böyük".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} gün")),
+            week: Some(UnitForms::simple("{n} hft")),
+            month: Some(UnitForms::simple("{n} ay")),
+            year: Some(UnitForms::simple("{n} il")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} gün")),
+            week: Some(UnitForms::simple("{n} hft")),
+            month: Some(UnitForms::simple("{n} ay")),
+            year: Some(UnitForms::simple("{n} il")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

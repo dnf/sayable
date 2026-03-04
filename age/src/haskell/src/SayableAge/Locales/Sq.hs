@@ -44,6 +44,30 @@ locale = Locale
         , stageTeenager = Gendered "Adoleshent" "Adoleshente"
         , stageAdult = Gendered "I rritur" "E rritur"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} ditë")
+            , ovrWeek = Just (Simple "{n} javë")
+            , ovrMonth = Just (Simple "{n} muaj")
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} vit")
+              , (Other, "{n} vjet")
+              ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} ditë")
+            , ovrWeek = Just (Simple "{n} javë")
+            , ovrMonth = Just (Simple "{n} muaj")
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} vit")
+              , (Other, "{n} vjet")
+              ])
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

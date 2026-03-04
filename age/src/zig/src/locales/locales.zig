@@ -202,8 +202,8 @@ pub const am: sayableage.Locale = .{
         .teenager = .{ .label = "ታዳጊ", .f = "" },
         .adult = .{ .label = "አዋቂ", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} ቀናት" }, .week = .{ .forms = .{ .zero = null, .one = "{n} ሳምንት", .two = null, .few = null, .many = null, .other = "{n} ሳምንታት" } }, .month = .{ .simple = "{n} ወራት" }, .year = .{ .forms = .{ .zero = null, .one = "{n} ዓመት", .two = null, .few = null, .many = null, .other = "{n} ዓመታት" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} ቀ" }, .week = .{ .simple = "{n} ሳምንት" }, .month = .{ .simple = "{n} ወር" }, .year = .{ .forms = .{ .zero = null, .one = "{n} ዓመት", .two = null, .few = null, .many = null, .other = "{n} ዓ" } }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ar.json
@@ -227,8 +227,8 @@ pub const ar: sayableage.Locale = .{
         .teenager = .{ .label = "مراهق", .f = "مراهقة" },
         .adult = .{ .label = "بالغ", .f = "بالغة" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = "{n} يوم", .one = "يوم", .two = "يومان", .few = "{n} أيام", .many = "{n} يومًا", .other = "{n} يوم" } }, .week = .{ .forms = .{ .zero = "{n} أسبوع", .one = "أسبوع", .two = "أسبوعان", .few = "{n} أسابيع", .many = "{n} أسبوعًا", .other = "{n} أسبوع" } }, .month = .{ .forms = .{ .zero = "{n} شهر", .one = "شهر", .two = "شهران", .few = "{n} أشهر", .many = "{n} شهرًا", .other = "{n} شهر" } }, .year = .{ .forms = .{ .zero = "{n} سنة", .one = "سنة واحدة", .two = "سنتان", .few = "{n} سنوات", .many = "{n} سنة", .other = "{n} سنة" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} ي" }, .week = .{ .simple = "{n} أ" }, .month = .{ .forms = .{ .zero = "{n} شهر", .one = "شهر", .two = "شهران", .few = "{n} أشهر", .many = "{n} شهرًا", .other = "{n} شهر" } }, .year = .{ .simple = "{n} سنة" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/az.json
@@ -252,8 +252,8 @@ pub const az: sayableage.Locale = .{
         .teenager = .{ .label = "Yeniyetmə", .f = "" },
         .adult = .{ .label = "Böyük", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} gün" }, .week = .{ .simple = "{n} hft" }, .month = .{ .simple = "{n} ay" }, .year = .{ .simple = "{n} il" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} gün" }, .week = .{ .simple = "{n} hft" }, .month = .{ .simple = "{n} ay" }, .year = .{ .simple = "{n} il" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/bg.json
@@ -277,8 +277,8 @@ pub const bg: sayableage.Locale = .{
         .teenager = .{ .label = "Тийнейджър", .f = "" },
         .adult = .{ .label = "Възрастен", .f = "Възрастна" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} д" }, .week = .{ .simple = "{n} седм." }, .month = .{ .simple = "{n} мес." }, .year = .{ .simple = "{n} год." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} д" }, .week = .{ .simple = "{n} седм." }, .month = .{ .simple = "{n} мес." }, .year = .{ .simple = "{n} г." }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/bn.json
@@ -302,8 +302,8 @@ pub const bn: sayableage.Locale = .{
         .teenager = .{ .label = "কিশোর", .f = "কিশোরী" },
         .adult = .{ .label = "প্রাপ্তবয়স্ক", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} দিন" }, .week = .{ .simple = "{n} সপ্তাহ" }, .month = .{ .simple = "{n} মাস" }, .year = .{ .simple = "{n} বছর" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} দিন" }, .week = .{ .simple = "{n} সপ্তাহ" }, .month = .{ .simple = "{n} মাস" }, .year = .{ .simple = "{n} বছর" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/br.json
@@ -327,8 +327,8 @@ pub const br: sayableage.Locale = .{
         .teenager = .{ .label = "Den yaouank", .f = "" },
         .adult = .{ .label = "Den deuet da vad", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} sizh." }, .month = .{ .simple = "{n} m." }, .year = .{ .simple = "{n} bl." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}sizh." }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}b" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/bs.json
@@ -352,8 +352,8 @@ pub const bs: sayableage.Locale = .{
         .teenager = .{ .label = "Tinejdžer", .f = "" },
         .adult = .{ .label = "Odrasla osoba", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} dan", .two = null, .few = "{n} dana", .many = null, .other = "{n} dana" } }, .week = .{ .simple = "{n} sedm." }, .month = .{ .simple = "{n} mj." }, .year = .{ .simple = "{n} god." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} sedm." }, .month = .{ .simple = "{n} mj." }, .year = .{ .simple = "{n} god." }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ca.json
@@ -377,8 +377,8 @@ pub const ca: sayableage.Locale = .{
         .teenager = .{ .label = "Adolescent", .f = "" },
         .adult = .{ .label = "Adult", .f = "Adulta" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} dia", .two = null, .few = null, .many = null, .other = "{n} dies" } }, .week = .{ .simple = "{n} setm." }, .month = .{ .forms = .{ .zero = null, .one = "{n} mes", .two = null, .few = null, .many = null, .other = "{n} m" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} any", .two = null, .few = null, .many = null, .other = "{n} anys" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} setm." }, .month = .{ .simple = "{n} m" }, .year = .{ .forms = .{ .zero = null, .one = "{n} any", .two = null, .few = null, .many = null, .other = "{n} anys" } }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/cs.json
@@ -402,8 +402,8 @@ pub const cs: sayableage.Locale = .{
         .teenager = .{ .label = "Teenager", .f = "" },
         .adult = .{ .label = "Dospělý", .f = "Dospělá" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} den", .two = null, .few = "{n} dny", .many = "{n} dne", .other = "{n} dnů" } }, .week = .{ .simple = "{n} týd." }, .month = .{ .simple = "{n} měs." }, .year = .{ .forms = .{ .zero = null, .one = "{n} rok", .two = null, .few = "{n} roky", .many = "{n} roku", .other = "{n} let" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} t." }, .month = .{ .simple = "{n} m." }, .year = .{ .forms = .{ .zero = null, .one = "{n} r.", .two = null, .few = "{n} r.", .many = "{n} r.", .other = "{n} l." } }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/cy.json
@@ -427,8 +427,8 @@ pub const cy: sayableage.Locale = .{
         .teenager = .{ .label = "Glaslanc", .f = "" },
         .adult = .{ .label = "Oedolyn", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = "{n} diwrnod", .one = "{n} diwrnod", .two = "{n} ddiwrnod", .few = "{n} diwrnod", .many = "{n} diwrnod", .other = "{n} diwrnod" } }, .week = .{ .simple = "{n} ws" }, .month = .{ .forms = .{ .zero = "{n} mis", .one = "{n} mis", .two = "{n} fis", .few = "{n} mis", .many = "{n} mis", .other = "{n} mis" } }, .year = .{ .simple = "{n} bl" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .forms = .{ .zero = "{n} ws", .one = "{n}w", .two = "{n} ws", .few = "{n} ws", .many = "{n} ws", .other = "{n}w" } }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}bl" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/da.json
@@ -452,8 +452,8 @@ pub const da: sayableage.Locale = .{
         .teenager = .{ .label = "Teenager", .f = "" },
         .adult = .{ .label = "Voksen", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} dag", .two = null, .few = null, .many = null, .other = "{n} dage" } }, .week = .{ .forms = .{ .zero = null, .one = "{n} uge", .two = null, .few = null, .many = null, .other = "{n} uger" } }, .month = .{ .forms = .{ .zero = null, .one = "{n} md.", .two = null, .few = null, .many = null, .other = "{n} mdr." } }, .year = .{ .simple = "{n} år" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} u" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} år" }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/de.json
@@ -477,8 +477,8 @@ pub const de: sayableage.Locale = .{
         .teenager = .{ .label = "Teenager", .f = "" },
         .adult = .{ .label = "Erwachsener", .f = "Erwachsene" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} Tg." }, .week = .{ .simple = "{n} Wo." }, .month = .{ .simple = "{n} Mon." }, .year = .{ .simple = "{n} J" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} T" }, .week = .{ .simple = "{n} W" }, .month = .{ .simple = "{n} M" }, .year = .{ .simple = "{n} J" }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/el.json
@@ -502,8 +502,8 @@ pub const el: sayableage.Locale = .{
         .teenager = .{ .label = "Έφηβος", .f = "Έφηβη" },
         .adult = .{ .label = "Ενήλικας", .f = "Ενήλικη" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} ημέρα", .two = null, .few = null, .many = null, .other = "{n} ημέρες" } }, .week = .{ .simple = "{n} εβδ." }, .month = .{ .simple = "{n} μήν." }, .year = .{ .simple = "{n} έτ." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} η" }, .week = .{ .simple = "{n} ε" }, .month = .{ .simple = "{n} μ" }, .year = .{ .simple = "{n} έ" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/en.json
@@ -552,8 +552,8 @@ pub const es: sayableage.Locale = .{
         .teenager = .{ .label = "Adolescente", .f = "" },
         .adult = .{ .label = "Adulto", .f = "Adulta" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} sem." }, .month = .{ .simple = "{n} m." }, .year = .{ .simple = "{n} a" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}sem" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}a" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/et.json
@@ -577,8 +577,8 @@ pub const et: sayableage.Locale = .{
         .teenager = .{ .label = "Teismeline", .f = "" },
         .adult = .{ .label = "Täiskasvanu", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} päev", .two = null, .few = null, .many = null, .other = "{n} päeva" } }, .week = .{ .simple = "{n} näd" }, .month = .{ .forms = .{ .zero = null, .one = "{n} kuu", .two = null, .few = null, .many = null, .other = "{n} kuud" } }, .year = .{ .simple = "{n} a" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} p" }, .week = .{ .simple = "{n} n" }, .month = .{ .simple = "{n} k" }, .year = .{ .simple = "{n} a" }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/eu.json
@@ -602,8 +602,8 @@ pub const eu: sayableage.Locale = .{
         .teenager = .{ .label = "Nerabea", .f = "" },
         .adult = .{ .label = "Heldua", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} egun" }, .week = .{ .simple = "{n} aste" }, .month = .{ .simple = "{n} hilabete" }, .year = .{ .simple = "{n} urte" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} e." }, .week = .{ .simple = "{n} aste" }, .month = .{ .simple = "{n} hil" }, .year = .{ .simple = "{n} u." }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/fa.json
@@ -627,8 +627,8 @@ pub const fa: sayableage.Locale = .{
         .teenager = .{ .label = "نوجوان", .f = "" },
         .adult = .{ .label = "بزرگسال", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} روز" }, .week = .{ .simple = "{n} هفته" }, .month = .{ .simple = "{n} ماه" }, .year = .{ .simple = "{n} سال" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} روز" }, .week = .{ .simple = "{n} هفته" }, .month = .{ .simple = "{n} ماه" }, .year = .{ .simple = "{n} سال" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/fi.json
@@ -652,8 +652,8 @@ pub const fi: sayableage.Locale = .{
         .teenager = .{ .label = "Teini", .f = "" },
         .adult = .{ .label = "Aikuinen", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} pv" }, .week = .{ .simple = "{n} vk" }, .month = .{ .simple = "{n} kk" }, .year = .{ .simple = "{n} v" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}pv" }, .week = .{ .simple = "{n}vk" }, .month = .{ .simple = "{n}kk" }, .year = .{ .simple = "{n}v" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/fil.json
@@ -677,8 +677,8 @@ pub const fil: sayableage.Locale = .{
         .teenager = .{ .label = "Tinedyer", .f = "" },
         .adult = .{ .label = "Matanda", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} araw" }, .week = .{ .forms = .{ .zero = null, .one = "{n} linggo", .two = null, .few = null, .many = null, .other = "{n} na linggo" } }, .month = .{ .simple = "{n} buwan" }, .year = .{ .simple = "{n} taon" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} araw", .two = null, .few = null, .many = null, .other = "{n} na araw" } }, .week = .{ .simple = "{n}linggo" }, .month = .{ .forms = .{ .zero = null, .one = "{n}buwan", .two = null, .few = null, .many = null, .other = "{n} buwan" } }, .year = .{ .simple = "{n}taon" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/fr.json
@@ -702,8 +702,8 @@ pub const fr: sayableage.Locale = .{
         .teenager = .{ .label = "Adolescent", .f = "Adolescente" },
         .adult = .{ .label = "Adulte", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} j" }, .week = .{ .simple = "{n} sem." }, .month = .{ .simple = "{n} m." }, .year = .{ .forms = .{ .zero = null, .one = "{n} an", .two = null, .few = null, .many = null, .other = "{n} ans" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}j" }, .week = .{ .simple = "{n}sem." }, .month = .{ .simple = "{n}m." }, .year = .{ .simple = "{n}a" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ga.json
@@ -727,8 +727,8 @@ pub const ga: sayableage.Locale = .{
         .teenager = .{ .label = "Déagóir", .f = "" },
         .adult = .{ .label = "Duine fásta", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} lá" }, .week = .{ .simple = "{n} scht" }, .month = .{ .forms = .{ .zero = null, .one = "{n} mí", .two = "{n} mí", .few = "{n} mí", .many = "{n} mí", .other = "{n} m" } }, .year = .{ .simple = "{n} bl" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} lá" }, .week = .{ .simple = "{n} scht" }, .month = .{ .forms = .{ .zero = null, .one = "{n}m", .two = "{n}m", .few = "{n}m", .many = "{n}m", .other = "{n} m" } }, .year = .{ .simple = "{n} bl" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/gd.json
@@ -752,8 +752,8 @@ pub const gd: sayableage.Locale = .{
         .teenager = .{ .label = "Deugaire", .f = "" },
         .adult = .{ .label = "Inbheach", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} là" }, .week = .{ .forms = .{ .zero = null, .one = "{n} shn", .two = "{n} shn", .few = "{n} sn", .many = null, .other = "{n} sn" } }, .month = .{ .forms = .{ .zero = null, .one = "{n} mhìos", .two = "{n} mhìos", .few = "{n} mìos", .many = null, .other = "{n} mìos" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} bhlia", .two = "{n} bhlia", .few = "{n} blia", .many = null, .other = "{n} blia" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}là" }, .week = .{ .simple = "{n}s" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}bl" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/gu.json
@@ -777,8 +777,8 @@ pub const gu: sayableage.Locale = .{
         .teenager = .{ .label = "કિશોર", .f = "કિશોરી" },
         .adult = .{ .label = "પુખ્ત", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} દિવસ" }, .week = .{ .simple = "{n} અઠ." }, .month = .{ .forms = .{ .zero = null, .one = "{n} મહિનો", .two = null, .few = null, .many = null, .other = "{n} મહિના" } }, .year = .{ .simple = "{n} વર્ષ" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} દિ" }, .week = .{ .simple = "{n} અઠ." }, .month = .{ .simple = "{n} મ" }, .year = .{ .simple = "{n} વ" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/gv.json
@@ -802,8 +802,8 @@ pub const gv: sayableage.Locale = .{
         .teenager = .{ .label = "Fer aeg", .f = "" },
         .adult = .{ .label = "Dooinney aasit", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} wk" }, .month = .{ .simple = "{n} mo" }, .year = .{ .simple = "{n} yr" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/he.json
@@ -827,8 +827,8 @@ pub const he: sayableage.Locale = .{
         .teenager = .{ .label = "נער", .f = "נערה" },
         .adult = .{ .label = "מבוגר", .f = "מבוגרת" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} יום", .two = "יומיים", .few = null, .many = null, .other = "{n} ימ׳" } }, .week = .{ .forms = .{ .zero = null, .one = "{n} שבוע", .two = "שבועיים", .few = null, .many = null, .other = "{n} שבועות" } }, .month = .{ .simple = "{n} ח׳" }, .year = .{ .forms = .{ .zero = null, .one = "{n} שנה", .two = "{n} שנים", .few = null, .many = null, .other = "{n} שנים" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} י׳" }, .week = .{ .simple = "{n} ש′" }, .month = .{ .simple = "{n} ח׳" }, .year = .{ .simple = "{n} ש′" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/hi.json
@@ -852,8 +852,8 @@ pub const hi: sayableage.Locale = .{
         .teenager = .{ .label = "किशोर", .f = "किशोरी" },
         .adult = .{ .label = "वयस्क", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} दिन" }, .week = .{ .simple = "{n} सप्ताह" }, .month = .{ .simple = "{n} माह" }, .year = .{ .simple = "{n} वर्ष" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} दि" }, .week = .{ .simple = "{n} सप्ताह" }, .month = .{ .simple = "{n} माह" }, .year = .{ .simple = "{n} व" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/hr.json
@@ -877,8 +877,8 @@ pub const hr: sayableage.Locale = .{
         .teenager = .{ .label = "Tinejdžer", .f = "" },
         .adult = .{ .label = "Odrasla osoba", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} dan", .two = null, .few = "{n} dana", .many = null, .other = "{n} dana" } }, .week = .{ .simple = "{n} tj." }, .month = .{ .simple = "{n} mj." }, .year = .{ .simple = "{n} g." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} tj." }, .month = .{ .simple = "{n} mj." }, .year = .{ .simple = "{n} g." }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/hu.json
@@ -902,8 +902,8 @@ pub const hu: sayableage.Locale = .{
         .teenager = .{ .label = "Tinédzser", .f = "" },
         .adult = .{ .label = "Felnőtt", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} nap" }, .week = .{ .simple = "{n} hét" }, .month = .{ .simple = "{n} hónap" }, .year = .{ .simple = "{n} év" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} nap" }, .week = .{ .simple = "{n} hét" }, .month = .{ .simple = "{n} h." }, .year = .{ .simple = "{n} év" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/id.json
@@ -927,8 +927,8 @@ pub const id: sayableage.Locale = .{
         .teenager = .{ .label = "Remaja", .f = "" },
         .adult = .{ .label = "Dewasa", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} hr" }, .week = .{ .simple = "{n} mgg" }, .month = .{ .simple = "{n} bln" }, .year = .{ .simple = "{n} thn" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} hr" }, .week = .{ .simple = "{n} mgg" }, .month = .{ .simple = "{n} bln" }, .year = .{ .simple = "{n} thn" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/it.json
@@ -952,8 +952,8 @@ pub const it: sayableage.Locale = .{
         .teenager = .{ .label = "Adolescente", .f = "" },
         .adult = .{ .label = "Adulto", .f = "Adulta" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} giorno", .two = null, .few = null, .many = null, .other = "{n} giorni" } }, .week = .{ .simple = "{n} sett." }, .month = .{ .forms = .{ .zero = null, .one = "{n} mese", .two = null, .few = null, .many = null, .other = "{n} mesi" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} anno", .two = null, .few = null, .many = null, .other = "{n} anni" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n}g", .two = null, .few = null, .many = null, .other = "{n}gg" } }, .week = .{ .simple = "{n}sett." }, .month = .{ .forms = .{ .zero = null, .one = "{n} mese", .two = null, .few = null, .many = null, .other = "{n} mesi" } }, .year = .{ .forms = .{ .zero = null, .one = "{n}anno", .two = null, .few = null, .many = null, .other = "{n}anni" } }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ja.json
@@ -977,8 +977,8 @@ pub const ja: sayableage.Locale = .{
         .teenager = .{ .label = "青少年", .f = "" },
         .adult = .{ .label = "成人", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} 日" }, .week = .{ .simple = "{n} 週間" }, .month = .{ .simple = "{n} か月" }, .year = .{ .simple = "{n} 年" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = null, .just_born = null },
 };
 
 // Source: age/locales/src/jv.json
@@ -1002,8 +1002,8 @@ pub const jv: sayableage.Locale = .{
         .teenager = .{ .label = "Remaja", .f = "" },
         .adult = .{ .label = "Diwasa", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} dina" }, .week = .{ .simple = "{n} peken" }, .month = .{ .simple = "{n} sasi" }, .year = .{ .simple = "{n} taun" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n} peken" }, .month = .{ .simple = "{n} sasi" }, .year = .{ .simple = "{n} taun" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ka.json
@@ -1027,8 +1027,8 @@ pub const ka: sayableage.Locale = .{
         .teenager = .{ .label = "მოზარდი", .f = "" },
         .adult = .{ .label = "ზრდასრული", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} დღე" }, .week = .{ .simple = "{n} კვრ" }, .month = .{ .simple = "{n} თვე" }, .year = .{ .simple = "{n} წ" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} დღე" }, .week = .{ .simple = "{n} კვრ" }, .month = .{ .simple = "{n} თვე" }, .year = .{ .simple = "{n} წ" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/kk.json
@@ -1052,8 +1052,8 @@ pub const kk: sayableage.Locale = .{
         .teenager = .{ .label = "Жасөспірім", .f = "" },
         .adult = .{ .label = "Ересек", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} күн" }, .week = .{ .simple = "{n} ап." }, .month = .{ .simple = "{n} ай" }, .year = .{ .simple = "{n} ж." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} к." }, .week = .{ .simple = "{n} ап." }, .month = .{ .simple = "{n} ай" }, .year = .{ .simple = "{n} ж." }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/km.json
@@ -1077,8 +1077,8 @@ pub const km: sayableage.Locale = .{
         .teenager = .{ .label = "យុវវ័យ", .f = "" },
         .adult = .{ .label = "មនុស្សពេញវ័យ", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} ថ្ងៃ" }, .week = .{ .simple = "{n} សប្ដាហ៍" }, .month = .{ .simple = "{n} ខែ" }, .year = .{ .simple = "{n} ឆ្នាំ" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} ថ្ងៃ" }, .week = .{ .simple = "{n} សប្ដាហ៍" }, .month = .{ .simple = "{n} ខែ" }, .year = .{ .simple = "{n} ឆ្នាំ" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ko.json
@@ -1102,8 +1102,8 @@ pub const ko: sayableage.Locale = .{
         .teenager = .{ .label = "청소년", .f = "" },
         .adult = .{ .label = "성인", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n}일" }, .week = .{ .simple = "{n}주" }, .month = .{ .simple = "{n}개월" }, .year = .{ .simple = "{n}년" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}일" }, .week = .{ .simple = "{n}주" }, .month = .{ .simple = "{n}개월" }, .year = .{ .simple = "{n}년" }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/kw.json
@@ -1127,8 +1127,8 @@ pub const kw: sayableage.Locale = .{
         .teenager = .{ .label = "Den yowynk", .f = "" },
         .adult = .{ .label = "Den tevys", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} wk" }, .month = .{ .simple = "{n} mo" }, .year = .{ .simple = "{n} yr" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/lt.json
@@ -1152,8 +1152,8 @@ pub const lt: sayableage.Locale = .{
         .teenager = .{ .label = "Paauglys", .f = "Paauglė" },
         .adult = .{ .label = "Suaugęs", .f = "Suaugusi" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} sav." }, .month = .{ .simple = "{n} mėn." }, .year = .{ .simple = "{n} m." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} sav." }, .month = .{ .simple = "{n} mėn." }, .year = .{ .simple = "{n} m." }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/lv.json
@@ -1177,8 +1177,8 @@ pub const lv: sayableage.Locale = .{
         .teenager = .{ .label = "Pusaudzis", .f = "Pusaudze" },
         .adult = .{ .label = "Pieaugušais", .f = "Pieaugusī" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} ned." }, .month = .{ .simple = "{n} mēn." }, .year = .{ .simple = "{n} g." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} n." }, .month = .{ .simple = "{n} m." }, .year = .{ .simple = "{n} g." }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/mk.json
@@ -1202,8 +1202,8 @@ pub const mk: sayableage.Locale = .{
         .teenager = .{ .label = "Тинејџер", .f = "" },
         .adult = .{ .label = "Возрасен", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} ден", .two = null, .few = null, .many = null, .other = "{n} дена" } }, .week = .{ .simple = "{n} сед." }, .month = .{ .simple = "{n} мес." }, .year = .{ .simple = "{n} год." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} д." }, .week = .{ .simple = "{n} с." }, .month = .{ .simple = "{n} м." }, .year = .{ .simple = "{n} г." }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/mr.json
@@ -1227,8 +1227,8 @@ pub const mr: sayableage.Locale = .{
         .teenager = .{ .label = "किशोर", .f = "किशोरी" },
         .adult = .{ .label = "प्रौढ", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} दिवस" }, .week = .{ .simple = "{n} आ" }, .month = .{ .forms = .{ .zero = null, .one = "{n} महिना", .two = null, .few = null, .many = null, .other = "{n} महिने" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} वर्ष", .two = null, .few = null, .many = null, .other = "{n} वर्षे" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}दि" }, .week = .{ .simple = "{n}आ" }, .month = .{ .simple = "{n}म" }, .year = .{ .simple = "{n}व" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ms.json
@@ -1252,8 +1252,8 @@ pub const ms: sayableage.Locale = .{
         .teenager = .{ .label = "Remaja", .f = "" },
         .adult = .{ .label = "Dewasa", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} hari" }, .week = .{ .simple = "{n} mgu" }, .month = .{ .simple = "{n} bln" }, .year = .{ .simple = "{n} thn" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} h" }, .week = .{ .simple = "{n} mgu" }, .month = .{ .simple = "{n} bln" }, .year = .{ .simple = "{n} thn" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/mt.json
@@ -1277,8 +1277,8 @@ pub const mt: sayableage.Locale = .{
         .teenager = .{ .label = "Adolexxent", .f = "Adolexxenta" },
         .adult = .{ .label = "Adult", .f = "Adulta" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} w" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} y" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} w" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} y" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/my.json
@@ -1302,8 +1302,8 @@ pub const my: sayableage.Locale = .{
         .teenager = .{ .label = "ဆယ်ကျော်သက်", .f = "" },
         .adult = .{ .label = "အရွယ်ရောက်", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} ရက်" }, .week = .{ .simple = "{n} ပတ်" }, .month = .{ .simple = "{n} လ" }, .year = .{ .simple = "{n} နှစ်" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} ရက်" }, .week = .{ .simple = "{n} ပတ်" }, .month = .{ .simple = "{n} လ" }, .year = .{ .simple = "{n} နှစ်" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/nb.json
@@ -1327,8 +1327,8 @@ pub const nb: sayableage.Locale = .{
         .teenager = .{ .label = "Tenåring", .f = "" },
         .adult = .{ .label = "Voksen", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} u" }, .month = .{ .simple = "{n} md." }, .year = .{ .simple = "{n} år" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}u" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n}å" }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ne.json
@@ -1352,8 +1352,8 @@ pub const ne: sayableage.Locale = .{
         .teenager = .{ .label = "किशोर", .f = "" },
         .adult = .{ .label = "वयस्क", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} दिन" }, .week = .{ .simple = "{n} हप्ता" }, .month = .{ .simple = "{n} महिना" }, .year = .{ .simple = "{n} वर्ष" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} दिन" }, .week = .{ .simple = "{n} हप्ता" }, .month = .{ .simple = "{n} महिना" }, .year = .{ .simple = "{n} वर्ष" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/nl.json
@@ -1377,8 +1377,8 @@ pub const nl: sayableage.Locale = .{
         .teenager = .{ .label = "Tiener", .f = "" },
         .adult = .{ .label = "Volwassene", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} dag", .two = null, .few = null, .many = null, .other = "{n} dagen" } }, .week = .{ .forms = .{ .zero = null, .one = "{n} wk", .two = null, .few = null, .many = null, .other = "{n} wkn" } }, .month = .{ .simple = "{n} mnd" }, .year = .{ .simple = "{n} jr" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} w" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} jr" }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/pa.json
@@ -1402,8 +1402,8 @@ pub const pa: sayableage.Locale = .{
         .teenager = .{ .label = "ਕਿਸ਼ੋਰ", .f = "ਕਿਸ਼ੋਰੀ" },
         .adult = .{ .label = "ਬਾਲਗ", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} ਦਿਨ" }, .week = .{ .forms = .{ .zero = null, .one = "{n} ਹਫ਼ਤਾ", .two = null, .few = null, .many = null, .other = "{n} ਹਫ਼ਤੇ" } }, .month = .{ .forms = .{ .zero = null, .one = "{n} ਮਹੀਨਾ", .two = null, .few = null, .many = null, .other = "{n} ਮਹੀਨੇ" } }, .year = .{ .simple = "{n} ਸਾਲ" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} ਦਿਨ" }, .week = .{ .forms = .{ .zero = null, .one = "{n} ਹਫ਼ਤਾ", .two = null, .few = null, .many = null, .other = "{n} ਹਫ਼ਤੇ" } }, .month = .{ .forms = .{ .zero = null, .one = "{n} ਮਹੀਨਾ", .two = null, .few = null, .many = null, .other = "{n} ਮਹੀਨੇ" } }, .year = .{ .simple = "{n} ਸਾਲ" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/pl.json
@@ -1427,8 +1427,8 @@ pub const pl: sayableage.Locale = .{
         .teenager = .{ .label = "Nastolatek", .f = "Nastolatka" },
         .adult = .{ .label = "Dorosły", .f = "Dorosła" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} dzień", .two = null, .few = "{n} dni", .many = "{n} dni", .other = "{n} dnia" } }, .week = .{ .forms = .{ .zero = null, .one = "{n} tydz.", .two = null, .few = "{n} tyg.", .many = "{n} tyg.", .other = "{n} tyg." } }, .month = .{ .simple = "{n} mies." }, .year = .{ .forms = .{ .zero = null, .one = "{n} rok", .two = null, .few = "{n} lata", .many = "{n} lat", .other = "{n} roku" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} t." }, .month = .{ .forms = .{ .zero = null, .one = "{n} m-c", .two = null, .few = "{n} m-ce", .many = "{n} m-cy", .other = "{n} m-ca" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} r.", .two = null, .few = "{n} l.", .many = "{n} l.", .other = "{n} r." } }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/pt.json
@@ -1452,8 +1452,8 @@ pub const pt: sayableage.Locale = .{
         .teenager = .{ .label = "Adolescente", .f = "" },
         .adult = .{ .label = "Adulto", .f = "Adulta" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} dia", .two = null, .few = null, .many = null, .other = "{n} dias" } }, .week = .{ .simple = "{n} sem." }, .month = .{ .forms = .{ .zero = null, .one = "{n} mês", .two = null, .few = null, .many = null, .other = "{n} meses" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} ano", .two = null, .few = null, .many = null, .other = "{n} anos" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} dia", .two = null, .few = null, .many = null, .other = "{n} dias" } }, .week = .{ .simple = "{n} sem." }, .month = .{ .forms = .{ .zero = null, .one = "{n} mês", .two = null, .few = null, .many = null, .other = "{n} meses" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} ano", .two = null, .few = null, .many = null, .other = "{n} anos" } }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ro.json
@@ -1477,8 +1477,8 @@ pub const ro: sayableage.Locale = .{
         .teenager = .{ .label = "Adolescent", .f = "Adolescentă" },
         .adult = .{ .label = "Adult", .f = "Adultă" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} zi", .two = null, .few = "{n} zile", .many = null, .other = "{n} zile" } }, .week = .{ .simple = "{n} săpt." }, .month = .{ .forms = .{ .zero = null, .one = "{n} lună", .two = null, .few = "{n} luni", .many = null, .other = "{n} luni" } }, .year = .{ .forms = .{ .zero = null, .one = "{n} an", .two = null, .few = "{n} ani", .many = null, .other = "{n} ani" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} z" }, .week = .{ .simple = "{n} săpt." }, .month = .{ .simple = "{n} l" }, .year = .{ .simple = "{n} a" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ru.json
@@ -1502,8 +1502,8 @@ pub const ru: sayableage.Locale = .{
         .teenager = .{ .label = "Подросток", .f = "" },
         .adult = .{ .label = "Взрослый", .f = "Взрослая" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} дн." }, .week = .{ .simple = "{n} нед." }, .month = .{ .simple = "{n} мес." }, .year = .{ .forms = .{ .zero = null, .one = "{n} г.", .two = null, .few = "{n} г.", .many = "{n} л.", .other = "{n} г." } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} д." }, .week = .{ .simple = "{n} н." }, .month = .{ .simple = "{n} м." }, .year = .{ .forms = .{ .zero = null, .one = "{n} г.", .two = null, .few = "{n} г.", .many = "{n} л.", .other = "{n} г." } }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/shi.json
@@ -1527,8 +1527,8 @@ pub const shi: sayableage.Locale = .{
         .teenager = .{ .label = "Aɛrim", .f = "Taɛrimt" },
         .adult = .{ .label = "Argaz", .f = "Tamṭṭuṭ" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} wk" }, .month = .{ .simple = "{n} mo" }, .year = .{ .simple = "{n} yr" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/si.json
@@ -1552,8 +1552,8 @@ pub const si: sayableage.Locale = .{
         .teenager = .{ .label = "නව යොවුන්", .f = "" },
         .adult = .{ .label = "වැඩිහිටි", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "දින {n}" }, .week = .{ .simple = "සති {n}" }, .month = .{ .simple = "මාස {n}" }, .year = .{ .simple = "වසර {n}" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "දි {n}" }, .week = .{ .simple = "ස {n}" }, .month = .{ .simple = "මා {n}" }, .year = .{ .simple = "ව {n}" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/sk.json
@@ -1577,8 +1577,8 @@ pub const sk: sayableage.Locale = .{
         .teenager = .{ .label = "Tínedžer", .f = "" },
         .adult = .{ .label = "Dospelý", .f = "Dospelá" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} deň", .two = null, .few = "{n} dni", .many = "{n} dňa", .other = "{n} dní" } }, .week = .{ .simple = "{n} týž." }, .month = .{ .simple = "{n} mes." }, .year = .{ .simple = "{n} r." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} t." }, .month = .{ .simple = "{n} m." }, .year = .{ .simple = "{n} r." }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/sl.json
@@ -1602,8 +1602,8 @@ pub const sl: sayableage.Locale = .{
         .teenager = .{ .label = "Najstnik", .f = "Najstnica" },
         .adult = .{ .label = "Odrasel", .f = "Odrasla" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} t" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} l" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} t" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} l" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/sq.json
@@ -1627,8 +1627,8 @@ pub const sq: sayableage.Locale = .{
         .teenager = .{ .label = "Adoleshent", .f = "Adoleshente" },
         .adult = .{ .label = "I rritur", .f = "E rritur" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} ditë" }, .week = .{ .simple = "{n} javë" }, .month = .{ .simple = "{n} muaj" }, .year = .{ .forms = .{ .zero = null, .one = "{n} vit", .two = null, .few = null, .many = null, .other = "{n} vjet" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} ditë" }, .week = .{ .simple = "{n} javë" }, .month = .{ .simple = "{n} muaj" }, .year = .{ .forms = .{ .zero = null, .one = "{n} vit", .two = null, .few = null, .many = null, .other = "{n} vjet" } }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/sr.json
@@ -1652,8 +1652,8 @@ pub const sr: sayableage.Locale = .{
         .teenager = .{ .label = "Тинејџер", .f = "" },
         .adult = .{ .label = "Одрасла особа", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} дан", .two = null, .few = "{n} дана", .many = null, .other = "{n} дана" } }, .week = .{ .simple = "{n} нед." }, .month = .{ .simple = "{n} мес." }, .year = .{ .forms = .{ .zero = null, .one = "{n} год", .two = null, .few = "{n} год.", .many = null, .other = "{n} год." } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} д" }, .week = .{ .simple = "{n} н" }, .month = .{ .simple = "{n} м" }, .year = .{ .simple = "{n} г" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/sv.json
@@ -1677,8 +1677,8 @@ pub const sv: sayableage.Locale = .{
         .teenager = .{ .label = "Tonåring", .f = "" },
         .adult = .{ .label = "Vuxen", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} v" }, .month = .{ .simple = "{n} mån" }, .year = .{ .simple = "{n} år" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}v" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}å" }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/sw.json
@@ -1702,8 +1702,8 @@ pub const sw: sayableage.Locale = .{
         .teenager = .{ .label = "Kijana", .f = "" },
         .adult = .{ .label = "Mtu mzima", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "siku {n}" }, .week = .{ .simple = "wiki {n}" }, .month = .{ .forms = .{ .zero = null, .one = "mwezi {n}", .two = null, .few = null, .many = null, .other = "miezi {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "mwaka {n}", .two = null, .few = null, .many = null, .other = "miaka {n}" } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "siku {n}" }, .week = .{ .simple = "wiki {n}" }, .month = .{ .forms = .{ .zero = null, .one = "mwezi {n}", .two = null, .few = null, .many = null, .other = "miezi {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "mwaka {n}", .two = null, .few = null, .many = null, .other = "miaka {n}" } }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ta.json
@@ -1727,8 +1727,8 @@ pub const ta: sayableage.Locale = .{
         .teenager = .{ .label = "இளம்பருவம்", .f = "" },
         .adult = .{ .label = "பெரியவர்", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} நாள்", .two = null, .few = null, .many = null, .other = "{n} நாட்கள்" } }, .week = .{ .forms = .{ .zero = null, .one = "{n} வாரம்", .two = null, .few = null, .many = null, .other = "{n} வார." } }, .month = .{ .forms = .{ .zero = null, .one = "{n} மாதம்", .two = null, .few = null, .many = null, .other = "{n} மாத." } }, .year = .{ .forms = .{ .zero = null, .one = "{n} ஆண்டு", .two = null, .few = null, .many = null, .other = "{n} ஆண்டு." } }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} நா" }, .week = .{ .simple = "{n} வா" }, .month = .{ .simple = "{n} மா" }, .year = .{ .simple = "{n} ஆ" }, .half = null, .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/te.json
@@ -1752,8 +1752,8 @@ pub const te: sayableage.Locale = .{
         .teenager = .{ .label = "కౌమారదశ", .f = "" },
         .adult = .{ .label = "వయోజనులు", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .forms = .{ .zero = null, .one = "{n} రోజు", .two = null, .few = null, .many = null, .other = "{n} రోజులు" } }, .week = .{ .simple = "{n} వా." }, .month = .{ .simple = "{n} నె." }, .year = .{ .simple = "{n} సం." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}రో" }, .week = .{ .simple = "{n}వా" }, .month = .{ .simple = "{n}నె" }, .year = .{ .simple = "{n}సం" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/th.json
@@ -1777,8 +1777,8 @@ pub const th: sayableage.Locale = .{
         .teenager = .{ .label = "วัยรุ่น", .f = "" },
         .adult = .{ .label = "ผู้ใหญ่", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} วัน" }, .week = .{ .simple = "{n} สัปดาห์" }, .month = .{ .simple = "{n} เดือน" }, .year = .{ .simple = "{n} ปี" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}วัน" }, .week = .{ .simple = "{n}สัปดาห์" }, .month = .{ .simple = "{n}เดือน" }, .year = .{ .simple = "{n}ปี" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/tr.json
@@ -1802,8 +1802,8 @@ pub const tr: sayableage.Locale = .{
         .teenager = .{ .label = "Ergen", .f = "" },
         .adult = .{ .label = "Yetişkin", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} gün" }, .week = .{ .simple = "{n} hf." }, .month = .{ .simple = "{n} ay" }, .year = .{ .simple = "{n} yıl" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}g" }, .week = .{ .simple = "{n}h" }, .month = .{ .simple = "{n}a" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/tzm.json
@@ -1827,8 +1827,8 @@ pub const tzm: sayableage.Locale = .{
         .teenager = .{ .label = "Aɛrim", .f = "Taɛrimt" },
         .adult = .{ .label = "Argaz", .f = "Tamṭṭuṭ" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} wk" }, .month = .{ .simple = "{n} mo" }, .year = .{ .simple = "{n} yr" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/uk.json
@@ -1852,8 +1852,8 @@ pub const uk: sayableage.Locale = .{
         .teenager = .{ .label = "Підліток", .f = "" },
         .adult = .{ .label = "Дорослий", .f = "Доросла" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} дн." }, .week = .{ .simple = "{n} тиж." }, .month = .{ .simple = "{n} міс." }, .year = .{ .simple = "{n} р." }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}д" }, .week = .{ .simple = "{n}т" }, .month = .{ .simple = "{n}м" }, .year = .{ .simple = "{n}р" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/ur.json
@@ -1877,8 +1877,8 @@ pub const ur: sayableage.Locale = .{
         .teenager = .{ .label = "نوجوان", .f = "" },
         .adult = .{ .label = "بالغ", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} دن" }, .week = .{ .forms = .{ .zero = null, .one = "{n} ہفتہ", .two = null, .few = null, .many = null, .other = "{n} ہفتے" } }, .month = .{ .forms = .{ .zero = null, .one = "{n} مہینہ", .two = null, .few = null, .many = null, .other = "{n} مہینے" } }, .year = .{ .simple = "{n} سال" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} دن" }, .week = .{ .forms = .{ .zero = null, .one = "{n} ہفتہ", .two = null, .few = null, .many = null, .other = "{n} ہفتے" } }, .month = .{ .forms = .{ .zero = null, .one = "{n} مہینہ", .two = null, .few = null, .many = null, .other = "{n} مہینے" } }, .year = .{ .simple = "{n} سال" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/uz.json
@@ -1902,8 +1902,8 @@ pub const uz: sayableage.Locale = .{
         .teenager = .{ .label = "Oʻsmir", .f = "" },
         .adult = .{ .label = "Katta", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} kun" }, .week = .{ .simple = "{n} hafta" }, .month = .{ .simple = "{n} oy" }, .year = .{ .simple = "{n} yil" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} kun" }, .week = .{ .simple = "{n} hafta" }, .month = .{ .simple = "{n} oy" }, .year = .{ .simple = "{n} yil" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/vi.json
@@ -1927,8 +1927,8 @@ pub const vi: sayableage.Locale = .{
         .teenager = .{ .label = "Thiếu niên", .f = "" },
         .adult = .{ .label = "Người lớn", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n} ngày" }, .week = .{ .simple = "{n} tuần" }, .month = .{ .simple = "{n} tháng" }, .year = .{ .simple = "{n} năm" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n} ngày" }, .week = .{ .simple = "{n} tuần" }, .month = .{ .simple = "{n} tháng" }, .year = .{ .simple = "{n} năm" }, .half = "{n}½", .delimiter = "", .just_born = null },
 };
 
 // Source: age/locales/src/zh.json
@@ -1952,8 +1952,8 @@ pub const zh: sayableage.Locale = .{
         .teenager = .{ .label = "青少年", .f = "" },
         .adult = .{ .label = "成人", .f = "" },
     },
-    .short_override = null,
-    .compact_override = null,
+    .short_override = .{ .day = .{ .simple = "{n}天" }, .week = .{ .simple = "{n}周" }, .month = .{ .simple = "{n}个月" }, .year = .{ .simple = "{n}年" }, .half = null, .delimiter = null, .just_born = null },
+    .compact_override = .{ .day = .{ .simple = "{n}天" }, .week = .{ .simple = "{n}周" }, .month = .{ .simple = "{n}个月" }, .year = .{ .simple = "{n}年" }, .half = null, .delimiter = null, .just_born = null },
 };
 
 pub fn get(code: []const u8) ?*const sayableage.Locale {

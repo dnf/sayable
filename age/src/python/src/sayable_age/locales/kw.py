@@ -11,7 +11,7 @@
 
 """Cornish locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -49,4 +49,22 @@ KW = AgeLocale(
         "teenager": "Den yowynk",
         "adult": "Den tevys",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} wk",
+            "month": "{n} mo",
+            "year": "{n} yr",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}d",
+            "week": "{n}w",
+            "month": "{n}m",
+            "year": "{n}y",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

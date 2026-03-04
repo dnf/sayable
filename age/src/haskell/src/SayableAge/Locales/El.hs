@@ -44,6 +44,27 @@ locale = Locale
         , stageTeenager = Gendered "Έφηβος" "Έφηβη"
         , stageAdult = Gendered "Ενήλικας" "Ενήλικη"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} ημέρα")
+              , (Other, "{n} ημέρες")
+              ])
+            , ovrWeek = Just (Simple "{n} εβδ.")
+            , ovrMonth = Just (Simple "{n} μήν.")
+            , ovrYear = Just (Simple "{n} έτ.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} η")
+            , ovrWeek = Just (Simple "{n} ε")
+            , ovrMonth = Just (Simple "{n} μ")
+            , ovrYear = Just (Simple "{n} έ")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

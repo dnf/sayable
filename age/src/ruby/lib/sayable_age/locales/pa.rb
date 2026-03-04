@@ -32,6 +32,24 @@ module SayableAge
         teenager: { m: 'ਕਿਸ਼ੋਰ', f: 'ਕਿਸ਼ੋਰੀ' },
         adult: 'ਬਾਲਗ',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} ਦਿਨ',
+          'week' => { one: '{n} ਹਫ਼ਤਾ', other: '{n} ਹਫ਼ਤੇ' },
+          'month' => { one: '{n} ਮਹੀਨਾ', other: '{n} ਮਹੀਨੇ' },
+          'year' => '{n} ਸਾਲ',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} ਦਿਨ',
+          'week' => { one: '{n} ਹਫ਼ਤਾ', other: '{n} ਹਫ਼ਤੇ' },
+          'month' => { one: '{n} ਮਹੀਨਾ', other: '{n} ਮਹੀਨੇ' },
+          'year' => '{n} ਸਾਲ',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

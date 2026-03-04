@@ -31,4 +31,18 @@ final si = AgeLocale(
   child: stageNeutral('ළමයා'),
   teenager: stageNeutral('නව යොවුන්'),
   adult: stageNeutral('වැඩිහිටි'),
+  short: CompactnessOverride(
+    day: simpleUnit('දින {n}'),
+    week: simpleUnit('සති {n}'),
+    month: simpleUnit('මාස {n}'),
+    year: simpleUnit('වසර {n}'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('දි {n}'),
+    week: simpleUnit('ස {n}'),
+    month: simpleUnit('මා {n}'),
+    year: simpleUnit('ව {n}'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

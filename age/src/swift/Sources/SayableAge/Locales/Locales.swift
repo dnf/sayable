@@ -178,8 +178,24 @@ public enum Locales {
             teenager: .neutral("ታዳጊ"),
             adult: .neutral("አዋቂ")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ቀናት"),
+            week: .plural([.one: "{n} ሳምንት", .other: "{n} ሳምንታት"]),
+            month: .simple("{n} ወራት"),
+            year: .plural([.one: "{n} ዓመት", .other: "{n} ዓመታት"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} ቀ"),
+            week: .simple("{n} ሳምንት"),
+            month: .simple("{n} ወር"),
+            year: .plural([.one: "{n} ዓመት", .other: "{n} ዓ"]),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ar.json
@@ -206,8 +222,24 @@ public enum Locales {
             teenager: .gendered(m: "مراهق", f: "مراهقة"),
             adult: .gendered(m: "بالغ", f: "بالغة")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.zero: "{n} يوم", .one: "يوم", .two: "يومان", .few: "{n} أيام", .many: "{n} يومًا", .other: "{n} يوم"]),
+            week: .plural([.zero: "{n} أسبوع", .one: "أسبوع", .two: "أسبوعان", .few: "{n} أسابيع", .many: "{n} أسبوعًا", .other: "{n} أسبوع"]),
+            month: .plural([.zero: "{n} شهر", .one: "شهر", .two: "شهران", .few: "{n} أشهر", .many: "{n} شهرًا", .other: "{n} شهر"]),
+            year: .plural([.zero: "{n} سنة", .one: "سنة واحدة", .two: "سنتان", .few: "{n} سنوات", .many: "{n} سنة", .other: "{n} سنة"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} ي"),
+            week: .simple("{n} أ"),
+            month: .plural([.zero: "{n} شهر", .one: "شهر", .two: "شهران", .few: "{n} أشهر", .many: "{n} شهرًا", .other: "{n} شهر"]),
+            year: .simple("{n} سنة"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/az.json
@@ -234,8 +266,24 @@ public enum Locales {
             teenager: .neutral("Yeniyetmə"),
             adult: .neutral("Böyük")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} gün"),
+            week: .simple("{n} hft"),
+            month: .simple("{n} ay"),
+            year: .simple("{n} il"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} gün"),
+            week: .simple("{n} hft"),
+            month: .simple("{n} ay"),
+            year: .simple("{n} il"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/bg.json
@@ -262,8 +310,24 @@ public enum Locales {
             teenager: .neutral("Тийнейджър"),
             adult: .gendered(m: "Възрастен", f: "Възрастна")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} д"),
+            week: .simple("{n} седм."),
+            month: .simple("{n} мес."),
+            year: .simple("{n} год."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} д"),
+            week: .simple("{n} седм."),
+            month: .simple("{n} мес."),
+            year: .simple("{n} г."),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/bn.json
@@ -290,8 +354,24 @@ public enum Locales {
             teenager: .gendered(m: "কিশোর", f: "কিশোরী"),
             adult: .neutral("প্রাপ্তবয়স্ক")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} দিন"),
+            week: .simple("{n} সপ্তাহ"),
+            month: .simple("{n} মাস"),
+            year: .simple("{n} বছর"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} দিন"),
+            week: .simple("{n} সপ্তাহ"),
+            month: .simple("{n} মাস"),
+            year: .simple("{n} বছর"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/br.json
@@ -318,8 +398,24 @@ public enum Locales {
             teenager: .neutral("Den yaouank"),
             adult: .neutral("Den deuet da vad")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} sizh."),
+            month: .simple("{n} m."),
+            year: .simple("{n} bl."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}sizh."),
+            month: .simple("{n}m"),
+            year: .simple("{n}b"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/bs.json
@@ -346,8 +442,24 @@ public enum Locales {
             teenager: .neutral("Tinejdžer"),
             adult: .neutral("Odrasla osoba")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} dan", .few: "{n} dana", .other: "{n} dana"]),
+            week: .simple("{n} sedm."),
+            month: .simple("{n} mj."),
+            year: .simple("{n} god."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} sedm."),
+            month: .simple("{n} mj."),
+            year: .simple("{n} god."),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ca.json
@@ -374,8 +486,24 @@ public enum Locales {
             teenager: .neutral("Adolescent"),
             adult: .gendered(m: "Adult", f: "Adulta")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} dia", .other: "{n} dies"]),
+            week: .simple("{n} setm."),
+            month: .plural([.one: "{n} mes", .other: "{n} m"]),
+            year: .plural([.one: "{n} any", .other: "{n} anys"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} setm."),
+            month: .simple("{n} m"),
+            year: .plural([.one: "{n} any", .other: "{n} anys"]),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/cs.json
@@ -402,8 +530,24 @@ public enum Locales {
             teenager: .neutral("Teenager"),
             adult: .gendered(m: "Dospělý", f: "Dospělá")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} den", .few: "{n} dny", .many: "{n} dne", .other: "{n} dnů"]),
+            week: .simple("{n} týd."),
+            month: .simple("{n} měs."),
+            year: .plural([.one: "{n} rok", .few: "{n} roky", .many: "{n} roku", .other: "{n} let"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} t."),
+            month: .simple("{n} m."),
+            year: .plural([.one: "{n} r.", .few: "{n} r.", .many: "{n} r.", .other: "{n} l."]),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/cy.json
@@ -430,8 +574,24 @@ public enum Locales {
             teenager: .neutral("Glaslanc"),
             adult: .neutral("Oedolyn")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.zero: "{n} diwrnod", .one: "{n} diwrnod", .two: "{n} ddiwrnod", .few: "{n} diwrnod", .many: "{n} diwrnod", .other: "{n} diwrnod"]),
+            week: .simple("{n} ws"),
+            month: .plural([.zero: "{n} mis", .one: "{n} mis", .two: "{n} fis", .few: "{n} mis", .many: "{n} mis", .other: "{n} mis"]),
+            year: .simple("{n} bl"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .plural([.zero: "{n} ws", .one: "{n}w", .two: "{n} ws", .few: "{n} ws", .many: "{n} ws", .other: "{n}w"]),
+            month: .simple("{n}m"),
+            year: .simple("{n}bl"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/da.json
@@ -458,8 +618,24 @@ public enum Locales {
             teenager: .neutral("Teenager"),
             adult: .neutral("Voksen")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} dag", .other: "{n} dage"]),
+            week: .plural([.one: "{n} uge", .other: "{n} uger"]),
+            month: .plural([.one: "{n} md.", .other: "{n} mdr."]),
+            year: .simple("{n} år"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} u"),
+            month: .simple("{n} m"),
+            year: .simple("{n} år"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/de.json
@@ -486,8 +662,24 @@ public enum Locales {
             teenager: .neutral("Teenager"),
             adult: .gendered(m: "Erwachsener", f: "Erwachsene")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} Tg."),
+            week: .simple("{n} Wo."),
+            month: .simple("{n} Mon."),
+            year: .simple("{n} J"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} T"),
+            week: .simple("{n} W"),
+            month: .simple("{n} M"),
+            year: .simple("{n} J"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/el.json
@@ -514,8 +706,24 @@ public enum Locales {
             teenager: .gendered(m: "Έφηβος", f: "Έφηβη"),
             adult: .gendered(m: "Ενήλικας", f: "Ενήλικη")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} ημέρα", .other: "{n} ημέρες"]),
+            week: .simple("{n} εβδ."),
+            month: .simple("{n} μήν."),
+            year: .simple("{n} έτ."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} η"),
+            week: .simple("{n} ε"),
+            month: .simple("{n} μ"),
+            year: .simple("{n} έ"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/en.json
@@ -586,8 +794,24 @@ public enum Locales {
             teenager: .neutral("Adolescente"),
             adult: .gendered(m: "Adulto", f: "Adulta")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} sem."),
+            month: .simple("{n} m."),
+            year: .simple("{n} a"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}sem"),
+            month: .simple("{n}m"),
+            year: .simple("{n}a"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/et.json
@@ -614,8 +838,24 @@ public enum Locales {
             teenager: .neutral("Teismeline"),
             adult: .neutral("Täiskasvanu")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} päev", .other: "{n} päeva"]),
+            week: .simple("{n} näd"),
+            month: .plural([.one: "{n} kuu", .other: "{n} kuud"]),
+            year: .simple("{n} a"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} p"),
+            week: .simple("{n} n"),
+            month: .simple("{n} k"),
+            year: .simple("{n} a"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/eu.json
@@ -642,8 +882,24 @@ public enum Locales {
             teenager: .neutral("Nerabea"),
             adult: .neutral("Heldua")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} egun"),
+            week: .simple("{n} aste"),
+            month: .simple("{n} hilabete"),
+            year: .simple("{n} urte"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} e."),
+            week: .simple("{n} aste"),
+            month: .simple("{n} hil"),
+            year: .simple("{n} u."),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/fa.json
@@ -670,8 +926,24 @@ public enum Locales {
             teenager: .neutral("نوجوان"),
             adult: .neutral("بزرگسال")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} روز"),
+            week: .simple("{n} هفته"),
+            month: .simple("{n} ماه"),
+            year: .simple("{n} سال"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} روز"),
+            week: .simple("{n} هفته"),
+            month: .simple("{n} ماه"),
+            year: .simple("{n} سال"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/fi.json
@@ -698,8 +970,24 @@ public enum Locales {
             teenager: .neutral("Teini"),
             adult: .neutral("Aikuinen")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} pv"),
+            week: .simple("{n} vk"),
+            month: .simple("{n} kk"),
+            year: .simple("{n} v"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}pv"),
+            week: .simple("{n}vk"),
+            month: .simple("{n}kk"),
+            year: .simple("{n}v"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/fil.json
@@ -726,8 +1014,24 @@ public enum Locales {
             teenager: .neutral("Tinedyer"),
             adult: .neutral("Matanda")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} araw"),
+            week: .plural([.one: "{n} linggo", .other: "{n} na linggo"]),
+            month: .simple("{n} buwan"),
+            year: .simple("{n} taon"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .plural([.one: "{n} araw", .other: "{n} na araw"]),
+            week: .simple("{n}linggo"),
+            month: .plural([.one: "{n}buwan", .other: "{n} buwan"]),
+            year: .simple("{n}taon"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/fr.json
@@ -754,8 +1058,24 @@ public enum Locales {
             teenager: .gendered(m: "Adolescent", f: "Adolescente"),
             adult: .neutral("Adulte")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} j"),
+            week: .simple("{n} sem."),
+            month: .simple("{n} m."),
+            year: .plural([.one: "{n} an", .other: "{n} ans"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}j"),
+            week: .simple("{n}sem."),
+            month: .simple("{n}m."),
+            year: .simple("{n}a"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ga.json
@@ -782,8 +1102,24 @@ public enum Locales {
             teenager: .neutral("Déagóir"),
             adult: .neutral("Duine fásta")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} lá"),
+            week: .simple("{n} scht"),
+            month: .plural([.one: "{n} mí", .two: "{n} mí", .few: "{n} mí", .many: "{n} mí", .other: "{n} m"]),
+            year: .simple("{n} bl"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} lá"),
+            week: .simple("{n} scht"),
+            month: .plural([.one: "{n}m", .two: "{n}m", .few: "{n}m", .many: "{n}m", .other: "{n} m"]),
+            year: .simple("{n} bl"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/gd.json
@@ -810,8 +1146,24 @@ public enum Locales {
             teenager: .neutral("Deugaire"),
             adult: .neutral("Inbheach")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} là"),
+            week: .plural([.one: "{n} shn", .two: "{n} shn", .few: "{n} sn", .other: "{n} sn"]),
+            month: .plural([.one: "{n} mhìos", .two: "{n} mhìos", .few: "{n} mìos", .other: "{n} mìos"]),
+            year: .plural([.one: "{n} bhlia", .two: "{n} bhlia", .few: "{n} blia", .other: "{n} blia"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}là"),
+            week: .simple("{n}s"),
+            month: .simple("{n}m"),
+            year: .simple("{n}bl"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/gu.json
@@ -838,8 +1190,24 @@ public enum Locales {
             teenager: .gendered(m: "કિશોર", f: "કિશોરી"),
             adult: .neutral("પુખ્ત")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} દિવસ"),
+            week: .simple("{n} અઠ."),
+            month: .plural([.one: "{n} મહિનો", .other: "{n} મહિના"]),
+            year: .simple("{n} વર્ષ"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} દિ"),
+            week: .simple("{n} અઠ."),
+            month: .simple("{n} મ"),
+            year: .simple("{n} વ"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/gv.json
@@ -866,8 +1234,24 @@ public enum Locales {
             teenager: .neutral("Fer aeg"),
             adult: .neutral("Dooinney aasit")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} wk"),
+            month: .simple("{n} mo"),
+            year: .simple("{n} yr"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/he.json
@@ -894,8 +1278,24 @@ public enum Locales {
             teenager: .gendered(m: "נער", f: "נערה"),
             adult: .gendered(m: "מבוגר", f: "מבוגרת")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} יום", .two: "יומיים", .other: "{n} ימ׳"]),
+            week: .plural([.one: "{n} שבוע", .two: "שבועיים", .other: "{n} שבועות"]),
+            month: .simple("{n} ח׳"),
+            year: .plural([.one: "{n} שנה", .two: "{n} שנים", .other: "{n} שנים"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} י׳"),
+            week: .simple("{n} ש′"),
+            month: .simple("{n} ח׳"),
+            year: .simple("{n} ש′"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/hi.json
@@ -922,8 +1322,24 @@ public enum Locales {
             teenager: .gendered(m: "किशोर", f: "किशोरी"),
             adult: .neutral("वयस्क")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} दिन"),
+            week: .simple("{n} सप्ताह"),
+            month: .simple("{n} माह"),
+            year: .simple("{n} वर्ष"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} दि"),
+            week: .simple("{n} सप्ताह"),
+            month: .simple("{n} माह"),
+            year: .simple("{n} व"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/hr.json
@@ -950,8 +1366,24 @@ public enum Locales {
             teenager: .neutral("Tinejdžer"),
             adult: .neutral("Odrasla osoba")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} dan", .few: "{n} dana", .other: "{n} dana"]),
+            week: .simple("{n} tj."),
+            month: .simple("{n} mj."),
+            year: .simple("{n} g."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} tj."),
+            month: .simple("{n} mj."),
+            year: .simple("{n} g."),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/hu.json
@@ -978,8 +1410,24 @@ public enum Locales {
             teenager: .neutral("Tinédzser"),
             adult: .neutral("Felnőtt")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} nap"),
+            week: .simple("{n} hét"),
+            month: .simple("{n} hónap"),
+            year: .simple("{n} év"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} nap"),
+            week: .simple("{n} hét"),
+            month: .simple("{n} h."),
+            year: .simple("{n} év"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/id.json
@@ -1006,8 +1454,24 @@ public enum Locales {
             teenager: .neutral("Remaja"),
             adult: .neutral("Dewasa")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} hr"),
+            week: .simple("{n} mgg"),
+            month: .simple("{n} bln"),
+            year: .simple("{n} thn"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} hr"),
+            week: .simple("{n} mgg"),
+            month: .simple("{n} bln"),
+            year: .simple("{n} thn"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/it.json
@@ -1034,8 +1498,24 @@ public enum Locales {
             teenager: .neutral("Adolescente"),
             adult: .gendered(m: "Adulto", f: "Adulta")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} giorno", .other: "{n} giorni"]),
+            week: .simple("{n} sett."),
+            month: .plural([.one: "{n} mese", .other: "{n} mesi"]),
+            year: .plural([.one: "{n} anno", .other: "{n} anni"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .plural([.one: "{n}g", .other: "{n}gg"]),
+            week: .simple("{n}sett."),
+            month: .plural([.one: "{n} mese", .other: "{n} mesi"]),
+            year: .plural([.one: "{n}anno", .other: "{n}anni"]),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ja.json
@@ -1062,8 +1542,24 @@ public enum Locales {
             teenager: .neutral("青少年"),
             adult: .neutral("成人")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} 日"),
+            week: .simple("{n} 週間"),
+            month: .simple("{n} か月"),
+            year: .simple("{n} 年"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/jv.json
@@ -1090,8 +1586,24 @@ public enum Locales {
             teenager: .neutral("Remaja"),
             adult: .neutral("Diwasa")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} dina"),
+            week: .simple("{n} peken"),
+            month: .simple("{n} sasi"),
+            year: .simple("{n} taun"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n} peken"),
+            month: .simple("{n} sasi"),
+            year: .simple("{n} taun"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ka.json
@@ -1118,8 +1630,24 @@ public enum Locales {
             teenager: .neutral("მოზარდი"),
             adult: .neutral("ზრდასრული")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} დღე"),
+            week: .simple("{n} კვრ"),
+            month: .simple("{n} თვე"),
+            year: .simple("{n} წ"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} დღე"),
+            week: .simple("{n} კვრ"),
+            month: .simple("{n} თვე"),
+            year: .simple("{n} წ"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/kk.json
@@ -1146,8 +1674,24 @@ public enum Locales {
             teenager: .neutral("Жасөспірім"),
             adult: .neutral("Ересек")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} күн"),
+            week: .simple("{n} ап."),
+            month: .simple("{n} ай"),
+            year: .simple("{n} ж."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} к."),
+            week: .simple("{n} ап."),
+            month: .simple("{n} ай"),
+            year: .simple("{n} ж."),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/km.json
@@ -1174,8 +1718,24 @@ public enum Locales {
             teenager: .neutral("យុវវ័យ"),
             adult: .neutral("មនុស្សពេញវ័យ")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ថ្ងៃ"),
+            week: .simple("{n} សប្ដាហ៍"),
+            month: .simple("{n} ខែ"),
+            year: .simple("{n} ឆ្នាំ"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} ថ្ងៃ"),
+            week: .simple("{n} សប្ដាហ៍"),
+            month: .simple("{n} ខែ"),
+            year: .simple("{n} ឆ្នាំ"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ko.json
@@ -1202,8 +1762,24 @@ public enum Locales {
             teenager: .neutral("청소년"),
             adult: .neutral("성인")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n}일"),
+            week: .simple("{n}주"),
+            month: .simple("{n}개월"),
+            year: .simple("{n}년"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}일"),
+            week: .simple("{n}주"),
+            month: .simple("{n}개월"),
+            year: .simple("{n}년"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/kw.json
@@ -1230,8 +1806,24 @@ public enum Locales {
             teenager: .neutral("Den yowynk"),
             adult: .neutral("Den tevys")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} wk"),
+            month: .simple("{n} mo"),
+            year: .simple("{n} yr"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/lt.json
@@ -1258,8 +1850,24 @@ public enum Locales {
             teenager: .gendered(m: "Paauglys", f: "Paauglė"),
             adult: .gendered(m: "Suaugęs", f: "Suaugusi")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} sav."),
+            month: .simple("{n} mėn."),
+            year: .simple("{n} m."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} sav."),
+            month: .simple("{n} mėn."),
+            year: .simple("{n} m."),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/lv.json
@@ -1286,8 +1894,24 @@ public enum Locales {
             teenager: .gendered(m: "Pusaudzis", f: "Pusaudze"),
             adult: .gendered(m: "Pieaugušais", f: "Pieaugusī")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} ned."),
+            month: .simple("{n} mēn."),
+            year: .simple("{n} g."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} n."),
+            month: .simple("{n} m."),
+            year: .simple("{n} g."),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/mk.json
@@ -1314,8 +1938,24 @@ public enum Locales {
             teenager: .neutral("Тинејџер"),
             adult: .neutral("Возрасен")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} ден", .other: "{n} дена"]),
+            week: .simple("{n} сед."),
+            month: .simple("{n} мес."),
+            year: .simple("{n} год."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} д."),
+            week: .simple("{n} с."),
+            month: .simple("{n} м."),
+            year: .simple("{n} г."),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/mr.json
@@ -1342,8 +1982,24 @@ public enum Locales {
             teenager: .gendered(m: "किशोर", f: "किशोरी"),
             adult: .neutral("प्रौढ")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} दिवस"),
+            week: .simple("{n} आ"),
+            month: .plural([.one: "{n} महिना", .other: "{n} महिने"]),
+            year: .plural([.one: "{n} वर्ष", .other: "{n} वर्षे"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}दि"),
+            week: .simple("{n}आ"),
+            month: .simple("{n}म"),
+            year: .simple("{n}व"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ms.json
@@ -1370,8 +2026,24 @@ public enum Locales {
             teenager: .neutral("Remaja"),
             adult: .neutral("Dewasa")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} hari"),
+            week: .simple("{n} mgu"),
+            month: .simple("{n} bln"),
+            year: .simple("{n} thn"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} h"),
+            week: .simple("{n} mgu"),
+            month: .simple("{n} bln"),
+            year: .simple("{n} thn"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/mt.json
@@ -1398,8 +2070,24 @@ public enum Locales {
             teenager: .gendered(m: "Adolexxent", f: "Adolexxenta"),
             adult: .gendered(m: "Adult", f: "Adulta")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} w"),
+            month: .simple("{n} m"),
+            year: .simple("{n} y"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} w"),
+            month: .simple("{n} m"),
+            year: .simple("{n} y"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/my.json
@@ -1426,8 +2114,24 @@ public enum Locales {
             teenager: .neutral("ဆယ်ကျော်သက်"),
             adult: .neutral("အရွယ်ရောက်")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ရက်"),
+            week: .simple("{n} ပတ်"),
+            month: .simple("{n} လ"),
+            year: .simple("{n} နှစ်"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} ရက်"),
+            week: .simple("{n} ပတ်"),
+            month: .simple("{n} လ"),
+            year: .simple("{n} နှစ်"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/nb.json
@@ -1454,8 +2158,24 @@ public enum Locales {
             teenager: .neutral("Tenåring"),
             adult: .neutral("Voksen")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} u"),
+            month: .simple("{n} md."),
+            year: .simple("{n} år"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}u"),
+            month: .simple("{n} m"),
+            year: .simple("{n}å"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ne.json
@@ -1482,8 +2202,24 @@ public enum Locales {
             teenager: .neutral("किशोर"),
             adult: .neutral("वयस्क")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} दिन"),
+            week: .simple("{n} हप्ता"),
+            month: .simple("{n} महिना"),
+            year: .simple("{n} वर्ष"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} दिन"),
+            week: .simple("{n} हप्ता"),
+            month: .simple("{n} महिना"),
+            year: .simple("{n} वर्ष"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/nl.json
@@ -1510,8 +2246,24 @@ public enum Locales {
             teenager: .neutral("Tiener"),
             adult: .neutral("Volwassene")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} dag", .other: "{n} dagen"]),
+            week: .plural([.one: "{n} wk", .other: "{n} wkn"]),
+            month: .simple("{n} mnd"),
+            year: .simple("{n} jr"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} w"),
+            month: .simple("{n} m"),
+            year: .simple("{n} jr"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/pa.json
@@ -1538,8 +2290,24 @@ public enum Locales {
             teenager: .gendered(m: "ਕਿਸ਼ੋਰ", f: "ਕਿਸ਼ੋਰੀ"),
             adult: .neutral("ਬਾਲਗ")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ਦਿਨ"),
+            week: .plural([.one: "{n} ਹਫ਼ਤਾ", .other: "{n} ਹਫ਼ਤੇ"]),
+            month: .plural([.one: "{n} ਮਹੀਨਾ", .other: "{n} ਮਹੀਨੇ"]),
+            year: .simple("{n} ਸਾਲ"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} ਦਿਨ"),
+            week: .plural([.one: "{n} ਹਫ਼ਤਾ", .other: "{n} ਹਫ਼ਤੇ"]),
+            month: .plural([.one: "{n} ਮਹੀਨਾ", .other: "{n} ਮਹੀਨੇ"]),
+            year: .simple("{n} ਸਾਲ"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/pl.json
@@ -1566,8 +2334,24 @@ public enum Locales {
             teenager: .gendered(m: "Nastolatek", f: "Nastolatka"),
             adult: .gendered(m: "Dorosły", f: "Dorosła")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} dzień", .few: "{n} dni", .many: "{n} dni", .other: "{n} dnia"]),
+            week: .plural([.one: "{n} tydz.", .few: "{n} tyg.", .many: "{n} tyg.", .other: "{n} tyg."]),
+            month: .simple("{n} mies."),
+            year: .plural([.one: "{n} rok", .few: "{n} lata", .many: "{n} lat", .other: "{n} roku"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} t."),
+            month: .plural([.one: "{n} m-c", .few: "{n} m-ce", .many: "{n} m-cy", .other: "{n} m-ca"]),
+            year: .plural([.one: "{n} r.", .few: "{n} l.", .many: "{n} l.", .other: "{n} r."]),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/pt.json
@@ -1594,8 +2378,24 @@ public enum Locales {
             teenager: .neutral("Adolescente"),
             adult: .gendered(m: "Adulto", f: "Adulta")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} dia", .other: "{n} dias"]),
+            week: .simple("{n} sem."),
+            month: .plural([.one: "{n} mês", .other: "{n} meses"]),
+            year: .plural([.one: "{n} ano", .other: "{n} anos"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .plural([.one: "{n} dia", .other: "{n} dias"]),
+            week: .simple("{n} sem."),
+            month: .plural([.one: "{n} mês", .other: "{n} meses"]),
+            year: .plural([.one: "{n} ano", .other: "{n} anos"]),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ro.json
@@ -1622,8 +2422,24 @@ public enum Locales {
             teenager: .gendered(m: "Adolescent", f: "Adolescentă"),
             adult: .gendered(m: "Adult", f: "Adultă")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} zi", .few: "{n} zile", .other: "{n} zile"]),
+            week: .simple("{n} săpt."),
+            month: .plural([.one: "{n} lună", .few: "{n} luni", .other: "{n} luni"]),
+            year: .plural([.one: "{n} an", .few: "{n} ani", .other: "{n} ani"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} z"),
+            week: .simple("{n} săpt."),
+            month: .simple("{n} l"),
+            year: .simple("{n} a"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ru.json
@@ -1650,8 +2466,24 @@ public enum Locales {
             teenager: .neutral("Подросток"),
             adult: .gendered(m: "Взрослый", f: "Взрослая")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} дн."),
+            week: .simple("{n} нед."),
+            month: .simple("{n} мес."),
+            year: .plural([.one: "{n} г.", .few: "{n} г.", .many: "{n} л.", .other: "{n} г."]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} д."),
+            week: .simple("{n} н."),
+            month: .simple("{n} м."),
+            year: .plural([.one: "{n} г.", .few: "{n} г.", .many: "{n} л.", .other: "{n} г."]),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/shi.json
@@ -1678,8 +2510,24 @@ public enum Locales {
             teenager: .gendered(m: "Aɛrim", f: "Taɛrimt"),
             adult: .gendered(m: "Argaz", f: "Tamṭṭuṭ")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} wk"),
+            month: .simple("{n} mo"),
+            year: .simple("{n} yr"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/si.json
@@ -1706,8 +2554,24 @@ public enum Locales {
             teenager: .neutral("නව යොවුන්"),
             adult: .neutral("වැඩිහිටි")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("දින {n}"),
+            week: .simple("සති {n}"),
+            month: .simple("මාස {n}"),
+            year: .simple("වසර {n}"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("දි {n}"),
+            week: .simple("ස {n}"),
+            month: .simple("මා {n}"),
+            year: .simple("ව {n}"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/sk.json
@@ -1734,8 +2598,24 @@ public enum Locales {
             teenager: .neutral("Tínedžer"),
             adult: .gendered(m: "Dospelý", f: "Dospelá")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} deň", .few: "{n} dni", .many: "{n} dňa", .other: "{n} dní"]),
+            week: .simple("{n} týž."),
+            month: .simple("{n} mes."),
+            year: .simple("{n} r."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d."),
+            week: .simple("{n} t."),
+            month: .simple("{n} m."),
+            year: .simple("{n} r."),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/sl.json
@@ -1762,8 +2642,24 @@ public enum Locales {
             teenager: .gendered(m: "Najstnik", f: "Najstnica"),
             adult: .gendered(m: "Odrasel", f: "Odrasla")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} t"),
+            month: .simple("{n} m"),
+            year: .simple("{n} l"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} t"),
+            month: .simple("{n} m"),
+            year: .simple("{n} l"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/sq.json
@@ -1790,8 +2686,24 @@ public enum Locales {
             teenager: .gendered(m: "Adoleshent", f: "Adoleshente"),
             adult: .gendered(m: "I rritur", f: "E rritur")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ditë"),
+            week: .simple("{n} javë"),
+            month: .simple("{n} muaj"),
+            year: .plural([.one: "{n} vit", .other: "{n} vjet"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} ditë"),
+            week: .simple("{n} javë"),
+            month: .simple("{n} muaj"),
+            year: .plural([.one: "{n} vit", .other: "{n} vjet"]),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/sr.json
@@ -1818,8 +2730,24 @@ public enum Locales {
             teenager: .neutral("Тинејџер"),
             adult: .neutral("Одрасла особа")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} дан", .few: "{n} дана", .other: "{n} дана"]),
+            week: .simple("{n} нед."),
+            month: .simple("{n} мес."),
+            year: .plural([.one: "{n} год", .few: "{n} год.", .other: "{n} год."]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} д"),
+            week: .simple("{n} н"),
+            month: .simple("{n} м"),
+            year: .simple("{n} г"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/sv.json
@@ -1846,8 +2774,24 @@ public enum Locales {
             teenager: .neutral("Tonåring"),
             adult: .neutral("Vuxen")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} v"),
+            month: .simple("{n} mån"),
+            year: .simple("{n} år"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}v"),
+            month: .simple("{n}m"),
+            year: .simple("{n}å"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/sw.json
@@ -1874,8 +2818,24 @@ public enum Locales {
             teenager: .neutral("Kijana"),
             adult: .neutral("Mtu mzima")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("siku {n}"),
+            week: .simple("wiki {n}"),
+            month: .plural([.one: "mwezi {n}", .other: "miezi {n}"]),
+            year: .plural([.one: "mwaka {n}", .other: "miaka {n}"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("siku {n}"),
+            week: .simple("wiki {n}"),
+            month: .plural([.one: "mwezi {n}", .other: "miezi {n}"]),
+            year: .plural([.one: "mwaka {n}", .other: "miaka {n}"]),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ta.json
@@ -1902,8 +2862,24 @@ public enum Locales {
             teenager: .neutral("இளம்பருவம்"),
             adult: .neutral("பெரியவர்")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} நாள்", .other: "{n} நாட்கள்"]),
+            week: .plural([.one: "{n} வாரம்", .other: "{n} வார."]),
+            month: .plural([.one: "{n} மாதம்", .other: "{n} மாத."]),
+            year: .plural([.one: "{n} ஆண்டு", .other: "{n} ஆண்டு."]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} நா"),
+            week: .simple("{n} வா"),
+            month: .simple("{n} மா"),
+            year: .simple("{n} ஆ"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/te.json
@@ -1930,8 +2906,24 @@ public enum Locales {
             teenager: .neutral("కౌమారదశ"),
             adult: .neutral("వయోజనులు")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "{n} రోజు", .other: "{n} రోజులు"]),
+            week: .simple("{n} వా."),
+            month: .simple("{n} నె."),
+            year: .simple("{n} సం."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}రో"),
+            week: .simple("{n}వా"),
+            month: .simple("{n}నె"),
+            year: .simple("{n}సం"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/th.json
@@ -1958,8 +2950,24 @@ public enum Locales {
             teenager: .neutral("วัยรุ่น"),
             adult: .neutral("ผู้ใหญ่")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} วัน"),
+            week: .simple("{n} สัปดาห์"),
+            month: .simple("{n} เดือน"),
+            year: .simple("{n} ปี"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}วัน"),
+            week: .simple("{n}สัปดาห์"),
+            month: .simple("{n}เดือน"),
+            year: .simple("{n}ปี"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/tr.json
@@ -1986,8 +2994,24 @@ public enum Locales {
             teenager: .neutral("Ergen"),
             adult: .neutral("Yetişkin")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} gün"),
+            week: .simple("{n} hf."),
+            month: .simple("{n} ay"),
+            year: .simple("{n} yıl"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}g"),
+            week: .simple("{n}h"),
+            month: .simple("{n}a"),
+            year: .simple("{n}y"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/tzm.json
@@ -2014,8 +3038,24 @@ public enum Locales {
             teenager: .gendered(m: "Aɛrim", f: "Taɛrimt"),
             adult: .gendered(m: "Argaz", f: "Tamṭṭuṭ")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} d"),
+            week: .simple("{n} wk"),
+            month: .simple("{n} mo"),
+            year: .simple("{n} yr"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/uk.json
@@ -2042,8 +3082,24 @@ public enum Locales {
             teenager: .neutral("Підліток"),
             adult: .gendered(m: "Дорослий", f: "Доросла")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} дн."),
+            week: .simple("{n} тиж."),
+            month: .simple("{n} міс."),
+            year: .simple("{n} р."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}д"),
+            week: .simple("{n}т"),
+            month: .simple("{n}м"),
+            year: .simple("{n}р"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/ur.json
@@ -2070,8 +3126,24 @@ public enum Locales {
             teenager: .neutral("نوجوان"),
             adult: .neutral("بالغ")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} دن"),
+            week: .plural([.one: "{n} ہفتہ", .other: "{n} ہفتے"]),
+            month: .plural([.one: "{n} مہینہ", .other: "{n} مہینے"]),
+            year: .simple("{n} سال"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} دن"),
+            week: .plural([.one: "{n} ہفتہ", .other: "{n} ہفتے"]),
+            month: .plural([.one: "{n} مہینہ", .other: "{n} مہینے"]),
+            year: .simple("{n} سال"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/uz.json
@@ -2098,8 +3170,24 @@ public enum Locales {
             teenager: .neutral("Oʻsmir"),
             adult: .neutral("Katta")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} kun"),
+            week: .simple("{n} hafta"),
+            month: .simple("{n} oy"),
+            year: .simple("{n} yil"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} kun"),
+            week: .simple("{n} hafta"),
+            month: .simple("{n} oy"),
+            year: .simple("{n} yil"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/vi.json
@@ -2126,8 +3214,24 @@ public enum Locales {
             teenager: .neutral("Thiếu niên"),
             adult: .neutral("Người lớn")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ngày"),
+            week: .simple("{n} tuần"),
+            month: .simple("{n} tháng"),
+            year: .simple("{n} năm"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n} ngày"),
+            week: .simple("{n} tuần"),
+            month: .simple("{n} tháng"),
+            year: .simple("{n} năm"),
+            half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
     )
 
     // Source: age/locales/src/zh.json
@@ -2154,8 +3258,24 @@ public enum Locales {
             teenager: .neutral("青少年"),
             adult: .neutral("成人")
         ),
-        shortOverride: nil,
-        compactOverride: nil
+        shortOverride: CompactnessOverride(
+            day: .simple("{n}天"),
+            week: .simple("{n}周"),
+            month: .simple("{n}个月"),
+            year: .simple("{n}年"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}天"),
+            week: .simple("{n}周"),
+            month: .simple("{n}个月"),
+            year: .simple("{n}年"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        )
     )
 
     public static let all: [String: AgeLocale] = [

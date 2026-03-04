@@ -22,5 +22,5 @@
    :delimiter "፣ "
    :just-born "አዲስ የተወለደ"
    :stages {:newborn {:type :neutral :label "አዲስ የተወለደ"} :infant {:type :neutral :label "ሕፃን"} :toddler {:type :neutral :label "ሕፃን ልጅ"} :child {:type :neutral :label "ልጅ"} :teenager {:type :neutral :label "ታዳጊ"} :adult {:type :neutral :label "አዋቂ"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} ቀናት"} :week {:type :pluralized :forms {:one "{n} ሳምንት" :other "{n} ሳምንታት"}} :month {:type :simple :form "{n} ወራት"} :year {:type :pluralized :forms {:one "{n} ዓመት" :other "{n} ዓመታት"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} ቀ"} :week {:type :simple :form "{n} ሳምንት"} :month {:type :simple :form "{n} ወር"} :year {:type :pluralized :forms {:one "{n} ዓመት" :other "{n} ዓ"}} :half "{n}½" :delimiter "" :just-born nil}})

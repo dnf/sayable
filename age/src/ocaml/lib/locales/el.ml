@@ -41,6 +41,25 @@ let locale : locale =
     ; teenager = Gendered ("Έφηβος", "Έφηβη")
     ; adult = Gendered ("Ενήλικας", "Ενήλικη")
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} ημέρα")
+          ; (Other, "{n} ημέρες")
+          ])
+      ; ovr_week = Some (Simple "{n} εβδ.")
+      ; ovr_month = Some (Simple "{n} μήν.")
+      ; ovr_year = Some (Simple "{n} έτ.")
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "{n} η")
+      ; ovr_week = Some (Simple "{n} ε")
+      ; ovr_month = Some (Simple "{n} μ")
+      ; ovr_year = Some (Simple "{n} έ")
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

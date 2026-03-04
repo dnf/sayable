@@ -32,6 +32,24 @@ locale = Locale
         , stageTeenager = Neutral "Remaja"
         , stageAdult = Neutral "Dewasa"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} hr")
+            , ovrWeek = Just (Simple "{n} mgg")
+            , ovrMonth = Just (Simple "{n} bln")
+            , ovrYear = Just (Simple "{n} thn")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} hr")
+            , ovrWeek = Just (Simple "{n} mgg")
+            , ovrMonth = Just (Simple "{n} bln")
+            , ovrYear = Just (Simple "{n} thn")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

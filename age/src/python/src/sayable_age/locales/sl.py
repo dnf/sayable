@@ -11,7 +11,7 @@
 
 """Slovenian locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -45,4 +45,22 @@ SL = AgeLocale(
         "teenager": {"m": "Najstnik", "f": "Najstnica"},
         "adult": {"m": "Odrasel", "f": "Odrasla"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} t",
+            "month": "{n} m",
+            "year": "{n} l",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} t",
+            "month": "{n} m",
+            "year": "{n} l",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

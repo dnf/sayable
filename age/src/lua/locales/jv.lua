@@ -30,5 +30,23 @@ M.stages = {
     teenager = "Remaja",
     adult = "Diwasa",
 }
+M.short = {
+    units = {
+        day = "{n} dina",
+        week = "{n} peken",
+        month = "{n} sasi",
+        year = "{n} taun",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n}d",
+        week = "{n} peken",
+        month = "{n} sasi",
+        year = "{n} taun",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

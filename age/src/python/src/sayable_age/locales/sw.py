@@ -11,7 +11,7 @@
 
 """Swahili locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 SW = AgeLocale(
     code="sw",
@@ -33,4 +33,22 @@ SW = AgeLocale(
         "teenager": "Kijana",
         "adult": "Mtu mzima",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "siku {n}",
+            "week": "wiki {n}",
+            "month": {"one": "mwezi {n}", "other": "miezi {n}"},
+            "year": {"one": "mwaka {n}", "other": "miaka {n}"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "siku {n}",
+            "week": "wiki {n}",
+            "month": {"one": "mwezi {n}", "other": "miezi {n}"},
+            "year": {"one": "mwaka {n}", "other": "miaka {n}"},
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

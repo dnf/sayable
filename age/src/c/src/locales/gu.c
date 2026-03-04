@@ -34,6 +34,6 @@ const SaLocale sa_locale_gu = {
         { "કિશોર", "કિશોરી" },
         { "પુખ્ત", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} દિવસ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} અઠ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} મહિનો", NULL, NULL, NULL, "{n} મહિના" } }, true, { "{n} વર્ષ", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} દિ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} અઠ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} મ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} વ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

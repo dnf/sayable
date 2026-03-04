@@ -11,7 +11,7 @@
 
 """Amharic locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 AM = AgeLocale(
     code="am",
@@ -33,4 +33,22 @@ AM = AgeLocale(
         "teenager": "ታዳጊ",
         "adult": "አዋቂ",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} ቀናት",
+            "week": {"one": "{n} ሳምንት", "other": "{n} ሳምንታት"},
+            "month": "{n} ወራት",
+            "year": {"one": "{n} ዓመት", "other": "{n} ዓመታት"},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} ቀ",
+            "week": "{n} ሳምንት",
+            "month": "{n} ወር",
+            "year": {"one": "{n} ዓመት", "other": "{n} ዓ"},
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

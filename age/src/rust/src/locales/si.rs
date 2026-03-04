@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/si.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Sinhala locale.
 pub fn locale() -> AgeLocale {
@@ -47,8 +47,24 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("නව යොවුන්".to_string()),
             adult: StageLabel::Neutral("වැඩිහිටි".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("දින {n}")),
+            week: Some(UnitForms::simple("සති {n}")),
+            month: Some(UnitForms::simple("මාස {n}")),
+            year: Some(UnitForms::simple("වසර {n}")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("දි {n}")),
+            week: Some(UnitForms::simple("ස {n}")),
+            month: Some(UnitForms::simple("මා {n}")),
+            year: Some(UnitForms::simple("ව {n}")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

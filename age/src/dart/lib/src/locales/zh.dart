@@ -30,4 +30,16 @@ final zh = AgeLocale(
   child: stageNeutral('儿童'),
   teenager: stageNeutral('青少年'),
   adult: stageNeutral('成人'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n}天'),
+    week: simpleUnit('{n}周'),
+    month: simpleUnit('{n}个月'),
+    year: simpleUnit('{n}年'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}天'),
+    week: simpleUnit('{n}周'),
+    month: simpleUnit('{n}个月'),
+    year: simpleUnit('{n}年'),
+  ),
 );

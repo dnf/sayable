@@ -47,6 +47,36 @@ locale =
         , teenager = Neutral "نوجوان"
         , adult = Neutral "بالغ"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} دن")
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} ہفتہ" )
+                  , ( Other, "{n} ہفتے" )
+                  ])
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} مہینہ" )
+                  , ( Other, "{n} مہینے" )
+                  ])
+            , ovrYear = Just (Simple "{n} سال")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} دن")
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} ہفتہ" )
+                  , ( Other, "{n} ہفتے" )
+                  ])
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} مہینہ" )
+                  , ( Other, "{n} مہینے" )
+                  ])
+            , ovrYear = Just (Simple "{n} سال")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

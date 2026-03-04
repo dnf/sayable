@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/bs.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Bosnian locale.
 pub fn locale() -> AgeLocale {
@@ -59,8 +59,28 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Neutral("Tinejdžer".to_string()),
             adult: StageLabel::Neutral("Odrasla osoba".to_string()),
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} dan"),
+                (PluralCategory::Few, "{n} dana"),
+                (PluralCategory::Other, "{n} dana"),
+            ])),
+            week: Some(UnitForms::simple("{n} sedm.")),
+            month: Some(UnitForms::simple("{n} mj.")),
+            year: Some(UnitForms::simple("{n} god.")),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} d.")),
+            week: Some(UnitForms::simple("{n} sedm.")),
+            month: Some(UnitForms::simple("{n} mj.")),
+            year: Some(UnitForms::simple("{n} god.")),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

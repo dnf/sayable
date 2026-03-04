@@ -32,6 +32,22 @@ module SayableAge
         teenager: '青少年',
         adult: '成人',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n}天',
+          'week' => '{n}周',
+          'month' => '{n}个月',
+          'year' => '{n}年',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n}天',
+          'week' => '{n}周',
+          'month' => '{n}个月',
+          'year' => '{n}年',
+        },
+      ),
     )
   end
 end

@@ -34,4 +34,18 @@ final bs = AgeLocale(
   child: stageNeutral('Dijete'),
   teenager: stageNeutral('Tinejdžer'),
   adult: stageNeutral('Odrasla osoba'),
+  short: CompactnessOverride(
+    day: pluralUnit({PluralCategory.one: '{n} dan', PluralCategory.few: '{n} dana', PluralCategory.other: '{n} dana'}),
+    week: simpleUnit('{n} sedm.'),
+    month: simpleUnit('{n} mj.'),
+    year: simpleUnit('{n} god.'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} d.'),
+    week: simpleUnit('{n} sedm.'),
+    month: simpleUnit('{n} mj.'),
+    year: simpleUnit('{n} god.'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

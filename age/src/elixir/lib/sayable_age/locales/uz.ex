@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.UZ do
         child: "Bola",
         teenager: "Oʻsmir",
         adult: "Katta"
+      },
+      short: %{
+        units: %{
+          day: "{n} kun",
+          week: "{n} hafta",
+          month: "{n} oy",
+          year: "{n} yil"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} kun",
+          week: "{n} hafta",
+          month: "{n} oy",
+          year: "{n} yil"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

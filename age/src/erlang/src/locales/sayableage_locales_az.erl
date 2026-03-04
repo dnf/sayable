@@ -25,6 +25,6 @@ locale() ->
         delimiter = ", ",
         just_born = "Təzə doğulub",
         stages = #stages{newborn = {neutral, "Təzə doğulub"}, infant = {neutral, "Körpə"}, toddler = {neutral, "Azyaşlı"}, child = {neutral, "Uşaq"}, teenager = {neutral, "Yeniyetmə"}, adult = {neutral, "Böyük"}},
-        short = nothing,
-        compact = nothing
+        short = {just, #compactness_override{day = {just, {simple, "{n} gün"}}, week = {just, {simple, "{n} hft"}}, month = {just, {simple, "{n} ay"}}, year = {just, {simple, "{n} il"}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n} gün"}}, week = {just, {simple, "{n} hft"}}, month = {just, {simple, "{n} ay"}}, year = {just, {simple, "{n} il"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

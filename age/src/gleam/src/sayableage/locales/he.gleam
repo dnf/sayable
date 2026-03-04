@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.GenderedStage("ילד", "ילדה"),
     teenager: types.GenderedStage("נער", "נערה"),
     adult: types.GenderedStage("מבוגר", "מבוגרת"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.PluralUnit([#(types.One, "{n} יום"), #(types.Two, "יומיים"), #(types.Other, "{n} ימ׳")])),
+      week: Ok(types.PluralUnit([#(types.One, "{n} שבוע"), #(types.Two, "שבועיים"), #(types.Other, "{n} שבועות")])),
+      month: Ok(types.SimpleUnit("{n} ח׳")),
+      year: Ok(types.PluralUnit([#(types.One, "{n} שנה"), #(types.Two, "{n} שנים"), #(types.Other, "{n} שנים")])),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} י׳")),
+      week: Ok(types.SimpleUnit("{n} ש′")),
+      month: Ok(types.SimpleUnit("{n} ח׳")),
+      year: Ok(types.SimpleUnit("{n} ש′")),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

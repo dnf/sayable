@@ -34,6 +34,24 @@ sub locale {{
     teenager => 'Ergen',
     adult => 'Yetişkin',
   },
+  short => {
+    units => {
+      day => '{n} gün',
+      week => '{n} hf.',
+      month => '{n} ay',
+      year => '{n} yıl',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n}g',
+      week => '{n}h',
+      month => '{n}a',
+      year => '{n}y',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

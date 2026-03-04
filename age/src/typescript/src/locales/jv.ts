@@ -31,4 +31,22 @@ export const jv: AgeLocale = {
     teenager: 'Remaja',
     adult: 'Diwasa',
   },
+  short: {
+    units: {
+      day:   '{n} dina',
+      week:  '{n} peken',
+      month: '{n} sasi',
+      year:  '{n} taun',
+    },
+  },
+  compact: {
+    units: {
+      day:   '{n}d',
+      week:  '{n} peken',
+      month: '{n} sasi',
+      year:  '{n} taun',
+    },
+    half: '{n}½',
+    delimiter: '',
+  },
 };

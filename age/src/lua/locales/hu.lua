@@ -30,5 +30,23 @@ M.stages = {
     teenager = "Tinédzser",
     adult = "Felnőtt",
 }
+M.short = {
+    units = {
+        day = "{n} nap",
+        week = "{n} hét",
+        month = "{n} hónap",
+        year = "{n} év",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} nap",
+        week = "{n} hét",
+        month = "{n} h.",
+        year = "{n} év",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

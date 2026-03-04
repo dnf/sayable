@@ -31,4 +31,18 @@ final ne = AgeLocale(
   child: stageNeutral('बालक'),
   teenager: stageNeutral('किशोर'),
   adult: stageNeutral('वयस्क'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} दिन'),
+    week: simpleUnit('{n} हप्ता'),
+    month: simpleUnit('{n} महिना'),
+    year: simpleUnit('{n} वर्ष'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} दिन'),
+    week: simpleUnit('{n} हप्ता'),
+    month: simpleUnit('{n} महिना'),
+    year: simpleUnit('{n} वर्ष'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

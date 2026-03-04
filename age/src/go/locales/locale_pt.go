@@ -39,4 +39,18 @@ var PT = sa.AgeLocale{
 		Teenager: sa.S("Adolescente"),
 		Adult:    sa.G("Adulto", "Adulta"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} dia", sa.Other: "{n} dias"}),
+		Week:  &sa.UnitForms{Simple: "{n} sem."},
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mês", sa.Other: "{n} meses"}),
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ano", sa.Other: "{n} anos"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} dia", sa.Other: "{n} dias"}),
+		Week:      &sa.UnitForms{Simple: "{n} sem."},
+		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mês", sa.Other: "{n} meses"}),
+		Year:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ano", sa.Other: "{n} anos"}),
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

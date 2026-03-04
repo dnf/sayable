@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "Новорождённый"
    :stages {:newborn {:type :gendered :m "Новорождённый" :f "Новорождённая"} :infant {:type :neutral :label "Младенец"} :toddler {:type :gendered :m "Малыш" :f "Малышка"} :child {:type :neutral :label "Ребёнок"} :teenager {:type :neutral :label "Подросток"} :adult {:type :gendered :m "Взрослый" :f "Взрослая"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "{n} дн."} :week {:type :simple :form "{n} нед."} :month {:type :simple :form "{n} мес."} :year {:type :pluralized :forms {:one "{n} г." :few "{n} г." :many "{n} л." :other "{n} г."}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} д."} :week {:type :simple :form "{n} н."} :month {:type :simple :form "{n} м."} :year {:type :pluralized :forms {:one "{n} г." :few "{n} г." :many "{n} л." :other "{n} г."}} :half "{n}½" :delimiter "" :just-born nil}})

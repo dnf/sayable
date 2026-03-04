@@ -30,5 +30,23 @@ M.stages = {
     teenager = { m = "Adoleshent", f = "Adoleshente" },
     adult = { m = "I rritur", f = "E rritur" },
 }
+M.short = {
+    units = {
+        day = "{n} ditë",
+        week = "{n} javë",
+        month = "{n} muaj",
+        year = { one = "{n} vit", other = "{n} vjet" },
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} ditë",
+        week = "{n} javë",
+        month = "{n} muaj",
+        year = { one = "{n} vit", other = "{n} vjet" },
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M

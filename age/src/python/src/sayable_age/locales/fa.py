@@ -11,7 +11,7 @@
 
 """Persian locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 FA = AgeLocale(
     code="fa",
@@ -33,4 +33,22 @@ FA = AgeLocale(
         "teenager": "نوجوان",
         "adult": "بزرگسال",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} روز",
+            "week": "{n} هفته",
+            "month": "{n} ماه",
+            "year": "{n} سال",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} روز",
+            "week": "{n} هفته",
+            "month": "{n} ماه",
+            "year": "{n} سال",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

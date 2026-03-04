@@ -37,6 +37,6 @@ const SaLocale sa_locale_pl = {
         { "Nastolatek", "Nastolatka" },
         { "Dorosły", "Dorosła" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} dzień", NULL, "{n} dni", "{n} dni", "{n} dnia" } }, true, { NULL, { NULL, "{n} tydz.", NULL, "{n} tyg.", "{n} tyg.", "{n} tyg." } }, true, { "{n} mies.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} rok", NULL, "{n} lata", "{n} lat", "{n} roku" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} d.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} m-c", NULL, "{n} m-ce", "{n} m-cy", "{n} m-ca" } }, true, { NULL, { NULL, "{n} r.", NULL, "{n} l.", "{n} l.", "{n} r." } }, true, "{n}½", true, "", false, NULL }
 };

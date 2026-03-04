@@ -31,4 +31,18 @@ final tr = AgeLocale(
   child: stageNeutral('Çocuk'),
   teenager: stageNeutral('Ergen'),
   adult: stageNeutral('Yetişkin'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} gün'),
+    week: simpleUnit('{n} hf.'),
+    month: simpleUnit('{n} ay'),
+    year: simpleUnit('{n} yıl'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}g'),
+    week: simpleUnit('{n}h'),
+    month: simpleUnit('{n}a'),
+    year: simpleUnit('{n}y'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

@@ -11,7 +11,7 @@
 
 """Estonian locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 ET = AgeLocale(
     code="et",
@@ -33,4 +33,21 @@ ET = AgeLocale(
         "teenager": "Teismeline",
         "adult": "Täiskasvanu",
     },
+    short=CompactnessOverride(
+        units={
+            "day": {"one": "{n} päev", "other": "{n} päeva"},
+            "week": "{n} näd",
+            "month": {"one": "{n} kuu", "other": "{n} kuud"},
+            "year": "{n} a",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} p",
+            "week": "{n} n",
+            "month": "{n} k",
+            "year": "{n} a",
+        },
+        delimiter="",
+    ),
 )

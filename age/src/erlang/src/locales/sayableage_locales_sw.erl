@@ -25,6 +25,6 @@ locale() ->
         delimiter = ", ",
         just_born = "Mzaliwa mpya",
         stages = #stages{newborn = {neutral, "Mzaliwa mpya"}, infant = {neutral, "Mtoto mchanga"}, toddler = {neutral, "Mtoto mdogo"}, child = {neutral, "Mtoto"}, teenager = {neutral, "Kijana"}, adult = {neutral, "Mtu mzima"}},
-        short = nothing,
-        compact = nothing
+        short = {just, #compactness_override{day = {just, {simple, "siku {n}"}}, week = {just, {simple, "wiki {n}"}}, month = {just, {pluralized, [{one, "mwezi {n}"}, {other, "miezi {n}"}]}}, year = {just, {pluralized, [{one, "mwaka {n}"}, {other, "miaka {n}"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "siku {n}"}}, week = {just, {simple, "wiki {n}"}}, month = {just, {pluralized, [{one, "mwezi {n}"}, {other, "miezi {n}"}]}}, year = {just, {pluralized, [{one, "mwaka {n}"}, {other, "miaka {n}"}]}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

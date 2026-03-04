@@ -37,6 +37,24 @@ sub locale {{
     teenager => { m => 'ਕਿਸ਼ੋਰ', f => 'ਕਿਸ਼ੋਰੀ' },
     adult => 'ਬਾਲਗ',
   },
+  short => {
+    units => {
+      day => '{n} ਦਿਨ',
+      week => { one => '{n} ਹਫ਼ਤਾ', other => '{n} ਹਫ਼ਤੇ' },
+      month => { one => '{n} ਮਹੀਨਾ', other => '{n} ਮਹੀਨੇ' },
+      year => '{n} ਸਾਲ',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n} ਦਿਨ',
+      week => { one => '{n} ਹਫ਼ਤਾ', other => '{n} ਹਫ਼ਤੇ' },
+      month => { one => '{n} ਮਹੀਨਾ', other => '{n} ਮਹੀਨੇ' },
+      year => '{n} ਸਾਲ',
+    },
+    delimiter => '',
+    half => '{n}½',
+  },
 }}
 
 1;

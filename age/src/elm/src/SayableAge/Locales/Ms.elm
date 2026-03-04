@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "Remaja"
         , adult = Neutral "Dewasa"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} hari")
+            , ovrWeek = Just (Simple "{n} mgu")
+            , ovrMonth = Just (Simple "{n} bln")
+            , ovrYear = Just (Simple "{n} thn")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} h")
+            , ovrWeek = Just (Simple "{n} mgu")
+            , ovrMonth = Just (Simple "{n} bln")
+            , ovrYear = Just (Simple "{n} thn")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

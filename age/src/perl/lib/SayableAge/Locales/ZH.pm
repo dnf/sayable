@@ -34,6 +34,22 @@ sub locale {{
     teenager => '青少年',
     adult => '成人',
   },
+  short => {
+    units => {
+      day => '{n}天',
+      week => '{n}周',
+      month => '{n}个月',
+      year => '{n}年',
+    },
+  },
+  compact => {
+    units => {
+      day => '{n}天',
+      week => '{n}周',
+      month => '{n}个月',
+      year => '{n}年',
+    },
+  },
 }}
 
 1;

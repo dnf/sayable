@@ -11,7 +11,7 @@
 
 """Russian locale."""
 
-from sayable_age.locale import AgeLocale, PluralCategory
+from sayable_age.locale import AgeLocale, CompactnessOverride, PluralCategory
 
 
 def _plural(n: int) -> PluralCategory:
@@ -44,4 +44,22 @@ RU = AgeLocale(
         "teenager": "Подросток",
         "adult": {"m": "Взрослый", "f": "Взрослая"},
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} дн.",
+            "week": "{n} нед.",
+            "month": "{n} мес.",
+            "year": {"one": "{n} г.", "few": "{n} г.", "many": "{n} л.", "other": "{n} г."},
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} д.",
+            "week": "{n} н.",
+            "month": "{n} м.",
+            "year": {"one": "{n} г.", "few": "{n} г.", "many": "{n} л.", "other": "{n} г."},
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

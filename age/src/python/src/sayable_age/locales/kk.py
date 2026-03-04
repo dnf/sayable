@@ -11,7 +11,7 @@
 
 """Kazakh locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 KK = AgeLocale(
     code="kk",
@@ -33,4 +33,22 @@ KK = AgeLocale(
         "teenager": "Жасөспірім",
         "adult": "Ересек",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} күн",
+            "week": "{n} ап.",
+            "month": "{n} ай",
+            "year": "{n} ж.",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} к.",
+            "week": "{n} ап.",
+            "month": "{n} ай",
+            "year": "{n} ж.",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

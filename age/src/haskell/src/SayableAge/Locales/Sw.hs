@@ -44,6 +44,36 @@ locale = Locale
         , stageTeenager = Neutral "Kijana"
         , stageAdult = Neutral "Mtu mzima"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "siku {n}")
+            , ovrWeek = Just (Simple "wiki {n}")
+            , ovrMonth = Just (Pluralized
+              [ (One, "mwezi {n}")
+              , (Other, "miezi {n}")
+              ])
+            , ovrYear = Just (Pluralized
+              [ (One, "mwaka {n}")
+              , (Other, "miaka {n}")
+              ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "siku {n}")
+            , ovrWeek = Just (Simple "wiki {n}")
+            , ovrMonth = Just (Pluralized
+              [ (One, "mwezi {n}")
+              , (Other, "miezi {n}")
+              ])
+            , ovrYear = Just (Pluralized
+              [ (One, "mwaka {n}")
+              , (Other, "miaka {n}")
+              ])
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

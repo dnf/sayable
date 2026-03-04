@@ -32,6 +32,23 @@ defmodule SayableAge.Locales.SK do
         child: "Dieťa",
         teenager: "Tínedžer",
         adult: %{m: "Dospelý", f: "Dospelá"}
+      },
+      short: %{
+        units: %{
+          day: %{one: "{n} deň", few: "{n} dni", many: "{n} dňa", other: "{n} dní"},
+          week: "{n} týž.",
+          month: "{n} mes.",
+          year: "{n} r."
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} d.",
+          week: "{n} t.",
+          month: "{n} m.",
+          year: "{n} r."
+        },
+        delimiter: ""
       }
     }
   end

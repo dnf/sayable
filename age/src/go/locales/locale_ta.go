@@ -39,4 +39,17 @@ var TA = sa.AgeLocale{
 		Teenager: sa.S("இளம்பருவம்"),
 		Adult:    sa.S("பெரியவர்"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} நாள்", sa.Other: "{n} நாட்கள்"}),
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} வாரம்", sa.Other: "{n} வார."}),
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} மாதம்", sa.Other: "{n} மாத."}),
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ஆண்டு", sa.Other: "{n} ஆண்டு."}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n} நா"},
+		Week:      &sa.UnitForms{Simple: "{n} வா"},
+		Month:     &sa.UnitForms{Simple: "{n} மா"},
+		Year:      &sa.UnitForms{Simple: "{n} ஆ"},
+		Delimiter: strPtr(""),
+	},
 }

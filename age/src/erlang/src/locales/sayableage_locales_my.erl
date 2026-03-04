@@ -25,6 +25,6 @@ locale() ->
         delimiter = "၊ ",
         just_born = "မွေးကင်းစ",
         stages = #stages{newborn = {neutral, "မွေးကင်းစ"}, infant = {neutral, "နို့စို့ကလေး"}, toddler = {neutral, "ခြေဦးသလျှား"}, child = {neutral, "ကလေး"}, teenager = {neutral, "ဆယ်ကျော်သက်"}, adult = {neutral, "အရွယ်ရောက်"}},
-        short = nothing,
-        compact = nothing
+        short = {just, #compactness_override{day = {just, {simple, "{n} ရက်"}}, week = {just, {simple, "{n} ပတ်"}}, month = {just, {simple, "{n} လ"}}, year = {just, {simple, "{n} နှစ်"}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n} ရက်"}}, week = {just, {simple, "{n} ပတ်"}}, month = {just, {simple, "{n} လ"}}, year = {just, {simple, "{n} နှစ်"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

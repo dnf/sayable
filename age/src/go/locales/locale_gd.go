@@ -45,4 +45,18 @@ var GD = sa.AgeLocale{
 		Teenager: sa.S("Deugaire"),
 		Adult:    sa.S("Inbheach"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} là"},
+		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} shn", sa.Two: "{n} shn", sa.Few: "{n} sn", sa.Other: "{n} sn"}),
+		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mhìos", sa.Two: "{n} mhìos", sa.Few: "{n} mìos", sa.Other: "{n} mìos"}),
+		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} bhlia", sa.Two: "{n} bhlia", sa.Few: "{n} blia", sa.Other: "{n} blia"}),
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}là"},
+		Week:      &sa.UnitForms{Simple: "{n}s"},
+		Month:     &sa.UnitForms{Simple: "{n}m"},
+		Year:      &sa.UnitForms{Simple: "{n}bl"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

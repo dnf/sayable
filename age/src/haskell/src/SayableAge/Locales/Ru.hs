@@ -52,6 +52,34 @@ locale = Locale
         , stageTeenager = Neutral "Подросток"
         , stageAdult = Gendered "Взрослый" "Взрослая"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} дн.")
+            , ovrWeek = Just (Simple "{n} нед.")
+            , ovrMonth = Just (Simple "{n} мес.")
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} г.")
+              , (Few, "{n} г.")
+              , (Many, "{n} л.")
+              , (Other, "{n} г.")
+              ])
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} д.")
+            , ovrWeek = Just (Simple "{n} н.")
+            , ovrMonth = Just (Simple "{n} м.")
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} г.")
+              , (Few, "{n} г.")
+              , (Many, "{n} л.")
+              , (Other, "{n} г.")
+              ])
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

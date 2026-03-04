@@ -44,6 +44,20 @@ final class Locales
             delimiter: '፣ ',
             justBorn: 'አዲስ የተወለደ',
             stages: new Stages(new StageLabel('አዲስ የተወለደ'), new StageLabel('ሕፃን'), new StageLabel('ሕፃን ልጅ'), new StageLabel('ልጅ'), new StageLabel('ታዳጊ'), new StageLabel('አዋቂ')),
+            short: new CompactnessOverride(
+                day: '{n} ቀናት',
+                week: ['one' => '{n} ሳምንት', 'other' => '{n} ሳምንታት'],
+                month: '{n} ወራት',
+                year: ['one' => '{n} ዓመት', 'other' => '{n} ዓመታት'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} ቀ',
+                week: '{n} ሳምንት',
+                month: '{n} ወር',
+                year: ['one' => '{n} ዓመት', 'other' => '{n} ዓ'],
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -89,6 +103,20 @@ final class Locales
             delimiter: ' و',
             justBorn: 'حديث الولادة',
             stages: new Stages(new StageLabel('حديث الولادة', 'حديثة الولادة'), new StageLabel('رضيع', 'رضيعة'), new StageLabel('طفل صغير', 'طفلة صغيرة'), new StageLabel('طفل', 'طفلة'), new StageLabel('مراهق', 'مراهقة'), new StageLabel('بالغ', 'بالغة')),
+            short: new CompactnessOverride(
+                day: ['zero' => '{n} يوم', 'one' => 'يوم', 'two' => 'يومان', 'few' => '{n} أيام', 'many' => '{n} يومًا', 'other' => '{n} يوم'],
+                week: ['zero' => '{n} أسبوع', 'one' => 'أسبوع', 'two' => 'أسبوعان', 'few' => '{n} أسابيع', 'many' => '{n} أسبوعًا', 'other' => '{n} أسبوع'],
+                month: ['zero' => '{n} شهر', 'one' => 'شهر', 'two' => 'شهران', 'few' => '{n} أشهر', 'many' => '{n} شهرًا', 'other' => '{n} شهر'],
+                year: ['zero' => '{n} سنة', 'one' => 'سنة واحدة', 'two' => 'سنتان', 'few' => '{n} سنوات', 'many' => '{n} سنة', 'other' => '{n} سنة'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} ي',
+                week: '{n} أ',
+                month: ['zero' => '{n} شهر', 'one' => 'شهر', 'two' => 'شهران', 'few' => '{n} أشهر', 'many' => '{n} شهرًا', 'other' => '{n} شهر'],
+                year: '{n} سنة',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -112,6 +140,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Təzə doğulub',
             stages: new Stages(new StageLabel('Təzə doğulub'), new StageLabel('Körpə'), new StageLabel('Azyaşlı'), new StageLabel('Uşaq'), new StageLabel('Yeniyetmə'), new StageLabel('Böyük')),
+            short: new CompactnessOverride(
+                day: '{n} gün',
+                week: '{n} hft',
+                month: '{n} ay',
+                year: '{n} il',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} gün',
+                week: '{n} hft',
+                month: '{n} ay',
+                year: '{n} il',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -135,6 +177,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Новородено',
             stages: new Stages(new StageLabel('Новородено'), new StageLabel('Бебе'), new StageLabel('Малко дете'), new StageLabel('Дете'), new StageLabel('Тийнейджър'), new StageLabel('Възрастен', 'Възрастна')),
+            short: new CompactnessOverride(
+                day: '{n} д',
+                week: '{n} седм.',
+                month: '{n} мес.',
+                year: '{n} год.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} д',
+                week: '{n} седм.',
+                month: '{n} мес.',
+                year: '{n} г.',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -158,6 +214,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'নবজাতক',
             stages: new Stages(new StageLabel('নবজাতক'), new StageLabel('শিশু'), new StageLabel('ছোট শিশু'), new StageLabel('শিশু'), new StageLabel('কিশোর', 'কিশোরী'), new StageLabel('প্রাপ্তবয়স্ক')),
+            short: new CompactnessOverride(
+                day: '{n} দিন',
+                week: '{n} সপ্তাহ',
+                month: '{n} মাস',
+                year: '{n} বছর',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} দিন',
+                week: '{n} সপ্তাহ',
+                month: '{n} মাস',
+                year: '{n} বছর',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -201,6 +271,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nevez ganet',
             stages: new Stages(new StageLabel('Nevez ganet'), new StageLabel('Babig'), new StageLabel('Bugel bihan'), new StageLabel('Bugel'), new StageLabel('Den yaouank'), new StageLabel('Den deuet da vad')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} sizh.',
+                month: '{n} m.',
+                year: '{n} bl.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}sizh.',
+                month: '{n}m',
+                year: '{n}b',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -238,6 +322,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Novorođenče',
             stages: new Stages(new StageLabel('Novorođenče'), new StageLabel('Beba'), new StageLabel('Malo dijete'), new StageLabel('Dijete'), new StageLabel('Tinejdžer'), new StageLabel('Odrasla osoba')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} dan', 'few' => '{n} dana', 'other' => '{n} dana'],
+                week: '{n} sedm.',
+                month: '{n} mj.',
+                year: '{n} god.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} sedm.',
+                month: '{n} mj.',
+                year: '{n} god.',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -261,6 +359,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nounat',
             stages: new Stages(new StageLabel('Nounat', 'Nounada'), new StageLabel('Nadó'), new StageLabel('Infant'), new StageLabel('Criatura'), new StageLabel('Adolescent'), new StageLabel('Adult', 'Adulta')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} dia', 'other' => '{n} dies'],
+                week: '{n} setm.',
+                month: ['one' => '{n} mes', 'other' => '{n} m'],
+                year: ['one' => '{n} any', 'other' => '{n} anys'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} setm.',
+                month: '{n} m',
+                year: ['one' => '{n} any', 'other' => '{n} anys'],
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -296,6 +408,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Novorozenec',
             stages: new Stages(new StageLabel('Novorozenec'), new StageLabel('Kojenec'), new StageLabel('Batole'), new StageLabel('Dítě'), new StageLabel('Teenager'), new StageLabel('Dospělý', 'Dospělá')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} den', 'few' => '{n} dny', 'many' => '{n} dne', 'other' => '{n} dnů'],
+                week: '{n} týd.',
+                month: '{n} měs.',
+                year: ['one' => '{n} rok', 'few' => '{n} roky', 'many' => '{n} roku', 'other' => '{n} let'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} t.',
+                month: '{n} m.',
+                year: ['one' => '{n} r.', 'few' => '{n} r.', 'many' => '{n} r.', 'other' => '{n} l.'],
+                delimiter: '',
+            ),
         );
     }
 
@@ -340,6 +465,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Newydd-anedig',
             stages: new Stages(new StageLabel('Newydd-anedig'), new StageLabel('Baban'), new StageLabel('Plentyn bach'), new StageLabel('Plentyn'), new StageLabel('Glaslanc'), new StageLabel('Oedolyn')),
+            short: new CompactnessOverride(
+                day: ['zero' => '{n} diwrnod', 'one' => '{n} diwrnod', 'two' => '{n} ddiwrnod', 'few' => '{n} diwrnod', 'many' => '{n} diwrnod', 'other' => '{n} diwrnod'],
+                week: '{n} ws',
+                month: ['zero' => '{n} mis', 'one' => '{n} mis', 'two' => '{n} fis', 'few' => '{n} mis', 'many' => '{n} mis', 'other' => '{n} mis'],
+                year: '{n} bl',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: ['zero' => '{n} ws', 'one' => '{n}w', 'two' => '{n} ws', 'few' => '{n} ws', 'many' => '{n} ws', 'other' => '{n}w'],
+                month: '{n}m',
+                year: '{n}bl',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -363,6 +502,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nyfødt',
             stages: new Stages(new StageLabel('Nyfødt'), new StageLabel('Spædbarn'), new StageLabel('Småbarn'), new StageLabel('Barn'), new StageLabel('Teenager'), new StageLabel('Voksen')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} dag', 'other' => '{n} dage'],
+                week: ['one' => '{n} uge', 'other' => '{n} uger'],
+                month: ['one' => '{n} md.', 'other' => '{n} mdr.'],
+                year: '{n} år',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} u',
+                month: '{n} m',
+                year: '{n} år',
+                delimiter: '',
+            ),
         );
     }
 
@@ -386,6 +538,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Neugeboren',
             stages: new Stages(new StageLabel('Neugeborenes'), new StageLabel('Säugling'), new StageLabel('Kleinkind'), new StageLabel('Kind'), new StageLabel('Teenager'), new StageLabel('Erwachsener', 'Erwachsene')),
+            short: new CompactnessOverride(
+                day: '{n} Tg.',
+                week: '{n} Wo.',
+                month: '{n} Mon.',
+                year: '{n} J',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} T',
+                week: '{n} W',
+                month: '{n} M',
+                year: '{n} J',
+                delimiter: '',
+            ),
         );
     }
 
@@ -409,6 +574,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Νεογέννητο',
             stages: new Stages(new StageLabel('Νεογέννητο'), new StageLabel('Βρέφος'), new StageLabel('Νήπιο'), new StageLabel('Παιδί'), new StageLabel('Έφηβος', 'Έφηβη'), new StageLabel('Ενήλικας', 'Ενήλικη')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} ημέρα', 'other' => '{n} ημέρες'],
+                week: '{n} εβδ.',
+                month: '{n} μήν.',
+                year: '{n} έτ.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} η',
+                week: '{n} ε',
+                month: '{n} μ',
+                year: '{n} έ',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -468,6 +647,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Recién nacido',
             stages: new Stages(new StageLabel('Recién nacido', 'Recién nacida'), new StageLabel('Bebé'), new StageLabel('Niño pequeño', 'Niña pequeña'), new StageLabel('Niño', 'Niña'), new StageLabel('Adolescente'), new StageLabel('Adulto', 'Adulta')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} sem.',
+                month: '{n} m.',
+                year: '{n} a',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}sem',
+                month: '{n}m',
+                year: '{n}a',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -491,6 +684,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Vastsündinu',
             stages: new Stages(new StageLabel('Vastsündinu'), new StageLabel('Imik'), new StageLabel('Väikelaps'), new StageLabel('Laps'), new StageLabel('Teismeline'), new StageLabel('Täiskasvanu')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} päev', 'other' => '{n} päeva'],
+                week: '{n} näd',
+                month: ['one' => '{n} kuu', 'other' => '{n} kuud'],
+                year: '{n} a',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} p',
+                week: '{n} n',
+                month: '{n} k',
+                year: '{n} a',
+                delimiter: '',
+            ),
         );
     }
 
@@ -514,6 +720,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Jaioberria',
             stages: new Stages(new StageLabel('Jaioberria'), new StageLabel('Haurra'), new StageLabel('Haur txikia'), new StageLabel('Umea'), new StageLabel('Nerabea'), new StageLabel('Heldua')),
+            short: new CompactnessOverride(
+                day: '{n} egun',
+                week: '{n} aste',
+                month: '{n} hilabete',
+                year: '{n} urte',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} e.',
+                week: '{n} aste',
+                month: '{n} hil',
+                year: '{n} u.',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -537,6 +757,20 @@ final class Locales
             delimiter: ' و ',
             justBorn: 'نوزاد',
             stages: new Stages(new StageLabel('نوزاد'), new StageLabel('شیرخوار'), new StageLabel('نوپا'), new StageLabel('کودک'), new StageLabel('نوجوان'), new StageLabel('بزرگسال')),
+            short: new CompactnessOverride(
+                day: '{n} روز',
+                week: '{n} هفته',
+                month: '{n} ماه',
+                year: '{n} سال',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} روز',
+                week: '{n} هفته',
+                month: '{n} ماه',
+                year: '{n} سال',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -560,6 +794,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Vastasyntynyt',
             stages: new Stages(new StageLabel('Vastasyntynyt'), new StageLabel('Vauva'), new StageLabel('Taapero'), new StageLabel('Lapsi'), new StageLabel('Teini'), new StageLabel('Aikuinen')),
+            short: new CompactnessOverride(
+                day: '{n} pv',
+                week: '{n} vk',
+                month: '{n} kk',
+                year: '{n} v',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}pv',
+                week: '{n}vk',
+                month: '{n}kk',
+                year: '{n}v',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -583,6 +831,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Bagong silang',
             stages: new Stages(new StageLabel('Bagong silang'), new StageLabel('Sanggol'), new StageLabel('Batang paslit'), new StageLabel('Bata'), new StageLabel('Tinedyer'), new StageLabel('Matanda')),
+            short: new CompactnessOverride(
+                day: '{n} araw',
+                week: ['one' => '{n} linggo', 'other' => '{n} na linggo'],
+                month: '{n} buwan',
+                year: '{n} taon',
+            ),
+            compact: new CompactnessOverride(
+                day: ['one' => '{n} araw', 'other' => '{n} na araw'],
+                week: '{n}linggo',
+                month: ['one' => '{n}buwan', 'other' => '{n} buwan'],
+                year: '{n}taon',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -606,6 +868,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nouveau-né',
             stages: new Stages(new StageLabel('Nouveau-né', 'Nouveau-née'), new StageLabel('Nourrisson'), new StageLabel('Tout-petit'), new StageLabel('Enfant'), new StageLabel('Adolescent', 'Adolescente'), new StageLabel('Adulte')),
+            short: new CompactnessOverride(
+                day: '{n} j',
+                week: '{n} sem.',
+                month: '{n} m.',
+                year: ['one' => '{n} an', 'other' => '{n} ans'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}j',
+                week: '{n}sem.',
+                month: '{n}m.',
+                year: '{n}a',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -647,6 +923,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nuabheirthe',
             stages: new Stages(new StageLabel('Nuabheirthe'), new StageLabel('Naíonán'), new StageLabel('Lapadán'), new StageLabel('Páiste'), new StageLabel('Déagóir'), new StageLabel('Duine fásta')),
+            short: new CompactnessOverride(
+                day: '{n} lá',
+                week: '{n} scht',
+                month: ['one' => '{n} mí', 'two' => '{n} mí', 'few' => '{n} mí', 'many' => '{n} mí', 'other' => '{n} m'],
+                year: '{n} bl',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} lá',
+                week: '{n} scht',
+                month: ['one' => '{n}m', 'two' => '{n}m', 'few' => '{n}m', 'many' => '{n}m', 'other' => '{n} m'],
+                year: '{n} bl',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -685,6 +975,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Ùr-bhreith',
             stages: new Stages(new StageLabel('Ùr-bhreith'), new StageLabel('Naoidhean'), new StageLabel('Pàiste beag'), new StageLabel('Pàiste'), new StageLabel('Deugaire'), new StageLabel('Inbheach')),
+            short: new CompactnessOverride(
+                day: '{n} là',
+                week: ['one' => '{n} shn', 'two' => '{n} shn', 'few' => '{n} sn', 'other' => '{n} sn'],
+                month: ['one' => '{n} mhìos', 'two' => '{n} mhìos', 'few' => '{n} mìos', 'other' => '{n} mìos'],
+                year: ['one' => '{n} bhlia', 'two' => '{n} bhlia', 'few' => '{n} blia', 'other' => '{n} blia'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}là',
+                week: '{n}s',
+                month: '{n}m',
+                year: '{n}bl',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -708,6 +1012,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'નવજાત',
             stages: new Stages(new StageLabel('નવજાત'), new StageLabel('શિશુ'), new StageLabel('નાનું બાળક'), new StageLabel('બાળક'), new StageLabel('કિશોર', 'કિશોરી'), new StageLabel('પુખ્ત')),
+            short: new CompactnessOverride(
+                day: '{n} દિવસ',
+                week: '{n} અઠ.',
+                month: ['one' => '{n} મહિનો', 'other' => '{n} મહિના'],
+                year: '{n} વર્ષ',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} દિ',
+                week: '{n} અઠ.',
+                month: '{n} મ',
+                year: '{n} વ',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -748,6 +1066,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Ruggit noa',
             stages: new Stages(new StageLabel('Ruggit noa'), new StageLabel('Oikanagh'), new StageLabel('Lhiannoo'), new StageLabel('Paitchey'), new StageLabel('Fer aeg'), new StageLabel('Dooinney aasit')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} wk',
+                month: '{n} mo',
+                year: '{n} yr',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -783,6 +1115,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'רק נולד',
             stages: new Stages(new StageLabel('רק נולד', 'רק נולדה'), new StageLabel('תינוק'), new StageLabel('פעוט'), new StageLabel('ילד', 'ילדה'), new StageLabel('נער', 'נערה'), new StageLabel('מבוגר', 'מבוגרת')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} יום', 'two' => 'יומיים', 'other' => '{n} ימ׳'],
+                week: ['one' => '{n} שבוע', 'two' => 'שבועיים', 'other' => '{n} שבועות'],
+                month: '{n} ח׳',
+                year: ['one' => '{n} שנה', 'two' => '{n} שנים', 'other' => '{n} שנים'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} י׳',
+                week: '{n} ש′',
+                month: '{n} ח׳',
+                year: '{n} ש′',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -806,6 +1152,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'नवजात',
             stages: new Stages(new StageLabel('नवजात'), new StageLabel('शिशु'), new StageLabel('छोटा बच्चा', 'छोटी बच्ची'), new StageLabel('बच्चा', 'बच्ची'), new StageLabel('किशोर', 'किशोरी'), new StageLabel('वयस्क')),
+            short: new CompactnessOverride(
+                day: '{n} दिन',
+                week: '{n} सप्ताह',
+                month: '{n} माह',
+                year: '{n} वर्ष',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} दि',
+                week: '{n} सप्ताह',
+                month: '{n} माह',
+                year: '{n} व',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -843,6 +1203,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Novorođenče',
             stages: new Stages(new StageLabel('Novorođenče'), new StageLabel('Dojenče'), new StageLabel('Malo dijete'), new StageLabel('Dijete'), new StageLabel('Tinejdžer'), new StageLabel('Odrasla osoba')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} dan', 'few' => '{n} dana', 'other' => '{n} dana'],
+                week: '{n} tj.',
+                month: '{n} mj.',
+                year: '{n} g.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} tj.',
+                month: '{n} mj.',
+                year: '{n} g.',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -866,6 +1240,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Újszülött',
             stages: new Stages(new StageLabel('Újszülött'), new StageLabel('Csecsemő'), new StageLabel('Kisgyermek'), new StageLabel('Gyermek'), new StageLabel('Tinédzser'), new StageLabel('Felnőtt')),
+            short: new CompactnessOverride(
+                day: '{n} nap',
+                week: '{n} hét',
+                month: '{n} hónap',
+                year: '{n} év',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} nap',
+                week: '{n} hét',
+                month: '{n} h.',
+                year: '{n} év',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -889,6 +1277,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Baru lahir',
             stages: new Stages(new StageLabel('Baru lahir'), new StageLabel('Bayi'), new StageLabel('Balita'), new StageLabel('Anak-anak'), new StageLabel('Remaja'), new StageLabel('Dewasa')),
+            short: new CompactnessOverride(
+                day: '{n} hr',
+                week: '{n} mgg',
+                month: '{n} bln',
+                year: '{n} thn',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} hr',
+                week: '{n} mgg',
+                month: '{n} bln',
+                year: '{n} thn',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -912,6 +1314,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Neonato',
             stages: new Stages(new StageLabel('Neonato', 'Neonata'), new StageLabel('Lattante'), new StageLabel('Bimbo', 'Bimba'), new StageLabel('Bambino', 'Bambina'), new StageLabel('Adolescente'), new StageLabel('Adulto', 'Adulta')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} giorno', 'other' => '{n} giorni'],
+                week: '{n} sett.',
+                month: ['one' => '{n} mese', 'other' => '{n} mesi'],
+                year: ['one' => '{n} anno', 'other' => '{n} anni'],
+            ),
+            compact: new CompactnessOverride(
+                day: ['one' => '{n}g', 'other' => '{n}gg'],
+                week: '{n}sett.',
+                month: ['one' => '{n} mese', 'other' => '{n} mesi'],
+                year: ['one' => '{n}anno', 'other' => '{n}anni'],
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -935,6 +1351,18 @@ final class Locales
             delimiter: '',
             justBorn: '新生児',
             stages: new Stages(new StageLabel('新生児'), new StageLabel('乳児'), new StageLabel('幼児'), new StageLabel('児童'), new StageLabel('青少年'), new StageLabel('成人')),
+            short: new CompactnessOverride(
+                day: '{n} 日',
+                week: '{n} 週間',
+                month: '{n} か月',
+                year: '{n} 年',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+            ),
         );
     }
 
@@ -958,6 +1386,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Bayi anyar',
             stages: new Stages(new StageLabel('Bayi anyar'), new StageLabel('Bayi'), new StageLabel('Balita'), new StageLabel('Bocah'), new StageLabel('Remaja'), new StageLabel('Diwasa')),
+            short: new CompactnessOverride(
+                day: '{n} dina',
+                week: '{n} peken',
+                month: '{n} sasi',
+                year: '{n} taun',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n} peken',
+                month: '{n} sasi',
+                year: '{n} taun',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -981,6 +1423,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'ახალშობილი',
             stages: new Stages(new StageLabel('ახალშობილი'), new StageLabel('ჩვილი'), new StageLabel('პატარა ბავშვი'), new StageLabel('ბავშვი'), new StageLabel('მოზარდი'), new StageLabel('ზრდასრული')),
+            short: new CompactnessOverride(
+                day: '{n} დღე',
+                week: '{n} კვრ',
+                month: '{n} თვე',
+                year: '{n} წ',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} დღე',
+                week: '{n} კვრ',
+                month: '{n} თვე',
+                year: '{n} წ',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1004,6 +1460,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Жаңа туған',
             stages: new Stages(new StageLabel('Жаңа туған'), new StageLabel('Нәресте'), new StageLabel('Сәби'), new StageLabel('Бала'), new StageLabel('Жасөспірім'), new StageLabel('Ересек')),
+            short: new CompactnessOverride(
+                day: '{n} күн',
+                week: '{n} ап.',
+                month: '{n} ай',
+                year: '{n} ж.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} к.',
+                week: '{n} ап.',
+                month: '{n} ай',
+                year: '{n} ж.',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1027,6 +1497,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'ទើបនឹងកើត',
             stages: new Stages(new StageLabel('ទើបនឹងកើត'), new StageLabel('ទារក'), new StageLabel('កុមារតូច'), new StageLabel('កុមារ'), new StageLabel('យុវវ័យ'), new StageLabel('មនុស្សពេញវ័យ')),
+            short: new CompactnessOverride(
+                day: '{n} ថ្ងៃ',
+                week: '{n} សប្ដាហ៍',
+                month: '{n} ខែ',
+                year: '{n} ឆ្នាំ',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} ថ្ងៃ',
+                week: '{n} សប្ដាហ៍',
+                month: '{n} ខែ',
+                year: '{n} ឆ្នាំ',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1050,6 +1534,19 @@ final class Locales
             delimiter: ' ',
             justBorn: '신생아',
             stages: new Stages(new StageLabel('신생아'), new StageLabel('영아'), new StageLabel('유아'), new StageLabel('아동'), new StageLabel('청소년'), new StageLabel('성인')),
+            short: new CompactnessOverride(
+                day: '{n}일',
+                week: '{n}주',
+                month: '{n}개월',
+                year: '{n}년',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}일',
+                week: '{n}주',
+                month: '{n}개월',
+                year: '{n}년',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1095,6 +1592,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nowyth genys',
             stages: new Stages(new StageLabel('Nowyth genys'), new StageLabel('Babi'), new StageLabel('Flogh byhan'), new StageLabel('Flogh'), new StageLabel('Den yowynk'), new StageLabel('Den tevys')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} wk',
+                month: '{n} mo',
+                year: '{n} yr',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1132,6 +1643,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Naujagimis',
             stages: new Stages(new StageLabel('Naujagimis', 'Naujagimė'), new StageLabel('Kūdikis', 'Kūdikė'), new StageLabel('Mažylis', 'Mažylė'), new StageLabel('Vaikas'), new StageLabel('Paauglys', 'Paauglė'), new StageLabel('Suaugęs', 'Suaugusi')),
+            short: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} sav.',
+                month: '{n} mėn.',
+                year: '{n} m.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} sav.',
+                month: '{n} mėn.',
+                year: '{n} m.',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1169,6 +1693,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Jaundzimušais',
             stages: new Stages(new StageLabel('Jaundzimušais', 'Jaundzimušā'), new StageLabel('Zīdainis', 'Zīdaine'), new StageLabel('Mazulis', 'Mazule'), new StageLabel('Bērns'), new StageLabel('Pusaudzis', 'Pusaudze'), new StageLabel('Pieaugušais', 'Pieaugusī')),
+            short: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} ned.',
+                month: '{n} mēn.',
+                year: '{n} g.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} n.',
+                month: '{n} m.',
+                year: '{n} g.',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1203,6 +1740,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Новороденче',
             stages: new Stages(new StageLabel('Новороденче'), new StageLabel('Бебе'), new StageLabel('Мало дете'), new StageLabel('Дете'), new StageLabel('Тинејџер'), new StageLabel('Возрасен')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} ден', 'other' => '{n} дена'],
+                week: '{n} сед.',
+                month: '{n} мес.',
+                year: '{n} год.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} д.',
+                week: '{n} с.',
+                month: '{n} м.',
+                year: '{n} г.',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1226,6 +1777,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'नवजात',
             stages: new Stages(new StageLabel('नवजात'), new StageLabel('अर्भक'), new StageLabel('बाळ'), new StageLabel('मूल'), new StageLabel('किशोर', 'किशोरी'), new StageLabel('प्रौढ')),
+            short: new CompactnessOverride(
+                day: '{n} दिवस',
+                week: '{n} आ',
+                month: ['one' => '{n} महिना', 'other' => '{n} महिने'],
+                year: ['one' => '{n} वर्ष', 'other' => '{n} वर्षे'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}दि',
+                week: '{n}आ',
+                month: '{n}म',
+                year: '{n}व',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1249,6 +1814,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Baru lahir',
             stages: new Stages(new StageLabel('Baru lahir'), new StageLabel('Bayi'), new StageLabel('Kanak-kanak kecil'), new StageLabel('Kanak-kanak'), new StageLabel('Remaja'), new StageLabel('Dewasa')),
+            short: new CompactnessOverride(
+                day: '{n} hari',
+                week: '{n} mgu',
+                month: '{n} bln',
+                year: '{n} thn',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} h',
+                week: '{n} mgu',
+                month: '{n} bln',
+                year: '{n} thn',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1291,6 +1870,20 @@ final class Locales
             delimiter: ' u ',
             justBorn: 'Tarbija ġdida',
             stages: new Stages(new StageLabel('Tarbija ġdida'), new StageLabel('Tarbija'), new StageLabel('Tifel żgħir', 'Tifla żgħira'), new StageLabel('Tifel', 'Tifla'), new StageLabel('Adolexxent', 'Adolexxenta'), new StageLabel('Adult', 'Adulta')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} w',
+                month: '{n} m',
+                year: '{n} y',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} w',
+                month: '{n} m',
+                year: '{n} y',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1314,6 +1907,20 @@ final class Locales
             delimiter: '၊ ',
             justBorn: 'မွေးကင်းစ',
             stages: new Stages(new StageLabel('မွေးကင်းစ'), new StageLabel('နို့စို့ကလေး'), new StageLabel('ခြေဦးသလျှား'), new StageLabel('ကလေး'), new StageLabel('ဆယ်ကျော်သက်'), new StageLabel('အရွယ်ရောက်')),
+            short: new CompactnessOverride(
+                day: '{n} ရက်',
+                week: '{n} ပတ်',
+                month: '{n} လ',
+                year: '{n} နှစ်',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} ရက်',
+                week: '{n} ပတ်',
+                month: '{n} လ',
+                year: '{n} နှစ်',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1337,6 +1944,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nyfødt',
             stages: new Stages(new StageLabel('Nyfødt'), new StageLabel('Spedbarn'), new StageLabel('Småbarn'), new StageLabel('Barn'), new StageLabel('Tenåring'), new StageLabel('Voksen')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} u',
+                month: '{n} md.',
+                year: '{n} år',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}u',
+                month: '{n} m',
+                year: '{n}å',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1360,6 +1980,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'नवजात शिशु',
             stages: new Stages(new StageLabel('नवजात शिशु'), new StageLabel('शिशु'), new StageLabel('बाल्यकाल'), new StageLabel('बालक'), new StageLabel('किशोर'), new StageLabel('वयस्क')),
+            short: new CompactnessOverride(
+                day: '{n} दिन',
+                week: '{n} हप्ता',
+                month: '{n} महिना',
+                year: '{n} वर्ष',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} दिन',
+                week: '{n} हप्ता',
+                month: '{n} महिना',
+                year: '{n} वर्ष',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1383,6 +2017,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Pasgeboren',
             stages: new Stages(new StageLabel('Pasgeborene'), new StageLabel('Baby'), new StageLabel('Peuter'), new StageLabel('Kind'), new StageLabel('Tiener'), new StageLabel('Volwassene')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} dag', 'other' => '{n} dagen'],
+                week: ['one' => '{n} wk', 'other' => '{n} wkn'],
+                month: '{n} mnd',
+                year: '{n} jr',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} w',
+                month: '{n} m',
+                year: '{n} jr',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1406,6 +2053,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'ਨਵਜੰਮਿਆ',
             stages: new Stages(new StageLabel('ਨਵਜੰਮਿਆ', 'ਨਵਜੰਮੀ'), new StageLabel('ਸ਼ਿਸ਼ੂ'), new StageLabel('ਛੋਟਾ ਬੱਚਾ', 'ਛੋਟੀ ਬੱਚੀ'), new StageLabel('ਬੱਚਾ', 'ਬੱਚੀ'), new StageLabel('ਕਿਸ਼ੋਰ', 'ਕਿਸ਼ੋਰੀ'), new StageLabel('ਬਾਲਗ')),
+            short: new CompactnessOverride(
+                day: '{n} ਦਿਨ',
+                week: ['one' => '{n} ਹਫ਼ਤਾ', 'other' => '{n} ਹਫ਼ਤੇ'],
+                month: ['one' => '{n} ਮਹੀਨਾ', 'other' => '{n} ਮਹੀਨੇ'],
+                year: '{n} ਸਾਲ',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} ਦਿਨ',
+                week: ['one' => '{n} ਹਫ਼ਤਾ', 'other' => '{n} ਹਫ਼ਤੇ'],
+                month: ['one' => '{n} ਮਹੀਨਾ', 'other' => '{n} ਮਹੀਨੇ'],
+                year: '{n} ਸਾਲ',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1443,6 +2104,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Noworodek',
             stages: new Stages(new StageLabel('Noworodek'), new StageLabel('Niemowlę'), new StageLabel('Maluch'), new StageLabel('Dziecko'), new StageLabel('Nastolatek', 'Nastolatka'), new StageLabel('Dorosły', 'Dorosła')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} dzień', 'few' => '{n} dni', 'many' => '{n} dni', 'other' => '{n} dnia'],
+                week: ['one' => '{n} tydz.', 'few' => '{n} tyg.', 'many' => '{n} tyg.', 'other' => '{n} tyg.'],
+                month: '{n} mies.',
+                year: ['one' => '{n} rok', 'few' => '{n} lata', 'many' => '{n} lat', 'other' => '{n} roku'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} t.',
+                month: ['one' => '{n} m-c', 'few' => '{n} m-ce', 'many' => '{n} m-cy', 'other' => '{n} m-ca'],
+                year: ['one' => '{n} r.', 'few' => '{n} l.', 'many' => '{n} l.', 'other' => '{n} r.'],
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1466,6 +2141,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Recém-nascido',
             stages: new Stages(new StageLabel('Recém-nascido', 'Recém-nascida'), new StageLabel('Bebê'), new StageLabel('Criança pequena'), new StageLabel('Criança'), new StageLabel('Adolescente'), new StageLabel('Adulto', 'Adulta')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} dia', 'other' => '{n} dias'],
+                week: '{n} sem.',
+                month: ['one' => '{n} mês', 'other' => '{n} meses'],
+                year: ['one' => '{n} ano', 'other' => '{n} anos'],
+            ),
+            compact: new CompactnessOverride(
+                day: ['one' => '{n} dia', 'other' => '{n} dias'],
+                week: '{n} sem.',
+                month: ['one' => '{n} mês', 'other' => '{n} meses'],
+                year: ['one' => '{n} ano', 'other' => '{n} anos'],
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1501,6 +2190,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nou-născut',
             stages: new Stages(new StageLabel('Nou-născut', 'Nou-născută'), new StageLabel('Sugar'), new StageLabel('Copil mic'), new StageLabel('Copil'), new StageLabel('Adolescent', 'Adolescentă'), new StageLabel('Adult', 'Adultă')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} zi', 'few' => '{n} zile', 'other' => '{n} zile'],
+                week: '{n} săpt.',
+                month: ['one' => '{n} lună', 'few' => '{n} luni', 'other' => '{n} luni'],
+                year: ['one' => '{n} an', 'few' => '{n} ani', 'other' => '{n} ani'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} z',
+                week: '{n} săpt.',
+                month: '{n} l',
+                year: '{n} a',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1538,6 +2241,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Новорождённый',
             stages: new Stages(new StageLabel('Новорождённый', 'Новорождённая'), new StageLabel('Младенец'), new StageLabel('Малыш', 'Малышка'), new StageLabel('Ребёнок'), new StageLabel('Подросток'), new StageLabel('Взрослый', 'Взрослая')),
+            short: new CompactnessOverride(
+                day: '{n} дн.',
+                week: '{n} нед.',
+                month: '{n} мес.',
+                year: ['one' => '{n} г.', 'few' => '{n} г.', 'many' => '{n} л.', 'other' => '{n} г.'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} д.',
+                week: '{n} н.',
+                month: '{n} м.',
+                year: ['one' => '{n} г.', 'few' => '{n} г.', 'many' => '{n} л.', 'other' => '{n} г.'],
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1573,6 +2290,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Iɣ d illul',
             stages: new Stages(new StageLabel('Iɣ d illul'), new StageLabel('Agellid'), new StageLabel('Aḥenjir', 'Taḥenjirt'), new StageLabel('Afrux', 'Tafruxṭ'), new StageLabel('Aɛrim', 'Taɛrimt'), new StageLabel('Argaz', 'Tamṭṭuṭ')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} wk',
+                month: '{n} mo',
+                year: '{n} yr',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1596,6 +2327,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'අලුත උපන්',
             stages: new Stages(new StageLabel('අලුත උපන්'), new StageLabel('බිළිඳා'), new StageLabel('ගමන් යන දරුවා'), new StageLabel('ළමයා'), new StageLabel('නව යොවුන්'), new StageLabel('වැඩිහිටි')),
+            short: new CompactnessOverride(
+                day: 'දින {n}',
+                week: 'සති {n}',
+                month: 'මාස {n}',
+                year: 'වසර {n}',
+            ),
+            compact: new CompactnessOverride(
+                day: 'දි {n}',
+                week: 'ස {n}',
+                month: 'මා {n}',
+                year: 'ව {n}',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1631,6 +2376,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Novorodenec',
             stages: new Stages(new StageLabel('Novorodenec'), new StageLabel('Dojča'), new StageLabel('Batoľa'), new StageLabel('Dieťa'), new StageLabel('Tínedžer'), new StageLabel('Dospelý', 'Dospelá')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} deň', 'few' => '{n} dni', 'many' => '{n} dňa', 'other' => '{n} dní'],
+                week: '{n} týž.',
+                month: '{n} mes.',
+                year: '{n} r.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d.',
+                week: '{n} t.',
+                month: '{n} m.',
+                year: '{n} r.',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1670,6 +2428,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Novorojenček',
             stages: new Stages(new StageLabel('Novorojenček', 'Novorojenčica'), new StageLabel('Dojenček', 'Dojenčica'), new StageLabel('Malček', 'Malčica'), new StageLabel('Otrok'), new StageLabel('Najstnik', 'Najstnica'), new StageLabel('Odrasel', 'Odrasla')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} t',
+                month: '{n} m',
+                year: '{n} l',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} t',
+                month: '{n} m',
+                year: '{n} l',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1693,6 +2465,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Sapolindur',
             stages: new Stages(new StageLabel('Sapolindur', 'Sapolindure'), new StageLabel('Foshnjë'), new StageLabel('Fëmijë i vogël', 'Fëmijë e vogël'), new StageLabel('Fëmijë'), new StageLabel('Adoleshent', 'Adoleshente'), new StageLabel('I rritur', 'E rritur')),
+            short: new CompactnessOverride(
+                day: '{n} ditë',
+                week: '{n} javë',
+                month: '{n} muaj',
+                year: ['one' => '{n} vit', 'other' => '{n} vjet'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} ditë',
+                week: '{n} javë',
+                month: '{n} muaj',
+                year: ['one' => '{n} vit', 'other' => '{n} vjet'],
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1730,6 +2516,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Новорођенче',
             stages: new Stages(new StageLabel('Новорођенче'), new StageLabel('Одојче'), new StageLabel('Мало дете'), new StageLabel('Дете'), new StageLabel('Тинејџер'), new StageLabel('Одрасла особа')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} дан', 'few' => '{n} дана', 'other' => '{n} дана'],
+                week: '{n} нед.',
+                month: '{n} мес.',
+                year: ['one' => '{n} год', 'few' => '{n} год.', 'other' => '{n} год.'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} д',
+                week: '{n} н',
+                month: '{n} м',
+                year: '{n} г',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1753,6 +2553,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Nyfödd',
             stages: new Stages(new StageLabel('Nyfödd'), new StageLabel('Spädbarn'), new StageLabel('Litet barn'), new StageLabel('Barn'), new StageLabel('Tonåring'), new StageLabel('Vuxen')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} v',
+                month: '{n} mån',
+                year: '{n} år',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}v',
+                month: '{n}m',
+                year: '{n}å',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1776,6 +2589,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Mzaliwa mpya',
             stages: new Stages(new StageLabel('Mzaliwa mpya'), new StageLabel('Mtoto mchanga'), new StageLabel('Mtoto mdogo'), new StageLabel('Mtoto'), new StageLabel('Kijana'), new StageLabel('Mtu mzima')),
+            short: new CompactnessOverride(
+                day: 'siku {n}',
+                week: 'wiki {n}',
+                month: ['one' => 'mwezi {n}', 'other' => 'miezi {n}'],
+                year: ['one' => 'mwaka {n}', 'other' => 'miaka {n}'],
+            ),
+            compact: new CompactnessOverride(
+                day: 'siku {n}',
+                week: 'wiki {n}',
+                month: ['one' => 'mwezi {n}', 'other' => 'miezi {n}'],
+                year: ['one' => 'mwaka {n}', 'other' => 'miaka {n}'],
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1799,6 +2626,19 @@ final class Locales
             delimiter: ', ',
             justBorn: 'பிறந்த குழந்தை',
             stages: new Stages(new StageLabel('பிறந்த குழந்தை'), new StageLabel('குழந்தை'), new StageLabel('சிறு குழந்தை'), new StageLabel('சிறார்'), new StageLabel('இளம்பருவம்'), new StageLabel('பெரியவர்')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} நாள்', 'other' => '{n} நாட்கள்'],
+                week: ['one' => '{n} வாரம்', 'other' => '{n} வார.'],
+                month: ['one' => '{n} மாதம்', 'other' => '{n} மாத.'],
+                year: ['one' => '{n} ஆண்டு', 'other' => '{n} ஆண்டு.'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} நா',
+                week: '{n} வா',
+                month: '{n} மா',
+                year: '{n} ஆ',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1822,6 +2662,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'నవజాత శిశువు',
             stages: new Stages(new StageLabel('నవజాత శిశువు'), new StageLabel('శిశువు'), new StageLabel('చిన్న బిడ్డ'), new StageLabel('బిడ్డ'), new StageLabel('కౌమారదశ'), new StageLabel('వయోజనులు')),
+            short: new CompactnessOverride(
+                day: ['one' => '{n} రోజు', 'other' => '{n} రోజులు'],
+                week: '{n} వా.',
+                month: '{n} నె.',
+                year: '{n} సం.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}రో',
+                week: '{n}వా',
+                month: '{n}నె',
+                year: '{n}సం',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1845,6 +2699,20 @@ final class Locales
             delimiter: ' ',
             justBorn: 'แรกเกิด',
             stages: new Stages(new StageLabel('แรกเกิด'), new StageLabel('ทารก'), new StageLabel('เด็กวัยเตาะแตะ'), new StageLabel('เด็ก'), new StageLabel('วัยรุ่น'), new StageLabel('ผู้ใหญ่')),
+            short: new CompactnessOverride(
+                day: '{n} วัน',
+                week: '{n} สัปดาห์',
+                month: '{n} เดือน',
+                year: '{n} ปี',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}วัน',
+                week: '{n}สัปดาห์',
+                month: '{n}เดือน',
+                year: '{n}ปี',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1868,6 +2736,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Yeni doğan',
             stages: new Stages(new StageLabel('Yeni doğan'), new StageLabel('Bebek'), new StageLabel('Küçük çocuk'), new StageLabel('Çocuk'), new StageLabel('Ergen'), new StageLabel('Yetişkin')),
+            short: new CompactnessOverride(
+                day: '{n} gün',
+                week: '{n} hf.',
+                month: '{n} ay',
+                year: '{n} yıl',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}g',
+                week: '{n}h',
+                month: '{n}a',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1900,6 +2782,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Iɣ d illul',
             stages: new Stages(new StageLabel('Iɣ d illul'), new StageLabel('Agellid'), new StageLabel('Aḥenjir', 'Taḥenjirt'), new StageLabel('Afrux', 'Tafruxṭ'), new StageLabel('Aɛrim', 'Taɛrimt'), new StageLabel('Argaz', 'Tamṭṭuṭ')),
+            short: new CompactnessOverride(
+                day: '{n} d',
+                week: '{n} wk',
+                month: '{n} mo',
+                year: '{n} yr',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1937,6 +2833,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Новонароджений',
             stages: new Stages(new StageLabel('Новонароджений', 'Новонароджена'), new StageLabel('Немовля'), new StageLabel('Малюк'), new StageLabel('Дитина'), new StageLabel('Підліток'), new StageLabel('Дорослий', 'Доросла')),
+            short: new CompactnessOverride(
+                day: '{n} дн.',
+                week: '{n} тиж.',
+                month: '{n} міс.',
+                year: '{n} р.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}д',
+                week: '{n}т',
+                month: '{n}м',
+                year: '{n}р',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1960,6 +2870,20 @@ final class Locales
             delimiter: '، ',
             justBorn: 'نومولود',
             stages: new Stages(new StageLabel('نومولود'), new StageLabel('شیرخوار'), new StageLabel('چھوٹا بچہ', 'چھوٹی بچی'), new StageLabel('بچہ', 'بچی'), new StageLabel('نوجوان'), new StageLabel('بالغ')),
+            short: new CompactnessOverride(
+                day: '{n} دن',
+                week: ['one' => '{n} ہفتہ', 'other' => '{n} ہفتے'],
+                month: ['one' => '{n} مہینہ', 'other' => '{n} مہینے'],
+                year: '{n} سال',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} دن',
+                week: ['one' => '{n} ہفتہ', 'other' => '{n} ہفتے'],
+                month: ['one' => '{n} مہینہ', 'other' => '{n} مہینے'],
+                year: '{n} سال',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -1983,6 +2907,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Yangi tugʻilgan',
             stages: new Stages(new StageLabel('Yangi tugʻilgan'), new StageLabel('Chaqaloq'), new StageLabel('Kichkintoy'), new StageLabel('Bola'), new StageLabel('Oʻsmir'), new StageLabel('Katta')),
+            short: new CompactnessOverride(
+                day: '{n} kun',
+                week: '{n} hafta',
+                month: '{n} oy',
+                year: '{n} yil',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} kun',
+                week: '{n} hafta',
+                month: '{n} oy',
+                year: '{n} yil',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -2006,6 +2944,20 @@ final class Locales
             delimiter: ', ',
             justBorn: 'Sơ sinh',
             stages: new Stages(new StageLabel('Sơ sinh'), new StageLabel('Trẻ sơ sinh'), new StageLabel('Trẻ mới biết đi'), new StageLabel('Trẻ em'), new StageLabel('Thiếu niên'), new StageLabel('Người lớn')),
+            short: new CompactnessOverride(
+                day: '{n} ngày',
+                week: '{n} tuần',
+                month: '{n} tháng',
+                year: '{n} năm',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n} ngày',
+                week: '{n} tuần',
+                month: '{n} tháng',
+                year: '{n} năm',
+                half: '{n}½',
+                delimiter: '',
+            ),
         );
     }
 
@@ -2029,6 +2981,18 @@ final class Locales
             delimiter: '',
             justBorn: '新生儿',
             stages: new Stages(new StageLabel('新生儿'), new StageLabel('婴儿'), new StageLabel('幼儿'), new StageLabel('儿童'), new StageLabel('青少年'), new StageLabel('成人')),
+            short: new CompactnessOverride(
+                day: '{n}天',
+                week: '{n}周',
+                month: '{n}个月',
+                year: '{n}年',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}天',
+                week: '{n}周',
+                month: '{n}个月',
+                year: '{n}年',
+            ),
         );
     }
 

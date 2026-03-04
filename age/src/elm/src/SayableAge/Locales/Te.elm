@@ -47,6 +47,27 @@ locale =
         , teenager = Neutral "కౌమారదశ"
         , adult = Neutral "వయోజనులు"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} రోజు" )
+                  , ( Other, "{n} రోజులు" )
+                  ])
+            , ovrWeek = Just (Simple "{n} వా.")
+            , ovrMonth = Just (Simple "{n} నె.")
+            , ovrYear = Just (Simple "{n} సం.")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}రో")
+            , ovrWeek = Just (Simple "{n}వా")
+            , ovrMonth = Just (Simple "{n}నె")
+            , ovrYear = Just (Simple "{n}సం")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

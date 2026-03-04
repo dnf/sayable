@@ -32,6 +32,33 @@ locale = Locale
         , stageTeenager = Neutral "Tinedyer"
         , stageAdult = Neutral "Matanda"
         }
-    , localeShort = Nothing
-    , localeCompact = Nothing
+    , localeShort = Just $
+        CompactnessOverride
+            { ovrDay = Just (Simple "{n} araw")
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} linggo")
+              , (Other, "{n} na linggo")
+              ])
+            , ovrMonth = Just (Simple "{n} buwan")
+            , ovrYear = Just (Simple "{n} taon")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , localeCompact = Just $
+        CompactnessOverride
+            { ovrDay = Just (Pluralized
+              [ (One, "{n} araw")
+              , (Other, "{n} na araw")
+              ])
+            , ovrWeek = Just (Simple "{n}linggo")
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n}buwan")
+              , (Other, "{n} buwan")
+              ])
+            , ovrYear = Just (Simple "{n}taon")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

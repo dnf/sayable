@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.BS do
         child: "Dijete",
         teenager: "Tinejdžer",
         adult: "Odrasla osoba"
+      },
+      short: %{
+        units: %{
+          day: %{one: "{n} dan", few: "{n} dana", other: "{n} dana"},
+          week: "{n} sedm.",
+          month: "{n} mj.",
+          year: "{n} god."
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n} d.",
+          week: "{n} sedm.",
+          month: "{n} mj.",
+          year: "{n} god."
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

@@ -31,4 +31,18 @@ final sw = AgeLocale(
   child: stageNeutral('Mtoto'),
   teenager: stageNeutral('Kijana'),
   adult: stageNeutral('Mtu mzima'),
+  short: CompactnessOverride(
+    day: simpleUnit('siku {n}'),
+    week: simpleUnit('wiki {n}'),
+    month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miezi {n}'}),
+    year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'miaka {n}'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('siku {n}'),
+    week: simpleUnit('wiki {n}'),
+    month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miezi {n}'}),
+    year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'miaka {n}'}),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

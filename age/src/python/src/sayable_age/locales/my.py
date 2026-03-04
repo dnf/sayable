@@ -11,7 +11,7 @@
 
 """Burmese locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 MY = AgeLocale(
     code="my",
@@ -33,4 +33,22 @@ MY = AgeLocale(
         "teenager": "ဆယ်ကျော်သက်",
         "adult": "အရွယ်ရောက်",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} ရက်",
+            "week": "{n} ပတ်",
+            "month": "{n} လ",
+            "year": "{n} နှစ်",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} ရက်",
+            "week": "{n} ပတ်",
+            "month": "{n} လ",
+            "year": "{n} နှစ်",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

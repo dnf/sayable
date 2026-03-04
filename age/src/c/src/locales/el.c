@@ -34,6 +34,6 @@ const SaLocale sa_locale_el = {
         { "Έφηβος", "Έφηβη" },
         { "Ενήλικας", "Ενήλικη" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { NULL, { NULL, "{n} ημέρα", NULL, NULL, NULL, "{n} ημέρες" } }, true, { "{n} εβδ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} μήν.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} έτ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} η", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ε", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} μ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} έ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

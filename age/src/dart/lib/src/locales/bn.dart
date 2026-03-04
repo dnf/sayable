@@ -31,4 +31,18 @@ final bn = AgeLocale(
   child: stageNeutral('শিশু'),
   teenager: stageGendered('কিশোর', 'কিশোরী'),
   adult: stageNeutral('প্রাপ্তবয়স্ক'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} দিন'),
+    week: simpleUnit('{n} সপ্তাহ'),
+    month: simpleUnit('{n} মাস'),
+    year: simpleUnit('{n} বছর'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} দিন'),
+    week: simpleUnit('{n} সপ্তাহ'),
+    month: simpleUnit('{n} মাস'),
+    year: simpleUnit('{n} বছর'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

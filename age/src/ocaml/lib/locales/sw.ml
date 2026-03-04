@@ -41,6 +41,34 @@ let locale : locale =
     ; teenager = Neutral "Kijana"
     ; adult = Neutral "Mtu mzima"
     }
-  ; short = None
-  ; compact = None
+  ; short = Some
+      { ovr_day = Some (Simple "siku {n}")
+      ; ovr_week = Some (Simple "wiki {n}")
+      ; ovr_month = Some (Pluralized
+          [ (One, "mwezi {n}")
+          ; (Other, "miezi {n}")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (One, "mwaka {n}")
+          ; (Other, "miaka {n}")
+          ])
+      ; ovr_half = None
+      ; ovr_delimiter = None
+      ; ovr_just_born = None
+      }
+  ; compact = Some
+      { ovr_day = Some (Simple "siku {n}")
+      ; ovr_week = Some (Simple "wiki {n}")
+      ; ovr_month = Some (Pluralized
+          [ (One, "mwezi {n}")
+          ; (Other, "miezi {n}")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (One, "mwaka {n}")
+          ; (Other, "miaka {n}")
+          ])
+      ; ovr_half = Some "{n}½"
+      ; ovr_delimiter = Some ""
+      ; ovr_just_born = None
+      }
   }

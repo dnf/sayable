@@ -36,4 +36,16 @@ var ZH = sa.AgeLocale{
 		Teenager: sa.S("青少年"),
 		Adult:    sa.S("成人"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n}天"},
+		Week:  &sa.UnitForms{Simple: "{n}周"},
+		Month: &sa.UnitForms{Simple: "{n}个月"},
+		Year:  &sa.UnitForms{Simple: "{n}年"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n}天"},
+		Week:  &sa.UnitForms{Simple: "{n}周"},
+		Month: &sa.UnitForms{Simple: "{n}个月"},
+		Year:  &sa.UnitForms{Simple: "{n}年"},
+	},
 }

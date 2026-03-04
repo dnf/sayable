@@ -11,7 +11,7 @@
 
 """Vietnamese locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 VI = AgeLocale(
     code="vi",
@@ -33,4 +33,22 @@ VI = AgeLocale(
         "teenager": "Thiếu niên",
         "adult": "Người lớn",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} ngày",
+            "week": "{n} tuần",
+            "month": "{n} tháng",
+            "year": "{n} năm",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n} ngày",
+            "week": "{n} tuần",
+            "month": "{n} tháng",
+            "year": "{n} năm",
+        },
+        half="{n}½",
+        delimiter="",
+    ),
 )

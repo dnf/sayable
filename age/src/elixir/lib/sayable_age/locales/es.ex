@@ -32,6 +32,24 @@ defmodule SayableAge.Locales.ES do
         child: %{m: "Niño", f: "Niña"},
         teenager: "Adolescente",
         adult: %{m: "Adulto", f: "Adulta"}
+      },
+      short: %{
+        units: %{
+          day: "{n} d",
+          week: "{n} sem.",
+          month: "{n} m.",
+          year: "{n} a"
+        }
+      },
+      compact: %{
+        units: %{
+          day: "{n}d",
+          week: "{n}sem",
+          month: "{n}m",
+          year: "{n}a"
+        },
+        half: "{n}½",
+        delimiter: ""
       }
     }
   end

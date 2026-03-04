@@ -31,4 +31,18 @@ final az = AgeLocale(
   child: stageNeutral('Uşaq'),
   teenager: stageNeutral('Yeniyetmə'),
   adult: stageNeutral('Böyük'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} gün'),
+    week: simpleUnit('{n} hft'),
+    month: simpleUnit('{n} ay'),
+    year: simpleUnit('{n} il'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n} gün'),
+    week: simpleUnit('{n} hft'),
+    month: simpleUnit('{n} ay'),
+    year: simpleUnit('{n} il'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

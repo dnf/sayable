@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "청소년"
         , adult = Neutral "성인"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n}일")
+            , ovrWeek = Just (Simple "{n}주")
+            , ovrMonth = Just (Simple "{n}개월")
+            , ovrYear = Just (Simple "{n}년")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n}일")
+            , ovrWeek = Just (Simple "{n}주")
+            , ovrMonth = Just (Simple "{n}개월")
+            , ovrYear = Just (Simple "{n}년")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

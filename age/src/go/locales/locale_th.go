@@ -36,4 +36,18 @@ var TH = sa.AgeLocale{
 		Teenager: sa.S("วัยรุ่น"),
 		Adult:    sa.S("ผู้ใหญ่"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} วัน"},
+		Week:  &sa.UnitForms{Simple: "{n} สัปดาห์"},
+		Month: &sa.UnitForms{Simple: "{n} เดือน"},
+		Year:  &sa.UnitForms{Simple: "{n} ปี"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}วัน"},
+		Week:      &sa.UnitForms{Simple: "{n}สัปดาห์"},
+		Month:     &sa.UnitForms{Simple: "{n}เดือน"},
+		Year:      &sa.UnitForms{Simple: "{n}ปี"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

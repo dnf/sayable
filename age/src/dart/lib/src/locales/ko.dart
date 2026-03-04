@@ -30,4 +30,17 @@ final ko = AgeLocale(
   child: stageNeutral('아동'),
   teenager: stageNeutral('청소년'),
   adult: stageNeutral('성인'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n}일'),
+    week: simpleUnit('{n}주'),
+    month: simpleUnit('{n}개월'),
+    year: simpleUnit('{n}년'),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}일'),
+    week: simpleUnit('{n}주'),
+    month: simpleUnit('{n}개월'),
+    year: simpleUnit('{n}년'),
+    delimiter: '',
+  ),
 );

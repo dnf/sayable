@@ -25,6 +25,6 @@ locale() ->
         delimiter = ", ",
         just_born = "Newydd-anedig",
         stages = #stages{newborn = {neutral, "Newydd-anedig"}, infant = {neutral, "Baban"}, toddler = {neutral, "Plentyn bach"}, child = {neutral, "Plentyn"}, teenager = {neutral, "Glaslanc"}, adult = {neutral, "Oedolyn"}},
-        short = nothing,
-        compact = nothing
+        short = {just, #compactness_override{day = {just, {pluralized, [{zero, "{n} diwrnod"}, {one, "{n} diwrnod"}, {two, "{n} ddiwrnod"}, {few, "{n} diwrnod"}, {many, "{n} diwrnod"}, {other, "{n} diwrnod"}]}}, week = {just, {simple, "{n} ws"}}, month = {just, {pluralized, [{zero, "{n} mis"}, {one, "{n} mis"}, {two, "{n} fis"}, {few, "{n} mis"}, {many, "{n} mis"}, {other, "{n} mis"}]}}, year = {just, {simple, "{n} bl"}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {pluralized, [{zero, "{n} ws"}, {one, "{n}w"}, {two, "{n} ws"}, {few, "{n} ws"}, {many, "{n} ws"}, {other, "{n}w"}]}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}bl"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

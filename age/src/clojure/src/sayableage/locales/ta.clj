@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "பிறந்த குழந்தை"
    :stages {:newborn {:type :neutral :label "பிறந்த குழந்தை"} :infant {:type :neutral :label "குழந்தை"} :toddler {:type :neutral :label "சிறு குழந்தை"} :child {:type :neutral :label "சிறார்"} :teenager {:type :neutral :label "இளம்பருவம்"} :adult {:type :neutral :label "பெரியவர்"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :pluralized :forms {:one "{n} நாள்" :other "{n} நாட்கள்"}} :week {:type :pluralized :forms {:one "{n} வாரம்" :other "{n} வார."}} :month {:type :pluralized :forms {:one "{n} மாதம்" :other "{n} மாத."}} :year {:type :pluralized :forms {:one "{n} ஆண்டு" :other "{n} ஆண்டு."}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} நா"} :week {:type :simple :form "{n} வா"} :month {:type :simple :form "{n} மா"} :year {:type :simple :form "{n} ஆ"} :half nil :delimiter "" :just-born nil}})

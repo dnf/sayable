@@ -31,4 +31,18 @@ final mr = AgeLocale(
   child: stageNeutral('मूल'),
   teenager: stageGendered('किशोर', 'किशोरी'),
   adult: stageNeutral('प्रौढ'),
+  short: CompactnessOverride(
+    day: simpleUnit('{n} दिवस'),
+    week: simpleUnit('{n} आ'),
+    month: pluralUnit({PluralCategory.one: '{n} महिना', PluralCategory.other: '{n} महिने'}),
+    year: pluralUnit({PluralCategory.one: '{n} वर्ष', PluralCategory.other: '{n} वर्षे'}),
+  ),
+  compact: CompactnessOverride(
+    day: simpleUnit('{n}दि'),
+    week: simpleUnit('{n}आ'),
+    month: simpleUnit('{n}म'),
+    year: simpleUnit('{n}व'),
+    delimiter: '',
+    half: '{n}½',
+  ),
 );

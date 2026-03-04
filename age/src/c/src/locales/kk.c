@@ -34,6 +34,6 @@ const SaLocale sa_locale_kk = {
         { "Жасөспірім", "" },
         { "Ересек", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} күн", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ап.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ай", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ж.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} к.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ап.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ай", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ж.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: age/locales/src/sq.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel};
+use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
 
 /// Albanian locale.
 pub fn locale() -> AgeLocale {
@@ -51,8 +51,30 @@ pub fn locale() -> AgeLocale {
             teenager: StageLabel::Gendered { m: "Adoleshent".to_string(), f: "Adoleshente".to_string() },
             adult: StageLabel::Gendered { m: "I rritur".to_string(), f: "E rritur".to_string() },
         },
-        short: None,
-        compact: None,
+        short: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} ditë")),
+            week: Some(UnitForms::simple("{n} javë")),
+            month: Some(UnitForms::simple("{n} muaj")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} vit"),
+                (PluralCategory::Other, "{n} vjet"),
+            ])),
+            half: None,
+            delimiter: None,
+            just_born: None,
+        }),
+        compact: Some(CompactnessOverride {
+            day: Some(UnitForms::simple("{n} ditë")),
+            week: Some(UnitForms::simple("{n} javë")),
+            month: Some(UnitForms::simple("{n} muaj")),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} vit"),
+                (PluralCategory::Other, "{n} vjet"),
+            ])),
+            half: Some("{n}½".to_string()),
+            delimiter: Some(String::new()),
+            just_born: None,
+        }),
         format_number: None,
         format_unit: None,
     }

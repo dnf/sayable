@@ -39,4 +39,18 @@ var TZM = sa.AgeLocale{
 		Teenager: sa.G("Aɛrim", "Taɛrimt"),
 		Adult:    sa.G("Argaz", "Tamṭṭuṭ"),
 	},
+	Short: &sa.CompactnessOverride{
+		Day:   &sa.UnitForms{Simple: "{n} d"},
+		Week:  &sa.UnitForms{Simple: "{n} wk"},
+		Month: &sa.UnitForms{Simple: "{n} mo"},
+		Year:  &sa.UnitForms{Simple: "{n} yr"},
+	},
+	Compact: &sa.CompactnessOverride{
+		Day:       &sa.UnitForms{Simple: "{n}d"},
+		Week:      &sa.UnitForms{Simple: "{n}w"},
+		Month:     &sa.UnitForms{Simple: "{n}m"},
+		Year:      &sa.UnitForms{Simple: "{n}y"},
+		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
+	},
 }

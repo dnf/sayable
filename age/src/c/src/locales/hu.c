@@ -34,6 +34,6 @@ const SaLocale sa_locale_hu = {
         { "Tinédzser", "" },
         { "Felnőtt", "" }
     },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    false, { false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, { NULL, { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n} nap", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hét", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hónap", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} év", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} nap", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hét", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} h.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} év", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

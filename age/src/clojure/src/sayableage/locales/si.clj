@@ -22,5 +22,5 @@
    :delimiter ", "
    :just-born "අලුත උපන්"
    :stages {:newborn {:type :neutral :label "අලුත උපන්"} :infant {:type :neutral :label "බිළිඳා"} :toddler {:type :neutral :label "ගමන් යන දරුවා"} :child {:type :neutral :label "ළමයා"} :teenager {:type :neutral :label "නව යොවුන්"} :adult {:type :neutral :label "වැඩිහිටි"}}
-   :short nil
-   :compact nil})
+   :short {:day {:type :simple :form "දින {n}"} :week {:type :simple :form "සති {n}"} :month {:type :simple :form "මාස {n}"} :year {:type :simple :form "වසර {n}"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "දි {n}"} :week {:type :simple :form "ස {n}"} :month {:type :simple :form "මා {n}"} :year {:type :simple :form "ව {n}"} :half "{n}½" :delimiter "" :just-born nil}})

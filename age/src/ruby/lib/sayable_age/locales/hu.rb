@@ -32,6 +32,24 @@ module SayableAge
         teenager: 'Tinédzser',
         adult: 'Felnőtt',
       },
+      short: CompactnessOverride.new(
+        units: {
+          'day' => '{n} nap',
+          'week' => '{n} hét',
+          'month' => '{n} hónap',
+          'year' => '{n} év',
+        },
+      ),
+      compact: CompactnessOverride.new(
+        units: {
+          'day' => '{n} nap',
+          'week' => '{n} hét',
+          'month' => '{n} h.',
+          'year' => '{n} év',
+        },
+        delimiter: '',
+        half: '{n}½',
+      ),
     )
   end
 end

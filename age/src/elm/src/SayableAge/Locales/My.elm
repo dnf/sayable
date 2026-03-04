@@ -35,6 +35,24 @@ locale =
         , teenager = Neutral "ဆယ်ကျော်သက်"
         , adult = Neutral "အရွယ်ရောက်"
         }
-    , short = Nothing
-    , compact = Nothing
+    , short =
+        Just
+            { ovrDay = Just (Simple "{n} ရက်")
+            , ovrWeek = Just (Simple "{n} ပတ်")
+            , ovrMonth = Just (Simple "{n} လ")
+            , ovrYear = Just (Simple "{n} နှစ်")
+            , ovrHalf = Nothing
+            , ovrDelimiter = Nothing
+            , ovrJustBorn = Nothing
+            }
+    , compact =
+        Just
+            { ovrDay = Just (Simple "{n} ရက်")
+            , ovrWeek = Just (Simple "{n} ပတ်")
+            , ovrMonth = Just (Simple "{n} လ")
+            , ovrYear = Just (Simple "{n} နှစ်")
+            , ovrHalf = Just "{n}½"
+            , ovrDelimiter = Just ""
+            , ovrJustBorn = Nothing
+            }
     }

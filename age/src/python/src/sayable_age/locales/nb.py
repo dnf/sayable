@@ -11,7 +11,7 @@
 
 """Norwegian Bokmål locale."""
 
-from sayable_age.locale import AgeLocale
+from sayable_age.locale import AgeLocale, CompactnessOverride
 
 NB = AgeLocale(
     code="nb",
@@ -33,4 +33,21 @@ NB = AgeLocale(
         "teenager": "Tenåring",
         "adult": "Voksen",
     },
+    short=CompactnessOverride(
+        units={
+            "day": "{n} d",
+            "week": "{n} u",
+            "month": "{n} md.",
+            "year": "{n} år",
+        },
+    ),
+    compact=CompactnessOverride(
+        units={
+            "day": "{n}d",
+            "week": "{n}u",
+            "month": "{n} m",
+            "year": "{n}å",
+        },
+        delimiter="",
+    ),
 )

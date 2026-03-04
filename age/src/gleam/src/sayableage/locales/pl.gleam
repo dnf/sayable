@@ -28,7 +28,23 @@ pub fn locale() -> types.AgeLocale {
     child: types.NeutralStage("Dziecko"),
     teenager: types.GenderedStage("Nastolatek", "Nastolatka"),
     adult: types.GenderedStage("Dorosły", "Dorosła"),
-    short: Error(Nil),
-    compact: Error(Nil),
+    short: Ok(types.CompactnessOverride(
+      day: Ok(types.PluralUnit([#(types.One, "{n} dzień"), #(types.Few, "{n} dni"), #(types.Many, "{n} dni"), #(types.Other, "{n} dnia")])),
+      week: Ok(types.PluralUnit([#(types.One, "{n} tydz."), #(types.Few, "{n} tyg."), #(types.Many, "{n} tyg."), #(types.Other, "{n} tyg.")])),
+      month: Ok(types.SimpleUnit("{n} mies.")),
+      year: Ok(types.PluralUnit([#(types.One, "{n} rok"), #(types.Few, "{n} lata"), #(types.Many, "{n} lat"), #(types.Other, "{n} roku")])),
+      half: Error(Nil),
+      delimiter: Error(Nil),
+      just_born: Error(Nil),
+    )),
+    compact: Ok(types.CompactnessOverride(
+      day: Ok(types.SimpleUnit("{n} d.")),
+      week: Ok(types.SimpleUnit("{n} t.")),
+      month: Ok(types.PluralUnit([#(types.One, "{n} m-c"), #(types.Few, "{n} m-ce"), #(types.Many, "{n} m-cy"), #(types.Other, "{n} m-ca")])),
+      year: Ok(types.PluralUnit([#(types.One, "{n} r."), #(types.Few, "{n} l."), #(types.Many, "{n} l."), #(types.Other, "{n} r.")])),
+      half: Ok("{n}½"),
+      delimiter: Ok(""),
+      just_born: Error(Nil),
+    )),
   )
 }

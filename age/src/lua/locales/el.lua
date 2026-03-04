@@ -30,5 +30,23 @@ M.stages = {
     teenager = { m = "Έφηβος", f = "Έφηβη" },
     adult = { m = "Ενήλικας", f = "Ενήλικη" },
 }
+M.short = {
+    units = {
+        day = { one = "{n} ημέρα", other = "{n} ημέρες" },
+        week = "{n} εβδ.",
+        month = "{n} μήν.",
+        year = "{n} έτ.",
+    },
+}
+M.compact = {
+    units = {
+        day = "{n} η",
+        week = "{n} ε",
+        month = "{n} μ",
+        year = "{n} έ",
+    },
+    half = "{n}½",
+    delimiter = "",
+}
 
 return M
