@@ -1,5 +1,7 @@
 # Sayable
 
+<img src="assets/warp-drive.png" alt="Captain, warp drive will be ready in 0 days, 0 hours, 0 minut..." width="400" style="margin-left:50px" align="right">
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
 *A thoughtful collection of libraries for how humans actually speak.*

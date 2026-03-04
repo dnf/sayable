@@ -1,0 +1,273 @@
+# sayable-time task runner
+# Run `just --list` to see all available commands.
+
+python := if `which python3 2>/dev/null || true` != "" { "python3" } else { "python" }
+
+_runner := "../.hecatron/tools/runner/run-parallel.sh"
+
+# Resolve abbreviation to full language name
+[private]
+[no-exit-message]
+_name target:
+    #!/usr/bin/env bash
+    case "{{target}}" in
+        py|python)     echo "python" ;;
+        ts|typescript) echo "typescript" ;;
+        *)             echo "{{target}}" ;;
+    esac
+
+# Run test suites + codegen check
+[group('test')]
+test *target:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
+        if [ "${_prev}" = "-j" ]; then _jflag="${_a}"; _prev=""; continue; fi
+        if [ "${_prev}" = "-s" ]; then _sflag="${_a}"; _prev=""; continue; fi
+        if [ "${_a}" = "-j" ]; then _prev="-j"; continue; fi
+        if [ "${_a}" = "-s" ]; then _prev="-s"; continue; fi
+        _target="${_target:+${_target} }${_a}"
+    done
+    if [ "${_target}" = "help" ] || [ "${_target}" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just test [flags] [target]" \
+            "" \
+            "Run all test suites + codegen check in parallel, or a single target." \
+            "" \
+            "Languages:" \
+            "  python (py)      Python tests via pytest" \
+            "  typescript (ts)  TypeScript tests via vitest" \
+            "" \
+            "Flags:" \
+            "  -j VALUE   Set concurrency: integer, percentage, or 'unlimited'" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just test        Run all test suites + codegen check in parallel" \
+            "  just test py     Run Python tests only" \
+            "  just test ts     Run TypeScript tests only"
+        exit 0
+    fi
+    if [ -z "${_target}" ]; then
+        {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} test \
+            "check" "test python" "test typescript"
+    else
+        _name="$(just _name "${_target}")"
+        mkdir -p .logs/test
+        (
+            case "${_target}" in
+                python|py)
+                    cd impl/python && uv run --extra dev python -m pytest tests/
+                    ;;
+                typescript|ts)
+                    cd impl/typescript && npx vitest run
+                    ;;
+                *)
+                    echo "Unknown target '${_target}'. Try 'just test help'." >&2
+                    exit 1
+                    ;;
+            esac
+        ) 2>&1 | tee ".logs/test/${_name}.log"
+    fi
+
+# Build artifacts
+[group('build')]
+build *target:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
+        if [ "${_prev}" = "-j" ]; then _jflag="${_a}"; _prev=""; continue; fi
+        if [ "${_prev}" = "-s" ]; then _sflag="${_a}"; _prev=""; continue; fi
+        if [ "${_a}" = "-j" ]; then _prev="-j"; continue; fi
+        if [ "${_a}" = "-s" ]; then _prev="-s"; continue; fi
+        _target="${_target:+${_target} }${_a}"
+    done
+    if [ "${_target}" = "help" ] || [ "${_target}" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just build [flags] [target]" \
+            "" \
+            "Build one or both targets in parallel, or a single target." \
+            "" \
+            "Languages:" \
+            "  python (py)      No-op (pure Python)" \
+            "  typescript (ts)  Build via tsup" \
+            "" \
+            "Flags:" \
+            "  -j VALUE   Set concurrency: integer, percentage, or 'unlimited'" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just build       Build all targets in parallel" \
+            "  just build ts    Build TypeScript only"
+        exit 0
+    fi
+    if [ -z "${_target}" ]; then
+        {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} build \
+            "build python" "build typescript"
+    else
+        _name="$(just _name "${_target}")"
+        mkdir -p .logs/build
+        (
+            case "${_target}" in
+                python|py)
+                    echo "No build step needed — pure Python package."
+                    ;;
+                typescript|ts)
+                    cd impl/typescript && npm run build
+                    ;;
+                *)
+                    echo "Unknown target '${_target}'. Try 'just build help'." >&2
+                    exit 1
+                    ;;
+            esac
+        ) 2>&1 | tee ".logs/build/${_name}.log"
+    fi
+
+# Run linters
+[group('lint')]
+lint *target:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
+        if [ "${_prev}" = "-j" ]; then _jflag="${_a}"; _prev=""; continue; fi
+        if [ "${_prev}" = "-s" ]; then _sflag="${_a}"; _prev=""; continue; fi
+        if [ "${_a}" = "-j" ]; then _prev="-j"; continue; fi
+        if [ "${_a}" = "-s" ]; then _prev="-s"; continue; fi
+        _target="${_target:+${_target} }${_a}"
+    done
+    if [ "${_target}" = "help" ] || [ "${_target}" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just lint [flags] [target]" \
+            "" \
+            "Run linters for one or both languages in parallel, or a single target." \
+            "" \
+            "Languages:" \
+            "  python (py)      Ruff + Pyright" \
+            "  typescript (ts)  tsc + ESLint" \
+            "" \
+            "Flags:" \
+            "  -j VALUE   Set concurrency: integer, percentage, or 'unlimited'" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just lint        Lint all languages in parallel" \
+            "  just lint py     Lint Python only" \
+            "  just lint ts     Lint TypeScript only"
+        exit 0
+    fi
+    if [ -z "${_target}" ]; then
+        {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} lint \
+            "lint python" "lint typescript"
+    else
+        _name="$(just _name "${_target}")"
+        mkdir -p .logs/lint
+        (
+            case "${_target}" in
+                python|py)
+                    cd impl/python && uv run --extra dev ruff check . && uv run --extra dev pyright
+                    ;;
+                typescript|ts)
+                    cd impl/typescript && npm run lint
+                    ;;
+                *)
+                    echo "Unknown target '${_target}'. Try 'just lint help'." >&2
+                    exit 1
+                    ;;
+            esac
+        ) 2>&1 | tee ".logs/lint/${_name}.log"
+    fi
+
+# Generate locale files from JSON
+[group('codegen')]
+generate *target:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _target="{{target}}"
+    if [ "${_target}" = "help" ] || [ "${_target}" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just generate locales" \
+            "" \
+            "Generate locale source files from JSON definitions." \
+            "" \
+            "Targets:" \
+            "  locales    Regenerate all locale files" \
+            "" \
+            "Examples:" \
+            "  just generate locales"
+        exit 0
+    fi
+    case "${_target}" in
+        locales)
+            {{python}} -m codegen.generate
+            ;;
+        *)
+            echo "Unknown target '${_target}'. Try 'just generate help'." >&2
+            exit 1
+            ;;
+    esac
+
+# Verify generated files are current
+[group('codegen')]
+check:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    echo "==> Checking codegen is current"
+    {{python}} -m codegen.generate --check
+    echo ""
+    echo "==> Checking docgen is current"
+    uv run --project impl/python {{python}} -m codegen.docgen --check
+
+# Remove build artifacts
+[group('clean')]
+clean *target:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _jflag=""; _sflag=""; _target=""; _prev=""
+    for _a in {{target}}; do
+        if [ "${_prev}" = "-j" ]; then _jflag="${_a}"; _prev=""; continue; fi
+        if [ "${_prev}" = "-s" ]; then _sflag="${_a}"; _prev=""; continue; fi
+        if [ "${_a}" = "-j" ]; then _prev="-j"; continue; fi
+        if [ "${_a}" = "-s" ]; then _prev="-s"; continue; fi
+        _target="${_target:+${_target} }${_a}"
+    done
+    if [ "${_target}" = "help" ] || [ "${_target}" = "--help" ]; then
+        printf '%s\n' \
+            "Usage: just clean [flags] [target]" \
+            "" \
+            "Remove build artifacts for one or both languages." \
+            "" \
+            "Languages:" \
+            "  python (py)      Remove .venv, dist, egg-info, caches" \
+            "  typescript (ts)  Remove node_modules, dist, tsbuildinfo" \
+            "" \
+            "Flags:" \
+            "  -j VALUE   Set concurrency: integer, percentage, or 'unlimited'" \
+            "  -s MODE    Visualization: scroll (default), full, or zoom" \
+            "" \
+            "Examples:" \
+            "  just clean       Clean all artifacts in parallel" \
+            "  just clean py    Clean Python artifacts only" \
+            "  just clean ts    Clean TypeScript artifacts only"
+        exit 0
+    fi
+    if [ -z "${_target}" ]; then
+        {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} clean \
+            "clean python" "clean typescript"
+    else
+        case "${_target}" in
+            python|py)
+                rm -rf impl/python/.venv impl/python/dist impl/python/*.egg-info impl/python/.pytest_cache
+                find impl/python -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+                ;;
+            typescript|ts)
+                rm -rf impl/typescript/node_modules impl/typescript/dist impl/typescript/.tsbuildinfo
+                ;;
+            *)
+                echo "Unknown target '${_target}'. Try 'just clean help'." >&2
+                exit 1
+                ;;
+        esac
+    fi
