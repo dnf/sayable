@@ -186,8 +186,8 @@ You can develop and test all implementations either natively on macOS/Linux or i
 Requires only [Docker](https://www.docker.com/). Builds a Linux container with all toolchains and runs the full test suite against your local checkout:
 
 ```bash
-./scripts/docker-test.sh          # build image + run all tests
-./scripts/docker-test.sh bash     # interactive shell inside the container
+./.hecatron/tools/docker/test.sh          # build image + run all tests
+./.hecatron/tools/docker/test.sh bash     # interactive shell inside the container
 ```
 
 Your repo is bind-mounted into the container. Anonymous volumes keep platform-specific build artifacts isolated, so nothing on your host is modified.
@@ -198,10 +198,10 @@ Bootstrap scripts install all language toolchains and project dependencies in on
 
 ```bash
 # macOS (uses Homebrew)
-./scripts/bootstrap-macos.sh
+./.hecatron/tools/bootstrap/macos.sh
 
 # Ubuntu / Debian
-./scripts/bootstrap-linux.sh
+./.hecatron/tools/bootstrap/linux.sh
 ```
 
 The scripts are idempotent — safe to re-run if you need to pick up a missing tool later.

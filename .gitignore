@@ -4,7 +4,6 @@
 __pycache__/
 .claude/
 .coverage-thresholds.json
-.disabled-langs
 .logs/
 .metaswarm/
 .pytest_cache/

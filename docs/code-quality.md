@@ -190,8 +190,8 @@ comment, or inline comment) used across languages.
 
 ## Shell scripts
 
-The project's runner (`scripts/runner/run-parallel.sh`) and helpers
-(`scripts/_lang-helpers.sh`) follow these conventions:
+The project's runner (`.hecatron/tools/runner/run-parallel.sh`) and helpers
+(`.hecatron/tools/language/helpers.sh`) follow these conventions:
 
 ### ANSI color variables
 
@@ -215,9 +215,10 @@ a new `_s_*` variable built from a `_c_*` base color. Never use raw
 ### Disable/enable
 
 Languages can be temporarily disabled from parallel runs using
-`just disable <lang>` (stored in `.disabled-langs`, gitignored). Disabled
-languages appear as orange `⊘ disabled` in runner output. Single-language
-runs, `clean`, `install`, and `uninstall` are not affected.
+`just disable <lang>` (stored in `.hecatron/config/languages/disabled.json`,
+gitignored). Disabled languages appear as orange `⊘ disabled` in runner
+output. Single-language runs, `clean`, `install`, and `uninstall` are
+not affected.
 
 ## Per-language details
 

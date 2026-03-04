@@ -92,9 +92,9 @@ After running, verify with `just test` and commit.
 
 ### How it works
 
-Each language's installer script (`scripts/installers/<lang>.sh`) has a `set-version` handler that knows which files and sed patterns to update for that language. The `just version` recipe orchestrates them all, plus handles cross-language files.
+Each language has a `version.sh` script (`.hecatron/languages/<lang>/version.sh`) that takes a version string as `$1` and knows which files and sed patterns to update for that language. The `just version` recipe orchestrates them all, plus handles cross-language files.
 
-When adding a new language, implement the `set-version)` case arm in its installer script — the orchestrator picks it up automatically.
+When adding a new language, create its `version.sh` script — the orchestrator picks it up automatically.
 
 ## License
 

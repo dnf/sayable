@@ -29,7 +29,11 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 | Onboarding       | `just get-started`                  |
 | Install langs    | `just install` or `just install go` |
 | Uninstall langs  | `just uninstall go rust`            |
-| Generate locales | `just generate locales`             |
+| Add languages    | `just add go rust`                  |
+| Remove languages | `just remove go rust`               |
+| List languages   | `just list languages [--all]`       |
+| Gen locales      | `just generate locales`             |
+| Gen Dockerfile   | `just dockerfile`                   |
 | Quality check    | `just check`                        |
 | Codegen tests    | `just test codegen`                 |
 | Update metadata  | `just metadata`                     |
@@ -45,14 +49,15 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **Locale data lives in `locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `just generate locales` to regenerate all language implementations. Never edit generated locale files by hand.
 - **Generated locale files must be in their own subdirectory.** Every language implementation must place generated locale files in a dedicated `locales/` (or language-idiomatic equivalent) subdirectory, separate from hand-written source files.
 - **Generated locale files and docs must be current.** Run `just generate locales` after editing `locales/*.json`. `just check` verifies this in CI.
-- **Generated files carry a prominent banner.** Every generated file starts with a 9-line box-frame `DO NOT EDIT` banner (from `codegen/banner.py`) referencing the generator path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON.
+- **Generated files carry a prominent banner.** Every generated file starts with a 9-line double-line box-frame `DO NOT EDIT` banner (from `.hecatron/tools/codegen/util.py`, re-exported by `codegen/banner.py`) referencing the generator and source path. Locale files also include a `Source: locales/{code}.json` comment linking to the canonical JSON. Workflow files in `.github/workflows/` and the `Dockerfile` also carry this banner.
 - **Every language must have a `src/<lang>/README.md`** with API docs and a `## License` section linking to `LICENSE.md`. The root `README.md` table must link to it in the Docs column.
 - **Every language must have a CI workflow** at `.github/workflows/<lang>.yml` that runs tests on push and PR to `main`. Use a version matrix when the language supports it.
-- **Installer scripts** live in `scripts/installers/<lang>.sh`. See [`docs/installers.md`](docs/installers.md) for the full reference. Key points:
+- **Installer scripts** live in `.hecatron/languages/<lang>/` as separate single-purpose files (`install.sh`, `uninstall.sh`, `version.sh`, and optionally `metadata.sh`). See [`.hecatron/docs/installers.md`](.hecatron/docs/installers.md) for the full reference. Key points:
   - Shared toolchains (cmake→C/C++, .NET→C#/F#, JDK→Java/Kotlin/Scala/Groovy, Node→TypeScript/Elm) mean uninstalling one language can break another.
   - JDK uninstall is a no-op (shared by 4 languages). Perl and Swift on macOS are also no-ops (system-provided).
   - `just install` (all) continues past individual failures and reports them at the end.
   - Elm has no arm64 Linux binary; the installer detects this and skips with a message.
+- **The Dockerfile is generated.** Never edit `Dockerfile` by hand. Each language has a `.hecatron/languages/<lang>/dockerfile` snippet with `# apt:` directives (collected, deduplicated, sorted into one `apt-get install`), optional `# after:` ordering constraints, and literal `RUN`/`ENV` blocks. Run `just dockerfile` to regenerate. `just add` and `just remove` regenerate automatically. `just check` verifies the Dockerfile is current.
 - **Justfile recipes must support `help`/`--help`.** Every recipe that accepts language arguments (test, build, lint, clean, install, uninstall) must handle `help` and `--help` as a first argument, printing usage with a consistent structure: Usage line, description, language list (alphabetical, with abbreviations), flags (if applicable), and examples. Error messages for unknown languages should print to stderr and point to help (e.g. `"try 'just test help'"`), not dump inline language lists.
 
 ## Versioning
@@ -67,6 +72,14 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 - **`config/metadata.json` is the single source of truth** for project metadata (description, author, license, repository URL). See [`docs/metadata.md`](docs/metadata.md) for details.
 - Run `just metadata` to interactively update metadata across all package manifests.
 - `just metadata` and `just version` are separate commands — different concerns, different sources of truth (`config/metadata.json` and `config/version.json`), different change frequencies.
+
+## Language management
+
+- **Per-language config** lives in `.hecatron/languages/<lang>/config.json` (abbreviation, dependency, compiled, hasClean, hasLint). **`.hecatron/config/languages/added.json`** is the active language list. **`.hecatron/config/languages/disabled.json`** is a gitignored array for temporarily disabling languages from parallel runs. **`.hecatron/config/languages.json`** holds only the `tools` object.
+- The `added` array controls which languages are targets for all commands (test, build, lint, clean, install, uninstall). Removed languages are refused by all commands, including explicit single-language runs like `just test go`.
+- `just add <lang>` and `just remove <lang>` modify the `added` array and sync CI workflows (add copies `.hecatron/languages/<lang>/workflow.yml` to `.github/workflows/<lang>.yml`; remove deletes it). Abbreviations are accepted.
+- `just list languages` shows active languages. `just list languages --all` shows all known languages with added/removed status.
+- `.hecatron/tools/language/emit-config.py` reads language configs and emits shell variables + functions for `eval` in `.hecatron/tools/language/helpers.sh`. Language management scripts (add, remove, list, install, uninstall, enable, disable) live in `.hecatron/tools/language/`.
 
 ## Project layout
 
@@ -105,7 +118,6 @@ config/        # Project configuration (version.json, metadata.json, tests.json)
 tests/         # Test documentation
 locales/       # Canonical locale JSON files (single source of truth)
 codegen/       # Locale code generator (JSON → all languages)
-scripts/       # Shared scripts (runner/, get-started, installers/)
 docs/          # Shared docs, locale docs
 ```
 
@@ -123,8 +135,8 @@ Core files per language follow a consistent pattern:
 - **Markdown table alignment is optional.** `just maintain docs` can auto-align tables if desired, but it is not enforced in CI.
 - Language-specific build artifacts (e.g., `_build/`, `dist-newstyle/`, `build/`) go in `src/.gitignore`, not the root `.gitignore`. The root `.gitignore` is for cross-language patterns only (e.g., `__pycache__/`, `.logs/`).
 - **Gitignore sections must be alphabetically ordered.** In `src/.gitignore`, language sections are ordered alphabetically by language name (C, C#, C++, Clojure, …, Zig). In the root `.gitignore`, entries are also kept in alphabetical order.
-- **One language per line in justfile lists.** Language lists (`_ALL_LANGS`, `_COMPILED_LANGS`, etc.), abbreviation maps (`_name()`, `_abbr()`), and dependency maps (`_dep()`) all live in `scripts/_lang-helpers.sh` with one entry per `case` arm. This prevents merge conflicts when multiple branches add languages concurrently. Help text grids are generated dynamically from these lists — never hardcode multi-language grid rows.
-- **ANSI colors use two layers of named variables.** In `scripts/runner/run-parallel.sh`, raw ANSI escape codes are defined as `_c_*` base color variables (e.g., `_c_green`, `_c_red`, `_c_orange`), and semantic `_s_*` variables are built from them (e.g., `_s_pass="$_c_green"`, `_s_fail="$_c_red"`, `_s_run="$_c_yellow"`). Printf statements must use semantic `$_s_*` variables — never raw `\033[` codes or base `$_c_*` colors directly (except `$_c_reset`, `$_c_erase`, `$_c_bg256`, `$_c_fg256`, and `$_c_lane_idle` which are structural). To change a color, update the semantic variable; to add a new status, add a new `_s_*` variable.
+- **One language per line in justfile lists.** Language lists (`_ALL_LANGS`, `_COMPILED_LANGS`, etc.), abbreviation maps (`_name()`, `_abbr()`), and dependency maps (`_dep()`) all live in `.hecatron/tools/language/helpers.sh` with one entry per `case` arm. This prevents merge conflicts when multiple branches add languages concurrently. Help text grids are generated dynamically from these lists — never hardcode multi-language grid rows.
+- **ANSI colors use two layers of named variables.** In `.hecatron/tools/runner/run-parallel.sh`, raw ANSI escape codes are defined as `_c_*` base color variables (e.g., `_c_green`, `_c_red`, `_c_orange`), and semantic `_s_*` variables are built from them (e.g., `_s_pass="$_c_green"`, `_s_fail="$_c_red"`, `_s_run="$_c_yellow"`). Printf statements must use semantic `$_s_*` variables — never raw `\033[` codes or base `$_c_*` colors directly (except `$_c_reset`, `$_c_erase`, `$_c_bg256`, `$_c_fg256`, and `$_c_lane_idle` which are structural). To change a color, update the semantic variable; to add a new status, add a new `_s_*` variable.
 - **Always brace-delimit shell variables.** Use `${var}` not `$var` in all shell scripts (justfile recipes, runner scripts, installer scripts). This ensures consistent style and prevents ambiguous variable boundaries. The only exception is positional parameters `$1`, `$2`, etc. and special variables `$?`, `$!`, `$$`, `$@`, `$*`, `$#` which remain unbraced.
 - **Brace-delimit variables before Unicode characters in shell scripts.** Bash 3.2 (macOS default) treats many Unicode characters (⊘, ⚙, ✓, ✗, ◌, ▲, ▼, etc.) as valid identifier characters. Under `set -u`, `$_s_pass✓` is parsed as the variable `_s_pass✓` (unbound → crash), not `$_s_pass` followed by `✓`. Always use `${_s_pass}✓` with explicit braces when a variable is followed by a non-ASCII character. ASCII symbols (`-`, `%`, ` `, etc.) are safe delimiters.
 
@@ -140,16 +152,16 @@ See [`docs/adding-a-locale.md`](docs/adding-a-locale.md) for the full guide. Sum
 
 ## Adding a new language
 
-See [`docs/adding-a-language.md`](docs/adding-a-language.md) for the full guide. Summary:
+See [`.hecatron/docs/adding-a-language.md`](.hecatron/docs/adding-a-language.md) for the full guide. Summary:
 
 1. Create `codegen/targets/<lang>/emitter.py` — emits locale source files from JSON
 2. Create `codegen/targets/<lang>/plural_rules.py` with all 23 plural patterns
 3. Register the generator in `codegen/generate.py` (`_GENERATORS` dict)
 4. Implement types (`AgeLocale`, `PluralCategory`, etc.) and the core formatter (port from an existing implementation)
 5. Implement all test cases from `config/tests.json`
-6. Add to `scripts/_lang-helpers.sh` (language lists, abbreviation, dependency) and `justfile` (test, build, lint, clean recipe handlers)
+6. Add to `.hecatron/tools/language/helpers.sh` (language lists, abbreviation, dependency) and `justfile` (test, build, lint, clean recipe handlers)
 7. Configure the language's standard linter with zero warnings
-8. Create installer script at `scripts/installers/<lang>.sh` and update `Dockerfile`
+8. Create installer scripts at `.hecatron/languages/<lang>/` (`install.sh`, `uninstall.sh`, `version.sh`, and optionally `metadata.sh`) and a `dockerfile` snippet for the Dockerfile generator
 9. Create `src/<lang>/README.md` with a `## License` section linking to `LICENSE.md`
 10. Create `.github/workflows/<lang>.yml` CI workflow with a version matrix
 11. Update cross-language doc tables (keep rows sorted alphabetically; don't hardcode counts in prose — update only the `CLAUDE.md` project description)

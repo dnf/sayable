@@ -60,7 +60,7 @@ Languages without manifest metadata fields (Ada, C, COBOL, Clojure, C#, Elixir, 
 
 ## How it works
 
-1. `scripts/set-metadata.sh` reads `config/metadata.json` and prompts for changes
+1. `.hecatron/tools/metadata/set.sh` reads `config/metadata.json` and prompts for changes
 2. Updated values are written back to `config/metadata.json`
 3. Both old (`PT_OLD_*`) and new (`PT_*`) values are exported as env vars
 4. Each installer's `set-metadata)` case arm performs targeted replacements
