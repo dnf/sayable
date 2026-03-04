@@ -307,7 +307,7 @@ maintain target *args:
         docs)
             (cd age && {{python}} -m codegen.align_tables {{args}} \
                 ../README.md ../CLAUDE.md ../CONTRIBUTING.md \
-                codegen/README.md config/README.md locales/README.md tests/README.md \
+                README.md codegen/README.md config/README.md locales/README.md tests/README.md \
                 docs/*.md impl/*/README.md)
             ;;
         *)

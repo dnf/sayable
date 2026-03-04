@@ -24,21 +24,21 @@ just lint python   # lint one        → .logs/lint/python.log
 
 All output is captured to `.logs/<command>/<language>.log` — both parallel and single-language runs.
 
-| Shortcut         | Command                             |
-| ---------------- | ----------------------------------- |
-| Onboarding       | `just get-started`                  |
-| Install langs    | `just install` or `just install go` |
-| Uninstall langs  | `just uninstall go rust`            |
-| Add languages    | `just add go rust`                  |
-| Remove languages | `just remove go rust`               |
-| List languages   | `just list languages [--all]`       |
-| Gen locales      | `just generate locales`             |
-| Gen age/Dockerfile   | `just dockerfile`                   |
-| Quality check    | `just check`                        |
-| Codegen tests    | `just test codegen`                 |
-| Update metadata  | `just metadata`                     |
-| Maintain docs    | `just maintain docs`                |
-| Clean artifacts  | `just clean` or `just clean <lang>` |
+| Shortcut           | Command                             |
+| ------------------ | ----------------------------------- |
+| Onboarding         | `just get-started`                  |
+| Install langs      | `just install` or `just install go` |
+| Uninstall langs    | `just uninstall go rust`            |
+| Add languages      | `just add go rust`                  |
+| Remove languages   | `just remove go rust`               |
+| List languages     | `just list languages [--all]`       |
+| Gen locales        | `just generate locales`             |
+| Gen age/Dockerfile | `just dockerfile`                   |
+| Quality check      | `just check`                        |
+| Codegen tests      | `just test codegen`                 |
+| Update metadata    | `just metadata`                     |
+| Maintain docs      | `just maintain docs`                |
+| Clean artifacts    | `just clean` or `just clean <lang>` |
 
 ## Key rules
 

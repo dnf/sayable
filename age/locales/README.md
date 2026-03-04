@@ -101,8 +101,8 @@ After your JSON edit is merged, a maintainer runs the code generator (`python -m
 
 Speaker counts are approximate and include L1 and L2 speakers.
 
-| Language                | Code  | Speakers | Main countries                    | Source file              | Example output                  |
-| ----------------------- | ----- | -------- | --------------------------------- | ------------------------ | ------------------------------- |
+| Language                | Code  | Speakers | Main countries                    | Source file              | Example output            |
+| ----------------------- | ----- | -------- | --------------------------------- | ------------------------ | ------------------------- |
 | Albanian                | `sq`  | ~7.5M    | Albania, Kosovo                   | [sq.json](src/sq.json)   | [output](examples/sq.md)  |
 | Amharic                 | `am`  | ~57M     | Ethiopia                          | [am.json](src/am.json)   | [output](examples/am.md)  |
 | Arabic                  | `ar`  | ~420M    | Middle East, North Africa         | [ar.json](src/ar.json)   | [output](examples/ar.md)  |
