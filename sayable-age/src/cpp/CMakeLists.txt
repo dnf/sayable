@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(sayable-age
     VERSION 0.5.0
-    DESCRIPTION "A thoughtful time formatting library that reflects how we think about little ones"
+    DESCRIPTION "Human-friendly age formatting — how parents actually talk about little ones"
     HOMEPAGE_URL "https://github.com/dnf/sayable"
     LANGUAGES CXX
 )

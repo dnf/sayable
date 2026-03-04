@@ -3,8 +3,8 @@ require_relative "lib/sayable_age/version"
 Gem::Specification.new do |s|
   s.name        = "sayable_age"
   s.version     = SayableAge::VERSION
-  s.summary     = "A thoughtful time formatting library that reflects how we think about little ones"
-  s.description = "A thoughtful time formatting library that reflects how we think about little ones. " \
+  s.summary     = "Human-friendly age formatting — how parents actually talk about little ones"
+  s.description = "Human-friendly age formatting — how parents actually talk about little ones. " \
                   "Zero dependencies, 71 built-in locales, 3 compactness levels."
   s.authors     = ["Don Neufeld"]
   s.license     = "MIT"

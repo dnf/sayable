@@ -1,6 +1,6 @@
 # sayable-age — Scala
 
-A thoughtful time formatting library that reflects how we think about little ones.
+Human-friendly age formatting — how parents actually talk about little ones.
 
 ```scala
 val age = SayableAge.formatAge("2025-06-01", "2025-06-15")  // Some("2 weeks")

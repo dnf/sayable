@@ -9,7 +9,7 @@ Project metadata (description, author, license, repository URL) is stored in `co
 ```json
 {
   "name": "sayable-age",
-  "description": "A thoughtful time formatting library that reflects how we think about little ones",
+  "description": "Human-friendly age formatting — how parents actually talk about little ones",
   "author": "Don Neufeld",
   "license": "MIT",
   "repository": "https://github.com/dnf/sayable"

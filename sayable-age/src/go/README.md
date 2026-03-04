@@ -1,6 +1,6 @@
 # sayable-age — Go
 
-A thoughtful time formatting library that reflects how we think about little ones.
+Human-friendly age formatting — how parents actually talk about little ones.
 
 ```go
 age := sayableage.FormatAge("2025-06-01", "2025-06-15")

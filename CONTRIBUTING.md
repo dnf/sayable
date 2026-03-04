@@ -1,6 +1,6 @@
-# Contributing to sayable-age
+# Contributing to Sayable
 
-Thanks for your interest in contributing! This project maintains identical implementations across many languages, so contributions follow a few specific patterns.
+Thanks for your interest in contributing! Sayable maintains identical implementations across many languages, so contributions follow a few specific patterns.
 
 ## Getting started
 

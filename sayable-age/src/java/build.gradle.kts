@@ -11,7 +11,7 @@ repositories {
     mavenCentral()
 }
 
-description = "A thoughtful time formatting library that reflects how we think about little ones"
+description = "Human-friendly age formatting — how parents actually talk about little ones"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -45,7 +45,7 @@ publishing {
 
             pom {
                 name.set("sayable-age")
-                description.set("A thoughtful time formatting library that reflects how we think about little ones")
+                description.set("Human-friendly age formatting — how parents actually talk about little ones")
                 url.set("https://github.com/dnf/sayable")
 
                 licenses {

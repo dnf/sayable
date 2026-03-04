@@ -1,6 +1,6 @@
 # sayable-age — Erlang
 
-A thoughtful time formatting library that reflects how we think about little ones.
+Human-friendly age formatting — how parents actually talk about little ones.
 
 ```erlang
 {ok, Age} = sayableage_formatter:format_age_pure(

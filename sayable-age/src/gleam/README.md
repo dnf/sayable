@@ -1,6 +1,6 @@
 # sayable-age — Gleam
 
-A thoughtful time formatting library that reflects how we think about little ones.
+Human-friendly age formatting — how parents actually talk about little ones.
 
 ```gleam
 let assert Ok(age) = sayableage.format_age(

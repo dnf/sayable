@@ -1,6 +1,6 @@
 # sayable-age — Java
 
-A thoughtful time formatting library that reflects how we think about little ones.
+Human-friendly age formatting — how parents actually talk about little ones.
 
 ```java
 String age = SayableAge.formatAgeDefault("2025-06-01", "2025-06-15");  // "2 weeks"

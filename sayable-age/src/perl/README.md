@@ -1,6 +1,6 @@
 # sayable-age — Perl
 
-A thoughtful time formatting library that reflects how we think about little ones.
+Human-friendly age formatting — how parents actually talk about little ones.
 
 ```perl
 use SayableAge;

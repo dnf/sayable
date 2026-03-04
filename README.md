@@ -1,16 +1,22 @@
-# sayable-age
+# Sayable
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
-*A thoughtful time formatting library that reflects how we think about little ones.*
+*A thoughtful collection of libraries for how humans actually speak.*
+
+Sayable is a family of zero-dependency formatting libraries. Each library tackles a different aspect of human-friendly output — the kind of phrasing people use in conversation, not the kind machines produce.
+
+## Libraries
+
+### [sayable-age](sayable-age/)
+
+Human-friendly age formatting — how parents actually talk about little ones.
 
 ```
 "Newborn" · "2 weeks, 4 days" · "14 months" · "2 years, 3 months" · "4½ years"
 ```
 
-Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `sayable-age` formats ages the way parents and pediatricians actually talk, with human-friendly output in 26 languages, 71 locales, and three compactness levels.
-
-## Implementations
+Most age-formatting libraries just give you years, or maybe years and months. But parents of young children don't say "0 years" — they say "she's 6 weeks old" or "he just turned 14 months." `sayable-age` formats ages the way parents and pediatricians actually talk, with human-friendly output in 29 languages, 71 locales, and three compactness levels.
 
 | Language   | CI                                                                                                                                                                              | Package                                                                                                                                                                          | Install                                     | Docs                               |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ---------------------------------- |
@@ -44,9 +50,9 @@ Most age-formatting libraries just give you years, or maybe years and months. Bu
 | TypeScript | [![TypeScript](https://github.com/dnf/sayable/actions/workflows/typescript.yml/badge.svg?branch=main)](https://github.com/dnf/sayable/actions/workflows/typescript.yml) | [![npm](https://img.shields.io/npm/v/sayable-age?logo=npm&label=npm)](https://www.npmjs.com/package/sayable-age)                                                                 | `npm install sayable-age`                   | [README](sayable-age/src/typescript/README.md) |
 | Zig        | [![Zig](https://github.com/dnf/sayable/actions/workflows/zig.yml/badge.svg?branch=main)](https://github.com/dnf/sayable/actions/workflows/zig.yml)                      | —                                                                                                                                                                                | Zig build system                            | [README](sayable-age/src/zig/README.md)        |
 
-All implementations produce identical output for the same inputs. See each language's README for installation, usage, and API details.
+All 29 implementations produce identical output for the same inputs. See each language's README for installation, usage, and API details.
 
-## CLI
+#### CLI
 
 A command-line tool for quick lookups, built on the C library:
 
@@ -71,109 +77,14 @@ sayable-age locales                         # list all 71 locale codes
 | `--compact`       |       |         | Compact format                |
 | `--gender <m\|f>` | `-g`  |         | Gender for stage labels       |
 
-## Functions
+## Design principles
 
-### `formatAge` / `format_age` / `FormatAge`
+Every Sayable library follows these principles:
 
-Returns a human-readable age string with granularity that matches the child's developmental stage:
-
-| Age range          | Format                     | Examples                    |
-| ------------------ | -------------------------- | --------------------------- |
-| Born today         | `"Newborn"`                | Newborn                     |
-| 1–6 days           | `"N days"`                 | 1 day, 5 days               |
-| 1 week – <3 months | `"N weeks, N days"`        | 2 weeks, 3 weeks, 4 days    |
-| 3–23 months        | `"N months"`               | 3 months, 14 months         |
-| 24–35 months       | `"N years, N months"`      | 2 years, 2 years, 7 months  |
-| 3–6 years          | `"N years"` / `"N½ years"` | 3 years, 3½ years, 5½ years |
-| 7+ years           | `"N years"`                | 7 years, 45 years           |
-
-Calendar-month boundaries use **day-of-month clamping**: a child born on the 31st turns N months old on the last day of a shorter month (e.g., Feb 28/29, Apr 30).
-
-### `formatStage` / `format_stage` / `FormatStage`
-
-Returns the developmental stage label (AAP/CDC consensus boundaries):
-
-| Stage    | Age range   |
-| -------- | ----------- |
-| Newborn  | 0–1 months  |
-| Infant   | 2–11 months |
-| Toddler  | 1–2 years   |
-| Child    | 3–12 years  |
-| Teenager | 13–17 years |
-| Adult    | 18+ years   |
-
-## Localization
-
-71 built-in locales with CLDR-compliant plural rules. See the [locale documentation](sayable-age/docs/locales.md) for details on each language.
-
-A core goal of this project is **localization**, not just internationalization. The library seeks to respect and align with the culture of each language — local customs about children may not always be reflected in sources such as CLDR. We actively welcome feedback and pull requests from native speakers of languages we support, or from native speakers who wish to add languages we do not currently support.
-
-| Language                | Code  | Language   | Code | Language        | Code  |
-| ----------------------- | ----- | ---------- | ---- | --------------- | ----- |
-| Albanian                | `sq`  | German     | `de` | Polish          | `pl`  |
-| Amharic                 | `am`  | Greek      | `el` | Portuguese      | `pt`  |
-| Arabic                  | `ar`  | Gujarati   | `gu` | Punjabi         | `pa`  |
-| Azerbaijani             | `az`  | Hebrew     | `he` | Romanian        | `ro`  |
-| Basque                  | `eu`  | Hindi      | `hi` | Russian         | `ru`  |
-| Bengali                 | `bn`  | Hungarian  | `hu` | Scottish Gaelic | `gd`  |
-| Bosnian                 | `bs`  | Indonesian | `id` | Serbian         | `sr`  |
-| Breton                  | `br`  | Irish      | `ga` | Sinhala         | `si`  |
-| Bulgarian               | `bg`  | Italian    | `it` | Slovak          | `sk`  |
-| Burmese                 | `my`  | Japanese   | `ja` | Slovenian       | `sl`  |
-| Catalan                 | `ca`  | Javanese   | `jv` | Spanish         | `es`  |
-| Central Atlas Tamazight | `tzm` | Kazakh     | `kk` | Swahili         | `sw`  |
-| Chinese                 | `zh`  | Khmer      | `km` | Swedish         | `sv`  |
-| Cornish                 | `kw`  | Korean     | `ko` | Tachelhit       | `shi` |
-| Croatian                | `hr`  | Latvian    | `lv` | Tamil           | `ta`  |
-| Czech                   | `cs`  | Lithuanian | `lt` | Telugu          | `te`  |
-| Danish                  | `da`  | Macedonian | `mk` | Thai            | `th`  |
-| Dutch                   | `nl`  | Malay      | `ms` | Turkish         | `tr`  |
-| English                 | `en`  | Maltese    | `mt` | Ukrainian       | `uk`  |
-| Estonian                | `et`  | Manx       | `gv` | Urdu            | `ur`  |
-| Filipino                | `fil` | Marathi    | `mr` | Uzbek           | `uz`  |
-| Finnish                 | `fi`  | Nepali     | `ne` | Vietnamese      | `vi`  |
-| French                  | `fr`  | Norwegian  | `nb` | Welsh           | `cy`  |
-| Georgian                | `ka`  | Persian    | `fa` |                 |       |
-
-### Compactness
-
-Each implementation supports three compactness levels:
-
-| Level   | Example output                 |
-| ------- | ------------------------------ |
-| Normal  | "3 months", "2 years, 1 month" |
-| Short   | "3 mo", "2 yr, 1 mo"           |
-| Compact | "3m", "2y1m"                   |
-
-Currently only the English locale defines distinct short/compact forms. Other locales return normal output for all three levels; you can add overrides via the locale's `short` and `compact` fields.
-
-### Custom locales
-
-Every implementation supports user-defined locale objects. See your language's README for the locale interface definition.
-
-## Design decisions
-
-- **Zero dependencies.** Pure date arithmetic — no runtime deps in any language.
-- **Deterministic.** Every test uses explicit `(dob, asOf)` pairs. No flaky tests from "today."
-- **Calendar-month clamping.** Born Jan 31 → turns 1 month on Feb 28 (or 29 in a leap year). This matches how hospitals and pediatricians count months.
-- **"Months" not "1 year" at 12 months.** Parents say "he's 14 months" until about 2 years. The library follows this convention.
-- **½ marker for 3–6 year olds.** Parents say "she's four and a half." The ½ character (U+00BD) kicks in at 6+ months and drops off at age 7.
-- **"Newborn" at 0 days.** Because nobody says "0 days old."
-- **Stage boundaries follow AAP/CDC.** Newborn (<2 mo), Infant (2–11 mo), Toddler (1–2 yr), Child (3–12 yr), Teenager (13–17 yr), Adult (18+).
-- **Localization via locale objects.** No framework, no dependency — just a plain data object with a pluralization callback. Supports any language's plural rules, number formatting, and word order. Culture-aware, not just translation-aware.
-
-## Testing
-
-All implementations share a [canonical set of test cases](sayable-age/config/tests.json) covering null handling, all six age tiers, month-boundary clamping (including February and leap years), born-on-31st progression, stage labels, compactness levels, and i18n locale support.
-
-The test specification in `sayable-age/config/tests.json` is the single source of truth. Each implementation translates these cases into its native test framework. When adding a new test case, add it to the specification first, then implement it in all languages.
-
-## Documentation
-
-- [Test cases](sayable-age/config/tests.json) — canonical test specification for all implementations
-- [Locale configuration](sayable-age/docs/locales.md) — CLDR plural rules, per-language details
-- [Code generator](sayable-age/codegen/README.md) — how locale files are generated from canonical JSON
-- [Code quality](sayable-age/docs/code-quality.md) — linting, type checking, and static analysis configuration
+- **Zero dependencies.** Pure standard-library code in every language. No runtime deps.
+- **Polyglot.** Every library is implemented identically across many languages, sharing canonical test cases and locale data.
+- **Localization-first.** Not just i18n — genuine localization. Culture-aware output, CLDR-compliant plural rules, and native speaker review for every locale.
+- **Deterministic.** All tests use explicit inputs — no flaky tests from system state.
 
 ## Development
 
@@ -235,7 +146,7 @@ Language shortcuts: `ad`, `cb`, `ts`, `py`, `rb`, `rs`, `kt`, `gy`, `lu`, `ml`, 
 
 ## Contributing
 
-All implementations share identical test cases. If you add a test, add it in all directories. See each language's README for build and test commands, or use `just test <lang>` from the project root.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. All implementations share identical test cases — changes to formatting logic must be applied to all languages.
 
 ## License
 

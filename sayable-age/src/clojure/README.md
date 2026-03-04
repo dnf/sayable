@@ -1,6 +1,6 @@
 # sayable-age — Clojure
 
-A thoughtful time formatting library that reflects how we think about little ones.
+Human-friendly age formatting — how parents actually talk about little ones.
 
 ```clojure
 (require '[sayableage.core :as pt]
