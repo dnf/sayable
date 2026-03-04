@@ -922,7 +922,13 @@ benchmark type="cpu" *target:
     source scripts/_lang-helpers.sh
     # Benchmark-eligible languages (all except elm — no native timing primitives)
     _BENCH_LANGS=$(echo "$_ALL_LANGS" | grep -vx elm)
-    if [ "{{type}}" = "report" ]; then
+    # If type looks like a flag, treat it as part of target with default type (cpu)
+    _type="{{type}}"
+    _extra_target=""
+    case "${_type}" in
+        -*) _extra_target="${_type}"; _type="cpu" ;;
+    esac
+    if [ "${_type}" = "report" ]; then
         set -- {{target}}
         _rtype="${1:-cpu}"; shift 2>/dev/null || true
         case "$_rtype" in
@@ -932,12 +938,14 @@ benchmark type="cpu" *target:
         esac
         exit 0
     fi
-    if [ "{{type}}" = "build" ]; then
-        _jflag="1"; _sflag=""; _target=""; _prev=""
-        for _a in {{target}}; do
+    if [ "${_type}" = "build" ]; then
+        _jflag="pcores"; _nflag="-20"; _sflag=""; _target=""; _prev=""
+        for _a in ${_extra_target} {{target}}; do
             if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
+            if [ "${_prev}" = "-n" ]; then _nflag="${_a}"; _prev=""; continue; fi
             if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
             if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
+            if [ "${_a}" = "-n" ]; then _prev="-n"; continue; fi
             if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
             _target="${_target:+$_target }$_a"
         done
@@ -945,20 +953,22 @@ benchmark type="cpu" *target:
             printf '%s\n' \
                 "Usage: just benchmark build [flags] [target]" \
                 "" \
-                "Measure clean build time for compiled languages (serial by default)." \
+                "Measure clean build time for compiled languages." \
                 ""
             _lang_grid "Compiled languages" "$_COMPILED_LANGS"
             printf '%s\n' \
                 "" \
                 "Flags:" \
-                "  -j N       Parallel jobs (default 1 — serial, since concurrent builds distort timings)" \
+                "  -j VALUE   Concurrency (default pcores = P-cores minus 1)" \
+                "  -n NICE    Nice priority (default -20, highest CPU priority; requires sudo)" \
                 "  -s MODE    Visualization: scroll (default), full, or zoom" \
                 "" \
                 "Examples:" \
-                "  just benchmark build          Run all build benchmarks (serial)" \
+                "  just benchmark build          Run all (P-cores minus 1 slots, nice -20)" \
                 "  just benchmark build zig      Run Zig build benchmark only" \
                 "  just benchmark build rs       Run Rust build benchmark (abbreviation)" \
-                "  just benchmark build -j 4     Run with 4 parallel slots"
+                "  just benchmark build -j 1     Run serial (one at a time)" \
+                "  just benchmark build -n 0     Run without elevated priority"
             exit 0
         fi
         if [ -z "$_target" ]; then
@@ -972,7 +982,7 @@ benchmark type="cpu" *target:
                     args+=("skip:$lang")
                 fi
             done <<< "$_COMPILED_LANGS"
-            scripts/runner/run-parallel.sh -j "$_jflag" ${_sflag:+-s "$_sflag"} benchmark "${args[@]}"
+            scripts/runner/run-parallel.sh -j "${_jflag}" -n "${_nflag}" ${_sflag:+-s "${_sflag}"} benchmark "${args[@]}"
         else
             name=$(_name "$_target")
             if ! echo "$_COMPILED_LANGS" | grep -qx "$name"; then
@@ -980,20 +990,28 @@ benchmark type="cpu" *target:
                 exit 1
             fi
             mkdir -p .logs/benchmark
-            python3 benchmarks/build/bench_build.py "$name" 2>&1 | tee ".logs/benchmark/build-$name.log"
+            if [ -n "${SUDO_USER:-}" ]; then chown "${SUDO_USER}" .logs/benchmark; fi
+            _nice_cmd=""
+            if [ "${_nflag}" != "0" ] && sudo -n true 2>/dev/null; then
+                _nice_cmd="sudo -n nice -n ${_nflag}"
+            fi
+            ${_nice_cmd} python3 benchmarks/build/bench_build.py "${name}" 2>&1 | tee ".logs/benchmark/build-${name}.log"
+            if [ -n "${SUDO_USER:-}" ]; then chown -R "${SUDO_USER}" .logs/benchmark benchmarks/build/results 2>/dev/null; fi
         fi
         exit 0
     fi
-    if [ "{{type}}" != "cpu" ]; then
-        echo "error: unknown benchmark type '{{type}}'" >&2
+    if [ "${_type}" != "cpu" ]; then
+        echo "error: unknown benchmark type '${_type}'" >&2
         echo "Valid types: build, cpu, report" >&2
         exit 1
     fi
-    _jflag=""; _sflag=""; _target=""; _prev=""
-    for _a in {{target}}; do
+    _jflag="pcores"; _nflag="-20"; _sflag=""; _target=""; _prev=""
+    for _a in ${_extra_target} {{target}}; do
         if [ "$_prev" = "-j" ]; then _jflag="$_a"; _prev=""; continue; fi
+        if [ "${_prev}" = "-n" ]; then _nflag="${_a}"; _prev=""; continue; fi
         if [ "$_prev" = "-s" ]; then _sflag="$_a"; _prev=""; continue; fi
         if [ "$_a" = "-j" ]; then _prev="-j"; continue; fi
+        if [ "${_a}" = "-n" ]; then _prev="-n"; continue; fi
         if [ "$_a" = "-s" ]; then _prev="-s"; continue; fi
         _target="${_target:+$_target }$_a"
     done
@@ -1001,7 +1019,7 @@ benchmark type="cpu" *target:
         printf '%s\n' \
             "Usage: just benchmark cpu [flags] [target]" \
             "" \
-            "Run CPU benchmarks for all languages in parallel, or a single language." \
+            "Run CPU benchmarks for all languages, or a single language." \
             ""
         _lang_grid "Languages" "$_BENCH_LANGS"
         printf '%s\n' \
@@ -1009,14 +1027,16 @@ benchmark type="cpu" *target:
             "  Elm is excluded (no native timing primitives)." \
             "" \
             "Flags:" \
-            "  -j N       Limit parallel jobs to N slots (0 or omitted = unlimited)" \
+            "  -j VALUE   Concurrency (default pcores = P-cores minus 1)" \
+            "  -n NICE    Nice priority (default -20, highest CPU priority; requires sudo)" \
             "  -s MODE    Visualization: scroll (default), full, or zoom" \
             "" \
             "Examples:" \
-            "  just benchmark cpu          Run all benchmarks in parallel" \
+            "  just benchmark cpu          Run all (P-cores minus 1 slots, nice -20)" \
             "  just benchmark cpu go       Run Go benchmark only" \
             "  just benchmark cpu rs       Run Rust benchmark (abbreviation)" \
-            "  just benchmark cpu -j 4     Run all with 4 job slots"
+            "  just benchmark cpu -j 4     Run all with 4 job slots" \
+            "  just benchmark cpu -n 0     Run without elevated priority"
         exit 0
     fi
     if [ -z "$_target" ]; then
@@ -1030,11 +1050,15 @@ benchmark type="cpu" *target:
                 args+=("skip:$lang")
             fi
         done <<< "$_BENCH_LANGS"
-        scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} benchmark "${args[@]}"
+        scripts/runner/run-parallel.sh -j "${_jflag}" -n "${_nflag}" ${_sflag:+-s "${_sflag}"} benchmark "${args[@]}"
     else
         name=$(_name "$_target")
         mkdir -p .logs/benchmark
+        if [ -n "${SUDO_USER:-}" ]; then chown "${SUDO_USER}" .logs/benchmark; fi
         (
+            if [ "${_nflag}" != "0" ] && sudo -n true 2>/dev/null; then
+                sudo -n renice -n "${_nflag}" -p "${BASHPID:-$$}" > /dev/null 2>&1 || true
+            fi
             case "$name" in
                 ada)
                     _ada_env
@@ -1135,4 +1159,5 @@ benchmark type="cpu" *target:
                     ;;
             esac
         ) 2>&1 | tee ".logs/benchmark/$name.log"
+        if [ -n "${SUDO_USER:-}" ]; then chown -R "${SUDO_USER}" .logs/benchmark 2>/dev/null; fi
     fi

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Runs just recipes in parallel with live progress display.
-# Usage: run-parallel.sh [-j N|P%|unlimited] [-s full|zoom] <name> "cmd" ...
+# Usage: run-parallel.sh [-j N|P%|pcores|unlimited] [-n NICE] [-s full|zoom] <name> "cmd" ...
 # -j VALUE limits concurrent jobs (default: 50% of CPUs).
+# -n NICE runs jobs under sudo nice -n NICE (e.g. -n -20).
 # -s MODE sets visualization: scroll (default), full, or zoom.
 # <name> is used for the log directory: .logs/<name>/
 # Each subsequent argument is passed to `just` as a complete command.
@@ -34,6 +35,7 @@ _s_idle="$_c_gray"
 _s_scroll="$_c_dim"
 
 max_jobs=50%
+_nice_val=""
 _viz_mode=scroll  # scroll (default), full, or zoom
 _tick_ds=2        # base: 0.2s per column (for scroll/zoom modes)
 _show_help() {
@@ -50,7 +52,8 @@ Arguments:
 
 Flags:
   -j VALUE          Set concurrency: integer, percentage (default 50%),
-                    or 'unlimited' (all at once, no swimlanes)
+                    'pcores' (P-cores minus 1), or 'unlimited' (all at once)
+  -n NICE           Run jobs under sudo nice -n NICE (e.g. -n -20)
   -s MODE           Visualization mode: scroll (default), full, or zoom
   -h, --help        Show this help and exit
 
@@ -87,15 +90,17 @@ while [ $# -gt 0 ]; do
         -h|--help) _show_help ;;
         -j) case "${2:-50%}" in
                 unlimited|0) max_jobs=0 ;;
+                pcores) max_jobs=pcores ;;
                 *%)
                     _pct="${2%\%}"
                     if ! [ "$_pct" -ge 1 ] 2>/dev/null || ! [ "$_pct" -le 200 ] 2>/dev/null; then
                         echo "error: -j percentage must be 1%-200% (got '$2')" >&2; exit 1
                     fi
                     max_jobs="$2" ;;
-                *[!0-9]*)    echo "error: -j accepts integer, percentage (1%-200%), or 'unlimited'" >&2; exit 1 ;;
+                *[!0-9]*)    echo "error: -j accepts integer, percentage (1%-200%), 'pcores', or 'unlimited'" >&2; exit 1 ;;
                 *)           max_jobs="$2" ;;
             esac; shift 2 ;;
+        -n) _nice_val="${2:--20}"; shift 2 ;;
         -s) case "${2:-}" in
                 full)    _viz_mode=full ;;
                 scroll)  _viz_mode=scroll ;;
@@ -106,11 +111,15 @@ while [ $# -gt 0 ]; do
     esac
 done
 
-if [ $# -lt 2 ]; then echo "Usage: $0 [-j N|P%|unlimited] [-s full|zoom] <name> 'cmd args'..." >&2; exit 1; fi
+if [ $# -lt 2 ]; then echo "Usage: $0 [-j N|P%|pcores|unlimited] [-n NICE] [-s full|zoom] <name> 'cmd args'..." >&2; exit 1; fi
 
 name="$1"; shift
 logdir=".logs/$name"
 mkdir -p "$logdir"
+# If running under sudo, fix ownership so non-sudo runs aren't blocked
+if [ -n "${SUDO_USER:-}" ]; then
+    chown -R "${SUDO_USER}" "$logdir"
+fi
 
 # Prevent concurrent runs of the same command
 lockdir="$logdir/.lock"
@@ -191,6 +200,11 @@ _clear_screen() { printf "\033[2J\033[H"; }
 _hide_cursor() { printf "\033[?25l"; }
 _show_cursor() { printf "\033[?25h"; }
 _cursor_up() { printf "\033[%dA" "$1"; }
+_cursor_home() { printf "\033[H"; }
+# Absolute-position line feed: move to the next row, column 1.
+# Immune to line-wrap drift from emoji/Unicode width mismatches.
+_row=0
+_seek_line() { ((_row++)); printf "\033[${_row};1H"; }
 
 _term_height() {
     local h=0
@@ -213,9 +227,33 @@ _cpu_count() {
     [ "${n:-0}" -gt 0 ] && echo "$n" && return
     echo 4
 }
+_pcpu_count() {
+    local n=0
+    # macOS Apple Silicon: performance core count
+    n=$(sysctl -n hw.perflevel0.logicalcpu 2>/dev/null) && [ "${n:-0}" -gt 0 ] && echo "${n}" && return
+    # Linux hybrid (big.LITTLE / Intel P+E): count CPUs at highest frequency tier
+    if [ -d /sys/devices/system/cpu/cpu0/cpufreq ]; then
+        local _maxf=0 _f _freq
+        for _f in /sys/devices/system/cpu/cpu*/cpufreq/cpuinfo_max_freq; do
+            [ -f "${_f}" ] && read -r _freq < "${_f}" && (( _freq > _maxf )) && _maxf=${_freq}
+        done
+        if [ "${_maxf}" -gt 0 ]; then
+            n=0
+            for _f in /sys/devices/system/cpu/cpu*/cpufreq/cpuinfo_max_freq; do
+                [ -f "${_f}" ] && read -r _freq < "${_f}" && [ "${_freq}" -eq "${_maxf}" ] && n=$((n+1))
+            done
+            [ "${n}" -gt 0 ] && echo "${n}" && return
+        fi
+    fi
+    # Fallback: total CPU count (no hybrid topology detected)
+    _cpu_count
+}
 
-# Resolve percentage -j values to integers
-if [[ "$max_jobs" == *% ]]; then
+# Resolve percentage/pcores -j values to integers
+if [ "${max_jobs}" = "pcores" ]; then
+    max_jobs=$(( $(_pcpu_count) - 1 ))
+    (( max_jobs < 1 )) && max_jobs=1
+elif [[ "${max_jobs}" == *% ]]; then
     _pct="${max_jobs%\%}"
     _cpus=$(_cpu_count)
     if [ "$_pct" -eq 100 ]; then
@@ -224,6 +262,37 @@ if [[ "$max_jobs" == *% ]]; then
         max_jobs=$(( (_cpus * _pct + 50) / 100 ))
     fi
     (( max_jobs < 1 )) && max_jobs=1
+fi
+
+# Set up nice command prefix
+_nice_cmd=""
+if [ -n "${_nice_val}" ]; then
+    if sudo -n true 2>/dev/null; then
+        _nice_cmd="sudo -n nice -n ${_nice_val}"
+    else
+        echo "warning: -n ${_nice_val} requires sudo; run 'sudo -v' first or use 'sudo just ...'" >&2
+    fi
+fi
+
+# Slot icon: 🔥 negative nice (high priority), 🧊 positive nice (low priority), ⚙ default
+# Emojis carry their own color — only ⚙ needs ANSI coloring (yellow active, grey idle)
+# _slot_icon_extra tracks the display-width difference (emoji=2 cells, ⚙=1 cell)
+_slot_icon="⚙"
+_slot_icon_extra=0
+_s_slot_active="${_s_run}"
+_s_slot_idle="${_s_idle}"
+if [ -n "${_nice_cmd}" ]; then
+    if [ "${_nice_val}" -lt 0 ] 2>/dev/null; then
+        _slot_icon="🔥"
+        _slot_icon_extra=1
+        _s_slot_active=""
+        _s_slot_idle=""
+    elif [ "${_nice_val}" -gt 0 ] 2>/dev/null; then
+        _slot_icon="🧊"
+        _slot_icon_extra=1
+        _s_slot_active=""
+        _s_slot_idle=""
+    fi
 fi
 
 # More slots than jobs → no scheduling benefit; use unlimited mode
@@ -301,8 +370,11 @@ _print_duration_axis() {
             _prev_end=$((_tick_col + ${#_t}))
         fi
     done
-    [ "$_is_tty" -eq 1 ] && printf "$_c_erase"
-    echo
+    if [ "$_is_tty" -eq 1 ]; then
+        printf "$_c_erase"; _seek_line
+    else
+        echo
+    fi
 }
 
 # Print a timeline axis for slot-based visualization.
@@ -346,7 +418,7 @@ _print_time_axis() {
     if [ "$_prev_end" -lt "$max_bar" ]; then
         printf "%*s" "$((max_bar - _prev_end))" ""
     fi
-    printf "$_c_erase\n"
+    printf "$_c_erase"; _seek_line
 }
 
 # --- Swim lane color palette (256-color, 20 distinct) ---
@@ -359,16 +431,16 @@ _npal=${#_palette[@]}
 #          _display_offset_ds, _max_ds, _lane_ci[], _slot_labels[],
 #          _palette[], prefix_w, label_w, term_w
 _render_lanes() {
-    printf "$_c_erase\n"
+    printf "$_c_erase"; _seek_line
 
     # Header rule line
     local _ri
     for (( _ri=0; _ri<term_w; _ri++ )); do printf "─"; done
-    printf "$_c_erase\n"
+    printf "$_c_erase"; _seek_line
 
     # Time axis
     _print_time_axis
-    printf "$_c_erase\n"
+    printf "$_c_erase"; _seek_line
 
     # Count unstarted jobs to decide whether idle slots show a gear
     local _queued=0
@@ -376,13 +448,13 @@ _render_lanes() {
         [ "${_job_started[$_qi]}" -eq 0 ] && _queued=$((_queued + 1))
     done
 
-    # Lane rows (gear icon + color block aligned with bar chart labels)
+    # Lane rows (slot icon + color block aligned with bar chart labels)
     local _s _lt _ds
     for (( _s=0; _s<max_jobs; _s++ )); do
         if [ -n "${_slot_labels[$_s]}" ] && [ "${_slot_ci[$_s]}" -ge 0 ]; then
-            printf "  ${_s_run}⚙$_c_reset ${_c_bg256}%dm  $_c_reset %-${label_w}s        " "${_palette[${_slot_ci[$_s]}]}" "${_slot_labels[$_s]}"
+            printf "  ${_s_slot_active}${_slot_icon}${_c_reset} ${_c_bg256}%dm  $_c_reset %-${label_w}s%*s" "${_palette[${_slot_ci[$_s]}]}" "${_slot_labels[$_s]}" "$((8 - _slot_icon_extra))" ""
         elif [ "$_queued" -gt 0 ]; then
-            printf "  ${_s_idle}⚙$_c_reset%*s" "$((prefix_w - 3))" ""
+            printf "  ${_s_slot_idle}${_slot_icon}${_c_reset}%*s" "$((prefix_w - 3 - _slot_icon_extra))" ""
         else
             printf "%*s" "$prefix_w" ""
         fi
@@ -403,7 +475,7 @@ _render_lanes() {
                 fi
             fi
         done
-        printf "$_c_erase\n"
+        printf "$_c_erase"; _seek_line
     done
 }
 
@@ -524,9 +596,9 @@ _update_terminal_size() {
 _print_scroll_top() {
     if [ "$_scroll_active" -eq 1 ]; then
         if [ "$_scroll_offset" -gt 0 ]; then
-            printf "  ${_s_scroll}▲ %d more$_c_reset$_c_erase\n" "$_scroll_offset"
+            printf "  ${_s_scroll}▲ %d more$_c_reset$_c_erase" "$_scroll_offset"; _seek_line
         else
-            printf "$_c_erase\n"
+            printf "$_c_erase"; _seek_line
         fi
     fi
 }
@@ -535,9 +607,9 @@ _print_scroll_bottom() {
     if [ "$_scroll_active" -eq 1 ]; then
         _below=$((total - _scroll_offset - _vis_count))
         if [ "$_below" -gt 0 ]; then
-            printf "  ${_s_scroll}▼ %d more$_c_reset$_c_erase\n" "$_below"
+            printf "  ${_s_scroll}▼ %d more$_c_reset$_c_erase" "$_below"; _seek_line
         else
-            printf "$_c_erase\n"
+            printf "$_c_erase"; _seek_line
         fi
     fi
 }
@@ -617,6 +689,10 @@ _cleanup() {
         [ "${all_skip[$i]}" -eq 0 ] && rm -f "$logdir/${all_labels[$i]}.result"
     done
     rmdir "$lockdir" 2>/dev/null
+    # If running under sudo, fix log ownership so non-sudo runs aren't blocked
+    if [ -n "${SUDO_USER:-}" ]; then
+        chown -R "${SUDO_USER}" "$logdir" 2>/dev/null
+    fi
 }
 trap _cleanup EXIT
 trap 'exit 130' INT
@@ -766,7 +842,7 @@ if [ "$max_jobs" -gt 0 ]; then
                 label="${all_labels[$_qi]}"
                 (
                     _rc=0; _st=$(_now_ds)
-                    just ${all_cmds[$_qi]} > "$logdir/$label.log" 2>&1 || _rc=$?
+                    ${_nice_cmd} just ${all_cmds[$_qi]} > "$logdir/$label.log" 2>&1 || _rc=$?
                     _et=$(_now_ds)
                     echo "$((_et - _st)) $_rc" > "$logdir/$label.result"
                 ) &
@@ -829,9 +905,9 @@ if [ "$max_jobs" -gt 0 ]; then
             esac
 
             # Render: bar chart + swim lanes (full redraw)
-            _cursor_up "$_display_height"
+            _row=1; _cursor_home
             _print_time_axis
-            printf "$_c_erase\n"
+            printf "$_c_erase"; _seek_line
 
             _print_scroll_top
 
@@ -850,14 +926,14 @@ if [ "$max_jobs" -gt 0 ]; then
 
                 label="${all_labels[$i]}"
                 if [ "${all_sep[$i]}" -eq 1 ]; then
-                    printf "$_c_erase\n"; continue
+                    printf "$_c_erase"; _seek_line; continue
                 fi
                 if [ "${all_disable[$i]}" -eq 1 ]; then
-                    printf "  ${_s_disable}⊘    %-${label_w}s      ⊘ disabled$_c_reset$_c_erase\n" "$label"
+                    printf "  ${_s_disable}⊘    %-${label_w}s      ⊘ disabled$_c_reset$_c_erase" "$label"; _seek_line
                     continue
                 fi
                 if [ "${all_skip[$i]}" -eq 1 ]; then
-                    printf "  $_s_skip-    %-${label_w}s      - not installed$_c_reset$_c_erase\n" "$label"
+                    printf "  $_s_skip-    %-${label_w}s      - not installed$_c_reset$_c_erase" "$label"; _seek_line
                     continue
                 fi
                 _ci=${_label_ci[$i]}
@@ -877,7 +953,7 @@ if [ "$max_jobs" -gt 0 ]; then
                     else
                         if [ "$_we_ds" -le "$_display_offset_ds" ]; then
                             printf "%*s" "$max_bar" ""
-                            printf "$_c_erase\n"
+                            printf "$_c_erase"; _seek_line
                             continue
                         fi
                         _col_s=$(((_ws_ds - _display_offset_ds) / _eff_tick_ds))
@@ -892,7 +968,7 @@ if [ "$max_jobs" -gt 0 ]; then
                     printf "${_c_fg256}%dm%s$_c_reset" "${_palette[$_ci]}" "${_blocks:0:$_blen}"
                     _rem=$((max_bar - _col_e))
                     (( _rem > 0 )) && printf "%*s" "$_rem" ""
-                    printf "$_c_erase\n"
+                    printf "$_c_erase"; _seek_line
                 elif [ "${_job_start_ds[$i]}" -gt 0 ]; then
                     # Running
                     _c="${_spin:_frame%${#_spin}:1}"
@@ -916,12 +992,12 @@ if [ "$max_jobs" -gt 0 ]; then
                     printf "${_c_fg256}%dm%s$_c_reset" "${_palette[$_ci]}" "${_blocks:0:$_blen}"
                     _rem=$((max_bar - _col_e))
                     (( _rem > 0 )) && printf "%*s" "$_rem" ""
-                    printf "$_c_erase\n"
+                    printf "$_c_erase"; _seek_line
                 else
                     # Queued (not yet launched)
                     printf "  ${_s_queued}◌${_c_reset} ${_c_bg256}%dm  ${_c_reset} ${_s_queued}%-${label_w}s${_c_reset}       " "${_palette[$_ci]}" "$label"
                     printf "%*s" "$max_bar" ""
-                    printf "$_c_erase\n"
+                    printf "$_c_erase"; _seek_line
                 fi
             done
 
@@ -960,7 +1036,7 @@ if [ "$max_jobs" -gt 0 ]; then
                 label="${all_labels[$_qi]}"
                 (
                     _rc=0; _st=$(_now_ds)
-                    just ${all_cmds[$_qi]} > "$logdir/$label.log" 2>&1 || _rc=$?
+                    ${_nice_cmd} just ${all_cmds[$_qi]} > "$logdir/$label.log" 2>&1 || _rc=$?
                     _et=$(_now_ds)
                     echo "$((_et - _st)) $_rc" > "$logdir/$label.result"
                 ) &
@@ -991,7 +1067,7 @@ else
         (
             _rc=0
             _st=$(_now_ds)
-            just ${all_cmds[$i]} > "$logdir/$label.log" 2>&1 || _rc=$?
+            ${_nice_cmd} just ${all_cmds[$i]} > "$logdir/$label.log" 2>&1 || _rc=$?
             _et=$(_now_ds)
             echo "$((_et - _st)) $_rc" > "$logdir/$label.result"
         ) &
@@ -1006,7 +1082,7 @@ else
             _drain_keys
             _update_terminal_size
 
-            _cursor_up "$_display_height"
+            _row=1; _cursor_home
 
             _frame_ds=$(_now_ds)
             # Find max duration for scaling (completed jobs or current elapsed)
@@ -1051,14 +1127,14 @@ else
                 label="${all_labels[$i]}"
 
                 if [ "${all_sep[$i]}" -eq 1 ]; then
-                    printf "$_c_erase\n"; continue
+                    printf "$_c_erase"; _seek_line; continue
                 fi
                 if [ "${all_disable[$i]}" -eq 1 ]; then
-                    printf "  ${_s_disable}⊘ %-${label_w}s      ⊘ disabled$_c_reset$_c_erase\n" "$label"
+                    printf "  ${_s_disable}⊘ %-${label_w}s      ⊘ disabled$_c_reset$_c_erase" "$label"; _seek_line
                     continue
                 fi
                 if [ "${all_skip[$i]}" -eq 1 ]; then
-                    printf "  $_s_skip- %-${label_w}s      - not installed$_c_reset$_c_erase\n" "$label"
+                    printf "  $_s_skip- %-${label_w}s      - not installed$_c_reset$_c_erase" "$label"; _seek_line
                     continue
                 fi
 
@@ -1068,9 +1144,9 @@ else
                     _bar_len=$(( _dur_ds * max_bar / _max_dur_ds ))
                     (( _bar_len < 1 )) && _bar_len=1
                     if [ "${done_rcs[$i]}" -eq 0 ]; then
-                        printf "  ${_s_pass}✓ %-${label_w}s %6s %s$_c_reset$_c_erase\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
+                        printf "  ${_s_pass}✓ %-${label_w}s %6s %s$_c_reset$_c_erase" "$label" "$_dur_str" "$(_bar "$_bar_len")"; _seek_line
                     else
-                        printf "  ${_s_fail}✗ %-${label_w}s %6s %s$_c_reset$_c_erase\n" "$label" "$_dur_str" "$(_bar "$_bar_len")"
+                        printf "  ${_s_fail}✗ %-${label_w}s %6s %s$_c_reset$_c_erase" "$label" "$_dur_str" "$(_bar "$_bar_len")"; _seek_line
                     fi
                 else
                     _elapsed_ds=$((_frame_ds - global_start_ds))
@@ -1078,7 +1154,7 @@ else
                     _bar_len=$(( _elapsed_ds * max_bar / _max_dur_ds ))
                     (( _bar_len < 1 )) && _bar_len=1
                     _c="${_spin:_frame%${#_spin}:1}"
-                    printf "  $_s_run%s %-${label_w}s %6s %s$_c_reset$_c_erase\n" "$_c" "$label" "$_dur_str" "$(_bar "$_bar_len")"
+                    printf "  $_s_run%s %-${label_w}s %6s %s$_c_reset$_c_erase" "$_c" "$label" "$_dur_str" "$(_bar "$_bar_len")"; _seek_line
                 fi
             done
 

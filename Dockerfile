@@ -34,10 +34,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rlwrap \
     && rm -rf /var/lib/apt/lists/*
 
-# .NET SDK 8.0 via Microsoft's apt repo (C# + F#)
-RUN curl -fsSL https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -o /tmp/ms.deb \
-    && dpkg -i /tmp/ms.deb && rm /tmp/ms.deb \
-    && apt-get update && apt-get install -y --no-install-recommends dotnet-sdk-8.0 \
+# .NET SDK 10.0 via Canonical's Ubuntu repo (C# + F#)
+RUN apt-get update && apt-get install -y --no-install-recommends dotnet-sdk-10.0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Swift 5.10 (URL pattern differs by architecture)
@@ -106,9 +104,8 @@ RUN ARCH="$(dpkg --print-architecture)" && \
 ENV PATH="/opt/dart-sdk/bin:${PATH}"
 
 # Gleam (requires Erlang/OTP, already installed above)
-RUN ARCH="$(dpkg --print-architecture)" && \
-    GLEAM_ARCH="$(uname -m)" && \
-    curl -fsSL "https://github.com/gleam-lang/gleam/releases/download/v1.6.1/gleam-v1.6.1-${GLEAM_ARCH}-unknown-linux-musl.tar.gz" \
+RUN GLEAM_ARCH="$(uname -m)" && \
+    curl -fsSL "https://github.com/gleam-lang/gleam/releases/download/v1.14.0/gleam-v1.14.0-${GLEAM_ARCH}-unknown-linux-musl.tar.gz" \
     | tar xz -C /usr/local/bin gleam
 
 # OCaml via opam

@@ -4,7 +4,7 @@ source "$(dirname "$0")/_common.sh"
 
 install_macos() { brew_install gleam; }
 install_linux() {
-    local version="1.6.1"
+    local version="1.14.0"
     local arch
     arch="$(uname -m)"
     case "$arch" in

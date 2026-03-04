@@ -44,16 +44,17 @@ Usage: run-parallel.sh [flags] <name> "cmd args" ...
 
 ### Flags
 
-| Flag       | Description                                                          |
-| ---------- | -------------------------------------------------------------------- |
-| `-j VALUE` | Set concurrency: integer, percentage (default `50%`), or `unlimited` |
-| `-s MODE`  | Visualization mode: `scroll` (default), `full`, or `zoom`            |
-| `-h`       | Show help and exit                                                   |
-| `--help`   | Show help and exit                                                   |
+| Flag       | Description                                                                    |
+| ---------- | ------------------------------------------------------------------------------ |
+| `-j VALUE` | Set concurrency: integer, percentage (default `50%`), `pcores`, or `unlimited` |
+| `-n NICE`  | Run jobs under `sudo nice -n NICE` (e.g. `-n -20` for highest CPU priority)    |
+| `-s MODE`  | Visualization mode: `scroll` (default), `full`, or `zoom`                      |
+| `-h`       | Show help and exit                                                             |
+| `--help`   | Show help and exit                                                             |
 
 ## Scheduling
 
-By default the runner uses slot-based scheduling with 50% of available CPUs. Use `-j unlimited` for the legacy behavior of launching all jobs at once. Percentages from `1%` to `200%` are supported (e.g. `-j 100%` = all CPUs, `-j 150%` = 1.5x CPUs).
+By default the runner uses slot-based scheduling with 50% of available CPUs. Use `-j unlimited` for the legacy behavior of launching all jobs at once. Percentages from `1%` to `200%` are supported (e.g. `-j 100%` = all CPUs, `-j 150%` = 1.5x CPUs). Use `-j pcores` for performance-core-aware scheduling (P-cores minus 1), ideal for benchmarks on hybrid CPU architectures (Apple Silicon, Intel P+E cores, ARM big.LITTLE).
 
 ### Queue sorting
 
@@ -118,8 +119,9 @@ Each job gets one row showing:
 ### Swim lanes (slot-based only)
 
 Below the bar chart, a horizontal timeline shows which job occupied each slot over time:
-- Each slot is one row with a gear icon (⚙) aligned with the bar chart status icons
-- Active slots show a bright yellow gear, idle slots show a grey gear
+- Each slot is one row with a slot icon aligned with the bar chart status icons
+- The slot icon reflects the nice priority: 🔥 (negative nice / high priority), 🧊 (positive nice / low priority), ⚙ (default)
+- Active slots show a bright yellow icon, idle slots show a grey icon
 - Colored blocks show which job was running in that slot at each point
 - A time axis with second labels appears above the lanes
 
@@ -194,10 +196,10 @@ The display label is the **last word** of each command argument:
 
 ### Flag forwarding
 
-The justfile recipes parse `-j` and `-s` from their own arguments and forward them:
+The justfile recipes parse `-j`, `-n`, and `-s` from their own arguments and forward them:
 
 ```bash
-scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} test "${args[@]}"
+scripts/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_nflag:+-n "$_nflag"} ${_sflag:+-s "$_sflag"} test "${args[@]}"
 ```
 
 ## Requirements

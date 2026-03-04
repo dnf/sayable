@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
-# Installer for .NET SDK 8.0 (C#)
+# Installer for .NET SDK (C#) — shares .NET SDK with F#
 source "$(dirname "$0")/_common.sh"
 
 install_macos() { brew_install dotnet; }
 install_linux() {
-    if ! has dotnet; then
-        curl -fsSL https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -o /tmp/ms.deb
-        $SUDO dpkg -i /tmp/ms.deb && rm /tmp/ms.deb
+    if ! dotnet --list-sdks 2>/dev/null | grep -q '^10\.'; then
         $SUDO apt-get update
-        apt_install dotnet-sdk-8.0
+        apt_install dotnet-sdk-10.0
     fi
 }
 
 uninstall_macos() { brew uninstall dotnet 2>/dev/null || true; }
-uninstall_linux() { $SUDO apt-get remove -y dotnet-sdk-8.0 2>/dev/null || true; }
+uninstall_linux() { $SUDO apt-get remove -y dotnet-sdk-10.0 2>/dev/null || true; }
 
 deps() { :; }
 
