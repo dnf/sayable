@@ -30,29 +30,46 @@
   "inFuture": "{0} кейін",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} с",
+      "minute": "{n} мин",
+      "hour": "{n} сағ",
+      "day": "{n} күн",
+      "week": "{n} ап.",
+      "month": "{n} ай",
+      "year": "{n} ж."
     },
     "ago": "{0} бұрын",
-    "inFuture": "{0} кейін"
+    "inFuture": "{0} кейін",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} с",
+      "minute": "{n} мин",
+      "hour": "{n} сағ",
+      "day": "{n} к.",
+      "week": "{n} ап.",
+      "month": "{n} ай",
+      "year": "{n} ж."
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} бұрын",
-    "inFuture": "{0} кейін"
+    "inFuture": "{0} кейін",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

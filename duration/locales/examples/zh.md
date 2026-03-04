@@ -24,8 +24,8 @@
 | 2 weeks, 3 days       | 2周3天   | 2周3天   | 2周3天    |
 | 1 month               | 1个月    | 1个月    | 1个月     |
 | 6 months              | 6个月    | 6个月    | 6个月     |
-| 1 year                | 1岁     | 1岁     | 1岁      |
-| 2 years, 3 months     | 2岁3个月  | 2岁3个月  | 2岁3个月   |
+| 1 year                | 1岁     | 1年     | 1年      |
+| 2 years, 3 months     | 2岁3个月  | 2年3个月  | 2年3个月   |
 
 ## Relative time
 

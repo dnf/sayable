@@ -30,29 +30,46 @@
   "inFuture": "{0} دیگر",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} ثانیه",
+      "minute": "{n} دقیقه",
+      "hour": "{n} ساعت",
+      "day": "{n} روز",
+      "week": "{n} هفته",
+      "month": "{n} ماه",
+      "year": "{n} سال"
     },
     "ago": "{0} پیش",
-    "inFuture": "{0} دیگر"
+    "inFuture": "{0} دیگر",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
       "second": "{n}s",
       "minute": "{n}m",
       "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "day": "{n} روز",
+      "week": "{n} هفته",
+      "month": "{n} ماه",
+      "year": "{n} سال"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} پیش",
-    "inFuture": "{0} دیگر"
+    "inFuture": "{0} دیگر",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

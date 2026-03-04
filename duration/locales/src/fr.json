@@ -34,31 +34,75 @@
   "justNow": "à l'instant",
   "ago": "il y a {0}",
   "inFuture": "dans {0}",
+  "clock": {
+    "hours": [
+      "douze",
+      "une",
+      "deux",
+      "trois",
+      "quatre",
+      "cinq",
+      "six",
+      "sept",
+      "huit",
+      "neuf",
+      "dix",
+      "onze"
+    ],
+    "midnight": "minuit",
+    "noon": "midi",
+    "patterns": {
+      "0": "{h} heures",
+      "5": "{h} heures cinq",
+      "10": "{h} heures dix",
+      "15": "{h} heures et quart",
+      "20": "{h} heures vingt",
+      "25": "{h} heures vingt-cinq",
+      "30": "{h} heures et demie",
+      "35": "{next_h} heures moins vingt-cinq",
+      "40": "{next_h} heures moins vingt",
+      "45": "{next_h} heures moins le quart",
+      "50": "{next_h} heures moins dix",
+      "55": "{next_h} heures moins cinq"
+    }
+  },
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min",
+      "hour": "{n} h",
+      "day": "{n} j",
+      "week": "{n} sem.",
+      "month": "{n} m.",
+      "year": {
+        "one": "{n} an",
+        "other": "{n} ans"
+      }
     },
     "ago": "il y a {0}",
-    "inFuture": "dans {0}"
+    "inFuture": "dans {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
       "second": "{n}s",
-      "minute": "{n}m",
+      "minute": "{n}min",
       "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "day": "{n}j",
+      "week": "{n}sem.",
+      "month": "{n}m.",
+      "year": "{n}a"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "il y a {0}",
-    "inFuture": "dans {0}"
+    "inFuture": "dans {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

@@ -30,29 +30,52 @@
   "inFuture": "{0} తర్వాత",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": {
+        "one": "{n} సె.",
+        "other": "{n} సెక."
+      },
+      "minute": "{n} నిమి.",
+      "hour": "{n} గం.",
+      "day": {
+        "one": "{n} రోజు",
+        "other": "{n} రోజులు"
+      },
+      "week": "{n} వా.",
+      "month": "{n} నె.",
+      "year": "{n} సం."
     },
     "ago": "{0} క్రితం",
-    "inFuture": "{0} తర్వాత"
+    "inFuture": "{0} తర్వాత",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n}సె",
+      "minute": "{n}ని",
+      "hour": "{n}గం",
+      "day": "{n}రో",
+      "week": "{n}వా",
+      "month": "{n}నె",
+      "year": "{n}సం"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} క్రితం",
-    "inFuture": "{0} తర్వాత"
+    "inFuture": "{0} తర్వాత",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

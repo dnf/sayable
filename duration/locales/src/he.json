@@ -46,29 +46,62 @@
   "inFuture": "בעוד {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} שנ׳",
+      "minute": "{n} דק׳",
+      "hour": {
+        "one": "{n} שעה",
+        "two": "שעתיים",
+        "other": "{n} שע׳"
+      },
+      "day": {
+        "one": "{n} יום",
+        "two": "יומיים",
+        "other": "{n} ימ׳"
+      },
+      "week": {
+        "one": "{n} שבוע",
+        "two": "שבועיים",
+        "other": "{n} שבועות"
+      },
+      "month": "{n} ח׳",
+      "year": {
+        "one": "{n} שנה",
+        "two": "{n} שנים",
+        "other": "{n} שנים"
+      }
     },
     "ago": "לפני {0}",
-    "inFuture": "בעוד {0}"
+    "inFuture": "בעוד {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} שנ׳",
+      "minute": "{n} דק׳",
+      "hour": "{n} שע׳",
+      "day": "{n} י׳",
+      "week": "{n} ש′",
+      "month": "{n} ח׳",
+      "year": "{n} ש′"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "לפני {0}",
-    "inFuture": "בעוד {0}"
+    "inFuture": "בעוד {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

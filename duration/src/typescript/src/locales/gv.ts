@@ -60,6 +60,7 @@ export const gv: DurationLocale = {
       month:  '{n}mo',
       year:   '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} er dy henney',
     inFuture: 'ayns {0}',

@@ -15,6 +15,8 @@
 
 ## Relative dates
 
+Relative to Saturday, March 15, 2025.
+
 | Offset               | Normal       | Compact |
 | -------------------- | ------------ | ------- |
 | Today                | 오늘           | 오늘      |

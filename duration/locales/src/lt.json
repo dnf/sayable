@@ -46,29 +46,37 @@
   "inFuture": "po {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} sek.",
+      "minute": "{n} min.",
+      "hour": "{n} val.",
+      "day": "{n} d.",
+      "week": "{n} sav.",
+      "month": "{n} mėn.",
+      "year": "{n} m."
     },
     "ago": "prieš {0}",
-    "inFuture": "po {0}"
+    "inFuture": "po {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min.",
+      "hour": "{n} h",
+      "day": "{n} d.",
+      "week": "{n} sav.",
+      "month": "{n} mėn.",
+      "year": "{n} m."
     },
     "delimiter": "",
     "ago": "prieš {0}",
-    "inFuture": "po {0}"
+    "inFuture": "po {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

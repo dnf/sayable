@@ -61,6 +61,7 @@ export const kw: DurationLocale = {
       month:  '{n}mo',
       year:   '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} a-dhia',
     inFuture: 'a-ji {0}',

@@ -62,7 +62,15 @@
       "year": "{n}y"
     },
     "ago": "{0} er dy henney",
-    "inFuture": "ayns {0}"
+    "inFuture": "ayns {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
@@ -75,7 +83,16 @@
       "year": "{n}y"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} er dy henney",
-    "inFuture": "ayns {0}"
+    "inFuture": "ayns {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

@@ -60,6 +60,7 @@ TZM = DurationLocale(
             "month": "{n}mo",
             "year": "{n}y",
         },
+        half="{n}½",
         delimiter="",
         ago="ɣ {0} zzrin",
         in_future="ɣ {0}",

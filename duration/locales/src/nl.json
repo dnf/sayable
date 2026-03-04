@@ -37,31 +37,77 @@
   "justNow": "zojuist",
   "ago": "{0} geleden",
   "inFuture": "over {0}",
+  "clock": {
+    "hours": [
+      "twaalf",
+      "een",
+      "twee",
+      "drie",
+      "vier",
+      "vijf",
+      "zes",
+      "zeven",
+      "acht",
+      "negen",
+      "tien",
+      "elf"
+    ],
+    "midnight": "middernacht",
+    "noon": "twaalf uur 's middags",
+    "patterns": {
+      "0": "{h} uur",
+      "5": "vijf over {h}",
+      "10": "tien over {h}",
+      "15": "kwart over {h}",
+      "20": "tien voor half {next_h}",
+      "25": "vijf voor half {next_h}",
+      "30": "half {next_h}",
+      "35": "vijf over half {next_h}",
+      "40": "tien over half {next_h}",
+      "45": "kwart voor {next_h}",
+      "50": "tien voor {next_h}",
+      "55": "vijf voor {next_h}"
+    }
+  },
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} sec",
+      "minute": "{n} min",
+      "hour": "{n} uur",
+      "day": {
+        "one": "{n} dag",
+        "other": "{n} dagen"
+      },
+      "week": {
+        "one": "{n} wk",
+        "other": "{n} wkn"
+      },
+      "month": "{n} mnd",
+      "year": "{n} jr"
     },
     "ago": "{0} geleden",
-    "inFuture": "over {0}"
+    "inFuture": "over {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} m",
+      "hour": "{n} u",
+      "day": "{n} d",
+      "week": "{n} w",
+      "month": "{n} m",
+      "year": "{n} jr"
     },
     "delimiter": "",
     "ago": "{0} geleden",
-    "inFuture": "over {0}"
+    "inFuture": "over {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

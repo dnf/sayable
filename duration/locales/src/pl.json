@@ -53,29 +53,63 @@
   "inFuture": "za {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} sek.",
+      "minute": "{n} min",
+      "hour": "{n} godz.",
+      "day": {
+        "one": "{n} dzień",
+        "few": "{n} dni",
+        "many": "{n} dni",
+        "other": "{n} dnia"
+      },
+      "week": {
+        "one": "{n} tydz.",
+        "few": "{n} tyg.",
+        "many": "{n} tyg.",
+        "other": "{n} tyg."
+      },
+      "month": "{n} mies.",
+      "year": {
+        "one": "{n} rok",
+        "few": "{n} lata",
+        "many": "{n} lat",
+        "other": "{n} roku"
+      }
     },
     "ago": "{0} temu",
-    "inFuture": "za {0}"
+    "inFuture": "za {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min",
+      "hour": "{n} h",
+      "day": "{n} d.",
+      "week": "{n} t.",
+      "month": {
+        "one": "{n} m-c",
+        "few": "{n} m-ce",
+        "many": "{n} m-cy",
+        "other": "{n} m-ca"
+      },
+      "year": {
+        "one": "{n} r.",
+        "few": "{n} l.",
+        "many": "{n} l.",
+        "other": "{n} r."
+      }
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} temu",
-    "inFuture": "za {0}"
+    "inFuture": "za {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

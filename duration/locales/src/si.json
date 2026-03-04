@@ -30,29 +30,46 @@
   "inFuture": "{0}කින්",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "තත් {n}",
+      "minute": "මිනි {n}",
+      "hour": "පැය {n}",
+      "day": "දින {n}",
+      "week": "සති {n}",
+      "month": "මාස {n}",
+      "year": "වසර {n}"
     },
     "ago": "{0}ට පෙර",
-    "inFuture": "{0}කින්"
+    "inFuture": "{0}කින්",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "ත {n}",
+      "minute": "මි {n}",
+      "hour": "පැය {n}",
+      "day": "දි {n}",
+      "week": "ස {n}",
+      "month": "මා {n}",
+      "year": "ව {n}"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0}ට පෙර",
-    "inFuture": "{0}කින්"
+    "inFuture": "{0}කින්",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

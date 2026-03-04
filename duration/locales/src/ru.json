@@ -53,29 +53,48 @@
   "inFuture": "через {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} с",
+      "minute": "{n} мин",
+      "hour": "{n} ч",
+      "day": "{n} дн.",
+      "week": "{n} нед.",
+      "month": "{n} мес.",
+      "year": {
+        "one": "{n} г.",
+        "few": "{n} г.",
+        "many": "{n} л.",
+        "other": "{n} г."
+      }
     },
     "ago": "{0} назад",
-    "inFuture": "через {0}"
+    "inFuture": "через {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} с",
+      "minute": "{n} мин",
+      "hour": "{n} ч",
+      "day": "{n} д.",
+      "week": "{n} н.",
+      "month": "{n} м.",
+      "year": {
+        "one": "{n} г.",
+        "few": "{n} г.",
+        "many": "{n} л.",
+        "other": "{n} г."
+      }
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} назад",
-    "inFuture": "через {0}"
+    "inFuture": "через {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

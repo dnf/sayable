@@ -39,29 +39,58 @@
   "inFuture": "በ{0} ውስጥ",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} ሰከ",
+      "minute": {
+        "one": "{n} ደቂ",
+        "other": "{n} ደቂቃ"
+      },
+      "hour": "{n} ሰዓ",
+      "day": "{n} ቀናት",
+      "week": {
+        "one": "{n} ሳምንት",
+        "other": "{n} ሳምንታት"
+      },
+      "month": "{n} ወራት",
+      "year": {
+        "one": "{n} ዓመት",
+        "other": "{n} ዓመታት"
+      }
     },
     "ago": "ከ{0} በፊት",
-    "inFuture": "በ{0} ውስጥ"
+    "inFuture": "በ{0} ውስጥ",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} ሰ",
+      "minute": "{n} ደ",
+      "hour": "{n} ሰ",
+      "day": "{n} ቀ",
+      "week": "{n} ሳምንት",
+      "month": "{n} ወር",
+      "year": {
+        "one": "{n} ዓመት",
+        "other": "{n} ዓ"
+      }
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "ከ{0} በፊት",
-    "inFuture": "በ{0} ውስጥ"
+    "inFuture": "በ{0} ውስጥ",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

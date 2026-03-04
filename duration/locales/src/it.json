@@ -37,31 +37,90 @@
   "justNow": "proprio ora",
   "ago": "{0} fa",
   "inFuture": "tra {0}",
+  "clock": {
+    "hours": [
+      "dodici",
+      "una",
+      "due",
+      "tre",
+      "quattro",
+      "cinque",
+      "sei",
+      "sette",
+      "otto",
+      "nove",
+      "dieci",
+      "undici"
+    ],
+    "midnight": "mezzanotte",
+    "noon": "mezzogiorno",
+    "patterns": {
+      "0": "{h}",
+      "5": "{h} e cinque",
+      "10": "{h} e dieci",
+      "15": "{h} e un quarto",
+      "20": "{h} e venti",
+      "25": "{h} e venticinque",
+      "30": "{h} e mezza",
+      "35": "{next_h} meno venticinque",
+      "40": "{next_h} meno venti",
+      "45": "{next_h} meno un quarto",
+      "50": "{next_h} meno dieci",
+      "55": "{next_h} meno cinque"
+    }
+  },
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min",
+      "hour": "{n} h",
+      "day": {
+        "one": "{n} giorno",
+        "other": "{n} giorni"
+      },
+      "week": "{n} sett.",
+      "month": {
+        "one": "{n} mese",
+        "other": "{n} mesi"
+      },
+      "year": {
+        "one": "{n} anno",
+        "other": "{n} anni"
+      }
     },
     "ago": "{0} fa",
-    "inFuture": "tra {0}"
+    "inFuture": "tra {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
       "second": "{n}s",
-      "minute": "{n}m",
+      "minute": "{n}min",
       "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "day": {
+        "one": "{n}g",
+        "other": "{n}gg"
+      },
+      "week": "{n}sett.",
+      "month": {
+        "one": "{n} mese",
+        "other": "{n} mesi"
+      },
+      "year": {
+        "one": "{n}anno",
+        "other": "{n}anni"
+      }
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} fa",
-    "inFuture": "tra {0}"
+    "inFuture": "tra {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

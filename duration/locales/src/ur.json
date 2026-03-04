@@ -30,29 +30,64 @@
   "inFuture": "{0} میں",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} سیکنڈ",
+      "minute": "{n} منٹ",
+      "hour": {
+        "one": "{n} گھنٹہ",
+        "other": "{n} گھنٹے"
+      },
+      "day": "{n} دن",
+      "week": {
+        "one": "{n} ہفتہ",
+        "other": "{n} ہفتے"
+      },
+      "month": {
+        "one": "{n} مہینہ",
+        "other": "{n} مہینے"
+      },
+      "year": "{n} سال"
     },
     "ago": "{0} پہلے",
-    "inFuture": "{0} میں"
+    "inFuture": "{0} میں",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} سیکنڈ",
+      "minute": "{n} منٹ",
+      "hour": {
+        "one": "{n} گھنٹہ",
+        "other": "{n} گھنٹے"
+      },
+      "day": "{n} دن",
+      "week": {
+        "one": "{n} ہفتہ",
+        "other": "{n} ہفتے"
+      },
+      "month": {
+        "one": "{n} مہینہ",
+        "other": "{n} مہینے"
+      },
+      "year": "{n} سال"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} پہلے",
-    "inFuture": "{0} میں"
+    "inFuture": "{0} میں",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

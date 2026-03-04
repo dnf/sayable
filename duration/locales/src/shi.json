@@ -55,7 +55,15 @@
       "year": "{n}y"
     },
     "ago": "ɣ {0} zzrin",
-    "inFuture": "ɣ {0}"
+    "inFuture": "ɣ {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
@@ -68,7 +76,16 @@
       "year": "{n}y"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "ɣ {0} zzrin",
-    "inFuture": "ɣ {0}"
+    "inFuture": "ɣ {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

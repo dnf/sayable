@@ -50,29 +50,42 @@
   "inFuture": "za {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} sek.",
+      "minute": "{n} min.",
+      "hour": "{n} h",
+      "day": {
+        "one": "{n} dan",
+        "few": "{n} dana",
+        "other": "{n} dana"
+      },
+      "week": "{n} sedm.",
+      "month": "{n} mj.",
+      "year": "{n} god."
     },
     "ago": "prije {0}",
-    "inFuture": "za {0}"
+    "inFuture": "za {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} m",
+      "hour": "{n} h",
+      "day": "{n} d.",
+      "week": "{n} sedm.",
+      "month": "{n} mj.",
+      "year": "{n} god."
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "prije {0}",
-    "inFuture": "za {0}"
+    "inFuture": "za {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

@@ -24,8 +24,8 @@
 | 2 weeks, 3 days       | 2주 3일  | 2주 3일  | 2주3일    |
 | 1 month               | 1개월    | 1개월    | 1개월     |
 | 6 months              | 6개월    | 6개월    | 6개월     |
-| 1 year                | 1살     | 1살     | 1살      |
-| 2 years, 3 months     | 2살 3개월 | 2살 3개월 | 2살3개월   |
+| 1 year                | 1살     | 1년     | 1년      |
+| 2 years, 3 months     | 2살 3개월 | 2년 3개월 | 2년3개월   |
 
 ## Relative time
 

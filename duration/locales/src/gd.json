@@ -53,29 +53,71 @@
   "inFuture": "an ceann {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": {
+        "one": "{n} diog",
+        "two": "{n} dhiog",
+        "few": "{n} diog",
+        "other": "{n} diog"
+      },
+      "minute": {
+        "one": "{n} mhion",
+        "two": "{n} mhion",
+        "few": "{n} mion",
+        "other": "{n} mion"
+      },
+      "hour": "{n} uair",
+      "day": "{n} là",
+      "week": {
+        "one": "{n} shn",
+        "two": "{n} shn",
+        "few": "{n} sn",
+        "other": "{n} sn"
+      },
+      "month": {
+        "one": "{n} mhìos",
+        "two": "{n} mhìos",
+        "few": "{n} mìos",
+        "other": "{n} mìos"
+      },
+      "year": {
+        "one": "{n} bhlia",
+        "two": "{n} bhlia",
+        "few": "{n} blia",
+        "other": "{n} blia"
+      }
     },
     "ago": "o chionn {0}",
-    "inFuture": "an ceann {0}"
+    "inFuture": "an ceann {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
+      "second": "{n}d",
       "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "hour": "{n}u",
+      "day": "{n}là",
+      "week": "{n}s",
+      "month": "{n}m",
+      "year": "{n}bl"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "o chionn {0}",
-    "inFuture": "an ceann {0}"
+    "inFuture": "an ceann {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

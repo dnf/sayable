@@ -16,7 +16,7 @@ import os
 
 REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO_PARENT = os.path.dirname(REPO_ROOT)
-AGE_LOCALES = os.path.join(REPO_PARENT, "sayable-age", "locales", "src")
+AGE_LOCALES = os.path.join(REPO_PARENT, "age", "locales", "src")
 TIME_LOCALES = os.path.join(REPO_ROOT, "locales", "src")
 
 # Time unit translations for all 71 locales
@@ -648,8 +648,19 @@ _CLOCK: dict[str, dict] = {
     },
 }
 
-# Short units for all locales
-_SHORT_UNITS: dict[str, dict] = {}
+# CLDR-sourced abbreviations (short = CLDR short width, narrow = CLDR narrow width)
+from _cldr_duration_units import CLDR_NARROW, CLDR_SHORT, ENGLISH_SHELLS
+
+# English abbreviations for locales not covered by CLDR
+_ENGLISH_ABBREVS = {
+    "second": "{n}s",
+    "minute": "{n}m",
+    "hour": "{n}h",
+    "day": "{n}d",
+    "week": "{n}w",
+    "month": "{n}mo",
+    "year": "{n}y",
+}
 
 # Compact clock settings for locales that use 24h
 _24H_LOCALES = {
@@ -660,25 +671,21 @@ _24H_LOCALES = {
 }
 
 
-def _build_short_units(code: str, time_units: dict) -> dict:
-    """Build abbreviated short units."""
-    # For languages that use logographic scripts, keep full form
-    logographic = {"ja", "ko", "zh", "th", "km", "my"}
-    if code in logographic:
-        return {
-            "second": time_units["second"],
-            "minute": time_units["minute"],
-            "hour": time_units["hour"],
-        }
-    return {
-        "second": "{n}s",
-        "minute": "{n}m",
-        "hour": "{n}h",
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}mo",
-        "year": "{n}y",
-    }
+def _half_is_compact(half: str) -> bool:
+    """True if the half marker is already compact (≤2 non-placeholder chars)."""
+    stripped = half.replace("{0}", "").replace("{n}", "").strip()
+    return len(stripped) <= 2
+
+
+def _ensure_other(unit_forms: object) -> object:
+    """Ensure dict-form units have an 'other' fallback (copy from 'many' or last)."""
+    if isinstance(unit_forms, str):
+        return unit_forms
+    if "other" in unit_forms:
+        return unit_forms
+    result = dict(unit_forms)
+    result["other"] = unit_forms.get("many", unit_forms.get("few", list(unit_forms.values())[-1]))
+    return result
 
 
 def bootstrap() -> None:
@@ -711,9 +718,9 @@ def bootstrap() -> None:
             "name": age_data["name"],
             "pluralRule": age_data["pluralRule"],
             "units": {
-                "second": time_units["second"],
-                "minute": time_units["minute"],
-                "hour": time_units["hour"],
+                "second": _ensure_other(time_units["second"]),
+                "minute": _ensure_other(time_units["minute"]),
+                "hour": _ensure_other(time_units["hour"]),
                 "day": age_data["units"]["day"],
                 "week": age_data["units"]["week"],
                 "month": age_data["units"]["month"],
@@ -731,14 +738,12 @@ def bootstrap() -> None:
         if clock:
             locale["clock"] = clock
 
-        # Short override
+        # Short override — CLDR "short" width, or English fallback
         short: dict = {}
-        short_units = _build_short_units(code, time_units)
-        # Merge with age short units if they exist
-        if "short" in age_data and "units" in age_data["short"]:
-            for k, v in age_data["short"]["units"].items():
-                short_units[k] = v
-        short["units"] = short_units
+        if code in CLDR_SHORT:
+            short["units"] = CLDR_SHORT[code]
+        else:
+            short["units"] = _ENGLISH_ABBREVS.copy()
         short["ago"] = relative["ago"]
         short["inFuture"] = relative["inFuture"]
         use24h = code in _24H_LOCALES
@@ -750,10 +755,16 @@ def bootstrap() -> None:
             short["clock"]["format"] = "{h}:{mm}"
         locale["short"] = short
 
-        # Compact override
+        # Compact override — CLDR "narrow" width, or English fallback
         compact: dict = {}
-        compact["units"] = short_units.copy()
+        if code in CLDR_NARROW:
+            compact["units"] = CLDR_NARROW[code]
+        else:
+            compact["units"] = _ENGLISH_ABBREVS.copy()
         compact["delimiter"] = ""
+        # Override half marker to {n}½ for verbose locales
+        if not _half_is_compact(age_data["half"]):
+            compact["half"] = "{n}½"
         compact["ago"] = relative["ago"]
         compact["inFuture"] = relative["inFuture"]
         compact["clock"] = {"use24h": use24h}

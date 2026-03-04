@@ -39,16 +39,20 @@
   "inFuture": "om {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min",
+      "hour": "{n} tim",
+      "day": "{n} d",
+      "week": "{n} v",
+      "month": "{n} mån",
+      "year": "{n} år"
     },
     "ago": "{0} sedan",
-    "inFuture": "om {0}"
+    "inFuture": "om {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
@@ -56,12 +60,16 @@
       "minute": "{n}m",
       "hour": "{n}h",
       "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "week": "{n}v",
+      "month": "{n}m",
+      "year": "{n}å"
     },
     "delimiter": "",
     "ago": "{0} sedan",
-    "inFuture": "om {0}"
+    "inFuture": "om {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

@@ -18,29 +18,38 @@
   "inFuture": "dalam {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} dtk",
+      "minute": "{n} mnt",
+      "hour": "{n} j",
+      "day": "{n} hr",
+      "week": "{n} mgg",
+      "month": "{n} bln",
+      "year": "{n} thn"
     },
     "ago": "{0} yang lalu",
-    "inFuture": "dalam {0}"
+    "inFuture": "dalam {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} dtk",
+      "minute": "{n} mnt",
+      "hour": "{n} j",
+      "day": "{n} hr",
+      "week": "{n} mgg",
+      "month": "{n} bln",
+      "year": "{n} thn"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} yang lalu",
-    "inFuture": "dalam {0}"
+    "inFuture": "dalam {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

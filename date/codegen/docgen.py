@@ -99,6 +99,8 @@ def generate_locale_doc(locale_json: dict) -> str:
     # format_relative
     lines.append("## Relative dates")
     lines.append("")
+    lines.append("Relative to Saturday, March 15, 2025.")
+    lines.append("")
     rows = []
     for label, date, as_of in _RELATIVE_EXAMPLES:
         normal = sd_normal.format_relative(date, as_of=as_of) or ""

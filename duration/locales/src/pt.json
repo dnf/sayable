@@ -37,31 +37,90 @@
   "justNow": "agora mesmo",
   "ago": "há {0}",
   "inFuture": "em {0}",
+  "clock": {
+    "hours": [
+      "doze",
+      "uma",
+      "duas",
+      "três",
+      "quatro",
+      "cinco",
+      "seis",
+      "sete",
+      "oito",
+      "nove",
+      "dez",
+      "onze"
+    ],
+    "midnight": "meia-noite",
+    "noon": "meio-dia",
+    "patterns": {
+      "0": "{h} horas",
+      "5": "{h} e cinco",
+      "10": "{h} e dez",
+      "15": "{h} e um quarto",
+      "20": "{h} e vinte",
+      "25": "{h} e vinte e cinco",
+      "30": "{h} e meia",
+      "35": "{next_h} menos vinte e cinco",
+      "40": "{next_h} menos vinte",
+      "45": "{next_h} menos um quarto",
+      "50": "{next_h} menos dez",
+      "55": "{next_h} menos cinco"
+    }
+  },
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min",
+      "hour": "{n} h",
+      "day": {
+        "one": "{n} dia",
+        "other": "{n} dias"
+      },
+      "week": "{n} sem.",
+      "month": {
+        "one": "{n} mês",
+        "other": "{n} meses"
+      },
+      "year": {
+        "one": "{n} ano",
+        "other": "{n} anos"
+      }
     },
     "ago": "há {0}",
-    "inFuture": "em {0}"
+    "inFuture": "em {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min",
+      "hour": "{n} h",
+      "day": {
+        "one": "{n} dia",
+        "other": "{n} dias"
+      },
+      "week": "{n} sem.",
+      "month": {
+        "one": "{n} mês",
+        "other": "{n} meses"
+      },
+      "year": {
+        "one": "{n} ano",
+        "other": "{n} anos"
+      }
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "há {0}",
-    "inFuture": "em {0}"
+    "inFuture": "em {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

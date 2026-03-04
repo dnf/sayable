@@ -56,6 +56,7 @@ export const tzm: DurationLocale = {
       month:  '{n}mo',
       year:   '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
     ago: 'ɣ {0} zzrin',
     inFuture: 'ɣ {0}',

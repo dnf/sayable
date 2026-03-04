@@ -66,6 +66,7 @@ GV = DurationLocale(
             "month": "{n}mo",
             "year": "{n}y",
         },
+        half="{n}½",
         delimiter="",
         ago="{0} er dy henney",
         in_future="ayns {0}",

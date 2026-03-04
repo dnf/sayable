@@ -37,31 +37,72 @@
   "justNow": "ahora mismo",
   "ago": "hace {0}",
   "inFuture": "en {0}",
+  "clock": {
+    "hours": [
+      "doce",
+      "una",
+      "dos",
+      "tres",
+      "cuatro",
+      "cinco",
+      "seis",
+      "siete",
+      "ocho",
+      "nueve",
+      "diez",
+      "once"
+    ],
+    "midnight": "medianoche",
+    "noon": "mediodía",
+    "patterns": {
+      "0": "{h} en punto",
+      "5": "{h} y cinco",
+      "10": "{h} y diez",
+      "15": "{h} y cuarto",
+      "20": "{h} y veinte",
+      "25": "{h} y veinticinco",
+      "30": "{h} y media",
+      "35": "{next_h} menos veinticinco",
+      "40": "{next_h} menos veinte",
+      "45": "{next_h} menos cuarto",
+      "50": "{next_h} menos diez",
+      "55": "{next_h} menos cinco"
+    }
+  },
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min",
+      "hour": "{n} h",
+      "day": "{n} d",
+      "week": "{n} sem.",
+      "month": "{n} m.",
+      "year": "{n} a"
     },
     "ago": "hace {0}",
-    "inFuture": "en {0}"
+    "inFuture": "en {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
       "second": "{n}s",
-      "minute": "{n}m",
+      "minute": "{n}min",
       "hour": "{n}h",
       "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "week": "{n}sem",
+      "month": "{n}m",
+      "year": "{n}a"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "hace {0}",
-    "inFuture": "en {0}"
+    "inFuture": "en {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

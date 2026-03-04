@@ -39,29 +39,38 @@
   "inFuture": "{0} kuluttua",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} s",
+      "minute": "{n} min",
+      "hour": "{n} t",
+      "day": "{n} pv",
+      "week": "{n} vk",
+      "month": "{n} kk",
+      "year": "{n} v"
     },
     "ago": "{0} sitten",
-    "inFuture": "{0} kuluttua"
+    "inFuture": "{0} kuluttua",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
       "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "minute": "{n}min",
+      "hour": "{n}t",
+      "day": "{n}pv",
+      "week": "{n}vk",
+      "month": "{n}kk",
+      "year": "{n}v"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} sitten",
-    "inFuture": "{0} kuluttua"
+    "inFuture": "{0} kuluttua",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

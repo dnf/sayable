@@ -69,6 +69,7 @@ KW = DurationLocale(
             "month": "{n}mo",
             "year": "{n}y",
         },
+        half="{n}½",
         delimiter="",
         ago="{0} a-dhia",
         in_future="a-ji {0}",

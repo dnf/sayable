@@ -33,8 +33,12 @@ KM = DurationLocale(
     short=CompactnessOverride(
         units={
             "second": "{n} វិនាទី",
-            "minute": "{n} នាទី",
+            "minute": "{n} នាទី",
             "hour": "{n} ម៉ោង",
+            "day": "{n} ថ្ងៃ",
+            "week": "{n} សប្ដាហ៍",
+            "month": "{n} ខែ",
+            "year": "{n} ឆ្នាំ",
         },
         ago="{0}មុន",
         in_future="ក្នុង{0}",
@@ -42,9 +46,14 @@ KM = DurationLocale(
     compact=CompactnessOverride(
         units={
             "second": "{n} វិនាទី",
-            "minute": "{n} នាទី",
+            "minute": "{n} នាទី",
             "hour": "{n} ម៉ោង",
+            "day": "{n} ថ្ងៃ",
+            "week": "{n} សប្ដាហ៍",
+            "month": "{n} ខែ",
+            "year": "{n} ឆ្នាំ",
         },
+        half="{n}½",
         delimiter="",
         ago="{0}មុន",
         in_future="ក្នុង{0}",

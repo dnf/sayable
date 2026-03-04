@@ -18,21 +18,38 @@
   "inFuture": "ใน{0}",
   "short": {
     "units": {
-      "second": "{n} วินาที",
+      "second": "{n} วิ",
       "minute": "{n} นาที",
-      "hour": "{n} ชั่วโมง"
+      "hour": "{n} ชม.",
+      "day": "{n} วัน",
+      "week": "{n} สัปดาห์",
+      "month": "{n} เดือน",
+      "year": "{n} ปี"
     },
     "ago": "{0}ที่แล้ว",
-    "inFuture": "ใน{0}"
+    "inFuture": "ใน{0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n} วินาที",
-      "minute": "{n} นาที",
-      "hour": "{n} ชั่วโมง"
+      "second": "{n}วิ",
+      "minute": "{n}นาที",
+      "hour": "{n}ชม.",
+      "day": "{n}วัน",
+      "week": "{n}สัปดาห์",
+      "month": "{n}เดือน",
+      "year": "{n}ปี"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0}ที่แล้ว",
-    "inFuture": "ใน{0}"
+    "inFuture": "ใน{0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

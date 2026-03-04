@@ -30,29 +30,57 @@
   "inFuture": "{0} கழித்து",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} விநாடி",
+      "minute": "{n} நிமி.",
+      "hour": "{n} ம.",
+      "day": {
+        "one": "{n} நாள்",
+        "other": "{n} நாட்கள்"
+      },
+      "week": {
+        "one": "{n} வாரம்",
+        "other": "{n} வார."
+      },
+      "month": {
+        "one": "{n} மாதம்",
+        "other": "{n} மாத."
+      },
+      "year": {
+        "one": "{n} ஆண்டு",
+        "other": "{n} ஆண்டு."
+      }
     },
     "ago": "{0} முன்",
-    "inFuture": "{0} கழித்து"
+    "inFuture": "{0} கழித்து",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} வி.",
+      "minute": "{n} நிமி.",
+      "hour": "{n} ம.நே.",
+      "day": "{n} நா",
+      "week": "{n} வா",
+      "month": "{n} மா",
+      "year": "{n} ஆ"
     },
     "delimiter": "",
     "ago": "{0} முன்",
-    "inFuture": "{0} கழித்து"
+    "inFuture": "{0} கழித்து",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
   }
 }

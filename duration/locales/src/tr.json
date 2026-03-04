@@ -30,29 +30,41 @@
   "inFuture": "{0} sonra",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} sn.",
+      "minute": "{n} dk.",
+      "hour": "{n} sa.",
+      "day": "{n} gün",
+      "week": "{n} hf.",
+      "month": "{n} ay",
+      "year": "{n} yıl"
     },
     "ago": "{0} önce",
-    "inFuture": "{0} sonra"
+    "inFuture": "{0} sonra",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
+      "second": "{n}sn",
+      "minute": "{n}d",
+      "hour": {
+        "one": "{n} sa",
+        "other": "{n}s"
+      },
+      "day": "{n}g",
+      "week": "{n}h",
+      "month": "{n}a",
       "year": "{n}y"
     },
     "delimiter": "",
+    "half": "{n}½",
     "ago": "{0} önce",
-    "inFuture": "{0} sonra"
+    "inFuture": "{0} sonra",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }

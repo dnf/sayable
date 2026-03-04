@@ -39,29 +39,37 @@
   "inFuture": "om {0}",
   "short": {
     "units": {
-      "second": "{n}s",
-      "minute": "{n}m",
-      "hour": "{n}h",
-      "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "second": "{n} sek",
+      "minute": "{n} min",
+      "hour": "{n} t",
+      "day": "{n} d",
+      "week": "{n} u",
+      "month": "{n} md.",
+      "year": "{n} år"
     },
     "ago": "{0} siden",
-    "inFuture": "om {0}"
+    "inFuture": "om {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   },
   "compact": {
     "units": {
       "second": "{n}s",
       "minute": "{n}m",
-      "hour": "{n}h",
+      "hour": "{n}t",
       "day": "{n}d",
-      "week": "{n}w",
-      "month": "{n}mo",
-      "year": "{n}y"
+      "week": "{n}u",
+      "month": "{n} m",
+      "year": "{n}å"
     },
     "delimiter": "",
     "ago": "{0} siden",
-    "inFuture": "om {0}"
+    "inFuture": "om {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
   }
 }
