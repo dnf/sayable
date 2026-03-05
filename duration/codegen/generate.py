@@ -172,8 +172,24 @@ def generate_ruby(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_csharp(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.csharp.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_kotlin(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.kotlin.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_php(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.php.emitter import emit_all, output_path
 
     path = output_path(ROOT)
     content = emit_all(locales)
@@ -195,8 +211,10 @@ def generate_rust(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 _GENERATORS = {
     "cpp": generate_cpp,
+    "csharp": generate_csharp,
     "go": generate_go,
     "kotlin": generate_kotlin,
+    "php": generate_php,
     "python": generate_python,
     "ruby": generate_ruby,
     "rust": generate_rust,

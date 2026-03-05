@@ -1,3 +1,7 @@
+# C#
+csharp/*/bin/
+csharp/*/obj/
+
 # C++
 cpp/.cache/
 cpp/build/
@@ -5,6 +9,13 @@ cpp/build/
 # Kotlin
 kotlin/.gradle/
 kotlin/build/
+
+# PHP
+php/.php-cs-fixer.cache
+php/.phpstan.cache/
+php/.phpunit.cache/
+php/composer.lock
+php/vendor/
 
 # Rust
 rust/target/
