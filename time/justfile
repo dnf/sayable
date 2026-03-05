@@ -12,13 +12,16 @@ _name target:
     #!/usr/bin/env bash
     case "{{target}}" in
         c++|cpp)       echo "cpp" ;;
+        clj|clojure)   echo "clojure" ;;
         cs|csharp)     echo "csharp" ;;
         go)            echo "go" ;;
+        java)          echo "java" ;;
         kt|kotlin)     echo "kotlin" ;;
         php)           echo "php" ;;
         py|python)     echo "python" ;;
         rb|ruby)       echo "ruby" ;;
         rs|rust)       echo "rust" ;;
+        sc|scala)      echo "scala" ;;
         ts|typescript) echo "typescript" ;;
         *)             echo "{{target}}" ;;
     esac
@@ -44,13 +47,16 @@ test *target:
             "" \
             "Languages:" \
             "  c++ (cpp)        C++ tests via cmake/ctest" \
+            "  clojure (clj)    Clojure tests via Cognitect runner" \
             "  csharp (cs)      C# tests via dotnet test" \
             "  go               Go tests via go test" \
+            "  java             Java tests via Gradle" \
             "  kotlin (kt)      Kotlin tests via Gradle" \
             "  php              PHP tests via PHPUnit" \
             "  python (py)      Python tests via pytest" \
             "  ruby (rb)        Ruby tests via ruby" \
             "  rust (rs)        Rust tests via cargo" \
+            "  scala (sc)       Scala tests via Gradle" \
             "  typescript (ts)  TypeScript tests via vitest" \
             "" \
             "Flags:" \
@@ -67,13 +73,16 @@ test *target:
         {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} test \
             "check" \
             "test cpp" \
+            "test clojure" \
             "test csharp" \
             "test go" \
+            "test java" \
             "test kotlin" \
             "test php" \
             "test python" \
             "test ruby" \
             "test rust" \
+            "test scala" \
             "test typescript"
     else
         _name="$(just _name "${_target}")"
@@ -83,11 +92,17 @@ test *target:
                 c++|cpp)
                     cd impl/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release 2>&1 && cmake --build build 2>&1 && cd build && ctest --output-on-failure
                     ;;
+                clojure|clj)
+                    cd impl/clojure && clojure -X:test
+                    ;;
                 csharp|cs)
                     cd impl/csharp && dotnet test
                     ;;
                 go)
                     cd impl/go && go test ./...
+                    ;;
+                java)
+                    cd impl/java && ./gradlew test
                     ;;
                 kotlin|kt)
                     cd impl/kotlin && ./gradlew test
@@ -103,6 +118,9 @@ test *target:
                     ;;
                 rust|rs)
                     cd impl/rust && cargo test
+                    ;;
+                scala|sc)
+                    cd impl/scala && ./gradlew test
                     ;;
                 typescript|ts)
                     cd impl/typescript && npx vitest run
@@ -136,13 +154,16 @@ build *target:
             "" \
             "Languages:" \
             "  c++ (cpp)        Build via cmake" \
+            "  clojure (clj)    No-op (interpreted)" \
             "  csharp (cs)      Build via dotnet build" \
             "  go               Build via go build" \
+            "  java             Build via Gradle" \
             "  kotlin (kt)      Build via Gradle" \
             "  php              No-op (interpreted)" \
             "  python (py)      No-op (pure Python)" \
             "  ruby (rb)        No-op (interpreted)" \
             "  rust (rs)        Build via cargo" \
+            "  scala (sc)       Build via Gradle" \
             "  typescript (ts)  Build via tsup" \
             "" \
             "Flags:" \
@@ -157,13 +178,16 @@ build *target:
     if [ -z "${_target}" ]; then
         {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} build \
             "build cpp" \
+            "build clojure" \
             "build csharp" \
             "build go" \
+            "build java" \
             "build kotlin" \
             "build php" \
             "build python" \
             "build ruby" \
             "build rust" \
+            "build scala" \
             "build typescript"
     else
         _name="$(just _name "${_target}")"
@@ -173,11 +197,17 @@ build *target:
                 c++|cpp)
                     cd impl/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release 2>&1 && cmake --build build 2>&1
                     ;;
+                clojure|clj)
+                    echo "No build step needed — interpreted language."
+                    ;;
                 csharp|cs)
                     cd impl/csharp && dotnet build
                     ;;
                 go)
                     cd impl/go && go build ./...
+                    ;;
+                java)
+                    cd impl/java && ./gradlew build
                     ;;
                 kotlin|kt)
                     cd impl/kotlin && ./gradlew build
@@ -193,6 +223,9 @@ build *target:
                     ;;
                 rust|rs)
                     cd impl/rust && cargo build
+                    ;;
+                scala|sc)
+                    cd impl/scala && ./gradlew build
                     ;;
                 typescript|ts)
                     cd impl/typescript && npm run build
@@ -226,13 +259,16 @@ lint *target:
             "" \
             "Languages:" \
             "  c++ (cpp)        Compiler warnings (cmake build)" \
+            "  clojure (clj)    No-op" \
             "  csharp (cs)      dotnet build (warnings=errors)" \
             "  go               golangci-lint" \
+            "  java             Gradle build (compiler warnings)" \
             "  kotlin (kt)      Gradle build (compiler warnings)" \
             "  php              PHPStan" \
             "  python (py)      Ruff + Pyright" \
             "  ruby (rb)        No-op" \
             "  rust (rs)        cargo clippy" \
+            "  scala (sc)       Gradle build (compiler warnings)" \
             "  typescript (ts)  tsc + ESLint" \
             "" \
             "Flags:" \
@@ -247,13 +283,16 @@ lint *target:
     if [ -z "${_target}" ]; then
         {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} lint \
             "lint cpp" \
+            "lint clojure" \
             "lint csharp" \
             "lint go" \
+            "lint java" \
             "lint kotlin" \
             "lint php" \
             "lint python" \
             "lint ruby" \
             "lint rust" \
+            "lint scala" \
             "lint typescript"
     else
         _name="$(just _name "${_target}")"
@@ -263,11 +302,17 @@ lint *target:
                 c++|cpp)
                     cd impl/cpp && cmake -B build -DCMAKE_BUILD_TYPE=Release 2>&1 && cmake --build build 2>&1
                     ;;
+                clojure|clj)
+                    echo "No linter configured for Clojure."
+                    ;;
                 csharp|cs)
                     cd impl/csharp && dotnet build
                     ;;
                 go)
                     cd impl/go && golangci-lint run
+                    ;;
+                java)
+                    cd impl/java && ./gradlew build
                     ;;
                 kotlin|kt)
                     cd impl/kotlin && ./gradlew build
@@ -283,6 +328,9 @@ lint *target:
                     ;;
                 rust|rs)
                     cd impl/rust && cargo clippy -- -D warnings
+                    ;;
+                scala|sc)
+                    cd impl/scala && ./gradlew build
                     ;;
                 typescript|ts)
                     cd impl/typescript && npm run lint
@@ -356,13 +404,16 @@ clean *target:
             "" \
             "Languages:" \
             "  c++ (cpp)        Remove build/" \
+            "  clojure (clj)    Remove .cpcache" \
             "  csharp (cs)      Remove bin/ and obj/" \
             "  go               No artifacts to clean" \
+            "  java             Gradle clean" \
             "  kotlin (kt)      Gradle clean" \
             "  php              Remove vendor, caches" \
             "  python (py)      Remove .venv, dist, egg-info, caches" \
             "  ruby (rb)        No artifacts to clean" \
             "  rust (rs)        cargo clean" \
+            "  scala (sc)       Gradle clean" \
             "  typescript (ts)  Remove node_modules, dist, tsbuildinfo" \
             "" \
             "Flags:" \
@@ -377,24 +428,33 @@ clean *target:
     if [ -z "${_target}" ]; then
         {{_runner}} ${_jflag:+-j "${_jflag}"} ${_sflag:+-s "${_sflag}"} clean \
             "clean cpp" \
+            "clean clojure" \
             "clean csharp" \
             "clean go" \
+            "clean java" \
             "clean kotlin" \
             "clean php" \
             "clean python" \
             "clean ruby" \
             "clean rust" \
+            "clean scala" \
             "clean typescript"
     else
         case "${_target}" in
             c++|cpp)
                 rm -rf impl/cpp/build
                 ;;
+            clojure|clj)
+                rm -rf impl/clojure/.cpcache
+                ;;
             csharp|cs)
                 rm -rf impl/csharp/*/bin impl/csharp/*/obj
                 ;;
             go)
                 echo "No artifacts to clean for Go."
+                ;;
+            java)
+                cd impl/java && ./gradlew clean
                 ;;
             kotlin|kt)
                 cd impl/kotlin && ./gradlew clean
@@ -411,6 +471,9 @@ clean *target:
                 ;;
             rust|rs)
                 cd impl/rust && cargo clean
+                ;;
+            scala|sc)
+                cd impl/scala && ./gradlew clean
                 ;;
             typescript|ts)
                 rm -rf impl/typescript/node_modules impl/typescript/dist impl/typescript/.tsbuildinfo

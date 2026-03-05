@@ -6,6 +6,13 @@ csharp/*/obj/
 cpp/.cache/
 cpp/build/
 
+# Clojure
+clojure/.cpcache/
+
+# Java
+java/.gradle/
+java/build/
+
 # Kotlin
 kotlin/.gradle/
 kotlin/build/
@@ -19,3 +26,7 @@ php/vendor/
 
 # Rust
 rust/target/
+
+# Scala
+scala/.gradle/
+scala/build/

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate locale source files for C++, Go, Kotlin, Python, Ruby, Rust, and TypeScript from canonical JSON.
+"""Generate locale source files for C++, Go, Kotlin, Python, Ruby, Rust, Scala, and TypeScript from canonical JSON.
 
 Usage:
     python -m codegen.generate                      # generate all
@@ -84,7 +84,14 @@ def _clean_rust(selected: set[str], all_codes: set[str], check: bool, diffs: lis
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_clojure(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.clojure.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
+    "clojure": _clean_clojure,
     "go": _clean_go,
     "python": _clean_python,
     "ruby": _clean_ruby,
@@ -209,15 +216,47 @@ def generate_rust(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_scala(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.scala.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_clojure(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.clojure.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_java(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.java.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 _GENERATORS = {
+    "clojure": generate_clojure,
     "cpp": generate_cpp,
     "csharp": generate_csharp,
     "go": generate_go,
+    "java": generate_java,
     "kotlin": generate_kotlin,
     "php": generate_php,
     "python": generate_python,
     "ruby": generate_ruby,
     "rust": generate_rust,
+    "scala": generate_scala,
     "typescript": generate_typescript,
 }
 
