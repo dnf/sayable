@@ -8,11 +8,75 @@
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-/// All 71 locale definitions for sayable-time.
+/// All 110 locale definitions for sayable-time.
 module SayableTimeLib.Locales
 
 open SayableTimeLib.Types
 
+
+// Source: time/locales/src/af.json
+// ================================================================
+// AF — Afrikaans
+// ================================================================
+let AF: TimeLocale =
+    {
+        Code = "af"
+        Clock =
+            {
+                Hours = [| "twaalf"; "een"; "twee"; "drie"; "vier"; "vyf"; "ses"; "sewe"; "agt"; "nege"; "tien"; "elf" |]
+                Midnight = "middernag"
+                Noon = "middag"
+                Patterns = Map.ofList [ (0, "{h}-uur"); (5, "vyf oor {h}"); (10, "tien oor {h}"); (15, "kwart oor {h}"); (20, "twintig oor {h}"); (25, "vyf voor half {next_h}"); (30, "half {next_h}"); (35, "vyf oor half {next_h}"); (40, "twintig voor {next_h}"); (45, "kwart voor {next_h}"); (50, "tien voor {next_h}"); (55, "vyf voor {next_h}") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/ak.json
+// ================================================================
+// AK — Akan
+// ================================================================
+let AK: TimeLocale =
+    {
+        Code = "ak"
+        Clock =
+            {
+                Hours = [| "dumien"; "baako"; "mmienu"; "mmiensa"; "anan"; "anum"; "nsia"; "nson"; "nwɔtwe"; "nkron"; "edu"; "dubaako" |]
+                Midnight = "anadwo"
+                Noon = "awia"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
 
 // Source: time/locales/src/am.json
 // ================================================================
@@ -91,6 +155,38 @@ let AZ: TimeLocale =
                 Midnight = "gecə yarısı"
                 Noon = "günorta"
                 Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "beş keçir {h}"); (10, "on keçir {h}"); (15, "on beş keçir {h}"); (20, "iyirmi keçir {h}"); (25, "iyirmi beş keçir {h}"); (30, "otuz keçir {h}"); (35, "iyirmi beş qalmış {next_h}"); (40, "iyirmi qalmış {next_h}"); (45, "on beş qalmış {next_h}"); (50, "on qalmış {next_h}"); (55, "beş qalmış {next_h}") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/be.json
+// ================================================================
+// BE — Belarusian
+// ================================================================
+let BE: TimeLocale =
+    {
+        Code = "be"
+        Clock =
+            {
+                Hours = [| "дванаццаць"; "адзін"; "два"; "тры"; "чатыры"; "пяць"; "шэсць"; "сем"; "восем"; "дзевяць"; "дзесяць"; "адзінаццаць" |]
+                Midnight = "поўнач"
+                Noon = "поўдзень"
+                Patterns = Map.ofList [ (0, "{h} гадзін"); (5, "пяць хвілін пасля {h}"); (10, "дзесяць хвілін пасля {h}"); (15, "чвэрць пасля {h}"); (20, "дваццаць хвілін пасля {h}"); (25, "дваццаць пяць хвілін пасля {h}"); (30, "палова да {next_h}"); (35, "без дваццаці пяці {next_h}"); (40, "без дваццаці {next_h}"); (45, "без чвэрці {next_h}"); (50, "без дзесяці {next_h}"); (55, "без пяці {next_h}") ]
             }
         ShortOverride =
             Some
@@ -267,6 +363,38 @@ let CA: TimeLocale =
                             { Use24h = true
                               AmPm = None
                               Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/ceb.json
+// ================================================================
+// CEB — Cebuano
+// ================================================================
+let CEB: TimeLocale =
+    {
+        Code = "ceb"
+        Clock =
+            {
+                Hours = [| "dose"; "uno"; "dos"; "tres"; "kwatro"; "singko"; "sais"; "siyete"; "otso"; "nuwebe"; "diyes"; "onse" |]
+                Midnight = "tungang gabii"
+                Noon = "udtong tutok"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
                 }
     }
 
@@ -590,6 +718,38 @@ let FA: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/ff.json
+// ================================================================
+// FF — Fulah
+// ================================================================
+let FF: TimeLocale =
+    {
+        Code = "ff"
+        Clock =
+            {
+                Hours = [| "sappo e ɗiɗi"; "go'o"; "ɗiɗi"; "tati"; "nay"; "joy"; "jeegom"; "jeeɗiɗi"; "jeetati"; "jeenay"; "sappo"; "sappo e go'o" |]
+                Midnight = "jamma hejjere"
+                Noon = "zuhr"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 // Source: time/locales/src/fi.json
 // ================================================================
 // FI — Finnish
@@ -750,6 +910,70 @@ let GD: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/gl.json
+// ================================================================
+// GL — Galician
+// ================================================================
+let GL: TimeLocale =
+    {
+        Code = "gl"
+        Clock =
+            {
+                Hours = [| "doce"; "unha"; "dúas"; "tres"; "catro"; "cinco"; "seis"; "sete"; "oito"; "nove"; "dez"; "once" |]
+                Midnight = "medianoite"
+                Noon = "mediodía"
+                Patterns = Map.ofList [ (0, "{h} en punto"); (5, "{h} e cinco"); (10, "{h} e dez"); (15, "{h} e cuarto"); (20, "{h} e vinte"); (25, "{h} e vinte e cinco"); (30, "{h} e media"); (35, "{next_h} menos vinte e cinco"); (40, "{next_h} menos vinte"); (45, "{next_h} menos cuarto"); (50, "{next_h} menos dez"); (55, "{next_h} menos cinco") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/gn.json
+// ================================================================
+// GN — Guarani
+// ================================================================
+let GN: TimeLocale =
+    {
+        Code = "gn"
+        Clock =
+            {
+                Hours = [| "pa mokõi"; "peteĩ"; "mokõi"; "mbohapy"; "irundy"; "po"; "poteĩ"; "pokõi"; "poapy"; "porundy"; "pa"; "pa peteĩ" |]
+                Midnight = "pyhareve"
+                Noon = "asaje"
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} ha po"); (10, "{h} ha pa"); (15, "{h} ha pa po"); (20, "{h} ha mokõi pa"); (25, "{h} ha mokõi pa po"); (30, "{h} ha mbohapy pa"); (35, "{next_h} mba'e mokõi pa po"); (40, "{next_h} mba'e mokõi pa"); (45, "{next_h} mba'e pa po"); (50, "{next_h} mba'e pa"); (55, "{next_h} mba'e po") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 // Source: time/locales/src/gu.json
 // ================================================================
 // GU — Gujarati
@@ -811,6 +1035,38 @@ let GV: TimeLocale =
                             { Use24h = true
                               AmPm = None
                               Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/ha.json
+// ================================================================
+// HA — Hausa
+// ================================================================
+let HA: TimeLocale =
+    {
+        Code = "ha"
+        Clock =
+            {
+                Hours = [| "sha biyu"; "ɗaya"; "biyu"; "uku"; "huɗu"; "biyar"; "shida"; "bakwai"; "takwas"; "tara"; "goma"; "goma sha ɗaya" |]
+                Midnight = "tsakar dare"
+                Noon = "tsakar rana"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
                 }
     }
 
@@ -910,6 +1166,38 @@ let HR: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/ht.json
+// ================================================================
+// HT — Haitian Creole
+// ================================================================
+let HT: TimeLocale =
+    {
+        Code = "ht"
+        Clock =
+            {
+                Hours = [| "douz"; "en"; "de"; "twa"; "kat"; "senk"; "sis"; "sèt"; "uit"; "nèf"; "dis"; "onz" |]
+                Midnight = "minui"
+                Noon = "midi"
+                Patterns = Map.ofList [ (0, "{h} è"); (5, "{h} è senk"); (10, "{h} è dis"); (15, "{h} è ka"); (20, "{h} è ven"); (25, "{h} è vennsenk"); (30, "{h} è demi"); (35, "{next_h} mwen vennsenk"); (40, "{next_h} mwen ven"); (45, "{next_h} mwen ka"); (50, "{next_h} mwen dis"); (55, "{next_h} mwen senk") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 // Source: time/locales/src/hu.json
 // ================================================================
 // HU — Hungarian
@@ -942,6 +1230,38 @@ let HU: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/hy.json
+// ================================================================
+// HY — Armenian
+// ================================================================
+let HY: TimeLocale =
+    {
+        Code = "hy"
+        Clock =
+            {
+                Hours = [| "տասներկու"; "մեկ"; "երկու"; "երեք"; "չորս"; "հինգ"; "վեց"; "յոթ"; "ութ"; "ինը"; "տաս"; "տասնմեկ" |]
+                Midnight = "կեսգիշեր"
+                Noon = "կեսօր"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
 // Source: time/locales/src/id.json
 // ================================================================
 // ID — Indonesian
@@ -955,6 +1275,70 @@ let ID: TimeLocale =
                 Midnight = "tengah malam"
                 Noon = "tengah hari"
                 Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "lima lewat {h}"); (10, "sepuluh lewat {h}"); (15, "seperempat lewat {h}"); (20, "dua puluh lewat {h}"); (25, "dua puluh lima lewat {h}"); (30, "setengah lewat {h}"); (35, "dua puluh lima menjelang {next_h}"); (40, "dua puluh menjelang {next_h}"); (45, "seperempat menjelang {next_h}"); (50, "sepuluh menjelang {next_h}"); (55, "lima menjelang {next_h}") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/ig.json
+// ================================================================
+// IG — Igbo
+// ================================================================
+let IG: TimeLocale =
+    {
+        Code = "ig"
+        Clock =
+            {
+                Hours = [| "iri na abụọ"; "otu"; "abụọ"; "atọ"; "anọ"; "ise"; "isii"; "asaa"; "asatọ"; "itoolu"; "iri"; "iri na otu" |]
+                Midnight = "etiti abalị"
+                Noon = "ehihie"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/is.json
+// ================================================================
+// IS — Icelandic
+// ================================================================
+let IS: TimeLocale =
+    {
+        Code = "is"
+        Clock =
+            {
+                Hours = [| "tólf"; "eitt"; "tvö"; "þrjú"; "fjögur"; "fimm"; "sex"; "sjö"; "átta"; "níu"; "tíu"; "ellefu" |]
+                Midnight = "miðnætti"
+                Noon = "hádegi"
+                Patterns = Map.ofList [ (0, "klukkan {h}"); (5, "fimm yfir {h}"); (10, "tíu yfir {h}"); (15, "korter yfir {h}"); (20, "tuttugu yfir {h}"); (25, "tuttugu og fimm yfir {h}"); (30, "hálf {next_h}"); (35, "tuttugu og fimm í {next_h}"); (40, "tuttugu í {next_h}"); (45, "korter í {next_h}"); (50, "tíu í {next_h}"); (55, "fimm í {next_h}") ]
             }
         ShortOverride =
             Some
@@ -1166,6 +1550,38 @@ let KM: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/kn.json
+// ================================================================
+// KN — Kannada
+// ================================================================
+let KN: TimeLocale =
+    {
+        Code = "kn"
+        Clock =
+            {
+                Hours = [| "ಹನ್ನೆರಡು"; "ಒಂದು"; "ಎರಡು"; "ಮೂರು"; "ನಾಲ್ಕು"; "ಐದು"; "ಆರು"; "ಏಳು"; "ಎಂಟು"; "ಒಂಬತ್ತು"; "ಹತ್ತು"; "ಹನ್ನೊಂದು" |]
+                Midnight = "ಮಧ್ಯರಾತ್ರಿ"
+                Noon = "ಮಧ್ಯಾಹ್ನ"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 // Source: time/locales/src/ko.json
 // ================================================================
 // KO — Korean
@@ -1198,6 +1614,38 @@ let KO: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/ku.json
+// ================================================================
+// KU — Kurdish
+// ================================================================
+let KU: TimeLocale =
+    {
+        Code = "ku"
+        Clock =
+            {
+                Hours = [| "diwanzdeh"; "yek"; "du"; "sê"; "çar"; "pênc"; "şeş"; "heft"; "heşt"; "neh"; "deh"; "yanzdeh" |]
+                Midnight = "nîvê şevê"
+                Noon = "nîvro"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
 // Source: time/locales/src/kw.json
 // ================================================================
 // KW — Cornish
@@ -1210,6 +1658,134 @@ let KW: TimeLocale =
                 Hours = [| "12"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"; "10"; "11" |]
                 Midnight = "hanter nos"
                 Noon = "hanter dydh"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/ky.json
+// ================================================================
+// KY — Kyrgyz
+// ================================================================
+let KY: TimeLocale =
+    {
+        Code = "ky"
+        Clock =
+            {
+                Hours = [| "он эки"; "бир"; "эки"; "үч"; "төрт"; "беш"; "алты"; "жети"; "сегиз"; "тогуз"; "он"; "он бир" |]
+                Midnight = "түн ортосу"
+                Noon = "түш"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/lg.json
+// ================================================================
+// LG — Luganda
+// ================================================================
+let LG: TimeLocale =
+    {
+        Code = "lg"
+        Clock =
+            {
+                Hours = [| "kkumi na bbiri"; "emu"; "bbiri"; "ssatu"; "nnya"; "ttaano"; "mukaaga"; "musanvu"; "munaana"; "mwenda"; "kkumi"; "kkumi na emu" |]
+                Midnight = "ekiro eky'omu ttumbi"
+                Noon = "ettuntu"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/ln.json
+// ================================================================
+// LN — Lingala
+// ================================================================
+let LN: TimeLocale =
+    {
+        Code = "ln"
+        Clock =
+            {
+                Hours = [| "zómi na míbalé"; "mɔ̌kɔ́"; "míbalé"; "mísáto"; "mínéi"; "mítáno"; "motóba"; "nsambo"; "mwambe"; "libwá"; "zómi"; "zómi na mɔ̌kɔ́" |]
+                Midnight = "mpɔ́kwa"
+                Noon = "ntɔ́ngɔ́"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/lo.json
+// ================================================================
+// LO — Lao
+// ================================================================
+let LO: TimeLocale =
+    {
+        Code = "lo"
+        Clock =
+            {
+                Hours = [| "ສິບສອງ"; "ໜຶ່ງ"; "ສອງ"; "ສາມ"; "ສີ່"; "ຫ້າ"; "ຫົກ"; "ເຈັດ"; "ແປດ"; "ເກົ້າ"; "ສິບ"; "ສິບເອັດ" |]
+                Midnight = "ທ່ຽງຄືນ"
+                Noon = "ທ່ຽງ"
                 Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
             }
         ShortOverride =
@@ -1294,6 +1870,70 @@ let LV: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/mg.json
+// ================================================================
+// MG — Malagasy
+// ================================================================
+let MG: TimeLocale =
+    {
+        Code = "mg"
+        Clock =
+            {
+                Hours = [| "roa ambin'ny folo"; "iray"; "roa"; "telo"; "efatra"; "dimy"; "enina"; "fito"; "valo"; "sivy"; "folo"; "iraika ambin'ny folo" |]
+                Midnight = "misasakalina"
+                Noon = "atoandro"
+                Patterns = Map.ofList [ (0, "{h} ora"); (5, "{h} sy dimy minitra"); (10, "{h} sy folo minitra"); (15, "{h} sy fahefatra"); (20, "{h} sy roapolo minitra"); (25, "{h} sy dimy amby roapolo minitra"); (30, "{h} sy sasany"); (35, "dimy amby roapolo minitra alohan'ny {next_h}"); (40, "roapolo minitra alohan'ny {next_h}"); (45, "fahefatra alohan'ny {next_h}"); (50, "folo minitra alohan'ny {next_h}"); (55, "dimy minitra alohan'ny {next_h}") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/mi.json
+// ================================================================
+// MI — Māori
+// ================================================================
+let MI: TimeLocale =
+    {
+        Code = "mi"
+        Clock =
+            {
+                Hours = [| "tekau mā rua"; "tahi"; "rua"; "toru"; "whā"; "rima"; "ono"; "whitu"; "waru"; "iwa"; "tekau"; "tekau mā tahi" |]
+                Midnight = "waenganui pō"
+                Noon = "poupoutanga o te rā"
+                Patterns = Map.ofList [ (0, "{h} karaka"); (5, "rima meneti i muri i te {h}"); (10, "tekau meneti i muri i te {h}"); (15, "hauwhā i muri i te {h}"); (20, "rua tekau meneti i muri i te {h}"); (25, "rua tekau mā rima meneti i muri i te {h}"); (30, "hāwhe i muri i te {h}"); (35, "rua tekau mā rima meneti ki te {next_h}"); (40, "rua tekau meneti ki te {next_h}"); (45, "hauwhā ki te {next_h}"); (50, "tekau meneti ki te {next_h}"); (55, "rima meneti ki te {next_h}") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 // Source: time/locales/src/mk.json
 // ================================================================
 // MK — Macedonian
@@ -1307,6 +1947,70 @@ let MK: TimeLocale =
                 Midnight = "полноќ"
                 Noon = "пладне"
                 Patterns = Map.ofList [ (0, "{h} часа"); (5, "пет po {h}"); (10, "десет po {h}"); (15, "петнаесет po {h}"); (20, "дваесет po {h}"); (25, "дваесет и пет po {h}"); (30, "триесет po {h}"); (35, "дваесет и пет do {next_h}"); (40, "дваесет do {next_h}"); (45, "петнаесет do {next_h}"); (50, "десет do {next_h}"); (55, "пет do {next_h}") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/ml.json
+// ================================================================
+// ML — Malayalam
+// ================================================================
+let ML: TimeLocale =
+    {
+        Code = "ml"
+        Clock =
+            {
+                Hours = [| "പന്ത്രണ്ട്"; "ഒന്ന്"; "രണ്ട്"; "മൂന്ന്"; "നാല്"; "അഞ്ച്"; "ആറ്"; "ഏഴ്"; "എട്ട്"; "ഒമ്പത്"; "പത്ത്"; "പതിനൊന്ന്" |]
+                Midnight = "അർദ്ധരാത്രി"
+                Noon = "ഉച്ച"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/mn.json
+// ================================================================
+// MN — Mongolian
+// ================================================================
+let MN: TimeLocale =
+    {
+        Code = "mn"
+        Clock =
+            {
+                Hours = [| "арван хоёр"; "нэг"; "хоёр"; "гурав"; "дөрөв"; "тав"; "зургаа"; "долоо"; "найм"; "ес"; "арав"; "арван нэг" |]
+                Midnight = "шөнө дунд"
+                Noon = "үд дунд"
+                Patterns = Map.ofList [ (0, "{h} цаг"); (5, "{h} цаг {m} минут"); (10, "{h} цаг {m} минут"); (15, "{h} цаг {m} минут"); (20, "{h} цаг {m} минут"); (25, "{h} цаг {m} минут"); (30, "{h} цаг {m} минут"); (35, "{h} цаг {m} минут"); (40, "{h} цаг {m} минут"); (45, "{h} цаг {m} минут"); (50, "{h} цаг {m} минут"); (55, "{h} цаг {m} минут") ]
             }
         ShortOverride =
             Some
@@ -1550,6 +2254,102 @@ let NL: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/ny.json
+// ================================================================
+// NY — Chichewa
+// ================================================================
+let NY: TimeLocale =
+    {
+        Code = "ny"
+        Clock =
+            {
+                Hours = [| "khumi ndi ziwiri"; "imodzi"; "ziwiri"; "zitatu"; "zinayi"; "zisanu"; "zisanu ndi chimodzi"; "zisanu ndi ziwiri"; "zisanu ndi zitatu"; "zisanu ndi zinayi"; "khumi"; "khumi ndi chimodzi" |]
+                Midnight = "pakati pausiku"
+                Noon = "usana"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/om.json
+// ================================================================
+// OM — Oromo
+// ================================================================
+let OM: TimeLocale =
+    {
+        Code = "om"
+        Clock =
+            {
+                Hours = [| "kudha lama"; "tokko"; "lama"; "sadii"; "afur"; "shan"; "jaha"; "torba"; "saddeet"; "sagal"; "kudhan"; "kudha tokko" |]
+                Midnight = "walakkii halkan"
+                Noon = "guyyaa walakkaa"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/or.json
+// ================================================================
+// OR — Odia
+// ================================================================
+let OR: TimeLocale =
+    {
+        Code = "or"
+        Clock =
+            {
+                Hours = [| "ବାରଟା"; "ଗୋଟିଏ"; "ଦୁଇଟା"; "ତିନିଟା"; "ଚାରିଟା"; "ପାଞ୍ଚଟା"; "ଛଅଟା"; "ସାତଟା"; "ଆଠଟା"; "ନଅଟା"; "ଦଶଟା"; "ଏଗାରଟା" |]
+                Midnight = "ମଧ୍ୟରାତ୍ରି"
+                Noon = "ମଧ୍ୟାହ୍ନ"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 // Source: time/locales/src/pa.json
 // ================================================================
 // PA — Punjabi
@@ -1614,6 +2414,38 @@ let PL: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/ps.json
+// ================================================================
+// PS — Pashto
+// ================================================================
+let PS: TimeLocale =
+    {
+        Code = "ps"
+        Clock =
+            {
+                Hours = [| "دولس"; "یو"; "دوه"; "درې"; "څلور"; "پنځه"; "شپږ"; "اووه"; "اته"; "نهه"; "لس"; "یوولس" |]
+                Midnight = "نیمه شپه"
+                Noon = "غرمه"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 // Source: time/locales/src/pt.json
 // ================================================================
 // PT — Portuguese
@@ -1643,6 +2475,38 @@ let PT: TimeLocale =
                             { Use24h = true
                               AmPm = None
                               Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/qu.json
+// ================================================================
+// QU — Quechua
+// ================================================================
+let QU: TimeLocale =
+    {
+        Code = "qu"
+        Clock =
+            {
+                Hours = [| "chunka iskayniyuq"; "huk"; "iskay"; "kimsa"; "tawa"; "pichqa"; "suqta"; "qanchis"; "pusaq"; "isqun"; "chunka"; "chunka hukniyuq" |]
+                Midnight = "chawpi tuta"
+                Noon = "chawpi p'unchaw"
+                Patterns = Map.ofList [ (0, "{h}"); (5, "{h} pichqa"); (10, "{h} chunka"); (15, "{h} chunka pichqayuq"); (20, "{h} iskay chunka"); (25, "{h} iskay chunka pichqayuq"); (30, "{h} kimsa chunka"); (35, "{next_h} mana iskay chunka pichqayuq"); (40, "{next_h} mana iskay chunka"); (45, "{next_h} mana chunka pichqayuq"); (50, "{next_h} mana chunka"); (55, "{next_h} mana pichqa") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
                 }
     }
 
@@ -1707,6 +2571,70 @@ let RU: TimeLocale =
                             { Use24h = true
                               AmPm = None
                               Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/rw.json
+// ================================================================
+// RW — Kinyarwanda
+// ================================================================
+let RW: TimeLocale =
+    {
+        Code = "rw"
+        Clock =
+            {
+                Hours = [| "cumi n'ebyiri"; "rimwe"; "ebyiri"; "eshatu"; "enye"; "eshanu"; "esheshatu"; "indwi"; "umunani"; "icyenda"; "icumi"; "cumi n'imwe" |]
+                Midnight = "igicuku"
+                Noon = "saa sita"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/sd.json
+// ================================================================
+// SD — Sindhi
+// ================================================================
+let SD: TimeLocale =
+    {
+        Code = "sd"
+        Clock =
+            {
+                Hours = [| "ٻارھ"; "ھڪ"; "ٻه"; "ٽي"; "چار"; "پنج"; "ڇھ"; "ست"; "اٺ"; "نائن"; "ڏھ"; "يارھ" |]
+                Midnight = "اڌ رات"
+                Noon = "ٽپھر"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
                 }
     }
 
@@ -1838,6 +2766,70 @@ let SL: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/sn.json
+// ================================================================
+// SN — Shona
+// ================================================================
+let SN: TimeLocale =
+    {
+        Code = "sn"
+        Clock =
+            {
+                Hours = [| "gumi nembiri"; "imwe"; "mbiri"; "nhatu"; "ina"; "shanu"; "nhanhatu"; "nomwe"; "sere"; "pfumbamwe"; "gumi"; "gumi neimwe" |]
+                Midnight = "usiku hwepakati"
+                Noon = "masikati"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/so.json
+// ================================================================
+// SO — Somali
+// ================================================================
+let SO: TimeLocale =
+    {
+        Code = "so"
+        Clock =
+            {
+                Hours = [| "laba iyo toban"; "kow"; "laba"; "saddex"; "afar"; "shan"; "lix"; "toddoba"; "siddeed"; "sagaal"; "toban"; "kow iyo toban" |]
+                Midnight = "saqda dhexe"
+                Noon = "duhur"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 // Source: time/locales/src/sq.json
 // ================================================================
 // SQ — Albanian
@@ -1899,6 +2891,38 @@ let SR: TimeLocale =
                             { Use24h = true
                               AmPm = None
                               Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/su.json
+// ================================================================
+// SU — Sundanese
+// ================================================================
+let SU: TimeLocale =
+    {
+        Code = "su"
+        Clock =
+            {
+                Hours = [| "dua welas"; "hiji"; "dua"; "tilu"; "opat"; "lima"; "genep"; "tujuh"; "dalapan"; "salapan"; "sapuluh"; "sabelas" |]
+                Midnight = "tengah peuting"
+                Noon = "beurang"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
                 }
     }
 
@@ -2030,6 +3054,38 @@ let TE: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/tg.json
+// ================================================================
+// TG — Tajik
+// ================================================================
+let TG: TimeLocale =
+    {
+        Code = "tg"
+        Clock =
+            {
+                Hours = [| "дувоздаҳ"; "як"; "ду"; "се"; "чор"; "панҷ"; "шаш"; "ҳафт"; "ҳашт"; "нӯҳ"; "даҳ"; "ёздаҳ" |]
+                Midnight = "нимишаб"
+                Noon = "нимирӯз"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
 // Source: time/locales/src/th.json
 // ================================================================
 // TH — Thai
@@ -2043,6 +3099,70 @@ let TH: TimeLocale =
                 Midnight = "เที่ยงคืน"
                 Noon = "เที่ยงวัน"
                 Patterns = Map.ofList [ (0, "{h} นาฬิกา"); (5, "{h} นาฬิกา ห้านาที"); (10, "{h} นาฬิกา สิบนาที"); (15, "{h} นาฬิกา สิบห้านาที"); (20, "{h} นาฬิกา ยี่สิบนาที"); (25, "{h} นาฬิกา ยี่สิบห้านาที"); (30, "{h} นาฬิกา ครึ่ง"); (35, "{h} นาฬิกา สามสิบห้านาที"); (40, "{h} นาฬิกา สี่สิบนาที"); (45, "{h} นาฬิกา สี่สิบห้านาที"); (50, "{h} นาฬิกา ห้าสิบนาที"); (55, "{h} นาฬิกา ห้าสิบห้านาที") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/ti.json
+// ================================================================
+// TI — Tigrinya
+// ================================================================
+let TI: TimeLocale =
+    {
+        Code = "ti"
+        Clock =
+            {
+                Hours = [| "ዓሰርተ ክልተ"; "ሓደ"; "ክልተ"; "ሰለስተ"; "ኣርባዕተ"; "ሓሙሽተ"; "ሽድሽተ"; "ሸውዓተ"; "ሸሞንተ"; "ትሽዓተ"; "ዓሰርተ"; "ዓሰርተ ሓደ" |]
+                Midnight = "ፍርቂ ለይቲ"
+                Noon = "ቀትሪ"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
+// Source: time/locales/src/tk.json
+// ================================================================
+// TK — Turkmen
+// ================================================================
+let TK: TimeLocale =
+    {
+        Code = "tk"
+        Clock =
+            {
+                Hours = [| "on iki"; "bir"; "iki"; "üç"; "dört"; "bäş"; "alty"; "ýedi"; "sekiz"; "dokuz"; "on"; "on bir" |]
+                Midnight = "ýary gije"
+                Noon = "günorta"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
             }
         ShortOverride =
             Some
@@ -2254,6 +3374,102 @@ let VI: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/xh.json
+// ================================================================
+// XH — Xhosa
+// ================================================================
+let XH: TimeLocale =
+    {
+        Code = "xh"
+        Clock =
+            {
+                Hours = [| "ishumi elinambini"; "inye"; "ezimbini"; "ezintathu"; "ezine"; "ezintlanu"; "ezintandathu"; "ezisixhenxe"; "ezisibhozo"; "ethoba"; "ishumi"; "ishumi elinanye" |]
+                Midnight = "ezinzulwini zobusuku"
+                Noon = "emini"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/yo.json
+// ================================================================
+// YO — Yoruba
+// ================================================================
+let YO: TimeLocale =
+    {
+        Code = "yo"
+        Clock =
+            {
+                Hours = [| "méjìlá"; "kan"; "méjì"; "mẹ́ta"; "mẹ́rin"; "márùn-ún"; "mẹ́fà"; "méje"; "mẹ́jọ"; "mẹ́sàn-án"; "mẹ́wàá"; "mọ́kànlá" |]
+                Midnight = "àárọ̀ òru"
+                Noon = "ọ̀sán"
+                Patterns = Map.ofList [ (0, "{h}:00"); (5, "{h}:05"); (10, "{h}:10"); (15, "{h}:15"); (20, "{h}:20"); (25, "{h}:25"); (30, "{h}:30"); (35, "{h}:35"); (40, "{h}:40"); (45, "{h}:45"); (50, "{h}:50"); (55, "{h}:55") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
+// Source: time/locales/src/yue.json
+// ================================================================
+// YUE — Cantonese
+// ================================================================
+let YUE: TimeLocale =
+    {
+        Code = "yue"
+        Clock =
+            {
+                Hours = [| "十二"; "一"; "二"; "三"; "四"; "五"; "六"; "七"; "八"; "九"; "十"; "十一" |]
+                Midnight = "午夜"
+                Noon = "正午"
+                Patterns = Map.ofList [ (0, "{h}點整"); (5, "{h}點零五分"); (10, "{h}點十分"); (15, "{h}點十五分"); (20, "{h}點二十分"); (25, "{h}點二十五分"); (30, "{h}點半"); (35, "{h}點三十五分"); (40, "{h}點四十分"); (45, "{h}點四十五分"); (50, "{h}點五十分"); (55, "{h}點五十五分") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = true
+                              AmPm = None
+                              Format = "{h}:{mm}" }
+                }
+    }
+
 // Source: time/locales/src/zh.json
 // ================================================================
 // ZH — Chinese
@@ -2286,17 +3502,53 @@ let ZH: TimeLocale =
                 }
     }
 
+// Source: time/locales/src/zu.json
+// ================================================================
+// ZU — Zulu
+// ================================================================
+let ZU: TimeLocale =
+    {
+        Code = "zu"
+        Clock =
+            {
+                Hours = [| "ishumi nambili"; "kunye"; "kubili"; "kuthathu"; "kune"; "kuhlanu"; "isithupha"; "isikhombisa"; "isishiyagalombili"; "isishiyagalolunye"; "ishumi"; "ishumi nanye" |]
+                Midnight = "phakathi kwamabili"
+                Noon = "emini"
+                Patterns = Map.ofList [ (0, "{h} o'clock"); (5, "emva kwemizuzu emihlanu ngo-{h}"); (10, "emva kwemizuzu eyishumi ngo-{h}"); (15, "ikota edlule ngo-{h}"); (20, "emva kwemizuzu engamashumi amabili ngo-{h}"); (25, "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}"); (30, "uhhafu edlule ngo-{h}"); (35, "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}"); (40, "imizuzu engamashumi amabili ngaphambi kuka-{next_h}"); (45, "ikota ngaphambi kuka-{next_h}"); (50, "imizuzu eyishumi ngaphambi kuka-{next_h}"); (55, "imizuzu emihlanu ngaphambi kuka-{next_h}") ]
+            }
+        ShortOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("AM", "PM")
+                              Format = "{h}:{mm} {ampm}" }
+                }
+        CompactOverride =
+            Some
+                { Clock =
+                    Some
+                            { Use24h = false
+                              AmPm = Some ("a", "p")
+                              Format = "{h}:{mm}{ampm}" }
+                }
+    }
+
 let All: Map<string, TimeLocale> =
     Map.ofList
         [
+            ("af", AF)
+            ("ak", AK)
             ("am", AM)
             ("ar", AR)
             ("az", AZ)
+            ("be", BE)
             ("bg", BG)
             ("bn", BN)
             ("br", BR)
             ("bs", BS)
             ("ca", CA)
+            ("ceb", CEB)
             ("cs", CS)
             ("cy", CY)
             ("da", DA)
@@ -2307,29 +3559,47 @@ let All: Map<string, TimeLocale> =
             ("et", ET)
             ("eu", EU)
             ("fa", FA)
+            ("ff", FF)
             ("fi", FI)
             ("fil", FIL)
             ("fr", FR)
             ("ga", GA)
             ("gd", GD)
+            ("gl", GL)
+            ("gn", GN)
             ("gu", GU)
             ("gv", GV)
+            ("ha", HA)
             ("he", HE)
             ("hi", HI)
             ("hr", HR)
+            ("ht", HT)
             ("hu", HU)
+            ("hy", HY)
             ("id", ID)
+            ("ig", IG)
+            ("is", IS)
             ("it", IT)
             ("ja", JA)
             ("jv", JV)
             ("ka", KA)
             ("kk", KK)
             ("km", KM)
+            ("kn", KN)
             ("ko", KO)
+            ("ku", KU)
             ("kw", KW)
+            ("ky", KY)
+            ("lg", LG)
+            ("ln", LN)
+            ("lo", LO)
             ("lt", LT)
             ("lv", LV)
+            ("mg", MG)
+            ("mi", MI)
             ("mk", MK)
+            ("ml", ML)
+            ("mn", MN)
             ("mr", MR)
             ("ms", MS)
             ("mt", MT)
@@ -2337,29 +3607,46 @@ let All: Map<string, TimeLocale> =
             ("nb", NB)
             ("ne", NE)
             ("nl", NL)
+            ("ny", NY)
+            ("om", OM)
+            ("or", OR)
             ("pa", PA)
             ("pl", PL)
+            ("ps", PS)
             ("pt", PT)
+            ("qu", QU)
             ("ro", RO)
             ("ru", RU)
+            ("rw", RW)
+            ("sd", SD)
             ("shi", SHI)
             ("si", SI)
             ("sk", SK)
             ("sl", SL)
+            ("sn", SN)
+            ("so", SO)
             ("sq", SQ)
             ("sr", SR)
+            ("su", SU)
             ("sv", SV)
             ("sw", SW)
             ("ta", TA)
             ("te", TE)
+            ("tg", TG)
             ("th", TH)
+            ("ti", TI)
+            ("tk", TK)
             ("tr", TR)
             ("tzm", TZM)
             ("uk", UK)
             ("ur", UR)
             ("uz", UZ)
             ("vi", VI)
+            ("xh", XH)
+            ("yo", YO)
+            ("yue", YUE)
             ("zh", ZH)
+            ("zu", ZU)
         ]
 
 let get (code: string) : TimeLocale option = Map.tryFind code All

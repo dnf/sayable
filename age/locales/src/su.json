@@ -1,0 +1,40 @@
+{
+  "code": "su",
+  "name": "Sundanese",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "{n} dinten",
+    "week": "{n} minggu",
+    "month": "{n} sasih",
+    "year": "{n} taun"
+  },
+  "half": "{0} satengah",
+  "delimiter": ", ",
+  "justBorn": "Orok anyar",
+  "stages": {
+    "newborn": "Orok anyar",
+    "infant": "Orok",
+    "toddler": "Budak leutik",
+    "child": "Budak",
+    "teenager": "Rumaja",
+    "adult": "Dewasa"
+  },
+  "short": {
+    "units": {
+      "day": "{n} dinten",
+      "week": "{n} minggu",
+      "month": "{n} sasih",
+      "year": "{n} taun"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

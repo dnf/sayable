@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace SayableDurationLib;
 
 /// <summary>
-/// All 71 locale definitions for sayable-duration.
+/// All 110 locale definitions for sayable-duration.
 /// </summary>
 public static class Locales
 {
@@ -177,6 +177,104 @@ public static class Locales
         return PluralCategory.Other;
     }
 
+    // Source: duration/locales/src/af.json
+    // ================================================================
+    // AF — Afrikaans
+    // ================================================================
+    public static readonly DurationLocale AF = new(
+        "af",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} sekonde" }, { PluralCategory.Other, "{n} sekondes" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} minuut" }, { PluralCategory.Other, "{n} minute" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} uur" }, { PluralCategory.Other, "{n} uur" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dag" }, { PluralCategory.Other, "{n} dae" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} week" }, { PluralCategory.Other, "{n} weke" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} maand" }, { PluralCategory.Other, "{n} maande" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} jaar" }, { PluralCategory.Other, "{n} jaar" } })
+        ),
+        "{n}½",
+        ", ",
+        "sopas",
+        "{0} gelede",
+        "oor {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} sek."),
+            UnitForms.Simple("{n} min."),
+            UnitForms.Simple("{n} u."),
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} w."),
+            UnitForms.Simple("{n} md."),
+            UnitForms.Simple("{n} j."),
+            null,
+            null,
+            "{0} gelede",
+            "oor {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}min"),
+            UnitForms.Simple("{n}u"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}j"),
+            "{n}½",
+            "",
+            "{0} gelede",
+            "oor {0}"
+        )
+    );
+
+    // Source: duration/locales/src/ak.json
+    // ================================================================
+    // AK — Akan
+    // ================================================================
+    public static readonly DurationLocale AK = new(
+        "ak",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("sɛkɛnd {n}"),
+            UnitForms.Simple("sema {n}"),
+            UnitForms.Simple("dɔnhwere {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "da {n}" }, { PluralCategory.Other, "nna {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "dapɛn {n}" }, { PluralCategory.Other, "nnapɛn {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bosome {n}" }, { PluralCategory.Other, "abosome {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "afe {n}" }, { PluralCategory.Other, "mfe {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "sɛɛsei",
+        "{0} a etwaam",
+        "{0} mu",
+        new CompactnessOverride(
+            UnitForms.Simple("sɛkɛnd {n}"),
+            UnitForms.Simple("sema {n}"),
+            UnitForms.Simple("dɔnhwere {n}"),
+            UnitForms.Simple("nna {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "dapɛn {n}" }, { PluralCategory.Other, "nnapɛn {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bosome {n}" }, { PluralCategory.Other, "abosome {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "afe {n}" }, { PluralCategory.Other, "mfe {n}" } }),
+            null,
+            null,
+            "{0} a etwaam",
+            "{0} mu"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("sɛk {n}"),
+            UnitForms.Simple("sem {n}"),
+            UnitForms.Simple("dɔn {n}"),
+            UnitForms.Simple("nna {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "dapɛn {n}" }, { PluralCategory.Other, "nnapɛn {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bos {n}" }, { PluralCategory.Other, "abos {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "afe {n}" }, { PluralCategory.Other, "mfe {n}" } }),
+            "{n}½",
+            "",
+            "{0} a etwaam",
+            "{0} mu"
+        )
+    );
+
     // Source: duration/locales/src/am.json
     // ================================================================
     // AM — Amharic
@@ -321,6 +419,55 @@ public static class Locales
             "",
             "{0} əvvəl",
             "{0} sonra"
+        )
+    );
+
+    // Source: duration/locales/src/be.json
+    // ================================================================
+    // BE — Belarusian
+    // ================================================================
+    public static readonly DurationLocale BE = new(
+        "be",
+        PluralRuUk,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} секунда" }, { PluralCategory.Few, "{n} секунды" }, { PluralCategory.Many, "{n} секунд" }, { PluralCategory.Other, "{n} секунд" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} хвіліна" }, { PluralCategory.Few, "{n} хвіліны" }, { PluralCategory.Many, "{n} хвілін" }, { PluralCategory.Other, "{n} хвілін" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} гадзіна" }, { PluralCategory.Few, "{n} гадзіны" }, { PluralCategory.Many, "{n} гадзін" }, { PluralCategory.Other, "{n} гадзін" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} дзень" }, { PluralCategory.Few, "{n} дні" }, { PluralCategory.Many, "{n} дзён" }, { PluralCategory.Other, "{n} дзён" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} тыдзень" }, { PluralCategory.Few, "{n} тыдні" }, { PluralCategory.Many, "{n} тыдняў" }, { PluralCategory.Other, "{n} тыдняў" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} месяц" }, { PluralCategory.Few, "{n} месяцы" }, { PluralCategory.Many, "{n} месяцаў" }, { PluralCategory.Other, "{n} месяцаў" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} год" }, { PluralCategory.Few, "{n} гады" }, { PluralCategory.Many, "{n} гадоў" }, { PluralCategory.Other, "{n} гадоў" } })
+        ),
+        "{n} з паловай",
+        ", ",
+        "толькі што",
+        "{0} таму",
+        "праз {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} с"),
+            UnitForms.Simple("{n} хв"),
+            UnitForms.Simple("{n} гадз"),
+            UnitForms.Simple("{n} дн."),
+            UnitForms.Simple("{n} тыд."),
+            UnitForms.Simple("{n} мес."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} г." }, { PluralCategory.Few, "{n} г." }, { PluralCategory.Many, "{n} г." }, { PluralCategory.Other, "{n} г." } }),
+            null,
+            null,
+            "{0} таму",
+            "праз {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} с"),
+            UnitForms.Simple("{n} хв"),
+            UnitForms.Simple("{n} гадз"),
+            UnitForms.Simple("{n} д."),
+            UnitForms.Simple("{n} т."),
+            UnitForms.Simple("{n} м."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} г." }, { PluralCategory.Few, "{n} г." }, { PluralCategory.Many, "{n} г." }, { PluralCategory.Other, "{n} г." } }),
+            "{n}½",
+            "",
+            "{0} таму",
+            "праз {0}"
         )
     );
 
@@ -566,6 +713,55 @@ public static class Locales
             "",
             "fa {0}",
             "d'aquí a {0}"
+        )
+    );
+
+    // Source: duration/locales/src/ceb.json
+    // ================================================================
+    // CEB — Cebuano
+    // ================================================================
+    public static readonly DurationLocale CEB = new(
+        "ceb",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} ka segundo"),
+            UnitForms.Simple("{n} ka minuto"),
+            UnitForms.Simple("{n} ka oras"),
+            UnitForms.Simple("{n} ka adlaw"),
+            UnitForms.Simple("{n} ka semana"),
+            UnitForms.Simple("{n} ka bulan"),
+            UnitForms.Simple("{n} ka tuig")
+        ),
+        "{n}½",
+        ", ",
+        "karon lang",
+        "{0} ang milabay",
+        "sulod sa {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} seg"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} oras"),
+            UnitForms.Simple("{n} ka adlaw"),
+            UnitForms.Simple("{n} ka semana"),
+            UnitForms.Simple("{n} ka bulan"),
+            UnitForms.Simple("{n} ka tuig"),
+            null,
+            null,
+            "{0} ang milabay",
+            "sulod sa {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}seg"),
+            UnitForms.Simple("{n}min"),
+            UnitForms.Simple("{n}o"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}sem"),
+            UnitForms.Simple("{n}b"),
+            UnitForms.Simple("{n}t"),
+            "{n}½",
+            "",
+            "{0} ang milabay",
+            "sulod sa {0}"
         )
     );
 
@@ -1059,6 +1255,55 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/ff.json
+    // ================================================================
+    // FF — Fulah
+    // ================================================================
+    public static readonly DurationLocale FF = new(
+        "ff",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("majaango {n}"),
+            UnitForms.Simple("hojomaaje {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "waktu {n}" }, { PluralCategory.Other, "waktuuji {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ñalawma {n}" }, { PluralCategory.Other, "ñalɗe {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "yontere {n}" }, { PluralCategory.Other, "yontereeji {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "lewru {n}" }, { PluralCategory.Other, "lebbi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "hitaande {n}" }, { PluralCategory.Other, "duuɓi {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "jooni",
+        "{0} ɓennuɗo",
+        "nder {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("majaango {n}"),
+            UnitForms.Simple("hojomaaje {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "waktu {n}" }, { PluralCategory.Other, "waktuuji {n}" } }),
+            UnitForms.Simple("ñalɗe {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "yontere {n}" }, { PluralCategory.Other, "yontereeji {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "lewru {n}" }, { PluralCategory.Other, "lebbi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "hitaande {n}" }, { PluralCategory.Other, "duuɓi {n}" } }),
+            null,
+            null,
+            "{0} ɓennuɗo",
+            "nder {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("maj {n}"),
+            UnitForms.Simple("hoj {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "wak {n}" }, { PluralCategory.Other, "wakji {n}" } }),
+            UnitForms.Simple("ñalɗe {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "yont {n}" }, { PluralCategory.Other, "yontji {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "lew {n}" }, { PluralCategory.Other, "leb {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "hit {n}" }, { PluralCategory.Other, "duuɓi {n}" } }),
+            "{n}½",
+            "",
+            "{0} ɓennuɗo",
+            "nder {0}"
+        )
+    );
+
     // Source: duration/locales/src/fi.json
     // ================================================================
     // FI — Finnish
@@ -1304,6 +1549,104 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/gl.json
+    // ================================================================
+    // GL — Galician
+    // ================================================================
+    public static readonly DurationLocale GL = new(
+        "gl",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} segundo" }, { PluralCategory.Other, "{n} segundos" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} minuto" }, { PluralCategory.Other, "{n} minutos" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} hora" }, { PluralCategory.Other, "{n} horas" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} día" }, { PluralCategory.Other, "{n} días" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} semana" }, { PluralCategory.Other, "{n} semanas" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mes" }, { PluralCategory.Other, "{n} meses" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ano" }, { PluralCategory.Other, "{n} anos" } })
+        ),
+        "{n} e medio",
+        ", ",
+        "agora mesmo",
+        "hai {0}",
+        "en {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} s"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} h"),
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} sem."),
+            UnitForms.Simple("{n} m."),
+            UnitForms.Simple("{n} a"),
+            null,
+            null,
+            "hai {0}",
+            "en {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}min"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}sem"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}a"),
+            "{n}½",
+            "",
+            "hai {0}",
+            "en {0}"
+        )
+    );
+
+    // Source: duration/locales/src/gn.json
+    // ================================================================
+    // GN — Guarani
+    // ================================================================
+    public static readonly DurationLocale GN = new(
+        "gn",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} aravo'i"),
+            UnitForms.Simple("{n} aravo"),
+            UnitForms.Simple("{n} aravo guasu"),
+            UnitForms.Simple("{n} ára"),
+            UnitForms.Simple("{n} arapokõindy"),
+            UnitForms.Simple("{n} jasy"),
+            UnitForms.Simple("{n} ary")
+        ),
+        "{n}½",
+        ", ",
+        "ko'ágã",
+        "{0} ohasava'ekue",
+        "{0} rire",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ara'i"),
+            UnitForms.Simple("{n} ara"),
+            UnitForms.Simple("{n} ara g"),
+            UnitForms.Simple("{n} ára"),
+            UnitForms.Simple("{n} ara"),
+            UnitForms.Simple("{n} jas"),
+            UnitForms.Simple("{n} ary"),
+            null,
+            null,
+            "{0} ohasava'ekue",
+            "{0} rire"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            "{0} ohasava'ekue",
+            "{0} rire"
+        )
+    );
+
     // Source: duration/locales/src/gu.json
     // ================================================================
     // GU — Gujarati
@@ -1399,6 +1742,55 @@ public static class Locales
             "",
             "{0} er dy henney",
             "ayns {0}"
+        )
+    );
+
+    // Source: duration/locales/src/ha.json
+    // ================================================================
+    // HA — Hausa
+    // ================================================================
+    public static readonly DurationLocale HA = new(
+        "ha",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} daƙiƙa" }, { PluralCategory.Other, "{n} daƙiƙoƙi" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} minti" }, { PluralCategory.Other, "{n} mintoci" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} awa" }, { PluralCategory.Other, "{n} awanni" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} kwana" }, { PluralCategory.Other, "{n} kwanaki" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mako" }, { PluralCategory.Other, "{n} makonni" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} wata" }, { PluralCategory.Other, "{n} watanni" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} shekara" }, { PluralCategory.Other, "{n} shekaru" } })
+        ),
+        "{n}½",
+        ", ",
+        "yanzu",
+        "{0} da suka wuce",
+        "cikin {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} daƙ."),
+            UnitForms.Simple("{n} mnt."),
+            UnitForms.Simple("{n} awa"),
+            UnitForms.Simple("{n} kw."),
+            UnitForms.Simple("{n} mk."),
+            UnitForms.Simple("{n} wt."),
+            UnitForms.Simple("{n} shk."),
+            null,
+            null,
+            "{0} da suka wuce",
+            "cikin {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}min"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            "{0} da suka wuce",
+            "cikin {0}"
         )
     );
 
@@ -1549,6 +1941,55 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/ht.json
+    // ================================================================
+    // HT — Haitian Creole
+    // ================================================================
+    public static readonly DurationLocale HT = new(
+        "ht",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} segonn"),
+            UnitForms.Simple("{n} minit"),
+            UnitForms.Simple("{n} èdtan"),
+            UnitForms.Simple("{n} jou"),
+            UnitForms.Simple("{n} semèn"),
+            UnitForms.Simple("{n} mwa"),
+            UnitForms.Simple("{n} an")
+        ),
+        "{n}½",
+        ", ",
+        "kounye a",
+        "sa gen {0}",
+        "nan {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} seg"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} èdt"),
+            UnitForms.Simple("{n} jou"),
+            UnitForms.Simple("{n} sem"),
+            UnitForms.Simple("{n} mwa"),
+            UnitForms.Simple("{n} an"),
+            null,
+            null,
+            "sa gen {0}",
+            "nan {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}seg"),
+            UnitForms.Simple("{n}min"),
+            UnitForms.Simple("{n}èdt"),
+            UnitForms.Simple("{n}j"),
+            UnitForms.Simple("{n}sem"),
+            UnitForms.Simple("{n}mwa"),
+            UnitForms.Simple("{n}an"),
+            "{n}½",
+            "",
+            "sa gen {0}",
+            "nan {0}"
+        )
+    );
+
     // Source: duration/locales/src/hu.json
     // ================================================================
     // HU — Hungarian
@@ -1598,6 +2039,55 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/hy.json
+    // ================================================================
+    // HY — Armenian
+    // ================================================================
+    public static readonly DurationLocale HY = new(
+        "hy",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} վայրկյան" }, { PluralCategory.Other, "{n} վայրկյան" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} րոպե" }, { PluralCategory.Other, "{n} րոպե" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ժամ" }, { PluralCategory.Other, "{n} ժամ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} օր" }, { PluralCategory.Other, "{n} օր" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} շաբաթ" }, { PluralCategory.Other, "{n} շաբաթ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ամիս" }, { PluralCategory.Other, "{n} ամիս" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} տարի" }, { PluralCategory.Other, "{n} տարի" } })
+        ),
+        "{0} ու կես",
+        ", ",
+        "հիմա",
+        "{0} առաջ",
+        "{0} հետո",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} վրկ"),
+            UnitForms.Simple("{n} րոպ"),
+            UnitForms.Simple("{n} ժ"),
+            UnitForms.Simple("{n} օր"),
+            UnitForms.Simple("{n} շաբ"),
+            UnitForms.Simple("{n} ամս"),
+            UnitForms.Simple("{n} տ"),
+            null,
+            null,
+            "{0} առաջ",
+            "{0} հետո"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} վ"),
+            UnitForms.Simple("{n} ր"),
+            UnitForms.Simple("{n} ժ"),
+            UnitForms.Simple("{n} օ"),
+            UnitForms.Simple("{n} շ"),
+            UnitForms.Simple("{n} ա"),
+            UnitForms.Simple("{n} տ"),
+            "{n}½",
+            "",
+            "{0} առաջ",
+            "{0} հետո"
+        )
+    );
+
     // Source: duration/locales/src/id.json
     // ================================================================
     // ID — Indonesian
@@ -1644,6 +2134,104 @@ public static class Locales
             "",
             "{0} yang lalu",
             "dalam {0}"
+        )
+    );
+
+    // Source: duration/locales/src/ig.json
+    // ================================================================
+    // IG — Igbo
+    // ================================================================
+    public static readonly DurationLocale IG = new(
+        "ig",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} sekọnd"),
+            UnitForms.Simple("{n} nkeji"),
+            UnitForms.Simple("{n} awa"),
+            UnitForms.Simple("{n} ụbọchị"),
+            UnitForms.Simple("{n} izu"),
+            UnitForms.Simple("{n} ọnwa"),
+            UnitForms.Simple("{n} afọ")
+        ),
+        "{0} na ọkara",
+        ", ",
+        "ugbu a",
+        "{0} gara aga",
+        "na {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} sek."),
+            UnitForms.Simple("{n} nkeji"),
+            UnitForms.Simple("{n} awa"),
+            UnitForms.Simple("{n} ụbọchị"),
+            UnitForms.Simple("{n} izu"),
+            UnitForms.Simple("{n} ọnwa"),
+            UnitForms.Simple("{n} afọ"),
+            null,
+            null,
+            "{0} gara aga",
+            "na {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            "{0} gara aga",
+            "na {0}"
+        )
+    );
+
+    // Source: duration/locales/src/is.json
+    // ================================================================
+    // IS — Icelandic
+    // ================================================================
+    public static readonly DurationLocale IS = new(
+        "is",
+        n => (n % 10 == 1 && n % 100 != 11) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} sekúnda" }, { PluralCategory.Other, "{n} sekúndur" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mínúta" }, { PluralCategory.Other, "{n} mínútur" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} klukkustund" }, { PluralCategory.Other, "{n} klukkustundir" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dagur" }, { PluralCategory.Other, "{n} dagar" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} vika" }, { PluralCategory.Other, "{n} vikur" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mánuður" }, { PluralCategory.Other, "{n} mánuðir" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ár" }, { PluralCategory.Other, "{n} ár" } })
+        ),
+        "{n} og hálf",
+        ", ",
+        "rétt í þessu",
+        "fyrir {0} síðan",
+        "eftir {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} sek."),
+            UnitForms.Simple("{n} mín."),
+            UnitForms.Simple("{n} klst."),
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} v."),
+            UnitForms.Simple("{n} mán."),
+            UnitForms.Simple("{n} ár"),
+            null,
+            null,
+            "fyrir {0}",
+            "eftir {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}k"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}v"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}á"),
+            "{n}½",
+            "",
+            "fyrir {0}",
+            "eftir {0}"
         )
     );
 
@@ -1941,6 +2529,55 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/kn.json
+    // ================================================================
+    // KN — Kannada
+    // ================================================================
+    public static readonly DurationLocale KN = new(
+        "kn",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ಸೆಕೆಂಡ್" }, { PluralCategory.Other, "{n} ಸೆಕೆಂಡುಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ನಿಮಿಷ" }, { PluralCategory.Other, "{n} ನಿಮಿಷಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ಗಂಟೆ" }, { PluralCategory.Other, "{n} ಗಂಟೆಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ದಿನ" }, { PluralCategory.Other, "{n} ದಿನಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ವಾರ" }, { PluralCategory.Other, "{n} ವಾರಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ತಿಂಗಳು" }, { PluralCategory.Other, "{n} ತಿಂಗಳುಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ವರ್ಷ" }, { PluralCategory.Other, "{n} ವರ್ಷಗಳು" } })
+        ),
+        "{0}ವರೆ",
+        ", ",
+        "ಈಗಷ್ಟೇ",
+        "{0} ಹಿಂದೆ",
+        "{0} ನಂತರ",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ಸೆ॰"),
+            UnitForms.Simple("{n} ನಿ॰"),
+            UnitForms.Simple("{n} ಗಂ॰"),
+            UnitForms.Simple("{n} ದಿನ"),
+            UnitForms.Simple("{n} ವಾರ"),
+            UnitForms.Simple("{n} ತಿಂಗಳು"),
+            UnitForms.Simple("{n} ವರ್ಷ"),
+            null,
+            null,
+            "{0} ಹಿಂದೆ",
+            "{0} ನಂತರ"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ಸೆ"),
+            UnitForms.Simple("{n} ನಿ"),
+            UnitForms.Simple("{n} ಗಂ"),
+            UnitForms.Simple("{n} ದಿ"),
+            UnitForms.Simple("{n} ವಾ"),
+            UnitForms.Simple("{n} ತಿಂ"),
+            UnitForms.Simple("{n} ವ"),
+            "{n}½",
+            "",
+            "{0} ಹಿಂದೆ",
+            "{0} ನಂತರ"
+        )
+    );
+
     // Source: duration/locales/src/ko.json
     // ================================================================
     // KO — Korean
@@ -1990,6 +2627,55 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/ku.json
+    // ================================================================
+    // KU — Kurdish
+    // ================================================================
+    public static readonly DurationLocale KU = new(
+        "ku",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} çirke" }, { PluralCategory.Other, "{n} çirke" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} deqîqe" }, { PluralCategory.Other, "{n} deqîqe" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} saet" }, { PluralCategory.Other, "{n} saet" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} roj" }, { PluralCategory.Other, "{n} roj" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} hefte" }, { PluralCategory.Other, "{n} hefte" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} meh" }, { PluralCategory.Other, "{n} meh" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} sal" }, { PluralCategory.Other, "{n} sal" } })
+        ),
+        "{n}½",
+        ", ",
+        "niha",
+        "berî {0}",
+        "di {0} de",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} çrk."),
+            UnitForms.Simple("{n} deq."),
+            UnitForms.Simple("{n} st."),
+            UnitForms.Simple("{n} roj"),
+            UnitForms.Simple("{n} hft."),
+            UnitForms.Simple("{n} meh"),
+            UnitForms.Simple("{n} sal"),
+            null,
+            null,
+            "berî {0}",
+            "di {0} de"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}st"),
+            UnitForms.Simple("{n}r"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}s"),
+            "{n}½",
+            "",
+            "berî {0}",
+            "di {0} de"
+        )
+    );
+
     // Source: duration/locales/src/kw.json
     // ================================================================
     // KW — Cornish
@@ -2036,6 +2722,202 @@ public static class Locales
             "",
             "{0} a-dhia",
             "a-ji {0}"
+        )
+    );
+
+    // Source: duration/locales/src/ky.json
+    // ================================================================
+    // KY — Kyrgyz
+    // ================================================================
+    public static readonly DurationLocale KY = new(
+        "ky",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} секунд"),
+            UnitForms.Simple("{n} мүнөт"),
+            UnitForms.Simple("{n} саат"),
+            UnitForms.Simple("{n} күн"),
+            UnitForms.Simple("{n} апта"),
+            UnitForms.Simple("{n} ай"),
+            UnitForms.Simple("{n} жыл")
+        ),
+        "{n}½",
+        ", ",
+        "азыр эле",
+        "{0} мурун",
+        "{0} кийин",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} сек"),
+            UnitForms.Simple("{n} мүн"),
+            UnitForms.Simple("{n} саат"),
+            UnitForms.Simple("{n} күн"),
+            UnitForms.Simple("{n} апта"),
+            UnitForms.Simple("{n} ай"),
+            UnitForms.Simple("{n} жыл"),
+            null,
+            null,
+            "{0} мурун",
+            "{0} кийин"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} сек"),
+            UnitForms.Simple("{n} мүн"),
+            UnitForms.Simple("{n}ч"),
+            UnitForms.Simple("{n} к"),
+            UnitForms.Simple("{n} апт"),
+            UnitForms.Simple("{n} ай"),
+            UnitForms.Simple("{n} ж"),
+            "{n}½",
+            "",
+            "{0} мурун",
+            "{0} кийин"
+        )
+    );
+
+    // Source: duration/locales/src/lg.json
+    // ================================================================
+    // LG — Luganda
+    // ================================================================
+    public static readonly DurationLocale LG = new(
+        "lg",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("sikonda {n}"),
+            UnitForms.Simple("dakiika {n}"),
+            UnitForms.Simple("essaawa {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "olunaku {n}" }, { PluralCategory.Other, "ennaku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sabbiiti {n}" }, { PluralCategory.Other, "sabiiti {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "omwezi {n}" }, { PluralCategory.Other, "emyezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "omwaka {n}" }, { PluralCategory.Other, "emyaka {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "kaakano",
+        "{0} emabega",
+        "mu {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("sikonda {n}"),
+            UnitForms.Simple("dakiika {n}"),
+            UnitForms.Simple("essaawa {n}"),
+            UnitForms.Simple("ennaku {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sabbiiti {n}" }, { PluralCategory.Other, "sabiiti {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "omwezi {n}" }, { PluralCategory.Other, "emyezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "omwaka {n}" }, { PluralCategory.Other, "emyaka {n}" } }),
+            null,
+            null,
+            "{0} emabega",
+            "mu {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("sik {n}"),
+            UnitForms.Simple("dak {n}"),
+            UnitForms.Simple("ssa {n}"),
+            UnitForms.Simple("ennaku {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sab {n}" }, { PluralCategory.Other, "sab {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwezi {n}" }, { PluralCategory.Other, "myezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwaka {n}" }, { PluralCategory.Other, "myaka {n}" } }),
+            "{n}½",
+            "",
+            "{0} emabega",
+            "mu {0}"
+        )
+    );
+
+    // Source: duration/locales/src/ln.json
+    // ================================================================
+    // LN — Lingala
+    // ================================================================
+    public static readonly DurationLocale LN = new(
+        "ln",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} segɔnde"),
+            UnitForms.Simple("{n} moniti"),
+            UnitForms.Simple("{n} ngonga"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mokolo {n}" }, { PluralCategory.Other, "mikolo {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "poso {n}" }, { PluralCategory.Other, "baposo {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sanza {n}" }, { PluralCategory.Other, "basanza {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mobu {n}" }, { PluralCategory.Other, "mibu {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "sikoyo",
+        "{0} elékí",
+        "na {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("seg {n}"),
+            UnitForms.Simple("mon {n}"),
+            UnitForms.Simple("ng {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mokolo {n}" }, { PluralCategory.Other, "mik {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "poso {n}" }, { PluralCategory.Other, "bap {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sanza {n}" }, { PluralCategory.Other, "basanza {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mobu {n}" }, { PluralCategory.Other, "mibu {n}" } }),
+            null,
+            null,
+            "{0} elékí",
+            "na {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("s {n}"),
+            UnitForms.Simple("m {n}"),
+            UnitForms.Simple("ng {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mok {n}" }, { PluralCategory.Other, "mik {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "pos {n}" }, { PluralCategory.Other, "bap {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sza {n}" }, { PluralCategory.Other, "bsza {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mb {n}" }, { PluralCategory.Other, "mib {n}" } }),
+            "{n}½",
+            "",
+            "{0} elékí",
+            "na {0}"
+        )
+    );
+
+    // Source: duration/locales/src/lo.json
+    // ================================================================
+    // LO — Lao
+    // ================================================================
+    public static readonly DurationLocale LO = new(
+        "lo",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} ວິນາທີ"),
+            UnitForms.Simple("{n} ນາທີ"),
+            UnitForms.Simple("{n} ຊົ່ວໂມງ"),
+            UnitForms.Simple("{n} ມື້"),
+            UnitForms.Simple("{n} ອາທິດ"),
+            UnitForms.Simple("{n} ເດືອນ"),
+            UnitForms.Simple("{n} ປີ")
+        ),
+        "{0}ເຄິ່ງ",
+        "",
+        "ຫາກໍ",
+        "{0} ກ່ອນ",
+        "ໃນ {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ວິ."),
+            UnitForms.Simple("{n} ນທ."),
+            UnitForms.Simple("{n} ຊມ."),
+            UnitForms.Simple("{n} ມ."),
+            UnitForms.Simple("{n} ອທ."),
+            UnitForms.Simple("{n} ດ."),
+            UnitForms.Simple("{n} ປ."),
+            null,
+            null,
+            "{0} ກ່ອນ",
+            "ໃນ {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            "{0} ກ່ອນ",
+            "ໃນ {0}"
         )
     );
 
@@ -2137,6 +3019,104 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/mg.json
+    // ================================================================
+    // MG — Malagasy
+    // ================================================================
+    public static readonly DurationLocale MG = new(
+        "mg",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} segondra"),
+            UnitForms.Simple("{n} minitra"),
+            UnitForms.Simple("{n} ora"),
+            UnitForms.Simple("{n} andro"),
+            UnitForms.Simple("{n} herinandro"),
+            UnitForms.Simple("{n} volana"),
+            UnitForms.Simple("{n} taona")
+        ),
+        "{0} sy sasany",
+        ", ",
+        "vao haingana",
+        "{0} lasa",
+        "ao anatin'ny {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} seg"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} ora"),
+            UnitForms.Simple("{n} and"),
+            UnitForms.Simple("{n} her"),
+            UnitForms.Simple("{n} vol"),
+            UnitForms.Simple("{n} tna"),
+            null,
+            null,
+            "{0} lasa",
+            "ao anatin'ny {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} s"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} o"),
+            UnitForms.Simple("{n} a"),
+            UnitForms.Simple("{n} h"),
+            UnitForms.Simple("{n} v"),
+            UnitForms.Simple("{n} t"),
+            "{n}½",
+            "",
+            "{0} lasa",
+            "ao anatin'ny {0}"
+        )
+    );
+
+    // Source: duration/locales/src/mi.json
+    // ================================================================
+    // MI — Māori
+    // ================================================================
+    public static readonly DurationLocale MI = new(
+        "mi",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} hēkona"),
+            UnitForms.Simple("{n} meneti"),
+            UnitForms.Simple("{n} hāora"),
+            UnitForms.Simple("rā {n}"),
+            UnitForms.Simple("wiki {n}"),
+            UnitForms.Simple("marama {n}"),
+            UnitForms.Simple("tau {n}")
+        ),
+        "{0}½",
+        ", ",
+        "ināianei",
+        "{0} i mua",
+        "ā te {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} hēk"),
+            UnitForms.Simple("{n} men"),
+            UnitForms.Simple("{n} hāo"),
+            UnitForms.Simple("rā {n}"),
+            UnitForms.Simple("w {n}"),
+            UnitForms.Simple("m {n}"),
+            UnitForms.Simple("t {n}"),
+            null,
+            null,
+            "{0} i mua",
+            "ā te {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}hēk"),
+            UnitForms.Simple("{n}men"),
+            UnitForms.Simple("{n}hāo"),
+            UnitForms.Simple("{n}r"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}t"),
+            "{n}½",
+            "",
+            "{0} i mua",
+            "ā te {0}"
+        )
+    );
+
     // Source: duration/locales/src/mk.json
     // ================================================================
     // MK — Macedonian
@@ -2183,6 +3163,104 @@ public static class Locales
             "",
             "пред {0}",
             "за {0}"
+        )
+    );
+
+    // Source: duration/locales/src/ml.json
+    // ================================================================
+    // ML — Malayalam
+    // ================================================================
+    public static readonly DurationLocale ML = new(
+        "ml",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} സെക്കൻഡ്" }, { PluralCategory.Other, "{n} സെക്കൻഡുകൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} മിനിറ്റ്" }, { PluralCategory.Other, "{n} മിനിറ്റുകൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} മണിക്കൂർ" }, { PluralCategory.Other, "{n} മണിക്കൂറുകൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ദിവസം" }, { PluralCategory.Other, "{n} ദിവസങ്ങൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ആഴ്ച" }, { PluralCategory.Other, "{n} ആഴ്ചകൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} മാസം" }, { PluralCategory.Other, "{n} മാസങ്ങൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} വർഷം" }, { PluralCategory.Other, "{n} വർഷങ്ങൾ" } })
+        ),
+        "{0} ര",
+        ", ",
+        "ഇപ്പോൾ",
+        "{0} മുമ്പ്",
+        "{0} കഴിഞ്ഞ്",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} സെ॰"),
+            UnitForms.Simple("{n} മി॰"),
+            UnitForms.Simple("{n} മ॰"),
+            UnitForms.Simple("{n} ദിവസം"),
+            UnitForms.Simple("{n} ആഴ്ച"),
+            UnitForms.Simple("{n} മാസം"),
+            UnitForms.Simple("{n} വർഷം"),
+            null,
+            null,
+            "{0} മുമ്പ്",
+            "{0} കഴിഞ്ഞ്"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} സെ"),
+            UnitForms.Simple("{n} മി"),
+            UnitForms.Simple("{n} മ"),
+            UnitForms.Simple("{n} ദി"),
+            UnitForms.Simple("{n} ആ"),
+            UnitForms.Simple("{n} മാ"),
+            UnitForms.Simple("{n} വ"),
+            "{n}½",
+            "",
+            "{0} മുമ്പ്",
+            "{0} കഴിഞ്ഞ്"
+        )
+    );
+
+    // Source: duration/locales/src/mn.json
+    // ================================================================
+    // MN — Mongolian
+    // ================================================================
+    public static readonly DurationLocale MN = new(
+        "mn",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} секунд"),
+            UnitForms.Simple("{n} минут"),
+            UnitForms.Simple("{n} цаг"),
+            UnitForms.Simple("{n} өдөр"),
+            UnitForms.Simple("{n} долоо хоног"),
+            UnitForms.Simple("{n} сар"),
+            UnitForms.Simple("{n} жил")
+        ),
+        "{n}½",
+        ", ",
+        "дөнгөж сая",
+        "{0}-н өмнө",
+        "{0}-н дараа",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} сек"),
+            UnitForms.Simple("{n} мин"),
+            UnitForms.Simple("{n} цаг"),
+            UnitForms.Simple("{n} өдөр"),
+            UnitForms.Simple("{n} д/х"),
+            UnitForms.Simple("{n} сар"),
+            UnitForms.Simple("{n} жил"),
+            null,
+            null,
+            "{0}-н өмнө",
+            "{0}-н дараа"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} сек"),
+            UnitForms.Simple("{n} мин"),
+            UnitForms.Simple("{n} ц"),
+            UnitForms.Simple("{n} ө"),
+            UnitForms.Simple("{n} д"),
+            UnitForms.Simple("{n} с"),
+            UnitForms.Simple("{n} ж"),
+            "{n}½",
+            "",
+            "{0}-н өмнө",
+            "{0}-н дараа"
         )
     );
 
@@ -2529,6 +3607,153 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/ny.json
+    // ================================================================
+    // NY — Chichewa
+    // ================================================================
+    public static readonly DurationLocale NY = new(
+        "ny",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} sekondi"),
+            UnitForms.Simple("{n} mphindi"),
+            UnitForms.Simple("{n} ola"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "tsiku {n}" }, { PluralCategory.Other, "masiku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sabata {n}" }, { PluralCategory.Other, "masabata {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwezi {n}" }, { PluralCategory.Other, "miyezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "chaka {n}" }, { PluralCategory.Other, "zaka {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "tsopano",
+        "{0} zapitazo",
+        "mu {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("sek {n}"),
+            UnitForms.Simple("mph {n}"),
+            UnitForms.Simple("ola {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "tsiku {n}" }, { PluralCategory.Other, "mas {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sabata {n}" }, { PluralCategory.Other, "masab {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwezi {n}" }, { PluralCategory.Other, "miyezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "chaka {n}" }, { PluralCategory.Other, "zaka {n}" } }),
+            null,
+            null,
+            "{0} zapitazo",
+            "mu {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("s {n}"),
+            UnitForms.Simple("m {n}"),
+            UnitForms.Simple("o {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ts {n}" }, { PluralCategory.Other, "mas {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sab {n}" }, { PluralCategory.Other, "msb {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mw {n}" }, { PluralCategory.Other, "miy {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ch {n}" }, { PluralCategory.Other, "z {n}" } }),
+            "{n}½",
+            "",
+            "{0} zapitazo",
+            "mu {0}"
+        )
+    );
+
+    // Source: duration/locales/src/om.json
+    // ================================================================
+    // OM — Oromo
+    // ================================================================
+    public static readonly DurationLocale OM = new(
+        "om",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sekondii {n}" }, { PluralCategory.Other, "sekondoota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "daqiiqaa {n}" }, { PluralCategory.Other, "daqiiqoota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sa'aatii {n}" }, { PluralCategory.Other, "sa'aatota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "guyyaa {n}" }, { PluralCategory.Other, "guyyoota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "torban {n}" }, { PluralCategory.Other, "torbanota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ji'a {n}" }, { PluralCategory.Other, "ji'oota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "waggaa {n}" }, { PluralCategory.Other, "waggoota {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "amma kana",
+        "{0} dura",
+        "{0} keessatti",
+        new CompactnessOverride(
+            UnitForms.Simple("sek {n}"),
+            UnitForms.Simple("daq {n}"),
+            UnitForms.Simple("sa'a {n}"),
+            UnitForms.Simple("gy {n}"),
+            UnitForms.Simple("trb {n}"),
+            UnitForms.Simple("ji {n}"),
+            UnitForms.Simple("wg {n}"),
+            null,
+            null,
+            "{0} dura",
+            "{0} keessatti"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("sek {n}"),
+            UnitForms.Simple("daq {n}"),
+            UnitForms.Simple("sa'a {n}"),
+            UnitForms.Simple("{n}g"),
+            UnitForms.Simple("{n}t"),
+            UnitForms.Simple("{n}j"),
+            UnitForms.Simple("{n}w"),
+            "{n}½",
+            "",
+            "{0} dura",
+            "{0} keessatti"
+        )
+    );
+
+    // Source: duration/locales/src/or.json
+    // ================================================================
+    // OR — Odia
+    // ================================================================
+    public static readonly DurationLocale OR = new(
+        "or",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ସେକେଣ୍ଡ" }, { PluralCategory.Other, "{n} ସେକେଣ୍ଡ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ମିନିଟ୍" }, { PluralCategory.Other, "{n} ମିନିଟ୍" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ଘଣ୍ଟା" }, { PluralCategory.Other, "{n} ଘଣ୍ଟା" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ଦିନ" }, { PluralCategory.Other, "{n} ଦିନ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ସପ୍ତାହ" }, { PluralCategory.Other, "{n} ସପ୍ତାହ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ମାସ" }, { PluralCategory.Other, "{n} ମାସ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ବର୍ଷ" }, { PluralCategory.Other, "{n} ବର୍ଷ" } })
+        ),
+        "{0}ଅଧା",
+        ", ",
+        "ଏବେ",
+        "{0} ପୂର୍ବେ",
+        "{0} ପରେ",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ସେ॰"),
+            UnitForms.Simple("{n} ମି॰"),
+            UnitForms.Simple("{n} ଘ॰"),
+            UnitForms.Simple("{n} ଦିନ"),
+            UnitForms.Simple("{n} ସପ୍ତାହ"),
+            UnitForms.Simple("{n} ମାସ"),
+            UnitForms.Simple("{n} ବର୍ଷ"),
+            null,
+            null,
+            "{0} ପୂର୍ବେ",
+            "{0} ପରେ"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ସେ"),
+            UnitForms.Simple("{n} ମି"),
+            UnitForms.Simple("{n} ଘ"),
+            UnitForms.Simple("{n} ଦି"),
+            UnitForms.Simple("{n} ସ"),
+            UnitForms.Simple("{n} ମା"),
+            UnitForms.Simple("{n} ବ"),
+            "{n}½",
+            "",
+            "{0} ପୂର୍ବେ",
+            "{0} ପରେ"
+        )
+    );
+
     // Source: duration/locales/src/pa.json
     // ================================================================
     // PA — Punjabi
@@ -2627,6 +3852,55 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/ps.json
+    // ================================================================
+    // PS — Pashto
+    // ================================================================
+    public static readonly DurationLocale PS = new(
+        "ps",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ثانیه" }, { PluralCategory.Other, "{n} ثانیې" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} دقیقه" }, { PluralCategory.Other, "{n} دقیقې" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ساعت" }, { PluralCategory.Other, "{n} ساعتونه" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ورځ" }, { PluralCategory.Other, "{n} ورځې" } }),
+            UnitForms.Simple("{n} اونۍ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مياشت" }, { PluralCategory.Other, "{n} مياشتې" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} کال" }, { PluralCategory.Other, "{n} کالونه" } })
+        ),
+        "{n}½",
+        "، ",
+        "همدا اوس",
+        "د {0} مخکې",
+        "په {0} کې",
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ثانیه" }, { PluralCategory.Other, "{n} ثانیې" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} دقیقه" }, { PluralCategory.Other, "{n} دقیقې" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ساعت" }, { PluralCategory.Other, "{n} ساعتونه" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ورځ" }, { PluralCategory.Other, "{n} ورځې" } }),
+            UnitForms.Simple("{n} اونۍ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مياشت" }, { PluralCategory.Other, "{n} مياشتې" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} کال" }, { PluralCategory.Other, "{n} کالونه" } }),
+            null,
+            null,
+            "د {0} مخکې",
+            "په {0} کې"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ث"),
+            UnitForms.Simple("{n} د"),
+            UnitForms.Simple("{n} س"),
+            UnitForms.Simple("{n} و"),
+            UnitForms.Simple("{n} او"),
+            UnitForms.Simple("{n} م"),
+            UnitForms.Simple("{n} ک"),
+            "{n}½",
+            "",
+            "د {0} مخکې",
+            "په {0} کې"
+        )
+    );
+
     // Source: duration/locales/src/pt.json
     // ================================================================
     // PT — Portuguese
@@ -2673,6 +3947,55 @@ public static class Locales
             "",
             "há {0}",
             "em {0}"
+        )
+    );
+
+    // Source: duration/locales/src/qu.json
+    // ================================================================
+    // QU — Quechua
+    // ================================================================
+    public static readonly DurationLocale QU = new(
+        "qu",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} ñiqin"),
+            UnitForms.Simple("{n} chiniku"),
+            UnitForms.Simple("{n} ura"),
+            UnitForms.Simple("{n} p'unchaw"),
+            UnitForms.Simple("{n} simana"),
+            UnitForms.Simple("{n} killa"),
+            UnitForms.Simple("{n} wata")
+        ),
+        "{0} khuskannin",
+        ", ",
+        "kunanlla",
+        "{0} ñawpaqta",
+        "{0} qhipata",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ñiq"),
+            UnitForms.Simple("{n} chi"),
+            UnitForms.Simple("{n} ura"),
+            UnitForms.Simple("{n} p'un"),
+            UnitForms.Simple("{n} sim"),
+            UnitForms.Simple("{n} kil"),
+            UnitForms.Simple("{n} wat"),
+            null,
+            null,
+            "{0} ñawpaqta",
+            "{0} qhipata"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            "{0} ñawpaqta",
+            "{0} qhipata"
         )
     );
 
@@ -2771,6 +4094,104 @@ public static class Locales
             "",
             "{0} назад",
             "через {0}"
+        )
+    );
+
+    // Source: duration/locales/src/rw.json
+    // ================================================================
+    // RW — Kinyarwanda
+    // ================================================================
+    public static readonly DurationLocale RW = new(
+        "rw",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "isegonda {n}" }, { PluralCategory.Other, "amasegonda {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umunota {n}" }, { PluralCategory.Other, "iminota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "isaha {n}" }, { PluralCategory.Other, "amasaha {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umunsi {n}" }, { PluralCategory.Other, "iminsi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "icyumweru {n}" }, { PluralCategory.Other, "ibyumweru {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ukwezi {n}" }, { PluralCategory.Other, "amezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umwaka {n}" }, { PluralCategory.Other, "imyaka {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "ubu nyine",
+        "hashize {0}",
+        "mu {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("seg {n}"),
+            UnitForms.Simple("mno {n}"),
+            UnitForms.Simple("sha {n}"),
+            UnitForms.Simple("mns {n}"),
+            UnitForms.Simple("cyu {n}"),
+            UnitForms.Simple("kwe {n}"),
+            UnitForms.Simple("mwk {n}"),
+            null,
+            null,
+            "hashize {0}",
+            "mu {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("seg {n}"),
+            UnitForms.Simple("mno {n}"),
+            UnitForms.Simple("sha {n}"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}c"),
+            UnitForms.Simple("{n}k"),
+            UnitForms.Simple("{n}u"),
+            "{n}½",
+            "",
+            "hashize {0}",
+            "mu {0}"
+        )
+    );
+
+    // Source: duration/locales/src/sd.json
+    // ================================================================
+    // SD — Sindhi
+    // ================================================================
+    public static readonly DurationLocale SD = new(
+        "sd",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} سيڪنڊ"),
+            UnitForms.Simple("{n} منٽ"),
+            UnitForms.Simple("{n} ڪلاڪ"),
+            UnitForms.Simple("{n} ڏينهن"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} هفتو" }, { PluralCategory.Other, "{n} هفتا" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مهينو" }, { PluralCategory.Other, "{n} مهينا" } }),
+            UnitForms.Simple("{n} سال")
+        ),
+        "{n}½",
+        "، ",
+        "هاڻي",
+        "{0} اڳ",
+        "{0} ۾",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} سيڪنڊ"),
+            UnitForms.Simple("{n} منٽ"),
+            UnitForms.Simple("{n} ڪلاڪ"),
+            UnitForms.Simple("{n} ڏينهن"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} هفتو" }, { PluralCategory.Other, "{n} هفتا" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مهينو" }, { PluralCategory.Other, "{n} مهينا" } }),
+            UnitForms.Simple("{n} سال"),
+            null,
+            null,
+            "{0} اڳ",
+            "{0} ۾"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} سي"),
+            UnitForms.Simple("{n} م"),
+            UnitForms.Simple("{n} ڪ"),
+            UnitForms.Simple("{n} ڏ"),
+            UnitForms.Simple("{n} ه"),
+            UnitForms.Simple("{n} مه"),
+            UnitForms.Simple("{n} س"),
+            "{n}½",
+            "",
+            "{0} اڳ",
+            "{0} ۾"
         )
     );
 
@@ -2970,6 +4391,104 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/sn.json
+    // ================================================================
+    // SN — Shona
+    // ================================================================
+    public static readonly DurationLocale SN = new(
+        "sn",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} sekondi"),
+            UnitForms.Simple("{n} miniti"),
+            UnitForms.Simple("{n} awa"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "zuva {n}" }, { PluralCategory.Other, "mazuva {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "vhiki {n}" }, { PluralCategory.Other, "mavhiki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwedzi {n}" }, { PluralCategory.Other, "mwedzi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "gore {n}" }, { PluralCategory.Other, "makore {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "izvozvi",
+        "{0} yapfuura",
+        "mu{0}",
+        new CompactnessOverride(
+            UnitForms.Simple("sek {n}"),
+            UnitForms.Simple("min {n}"),
+            UnitForms.Simple("awa {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "zuva {n}" }, { PluralCategory.Other, "maz {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "vhiki {n}" }, { PluralCategory.Other, "mavh {n}" } }),
+            UnitForms.Simple("mwedzi {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "gore {n}" }, { PluralCategory.Other, "mak {n}" } }),
+            null,
+            null,
+            "{0} yapfuura",
+            "mu{0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("s {n}"),
+            UnitForms.Simple("m {n}"),
+            UnitForms.Simple("a {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "z {n}" }, { PluralCategory.Other, "maz {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "vh {n}" }, { PluralCategory.Other, "mvh {n}" } }),
+            UnitForms.Simple("mw {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "g {n}" }, { PluralCategory.Other, "mak {n}" } }),
+            "{n}½",
+            "",
+            "{0} yapfuura",
+            "mu{0}"
+        )
+    );
+
+    // Source: duration/locales/src/so.json
+    // ================================================================
+    // SO — Somali
+    // ================================================================
+    public static readonly DurationLocale SO = new(
+        "so",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ilbiriqsi {n}" }, { PluralCategory.Other, "ilbiriqsiyaal {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "daqiiqad {n}" }, { PluralCategory.Other, "daqiiqadood {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "saacad {n}" }, { PluralCategory.Other, "saacadood {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "maalin {n}" }, { PluralCategory.Other, "maalmood {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "toddobaad {n}" }, { PluralCategory.Other, "toddobaadyo {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bil {n}" }, { PluralCategory.Other, "bilood {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sano {n}" }, { PluralCategory.Other, "sanooyin {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "hadda",
+        "{0} ka hor",
+        "{0} gudahood",
+        new CompactnessOverride(
+            UnitForms.Simple("ilb {n}"),
+            UnitForms.Simple("daq {n}"),
+            UnitForms.Simple("scd {n}"),
+            UnitForms.Simple("mln {n}"),
+            UnitForms.Simple("tdb {n}"),
+            UnitForms.Simple("bil {n}"),
+            UnitForms.Simple("sno {n}"),
+            null,
+            null,
+            "{0} ka hor",
+            "{0} gudahood"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("ilb {n}"),
+            UnitForms.Simple("daq {n}"),
+            UnitForms.Simple("scd {n}"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}t"),
+            UnitForms.Simple("{n}b"),
+            UnitForms.Simple("{n}s"),
+            "{n}½",
+            "",
+            "{0} ka hor",
+            "{0} gudahood"
+        )
+    );
+
     // Source: duration/locales/src/sq.json
     // ================================================================
     // SQ — Albanian
@@ -3065,6 +4584,55 @@ public static class Locales
             "",
             "пре {0}",
             "за {0}"
+        )
+    );
+
+    // Source: duration/locales/src/su.json
+    // ================================================================
+    // SU — Sundanese
+    // ================================================================
+    public static readonly DurationLocale SU = new(
+        "su",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} detik"),
+            UnitForms.Simple("{n} menit"),
+            UnitForms.Simple("{n} jam"),
+            UnitForms.Simple("{n} dinten"),
+            UnitForms.Simple("{n} minggu"),
+            UnitForms.Simple("{n} sasih"),
+            UnitForms.Simple("{n} taun")
+        ),
+        "{0} satengah",
+        ", ",
+        "ayeuna",
+        "{0} kapengker",
+        "dina {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} dtk"),
+            UnitForms.Simple("{n} mnt"),
+            UnitForms.Simple("{n} jam"),
+            UnitForms.Simple("{n} dinten"),
+            UnitForms.Simple("{n} minggu"),
+            UnitForms.Simple("{n} sasih"),
+            UnitForms.Simple("{n} taun"),
+            null,
+            null,
+            "{0} kapengker",
+            "dina {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}dtk"),
+            UnitForms.Simple("{n}mnt"),
+            UnitForms.Simple("{n}j"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}mg"),
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}t"),
+            "{n}½",
+            "",
+            "{0} kapengker",
+            "dina {0}"
         )
     );
 
@@ -3264,6 +4832,55 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/tg.json
+    // ================================================================
+    // TG — Tajik
+    // ================================================================
+    public static readonly DurationLocale TG = new(
+        "tg",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} сония"),
+            UnitForms.Simple("{n} дақиқа"),
+            UnitForms.Simple("{n} соат"),
+            UnitForms.Simple("{n} рӯз"),
+            UnitForms.Simple("{n} ҳафта"),
+            UnitForms.Simple("{n} моҳ"),
+            UnitForms.Simple("{n} сол")
+        ),
+        "{0} ним",
+        ", ",
+        "ҳамин ҳоло",
+        "{0} пеш",
+        "баъди {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} сон"),
+            UnitForms.Simple("{n} дақ"),
+            UnitForms.Simple("{n} соат"),
+            UnitForms.Simple("{n} р"),
+            UnitForms.Simple("{n} ҳ"),
+            UnitForms.Simple("{n} м"),
+            UnitForms.Simple("{n} с"),
+            null,
+            null,
+            "{0} пеш",
+            "баъди {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}сон"),
+            UnitForms.Simple("{n}дақ"),
+            UnitForms.Simple("{n}соат"),
+            UnitForms.Simple("{n}р"),
+            UnitForms.Simple("{n}ҳ"),
+            UnitForms.Simple("{n}м"),
+            UnitForms.Simple("{n}с"),
+            "{n}½",
+            "",
+            "{0} пеш",
+            "баъди {0}"
+        )
+    );
+
     // Source: duration/locales/src/th.json
     // ================================================================
     // TH — Thai
@@ -3310,6 +4927,104 @@ public static class Locales
             "",
             "{0}ที่แล้ว",
             "ใน{0}"
+        )
+    );
+
+    // Source: duration/locales/src/ti.json
+    // ================================================================
+    // TI — Tigrinya
+    // ================================================================
+    public static readonly DurationLocale TI = new(
+        "ti",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ካልኢት" }, { PluralCategory.Other, "{n} ካልኢታት" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ደቒቓ" }, { PluralCategory.Other, "{n} ደቒቓታት" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ሰዓት" }, { PluralCategory.Other, "{n} ሰዓታት" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} መዓልቲ" }, { PluralCategory.Other, "{n} መዓልትታት" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ሰሙን" }, { PluralCategory.Other, "{n} ሰሙናት" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ወርሒ" }, { PluralCategory.Other, "{n} ኣዋርሕ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ዓመት" }, { PluralCategory.Other, "{n} ዓመታት" } })
+        ),
+        "{0} ተኹል",
+        "፣ ",
+        "ሕጂ",
+        "ቅድሚ {0}",
+        "ድሕሪ {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ካል"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ደቒ" }, { PluralCategory.Other, "{n} ደቒቓ" } }),
+            UnitForms.Simple("{n} ሰዓ"),
+            UnitForms.Simple("{n} መዓልትታት"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ሰሙን" }, { PluralCategory.Other, "{n} ሰሙናት" } }),
+            UnitForms.Simple("{n} ኣዋርሕ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ዓመት" }, { PluralCategory.Other, "{n} ዓመታት" } }),
+            null,
+            null,
+            "ቅድሚ {0}",
+            "ድሕሪ {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ካ"),
+            UnitForms.Simple("{n} ደ"),
+            UnitForms.Simple("{n} ሰ"),
+            UnitForms.Simple("{n} መ"),
+            UnitForms.Simple("{n} ሰሙን"),
+            UnitForms.Simple("{n} ወር"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ዓመት" }, { PluralCategory.Other, "{n} ዓ" } }),
+            "{n}½",
+            "",
+            "ቅድሚ {0}",
+            "ድሕሪ {0}"
+        )
+    );
+
+    // Source: duration/locales/src/tk.json
+    // ================================================================
+    // TK — Turkmen
+    // ================================================================
+    public static readonly DurationLocale TK = new(
+        "tk",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} sekunt"),
+            UnitForms.Simple("{n} minut"),
+            UnitForms.Simple("{n} sagat"),
+            UnitForms.Simple("{n} gün"),
+            UnitForms.Simple("{n} hepde"),
+            UnitForms.Simple("{n} aý"),
+            UnitForms.Simple("{n} ýyl")
+        ),
+        "{0}½",
+        ", ",
+        "häzir",
+        "{0} öň",
+        "{0} soň",
+        new CompactnessOverride(
+            UnitForms.Simple("{n} sek"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} sag"),
+            UnitForms.Simple("{n} g"),
+            UnitForms.Simple("{n} h"),
+            UnitForms.Simple("{n} a"),
+            UnitForms.Simple("{n} ý"),
+            null,
+            null,
+            "{0} öň",
+            "{0} soň"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}sek"),
+            UnitForms.Simple("{n}min"),
+            UnitForms.Simple("{n}sag"),
+            UnitForms.Simple("{n}g"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}a"),
+            UnitForms.Simple("{n}ý"),
+            "{n}½",
+            "",
+            "{0} öň",
+            "{0} soň"
         )
     );
 
@@ -3607,6 +5322,153 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/xh.json
+    // ================================================================
+    // XH — Xhosa
+    // ================================================================
+    public static readonly DurationLocale XH = new(
+        "xh",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umzuzwana {n}" }, { PluralCategory.Other, "imizuzwana {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umzuzu {n}" }, { PluralCategory.Other, "imizuzu {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iyure {n}" }, { PluralCategory.Other, "iiyure {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "usuku {n}" }, { PluralCategory.Other, "iintsuku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iveki {n}" }, { PluralCategory.Other, "iiveki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "inyanga {n}" }, { PluralCategory.Other, "iinyanga {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "unyaka {n}" }, { PluralCategory.Other, "iminyaka {n}" } })
+        ),
+        "{0} nehafu",
+        ", ",
+        "ngoku",
+        "kwi{0} edlulileyo",
+        "kwi{0}",
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umzuzwana {n}" }, { PluralCategory.Other, "imizuzwana {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umzuzu {n}" }, { PluralCategory.Other, "imizuzu {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iyure {n}" }, { PluralCategory.Other, "iiyure {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "usuku {n}" }, { PluralCategory.Other, "iintsuku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iveki {n}" }, { PluralCategory.Other, "iiveki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iny. {n}" }, { PluralCategory.Other, "iiny. {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "uny. {n}" }, { PluralCategory.Other, "imy. {n}" } }),
+            null,
+            null,
+            "kwi{0} edlulileyo",
+            "kwi{0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            "kwi{0} edlulileyo",
+            "kwi{0}"
+        )
+    );
+
+    // Source: duration/locales/src/yo.json
+    // ================================================================
+    // YO — Yoruba
+    // ================================================================
+    public static readonly DurationLocale YO = new(
+        "yo",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("ìṣẹ́jú-àáyá {n}"),
+            UnitForms.Simple("ìṣẹ́jú {n}"),
+            UnitForms.Simple("wákàtí {n}"),
+            UnitForms.Simple("ọjọ́ {n}"),
+            UnitForms.Simple("ọ̀sẹ̀ {n}"),
+            UnitForms.Simple("oṣù {n}"),
+            UnitForms.Simple("ọdún {n}")
+        ),
+        "{0} àbọ̀",
+        ", ",
+        "ní báyìí",
+        "{0} sẹ́yìn",
+        "ní {0}",
+        new CompactnessOverride(
+            UnitForms.Simple("ìṣẹ́jú-àáyá {n}"),
+            UnitForms.Simple("ìṣẹ́jú {n}"),
+            UnitForms.Simple("wákàtí {n}"),
+            UnitForms.Simple("ọjọ́ {n}"),
+            UnitForms.Simple("ọ̀sẹ̀ {n}"),
+            UnitForms.Simple("oṣù {n}"),
+            UnitForms.Simple("ọdún {n}"),
+            null,
+            null,
+            "{0} sẹ́yìn",
+            "ní {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            "{0} sẹ́yìn",
+            "ní {0}"
+        )
+    );
+
+    // Source: duration/locales/src/yue.json
+    // ================================================================
+    // YUE — Cantonese
+    // ================================================================
+    public static readonly DurationLocale YUE = new(
+        "yue",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n}秒"),
+            UnitForms.Simple("{n}分鐘"),
+            UnitForms.Simple("{n}個鐘頭"),
+            UnitForms.Simple("{n}日"),
+            UnitForms.Simple("{n}個星期"),
+            UnitForms.Simple("{n}個月"),
+            UnitForms.Simple("{n}年")
+        ),
+        "{0}半",
+        "",
+        "啱啱",
+        "{0}前",
+        "{0}之後",
+        new CompactnessOverride(
+            UnitForms.Simple("{n}秒"),
+            UnitForms.Simple("{n}分鐘"),
+            UnitForms.Simple("{n}個鐘"),
+            UnitForms.Simple("{n}日"),
+            UnitForms.Simple("{n}個星期"),
+            UnitForms.Simple("{n}個月"),
+            UnitForms.Simple("{n}年"),
+            null,
+            null,
+            "{0}前",
+            "{0}之後"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}秒"),
+            UnitForms.Simple("{n}分"),
+            UnitForms.Simple("{n}時"),
+            UnitForms.Simple("{n}日"),
+            UnitForms.Simple("{n}週"),
+            UnitForms.Simple("{n}月"),
+            UnitForms.Simple("{n}年"),
+            "{n}½",
+            "",
+            "{0}前",
+            "{0}之後"
+        )
+    );
+
     // Source: duration/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -3656,17 +5518,70 @@ public static class Locales
         )
     );
 
+    // Source: duration/locales/src/zu.json
+    // ================================================================
+    // ZU — Zulu
+    // ================================================================
+    public static readonly DurationLocale ZU = new(
+        "zu",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "isekhondi {n}" }, { PluralCategory.Other, "amasekhondi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umzuzu {n}" }, { PluralCategory.Other, "imizuzu {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ihora {n}" }, { PluralCategory.Other, "amahora {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "usuku {n}" }, { PluralCategory.Other, "izinsuku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iviki {n}" }, { PluralCategory.Other, "amaviki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "inyanga {n}" }, { PluralCategory.Other, "izinyanga {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "unyaka {n}" }, { PluralCategory.Other, "iminyaka {n}" } })
+        ),
+        "{0} nohhafu",
+        ", ",
+        "khona manje",
+        "{0} edlule",
+        "ngo-{0}",
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "isekhondi {n}" }, { PluralCategory.Other, "amasekhondi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umzuzu {n}" }, { PluralCategory.Other, "imizuzu {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ihora {n}" }, { PluralCategory.Other, "amahora {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "usuku {n}" }, { PluralCategory.Other, "izinsuku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iviki {n}" }, { PluralCategory.Other, "amaviki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "inyanga {n}" }, { PluralCategory.Other, "izinyanga {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "unyaka {n}" }, { PluralCategory.Other, "iminyaka {n}" } }),
+            null,
+            null,
+            "{0} edlule",
+            "ngo-{0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} sk"),
+            UnitForms.Simple("{n} mz"),
+            UnitForms.Simple("{n} hr"),
+            UnitForms.Simple("{n} ns"),
+            UnitForms.Simple("{n} vk"),
+            UnitForms.Simple("{n} ny"),
+            UnitForms.Simple("{n} mk"),
+            "{n}½",
+            "",
+            "{0} edlule",
+            "ngo-{0}"
+        )
+    );
+
     public static readonly IReadOnlyDictionary<string, DurationLocale> All =
         new Dictionary<string, DurationLocale>
         {
+            { "af", AF },
+            { "ak", AK },
             { "am", AM },
             { "ar", AR },
             { "az", AZ },
+            { "be", BE },
             { "bg", BG },
             { "bn", BN },
             { "br", BR },
             { "bs", BS },
             { "ca", CA },
+            { "ceb", CEB },
             { "cs", CS },
             { "cy", CY },
             { "da", DA },
@@ -3677,29 +5592,47 @@ public static class Locales
             { "et", ET },
             { "eu", EU },
             { "fa", FA },
+            { "ff", FF },
             { "fi", FI },
             { "fil", FIL },
             { "fr", FR },
             { "ga", GA },
             { "gd", GD },
+            { "gl", GL },
+            { "gn", GN },
             { "gu", GU },
             { "gv", GV },
+            { "ha", HA },
             { "he", HE },
             { "hi", HI },
             { "hr", HR },
+            { "ht", HT },
             { "hu", HU },
+            { "hy", HY },
             { "id", ID },
+            { "ig", IG },
+            { "is", IS },
             { "it", IT },
             { "ja", JA },
             { "jv", JV },
             { "ka", KA },
             { "kk", KK },
             { "km", KM },
+            { "kn", KN },
             { "ko", KO },
+            { "ku", KU },
             { "kw", KW },
+            { "ky", KY },
+            { "lg", LG },
+            { "ln", LN },
+            { "lo", LO },
             { "lt", LT },
             { "lv", LV },
+            { "mg", MG },
+            { "mi", MI },
             { "mk", MK },
+            { "ml", ML },
+            { "mn", MN },
             { "mr", MR },
             { "ms", MS },
             { "mt", MT },
@@ -3707,29 +5640,46 @@ public static class Locales
             { "nb", NB },
             { "ne", NE },
             { "nl", NL },
+            { "ny", NY },
+            { "om", OM },
+            { "or", OR },
             { "pa", PA },
             { "pl", PL },
+            { "ps", PS },
             { "pt", PT },
+            { "qu", QU },
             { "ro", RO },
             { "ru", RU },
+            { "rw", RW },
+            { "sd", SD },
             { "shi", SHI },
             { "si", SI },
             { "sk", SK },
             { "sl", SL },
+            { "sn", SN },
+            { "so", SO },
             { "sq", SQ },
             { "sr", SR },
+            { "su", SU },
             { "sv", SV },
             { "sw", SW },
             { "ta", TA },
             { "te", TE },
+            { "tg", TG },
             { "th", TH },
+            { "ti", TI },
+            { "tk", TK },
             { "tr", TR },
             { "tzm", TZM },
             { "uk", UK },
             { "ur", UR },
             { "uz", UZ },
             { "vi", VI },
+            { "xh", XH },
+            { "yo", YO },
+            { "yue", YUE },
             { "zh", ZH },
+            { "zu", ZU },
         };
 
     public static DurationLocale? Get(string code)

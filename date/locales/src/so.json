@@ -1,0 +1,70 @@
+{
+  "code": "so",
+  "name": "Somali",
+  "months": [
+    "Janaayo",
+    "Febraayo",
+    "Maarso",
+    "Abriil",
+    "Maajo",
+    "Juun",
+    "Luuliyo",
+    "Ogost",
+    "Sebtembar",
+    "Oktoobar",
+    "Nofembar",
+    "Disembar"
+  ],
+  "weekdays": [
+    "Axad",
+    "Isniin",
+    "Talaado",
+    "Arbaco",
+    "Khamiis",
+    "Jimco",
+    "Sabti"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "maanta",
+  "tomorrow": "berri",
+  "yesterday": "shalay",
+  "dayAfterTomorrow": "saadamin",
+  "dayBeforeYesterday": "doraato",
+  "thisWeekday": "{weekday}tan",
+  "nextWeekday": "{weekday}ta xigta",
+  "lastWeekday": "{weekday}tii hore",
+  "short": {
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Abr",
+      "Maj",
+      "Jun",
+      "Lul",
+      "Ogo",
+      "Seb",
+      "Okt",
+      "Nof",
+      "Dis"
+    ],
+    "weekdays": [
+      "Axd",
+      "Isn",
+      "Tal",
+      "Arb",
+      "Kha",
+      "Jim",
+      "Sab"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

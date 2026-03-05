@@ -1,0 +1,70 @@
+{
+  "code": "lo",
+  "name": "Lao",
+  "months": [
+    "ມັງກອນ",
+    "ກຸມພາ",
+    "ມີນາ",
+    "ເມສາ",
+    "ພຶດສະພາ",
+    "ມິຖຸນາ",
+    "ກໍລະກົດ",
+    "ສິງຫາ",
+    "ກັນຍາ",
+    "ຕຸລາ",
+    "ພະຈິກ",
+    "ທັນວາ"
+  ],
+  "weekdays": [
+    "ວັນອາທິດ",
+    "ວັນຈັນ",
+    "ວັນອັງຄານ",
+    "ວັນພຸດ",
+    "ວັນພະຫັດ",
+    "ວັນສຸກ",
+    "ວັນເສົາ"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "ມື້ນີ້",
+  "tomorrow": "ມື້ອື່ນ",
+  "yesterday": "ມື້ວານ",
+  "dayAfterTomorrow": "ມື້ຮື",
+  "dayBeforeYesterday": "ມື້ກ່ອນ",
+  "thisWeekday": "{weekday}ນີ້",
+  "nextWeekday": "{weekday}ໜ້າ",
+  "lastWeekday": "{weekday}ແລ້ວ",
+  "short": {
+    "months": [
+      "ມ.ກ.",
+      "ກ.ພ.",
+      "ມ.ນ.",
+      "ມ.ສ.",
+      "ພ.ພ.",
+      "ມ.ຖ.",
+      "ກ.ລ.",
+      "ສ.ຫ.",
+      "ກ.ຍ.",
+      "ຕ.ລ.",
+      "ພ.ຈ.",
+      "ທ.ວ."
+    ],
+    "weekdays": [
+      "ອາທິດ",
+      "ຈັນ",
+      "ອັງຄານ",
+      "ພຸດ",
+      "ພະຫັດ",
+      "ສຸກ",
+      "ເສົາ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

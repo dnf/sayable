@@ -1,6 +1,6 @@
 # sayable-date Locales
 
-The `src/` directory contains 71 canonical locale JSON files — one per locale. These are the single source of truth for all date formatting data.
+The `src/` directory contains 110 canonical locale JSON files — one per locale. These are the single source of truth for all date formatting data.
 
 ## Editing Locales
 

@@ -1,0 +1,56 @@
+{
+  "code": "mg",
+  "name": "Malagasy",
+  "clock": {
+    "hours": [
+      "roa ambin'ny folo",
+      "iray",
+      "roa",
+      "telo",
+      "efatra",
+      "dimy",
+      "enina",
+      "fito",
+      "valo",
+      "sivy",
+      "folo",
+      "iraika ambin'ny folo"
+    ],
+    "midnight": "misasakalina",
+    "noon": "atoandro",
+    "patterns": {
+      "0": "{h} ora",
+      "5": "{h} sy dimy minitra",
+      "10": "{h} sy folo minitra",
+      "15": "{h} sy fahefatra",
+      "20": "{h} sy roapolo minitra",
+      "25": "{h} sy dimy amby roapolo minitra",
+      "30": "{h} sy sasany",
+      "35": "dimy amby roapolo minitra alohan'ny {next_h}",
+      "40": "roapolo minitra alohan'ny {next_h}",
+      "45": "fahefatra alohan'ny {next_h}",
+      "50": "folo minitra alohan'ny {next_h}",
+      "55": "dimy minitra alohan'ny {next_h}"
+    }
+  },
+  "short": {
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

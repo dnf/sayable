@@ -1,0 +1,61 @@
+{
+  "code": "ti",
+  "name": "Tigrinya",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "day": {
+      "one": "{n} መዓልቲ",
+      "other": "{n} መዓልትታት"
+    },
+    "week": {
+      "one": "{n} ሰሙን",
+      "other": "{n} ሰሙናት"
+    },
+    "month": {
+      "one": "{n} ወርሒ",
+      "other": "{n} ኣዋርሕ"
+    },
+    "year": {
+      "one": "{n} ዓመት",
+      "other": "{n} ዓመታት"
+    }
+  },
+  "half": "{0} ተኹል",
+  "delimiter": "፣ ",
+  "justBorn": "ሓድሽ ዝተወልደ",
+  "stages": {
+    "newborn": "ሓድሽ ዝተወልደ",
+    "infant": "ጨቓዊ",
+    "toddler": "ንእሽተይ ህጻን",
+    "child": "ቆልዓ",
+    "teenager": "መንእሰይ",
+    "adult": "ዓቢይ"
+  },
+  "short": {
+    "units": {
+      "day": "{n} መዓልትታት",
+      "week": {
+        "one": "{n} ሰሙን",
+        "other": "{n} ሰሙናት"
+      },
+      "month": "{n} ኣዋርሕ",
+      "year": {
+        "one": "{n} ዓመት",
+        "other": "{n} ዓመታት"
+      }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n} መ",
+      "week": "{n} ሰሙን",
+      "month": "{n} ወር",
+      "year": {
+        "one": "{n} ዓመት",
+        "other": "{n} ዓ"
+      }
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "code": "qu",
+  "name": "Quechua",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "{n} ñiqin",
+    "minute": "{n} chiniku",
+    "hour": "{n} ura",
+    "day": "{n} p'unchaw",
+    "week": "{n} simana",
+    "month": "{n} killa",
+    "year": "{n} wata"
+  },
+  "half": "{0} khuskannin",
+  "delimiter": ", ",
+  "justNow": "kunanlla",
+  "ago": "{0} ñawpaqta",
+  "inFuture": "{0} qhipata",
+  "short": {
+    "units": {
+      "second": "{n} ñiq",
+      "minute": "{n} chi",
+      "hour": "{n} ura",
+      "day": "{n} p'un",
+      "week": "{n} sim",
+      "month": "{n} kil",
+      "year": "{n} wat"
+    },
+    "ago": "{0} ñawpaqta",
+    "inFuture": "{0} qhipata",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} ñawpaqta",
+    "inFuture": "{0} qhipata",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

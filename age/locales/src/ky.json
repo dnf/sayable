@@ -1,0 +1,40 @@
+{
+  "code": "ky",
+  "name": "Kyrgyz",
+  "pluralRule": "one_other",
+  "units": {
+    "day": "{n} күн",
+    "week": "{n} апта",
+    "month": "{n} ай",
+    "year": "{n} жаш"
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justBorn": "Жаңы төрөлгөн",
+  "stages": {
+    "newborn": "Жаңы төрөлгөн",
+    "infant": "Наристе",
+    "toddler": "Бөбөк",
+    "child": "Бала",
+    "teenager": "Жаш өспүрүм",
+    "adult": "Чоң адам"
+  },
+  "short": {
+    "units": {
+      "day": "{n} күн",
+      "week": "{n} апта",
+      "month": "{n} ай",
+      "year": "{n} жаш"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "code": "ln",
+  "name": "Lingala",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": "{n} segɔnde",
+    "minute": "{n} moniti",
+    "hour": "{n} ngonga",
+    "day": {
+      "one": "mokolo {n}",
+      "other": "mikolo {n}"
+    },
+    "week": {
+      "one": "poso {n}",
+      "other": "baposo {n}"
+    },
+    "month": {
+      "one": "sanza {n}",
+      "other": "basanza {n}"
+    },
+    "year": {
+      "one": "mobu {n}",
+      "other": "mibu {n}"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "sikoyo",
+  "ago": "{0} elékí",
+  "inFuture": "na {0}",
+  "short": {
+    "units": {
+      "second": "seg {n}",
+      "minute": "mon {n}",
+      "hour": "ng {n}",
+      "day": {
+        "one": "mokolo {n}",
+        "other": "mik {n}"
+      },
+      "week": {
+        "one": "poso {n}",
+        "other": "bap {n}"
+      },
+      "month": {
+        "one": "sanza {n}",
+        "other": "basanza {n}"
+      },
+      "year": {
+        "one": "mobu {n}",
+        "other": "mibu {n}"
+      }
+    },
+    "ago": "{0} elékí",
+    "inFuture": "na {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "s {n}",
+      "minute": "m {n}",
+      "hour": "ng {n}",
+      "day": {
+        "one": "mok {n}",
+        "other": "mik {n}"
+      },
+      "week": {
+        "one": "pos {n}",
+        "other": "bap {n}"
+      },
+      "month": {
+        "one": "sza {n}",
+        "other": "bsza {n}"
+      },
+      "year": {
+        "one": "mb {n}",
+        "other": "mib {n}"
+      }
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} elékí",
+    "inFuture": "na {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

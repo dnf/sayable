@@ -1,0 +1,93 @@
+{
+  "code": "ak",
+  "name": "Akan",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": "sɛkɛnd {n}",
+    "minute": "sema {n}",
+    "hour": "dɔnhwere {n}",
+    "day": {
+      "one": "da {n}",
+      "other": "nna {n}"
+    },
+    "week": {
+      "one": "dapɛn {n}",
+      "other": "nnapɛn {n}"
+    },
+    "month": {
+      "one": "bosome {n}",
+      "other": "abosome {n}"
+    },
+    "year": {
+      "one": "afe {n}",
+      "other": "mfe {n}"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "sɛɛsei",
+  "ago": "{0} a etwaam",
+  "inFuture": "{0} mu",
+  "short": {
+    "units": {
+      "second": "sɛkɛnd {n}",
+      "minute": "sema {n}",
+      "hour": "dɔnhwere {n}",
+      "day": "nna {n}",
+      "week": {
+        "one": "dapɛn {n}",
+        "other": "nnapɛn {n}"
+      },
+      "month": {
+        "one": "bosome {n}",
+        "other": "abosome {n}"
+      },
+      "year": {
+        "one": "afe {n}",
+        "other": "mfe {n}"
+      }
+    },
+    "ago": "{0} a etwaam",
+    "inFuture": "{0} mu",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "sɛk {n}",
+      "minute": "sem {n}",
+      "hour": "dɔn {n}",
+      "day": "nna {n}",
+      "week": {
+        "one": "dapɛn {n}",
+        "other": "nnapɛn {n}"
+      },
+      "month": {
+        "one": "bos {n}",
+        "other": "abos {n}"
+      },
+      "year": {
+        "one": "afe {n}",
+        "other": "mfe {n}"
+      }
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} a etwaam",
+    "inFuture": "{0} mu",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

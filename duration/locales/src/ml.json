@@ -1,0 +1,84 @@
+{
+  "code": "ml",
+  "name": "Malayalam",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": {
+      "one": "{n} സെക്കൻഡ്",
+      "other": "{n} സെക്കൻഡുകൾ"
+    },
+    "minute": {
+      "one": "{n} മിനിറ്റ്",
+      "other": "{n} മിനിറ്റുകൾ"
+    },
+    "hour": {
+      "one": "{n} മണിക്കൂർ",
+      "other": "{n} മണിക്കൂറുകൾ"
+    },
+    "day": {
+      "one": "{n} ദിവസം",
+      "other": "{n} ദിവസങ്ങൾ"
+    },
+    "week": {
+      "one": "{n} ആഴ്ച",
+      "other": "{n} ആഴ്ചകൾ"
+    },
+    "month": {
+      "one": "{n} മാസം",
+      "other": "{n} മാസങ്ങൾ"
+    },
+    "year": {
+      "one": "{n} വർഷം",
+      "other": "{n} വർഷങ്ങൾ"
+    }
+  },
+  "half": "{0} ര",
+  "delimiter": ", ",
+  "justNow": "ഇപ്പോൾ",
+  "ago": "{0} മുമ്പ്",
+  "inFuture": "{0} കഴിഞ്ഞ്",
+  "short": {
+    "units": {
+      "second": "{n} സെ॰",
+      "minute": "{n} മി॰",
+      "hour": "{n} മ॰",
+      "day": "{n} ദിവസം",
+      "week": "{n} ആഴ്ച",
+      "month": "{n} മാസം",
+      "year": "{n} വർഷം"
+    },
+    "ago": "{0} മുമ്പ്",
+    "inFuture": "{0} കഴിഞ്ഞ്",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n} സെ",
+      "minute": "{n} മി",
+      "hour": "{n} മ",
+      "day": "{n} ദി",
+      "week": "{n} ആ",
+      "month": "{n} മാ",
+      "year": "{n} വ"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} മുമ്പ്",
+    "inFuture": "{0} കഴിഞ്ഞ്",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

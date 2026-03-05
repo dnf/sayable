@@ -1,0 +1,84 @@
+{
+  "code": "so",
+  "name": "Somali",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "ilbiriqsi {n}",
+      "other": "ilbiriqsiyaal {n}"
+    },
+    "minute": {
+      "one": "daqiiqad {n}",
+      "other": "daqiiqadood {n}"
+    },
+    "hour": {
+      "one": "saacad {n}",
+      "other": "saacadood {n}"
+    },
+    "day": {
+      "one": "maalin {n}",
+      "other": "maalmood {n}"
+    },
+    "week": {
+      "one": "toddobaad {n}",
+      "other": "toddobaadyo {n}"
+    },
+    "month": {
+      "one": "bil {n}",
+      "other": "bilood {n}"
+    },
+    "year": {
+      "one": "sano {n}",
+      "other": "sanooyin {n}"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "hadda",
+  "ago": "{0} ka hor",
+  "inFuture": "{0} gudahood",
+  "short": {
+    "units": {
+      "second": "ilb {n}",
+      "minute": "daq {n}",
+      "hour": "scd {n}",
+      "day": "mln {n}",
+      "week": "tdb {n}",
+      "month": "bil {n}",
+      "year": "sno {n}"
+    },
+    "ago": "{0} ka hor",
+    "inFuture": "{0} gudahood",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "ilb {n}",
+      "minute": "daq {n}",
+      "hour": "scd {n}",
+      "day": "{n}m",
+      "week": "{n}t",
+      "month": "{n}b",
+      "year": "{n}s"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} ka hor",
+    "inFuture": "{0} gudahood",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

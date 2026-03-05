@@ -1,0 +1,63 @@
+{
+  "code": "su",
+  "name": "Sundanese",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "{n} detik",
+    "minute": "{n} menit",
+    "hour": "{n} jam",
+    "day": "{n} dinten",
+    "week": "{n} minggu",
+    "month": "{n} sasih",
+    "year": "{n} taun"
+  },
+  "half": "{0} satengah",
+  "delimiter": ", ",
+  "justNow": "ayeuna",
+  "ago": "{0} kapengker",
+  "inFuture": "dina {0}",
+  "short": {
+    "units": {
+      "second": "{n} dtk",
+      "minute": "{n} mnt",
+      "hour": "{n} jam",
+      "day": "{n} dinten",
+      "week": "{n} minggu",
+      "month": "{n} sasih",
+      "year": "{n} taun"
+    },
+    "ago": "{0} kapengker",
+    "inFuture": "dina {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}dtk",
+      "minute": "{n}mnt",
+      "hour": "{n}j",
+      "day": "{n}d",
+      "week": "{n}mg",
+      "month": "{n}s",
+      "year": "{n}t"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} kapengker",
+    "inFuture": "dina {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

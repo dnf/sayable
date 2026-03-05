@@ -10,14 +10,18 @@
 
 (ns sayableduration.locales
   (:require
+    [sayableduration.locales.af :as af]
+    [sayableduration.locales.ak :as ak]
     [sayableduration.locales.am :as am]
     [sayableduration.locales.ar :as ar]
     [sayableduration.locales.az :as az]
+    [sayableduration.locales.be :as be]
     [sayableduration.locales.bg :as bg]
     [sayableduration.locales.bn :as bn]
     [sayableduration.locales.br :as br]
     [sayableduration.locales.bs :as bs]
     [sayableduration.locales.ca :as ca]
+    [sayableduration.locales.ceb :as ceb]
     [sayableduration.locales.cs :as cs]
     [sayableduration.locales.cy :as cy]
     [sayableduration.locales.da :as da]
@@ -28,29 +32,47 @@
     [sayableduration.locales.et :as et]
     [sayableduration.locales.eu :as eu]
     [sayableduration.locales.fa :as fa]
+    [sayableduration.locales.ff :as ff]
     [sayableduration.locales.fi :as fi]
     [sayableduration.locales.fil :as fil]
     [sayableduration.locales.fr :as fr]
     [sayableduration.locales.ga :as ga]
     [sayableduration.locales.gd :as gd]
+    [sayableduration.locales.gl :as gl]
+    [sayableduration.locales.gn :as gn]
     [sayableduration.locales.gu :as gu]
     [sayableduration.locales.gv :as gv]
+    [sayableduration.locales.ha :as ha]
     [sayableduration.locales.he :as he]
     [sayableduration.locales.hi :as hi]
     [sayableduration.locales.hr :as hr]
+    [sayableduration.locales.ht :as ht]
     [sayableduration.locales.hu :as hu]
+    [sayableduration.locales.hy :as hy]
     [sayableduration.locales.id :as id]
+    [sayableduration.locales.ig :as ig]
+    [sayableduration.locales.is :as is]
     [sayableduration.locales.it :as it]
     [sayableduration.locales.ja :as ja]
     [sayableduration.locales.jv :as jv]
     [sayableduration.locales.ka :as ka]
     [sayableduration.locales.kk :as kk]
     [sayableduration.locales.km :as km]
+    [sayableduration.locales.kn :as kn]
     [sayableduration.locales.ko :as ko]
+    [sayableduration.locales.ku :as ku]
     [sayableduration.locales.kw :as kw]
+    [sayableduration.locales.ky :as ky]
+    [sayableduration.locales.lg :as lg]
+    [sayableduration.locales.ln :as ln]
+    [sayableduration.locales.lo :as lo]
     [sayableduration.locales.lt :as lt]
     [sayableduration.locales.lv :as lv]
+    [sayableduration.locales.mg :as mg]
+    [sayableduration.locales.mi :as mi]
     [sayableduration.locales.mk :as mk]
+    [sayableduration.locales.ml :as ml]
+    [sayableduration.locales.mn :as mn]
     [sayableduration.locales.mr :as mr]
     [sayableduration.locales.ms :as ms]
     [sayableduration.locales.mt :as mt]
@@ -58,41 +80,62 @@
     [sayableduration.locales.nb :as nb]
     [sayableduration.locales.ne :as ne]
     [sayableduration.locales.nl :as nl]
+    [sayableduration.locales.ny :as ny]
+    [sayableduration.locales.om :as om]
+    [sayableduration.locales.or :as or]
     [sayableduration.locales.pa :as pa]
     [sayableduration.locales.pl :as pl]
+    [sayableduration.locales.ps :as ps]
     [sayableduration.locales.pt :as pt]
+    [sayableduration.locales.qu :as qu]
     [sayableduration.locales.ro :as ro]
     [sayableduration.locales.ru :as ru]
+    [sayableduration.locales.rw :as rw]
+    [sayableduration.locales.sd :as sd]
     [sayableduration.locales.shi :as shi]
     [sayableduration.locales.si :as si]
     [sayableduration.locales.sk :as sk]
     [sayableduration.locales.sl :as sl]
+    [sayableduration.locales.sn :as sn]
+    [sayableduration.locales.so :as so]
     [sayableduration.locales.sq :as sq]
     [sayableduration.locales.sr :as sr]
+    [sayableduration.locales.su :as su]
     [sayableduration.locales.sv :as sv]
     [sayableduration.locales.sw :as sw]
     [sayableduration.locales.ta :as ta]
     [sayableduration.locales.te :as te]
+    [sayableduration.locales.tg :as tg]
     [sayableduration.locales.th :as th]
+    [sayableduration.locales.ti :as ti]
+    [sayableduration.locales.tk :as tk]
     [sayableduration.locales.tr :as tr]
     [sayableduration.locales.tzm :as tzm]
     [sayableduration.locales.uk :as uk]
     [sayableduration.locales.ur :as ur]
     [sayableduration.locales.uz :as uz]
     [sayableduration.locales.vi :as vi]
+    [sayableduration.locales.xh :as xh]
+    [sayableduration.locales.yo :as yo]
+    [sayableduration.locales.yue :as yue]
     [sayableduration.locales.zh :as zh]
+    [sayableduration.locales.zu :as zu]
     ))
 
 (defn get-locale [code]
   (case code
+    "af" af/locale
+    "ak" ak/locale
     "am" am/locale
     "ar" ar/locale
     "az" az/locale
+    "be" be/locale
     "bg" bg/locale
     "bn" bn/locale
     "br" br/locale
     "bs" bs/locale
     "ca" ca/locale
+    "ceb" ceb/locale
     "cs" cs/locale
     "cy" cy/locale
     "da" da/locale
@@ -103,29 +146,47 @@
     "et" et/locale
     "eu" eu/locale
     "fa" fa/locale
+    "ff" ff/locale
     "fi" fi/locale
     "fil" fil/locale
     "fr" fr/locale
     "ga" ga/locale
     "gd" gd/locale
+    "gl" gl/locale
+    "gn" gn/locale
     "gu" gu/locale
     "gv" gv/locale
+    "ha" ha/locale
     "he" he/locale
     "hi" hi/locale
     "hr" hr/locale
+    "ht" ht/locale
     "hu" hu/locale
+    "hy" hy/locale
     "id" id/locale
+    "ig" ig/locale
+    "is" is/locale
     "it" it/locale
     "ja" ja/locale
     "jv" jv/locale
     "ka" ka/locale
     "kk" kk/locale
     "km" km/locale
+    "kn" kn/locale
     "ko" ko/locale
+    "ku" ku/locale
     "kw" kw/locale
+    "ky" ky/locale
+    "lg" lg/locale
+    "ln" ln/locale
+    "lo" lo/locale
     "lt" lt/locale
     "lv" lv/locale
+    "mg" mg/locale
+    "mi" mi/locale
     "mk" mk/locale
+    "ml" ml/locale
+    "mn" mn/locale
     "mr" mr/locale
     "ms" ms/locale
     "mt" mt/locale
@@ -133,27 +194,44 @@
     "nb" nb/locale
     "ne" ne/locale
     "nl" nl/locale
+    "ny" ny/locale
+    "om" om/locale
+    "or" or/locale
     "pa" pa/locale
     "pl" pl/locale
+    "ps" ps/locale
     "pt" pt/locale
+    "qu" qu/locale
     "ro" ro/locale
     "ru" ru/locale
+    "rw" rw/locale
+    "sd" sd/locale
     "shi" shi/locale
     "si" si/locale
     "sk" sk/locale
     "sl" sl/locale
+    "sn" sn/locale
+    "so" so/locale
     "sq" sq/locale
     "sr" sr/locale
+    "su" su/locale
     "sv" sv/locale
     "sw" sw/locale
     "ta" ta/locale
     "te" te/locale
+    "tg" tg/locale
     "th" th/locale
+    "ti" ti/locale
+    "tk" tk/locale
     "tr" tr/locale
     "tzm" tzm/locale
     "uk" uk/locale
     "ur" ur/locale
     "uz" uz/locale
     "vi" vi/locale
+    "xh" xh/locale
+    "yo" yo/locale
+    "yue" yue/locale
     "zh" zh/locale
+    "zu" zu/locale
     nil))

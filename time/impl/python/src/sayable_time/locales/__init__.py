@@ -10,15 +10,21 @@
 
 """Locale definitions for all supported languages."""
 
+import importlib
+
 from sayable_time.locale import TimeLocale
+from sayable_time.locales.af import AF
+from sayable_time.locales.ak import AK
 from sayable_time.locales.am import AM
 from sayable_time.locales.ar import AR
 from sayable_time.locales.az import AZ
+from sayable_time.locales.be import BE
 from sayable_time.locales.bg import BG
 from sayable_time.locales.bn import BN
 from sayable_time.locales.br import BR
 from sayable_time.locales.bs import BS
 from sayable_time.locales.ca import CA
+from sayable_time.locales.ceb import CEB
 from sayable_time.locales.cs import CS
 from sayable_time.locales.cy import CY
 from sayable_time.locales.da import DA
@@ -29,29 +35,46 @@ from sayable_time.locales.es import ES
 from sayable_time.locales.et import ET
 from sayable_time.locales.eu import EU
 from sayable_time.locales.fa import FA
+from sayable_time.locales.ff import FF
 from sayable_time.locales.fi import FI
 from sayable_time.locales.fil import FIL
 from sayable_time.locales.fr import FR
 from sayable_time.locales.ga import GA
 from sayable_time.locales.gd import GD
+from sayable_time.locales.gl import GL
+from sayable_time.locales.gn import GN
 from sayable_time.locales.gu import GU
 from sayable_time.locales.gv import GV
+from sayable_time.locales.ha import HA
 from sayable_time.locales.he import HE
 from sayable_time.locales.hi import HI
 from sayable_time.locales.hr import HR
+from sayable_time.locales.ht import HT
 from sayable_time.locales.hu import HU
+from sayable_time.locales.hy import HY
 from sayable_time.locales.id import ID
+from sayable_time.locales.ig import IG
 from sayable_time.locales.it import IT
 from sayable_time.locales.ja import JA
 from sayable_time.locales.jv import JV
 from sayable_time.locales.ka import KA
 from sayable_time.locales.kk import KK
 from sayable_time.locales.km import KM
+from sayable_time.locales.kn import KN
 from sayable_time.locales.ko import KO
+from sayable_time.locales.ku import KU
 from sayable_time.locales.kw import KW
+from sayable_time.locales.ky import KY
+from sayable_time.locales.lg import LG
+from sayable_time.locales.ln import LN
+from sayable_time.locales.lo import LO
 from sayable_time.locales.lt import LT
 from sayable_time.locales.lv import LV
+from sayable_time.locales.mg import MG
+from sayable_time.locales.mi import MI
 from sayable_time.locales.mk import MK
+from sayable_time.locales.ml import ML
+from sayable_time.locales.mn import MN
 from sayable_time.locales.mr import MR
 from sayable_time.locales.ms import MS
 from sayable_time.locales.mt import MT
@@ -59,49 +82,78 @@ from sayable_time.locales.my import MY
 from sayable_time.locales.nb import NB
 from sayable_time.locales.ne import NE
 from sayable_time.locales.nl import NL
+from sayable_time.locales.ny import NY
+from sayable_time.locales.om import OM
 from sayable_time.locales.pa import PA
 from sayable_time.locales.pl import PL
+from sayable_time.locales.ps import PS
 from sayable_time.locales.pt import PT
+from sayable_time.locales.qu import QU
 from sayable_time.locales.ro import RO
 from sayable_time.locales.ru import RU
+from sayable_time.locales.rw import RW
+from sayable_time.locales.sd import SD
 from sayable_time.locales.shi import SHI
 from sayable_time.locales.si import SI
 from sayable_time.locales.sk import SK
 from sayable_time.locales.sl import SL
+from sayable_time.locales.sn import SN
+from sayable_time.locales.so import SO
 from sayable_time.locales.sq import SQ
 from sayable_time.locales.sr import SR
+from sayable_time.locales.su import SU
 from sayable_time.locales.sv import SV
 from sayable_time.locales.sw import SW
 from sayable_time.locales.ta import TA
 from sayable_time.locales.te import TE
+from sayable_time.locales.tg import TG
 from sayable_time.locales.th import TH
+from sayable_time.locales.ti import TI
+from sayable_time.locales.tk import TK
 from sayable_time.locales.tr import TR
 from sayable_time.locales.tzm import TZM
 from sayable_time.locales.uk import UK
 from sayable_time.locales.ur import UR
 from sayable_time.locales.uz import UZ
 from sayable_time.locales.vi import VI
+from sayable_time.locales.xh import XH
+from sayable_time.locales.yo import YO
+from sayable_time.locales.yue import YUE
 from sayable_time.locales.zh import ZH
+from sayable_time.locales.zu import ZU
+
+IS = importlib.import_module("sayable_time.locales.is").IS
+OR = importlib.import_module("sayable_time.locales.or").OR
 
 _ALL: dict[str, TimeLocale] = {
-    "am": AM, "ar": AR, "az": AZ, "bg": BG,
-    "bn": BN, "br": BR, "bs": BS, "ca": CA,
+    "af": AF, "ak": AK, "am": AM, "ar": AR,
+    "az": AZ, "be": BE, "bg": BG, "bn": BN,
+    "br": BR, "bs": BS, "ca": CA, "ceb": CEB,
     "cs": CS, "cy": CY, "da": DA, "de": DE,
     "el": EL, "en": EN, "es": ES, "et": ET,
-    "eu": EU, "fa": FA, "fi": FI, "fil": FIL,
-    "fr": FR, "ga": GA, "gd": GD, "gu": GU,
-    "gv": GV, "he": HE, "hi": HI, "hr": HR,
-    "hu": HU, "id": ID, "it": IT, "ja": JA,
+    "eu": EU, "fa": FA, "ff": FF, "fi": FI,
+    "fil": FIL, "fr": FR, "ga": GA, "gd": GD,
+    "gl": GL, "gn": GN, "gu": GU, "gv": GV,
+    "ha": HA, "he": HE, "hi": HI, "hr": HR,
+    "ht": HT, "hu": HU, "hy": HY, "id": ID,
+    "ig": IG, "is": IS, "it": IT, "ja": JA,
     "jv": JV, "ka": KA, "kk": KK, "km": KM,
-    "ko": KO, "kw": KW, "lt": LT, "lv": LV,
-    "mk": MK, "mr": MR, "ms": MS, "mt": MT,
-    "my": MY, "nb": NB, "ne": NE, "nl": NL,
-    "pa": PA, "pl": PL, "pt": PT, "ro": RO,
-    "ru": RU, "shi": SHI, "si": SI, "sk": SK,
-    "sl": SL, "sq": SQ, "sr": SR, "sv": SV,
-    "sw": SW, "ta": TA, "te": TE, "th": TH,
-    "tr": TR, "tzm": TZM, "uk": UK, "ur": UR,
-    "uz": UZ, "vi": VI, "zh": ZH,
+    "kn": KN, "ko": KO, "ku": KU, "kw": KW,
+    "ky": KY, "lg": LG, "ln": LN, "lo": LO,
+    "lt": LT, "lv": LV, "mg": MG, "mi": MI,
+    "mk": MK, "ml": ML, "mn": MN, "mr": MR,
+    "ms": MS, "mt": MT, "my": MY, "nb": NB,
+    "ne": NE, "nl": NL, "ny": NY, "om": OM,
+    "or": OR, "pa": PA, "pl": PL, "ps": PS,
+    "pt": PT, "qu": QU, "ro": RO, "ru": RU,
+    "rw": RW, "sd": SD, "shi": SHI, "si": SI,
+    "sk": SK, "sl": SL, "sn": SN, "so": SO,
+    "sq": SQ, "sr": SR, "su": SU, "sv": SV,
+    "sw": SW, "ta": TA, "te": TE, "tg": TG,
+    "th": TH, "ti": TI, "tk": TK, "tr": TR,
+    "tzm": TZM, "uk": UK, "ur": UR, "uz": UZ,
+    "vi": VI, "xh": XH, "yo": YO, "yue": YUE,
+    "zh": ZH, "zu": ZU,
 }
 
 
@@ -110,14 +162,19 @@ def get_locale(code: str) -> TimeLocale | None:
     return _ALL.get(code)
 
 __all__ = [
-    "AM", "AR", "AZ", "BG", "BN", "BR", "BS", "CA",
-    "CS", "CY", "DA", "DE", "EL", "EN", "ES", "ET",
-    "EU", "FA", "FI", "FIL", "FR", "GA", "GD", "GU",
-    "GV", "HE", "HI", "HR", "HU", "ID", "IT", "JA",
-    "JV", "KA", "KK", "KM", "KO", "KW", "LT", "LV",
-    "MK", "MR", "MS", "MT", "MY", "NB", "NE", "NL",
-    "PA", "PL", "PT", "RO", "RU", "SHI", "SI", "SK",
-    "SL", "SQ", "SR", "SV", "SW", "TA", "TE", "TH",
-    "TR", "TZM", "UK", "UR", "UZ", "VI", "ZH",
+    "AF", "AK", "AM", "AR", "AZ", "BE", "BG", "BN",
+    "BR", "BS", "CA", "CEB", "CS", "CY", "DA", "DE",
+    "EL", "EN", "ES", "ET", "EU", "FA", "FF", "FI",
+    "FIL", "FR", "GA", "GD", "GL", "GN", "GU", "GV",
+    "HA", "HE", "HI", "HR", "HT", "HU", "HY", "ID",
+    "IG", "IS", "IT", "JA", "JV", "KA", "KK", "KM",
+    "KN", "KO", "KU", "KW", "KY", "LG", "LN", "LO",
+    "LT", "LV", "MG", "MI", "MK", "ML", "MN", "MR",
+    "MS", "MT", "MY", "NB", "NE", "NL", "NY", "OM",
+    "OR", "PA", "PL", "PS", "PT", "QU", "RO", "RU",
+    "RW", "SD", "SHI", "SI", "SK", "SL", "SN", "SO",
+    "SQ", "SR", "SU", "SV", "SW", "TA", "TE", "TG",
+    "TH", "TI", "TK", "TR", "TZM", "UK", "UR", "UZ",
+    "VI", "XH", "YO", "YUE", "ZH", "ZU",
     "get_locale",
 ]

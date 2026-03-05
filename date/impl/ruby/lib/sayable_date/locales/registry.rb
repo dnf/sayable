@@ -13,14 +13,18 @@ module SayableDate
   module Locales
     def self.get(code)
       case code
+      when 'af' then AF
+      when 'ak' then AK
       when 'am' then AM
       when 'ar' then AR
       when 'az' then AZ
+      when 'be' then BE
       when 'bg' then BG
       when 'bn' then BN
       when 'br' then BR
       when 'bs' then BS
       when 'ca' then CA
+      when 'ceb' then CEB
       when 'cs' then CS
       when 'cy' then CY
       when 'da' then DA
@@ -31,29 +35,47 @@ module SayableDate
       when 'et' then ET
       when 'eu' then EU
       when 'fa' then FA
+      when 'ff' then FF
       when 'fi' then FI
       when 'fil' then FIL
       when 'fr' then FR
       when 'ga' then GA
       when 'gd' then GD
+      when 'gl' then GL
+      when 'gn' then GN
       when 'gu' then GU
       when 'gv' then GV
+      when 'ha' then HA
       when 'he' then HE
       when 'hi' then HI
       when 'hr' then HR
+      when 'ht' then HT
       when 'hu' then HU
+      when 'hy' then HY
       when 'id' then ID
+      when 'ig' then IG
+      when 'is' then IS
       when 'it' then IT
       when 'ja' then JA
       when 'jv' then JV
       when 'ka' then KA
       when 'kk' then KK
       when 'km' then KM
+      when 'kn' then KN
       when 'ko' then KO
+      when 'ku' then KU
       when 'kw' then KW
+      when 'ky' then KY
+      when 'lg' then LG
+      when 'ln' then LN
+      when 'lo' then LO
       when 'lt' then LT
       when 'lv' then LV
+      when 'mg' then MG
+      when 'mi' then MI
       when 'mk' then MK
+      when 'ml' then ML
+      when 'mn' then MN
       when 'mr' then MR
       when 'ms' then MS
       when 'mt' then MT
@@ -61,29 +83,46 @@ module SayableDate
       when 'nb' then NB
       when 'ne' then NE
       when 'nl' then NL
+      when 'ny' then NY
+      when 'om' then OM
+      when 'or' then OR
       when 'pa' then PA
       when 'pl' then PL
+      when 'ps' then PS
       when 'pt' then PT
+      when 'qu' then QU
       when 'ro' then RO
       when 'ru' then RU
+      when 'rw' then RW
+      when 'sd' then SD
       when 'shi' then SHI
       when 'si' then SI
       when 'sk' then SK
       when 'sl' then SL
+      when 'sn' then SN
+      when 'so' then SO
       when 'sq' then SQ
       when 'sr' then SR
+      when 'su' then SU
       when 'sv' then SV
       when 'sw' then SW
       when 'ta' then TA
       when 'te' then TE
+      when 'tg' then TG
       when 'th' then TH
+      when 'ti' then TI
+      when 'tk' then TK
       when 'tr' then TR
       when 'tzm' then TZM
       when 'uk' then UK
       when 'ur' then UR
       when 'uz' then UZ
       when 'vi' then VI
+      when 'xh' then XH
+      when 'yo' then YO
+      when 'yue' then YUE
       when 'zh' then ZH
+      when 'zu' then ZU
       end
     end
   end

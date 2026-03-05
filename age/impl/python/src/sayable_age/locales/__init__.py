@@ -10,15 +10,21 @@
 
 """Locale definitions for all supported languages."""
 
+import importlib
+
 from sayable_age.locale import AgeLocale
+from sayable_age.locales.af import AF
+from sayable_age.locales.ak import AK
 from sayable_age.locales.am import AM
 from sayable_age.locales.ar import AR
 from sayable_age.locales.az import AZ
+from sayable_age.locales.be import BE
 from sayable_age.locales.bg import BG
 from sayable_age.locales.bn import BN
 from sayable_age.locales.br import BR
 from sayable_age.locales.bs import BS
 from sayable_age.locales.ca import CA
+from sayable_age.locales.ceb import CEB
 from sayable_age.locales.cs import CS
 from sayable_age.locales.cy import CY
 from sayable_age.locales.da import DA
@@ -29,29 +35,46 @@ from sayable_age.locales.es import ES
 from sayable_age.locales.et import ET
 from sayable_age.locales.eu import EU
 from sayable_age.locales.fa import FA
+from sayable_age.locales.ff import FF
 from sayable_age.locales.fi import FI
 from sayable_age.locales.fil import FIL
 from sayable_age.locales.fr import FR
 from sayable_age.locales.ga import GA
 from sayable_age.locales.gd import GD
+from sayable_age.locales.gl import GL
+from sayable_age.locales.gn import GN
 from sayable_age.locales.gu import GU
 from sayable_age.locales.gv import GV
+from sayable_age.locales.ha import HA
 from sayable_age.locales.he import HE
 from sayable_age.locales.hi import HI
 from sayable_age.locales.hr import HR
+from sayable_age.locales.ht import HT
 from sayable_age.locales.hu import HU
+from sayable_age.locales.hy import HY
 from sayable_age.locales.id import ID
+from sayable_age.locales.ig import IG
 from sayable_age.locales.it import IT
 from sayable_age.locales.ja import JA
 from sayable_age.locales.jv import JV
 from sayable_age.locales.ka import KA
 from sayable_age.locales.kk import KK
 from sayable_age.locales.km import KM
+from sayable_age.locales.kn import KN
 from sayable_age.locales.ko import KO
+from sayable_age.locales.ku import KU
 from sayable_age.locales.kw import KW
+from sayable_age.locales.ky import KY
+from sayable_age.locales.lg import LG
+from sayable_age.locales.ln import LN
+from sayable_age.locales.lo import LO
 from sayable_age.locales.lt import LT
 from sayable_age.locales.lv import LV
+from sayable_age.locales.mg import MG
+from sayable_age.locales.mi import MI
 from sayable_age.locales.mk import MK
+from sayable_age.locales.ml import ML
+from sayable_age.locales.mn import MN
 from sayable_age.locales.mr import MR
 from sayable_age.locales.ms import MS
 from sayable_age.locales.mt import MT
@@ -59,49 +82,78 @@ from sayable_age.locales.my import MY
 from sayable_age.locales.nb import NB
 from sayable_age.locales.ne import NE
 from sayable_age.locales.nl import NL
+from sayable_age.locales.ny import NY
+from sayable_age.locales.om import OM
 from sayable_age.locales.pa import PA
 from sayable_age.locales.pl import PL
+from sayable_age.locales.ps import PS
 from sayable_age.locales.pt import PT
+from sayable_age.locales.qu import QU
 from sayable_age.locales.ro import RO
 from sayable_age.locales.ru import RU
+from sayable_age.locales.rw import RW
+from sayable_age.locales.sd import SD
 from sayable_age.locales.shi import SHI
 from sayable_age.locales.si import SI
 from sayable_age.locales.sk import SK
 from sayable_age.locales.sl import SL
+from sayable_age.locales.sn import SN
+from sayable_age.locales.so import SO
 from sayable_age.locales.sq import SQ
 from sayable_age.locales.sr import SR
+from sayable_age.locales.su import SU
 from sayable_age.locales.sv import SV
 from sayable_age.locales.sw import SW
 from sayable_age.locales.ta import TA
 from sayable_age.locales.te import TE
+from sayable_age.locales.tg import TG
 from sayable_age.locales.th import TH
+from sayable_age.locales.ti import TI
+from sayable_age.locales.tk import TK
 from sayable_age.locales.tr import TR
 from sayable_age.locales.tzm import TZM
 from sayable_age.locales.uk import UK
 from sayable_age.locales.ur import UR
 from sayable_age.locales.uz import UZ
 from sayable_age.locales.vi import VI
+from sayable_age.locales.xh import XH
+from sayable_age.locales.yo import YO
+from sayable_age.locales.yue import YUE
 from sayable_age.locales.zh import ZH
+from sayable_age.locales.zu import ZU
+
+IS = importlib.import_module("sayable_age.locales.is").IS
+OR = importlib.import_module("sayable_age.locales.or").OR
 
 _ALL: dict[str, AgeLocale] = {
-    "am": AM, "ar": AR, "az": AZ, "bg": BG,
-    "bn": BN, "br": BR, "bs": BS, "ca": CA,
+    "af": AF, "ak": AK, "am": AM, "ar": AR,
+    "az": AZ, "be": BE, "bg": BG, "bn": BN,
+    "br": BR, "bs": BS, "ca": CA, "ceb": CEB,
     "cs": CS, "cy": CY, "da": DA, "de": DE,
     "el": EL, "en": EN, "es": ES, "et": ET,
-    "eu": EU, "fa": FA, "fi": FI, "fil": FIL,
-    "fr": FR, "ga": GA, "gd": GD, "gu": GU,
-    "gv": GV, "he": HE, "hi": HI, "hr": HR,
-    "hu": HU, "id": ID, "it": IT, "ja": JA,
+    "eu": EU, "fa": FA, "ff": FF, "fi": FI,
+    "fil": FIL, "fr": FR, "ga": GA, "gd": GD,
+    "gl": GL, "gn": GN, "gu": GU, "gv": GV,
+    "ha": HA, "he": HE, "hi": HI, "hr": HR,
+    "ht": HT, "hu": HU, "hy": HY, "id": ID,
+    "ig": IG, "is": IS, "it": IT, "ja": JA,
     "jv": JV, "ka": KA, "kk": KK, "km": KM,
-    "ko": KO, "kw": KW, "lt": LT, "lv": LV,
-    "mk": MK, "mr": MR, "ms": MS, "mt": MT,
-    "my": MY, "nb": NB, "ne": NE, "nl": NL,
-    "pa": PA, "pl": PL, "pt": PT, "ro": RO,
-    "ru": RU, "shi": SHI, "si": SI, "sk": SK,
-    "sl": SL, "sq": SQ, "sr": SR, "sv": SV,
-    "sw": SW, "ta": TA, "te": TE, "th": TH,
-    "tr": TR, "tzm": TZM, "uk": UK, "ur": UR,
-    "uz": UZ, "vi": VI, "zh": ZH,
+    "kn": KN, "ko": KO, "ku": KU, "kw": KW,
+    "ky": KY, "lg": LG, "ln": LN, "lo": LO,
+    "lt": LT, "lv": LV, "mg": MG, "mi": MI,
+    "mk": MK, "ml": ML, "mn": MN, "mr": MR,
+    "ms": MS, "mt": MT, "my": MY, "nb": NB,
+    "ne": NE, "nl": NL, "ny": NY, "om": OM,
+    "or": OR, "pa": PA, "pl": PL, "ps": PS,
+    "pt": PT, "qu": QU, "ro": RO, "ru": RU,
+    "rw": RW, "sd": SD, "shi": SHI, "si": SI,
+    "sk": SK, "sl": SL, "sn": SN, "so": SO,
+    "sq": SQ, "sr": SR, "su": SU, "sv": SV,
+    "sw": SW, "ta": TA, "te": TE, "tg": TG,
+    "th": TH, "ti": TI, "tk": TK, "tr": TR,
+    "tzm": TZM, "uk": UK, "ur": UR, "uz": UZ,
+    "vi": VI, "xh": XH, "yo": YO, "yue": YUE,
+    "zh": ZH, "zu": ZU,
 }
 
 
@@ -110,14 +162,19 @@ def get_locale(code: str) -> AgeLocale | None:
     return _ALL.get(code)
 
 __all__ = [
-    "AM", "AR", "AZ", "BG", "BN", "BR", "BS", "CA",
-    "CS", "CY", "DA", "DE", "EL", "EN", "ES", "ET",
-    "EU", "FA", "FI", "FIL", "FR", "GA", "GD", "GU",
-    "GV", "HE", "HI", "HR", "HU", "ID", "IT", "JA",
-    "JV", "KA", "KK", "KM", "KO", "KW", "LT", "LV",
-    "MK", "MR", "MS", "MT", "MY", "NB", "NE", "NL",
-    "PA", "PL", "PT", "RO", "RU", "SHI", "SI", "SK",
-    "SL", "SQ", "SR", "SV", "SW", "TA", "TE", "TH",
-    "TR", "TZM", "UK", "UR", "UZ", "VI", "ZH",
+    "AF", "AK", "AM", "AR", "AZ", "BE", "BG", "BN",
+    "BR", "BS", "CA", "CEB", "CS", "CY", "DA", "DE",
+    "EL", "EN", "ES", "ET", "EU", "FA", "FF", "FI",
+    "FIL", "FR", "GA", "GD", "GL", "GN", "GU", "GV",
+    "HA", "HE", "HI", "HR", "HT", "HU", "HY", "ID",
+    "IG", "IS", "IT", "JA", "JV", "KA", "KK", "KM",
+    "KN", "KO", "KU", "KW", "KY", "LG", "LN", "LO",
+    "LT", "LV", "MG", "MI", "MK", "ML", "MN", "MR",
+    "MS", "MT", "MY", "NB", "NE", "NL", "NY", "OM",
+    "OR", "PA", "PL", "PS", "PT", "QU", "RO", "RU",
+    "RW", "SD", "SHI", "SI", "SK", "SL", "SN", "SO",
+    "SQ", "SR", "SU", "SV", "SW", "TA", "TE", "TG",
+    "TH", "TI", "TK", "TR", "TZM", "UK", "UR", "UZ",
+    "VI", "XH", "YO", "YUE", "ZH", "ZU",
     "get_locale",
 ]

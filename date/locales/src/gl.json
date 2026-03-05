@@ -1,0 +1,70 @@
+{
+  "code": "gl",
+  "name": "Galician",
+  "months": [
+    "xaneiro",
+    "febreiro",
+    "marzo",
+    "abril",
+    "maio",
+    "xuño",
+    "xullo",
+    "agosto",
+    "setembro",
+    "outubro",
+    "novembro",
+    "decembro"
+  ],
+  "weekdays": [
+    "domingo",
+    "luns",
+    "martes",
+    "mércores",
+    "xoves",
+    "venres",
+    "sábado"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} de {month}",
+  "datePatternWithYear": "{day} de {month} de {year}",
+  "today": "hoxe",
+  "tomorrow": "mañá",
+  "yesterday": "onte",
+  "dayAfterTomorrow": "pasadomañá",
+  "dayBeforeYesterday": "antonte",
+  "thisWeekday": "este {weekday}",
+  "nextWeekday": "o próximo {weekday}",
+  "lastWeekday": "o pasado {weekday}",
+  "short": {
+    "months": [
+      "xan",
+      "feb",
+      "mar",
+      "abr",
+      "mai",
+      "xuñ",
+      "xul",
+      "ago",
+      "set",
+      "out",
+      "nov",
+      "dec"
+    ],
+    "weekdays": [
+      "dom",
+      "lun",
+      "mar",
+      "mér",
+      "xov",
+      "ven",
+      "sáb"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

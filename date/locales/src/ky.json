@@ -1,0 +1,70 @@
+{
+  "code": "ky",
+  "name": "Kyrgyz",
+  "months": [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь"
+  ],
+  "weekdays": [
+    "Жекшемби",
+    "Дүйшөмбү",
+    "Шейшемби",
+    "Шаршемби",
+    "Бейшемби",
+    "Жума",
+    "Ишемби"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "бүгүн",
+  "tomorrow": "эртең",
+  "yesterday": "кечээ",
+  "dayAfterTomorrow": "бүрсүгүнү",
+  "dayBeforeYesterday": "мурунку күнү",
+  "thisWeekday": "бул {weekday}",
+  "nextWeekday": "кийинки {weekday}",
+  "lastWeekday": "өткөн {weekday}",
+  "short": {
+    "months": [
+      "Янв",
+      "Фев",
+      "Мар",
+      "Апр",
+      "Май",
+      "Июн",
+      "Июл",
+      "Авг",
+      "Сен",
+      "Окт",
+      "Ноя",
+      "Дек"
+    ],
+    "weekdays": [
+      "Жек",
+      "Дүй",
+      "Шей",
+      "Шар",
+      "Бей",
+      "Жум",
+      "Ише"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

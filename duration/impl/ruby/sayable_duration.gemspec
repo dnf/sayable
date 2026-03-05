@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version     = SayableDuration::VERSION
   s.summary     = "Human-friendly duration and relative time formatting"
   s.description = "Human-friendly duration and relative time formatting. " \
-                  "Zero dependencies, 71 built-in locales, 3 compactness levels."
+                  "Zero dependencies, 110 built-in locales, 3 compactness levels."
   s.authors     = ["Don Neufeld"]
   s.license     = "MIT"
   s.homepage    = "https://github.com/dnf/sayable"

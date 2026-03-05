@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace SayableAgeLib;
 
 /// <summary>
-/// All 71 locale definitions for sayable-age.
+/// All 110 locale definitions for sayable-age.
 /// </summary>
 public static class Locales
 {
@@ -177,6 +177,94 @@ public static class Locales
         return PluralCategory.Other;
     }
 
+    // Source: age/locales/src/af.json
+    // ================================================================
+    // AF — Afrikaans
+    // ================================================================
+    public static readonly AgeLocale AF = new(
+        "af",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dag" }, { PluralCategory.Other, "{n} dae" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} week" }, { PluralCategory.Other, "{n} weke" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} maand" }, { PluralCategory.Other, "{n} maande" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} jaar" }, { PluralCategory.Other, "{n} jaar" } })
+        ),
+        "{n}½",
+        ", ",
+        "Pasgebore",
+        new Stages(
+            StageLabel.Neutral("Pasgebore"),
+            StageLabel.Neutral("Baba"),
+            StageLabel.Neutral("Kleuter"),
+            StageLabel.Neutral("Kind"),
+            StageLabel.Neutral("Tiener"),
+            StageLabel.Neutral("Volwassene")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} w."),
+            UnitForms.Simple("{n} md."),
+            UnitForms.Simple("{n} j."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}j"),
+            null,
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ak.json
+    // ================================================================
+    // AK — Akan
+    // ================================================================
+    public static readonly AgeLocale AK = new(
+        "ak",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "da {n}" }, { PluralCategory.Other, "nna {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "dapɛn {n}" }, { PluralCategory.Other, "nnapɛn {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bosome {n}" }, { PluralCategory.Other, "abosome {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "afe {n}" }, { PluralCategory.Other, "mfe {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Abofra foforo",
+        new Stages(
+            StageLabel.Neutral("Abofra foforo"),
+            StageLabel.Neutral("Akwadaa"),
+            StageLabel.Neutral("Abofra"),
+            StageLabel.Neutral("Abofra"),
+            StageLabel.Neutral("Abarimaa"),
+            StageLabel.Neutral("Ɔpanyin")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("nna {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "dapɛn {n}" }, { PluralCategory.Other, "nnapɛn {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bosome {n}" }, { PluralCategory.Other, "abosome {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "afe {n}" }, { PluralCategory.Other, "mfe {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("nna {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "dapɛn {n}" }, { PluralCategory.Other, "nnapɛn {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bos {n}" }, { PluralCategory.Other, "abos {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "afe {n}" }, { PluralCategory.Other, "mfe {n}" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/am.json
     // ================================================================
     // AM — Amharic
@@ -303,6 +391,50 @@ public static class Locales
             UnitForms.Simple("{n} hft"),
             UnitForms.Simple("{n} ay"),
             UnitForms.Simple("{n} il"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/be.json
+    // ================================================================
+    // BE — Belarusian
+    // ================================================================
+    public static readonly AgeLocale BE = new(
+        "be",
+        PluralRuUk,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} дзень" }, { PluralCategory.Few, "{n} дні" }, { PluralCategory.Many, "{n} дзён" }, { PluralCategory.Other, "{n} дзён" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} тыдзень" }, { PluralCategory.Few, "{n} тыдні" }, { PluralCategory.Many, "{n} тыдняў" }, { PluralCategory.Other, "{n} тыдняў" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} месяц" }, { PluralCategory.Few, "{n} месяцы" }, { PluralCategory.Many, "{n} месяцаў" }, { PluralCategory.Other, "{n} месяцаў" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} год" }, { PluralCategory.Few, "{n} гады" }, { PluralCategory.Many, "{n} гадоў" }, { PluralCategory.Other, "{n} гадоў" } })
+        ),
+        "{n} з паловай",
+        ", ",
+        "Нованароджаны",
+        new Stages(
+            StageLabel.Gendered("Нованароджаны", "Нованароджаная"),
+            StageLabel.Neutral("Немаўля"),
+            StageLabel.Neutral("Малыш"),
+            StageLabel.Neutral("Дзіця"),
+            StageLabel.Neutral("Падлетак"),
+            StageLabel.Gendered("Дарослы", "Дарослая")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} дн."),
+            UnitForms.Simple("{n} тыд."),
+            UnitForms.Simple("{n} мес."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} г." }, { PluralCategory.Few, "{n} г." }, { PluralCategory.Many, "{n} г." }, { PluralCategory.Other, "{n} г." } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} д."),
+            UnitForms.Simple("{n} т."),
+            UnitForms.Simple("{n} м."),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} г." }, { PluralCategory.Few, "{n} г." }, { PluralCategory.Many, "{n} г." }, { PluralCategory.Other, "{n} г." } }),
             "{n}½",
             "",
             null
@@ -523,6 +655,50 @@ public static class Locales
             UnitForms.Simple("{n} setm."),
             UnitForms.Simple("{n} m"),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} any" }, { PluralCategory.Other, "{n} anys" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ceb.json
+    // ================================================================
+    // CEB — Cebuano
+    // ================================================================
+    public static readonly AgeLocale CEB = new(
+        "ceb",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} ka adlaw"),
+            UnitForms.Simple("{n} ka semana"),
+            UnitForms.Simple("{n} ka bulan"),
+            UnitForms.Simple("{n} ka tuig")
+        ),
+        "{n}½",
+        ", ",
+        "Bag-ong natawo",
+        new Stages(
+            StageLabel.Neutral("Bag-ong natawo"),
+            StageLabel.Neutral("Masuso"),
+            StageLabel.Neutral("Gamay nga bata"),
+            StageLabel.Neutral("Bata"),
+            StageLabel.Neutral("Tin-edyer"),
+            StageLabel.Neutral("Hamtong")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ka adlaw"),
+            UnitForms.Simple("{n} ka semana"),
+            UnitForms.Simple("{n} ka bulan"),
+            UnitForms.Simple("{n} ka tuig"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
             "{n}½",
             "",
             null
@@ -969,6 +1145,50 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/ff.json
+    // ================================================================
+    // FF — Fulah
+    // ================================================================
+    public static readonly AgeLocale FF = new(
+        "ff",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ñalawma {n}" }, { PluralCategory.Other, "ñalɗe {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "yontere {n}" }, { PluralCategory.Other, "yontereeji {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "lewru {n}" }, { PluralCategory.Other, "lebbi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "hitaande {n}" }, { PluralCategory.Other, "duuɓi {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Ɓinngel kesol",
+        new Stages(
+            StageLabel.Neutral("Ɓinngel kesol"),
+            StageLabel.Neutral("Ɓinngel"),
+            StageLabel.Neutral("Cukalel"),
+            StageLabel.Neutral("Suka"),
+            StageLabel.Neutral("Suka debbo"),
+            StageLabel.Neutral("Mawɗo")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("ñalɗe {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "yontere {n}" }, { PluralCategory.Other, "yontereeji {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "lewru {n}" }, { PluralCategory.Other, "lebbi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "hitaande {n}" }, { PluralCategory.Other, "duuɓi {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("ñalɗe {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "yont {n}" }, { PluralCategory.Other, "yontji {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "lew {n}" }, { PluralCategory.Other, "leb {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "hit {n}" }, { PluralCategory.Other, "duuɓi {n}" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/fi.json
     // ================================================================
     // FI — Finnish
@@ -1189,6 +1409,94 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/gl.json
+    // ================================================================
+    // GL — Galician
+    // ================================================================
+    public static readonly AgeLocale GL = new(
+        "gl",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} día" }, { PluralCategory.Other, "{n} días" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} semana" }, { PluralCategory.Other, "{n} semanas" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mes" }, { PluralCategory.Other, "{n} meses" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ano" }, { PluralCategory.Other, "{n} anos" } })
+        ),
+        "{0} e medio",
+        ", ",
+        "Recén nacido",
+        new Stages(
+            StageLabel.Gendered("Recén nacido", "Recén nacida"),
+            StageLabel.Neutral("Bebé"),
+            StageLabel.Neutral("Neno"),
+            StageLabel.Gendered("Neno", "Nena"),
+            StageLabel.Neutral("Adolescente"),
+            StageLabel.Gendered("Adulto", "Adulta")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} sem."),
+            UnitForms.Simple("{n} mes."),
+            UnitForms.Simple("{n} a."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d"),
+            UnitForms.Simple("{n} s"),
+            UnitForms.Simple("{n} m"),
+            UnitForms.Simple("{n} a"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/gn.json
+    // ================================================================
+    // GN — Guarani
+    // ================================================================
+    public static readonly AgeLocale GN = new(
+        "gn",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} ára"),
+            UnitForms.Simple("{n} arapokõindy"),
+            UnitForms.Simple("{n} jasy"),
+            UnitForms.Simple("{n} ary")
+        ),
+        "{n}½",
+        ", ",
+        "Mitã pyahu",
+        new Stages(
+            StageLabel.Neutral("Mitã pyahu"),
+            StageLabel.Neutral("Mitã'i"),
+            StageLabel.Neutral("Mitã"),
+            StageLabel.Neutral("Mitã"),
+            StageLabel.Neutral("Mitãrusu"),
+            StageLabel.Neutral("Karai")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ára"),
+            UnitForms.Simple("{n} ara"),
+            UnitForms.Simple("{n} jas"),
+            UnitForms.Simple("{n} ary"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/gu.json
     // ================================================================
     // GU — Gujarati
@@ -1272,6 +1580,50 @@ public static class Locales
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
             "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ha.json
+    // ================================================================
+    // HA — Hausa
+    // ================================================================
+    public static readonly AgeLocale HA = new(
+        "ha",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} kwana" }, { PluralCategory.Other, "{n} kwanaki" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mako" }, { PluralCategory.Other, "{n} makonni" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} wata" }, { PluralCategory.Other, "{n} watanni" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} shekara" }, { PluralCategory.Other, "{n} shekaru" } })
+        ),
+        "{n}½",
+        ", ",
+        "Sabon haihuwa",
+        new Stages(
+            StageLabel.Neutral("Jariri"),
+            StageLabel.Neutral("Jariri"),
+            StageLabel.Neutral("Ƙaramin yaro"),
+            StageLabel.Neutral("Yaro"),
+            StageLabel.Neutral("Saurayi"),
+            StageLabel.Neutral("Babba")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} kw."),
+            UnitForms.Simple("{n} mk."),
+            UnitForms.Simple("{n} wt."),
+            UnitForms.Simple("{n} shk."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            null,
             "",
             null
         )
@@ -1409,6 +1761,50 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/ht.json
+    // ================================================================
+    // HT — Haitian Creole
+    // ================================================================
+    public static readonly AgeLocale HT = new(
+        "ht",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} jou"),
+            UnitForms.Simple("{n} semèn"),
+            UnitForms.Simple("{n} mwa"),
+            UnitForms.Simple("{n} an")
+        ),
+        "{n}½",
+        ", ",
+        "Tibebe fèk fèt",
+        new Stages(
+            StageLabel.Neutral("Tibebe fèk fèt"),
+            StageLabel.Neutral("Tibebe"),
+            StageLabel.Neutral("Ti moun"),
+            StageLabel.Neutral("Timoun"),
+            StageLabel.Neutral("Adolesan"),
+            StageLabel.Neutral("Granmoun")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} j"),
+            UnitForms.Simple("{n} sem"),
+            UnitForms.Simple("{n} mwa"),
+            UnitForms.Simple("{n} an"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}j"),
+            UnitForms.Simple("{n}sem"),
+            UnitForms.Simple("{n}mwa"),
+            UnitForms.Simple("{n}an"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/hu.json
     // ================================================================
     // HU — Hungarian
@@ -1453,6 +1849,50 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/hy.json
+    // ================================================================
+    // HY — Armenian
+    // ================================================================
+    public static readonly AgeLocale HY = new(
+        "hy",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} օր" }, { PluralCategory.Other, "{n} օր" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} շաբաթ" }, { PluralCategory.Other, "{n} շաբաթ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ամիս" }, { PluralCategory.Other, "{n} ամիս" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} տարի" }, { PluralCategory.Other, "{n} տարի" } })
+        ),
+        "{0} ու կես",
+        ", ",
+        "Նորածին",
+        new Stages(
+            StageLabel.Neutral("Նորածին"),
+            StageLabel.Neutral("Մանկիկ"),
+            StageLabel.Neutral("Փոքրիկ"),
+            StageLabel.Neutral("Երեխա"),
+            StageLabel.Neutral("Պատանի"),
+            StageLabel.Neutral("Մեծահասակ")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} օր"),
+            UnitForms.Simple("{n} շաբ"),
+            UnitForms.Simple("{n} ամս"),
+            UnitForms.Simple("{n} տ"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} օ"),
+            UnitForms.Simple("{n} շ"),
+            UnitForms.Simple("{n} ա"),
+            UnitForms.Simple("{n} տ"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/id.json
     // ================================================================
     // ID — Indonesian
@@ -1491,6 +1931,94 @@ public static class Locales
             UnitForms.Simple("{n} mgg"),
             UnitForms.Simple("{n} bln"),
             UnitForms.Simple("{n} thn"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ig.json
+    // ================================================================
+    // IG — Igbo
+    // ================================================================
+    public static readonly AgeLocale IG = new(
+        "ig",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} ụbọchị"),
+            UnitForms.Simple("{n} izu"),
+            UnitForms.Simple("{n} ọnwa"),
+            UnitForms.Simple("{n} afọ")
+        ),
+        "{0} na ọkara",
+        ", ",
+        "Nwa ọhụrụ",
+        new Stages(
+            StageLabel.Neutral("Nwa ọhụrụ"),
+            StageLabel.Neutral("Nwa ọhụrụ"),
+            StageLabel.Neutral("Nwa nta"),
+            StageLabel.Neutral("Nwa"),
+            StageLabel.Neutral("Nwokorobịa"),
+            StageLabel.Neutral("Okenye")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ụbọchị"),
+            UnitForms.Simple("{n} izu"),
+            UnitForms.Simple("{n} ọnwa"),
+            UnitForms.Simple("{n} afọ"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/is.json
+    // ================================================================
+    // IS — Icelandic
+    // ================================================================
+    public static readonly AgeLocale IS = new(
+        "is",
+        n => (n % 10 == 1 && n % 100 != 11) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} dagur" }, { PluralCategory.Other, "{n} dagar" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} vika" }, { PluralCategory.Other, "{n} vikur" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mánuður" }, { PluralCategory.Other, "{n} mánuðir" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ár" }, { PluralCategory.Other, "{n} ár" } })
+        ),
+        "{0} og hálft",
+        ", ",
+        "Nýfætt",
+        new Stages(
+            StageLabel.Neutral("Nýfæðingur"),
+            StageLabel.Neutral("Ungbarn"),
+            StageLabel.Neutral("Smábarn"),
+            StageLabel.Neutral("Barn"),
+            StageLabel.Neutral("Unglingur"),
+            StageLabel.Neutral("Fullorðinn")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} d."),
+            UnitForms.Simple("{n} v."),
+            UnitForms.Simple("{n} mán."),
+            UnitForms.Simple("{n} ár"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}v"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}á"),
             "{n}½",
             "",
             null
@@ -1761,6 +2289,50 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/kn.json
+    // ================================================================
+    // KN — Kannada
+    // ================================================================
+    public static readonly AgeLocale KN = new(
+        "kn",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ದಿನ" }, { PluralCategory.Other, "{n} ದಿನಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ವಾರ" }, { PluralCategory.Other, "{n} ವಾರಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ತಿಂಗಳು" }, { PluralCategory.Other, "{n} ತಿಂಗಳುಗಳು" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ವರ್ಷ" }, { PluralCategory.Other, "{n} ವರ್ಷಗಳು" } })
+        ),
+        "{0}ವರೆ",
+        ", ",
+        "ನವಜಾತ ಶಿಶು",
+        new Stages(
+            StageLabel.Neutral("ನವಜಾತ ಶಿಶು"),
+            StageLabel.Neutral("ಶಿಶು"),
+            StageLabel.Neutral("ಪುಟ್ಟ ಮಗು"),
+            StageLabel.Neutral("ಮಗು"),
+            StageLabel.Neutral("ಹದಿಹರೆಯದವರು"),
+            StageLabel.Neutral("ವಯಸ್ಕ")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ದಿನ"),
+            UnitForms.Simple("{n} ವಾರ"),
+            UnitForms.Simple("{n} ತಿಂಗಳು"),
+            UnitForms.Simple("{n} ವರ್ಷ"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ದಿ"),
+            UnitForms.Simple("{n} ವಾ"),
+            UnitForms.Simple("{n} ತಿಂ"),
+            UnitForms.Simple("{n} ವ"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/ko.json
     // ================================================================
     // KO — Korean
@@ -1799,6 +2371,50 @@ public static class Locales
             UnitForms.Simple("{n}주"),
             UnitForms.Simple("{n}개월"),
             UnitForms.Simple("{n}년"),
+            null,
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ku.json
+    // ================================================================
+    // KU — Kurdish
+    // ================================================================
+    public static readonly AgeLocale KU = new(
+        "ku",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} roj" }, { PluralCategory.Other, "{n} roj" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} hefte" }, { PluralCategory.Other, "{n} hefte" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} meh" }, { PluralCategory.Other, "{n} meh" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} sal" }, { PluralCategory.Other, "{n} sal" } })
+        ),
+        "{n}½",
+        ", ",
+        "Nûbûyî",
+        new Stages(
+            StageLabel.Neutral("Nûbûyî"),
+            StageLabel.Neutral("Şîrexwar"),
+            StageLabel.Neutral("Zarok"),
+            StageLabel.Neutral("Zarok"),
+            StageLabel.Neutral("Ciwan"),
+            StageLabel.Neutral("Mezin")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} roj"),
+            UnitForms.Simple("{n} hft."),
+            UnitForms.Simple("{n} meh"),
+            UnitForms.Simple("{n} sal"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}r"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}s"),
             null,
             "",
             null
@@ -1845,6 +2461,182 @@ public static class Locales
             UnitForms.Simple("{n}y"),
             "{n}½",
             "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ky.json
+    // ================================================================
+    // KY — Kyrgyz
+    // ================================================================
+    public static readonly AgeLocale KY = new(
+        "ky",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} күн"),
+            UnitForms.Simple("{n} апта"),
+            UnitForms.Simple("{n} ай"),
+            UnitForms.Simple("{n} жаш")
+        ),
+        "{n}½",
+        ", ",
+        "Жаңы төрөлгөн",
+        new Stages(
+            StageLabel.Neutral("Жаңы төрөлгөн"),
+            StageLabel.Neutral("Наристе"),
+            StageLabel.Neutral("Бөбөк"),
+            StageLabel.Neutral("Бала"),
+            StageLabel.Neutral("Жаш өспүрүм"),
+            StageLabel.Neutral("Чоң адам")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} күн"),
+            UnitForms.Simple("{n} апта"),
+            UnitForms.Simple("{n} ай"),
+            UnitForms.Simple("{n} жаш"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/lg.json
+    // ================================================================
+    // LG — Luganda
+    // ================================================================
+    public static readonly AgeLocale LG = new(
+        "lg",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "olunaku {n}" }, { PluralCategory.Other, "ennaku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sabbiiti {n}" }, { PluralCategory.Other, "sabiiti {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "omwezi {n}" }, { PluralCategory.Other, "emyezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "omwaka {n}" }, { PluralCategory.Other, "emyaka {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Omwana omuto",
+        new Stages(
+            StageLabel.Neutral("Omwana omuto"),
+            StageLabel.Neutral("Omwana"),
+            StageLabel.Neutral("Omwana omuto"),
+            StageLabel.Neutral("Omwana"),
+            StageLabel.Neutral("Omuvubuka"),
+            StageLabel.Neutral("Omukulu")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("ennaku {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sabbiiti {n}" }, { PluralCategory.Other, "sabiiti {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "omwezi {n}" }, { PluralCategory.Other, "emyezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "omwaka {n}" }, { PluralCategory.Other, "emyaka {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("ennaku {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sab {n}" }, { PluralCategory.Other, "sab {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwezi {n}" }, { PluralCategory.Other, "myezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwaka {n}" }, { PluralCategory.Other, "myaka {n}" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ln.json
+    // ================================================================
+    // LN — Lingala
+    // ================================================================
+    public static readonly AgeLocale LN = new(
+        "ln",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mokolo {n}" }, { PluralCategory.Other, "mikolo {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "poso {n}" }, { PluralCategory.Other, "baposo {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sanza {n}" }, { PluralCategory.Other, "basanza {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mobu {n}" }, { PluralCategory.Other, "mibu {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Mwana ya sika",
+        new Stages(
+            StageLabel.Neutral("Mwana ya sika"),
+            StageLabel.Neutral("Mwana mokɛ́"),
+            StageLabel.Neutral("Mwana mokɛ́"),
+            StageLabel.Neutral("Mwana"),
+            StageLabel.Neutral("Elɛ́ngɛ"),
+            StageLabel.Neutral("Mokóló")
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mokolo {n}" }, { PluralCategory.Other, "mik {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "poso {n}" }, { PluralCategory.Other, "bap {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sanza {n}" }, { PluralCategory.Other, "basanza {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mobu {n}" }, { PluralCategory.Other, "mibu {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mok {n}" }, { PluralCategory.Other, "mik {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "pos {n}" }, { PluralCategory.Other, "bap {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sza {n}" }, { PluralCategory.Other, "bsza {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mb {n}" }, { PluralCategory.Other, "mib {n}" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/lo.json
+    // ================================================================
+    // LO — Lao
+    // ================================================================
+    public static readonly AgeLocale LO = new(
+        "lo",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} ມື້"),
+            UnitForms.Simple("{n} ອາທິດ"),
+            UnitForms.Simple("{n} ເດືອນ"),
+            UnitForms.Simple("{n} ປີ")
+        ),
+        "{0}ເຄິ່ງ",
+        "",
+        "ເກີດໃໝ່",
+        new Stages(
+            StageLabel.Neutral("ເດັກເກີດໃໝ່"),
+            StageLabel.Neutral("ເດັກນ້ອຍ"),
+            StageLabel.Neutral("ເດັກນ້ອຍ"),
+            StageLabel.Neutral("ເດັກ"),
+            StageLabel.Neutral("ໄວລຸ້ນ"),
+            StageLabel.Neutral("ຜູ້ໃຫຍ່")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ມ."),
+            UnitForms.Simple("{n} ອທ."),
+            UnitForms.Simple("{n} ດ."),
+            UnitForms.Simple("{n} ປ."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            null,
+            null,
             null
         )
     );
@@ -1937,6 +2729,94 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/mg.json
+    // ================================================================
+    // MG — Malagasy
+    // ================================================================
+    public static readonly AgeLocale MG = new(
+        "mg",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} andro"),
+            UnitForms.Simple("{n} herinandro"),
+            UnitForms.Simple("{n} volana"),
+            UnitForms.Simple("{n} taona")
+        ),
+        "{0} sy sasany",
+        ", ",
+        "Vao teraka",
+        new Stages(
+            StageLabel.Neutral("Vao teraka"),
+            StageLabel.Neutral("Zazakely"),
+            StageLabel.Neutral("Zazakely"),
+            StageLabel.Neutral("Ankizy"),
+            StageLabel.Neutral("Tanora"),
+            StageLabel.Neutral("Olon-dehibe")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} and"),
+            UnitForms.Simple("{n} her"),
+            UnitForms.Simple("{n} vol"),
+            UnitForms.Simple("{n} tna"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} a"),
+            UnitForms.Simple("{n} h"),
+            UnitForms.Simple("{n} v"),
+            UnitForms.Simple("{n} t"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/mi.json
+    // ================================================================
+    // MI — Māori
+    // ================================================================
+    public static readonly AgeLocale MI = new(
+        "mi",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("rā {n}"),
+            UnitForms.Simple("wiki {n}"),
+            UnitForms.Simple("marama {n}"),
+            UnitForms.Simple("tau {n}")
+        ),
+        "{0}½",
+        ", ",
+        "Pēpi hou",
+        new Stages(
+            StageLabel.Neutral("Pēpi hou"),
+            StageLabel.Neutral("Pēpi"),
+            StageLabel.Neutral("Kōhungahunga"),
+            StageLabel.Neutral("Tamariki"),
+            StageLabel.Neutral("Rangatahi"),
+            StageLabel.Neutral("Pakeke")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("rā {n}"),
+            UnitForms.Simple("w {n}"),
+            UnitForms.Simple("m {n}"),
+            UnitForms.Simple("t {n}"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}r"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}t"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/mk.json
     // ================================================================
     // MK — Macedonian
@@ -1975,6 +2855,94 @@ public static class Locales
             UnitForms.Simple("{n} с."),
             UnitForms.Simple("{n} м."),
             UnitForms.Simple("{n} г."),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ml.json
+    // ================================================================
+    // ML — Malayalam
+    // ================================================================
+    public static readonly AgeLocale ML = new(
+        "ml",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ദിവസം" }, { PluralCategory.Other, "{n} ദിവസങ്ങൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ആഴ്ച" }, { PluralCategory.Other, "{n} ആഴ്ചകൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} മാസം" }, { PluralCategory.Other, "{n} മാസങ്ങൾ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} വയസ്സ്" }, { PluralCategory.Other, "{n} വയസ്സ്" } })
+        ),
+        "{0} ര",
+        ", ",
+        "നവജാതശിശു",
+        new Stages(
+            StageLabel.Neutral("നവജാതശിശു"),
+            StageLabel.Neutral("ശിശു"),
+            StageLabel.Neutral("കുഞ്ഞ്"),
+            StageLabel.Neutral("കുട്ടി"),
+            StageLabel.Neutral("കൗമാരക്കാരൻ"),
+            StageLabel.Neutral("മുതിർന്നയാൾ")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ദിവസം"),
+            UnitForms.Simple("{n} ആഴ്ച"),
+            UnitForms.Simple("{n} മാസം"),
+            UnitForms.Simple("{n} വർഷം"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ദി"),
+            UnitForms.Simple("{n} ആ"),
+            UnitForms.Simple("{n} മാ"),
+            UnitForms.Simple("{n} വ"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/mn.json
+    // ================================================================
+    // MN — Mongolian
+    // ================================================================
+    public static readonly AgeLocale MN = new(
+        "mn",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} өдөр"),
+            UnitForms.Simple("{n} долоо хоног"),
+            UnitForms.Simple("{n} сар"),
+            UnitForms.Simple("{n} нас")
+        ),
+        "{n}½",
+        ", ",
+        "Нярай",
+        new Stages(
+            StageLabel.Neutral("Нярай"),
+            StageLabel.Neutral("Нярай"),
+            StageLabel.Neutral("Бага нялх"),
+            StageLabel.Neutral("Хүүхэд"),
+            StageLabel.Neutral("Өсвөр насны"),
+            StageLabel.Neutral("Насанд хүрсэн")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} өдөр"),
+            UnitForms.Simple("{n} д/х"),
+            UnitForms.Simple("{n} сар"),
+            UnitForms.Simple("{n} нас"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ө"),
+            UnitForms.Simple("{n} д"),
+            UnitForms.Simple("{n} с"),
+            UnitForms.Simple("{n} н"),
             "{n}½",
             "",
             null
@@ -2289,6 +3257,138 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/ny.json
+    // ================================================================
+    // NY — Chichewa
+    // ================================================================
+    public static readonly AgeLocale NY = new(
+        "ny",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "tsiku {n}" }, { PluralCategory.Other, "masiku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sabata {n}" }, { PluralCategory.Other, "masabata {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwezi {n}" }, { PluralCategory.Other, "miyezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "chaka {n}" }, { PluralCategory.Other, "zaka {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Wobadwa kumene",
+        new Stages(
+            StageLabel.Neutral("Wobadwa kumene"),
+            StageLabel.Neutral("Khanda"),
+            StageLabel.Neutral("Mwana wamng'ono"),
+            StageLabel.Neutral("Mwana"),
+            StageLabel.Neutral("Mnyamata"),
+            StageLabel.Neutral("Munthu wamkulu")
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "tsiku {n}" }, { PluralCategory.Other, "mas {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sabata {n}" }, { PluralCategory.Other, "masab {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwezi {n}" }, { PluralCategory.Other, "miyezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "chaka {n}" }, { PluralCategory.Other, "zaka {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ts {n}" }, { PluralCategory.Other, "mas {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sab {n}" }, { PluralCategory.Other, "msb {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mw {n}" }, { PluralCategory.Other, "miy {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ch {n}" }, { PluralCategory.Other, "z {n}" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/om.json
+    // ================================================================
+    // OM — Oromo
+    // ================================================================
+    public static readonly AgeLocale OM = new(
+        "om",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "guyyaa {n}" }, { PluralCategory.Other, "guyyoota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "torban {n}" }, { PluralCategory.Other, "torbanota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ji'a {n}" }, { PluralCategory.Other, "ji'oota {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "waggaa {n}" }, { PluralCategory.Other, "waggoota {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Dhalate haaraa",
+        new Stages(
+            StageLabel.Neutral("Daa'ima"),
+            StageLabel.Neutral("Daa'ima"),
+            StageLabel.Neutral("Ijoollee xiqqaa"),
+            StageLabel.Neutral("Ijoollee"),
+            StageLabel.Neutral("Dargaggeessa"),
+            StageLabel.Neutral("Ga'eessa")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("gy {n}"),
+            UnitForms.Simple("trb {n}"),
+            UnitForms.Simple("ji {n}"),
+            UnitForms.Simple("wg {n}"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}g"),
+            UnitForms.Simple("{n}t"),
+            UnitForms.Simple("{n}j"),
+            UnitForms.Simple("{n}w"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/or.json
+    // ================================================================
+    // OR — Odia
+    // ================================================================
+    public static readonly AgeLocale OR = new(
+        "or",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ଦିନ" }, { PluralCategory.Other, "{n} ଦିନ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ସପ୍ତାହ" }, { PluralCategory.Other, "{n} ସପ୍ତାହ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ମାସ" }, { PluralCategory.Other, "{n} ମାସ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ବର୍ଷ" }, { PluralCategory.Other, "{n} ବର୍ଷ" } })
+        ),
+        "{0}ଅଧା",
+        ", ",
+        "ନବଜାତ",
+        new Stages(
+            StageLabel.Neutral("ନବଜାତ"),
+            StageLabel.Neutral("ଶିଶୁ"),
+            StageLabel.Neutral("ଛୋଟ ପିଲା"),
+            StageLabel.Neutral("ପିଲା"),
+            StageLabel.Neutral("କିଶୋର"),
+            StageLabel.Neutral("ବୟସ୍କ")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ଦିନ"),
+            UnitForms.Simple("{n} ସପ୍ତାହ"),
+            UnitForms.Simple("{n} ମାସ"),
+            UnitForms.Simple("{n} ବର୍ଷ"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ଦି"),
+            UnitForms.Simple("{n} ସ"),
+            UnitForms.Simple("{n} ମା"),
+            UnitForms.Simple("{n} ବ"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/pa.json
     // ================================================================
     // PA — Punjabi
@@ -2377,6 +3477,50 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/ps.json
+    // ================================================================
+    // PS — Pashto
+    // ================================================================
+    public static readonly AgeLocale PS = new(
+        "ps",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ورځ" }, { PluralCategory.Other, "{n} ورځې" } }),
+            UnitForms.Simple("{n} اونۍ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مياشت" }, { PluralCategory.Other, "{n} مياشتې" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} کال" }, { PluralCategory.Other, "{n} کالونه" } })
+        ),
+        "{n}½",
+        "، ",
+        "نوي زېږېدلی",
+        new Stages(
+            StageLabel.Neutral("نوزېږی"),
+            StageLabel.Neutral("ماشوم"),
+            StageLabel.Neutral("وړکوټی"),
+            StageLabel.Neutral("ماشوم"),
+            StageLabel.Neutral("ځوان"),
+            StageLabel.Neutral("لوی")
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ورځ" }, { PluralCategory.Other, "{n} ورځې" } }),
+            UnitForms.Simple("{n} اونۍ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مياشت" }, { PluralCategory.Other, "{n} مياشتې" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} کال" }, { PluralCategory.Other, "{n} کالونه" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} و"),
+            UnitForms.Simple("{n} او"),
+            UnitForms.Simple("{n} م"),
+            UnitForms.Simple("{n} ک"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/pt.json
     // ================================================================
     // PT — Portuguese
@@ -2415,6 +3559,50 @@ public static class Locales
             UnitForms.Simple("{n} sem."),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mês" }, { PluralCategory.Other, "{n} meses" } }),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ano" }, { PluralCategory.Other, "{n} anos" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/qu.json
+    // ================================================================
+    // QU — Quechua
+    // ================================================================
+    public static readonly AgeLocale QU = new(
+        "qu",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} p'unchaw"),
+            UnitForms.Simple("{n} simana"),
+            UnitForms.Simple("{n} killa"),
+            UnitForms.Simple("{n} wata")
+        ),
+        "{0} khuskannin",
+        ", ",
+        "Musuq wawa",
+        new Stages(
+            StageLabel.Neutral("Musuq wawa"),
+            StageLabel.Neutral("Wawa"),
+            StageLabel.Neutral("Irqi"),
+            StageLabel.Neutral("Warma"),
+            StageLabel.Neutral("Wayna"),
+            StageLabel.Neutral("Runa")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} p'un"),
+            UnitForms.Simple("{n} sim"),
+            UnitForms.Simple("{n} kil"),
+            UnitForms.Simple("{n} wat"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
             "{n}½",
             "",
             null
@@ -2503,6 +3691,94 @@ public static class Locales
             UnitForms.Simple("{n} н."),
             UnitForms.Simple("{n} м."),
             UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} г." }, { PluralCategory.Few, "{n} г." }, { PluralCategory.Many, "{n} л." }, { PluralCategory.Other, "{n} г." } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/rw.json
+    // ================================================================
+    // RW — Kinyarwanda
+    // ================================================================
+    public static readonly AgeLocale RW = new(
+        "rw",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umunsi {n}" }, { PluralCategory.Other, "iminsi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "icyumweru {n}" }, { PluralCategory.Other, "ibyumweru {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "ukwezi {n}" }, { PluralCategory.Other, "amezi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "umwaka {n}" }, { PluralCategory.Other, "imyaka {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Avutse",
+        new Stages(
+            StageLabel.Neutral("Uruhinja"),
+            StageLabel.Neutral("Uruhinja"),
+            StageLabel.Neutral("Umwana muto"),
+            StageLabel.Neutral("Umwana"),
+            StageLabel.Neutral("Umusore"),
+            StageLabel.Neutral("Umuntu mukuru")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("mns {n}"),
+            UnitForms.Simple("cyu {n}"),
+            UnitForms.Simple("kwe {n}"),
+            UnitForms.Simple("mwk {n}"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}c"),
+            UnitForms.Simple("{n}k"),
+            UnitForms.Simple("{n}u"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/sd.json
+    // ================================================================
+    // SD — Sindhi
+    // ================================================================
+    public static readonly AgeLocale SD = new(
+        "sd",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} ڏينهن"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} هفتو" }, { PluralCategory.Other, "{n} هفتا" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مهينو" }, { PluralCategory.Other, "{n} مهينا" } }),
+            UnitForms.Simple("{n} سال")
+        ),
+        "{n}½",
+        "، ",
+        "نئون ڄائو",
+        new Stages(
+            StageLabel.Neutral("نئون ڄائو"),
+            StageLabel.Neutral("ننڍو ٻار"),
+            StageLabel.Neutral("ننڍو ٻار"),
+            StageLabel.Neutral("ٻار"),
+            StageLabel.Neutral("نوجوان"),
+            StageLabel.Neutral("وڏو")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ڏينهن"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} هفتو" }, { PluralCategory.Other, "{n} هفتا" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} مهينو" }, { PluralCategory.Other, "{n} مهينا" } }),
+            UnitForms.Simple("{n} سال"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ڏ"),
+            UnitForms.Simple("{n} ه"),
+            UnitForms.Simple("{n} م"),
+            UnitForms.Simple("{n} س"),
             "{n}½",
             "",
             null
@@ -2685,6 +3961,94 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/sn.json
+    // ================================================================
+    // SN — Shona
+    // ================================================================
+    public static readonly AgeLocale SN = new(
+        "sn",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "zuva {n}" }, { PluralCategory.Other, "mazuva {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "vhiki {n}" }, { PluralCategory.Other, "mavhiki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "mwedzi {n}" }, { PluralCategory.Other, "mwedzi {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "gore {n}" }, { PluralCategory.Other, "makore {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Mwana mutsva",
+        new Stages(
+            StageLabel.Neutral("Mwana mutsva"),
+            StageLabel.Neutral("Mucheche"),
+            StageLabel.Neutral("Mwana mudiki"),
+            StageLabel.Neutral("Mwana"),
+            StageLabel.Neutral("Mudiki"),
+            StageLabel.Neutral("Munhu mukuru")
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "zuva {n}" }, { PluralCategory.Other, "maz {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "vhiki {n}" }, { PluralCategory.Other, "mavh {n}" } }),
+            UnitForms.Simple("mwedzi {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "gore {n}" }, { PluralCategory.Other, "mak {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "z {n}" }, { PluralCategory.Other, "maz {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "vh {n}" }, { PluralCategory.Other, "mvh {n}" } }),
+            UnitForms.Simple("mw {n}"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "g {n}" }, { PluralCategory.Other, "mak {n}" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/so.json
+    // ================================================================
+    // SO — Somali
+    // ================================================================
+    public static readonly AgeLocale SO = new(
+        "so",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "maalin {n}" }, { PluralCategory.Other, "maalmood {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "toddobaad {n}" }, { PluralCategory.Other, "toddobaadyo {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "bil {n}" }, { PluralCategory.Other, "bilood {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "sano {n}" }, { PluralCategory.Other, "sanooyin {n}" } })
+        ),
+        "{n}½",
+        ", ",
+        "Dhashay cusub",
+        new Stages(
+            StageLabel.Neutral("Dhashay cusub"),
+            StageLabel.Neutral("Naaso-nuug"),
+            StageLabel.Neutral("Cunug yar"),
+            StageLabel.Neutral("Cunug"),
+            StageLabel.Neutral("Dhallinyaro"),
+            StageLabel.Neutral("Qaangaar")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("mln {n}"),
+            UnitForms.Simple("tdb {n}"),
+            UnitForms.Simple("bil {n}"),
+            UnitForms.Simple("sno {n}"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}t"),
+            UnitForms.Simple("{n}b"),
+            UnitForms.Simple("{n}s"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/sq.json
     // ================================================================
     // SQ — Albanian
@@ -2767,6 +4131,50 @@ public static class Locales
             UnitForms.Simple("{n} н"),
             UnitForms.Simple("{n} м"),
             UnitForms.Simple("{n} г"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/su.json
+    // ================================================================
+    // SU — Sundanese
+    // ================================================================
+    public static readonly AgeLocale SU = new(
+        "su",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} dinten"),
+            UnitForms.Simple("{n} minggu"),
+            UnitForms.Simple("{n} sasih"),
+            UnitForms.Simple("{n} taun")
+        ),
+        "{0} satengah",
+        ", ",
+        "Orok anyar",
+        new Stages(
+            StageLabel.Neutral("Orok anyar"),
+            StageLabel.Neutral("Orok"),
+            StageLabel.Neutral("Budak leutik"),
+            StageLabel.Neutral("Budak"),
+            StageLabel.Neutral("Rumaja"),
+            StageLabel.Neutral("Dewasa")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} dinten"),
+            UnitForms.Simple("{n} minggu"),
+            UnitForms.Simple("{n} sasih"),
+            UnitForms.Simple("{n} taun"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
             "{n}½",
             "",
             null
@@ -2949,6 +4357,50 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/tg.json
+    // ================================================================
+    // TG — Tajik
+    // ================================================================
+    public static readonly AgeLocale TG = new(
+        "tg",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} рӯз"),
+            UnitForms.Simple("{n} ҳафта"),
+            UnitForms.Simple("{n} моҳ"),
+            UnitForms.Simple("{n} сол")
+        ),
+        "{0} ним",
+        ", ",
+        "Навзод",
+        new Stages(
+            StageLabel.Neutral("Навзод"),
+            StageLabel.Neutral("Тифл"),
+            StageLabel.Neutral("Кӯдак"),
+            StageLabel.Neutral("Кӯдак"),
+            StageLabel.Neutral("Наврас"),
+            StageLabel.Neutral("Калонсол")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} р"),
+            UnitForms.Simple("{n} ҳ"),
+            UnitForms.Simple("{n} м"),
+            UnitForms.Simple("{n} с"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}р"),
+            UnitForms.Simple("{n}ҳ"),
+            UnitForms.Simple("{n}м"),
+            UnitForms.Simple("{n}с"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     // Source: age/locales/src/th.json
     // ================================================================
     // TH — Thai
@@ -2987,6 +4439,94 @@ public static class Locales
             UnitForms.Simple("{n}สัปดาห์"),
             UnitForms.Simple("{n}เดือน"),
             UnitForms.Simple("{n}ปี"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/ti.json
+    // ================================================================
+    // TI — Tigrinya
+    // ================================================================
+    public static readonly AgeLocale TI = new(
+        "ti",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} መዓልቲ" }, { PluralCategory.Other, "{n} መዓልትታት" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ሰሙን" }, { PluralCategory.Other, "{n} ሰሙናት" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ወርሒ" }, { PluralCategory.Other, "{n} ኣዋርሕ" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ዓመት" }, { PluralCategory.Other, "{n} ዓመታት" } })
+        ),
+        "{0} ተኹል",
+        "፣ ",
+        "ሓድሽ ዝተወልደ",
+        new Stages(
+            StageLabel.Neutral("ሓድሽ ዝተወልደ"),
+            StageLabel.Neutral("ጨቓዊ"),
+            StageLabel.Neutral("ንእሽተይ ህጻን"),
+            StageLabel.Neutral("ቆልዓ"),
+            StageLabel.Neutral("መንእሰይ"),
+            StageLabel.Neutral("ዓቢይ")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} መዓልትታት"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ሰሙን" }, { PluralCategory.Other, "{n} ሰሙናት" } }),
+            UnitForms.Simple("{n} ኣዋርሕ"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ዓመት" }, { PluralCategory.Other, "{n} ዓመታት" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} መ"),
+            UnitForms.Simple("{n} ሰሙን"),
+            UnitForms.Simple("{n} ወር"),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} ዓመት" }, { PluralCategory.Other, "{n} ዓ" } }),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/tk.json
+    // ================================================================
+    // TK — Turkmen
+    // ================================================================
+    public static readonly AgeLocale TK = new(
+        "tk",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n} gün"),
+            UnitForms.Simple("{n} hepde"),
+            UnitForms.Simple("{n} aý"),
+            UnitForms.Simple("{n} ýaş")
+        ),
+        "{0}½",
+        ", ",
+        "Täze doglan",
+        new Stages(
+            StageLabel.Neutral("Täze doglan"),
+            StageLabel.Neutral("Bäbek"),
+            StageLabel.Neutral("Kiçijik"),
+            StageLabel.Neutral("Çaga"),
+            StageLabel.Neutral("Ýetginjek"),
+            StageLabel.Neutral("Ulular")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} g"),
+            UnitForms.Simple("{n} h"),
+            UnitForms.Simple("{n} a"),
+            UnitForms.Simple("{n} ý"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}g"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}a"),
+            UnitForms.Simple("{n}ý"),
             "{n}½",
             "",
             null
@@ -3257,6 +4797,138 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/xh.json
+    // ================================================================
+    // XH — Xhosa
+    // ================================================================
+    public static readonly AgeLocale XH = new(
+        "xh",
+        n => n == 1 ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "usuku {n}" }, { PluralCategory.Other, "iintsuku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iveki {n}" }, { PluralCategory.Other, "iiveki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "inyanga {n}" }, { PluralCategory.Other, "iinyanga {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "unyaka {n}" }, { PluralCategory.Other, "iminyaka {n}" } })
+        ),
+        "{0} nehafu",
+        ", ",
+        "Usanda kuzalwa",
+        new Stages(
+            StageLabel.Neutral("Usana olusanda kuzalwa"),
+            StageLabel.Neutral("Usana"),
+            StageLabel.Neutral("Umntwana omncinane"),
+            StageLabel.Neutral("Umntwana"),
+            StageLabel.Neutral("Ulutsha"),
+            StageLabel.Neutral("Umntu omdala")
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "usuku {n}" }, { PluralCategory.Other, "iintsuku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iveki {n}" }, { PluralCategory.Other, "iiveki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iny. {n}" }, { PluralCategory.Other, "iiny. {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "uny. {n}" }, { PluralCategory.Other, "imy. {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/yo.json
+    // ================================================================
+    // YO — Yoruba
+    // ================================================================
+    public static readonly AgeLocale YO = new(
+        "yo",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("ọjọ́ {n}"),
+            UnitForms.Simple("ọ̀sẹ̀ {n}"),
+            UnitForms.Simple("oṣù {n}"),
+            UnitForms.Simple("ọdún {n}")
+        ),
+        "{0} àbọ̀",
+        ", ",
+        "Ọmọ tuntun",
+        new Stages(
+            StageLabel.Neutral("Ọmọ tuntun"),
+            StageLabel.Neutral("Ọmọ ọwọ́"),
+            StageLabel.Neutral("Ọmọ kékeré"),
+            StageLabel.Neutral("Ọmọ"),
+            StageLabel.Neutral("Ọ̀dọ́"),
+            StageLabel.Neutral("Àgbàlagbà")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("ọjọ́ {n}"),
+            UnitForms.Simple("ọ̀sẹ̀ {n}"),
+            UnitForms.Simple("oṣù {n}"),
+            UnitForms.Simple("ọdún {n}"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
+    // Source: age/locales/src/yue.json
+    // ================================================================
+    // YUE — Cantonese
+    // ================================================================
+    public static readonly AgeLocale YUE = new(
+        "yue",
+        n => PluralCategory.Other,
+        new Units(
+            UnitForms.Simple("{n}日"),
+            UnitForms.Simple("{n}個星期"),
+            UnitForms.Simple("{n}個月"),
+            UnitForms.Simple("{n}歲")
+        ),
+        "{0}半",
+        "",
+        "初生嬰兒",
+        new Stages(
+            StageLabel.Neutral("初生嬰兒"),
+            StageLabel.Neutral("嬰兒"),
+            StageLabel.Neutral("幼兒"),
+            StageLabel.Neutral("細路"),
+            StageLabel.Neutral("後生"),
+            StageLabel.Neutral("成人")
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} 日"),
+            UnitForms.Simple("{n} 個星期"),
+            UnitForms.Simple("{n} 個月"),
+            UnitForms.Simple("{n} 年"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n}日"),
+            UnitForms.Simple("{n}週"),
+            UnitForms.Simple("{n}月"),
+            UnitForms.Simple("{n}年"),
+            null,
+            null,
+            null
+        )
+    );
+
     // Source: age/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -3301,17 +4973,65 @@ public static class Locales
         )
     );
 
+    // Source: age/locales/src/zu.json
+    // ================================================================
+    // ZU — Zulu
+    // ================================================================
+    public static readonly AgeLocale ZU = new(
+        "zu",
+        n => (n == 0 || n == 1) ? PluralCategory.One : PluralCategory.Other,
+        new Units(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "usuku {n}" }, { PluralCategory.Other, "izinsuku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iviki {n}" }, { PluralCategory.Other, "amaviki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "inyanga {n}" }, { PluralCategory.Other, "izinyanga {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "unyaka {n}" }, { PluralCategory.Other, "iminyaka {n}" } })
+        ),
+        "{0} nohhafu",
+        ", ",
+        "Usanda kuzalwa",
+        new Stages(
+            StageLabel.Neutral("Usana olusanda kuzalwa"),
+            StageLabel.Neutral("Usana"),
+            StageLabel.Neutral("Umntwana omncane"),
+            StageLabel.Neutral("Umntwana"),
+            StageLabel.Neutral("Intsha"),
+            StageLabel.Neutral("Umuntu omdala")
+        ),
+        new CompactnessOverride(
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "usuku {n}" }, { PluralCategory.Other, "izinsuku {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "iviki {n}" }, { PluralCategory.Other, "amaviki {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "inyanga {n}" }, { PluralCategory.Other, "izinyanga {n}" } }),
+            UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "unyaka {n}" }, { PluralCategory.Other, "iminyaka {n}" } }),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.Simple("{n} ns"),
+            UnitForms.Simple("{n} vk"),
+            UnitForms.Simple("{n} ny"),
+            UnitForms.Simple("{n} mk"),
+            "{n}½",
+            "",
+            null
+        )
+    );
+
     public static readonly IReadOnlyDictionary<string, AgeLocale> All =
         new Dictionary<string, AgeLocale>
         {
+            { "af", AF },
+            { "ak", AK },
             { "am", AM },
             { "ar", AR },
             { "az", AZ },
+            { "be", BE },
             { "bg", BG },
             { "bn", BN },
             { "br", BR },
             { "bs", BS },
             { "ca", CA },
+            { "ceb", CEB },
             { "cs", CS },
             { "cy", CY },
             { "da", DA },
@@ -3322,29 +5042,47 @@ public static class Locales
             { "et", ET },
             { "eu", EU },
             { "fa", FA },
+            { "ff", FF },
             { "fi", FI },
             { "fil", FIL },
             { "fr", FR },
             { "ga", GA },
             { "gd", GD },
+            { "gl", GL },
+            { "gn", GN },
             { "gu", GU },
             { "gv", GV },
+            { "ha", HA },
             { "he", HE },
             { "hi", HI },
             { "hr", HR },
+            { "ht", HT },
             { "hu", HU },
+            { "hy", HY },
             { "id", ID },
+            { "ig", IG },
+            { "is", IS },
             { "it", IT },
             { "ja", JA },
             { "jv", JV },
             { "ka", KA },
             { "kk", KK },
             { "km", KM },
+            { "kn", KN },
             { "ko", KO },
+            { "ku", KU },
             { "kw", KW },
+            { "ky", KY },
+            { "lg", LG },
+            { "ln", LN },
+            { "lo", LO },
             { "lt", LT },
             { "lv", LV },
+            { "mg", MG },
+            { "mi", MI },
             { "mk", MK },
+            { "ml", ML },
+            { "mn", MN },
             { "mr", MR },
             { "ms", MS },
             { "mt", MT },
@@ -3352,29 +5090,46 @@ public static class Locales
             { "nb", NB },
             { "ne", NE },
             { "nl", NL },
+            { "ny", NY },
+            { "om", OM },
+            { "or", OR },
             { "pa", PA },
             { "pl", PL },
+            { "ps", PS },
             { "pt", PT },
+            { "qu", QU },
             { "ro", RO },
             { "ru", RU },
+            { "rw", RW },
+            { "sd", SD },
             { "shi", SHI },
             { "si", SI },
             { "sk", SK },
             { "sl", SL },
+            { "sn", SN },
+            { "so", SO },
             { "sq", SQ },
             { "sr", SR },
+            { "su", SU },
             { "sv", SV },
             { "sw", SW },
             { "ta", TA },
             { "te", TE },
+            { "tg", TG },
             { "th", TH },
+            { "ti", TI },
+            { "tk", TK },
             { "tr", TR },
             { "tzm", TZM },
             { "uk", UK },
             { "ur", UR },
             { "uz", UZ },
             { "vi", VI },
+            { "xh", XH },
+            { "yo", YO },
+            { "yue", YUE },
             { "zh", ZH },
+            { "zu", ZU },
         };
 
     public static AgeLocale? Get(string code)

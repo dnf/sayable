@@ -1,0 +1,70 @@
+{
+  "code": "kn",
+  "name": "Kannada",
+  "months": [
+    "ಜನವರಿ",
+    "ಫೆಬ್ರವರಿ",
+    "ಮಾರ್ಚ್",
+    "ಏಪ್ರಿಲ್",
+    "ಮೇ",
+    "ಜೂನ್",
+    "ಜುಲೈ",
+    "ಆಗಸ್ಟ್",
+    "ಸೆಪ್ಟೆಂಬರ್",
+    "ಅಕ್ಟೋಬರ್",
+    "ನವೆಂಬರ್",
+    "ಡಿಸೆಂಬರ್"
+  ],
+  "weekdays": [
+    "ಭಾನುವಾರ",
+    "ಸೋಮವಾರ",
+    "ಮಂಗಳವಾರ",
+    "ಬುಧವಾರ",
+    "ಗುರುವಾರ",
+    "ಶುಕ್ರವಾರ",
+    "ಶನಿವಾರ"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "ಇಂದು",
+  "tomorrow": "ನಾಳೆ",
+  "yesterday": "ನಿನ್ನೆ",
+  "dayAfterTomorrow": "ನಾಡಿದ್ದು",
+  "dayBeforeYesterday": "ಮೊನ್ನೆ",
+  "thisWeekday": "ಈ {weekday}",
+  "nextWeekday": "ಮುಂದಿನ {weekday}",
+  "lastWeekday": "ಕಳೆದ {weekday}",
+  "short": {
+    "months": [
+      "ಜನ",
+      "ಫೆಬ್ರ",
+      "ಮಾರ್ಚ್",
+      "ಏಪ್ರಿ",
+      "ಮೇ",
+      "ಜೂನ್",
+      "ಜುಲೈ",
+      "ಆಗ",
+      "ಸೆಪ್ಟೆಂ",
+      "ಅಕ್ಟೋ",
+      "ನವೆಂ",
+      "ಡಿಸೆಂ"
+    ],
+    "weekdays": [
+      "ಭಾನು",
+      "ಸೋಮ",
+      "ಮಂಗಳ",
+      "ಬುಧ",
+      "ಗುರು",
+      "ಶುಕ್ರ",
+      "ಶನಿ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

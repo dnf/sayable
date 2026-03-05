@@ -1,0 +1,52 @@
+{
+  "code": "om",
+  "name": "Oromo",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "guyyaa {n}",
+      "other": "guyyoota {n}"
+    },
+    "week": {
+      "one": "torban {n}",
+      "other": "torbanota {n}"
+    },
+    "month": {
+      "one": "ji'a {n}",
+      "other": "ji'oota {n}"
+    },
+    "year": {
+      "one": "waggaa {n}",
+      "other": "waggoota {n}"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justBorn": "Dhalate haaraa",
+  "stages": {
+    "newborn": "Daa'ima",
+    "infant": "Daa'ima",
+    "toddler": "Ijoollee xiqqaa",
+    "child": "Ijoollee",
+    "teenager": "Dargaggeessa",
+    "adult": "Ga'eessa"
+  },
+  "short": {
+    "units": {
+      "day": "gy {n}",
+      "week": "trb {n}",
+      "month": "ji {n}",
+      "year": "wg {n}"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}g",
+      "week": "{n}t",
+      "month": "{n}j",
+      "year": "{n}w"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

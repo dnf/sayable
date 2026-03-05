@@ -54,7 +54,7 @@ Returns `null` for invalid input.
 
 ## Locales
 
-71 locales available. Import by code:
+110 locales available. Import by code:
 
 ```typescript
 import { de } from 'sayable-date/locales/de.js';

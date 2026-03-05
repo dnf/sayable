@@ -231,7 +231,7 @@ fn test_locale_lookup() {
 
 #[test]
 fn test_all_locales_load() {
-    // Verify all 71 locale statics can be initialized
+    // Verify all 110 locale statics can be initialized
     assert_eq!(locales::EN.code, "en");
     assert_eq!(locales::DE.code, "de");
     assert_eq!(locales::FR.code, "fr");

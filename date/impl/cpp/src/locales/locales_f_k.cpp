@@ -60,6 +60,53 @@ const DateLocale& FA() {
     return loc;
 }
 
+// Source: date/locales/src/ff.json
+const DateLocale& FF() {
+    static const DateLocale loc{
+        "ff",
+        {"Siilo", "Colte", "Mbooy", "Seeɗto", "Duujal", "Korse", "Morso", "Juko", "Siilto", "Yarkomaa", "Jolal", "Bowte"},
+        {"Dewo", "Aaɓnde", "Mawbaare", "Njeslaare", "Naasaande", "Mawnde", "Hoore-biir"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "hannde", "jaŋngo", "haŋki",
+        "ɗoɓi",
+        "haŋki-haŋki",
+        "{weekday} oo",
+        "{weekday} aroowo",
+        "{weekday} ɓennuɗo",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Sii", "Col", "Mbo", "See", "Duu", "Kor", "Mor", "Juk", "Slt", "Yar", "Jol", "Bow"},
+            {},
+            {"Dew", "Aaɓ", "Maw", "Nje", "Naa", "Maw", "Hoo"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/fi.json
 const DateLocale& FI() {
     static const DateLocale loc{
@@ -295,6 +342,100 @@ const DateLocale& GD() {
     return loc;
 }
 
+// Source: date/locales/src/gl.json
+const DateLocale& GL() {
+    static const DateLocale loc{
+        "gl",
+        {"xaneiro", "febreiro", "marzo", "abril", "maio", "xuño", "xullo", "agosto", "setembro", "outubro", "novembro", "decembro"},
+        {"domingo", "luns", "martes", "mércores", "xoves", "venres", "sábado"},
+        "{n}",
+        {},
+        "{day} de {month}",
+        "{day} de {month} de {year}",
+        "hoxe", "mañá", "onte",
+        "pasadomañá",
+        "antonte",
+        "este {weekday}",
+        "o próximo {weekday}",
+        "o pasado {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"xan", "feb", "mar", "abr", "mai", "xuñ", "xul", "ago", "set", "out", "nov", "dec"},
+            {},
+            {"dom", "lun", "mar", "mér", "xov", "ven", "sáb"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/gn.json
+const DateLocale& GN() {
+    static const DateLocale loc{
+        "gn",
+        {"Jasyteĩ", "Jasykõi", "Jasyapy", "Jasyrundy", "Jasypo", "Jasypoteĩ", "Jasypokõi", "Jasypoapy", "Jasyporundy", "Jasypa", "Jasypateĩ", "Jasypakõi"},
+        {"Arateĩ", "Arakõi", "Araapy", "Ararundy", "Arapo", "Arapoteĩ", "Arapokõi"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ko'ágã", "ko'ẽrõ", "kuehe",
+        "ko'ẽrõ rire",
+        "kuehe ñepyrũme",
+        "ko {weekday}",
+        "{weekday} ou vave",
+        "{weekday} ohasava'ekue",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jte", "Jkõ", "Jap", "Jru", "Jpo", "Jpte", "Jpkõ", "Jpap", "Jpr", "Jpa", "Jpte", "Jpkõ"},
+            {},
+            {"Art", "Ark", "Ara", "Arr", "Arp", "Apt", "Apk"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/gu.json
 const DateLocale& GU() {
     static const DateLocale loc{
@@ -363,6 +504,53 @@ const DateLocale& GV() {
             {"JGeur", "TArr", "Mayr", "Aver", "Boal", "MSour", "JSour", "Luan", "MFouy", "JFouy", "MHoun", "MNoll"},
             {},
             {"Jed", "Jel", "Jem", "Jer", "Jerd", "Jeh", "Jes"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/ha.json
+const DateLocale& HA() {
+    static const DateLocale loc{
+        "ha",
+        {"Janairu", "Fabrairu", "Maris", "Afrilu", "Mayu", "Yuni", "Yuli", "Agusta", "Satumba", "Oktoba", "Nuwamba", "Disamba"},
+        {"Lahadi", "Litinin", "Talata", "Laraba", "Alhamis", "Jummaʼa", "Asabar"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "yau", "gobe", "jiya",
+        "jibi",
+        "shekaranjiya",
+        "wannan {weekday}",
+        "{weekday} mai zuwa",
+        "{weekday} da ya wuce",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Fab", "Mar", "Afr", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis"},
+            {},
+            {"Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"},
             "{n}",
             {},
             false,
@@ -530,6 +718,53 @@ const DateLocale& HR() {
     return loc;
 }
 
+// Source: date/locales/src/ht.json
+const DateLocale& HT() {
+    static const DateLocale loc{
+        "ht",
+        {"Janvye", "Fevriye", "Mas", "Avril", "Me", "Jen", "Jiyè", "Out", "Septanm", "Oktòb", "Novanm", "Desanm"},
+        {"Dimanch", "Lendi", "Madi", "Mèkredi", "Jedi", "Vandredi", "Samdi"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "jodi a", "demen", "yè",
+        "aprè demen",
+        "avan yè",
+        "{weekday} sa a",
+        "{weekday} pwochen",
+        "{weekday} pase",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Fev", "Mas", "Avr", "Me", "Jen", "Jiy", "Out", "Sep", "Okt", "Nov", "Des"},
+            {},
+            {"Dim", "Len", "Mad", "Mèk", "Jed", "Van", "Sam"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/hu.json
 const DateLocale& HU() {
     static const DateLocale loc{
@@ -577,6 +812,53 @@ const DateLocale& HU() {
     return loc;
 }
 
+// Source: date/locales/src/hy.json
+const DateLocale& HY() {
+    static const DateLocale loc{
+        "hy",
+        {"Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"},
+        {"Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "այսօր", "վաղը", "երեկ",
+        "վաղը մյուս օրը",
+        "երեկ մյուս օրը",
+        "այս {weekday}",
+        "հաջորդ {weekday}",
+        "անցած {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Հնվ", "Փտր", "Մրտ", "Ապր", "Մյս", "Հնս", "Հլս", "Օգս", "Սեպ", "Հկտ", "Նոյ", "Դեկ"},
+            {},
+            {"Կիր", "Երկ", "Երք", "Չրք", "Հնգ", "Ուր", "Շբթ"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/id.json
 const DateLocale& ID() {
     static const DateLocale loc{
@@ -616,6 +898,100 @@ const DateLocale& ID() {
             false,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/ig.json
+const DateLocale& IG() {
+    static const DateLocale loc{
+        "ig",
+        {"Jenụwarị", "Febrụwarị", "Maachị", "Epreel", "Mee", "Juun", "Julaị", "Ọgọọst", "Septemba", "Ọktoba", "Novemba", "Disemba"},
+        {"Ụbọchị Ụka", "Mọnde", "Tụụzdee", "Wenezdee", "Tọọzdee", "Fraịdee", "Satọdee"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "taa", "echi", "ụnyaahụ",
+        "mbọ echi",
+        "ụnyaahụ nke gara aga",
+        "{weekday} a",
+        "{weekday} na-abịa",
+        "{weekday} gara aga",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jen", "Feb", "Maa", "Epr", "Mee", "Jun", "Jul", "Ọgọ", "Sep", "Ọkt", "Nov", "Dis"},
+            {},
+            {"Ụka", "Mọn", "Tụụ", "Wen", "Tọọ", "Fra", "Sat"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/is.json
+const DateLocale& IS() {
+    static const DateLocale loc{
+        "is",
+        {"janúar", "febrúar", "mars", "apríl", "maí", "júní", "júlí", "ágúst", "september", "október", "nóvember", "desember"},
+        {"sunnudagur", "mánudagur", "þriðjudagur", "miðvikudagur", "fimmtudagur", "föstudagur", "laugardagur"},
+        "{n}.",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "í dag", "á morgun", "í gær",
+        "á yfirmorgun",
+        "í fyrradag",
+        "{weekday}",
+        "næsta {weekday}",
+        "síðasta {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"jan", "feb", "mar", "apr", "maí", "jún", "júl", "ágú", "sep", "okt", "nóv", "des"},
+            {},
+            {"sun", "mán", "þri", "mið", "fim", "fös", "lau"},
+            "{n}.",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}.{m}.",
+            "{d}.{m}.{yy}",
             "",
             "",
             ""
@@ -906,6 +1282,53 @@ const DateLocale& KM() {
     return loc;
 }
 
+// Source: date/locales/src/kn.json
+const DateLocale& KN() {
+    static const DateLocale loc{
+        "kn",
+        {"ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"},
+        {"ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ಇಂದು", "ನಾಳೆ", "ನಿನ್ನೆ",
+        "ನಾಡಿದ್ದು",
+        "ಮೊನ್ನೆ",
+        "ಈ {weekday}",
+        "ಮುಂದಿನ {weekday}",
+        "ಕಳೆದ {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"ಜನ", "ಫೆಬ್ರ", "ಮಾರ್ಚ್", "ಏಪ್ರಿ", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗ", "ಸೆಪ್ಟೆಂ", "ಅಕ್ಟೋ", "ನವೆಂ", "ಡಿಸೆಂ"},
+            {},
+            {"ಭಾನು", "ಸೋಮ", "ಮಂಗಳ", "ಬುಧ", "ಗುರು", "ಶುಕ್ರ", "ಶನಿ"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/ko.json
 const DateLocale& KO() {
     static const DateLocale loc{
@@ -953,6 +1376,53 @@ const DateLocale& KO() {
     return loc;
 }
 
+// Source: date/locales/src/ku.json
+const DateLocale& KU() {
+    static const DateLocale loc{
+        "ku",
+        {"Rêbendan", "Reşemî", "Adar", "Avrêl", "Gulan", "Pûşper", "Tîrmeh", "Tebax", "Îlon", "Cotmeh", "Mijdar", "Berfanbar"},
+        {"Yekşem", "Duşem", "Sêşem", "Çarşem", "Pêncşem", "Înî", "Şemî"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "îro", "sibê", "duh",
+        "dotira",
+        "pêroj",
+        "vê {weekday}",
+        "{weekday}a bê",
+        "{weekday}a borî",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Rêb", "Reş", "Ada", "Avr", "Gul", "Pûş", "Tîr", "Teb", "Îlo", "Cot", "Mij", "Ber"},
+            {},
+            {"Yşm", "Dşm", "Sşm", "Çşm", "Pşm", "Înî", "Şmî"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/kw.json
 const DateLocale& KW() {
     static const DateLocale loc{
@@ -974,6 +1444,53 @@ const DateLocale& KW() {
             {"Gen", "Hwe", "Meu", "Ebr", "Me", "Met", "Gor", "Est", "Gwy", "Hed", "Du", "Kev"},
             {},
             {"Sul", "Lun", "Mth", "Mhr", "Yow", "Gwe", "Sad"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/ky.json
+const DateLocale& KY() {
+    static const DateLocale loc{
+        "ky",
+        {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"},
+        {"Жекшемби", "Дүйшөмбү", "Шейшемби", "Шаршемби", "Бейшемби", "Жума", "Ишемби"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "бүгүн", "эртең", "кечээ",
+        "бүрсүгүнү",
+        "мурунку күнү",
+        "бул {weekday}",
+        "кийинки {weekday}",
+        "өткөн {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"},
+            {},
+            {"Жек", "Дүй", "Шей", "Шар", "Бей", "Жум", "Ише"},
             "{n}",
             {},
             false,

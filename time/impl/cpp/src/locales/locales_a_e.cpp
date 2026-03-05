@@ -13,6 +13,38 @@
 namespace sayabletime {
 namespace locales {
 
+// Source: time/locales/src/af.json
+const TimeLocale& AF() {
+    static const TimeLocale loc{
+        "af",
+        ClockConfig{
+            {"twaalf", "een", "twee", "drie", "vier", "vyf", "ses", "sewe", "agt", "nege", "tien", "elf"},
+            "middernag",
+            "middag",
+            {{0, "{h}-uur"}, {5, "vyf oor {h}"}, {10, "tien oor {h}"}, {15, "kwart oor {h}"}, {20, "twintig oor {h}"}, {25, "vyf voor half {next_h}"}, {30, "half {next_h}"}, {35, "vyf oor half {next_h}"}, {40, "twintig voor {next_h}"}, {45, "kwart voor {next_h}"}, {50, "tien voor {next_h}"}, {55, "vyf voor {next_h}"}}
+        },
+        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/ak.json
+const TimeLocale& AK() {
+    static const TimeLocale loc{
+        "ak",
+        ClockConfig{
+            {"dumien", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"},
+            "anadwo",
+            "awia",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/am.json
 const TimeLocale& AM() {
     static const TimeLocale loc{
@@ -54,6 +86,22 @@ const TimeLocale& AZ() {
             "gecə yarısı",
             "günorta",
             {{0, "{h} o'clock"}, {5, "beş keçir {h}"}, {10, "on keçir {h}"}, {15, "on beş keçir {h}"}, {20, "iyirmi keçir {h}"}, {25, "iyirmi beş keçir {h}"}, {30, "otuz keçir {h}"}, {35, "iyirmi beş qalmış {next_h}"}, {40, "iyirmi qalmış {next_h}"}, {45, "on beş qalmış {next_h}"}, {50, "on qalmış {next_h}"}, {55, "beş qalmış {next_h}"}}
+        },
+        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/be.json
+const TimeLocale& BE() {
+    static const TimeLocale loc{
+        "be",
+        ClockConfig{
+            {"дванаццаць", "адзін", "два", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"},
+            "поўнач",
+            "поўдзень",
+            {{0, "{h} гадзін"}, {5, "пяць хвілін пасля {h}"}, {10, "дзесяць хвілін пасля {h}"}, {15, "чвэрць пасля {h}"}, {20, "дваццаць хвілін пасля {h}"}, {25, "дваццаць пяць хвілін пасля {h}"}, {30, "палова да {next_h}"}, {35, "без дваццаці пяці {next_h}"}, {40, "без дваццаці {next_h}"}, {45, "без чвэрці {next_h}"}, {50, "без дзесяці {next_h}"}, {55, "без пяці {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
@@ -137,6 +185,22 @@ const TimeLocale& CA() {
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/ceb.json
+const TimeLocale& CEB() {
+    static const TimeLocale loc{
+        "ceb",
+        ClockConfig{
+            {"dose", "uno", "dos", "tres", "kwatro", "singko", "sais", "siyete", "otso", "nuwebe", "diyes", "onse"},
+            "tungang gabii",
+            "udtong tutok",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
     };
     return loc;
 }

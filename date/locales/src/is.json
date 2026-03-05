@@ -1,0 +1,70 @@
+{
+  "code": "is",
+  "name": "Icelandic",
+  "months": [
+    "janúar",
+    "febrúar",
+    "mars",
+    "apríl",
+    "maí",
+    "júní",
+    "júlí",
+    "ágúst",
+    "september",
+    "október",
+    "nóvember",
+    "desember"
+  ],
+  "weekdays": [
+    "sunnudagur",
+    "mánudagur",
+    "þriðjudagur",
+    "miðvikudagur",
+    "fimmtudagur",
+    "föstudagur",
+    "laugardagur"
+  ],
+  "dayFormat": "{n}.",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "í dag",
+  "tomorrow": "á morgun",
+  "yesterday": "í gær",
+  "dayAfterTomorrow": "á yfirmorgun",
+  "dayBeforeYesterday": "í fyrradag",
+  "thisWeekday": "{weekday}",
+  "nextWeekday": "næsta {weekday}",
+  "lastWeekday": "síðasta {weekday}",
+  "short": {
+    "months": [
+      "jan",
+      "feb",
+      "mar",
+      "apr",
+      "maí",
+      "jún",
+      "júl",
+      "ágú",
+      "sep",
+      "okt",
+      "nóv",
+      "des"
+    ],
+    "weekdays": [
+      "sun",
+      "mán",
+      "þri",
+      "mið",
+      "fim",
+      "fös",
+      "lau"
+    ],
+    "dayFormat": "{n}.",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}.{m}.",
+    "datePatternWithYear": "{d}.{m}.{yy}"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "code": "hy",
+  "name": "Armenian",
+  "months": [
+    "Հունվար",
+    "Փետրվար",
+    "Մարտ",
+    "Ապրիլ",
+    "Մայիս",
+    "Հունիս",
+    "Հուլիս",
+    "Օգոստոս",
+    "Սեպտեմբեր",
+    "Հոկտեմբեր",
+    "Նոյեմբեր",
+    "Դեկտեմբեր"
+  ],
+  "weekdays": [
+    "Կիրակի",
+    "Երկուշաբթի",
+    "Երեքշաբթի",
+    "Չորեքշաբթի",
+    "Հինգշաբթի",
+    "Ուրբաթ",
+    "Շաբաթ"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "այսօր",
+  "tomorrow": "վաղը",
+  "yesterday": "երեկ",
+  "dayAfterTomorrow": "վաղը մյուս օրը",
+  "dayBeforeYesterday": "երեկ մյուս օրը",
+  "thisWeekday": "այս {weekday}",
+  "nextWeekday": "հաջորդ {weekday}",
+  "lastWeekday": "անցած {weekday}",
+  "short": {
+    "months": [
+      "Հնվ",
+      "Փտր",
+      "Մրտ",
+      "Ապր",
+      "Մյս",
+      "Հնս",
+      "Հլս",
+      "Օգս",
+      "Սեպ",
+      "Հկտ",
+      "Նոյ",
+      "Դեկ"
+    ],
+    "weekdays": [
+      "Կիր",
+      "Երկ",
+      "Երք",
+      "Չրք",
+      "Հնգ",
+      "Ուր",
+      "Շբթ"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

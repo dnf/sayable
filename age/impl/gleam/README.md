@@ -43,7 +43,7 @@ let assert Ok(age) = sayableage.format_age(locale, types.Normal, "2025-01-01", "
 // age = "6ヶ月"
 ```
 
-71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
+110 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## API
 

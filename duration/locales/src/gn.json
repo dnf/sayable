@@ -1,0 +1,63 @@
+{
+  "code": "gn",
+  "name": "Guarani",
+  "pluralRule": "one_other",
+  "units": {
+    "second": "{n} aravo'i",
+    "minute": "{n} aravo",
+    "hour": "{n} aravo guasu",
+    "day": "{n} ára",
+    "week": "{n} arapokõindy",
+    "month": "{n} jasy",
+    "year": "{n} ary"
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "ko'ágã",
+  "ago": "{0} ohasava'ekue",
+  "inFuture": "{0} rire",
+  "short": {
+    "units": {
+      "second": "{n} ara'i",
+      "minute": "{n} ara",
+      "hour": "{n} ara g",
+      "day": "{n} ára",
+      "week": "{n} ara",
+      "month": "{n} jas",
+      "year": "{n} ary"
+    },
+    "ago": "{0} ohasava'ekue",
+    "inFuture": "{0} rire",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} ohasava'ekue",
+    "inFuture": "{0} rire",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

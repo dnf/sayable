@@ -14,7 +14,7 @@ Thanks for your interest in contributing! Sayable maintains identical implementa
 age/impl/
   ada/  c/  clojure/  cobol/  cpp/  csharp/  dart/  elixir/  elm/  erlang/  fsharp/  fortran/  gleam/  go/  groovy/  haskell/
   java/  kotlin/  lua/  ocaml/  perl/  php/  python/  ruby/  rust/  scala/  swift/  typescript/  zig/
-age/locales/       # 71 JSON files — single source of truth for locale data
+age/locales/       # 110 JSON files — single source of truth for locale data
 age/codegen/
   targets/     # One emitter + plural rules per target language
   generate.py  # Orchestrator: loads JSON, runs emitters, writes files

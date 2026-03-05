@@ -52,7 +52,7 @@ my $pt = SayableAge::Formatter->new(SayableAge::Locales->get('ja'));
 $pt->format_age("2025-01-01", "2025-07-15");  # "6ヶ月"
 ```
 
-71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
+110 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## Compactness
 

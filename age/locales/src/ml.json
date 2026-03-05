@@ -1,0 +1,52 @@
+{
+  "code": "ml",
+  "name": "Malayalam",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "day": {
+      "one": "{n} ദിവസം",
+      "other": "{n} ദിവസങ്ങൾ"
+    },
+    "week": {
+      "one": "{n} ആഴ്ച",
+      "other": "{n} ആഴ്ചകൾ"
+    },
+    "month": {
+      "one": "{n} മാസം",
+      "other": "{n} മാസങ്ങൾ"
+    },
+    "year": {
+      "one": "{n} വയസ്സ്",
+      "other": "{n} വയസ്സ്"
+    }
+  },
+  "half": "{0} ര",
+  "delimiter": ", ",
+  "justBorn": "നവജാതശിശു",
+  "stages": {
+    "newborn": "നവജാതശിശു",
+    "infant": "ശിശു",
+    "toddler": "കുഞ്ഞ്",
+    "child": "കുട്ടി",
+    "teenager": "കൗമാരക്കാരൻ",
+    "adult": "മുതിർന്നയാൾ"
+  },
+  "short": {
+    "units": {
+      "day": "{n} ദിവസം",
+      "week": "{n} ആഴ്ച",
+      "month": "{n} മാസം",
+      "year": "{n} വർഷം"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n} ദി",
+      "week": "{n} ആ",
+      "month": "{n} മാ",
+      "year": "{n} വ"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

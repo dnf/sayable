@@ -1,0 +1,55 @@
+{
+  "code": "ky",
+  "name": "Kyrgyz",
+  "pluralRule": "one_other",
+  "units": {
+    "second": "{n} секунд",
+    "minute": "{n} мүнөт",
+    "hour": "{n} саат",
+    "day": "{n} күн",
+    "week": "{n} апта",
+    "month": "{n} ай",
+    "year": "{n} жыл"
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "азыр эле",
+  "ago": "{0} мурун",
+  "inFuture": "{0} кийин",
+  "short": {
+    "units": {
+      "second": "{n} сек",
+      "minute": "{n} мүн",
+      "hour": "{n} саат",
+      "day": "{n} күн",
+      "week": "{n} апта",
+      "month": "{n} ай",
+      "year": "{n} жыл"
+    },
+    "ago": "{0} мурун",
+    "inFuture": "{0} кийин",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n} сек",
+      "minute": "{n} мүн",
+      "hour": "{n}ч",
+      "day": "{n} к",
+      "week": "{n} апт",
+      "month": "{n} ай",
+      "year": "{n} ж"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} мурун",
+    "inFuture": "{0} кийин",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  }
+}

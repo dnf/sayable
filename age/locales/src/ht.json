@@ -1,0 +1,40 @@
+{
+  "code": "ht",
+  "name": "Haitian Creole",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "day": "{n} jou",
+    "week": "{n} semèn",
+    "month": "{n} mwa",
+    "year": "{n} an"
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justBorn": "Tibebe fèk fèt",
+  "stages": {
+    "newborn": "Tibebe fèk fèt",
+    "infant": "Tibebe",
+    "toddler": "Ti moun",
+    "child": "Timoun",
+    "teenager": "Adolesan",
+    "adult": "Granmoun"
+  },
+  "short": {
+    "units": {
+      "day": "{n} j",
+      "week": "{n} sem",
+      "month": "{n} mwa",
+      "year": "{n} an"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}j",
+      "week": "{n}sem",
+      "month": "{n}mwa",
+      "year": "{n}an"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

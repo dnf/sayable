@@ -1,0 +1,38 @@
+{
+  "code": "yue",
+  "name": "Cantonese",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "{n}日",
+    "week": "{n}個星期",
+    "month": "{n}個月",
+    "year": "{n}歲"
+  },
+  "half": "{0}半",
+  "delimiter": "",
+  "justBorn": "初生嬰兒",
+  "stages": {
+    "newborn": "初生嬰兒",
+    "infant": "嬰兒",
+    "toddler": "幼兒",
+    "child": "細路",
+    "teenager": "後生",
+    "adult": "成人"
+  },
+  "short": {
+    "units": {
+      "day": "{n} 日",
+      "week": "{n} 個星期",
+      "month": "{n} 個月",
+      "year": "{n} 年"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}日",
+      "week": "{n}週",
+      "month": "{n}月",
+      "year": "{n}年"
+    }
+  }
+}

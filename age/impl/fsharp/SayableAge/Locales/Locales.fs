@@ -8,7 +8,7 @@
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-/// All 71 locale definitions for sayable-age.
+/// All 110 locale definitions for sayable-age.
 module SayableAgeLib.Locales
 
 open SayableAgeLib.Types
@@ -138,6 +138,104 @@ open SayableAgeLib.Types
     let private pluralTzm (n: int) : PluralCategory =
         if n = 0 || n = 1 || (n >= 11 && n <= 99) then One
         else Other
+
+// Source: age/locales/src/af.json
+// ================================================================
+// AF — Afrikaans
+// ================================================================
+let AF: AgeLocale =
+    {
+        Code = "af"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} dag"); (Other, "{n} dae") ])
+                Week = Plural (Map.ofList [ (One, "{n} week"); (Other, "{n} weke") ])
+                Month = Plural (Map.ofList [ (One, "{n} maand"); (Other, "{n} maande") ])
+                Year = Plural (Map.ofList [ (One, "{n} jaar"); (Other, "{n} jaar") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Pasgebore"
+        Stages =
+            {
+                Newborn = Neutral "Pasgebore"
+                Infant = Neutral "Baba"
+                Toddler = Neutral "Kleuter"
+                Child = Neutral "Kind"
+                Teenager = Neutral "Tiener"
+                Adult = Neutral "Volwassene"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} w.")
+            Month = Some (Simple "{n} md.")
+            Year = Some (Simple "{n} j.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}j")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ak.json
+// ================================================================
+// AK — Akan
+// ================================================================
+let AK: AgeLocale =
+    {
+        Code = "ak"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "da {n}"); (Other, "nna {n}") ])
+                Week = Plural (Map.ofList [ (One, "dapɛn {n}"); (Other, "nnapɛn {n}") ])
+                Month = Plural (Map.ofList [ (One, "bosome {n}"); (Other, "abosome {n}") ])
+                Year = Plural (Map.ofList [ (One, "afe {n}"); (Other, "mfe {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Abofra foforo"
+        Stages =
+            {
+                Newborn = Neutral "Abofra foforo"
+                Infant = Neutral "Akwadaa"
+                Toddler = Neutral "Abofra"
+                Child = Neutral "Abofra"
+                Teenager = Neutral "Abarimaa"
+                Adult = Neutral "Ɔpanyin"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "nna {n}")
+            Week = Some (Plural (Map.ofList [ (One, "dapɛn {n}"); (Other, "nnapɛn {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "bosome {n}"); (Other, "abosome {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "afe {n}"); (Other, "mfe {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "nna {n}")
+            Week = Some (Plural (Map.ofList [ (One, "dapɛn {n}"); (Other, "nnapɛn {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "bos {n}"); (Other, "abos {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "afe {n}"); (Other, "mfe {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
 
 // Source: age/locales/src/am.json
 // ================================================================
@@ -278,6 +376,55 @@ let AZ: AgeLocale =
             Week = Some (Simple "{n} hft")
             Month = Some (Simple "{n} ay")
             Year = Some (Simple "{n} il")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/be.json
+// ================================================================
+// BE — Belarusian
+// ================================================================
+let BE: AgeLocale =
+    {
+        Code = "be"
+        Plural = pluralRuUk
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} дзень"); (Few, "{n} дні"); (Many, "{n} дзён"); (Other, "{n} дзён") ])
+                Week = Plural (Map.ofList [ (One, "{n} тыдзень"); (Few, "{n} тыдні"); (Many, "{n} тыдняў"); (Other, "{n} тыдняў") ])
+                Month = Plural (Map.ofList [ (One, "{n} месяц"); (Few, "{n} месяцы"); (Many, "{n} месяцаў"); (Other, "{n} месяцаў") ])
+                Year = Plural (Map.ofList [ (One, "{n} год"); (Few, "{n} гады"); (Many, "{n} гадоў"); (Other, "{n} гадоў") ])
+            }
+        Half = "{n} з паловай"
+        Delimiter = ", "
+        JustBorn = "Нованароджаны"
+        Stages =
+            {
+                Newborn = Gendered("Нованароджаны", "Нованароджаная")
+                Infant = Neutral "Немаўля"
+                Toddler = Neutral "Малыш"
+                Child = Neutral "Дзіця"
+                Teenager = Neutral "Падлетак"
+                Adult = Gendered("Дарослы", "Дарослая")
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} дн.")
+            Week = Some (Simple "{n} тыд.")
+            Month = Some (Simple "{n} мес.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} г."); (Few, "{n} г."); (Many, "{n} г."); (Other, "{n} г.") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} д.")
+            Week = Some (Simple "{n} т.")
+            Month = Some (Simple "{n} м.")
+            Year = Some (Plural (Map.ofList [ (One, "{n} г."); (Few, "{n} г."); (Many, "{n} г."); (Other, "{n} г.") ]))
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -523,6 +670,55 @@ let CA: AgeLocale =
             Week = Some (Simple "{n} setm.")
             Month = Some (Simple "{n} m")
             Year = Some (Plural (Map.ofList [ (One, "{n} any"); (Other, "{n} anys") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ceb.json
+// ================================================================
+// CEB — Cebuano
+// ================================================================
+let CEB: AgeLocale =
+    {
+        Code = "ceb"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "{n} ka adlaw"
+                Week = Simple "{n} ka semana"
+                Month = Simple "{n} ka bulan"
+                Year = Simple "{n} ka tuig"
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Bag-ong natawo"
+        Stages =
+            {
+                Newborn = Neutral "Bag-ong natawo"
+                Infant = Neutral "Masuso"
+                Toddler = Neutral "Gamay nga bata"
+                Child = Neutral "Bata"
+                Teenager = Neutral "Tin-edyer"
+                Adult = Neutral "Hamtong"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ka adlaw")
+            Week = Some (Simple "{n} ka semana")
+            Month = Some (Simple "{n} ka bulan")
+            Year = Some (Simple "{n} ka tuig")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -1021,6 +1217,55 @@ let FA: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/ff.json
+// ================================================================
+// FF — Fulah
+// ================================================================
+let FF: AgeLocale =
+    {
+        Code = "ff"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "ñalawma {n}"); (Other, "ñalɗe {n}") ])
+                Week = Plural (Map.ofList [ (One, "yontere {n}"); (Other, "yontereeji {n}") ])
+                Month = Plural (Map.ofList [ (One, "lewru {n}"); (Other, "lebbi {n}") ])
+                Year = Plural (Map.ofList [ (One, "hitaande {n}"); (Other, "duuɓi {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Ɓinngel kesol"
+        Stages =
+            {
+                Newborn = Neutral "Ɓinngel kesol"
+                Infant = Neutral "Ɓinngel"
+                Toddler = Neutral "Cukalel"
+                Child = Neutral "Suka"
+                Teenager = Neutral "Suka debbo"
+                Adult = Neutral "Mawɗo"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "ñalɗe {n}")
+            Week = Some (Plural (Map.ofList [ (One, "yontere {n}"); (Other, "yontereeji {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "lewru {n}"); (Other, "lebbi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "hitaande {n}"); (Other, "duuɓi {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "ñalɗe {n}")
+            Week = Some (Plural (Map.ofList [ (One, "yont {n}"); (Other, "yontji {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "lew {n}"); (Other, "leb {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "hit {n}"); (Other, "duuɓi {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/fi.json
 // ================================================================
 // FI — Finnish
@@ -1266,6 +1511,104 @@ let GD: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/gl.json
+// ================================================================
+// GL — Galician
+// ================================================================
+let GL: AgeLocale =
+    {
+        Code = "gl"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} día"); (Other, "{n} días") ])
+                Week = Plural (Map.ofList [ (One, "{n} semana"); (Other, "{n} semanas") ])
+                Month = Plural (Map.ofList [ (One, "{n} mes"); (Other, "{n} meses") ])
+                Year = Plural (Map.ofList [ (One, "{n} ano"); (Other, "{n} anos") ])
+            }
+        Half = "{0} e medio"
+        Delimiter = ", "
+        JustBorn = "Recén nacido"
+        Stages =
+            {
+                Newborn = Gendered("Recén nacido", "Recén nacida")
+                Infant = Neutral "Bebé"
+                Toddler = Neutral "Neno"
+                Child = Gendered("Neno", "Nena")
+                Teenager = Neutral "Adolescente"
+                Adult = Gendered("Adulto", "Adulta")
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} sem.")
+            Month = Some (Simple "{n} mes.")
+            Year = Some (Simple "{n} a.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} d")
+            Week = Some (Simple "{n} s")
+            Month = Some (Simple "{n} m")
+            Year = Some (Simple "{n} a")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/gn.json
+// ================================================================
+// GN — Guarani
+// ================================================================
+let GN: AgeLocale =
+    {
+        Code = "gn"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "{n} ára"
+                Week = Simple "{n} arapokõindy"
+                Month = Simple "{n} jasy"
+                Year = Simple "{n} ary"
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Mitã pyahu"
+        Stages =
+            {
+                Newborn = Neutral "Mitã pyahu"
+                Infant = Neutral "Mitã'i"
+                Toddler = Neutral "Mitã"
+                Child = Neutral "Mitã"
+                Teenager = Neutral "Mitãrusu"
+                Adult = Neutral "Karai"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ára")
+            Week = Some (Simple "{n} ara")
+            Month = Some (Simple "{n} jas")
+            Year = Some (Simple "{n} ary")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/gu.json
 // ================================================================
 // GU — Gujarati
@@ -1357,6 +1700,55 @@ let GV: AgeLocale =
             Month = Some (Simple "{n}m")
             Year = Some (Simple "{n}y")
             Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ha.json
+// ================================================================
+// HA — Hausa
+// ================================================================
+let HA: AgeLocale =
+    {
+        Code = "ha"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} kwana"); (Other, "{n} kwanaki") ])
+                Week = Plural (Map.ofList [ (One, "{n} mako"); (Other, "{n} makonni") ])
+                Month = Plural (Map.ofList [ (One, "{n} wata"); (Other, "{n} watanni") ])
+                Year = Plural (Map.ofList [ (One, "{n} shekara"); (Other, "{n} shekaru") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Sabon haihuwa"
+        Stages =
+            {
+                Newborn = Neutral "Jariri"
+                Infant = Neutral "Jariri"
+                Toddler = Neutral "Ƙaramin yaro"
+                Child = Neutral "Yaro"
+                Teenager = Neutral "Saurayi"
+                Adult = Neutral "Babba"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} kw.")
+            Week = Some (Simple "{n} mk.")
+            Month = Some (Simple "{n} wt.")
+            Year = Some (Simple "{n} shk.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = None
             Delimiter = Some ""
             JustBorn = None
             }
@@ -1511,6 +1903,55 @@ let HR: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/ht.json
+// ================================================================
+// HT — Haitian Creole
+// ================================================================
+let HT: AgeLocale =
+    {
+        Code = "ht"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "{n} jou"
+                Week = Simple "{n} semèn"
+                Month = Simple "{n} mwa"
+                Year = Simple "{n} an"
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Tibebe fèk fèt"
+        Stages =
+            {
+                Newborn = Neutral "Tibebe fèk fèt"
+                Infant = Neutral "Tibebe"
+                Toddler = Neutral "Ti moun"
+                Child = Neutral "Timoun"
+                Teenager = Neutral "Adolesan"
+                Adult = Neutral "Granmoun"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} j")
+            Week = Some (Simple "{n} sem")
+            Month = Some (Simple "{n} mwa")
+            Year = Some (Simple "{n} an")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}j")
+            Week = Some (Simple "{n}sem")
+            Month = Some (Simple "{n}mwa")
+            Year = Some (Simple "{n}an")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/hu.json
 // ================================================================
 // HU — Hungarian
@@ -1560,6 +2001,55 @@ let HU: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/hy.json
+// ================================================================
+// HY — Armenian
+// ================================================================
+let HY: AgeLocale =
+    {
+        Code = "hy"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} օր"); (Other, "{n} օր") ])
+                Week = Plural (Map.ofList [ (One, "{n} շաբաթ"); (Other, "{n} շաբաթ") ])
+                Month = Plural (Map.ofList [ (One, "{n} ամիս"); (Other, "{n} ամիս") ])
+                Year = Plural (Map.ofList [ (One, "{n} տարի"); (Other, "{n} տարի") ])
+            }
+        Half = "{0} ու կես"
+        Delimiter = ", "
+        JustBorn = "Նորածին"
+        Stages =
+            {
+                Newborn = Neutral "Նորածին"
+                Infant = Neutral "Մանկիկ"
+                Toddler = Neutral "Փոքրիկ"
+                Child = Neutral "Երեխա"
+                Teenager = Neutral "Պատանի"
+                Adult = Neutral "Մեծահասակ"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} օր")
+            Week = Some (Simple "{n} շաբ")
+            Month = Some (Simple "{n} ամս")
+            Year = Some (Simple "{n} տ")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} օ")
+            Week = Some (Simple "{n} շ")
+            Month = Some (Simple "{n} ա")
+            Year = Some (Simple "{n} տ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/id.json
 // ================================================================
 // ID — Indonesian
@@ -1601,6 +2091,104 @@ let ID: AgeLocale =
             Week = Some (Simple "{n} mgg")
             Month = Some (Simple "{n} bln")
             Year = Some (Simple "{n} thn")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ig.json
+// ================================================================
+// IG — Igbo
+// ================================================================
+let IG: AgeLocale =
+    {
+        Code = "ig"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Day = Simple "{n} ụbọchị"
+                Week = Simple "{n} izu"
+                Month = Simple "{n} ọnwa"
+                Year = Simple "{n} afọ"
+            }
+        Half = "{0} na ọkara"
+        Delimiter = ", "
+        JustBorn = "Nwa ọhụrụ"
+        Stages =
+            {
+                Newborn = Neutral "Nwa ọhụrụ"
+                Infant = Neutral "Nwa ọhụrụ"
+                Toddler = Neutral "Nwa nta"
+                Child = Neutral "Nwa"
+                Teenager = Neutral "Nwokorobịa"
+                Adult = Neutral "Okenye"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ụbọchị")
+            Week = Some (Simple "{n} izu")
+            Month = Some (Simple "{n} ọnwa")
+            Year = Some (Simple "{n} afọ")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/is.json
+// ================================================================
+// IS — Icelandic
+// ================================================================
+let IS: AgeLocale =
+    {
+        Code = "is"
+        Plural = (fun n -> if n % 10 = 1 && n % 100 <> 11 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} dagur"); (Other, "{n} dagar") ])
+                Week = Plural (Map.ofList [ (One, "{n} vika"); (Other, "{n} vikur") ])
+                Month = Plural (Map.ofList [ (One, "{n} mánuður"); (Other, "{n} mánuðir") ])
+                Year = Plural (Map.ofList [ (One, "{n} ár"); (Other, "{n} ár") ])
+            }
+        Half = "{0} og hálft"
+        Delimiter = ", "
+        JustBorn = "Nýfætt"
+        Stages =
+            {
+                Newborn = Neutral "Nýfæðingur"
+                Infant = Neutral "Ungbarn"
+                Toddler = Neutral "Smábarn"
+                Child = Neutral "Barn"
+                Teenager = Neutral "Unglingur"
+                Adult = Neutral "Fullorðinn"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} d.")
+            Week = Some (Simple "{n} v.")
+            Month = Some (Simple "{n} mán.")
+            Year = Some (Simple "{n} ár")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}v")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}á")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -1903,6 +2491,55 @@ let KM: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/kn.json
+// ================================================================
+// KN — Kannada
+// ================================================================
+let KN: AgeLocale =
+    {
+        Code = "kn"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} ದಿನ"); (Other, "{n} ದಿನಗಳು") ])
+                Week = Plural (Map.ofList [ (One, "{n} ವಾರ"); (Other, "{n} ವಾರಗಳು") ])
+                Month = Plural (Map.ofList [ (One, "{n} ತಿಂಗಳು"); (Other, "{n} ತಿಂಗಳುಗಳು") ])
+                Year = Plural (Map.ofList [ (One, "{n} ವರ್ಷ"); (Other, "{n} ವರ್ಷಗಳು") ])
+            }
+        Half = "{0}ವರೆ"
+        Delimiter = ", "
+        JustBorn = "ನವಜಾತ ಶಿಶು"
+        Stages =
+            {
+                Newborn = Neutral "ನವಜಾತ ಶಿಶು"
+                Infant = Neutral "ಶಿಶು"
+                Toddler = Neutral "ಪುಟ್ಟ ಮಗು"
+                Child = Neutral "ಮಗು"
+                Teenager = Neutral "ಹದಿಹರೆಯದವರು"
+                Adult = Neutral "ವಯಸ್ಕ"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ದಿನ")
+            Week = Some (Simple "{n} ವಾರ")
+            Month = Some (Simple "{n} ತಿಂಗಳು")
+            Year = Some (Simple "{n} ವರ್ಷ")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ದಿ")
+            Week = Some (Simple "{n} ವಾ")
+            Month = Some (Simple "{n} ತಿಂ")
+            Year = Some (Simple "{n} ವ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/ko.json
 // ================================================================
 // KO — Korean
@@ -1944,6 +2581,55 @@ let KO: AgeLocale =
             Week = Some (Simple "{n}주")
             Month = Some (Simple "{n}개월")
             Year = Some (Simple "{n}년")
+            Half = None
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ku.json
+// ================================================================
+// KU — Kurdish
+// ================================================================
+let KU: AgeLocale =
+    {
+        Code = "ku"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} roj"); (Other, "{n} roj") ])
+                Week = Plural (Map.ofList [ (One, "{n} hefte"); (Other, "{n} hefte") ])
+                Month = Plural (Map.ofList [ (One, "{n} meh"); (Other, "{n} meh") ])
+                Year = Plural (Map.ofList [ (One, "{n} sal"); (Other, "{n} sal") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Nûbûyî"
+        Stages =
+            {
+                Newborn = Neutral "Nûbûyî"
+                Infant = Neutral "Şîrexwar"
+                Toddler = Neutral "Zarok"
+                Child = Neutral "Zarok"
+                Teenager = Neutral "Ciwan"
+                Adult = Neutral "Mezin"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} roj")
+            Week = Some (Simple "{n} hft.")
+            Month = Some (Simple "{n} meh")
+            Year = Some (Simple "{n} sal")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}r")
+            Week = Some (Simple "{n}h")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}s")
             Half = None
             Delimiter = Some ""
             JustBorn = None
@@ -1995,6 +2681,202 @@ let KW: AgeLocale =
             Year = Some (Simple "{n}y")
             Half = Some "{n}½"
             Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ky.json
+// ================================================================
+// KY — Kyrgyz
+// ================================================================
+let KY: AgeLocale =
+    {
+        Code = "ky"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "{n} күн"
+                Week = Simple "{n} апта"
+                Month = Simple "{n} ай"
+                Year = Simple "{n} жаш"
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Жаңы төрөлгөн"
+        Stages =
+            {
+                Newborn = Neutral "Жаңы төрөлгөн"
+                Infant = Neutral "Наристе"
+                Toddler = Neutral "Бөбөк"
+                Child = Neutral "Бала"
+                Teenager = Neutral "Жаш өспүрүм"
+                Adult = Neutral "Чоң адам"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} күн")
+            Week = Some (Simple "{n} апта")
+            Month = Some (Simple "{n} ай")
+            Year = Some (Simple "{n} жаш")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/lg.json
+// ================================================================
+// LG — Luganda
+// ================================================================
+let LG: AgeLocale =
+    {
+        Code = "lg"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "olunaku {n}"); (Other, "ennaku {n}") ])
+                Week = Plural (Map.ofList [ (One, "sabbiiti {n}"); (Other, "sabiiti {n}") ])
+                Month = Plural (Map.ofList [ (One, "omwezi {n}"); (Other, "emyezi {n}") ])
+                Year = Plural (Map.ofList [ (One, "omwaka {n}"); (Other, "emyaka {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Omwana omuto"
+        Stages =
+            {
+                Newborn = Neutral "Omwana omuto"
+                Infant = Neutral "Omwana"
+                Toddler = Neutral "Omwana omuto"
+                Child = Neutral "Omwana"
+                Teenager = Neutral "Omuvubuka"
+                Adult = Neutral "Omukulu"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "ennaku {n}")
+            Week = Some (Plural (Map.ofList [ (One, "sabbiiti {n}"); (Other, "sabiiti {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "omwezi {n}"); (Other, "emyezi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "omwaka {n}"); (Other, "emyaka {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "ennaku {n}")
+            Week = Some (Plural (Map.ofList [ (One, "sab {n}"); (Other, "sab {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "mwezi {n}"); (Other, "myezi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mwaka {n}"); (Other, "myaka {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ln.json
+// ================================================================
+// LN — Lingala
+// ================================================================
+let LN: AgeLocale =
+    {
+        Code = "ln"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "mokolo {n}"); (Other, "mikolo {n}") ])
+                Week = Plural (Map.ofList [ (One, "poso {n}"); (Other, "baposo {n}") ])
+                Month = Plural (Map.ofList [ (One, "sanza {n}"); (Other, "basanza {n}") ])
+                Year = Plural (Map.ofList [ (One, "mobu {n}"); (Other, "mibu {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Mwana ya sika"
+        Stages =
+            {
+                Newborn = Neutral "Mwana ya sika"
+                Infant = Neutral "Mwana mokɛ́"
+                Toddler = Neutral "Mwana mokɛ́"
+                Child = Neutral "Mwana"
+                Teenager = Neutral "Elɛ́ngɛ"
+                Adult = Neutral "Mokóló"
+            }
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "mokolo {n}"); (Other, "mik {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "poso {n}"); (Other, "bap {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "sanza {n}"); (Other, "basanza {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mobu {n}"); (Other, "mibu {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "mok {n}"); (Other, "mik {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "pos {n}"); (Other, "bap {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "sza {n}"); (Other, "bsza {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mb {n}"); (Other, "mib {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/lo.json
+// ================================================================
+// LO — Lao
+// ================================================================
+let LO: AgeLocale =
+    {
+        Code = "lo"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Day = Simple "{n} ມື້"
+                Week = Simple "{n} ອາທິດ"
+                Month = Simple "{n} ເດືອນ"
+                Year = Simple "{n} ປີ"
+            }
+        Half = "{0}ເຄິ່ງ"
+        Delimiter = ""
+        JustBorn = "ເກີດໃໝ່"
+        Stages =
+            {
+                Newborn = Neutral "ເດັກເກີດໃໝ່"
+                Infant = Neutral "ເດັກນ້ອຍ"
+                Toddler = Neutral "ເດັກນ້ອຍ"
+                Child = Neutral "ເດັກ"
+                Teenager = Neutral "ໄວລຸ້ນ"
+                Adult = Neutral "ຜູ້ໃຫຍ່"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ມ.")
+            Week = Some (Simple "{n} ອທ.")
+            Month = Some (Simple "{n} ດ.")
+            Year = Some (Simple "{n} ປ.")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = None
             JustBorn = None
             }
         FormatNumber = None
@@ -2099,6 +2981,104 @@ let LV: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/mg.json
+// ================================================================
+// MG — Malagasy
+// ================================================================
+let MG: AgeLocale =
+    {
+        Code = "mg"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "{n} andro"
+                Week = Simple "{n} herinandro"
+                Month = Simple "{n} volana"
+                Year = Simple "{n} taona"
+            }
+        Half = "{0} sy sasany"
+        Delimiter = ", "
+        JustBorn = "Vao teraka"
+        Stages =
+            {
+                Newborn = Neutral "Vao teraka"
+                Infant = Neutral "Zazakely"
+                Toddler = Neutral "Zazakely"
+                Child = Neutral "Ankizy"
+                Teenager = Neutral "Tanora"
+                Adult = Neutral "Olon-dehibe"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} and")
+            Week = Some (Simple "{n} her")
+            Month = Some (Simple "{n} vol")
+            Year = Some (Simple "{n} tna")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} a")
+            Week = Some (Simple "{n} h")
+            Month = Some (Simple "{n} v")
+            Year = Some (Simple "{n} t")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/mi.json
+// ================================================================
+// MI — Māori
+// ================================================================
+let MI: AgeLocale =
+    {
+        Code = "mi"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "rā {n}"
+                Week = Simple "wiki {n}"
+                Month = Simple "marama {n}"
+                Year = Simple "tau {n}"
+            }
+        Half = "{0}½"
+        Delimiter = ", "
+        JustBorn = "Pēpi hou"
+        Stages =
+            {
+                Newborn = Neutral "Pēpi hou"
+                Infant = Neutral "Pēpi"
+                Toddler = Neutral "Kōhungahunga"
+                Child = Neutral "Tamariki"
+                Teenager = Neutral "Rangatahi"
+                Adult = Neutral "Pakeke"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "rā {n}")
+            Week = Some (Simple "w {n}")
+            Month = Some (Simple "m {n}")
+            Year = Some (Simple "t {n}")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}r")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}t")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/mk.json
 // ================================================================
 // MK — Macedonian
@@ -2140,6 +3120,104 @@ let MK: AgeLocale =
             Week = Some (Simple "{n} с.")
             Month = Some (Simple "{n} м.")
             Year = Some (Simple "{n} г.")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ml.json
+// ================================================================
+// ML — Malayalam
+// ================================================================
+let ML: AgeLocale =
+    {
+        Code = "ml"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} ദിവസം"); (Other, "{n} ദിവസങ്ങൾ") ])
+                Week = Plural (Map.ofList [ (One, "{n} ആഴ്ച"); (Other, "{n} ആഴ്ചകൾ") ])
+                Month = Plural (Map.ofList [ (One, "{n} മാസം"); (Other, "{n} മാസങ്ങൾ") ])
+                Year = Plural (Map.ofList [ (One, "{n} വയസ്സ്"); (Other, "{n} വയസ്സ്") ])
+            }
+        Half = "{0} ര"
+        Delimiter = ", "
+        JustBorn = "നവജാതശിശു"
+        Stages =
+            {
+                Newborn = Neutral "നവജാതശിശു"
+                Infant = Neutral "ശിശു"
+                Toddler = Neutral "കുഞ്ഞ്"
+                Child = Neutral "കുട്ടി"
+                Teenager = Neutral "കൗമാരക്കാരൻ"
+                Adult = Neutral "മുതിർന്നയാൾ"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ദിവസം")
+            Week = Some (Simple "{n} ആഴ്ച")
+            Month = Some (Simple "{n} മാസം")
+            Year = Some (Simple "{n} വർഷം")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ദി")
+            Week = Some (Simple "{n} ആ")
+            Month = Some (Simple "{n} മാ")
+            Year = Some (Simple "{n} വ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/mn.json
+// ================================================================
+// MN — Mongolian
+// ================================================================
+let MN: AgeLocale =
+    {
+        Code = "mn"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "{n} өдөр"
+                Week = Simple "{n} долоо хоног"
+                Month = Simple "{n} сар"
+                Year = Simple "{n} нас"
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Нярай"
+        Stages =
+            {
+                Newborn = Neutral "Нярай"
+                Infant = Neutral "Нярай"
+                Toddler = Neutral "Бага нялх"
+                Child = Neutral "Хүүхэд"
+                Teenager = Neutral "Өсвөр насны"
+                Adult = Neutral "Насанд хүрсэн"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} өдөр")
+            Week = Some (Simple "{n} д/х")
+            Month = Some (Simple "{n} сар")
+            Year = Some (Simple "{n} нас")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ө")
+            Week = Some (Simple "{n} д")
+            Month = Some (Simple "{n} с")
+            Year = Some (Simple "{n} н")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -2491,6 +3569,153 @@ let NL: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/ny.json
+// ================================================================
+// NY — Chichewa
+// ================================================================
+let NY: AgeLocale =
+    {
+        Code = "ny"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "tsiku {n}"); (Other, "masiku {n}") ])
+                Week = Plural (Map.ofList [ (One, "sabata {n}"); (Other, "masabata {n}") ])
+                Month = Plural (Map.ofList [ (One, "mwezi {n}"); (Other, "miyezi {n}") ])
+                Year = Plural (Map.ofList [ (One, "chaka {n}"); (Other, "zaka {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Wobadwa kumene"
+        Stages =
+            {
+                Newborn = Neutral "Wobadwa kumene"
+                Infant = Neutral "Khanda"
+                Toddler = Neutral "Mwana wamng'ono"
+                Child = Neutral "Mwana"
+                Teenager = Neutral "Mnyamata"
+                Adult = Neutral "Munthu wamkulu"
+            }
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "tsiku {n}"); (Other, "mas {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "sabata {n}"); (Other, "masab {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "mwezi {n}"); (Other, "miyezi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "chaka {n}"); (Other, "zaka {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "ts {n}"); (Other, "mas {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "sab {n}"); (Other, "msb {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "mw {n}"); (Other, "miy {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "ch {n}"); (Other, "z {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/om.json
+// ================================================================
+// OM — Oromo
+// ================================================================
+let OM: AgeLocale =
+    {
+        Code = "om"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "guyyaa {n}"); (Other, "guyyoota {n}") ])
+                Week = Plural (Map.ofList [ (One, "torban {n}"); (Other, "torbanota {n}") ])
+                Month = Plural (Map.ofList [ (One, "ji'a {n}"); (Other, "ji'oota {n}") ])
+                Year = Plural (Map.ofList [ (One, "waggaa {n}"); (Other, "waggoota {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Dhalate haaraa"
+        Stages =
+            {
+                Newborn = Neutral "Daa'ima"
+                Infant = Neutral "Daa'ima"
+                Toddler = Neutral "Ijoollee xiqqaa"
+                Child = Neutral "Ijoollee"
+                Teenager = Neutral "Dargaggeessa"
+                Adult = Neutral "Ga'eessa"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "gy {n}")
+            Week = Some (Simple "trb {n}")
+            Month = Some (Simple "ji {n}")
+            Year = Some (Simple "wg {n}")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}g")
+            Week = Some (Simple "{n}t")
+            Month = Some (Simple "{n}j")
+            Year = Some (Simple "{n}w")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/or.json
+// ================================================================
+// OR — Odia
+// ================================================================
+let OR: AgeLocale =
+    {
+        Code = "or"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} ଦିନ"); (Other, "{n} ଦିନ") ])
+                Week = Plural (Map.ofList [ (One, "{n} ସପ୍ତାହ"); (Other, "{n} ସପ୍ତାହ") ])
+                Month = Plural (Map.ofList [ (One, "{n} ମାସ"); (Other, "{n} ମାସ") ])
+                Year = Plural (Map.ofList [ (One, "{n} ବର୍ଷ"); (Other, "{n} ବର୍ଷ") ])
+            }
+        Half = "{0}ଅଧା"
+        Delimiter = ", "
+        JustBorn = "ନବଜାତ"
+        Stages =
+            {
+                Newborn = Neutral "ନବଜାତ"
+                Infant = Neutral "ଶିଶୁ"
+                Toddler = Neutral "ଛୋଟ ପିଲା"
+                Child = Neutral "ପିଲା"
+                Teenager = Neutral "କିଶୋର"
+                Adult = Neutral "ବୟସ୍କ"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ଦିନ")
+            Week = Some (Simple "{n} ସପ୍ତାହ")
+            Month = Some (Simple "{n} ମାସ")
+            Year = Some (Simple "{n} ବର୍ଷ")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ଦି")
+            Week = Some (Simple "{n} ସ")
+            Month = Some (Simple "{n} ମା")
+            Year = Some (Simple "{n} ବ")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/pa.json
 // ================================================================
 // PA — Punjabi
@@ -2589,6 +3814,55 @@ let PL: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/ps.json
+// ================================================================
+// PS — Pashto
+// ================================================================
+let PS: AgeLocale =
+    {
+        Code = "ps"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} ورځ"); (Other, "{n} ورځې") ])
+                Week = Simple "{n} اونۍ"
+                Month = Plural (Map.ofList [ (One, "{n} مياشت"); (Other, "{n} مياشتې") ])
+                Year = Plural (Map.ofList [ (One, "{n} کال"); (Other, "{n} کالونه") ])
+            }
+        Half = "{n}½"
+        Delimiter = "، "
+        JustBorn = "نوي زېږېدلی"
+        Stages =
+            {
+                Newborn = Neutral "نوزېږی"
+                Infant = Neutral "ماشوم"
+                Toddler = Neutral "وړکوټی"
+                Child = Neutral "ماشوم"
+                Teenager = Neutral "ځوان"
+                Adult = Neutral "لوی"
+            }
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "{n} ورځ"); (Other, "{n} ورځې") ]))
+            Week = Some (Simple "{n} اونۍ")
+            Month = Some (Plural (Map.ofList [ (One, "{n} مياشت"); (Other, "{n} مياشتې") ]))
+            Year = Some (Plural (Map.ofList [ (One, "{n} کال"); (Other, "{n} کالونه") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} و")
+            Week = Some (Simple "{n} او")
+            Month = Some (Simple "{n} م")
+            Year = Some (Simple "{n} ک")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/pt.json
 // ================================================================
 // PT — Portuguese
@@ -2630,6 +3904,55 @@ let PT: AgeLocale =
             Week = Some (Simple "{n} sem.")
             Month = Some (Plural (Map.ofList [ (One, "{n} mês"); (Other, "{n} meses") ]))
             Year = Some (Plural (Map.ofList [ (One, "{n} ano"); (Other, "{n} anos") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/qu.json
+// ================================================================
+// QU — Quechua
+// ================================================================
+let QU: AgeLocale =
+    {
+        Code = "qu"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Day = Simple "{n} p'unchaw"
+                Week = Simple "{n} simana"
+                Month = Simple "{n} killa"
+                Year = Simple "{n} wata"
+            }
+        Half = "{0} khuskannin"
+        Delimiter = ", "
+        JustBorn = "Musuq wawa"
+        Stages =
+            {
+                Newborn = Neutral "Musuq wawa"
+                Infant = Neutral "Wawa"
+                Toddler = Neutral "Irqi"
+                Child = Neutral "Warma"
+                Teenager = Neutral "Wayna"
+                Adult = Neutral "Runa"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} p'un")
+            Week = Some (Simple "{n} sim")
+            Month = Some (Simple "{n} kil")
+            Year = Some (Simple "{n} wat")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -2728,6 +4051,104 @@ let RU: AgeLocale =
             Week = Some (Simple "{n} н.")
             Month = Some (Simple "{n} м.")
             Year = Some (Plural (Map.ofList [ (One, "{n} г."); (Few, "{n} г."); (Many, "{n} л."); (Other, "{n} г.") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/rw.json
+// ================================================================
+// RW — Kinyarwanda
+// ================================================================
+let RW: AgeLocale =
+    {
+        Code = "rw"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "umunsi {n}"); (Other, "iminsi {n}") ])
+                Week = Plural (Map.ofList [ (One, "icyumweru {n}"); (Other, "ibyumweru {n}") ])
+                Month = Plural (Map.ofList [ (One, "ukwezi {n}"); (Other, "amezi {n}") ])
+                Year = Plural (Map.ofList [ (One, "umwaka {n}"); (Other, "imyaka {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Avutse"
+        Stages =
+            {
+                Newborn = Neutral "Uruhinja"
+                Infant = Neutral "Uruhinja"
+                Toddler = Neutral "Umwana muto"
+                Child = Neutral "Umwana"
+                Teenager = Neutral "Umusore"
+                Adult = Neutral "Umuntu mukuru"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "mns {n}")
+            Week = Some (Simple "cyu {n}")
+            Month = Some (Simple "kwe {n}")
+            Year = Some (Simple "mwk {n}")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}m")
+            Week = Some (Simple "{n}c")
+            Month = Some (Simple "{n}k")
+            Year = Some (Simple "{n}u")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/sd.json
+// ================================================================
+// SD — Sindhi
+// ================================================================
+let SD: AgeLocale =
+    {
+        Code = "sd"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "{n} ڏينهن"
+                Week = Plural (Map.ofList [ (One, "{n} هفتو"); (Other, "{n} هفتا") ])
+                Month = Plural (Map.ofList [ (One, "{n} مهينو"); (Other, "{n} مهينا") ])
+                Year = Simple "{n} سال"
+            }
+        Half = "{n}½"
+        Delimiter = "، "
+        JustBorn = "نئون ڄائو"
+        Stages =
+            {
+                Newborn = Neutral "نئون ڄائو"
+                Infant = Neutral "ننڍو ٻار"
+                Toddler = Neutral "ننڍو ٻار"
+                Child = Neutral "ٻار"
+                Teenager = Neutral "نوجوان"
+                Adult = Neutral "وڏو"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} ڏينهن")
+            Week = Some (Plural (Map.ofList [ (One, "{n} هفتو"); (Other, "{n} هفتا") ]))
+            Month = Some (Plural (Map.ofList [ (One, "{n} مهينو"); (Other, "{n} مهينا") ]))
+            Year = Some (Simple "{n} سال")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ڏ")
+            Week = Some (Simple "{n} ه")
+            Month = Some (Simple "{n} م")
+            Year = Some (Simple "{n} س")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -2932,6 +4353,104 @@ let SL: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/sn.json
+// ================================================================
+// SN — Shona
+// ================================================================
+let SN: AgeLocale =
+    {
+        Code = "sn"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "zuva {n}"); (Other, "mazuva {n}") ])
+                Week = Plural (Map.ofList [ (One, "vhiki {n}"); (Other, "mavhiki {n}") ])
+                Month = Plural (Map.ofList [ (One, "mwedzi {n}"); (Other, "mwedzi {n}") ])
+                Year = Plural (Map.ofList [ (One, "gore {n}"); (Other, "makore {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Mwana mutsva"
+        Stages =
+            {
+                Newborn = Neutral "Mwana mutsva"
+                Infant = Neutral "Mucheche"
+                Toddler = Neutral "Mwana mudiki"
+                Child = Neutral "Mwana"
+                Teenager = Neutral "Mudiki"
+                Adult = Neutral "Munhu mukuru"
+            }
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "zuva {n}"); (Other, "maz {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "vhiki {n}"); (Other, "mavh {n}") ]))
+            Month = Some (Simple "mwedzi {n}")
+            Year = Some (Plural (Map.ofList [ (One, "gore {n}"); (Other, "mak {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "z {n}"); (Other, "maz {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "vh {n}"); (Other, "mvh {n}") ]))
+            Month = Some (Simple "mw {n}")
+            Year = Some (Plural (Map.ofList [ (One, "g {n}"); (Other, "mak {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/so.json
+// ================================================================
+// SO — Somali
+// ================================================================
+let SO: AgeLocale =
+    {
+        Code = "so"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "maalin {n}"); (Other, "maalmood {n}") ])
+                Week = Plural (Map.ofList [ (One, "toddobaad {n}"); (Other, "toddobaadyo {n}") ])
+                Month = Plural (Map.ofList [ (One, "bil {n}"); (Other, "bilood {n}") ])
+                Year = Plural (Map.ofList [ (One, "sano {n}"); (Other, "sanooyin {n}") ])
+            }
+        Half = "{n}½"
+        Delimiter = ", "
+        JustBorn = "Dhashay cusub"
+        Stages =
+            {
+                Newborn = Neutral "Dhashay cusub"
+                Infant = Neutral "Naaso-nuug"
+                Toddler = Neutral "Cunug yar"
+                Child = Neutral "Cunug"
+                Teenager = Neutral "Dhallinyaro"
+                Adult = Neutral "Qaangaar"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "mln {n}")
+            Week = Some (Simple "tdb {n}")
+            Month = Some (Simple "bil {n}")
+            Year = Some (Simple "sno {n}")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}m")
+            Week = Some (Simple "{n}t")
+            Month = Some (Simple "{n}b")
+            Year = Some (Simple "{n}s")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/sq.json
 // ================================================================
 // SQ — Albanian
@@ -3022,6 +4541,55 @@ let SR: AgeLocale =
             Week = Some (Simple "{n} н")
             Month = Some (Simple "{n} м")
             Year = Some (Simple "{n} г")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/su.json
+// ================================================================
+// SU — Sundanese
+// ================================================================
+let SU: AgeLocale =
+    {
+        Code = "su"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Day = Simple "{n} dinten"
+                Week = Simple "{n} minggu"
+                Month = Simple "{n} sasih"
+                Year = Simple "{n} taun"
+            }
+        Half = "{0} satengah"
+        Delimiter = ", "
+        JustBorn = "Orok anyar"
+        Stages =
+            {
+                Newborn = Neutral "Orok anyar"
+                Infant = Neutral "Orok"
+                Toddler = Neutral "Budak leutik"
+                Child = Neutral "Budak"
+                Teenager = Neutral "Rumaja"
+                Adult = Neutral "Dewasa"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} dinten")
+            Week = Some (Simple "{n} minggu")
+            Month = Some (Simple "{n} sasih")
+            Year = Some (Simple "{n} taun")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -3226,6 +4794,55 @@ let TE: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/tg.json
+// ================================================================
+// TG — Tajik
+// ================================================================
+let TG: AgeLocale =
+    {
+        Code = "tg"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Day = Simple "{n} рӯз"
+                Week = Simple "{n} ҳафта"
+                Month = Simple "{n} моҳ"
+                Year = Simple "{n} сол"
+            }
+        Half = "{0} ним"
+        Delimiter = ", "
+        JustBorn = "Навзод"
+        Stages =
+            {
+                Newborn = Neutral "Навзод"
+                Infant = Neutral "Тифл"
+                Toddler = Neutral "Кӯдак"
+                Child = Neutral "Кӯдак"
+                Teenager = Neutral "Наврас"
+                Adult = Neutral "Калонсол"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} р")
+            Week = Some (Simple "{n} ҳ")
+            Month = Some (Simple "{n} м")
+            Year = Some (Simple "{n} с")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}р")
+            Week = Some (Simple "{n}ҳ")
+            Month = Some (Simple "{n}м")
+            Year = Some (Simple "{n}с")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/th.json
 // ================================================================
 // TH — Thai
@@ -3267,6 +4884,104 @@ let TH: AgeLocale =
             Week = Some (Simple "{n}สัปดาห์")
             Month = Some (Simple "{n}เดือน")
             Year = Some (Simple "{n}ปี")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/ti.json
+// ================================================================
+// TI — Tigrinya
+// ================================================================
+let TI: AgeLocale =
+    {
+        Code = "ti"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "{n} መዓልቲ"); (Other, "{n} መዓልትታት") ])
+                Week = Plural (Map.ofList [ (One, "{n} ሰሙን"); (Other, "{n} ሰሙናት") ])
+                Month = Plural (Map.ofList [ (One, "{n} ወርሒ"); (Other, "{n} ኣዋርሕ") ])
+                Year = Plural (Map.ofList [ (One, "{n} ዓመት"); (Other, "{n} ዓመታት") ])
+            }
+        Half = "{0} ተኹል"
+        Delimiter = "፣ "
+        JustBorn = "ሓድሽ ዝተወልደ"
+        Stages =
+            {
+                Newborn = Neutral "ሓድሽ ዝተወልደ"
+                Infant = Neutral "ጨቓዊ"
+                Toddler = Neutral "ንእሽተይ ህጻን"
+                Child = Neutral "ቆልዓ"
+                Teenager = Neutral "መንእሰይ"
+                Adult = Neutral "ዓቢይ"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} መዓልትታት")
+            Week = Some (Plural (Map.ofList [ (One, "{n} ሰሙን"); (Other, "{n} ሰሙናት") ]))
+            Month = Some (Simple "{n} ኣዋርሕ")
+            Year = Some (Plural (Map.ofList [ (One, "{n} ዓመት"); (Other, "{n} ዓመታት") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} መ")
+            Week = Some (Simple "{n} ሰሙን")
+            Month = Some (Simple "{n} ወር")
+            Year = Some (Plural (Map.ofList [ (One, "{n} ዓመት"); (Other, "{n} ዓ") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/tk.json
+// ================================================================
+// TK — Turkmen
+// ================================================================
+let TK: AgeLocale =
+    {
+        Code = "tk"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Simple "{n} gün"
+                Week = Simple "{n} hepde"
+                Month = Simple "{n} aý"
+                Year = Simple "{n} ýaş"
+            }
+        Half = "{0}½"
+        Delimiter = ", "
+        JustBorn = "Täze doglan"
+        Stages =
+            {
+                Newborn = Neutral "Täze doglan"
+                Infant = Neutral "Bäbek"
+                Toddler = Neutral "Kiçijik"
+                Child = Neutral "Çaga"
+                Teenager = Neutral "Ýetginjek"
+                Adult = Neutral "Ulular"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} g")
+            Week = Some (Simple "{n} h")
+            Month = Some (Simple "{n} a")
+            Year = Some (Simple "{n} ý")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}g")
+            Week = Some (Simple "{n}h")
+            Month = Some (Simple "{n}a")
+            Year = Some (Simple "{n}ý")
             Half = Some "{n}½"
             Delimiter = Some ""
             JustBorn = None
@@ -3569,6 +5284,153 @@ let VI: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/xh.json
+// ================================================================
+// XH — Xhosa
+// ================================================================
+let XH: AgeLocale =
+    {
+        Code = "xh"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "usuku {n}"); (Other, "iintsuku {n}") ])
+                Week = Plural (Map.ofList [ (One, "iveki {n}"); (Other, "iiveki {n}") ])
+                Month = Plural (Map.ofList [ (One, "inyanga {n}"); (Other, "iinyanga {n}") ])
+                Year = Plural (Map.ofList [ (One, "unyaka {n}"); (Other, "iminyaka {n}") ])
+            }
+        Half = "{0} nehafu"
+        Delimiter = ", "
+        JustBorn = "Usanda kuzalwa"
+        Stages =
+            {
+                Newborn = Neutral "Usana olusanda kuzalwa"
+                Infant = Neutral "Usana"
+                Toddler = Neutral "Umntwana omncinane"
+                Child = Neutral "Umntwana"
+                Teenager = Neutral "Ulutsha"
+                Adult = Neutral "Umntu omdala"
+            }
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "usuku {n}"); (Other, "iintsuku {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "iveki {n}"); (Other, "iiveki {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "iny. {n}"); (Other, "iiny. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "uny. {n}"); (Other, "imy. {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/yo.json
+// ================================================================
+// YO — Yoruba
+// ================================================================
+let YO: AgeLocale =
+    {
+        Code = "yo"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Day = Simple "ọjọ́ {n}"
+                Week = Simple "ọ̀sẹ̀ {n}"
+                Month = Simple "oṣù {n}"
+                Year = Simple "ọdún {n}"
+            }
+        Half = "{0} àbọ̀"
+        Delimiter = ", "
+        JustBorn = "Ọmọ tuntun"
+        Stages =
+            {
+                Newborn = Neutral "Ọmọ tuntun"
+                Infant = Neutral "Ọmọ ọwọ́"
+                Toddler = Neutral "Ọmọ kékeré"
+                Child = Neutral "Ọmọ"
+                Teenager = Neutral "Ọ̀dọ́"
+                Adult = Neutral "Àgbàlagbà"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "ọjọ́ {n}")
+            Week = Some (Simple "ọ̀sẹ̀ {n}")
+            Month = Some (Simple "oṣù {n}")
+            Year = Some (Simple "ọdún {n}")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: age/locales/src/yue.json
+// ================================================================
+// YUE — Cantonese
+// ================================================================
+let YUE: AgeLocale =
+    {
+        Code = "yue"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Day = Simple "{n}日"
+                Week = Simple "{n}個星期"
+                Month = Simple "{n}個月"
+                Year = Simple "{n}歲"
+            }
+        Half = "{0}半"
+        Delimiter = ""
+        JustBorn = "初生嬰兒"
+        Stages =
+            {
+                Newborn = Neutral "初生嬰兒"
+                Infant = Neutral "嬰兒"
+                Toddler = Neutral "幼兒"
+                Child = Neutral "細路"
+                Teenager = Neutral "後生"
+                Adult = Neutral "成人"
+            }
+        ShortOverride = Some {
+            Day = Some (Simple "{n} 日")
+            Week = Some (Simple "{n} 個星期")
+            Month = Some (Simple "{n} 個月")
+            Year = Some (Simple "{n} 年")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n}日")
+            Week = Some (Simple "{n}週")
+            Month = Some (Simple "{n}月")
+            Year = Some (Simple "{n}年")
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: age/locales/src/zh.json
 // ================================================================
 // ZH — Chinese
@@ -3618,17 +5480,70 @@ let ZH: AgeLocale =
         FormatUnit = None
     }
 
+// Source: age/locales/src/zu.json
+// ================================================================
+// ZU — Zulu
+// ================================================================
+let ZU: AgeLocale =
+    {
+        Code = "zu"
+        Plural = (fun n -> if n = 0 || n = 1 then One else Other)
+        Units =
+            {
+                Day = Plural (Map.ofList [ (One, "usuku {n}"); (Other, "izinsuku {n}") ])
+                Week = Plural (Map.ofList [ (One, "iviki {n}"); (Other, "amaviki {n}") ])
+                Month = Plural (Map.ofList [ (One, "inyanga {n}"); (Other, "izinyanga {n}") ])
+                Year = Plural (Map.ofList [ (One, "unyaka {n}"); (Other, "iminyaka {n}") ])
+            }
+        Half = "{0} nohhafu"
+        Delimiter = ", "
+        JustBorn = "Usanda kuzalwa"
+        Stages =
+            {
+                Newborn = Neutral "Usana olusanda kuzalwa"
+                Infant = Neutral "Usana"
+                Toddler = Neutral "Umntwana omncane"
+                Child = Neutral "Umntwana"
+                Teenager = Neutral "Intsha"
+                Adult = Neutral "Umuntu omdala"
+            }
+        ShortOverride = Some {
+            Day = Some (Plural (Map.ofList [ (One, "usuku {n}"); (Other, "izinsuku {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "iviki {n}"); (Other, "amaviki {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "inyanga {n}"); (Other, "izinyanga {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "unyaka {n}"); (Other, "iminyaka {n}") ]))
+            Half = None
+            Delimiter = None
+            JustBorn = None
+            }
+        CompactOverride = Some {
+            Day = Some (Simple "{n} ns")
+            Week = Some (Simple "{n} vk")
+            Month = Some (Simple "{n} ny")
+            Year = Some (Simple "{n} mk")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            JustBorn = None
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 let All: Map<string, AgeLocale> =
     Map.ofList
         [
+            ("af", AF)
+            ("ak", AK)
             ("am", AM)
             ("ar", AR)
             ("az", AZ)
+            ("be", BE)
             ("bg", BG)
             ("bn", BN)
             ("br", BR)
             ("bs", BS)
             ("ca", CA)
+            ("ceb", CEB)
             ("cs", CS)
             ("cy", CY)
             ("da", DA)
@@ -3639,29 +5554,47 @@ let All: Map<string, AgeLocale> =
             ("et", ET)
             ("eu", EU)
             ("fa", FA)
+            ("ff", FF)
             ("fi", FI)
             ("fil", FIL)
             ("fr", FR)
             ("ga", GA)
             ("gd", GD)
+            ("gl", GL)
+            ("gn", GN)
             ("gu", GU)
             ("gv", GV)
+            ("ha", HA)
             ("he", HE)
             ("hi", HI)
             ("hr", HR)
+            ("ht", HT)
             ("hu", HU)
+            ("hy", HY)
             ("id", ID)
+            ("ig", IG)
+            ("is", IS)
             ("it", IT)
             ("ja", JA)
             ("jv", JV)
             ("ka", KA)
             ("kk", KK)
             ("km", KM)
+            ("kn", KN)
             ("ko", KO)
+            ("ku", KU)
             ("kw", KW)
+            ("ky", KY)
+            ("lg", LG)
+            ("ln", LN)
+            ("lo", LO)
             ("lt", LT)
             ("lv", LV)
+            ("mg", MG)
+            ("mi", MI)
             ("mk", MK)
+            ("ml", ML)
+            ("mn", MN)
             ("mr", MR)
             ("ms", MS)
             ("mt", MT)
@@ -3669,29 +5602,46 @@ let All: Map<string, AgeLocale> =
             ("nb", NB)
             ("ne", NE)
             ("nl", NL)
+            ("ny", NY)
+            ("om", OM)
+            ("or", OR)
             ("pa", PA)
             ("pl", PL)
+            ("ps", PS)
             ("pt", PT)
+            ("qu", QU)
             ("ro", RO)
             ("ru", RU)
+            ("rw", RW)
+            ("sd", SD)
             ("shi", SHI)
             ("si", SI)
             ("sk", SK)
             ("sl", SL)
+            ("sn", SN)
+            ("so", SO)
             ("sq", SQ)
             ("sr", SR)
+            ("su", SU)
             ("sv", SV)
             ("sw", SW)
             ("ta", TA)
             ("te", TE)
+            ("tg", TG)
             ("th", TH)
+            ("ti", TI)
+            ("tk", TK)
             ("tr", TR)
             ("tzm", TZM)
             ("uk", UK)
             ("ur", UR)
             ("uz", UZ)
             ("vi", VI)
+            ("xh", XH)
+            ("yo", YO)
+            ("yue", YUE)
             ("zh", ZH)
+            ("zu", ZU)
         ]
 
 let get (code: string) : AgeLocale option = Map.tryFind code All

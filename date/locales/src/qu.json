@@ -1,0 +1,70 @@
+{
+  "code": "qu",
+  "name": "Quechua",
+  "months": [
+    "Qhulla puquy",
+    "Hatun puquy",
+    "Pawqar waray",
+    "Ayriwa",
+    "Aymuray",
+    "Inti raymi",
+    "Anta sitwa",
+    "Qhapaq sitwa",
+    "Uma raymi",
+    "Kantaray",
+    "Ayamarq'a",
+    "Qhapaq raymi"
+  ],
+  "weekdays": [
+    "Intichaw",
+    "Killachaw",
+    "Atipachaw",
+    "Quyllurchaw",
+    "Illapachaw",
+    "Ch'askachaw",
+    "K'uychichaw"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "kunan",
+  "tomorrow": "paqarin",
+  "yesterday": "qayna",
+  "dayAfterTomorrow": "minchha",
+  "dayBeforeYesterday": "qayna p'unchaw",
+  "thisWeekday": "kay {weekday}",
+  "nextWeekday": "hamuq {weekday}",
+  "lastWeekday": "qayna {weekday}",
+  "short": {
+    "months": [
+      "Qhu",
+      "Hat",
+      "Paw",
+      "Ayr",
+      "Aym",
+      "Int",
+      "Ant",
+      "Qha",
+      "Uma",
+      "Kan",
+      "Aya",
+      "Qra"
+    ],
+    "weekdays": [
+      "Int",
+      "Kil",
+      "Ati",
+      "Quy",
+      "Ill",
+      "Ch'a",
+      "K'uy"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

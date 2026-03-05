@@ -1,0 +1,40 @@
+{
+  "code": "mg",
+  "name": "Malagasy",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "day": "{n} andro",
+    "week": "{n} herinandro",
+    "month": "{n} volana",
+    "year": "{n} taona"
+  },
+  "half": "{0} sy sasany",
+  "delimiter": ", ",
+  "justBorn": "Vao teraka",
+  "stages": {
+    "newborn": "Vao teraka",
+    "infant": "Zazakely",
+    "toddler": "Zazakely",
+    "child": "Ankizy",
+    "teenager": "Tanora",
+    "adult": "Olon-dehibe"
+  },
+  "short": {
+    "units": {
+      "day": "{n} and",
+      "week": "{n} her",
+      "month": "{n} vol",
+      "year": "{n} tna"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n} a",
+      "week": "{n} h",
+      "month": "{n} v",
+      "year": "{n} t"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

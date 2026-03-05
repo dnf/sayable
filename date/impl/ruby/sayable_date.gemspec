@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version     = SayableDate::VERSION
   s.summary     = "Human-friendly date formatting — how people reference dates in conversation"
   s.description = "Human-friendly date formatting — how people reference dates in conversation. " \
-                  "Zero dependencies, 71 built-in locales, 3 compactness levels."
+                  "Zero dependencies, 110 built-in locales, 3 compactness levels."
   s.authors     = ["Don Neufeld"]
   s.license     = "MIT"
   s.homepage    = "https://github.com/dnf/sayable"

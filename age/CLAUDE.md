@@ -4,7 +4,7 @@
 
 ## Status
 
-The most mature component: v0.5.0, 29 languages, 71 locales, 217 canonical tests. Has CLI, benchmarks, stress tests, and comprehensive docs.
+The most mature component: v0.5.0, 29 languages, 110 locales, 217 canonical tests. Has CLI, benchmarks, stress tests, and comprehensive docs.
 
 ## Directory structure
 
@@ -15,7 +15,7 @@ age/
     metadata.json          # Package metadata (name, description, author, license, repo)
     tests.json             # 217 canonical test cases
   locales/
-    src/                   # 71 canonical JSON locale files (single source of truth)
+    src/                   # 110 canonical JSON locale files (single source of truth)
   codegen/
     generate.py            # Main codegen orchestrator (JSON -> all 29 languages)
     docgen.py              # Documentation generator
@@ -74,7 +74,7 @@ Ada, C, C#, C++, Clojure, COBOL, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, 
 }
 ```
 
-Plural forms vary by language: one/other (English), zero/one/two/few/many/other (Arabic), etc. 23 distinct CLDR plural patterns cover all 71 locales.
+Plural forms vary by language: one/other (English), zero/one/two/few/many/other (Arabic), etc. 23 distinct CLDR plural patterns cover all locales.
 
 ## Codegen emitter strategies
 

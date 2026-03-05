@@ -292,7 +292,7 @@ stages: {
 
 ## Social Class Considerations
 
-Stage terminology is **not** class-stratified in any of the 71 locales. The only observable variation is **register** (formal/clinical vs. colloquial/warm):
+Stage terminology is **not** class-stratified in any of the all locales. The only observable variation is **register** (formal/clinical vs. colloquial/warm):
 
 - Russian "Малыш" (toddler) is warm/affectionate; a clinical alternative would be "ребёнок раннего возраста"
 - Several languages use borrowed English terms (Czech "Teenager", Croatian "Tinejdžer") which may carry a slightly more modern/casual register vs. native equivalents

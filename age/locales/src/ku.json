@@ -1,0 +1,51 @@
+{
+  "code": "ku",
+  "name": "Kurdish",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "{n} roj",
+      "other": "{n} roj"
+    },
+    "week": {
+      "one": "{n} hefte",
+      "other": "{n} hefte"
+    },
+    "month": {
+      "one": "{n} meh",
+      "other": "{n} meh"
+    },
+    "year": {
+      "one": "{n} sal",
+      "other": "{n} sal"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justBorn": "Nûbûyî",
+  "stages": {
+    "newborn": "Nûbûyî",
+    "infant": "Şîrexwar",
+    "toddler": "Zarok",
+    "child": "Zarok",
+    "teenager": "Ciwan",
+    "adult": "Mezin"
+  },
+  "short": {
+    "units": {
+      "day": "{n} roj",
+      "week": "{n} hft.",
+      "month": "{n} meh",
+      "year": "{n} sal"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}r",
+      "week": "{n}h",
+      "month": "{n}m",
+      "year": "{n}s"
+    },
+    "delimiter": ""
+  }
+}

@@ -60,27 +60,27 @@ def _generate() -> str:
         "Which languages are available for each Sayable library.\n"
     )
     lines.append("\n")
-
-    # Header
-    header = "| Language |"
-    separator = "|----------|"
+    lines.append("<table>\n")
+    lines.append("<tr>\n")
+    lines.append("  <th>Language</th>\n")
     for comp in _COMPONENTS:
-        header += f" {comp} |"
-        separator += "------|"
-    lines.append(header + "\n")
-    lines.append(separator + "\n")
+        lines.append(f"  <th>{comp}</th>\n")
+    lines.append("</tr>\n")
 
-    # Rows
     for dirname in sorted_langs:
         name = _display_name(dirname)
-        row = f"| {name:<8} |"
+        lines.append("<tr>\n")
+        lines.append(f"  <td>{name}</td>\n")
         for comp in _COMPONENTS:
             if dirname in data[comp]:
-                mark = f"[✅]({comp}/impl/{dirname}/)"
+                lines.append(
+                    f'  <td><a href="{comp}/impl/{dirname}/">✅</a></td>\n'
+                )
             else:
-                mark = "❌"
-            row += f" {mark} |"
-        lines.append(row + "\n")
+                lines.append("  <td>❌</td>\n")
+        lines.append("</tr>\n")
+
+    lines.append("</table>\n")
 
     return "".join(lines)
 

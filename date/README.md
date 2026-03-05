@@ -9,7 +9,7 @@ Part of the [Sayable](https://github.com/dnf/sayable) family of formatting libra
 - **format_date** — Formats dates in locale-appropriate form ("March 15th", "15. März", "3月15日")
 - **format_relative** — Picks the most natural reference ("today", "tomorrow", "next Thursday", "April 10th")
 - Three compactness levels: normal, short, compact
-- 71 locales
+- 110 locales
 - Zero runtime dependencies
 - Python and TypeScript implementations
 

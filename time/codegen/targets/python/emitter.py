@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import keyword
+
 from codegen.banner import locale_source_comment, make_header
 
 HEADER = make_header("codegen/targets/python/emitter.py", line_prefix="# ")
@@ -92,11 +94,24 @@ def emit_barrel(all_locales: list[dict]) -> str:
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER, '"""Locale definitions for all supported languages."""\n']
 
+    lines.append("import importlib")
+    lines.append("")
     lines.append("from sayable_time.locale import TimeLocale")
 
+    keyword_codes = []
     for loc in sorted_locs:
         code = loc["code"]
-        lines.append(f"from sayable_time.locales.{code} import {code.upper()}")
+        if keyword.iskeyword(code):
+            keyword_codes.append(code)
+        else:
+            lines.append(f"from sayable_time.locales.{code} import {code.upper()}")
+
+    if keyword_codes:
+        lines.append("")
+        for code in keyword_codes:
+            lines.append(
+                f'{code.upper()} = importlib.import_module("sayable_time.locales.{code}").{code.upper()}'
+            )
 
     lines.append("")
 

@@ -1,10 +1,10 @@
 # Locale Code Generator
 
-The `codegen/` directory contains a code generator that maintains all 71 locale definitions across the language implementations from a single canonical source.
+The `codegen/` directory contains a code generator that maintains all locale definitions across the language implementations from a single canonical source.
 
 ## Why
 
-71 locales across many languages means hundreds of locale files. Before this generator, every locale change required editing files by hand across every language. The generator eliminates that by deriving all locale source files from one set of JSON definitions.
+110 locales across many languages means hundreds of locale files. Before this generator, every locale change required editing files by hand across every language. The generator eliminates that by deriving all locale source files from one set of JSON definitions.
 
 ## Architecture
 
@@ -139,7 +139,7 @@ python -m codegen.generate --lang go
 
 ### Subsetting with `--locales`
 
-By default all 71 locales are generated. Use `--locales` to generate only what you need:
+By default all 110 locales are generated. Use `--locales` to generate only what you need:
 
 ```bash
 just generate locales --locales core         # top 10 by internet users

@@ -1,0 +1,75 @@
+{
+  "code": "sd",
+  "name": "Sindhi",
+  "pluralRule": "one_other",
+  "units": {
+    "second": "{n} سيڪنڊ",
+    "minute": "{n} منٽ",
+    "hour": "{n} ڪلاڪ",
+    "day": "{n} ڏينهن",
+    "week": {
+      "one": "{n} هفتو",
+      "other": "{n} هفتا"
+    },
+    "month": {
+      "one": "{n} مهينو",
+      "other": "{n} مهينا"
+    },
+    "year": "{n} سال"
+  },
+  "half": "{n}½",
+  "delimiter": "، ",
+  "justNow": "هاڻي",
+  "ago": "{0} اڳ",
+  "inFuture": "{0} ۾",
+  "short": {
+    "units": {
+      "second": "{n} سيڪنڊ",
+      "minute": "{n} منٽ",
+      "hour": "{n} ڪلاڪ",
+      "day": "{n} ڏينهن",
+      "week": {
+        "one": "{n} هفتو",
+        "other": "{n} هفتا"
+      },
+      "month": {
+        "one": "{n} مهينو",
+        "other": "{n} مهينا"
+      },
+      "year": "{n} سال"
+    },
+    "ago": "{0} اڳ",
+    "inFuture": "{0} ۾",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n} سي",
+      "minute": "{n} م",
+      "hour": "{n} ڪ",
+      "day": "{n} ڏ",
+      "week": "{n} ه",
+      "month": "{n} مه",
+      "year": "{n} س"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} اڳ",
+    "inFuture": "{0} ۾",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

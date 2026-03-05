@@ -41,7 +41,7 @@ Formatter.format_age_pure Ja.locale Types.Normal "2025-01-01" "2025-07-15"
 (* Some "6ヶ月" *)
 ```
 
-71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
+110 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## API
 

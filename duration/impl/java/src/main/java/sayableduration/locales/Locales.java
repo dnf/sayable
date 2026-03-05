@@ -17,7 +17,7 @@ import java.util.Collections;
 import sayableduration.*;
 
 /**
- * All 71 locale definitions for sayable-duration.
+ * All 110 locale definitions for sayable-duration.
  */
 @SuppressWarnings({"LineLength", "MethodLength"})
 public final class Locales {
@@ -164,6 +164,108 @@ public final class Locales {
         if (n == 0 || n == 1 || (n >= 11 && n <= 99)) return PluralCategory.ONE;
         return PluralCategory.OTHER;
     }
+
+    // Source: duration/locales/src/af.json
+    // ================================================================
+    // AF — Afrikaans
+    // ================================================================
+    public static final DurationLocale AF = new DurationLocale(
+        "af",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} sekonde", PluralCategory.OTHER, "{n} sekondes")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} minuut", PluralCategory.OTHER, "{n} minute")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} uur", PluralCategory.OTHER, "{n} uur")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} dag", PluralCategory.OTHER, "{n} dae")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} week", PluralCategory.OTHER, "{n} weke")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} maand", PluralCategory.OTHER, "{n} maande")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} jaar", PluralCategory.OTHER, "{n} jaar"))
+        ),
+        "{n}½",
+        ", ",
+        "sopas",
+        "{0} gelede",
+        "oor {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sek."),
+            UnitForms.simpleUnit("{n} min."),
+            UnitForms.simpleUnit("{n} u."),
+            UnitForms.simpleUnit("{n} d."),
+            UnitForms.simpleUnit("{n} w."),
+            UnitForms.simpleUnit("{n} md."),
+            UnitForms.simpleUnit("{n} j."),
+            null,
+            null,
+            "{0} gelede",
+            "oor {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}min"),
+            UnitForms.simpleUnit("{n}u"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}j"),
+            "{n}½",
+            "",
+            "{0} gelede",
+            "oor {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/ak.json
+    // ================================================================
+    // AK — Akan
+    // ================================================================
+    public static final DurationLocale AK = new DurationLocale(
+        "ak",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("sɛkɛnd {n}"),
+            UnitForms.simpleUnit("sema {n}"),
+            UnitForms.simpleUnit("dɔnhwere {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "da {n}", PluralCategory.OTHER, "nna {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dapɛn {n}", PluralCategory.OTHER, "nnapɛn {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bosome {n}", PluralCategory.OTHER, "abosome {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "afe {n}", PluralCategory.OTHER, "mfe {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "sɛɛsei",
+        "{0} a etwaam",
+        "{0} mu",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sɛkɛnd {n}"),
+            UnitForms.simpleUnit("sema {n}"),
+            UnitForms.simpleUnit("dɔnhwere {n}"),
+            UnitForms.simpleUnit("nna {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dapɛn {n}", PluralCategory.OTHER, "nnapɛn {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bosome {n}", PluralCategory.OTHER, "abosome {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "afe {n}", PluralCategory.OTHER, "mfe {n}")),
+            null,
+            null,
+            "{0} a etwaam",
+            "{0} mu"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sɛk {n}"),
+            UnitForms.simpleUnit("sem {n}"),
+            UnitForms.simpleUnit("dɔn {n}"),
+            UnitForms.simpleUnit("nna {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dapɛn {n}", PluralCategory.OTHER, "nnapɛn {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bos {n}", PluralCategory.OTHER, "abos {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "afe {n}", PluralCategory.OTHER, "mfe {n}")),
+            "{n}½",
+            "",
+            "{0} a etwaam",
+            "{0} mu"
+        ),
+        null,
+        null
+    );
 
     // Source: duration/locales/src/am.json
     // ================================================================
@@ -313,6 +415,57 @@ public final class Locales {
             "",
             "{0} əvvəl",
             "{0} sonra"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/be.json
+    // ================================================================
+    // BE — Belarusian
+    // ================================================================
+    public static final DurationLocale BE = new DurationLocale(
+        "be",
+        Locales::pluralRuUk,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} секунда", PluralCategory.FEW, "{n} секунды", PluralCategory.MANY, "{n} секунд", PluralCategory.OTHER, "{n} секунд")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} хвіліна", PluralCategory.FEW, "{n} хвіліны", PluralCategory.MANY, "{n} хвілін", PluralCategory.OTHER, "{n} хвілін")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} гадзіна", PluralCategory.FEW, "{n} гадзіны", PluralCategory.MANY, "{n} гадзін", PluralCategory.OTHER, "{n} гадзін")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} дзень", PluralCategory.FEW, "{n} дні", PluralCategory.MANY, "{n} дзён", PluralCategory.OTHER, "{n} дзён")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} тыдзень", PluralCategory.FEW, "{n} тыдні", PluralCategory.MANY, "{n} тыдняў", PluralCategory.OTHER, "{n} тыдняў")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} месяц", PluralCategory.FEW, "{n} месяцы", PluralCategory.MANY, "{n} месяцаў", PluralCategory.OTHER, "{n} месяцаў")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} год", PluralCategory.FEW, "{n} гады", PluralCategory.MANY, "{n} гадоў", PluralCategory.OTHER, "{n} гадоў"))
+        ),
+        "{n} з паловай",
+        ", ",
+        "толькі што",
+        "{0} таму",
+        "праз {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} с"),
+            UnitForms.simpleUnit("{n} хв"),
+            UnitForms.simpleUnit("{n} гадз"),
+            UnitForms.simpleUnit("{n} дн."),
+            UnitForms.simpleUnit("{n} тыд."),
+            UnitForms.simpleUnit("{n} мес."),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} г.", PluralCategory.FEW, "{n} г.", PluralCategory.MANY, "{n} г.", PluralCategory.OTHER, "{n} г.")),
+            null,
+            null,
+            "{0} таму",
+            "праз {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} с"),
+            UnitForms.simpleUnit("{n} хв"),
+            UnitForms.simpleUnit("{n} гадз"),
+            UnitForms.simpleUnit("{n} д."),
+            UnitForms.simpleUnit("{n} т."),
+            UnitForms.simpleUnit("{n} м."),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} г.", PluralCategory.FEW, "{n} г.", PluralCategory.MANY, "{n} г.", PluralCategory.OTHER, "{n} г.")),
+            "{n}½",
+            "",
+            "{0} таму",
+            "праз {0}"
         ),
         null,
         null
@@ -568,6 +721,57 @@ public final class Locales {
             "",
             "fa {0}",
             "d'aquí a {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/ceb.json
+    // ================================================================
+    // CEB — Cebuano
+    // ================================================================
+    public static final DurationLocale CEB = new DurationLocale(
+        "ceb",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} ka segundo"),
+            UnitForms.simpleUnit("{n} ka minuto"),
+            UnitForms.simpleUnit("{n} ka oras"),
+            UnitForms.simpleUnit("{n} ka adlaw"),
+            UnitForms.simpleUnit("{n} ka semana"),
+            UnitForms.simpleUnit("{n} ka bulan"),
+            UnitForms.simpleUnit("{n} ka tuig")
+        ),
+        "{n}½",
+        ", ",
+        "karon lang",
+        "{0} ang milabay",
+        "sulod sa {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} seg"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} oras"),
+            UnitForms.simpleUnit("{n} ka adlaw"),
+            UnitForms.simpleUnit("{n} ka semana"),
+            UnitForms.simpleUnit("{n} ka bulan"),
+            UnitForms.simpleUnit("{n} ka tuig"),
+            null,
+            null,
+            "{0} ang milabay",
+            "sulod sa {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}seg"),
+            UnitForms.simpleUnit("{n}min"),
+            UnitForms.simpleUnit("{n}o"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}sem"),
+            UnitForms.simpleUnit("{n}b"),
+            UnitForms.simpleUnit("{n}t"),
+            "{n}½",
+            "",
+            "{0} ang milabay",
+            "sulod sa {0}"
         ),
         null,
         null
@@ -1083,6 +1287,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/ff.json
+    // ================================================================
+    // FF — Fulah
+    // ================================================================
+    public static final DurationLocale FF = new DurationLocale(
+        "ff",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("majaango {n}"),
+            UnitForms.simpleUnit("hojomaaje {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "waktu {n}", PluralCategory.OTHER, "waktuuji {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ñalawma {n}", PluralCategory.OTHER, "ñalɗe {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "yontere {n}", PluralCategory.OTHER, "yontereeji {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lewru {n}", PluralCategory.OTHER, "lebbi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hitaande {n}", PluralCategory.OTHER, "duuɓi {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "jooni",
+        "{0} ɓennuɗo",
+        "nder {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("majaango {n}"),
+            UnitForms.simpleUnit("hojomaaje {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "waktu {n}", PluralCategory.OTHER, "waktuuji {n}")),
+            UnitForms.simpleUnit("ñalɗe {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "yontere {n}", PluralCategory.OTHER, "yontereeji {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lewru {n}", PluralCategory.OTHER, "lebbi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hitaande {n}", PluralCategory.OTHER, "duuɓi {n}")),
+            null,
+            null,
+            "{0} ɓennuɗo",
+            "nder {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("maj {n}"),
+            UnitForms.simpleUnit("hoj {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "wak {n}", PluralCategory.OTHER, "wakji {n}")),
+            UnitForms.simpleUnit("ñalɗe {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "yont {n}", PluralCategory.OTHER, "yontji {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lew {n}", PluralCategory.OTHER, "leb {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hit {n}", PluralCategory.OTHER, "duuɓi {n}")),
+            "{n}½",
+            "",
+            "{0} ɓennuɗo",
+            "nder {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/fi.json
     // ================================================================
     // FI — Finnish
@@ -1338,6 +1593,108 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/gl.json
+    // ================================================================
+    // GL — Galician
+    // ================================================================
+    public static final DurationLocale GL = new DurationLocale(
+        "gl",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} segundo", PluralCategory.OTHER, "{n} segundos")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} minuto", PluralCategory.OTHER, "{n} minutos")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} hora", PluralCategory.OTHER, "{n} horas")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} día", PluralCategory.OTHER, "{n} días")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} semana", PluralCategory.OTHER, "{n} semanas")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mes", PluralCategory.OTHER, "{n} meses")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ano", PluralCategory.OTHER, "{n} anos"))
+        ),
+        "{n} e medio",
+        ", ",
+        "agora mesmo",
+        "hai {0}",
+        "en {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} s"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} h"),
+            UnitForms.simpleUnit("{n} d"),
+            UnitForms.simpleUnit("{n} sem."),
+            UnitForms.simpleUnit("{n} m."),
+            UnitForms.simpleUnit("{n} a"),
+            null,
+            null,
+            "hai {0}",
+            "en {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}min"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}sem"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}a"),
+            "{n}½",
+            "",
+            "hai {0}",
+            "en {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/gn.json
+    // ================================================================
+    // GN — Guarani
+    // ================================================================
+    public static final DurationLocale GN = new DurationLocale(
+        "gn",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} aravo'i"),
+            UnitForms.simpleUnit("{n} aravo"),
+            UnitForms.simpleUnit("{n} aravo guasu"),
+            UnitForms.simpleUnit("{n} ára"),
+            UnitForms.simpleUnit("{n} arapokõindy"),
+            UnitForms.simpleUnit("{n} jasy"),
+            UnitForms.simpleUnit("{n} ary")
+        ),
+        "{n}½",
+        ", ",
+        "ko'ágã",
+        "{0} ohasava'ekue",
+        "{0} rire",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ara'i"),
+            UnitForms.simpleUnit("{n} ara"),
+            UnitForms.simpleUnit("{n} ara g"),
+            UnitForms.simpleUnit("{n} ára"),
+            UnitForms.simpleUnit("{n} ara"),
+            UnitForms.simpleUnit("{n} jas"),
+            UnitForms.simpleUnit("{n} ary"),
+            null,
+            null,
+            "{0} ohasava'ekue",
+            "{0} rire"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            "{n}½",
+            "",
+            "{0} ohasava'ekue",
+            "{0} rire"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/gu.json
     // ================================================================
     // GU — Gujarati
@@ -1435,6 +1792,57 @@ public final class Locales {
             "",
             "{0} er dy henney",
             "ayns {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/ha.json
+    // ================================================================
+    // HA — Hausa
+    // ================================================================
+    public static final DurationLocale HA = new DurationLocale(
+        "ha",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} daƙiƙa", PluralCategory.OTHER, "{n} daƙiƙoƙi")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} minti", PluralCategory.OTHER, "{n} mintoci")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} awa", PluralCategory.OTHER, "{n} awanni")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} kwana", PluralCategory.OTHER, "{n} kwanaki")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mako", PluralCategory.OTHER, "{n} makonni")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} wata", PluralCategory.OTHER, "{n} watanni")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} shekara", PluralCategory.OTHER, "{n} shekaru"))
+        ),
+        "{n}½",
+        ", ",
+        "yanzu",
+        "{0} da suka wuce",
+        "cikin {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} daƙ."),
+            UnitForms.simpleUnit("{n} mnt."),
+            UnitForms.simpleUnit("{n} awa"),
+            UnitForms.simpleUnit("{n} kw."),
+            UnitForms.simpleUnit("{n} mk."),
+            UnitForms.simpleUnit("{n} wt."),
+            UnitForms.simpleUnit("{n} shk."),
+            null,
+            null,
+            "{0} da suka wuce",
+            "cikin {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}min"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            "{n}½",
+            "",
+            "{0} da suka wuce",
+            "cikin {0}"
         ),
         null,
         null
@@ -1593,6 +2001,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/ht.json
+    // ================================================================
+    // HT — Haitian Creole
+    // ================================================================
+    public static final DurationLocale HT = new DurationLocale(
+        "ht",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} segonn"),
+            UnitForms.simpleUnit("{n} minit"),
+            UnitForms.simpleUnit("{n} èdtan"),
+            UnitForms.simpleUnit("{n} jou"),
+            UnitForms.simpleUnit("{n} semèn"),
+            UnitForms.simpleUnit("{n} mwa"),
+            UnitForms.simpleUnit("{n} an")
+        ),
+        "{n}½",
+        ", ",
+        "kounye a",
+        "sa gen {0}",
+        "nan {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} seg"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} èdt"),
+            UnitForms.simpleUnit("{n} jou"),
+            UnitForms.simpleUnit("{n} sem"),
+            UnitForms.simpleUnit("{n} mwa"),
+            UnitForms.simpleUnit("{n} an"),
+            null,
+            null,
+            "sa gen {0}",
+            "nan {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}seg"),
+            UnitForms.simpleUnit("{n}min"),
+            UnitForms.simpleUnit("{n}èdt"),
+            UnitForms.simpleUnit("{n}j"),
+            UnitForms.simpleUnit("{n}sem"),
+            UnitForms.simpleUnit("{n}mwa"),
+            UnitForms.simpleUnit("{n}an"),
+            "{n}½",
+            "",
+            "sa gen {0}",
+            "nan {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/hu.json
     // ================================================================
     // HU — Hungarian
@@ -1644,6 +2103,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/hy.json
+    // ================================================================
+    // HY — Armenian
+    // ================================================================
+    public static final DurationLocale HY = new DurationLocale(
+        "hy",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} վայրկյան", PluralCategory.OTHER, "{n} վայրկյան")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} րոպե", PluralCategory.OTHER, "{n} րոպե")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ժամ", PluralCategory.OTHER, "{n} ժամ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} օր", PluralCategory.OTHER, "{n} օր")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} շաբաթ", PluralCategory.OTHER, "{n} շաբաթ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ամիս", PluralCategory.OTHER, "{n} ամիս")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} տարի", PluralCategory.OTHER, "{n} տարի"))
+        ),
+        "{0} ու կես",
+        ", ",
+        "հիմա",
+        "{0} առաջ",
+        "{0} հետո",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} վրկ"),
+            UnitForms.simpleUnit("{n} րոպ"),
+            UnitForms.simpleUnit("{n} ժ"),
+            UnitForms.simpleUnit("{n} օր"),
+            UnitForms.simpleUnit("{n} շաբ"),
+            UnitForms.simpleUnit("{n} ամս"),
+            UnitForms.simpleUnit("{n} տ"),
+            null,
+            null,
+            "{0} առաջ",
+            "{0} հետո"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} վ"),
+            UnitForms.simpleUnit("{n} ր"),
+            UnitForms.simpleUnit("{n} ժ"),
+            UnitForms.simpleUnit("{n} օ"),
+            UnitForms.simpleUnit("{n} շ"),
+            UnitForms.simpleUnit("{n} ա"),
+            UnitForms.simpleUnit("{n} տ"),
+            "{n}½",
+            "",
+            "{0} առաջ",
+            "{0} հետո"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/id.json
     // ================================================================
     // ID — Indonesian
@@ -1690,6 +2200,108 @@ public final class Locales {
             "",
             "{0} yang lalu",
             "dalam {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/ig.json
+    // ================================================================
+    // IG — Igbo
+    // ================================================================
+    public static final DurationLocale IG = new DurationLocale(
+        "ig",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} sekọnd"),
+            UnitForms.simpleUnit("{n} nkeji"),
+            UnitForms.simpleUnit("{n} awa"),
+            UnitForms.simpleUnit("{n} ụbọchị"),
+            UnitForms.simpleUnit("{n} izu"),
+            UnitForms.simpleUnit("{n} ọnwa"),
+            UnitForms.simpleUnit("{n} afọ")
+        ),
+        "{0} na ọkara",
+        ", ",
+        "ugbu a",
+        "{0} gara aga",
+        "na {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sek."),
+            UnitForms.simpleUnit("{n} nkeji"),
+            UnitForms.simpleUnit("{n} awa"),
+            UnitForms.simpleUnit("{n} ụbọchị"),
+            UnitForms.simpleUnit("{n} izu"),
+            UnitForms.simpleUnit("{n} ọnwa"),
+            UnitForms.simpleUnit("{n} afọ"),
+            null,
+            null,
+            "{0} gara aga",
+            "na {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            "{n}½",
+            "",
+            "{0} gara aga",
+            "na {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/is.json
+    // ================================================================
+    // IS — Icelandic
+    // ================================================================
+    public static final DurationLocale IS = new DurationLocale(
+        "is",
+        n -> (n % 10 == 1 && n % 100 != 11) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} sekúnda", PluralCategory.OTHER, "{n} sekúndur")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mínúta", PluralCategory.OTHER, "{n} mínútur")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} klukkustund", PluralCategory.OTHER, "{n} klukkustundir")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} dagur", PluralCategory.OTHER, "{n} dagar")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} vika", PluralCategory.OTHER, "{n} vikur")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mánuður", PluralCategory.OTHER, "{n} mánuðir")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ár", PluralCategory.OTHER, "{n} ár"))
+        ),
+        "{n} og hálf",
+        ", ",
+        "rétt í þessu",
+        "fyrir {0} síðan",
+        "eftir {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sek."),
+            UnitForms.simpleUnit("{n} mín."),
+            UnitForms.simpleUnit("{n} klst."),
+            UnitForms.simpleUnit("{n} d."),
+            UnitForms.simpleUnit("{n} v."),
+            UnitForms.simpleUnit("{n} mán."),
+            UnitForms.simpleUnit("{n} ár"),
+            null,
+            null,
+            "fyrir {0}",
+            "eftir {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}k"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}v"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}á"),
+            "{n}½",
+            "",
+            "fyrir {0}",
+            "eftir {0}"
         ),
         null,
         null
@@ -2001,6 +2613,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/kn.json
+    // ================================================================
+    // KN — Kannada
+    // ================================================================
+    public static final DurationLocale KN = new DurationLocale(
+        "kn",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ಸೆಕೆಂಡ್", PluralCategory.OTHER, "{n} ಸೆಕೆಂಡುಗಳು")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ನಿಮಿಷ", PluralCategory.OTHER, "{n} ನಿಮಿಷಗಳು")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ಗಂಟೆ", PluralCategory.OTHER, "{n} ಗಂಟೆಗಳು")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ದಿನ", PluralCategory.OTHER, "{n} ದಿನಗಳು")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ವಾರ", PluralCategory.OTHER, "{n} ವಾರಗಳು")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ತಿಂಗಳು", PluralCategory.OTHER, "{n} ತಿಂಗಳುಗಳು")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ವರ್ಷ", PluralCategory.OTHER, "{n} ವರ್ಷಗಳು"))
+        ),
+        "{0}ವರೆ",
+        ", ",
+        "ಈಗಷ್ಟೇ",
+        "{0} ಹಿಂದೆ",
+        "{0} ನಂತರ",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ಸೆ॰"),
+            UnitForms.simpleUnit("{n} ನಿ॰"),
+            UnitForms.simpleUnit("{n} ಗಂ॰"),
+            UnitForms.simpleUnit("{n} ದಿನ"),
+            UnitForms.simpleUnit("{n} ವಾರ"),
+            UnitForms.simpleUnit("{n} ತಿಂಗಳು"),
+            UnitForms.simpleUnit("{n} ವರ್ಷ"),
+            null,
+            null,
+            "{0} ಹಿಂದೆ",
+            "{0} ನಂತರ"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ಸೆ"),
+            UnitForms.simpleUnit("{n} ನಿ"),
+            UnitForms.simpleUnit("{n} ಗಂ"),
+            UnitForms.simpleUnit("{n} ದಿ"),
+            UnitForms.simpleUnit("{n} ವಾ"),
+            UnitForms.simpleUnit("{n} ತಿಂ"),
+            UnitForms.simpleUnit("{n} ವ"),
+            "{n}½",
+            "",
+            "{0} ಹಿಂದೆ",
+            "{0} ನಂತರ"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/ko.json
     // ================================================================
     // KO — Korean
@@ -2052,6 +2715,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/ku.json
+    // ================================================================
+    // KU — Kurdish
+    // ================================================================
+    public static final DurationLocale KU = new DurationLocale(
+        "ku",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} çirke", PluralCategory.OTHER, "{n} çirke")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} deqîqe", PluralCategory.OTHER, "{n} deqîqe")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} saet", PluralCategory.OTHER, "{n} saet")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} roj", PluralCategory.OTHER, "{n} roj")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} hefte", PluralCategory.OTHER, "{n} hefte")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} meh", PluralCategory.OTHER, "{n} meh")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} sal", PluralCategory.OTHER, "{n} sal"))
+        ),
+        "{n}½",
+        ", ",
+        "niha",
+        "berî {0}",
+        "di {0} de",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} çrk."),
+            UnitForms.simpleUnit("{n} deq."),
+            UnitForms.simpleUnit("{n} st."),
+            UnitForms.simpleUnit("{n} roj"),
+            UnitForms.simpleUnit("{n} hft."),
+            UnitForms.simpleUnit("{n} meh"),
+            UnitForms.simpleUnit("{n} sal"),
+            null,
+            null,
+            "berî {0}",
+            "di {0} de"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}st"),
+            UnitForms.simpleUnit("{n}r"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}s"),
+            "{n}½",
+            "",
+            "berî {0}",
+            "di {0} de"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/kw.json
     // ================================================================
     // KW — Cornish
@@ -2098,6 +2812,210 @@ public final class Locales {
             "",
             "{0} a-dhia",
             "a-ji {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/ky.json
+    // ================================================================
+    // KY — Kyrgyz
+    // ================================================================
+    public static final DurationLocale KY = new DurationLocale(
+        "ky",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} секунд"),
+            UnitForms.simpleUnit("{n} мүнөт"),
+            UnitForms.simpleUnit("{n} саат"),
+            UnitForms.simpleUnit("{n} күн"),
+            UnitForms.simpleUnit("{n} апта"),
+            UnitForms.simpleUnit("{n} ай"),
+            UnitForms.simpleUnit("{n} жыл")
+        ),
+        "{n}½",
+        ", ",
+        "азыр эле",
+        "{0} мурун",
+        "{0} кийин",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} сек"),
+            UnitForms.simpleUnit("{n} мүн"),
+            UnitForms.simpleUnit("{n} саат"),
+            UnitForms.simpleUnit("{n} күн"),
+            UnitForms.simpleUnit("{n} апта"),
+            UnitForms.simpleUnit("{n} ай"),
+            UnitForms.simpleUnit("{n} жыл"),
+            null,
+            null,
+            "{0} мурун",
+            "{0} кийин"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} сек"),
+            UnitForms.simpleUnit("{n} мүн"),
+            UnitForms.simpleUnit("{n}ч"),
+            UnitForms.simpleUnit("{n} к"),
+            UnitForms.simpleUnit("{n} апт"),
+            UnitForms.simpleUnit("{n} ай"),
+            UnitForms.simpleUnit("{n} ж"),
+            "{n}½",
+            "",
+            "{0} мурун",
+            "{0} кийин"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/lg.json
+    // ================================================================
+    // LG — Luganda
+    // ================================================================
+    public static final DurationLocale LG = new DurationLocale(
+        "lg",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("sikonda {n}"),
+            UnitForms.simpleUnit("dakiika {n}"),
+            UnitForms.simpleUnit("essaawa {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "olunaku {n}", PluralCategory.OTHER, "ennaku {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sabbiiti {n}", PluralCategory.OTHER, "sabiiti {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "omwezi {n}", PluralCategory.OTHER, "emyezi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "omwaka {n}", PluralCategory.OTHER, "emyaka {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "kaakano",
+        "{0} emabega",
+        "mu {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sikonda {n}"),
+            UnitForms.simpleUnit("dakiika {n}"),
+            UnitForms.simpleUnit("essaawa {n}"),
+            UnitForms.simpleUnit("ennaku {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sabbiiti {n}", PluralCategory.OTHER, "sabiiti {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "omwezi {n}", PluralCategory.OTHER, "emyezi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "omwaka {n}", PluralCategory.OTHER, "emyaka {n}")),
+            null,
+            null,
+            "{0} emabega",
+            "mu {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sik {n}"),
+            UnitForms.simpleUnit("dak {n}"),
+            UnitForms.simpleUnit("ssa {n}"),
+            UnitForms.simpleUnit("ennaku {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sab {n}", PluralCategory.OTHER, "sab {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwezi {n}", PluralCategory.OTHER, "myezi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwaka {n}", PluralCategory.OTHER, "myaka {n}")),
+            "{n}½",
+            "",
+            "{0} emabega",
+            "mu {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/ln.json
+    // ================================================================
+    // LN — Lingala
+    // ================================================================
+    public static final DurationLocale LN = new DurationLocale(
+        "ln",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} segɔnde"),
+            UnitForms.simpleUnit("{n} moniti"),
+            UnitForms.simpleUnit("{n} ngonga"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mokolo {n}", PluralCategory.OTHER, "mikolo {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "poso {n}", PluralCategory.OTHER, "baposo {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sanza {n}", PluralCategory.OTHER, "basanza {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mobu {n}", PluralCategory.OTHER, "mibu {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "sikoyo",
+        "{0} elékí",
+        "na {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("seg {n}"),
+            UnitForms.simpleUnit("mon {n}"),
+            UnitForms.simpleUnit("ng {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mokolo {n}", PluralCategory.OTHER, "mik {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "poso {n}", PluralCategory.OTHER, "bap {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sanza {n}", PluralCategory.OTHER, "basanza {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mobu {n}", PluralCategory.OTHER, "mibu {n}")),
+            null,
+            null,
+            "{0} elékí",
+            "na {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("s {n}"),
+            UnitForms.simpleUnit("m {n}"),
+            UnitForms.simpleUnit("ng {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mok {n}", PluralCategory.OTHER, "mik {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "pos {n}", PluralCategory.OTHER, "bap {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sza {n}", PluralCategory.OTHER, "bsza {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mb {n}", PluralCategory.OTHER, "mib {n}")),
+            "{n}½",
+            "",
+            "{0} elékí",
+            "na {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/lo.json
+    // ================================================================
+    // LO — Lao
+    // ================================================================
+    public static final DurationLocale LO = new DurationLocale(
+        "lo",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} ວິນາທີ"),
+            UnitForms.simpleUnit("{n} ນາທີ"),
+            UnitForms.simpleUnit("{n} ຊົ່ວໂມງ"),
+            UnitForms.simpleUnit("{n} ມື້"),
+            UnitForms.simpleUnit("{n} ອາທິດ"),
+            UnitForms.simpleUnit("{n} ເດືອນ"),
+            UnitForms.simpleUnit("{n} ປີ")
+        ),
+        "{0}ເຄິ່ງ",
+        "",
+        "ຫາກໍ",
+        "{0} ກ່ອນ",
+        "ໃນ {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ວິ."),
+            UnitForms.simpleUnit("{n} ນທ."),
+            UnitForms.simpleUnit("{n} ຊມ."),
+            UnitForms.simpleUnit("{n} ມ."),
+            UnitForms.simpleUnit("{n} ອທ."),
+            UnitForms.simpleUnit("{n} ດ."),
+            UnitForms.simpleUnit("{n} ປ."),
+            null,
+            null,
+            "{0} ກ່ອນ",
+            "ໃນ {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            "{n}½",
+            "",
+            "{0} ກ່ອນ",
+            "ໃນ {0}"
         ),
         null,
         null
@@ -2205,6 +3123,108 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/mg.json
+    // ================================================================
+    // MG — Malagasy
+    // ================================================================
+    public static final DurationLocale MG = new DurationLocale(
+        "mg",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} segondra"),
+            UnitForms.simpleUnit("{n} minitra"),
+            UnitForms.simpleUnit("{n} ora"),
+            UnitForms.simpleUnit("{n} andro"),
+            UnitForms.simpleUnit("{n} herinandro"),
+            UnitForms.simpleUnit("{n} volana"),
+            UnitForms.simpleUnit("{n} taona")
+        ),
+        "{0} sy sasany",
+        ", ",
+        "vao haingana",
+        "{0} lasa",
+        "ao anatin'ny {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} seg"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} ora"),
+            UnitForms.simpleUnit("{n} and"),
+            UnitForms.simpleUnit("{n} her"),
+            UnitForms.simpleUnit("{n} vol"),
+            UnitForms.simpleUnit("{n} tna"),
+            null,
+            null,
+            "{0} lasa",
+            "ao anatin'ny {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} s"),
+            UnitForms.simpleUnit("{n} m"),
+            UnitForms.simpleUnit("{n} o"),
+            UnitForms.simpleUnit("{n} a"),
+            UnitForms.simpleUnit("{n} h"),
+            UnitForms.simpleUnit("{n} v"),
+            UnitForms.simpleUnit("{n} t"),
+            "{n}½",
+            "",
+            "{0} lasa",
+            "ao anatin'ny {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/mi.json
+    // ================================================================
+    // MI — Māori
+    // ================================================================
+    public static final DurationLocale MI = new DurationLocale(
+        "mi",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} hēkona"),
+            UnitForms.simpleUnit("{n} meneti"),
+            UnitForms.simpleUnit("{n} hāora"),
+            UnitForms.simpleUnit("rā {n}"),
+            UnitForms.simpleUnit("wiki {n}"),
+            UnitForms.simpleUnit("marama {n}"),
+            UnitForms.simpleUnit("tau {n}")
+        ),
+        "{0}½",
+        ", ",
+        "ināianei",
+        "{0} i mua",
+        "ā te {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} hēk"),
+            UnitForms.simpleUnit("{n} men"),
+            UnitForms.simpleUnit("{n} hāo"),
+            UnitForms.simpleUnit("rā {n}"),
+            UnitForms.simpleUnit("w {n}"),
+            UnitForms.simpleUnit("m {n}"),
+            UnitForms.simpleUnit("t {n}"),
+            null,
+            null,
+            "{0} i mua",
+            "ā te {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}hēk"),
+            UnitForms.simpleUnit("{n}men"),
+            UnitForms.simpleUnit("{n}hāo"),
+            UnitForms.simpleUnit("{n}r"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}t"),
+            "{n}½",
+            "",
+            "{0} i mua",
+            "ā te {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/mk.json
     // ================================================================
     // MK — Macedonian
@@ -2251,6 +3271,108 @@ public final class Locales {
             "",
             "пред {0}",
             "за {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/ml.json
+    // ================================================================
+    // ML — Malayalam
+    // ================================================================
+    public static final DurationLocale ML = new DurationLocale(
+        "ml",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} സെക്കൻഡ്", PluralCategory.OTHER, "{n} സെക്കൻഡുകൾ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} മിനിറ്റ്", PluralCategory.OTHER, "{n} മിനിറ്റുകൾ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} മണിക്കൂർ", PluralCategory.OTHER, "{n} മണിക്കൂറുകൾ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ദിവസം", PluralCategory.OTHER, "{n} ദിവസങ്ങൾ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ആഴ്ച", PluralCategory.OTHER, "{n} ആഴ്ചകൾ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} മാസം", PluralCategory.OTHER, "{n} മാസങ്ങൾ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} വർഷം", PluralCategory.OTHER, "{n} വർഷങ്ങൾ"))
+        ),
+        "{0} ര",
+        ", ",
+        "ഇപ്പോൾ",
+        "{0} മുമ്പ്",
+        "{0} കഴിഞ്ഞ്",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} സെ॰"),
+            UnitForms.simpleUnit("{n} മി॰"),
+            UnitForms.simpleUnit("{n} മ॰"),
+            UnitForms.simpleUnit("{n} ദിവസം"),
+            UnitForms.simpleUnit("{n} ആഴ്ച"),
+            UnitForms.simpleUnit("{n} മാസം"),
+            UnitForms.simpleUnit("{n} വർഷം"),
+            null,
+            null,
+            "{0} മുമ്പ്",
+            "{0} കഴിഞ്ഞ്"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} സെ"),
+            UnitForms.simpleUnit("{n} മി"),
+            UnitForms.simpleUnit("{n} മ"),
+            UnitForms.simpleUnit("{n} ദി"),
+            UnitForms.simpleUnit("{n} ആ"),
+            UnitForms.simpleUnit("{n} മാ"),
+            UnitForms.simpleUnit("{n} വ"),
+            "{n}½",
+            "",
+            "{0} മുമ്പ്",
+            "{0} കഴിഞ്ഞ്"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/mn.json
+    // ================================================================
+    // MN — Mongolian
+    // ================================================================
+    public static final DurationLocale MN = new DurationLocale(
+        "mn",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} секунд"),
+            UnitForms.simpleUnit("{n} минут"),
+            UnitForms.simpleUnit("{n} цаг"),
+            UnitForms.simpleUnit("{n} өдөр"),
+            UnitForms.simpleUnit("{n} долоо хоног"),
+            UnitForms.simpleUnit("{n} сар"),
+            UnitForms.simpleUnit("{n} жил")
+        ),
+        "{n}½",
+        ", ",
+        "дөнгөж сая",
+        "{0}-н өмнө",
+        "{0}-н дараа",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} сек"),
+            UnitForms.simpleUnit("{n} мин"),
+            UnitForms.simpleUnit("{n} цаг"),
+            UnitForms.simpleUnit("{n} өдөр"),
+            UnitForms.simpleUnit("{n} д/х"),
+            UnitForms.simpleUnit("{n} сар"),
+            UnitForms.simpleUnit("{n} жил"),
+            null,
+            null,
+            "{0}-н өмнө",
+            "{0}-н дараа"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} сек"),
+            UnitForms.simpleUnit("{n} мин"),
+            UnitForms.simpleUnit("{n} ц"),
+            UnitForms.simpleUnit("{n} ө"),
+            UnitForms.simpleUnit("{n} д"),
+            UnitForms.simpleUnit("{n} с"),
+            UnitForms.simpleUnit("{n} ж"),
+            "{n}½",
+            "",
+            "{0}-н өмнө",
+            "{0}-н дараа"
         ),
         null,
         null
@@ -2613,6 +3735,159 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/ny.json
+    // ================================================================
+    // NY — Chichewa
+    // ================================================================
+    public static final DurationLocale NY = new DurationLocale(
+        "ny",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} sekondi"),
+            UnitForms.simpleUnit("{n} mphindi"),
+            UnitForms.simpleUnit("{n} ola"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "tsiku {n}", PluralCategory.OTHER, "masiku {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sabata {n}", PluralCategory.OTHER, "masabata {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwezi {n}", PluralCategory.OTHER, "miyezi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "chaka {n}", PluralCategory.OTHER, "zaka {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "tsopano",
+        "{0} zapitazo",
+        "mu {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sek {n}"),
+            UnitForms.simpleUnit("mph {n}"),
+            UnitForms.simpleUnit("ola {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "tsiku {n}", PluralCategory.OTHER, "mas {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sabata {n}", PluralCategory.OTHER, "masab {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwezi {n}", PluralCategory.OTHER, "miyezi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "chaka {n}", PluralCategory.OTHER, "zaka {n}")),
+            null,
+            null,
+            "{0} zapitazo",
+            "mu {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("s {n}"),
+            UnitForms.simpleUnit("m {n}"),
+            UnitForms.simpleUnit("o {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ts {n}", PluralCategory.OTHER, "mas {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sab {n}", PluralCategory.OTHER, "msb {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mw {n}", PluralCategory.OTHER, "miy {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ch {n}", PluralCategory.OTHER, "z {n}")),
+            "{n}½",
+            "",
+            "{0} zapitazo",
+            "mu {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/om.json
+    // ================================================================
+    // OM — Oromo
+    // ================================================================
+    public static final DurationLocale OM = new DurationLocale(
+        "om",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sekondii {n}", PluralCategory.OTHER, "sekondoota {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "daqiiqaa {n}", PluralCategory.OTHER, "daqiiqoota {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sa'aatii {n}", PluralCategory.OTHER, "sa'aatota {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "guyyaa {n}", PluralCategory.OTHER, "guyyoota {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "torban {n}", PluralCategory.OTHER, "torbanota {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ji'a {n}", PluralCategory.OTHER, "ji'oota {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "waggaa {n}", PluralCategory.OTHER, "waggoota {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "amma kana",
+        "{0} dura",
+        "{0} keessatti",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sek {n}"),
+            UnitForms.simpleUnit("daq {n}"),
+            UnitForms.simpleUnit("sa'a {n}"),
+            UnitForms.simpleUnit("gy {n}"),
+            UnitForms.simpleUnit("trb {n}"),
+            UnitForms.simpleUnit("ji {n}"),
+            UnitForms.simpleUnit("wg {n}"),
+            null,
+            null,
+            "{0} dura",
+            "{0} keessatti"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sek {n}"),
+            UnitForms.simpleUnit("daq {n}"),
+            UnitForms.simpleUnit("sa'a {n}"),
+            UnitForms.simpleUnit("{n}g"),
+            UnitForms.simpleUnit("{n}t"),
+            UnitForms.simpleUnit("{n}j"),
+            UnitForms.simpleUnit("{n}w"),
+            "{n}½",
+            "",
+            "{0} dura",
+            "{0} keessatti"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/or.json
+    // ================================================================
+    // OR — Odia
+    // ================================================================
+    public static final DurationLocale OR = new DurationLocale(
+        "or",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ସେକେଣ୍ଡ", PluralCategory.OTHER, "{n} ସେକେଣ୍ଡ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ମିନିଟ୍", PluralCategory.OTHER, "{n} ମିନିଟ୍")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ଘଣ୍ଟା", PluralCategory.OTHER, "{n} ଘଣ୍ଟା")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ଦିନ", PluralCategory.OTHER, "{n} ଦିନ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ସପ୍ତାହ", PluralCategory.OTHER, "{n} ସପ୍ତାହ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ମାସ", PluralCategory.OTHER, "{n} ମାସ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ବର୍ଷ", PluralCategory.OTHER, "{n} ବର୍ଷ"))
+        ),
+        "{0}ଅଧା",
+        ", ",
+        "ଏବେ",
+        "{0} ପୂର୍ବେ",
+        "{0} ପରେ",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ସେ॰"),
+            UnitForms.simpleUnit("{n} ମି॰"),
+            UnitForms.simpleUnit("{n} ଘ॰"),
+            UnitForms.simpleUnit("{n} ଦିନ"),
+            UnitForms.simpleUnit("{n} ସପ୍ତାହ"),
+            UnitForms.simpleUnit("{n} ମାସ"),
+            UnitForms.simpleUnit("{n} ବର୍ଷ"),
+            null,
+            null,
+            "{0} ପୂର୍ବେ",
+            "{0} ପରେ"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ସେ"),
+            UnitForms.simpleUnit("{n} ମି"),
+            UnitForms.simpleUnit("{n} ଘ"),
+            UnitForms.simpleUnit("{n} ଦି"),
+            UnitForms.simpleUnit("{n} ସ"),
+            UnitForms.simpleUnit("{n} ମା"),
+            UnitForms.simpleUnit("{n} ବ"),
+            "{n}½",
+            "",
+            "{0} ପୂର୍ବେ",
+            "{0} ପରେ"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/pa.json
     // ================================================================
     // PA — Punjabi
@@ -2715,6 +3990,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/ps.json
+    // ================================================================
+    // PS — Pashto
+    // ================================================================
+    public static final DurationLocale PS = new DurationLocale(
+        "ps",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ثانیه", PluralCategory.OTHER, "{n} ثانیې")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} دقیقه", PluralCategory.OTHER, "{n} دقیقې")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ساعت", PluralCategory.OTHER, "{n} ساعتونه")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ورځ", PluralCategory.OTHER, "{n} ورځې")),
+            UnitForms.simpleUnit("{n} اونۍ"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} مياشت", PluralCategory.OTHER, "{n} مياشتې")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} کال", PluralCategory.OTHER, "{n} کالونه"))
+        ),
+        "{n}½",
+        "، ",
+        "همدا اوس",
+        "د {0} مخکې",
+        "په {0} کې",
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ثانیه", PluralCategory.OTHER, "{n} ثانیې")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} دقیقه", PluralCategory.OTHER, "{n} دقیقې")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ساعت", PluralCategory.OTHER, "{n} ساعتونه")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ورځ", PluralCategory.OTHER, "{n} ورځې")),
+            UnitForms.simpleUnit("{n} اونۍ"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} مياشت", PluralCategory.OTHER, "{n} مياشتې")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} کال", PluralCategory.OTHER, "{n} کالونه")),
+            null,
+            null,
+            "د {0} مخکې",
+            "په {0} کې"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ث"),
+            UnitForms.simpleUnit("{n} د"),
+            UnitForms.simpleUnit("{n} س"),
+            UnitForms.simpleUnit("{n} و"),
+            UnitForms.simpleUnit("{n} او"),
+            UnitForms.simpleUnit("{n} م"),
+            UnitForms.simpleUnit("{n} ک"),
+            "{n}½",
+            "",
+            "د {0} مخکې",
+            "په {0} کې"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/pt.json
     // ================================================================
     // PT — Portuguese
@@ -2761,6 +4087,57 @@ public final class Locales {
             "",
             "há {0}",
             "em {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/qu.json
+    // ================================================================
+    // QU — Quechua
+    // ================================================================
+    public static final DurationLocale QU = new DurationLocale(
+        "qu",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} ñiqin"),
+            UnitForms.simpleUnit("{n} chiniku"),
+            UnitForms.simpleUnit("{n} ura"),
+            UnitForms.simpleUnit("{n} p'unchaw"),
+            UnitForms.simpleUnit("{n} simana"),
+            UnitForms.simpleUnit("{n} killa"),
+            UnitForms.simpleUnit("{n} wata")
+        ),
+        "{0} khuskannin",
+        ", ",
+        "kunanlla",
+        "{0} ñawpaqta",
+        "{0} qhipata",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ñiq"),
+            UnitForms.simpleUnit("{n} chi"),
+            UnitForms.simpleUnit("{n} ura"),
+            UnitForms.simpleUnit("{n} p'un"),
+            UnitForms.simpleUnit("{n} sim"),
+            UnitForms.simpleUnit("{n} kil"),
+            UnitForms.simpleUnit("{n} wat"),
+            null,
+            null,
+            "{0} ñawpaqta",
+            "{0} qhipata"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            "{n}½",
+            "",
+            "{0} ñawpaqta",
+            "{0} qhipata"
         ),
         null,
         null
@@ -2863,6 +4240,108 @@ public final class Locales {
             "",
             "{0} назад",
             "через {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/rw.json
+    // ================================================================
+    // RW — Kinyarwanda
+    // ================================================================
+    public static final DurationLocale RW = new DurationLocale(
+        "rw",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "isegonda {n}", PluralCategory.OTHER, "amasegonda {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umunota {n}", PluralCategory.OTHER, "iminota {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "isaha {n}", PluralCategory.OTHER, "amasaha {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umunsi {n}", PluralCategory.OTHER, "iminsi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "icyumweru {n}", PluralCategory.OTHER, "ibyumweru {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ukwezi {n}", PluralCategory.OTHER, "amezi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umwaka {n}", PluralCategory.OTHER, "imyaka {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "ubu nyine",
+        "hashize {0}",
+        "mu {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("seg {n}"),
+            UnitForms.simpleUnit("mno {n}"),
+            UnitForms.simpleUnit("sha {n}"),
+            UnitForms.simpleUnit("mns {n}"),
+            UnitForms.simpleUnit("cyu {n}"),
+            UnitForms.simpleUnit("kwe {n}"),
+            UnitForms.simpleUnit("mwk {n}"),
+            null,
+            null,
+            "hashize {0}",
+            "mu {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("seg {n}"),
+            UnitForms.simpleUnit("mno {n}"),
+            UnitForms.simpleUnit("sha {n}"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}c"),
+            UnitForms.simpleUnit("{n}k"),
+            UnitForms.simpleUnit("{n}u"),
+            "{n}½",
+            "",
+            "hashize {0}",
+            "mu {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/sd.json
+    // ================================================================
+    // SD — Sindhi
+    // ================================================================
+    public static final DurationLocale SD = new DurationLocale(
+        "sd",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} سيڪنڊ"),
+            UnitForms.simpleUnit("{n} منٽ"),
+            UnitForms.simpleUnit("{n} ڪلاڪ"),
+            UnitForms.simpleUnit("{n} ڏينهن"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} هفتو", PluralCategory.OTHER, "{n} هفتا")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} مهينو", PluralCategory.OTHER, "{n} مهينا")),
+            UnitForms.simpleUnit("{n} سال")
+        ),
+        "{n}½",
+        "، ",
+        "هاڻي",
+        "{0} اڳ",
+        "{0} ۾",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} سيڪنڊ"),
+            UnitForms.simpleUnit("{n} منٽ"),
+            UnitForms.simpleUnit("{n} ڪلاڪ"),
+            UnitForms.simpleUnit("{n} ڏينهن"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} هفتو", PluralCategory.OTHER, "{n} هفتا")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} مهينو", PluralCategory.OTHER, "{n} مهينا")),
+            UnitForms.simpleUnit("{n} سال"),
+            null,
+            null,
+            "{0} اڳ",
+            "{0} ۾"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} سي"),
+            UnitForms.simpleUnit("{n} م"),
+            UnitForms.simpleUnit("{n} ڪ"),
+            UnitForms.simpleUnit("{n} ڏ"),
+            UnitForms.simpleUnit("{n} ه"),
+            UnitForms.simpleUnit("{n} مه"),
+            UnitForms.simpleUnit("{n} س"),
+            "{n}½",
+            "",
+            "{0} اڳ",
+            "{0} ۾"
         ),
         null,
         null
@@ -3072,6 +4551,108 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/sn.json
+    // ================================================================
+    // SN — Shona
+    // ================================================================
+    public static final DurationLocale SN = new DurationLocale(
+        "sn",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} sekondi"),
+            UnitForms.simpleUnit("{n} miniti"),
+            UnitForms.simpleUnit("{n} awa"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "zuva {n}", PluralCategory.OTHER, "mazuva {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "vhiki {n}", PluralCategory.OTHER, "mavhiki {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwedzi {n}", PluralCategory.OTHER, "mwedzi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "gore {n}", PluralCategory.OTHER, "makore {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "izvozvi",
+        "{0} yapfuura",
+        "mu{0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sek {n}"),
+            UnitForms.simpleUnit("min {n}"),
+            UnitForms.simpleUnit("awa {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "zuva {n}", PluralCategory.OTHER, "maz {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "vhiki {n}", PluralCategory.OTHER, "mavh {n}")),
+            UnitForms.simpleUnit("mwedzi {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "gore {n}", PluralCategory.OTHER, "mak {n}")),
+            null,
+            null,
+            "{0} yapfuura",
+            "mu{0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("s {n}"),
+            UnitForms.simpleUnit("m {n}"),
+            UnitForms.simpleUnit("a {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "z {n}", PluralCategory.OTHER, "maz {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "vh {n}", PluralCategory.OTHER, "mvh {n}")),
+            UnitForms.simpleUnit("mw {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "g {n}", PluralCategory.OTHER, "mak {n}")),
+            "{n}½",
+            "",
+            "{0} yapfuura",
+            "mu{0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/so.json
+    // ================================================================
+    // SO — Somali
+    // ================================================================
+    public static final DurationLocale SO = new DurationLocale(
+        "so",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ilbiriqsi {n}", PluralCategory.OTHER, "ilbiriqsiyaal {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "daqiiqad {n}", PluralCategory.OTHER, "daqiiqadood {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "saacad {n}", PluralCategory.OTHER, "saacadood {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "maalin {n}", PluralCategory.OTHER, "maalmood {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "toddobaad {n}", PluralCategory.OTHER, "toddobaadyo {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bil {n}", PluralCategory.OTHER, "bilood {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sano {n}", PluralCategory.OTHER, "sanooyin {n}"))
+        ),
+        "{n}½",
+        ", ",
+        "hadda",
+        "{0} ka hor",
+        "{0} gudahood",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("ilb {n}"),
+            UnitForms.simpleUnit("daq {n}"),
+            UnitForms.simpleUnit("scd {n}"),
+            UnitForms.simpleUnit("mln {n}"),
+            UnitForms.simpleUnit("tdb {n}"),
+            UnitForms.simpleUnit("bil {n}"),
+            UnitForms.simpleUnit("sno {n}"),
+            null,
+            null,
+            "{0} ka hor",
+            "{0} gudahood"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("ilb {n}"),
+            UnitForms.simpleUnit("daq {n}"),
+            UnitForms.simpleUnit("scd {n}"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}t"),
+            UnitForms.simpleUnit("{n}b"),
+            UnitForms.simpleUnit("{n}s"),
+            "{n}½",
+            "",
+            "{0} ka hor",
+            "{0} gudahood"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/sq.json
     // ================================================================
     // SQ — Albanian
@@ -3169,6 +4750,57 @@ public final class Locales {
             "",
             "пре {0}",
             "за {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/su.json
+    // ================================================================
+    // SU — Sundanese
+    // ================================================================
+    public static final DurationLocale SU = new DurationLocale(
+        "su",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} detik"),
+            UnitForms.simpleUnit("{n} menit"),
+            UnitForms.simpleUnit("{n} jam"),
+            UnitForms.simpleUnit("{n} dinten"),
+            UnitForms.simpleUnit("{n} minggu"),
+            UnitForms.simpleUnit("{n} sasih"),
+            UnitForms.simpleUnit("{n} taun")
+        ),
+        "{0} satengah",
+        ", ",
+        "ayeuna",
+        "{0} kapengker",
+        "dina {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} dtk"),
+            UnitForms.simpleUnit("{n} mnt"),
+            UnitForms.simpleUnit("{n} jam"),
+            UnitForms.simpleUnit("{n} dinten"),
+            UnitForms.simpleUnit("{n} minggu"),
+            UnitForms.simpleUnit("{n} sasih"),
+            UnitForms.simpleUnit("{n} taun"),
+            null,
+            null,
+            "{0} kapengker",
+            "dina {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}dtk"),
+            UnitForms.simpleUnit("{n}mnt"),
+            UnitForms.simpleUnit("{n}j"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}mg"),
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}t"),
+            "{n}½",
+            "",
+            "{0} kapengker",
+            "dina {0}"
         ),
         null,
         null
@@ -3378,6 +5010,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/tg.json
+    // ================================================================
+    // TG — Tajik
+    // ================================================================
+    public static final DurationLocale TG = new DurationLocale(
+        "tg",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} сония"),
+            UnitForms.simpleUnit("{n} дақиқа"),
+            UnitForms.simpleUnit("{n} соат"),
+            UnitForms.simpleUnit("{n} рӯз"),
+            UnitForms.simpleUnit("{n} ҳафта"),
+            UnitForms.simpleUnit("{n} моҳ"),
+            UnitForms.simpleUnit("{n} сол")
+        ),
+        "{0} ним",
+        ", ",
+        "ҳамин ҳоло",
+        "{0} пеш",
+        "баъди {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} сон"),
+            UnitForms.simpleUnit("{n} дақ"),
+            UnitForms.simpleUnit("{n} соат"),
+            UnitForms.simpleUnit("{n} р"),
+            UnitForms.simpleUnit("{n} ҳ"),
+            UnitForms.simpleUnit("{n} м"),
+            UnitForms.simpleUnit("{n} с"),
+            null,
+            null,
+            "{0} пеш",
+            "баъди {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}сон"),
+            UnitForms.simpleUnit("{n}дақ"),
+            UnitForms.simpleUnit("{n}соат"),
+            UnitForms.simpleUnit("{n}р"),
+            UnitForms.simpleUnit("{n}ҳ"),
+            UnitForms.simpleUnit("{n}м"),
+            UnitForms.simpleUnit("{n}с"),
+            "{n}½",
+            "",
+            "{0} пеш",
+            "баъди {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/th.json
     // ================================================================
     // TH — Thai
@@ -3424,6 +5107,108 @@ public final class Locales {
             "",
             "{0}ที่แล้ว",
             "ใน{0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/ti.json
+    // ================================================================
+    // TI — Tigrinya
+    // ================================================================
+    public static final DurationLocale TI = new DurationLocale(
+        "ti",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ካልኢት", PluralCategory.OTHER, "{n} ካልኢታት")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ደቒቓ", PluralCategory.OTHER, "{n} ደቒቓታት")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ሰዓት", PluralCategory.OTHER, "{n} ሰዓታት")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} መዓልቲ", PluralCategory.OTHER, "{n} መዓልትታት")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ሰሙን", PluralCategory.OTHER, "{n} ሰሙናት")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ወርሒ", PluralCategory.OTHER, "{n} ኣዋርሕ")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ዓመት", PluralCategory.OTHER, "{n} ዓመታት"))
+        ),
+        "{0} ተኹል",
+        "፣ ",
+        "ሕጂ",
+        "ቅድሚ {0}",
+        "ድሕሪ {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ካል"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ደቒ", PluralCategory.OTHER, "{n} ደቒቓ")),
+            UnitForms.simpleUnit("{n} ሰዓ"),
+            UnitForms.simpleUnit("{n} መዓልትታት"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ሰሙን", PluralCategory.OTHER, "{n} ሰሙናት")),
+            UnitForms.simpleUnit("{n} ኣዋርሕ"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ዓመት", PluralCategory.OTHER, "{n} ዓመታት")),
+            null,
+            null,
+            "ቅድሚ {0}",
+            "ድሕሪ {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ካ"),
+            UnitForms.simpleUnit("{n} ደ"),
+            UnitForms.simpleUnit("{n} ሰ"),
+            UnitForms.simpleUnit("{n} መ"),
+            UnitForms.simpleUnit("{n} ሰሙን"),
+            UnitForms.simpleUnit("{n} ወር"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ዓመት", PluralCategory.OTHER, "{n} ዓ")),
+            "{n}½",
+            "",
+            "ቅድሚ {0}",
+            "ድሕሪ {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/tk.json
+    // ================================================================
+    // TK — Turkmen
+    // ================================================================
+    public static final DurationLocale TK = new DurationLocale(
+        "tk",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} sekunt"),
+            UnitForms.simpleUnit("{n} minut"),
+            UnitForms.simpleUnit("{n} sagat"),
+            UnitForms.simpleUnit("{n} gün"),
+            UnitForms.simpleUnit("{n} hepde"),
+            UnitForms.simpleUnit("{n} aý"),
+            UnitForms.simpleUnit("{n} ýyl")
+        ),
+        "{0}½",
+        ", ",
+        "häzir",
+        "{0} öň",
+        "{0} soň",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sek"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} sag"),
+            UnitForms.simpleUnit("{n} g"),
+            UnitForms.simpleUnit("{n} h"),
+            UnitForms.simpleUnit("{n} a"),
+            UnitForms.simpleUnit("{n} ý"),
+            null,
+            null,
+            "{0} öň",
+            "{0} soň"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}sek"),
+            UnitForms.simpleUnit("{n}min"),
+            UnitForms.simpleUnit("{n}sag"),
+            UnitForms.simpleUnit("{n}g"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}a"),
+            UnitForms.simpleUnit("{n}ý"),
+            "{n}½",
+            "",
+            "{0} öň",
+            "{0} soň"
         ),
         null,
         null
@@ -3735,6 +5520,159 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/xh.json
+    // ================================================================
+    // XH — Xhosa
+    // ================================================================
+    public static final DurationLocale XH = new DurationLocale(
+        "xh",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umzuzwana {n}", PluralCategory.OTHER, "imizuzwana {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umzuzu {n}", PluralCategory.OTHER, "imizuzu {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iyure {n}", PluralCategory.OTHER, "iiyure {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "usuku {n}", PluralCategory.OTHER, "iintsuku {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iveki {n}", PluralCategory.OTHER, "iiveki {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "inyanga {n}", PluralCategory.OTHER, "iinyanga {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "unyaka {n}", PluralCategory.OTHER, "iminyaka {n}"))
+        ),
+        "{0} nehafu",
+        ", ",
+        "ngoku",
+        "kwi{0} edlulileyo",
+        "kwi{0}",
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umzuzwana {n}", PluralCategory.OTHER, "imizuzwana {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umzuzu {n}", PluralCategory.OTHER, "imizuzu {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iyure {n}", PluralCategory.OTHER, "iiyure {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "usuku {n}", PluralCategory.OTHER, "iintsuku {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iveki {n}", PluralCategory.OTHER, "iiveki {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iny. {n}", PluralCategory.OTHER, "iiny. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "uny. {n}", PluralCategory.OTHER, "imy. {n}")),
+            null,
+            null,
+            "kwi{0} edlulileyo",
+            "kwi{0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            "{n}½",
+            "",
+            "kwi{0} edlulileyo",
+            "kwi{0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/yo.json
+    // ================================================================
+    // YO — Yoruba
+    // ================================================================
+    public static final DurationLocale YO = new DurationLocale(
+        "yo",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("ìṣẹ́jú-àáyá {n}"),
+            UnitForms.simpleUnit("ìṣẹ́jú {n}"),
+            UnitForms.simpleUnit("wákàtí {n}"),
+            UnitForms.simpleUnit("ọjọ́ {n}"),
+            UnitForms.simpleUnit("ọ̀sẹ̀ {n}"),
+            UnitForms.simpleUnit("oṣù {n}"),
+            UnitForms.simpleUnit("ọdún {n}")
+        ),
+        "{0} àbọ̀",
+        ", ",
+        "ní báyìí",
+        "{0} sẹ́yìn",
+        "ní {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("ìṣẹ́jú-àáyá {n}"),
+            UnitForms.simpleUnit("ìṣẹ́jú {n}"),
+            UnitForms.simpleUnit("wákàtí {n}"),
+            UnitForms.simpleUnit("ọjọ́ {n}"),
+            UnitForms.simpleUnit("ọ̀sẹ̀ {n}"),
+            UnitForms.simpleUnit("oṣù {n}"),
+            UnitForms.simpleUnit("ọdún {n}"),
+            null,
+            null,
+            "{0} sẹ́yìn",
+            "ní {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            "{n}½",
+            "",
+            "{0} sẹ́yìn",
+            "ní {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/yue.json
+    // ================================================================
+    // YUE — Cantonese
+    // ================================================================
+    public static final DurationLocale YUE = new DurationLocale(
+        "yue",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n}秒"),
+            UnitForms.simpleUnit("{n}分鐘"),
+            UnitForms.simpleUnit("{n}個鐘頭"),
+            UnitForms.simpleUnit("{n}日"),
+            UnitForms.simpleUnit("{n}個星期"),
+            UnitForms.simpleUnit("{n}個月"),
+            UnitForms.simpleUnit("{n}年")
+        ),
+        "{0}半",
+        "",
+        "啱啱",
+        "{0}前",
+        "{0}之後",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}秒"),
+            UnitForms.simpleUnit("{n}分鐘"),
+            UnitForms.simpleUnit("{n}個鐘"),
+            UnitForms.simpleUnit("{n}日"),
+            UnitForms.simpleUnit("{n}個星期"),
+            UnitForms.simpleUnit("{n}個月"),
+            UnitForms.simpleUnit("{n}年"),
+            null,
+            null,
+            "{0}前",
+            "{0}之後"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}秒"),
+            UnitForms.simpleUnit("{n}分"),
+            UnitForms.simpleUnit("{n}時"),
+            UnitForms.simpleUnit("{n}日"),
+            UnitForms.simpleUnit("{n}週"),
+            UnitForms.simpleUnit("{n}月"),
+            UnitForms.simpleUnit("{n}年"),
+            "{n}½",
+            "",
+            "{0}前",
+            "{0}之後"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -3786,17 +5724,72 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/zu.json
+    // ================================================================
+    // ZU — Zulu
+    // ================================================================
+    public static final DurationLocale ZU = new DurationLocale(
+        "zu",
+        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "isekhondi {n}", PluralCategory.OTHER, "amasekhondi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umzuzu {n}", PluralCategory.OTHER, "imizuzu {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ihora {n}", PluralCategory.OTHER, "amahora {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "usuku {n}", PluralCategory.OTHER, "izinsuku {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iviki {n}", PluralCategory.OTHER, "amaviki {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "inyanga {n}", PluralCategory.OTHER, "izinyanga {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "unyaka {n}", PluralCategory.OTHER, "iminyaka {n}"))
+        ),
+        "{0} nohhafu",
+        ", ",
+        "khona manje",
+        "{0} edlule",
+        "ngo-{0}",
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "isekhondi {n}", PluralCategory.OTHER, "amasekhondi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umzuzu {n}", PluralCategory.OTHER, "imizuzu {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ihora {n}", PluralCategory.OTHER, "amahora {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "usuku {n}", PluralCategory.OTHER, "izinsuku {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iviki {n}", PluralCategory.OTHER, "amaviki {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "inyanga {n}", PluralCategory.OTHER, "izinyanga {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "unyaka {n}", PluralCategory.OTHER, "iminyaka {n}")),
+            null,
+            null,
+            "{0} edlule",
+            "ngo-{0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sk"),
+            UnitForms.simpleUnit("{n} mz"),
+            UnitForms.simpleUnit("{n} hr"),
+            UnitForms.simpleUnit("{n} ns"),
+            UnitForms.simpleUnit("{n} vk"),
+            UnitForms.simpleUnit("{n} ny"),
+            UnitForms.simpleUnit("{n} mk"),
+            "{n}½",
+            "",
+            "{0} edlule",
+            "ngo-{0}"
+        ),
+        null,
+        null
+    );
+
     public static final Map<String, DurationLocale> ALL;
     static {
-        Map<String, DurationLocale> map = new LinkedHashMap<>(71);
+        Map<String, DurationLocale> map = new LinkedHashMap<>(110);
+        map.put("af", AF);
+        map.put("ak", AK);
         map.put("am", AM);
         map.put("ar", AR);
         map.put("az", AZ);
+        map.put("be", BE);
         map.put("bg", BG);
         map.put("bn", BN);
         map.put("br", BR);
         map.put("bs", BS);
         map.put("ca", CA);
+        map.put("ceb", CEB);
         map.put("cs", CS);
         map.put("cy", CY);
         map.put("da", DA);
@@ -3807,29 +5800,47 @@ public final class Locales {
         map.put("et", ET);
         map.put("eu", EU);
         map.put("fa", FA);
+        map.put("ff", FF);
         map.put("fi", FI);
         map.put("fil", FIL);
         map.put("fr", FR);
         map.put("ga", GA);
         map.put("gd", GD);
+        map.put("gl", GL);
+        map.put("gn", GN);
         map.put("gu", GU);
         map.put("gv", GV);
+        map.put("ha", HA);
         map.put("he", HE);
         map.put("hi", HI);
         map.put("hr", HR);
+        map.put("ht", HT);
         map.put("hu", HU);
+        map.put("hy", HY);
         map.put("id", ID);
+        map.put("ig", IG);
+        map.put("is", IS);
         map.put("it", IT);
         map.put("ja", JA);
         map.put("jv", JV);
         map.put("ka", KA);
         map.put("kk", KK);
         map.put("km", KM);
+        map.put("kn", KN);
         map.put("ko", KO);
+        map.put("ku", KU);
         map.put("kw", KW);
+        map.put("ky", KY);
+        map.put("lg", LG);
+        map.put("ln", LN);
+        map.put("lo", LO);
         map.put("lt", LT);
         map.put("lv", LV);
+        map.put("mg", MG);
+        map.put("mi", MI);
         map.put("mk", MK);
+        map.put("ml", ML);
+        map.put("mn", MN);
         map.put("mr", MR);
         map.put("ms", MS);
         map.put("mt", MT);
@@ -3837,29 +5848,46 @@ public final class Locales {
         map.put("nb", NB);
         map.put("ne", NE);
         map.put("nl", NL);
+        map.put("ny", NY);
+        map.put("om", OM);
+        map.put("or", OR);
         map.put("pa", PA);
         map.put("pl", PL);
+        map.put("ps", PS);
         map.put("pt", PT);
+        map.put("qu", QU);
         map.put("ro", RO);
         map.put("ru", RU);
+        map.put("rw", RW);
+        map.put("sd", SD);
         map.put("shi", SHI);
         map.put("si", SI);
         map.put("sk", SK);
         map.put("sl", SL);
+        map.put("sn", SN);
+        map.put("so", SO);
         map.put("sq", SQ);
         map.put("sr", SR);
+        map.put("su", SU);
         map.put("sv", SV);
         map.put("sw", SW);
         map.put("ta", TA);
         map.put("te", TE);
+        map.put("tg", TG);
         map.put("th", TH);
+        map.put("ti", TI);
+        map.put("tk", TK);
         map.put("tr", TR);
         map.put("tzm", TZM);
         map.put("uk", UK);
         map.put("ur", UR);
         map.put("uz", UZ);
         map.put("vi", VI);
+        map.put("xh", XH);
+        map.put("yo", YO);
+        map.put("yue", YUE);
         map.put("zh", ZH);
+        map.put("zu", ZU);
         ALL = Collections.unmodifiableMap(map);
     }
 

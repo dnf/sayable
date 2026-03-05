@@ -15,12 +15,18 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 // GetLocale returns the locale for the given code, or nil if not found.
 func GetLocale(code string) *sdate.DateLocale {
 	switch code {
+	case "af":
+		return &AF
+	case "ak":
+		return &AK
 	case "am":
 		return &AM
 	case "ar":
 		return &AR
 	case "az":
 		return &AZ
+	case "be":
+		return &BE
 	case "bg":
 		return &BG
 	case "bn":
@@ -31,6 +37,8 @@ func GetLocale(code string) *sdate.DateLocale {
 		return &BS
 	case "ca":
 		return &CA
+	case "ceb":
+		return &CEB
 	case "cs":
 		return &CS
 	case "cy":
@@ -51,6 +59,8 @@ func GetLocale(code string) *sdate.DateLocale {
 		return &EU
 	case "fa":
 		return &FA
+	case "ff":
+		return &FF
 	case "fi":
 		return &FI
 	case "fil":
@@ -61,20 +71,34 @@ func GetLocale(code string) *sdate.DateLocale {
 		return &GA
 	case "gd":
 		return &GD
+	case "gl":
+		return &GL
+	case "gn":
+		return &GN
 	case "gu":
 		return &GU
 	case "gv":
 		return &GV
+	case "ha":
+		return &HA
 	case "he":
 		return &HE
 	case "hi":
 		return &HI
 	case "hr":
 		return &HR
+	case "ht":
+		return &HT
 	case "hu":
 		return &HU
+	case "hy":
+		return &HY
 	case "id":
 		return &ID
+	case "ig":
+		return &IG
+	case "is":
+		return &IS
 	case "it":
 		return &IT
 	case "ja":
@@ -87,16 +111,36 @@ func GetLocale(code string) *sdate.DateLocale {
 		return &KK
 	case "km":
 		return &KM
+	case "kn":
+		return &KN
 	case "ko":
 		return &KO
+	case "ku":
+		return &KU
 	case "kw":
 		return &KW
+	case "ky":
+		return &KY
+	case "lg":
+		return &LG
+	case "ln":
+		return &LN
+	case "lo":
+		return &LO
 	case "lt":
 		return &LT
 	case "lv":
 		return &LV
+	case "mg":
+		return &MG
+	case "mi":
+		return &MI
 	case "mk":
 		return &MK
+	case "ml":
+		return &ML
+	case "mn":
+		return &MN
 	case "mr":
 		return &MR
 	case "ms":
@@ -111,16 +155,30 @@ func GetLocale(code string) *sdate.DateLocale {
 		return &NE
 	case "nl":
 		return &NL
+	case "ny":
+		return &NY
+	case "om":
+		return &OM
+	case "or":
+		return &OR
 	case "pa":
 		return &PA
 	case "pl":
 		return &PL
+	case "ps":
+		return &PS
 	case "pt":
 		return &PT
+	case "qu":
+		return &QU
 	case "ro":
 		return &RO
 	case "ru":
 		return &RU
+	case "rw":
+		return &RW
+	case "sd":
+		return &SD
 	case "shi":
 		return &SHI
 	case "si":
@@ -129,10 +187,16 @@ func GetLocale(code string) *sdate.DateLocale {
 		return &SK
 	case "sl":
 		return &SL
+	case "sn":
+		return &SN
+	case "so":
+		return &SO
 	case "sq":
 		return &SQ
 	case "sr":
 		return &SR
+	case "su":
+		return &SU
 	case "sv":
 		return &SV
 	case "sw":
@@ -141,8 +205,14 @@ func GetLocale(code string) *sdate.DateLocale {
 		return &TA
 	case "te":
 		return &TE
+	case "tg":
+		return &TG
 	case "th":
 		return &TH
+	case "ti":
+		return &TI
+	case "tk":
+		return &TK
 	case "tr":
 		return &TR
 	case "tzm":
@@ -155,8 +225,16 @@ func GetLocale(code string) *sdate.DateLocale {
 		return &UZ
 	case "vi":
 		return &VI
+	case "xh":
+		return &XH
+	case "yo":
+		return &YO
+	case "yue":
+		return &YUE
 	case "zh":
 		return &ZH
+	case "zu":
+		return &ZU
 	default:
 		return nil
 	}

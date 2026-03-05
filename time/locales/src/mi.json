@@ -1,0 +1,56 @@
+{
+  "code": "mi",
+  "name": "Māori",
+  "clock": {
+    "hours": [
+      "tekau mā rua",
+      "tahi",
+      "rua",
+      "toru",
+      "whā",
+      "rima",
+      "ono",
+      "whitu",
+      "waru",
+      "iwa",
+      "tekau",
+      "tekau mā tahi"
+    ],
+    "midnight": "waenganui pō",
+    "noon": "poupoutanga o te rā",
+    "patterns": {
+      "0": "{h} karaka",
+      "5": "rima meneti i muri i te {h}",
+      "10": "tekau meneti i muri i te {h}",
+      "15": "hauwhā i muri i te {h}",
+      "20": "rua tekau meneti i muri i te {h}",
+      "25": "rua tekau mā rima meneti i muri i te {h}",
+      "30": "hāwhe i muri i te {h}",
+      "35": "rua tekau mā rima meneti ki te {next_h}",
+      "40": "rua tekau meneti ki te {next_h}",
+      "45": "hauwhā ki te {next_h}",
+      "50": "tekau meneti ki te {next_h}",
+      "55": "rima meneti ki te {next_h}"
+    }
+  },
+  "short": {
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

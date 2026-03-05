@@ -13,9 +13,75 @@ package sayabledate.locales
 import sayabledate.*
 
 /**
- * All 71 locale definitions for sayable-date.
+ * All 110 locale definitions for sayable-date.
  */
 public object Locales {
+
+    // Source: date/locales/src/af.json
+    // ================================================================
+    // AF — Afrikaans
+    // ================================================================
+    public val AF: DateLocale = DateLocale(
+        code = "af",
+        months = listOf("Januarie", "Februarie", "Maart", "April", "Mei", "Junie", "Julie", "Augustus", "September", "Oktober", "November", "Desember"),
+        weekdays = listOf("Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "vandag",
+        tomorrow = "môre",
+        yesterday = "gister",
+        dayAfterTomorrow = "oormôre",
+        dayBeforeYesterday = "eergister",
+        thisWeekday = "hierdie {weekday}",
+        nextWeekday = "volgende {weekday}",
+        lastWeekday = "verlede {weekday}",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Mrt", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"),
+            weekdays = listOf("So", "Ma", "Di", "Wo", "Do", "Vr", "Sa"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/ak.json
+    // ================================================================
+    // AK — Akan
+    // ================================================================
+    public val AK: DateLocale = DateLocale(
+        code = "ak",
+        months = listOf("Ɔpɛpɔn", "Ɔgyefuo", "Ɔbenem", "Oforisuo", "Kotonimma", "Ayɛwohomumu", "Kutawonkuku", "Ɔsannaa", "Ɛbɔ", "Ahinime", "Obubuo", "Ɔpenimba"),
+        weekdays = listOf("Kwasiada", "Ɛdwoada", "Ɛbenada", "Wukuada", "Yawoada", "Efiada", "Memeneda"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ɛnnɛ",
+        tomorrow = "ɔkyena",
+        yesterday = "nnora",
+        dayAfterTomorrow = "ɛkyena",
+        dayBeforeYesterday = "nnansa",
+        thisWeekday = "{weekday} yi",
+        nextWeekday = "{weekday} a ɛba",
+        lastWeekday = "{weekday} a etwaam",
+        short = CompactnessOverride(
+            months = listOf("Ɔpɛ", "Ɔgy", "Ɔbe", "Ofo", "Kot", "Ayɛ", "Kut", "Ɔsa", "Ɛbɔ", "Ahi", "Obu", "Ɔpe"),
+            weekdays = listOf("Kwa", "Ɛdw", "Ɛbe", "Wuk", "Yaw", "Efi", "Mem"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
 
     // Source: date/locales/src/am.json
     // ================================================================
@@ -113,6 +179,40 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}/{m}",
             datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/be.json
+    // ================================================================
+    // BE — Belarusian
+    // ================================================================
+    public val BE: DateLocale = DateLocale(
+        code = "be",
+        months = listOf("студзень", "люты", "сакавік", "красавік", "май", "чэрвень", "ліпень", "жнівень", "верасень", "кастрычнік", "лістапад", "снежань"),
+        weekdays = listOf("нядзеля", "панядзелак", "аўторак", "серада", "чацвер", "пятніца", "субота"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "сёння",
+        tomorrow = "заўтра",
+        yesterday = "учора",
+        dayAfterTomorrow = "паслязаўтра",
+        dayBeforeYesterday = "пазаўчора",
+        thisWeekday = "гэту {weekday}",
+        nextWeekday = "наступную {weekday}",
+        lastWeekday = "мінулую {weekday}",
+        monthsInDate = listOf("студзеня", "лютага", "сакавіка", "красавіка", "мая", "чэрвеня", "ліпеня", "жніўня", "верасня", "кастрычніка", "лістапада", "снежня"),
+        short = CompactnessOverride(
+            months = listOf("сту", "лют", "сак", "кра", "май", "чэр", "ліп", "жні", "вер", "кас", "ліс", "сне"),
+            weekdays = listOf("нд", "пн", "аў", "ср", "чц", "пт", "сб"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}.{m}.",
+            datePatternWithYear = "{d}.{m}.{yy}",
         ),
     )
 
@@ -276,6 +376,39 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}/{m}",
             datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/ceb.json
+    // ================================================================
+    // CEB — Cebuano
+    // ================================================================
+    public val CEB: DateLocale = DateLocale(
+        code = "ceb",
+        months = listOf("Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Septyembre", "Oktubre", "Nobyembre", "Disyembre"),
+        weekdays = listOf("Dominggo", "Lunes", "Martes", "Miyerkules", "Huwebes", "Biyernes", "Sabado"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{month} {day}",
+        datePatternWithYear = "{month} {day}, {year}",
+        today = "karong adlawa",
+        tomorrow = "ugma",
+        yesterday = "gahapon",
+        dayAfterTomorrow = "sunod ugma",
+        dayBeforeYesterday = "miaging gahapon",
+        thisWeekday = "karong {weekday}",
+        nextWeekday = "sunod nga {weekday}",
+        lastWeekday = "miaging {weekday}",
+        short = CompactnessOverride(
+            months = listOf("Ene", "Peb", "Mar", "Abr", "May", "Hun", "Hul", "Ago", "Sep", "Okt", "Nob", "Dis"),
+            weekdays = listOf("Dom", "Lun", "Mar", "Miy", "Huw", "Biy", "Sab"),
+            dayFormat = "{n}",
+            datePattern = "{month} {day}",
+            datePatternWithYear = "{month} {day}, {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{m}/{d}",
+            datePatternWithYear = "{m}/{d}/{yy}",
         ),
     )
 
@@ -611,6 +744,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/ff.json
+    // ================================================================
+    // FF — Fulah
+    // ================================================================
+    public val FF: DateLocale = DateLocale(
+        code = "ff",
+        months = listOf("Siilo", "Colte", "Mbooy", "Seeɗto", "Duujal", "Korse", "Morso", "Juko", "Siilto", "Yarkomaa", "Jolal", "Bowte"),
+        weekdays = listOf("Dewo", "Aaɓnde", "Mawbaare", "Njeslaare", "Naasaande", "Mawnde", "Hoore-biir"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "hannde",
+        tomorrow = "jaŋngo",
+        yesterday = "haŋki",
+        dayAfterTomorrow = "ɗoɓi",
+        dayBeforeYesterday = "haŋki-haŋki",
+        thisWeekday = "{weekday} oo",
+        nextWeekday = "{weekday} aroowo",
+        lastWeekday = "{weekday} ɓennuɗo",
+        short = CompactnessOverride(
+            months = listOf("Sii", "Col", "Mbo", "See", "Duu", "Kor", "Mor", "Juk", "Slt", "Yar", "Jol", "Bow"),
+            weekdays = listOf("Dew", "Aaɓ", "Maw", "Nje", "Naa", "Maw", "Hoo"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/fi.json
     // ================================================================
     // FI — Finnish
@@ -777,6 +943,72 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/gl.json
+    // ================================================================
+    // GL — Galician
+    // ================================================================
+    public val GL: DateLocale = DateLocale(
+        code = "gl",
+        months = listOf("xaneiro", "febreiro", "marzo", "abril", "maio", "xuño", "xullo", "agosto", "setembro", "outubro", "novembro", "decembro"),
+        weekdays = listOf("domingo", "luns", "martes", "mércores", "xoves", "venres", "sábado"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} de {month}",
+        datePatternWithYear = "{day} de {month} de {year}",
+        today = "hoxe",
+        tomorrow = "mañá",
+        yesterday = "onte",
+        dayAfterTomorrow = "pasadomañá",
+        dayBeforeYesterday = "antonte",
+        thisWeekday = "este {weekday}",
+        nextWeekday = "o próximo {weekday}",
+        lastWeekday = "o pasado {weekday}",
+        short = CompactnessOverride(
+            months = listOf("xan", "feb", "mar", "abr", "mai", "xuñ", "xul", "ago", "set", "out", "nov", "dec"),
+            weekdays = listOf("dom", "lun", "mar", "mér", "xov", "ven", "sáb"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/gn.json
+    // ================================================================
+    // GN — Guarani
+    // ================================================================
+    public val GN: DateLocale = DateLocale(
+        code = "gn",
+        months = listOf("Jasyteĩ", "Jasykõi", "Jasyapy", "Jasyrundy", "Jasypo", "Jasypoteĩ", "Jasypokõi", "Jasypoapy", "Jasyporundy", "Jasypa", "Jasypateĩ", "Jasypakõi"),
+        weekdays = listOf("Arateĩ", "Arakõi", "Araapy", "Ararundy", "Arapo", "Arapoteĩ", "Arapokõi"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ko'ágã",
+        tomorrow = "ko'ẽrõ",
+        yesterday = "kuehe",
+        dayAfterTomorrow = "ko'ẽrõ rire",
+        dayBeforeYesterday = "kuehe ñepyrũme",
+        thisWeekday = "ko {weekday}",
+        nextWeekday = "{weekday} ou vave",
+        lastWeekday = "{weekday} ohasava'ekue",
+        short = CompactnessOverride(
+            months = listOf("Jte", "Jkõ", "Jap", "Jru", "Jpo", "Jpte", "Jpkõ", "Jpap", "Jpr", "Jpa", "Jpte", "Jpkõ"),
+            weekdays = listOf("Art", "Ark", "Ara", "Arr", "Arp", "Apt", "Apk"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/gu.json
     // ================================================================
     // GU — Gujarati
@@ -831,6 +1063,39 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("JGeur", "TArr", "Mayr", "Aver", "Boal", "MSour", "JSour", "Luan", "MFouy", "JFouy", "MHoun", "MNoll"),
             weekdays = listOf("Jed", "Jel", "Jem", "Jer", "Jerd", "Jeh", "Jes"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/ha.json
+    // ================================================================
+    // HA — Hausa
+    // ================================================================
+    public val HA: DateLocale = DateLocale(
+        code = "ha",
+        months = listOf("Janairu", "Fabrairu", "Maris", "Afrilu", "Mayu", "Yuni", "Yuli", "Agusta", "Satumba", "Oktoba", "Nuwamba", "Disamba"),
+        weekdays = listOf("Lahadi", "Litinin", "Talata", "Laraba", "Alhamis", "Jummaʼa", "Asabar"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "yau",
+        tomorrow = "gobe",
+        yesterday = "jiya",
+        dayAfterTomorrow = "jibi",
+        dayBeforeYesterday = "shekaranjiya",
+        thisWeekday = "wannan {weekday}",
+        nextWeekday = "{weekday} mai zuwa",
+        lastWeekday = "{weekday} da ya wuce",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Fab", "Mar", "Afr", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis"),
+            weekdays = listOf("Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -941,6 +1206,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/ht.json
+    // ================================================================
+    // HT — Haitian Creole
+    // ================================================================
+    public val HT: DateLocale = DateLocale(
+        code = "ht",
+        months = listOf("Janvye", "Fevriye", "Mas", "Avril", "Me", "Jen", "Jiyè", "Out", "Septanm", "Oktòb", "Novanm", "Desanm"),
+        weekdays = listOf("Dimanch", "Lendi", "Madi", "Mèkredi", "Jedi", "Vandredi", "Samdi"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "jodi a",
+        tomorrow = "demen",
+        yesterday = "yè",
+        dayAfterTomorrow = "aprè demen",
+        dayBeforeYesterday = "avan yè",
+        thisWeekday = "{weekday} sa a",
+        nextWeekday = "{weekday} pwochen",
+        lastWeekday = "{weekday} pase",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Fev", "Mas", "Avr", "Me", "Jen", "Jiy", "Out", "Sep", "Okt", "Nov", "Des"),
+            weekdays = listOf("Dim", "Len", "Mad", "Mèk", "Jed", "Van", "Sam"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/hu.json
     // ================================================================
     // HU — Hungarian
@@ -974,6 +1272,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/hy.json
+    // ================================================================
+    // HY — Armenian
+    // ================================================================
+    public val HY: DateLocale = DateLocale(
+        code = "hy",
+        months = listOf("Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"),
+        weekdays = listOf("Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "այսօր",
+        tomorrow = "վաղը",
+        yesterday = "երեկ",
+        dayAfterTomorrow = "վաղը մյուս օրը",
+        dayBeforeYesterday = "երեկ մյուս օրը",
+        thisWeekday = "այս {weekday}",
+        nextWeekday = "հաջորդ {weekday}",
+        lastWeekday = "անցած {weekday}",
+        short = CompactnessOverride(
+            months = listOf("Հնվ", "Փտր", "Մրտ", "Ապր", "Մյս", "Հնս", "Հլս", "Օգս", "Սեպ", "Հկտ", "Նոյ", "Դեկ"),
+            weekdays = listOf("Կիր", "Երկ", "Երք", "Չրք", "Հնգ", "Ուր", "Շբթ"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/id.json
     // ================================================================
     // ID — Indonesian
@@ -1004,6 +1335,72 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}/{m}",
             datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/ig.json
+    // ================================================================
+    // IG — Igbo
+    // ================================================================
+    public val IG: DateLocale = DateLocale(
+        code = "ig",
+        months = listOf("Jenụwarị", "Febrụwarị", "Maachị", "Epreel", "Mee", "Juun", "Julaị", "Ọgọọst", "Septemba", "Ọktoba", "Novemba", "Disemba"),
+        weekdays = listOf("Ụbọchị Ụka", "Mọnde", "Tụụzdee", "Wenezdee", "Tọọzdee", "Fraịdee", "Satọdee"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "taa",
+        tomorrow = "echi",
+        yesterday = "ụnyaahụ",
+        dayAfterTomorrow = "mbọ echi",
+        dayBeforeYesterday = "ụnyaahụ nke gara aga",
+        thisWeekday = "{weekday} a",
+        nextWeekday = "{weekday} na-abịa",
+        lastWeekday = "{weekday} gara aga",
+        short = CompactnessOverride(
+            months = listOf("Jen", "Feb", "Maa", "Epr", "Mee", "Jun", "Jul", "Ọgọ", "Sep", "Ọkt", "Nov", "Dis"),
+            weekdays = listOf("Ụka", "Mọn", "Tụụ", "Wen", "Tọọ", "Fra", "Sat"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/is.json
+    // ================================================================
+    // IS — Icelandic
+    // ================================================================
+    public val IS: DateLocale = DateLocale(
+        code = "is",
+        months = listOf("janúar", "febrúar", "mars", "apríl", "maí", "júní", "júlí", "ágúst", "september", "október", "nóvember", "desember"),
+        weekdays = listOf("sunnudagur", "mánudagur", "þriðjudagur", "miðvikudagur", "fimmtudagur", "föstudagur", "laugardagur"),
+        dayFormat = "{n}.",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "í dag",
+        tomorrow = "á morgun",
+        yesterday = "í gær",
+        dayAfterTomorrow = "á yfirmorgun",
+        dayBeforeYesterday = "í fyrradag",
+        thisWeekday = "{weekday}",
+        nextWeekday = "næsta {weekday}",
+        lastWeekday = "síðasta {weekday}",
+        short = CompactnessOverride(
+            months = listOf("jan", "feb", "mar", "apr", "maí", "jún", "júl", "ágú", "sep", "okt", "nóv", "des"),
+            weekdays = listOf("sun", "mán", "þri", "mið", "fim", "fös", "lau"),
+            dayFormat = "{n}.",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}.{m}.",
+            datePatternWithYear = "{d}.{m}.{yy}",
         ),
     )
 
@@ -1205,6 +1602,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/kn.json
+    // ================================================================
+    // KN — Kannada
+    // ================================================================
+    public val KN: DateLocale = DateLocale(
+        code = "kn",
+        months = listOf("ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"),
+        weekdays = listOf("ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ಇಂದು",
+        tomorrow = "ನಾಳೆ",
+        yesterday = "ನಿನ್ನೆ",
+        dayAfterTomorrow = "ನಾಡಿದ್ದು",
+        dayBeforeYesterday = "ಮೊನ್ನೆ",
+        thisWeekday = "ಈ {weekday}",
+        nextWeekday = "ಮುಂದಿನ {weekday}",
+        lastWeekday = "ಕಳೆದ {weekday}",
+        short = CompactnessOverride(
+            months = listOf("ಜನ", "ಫೆಬ್ರ", "ಮಾರ್ಚ್", "ಏಪ್ರಿ", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗ", "ಸೆಪ್ಟೆಂ", "ಅಕ್ಟೋ", "ನವೆಂ", "ಡಿಸೆಂ"),
+            weekdays = listOf("ಭಾನು", "ಸೋಮ", "ಮಂಗಳ", "ಬುಧ", "ಗುರು", "ಶುಕ್ರ", "ಶನಿ"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/ko.json
     // ================================================================
     // KO — Korean
@@ -1238,6 +1668,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/ku.json
+    // ================================================================
+    // KU — Kurdish
+    // ================================================================
+    public val KU: DateLocale = DateLocale(
+        code = "ku",
+        months = listOf("Rêbendan", "Reşemî", "Adar", "Avrêl", "Gulan", "Pûşper", "Tîrmeh", "Tebax", "Îlon", "Cotmeh", "Mijdar", "Berfanbar"),
+        weekdays = listOf("Yekşem", "Duşem", "Sêşem", "Çarşem", "Pêncşem", "Înî", "Şemî"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "îro",
+        tomorrow = "sibê",
+        yesterday = "duh",
+        dayAfterTomorrow = "dotira",
+        dayBeforeYesterday = "pêroj",
+        thisWeekday = "vê {weekday}",
+        nextWeekday = "{weekday}a bê",
+        lastWeekday = "{weekday}a borî",
+        short = CompactnessOverride(
+            months = listOf("Rêb", "Reş", "Ada", "Avr", "Gul", "Pûş", "Tîr", "Teb", "Îlo", "Cot", "Mij", "Ber"),
+            weekdays = listOf("Yşm", "Dşm", "Sşm", "Çşm", "Pşm", "Înî", "Şmî"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/kw.json
     // ================================================================
     // KW — Cornish
@@ -1259,6 +1722,138 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("Gen", "Hwe", "Meu", "Ebr", "Me", "Met", "Gor", "Est", "Gwy", "Hed", "Du", "Kev"),
             weekdays = listOf("Sul", "Lun", "Mth", "Mhr", "Yow", "Gwe", "Sad"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/ky.json
+    // ================================================================
+    // KY — Kyrgyz
+    // ================================================================
+    public val KY: DateLocale = DateLocale(
+        code = "ky",
+        months = listOf("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"),
+        weekdays = listOf("Жекшемби", "Дүйшөмбү", "Шейшемби", "Шаршемби", "Бейшемби", "Жума", "Ишемби"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "бүгүн",
+        tomorrow = "эртең",
+        yesterday = "кечээ",
+        dayAfterTomorrow = "бүрсүгүнү",
+        dayBeforeYesterday = "мурунку күнү",
+        thisWeekday = "бул {weekday}",
+        nextWeekday = "кийинки {weekday}",
+        lastWeekday = "өткөн {weekday}",
+        short = CompactnessOverride(
+            months = listOf("Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"),
+            weekdays = listOf("Жек", "Дүй", "Шей", "Шар", "Бей", "Жум", "Ише"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/lg.json
+    // ================================================================
+    // LG — Luganda
+    // ================================================================
+    public val LG: DateLocale = DateLocale(
+        code = "lg",
+        months = listOf("Janwali", "Febwali", "Marisi", "Apuli", "Mayi", "Yuni", "Yuli", "Agositi", "Seputemba", "Okitobba", "Novemba", "Desemba"),
+        weekdays = listOf("Sabbiiti", "Balaza", "Lwakubiri", "Lwakusatu", "Lwakuna", "Lwakutaano", "Lwamukaaga"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "leero",
+        tomorrow = "enkya",
+        yesterday = "jjo",
+        dayAfterTomorrow = "enkya ogwa",
+        dayBeforeYesterday = "jjo edda",
+        thisWeekday = "{weekday} eno",
+        nextWeekday = "{weekday} eddirira",
+        lastWeekday = "{weekday} eggudde",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Mar", "Apu", "May", "Yun", "Yul", "Ago", "Sep", "Oki", "Nov", "Des"),
+            weekdays = listOf("Sab", "Bal", "Lbi", "Lst", "Lkn", "Lkt", "Lmk"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/ln.json
+    // ================================================================
+    // LN — Lingala
+    // ================================================================
+    public val LN: DateLocale = DateLocale(
+        code = "ln",
+        months = listOf("Yanwáli", "Febwáli", "Mársi", "Apríli", "Máyi", "Yúni", "Yúli", "Augústu", "Sɛtɛ́mbɛ", "Ɔkɔtɔ́bɛ", "Novɛ́mbɛ", "Dɛsɛ́mbɛ"),
+        weekdays = listOf("Lomíngo", "Mokɔlɔ ya libosó", "Mokɔlɔ ya míbalé", "Mokɔlɔ ya mísáto", "Mokɔlɔ ya mínéi", "Mokɔlɔ ya mítáno", "Mpɔ́sɔ"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "lɛlɔ́",
+        tomorrow = "lóbi",
+        yesterday = "lóbi elékí",
+        dayAfterTomorrow = "lóbi na nsima",
+        dayBeforeYesterday = "lóbi elékí mpenza",
+        thisWeekday = "{weekday} oyo",
+        nextWeekday = "{weekday} ezalí koya",
+        lastWeekday = "{weekday} elékí",
+        short = CompactnessOverride(
+            months = listOf("Yan", "Feb", "Már", "Apr", "Máy", "Yún", "Yúl", "Aug", "Sɛt", "Ɔkɔ", "Nov", "Dɛs"),
+            weekdays = listOf("Lom", "Lib", "Míb", "Mís", "Mín", "Mít", "Mpɔ"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/lo.json
+    // ================================================================
+    // LO — Lao
+    // ================================================================
+    public val LO: DateLocale = DateLocale(
+        code = "lo",
+        months = listOf("ມັງກອນ", "ກຸມພາ", "ມີນາ", "ເມສາ", "ພຶດສະພາ", "ມິຖຸນາ", "ກໍລະກົດ", "ສິງຫາ", "ກັນຍາ", "ຕຸລາ", "ພະຈິກ", "ທັນວາ"),
+        weekdays = listOf("ວັນອາທິດ", "ວັນຈັນ", "ວັນອັງຄານ", "ວັນພຸດ", "ວັນພະຫັດ", "ວັນສຸກ", "ວັນເສົາ"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ມື້ນີ້",
+        tomorrow = "ມື້ອື່ນ",
+        yesterday = "ມື້ວານ",
+        dayAfterTomorrow = "ມື້ຮື",
+        dayBeforeYesterday = "ມື້ກ່ອນ",
+        thisWeekday = "{weekday}ນີ້",
+        nextWeekday = "{weekday}ໜ້າ",
+        lastWeekday = "{weekday}ແລ້ວ",
+        short = CompactnessOverride(
+            months = listOf("ມ.ກ.", "ກ.ພ.", "ມ.ນ.", "ມ.ສ.", "ພ.ພ.", "ມ.ຖ.", "ກ.ລ.", "ສ.ຫ.", "ກ.ຍ.", "ຕ.ລ.", "ພ.ຈ.", "ທ.ວ."),
+            weekdays = listOf("ອາທິດ", "ຈັນ", "ອັງຄານ", "ພຸດ", "ພະຫັດ", "ສຸກ", "ເສົາ"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -1336,6 +1931,72 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/mg.json
+    // ================================================================
+    // MG — Malagasy
+    // ================================================================
+    public val MG: DateLocale = DateLocale(
+        code = "mg",
+        months = listOf("Janoary", "Febroary", "Martsa", "Aprily", "Mey", "Jona", "Jolay", "Aogositra", "Septambra", "Oktobra", "Novambra", "Desambra"),
+        weekdays = listOf("Alahady", "Alatsinainy", "Talata", "Alarobia", "Alakamisy", "Zoma", "Asabotsy"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "anio",
+        tomorrow = "rahampitso",
+        yesterday = "omaly",
+        dayAfterTomorrow = "rahafakampitso",
+        dayBeforeYesterday = "afakomaly",
+        thisWeekday = "ity {weekday} ity",
+        nextWeekday = "{weekday} ho avy",
+        lastWeekday = "{weekday} lasa",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Mar", "Apr", "Mey", "Jon", "Jol", "Aog", "Sep", "Okt", "Nov", "Des"),
+            weekdays = listOf("Alah", "Alats", "Tal", "Alar", "Alak", "Zom", "Asab"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/mi.json
+    // ================================================================
+    // MI — Māori
+    // ================================================================
+    public val MI: DateLocale = DateLocale(
+        code = "mi",
+        months = listOf("Kohi-tātea", "Hui-tanguru", "Poutū-te-rangi", "Paenga-whāwhā", "Haratua", "Pipiri", "Hōngongoi", "Here-turi-kōkā", "Mahuru", "Whiringa-ā-nuku", "Whiringa-ā-rangi", "Hakihea"),
+        weekdays = listOf("Rātapu", "Rāhina", "Rātū", "Rāapa", "Rāpare", "Rāmere", "Rāhoroi"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "i tēnei rā",
+        tomorrow = "āpōpō",
+        yesterday = "inanahi",
+        dayAfterTomorrow = "tērā āpōpō",
+        dayBeforeYesterday = "tērā inanahi",
+        thisWeekday = "tēnei {weekday}",
+        nextWeekday = "{weekday} e heke mai nei",
+        lastWeekday = "{weekday} kua hori",
+        short = CompactnessOverride(
+            months = listOf("Koh", "Hui", "Pou", "Pae", "Har", "Pip", "Hōn", "Her", "Mah", "Whi", "Whr", "Hak"),
+            weekdays = listOf("Tap", "Hin", "Tū", "Apa", "Par", "Mer", "Hor"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/mk.json
     // ================================================================
     // MK — Macedonian
@@ -1366,6 +2027,72 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}.{m}.",
             datePatternWithYear = "{d}.{m}.{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/ml.json
+    // ================================================================
+    // ML — Malayalam
+    // ================================================================
+    public val ML: DateLocale = DateLocale(
+        code = "ml",
+        months = listOf("ജനുവരി", "ഫെബ്രുവരി", "മാർച്ച്", "ഏപ്രിൽ", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗസ്റ്റ്", "സെപ്റ്റംബർ", "ഒക്ടോബർ", "നവംബർ", "ഡിസംബർ"),
+        weekdays = listOf("ഞായറാഴ്ച", "തിങ്കളാഴ്ച", "ചൊവ്വാഴ്ച", "ബുധനാഴ്ച", "വ്യാഴാഴ്ച", "വെള്ളിയാഴ്ച", "ശനിയാഴ്ച"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ഇന്ന്",
+        tomorrow = "നാളെ",
+        yesterday = "ഇന്നലെ",
+        dayAfterTomorrow = "മറ്റന്നാൾ",
+        dayBeforeYesterday = "മിനിഞ്ഞാന്ന്",
+        thisWeekday = "ഈ {weekday}",
+        nextWeekday = "അടുത്ത {weekday}",
+        lastWeekday = "കഴിഞ്ഞ {weekday}",
+        short = CompactnessOverride(
+            months = listOf("ജനു", "ഫെബ്രു", "മാർ", "ഏപ്രി", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗ", "സെപ്റ്റം", "ഒക്ടോ", "നവം", "ഡിസം"),
+            weekdays = listOf("ഞായർ", "തിങ്കൾ", "ചൊവ്വ", "ബുധൻ", "വ്യാഴം", "വെള്ളി", "ശനി"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/mn.json
+    // ================================================================
+    // MN — Mongolian
+    // ================================================================
+    public val MN: DateLocale = DateLocale(
+        code = "mn",
+        months = listOf("Нэгдүгээр сар", "Хоёрдугаар сар", "Гуравдугаар сар", "Дөрөвдүгээр сар", "Тавдугаар сар", "Зургаадугаар сар", "Долоодугаар сар", "Наймдугаар сар", "Есдүгээр сар", "Аравдугаар сар", "Арван нэгдүгээр сар", "Арван хоёрдугаар сар"),
+        weekdays = listOf("Ням", "Даваа", "Мягмар", "Лхагва", "Пүрэв", "Баасан", "Бямба"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{month} {day}",
+        datePatternWithYear = "{year} оны {month} {day}",
+        today = "өнөөдөр",
+        tomorrow = "маргааш",
+        yesterday = "өчигдөр",
+        dayAfterTomorrow = "нөгөөдөр",
+        dayBeforeYesterday = "уржигдар",
+        thisWeekday = "энэ {weekday}",
+        nextWeekday = "ирэх {weekday}",
+        lastWeekday = "өнгөрсөн {weekday}",
+        short = CompactnessOverride(
+            months = listOf("1-р сар", "2-р сар", "3-р сар", "4-р сар", "5-р сар", "6-р сар", "7-р сар", "8-р сар", "9-р сар", "10-р сар", "11-р сар", "12-р сар"),
+            weekdays = listOf("Ня", "Да", "Мя", "Лх", "Пү", "Ба", "Бя"),
+            dayFormat = "{n}",
+            datePattern = "{month} {day}",
+            datePatternWithYear = "{year} оны {month} {day}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{yy}/{m}/{d}",
+            datePatternWithYear = "{yy}/{m}/{d}",
         ),
     )
 
@@ -1600,6 +2327,105 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/ny.json
+    // ================================================================
+    // NY — Chichewa
+    // ================================================================
+    public val NY: DateLocale = DateLocale(
+        code = "ny",
+        months = listOf("Januwale", "Febuluwale", "Matchi", "Epulo", "Meyi", "Juni", "Julaye", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba"),
+        weekdays = listOf("Lamulungu", "Lolemba", "Lachiwiri", "Lachitatu", "Lachinayi", "Lachisanu", "Loweruka"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "lero",
+        tomorrow = "mawa",
+        yesterday = "dzulo",
+        dayAfterTomorrow = "mkucha",
+        dayBeforeYesterday = "dzana",
+        thisWeekday = "{weekday} ino",
+        nextWeekday = "{weekday} yotsatira",
+        lastWeekday = "{weekday} yatha",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Mat", "Epu", "Mey", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis"),
+            weekdays = listOf("Lam", "Lol", "Lch", "Lct", "Lcn", "Lcs", "Low"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/om.json
+    // ================================================================
+    // OM — Oromo
+    // ================================================================
+    public val OM: DateLocale = DateLocale(
+        code = "om",
+        months = listOf("Amajjii", "Guraandhala", "Bitooteessa", "Elba", "Caamsa", "Waxabajjii", "Adooleessa", "Hagayya", "Fuulbana", "Onkololeessa", "Sadaasa", "Muddee"),
+        weekdays = listOf("Dilbata", "Wiixata", "Qibxata", "Roobii", "Kamiisa", "Jimaata", "Sanbata"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "har'a",
+        tomorrow = "boru",
+        yesterday = "kaleessa",
+        dayAfterTomorrow = "iftaan",
+        dayBeforeYesterday = "kalee dheengaddaa",
+        thisWeekday = "{weekday} kana",
+        nextWeekday = "{weekday} itti aanu",
+        lastWeekday = "{weekday} darbe",
+        short = CompactnessOverride(
+            months = listOf("Ama", "Gur", "Bit", "Elb", "Cam", "Wax", "Ado", "Hag", "Ful", "Onk", "Sad", "Mud"),
+            weekdays = listOf("Dil", "Wix", "Qib", "Rob", "Kam", "Jim", "San"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/or.json
+    // ================================================================
+    // OR — Odia
+    // ================================================================
+    public val OR: DateLocale = DateLocale(
+        code = "or",
+        months = listOf("ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଏପ୍ରିଲ", "ମଇ", "ଜୁନ", "ଜୁಲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"),
+        weekdays = listOf("ରବିବାର", "ସୋମବାର", "ମଙ୍ଗଳବାର", "ବୁଧବାର", "ଗୁରୁବାର", "ଶୁକ୍ରବାର", "ଶନିବାର"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ଆଜି",
+        tomorrow = "ଆସନ୍ତାକାଲି",
+        yesterday = "ଗତକାଲି",
+        dayAfterTomorrow = "ପରଶି",
+        dayBeforeYesterday = "ଗତ ପରଶି",
+        thisWeekday = "ଏହି {weekday}",
+        nextWeekday = "ଆସନ୍ତା {weekday}",
+        lastWeekday = "ଗତ {weekday}",
+        short = CompactnessOverride(
+            months = listOf("ଜାନୁ", "ଫେବୃ", "ମାର୍ଚ୍ଚ", "ଏପ୍ରି", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗ", "ସେପ୍ଟେ", "ଅକ୍ଟୋ", "ନଭେ", "ଡିସେ"),
+            weekdays = listOf("ରବି", "ସୋମ", "ମଙ୍ଗଳ", "ବୁଧ", "ଗୁରୁ", "ଶୁକ୍ର", "ଶନି"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/pa.json
     // ================================================================
     // PA — Punjabi
@@ -1667,6 +2493,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/ps.json
+    // ================================================================
+    // PS — Pashto
+    // ================================================================
+    public val PS: DateLocale = DateLocale(
+        code = "ps",
+        months = listOf("جنوري", "فبروري", "مارچ", "اپریل", "مۍ", "جون", "جولای", "اګست", "سپتمبر", "اکتوبر", "نومبر", "دسمبر"),
+        weekdays = listOf("یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "نن",
+        tomorrow = "سبا",
+        yesterday = "پرون",
+        dayAfterTomorrow = "بل سبا",
+        dayBeforeYesterday = "بل پرون",
+        thisWeekday = "دا {weekday}",
+        nextWeekday = "راتلونکې {weekday}",
+        lastWeekday = "تېره {weekday}",
+        short = CompactnessOverride(
+            months = listOf("جنو", "فبر", "مار", "اپر", "مۍ", "جون", "جول", "اګس", "سپت", "اکت", "نوم", "دسم"),
+            weekdays = listOf("یک", "دو", "سه", "چه", "پن", "جم", "شن"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/pt.json
     // ================================================================
     // PT — Portuguese
@@ -1690,6 +2549,39 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"),
             weekdays = listOf("dom", "seg", "ter", "qua", "qui", "sex", "sáb"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/qu.json
+    // ================================================================
+    // QU — Quechua
+    // ================================================================
+    public val QU: DateLocale = DateLocale(
+        code = "qu",
+        months = listOf("Qhulla puquy", "Hatun puquy", "Pawqar waray", "Ayriwa", "Aymuray", "Inti raymi", "Anta sitwa", "Qhapaq sitwa", "Uma raymi", "Kantaray", "Ayamarq'a", "Qhapaq raymi"),
+        weekdays = listOf("Intichaw", "Killachaw", "Atipachaw", "Quyllurchaw", "Illapachaw", "Ch'askachaw", "K'uychichaw"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "kunan",
+        tomorrow = "paqarin",
+        yesterday = "qayna",
+        dayAfterTomorrow = "minchha",
+        dayBeforeYesterday = "qayna p'unchaw",
+        thisWeekday = "kay {weekday}",
+        nextWeekday = "hamuq {weekday}",
+        lastWeekday = "qayna {weekday}",
+        short = CompactnessOverride(
+            months = listOf("Qhu", "Hat", "Paw", "Ayr", "Aym", "Int", "Ant", "Qha", "Uma", "Kan", "Aya", "Qra"),
+            weekdays = listOf("Int", "Kil", "Ati", "Quy", "Ill", "Ch'a", "K'uy"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -1758,6 +2650,72 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"),
             weekdays = listOf("вс", "пн", "вт", "ср", "чт", "пт", "сб"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/rw.json
+    // ================================================================
+    // RW — Kinyarwanda
+    // ================================================================
+    public val RW: DateLocale = DateLocale(
+        code = "rw",
+        months = listOf("Mutarama", "Gashyantare", "Werurwe", "Mata", "Gicurasi", "Kamena", "Nyakanga", "Kanama", "Nzeli", "Ukwakira", "Ugushyingo", "Ukuboza"),
+        weekdays = listOf("Ku cyumweru", "Kuwa mbere", "Kuwa kabiri", "Kuwa gatatu", "Kuwa kane", "Kuwa gatanu", "Kuwa gatandatu"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "uyu munsi",
+        tomorrow = "ejo",
+        yesterday = "ejo hashize",
+        dayAfterTomorrow = "ejobundi",
+        dayBeforeYesterday = "juzi",
+        thisWeekday = "iyi {weekday}",
+        nextWeekday = "{weekday} ntaha",
+        lastWeekday = "{weekday} ishize",
+        short = CompactnessOverride(
+            months = listOf("Mut", "Gas", "Wer", "Mat", "Gic", "Kam", "Nya", "Kan", "Nze", "Ukw", "Ugu", "Uku"),
+            weekdays = listOf("Cyu", "Mbe", "Kab", "Gat", "Kan", "Gat", "Gnd"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/sd.json
+    // ================================================================
+    // SD — Sindhi
+    // ================================================================
+    public val SD: DateLocale = DateLocale(
+        code = "sd",
+        months = listOf("جنوري", "فيبروري", "مارچ", "اپريل", "مئي", "جون", "جولاءِ", "آگسٽ", "سيپٽمبر", "آڪٽوبر", "نومبر", "ڊسمبر"),
+        weekdays = listOf("آچر", "سومر", "اڱارو", "اربع", "خميس", "جمعو", "ڇنڇر"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "اڄ",
+        tomorrow = "سڀاڻي",
+        yesterday = "ڪالهه",
+        dayAfterTomorrow = "پرسوں",
+        dayBeforeYesterday = "پرسوں",
+        thisWeekday = "هن {weekday}",
+        nextWeekday = "ايندڙ {weekday}",
+        lastWeekday = "گذريل {weekday}",
+        short = CompactnessOverride(
+            months = listOf("جن", "فيب", "مار", "اپر", "مئي", "جون", "جول", "آگس", "سيپ", "آڪٽ", "نوم", "ڊسم"),
+            weekdays = listOf("آچ", "سوم", "اڱا", "ارب", "خم", "جمع", "ڇن"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -1900,6 +2858,72 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/sn.json
+    // ================================================================
+    // SN — Shona
+    // ================================================================
+    public val SN: DateLocale = DateLocale(
+        code = "sn",
+        months = listOf("Ndira", "Kukadzi", "Kurume", "Kubvumbi", "Chivabvu", "Chikumi", "Chikunguru", "Nyamavhuvhu", "Gunyana", "Gumiguru", "Mbudzi", "Zvita"),
+        weekdays = listOf("Svondo", "Muvhuro", "Chipiri", "Chitatu", "China", "Chishanu", "Mugovera"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "nhasi",
+        tomorrow = "mangwana",
+        yesterday = "nezuro",
+        dayAfterTomorrow = "mangwanani",
+        dayBeforeYesterday = "nezuro rakapera",
+        thisWeekday = "{weekday} ino",
+        nextWeekday = "{weekday} inotevera",
+        lastWeekday = "{weekday} yapfuura",
+        short = CompactnessOverride(
+            months = listOf("Ndi", "Kuk", "Kur", "Kub", "Chi", "Chk", "Chg", "Nya", "Gun", "Gum", "Mbu", "Zvi"),
+            weekdays = listOf("Svo", "Muv", "Chp", "Cht", "Chn", "Chs", "Mug"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/so.json
+    // ================================================================
+    // SO — Somali
+    // ================================================================
+    public val SO: DateLocale = DateLocale(
+        code = "so",
+        months = listOf("Janaayo", "Febraayo", "Maarso", "Abriil", "Maajo", "Juun", "Luuliyo", "Ogost", "Sebtembar", "Oktoobar", "Nofembar", "Disembar"),
+        weekdays = listOf("Axad", "Isniin", "Talaado", "Arbaco", "Khamiis", "Jimco", "Sabti"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "maanta",
+        tomorrow = "berri",
+        yesterday = "shalay",
+        dayAfterTomorrow = "saadamin",
+        dayBeforeYesterday = "doraato",
+        thisWeekday = "{weekday}tan",
+        nextWeekday = "{weekday}ta xigta",
+        lastWeekday = "{weekday}tii hore",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Mar", "Abr", "Maj", "Jun", "Lul", "Ogo", "Seb", "Okt", "Nof", "Dis"),
+            weekdays = listOf("Axd", "Isn", "Tal", "Arb", "Kha", "Jim", "Sab"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/sq.json
     // ================================================================
     // SQ — Albanian
@@ -1963,6 +2987,39 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}.{m}.",
             datePatternWithYear = "{d}.{m}.{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/su.json
+    // ================================================================
+    // SU — Sundanese
+    // ================================================================
+    public val SU: DateLocale = DateLocale(
+        code = "su",
+        months = listOf("Januari", "Pébruari", "Maret", "April", "Méi", "Juni", "Juli", "Agustus", "Séptémber", "Oktober", "Nopémber", "Désémber"),
+        weekdays = listOf("Minggu", "Senén", "Salasa", "Rebo", "Kemis", "Jumaah", "Saptu"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "dinten ieu",
+        tomorrow = "énjing",
+        yesterday = "kamari",
+        dayAfterTomorrow = "pagéto",
+        dayBeforeYesterday = "mangkukna",
+        thisWeekday = "{weekday} ieu",
+        nextWeekday = "{weekday} payun",
+        lastWeekday = "{weekday} kamari",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Péb", "Mar", "Apr", "Méi", "Jun", "Jul", "Ags", "Sép", "Okt", "Nop", "Dés"),
+            weekdays = listOf("Mng", "Sen", "Sal", "Reb", "Kem", "Jum", "Sap"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
         ),
     )
 
@@ -2098,6 +3155,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/tg.json
+    // ================================================================
+    // TG — Tajik
+    // ================================================================
+    public val TG: DateLocale = DateLocale(
+        code = "tg",
+        months = listOf("Январ", "Феврал", "Март", "Апрел", "Май", "Июн", "Июл", "Август", "Сентябр", "Октябр", "Ноябр", "Декабр"),
+        weekdays = listOf("Якшанбе", "Душанбе", "Сешанбе", "Чоршанбе", "Панҷшанбе", "Ҷумъа", "Шанбе"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "имрӯз",
+        tomorrow = "фардо",
+        yesterday = "дирӯз",
+        dayAfterTomorrow = "пасфардо",
+        dayBeforeYesterday = "парирӯз",
+        thisWeekday = "ин {weekday}",
+        nextWeekday = "{weekday}-и оянда",
+        lastWeekday = "{weekday}-и гузашта",
+        short = CompactnessOverride(
+            months = listOf("Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"),
+            weekdays = listOf("Яш", "Дш", "Сш", "Чш", "Пш", "Ҷм", "Шб"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/th.json
     // ================================================================
     // TH — Thai
@@ -2121,6 +3211,72 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."),
             weekdays = listOf("อา.", "จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส."),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/ti.json
+    // ================================================================
+    // TI — Tigrinya
+    // ================================================================
+    public val TI: DateLocale = DateLocale(
+        code = "ti",
+        months = listOf("ጥሪ", "ለካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰነ", "ሓምለ", "ነሓሰ", "መስከረም", "ጥቅምቲ", "ሕዳር", "ታሕሳስ"),
+        weekdays = listOf("ሰንበት", "ሰኑይ", "ሠሉስ", "ረቡዕ", "ሓሙስ", "ዓርቢ", "ቀዳም"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ሎሚ",
+        tomorrow = "ጽባሕ",
+        yesterday = "ትማሊ",
+        dayAfterTomorrow = "ድሕሪ ጽባሕ",
+        dayBeforeYesterday = "ቅድሚ ትማሊ",
+        thisWeekday = "እዛ {weekday}",
+        nextWeekday = "ዝመጽእ {weekday}",
+        lastWeekday = "ዝሓለፈ {weekday}",
+        short = CompactnessOverride(
+            months = listOf("ጥሪ", "ለካ", "መጋ", "ሚያ", "ግን", "ሰነ", "ሓም", "ነሓ", "መስ", "ጥቅ", "ሕዳ", "ታሕ"),
+            weekdays = listOf("ሰንበት", "ሰኑይ", "ሠሉስ", "ረቡዕ", "ሓሙስ", "ዓርቢ", "ቀዳም"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/tk.json
+    // ================================================================
+    // TK — Turkmen
+    // ================================================================
+    public val TK: DateLocale = DateLocale(
+        code = "tk",
+        months = listOf("Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"),
+        weekdays = listOf("Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "şu gün",
+        tomorrow = "ertir",
+        yesterday = "düýn",
+        dayAfterTomorrow = "birigün",
+        dayBeforeYesterday = "öňňin",
+        thisWeekday = "şu {weekday}",
+        nextWeekday = "indiki {weekday}",
+        lastWeekday = "geçen {weekday}",
+        short = CompactnessOverride(
+            months = listOf("Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"),
+            weekdays = listOf("Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -2328,6 +3484,105 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/xh.json
+    // ================================================================
+    // XH — Xhosa
+    // ================================================================
+    public val XH: DateLocale = DateLocale(
+        code = "xh",
+        months = listOf("Janyuwari", "Februwari", "Matshi", "Epreli", "Meyi", "Juni", "Julayi", "Agasti", "Septemba", "Okthobha", "Novemba", "Disemba"),
+        weekdays = listOf("ICawa", "UMvulo", "ULwesibini", "ULwesithathu", "ULwesine", "ULwesihlanu", "UMgqibelo"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "namhlanje",
+        tomorrow = "ngomso",
+        yesterday = "izolo",
+        dayAfterTomorrow = "ngomhlomunye",
+        dayBeforeYesterday = "kutshanje",
+        thisWeekday = "le {weekday}",
+        nextWeekday = "{weekday} ezayo",
+        lastWeekday = "{weekday} edlulileyo",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Mat", "Epr", "Mey", "Jun", "Jul", "Aga", "Sep", "Okt", "Nov", "Dis"),
+            weekdays = listOf("Caw", "Mvu", "Bin", "Tha", "Sin", "Hla", "Mgq"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/yo.json
+    // ================================================================
+    // YO — Yoruba
+    // ================================================================
+    public val YO: DateLocale = DateLocale(
+        code = "yo",
+        months = listOf("Oṣù Ṣẹ́rẹ́", "Oṣù Èrèlè", "Oṣù Ẹrẹ̀nà", "Oṣù Ìgbé", "Oṣù Ẹ̀bibi", "Oṣù Òkúdu", "Oṣù Agẹmọ", "Oṣù Ògún", "Oṣù Owewe", "Oṣù Ọ̀wàrà", "Oṣù Bélú", "Oṣù Ọ̀pẹ̀"),
+        weekdays = listOf("Ọjọ́ Àìkú", "Ọjọ́ Ajé", "Ọjọ́ Ìṣẹ́gun", "Ọjọ́rú", "Ọjọ́bọ̀", "Ọjọ́ Ẹtì", "Ọjọ́ Àbámẹ́ta"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "lónìí",
+        tomorrow = "ọ̀la",
+        yesterday = "àná",
+        dayAfterTomorrow = "ọ̀tún ọ̀la",
+        dayBeforeYesterday = "ọ̀tún àná",
+        thisWeekday = "{weekday} yìí",
+        nextWeekday = "{weekday} tó ń bọ̀",
+        lastWeekday = "{weekday} tó kọjá",
+        short = CompactnessOverride(
+            months = listOf("Ṣẹ́r", "Èrè", "Ẹrẹ̀", "Ìgb", "Ẹ̀bi", "Òkú", "Agẹ", "Ògú", "Owe", "Ọ̀wà", "Bél", "Ọ̀pẹ̀"),
+            weekdays = listOf("Àìk", "Ajé", "Ìṣẹ́", "Ọjr", "Ọjb", "Ẹtì", "Àbá"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/yue.json
+    // ================================================================
+    // YUE — Cantonese
+    // ================================================================
+    public val YUE: DateLocale = DateLocale(
+        code = "yue",
+        months = listOf("一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"),
+        weekdays = listOf("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"),
+        dayFormat = "{n}日",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{month}{day}",
+        datePatternWithYear = "{year}年{month}{day}",
+        today = "今日",
+        tomorrow = "聽日",
+        yesterday = "尋日",
+        dayAfterTomorrow = "後日",
+        dayBeforeYesterday = "前日",
+        thisWeekday = "呢個{weekday}",
+        nextWeekday = "下個{weekday}",
+        lastWeekday = "上個{weekday}",
+        short = CompactnessOverride(
+            months = listOf("一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"),
+            weekdays = listOf("日", "一", "二", "三", "四", "五", "六"),
+            dayFormat = "{n}日",
+            datePattern = "{month}{day}",
+            datePatternWithYear = "{year}年{month}{day}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{m}/{d}",
+            datePatternWithYear = "{yy}/{m}/{d}",
+        ),
+    )
+
     // Source: date/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -2361,22 +3616,62 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/zu.json
+    // ================================================================
+    // ZU — Zulu
+    // ================================================================
+    public val ZU: DateLocale = DateLocale(
+        code = "zu",
+        months = listOf("Januwari", "Februwari", "Mashi", "Ephreli", "Meyi", "Juni", "Julayi", "Agasti", "Septhemba", "Okthoba", "Novemba", "Disemba"),
+        weekdays = listOf("ISonto", "UMsombuluko", "ULwesibili", "ULwesithathu", "ULwesine", "ULwesihlanu", "UMgqibelo"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "namuhla",
+        tomorrow = "kusasa",
+        yesterday = "izolo",
+        dayAfterTomorrow = "ngomhlomunye",
+        dayBeforeYesterday = "usuku olwedlule izolo",
+        thisWeekday = "leli {weekday}",
+        nextWeekday = "{weekday} elizayo",
+        lastWeekday = "{weekday} eledlule",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Mas", "Eph", "Mey", "Jun", "Jul", "Aga", "Sep", "Okt", "Nov", "Dis"),
+            weekdays = listOf("Son", "Mso", "Bil", "Tha", "Sin", "Hla", "Mgq"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     public val ALL: Map<String, DateLocale> = mapOf(
-        "am" to AM, "ar" to AR, "az" to AZ, "bg" to BG, "bn" to BN,
-        "br" to BR, "bs" to BS, "ca" to CA, "cs" to CS, "cy" to CY,
-        "da" to DA, "de" to DE, "el" to EL, "en" to EN, "es" to ES,
-        "et" to ET, "eu" to EU, "fa" to FA, "fi" to FI, "fil" to FIL,
-        "fr" to FR, "ga" to GA, "gd" to GD, "gu" to GU, "gv" to GV,
-        "he" to HE, "hi" to HI, "hr" to HR, "hu" to HU, "id" to ID,
-        "it" to IT, "ja" to JA, "jv" to JV, "ka" to KA, "kk" to KK,
-        "km" to KM, "ko" to KO, "kw" to KW, "lt" to LT, "lv" to LV,
-        "mk" to MK, "mr" to MR, "ms" to MS, "mt" to MT, "my" to MY,
-        "nb" to NB, "ne" to NE, "nl" to NL, "pa" to PA, "pl" to PL,
-        "pt" to PT, "ro" to RO, "ru" to RU, "shi" to SHI, "si" to SI,
-        "sk" to SK, "sl" to SL, "sq" to SQ, "sr" to SR, "sv" to SV,
-        "sw" to SW, "ta" to TA, "te" to TE, "th" to TH, "tr" to TR,
+        "af" to AF, "ak" to AK, "am" to AM, "ar" to AR, "az" to AZ,
+        "be" to BE, "bg" to BG, "bn" to BN, "br" to BR, "bs" to BS,
+        "ca" to CA, "ceb" to CEB, "cs" to CS, "cy" to CY, "da" to DA,
+        "de" to DE, "el" to EL, "en" to EN, "es" to ES, "et" to ET,
+        "eu" to EU, "fa" to FA, "ff" to FF, "fi" to FI, "fil" to FIL,
+        "fr" to FR, "ga" to GA, "gd" to GD, "gl" to GL, "gn" to GN,
+        "gu" to GU, "gv" to GV, "ha" to HA, "he" to HE, "hi" to HI,
+        "hr" to HR, "ht" to HT, "hu" to HU, "hy" to HY, "id" to ID,
+        "ig" to IG, "is" to IS, "it" to IT, "ja" to JA, "jv" to JV,
+        "ka" to KA, "kk" to KK, "km" to KM, "kn" to KN, "ko" to KO,
+        "ku" to KU, "kw" to KW, "ky" to KY, "lg" to LG, "ln" to LN,
+        "lo" to LO, "lt" to LT, "lv" to LV, "mg" to MG, "mi" to MI,
+        "mk" to MK, "ml" to ML, "mn" to MN, "mr" to MR, "ms" to MS,
+        "mt" to MT, "my" to MY, "nb" to NB, "ne" to NE, "nl" to NL,
+        "ny" to NY, "om" to OM, "or" to OR, "pa" to PA, "pl" to PL,
+        "ps" to PS, "pt" to PT, "qu" to QU, "ro" to RO, "ru" to RU,
+        "rw" to RW, "sd" to SD, "shi" to SHI, "si" to SI, "sk" to SK,
+        "sl" to SL, "sn" to SN, "so" to SO, "sq" to SQ, "sr" to SR,
+        "su" to SU, "sv" to SV, "sw" to SW, "ta" to TA, "te" to TE,
+        "tg" to TG, "th" to TH, "ti" to TI, "tk" to TK, "tr" to TR,
         "tzm" to TZM, "uk" to UK, "ur" to UR, "uz" to UZ, "vi" to VI,
-        "zh" to ZH
+        "xh" to XH, "yo" to YO, "yue" to YUE, "zh" to ZH, "zu" to ZU
     )
 
     public fun get(code: String): DateLocale? = ALL[code]

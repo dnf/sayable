@@ -137,7 +137,7 @@ to a single locale).
 
 ### i18n locale data
 
-All implementations contain 71 locale files with Unicode string literals
+All implementations contain 110 locale files with Unicode string literals
 (Arabic, Chinese, Devanagari, Cyrillic, etc.). This creates predictable
 friction with certain lint rules:
 

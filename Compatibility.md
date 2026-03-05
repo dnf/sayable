@@ -3,34 +3,215 @@
 
 Which languages are available for each Sayable library.
 
-| Language | age | date | duration | time |
-|----------|------|------|------|------|
-| Ada      | [✅](age/impl/ada/) | ❌ | ❌ | ❌ |
-| C        | [✅](age/impl/c/) | ❌ | ❌ | ❌ |
-| C#       | [✅](age/impl/csharp/) | [✅](date/impl/csharp/) | [✅](duration/impl/csharp/) | [✅](time/impl/csharp/) |
-| C++      | [✅](age/impl/cpp/) | [✅](date/impl/cpp/) | [✅](duration/impl/cpp/) | [✅](time/impl/cpp/) |
-| Clojure  | [✅](age/impl/clojure/) | [✅](date/impl/clojure/) | [✅](duration/impl/clojure/) | [✅](time/impl/clojure/) |
-| COBOL    | [✅](age/impl/cobol/) | ❌ | ❌ | ❌ |
-| Dart     | [✅](age/impl/dart/) | ❌ | ❌ | ❌ |
-| Elixir   | [✅](age/impl/elixir/) | ❌ | ❌ | ❌ |
-| Elm      | [✅](age/impl/elm/) | ❌ | ❌ | ❌ |
-| Erlang   | [✅](age/impl/erlang/) | ❌ | ❌ | ❌ |
-| F#       | [✅](age/impl/fsharp/) | [✅](date/impl/fsharp/) | [✅](duration/impl/fsharp/) | [✅](time/impl/fsharp/) |
-| Fortran  | [✅](age/impl/fortran/) | ❌ | ❌ | ❌ |
-| Gleam    | [✅](age/impl/gleam/) | ❌ | ❌ | ❌ |
-| Go       | [✅](age/impl/go/) | [✅](date/impl/go/) | [✅](duration/impl/go/) | [✅](time/impl/go/) |
-| Groovy   | [✅](age/impl/groovy/) | ❌ | ❌ | ❌ |
-| Haskell  | [✅](age/impl/haskell/) | [✅](date/impl/haskell/) | [✅](duration/impl/haskell/) | [✅](time/impl/haskell/) |
-| Java     | [✅](age/impl/java/) | [✅](date/impl/java/) | [✅](duration/impl/java/) | [✅](time/impl/java/) |
-| Kotlin   | [✅](age/impl/kotlin/) | [✅](date/impl/kotlin/) | [✅](duration/impl/kotlin/) | [✅](time/impl/kotlin/) |
-| Lua      | [✅](age/impl/lua/) | [✅](date/impl/lua/) | [✅](duration/impl/lua/) | [✅](time/impl/lua/) |
-| OCaml    | [✅](age/impl/ocaml/) | ❌ | ❌ | ❌ |
-| Perl     | [✅](age/impl/perl/) | ❌ | ❌ | ❌ |
-| PHP      | [✅](age/impl/php/) | [✅](date/impl/php/) | [✅](duration/impl/php/) | [✅](time/impl/php/) |
-| Python   | [✅](age/impl/python/) | [✅](date/impl/python/) | [✅](duration/impl/python/) | [✅](time/impl/python/) |
-| Ruby     | [✅](age/impl/ruby/) | [✅](date/impl/ruby/) | [✅](duration/impl/ruby/) | [✅](time/impl/ruby/) |
-| Rust     | [✅](age/impl/rust/) | [✅](date/impl/rust/) | [✅](duration/impl/rust/) | [✅](time/impl/rust/) |
-| Scala    | [✅](age/impl/scala/) | [✅](date/impl/scala/) | [✅](duration/impl/scala/) | [✅](time/impl/scala/) |
-| Swift    | [✅](age/impl/swift/) | ❌ | ❌ | ❌ |
-| TypeScript | [✅](age/impl/typescript/) | [✅](date/impl/typescript/) | [✅](duration/impl/typescript/) | [✅](time/impl/typescript/) |
-| Zig      | [✅](age/impl/zig/) | ❌ | ❌ | ❌ |
+<table>
+<tr>
+  <th>Language</th>
+  <th>age</th>
+  <th>date</th>
+  <th>duration</th>
+  <th>time</th>
+</tr>
+<tr>
+  <td>Ada</td>
+  <td><a href="age/impl/ada/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>C</td>
+  <td><a href="age/impl/c/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>C#</td>
+  <td><a href="age/impl/csharp/">✅</a></td>
+  <td><a href="date/impl/csharp/">✅</a></td>
+  <td><a href="duration/impl/csharp/">✅</a></td>
+  <td><a href="time/impl/csharp/">✅</a></td>
+</tr>
+<tr>
+  <td>C++</td>
+  <td><a href="age/impl/cpp/">✅</a></td>
+  <td><a href="date/impl/cpp/">✅</a></td>
+  <td><a href="duration/impl/cpp/">✅</a></td>
+  <td><a href="time/impl/cpp/">✅</a></td>
+</tr>
+<tr>
+  <td>Clojure</td>
+  <td><a href="age/impl/clojure/">✅</a></td>
+  <td><a href="date/impl/clojure/">✅</a></td>
+  <td><a href="duration/impl/clojure/">✅</a></td>
+  <td><a href="time/impl/clojure/">✅</a></td>
+</tr>
+<tr>
+  <td>COBOL</td>
+  <td><a href="age/impl/cobol/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Dart</td>
+  <td><a href="age/impl/dart/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Elixir</td>
+  <td><a href="age/impl/elixir/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Elm</td>
+  <td><a href="age/impl/elm/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Erlang</td>
+  <td><a href="age/impl/erlang/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>F#</td>
+  <td><a href="age/impl/fsharp/">✅</a></td>
+  <td><a href="date/impl/fsharp/">✅</a></td>
+  <td><a href="duration/impl/fsharp/">✅</a></td>
+  <td><a href="time/impl/fsharp/">✅</a></td>
+</tr>
+<tr>
+  <td>Fortran</td>
+  <td><a href="age/impl/fortran/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Gleam</td>
+  <td><a href="age/impl/gleam/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Go</td>
+  <td><a href="age/impl/go/">✅</a></td>
+  <td><a href="date/impl/go/">✅</a></td>
+  <td><a href="duration/impl/go/">✅</a></td>
+  <td><a href="time/impl/go/">✅</a></td>
+</tr>
+<tr>
+  <td>Groovy</td>
+  <td><a href="age/impl/groovy/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Haskell</td>
+  <td><a href="age/impl/haskell/">✅</a></td>
+  <td><a href="date/impl/haskell/">✅</a></td>
+  <td><a href="duration/impl/haskell/">✅</a></td>
+  <td><a href="time/impl/haskell/">✅</a></td>
+</tr>
+<tr>
+  <td>Java</td>
+  <td><a href="age/impl/java/">✅</a></td>
+  <td><a href="date/impl/java/">✅</a></td>
+  <td><a href="duration/impl/java/">✅</a></td>
+  <td><a href="time/impl/java/">✅</a></td>
+</tr>
+<tr>
+  <td>Kotlin</td>
+  <td><a href="age/impl/kotlin/">✅</a></td>
+  <td><a href="date/impl/kotlin/">✅</a></td>
+  <td><a href="duration/impl/kotlin/">✅</a></td>
+  <td><a href="time/impl/kotlin/">✅</a></td>
+</tr>
+<tr>
+  <td>Lua</td>
+  <td><a href="age/impl/lua/">✅</a></td>
+  <td><a href="date/impl/lua/">✅</a></td>
+  <td><a href="duration/impl/lua/">✅</a></td>
+  <td><a href="time/impl/lua/">✅</a></td>
+</tr>
+<tr>
+  <td>OCaml</td>
+  <td><a href="age/impl/ocaml/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Perl</td>
+  <td><a href="age/impl/perl/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>PHP</td>
+  <td><a href="age/impl/php/">✅</a></td>
+  <td><a href="date/impl/php/">✅</a></td>
+  <td><a href="duration/impl/php/">✅</a></td>
+  <td><a href="time/impl/php/">✅</a></td>
+</tr>
+<tr>
+  <td>Python</td>
+  <td><a href="age/impl/python/">✅</a></td>
+  <td><a href="date/impl/python/">✅</a></td>
+  <td><a href="duration/impl/python/">✅</a></td>
+  <td><a href="time/impl/python/">✅</a></td>
+</tr>
+<tr>
+  <td>Ruby</td>
+  <td><a href="age/impl/ruby/">✅</a></td>
+  <td><a href="date/impl/ruby/">✅</a></td>
+  <td><a href="duration/impl/ruby/">✅</a></td>
+  <td><a href="time/impl/ruby/">✅</a></td>
+</tr>
+<tr>
+  <td>Rust</td>
+  <td><a href="age/impl/rust/">✅</a></td>
+  <td><a href="date/impl/rust/">✅</a></td>
+  <td><a href="duration/impl/rust/">✅</a></td>
+  <td><a href="time/impl/rust/">✅</a></td>
+</tr>
+<tr>
+  <td>Scala</td>
+  <td><a href="age/impl/scala/">✅</a></td>
+  <td><a href="date/impl/scala/">✅</a></td>
+  <td><a href="duration/impl/scala/">✅</a></td>
+  <td><a href="time/impl/scala/">✅</a></td>
+</tr>
+<tr>
+  <td>Swift</td>
+  <td><a href="age/impl/swift/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>TypeScript</td>
+  <td><a href="age/impl/typescript/">✅</a></td>
+  <td><a href="date/impl/typescript/">✅</a></td>
+  <td><a href="duration/impl/typescript/">✅</a></td>
+  <td><a href="time/impl/typescript/">✅</a></td>
+</tr>
+<tr>
+  <td>Zig</td>
+  <td><a href="age/impl/zig/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+</table>

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import keyword
+
 from codegen.banner import locale_source_comment, make_header
 from codegen.targets.python.plural_rules import get_py_named_function, get_py_plural, is_simple_plural
 
@@ -108,11 +110,24 @@ def emit_barrel(all_locales: list[dict]) -> str:
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER, '"""Locale definitions for all supported languages."""\n']
 
+    lines.append("import importlib")
+    lines.append("")
     lines.append("from sayable_duration.locale import DurationLocale")
 
+    keyword_codes = []
     for loc in sorted_locs:
         code = loc["code"]
-        lines.append(f"from sayable_duration.locales.{code} import {code.upper()}")
+        if keyword.iskeyword(code):
+            keyword_codes.append(code)
+        else:
+            lines.append(f"from sayable_duration.locales.{code} import {code.upper()}")
+
+    if keyword_codes:
+        lines.append("")
+        for code in keyword_codes:
+            lines.append(
+                f'{code.upper()} = importlib.import_module("sayable_duration.locales.{code}").{code.upper()}'
+            )
 
     lines.append("")
 

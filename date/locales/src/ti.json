@@ -1,0 +1,70 @@
+{
+  "code": "ti",
+  "name": "Tigrinya",
+  "months": [
+    "ጥሪ",
+    "ለካቲት",
+    "መጋቢት",
+    "ሚያዝያ",
+    "ግንቦት",
+    "ሰነ",
+    "ሓምለ",
+    "ነሓሰ",
+    "መስከረም",
+    "ጥቅምቲ",
+    "ሕዳር",
+    "ታሕሳስ"
+  ],
+  "weekdays": [
+    "ሰንበት",
+    "ሰኑይ",
+    "ሠሉስ",
+    "ረቡዕ",
+    "ሓሙስ",
+    "ዓርቢ",
+    "ቀዳም"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "ሎሚ",
+  "tomorrow": "ጽባሕ",
+  "yesterday": "ትማሊ",
+  "dayAfterTomorrow": "ድሕሪ ጽባሕ",
+  "dayBeforeYesterday": "ቅድሚ ትማሊ",
+  "thisWeekday": "እዛ {weekday}",
+  "nextWeekday": "ዝመጽእ {weekday}",
+  "lastWeekday": "ዝሓለፈ {weekday}",
+  "short": {
+    "months": [
+      "ጥሪ",
+      "ለካ",
+      "መጋ",
+      "ሚያ",
+      "ግን",
+      "ሰነ",
+      "ሓም",
+      "ነሓ",
+      "መስ",
+      "ጥቅ",
+      "ሕዳ",
+      "ታሕ"
+    ],
+    "weekdays": [
+      "ሰንበት",
+      "ሰኑይ",
+      "ሠሉስ",
+      "ረቡዕ",
+      "ሓሙስ",
+      "ዓርቢ",
+      "ቀዳም"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

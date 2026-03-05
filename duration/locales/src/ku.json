@@ -1,0 +1,76 @@
+{
+  "code": "ku",
+  "name": "Kurdish",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "{n} çirke",
+      "other": "{n} çirke"
+    },
+    "minute": {
+      "one": "{n} deqîqe",
+      "other": "{n} deqîqe"
+    },
+    "hour": {
+      "one": "{n} saet",
+      "other": "{n} saet"
+    },
+    "day": {
+      "one": "{n} roj",
+      "other": "{n} roj"
+    },
+    "week": {
+      "one": "{n} hefte",
+      "other": "{n} hefte"
+    },
+    "month": {
+      "one": "{n} meh",
+      "other": "{n} meh"
+    },
+    "year": {
+      "one": "{n} sal",
+      "other": "{n} sal"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "niha",
+  "ago": "berî {0}",
+  "inFuture": "di {0} de",
+  "short": {
+    "units": {
+      "second": "{n} çrk.",
+      "minute": "{n} deq.",
+      "hour": "{n} st.",
+      "day": "{n} roj",
+      "week": "{n} hft.",
+      "month": "{n} meh",
+      "year": "{n} sal"
+    },
+    "ago": "berî {0}",
+    "inFuture": "di {0} de",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}d",
+      "hour": "{n}st",
+      "day": "{n}r",
+      "week": "{n}h",
+      "month": "{n}m",
+      "year": "{n}s"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "berî {0}",
+    "inFuture": "di {0} de",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  }
+}

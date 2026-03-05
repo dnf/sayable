@@ -1,6 +1,6 @@
 # Locale Reference
 
-Quick reference for all 71 locales supported by sayable-age.
+Quick reference for all all locales supported by sayable-age.
 
 For detailed documentation on plural rules, stage labels, and half-year markers,
 see [locales.md](locales.md).
@@ -85,7 +85,7 @@ Speaker counts include both native and L2 speakers (approximate).
 
 ## Plural rules
 
-There are 23 distinct plural rule patterns used across the 71 locales,
+There are 23 distinct plural rule patterns used across the all locales,
 covering all CLDR cardinal plural patterns:
 
 | Rule                 | Categories                       | Logic                                                                                  | Used by                                                                                                |

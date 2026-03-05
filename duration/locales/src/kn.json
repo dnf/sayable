@@ -1,0 +1,84 @@
+{
+  "code": "kn",
+  "name": "Kannada",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": {
+      "one": "{n} ಸೆಕೆಂಡ್",
+      "other": "{n} ಸೆಕೆಂಡುಗಳು"
+    },
+    "minute": {
+      "one": "{n} ನಿಮಿಷ",
+      "other": "{n} ನಿಮಿಷಗಳು"
+    },
+    "hour": {
+      "one": "{n} ಗಂಟೆ",
+      "other": "{n} ಗಂಟೆಗಳು"
+    },
+    "day": {
+      "one": "{n} ದಿನ",
+      "other": "{n} ದಿನಗಳು"
+    },
+    "week": {
+      "one": "{n} ವಾರ",
+      "other": "{n} ವಾರಗಳು"
+    },
+    "month": {
+      "one": "{n} ತಿಂಗಳು",
+      "other": "{n} ತಿಂಗಳುಗಳು"
+    },
+    "year": {
+      "one": "{n} ವರ್ಷ",
+      "other": "{n} ವರ್ಷಗಳು"
+    }
+  },
+  "half": "{0}ವರೆ",
+  "delimiter": ", ",
+  "justNow": "ಈಗಷ್ಟೇ",
+  "ago": "{0} ಹಿಂದೆ",
+  "inFuture": "{0} ನಂತರ",
+  "short": {
+    "units": {
+      "second": "{n} ಸೆ॰",
+      "minute": "{n} ನಿ॰",
+      "hour": "{n} ಗಂ॰",
+      "day": "{n} ದಿನ",
+      "week": "{n} ವಾರ",
+      "month": "{n} ತಿಂಗಳು",
+      "year": "{n} ವರ್ಷ"
+    },
+    "ago": "{0} ಹಿಂದೆ",
+    "inFuture": "{0} ನಂತರ",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n} ಸೆ",
+      "minute": "{n} ನಿ",
+      "hour": "{n} ಗಂ",
+      "day": "{n} ದಿ",
+      "week": "{n} ವಾ",
+      "month": "{n} ತಿಂ",
+      "year": "{n} ವ"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} ಹಿಂದೆ",
+    "inFuture": "{0} ನಂತರ",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

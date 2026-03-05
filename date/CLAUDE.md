@@ -4,7 +4,7 @@
 
 ## Status
 
-v0.5.0, 15 languages, 71 locales, 52 canonical tests.
+v0.5.0, 15 languages, 110 locales, 52 canonical tests.
 
 ## Directory structure
 
@@ -15,7 +15,7 @@ date/
     metadata.json          # Package metadata
     tests.json             # 52 canonical test cases
   locales/
-    src/                   # 71 canonical JSON locale files
+    src/                   # 110 canonical JSON locale files
     examples/              # Generated markdown docs per locale
   codegen/
     generate.py            # Main codegen orchestrator

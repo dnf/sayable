@@ -13,6 +13,100 @@
 namespace sayabledate {
 namespace locales {
 
+// Source: date/locales/src/af.json
+const DateLocale& AF() {
+    static const DateLocale loc{
+        "af",
+        {"Januarie", "Februarie", "Maart", "April", "Mei", "Junie", "Julie", "Augustus", "September", "Oktober", "November", "Desember"},
+        {"Sondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrydag", "Saterdag"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "vandag", "môre", "gister",
+        "oormôre",
+        "eergister",
+        "hierdie {weekday}",
+        "volgende {weekday}",
+        "verlede {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Feb", "Mrt", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"},
+            {},
+            {"So", "Ma", "Di", "Wo", "Do", "Vr", "Sa"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/ak.json
+const DateLocale& AK() {
+    static const DateLocale loc{
+        "ak",
+        {"Ɔpɛpɔn", "Ɔgyefuo", "Ɔbenem", "Oforisuo", "Kotonimma", "Ayɛwohomumu", "Kutawonkuku", "Ɔsannaa", "Ɛbɔ", "Ahinime", "Obubuo", "Ɔpenimba"},
+        {"Kwasiada", "Ɛdwoada", "Ɛbenada", "Wukuada", "Yawoada", "Efiada", "Memeneda"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ɛnnɛ", "ɔkyena", "nnora",
+        "ɛkyena",
+        "nnansa",
+        "{weekday} yi",
+        "{weekday} a ɛba",
+        "{weekday} a etwaam",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Ɔpɛ", "Ɔgy", "Ɔbe", "Ofo", "Kot", "Ayɛ", "Kut", "Ɔsa", "Ɛbɔ", "Ahi", "Obu", "Ɔpe"},
+            {},
+            {"Kwa", "Ɛdw", "Ɛbe", "Wuk", "Yaw", "Efi", "Mem"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/am.json
 const DateLocale& AM() {
     static const DateLocale loc{
@@ -146,6 +240,53 @@ const DateLocale& AZ() {
             false,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/be.json
+const DateLocale& BE() {
+    static const DateLocale loc{
+        "be",
+        {"студзень", "люты", "сакавік", "красавік", "май", "чэрвень", "ліпень", "жнівень", "верасень", "кастрычнік", "лістапад", "снежань"},
+        {"нядзеля", "панядзелак", "аўторак", "серада", "чацвер", "пятніца", "субота"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "сёння", "заўтра", "учора",
+        "паслязаўтра",
+        "пазаўчора",
+        "гэту {weekday}",
+        "наступную {weekday}",
+        "мінулую {weekday}",
+        {"студзеня", "лютага", "сакавіка", "красавіка", "мая", "чэрвеня", "ліпеня", "жніўня", "верасня", "кастрычніка", "лістапада", "снежня"},
+        CompactnessOverride{
+            {"сту", "лют", "сак", "кра", "май", "чэр", "ліп", "жні", "вер", "кас", "ліс", "сне"},
+            {},
+            {"нд", "пн", "аў", "ср", "чц", "пт", "сб"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}.{m}.",
+            "{d}.{m}.{yy}",
             "",
             "",
             ""
@@ -381,6 +522,53 @@ const DateLocale& CA() {
             false,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/ceb.json
+const DateLocale& CEB() {
+    static const DateLocale loc{
+        "ceb",
+        {"Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Septyembre", "Oktubre", "Nobyembre", "Disyembre"},
+        {"Dominggo", "Lunes", "Martes", "Miyerkules", "Huwebes", "Biyernes", "Sabado"},
+        "{n}",
+        {},
+        "{month} {day}",
+        "{month} {day}, {year}",
+        "karong adlawa", "ugma", "gahapon",
+        "sunod ugma",
+        "miaging gahapon",
+        "karong {weekday}",
+        "sunod nga {weekday}",
+        "miaging {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Ene", "Peb", "Mar", "Abr", "May", "Hun", "Hul", "Ago", "Sep", "Okt", "Nob", "Dis"},
+            {},
+            {"Dom", "Lun", "Mar", "Miy", "Huw", "Biy", "Sab"},
+            "{n}",
+            {},
+            false,
+            "{month} {day}",
+            "{month} {day}, {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{m}/{d}",
+            "{m}/{d}/{yy}",
             "",
             "",
             ""

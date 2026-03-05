@@ -1,0 +1,102 @@
+{
+  "code": "ff",
+  "name": "Fulah",
+  "pluralRule": "one_other_zero_one",
+  "units": {
+    "second": "majaango {n}",
+    "minute": "hojomaaje {n}",
+    "hour": {
+      "one": "waktu {n}",
+      "other": "waktuuji {n}"
+    },
+    "day": {
+      "one": "ñalawma {n}",
+      "other": "ñalɗe {n}"
+    },
+    "week": {
+      "one": "yontere {n}",
+      "other": "yontereeji {n}"
+    },
+    "month": {
+      "one": "lewru {n}",
+      "other": "lebbi {n}"
+    },
+    "year": {
+      "one": "hitaande {n}",
+      "other": "duuɓi {n}"
+    }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "jooni",
+  "ago": "{0} ɓennuɗo",
+  "inFuture": "nder {0}",
+  "short": {
+    "units": {
+      "second": "majaango {n}",
+      "minute": "hojomaaje {n}",
+      "hour": {
+        "one": "waktu {n}",
+        "other": "waktuuji {n}"
+      },
+      "day": "ñalɗe {n}",
+      "week": {
+        "one": "yontere {n}",
+        "other": "yontereeji {n}"
+      },
+      "month": {
+        "one": "lewru {n}",
+        "other": "lebbi {n}"
+      },
+      "year": {
+        "one": "hitaande {n}",
+        "other": "duuɓi {n}"
+      }
+    },
+    "ago": "{0} ɓennuɗo",
+    "inFuture": "nder {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "maj {n}",
+      "minute": "hoj {n}",
+      "hour": {
+        "one": "wak {n}",
+        "other": "wakji {n}"
+      },
+      "day": "ñalɗe {n}",
+      "week": {
+        "one": "yont {n}",
+        "other": "yontji {n}"
+      },
+      "month": {
+        "one": "lew {n}",
+        "other": "leb {n}"
+      },
+      "year": {
+        "one": "hit {n}",
+        "other": "duuɓi {n}"
+      }
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} ɓennuɗo",
+    "inFuture": "nder {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

@@ -747,19 +747,22 @@ import Testing
     }
 
     // ================================================================
-    // All 71 locales exist
+    // All 110 locales exist
     // ================================================================
-    @Test func all71LocalesExist() {
-        #expect(Locales.all.count == 71)
+    @Test func all110LocalesExist() {
+        #expect(Locales.all.count == 110)
         let expectedCodes = [
-            "am", "ar", "az", "bg", "bn", "br", "bs", "ca", "cs", "cy",
-            "da", "de", "el", "en", "es", "et", "eu", "fa", "fi", "fil",
-            "fr", "ga", "gd", "gu", "gv", "he", "hi", "hr", "hu", "id",
-            "it", "ja", "jv", "ka", "kk", "km", "ko", "kw", "lt", "lv",
-            "mk", "mr", "ms", "mt", "my", "nb", "ne", "nl", "pa", "pl",
-            "pt", "ro", "ru", "shi", "si", "sk", "sl", "sq", "sr", "sv",
-            "sw", "ta", "te", "th", "tr", "tzm", "uk", "ur", "uz", "vi",
-            "zh"
+            "af", "ak", "am", "ar", "az", "be", "bg", "bn", "br", "bs",
+            "ca", "ceb", "cs", "cy", "da", "de", "el", "en", "es", "et",
+            "eu", "fa", "ff", "fi", "fil", "fr", "ga", "gd", "gl", "gn",
+            "gu", "gv", "ha", "he", "hi", "hr", "ht", "hu", "hy", "id",
+            "ig", "is", "it", "ja", "jv", "ka", "kk", "km", "kn", "ko",
+            "ku", "kw", "ky", "lg", "ln", "lo", "lt", "lv", "mg", "mi",
+            "mk", "ml", "mn", "mr", "ms", "mt", "my", "nb", "ne", "nl",
+            "ny", "om", "or", "pa", "pl", "ps", "pt", "qu", "ro", "ru",
+            "rw", "sd", "shi", "si", "sk", "sl", "sn", "so", "sq", "sr",
+            "su", "sv", "sw", "ta", "te", "tg", "th", "ti", "tk", "tr",
+            "tzm", "uk", "ur", "uz", "vi", "xh", "yo", "yue", "zh", "zu"
         ]
         for code in expectedCodes {
             #expect(Locales.all[code] != nil, "Locale \(code) should exist")

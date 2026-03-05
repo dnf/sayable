@@ -1,6 +1,6 @@
 # Locale Data
 
-This directory contains the canonical JSON definitions for all 71 locales supported by sayable-age. Each file defines how ages are expressed in one language — the words, plural rules, and developmental stage labels.
+This directory contains the canonical JSON definitions for all 110 locales supported by sayable-age. Each file defines how ages are expressed in one language — the words, plural rules, and developmental stage labels.
 
 **These files are the single source of truth.** Every language implementation (TypeScript, Python, Go, etc.) generates its locale code from these JSON files. To improve a translation, you edit the JSON file here and the change propagates everywhere.
 

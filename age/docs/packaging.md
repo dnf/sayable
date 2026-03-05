@@ -2,7 +2,7 @@
 
 ## How locale data is packaged
 
-Every implementation ships all 71 locales by default. Each locale is a data object containing translated strings, plural rules, and formatting stages — roughly 1–2 KB per locale depending on the language.
+Every implementation ships all all locales by default. Each locale is a data object containing translated strings, plural rules, and formatting stages — roughly 1–2 KB per locale depending on the language.
 
 The table below summarizes how each language structures its locale data:
 
@@ -42,7 +42,7 @@ This design optimizes for simplicity and correctness:
 
 4. **Predictability.** There is no lazy network fetch, no dynamic `require`, and no locale-not-found error at runtime for published locales. If the code compiles, the locale is available.
 
-The tradeoff is bundle size: all 71 locales are included whether you use them or not. The subsetting system described below addresses this.
+The tradeoff is bundle size: all all locales are included whether you use them or not. The subsetting system described below addresses this.
 
 ## How `getLocale` defeats tree shaking
 
@@ -129,4 +129,4 @@ Named groups are defined in `codegen/locale_groups.py`:
 
 Use `python -m codegen.generate --list-groups` to see the full list.
 
-To restore all 71 locales, run `python -m codegen.generate` with no `--locales` flag.
+To restore all all locales, run `python -m codegen.generate` with no `--locales` flag.

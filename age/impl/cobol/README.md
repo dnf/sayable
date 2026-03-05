@@ -68,7 +68,7 @@ PERFORM FORMAT-AGE
 *> WS-FORMAT-RESULT contains "6ヶ月"
 ```
 
-71 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
+110 built-in locales are available. See the [locale documentation](../../docs/locales.md) for details.
 
 ## API
 
@@ -117,7 +117,7 @@ All COBOL source uses GnuCOBOL's `-free` flag, avoiding the traditional 80-colum
 
 ### Active locale pattern
 
-COBOL lacks modules, dynamic allocation, and modern data structures. Instead of storing all 71 locales in parallel arrays (which would require complex indexing), the implementation uses a single "active locale" slot:
+COBOL lacks modules, dynamic allocation, and modern data structures. Instead of storing all 110 locales in parallel arrays (which would require complex indexing), the implementation uses a single "active locale" slot:
 
 1. `GET-LOCALE` receives a locale code in `WS-LOOKUP-CODE`
 2. An `EVALUATE` statement dispatches to the matching `INIT-LOCALE-XX` paragraph
@@ -162,11 +162,11 @@ Unit forms use `{n}` as a placeholder for the numeric value (e.g., `"{n} months"
 - A `GET-LOCALE` dispatcher paragraph
 - An `APPLY-PLURAL-RULE` dispatcher paragraph
 - Deduplicated plural rule paragraphs (only rules actually used)
-- One `INIT-LOCALE-XX` paragraph per locale (~6,900 lines total for 71 locales)
+- One `INIT-LOCALE-XX` paragraph per locale (~6,900 lines total for 110 locales)
 
 ### UTF-8 and the C compiler warning suppression
 
-GnuCOBOL compiles COBOL to C, then compiles the C with the system's C compiler. Locale strings contain raw UTF-8 characters (e.g., `"婴儿"`, `"ヶ月"`, `"أسبوع"`). GnuCOBOL emits these as raw byte sequences in C string literals, which triggers Clang's `-Winvalid-source-encoding` warning -- over 1,100 times across the 71 locales.
+GnuCOBOL compiles COBOL to C, then compiles the C with the system's C compiler. Locale strings contain raw UTF-8 characters (e.g., `"婴儿"`, `"ヶ月"`, `"أسبوع"`). GnuCOBOL emits these as raw byte sequences in C string literals, which triggers Clang's `-Winvalid-source-encoding` warning -- over 1,100 times across the 110 locales.
 
 The strings are correct: they round-trip through compilation and produce valid UTF-8 output at runtime. There is no way to avoid this at the COBOL source level -- even COBOL hex literals (`X"E5A9B4E584BF"`) are converted back to raw UTF-8 bytes in the generated C.
 

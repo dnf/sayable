@@ -1,0 +1,70 @@
+{
+  "code": "af",
+  "name": "Afrikaans",
+  "months": [
+    "Januarie",
+    "Februarie",
+    "Maart",
+    "April",
+    "Mei",
+    "Junie",
+    "Julie",
+    "Augustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember"
+  ],
+  "weekdays": [
+    "Sondag",
+    "Maandag",
+    "Dinsdag",
+    "Woensdag",
+    "Donderdag",
+    "Vrydag",
+    "Saterdag"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "vandag",
+  "tomorrow": "môre",
+  "yesterday": "gister",
+  "dayAfterTomorrow": "oormôre",
+  "dayBeforeYesterday": "eergister",
+  "thisWeekday": "hierdie {weekday}",
+  "nextWeekday": "volgende {weekday}",
+  "lastWeekday": "verlede {weekday}",
+  "short": {
+    "months": [
+      "Jan",
+      "Feb",
+      "Mrt",
+      "Apr",
+      "Mei",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Okt",
+      "Nov",
+      "Des"
+    ],
+    "weekdays": [
+      "So",
+      "Ma",
+      "Di",
+      "Wo",
+      "Do",
+      "Vr",
+      "Sa"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

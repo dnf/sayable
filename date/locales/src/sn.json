@@ -1,0 +1,70 @@
+{
+  "code": "sn",
+  "name": "Shona",
+  "months": [
+    "Ndira",
+    "Kukadzi",
+    "Kurume",
+    "Kubvumbi",
+    "Chivabvu",
+    "Chikumi",
+    "Chikunguru",
+    "Nyamavhuvhu",
+    "Gunyana",
+    "Gumiguru",
+    "Mbudzi",
+    "Zvita"
+  ],
+  "weekdays": [
+    "Svondo",
+    "Muvhuro",
+    "Chipiri",
+    "Chitatu",
+    "China",
+    "Chishanu",
+    "Mugovera"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "nhasi",
+  "tomorrow": "mangwana",
+  "yesterday": "nezuro",
+  "dayAfterTomorrow": "mangwanani",
+  "dayBeforeYesterday": "nezuro rakapera",
+  "thisWeekday": "{weekday} ino",
+  "nextWeekday": "{weekday} inotevera",
+  "lastWeekday": "{weekday} yapfuura",
+  "short": {
+    "months": [
+      "Ndi",
+      "Kuk",
+      "Kur",
+      "Kub",
+      "Chi",
+      "Chk",
+      "Chg",
+      "Nya",
+      "Gun",
+      "Gum",
+      "Mbu",
+      "Zvi"
+    ],
+    "weekdays": [
+      "Svo",
+      "Muv",
+      "Chp",
+      "Cht",
+      "Chn",
+      "Chs",
+      "Mug"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

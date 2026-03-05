@@ -10,14 +10,18 @@
 
 (ns sayabletime.locales
   (:require
+    [sayabletime.locales.af :as af]
+    [sayabletime.locales.ak :as ak]
     [sayabletime.locales.am :as am]
     [sayabletime.locales.ar :as ar]
     [sayabletime.locales.az :as az]
+    [sayabletime.locales.be :as be]
     [sayabletime.locales.bg :as bg]
     [sayabletime.locales.bn :as bn]
     [sayabletime.locales.br :as br]
     [sayabletime.locales.bs :as bs]
     [sayabletime.locales.ca :as ca]
+    [sayabletime.locales.ceb :as ceb]
     [sayabletime.locales.cs :as cs]
     [sayabletime.locales.cy :as cy]
     [sayabletime.locales.da :as da]
@@ -28,29 +32,47 @@
     [sayabletime.locales.et :as et]
     [sayabletime.locales.eu :as eu]
     [sayabletime.locales.fa :as fa]
+    [sayabletime.locales.ff :as ff]
     [sayabletime.locales.fi :as fi]
     [sayabletime.locales.fil :as fil]
     [sayabletime.locales.fr :as fr]
     [sayabletime.locales.ga :as ga]
     [sayabletime.locales.gd :as gd]
+    [sayabletime.locales.gl :as gl]
+    [sayabletime.locales.gn :as gn]
     [sayabletime.locales.gu :as gu]
     [sayabletime.locales.gv :as gv]
+    [sayabletime.locales.ha :as ha]
     [sayabletime.locales.he :as he]
     [sayabletime.locales.hi :as hi]
     [sayabletime.locales.hr :as hr]
+    [sayabletime.locales.ht :as ht]
     [sayabletime.locales.hu :as hu]
+    [sayabletime.locales.hy :as hy]
     [sayabletime.locales.id :as id]
+    [sayabletime.locales.ig :as ig]
+    [sayabletime.locales.is :as is]
     [sayabletime.locales.it :as it]
     [sayabletime.locales.ja :as ja]
     [sayabletime.locales.jv :as jv]
     [sayabletime.locales.ka :as ka]
     [sayabletime.locales.kk :as kk]
     [sayabletime.locales.km :as km]
+    [sayabletime.locales.kn :as kn]
     [sayabletime.locales.ko :as ko]
+    [sayabletime.locales.ku :as ku]
     [sayabletime.locales.kw :as kw]
+    [sayabletime.locales.ky :as ky]
+    [sayabletime.locales.lg :as lg]
+    [sayabletime.locales.ln :as ln]
+    [sayabletime.locales.lo :as lo]
     [sayabletime.locales.lt :as lt]
     [sayabletime.locales.lv :as lv]
+    [sayabletime.locales.mg :as mg]
+    [sayabletime.locales.mi :as mi]
     [sayabletime.locales.mk :as mk]
+    [sayabletime.locales.ml :as ml]
+    [sayabletime.locales.mn :as mn]
     [sayabletime.locales.mr :as mr]
     [sayabletime.locales.ms :as ms]
     [sayabletime.locales.mt :as mt]
@@ -58,41 +80,62 @@
     [sayabletime.locales.nb :as nb]
     [sayabletime.locales.ne :as ne]
     [sayabletime.locales.nl :as nl]
+    [sayabletime.locales.ny :as ny]
+    [sayabletime.locales.om :as om]
+    [sayabletime.locales.or :as or]
     [sayabletime.locales.pa :as pa]
     [sayabletime.locales.pl :as pl]
+    [sayabletime.locales.ps :as ps]
     [sayabletime.locales.pt :as pt]
+    [sayabletime.locales.qu :as qu]
     [sayabletime.locales.ro :as ro]
     [sayabletime.locales.ru :as ru]
+    [sayabletime.locales.rw :as rw]
+    [sayabletime.locales.sd :as sd]
     [sayabletime.locales.shi :as shi]
     [sayabletime.locales.si :as si]
     [sayabletime.locales.sk :as sk]
     [sayabletime.locales.sl :as sl]
+    [sayabletime.locales.sn :as sn]
+    [sayabletime.locales.so :as so]
     [sayabletime.locales.sq :as sq]
     [sayabletime.locales.sr :as sr]
+    [sayabletime.locales.su :as su]
     [sayabletime.locales.sv :as sv]
     [sayabletime.locales.sw :as sw]
     [sayabletime.locales.ta :as ta]
     [sayabletime.locales.te :as te]
+    [sayabletime.locales.tg :as tg]
     [sayabletime.locales.th :as th]
+    [sayabletime.locales.ti :as ti]
+    [sayabletime.locales.tk :as tk]
     [sayabletime.locales.tr :as tr]
     [sayabletime.locales.tzm :as tzm]
     [sayabletime.locales.uk :as uk]
     [sayabletime.locales.ur :as ur]
     [sayabletime.locales.uz :as uz]
     [sayabletime.locales.vi :as vi]
+    [sayabletime.locales.xh :as xh]
+    [sayabletime.locales.yo :as yo]
+    [sayabletime.locales.yue :as yue]
     [sayabletime.locales.zh :as zh]
+    [sayabletime.locales.zu :as zu]
     ))
 
 (defn get-locale [code]
   (case code
+    "af" af/locale
+    "ak" ak/locale
     "am" am/locale
     "ar" ar/locale
     "az" az/locale
+    "be" be/locale
     "bg" bg/locale
     "bn" bn/locale
     "br" br/locale
     "bs" bs/locale
     "ca" ca/locale
+    "ceb" ceb/locale
     "cs" cs/locale
     "cy" cy/locale
     "da" da/locale
@@ -103,29 +146,47 @@
     "et" et/locale
     "eu" eu/locale
     "fa" fa/locale
+    "ff" ff/locale
     "fi" fi/locale
     "fil" fil/locale
     "fr" fr/locale
     "ga" ga/locale
     "gd" gd/locale
+    "gl" gl/locale
+    "gn" gn/locale
     "gu" gu/locale
     "gv" gv/locale
+    "ha" ha/locale
     "he" he/locale
     "hi" hi/locale
     "hr" hr/locale
+    "ht" ht/locale
     "hu" hu/locale
+    "hy" hy/locale
     "id" id/locale
+    "ig" ig/locale
+    "is" is/locale
     "it" it/locale
     "ja" ja/locale
     "jv" jv/locale
     "ka" ka/locale
     "kk" kk/locale
     "km" km/locale
+    "kn" kn/locale
     "ko" ko/locale
+    "ku" ku/locale
     "kw" kw/locale
+    "ky" ky/locale
+    "lg" lg/locale
+    "ln" ln/locale
+    "lo" lo/locale
     "lt" lt/locale
     "lv" lv/locale
+    "mg" mg/locale
+    "mi" mi/locale
     "mk" mk/locale
+    "ml" ml/locale
+    "mn" mn/locale
     "mr" mr/locale
     "ms" ms/locale
     "mt" mt/locale
@@ -133,27 +194,44 @@
     "nb" nb/locale
     "ne" ne/locale
     "nl" nl/locale
+    "ny" ny/locale
+    "om" om/locale
+    "or" or/locale
     "pa" pa/locale
     "pl" pl/locale
+    "ps" ps/locale
     "pt" pt/locale
+    "qu" qu/locale
     "ro" ro/locale
     "ru" ru/locale
+    "rw" rw/locale
+    "sd" sd/locale
     "shi" shi/locale
     "si" si/locale
     "sk" sk/locale
     "sl" sl/locale
+    "sn" sn/locale
+    "so" so/locale
     "sq" sq/locale
     "sr" sr/locale
+    "su" su/locale
     "sv" sv/locale
     "sw" sw/locale
     "ta" ta/locale
     "te" te/locale
+    "tg" tg/locale
     "th" th/locale
+    "ti" ti/locale
+    "tk" tk/locale
     "tr" tr/locale
     "tzm" tzm/locale
     "uk" uk/locale
     "ur" ur/locale
     "uz" uz/locale
     "vi" vi/locale
+    "xh" xh/locale
+    "yo" yo/locale
+    "yue" yue/locale
     "zh" zh/locale
+    "zu" zu/locale
     nil))

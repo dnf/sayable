@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version     = SayableAge::VERSION
   s.summary     = "Human-friendly age formatting — how parents actually talk about little ones"
   s.description = "Human-friendly age formatting — how parents actually talk about little ones. " \
-                  "Zero dependencies, 71 built-in locales, 3 compactness levels."
+                  "Zero dependencies, 110 built-in locales, 3 compactness levels."
   s.authors     = ["Don Neufeld"]
   s.license     = "MIT"
   s.homepage    = "https://github.com/dnf/sayable"

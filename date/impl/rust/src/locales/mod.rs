@@ -8,21 +8,25 @@
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-//! Built-in locale definitions for 71 languages.
+//! Built-in locale definitions for 110 languages.
 //!
 //! Each submodule exports a `locale()` function returning a [`DateLocale`].
 //! Prefer using the static constants (e.g., [`EN`], [`JA`]) for lazy-initialized access.
 
 #![allow(missing_docs)]
 
+pub mod af;
+pub mod ak;
 pub mod am;
 pub mod ar;
 pub mod az;
+pub mod be;
 pub mod bg;
 pub mod bn;
 pub mod br;
 pub mod bs;
 pub mod ca;
+pub mod ceb;
 pub mod cs;
 pub mod cy;
 pub mod da;
@@ -33,29 +37,47 @@ pub mod es;
 pub mod et;
 pub mod eu;
 pub mod fa;
+pub mod ff;
 pub mod fi;
 pub mod fil;
 pub mod fr;
 pub mod ga;
 pub mod gd;
+pub mod gl;
+pub mod gn;
 pub mod gu;
 pub mod gv;
+pub mod ha;
 pub mod he;
 pub mod hi;
 pub mod hr;
+pub mod ht;
 pub mod hu;
+pub mod hy;
 pub mod id;
+pub mod ig;
+pub mod is;
 pub mod it;
 pub mod ja;
 pub mod jv;
 pub mod ka;
 pub mod kk;
 pub mod km;
+pub mod kn;
 pub mod ko;
+pub mod ku;
 pub mod kw;
+pub mod ky;
+pub mod lg;
+pub mod ln;
+pub mod lo;
 pub mod lt;
 pub mod lv;
+pub mod mg;
+pub mod mi;
 pub mod mk;
+pub mod ml;
+pub mod mn;
 pub mod mr;
 pub mod ms;
 pub mod mt;
@@ -63,38 +85,61 @@ pub mod my;
 pub mod nb;
 pub mod ne;
 pub mod nl;
+pub mod ny;
+pub mod om;
+pub mod or;
 pub mod pa;
 pub mod pl;
+pub mod ps;
 pub mod pt;
+pub mod qu;
 pub mod ro;
 pub mod ru;
+pub mod rw;
+pub mod sd;
 pub mod shi;
 pub mod si;
 pub mod sk;
 pub mod sl;
+pub mod sn;
+pub mod so;
 pub mod sq;
 pub mod sr;
+pub mod su;
 pub mod sv;
 pub mod sw;
 pub mod ta;
 pub mod te;
+pub mod tg;
 pub mod th;
+pub mod ti;
+pub mod tk;
 pub mod tr;
 pub mod tzm;
 pub mod uk;
 pub mod ur;
 pub mod uz;
 pub mod vi;
+pub mod xh;
+pub mod yo;
+pub mod yue;
 pub mod zh;
+pub mod zu;
 
 use crate::types::DateLocale;
 
+/// Afrikaans locale constant.
+pub static AF: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(af::locale);
+/// Akan locale constant.
+pub static AK: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ak::locale);
 /// Amharic locale constant.
 pub static AM: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(am::locale);
 /// Arabic locale constant.
 pub static AR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ar::locale);
 /// Azerbaijani locale constant.
 pub static AZ: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(az::locale);
+/// Belarusian locale constant.
+pub static BE: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(be::locale);
 /// Bulgarian locale constant.
 pub static BG: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(bg::locale);
 /// Bengali locale constant.
@@ -105,6 +150,8 @@ pub static BR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(br::lo
 pub static BS: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(bs::locale);
 /// Catalan locale constant.
 pub static CA: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ca::locale);
+/// Cebuano locale constant.
+pub static CEB: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ceb::locale);
 /// Czech locale constant.
 pub static CS: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(cs::locale);
 /// Welsh locale constant.
@@ -125,6 +172,8 @@ pub static ET: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(et::lo
 pub static EU: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(eu::locale);
 /// Persian locale constant.
 pub static FA: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(fa::locale);
+/// Fulah locale constant.
+pub static FF: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ff::locale);
 /// Finnish locale constant.
 pub static FI: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(fi::locale);
 /// Filipino locale constant.
@@ -135,20 +184,34 @@ pub static FR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(fr::lo
 pub static GA: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ga::locale);
 /// Scottish Gaelic locale constant.
 pub static GD: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(gd::locale);
+/// Galician locale constant.
+pub static GL: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(gl::locale);
+/// Guarani locale constant.
+pub static GN: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(gn::locale);
 /// Gujarati locale constant.
 pub static GU: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(gu::locale);
 /// Manx locale constant.
 pub static GV: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(gv::locale);
+/// Hausa locale constant.
+pub static HA: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ha::locale);
 /// Hebrew locale constant.
 pub static HE: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(he::locale);
 /// Hindi locale constant.
 pub static HI: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(hi::locale);
 /// Croatian locale constant.
 pub static HR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(hr::locale);
+/// Haitian Creole locale constant.
+pub static HT: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ht::locale);
 /// Hungarian locale constant.
 pub static HU: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(hu::locale);
+/// Armenian locale constant.
+pub static HY: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(hy::locale);
 /// Indonesian locale constant.
 pub static ID: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(id::locale);
+/// Igbo locale constant.
+pub static IG: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ig::locale);
+/// Icelandic locale constant.
+pub static IS: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(is::locale);
 /// Italian locale constant.
 pub static IT: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(it::locale);
 /// Japanese locale constant.
@@ -161,16 +224,36 @@ pub static KA: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ka::lo
 pub static KK: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(kk::locale);
 /// Khmer locale constant.
 pub static KM: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(km::locale);
+/// Kannada locale constant.
+pub static KN: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(kn::locale);
 /// Korean locale constant.
 pub static KO: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ko::locale);
+/// Kurdish locale constant.
+pub static KU: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ku::locale);
 /// Cornish locale constant.
 pub static KW: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(kw::locale);
+/// Kyrgyz locale constant.
+pub static KY: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ky::locale);
+/// Luganda locale constant.
+pub static LG: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(lg::locale);
+/// Lingala locale constant.
+pub static LN: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ln::locale);
+/// Lao locale constant.
+pub static LO: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(lo::locale);
 /// Lithuanian locale constant.
 pub static LT: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(lt::locale);
 /// Latvian locale constant.
 pub static LV: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(lv::locale);
+/// Malagasy locale constant.
+pub static MG: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(mg::locale);
+/// Māori locale constant.
+pub static MI: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(mi::locale);
 /// Macedonian locale constant.
 pub static MK: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(mk::locale);
+/// Malayalam locale constant.
+pub static ML: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ml::locale);
+/// Mongolian locale constant.
+pub static MN: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(mn::locale);
 /// Marathi locale constant.
 pub static MR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(mr::locale);
 /// Malay locale constant.
@@ -185,16 +268,30 @@ pub static NB: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(nb::lo
 pub static NE: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ne::locale);
 /// Dutch locale constant.
 pub static NL: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(nl::locale);
+/// Chichewa locale constant.
+pub static NY: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ny::locale);
+/// Oromo locale constant.
+pub static OM: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(om::locale);
+/// Odia locale constant.
+pub static OR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(or::locale);
 /// Punjabi locale constant.
 pub static PA: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(pa::locale);
 /// Polish locale constant.
 pub static PL: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(pl::locale);
+/// Pashto locale constant.
+pub static PS: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ps::locale);
 /// Portuguese locale constant.
 pub static PT: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(pt::locale);
+/// Quechua locale constant.
+pub static QU: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(qu::locale);
 /// Romanian locale constant.
 pub static RO: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ro::locale);
 /// Russian locale constant.
 pub static RU: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ru::locale);
+/// Kinyarwanda locale constant.
+pub static RW: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(rw::locale);
+/// Sindhi locale constant.
+pub static SD: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(sd::locale);
 /// Tachelhit locale constant.
 pub static SHI: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(shi::locale);
 /// Sinhala locale constant.
@@ -203,10 +300,16 @@ pub static SI: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(si::lo
 pub static SK: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(sk::locale);
 /// Slovenian locale constant.
 pub static SL: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(sl::locale);
+/// Shona locale constant.
+pub static SN: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(sn::locale);
+/// Somali locale constant.
+pub static SO: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(so::locale);
 /// Albanian locale constant.
 pub static SQ: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(sq::locale);
 /// Serbian locale constant.
 pub static SR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(sr::locale);
+/// Sundanese locale constant.
+pub static SU: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(su::locale);
 /// Swedish locale constant.
 pub static SV: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(sv::locale);
 /// Swahili locale constant.
@@ -215,8 +318,14 @@ pub static SW: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(sw::lo
 pub static TA: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ta::locale);
 /// Telugu locale constant.
 pub static TE: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(te::locale);
+/// Tajik locale constant.
+pub static TG: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(tg::locale);
 /// Thai locale constant.
 pub static TH: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(th::locale);
+/// Tigrinya locale constant.
+pub static TI: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ti::locale);
+/// Turkmen locale constant.
+pub static TK: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(tk::locale);
 /// Turkish locale constant.
 pub static TR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(tr::locale);
 /// Central Atlas Tamazight locale constant.
@@ -229,20 +338,32 @@ pub static UR: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(ur::lo
 pub static UZ: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(uz::locale);
 /// Vietnamese locale constant.
 pub static VI: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(vi::locale);
+/// Xhosa locale constant.
+pub static XH: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(xh::locale);
+/// Yoruba locale constant.
+pub static YO: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(yo::locale);
+/// Cantonese locale constant.
+pub static YUE: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(yue::locale);
 /// Chinese locale constant.
 pub static ZH: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(zh::locale);
+/// Zulu locale constant.
+pub static ZU: std::sync::LazyLock<DateLocale> = std::sync::LazyLock::new(zu::locale);
 
 /// Look up a locale by its code string.
 pub fn get(code: &str) -> Option<&'static DateLocale> {
     match code {
+        "af" => Some(&*AF),
+        "ak" => Some(&*AK),
         "am" => Some(&*AM),
         "ar" => Some(&*AR),
         "az" => Some(&*AZ),
+        "be" => Some(&*BE),
         "bg" => Some(&*BG),
         "bn" => Some(&*BN),
         "br" => Some(&*BR),
         "bs" => Some(&*BS),
         "ca" => Some(&*CA),
+        "ceb" => Some(&*CEB),
         "cs" => Some(&*CS),
         "cy" => Some(&*CY),
         "da" => Some(&*DA),
@@ -253,29 +374,47 @@ pub fn get(code: &str) -> Option<&'static DateLocale> {
         "et" => Some(&*ET),
         "eu" => Some(&*EU),
         "fa" => Some(&*FA),
+        "ff" => Some(&*FF),
         "fi" => Some(&*FI),
         "fil" => Some(&*FIL),
         "fr" => Some(&*FR),
         "ga" => Some(&*GA),
         "gd" => Some(&*GD),
+        "gl" => Some(&*GL),
+        "gn" => Some(&*GN),
         "gu" => Some(&*GU),
         "gv" => Some(&*GV),
+        "ha" => Some(&*HA),
         "he" => Some(&*HE),
         "hi" => Some(&*HI),
         "hr" => Some(&*HR),
+        "ht" => Some(&*HT),
         "hu" => Some(&*HU),
+        "hy" => Some(&*HY),
         "id" => Some(&*ID),
+        "ig" => Some(&*IG),
+        "is" => Some(&*IS),
         "it" => Some(&*IT),
         "ja" => Some(&*JA),
         "jv" => Some(&*JV),
         "ka" => Some(&*KA),
         "kk" => Some(&*KK),
         "km" => Some(&*KM),
+        "kn" => Some(&*KN),
         "ko" => Some(&*KO),
+        "ku" => Some(&*KU),
         "kw" => Some(&*KW),
+        "ky" => Some(&*KY),
+        "lg" => Some(&*LG),
+        "ln" => Some(&*LN),
+        "lo" => Some(&*LO),
         "lt" => Some(&*LT),
         "lv" => Some(&*LV),
+        "mg" => Some(&*MG),
+        "mi" => Some(&*MI),
         "mk" => Some(&*MK),
+        "ml" => Some(&*ML),
+        "mn" => Some(&*MN),
         "mr" => Some(&*MR),
         "ms" => Some(&*MS),
         "mt" => Some(&*MT),
@@ -283,29 +422,46 @@ pub fn get(code: &str) -> Option<&'static DateLocale> {
         "nb" => Some(&*NB),
         "ne" => Some(&*NE),
         "nl" => Some(&*NL),
+        "ny" => Some(&*NY),
+        "om" => Some(&*OM),
+        "or" => Some(&*OR),
         "pa" => Some(&*PA),
         "pl" => Some(&*PL),
+        "ps" => Some(&*PS),
         "pt" => Some(&*PT),
+        "qu" => Some(&*QU),
         "ro" => Some(&*RO),
         "ru" => Some(&*RU),
+        "rw" => Some(&*RW),
+        "sd" => Some(&*SD),
         "shi" => Some(&*SHI),
         "si" => Some(&*SI),
         "sk" => Some(&*SK),
         "sl" => Some(&*SL),
+        "sn" => Some(&*SN),
+        "so" => Some(&*SO),
         "sq" => Some(&*SQ),
         "sr" => Some(&*SR),
+        "su" => Some(&*SU),
         "sv" => Some(&*SV),
         "sw" => Some(&*SW),
         "ta" => Some(&*TA),
         "te" => Some(&*TE),
+        "tg" => Some(&*TG),
         "th" => Some(&*TH),
+        "ti" => Some(&*TI),
+        "tk" => Some(&*TK),
         "tr" => Some(&*TR),
         "tzm" => Some(&*TZM),
         "uk" => Some(&*UK),
         "ur" => Some(&*UR),
         "uz" => Some(&*UZ),
         "vi" => Some(&*VI),
+        "xh" => Some(&*XH),
+        "yo" => Some(&*YO),
+        "yue" => Some(&*YUE),
         "zh" => Some(&*ZH),
+        "zu" => Some(&*ZU),
         _ => None,
     }
 }
