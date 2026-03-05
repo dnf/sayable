@@ -1,7 +1,7 @@
 use crate::types::{Compactness, ShortClockConfig, TimeLocale};
 
 /// Library version.
-pub const VERSION: &str = "0.1.0";
+pub const VERSION: &str = "0.5.0";
 
 /// Locale-aware clock time formatter.
 #[derive(Debug, Clone)]

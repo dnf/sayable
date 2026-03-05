@@ -5,7 +5,7 @@ open SayableDurationLib.Types
 
 module Formatter =
 
-    let [<Literal>] Version = "0.1.0"
+    let [<Literal>] Version = "0.5.0"
 
     let private safeAtoi (s: string) (fromIdx: int) (toIdx: int) : int =
         let mutable n = 0

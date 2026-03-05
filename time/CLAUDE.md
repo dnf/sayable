@@ -4,14 +4,14 @@
 
 ## Status
 
-v0.1.0, 15 languages, 71 locales, 27 canonical tests.
+v0.5.0, 15 languages, 71 locales, 27 canonical tests.
 
 ## Directory structure
 
 ```
 time/
   config/
-    version.json           # Single source of truth for version (0.1.0)
+    version.json           # Single source of truth for version (0.5.0)
     metadata.json          # Package metadata
     tests.json             # 27 canonical test cases
   locales/

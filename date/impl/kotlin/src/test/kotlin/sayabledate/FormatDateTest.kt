@@ -341,6 +341,6 @@ class FormatDateTest {
 
     @Test
     fun `version matches config`() {
-        assertEquals("0.1.0", VERSION)
+        assertEquals("0.5.0", VERSION)
     }
 }

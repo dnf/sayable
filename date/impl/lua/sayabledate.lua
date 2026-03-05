@@ -3,7 +3,7 @@
 
 local M = {}
 
-M.VERSION = "0.1.0"
+M.VERSION = "0.5.0"
 
 local function safe_atoi(s)
     if not s or s == "" then return nil end

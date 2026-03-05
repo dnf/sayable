@@ -3,7 +3,7 @@ package sayableduration
 import "strings"
 
 // Version is the library version, matching duration/config/version.json.
-const Version = "0.1.0"
+const Version = "0.5.0"
 
 // SayableDuration is a locale-aware duration and relative time formatter.
 type SayableDuration struct {

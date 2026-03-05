@@ -342,6 +342,6 @@ class FormatDateTest {
 
     @Test
     void versionMatchesConfig() {
-        assertEquals("0.1.0", SayableDate.VERSION);
+        assertEquals("0.5.0", SayableDate.VERSION);
     }
 }

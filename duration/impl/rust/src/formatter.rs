@@ -1,7 +1,7 @@
 use crate::types::{Compactness, DurationLocale, UnitForms, resolve_unit};
 
 /// Library version, matching duration/config/version.json.
-pub const VERSION: &str = "0.1.0";
+pub const VERSION: &str = "0.5.0";
 
 /// Locale-aware duration and relative time formatter.
 #[derive(Debug, Clone)]

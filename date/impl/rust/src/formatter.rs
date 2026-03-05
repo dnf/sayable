@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use crate::types::{Compactness, DateLocale};
 
 /// Library version.
-pub const VERSION: &str = "0.1.0";
+pub const VERSION: &str = "0.5.0";
 
 /// Locale-aware date formatter.
 #[derive(Debug, Clone)]

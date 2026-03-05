@@ -3,7 +3,7 @@ package sayabledate
 import sayabledate.locales.Locales
 
 /** Library version, matching date/config/version.json. */
-public const val VERSION: String = "0.1.0"
+public const val VERSION: String = "0.5.0"
 
 /**
  * A locale-aware date formatter.

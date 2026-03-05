@@ -7,7 +7,7 @@ namespace SayableDuration;
 /** Locale-aware duration and relative time formatter. */
 final class SayableDuration
 {
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.5.0';
 
     private readonly DurationLocale $locale;
     /** @var array<string, string>|string */

@@ -3,7 +3,7 @@
 
 local M = {}
 
-M.VERSION = "0.1.0"
+M.VERSION = "0.5.0"
 
 local function is_leap_year(y)
     return (y % 4 == 0 and y % 100 ~= 0) or (y % 400 == 0)

@@ -2,7 +2,7 @@ package sayabledate
 
 import sayabledate.locales.Locales
 
-val Version = "0.1.0"
+val Version = "0.5.0"
 
 class SayableDate(locale: DateLocale, compactness: Compactness = Compactness.NORMAL):
     private val months: List[String] = _resolveList(_.months, locale.months)

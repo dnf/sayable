@@ -1,7 +1,7 @@
 import type { Compactness, DurationLocale, UnitForms } from './locale.js';
 import { en, resolveUnit } from './locale.js';
 
-export const VERSION = '0.1.0';
+export const VERSION = '0.5.0';
 
 type UnitKey = 'second' | 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year';
 

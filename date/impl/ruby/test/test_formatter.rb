@@ -369,7 +369,7 @@ end
 # ================================================================
 class TestVersion < Minitest::Test
   def test_version
-    assert_equal '0.1.0', SayableDate::VERSION
+    assert_equal '0.5.0', SayableDate::VERSION
   end
 end
 

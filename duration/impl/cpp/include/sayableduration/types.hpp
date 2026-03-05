@@ -8,7 +8,7 @@
 
 namespace sayableduration {
 
-constexpr const char* VERSION = "0.1.0";
+constexpr const char* VERSION = "0.5.0";
 
 /// CLDR-inspired plural categories.
 enum class PluralCategory { Zero, One, Two, Few, Many, Other };

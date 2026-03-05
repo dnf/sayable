@@ -2,7 +2,7 @@ package sayableduration
 
 import sayableduration.locales.Locales
 
-val Version = "0.1.0"
+val Version = "0.5.0"
 
 class SayableDuration(locale: DurationLocale, compactness: Compactness = Compactness.NORMAL):
     private val second: UnitForms = _resolve(_.second, _.units.second)

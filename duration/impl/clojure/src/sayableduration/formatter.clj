@@ -2,7 +2,7 @@
   (:require [clojure.string :as str]
             [sayableduration.internal :as internal]))
 
-(def version "0.1.0")
+(def version "0.5.0")
 
 (defn- lookup-unit-form [cat forms]
   (or (get forms cat) (get forms :other) ""))

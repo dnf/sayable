@@ -6,7 +6,7 @@ module SayableTime.Formatter
 import SayableTime.Types
 
 version :: String
-version = "0.1.0"
+version = "0.5.0"
 
 formatTime :: TimeLocale -> Compactness -> Maybe String -> Maybe String
 formatTime _ _ Nothing = Nothing

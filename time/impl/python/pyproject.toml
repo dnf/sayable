@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sayable-time"
-version = "0.1.0"
+version = "0.5.0"
 description = "Human-friendly clock time formatting — tells time the way people talk"
 readme = "../../README.md"
 license = "MIT"

@@ -1,7 +1,7 @@
 (ns sayabletime.formatter
   (:require [clojure.string :as str]))
 
-(def version "0.1.0")
+(def version "0.5.0")
 
 (defn- round-to-5 [minute]
   (* (quot (+ minute 2) 5) 5))

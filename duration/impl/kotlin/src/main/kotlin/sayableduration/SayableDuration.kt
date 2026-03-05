@@ -4,7 +4,7 @@ import sayableduration.locales.Locales
 import kotlin.math.abs
 import kotlin.math.roundToInt
 
-public const val VERSION: String = "0.1.0"
+public const val VERSION: String = "0.5.0"
 
 /**
  * A locale-aware duration and relative time formatter.

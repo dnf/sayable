@@ -2,7 +2,7 @@ package sayabletime
 
 import sayabletime.locales.Locales
 
-public const val VERSION: String = "0.1.0"
+public const val VERSION: String = "0.5.0"
 
 /**
  * Locale-aware clock time formatter.

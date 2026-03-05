@@ -2,7 +2,7 @@ package sayabletime
 
 import sayabletime.locales.Locales
 
-val Version = "0.1.0"
+val Version = "0.5.0"
 
 class SayableTime(locale: TimeLocale, compactness: Compactness = Compactness.NORMAL):
     private val shortClock: Option[ShortClockConfig] =

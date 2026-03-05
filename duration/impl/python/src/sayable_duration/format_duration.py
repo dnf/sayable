@@ -12,7 +12,7 @@ from sayable_duration.locale import (
 )
 from sayable_duration.locales.en import EN
 
-__version__ = "0.1.0"
+__version__ = "0.5.0"
 
 
 def _parse_iso_to_seconds(iso_str: str) -> int | None:

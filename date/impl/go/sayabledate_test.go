@@ -357,7 +357,7 @@ func TestLocaleSpanish(t *testing.T) {
 // ── Version ─────────────────────────────────────────────────────────
 
 func TestVersion(t *testing.T) {
-	if sd.Version != "0.1.0" {
-		t.Errorf("expected version %q, got %q", "0.1.0", sd.Version)
+	if sd.Version != "0.5.0" {
+		t.Errorf("expected version %q, got %q", "0.5.0", sd.Version)
 	}
 }

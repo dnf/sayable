@@ -7,7 +7,7 @@ namespace SayableTime;
 /** Locale-aware clock time formatter. */
 final class SayableTime
 {
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.5.0';
 
     private readonly ?ShortClockConfig $shortClock;
 

@@ -7,7 +7,7 @@
 
 namespace sayabletime {
 
-constexpr const char* VERSION = "0.1.0";
+constexpr const char* VERSION = "0.5.0";
 
 enum class Compactness { Normal, Short, Compact };
 

@@ -1,7 +1,7 @@
 import type { Compactness, ShortClockConfig, TimeLocale } from './locale.js';
 import { en } from './locale.js';
 
-export const VERSION = '0.1.0';
+export const VERSION = '0.5.0';
 
 /** Parse HH:MM or ISO datetime to [hour, minute]. Returns null on failure. */
 function parseTime(input: string): [number, number] | null {

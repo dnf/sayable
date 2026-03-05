@@ -3,7 +3,7 @@ package sayabletime
 import "strings"
 
 // Version is the library version.
-const Version = "0.1.0"
+const Version = "0.5.0"
 
 // SayableTime is a locale-aware clock time formatter.
 type SayableTime struct {

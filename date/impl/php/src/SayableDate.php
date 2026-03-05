@@ -7,7 +7,7 @@ namespace SayableDate;
 /** Locale-aware date formatter. */
 final class SayableDate
 {
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.5.0';
 
     /** @var list<string> */
     private readonly array $months;

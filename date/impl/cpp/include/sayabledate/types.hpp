@@ -8,7 +8,7 @@
 
 namespace sayabledate {
 
-constexpr const char* VERSION = "0.1.0";
+constexpr const char* VERSION = "0.5.0";
 
 /// Compactness controls the verbosity of formatted output.
 enum class Compactness { Normal, Short, Compact };

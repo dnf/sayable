@@ -3,7 +3,7 @@ package sayabledate
 import "strings"
 
 // Version is the library version, matching date/config/version.json.
-const Version = "0.1.0"
+const Version = "0.5.0"
 
 // SayableDate is a locale-aware date formatter.
 type SayableDate struct {

@@ -7,7 +7,7 @@ from typing import Literal
 from sayable_date.locale import CompactnessOverride, DateLocale
 from sayable_date.locales.en import EN
 
-__version__ = "0.1.0"
+__version__ = "0.5.0"
 
 
 def _parse_date(s: str) -> tuple[int, int, int] | None:

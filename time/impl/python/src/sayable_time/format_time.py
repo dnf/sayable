@@ -11,7 +11,7 @@ from sayable_time.locale import (
 )
 from sayable_time.locales.en import EN
 
-__version__ = "0.1.0"
+__version__ = "0.5.0"
 
 
 def _parse_time(input_str: str) -> tuple[int, int] | None:

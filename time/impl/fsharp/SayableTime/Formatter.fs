@@ -5,7 +5,7 @@ open SayableTimeLib.Types
 
 module Formatter =
 
-    let [<Literal>] Version = "0.1.0"
+    let [<Literal>] Version = "0.5.0"
 
     let internal parseTime (input: string) : (int * int) option =
         if String.IsNullOrEmpty(input) then

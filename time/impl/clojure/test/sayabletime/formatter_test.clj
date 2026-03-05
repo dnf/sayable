@@ -160,4 +160,4 @@
 ;; Version
 (deftest version-matches-config
   (testing "version matches config"
-    (is (= "0.1.0" sayabletime.formatter/version))))
+    (is (= "0.5.0" sayabletime.formatter/version))))

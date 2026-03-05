@@ -8,7 +8,7 @@ module SayableDate.Formatter
 import SayableDate.Types
 
 version :: String
-version = "0.1.0"
+version = "0.5.0"
 
 formatDate :: DateLocale -> Compactness -> Maybe String -> Maybe String
 formatDate _ _ Nothing = Nothing

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 project(sayable-time
-    VERSION 0.1.0
+    VERSION 0.5.0
     DESCRIPTION "Human-friendly clock time formatting — how people actually tell time"
     HOMEPAGE_URL "https://github.com/dnf/sayable"
     LANGUAGES CXX

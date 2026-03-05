@@ -219,7 +219,7 @@ fn test_japanese_half_past() {
 
 #[test]
 fn test_version() {
-    assert_eq!(sayable_time::VERSION, "0.1.0");
+    assert_eq!(sayable_time::VERSION, "0.5.0");
 }
 
 #[test]

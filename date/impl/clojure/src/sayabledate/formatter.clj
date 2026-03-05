@@ -1,7 +1,7 @@
 (ns sayabledate.formatter
   (:require [clojure.string :as str]))
 
-(def version "0.1.0")
+(def version "0.5.0")
 
 (defn- all-digits? [^String s]
   (every? #(Character/isDigit ^char %) s))

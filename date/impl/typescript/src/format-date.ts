@@ -1,7 +1,7 @@
 import type { Compactness, CompactnessOverride, DateLocale } from './locale.js';
 import { en } from './locale.js';
 
-export const VERSION = '0.1.0';
+export const VERSION = '0.5.0';
 
 /** Parse YYYY-MM-DD or ISO datetime to [year, month, day]. Returns null on failure. */
 function parseDate(input: string): [number, number, number] | null {

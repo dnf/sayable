@@ -5,7 +5,7 @@ namespace SayableDateLib;
 
 public class SayableDate
 {
-    public const string Version = "0.1.0";
+    public const string Version = "0.5.0";
 
     private readonly DateLocale _locale;
     private readonly Compactness _compactness;

@@ -9,7 +9,7 @@ module SayableDuration.Formatter
 import SayableDuration.Types
 
 version :: String
-version = "0.1.0"
+version = "0.5.0"
 
 resolveUnit :: Int -> UnitForms -> DurationLocale -> String -> String
 resolveUnit count uf loc half =

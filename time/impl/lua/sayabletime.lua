@@ -3,7 +3,7 @@
 
 local M = {}
 
-M.VERSION = "0.1.0"
+M.VERSION = "0.5.0"
 
 local function parse_time(input)
     if not input or input == "" then return nil end

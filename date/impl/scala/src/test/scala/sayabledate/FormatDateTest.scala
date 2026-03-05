@@ -289,4 +289,4 @@ class FormatDateTest:
 
     @Test
     def `version matches config`(): Unit =
-        assertEquals("0.1.0", Version)
+        assertEquals("0.5.0", Version)
