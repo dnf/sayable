@@ -290,13 +290,16 @@ generate target *args:
         compatibility)
             {{python}} tools/generate_compatibility.py {{args}}
             ;;
+        geography)
+            uv run --with geopandas --with matplotlib {{python}} tools/geography/generate.py {{args}}
+            ;;
         locales)
             (cd age && {{python}} -m codegen.generate {{args}})
             (cd age && uv run --project impl/python {{python}} -m codegen.docgen {{args}})
             ;;
         *)
             echo "error: unknown generate target '{{target}}'" >&2
-            echo "Valid targets: compatibility, locales" >&2
+            echo "Valid targets: compatibility, geography, locales" >&2
             exit 1
             ;;
     esac
@@ -329,6 +332,7 @@ check:
     (cd age && uv run --project impl/python {{python}} -m codegen.docgen --check)
     {{python}} .hecatron/tools/codegen/dockerfile.py --check
     {{python}} tools/generate_compatibility.py --check
+    uv run --with geopandas --with matplotlib {{python}} tools/geography/generate.py --check
 
 # Generate Dockerfile from per-language snippets
 [group('codegen')]

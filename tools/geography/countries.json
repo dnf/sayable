@@ -1,0 +1,1628 @@
+{
+  "source": "CIA World Factbook 2024, Ethnologue 27th edition",
+  "countries": {
+    "AF": {
+      "name": "Afghanistan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "fa", "name": "Dari (Persian)", "proportion": 0.50 },
+        { "code": "ps", "name": "Pashto", "proportion": 0.35 },
+        { "code": "uz", "name": "Uzbek", "proportion": 0.09 },
+        { "code": "tk", "name": "Turkmen", "proportion": 0.02 }
+      ]
+    },
+    "AL": {
+      "name": "Albania",
+      "continent": "Europe",
+      "languages": [
+        { "code": "sq", "name": "Albanian", "proportion": 0.98 },
+        { "code": "el", "name": "Greek", "proportion": 0.01 }
+      ]
+    },
+    "DZ": {
+      "name": "Algeria",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.72 },
+        { "code": "tzm", "name": "Tamazight", "proportion": 0.27 },
+        { "code": "fr", "name": "French", "proportion": 0.33 }
+      ]
+    },
+    "AO": {
+      "name": "Angola",
+      "continent": "Africa",
+      "languages": [
+        { "code": "pt", "name": "Portuguese", "proportion": 0.71 },
+        { "code": "ln", "name": "Lingala", "proportion": 0.03 }
+      ]
+    },
+    "AR": {
+      "name": "Argentina",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.97 },
+        { "code": "en", "name": "English", "proportion": 0.07 },
+        { "code": "gn", "name": "Guarani", "proportion": 0.01 }
+      ]
+    },
+    "AM": {
+      "name": "Armenia",
+      "continent": "Asia",
+      "languages": [
+        { "code": "hy", "name": "Armenian", "proportion": 0.98 },
+        { "code": "ru", "name": "Russian", "proportion": 0.15 }
+      ]
+    },
+    "AU": {
+      "name": "Australia",
+      "continent": "Oceania",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.72 },
+        { "code": "zh", "name": "Chinese", "proportion": 0.05 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.02 },
+        { "code": "vi", "name": "Vietnamese", "proportion": 0.01 },
+        { "code": "it", "name": "Italian", "proportion": 0.01 },
+        { "code": "el", "name": "Greek", "proportion": 0.01 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.02 },
+        { "code": "pa", "name": "Punjabi", "proportion": 0.01 }
+      ]
+    },
+    "AT": {
+      "name": "Austria",
+      "continent": "Europe",
+      "languages": [
+        { "code": "de", "name": "German", "proportion": 0.89 },
+        { "code": "tr", "name": "Turkish", "proportion": 0.03 },
+        { "code": "hr", "name": "Croatian", "proportion": 0.02 },
+        { "code": "sr", "name": "Serbian", "proportion": 0.02 },
+        { "code": "hu", "name": "Hungarian", "proportion": 0.01 }
+      ]
+    },
+    "AZ": {
+      "name": "Azerbaijan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "az", "name": "Azerbaijani", "proportion": 0.93 },
+        { "code": "ru", "name": "Russian", "proportion": 0.15 }
+      ]
+    },
+    "BS": {
+      "name": "Bahamas",
+      "continent": "North America",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.95 },
+        { "code": "ht", "name": "Haitian Creole", "proportion": 0.05 }
+      ]
+    },
+    "BH": {
+      "name": "Bahrain",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.70 },
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "fa", "name": "Persian", "proportion": 0.10 },
+        { "code": "ur", "name": "Urdu", "proportion": 0.08 }
+      ]
+    },
+    "BD": {
+      "name": "Bangladesh",
+      "continent": "Asia",
+      "languages": [
+        { "code": "bn", "name": "Bengali", "proportion": 0.98 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "BB": {
+      "name": "Barbados",
+      "continent": "North America",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.95 }
+      ]
+    },
+    "BY": {
+      "name": "Belarus",
+      "continent": "Europe",
+      "languages": [
+        { "code": "be", "name": "Belarusian", "proportion": 0.23 },
+        { "code": "ru", "name": "Russian", "proportion": 0.72 }
+      ]
+    },
+    "BE": {
+      "name": "Belgium",
+      "continent": "Europe",
+      "languages": [
+        { "code": "nl", "name": "Dutch", "proportion": 0.55 },
+        { "code": "fr", "name": "French", "proportion": 0.36 },
+        { "code": "de", "name": "German", "proportion": 0.01 }
+      ]
+    },
+    "BZ": {
+      "name": "Belize",
+      "continent": "North America",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.63 },
+        { "code": "es", "name": "Spanish", "proportion": 0.57 }
+      ]
+    },
+    "BJ": {
+      "name": "Benin",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.35 },
+        { "code": "yo", "name": "Yoruba", "proportion": 0.12 }
+      ]
+    },
+    "BT": {
+      "name": "Bhutan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ne", "name": "Nepali", "proportion": 0.22 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "BO": {
+      "name": "Bolivia",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.84 },
+        { "code": "qu", "name": "Quechua", "proportion": 0.21 }
+      ]
+    },
+    "BA": {
+      "name": "Bosnia and Herzegovina",
+      "continent": "Europe",
+      "languages": [
+        { "code": "bs", "name": "Bosnian", "proportion": 0.53 },
+        { "code": "sr", "name": "Serbian", "proportion": 0.31 },
+        { "code": "hr", "name": "Croatian", "proportion": 0.15 }
+      ]
+    },
+    "BW": {
+      "name": "Botswana",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "sn", "name": "Shona", "proportion": 0.02 }
+      ]
+    },
+    "BR": {
+      "name": "Brazil",
+      "continent": "South America",
+      "languages": [
+        { "code": "pt", "name": "Portuguese", "proportion": 0.98 },
+        { "code": "en", "name": "English", "proportion": 0.05 },
+        { "code": "es", "name": "Spanish", "proportion": 0.04 },
+        { "code": "de", "name": "German", "proportion": 0.01 },
+        { "code": "it", "name": "Italian", "proportion": 0.01 },
+        { "code": "ja", "name": "Japanese", "proportion": 0.01 }
+      ]
+    },
+    "BN": {
+      "name": "Brunei",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ms", "name": "Malay", "proportion": 0.83 },
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "zh", "name": "Chinese", "proportion": 0.10 }
+      ]
+    },
+    "BG": {
+      "name": "Bulgaria",
+      "continent": "Europe",
+      "languages": [
+        { "code": "bg", "name": "Bulgarian", "proportion": 0.85 },
+        { "code": "tr", "name": "Turkish", "proportion": 0.09 },
+        { "code": "ro", "name": "Romanian", "proportion": 0.03 }
+      ]
+    },
+    "BF": {
+      "name": "Burkina Faso",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.25 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.08 }
+      ]
+    },
+    "BI": {
+      "name": "Burundi",
+      "continent": "Africa",
+      "languages": [
+        { "code": "rw", "name": "Kirundi", "proportion": 0.97 },
+        { "code": "fr", "name": "French", "proportion": 0.08 },
+        { "code": "sw", "name": "Swahili", "proportion": 0.02 },
+        { "code": "en", "name": "English", "proportion": 0.03 }
+      ]
+    },
+    "KH": {
+      "name": "Cambodia",
+      "continent": "Asia",
+      "languages": [
+        { "code": "km", "name": "Khmer", "proportion": 0.96 },
+        { "code": "en", "name": "English", "proportion": 0.05 },
+        { "code": "fr", "name": "French", "proportion": 0.02 }
+      ]
+    },
+    "CM": {
+      "name": "Cameroon",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.57 },
+        { "code": "en", "name": "English", "proportion": 0.22 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.07 }
+      ]
+    },
+    "CA": {
+      "name": "Canada",
+      "continent": "North America",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.75 },
+        { "code": "fr", "name": "French", "proportion": 0.23 },
+        { "code": "zh", "name": "Chinese", "proportion": 0.04 },
+        { "code": "pa", "name": "Punjabi", "proportion": 0.02 },
+        { "code": "es", "name": "Spanish", "proportion": 0.02 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.01 },
+        { "code": "tg", "name": "Tagalog", "proportion": 0.02 }
+      ]
+    },
+    "CF": {
+      "name": "Central African Republic",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.23 },
+        { "code": "ln", "name": "Lingala", "proportion": 0.05 }
+      ]
+    },
+    "TD": {
+      "name": "Chad",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.13 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.26 }
+      ]
+    },
+    "CL": {
+      "name": "Chile",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.95 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "CN": {
+      "name": "China",
+      "continent": "Asia",
+      "languages": [
+        { "code": "zh", "name": "Chinese (Mandarin)", "proportion": 0.73 },
+        { "code": "yue", "name": "Cantonese", "proportion": 0.06 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "CO": {
+      "name": "Colombia",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.99 },
+        { "code": "en", "name": "English", "proportion": 0.04 }
+      ]
+    },
+    "KM": {
+      "name": "Comoros",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.20 },
+        { "code": "fr", "name": "French", "proportion": 0.15 }
+      ]
+    },
+    "CG": {
+      "name": "Congo",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.60 },
+        { "code": "ln", "name": "Lingala", "proportion": 0.30 }
+      ]
+    },
+    "CD": {
+      "name": "Democratic Republic of the Congo",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.51 },
+        { "code": "ln", "name": "Lingala", "proportion": 0.20 },
+        { "code": "sw", "name": "Swahili", "proportion": 0.15 },
+        { "code": "lg", "name": "Luganda", "proportion": 0.04 }
+      ]
+    },
+    "CR": {
+      "name": "Costa Rica",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.97 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "CI": {
+      "name": "Cote d'Ivoire",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.34 }
+      ]
+    },
+    "HR": {
+      "name": "Croatia",
+      "continent": "Europe",
+      "languages": [
+        { "code": "hr", "name": "Croatian", "proportion": 0.96 },
+        { "code": "sr", "name": "Serbian", "proportion": 0.01 }
+      ]
+    },
+    "CU": {
+      "name": "Cuba",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.95 }
+      ]
+    },
+    "CY": {
+      "name": "Cyprus",
+      "continent": "Asia",
+      "languages": [
+        { "code": "el", "name": "Greek", "proportion": 0.72 },
+        { "code": "tr", "name": "Turkish", "proportion": 0.18 },
+        { "code": "en", "name": "English", "proportion": 0.40 }
+      ]
+    },
+    "CZ": {
+      "name": "Czechia",
+      "continent": "Europe",
+      "languages": [
+        { "code": "cs", "name": "Czech", "proportion": 0.96 },
+        { "code": "sk", "name": "Slovak", "proportion": 0.02 }
+      ]
+    },
+    "DK": {
+      "name": "Denmark",
+      "continent": "Europe",
+      "languages": [
+        { "code": "da", "name": "Danish", "proportion": 0.93 },
+        { "code": "en", "name": "English", "proportion": 0.86 },
+        { "code": "de", "name": "German", "proportion": 0.47 }
+      ]
+    },
+    "DJ": {
+      "name": "Djibouti",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.34 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.11 },
+        { "code": "so", "name": "Somali", "proportion": 0.60 },
+        { "code": "af", "name": "Afar", "proportion": 0.34 }
+      ]
+    },
+    "DO": {
+      "name": "Dominican Republic",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.95 },
+        { "code": "en", "name": "English", "proportion": 0.08 }
+      ]
+    },
+    "EC": {
+      "name": "Ecuador",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.93 },
+        { "code": "qu", "name": "Quechua", "proportion": 0.04 }
+      ]
+    },
+    "EG": {
+      "name": "Egypt",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.94 },
+        { "code": "en", "name": "English", "proportion": 0.14 },
+        { "code": "fr", "name": "French", "proportion": 0.03 }
+      ]
+    },
+    "SV": {
+      "name": "El Salvador",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.99 }
+      ]
+    },
+    "GQ": {
+      "name": "Equatorial Guinea",
+      "continent": "Africa",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.68 },
+        { "code": "fr", "name": "French", "proportion": 0.27 },
+        { "code": "pt", "name": "Portuguese", "proportion": 0.05 }
+      ]
+    },
+    "ER": {
+      "name": "Eritrea",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ti", "name": "Tigrinya", "proportion": 0.55 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.20 },
+        { "code": "en", "name": "English", "proportion": 0.05 }
+      ]
+    },
+    "EE": {
+      "name": "Estonia",
+      "continent": "Europe",
+      "languages": [
+        { "code": "et", "name": "Estonian", "proportion": 0.69 },
+        { "code": "ru", "name": "Russian", "proportion": 0.29 },
+        { "code": "en", "name": "English", "proportion": 0.46 }
+      ]
+    },
+    "SZ": {
+      "name": "Eswatini",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.20 }
+      ]
+    },
+    "ET": {
+      "name": "Ethiopia",
+      "continent": "Africa",
+      "languages": [
+        { "code": "am", "name": "Amharic", "proportion": 0.32 },
+        { "code": "om", "name": "Oromo", "proportion": 0.34 },
+        { "code": "so", "name": "Somali", "proportion": 0.06 },
+        { "code": "ti", "name": "Tigrinya", "proportion": 0.06 },
+        { "code": "en", "name": "English", "proportion": 0.05 }
+      ]
+    },
+    "FJ": {
+      "name": "Fiji",
+      "continent": "Oceania",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.55 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.33 }
+      ]
+    },
+    "FI": {
+      "name": "Finland",
+      "continent": "Europe",
+      "languages": [
+        { "code": "fi", "name": "Finnish", "proportion": 0.87 },
+        { "code": "sv", "name": "Swedish", "proportion": 0.05 },
+        { "code": "en", "name": "English", "proportion": 0.70 }
+      ]
+    },
+    "FR": {
+      "name": "France",
+      "continent": "Europe",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.93 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.04 },
+        { "code": "en", "name": "English", "proportion": 0.39 },
+        { "code": "es", "name": "Spanish", "proportion": 0.06 },
+        { "code": "pt", "name": "Portuguese", "proportion": 0.03 },
+        { "code": "de", "name": "German", "proportion": 0.06 },
+        { "code": "it", "name": "Italian", "proportion": 0.02 },
+        { "code": "br", "name": "Breton", "proportion": 0.01 },
+        { "code": "eu", "name": "Basque", "proportion": 0.01 }
+      ]
+    },
+    "GA": {
+      "name": "Gabon",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.80 }
+      ]
+    },
+    "GM": {
+      "name": "Gambia",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.20 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.18 },
+        { "code": "yo", "name": "Yoruba", "proportion": 0.02 }
+      ]
+    },
+    "GE": {
+      "name": "Georgia",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ka", "name": "Georgian", "proportion": 0.87 },
+        { "code": "ru", "name": "Russian", "proportion": 0.15 },
+        { "code": "az", "name": "Azerbaijani", "proportion": 0.06 },
+        { "code": "hy", "name": "Armenian", "proportion": 0.06 }
+      ]
+    },
+    "DE": {
+      "name": "Germany",
+      "continent": "Europe",
+      "languages": [
+        { "code": "de", "name": "German", "proportion": 0.90 },
+        { "code": "en", "name": "English", "proportion": 0.56 },
+        { "code": "tr", "name": "Turkish", "proportion": 0.04 },
+        { "code": "ru", "name": "Russian", "proportion": 0.03 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.02 },
+        { "code": "pl", "name": "Polish", "proportion": 0.02 }
+      ]
+    },
+    "GH": {
+      "name": "Ghana",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.58 },
+        { "code": "ak", "name": "Akan", "proportion": 0.44 },
+        { "code": "ha", "name": "Hausa", "proportion": 0.05 },
+        { "code": "ig", "name": "Igbo", "proportion": 0.01 },
+        { "code": "yo", "name": "Yoruba", "proportion": 0.01 }
+      ]
+    },
+    "GR": {
+      "name": "Greece",
+      "continent": "Europe",
+      "languages": [
+        { "code": "el", "name": "Greek", "proportion": 0.95 },
+        { "code": "en", "name": "English", "proportion": 0.51 }
+      ]
+    },
+    "GT": {
+      "name": "Guatemala",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.93 }
+      ]
+    },
+    "GN": {
+      "name": "Guinea",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.25 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.33 },
+        { "code": "su", "name": "Susu", "proportion": 0.21 }
+      ]
+    },
+    "GW": {
+      "name": "Guinea-Bissau",
+      "continent": "Africa",
+      "languages": [
+        { "code": "pt", "name": "Portuguese", "proportion": 0.14 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.16 }
+      ]
+    },
+    "GY": {
+      "name": "Guyana",
+      "continent": "South America",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.87 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.01 }
+      ]
+    },
+    "HT": {
+      "name": "Haiti",
+      "continent": "North America",
+      "languages": [
+        { "code": "ht", "name": "Haitian Creole", "proportion": 0.96 },
+        { "code": "fr", "name": "French", "proportion": 0.10 }
+      ]
+    },
+    "HN": {
+      "name": "Honduras",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.98 },
+        { "code": "en", "name": "English", "proportion": 0.04 }
+      ]
+    },
+    "HU": {
+      "name": "Hungary",
+      "continent": "Europe",
+      "languages": [
+        { "code": "hu", "name": "Hungarian", "proportion": 0.98 },
+        { "code": "en", "name": "English", "proportion": 0.20 },
+        { "code": "de", "name": "German", "proportion": 0.11 }
+      ]
+    },
+    "IS": {
+      "name": "Iceland",
+      "continent": "Europe",
+      "languages": [
+        { "code": "is", "name": "Icelandic", "proportion": 0.94 },
+        { "code": "en", "name": "English", "proportion": 0.88 },
+        { "code": "da", "name": "Danish", "proportion": 0.30 }
+      ]
+    },
+    "IN": {
+      "name": "India",
+      "continent": "Asia",
+      "languages": [
+        { "code": "hi", "name": "Hindi", "proportion": 0.44 },
+        { "code": "bn", "name": "Bengali", "proportion": 0.08 },
+        { "code": "te", "name": "Telugu", "proportion": 0.07 },
+        { "code": "mr", "name": "Marathi", "proportion": 0.07 },
+        { "code": "ta", "name": "Tamil", "proportion": 0.06 },
+        { "code": "gu", "name": "Gujarati", "proportion": 0.05 },
+        { "code": "kn", "name": "Kannada", "proportion": 0.04 },
+        { "code": "ml", "name": "Malayalam", "proportion": 0.03 },
+        { "code": "or", "name": "Odia", "proportion": 0.03 },
+        { "code": "pa", "name": "Punjabi", "proportion": 0.03 },
+        { "code": "ur", "name": "Urdu", "proportion": 0.05 },
+        { "code": "en", "name": "English", "proportion": 0.10 },
+        { "code": "sd", "name": "Sindhi", "proportion": 0.01 },
+        { "code": "ne", "name": "Nepali", "proportion": 0.01 }
+      ]
+    },
+    "ID": {
+      "name": "Indonesia",
+      "continent": "Asia",
+      "languages": [
+        { "code": "id", "name": "Indonesian", "proportion": 0.94 },
+        { "code": "jv", "name": "Javanese", "proportion": 0.31 },
+        { "code": "su", "name": "Sundanese", "proportion": 0.15 },
+        { "code": "ms", "name": "Malay", "proportion": 0.07 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "IR": {
+      "name": "Iran",
+      "continent": "Asia",
+      "languages": [
+        { "code": "fa", "name": "Persian", "proportion": 0.53 },
+        { "code": "az", "name": "Azerbaijani", "proportion": 0.18 },
+        { "code": "ku", "name": "Kurdish", "proportion": 0.10 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.02 },
+        { "code": "tk", "name": "Turkmen", "proportion": 0.02 }
+      ]
+    },
+    "IQ": {
+      "name": "Iraq",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.77 },
+        { "code": "ku", "name": "Kurdish", "proportion": 0.15 },
+        { "code": "tk", "name": "Turkmen", "proportion": 0.03 },
+        { "code": "en", "name": "English", "proportion": 0.07 }
+      ]
+    },
+    "IE": {
+      "name": "Ireland",
+      "continent": "Europe",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.94 },
+        { "code": "ga", "name": "Irish", "proportion": 0.40 }
+      ]
+    },
+    "IL": {
+      "name": "Israel",
+      "continent": "Asia",
+      "languages": [
+        { "code": "he", "name": "Hebrew", "proportion": 0.87 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.20 },
+        { "code": "ru", "name": "Russian", "proportion": 0.15 },
+        { "code": "en", "name": "English", "proportion": 0.60 },
+        { "code": "fr", "name": "French", "proportion": 0.06 },
+        { "code": "am", "name": "Amharic", "proportion": 0.02 }
+      ]
+    },
+    "IT": {
+      "name": "Italy",
+      "continent": "Europe",
+      "languages": [
+        { "code": "it", "name": "Italian", "proportion": 0.93 },
+        { "code": "en", "name": "English", "proportion": 0.34 },
+        { "code": "fr", "name": "French", "proportion": 0.16 },
+        { "code": "de", "name": "German", "proportion": 0.02 },
+        { "code": "es", "name": "Spanish", "proportion": 0.07 }
+      ]
+    },
+    "JM": {
+      "name": "Jamaica",
+      "continent": "North America",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.95 }
+      ]
+    },
+    "JP": {
+      "name": "Japan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ja", "name": "Japanese", "proportion": 0.99 },
+        { "code": "en", "name": "English", "proportion": 0.15 }
+      ]
+    },
+    "JO": {
+      "name": "Jordan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.97 },
+        { "code": "en", "name": "English", "proportion": 0.15 }
+      ]
+    },
+    "KZ": {
+      "name": "Kazakhstan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "kk", "name": "Kazakh", "proportion": 0.74 },
+        { "code": "ru", "name": "Russian", "proportion": 0.84 },
+        { "code": "en", "name": "English", "proportion": 0.15 }
+      ]
+    },
+    "KE": {
+      "name": "Kenya",
+      "continent": "Africa",
+      "languages": [
+        { "code": "sw", "name": "Swahili", "proportion": 0.67 },
+        { "code": "en", "name": "English", "proportion": 0.31 },
+        { "code": "lg", "name": "Ganda", "proportion": 0.01 },
+        { "code": "so", "name": "Somali", "proportion": 0.01 }
+      ]
+    },
+    "KP": {
+      "name": "North Korea",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ko", "name": "Korean", "proportion": 0.99 }
+      ]
+    },
+    "KR": {
+      "name": "South Korea",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ko", "name": "Korean", "proportion": 0.99 },
+        { "code": "en", "name": "English", "proportion": 0.30 }
+      ]
+    },
+    "KW": {
+      "name": "Kuwait",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.78 },
+        { "code": "en", "name": "English", "proportion": 0.40 }
+      ]
+    },
+    "KG": {
+      "name": "Kyrgyzstan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ky", "name": "Kyrgyz", "proportion": 0.72 },
+        { "code": "ru", "name": "Russian", "proportion": 0.49 },
+        { "code": "uz", "name": "Uzbek", "proportion": 0.14 }
+      ]
+    },
+    "LA": {
+      "name": "Laos",
+      "continent": "Asia",
+      "languages": [
+        { "code": "lo", "name": "Lao", "proportion": 0.53 },
+        { "code": "fr", "name": "French", "proportion": 0.03 },
+        { "code": "en", "name": "English", "proportion": 0.03 }
+      ]
+    },
+    "LV": {
+      "name": "Latvia",
+      "continent": "Europe",
+      "languages": [
+        { "code": "lv", "name": "Latvian", "proportion": 0.62 },
+        { "code": "ru", "name": "Russian", "proportion": 0.34 },
+        { "code": "en", "name": "English", "proportion": 0.46 }
+      ]
+    },
+    "LB": {
+      "name": "Lebanon",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.93 },
+        { "code": "fr", "name": "French", "proportion": 0.40 },
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "hy", "name": "Armenian", "proportion": 0.04 }
+      ]
+    },
+    "LS": {
+      "name": "Lesotho",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "zu", "name": "Zulu", "proportion": 0.02 }
+      ]
+    },
+    "LR": {
+      "name": "Liberia",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.20 }
+      ]
+    },
+    "LY": {
+      "name": "Libya",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.95 }
+      ]
+    },
+    "LT": {
+      "name": "Lithuania",
+      "continent": "Europe",
+      "languages": [
+        { "code": "lt", "name": "Lithuanian", "proportion": 0.85 },
+        { "code": "ru", "name": "Russian", "proportion": 0.19 },
+        { "code": "pl", "name": "Polish", "proportion": 0.06 },
+        { "code": "en", "name": "English", "proportion": 0.38 }
+      ]
+    },
+    "LU": {
+      "name": "Luxembourg",
+      "continent": "Europe",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.96 },
+        { "code": "de", "name": "German", "proportion": 0.71 },
+        { "code": "en", "name": "English", "proportion": 0.56 },
+        { "code": "pt", "name": "Portuguese", "proportion": 0.13 }
+      ]
+    },
+    "MG": {
+      "name": "Madagascar",
+      "continent": "Africa",
+      "languages": [
+        { "code": "mg", "name": "Malagasy", "proportion": 0.95 },
+        { "code": "fr", "name": "French", "proportion": 0.20 },
+        { "code": "en", "name": "English", "proportion": 0.05 }
+      ]
+    },
+    "MW": {
+      "name": "Malawi",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ny", "name": "Chewa", "proportion": 0.57 },
+        { "code": "en", "name": "English", "proportion": 0.15 }
+      ]
+    },
+    "MY": {
+      "name": "Malaysia",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ms", "name": "Malay", "proportion": 0.69 },
+        { "code": "en", "name": "English", "proportion": 0.50 },
+        { "code": "zh", "name": "Chinese", "proportion": 0.23 },
+        { "code": "ta", "name": "Tamil", "proportion": 0.07 }
+      ]
+    },
+    "MV": {
+      "name": "Maldives",
+      "continent": "Asia",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.25 }
+      ]
+    },
+    "ML": {
+      "name": "Mali",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.20 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.14 }
+      ]
+    },
+    "MT": {
+      "name": "Malta",
+      "continent": "Europe",
+      "languages": [
+        { "code": "mt", "name": "Maltese", "proportion": 0.90 },
+        { "code": "en", "name": "English", "proportion": 0.89 },
+        { "code": "it", "name": "Italian", "proportion": 0.66 }
+      ]
+    },
+    "MR": {
+      "name": "Mauritania",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.80 },
+        { "code": "fr", "name": "French", "proportion": 0.15 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.08 }
+      ]
+    },
+    "MU": {
+      "name": "Mauritius",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.50 },
+        { "code": "fr", "name": "French", "proportion": 0.73 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.03 }
+      ]
+    },
+    "MX": {
+      "name": "Mexico",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.93 },
+        { "code": "en", "name": "English", "proportion": 0.12 }
+      ]
+    },
+    "MD": {
+      "name": "Moldova",
+      "continent": "Europe",
+      "languages": [
+        { "code": "ro", "name": "Romanian", "proportion": 0.76 },
+        { "code": "ru", "name": "Russian", "proportion": 0.27 },
+        { "code": "uk", "name": "Ukrainian", "proportion": 0.06 }
+      ]
+    },
+    "MN": {
+      "name": "Mongolia",
+      "continent": "Asia",
+      "languages": [
+        { "code": "mn", "name": "Mongolian", "proportion": 0.95 },
+        { "code": "ru", "name": "Russian", "proportion": 0.05 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "ME": {
+      "name": "Montenegro",
+      "continent": "Europe",
+      "languages": [
+        { "code": "sr", "name": "Serbian", "proportion": 0.43 },
+        { "code": "bs", "name": "Bosnian", "proportion": 0.15 },
+        { "code": "sq", "name": "Albanian", "proportion": 0.05 },
+        { "code": "hr", "name": "Croatian", "proportion": 0.02 }
+      ]
+    },
+    "MA": {
+      "name": "Morocco",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.65 },
+        { "code": "tzm", "name": "Tamazight", "proportion": 0.26 },
+        { "code": "fr", "name": "French", "proportion": 0.33 }
+      ]
+    },
+    "MZ": {
+      "name": "Mozambique",
+      "continent": "Africa",
+      "languages": [
+        { "code": "pt", "name": "Portuguese", "proportion": 0.50 },
+        { "code": "sw", "name": "Swahili", "proportion": 0.06 }
+      ]
+    },
+    "MM": {
+      "name": "Myanmar",
+      "continent": "Asia",
+      "languages": [
+        { "code": "my", "name": "Burmese", "proportion": 0.68 },
+        { "code": "en", "name": "English", "proportion": 0.05 }
+      ]
+    },
+    "NA": {
+      "name": "Namibia",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.17 },
+        { "code": "af", "name": "Afrikaans", "proportion": 0.11 },
+        { "code": "de", "name": "German", "proportion": 0.01 }
+      ]
+    },
+    "NP": {
+      "name": "Nepal",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ne", "name": "Nepali", "proportion": 0.77 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.08 },
+        { "code": "en", "name": "English", "proportion": 0.08 }
+      ]
+    },
+    "NL": {
+      "name": "Netherlands",
+      "continent": "Europe",
+      "languages": [
+        { "code": "nl", "name": "Dutch", "proportion": 0.96 },
+        { "code": "en", "name": "English", "proportion": 0.90 },
+        { "code": "de", "name": "German", "proportion": 0.71 },
+        { "code": "fr", "name": "French", "proportion": 0.29 }
+      ]
+    },
+    "NZ": {
+      "name": "New Zealand",
+      "continent": "Oceania",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.96 },
+        { "code": "mi", "name": "Maori", "proportion": 0.04 },
+        { "code": "zh", "name": "Chinese", "proportion": 0.04 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.03 }
+      ]
+    },
+    "NI": {
+      "name": "Nicaragua",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.97 },
+        { "code": "en", "name": "English", "proportion": 0.06 }
+      ]
+    },
+    "NE": {
+      "name": "Niger",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.13 },
+        { "code": "ha", "name": "Hausa", "proportion": 0.53 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.06 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.01 }
+      ]
+    },
+    "NG": {
+      "name": "Nigeria",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.53 },
+        { "code": "ha", "name": "Hausa", "proportion": 0.27 },
+        { "code": "yo", "name": "Yoruba", "proportion": 0.15 },
+        { "code": "ig", "name": "Igbo", "proportion": 0.12 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.05 }
+      ]
+    },
+    "NO": {
+      "name": "Norway",
+      "continent": "Europe",
+      "languages": [
+        { "code": "nb", "name": "Norwegian Bokmal", "proportion": 0.90 },
+        { "code": "en", "name": "English", "proportion": 0.90 }
+      ]
+    },
+    "OM": {
+      "name": "Oman",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.74 },
+        { "code": "en", "name": "English", "proportion": 0.25 },
+        { "code": "ur", "name": "Urdu", "proportion": 0.07 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.05 }
+      ]
+    },
+    "PK": {
+      "name": "Pakistan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ur", "name": "Urdu", "proportion": 0.75 },
+        { "code": "pa", "name": "Punjabi", "proportion": 0.39 },
+        { "code": "ps", "name": "Pashto", "proportion": 0.15 },
+        { "code": "sd", "name": "Sindhi", "proportion": 0.12 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "PS": {
+      "name": "Palestine",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.97 },
+        { "code": "he", "name": "Hebrew", "proportion": 0.10 },
+        { "code": "en", "name": "English", "proportion": 0.08 }
+      ]
+    },
+    "PA": {
+      "name": "Panama",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.93 },
+        { "code": "en", "name": "English", "proportion": 0.14 }
+      ]
+    },
+    "PG": {
+      "name": "Papua New Guinea",
+      "continent": "Oceania",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.20 }
+      ]
+    },
+    "PY": {
+      "name": "Paraguay",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.87 },
+        { "code": "gn", "name": "Guarani", "proportion": 0.77 }
+      ]
+    },
+    "PE": {
+      "name": "Peru",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.84 },
+        { "code": "qu", "name": "Quechua", "proportion": 0.13 }
+      ]
+    },
+    "PH": {
+      "name": "Philippines",
+      "continent": "Asia",
+      "languages": [
+        { "code": "fil", "name": "Filipino", "proportion": 0.45 },
+        { "code": "en", "name": "English", "proportion": 0.55 },
+        { "code": "ceb", "name": "Cebuano", "proportion": 0.16 }
+      ]
+    },
+    "PL": {
+      "name": "Poland",
+      "continent": "Europe",
+      "languages": [
+        { "code": "pl", "name": "Polish", "proportion": 0.97 },
+        { "code": "en", "name": "English", "proportion": 0.34 },
+        { "code": "de", "name": "German", "proportion": 0.15 },
+        { "code": "ru", "name": "Russian", "proportion": 0.04 }
+      ]
+    },
+    "PT": {
+      "name": "Portugal",
+      "continent": "Europe",
+      "languages": [
+        { "code": "pt", "name": "Portuguese", "proportion": 0.96 },
+        { "code": "en", "name": "English", "proportion": 0.27 },
+        { "code": "fr", "name": "French", "proportion": 0.15 },
+        { "code": "es", "name": "Spanish", "proportion": 0.10 }
+      ]
+    },
+    "PR": {
+      "name": "Puerto Rico",
+      "continent": "North America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.94 },
+        { "code": "en", "name": "English", "proportion": 0.49 }
+      ]
+    },
+    "QA": {
+      "name": "Qatar",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.40 },
+        { "code": "en", "name": "English", "proportion": 0.60 },
+        { "code": "ur", "name": "Urdu", "proportion": 0.08 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.10 },
+        { "code": "ml", "name": "Malayalam", "proportion": 0.05 },
+        { "code": "fil", "name": "Filipino", "proportion": 0.05 }
+      ]
+    },
+    "RO": {
+      "name": "Romania",
+      "continent": "Europe",
+      "languages": [
+        { "code": "ro", "name": "Romanian", "proportion": 0.91 },
+        { "code": "hu", "name": "Hungarian", "proportion": 0.06 },
+        { "code": "en", "name": "English", "proportion": 0.31 }
+      ]
+    },
+    "RU": {
+      "name": "Russia",
+      "continent": "Europe",
+      "languages": [
+        { "code": "ru", "name": "Russian", "proportion": 0.97 },
+        { "code": "en", "name": "English", "proportion": 0.11 }
+      ]
+    },
+    "RW": {
+      "name": "Rwanda",
+      "continent": "Africa",
+      "languages": [
+        { "code": "rw", "name": "Kinyarwanda", "proportion": 0.93 },
+        { "code": "fr", "name": "French", "proportion": 0.08 },
+        { "code": "en", "name": "English", "proportion": 0.15 },
+        { "code": "sw", "name": "Swahili", "proportion": 0.02 }
+      ]
+    },
+    "SA": {
+      "name": "Saudi Arabia",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.90 },
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "ur", "name": "Urdu", "proportion": 0.07 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.04 },
+        { "code": "fil", "name": "Filipino", "proportion": 0.03 }
+      ]
+    },
+    "SN": {
+      "name": "Senegal",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.26 },
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.23 }
+      ]
+    },
+    "RS": {
+      "name": "Serbia",
+      "continent": "Europe",
+      "languages": [
+        { "code": "sr", "name": "Serbian", "proportion": 0.88 },
+        { "code": "hu", "name": "Hungarian", "proportion": 0.04 },
+        { "code": "bs", "name": "Bosnian", "proportion": 0.02 },
+        { "code": "sq", "name": "Albanian", "proportion": 0.01 },
+        { "code": "hr", "name": "Croatian", "proportion": 0.01 },
+        { "code": "en", "name": "English", "proportion": 0.18 }
+      ]
+    },
+    "SL": {
+      "name": "Sierra Leone",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.20 }
+      ]
+    },
+    "SG": {
+      "name": "Singapore",
+      "continent": "Asia",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.80 },
+        { "code": "zh", "name": "Chinese", "proportion": 0.65 },
+        { "code": "ms", "name": "Malay", "proportion": 0.13 },
+        { "code": "ta", "name": "Tamil", "proportion": 0.03 }
+      ]
+    },
+    "SK": {
+      "name": "Slovakia",
+      "continent": "Europe",
+      "languages": [
+        { "code": "sk", "name": "Slovak", "proportion": 0.81 },
+        { "code": "hu", "name": "Hungarian", "proportion": 0.10 },
+        { "code": "cs", "name": "Czech", "proportion": 0.01 },
+        { "code": "en", "name": "English", "proportion": 0.26 }
+      ]
+    },
+    "SI": {
+      "name": "Slovenia",
+      "continent": "Europe",
+      "languages": [
+        { "code": "sl", "name": "Slovenian", "proportion": 0.87 },
+        { "code": "sr", "name": "Serbian", "proportion": 0.06 },
+        { "code": "hr", "name": "Croatian", "proportion": 0.06 },
+        { "code": "en", "name": "English", "proportion": 0.59 },
+        { "code": "de", "name": "German", "proportion": 0.42 }
+      ]
+    },
+    "SB": {
+      "name": "Solomon Islands",
+      "continent": "Oceania",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.12 }
+      ]
+    },
+    "SO": {
+      "name": "Somalia",
+      "continent": "Africa",
+      "languages": [
+        { "code": "so", "name": "Somali", "proportion": 0.95 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.20 },
+        { "code": "en", "name": "English", "proportion": 0.05 }
+      ]
+    },
+    "ZA": {
+      "name": "South Africa",
+      "continent": "Africa",
+      "languages": [
+        { "code": "zu", "name": "Zulu", "proportion": 0.23 },
+        { "code": "xh", "name": "Xhosa", "proportion": 0.16 },
+        { "code": "af", "name": "Afrikaans", "proportion": 0.13 },
+        { "code": "en", "name": "English", "proportion": 0.10 },
+        { "code": "sn", "name": "Shona", "proportion": 0.01 }
+      ]
+    },
+    "SS": {
+      "name": "South Sudan",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.10 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.15 },
+        { "code": "sw", "name": "Swahili", "proportion": 0.02 }
+      ]
+    },
+    "ES": {
+      "name": "Spain",
+      "continent": "Europe",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.92 },
+        { "code": "ca", "name": "Catalan", "proportion": 0.17 },
+        { "code": "gl", "name": "Galician", "proportion": 0.05 },
+        { "code": "eu", "name": "Basque", "proportion": 0.02 },
+        { "code": "en", "name": "English", "proportion": 0.27 }
+      ]
+    },
+    "LK": {
+      "name": "Sri Lanka",
+      "continent": "Asia",
+      "languages": [
+        { "code": "si", "name": "Sinhala", "proportion": 0.74 },
+        { "code": "ta", "name": "Tamil", "proportion": 0.18 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "SD": {
+      "name": "Sudan",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.70 },
+        { "code": "en", "name": "English", "proportion": 0.05 }
+      ]
+    },
+    "SR": {
+      "name": "Suriname",
+      "continent": "South America",
+      "languages": [
+        { "code": "nl", "name": "Dutch", "proportion": 0.58 },
+        { "code": "en", "name": "English", "proportion": 0.20 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.10 },
+        { "code": "jv", "name": "Javanese", "proportion": 0.08 }
+      ]
+    },
+    "SE": {
+      "name": "Sweden",
+      "continent": "Europe",
+      "languages": [
+        { "code": "sv", "name": "Swedish", "proportion": 0.87 },
+        { "code": "en", "name": "English", "proportion": 0.86 },
+        { "code": "fi", "name": "Finnish", "proportion": 0.05 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.05 }
+      ]
+    },
+    "CH": {
+      "name": "Switzerland",
+      "continent": "Europe",
+      "languages": [
+        { "code": "de", "name": "German", "proportion": 0.63 },
+        { "code": "fr", "name": "French", "proportion": 0.23 },
+        { "code": "it", "name": "Italian", "proportion": 0.08 },
+        { "code": "en", "name": "English", "proportion": 0.45 }
+      ]
+    },
+    "SY": {
+      "name": "Syria",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.90 },
+        { "code": "ku", "name": "Kurdish", "proportion": 0.09 },
+        { "code": "fr", "name": "French", "proportion": 0.05 },
+        { "code": "en", "name": "English", "proportion": 0.05 }
+      ]
+    },
+    "TW": {
+      "name": "Taiwan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "zh", "name": "Chinese (Mandarin)", "proportion": 0.83 },
+        { "code": "en", "name": "English", "proportion": 0.28 },
+        { "code": "ja", "name": "Japanese", "proportion": 0.06 }
+      ]
+    },
+    "TJ": {
+      "name": "Tajikistan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "tg", "name": "Tajik", "proportion": 0.80 },
+        { "code": "ru", "name": "Russian", "proportion": 0.28 },
+        { "code": "uz", "name": "Uzbek", "proportion": 0.17 }
+      ]
+    },
+    "TZ": {
+      "name": "Tanzania",
+      "continent": "Africa",
+      "languages": [
+        { "code": "sw", "name": "Swahili", "proportion": 0.90 },
+        { "code": "en", "name": "English", "proportion": 0.15 }
+      ]
+    },
+    "TH": {
+      "name": "Thailand",
+      "continent": "Asia",
+      "languages": [
+        { "code": "th", "name": "Thai", "proportion": 0.92 },
+        { "code": "ms", "name": "Malay", "proportion": 0.03 },
+        { "code": "en", "name": "English", "proportion": 0.15 },
+        { "code": "zh", "name": "Chinese", "proportion": 0.11 }
+      ]
+    },
+    "TL": {
+      "name": "Timor-Leste",
+      "continent": "Asia",
+      "languages": [
+        { "code": "pt", "name": "Portuguese", "proportion": 0.36 },
+        { "code": "id", "name": "Indonesian", "proportion": 0.36 },
+        { "code": "en", "name": "English", "proportion": 0.16 }
+      ]
+    },
+    "TG": {
+      "name": "Togo",
+      "continent": "Africa",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.37 }
+      ]
+    },
+    "TT": {
+      "name": "Trinidad and Tobago",
+      "continent": "North America",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.95 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.02 },
+        { "code": "es", "name": "Spanish", "proportion": 0.04 }
+      ]
+    },
+    "TN": {
+      "name": "Tunisia",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.93 },
+        { "code": "fr", "name": "French", "proportion": 0.52 },
+        { "code": "en", "name": "English", "proportion": 0.08 }
+      ]
+    },
+    "TR": {
+      "name": "Turkey",
+      "continent": "Asia",
+      "languages": [
+        { "code": "tr", "name": "Turkish", "proportion": 0.88 },
+        { "code": "ku", "name": "Kurdish", "proportion": 0.12 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.02 },
+        { "code": "en", "name": "English", "proportion": 0.17 }
+      ]
+    },
+    "TM": {
+      "name": "Turkmenistan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "tk", "name": "Turkmen", "proportion": 0.85 },
+        { "code": "ru", "name": "Russian", "proportion": 0.12 },
+        { "code": "uz", "name": "Uzbek", "proportion": 0.05 }
+      ]
+    },
+    "UG": {
+      "name": "Uganda",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "sw", "name": "Swahili", "proportion": 0.30 },
+        { "code": "lg", "name": "Luganda", "proportion": 0.16 },
+        { "code": "ny", "name": "Chewa", "proportion": 0.02 }
+      ]
+    },
+    "UA": {
+      "name": "Ukraine",
+      "continent": "Europe",
+      "languages": [
+        { "code": "uk", "name": "Ukrainian", "proportion": 0.68 },
+        { "code": "ru", "name": "Russian", "proportion": 0.30 },
+        { "code": "en", "name": "English", "proportion": 0.18 }
+      ]
+    },
+    "AE": {
+      "name": "United Arab Emirates",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.40 },
+        { "code": "en", "name": "English", "proportion": 0.70 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.15 },
+        { "code": "ur", "name": "Urdu", "proportion": 0.10 },
+        { "code": "ml", "name": "Malayalam", "proportion": 0.08 },
+        { "code": "fil", "name": "Filipino", "proportion": 0.06 },
+        { "code": "bn", "name": "Bengali", "proportion": 0.04 }
+      ]
+    },
+    "GB": {
+      "name": "United Kingdom",
+      "continent": "Europe",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.92 },
+        { "code": "cy", "name": "Welsh", "proportion": 0.01 },
+        { "code": "gd", "name": "Scottish Gaelic", "proportion": 0.001 },
+        { "code": "pl", "name": "Polish", "proportion": 0.02 },
+        { "code": "ur", "name": "Urdu", "proportion": 0.01 },
+        { "code": "pa", "name": "Punjabi", "proportion": 0.01 },
+        { "code": "bn", "name": "Bengali", "proportion": 0.01 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.01 },
+        { "code": "fr", "name": "French", "proportion": 0.15 }
+      ]
+    },
+    "US": {
+      "name": "United States",
+      "continent": "North America",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.78 },
+        { "code": "es", "name": "Spanish", "proportion": 0.13 },
+        { "code": "zh", "name": "Chinese", "proportion": 0.01 },
+        { "code": "fil", "name": "Filipino", "proportion": 0.01 },
+        { "code": "vi", "name": "Vietnamese", "proportion": 0.01 },
+        { "code": "ar", "name": "Arabic", "proportion": 0.01 },
+        { "code": "fr", "name": "French", "proportion": 0.01 },
+        { "code": "ko", "name": "Korean", "proportion": 0.01 },
+        { "code": "de", "name": "German", "proportion": 0.01 },
+        { "code": "hi", "name": "Hindi", "proportion": 0.01 },
+        { "code": "pt", "name": "Portuguese", "proportion": 0.01 },
+        { "code": "ja", "name": "Japanese", "proportion": 0.005 },
+        { "code": "ru", "name": "Russian", "proportion": 0.003 }
+      ]
+    },
+    "UY": {
+      "name": "Uruguay",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.95 },
+        { "code": "pt", "name": "Portuguese", "proportion": 0.05 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "UZ": {
+      "name": "Uzbekistan",
+      "continent": "Asia",
+      "languages": [
+        { "code": "uz", "name": "Uzbek", "proportion": 0.74 },
+        { "code": "ru", "name": "Russian", "proportion": 0.15 },
+        { "code": "tg", "name": "Tajik", "proportion": 0.04 },
+        { "code": "kk", "name": "Kazakh", "proportion": 0.04 }
+      ]
+    },
+    "VU": {
+      "name": "Vanuatu",
+      "continent": "Oceania",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "fr", "name": "French", "proportion": 0.25 }
+      ]
+    },
+    "VE": {
+      "name": "Venezuela",
+      "continent": "South America",
+      "languages": [
+        { "code": "es", "name": "Spanish", "proportion": 0.97 },
+        { "code": "en", "name": "English", "proportion": 0.05 }
+      ]
+    },
+    "VN": {
+      "name": "Vietnam",
+      "continent": "Asia",
+      "languages": [
+        { "code": "vi", "name": "Vietnamese", "proportion": 0.85 },
+        { "code": "en", "name": "English", "proportion": 0.10 }
+      ]
+    },
+    "EH": {
+      "name": "Western Sahara",
+      "continent": "Africa",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.90 }
+      ]
+    },
+    "YE": {
+      "name": "Yemen",
+      "continent": "Asia",
+      "languages": [
+        { "code": "ar", "name": "Arabic", "proportion": 0.99 }
+      ]
+    },
+    "ZM": {
+      "name": "Zambia",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.20 },
+        { "code": "ny", "name": "Chewa", "proportion": 0.15 }
+      ]
+    },
+    "ZW": {
+      "name": "Zimbabwe",
+      "continent": "Africa",
+      "languages": [
+        { "code": "en", "name": "English", "proportion": 0.30 },
+        { "code": "sn", "name": "Shona", "proportion": 0.70 },
+        { "code": "xh", "name": "Ndebele", "proportion": 0.16 }
+      ]
+    },
+    "XK": {
+      "name": "Kosovo",
+      "continent": "Europe",
+      "languages": [
+        { "code": "sq", "name": "Albanian", "proportion": 0.92 },
+        { "code": "sr", "name": "Serbian", "proportion": 0.05 },
+        { "code": "tr", "name": "Turkish", "proportion": 0.01 }
+      ]
+    },
+    "NC": {
+      "name": "New Caledonia",
+      "continent": "Oceania",
+      "languages": [
+        { "code": "fr", "name": "French", "proportion": 0.97 }
+      ]
+    },
+    "GL": {
+      "name": "Greenland",
+      "continent": "North America",
+      "languages": [
+        { "code": "da", "name": "Danish", "proportion": 0.66 },
+        { "code": "en", "name": "English", "proportion": 0.25 }
+      ]
+    }
+  }
+}

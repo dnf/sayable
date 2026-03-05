@@ -125,6 +125,10 @@ Sayable is a family of zero-dependency formatting libraries. Each library tackle
 
 Plus Ada, C, C#, Clojure, COBOL, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Groovy, Haskell, Lua, OCaml, Perl, PHP, Scala, Swift, and Zig. See the [full compatibility matrix](Compatibility.md).
 
+### Locale coverage
+
+See the [locale coverage maps](docs/geography/README.md) for a visual breakdown of how well Sayable's locales cover each country's languages.
+
 ## Design principles
 
 - **Zero dependencies.** Pure standard-library code in every language.
