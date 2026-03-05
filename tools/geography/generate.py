@@ -42,17 +42,24 @@ _ISO_OVERRIDES: dict[str, str] = {
 }
 
 # ---------------------------------------------------------------------------
-# Color scheme (5-bin discrete)
+# Color scheme — continuous gradient
+#
+#   0–50%  shades of red (dark → light)
+#  50–90%  red-to-green gradient
+#  90–100% shades of green (light → dark)
 # ---------------------------------------------------------------------------
 
-_BINS = [
-    (0.00, 0.00, "#e0e0e0", "No coverage"),
-    (0.01, 0.25, "#c7e9c0", "Minimal (1–25%)"),
-    (0.26, 0.50, "#74c476", "Partial (26–50%)"),
-    (0.51, 0.75, "#31a354", "Good (51–75%)"),
-    (0.76, 1.01, "#006d2c", "High (76–100%)"),
+_CMAP_STOPS = [
+    (0.00, "#b71c1c"),  # dark red
+    (0.25, "#e53935"),  # medium red
+    (0.50, "#ef5350"),  # light red
+    (0.70, "#fdd835"),  # yellow
+    (0.90, "#66bb6a"),  # light green
+    (0.95, "#2e7d32"),  # medium green
+    (1.00, "#1b5e20"),  # dark green
 ]
 
+_ZERO_COLOR = "#e0e0e0"  # gray for exactly 0%
 _NO_DATA_COLOR = "#ffffff"
 
 # ---------------------------------------------------------------------------
@@ -140,12 +147,26 @@ def _coverage(country: dict, supported: set[str]) -> float:
     return min(supported_share / max(total_share, 1.0), 1.0)
 
 
-def _coverage_bin(value: float) -> tuple[str, str]:
-    """Return (color, label) for a coverage value."""
-    for lo, hi, color, label in _BINS:
-        if lo <= value <= hi:
-            return color, label
-    return _BINS[-1][2], _BINS[-1][3]
+def _build_cmap():
+    """Build a LinearSegmentedColormap from _CMAP_STOPS."""
+    from matplotlib.colors import LinearSegmentedColormap
+    positions = [s[0] for s in _CMAP_STOPS]
+    hex_colors = [s[1] for s in _CMAP_STOPS]
+    return LinearSegmentedColormap.from_list(
+        "coverage", list(zip(positions, hex_colors)), N=256
+    )
+
+
+def _coverage_color(value: float) -> str:
+    """Return a hex color for a coverage value using the continuous scale."""
+    if value == 0.0:
+        return _ZERO_COLOR
+    import matplotlib
+    matplotlib.use("Agg")
+    from matplotlib.colors import rgb2hex
+    cmap = _build_cmap()
+    rgba = cmap(value)
+    return rgb2hex(rgba)
 
 
 # ---------------------------------------------------------------------------
@@ -204,8 +225,10 @@ def _render_map(
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     from matplotlib.patches import Patch
-    import numpy as np
+    from matplotlib.colors import Normalize
+    from matplotlib.cm import ScalarMappable
 
+    cmap = _build_cmap()
     fig, ax = plt.subplots(1, 1, figsize=figsize, facecolor="white")
 
     # Draw countries with no data (white)
@@ -213,34 +236,40 @@ def _render_map(
     if not no_data.empty:
         no_data.plot(ax=ax, color=_NO_DATA_COLOR, edgecolor="#cccccc", linewidth=0.3)
 
-    # Draw countries by coverage bin
+    # Draw countries by continuous coverage color
     has_data = gdf[gdf["coverage"].notna()].copy()
     if not has_data.empty:
-        colors = []
-        for val in has_data["coverage"]:
-            color, _ = _coverage_bin(val)
-            colors.append(color)
-        has_data = has_data.copy()
-        has_data["fill_color"] = colors
-        has_data.plot(ax=ax, color=has_data["fill_color"], edgecolor="#999999", linewidth=0.3)
+        colors = [
+            _ZERO_COLOR if val == 0.0 else cmap(val)
+            for val in has_data["coverage"]
+        ]
+        has_data.plot(ax=ax, color=colors, edgecolor="#999999", linewidth=0.3)
 
     # Zoom to bounds
     if bounds:
         ax.set_xlim(bounds[0], bounds[1])
         ax.set_ylim(bounds[2], bounds[3])
 
-    # Legend
-    legend_elements = [
-        Patch(facecolor=color, edgecolor="#999999", label=label)
-        for _, _, color, label in _BINS
-    ]
-    legend_elements.append(
-        Patch(facecolor=_NO_DATA_COLOR, edgecolor="#cccccc", label="No data")
+    # Colorbar
+    sm = ScalarMappable(cmap=cmap, norm=Normalize(vmin=0, vmax=100))
+    sm.set_array([])
+    cbar = fig.colorbar(
+        sm, ax=ax, orientation="horizontal", fraction=0.03, pad=0.02,
+        aspect=40, shrink=0.6,
     )
+    cbar.set_label("Coverage %", fontsize=9)
+    cbar.set_ticks([0, 25, 50, 75, 90, 95, 100])
+    cbar.ax.tick_params(labelsize=7)
+
+    # Small legend for special entries only
+    legend_elements = [
+        Patch(facecolor=_ZERO_COLOR, edgecolor="#999999", label="0%"),
+        Patch(facecolor=_NO_DATA_COLOR, edgecolor="#cccccc", label="No data"),
+    ]
     ax.legend(
         handles=legend_elements,
         loc="lower left",
-        fontsize=8,
+        fontsize=7,
         framealpha=0.9,
     )
 
