@@ -287,13 +287,16 @@ generate target *args:
     #!/usr/bin/env bash
     set -euo pipefail
     case "{{target}}" in
+        compatibility)
+            {{python}} tools/generate_compatibility.py {{args}}
+            ;;
         locales)
             (cd age && {{python}} -m codegen.generate {{args}})
             (cd age && uv run --project impl/python {{python}} -m codegen.docgen {{args}})
             ;;
         *)
             echo "error: unknown generate target '{{target}}'" >&2
-            echo "Valid targets: locales" >&2
+            echo "Valid targets: compatibility, locales" >&2
             exit 1
             ;;
     esac
@@ -325,6 +328,7 @@ check:
     (cd age && {{python}} -m codegen.generate --check)
     (cd age && uv run --project impl/python {{python}} -m codegen.docgen --check)
     {{python}} .hecatron/tools/codegen/dockerfile.py --check
+    {{python}} tools/generate_compatibility.py --check
 
 # Generate Dockerfile from per-language snippets
 [group('codegen')]
