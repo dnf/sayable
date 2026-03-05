@@ -23,8 +23,8 @@
 | Cuba | 95% | Spanish (95%) | — |
 | Dominican Republic | 100% | Spanish (95%), English (8%) | — |
 | El Salvador | 99% | Spanish (99%) | — |
-| Greenland | 91% | Danish (66%), English (25%) | — |
-| Guatemala | 93% | Spanish (93%) | — |
+| Greenland | 91% | Danish (66%), English (25%) | Kalaallisut (Greenlandic) (85%) |
+| Guatemala | 93% | Spanish (93%) | K'iche' (9%), Kaqchikel (8%), Mam (8%), Q'eqchi' (6%) |
 | Haiti | 100% | Haitian Creole (96%), French (10%) | — |
 | Honduras | 100% | Spanish (98%), English (4%) | — |
 | Jamaica | 95% | English (95%) | — |

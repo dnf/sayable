@@ -33,7 +33,11 @@
       "continent": "Africa",
       "languages": [
         { "code": "pt", "name": "Portuguese", "proportion": 0.71 },
-        { "code": "ln", "name": "Lingala", "proportion": 0.03 }
+        { "code": "ln", "name": "Lingala", "proportion": 0.03 },
+        { "code": "umb", "name": "Umbundu", "proportion": 0.17 },
+        { "code": "kmb", "name": "Kimbundu", "proportion": 0.11 },
+        { "code": "ktu", "name": "Kikongo/Kituba", "proportion": 0.07 },
+        { "code": "cjk", "name": "Chokwe", "proportion": 0.07 }
       ]
     },
     "AR": {
@@ -149,7 +153,10 @@
       "continent": "Africa",
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.35 },
-        { "code": "yo", "name": "Yoruba", "proportion": 0.12 }
+        { "code": "yo", "name": "Yoruba", "proportion": 0.12 },
+        { "code": "fon", "name": "Fon", "proportion": 0.24 },
+        { "code": "bba", "name": "Bariba", "proportion": 0.10 },
+        { "code": "ajg", "name": "Aja", "proportion": 0.08 }
       ]
     },
     "BT": {
@@ -157,7 +164,9 @@
       "continent": "Asia",
       "languages": [
         { "code": "ne", "name": "Nepali", "proportion": 0.22 },
-        { "code": "en", "name": "English", "proportion": 0.10 }
+        { "code": "en", "name": "English", "proportion": 0.10 },
+        { "code": "dz", "name": "Dzongkha", "proportion": 0.25 },
+        { "code": "tsj", "name": "Tshangla", "proportion": 0.22 }
       ]
     },
     "BO": {
@@ -165,7 +174,8 @@
       "continent": "South America",
       "languages": [
         { "code": "es", "name": "Spanish", "proportion": 0.84 },
-        { "code": "qu", "name": "Quechua", "proportion": 0.21 }
+        { "code": "qu", "name": "Quechua", "proportion": 0.21 },
+        { "code": "ay", "name": "Aymara", "proportion": 0.15 }
       ]
     },
     "BA": {
@@ -182,7 +192,9 @@
       "continent": "Africa",
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.30 },
-        { "code": "sn", "name": "Shona", "proportion": 0.02 }
+        { "code": "sn", "name": "Shona", "proportion": 0.02 },
+        { "code": "tn", "name": "Tswana", "proportion": 0.78 },
+        { "code": "kck", "name": "Kalanga", "proportion": 0.17 }
       ]
     },
     "BR": {
@@ -220,7 +232,10 @@
       "continent": "Africa",
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.25 },
-        { "code": "ff", "name": "Fulfulde", "proportion": 0.08 }
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.08 },
+        { "code": "mos", "name": "Moore (Mossi)", "proportion": 0.52 },
+        { "code": "dyu", "name": "Dyula", "proportion": 0.06 },
+        { "code": "gux", "name": "Gourmanche", "proportion": 0.06 }
       ]
     },
     "BI": {
@@ -248,7 +263,9 @@
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.57 },
         { "code": "en", "name": "English", "proportion": 0.22 },
-        { "code": "ff", "name": "Fulfulde", "proportion": 0.07 }
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.07 },
+        { "code": "bam", "name": "Bamileke languages", "proportion": 0.15 },
+        { "code": "ewo", "name": "Ewondo", "proportion": 0.08 }
       ]
     },
     "CA": {
@@ -269,7 +286,8 @@
       "continent": "Africa",
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.23 },
-        { "code": "ln", "name": "Lingala", "proportion": 0.05 }
+        { "code": "ln", "name": "Lingala", "proportion": 0.05 },
+        { "code": "sg", "name": "Sango", "proportion": 0.92 }
       ]
     },
     "TD": {
@@ -277,7 +295,9 @@
       "continent": "Africa",
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.13 },
-        { "code": "ar", "name": "Arabic", "proportion": 0.26 }
+        { "code": "ar", "name": "Arabic", "proportion": 0.26 },
+        { "code": "sar", "name": "Sara (Ngambay)", "proportion": 0.31 },
+        { "code": "knc", "name": "Kanuri", "proportion": 0.10 }
       ]
     },
     "CL": {
@@ -310,7 +330,8 @@
       "continent": "Africa",
       "languages": [
         { "code": "ar", "name": "Arabic", "proportion": 0.20 },
-        { "code": "fr", "name": "French", "proportion": 0.15 }
+        { "code": "fr", "name": "French", "proportion": 0.15 },
+        { "code": "zdj", "name": "Comorian (Shikomori)", "proportion": 0.97 }
       ]
     },
     "CG": {
@@ -318,7 +339,8 @@
       "continent": "Africa",
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.60 },
-        { "code": "ln", "name": "Lingala", "proportion": 0.30 }
+        { "code": "ln", "name": "Lingala", "proportion": 0.30 },
+        { "code": "ktu", "name": "Kituba (Munukutuba)", "proportion": 0.50 }
       ]
     },
     "CD": {
@@ -328,7 +350,9 @@
         { "code": "fr", "name": "French", "proportion": 0.51 },
         { "code": "ln", "name": "Lingala", "proportion": 0.20 },
         { "code": "sw", "name": "Swahili", "proportion": 0.15 },
-        { "code": "lg", "name": "Luganda", "proportion": 0.04 }
+        { "code": "lg", "name": "Luganda", "proportion": 0.04 },
+        { "code": "ktu", "name": "Kituba (Kikongo)", "proportion": 0.10 },
+        { "code": "lua", "name": "Tshiluba", "proportion": 0.06 }
       ]
     },
     "CR": {
@@ -343,7 +367,11 @@
       "name": "Cote d'Ivoire",
       "continent": "Africa",
       "languages": [
-        { "code": "fr", "name": "French", "proportion": 0.34 }
+        { "code": "fr", "name": "French", "proportion": 0.34 },
+        { "code": "bci", "name": "Baoule", "proportion": 0.17 },
+        { "code": "dyu", "name": "Dyula", "proportion": 0.15 },
+        { "code": "sef", "name": "Senufo", "proportion": 0.09 },
+        { "code": "bet", "name": "Bete", "proportion": 0.06 }
       ]
     },
     "HR": {
@@ -444,7 +472,8 @@
       "languages": [
         { "code": "ti", "name": "Tigrinya", "proportion": 0.55 },
         { "code": "ar", "name": "Arabic", "proportion": 0.20 },
-        { "code": "en", "name": "English", "proportion": 0.05 }
+        { "code": "en", "name": "English", "proportion": 0.05 },
+        { "code": "tig", "name": "Tigre", "proportion": 0.30 }
       ]
     },
     "EE": {
@@ -460,7 +489,8 @@
       "name": "Eswatini",
       "continent": "Africa",
       "languages": [
-        { "code": "en", "name": "English", "proportion": 0.20 }
+        { "code": "en", "name": "English", "proportion": 0.20 },
+        { "code": "ss", "name": "Swazi (siSwati)", "proportion": 0.95 }
       ]
     },
     "ET": {
@@ -479,7 +509,8 @@
       "continent": "Oceania",
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.55 },
-        { "code": "hi", "name": "Hindi", "proportion": 0.33 }
+        { "code": "hi", "name": "Hindi", "proportion": 0.33 },
+        { "code": "fj", "name": "Fijian (iTaukei)", "proportion": 0.54 }
       ]
     },
     "FI": {
@@ -510,7 +541,8 @@
       "name": "Gabon",
       "continent": "Africa",
       "languages": [
-        { "code": "fr", "name": "French", "proportion": 0.80 }
+        { "code": "fr", "name": "French", "proportion": 0.80 },
+        { "code": "fan", "name": "Fang", "proportion": 0.32 }
       ]
     },
     "GM": {
@@ -519,7 +551,10 @@
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.20 },
         { "code": "ff", "name": "Fulfulde", "proportion": 0.18 },
-        { "code": "yo", "name": "Yoruba", "proportion": 0.02 }
+        { "code": "yo", "name": "Yoruba", "proportion": 0.02 },
+        { "code": "mnk", "name": "Mandinka", "proportion": 0.38 },
+        { "code": "wo", "name": "Wolof", "proportion": 0.18 },
+        { "code": "snk", "name": "Soninke", "proportion": 0.09 }
       ]
     },
     "GE": {
@@ -552,7 +587,10 @@
         { "code": "ak", "name": "Akan", "proportion": 0.44 },
         { "code": "ha", "name": "Hausa", "proportion": 0.05 },
         { "code": "ig", "name": "Igbo", "proportion": 0.01 },
-        { "code": "yo", "name": "Yoruba", "proportion": 0.01 }
+        { "code": "yo", "name": "Yoruba", "proportion": 0.01 },
+        { "code": "ee", "name": "Ewe", "proportion": 0.13 },
+        { "code": "gaa", "name": "Ga-Dangme", "proportion": 0.07 },
+        { "code": "dag", "name": "Dagbani", "proportion": 0.05 }
       ]
     },
     "GR": {
@@ -567,7 +605,11 @@
       "name": "Guatemala",
       "continent": "North America",
       "languages": [
-        { "code": "es", "name": "Spanish", "proportion": 0.93 }
+        { "code": "es", "name": "Spanish", "proportion": 0.93 },
+        { "code": "quc", "name": "K'iche'", "proportion": 0.09 },
+        { "code": "cak", "name": "Kaqchikel", "proportion": 0.08 },
+        { "code": "mam", "name": "Mam", "proportion": 0.08 },
+        { "code": "kek", "name": "Q'eqchi'", "proportion": 0.06 }
       ]
     },
     "GN": {
@@ -576,7 +618,8 @@
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.25 },
         { "code": "ff", "name": "Fulfulde", "proportion": 0.33 },
-        { "code": "su", "name": "Susu", "proportion": 0.21 }
+        { "code": "su", "name": "Susu", "proportion": 0.21 },
+        { "code": "mnk", "name": "Maninka", "proportion": 0.23 }
       ]
     },
     "GW": {
@@ -584,7 +627,10 @@
       "continent": "Africa",
       "languages": [
         { "code": "pt", "name": "Portuguese", "proportion": 0.14 },
-        { "code": "ff", "name": "Fulfulde", "proportion": 0.16 }
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.16 },
+        { "code": "pov", "name": "Guinea-Bissau Creole", "proportion": 0.50 },
+        { "code": "bjt", "name": "Balanta", "proportion": 0.22 },
+        { "code": "mnk", "name": "Mandinka", "proportion": 0.07 }
       ]
     },
     "GY": {
@@ -751,7 +797,12 @@
         { "code": "sw", "name": "Swahili", "proportion": 0.67 },
         { "code": "en", "name": "English", "proportion": 0.31 },
         { "code": "lg", "name": "Ganda", "proportion": 0.01 },
-        { "code": "so", "name": "Somali", "proportion": 0.01 }
+        { "code": "so", "name": "Somali", "proportion": 0.01 },
+        { "code": "ki", "name": "Kikuyu", "proportion": 0.17 },
+        { "code": "luh", "name": "Luhya", "proportion": 0.14 },
+        { "code": "kln", "name": "Kalenjin", "proportion": 0.13 },
+        { "code": "luo", "name": "Dholuo (Luo)", "proportion": 0.11 },
+        { "code": "kam", "name": "Kamba", "proportion": 0.10 }
       ]
     },
     "KP": {
@@ -792,7 +843,9 @@
       "languages": [
         { "code": "lo", "name": "Lao", "proportion": 0.53 },
         { "code": "fr", "name": "French", "proportion": 0.03 },
-        { "code": "en", "name": "English", "proportion": 0.03 }
+        { "code": "en", "name": "English", "proportion": 0.03 },
+        { "code": "kjg", "name": "Khmu", "proportion": 0.11 },
+        { "code": "hmn", "name": "Hmong", "proportion": 0.09 }
       ]
     },
     "LV": {
@@ -819,14 +872,20 @@
       "continent": "Africa",
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.30 },
-        { "code": "zu", "name": "Zulu", "proportion": 0.02 }
+        { "code": "zu", "name": "Zulu", "proportion": 0.02 },
+        { "code": "st", "name": "Sesotho (Southern Sotho)", "proportion": 0.90 }
       ]
     },
     "LR": {
       "name": "Liberia",
       "continent": "Africa",
       "languages": [
-        { "code": "en", "name": "English", "proportion": 0.20 }
+        { "code": "en", "name": "English", "proportion": 0.20 },
+        { "code": "kpe", "name": "Kpelle", "proportion": 0.20 },
+        { "code": "bsq", "name": "Bassa", "proportion": 0.13 },
+        { "code": "grb", "name": "Grebo", "proportion": 0.10 },
+        { "code": "dan", "name": "Dan (Gio)", "proportion": 0.08 },
+        { "code": "mev", "name": "Mano", "proportion": 0.08 }
       ]
     },
     "LY": {
@@ -853,7 +912,8 @@
         { "code": "fr", "name": "French", "proportion": 0.96 },
         { "code": "de", "name": "German", "proportion": 0.71 },
         { "code": "en", "name": "English", "proportion": 0.56 },
-        { "code": "pt", "name": "Portuguese", "proportion": 0.13 }
+        { "code": "pt", "name": "Portuguese", "proportion": 0.13 },
+        { "code": "lb", "name": "Luxembourgish", "proportion": 0.49 }
       ]
     },
     "MG": {
@@ -870,7 +930,10 @@
       "continent": "Africa",
       "languages": [
         { "code": "ny", "name": "Chewa", "proportion": 0.57 },
-        { "code": "en", "name": "English", "proportion": 0.15 }
+        { "code": "en", "name": "English", "proportion": 0.15 },
+        { "code": "lol", "name": "Lomwe", "proportion": 0.15 },
+        { "code": "yao", "name": "Yao", "proportion": 0.14 },
+        { "code": "tum", "name": "Tumbuka", "proportion": 0.09 }
       ]
     },
     "MY": {
@@ -887,7 +950,8 @@
       "name": "Maldives",
       "continent": "Asia",
       "languages": [
-        { "code": "en", "name": "English", "proportion": 0.25 }
+        { "code": "en", "name": "English", "proportion": 0.25 },
+        { "code": "dv", "name": "Dhivehi (Maldivian)", "proportion": 0.99 }
       ]
     },
     "ML": {
@@ -895,7 +959,9 @@
       "continent": "Africa",
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.20 },
-        { "code": "ff", "name": "Fulfulde", "proportion": 0.14 }
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.14 },
+        { "code": "bm", "name": "Bambara", "proportion": 0.50 },
+        { "code": "snk", "name": "Soninke", "proportion": 0.09 }
       ]
     },
     "MT": {
@@ -922,7 +988,8 @@
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.50 },
         { "code": "fr", "name": "French", "proportion": 0.73 },
-        { "code": "hi", "name": "Hindi", "proportion": 0.03 }
+        { "code": "hi", "name": "Hindi", "proportion": 0.03 },
+        { "code": "mfe", "name": "Mauritian Creole", "proportion": 0.87 }
       ]
     },
     "MX": {
@@ -958,7 +1025,8 @@
         { "code": "sr", "name": "Serbian", "proportion": 0.43 },
         { "code": "bs", "name": "Bosnian", "proportion": 0.15 },
         { "code": "sq", "name": "Albanian", "proportion": 0.05 },
-        { "code": "hr", "name": "Croatian", "proportion": 0.02 }
+        { "code": "hr", "name": "Croatian", "proportion": 0.02 },
+        { "code": "cnr", "name": "Montenegrin", "proportion": 0.35 }
       ]
     },
     "MA": {
@@ -975,7 +1043,10 @@
       "continent": "Africa",
       "languages": [
         { "code": "pt", "name": "Portuguese", "proportion": 0.50 },
-        { "code": "sw", "name": "Swahili", "proportion": 0.06 }
+        { "code": "sw", "name": "Swahili", "proportion": 0.06 },
+        { "code": "vmw", "name": "Makhuwa", "proportion": 0.26 },
+        { "code": "ts", "name": "Tsonga", "proportion": 0.09 },
+        { "code": "seh", "name": "Sena", "proportion": 0.07 }
       ]
     },
     "MM": {
@@ -983,7 +1054,9 @@
       "continent": "Asia",
       "languages": [
         { "code": "my", "name": "Burmese", "proportion": 0.68 },
-        { "code": "en", "name": "English", "proportion": 0.05 }
+        { "code": "en", "name": "English", "proportion": 0.05 },
+        { "code": "shn", "name": "Shan", "proportion": 0.09 },
+        { "code": "kar", "name": "Karen languages", "proportion": 0.07 }
       ]
     },
     "NA": {
@@ -992,7 +1065,11 @@
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.17 },
         { "code": "af", "name": "Afrikaans", "proportion": 0.11 },
-        { "code": "de", "name": "German", "proportion": 0.01 }
+        { "code": "de", "name": "German", "proportion": 0.01 },
+        { "code": "ng", "name": "Oshiwambo", "proportion": 0.49 },
+        { "code": "naq", "name": "Khoekhoegowab (Nama/Damara)", "proportion": 0.11 },
+        { "code": "kwn", "name": "RuKwangali", "proportion": 0.09 },
+        { "code": "hz", "name": "Otjiherero", "proportion": 0.09 }
       ]
     },
     "NP": {
@@ -1039,7 +1116,9 @@
         { "code": "fr", "name": "French", "proportion": 0.13 },
         { "code": "ha", "name": "Hausa", "proportion": 0.53 },
         { "code": "ff", "name": "Fulfulde", "proportion": 0.06 },
-        { "code": "ar", "name": "Arabic", "proportion": 0.01 }
+        { "code": "ar", "name": "Arabic", "proportion": 0.01 },
+        { "code": "dje", "name": "Zarma-Songhay", "proportion": 0.21 },
+        { "code": "tmh", "name": "Tamasheq", "proportion": 0.09 }
       ]
     },
     "NG": {
@@ -1050,7 +1129,11 @@
         { "code": "ha", "name": "Hausa", "proportion": 0.27 },
         { "code": "yo", "name": "Yoruba", "proportion": 0.15 },
         { "code": "ig", "name": "Igbo", "proportion": 0.12 },
-        { "code": "ff", "name": "Fulfulde", "proportion": 0.05 }
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.05 },
+        { "code": "ij", "name": "Ijaw languages", "proportion": 0.10 },
+        { "code": "kr", "name": "Kanuri", "proportion": 0.05 },
+        { "code": "tiv", "name": "Tiv", "proportion": 0.05 },
+        { "code": "ibb", "name": "Ibibio", "proportion": 0.05 }
       ]
     },
     "NO": {
@@ -1103,7 +1186,8 @@
       "name": "Papua New Guinea",
       "continent": "Oceania",
       "languages": [
-        { "code": "en", "name": "English", "proportion": 0.20 }
+        { "code": "en", "name": "English", "proportion": 0.20 },
+        { "code": "tpi", "name": "Tok Pisin", "proportion": 0.68 }
       ]
     },
     "PY": {
@@ -1214,7 +1298,10 @@
       "continent": "Africa",
       "languages": [
         { "code": "fr", "name": "French", "proportion": 0.26 },
-        { "code": "ff", "name": "Fulfulde", "proportion": 0.23 }
+        { "code": "ff", "name": "Fulfulde", "proportion": 0.23 },
+        { "code": "wo", "name": "Wolof", "proportion": 0.50 },
+        { "code": "srr", "name": "Serer", "proportion": 0.11 },
+        { "code": "snk", "name": "Soninke", "proportion": 0.05 }
       ]
     },
     "RS": {
@@ -1233,7 +1320,10 @@
       "name": "Sierra Leone",
       "continent": "Africa",
       "languages": [
-        { "code": "en", "name": "English", "proportion": 0.20 }
+        { "code": "en", "name": "English", "proportion": 0.20 },
+        { "code": "men", "name": "Mende", "proportion": 0.31 },
+        { "code": "tem", "name": "Temne", "proportion": 0.32 },
+        { "code": "kri", "name": "Krio", "proportion": 0.10 }
       ]
     },
     "SG": {
@@ -1271,7 +1361,8 @@
       "name": "Solomon Islands",
       "continent": "Oceania",
       "languages": [
-        { "code": "en", "name": "English", "proportion": 0.12 }
+        { "code": "en", "name": "English", "proportion": 0.12 },
+        { "code": "pis", "name": "Pijin", "proportion": 0.50 }
       ]
     },
     "SO": {
@@ -1291,7 +1382,14 @@
         { "code": "xh", "name": "Xhosa", "proportion": 0.16 },
         { "code": "af", "name": "Afrikaans", "proportion": 0.13 },
         { "code": "en", "name": "English", "proportion": 0.10 },
-        { "code": "sn", "name": "Shona", "proportion": 0.01 }
+        { "code": "sn", "name": "Shona", "proportion": 0.01 },
+        { "code": "nso", "name": "Northern Sotho (Sepedi)", "proportion": 0.10 },
+        { "code": "tn", "name": "Tswana", "proportion": 0.08 },
+        { "code": "st", "name": "Southern Sotho", "proportion": 0.08 },
+        { "code": "ts", "name": "Tsonga", "proportion": 0.05 },
+        { "code": "ss", "name": "Swazi (siSwati)", "proportion": 0.03 },
+        { "code": "ve", "name": "Venda", "proportion": 0.02 },
+        { "code": "nr", "name": "Southern Ndebele", "proportion": 0.02 }
       ]
     },
     "SS": {
@@ -1300,7 +1398,12 @@
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.10 },
         { "code": "ar", "name": "Arabic", "proportion": 0.15 },
-        { "code": "sw", "name": "Swahili", "proportion": 0.02 }
+        { "code": "sw", "name": "Swahili", "proportion": 0.02 },
+        { "code": "din", "name": "Dinka", "proportion": 0.36 },
+        { "code": "nus", "name": "Nuer", "proportion": 0.16 },
+        { "code": "bfa", "name": "Bari", "proportion": 0.07 },
+        { "code": "zne", "name": "Zande", "proportion": 0.06 },
+        { "code": "shk", "name": "Shilluk", "proportion": 0.05 }
       ]
     },
     "ES": {
@@ -1328,7 +1431,10 @@
       "continent": "Africa",
       "languages": [
         { "code": "ar", "name": "Arabic", "proportion": 0.70 },
-        { "code": "en", "name": "English", "proportion": 0.05 }
+        { "code": "en", "name": "English", "proportion": 0.05 },
+        { "code": "bej", "name": "Beja", "proportion": 0.12 },
+        { "code": "nub", "name": "Nubian languages", "proportion": 0.08 },
+        { "code": "fvr", "name": "Fur", "proportion": 0.06 }
       ]
     },
     "SR": {
@@ -1394,7 +1500,8 @@
       "continent": "Africa",
       "languages": [
         { "code": "sw", "name": "Swahili", "proportion": 0.90 },
-        { "code": "en", "name": "English", "proportion": 0.15 }
+        { "code": "en", "name": "English", "proportion": 0.15 },
+        { "code": "suk", "name": "Sukuma", "proportion": 0.16 }
       ]
     },
     "TH": {
@@ -1413,14 +1520,17 @@
       "languages": [
         { "code": "pt", "name": "Portuguese", "proportion": 0.36 },
         { "code": "id", "name": "Indonesian", "proportion": 0.36 },
-        { "code": "en", "name": "English", "proportion": 0.16 }
+        { "code": "en", "name": "English", "proportion": 0.16 },
+        { "code": "tet", "name": "Tetum", "proportion": 0.91 }
       ]
     },
     "TG": {
       "name": "Togo",
       "continent": "Africa",
       "languages": [
-        { "code": "fr", "name": "French", "proportion": 0.37 }
+        { "code": "fr", "name": "French", "proportion": 0.37 },
+        { "code": "ee", "name": "Ewe", "proportion": 0.26 },
+        { "code": "kbp", "name": "Kabiye", "proportion": 0.27 }
       ]
     },
     "TT": {
@@ -1467,7 +1577,12 @@
         { "code": "en", "name": "English", "proportion": 0.30 },
         { "code": "sw", "name": "Swahili", "proportion": 0.30 },
         { "code": "lg", "name": "Luganda", "proportion": 0.16 },
-        { "code": "ny", "name": "Chewa", "proportion": 0.02 }
+        { "code": "ny", "name": "Chewa", "proportion": 0.02 },
+        { "code": "nyn", "name": "Nyankore (Runyankole)", "proportion": 0.10 },
+        { "code": "xog", "name": "Soga (Lusoga)", "proportion": 0.10 },
+        { "code": "teo", "name": "Teso", "proportion": 0.10 },
+        { "code": "laj", "name": "Lango", "proportion": 0.06 },
+        { "code": "ach", "name": "Acholi", "proportion": 0.05 }
       ]
     },
     "UA": {
@@ -1550,7 +1665,8 @@
       "continent": "Oceania",
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.30 },
-        { "code": "fr", "name": "French", "proportion": 0.25 }
+        { "code": "fr", "name": "French", "proportion": 0.25 },
+        { "code": "bi", "name": "Bislama", "proportion": 0.34 }
       ]
     },
     "VE": {
@@ -1588,7 +1704,10 @@
       "continent": "Africa",
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.20 },
-        { "code": "ny", "name": "Chewa", "proportion": 0.15 }
+        { "code": "ny", "name": "Chewa", "proportion": 0.15 },
+        { "code": "bem", "name": "Bemba", "proportion": 0.35 },
+        { "code": "toi", "name": "Tonga", "proportion": 0.12 },
+        { "code": "loz", "name": "Lozi", "proportion": 0.06 }
       ]
     },
     "ZW": {
@@ -1597,7 +1716,7 @@
       "languages": [
         { "code": "en", "name": "English", "proportion": 0.30 },
         { "code": "sn", "name": "Shona", "proportion": 0.70 },
-        { "code": "xh", "name": "Ndebele", "proportion": 0.16 }
+        { "code": "nd", "name": "Northern Ndebele", "proportion": 0.16 }
       ]
     },
     "XK": {
@@ -1621,7 +1740,8 @@
       "continent": "North America",
       "languages": [
         { "code": "da", "name": "Danish", "proportion": 0.66 },
-        { "code": "en", "name": "English", "proportion": 0.25 }
+        { "code": "en", "name": "English", "proportion": 0.25 },
+        { "code": "kl", "name": "Kalaallisut (Greenlandic)", "proportion": 0.85 }
       ]
     }
   }

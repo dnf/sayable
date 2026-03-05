@@ -16,12 +16,12 @@
 | Country | Coverage | Covered Languages | Uncovered Languages |
 |---------|:--------:|-------------------|---------------------|
 | Australia | 85% | English (72%), Chinese (5%), Arabic (2%), Vietnamese (1%), Italian (1%), Greek (1%), Hindi (2%), Punjabi (1%) | — |
-| Fiji | 88% | English (55%), Hindi (33%) | — |
+| Fiji | 88% | English (55%), Hindi (33%) | Fijian (iTaukei) (54%) |
 | New Caledonia | 97% | French (97%) | — |
 | New Zealand | 100% | English (96%), Maori (4%), Chinese (4%), Hindi (3%) | — |
-| Papua New Guinea | 20% | English (20%) | — |
-| Solomon Islands | 12% | English (12%) | — |
-| Vanuatu | 55% | English (30%), French (25%) | — |
+| Papua New Guinea | 20% | English (20%) | Tok Pisin (68%) |
+| Solomon Islands | 12% | English (12%) | Pijin (50%) |
+| Vanuatu | 55% | English (30%), French (25%) | Bislama (34%) |
 
 ---
 

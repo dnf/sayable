@@ -36,10 +36,10 @@
 | Kosovo | 98% | Albanian (92%), Serbian (5%), Turkish (1%) | — |
 | Latvia | 100% | Latvian (62%), Russian (34%), English (46%) | — |
 | Lithuania | 100% | Lithuanian (85%), Russian (19%), Polish (6%), English (38%) | — |
-| Luxembourg | 100% | French (96%), German (71%), English (56%), Portuguese (13%) | — |
+| Luxembourg | 100% | French (96%), German (71%), English (56%), Portuguese (13%) | Luxembourgish (49%) |
 | Malta | 100% | Maltese (90%), English (89%), Italian (66%) | — |
 | Moldova | 100% | Romanian (76%), Russian (27%), Ukrainian (6%) | — |
-| Montenegro | 65% | Serbian (43%), Bosnian (15%), Albanian (5%), Croatian (2%) | — |
+| Montenegro | 65% | Serbian (43%), Bosnian (15%), Albanian (5%), Croatian (2%) | Montenegrin (35%) |
 | Netherlands | 100% | Dutch (96%), English (90%), German (71%), French (29%) | — |
 | Norway | 100% | Norwegian Bokmal (90%), English (90%) | — |
 | Poland | 100% | Polish (97%), English (34%), German (15%), Russian (4%) | — |

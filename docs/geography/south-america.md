@@ -16,7 +16,7 @@
 | Country | Coverage | Covered Languages | Uncovered Languages |
 |---------|:--------:|-------------------|---------------------|
 | Argentina | 100% | Spanish (97%), English (7%), Guarani (1%) | — |
-| Bolivia | 100% | Spanish (84%), Quechua (21%) | — |
+| Bolivia | 100% | Spanish (84%), Quechua (21%) | Aymara (15%) |
 | Brazil | 100% | Portuguese (98%), English (5%), Spanish (4%), German (1%), Italian (1%), Japanese (1%) | — |
 | Chile | 100% | Spanish (95%), English (10%) | — |
 | Colombia | 100% | Spanish (99%), English (4%) | — |
