@@ -50,7 +50,7 @@ _BINS = [
     (0.01, 0.25, "#c7e9c0", "Minimal (1–25%)"),
     (0.26, 0.50, "#74c476", "Partial (26–50%)"),
     (0.51, 0.75, "#31a354", "Good (51–75%)"),
-    (0.76, 1.00, "#006d2c", "High (76–100%)"),
+    (0.76, 1.01, "#006d2c", "High (76–100%)"),
 ]
 
 _NO_DATA_COLOR = "#ffffff"
@@ -122,13 +122,22 @@ def _load_countries() -> dict[str, dict]:
 # ---------------------------------------------------------------------------
 
 def _coverage(country: dict, supported: set[str]) -> float:
-    """Fraction of population covered (capped at 1.0)."""
-    total = sum(
+    """Fraction of population covered.
+
+    In multilingual countries, language proportions sum > 1.0 because
+    individuals speak multiple languages.  We compute coverage as the
+    ratio of supported-language share to total share, which correctly
+    attributes multilingual overlap.  When all languages sum <= 1.0
+    (remaining population speaks unlisted languages), the supported
+    share is used directly.
+    """
+    supported_share = sum(
         lang["proportion"]
         for lang in country["languages"]
         if lang["code"] in supported
     )
-    return min(total, 1.0)
+    total_share = sum(lang["proportion"] for lang in country["languages"])
+    return min(supported_share / max(total_share, 1.0), 1.0)
 
 
 def _coverage_bin(value: float) -> tuple[str, str]:
@@ -136,7 +145,7 @@ def _coverage_bin(value: float) -> tuple[str, str]:
     for lo, hi, color, label in _BINS:
         if lo <= value <= hi:
             return color, label
-    return _BINS[-1][1], _BINS[-1][2]
+    return _BINS[-1][2], _BINS[-1][3]
 
 
 # ---------------------------------------------------------------------------

@@ -11,22 +11,22 @@ How well do Sayable's locales cover the world's languages?
 | Metric | Count |
 |--------|------:|
 | Countries tracked | 178 |
-| 100% coverage | 104 |
-| 76–100% (high) | 145 |
-| 51–75% (good) | 155 |
-| 1–50% (some) | 23 |
+| 100% coverage | 96 |
+| 76–100% (high) | 135 |
+| 51–75% (good) | 154 |
+| 1–50% (some) | 24 |
 | 0% (none) | 0 |
 
 ## By Continent
 
 | Continent | Countries | Avg Coverage | Details |
 |-----------|----------:|-------------:|--------:|
-| Africa | 52 | 69% | [Africa](africa.md) |
+| Africa | 52 | 64% | [Africa](africa.md) |
 | Asia | 49 | 94% | [Asia](asia.md) |
 | Europe | 39 | 98% | [Europe](europe.md) |
-| North America | 19 | 98% | [North America](north-america.md) |
-| Oceania | 7 | 65% | [Oceania](oceania.md) |
-| South America | 12 | 98% | [South America](south-america.md) |
+| North America | 19 | 95% | [North America](north-america.md) |
+| Oceania | 7 | 62% | [Oceania](oceania.md) |
+| South America | 12 | 97% | [South America](south-america.md) |
 
 ## Supported Locales (110)
 

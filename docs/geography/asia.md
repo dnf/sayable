@@ -39,7 +39,7 @@
 | Laos | 59% | Lao (53%), French (3%), English (3%) | Khmu (11%), Hmong (9%) |
 | Lebanon | 100% | Arabic (93%), French (40%), English (30%), Armenian (4%) | — |
 | Malaysia | 100% | Malay (69%), English (50%), Chinese (23%), Tamil (7%) | — |
-| Maldives | 25% | English (25%) | Dhivehi (Maldivian) (99%) |
+| Maldives | 20% | English (25%) | Dhivehi (Maldivian) (99%) |
 | Mongolia | 100% | Mongolian (95%), Russian (5%), English (10%) | — |
 | Myanmar | 73% | Burmese (68%), English (5%) | Shan (9%), Karen languages (7%) |
 | Nepal | 93% | Nepali (77%), Hindi (8%), English (8%) | — |
@@ -57,7 +57,7 @@
 | Taiwan | 100% | Chinese (Mandarin) (83%), English (28%), Japanese (6%) | — |
 | Tajikistan | 100% | Tajik (80%), Russian (28%), Uzbek (17%) | — |
 | Thailand | 100% | Thai (92%), Malay (3%), English (15%), Chinese (11%) | — |
-| Timor-Leste | 88% | Portuguese (36%), Indonesian (36%), English (16%) | Tetum (91%) |
+| Timor-Leste | 49% | Portuguese (36%), Indonesian (36%), English (16%) | Tetum (91%) |
 | Turkey | 100% | Turkish (88%), Kurdish (12%), Arabic (2%), English (17%) | — |
 | Turkmenistan | 100% | Turkmen (85%), Russian (12%), Uzbek (5%) | — |
 | United Arab Emirates | 100% | Arabic (40%), English (70%), Hindi (15%), Urdu (10%), Malayalam (8%), Filipino (6%), Bengali (4%) | — |
