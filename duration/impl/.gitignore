@@ -9,6 +9,13 @@ cpp/build/
 # Clojure
 clojure/.cpcache/
 
+# F#
+fsharp/*/bin/
+fsharp/*/obj/
+
+# Haskell
+haskell/dist-newstyle/
+
 # Java
 java/.gradle/
 java/build/
@@ -16,6 +23,9 @@ java/build/
 # Kotlin
 kotlin/.gradle/
 kotlin/build/
+
+# Lua
+lua/.busted
 
 # PHP
 php/.php-cs-fixer.cache

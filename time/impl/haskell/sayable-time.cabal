@@ -1,0 +1,94 @@
+cabal-version: 2.4
+name:          sayable-time
+version:       0.1.0.0
+license:       MIT
+build-type:    Simple
+
+library
+  exposed-modules:
+    SayableTime.Types
+    SayableTime.Formatter
+    SayableTime.Locales
+    SayableTime.Locales.Am
+    SayableTime.Locales.Ar
+    SayableTime.Locales.Az
+    SayableTime.Locales.Bg
+    SayableTime.Locales.Bn
+    SayableTime.Locales.Br
+    SayableTime.Locales.Bs
+    SayableTime.Locales.Ca
+    SayableTime.Locales.Cs
+    SayableTime.Locales.Cy
+    SayableTime.Locales.Da
+    SayableTime.Locales.De
+    SayableTime.Locales.El
+    SayableTime.Locales.En
+    SayableTime.Locales.Es
+    SayableTime.Locales.Et
+    SayableTime.Locales.Eu
+    SayableTime.Locales.Fa
+    SayableTime.Locales.Fi
+    SayableTime.Locales.Fil
+    SayableTime.Locales.Fr
+    SayableTime.Locales.Ga
+    SayableTime.Locales.Gd
+    SayableTime.Locales.Gu
+    SayableTime.Locales.Gv
+    SayableTime.Locales.He
+    SayableTime.Locales.Hi
+    SayableTime.Locales.Hr
+    SayableTime.Locales.Hu
+    SayableTime.Locales.Id
+    SayableTime.Locales.It
+    SayableTime.Locales.Ja
+    SayableTime.Locales.Jv
+    SayableTime.Locales.Ka
+    SayableTime.Locales.Kk
+    SayableTime.Locales.Km
+    SayableTime.Locales.Ko
+    SayableTime.Locales.Kw
+    SayableTime.Locales.Lt
+    SayableTime.Locales.Lv
+    SayableTime.Locales.Mk
+    SayableTime.Locales.Mr
+    SayableTime.Locales.Ms
+    SayableTime.Locales.Mt
+    SayableTime.Locales.My
+    SayableTime.Locales.Nb
+    SayableTime.Locales.Ne
+    SayableTime.Locales.Nl
+    SayableTime.Locales.Pa
+    SayableTime.Locales.Pl
+    SayableTime.Locales.Pt
+    SayableTime.Locales.Ro
+    SayableTime.Locales.Ru
+    SayableTime.Locales.Shi
+    SayableTime.Locales.Si
+    SayableTime.Locales.Sk
+    SayableTime.Locales.Sl
+    SayableTime.Locales.Sq
+    SayableTime.Locales.Sr
+    SayableTime.Locales.Sv
+    SayableTime.Locales.Sw
+    SayableTime.Locales.Ta
+    SayableTime.Locales.Te
+    SayableTime.Locales.Th
+    SayableTime.Locales.Tr
+    SayableTime.Locales.Tzm
+    SayableTime.Locales.Uk
+    SayableTime.Locales.Ur
+    SayableTime.Locales.Uz
+    SayableTime.Locales.Vi
+    SayableTime.Locales.Zh
+  hs-source-dirs: src
+  build-depends:  base >= 4.16 && < 5
+  default-language: Haskell2010
+  ghc-options: -Wall -Wcompat -Werror
+
+test-suite sayable-time-test
+  type:           exitcode-stdio-1.0
+  main-is:        Main.hs
+  hs-source-dirs: test
+  build-depends:  base >= 4.16 && < 5, sayable-time, hspec >= 2.0
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror

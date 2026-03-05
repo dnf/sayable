@@ -1,0 +1,94 @@
+cabal-version: 2.4
+name:          sayable-duration
+version:       0.1.0.0
+license:       MIT
+build-type:    Simple
+
+library
+  exposed-modules:
+    SayableDuration.Types
+    SayableDuration.Formatter
+    SayableDuration.Locales
+    SayableDuration.Locales.Am
+    SayableDuration.Locales.Ar
+    SayableDuration.Locales.Az
+    SayableDuration.Locales.Bg
+    SayableDuration.Locales.Bn
+    SayableDuration.Locales.Br
+    SayableDuration.Locales.Bs
+    SayableDuration.Locales.Ca
+    SayableDuration.Locales.Cs
+    SayableDuration.Locales.Cy
+    SayableDuration.Locales.Da
+    SayableDuration.Locales.De
+    SayableDuration.Locales.El
+    SayableDuration.Locales.En
+    SayableDuration.Locales.Es
+    SayableDuration.Locales.Et
+    SayableDuration.Locales.Eu
+    SayableDuration.Locales.Fa
+    SayableDuration.Locales.Fi
+    SayableDuration.Locales.Fil
+    SayableDuration.Locales.Fr
+    SayableDuration.Locales.Ga
+    SayableDuration.Locales.Gd
+    SayableDuration.Locales.Gu
+    SayableDuration.Locales.Gv
+    SayableDuration.Locales.He
+    SayableDuration.Locales.Hi
+    SayableDuration.Locales.Hr
+    SayableDuration.Locales.Hu
+    SayableDuration.Locales.Id
+    SayableDuration.Locales.It
+    SayableDuration.Locales.Ja
+    SayableDuration.Locales.Jv
+    SayableDuration.Locales.Ka
+    SayableDuration.Locales.Kk
+    SayableDuration.Locales.Km
+    SayableDuration.Locales.Ko
+    SayableDuration.Locales.Kw
+    SayableDuration.Locales.Lt
+    SayableDuration.Locales.Lv
+    SayableDuration.Locales.Mk
+    SayableDuration.Locales.Mr
+    SayableDuration.Locales.Ms
+    SayableDuration.Locales.Mt
+    SayableDuration.Locales.My
+    SayableDuration.Locales.Nb
+    SayableDuration.Locales.Ne
+    SayableDuration.Locales.Nl
+    SayableDuration.Locales.Pa
+    SayableDuration.Locales.Pl
+    SayableDuration.Locales.Pt
+    SayableDuration.Locales.Ro
+    SayableDuration.Locales.Ru
+    SayableDuration.Locales.Shi
+    SayableDuration.Locales.Si
+    SayableDuration.Locales.Sk
+    SayableDuration.Locales.Sl
+    SayableDuration.Locales.Sq
+    SayableDuration.Locales.Sr
+    SayableDuration.Locales.Sv
+    SayableDuration.Locales.Sw
+    SayableDuration.Locales.Ta
+    SayableDuration.Locales.Te
+    SayableDuration.Locales.Th
+    SayableDuration.Locales.Tr
+    SayableDuration.Locales.Tzm
+    SayableDuration.Locales.Uk
+    SayableDuration.Locales.Ur
+    SayableDuration.Locales.Uz
+    SayableDuration.Locales.Vi
+    SayableDuration.Locales.Zh
+  hs-source-dirs: src
+  build-depends:  base >= 4.16 && < 5
+  default-language: Haskell2010
+  ghc-options: -Wall -Wcompat -Werror
+
+test-suite sayable-duration-test
+  type:           exitcode-stdio-1.0
+  main-is:        Main.hs
+  hs-source-dirs: test
+  build-depends:  base >= 4.16 && < 5, sayable-duration, hspec >= 2.0
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror

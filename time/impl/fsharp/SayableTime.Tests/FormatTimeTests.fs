@@ -1,0 +1,163 @@
+module SayableTimeLib.Tests.FormatTimeTests
+
+open Xunit
+open SayableTimeLib.Types
+open SayableTimeLib.Formatter
+open SayableTimeLib.Locales
+
+// ================================================================
+// Null / edge cases
+// ================================================================
+
+// 1.1
+[<Fact>]
+let ``null input returns None`` () =
+    Assert.Equal(None, formatTimeDefault None)
+
+// 1.2
+[<Fact>]
+let ``empty string returns None`` () =
+    Assert.Equal(None, formatTimeDefault (Some ""))
+
+// 1.3
+[<Fact>]
+let ``invalid string returns None`` () =
+    Assert.Equal(None, formatTimeDefault (Some "invalid"))
+
+// 1.4
+[<Fact>]
+let ``25:00 returns None`` () =
+    Assert.Equal(None, formatTimeDefault (Some "25:00"))
+
+// ================================================================
+// Clock time (normal compactness)
+// ================================================================
+
+// 2.1
+[<Fact>]
+let ``midnight`` () =
+    Assert.Equal(Some "midnight", formatTimeDefault (Some "00:00"))
+
+// 2.2
+[<Fact>]
+let ``noon`` () =
+    Assert.Equal(Some "noon", formatTimeDefault (Some "12:00"))
+
+// 2.3
+[<Fact>]
+let ``three o'clock`` () =
+    Assert.Equal(Some "three o'clock", formatTimeDefault (Some "15:00"))
+
+// 2.4
+[<Fact>]
+let ``a quarter past two`` () =
+    Assert.Equal(Some "a quarter past two", formatTimeDefault (Some "14:15"))
+
+// 2.5
+[<Fact>]
+let ``half past nine`` () =
+    Assert.Equal(Some "half past nine", formatTimeDefault (Some "09:30"))
+
+// 2.6
+[<Fact>]
+let ``a quarter to eleven`` () =
+    Assert.Equal(Some "a quarter to eleven", formatTimeDefault (Some "10:45"))
+
+// 2.7
+[<Fact>]
+let ``five past eight`` () =
+    Assert.Equal(Some "five past eight", formatTimeDefault (Some "08:05"))
+
+// 2.8
+[<Fact>]
+let ``five to five`` () =
+    Assert.Equal(Some "five to five", formatTimeDefault (Some "16:55"))
+
+// 2.9
+[<Fact>]
+let ``23:58 rounds to midnight`` () =
+    Assert.Equal(Some "midnight", formatTimeDefault (Some "23:58"))
+
+// 2.10
+[<Fact>]
+let ``07:22 rounds to twenty past seven`` () =
+    Assert.Equal(Some "twenty past seven", formatTimeDefault (Some "07:22"))
+
+// 2.11
+[<Fact>]
+let ``ISO datetime input`` () =
+    Assert.Equal(Some "a quarter past two", formatTimeDefault (Some "2025-01-15T14:15:00"))
+
+// ================================================================
+// Clock time (short compactness)
+// ================================================================
+
+// 3.1
+[<Fact>]
+let ``short 14:15 is 2:15 PM`` () =
+    let st = SayableTimeFormatter(EN, Short)
+    Assert.Equal(Some "2:15 PM", st.FormatTime(Some "14:15"))
+
+// 3.2
+[<Fact>]
+let ``short 09:30 is 9:30 AM`` () =
+    let st = SayableTimeFormatter(EN, Short)
+    Assert.Equal(Some "9:30 AM", st.FormatTime(Some "09:30"))
+
+// 3.3
+[<Fact>]
+let ``short 00:00 is 12:00 AM`` () =
+    let st = SayableTimeFormatter(EN, Short)
+    Assert.Equal(Some "12:00 AM", st.FormatTime(Some "00:00"))
+
+// 3.4
+[<Fact>]
+let ``short 12:00 is 12:00 PM`` () =
+    let st = SayableTimeFormatter(EN, Short)
+    Assert.Equal(Some "12:00 PM", st.FormatTime(Some "12:00"))
+
+// ================================================================
+// Clock time (compact)
+// ================================================================
+
+// 4.1
+[<Fact>]
+let ``compact 14:15 is 2:15p`` () =
+    let st = SayableTimeFormatter(EN, Compact)
+    Assert.Equal(Some "2:15p", st.FormatTime(Some "14:15"))
+
+// 4.2
+[<Fact>]
+let ``compact 09:30 is 9:30a`` () =
+    let st = SayableTimeFormatter(EN, Compact)
+    Assert.Equal(Some "9:30a", st.FormatTime(Some "09:30"))
+
+// ================================================================
+// Locale -- German
+// ================================================================
+
+// 5.1
+[<Fact>]
+let ``German 15:30 is halb vier`` () =
+    let st = SayableTimeFormatter(DE)
+    Assert.Equal(Some "halb vier", st.FormatTime(Some "15:30"))
+
+// ================================================================
+// Locale -- French
+// ================================================================
+
+// 6.1
+[<Fact>]
+let ``French 15:15 is trois heures et quart`` () =
+    let st = SayableTimeFormatter(FR)
+    Assert.Equal(Some "trois heures et quart", st.FormatTime(Some "15:15"))
+
+// ================================================================
+// Locale -- Japanese
+// ================================================================
+
+// 7.1
+[<Fact>]
+let ``Japanese 15:30`` () =
+    let st = SayableTimeFormatter(JA)
+    Assert.Equal(Some "\u4E09\u6642\u534A", st.FormatTime(Some "15:30"))

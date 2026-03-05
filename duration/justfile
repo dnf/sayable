@@ -14,9 +14,12 @@ _name target:
         c++|cpp)       echo "cpp" ;;
         clj|clojure)   echo "clojure" ;;
         cs|csharp)     echo "csharp" ;;
+        fs|fsharp)     echo "fsharp" ;;
         go)            echo "go" ;;
+        hs|haskell)    echo "haskell" ;;
         java)          echo "java" ;;
         kt|kotlin)     echo "kotlin" ;;
+        lua)           echo "lua" ;;
         php)           echo "php" ;;
         py|python)     echo "python" ;;
         rb|ruby)       echo "ruby" ;;
@@ -49,9 +52,12 @@ test *target:
             "  c++ (cpp)        C++ tests via cmake/ctest" \
             "  clojure (clj)    Clojure tests via Cognitect runner" \
             "  csharp (cs)      C# tests via dotnet test" \
+            "  fsharp (fs)      F# tests via dotnet test" \
             "  go               Go tests via go test" \
+            "  haskell (hs)     Haskell tests via cabal test" \
             "  java             Java tests via Gradle" \
             "  kotlin (kt)      Kotlin tests via Gradle" \
+            "  lua              Lua tests via busted" \
             "  php              PHP tests via PHPUnit" \
             "  python (py)      Python tests via pytest" \
             "  ruby (rb)        Ruby tests via ruby" \
@@ -75,9 +81,12 @@ test *target:
             "test cpp" \
             "test clojure" \
             "test csharp" \
+            "test fsharp" \
             "test go" \
+            "test haskell" \
             "test java" \
             "test kotlin" \
+            "test lua" \
             "test php" \
             "test python" \
             "test ruby" \
@@ -98,14 +107,23 @@ test *target:
                 csharp|cs)
                     cd impl/csharp && dotnet test
                     ;;
+                fsharp|fs)
+                    cd impl/fsharp && dotnet test
+                    ;;
                 go)
                     cd impl/go && go test ./...
+                    ;;
+                haskell|hs)
+                    cd impl/haskell && cabal test
                     ;;
                 java)
                     cd impl/java && ./gradlew test
                     ;;
                 kotlin|kt)
                     cd impl/kotlin && ./gradlew test
+                    ;;
+                lua)
+                    cd impl/lua && busted test_sayableduration.lua
                     ;;
                 php)
                     cd impl/php && vendor/bin/phpunit
@@ -156,9 +174,12 @@ build *target:
             "  c++ (cpp)        Build via cmake" \
             "  clojure (clj)    No-op (interpreted)" \
             "  csharp (cs)      Build via dotnet build" \
+            "  fsharp (fs)      Build via dotnet build" \
             "  go               Build via go build" \
+            "  haskell (hs)     Build via cabal build" \
             "  java             Build via Gradle" \
             "  kotlin (kt)      Build via Gradle" \
+            "  lua              No-op (interpreted)" \
             "  php              No-op (interpreted)" \
             "  python (py)      No-op (pure Python)" \
             "  ruby (rb)        No-op (interpreted)" \
@@ -180,9 +201,12 @@ build *target:
             "build cpp" \
             "build clojure" \
             "build csharp" \
+            "build fsharp" \
             "build go" \
+            "build haskell" \
             "build java" \
             "build kotlin" \
+            "build lua" \
             "build php" \
             "build python" \
             "build ruby" \
@@ -203,14 +227,23 @@ build *target:
                 csharp|cs)
                     cd impl/csharp && dotnet build
                     ;;
+                fsharp|fs)
+                    cd impl/fsharp && dotnet build
+                    ;;
                 go)
                     cd impl/go && go build ./...
+                    ;;
+                haskell|hs)
+                    cd impl/haskell && cabal build
                     ;;
                 java)
                     cd impl/java && ./gradlew build
                     ;;
                 kotlin|kt)
                     cd impl/kotlin && ./gradlew build
+                    ;;
+                lua)
+                    echo "No build step needed — interpreted language."
                     ;;
                 php)
                     echo "No build step needed — interpreted language."
@@ -261,9 +294,12 @@ lint *target:
             "  c++ (cpp)        Compiler warnings (cmake build)" \
             "  clojure (clj)    No-op" \
             "  csharp (cs)      dotnet build (warnings=errors)" \
+            "  fsharp (fs)      dotnet build (warnings=errors)" \
             "  go               golangci-lint" \
+            "  haskell (hs)     GHC -Wall -Werror (via cabal build)" \
             "  java             Gradle build (compiler warnings)" \
             "  kotlin (kt)      Gradle build (compiler warnings)" \
+            "  lua              No-op" \
             "  php              PHPStan" \
             "  python (py)      Ruff + Pyright" \
             "  ruby (rb)        No-op" \
@@ -285,9 +321,12 @@ lint *target:
             "lint cpp" \
             "lint clojure" \
             "lint csharp" \
+            "lint fsharp" \
             "lint go" \
+            "lint haskell" \
             "lint java" \
             "lint kotlin" \
+            "lint lua" \
             "lint php" \
             "lint python" \
             "lint ruby" \
@@ -308,14 +347,23 @@ lint *target:
                 csharp|cs)
                     cd impl/csharp && dotnet build
                     ;;
+                fsharp|fs)
+                    cd impl/fsharp && dotnet build
+                    ;;
                 go)
                     cd impl/go && golangci-lint run
+                    ;;
+                haskell|hs)
+                    cd impl/haskell && cabal build
                     ;;
                 java)
                     cd impl/java && ./gradlew build
                     ;;
                 kotlin|kt)
                     cd impl/kotlin && ./gradlew build
+                    ;;
+                lua)
+                    echo "No linter configured for Lua."
                     ;;
                 php)
                     cd impl/php && vendor/bin/phpstan analyse
@@ -406,9 +454,12 @@ clean *target:
             "  c++ (cpp)        Remove build/" \
             "  clojure (clj)    Remove .cpcache" \
             "  csharp (cs)      Remove bin/ and obj/" \
+            "  fsharp (fs)      Remove bin/ and obj/" \
             "  go               No artifacts to clean" \
+            "  haskell (hs)     Remove dist-newstyle/" \
             "  java             Gradle clean" \
             "  kotlin (kt)      Gradle clean" \
+            "  lua              No artifacts to clean" \
             "  php              Remove vendor, caches" \
             "  python (py)      Remove .venv, dist, egg-info, caches" \
             "  ruby (rb)        No artifacts to clean" \
@@ -430,9 +481,12 @@ clean *target:
             "clean cpp" \
             "clean clojure" \
             "clean csharp" \
+            "clean fsharp" \
             "clean go" \
+            "clean haskell" \
             "clean java" \
             "clean kotlin" \
+            "clean lua" \
             "clean php" \
             "clean python" \
             "clean ruby" \
@@ -450,14 +504,23 @@ clean *target:
             csharp|cs)
                 rm -rf impl/csharp/*/bin impl/csharp/*/obj
                 ;;
+            fsharp|fs)
+                rm -rf impl/fsharp/*/bin impl/fsharp/*/obj
+                ;;
             go)
                 echo "No artifacts to clean for Go."
+                ;;
+            haskell|hs)
+                rm -rf impl/haskell/dist-newstyle
                 ;;
             java)
                 cd impl/java && ./gradlew clean
                 ;;
             kotlin|kt)
                 cd impl/kotlin && ./gradlew clean
+                ;;
+            lua)
+                echo "No artifacts to clean for Lua."
                 ;;
             php)
                 rm -rf impl/php/vendor impl/php/.phpunit.cache impl/php/.phpstan.cache impl/php/.php-cs-fixer.cache
