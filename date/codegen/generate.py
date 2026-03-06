@@ -301,7 +301,22 @@ def generate_zig(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_c(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.c.emitter import (
+        emit_formatter, emit_header, emit_locale, emit_locales_header, emit_registry,
+        formatter_path, header_path, locale_path, locales_header_path, registry_path,
+    )
+
+    for loc in locales:
+        _write_or_check(locale_path(loc["code"], ROOT), emit_locale(loc), check, diffs)
+    _write_or_check(header_path(ROOT), emit_header(locales), check, diffs)
+    _write_or_check(locales_header_path(ROOT), emit_locales_header(locales), check, diffs)
+    _write_or_check(registry_path(ROOT), emit_registry(locales), check, diffs)
+    _write_or_check(formatter_path(ROOT), emit_formatter(), check, diffs)
+
+
 _GENERATORS = {
+    "c": generate_c,
     "clojure": generate_clojure,
     "cpp": generate_cpp,
     "csharp": generate_csharp,

@@ -1,3 +1,6 @@
+# C
+c/build/
+
 # C#
 csharp/*/bin/
 csharp/*/obj/
