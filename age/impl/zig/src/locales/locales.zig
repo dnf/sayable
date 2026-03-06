@@ -1982,7 +1982,7 @@ pub const om: sayableage.Locale = .{
 };
 
 // Source: age/locales/src/or.json
-pub const or: sayableage.Locale = .{
+pub const @"or": sayableage.Locale = .{
     .code = "or",
     .plural = plural_one_other,
     .units = .{
@@ -3009,7 +3009,7 @@ const locale_map = struct {
         if (eql(code, "nl")) return &nl;
         if (eql(code, "ny")) return &ny;
         if (eql(code, "om")) return &om;
-        if (eql(code, "or")) return &or;
+        if (eql(code, "or")) return &@"or";
         if (eql(code, "pa")) return &pa;
         if (eql(code, "pl")) return &pl;
         if (eql(code, "ps")) return &ps;
@@ -3132,7 +3132,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayableage.Locale }
     .{ .code = "nl", .locale = &nl },
     .{ .code = "ny", .locale = &ny },
     .{ .code = "om", .locale = &om },
-    .{ .code = "or", .locale = &or },
+    .{ .code = "or", .locale = &@"or" },
     .{ .code = "pa", .locale = &pa },
     .{ .code = "pl", .locale = &pl },
     .{ .code = "ps", .locale = &ps },

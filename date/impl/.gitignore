@@ -40,3 +40,7 @@ rust/target/
 # Scala
 scala/.gradle/
 scala/build/
+
+# Zig
+zig/zig-out/
+zig/.zig-cache/

@@ -1,0 +1,177 @@
+"""Zig locale emitter for sayable-duration — single file with all locales."""
+
+from __future__ import annotations
+
+from codegen.banner import locale_source_comment, make_header
+from codegen.targets.zig.plural_rules import get_zig_plural
+
+HEADER = make_header("codegen/targets/zig/emitter.py")
+
+
+_ZIG_KEYWORDS = frozenset([
+    "addrspace", "align", "allowzero", "and", "anyframe", "anytype", "asm",
+    "async", "await", "break", "callconv", "catch", "comptime", "const",
+    "continue", "defer", "else", "enum", "errdefer", "error", "export",
+    "extern", "false", "fn", "for", "if", "inline", "noalias", "nosuspend",
+    "null", "opaque", "or", "orelse", "packed", "pub", "resume", "return",
+    "linksection", "struct", "suspend", "switch", "test", "threadlocal",
+    "true", "try", "undefined", "union", "unreachable", "var", "volatile",
+    "while",
+])
+
+
+def _ident(name: str) -> str:
+    if name in _ZIG_KEYWORDS:
+        return f'@"{name}"'
+    return name
+
+
+def _quote(s: str) -> str:
+    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
+
+
+def _unit_forms(unit: object) -> str:
+    if isinstance(unit, str):
+        return f'.{{ .simple = {_quote(unit)} }}'
+    cats = ["zero", "one", "two", "few", "many", "other"]
+    parts = []
+    for cat in cats:
+        if cat in unit:
+            parts.append(f".{cat} = {_quote(unit[cat])}")
+        else:
+            parts.append(f".{cat} = null")
+    return ".{ .forms = .{ " + ", ".join(parts) + " } }"
+
+
+def _compactness_override(ovr: dict) -> str:
+    """Emit a CompactnessOverride struct literal."""
+    parts = []
+    for unit_name in ("second", "minute", "hour", "day", "week", "month", "year"):
+        if "units" in ovr and unit_name in ovr["units"]:
+            val = ovr["units"][unit_name]
+            parts.append(f".{unit_name} = {_unit_forms(val)}")
+        else:
+            parts.append(f".{unit_name} = null")
+    if "half" in ovr:
+        parts.append(f".half = {_quote(ovr['half'])}")
+    else:
+        parts.append(".half = null")
+    if "delimiter" in ovr:
+        parts.append(f".delimiter = {_quote(ovr['delimiter'])}")
+    else:
+        parts.append(".delimiter = null")
+    if "ago" in ovr:
+        parts.append(f".ago = {_quote(ovr['ago'])}")
+    else:
+        parts.append(".ago = null")
+    if "inFuture" in ovr:
+        parts.append(f".in_future = {_quote(ovr['inFuture'])}")
+    else:
+        parts.append(".in_future = null")
+    return ".{ " + ", ".join(parts) + " }"
+
+
+def emit_all(all_locales: list[dict]) -> str:
+    """Generate the single locales.zig file with all locales."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    lines = [HEADER]
+    lines.append('const sayableduration = @import("../sayableduration.zig");')
+    lines.append("")
+
+    # Collect unique plural rules
+    rules_used: dict[str, str] = {}
+    for data in sorted_locs:
+        rule = data["pluralRule"]
+        if rule not in rules_used:
+            rules_used[rule] = get_zig_plural(rule)
+
+    # Emit plural rule functions
+    for rule_name, body in sorted(rules_used.items()):
+        fn_name = f"plural_{rule_name}"
+        lines.append(f"fn {fn_name}(n: i32) sayableduration.PluralCategory {{")
+        for line in body.split("\n"):
+            lines.append(f"    {line.strip()}")
+        lines.append("}")
+        lines.append("")
+
+    # Emit locale constants
+    for data in sorted_locs:
+        code = data["code"]
+        rule = data["pluralRule"]
+        fn_name = f"plural_{rule}"
+
+        lines.append(locale_source_comment(code).rstrip())
+        lines.append(f"pub const {_ident(code)}: sayableduration.DurationLocale = .{{")
+        lines.append(f"    .code = {_quote(code)},")
+        lines.append(f"    .plural = {fn_name},")
+
+        # Units
+        lines.append("    .units = .{")
+        for unit_name in ("second", "minute", "hour", "day", "week", "month", "year"):
+            val = _unit_forms(data["units"][unit_name])
+            lines.append(f"        .{unit_name} = {val},")
+        lines.append("    },")
+
+        # Simple fields
+        lines.append(f"    .half = {_quote(data['half'])},")
+        lines.append(f"    .delimiter = {_quote(data['delimiter'])},")
+        lines.append(f"    .just_now = {_quote(data['justNow'])},")
+        lines.append(f"    .ago = {_quote(data['ago'])},")
+        lines.append(f"    .in_future = {_quote(data['inFuture'])},")
+
+        # Short/compact overrides
+        if "short" in data:
+            val = _compactness_override(data["short"])
+            lines.append(f"    .short_override = {val},")
+        else:
+            lines.append("    .short_override = null,")
+
+        if "compact" in data:
+            val = _compactness_override(data["compact"])
+            lines.append(f"    .compact_override = {val},")
+        else:
+            lines.append("    .compact_override = null,")
+
+        lines.append("};")
+        lines.append("")
+
+    # get() function
+    lines.append("pub fn get(code: []const u8) ?*const sayableduration.DurationLocale {")
+    lines.append("    return locale_map.get(code);")
+    lines.append("}")
+    lines.append("")
+
+    # Static map
+    lines.append("const locale_map = struct {")
+    lines.append("    fn get(code: []const u8) ?*const sayableduration.DurationLocale {")
+    for data in sorted_locs:
+        c = data["code"]
+        lines.append(f'        if (eql(code, "{c}")) return &{_ident(c)};')
+    lines.append("        return null;")
+    lines.append("    }")
+    lines.append("")
+    lines.append("    fn eql(a: []const u8, b: []const u8) bool {")
+    lines.append("        if (a.len != b.len) return false;")
+    lines.append("        for (a, b) |x, y| {")
+    lines.append("            if (x != y) return false;")
+    lines.append("        }")
+    lines.append("        return true;")
+    lines.append("    }")
+    lines.append("};")
+    lines.append("")
+
+    # all array
+    lines.append("pub const all = [_]struct { code: []const u8, locale: *const sayableduration.DurationLocale }{")
+    for data in sorted_locs:
+        c = data["code"]
+        lines.append(f'    .{{ .code = "{c}", .locale = &{_ident(c)} }},')
+    lines.append("};")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+def output_path(root: str) -> str:
+    import os
+    return os.path.join(root, "impl", "zig", "src", "locales", "locales.zig")

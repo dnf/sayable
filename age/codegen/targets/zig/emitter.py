@@ -8,6 +8,24 @@ from codegen.targets.zig.plural_rules import get_zig_plural
 HEADER = make_header("codegen/targets/zig/emitter.py")
 
 
+_ZIG_KEYWORDS = frozenset([
+    "addrspace", "align", "allowzero", "and", "anyframe", "anytype", "asm",
+    "async", "await", "break", "callconv", "catch", "comptime", "const",
+    "continue", "defer", "else", "enum", "errdefer", "error", "export",
+    "extern", "false", "fn", "for", "if", "inline", "noalias", "nosuspend",
+    "null", "opaque", "or", "orelse", "packed", "pub", "resume", "return",
+    "linksection", "struct", "suspend", "switch", "test", "threadlocal",
+    "true", "try", "undefined", "union", "unreachable", "var", "volatile",
+    "while",
+])
+
+
+def _ident(name: str) -> str:
+    if name in _ZIG_KEYWORDS:
+        return f'@"{name}"'
+    return name
+
+
 def _quote(s: str) -> str:
     escaped = s.replace("\\", "\\\\").replace('"', '\\"')
     return f'"{escaped}"'
@@ -85,7 +103,7 @@ def emit_all(all_locales: list[dict]) -> str:
         fn_name = f"plural_{rule}"
 
         lines.append(locale_source_comment(code).rstrip())
-        lines.append(f"pub const {code}: sayableage.Locale = .{{")
+        lines.append(f"pub const {_ident(code)}: sayableage.Locale = .{{")
         lines.append(f"    .code = {_quote(code)},")
         lines.append(f"    .plural = {fn_name},")
 
@@ -136,7 +154,7 @@ def emit_all(all_locales: list[dict]) -> str:
     # Generate an if-chain for locale lookup
     for data in sorted_locs:
         c = data["code"]
-        lines.append(f'        if (eql(code, "{c}")) return &{c};')
+        lines.append(f'        if (eql(code, "{c}")) return &{_ident(c)};')
     lines.append("        return null;")
     lines.append("    }")
     lines.append("")
@@ -154,7 +172,7 @@ def emit_all(all_locales: list[dict]) -> str:
     lines.append("pub const all = [_]struct { code: []const u8, locale: *const sayableage.Locale }{")
     for data in sorted_locs:
         c = data["code"]
-        lines.append(f'    .{{ .code = "{c}", .locale = &{c} }},')
+        lines.append(f'    .{{ .code = "{c}", .locale = &{_ident(c)} }},')
     lines.append("};")
     lines.append("")
 

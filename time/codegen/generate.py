@@ -287,6 +287,14 @@ def generate_java(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_zig(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.zig.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 _GENERATORS = {
     "clojure": generate_clojure,
     "cpp": generate_cpp,
@@ -303,6 +311,7 @@ _GENERATORS = {
     "rust": generate_rust,
     "scala": generate_scala,
     "typescript": generate_typescript,
+    "zig": generate_zig,
 }
 
 

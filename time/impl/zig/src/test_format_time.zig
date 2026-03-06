@@ -1,0 +1,191 @@
+const std = @import("std");
+const st = @import("sayabletime");
+
+fn fmt(buf: []u8, time: []const u8) ?[]const u8 {
+    return st.formatTime(buf, &st.locales.en, .normal, time);
+}
+
+fn fmtWith(buf: []u8, locale: *const st.TimeLocale, compactness: st.Compactness, time: []const u8) ?[]const u8 {
+    return st.formatTime(buf, locale, compactness, time);
+}
+
+fn expectStr(expected: []const u8, actual: ?[]const u8) !void {
+    try std.testing.expect(actual != null);
+    try std.testing.expectEqualStrings(expected, actual.?);
+}
+
+fn expectNull(actual: ?[]const u8) !void {
+    try std.testing.expect(actual == null);
+}
+
+// ================================================================
+// Section 1: Null / edge cases
+// ================================================================
+
+// 1.1
+test "null input" {
+    var buf: [256]u8 = undefined;
+    try expectNull(fmt(&buf, ""));
+}
+
+// 1.2
+test "invalid input" {
+    var buf: [256]u8 = undefined;
+    try expectNull(fmt(&buf, "invalid"));
+}
+
+// 1.3
+test "invalid hour" {
+    var buf: [256]u8 = undefined;
+    try expectNull(fmt(&buf, "25:00"));
+}
+
+// 1.4
+test "invalid minute" {
+    var buf: [256]u8 = undefined;
+    try expectNull(fmt(&buf, "10:60"));
+}
+
+// ================================================================
+// Section 2: Normal compactness — clock time
+// ================================================================
+
+// 2.1
+test "midnight" {
+    var buf: [256]u8 = undefined;
+    try expectStr("midnight", fmt(&buf, "00:00"));
+}
+
+// 2.2
+test "noon" {
+    var buf: [256]u8 = undefined;
+    try expectStr("noon", fmt(&buf, "12:00"));
+}
+
+// 2.3
+test "o'clock" {
+    var buf: [256]u8 = undefined;
+    try expectStr("three o'clock", fmt(&buf, "15:00"));
+}
+
+// 2.4
+test "quarter past" {
+    var buf: [256]u8 = undefined;
+    try expectStr("a quarter past two", fmt(&buf, "14:15"));
+}
+
+// 2.5
+test "half past" {
+    var buf: [256]u8 = undefined;
+    try expectStr("half past seven", fmt(&buf, "07:30"));
+}
+
+// 2.6
+test "quarter to" {
+    var buf: [256]u8 = undefined;
+    try expectStr("a quarter to eleven", fmt(&buf, "10:45"));
+}
+
+// 2.7
+test "five past" {
+    var buf: [256]u8 = undefined;
+    try expectStr("five past nine", fmt(&buf, "09:05"));
+}
+
+// 2.8
+test "ten to" {
+    var buf: [256]u8 = undefined;
+    try expectStr("ten to six", fmt(&buf, "05:50"));
+}
+
+// 2.9
+test "rounds to twenty" {
+    var buf: [256]u8 = undefined;
+    try expectStr("twenty past seven", fmt(&buf, "07:22"));
+}
+
+// 2.10
+test "ISO datetime input" {
+    var buf: [256]u8 = undefined;
+    try expectStr("a quarter past two", fmt(&buf, "2025-01-15T14:15:00"));
+}
+
+// ================================================================
+// Section 3: Short compactness — digital clock
+// ================================================================
+
+// 3.1
+test "short 2:15 PM" {
+    var buf: [256]u8 = undefined;
+    try expectStr("2:15 PM", fmtWith(&buf, &st.locales.en, .short_mode, "14:15"));
+}
+
+// 3.2
+test "short 12:00 AM" {
+    var buf: [256]u8 = undefined;
+    try expectStr("12:00 AM", fmtWith(&buf, &st.locales.en, .short_mode, "00:00"));
+}
+
+// 3.3
+test "short 9:05 AM" {
+    var buf: [256]u8 = undefined;
+    try expectStr("9:05 AM", fmtWith(&buf, &st.locales.en, .short_mode, "09:05"));
+}
+
+// ================================================================
+// Section 4: Compact compactness
+// ================================================================
+
+// 4.1
+test "compact 2:15p" {
+    var buf: [256]u8 = undefined;
+    try expectStr("2:15p", fmtWith(&buf, &st.locales.en, .compact, "14:15"));
+}
+
+// 4.2
+test "compact 12:00a" {
+    var buf: [256]u8 = undefined;
+    try expectStr("12:00a", fmtWith(&buf, &st.locales.en, .compact, "00:00"));
+}
+
+// ================================================================
+// Section 5: Locale — German
+// ================================================================
+
+// 5.1
+test "German quarter past" {
+    var buf: [256]u8 = undefined;
+    try expectStr("Viertel nach drei", fmtWith(&buf, &st.locales.de, .normal, "15:15"));
+}
+
+// 5.2
+test "German half past" {
+    var buf: [256]u8 = undefined;
+    try expectStr("halb acht", fmtWith(&buf, &st.locales.de, .normal, "07:30"));
+}
+
+// ================================================================
+// Section 6: Locale — French
+// ================================================================
+
+// 6.1
+test "French quarter past" {
+    var buf: [256]u8 = undefined;
+    try expectStr("trois heures et quart", fmtWith(&buf, &st.locales.fr, .normal, "15:15"));
+}
+
+// 6.2
+test "French noon" {
+    var buf: [256]u8 = undefined;
+    try expectStr("midi", fmtWith(&buf, &st.locales.fr, .normal, "12:00"));
+}
+
+// ================================================================
+// Section 7: Locale — Japanese
+// ================================================================
+
+// 7.1
+test "Japanese half past" {
+    var buf: [256]u8 = undefined;
+    try expectStr("\xe4\xb8\x89\xe6\x99\x82\xe5\x8d\x8a", fmtWith(&buf, &st.locales.ja, .normal, "15:30"));
+}
