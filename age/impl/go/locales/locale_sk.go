@@ -43,7 +43,7 @@ var SK = sa.AgeLocale{
 		Adult:    sa.G("Dospelý", "Dospelá"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} deň", sa.Few: "{n} dni", sa.Many: "{n} dňa", sa.Other: "{n} dní"}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} deň", sa.Few: "{n} dni", sa.Many: "{n} dňa", sa.Other: "{n} dní"}),
 		Week:  &sa.UnitForms{Simple: "{n} týž."},
 		Month: &sa.UnitForms{Simple: "{n} mes."},
 		Year:  &sa.UnitForms{Simple: "{n} r."},

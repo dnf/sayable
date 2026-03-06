@@ -18,6 +18,27 @@ _CAT_MAP = {
 }
 
 
+_DART_RESERVED = {
+    "abstract", "as", "assert", "async", "await", "break", "case", "catch",
+    "class", "const", "continue", "covariant", "default", "deferred", "do",
+    "dynamic", "else", "enum", "export", "extends", "extension", "external",
+    "factory", "false", "final", "finally", "for", "function", "get", "hide",
+    "if", "implements", "import", "in", "interface", "is", "late", "library",
+    "mixin", "new", "null", "on", "operator", "part", "required", "rethrow",
+    "return", "sealed", "set", "show", "static", "super", "switch", "sync",
+    "this", "throw", "true", "try", "type", "typedef", "var", "void", "when",
+    "while", "with", "yield",
+}
+
+
+def _safe_id(code: str) -> str:
+    """Escape locale codes that are Dart reserved keywords."""
+    safe = code.replace("-", "_")
+    if safe in _DART_RESERVED:
+        return f"{safe}_"
+    return safe
+
+
 def _quote(s: str) -> str:
     escaped = s.replace("\\", "\\\\").replace("'", "\\'").replace("$", "\\$")
     return f"'{escaped}'"
@@ -49,7 +70,7 @@ def emit_locale(data: dict) -> str:
     lines.append("import '../types.dart';")
     lines.append("")
     lines.append(f"/// {name} locale.")
-    lines.append(f"final {code} = AgeLocale(")
+    lines.append(f"final {_safe_id(code)} = AgeLocale(")
 
     # Code
     lines.append(f"  code: {_quote(code)},")
@@ -113,7 +134,7 @@ def emit_registry(all_locales: list[dict]) -> str:
     # Import each locale file
     for loc in sorted_locs:
         code = loc["code"]
-        lines.append(f"import '{code}.dart' as loc_{code.replace('-', '_')};")
+        lines.append(f"import '{code}.dart' as loc_{_safe_id(code)};")
     lines.append("")
 
     lines.append("/// Returns the locale for the given code, or null if not found.")
@@ -121,9 +142,9 @@ def emit_registry(all_locales: list[dict]) -> str:
     lines.append("  switch (code) {")
     for loc in sorted_locs:
         code = loc["code"]
-        safe = code.replace("-", "_")
+        safe = _safe_id(code)
         lines.append(f"    case {_quote(code)}:")
-        lines.append(f"      return loc_{safe}.{code.replace('-', '_')};")
+        lines.append(f"      return loc_{safe}.{safe};")
     lines.append("    default:")
     lines.append("      return null;")
     lines.append("  }")

@@ -101,7 +101,13 @@ def emit_locale(data: dict) -> str:
                             lines.append(f"\t\t{ucap}:{pad}&sa.UnitForms{{Simple: {_quote(val)}}},")
                         else:
                             # Plural override — unusual but support it
-                            lines.append(f"\t\t{ucap}:{pad}&{_unit_forms(val)},")
+                            cats = ["zero", "one", "two", "few", "many", "other"]
+                            pairs = []
+                            for cat in cats:
+                                if cat in val:
+                                    pairs.append(f"{_CAT_MAP[cat]}: {_quote(val[cat])}")
+                            map_lit = "map[sa.PluralCategory]string{" + ", ".join(pairs) + "}"
+                            lines.append(f"\t\t{ucap}:{pad}unitFormsPtr({map_lit}),")
             if "delimiter" in ovr:
                 pad = " " * (max_field_len - len("Delimiter") + 1)
                 lines.append(f'\t\tDelimiter:{pad}strPtr({_quote(ovr["delimiter"])}),')
@@ -144,9 +150,15 @@ def emit_registry(all_locales: list[dict]) -> str:
 
 
 def emit_helpers() -> str:
-    """Generate helpers.go with strPtr for the locales subpackage."""
+    """Generate helpers.go with strPtr and unitFormsPtr for the locales subpackage."""
     lines = [HEADER, "package locales\n"]
+    lines.append('import sa "github.com/dnf/sayable/age/impl/go"\n')
     lines.append("func strPtr(s string) *string { return &s }")
+    lines.append("")
+    lines.append("func unitFormsPtr(m map[sa.PluralCategory]string) *sa.UnitForms {")
+    lines.append("\tu := sa.PluralUnit(m)")
+    lines.append("\treturn &u")
+    lines.append("}")
     lines.append("")
     return "\n".join(lines)
 

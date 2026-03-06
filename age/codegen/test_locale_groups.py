@@ -121,9 +121,9 @@ class TestGenerateSubset(unittest.TestCase):
         """Subsetting removes stale per-file locale files."""
         # Generate full set for Go
         self._run_generate("--lang", "go")
-        go_dir = os.path.join(ROOT, "src", "go", "locales")
+        go_dir = os.path.join(ROOT, "impl", "go", "locales")
         full_count = len([f for f in os.listdir(go_dir) if f.startswith("locale_") and f.endswith(".go") and f != "locale_registry.go"])
-        self.assertEqual(full_count, 71)
+        self.assertEqual(full_count, 110)
 
         # Generate subset
         self._run_generate("--locales", "cjk", "--lang", "go")
@@ -135,7 +135,7 @@ class TestGenerateSubset(unittest.TestCase):
     def test_monolithic_language_subset(self):
         """Kotlin (monolithic) only contains selected locales."""
         self._run_generate("--locales", "nordic", "--lang", "kotlin")
-        kt_path = os.path.join(ROOT, "src", "kotlin", "src", "main", "kotlin", "sayableage", "locales", "Locales.kt")
+        kt_path = os.path.join(ROOT, "impl", "kotlin", "src", "main", "kotlin", "sayableage", "locales", "Locales.kt")
         with open(kt_path) as f:
             content = f.read()
 

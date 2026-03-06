@@ -12,7 +12,7 @@
 import '../types.dart';
 
 /// Icelandic locale.
-final is = AgeLocale(
+final is_ = AgeLocale(
   code: 'is',
   plural: (int n) {
     final mod10 = n % 10;

@@ -50,7 +50,7 @@ import 'hu.dart' as loc_hu;
 import 'hy.dart' as loc_hy;
 import 'id.dart' as loc_id;
 import 'ig.dart' as loc_ig;
-import 'is.dart' as loc_is;
+import 'is.dart' as loc_is_;
 import 'it.dart' as loc_it;
 import 'ja.dart' as loc_ja;
 import 'jv.dart' as loc_jv;
@@ -206,7 +206,7 @@ AgeLocale? getLocale(String code) {
     case 'ig':
       return loc_ig.ig;
     case 'is':
-      return loc_is.is;
+      return loc_is_.is_;
     case 'it':
       return loc_it.it;
     case 'ja':

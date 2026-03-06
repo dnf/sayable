@@ -41,15 +41,15 @@ var TI = sa.AgeLocale{
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} መዓልትታት"},
-		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ሰሙን", sa.Other: "{n} ሰሙናት"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ሰሙን", sa.Other: "{n} ሰሙናት"}),
 		Month: &sa.UnitForms{Simple: "{n} ኣዋርሕ"},
-		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ዓመት", sa.Other: "{n} ዓመታት"}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ዓመት", sa.Other: "{n} ዓመታት"}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n} መ"},
 		Week:      &sa.UnitForms{Simple: "{n} ሰሙን"},
 		Month:     &sa.UnitForms{Simple: "{n} ወር"},
-		Year:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ዓመት", sa.Other: "{n} ዓ"}),
+		Year:      unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ዓመት", sa.Other: "{n} ዓ"}),
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),
 	},

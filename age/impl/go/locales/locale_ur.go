@@ -41,14 +41,14 @@ var UR = sa.AgeLocale{
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} دن"},
-		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ہفتہ", sa.Other: "{n} ہفتے"}),
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} مہینہ", sa.Other: "{n} مہینے"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ہفتہ", sa.Other: "{n} ہفتے"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} مہینہ", sa.Other: "{n} مہینے"}),
 		Year:  &sa.UnitForms{Simple: "{n} سال"},
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n} دن"},
-		Week:      &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ہفتہ", sa.Other: "{n} ہفتے"}),
-		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} مہینہ", sa.Other: "{n} مہینے"}),
+		Week:      unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ہفتہ", sa.Other: "{n} ہفتے"}),
+		Month:     unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} مہینہ", sa.Other: "{n} مہینے"}),
 		Year:      &sa.UnitForms{Simple: "{n} سال"},
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),

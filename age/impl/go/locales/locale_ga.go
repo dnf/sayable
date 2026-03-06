@@ -51,13 +51,13 @@ var GA = sa.AgeLocale{
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} lá"},
 		Week:  &sa.UnitForms{Simple: "{n} scht"},
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mí", sa.Two: "{n} mí", sa.Few: "{n} mí", sa.Many: "{n} mí", sa.Other: "{n} m"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} mí", sa.Two: "{n} mí", sa.Few: "{n} mí", sa.Many: "{n} mí", sa.Other: "{n} m"}),
 		Year:  &sa.UnitForms{Simple: "{n} bl"},
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n} lá"},
 		Week:      &sa.UnitForms{Simple: "{n} scht"},
-		Month:     &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n}m", sa.Two: "{n}m", sa.Few: "{n}m", sa.Many: "{n}m", sa.Other: "{n} m"}),
+		Month:     unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n}m", sa.Two: "{n}m", sa.Few: "{n}m", sa.Many: "{n}m", sa.Other: "{n} m"}),
 		Year:      &sa.UnitForms{Simple: "{n} bl"},
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),

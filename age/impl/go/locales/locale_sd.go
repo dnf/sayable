@@ -41,8 +41,8 @@ var SD = sa.AgeLocale{
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} ڏينهن"},
-		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} هفتو", sa.Other: "{n} هفتا"}),
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} مهينو", sa.Other: "{n} مهينا"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} هفتو", sa.Other: "{n} هفتا"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} مهينو", sa.Other: "{n} مهينا"}),
 		Year:  &sa.UnitForms{Simple: "{n} سال"},
 	},
 	Compact: &sa.CompactnessOverride{

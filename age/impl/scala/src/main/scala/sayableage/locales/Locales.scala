@@ -21,7 +21,7 @@ object Locales {
     // ================================================================
     // AF — Afrikaans
     // ================================================================
-    val AF: AgeLocale = AgeLocale(
+    lazy val AF: AgeLocale = AgeLocale(
         code = "af",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -60,7 +60,7 @@ object Locales {
     // ================================================================
     // AK — Akan
     // ================================================================
-    val AK: AgeLocale = AgeLocale(
+    lazy val AK: AgeLocale = AgeLocale(
         code = "ak",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -100,7 +100,7 @@ object Locales {
     // ================================================================
     // AM — Amharic
     // ================================================================
-    val AM: AgeLocale = AgeLocale(
+    lazy val AM: AgeLocale = AgeLocale(
         code = "am",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -140,7 +140,7 @@ object Locales {
     // ================================================================
     // AR — Arabic
     // ================================================================
-    val AR: AgeLocale = AgeLocale(
+    lazy val AR: AgeLocale = AgeLocale(
         code = "ar",
         plural = n => {
             if (n == 0) PluralCategory.ZERO
@@ -187,7 +187,7 @@ object Locales {
     // ================================================================
     // AZ — Azerbaijani
     // ================================================================
-    val AZ: AgeLocale = AgeLocale(
+    lazy val AZ: AgeLocale = AgeLocale(
         code = "az",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -227,7 +227,7 @@ object Locales {
     // ================================================================
     // BE — Belarusian
     // ================================================================
-    val BE: AgeLocale = AgeLocale(
+    lazy val BE: AgeLocale = AgeLocale(
         code = "be",
         plural = n => {
             val mod10 = n % 10
@@ -273,7 +273,7 @@ object Locales {
     // ================================================================
     // BG — Bulgarian
     // ================================================================
-    val BG: AgeLocale = AgeLocale(
+    lazy val BG: AgeLocale = AgeLocale(
         code = "bg",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -313,7 +313,7 @@ object Locales {
     // ================================================================
     // BN — Bengali
     // ================================================================
-    val BN: AgeLocale = AgeLocale(
+    lazy val BN: AgeLocale = AgeLocale(
         code = "bn",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -353,7 +353,7 @@ object Locales {
     // ================================================================
     // BR — Breton
     // ================================================================
-    val BR: AgeLocale = AgeLocale(
+    lazy val BR: AgeLocale = AgeLocale(
         code = "br",
         plural = n => {
             val mod10 = n % 10
@@ -401,7 +401,7 @@ object Locales {
     // ================================================================
     // BS — Bosnian
     // ================================================================
-    val BS: AgeLocale = AgeLocale(
+    lazy val BS: AgeLocale = AgeLocale(
         code = "bs",
         plural = n => {
             val mod10 = n % 10
@@ -447,7 +447,7 @@ object Locales {
     // ================================================================
     // CA — Catalan
     // ================================================================
-    val CA: AgeLocale = AgeLocale(
+    lazy val CA: AgeLocale = AgeLocale(
         code = "ca",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -487,7 +487,7 @@ object Locales {
     // ================================================================
     // CEB — Cebuano
     // ================================================================
-    val CEB: AgeLocale = AgeLocale(
+    lazy val CEB: AgeLocale = AgeLocale(
         code = "ceb",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -527,7 +527,7 @@ object Locales {
     // ================================================================
     // CS — Czech
     // ================================================================
-    val CS: AgeLocale = AgeLocale(
+    lazy val CS: AgeLocale = AgeLocale(
         code = "cs",
         plural = n => {
             if (n == 1) PluralCategory.ONE
@@ -570,7 +570,7 @@ object Locales {
     // ================================================================
     // CY — Welsh
     // ================================================================
-    val CY: AgeLocale = AgeLocale(
+    lazy val CY: AgeLocale = AgeLocale(
         code = "cy",
         plural = n => n match {
             case 0 => PluralCategory.ZERO
@@ -617,7 +617,7 @@ object Locales {
     // ================================================================
     // DA — Danish
     // ================================================================
-    val DA: AgeLocale = AgeLocale(
+    lazy val DA: AgeLocale = AgeLocale(
         code = "da",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -656,7 +656,7 @@ object Locales {
     // ================================================================
     // DE — German
     // ================================================================
-    val DE: AgeLocale = AgeLocale(
+    lazy val DE: AgeLocale = AgeLocale(
         code = "de",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -695,7 +695,7 @@ object Locales {
     // ================================================================
     // EL — Greek
     // ================================================================
-    val EL: AgeLocale = AgeLocale(
+    lazy val EL: AgeLocale = AgeLocale(
         code = "el",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -735,7 +735,7 @@ object Locales {
     // ================================================================
     // EN — English
     // ================================================================
-    val EN: AgeLocale = AgeLocale(
+    lazy val EN: AgeLocale = AgeLocale(
         code = "en",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -774,7 +774,7 @@ object Locales {
     // ================================================================
     // ES — Spanish
     // ================================================================
-    val ES: AgeLocale = AgeLocale(
+    lazy val ES: AgeLocale = AgeLocale(
         code = "es",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -814,7 +814,7 @@ object Locales {
     // ================================================================
     // ET — Estonian
     // ================================================================
-    val ET: AgeLocale = AgeLocale(
+    lazy val ET: AgeLocale = AgeLocale(
         code = "et",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -853,7 +853,7 @@ object Locales {
     // ================================================================
     // EU — Basque
     // ================================================================
-    val EU: AgeLocale = AgeLocale(
+    lazy val EU: AgeLocale = AgeLocale(
         code = "eu",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -893,7 +893,7 @@ object Locales {
     // ================================================================
     // FA — Persian
     // ================================================================
-    val FA: AgeLocale = AgeLocale(
+    lazy val FA: AgeLocale = AgeLocale(
         code = "fa",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -933,7 +933,7 @@ object Locales {
     // ================================================================
     // FF — Fulah
     // ================================================================
-    val FF: AgeLocale = AgeLocale(
+    lazy val FF: AgeLocale = AgeLocale(
         code = "ff",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -973,7 +973,7 @@ object Locales {
     // ================================================================
     // FI — Finnish
     // ================================================================
-    val FI: AgeLocale = AgeLocale(
+    lazy val FI: AgeLocale = AgeLocale(
         code = "fi",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1013,7 +1013,7 @@ object Locales {
     // ================================================================
     // FIL — Filipino
     // ================================================================
-    val FIL: AgeLocale = AgeLocale(
+    lazy val FIL: AgeLocale = AgeLocale(
         code = "fil",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -1053,7 +1053,7 @@ object Locales {
     // ================================================================
     // FR — French
     // ================================================================
-    val FR: AgeLocale = AgeLocale(
+    lazy val FR: AgeLocale = AgeLocale(
         code = "fr",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1093,7 +1093,7 @@ object Locales {
     // ================================================================
     // GA — Irish
     // ================================================================
-    val GA: AgeLocale = AgeLocale(
+    lazy val GA: AgeLocale = AgeLocale(
         code = "ga",
         plural = n => {
             if (n == 1) PluralCategory.ONE
@@ -1139,7 +1139,7 @@ object Locales {
     // ================================================================
     // GD — Scottish Gaelic
     // ================================================================
-    val GD: AgeLocale = AgeLocale(
+    lazy val GD: AgeLocale = AgeLocale(
         code = "gd",
         plural = n => {
             if (n == 1 || n == 11) PluralCategory.ONE
@@ -1184,7 +1184,7 @@ object Locales {
     // ================================================================
     // GL — Galician
     // ================================================================
-    val GL: AgeLocale = AgeLocale(
+    lazy val GL: AgeLocale = AgeLocale(
         code = "gl",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1224,7 +1224,7 @@ object Locales {
     // ================================================================
     // GN — Guarani
     // ================================================================
-    val GN: AgeLocale = AgeLocale(
+    lazy val GN: AgeLocale = AgeLocale(
         code = "gn",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1264,7 +1264,7 @@ object Locales {
     // ================================================================
     // GU — Gujarati
     // ================================================================
-    val GU: AgeLocale = AgeLocale(
+    lazy val GU: AgeLocale = AgeLocale(
         code = "gu",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1304,7 +1304,7 @@ object Locales {
     // ================================================================
     // GV — Manx
     // ================================================================
-    val GV: AgeLocale = AgeLocale(
+    lazy val GV: AgeLocale = AgeLocale(
         code = "gv",
         plural = n => {
             val mod10 = n % 10
@@ -1351,7 +1351,7 @@ object Locales {
     // ================================================================
     // HA — Hausa
     // ================================================================
-    val HA: AgeLocale = AgeLocale(
+    lazy val HA: AgeLocale = AgeLocale(
         code = "ha",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1390,7 +1390,7 @@ object Locales {
     // ================================================================
     // HE — Hebrew
     // ================================================================
-    val HE: AgeLocale = AgeLocale(
+    lazy val HE: AgeLocale = AgeLocale(
         code = "he",
         plural = n => n match {
             case 1 => PluralCategory.ONE
@@ -1434,7 +1434,7 @@ object Locales {
     // ================================================================
     // HI — Hindi
     // ================================================================
-    val HI: AgeLocale = AgeLocale(
+    lazy val HI: AgeLocale = AgeLocale(
         code = "hi",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1474,7 +1474,7 @@ object Locales {
     // ================================================================
     // HR — Croatian
     // ================================================================
-    val HR: AgeLocale = AgeLocale(
+    lazy val HR: AgeLocale = AgeLocale(
         code = "hr",
         plural = n => {
             val mod10 = n % 10
@@ -1520,7 +1520,7 @@ object Locales {
     // ================================================================
     // HT — Haitian Creole
     // ================================================================
-    val HT: AgeLocale = AgeLocale(
+    lazy val HT: AgeLocale = AgeLocale(
         code = "ht",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1560,7 +1560,7 @@ object Locales {
     // ================================================================
     // HU — Hungarian
     // ================================================================
-    val HU: AgeLocale = AgeLocale(
+    lazy val HU: AgeLocale = AgeLocale(
         code = "hu",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -1600,7 +1600,7 @@ object Locales {
     // ================================================================
     // HY — Armenian
     // ================================================================
-    val HY: AgeLocale = AgeLocale(
+    lazy val HY: AgeLocale = AgeLocale(
         code = "hy",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1640,7 +1640,7 @@ object Locales {
     // ================================================================
     // ID — Indonesian
     // ================================================================
-    val ID: AgeLocale = AgeLocale(
+    lazy val ID: AgeLocale = AgeLocale(
         code = "id",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -1680,7 +1680,7 @@ object Locales {
     // ================================================================
     // IG — Igbo
     // ================================================================
-    val IG: AgeLocale = AgeLocale(
+    lazy val IG: AgeLocale = AgeLocale(
         code = "ig",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -1720,7 +1720,7 @@ object Locales {
     // ================================================================
     // IS — Icelandic
     // ================================================================
-    val IS: AgeLocale = AgeLocale(
+    lazy val IS: AgeLocale = AgeLocale(
         code = "is",
         plural = n => {
             val mod10 = n % 10
@@ -1764,7 +1764,7 @@ object Locales {
     // ================================================================
     // IT — Italian
     // ================================================================
-    val IT: AgeLocale = AgeLocale(
+    lazy val IT: AgeLocale = AgeLocale(
         code = "it",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1804,7 +1804,7 @@ object Locales {
     // ================================================================
     // JA — Japanese
     // ================================================================
-    val JA: AgeLocale = AgeLocale(
+    lazy val JA: AgeLocale = AgeLocale(
         code = "ja",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -1842,7 +1842,7 @@ object Locales {
     // ================================================================
     // JV — Javanese
     // ================================================================
-    val JV: AgeLocale = AgeLocale(
+    lazy val JV: AgeLocale = AgeLocale(
         code = "jv",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -1882,7 +1882,7 @@ object Locales {
     // ================================================================
     // KA — Georgian
     // ================================================================
-    val KA: AgeLocale = AgeLocale(
+    lazy val KA: AgeLocale = AgeLocale(
         code = "ka",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1922,7 +1922,7 @@ object Locales {
     // ================================================================
     // KK — Kazakh
     // ================================================================
-    val KK: AgeLocale = AgeLocale(
+    lazy val KK: AgeLocale = AgeLocale(
         code = "kk",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -1962,7 +1962,7 @@ object Locales {
     // ================================================================
     // KM — Khmer
     // ================================================================
-    val KM: AgeLocale = AgeLocale(
+    lazy val KM: AgeLocale = AgeLocale(
         code = "km",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -2002,7 +2002,7 @@ object Locales {
     // ================================================================
     // KN — Kannada
     // ================================================================
-    val KN: AgeLocale = AgeLocale(
+    lazy val KN: AgeLocale = AgeLocale(
         code = "kn",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2042,7 +2042,7 @@ object Locales {
     // ================================================================
     // KO — Korean
     // ================================================================
-    val KO: AgeLocale = AgeLocale(
+    lazy val KO: AgeLocale = AgeLocale(
         code = "ko",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -2081,7 +2081,7 @@ object Locales {
     // ================================================================
     // KU — Kurdish
     // ================================================================
-    val KU: AgeLocale = AgeLocale(
+    lazy val KU: AgeLocale = AgeLocale(
         code = "ku",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2120,7 +2120,7 @@ object Locales {
     // ================================================================
     // KW — Cornish
     // ================================================================
-    val KW: AgeLocale = AgeLocale(
+    lazy val KW: AgeLocale = AgeLocale(
         code = "kw",
         plural = n => {
             if (n == 0) PluralCategory.ZERO
@@ -2170,7 +2170,7 @@ object Locales {
     // ================================================================
     // KY — Kyrgyz
     // ================================================================
-    val KY: AgeLocale = AgeLocale(
+    lazy val KY: AgeLocale = AgeLocale(
         code = "ky",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2210,7 +2210,7 @@ object Locales {
     // ================================================================
     // LG — Luganda
     // ================================================================
-    val LG: AgeLocale = AgeLocale(
+    lazy val LG: AgeLocale = AgeLocale(
         code = "lg",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2250,7 +2250,7 @@ object Locales {
     // ================================================================
     // LN — Lingala
     // ================================================================
-    val LN: AgeLocale = AgeLocale(
+    lazy val LN: AgeLocale = AgeLocale(
         code = "ln",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2290,7 +2290,7 @@ object Locales {
     // ================================================================
     // LO — Lao
     // ================================================================
-    val LO: AgeLocale = AgeLocale(
+    lazy val LO: AgeLocale = AgeLocale(
         code = "lo",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -2328,7 +2328,7 @@ object Locales {
     // ================================================================
     // LT — Lithuanian
     // ================================================================
-    val LT: AgeLocale = AgeLocale(
+    lazy val LT: AgeLocale = AgeLocale(
         code = "lt",
         plural = n => {
             val mod10 = n % 10
@@ -2373,7 +2373,7 @@ object Locales {
     // ================================================================
     // LV — Latvian
     // ================================================================
-    val LV: AgeLocale = AgeLocale(
+    lazy val LV: AgeLocale = AgeLocale(
         code = "lv",
         plural = n => {
             val mod10 = n % 10
@@ -2418,7 +2418,7 @@ object Locales {
     // ================================================================
     // MG — Malagasy
     // ================================================================
-    val MG: AgeLocale = AgeLocale(
+    lazy val MG: AgeLocale = AgeLocale(
         code = "mg",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2458,7 +2458,7 @@ object Locales {
     // ================================================================
     // MI — Māori
     // ================================================================
-    val MI: AgeLocale = AgeLocale(
+    lazy val MI: AgeLocale = AgeLocale(
         code = "mi",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2498,7 +2498,7 @@ object Locales {
     // ================================================================
     // MK — Macedonian
     // ================================================================
-    val MK: AgeLocale = AgeLocale(
+    lazy val MK: AgeLocale = AgeLocale(
         code = "mk",
         plural = n => {
             val mod10 = n % 10
@@ -2542,7 +2542,7 @@ object Locales {
     // ================================================================
     // ML — Malayalam
     // ================================================================
-    val ML: AgeLocale = AgeLocale(
+    lazy val ML: AgeLocale = AgeLocale(
         code = "ml",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2582,7 +2582,7 @@ object Locales {
     // ================================================================
     // MN — Mongolian
     // ================================================================
-    val MN: AgeLocale = AgeLocale(
+    lazy val MN: AgeLocale = AgeLocale(
         code = "mn",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2622,7 +2622,7 @@ object Locales {
     // ================================================================
     // MR — Marathi
     // ================================================================
-    val MR: AgeLocale = AgeLocale(
+    lazy val MR: AgeLocale = AgeLocale(
         code = "mr",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2662,7 +2662,7 @@ object Locales {
     // ================================================================
     // MS — Malay
     // ================================================================
-    val MS: AgeLocale = AgeLocale(
+    lazy val MS: AgeLocale = AgeLocale(
         code = "ms",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -2702,7 +2702,7 @@ object Locales {
     // ================================================================
     // MT — Maltese
     // ================================================================
-    val MT: AgeLocale = AgeLocale(
+    lazy val MT: AgeLocale = AgeLocale(
         code = "mt",
         plural = n => {
             if (n == 1) PluralCategory.ONE
@@ -2748,7 +2748,7 @@ object Locales {
     // ================================================================
     // MY — Burmese
     // ================================================================
-    val MY: AgeLocale = AgeLocale(
+    lazy val MY: AgeLocale = AgeLocale(
         code = "my",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -2788,7 +2788,7 @@ object Locales {
     // ================================================================
     // NB — Norwegian Bokmål
     // ================================================================
-    val NB: AgeLocale = AgeLocale(
+    lazy val NB: AgeLocale = AgeLocale(
         code = "nb",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2827,7 +2827,7 @@ object Locales {
     // ================================================================
     // NE — Nepali
     // ================================================================
-    val NE: AgeLocale = AgeLocale(
+    lazy val NE: AgeLocale = AgeLocale(
         code = "ne",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2867,7 +2867,7 @@ object Locales {
     // ================================================================
     // NL — Dutch
     // ================================================================
-    val NL: AgeLocale = AgeLocale(
+    lazy val NL: AgeLocale = AgeLocale(
         code = "nl",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2906,7 +2906,7 @@ object Locales {
     // ================================================================
     // NY — Chichewa
     // ================================================================
-    val NY: AgeLocale = AgeLocale(
+    lazy val NY: AgeLocale = AgeLocale(
         code = "ny",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2946,7 +2946,7 @@ object Locales {
     // ================================================================
     // OM — Oromo
     // ================================================================
-    val OM: AgeLocale = AgeLocale(
+    lazy val OM: AgeLocale = AgeLocale(
         code = "om",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -2986,7 +2986,7 @@ object Locales {
     // ================================================================
     // OR — Odia
     // ================================================================
-    val OR: AgeLocale = AgeLocale(
+    lazy val OR: AgeLocale = AgeLocale(
         code = "or",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3026,7 +3026,7 @@ object Locales {
     // ================================================================
     // PA — Punjabi
     // ================================================================
-    val PA: AgeLocale = AgeLocale(
+    lazy val PA: AgeLocale = AgeLocale(
         code = "pa",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3066,7 +3066,7 @@ object Locales {
     // ================================================================
     // PL — Polish
     // ================================================================
-    val PL: AgeLocale = AgeLocale(
+    lazy val PL: AgeLocale = AgeLocale(
         code = "pl",
         plural = n => {
             if (n == 1) PluralCategory.ONE
@@ -3114,7 +3114,7 @@ object Locales {
     // ================================================================
     // PS — Pashto
     // ================================================================
-    val PS: AgeLocale = AgeLocale(
+    lazy val PS: AgeLocale = AgeLocale(
         code = "ps",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3154,7 +3154,7 @@ object Locales {
     // ================================================================
     // PT — Portuguese
     // ================================================================
-    val PT: AgeLocale = AgeLocale(
+    lazy val PT: AgeLocale = AgeLocale(
         code = "pt",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3194,7 +3194,7 @@ object Locales {
     // ================================================================
     // QU — Quechua
     // ================================================================
-    val QU: AgeLocale = AgeLocale(
+    lazy val QU: AgeLocale = AgeLocale(
         code = "qu",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -3234,7 +3234,7 @@ object Locales {
     // ================================================================
     // RO — Romanian
     // ================================================================
-    val RO: AgeLocale = AgeLocale(
+    lazy val RO: AgeLocale = AgeLocale(
         code = "ro",
         plural = n => {
             if (n == 1) PluralCategory.ONE
@@ -3278,7 +3278,7 @@ object Locales {
     // ================================================================
     // RU — Russian
     // ================================================================
-    val RU: AgeLocale = AgeLocale(
+    lazy val RU: AgeLocale = AgeLocale(
         code = "ru",
         plural = n => {
             val mod10 = n % 10
@@ -3324,7 +3324,7 @@ object Locales {
     // ================================================================
     // RW — Kinyarwanda
     // ================================================================
-    val RW: AgeLocale = AgeLocale(
+    lazy val RW: AgeLocale = AgeLocale(
         code = "rw",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3364,7 +3364,7 @@ object Locales {
     // ================================================================
     // SD — Sindhi
     // ================================================================
-    val SD: AgeLocale = AgeLocale(
+    lazy val SD: AgeLocale = AgeLocale(
         code = "sd",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3404,7 +3404,7 @@ object Locales {
     // ================================================================
     // SHI — Tachelhit
     // ================================================================
-    val SHI: AgeLocale = AgeLocale(
+    lazy val SHI: AgeLocale = AgeLocale(
         code = "shi",
         plural = n => {
             if (n == 0 || n == 1) PluralCategory.ONE
@@ -3448,7 +3448,7 @@ object Locales {
     // ================================================================
     // SI — Sinhala
     // ================================================================
-    val SI: AgeLocale = AgeLocale(
+    lazy val SI: AgeLocale = AgeLocale(
         code = "si",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3488,7 +3488,7 @@ object Locales {
     // ================================================================
     // SK — Slovak
     // ================================================================
-    val SK: AgeLocale = AgeLocale(
+    lazy val SK: AgeLocale = AgeLocale(
         code = "sk",
         plural = n => {
             if (n == 1) PluralCategory.ONE
@@ -3531,7 +3531,7 @@ object Locales {
     // ================================================================
     // SL — Slovenian
     // ================================================================
-    val SL: AgeLocale = AgeLocale(
+    lazy val SL: AgeLocale = AgeLocale(
         code = "sl",
         plural = n => {
             val mod100 = n % 100
@@ -3577,7 +3577,7 @@ object Locales {
     // ================================================================
     // SN — Shona
     // ================================================================
-    val SN: AgeLocale = AgeLocale(
+    lazy val SN: AgeLocale = AgeLocale(
         code = "sn",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3617,7 +3617,7 @@ object Locales {
     // ================================================================
     // SO — Somali
     // ================================================================
-    val SO: AgeLocale = AgeLocale(
+    lazy val SO: AgeLocale = AgeLocale(
         code = "so",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3657,7 +3657,7 @@ object Locales {
     // ================================================================
     // SQ — Albanian
     // ================================================================
-    val SQ: AgeLocale = AgeLocale(
+    lazy val SQ: AgeLocale = AgeLocale(
         code = "sq",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3697,7 +3697,7 @@ object Locales {
     // ================================================================
     // SR — Serbian
     // ================================================================
-    val SR: AgeLocale = AgeLocale(
+    lazy val SR: AgeLocale = AgeLocale(
         code = "sr",
         plural = n => {
             val mod10 = n % 10
@@ -3743,7 +3743,7 @@ object Locales {
     // ================================================================
     // SU — Sundanese
     // ================================================================
-    val SU: AgeLocale = AgeLocale(
+    lazy val SU: AgeLocale = AgeLocale(
         code = "su",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -3783,7 +3783,7 @@ object Locales {
     // ================================================================
     // SV — Swedish
     // ================================================================
-    val SV: AgeLocale = AgeLocale(
+    lazy val SV: AgeLocale = AgeLocale(
         code = "sv",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3822,7 +3822,7 @@ object Locales {
     // ================================================================
     // SW — Swahili
     // ================================================================
-    val SW: AgeLocale = AgeLocale(
+    lazy val SW: AgeLocale = AgeLocale(
         code = "sw",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3862,7 +3862,7 @@ object Locales {
     // ================================================================
     // TA — Tamil
     // ================================================================
-    val TA: AgeLocale = AgeLocale(
+    lazy val TA: AgeLocale = AgeLocale(
         code = "ta",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3901,7 +3901,7 @@ object Locales {
     // ================================================================
     // TE — Telugu
     // ================================================================
-    val TE: AgeLocale = AgeLocale(
+    lazy val TE: AgeLocale = AgeLocale(
         code = "te",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -3941,7 +3941,7 @@ object Locales {
     // ================================================================
     // TG — Tajik
     // ================================================================
-    val TG: AgeLocale = AgeLocale(
+    lazy val TG: AgeLocale = AgeLocale(
         code = "tg",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -3981,7 +3981,7 @@ object Locales {
     // ================================================================
     // TH — Thai
     // ================================================================
-    val TH: AgeLocale = AgeLocale(
+    lazy val TH: AgeLocale = AgeLocale(
         code = "th",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -4021,7 +4021,7 @@ object Locales {
     // ================================================================
     // TI — Tigrinya
     // ================================================================
-    val TI: AgeLocale = AgeLocale(
+    lazy val TI: AgeLocale = AgeLocale(
         code = "ti",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -4061,7 +4061,7 @@ object Locales {
     // ================================================================
     // TK — Turkmen
     // ================================================================
-    val TK: AgeLocale = AgeLocale(
+    lazy val TK: AgeLocale = AgeLocale(
         code = "tk",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -4101,7 +4101,7 @@ object Locales {
     // ================================================================
     // TR — Turkish
     // ================================================================
-    val TR: AgeLocale = AgeLocale(
+    lazy val TR: AgeLocale = AgeLocale(
         code = "tr",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -4141,7 +4141,7 @@ object Locales {
     // ================================================================
     // TZM — Central Atlas Tamazight
     // ================================================================
-    val TZM: AgeLocale = AgeLocale(
+    lazy val TZM: AgeLocale = AgeLocale(
         code = "tzm",
         plural = n => {
             if (n == 0 || n == 1 || (n >= 11 && n <= 99)) PluralCategory.ONE
@@ -4184,7 +4184,7 @@ object Locales {
     // ================================================================
     // UK — Ukrainian
     // ================================================================
-    val UK: AgeLocale = AgeLocale(
+    lazy val UK: AgeLocale = AgeLocale(
         code = "uk",
         plural = n => {
             val mod10 = n % 10
@@ -4230,7 +4230,7 @@ object Locales {
     // ================================================================
     // UR — Urdu
     // ================================================================
-    val UR: AgeLocale = AgeLocale(
+    lazy val UR: AgeLocale = AgeLocale(
         code = "ur",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -4270,7 +4270,7 @@ object Locales {
     // ================================================================
     // UZ — Uzbek
     // ================================================================
-    val UZ: AgeLocale = AgeLocale(
+    lazy val UZ: AgeLocale = AgeLocale(
         code = "uz",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -4310,7 +4310,7 @@ object Locales {
     // ================================================================
     // VI — Vietnamese
     // ================================================================
-    val VI: AgeLocale = AgeLocale(
+    lazy val VI: AgeLocale = AgeLocale(
         code = "vi",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -4350,7 +4350,7 @@ object Locales {
     // ================================================================
     // XH — Xhosa
     // ================================================================
-    val XH: AgeLocale = AgeLocale(
+    lazy val XH: AgeLocale = AgeLocale(
         code = "xh",
         plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -4390,7 +4390,7 @@ object Locales {
     // ================================================================
     // YO — Yoruba
     // ================================================================
-    val YO: AgeLocale = AgeLocale(
+    lazy val YO: AgeLocale = AgeLocale(
         code = "yo",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -4430,7 +4430,7 @@ object Locales {
     // ================================================================
     // YUE — Cantonese
     // ================================================================
-    val YUE: AgeLocale = AgeLocale(
+    lazy val YUE: AgeLocale = AgeLocale(
         code = "yue",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -4468,7 +4468,7 @@ object Locales {
     // ================================================================
     // ZH — Chinese
     // ================================================================
-    val ZH: AgeLocale = AgeLocale(
+    lazy val ZH: AgeLocale = AgeLocale(
         code = "zh",
         plural = _ => PluralCategory.OTHER,
         units = Units(
@@ -4506,7 +4506,7 @@ object Locales {
     // ================================================================
     // ZU — Zulu
     // ================================================================
-    val ZU: AgeLocale = AgeLocale(
+    lazy val ZU: AgeLocale = AgeLocale(
         code = "zu",
         plural = n => if (n == 0 || n == 1) PluralCategory.ONE else PluralCategory.OTHER,
         units = Units(
@@ -4542,30 +4542,114 @@ object Locales {
         )),
     )
 
-    val ALL: Map[String, AgeLocale] = Map(
-        "af" -> AF, "ak" -> AK, "am" -> AM, "ar" -> AR, "az" -> AZ,
-        "be" -> BE, "bg" -> BG, "bn" -> BN, "br" -> BR, "bs" -> BS,
-        "ca" -> CA, "ceb" -> CEB, "cs" -> CS, "cy" -> CY, "da" -> DA,
-        "de" -> DE, "el" -> EL, "en" -> EN, "es" -> ES, "et" -> ET,
-        "eu" -> EU, "fa" -> FA, "ff" -> FF, "fi" -> FI, "fil" -> FIL,
-        "fr" -> FR, "ga" -> GA, "gd" -> GD, "gl" -> GL, "gn" -> GN,
-        "gu" -> GU, "gv" -> GV, "ha" -> HA, "he" -> HE, "hi" -> HI,
-        "hr" -> HR, "ht" -> HT, "hu" -> HU, "hy" -> HY, "id" -> ID,
-        "ig" -> IG, "is" -> IS, "it" -> IT, "ja" -> JA, "jv" -> JV,
-        "ka" -> KA, "kk" -> KK, "km" -> KM, "kn" -> KN, "ko" -> KO,
-        "ku" -> KU, "kw" -> KW, "ky" -> KY, "lg" -> LG, "ln" -> LN,
-        "lo" -> LO, "lt" -> LT, "lv" -> LV, "mg" -> MG, "mi" -> MI,
-        "mk" -> MK, "ml" -> ML, "mn" -> MN, "mr" -> MR, "ms" -> MS,
-        "mt" -> MT, "my" -> MY, "nb" -> NB, "ne" -> NE, "nl" -> NL,
-        "ny" -> NY, "om" -> OM, "or" -> OR, "pa" -> PA, "pl" -> PL,
-        "ps" -> PS, "pt" -> PT, "qu" -> QU, "ro" -> RO, "ru" -> RU,
-        "rw" -> RW, "sd" -> SD, "shi" -> SHI, "si" -> SI, "sk" -> SK,
-        "sl" -> SL, "sn" -> SN, "so" -> SO, "sq" -> SQ, "sr" -> SR,
-        "su" -> SU, "sv" -> SV, "sw" -> SW, "ta" -> TA, "te" -> TE,
-        "tg" -> TG, "th" -> TH, "ti" -> TI, "tk" -> TK, "tr" -> TR,
-        "tzm" -> TZM, "uk" -> UK, "ur" -> UR, "uz" -> UZ, "vi" -> VI,
-        "xh" -> XH, "yo" -> YO, "yue" -> YUE, "zh" -> ZH, "zu" -> ZU
+    private def localesA: Map[String, AgeLocale] = Map(
+        "af" -> AF, "ak" -> AK, "am" -> AM, "ar" -> AR, "az" -> AZ
     )
+
+    private def localesB: Map[String, AgeLocale] = Map(
+        "be" -> BE, "bg" -> BG, "bn" -> BN, "br" -> BR, "bs" -> BS
+    )
+
+    private def localesC: Map[String, AgeLocale] = Map(
+        "ca" -> CA, "ceb" -> CEB, "cs" -> CS, "cy" -> CY
+    )
+
+    private def localesD: Map[String, AgeLocale] = Map(
+        "da" -> DA, "de" -> DE
+    )
+
+    private def localesE: Map[String, AgeLocale] = Map(
+        "el" -> EL, "en" -> EN, "es" -> ES, "et" -> ET, "eu" -> EU
+    )
+
+    private def localesF: Map[String, AgeLocale] = Map(
+        "fa" -> FA, "ff" -> FF, "fi" -> FI, "fil" -> FIL, "fr" -> FR
+    )
+
+    private def localesG: Map[String, AgeLocale] = Map(
+        "ga" -> GA, "gd" -> GD, "gl" -> GL, "gn" -> GN, "gu" -> GU,
+        "gv" -> GV
+    )
+
+    private def localesH: Map[String, AgeLocale] = Map(
+        "ha" -> HA, "he" -> HE, "hi" -> HI, "hr" -> HR, "ht" -> HT,
+        "hu" -> HU, "hy" -> HY
+    )
+
+    private def localesI: Map[String, AgeLocale] = Map(
+        "id" -> ID, "ig" -> IG, "is" -> IS, "it" -> IT
+    )
+
+    private def localesJ: Map[String, AgeLocale] = Map(
+        "ja" -> JA, "jv" -> JV
+    )
+
+    private def localesK: Map[String, AgeLocale] = Map(
+        "ka" -> KA, "kk" -> KK, "km" -> KM, "kn" -> KN, "ko" -> KO,
+        "ku" -> KU, "kw" -> KW, "ky" -> KY
+    )
+
+    private def localesL: Map[String, AgeLocale] = Map(
+        "lg" -> LG, "ln" -> LN, "lo" -> LO, "lt" -> LT, "lv" -> LV
+    )
+
+    private def localesM: Map[String, AgeLocale] = Map(
+        "mg" -> MG, "mi" -> MI, "mk" -> MK, "ml" -> ML, "mn" -> MN,
+        "mr" -> MR, "ms" -> MS, "mt" -> MT, "my" -> MY
+    )
+
+    private def localesN: Map[String, AgeLocale] = Map(
+        "nb" -> NB, "ne" -> NE, "nl" -> NL, "ny" -> NY
+    )
+
+    private def localesO: Map[String, AgeLocale] = Map(
+        "om" -> OM, "or" -> OR
+    )
+
+    private def localesP: Map[String, AgeLocale] = Map(
+        "pa" -> PA, "pl" -> PL, "ps" -> PS, "pt" -> PT
+    )
+
+    private def localesQ: Map[String, AgeLocale] = Map(
+        "qu" -> QU
+    )
+
+    private def localesR: Map[String, AgeLocale] = Map(
+        "ro" -> RO, "ru" -> RU, "rw" -> RW
+    )
+
+    private def localesS: Map[String, AgeLocale] = Map(
+        "sd" -> SD, "shi" -> SHI, "si" -> SI, "sk" -> SK, "sl" -> SL,
+        "sn" -> SN, "so" -> SO, "sq" -> SQ, "sr" -> SR, "su" -> SU,
+        "sv" -> SV, "sw" -> SW
+    )
+
+    private def localesT: Map[String, AgeLocale] = Map(
+        "ta" -> TA, "te" -> TE, "tg" -> TG, "th" -> TH, "ti" -> TI,
+        "tk" -> TK, "tr" -> TR, "tzm" -> TZM
+    )
+
+    private def localesU: Map[String, AgeLocale] = Map(
+        "uk" -> UK, "ur" -> UR, "uz" -> UZ
+    )
+
+    private def localesV: Map[String, AgeLocale] = Map(
+        "vi" -> VI
+    )
+
+    private def localesX: Map[String, AgeLocale] = Map(
+        "xh" -> XH
+    )
+
+    private def localesY: Map[String, AgeLocale] = Map(
+        "yo" -> YO, "yue" -> YUE
+    )
+
+    private def localesZ: Map[String, AgeLocale] = Map(
+        "zh" -> ZH, "zu" -> ZU
+    )
+
+    lazy val ALL: Map[String, AgeLocale] = localesA ++ localesB ++ localesC ++ localesD ++ localesE ++ localesF ++ localesG ++ localesH ++ localesI ++ localesJ ++ localesK ++ localesL ++ localesM ++ localesN ++ localesO ++ localesP ++ localesQ ++ localesR ++ localesS ++ localesT ++ localesU ++ localesV ++ localesX ++ localesY ++ localesZ
 
     def get(code: String): Option[AgeLocale] = ALL.get(code)
 }

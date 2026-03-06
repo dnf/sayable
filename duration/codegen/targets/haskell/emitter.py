@@ -181,3 +181,42 @@ def output_path(code: str, root: str) -> str:
 def barrel_path(root: str) -> str:
     import os
     return os.path.join(root, "impl", "haskell", "src", "SayableDuration", "Locales.hs")
+
+
+def emit_cabal(all_locales: list[dict]) -> str:
+    """Generate the sayable-duration.cabal file."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    locale_modules = "\n".join(
+        f"    SayableDuration.Locales.{_module_name(loc['code'])}"
+        for loc in sorted_locs
+    )
+    return f"""cabal-version: 2.4
+name:          sayable-duration
+version:       0.5.0.0
+license:       MIT
+build-type:    Simple
+
+library
+  exposed-modules:
+    SayableDuration.Types
+    SayableDuration.Formatter
+    SayableDuration.Locales
+{locale_modules}
+  hs-source-dirs: src
+  build-depends:  base >= 4.16 && < 5
+  default-language: Haskell2010
+  ghc-options: -Wall -Wcompat -Werror
+
+test-suite sayable-duration-test
+  type:           exitcode-stdio-1.0
+  main-is:        Main.hs
+  hs-source-dirs: test
+  build-depends:  base >= 4.16 && < 5, sayable-duration, hspec >= 2.0
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror
+"""
+
+
+def cabal_path(root: str) -> str:
+    import os
+    return os.path.join(root, "impl", "haskell", "sayable-duration.cabal")

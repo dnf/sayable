@@ -40,8 +40,8 @@ var NL = sa.AgeLocale{
 		Adult:    sa.S("Volwassene"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} dag", sa.Other: "{n} dagen"}),
-		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} wk", sa.Other: "{n} wkn"}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} dag", sa.Other: "{n} dagen"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} wk", sa.Other: "{n} wkn"}),
 		Month: &sa.UnitForms{Simple: "{n} mnd"},
 		Year:  &sa.UnitForms{Simple: "{n} jr"},
 	},

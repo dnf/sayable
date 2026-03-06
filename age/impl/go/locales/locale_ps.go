@@ -40,10 +40,10 @@ var PS = sa.AgeLocale{
 		Adult:    sa.S("لوی"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ورځ", sa.Other: "{n} ورځې"}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ورځ", sa.Other: "{n} ورځې"}),
 		Week:  &sa.UnitForms{Simple: "{n} اونۍ"},
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} مياشت", sa.Other: "{n} مياشتې"}),
-		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} کال", sa.Other: "{n} کالونه"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} مياشت", sa.Other: "{n} مياشتې"}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} کال", sa.Other: "{n} کالونه"}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n} و"},

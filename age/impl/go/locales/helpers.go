@@ -10,4 +10,11 @@
 
 package locales
 
+import sa "github.com/dnf/sayable/age/impl/go"
+
 func strPtr(s string) *string { return &s }
+
+func unitFormsPtr(m map[sa.PluralCategory]string) *sa.UnitForms {
+	u := sa.PluralUnit(m)
+	return &u
+}

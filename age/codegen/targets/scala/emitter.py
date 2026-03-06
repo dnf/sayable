@@ -57,7 +57,7 @@ def emit_all(all_locales: list[dict]) -> str:
         lines.append(f"    // {uc} — {name}")
         lines.append("    // ================================================================")
 
-        lines.append(f"    val {uc}: AgeLocale = AgeLocale(")
+        lines.append(f"    lazy val {uc}: AgeLocale = AgeLocale(")
         lines.append(f"        code = {_quote(code)},")
 
         # Plural
@@ -109,16 +109,28 @@ def emit_all(all_locales: list[dict]) -> str:
         if i < len(sorted_locs) - 1:
             lines.append("")
 
-    # ALL map
+    # Group locales by first letter for separate methods to avoid
+    # JVM "Method too large" error (64KB limit on static initializers).
+    from collections import OrderedDict
+    groups: OrderedDict[str, list[dict]] = OrderedDict()
+    for loc in sorted_locs:
+        letter = loc["code"][0].upper()
+        groups.setdefault(letter, []).append(loc)
+
+    for letter, locs in groups.items():
+        lines.append("")
+        lines.append(f"    private def locales{letter}: Map[String, AgeLocale] = Map(")
+        entries = [f'"{loc["code"]}" -> {loc["code"].upper()}' for loc in locs]
+        for i in range(0, len(entries), 5):
+            chunk = ", ".join(entries[i : i + 5])
+            comma = "," if i + 5 < len(entries) else ""
+            lines.append(f"        {chunk}{comma}")
+        lines.append("    )")
+
+    # ALL map — combine all groups
     lines.append("")
-    lines.append("    val ALL: Map[String, AgeLocale] = Map(")
-    # Format in rows of 5
-    entries = [f'"{loc["code"]}" -> {loc["code"].upper()}' for loc in sorted_locs]
-    for i in range(0, len(entries), 5):
-        chunk = ", ".join(entries[i : i + 5])
-        comma = "," if i + 5 < len(entries) else ""
-        lines.append(f"        {chunk}{comma}")
-    lines.append("    )")
+    group_refs = [f"locales{letter}" for letter in groups]
+    lines.append(f"    lazy val ALL: Map[String, AgeLocale] = {' ++ '.join(group_refs)}")
 
     # get() method
     lines.append("")

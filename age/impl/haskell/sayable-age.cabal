@@ -10,14 +10,18 @@ library
     SayableAge.Types
     SayableAge.Formatter
     SayableAge.Locales
+    SayableAge.Locales.Af
+    SayableAge.Locales.Ak
     SayableAge.Locales.Am
     SayableAge.Locales.Ar
     SayableAge.Locales.Az
+    SayableAge.Locales.Be
     SayableAge.Locales.Bg
     SayableAge.Locales.Bn
     SayableAge.Locales.Br
     SayableAge.Locales.Bs
     SayableAge.Locales.Ca
+    SayableAge.Locales.Ceb
     SayableAge.Locales.Cs
     SayableAge.Locales.Cy
     SayableAge.Locales.Da
@@ -28,29 +32,47 @@ library
     SayableAge.Locales.Et
     SayableAge.Locales.Eu
     SayableAge.Locales.Fa
+    SayableAge.Locales.Ff
     SayableAge.Locales.Fi
     SayableAge.Locales.Fil
     SayableAge.Locales.Fr
     SayableAge.Locales.Ga
     SayableAge.Locales.Gd
+    SayableAge.Locales.Gl
+    SayableAge.Locales.Gn
     SayableAge.Locales.Gu
     SayableAge.Locales.Gv
+    SayableAge.Locales.Ha
     SayableAge.Locales.He
     SayableAge.Locales.Hi
     SayableAge.Locales.Hr
+    SayableAge.Locales.Ht
     SayableAge.Locales.Hu
+    SayableAge.Locales.Hy
     SayableAge.Locales.Id
+    SayableAge.Locales.Ig
+    SayableAge.Locales.Is
     SayableAge.Locales.It
     SayableAge.Locales.Ja
     SayableAge.Locales.Jv
     SayableAge.Locales.Ka
     SayableAge.Locales.Kk
     SayableAge.Locales.Km
+    SayableAge.Locales.Kn
     SayableAge.Locales.Ko
+    SayableAge.Locales.Ku
     SayableAge.Locales.Kw
+    SayableAge.Locales.Ky
+    SayableAge.Locales.Lg
+    SayableAge.Locales.Ln
+    SayableAge.Locales.Lo
     SayableAge.Locales.Lt
     SayableAge.Locales.Lv
+    SayableAge.Locales.Mg
+    SayableAge.Locales.Mi
     SayableAge.Locales.Mk
+    SayableAge.Locales.Ml
+    SayableAge.Locales.Mn
     SayableAge.Locales.Mr
     SayableAge.Locales.Ms
     SayableAge.Locales.Mt
@@ -58,29 +80,46 @@ library
     SayableAge.Locales.Nb
     SayableAge.Locales.Ne
     SayableAge.Locales.Nl
+    SayableAge.Locales.Ny
+    SayableAge.Locales.Om
+    SayableAge.Locales.Or
     SayableAge.Locales.Pa
     SayableAge.Locales.Pl
+    SayableAge.Locales.Ps
     SayableAge.Locales.Pt
+    SayableAge.Locales.Qu
     SayableAge.Locales.Ro
     SayableAge.Locales.Ru
+    SayableAge.Locales.Rw
+    SayableAge.Locales.Sd
     SayableAge.Locales.Shi
     SayableAge.Locales.Si
     SayableAge.Locales.Sk
     SayableAge.Locales.Sl
+    SayableAge.Locales.Sn
+    SayableAge.Locales.So
     SayableAge.Locales.Sq
     SayableAge.Locales.Sr
+    SayableAge.Locales.Su
     SayableAge.Locales.Sv
     SayableAge.Locales.Sw
     SayableAge.Locales.Ta
     SayableAge.Locales.Te
+    SayableAge.Locales.Tg
     SayableAge.Locales.Th
+    SayableAge.Locales.Ti
+    SayableAge.Locales.Tk
     SayableAge.Locales.Tr
     SayableAge.Locales.Tzm
     SayableAge.Locales.Uk
     SayableAge.Locales.Ur
     SayableAge.Locales.Uz
     SayableAge.Locales.Vi
+    SayableAge.Locales.Xh
+    SayableAge.Locales.Yo
+    SayableAge.Locales.Yue
     SayableAge.Locales.Zh
+    SayableAge.Locales.Zu
   other-modules:
     SayableAge.Internal
   hs-source-dirs: src

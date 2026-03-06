@@ -43,10 +43,10 @@ var RO = sa.AgeLocale{
 		Adult:    sa.G("Adult", "Adultă"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} zi", sa.Few: "{n} zile", sa.Other: "{n} zile"}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} zi", sa.Few: "{n} zile", sa.Other: "{n} zile"}),
 		Week:  &sa.UnitForms{Simple: "{n} săpt."},
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} lună", sa.Few: "{n} luni", sa.Other: "{n} luni"}),
-		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} an", sa.Few: "{n} ani", sa.Other: "{n} ani"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} lună", sa.Few: "{n} luni", sa.Other: "{n} luni"}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} an", sa.Few: "{n} ani", sa.Other: "{n} ani"}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n} z"},

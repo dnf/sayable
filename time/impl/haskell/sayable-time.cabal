@@ -9,14 +9,18 @@ library
     SayableTime.Types
     SayableTime.Formatter
     SayableTime.Locales
+    SayableTime.Locales.Af
+    SayableTime.Locales.Ak
     SayableTime.Locales.Am
     SayableTime.Locales.Ar
     SayableTime.Locales.Az
+    SayableTime.Locales.Be
     SayableTime.Locales.Bg
     SayableTime.Locales.Bn
     SayableTime.Locales.Br
     SayableTime.Locales.Bs
     SayableTime.Locales.Ca
+    SayableTime.Locales.Ceb
     SayableTime.Locales.Cs
     SayableTime.Locales.Cy
     SayableTime.Locales.Da
@@ -27,29 +31,47 @@ library
     SayableTime.Locales.Et
     SayableTime.Locales.Eu
     SayableTime.Locales.Fa
+    SayableTime.Locales.Ff
     SayableTime.Locales.Fi
     SayableTime.Locales.Fil
     SayableTime.Locales.Fr
     SayableTime.Locales.Ga
     SayableTime.Locales.Gd
+    SayableTime.Locales.Gl
+    SayableTime.Locales.Gn
     SayableTime.Locales.Gu
     SayableTime.Locales.Gv
+    SayableTime.Locales.Ha
     SayableTime.Locales.He
     SayableTime.Locales.Hi
     SayableTime.Locales.Hr
+    SayableTime.Locales.Ht
     SayableTime.Locales.Hu
+    SayableTime.Locales.Hy
     SayableTime.Locales.Id
+    SayableTime.Locales.Ig
+    SayableTime.Locales.Is
     SayableTime.Locales.It
     SayableTime.Locales.Ja
     SayableTime.Locales.Jv
     SayableTime.Locales.Ka
     SayableTime.Locales.Kk
     SayableTime.Locales.Km
+    SayableTime.Locales.Kn
     SayableTime.Locales.Ko
+    SayableTime.Locales.Ku
     SayableTime.Locales.Kw
+    SayableTime.Locales.Ky
+    SayableTime.Locales.Lg
+    SayableTime.Locales.Ln
+    SayableTime.Locales.Lo
     SayableTime.Locales.Lt
     SayableTime.Locales.Lv
+    SayableTime.Locales.Mg
+    SayableTime.Locales.Mi
     SayableTime.Locales.Mk
+    SayableTime.Locales.Ml
+    SayableTime.Locales.Mn
     SayableTime.Locales.Mr
     SayableTime.Locales.Ms
     SayableTime.Locales.Mt
@@ -57,29 +79,46 @@ library
     SayableTime.Locales.Nb
     SayableTime.Locales.Ne
     SayableTime.Locales.Nl
+    SayableTime.Locales.Ny
+    SayableTime.Locales.Om
+    SayableTime.Locales.Or
     SayableTime.Locales.Pa
     SayableTime.Locales.Pl
+    SayableTime.Locales.Ps
     SayableTime.Locales.Pt
+    SayableTime.Locales.Qu
     SayableTime.Locales.Ro
     SayableTime.Locales.Ru
+    SayableTime.Locales.Rw
+    SayableTime.Locales.Sd
     SayableTime.Locales.Shi
     SayableTime.Locales.Si
     SayableTime.Locales.Sk
     SayableTime.Locales.Sl
+    SayableTime.Locales.Sn
+    SayableTime.Locales.So
     SayableTime.Locales.Sq
     SayableTime.Locales.Sr
+    SayableTime.Locales.Su
     SayableTime.Locales.Sv
     SayableTime.Locales.Sw
     SayableTime.Locales.Ta
     SayableTime.Locales.Te
+    SayableTime.Locales.Tg
     SayableTime.Locales.Th
+    SayableTime.Locales.Ti
+    SayableTime.Locales.Tk
     SayableTime.Locales.Tr
     SayableTime.Locales.Tzm
     SayableTime.Locales.Uk
     SayableTime.Locales.Ur
     SayableTime.Locales.Uz
     SayableTime.Locales.Vi
+    SayableTime.Locales.Xh
+    SayableTime.Locales.Yo
+    SayableTime.Locales.Yue
     SayableTime.Locales.Zh
+    SayableTime.Locales.Zu
   hs-source-dirs: src
   build-depends:  base >= 4.16 && < 5
   default-language: Haskell2010

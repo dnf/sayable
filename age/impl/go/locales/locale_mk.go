@@ -42,7 +42,7 @@ var MK = sa.AgeLocale{
 		Adult:    sa.S("Возрасен"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ден", sa.Other: "{n} дена"}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ден", sa.Other: "{n} дена"}),
 		Week:  &sa.UnitForms{Simple: "{n} сед."},
 		Month: &sa.UnitForms{Simple: "{n} мес."},
 		Year:  &sa.UnitForms{Simple: "{n} год."},

@@ -3,21 +3,36 @@
 #include <string.h>
 #include <time.h>
 #include "sayableage/sayableage.h"
+#include "sayableage/locales.h"
 
-#define VERSION "0.1.0"
+#define VERSION "0.5.0"
 #define BUF_SIZE 256
 
-static const char *LOCALES[] = {
-    "am", "ar", "az", "bg", "bn", "br", "bs", "ca", "cs", "cy",
-    "da", "de", "el", "en", "es", "et", "eu", "fa", "fi", "fil",
-    "fr", "ga", "gd", "gu", "gv", "he", "hi", "hr", "hu", "id",
-    "it", "ja", "jv", "ka", "kk", "km", "ko", "kw", "lt", "lv",
-    "mk", "mr", "ms", "mt", "my", "nb", "ne", "nl", "pa", "pl",
-    "pt", "ro", "ru", "shi", "si", "sk", "sl", "sq", "sr", "sv",
-    "sw", "ta", "te", "th", "tr", "tzm", "uk", "ur", "uz", "vi",
-    "zh",
+static const SaLocale *all_locales[] = {
+    &sa_locale_af, &sa_locale_ak, &sa_locale_am, &sa_locale_ar, &sa_locale_az,
+    &sa_locale_be, &sa_locale_bg, &sa_locale_bn, &sa_locale_br, &sa_locale_bs,
+    &sa_locale_ca, &sa_locale_ceb, &sa_locale_cs, &sa_locale_cy, &sa_locale_da,
+    &sa_locale_de, &sa_locale_el, &sa_locale_en, &sa_locale_es, &sa_locale_et,
+    &sa_locale_eu, &sa_locale_fa, &sa_locale_ff, &sa_locale_fi, &sa_locale_fil,
+    &sa_locale_fr, &sa_locale_ga, &sa_locale_gd, &sa_locale_gl, &sa_locale_gn,
+    &sa_locale_gu, &sa_locale_gv, &sa_locale_ha, &sa_locale_he, &sa_locale_hi,
+    &sa_locale_hr, &sa_locale_ht, &sa_locale_hu, &sa_locale_hy, &sa_locale_id,
+    &sa_locale_ig, &sa_locale_is, &sa_locale_it, &sa_locale_ja, &sa_locale_jv,
+    &sa_locale_ka, &sa_locale_kk, &sa_locale_km, &sa_locale_kn, &sa_locale_ko,
+    &sa_locale_ku, &sa_locale_kw, &sa_locale_ky, &sa_locale_lg, &sa_locale_ln,
+    &sa_locale_lo, &sa_locale_lt, &sa_locale_lv, &sa_locale_mg, &sa_locale_mi,
+    &sa_locale_mk, &sa_locale_ml, &sa_locale_mn, &sa_locale_mr, &sa_locale_ms,
+    &sa_locale_mt, &sa_locale_my, &sa_locale_nb, &sa_locale_ne, &sa_locale_nl,
+    &sa_locale_ny, &sa_locale_om, &sa_locale_or, &sa_locale_pa, &sa_locale_pl,
+    &sa_locale_ps, &sa_locale_pt, &sa_locale_qu, &sa_locale_ro, &sa_locale_ru,
+    &sa_locale_rw, &sa_locale_sd, &sa_locale_shi, &sa_locale_si, &sa_locale_sk,
+    &sa_locale_sl, &sa_locale_sn, &sa_locale_so, &sa_locale_sq, &sa_locale_sr,
+    &sa_locale_su, &sa_locale_sv, &sa_locale_sw, &sa_locale_ta, &sa_locale_te,
+    &sa_locale_tg, &sa_locale_th, &sa_locale_ti, &sa_locale_tk, &sa_locale_tr,
+    &sa_locale_tzm, &sa_locale_uk, &sa_locale_ur, &sa_locale_uz, &sa_locale_vi,
+    &sa_locale_xh, &sa_locale_yo, &sa_locale_yue, &sa_locale_zh, &sa_locale_zu,
 };
-static const int NUM_LOCALES = (int)(sizeof(LOCALES) / sizeof(LOCALES[0]));
+static const int NUM_LOCALES = (int)(sizeof(all_locales) / sizeof(all_locales[0]));
 
 static void today(char *buf, size_t bufsz)
 {
@@ -77,7 +92,7 @@ int main(int argc, char *argv[])
 
     if (streq(cmd, "locales")) {
         for (int i = 0; i < NUM_LOCALES; i++)
-            printf("%s\n", LOCALES[i]);
+            printf("%s\n", all_locales[i]->code);
         return 0;
     }
 
@@ -99,7 +114,7 @@ int main(int argc, char *argv[])
     const char *locale_code = "en";
     const char *as_of = NULL;
     const char *gender = NULL;
-    PtCompactness compactness = PT_NORMAL;
+    SaCompactness compactness = SA_NORMAL;
 
     for (int i = 3; i < argc; i++) {
         if ((streq(argv[i], "-l") || streq(argv[i], "--locale")) && i + 1 < argc) {
@@ -109,9 +124,9 @@ int main(int argc, char *argv[])
         } else if ((streq(argv[i], "-g") || streq(argv[i], "--gender")) && i + 1 < argc) {
             gender = argv[++i];
         } else if (streq(argv[i], "--short")) {
-            compactness = PT_SHORT;
+            compactness = SA_SHORT;
         } else if (streq(argv[i], "--compact")) {
-            compactness = PT_COMPACT;
+            compactness = SA_COMPACT;
         } else {
             fprintf(stderr, "error: unknown option '%s'\n", argv[i]);
             return 1;
@@ -124,7 +139,7 @@ int main(int argc, char *argv[])
         as_of = today_buf;
     }
 
-    const PtLocale *locale = pt_locale_get(locale_code);
+    const SaLocale *locale = sa_locale_get(locale_code);
     if (!locale) {
         fprintf(stderr, "error: unknown locale '%s'\n", locale_code);
         fprintf(stderr, "Run 'sayable-age locales' to see available codes.\n");
@@ -133,14 +148,14 @@ int main(int argc, char *argv[])
 
     if (is_age) {
         char buf[BUF_SIZE];
-        int rc = pt_format_age(buf, sizeof(buf), locale, compactness, dob, as_of);
+        int rc = sa_format_age(buf, sizeof(buf), locale, compactness, dob, as_of);
         if (rc != 0) {
             fprintf(stderr, "error: could not format age (check date format YYYY-MM-DD)\n");
             return 1;
         }
         printf("%s\n", buf);
     } else {
-        const char *stage = pt_stage(locale, dob, as_of, gender);
+        const char *stage = sa_stage(locale, dob, as_of, gender);
         if (!stage) {
             fprintf(stderr, "error: could not determine stage (check date format YYYY-MM-DD)\n");
             return 1;

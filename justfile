@@ -248,7 +248,7 @@ build *target:
             elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
                 cd age/impl/cobol && cmake -B build && cmake --build build
             elif [ "$_target" = "cli" ]; then
-                cd cli && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
+                cd age/cli && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
             elif [ "$_target" = "java" ]; then
                 cd age/impl/java && ./gradlew build
             elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then

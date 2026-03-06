@@ -40,10 +40,10 @@ var TA = sa.AgeLocale{
 		Adult:    sa.S("பெரியவர்"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} நாள்", sa.Other: "{n} நாட்கள்"}),
-		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} வாரம்", sa.Other: "{n} வார."}),
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} மாதம்", sa.Other: "{n} மாத."}),
-		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ஆண்டு", sa.Other: "{n} ஆண்டு."}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} நாள்", sa.Other: "{n} நாட்கள்"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} வாரம்", sa.Other: "{n} வார."}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} மாதம்", sa.Other: "{n} மாத."}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ஆண்டு", sa.Other: "{n} ஆண்டு."}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n} நா"},

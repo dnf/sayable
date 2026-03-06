@@ -43,7 +43,7 @@ var FR = sa.AgeLocale{
 		Day:   &sa.UnitForms{Simple: "{n} j"},
 		Week:  &sa.UnitForms{Simple: "{n} sem."},
 		Month: &sa.UnitForms{Simple: "{n} m."},
-		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} an", sa.Other: "{n} ans"}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} an", sa.Other: "{n} ans"}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n}j"},

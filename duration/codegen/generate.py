@@ -273,7 +273,9 @@ def generate_lua(locales: list[dict], check: bool, diffs: list[str]) -> None:
 
 
 def generate_haskell(locales: list[dict], check: bool, diffs: list[str]) -> None:
-    from codegen.targets.haskell.emitter import barrel_path, emit_barrel, emit_locale, output_path
+    from codegen.targets.haskell.emitter import (
+        barrel_path, cabal_path, emit_barrel, emit_cabal, emit_locale, output_path,
+    )
 
     for loc in locales:
         path = output_path(loc["code"], ROOT)
@@ -282,6 +284,10 @@ def generate_haskell(locales: list[dict], check: bool, diffs: list[str]) -> None
 
     path = barrel_path(ROOT)
     content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+    path = cabal_path(ROOT)
+    content = emit_cabal(locales)
     _write_or_check(path, content, check, diffs)
 
 

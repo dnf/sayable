@@ -21,9 +21,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>C</td>
   <td><a href="age/impl/c/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/c/">✅</a></td>
+  <td><a href="duration/impl/c/">✅</a></td>
+  <td><a href="time/impl/c/">✅</a></td>
 </tr>
 <tr>
   <td>C#</td>
@@ -210,8 +210,8 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Zig</td>
   <td><a href="age/impl/zig/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/zig/">✅</a></td>
+  <td><a href="duration/impl/zig/">✅</a></td>
+  <td><a href="time/impl/zig/">✅</a></td>
 </tr>
 </table>

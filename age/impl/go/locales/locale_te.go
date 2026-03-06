@@ -40,7 +40,7 @@ var TE = sa.AgeLocale{
 		Adult:    sa.S("వయోజనులు"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} రోజు", sa.Other: "{n} రోజులు"}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} రోజు", sa.Other: "{n} రోజులు"}),
 		Week:  &sa.UnitForms{Simple: "{n} వా."},
 		Month: &sa.UnitForms{Simple: "{n} నె."},
 		Year:  &sa.UnitForms{Simple: "{n} సం."},

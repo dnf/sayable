@@ -40,9 +40,9 @@ var DA = sa.AgeLocale{
 		Adult:    sa.S("Voksen"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} dag", sa.Other: "{n} dage"}),
-		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} uge", sa.Other: "{n} uger"}),
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} md.", sa.Other: "{n} mdr."}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} dag", sa.Other: "{n} dage"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} uge", sa.Other: "{n} uger"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} md.", sa.Other: "{n} mdr."}),
 		Year:  &sa.UnitForms{Simple: "{n} år"},
 	},
 	Compact: &sa.CompactnessOverride{

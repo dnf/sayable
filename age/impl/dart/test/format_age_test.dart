@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
-import 'package:sayable_age/impl/types.dart';
-import 'package:sayable_age/impl/format_age.dart';
-import 'package:sayable_age/impl/locales/locales.dart';
+import 'package:sayable_age/src/types.dart';
+import 'package:sayable_age/src/format_age.dart';
+import 'package:sayable_age/src/locales/locales.dart';
 
 // All tests use explicit (dob, asOf) pairs for determinism.
 

@@ -40,10 +40,10 @@ var XH = sa.AgeLocale{
 		Adult:    sa.S("Umntu omdala"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "usuku {n}", sa.Other: "iintsuku {n}"}),
-		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "iveki {n}", sa.Other: "iiveki {n}"}),
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "iny. {n}", sa.Other: "iiny. {n}"}),
-		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "uny. {n}", sa.Other: "imy. {n}"}),
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "usuku {n}", sa.Other: "iintsuku {n}"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "iveki {n}", sa.Other: "iiveki {n}"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "iny. {n}", sa.Other: "iiny. {n}"}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "uny. {n}", sa.Other: "imy. {n}"}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n}d"},

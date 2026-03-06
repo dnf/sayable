@@ -47,9 +47,9 @@ var GD = sa.AgeLocale{
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} là"},
-		Week:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} shn", sa.Two: "{n} shn", sa.Few: "{n} sn", sa.Other: "{n} sn"}),
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mhìos", sa.Two: "{n} mhìos", sa.Few: "{n} mìos", sa.Other: "{n} mìos"}),
-		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} bhlia", sa.Two: "{n} bhlia", sa.Few: "{n} blia", sa.Other: "{n} blia"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} shn", sa.Two: "{n} shn", sa.Few: "{n} sn", sa.Other: "{n} sn"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} mhìos", sa.Two: "{n} mhìos", sa.Few: "{n} mìos", sa.Other: "{n} mìos"}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} bhlia", sa.Two: "{n} bhlia", sa.Few: "{n} blia", sa.Other: "{n} blia"}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n}là"},

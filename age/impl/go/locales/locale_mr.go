@@ -42,8 +42,8 @@ var MR = sa.AgeLocale{
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} दिवस"},
 		Week:  &sa.UnitForms{Simple: "{n} आ"},
-		Month: &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} महिना", sa.Other: "{n} महिने"}),
-		Year:  &sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} वर्ष", sa.Other: "{n} वर्षे"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} महिना", sa.Other: "{n} महिने"}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} वर्ष", sa.Other: "{n} वर्षे"}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n}दि"},

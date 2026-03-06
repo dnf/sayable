@@ -162,3 +162,45 @@ def output_path(code: str, root: str) -> str:
 def barrel_path(root: str) -> str:
     import os
     return os.path.join(root, "impl", "haskell", "src", "SayableAge", "Locales.hs")
+
+
+def emit_cabal(all_locales: list[dict]) -> str:
+    """Generate the sayable-age.cabal file."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    locale_modules = "\n".join(
+        f"    SayableAge.Locales.{_module_name(loc['code'])}"
+        for loc in sorted_locs
+    )
+    return f"""cabal-version: 2.4
+name:          sayable-age
+version:       0.5.0.0
+license:       MIT
+build-type:    Simple
+
+library
+  exposed-modules:
+    SayableAge
+    SayableAge.Types
+    SayableAge.Formatter
+    SayableAge.Locales
+{locale_modules}
+  other-modules:
+    SayableAge.Internal
+  hs-source-dirs: src
+  build-depends:  base >= 4.16 && < 5
+  default-language: Haskell2010
+  ghc-options: -Wall -Wcompat -Werror
+
+test-suite sayable-age-test
+  type:           exitcode-stdio-1.0
+  main-is:        Main.hs
+  hs-source-dirs: test
+  build-depends:  base >= 4.16 && < 5, sayable-age, hspec >= 2.0
+  default-language: Haskell2010
+  ghc-options: -Wall -Werror
+"""
+
+
+def cabal_path(root: str) -> str:
+    import os
+    return os.path.join(root, "impl", "haskell", "sayable-age.cabal")
