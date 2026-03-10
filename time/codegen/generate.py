@@ -102,8 +102,15 @@ def _clean_lua(selected: set[str], all_codes: set[str], check: bool, diffs: list
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_dart(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.dart.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
     "clojure": _clean_clojure,
+    "dart": _clean_dart,
     "go": _clean_go,
     "haskell": _clean_haskell,
     "lua": _clean_lua,
@@ -313,11 +320,26 @@ def generate_c(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(formatter_path(ROOT), emit_formatter(), check, diffs)
 
 
+def generate_dart(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.dart.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+
 _GENERATORS = {
     "c": generate_c,
     "clojure": generate_clojure,
     "cpp": generate_cpp,
     "csharp": generate_csharp,
+    "dart": generate_dart,
     "fsharp": generate_fsharp,
     "go": generate_go,
     "haskell": generate_haskell,
