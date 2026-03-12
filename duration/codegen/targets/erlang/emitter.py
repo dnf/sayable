@@ -1,0 +1,137 @@
+"""Erlang locale emitter for sayable-duration."""
+
+from __future__ import annotations
+
+from codegen.banner import locale_source_comment, make_header
+from codegen.targets.erlang.plural_rules import get_erl_plural
+
+HEADER = make_header("codegen/targets/erlang/emitter.py", line_prefix="%% ")
+
+_CAT_MAP = {
+    "zero": "zero", "one": "one", "two": "two",
+    "few": "few", "many": "many", "other": "other",
+}
+
+_UNIT_NAMES = ("second", "minute", "hour", "day", "week", "month", "year")
+
+
+def _module_name(code: str) -> str:
+    """Convert locale code to Erlang module suffix (lowercase, underscores for hyphens)."""
+    return code.replace("-", "_")
+
+
+def _quote(s: str) -> str:
+    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
+
+
+def _unit_forms(unit: object) -> str:
+    if isinstance(unit, str):
+        return f"{{simple, {_quote(unit)}}}"
+    cats = ["zero", "one", "two", "few", "many", "other"]
+    pairs = []
+    for cat in cats:
+        if cat in unit:
+            pairs.append(f"{{{_CAT_MAP[cat]}, {_quote(unit[cat])}}}")
+    return "{pluralized, [" + ", ".join(pairs) + "]}"
+
+
+def _compactness_override(ovr: dict) -> str:
+    parts = []
+    for unit_name in _UNIT_NAMES:
+        if "units" in ovr and unit_name in ovr["units"]:
+            val = ovr["units"][unit_name]
+            parts.append(f"{unit_name} = {{just, {_unit_forms(val)}}}")
+        else:
+            parts.append(f"{unit_name} = nothing")
+    if "half" in ovr:
+        parts.append(f"half = {{just, {_quote(ovr['half'])}}}")
+    else:
+        parts.append("half = nothing")
+    if "delimiter" in ovr:
+        parts.append(f"delimiter = {{just, {_quote(ovr['delimiter'])}}}")
+    else:
+        parts.append("delimiter = nothing")
+    if "ago" in ovr:
+        parts.append(f"ago = {{just, {_quote(ovr['ago'])}}}")
+    else:
+        parts.append("ago = nothing")
+    if "inFuture" in ovr:
+        parts.append(f"in_future = {{just, {_quote(ovr['inFuture'])}}}")
+    else:
+        parts.append("in_future = nothing")
+    return "#duration_compactness_override{" + ", ".join(parts) + "}"
+
+
+def emit_locale(data: dict) -> str:
+    """Generate an Erlang locale file from canonical JSON."""
+    code = data["code"]
+    rule = data["pluralRule"]
+    mod = _module_name(code)
+
+    lines = [HEADER + locale_source_comment(code, line_prefix="%% ")]
+    lines.append(f"-module(sayableduration_locales_{mod}).")
+    lines.append('-include("sayableduration.hrl").')
+    lines.append("-export([locale/0]).")
+    lines.append("")
+    lines.append("locale() ->")
+    lines.append("    #duration_locale{")
+
+    parts = []
+    parts.append(f"        code = {_quote(code)}")
+
+    plural = get_erl_plural(rule)
+    parts.append(f"        plural = {plural}")
+
+    for unit_name in _UNIT_NAMES:
+        val = _unit_forms(data["units"][unit_name])
+        parts.append(f"        {unit_name} = {val}")
+
+    parts.append(f"        half = {_quote(data['half'])}")
+    parts.append(f"        delimiter = {_quote(data['delimiter'])}")
+    parts.append(f"        just_now = {_quote(data['justNow'])}")
+    parts.append(f"        ago = {_quote(data['ago'])}")
+    parts.append(f"        in_future = {_quote(data['inFuture'])}")
+
+    for mode in ("short", "compact"):
+        if mode in data:
+            parts.append(f"        {mode} = {{just, {_compactness_override(data[mode])}}}")
+        else:
+            parts.append(f"        {mode} = nothing")
+
+    lines.append(",\n".join(parts))
+    lines.append("    }.")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+def emit_barrel(all_locales: list[dict]) -> str:
+    """Generate the sayableduration_locales.erl barrel module."""
+    sorted_locs = sorted(all_locales, key=lambda d: d["code"])
+    lines = [HEADER]
+    lines.append("-module(sayableduration_locales).")
+    lines.append('-include("sayableduration.hrl").')
+    lines.append("-export([get_locale/1]).")
+    lines.append("")
+
+    for loc in sorted_locs:
+        code = loc["code"]
+        mod = _module_name(code)
+        lines.append(f'get_locale({_quote(code)}) -> {{ok, sayableduration_locales_{mod}:locale()}};')
+
+    lines.append("get_locale(_) -> error.")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+def output_path(code: str, root: str) -> str:
+    import os
+    mod = _module_name(code)
+    return os.path.join(root, "impl", "erlang", "src", "locales", f"sayableduration_locales_{mod}.erl")
+
+
+def barrel_path(root: str) -> str:
+    import os
+    return os.path.join(root, "impl", "erlang", "src", "locales", "sayableduration_locales.erl")

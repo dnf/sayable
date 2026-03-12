@@ -1,0 +1,886 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. TEST-SAYABLE-DATE.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+
+*> Command-line argument handling
+ 01 WS-ARG-COUNT            PIC 9(4).
+ 01 WS-RUN-ID               PIC X(20).
+
+*> Test counters
+ 01 WS-TESTS-PASSED         PIC 9(4) VALUE 0.
+ 01 WS-TESTS-FAILED         PIC 9(4) VALUE 0.
+
+*> Test working variables
+ 01 WS-TEST-NAME            PIC X(60).
+ 01 WS-TEST-EXPECTED        PIC X(256).
+ 01 WS-TEST-GOT-LEN         PIC 9(4).
+
+COPY "src/Types.cbl".
+
+PROCEDURE DIVISION.
+MAIN-PROGRAM.
+    ACCEPT WS-ARG-COUNT FROM ARGUMENT-NUMBER
+    IF WS-ARG-COUNT > 0
+        DISPLAY 1 UPON ARGUMENT-NUMBER
+        ACCEPT WS-RUN-ID FROM ARGUMENT-VALUE
+    ELSE
+        MOVE SPACES TO WS-RUN-ID
+    END-IF
+
+    IF WS-RUN-ID = SPACES
+        PERFORM RUN-ALL-TESTS
+    ELSE
+        PERFORM DISPATCH-TEST
+    END-IF
+
+    DISPLAY " "
+    DISPLAY "=== Results ==="
+    DISPLAY "Passed: " FUNCTION TRIM(WS-TESTS-PASSED)
+    DISPLAY "Failed: " FUNCTION TRIM(WS-TESTS-FAILED)
+
+    IF WS-TESTS-FAILED > 0
+        MOVE 1 TO RETURN-CODE
+    END-IF
+    STOP RUN.
+*> ============================================================
+*> Assert helpers
+*> ============================================================
+ASSERT-EQ.
+    IF FUNCTION TRIM(WS-FORMAT-RESULT) =
+       FUNCTION TRIM(WS-TEST-EXPECTED)
+        ADD 1 TO WS-TESTS-PASSED
+    ELSE
+        ADD 1 TO WS-TESTS-FAILED
+        DISPLAY "FAIL [" FUNCTION TRIM(WS-TEST-NAME)
+            "]: got """ FUNCTION TRIM(WS-FORMAT-RESULT)
+            """, expected """ FUNCTION TRIM(WS-TEST-EXPECTED)
+            """"
+    END-IF
+    .
+
+ASSERT-NULL.
+    IF FUNCTION TRIM(WS-FORMAT-RESULT) = SPACES
+        ADD 1 TO WS-TESTS-PASSED
+    ELSE
+        ADD 1 TO WS-TESTS-FAILED
+        DISPLAY "FAIL [" FUNCTION TRIM(WS-TEST-NAME)
+            "]: expected empty, got """
+            FUNCTION TRIM(WS-FORMAT-RESULT) """"
+    END-IF
+    .
+*> ============================================================
+*> Test dispatch — routes a test ID to its paragraph
+*> ============================================================
+DISPATCH-TEST.
+    EVALUATE WS-RUN-ID
+        WHEN "1.1"
+            PERFORM RUN-1-1
+        WHEN "1.2"
+            PERFORM RUN-1-2
+        WHEN "1.3"
+            PERFORM RUN-1-3
+        WHEN "1.4"
+            PERFORM RUN-1-4
+        WHEN "1.5"
+            PERFORM RUN-1-5
+        WHEN "2.1"
+            PERFORM RUN-2-1
+        WHEN "2.2"
+            PERFORM RUN-2-2
+        WHEN "2.3"
+            PERFORM RUN-2-3
+        WHEN "2.4"
+            PERFORM RUN-2-4
+        WHEN "2.5"
+            PERFORM RUN-2-5
+        WHEN "2.6"
+            PERFORM RUN-2-6
+        WHEN "2.7"
+            PERFORM RUN-2-7
+        WHEN "3.1"
+            PERFORM RUN-3-1
+        WHEN "3.2"
+            PERFORM RUN-3-2
+        WHEN "3.3"
+            PERFORM RUN-3-3
+        WHEN "4.1"
+            PERFORM RUN-4-1
+        WHEN "4.2"
+            PERFORM RUN-4-2
+        WHEN "5.1"
+            PERFORM RUN-5-1
+        WHEN "5.2"
+            PERFORM RUN-5-2
+        WHEN "5.3"
+            PERFORM RUN-5-3
+        WHEN "5.4"
+            PERFORM RUN-5-4
+        WHEN "5.5"
+            PERFORM RUN-5-5
+        WHEN "5.6"
+            PERFORM RUN-5-6
+        WHEN "5.7"
+            PERFORM RUN-5-7
+        WHEN "5.8"
+            PERFORM RUN-5-8
+        WHEN "5.9"
+            PERFORM RUN-5-9
+        WHEN "5.10"
+            PERFORM RUN-5-10
+        WHEN "5.11"
+            PERFORM RUN-5-11
+        WHEN "5.12"
+            PERFORM RUN-5-12
+        WHEN "5.13"
+            PERFORM RUN-5-13
+        WHEN "5.14"
+            PERFORM RUN-5-14
+        WHEN "6.1"
+            PERFORM RUN-6-1
+        WHEN "6.2"
+            PERFORM RUN-6-2
+        WHEN "6.3"
+            PERFORM RUN-6-3
+        WHEN "6.4"
+            PERFORM RUN-6-4
+        WHEN "7.1"
+            PERFORM RUN-7-1
+        WHEN "7.2"
+            PERFORM RUN-7-2
+        WHEN "7.3"
+            PERFORM RUN-7-3
+        WHEN "7.4"
+            PERFORM RUN-7-4
+        WHEN "8.1"
+            PERFORM RUN-8-1
+        WHEN "8.2"
+            PERFORM RUN-8-2
+        WHEN "8.3"
+            PERFORM RUN-8-3
+        WHEN "9.1"
+            PERFORM RUN-9-1
+        WHEN "9.2"
+            PERFORM RUN-9-2
+        WHEN "9.3"
+            PERFORM RUN-9-3
+        WHEN "10.1"
+            PERFORM RUN-10-1
+        WHEN "10.2"
+            PERFORM RUN-10-2
+        WHEN "11.1"
+            PERFORM RUN-11-1
+        WHEN "11.2"
+            PERFORM RUN-11-2
+        WHEN "12.1"
+            PERFORM RUN-12-1
+        WHEN "12.2"
+            PERFORM RUN-12-2
+        WHEN OTHER
+            DISPLAY "Unknown test: " FUNCTION TRIM(WS-RUN-ID)
+            MOVE 1 TO WS-TESTS-FAILED
+    END-EVALUATE
+    .
+*> ============================================================
+*> Run all tests (when no argument is given)
+*> ============================================================
+RUN-ALL-TESTS.
+    PERFORM RUN-1-1
+    PERFORM RUN-1-2
+    PERFORM RUN-1-3
+    PERFORM RUN-1-4
+    PERFORM RUN-1-5
+    PERFORM RUN-2-1
+    PERFORM RUN-2-2
+    PERFORM RUN-2-3
+    PERFORM RUN-2-4
+    PERFORM RUN-2-5
+    PERFORM RUN-2-6
+    PERFORM RUN-2-7
+    PERFORM RUN-3-1
+    PERFORM RUN-3-2
+    PERFORM RUN-3-3
+    PERFORM RUN-4-1
+    PERFORM RUN-4-2
+    PERFORM RUN-5-1
+    PERFORM RUN-5-2
+    PERFORM RUN-5-3
+    PERFORM RUN-5-4
+    PERFORM RUN-5-5
+    PERFORM RUN-5-6
+    PERFORM RUN-5-7
+    PERFORM RUN-5-8
+    PERFORM RUN-5-9
+    PERFORM RUN-5-10
+    PERFORM RUN-5-11
+    PERFORM RUN-5-12
+    PERFORM RUN-5-13
+    PERFORM RUN-5-14
+    PERFORM RUN-6-1
+    PERFORM RUN-6-2
+    PERFORM RUN-6-3
+    PERFORM RUN-6-4
+    PERFORM RUN-7-1
+    PERFORM RUN-7-2
+    PERFORM RUN-7-3
+    PERFORM RUN-7-4
+    PERFORM RUN-8-1
+    PERFORM RUN-8-2
+    PERFORM RUN-8-3
+    PERFORM RUN-9-1
+    PERFORM RUN-9-2
+    PERFORM RUN-9-3
+    PERFORM RUN-10-1
+    PERFORM RUN-10-2
+    PERFORM RUN-11-1
+    PERFORM RUN-11-2
+    PERFORM RUN-12-1
+    PERFORM RUN-12-2
+    .
+*> ============================================================
+*> Individual test paragraphs
+*> ============================================================
+
+*> Test 1.1: format_date(null) -> null
+RUN-1-1.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE SPACES TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "1.1" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 1.2: format_date("") -> null
+RUN-1-2.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE SPACES TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "1.2" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 1.3: format_date("invalid") -> null
+RUN-1-3.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "invalid" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "1.3" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 1.4: format_relative(date, null asOf) -> null
+RUN-1-4.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    MOVE SPACES TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "1.4" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 1.5: format_relative(null date, asOf) -> null
+RUN-1-5.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE SPACES TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "1.5" TO WS-TEST-NAME
+    PERFORM ASSERT-NULL
+    .
+
+*> Test 2.1: format_date("2025-03-15", en) -> "March 15th"
+RUN-2-1.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "2.1" TO WS-TEST-NAME
+    MOVE "March 15th" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 2.2: format_date("2025-01-01", en) -> "January 1st"
+RUN-2-2.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-01-01" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "2.2" TO WS-TEST-NAME
+    MOVE "January 1st" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 2.3: format_date("2025-05-22", en) -> "May 22nd"
+RUN-2-3.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-05-22" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "2.3" TO WS-TEST-NAME
+    MOVE "May 22nd" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 2.4: format_date("2025-07-03", en) -> "July 3rd"
+RUN-2-4.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-07-03" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "2.4" TO WS-TEST-NAME
+    MOVE "July 3rd" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 2.5: format_date("2025-12-31", en) -> "December 31st"
+RUN-2-5.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-12-31" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "2.5" TO WS-TEST-NAME
+    MOVE "December 31st" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 2.6: format_date("2025-06-11", en) -> "June 11th"
+RUN-2-6.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-06-11" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "2.6" TO WS-TEST-NAME
+    MOVE "June 11th" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 2.7: format_date("2025-03-15T14:30:00", en) -> "March 15th"
+RUN-2-7.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15T14:30:00" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "2.7" TO WS-TEST-NAME
+    MOVE "March 15th" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 3.1: format_date("2025-03-15", en, short) -> "Mar 15"
+RUN-3-1.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-SHORT TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "3.1" TO WS-TEST-NAME
+    MOVE "Mar 15" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 3.2: format_date("2025-01-01", en, short) -> "Jan 1"
+RUN-3-2.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-SHORT TO WS-FMT-COMPACTNESS
+    MOVE "2025-01-01" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "3.2" TO WS-TEST-NAME
+    MOVE "Jan 1" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 3.3: format_date("2025-12-25", en, short) -> "Dec 25"
+RUN-3-3.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-SHORT TO WS-FMT-COMPACTNESS
+    MOVE "2025-12-25" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "3.3" TO WS-TEST-NAME
+    MOVE "Dec 25" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 4.1: format_date("2025-03-15", en, compact) -> "3/15"
+RUN-4-1.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-COMPACT TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "4.1" TO WS-TEST-NAME
+    MOVE "3/15" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 4.2: format_date("2025-01-01", en, compact) -> "1/1"
+RUN-4-2.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-COMPACT TO WS-FMT-COMPACTNESS
+    MOVE "2025-01-01" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "4.2" TO WS-TEST-NAME
+    MOVE "1/1" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.1: format_relative same day -> "today"
+RUN-5-1.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.1" TO WS-TEST-NAME
+    MOVE "today" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.2: format_relative +1 day -> "tomorrow"
+RUN-5-2.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-16" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.2" TO WS-TEST-NAME
+    MOVE "tomorrow" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.3: format_relative -1 day -> "yesterday"
+RUN-5-3.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-14" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.3" TO WS-TEST-NAME
+    MOVE "yesterday" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.4: format_relative +2 days -> "the day after tomorrow"
+RUN-5-4.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-17" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.4" TO WS-TEST-NAME
+    MOVE "the day after tomorrow" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.5: format_relative -2 days -> "the day before yesterday"
+RUN-5-5.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-13" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.5" TO WS-TEST-NAME
+    MOVE "the day before yesterday" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.6: format_relative +4 days -> "this Wednesday"
+RUN-5-6.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-19" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.6" TO WS-TEST-NAME
+    MOVE "this Wednesday" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.7: format_relative +5 days -> "this Thursday"
+RUN-5-7.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-20" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.7" TO WS-TEST-NAME
+    MOVE "this Thursday" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.8: format_relative -4 days -> "last Tuesday"
+RUN-5-8.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-11" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.8" TO WS-TEST-NAME
+    MOVE "last Tuesday" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.9: format_relative +7 days -> "next Saturday"
+RUN-5-9.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-22" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.9" TO WS-TEST-NAME
+    MOVE "next Saturday" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.10: format_relative +12 days -> "next Thursday"
+RUN-5-10.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-27" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.10" TO WS-TEST-NAME
+    MOVE "next Thursday" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.11: format_relative -14 days -> calendar fallback
+RUN-5-11.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-01" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.11" TO WS-TEST-NAME
+    MOVE "March 1st" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.12: format_relative +26 days -> calendar fallback
+RUN-5-12.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-04-10" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.12" TO WS-TEST-NAME
+    MOVE "April 10th" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.13: format_relative different year future
+RUN-5-13.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2026-01-05" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.13" TO WS-TEST-NAME
+    MOVE "January 5th, 2026" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 5.14: format_relative different year past
+RUN-5-14.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2024-12-25" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "5.14" TO WS-TEST-NAME
+    MOVE "December 25th, 2024" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 6.1: compact relative same day -> "today"
+RUN-6-1.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-COMPACT TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "6.1" TO WS-TEST-NAME
+    MOVE "today" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 6.2: compact relative +1 -> "tomorrow"
+RUN-6-2.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-COMPACT TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-16" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "6.2" TO WS-TEST-NAME
+    MOVE "tomorrow" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 6.3: compact relative +4 -> numeric "3/19"
+RUN-6-3.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-COMPACT TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-19" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "6.3" TO WS-TEST-NAME
+    MOVE "3/19" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 6.4: compact relative different year -> "1/5/26"
+RUN-6-4.
+    MOVE "en" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-COMPACT TO WS-FMT-COMPACTNESS
+    MOVE "2026-01-05" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "6.4" TO WS-TEST-NAME
+    MOVE "1/5/26" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 7.1: German format_date("2025-03-15") -> "15. März"
+RUN-7-1.
+    MOVE "de" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "7.1" TO WS-TEST-NAME
+    MOVE X"31352E204DC3A4727A" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 7.2: German format_relative +1 -> "morgen"
+RUN-7-2.
+    MOVE "de" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-16" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "7.2" TO WS-TEST-NAME
+    MOVE "morgen" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 7.3: German format_relative +2 -> "übermorgen"
+RUN-7-3.
+    MOVE "de" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-17" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "7.3" TO WS-TEST-NAME
+    MOVE X"C3BC6265726D6F7267656E" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 7.4: German format_relative +4 -> "diesen Mittwoch"
+RUN-7-4.
+    MOVE "de" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-19" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "7.4" TO WS-TEST-NAME
+    MOVE "diesen Mittwoch" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 8.1: French format_date("2025-03-01") -> "1er mars"
+RUN-8-1.
+    MOVE "fr" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-01" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "8.1" TO WS-TEST-NAME
+    MOVE "1er mars" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 8.2: French format_date("2025-03-15") -> "15 mars"
+RUN-8-2.
+    MOVE "fr" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "8.2" TO WS-TEST-NAME
+    MOVE "15 mars" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 8.3: French format_relative +1 -> "demain"
+RUN-8-3.
+    MOVE "fr" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-16" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "8.3" TO WS-TEST-NAME
+    MOVE "demain" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 9.1: Japanese format_date("2025-03-15") -> "3月15日"
+RUN-9-1.
+    MOVE "ja" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "9.1" TO WS-TEST-NAME
+    MOVE X"33E69C883135E697A5" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 9.2: Japanese format_relative +1 -> "明日"
+RUN-9-2.
+    MOVE "ja" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-16" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "9.2" TO WS-TEST-NAME
+    MOVE X"E6988EE697A5" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 9.3: Japanese format_relative +4 -> "今度の水曜日"
+RUN-9-3.
+    MOVE "ja" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-19" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "9.3" TO WS-TEST-NAME
+    MOVE X"E4BB8AE5BAA6E381AEE6B0B4E69B9CE697A5"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 10.1: Russian format_date("2025-03-15") -> "15 марта"
+RUN-10-1.
+    MOVE "ru" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "10.1" TO WS-TEST-NAME
+    MOVE X"3135" & X"20" & X"D0BCD0B0D180D182D0B0"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 10.2: Russian format_relative +1 -> "завтра"
+RUN-10-2.
+    MOVE "ru" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-16" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "10.2" TO WS-TEST-NAME
+    MOVE X"D0B7D0B0D0B2D182D180D0B0" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 11.1: Arabic format_date("2025-03-15") -> "15 مارس"
+RUN-11-1.
+    MOVE "ar" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "11.1" TO WS-TEST-NAME
+    MOVE X"3135" & X"20" & X"D985D8A7D8B1D8B3"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 11.2: Arabic format_relative +1 -> "غداً"
+RUN-11-2.
+    MOVE "ar" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-16" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "11.2" TO WS-TEST-NAME
+    MOVE X"D8BAD8AFD8A7D98B" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 12.1: Spanish format_date("2025-03-15") -> "15 de marzo"
+RUN-12-1.
+    MOVE "es" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-15" TO WS-FMT-DATE
+    PERFORM FORMAT-DATE
+    MOVE "12.1" TO WS-TEST-NAME
+    MOVE "15 de marzo" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 12.2: Spanish format_relative +2 -> "pasado mañana"
+RUN-12-2.
+    MOVE "es" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-NORMAL TO WS-FMT-COMPACTNESS
+    MOVE "2025-03-17" TO WS-FMT-DATE
+    MOVE "2025-03-15" TO WS-FMT-AS-OF
+    PERFORM FORMAT-RELATIVE
+    MOVE "12.2" TO WS-TEST-NAME
+    MOVE X"70617361646F206D61C3B1616E61"
+        TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+COPY "src/SayableDate.cbl".
+COPY "src/locales/Locales.cbl".

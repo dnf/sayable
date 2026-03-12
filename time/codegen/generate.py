@@ -108,9 +108,23 @@ def _clean_dart(selected: set[str], all_codes: set[str], check: bool, diffs: lis
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_elixir(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.elixir.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_gleam(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.gleam.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
     "clojure": _clean_clojure,
     "dart": _clean_dart,
+    "elixir": _clean_elixir,
+    "gleam": _clean_gleam,
     "go": _clean_go,
     "haskell": _clean_haskell,
     "lua": _clean_lua,
@@ -333,24 +347,157 @@ def generate_dart(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_groovy(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.groovy.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_elixir(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.elixir.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_erlang(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.erlang.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_elm(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.elm.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_ocaml(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.ocaml.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_swift(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.swift.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+
+def generate_fortran(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.fortran.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_cobol(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.cobol.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+def generate_gleam(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.gleam.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+
+def generate_perl(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.perl.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_ada(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.ada.emitter import body_path, emit_body, emit_spec, spec_path
+
+    path = spec_path(ROOT)
+    content = emit_spec(locales)
+    _write_or_check(path, content, check, diffs)
+
+    path = body_path(ROOT)
+    content = emit_body(locales)
+    _write_or_check(path, content, check, diffs)
+
 
 _GENERATORS = {
+    "ada": generate_ada,
     "c": generate_c,
     "clojure": generate_clojure,
+    "cobol": generate_cobol,
     "cpp": generate_cpp,
     "csharp": generate_csharp,
     "dart": generate_dart,
+    "elixir": generate_elixir,
+    "elm": generate_elm,
+    "erlang": generate_erlang,
+    "fortran": generate_fortran,
     "fsharp": generate_fsharp,
+    "gleam": generate_gleam,
     "go": generate_go,
+    "groovy": generate_groovy,
     "haskell": generate_haskell,
     "java": generate_java,
     "kotlin": generate_kotlin,
     "lua": generate_lua,
+    "ocaml": generate_ocaml,
+    "perl": generate_perl,
     "php": generate_php,
     "python": generate_python,
     "ruby": generate_ruby,
     "rust": generate_rust,
     "scala": generate_scala,
+    "swift": generate_swift,
     "typescript": generate_typescript,
     "zig": generate_zig,
 }

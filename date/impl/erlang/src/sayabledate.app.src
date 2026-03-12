@@ -1,0 +1,9 @@
+{application, sayabledate, [
+    {description, "Human-friendly date formatting"},
+    {vsn, "0.5.0"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []},
+    {modules, []},
+    {licenses, ["MIT"]}
+]}.

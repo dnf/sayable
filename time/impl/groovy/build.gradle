@@ -1,0 +1,74 @@
+plugins {
+    id 'groovy'
+    id 'maven-publish'
+    id 'signing'
+}
+
+group = 'com.github.dnf'
+version = '0.5.0'
+
+repositories {
+    mavenCentral()
+}
+
+description = 'Human-friendly clock time formatting — tells time the way people talk'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    withSourcesJar()
+    withJavadocJar()
+}
+
+dependencies {
+    implementation localGroovy()
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(GroovyCompile).configureEach {
+    groovyOptions.configurationScript = file('compiler-config.groovy')
+    options.compilerArgs << '-Werror'
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+
+            pom {
+                name = 'sayable-time'
+                description = 'Human-friendly clock time formatting — tells time the way people talk'
+                url = 'https://github.com/dnf/sayable'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+
+                developers {
+                    developer {
+                        name = 'Don Neufeld'
+                    }
+                }
+
+                scm {
+                    url = 'https://github.com/dnf/sayable'
+                    connection = 'scm:git:git://github.com/dnf/sayable.git'
+                    developerConnection = 'scm:git:ssh://github.com/dnf/sayable.git'
+                }
+            }
+        }
+    }
+}
+
+signing {
+    required = gradle.taskGraph.hasTask('publishToSonatype')
+    sign publishing.publications.maven
+}

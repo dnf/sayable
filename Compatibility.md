@@ -14,9 +14,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Ada</td>
   <td><a href="age/impl/ada/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/ada/">✅</a></td>
+  <td><a href="duration/impl/ada/">✅</a></td>
+  <td><a href="time/impl/ada/">✅</a></td>
 </tr>
 <tr>
   <td>C</td>
@@ -49,37 +49,37 @@ Which languages are available for each Sayable library.
 <tr>
   <td>COBOL</td>
   <td><a href="age/impl/cobol/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/cobol/">✅</a></td>
+  <td><a href="duration/impl/cobol/">✅</a></td>
+  <td><a href="time/impl/cobol/">✅</a></td>
 </tr>
 <tr>
   <td>Dart</td>
   <td><a href="age/impl/dart/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/dart/">✅</a></td>
+  <td><a href="duration/impl/dart/">✅</a></td>
+  <td><a href="time/impl/dart/">✅</a></td>
 </tr>
 <tr>
   <td>Elixir</td>
   <td><a href="age/impl/elixir/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/elixir/">✅</a></td>
+  <td><a href="duration/impl/elixir/">✅</a></td>
+  <td><a href="time/impl/elixir/">✅</a></td>
 </tr>
 <tr>
   <td>Elm</td>
   <td><a href="age/impl/elm/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/elm/">✅</a></td>
+  <td><a href="duration/impl/elm/">✅</a></td>
+  <td><a href="time/impl/elm/">✅</a></td>
 </tr>
 <tr>
   <td>Erlang</td>
   <td><a href="age/impl/erlang/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/erlang/">✅</a></td>
+  <td><a href="duration/impl/erlang/">✅</a></td>
+  <td><a href="time/impl/erlang/">✅</a></td>
 </tr>
 <tr>
   <td>F#</td>
@@ -91,16 +91,16 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Fortran</td>
   <td><a href="age/impl/fortran/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/fortran/">✅</a></td>
+  <td><a href="duration/impl/fortran/">✅</a></td>
+  <td><a href="time/impl/fortran/">✅</a></td>
 </tr>
 <tr>
   <td>Gleam</td>
   <td><a href="age/impl/gleam/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/gleam/">✅</a></td>
+  <td><a href="duration/impl/gleam/">✅</a></td>
+  <td><a href="time/impl/gleam/">✅</a></td>
 </tr>
 <tr>
   <td>Go</td>
@@ -112,9 +112,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Groovy</td>
   <td><a href="age/impl/groovy/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/groovy/">✅</a></td>
+  <td><a href="duration/impl/groovy/">✅</a></td>
+  <td><a href="time/impl/groovy/">✅</a></td>
 </tr>
 <tr>
   <td>Haskell</td>
@@ -147,16 +147,16 @@ Which languages are available for each Sayable library.
 <tr>
   <td>OCaml</td>
   <td><a href="age/impl/ocaml/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/ocaml/">✅</a></td>
+  <td><a href="duration/impl/ocaml/">✅</a></td>
+  <td><a href="time/impl/ocaml/">✅</a></td>
 </tr>
 <tr>
   <td>Perl</td>
   <td><a href="age/impl/perl/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/perl/">✅</a></td>
+  <td><a href="duration/impl/perl/">✅</a></td>
+  <td><a href="time/impl/perl/">✅</a></td>
 </tr>
 <tr>
   <td>PHP</td>
@@ -196,9 +196,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Swift</td>
   <td><a href="age/impl/swift/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/swift/">✅</a></td>
+  <td><a href="duration/impl/swift/">✅</a></td>
+  <td><a href="time/impl/swift/">✅</a></td>
 </tr>
 <tr>
   <td>TypeScript</td>

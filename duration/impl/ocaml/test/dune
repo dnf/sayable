@@ -1,0 +1,3 @@
+(test
+ (name test_format_duration)
+ (libraries sayable_duration alcotest))

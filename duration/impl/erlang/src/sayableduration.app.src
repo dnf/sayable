@@ -1,0 +1,9 @@
+{application, sayableduration, [
+    {description, "Human-friendly duration and relative time formatting"},
+    {vsn, "0.5.0"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []},
+    {modules, []},
+    {licenses, ["MIT"]}
+]}.
