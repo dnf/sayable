@@ -18,11 +18,13 @@ library
     SayableDuration.Locales.Be
     SayableDuration.Locales.Bem
     SayableDuration.Locales.Bg
+    SayableDuration.Locales.Bi
     SayableDuration.Locales.Bm
     SayableDuration.Locales.Bn
     SayableDuration.Locales.Br
     SayableDuration.Locales.Bs
     SayableDuration.Locales.Ca
+    SayableDuration.Locales.Cak
     SayableDuration.Locales.Ceb
     SayableDuration.Locales.Cs
     SayableDuration.Locales.Cy
@@ -30,7 +32,9 @@ library
     SayableDuration.Locales.De
     SayableDuration.Locales.Din
     SayableDuration.Locales.Dje
+    SayableDuration.Locales.Dv
     SayableDuration.Locales.Dyu
+    SayableDuration.Locales.Dz
     SayableDuration.Locales.Ee
     SayableDuration.Locales.El
     SayableDuration.Locales.En
@@ -42,6 +46,7 @@ library
     SayableDuration.Locales.Ff
     SayableDuration.Locales.Fi
     SayableDuration.Locales.Fil
+    SayableDuration.Locales.Fj
     SayableDuration.Locales.Fon
     SayableDuration.Locales.Fr
     SayableDuration.Locales.Ga
@@ -53,6 +58,7 @@ library
     SayableDuration.Locales.Ha
     SayableDuration.Locales.He
     SayableDuration.Locales.Hi
+    SayableDuration.Locales.Hmn
     SayableDuration.Locales.Hr
     SayableDuration.Locales.Ht
     SayableDuration.Locales.Hu
@@ -65,7 +71,9 @@ library
     SayableDuration.Locales.Jv
     SayableDuration.Locales.Ka
     SayableDuration.Locales.Kbp
+    SayableDuration.Locales.Kek
     SayableDuration.Locales.Kk
+    SayableDuration.Locales.Kl
     SayableDuration.Locales.Km
     SayableDuration.Locales.Kn
     SayableDuration.Locales.Ko
@@ -79,6 +87,7 @@ library
     SayableDuration.Locales.Lo
     SayableDuration.Locales.Lt
     SayableDuration.Locales.Lv
+    SayableDuration.Locales.Mam
     SayableDuration.Locales.Men
     SayableDuration.Locales.Mfe
     SayableDuration.Locales.Mg
@@ -103,11 +112,13 @@ library
     SayableDuration.Locales.Om
     SayableDuration.Locales.Or
     SayableDuration.Locales.Pa
+    SayableDuration.Locales.Pis
     SayableDuration.Locales.Pl
     SayableDuration.Locales.Pov
     SayableDuration.Locales.Ps
     SayableDuration.Locales.Pt
     SayableDuration.Locales.Qu
+    SayableDuration.Locales.Quc
     SayableDuration.Locales.Ro
     SayableDuration.Locales.Ru
     SayableDuration.Locales.Rw
@@ -115,6 +126,7 @@ library
     SayableDuration.Locales.Sd
     SayableDuration.Locales.Sg
     SayableDuration.Locales.Shi
+    SayableDuration.Locales.Shn
     SayableDuration.Locales.Si
     SayableDuration.Locales.Sk
     SayableDuration.Locales.Sl
@@ -132,12 +144,14 @@ library
     SayableDuration.Locales.Ta
     SayableDuration.Locales.Te
     SayableDuration.Locales.Tem
+    SayableDuration.Locales.Tet
     SayableDuration.Locales.Tg
     SayableDuration.Locales.Th
     SayableDuration.Locales.Ti
     SayableDuration.Locales.Tig
     SayableDuration.Locales.Tk
     SayableDuration.Locales.Tn
+    SayableDuration.Locales.Tpi
     SayableDuration.Locales.Tr
     SayableDuration.Locales.Ts
     SayableDuration.Locales.Tzm

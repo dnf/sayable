@@ -10,7 +10,7 @@
 
 // swiftlint:disable file_length
 
-/// All 145 locale definitions for sayable-duration.
+/// All 159 locale definitions for sayable-duration.
 public enum Locales {
 
     private static func pluralAr(_ n: Int) -> PluralCategory {
@@ -487,6 +487,43 @@ public enum Locales {
         )
     )
 
+    // Source: duration/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    public static let BI = DurationLocale(
+        code: "bi",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} sekon"),
+            minute: .simple("{n} minit"),
+            hour: .simple("{n} aoa"),
+            day: .simple("{n} dei"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} manis"),
+            year: .simple("{n} yia")
+        ),
+        half: "{n} mo haf",
+        delimiter: ", ",
+        justNow: "jas nao",
+        ago: "{0} bifo",
+        inFuture: "long {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} sek"), "minute": .simple("{n} min"), "hour": .simple("{n} aoa"), "day": .simple("{n} dei"), "week": .simple("{n} wik"), "month": .simple("{n} man"), "year": .simple("{n} yia")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} bifo",
+            inFuture: "long {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} bifo",
+            inFuture: "long {0}"
+        )
+    )
+
     // Source: duration/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -669,6 +706,43 @@ public enum Locales {
             delimiter: "",
             ago: "fa {0}",
             inFuture: "d'aquí a {0}"
+        )
+    )
+
+    // Source: duration/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    public static let CAK = DurationLocale(
+        code: "cak",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} tz'aqät"),
+            minute: .simple("{n} ch'utik ramaj"),
+            hour: .simple("{n} ramaj"),
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} wuqq'ij"),
+            month: .simple("{n} ik'"),
+            year: .simple("{n} junab'")
+        ),
+        half: "{0} nik'aj",
+        delimiter: ", ",
+        justNow: "wakami",
+        ago: "{0} k'o chi",
+        inFuture: "pa {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} tz'aq."), "minute": .simple("{n} ch'ut."), "hour": .simple("{n} ram."), "day": .simple("{n} q'ij"), "week": .simple("{n} wuqq'ij"), "month": .simple("{n} ik'"), "year": .simple("{n} jun.")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} k'o chi",
+            inFuture: "pa {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} k'o chi",
+            inFuture: "pa {0}"
         )
     )
 
@@ -931,6 +1005,43 @@ public enum Locales {
         )
     )
 
+    // Source: duration/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    public static let DV = DurationLocale(
+        code: "dv",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} ސިކުންތު"),
+            minute: .simple("{n} މިނެޓު"),
+            hour: .simple("{n} ގަޑިއިރު"),
+            day: .simple("{n} ދުވަސް"),
+            week: .simple("{n} ހަފްތާ"),
+            month: .simple("{n} މަސް"),
+            year: .simple("{n} އަހަރު")
+        ),
+        half: "{0} ބައި",
+        delimiter: "، ",
+        justNow: "މިހާރު",
+        ago: "މީގެ {0} ކުރިން",
+        inFuture: "{0} ފަހުން",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} ސިކު"), "minute": .simple("{n} މިނެ"), "hour": .simple("{n} ގަޑި"), "day": .simple("{n} ދުވަ"), "week": .simple("{n} ހަފް"), "month": .simple("{n} މަސް"), "year": .simple("{n} އަހަ")],
+            half: nil,
+            delimiter: nil,
+            ago: "މީގެ {0} ކުރިން",
+            inFuture: "{0} ފަހުން"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "މީގެ {0} ކުރިން",
+            inFuture: "{0} ފަހުން"
+        )
+    )
+
     // Source: duration/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -965,6 +1076,43 @@ public enum Locales {
             delimiter: "",
             ago: "{0} tɛmɛnen",
             inFuture: "ka {0}"
+        )
+    )
+
+    // Source: duration/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    public static let DZ = DurationLocale(
+        code: "dz",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("སྐར་ཆ་ {n}"),
+            minute: .simple("སྐར་མ་ {n}"),
+            hour: .simple("ཆུ་ཚོད་ {n}"),
+            day: .simple("ཉིན་ {n}"),
+            week: .simple("བདུན་ཕྲག་ {n}"),
+            month: .simple("ཟླ་ {n}"),
+            year: .simple("ལོ་ {n}")
+        ),
+        half: "{0} ཕྱེད",
+        delimiter: " ",
+        justNow: "ད་ལྟ",
+        ago: "{0} ཧེ་མ",
+        inFuture: "{0} ཤུལ་ལས",
+        short: CompactnessOverride(
+            units: ["second": .simple("སྐར་ཆ་ {n}"), "minute": .simple("སྐར་མ་ {n}"), "hour": .simple("ཆུ་ཚོད་ {n}"), "day": .simple("ཉིན་ {n}"), "week": .simple("བདུན་ཕྲག་ {n}"), "month": .simple("ཟླ་ {n}"), "year": .simple("ལོ་ {n}")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} ཧེ་མ",
+            inFuture: "{0} ཤུལ་ལས"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} ཧེ་མ",
+            inFuture: "{0} ཤུལ་ལས"
         )
     )
 
@@ -1375,6 +1523,43 @@ public enum Locales {
         )
     )
 
+    // Source: duration/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    public static let FJ = DurationLocale(
+        code: "fj",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} na sekodi"),
+            minute: .simple("{n} na miniti"),
+            hour: .simple("{n} na aua"),
+            day: .simple("{n} na siga"),
+            week: .simple("{n} na macawa"),
+            month: .simple("{n} na vula"),
+            year: .simple("{n} na yabaki")
+        ),
+        half: "{n} kei na levu ni wasei",
+        delimiter: ", ",
+        justNow: "edaidai ga",
+        ago: "{0} sa oti",
+        inFuture: "ena {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} sek"), "minute": .simple("{n} min"), "hour": .simple("{n} aua"), "day": .simple("{n} siga"), "week": .simple("{n} mac"), "month": .simple("{n} vul"), "year": .simple("{n} yab")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} sa oti",
+            inFuture: "ena {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} sa oti",
+            inFuture: "ena {0}"
+        )
+    )
+
     // Source: duration/locales/src/fon.json
     // ================================================================
     // FON — Fon
@@ -1779,6 +1964,43 @@ public enum Locales {
             delimiter: "",
             ago: "{0} पहले",
             inFuture: "{0} में"
+        )
+    )
+
+    // Source: duration/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    public static let HMN = DurationLocale(
+        code: "hmn",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} chib"),
+            minute: .simple("{n} feeb"),
+            hour: .simple("{n} teev"),
+            day: .simple("{n} hnub"),
+            week: .simple("{n} lub lim tiam"),
+            month: .simple("{n} lub hlis"),
+            year: .simple("{n} xyoo")
+        ),
+        half: "{0} thiab ib nrab",
+        delimiter: ", ",
+        justNow: "tam sim no",
+        ago: "{0} dhau los",
+        inFuture: "hauv {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} chib"), "minute": .simple("{n} feeb"), "hour": .simple("{n} teev"), "day": .simple("{n} hnub"), "week": .simple("{n} lim tiam"), "month": .simple("{n} hlis"), "year": .simple("{n} xyoo")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} dhau los",
+            inFuture: "hauv {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} dhau los",
+            inFuture: "hauv {0}"
         )
     )
 
@@ -2226,6 +2448,43 @@ public enum Locales {
         )
     )
 
+    // Source: duration/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    public static let KEK = DurationLocale(
+        code: "kek",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} segundo"),
+            minute: .simple("{n} minuto"),
+            hour: .simple("{n} hora"),
+            day: .simple("{n} q'e"),
+            week: .simple("{n} seman"),
+            month: .simple("{n} po"),
+            year: .simple("{n} chihab'")
+        ),
+        half: "{0} ro'",
+        delimiter: ", ",
+        justNow: "anaqwan",
+        ago: "{0} qakab'",
+        inFuture: "chi {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} seg."), "minute": .simple("{n} min."), "hour": .simple("{n} hora"), "day": .simple("{n} q'e"), "week": .simple("{n} sem."), "month": .simple("{n} po"), "year": .simple("{n} chih.")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} qakab'",
+            inFuture: "chi {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} qakab'",
+            inFuture: "chi {0}"
+        )
+    )
+
     // Source: duration/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -2260,6 +2519,43 @@ public enum Locales {
             delimiter: "",
             ago: "{0} бұрын",
             inFuture: "{0} кейін"
+        )
+    )
+
+    // Source: duration/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    public static let KL = DurationLocale(
+        code: "kl",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("sekundit {n}"),
+            minute: .simple("minutsit {n}"),
+            hour: .simple("nalunaaqutap akunnera {n}"),
+            day: .simple("ullut {n}"),
+            week: .simple("sapaatit {n}"),
+            month: .simple("qaammatit {n}"),
+            year: .simple("ukiut {n}")
+        ),
+        half: "{0} affaa",
+        delimiter: ", ",
+        justNow: "maanna",
+        ago: "{0} matuma siorna",
+        inFuture: "{0} siunissami",
+        short: CompactnessOverride(
+            units: ["second": .simple("sek. {n}"), "minute": .simple("min. {n}"), "hour": .simple("nal. {n}"), "day": .simple("ull. {n}"), "week": .simple("sap. {n}"), "month": .simple("qaam. {n}"), "year": .simple("uk. {n}")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} matuma siorna",
+            inFuture: "{0} siunissami"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} matuma siorna",
+            inFuture: "{0} siunissami"
         )
     )
 
@@ -2741,6 +3037,43 @@ public enum Locales {
             delimiter: "",
             ago: "pirms {0}",
             inFuture: "pēc {0}"
+        )
+    )
+
+    // Source: duration/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    public static let MAM = DurationLocale(
+        code: "mam",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} segundo"),
+            minute: .simple("{n} minuto"),
+            hour: .simple("{n} hora"),
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} xjaw"),
+            month: .simple("{n} xjaw"),
+            year: .simple("{n} ab'q'ii")
+        ),
+        half: "{0} nik'",
+        delimiter: ", ",
+        justNow: "iky'x",
+        ago: "{0} chi'j",
+        inFuture: "tu'n {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} seg."), "minute": .simple("{n} min."), "hour": .simple("{n} hora"), "day": .simple("{n} q'ij"), "week": .simple("{n} xjaw"), "month": .simple("{n} xjaw"), "year": .simple("{n} ab'.")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} chi'j",
+            inFuture: "tu'n {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} chi'j",
+            inFuture: "tu'n {0}"
         )
     )
 
@@ -3632,6 +3965,43 @@ public enum Locales {
         )
     )
 
+    // Source: duration/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    public static let PIS = DurationLocale(
+        code: "pis",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} sekon"),
+            minute: .simple("{n} minit"),
+            hour: .simple("{n} aoa"),
+            day: .simple("{n} dei"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} manis"),
+            year: .simple("{n} yia")
+        ),
+        half: "{n} en haf",
+        delimiter: ", ",
+        justNow: "nomoa nao",
+        ago: "{0} bifoa",
+        inFuture: "long {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} sek"), "minute": .simple("{n} min"), "hour": .simple("{n} aoa"), "day": .simple("{n} dei"), "week": .simple("{n} wik"), "month": .simple("{n} man"), "year": .simple("{n} yia")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} bifoa",
+            inFuture: "long {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} bifoa",
+            inFuture: "long {0}"
+        )
+    )
+
     // Source: duration/locales/src/pl.json
     // ================================================================
     // PL — Polish
@@ -3814,6 +4184,43 @@ public enum Locales {
             delimiter: "",
             ago: "{0} ñawpaqta",
             inFuture: "{0} qhipata"
+        )
+    )
+
+    // Source: duration/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    public static let QUC = DurationLocale(
+        code: "quc",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} tz'aqat"),
+            minute: .simple("{n} ch'utaq ramaj"),
+            hour: .simple("{n} ramaj"),
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} wuqq'ij"),
+            month: .simple("{n} ik'"),
+            year: .simple("{n} junab'")
+        ),
+        half: "{0} nik'aj",
+        delimiter: ", ",
+        justNow: "kamik",
+        ago: "{0} k'o chi",
+        inFuture: "pa {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} tz'aq."), "minute": .simple("{n} ch'ut."), "hour": .simple("{n} ram."), "day": .simple("{n} q'ij"), "week": .simple("{n} wuqq'ij"), "month": .simple("{n} ik'"), "year": .simple("{n} jun.")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} k'o chi",
+            inFuture: "pa {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} k'o chi",
+            inFuture: "pa {0}"
         )
     )
 
@@ -4073,6 +4480,43 @@ public enum Locales {
             delimiter: "",
             ago: "ɣ {0} zzrin",
             inFuture: "ɣ {0}"
+        )
+    )
+
+    // Source: duration/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    public static let SHN = DurationLocale(
+        code: "shn",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} ဝိၼႃးတီႇ"),
+            minute: .simple("{n} မိၼိတ်ႉ"),
+            hour: .simple("{n} ၸူဝ်ႈမူင်း"),
+            day: .simple("{n} ဝၼ်း"),
+            week: .simple("{n} ဝူင်ႈ"),
+            month: .simple("{n} လိူၼ်"),
+            year: .simple("{n} ပီ")
+        ),
+        half: "{0}ၶိုင်ႈ",
+        delimiter: " ",
+        justNow: "ယၢမ်းလဵဝ်",
+        ago: "{0} ပူၼ်ႉမႃး",
+        inFuture: "ထႅင်ႈ {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} ဝိၼႃး"), "minute": .simple("{n} မိၼိတ်ႉ"), "hour": .simple("{n} ၸူဝ်ႈ"), "day": .simple("{n} ဝၼ်း"), "week": .simple("{n} ဝူင်ႈ"), "month": .simple("{n} လိူၼ်"), "year": .simple("{n} ပီ")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} ပူၼ်ႉမႃး",
+            inFuture: "ထႅင်ႈ {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} ပူၼ်ႉမႃး",
+            inFuture: "ထႅင်ႈ {0}"
         )
     )
 
@@ -4705,6 +5149,43 @@ public enum Locales {
         )
     )
 
+    // Source: duration/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    public static let TET = DurationLocale(
+        code: "tet",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("segundu {n}"),
+            minute: .simple("minutu {n}"),
+            hour: .simple("oras {n}"),
+            day: .simple("loron {n}"),
+            week: .simple("semana {n}"),
+            month: .simple("fulan {n}"),
+            year: .simple("tinan {n}")
+        ),
+        half: "{0} ho balun",
+        delimiter: ", ",
+        justNow: "agora deit",
+        ago: "{0} liu ba",
+        inFuture: "iha {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("seg. {n}"), "minute": .simple("min. {n}"), "hour": .simple("oras {n}"), "day": .simple("loron {n}"), "week": .simple("sem. {n}"), "month": .simple("fulan {n}"), "year": .simple("tinan {n}")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} liu ba",
+            inFuture: "iha {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} liu ba",
+            inFuture: "iha {0}"
+        )
+    )
+
     // Source: duration/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -4924,6 +5405,43 @@ public enum Locales {
             delimiter: "",
             ago: "{0} e e fetileng",
             inFuture: "ka {0}"
+        )
+    )
+
+    // Source: duration/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    public static let TPI = DurationLocale(
+        code: "tpi",
+        plural: { _ in .other },
+        units: Units(
+            second: .simple("{n} sekon"),
+            minute: .simple("{n} minit"),
+            hour: .simple("{n} aua"),
+            day: .simple("{n} de"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} mun"),
+            year: .simple("{n} yia")
+        ),
+        half: "{n} na hap",
+        delimiter: ", ",
+        justNow: "nau tasol",
+        ago: "{0} i go pinis",
+        inFuture: "long {0}",
+        short: CompactnessOverride(
+            units: ["second": .simple("{n} sek"), "minute": .simple("{n} min"), "hour": .simple("{n} aua"), "day": .simple("{n} de"), "week": .simple("{n} wik"), "month": .simple("{n} mun"), "year": .simple("{n} yia")],
+            half: nil,
+            delimiter: nil,
+            ago: "{0} i go pinis",
+            inFuture: "long {0}"
+        ),
+        compact: CompactnessOverride(
+            units: ["second": .simple("{n}s"), "minute": .simple("{n}m"), "hour": .simple("{n}h"), "day": .simple("{n}d"), "week": .simple("{n}w"), "month": .simple("{n}mo"), "year": .simple("{n}y")],
+            half: nil,
+            delimiter: "",
+            ago: "{0} i go pinis",
+            inFuture: "long {0}"
         )
     )
 
@@ -5529,11 +6047,13 @@ public enum Locales {
         "be": BE,
         "bem": BEM,
         "bg": BG,
+        "bi": BI,
         "bm": BM,
         "bn": BN,
         "br": BR,
         "bs": BS,
         "ca": CA,
+        "cak": CAK,
         "ceb": CEB,
         "cs": CS,
         "cy": CY,
@@ -5541,7 +6061,9 @@ public enum Locales {
         "de": DE,
         "din": DIN,
         "dje": DJE,
+        "dv": DV,
         "dyu": DYU,
+        "dz": DZ,
         "ee": EE,
         "el": EL,
         "en": EN,
@@ -5553,6 +6075,7 @@ public enum Locales {
         "ff": FF,
         "fi": FI,
         "fil": FIL,
+        "fj": FJ,
         "fon": FON,
         "fr": FR,
         "ga": GA,
@@ -5564,6 +6087,7 @@ public enum Locales {
         "ha": HA,
         "he": HE,
         "hi": HI,
+        "hmn": HMN,
         "hr": HR,
         "ht": HT,
         "hu": HU,
@@ -5576,7 +6100,9 @@ public enum Locales {
         "jv": JV,
         "ka": KA,
         "kbp": KBP,
+        "kek": KEK,
         "kk": KK,
+        "kl": KL,
         "km": KM,
         "kn": KN,
         "ko": KO,
@@ -5590,6 +6116,7 @@ public enum Locales {
         "lo": LO,
         "lt": LT,
         "lv": LV,
+        "mam": MAM,
         "men": MEN,
         "mfe": MFE,
         "mg": MG,
@@ -5614,11 +6141,13 @@ public enum Locales {
         "om": OM,
         "or": OR,
         "pa": PA,
+        "pis": PIS,
         "pl": PL,
         "pov": POV,
         "ps": PS,
         "pt": PT,
         "qu": QU,
+        "quc": QUC,
         "ro": RO,
         "ru": RU,
         "rw": RW,
@@ -5626,6 +6155,7 @@ public enum Locales {
         "sd": SD,
         "sg": SG,
         "shi": SHI,
+        "shn": SHN,
         "si": SI,
         "sk": SK,
         "sl": SL,
@@ -5643,12 +6173,14 @@ public enum Locales {
         "ta": TA,
         "te": TE,
         "tem": TEM,
+        "tet": TET,
         "tg": TG,
         "th": TH,
         "ti": TI,
         "tig": TIG,
         "tk": TK,
         "tn": TN,
+        "tpi": TPI,
         "tr": TR,
         "ts": TS,
         "tzm": TZM,

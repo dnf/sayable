@@ -284,6 +284,57 @@ class LocalesLP {
         null
     )
 
+    // Source: duration/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    static final DurationLocale MAM = new DurationLocale(
+        'mam',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} segundo'),
+            UnitForms.simpleUnit('{n} minuto'),
+            UnitForms.simpleUnit('{n} hora'),
+            UnitForms.simpleUnit('{n} q\'ij'),
+            UnitForms.simpleUnit('{n} xjaw'),
+            UnitForms.simpleUnit('{n} xjaw'),
+            UnitForms.simpleUnit('{n} ab\'q\'ii')
+        ),
+        '{0} nik\'',
+        ', ',
+        'iky\'x',
+        '{0} chi\'j',
+        'tu\'n {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} seg.'),
+            UnitForms.simpleUnit('{n} min.'),
+            UnitForms.simpleUnit('{n} hora'),
+            UnitForms.simpleUnit('{n} q\'ij'),
+            UnitForms.simpleUnit('{n} xjaw'),
+            UnitForms.simpleUnit('{n} xjaw'),
+            UnitForms.simpleUnit('{n} ab\'.'),
+            null,
+            null,
+            '{0} chi\'j',
+            'tu\'n {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} chi\'j',
+            'tu\'n {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/men.json
     // ================================================================
     // MEN — Mende
@@ -1509,6 +1560,57 @@ class LocalesLP {
             '',
             '{0} ਪਹਿਲਾਂ',
             '{0} ਵਿੱਚ'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    static final DurationLocale PIS = new DurationLocale(
+        'pis',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} sekon'),
+            UnitForms.simpleUnit('{n} minit'),
+            UnitForms.simpleUnit('{n} aoa'),
+            UnitForms.simpleUnit('{n} dei'),
+            UnitForms.simpleUnit('{n} wik'),
+            UnitForms.simpleUnit('{n} manis'),
+            UnitForms.simpleUnit('{n} yia')
+        ),
+        '{n} en haf',
+        ', ',
+        'nomoa nao',
+        '{0} bifoa',
+        'long {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} sek'),
+            UnitForms.simpleUnit('{n} min'),
+            UnitForms.simpleUnit('{n} aoa'),
+            UnitForms.simpleUnit('{n} dei'),
+            UnitForms.simpleUnit('{n} wik'),
+            UnitForms.simpleUnit('{n} man'),
+            UnitForms.simpleUnit('{n} yia'),
+            null,
+            null,
+            '{0} bifoa',
+            'long {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} bifoa',
+            'long {0}'
         ),
         null,
         null

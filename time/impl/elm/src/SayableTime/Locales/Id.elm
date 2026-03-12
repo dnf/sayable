@@ -39,7 +39,7 @@ locale =
         , noon = "tengah hari"
         , patterns =
             Dict.fromList
-                [ ( 0, "{h} o'clock" )
+                [ ( 0, "pukul {h}" )
                 , ( 5, "lima lewat {h}" )
                 , ( 10, "sepuluh lewat {h}" )
                 , ( 15, "seperempat lewat {h}" )
@@ -58,7 +58,7 @@ locale =
             { clock =
                 Just
                     { use24h = True
-                    , format = "{h}:{mm}"
+                    , format = "{h}.{mm}"
                     , amPm = Nothing
                     }
             }
@@ -67,7 +67,7 @@ locale =
             { clock =
                 Just
                     { use24h = True
-                    , format = "{h}:{mm}"
+                    , format = "{h}.{mm}"
                     , amPm = Nothing
                     }
             }

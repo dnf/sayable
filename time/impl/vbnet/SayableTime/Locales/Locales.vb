@@ -13,7 +13,7 @@ Imports System.Collections.Generic
 Namespace SayableTimeLib
 
 ''' <summary>
-''' All 145 locale definitions for sayable-time.
+''' All 159 locale definitions for sayable-time.
 ''' </summary>
 Public Module Locales
 
@@ -197,6 +197,26 @@ Public Module Locales
         )
     )
 
+    ' Source: time/locales/src/bi.json
+    ' ================================================================
+    ' BI — Bislama
+    ' ================================================================
+    Public ReadOnly BI As New TimeLocale(
+        "bi",
+        New ClockConfig(
+            New String() { "twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven" },
+            "mednaet",
+            "medeldei",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
     ' Source: time/locales/src/bm.json
     ' ================================================================
     ' BM — Bambara
@@ -297,6 +317,26 @@ Public Module Locales
         )
     )
 
+    ' Source: time/locales/src/cak.json
+    ' ================================================================
+    ' CAK — Kaqchikel
+    ' ================================================================
+    Public ReadOnly CAK As New TimeLocale(
+        "cak",
+        New ClockConfig(
+            New String() { "kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj" },
+            "nik'aj aq'a'",
+            "nik'aj q'ij",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
     ' Source: time/locales/src/ceb.json
     ' ================================================================
     ' CEB — Cebuano
@@ -370,10 +410,10 @@ Public Module Locales
             New Dictionary(Of Integer, String) From { { 0, "klokken {h}" }, { 5, "fem over {h}" }, { 10, "ti over {h}" }, { 15, "kvart over {h}" }, { 20, "tyve over {h}" }, { 25, "fem i halv {next_h}" }, { 30, "halv {next_h}" }, { 35, "fem over halv {next_h}" }, { 40, "tyve i {next_h}" }, { 45, "kvart i {next_h}" }, { 50, "ti i {next_h}" }, { 55, "fem i {next_h}" } }
         ),
         New CompactnessOverride(
-            New ShortClockConfig(True, Nothing, "{h}:{mm}")
+            New ShortClockConfig(True, Nothing, "{h}.{mm}")
         ),
         New CompactnessOverride(
-            New ShortClockConfig(True, Nothing, "{h}:{mm}")
+            New ShortClockConfig(True, Nothing, "{h}.{mm}")
         )
     )
 
@@ -437,6 +477,26 @@ Public Module Locales
         )
     )
 
+    ' Source: time/locales/src/dv.json
+    ' ================================================================
+    ' DV — Dhivehi
+    ' ================================================================
+    Public ReadOnly DV As New TimeLocale(
+        "dv",
+        New ClockConfig(
+            New String() { "ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ" },
+            "މެންދަމު",
+            "މެންދުރު",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
     ' Source: time/locales/src/dyu.json
     ' ================================================================
     ' DYU — Dyula
@@ -447,6 +507,26 @@ Public Module Locales
             New String() { "tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen" },
             "dugutilama",
             "tilgari",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
+    ' Source: time/locales/src/dz.json
+    ' ================================================================
+    ' DZ — Dzongkha
+    ' ================================================================
+    Public ReadOnly DZ As New TimeLocale(
+        "dz",
+        New ClockConfig(
+            New String() { "བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག" },
+            "ནམ་ཕྱེད",
+            "ཉིན་གུང",
             New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
         ),
         New CompactnessOverride(
@@ -650,10 +730,10 @@ Public Module Locales
             New Dictionary(Of Integer, String) From { { 0, "{h}" }, { 5, "viisi yli {h}" }, { 10, "kymmenen yli {h}" }, { 15, "vartti yli {h}" }, { 20, "kaksikymmentä yli {h}" }, { 25, "kaksikymmentäviisi yli {h}" }, { 30, "puoli yli {h}" }, { 35, "kaksikymmentäviisi vaille {next_h}" }, { 40, "kaksikymmentä vaille {next_h}" }, { 45, "vartti vaille {next_h}" }, { 50, "kymmenen vaille {next_h}" }, { 55, "viisi vaille {next_h}" } }
         ),
         New CompactnessOverride(
-            New ShortClockConfig(True, Nothing, "{h}:{mm}")
+            New ShortClockConfig(True, Nothing, "{h}.{mm}")
         ),
         New CompactnessOverride(
-            New ShortClockConfig(True, Nothing, "{h}:{mm}")
+            New ShortClockConfig(True, Nothing, "{h}.{mm}")
         )
     )
 
@@ -668,6 +748,26 @@ Public Module Locales
             "hatinggabi",
             "tanghali",
             New Dictionary(Of Integer, String) From { { 0, "{h} o'clock" }, { 5, "lima dan {h}" }, { 10, "sampu dan {h}" }, { 15, "labinlima dan {h}" }, { 20, "dalawampu dan {h}" }, { 25, "dalawampu't lima dan {h}" }, { 30, "tatlumpu dan {h}" }, { 35, "dalawampu't lima bago mag {next_h}" }, { 40, "dalawampu bago mag {next_h}" }, { 45, "labinlima bago mag {next_h}" }, { 50, "sampu bago mag {next_h}" }, { 55, "lima bago mag {next_h}" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
+    ' Source: time/locales/src/fj.json
+    ' ================================================================
+    ' FJ — Fijian
+    ' ================================================================
+    Public ReadOnly FJ As New TimeLocale(
+        "fj",
+        New ClockConfig(
+            New String() { "tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua" },
+            "bogi levu",
+            "sigalevu",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
         ),
         New CompactnessOverride(
             New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
@@ -897,6 +997,26 @@ Public Module Locales
         )
     )
 
+    ' Source: time/locales/src/hmn.json
+    ' ================================================================
+    ' HMN — Hmong
+    ' ================================================================
+    Public ReadOnly HMN As New TimeLocale(
+        "hmn",
+        New ClockConfig(
+            New String() { "kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib" },
+            "ib tag hmo",
+            "tav su",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
     ' Source: time/locales/src/hr.json
     ' ================================================================
     ' HR — Croatian
@@ -987,13 +1107,13 @@ Public Module Locales
             New String() { "dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas" },
             "tengah malam",
             "tengah hari",
-            New Dictionary(Of Integer, String) From { { 0, "{h} o'clock" }, { 5, "lima lewat {h}" }, { 10, "sepuluh lewat {h}" }, { 15, "seperempat lewat {h}" }, { 20, "dua puluh lewat {h}" }, { 25, "dua puluh lima lewat {h}" }, { 30, "setengah lewat {h}" }, { 35, "dua puluh lima menjelang {next_h}" }, { 40, "dua puluh menjelang {next_h}" }, { 45, "seperempat menjelang {next_h}" }, { 50, "sepuluh menjelang {next_h}" }, { 55, "lima menjelang {next_h}" } }
+            New Dictionary(Of Integer, String) From { { 0, "pukul {h}" }, { 5, "lima lewat {h}" }, { 10, "sepuluh lewat {h}" }, { 15, "seperempat lewat {h}" }, { 20, "dua puluh lewat {h}" }, { 25, "dua puluh lima lewat {h}" }, { 30, "setengah lewat {h}" }, { 35, "dua puluh lima menjelang {next_h}" }, { 40, "dua puluh menjelang {next_h}" }, { 45, "seperempat menjelang {next_h}" }, { 50, "sepuluh menjelang {next_h}" }, { 55, "lima menjelang {next_h}" } }
         ),
         New CompactnessOverride(
-            New ShortClockConfig(True, Nothing, "{h}:{mm}")
+            New ShortClockConfig(True, Nothing, "{h}.{mm}")
         ),
         New CompactnessOverride(
-            New ShortClockConfig(True, Nothing, "{h}:{mm}")
+            New ShortClockConfig(True, Nothing, "{h}.{mm}")
         )
     )
 
@@ -1137,6 +1257,26 @@ Public Module Locales
         )
     )
 
+    ' Source: time/locales/src/kek.json
+    ' ================================================================
+    ' KEK — Q'eqchi'
+    ' ================================================================
+    Public ReadOnly KEK As New TimeLocale(
+        "kek",
+        New ClockConfig(
+            New String() { "kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju" },
+            "chaq' xkab'",
+            "chaq' chaab'il",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
     ' Source: time/locales/src/kk.json
     ' ================================================================
     ' KK — Kazakh
@@ -1154,6 +1294,26 @@ Public Module Locales
         ),
         New CompactnessOverride(
             New ShortClockConfig(True, Nothing, "{h}:{mm}")
+        )
+    )
+
+    ' Source: time/locales/src/kl.json
+    ' ================================================================
+    ' KL — Kalaallisut
+    ' ================================================================
+    Public ReadOnly KL As New TimeLocale(
+        "kl",
+        New ClockConfig(
+            New String() { "akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq" },
+            "unnuap qeqqa",
+            "ulloqeqqap qeqqa",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(True, Nothing, "{h}.{mm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(True, Nothing, "{h}.{mm}")
         )
     )
 
@@ -1414,6 +1574,26 @@ Public Module Locales
         ),
         New CompactnessOverride(
             New ShortClockConfig(True, Nothing, "{h}:{mm}")
+        )
+    )
+
+    ' Source: time/locales/src/mam.json
+    ' ================================================================
+    ' MAM — Mam
+    ' ================================================================
+    Public ReadOnly MAM As New TimeLocale(
+        "mam",
+        New ClockConfig(
+            New String() { "kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj" },
+            "nik' aq'b'il",
+            "nik' q'ij",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
         )
     )
 
@@ -1897,6 +2077,26 @@ Public Module Locales
         )
     )
 
+    ' Source: time/locales/src/pis.json
+    ' ================================================================
+    ' PIS — Pijin
+    ' ================================================================
+    Public ReadOnly PIS As New TimeLocale(
+        "pis",
+        New ClockConfig(
+            New String() { "twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven" },
+            "midonaet",
+            "midei",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
     ' Source: time/locales/src/pl.json
     ' ================================================================
     ' PL — Polish
@@ -1988,6 +2188,26 @@ Public Module Locales
             "chawpi tuta",
             "chawpi p'unchaw",
             New Dictionary(Of Integer, String) From { { 0, "{h}" }, { 5, "{h} pichqa" }, { 10, "{h} chunka" }, { 15, "{h} chunka pichqayuq" }, { 20, "{h} iskay chunka" }, { 25, "{h} iskay chunka pichqayuq" }, { 30, "{h} kimsa chunka" }, { 35, "{next_h} mana iskay chunka pichqayuq" }, { 40, "{next_h} mana iskay chunka" }, { 45, "{next_h} mana chunka pichqayuq" }, { 50, "{next_h} mana chunka" }, { 55, "{next_h} mana pichqa" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
+    ' Source: time/locales/src/quc.json
+    ' ================================================================
+    ' QUC — K'iche'
+    ' ================================================================
+    Public ReadOnly QUC As New TimeLocale(
+        "quc",
+        New ClockConfig(
+            New String() { "kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj" },
+            "nik'aj aq'ab'",
+            "nik'aj q'ij",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
         ),
         New CompactnessOverride(
             New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
@@ -2134,6 +2354,26 @@ Public Module Locales
         ),
         New CompactnessOverride(
             New ShortClockConfig(True, Nothing, "{h}:{mm}")
+        )
+    )
+
+    ' Source: time/locales/src/shn.json
+    ' ================================================================
+    ' SHN — Shan
+    ' ================================================================
+    Public ReadOnly SHN As New TimeLocale(
+        "shn",
+        New ClockConfig(
+            New String() { "သိပ်းသွင်", "ၼိုင်ႈ", "သွင်", "သၢမ်", "သီႇ", "ႁႃႈ", "ႁူၵ်း", "ၸဵတ်း", "ပႅတ်ႇ", "ၵဝ်ႈ", "သိပ်း", "သိပ်းဢဵတ်း" },
+            "ၵၢင်ၶိုၼ်း",
+            "ၵၢင်ဝၼ်း",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
         )
     )
 
@@ -2477,6 +2717,26 @@ Public Module Locales
         )
     )
 
+    ' Source: time/locales/src/tet.json
+    ' ================================================================
+    ' TET — Tetum
+    ' ================================================================
+    Public ReadOnly TET As New TimeLocale(
+        "tet",
+        New ClockConfig(
+            New String() { "sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida" },
+            "meiu-kalan",
+            "meiu-loron",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
     ' Source: time/locales/src/tg.json
     ' ================================================================
     ' TG — Tajik
@@ -2587,6 +2847,26 @@ Public Module Locales
             New String() { "lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe" },
             "bosigo jwa magareng",
             "motshegare",
+            New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        New CompactnessOverride(
+            New ShortClockConfig(False, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    )
+
+    ' Source: time/locales/src/tpi.json
+    ' ================================================================
+    ' TPI — Tok Pisin
+    ' ================================================================
+    Public ReadOnly TPI As New TimeLocale(
+        "tpi",
+        New ClockConfig(
+            New String() { "twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven" },
+            "biknait",
+            "belo",
             New Dictionary(Of Integer, String) From { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
         ),
         New CompactnessOverride(
@@ -2927,11 +3207,13 @@ Public Module Locales
         { "be", BE },
         { "bem", BEM },
         { "bg", BG },
+        { "bi", BI },
         { "bm", BM },
         { "bn", BN },
         { "br", BR },
         { "bs", BS },
         { "ca", CA },
+        { "cak", CAK },
         { "ceb", CEB },
         { "cs", CS },
         { "cy", CY },
@@ -2939,7 +3221,9 @@ Public Module Locales
         { "de", DE },
         { "din", DIN },
         { "dje", DJE },
+        { "dv", DV },
         { "dyu", DYU },
+        { "dz", DZ },
         { "ee", EE },
         { "el", EL },
         { "en", EN },
@@ -2951,6 +3235,7 @@ Public Module Locales
         { "ff", FF },
         { "fi", FI },
         { "fil", FIL },
+        { "fj", FJ },
         { "fon", FON },
         { "fr", FR },
         { "ga", GA },
@@ -2962,6 +3247,7 @@ Public Module Locales
         { "ha", HA },
         { "he", HE },
         { "hi", HI },
+        { "hmn", HMN },
         { "hr", HR },
         { "ht", HT },
         { "hu", HU },
@@ -2974,7 +3260,9 @@ Public Module Locales
         { "jv", JV },
         { "ka", KA },
         { "kbp", KBP },
+        { "kek", KEK },
         { "kk", KK },
+        { "kl", KL },
         { "km", KM },
         { "kn", KN },
         { "ko", KO },
@@ -2988,6 +3276,7 @@ Public Module Locales
         { "lo", LO },
         { "lt", LT },
         { "lv", LV },
+        { "mam", MAM },
         { "men", MEN },
         { "mfe", MFE },
         { "mg", MG },
@@ -3012,11 +3301,13 @@ Public Module Locales
         { "om", OM },
         { "or", [OR] },
         { "pa", PA },
+        { "pis", PIS },
         { "pl", PL },
         { "pov", POV },
         { "ps", PS },
         { "pt", PT },
         { "qu", QU },
+        { "quc", QUC },
         { "ro", RO },
         { "ru", RU },
         { "rw", RW },
@@ -3024,6 +3315,7 @@ Public Module Locales
         { "sd", SD },
         { "sg", SG },
         { "shi", SHI },
+        { "shn", SHN },
         { "si", SI },
         { "sk", SK },
         { "sl", SL },
@@ -3041,12 +3333,14 @@ Public Module Locales
         { "ta", TA },
         { "te", TE },
         { "tem", TEM },
+        { "tet", TET },
         { "tg", TG },
         { "th", TH },
         { "ti", TI },
         { "tig", TIG },
         { "tk", TK },
         { "tn", TN },
+        { "tpi", TPI },
         { "tr", TR },
         { "ts", TS },
         { "tzm", TZM },

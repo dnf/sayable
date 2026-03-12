@@ -20,7 +20,7 @@ ID = TimeLocale(
         midnight="tengah malam",
         noon="tengah hari",
         patterns={
-            0: "{h} o'clock",
+            0: "pukul {h}",
             5: "lima lewat {h}",
             10: "sepuluh lewat {h}",
             15: "seperempat lewat {h}",
@@ -35,9 +35,9 @@ ID = TimeLocale(
         },
     ),
     short=CompactnessOverride(
-        clock=ShortClockConfig(use24h=True, format="{h}:{mm}"),
+        clock=ShortClockConfig(use24h=True, format="{h}.{mm}"),
     ),
     compact=CompactnessOverride(
-        clock=ShortClockConfig(use24h=True, format="{h}:{mm}"),
+        clock=ShortClockConfig(use24h=True, format="{h}.{mm}"),
     ),
 )

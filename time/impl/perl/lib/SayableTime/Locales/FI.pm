@@ -25,13 +25,13 @@ sub locale {{
   short => {
     clock => {
       use24h => 1,
-      format => '{h}:{mm}',
+      format => '{h}.{mm}',
     },
   },
   compact => {
     clock => {
       use24h => 1,
-      format => '{h}:{mm}',
+      format => '{h}.{mm}',
     },
   },
 }}

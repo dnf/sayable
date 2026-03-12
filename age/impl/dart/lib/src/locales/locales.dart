@@ -18,11 +18,13 @@ import 'bci.dart' as loc_bci;
 import 'be.dart' as loc_be;
 import 'bem.dart' as loc_bem;
 import 'bg.dart' as loc_bg;
+import 'bi.dart' as loc_bi;
 import 'bm.dart' as loc_bm;
 import 'bn.dart' as loc_bn;
 import 'br.dart' as loc_br;
 import 'bs.dart' as loc_bs;
 import 'ca.dart' as loc_ca;
+import 'cak.dart' as loc_cak;
 import 'ceb.dart' as loc_ceb;
 import 'cs.dart' as loc_cs;
 import 'cy.dart' as loc_cy;
@@ -30,7 +32,9 @@ import 'da.dart' as loc_da;
 import 'de.dart' as loc_de;
 import 'din.dart' as loc_din;
 import 'dje.dart' as loc_dje;
+import 'dv.dart' as loc_dv;
 import 'dyu.dart' as loc_dyu;
+import 'dz.dart' as loc_dz;
 import 'ee.dart' as loc_ee;
 import 'el.dart' as loc_el;
 import 'en.dart' as loc_en;
@@ -42,6 +46,7 @@ import 'fan.dart' as loc_fan;
 import 'ff.dart' as loc_ff;
 import 'fi.dart' as loc_fi;
 import 'fil.dart' as loc_fil;
+import 'fj.dart' as loc_fj;
 import 'fon.dart' as loc_fon;
 import 'fr.dart' as loc_fr;
 import 'ga.dart' as loc_ga;
@@ -53,6 +58,7 @@ import 'gv.dart' as loc_gv;
 import 'ha.dart' as loc_ha;
 import 'he.dart' as loc_he;
 import 'hi.dart' as loc_hi;
+import 'hmn.dart' as loc_hmn;
 import 'hr.dart' as loc_hr;
 import 'ht.dart' as loc_ht;
 import 'hu.dart' as loc_hu;
@@ -65,7 +71,9 @@ import 'ja.dart' as loc_ja;
 import 'jv.dart' as loc_jv;
 import 'ka.dart' as loc_ka;
 import 'kbp.dart' as loc_kbp;
+import 'kek.dart' as loc_kek;
 import 'kk.dart' as loc_kk;
+import 'kl.dart' as loc_kl;
 import 'km.dart' as loc_km;
 import 'kn.dart' as loc_kn;
 import 'ko.dart' as loc_ko;
@@ -79,6 +87,7 @@ import 'ln.dart' as loc_ln;
 import 'lo.dart' as loc_lo;
 import 'lt.dart' as loc_lt;
 import 'lv.dart' as loc_lv;
+import 'mam.dart' as loc_mam;
 import 'men.dart' as loc_men;
 import 'mfe.dart' as loc_mfe;
 import 'mg.dart' as loc_mg;
@@ -103,11 +112,13 @@ import 'ny.dart' as loc_ny;
 import 'om.dart' as loc_om;
 import 'or.dart' as loc_or;
 import 'pa.dart' as loc_pa;
+import 'pis.dart' as loc_pis;
 import 'pl.dart' as loc_pl;
 import 'pov.dart' as loc_pov;
 import 'ps.dart' as loc_ps;
 import 'pt.dart' as loc_pt;
 import 'qu.dart' as loc_qu;
+import 'quc.dart' as loc_quc;
 import 'ro.dart' as loc_ro;
 import 'ru.dart' as loc_ru;
 import 'rw.dart' as loc_rw;
@@ -115,6 +126,7 @@ import 'sar.dart' as loc_sar;
 import 'sd.dart' as loc_sd;
 import 'sg.dart' as loc_sg;
 import 'shi.dart' as loc_shi;
+import 'shn.dart' as loc_shn;
 import 'si.dart' as loc_si;
 import 'sk.dart' as loc_sk;
 import 'sl.dart' as loc_sl;
@@ -132,12 +144,14 @@ import 'sw.dart' as loc_sw;
 import 'ta.dart' as loc_ta;
 import 'te.dart' as loc_te;
 import 'tem.dart' as loc_tem;
+import 'tet.dart' as loc_tet;
 import 'tg.dart' as loc_tg;
 import 'th.dart' as loc_th;
 import 'ti.dart' as loc_ti;
 import 'tig.dart' as loc_tig;
 import 'tk.dart' as loc_tk;
 import 'tn.dart' as loc_tn;
+import 'tpi.dart' as loc_tpi;
 import 'tr.dart' as loc_tr;
 import 'ts.dart' as loc_ts;
 import 'tzm.dart' as loc_tzm;
@@ -176,6 +190,8 @@ AgeLocale? getLocale(String code) {
       return loc_bem.bem;
     case 'bg':
       return loc_bg.bg;
+    case 'bi':
+      return loc_bi.bi;
     case 'bm':
       return loc_bm.bm;
     case 'bn':
@@ -186,6 +202,8 @@ AgeLocale? getLocale(String code) {
       return loc_bs.bs;
     case 'ca':
       return loc_ca.ca;
+    case 'cak':
+      return loc_cak.cak;
     case 'ceb':
       return loc_ceb.ceb;
     case 'cs':
@@ -200,8 +218,12 @@ AgeLocale? getLocale(String code) {
       return loc_din.din;
     case 'dje':
       return loc_dje.dje;
+    case 'dv':
+      return loc_dv.dv;
     case 'dyu':
       return loc_dyu.dyu;
+    case 'dz':
+      return loc_dz.dz;
     case 'ee':
       return loc_ee.ee;
     case 'el':
@@ -224,6 +246,8 @@ AgeLocale? getLocale(String code) {
       return loc_fi.fi;
     case 'fil':
       return loc_fil.fil;
+    case 'fj':
+      return loc_fj.fj;
     case 'fon':
       return loc_fon.fon;
     case 'fr':
@@ -246,6 +270,8 @@ AgeLocale? getLocale(String code) {
       return loc_he.he;
     case 'hi':
       return loc_hi.hi;
+    case 'hmn':
+      return loc_hmn.hmn;
     case 'hr':
       return loc_hr.hr;
     case 'ht':
@@ -270,8 +296,12 @@ AgeLocale? getLocale(String code) {
       return loc_ka.ka;
     case 'kbp':
       return loc_kbp.kbp;
+    case 'kek':
+      return loc_kek.kek;
     case 'kk':
       return loc_kk.kk;
+    case 'kl':
+      return loc_kl.kl;
     case 'km':
       return loc_km.km;
     case 'kn':
@@ -298,6 +328,8 @@ AgeLocale? getLocale(String code) {
       return loc_lt.lt;
     case 'lv':
       return loc_lv.lv;
+    case 'mam':
+      return loc_mam.mam;
     case 'men':
       return loc_men.men;
     case 'mfe':
@@ -346,6 +378,8 @@ AgeLocale? getLocale(String code) {
       return loc_or.or;
     case 'pa':
       return loc_pa.pa;
+    case 'pis':
+      return loc_pis.pis;
     case 'pl':
       return loc_pl.pl;
     case 'pov':
@@ -356,6 +390,8 @@ AgeLocale? getLocale(String code) {
       return loc_pt.pt;
     case 'qu':
       return loc_qu.qu;
+    case 'quc':
+      return loc_quc.quc;
     case 'ro':
       return loc_ro.ro;
     case 'ru':
@@ -370,6 +406,8 @@ AgeLocale? getLocale(String code) {
       return loc_sg.sg;
     case 'shi':
       return loc_shi.shi;
+    case 'shn':
+      return loc_shn.shn;
     case 'si':
       return loc_si.si;
     case 'sk':
@@ -404,6 +442,8 @@ AgeLocale? getLocale(String code) {
       return loc_te.te;
     case 'tem':
       return loc_tem.tem;
+    case 'tet':
+      return loc_tet.tet;
     case 'tg':
       return loc_tg.tg;
     case 'th':
@@ -416,6 +456,8 @@ AgeLocale? getLocale(String code) {
       return loc_tk.tk;
     case 'tn':
       return loc_tn.tn;
+    case 'tpi':
+      return loc_tpi.tpi;
     case 'tr':
       return loc_tr.tr;
     case 'ts':

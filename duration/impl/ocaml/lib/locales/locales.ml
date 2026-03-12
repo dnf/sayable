@@ -19,11 +19,13 @@ let get_locale (code : string) : Types.duration_locale option =
   | "be" -> Some Be.locale
   | "bem" -> Some Bem.locale
   | "bg" -> Some Bg.locale
+  | "bi" -> Some Bi.locale
   | "bm" -> Some Bm.locale
   | "bn" -> Some Bn.locale
   | "br" -> Some Br.locale
   | "bs" -> Some Bs.locale
   | "ca" -> Some Ca.locale
+  | "cak" -> Some Cak.locale
   | "ceb" -> Some Ceb.locale
   | "cs" -> Some Cs.locale
   | "cy" -> Some Cy.locale
@@ -31,7 +33,9 @@ let get_locale (code : string) : Types.duration_locale option =
   | "de" -> Some De.locale
   | "din" -> Some Din.locale
   | "dje" -> Some Dje.locale
+  | "dv" -> Some Dv.locale
   | "dyu" -> Some Dyu.locale
+  | "dz" -> Some Dz.locale
   | "ee" -> Some Ee.locale
   | "el" -> Some El.locale
   | "en" -> Some En.locale
@@ -43,6 +47,7 @@ let get_locale (code : string) : Types.duration_locale option =
   | "ff" -> Some Ff.locale
   | "fi" -> Some Fi.locale
   | "fil" -> Some Fil.locale
+  | "fj" -> Some Fj.locale
   | "fon" -> Some Fon.locale
   | "fr" -> Some Fr.locale
   | "ga" -> Some Ga.locale
@@ -54,6 +59,7 @@ let get_locale (code : string) : Types.duration_locale option =
   | "ha" -> Some Ha.locale
   | "he" -> Some He.locale
   | "hi" -> Some Hi.locale
+  | "hmn" -> Some Hmn.locale
   | "hr" -> Some Hr.locale
   | "ht" -> Some Ht.locale
   | "hu" -> Some Hu.locale
@@ -66,7 +72,9 @@ let get_locale (code : string) : Types.duration_locale option =
   | "jv" -> Some Jv.locale
   | "ka" -> Some Ka.locale
   | "kbp" -> Some Kbp.locale
+  | "kek" -> Some Kek.locale
   | "kk" -> Some Kk.locale
+  | "kl" -> Some Kl.locale
   | "km" -> Some Km.locale
   | "kn" -> Some Kn.locale
   | "ko" -> Some Ko.locale
@@ -80,6 +88,7 @@ let get_locale (code : string) : Types.duration_locale option =
   | "lo" -> Some Lo.locale
   | "lt" -> Some Lt.locale
   | "lv" -> Some Lv.locale
+  | "mam" -> Some Mam.locale
   | "men" -> Some Men.locale
   | "mfe" -> Some Mfe.locale
   | "mg" -> Some Mg.locale
@@ -104,11 +113,13 @@ let get_locale (code : string) : Types.duration_locale option =
   | "om" -> Some Om.locale
   | "or" -> Some Or.locale
   | "pa" -> Some Pa.locale
+  | "pis" -> Some Pis.locale
   | "pl" -> Some Pl.locale
   | "pov" -> Some Pov.locale
   | "ps" -> Some Ps.locale
   | "pt" -> Some Pt.locale
   | "qu" -> Some Qu.locale
+  | "quc" -> Some Quc.locale
   | "ro" -> Some Ro.locale
   | "ru" -> Some Ru.locale
   | "rw" -> Some Rw.locale
@@ -116,6 +127,7 @@ let get_locale (code : string) : Types.duration_locale option =
   | "sd" -> Some Sd.locale
   | "sg" -> Some Sg.locale
   | "shi" -> Some Shi.locale
+  | "shn" -> Some Shn.locale
   | "si" -> Some Si.locale
   | "sk" -> Some Sk.locale
   | "sl" -> Some Sl.locale
@@ -133,12 +145,14 @@ let get_locale (code : string) : Types.duration_locale option =
   | "ta" -> Some Ta.locale
   | "te" -> Some Te.locale
   | "tem" -> Some Tem.locale
+  | "tet" -> Some Tet.locale
   | "tg" -> Some Tg.locale
   | "th" -> Some Th.locale
   | "ti" -> Some Ti.locale
   | "tig" -> Some Tig.locale
   | "tk" -> Some Tk.locale
   | "tn" -> Some Tn.locale
+  | "tpi" -> Some Tpi.locale
   | "tr" -> Some Tr.locale
   | "ts" -> Some Ts.locale
   | "tzm" -> Some Tzm.locale

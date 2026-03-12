@@ -50,6 +50,10 @@ function M.get_locale(code)
         cache[code] = require("locales.bg")
         return cache[code]
     end
+    if code == "bi" then
+        cache[code] = require("locales.bi")
+        return cache[code]
+    end
     if code == "bm" then
         cache[code] = require("locales.bm")
         return cache[code]
@@ -68,6 +72,10 @@ function M.get_locale(code)
     end
     if code == "ca" then
         cache[code] = require("locales.ca")
+        return cache[code]
+    end
+    if code == "cak" then
+        cache[code] = require("locales.cak")
         return cache[code]
     end
     if code == "ceb" then
@@ -98,8 +106,16 @@ function M.get_locale(code)
         cache[code] = require("locales.dje")
         return cache[code]
     end
+    if code == "dv" then
+        cache[code] = require("locales.dv")
+        return cache[code]
+    end
     if code == "dyu" then
         cache[code] = require("locales.dyu")
+        return cache[code]
+    end
+    if code == "dz" then
+        cache[code] = require("locales.dz")
         return cache[code]
     end
     if code == "ee" then
@@ -146,6 +162,10 @@ function M.get_locale(code)
         cache[code] = require("locales.fil")
         return cache[code]
     end
+    if code == "fj" then
+        cache[code] = require("locales.fj")
+        return cache[code]
+    end
     if code == "fon" then
         cache[code] = require("locales.fon")
         return cache[code]
@@ -188,6 +208,10 @@ function M.get_locale(code)
     end
     if code == "hi" then
         cache[code] = require("locales.hi")
+        return cache[code]
+    end
+    if code == "hmn" then
+        cache[code] = require("locales.hmn")
         return cache[code]
     end
     if code == "hr" then
@@ -238,8 +262,16 @@ function M.get_locale(code)
         cache[code] = require("locales.kbp")
         return cache[code]
     end
+    if code == "kek" then
+        cache[code] = require("locales.kek")
+        return cache[code]
+    end
     if code == "kk" then
         cache[code] = require("locales.kk")
+        return cache[code]
+    end
+    if code == "kl" then
+        cache[code] = require("locales.kl")
         return cache[code]
     end
     if code == "km" then
@@ -292,6 +324,10 @@ function M.get_locale(code)
     end
     if code == "lv" then
         cache[code] = require("locales.lv")
+        return cache[code]
+    end
+    if code == "mam" then
+        cache[code] = require("locales.mam")
         return cache[code]
     end
     if code == "men" then
@@ -390,6 +426,10 @@ function M.get_locale(code)
         cache[code] = require("locales.pa")
         return cache[code]
     end
+    if code == "pis" then
+        cache[code] = require("locales.pis")
+        return cache[code]
+    end
     if code == "pl" then
         cache[code] = require("locales.pl")
         return cache[code]
@@ -408,6 +448,10 @@ function M.get_locale(code)
     end
     if code == "qu" then
         cache[code] = require("locales.qu")
+        return cache[code]
+    end
+    if code == "quc" then
+        cache[code] = require("locales.quc")
         return cache[code]
     end
     if code == "ro" then
@@ -436,6 +480,10 @@ function M.get_locale(code)
     end
     if code == "shi" then
         cache[code] = require("locales.shi")
+        return cache[code]
+    end
+    if code == "shn" then
+        cache[code] = require("locales.shn")
         return cache[code]
     end
     if code == "si" then
@@ -506,6 +554,10 @@ function M.get_locale(code)
         cache[code] = require("locales.tem")
         return cache[code]
     end
+    if code == "tet" then
+        cache[code] = require("locales.tet")
+        return cache[code]
+    end
     if code == "tg" then
         cache[code] = require("locales.tg")
         return cache[code]
@@ -528,6 +580,10 @@ function M.get_locale(code)
     end
     if code == "tn" then
         cache[code] = require("locales.tn")
+        return cache[code]
+    end
+    if code == "tpi" then
+        cache[code] = require("locales.tpi")
         return cache[code]
     end
     if code == "tr" then

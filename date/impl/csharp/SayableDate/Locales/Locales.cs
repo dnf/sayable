@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace SayableDateLib;
 
 /// <summary>
-/// All 145 locale definitions for sayable-date.
+/// All 159 locale definitions for sayable-date.
 /// </summary>
 public static class Locales
 {
@@ -441,6 +441,53 @@ public static class Locales
         )
     );
 
+    // Source: date/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    public static readonly DateLocale BI = new(
+        "bi",
+        new[] { "Janueri", "Februari", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogis", "Septemba", "Oktoba", "Novemba", "Disemba" },
+        new[] { "Sande", "Mande", "Tusde", "Wenesde", "Tosde", "Fraede", "Sarede" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tede",
+        "tumoro",
+        "yestedei",
+        "bihaen tumoro",
+        "bifo yestedei",
+        "disfala {weekday}",
+        "nekis {weekday}",
+        "las {weekday}",
+        null,
+        new CompactnessOverride(
+            new[] { "Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Ogi", "Sep", "Okt", "Nov", "Dis" },
+            null,
+            new[] { "San", "Man", "Tus", "Wen", "Tos", "Fra", "Sar" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
     // Source: date/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -654,6 +701,53 @@ public static class Locales
             new[] { "gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des" },
             null,
             new[] { "dg", "dl", "dt", "dc", "dj", "dv", "ds" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
+    // Source: date/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    public static readonly DateLocale CAK = new(
+        "cak",
+        new[] { "Nab'ey ik'", "Ruka'n ik'", "Rox ik'", "Rukaj ik'", "Ro' ik'", "Ruwaq ik'", "Ruwuq ik'", "Ruwajxaq ik'", "Rub'elej ik'", "Rulaj ik'", "Rujulaj ik'", "Rukab'laj ik'" },
+        new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "wakami",
+        "chwe'q",
+        "iwïr",
+        "ka'i' q'ij chwe'q",
+        "ka'i' q'ij iwïr",
+        "re' {weekday}",
+        "{weekday} ri petenäq",
+        "{weekday} ri xik'o",
+        null,
+        new CompactnessOverride(
+            new[] { "1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'" },
+            null,
+            new[] { "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
             "{n}",
             null,
             "{day} {month}",
@@ -1005,6 +1099,53 @@ public static class Locales
         )
     );
 
+    // Source: date/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    public static readonly DateLocale DV = new(
+        "dv",
+        new[] { "ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އެޕްރީލު", "މެއި", "ޖޫން", "ޖުލައި", "އޮގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު" },
+        new[] { "އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "މިއަދު",
+        "މާދަމާ",
+        "އިއްޔެ",
+        "އަނެއް ދުވަހު",
+        "ކުރީ ދުވަހު",
+        "މި {weekday}",
+        "އަންނަ {weekday}",
+        "ފާއިތުވި {weekday}",
+        null,
+        new CompactnessOverride(
+            new[] { "ޖެނު", "ފެބް", "މާރި", "އެޕް", "މެއި", "ޖޫން", "ޖުލް", "އޮގް", "ސެޕް", "އޮކް", "ނޮވް", "ޑިސް" },
+            null,
+            new[] { "އާދީ", "ހޯމަ", "އަން", "ބުދަ", "ބުރާ", "ހުކު", "ހޮނި" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
     // Source: date/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -1046,6 +1187,53 @@ public static class Locales
             null,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
+    // Source: date/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    public static readonly DateLocale DZ = new(
+        "dz",
+        new[] { "ཟླ་དངཔ", "ཟླ་གཉིས་པ", "ཟླ་གསུམ་པ", "ཟླ་བཞི་པ", "ཟླ་ལྔ་པ", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ", "ཟླ་བརྒྱད་པ", "ཟླ་དགུ་པ", "ཟླ་བཅུ་པ", "ཟླ་བཅུ་གཅིག་པ", "ཟླ་བཅུ་གཉིས་པ" },
+        new[] { "གཟའ་ཉི་མ", "གཟའ་ཟླ་བ", "གཟའ་མིག་དམར", "གཟའ་ལྷག་པ", "གཟའ་ཕུར་བུ", "གཟའ་པ་སངས", "གཟའ་སྤེན་པ" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{month} {day}",
+        "{year} {month} {day}",
+        "དི་རིང",
+        "ནངས་པ",
+        "ཁ་ཙ",
+        "གནངས་ཚེ",
+        "ཁ་ཉིམ",
+        "འདི་ {weekday}",
+        "{weekday} ཤུལ་མ",
+        "{weekday} ཧེ་མ",
+        null,
+        new CompactnessOverride(
+            new[] { "ཟླ་༡", "ཟླ་༢", "ཟླ་༣", "ཟླ་༤", "ཟླ་༥", "ཟླ་༦", "ཟླ་༧", "ཟླ་༨", "ཟླ་༩", "ཟླ་༡༠", "ཟླ་༡༡", "ཟླ་༡༢" },
+            null,
+            new[] { "ཉི", "ཟླ", "མིག", "ལྷག", "ཕུར", "སངས", "སྤེན" },
+            "{n}",
+            null,
+            "{month} {day}",
+            "{year} {month} {day}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{yy}/{m}/{d}",
+            "{yy}/{m}/{d}",
             null,
             null,
             null
@@ -1569,6 +1757,53 @@ public static class Locales
         )
     );
 
+    // Source: date/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    public static readonly DateLocale FJ = new(
+        "fj",
+        new[] { "Janueri", "Feperueri", "Maji", "Epereli", "Me", "June", "Julai", "Okosita", "Sepiteba", "Okotova", "Noveba", "Tiseba" },
+        new[] { "Sigatapu", "Moniti", "Tusiti", "Vukelulu", "Lotulevu", "Vakaraubuka", "Vakarauwai" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "nikua",
+        "mataka",
+        "nanoa",
+        "bogi rua ni mataka",
+        "nanoa edua",
+        "na {weekday} oqo",
+        "na {weekday} mai oqo",
+        "na {weekday} sa oti",
+        null,
+        new CompactnessOverride(
+            new[] { "Jan", "Fep", "Maj", "Epe", "Me", "Jun", "Jul", "Oko", "Sep", "Okt", "Nov", "Tis" },
+            null,
+            new[] { "Sig", "Mon", "Tus", "Vuk", "Lot", "Vra", "Vrw" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
     // Source: date/locales/src/fon.json
     // ================================================================
     // FON — Fon
@@ -2080,6 +2315,53 @@ public static class Locales
             null,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
+    // Source: date/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    public static readonly DateLocale HMN = new(
+        "hmn",
+        new[] { "Ib Hlis", "Ob Hlis", "Peb Hlis", "Plaub Hlis", "Tsib Hlis", "Rau Hlis", "Xya Hlis", "Yim Hlis", "Cuaj Hlis", "Kaum Hlis", "Kaum Ib Hlis", "Kaum Ob Hlis" },
+        new[] { "Hnub Tim Ib", "Hnub Tim Ob", "Hnub Tim Peb", "Hnub Tim Plaub", "Hnub Tim Tsib", "Hnub Tim Rau", "Hnub Tim Xya" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "hnub no",
+        "tag kis",
+        "nag hmo",
+        "ob hnub tom ntej",
+        "ob hnub dhau los",
+        "{weekday} no",
+        "{weekday} tom ntej",
+        "{weekday} tas los",
+        null,
+        new CompactnessOverride(
+            new[] { "1 Hli", "2 Hli", "3 Hli", "4 Hli", "5 Hli", "6 Hli", "7 Hli", "8 Hli", "9 Hli", "10 Hli", "11 Hli", "12 Hli" },
+            null,
+            new[] { "T1", "T2", "T3", "T4", "T5", "T6", "T7" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{m}/{d}",
+            "{m}/{d}/{yy}",
             null,
             null,
             null
@@ -2650,6 +2932,53 @@ public static class Locales
         )
     );
 
+    // Source: date/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    public static readonly DateLocale KEK = new(
+        "kek",
+        new[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" },
+        new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "anaqwan",
+        "q'ela'",
+        "ewu",
+        null,
+        null,
+        "a'in {weekday}",
+        "{weekday} chalen",
+        "{weekday} rik'in",
+        null,
+        new CompactnessOverride(
+            new[] { "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" },
+            null,
+            new[] { "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
     // Source: date/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -2691,6 +3020,53 @@ public static class Locales
             null,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
+    // Source: date/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    public static readonly DateLocale KL = new(
+        "kl",
+        new[] { "januaarip", "februaarip", "marsip", "apriilip", "maajip", "juunip", "juulip", "aggustip", "septembarip", "oktobarip", "novembarip", "decembarip" },
+        new[] { "sapaat", "ataasinngorneq", "marlunngorneq", "pingasunngorneq", "sisamanngorneq", "tallimanngorneq", "arfininngorneq" },
+        "{n}.",
+        new Dictionary<string, string>(),
+        "{month} {day}",
+        "{day} {month} {year}",
+        "ullumi",
+        "aqagu",
+        "ippassaq",
+        "aqaguagu",
+        "ippassaani",
+        "{weekday} manna",
+        "{weekday} tulleq",
+        "{weekday} kingulleq",
+        null,
+        new CompactnessOverride(
+            new[] { "jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec" },
+            null,
+            new[] { "sap", "ata", "mar", "pin", "sis", "tal", "arf" },
+            "{n}.",
+            null,
+            "{month} {day}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{m}-{d}",
+            "{year}-{m}-{d}",
             null,
             null,
             null
@@ -3302,6 +3678,53 @@ public static class Locales
             null,
             "{d}.{m}.",
             "{d}.{m}.{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
+    // Source: date/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    public static readonly DateLocale MAM = new(
+        "mam",
+        new[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" },
+        new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "iky'x",
+        "q'ij oj",
+        "ewl",
+        null,
+        null,
+        "tu'n {weekday}",
+        "{weekday} tul",
+        "{weekday} nchi'j",
+        null,
+        new CompactnessOverride(
+            new[] { "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" },
+            null,
+            new[] { "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
             null,
             null,
             null
@@ -4436,6 +4859,53 @@ public static class Locales
         )
     );
 
+    // Source: date/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    public static readonly DateLocale PIS = new(
+        "pis",
+        new[] { "Janueri", "Februeri", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogas", "Septemba", "Oktoba", "Novemba", "Disemba" },
+        new[] { "Sande", "Mande", "Tiusde", "Wenesde", "Tosde", "Fraede", "Sarere" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tudei",
+        "tumoro",
+        "yestedei",
+        "bihaen tumoro",
+        "bifo yestedei",
+        "disfala {weekday}",
+        "nekis {weekday}",
+        "las {weekday}",
+        null,
+        new CompactnessOverride(
+            new[] { "Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis" },
+            null,
+            new[] { "San", "Man", "Tiu", "Wen", "Tos", "Fra", "Sar" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
     // Source: date/locales/src/pl.json
     // ================================================================
     // PL — Polish
@@ -4649,6 +5119,53 @@ public static class Locales
             new[] { "Qhu", "Hat", "Paw", "Ayr", "Aym", "Int", "Ant", "Qha", "Uma", "Kan", "Aya", "Qra" },
             null,
             new[] { "Int", "Kil", "Ati", "Quy", "Ill", "Ch'a", "K'uy" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
+    // Source: date/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    public static readonly DateLocale QUC = new(
+        "quc",
+        new[] { "Nab'e ik'", "Ukab' ik'", "Urox ik'", "Ukaj ik'", "Uro' ik'", "Uwaq ik'", "Uwuq ik'", "Uwajxaq ik'", "Ub'elej ik'", "Ulaj ik'", "Ujulaj ik'", "Ukab'laj ik'" },
+        new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "kamik",
+        "chwe'q",
+        "iwir",
+        "kab'ij chwe'q",
+        "kab'ij iwir",
+        "we {weekday}",
+        "{weekday} ri petinaq",
+        "{weekday} ri k'aslik",
+        null,
+        new CompactnessOverride(
+            new[] { "1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'" },
+            null,
+            new[] { "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
             "{n}",
             null,
             "{day} {month}",
@@ -4978,6 +5495,53 @@ public static class Locales
             new[] { "ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ" },
             null,
             new[] { "ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
+    // Source: date/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    public static readonly DateLocale SHN = new(
+        "shn",
+        new[] { "ၸၼ်ႇဝႃႇရီႇ", "ၾႅပ်ႇဝႃႇရီႇ", "မၢတ်ႉၶျ်", "ဢေႇပရႄႇ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလၢႆႇ", "ဢေႃးၵၢတ်ႉ", "သႅပ်ႇထႅမ်ႇပႃႇ", "ဢွၵ်ႇထူဝ်ႇပႃႇ", "ၼူဝ်ႇဝႅမ်ႇပႃႇ", "တီႇသႅမ်ႇပႃႇ" },
+        new[] { "ဝၼ်းဢႃးတိတ်ႉ", "ဝၼ်းၸၼ်", "ဝၼ်းဢၢင်းၵၢၼ်း", "ဝၼ်းပုတ်ႉ", "ဝၼ်းၽတ်း", "ဝၼ်းသုၵ်း", "ဝၼ်းသဝ်" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ဝၼ်းမိူဝ်ႈၼႆႉ",
+        "မိူဝ်ႈၽုၵ်ႈ",
+        "မိူဝ်ႈဝႃး",
+        "မိူဝ်ႈႁိုဝ်",
+        "မိူဝ်ႈသိုၼ်း",
+        "{weekday} ၼႆႉ",
+        "{weekday} ၼႃႈ",
+        "{weekday} ပူၼ်ႉ",
+        null,
+        new CompactnessOverride(
+            new[] { "ၸၼ်ႇ", "ၾႅပ်ႇ", "မၢတ်ႉ", "ဢေႇပ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလ", "ဢေႃး", "သႅပ်ႇ", "ဢွၵ်ႇ", "ၼူဝ်ႇ", "တီႇသ" },
+            null,
+            new[] { "ဢႃး", "ၸၼ်", "ဢၢင်း", "ပုတ်ႉ", "ၽတ်း", "သုၵ်း", "သဝ်" },
             "{n}",
             null,
             "{day} {month}",
@@ -5799,6 +6363,53 @@ public static class Locales
         )
     );
 
+    // Source: date/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    public static readonly DateLocale TET = new(
+        "tet",
+        new[] { "Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru" },
+        new[] { "Domingu", "Segunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sábadu" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ohin",
+        "aban",
+        "horiseik",
+        "aban bainrua",
+        "horiseik liu",
+        "{weekday} ida ne'e",
+        "{weekday} oin mai",
+        "{weekday} kotuk",
+        null,
+        new CompactnessOverride(
+            new[] { "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez" },
+            null,
+            new[] { "Dom", "Seg", "Ter", "Kua", "Kin", "Ses", "Sáb" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
     // Source: date/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -6059,6 +6670,53 @@ public static class Locales
             new[] { "Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phk", "Pha", "Lwe", "Dip", "Ngw", "Sed" },
             null,
             new[] { "Tsh", "Mos", "Bed", "Rar", "Bon", "Tlh", "Mat" },
+            "{n}",
+            null,
+            "{day} {month}",
+            "{day} {month} {year}",
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            null,
+            null,
+            null,
+            null,
+            null,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            null,
+            null,
+            null
+        )
+    );
+
+    // Source: date/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    public static readonly DateLocale TPI = new(
+        "tpi",
+        new[] { "Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba" },
+        new[] { "Sande", "Mande", "Tunde", "Trinde", "Fonde", "Fraide", "Sarere" },
+        "{n}",
+        new Dictionary<string, string>(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tude",
+        "tumora",
+        "asde",
+        "haptumora",
+        "asde bipo",
+        "dispela {weekday}",
+        "{weekday} bihain",
+        "{weekday} bipo",
+        null,
+        new CompactnessOverride(
+            new[] { "Jan", "Feb", "Mas", "Epr", "Me", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Des" },
+            null,
+            new[] { "San", "Man", "Tun", "Tri", "Fon", "Fra", "Sar" },
             "{n}",
             null,
             "{day} {month}",
@@ -6845,11 +7503,13 @@ public static class Locales
             { "be", BE },
             { "bem", BEM },
             { "bg", BG },
+            { "bi", BI },
             { "bm", BM },
             { "bn", BN },
             { "br", BR },
             { "bs", BS },
             { "ca", CA },
+            { "cak", CAK },
             { "ceb", CEB },
             { "cs", CS },
             { "cy", CY },
@@ -6857,7 +7517,9 @@ public static class Locales
             { "de", DE },
             { "din", DIN },
             { "dje", DJE },
+            { "dv", DV },
             { "dyu", DYU },
+            { "dz", DZ },
             { "ee", EE },
             { "el", EL },
             { "en", EN },
@@ -6869,6 +7531,7 @@ public static class Locales
             { "ff", FF },
             { "fi", FI },
             { "fil", FIL },
+            { "fj", FJ },
             { "fon", FON },
             { "fr", FR },
             { "ga", GA },
@@ -6880,6 +7543,7 @@ public static class Locales
             { "ha", HA },
             { "he", HE },
             { "hi", HI },
+            { "hmn", HMN },
             { "hr", HR },
             { "ht", HT },
             { "hu", HU },
@@ -6892,7 +7556,9 @@ public static class Locales
             { "jv", JV },
             { "ka", KA },
             { "kbp", KBP },
+            { "kek", KEK },
             { "kk", KK },
+            { "kl", KL },
             { "km", KM },
             { "kn", KN },
             { "ko", KO },
@@ -6906,6 +7572,7 @@ public static class Locales
             { "lo", LO },
             { "lt", LT },
             { "lv", LV },
+            { "mam", MAM },
             { "men", MEN },
             { "mfe", MFE },
             { "mg", MG },
@@ -6930,11 +7597,13 @@ public static class Locales
             { "om", OM },
             { "or", OR },
             { "pa", PA },
+            { "pis", PIS },
             { "pl", PL },
             { "pov", POV },
             { "ps", PS },
             { "pt", PT },
             { "qu", QU },
+            { "quc", QUC },
             { "ro", RO },
             { "ru", RU },
             { "rw", RW },
@@ -6942,6 +7611,7 @@ public static class Locales
             { "sd", SD },
             { "sg", SG },
             { "shi", SHI },
+            { "shn", SHN },
             { "si", SI },
             { "sk", SK },
             { "sl", SL },
@@ -6959,12 +7629,14 @@ public static class Locales
             { "ta", TA },
             { "te", TE },
             { "tem", TEM },
+            { "tet", TET },
             { "tg", TG },
             { "th", TH },
             { "ti", TI },
             { "tig", TIG },
             { "tk", TK },
             { "tn", TN },
+            { "tpi", TPI },
             { "tr", TR },
             { "ts", TS },
             { "tzm", TZM },

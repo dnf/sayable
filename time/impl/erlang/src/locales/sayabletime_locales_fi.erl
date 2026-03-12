@@ -17,6 +17,6 @@ locale() ->
     #time_locale{
         code = "fi",
         clock = #clock_config{hours = ["kaksitoista", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista"], midnight = "keskiyö", noon = "keskipäivä", patterns = [{0, "{h}"}, {5, "viisi yli {h}"}, {10, "kymmenen yli {h}"}, {15, "vartti yli {h}"}, {20, "kaksikymmentä yli {h}"}, {25, "kaksikymmentäviisi yli {h}"}, {30, "puoli yli {h}"}, {35, "kaksikymmentäviisi vaille {next_h}"}, {40, "kaksikymmentä vaille {next_h}"}, {45, "vartti vaille {next_h}"}, {50, "kymmenen vaille {next_h}"}, {55, "viisi vaille {next_h}"}]},
-        short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}},
-        compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}}
+        short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}.{mm}", am_pm = nothing}}}},
+        compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}.{mm}", am_pm = nothing}}}}
     }.

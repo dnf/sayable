@@ -48,14 +48,14 @@ let locale : time_locale =
   ; short = Some
     { clock = Some
         { use_24h = true
-        ; format = "{h}:{mm}"
+        ; format = "{h}.{mm}"
         ; am_pm = None
         }
     }
   ; compact = Some
     { clock = Some
         { use_24h = true
-        ; format = "{h}:{mm}"
+        ; format = "{h}.{mm}"
         ; am_pm = None
         }
     }

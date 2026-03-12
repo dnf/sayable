@@ -27,11 +27,13 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "be") == 0) return &sd_locale_be;
     if (sd_reg_strcmp(code, "bem") == 0) return &sd_locale_bem;
     if (sd_reg_strcmp(code, "bg") == 0) return &sd_locale_bg;
+    if (sd_reg_strcmp(code, "bi") == 0) return &sd_locale_bi;
     if (sd_reg_strcmp(code, "bm") == 0) return &sd_locale_bm;
     if (sd_reg_strcmp(code, "bn") == 0) return &sd_locale_bn;
     if (sd_reg_strcmp(code, "br") == 0) return &sd_locale_br;
     if (sd_reg_strcmp(code, "bs") == 0) return &sd_locale_bs;
     if (sd_reg_strcmp(code, "ca") == 0) return &sd_locale_ca;
+    if (sd_reg_strcmp(code, "cak") == 0) return &sd_locale_cak;
     if (sd_reg_strcmp(code, "ceb") == 0) return &sd_locale_ceb;
     if (sd_reg_strcmp(code, "cs") == 0) return &sd_locale_cs;
     if (sd_reg_strcmp(code, "cy") == 0) return &sd_locale_cy;
@@ -39,7 +41,9 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "de") == 0) return &sd_locale_de;
     if (sd_reg_strcmp(code, "din") == 0) return &sd_locale_din;
     if (sd_reg_strcmp(code, "dje") == 0) return &sd_locale_dje;
+    if (sd_reg_strcmp(code, "dv") == 0) return &sd_locale_dv;
     if (sd_reg_strcmp(code, "dyu") == 0) return &sd_locale_dyu;
+    if (sd_reg_strcmp(code, "dz") == 0) return &sd_locale_dz;
     if (sd_reg_strcmp(code, "ee") == 0) return &sd_locale_ee;
     if (sd_reg_strcmp(code, "el") == 0) return &sd_locale_el;
     if (sd_reg_strcmp(code, "en") == 0) return &sd_locale_en;
@@ -51,6 +55,7 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "ff") == 0) return &sd_locale_ff;
     if (sd_reg_strcmp(code, "fi") == 0) return &sd_locale_fi;
     if (sd_reg_strcmp(code, "fil") == 0) return &sd_locale_fil;
+    if (sd_reg_strcmp(code, "fj") == 0) return &sd_locale_fj;
     if (sd_reg_strcmp(code, "fon") == 0) return &sd_locale_fon;
     if (sd_reg_strcmp(code, "fr") == 0) return &sd_locale_fr;
     if (sd_reg_strcmp(code, "ga") == 0) return &sd_locale_ga;
@@ -62,6 +67,7 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "ha") == 0) return &sd_locale_ha;
     if (sd_reg_strcmp(code, "he") == 0) return &sd_locale_he;
     if (sd_reg_strcmp(code, "hi") == 0) return &sd_locale_hi;
+    if (sd_reg_strcmp(code, "hmn") == 0) return &sd_locale_hmn;
     if (sd_reg_strcmp(code, "hr") == 0) return &sd_locale_hr;
     if (sd_reg_strcmp(code, "ht") == 0) return &sd_locale_ht;
     if (sd_reg_strcmp(code, "hu") == 0) return &sd_locale_hu;
@@ -74,7 +80,9 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "jv") == 0) return &sd_locale_jv;
     if (sd_reg_strcmp(code, "ka") == 0) return &sd_locale_ka;
     if (sd_reg_strcmp(code, "kbp") == 0) return &sd_locale_kbp;
+    if (sd_reg_strcmp(code, "kek") == 0) return &sd_locale_kek;
     if (sd_reg_strcmp(code, "kk") == 0) return &sd_locale_kk;
+    if (sd_reg_strcmp(code, "kl") == 0) return &sd_locale_kl;
     if (sd_reg_strcmp(code, "km") == 0) return &sd_locale_km;
     if (sd_reg_strcmp(code, "kn") == 0) return &sd_locale_kn;
     if (sd_reg_strcmp(code, "ko") == 0) return &sd_locale_ko;
@@ -88,6 +96,7 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "lo") == 0) return &sd_locale_lo;
     if (sd_reg_strcmp(code, "lt") == 0) return &sd_locale_lt;
     if (sd_reg_strcmp(code, "lv") == 0) return &sd_locale_lv;
+    if (sd_reg_strcmp(code, "mam") == 0) return &sd_locale_mam;
     if (sd_reg_strcmp(code, "men") == 0) return &sd_locale_men;
     if (sd_reg_strcmp(code, "mfe") == 0) return &sd_locale_mfe;
     if (sd_reg_strcmp(code, "mg") == 0) return &sd_locale_mg;
@@ -112,11 +121,13 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "om") == 0) return &sd_locale_om;
     if (sd_reg_strcmp(code, "or") == 0) return &sd_locale_or;
     if (sd_reg_strcmp(code, "pa") == 0) return &sd_locale_pa;
+    if (sd_reg_strcmp(code, "pis") == 0) return &sd_locale_pis;
     if (sd_reg_strcmp(code, "pl") == 0) return &sd_locale_pl;
     if (sd_reg_strcmp(code, "pov") == 0) return &sd_locale_pov;
     if (sd_reg_strcmp(code, "ps") == 0) return &sd_locale_ps;
     if (sd_reg_strcmp(code, "pt") == 0) return &sd_locale_pt;
     if (sd_reg_strcmp(code, "qu") == 0) return &sd_locale_qu;
+    if (sd_reg_strcmp(code, "quc") == 0) return &sd_locale_quc;
     if (sd_reg_strcmp(code, "ro") == 0) return &sd_locale_ro;
     if (sd_reg_strcmp(code, "ru") == 0) return &sd_locale_ru;
     if (sd_reg_strcmp(code, "rw") == 0) return &sd_locale_rw;
@@ -124,6 +135,7 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "sd") == 0) return &sd_locale_sd;
     if (sd_reg_strcmp(code, "sg") == 0) return &sd_locale_sg;
     if (sd_reg_strcmp(code, "shi") == 0) return &sd_locale_shi;
+    if (sd_reg_strcmp(code, "shn") == 0) return &sd_locale_shn;
     if (sd_reg_strcmp(code, "si") == 0) return &sd_locale_si;
     if (sd_reg_strcmp(code, "sk") == 0) return &sd_locale_sk;
     if (sd_reg_strcmp(code, "sl") == 0) return &sd_locale_sl;
@@ -141,12 +153,14 @@ const SdDateLocale *sd_locale_get(const char *code) {
     if (sd_reg_strcmp(code, "ta") == 0) return &sd_locale_ta;
     if (sd_reg_strcmp(code, "te") == 0) return &sd_locale_te;
     if (sd_reg_strcmp(code, "tem") == 0) return &sd_locale_tem;
+    if (sd_reg_strcmp(code, "tet") == 0) return &sd_locale_tet;
     if (sd_reg_strcmp(code, "tg") == 0) return &sd_locale_tg;
     if (sd_reg_strcmp(code, "th") == 0) return &sd_locale_th;
     if (sd_reg_strcmp(code, "ti") == 0) return &sd_locale_ti;
     if (sd_reg_strcmp(code, "tig") == 0) return &sd_locale_tig;
     if (sd_reg_strcmp(code, "tk") == 0) return &sd_locale_tk;
     if (sd_reg_strcmp(code, "tn") == 0) return &sd_locale_tn;
+    if (sd_reg_strcmp(code, "tpi") == 0) return &sd_locale_tpi;
     if (sd_reg_strcmp(code, "tr") == 0) return &sd_locale_tr;
     if (sd_reg_strcmp(code, "ts") == 0) return &sd_locale_ts;
     if (sd_reg_strcmp(code, "tzm") == 0) return &sd_locale_tzm;

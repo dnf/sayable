@@ -21,11 +21,13 @@ import bci
 import be
 import bem
 import bg
+import bi
 import bm
 import bn
 import br
 import bs
 import ca
+import cak
 import ceb
 import cs
 import cy
@@ -33,7 +35,9 @@ import da
 import de
 import din
 import dje
+import dv
 import dyu
+import dz
 import ee
 import el
 import en
@@ -45,6 +49,7 @@ import fan
 import ff
 import fi
 import fil
+import fj
 import fon
 import fr
 import ga
@@ -56,6 +61,7 @@ import gv
 import ha
 import he
 import hi
+import hmn
 import hr
 import ht
 import hu
@@ -68,7 +74,9 @@ import ja
 import jv
 import ka
 import kbp
+import kek
 import kk
+import kl
 import km
 import kn
 import ko
@@ -82,6 +90,7 @@ import ln
 import lo
 import lt
 import lv
+import mam
 import men
 import mfe
 import mg
@@ -106,11 +115,13 @@ import ny
 import om
 import orLocale
 import pa
+import pis
 import pl
 import pov
 import ps
 import pt
 import qu
+import quc
 import ro
 import ru
 import rw
@@ -118,6 +129,7 @@ import sar
 import sd
 import sg
 import shi
+import shn
 import si
 import sk
 import sl
@@ -135,12 +147,14 @@ import sw
 import ta
 import te
 import tem
+import tet
 import tg
 import th
 import ti
 import tig
 import tk
 import tn
+import tpi
 import tr
 import ts
 import tzm
@@ -170,11 +184,13 @@ let allLocales = {
   "be": BE,
   "bem": BEM,
   "bg": BG,
+  "bi": BI,
   "bm": BM,
   "bn": BN,
   "br": BR,
   "bs": BS,
   "ca": CA,
+  "cak": CAK,
   "ceb": CEB,
   "cs": CS,
   "cy": CY,
@@ -182,7 +198,9 @@ let allLocales = {
   "de": DE,
   "din": DIN,
   "dje": DJE,
+  "dv": DV,
   "dyu": DYU,
+  "dz": DZ,
   "ee": EE,
   "el": EL,
   "en": EN,
@@ -194,6 +212,7 @@ let allLocales = {
   "ff": FF,
   "fi": FI,
   "fil": FIL,
+  "fj": FJ,
   "fon": FON,
   "fr": FR,
   "ga": GA,
@@ -205,6 +224,7 @@ let allLocales = {
   "ha": HA,
   "he": HE,
   "hi": HI,
+  "hmn": HMN,
   "hr": HR,
   "ht": HT,
   "hu": HU,
@@ -217,7 +237,9 @@ let allLocales = {
   "jv": JV,
   "ka": KA,
   "kbp": KBP,
+  "kek": KEK,
   "kk": KK,
+  "kl": KL,
   "km": KM,
   "kn": KN,
   "ko": KO,
@@ -231,6 +253,7 @@ let allLocales = {
   "lo": LO,
   "lt": LT,
   "lv": LV,
+  "mam": MAM,
   "men": MEN,
   "mfe": MFE,
   "mg": MG,
@@ -255,11 +278,13 @@ let allLocales = {
   "om": OM,
   "or": ORLOCALE,
   "pa": PA,
+  "pis": PIS,
   "pl": PL,
   "pov": POV,
   "ps": PS,
   "pt": PT,
   "qu": QU,
+  "quc": QUC,
   "ro": RO,
   "ru": RU,
   "rw": RW,
@@ -267,6 +292,7 @@ let allLocales = {
   "sd": SD,
   "sg": SG,
   "shi": SHI,
+  "shn": SHN,
   "si": SI,
   "sk": SK,
   "sl": SL,
@@ -284,12 +310,14 @@ let allLocales = {
   "ta": TA,
   "te": TE,
   "tem": TEM,
+  "tet": TET,
   "tg": TG,
   "th": TH,
   "ti": TI,
   "tig": TIG,
   "tk": TK,
   "tn": TN,
+  "tpi": TPI,
   "tr": TR,
   "ts": TS,
   "tzm": TZM,

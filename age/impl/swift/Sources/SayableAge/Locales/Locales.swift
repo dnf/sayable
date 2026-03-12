@@ -10,7 +10,7 @@
 
 // swiftlint:disable file_length
 
-/// All 145 locale definitions for sayable-age.
+/// All 159 locale definitions for sayable-age.
 public enum Locales {
 
     private static func pluralAr(_ n: Int) -> PluralCategory {
@@ -550,6 +550,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    public static let BI = AgeLocale(
+        code: "bi",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} dei"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} manis"),
+            year: .simple("{n} yia")
+        ),
+        half: "{n} mo haf",
+        delimiter: ", ",
+        justBorn: "Niufala bebe",
+        stages: Stages(
+            newborn: .neutral("Niufala bebe"),
+            infant: .neutral("Bebe"),
+            toddler: .neutral("Smol pikinini"),
+            child: .neutral("Pikinini"),
+            teenager: .neutral("Yangfala"),
+            adult: .neutral("Bigfala")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} dei"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} man"),
+            year: .simple("{n} yia"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -765,6 +809,50 @@ public enum Locales {
             month: .simple("{n} m"),
             year: .plural([.one: "{n} any", .other: "{n} anys"]),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    public static let CAK = AgeLocale(
+        code: "cak",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} wuqq'ij"),
+            month: .simple("{n} ik'"),
+            year: .simple("{n} junab'")
+        ),
+        half: "{0} nik'aj",
+        delimiter: ", ",
+        justBorn: "K'ak'a' ak'wal",
+        stages: Stages(
+            newborn: .neutral("K'ak'a' ak'wal"),
+            infant: .neutral("Yal ak'wal"),
+            toddler: .neutral("Ak'wal"),
+            child: .neutral("Ak'wal"),
+            teenager: .neutral("K'ajol"),
+            adult: .neutral("Achi")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} wuqq'ij"),
+            month: .simple("{n} ik'"),
+            year: .simple("{n} jun."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -1078,6 +1166,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    public static let DV = AgeLocale(
+        code: "dv",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} ދުވަސް"),
+            week: .simple("{n} ހަފްތާ"),
+            month: .simple("{n} މަސް"),
+            year: .simple("{n} އަހަރު")
+        ),
+        half: "{0} ބައި",
+        delimiter: "، ",
+        justBorn: "އަލަށް އުފަންވި",
+        stages: Stages(
+            newborn: .neutral("އަލަށް އުފަންވި"),
+            infant: .neutral("ތުއްތު ކުއްޖާ"),
+            toddler: .neutral("ހިނގާ ކުއްޖާ"),
+            child: .neutral("ކުޑަ ކުއްޖާ"),
+            teenager: .neutral("ފުރާވަރު"),
+            adult: .neutral("ބޮޑު މީހާ")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ދުވަސް"),
+            week: .simple("{n} ހަފްތާ"),
+            month: .simple("{n} މަސް"),
+            year: .simple("{n} އަހަރު"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -1117,6 +1249,50 @@ public enum Locales {
             month: .simple("kalo {n}"),
             year: .simple("san {n}"),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    public static let DZ = AgeLocale(
+        code: "dz",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("ཉིན་ {n}"),
+            week: .simple("བདུན་ཕྲག་ {n}"),
+            month: .simple("ཟླ་ {n}"),
+            year: .simple("ལོ་ {n}")
+        ),
+        half: "{0} ཕྱེད",
+        delimiter: " ",
+        justBorn: "གསར་སྐྱེས",
+        stages: Stages(
+            newborn: .neutral("གསར་སྐྱེས"),
+            infant: .neutral("ཕྲུ་གུ"),
+            toddler: .neutral("བྱིས་པ"),
+            child: .neutral("ཨ་ཅུང"),
+            teenager: .neutral("ན་གཞོན"),
+            adult: .neutral("མི་ལོན་ཚང")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("ཉིན་ {n}"),
+            week: .simple("བདུན་ཕྲག་ {n}"),
+            month: .simple("ཟླ་ {n}"),
+            year: .simple("ལོ་ {n}"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -1606,6 +1782,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    public static let FJ = AgeLocale(
+        code: "fj",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} na siga"),
+            week: .simple("{n} na macawa"),
+            month: .simple("{n} na vula"),
+            year: .simple("{n} na yabaki")
+        ),
+        half: "{n} kei na levu ni wasei",
+        delimiter: ", ",
+        justBorn: "Gone vou",
+        stages: Stages(
+            newborn: .neutral("Gone vou"),
+            infant: .neutral("Gone lalai"),
+            toddler: .neutral("Gone lailai"),
+            child: .neutral("Gone"),
+            teenager: .neutral("Cauravou"),
+            adult: .neutral("Tamata qase")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} siga"),
+            week: .simple("{n} mac."),
+            month: .simple("{n} vula"),
+            year: .simple("{n} yab."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/fon.json
     // ================================================================
     // FON — Fon
@@ -2085,6 +2305,50 @@ public enum Locales {
             month: .simple("{n} माह"),
             year: .simple("{n} व"),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    public static let HMN = AgeLocale(
+        code: "hmn",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} hnub"),
+            week: .simple("{n} lub lim tiam"),
+            month: .simple("{n} lub hlis"),
+            year: .simple("{n} xyoo")
+        ),
+        half: "{0} thiab ib nrab",
+        delimiter: ", ",
+        justBorn: "Nyuam qhuav yug",
+        stages: Stages(
+            newborn: .neutral("Nyuam qhuav yug"),
+            infant: .neutral("Me nyuam mos"),
+            toddler: .neutral("Me nyuam tseem taug kev"),
+            child: .neutral("Me nyuam"),
+            teenager: .neutral("Tub ntxhais hluas"),
+            adult: .neutral("Neeg laus")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} hnub"),
+            week: .simple("{n} lim tiam"),
+            month: .simple("{n} hlis"),
+            year: .simple("{n} xyoo"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -2618,6 +2882,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    public static let KEK = AgeLocale(
+        code: "kek",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} q'e"),
+            week: .simple("{n} seman"),
+            month: .simple("{n} po"),
+            year: .simple("{n} chihab'")
+        ),
+        half: "{0} ro'",
+        delimiter: ", ",
+        justBorn: "Ch'ina al",
+        stages: Stages(
+            newborn: .neutral("Ch'ina al"),
+            infant: .neutral("Ch'ina al"),
+            toddler: .neutral("Ko'kal"),
+            child: .neutral("Ko'kal"),
+            teenager: .neutral("Xk'aalum"),
+            adult: .neutral("Winq")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} q'e"),
+            week: .simple("{n} sem."),
+            month: .simple("{n} po"),
+            year: .simple("{n} chih."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -2657,6 +2965,50 @@ public enum Locales {
             month: .simple("{n} ай"),
             year: .simple("{n} ж."),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    public static let KL = AgeLocale(
+        code: "kl",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("ullut {n}"),
+            week: .simple("sapaatit {n}"),
+            month: .simple("qaammatit {n}"),
+            year: .simple("ukiut {n}")
+        ),
+        half: "{0} affaa",
+        delimiter: ", ",
+        justBorn: "Inuuneq nutaaq",
+        stages: Stages(
+            newborn: .neutral("Inuuneq nutaaq"),
+            infant: .neutral("Naalunngiaatitaq"),
+            toddler: .neutral("Meeraq"),
+            child: .neutral("Meeraq"),
+            teenager: .neutral("Inuusuttuaq"),
+            adult: .neutral("Inuk")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("ull. {n}"),
+            week: .simple("sap. {n}"),
+            month: .simple("qaam. {n}"),
+            year: .simple("uk. {n}"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -3228,6 +3580,50 @@ public enum Locales {
             week: .simple("{n} n."),
             month: .simple("{n} m."),
             year: .simple("{n} g."),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    public static let MAM = AgeLocale(
+        code: "mam",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} xjaw"),
+            month: .simple("{n} xjaw"),
+            year: .simple("{n} ab'q'ii")
+        ),
+        half: "{0} nik'",
+        delimiter: ", ",
+        justBorn: "Yal xjal",
+        stages: Stages(
+            newborn: .neutral("Yal xjal"),
+            infant: .neutral("Xkub'"),
+            toddler: .neutral("K'wal"),
+            child: .neutral("K'wal"),
+            teenager: .neutral("Q'a"),
+            adult: .neutral("Xjal")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} xjaw"),
+            month: .simple("{n} xjaw"),
+            year: .simple("{n} ab'."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
             half: nil,
             delimiter: "",
             justBorn: nil
@@ -4290,6 +4686,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    public static let PIS = AgeLocale(
+        code: "pis",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} dei"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} manis"),
+            year: .simple("{n} yia")
+        ),
+        half: "{n} en haf",
+        delimiter: ", ",
+        justBorn: "Niufala bebi",
+        stages: Stages(
+            newborn: .neutral("Niufala bebi"),
+            infant: .neutral("Bebi"),
+            toddler: .neutral("Smol pikinini"),
+            child: .neutral("Pikinini"),
+            teenager: .neutral("Yangfala"),
+            adult: .neutral("Bigfala")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} dei"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} man"),
+            year: .simple("{n} yia"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/pl.json
     // ================================================================
     // PL — Polish
@@ -4505,6 +4945,50 @@ public enum Locales {
             month: .simple("{n}m"),
             year: .simple("{n}y"),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    public static let QUC = AgeLocale(
+        code: "quc",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} wuqq'ij"),
+            month: .simple("{n} ik'"),
+            year: .simple("{n} junab'")
+        ),
+        half: "{0} nik'aj",
+        delimiter: ", ",
+        justBorn: "K'ak'a alaj",
+        stages: Stages(
+            newborn: .neutral("K'ak'a alaj"),
+            infant: .neutral("Alaj ak'al"),
+            toddler: .neutral("Ak'al"),
+            child: .neutral("Ak'al"),
+            teenager: .neutral("K'ajol"),
+            adult: .neutral("Achi")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} q'ij"),
+            week: .simple("{n} wuqq'ij"),
+            month: .simple("{n} ik'"),
+            year: .simple("{n} jun."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -4813,6 +5297,50 @@ public enum Locales {
             month: .simple("{n}m"),
             year: .simple("{n}y"),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    public static let SHN = AgeLocale(
+        code: "shn",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} ဝၼ်း"),
+            week: .simple("{n} ဝူင်ႈ"),
+            month: .simple("{n} လိူၼ်"),
+            year: .simple("{n} ပီ")
+        ),
+        half: "{0}ၶိုင်ႈ",
+        delimiter: " ",
+        justBorn: "ၶဝ်ႈမႃး",
+        stages: Stages(
+            newborn: .neutral("ၶဝ်ႈမႃး"),
+            infant: .neutral("လုၵ်ႈဢွၼ်ႇ"),
+            toddler: .neutral("လုၵ်ႈဢွၼ်ႇ"),
+            child: .neutral("လုၵ်ႈဢွၼ်ႇ"),
+            teenager: .neutral("ၵူၼ်းၼုမ်ႇ"),
+            adult: .neutral("ၵူၼ်းလူင်")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ဝၼ်း"),
+            week: .simple("{n} ဝူင်ႈ"),
+            month: .simple("{n} လိူၼ်"),
+            year: .simple("{n} ပီ"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -5566,6 +6094,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    public static let TET = AgeLocale(
+        code: "tet",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("loron {n}"),
+            week: .simple("semana {n}"),
+            month: .simple("fulan {n}"),
+            year: .simple("tinan {n}")
+        ),
+        half: "{0} ho balun",
+        delimiter: ", ",
+        justBorn: "Foin moris",
+        stages: Stages(
+            newborn: .neutral("Foin moris"),
+            infant: .neutral("Labarik ki'ik"),
+            toddler: .neutral("Labarik"),
+            child: .neutral("Baruk"),
+            teenager: .neutral("Joven"),
+            adult: .neutral("Ema boot")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("loron {n}"),
+            week: .simple("sem. {n}"),
+            month: .simple("fulan {n}"),
+            year: .simple("tinan {n}"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -5825,6 +6397,50 @@ public enum Locales {
             month: .simple("{n}m"),
             year: .simple("{n}y"),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    public static let TPI = AgeLocale(
+        code: "tpi",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} de"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} mun"),
+            year: .simple("{n} yia")
+        ),
+        half: "{n} na hap",
+        delimiter: ", ",
+        justBorn: "Nupela pikinini",
+        stages: Stages(
+            newborn: .neutral("Nupela pikinini"),
+            infant: .neutral("Pikinini"),
+            toddler: .neutral("Liklik pikinini"),
+            child: .neutral("Pikinini"),
+            teenager: .neutral("Yangpela"),
+            adult: .neutral("Bikpela man")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} de"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} mun"),
+            year: .simple("{n} yia"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -6544,11 +7160,13 @@ public enum Locales {
         "be": BE,
         "bem": BEM,
         "bg": BG,
+        "bi": BI,
         "bm": BM,
         "bn": BN,
         "br": BR,
         "bs": BS,
         "ca": CA,
+        "cak": CAK,
         "ceb": CEB,
         "cs": CS,
         "cy": CY,
@@ -6556,7 +7174,9 @@ public enum Locales {
         "de": DE,
         "din": DIN,
         "dje": DJE,
+        "dv": DV,
         "dyu": DYU,
+        "dz": DZ,
         "ee": EE,
         "el": EL,
         "en": EN,
@@ -6568,6 +7188,7 @@ public enum Locales {
         "ff": FF,
         "fi": FI,
         "fil": FIL,
+        "fj": FJ,
         "fon": FON,
         "fr": FR,
         "ga": GA,
@@ -6579,6 +7200,7 @@ public enum Locales {
         "ha": HA,
         "he": HE,
         "hi": HI,
+        "hmn": HMN,
         "hr": HR,
         "ht": HT,
         "hu": HU,
@@ -6591,7 +7213,9 @@ public enum Locales {
         "jv": JV,
         "ka": KA,
         "kbp": KBP,
+        "kek": KEK,
         "kk": KK,
+        "kl": KL,
         "km": KM,
         "kn": KN,
         "ko": KO,
@@ -6605,6 +7229,7 @@ public enum Locales {
         "lo": LO,
         "lt": LT,
         "lv": LV,
+        "mam": MAM,
         "men": MEN,
         "mfe": MFE,
         "mg": MG,
@@ -6629,11 +7254,13 @@ public enum Locales {
         "om": OM,
         "or": OR,
         "pa": PA,
+        "pis": PIS,
         "pl": PL,
         "pov": POV,
         "ps": PS,
         "pt": PT,
         "qu": QU,
+        "quc": QUC,
         "ro": RO,
         "ru": RU,
         "rw": RW,
@@ -6641,6 +7268,7 @@ public enum Locales {
         "sd": SD,
         "sg": SG,
         "shi": SHI,
+        "shn": SHN,
         "si": SI,
         "sk": SK,
         "sl": SL,
@@ -6658,12 +7286,14 @@ public enum Locales {
         "ta": TA,
         "te": TE,
         "tem": TEM,
+        "tet": TET,
         "tg": TG,
         "th": TH,
         "ti": TI,
         "tig": TIG,
         "tk": TK,
         "tn": TN,
+        "tpi": TPI,
         "tr": TR,
         "ts": TS,
         "tzm": TZM,

@@ -20,11 +20,13 @@ defmodule SayableDuration.Locales do
   def get("be"), do: {:ok, SayableDuration.Locales.BE.locale()}
   def get("bem"), do: {:ok, SayableDuration.Locales.BEM.locale()}
   def get("bg"), do: {:ok, SayableDuration.Locales.BG.locale()}
+  def get("bi"), do: {:ok, SayableDuration.Locales.BI.locale()}
   def get("bm"), do: {:ok, SayableDuration.Locales.BM.locale()}
   def get("bn"), do: {:ok, SayableDuration.Locales.BN.locale()}
   def get("br"), do: {:ok, SayableDuration.Locales.BR.locale()}
   def get("bs"), do: {:ok, SayableDuration.Locales.BS.locale()}
   def get("ca"), do: {:ok, SayableDuration.Locales.CA.locale()}
+  def get("cak"), do: {:ok, SayableDuration.Locales.CAK.locale()}
   def get("ceb"), do: {:ok, SayableDuration.Locales.CEB.locale()}
   def get("cs"), do: {:ok, SayableDuration.Locales.CS.locale()}
   def get("cy"), do: {:ok, SayableDuration.Locales.CY.locale()}
@@ -32,7 +34,9 @@ defmodule SayableDuration.Locales do
   def get("de"), do: {:ok, SayableDuration.Locales.DE.locale()}
   def get("din"), do: {:ok, SayableDuration.Locales.DIN.locale()}
   def get("dje"), do: {:ok, SayableDuration.Locales.DJE.locale()}
+  def get("dv"), do: {:ok, SayableDuration.Locales.DV.locale()}
   def get("dyu"), do: {:ok, SayableDuration.Locales.DYU.locale()}
+  def get("dz"), do: {:ok, SayableDuration.Locales.DZ.locale()}
   def get("ee"), do: {:ok, SayableDuration.Locales.EE.locale()}
   def get("el"), do: {:ok, SayableDuration.Locales.EL.locale()}
   def get("en"), do: {:ok, SayableDuration.Locales.EN.locale()}
@@ -44,6 +48,7 @@ defmodule SayableDuration.Locales do
   def get("ff"), do: {:ok, SayableDuration.Locales.FF.locale()}
   def get("fi"), do: {:ok, SayableDuration.Locales.FI.locale()}
   def get("fil"), do: {:ok, SayableDuration.Locales.FIL.locale()}
+  def get("fj"), do: {:ok, SayableDuration.Locales.FJ.locale()}
   def get("fon"), do: {:ok, SayableDuration.Locales.FON.locale()}
   def get("fr"), do: {:ok, SayableDuration.Locales.FR.locale()}
   def get("ga"), do: {:ok, SayableDuration.Locales.GA.locale()}
@@ -55,6 +60,7 @@ defmodule SayableDuration.Locales do
   def get("ha"), do: {:ok, SayableDuration.Locales.HA.locale()}
   def get("he"), do: {:ok, SayableDuration.Locales.HE.locale()}
   def get("hi"), do: {:ok, SayableDuration.Locales.HI.locale()}
+  def get("hmn"), do: {:ok, SayableDuration.Locales.HMN.locale()}
   def get("hr"), do: {:ok, SayableDuration.Locales.HR.locale()}
   def get("ht"), do: {:ok, SayableDuration.Locales.HT.locale()}
   def get("hu"), do: {:ok, SayableDuration.Locales.HU.locale()}
@@ -67,7 +73,9 @@ defmodule SayableDuration.Locales do
   def get("jv"), do: {:ok, SayableDuration.Locales.JV.locale()}
   def get("ka"), do: {:ok, SayableDuration.Locales.KA.locale()}
   def get("kbp"), do: {:ok, SayableDuration.Locales.KBP.locale()}
+  def get("kek"), do: {:ok, SayableDuration.Locales.KEK.locale()}
   def get("kk"), do: {:ok, SayableDuration.Locales.KK.locale()}
+  def get("kl"), do: {:ok, SayableDuration.Locales.KL.locale()}
   def get("km"), do: {:ok, SayableDuration.Locales.KM.locale()}
   def get("kn"), do: {:ok, SayableDuration.Locales.KN.locale()}
   def get("ko"), do: {:ok, SayableDuration.Locales.KO.locale()}
@@ -81,6 +89,7 @@ defmodule SayableDuration.Locales do
   def get("lo"), do: {:ok, SayableDuration.Locales.LO.locale()}
   def get("lt"), do: {:ok, SayableDuration.Locales.LT.locale()}
   def get("lv"), do: {:ok, SayableDuration.Locales.LV.locale()}
+  def get("mam"), do: {:ok, SayableDuration.Locales.MAM.locale()}
   def get("men"), do: {:ok, SayableDuration.Locales.MEN.locale()}
   def get("mfe"), do: {:ok, SayableDuration.Locales.MFE.locale()}
   def get("mg"), do: {:ok, SayableDuration.Locales.MG.locale()}
@@ -105,11 +114,13 @@ defmodule SayableDuration.Locales do
   def get("om"), do: {:ok, SayableDuration.Locales.OM.locale()}
   def get("or"), do: {:ok, SayableDuration.Locales.OR.locale()}
   def get("pa"), do: {:ok, SayableDuration.Locales.PA.locale()}
+  def get("pis"), do: {:ok, SayableDuration.Locales.PIS.locale()}
   def get("pl"), do: {:ok, SayableDuration.Locales.PL.locale()}
   def get("pov"), do: {:ok, SayableDuration.Locales.POV.locale()}
   def get("ps"), do: {:ok, SayableDuration.Locales.PS.locale()}
   def get("pt"), do: {:ok, SayableDuration.Locales.PT.locale()}
   def get("qu"), do: {:ok, SayableDuration.Locales.QU.locale()}
+  def get("quc"), do: {:ok, SayableDuration.Locales.QUC.locale()}
   def get("ro"), do: {:ok, SayableDuration.Locales.RO.locale()}
   def get("ru"), do: {:ok, SayableDuration.Locales.RU.locale()}
   def get("rw"), do: {:ok, SayableDuration.Locales.RW.locale()}
@@ -117,6 +128,7 @@ defmodule SayableDuration.Locales do
   def get("sd"), do: {:ok, SayableDuration.Locales.SD.locale()}
   def get("sg"), do: {:ok, SayableDuration.Locales.SG.locale()}
   def get("shi"), do: {:ok, SayableDuration.Locales.SHI.locale()}
+  def get("shn"), do: {:ok, SayableDuration.Locales.SHN.locale()}
   def get("si"), do: {:ok, SayableDuration.Locales.SI.locale()}
   def get("sk"), do: {:ok, SayableDuration.Locales.SK.locale()}
   def get("sl"), do: {:ok, SayableDuration.Locales.SL.locale()}
@@ -134,12 +146,14 @@ defmodule SayableDuration.Locales do
   def get("ta"), do: {:ok, SayableDuration.Locales.TA.locale()}
   def get("te"), do: {:ok, SayableDuration.Locales.TE.locale()}
   def get("tem"), do: {:ok, SayableDuration.Locales.TEM.locale()}
+  def get("tet"), do: {:ok, SayableDuration.Locales.TET.locale()}
   def get("tg"), do: {:ok, SayableDuration.Locales.TG.locale()}
   def get("th"), do: {:ok, SayableDuration.Locales.TH.locale()}
   def get("ti"), do: {:ok, SayableDuration.Locales.TI.locale()}
   def get("tig"), do: {:ok, SayableDuration.Locales.TIG.locale()}
   def get("tk"), do: {:ok, SayableDuration.Locales.TK.locale()}
   def get("tn"), do: {:ok, SayableDuration.Locales.TN.locale()}
+  def get("tpi"), do: {:ok, SayableDuration.Locales.TPI.locale()}
   def get("tr"), do: {:ok, SayableDuration.Locales.TR.locale()}
   def get("ts"), do: {:ok, SayableDuration.Locales.TS.locale()}
   def get("tzm"), do: {:ok, SayableDuration.Locales.TZM.locale()}

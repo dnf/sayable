@@ -68,6 +68,57 @@ class LocalesQZ {
         null
     )
 
+    // Source: duration/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    static final DurationLocale QUC = new DurationLocale(
+        'quc',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} tz\'aqat'),
+            UnitForms.simpleUnit('{n} ch\'utaq ramaj'),
+            UnitForms.simpleUnit('{n} ramaj'),
+            UnitForms.simpleUnit('{n} q\'ij'),
+            UnitForms.simpleUnit('{n} wuqq\'ij'),
+            UnitForms.simpleUnit('{n} ik\''),
+            UnitForms.simpleUnit('{n} junab\'')
+        ),
+        '{0} nik\'aj',
+        ', ',
+        'kamik',
+        '{0} k\'o chi',
+        'pa {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} tz\'aq.'),
+            UnitForms.simpleUnit('{n} ch\'ut.'),
+            UnitForms.simpleUnit('{n} ram.'),
+            UnitForms.simpleUnit('{n} q\'ij'),
+            UnitForms.simpleUnit('{n} wuqq\'ij'),
+            UnitForms.simpleUnit('{n} ik\''),
+            UnitForms.simpleUnit('{n} jun.'),
+            null,
+            null,
+            '{0} k\'o chi',
+            'pa {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} k\'o chi',
+            'pa {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/ro.json
     // ================================================================
     // RO — Romanian
@@ -434,6 +485,57 @@ class LocalesQZ {
             '',
             'ɣ {0} zzrin',
             'ɣ {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    static final DurationLocale SHN = new DurationLocale(
+        'shn',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} ဝိၼႃးတီႇ'),
+            UnitForms.simpleUnit('{n} မိၼိတ်ႉ'),
+            UnitForms.simpleUnit('{n} ၸူဝ်ႈမူင်း'),
+            UnitForms.simpleUnit('{n} ဝၼ်း'),
+            UnitForms.simpleUnit('{n} ဝူင်ႈ'),
+            UnitForms.simpleUnit('{n} လိူၼ်'),
+            UnitForms.simpleUnit('{n} ပီ')
+        ),
+        '{0}ၶိုင်ႈ',
+        ' ',
+        'ယၢမ်းလဵဝ်',
+        '{0} ပူၼ်ႉမႃး',
+        'ထႅင်ႈ {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ဝိၼႃး'),
+            UnitForms.simpleUnit('{n} မိၼိတ်ႉ'),
+            UnitForms.simpleUnit('{n} ၸူဝ်ႈ'),
+            UnitForms.simpleUnit('{n} ဝၼ်း'),
+            UnitForms.simpleUnit('{n} ဝူင်ႈ'),
+            UnitForms.simpleUnit('{n} လိူၼ်'),
+            UnitForms.simpleUnit('{n} ပီ'),
+            null,
+            null,
+            '{0} ပူၼ်ႉမႃး',
+            'ထႅင်ႈ {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} ပူၼ်ႉမႃး',
+            'ထႅင်ႈ {0}'
         ),
         null,
         null
@@ -1322,6 +1424,57 @@ class LocalesQZ {
         null
     )
 
+    // Source: duration/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    static final DurationLocale TET = new DurationLocale(
+        'tet',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('segundu {n}'),
+            UnitForms.simpleUnit('minutu {n}'),
+            UnitForms.simpleUnit('oras {n}'),
+            UnitForms.simpleUnit('loron {n}'),
+            UnitForms.simpleUnit('semana {n}'),
+            UnitForms.simpleUnit('fulan {n}'),
+            UnitForms.simpleUnit('tinan {n}')
+        ),
+        '{0} ho balun',
+        ', ',
+        'agora deit',
+        '{0} liu ba',
+        'iha {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('seg. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('oras {n}'),
+            UnitForms.simpleUnit('loron {n}'),
+            UnitForms.simpleUnit('sem. {n}'),
+            UnitForms.simpleUnit('fulan {n}'),
+            UnitForms.simpleUnit('tinan {n}'),
+            null,
+            null,
+            '{0} liu ba',
+            'iha {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} liu ba',
+            'iha {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -1623,6 +1776,57 @@ class LocalesQZ {
             '',
             '{0} e e fetileng',
             'ka {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    static final DurationLocale TPI = new DurationLocale(
+        'tpi',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} sekon'),
+            UnitForms.simpleUnit('{n} minit'),
+            UnitForms.simpleUnit('{n} aua'),
+            UnitForms.simpleUnit('{n} de'),
+            UnitForms.simpleUnit('{n} wik'),
+            UnitForms.simpleUnit('{n} mun'),
+            UnitForms.simpleUnit('{n} yia')
+        ),
+        '{n} na hap',
+        ', ',
+        'nau tasol',
+        '{0} i go pinis',
+        'long {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} sek'),
+            UnitForms.simpleUnit('{n} min'),
+            UnitForms.simpleUnit('{n} aua'),
+            UnitForms.simpleUnit('{n} de'),
+            UnitForms.simpleUnit('{n} wik'),
+            UnitForms.simpleUnit('{n} mun'),
+            UnitForms.simpleUnit('{n} yia'),
+            null,
+            null,
+            '{0} i go pinis',
+            'long {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} i go pinis',
+            'long {0}'
         ),
         null,
         null

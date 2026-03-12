@@ -19,11 +19,13 @@
     [sayableage.locales.be :as be]
     [sayableage.locales.bem :as bem]
     [sayableage.locales.bg :as bg]
+    [sayableage.locales.bi :as bi]
     [sayableage.locales.bm :as bm]
     [sayableage.locales.bn :as bn]
     [sayableage.locales.br :as br]
     [sayableage.locales.bs :as bs]
     [sayableage.locales.ca :as ca]
+    [sayableage.locales.cak :as cak]
     [sayableage.locales.ceb :as ceb]
     [sayableage.locales.cs :as cs]
     [sayableage.locales.cy :as cy]
@@ -31,7 +33,9 @@
     [sayableage.locales.de :as de]
     [sayableage.locales.din :as din]
     [sayableage.locales.dje :as dje]
+    [sayableage.locales.dv :as dv]
     [sayableage.locales.dyu :as dyu]
+    [sayableage.locales.dz :as dz]
     [sayableage.locales.ee :as ee]
     [sayableage.locales.el :as el]
     [sayableage.locales.en :as en]
@@ -43,6 +47,7 @@
     [sayableage.locales.ff :as ff]
     [sayableage.locales.fi :as fi]
     [sayableage.locales.fil :as fil]
+    [sayableage.locales.fj :as fj]
     [sayableage.locales.fon :as fon]
     [sayableage.locales.fr :as fr]
     [sayableage.locales.ga :as ga]
@@ -54,6 +59,7 @@
     [sayableage.locales.ha :as ha]
     [sayableage.locales.he :as he]
     [sayableage.locales.hi :as hi]
+    [sayableage.locales.hmn :as hmn]
     [sayableage.locales.hr :as hr]
     [sayableage.locales.ht :as ht]
     [sayableage.locales.hu :as hu]
@@ -66,7 +72,9 @@
     [sayableage.locales.jv :as jv]
     [sayableage.locales.ka :as ka]
     [sayableage.locales.kbp :as kbp]
+    [sayableage.locales.kek :as kek]
     [sayableage.locales.kk :as kk]
+    [sayableage.locales.kl :as kl]
     [sayableage.locales.km :as km]
     [sayableage.locales.kn :as kn]
     [sayableage.locales.ko :as ko]
@@ -80,6 +88,7 @@
     [sayableage.locales.lo :as lo]
     [sayableage.locales.lt :as lt]
     [sayableage.locales.lv :as lv]
+    [sayableage.locales.mam :as mam]
     [sayableage.locales.men :as men]
     [sayableage.locales.mfe :as mfe]
     [sayableage.locales.mg :as mg]
@@ -104,11 +113,13 @@
     [sayableage.locales.om :as om]
     [sayableage.locales.or :as or]
     [sayableage.locales.pa :as pa]
+    [sayableage.locales.pis :as pis]
     [sayableage.locales.pl :as pl]
     [sayableage.locales.pov :as pov]
     [sayableage.locales.ps :as ps]
     [sayableage.locales.pt :as pt]
     [sayableage.locales.qu :as qu]
+    [sayableage.locales.quc :as quc]
     [sayableage.locales.ro :as ro]
     [sayableage.locales.ru :as ru]
     [sayableage.locales.rw :as rw]
@@ -116,6 +127,7 @@
     [sayableage.locales.sd :as sd]
     [sayableage.locales.sg :as sg]
     [sayableage.locales.shi :as shi]
+    [sayableage.locales.shn :as shn]
     [sayableage.locales.si :as si]
     [sayableage.locales.sk :as sk]
     [sayableage.locales.sl :as sl]
@@ -133,12 +145,14 @@
     [sayableage.locales.ta :as ta]
     [sayableage.locales.te :as te]
     [sayableage.locales.tem :as tem]
+    [sayableage.locales.tet :as tet]
     [sayableage.locales.tg :as tg]
     [sayableage.locales.th :as th]
     [sayableage.locales.ti :as ti]
     [sayableage.locales.tig :as tig]
     [sayableage.locales.tk :as tk]
     [sayableage.locales.tn :as tn]
+    [sayableage.locales.tpi :as tpi]
     [sayableage.locales.tr :as tr]
     [sayableage.locales.ts :as ts]
     [sayableage.locales.tzm :as tzm]
@@ -168,11 +182,13 @@
     "be" be/locale
     "bem" bem/locale
     "bg" bg/locale
+    "bi" bi/locale
     "bm" bm/locale
     "bn" bn/locale
     "br" br/locale
     "bs" bs/locale
     "ca" ca/locale
+    "cak" cak/locale
     "ceb" ceb/locale
     "cs" cs/locale
     "cy" cy/locale
@@ -180,7 +196,9 @@
     "de" de/locale
     "din" din/locale
     "dje" dje/locale
+    "dv" dv/locale
     "dyu" dyu/locale
+    "dz" dz/locale
     "ee" ee/locale
     "el" el/locale
     "en" en/locale
@@ -192,6 +210,7 @@
     "ff" ff/locale
     "fi" fi/locale
     "fil" fil/locale
+    "fj" fj/locale
     "fon" fon/locale
     "fr" fr/locale
     "ga" ga/locale
@@ -203,6 +222,7 @@
     "ha" ha/locale
     "he" he/locale
     "hi" hi/locale
+    "hmn" hmn/locale
     "hr" hr/locale
     "ht" ht/locale
     "hu" hu/locale
@@ -215,7 +235,9 @@
     "jv" jv/locale
     "ka" ka/locale
     "kbp" kbp/locale
+    "kek" kek/locale
     "kk" kk/locale
+    "kl" kl/locale
     "km" km/locale
     "kn" kn/locale
     "ko" ko/locale
@@ -229,6 +251,7 @@
     "lo" lo/locale
     "lt" lt/locale
     "lv" lv/locale
+    "mam" mam/locale
     "men" men/locale
     "mfe" mfe/locale
     "mg" mg/locale
@@ -253,11 +276,13 @@
     "om" om/locale
     "or" or/locale
     "pa" pa/locale
+    "pis" pis/locale
     "pl" pl/locale
     "pov" pov/locale
     "ps" ps/locale
     "pt" pt/locale
     "qu" qu/locale
+    "quc" quc/locale
     "ro" ro/locale
     "ru" ru/locale
     "rw" rw/locale
@@ -265,6 +290,7 @@
     "sd" sd/locale
     "sg" sg/locale
     "shi" shi/locale
+    "shn" shn/locale
     "si" si/locale
     "sk" sk/locale
     "sl" sl/locale
@@ -282,12 +308,14 @@
     "ta" ta/locale
     "te" te/locale
     "tem" tem/locale
+    "tet" tet/locale
     "tg" tg/locale
     "th" th/locale
     "ti" ti/locale
     "tig" tig/locale
     "tk" tk/locale
     "tn" tn/locale
+    "tpi" tpi/locale
     "tr" tr/locale
     "ts" ts/locale
     "tzm" tzm/locale

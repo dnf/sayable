@@ -24,14 +24,14 @@ let DA* = TimeLocale(
   short: some(CompactnessOverride(
     clock: some(ShortClockConfig(
       use24h: true,
-      format: "{h}:{mm}",
+      format: "{h}.{mm}",
       amPm: none((string, string)),
     )),
   )),
   compact: some(CompactnessOverride(
     clock: some(ShortClockConfig(
       use24h: true,
-      format: "{h}:{mm}",
+      format: "{h}.{mm}",
       amPm: none((string, string)),
     )),
   )),

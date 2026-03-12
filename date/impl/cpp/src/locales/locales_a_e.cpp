@@ -436,6 +436,53 @@ const DateLocale& BG() {
     return loc;
 }
 
+// Source: date/locales/src/bi.json
+const DateLocale& BI() {
+    static const DateLocale loc{
+        "bi",
+        {"Janueri", "Februari", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogis", "Septemba", "Oktoba", "Novemba", "Disemba"},
+        {"Sande", "Mande", "Tusde", "Wenesde", "Tosde", "Fraede", "Sarede"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tede", "tumoro", "yestedei",
+        "bihaen tumoro",
+        "bifo yestedei",
+        "disfala {weekday}",
+        "nekis {weekday}",
+        "las {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Ogi", "Sep", "Okt", "Nov", "Dis"},
+            {},
+            {"San", "Man", "Tus", "Wen", "Tos", "Fra", "Sar"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/bm.json
 const DateLocale& BM() {
     static const DateLocale loc{
@@ -645,6 +692,53 @@ const DateLocale& CA() {
             {"gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des"},
             {},
             {"dg", "dl", "dt", "dc", "dj", "dv", "ds"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/cak.json
+const DateLocale& CAK() {
+    static const DateLocale loc{
+        "cak",
+        {"Nab'ey ik'", "Ruka'n ik'", "Rox ik'", "Rukaj ik'", "Ro' ik'", "Ruwaq ik'", "Ruwuq ik'", "Ruwajxaq ik'", "Rub'elej ik'", "Rulaj ik'", "Rujulaj ik'", "Rukab'laj ik'"},
+        {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "wakami", "chwe'q", "iwïr",
+        "ka'i' q'ij chwe'q",
+        "ka'i' q'ij iwïr",
+        "re' {weekday}",
+        "{weekday} ri petenäq",
+        "{weekday} ri xik'o",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'"},
+            {},
+            {"Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"},
             "{n}",
             {},
             false,
@@ -1000,6 +1094,53 @@ const DateLocale& DJE() {
     return loc;
 }
 
+// Source: date/locales/src/dv.json
+const DateLocale& DV() {
+    static const DateLocale loc{
+        "dv",
+        {"ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އެޕްރީލު", "މެއި", "ޖޫން", "ޖުލައި", "އޮގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު"},
+        {"އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "މިއަދު", "މާދަމާ", "އިއްޔެ",
+        "އަނެއް ދުވަހު",
+        "ކުރީ ދުވަހު",
+        "މި {weekday}",
+        "އަންނަ {weekday}",
+        "ފާއިތުވި {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"ޖެނު", "ފެބް", "މާރި", "އެޕް", "މެއި", "ޖޫން", "ޖުލް", "އޮގް", "ސެޕް", "އޮކް", "ނޮވް", "ޑިސް"},
+            {},
+            {"އާދީ", "ހޯމަ", "އަން", "ބުދަ", "ބުރާ", "ހުކު", "ހޮނި"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/dyu.json
 const DateLocale& DYU() {
     static const DateLocale loc{
@@ -1039,6 +1180,53 @@ const DateLocale& DYU() {
             false,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/dz.json
+const DateLocale& DZ() {
+    static const DateLocale loc{
+        "dz",
+        {"ཟླ་དངཔ", "ཟླ་གཉིས་པ", "ཟླ་གསུམ་པ", "ཟླ་བཞི་པ", "ཟླ་ལྔ་པ", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ", "ཟླ་བརྒྱད་པ", "ཟླ་དགུ་པ", "ཟླ་བཅུ་པ", "ཟླ་བཅུ་གཅིག་པ", "ཟླ་བཅུ་གཉིས་པ"},
+        {"གཟའ་ཉི་མ", "གཟའ་ཟླ་བ", "གཟའ་མིག་དམར", "གཟའ་ལྷག་པ", "གཟའ་ཕུར་བུ", "གཟའ་པ་སངས", "གཟའ་སྤེན་པ"},
+        "{n}",
+        {},
+        "{month} {day}",
+        "{year} {month} {day}",
+        "དི་རིང", "ནངས་པ", "ཁ་ཙ",
+        "གནངས་ཚེ",
+        "ཁ་ཉིམ",
+        "འདི་ {weekday}",
+        "{weekday} ཤུལ་མ",
+        "{weekday} ཧེ་མ",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"ཟླ་༡", "ཟླ་༢", "ཟླ་༣", "ཟླ་༤", "ཟླ་༥", "ཟླ་༦", "ཟླ་༧", "ཟླ་༨", "ཟླ་༩", "ཟླ་༡༠", "ཟླ་༡༡", "ཟླ་༡༢"},
+            {},
+            {"ཉི", "ཟླ", "མིག", "ལྷག", "ཕུར", "སངས", "སྤེན"},
+            "{n}",
+            {},
+            false,
+            "{month} {day}",
+            "{year} {month} {day}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{yy}/{m}/{d}",
+            "{yy}/{m}/{d}",
             "",
             "",
             ""

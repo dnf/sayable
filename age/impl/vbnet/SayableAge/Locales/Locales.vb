@@ -13,7 +13,7 @@ Imports System.Collections.Generic
 Namespace SayableAgeLib
 
 ''' <summary>
-''' All 145 locale definitions for sayable-age.
+''' All 159 locale definitions for sayable-age.
 ''' </summary>
 Public Module Locales
 
@@ -554,6 +554,50 @@ Public Module Locales
         )
     )
 
+    ' Source: age/locales/src/bi.json
+    ' ================================================================
+    ' BI — Bislama
+    ' ================================================================
+    Public ReadOnly BI As New AgeLocale(
+        "bi",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} dei"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} manis"),
+            UnitForms.Simple("{n} yia")
+        ),
+        "{n} mo haf",
+        ", ",
+        "Niufala bebe",
+        New Stages(
+            StageLabel.Neutral("Niufala bebe"),
+            StageLabel.Neutral("Bebe"),
+            StageLabel.Neutral("Smol pikinini"),
+            StageLabel.Neutral("Pikinini"),
+            StageLabel.Neutral("Yangfala"),
+            StageLabel.Neutral("Bigfala")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} dei"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} man"),
+            UnitForms.Simple("{n} yia"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            Nothing
+        )
+    )
+
     ' Source: age/locales/src/bm.json
     ' ================================================================
     ' BM — Bambara
@@ -769,6 +813,50 @@ Public Module Locales
             UnitForms.Simple("{n} m"),
             UnitForms.Plural(New Dictionary(Of PluralCategory, String) From { { PluralCategory.One, "{n} any" }, { PluralCategory.Other, "{n} anys" } }),
             "{n}½",
+            "",
+            Nothing
+        )
+    )
+
+    ' Source: age/locales/src/cak.json
+    ' ================================================================
+    ' CAK — Kaqchikel
+    ' ================================================================
+    Public ReadOnly CAK As New AgeLocale(
+        "cak",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} wuqq'ij"),
+            UnitForms.Simple("{n} ik'"),
+            UnitForms.Simple("{n} junab'")
+        ),
+        "{0} nik'aj",
+        ", ",
+        "K'ak'a' ak'wal",
+        New Stages(
+            StageLabel.Neutral("K'ak'a' ak'wal"),
+            StageLabel.Neutral("Yal ak'wal"),
+            StageLabel.Neutral("Ak'wal"),
+            StageLabel.Neutral("Ak'wal"),
+            StageLabel.Neutral("K'ajol"),
+            StageLabel.Neutral("Achi")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} wuqq'ij"),
+            UnitForms.Simple("{n} ik'"),
+            UnitForms.Simple("{n} jun."),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
             "",
             Nothing
         )
@@ -1082,6 +1170,50 @@ Public Module Locales
         )
     )
 
+    ' Source: age/locales/src/dv.json
+    ' ================================================================
+    ' DV — Dhivehi
+    ' ================================================================
+    Public ReadOnly DV As New AgeLocale(
+        "dv",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} ދުވަސް"),
+            UnitForms.Simple("{n} ހަފްތާ"),
+            UnitForms.Simple("{n} މަސް"),
+            UnitForms.Simple("{n} އަހަރު")
+        ),
+        "{0} ބައި",
+        "، ",
+        "އަލަށް އުފަންވި",
+        New Stages(
+            StageLabel.Neutral("އަލަށް އުފަންވި"),
+            StageLabel.Neutral("ތުއްތު ކުއްޖާ"),
+            StageLabel.Neutral("ހިނގާ ކުއްޖާ"),
+            StageLabel.Neutral("ކުޑަ ކުއްޖާ"),
+            StageLabel.Neutral("ފުރާވަރު"),
+            StageLabel.Neutral("ބޮޑު މީހާ")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} ދުވަސް"),
+            UnitForms.Simple("{n} ހަފްތާ"),
+            UnitForms.Simple("{n} މަސް"),
+            UnitForms.Simple("{n} އަހަރު"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            Nothing
+        )
+    )
+
     ' Source: age/locales/src/dyu.json
     ' ================================================================
     ' DYU — Dyula
@@ -1121,6 +1253,50 @@ Public Module Locales
             UnitForms.Simple("kalo {n}"),
             UnitForms.Simple("san {n}"),
             "{n}½",
+            "",
+            Nothing
+        )
+    )
+
+    ' Source: age/locales/src/dz.json
+    ' ================================================================
+    ' DZ — Dzongkha
+    ' ================================================================
+    Public ReadOnly DZ As New AgeLocale(
+        "dz",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("ཉིན་ {n}"),
+            UnitForms.Simple("བདུན་ཕྲག་ {n}"),
+            UnitForms.Simple("ཟླ་ {n}"),
+            UnitForms.Simple("ལོ་ {n}")
+        ),
+        "{0} ཕྱེད",
+        " ",
+        "གསར་སྐྱེས",
+        New Stages(
+            StageLabel.Neutral("གསར་སྐྱེས"),
+            StageLabel.Neutral("ཕྲུ་གུ"),
+            StageLabel.Neutral("བྱིས་པ"),
+            StageLabel.Neutral("ཨ་ཅུང"),
+            StageLabel.Neutral("ན་གཞོན"),
+            StageLabel.Neutral("མི་ལོན་ཚང")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("ཉིན་ {n}"),
+            UnitForms.Simple("བདུན་ཕྲག་ {n}"),
+            UnitForms.Simple("ཟླ་ {n}"),
+            UnitForms.Simple("ལོ་ {n}"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
             "",
             Nothing
         )
@@ -1610,6 +1786,50 @@ Public Module Locales
         )
     )
 
+    ' Source: age/locales/src/fj.json
+    ' ================================================================
+    ' FJ — Fijian
+    ' ================================================================
+    Public ReadOnly FJ As New AgeLocale(
+        "fj",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} na siga"),
+            UnitForms.Simple("{n} na macawa"),
+            UnitForms.Simple("{n} na vula"),
+            UnitForms.Simple("{n} na yabaki")
+        ),
+        "{n} kei na levu ni wasei",
+        ", ",
+        "Gone vou",
+        New Stages(
+            StageLabel.Neutral("Gone vou"),
+            StageLabel.Neutral("Gone lalai"),
+            StageLabel.Neutral("Gone lailai"),
+            StageLabel.Neutral("Gone"),
+            StageLabel.Neutral("Cauravou"),
+            StageLabel.Neutral("Tamata qase")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} siga"),
+            UnitForms.Simple("{n} mac."),
+            UnitForms.Simple("{n} vula"),
+            UnitForms.Simple("{n} yab."),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            Nothing
+        )
+    )
+
     ' Source: age/locales/src/fon.json
     ' ================================================================
     ' FON — Fon
@@ -2089,6 +2309,50 @@ Public Module Locales
             UnitForms.Simple("{n} माह"),
             UnitForms.Simple("{n} व"),
             "{n}½",
+            "",
+            Nothing
+        )
+    )
+
+    ' Source: age/locales/src/hmn.json
+    ' ================================================================
+    ' HMN — Hmong
+    ' ================================================================
+    Public ReadOnly HMN As New AgeLocale(
+        "hmn",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} hnub"),
+            UnitForms.Simple("{n} lub lim tiam"),
+            UnitForms.Simple("{n} lub hlis"),
+            UnitForms.Simple("{n} xyoo")
+        ),
+        "{0} thiab ib nrab",
+        ", ",
+        "Nyuam qhuav yug",
+        New Stages(
+            StageLabel.Neutral("Nyuam qhuav yug"),
+            StageLabel.Neutral("Me nyuam mos"),
+            StageLabel.Neutral("Me nyuam tseem taug kev"),
+            StageLabel.Neutral("Me nyuam"),
+            StageLabel.Neutral("Tub ntxhais hluas"),
+            StageLabel.Neutral("Neeg laus")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} hnub"),
+            UnitForms.Simple("{n} lim tiam"),
+            UnitForms.Simple("{n} hlis"),
+            UnitForms.Simple("{n} xyoo"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
             "",
             Nothing
         )
@@ -2622,6 +2886,50 @@ Public Module Locales
         )
     )
 
+    ' Source: age/locales/src/kek.json
+    ' ================================================================
+    ' KEK — Q'eqchi'
+    ' ================================================================
+    Public ReadOnly KEK As New AgeLocale(
+        "kek",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} q'e"),
+            UnitForms.Simple("{n} seman"),
+            UnitForms.Simple("{n} po"),
+            UnitForms.Simple("{n} chihab'")
+        ),
+        "{0} ro'",
+        ", ",
+        "Ch'ina al",
+        New Stages(
+            StageLabel.Neutral("Ch'ina al"),
+            StageLabel.Neutral("Ch'ina al"),
+            StageLabel.Neutral("Ko'kal"),
+            StageLabel.Neutral("Ko'kal"),
+            StageLabel.Neutral("Xk'aalum"),
+            StageLabel.Neutral("Winq")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} q'e"),
+            UnitForms.Simple("{n} sem."),
+            UnitForms.Simple("{n} po"),
+            UnitForms.Simple("{n} chih."),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            Nothing
+        )
+    )
+
     ' Source: age/locales/src/kk.json
     ' ================================================================
     ' KK — Kazakh
@@ -2661,6 +2969,50 @@ Public Module Locales
             UnitForms.Simple("{n} ай"),
             UnitForms.Simple("{n} ж."),
             "{n}½",
+            "",
+            Nothing
+        )
+    )
+
+    ' Source: age/locales/src/kl.json
+    ' ================================================================
+    ' KL — Kalaallisut
+    ' ================================================================
+    Public ReadOnly KL As New AgeLocale(
+        "kl",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("ullut {n}"),
+            UnitForms.Simple("sapaatit {n}"),
+            UnitForms.Simple("qaammatit {n}"),
+            UnitForms.Simple("ukiut {n}")
+        ),
+        "{0} affaa",
+        ", ",
+        "Inuuneq nutaaq",
+        New Stages(
+            StageLabel.Neutral("Inuuneq nutaaq"),
+            StageLabel.Neutral("Naalunngiaatitaq"),
+            StageLabel.Neutral("Meeraq"),
+            StageLabel.Neutral("Meeraq"),
+            StageLabel.Neutral("Inuusuttuaq"),
+            StageLabel.Neutral("Inuk")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("ull. {n}"),
+            UnitForms.Simple("sap. {n}"),
+            UnitForms.Simple("qaam. {n}"),
+            UnitForms.Simple("uk. {n}"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
             "",
             Nothing
         )
@@ -3232,6 +3584,50 @@ Public Module Locales
             UnitForms.Simple("{n} n."),
             UnitForms.Simple("{n} m."),
             UnitForms.Simple("{n} g."),
+            Nothing,
+            "",
+            Nothing
+        )
+    )
+
+    ' Source: age/locales/src/mam.json
+    ' ================================================================
+    ' MAM — Mam
+    ' ================================================================
+    Public ReadOnly MAM As New AgeLocale(
+        "mam",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} ab'q'ii")
+        ),
+        "{0} nik'",
+        ", ",
+        "Yal xjal",
+        New Stages(
+            StageLabel.Neutral("Yal xjal"),
+            StageLabel.Neutral("Xkub'"),
+            StageLabel.Neutral("K'wal"),
+            StageLabel.Neutral("K'wal"),
+            StageLabel.Neutral("Q'a"),
+            StageLabel.Neutral("Xjal")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} ab'."),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
             Nothing,
             "",
             Nothing
@@ -4294,6 +4690,50 @@ Public Module Locales
         )
     )
 
+    ' Source: age/locales/src/pis.json
+    ' ================================================================
+    ' PIS — Pijin
+    ' ================================================================
+    Public ReadOnly PIS As New AgeLocale(
+        "pis",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} dei"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} manis"),
+            UnitForms.Simple("{n} yia")
+        ),
+        "{n} en haf",
+        ", ",
+        "Niufala bebi",
+        New Stages(
+            StageLabel.Neutral("Niufala bebi"),
+            StageLabel.Neutral("Bebi"),
+            StageLabel.Neutral("Smol pikinini"),
+            StageLabel.Neutral("Pikinini"),
+            StageLabel.Neutral("Yangfala"),
+            StageLabel.Neutral("Bigfala")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} dei"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} man"),
+            UnitForms.Simple("{n} yia"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            Nothing
+        )
+    )
+
     ' Source: age/locales/src/pl.json
     ' ================================================================
     ' PL — Polish
@@ -4509,6 +4949,50 @@ Public Module Locales
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
             "{n}½",
+            "",
+            Nothing
+        )
+    )
+
+    ' Source: age/locales/src/quc.json
+    ' ================================================================
+    ' QUC — K'iche'
+    ' ================================================================
+    Public ReadOnly QUC As New AgeLocale(
+        "quc",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} wuqq'ij"),
+            UnitForms.Simple("{n} ik'"),
+            UnitForms.Simple("{n} junab'")
+        ),
+        "{0} nik'aj",
+        ", ",
+        "K'ak'a alaj",
+        New Stages(
+            StageLabel.Neutral("K'ak'a alaj"),
+            StageLabel.Neutral("Alaj ak'al"),
+            StageLabel.Neutral("Ak'al"),
+            StageLabel.Neutral("Ak'al"),
+            StageLabel.Neutral("K'ajol"),
+            StageLabel.Neutral("Achi")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} wuqq'ij"),
+            UnitForms.Simple("{n} ik'"),
+            UnitForms.Simple("{n} jun."),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
             "",
             Nothing
         )
@@ -4817,6 +5301,50 @@ Public Module Locales
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
             "{n}½",
+            "",
+            Nothing
+        )
+    )
+
+    ' Source: age/locales/src/shn.json
+    ' ================================================================
+    ' SHN — Shan
+    ' ================================================================
+    Public ReadOnly SHN As New AgeLocale(
+        "shn",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} ဝၼ်း"),
+            UnitForms.Simple("{n} ဝူင်ႈ"),
+            UnitForms.Simple("{n} လိူၼ်"),
+            UnitForms.Simple("{n} ပီ")
+        ),
+        "{0}ၶိုင်ႈ",
+        " ",
+        "ၶဝ်ႈမႃး",
+        New Stages(
+            StageLabel.Neutral("ၶဝ်ႈမႃး"),
+            StageLabel.Neutral("လုၵ်ႈဢွၼ်ႇ"),
+            StageLabel.Neutral("လုၵ်ႈဢွၼ်ႇ"),
+            StageLabel.Neutral("လုၵ်ႈဢွၼ်ႇ"),
+            StageLabel.Neutral("ၵူၼ်းၼုမ်ႇ"),
+            StageLabel.Neutral("ၵူၼ်းလူင်")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} ဝၼ်း"),
+            UnitForms.Simple("{n} ဝူင်ႈ"),
+            UnitForms.Simple("{n} လိူၼ်"),
+            UnitForms.Simple("{n} ပီ"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
             "",
             Nothing
         )
@@ -5570,6 +6098,50 @@ Public Module Locales
         )
     )
 
+    ' Source: age/locales/src/tet.json
+    ' ================================================================
+    ' TET — Tetum
+    ' ================================================================
+    Public ReadOnly TET As New AgeLocale(
+        "tet",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("loron {n}"),
+            UnitForms.Simple("semana {n}"),
+            UnitForms.Simple("fulan {n}"),
+            UnitForms.Simple("tinan {n}")
+        ),
+        "{0} ho balun",
+        ", ",
+        "Foin moris",
+        New Stages(
+            StageLabel.Neutral("Foin moris"),
+            StageLabel.Neutral("Labarik ki'ik"),
+            StageLabel.Neutral("Labarik"),
+            StageLabel.Neutral("Baruk"),
+            StageLabel.Neutral("Joven"),
+            StageLabel.Neutral("Ema boot")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("loron {n}"),
+            UnitForms.Simple("sem. {n}"),
+            UnitForms.Simple("fulan {n}"),
+            UnitForms.Simple("tinan {n}"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            Nothing
+        )
+    )
+
     ' Source: age/locales/src/tg.json
     ' ================================================================
     ' TG — Tajik
@@ -5829,6 +6401,50 @@ Public Module Locales
             UnitForms.Simple("{n}m"),
             UnitForms.Simple("{n}y"),
             "{n}½",
+            "",
+            Nothing
+        )
+    )
+
+    ' Source: age/locales/src/tpi.json
+    ' ================================================================
+    ' TPI — Tok Pisin
+    ' ================================================================
+    Public ReadOnly TPI As New AgeLocale(
+        "tpi",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} de"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} mun"),
+            UnitForms.Simple("{n} yia")
+        ),
+        "{n} na hap",
+        ", ",
+        "Nupela pikinini",
+        New Stages(
+            StageLabel.Neutral("Nupela pikinini"),
+            StageLabel.Neutral("Pikinini"),
+            StageLabel.Neutral("Liklik pikinini"),
+            StageLabel.Neutral("Pikinini"),
+            StageLabel.Neutral("Yangpela"),
+            StageLabel.Neutral("Bikpela man")
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n} de"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} mun"),
+            UnitForms.Simple("{n} yia"),
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
             "",
             Nothing
         )
@@ -6548,11 +7164,13 @@ Public Module Locales
         { "be", BE },
         { "bem", BEM },
         { "bg", BG },
+        { "bi", BI },
         { "bm", BM },
         { "bn", BN },
         { "br", BR },
         { "bs", BS },
         { "ca", CA },
+        { "cak", CAK },
         { "ceb", CEB },
         { "cs", CS },
         { "cy", CY },
@@ -6560,7 +7178,9 @@ Public Module Locales
         { "de", DE },
         { "din", DIN },
         { "dje", DJE },
+        { "dv", DV },
         { "dyu", DYU },
+        { "dz", DZ },
         { "ee", EE },
         { "el", EL },
         { "en", EN },
@@ -6572,6 +7192,7 @@ Public Module Locales
         { "ff", FF },
         { "fi", FI },
         { "fil", FIL },
+        { "fj", FJ },
         { "fon", FON },
         { "fr", FR },
         { "ga", GA },
@@ -6583,6 +7204,7 @@ Public Module Locales
         { "ha", HA },
         { "he", HE },
         { "hi", HI },
+        { "hmn", HMN },
         { "hr", HR },
         { "ht", HT },
         { "hu", HU },
@@ -6595,7 +7217,9 @@ Public Module Locales
         { "jv", JV },
         { "ka", KA },
         { "kbp", KBP },
+        { "kek", KEK },
         { "kk", KK },
+        { "kl", KL },
         { "km", KM },
         { "kn", KN },
         { "ko", KO },
@@ -6609,6 +7233,7 @@ Public Module Locales
         { "lo", LO },
         { "lt", LT },
         { "lv", LV },
+        { "mam", MAM },
         { "men", MEN },
         { "mfe", MFE },
         { "mg", MG },
@@ -6633,11 +7258,13 @@ Public Module Locales
         { "om", OM },
         { "or", [OR] },
         { "pa", PA },
+        { "pis", PIS },
         { "pl", PL },
         { "pov", POV },
         { "ps", PS },
         { "pt", PT },
         { "qu", QU },
+        { "quc", QUC },
         { "ro", RO },
         { "ru", RU },
         { "rw", RW },
@@ -6645,6 +7272,7 @@ Public Module Locales
         { "sd", SD },
         { "sg", SG },
         { "shi", SHI },
+        { "shn", SHN },
         { "si", SI },
         { "sk", SK },
         { "sl", SL },
@@ -6662,12 +7290,14 @@ Public Module Locales
         { "ta", TA },
         { "te", TE },
         { "tem", TEM },
+        { "tet", TET },
         { "tg", TG },
         { "th", TH },
         { "ti", TI },
         { "tig", TIG },
         { "tk", TK },
         { "tn", TN },
+        { "tpi", TPI },
         { "tr", TR },
         { "ts", TS },
         { "tzm", TZM },

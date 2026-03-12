@@ -33,13 +33,13 @@ locale_fi <- list(
   short = list(
     clock = list(
       use24h = TRUE,
-      format = "{h}:{mm}"
+      format = "{h}.{mm}"
     )
   ),
   compact = list(
     clock = list(
       use24h = TRUE,
-      format = "{h}:{mm}"
+      format = "{h}.{mm}"
     )
   )
 )

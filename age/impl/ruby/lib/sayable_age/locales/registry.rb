@@ -22,11 +22,13 @@ module SayableAge
       when 'be' then BE
       when 'bem' then BEM
       when 'bg' then BG
+      when 'bi' then BI
       when 'bm' then BM
       when 'bn' then BN
       when 'br' then BR
       when 'bs' then BS
       when 'ca' then CA
+      when 'cak' then CAK
       when 'ceb' then CEB
       when 'cs' then CS
       when 'cy' then CY
@@ -34,7 +36,9 @@ module SayableAge
       when 'de' then DE
       when 'din' then DIN
       when 'dje' then DJE
+      when 'dv' then DV
       when 'dyu' then DYU
+      when 'dz' then DZ
       when 'ee' then EE
       when 'el' then EL
       when 'en' then EN
@@ -46,6 +50,7 @@ module SayableAge
       when 'ff' then FF
       when 'fi' then FI
       when 'fil' then FIL
+      when 'fj' then FJ
       when 'fon' then FON
       when 'fr' then FR
       when 'ga' then GA
@@ -57,6 +62,7 @@ module SayableAge
       when 'ha' then HA
       when 'he' then HE
       when 'hi' then HI
+      when 'hmn' then HMN
       when 'hr' then HR
       when 'ht' then HT
       when 'hu' then HU
@@ -69,7 +75,9 @@ module SayableAge
       when 'jv' then JV
       when 'ka' then KA
       when 'kbp' then KBP
+      when 'kek' then KEK
       when 'kk' then KK
+      when 'kl' then KL
       when 'km' then KM
       when 'kn' then KN
       when 'ko' then KO
@@ -83,6 +91,7 @@ module SayableAge
       when 'lo' then LO
       when 'lt' then LT
       when 'lv' then LV
+      when 'mam' then MAM
       when 'men' then MEN
       when 'mfe' then MFE
       when 'mg' then MG
@@ -107,11 +116,13 @@ module SayableAge
       when 'om' then OM
       when 'or' then OR
       when 'pa' then PA
+      when 'pis' then PIS
       when 'pl' then PL
       when 'pov' then POV
       when 'ps' then PS
       when 'pt' then PT
       when 'qu' then QU
+      when 'quc' then QUC
       when 'ro' then RO
       when 'ru' then RU
       when 'rw' then RW
@@ -119,6 +130,7 @@ module SayableAge
       when 'sd' then SD
       when 'sg' then SG
       when 'shi' then SHI
+      when 'shn' then SHN
       when 'si' then SI
       when 'sk' then SK
       when 'sl' then SL
@@ -136,12 +148,14 @@ module SayableAge
       when 'ta' then TA
       when 'te' then TE
       when 'tem' then TEM
+      when 'tet' then TET
       when 'tg' then TG
       when 'th' then TH
       when 'ti' then TI
       when 'tig' then TIG
       when 'tk' then TK
       when 'tn' then TN
+      when 'tpi' then TPI
       when 'tr' then TR
       when 'ts' then TS
       when 'tzm' then TZM

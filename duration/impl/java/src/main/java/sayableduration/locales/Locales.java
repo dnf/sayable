@@ -17,7 +17,7 @@ import java.util.Collections;
 import sayableduration.*;
 
 /**
- * All 145 locale definitions for sayable-duration.
+ * All 159 locale definitions for sayable-duration.
  */
 @SuppressWarnings({"LineLength", "MethodLength"})
 public final class Locales {
@@ -624,6 +624,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    public static final DurationLocale BI = new DurationLocale(
+        "bi",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} sekon"),
+            UnitForms.simpleUnit("{n} minit"),
+            UnitForms.simpleUnit("{n} aoa"),
+            UnitForms.simpleUnit("{n} dei"),
+            UnitForms.simpleUnit("{n} wik"),
+            UnitForms.simpleUnit("{n} manis"),
+            UnitForms.simpleUnit("{n} yia")
+        ),
+        "{n} mo haf",
+        ", ",
+        "jas nao",
+        "{0} bifo",
+        "long {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sek"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} aoa"),
+            UnitForms.simpleUnit("{n} dei"),
+            UnitForms.simpleUnit("{n} wik"),
+            UnitForms.simpleUnit("{n} man"),
+            UnitForms.simpleUnit("{n} yia"),
+            null,
+            null,
+            "{0} bifo",
+            "long {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} bifo",
+            "long {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -874,6 +925,57 @@ public final class Locales {
             "",
             "fa {0}",
             "d'aquí a {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    public static final DurationLocale CAK = new DurationLocale(
+        "cak",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} tz'aqät"),
+            UnitForms.simpleUnit("{n} ch'utik ramaj"),
+            UnitForms.simpleUnit("{n} ramaj"),
+            UnitForms.simpleUnit("{n} q'ij"),
+            UnitForms.simpleUnit("{n} wuqq'ij"),
+            UnitForms.simpleUnit("{n} ik'"),
+            UnitForms.simpleUnit("{n} junab'")
+        ),
+        "{0} nik'aj",
+        ", ",
+        "wakami",
+        "{0} k'o chi",
+        "pa {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} tz'aq."),
+            UnitForms.simpleUnit("{n} ch'ut."),
+            UnitForms.simpleUnit("{n} ram."),
+            UnitForms.simpleUnit("{n} q'ij"),
+            UnitForms.simpleUnit("{n} wuqq'ij"),
+            UnitForms.simpleUnit("{n} ik'"),
+            UnitForms.simpleUnit("{n} jun."),
+            null,
+            null,
+            "{0} k'o chi",
+            "pa {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} k'o chi",
+            "pa {0}"
         ),
         null,
         null
@@ -1236,6 +1338,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    public static final DurationLocale DV = new DurationLocale(
+        "dv",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} ސިކުންތު"),
+            UnitForms.simpleUnit("{n} މިނެޓު"),
+            UnitForms.simpleUnit("{n} ގަޑިއިރު"),
+            UnitForms.simpleUnit("{n} ދުވަސް"),
+            UnitForms.simpleUnit("{n} ހަފްތާ"),
+            UnitForms.simpleUnit("{n} މަސް"),
+            UnitForms.simpleUnit("{n} އަހަރު")
+        ),
+        "{0} ބައި",
+        "، ",
+        "މިހާރު",
+        "މީގެ {0} ކުރިން",
+        "{0} ފަހުން",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ސިކު"),
+            UnitForms.simpleUnit("{n} މިނެ"),
+            UnitForms.simpleUnit("{n} ގަޑި"),
+            UnitForms.simpleUnit("{n} ދުވަ"),
+            UnitForms.simpleUnit("{n} ހަފް"),
+            UnitForms.simpleUnit("{n} މަސް"),
+            UnitForms.simpleUnit("{n} އަހަ"),
+            null,
+            null,
+            "މީގެ {0} ކުރިން",
+            "{0} ފަހުން"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "މީގެ {0} ކުރިން",
+            "{0} ފަހުން"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -1282,6 +1435,57 @@ public final class Locales {
             "",
             "{0} tɛmɛnen",
             "ka {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    public static final DurationLocale DZ = new DurationLocale(
+        "dz",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("སྐར་ཆ་ {n}"),
+            UnitForms.simpleUnit("སྐར་མ་ {n}"),
+            UnitForms.simpleUnit("ཆུ་ཚོད་ {n}"),
+            UnitForms.simpleUnit("ཉིན་ {n}"),
+            UnitForms.simpleUnit("བདུན་ཕྲག་ {n}"),
+            UnitForms.simpleUnit("ཟླ་ {n}"),
+            UnitForms.simpleUnit("ལོ་ {n}")
+        ),
+        "{0} ཕྱེད",
+        " ",
+        "ད་ལྟ",
+        "{0} ཧེ་མ",
+        "{0} ཤུལ་ལས",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("སྐར་ཆ་ {n}"),
+            UnitForms.simpleUnit("སྐར་མ་ {n}"),
+            UnitForms.simpleUnit("ཆུ་ཚོད་ {n}"),
+            UnitForms.simpleUnit("ཉིན་ {n}"),
+            UnitForms.simpleUnit("བདུན་ཕྲག་ {n}"),
+            UnitForms.simpleUnit("ཟླ་ {n}"),
+            UnitForms.simpleUnit("ལོ་ {n}"),
+            null,
+            null,
+            "{0} ཧེ་མ",
+            "{0} ཤུལ་ལས"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} ཧེ་མ",
+            "{0} ཤུལ་ལས"
         ),
         null,
         null
@@ -1848,6 +2052,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    public static final DurationLocale FJ = new DurationLocale(
+        "fj",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} na sekodi"),
+            UnitForms.simpleUnit("{n} na miniti"),
+            UnitForms.simpleUnit("{n} na aua"),
+            UnitForms.simpleUnit("{n} na siga"),
+            UnitForms.simpleUnit("{n} na macawa"),
+            UnitForms.simpleUnit("{n} na vula"),
+            UnitForms.simpleUnit("{n} na yabaki")
+        ),
+        "{n} kei na levu ni wasei",
+        ", ",
+        "edaidai ga",
+        "{0} sa oti",
+        "ena {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sek"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} aua"),
+            UnitForms.simpleUnit("{n} siga"),
+            UnitForms.simpleUnit("{n} mac"),
+            UnitForms.simpleUnit("{n} vul"),
+            UnitForms.simpleUnit("{n} yab"),
+            null,
+            null,
+            "{0} sa oti",
+            "ena {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} sa oti",
+            "ena {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/fon.json
     // ================================================================
     // FON — Fon
@@ -2404,6 +2659,57 @@ public final class Locales {
             "",
             "{0} पहले",
             "{0} में"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    public static final DurationLocale HMN = new DurationLocale(
+        "hmn",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} chib"),
+            UnitForms.simpleUnit("{n} feeb"),
+            UnitForms.simpleUnit("{n} teev"),
+            UnitForms.simpleUnit("{n} hnub"),
+            UnitForms.simpleUnit("{n} lub lim tiam"),
+            UnitForms.simpleUnit("{n} lub hlis"),
+            UnitForms.simpleUnit("{n} xyoo")
+        ),
+        "{0} thiab ib nrab",
+        ", ",
+        "tam sim no",
+        "{0} dhau los",
+        "hauv {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} chib"),
+            UnitForms.simpleUnit("{n} feeb"),
+            UnitForms.simpleUnit("{n} teev"),
+            UnitForms.simpleUnit("{n} hnub"),
+            UnitForms.simpleUnit("{n} lim tiam"),
+            UnitForms.simpleUnit("{n} hlis"),
+            UnitForms.simpleUnit("{n} xyoo"),
+            null,
+            null,
+            "{0} dhau los",
+            "hauv {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} dhau los",
+            "hauv {0}"
         ),
         null,
         null
@@ -3021,6 +3327,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    public static final DurationLocale KEK = new DurationLocale(
+        "kek",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} segundo"),
+            UnitForms.simpleUnit("{n} minuto"),
+            UnitForms.simpleUnit("{n} hora"),
+            UnitForms.simpleUnit("{n} q'e"),
+            UnitForms.simpleUnit("{n} seman"),
+            UnitForms.simpleUnit("{n} po"),
+            UnitForms.simpleUnit("{n} chihab'")
+        ),
+        "{0} ro'",
+        ", ",
+        "anaqwan",
+        "{0} qakab'",
+        "chi {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} seg."),
+            UnitForms.simpleUnit("{n} min."),
+            UnitForms.simpleUnit("{n} hora"),
+            UnitForms.simpleUnit("{n} q'e"),
+            UnitForms.simpleUnit("{n} sem."),
+            UnitForms.simpleUnit("{n} po"),
+            UnitForms.simpleUnit("{n} chih."),
+            null,
+            null,
+            "{0} qakab'",
+            "chi {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} qakab'",
+            "chi {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -3067,6 +3424,57 @@ public final class Locales {
             "",
             "{0} бұрын",
             "{0} кейін"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    public static final DurationLocale KL = new DurationLocale(
+        "kl",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("sekundit {n}"),
+            UnitForms.simpleUnit("minutsit {n}"),
+            UnitForms.simpleUnit("nalunaaqutap akunnera {n}"),
+            UnitForms.simpleUnit("ullut {n}"),
+            UnitForms.simpleUnit("sapaatit {n}"),
+            UnitForms.simpleUnit("qaammatit {n}"),
+            UnitForms.simpleUnit("ukiut {n}")
+        ),
+        "{0} affaa",
+        ", ",
+        "maanna",
+        "{0} matuma siorna",
+        "{0} siunissami",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("sek. {n}"),
+            UnitForms.simpleUnit("min. {n}"),
+            UnitForms.simpleUnit("nal. {n}"),
+            UnitForms.simpleUnit("ull. {n}"),
+            UnitForms.simpleUnit("sap. {n}"),
+            UnitForms.simpleUnit("qaam. {n}"),
+            UnitForms.simpleUnit("uk. {n}"),
+            null,
+            null,
+            "{0} matuma siorna",
+            "{0} siunissami"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} matuma siorna",
+            "{0} siunissami"
         ),
         null,
         null
@@ -3730,6 +4138,57 @@ public final class Locales {
             "",
             "pirms {0}",
             "pēc {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    public static final DurationLocale MAM = new DurationLocale(
+        "mam",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} segundo"),
+            UnitForms.simpleUnit("{n} minuto"),
+            UnitForms.simpleUnit("{n} hora"),
+            UnitForms.simpleUnit("{n} q'ij"),
+            UnitForms.simpleUnit("{n} xjaw"),
+            UnitForms.simpleUnit("{n} xjaw"),
+            UnitForms.simpleUnit("{n} ab'q'ii")
+        ),
+        "{0} nik'",
+        ", ",
+        "iky'x",
+        "{0} chi'j",
+        "tu'n {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} seg."),
+            UnitForms.simpleUnit("{n} min."),
+            UnitForms.simpleUnit("{n} hora"),
+            UnitForms.simpleUnit("{n} q'ij"),
+            UnitForms.simpleUnit("{n} xjaw"),
+            UnitForms.simpleUnit("{n} xjaw"),
+            UnitForms.simpleUnit("{n} ab'."),
+            null,
+            null,
+            "{0} chi'j",
+            "tu'n {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} chi'j",
+            "tu'n {0}"
         ),
         null,
         null
@@ -4959,6 +5418,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    public static final DurationLocale PIS = new DurationLocale(
+        "pis",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} sekon"),
+            UnitForms.simpleUnit("{n} minit"),
+            UnitForms.simpleUnit("{n} aoa"),
+            UnitForms.simpleUnit("{n} dei"),
+            UnitForms.simpleUnit("{n} wik"),
+            UnitForms.simpleUnit("{n} manis"),
+            UnitForms.simpleUnit("{n} yia")
+        ),
+        "{n} en haf",
+        ", ",
+        "nomoa nao",
+        "{0} bifoa",
+        "long {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sek"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} aoa"),
+            UnitForms.simpleUnit("{n} dei"),
+            UnitForms.simpleUnit("{n} wik"),
+            UnitForms.simpleUnit("{n} man"),
+            UnitForms.simpleUnit("{n} yia"),
+            null,
+            null,
+            "{0} bifoa",
+            "long {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} bifoa",
+            "long {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/pl.json
     // ================================================================
     // PL — Polish
@@ -5209,6 +5719,57 @@ public final class Locales {
             "",
             "{0} ñawpaqta",
             "{0} qhipata"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    public static final DurationLocale QUC = new DurationLocale(
+        "quc",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} tz'aqat"),
+            UnitForms.simpleUnit("{n} ch'utaq ramaj"),
+            UnitForms.simpleUnit("{n} ramaj"),
+            UnitForms.simpleUnit("{n} q'ij"),
+            UnitForms.simpleUnit("{n} wuqq'ij"),
+            UnitForms.simpleUnit("{n} ik'"),
+            UnitForms.simpleUnit("{n} junab'")
+        ),
+        "{0} nik'aj",
+        ", ",
+        "kamik",
+        "{0} k'o chi",
+        "pa {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} tz'aq."),
+            UnitForms.simpleUnit("{n} ch'ut."),
+            UnitForms.simpleUnit("{n} ram."),
+            UnitForms.simpleUnit("{n} q'ij"),
+            UnitForms.simpleUnit("{n} wuqq'ij"),
+            UnitForms.simpleUnit("{n} ik'"),
+            UnitForms.simpleUnit("{n} jun."),
+            null,
+            null,
+            "{0} k'o chi",
+            "pa {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} k'o chi",
+            "pa {0}"
         ),
         null,
         null
@@ -5566,6 +6127,57 @@ public final class Locales {
             "",
             "ɣ {0} zzrin",
             "ɣ {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    public static final DurationLocale SHN = new DurationLocale(
+        "shn",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} ဝိၼႃးတီႇ"),
+            UnitForms.simpleUnit("{n} မိၼိတ်ႉ"),
+            UnitForms.simpleUnit("{n} ၸူဝ်ႈမူင်း"),
+            UnitForms.simpleUnit("{n} ဝၼ်း"),
+            UnitForms.simpleUnit("{n} ဝူင်ႈ"),
+            UnitForms.simpleUnit("{n} လိူၼ်"),
+            UnitForms.simpleUnit("{n} ပီ")
+        ),
+        "{0}ၶိုင်ႈ",
+        " ",
+        "ယၢမ်းလဵဝ်",
+        "{0} ပူၼ်ႉမႃး",
+        "ထႅင်ႈ {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ဝိၼႃး"),
+            UnitForms.simpleUnit("{n} မိၼိတ်ႉ"),
+            UnitForms.simpleUnit("{n} ၸူဝ်ႈ"),
+            UnitForms.simpleUnit("{n} ဝၼ်း"),
+            UnitForms.simpleUnit("{n} ဝူင်ႈ"),
+            UnitForms.simpleUnit("{n} လိူၼ်"),
+            UnitForms.simpleUnit("{n} ပီ"),
+            null,
+            null,
+            "{0} ပူၼ်ႉမႃး",
+            "ထႅင်ႈ {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} ပူၼ်ႉမႃး",
+            "ထႅင်ႈ {0}"
         ),
         null,
         null
@@ -6438,6 +7050,57 @@ public final class Locales {
         null
     );
 
+    // Source: duration/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    public static final DurationLocale TET = new DurationLocale(
+        "tet",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("segundu {n}"),
+            UnitForms.simpleUnit("minutu {n}"),
+            UnitForms.simpleUnit("oras {n}"),
+            UnitForms.simpleUnit("loron {n}"),
+            UnitForms.simpleUnit("semana {n}"),
+            UnitForms.simpleUnit("fulan {n}"),
+            UnitForms.simpleUnit("tinan {n}")
+        ),
+        "{0} ho balun",
+        ", ",
+        "agora deit",
+        "{0} liu ba",
+        "iha {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("seg. {n}"),
+            UnitForms.simpleUnit("min. {n}"),
+            UnitForms.simpleUnit("oras {n}"),
+            UnitForms.simpleUnit("loron {n}"),
+            UnitForms.simpleUnit("sem. {n}"),
+            UnitForms.simpleUnit("fulan {n}"),
+            UnitForms.simpleUnit("tinan {n}"),
+            null,
+            null,
+            "{0} liu ba",
+            "iha {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} liu ba",
+            "iha {0}"
+        ),
+        null,
+        null
+    );
+
     // Source: duration/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -6739,6 +7402,57 @@ public final class Locales {
             "",
             "{0} e e fetileng",
             "ka {0}"
+        ),
+        null,
+        null
+    );
+
+    // Source: duration/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    public static final DurationLocale TPI = new DurationLocale(
+        "tpi",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} sekon"),
+            UnitForms.simpleUnit("{n} minit"),
+            UnitForms.simpleUnit("{n} aua"),
+            UnitForms.simpleUnit("{n} de"),
+            UnitForms.simpleUnit("{n} wik"),
+            UnitForms.simpleUnit("{n} mun"),
+            UnitForms.simpleUnit("{n} yia")
+        ),
+        "{n} na hap",
+        ", ",
+        "nau tasol",
+        "{0} i go pinis",
+        "long {0}",
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} sek"),
+            UnitForms.simpleUnit("{n} min"),
+            UnitForms.simpleUnit("{n} aua"),
+            UnitForms.simpleUnit("{n} de"),
+            UnitForms.simpleUnit("{n} wik"),
+            UnitForms.simpleUnit("{n} mun"),
+            UnitForms.simpleUnit("{n} yia"),
+            null,
+            null,
+            "{0} i go pinis",
+            "long {0}"
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}s"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}h"),
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}mo"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            "{0} i go pinis",
+            "long {0}"
         ),
         null,
         null
@@ -7562,7 +8276,7 @@ public final class Locales {
 
     public static final Map<String, DurationLocale> ALL;
     static {
-        Map<String, DurationLocale> map = new LinkedHashMap<>(145);
+        Map<String, DurationLocale> map = new LinkedHashMap<>(159);
         map.put("af", AF);
         map.put("ak", AK);
         map.put("am", AM);
@@ -7572,11 +8286,13 @@ public final class Locales {
         map.put("be", BE);
         map.put("bem", BEM);
         map.put("bg", BG);
+        map.put("bi", BI);
         map.put("bm", BM);
         map.put("bn", BN);
         map.put("br", BR);
         map.put("bs", BS);
         map.put("ca", CA);
+        map.put("cak", CAK);
         map.put("ceb", CEB);
         map.put("cs", CS);
         map.put("cy", CY);
@@ -7584,7 +8300,9 @@ public final class Locales {
         map.put("de", DE);
         map.put("din", DIN);
         map.put("dje", DJE);
+        map.put("dv", DV);
         map.put("dyu", DYU);
+        map.put("dz", DZ);
         map.put("ee", EE);
         map.put("el", EL);
         map.put("en", EN);
@@ -7596,6 +8314,7 @@ public final class Locales {
         map.put("ff", FF);
         map.put("fi", FI);
         map.put("fil", FIL);
+        map.put("fj", FJ);
         map.put("fon", FON);
         map.put("fr", FR);
         map.put("ga", GA);
@@ -7607,6 +8326,7 @@ public final class Locales {
         map.put("ha", HA);
         map.put("he", HE);
         map.put("hi", HI);
+        map.put("hmn", HMN);
         map.put("hr", HR);
         map.put("ht", HT);
         map.put("hu", HU);
@@ -7619,7 +8339,9 @@ public final class Locales {
         map.put("jv", JV);
         map.put("ka", KA);
         map.put("kbp", KBP);
+        map.put("kek", KEK);
         map.put("kk", KK);
+        map.put("kl", KL);
         map.put("km", KM);
         map.put("kn", KN);
         map.put("ko", KO);
@@ -7633,6 +8355,7 @@ public final class Locales {
         map.put("lo", LO);
         map.put("lt", LT);
         map.put("lv", LV);
+        map.put("mam", MAM);
         map.put("men", MEN);
         map.put("mfe", MFE);
         map.put("mg", MG);
@@ -7657,11 +8380,13 @@ public final class Locales {
         map.put("om", OM);
         map.put("or", OR);
         map.put("pa", PA);
+        map.put("pis", PIS);
         map.put("pl", PL);
         map.put("pov", POV);
         map.put("ps", PS);
         map.put("pt", PT);
         map.put("qu", QU);
+        map.put("quc", QUC);
         map.put("ro", RO);
         map.put("ru", RU);
         map.put("rw", RW);
@@ -7669,6 +8394,7 @@ public final class Locales {
         map.put("sd", SD);
         map.put("sg", SG);
         map.put("shi", SHI);
+        map.put("shn", SHN);
         map.put("si", SI);
         map.put("sk", SK);
         map.put("sl", SL);
@@ -7686,12 +8412,14 @@ public final class Locales {
         map.put("ta", TA);
         map.put("te", TE);
         map.put("tem", TEM);
+        map.put("tet", TET);
         map.put("tg", TG);
         map.put("th", TH);
         map.put("ti", TI);
         map.put("tig", TIG);
         map.put("tk", TK);
         map.put("tn", TN);
+        map.put("tpi", TPI);
         map.put("tr", TR);
         map.put("ts", TS);
         map.put("tzm", TZM);

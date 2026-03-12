@@ -201,6 +201,53 @@ const DateLocale& SHI() {
     return loc;
 }
 
+// Source: date/locales/src/shn.json
+const DateLocale& SHN() {
+    static const DateLocale loc{
+        "shn",
+        {"ၸၼ်ႇဝႃႇရီႇ", "ၾႅပ်ႇဝႃႇရီႇ", "မၢတ်ႉၶျ်", "ဢေႇပရႄႇ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလၢႆႇ", "ဢေႃးၵၢတ်ႉ", "သႅပ်ႇထႅမ်ႇပႃႇ", "ဢွၵ်ႇထူဝ်ႇပႃႇ", "ၼူဝ်ႇဝႅမ်ႇပႃႇ", "တီႇသႅမ်ႇပႃႇ"},
+        {"ဝၼ်းဢႃးတိတ်ႉ", "ဝၼ်းၸၼ်", "ဝၼ်းဢၢင်းၵၢၼ်း", "ဝၼ်းပုတ်ႉ", "ဝၼ်းၽတ်း", "ဝၼ်းသုၵ်း", "ဝၼ်းသဝ်"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ဝၼ်းမိူဝ်ႈၼႆႉ", "မိူဝ်ႈၽုၵ်ႈ", "မိူဝ်ႈဝႃး",
+        "မိူဝ်ႈႁိုဝ်",
+        "မိူဝ်ႈသိုၼ်း",
+        "{weekday} ၼႆႉ",
+        "{weekday} ၼႃႈ",
+        "{weekday} ပူၼ်ႉ",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"ၸၼ်ႇ", "ၾႅပ်ႇ", "မၢတ်ႉ", "ဢေႇပ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလ", "ဢေႃး", "သႅပ်ႇ", "ဢွၵ်ႇ", "ၼူဝ်ႇ", "တီႇသ"},
+            {},
+            {"ဢႃး", "ၸၼ်", "ဢၢင်း", "ပုတ်ႉ", "ၽတ်း", "သုၵ်း", "သဝ်"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/si.json
 const DateLocale& SI() {
     static const DateLocale loc{
@@ -1000,6 +1047,53 @@ const DateLocale& TEM() {
     return loc;
 }
 
+// Source: date/locales/src/tet.json
+const DateLocale& TET() {
+    static const DateLocale loc{
+        "tet",
+        {"Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru"},
+        {"Domingu", "Segunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sábadu"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ohin", "aban", "horiseik",
+        "aban bainrua",
+        "horiseik liu",
+        "{weekday} ida ne'e",
+        "{weekday} oin mai",
+        "{weekday} kotuk",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"},
+            {},
+            {"Dom", "Seg", "Ter", "Kua", "Kin", "Ses", "Sáb"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/tg.json
 const DateLocale& TG() {
     static const DateLocale loc{
@@ -1256,6 +1350,53 @@ const DateLocale& TN() {
             {"Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phk", "Pha", "Lwe", "Dip", "Ngw", "Sed"},
             {},
             {"Tsh", "Mos", "Bed", "Rar", "Bon", "Tlh", "Mat"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/tpi.json
+const DateLocale& TPI() {
+    static const DateLocale loc{
+        "tpi",
+        {"Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba"},
+        {"Sande", "Mande", "Tunde", "Trinde", "Fonde", "Fraide", "Sarere"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tude", "tumora", "asde",
+        "haptumora",
+        "asde bipo",
+        "dispela {weekday}",
+        "{weekday} bihain",
+        "{weekday} bipo",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Feb", "Mas", "Epr", "Me", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Des"},
+            {},
+            {"San", "Man", "Tun", "Tri", "Fon", "Fra", "Sar"},
             "{n}",
             {},
             false,

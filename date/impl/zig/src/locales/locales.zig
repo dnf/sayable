@@ -281,6 +281,36 @@ pub const bg: sayabledate.DateLocale = .{
     },
 };
 
+// Source: date/locales/src/bi.json
+pub const bi: sayabledate.DateLocale = .{
+    .code = "bi",
+    .months = .{ "Janueri", "Februari", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogis", "Septemba", "Oktoba", "Novemba", "Disemba" },
+    .weekdays = .{ "Sande", "Mande", "Tusde", "Wenesde", "Tosde", "Fraede", "Sarede" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "tede",
+    .tomorrow = "tumoro",
+    .yesterday = "yestedei",
+    .day_after_tomorrow = "bihaen tumoro",
+    .day_before_yesterday = "bifo yestedei",
+    .this_weekday = "disfala {weekday}",
+    .next_weekday = "nekis {weekday}",
+    .last_weekday = "las {weekday}",
+    .short_override = .{
+        .months = &.{ "Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Ogi", "Sep", "Okt", "Nov", "Dis" },
+        .weekdays = &.{ "San", "Man", "Tus", "Wen", "Tos", "Fra", "Sar" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
 // Source: date/locales/src/bm.json
 pub const bm: sayabledate.DateLocale = .{
     .code = "bm",
@@ -418,6 +448,36 @@ pub const ca: sayabledate.DateLocale = .{
     .short_override = .{
         .months = &.{ "gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des" },
         .weekdays = &.{ "dg", "dl", "dt", "dc", "dj", "dv", "ds" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
+// Source: date/locales/src/cak.json
+pub const cak: sayabledate.DateLocale = .{
+    .code = "cak",
+    .months = .{ "Nab'ey ik'", "Ruka'n ik'", "Rox ik'", "Rukaj ik'", "Ro' ik'", "Ruwaq ik'", "Ruwuq ik'", "Ruwajxaq ik'", "Rub'elej ik'", "Rulaj ik'", "Rujulaj ik'", "Rukab'laj ik'" },
+    .weekdays = .{ "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "wakami",
+    .tomorrow = "chwe'q",
+    .yesterday = "iwïr",
+    .day_after_tomorrow = "ka'i' q'ij chwe'q",
+    .day_before_yesterday = "ka'i' q'ij iwïr",
+    .this_weekday = "re' {weekday}",
+    .next_weekday = "{weekday} ri petenäq",
+    .last_weekday = "{weekday} ri xik'o",
+    .short_override = .{
+        .months = &.{ "1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'" },
+        .weekdays = &.{ "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
         .day_format = "{n}",
         .clear_exceptions = true,
         .date_pattern = "{day} {month}",
@@ -640,6 +700,36 @@ pub const dje: sayabledate.DateLocale = .{
     },
 };
 
+// Source: date/locales/src/dv.json
+pub const dv: sayabledate.DateLocale = .{
+    .code = "dv",
+    .months = .{ "ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އެޕްރީލު", "މެއި", "ޖޫން", "ޖުލައި", "އޮގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު" },
+    .weekdays = .{ "އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "މިއަދު",
+    .tomorrow = "މާދަމާ",
+    .yesterday = "އިއްޔެ",
+    .day_after_tomorrow = "އަނެއް ދުވަހު",
+    .day_before_yesterday = "ކުރީ ދުވަހު",
+    .this_weekday = "މި {weekday}",
+    .next_weekday = "އަންނަ {weekday}",
+    .last_weekday = "ފާއިތުވި {weekday}",
+    .short_override = .{
+        .months = &.{ "ޖެނު", "ފެބް", "މާރި", "އެޕް", "މެއި", "ޖޫން", "ޖުލް", "އޮގް", "ސެޕް", "އޮކް", "ނޮވް", "ޑިސް" },
+        .weekdays = &.{ "އާދީ", "ހޯމަ", "އަން", "ބުދަ", "ބުރާ", "ހުކު", "ހޮނި" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
 // Source: date/locales/src/dyu.json
 pub const dyu: sayabledate.DateLocale = .{
     .code = "dyu",
@@ -667,6 +757,36 @@ pub const dyu: sayabledate.DateLocale = .{
     .compact_override = .{
         .date_pattern = "{d}/{m}",
         .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
+// Source: date/locales/src/dz.json
+pub const dz: sayabledate.DateLocale = .{
+    .code = "dz",
+    .months = .{ "ཟླ་དངཔ", "ཟླ་གཉིས་པ", "ཟླ་གསུམ་པ", "ཟླ་བཞི་པ", "ཟླ་ལྔ་པ", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ", "ཟླ་བརྒྱད་པ", "ཟླ་དགུ་པ", "ཟླ་བཅུ་པ", "ཟླ་བཅུ་གཅིག་པ", "ཟླ་བཅུ་གཉིས་པ" },
+    .weekdays = .{ "གཟའ་ཉི་མ", "གཟའ་ཟླ་བ", "གཟའ་མིག་དམར", "གཟའ་ལྷག་པ", "གཟའ་ཕུར་བུ", "གཟའ་པ་སངས", "གཟའ་སྤེན་པ" },
+    .day_format = "{n}",
+    .date_pattern = "{month} {day}",
+    .date_pattern_with_year = "{year} {month} {day}",
+    .today = "དི་རིང",
+    .tomorrow = "ནངས་པ",
+    .yesterday = "ཁ་ཙ",
+    .day_after_tomorrow = "གནངས་ཚེ",
+    .day_before_yesterday = "ཁ་ཉིམ",
+    .this_weekday = "འདི་ {weekday}",
+    .next_weekday = "{weekday} ཤུལ་མ",
+    .last_weekday = "{weekday} ཧེ་མ",
+    .short_override = .{
+        .months = &.{ "ཟླ་༡", "ཟླ་༢", "ཟླ་༣", "ཟླ་༤", "ཟླ་༥", "ཟླ་༦", "ཟླ་༧", "ཟླ་༨", "ཟླ་༩", "ཟླ་༡༠", "ཟླ་༡༡", "ཟླ་༡༢" },
+        .weekdays = &.{ "ཉི", "ཟླ", "མིག", "ལྷག", "ཕུར", "སངས", "སྤེན" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{month} {day}",
+        .date_pattern_with_year = "{year} {month} {day}",
+    },
+    .compact_override = .{
+        .date_pattern = "{yy}/{m}/{d}",
+        .date_pattern_with_year = "{yy}/{m}/{d}",
     },
 };
 
@@ -1003,6 +1123,36 @@ pub const fil: sayabledate.DateLocale = .{
     },
 };
 
+// Source: date/locales/src/fj.json
+pub const fj: sayabledate.DateLocale = .{
+    .code = "fj",
+    .months = .{ "Janueri", "Feperueri", "Maji", "Epereli", "Me", "June", "Julai", "Okosita", "Sepiteba", "Okotova", "Noveba", "Tiseba" },
+    .weekdays = .{ "Sigatapu", "Moniti", "Tusiti", "Vukelulu", "Lotulevu", "Vakaraubuka", "Vakarauwai" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "nikua",
+    .tomorrow = "mataka",
+    .yesterday = "nanoa",
+    .day_after_tomorrow = "bogi rua ni mataka",
+    .day_before_yesterday = "nanoa edua",
+    .this_weekday = "na {weekday} oqo",
+    .next_weekday = "na {weekday} mai oqo",
+    .last_weekday = "na {weekday} sa oti",
+    .short_override = .{
+        .months = &.{ "Jan", "Fep", "Maj", "Epe", "Me", "Jun", "Jul", "Oko", "Sep", "Okt", "Nov", "Tis" },
+        .weekdays = &.{ "Sig", "Mon", "Tus", "Vuk", "Lot", "Vra", "Vrw" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
 // Source: date/locales/src/fon.json
 pub const fon: sayabledate.DateLocale = .{
     .code = "fon",
@@ -1329,6 +1479,36 @@ pub const hi: sayabledate.DateLocale = .{
     .compact_override = .{
         .date_pattern = "{d}/{m}",
         .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
+// Source: date/locales/src/hmn.json
+pub const hmn: sayabledate.DateLocale = .{
+    .code = "hmn",
+    .months = .{ "Ib Hlis", "Ob Hlis", "Peb Hlis", "Plaub Hlis", "Tsib Hlis", "Rau Hlis", "Xya Hlis", "Yim Hlis", "Cuaj Hlis", "Kaum Hlis", "Kaum Ib Hlis", "Kaum Ob Hlis" },
+    .weekdays = .{ "Hnub Tim Ib", "Hnub Tim Ob", "Hnub Tim Peb", "Hnub Tim Plaub", "Hnub Tim Tsib", "Hnub Tim Rau", "Hnub Tim Xya" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "hnub no",
+    .tomorrow = "tag kis",
+    .yesterday = "nag hmo",
+    .day_after_tomorrow = "ob hnub tom ntej",
+    .day_before_yesterday = "ob hnub dhau los",
+    .this_weekday = "{weekday} no",
+    .next_weekday = "{weekday} tom ntej",
+    .last_weekday = "{weekday} tas los",
+    .short_override = .{
+        .months = &.{ "1 Hli", "2 Hli", "3 Hli", "4 Hli", "5 Hli", "6 Hli", "7 Hli", "8 Hli", "9 Hli", "10 Hli", "11 Hli", "12 Hli" },
+        .weekdays = &.{ "T1", "T2", "T3", "T4", "T5", "T6", "T7" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{m}/{d}",
+        .date_pattern_with_year = "{m}/{d}/{yy}",
     },
 };
 
@@ -1693,6 +1873,34 @@ pub const kbp: sayabledate.DateLocale = .{
     },
 };
 
+// Source: date/locales/src/kek.json
+pub const kek: sayabledate.DateLocale = .{
+    .code = "kek",
+    .months = .{ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" },
+    .weekdays = .{ "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "anaqwan",
+    .tomorrow = "q'ela'",
+    .yesterday = "ewu",
+    .this_weekday = "a'in {weekday}",
+    .next_weekday = "{weekday} chalen",
+    .last_weekday = "{weekday} rik'in",
+    .short_override = .{
+        .months = &.{ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" },
+        .weekdays = &.{ "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
 // Source: date/locales/src/kk.json
 pub const kk: sayabledate.DateLocale = .{
     .code = "kk",
@@ -1720,6 +1928,36 @@ pub const kk: sayabledate.DateLocale = .{
     .compact_override = .{
         .date_pattern = "{d}/{m}",
         .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
+// Source: date/locales/src/kl.json
+pub const kl: sayabledate.DateLocale = .{
+    .code = "kl",
+    .months = .{ "januaarip", "februaarip", "marsip", "apriilip", "maajip", "juunip", "juulip", "aggustip", "septembarip", "oktobarip", "novembarip", "decembarip" },
+    .weekdays = .{ "sapaat", "ataasinngorneq", "marlunngorneq", "pingasunngorneq", "sisamanngorneq", "tallimanngorneq", "arfininngorneq" },
+    .day_format = "{n}.",
+    .date_pattern = "{month} {day}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "ullumi",
+    .tomorrow = "aqagu",
+    .yesterday = "ippassaq",
+    .day_after_tomorrow = "aqaguagu",
+    .day_before_yesterday = "ippassaani",
+    .this_weekday = "{weekday} manna",
+    .next_weekday = "{weekday} tulleq",
+    .last_weekday = "{weekday} kingulleq",
+    .short_override = .{
+        .months = &.{ "jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec" },
+        .weekdays = &.{ "sap", "ata", "mar", "pin", "sis", "tal", "arf" },
+        .day_format = "{n}.",
+        .clear_exceptions = true,
+        .date_pattern = "{month} {day}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{m}-{d}",
+        .date_pattern_with_year = "{year}-{m}-{d}",
     },
 };
 
@@ -2109,6 +2347,34 @@ pub const lv: sayabledate.DateLocale = .{
     .compact_override = .{
         .date_pattern = "{d}.{m}.",
         .date_pattern_with_year = "{d}.{m}.{yy}",
+    },
+};
+
+// Source: date/locales/src/mam.json
+pub const mam: sayabledate.DateLocale = .{
+    .code = "mam",
+    .months = .{ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" },
+    .weekdays = .{ "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "iky'x",
+    .tomorrow = "q'ij oj",
+    .yesterday = "ewl",
+    .this_weekday = "tu'n {weekday}",
+    .next_weekday = "{weekday} tul",
+    .last_weekday = "{weekday} nchi'j",
+    .short_override = .{
+        .months = &.{ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" },
+        .weekdays = &.{ "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
     },
 };
 
@@ -2832,6 +3098,36 @@ pub const pa: sayabledate.DateLocale = .{
     },
 };
 
+// Source: date/locales/src/pis.json
+pub const pis: sayabledate.DateLocale = .{
+    .code = "pis",
+    .months = .{ "Janueri", "Februeri", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogas", "Septemba", "Oktoba", "Novemba", "Disemba" },
+    .weekdays = .{ "Sande", "Mande", "Tiusde", "Wenesde", "Tosde", "Fraede", "Sarere" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "tudei",
+    .tomorrow = "tumoro",
+    .yesterday = "yestedei",
+    .day_after_tomorrow = "bihaen tumoro",
+    .day_before_yesterday = "bifo yestedei",
+    .this_weekday = "disfala {weekday}",
+    .next_weekday = "nekis {weekday}",
+    .last_weekday = "las {weekday}",
+    .short_override = .{
+        .months = &.{ "Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis" },
+        .weekdays = &.{ "San", "Man", "Tiu", "Wen", "Tos", "Fra", "Sar" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
 // Source: date/locales/src/pl.json
 pub const pl: sayabledate.DateLocale = .{
     .code = "pl",
@@ -2972,6 +3268,36 @@ pub const qu: sayabledate.DateLocale = .{
     .short_override = .{
         .months = &.{ "Qhu", "Hat", "Paw", "Ayr", "Aym", "Int", "Ant", "Qha", "Uma", "Kan", "Aya", "Qra" },
         .weekdays = &.{ "Int", "Kil", "Ati", "Quy", "Ill", "Ch'a", "K'uy" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
+// Source: date/locales/src/quc.json
+pub const quc: sayabledate.DateLocale = .{
+    .code = "quc",
+    .months = .{ "Nab'e ik'", "Ukab' ik'", "Urox ik'", "Ukaj ik'", "Uro' ik'", "Uwaq ik'", "Uwuq ik'", "Uwajxaq ik'", "Ub'elej ik'", "Ulaj ik'", "Ujulaj ik'", "Ukab'laj ik'" },
+    .weekdays = .{ "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "kamik",
+    .tomorrow = "chwe'q",
+    .yesterday = "iwir",
+    .day_after_tomorrow = "kab'ij chwe'q",
+    .day_before_yesterday = "kab'ij iwir",
+    .this_weekday = "we {weekday}",
+    .next_weekday = "{weekday} ri petinaq",
+    .last_weekday = "{weekday} ri k'aslik",
+    .short_override = .{
+        .months = &.{ "1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'" },
+        .weekdays = &.{ "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
         .day_format = "{n}",
         .clear_exceptions = true,
         .date_pattern = "{day} {month}",
@@ -3182,6 +3508,36 @@ pub const shi: sayabledate.DateLocale = .{
     .short_override = .{
         .months = &.{ "ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ" },
         .weekdays = &.{ "ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
+// Source: date/locales/src/shn.json
+pub const shn: sayabledate.DateLocale = .{
+    .code = "shn",
+    .months = .{ "ၸၼ်ႇဝႃႇရီႇ", "ၾႅပ်ႇဝႃႇရီႇ", "မၢတ်ႉၶျ်", "ဢေႇပရႄႇ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလၢႆႇ", "ဢေႃးၵၢတ်ႉ", "သႅပ်ႇထႅမ်ႇပႃႇ", "ဢွၵ်ႇထူဝ်ႇပႃႇ", "ၼူဝ်ႇဝႅမ်ႇပႃႇ", "တီႇသႅမ်ႇပႃႇ" },
+    .weekdays = .{ "ဝၼ်းဢႃးတိတ်ႉ", "ဝၼ်းၸၼ်", "ဝၼ်းဢၢင်းၵၢၼ်း", "ဝၼ်းပုတ်ႉ", "ဝၼ်းၽတ်း", "ဝၼ်းသုၵ်း", "ဝၼ်းသဝ်" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "ဝၼ်းမိူဝ်ႈၼႆႉ",
+    .tomorrow = "မိူဝ်ႈၽုၵ်ႈ",
+    .yesterday = "မိူဝ်ႈဝႃး",
+    .day_after_tomorrow = "မိူဝ်ႈႁိုဝ်",
+    .day_before_yesterday = "မိူဝ်ႈသိုၼ်း",
+    .this_weekday = "{weekday} ၼႆႉ",
+    .next_weekday = "{weekday} ၼႃႈ",
+    .last_weekday = "{weekday} ပူၼ်ႉ",
+    .short_override = .{
+        .months = &.{ "ၸၼ်ႇ", "ၾႅပ်ႇ", "မၢတ်ႉ", "ဢေႇပ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလ", "ဢေႃး", "သႅပ်ႇ", "ဢွၵ်ႇ", "ၼူဝ်ႇ", "တီႇသ" },
+        .weekdays = &.{ "ဢႃး", "ၸၼ်", "ဢၢင်း", "ပုတ်ႉ", "ၽတ်း", "သုၵ်း", "သဝ်" },
         .day_format = "{n}",
         .clear_exceptions = true,
         .date_pattern = "{day} {month}",
@@ -3705,6 +4061,36 @@ pub const tem: sayabledate.DateLocale = .{
     },
 };
 
+// Source: date/locales/src/tet.json
+pub const tet: sayabledate.DateLocale = .{
+    .code = "tet",
+    .months = .{ "Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru" },
+    .weekdays = .{ "Domingu", "Segunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sábadu" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "ohin",
+    .tomorrow = "aban",
+    .yesterday = "horiseik",
+    .day_after_tomorrow = "aban bainrua",
+    .day_before_yesterday = "horiseik liu",
+    .this_weekday = "{weekday} ida ne'e",
+    .next_weekday = "{weekday} oin mai",
+    .last_weekday = "{weekday} kotuk",
+    .short_override = .{
+        .months = &.{ "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez" },
+        .weekdays = &.{ "Dom", "Seg", "Ter", "Kua", "Kin", "Ses", "Sáb" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
 // Source: date/locales/src/tg.json
 pub const tg: sayabledate.DateLocale = .{
     .code = "tg",
@@ -3874,6 +4260,36 @@ pub const tn: sayabledate.DateLocale = .{
     .short_override = .{
         .months = &.{ "Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phk", "Pha", "Lwe", "Dip", "Ngw", "Sed" },
         .weekdays = &.{ "Tsh", "Mos", "Bed", "Rar", "Bon", "Tlh", "Mat" },
+        .day_format = "{n}",
+        .clear_exceptions = true,
+        .date_pattern = "{day} {month}",
+        .date_pattern_with_year = "{day} {month} {year}",
+    },
+    .compact_override = .{
+        .date_pattern = "{d}/{m}",
+        .date_pattern_with_year = "{d}/{m}/{yy}",
+    },
+};
+
+// Source: date/locales/src/tpi.json
+pub const tpi: sayabledate.DateLocale = .{
+    .code = "tpi",
+    .months = .{ "Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba" },
+    .weekdays = .{ "Sande", "Mande", "Tunde", "Trinde", "Fonde", "Fraide", "Sarere" },
+    .day_format = "{n}",
+    .date_pattern = "{day} {month}",
+    .date_pattern_with_year = "{day} {month} {year}",
+    .today = "tude",
+    .tomorrow = "tumora",
+    .yesterday = "asde",
+    .day_after_tomorrow = "haptumora",
+    .day_before_yesterday = "asde bipo",
+    .this_weekday = "dispela {weekday}",
+    .next_weekday = "{weekday} bihain",
+    .last_weekday = "{weekday} bipo",
+    .short_override = .{
+        .months = &.{ "Jan", "Feb", "Mas", "Epr", "Me", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Des" },
+        .weekdays = &.{ "San", "Man", "Tun", "Tri", "Fon", "Fra", "Sar" },
         .day_format = "{n}",
         .clear_exceptions = true,
         .date_pattern = "{day} {month}",
@@ -4379,11 +4795,13 @@ const locale_map = struct {
         if (eql(code, "be")) return &be;
         if (eql(code, "bem")) return &bem;
         if (eql(code, "bg")) return &bg;
+        if (eql(code, "bi")) return &bi;
         if (eql(code, "bm")) return &bm;
         if (eql(code, "bn")) return &bn;
         if (eql(code, "br")) return &br;
         if (eql(code, "bs")) return &bs;
         if (eql(code, "ca")) return &ca;
+        if (eql(code, "cak")) return &cak;
         if (eql(code, "ceb")) return &ceb;
         if (eql(code, "cs")) return &cs;
         if (eql(code, "cy")) return &cy;
@@ -4391,7 +4809,9 @@ const locale_map = struct {
         if (eql(code, "de")) return &de;
         if (eql(code, "din")) return &din;
         if (eql(code, "dje")) return &dje;
+        if (eql(code, "dv")) return &dv;
         if (eql(code, "dyu")) return &dyu;
+        if (eql(code, "dz")) return &dz;
         if (eql(code, "ee")) return &ee;
         if (eql(code, "el")) return &el;
         if (eql(code, "en")) return &en;
@@ -4403,6 +4823,7 @@ const locale_map = struct {
         if (eql(code, "ff")) return &ff;
         if (eql(code, "fi")) return &fi;
         if (eql(code, "fil")) return &fil;
+        if (eql(code, "fj")) return &fj;
         if (eql(code, "fon")) return &fon;
         if (eql(code, "fr")) return &fr;
         if (eql(code, "ga")) return &ga;
@@ -4414,6 +4835,7 @@ const locale_map = struct {
         if (eql(code, "ha")) return &ha;
         if (eql(code, "he")) return &he;
         if (eql(code, "hi")) return &hi;
+        if (eql(code, "hmn")) return &hmn;
         if (eql(code, "hr")) return &hr;
         if (eql(code, "ht")) return &ht;
         if (eql(code, "hu")) return &hu;
@@ -4426,7 +4848,9 @@ const locale_map = struct {
         if (eql(code, "jv")) return &jv;
         if (eql(code, "ka")) return &ka;
         if (eql(code, "kbp")) return &kbp;
+        if (eql(code, "kek")) return &kek;
         if (eql(code, "kk")) return &kk;
+        if (eql(code, "kl")) return &kl;
         if (eql(code, "km")) return &km;
         if (eql(code, "kn")) return &kn;
         if (eql(code, "ko")) return &ko;
@@ -4440,6 +4864,7 @@ const locale_map = struct {
         if (eql(code, "lo")) return &lo;
         if (eql(code, "lt")) return &lt;
         if (eql(code, "lv")) return &lv;
+        if (eql(code, "mam")) return &mam;
         if (eql(code, "men")) return &men;
         if (eql(code, "mfe")) return &mfe;
         if (eql(code, "mg")) return &mg;
@@ -4464,11 +4889,13 @@ const locale_map = struct {
         if (eql(code, "om")) return &om;
         if (eql(code, "or")) return &@"or";
         if (eql(code, "pa")) return &pa;
+        if (eql(code, "pis")) return &pis;
         if (eql(code, "pl")) return &pl;
         if (eql(code, "pov")) return &pov;
         if (eql(code, "ps")) return &ps;
         if (eql(code, "pt")) return &pt;
         if (eql(code, "qu")) return &qu;
+        if (eql(code, "quc")) return &quc;
         if (eql(code, "ro")) return &ro;
         if (eql(code, "ru")) return &ru;
         if (eql(code, "rw")) return &rw;
@@ -4476,6 +4903,7 @@ const locale_map = struct {
         if (eql(code, "sd")) return &sd;
         if (eql(code, "sg")) return &sg;
         if (eql(code, "shi")) return &shi;
+        if (eql(code, "shn")) return &shn;
         if (eql(code, "si")) return &si;
         if (eql(code, "sk")) return &sk;
         if (eql(code, "sl")) return &sl;
@@ -4493,12 +4921,14 @@ const locale_map = struct {
         if (eql(code, "ta")) return &ta;
         if (eql(code, "te")) return &te;
         if (eql(code, "tem")) return &tem;
+        if (eql(code, "tet")) return &tet;
         if (eql(code, "tg")) return &tg;
         if (eql(code, "th")) return &th;
         if (eql(code, "ti")) return &ti;
         if (eql(code, "tig")) return &tig;
         if (eql(code, "tk")) return &tk;
         if (eql(code, "tn")) return &tn;
+        if (eql(code, "tpi")) return &tpi;
         if (eql(code, "tr")) return &tr;
         if (eql(code, "ts")) return &ts;
         if (eql(code, "tzm")) return &tzm;
@@ -4537,11 +4967,13 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "be", .locale = &be },
     .{ .code = "bem", .locale = &bem },
     .{ .code = "bg", .locale = &bg },
+    .{ .code = "bi", .locale = &bi },
     .{ .code = "bm", .locale = &bm },
     .{ .code = "bn", .locale = &bn },
     .{ .code = "br", .locale = &br },
     .{ .code = "bs", .locale = &bs },
     .{ .code = "ca", .locale = &ca },
+    .{ .code = "cak", .locale = &cak },
     .{ .code = "ceb", .locale = &ceb },
     .{ .code = "cs", .locale = &cs },
     .{ .code = "cy", .locale = &cy },
@@ -4549,7 +4981,9 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "de", .locale = &de },
     .{ .code = "din", .locale = &din },
     .{ .code = "dje", .locale = &dje },
+    .{ .code = "dv", .locale = &dv },
     .{ .code = "dyu", .locale = &dyu },
+    .{ .code = "dz", .locale = &dz },
     .{ .code = "ee", .locale = &ee },
     .{ .code = "el", .locale = &el },
     .{ .code = "en", .locale = &en },
@@ -4561,6 +4995,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "ff", .locale = &ff },
     .{ .code = "fi", .locale = &fi },
     .{ .code = "fil", .locale = &fil },
+    .{ .code = "fj", .locale = &fj },
     .{ .code = "fon", .locale = &fon },
     .{ .code = "fr", .locale = &fr },
     .{ .code = "ga", .locale = &ga },
@@ -4572,6 +5007,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "ha", .locale = &ha },
     .{ .code = "he", .locale = &he },
     .{ .code = "hi", .locale = &hi },
+    .{ .code = "hmn", .locale = &hmn },
     .{ .code = "hr", .locale = &hr },
     .{ .code = "ht", .locale = &ht },
     .{ .code = "hu", .locale = &hu },
@@ -4584,7 +5020,9 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "jv", .locale = &jv },
     .{ .code = "ka", .locale = &ka },
     .{ .code = "kbp", .locale = &kbp },
+    .{ .code = "kek", .locale = &kek },
     .{ .code = "kk", .locale = &kk },
+    .{ .code = "kl", .locale = &kl },
     .{ .code = "km", .locale = &km },
     .{ .code = "kn", .locale = &kn },
     .{ .code = "ko", .locale = &ko },
@@ -4598,6 +5036,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "lo", .locale = &lo },
     .{ .code = "lt", .locale = &lt },
     .{ .code = "lv", .locale = &lv },
+    .{ .code = "mam", .locale = &mam },
     .{ .code = "men", .locale = &men },
     .{ .code = "mfe", .locale = &mfe },
     .{ .code = "mg", .locale = &mg },
@@ -4622,11 +5061,13 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "om", .locale = &om },
     .{ .code = "or", .locale = &@"or" },
     .{ .code = "pa", .locale = &pa },
+    .{ .code = "pis", .locale = &pis },
     .{ .code = "pl", .locale = &pl },
     .{ .code = "pov", .locale = &pov },
     .{ .code = "ps", .locale = &ps },
     .{ .code = "pt", .locale = &pt },
     .{ .code = "qu", .locale = &qu },
+    .{ .code = "quc", .locale = &quc },
     .{ .code = "ro", .locale = &ro },
     .{ .code = "ru", .locale = &ru },
     .{ .code = "rw", .locale = &rw },
@@ -4634,6 +5075,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "sd", .locale = &sd },
     .{ .code = "sg", .locale = &sg },
     .{ .code = "shi", .locale = &shi },
+    .{ .code = "shn", .locale = &shn },
     .{ .code = "si", .locale = &si },
     .{ .code = "sk", .locale = &sk },
     .{ .code = "sl", .locale = &sl },
@@ -4651,12 +5093,14 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabledate.DateLoc
     .{ .code = "ta", .locale = &ta },
     .{ .code = "te", .locale = &te },
     .{ .code = "tem", .locale = &tem },
+    .{ .code = "tet", .locale = &tet },
     .{ .code = "tg", .locale = &tg },
     .{ .code = "th", .locale = &th },
     .{ .code = "ti", .locale = &ti },
     .{ .code = "tig", .locale = &tig },
     .{ .code = "tk", .locale = &tk },
     .{ .code = "tn", .locale = &tn },
+    .{ .code = "tpi", .locale = &tpi },
     .{ .code = "tr", .locale = &tr },
     .{ .code = "ts", .locale = &ts },
     .{ .code = "tzm", .locale = &tzm },

@@ -13,7 +13,7 @@ package sayabletime.locales
 import sayabletime.*
 
 /**
- * All 145 locale definitions for sayable-time.
+ * All 159 locale definitions for sayable-time.
  */
 public object Locales {
 
@@ -197,6 +197,26 @@ public object Locales {
         ),
     )
 
+    // Source: time/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    public val BI: TimeLocale = TimeLocale(
+        code = "bi",
+        clock = ClockConfig(
+            hours = listOf("twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven"),
+            midnight = "mednaet",
+            noon = "medeldei",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
     // Source: time/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -297,6 +317,26 @@ public object Locales {
         ),
     )
 
+    // Source: time/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    public val CAK: TimeLocale = TimeLocale(
+        code = "cak",
+        clock = ClockConfig(
+            hours = listOf("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"),
+            midnight = "nik'aj aq'a'",
+            noon = "nik'aj q'ij",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
     // Source: time/locales/src/ceb.json
     // ================================================================
     // CEB — Cebuano
@@ -370,10 +410,10 @@ public object Locales {
             patterns = mapOf(0 to "klokken {h}", 5 to "fem over {h}", 10 to "ti over {h}", 15 to "kvart over {h}", 20 to "tyve over {h}", 25 to "fem i halv {next_h}", 30 to "halv {next_h}", 35 to "fem over halv {next_h}", 40 to "tyve i {next_h}", 45 to "kvart i {next_h}", 50 to "ti i {next_h}", 55 to "fem i {next_h}"),
         ),
         short = CompactnessOverride(
-            clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+            clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
         ),
         compact = CompactnessOverride(
-            clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+            clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
         ),
     )
 
@@ -437,6 +477,26 @@ public object Locales {
         ),
     )
 
+    // Source: time/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    public val DV: TimeLocale = TimeLocale(
+        code = "dv",
+        clock = ClockConfig(
+            hours = listOf("ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ"),
+            midnight = "މެންދަމު",
+            noon = "މެންދުރު",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
     // Source: time/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -447,6 +507,26 @@ public object Locales {
             hours = listOf("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
             midnight = "dugutilama",
             noon = "tilgari",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
+    // Source: time/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    public val DZ: TimeLocale = TimeLocale(
+        code = "dz",
+        clock = ClockConfig(
+            hours = listOf("བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག"),
+            midnight = "ནམ་ཕྱེད",
+            noon = "ཉིན་གུང",
             patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
         ),
         short = CompactnessOverride(
@@ -650,10 +730,10 @@ public object Locales {
             patterns = mapOf(0 to "{h}", 5 to "viisi yli {h}", 10 to "kymmenen yli {h}", 15 to "vartti yli {h}", 20 to "kaksikymmentä yli {h}", 25 to "kaksikymmentäviisi yli {h}", 30 to "puoli yli {h}", 35 to "kaksikymmentäviisi vaille {next_h}", 40 to "kaksikymmentä vaille {next_h}", 45 to "vartti vaille {next_h}", 50 to "kymmenen vaille {next_h}", 55 to "viisi vaille {next_h}"),
         ),
         short = CompactnessOverride(
-            clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+            clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
         ),
         compact = CompactnessOverride(
-            clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+            clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
         ),
     )
 
@@ -668,6 +748,26 @@ public object Locales {
             midnight = "hatinggabi",
             noon = "tanghali",
             patterns = mapOf(0 to "{h} o'clock", 5 to "lima dan {h}", 10 to "sampu dan {h}", 15 to "labinlima dan {h}", 20 to "dalawampu dan {h}", 25 to "dalawampu't lima dan {h}", 30 to "tatlumpu dan {h}", 35 to "dalawampu't lima bago mag {next_h}", 40 to "dalawampu bago mag {next_h}", 45 to "labinlima bago mag {next_h}", 50 to "sampu bago mag {next_h}", 55 to "lima bago mag {next_h}"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
+    // Source: time/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    public val FJ: TimeLocale = TimeLocale(
+        code = "fj",
+        clock = ClockConfig(
+            hours = listOf("tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"),
+            midnight = "bogi levu",
+            noon = "sigalevu",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -897,6 +997,26 @@ public object Locales {
         ),
     )
 
+    // Source: time/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    public val HMN: TimeLocale = TimeLocale(
+        code = "hmn",
+        clock = ClockConfig(
+            hours = listOf("kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib"),
+            midnight = "ib tag hmo",
+            noon = "tav su",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
     // Source: time/locales/src/hr.json
     // ================================================================
     // HR — Croatian
@@ -987,13 +1107,13 @@ public object Locales {
             hours = listOf("dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"),
             midnight = "tengah malam",
             noon = "tengah hari",
-            patterns = mapOf(0 to "{h} o'clock", 5 to "lima lewat {h}", 10 to "sepuluh lewat {h}", 15 to "seperempat lewat {h}", 20 to "dua puluh lewat {h}", 25 to "dua puluh lima lewat {h}", 30 to "setengah lewat {h}", 35 to "dua puluh lima menjelang {next_h}", 40 to "dua puluh menjelang {next_h}", 45 to "seperempat menjelang {next_h}", 50 to "sepuluh menjelang {next_h}", 55 to "lima menjelang {next_h}"),
+            patterns = mapOf(0 to "pukul {h}", 5 to "lima lewat {h}", 10 to "sepuluh lewat {h}", 15 to "seperempat lewat {h}", 20 to "dua puluh lewat {h}", 25 to "dua puluh lima lewat {h}", 30 to "setengah lewat {h}", 35 to "dua puluh lima menjelang {next_h}", 40 to "dua puluh menjelang {next_h}", 45 to "seperempat menjelang {next_h}", 50 to "sepuluh menjelang {next_h}", 55 to "lima menjelang {next_h}"),
         ),
         short = CompactnessOverride(
-            clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+            clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
         ),
         compact = CompactnessOverride(
-            clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+            clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
         ),
     )
 
@@ -1137,6 +1257,26 @@ public object Locales {
         ),
     )
 
+    // Source: time/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    public val KEK: TimeLocale = TimeLocale(
+        code = "kek",
+        clock = ClockConfig(
+            hours = listOf("kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju"),
+            midnight = "chaq' xkab'",
+            noon = "chaq' chaab'il",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
     // Source: time/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -1154,6 +1294,26 @@ public object Locales {
         ),
         compact = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+        ),
+    )
+
+    // Source: time/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    public val KL: TimeLocale = TimeLocale(
+        code = "kl",
+        clock = ClockConfig(
+            hours = listOf("akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"),
+            midnight = "unnuap qeqqa",
+            noon = "ulloqeqqap qeqqa",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = true, format = "{h}.{mm}"),
         ),
     )
 
@@ -1414,6 +1574,26 @@ public object Locales {
         ),
         compact = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+        ),
+    )
+
+    // Source: time/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    public val MAM: TimeLocale = TimeLocale(
+        code = "mam",
+        clock = ClockConfig(
+            hours = listOf("kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj"),
+            midnight = "nik' aq'b'il",
+            noon = "nik' q'ij",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
         ),
     )
 
@@ -1897,6 +2077,26 @@ public object Locales {
         ),
     )
 
+    // Source: time/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    public val PIS: TimeLocale = TimeLocale(
+        code = "pis",
+        clock = ClockConfig(
+            hours = listOf("twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven"),
+            midnight = "midonaet",
+            noon = "midei",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
     // Source: time/locales/src/pl.json
     // ================================================================
     // PL — Polish
@@ -1988,6 +2188,26 @@ public object Locales {
             midnight = "chawpi tuta",
             noon = "chawpi p'unchaw",
             patterns = mapOf(0 to "{h}", 5 to "{h} pichqa", 10 to "{h} chunka", 15 to "{h} chunka pichqayuq", 20 to "{h} iskay chunka", 25 to "{h} iskay chunka pichqayuq", 30 to "{h} kimsa chunka", 35 to "{next_h} mana iskay chunka pichqayuq", 40 to "{next_h} mana iskay chunka", 45 to "{next_h} mana chunka pichqayuq", 50 to "{next_h} mana chunka", 55 to "{next_h} mana pichqa"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
+    // Source: time/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    public val QUC: TimeLocale = TimeLocale(
+        code = "quc",
+        clock = ClockConfig(
+            hours = listOf("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj"),
+            midnight = "nik'aj aq'ab'",
+            noon = "nik'aj q'ij",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
         ),
         short = CompactnessOverride(
             clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
@@ -2134,6 +2354,26 @@ public object Locales {
         ),
         compact = CompactnessOverride(
             clock = ShortClockConfig(use24h = true, format = "{h}:{mm}"),
+        ),
+    )
+
+    // Source: time/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    public val SHN: TimeLocale = TimeLocale(
+        code = "shn",
+        clock = ClockConfig(
+            hours = listOf("သိပ်းသွင်", "ၼိုင်ႈ", "သွင်", "သၢမ်", "သီႇ", "ႁႃႈ", "ႁူၵ်း", "ၸဵတ်း", "ပႅတ်ႇ", "ၵဝ်ႈ", "သိပ်း", "သိပ်းဢဵတ်း"),
+            midnight = "ၵၢင်ၶိုၼ်း",
+            noon = "ၵၢင်ဝၼ်း",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
         ),
     )
 
@@ -2477,6 +2717,26 @@ public object Locales {
         ),
     )
 
+    // Source: time/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    public val TET: TimeLocale = TimeLocale(
+        code = "tet",
+        clock = ClockConfig(
+            hours = listOf("sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"),
+            midnight = "meiu-kalan",
+            noon = "meiu-loron",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
     // Source: time/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -2587,6 +2847,26 @@ public object Locales {
             hours = listOf("lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe"),
             midnight = "bosigo jwa magareng",
             noon = "motshegare",
+            patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
+        ),
+        short = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("AM", "PM"), format = "{h}:{mm} {ampm}"),
+        ),
+        compact = CompactnessOverride(
+            clock = ShortClockConfig(use24h = false, amPm = Pair("a", "p"), format = "{h}:{mm}{ampm}"),
+        ),
+    )
+
+    // Source: time/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    public val TPI: TimeLocale = TimeLocale(
+        code = "tpi",
+        clock = ClockConfig(
+            hours = listOf("twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven"),
+            midnight = "biknait",
+            noon = "belo",
             patterns = mapOf(0 to "{h}:00", 5 to "{h}:05", 10 to "{h}:10", 15 to "{h}:15", 20 to "{h}:20", 25 to "{h}:25", 30 to "{h}:30", 35 to "{h}:35", 40 to "{h}:40", 45 to "{h}:45", 50 to "{h}:50", 55 to "{h}:55"),
         ),
         short = CompactnessOverride(
@@ -2919,34 +3199,37 @@ public object Locales {
 
     public val ALL: Map<String, TimeLocale> = mapOf(
         "af" to AF, "ak" to AK, "am" to AM, "ar" to AR, "az" to AZ,
-        "bci" to BCI, "be" to BE, "bem" to BEM, "bg" to BG, "bm" to BM,
-        "bn" to BN, "br" to BR, "bs" to BS, "ca" to CA, "ceb" to CEB,
-        "cs" to CS, "cy" to CY, "da" to DA, "de" to DE, "din" to DIN,
-        "dje" to DJE, "dyu" to DYU, "ee" to EE, "el" to EL, "en" to EN,
-        "es" to ES, "et" to ET, "eu" to EU, "fa" to FA, "fan" to FAN,
-        "ff" to FF, "fi" to FI, "fil" to FIL, "fon" to FON, "fr" to FR,
+        "bci" to BCI, "be" to BE, "bem" to BEM, "bg" to BG, "bi" to BI,
+        "bm" to BM, "bn" to BN, "br" to BR, "bs" to BS, "ca" to CA,
+        "cak" to CAK, "ceb" to CEB, "cs" to CS, "cy" to CY, "da" to DA,
+        "de" to DE, "din" to DIN, "dje" to DJE, "dv" to DV, "dyu" to DYU,
+        "dz" to DZ, "ee" to EE, "el" to EL, "en" to EN, "es" to ES,
+        "et" to ET, "eu" to EU, "fa" to FA, "fan" to FAN, "ff" to FF,
+        "fi" to FI, "fil" to FIL, "fj" to FJ, "fon" to FON, "fr" to FR,
         "ga" to GA, "gd" to GD, "gl" to GL, "gn" to GN, "gu" to GU,
-        "gv" to GV, "ha" to HA, "he" to HE, "hi" to HI, "hr" to HR,
-        "ht" to HT, "hu" to HU, "hy" to HY, "id" to ID, "ig" to IG,
-        "is" to IS, "it" to IT, "ja" to JA, "jv" to JV, "ka" to KA,
-        "kbp" to KBP, "kk" to KK, "km" to KM, "kn" to KN, "ko" to KO,
-        "kpe" to KPE, "ktu" to KTU, "ku" to KU, "kw" to KW, "ky" to KY,
-        "lg" to LG, "ln" to LN, "lo" to LO, "lt" to LT, "lv" to LV,
-        "men" to MEN, "mfe" to MFE, "mg" to MG, "mi" to MI, "mk" to MK,
-        "ml" to ML, "mn" to MN, "mnk" to MNK, "mos" to MOS, "mr" to MR,
-        "ms" to MS, "mt" to MT, "my" to MY, "nb" to NB, "nd" to ND,
-        "ne" to NE, "ng" to NG, "nl" to NL, "nso" to NSO, "nus" to NUS,
-        "ny" to NY, "om" to OM, "or" to OR, "pa" to PA, "pl" to PL,
-        "pov" to POV, "ps" to PS, "pt" to PT, "qu" to QU, "ro" to RO,
-        "ru" to RU, "rw" to RW, "sar" to SAR, "sd" to SD, "sg" to SG,
-        "shi" to SHI, "si" to SI, "sk" to SK, "sl" to SL, "sn" to SN,
-        "snk" to SNK, "so" to SO, "sq" to SQ, "sr" to SR, "ss" to SS,
-        "st" to ST, "su" to SU, "suk" to SUK, "sv" to SV, "sw" to SW,
-        "ta" to TA, "te" to TE, "tem" to TEM, "tg" to TG, "th" to TH,
-        "ti" to TI, "tig" to TIG, "tk" to TK, "tn" to TN, "tr" to TR,
-        "ts" to TS, "tzm" to TZM, "uk" to UK, "umb" to UMB, "ur" to UR,
-        "uz" to UZ, "vi" to VI, "vmw" to VMW, "wo" to WO, "xh" to XH,
-        "yo" to YO, "yue" to YUE, "zdj" to ZDJ, "zh" to ZH, "zu" to ZU
+        "gv" to GV, "ha" to HA, "he" to HE, "hi" to HI, "hmn" to HMN,
+        "hr" to HR, "ht" to HT, "hu" to HU, "hy" to HY, "id" to ID,
+        "ig" to IG, "is" to IS, "it" to IT, "ja" to JA, "jv" to JV,
+        "ka" to KA, "kbp" to KBP, "kek" to KEK, "kk" to KK, "kl" to KL,
+        "km" to KM, "kn" to KN, "ko" to KO, "kpe" to KPE, "ktu" to KTU,
+        "ku" to KU, "kw" to KW, "ky" to KY, "lg" to LG, "ln" to LN,
+        "lo" to LO, "lt" to LT, "lv" to LV, "mam" to MAM, "men" to MEN,
+        "mfe" to MFE, "mg" to MG, "mi" to MI, "mk" to MK, "ml" to ML,
+        "mn" to MN, "mnk" to MNK, "mos" to MOS, "mr" to MR, "ms" to MS,
+        "mt" to MT, "my" to MY, "nb" to NB, "nd" to ND, "ne" to NE,
+        "ng" to NG, "nl" to NL, "nso" to NSO, "nus" to NUS, "ny" to NY,
+        "om" to OM, "or" to OR, "pa" to PA, "pis" to PIS, "pl" to PL,
+        "pov" to POV, "ps" to PS, "pt" to PT, "qu" to QU, "quc" to QUC,
+        "ro" to RO, "ru" to RU, "rw" to RW, "sar" to SAR, "sd" to SD,
+        "sg" to SG, "shi" to SHI, "shn" to SHN, "si" to SI, "sk" to SK,
+        "sl" to SL, "sn" to SN, "snk" to SNK, "so" to SO, "sq" to SQ,
+        "sr" to SR, "ss" to SS, "st" to ST, "su" to SU, "suk" to SUK,
+        "sv" to SV, "sw" to SW, "ta" to TA, "te" to TE, "tem" to TEM,
+        "tet" to TET, "tg" to TG, "th" to TH, "ti" to TI, "tig" to TIG,
+        "tk" to TK, "tn" to TN, "tpi" to TPI, "tr" to TR, "ts" to TS,
+        "tzm" to TZM, "uk" to UK, "umb" to UMB, "ur" to UR, "uz" to UZ,
+        "vi" to VI, "vmw" to VMW, "wo" to WO, "xh" to XH, "yo" to YO,
+        "yue" to YUE, "zdj" to ZDJ, "zh" to ZH, "zu" to ZU
     )
 
     public fun get(code: String): TimeLocale? = ALL[code]

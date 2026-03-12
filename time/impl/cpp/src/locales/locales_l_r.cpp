@@ -93,6 +93,22 @@ const TimeLocale& LV() {
     return loc;
 }
 
+// Source: time/locales/src/mam.json
+const TimeLocale& MAM() {
+    static const TimeLocale loc{
+        "mam",
+        ClockConfig{
+            {"kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj"},
+            "nik' aq'b'il",
+            "nik' q'ij",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/men.json
 const TimeLocale& MEN() {
     static const TimeLocale loc{
@@ -477,6 +493,22 @@ const TimeLocale& PA() {
     return loc;
 }
 
+// Source: time/locales/src/pis.json
+const TimeLocale& PIS() {
+    static const TimeLocale loc{
+        "pis",
+        ClockConfig{
+            {"twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven"},
+            "midonaet",
+            "midei",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/pl.json
 const TimeLocale& PL() {
     static const TimeLocale loc{
@@ -550,6 +582,22 @@ const TimeLocale& QU() {
             "chawpi tuta",
             "chawpi p'unchaw",
             {{0, "{h}"}, {5, "{h} pichqa"}, {10, "{h} chunka"}, {15, "{h} chunka pichqayuq"}, {20, "{h} iskay chunka"}, {25, "{h} iskay chunka pichqayuq"}, {30, "{h} kimsa chunka"}, {35, "{next_h} mana iskay chunka pichqayuq"}, {40, "{next_h} mana iskay chunka"}, {45, "{next_h} mana chunka pichqayuq"}, {50, "{next_h} mana chunka"}, {55, "{next_h} mana pichqa"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/quc.json
+const TimeLocale& QUC() {
+    static const TimeLocale loc{
+        "quc",
+        ClockConfig{
+            {"kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj"},
+            "nik'aj aq'ab'",
+            "nik'aj q'ij",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},

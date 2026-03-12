@@ -13,7 +13,7 @@ Imports System.Collections.Generic
 Namespace SayableDateLib
 
 ''' <summary>
-''' All 145 locale definitions for sayable-date.
+''' All 159 locale definitions for sayable-date.
 ''' </summary>
 Public Module Locales
 
@@ -440,6 +440,53 @@ Public Module Locales
         )
     )
 
+    ' Source: date/locales/src/bi.json
+    ' ================================================================
+    ' BI — Bislama
+    ' ================================================================
+    Public ReadOnly BI As New DateLocale(
+        "bi",
+        New String() { "Janueri", "Februari", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogis", "Septemba", "Oktoba", "Novemba", "Disemba" },
+        New String() { "Sande", "Mande", "Tusde", "Wenesde", "Tosde", "Fraede", "Sarede" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tede",
+        "tumoro",
+        "yestedei",
+        "bihaen tumoro",
+        "bifo yestedei",
+        "disfala {weekday}",
+        "nekis {weekday}",
+        "las {weekday}",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Ogi", "Sep", "Okt", "Nov", "Dis" },
+            Nothing,
+            New String() { "San", "Man", "Tus", "Wen", "Tos", "Fra", "Sar" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
     ' Source: date/locales/src/bm.json
     ' ================================================================
     ' BM — Bambara
@@ -653,6 +700,53 @@ Public Module Locales
             New String() { "gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des" },
             Nothing,
             New String() { "dg", "dl", "dt", "dc", "dj", "dv", "ds" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
+    ' Source: date/locales/src/cak.json
+    ' ================================================================
+    ' CAK — Kaqchikel
+    ' ================================================================
+    Public ReadOnly CAK As New DateLocale(
+        "cak",
+        New String() { "Nab'ey ik'", "Ruka'n ik'", "Rox ik'", "Rukaj ik'", "Ro' ik'", "Ruwaq ik'", "Ruwuq ik'", "Ruwajxaq ik'", "Rub'elej ik'", "Rulaj ik'", "Rujulaj ik'", "Rukab'laj ik'" },
+        New String() { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "wakami",
+        "chwe'q",
+        "iwïr",
+        "ka'i' q'ij chwe'q",
+        "ka'i' q'ij iwïr",
+        "re' {weekday}",
+        "{weekday} ri petenäq",
+        "{weekday} ri xik'o",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'" },
+            Nothing,
+            New String() { "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
             "{n}",
             Nothing,
             "{day} {month}",
@@ -1004,6 +1098,53 @@ Public Module Locales
         )
     )
 
+    ' Source: date/locales/src/dv.json
+    ' ================================================================
+    ' DV — Dhivehi
+    ' ================================================================
+    Public ReadOnly DV As New DateLocale(
+        "dv",
+        New String() { "ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އެޕްރީލު", "މެއި", "ޖޫން", "ޖުލައި", "އޮގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު" },
+        New String() { "އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "މިއަދު",
+        "މާދަމާ",
+        "އިއްޔެ",
+        "އަނެއް ދުވަހު",
+        "ކުރީ ދުވަހު",
+        "މި {weekday}",
+        "އަންނަ {weekday}",
+        "ފާއިތުވި {weekday}",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "ޖެނު", "ފެބް", "މާރި", "އެޕް", "މެއި", "ޖޫން", "ޖުލް", "އޮގް", "ސެޕް", "އޮކް", "ނޮވް", "ޑިސް" },
+            Nothing,
+            New String() { "އާދީ", "ހޯމަ", "އަން", "ބުދަ", "ބުރާ", "ހުކު", "ހޮނި" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
     ' Source: date/locales/src/dyu.json
     ' ================================================================
     ' DYU — Dyula
@@ -1045,6 +1186,53 @@ Public Module Locales
             Nothing,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
+    ' Source: date/locales/src/dz.json
+    ' ================================================================
+    ' DZ — Dzongkha
+    ' ================================================================
+    Public ReadOnly DZ As New DateLocale(
+        "dz",
+        New String() { "ཟླ་དངཔ", "ཟླ་གཉིས་པ", "ཟླ་གསུམ་པ", "ཟླ་བཞི་པ", "ཟླ་ལྔ་པ", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ", "ཟླ་བརྒྱད་པ", "ཟླ་དགུ་པ", "ཟླ་བཅུ་པ", "ཟླ་བཅུ་གཅིག་པ", "ཟླ་བཅུ་གཉིས་པ" },
+        New String() { "གཟའ་ཉི་མ", "གཟའ་ཟླ་བ", "གཟའ་མིག་དམར", "གཟའ་ལྷག་པ", "གཟའ་ཕུར་བུ", "གཟའ་པ་སངས", "གཟའ་སྤེན་པ" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{month} {day}",
+        "{year} {month} {day}",
+        "དི་རིང",
+        "ནངས་པ",
+        "ཁ་ཙ",
+        "གནངས་ཚེ",
+        "ཁ་ཉིམ",
+        "འདི་ {weekday}",
+        "{weekday} ཤུལ་མ",
+        "{weekday} ཧེ་མ",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "ཟླ་༡", "ཟླ་༢", "ཟླ་༣", "ཟླ་༤", "ཟླ་༥", "ཟླ་༦", "ཟླ་༧", "ཟླ་༨", "ཟླ་༩", "ཟླ་༡༠", "ཟླ་༡༡", "ཟླ་༡༢" },
+            Nothing,
+            New String() { "ཉི", "ཟླ", "མིག", "ལྷག", "ཕུར", "སངས", "སྤེན" },
+            "{n}",
+            Nothing,
+            "{month} {day}",
+            "{year} {month} {day}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{yy}/{m}/{d}",
+            "{yy}/{m}/{d}",
             Nothing,
             Nothing,
             Nothing
@@ -1568,6 +1756,53 @@ Public Module Locales
         )
     )
 
+    ' Source: date/locales/src/fj.json
+    ' ================================================================
+    ' FJ — Fijian
+    ' ================================================================
+    Public ReadOnly FJ As New DateLocale(
+        "fj",
+        New String() { "Janueri", "Feperueri", "Maji", "Epereli", "Me", "June", "Julai", "Okosita", "Sepiteba", "Okotova", "Noveba", "Tiseba" },
+        New String() { "Sigatapu", "Moniti", "Tusiti", "Vukelulu", "Lotulevu", "Vakaraubuka", "Vakarauwai" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "nikua",
+        "mataka",
+        "nanoa",
+        "bogi rua ni mataka",
+        "nanoa edua",
+        "na {weekday} oqo",
+        "na {weekday} mai oqo",
+        "na {weekday} sa oti",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "Jan", "Fep", "Maj", "Epe", "Me", "Jun", "Jul", "Oko", "Sep", "Okt", "Nov", "Tis" },
+            Nothing,
+            New String() { "Sig", "Mon", "Tus", "Vuk", "Lot", "Vra", "Vrw" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
     ' Source: date/locales/src/fon.json
     ' ================================================================
     ' FON — Fon
@@ -2079,6 +2314,53 @@ Public Module Locales
             Nothing,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
+    ' Source: date/locales/src/hmn.json
+    ' ================================================================
+    ' HMN — Hmong
+    ' ================================================================
+    Public ReadOnly HMN As New DateLocale(
+        "hmn",
+        New String() { "Ib Hlis", "Ob Hlis", "Peb Hlis", "Plaub Hlis", "Tsib Hlis", "Rau Hlis", "Xya Hlis", "Yim Hlis", "Cuaj Hlis", "Kaum Hlis", "Kaum Ib Hlis", "Kaum Ob Hlis" },
+        New String() { "Hnub Tim Ib", "Hnub Tim Ob", "Hnub Tim Peb", "Hnub Tim Plaub", "Hnub Tim Tsib", "Hnub Tim Rau", "Hnub Tim Xya" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "hnub no",
+        "tag kis",
+        "nag hmo",
+        "ob hnub tom ntej",
+        "ob hnub dhau los",
+        "{weekday} no",
+        "{weekday} tom ntej",
+        "{weekday} tas los",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "1 Hli", "2 Hli", "3 Hli", "4 Hli", "5 Hli", "6 Hli", "7 Hli", "8 Hli", "9 Hli", "10 Hli", "11 Hli", "12 Hli" },
+            Nothing,
+            New String() { "T1", "T2", "T3", "T4", "T5", "T6", "T7" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{m}/{d}",
+            "{m}/{d}/{yy}",
             Nothing,
             Nothing,
             Nothing
@@ -2649,6 +2931,53 @@ Public Module Locales
         )
     )
 
+    ' Source: date/locales/src/kek.json
+    ' ================================================================
+    ' KEK — Q'eqchi'
+    ' ================================================================
+    Public ReadOnly KEK As New DateLocale(
+        "kek",
+        New String() { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" },
+        New String() { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "anaqwan",
+        "q'ela'",
+        "ewu",
+        Nothing,
+        Nothing,
+        "a'in {weekday}",
+        "{weekday} chalen",
+        "{weekday} rik'in",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" },
+            Nothing,
+            New String() { "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
     ' Source: date/locales/src/kk.json
     ' ================================================================
     ' KK — Kazakh
@@ -2690,6 +3019,53 @@ Public Module Locales
             Nothing,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
+    ' Source: date/locales/src/kl.json
+    ' ================================================================
+    ' KL — Kalaallisut
+    ' ================================================================
+    Public ReadOnly KL As New DateLocale(
+        "kl",
+        New String() { "januaarip", "februaarip", "marsip", "apriilip", "maajip", "juunip", "juulip", "aggustip", "septembarip", "oktobarip", "novembarip", "decembarip" },
+        New String() { "sapaat", "ataasinngorneq", "marlunngorneq", "pingasunngorneq", "sisamanngorneq", "tallimanngorneq", "arfininngorneq" },
+        "{n}.",
+        New Dictionary(Of String, String)(),
+        "{month} {day}",
+        "{day} {month} {year}",
+        "ullumi",
+        "aqagu",
+        "ippassaq",
+        "aqaguagu",
+        "ippassaani",
+        "{weekday} manna",
+        "{weekday} tulleq",
+        "{weekday} kingulleq",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec" },
+            Nothing,
+            New String() { "sap", "ata", "mar", "pin", "sis", "tal", "arf" },
+            "{n}.",
+            Nothing,
+            "{month} {day}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{m}-{d}",
+            "{year}-{m}-{d}",
             Nothing,
             Nothing,
             Nothing
@@ -3301,6 +3677,53 @@ Public Module Locales
             Nothing,
             "{d}.{m}.",
             "{d}.{m}.{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
+    ' Source: date/locales/src/mam.json
+    ' ================================================================
+    ' MAM — Mam
+    ' ================================================================
+    Public ReadOnly MAM As New DateLocale(
+        "mam",
+        New String() { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" },
+        New String() { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "iky'x",
+        "q'ij oj",
+        "ewl",
+        Nothing,
+        Nothing,
+        "tu'n {weekday}",
+        "{weekday} tul",
+        "{weekday} nchi'j",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" },
+            Nothing,
+            New String() { "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
             Nothing,
             Nothing,
             Nothing
@@ -4435,6 +4858,53 @@ Public Module Locales
         )
     )
 
+    ' Source: date/locales/src/pis.json
+    ' ================================================================
+    ' PIS — Pijin
+    ' ================================================================
+    Public ReadOnly PIS As New DateLocale(
+        "pis",
+        New String() { "Janueri", "Februeri", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogas", "Septemba", "Oktoba", "Novemba", "Disemba" },
+        New String() { "Sande", "Mande", "Tiusde", "Wenesde", "Tosde", "Fraede", "Sarere" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tudei",
+        "tumoro",
+        "yestedei",
+        "bihaen tumoro",
+        "bifo yestedei",
+        "disfala {weekday}",
+        "nekis {weekday}",
+        "las {weekday}",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis" },
+            Nothing,
+            New String() { "San", "Man", "Tiu", "Wen", "Tos", "Fra", "Sar" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
     ' Source: date/locales/src/pl.json
     ' ================================================================
     ' PL — Polish
@@ -4648,6 +5118,53 @@ Public Module Locales
             New String() { "Qhu", "Hat", "Paw", "Ayr", "Aym", "Int", "Ant", "Qha", "Uma", "Kan", "Aya", "Qra" },
             Nothing,
             New String() { "Int", "Kil", "Ati", "Quy", "Ill", "Ch'a", "K'uy" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
+    ' Source: date/locales/src/quc.json
+    ' ================================================================
+    ' QUC — K'iche'
+    ' ================================================================
+    Public ReadOnly QUC As New DateLocale(
+        "quc",
+        New String() { "Nab'e ik'", "Ukab' ik'", "Urox ik'", "Ukaj ik'", "Uro' ik'", "Uwaq ik'", "Uwuq ik'", "Uwajxaq ik'", "Ub'elej ik'", "Ulaj ik'", "Ujulaj ik'", "Ukab'laj ik'" },
+        New String() { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "kamik",
+        "chwe'q",
+        "iwir",
+        "kab'ij chwe'q",
+        "kab'ij iwir",
+        "we {weekday}",
+        "{weekday} ri petinaq",
+        "{weekday} ri k'aslik",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'" },
+            Nothing,
+            New String() { "Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb" },
             "{n}",
             Nothing,
             "{day} {month}",
@@ -4977,6 +5494,53 @@ Public Module Locales
             New String() { "ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ" },
             Nothing,
             New String() { "ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
+    ' Source: date/locales/src/shn.json
+    ' ================================================================
+    ' SHN — Shan
+    ' ================================================================
+    Public ReadOnly SHN As New DateLocale(
+        "shn",
+        New String() { "ၸၼ်ႇဝႃႇရီႇ", "ၾႅပ်ႇဝႃႇရီႇ", "မၢတ်ႉၶျ်", "ဢေႇပရႄႇ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလၢႆႇ", "ဢေႃးၵၢတ်ႉ", "သႅပ်ႇထႅမ်ႇပႃႇ", "ဢွၵ်ႇထူဝ်ႇပႃႇ", "ၼူဝ်ႇဝႅမ်ႇပႃႇ", "တီႇသႅမ်ႇပႃႇ" },
+        New String() { "ဝၼ်းဢႃးတိတ်ႉ", "ဝၼ်းၸၼ်", "ဝၼ်းဢၢင်းၵၢၼ်း", "ဝၼ်းပုတ်ႉ", "ဝၼ်းၽတ်း", "ဝၼ်းသုၵ်း", "ဝၼ်းသဝ်" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ဝၼ်းမိူဝ်ႈၼႆႉ",
+        "မိူဝ်ႈၽုၵ်ႈ",
+        "မိူဝ်ႈဝႃး",
+        "မိူဝ်ႈႁိုဝ်",
+        "မိူဝ်ႈသိုၼ်း",
+        "{weekday} ၼႆႉ",
+        "{weekday} ၼႃႈ",
+        "{weekday} ပူၼ်ႉ",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "ၸၼ်ႇ", "ၾႅပ်ႇ", "မၢတ်ႉ", "ဢေႇပ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလ", "ဢေႃး", "သႅပ်ႇ", "ဢွၵ်ႇ", "ၼူဝ်ႇ", "တီႇသ" },
+            Nothing,
+            New String() { "ဢႃး", "ၸၼ်", "ဢၢင်း", "ပုတ်ႉ", "ၽတ်း", "သုၵ်း", "သဝ်" },
             "{n}",
             Nothing,
             "{day} {month}",
@@ -5798,6 +6362,53 @@ Public Module Locales
         )
     )
 
+    ' Source: date/locales/src/tet.json
+    ' ================================================================
+    ' TET — Tetum
+    ' ================================================================
+    Public ReadOnly TET As New DateLocale(
+        "tet",
+        New String() { "Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru" },
+        New String() { "Domingu", "Segunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sábadu" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "ohin",
+        "aban",
+        "horiseik",
+        "aban bainrua",
+        "horiseik liu",
+        "{weekday} ida ne'e",
+        "{weekday} oin mai",
+        "{weekday} kotuk",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez" },
+            Nothing,
+            New String() { "Dom", "Seg", "Ter", "Kua", "Kin", "Ses", "Sáb" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
     ' Source: date/locales/src/tg.json
     ' ================================================================
     ' TG — Tajik
@@ -6058,6 +6669,53 @@ Public Module Locales
             New String() { "Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phk", "Pha", "Lwe", "Dip", "Ngw", "Sed" },
             Nothing,
             New String() { "Tsh", "Mos", "Bed", "Rar", "Bon", "Tlh", "Mat" },
+            "{n}",
+            Nothing,
+            "{day} {month}",
+            "{day} {month} {year}",
+            Nothing,
+            Nothing,
+            Nothing
+        ),
+        New CompactnessOverride(
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            Nothing,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            Nothing,
+            Nothing,
+            Nothing
+        )
+    )
+
+    ' Source: date/locales/src/tpi.json
+    ' ================================================================
+    ' TPI — Tok Pisin
+    ' ================================================================
+    Public ReadOnly TPI As New DateLocale(
+        "tpi",
+        New String() { "Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba" },
+        New String() { "Sande", "Mande", "Tunde", "Trinde", "Fonde", "Fraide", "Sarere" },
+        "{n}",
+        New Dictionary(Of String, String)(),
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tude",
+        "tumora",
+        "asde",
+        "haptumora",
+        "asde bipo",
+        "dispela {weekday}",
+        "{weekday} bihain",
+        "{weekday} bipo",
+        Nothing,
+        New CompactnessOverride(
+            New String() { "Jan", "Feb", "Mas", "Epr", "Me", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Des" },
+            Nothing,
+            New String() { "San", "Man", "Tun", "Tri", "Fon", "Fra", "Sar" },
             "{n}",
             Nothing,
             "{day} {month}",
@@ -6842,11 +7500,13 @@ Public Module Locales
         { "be", BE },
         { "bem", BEM },
         { "bg", BG },
+        { "bi", BI },
         { "bm", BM },
         { "bn", BN },
         { "br", BR },
         { "bs", BS },
         { "ca", CA },
+        { "cak", CAK },
         { "ceb", CEB },
         { "cs", CS },
         { "cy", CY },
@@ -6854,7 +7514,9 @@ Public Module Locales
         { "de", DE },
         { "din", DIN },
         { "dje", DJE },
+        { "dv", DV },
         { "dyu", DYU },
+        { "dz", DZ },
         { "ee", EE },
         { "el", EL },
         { "en", EN },
@@ -6866,6 +7528,7 @@ Public Module Locales
         { "ff", FF },
         { "fi", FI },
         { "fil", FIL },
+        { "fj", FJ },
         { "fon", FON },
         { "fr", FR },
         { "ga", GA },
@@ -6877,6 +7540,7 @@ Public Module Locales
         { "ha", HA },
         { "he", HE },
         { "hi", HI },
+        { "hmn", HMN },
         { "hr", HR },
         { "ht", HT },
         { "hu", HU },
@@ -6889,7 +7553,9 @@ Public Module Locales
         { "jv", JV },
         { "ka", KA },
         { "kbp", KBP },
+        { "kek", KEK },
         { "kk", KK },
+        { "kl", KL },
         { "km", KM },
         { "kn", KN },
         { "ko", KO },
@@ -6903,6 +7569,7 @@ Public Module Locales
         { "lo", LO },
         { "lt", LT },
         { "lv", LV },
+        { "mam", MAM },
         { "men", MEN },
         { "mfe", MFE },
         { "mg", MG },
@@ -6927,11 +7594,13 @@ Public Module Locales
         { "om", OM },
         { "or", [OR] },
         { "pa", PA },
+        { "pis", PIS },
         { "pl", PL },
         { "pov", POV },
         { "ps", PS },
         { "pt", PT },
         { "qu", QU },
+        { "quc", QUC },
         { "ro", RO },
         { "ru", RU },
         { "rw", RW },
@@ -6939,6 +7608,7 @@ Public Module Locales
         { "sd", SD },
         { "sg", SG },
         { "shi", SHI },
+        { "shn", SHN },
         { "si", SI },
         { "sk", SK },
         { "sl", SL },
@@ -6956,12 +7626,14 @@ Public Module Locales
         { "ta", TA },
         { "te", TE },
         { "tem", TEM },
+        { "tet", TET },
         { "tg", TG },
         { "th", TH },
         { "ti", TI },
         { "tig", TIG },
         { "tk", TK },
         { "tn", TN },
+        { "tpi", TPI },
         { "tr", TR },
         { "ts", TS },
         { "tzm", TZM },

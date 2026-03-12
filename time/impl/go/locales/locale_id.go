@@ -20,12 +20,12 @@ var ID = st.TimeLocale{
 		Hours:    [12]string{"dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"},
 		Midnight: "tengah malam",
 		Noon:     "tengah hari",
-		Patterns: map[int]string{0: "{h} o'clock", 5: "lima lewat {h}", 10: "sepuluh lewat {h}", 15: "seperempat lewat {h}", 20: "dua puluh lewat {h}", 25: "dua puluh lima lewat {h}", 30: "setengah lewat {h}", 35: "dua puluh lima menjelang {next_h}", 40: "dua puluh menjelang {next_h}", 45: "seperempat menjelang {next_h}", 50: "sepuluh menjelang {next_h}", 55: "lima menjelang {next_h}"},
+		Patterns: map[int]string{0: "pukul {h}", 5: "lima lewat {h}", 10: "sepuluh lewat {h}", 15: "seperempat lewat {h}", 20: "dua puluh lewat {h}", 25: "dua puluh lima lewat {h}", 30: "setengah lewat {h}", 35: "dua puluh lima menjelang {next_h}", 40: "dua puluh menjelang {next_h}", 45: "seperempat menjelang {next_h}", 50: "sepuluh menjelang {next_h}", 55: "lima menjelang {next_h}"},
 	},
 	Short: &st.CompactnessOverride{
-		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},
+		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}.{mm}"},
 	},
 	Compact: &st.CompactnessOverride{
-		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},
+		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}.{mm}"},
 	},
 }

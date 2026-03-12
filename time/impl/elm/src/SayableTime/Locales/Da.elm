@@ -58,7 +58,7 @@ locale =
             { clock =
                 Just
                     { use24h = True
-                    , format = "{h}:{mm}"
+                    , format = "{h}.{mm}"
                     , amPm = Nothing
                     }
             }
@@ -67,7 +67,7 @@ locale =
             { clock =
                 Just
                     { use24h = True
-                    , format = "{h}:{mm}"
+                    , format = "{h}.{mm}"
                     , amPm = Nothing
                     }
             }

@@ -13,7 +13,7 @@ package sayabledate.locales
 import sayabledate.*
 
 /**
- * All 145 locale definitions for sayable-date.
+ * All 159 locale definitions for sayable-date.
  */
 public object Locales {
 
@@ -315,6 +315,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    public val BI: DateLocale = DateLocale(
+        code = "bi",
+        months = listOf("Janueri", "Februari", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogis", "Septemba", "Oktoba", "Novemba", "Disemba"),
+        weekdays = listOf("Sande", "Mande", "Tusde", "Wenesde", "Tosde", "Fraede", "Sarede"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "tede",
+        tomorrow = "tumoro",
+        yesterday = "yestedei",
+        dayAfterTomorrow = "bihaen tumoro",
+        dayBeforeYesterday = "bifo yestedei",
+        thisWeekday = "disfala {weekday}",
+        nextWeekday = "nekis {weekday}",
+        lastWeekday = "las {weekday}",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Ogi", "Sep", "Okt", "Nov", "Dis"),
+            weekdays = listOf("San", "Man", "Tus", "Wen", "Tos", "Fra", "Sar"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -468,6 +501,39 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des"),
             weekdays = listOf("dg", "dl", "dt", "dc", "dj", "dv", "ds"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    public val CAK: DateLocale = DateLocale(
+        code = "cak",
+        months = listOf("Nab'ey ik'", "Ruka'n ik'", "Rox ik'", "Rukaj ik'", "Ro' ik'", "Ruwaq ik'", "Ruwuq ik'", "Ruwajxaq ik'", "Rub'elej ik'", "Rulaj ik'", "Rujulaj ik'", "Rukab'laj ik'"),
+        weekdays = listOf("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "wakami",
+        tomorrow = "chwe'q",
+        yesterday = "iwïr",
+        dayAfterTomorrow = "ka'i' q'ij chwe'q",
+        dayBeforeYesterday = "ka'i' q'ij iwïr",
+        thisWeekday = "re' {weekday}",
+        nextWeekday = "{weekday} ri petenäq",
+        lastWeekday = "{weekday} ri xik'o",
+        short = CompactnessOverride(
+            months = listOf("1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'"),
+            weekdays = listOf("Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -710,6 +776,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    public val DV: DateLocale = DateLocale(
+        code = "dv",
+        months = listOf("ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އެޕްރީލު", "މެއި", "ޖޫން", "ޖުލައި", "އޮގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު"),
+        weekdays = listOf("އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "މިއަދު",
+        tomorrow = "މާދަމާ",
+        yesterday = "އިއްޔެ",
+        dayAfterTomorrow = "އަނެއް ދުވަހު",
+        dayBeforeYesterday = "ކުރީ ދުވަހު",
+        thisWeekday = "މި {weekday}",
+        nextWeekday = "އަންނަ {weekday}",
+        lastWeekday = "ފާއިތުވި {weekday}",
+        short = CompactnessOverride(
+            months = listOf("ޖެނު", "ފެބް", "މާރި", "އެޕް", "މެއި", "ޖޫން", "ޖުލް", "އޮގް", "ސެޕް", "އޮކް", "ނޮވް", "ޑިސް"),
+            weekdays = listOf("އާދީ", "ހޯމަ", "އަން", "ބުދަ", "ބުރާ", "ހުކު", "ހޮނި"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -740,6 +839,39 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}/{m}",
             datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    public val DZ: DateLocale = DateLocale(
+        code = "dz",
+        months = listOf("ཟླ་དངཔ", "ཟླ་གཉིས་པ", "ཟླ་གསུམ་པ", "ཟླ་བཞི་པ", "ཟླ་ལྔ་པ", "ཟླ་དྲུག་པ", "ཟླ་བདུན་པ", "ཟླ་བརྒྱད་པ", "ཟླ་དགུ་པ", "ཟླ་བཅུ་པ", "ཟླ་བཅུ་གཅིག་པ", "ཟླ་བཅུ་གཉིས་པ"),
+        weekdays = listOf("གཟའ་ཉི་མ", "གཟའ་ཟླ་བ", "གཟའ་མིག་དམར", "གཟའ་ལྷག་པ", "གཟའ་ཕུར་བུ", "གཟའ་པ་སངས", "གཟའ་སྤེན་པ"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{month} {day}",
+        datePatternWithYear = "{year} {month} {day}",
+        today = "དི་རིང",
+        tomorrow = "ནངས་པ",
+        yesterday = "ཁ་ཙ",
+        dayAfterTomorrow = "གནངས་ཚེ",
+        dayBeforeYesterday = "ཁ་ཉིམ",
+        thisWeekday = "འདི་ {weekday}",
+        nextWeekday = "{weekday} ཤུལ་མ",
+        lastWeekday = "{weekday} ཧེ་མ",
+        short = CompactnessOverride(
+            months = listOf("ཟླ་༡", "ཟླ་༢", "ཟླ་༣", "ཟླ་༤", "ཟླ་༥", "ཟླ་༦", "ཟླ་༧", "ཟླ་༨", "ཟླ་༩", "ཟླ་༡༠", "ཟླ་༡༡", "ཟླ་༡༢"),
+            weekdays = listOf("ཉི", "ཟླ", "མིག", "ལྷག", "ཕུར", "སངས", "སྤེན"),
+            dayFormat = "{n}",
+            datePattern = "{month} {day}",
+            datePatternWithYear = "{year} {month} {day}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{yy}/{m}/{d}",
+            datePatternWithYear = "{yy}/{m}/{d}",
         ),
     )
 
@@ -1108,6 +1240,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    public val FJ: DateLocale = DateLocale(
+        code = "fj",
+        months = listOf("Janueri", "Feperueri", "Maji", "Epereli", "Me", "June", "Julai", "Okosita", "Sepiteba", "Okotova", "Noveba", "Tiseba"),
+        weekdays = listOf("Sigatapu", "Moniti", "Tusiti", "Vukelulu", "Lotulevu", "Vakaraubuka", "Vakarauwai"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "nikua",
+        tomorrow = "mataka",
+        yesterday = "nanoa",
+        dayAfterTomorrow = "bogi rua ni mataka",
+        dayBeforeYesterday = "nanoa edua",
+        thisWeekday = "na {weekday} oqo",
+        nextWeekday = "na {weekday} mai oqo",
+        lastWeekday = "na {weekday} sa oti",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Fep", "Maj", "Epe", "Me", "Jun", "Jul", "Oko", "Sep", "Okt", "Nov", "Tis"),
+            weekdays = listOf("Sig", "Mon", "Tus", "Vuk", "Lot", "Vra", "Vrw"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/fon.json
     // ================================================================
     // FON — Fon
@@ -1466,6 +1631,39 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}/{m}",
             datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    public val HMN: DateLocale = DateLocale(
+        code = "hmn",
+        months = listOf("Ib Hlis", "Ob Hlis", "Peb Hlis", "Plaub Hlis", "Tsib Hlis", "Rau Hlis", "Xya Hlis", "Yim Hlis", "Cuaj Hlis", "Kaum Hlis", "Kaum Ib Hlis", "Kaum Ob Hlis"),
+        weekdays = listOf("Hnub Tim Ib", "Hnub Tim Ob", "Hnub Tim Peb", "Hnub Tim Plaub", "Hnub Tim Tsib", "Hnub Tim Rau", "Hnub Tim Xya"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "hnub no",
+        tomorrow = "tag kis",
+        yesterday = "nag hmo",
+        dayAfterTomorrow = "ob hnub tom ntej",
+        dayBeforeYesterday = "ob hnub dhau los",
+        thisWeekday = "{weekday} no",
+        nextWeekday = "{weekday} tom ntej",
+        lastWeekday = "{weekday} tas los",
+        short = CompactnessOverride(
+            months = listOf("1 Hli", "2 Hli", "3 Hli", "4 Hli", "5 Hli", "6 Hli", "7 Hli", "8 Hli", "9 Hli", "10 Hli", "11 Hli", "12 Hli"),
+            weekdays = listOf("T1", "T2", "T3", "T4", "T5", "T6", "T7"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{m}/{d}",
+            datePatternWithYear = "{m}/{d}/{yy}",
         ),
     )
 
@@ -1866,6 +2064,37 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    public val KEK: DateLocale = DateLocale(
+        code = "kek",
+        months = listOf("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"),
+        weekdays = listOf("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "anaqwan",
+        tomorrow = "q'ela'",
+        yesterday = "ewu",
+        thisWeekday = "a'in {weekday}",
+        nextWeekday = "{weekday} chalen",
+        lastWeekday = "{weekday} rik'in",
+        short = CompactnessOverride(
+            months = listOf("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"),
+            weekdays = listOf("Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -1896,6 +2125,39 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}/{m}",
             datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    public val KL: DateLocale = DateLocale(
+        code = "kl",
+        months = listOf("januaarip", "februaarip", "marsip", "apriilip", "maajip", "juunip", "juulip", "aggustip", "septembarip", "oktobarip", "novembarip", "decembarip"),
+        weekdays = listOf("sapaat", "ataasinngorneq", "marlunngorneq", "pingasunngorneq", "sisamanngorneq", "tallimanngorneq", "arfininngorneq"),
+        dayFormat = "{n}.",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{month} {day}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ullumi",
+        tomorrow = "aqagu",
+        yesterday = "ippassaq",
+        dayAfterTomorrow = "aqaguagu",
+        dayBeforeYesterday = "ippassaani",
+        thisWeekday = "{weekday} manna",
+        nextWeekday = "{weekday} tulleq",
+        lastWeekday = "{weekday} kingulleq",
+        short = CompactnessOverride(
+            months = listOf("jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec"),
+            weekdays = listOf("sap", "ata", "mar", "pin", "sis", "tal", "arf"),
+            dayFormat = "{n}.",
+            datePattern = "{month} {day}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{m}-{d}",
+            datePatternWithYear = "{year}-{m}-{d}",
         ),
     )
 
@@ -2324,6 +2586,37 @@ public object Locales {
         compact = CompactnessOverride(
             datePattern = "{d}.{m}.",
             datePatternWithYear = "{d}.{m}.{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    public val MAM: DateLocale = DateLocale(
+        code = "mam",
+        months = listOf("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"),
+        weekdays = listOf("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "iky'x",
+        tomorrow = "q'ij oj",
+        yesterday = "ewl",
+        thisWeekday = "tu'n {weekday}",
+        nextWeekday = "{weekday} tul",
+        lastWeekday = "{weekday} nchi'j",
+        short = CompactnessOverride(
+            months = listOf("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"),
+            weekdays = listOf("Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
         ),
     )
 
@@ -3119,6 +3412,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    public val PIS: DateLocale = DateLocale(
+        code = "pis",
+        months = listOf("Janueri", "Februeri", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogas", "Septemba", "Oktoba", "Novemba", "Disemba"),
+        weekdays = listOf("Sande", "Mande", "Tiusde", "Wenesde", "Tosde", "Fraede", "Sarere"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "tudei",
+        tomorrow = "tumoro",
+        yesterday = "yestedei",
+        dayAfterTomorrow = "bihaen tumoro",
+        dayBeforeYesterday = "bifo yestedei",
+        thisWeekday = "disfala {weekday}",
+        nextWeekday = "nekis {weekday}",
+        lastWeekday = "las {weekday}",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis"),
+            weekdays = listOf("San", "Man", "Tiu", "Wen", "Tos", "Fra", "Sar"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/pl.json
     // ================================================================
     // PL — Polish
@@ -3275,6 +3601,39 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("Qhu", "Hat", "Paw", "Ayr", "Aym", "Int", "Ant", "Qha", "Uma", "Kan", "Aya", "Qra"),
             weekdays = listOf("Int", "Kil", "Ati", "Quy", "Ill", "Ch'a", "K'uy"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    public val QUC: DateLocale = DateLocale(
+        code = "quc",
+        months = listOf("Nab'e ik'", "Ukab' ik'", "Urox ik'", "Ukaj ik'", "Uro' ik'", "Uwaq ik'", "Uwuq ik'", "Uwajxaq ik'", "Ub'elej ik'", "Ulaj ik'", "Ujulaj ik'", "Ukab'laj ik'"),
+        weekdays = listOf("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "kamik",
+        tomorrow = "chwe'q",
+        yesterday = "iwir",
+        dayAfterTomorrow = "kab'ij chwe'q",
+        dayBeforeYesterday = "kab'ij iwir",
+        thisWeekday = "we {weekday}",
+        nextWeekday = "{weekday} ri petinaq",
+        lastWeekday = "{weekday} ri k'aslik",
+        short = CompactnessOverride(
+            months = listOf("1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'"),
+            weekdays = listOf("Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -3506,6 +3865,39 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ"),
             weekdays = listOf("ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    public val SHN: DateLocale = DateLocale(
+        code = "shn",
+        months = listOf("ၸၼ်ႇဝႃႇရီႇ", "ၾႅပ်ႇဝႃႇရီႇ", "မၢတ်ႉၶျ်", "ဢေႇပရႄႇ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလၢႆႇ", "ဢေႃးၵၢတ်ႉ", "သႅပ်ႇထႅမ်ႇပႃႇ", "ဢွၵ်ႇထူဝ်ႇပႃႇ", "ၼူဝ်ႇဝႅမ်ႇပႃႇ", "တီႇသႅမ်ႇပႃႇ"),
+        weekdays = listOf("ဝၼ်းဢႃးတိတ်ႉ", "ဝၼ်းၸၼ်", "ဝၼ်းဢၢင်းၵၢၼ်း", "ဝၼ်းပုတ်ႉ", "ဝၼ်းၽတ်း", "ဝၼ်းသုၵ်း", "ဝၼ်းသဝ်"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ဝၼ်းမိူဝ်ႈၼႆႉ",
+        tomorrow = "မိူဝ်ႈၽုၵ်ႈ",
+        yesterday = "မိူဝ်ႈဝႃး",
+        dayAfterTomorrow = "မိူဝ်ႈႁိုဝ်",
+        dayBeforeYesterday = "မိူဝ်ႈသိုၼ်း",
+        thisWeekday = "{weekday} ၼႆႉ",
+        nextWeekday = "{weekday} ၼႃႈ",
+        lastWeekday = "{weekday} ပူၼ်ႉ",
+        short = CompactnessOverride(
+            months = listOf("ၸၼ်ႇ", "ၾႅပ်ႇ", "မၢတ်ႉ", "ဢေႇပ", "မေႇ", "ၸုၼ်ႇ", "ၸူႇလ", "ဢေႃး", "သႅပ်ႇ", "ဢွၵ်ႇ", "ၼူဝ်ႇ", "တီႇသ"),
+            weekdays = listOf("ဢႃး", "ၸၼ်", "ဢၢင်း", "ပုတ်ႉ", "ၽတ်း", "သုၵ်း", "သဝ်"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -4079,6 +4471,39 @@ public object Locales {
         ),
     )
 
+    // Source: date/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    public val TET: DateLocale = DateLocale(
+        code = "tet",
+        months = listOf("Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru"),
+        weekdays = listOf("Domingu", "Segunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sábadu"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "ohin",
+        tomorrow = "aban",
+        yesterday = "horiseik",
+        dayAfterTomorrow = "aban bainrua",
+        dayBeforeYesterday = "horiseik liu",
+        thisWeekday = "{weekday} ida ne'e",
+        nextWeekday = "{weekday} oin mai",
+        lastWeekday = "{weekday} kotuk",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"),
+            weekdays = listOf("Dom", "Seg", "Ter", "Kua", "Kin", "Ses", "Sáb"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
     // Source: date/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -4267,6 +4692,39 @@ public object Locales {
         short = CompactnessOverride(
             months = listOf("Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phk", "Pha", "Lwe", "Dip", "Ngw", "Sed"),
             weekdays = listOf("Tsh", "Mos", "Bed", "Rar", "Bon", "Tlh", "Mat"),
+            dayFormat = "{n}",
+            datePattern = "{day} {month}",
+            datePatternWithYear = "{day} {month} {year}",
+        ),
+        compact = CompactnessOverride(
+            datePattern = "{d}/{m}",
+            datePatternWithYear = "{d}/{m}/{yy}",
+        ),
+    )
+
+    // Source: date/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    public val TPI: DateLocale = DateLocale(
+        code = "tpi",
+        months = listOf("Janueri", "Februeri", "Mas", "Epril", "Me", "Jun", "Julai", "Ogas", "Septemba", "Oktoba", "Novemba", "Desemba"),
+        weekdays = listOf("Sande", "Mande", "Tunde", "Trinde", "Fonde", "Fraide", "Sarere"),
+        dayFormat = "{n}",
+        dayFormatExceptions = emptyMap(),
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "tude",
+        tomorrow = "tumora",
+        yesterday = "asde",
+        dayAfterTomorrow = "haptumora",
+        dayBeforeYesterday = "asde bipo",
+        thisWeekday = "dispela {weekday}",
+        nextWeekday = "{weekday} bihain",
+        lastWeekday = "{weekday} bipo",
+        short = CompactnessOverride(
+            months = listOf("Jan", "Feb", "Mas", "Epr", "Me", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Des"),
+            weekdays = listOf("San", "Man", "Tun", "Tri", "Fon", "Fra", "Sar"),
             dayFormat = "{n}",
             datePattern = "{day} {month}",
             datePatternWithYear = "{day} {month} {year}",
@@ -4806,34 +5264,37 @@ public object Locales {
 
     public val ALL: Map<String, DateLocale> = mapOf(
         "af" to AF, "ak" to AK, "am" to AM, "ar" to AR, "az" to AZ,
-        "bci" to BCI, "be" to BE, "bem" to BEM, "bg" to BG, "bm" to BM,
-        "bn" to BN, "br" to BR, "bs" to BS, "ca" to CA, "ceb" to CEB,
-        "cs" to CS, "cy" to CY, "da" to DA, "de" to DE, "din" to DIN,
-        "dje" to DJE, "dyu" to DYU, "ee" to EE, "el" to EL, "en" to EN,
-        "es" to ES, "et" to ET, "eu" to EU, "fa" to FA, "fan" to FAN,
-        "ff" to FF, "fi" to FI, "fil" to FIL, "fon" to FON, "fr" to FR,
+        "bci" to BCI, "be" to BE, "bem" to BEM, "bg" to BG, "bi" to BI,
+        "bm" to BM, "bn" to BN, "br" to BR, "bs" to BS, "ca" to CA,
+        "cak" to CAK, "ceb" to CEB, "cs" to CS, "cy" to CY, "da" to DA,
+        "de" to DE, "din" to DIN, "dje" to DJE, "dv" to DV, "dyu" to DYU,
+        "dz" to DZ, "ee" to EE, "el" to EL, "en" to EN, "es" to ES,
+        "et" to ET, "eu" to EU, "fa" to FA, "fan" to FAN, "ff" to FF,
+        "fi" to FI, "fil" to FIL, "fj" to FJ, "fon" to FON, "fr" to FR,
         "ga" to GA, "gd" to GD, "gl" to GL, "gn" to GN, "gu" to GU,
-        "gv" to GV, "ha" to HA, "he" to HE, "hi" to HI, "hr" to HR,
-        "ht" to HT, "hu" to HU, "hy" to HY, "id" to ID, "ig" to IG,
-        "is" to IS, "it" to IT, "ja" to JA, "jv" to JV, "ka" to KA,
-        "kbp" to KBP, "kk" to KK, "km" to KM, "kn" to KN, "ko" to KO,
-        "kpe" to KPE, "ktu" to KTU, "ku" to KU, "kw" to KW, "ky" to KY,
-        "lg" to LG, "ln" to LN, "lo" to LO, "lt" to LT, "lv" to LV,
-        "men" to MEN, "mfe" to MFE, "mg" to MG, "mi" to MI, "mk" to MK,
-        "ml" to ML, "mn" to MN, "mnk" to MNK, "mos" to MOS, "mr" to MR,
-        "ms" to MS, "mt" to MT, "my" to MY, "nb" to NB, "nd" to ND,
-        "ne" to NE, "ng" to NG, "nl" to NL, "nso" to NSO, "nus" to NUS,
-        "ny" to NY, "om" to OM, "or" to OR, "pa" to PA, "pl" to PL,
-        "pov" to POV, "ps" to PS, "pt" to PT, "qu" to QU, "ro" to RO,
-        "ru" to RU, "rw" to RW, "sar" to SAR, "sd" to SD, "sg" to SG,
-        "shi" to SHI, "si" to SI, "sk" to SK, "sl" to SL, "sn" to SN,
-        "snk" to SNK, "so" to SO, "sq" to SQ, "sr" to SR, "ss" to SS,
-        "st" to ST, "su" to SU, "suk" to SUK, "sv" to SV, "sw" to SW,
-        "ta" to TA, "te" to TE, "tem" to TEM, "tg" to TG, "th" to TH,
-        "ti" to TI, "tig" to TIG, "tk" to TK, "tn" to TN, "tr" to TR,
-        "ts" to TS, "tzm" to TZM, "uk" to UK, "umb" to UMB, "ur" to UR,
-        "uz" to UZ, "vi" to VI, "vmw" to VMW, "wo" to WO, "xh" to XH,
-        "yo" to YO, "yue" to YUE, "zdj" to ZDJ, "zh" to ZH, "zu" to ZU
+        "gv" to GV, "ha" to HA, "he" to HE, "hi" to HI, "hmn" to HMN,
+        "hr" to HR, "ht" to HT, "hu" to HU, "hy" to HY, "id" to ID,
+        "ig" to IG, "is" to IS, "it" to IT, "ja" to JA, "jv" to JV,
+        "ka" to KA, "kbp" to KBP, "kek" to KEK, "kk" to KK, "kl" to KL,
+        "km" to KM, "kn" to KN, "ko" to KO, "kpe" to KPE, "ktu" to KTU,
+        "ku" to KU, "kw" to KW, "ky" to KY, "lg" to LG, "ln" to LN,
+        "lo" to LO, "lt" to LT, "lv" to LV, "mam" to MAM, "men" to MEN,
+        "mfe" to MFE, "mg" to MG, "mi" to MI, "mk" to MK, "ml" to ML,
+        "mn" to MN, "mnk" to MNK, "mos" to MOS, "mr" to MR, "ms" to MS,
+        "mt" to MT, "my" to MY, "nb" to NB, "nd" to ND, "ne" to NE,
+        "ng" to NG, "nl" to NL, "nso" to NSO, "nus" to NUS, "ny" to NY,
+        "om" to OM, "or" to OR, "pa" to PA, "pis" to PIS, "pl" to PL,
+        "pov" to POV, "ps" to PS, "pt" to PT, "qu" to QU, "quc" to QUC,
+        "ro" to RO, "ru" to RU, "rw" to RW, "sar" to SAR, "sd" to SD,
+        "sg" to SG, "shi" to SHI, "shn" to SHN, "si" to SI, "sk" to SK,
+        "sl" to SL, "sn" to SN, "snk" to SNK, "so" to SO, "sq" to SQ,
+        "sr" to SR, "ss" to SS, "st" to ST, "su" to SU, "suk" to SUK,
+        "sv" to SV, "sw" to SW, "ta" to TA, "te" to TE, "tem" to TEM,
+        "tet" to TET, "tg" to TG, "th" to TH, "ti" to TI, "tig" to TIG,
+        "tk" to TK, "tn" to TN, "tpi" to TPI, "tr" to TR, "ts" to TS,
+        "tzm" to TZM, "uk" to UK, "umb" to UMB, "ur" to UR, "uz" to UZ,
+        "vi" to VI, "vmw" to VMW, "wo" to WO, "xh" to XH, "yo" to YO,
+        "yue" to YUE, "zdj" to ZDJ, "zh" to ZH, "zu" to ZU
     )
 
     public fun get(code: String): DateLocale? = ALL[code]

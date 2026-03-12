@@ -23,11 +23,13 @@ const DurationLocale* get(const std::string& code) {
     if (code == "be") return &BE();
     if (code == "bem") return &BEM();
     if (code == "bg") return &BG();
+    if (code == "bi") return &BI();
     if (code == "bm") return &BM();
     if (code == "bn") return &BN();
     if (code == "br") return &BR();
     if (code == "bs") return &BS();
     if (code == "ca") return &CA();
+    if (code == "cak") return &CAK();
     if (code == "ceb") return &CEB();
     if (code == "cs") return &CS();
     if (code == "cy") return &CY();
@@ -35,7 +37,9 @@ const DurationLocale* get(const std::string& code) {
     if (code == "de") return &DE();
     if (code == "din") return &DIN();
     if (code == "dje") return &DJE();
+    if (code == "dv") return &DV();
     if (code == "dyu") return &DYU();
+    if (code == "dz") return &DZ();
     if (code == "ee") return &EE();
     if (code == "el") return &EL();
     if (code == "en") return &EN();
@@ -47,6 +51,7 @@ const DurationLocale* get(const std::string& code) {
     if (code == "ff") return &FF();
     if (code == "fi") return &FI();
     if (code == "fil") return &FIL();
+    if (code == "fj") return &FJ();
     if (code == "fon") return &FON();
     if (code == "fr") return &FR();
     if (code == "ga") return &GA();
@@ -58,6 +63,7 @@ const DurationLocale* get(const std::string& code) {
     if (code == "ha") return &HA();
     if (code == "he") return &HE();
     if (code == "hi") return &HI();
+    if (code == "hmn") return &HMN();
     if (code == "hr") return &HR();
     if (code == "ht") return &HT();
     if (code == "hu") return &HU();
@@ -70,7 +76,9 @@ const DurationLocale* get(const std::string& code) {
     if (code == "jv") return &JV();
     if (code == "ka") return &KA();
     if (code == "kbp") return &KBP();
+    if (code == "kek") return &KEK();
     if (code == "kk") return &KK();
+    if (code == "kl") return &KL();
     if (code == "km") return &KM();
     if (code == "kn") return &KN();
     if (code == "ko") return &KO();
@@ -84,6 +92,7 @@ const DurationLocale* get(const std::string& code) {
     if (code == "lo") return &LO();
     if (code == "lt") return &LT();
     if (code == "lv") return &LV();
+    if (code == "mam") return &MAM();
     if (code == "men") return &MEN();
     if (code == "mfe") return &MFE();
     if (code == "mg") return &MG();
@@ -108,11 +117,13 @@ const DurationLocale* get(const std::string& code) {
     if (code == "om") return &OM();
     if (code == "or") return &OR();
     if (code == "pa") return &PA();
+    if (code == "pis") return &PIS();
     if (code == "pl") return &PL();
     if (code == "pov") return &POV();
     if (code == "ps") return &PS();
     if (code == "pt") return &PT();
     if (code == "qu") return &QU();
+    if (code == "quc") return &QUC();
     if (code == "ro") return &RO();
     if (code == "ru") return &RU();
     if (code == "rw") return &RW();
@@ -120,6 +131,7 @@ const DurationLocale* get(const std::string& code) {
     if (code == "sd") return &SD();
     if (code == "sg") return &SG();
     if (code == "shi") return &SHI();
+    if (code == "shn") return &SHN();
     if (code == "si") return &SI();
     if (code == "sk") return &SK();
     if (code == "sl") return &SL();
@@ -137,12 +149,14 @@ const DurationLocale* get(const std::string& code) {
     if (code == "ta") return &TA();
     if (code == "te") return &TE();
     if (code == "tem") return &TEM();
+    if (code == "tet") return &TET();
     if (code == "tg") return &TG();
     if (code == "th") return &TH();
     if (code == "ti") return &TI();
     if (code == "tig") return &TIG();
     if (code == "tk") return &TK();
     if (code == "tn") return &TN();
+    if (code == "tpi") return &TPI();
     if (code == "tr") return &TR();
     if (code == "ts") return &TS();
     if (code == "tzm") return &TZM();

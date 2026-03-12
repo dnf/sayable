@@ -40,12 +40,12 @@ locale = TimeLocale
         ShortClockConfig
             { shortUse24h = True
             , shortAmPm = Nothing
-            , shortFormat = "{h}:{mm}"
+            , shortFormat = "{h}.{mm}"
             }
     , localeCompact = Just $ CompactnessOverride $ Just $
         ShortClockConfig
             { shortUse24h = True
             , shortAmPm = Nothing
-            , shortFormat = "{h}:{mm}"
+            , shortFormat = "{h}.{mm}"
             }
     }

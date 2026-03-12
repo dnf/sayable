@@ -168,6 +168,44 @@ const AgeLocale& SHI() {
     return loc;
 }
 
+// Source: age/locales/src/shn.json
+const AgeLocale& SHN() {
+    static const AgeLocale loc{
+        "shn",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} ဝၼ်း"),
+            UnitForms::Simple("{n} ဝူင်ႈ"),
+            UnitForms::Simple("{n} လိူၼ်"),
+            UnitForms::Simple("{n} ပီ")
+        },
+        "{0}ၶိုင်ႈ", " ", "ၶဝ်ႈမႃး",
+        StageLabels{{"ၶဝ်ႈမႃး", ""}, {"လုၵ်ႈဢွၼ်ႇ", ""}, {"လုၵ်ႈဢွၼ်ႇ", ""}, {"လုၵ်ႈဢွၼ်ႇ", ""}, {"ၵူၼ်းၼုမ်ႇ", ""}, {"ၵူၼ်းလူင်", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} ဝၼ်း"),
+            UnitForms::Simple("{n} ဝူင်ႈ"),
+            UnitForms::Simple("{n} လိူၼ်"),
+            UnitForms::Simple("{n} ပီ"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: age/locales/src/si.json
 const AgeLocale& SI() {
     static const AgeLocale loc{
@@ -836,6 +874,44 @@ const AgeLocale& TEM() {
     return loc;
 }
 
+// Source: age/locales/src/tet.json
+const AgeLocale& TET() {
+    static const AgeLocale loc{
+        "tet",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("loron {n}"),
+            UnitForms::Simple("semana {n}"),
+            UnitForms::Simple("fulan {n}"),
+            UnitForms::Simple("tinan {n}")
+        },
+        "{0} ho balun", ", ", "Foin moris",
+        StageLabels{{"Foin moris", ""}, {"Labarik ki'ik", ""}, {"Labarik", ""}, {"Baruk", ""}, {"Joven", ""}, {"Ema boot", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("loron {n}"),
+            UnitForms::Simple("sem. {n}"),
+            UnitForms::Simple("fulan {n}"),
+            UnitForms::Simple("tinan {n}"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: age/locales/src/tg.json
 const AgeLocale& TG() {
     static const AgeLocale loc{
@@ -1060,6 +1136,44 @@ const AgeLocale& TN() {
             UnitForms::Simple("{n}m"),
             UnitForms::Simple("{n}y"),
             std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/tpi.json
+const AgeLocale& TPI() {
+    static const AgeLocale loc{
+        "tpi",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} de"),
+            UnitForms::Simple("{n} wik"),
+            UnitForms::Simple("{n} mun"),
+            UnitForms::Simple("{n} yia")
+        },
+        "{n} na hap", ", ", "Nupela pikinini",
+        StageLabels{{"Nupela pikinini", ""}, {"Pikinini", ""}, {"Liklik pikinini", ""}, {"Pikinini", ""}, {"Yangpela", ""}, {"Bikpela man", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} de"),
+            UnitForms::Simple("{n} wik"),
+            UnitForms::Simple("{n} mun"),
+            UnitForms::Simple("{n} yia"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
             std::string(""),
             std::nullopt
         },

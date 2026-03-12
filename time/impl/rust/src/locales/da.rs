@@ -39,14 +39,14 @@ pub fn locale() -> TimeLocale {
             clock: Some(ShortClockConfig {
                 use24h: true,
                 am_pm: None,
-                format: "{h}:{mm}".to_string(),
+                format: "{h}.{mm}".to_string(),
             }),
         }),
         compact: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {
                 use24h: true,
                 am_pm: None,
-                format: "{h}:{mm}".to_string(),
+                format: "{h}.{mm}".to_string(),
             }),
         }),
     }

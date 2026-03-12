@@ -21,7 +21,7 @@ pub fn locale() -> TimeLocale {
             midnight: "tengah malam".to_string(),
             noon: "tengah hari".to_string(),
             patterns: HashMap::from([
-            (0, "{h} o'clock".to_string()),
+            (0, "pukul {h}".to_string()),
             (5, "lima lewat {h}".to_string()),
             (10, "sepuluh lewat {h}".to_string()),
             (15, "seperempat lewat {h}".to_string()),
@@ -39,14 +39,14 @@ pub fn locale() -> TimeLocale {
             clock: Some(ShortClockConfig {
                 use24h: true,
                 am_pm: None,
-                format: "{h}:{mm}".to_string(),
+                format: "{h}.{mm}".to_string(),
             }),
         }),
         compact: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {
                 use24h: true,
                 am_pm: None,
-                format: "{h}:{mm}".to_string(),
+                format: "{h}.{mm}".to_string(),
             }),
         }),
     }

@@ -33,9 +33,9 @@ export const da: TimeLocale = {
     },
   },
   short: {
-    clock: { use24h: true, format: '{h}:{mm}' },
+    clock: { use24h: true, format: '{h}.{mm}' },
   },
   compact: {
-    clock: { use24h: true, format: '{h}:{mm}' },
+    clock: { use24h: true, format: '{h}.{mm}' },
   },
 };

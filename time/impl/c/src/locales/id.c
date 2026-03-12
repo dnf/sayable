@@ -17,8 +17,8 @@ const StTimeLocale st_locale_id = {
         { "dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas" },
         "tengah malam",
         "tengah hari",
-        { "{h} o'clock", "lima lewat {h}", "sepuluh lewat {h}", "seperempat lewat {h}", "dua puluh lewat {h}", "dua puluh lima lewat {h}", "setengah lewat {h}", "dua puluh lima menjelang {next_h}", "dua puluh menjelang {next_h}", "seperempat menjelang {next_h}", "sepuluh menjelang {next_h}", "lima menjelang {next_h}" }
+        { "pukul {h}", "lima lewat {h}", "sepuluh lewat {h}", "seperempat lewat {h}", "dua puluh lewat {h}", "dua puluh lima lewat {h}", "setengah lewat {h}", "dua puluh lima menjelang {next_h}", "dua puluh menjelang {next_h}", "seperempat menjelang {next_h}", "sepuluh menjelang {next_h}", "lima menjelang {next_h}" }
     },
-    true, { true, { NULL, NULL }, "{h}:{mm}" },
-    true, { true, { NULL, NULL }, "{h}:{mm}" }
+    true, { true, { NULL, NULL }, "{h}.{mm}" },
+    true, { true, { NULL, NULL }, "{h}.{mm}" }
 };

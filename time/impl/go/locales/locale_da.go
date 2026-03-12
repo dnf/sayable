@@ -23,9 +23,9 @@ var DA = st.TimeLocale{
 		Patterns: map[int]string{0: "klokken {h}", 5: "fem over {h}", 10: "ti over {h}", 15: "kvart over {h}", 20: "tyve over {h}", 25: "fem i halv {next_h}", 30: "halv {next_h}", 35: "fem over halv {next_h}", 40: "tyve i {next_h}", 45: "kvart i {next_h}", 50: "ti i {next_h}", 55: "fem i {next_h}"},
 	},
 	Short: &st.CompactnessOverride{
-		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},
+		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}.{mm}"},
 	},
 	Compact: &st.CompactnessOverride{
-		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},
+		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}.{mm}"},
 	},
 }

@@ -8,7 +8,7 @@
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-/// All 145 locale definitions for sayable-duration.
+/// All 159 locale definitions for sayable-duration.
 module SayableDurationLib.Locales
 
 open SayableDurationLib.Types
@@ -616,6 +616,59 @@ let BG: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/bi.json
+// ================================================================
+// BI — Bislama
+// ================================================================
+let BI: DurationLocale =
+    {
+        Code = "bi"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} sekon"
+                Minute = Simple "{n} minit"
+                Hour = Simple "{n} aoa"
+                Day = Simple "{n} dei"
+                Week = Simple "{n} wik"
+                Month = Simple "{n} manis"
+                Year = Simple "{n} yia"
+            }
+        Half = "{n} mo haf"
+        Delimiter = ", "
+        JustNow = "jas nao"
+        Ago = "{0} bifo"
+        InFuture = "long {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} sek")
+            Minute = Some (Simple "{n} min")
+            Hour = Some (Simple "{n} aoa")
+            Day = Some (Simple "{n} dei")
+            Week = Some (Simple "{n} wik")
+            Month = Some (Simple "{n} man")
+            Year = Some (Simple "{n} yia")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} bifo"
+            InFuture = Some "long {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} bifo"
+            InFuture = Some "long {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/bm.json
 // ================================================================
 // BM — Bambara
@@ -876,6 +929,59 @@ let CA: DurationLocale =
             Delimiter = Some ""
             Ago = Some "fa {0}"
             InFuture = Some "d'aquí a {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/cak.json
+// ================================================================
+// CAK — Kaqchikel
+// ================================================================
+let CAK: DurationLocale =
+    {
+        Code = "cak"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} tz'aqät"
+                Minute = Simple "{n} ch'utik ramaj"
+                Hour = Simple "{n} ramaj"
+                Day = Simple "{n} q'ij"
+                Week = Simple "{n} wuqq'ij"
+                Month = Simple "{n} ik'"
+                Year = Simple "{n} junab'"
+            }
+        Half = "{0} nik'aj"
+        Delimiter = ", "
+        JustNow = "wakami"
+        Ago = "{0} k'o chi"
+        InFuture = "pa {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} tz'aq.")
+            Minute = Some (Simple "{n} ch'ut.")
+            Hour = Some (Simple "{n} ram.")
+            Day = Some (Simple "{n} q'ij")
+            Week = Some (Simple "{n} wuqq'ij")
+            Month = Some (Simple "{n} ik'")
+            Year = Some (Simple "{n} jun.")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} k'o chi"
+            InFuture = Some "pa {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} k'o chi"
+            InFuture = Some "pa {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -1252,6 +1358,59 @@ let DJE: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/dv.json
+// ================================================================
+// DV — Dhivehi
+// ================================================================
+let DV: DurationLocale =
+    {
+        Code = "dv"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} ސިކުންތު"
+                Minute = Simple "{n} މިނެޓު"
+                Hour = Simple "{n} ގަޑިއިރު"
+                Day = Simple "{n} ދުވަސް"
+                Week = Simple "{n} ހަފްތާ"
+                Month = Simple "{n} މަސް"
+                Year = Simple "{n} އަހަރު"
+            }
+        Half = "{0} ބައި"
+        Delimiter = "، "
+        JustNow = "މިހާރު"
+        Ago = "މީގެ {0} ކުރިން"
+        InFuture = "{0} ފަހުން"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} ސިކު")
+            Minute = Some (Simple "{n} މިނެ")
+            Hour = Some (Simple "{n} ގަޑި")
+            Day = Some (Simple "{n} ދުވަ")
+            Week = Some (Simple "{n} ހަފް")
+            Month = Some (Simple "{n} މަސް")
+            Year = Some (Simple "{n} އަހަ")
+            Half = None
+            Delimiter = None
+            Ago = Some "މީގެ {0} ކުރިން"
+            InFuture = Some "{0} ފަހުން"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "މީގެ {0} ކުރިން"
+            InFuture = Some "{0} ފަހުން"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/dyu.json
 // ================================================================
 // DYU — Dyula
@@ -1300,6 +1459,59 @@ let DYU: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} tɛmɛnen"
             InFuture = Some "ka {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/dz.json
+// ================================================================
+// DZ — Dzongkha
+// ================================================================
+let DZ: DurationLocale =
+    {
+        Code = "dz"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "སྐར་ཆ་ {n}"
+                Minute = Simple "སྐར་མ་ {n}"
+                Hour = Simple "ཆུ་ཚོད་ {n}"
+                Day = Simple "ཉིན་ {n}"
+                Week = Simple "བདུན་ཕྲག་ {n}"
+                Month = Simple "ཟླ་ {n}"
+                Year = Simple "ལོ་ {n}"
+            }
+        Half = "{0} ཕྱེད"
+        Delimiter = " "
+        JustNow = "ད་ལྟ"
+        Ago = "{0} ཧེ་མ"
+        InFuture = "{0} ཤུལ་ལས"
+        ShortOverride = Some {
+            Second = Some (Simple "སྐར་ཆ་ {n}")
+            Minute = Some (Simple "སྐར་མ་ {n}")
+            Hour = Some (Simple "ཆུ་ཚོད་ {n}")
+            Day = Some (Simple "ཉིན་ {n}")
+            Week = Some (Simple "བདུན་ཕྲག་ {n}")
+            Month = Some (Simple "ཟླ་ {n}")
+            Year = Some (Simple "ལོ་ {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ཧེ་མ"
+            InFuture = Some "{0} ཤུལ་ལས"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} ཧེ་མ"
+            InFuture = Some "{0} ཤུལ་ལས"
             }
         FormatNumber = None
         FormatUnit = None
@@ -1888,6 +2100,59 @@ let FIL: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/fj.json
+// ================================================================
+// FJ — Fijian
+// ================================================================
+let FJ: DurationLocale =
+    {
+        Code = "fj"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} na sekodi"
+                Minute = Simple "{n} na miniti"
+                Hour = Simple "{n} na aua"
+                Day = Simple "{n} na siga"
+                Week = Simple "{n} na macawa"
+                Month = Simple "{n} na vula"
+                Year = Simple "{n} na yabaki"
+            }
+        Half = "{n} kei na levu ni wasei"
+        Delimiter = ", "
+        JustNow = "edaidai ga"
+        Ago = "{0} sa oti"
+        InFuture = "ena {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} sek")
+            Minute = Some (Simple "{n} min")
+            Hour = Some (Simple "{n} aua")
+            Day = Some (Simple "{n} siga")
+            Week = Some (Simple "{n} mac")
+            Month = Some (Simple "{n} vul")
+            Year = Some (Simple "{n} yab")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} sa oti"
+            InFuture = Some "ena {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} sa oti"
+            InFuture = Some "ena {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/fon.json
 // ================================================================
 // FON — Fon
@@ -2466,6 +2731,59 @@ let HI: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} पहले"
             InFuture = Some "{0} में"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/hmn.json
+// ================================================================
+// HMN — Hmong
+// ================================================================
+let HMN: DurationLocale =
+    {
+        Code = "hmn"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} chib"
+                Minute = Simple "{n} feeb"
+                Hour = Simple "{n} teev"
+                Day = Simple "{n} hnub"
+                Week = Simple "{n} lub lim tiam"
+                Month = Simple "{n} lub hlis"
+                Year = Simple "{n} xyoo"
+            }
+        Half = "{0} thiab ib nrab"
+        Delimiter = ", "
+        JustNow = "tam sim no"
+        Ago = "{0} dhau los"
+        InFuture = "hauv {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} chib")
+            Minute = Some (Simple "{n} feeb")
+            Hour = Some (Simple "{n} teev")
+            Day = Some (Simple "{n} hnub")
+            Week = Some (Simple "{n} lim tiam")
+            Month = Some (Simple "{n} hlis")
+            Year = Some (Simple "{n} xyoo")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} dhau los"
+            InFuture = Some "hauv {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} dhau los"
+            InFuture = Some "hauv {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -3107,6 +3425,59 @@ let KBP: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/kek.json
+// ================================================================
+// KEK — Q'eqchi'
+// ================================================================
+let KEK: DurationLocale =
+    {
+        Code = "kek"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} segundo"
+                Minute = Simple "{n} minuto"
+                Hour = Simple "{n} hora"
+                Day = Simple "{n} q'e"
+                Week = Simple "{n} seman"
+                Month = Simple "{n} po"
+                Year = Simple "{n} chihab'"
+            }
+        Half = "{0} ro'"
+        Delimiter = ", "
+        JustNow = "anaqwan"
+        Ago = "{0} qakab'"
+        InFuture = "chi {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} seg.")
+            Minute = Some (Simple "{n} min.")
+            Hour = Some (Simple "{n} hora")
+            Day = Some (Simple "{n} q'e")
+            Week = Some (Simple "{n} sem.")
+            Month = Some (Simple "{n} po")
+            Year = Some (Simple "{n} chih.")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} qakab'"
+            InFuture = Some "chi {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} qakab'"
+            InFuture = Some "chi {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/kk.json
 // ================================================================
 // KK — Kazakh
@@ -3155,6 +3526,59 @@ let KK: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} бұрын"
             InFuture = Some "{0} кейін"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/kl.json
+// ================================================================
+// KL — Kalaallisut
+// ================================================================
+let KL: DurationLocale =
+    {
+        Code = "kl"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sekundit {n}"
+                Minute = Simple "minutsit {n}"
+                Hour = Simple "nalunaaqutap akunnera {n}"
+                Day = Simple "ullut {n}"
+                Week = Simple "sapaatit {n}"
+                Month = Simple "qaammatit {n}"
+                Year = Simple "ukiut {n}"
+            }
+        Half = "{0} affaa"
+        Delimiter = ", "
+        JustNow = "maanna"
+        Ago = "{0} matuma siorna"
+        InFuture = "{0} siunissami"
+        ShortOverride = Some {
+            Second = Some (Simple "sek. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "nal. {n}")
+            Day = Some (Simple "ull. {n}")
+            Week = Some (Simple "sap. {n}")
+            Month = Some (Simple "qaam. {n}")
+            Year = Some (Simple "uk. {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} matuma siorna"
+            InFuture = Some "{0} siunissami"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} matuma siorna"
+            InFuture = Some "{0} siunissami"
             }
         FormatNumber = None
         FormatUnit = None
@@ -3844,6 +4268,59 @@ let LV: DurationLocale =
             Delimiter = Some ""
             Ago = Some "pirms {0}"
             InFuture = Some "pēc {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/mam.json
+// ================================================================
+// MAM — Mam
+// ================================================================
+let MAM: DurationLocale =
+    {
+        Code = "mam"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} segundo"
+                Minute = Simple "{n} minuto"
+                Hour = Simple "{n} hora"
+                Day = Simple "{n} q'ij"
+                Week = Simple "{n} xjaw"
+                Month = Simple "{n} xjaw"
+                Year = Simple "{n} ab'q'ii"
+            }
+        Half = "{0} nik'"
+        Delimiter = ", "
+        JustNow = "iky'x"
+        Ago = "{0} chi'j"
+        InFuture = "tu'n {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} seg.")
+            Minute = Some (Simple "{n} min.")
+            Hour = Some (Simple "{n} hora")
+            Day = Some (Simple "{n} q'ij")
+            Week = Some (Simple "{n} xjaw")
+            Month = Some (Simple "{n} xjaw")
+            Year = Some (Simple "{n} ab'.")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} chi'j"
+            InFuture = Some "tu'n {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} chi'j"
+            InFuture = Some "tu'n {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -5121,6 +5598,59 @@ let PA: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/pis.json
+// ================================================================
+// PIS — Pijin
+// ================================================================
+let PIS: DurationLocale =
+    {
+        Code = "pis"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} sekon"
+                Minute = Simple "{n} minit"
+                Hour = Simple "{n} aoa"
+                Day = Simple "{n} dei"
+                Week = Simple "{n} wik"
+                Month = Simple "{n} manis"
+                Year = Simple "{n} yia"
+            }
+        Half = "{n} en haf"
+        Delimiter = ", "
+        JustNow = "nomoa nao"
+        Ago = "{0} bifoa"
+        InFuture = "long {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} sek")
+            Minute = Some (Simple "{n} min")
+            Hour = Some (Simple "{n} aoa")
+            Day = Some (Simple "{n} dei")
+            Week = Some (Simple "{n} wik")
+            Month = Some (Simple "{n} man")
+            Year = Some (Simple "{n} yia")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} bifoa"
+            InFuture = Some "long {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} bifoa"
+            InFuture = Some "long {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/pl.json
 // ================================================================
 // PL — Polish
@@ -5381,6 +5911,59 @@ let QU: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} ñawpaqta"
             InFuture = Some "{0} qhipata"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/quc.json
+// ================================================================
+// QUC — K'iche'
+// ================================================================
+let QUC: DurationLocale =
+    {
+        Code = "quc"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} tz'aqat"
+                Minute = Simple "{n} ch'utaq ramaj"
+                Hour = Simple "{n} ramaj"
+                Day = Simple "{n} q'ij"
+                Week = Simple "{n} wuqq'ij"
+                Month = Simple "{n} ik'"
+                Year = Simple "{n} junab'"
+            }
+        Half = "{0} nik'aj"
+        Delimiter = ", "
+        JustNow = "kamik"
+        Ago = "{0} k'o chi"
+        InFuture = "pa {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} tz'aq.")
+            Minute = Some (Simple "{n} ch'ut.")
+            Hour = Some (Simple "{n} ram.")
+            Day = Some (Simple "{n} q'ij")
+            Week = Some (Simple "{n} wuqq'ij")
+            Month = Some (Simple "{n} ik'")
+            Year = Some (Simple "{n} jun.")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} k'o chi"
+            InFuture = Some "pa {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} k'o chi"
+            InFuture = Some "pa {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -5752,6 +6335,59 @@ let SHI: DurationLocale =
             Delimiter = Some ""
             Ago = Some "ɣ {0} zzrin"
             InFuture = Some "ɣ {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/shn.json
+// ================================================================
+// SHN — Shan
+// ================================================================
+let SHN: DurationLocale =
+    {
+        Code = "shn"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} ဝိၼႃးတီႇ"
+                Minute = Simple "{n} မိၼိတ်ႉ"
+                Hour = Simple "{n} ၸူဝ်ႈမူင်း"
+                Day = Simple "{n} ဝၼ်း"
+                Week = Simple "{n} ဝူင်ႈ"
+                Month = Simple "{n} လိူၼ်"
+                Year = Simple "{n} ပီ"
+            }
+        Half = "{0}ၶိုင်ႈ"
+        Delimiter = " "
+        JustNow = "ယၢမ်းလဵဝ်"
+        Ago = "{0} ပူၼ်ႉမႃး"
+        InFuture = "ထႅင်ႈ {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} ဝိၼႃး")
+            Minute = Some (Simple "{n} မိၼိတ်ႉ")
+            Hour = Some (Simple "{n} ၸူဝ်ႈ")
+            Day = Some (Simple "{n} ဝၼ်း")
+            Week = Some (Simple "{n} ဝူင်ႈ")
+            Month = Some (Simple "{n} လိူၼ်")
+            Year = Some (Simple "{n} ပီ")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ပူၼ်ႉမႃး"
+            InFuture = Some "ထႅင်ႈ {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} ပူၼ်ႉမႃး"
+            InFuture = Some "ထႅင်ႈ {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -6658,6 +7294,59 @@ let TEM: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/tet.json
+// ================================================================
+// TET — Tetum
+// ================================================================
+let TET: DurationLocale =
+    {
+        Code = "tet"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "segundu {n}"
+                Minute = Simple "minutu {n}"
+                Hour = Simple "oras {n}"
+                Day = Simple "loron {n}"
+                Week = Simple "semana {n}"
+                Month = Simple "fulan {n}"
+                Year = Simple "tinan {n}"
+            }
+        Half = "{0} ho balun"
+        Delimiter = ", "
+        JustNow = "agora deit"
+        Ago = "{0} liu ba"
+        InFuture = "iha {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "seg. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "oras {n}")
+            Day = Some (Simple "loron {n}")
+            Week = Some (Simple "sem. {n}")
+            Month = Some (Simple "fulan {n}")
+            Year = Some (Simple "tinan {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} liu ba"
+            InFuture = Some "iha {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} liu ba"
+            InFuture = Some "iha {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/tg.json
 // ================================================================
 // TG — Tajik
@@ -6971,6 +7660,59 @@ let TN: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} e e fetileng"
             InFuture = Some "ka {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/tpi.json
+// ================================================================
+// TPI — Tok Pisin
+// ================================================================
+let TPI: DurationLocale =
+    {
+        Code = "tpi"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} sekon"
+                Minute = Simple "{n} minit"
+                Hour = Simple "{n} aua"
+                Day = Simple "{n} de"
+                Week = Simple "{n} wik"
+                Month = Simple "{n} mun"
+                Year = Simple "{n} yia"
+            }
+        Half = "{n} na hap"
+        Delimiter = ", "
+        JustNow = "nau tasol"
+        Ago = "{0} i go pinis"
+        InFuture = "long {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} sek")
+            Minute = Some (Simple "{n} min")
+            Hour = Some (Simple "{n} aua")
+            Day = Some (Simple "{n} de")
+            Week = Some (Simple "{n} wik")
+            Month = Some (Simple "{n} mun")
+            Year = Some (Simple "{n} yia")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} i go pinis"
+            InFuture = Some "long {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}mo")
+            Year = Some (Simple "{n}y")
+            Half = None
+            Delimiter = Some ""
+            Ago = Some "{0} i go pinis"
+            InFuture = Some "long {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -7836,11 +8578,13 @@ let All: Map<string, DurationLocale> =
             ("be", BE)
             ("bem", BEM)
             ("bg", BG)
+            ("bi", BI)
             ("bm", BM)
             ("bn", BN)
             ("br", BR)
             ("bs", BS)
             ("ca", CA)
+            ("cak", CAK)
             ("ceb", CEB)
             ("cs", CS)
             ("cy", CY)
@@ -7848,7 +8592,9 @@ let All: Map<string, DurationLocale> =
             ("de", DE)
             ("din", DIN)
             ("dje", DJE)
+            ("dv", DV)
             ("dyu", DYU)
+            ("dz", DZ)
             ("ee", EE)
             ("el", EL)
             ("en", EN)
@@ -7860,6 +8606,7 @@ let All: Map<string, DurationLocale> =
             ("ff", FF)
             ("fi", FI)
             ("fil", FIL)
+            ("fj", FJ)
             ("fon", FON)
             ("fr", FR)
             ("ga", GA)
@@ -7871,6 +8618,7 @@ let All: Map<string, DurationLocale> =
             ("ha", HA)
             ("he", HE)
             ("hi", HI)
+            ("hmn", HMN)
             ("hr", HR)
             ("ht", HT)
             ("hu", HU)
@@ -7883,7 +8631,9 @@ let All: Map<string, DurationLocale> =
             ("jv", JV)
             ("ka", KA)
             ("kbp", KBP)
+            ("kek", KEK)
             ("kk", KK)
+            ("kl", KL)
             ("km", KM)
             ("kn", KN)
             ("ko", KO)
@@ -7897,6 +8647,7 @@ let All: Map<string, DurationLocale> =
             ("lo", LO)
             ("lt", LT)
             ("lv", LV)
+            ("mam", MAM)
             ("men", MEN)
             ("mfe", MFE)
             ("mg", MG)
@@ -7921,11 +8672,13 @@ let All: Map<string, DurationLocale> =
             ("om", OM)
             ("or", OR)
             ("pa", PA)
+            ("pis", PIS)
             ("pl", PL)
             ("pov", POV)
             ("ps", PS)
             ("pt", PT)
             ("qu", QU)
+            ("quc", QUC)
             ("ro", RO)
             ("ru", RU)
             ("rw", RW)
@@ -7933,6 +8686,7 @@ let All: Map<string, DurationLocale> =
             ("sd", SD)
             ("sg", SG)
             ("shi", SHI)
+            ("shn", SHN)
             ("si", SI)
             ("sk", SK)
             ("sl", SL)
@@ -7950,12 +8704,14 @@ let All: Map<string, DurationLocale> =
             ("ta", TA)
             ("te", TE)
             ("tem", TEM)
+            ("tet", TET)
             ("tg", TG)
             ("th", TH)
             ("ti", TI)
             ("tig", TIG)
             ("tk", TK)
             ("tn", TN)
+            ("tpi", TPI)
             ("tr", TR)
             ("ts", TS)
             ("tzm", TZM)

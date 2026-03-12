@@ -371,6 +371,44 @@ const AgeLocale& BG() {
     return loc;
 }
 
+// Source: age/locales/src/bi.json
+const AgeLocale& BI() {
+    static const AgeLocale loc{
+        "bi",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} dei"),
+            UnitForms::Simple("{n} wik"),
+            UnitForms::Simple("{n} manis"),
+            UnitForms::Simple("{n} yia")
+        },
+        "{n} mo haf", ", ", "Niufala bebe",
+        StageLabels{{"Niufala bebe", ""}, {"Bebe", ""}, {"Smol pikinini", ""}, {"Pikinini", ""}, {"Yangfala", ""}, {"Bigfala", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} dei"),
+            UnitForms::Simple("{n} wik"),
+            UnitForms::Simple("{n} man"),
+            UnitForms::Simple("{n} yia"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: age/locales/src/bm.json
 const AgeLocale& BM() {
     static const AgeLocale loc{
@@ -565,6 +603,44 @@ const AgeLocale& CA() {
             UnitForms::Simple("{n} m"),
             UnitForms::Plural({{PluralCategory::One, "{n} any"}, {PluralCategory::Other, "{n} anys"}}),
             std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/cak.json
+const AgeLocale& CAK() {
+    static const AgeLocale loc{
+        "cak",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} q'ij"),
+            UnitForms::Simple("{n} wuqq'ij"),
+            UnitForms::Simple("{n} ik'"),
+            UnitForms::Simple("{n} junab'")
+        },
+        "{0} nik'aj", ", ", "K'ak'a' ak'wal",
+        StageLabels{{"K'ak'a' ak'wal", ""}, {"Yal ak'wal", ""}, {"Ak'wal", ""}, {"Ak'wal", ""}, {"K'ajol", ""}, {"Achi", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} q'ij"),
+            UnitForms::Simple("{n} wuqq'ij"),
+            UnitForms::Simple("{n} ik'"),
+            UnitForms::Simple("{n} jun."),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
             std::string(""),
             std::nullopt
         },
@@ -850,6 +926,44 @@ const AgeLocale& DJE() {
     return loc;
 }
 
+// Source: age/locales/src/dv.json
+const AgeLocale& DV() {
+    static const AgeLocale loc{
+        "dv",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} ދުވަސް"),
+            UnitForms::Simple("{n} ހަފްތާ"),
+            UnitForms::Simple("{n} މަސް"),
+            UnitForms::Simple("{n} އަހަރު")
+        },
+        "{0} ބައި", "، ", "އަލަށް އުފަންވި",
+        StageLabels{{"އަލަށް އުފަންވި", ""}, {"ތުއްތު ކުއްޖާ", ""}, {"ހިނގާ ކުއްޖާ", ""}, {"ކުޑަ ކުއްޖާ", ""}, {"ފުރާވަރު", ""}, {"ބޮޑު މީހާ", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} ދުވަސް"),
+            UnitForms::Simple("{n} ހަފްތާ"),
+            UnitForms::Simple("{n} މަސް"),
+            UnitForms::Simple("{n} އަހަރު"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: age/locales/src/dyu.json
 const AgeLocale& DYU() {
     static const AgeLocale loc{
@@ -880,6 +994,44 @@ const AgeLocale& DYU() {
             UnitForms::Simple("kalo {n}"),
             UnitForms::Simple("san {n}"),
             std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/dz.json
+const AgeLocale& DZ() {
+    static const AgeLocale loc{
+        "dz",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("ཉིན་ {n}"),
+            UnitForms::Simple("བདུན་ཕྲག་ {n}"),
+            UnitForms::Simple("ཟླ་ {n}"),
+            UnitForms::Simple("ལོ་ {n}")
+        },
+        "{0} ཕྱེད", " ", "གསར་སྐྱེས",
+        StageLabels{{"གསར་སྐྱེས", ""}, {"ཕྲུ་གུ", ""}, {"བྱིས་པ", ""}, {"ཨ་ཅུང", ""}, {"ན་གཞོན", ""}, {"མི་ལོན་ཚང", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("ཉིན་ {n}"),
+            UnitForms::Simple("བདུན་ཕྲག་ {n}"),
+            UnitForms::Simple("ཟླ་ {n}"),
+            UnitForms::Simple("ལོ་ {n}"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
             std::string(""),
             std::nullopt
         },

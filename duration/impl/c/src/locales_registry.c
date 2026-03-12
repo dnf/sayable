@@ -27,11 +27,13 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "be") == 0) return &sdu_locale_be;
     if (sdu_reg_strcmp(code, "bem") == 0) return &sdu_locale_bem;
     if (sdu_reg_strcmp(code, "bg") == 0) return &sdu_locale_bg;
+    if (sdu_reg_strcmp(code, "bi") == 0) return &sdu_locale_bi;
     if (sdu_reg_strcmp(code, "bm") == 0) return &sdu_locale_bm;
     if (sdu_reg_strcmp(code, "bn") == 0) return &sdu_locale_bn;
     if (sdu_reg_strcmp(code, "br") == 0) return &sdu_locale_br;
     if (sdu_reg_strcmp(code, "bs") == 0) return &sdu_locale_bs;
     if (sdu_reg_strcmp(code, "ca") == 0) return &sdu_locale_ca;
+    if (sdu_reg_strcmp(code, "cak") == 0) return &sdu_locale_cak;
     if (sdu_reg_strcmp(code, "ceb") == 0) return &sdu_locale_ceb;
     if (sdu_reg_strcmp(code, "cs") == 0) return &sdu_locale_cs;
     if (sdu_reg_strcmp(code, "cy") == 0) return &sdu_locale_cy;
@@ -39,7 +41,9 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "de") == 0) return &sdu_locale_de;
     if (sdu_reg_strcmp(code, "din") == 0) return &sdu_locale_din;
     if (sdu_reg_strcmp(code, "dje") == 0) return &sdu_locale_dje;
+    if (sdu_reg_strcmp(code, "dv") == 0) return &sdu_locale_dv;
     if (sdu_reg_strcmp(code, "dyu") == 0) return &sdu_locale_dyu;
+    if (sdu_reg_strcmp(code, "dz") == 0) return &sdu_locale_dz;
     if (sdu_reg_strcmp(code, "ee") == 0) return &sdu_locale_ee;
     if (sdu_reg_strcmp(code, "el") == 0) return &sdu_locale_el;
     if (sdu_reg_strcmp(code, "en") == 0) return &sdu_locale_en;
@@ -51,6 +55,7 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "ff") == 0) return &sdu_locale_ff;
     if (sdu_reg_strcmp(code, "fi") == 0) return &sdu_locale_fi;
     if (sdu_reg_strcmp(code, "fil") == 0) return &sdu_locale_fil;
+    if (sdu_reg_strcmp(code, "fj") == 0) return &sdu_locale_fj;
     if (sdu_reg_strcmp(code, "fon") == 0) return &sdu_locale_fon;
     if (sdu_reg_strcmp(code, "fr") == 0) return &sdu_locale_fr;
     if (sdu_reg_strcmp(code, "ga") == 0) return &sdu_locale_ga;
@@ -62,6 +67,7 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "ha") == 0) return &sdu_locale_ha;
     if (sdu_reg_strcmp(code, "he") == 0) return &sdu_locale_he;
     if (sdu_reg_strcmp(code, "hi") == 0) return &sdu_locale_hi;
+    if (sdu_reg_strcmp(code, "hmn") == 0) return &sdu_locale_hmn;
     if (sdu_reg_strcmp(code, "hr") == 0) return &sdu_locale_hr;
     if (sdu_reg_strcmp(code, "ht") == 0) return &sdu_locale_ht;
     if (sdu_reg_strcmp(code, "hu") == 0) return &sdu_locale_hu;
@@ -74,7 +80,9 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "jv") == 0) return &sdu_locale_jv;
     if (sdu_reg_strcmp(code, "ka") == 0) return &sdu_locale_ka;
     if (sdu_reg_strcmp(code, "kbp") == 0) return &sdu_locale_kbp;
+    if (sdu_reg_strcmp(code, "kek") == 0) return &sdu_locale_kek;
     if (sdu_reg_strcmp(code, "kk") == 0) return &sdu_locale_kk;
+    if (sdu_reg_strcmp(code, "kl") == 0) return &sdu_locale_kl;
     if (sdu_reg_strcmp(code, "km") == 0) return &sdu_locale_km;
     if (sdu_reg_strcmp(code, "kn") == 0) return &sdu_locale_kn;
     if (sdu_reg_strcmp(code, "ko") == 0) return &sdu_locale_ko;
@@ -88,6 +96,7 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "lo") == 0) return &sdu_locale_lo;
     if (sdu_reg_strcmp(code, "lt") == 0) return &sdu_locale_lt;
     if (sdu_reg_strcmp(code, "lv") == 0) return &sdu_locale_lv;
+    if (sdu_reg_strcmp(code, "mam") == 0) return &sdu_locale_mam;
     if (sdu_reg_strcmp(code, "men") == 0) return &sdu_locale_men;
     if (sdu_reg_strcmp(code, "mfe") == 0) return &sdu_locale_mfe;
     if (sdu_reg_strcmp(code, "mg") == 0) return &sdu_locale_mg;
@@ -112,11 +121,13 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "om") == 0) return &sdu_locale_om;
     if (sdu_reg_strcmp(code, "or") == 0) return &sdu_locale_or;
     if (sdu_reg_strcmp(code, "pa") == 0) return &sdu_locale_pa;
+    if (sdu_reg_strcmp(code, "pis") == 0) return &sdu_locale_pis;
     if (sdu_reg_strcmp(code, "pl") == 0) return &sdu_locale_pl;
     if (sdu_reg_strcmp(code, "pov") == 0) return &sdu_locale_pov;
     if (sdu_reg_strcmp(code, "ps") == 0) return &sdu_locale_ps;
     if (sdu_reg_strcmp(code, "pt") == 0) return &sdu_locale_pt;
     if (sdu_reg_strcmp(code, "qu") == 0) return &sdu_locale_qu;
+    if (sdu_reg_strcmp(code, "quc") == 0) return &sdu_locale_quc;
     if (sdu_reg_strcmp(code, "ro") == 0) return &sdu_locale_ro;
     if (sdu_reg_strcmp(code, "ru") == 0) return &sdu_locale_ru;
     if (sdu_reg_strcmp(code, "rw") == 0) return &sdu_locale_rw;
@@ -124,6 +135,7 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "sd") == 0) return &sdu_locale_sd;
     if (sdu_reg_strcmp(code, "sg") == 0) return &sdu_locale_sg;
     if (sdu_reg_strcmp(code, "shi") == 0) return &sdu_locale_shi;
+    if (sdu_reg_strcmp(code, "shn") == 0) return &sdu_locale_shn;
     if (sdu_reg_strcmp(code, "si") == 0) return &sdu_locale_si;
     if (sdu_reg_strcmp(code, "sk") == 0) return &sdu_locale_sk;
     if (sdu_reg_strcmp(code, "sl") == 0) return &sdu_locale_sl;
@@ -141,12 +153,14 @@ const SduDurationLocale *sdu_locale_get(const char *code) {
     if (sdu_reg_strcmp(code, "ta") == 0) return &sdu_locale_ta;
     if (sdu_reg_strcmp(code, "te") == 0) return &sdu_locale_te;
     if (sdu_reg_strcmp(code, "tem") == 0) return &sdu_locale_tem;
+    if (sdu_reg_strcmp(code, "tet") == 0) return &sdu_locale_tet;
     if (sdu_reg_strcmp(code, "tg") == 0) return &sdu_locale_tg;
     if (sdu_reg_strcmp(code, "th") == 0) return &sdu_locale_th;
     if (sdu_reg_strcmp(code, "ti") == 0) return &sdu_locale_ti;
     if (sdu_reg_strcmp(code, "tig") == 0) return &sdu_locale_tig;
     if (sdu_reg_strcmp(code, "tk") == 0) return &sdu_locale_tk;
     if (sdu_reg_strcmp(code, "tn") == 0) return &sdu_locale_tn;
+    if (sdu_reg_strcmp(code, "tpi") == 0) return &sdu_locale_tpi;
     if (sdu_reg_strcmp(code, "tr") == 0) return &sdu_locale_tr;
     if (sdu_reg_strcmp(code, "ts") == 0) return &sdu_locale_ts;
     if (sdu_reg_strcmp(code, "tzm") == 0) return &sdu_locale_tzm;

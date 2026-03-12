@@ -22,7 +22,7 @@ locale = TimeLocale
             , clockMidnight = "tengah malam"
             , clockNoon = "tengah hari"
             , clockPatterns =
-                [ (0, "{h} o'clock")
+                [ (0, "pukul {h}")
                 , (5, "lima lewat {h}")
                 , (10, "sepuluh lewat {h}")
                 , (15, "seperempat lewat {h}")
@@ -40,12 +40,12 @@ locale = TimeLocale
         ShortClockConfig
             { shortUse24h = True
             , shortAmPm = Nothing
-            , shortFormat = "{h}:{mm}"
+            , shortFormat = "{h}.{mm}"
             }
     , localeCompact = Just $ CompactnessOverride $ Just $
         ShortClockConfig
             { shortUse24h = True
             , shortAmPm = Nothing
-            , shortFormat = "{h}:{mm}"
+            , shortFormat = "{h}.{mm}"
             }
     }

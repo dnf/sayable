@@ -34,9 +34,9 @@ final fi = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+    clock: ShortClockConfig(use24h: true, format: '{h}.{mm}'),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+    clock: ShortClockConfig(use24h: true, format: '{h}.{mm}'),
   ),
 );

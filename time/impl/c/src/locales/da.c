@@ -19,6 +19,6 @@ const StTimeLocale st_locale_da = {
         "middag",
         { "klokken {h}", "fem over {h}", "ti over {h}", "kvart over {h}", "tyve over {h}", "fem i halv {next_h}", "halv {next_h}", "fem over halv {next_h}", "tyve i {next_h}", "kvart i {next_h}", "ti i {next_h}", "fem i {next_h}" }
     },
-    true, { true, { NULL, NULL }, "{h}:{mm}" },
-    true, { true, { NULL, NULL }, "{h}:{mm}" }
+    true, { true, { NULL, NULL }, "{h}.{mm}" },
+    true, { true, { NULL, NULL }, "{h}.{mm}" }
 };

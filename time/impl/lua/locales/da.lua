@@ -34,13 +34,13 @@ M.clock = {
 M.short = {
     clock = {
         use24h = true,
-        format = "{h}:{mm}",
+        format = "{h}.{mm}",
     },
 }
 M.compact = {
     clock = {
         use24h = true,
-        format = "{h}:{mm}",
+        format = "{h}.{mm}",
     },
 }
 

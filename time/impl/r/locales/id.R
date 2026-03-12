@@ -16,7 +16,7 @@ locale_id <- list(
     midnight = "tengah malam",
     noon = "tengah hari",
     patterns = list(
-      "0" = "{h} o'clock",
+      "0" = "pukul {h}",
       "5" = "lima lewat {h}",
       "10" = "sepuluh lewat {h}",
       "15" = "seperempat lewat {h}",
@@ -33,13 +33,13 @@ locale_id <- list(
   short = list(
     clock = list(
       use24h = TRUE,
-      format = "{h}:{mm}"
+      format = "{h}.{mm}"
     )
   ),
   compact = list(
     clock = list(
       use24h = TRUE,
-      format = "{h}:{mm}"
+      format = "{h}.{mm}"
     )
   )
 )

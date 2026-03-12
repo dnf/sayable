@@ -18,11 +18,13 @@ library
     SayableTime.Locales.Be
     SayableTime.Locales.Bem
     SayableTime.Locales.Bg
+    SayableTime.Locales.Bi
     SayableTime.Locales.Bm
     SayableTime.Locales.Bn
     SayableTime.Locales.Br
     SayableTime.Locales.Bs
     SayableTime.Locales.Ca
+    SayableTime.Locales.Cak
     SayableTime.Locales.Ceb
     SayableTime.Locales.Cs
     SayableTime.Locales.Cy
@@ -30,7 +32,9 @@ library
     SayableTime.Locales.De
     SayableTime.Locales.Din
     SayableTime.Locales.Dje
+    SayableTime.Locales.Dv
     SayableTime.Locales.Dyu
+    SayableTime.Locales.Dz
     SayableTime.Locales.Ee
     SayableTime.Locales.El
     SayableTime.Locales.En
@@ -42,6 +46,7 @@ library
     SayableTime.Locales.Ff
     SayableTime.Locales.Fi
     SayableTime.Locales.Fil
+    SayableTime.Locales.Fj
     SayableTime.Locales.Fon
     SayableTime.Locales.Fr
     SayableTime.Locales.Ga
@@ -53,6 +58,7 @@ library
     SayableTime.Locales.Ha
     SayableTime.Locales.He
     SayableTime.Locales.Hi
+    SayableTime.Locales.Hmn
     SayableTime.Locales.Hr
     SayableTime.Locales.Ht
     SayableTime.Locales.Hu
@@ -65,7 +71,9 @@ library
     SayableTime.Locales.Jv
     SayableTime.Locales.Ka
     SayableTime.Locales.Kbp
+    SayableTime.Locales.Kek
     SayableTime.Locales.Kk
+    SayableTime.Locales.Kl
     SayableTime.Locales.Km
     SayableTime.Locales.Kn
     SayableTime.Locales.Ko
@@ -79,6 +87,7 @@ library
     SayableTime.Locales.Lo
     SayableTime.Locales.Lt
     SayableTime.Locales.Lv
+    SayableTime.Locales.Mam
     SayableTime.Locales.Men
     SayableTime.Locales.Mfe
     SayableTime.Locales.Mg
@@ -103,11 +112,13 @@ library
     SayableTime.Locales.Om
     SayableTime.Locales.Or
     SayableTime.Locales.Pa
+    SayableTime.Locales.Pis
     SayableTime.Locales.Pl
     SayableTime.Locales.Pov
     SayableTime.Locales.Ps
     SayableTime.Locales.Pt
     SayableTime.Locales.Qu
+    SayableTime.Locales.Quc
     SayableTime.Locales.Ro
     SayableTime.Locales.Ru
     SayableTime.Locales.Rw
@@ -115,6 +126,7 @@ library
     SayableTime.Locales.Sd
     SayableTime.Locales.Sg
     SayableTime.Locales.Shi
+    SayableTime.Locales.Shn
     SayableTime.Locales.Si
     SayableTime.Locales.Sk
     SayableTime.Locales.Sl
@@ -132,12 +144,14 @@ library
     SayableTime.Locales.Ta
     SayableTime.Locales.Te
     SayableTime.Locales.Tem
+    SayableTime.Locales.Tet
     SayableTime.Locales.Tg
     SayableTime.Locales.Th
     SayableTime.Locales.Ti
     SayableTime.Locales.Tig
     SayableTime.Locales.Tk
     SayableTime.Locales.Tn
+    SayableTime.Locales.Tpi
     SayableTime.Locales.Tr
     SayableTime.Locales.Ts
     SayableTime.Locales.Tzm

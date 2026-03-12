@@ -248,6 +248,53 @@ const DateLocale& FIL() {
     return loc;
 }
 
+// Source: date/locales/src/fj.json
+const DateLocale& FJ() {
+    static const DateLocale loc{
+        "fj",
+        {"Janueri", "Feperueri", "Maji", "Epereli", "Me", "June", "Julai", "Okosita", "Sepiteba", "Okotova", "Noveba", "Tiseba"},
+        {"Sigatapu", "Moniti", "Tusiti", "Vukelulu", "Lotulevu", "Vakaraubuka", "Vakarauwai"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "nikua", "mataka", "nanoa",
+        "bogi rua ni mataka",
+        "nanoa edua",
+        "na {weekday} oqo",
+        "na {weekday} mai oqo",
+        "na {weekday} sa oti",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Fep", "Maj", "Epe", "Me", "Jun", "Jul", "Oko", "Sep", "Okt", "Nov", "Tis"},
+            {},
+            {"Sig", "Mon", "Tus", "Vuk", "Lot", "Vra", "Vrw"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/fon.json
 const DateLocale& FON() {
     static const DateLocale loc{
@@ -757,6 +804,53 @@ const DateLocale& HI() {
             false,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/hmn.json
+const DateLocale& HMN() {
+    static const DateLocale loc{
+        "hmn",
+        {"Ib Hlis", "Ob Hlis", "Peb Hlis", "Plaub Hlis", "Tsib Hlis", "Rau Hlis", "Xya Hlis", "Yim Hlis", "Cuaj Hlis", "Kaum Hlis", "Kaum Ib Hlis", "Kaum Ob Hlis"},
+        {"Hnub Tim Ib", "Hnub Tim Ob", "Hnub Tim Peb", "Hnub Tim Plaub", "Hnub Tim Tsib", "Hnub Tim Rau", "Hnub Tim Xya"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "hnub no", "tag kis", "nag hmo",
+        "ob hnub tom ntej",
+        "ob hnub dhau los",
+        "{weekday} no",
+        "{weekday} tom ntej",
+        "{weekday} tas los",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"1 Hli", "2 Hli", "3 Hli", "4 Hli", "5 Hli", "6 Hli", "7 Hli", "8 Hli", "9 Hli", "10 Hli", "11 Hli", "12 Hli"},
+            {},
+            {"T1", "T2", "T3", "T4", "T5", "T6", "T7"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{m}/{d}",
+            "{m}/{d}/{yy}",
             "",
             "",
             ""
@@ -1329,6 +1423,53 @@ const DateLocale& KBP() {
     return loc;
 }
 
+// Source: date/locales/src/kek.json
+const DateLocale& KEK() {
+    static const DateLocale loc{
+        "kek",
+        {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"},
+        {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "anaqwan", "q'ela'", "ewu",
+        "",
+        "",
+        "a'in {weekday}",
+        "{weekday} chalen",
+        "{weekday} rik'in",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"},
+            {},
+            {"Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/kk.json
 const DateLocale& KK() {
     static const DateLocale loc{
@@ -1368,6 +1509,53 @@ const DateLocale& KK() {
             false,
             "{d}/{m}",
             "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/kl.json
+const DateLocale& KL() {
+    static const DateLocale loc{
+        "kl",
+        {"januaarip", "februaarip", "marsip", "apriilip", "maajip", "juunip", "juulip", "aggustip", "septembarip", "oktobarip", "novembarip", "decembarip"},
+        {"sapaat", "ataasinngorneq", "marlunngorneq", "pingasunngorneq", "sisamanngorneq", "tallimanngorneq", "arfininngorneq"},
+        "{n}.",
+        {},
+        "{month} {day}",
+        "{day} {month} {year}",
+        "ullumi", "aqagu", "ippassaq",
+        "aqaguagu",
+        "ippassaani",
+        "{weekday} manna",
+        "{weekday} tulleq",
+        "{weekday} kingulleq",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec"},
+            {},
+            {"sap", "ata", "mar", "pin", "sis", "tal", "arf"},
+            "{n}.",
+            {},
+            false,
+            "{month} {day}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{m}-{d}",
+            "{year}-{m}-{d}",
             "",
             "",
             ""

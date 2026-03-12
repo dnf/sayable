@@ -19,19 +19,19 @@ let ID* = TimeLocale(
     hours: @["dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"],
     midnight: "tengah malam",
     noon: "tengah hari",
-    patterns: @[(0, "{h} o'clock"), (5, "lima lewat {h}"), (10, "sepuluh lewat {h}"), (15, "seperempat lewat {h}"), (20, "dua puluh lewat {h}"), (25, "dua puluh lima lewat {h}"), (30, "setengah lewat {h}"), (35, "dua puluh lima menjelang {next_h}"), (40, "dua puluh menjelang {next_h}"), (45, "seperempat menjelang {next_h}"), (50, "sepuluh menjelang {next_h}"), (55, "lima menjelang {next_h}")].toOrderedTable,
+    patterns: @[(0, "pukul {h}"), (5, "lima lewat {h}"), (10, "sepuluh lewat {h}"), (15, "seperempat lewat {h}"), (20, "dua puluh lewat {h}"), (25, "dua puluh lima lewat {h}"), (30, "setengah lewat {h}"), (35, "dua puluh lima menjelang {next_h}"), (40, "dua puluh menjelang {next_h}"), (45, "seperempat menjelang {next_h}"), (50, "sepuluh menjelang {next_h}"), (55, "lima menjelang {next_h}")].toOrderedTable,
   ),
   short: some(CompactnessOverride(
     clock: some(ShortClockConfig(
       use24h: true,
-      format: "{h}:{mm}",
+      format: "{h}.{mm}",
       amPm: none((string, string)),
     )),
   )),
   compact: some(CompactnessOverride(
     clock: some(ShortClockConfig(
       use24h: true,
-      format: "{h}:{mm}",
+      format: "{h}.{mm}",
       amPm: none((string, string)),
     )),
   )),

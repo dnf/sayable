@@ -18,11 +18,13 @@ library
     SayableDate.Locales.Be
     SayableDate.Locales.Bem
     SayableDate.Locales.Bg
+    SayableDate.Locales.Bi
     SayableDate.Locales.Bm
     SayableDate.Locales.Bn
     SayableDate.Locales.Br
     SayableDate.Locales.Bs
     SayableDate.Locales.Ca
+    SayableDate.Locales.Cak
     SayableDate.Locales.Ceb
     SayableDate.Locales.Cs
     SayableDate.Locales.Cy
@@ -30,7 +32,9 @@ library
     SayableDate.Locales.De
     SayableDate.Locales.Din
     SayableDate.Locales.Dje
+    SayableDate.Locales.Dv
     SayableDate.Locales.Dyu
+    SayableDate.Locales.Dz
     SayableDate.Locales.Ee
     SayableDate.Locales.El
     SayableDate.Locales.En
@@ -42,6 +46,7 @@ library
     SayableDate.Locales.Ff
     SayableDate.Locales.Fi
     SayableDate.Locales.Fil
+    SayableDate.Locales.Fj
     SayableDate.Locales.Fon
     SayableDate.Locales.Fr
     SayableDate.Locales.Ga
@@ -53,6 +58,7 @@ library
     SayableDate.Locales.Ha
     SayableDate.Locales.He
     SayableDate.Locales.Hi
+    SayableDate.Locales.Hmn
     SayableDate.Locales.Hr
     SayableDate.Locales.Ht
     SayableDate.Locales.Hu
@@ -65,7 +71,9 @@ library
     SayableDate.Locales.Jv
     SayableDate.Locales.Ka
     SayableDate.Locales.Kbp
+    SayableDate.Locales.Kek
     SayableDate.Locales.Kk
+    SayableDate.Locales.Kl
     SayableDate.Locales.Km
     SayableDate.Locales.Kn
     SayableDate.Locales.Ko
@@ -79,6 +87,7 @@ library
     SayableDate.Locales.Lo
     SayableDate.Locales.Lt
     SayableDate.Locales.Lv
+    SayableDate.Locales.Mam
     SayableDate.Locales.Men
     SayableDate.Locales.Mfe
     SayableDate.Locales.Mg
@@ -103,11 +112,13 @@ library
     SayableDate.Locales.Om
     SayableDate.Locales.Or
     SayableDate.Locales.Pa
+    SayableDate.Locales.Pis
     SayableDate.Locales.Pl
     SayableDate.Locales.Pov
     SayableDate.Locales.Ps
     SayableDate.Locales.Pt
     SayableDate.Locales.Qu
+    SayableDate.Locales.Quc
     SayableDate.Locales.Ro
     SayableDate.Locales.Ru
     SayableDate.Locales.Rw
@@ -115,6 +126,7 @@ library
     SayableDate.Locales.Sd
     SayableDate.Locales.Sg
     SayableDate.Locales.Shi
+    SayableDate.Locales.Shn
     SayableDate.Locales.Si
     SayableDate.Locales.Sk
     SayableDate.Locales.Sl
@@ -132,12 +144,14 @@ library
     SayableDate.Locales.Ta
     SayableDate.Locales.Te
     SayableDate.Locales.Tem
+    SayableDate.Locales.Tet
     SayableDate.Locales.Tg
     SayableDate.Locales.Th
     SayableDate.Locales.Ti
     SayableDate.Locales.Tig
     SayableDate.Locales.Tk
     SayableDate.Locales.Tn
+    SayableDate.Locales.Tpi
     SayableDate.Locales.Tr
     SayableDate.Locales.Ts
     SayableDate.Locales.Tzm

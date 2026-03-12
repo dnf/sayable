@@ -248,6 +248,53 @@ const DateLocale& LV() {
     return loc;
 }
 
+// Source: date/locales/src/mam.json
+const DateLocale& MAM() {
+    static const DateLocale loc{
+        "mam",
+        {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"},
+        {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "iky'x", "q'ij oj", "ewl",
+        "",
+        "",
+        "tu'n {weekday}",
+        "{weekday} tul",
+        "{weekday} nchi'j",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"},
+            {},
+            {"Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/men.json
 const DateLocale& MEN() {
     static const DateLocale loc{
@@ -1376,6 +1423,53 @@ const DateLocale& PA() {
     return loc;
 }
 
+// Source: date/locales/src/pis.json
+const DateLocale& PIS() {
+    static const DateLocale loc{
+        "pis",
+        {"Janueri", "Februeri", "Maj", "Epril", "Mei", "Jun", "Julae", "Ogas", "Septemba", "Oktoba", "Novemba", "Disemba"},
+        {"Sande", "Mande", "Tiusde", "Wenesde", "Tosde", "Fraede", "Sarere"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tudei", "tumoro", "yestedei",
+        "bihaen tumoro",
+        "bifo yestedei",
+        "disfala {weekday}",
+        "nekis {weekday}",
+        "las {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Feb", "Maj", "Epr", "Mei", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis"},
+            {},
+            {"San", "Man", "Tiu", "Wen", "Tos", "Fra", "Sar"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/pl.json
 const DateLocale& PL() {
     static const DateLocale loc{
@@ -1585,6 +1679,53 @@ const DateLocale& QU() {
             {"Qhu", "Hat", "Paw", "Ayr", "Aym", "Int", "Ant", "Qha", "Uma", "Kan", "Aya", "Qra"},
             {},
             {"Int", "Kil", "Ati", "Quy", "Ill", "Ch'a", "K'uy"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/quc.json
+const DateLocale& QUC() {
+    static const DateLocale loc{
+        "quc",
+        {"Nab'e ik'", "Ukab' ik'", "Urox ik'", "Ukaj ik'", "Uro' ik'", "Uwaq ik'", "Uwuq ik'", "Uwajxaq ik'", "Ub'elej ik'", "Ulaj ik'", "Ujulaj ik'", "Ukab'laj ik'"},
+        {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "kamik", "chwe'q", "iwir",
+        "kab'ij chwe'q",
+        "kab'ij iwir",
+        "we {weekday}",
+        "{weekday} ri petinaq",
+        "{weekday} ri k'aslik",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"1 ik'", "2 ik'", "3 ik'", "4 ik'", "5 ik'", "6 ik'", "7 ik'", "8 ik'", "9 ik'", "10 ik'", "11 ik'", "12 ik'"},
+            {},
+            {"Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"},
             "{n}",
             {},
             false,

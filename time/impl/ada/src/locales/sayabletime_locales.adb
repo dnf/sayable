@@ -20,11 +20,13 @@ package body Sayabletime_Locales is
    Locale_Be : aliased Time_Locale;
    Locale_Bem : aliased Time_Locale;
    Locale_Bg : aliased Time_Locale;
+   Locale_Bi : aliased Time_Locale;
    Locale_Bm : aliased Time_Locale;
    Locale_Bn : aliased Time_Locale;
    Locale_Br : aliased Time_Locale;
    Locale_Bs : aliased Time_Locale;
    Locale_Ca : aliased Time_Locale;
+   Locale_Cak : aliased Time_Locale;
    Locale_Ceb : aliased Time_Locale;
    Locale_Cs : aliased Time_Locale;
    Locale_Cy : aliased Time_Locale;
@@ -32,7 +34,9 @@ package body Sayabletime_Locales is
    Locale_De : aliased Time_Locale;
    Locale_Din : aliased Time_Locale;
    Locale_Dje : aliased Time_Locale;
+   Locale_Dv : aliased Time_Locale;
    Locale_Dyu : aliased Time_Locale;
+   Locale_Dz : aliased Time_Locale;
    Locale_Ee : aliased Time_Locale;
    Locale_El : aliased Time_Locale;
    Locale_En : aliased Time_Locale;
@@ -44,6 +48,7 @@ package body Sayabletime_Locales is
    Locale_Ff : aliased Time_Locale;
    Locale_Fi : aliased Time_Locale;
    Locale_Fil : aliased Time_Locale;
+   Locale_Fj : aliased Time_Locale;
    Locale_Fon : aliased Time_Locale;
    Locale_Fr : aliased Time_Locale;
    Locale_Ga : aliased Time_Locale;
@@ -55,6 +60,7 @@ package body Sayabletime_Locales is
    Locale_Ha : aliased Time_Locale;
    Locale_He : aliased Time_Locale;
    Locale_Hi : aliased Time_Locale;
+   Locale_Hmn : aliased Time_Locale;
    Locale_Hr : aliased Time_Locale;
    Locale_Ht : aliased Time_Locale;
    Locale_Hu : aliased Time_Locale;
@@ -67,7 +73,9 @@ package body Sayabletime_Locales is
    Locale_Jv : aliased Time_Locale;
    Locale_Ka : aliased Time_Locale;
    Locale_Kbp : aliased Time_Locale;
+   Locale_Kek : aliased Time_Locale;
    Locale_Kk : aliased Time_Locale;
+   Locale_Kl : aliased Time_Locale;
    Locale_Km : aliased Time_Locale;
    Locale_Kn : aliased Time_Locale;
    Locale_Ko : aliased Time_Locale;
@@ -81,6 +89,7 @@ package body Sayabletime_Locales is
    Locale_Lo : aliased Time_Locale;
    Locale_Lt : aliased Time_Locale;
    Locale_Lv : aliased Time_Locale;
+   Locale_Mam : aliased Time_Locale;
    Locale_Men : aliased Time_Locale;
    Locale_Mfe : aliased Time_Locale;
    Locale_Mg : aliased Time_Locale;
@@ -105,11 +114,13 @@ package body Sayabletime_Locales is
    Locale_Om : aliased Time_Locale;
    Locale_Or : aliased Time_Locale;
    Locale_Pa : aliased Time_Locale;
+   Locale_Pis : aliased Time_Locale;
    Locale_Pl : aliased Time_Locale;
    Locale_Pov : aliased Time_Locale;
    Locale_Ps : aliased Time_Locale;
    Locale_Pt : aliased Time_Locale;
    Locale_Qu : aliased Time_Locale;
+   Locale_Quc : aliased Time_Locale;
    Locale_Ro : aliased Time_Locale;
    Locale_Ru : aliased Time_Locale;
    Locale_Rw : aliased Time_Locale;
@@ -117,6 +128,7 @@ package body Sayabletime_Locales is
    Locale_Sd : aliased Time_Locale;
    Locale_Sg : aliased Time_Locale;
    Locale_Shi : aliased Time_Locale;
+   Locale_Shn : aliased Time_Locale;
    Locale_Si : aliased Time_Locale;
    Locale_Sk : aliased Time_Locale;
    Locale_Sl : aliased Time_Locale;
@@ -134,12 +146,14 @@ package body Sayabletime_Locales is
    Locale_Ta : aliased Time_Locale;
    Locale_Te : aliased Time_Locale;
    Locale_Tem : aliased Time_Locale;
+   Locale_Tet : aliased Time_Locale;
    Locale_Tg : aliased Time_Locale;
    Locale_Th : aliased Time_Locale;
    Locale_Ti : aliased Time_Locale;
    Locale_Tig : aliased Time_Locale;
    Locale_Tk : aliased Time_Locale;
    Locale_Tn : aliased Time_Locale;
+   Locale_Tpi : aliased Time_Locale;
    Locale_Tr : aliased Time_Locale;
    Locale_Ts : aliased Time_Locale;
    Locale_Tzm : aliased Time_Locale;
@@ -688,6 +702,67 @@ package body Sayabletime_Locales is
 
    end Init_bg;
 
+   --  Source: time/locales/src/bi.json
+   procedure Init_bi is
+   begin
+      Locale_Bi.Code := To_Unbounded_String ("bi");
+
+      Locale_Bi.Clock.Hours (0) := To_Unbounded_String ("twelf");
+      Locale_Bi.Clock.Hours (1) := To_Unbounded_String ("wan");
+      Locale_Bi.Clock.Hours (2) := To_Unbounded_String ("tu");
+      Locale_Bi.Clock.Hours (3) := To_Unbounded_String ("tri");
+      Locale_Bi.Clock.Hours (4) := To_Unbounded_String ("fo");
+      Locale_Bi.Clock.Hours (5) := To_Unbounded_String ("faef");
+      Locale_Bi.Clock.Hours (6) := To_Unbounded_String ("sikis");
+      Locale_Bi.Clock.Hours (7) := To_Unbounded_String ("seven");
+      Locale_Bi.Clock.Hours (8) := To_Unbounded_String ("eit");
+      Locale_Bi.Clock.Hours (9) := To_Unbounded_String ("naen");
+      Locale_Bi.Clock.Hours (10) := To_Unbounded_String ("ten");
+      Locale_Bi.Clock.Hours (11) := To_Unbounded_String ("eleven");
+      Locale_Bi.Clock.Midnight := To_Unbounded_String ("mednaet");
+      Locale_Bi.Clock.Noon := To_Unbounded_String ("medeldei");
+      Locale_Bi.Clock.Pattern_Count := 12;
+      Locale_Bi.Clock.Pattern_Keys (1) := 0;
+      Locale_Bi.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Bi.Clock.Pattern_Keys (2) := 5;
+      Locale_Bi.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Bi.Clock.Pattern_Keys (3) := 10;
+      Locale_Bi.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Bi.Clock.Pattern_Keys (4) := 15;
+      Locale_Bi.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Bi.Clock.Pattern_Keys (5) := 20;
+      Locale_Bi.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Bi.Clock.Pattern_Keys (6) := 25;
+      Locale_Bi.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Bi.Clock.Pattern_Keys (7) := 30;
+      Locale_Bi.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Bi.Clock.Pattern_Keys (8) := 35;
+      Locale_Bi.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Bi.Clock.Pattern_Keys (9) := 40;
+      Locale_Bi.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Bi.Clock.Pattern_Keys (10) := 45;
+      Locale_Bi.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Bi.Clock.Pattern_Keys (11) := 50;
+      Locale_Bi.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Bi.Clock.Pattern_Keys (12) := 55;
+      Locale_Bi.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Bi.Has_Short := True;
+      Locale_Bi.Short_Clock.Use_24h := False;
+      Locale_Bi.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Bi.Short_Clock.Has_Am_Pm := True;
+      Locale_Bi.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Bi.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Bi.Has_Compact := True;
+      Locale_Bi.Compact_Clock.Use_24h := False;
+      Locale_Bi.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Bi.Compact_Clock.Has_Am_Pm := True;
+      Locale_Bi.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Bi.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_bi;
+
    --  Source: time/locales/src/bm.json
    procedure Init_bm is
    begin
@@ -981,6 +1056,67 @@ package body Sayabletime_Locales is
 
    end Init_ca;
 
+   --  Source: time/locales/src/cak.json
+   procedure Init_cak is
+   begin
+      Locale_Cak.Code := To_Unbounded_String ("cak");
+
+      Locale_Cak.Clock.Hours (0) := To_Unbounded_String ("kab'lajuj");
+      Locale_Cak.Clock.Hours (1) := To_Unbounded_String ("jun");
+      Locale_Cak.Clock.Hours (2) := To_Unbounded_String ("ka'i'");
+      Locale_Cak.Clock.Hours (3) := To_Unbounded_String ("oxi'");
+      Locale_Cak.Clock.Hours (4) := To_Unbounded_String ("kaji'");
+      Locale_Cak.Clock.Hours (5) := To_Unbounded_String ("wo'o'");
+      Locale_Cak.Clock.Hours (6) := To_Unbounded_String ("waqi'");
+      Locale_Cak.Clock.Hours (7) := To_Unbounded_String ("wuqu'");
+      Locale_Cak.Clock.Hours (8) := To_Unbounded_String ("waqxaqi'");
+      Locale_Cak.Clock.Hours (9) := To_Unbounded_String ("b'eleje'");
+      Locale_Cak.Clock.Hours (10) := To_Unbounded_String ("lajuj");
+      Locale_Cak.Clock.Hours (11) := To_Unbounded_String ("julajuj");
+      Locale_Cak.Clock.Midnight := To_Unbounded_String ("nik'aj aq'a'");
+      Locale_Cak.Clock.Noon := To_Unbounded_String ("nik'aj q'ij");
+      Locale_Cak.Clock.Pattern_Count := 12;
+      Locale_Cak.Clock.Pattern_Keys (1) := 0;
+      Locale_Cak.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Cak.Clock.Pattern_Keys (2) := 5;
+      Locale_Cak.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Cak.Clock.Pattern_Keys (3) := 10;
+      Locale_Cak.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Cak.Clock.Pattern_Keys (4) := 15;
+      Locale_Cak.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Cak.Clock.Pattern_Keys (5) := 20;
+      Locale_Cak.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Cak.Clock.Pattern_Keys (6) := 25;
+      Locale_Cak.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Cak.Clock.Pattern_Keys (7) := 30;
+      Locale_Cak.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Cak.Clock.Pattern_Keys (8) := 35;
+      Locale_Cak.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Cak.Clock.Pattern_Keys (9) := 40;
+      Locale_Cak.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Cak.Clock.Pattern_Keys (10) := 45;
+      Locale_Cak.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Cak.Clock.Pattern_Keys (11) := 50;
+      Locale_Cak.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Cak.Clock.Pattern_Keys (12) := 55;
+      Locale_Cak.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Cak.Has_Short := True;
+      Locale_Cak.Short_Clock.Use_24h := False;
+      Locale_Cak.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Cak.Short_Clock.Has_Am_Pm := True;
+      Locale_Cak.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Cak.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Cak.Has_Compact := True;
+      Locale_Cak.Compact_Clock.Use_24h := False;
+      Locale_Cak.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Cak.Compact_Clock.Has_Am_Pm := True;
+      Locale_Cak.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Cak.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_cak;
+
    --  Source: time/locales/src/ceb.json
    procedure Init_ceb is
    begin
@@ -1203,12 +1339,12 @@ package body Sayabletime_Locales is
 
       Locale_Da.Has_Short := True;
       Locale_Da.Short_Clock.Use_24h := True;
-      Locale_Da.Short_Clock.Format := To_Unbounded_String ("{h}:{mm}");
+      Locale_Da.Short_Clock.Format := To_Unbounded_String ("{h}.{mm}");
       Locale_Da.Short_Clock.Has_Am_Pm := False;
 
       Locale_Da.Has_Compact := True;
       Locale_Da.Compact_Clock.Use_24h := True;
-      Locale_Da.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}");
+      Locale_Da.Compact_Clock.Format := To_Unbounded_String ("{h}.{mm}");
       Locale_Da.Compact_Clock.Has_Am_Pm := False;
 
    end Init_da;
@@ -1392,6 +1528,67 @@ package body Sayabletime_Locales is
 
    end Init_dje;
 
+   --  Source: time/locales/src/dv.json
+   procedure Init_dv is
+   begin
+      Locale_Dv.Code := To_Unbounded_String ("dv");
+
+      Locale_Dv.Clock.Hours (0) := To_Unbounded_String ("ބާރަ");
+      Locale_Dv.Clock.Hours (1) := To_Unbounded_String ("އެކެއް");
+      Locale_Dv.Clock.Hours (2) := To_Unbounded_String ("ދޭއް");
+      Locale_Dv.Clock.Hours (3) := To_Unbounded_String ("ތިނެއް");
+      Locale_Dv.Clock.Hours (4) := To_Unbounded_String ("ހަތަރެއް");
+      Locale_Dv.Clock.Hours (5) := To_Unbounded_String ("ފަހެއް");
+      Locale_Dv.Clock.Hours (6) := To_Unbounded_String ("ހައެއް");
+      Locale_Dv.Clock.Hours (7) := To_Unbounded_String ("ހަތެއް");
+      Locale_Dv.Clock.Hours (8) := To_Unbounded_String ("އަށެއް");
+      Locale_Dv.Clock.Hours (9) := To_Unbounded_String ("ނުވައެއް");
+      Locale_Dv.Clock.Hours (10) := To_Unbounded_String ("ދިހައެއް");
+      Locale_Dv.Clock.Hours (11) := To_Unbounded_String ("އެގާރަ");
+      Locale_Dv.Clock.Midnight := To_Unbounded_String ("މެންދަމު");
+      Locale_Dv.Clock.Noon := To_Unbounded_String ("މެންދުރު");
+      Locale_Dv.Clock.Pattern_Count := 12;
+      Locale_Dv.Clock.Pattern_Keys (1) := 0;
+      Locale_Dv.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Dv.Clock.Pattern_Keys (2) := 5;
+      Locale_Dv.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Dv.Clock.Pattern_Keys (3) := 10;
+      Locale_Dv.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Dv.Clock.Pattern_Keys (4) := 15;
+      Locale_Dv.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Dv.Clock.Pattern_Keys (5) := 20;
+      Locale_Dv.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Dv.Clock.Pattern_Keys (6) := 25;
+      Locale_Dv.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Dv.Clock.Pattern_Keys (7) := 30;
+      Locale_Dv.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Dv.Clock.Pattern_Keys (8) := 35;
+      Locale_Dv.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Dv.Clock.Pattern_Keys (9) := 40;
+      Locale_Dv.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Dv.Clock.Pattern_Keys (10) := 45;
+      Locale_Dv.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Dv.Clock.Pattern_Keys (11) := 50;
+      Locale_Dv.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Dv.Clock.Pattern_Keys (12) := 55;
+      Locale_Dv.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Dv.Has_Short := True;
+      Locale_Dv.Short_Clock.Use_24h := False;
+      Locale_Dv.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Dv.Short_Clock.Has_Am_Pm := True;
+      Locale_Dv.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Dv.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Dv.Has_Compact := True;
+      Locale_Dv.Compact_Clock.Use_24h := False;
+      Locale_Dv.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Dv.Compact_Clock.Has_Am_Pm := True;
+      Locale_Dv.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Dv.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_dv;
+
    --  Source: time/locales/src/dyu.json
    procedure Init_dyu is
    begin
@@ -1452,6 +1649,67 @@ package body Sayabletime_Locales is
       Locale_Dyu.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
 
    end Init_dyu;
+
+   --  Source: time/locales/src/dz.json
+   procedure Init_dz is
+   begin
+      Locale_Dz.Code := To_Unbounded_String ("dz");
+
+      Locale_Dz.Clock.Hours (0) := To_Unbounded_String ("བཅུ་གཉིས");
+      Locale_Dz.Clock.Hours (1) := To_Unbounded_String ("གཅིག");
+      Locale_Dz.Clock.Hours (2) := To_Unbounded_String ("གཉིས");
+      Locale_Dz.Clock.Hours (3) := To_Unbounded_String ("གསུམ");
+      Locale_Dz.Clock.Hours (4) := To_Unbounded_String ("བཞི");
+      Locale_Dz.Clock.Hours (5) := To_Unbounded_String ("ལྔ");
+      Locale_Dz.Clock.Hours (6) := To_Unbounded_String ("དྲུག");
+      Locale_Dz.Clock.Hours (7) := To_Unbounded_String ("བདུན");
+      Locale_Dz.Clock.Hours (8) := To_Unbounded_String ("བརྒྱད");
+      Locale_Dz.Clock.Hours (9) := To_Unbounded_String ("དགུ");
+      Locale_Dz.Clock.Hours (10) := To_Unbounded_String ("བཅུ");
+      Locale_Dz.Clock.Hours (11) := To_Unbounded_String ("བཅུ་གཅིག");
+      Locale_Dz.Clock.Midnight := To_Unbounded_String ("ནམ་ཕྱེད");
+      Locale_Dz.Clock.Noon := To_Unbounded_String ("ཉིན་གུང");
+      Locale_Dz.Clock.Pattern_Count := 12;
+      Locale_Dz.Clock.Pattern_Keys (1) := 0;
+      Locale_Dz.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Dz.Clock.Pattern_Keys (2) := 5;
+      Locale_Dz.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Dz.Clock.Pattern_Keys (3) := 10;
+      Locale_Dz.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Dz.Clock.Pattern_Keys (4) := 15;
+      Locale_Dz.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Dz.Clock.Pattern_Keys (5) := 20;
+      Locale_Dz.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Dz.Clock.Pattern_Keys (6) := 25;
+      Locale_Dz.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Dz.Clock.Pattern_Keys (7) := 30;
+      Locale_Dz.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Dz.Clock.Pattern_Keys (8) := 35;
+      Locale_Dz.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Dz.Clock.Pattern_Keys (9) := 40;
+      Locale_Dz.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Dz.Clock.Pattern_Keys (10) := 45;
+      Locale_Dz.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Dz.Clock.Pattern_Keys (11) := 50;
+      Locale_Dz.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Dz.Clock.Pattern_Keys (12) := 55;
+      Locale_Dz.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Dz.Has_Short := True;
+      Locale_Dz.Short_Clock.Use_24h := False;
+      Locale_Dz.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Dz.Short_Clock.Has_Am_Pm := True;
+      Locale_Dz.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Dz.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Dz.Has_Compact := True;
+      Locale_Dz.Compact_Clock.Use_24h := False;
+      Locale_Dz.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Dz.Compact_Clock.Has_Am_Pm := True;
+      Locale_Dz.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Dz.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_dz;
 
    --  Source: time/locales/src/ee.json
    procedure Init_ee is
@@ -2029,12 +2287,12 @@ package body Sayabletime_Locales is
 
       Locale_Fi.Has_Short := True;
       Locale_Fi.Short_Clock.Use_24h := True;
-      Locale_Fi.Short_Clock.Format := To_Unbounded_String ("{h}:{mm}");
+      Locale_Fi.Short_Clock.Format := To_Unbounded_String ("{h}.{mm}");
       Locale_Fi.Short_Clock.Has_Am_Pm := False;
 
       Locale_Fi.Has_Compact := True;
       Locale_Fi.Compact_Clock.Use_24h := True;
-      Locale_Fi.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}");
+      Locale_Fi.Compact_Clock.Format := To_Unbounded_String ("{h}.{mm}");
       Locale_Fi.Compact_Clock.Has_Am_Pm := False;
 
    end Init_fi;
@@ -2099,6 +2357,67 @@ package body Sayabletime_Locales is
       Locale_Fil.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
 
    end Init_fil;
+
+   --  Source: time/locales/src/fj.json
+   procedure Init_fj is
+   begin
+      Locale_Fj.Code := To_Unbounded_String ("fj");
+
+      Locale_Fj.Clock.Hours (0) := To_Unbounded_String ("tini ka rua");
+      Locale_Fj.Clock.Hours (1) := To_Unbounded_String ("dua");
+      Locale_Fj.Clock.Hours (2) := To_Unbounded_String ("rua");
+      Locale_Fj.Clock.Hours (3) := To_Unbounded_String ("tolu");
+      Locale_Fj.Clock.Hours (4) := To_Unbounded_String ("vā");
+      Locale_Fj.Clock.Hours (5) := To_Unbounded_String ("lima");
+      Locale_Fj.Clock.Hours (6) := To_Unbounded_String ("ono");
+      Locale_Fj.Clock.Hours (7) := To_Unbounded_String ("vitu");
+      Locale_Fj.Clock.Hours (8) := To_Unbounded_String ("walu");
+      Locale_Fj.Clock.Hours (9) := To_Unbounded_String ("ciwa");
+      Locale_Fj.Clock.Hours (10) := To_Unbounded_String ("tini");
+      Locale_Fj.Clock.Hours (11) := To_Unbounded_String ("tini ka dua");
+      Locale_Fj.Clock.Midnight := To_Unbounded_String ("bogi levu");
+      Locale_Fj.Clock.Noon := To_Unbounded_String ("sigalevu");
+      Locale_Fj.Clock.Pattern_Count := 12;
+      Locale_Fj.Clock.Pattern_Keys (1) := 0;
+      Locale_Fj.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Fj.Clock.Pattern_Keys (2) := 5;
+      Locale_Fj.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Fj.Clock.Pattern_Keys (3) := 10;
+      Locale_Fj.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Fj.Clock.Pattern_Keys (4) := 15;
+      Locale_Fj.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Fj.Clock.Pattern_Keys (5) := 20;
+      Locale_Fj.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Fj.Clock.Pattern_Keys (6) := 25;
+      Locale_Fj.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Fj.Clock.Pattern_Keys (7) := 30;
+      Locale_Fj.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Fj.Clock.Pattern_Keys (8) := 35;
+      Locale_Fj.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Fj.Clock.Pattern_Keys (9) := 40;
+      Locale_Fj.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Fj.Clock.Pattern_Keys (10) := 45;
+      Locale_Fj.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Fj.Clock.Pattern_Keys (11) := 50;
+      Locale_Fj.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Fj.Clock.Pattern_Keys (12) := 55;
+      Locale_Fj.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Fj.Has_Short := True;
+      Locale_Fj.Short_Clock.Use_24h := False;
+      Locale_Fj.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Fj.Short_Clock.Has_Am_Pm := True;
+      Locale_Fj.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Fj.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Fj.Has_Compact := True;
+      Locale_Fj.Compact_Clock.Use_24h := False;
+      Locale_Fj.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Fj.Compact_Clock.Has_Am_Pm := True;
+      Locale_Fj.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Fj.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_fj;
 
    --  Source: time/locales/src/fon.json
    procedure Init_fon is
@@ -2747,6 +3066,67 @@ package body Sayabletime_Locales is
 
    end Init_hi;
 
+   --  Source: time/locales/src/hmn.json
+   procedure Init_hmn is
+   begin
+      Locale_Hmn.Code := To_Unbounded_String ("hmn");
+
+      Locale_Hmn.Clock.Hours (0) := To_Unbounded_String ("kaum ob");
+      Locale_Hmn.Clock.Hours (1) := To_Unbounded_String ("ib");
+      Locale_Hmn.Clock.Hours (2) := To_Unbounded_String ("ob");
+      Locale_Hmn.Clock.Hours (3) := To_Unbounded_String ("peb");
+      Locale_Hmn.Clock.Hours (4) := To_Unbounded_String ("plaub");
+      Locale_Hmn.Clock.Hours (5) := To_Unbounded_String ("tsib");
+      Locale_Hmn.Clock.Hours (6) := To_Unbounded_String ("rau");
+      Locale_Hmn.Clock.Hours (7) := To_Unbounded_String ("xya");
+      Locale_Hmn.Clock.Hours (8) := To_Unbounded_String ("yim");
+      Locale_Hmn.Clock.Hours (9) := To_Unbounded_String ("cuaj");
+      Locale_Hmn.Clock.Hours (10) := To_Unbounded_String ("kaum");
+      Locale_Hmn.Clock.Hours (11) := To_Unbounded_String ("kaum ib");
+      Locale_Hmn.Clock.Midnight := To_Unbounded_String ("ib tag hmo");
+      Locale_Hmn.Clock.Noon := To_Unbounded_String ("tav su");
+      Locale_Hmn.Clock.Pattern_Count := 12;
+      Locale_Hmn.Clock.Pattern_Keys (1) := 0;
+      Locale_Hmn.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Hmn.Clock.Pattern_Keys (2) := 5;
+      Locale_Hmn.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Hmn.Clock.Pattern_Keys (3) := 10;
+      Locale_Hmn.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Hmn.Clock.Pattern_Keys (4) := 15;
+      Locale_Hmn.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Hmn.Clock.Pattern_Keys (5) := 20;
+      Locale_Hmn.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Hmn.Clock.Pattern_Keys (6) := 25;
+      Locale_Hmn.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Hmn.Clock.Pattern_Keys (7) := 30;
+      Locale_Hmn.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Hmn.Clock.Pattern_Keys (8) := 35;
+      Locale_Hmn.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Hmn.Clock.Pattern_Keys (9) := 40;
+      Locale_Hmn.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Hmn.Clock.Pattern_Keys (10) := 45;
+      Locale_Hmn.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Hmn.Clock.Pattern_Keys (11) := 50;
+      Locale_Hmn.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Hmn.Clock.Pattern_Keys (12) := 55;
+      Locale_Hmn.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Hmn.Has_Short := True;
+      Locale_Hmn.Short_Clock.Use_24h := False;
+      Locale_Hmn.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Hmn.Short_Clock.Has_Am_Pm := True;
+      Locale_Hmn.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Hmn.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Hmn.Has_Compact := True;
+      Locale_Hmn.Compact_Clock.Use_24h := False;
+      Locale_Hmn.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Hmn.Compact_Clock.Has_Am_Pm := True;
+      Locale_Hmn.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Hmn.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_hmn;
+
    --  Source: time/locales/src/hr.json
    procedure Init_hr is
    begin
@@ -3000,7 +3380,7 @@ package body Sayabletime_Locales is
       Locale_Id.Clock.Noon := To_Unbounded_String ("tengah hari");
       Locale_Id.Clock.Pattern_Count := 12;
       Locale_Id.Clock.Pattern_Keys (1) := 0;
-      Locale_Id.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h} o'clock");
+      Locale_Id.Clock.Pattern_Vals (1) := To_Unbounded_String ("pukul {h}");
       Locale_Id.Clock.Pattern_Keys (2) := 5;
       Locale_Id.Clock.Pattern_Vals (2) := To_Unbounded_String ("lima lewat {h}");
       Locale_Id.Clock.Pattern_Keys (3) := 10;
@@ -3026,12 +3406,12 @@ package body Sayabletime_Locales is
 
       Locale_Id.Has_Short := True;
       Locale_Id.Short_Clock.Use_24h := True;
-      Locale_Id.Short_Clock.Format := To_Unbounded_String ("{h}:{mm}");
+      Locale_Id.Short_Clock.Format := To_Unbounded_String ("{h}.{mm}");
       Locale_Id.Short_Clock.Has_Am_Pm := False;
 
       Locale_Id.Has_Compact := True;
       Locale_Id.Compact_Clock.Use_24h := True;
-      Locale_Id.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}");
+      Locale_Id.Compact_Clock.Format := To_Unbounded_String ("{h}.{mm}");
       Locale_Id.Compact_Clock.Has_Am_Pm := False;
 
    end Init_id;
@@ -3443,6 +3823,67 @@ package body Sayabletime_Locales is
 
    end Init_kbp;
 
+   --  Source: time/locales/src/kek.json
+   procedure Init_kek is
+   begin
+      Locale_Kek.Code := To_Unbounded_String ("kek");
+
+      Locale_Kek.Clock.Hours (0) := To_Unbounded_String ("kab'laju");
+      Locale_Kek.Clock.Hours (1) := To_Unbounded_String ("jun");
+      Locale_Kek.Clock.Hours (2) := To_Unbounded_String ("kab'");
+      Locale_Kek.Clock.Hours (3) := To_Unbounded_String ("oxib'");
+      Locale_Kek.Clock.Hours (4) := To_Unbounded_String ("kab'ib'");
+      Locale_Kek.Clock.Hours (5) := To_Unbounded_String ("o'ib'");
+      Locale_Kek.Clock.Hours (6) := To_Unbounded_String ("waqib'");
+      Locale_Kek.Clock.Hours (7) := To_Unbounded_String ("uqub'");
+      Locale_Kek.Clock.Hours (8) := To_Unbounded_String ("wajxaqib'");
+      Locale_Kek.Clock.Hours (9) := To_Unbounded_String ("b'elejeb'");
+      Locale_Kek.Clock.Hours (10) := To_Unbounded_String ("lajeb'");
+      Locale_Kek.Clock.Hours (11) := To_Unbounded_String ("junlaju");
+      Locale_Kek.Clock.Midnight := To_Unbounded_String ("chaq' xkab'");
+      Locale_Kek.Clock.Noon := To_Unbounded_String ("chaq' chaab'il");
+      Locale_Kek.Clock.Pattern_Count := 12;
+      Locale_Kek.Clock.Pattern_Keys (1) := 0;
+      Locale_Kek.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Kek.Clock.Pattern_Keys (2) := 5;
+      Locale_Kek.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Kek.Clock.Pattern_Keys (3) := 10;
+      Locale_Kek.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Kek.Clock.Pattern_Keys (4) := 15;
+      Locale_Kek.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Kek.Clock.Pattern_Keys (5) := 20;
+      Locale_Kek.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Kek.Clock.Pattern_Keys (6) := 25;
+      Locale_Kek.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Kek.Clock.Pattern_Keys (7) := 30;
+      Locale_Kek.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Kek.Clock.Pattern_Keys (8) := 35;
+      Locale_Kek.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Kek.Clock.Pattern_Keys (9) := 40;
+      Locale_Kek.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Kek.Clock.Pattern_Keys (10) := 45;
+      Locale_Kek.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Kek.Clock.Pattern_Keys (11) := 50;
+      Locale_Kek.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Kek.Clock.Pattern_Keys (12) := 55;
+      Locale_Kek.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Kek.Has_Short := True;
+      Locale_Kek.Short_Clock.Use_24h := False;
+      Locale_Kek.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Kek.Short_Clock.Has_Am_Pm := True;
+      Locale_Kek.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Kek.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Kek.Has_Compact := True;
+      Locale_Kek.Compact_Clock.Use_24h := False;
+      Locale_Kek.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Kek.Compact_Clock.Has_Am_Pm := True;
+      Locale_Kek.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Kek.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_kek;
+
    --  Source: time/locales/src/kk.json
    procedure Init_kk is
    begin
@@ -3499,6 +3940,63 @@ package body Sayabletime_Locales is
       Locale_Kk.Compact_Clock.Has_Am_Pm := False;
 
    end Init_kk;
+
+   --  Source: time/locales/src/kl.json
+   procedure Init_kl is
+   begin
+      Locale_Kl.Code := To_Unbounded_String ("kl");
+
+      Locale_Kl.Clock.Hours (0) := To_Unbounded_String ("akunneq marluk");
+      Locale_Kl.Clock.Hours (1) := To_Unbounded_String ("ataaseq");
+      Locale_Kl.Clock.Hours (2) := To_Unbounded_String ("marluk");
+      Locale_Kl.Clock.Hours (3) := To_Unbounded_String ("pingasut");
+      Locale_Kl.Clock.Hours (4) := To_Unbounded_String ("sisamat");
+      Locale_Kl.Clock.Hours (5) := To_Unbounded_String ("tallimat");
+      Locale_Kl.Clock.Hours (6) := To_Unbounded_String ("arfinillit");
+      Locale_Kl.Clock.Hours (7) := To_Unbounded_String ("arfineq-marluk");
+      Locale_Kl.Clock.Hours (8) := To_Unbounded_String ("arfineq-pingasut");
+      Locale_Kl.Clock.Hours (9) := To_Unbounded_String ("qulingiluat");
+      Locale_Kl.Clock.Hours (10) := To_Unbounded_String ("qulit");
+      Locale_Kl.Clock.Hours (11) := To_Unbounded_String ("akunneq ataaseq");
+      Locale_Kl.Clock.Midnight := To_Unbounded_String ("unnuap qeqqa");
+      Locale_Kl.Clock.Noon := To_Unbounded_String ("ulloqeqqap qeqqa");
+      Locale_Kl.Clock.Pattern_Count := 12;
+      Locale_Kl.Clock.Pattern_Keys (1) := 0;
+      Locale_Kl.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Kl.Clock.Pattern_Keys (2) := 5;
+      Locale_Kl.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Kl.Clock.Pattern_Keys (3) := 10;
+      Locale_Kl.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Kl.Clock.Pattern_Keys (4) := 15;
+      Locale_Kl.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Kl.Clock.Pattern_Keys (5) := 20;
+      Locale_Kl.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Kl.Clock.Pattern_Keys (6) := 25;
+      Locale_Kl.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Kl.Clock.Pattern_Keys (7) := 30;
+      Locale_Kl.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Kl.Clock.Pattern_Keys (8) := 35;
+      Locale_Kl.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Kl.Clock.Pattern_Keys (9) := 40;
+      Locale_Kl.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Kl.Clock.Pattern_Keys (10) := 45;
+      Locale_Kl.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Kl.Clock.Pattern_Keys (11) := 50;
+      Locale_Kl.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Kl.Clock.Pattern_Keys (12) := 55;
+      Locale_Kl.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Kl.Has_Short := True;
+      Locale_Kl.Short_Clock.Use_24h := True;
+      Locale_Kl.Short_Clock.Format := To_Unbounded_String ("{h}.{mm}");
+      Locale_Kl.Short_Clock.Has_Am_Pm := False;
+
+      Locale_Kl.Has_Compact := True;
+      Locale_Kl.Compact_Clock.Use_24h := True;
+      Locale_Kl.Compact_Clock.Format := To_Unbounded_String ("{h}.{mm}");
+      Locale_Kl.Compact_Clock.Has_Am_Pm := False;
+
+   end Init_kl;
 
    --  Source: time/locales/src/km.json
    procedure Init_km is
@@ -4260,6 +4758,67 @@ package body Sayabletime_Locales is
       Locale_Lv.Compact_Clock.Has_Am_Pm := False;
 
    end Init_lv;
+
+   --  Source: time/locales/src/mam.json
+   procedure Init_mam is
+   begin
+      Locale_Mam.Code := To_Unbounded_String ("mam");
+
+      Locale_Mam.Clock.Hours (0) := To_Unbounded_String ("kab'laj");
+      Locale_Mam.Clock.Hours (1) := To_Unbounded_String ("jun");
+      Locale_Mam.Clock.Hours (2) := To_Unbounded_String ("kab'");
+      Locale_Mam.Clock.Hours (3) := To_Unbounded_String ("oxe");
+      Locale_Mam.Clock.Hours (4) := To_Unbounded_String ("kyaje");
+      Locale_Mam.Clock.Hours (5) := To_Unbounded_String ("jwe'");
+      Locale_Mam.Clock.Hours (6) := To_Unbounded_String ("qaq");
+      Locale_Mam.Clock.Hours (7) := To_Unbounded_String ("wuq");
+      Locale_Mam.Clock.Hours (8) := To_Unbounded_String ("wajxaq");
+      Locale_Mam.Clock.Hours (9) := To_Unbounded_String ("b'alaj");
+      Locale_Mam.Clock.Hours (10) := To_Unbounded_String ("laj");
+      Locale_Mam.Clock.Hours (11) := To_Unbounded_String ("junlaj");
+      Locale_Mam.Clock.Midnight := To_Unbounded_String ("nik' aq'b'il");
+      Locale_Mam.Clock.Noon := To_Unbounded_String ("nik' q'ij");
+      Locale_Mam.Clock.Pattern_Count := 12;
+      Locale_Mam.Clock.Pattern_Keys (1) := 0;
+      Locale_Mam.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Mam.Clock.Pattern_Keys (2) := 5;
+      Locale_Mam.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Mam.Clock.Pattern_Keys (3) := 10;
+      Locale_Mam.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Mam.Clock.Pattern_Keys (4) := 15;
+      Locale_Mam.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Mam.Clock.Pattern_Keys (5) := 20;
+      Locale_Mam.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Mam.Clock.Pattern_Keys (6) := 25;
+      Locale_Mam.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Mam.Clock.Pattern_Keys (7) := 30;
+      Locale_Mam.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Mam.Clock.Pattern_Keys (8) := 35;
+      Locale_Mam.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Mam.Clock.Pattern_Keys (9) := 40;
+      Locale_Mam.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Mam.Clock.Pattern_Keys (10) := 45;
+      Locale_Mam.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Mam.Clock.Pattern_Keys (11) := 50;
+      Locale_Mam.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Mam.Clock.Pattern_Keys (12) := 55;
+      Locale_Mam.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Mam.Has_Short := True;
+      Locale_Mam.Short_Clock.Use_24h := False;
+      Locale_Mam.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Mam.Short_Clock.Has_Am_Pm := True;
+      Locale_Mam.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Mam.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Mam.Has_Compact := True;
+      Locale_Mam.Compact_Clock.Use_24h := False;
+      Locale_Mam.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Mam.Compact_Clock.Has_Am_Pm := True;
+      Locale_Mam.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Mam.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_mam;
 
    --  Source: time/locales/src/men.json
    procedure Init_men is
@@ -5697,6 +6256,67 @@ package body Sayabletime_Locales is
 
    end Init_pa;
 
+   --  Source: time/locales/src/pis.json
+   procedure Init_pis is
+   begin
+      Locale_Pis.Code := To_Unbounded_String ("pis");
+
+      Locale_Pis.Clock.Hours (0) := To_Unbounded_String ("twelf");
+      Locale_Pis.Clock.Hours (1) := To_Unbounded_String ("wan");
+      Locale_Pis.Clock.Hours (2) := To_Unbounded_String ("tu");
+      Locale_Pis.Clock.Hours (3) := To_Unbounded_String ("tri");
+      Locale_Pis.Clock.Hours (4) := To_Unbounded_String ("foa");
+      Locale_Pis.Clock.Hours (5) := To_Unbounded_String ("faev");
+      Locale_Pis.Clock.Hours (6) := To_Unbounded_String ("sikis");
+      Locale_Pis.Clock.Hours (7) := To_Unbounded_String ("seven");
+      Locale_Pis.Clock.Hours (8) := To_Unbounded_String ("eit");
+      Locale_Pis.Clock.Hours (9) := To_Unbounded_String ("naen");
+      Locale_Pis.Clock.Hours (10) := To_Unbounded_String ("ten");
+      Locale_Pis.Clock.Hours (11) := To_Unbounded_String ("eleven");
+      Locale_Pis.Clock.Midnight := To_Unbounded_String ("midonaet");
+      Locale_Pis.Clock.Noon := To_Unbounded_String ("midei");
+      Locale_Pis.Clock.Pattern_Count := 12;
+      Locale_Pis.Clock.Pattern_Keys (1) := 0;
+      Locale_Pis.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Pis.Clock.Pattern_Keys (2) := 5;
+      Locale_Pis.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Pis.Clock.Pattern_Keys (3) := 10;
+      Locale_Pis.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Pis.Clock.Pattern_Keys (4) := 15;
+      Locale_Pis.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Pis.Clock.Pattern_Keys (5) := 20;
+      Locale_Pis.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Pis.Clock.Pattern_Keys (6) := 25;
+      Locale_Pis.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Pis.Clock.Pattern_Keys (7) := 30;
+      Locale_Pis.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Pis.Clock.Pattern_Keys (8) := 35;
+      Locale_Pis.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Pis.Clock.Pattern_Keys (9) := 40;
+      Locale_Pis.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Pis.Clock.Pattern_Keys (10) := 45;
+      Locale_Pis.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Pis.Clock.Pattern_Keys (11) := 50;
+      Locale_Pis.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Pis.Clock.Pattern_Keys (12) := 55;
+      Locale_Pis.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Pis.Has_Short := True;
+      Locale_Pis.Short_Clock.Use_24h := False;
+      Locale_Pis.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Pis.Short_Clock.Has_Am_Pm := True;
+      Locale_Pis.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Pis.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Pis.Has_Compact := True;
+      Locale_Pis.Compact_Clock.Use_24h := False;
+      Locale_Pis.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Pis.Compact_Clock.Has_Am_Pm := True;
+      Locale_Pis.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Pis.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_pis;
+
    --  Source: time/locales/src/pl.json
    procedure Init_pl is
    begin
@@ -5993,6 +6613,67 @@ package body Sayabletime_Locales is
       Locale_Qu.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
 
    end Init_qu;
+
+   --  Source: time/locales/src/quc.json
+   procedure Init_quc is
+   begin
+      Locale_Quc.Code := To_Unbounded_String ("quc");
+
+      Locale_Quc.Clock.Hours (0) := To_Unbounded_String ("kab'lajuj");
+      Locale_Quc.Clock.Hours (1) := To_Unbounded_String ("jun");
+      Locale_Quc.Clock.Hours (2) := To_Unbounded_String ("ka'i'");
+      Locale_Quc.Clock.Hours (3) := To_Unbounded_String ("oxi'");
+      Locale_Quc.Clock.Hours (4) := To_Unbounded_String ("kaji'");
+      Locale_Quc.Clock.Hours (5) := To_Unbounded_String ("jo'");
+      Locale_Quc.Clock.Hours (6) := To_Unbounded_String ("waqi'");
+      Locale_Quc.Clock.Hours (7) := To_Unbounded_String ("wuqu'");
+      Locale_Quc.Clock.Hours (8) := To_Unbounded_String ("wajxaqi'");
+      Locale_Quc.Clock.Hours (9) := To_Unbounded_String ("b'eleji'");
+      Locale_Quc.Clock.Hours (10) := To_Unbounded_String ("lajuj");
+      Locale_Quc.Clock.Hours (11) := To_Unbounded_String ("julajuj");
+      Locale_Quc.Clock.Midnight := To_Unbounded_String ("nik'aj aq'ab'");
+      Locale_Quc.Clock.Noon := To_Unbounded_String ("nik'aj q'ij");
+      Locale_Quc.Clock.Pattern_Count := 12;
+      Locale_Quc.Clock.Pattern_Keys (1) := 0;
+      Locale_Quc.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Quc.Clock.Pattern_Keys (2) := 5;
+      Locale_Quc.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Quc.Clock.Pattern_Keys (3) := 10;
+      Locale_Quc.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Quc.Clock.Pattern_Keys (4) := 15;
+      Locale_Quc.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Quc.Clock.Pattern_Keys (5) := 20;
+      Locale_Quc.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Quc.Clock.Pattern_Keys (6) := 25;
+      Locale_Quc.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Quc.Clock.Pattern_Keys (7) := 30;
+      Locale_Quc.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Quc.Clock.Pattern_Keys (8) := 35;
+      Locale_Quc.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Quc.Clock.Pattern_Keys (9) := 40;
+      Locale_Quc.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Quc.Clock.Pattern_Keys (10) := 45;
+      Locale_Quc.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Quc.Clock.Pattern_Keys (11) := 50;
+      Locale_Quc.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Quc.Clock.Pattern_Keys (12) := 55;
+      Locale_Quc.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Quc.Has_Short := True;
+      Locale_Quc.Short_Clock.Use_24h := False;
+      Locale_Quc.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Quc.Short_Clock.Has_Am_Pm := True;
+      Locale_Quc.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Quc.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Quc.Has_Compact := True;
+      Locale_Quc.Compact_Clock.Use_24h := False;
+      Locale_Quc.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Quc.Compact_Clock.Has_Am_Pm := True;
+      Locale_Quc.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Quc.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_quc;
 
    --  Source: time/locales/src/ro.json
    procedure Init_ro is
@@ -6408,6 +7089,67 @@ package body Sayabletime_Locales is
       Locale_Shi.Compact_Clock.Has_Am_Pm := False;
 
    end Init_shi;
+
+   --  Source: time/locales/src/shn.json
+   procedure Init_shn is
+   begin
+      Locale_Shn.Code := To_Unbounded_String ("shn");
+
+      Locale_Shn.Clock.Hours (0) := To_Unbounded_String ("သိပ်းသွင်");
+      Locale_Shn.Clock.Hours (1) := To_Unbounded_String ("ၼိုင်ႈ");
+      Locale_Shn.Clock.Hours (2) := To_Unbounded_String ("သွင်");
+      Locale_Shn.Clock.Hours (3) := To_Unbounded_String ("သၢမ်");
+      Locale_Shn.Clock.Hours (4) := To_Unbounded_String ("သီႇ");
+      Locale_Shn.Clock.Hours (5) := To_Unbounded_String ("ႁႃႈ");
+      Locale_Shn.Clock.Hours (6) := To_Unbounded_String ("ႁူၵ်း");
+      Locale_Shn.Clock.Hours (7) := To_Unbounded_String ("ၸဵတ်း");
+      Locale_Shn.Clock.Hours (8) := To_Unbounded_String ("ပႅတ်ႇ");
+      Locale_Shn.Clock.Hours (9) := To_Unbounded_String ("ၵဝ်ႈ");
+      Locale_Shn.Clock.Hours (10) := To_Unbounded_String ("သိပ်း");
+      Locale_Shn.Clock.Hours (11) := To_Unbounded_String ("သိပ်းဢဵတ်း");
+      Locale_Shn.Clock.Midnight := To_Unbounded_String ("ၵၢင်ၶိုၼ်း");
+      Locale_Shn.Clock.Noon := To_Unbounded_String ("ၵၢင်ဝၼ်း");
+      Locale_Shn.Clock.Pattern_Count := 12;
+      Locale_Shn.Clock.Pattern_Keys (1) := 0;
+      Locale_Shn.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Shn.Clock.Pattern_Keys (2) := 5;
+      Locale_Shn.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Shn.Clock.Pattern_Keys (3) := 10;
+      Locale_Shn.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Shn.Clock.Pattern_Keys (4) := 15;
+      Locale_Shn.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Shn.Clock.Pattern_Keys (5) := 20;
+      Locale_Shn.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Shn.Clock.Pattern_Keys (6) := 25;
+      Locale_Shn.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Shn.Clock.Pattern_Keys (7) := 30;
+      Locale_Shn.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Shn.Clock.Pattern_Keys (8) := 35;
+      Locale_Shn.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Shn.Clock.Pattern_Keys (9) := 40;
+      Locale_Shn.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Shn.Clock.Pattern_Keys (10) := 45;
+      Locale_Shn.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Shn.Clock.Pattern_Keys (11) := 50;
+      Locale_Shn.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Shn.Clock.Pattern_Keys (12) := 55;
+      Locale_Shn.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Shn.Has_Short := True;
+      Locale_Shn.Short_Clock.Use_24h := False;
+      Locale_Shn.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Shn.Short_Clock.Has_Am_Pm := True;
+      Locale_Shn.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Shn.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Shn.Has_Compact := True;
+      Locale_Shn.Compact_Clock.Use_24h := False;
+      Locale_Shn.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Shn.Compact_Clock.Has_Am_Pm := True;
+      Locale_Shn.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Shn.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_shn;
 
    --  Source: time/locales/src/si.json
    procedure Init_si is
@@ -7418,6 +8160,67 @@ package body Sayabletime_Locales is
 
    end Init_tem;
 
+   --  Source: time/locales/src/tet.json
+   procedure Init_tet is
+   begin
+      Locale_Tet.Code := To_Unbounded_String ("tet");
+
+      Locale_Tet.Clock.Hours (0) := To_Unbounded_String ("sanulu-resin-rua");
+      Locale_Tet.Clock.Hours (1) := To_Unbounded_String ("ida");
+      Locale_Tet.Clock.Hours (2) := To_Unbounded_String ("rua");
+      Locale_Tet.Clock.Hours (3) := To_Unbounded_String ("tolu");
+      Locale_Tet.Clock.Hours (4) := To_Unbounded_String ("haat");
+      Locale_Tet.Clock.Hours (5) := To_Unbounded_String ("lima");
+      Locale_Tet.Clock.Hours (6) := To_Unbounded_String ("neen");
+      Locale_Tet.Clock.Hours (7) := To_Unbounded_String ("hitu");
+      Locale_Tet.Clock.Hours (8) := To_Unbounded_String ("ualu");
+      Locale_Tet.Clock.Hours (9) := To_Unbounded_String ("sia");
+      Locale_Tet.Clock.Hours (10) := To_Unbounded_String ("sanulu");
+      Locale_Tet.Clock.Hours (11) := To_Unbounded_String ("sanulu-resin-ida");
+      Locale_Tet.Clock.Midnight := To_Unbounded_String ("meiu-kalan");
+      Locale_Tet.Clock.Noon := To_Unbounded_String ("meiu-loron");
+      Locale_Tet.Clock.Pattern_Count := 12;
+      Locale_Tet.Clock.Pattern_Keys (1) := 0;
+      Locale_Tet.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Tet.Clock.Pattern_Keys (2) := 5;
+      Locale_Tet.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Tet.Clock.Pattern_Keys (3) := 10;
+      Locale_Tet.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Tet.Clock.Pattern_Keys (4) := 15;
+      Locale_Tet.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Tet.Clock.Pattern_Keys (5) := 20;
+      Locale_Tet.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Tet.Clock.Pattern_Keys (6) := 25;
+      Locale_Tet.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Tet.Clock.Pattern_Keys (7) := 30;
+      Locale_Tet.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Tet.Clock.Pattern_Keys (8) := 35;
+      Locale_Tet.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Tet.Clock.Pattern_Keys (9) := 40;
+      Locale_Tet.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Tet.Clock.Pattern_Keys (10) := 45;
+      Locale_Tet.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Tet.Clock.Pattern_Keys (11) := 50;
+      Locale_Tet.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Tet.Clock.Pattern_Keys (12) := 55;
+      Locale_Tet.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Tet.Has_Short := True;
+      Locale_Tet.Short_Clock.Use_24h := False;
+      Locale_Tet.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Tet.Short_Clock.Has_Am_Pm := True;
+      Locale_Tet.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Tet.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Tet.Has_Compact := True;
+      Locale_Tet.Compact_Clock.Use_24h := False;
+      Locale_Tet.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Tet.Compact_Clock.Has_Am_Pm := True;
+      Locale_Tet.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Tet.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_tet;
+
    --  Source: time/locales/src/tg.json
    procedure Init_tg is
    begin
@@ -7767,6 +8570,67 @@ package body Sayabletime_Locales is
       Locale_Tn.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
 
    end Init_tn;
+
+   --  Source: time/locales/src/tpi.json
+   procedure Init_tpi is
+   begin
+      Locale_Tpi.Code := To_Unbounded_String ("tpi");
+
+      Locale_Tpi.Clock.Hours (0) := To_Unbounded_String ("twelp");
+      Locale_Tpi.Clock.Hours (1) := To_Unbounded_String ("wan");
+      Locale_Tpi.Clock.Hours (2) := To_Unbounded_String ("tu");
+      Locale_Tpi.Clock.Hours (3) := To_Unbounded_String ("tri");
+      Locale_Tpi.Clock.Hours (4) := To_Unbounded_String ("foa");
+      Locale_Tpi.Clock.Hours (5) := To_Unbounded_String ("faiv");
+      Locale_Tpi.Clock.Hours (6) := To_Unbounded_String ("sikis");
+      Locale_Tpi.Clock.Hours (7) := To_Unbounded_String ("seven");
+      Locale_Tpi.Clock.Hours (8) := To_Unbounded_String ("et");
+      Locale_Tpi.Clock.Hours (9) := To_Unbounded_String ("nain");
+      Locale_Tpi.Clock.Hours (10) := To_Unbounded_String ("ten");
+      Locale_Tpi.Clock.Hours (11) := To_Unbounded_String ("eleven");
+      Locale_Tpi.Clock.Midnight := To_Unbounded_String ("biknait");
+      Locale_Tpi.Clock.Noon := To_Unbounded_String ("belo");
+      Locale_Tpi.Clock.Pattern_Count := 12;
+      Locale_Tpi.Clock.Pattern_Keys (1) := 0;
+      Locale_Tpi.Clock.Pattern_Vals (1) := To_Unbounded_String ("{h}:00");
+      Locale_Tpi.Clock.Pattern_Keys (2) := 5;
+      Locale_Tpi.Clock.Pattern_Vals (2) := To_Unbounded_String ("{h}:05");
+      Locale_Tpi.Clock.Pattern_Keys (3) := 10;
+      Locale_Tpi.Clock.Pattern_Vals (3) := To_Unbounded_String ("{h}:10");
+      Locale_Tpi.Clock.Pattern_Keys (4) := 15;
+      Locale_Tpi.Clock.Pattern_Vals (4) := To_Unbounded_String ("{h}:15");
+      Locale_Tpi.Clock.Pattern_Keys (5) := 20;
+      Locale_Tpi.Clock.Pattern_Vals (5) := To_Unbounded_String ("{h}:20");
+      Locale_Tpi.Clock.Pattern_Keys (6) := 25;
+      Locale_Tpi.Clock.Pattern_Vals (6) := To_Unbounded_String ("{h}:25");
+      Locale_Tpi.Clock.Pattern_Keys (7) := 30;
+      Locale_Tpi.Clock.Pattern_Vals (7) := To_Unbounded_String ("{h}:30");
+      Locale_Tpi.Clock.Pattern_Keys (8) := 35;
+      Locale_Tpi.Clock.Pattern_Vals (8) := To_Unbounded_String ("{h}:35");
+      Locale_Tpi.Clock.Pattern_Keys (9) := 40;
+      Locale_Tpi.Clock.Pattern_Vals (9) := To_Unbounded_String ("{h}:40");
+      Locale_Tpi.Clock.Pattern_Keys (10) := 45;
+      Locale_Tpi.Clock.Pattern_Vals (10) := To_Unbounded_String ("{h}:45");
+      Locale_Tpi.Clock.Pattern_Keys (11) := 50;
+      Locale_Tpi.Clock.Pattern_Vals (11) := To_Unbounded_String ("{h}:50");
+      Locale_Tpi.Clock.Pattern_Keys (12) := 55;
+      Locale_Tpi.Clock.Pattern_Vals (12) := To_Unbounded_String ("{h}:55");
+
+      Locale_Tpi.Has_Short := True;
+      Locale_Tpi.Short_Clock.Use_24h := False;
+      Locale_Tpi.Short_Clock.Format := To_Unbounded_String ("{h}:{mm} {ampm}");
+      Locale_Tpi.Short_Clock.Has_Am_Pm := True;
+      Locale_Tpi.Short_Clock.Am_Str := To_Unbounded_String ("AM");
+      Locale_Tpi.Short_Clock.Pm_Str := To_Unbounded_String ("PM");
+
+      Locale_Tpi.Has_Compact := True;
+      Locale_Tpi.Compact_Clock.Use_24h := False;
+      Locale_Tpi.Compact_Clock.Format := To_Unbounded_String ("{h}:{mm}{ampm}");
+      Locale_Tpi.Compact_Clock.Has_Am_Pm := True;
+      Locale_Tpi.Compact_Clock.Am_Str := To_Unbounded_String ("a");
+      Locale_Tpi.Compact_Clock.Pm_Str := To_Unbounded_String ("p");
+
+   end Init_tpi;
 
    --  Source: time/locales/src/tr.json
    procedure Init_tr is
@@ -8730,11 +9594,13 @@ package body Sayabletime_Locales is
       Init_be;
       Init_bem;
       Init_bg;
+      Init_bi;
       Init_bm;
       Init_bn;
       Init_br;
       Init_bs;
       Init_ca;
+      Init_cak;
       Init_ceb;
       Init_cs;
       Init_cy;
@@ -8742,7 +9608,9 @@ package body Sayabletime_Locales is
       Init_de;
       Init_din;
       Init_dje;
+      Init_dv;
       Init_dyu;
+      Init_dz;
       Init_ee;
       Init_el;
       Init_en;
@@ -8754,6 +9622,7 @@ package body Sayabletime_Locales is
       Init_ff;
       Init_fi;
       Init_fil;
+      Init_fj;
       Init_fon;
       Init_fr;
       Init_ga;
@@ -8765,6 +9634,7 @@ package body Sayabletime_Locales is
       Init_ha;
       Init_he;
       Init_hi;
+      Init_hmn;
       Init_hr;
       Init_ht;
       Init_hu;
@@ -8777,7 +9647,9 @@ package body Sayabletime_Locales is
       Init_jv;
       Init_ka;
       Init_kbp;
+      Init_kek;
       Init_kk;
+      Init_kl;
       Init_km;
       Init_kn;
       Init_ko;
@@ -8791,6 +9663,7 @@ package body Sayabletime_Locales is
       Init_lo;
       Init_lt;
       Init_lv;
+      Init_mam;
       Init_men;
       Init_mfe;
       Init_mg;
@@ -8815,11 +9688,13 @@ package body Sayabletime_Locales is
       Init_om;
       Init_or;
       Init_pa;
+      Init_pis;
       Init_pl;
       Init_pov;
       Init_ps;
       Init_pt;
       Init_qu;
+      Init_quc;
       Init_ro;
       Init_ru;
       Init_rw;
@@ -8827,6 +9702,7 @@ package body Sayabletime_Locales is
       Init_sd;
       Init_sg;
       Init_shi;
+      Init_shn;
       Init_si;
       Init_sk;
       Init_sl;
@@ -8844,12 +9720,14 @@ package body Sayabletime_Locales is
       Init_ta;
       Init_te;
       Init_tem;
+      Init_tet;
       Init_tg;
       Init_th;
       Init_ti;
       Init_tig;
       Init_tk;
       Init_tn;
+      Init_tpi;
       Init_tr;
       Init_ts;
       Init_tzm;
@@ -8899,6 +9777,9 @@ package body Sayabletime_Locales is
       if Code = "bg" then
          return Locale_Bg'Access;
       end if;
+      if Code = "bi" then
+         return Locale_Bi'Access;
+      end if;
       if Code = "bm" then
          return Locale_Bm'Access;
       end if;
@@ -8913,6 +9794,9 @@ package body Sayabletime_Locales is
       end if;
       if Code = "ca" then
          return Locale_Ca'Access;
+      end if;
+      if Code = "cak" then
+         return Locale_Cak'Access;
       end if;
       if Code = "ceb" then
          return Locale_Ceb'Access;
@@ -8935,8 +9819,14 @@ package body Sayabletime_Locales is
       if Code = "dje" then
          return Locale_Dje'Access;
       end if;
+      if Code = "dv" then
+         return Locale_Dv'Access;
+      end if;
       if Code = "dyu" then
          return Locale_Dyu'Access;
+      end if;
+      if Code = "dz" then
+         return Locale_Dz'Access;
       end if;
       if Code = "ee" then
          return Locale_Ee'Access;
@@ -8971,6 +9861,9 @@ package body Sayabletime_Locales is
       if Code = "fil" then
          return Locale_Fil'Access;
       end if;
+      if Code = "fj" then
+         return Locale_Fj'Access;
+      end if;
       if Code = "fon" then
          return Locale_Fon'Access;
       end if;
@@ -9003,6 +9896,9 @@ package body Sayabletime_Locales is
       end if;
       if Code = "hi" then
          return Locale_Hi'Access;
+      end if;
+      if Code = "hmn" then
+         return Locale_Hmn'Access;
       end if;
       if Code = "hr" then
          return Locale_Hr'Access;
@@ -9040,8 +9936,14 @@ package body Sayabletime_Locales is
       if Code = "kbp" then
          return Locale_Kbp'Access;
       end if;
+      if Code = "kek" then
+         return Locale_Kek'Access;
+      end if;
       if Code = "kk" then
          return Locale_Kk'Access;
+      end if;
+      if Code = "kl" then
+         return Locale_Kl'Access;
       end if;
       if Code = "km" then
          return Locale_Km'Access;
@@ -9081,6 +9983,9 @@ package body Sayabletime_Locales is
       end if;
       if Code = "lv" then
          return Locale_Lv'Access;
+      end if;
+      if Code = "mam" then
+         return Locale_Mam'Access;
       end if;
       if Code = "men" then
          return Locale_Men'Access;
@@ -9154,6 +10059,9 @@ package body Sayabletime_Locales is
       if Code = "pa" then
          return Locale_Pa'Access;
       end if;
+      if Code = "pis" then
+         return Locale_Pis'Access;
+      end if;
       if Code = "pl" then
          return Locale_Pl'Access;
       end if;
@@ -9168,6 +10076,9 @@ package body Sayabletime_Locales is
       end if;
       if Code = "qu" then
          return Locale_Qu'Access;
+      end if;
+      if Code = "quc" then
+         return Locale_Quc'Access;
       end if;
       if Code = "ro" then
          return Locale_Ro'Access;
@@ -9189,6 +10100,9 @@ package body Sayabletime_Locales is
       end if;
       if Code = "shi" then
          return Locale_Shi'Access;
+      end if;
+      if Code = "shn" then
+         return Locale_Shn'Access;
       end if;
       if Code = "si" then
          return Locale_Si'Access;
@@ -9241,6 +10155,9 @@ package body Sayabletime_Locales is
       if Code = "tem" then
          return Locale_Tem'Access;
       end if;
+      if Code = "tet" then
+         return Locale_Tet'Access;
+      end if;
       if Code = "tg" then
          return Locale_Tg'Access;
       end if;
@@ -9258,6 +10175,9 @@ package body Sayabletime_Locales is
       end if;
       if Code = "tn" then
          return Locale_Tn'Access;
+      end if;
+      if Code = "tpi" then
+         return Locale_Tpi'Access;
       end if;
       if Code = "tr" then
          return Locale_Tr'Access;

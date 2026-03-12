@@ -20,11 +20,13 @@ package body Parenttime_Locales is
    Locale_Be : aliased Locale;
    Locale_Bem : aliased Locale;
    Locale_Bg : aliased Locale;
+   Locale_Bi : aliased Locale;
    Locale_Bm : aliased Locale;
    Locale_Bn : aliased Locale;
    Locale_Br : aliased Locale;
    Locale_Bs : aliased Locale;
    Locale_Ca : aliased Locale;
+   Locale_Cak : aliased Locale;
    Locale_Ceb : aliased Locale;
    Locale_Cs : aliased Locale;
    Locale_Cy : aliased Locale;
@@ -32,7 +34,9 @@ package body Parenttime_Locales is
    Locale_De : aliased Locale;
    Locale_Din : aliased Locale;
    Locale_Dje : aliased Locale;
+   Locale_Dv : aliased Locale;
    Locale_Dyu : aliased Locale;
+   Locale_Dz : aliased Locale;
    Locale_Ee : aliased Locale;
    Locale_El : aliased Locale;
    Locale_En : aliased Locale;
@@ -44,6 +48,7 @@ package body Parenttime_Locales is
    Locale_Ff : aliased Locale;
    Locale_Fi : aliased Locale;
    Locale_Fil : aliased Locale;
+   Locale_Fj : aliased Locale;
    Locale_Fon : aliased Locale;
    Locale_Fr : aliased Locale;
    Locale_Ga : aliased Locale;
@@ -55,6 +60,7 @@ package body Parenttime_Locales is
    Locale_Ha : aliased Locale;
    Locale_He : aliased Locale;
    Locale_Hi : aliased Locale;
+   Locale_Hmn : aliased Locale;
    Locale_Hr : aliased Locale;
    Locale_Ht : aliased Locale;
    Locale_Hu : aliased Locale;
@@ -67,7 +73,9 @@ package body Parenttime_Locales is
    Locale_Jv : aliased Locale;
    Locale_Ka : aliased Locale;
    Locale_Kbp : aliased Locale;
+   Locale_Kek : aliased Locale;
    Locale_Kk : aliased Locale;
+   Locale_Kl : aliased Locale;
    Locale_Km : aliased Locale;
    Locale_Kn : aliased Locale;
    Locale_Ko : aliased Locale;
@@ -81,6 +89,7 @@ package body Parenttime_Locales is
    Locale_Lo : aliased Locale;
    Locale_Lt : aliased Locale;
    Locale_Lv : aliased Locale;
+   Locale_Mam : aliased Locale;
    Locale_Men : aliased Locale;
    Locale_Mfe : aliased Locale;
    Locale_Mg : aliased Locale;
@@ -105,11 +114,13 @@ package body Parenttime_Locales is
    Locale_Om : aliased Locale;
    Locale_Or : aliased Locale;
    Locale_Pa : aliased Locale;
+   Locale_Pis : aliased Locale;
    Locale_Pl : aliased Locale;
    Locale_Pov : aliased Locale;
    Locale_Ps : aliased Locale;
    Locale_Pt : aliased Locale;
    Locale_Qu : aliased Locale;
+   Locale_Quc : aliased Locale;
    Locale_Ro : aliased Locale;
    Locale_Ru : aliased Locale;
    Locale_Rw : aliased Locale;
@@ -117,6 +128,7 @@ package body Parenttime_Locales is
    Locale_Sd : aliased Locale;
    Locale_Sg : aliased Locale;
    Locale_Shi : aliased Locale;
+   Locale_Shn : aliased Locale;
    Locale_Si : aliased Locale;
    Locale_Sk : aliased Locale;
    Locale_Sl : aliased Locale;
@@ -134,12 +146,14 @@ package body Parenttime_Locales is
    Locale_Ta : aliased Locale;
    Locale_Te : aliased Locale;
    Locale_Tem : aliased Locale;
+   Locale_Tet : aliased Locale;
    Locale_Tg : aliased Locale;
    Locale_Th : aliased Locale;
    Locale_Ti : aliased Locale;
    Locale_Tig : aliased Locale;
    Locale_Tk : aliased Locale;
    Locale_Tn : aliased Locale;
+   Locale_Tpi : aliased Locale;
    Locale_Tr : aliased Locale;
    Locale_Ts : aliased Locale;
    Locale_Tzm : aliased Locale;
@@ -1562,6 +1576,75 @@ package body Parenttime_Locales is
 
    end Init_bg;
 
+   --  Source: age/locales/src/bi.json
+   procedure Init_bi is
+   begin
+      Locale_Bi.Code := To_Unbounded_String ("bi");
+      Locale_Bi.Plural := Plural_other_only'Access;
+
+      Locale_Bi.Units.Day.Has_Simple := True;
+      Locale_Bi.Units.Day.Simple := To_Unbounded_String ("{n} dei");
+      Locale_Bi.Units.Week.Has_Simple := True;
+      Locale_Bi.Units.Week.Simple := To_Unbounded_String ("{n} wik");
+      Locale_Bi.Units.Month.Has_Simple := True;
+      Locale_Bi.Units.Month.Simple := To_Unbounded_String ("{n} manis");
+      Locale_Bi.Units.Year.Has_Simple := True;
+      Locale_Bi.Units.Year.Simple := To_Unbounded_String ("{n} yia");
+
+      Locale_Bi.Half := To_Unbounded_String ("{n} mo haf");
+      Locale_Bi.Delimiter := To_Unbounded_String (", ");
+      Locale_Bi.Just_Born := To_Unbounded_String ("Niufala bebe");
+
+      Locale_Bi.Stage_Labels.Newborn.Label := To_Unbounded_String ("Niufala bebe");
+      Locale_Bi.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Bi.Stage_Labels.Infant.Label := To_Unbounded_String ("Bebe");
+      Locale_Bi.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Bi.Stage_Labels.Toddler.Label := To_Unbounded_String ("Smol pikinini");
+      Locale_Bi.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Bi.Stage_Labels.Child.Label := To_Unbounded_String ("Pikinini");
+      Locale_Bi.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Bi.Stage_Labels.Teenager.Label := To_Unbounded_String ("Yangfala");
+      Locale_Bi.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Bi.Stage_Labels.Adult.Label := To_Unbounded_String ("Bigfala");
+      Locale_Bi.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Bi.Has_Short := True;
+      Locale_Bi.Short_Override.Has_Day := True;
+      Locale_Bi.Short_Override.Day.Has_Simple := True;
+      Locale_Bi.Short_Override.Day.Simple := To_Unbounded_String ("{n} dei");
+      Locale_Bi.Short_Override.Has_Week := True;
+      Locale_Bi.Short_Override.Week.Has_Simple := True;
+      Locale_Bi.Short_Override.Week.Simple := To_Unbounded_String ("{n} wik");
+      Locale_Bi.Short_Override.Has_Month := True;
+      Locale_Bi.Short_Override.Month.Has_Simple := True;
+      Locale_Bi.Short_Override.Month.Simple := To_Unbounded_String ("{n} man");
+      Locale_Bi.Short_Override.Has_Year := True;
+      Locale_Bi.Short_Override.Year.Has_Simple := True;
+      Locale_Bi.Short_Override.Year.Simple := To_Unbounded_String ("{n} yia");
+      Locale_Bi.Short_Override.Has_Half := False;
+      Locale_Bi.Short_Override.Has_Delimiter := False;
+      Locale_Bi.Short_Override.Has_Just_Born := False;
+
+      Locale_Bi.Has_Compact := True;
+      Locale_Bi.Compact_Override.Has_Day := True;
+      Locale_Bi.Compact_Override.Day.Has_Simple := True;
+      Locale_Bi.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Bi.Compact_Override.Has_Week := True;
+      Locale_Bi.Compact_Override.Week.Has_Simple := True;
+      Locale_Bi.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Bi.Compact_Override.Has_Month := True;
+      Locale_Bi.Compact_Override.Month.Has_Simple := True;
+      Locale_Bi.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Bi.Compact_Override.Has_Year := True;
+      Locale_Bi.Compact_Override.Year.Has_Simple := True;
+      Locale_Bi.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Bi.Compact_Override.Has_Half := False;
+      Locale_Bi.Compact_Override.Has_Delimiter := True;
+      Locale_Bi.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Bi.Compact_Override.Has_Just_Born := False;
+
+   end Init_bi;
+
    --  Source: age/locales/src/bm.json
    procedure Init_bm is
    begin
@@ -2079,6 +2162,75 @@ package body Parenttime_Locales is
       Locale_Ca.Compact_Override.Has_Just_Born := False;
 
    end Init_ca;
+
+   --  Source: age/locales/src/cak.json
+   procedure Init_cak is
+   begin
+      Locale_Cak.Code := To_Unbounded_String ("cak");
+      Locale_Cak.Plural := Plural_other_only'Access;
+
+      Locale_Cak.Units.Day.Has_Simple := True;
+      Locale_Cak.Units.Day.Simple := To_Unbounded_String ("{n} q'ij");
+      Locale_Cak.Units.Week.Has_Simple := True;
+      Locale_Cak.Units.Week.Simple := To_Unbounded_String ("{n} wuqq'ij");
+      Locale_Cak.Units.Month.Has_Simple := True;
+      Locale_Cak.Units.Month.Simple := To_Unbounded_String ("{n} ik'");
+      Locale_Cak.Units.Year.Has_Simple := True;
+      Locale_Cak.Units.Year.Simple := To_Unbounded_String ("{n} junab'");
+
+      Locale_Cak.Half := To_Unbounded_String ("{0} nik'aj");
+      Locale_Cak.Delimiter := To_Unbounded_String (", ");
+      Locale_Cak.Just_Born := To_Unbounded_String ("K'ak'a' ak'wal");
+
+      Locale_Cak.Stage_Labels.Newborn.Label := To_Unbounded_String ("K'ak'a' ak'wal");
+      Locale_Cak.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Cak.Stage_Labels.Infant.Label := To_Unbounded_String ("Yal ak'wal");
+      Locale_Cak.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Cak.Stage_Labels.Toddler.Label := To_Unbounded_String ("Ak'wal");
+      Locale_Cak.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Cak.Stage_Labels.Child.Label := To_Unbounded_String ("Ak'wal");
+      Locale_Cak.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Cak.Stage_Labels.Teenager.Label := To_Unbounded_String ("K'ajol");
+      Locale_Cak.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Cak.Stage_Labels.Adult.Label := To_Unbounded_String ("Achi");
+      Locale_Cak.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Cak.Has_Short := True;
+      Locale_Cak.Short_Override.Has_Day := True;
+      Locale_Cak.Short_Override.Day.Has_Simple := True;
+      Locale_Cak.Short_Override.Day.Simple := To_Unbounded_String ("{n} q'ij");
+      Locale_Cak.Short_Override.Has_Week := True;
+      Locale_Cak.Short_Override.Week.Has_Simple := True;
+      Locale_Cak.Short_Override.Week.Simple := To_Unbounded_String ("{n} wuqq'ij");
+      Locale_Cak.Short_Override.Has_Month := True;
+      Locale_Cak.Short_Override.Month.Has_Simple := True;
+      Locale_Cak.Short_Override.Month.Simple := To_Unbounded_String ("{n} ik'");
+      Locale_Cak.Short_Override.Has_Year := True;
+      Locale_Cak.Short_Override.Year.Has_Simple := True;
+      Locale_Cak.Short_Override.Year.Simple := To_Unbounded_String ("{n} jun.");
+      Locale_Cak.Short_Override.Has_Half := False;
+      Locale_Cak.Short_Override.Has_Delimiter := False;
+      Locale_Cak.Short_Override.Has_Just_Born := False;
+
+      Locale_Cak.Has_Compact := True;
+      Locale_Cak.Compact_Override.Has_Day := True;
+      Locale_Cak.Compact_Override.Day.Has_Simple := True;
+      Locale_Cak.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Cak.Compact_Override.Has_Week := True;
+      Locale_Cak.Compact_Override.Week.Has_Simple := True;
+      Locale_Cak.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Cak.Compact_Override.Has_Month := True;
+      Locale_Cak.Compact_Override.Month.Has_Simple := True;
+      Locale_Cak.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Cak.Compact_Override.Has_Year := True;
+      Locale_Cak.Compact_Override.Year.Has_Simple := True;
+      Locale_Cak.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Cak.Compact_Override.Has_Half := False;
+      Locale_Cak.Compact_Override.Has_Delimiter := True;
+      Locale_Cak.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Cak.Compact_Override.Has_Just_Born := False;
+
+   end Init_cak;
 
    --  Source: age/locales/src/ceb.json
    procedure Init_ceb is
@@ -2815,6 +2967,75 @@ package body Parenttime_Locales is
 
    end Init_dje;
 
+   --  Source: age/locales/src/dv.json
+   procedure Init_dv is
+   begin
+      Locale_Dv.Code := To_Unbounded_String ("dv");
+      Locale_Dv.Plural := Plural_other_only'Access;
+
+      Locale_Dv.Units.Day.Has_Simple := True;
+      Locale_Dv.Units.Day.Simple := To_Unbounded_String ("{n} ދުވަސް");
+      Locale_Dv.Units.Week.Has_Simple := True;
+      Locale_Dv.Units.Week.Simple := To_Unbounded_String ("{n} ހަފްތާ");
+      Locale_Dv.Units.Month.Has_Simple := True;
+      Locale_Dv.Units.Month.Simple := To_Unbounded_String ("{n} މަސް");
+      Locale_Dv.Units.Year.Has_Simple := True;
+      Locale_Dv.Units.Year.Simple := To_Unbounded_String ("{n} އަހަރު");
+
+      Locale_Dv.Half := To_Unbounded_String ("{0} ބައި");
+      Locale_Dv.Delimiter := To_Unbounded_String ("، ");
+      Locale_Dv.Just_Born := To_Unbounded_String ("އަލަށް އުފަންވި");
+
+      Locale_Dv.Stage_Labels.Newborn.Label := To_Unbounded_String ("އަލަށް އުފަންވި");
+      Locale_Dv.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Dv.Stage_Labels.Infant.Label := To_Unbounded_String ("ތުއްތު ކުއްޖާ");
+      Locale_Dv.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Dv.Stage_Labels.Toddler.Label := To_Unbounded_String ("ހިނގާ ކުއްޖާ");
+      Locale_Dv.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Dv.Stage_Labels.Child.Label := To_Unbounded_String ("ކުޑަ ކުއްޖާ");
+      Locale_Dv.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Dv.Stage_Labels.Teenager.Label := To_Unbounded_String ("ފުރާވަރު");
+      Locale_Dv.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Dv.Stage_Labels.Adult.Label := To_Unbounded_String ("ބޮޑު މީހާ");
+      Locale_Dv.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Dv.Has_Short := True;
+      Locale_Dv.Short_Override.Has_Day := True;
+      Locale_Dv.Short_Override.Day.Has_Simple := True;
+      Locale_Dv.Short_Override.Day.Simple := To_Unbounded_String ("{n} ދުވަސް");
+      Locale_Dv.Short_Override.Has_Week := True;
+      Locale_Dv.Short_Override.Week.Has_Simple := True;
+      Locale_Dv.Short_Override.Week.Simple := To_Unbounded_String ("{n} ހަފްތާ");
+      Locale_Dv.Short_Override.Has_Month := True;
+      Locale_Dv.Short_Override.Month.Has_Simple := True;
+      Locale_Dv.Short_Override.Month.Simple := To_Unbounded_String ("{n} މަސް");
+      Locale_Dv.Short_Override.Has_Year := True;
+      Locale_Dv.Short_Override.Year.Has_Simple := True;
+      Locale_Dv.Short_Override.Year.Simple := To_Unbounded_String ("{n} އަހަރު");
+      Locale_Dv.Short_Override.Has_Half := False;
+      Locale_Dv.Short_Override.Has_Delimiter := False;
+      Locale_Dv.Short_Override.Has_Just_Born := False;
+
+      Locale_Dv.Has_Compact := True;
+      Locale_Dv.Compact_Override.Has_Day := True;
+      Locale_Dv.Compact_Override.Day.Has_Simple := True;
+      Locale_Dv.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Dv.Compact_Override.Has_Week := True;
+      Locale_Dv.Compact_Override.Week.Has_Simple := True;
+      Locale_Dv.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Dv.Compact_Override.Has_Month := True;
+      Locale_Dv.Compact_Override.Month.Has_Simple := True;
+      Locale_Dv.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Dv.Compact_Override.Has_Year := True;
+      Locale_Dv.Compact_Override.Year.Has_Simple := True;
+      Locale_Dv.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Dv.Compact_Override.Has_Half := False;
+      Locale_Dv.Compact_Override.Has_Delimiter := True;
+      Locale_Dv.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Dv.Compact_Override.Has_Just_Born := False;
+
+   end Init_dv;
+
    --  Source: age/locales/src/dyu.json
    procedure Init_dyu is
    begin
@@ -2884,6 +3105,75 @@ package body Parenttime_Locales is
       Locale_Dyu.Compact_Override.Has_Just_Born := False;
 
    end Init_dyu;
+
+   --  Source: age/locales/src/dz.json
+   procedure Init_dz is
+   begin
+      Locale_Dz.Code := To_Unbounded_String ("dz");
+      Locale_Dz.Plural := Plural_other_only'Access;
+
+      Locale_Dz.Units.Day.Has_Simple := True;
+      Locale_Dz.Units.Day.Simple := To_Unbounded_String ("ཉིན་ {n}");
+      Locale_Dz.Units.Week.Has_Simple := True;
+      Locale_Dz.Units.Week.Simple := To_Unbounded_String ("བདུན་ཕྲག་ {n}");
+      Locale_Dz.Units.Month.Has_Simple := True;
+      Locale_Dz.Units.Month.Simple := To_Unbounded_String ("ཟླ་ {n}");
+      Locale_Dz.Units.Year.Has_Simple := True;
+      Locale_Dz.Units.Year.Simple := To_Unbounded_String ("ལོ་ {n}");
+
+      Locale_Dz.Half := To_Unbounded_String ("{0} ཕྱེད");
+      Locale_Dz.Delimiter := To_Unbounded_String (" ");
+      Locale_Dz.Just_Born := To_Unbounded_String ("གསར་སྐྱེས");
+
+      Locale_Dz.Stage_Labels.Newborn.Label := To_Unbounded_String ("གསར་སྐྱེས");
+      Locale_Dz.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Dz.Stage_Labels.Infant.Label := To_Unbounded_String ("ཕྲུ་གུ");
+      Locale_Dz.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Dz.Stage_Labels.Toddler.Label := To_Unbounded_String ("བྱིས་པ");
+      Locale_Dz.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Dz.Stage_Labels.Child.Label := To_Unbounded_String ("ཨ་ཅུང");
+      Locale_Dz.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Dz.Stage_Labels.Teenager.Label := To_Unbounded_String ("ན་གཞོན");
+      Locale_Dz.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Dz.Stage_Labels.Adult.Label := To_Unbounded_String ("མི་ལོན་ཚང");
+      Locale_Dz.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Dz.Has_Short := True;
+      Locale_Dz.Short_Override.Has_Day := True;
+      Locale_Dz.Short_Override.Day.Has_Simple := True;
+      Locale_Dz.Short_Override.Day.Simple := To_Unbounded_String ("ཉིན་ {n}");
+      Locale_Dz.Short_Override.Has_Week := True;
+      Locale_Dz.Short_Override.Week.Has_Simple := True;
+      Locale_Dz.Short_Override.Week.Simple := To_Unbounded_String ("བདུན་ཕྲག་ {n}");
+      Locale_Dz.Short_Override.Has_Month := True;
+      Locale_Dz.Short_Override.Month.Has_Simple := True;
+      Locale_Dz.Short_Override.Month.Simple := To_Unbounded_String ("ཟླ་ {n}");
+      Locale_Dz.Short_Override.Has_Year := True;
+      Locale_Dz.Short_Override.Year.Has_Simple := True;
+      Locale_Dz.Short_Override.Year.Simple := To_Unbounded_String ("ལོ་ {n}");
+      Locale_Dz.Short_Override.Has_Half := False;
+      Locale_Dz.Short_Override.Has_Delimiter := False;
+      Locale_Dz.Short_Override.Has_Just_Born := False;
+
+      Locale_Dz.Has_Compact := True;
+      Locale_Dz.Compact_Override.Has_Day := True;
+      Locale_Dz.Compact_Override.Day.Has_Simple := True;
+      Locale_Dz.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Dz.Compact_Override.Has_Week := True;
+      Locale_Dz.Compact_Override.Week.Has_Simple := True;
+      Locale_Dz.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Dz.Compact_Override.Has_Month := True;
+      Locale_Dz.Compact_Override.Month.Has_Simple := True;
+      Locale_Dz.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Dz.Compact_Override.Has_Year := True;
+      Locale_Dz.Compact_Override.Year.Has_Simple := True;
+      Locale_Dz.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Dz.Compact_Override.Has_Half := False;
+      Locale_Dz.Compact_Override.Has_Delimiter := True;
+      Locale_Dz.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Dz.Compact_Override.Has_Just_Born := False;
+
+   end Init_dz;
 
    --  Source: age/locales/src/ee.json
    procedure Init_ee is
@@ -4038,6 +4328,75 @@ package body Parenttime_Locales is
 
    end Init_fil;
 
+   --  Source: age/locales/src/fj.json
+   procedure Init_fj is
+   begin
+      Locale_Fj.Code := To_Unbounded_String ("fj");
+      Locale_Fj.Plural := Plural_other_only'Access;
+
+      Locale_Fj.Units.Day.Has_Simple := True;
+      Locale_Fj.Units.Day.Simple := To_Unbounded_String ("{n} na siga");
+      Locale_Fj.Units.Week.Has_Simple := True;
+      Locale_Fj.Units.Week.Simple := To_Unbounded_String ("{n} na macawa");
+      Locale_Fj.Units.Month.Has_Simple := True;
+      Locale_Fj.Units.Month.Simple := To_Unbounded_String ("{n} na vula");
+      Locale_Fj.Units.Year.Has_Simple := True;
+      Locale_Fj.Units.Year.Simple := To_Unbounded_String ("{n} na yabaki");
+
+      Locale_Fj.Half := To_Unbounded_String ("{n} kei na levu ni wasei");
+      Locale_Fj.Delimiter := To_Unbounded_String (", ");
+      Locale_Fj.Just_Born := To_Unbounded_String ("Gone vou");
+
+      Locale_Fj.Stage_Labels.Newborn.Label := To_Unbounded_String ("Gone vou");
+      Locale_Fj.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Fj.Stage_Labels.Infant.Label := To_Unbounded_String ("Gone lalai");
+      Locale_Fj.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Fj.Stage_Labels.Toddler.Label := To_Unbounded_String ("Gone lailai");
+      Locale_Fj.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Fj.Stage_Labels.Child.Label := To_Unbounded_String ("Gone");
+      Locale_Fj.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Fj.Stage_Labels.Teenager.Label := To_Unbounded_String ("Cauravou");
+      Locale_Fj.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Fj.Stage_Labels.Adult.Label := To_Unbounded_String ("Tamata qase");
+      Locale_Fj.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Fj.Has_Short := True;
+      Locale_Fj.Short_Override.Has_Day := True;
+      Locale_Fj.Short_Override.Day.Has_Simple := True;
+      Locale_Fj.Short_Override.Day.Simple := To_Unbounded_String ("{n} siga");
+      Locale_Fj.Short_Override.Has_Week := True;
+      Locale_Fj.Short_Override.Week.Has_Simple := True;
+      Locale_Fj.Short_Override.Week.Simple := To_Unbounded_String ("{n} mac.");
+      Locale_Fj.Short_Override.Has_Month := True;
+      Locale_Fj.Short_Override.Month.Has_Simple := True;
+      Locale_Fj.Short_Override.Month.Simple := To_Unbounded_String ("{n} vula");
+      Locale_Fj.Short_Override.Has_Year := True;
+      Locale_Fj.Short_Override.Year.Has_Simple := True;
+      Locale_Fj.Short_Override.Year.Simple := To_Unbounded_String ("{n} yab.");
+      Locale_Fj.Short_Override.Has_Half := False;
+      Locale_Fj.Short_Override.Has_Delimiter := False;
+      Locale_Fj.Short_Override.Has_Just_Born := False;
+
+      Locale_Fj.Has_Compact := True;
+      Locale_Fj.Compact_Override.Has_Day := True;
+      Locale_Fj.Compact_Override.Day.Has_Simple := True;
+      Locale_Fj.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Fj.Compact_Override.Has_Week := True;
+      Locale_Fj.Compact_Override.Week.Has_Simple := True;
+      Locale_Fj.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Fj.Compact_Override.Has_Month := True;
+      Locale_Fj.Compact_Override.Month.Has_Simple := True;
+      Locale_Fj.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Fj.Compact_Override.Has_Year := True;
+      Locale_Fj.Compact_Override.Year.Has_Simple := True;
+      Locale_Fj.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Fj.Compact_Override.Has_Half := False;
+      Locale_Fj.Compact_Override.Has_Delimiter := True;
+      Locale_Fj.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Fj.Compact_Override.Has_Just_Born := False;
+
+   end Init_fj;
+
    --  Source: age/locales/src/fon.json
    procedure Init_fon is
    begin
@@ -5169,6 +5528,75 @@ package body Parenttime_Locales is
 
    end Init_hi;
 
+   --  Source: age/locales/src/hmn.json
+   procedure Init_hmn is
+   begin
+      Locale_Hmn.Code := To_Unbounded_String ("hmn");
+      Locale_Hmn.Plural := Plural_other_only'Access;
+
+      Locale_Hmn.Units.Day.Has_Simple := True;
+      Locale_Hmn.Units.Day.Simple := To_Unbounded_String ("{n} hnub");
+      Locale_Hmn.Units.Week.Has_Simple := True;
+      Locale_Hmn.Units.Week.Simple := To_Unbounded_String ("{n} lub lim tiam");
+      Locale_Hmn.Units.Month.Has_Simple := True;
+      Locale_Hmn.Units.Month.Simple := To_Unbounded_String ("{n} lub hlis");
+      Locale_Hmn.Units.Year.Has_Simple := True;
+      Locale_Hmn.Units.Year.Simple := To_Unbounded_String ("{n} xyoo");
+
+      Locale_Hmn.Half := To_Unbounded_String ("{0} thiab ib nrab");
+      Locale_Hmn.Delimiter := To_Unbounded_String (", ");
+      Locale_Hmn.Just_Born := To_Unbounded_String ("Nyuam qhuav yug");
+
+      Locale_Hmn.Stage_Labels.Newborn.Label := To_Unbounded_String ("Nyuam qhuav yug");
+      Locale_Hmn.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Hmn.Stage_Labels.Infant.Label := To_Unbounded_String ("Me nyuam mos");
+      Locale_Hmn.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Hmn.Stage_Labels.Toddler.Label := To_Unbounded_String ("Me nyuam tseem taug kev");
+      Locale_Hmn.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Hmn.Stage_Labels.Child.Label := To_Unbounded_String ("Me nyuam");
+      Locale_Hmn.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Hmn.Stage_Labels.Teenager.Label := To_Unbounded_String ("Tub ntxhais hluas");
+      Locale_Hmn.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Hmn.Stage_Labels.Adult.Label := To_Unbounded_String ("Neeg laus");
+      Locale_Hmn.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Hmn.Has_Short := True;
+      Locale_Hmn.Short_Override.Has_Day := True;
+      Locale_Hmn.Short_Override.Day.Has_Simple := True;
+      Locale_Hmn.Short_Override.Day.Simple := To_Unbounded_String ("{n} hnub");
+      Locale_Hmn.Short_Override.Has_Week := True;
+      Locale_Hmn.Short_Override.Week.Has_Simple := True;
+      Locale_Hmn.Short_Override.Week.Simple := To_Unbounded_String ("{n} lim tiam");
+      Locale_Hmn.Short_Override.Has_Month := True;
+      Locale_Hmn.Short_Override.Month.Has_Simple := True;
+      Locale_Hmn.Short_Override.Month.Simple := To_Unbounded_String ("{n} hlis");
+      Locale_Hmn.Short_Override.Has_Year := True;
+      Locale_Hmn.Short_Override.Year.Has_Simple := True;
+      Locale_Hmn.Short_Override.Year.Simple := To_Unbounded_String ("{n} xyoo");
+      Locale_Hmn.Short_Override.Has_Half := False;
+      Locale_Hmn.Short_Override.Has_Delimiter := False;
+      Locale_Hmn.Short_Override.Has_Just_Born := False;
+
+      Locale_Hmn.Has_Compact := True;
+      Locale_Hmn.Compact_Override.Has_Day := True;
+      Locale_Hmn.Compact_Override.Day.Has_Simple := True;
+      Locale_Hmn.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Hmn.Compact_Override.Has_Week := True;
+      Locale_Hmn.Compact_Override.Week.Has_Simple := True;
+      Locale_Hmn.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Hmn.Compact_Override.Has_Month := True;
+      Locale_Hmn.Compact_Override.Month.Has_Simple := True;
+      Locale_Hmn.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Hmn.Compact_Override.Has_Year := True;
+      Locale_Hmn.Compact_Override.Year.Has_Simple := True;
+      Locale_Hmn.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Hmn.Compact_Override.Has_Half := False;
+      Locale_Hmn.Compact_Override.Has_Delimiter := True;
+      Locale_Hmn.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Hmn.Compact_Override.Has_Just_Born := False;
+
+   end Init_hmn;
+
    --  Source: age/locales/src/hr.json
    procedure Init_hr is
    begin
@@ -6205,6 +6633,75 @@ package body Parenttime_Locales is
 
    end Init_kbp;
 
+   --  Source: age/locales/src/kek.json
+   procedure Init_kek is
+   begin
+      Locale_Kek.Code := To_Unbounded_String ("kek");
+      Locale_Kek.Plural := Plural_other_only'Access;
+
+      Locale_Kek.Units.Day.Has_Simple := True;
+      Locale_Kek.Units.Day.Simple := To_Unbounded_String ("{n} q'e");
+      Locale_Kek.Units.Week.Has_Simple := True;
+      Locale_Kek.Units.Week.Simple := To_Unbounded_String ("{n} seman");
+      Locale_Kek.Units.Month.Has_Simple := True;
+      Locale_Kek.Units.Month.Simple := To_Unbounded_String ("{n} po");
+      Locale_Kek.Units.Year.Has_Simple := True;
+      Locale_Kek.Units.Year.Simple := To_Unbounded_String ("{n} chihab'");
+
+      Locale_Kek.Half := To_Unbounded_String ("{0} ro'");
+      Locale_Kek.Delimiter := To_Unbounded_String (", ");
+      Locale_Kek.Just_Born := To_Unbounded_String ("Ch'ina al");
+
+      Locale_Kek.Stage_Labels.Newborn.Label := To_Unbounded_String ("Ch'ina al");
+      Locale_Kek.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Kek.Stage_Labels.Infant.Label := To_Unbounded_String ("Ch'ina al");
+      Locale_Kek.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Kek.Stage_Labels.Toddler.Label := To_Unbounded_String ("Ko'kal");
+      Locale_Kek.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Kek.Stage_Labels.Child.Label := To_Unbounded_String ("Ko'kal");
+      Locale_Kek.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Kek.Stage_Labels.Teenager.Label := To_Unbounded_String ("Xk'aalum");
+      Locale_Kek.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Kek.Stage_Labels.Adult.Label := To_Unbounded_String ("Winq");
+      Locale_Kek.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Kek.Has_Short := True;
+      Locale_Kek.Short_Override.Has_Day := True;
+      Locale_Kek.Short_Override.Day.Has_Simple := True;
+      Locale_Kek.Short_Override.Day.Simple := To_Unbounded_String ("{n} q'e");
+      Locale_Kek.Short_Override.Has_Week := True;
+      Locale_Kek.Short_Override.Week.Has_Simple := True;
+      Locale_Kek.Short_Override.Week.Simple := To_Unbounded_String ("{n} sem.");
+      Locale_Kek.Short_Override.Has_Month := True;
+      Locale_Kek.Short_Override.Month.Has_Simple := True;
+      Locale_Kek.Short_Override.Month.Simple := To_Unbounded_String ("{n} po");
+      Locale_Kek.Short_Override.Has_Year := True;
+      Locale_Kek.Short_Override.Year.Has_Simple := True;
+      Locale_Kek.Short_Override.Year.Simple := To_Unbounded_String ("{n} chih.");
+      Locale_Kek.Short_Override.Has_Half := False;
+      Locale_Kek.Short_Override.Has_Delimiter := False;
+      Locale_Kek.Short_Override.Has_Just_Born := False;
+
+      Locale_Kek.Has_Compact := True;
+      Locale_Kek.Compact_Override.Has_Day := True;
+      Locale_Kek.Compact_Override.Day.Has_Simple := True;
+      Locale_Kek.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Kek.Compact_Override.Has_Week := True;
+      Locale_Kek.Compact_Override.Week.Has_Simple := True;
+      Locale_Kek.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Kek.Compact_Override.Has_Month := True;
+      Locale_Kek.Compact_Override.Month.Has_Simple := True;
+      Locale_Kek.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Kek.Compact_Override.Has_Year := True;
+      Locale_Kek.Compact_Override.Year.Has_Simple := True;
+      Locale_Kek.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Kek.Compact_Override.Has_Half := False;
+      Locale_Kek.Compact_Override.Has_Delimiter := True;
+      Locale_Kek.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Kek.Compact_Override.Has_Just_Born := False;
+
+   end Init_kek;
+
    --  Source: age/locales/src/kk.json
    procedure Init_kk is
    begin
@@ -6302,6 +6799,75 @@ package body Parenttime_Locales is
       Locale_Kk.Compact_Override.Has_Just_Born := False;
 
    end Init_kk;
+
+   --  Source: age/locales/src/kl.json
+   procedure Init_kl is
+   begin
+      Locale_Kl.Code := To_Unbounded_String ("kl");
+      Locale_Kl.Plural := Plural_other_only'Access;
+
+      Locale_Kl.Units.Day.Has_Simple := True;
+      Locale_Kl.Units.Day.Simple := To_Unbounded_String ("ullut {n}");
+      Locale_Kl.Units.Week.Has_Simple := True;
+      Locale_Kl.Units.Week.Simple := To_Unbounded_String ("sapaatit {n}");
+      Locale_Kl.Units.Month.Has_Simple := True;
+      Locale_Kl.Units.Month.Simple := To_Unbounded_String ("qaammatit {n}");
+      Locale_Kl.Units.Year.Has_Simple := True;
+      Locale_Kl.Units.Year.Simple := To_Unbounded_String ("ukiut {n}");
+
+      Locale_Kl.Half := To_Unbounded_String ("{0} affaa");
+      Locale_Kl.Delimiter := To_Unbounded_String (", ");
+      Locale_Kl.Just_Born := To_Unbounded_String ("Inuuneq nutaaq");
+
+      Locale_Kl.Stage_Labels.Newborn.Label := To_Unbounded_String ("Inuuneq nutaaq");
+      Locale_Kl.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Kl.Stage_Labels.Infant.Label := To_Unbounded_String ("Naalunngiaatitaq");
+      Locale_Kl.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Kl.Stage_Labels.Toddler.Label := To_Unbounded_String ("Meeraq");
+      Locale_Kl.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Kl.Stage_Labels.Child.Label := To_Unbounded_String ("Meeraq");
+      Locale_Kl.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Kl.Stage_Labels.Teenager.Label := To_Unbounded_String ("Inuusuttuaq");
+      Locale_Kl.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Kl.Stage_Labels.Adult.Label := To_Unbounded_String ("Inuk");
+      Locale_Kl.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Kl.Has_Short := True;
+      Locale_Kl.Short_Override.Has_Day := True;
+      Locale_Kl.Short_Override.Day.Has_Simple := True;
+      Locale_Kl.Short_Override.Day.Simple := To_Unbounded_String ("ull. {n}");
+      Locale_Kl.Short_Override.Has_Week := True;
+      Locale_Kl.Short_Override.Week.Has_Simple := True;
+      Locale_Kl.Short_Override.Week.Simple := To_Unbounded_String ("sap. {n}");
+      Locale_Kl.Short_Override.Has_Month := True;
+      Locale_Kl.Short_Override.Month.Has_Simple := True;
+      Locale_Kl.Short_Override.Month.Simple := To_Unbounded_String ("qaam. {n}");
+      Locale_Kl.Short_Override.Has_Year := True;
+      Locale_Kl.Short_Override.Year.Has_Simple := True;
+      Locale_Kl.Short_Override.Year.Simple := To_Unbounded_String ("uk. {n}");
+      Locale_Kl.Short_Override.Has_Half := False;
+      Locale_Kl.Short_Override.Has_Delimiter := False;
+      Locale_Kl.Short_Override.Has_Just_Born := False;
+
+      Locale_Kl.Has_Compact := True;
+      Locale_Kl.Compact_Override.Has_Day := True;
+      Locale_Kl.Compact_Override.Day.Has_Simple := True;
+      Locale_Kl.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Kl.Compact_Override.Has_Week := True;
+      Locale_Kl.Compact_Override.Week.Has_Simple := True;
+      Locale_Kl.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Kl.Compact_Override.Has_Month := True;
+      Locale_Kl.Compact_Override.Month.Has_Simple := True;
+      Locale_Kl.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Kl.Compact_Override.Has_Year := True;
+      Locale_Kl.Compact_Override.Year.Has_Simple := True;
+      Locale_Kl.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Kl.Compact_Override.Has_Half := False;
+      Locale_Kl.Compact_Override.Has_Delimiter := True;
+      Locale_Kl.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Kl.Compact_Override.Has_Just_Born := False;
+
+   end Init_kl;
 
    --  Source: age/locales/src/km.json
    procedure Init_km is
@@ -7594,6 +8160,75 @@ package body Parenttime_Locales is
       Locale_Lv.Compact_Override.Has_Just_Born := False;
 
    end Init_lv;
+
+   --  Source: age/locales/src/mam.json
+   procedure Init_mam is
+   begin
+      Locale_Mam.Code := To_Unbounded_String ("mam");
+      Locale_Mam.Plural := Plural_other_only'Access;
+
+      Locale_Mam.Units.Day.Has_Simple := True;
+      Locale_Mam.Units.Day.Simple := To_Unbounded_String ("{n} q'ij");
+      Locale_Mam.Units.Week.Has_Simple := True;
+      Locale_Mam.Units.Week.Simple := To_Unbounded_String ("{n} xjaw");
+      Locale_Mam.Units.Month.Has_Simple := True;
+      Locale_Mam.Units.Month.Simple := To_Unbounded_String ("{n} xjaw");
+      Locale_Mam.Units.Year.Has_Simple := True;
+      Locale_Mam.Units.Year.Simple := To_Unbounded_String ("{n} ab'q'ii");
+
+      Locale_Mam.Half := To_Unbounded_String ("{0} nik'");
+      Locale_Mam.Delimiter := To_Unbounded_String (", ");
+      Locale_Mam.Just_Born := To_Unbounded_String ("Yal xjal");
+
+      Locale_Mam.Stage_Labels.Newborn.Label := To_Unbounded_String ("Yal xjal");
+      Locale_Mam.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Mam.Stage_Labels.Infant.Label := To_Unbounded_String ("Xkub'");
+      Locale_Mam.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Mam.Stage_Labels.Toddler.Label := To_Unbounded_String ("K'wal");
+      Locale_Mam.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Mam.Stage_Labels.Child.Label := To_Unbounded_String ("K'wal");
+      Locale_Mam.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Mam.Stage_Labels.Teenager.Label := To_Unbounded_String ("Q'a");
+      Locale_Mam.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Mam.Stage_Labels.Adult.Label := To_Unbounded_String ("Xjal");
+      Locale_Mam.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Mam.Has_Short := True;
+      Locale_Mam.Short_Override.Has_Day := True;
+      Locale_Mam.Short_Override.Day.Has_Simple := True;
+      Locale_Mam.Short_Override.Day.Simple := To_Unbounded_String ("{n} q'ij");
+      Locale_Mam.Short_Override.Has_Week := True;
+      Locale_Mam.Short_Override.Week.Has_Simple := True;
+      Locale_Mam.Short_Override.Week.Simple := To_Unbounded_String ("{n} xjaw");
+      Locale_Mam.Short_Override.Has_Month := True;
+      Locale_Mam.Short_Override.Month.Has_Simple := True;
+      Locale_Mam.Short_Override.Month.Simple := To_Unbounded_String ("{n} xjaw");
+      Locale_Mam.Short_Override.Has_Year := True;
+      Locale_Mam.Short_Override.Year.Has_Simple := True;
+      Locale_Mam.Short_Override.Year.Simple := To_Unbounded_String ("{n} ab'.");
+      Locale_Mam.Short_Override.Has_Half := False;
+      Locale_Mam.Short_Override.Has_Delimiter := False;
+      Locale_Mam.Short_Override.Has_Just_Born := False;
+
+      Locale_Mam.Has_Compact := True;
+      Locale_Mam.Compact_Override.Has_Day := True;
+      Locale_Mam.Compact_Override.Day.Has_Simple := True;
+      Locale_Mam.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Mam.Compact_Override.Has_Week := True;
+      Locale_Mam.Compact_Override.Week.Has_Simple := True;
+      Locale_Mam.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Mam.Compact_Override.Has_Month := True;
+      Locale_Mam.Compact_Override.Month.Has_Simple := True;
+      Locale_Mam.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Mam.Compact_Override.Has_Year := True;
+      Locale_Mam.Compact_Override.Year.Has_Simple := True;
+      Locale_Mam.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Mam.Compact_Override.Has_Half := False;
+      Locale_Mam.Compact_Override.Has_Delimiter := True;
+      Locale_Mam.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Mam.Compact_Override.Has_Just_Born := False;
+
+   end Init_mam;
 
    --  Source: age/locales/src/men.json
    procedure Init_men is
@@ -9999,6 +10634,75 @@ package body Parenttime_Locales is
 
    end Init_pa;
 
+   --  Source: age/locales/src/pis.json
+   procedure Init_pis is
+   begin
+      Locale_Pis.Code := To_Unbounded_String ("pis");
+      Locale_Pis.Plural := Plural_other_only'Access;
+
+      Locale_Pis.Units.Day.Has_Simple := True;
+      Locale_Pis.Units.Day.Simple := To_Unbounded_String ("{n} dei");
+      Locale_Pis.Units.Week.Has_Simple := True;
+      Locale_Pis.Units.Week.Simple := To_Unbounded_String ("{n} wik");
+      Locale_Pis.Units.Month.Has_Simple := True;
+      Locale_Pis.Units.Month.Simple := To_Unbounded_String ("{n} manis");
+      Locale_Pis.Units.Year.Has_Simple := True;
+      Locale_Pis.Units.Year.Simple := To_Unbounded_String ("{n} yia");
+
+      Locale_Pis.Half := To_Unbounded_String ("{n} en haf");
+      Locale_Pis.Delimiter := To_Unbounded_String (", ");
+      Locale_Pis.Just_Born := To_Unbounded_String ("Niufala bebi");
+
+      Locale_Pis.Stage_Labels.Newborn.Label := To_Unbounded_String ("Niufala bebi");
+      Locale_Pis.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Pis.Stage_Labels.Infant.Label := To_Unbounded_String ("Bebi");
+      Locale_Pis.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Pis.Stage_Labels.Toddler.Label := To_Unbounded_String ("Smol pikinini");
+      Locale_Pis.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Pis.Stage_Labels.Child.Label := To_Unbounded_String ("Pikinini");
+      Locale_Pis.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Pis.Stage_Labels.Teenager.Label := To_Unbounded_String ("Yangfala");
+      Locale_Pis.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Pis.Stage_Labels.Adult.Label := To_Unbounded_String ("Bigfala");
+      Locale_Pis.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Pis.Has_Short := True;
+      Locale_Pis.Short_Override.Has_Day := True;
+      Locale_Pis.Short_Override.Day.Has_Simple := True;
+      Locale_Pis.Short_Override.Day.Simple := To_Unbounded_String ("{n} dei");
+      Locale_Pis.Short_Override.Has_Week := True;
+      Locale_Pis.Short_Override.Week.Has_Simple := True;
+      Locale_Pis.Short_Override.Week.Simple := To_Unbounded_String ("{n} wik");
+      Locale_Pis.Short_Override.Has_Month := True;
+      Locale_Pis.Short_Override.Month.Has_Simple := True;
+      Locale_Pis.Short_Override.Month.Simple := To_Unbounded_String ("{n} man");
+      Locale_Pis.Short_Override.Has_Year := True;
+      Locale_Pis.Short_Override.Year.Has_Simple := True;
+      Locale_Pis.Short_Override.Year.Simple := To_Unbounded_String ("{n} yia");
+      Locale_Pis.Short_Override.Has_Half := False;
+      Locale_Pis.Short_Override.Has_Delimiter := False;
+      Locale_Pis.Short_Override.Has_Just_Born := False;
+
+      Locale_Pis.Has_Compact := True;
+      Locale_Pis.Compact_Override.Has_Day := True;
+      Locale_Pis.Compact_Override.Day.Has_Simple := True;
+      Locale_Pis.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Pis.Compact_Override.Has_Week := True;
+      Locale_Pis.Compact_Override.Week.Has_Simple := True;
+      Locale_Pis.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Pis.Compact_Override.Has_Month := True;
+      Locale_Pis.Compact_Override.Month.Has_Simple := True;
+      Locale_Pis.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Pis.Compact_Override.Has_Year := True;
+      Locale_Pis.Compact_Override.Year.Has_Simple := True;
+      Locale_Pis.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Pis.Compact_Override.Has_Half := False;
+      Locale_Pis.Compact_Override.Has_Delimiter := True;
+      Locale_Pis.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Pis.Compact_Override.Has_Just_Born := False;
+
+   end Init_pis;
+
    --  Source: age/locales/src/pl.json
    procedure Init_pl is
    begin
@@ -10541,6 +11245,75 @@ package body Parenttime_Locales is
       Locale_Qu.Compact_Override.Has_Just_Born := False;
 
    end Init_qu;
+
+   --  Source: age/locales/src/quc.json
+   procedure Init_quc is
+   begin
+      Locale_Quc.Code := To_Unbounded_String ("quc");
+      Locale_Quc.Plural := Plural_other_only'Access;
+
+      Locale_Quc.Units.Day.Has_Simple := True;
+      Locale_Quc.Units.Day.Simple := To_Unbounded_String ("{n} q'ij");
+      Locale_Quc.Units.Week.Has_Simple := True;
+      Locale_Quc.Units.Week.Simple := To_Unbounded_String ("{n} wuqq'ij");
+      Locale_Quc.Units.Month.Has_Simple := True;
+      Locale_Quc.Units.Month.Simple := To_Unbounded_String ("{n} ik'");
+      Locale_Quc.Units.Year.Has_Simple := True;
+      Locale_Quc.Units.Year.Simple := To_Unbounded_String ("{n} junab'");
+
+      Locale_Quc.Half := To_Unbounded_String ("{0} nik'aj");
+      Locale_Quc.Delimiter := To_Unbounded_String (", ");
+      Locale_Quc.Just_Born := To_Unbounded_String ("K'ak'a alaj");
+
+      Locale_Quc.Stage_Labels.Newborn.Label := To_Unbounded_String ("K'ak'a alaj");
+      Locale_Quc.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Quc.Stage_Labels.Infant.Label := To_Unbounded_String ("Alaj ak'al");
+      Locale_Quc.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Quc.Stage_Labels.Toddler.Label := To_Unbounded_String ("Ak'al");
+      Locale_Quc.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Quc.Stage_Labels.Child.Label := To_Unbounded_String ("Ak'al");
+      Locale_Quc.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Quc.Stage_Labels.Teenager.Label := To_Unbounded_String ("K'ajol");
+      Locale_Quc.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Quc.Stage_Labels.Adult.Label := To_Unbounded_String ("Achi");
+      Locale_Quc.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Quc.Has_Short := True;
+      Locale_Quc.Short_Override.Has_Day := True;
+      Locale_Quc.Short_Override.Day.Has_Simple := True;
+      Locale_Quc.Short_Override.Day.Simple := To_Unbounded_String ("{n} q'ij");
+      Locale_Quc.Short_Override.Has_Week := True;
+      Locale_Quc.Short_Override.Week.Has_Simple := True;
+      Locale_Quc.Short_Override.Week.Simple := To_Unbounded_String ("{n} wuqq'ij");
+      Locale_Quc.Short_Override.Has_Month := True;
+      Locale_Quc.Short_Override.Month.Has_Simple := True;
+      Locale_Quc.Short_Override.Month.Simple := To_Unbounded_String ("{n} ik'");
+      Locale_Quc.Short_Override.Has_Year := True;
+      Locale_Quc.Short_Override.Year.Has_Simple := True;
+      Locale_Quc.Short_Override.Year.Simple := To_Unbounded_String ("{n} jun.");
+      Locale_Quc.Short_Override.Has_Half := False;
+      Locale_Quc.Short_Override.Has_Delimiter := False;
+      Locale_Quc.Short_Override.Has_Just_Born := False;
+
+      Locale_Quc.Has_Compact := True;
+      Locale_Quc.Compact_Override.Has_Day := True;
+      Locale_Quc.Compact_Override.Day.Has_Simple := True;
+      Locale_Quc.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Quc.Compact_Override.Has_Week := True;
+      Locale_Quc.Compact_Override.Week.Has_Simple := True;
+      Locale_Quc.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Quc.Compact_Override.Has_Month := True;
+      Locale_Quc.Compact_Override.Month.Has_Simple := True;
+      Locale_Quc.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Quc.Compact_Override.Has_Year := True;
+      Locale_Quc.Compact_Override.Year.Has_Simple := True;
+      Locale_Quc.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Quc.Compact_Override.Has_Half := False;
+      Locale_Quc.Compact_Override.Has_Delimiter := True;
+      Locale_Quc.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Quc.Compact_Override.Has_Just_Born := False;
+
+   end Init_quc;
 
    --  Source: age/locales/src/ro.json
    procedure Init_ro is
@@ -11229,6 +12002,75 @@ package body Parenttime_Locales is
       Locale_Shi.Compact_Override.Has_Just_Born := False;
 
    end Init_shi;
+
+   --  Source: age/locales/src/shn.json
+   procedure Init_shn is
+   begin
+      Locale_Shn.Code := To_Unbounded_String ("shn");
+      Locale_Shn.Plural := Plural_other_only'Access;
+
+      Locale_Shn.Units.Day.Has_Simple := True;
+      Locale_Shn.Units.Day.Simple := To_Unbounded_String ("{n} ဝၼ်း");
+      Locale_Shn.Units.Week.Has_Simple := True;
+      Locale_Shn.Units.Week.Simple := To_Unbounded_String ("{n} ဝူင်ႈ");
+      Locale_Shn.Units.Month.Has_Simple := True;
+      Locale_Shn.Units.Month.Simple := To_Unbounded_String ("{n} လိူၼ်");
+      Locale_Shn.Units.Year.Has_Simple := True;
+      Locale_Shn.Units.Year.Simple := To_Unbounded_String ("{n} ပီ");
+
+      Locale_Shn.Half := To_Unbounded_String ("{0}ၶိုင်ႈ");
+      Locale_Shn.Delimiter := To_Unbounded_String (" ");
+      Locale_Shn.Just_Born := To_Unbounded_String ("ၶဝ်ႈမႃး");
+
+      Locale_Shn.Stage_Labels.Newborn.Label := To_Unbounded_String ("ၶဝ်ႈမႃး");
+      Locale_Shn.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Shn.Stage_Labels.Infant.Label := To_Unbounded_String ("လုၵ်ႈဢွၼ်ႇ");
+      Locale_Shn.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Shn.Stage_Labels.Toddler.Label := To_Unbounded_String ("လုၵ်ႈဢွၼ်ႇ");
+      Locale_Shn.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Shn.Stage_Labels.Child.Label := To_Unbounded_String ("လုၵ်ႈဢွၼ်ႇ");
+      Locale_Shn.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Shn.Stage_Labels.Teenager.Label := To_Unbounded_String ("ၵူၼ်းၼုမ်ႇ");
+      Locale_Shn.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Shn.Stage_Labels.Adult.Label := To_Unbounded_String ("ၵူၼ်းလူင်");
+      Locale_Shn.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Shn.Has_Short := True;
+      Locale_Shn.Short_Override.Has_Day := True;
+      Locale_Shn.Short_Override.Day.Has_Simple := True;
+      Locale_Shn.Short_Override.Day.Simple := To_Unbounded_String ("{n} ဝၼ်း");
+      Locale_Shn.Short_Override.Has_Week := True;
+      Locale_Shn.Short_Override.Week.Has_Simple := True;
+      Locale_Shn.Short_Override.Week.Simple := To_Unbounded_String ("{n} ဝူင်ႈ");
+      Locale_Shn.Short_Override.Has_Month := True;
+      Locale_Shn.Short_Override.Month.Has_Simple := True;
+      Locale_Shn.Short_Override.Month.Simple := To_Unbounded_String ("{n} လိူၼ်");
+      Locale_Shn.Short_Override.Has_Year := True;
+      Locale_Shn.Short_Override.Year.Has_Simple := True;
+      Locale_Shn.Short_Override.Year.Simple := To_Unbounded_String ("{n} ပီ");
+      Locale_Shn.Short_Override.Has_Half := False;
+      Locale_Shn.Short_Override.Has_Delimiter := False;
+      Locale_Shn.Short_Override.Has_Just_Born := False;
+
+      Locale_Shn.Has_Compact := True;
+      Locale_Shn.Compact_Override.Has_Day := True;
+      Locale_Shn.Compact_Override.Day.Has_Simple := True;
+      Locale_Shn.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Shn.Compact_Override.Has_Week := True;
+      Locale_Shn.Compact_Override.Week.Has_Simple := True;
+      Locale_Shn.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Shn.Compact_Override.Has_Month := True;
+      Locale_Shn.Compact_Override.Month.Has_Simple := True;
+      Locale_Shn.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Shn.Compact_Override.Has_Year := True;
+      Locale_Shn.Compact_Override.Year.Has_Simple := True;
+      Locale_Shn.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Shn.Compact_Override.Has_Half := False;
+      Locale_Shn.Compact_Override.Has_Delimiter := True;
+      Locale_Shn.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Shn.Compact_Override.Has_Just_Born := False;
+
+   end Init_shn;
 
    --  Source: age/locales/src/si.json
    procedure Init_si is
@@ -13106,6 +13948,75 @@ package body Parenttime_Locales is
 
    end Init_tem;
 
+   --  Source: age/locales/src/tet.json
+   procedure Init_tet is
+   begin
+      Locale_Tet.Code := To_Unbounded_String ("tet");
+      Locale_Tet.Plural := Plural_other_only'Access;
+
+      Locale_Tet.Units.Day.Has_Simple := True;
+      Locale_Tet.Units.Day.Simple := To_Unbounded_String ("loron {n}");
+      Locale_Tet.Units.Week.Has_Simple := True;
+      Locale_Tet.Units.Week.Simple := To_Unbounded_String ("semana {n}");
+      Locale_Tet.Units.Month.Has_Simple := True;
+      Locale_Tet.Units.Month.Simple := To_Unbounded_String ("fulan {n}");
+      Locale_Tet.Units.Year.Has_Simple := True;
+      Locale_Tet.Units.Year.Simple := To_Unbounded_String ("tinan {n}");
+
+      Locale_Tet.Half := To_Unbounded_String ("{0} ho balun");
+      Locale_Tet.Delimiter := To_Unbounded_String (", ");
+      Locale_Tet.Just_Born := To_Unbounded_String ("Foin moris");
+
+      Locale_Tet.Stage_Labels.Newborn.Label := To_Unbounded_String ("Foin moris");
+      Locale_Tet.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Tet.Stage_Labels.Infant.Label := To_Unbounded_String ("Labarik ki'ik");
+      Locale_Tet.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Tet.Stage_Labels.Toddler.Label := To_Unbounded_String ("Labarik");
+      Locale_Tet.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Tet.Stage_Labels.Child.Label := To_Unbounded_String ("Baruk");
+      Locale_Tet.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Tet.Stage_Labels.Teenager.Label := To_Unbounded_String ("Joven");
+      Locale_Tet.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Tet.Stage_Labels.Adult.Label := To_Unbounded_String ("Ema boot");
+      Locale_Tet.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Tet.Has_Short := True;
+      Locale_Tet.Short_Override.Has_Day := True;
+      Locale_Tet.Short_Override.Day.Has_Simple := True;
+      Locale_Tet.Short_Override.Day.Simple := To_Unbounded_String ("loron {n}");
+      Locale_Tet.Short_Override.Has_Week := True;
+      Locale_Tet.Short_Override.Week.Has_Simple := True;
+      Locale_Tet.Short_Override.Week.Simple := To_Unbounded_String ("sem. {n}");
+      Locale_Tet.Short_Override.Has_Month := True;
+      Locale_Tet.Short_Override.Month.Has_Simple := True;
+      Locale_Tet.Short_Override.Month.Simple := To_Unbounded_String ("fulan {n}");
+      Locale_Tet.Short_Override.Has_Year := True;
+      Locale_Tet.Short_Override.Year.Has_Simple := True;
+      Locale_Tet.Short_Override.Year.Simple := To_Unbounded_String ("tinan {n}");
+      Locale_Tet.Short_Override.Has_Half := False;
+      Locale_Tet.Short_Override.Has_Delimiter := False;
+      Locale_Tet.Short_Override.Has_Just_Born := False;
+
+      Locale_Tet.Has_Compact := True;
+      Locale_Tet.Compact_Override.Has_Day := True;
+      Locale_Tet.Compact_Override.Day.Has_Simple := True;
+      Locale_Tet.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Tet.Compact_Override.Has_Week := True;
+      Locale_Tet.Compact_Override.Week.Has_Simple := True;
+      Locale_Tet.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Tet.Compact_Override.Has_Month := True;
+      Locale_Tet.Compact_Override.Month.Has_Simple := True;
+      Locale_Tet.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Tet.Compact_Override.Has_Year := True;
+      Locale_Tet.Compact_Override.Year.Has_Simple := True;
+      Locale_Tet.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Tet.Compact_Override.Has_Half := False;
+      Locale_Tet.Compact_Override.Has_Delimiter := True;
+      Locale_Tet.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Tet.Compact_Override.Has_Just_Born := False;
+
+   end Init_tet;
+
    --  Source: age/locales/src/tg.json
    procedure Init_tg is
    begin
@@ -13686,6 +14597,75 @@ package body Parenttime_Locales is
       Locale_Tn.Compact_Override.Has_Just_Born := False;
 
    end Init_tn;
+
+   --  Source: age/locales/src/tpi.json
+   procedure Init_tpi is
+   begin
+      Locale_Tpi.Code := To_Unbounded_String ("tpi");
+      Locale_Tpi.Plural := Plural_other_only'Access;
+
+      Locale_Tpi.Units.Day.Has_Simple := True;
+      Locale_Tpi.Units.Day.Simple := To_Unbounded_String ("{n} de");
+      Locale_Tpi.Units.Week.Has_Simple := True;
+      Locale_Tpi.Units.Week.Simple := To_Unbounded_String ("{n} wik");
+      Locale_Tpi.Units.Month.Has_Simple := True;
+      Locale_Tpi.Units.Month.Simple := To_Unbounded_String ("{n} mun");
+      Locale_Tpi.Units.Year.Has_Simple := True;
+      Locale_Tpi.Units.Year.Simple := To_Unbounded_String ("{n} yia");
+
+      Locale_Tpi.Half := To_Unbounded_String ("{n} na hap");
+      Locale_Tpi.Delimiter := To_Unbounded_String (", ");
+      Locale_Tpi.Just_Born := To_Unbounded_String ("Nupela pikinini");
+
+      Locale_Tpi.Stage_Labels.Newborn.Label := To_Unbounded_String ("Nupela pikinini");
+      Locale_Tpi.Stage_Labels.Newborn.F_Label := Null_Unbounded_String;
+      Locale_Tpi.Stage_Labels.Infant.Label := To_Unbounded_String ("Pikinini");
+      Locale_Tpi.Stage_Labels.Infant.F_Label := Null_Unbounded_String;
+      Locale_Tpi.Stage_Labels.Toddler.Label := To_Unbounded_String ("Liklik pikinini");
+      Locale_Tpi.Stage_Labels.Toddler.F_Label := Null_Unbounded_String;
+      Locale_Tpi.Stage_Labels.Child.Label := To_Unbounded_String ("Pikinini");
+      Locale_Tpi.Stage_Labels.Child.F_Label := Null_Unbounded_String;
+      Locale_Tpi.Stage_Labels.Teenager.Label := To_Unbounded_String ("Yangpela");
+      Locale_Tpi.Stage_Labels.Teenager.F_Label := Null_Unbounded_String;
+      Locale_Tpi.Stage_Labels.Adult.Label := To_Unbounded_String ("Bikpela man");
+      Locale_Tpi.Stage_Labels.Adult.F_Label := Null_Unbounded_String;
+
+      Locale_Tpi.Has_Short := True;
+      Locale_Tpi.Short_Override.Has_Day := True;
+      Locale_Tpi.Short_Override.Day.Has_Simple := True;
+      Locale_Tpi.Short_Override.Day.Simple := To_Unbounded_String ("{n} de");
+      Locale_Tpi.Short_Override.Has_Week := True;
+      Locale_Tpi.Short_Override.Week.Has_Simple := True;
+      Locale_Tpi.Short_Override.Week.Simple := To_Unbounded_String ("{n} wik");
+      Locale_Tpi.Short_Override.Has_Month := True;
+      Locale_Tpi.Short_Override.Month.Has_Simple := True;
+      Locale_Tpi.Short_Override.Month.Simple := To_Unbounded_String ("{n} mun");
+      Locale_Tpi.Short_Override.Has_Year := True;
+      Locale_Tpi.Short_Override.Year.Has_Simple := True;
+      Locale_Tpi.Short_Override.Year.Simple := To_Unbounded_String ("{n} yia");
+      Locale_Tpi.Short_Override.Has_Half := False;
+      Locale_Tpi.Short_Override.Has_Delimiter := False;
+      Locale_Tpi.Short_Override.Has_Just_Born := False;
+
+      Locale_Tpi.Has_Compact := True;
+      Locale_Tpi.Compact_Override.Has_Day := True;
+      Locale_Tpi.Compact_Override.Day.Has_Simple := True;
+      Locale_Tpi.Compact_Override.Day.Simple := To_Unbounded_String ("{n}d");
+      Locale_Tpi.Compact_Override.Has_Week := True;
+      Locale_Tpi.Compact_Override.Week.Has_Simple := True;
+      Locale_Tpi.Compact_Override.Week.Simple := To_Unbounded_String ("{n}w");
+      Locale_Tpi.Compact_Override.Has_Month := True;
+      Locale_Tpi.Compact_Override.Month.Has_Simple := True;
+      Locale_Tpi.Compact_Override.Month.Simple := To_Unbounded_String ("{n}m");
+      Locale_Tpi.Compact_Override.Has_Year := True;
+      Locale_Tpi.Compact_Override.Year.Has_Simple := True;
+      Locale_Tpi.Compact_Override.Year.Simple := To_Unbounded_String ("{n}y");
+      Locale_Tpi.Compact_Override.Has_Half := False;
+      Locale_Tpi.Compact_Override.Has_Delimiter := True;
+      Locale_Tpi.Compact_Override.Delimiter := To_Unbounded_String ("");
+      Locale_Tpi.Compact_Override.Has_Just_Born := False;
+
+   end Init_tpi;
 
    --  Source: age/locales/src/tr.json
    procedure Init_tr is
@@ -15273,11 +16253,13 @@ package body Parenttime_Locales is
       Init_be;
       Init_bem;
       Init_bg;
+      Init_bi;
       Init_bm;
       Init_bn;
       Init_br;
       Init_bs;
       Init_ca;
+      Init_cak;
       Init_ceb;
       Init_cs;
       Init_cy;
@@ -15285,7 +16267,9 @@ package body Parenttime_Locales is
       Init_de;
       Init_din;
       Init_dje;
+      Init_dv;
       Init_dyu;
+      Init_dz;
       Init_ee;
       Init_el;
       Init_en;
@@ -15297,6 +16281,7 @@ package body Parenttime_Locales is
       Init_ff;
       Init_fi;
       Init_fil;
+      Init_fj;
       Init_fon;
       Init_fr;
       Init_ga;
@@ -15308,6 +16293,7 @@ package body Parenttime_Locales is
       Init_ha;
       Init_he;
       Init_hi;
+      Init_hmn;
       Init_hr;
       Init_ht;
       Init_hu;
@@ -15320,7 +16306,9 @@ package body Parenttime_Locales is
       Init_jv;
       Init_ka;
       Init_kbp;
+      Init_kek;
       Init_kk;
+      Init_kl;
       Init_km;
       Init_kn;
       Init_ko;
@@ -15334,6 +16322,7 @@ package body Parenttime_Locales is
       Init_lo;
       Init_lt;
       Init_lv;
+      Init_mam;
       Init_men;
       Init_mfe;
       Init_mg;
@@ -15358,11 +16347,13 @@ package body Parenttime_Locales is
       Init_om;
       Init_or;
       Init_pa;
+      Init_pis;
       Init_pl;
       Init_pov;
       Init_ps;
       Init_pt;
       Init_qu;
+      Init_quc;
       Init_ro;
       Init_ru;
       Init_rw;
@@ -15370,6 +16361,7 @@ package body Parenttime_Locales is
       Init_sd;
       Init_sg;
       Init_shi;
+      Init_shn;
       Init_si;
       Init_sk;
       Init_sl;
@@ -15387,12 +16379,14 @@ package body Parenttime_Locales is
       Init_ta;
       Init_te;
       Init_tem;
+      Init_tet;
       Init_tg;
       Init_th;
       Init_ti;
       Init_tig;
       Init_tk;
       Init_tn;
+      Init_tpi;
       Init_tr;
       Init_ts;
       Init_tzm;
@@ -15442,6 +16436,9 @@ package body Parenttime_Locales is
       if Code = "bg" then
          return Locale_Bg'Access;
       end if;
+      if Code = "bi" then
+         return Locale_Bi'Access;
+      end if;
       if Code = "bm" then
          return Locale_Bm'Access;
       end if;
@@ -15456,6 +16453,9 @@ package body Parenttime_Locales is
       end if;
       if Code = "ca" then
          return Locale_Ca'Access;
+      end if;
+      if Code = "cak" then
+         return Locale_Cak'Access;
       end if;
       if Code = "ceb" then
          return Locale_Ceb'Access;
@@ -15478,8 +16478,14 @@ package body Parenttime_Locales is
       if Code = "dje" then
          return Locale_Dje'Access;
       end if;
+      if Code = "dv" then
+         return Locale_Dv'Access;
+      end if;
       if Code = "dyu" then
          return Locale_Dyu'Access;
+      end if;
+      if Code = "dz" then
+         return Locale_Dz'Access;
       end if;
       if Code = "ee" then
          return Locale_Ee'Access;
@@ -15514,6 +16520,9 @@ package body Parenttime_Locales is
       if Code = "fil" then
          return Locale_Fil'Access;
       end if;
+      if Code = "fj" then
+         return Locale_Fj'Access;
+      end if;
       if Code = "fon" then
          return Locale_Fon'Access;
       end if;
@@ -15546,6 +16555,9 @@ package body Parenttime_Locales is
       end if;
       if Code = "hi" then
          return Locale_Hi'Access;
+      end if;
+      if Code = "hmn" then
+         return Locale_Hmn'Access;
       end if;
       if Code = "hr" then
          return Locale_Hr'Access;
@@ -15583,8 +16595,14 @@ package body Parenttime_Locales is
       if Code = "kbp" then
          return Locale_Kbp'Access;
       end if;
+      if Code = "kek" then
+         return Locale_Kek'Access;
+      end if;
       if Code = "kk" then
          return Locale_Kk'Access;
+      end if;
+      if Code = "kl" then
+         return Locale_Kl'Access;
       end if;
       if Code = "km" then
          return Locale_Km'Access;
@@ -15624,6 +16642,9 @@ package body Parenttime_Locales is
       end if;
       if Code = "lv" then
          return Locale_Lv'Access;
+      end if;
+      if Code = "mam" then
+         return Locale_Mam'Access;
       end if;
       if Code = "men" then
          return Locale_Men'Access;
@@ -15697,6 +16718,9 @@ package body Parenttime_Locales is
       if Code = "pa" then
          return Locale_Pa'Access;
       end if;
+      if Code = "pis" then
+         return Locale_Pis'Access;
+      end if;
       if Code = "pl" then
          return Locale_Pl'Access;
       end if;
@@ -15711,6 +16735,9 @@ package body Parenttime_Locales is
       end if;
       if Code = "qu" then
          return Locale_Qu'Access;
+      end if;
+      if Code = "quc" then
+         return Locale_Quc'Access;
       end if;
       if Code = "ro" then
          return Locale_Ro'Access;
@@ -15732,6 +16759,9 @@ package body Parenttime_Locales is
       end if;
       if Code = "shi" then
          return Locale_Shi'Access;
+      end if;
+      if Code = "shn" then
+         return Locale_Shn'Access;
       end if;
       if Code = "si" then
          return Locale_Si'Access;
@@ -15784,6 +16814,9 @@ package body Parenttime_Locales is
       if Code = "tem" then
          return Locale_Tem'Access;
       end if;
+      if Code = "tet" then
+         return Locale_Tet'Access;
+      end if;
       if Code = "tg" then
          return Locale_Tg'Access;
       end if;
@@ -15801,6 +16834,9 @@ package body Parenttime_Locales is
       end if;
       if Code = "tn" then
          return Locale_Tn'Access;
+      end if;
+      if Code = "tpi" then
+         return Locale_Tpi'Access;
       end if;
       if Code = "tr" then
          return Locale_Tr'Access;

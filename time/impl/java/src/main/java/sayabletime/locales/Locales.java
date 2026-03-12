@@ -18,7 +18,7 @@ import java.util.Collections;
 import sayabletime.*;
 
 /**
- * All 145 locale definitions for sayable-time.
+ * All 159 locale definitions for sayable-time.
  */
 @SuppressWarnings({"LineLength", "MethodLength"})
 public final class Locales {
@@ -169,6 +169,22 @@ public final class Locales {
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
     );
 
+    // Source: time/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    public static final TimeLocale BI = new TimeLocale(
+        "bi",
+        new ClockConfig(
+            List.of("twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven"),
+            "mednaet",
+            "medeldei",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
     // Source: time/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -249,6 +265,22 @@ public final class Locales {
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
     );
 
+    // Source: time/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    public static final TimeLocale CAK = new TimeLocale(
+        "cak",
+        new ClockConfig(
+            List.of("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"),
+            "nik'aj aq'a'",
+            "nik'aj q'ij",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
     // Source: time/locales/src/ceb.json
     // ================================================================
     // CEB — Cebuano
@@ -309,8 +341,8 @@ public final class Locales {
             "middag",
             Map.ofEntries(Map.entry(0, "klokken {h}"), Map.entry(5, "fem over {h}"), Map.entry(10, "ti over {h}"), Map.entry(15, "kvart over {h}"), Map.entry(20, "tyve over {h}"), Map.entry(25, "fem i halv {next_h}"), Map.entry(30, "halv {next_h}"), Map.entry(35, "fem over halv {next_h}"), Map.entry(40, "tyve i {next_h}"), Map.entry(45, "kvart i {next_h}"), Map.entry(50, "ti i {next_h}"), Map.entry(55, "fem i {next_h}"))
         ),
-        new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
-        new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
+        new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}")),
+        new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}"))
     );
 
     // Source: time/locales/src/de.json
@@ -361,6 +393,22 @@ public final class Locales {
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
     );
 
+    // Source: time/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    public static final TimeLocale DV = new TimeLocale(
+        "dv",
+        new ClockConfig(
+            List.of("ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ"),
+            "މެންދަމު",
+            "މެންދުރު",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
     // Source: time/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -371,6 +419,22 @@ public final class Locales {
             List.of("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
             "dugutilama",
             "tilgari",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
+    // Source: time/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    public static final TimeLocale DZ = new TimeLocale(
+        "dz",
+        new ClockConfig(
+            List.of("བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག"),
+            "ནམ་ཕྱེད",
+            "ཉིན་གུང",
             Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
@@ -533,8 +597,8 @@ public final class Locales {
             "keskipäivä",
             Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "viisi yli {h}"), Map.entry(10, "kymmenen yli {h}"), Map.entry(15, "vartti yli {h}"), Map.entry(20, "kaksikymmentä yli {h}"), Map.entry(25, "kaksikymmentäviisi yli {h}"), Map.entry(30, "puoli yli {h}"), Map.entry(35, "kaksikymmentäviisi vaille {next_h}"), Map.entry(40, "kaksikymmentä vaille {next_h}"), Map.entry(45, "vartti vaille {next_h}"), Map.entry(50, "kymmenen vaille {next_h}"), Map.entry(55, "viisi vaille {next_h}"))
         ),
-        new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
-        new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
+        new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}")),
+        new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}"))
     );
 
     // Source: time/locales/src/fil.json
@@ -548,6 +612,22 @@ public final class Locales {
             "hatinggabi",
             "tanghali",
             Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "lima dan {h}"), Map.entry(10, "sampu dan {h}"), Map.entry(15, "labinlima dan {h}"), Map.entry(20, "dalawampu dan {h}"), Map.entry(25, "dalawampu't lima dan {h}"), Map.entry(30, "tatlumpu dan {h}"), Map.entry(35, "dalawampu't lima bago mag {next_h}"), Map.entry(40, "dalawampu bago mag {next_h}"), Map.entry(45, "labinlima bago mag {next_h}"), Map.entry(50, "sampu bago mag {next_h}"), Map.entry(55, "lima bago mag {next_h}"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
+    // Source: time/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    public static final TimeLocale FJ = new TimeLocale(
+        "fj",
+        new ClockConfig(
+            List.of("tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"),
+            "bogi levu",
+            "sigalevu",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -729,6 +809,22 @@ public final class Locales {
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
     );
 
+    // Source: time/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    public static final TimeLocale HMN = new TimeLocale(
+        "hmn",
+        new ClockConfig(
+            List.of("kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib"),
+            "ib tag hmo",
+            "tav su",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
     // Source: time/locales/src/hr.json
     // ================================================================
     // HR — Croatian
@@ -803,10 +899,10 @@ public final class Locales {
             List.of("dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"),
             "tengah malam",
             "tengah hari",
-            Map.ofEntries(Map.entry(0, "{h} o'clock"), Map.entry(5, "lima lewat {h}"), Map.entry(10, "sepuluh lewat {h}"), Map.entry(15, "seperempat lewat {h}"), Map.entry(20, "dua puluh lewat {h}"), Map.entry(25, "dua puluh lima lewat {h}"), Map.entry(30, "setengah lewat {h}"), Map.entry(35, "dua puluh lima menjelang {next_h}"), Map.entry(40, "dua puluh menjelang {next_h}"), Map.entry(45, "seperempat menjelang {next_h}"), Map.entry(50, "sepuluh menjelang {next_h}"), Map.entry(55, "lima menjelang {next_h}"))
+            Map.ofEntries(Map.entry(0, "pukul {h}"), Map.entry(5, "lima lewat {h}"), Map.entry(10, "sepuluh lewat {h}"), Map.entry(15, "seperempat lewat {h}"), Map.entry(20, "dua puluh lewat {h}"), Map.entry(25, "dua puluh lima lewat {h}"), Map.entry(30, "setengah lewat {h}"), Map.entry(35, "dua puluh lima menjelang {next_h}"), Map.entry(40, "dua puluh menjelang {next_h}"), Map.entry(45, "seperempat menjelang {next_h}"), Map.entry(50, "sepuluh menjelang {next_h}"), Map.entry(55, "lima menjelang {next_h}"))
         ),
-        new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
-        new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
+        new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}")),
+        new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}"))
     );
 
     // Source: time/locales/src/ig.json
@@ -921,6 +1017,22 @@ public final class Locales {
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
     );
 
+    // Source: time/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    public static final TimeLocale KEK = new TimeLocale(
+        "kek",
+        new ClockConfig(
+            List.of("kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju"),
+            "chaq' xkab'",
+            "chaq' chaab'il",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
     // Source: time/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -935,6 +1047,22 @@ public final class Locales {
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
+    );
+
+    // Source: time/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    public static final TimeLocale KL = new TimeLocale(
+        "kl",
+        new ClockConfig(
+            List.of("akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"),
+            "unnuap qeqqa",
+            "ulloqeqqap qeqqa",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}")),
+        new CompactnessOverride(new ShortClockConfig(true, null, "{h}.{mm}"))
     );
 
     // Source: time/locales/src/km.json
@@ -1143,6 +1271,22 @@ public final class Locales {
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
+    );
+
+    // Source: time/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    public static final TimeLocale MAM = new TimeLocale(
+        "mam",
+        new ClockConfig(
+            List.of("kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj"),
+            "nik' aq'b'il",
+            "nik' q'ij",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
     );
 
     // Source: time/locales/src/men.json
@@ -1529,6 +1673,22 @@ public final class Locales {
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
     );
 
+    // Source: time/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    public static final TimeLocale PIS = new TimeLocale(
+        "pis",
+        new ClockConfig(
+            List.of("twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven"),
+            "midonaet",
+            "midei",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
     // Source: time/locales/src/pl.json
     // ================================================================
     // PL — Polish
@@ -1604,6 +1764,22 @@ public final class Locales {
             "chawpi tuta",
             "chawpi p'unchaw",
             Map.ofEntries(Map.entry(0, "{h}"), Map.entry(5, "{h} pichqa"), Map.entry(10, "{h} chunka"), Map.entry(15, "{h} chunka pichqayuq"), Map.entry(20, "{h} iskay chunka"), Map.entry(25, "{h} iskay chunka pichqayuq"), Map.entry(30, "{h} kimsa chunka"), Map.entry(35, "{next_h} mana iskay chunka pichqayuq"), Map.entry(40, "{next_h} mana iskay chunka"), Map.entry(45, "{next_h} mana chunka pichqayuq"), Map.entry(50, "{next_h} mana chunka"), Map.entry(55, "{next_h} mana pichqa"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
+    // Source: time/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    public static final TimeLocale QUC = new TimeLocale(
+        "quc",
+        new ClockConfig(
+            List.of("kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj"),
+            "nik'aj aq'ab'",
+            "nik'aj q'ij",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
@@ -1719,6 +1895,22 @@ public final class Locales {
         ),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}")),
         new CompactnessOverride(new ShortClockConfig(true, null, "{h}:{mm}"))
+    );
+
+    // Source: time/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    public static final TimeLocale SHN = new TimeLocale(
+        "shn",
+        new ClockConfig(
+            List.of("သိပ်းသွင်", "ၼိုင်ႈ", "သွင်", "သၢမ်", "သီႇ", "ႁႃႈ", "ႁူၵ်း", "ၸဵတ်း", "ပႅတ်ႇ", "ၵဝ်ႈ", "သိပ်း", "သိပ်းဢဵတ်း"),
+            "ၵၢင်ၶိုၼ်း",
+            "ၵၢင်ဝၼ်း",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
     );
 
     // Source: time/locales/src/si.json
@@ -1993,6 +2185,22 @@ public final class Locales {
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
     );
 
+    // Source: time/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    public static final TimeLocale TET = new TimeLocale(
+        "tet",
+        new ClockConfig(
+            List.of("sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"),
+            "meiu-kalan",
+            "meiu-loron",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
     // Source: time/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -2083,6 +2291,22 @@ public final class Locales {
             List.of("lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe"),
             "bosigo jwa magareng",
             "motshegare",
+            Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
+        ),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
+        new CompactnessOverride(new ShortClockConfig(false, new String[]{"a", "p"}, "{h}:{mm}{ampm}"))
+    );
+
+    // Source: time/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    public static final TimeLocale TPI = new TimeLocale(
+        "tpi",
+        new ClockConfig(
+            List.of("twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven"),
+            "biknait",
+            "belo",
             Map.ofEntries(Map.entry(0, "{h}:00"), Map.entry(5, "{h}:05"), Map.entry(10, "{h}:10"), Map.entry(15, "{h}:15"), Map.entry(20, "{h}:20"), Map.entry(25, "{h}:25"), Map.entry(30, "{h}:30"), Map.entry(35, "{h}:35"), Map.entry(40, "{h}:40"), Map.entry(45, "{h}:45"), Map.entry(50, "{h}:50"), Map.entry(55, "{h}:55"))
         ),
         new CompactnessOverride(new ShortClockConfig(false, new String[]{"AM", "PM"}, "{h}:{mm} {ampm}")),
@@ -2347,7 +2571,7 @@ public final class Locales {
 
     public static final Map<String, TimeLocale> ALL;
     static {
-        Map<String, TimeLocale> map = new LinkedHashMap<>(145);
+        Map<String, TimeLocale> map = new LinkedHashMap<>(159);
         map.put("af", AF);
         map.put("ak", AK);
         map.put("am", AM);
@@ -2357,11 +2581,13 @@ public final class Locales {
         map.put("be", BE);
         map.put("bem", BEM);
         map.put("bg", BG);
+        map.put("bi", BI);
         map.put("bm", BM);
         map.put("bn", BN);
         map.put("br", BR);
         map.put("bs", BS);
         map.put("ca", CA);
+        map.put("cak", CAK);
         map.put("ceb", CEB);
         map.put("cs", CS);
         map.put("cy", CY);
@@ -2369,7 +2595,9 @@ public final class Locales {
         map.put("de", DE);
         map.put("din", DIN);
         map.put("dje", DJE);
+        map.put("dv", DV);
         map.put("dyu", DYU);
+        map.put("dz", DZ);
         map.put("ee", EE);
         map.put("el", EL);
         map.put("en", EN);
@@ -2381,6 +2609,7 @@ public final class Locales {
         map.put("ff", FF);
         map.put("fi", FI);
         map.put("fil", FIL);
+        map.put("fj", FJ);
         map.put("fon", FON);
         map.put("fr", FR);
         map.put("ga", GA);
@@ -2392,6 +2621,7 @@ public final class Locales {
         map.put("ha", HA);
         map.put("he", HE);
         map.put("hi", HI);
+        map.put("hmn", HMN);
         map.put("hr", HR);
         map.put("ht", HT);
         map.put("hu", HU);
@@ -2404,7 +2634,9 @@ public final class Locales {
         map.put("jv", JV);
         map.put("ka", KA);
         map.put("kbp", KBP);
+        map.put("kek", KEK);
         map.put("kk", KK);
+        map.put("kl", KL);
         map.put("km", KM);
         map.put("kn", KN);
         map.put("ko", KO);
@@ -2418,6 +2650,7 @@ public final class Locales {
         map.put("lo", LO);
         map.put("lt", LT);
         map.put("lv", LV);
+        map.put("mam", MAM);
         map.put("men", MEN);
         map.put("mfe", MFE);
         map.put("mg", MG);
@@ -2442,11 +2675,13 @@ public final class Locales {
         map.put("om", OM);
         map.put("or", OR);
         map.put("pa", PA);
+        map.put("pis", PIS);
         map.put("pl", PL);
         map.put("pov", POV);
         map.put("ps", PS);
         map.put("pt", PT);
         map.put("qu", QU);
+        map.put("quc", QUC);
         map.put("ro", RO);
         map.put("ru", RU);
         map.put("rw", RW);
@@ -2454,6 +2689,7 @@ public final class Locales {
         map.put("sd", SD);
         map.put("sg", SG);
         map.put("shi", SHI);
+        map.put("shn", SHN);
         map.put("si", SI);
         map.put("sk", SK);
         map.put("sl", SL);
@@ -2471,12 +2707,14 @@ public final class Locales {
         map.put("ta", TA);
         map.put("te", TE);
         map.put("tem", TEM);
+        map.put("tet", TET);
         map.put("tg", TG);
         map.put("th", TH);
         map.put("ti", TI);
         map.put("tig", TIG);
         map.put("tk", TK);
         map.put("tn", TN);
+        map.put("tpi", TPI);
         map.put("tr", TR);
         map.put("ts", TS);
         map.put("tzm", TZM);

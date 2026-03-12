@@ -35,9 +35,9 @@ FI = TimeLocale(
         },
     ),
     short=CompactnessOverride(
-        clock=ShortClockConfig(use24h=True, format="{h}:{mm}"),
+        clock=ShortClockConfig(use24h=True, format="{h}.{mm}"),
     ),
     compact=CompactnessOverride(
-        clock=ShortClockConfig(use24h=True, format="{h}:{mm}"),
+        clock=ShortClockConfig(use24h=True, format="{h}.{mm}"),
     ),
 )

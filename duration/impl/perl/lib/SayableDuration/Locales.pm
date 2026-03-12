@@ -21,11 +21,13 @@ use SayableDuration::Locales::BCI;
 use SayableDuration::Locales::BE;
 use SayableDuration::Locales::BEM;
 use SayableDuration::Locales::BG;
+use SayableDuration::Locales::BI;
 use SayableDuration::Locales::BM;
 use SayableDuration::Locales::BN;
 use SayableDuration::Locales::BR;
 use SayableDuration::Locales::BS;
 use SayableDuration::Locales::CA;
+use SayableDuration::Locales::CAK;
 use SayableDuration::Locales::CEB;
 use SayableDuration::Locales::CS;
 use SayableDuration::Locales::CY;
@@ -33,7 +35,9 @@ use SayableDuration::Locales::DA;
 use SayableDuration::Locales::DE;
 use SayableDuration::Locales::DIN;
 use SayableDuration::Locales::DJE;
+use SayableDuration::Locales::DV;
 use SayableDuration::Locales::DYU;
+use SayableDuration::Locales::DZ;
 use SayableDuration::Locales::EE;
 use SayableDuration::Locales::EL;
 use SayableDuration::Locales::EN;
@@ -45,6 +49,7 @@ use SayableDuration::Locales::FAN;
 use SayableDuration::Locales::FF;
 use SayableDuration::Locales::FI;
 use SayableDuration::Locales::FIL;
+use SayableDuration::Locales::FJ;
 use SayableDuration::Locales::FON;
 use SayableDuration::Locales::FR;
 use SayableDuration::Locales::GA;
@@ -56,6 +61,7 @@ use SayableDuration::Locales::GV;
 use SayableDuration::Locales::HA;
 use SayableDuration::Locales::HE;
 use SayableDuration::Locales::HI;
+use SayableDuration::Locales::HMN;
 use SayableDuration::Locales::HR;
 use SayableDuration::Locales::HT;
 use SayableDuration::Locales::HU;
@@ -68,7 +74,9 @@ use SayableDuration::Locales::JA;
 use SayableDuration::Locales::JV;
 use SayableDuration::Locales::KA;
 use SayableDuration::Locales::KBP;
+use SayableDuration::Locales::KEK;
 use SayableDuration::Locales::KK;
+use SayableDuration::Locales::KL;
 use SayableDuration::Locales::KM;
 use SayableDuration::Locales::KN;
 use SayableDuration::Locales::KO;
@@ -82,6 +90,7 @@ use SayableDuration::Locales::LN;
 use SayableDuration::Locales::LO;
 use SayableDuration::Locales::LT;
 use SayableDuration::Locales::LV;
+use SayableDuration::Locales::MAM;
 use SayableDuration::Locales::MEN;
 use SayableDuration::Locales::MFE;
 use SayableDuration::Locales::MG;
@@ -106,11 +115,13 @@ use SayableDuration::Locales::NY;
 use SayableDuration::Locales::OM;
 use SayableDuration::Locales::OR;
 use SayableDuration::Locales::PA;
+use SayableDuration::Locales::PIS;
 use SayableDuration::Locales::PL;
 use SayableDuration::Locales::POV;
 use SayableDuration::Locales::PS;
 use SayableDuration::Locales::PT;
 use SayableDuration::Locales::QU;
+use SayableDuration::Locales::QUC;
 use SayableDuration::Locales::RO;
 use SayableDuration::Locales::RU;
 use SayableDuration::Locales::RW;
@@ -118,6 +129,7 @@ use SayableDuration::Locales::SAR;
 use SayableDuration::Locales::SD;
 use SayableDuration::Locales::SG;
 use SayableDuration::Locales::SHI;
+use SayableDuration::Locales::SHN;
 use SayableDuration::Locales::SI;
 use SayableDuration::Locales::SK;
 use SayableDuration::Locales::SL;
@@ -135,12 +147,14 @@ use SayableDuration::Locales::SW;
 use SayableDuration::Locales::TA;
 use SayableDuration::Locales::TE;
 use SayableDuration::Locales::TEM;
+use SayableDuration::Locales::TET;
 use SayableDuration::Locales::TG;
 use SayableDuration::Locales::TH;
 use SayableDuration::Locales::TI;
 use SayableDuration::Locales::TIG;
 use SayableDuration::Locales::TK;
 use SayableDuration::Locales::TN;
+use SayableDuration::Locales::TPI;
 use SayableDuration::Locales::TR;
 use SayableDuration::Locales::TS;
 use SayableDuration::Locales::TZM;
@@ -168,11 +182,13 @@ my %_LOCALES = (
   'be' => SayableDuration::Locales::BE::locale(),
   'bem' => SayableDuration::Locales::BEM::locale(),
   'bg' => SayableDuration::Locales::BG::locale(),
+  'bi' => SayableDuration::Locales::BI::locale(),
   'bm' => SayableDuration::Locales::BM::locale(),
   'bn' => SayableDuration::Locales::BN::locale(),
   'br' => SayableDuration::Locales::BR::locale(),
   'bs' => SayableDuration::Locales::BS::locale(),
   'ca' => SayableDuration::Locales::CA::locale(),
+  'cak' => SayableDuration::Locales::CAK::locale(),
   'ceb' => SayableDuration::Locales::CEB::locale(),
   'cs' => SayableDuration::Locales::CS::locale(),
   'cy' => SayableDuration::Locales::CY::locale(),
@@ -180,7 +196,9 @@ my %_LOCALES = (
   'de' => SayableDuration::Locales::DE::locale(),
   'din' => SayableDuration::Locales::DIN::locale(),
   'dje' => SayableDuration::Locales::DJE::locale(),
+  'dv' => SayableDuration::Locales::DV::locale(),
   'dyu' => SayableDuration::Locales::DYU::locale(),
+  'dz' => SayableDuration::Locales::DZ::locale(),
   'ee' => SayableDuration::Locales::EE::locale(),
   'el' => SayableDuration::Locales::EL::locale(),
   'en' => SayableDuration::Locales::EN::locale(),
@@ -192,6 +210,7 @@ my %_LOCALES = (
   'ff' => SayableDuration::Locales::FF::locale(),
   'fi' => SayableDuration::Locales::FI::locale(),
   'fil' => SayableDuration::Locales::FIL::locale(),
+  'fj' => SayableDuration::Locales::FJ::locale(),
   'fon' => SayableDuration::Locales::FON::locale(),
   'fr' => SayableDuration::Locales::FR::locale(),
   'ga' => SayableDuration::Locales::GA::locale(),
@@ -203,6 +222,7 @@ my %_LOCALES = (
   'ha' => SayableDuration::Locales::HA::locale(),
   'he' => SayableDuration::Locales::HE::locale(),
   'hi' => SayableDuration::Locales::HI::locale(),
+  'hmn' => SayableDuration::Locales::HMN::locale(),
   'hr' => SayableDuration::Locales::HR::locale(),
   'ht' => SayableDuration::Locales::HT::locale(),
   'hu' => SayableDuration::Locales::HU::locale(),
@@ -215,7 +235,9 @@ my %_LOCALES = (
   'jv' => SayableDuration::Locales::JV::locale(),
   'ka' => SayableDuration::Locales::KA::locale(),
   'kbp' => SayableDuration::Locales::KBP::locale(),
+  'kek' => SayableDuration::Locales::KEK::locale(),
   'kk' => SayableDuration::Locales::KK::locale(),
+  'kl' => SayableDuration::Locales::KL::locale(),
   'km' => SayableDuration::Locales::KM::locale(),
   'kn' => SayableDuration::Locales::KN::locale(),
   'ko' => SayableDuration::Locales::KO::locale(),
@@ -229,6 +251,7 @@ my %_LOCALES = (
   'lo' => SayableDuration::Locales::LO::locale(),
   'lt' => SayableDuration::Locales::LT::locale(),
   'lv' => SayableDuration::Locales::LV::locale(),
+  'mam' => SayableDuration::Locales::MAM::locale(),
   'men' => SayableDuration::Locales::MEN::locale(),
   'mfe' => SayableDuration::Locales::MFE::locale(),
   'mg' => SayableDuration::Locales::MG::locale(),
@@ -253,11 +276,13 @@ my %_LOCALES = (
   'om' => SayableDuration::Locales::OM::locale(),
   'or' => SayableDuration::Locales::OR::locale(),
   'pa' => SayableDuration::Locales::PA::locale(),
+  'pis' => SayableDuration::Locales::PIS::locale(),
   'pl' => SayableDuration::Locales::PL::locale(),
   'pov' => SayableDuration::Locales::POV::locale(),
   'ps' => SayableDuration::Locales::PS::locale(),
   'pt' => SayableDuration::Locales::PT::locale(),
   'qu' => SayableDuration::Locales::QU::locale(),
+  'quc' => SayableDuration::Locales::QUC::locale(),
   'ro' => SayableDuration::Locales::RO::locale(),
   'ru' => SayableDuration::Locales::RU::locale(),
   'rw' => SayableDuration::Locales::RW::locale(),
@@ -265,6 +290,7 @@ my %_LOCALES = (
   'sd' => SayableDuration::Locales::SD::locale(),
   'sg' => SayableDuration::Locales::SG::locale(),
   'shi' => SayableDuration::Locales::SHI::locale(),
+  'shn' => SayableDuration::Locales::SHN::locale(),
   'si' => SayableDuration::Locales::SI::locale(),
   'sk' => SayableDuration::Locales::SK::locale(),
   'sl' => SayableDuration::Locales::SL::locale(),
@@ -282,12 +308,14 @@ my %_LOCALES = (
   'ta' => SayableDuration::Locales::TA::locale(),
   'te' => SayableDuration::Locales::TE::locale(),
   'tem' => SayableDuration::Locales::TEM::locale(),
+  'tet' => SayableDuration::Locales::TET::locale(),
   'tg' => SayableDuration::Locales::TG::locale(),
   'th' => SayableDuration::Locales::TH::locale(),
   'ti' => SayableDuration::Locales::TI::locale(),
   'tig' => SayableDuration::Locales::TIG::locale(),
   'tk' => SayableDuration::Locales::TK::locale(),
   'tn' => SayableDuration::Locales::TN::locale(),
+  'tpi' => SayableDuration::Locales::TPI::locale(),
   'tr' => SayableDuration::Locales::TR::locale(),
   'ts' => SayableDuration::Locales::TS::locale(),
   'tzm' => SayableDuration::Locales::TZM::locale(),

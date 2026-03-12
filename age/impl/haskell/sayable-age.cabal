@@ -19,11 +19,13 @@ library
     SayableAge.Locales.Be
     SayableAge.Locales.Bem
     SayableAge.Locales.Bg
+    SayableAge.Locales.Bi
     SayableAge.Locales.Bm
     SayableAge.Locales.Bn
     SayableAge.Locales.Br
     SayableAge.Locales.Bs
     SayableAge.Locales.Ca
+    SayableAge.Locales.Cak
     SayableAge.Locales.Ceb
     SayableAge.Locales.Cs
     SayableAge.Locales.Cy
@@ -31,7 +33,9 @@ library
     SayableAge.Locales.De
     SayableAge.Locales.Din
     SayableAge.Locales.Dje
+    SayableAge.Locales.Dv
     SayableAge.Locales.Dyu
+    SayableAge.Locales.Dz
     SayableAge.Locales.Ee
     SayableAge.Locales.El
     SayableAge.Locales.En
@@ -43,6 +47,7 @@ library
     SayableAge.Locales.Ff
     SayableAge.Locales.Fi
     SayableAge.Locales.Fil
+    SayableAge.Locales.Fj
     SayableAge.Locales.Fon
     SayableAge.Locales.Fr
     SayableAge.Locales.Ga
@@ -54,6 +59,7 @@ library
     SayableAge.Locales.Ha
     SayableAge.Locales.He
     SayableAge.Locales.Hi
+    SayableAge.Locales.Hmn
     SayableAge.Locales.Hr
     SayableAge.Locales.Ht
     SayableAge.Locales.Hu
@@ -66,7 +72,9 @@ library
     SayableAge.Locales.Jv
     SayableAge.Locales.Ka
     SayableAge.Locales.Kbp
+    SayableAge.Locales.Kek
     SayableAge.Locales.Kk
+    SayableAge.Locales.Kl
     SayableAge.Locales.Km
     SayableAge.Locales.Kn
     SayableAge.Locales.Ko
@@ -80,6 +88,7 @@ library
     SayableAge.Locales.Lo
     SayableAge.Locales.Lt
     SayableAge.Locales.Lv
+    SayableAge.Locales.Mam
     SayableAge.Locales.Men
     SayableAge.Locales.Mfe
     SayableAge.Locales.Mg
@@ -104,11 +113,13 @@ library
     SayableAge.Locales.Om
     SayableAge.Locales.Or
     SayableAge.Locales.Pa
+    SayableAge.Locales.Pis
     SayableAge.Locales.Pl
     SayableAge.Locales.Pov
     SayableAge.Locales.Ps
     SayableAge.Locales.Pt
     SayableAge.Locales.Qu
+    SayableAge.Locales.Quc
     SayableAge.Locales.Ro
     SayableAge.Locales.Ru
     SayableAge.Locales.Rw
@@ -116,6 +127,7 @@ library
     SayableAge.Locales.Sd
     SayableAge.Locales.Sg
     SayableAge.Locales.Shi
+    SayableAge.Locales.Shn
     SayableAge.Locales.Si
     SayableAge.Locales.Sk
     SayableAge.Locales.Sl
@@ -133,12 +145,14 @@ library
     SayableAge.Locales.Ta
     SayableAge.Locales.Te
     SayableAge.Locales.Tem
+    SayableAge.Locales.Tet
     SayableAge.Locales.Tg
     SayableAge.Locales.Th
     SayableAge.Locales.Ti
     SayableAge.Locales.Tig
     SayableAge.Locales.Tk
     SayableAge.Locales.Tn
+    SayableAge.Locales.Tpi
     SayableAge.Locales.Tr
     SayableAge.Locales.Ts
     SayableAge.Locales.Tzm

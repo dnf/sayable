@@ -10,7 +10,7 @@
 
 // swiftlint:disable file_length
 
-/// All 145 locale definitions for sayable-time.
+/// All 159 locale definitions for sayable-time.
 public enum Locales {
 
     // Source: time/locales/src/af.json
@@ -193,6 +193,26 @@ public enum Locales {
         )
     )
 
+    // Source: time/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    public static let BI = TimeLocale(
+        code: "bi",
+        clock: ClockConfig(
+            hours: ["twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven"],
+            midnight: "mednaet",
+            noon: "medeldei",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
     // Source: time/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -293,6 +313,26 @@ public enum Locales {
         )
     )
 
+    // Source: time/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    public static let CAK = TimeLocale(
+        code: "cak",
+        clock: ClockConfig(
+            hours: ["kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"],
+            midnight: "nik'aj aq'a'",
+            noon: "nik'aj q'ij",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
     // Source: time/locales/src/ceb.json
     // ================================================================
     // CEB — Cebuano
@@ -366,10 +406,10 @@ public enum Locales {
             patterns: [0: "klokken {h}", 5: "fem over {h}", 10: "ti over {h}", 15: "kvart over {h}", 20: "tyve over {h}", 25: "fem i halv {next_h}", 30: "halv {next_h}", 35: "fem over halv {next_h}", 40: "tyve i {next_h}", 45: "kvart i {next_h}", 50: "ti i {next_h}", 55: "fem i {next_h}"]
         ),
         short: CompactnessOverride(
-            clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+            clock: ShortClockConfig(use24h: true, format: "{h}.{mm}")
         ),
         compact: CompactnessOverride(
-            clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+            clock: ShortClockConfig(use24h: true, format: "{h}.{mm}")
         )
     )
 
@@ -433,6 +473,26 @@ public enum Locales {
         )
     )
 
+    // Source: time/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    public static let DV = TimeLocale(
+        code: "dv",
+        clock: ClockConfig(
+            hours: ["ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ"],
+            midnight: "މެންދަމު",
+            noon: "މެންދުރު",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
     // Source: time/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -443,6 +503,26 @@ public enum Locales {
             hours: ["tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"],
             midnight: "dugutilama",
             noon: "tilgari",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
+    // Source: time/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    public static let DZ = TimeLocale(
+        code: "dz",
+        clock: ClockConfig(
+            hours: ["བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག"],
+            midnight: "ནམ་ཕྱེད",
+            noon: "ཉིན་གུང",
             patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
         ),
         short: CompactnessOverride(
@@ -646,10 +726,10 @@ public enum Locales {
             patterns: [0: "{h}", 5: "viisi yli {h}", 10: "kymmenen yli {h}", 15: "vartti yli {h}", 20: "kaksikymmentä yli {h}", 25: "kaksikymmentäviisi yli {h}", 30: "puoli yli {h}", 35: "kaksikymmentäviisi vaille {next_h}", 40: "kaksikymmentä vaille {next_h}", 45: "vartti vaille {next_h}", 50: "kymmenen vaille {next_h}", 55: "viisi vaille {next_h}"]
         ),
         short: CompactnessOverride(
-            clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+            clock: ShortClockConfig(use24h: true, format: "{h}.{mm}")
         ),
         compact: CompactnessOverride(
-            clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+            clock: ShortClockConfig(use24h: true, format: "{h}.{mm}")
         )
     )
 
@@ -664,6 +744,26 @@ public enum Locales {
             midnight: "hatinggabi",
             noon: "tanghali",
             patterns: [0: "{h} o'clock", 5: "lima dan {h}", 10: "sampu dan {h}", 15: "labinlima dan {h}", 20: "dalawampu dan {h}", 25: "dalawampu't lima dan {h}", 30: "tatlumpu dan {h}", 35: "dalawampu't lima bago mag {next_h}", 40: "dalawampu bago mag {next_h}", 45: "labinlima bago mag {next_h}", 50: "sampu bago mag {next_h}", 55: "lima bago mag {next_h}"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
+    // Source: time/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    public static let FJ = TimeLocale(
+        code: "fj",
+        clock: ClockConfig(
+            hours: ["tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"],
+            midnight: "bogi levu",
+            noon: "sigalevu",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
         ),
         short: CompactnessOverride(
             clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
@@ -893,6 +993,26 @@ public enum Locales {
         )
     )
 
+    // Source: time/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    public static let HMN = TimeLocale(
+        code: "hmn",
+        clock: ClockConfig(
+            hours: ["kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib"],
+            midnight: "ib tag hmo",
+            noon: "tav su",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
     // Source: time/locales/src/hr.json
     // ================================================================
     // HR — Croatian
@@ -983,13 +1103,13 @@ public enum Locales {
             hours: ["dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"],
             midnight: "tengah malam",
             noon: "tengah hari",
-            patterns: [0: "{h} o'clock", 5: "lima lewat {h}", 10: "sepuluh lewat {h}", 15: "seperempat lewat {h}", 20: "dua puluh lewat {h}", 25: "dua puluh lima lewat {h}", 30: "setengah lewat {h}", 35: "dua puluh lima menjelang {next_h}", 40: "dua puluh menjelang {next_h}", 45: "seperempat menjelang {next_h}", 50: "sepuluh menjelang {next_h}", 55: "lima menjelang {next_h}"]
+            patterns: [0: "pukul {h}", 5: "lima lewat {h}", 10: "sepuluh lewat {h}", 15: "seperempat lewat {h}", 20: "dua puluh lewat {h}", 25: "dua puluh lima lewat {h}", 30: "setengah lewat {h}", 35: "dua puluh lima menjelang {next_h}", 40: "dua puluh menjelang {next_h}", 45: "seperempat menjelang {next_h}", 50: "sepuluh menjelang {next_h}", 55: "lima menjelang {next_h}"]
         ),
         short: CompactnessOverride(
-            clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+            clock: ShortClockConfig(use24h: true, format: "{h}.{mm}")
         ),
         compact: CompactnessOverride(
-            clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+            clock: ShortClockConfig(use24h: true, format: "{h}.{mm}")
         )
     )
 
@@ -1133,6 +1253,26 @@ public enum Locales {
         )
     )
 
+    // Source: time/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    public static let KEK = TimeLocale(
+        code: "kek",
+        clock: ClockConfig(
+            hours: ["kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju"],
+            midnight: "chaq' xkab'",
+            noon: "chaq' chaab'il",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
     // Source: time/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -1150,6 +1290,26 @@ public enum Locales {
         ),
         compact: CompactnessOverride(
             clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+        )
+    )
+
+    // Source: time/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    public static let KL = TimeLocale(
+        code: "kl",
+        clock: ClockConfig(
+            hours: ["akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"],
+            midnight: "unnuap qeqqa",
+            noon: "ulloqeqqap qeqqa",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: true, format: "{h}.{mm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: true, format: "{h}.{mm}")
         )
     )
 
@@ -1410,6 +1570,26 @@ public enum Locales {
         ),
         compact: CompactnessOverride(
             clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+        )
+    )
+
+    // Source: time/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    public static let MAM = TimeLocale(
+        code: "mam",
+        clock: ClockConfig(
+            hours: ["kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj"],
+            midnight: "nik' aq'b'il",
+            noon: "nik' q'ij",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
         )
     )
 
@@ -1893,6 +2073,26 @@ public enum Locales {
         )
     )
 
+    // Source: time/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    public static let PIS = TimeLocale(
+        code: "pis",
+        clock: ClockConfig(
+            hours: ["twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven"],
+            midnight: "midonaet",
+            noon: "midei",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
     // Source: time/locales/src/pl.json
     // ================================================================
     // PL — Polish
@@ -1984,6 +2184,26 @@ public enum Locales {
             midnight: "chawpi tuta",
             noon: "chawpi p'unchaw",
             patterns: [0: "{h}", 5: "{h} pichqa", 10: "{h} chunka", 15: "{h} chunka pichqayuq", 20: "{h} iskay chunka", 25: "{h} iskay chunka pichqayuq", 30: "{h} kimsa chunka", 35: "{next_h} mana iskay chunka pichqayuq", 40: "{next_h} mana iskay chunka", 45: "{next_h} mana chunka pichqayuq", 50: "{next_h} mana chunka", 55: "{next_h} mana pichqa"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
+    // Source: time/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    public static let QUC = TimeLocale(
+        code: "quc",
+        clock: ClockConfig(
+            hours: ["kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj"],
+            midnight: "nik'aj aq'ab'",
+            noon: "nik'aj q'ij",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
         ),
         short: CompactnessOverride(
             clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
@@ -2130,6 +2350,26 @@ public enum Locales {
         ),
         compact: CompactnessOverride(
             clock: ShortClockConfig(use24h: true, format: "{h}:{mm}")
+        )
+    )
+
+    // Source: time/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    public static let SHN = TimeLocale(
+        code: "shn",
+        clock: ClockConfig(
+            hours: ["သိပ်းသွင်", "ၼိုင်ႈ", "သွင်", "သၢမ်", "သီႇ", "ႁႃႈ", "ႁူၵ်း", "ၸဵတ်း", "ပႅတ်ႇ", "ၵဝ်ႈ", "သိပ်း", "သိပ်းဢဵတ်း"],
+            midnight: "ၵၢင်ၶိုၼ်း",
+            noon: "ၵၢင်ဝၼ်း",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
         )
     )
 
@@ -2473,6 +2713,26 @@ public enum Locales {
         )
     )
 
+    // Source: time/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    public static let TET = TimeLocale(
+        code: "tet",
+        clock: ClockConfig(
+            hours: ["sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"],
+            midnight: "meiu-kalan",
+            noon: "meiu-loron",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
     // Source: time/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -2583,6 +2843,26 @@ public enum Locales {
             hours: ["lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe"],
             midnight: "bosigo jwa magareng",
             noon: "motshegare",
+            patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
+        ),
+        short: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("AM", "PM"), format: "{h}:{mm} {ampm}")
+        ),
+        compact: CompactnessOverride(
+            clock: ShortClockConfig(use24h: false, amPm: ("a", "p"), format: "{h}:{mm}{ampm}")
+        )
+    )
+
+    // Source: time/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    public static let TPI = TimeLocale(
+        code: "tpi",
+        clock: ClockConfig(
+            hours: ["twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven"],
+            midnight: "biknait",
+            noon: "belo",
             patterns: [0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"]
         ),
         short: CompactnessOverride(
@@ -2923,11 +3203,13 @@ public enum Locales {
         "be": BE,
         "bem": BEM,
         "bg": BG,
+        "bi": BI,
         "bm": BM,
         "bn": BN,
         "br": BR,
         "bs": BS,
         "ca": CA,
+        "cak": CAK,
         "ceb": CEB,
         "cs": CS,
         "cy": CY,
@@ -2935,7 +3217,9 @@ public enum Locales {
         "de": DE,
         "din": DIN,
         "dje": DJE,
+        "dv": DV,
         "dyu": DYU,
+        "dz": DZ,
         "ee": EE,
         "el": EL,
         "en": EN,
@@ -2947,6 +3231,7 @@ public enum Locales {
         "ff": FF,
         "fi": FI,
         "fil": FIL,
+        "fj": FJ,
         "fon": FON,
         "fr": FR,
         "ga": GA,
@@ -2958,6 +3243,7 @@ public enum Locales {
         "ha": HA,
         "he": HE,
         "hi": HI,
+        "hmn": HMN,
         "hr": HR,
         "ht": HT,
         "hu": HU,
@@ -2970,7 +3256,9 @@ public enum Locales {
         "jv": JV,
         "ka": KA,
         "kbp": KBP,
+        "kek": KEK,
         "kk": KK,
+        "kl": KL,
         "km": KM,
         "kn": KN,
         "ko": KO,
@@ -2984,6 +3272,7 @@ public enum Locales {
         "lo": LO,
         "lt": LT,
         "lv": LV,
+        "mam": MAM,
         "men": MEN,
         "mfe": MFE,
         "mg": MG,
@@ -3008,11 +3297,13 @@ public enum Locales {
         "om": OM,
         "or": OR,
         "pa": PA,
+        "pis": PIS,
         "pl": PL,
         "pov": POV,
         "ps": PS,
         "pt": PT,
         "qu": QU,
+        "quc": QUC,
         "ro": RO,
         "ru": RU,
         "rw": RW,
@@ -3020,6 +3311,7 @@ public enum Locales {
         "sd": SD,
         "sg": SG,
         "shi": SHI,
+        "shn": SHN,
         "si": SI,
         "sk": SK,
         "sl": SL,
@@ -3037,12 +3329,14 @@ public enum Locales {
         "ta": TA,
         "te": TE,
         "tem": TEM,
+        "tet": TET,
         "tg": TG,
         "th": TH,
         "ti": TI,
         "tig": TIG,
         "tk": TK,
         "tn": TN,
+        "tpi": TPI,
         "tr": TR,
         "ts": TS,
         "tzm": TZM,

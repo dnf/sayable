@@ -31,7 +31,7 @@ let locale : time_locale =
     ; midnight = "tengah malam"
     ; noon = "tengah hari"
     ; patterns =
-      [ (0, "{h} o'clock")
+      [ (0, "pukul {h}")
       ; (5, "lima lewat {h}")
       ; (10, "sepuluh lewat {h}")
       ; (15, "seperempat lewat {h}")
@@ -48,14 +48,14 @@ let locale : time_locale =
   ; short = Some
     { clock = Some
         { use_24h = true
-        ; format = "{h}:{mm}"
+        ; format = "{h}.{mm}"
         ; am_pm = None
         }
     }
   ; compact = Some
     { clock = Some
         { use_24h = true
-        ; format = "{h}:{mm}"
+        ; format = "{h}.{mm}"
         ; am_pm = None
         }
     }

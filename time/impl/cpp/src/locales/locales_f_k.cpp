@@ -71,8 +71,8 @@ const TimeLocale& FI() {
             "keskipäivä",
             {{0, "{h}"}, {5, "viisi yli {h}"}, {10, "kymmenen yli {h}"}, {15, "vartti yli {h}"}, {20, "kaksikymmentä yli {h}"}, {25, "kaksikymmentäviisi yli {h}"}, {30, "puoli yli {h}"}, {35, "kaksikymmentäviisi vaille {next_h}"}, {40, "kaksikymmentä vaille {next_h}"}, {45, "vartti vaille {next_h}"}, {50, "kymmenen vaille {next_h}"}, {55, "viisi vaille {next_h}"}}
         },
-        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
-        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+        CompactnessOverride{ShortClockConfig{true, "{h}.{mm}", {"", ""}}},
+        CompactnessOverride{ShortClockConfig{true, "{h}.{mm}", {"", ""}}},
     };
     return loc;
 }
@@ -86,6 +86,22 @@ const TimeLocale& FIL() {
             "hatinggabi",
             "tanghali",
             {{0, "{h} o'clock"}, {5, "lima dan {h}"}, {10, "sampu dan {h}"}, {15, "labinlima dan {h}"}, {20, "dalawampu dan {h}"}, {25, "dalawampu't lima dan {h}"}, {30, "tatlumpu dan {h}"}, {35, "dalawampu't lima bago mag {next_h}"}, {40, "dalawampu bago mag {next_h}"}, {45, "labinlima bago mag {next_h}"}, {50, "sampu bago mag {next_h}"}, {55, "lima bago mag {next_h}"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/fj.json
+const TimeLocale& FJ() {
+    static const TimeLocale loc{
+        "fj",
+        ClockConfig{
+            {"tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"},
+            "bogi levu",
+            "sigalevu",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -269,6 +285,22 @@ const TimeLocale& HI() {
     return loc;
 }
 
+// Source: time/locales/src/hmn.json
+const TimeLocale& HMN() {
+    static const TimeLocale loc{
+        "hmn",
+        ClockConfig{
+            {"kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib"},
+            "ib tag hmo",
+            "tav su",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/hr.json
 const TimeLocale& HR() {
     static const TimeLocale loc{
@@ -341,10 +373,10 @@ const TimeLocale& ID() {
             {"dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"},
             "tengah malam",
             "tengah hari",
-            {{0, "{h} o'clock"}, {5, "lima lewat {h}"}, {10, "sepuluh lewat {h}"}, {15, "seperempat lewat {h}"}, {20, "dua puluh lewat {h}"}, {25, "dua puluh lima lewat {h}"}, {30, "setengah lewat {h}"}, {35, "dua puluh lima menjelang {next_h}"}, {40, "dua puluh menjelang {next_h}"}, {45, "seperempat menjelang {next_h}"}, {50, "sepuluh menjelang {next_h}"}, {55, "lima menjelang {next_h}"}}
+            {{0, "pukul {h}"}, {5, "lima lewat {h}"}, {10, "sepuluh lewat {h}"}, {15, "seperempat lewat {h}"}, {20, "dua puluh lewat {h}"}, {25, "dua puluh lima lewat {h}"}, {30, "setengah lewat {h}"}, {35, "dua puluh lima menjelang {next_h}"}, {40, "dua puluh menjelang {next_h}"}, {45, "seperempat menjelang {next_h}"}, {50, "sepuluh menjelang {next_h}"}, {55, "lima menjelang {next_h}"}}
         },
-        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
-        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+        CompactnessOverride{ShortClockConfig{true, "{h}.{mm}", {"", ""}}},
+        CompactnessOverride{ShortClockConfig{true, "{h}.{mm}", {"", ""}}},
     };
     return loc;
 }
@@ -461,6 +493,22 @@ const TimeLocale& KBP() {
     return loc;
 }
 
+// Source: time/locales/src/kek.json
+const TimeLocale& KEK() {
+    static const TimeLocale loc{
+        "kek",
+        ClockConfig{
+            {"kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju"},
+            "chaq' xkab'",
+            "chaq' chaab'il",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/kk.json
 const TimeLocale& KK() {
     static const TimeLocale loc{
@@ -473,6 +521,22 @@ const TimeLocale& KK() {
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/kl.json
+const TimeLocale& KL() {
+    static const TimeLocale loc{
+        "kl",
+        ClockConfig{
+            {"akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"},
+            "unnuap qeqqa",
+            "ulloqeqqap qeqqa",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{true, "{h}.{mm}", {"", ""}}},
+        CompactnessOverride{ShortClockConfig{true, "{h}.{mm}", {"", ""}}},
     };
     return loc;
 }

@@ -50,14 +50,14 @@ defmodule SayableTime.Locales.DA do
       short: %{
         clock: %{
         use24h: true,
-        format: "{h}:{mm}",
+        format: "{h}.{mm}",
         am_pm: nil
         }
       },
       compact: %{
         clock: %{
         use24h: true,
-        format: "{h}:{mm}",
+        format: "{h}.{mm}",
         am_pm: nil
         }
       }

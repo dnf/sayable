@@ -23,11 +23,13 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_be
   type(dur_locale), target, save :: locale_bem
   type(dur_locale), target, save :: locale_bg
+  type(dur_locale), target, save :: locale_bi
   type(dur_locale), target, save :: locale_bm
   type(dur_locale), target, save :: locale_bn
   type(dur_locale), target, save :: locale_br
   type(dur_locale), target, save :: locale_bs
   type(dur_locale), target, save :: locale_ca
+  type(dur_locale), target, save :: locale_cak
   type(dur_locale), target, save :: locale_ceb
   type(dur_locale), target, save :: locale_cs
   type(dur_locale), target, save :: locale_cy
@@ -35,7 +37,9 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_de
   type(dur_locale), target, save :: locale_din
   type(dur_locale), target, save :: locale_dje
+  type(dur_locale), target, save :: locale_dv
   type(dur_locale), target, save :: locale_dyu
+  type(dur_locale), target, save :: locale_dz
   type(dur_locale), target, save :: locale_ee
   type(dur_locale), target, save :: locale_el
   type(dur_locale), target, save :: locale_en
@@ -47,6 +51,7 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_ff
   type(dur_locale), target, save :: locale_fi
   type(dur_locale), target, save :: locale_fil
+  type(dur_locale), target, save :: locale_fj
   type(dur_locale), target, save :: locale_fon
   type(dur_locale), target, save :: locale_fr
   type(dur_locale), target, save :: locale_ga
@@ -58,6 +63,7 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_ha
   type(dur_locale), target, save :: locale_he
   type(dur_locale), target, save :: locale_hi
+  type(dur_locale), target, save :: locale_hmn
   type(dur_locale), target, save :: locale_hr
   type(dur_locale), target, save :: locale_ht
   type(dur_locale), target, save :: locale_hu
@@ -70,7 +76,9 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_jv
   type(dur_locale), target, save :: locale_ka
   type(dur_locale), target, save :: locale_kbp
+  type(dur_locale), target, save :: locale_kek
   type(dur_locale), target, save :: locale_kk
+  type(dur_locale), target, save :: locale_kl
   type(dur_locale), target, save :: locale_km
   type(dur_locale), target, save :: locale_kn
   type(dur_locale), target, save :: locale_ko
@@ -84,6 +92,7 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_lo
   type(dur_locale), target, save :: locale_lt
   type(dur_locale), target, save :: locale_lv
+  type(dur_locale), target, save :: locale_mam
   type(dur_locale), target, save :: locale_men
   type(dur_locale), target, save :: locale_mfe
   type(dur_locale), target, save :: locale_mg
@@ -108,11 +117,13 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_om
   type(dur_locale), target, save :: locale_or
   type(dur_locale), target, save :: locale_pa
+  type(dur_locale), target, save :: locale_pis
   type(dur_locale), target, save :: locale_pl
   type(dur_locale), target, save :: locale_pov
   type(dur_locale), target, save :: locale_ps
   type(dur_locale), target, save :: locale_pt
   type(dur_locale), target, save :: locale_qu
+  type(dur_locale), target, save :: locale_quc
   type(dur_locale), target, save :: locale_ro
   type(dur_locale), target, save :: locale_ru
   type(dur_locale), target, save :: locale_rw
@@ -120,6 +131,7 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_sd
   type(dur_locale), target, save :: locale_sg
   type(dur_locale), target, save :: locale_shi
+  type(dur_locale), target, save :: locale_shn
   type(dur_locale), target, save :: locale_si
   type(dur_locale), target, save :: locale_sk
   type(dur_locale), target, save :: locale_sl
@@ -137,12 +149,14 @@ module sayableduration_locales
   type(dur_locale), target, save :: locale_ta
   type(dur_locale), target, save :: locale_te
   type(dur_locale), target, save :: locale_tem
+  type(dur_locale), target, save :: locale_tet
   type(dur_locale), target, save :: locale_tg
   type(dur_locale), target, save :: locale_th
   type(dur_locale), target, save :: locale_ti
   type(dur_locale), target, save :: locale_tig
   type(dur_locale), target, save :: locale_tk
   type(dur_locale), target, save :: locale_tn
+  type(dur_locale), target, save :: locale_tpi
   type(dur_locale), target, save :: locale_tr
   type(dur_locale), target, save :: locale_ts
   type(dur_locale), target, save :: locale_tzm
@@ -2196,6 +2210,99 @@ contains
 
   end subroutine init_bg
 
+  ! Source: duration/locales/src/bi.json
+  subroutine init_bi()
+    locale_bi%code = 'bi'
+    locale_bi%plural => plural_other_only
+
+    locale_bi%units%second%simple = '{n} sekon'
+    locale_bi%units%second%has_simple = .true.
+    locale_bi%units%minute%simple = '{n} minit'
+    locale_bi%units%minute%has_simple = .true.
+    locale_bi%units%hour%simple = '{n} aoa'
+    locale_bi%units%hour%has_simple = .true.
+    locale_bi%units%day%simple = '{n} dei'
+    locale_bi%units%day%has_simple = .true.
+    locale_bi%units%week%simple = '{n} wik'
+    locale_bi%units%week%has_simple = .true.
+    locale_bi%units%month%simple = '{n} manis'
+    locale_bi%units%month%has_simple = .true.
+    locale_bi%units%year%simple = '{n} yia'
+    locale_bi%units%year%has_simple = .true.
+
+    locale_bi%half = '{n} mo haf'
+    locale_bi%delimiter = ', '
+    locale_bi%delimiter_len = 2
+    locale_bi%just_now = 'jas nao'
+    locale_bi%ago = '{0} bifo'
+    locale_bi%in_future = 'long {0}'
+
+    locale_bi%has_short = .true.
+    locale_bi%short_override%has_second = .true.
+    locale_bi%short_override%second%simple = '{n} sek'
+    locale_bi%short_override%second%has_simple = .true.
+    locale_bi%short_override%has_minute = .true.
+    locale_bi%short_override%minute%simple = '{n} min'
+    locale_bi%short_override%minute%has_simple = .true.
+    locale_bi%short_override%has_hour = .true.
+    locale_bi%short_override%hour%simple = '{n} aoa'
+    locale_bi%short_override%hour%has_simple = .true.
+    locale_bi%short_override%has_day = .true.
+    locale_bi%short_override%day%simple = '{n} dei'
+    locale_bi%short_override%day%has_simple = .true.
+    locale_bi%short_override%has_week = .true.
+    locale_bi%short_override%week%simple = '{n} wik'
+    locale_bi%short_override%week%has_simple = .true.
+    locale_bi%short_override%has_month = .true.
+    locale_bi%short_override%month%simple = '{n} man'
+    locale_bi%short_override%month%has_simple = .true.
+    locale_bi%short_override%has_year = .true.
+    locale_bi%short_override%year%simple = '{n} yia'
+    locale_bi%short_override%year%has_simple = .true.
+    locale_bi%short_override%has_half = .false.
+    locale_bi%short_override%half = ''
+    locale_bi%short_override%has_delimiter = .false.
+    locale_bi%short_override%delimiter = ''
+    locale_bi%short_override%delimiter_len = 0
+    locale_bi%short_override%has_ago = .true.
+    locale_bi%short_override%ago = '{0} bifo'
+    locale_bi%short_override%has_in_future = .true.
+    locale_bi%short_override%in_future = 'long {0}'
+
+    locale_bi%has_compact = .true.
+    locale_bi%compact_override%has_second = .true.
+    locale_bi%compact_override%second%simple = '{n}s'
+    locale_bi%compact_override%second%has_simple = .true.
+    locale_bi%compact_override%has_minute = .true.
+    locale_bi%compact_override%minute%simple = '{n}m'
+    locale_bi%compact_override%minute%has_simple = .true.
+    locale_bi%compact_override%has_hour = .true.
+    locale_bi%compact_override%hour%simple = '{n}h'
+    locale_bi%compact_override%hour%has_simple = .true.
+    locale_bi%compact_override%has_day = .true.
+    locale_bi%compact_override%day%simple = '{n}d'
+    locale_bi%compact_override%day%has_simple = .true.
+    locale_bi%compact_override%has_week = .true.
+    locale_bi%compact_override%week%simple = '{n}w'
+    locale_bi%compact_override%week%has_simple = .true.
+    locale_bi%compact_override%has_month = .true.
+    locale_bi%compact_override%month%simple = '{n}mo'
+    locale_bi%compact_override%month%has_simple = .true.
+    locale_bi%compact_override%has_year = .true.
+    locale_bi%compact_override%year%simple = '{n}y'
+    locale_bi%compact_override%year%has_simple = .true.
+    locale_bi%compact_override%has_half = .false.
+    locale_bi%compact_override%half = ''
+    locale_bi%compact_override%has_delimiter = .true.
+    locale_bi%compact_override%delimiter = ''
+    locale_bi%compact_override%delimiter_len = 0
+    locale_bi%compact_override%has_ago = .true.
+    locale_bi%compact_override%ago = '{0} bifo'
+    locale_bi%compact_override%has_in_future = .true.
+    locale_bi%compact_override%in_future = 'long {0}'
+
+  end subroutine init_bi
+
   ! Source: duration/locales/src/bm.json
   subroutine init_bm()
     locale_bm%code = 'bm'
@@ -3020,6 +3127,99 @@ contains
     locale_ca%compact_override%in_future = 'd''aquí a {0}'
 
   end subroutine init_ca
+
+  ! Source: duration/locales/src/cak.json
+  subroutine init_cak()
+    locale_cak%code = 'cak'
+    locale_cak%plural => plural_other_only
+
+    locale_cak%units%second%simple = '{n} tz''aqät'
+    locale_cak%units%second%has_simple = .true.
+    locale_cak%units%minute%simple = '{n} ch''utik ramaj'
+    locale_cak%units%minute%has_simple = .true.
+    locale_cak%units%hour%simple = '{n} ramaj'
+    locale_cak%units%hour%has_simple = .true.
+    locale_cak%units%day%simple = '{n} q''ij'
+    locale_cak%units%day%has_simple = .true.
+    locale_cak%units%week%simple = '{n} wuqq''ij'
+    locale_cak%units%week%has_simple = .true.
+    locale_cak%units%month%simple = '{n} ik'''
+    locale_cak%units%month%has_simple = .true.
+    locale_cak%units%year%simple = '{n} junab'''
+    locale_cak%units%year%has_simple = .true.
+
+    locale_cak%half = '{0} nik''aj'
+    locale_cak%delimiter = ', '
+    locale_cak%delimiter_len = 2
+    locale_cak%just_now = 'wakami'
+    locale_cak%ago = '{0} k''o chi'
+    locale_cak%in_future = 'pa {0}'
+
+    locale_cak%has_short = .true.
+    locale_cak%short_override%has_second = .true.
+    locale_cak%short_override%second%simple = '{n} tz''aq.'
+    locale_cak%short_override%second%has_simple = .true.
+    locale_cak%short_override%has_minute = .true.
+    locale_cak%short_override%minute%simple = '{n} ch''ut.'
+    locale_cak%short_override%minute%has_simple = .true.
+    locale_cak%short_override%has_hour = .true.
+    locale_cak%short_override%hour%simple = '{n} ram.'
+    locale_cak%short_override%hour%has_simple = .true.
+    locale_cak%short_override%has_day = .true.
+    locale_cak%short_override%day%simple = '{n} q''ij'
+    locale_cak%short_override%day%has_simple = .true.
+    locale_cak%short_override%has_week = .true.
+    locale_cak%short_override%week%simple = '{n} wuqq''ij'
+    locale_cak%short_override%week%has_simple = .true.
+    locale_cak%short_override%has_month = .true.
+    locale_cak%short_override%month%simple = '{n} ik'''
+    locale_cak%short_override%month%has_simple = .true.
+    locale_cak%short_override%has_year = .true.
+    locale_cak%short_override%year%simple = '{n} jun.'
+    locale_cak%short_override%year%has_simple = .true.
+    locale_cak%short_override%has_half = .false.
+    locale_cak%short_override%half = ''
+    locale_cak%short_override%has_delimiter = .false.
+    locale_cak%short_override%delimiter = ''
+    locale_cak%short_override%delimiter_len = 0
+    locale_cak%short_override%has_ago = .true.
+    locale_cak%short_override%ago = '{0} k''o chi'
+    locale_cak%short_override%has_in_future = .true.
+    locale_cak%short_override%in_future = 'pa {0}'
+
+    locale_cak%has_compact = .true.
+    locale_cak%compact_override%has_second = .true.
+    locale_cak%compact_override%second%simple = '{n}s'
+    locale_cak%compact_override%second%has_simple = .true.
+    locale_cak%compact_override%has_minute = .true.
+    locale_cak%compact_override%minute%simple = '{n}m'
+    locale_cak%compact_override%minute%has_simple = .true.
+    locale_cak%compact_override%has_hour = .true.
+    locale_cak%compact_override%hour%simple = '{n}h'
+    locale_cak%compact_override%hour%has_simple = .true.
+    locale_cak%compact_override%has_day = .true.
+    locale_cak%compact_override%day%simple = '{n}d'
+    locale_cak%compact_override%day%has_simple = .true.
+    locale_cak%compact_override%has_week = .true.
+    locale_cak%compact_override%week%simple = '{n}w'
+    locale_cak%compact_override%week%has_simple = .true.
+    locale_cak%compact_override%has_month = .true.
+    locale_cak%compact_override%month%simple = '{n}mo'
+    locale_cak%compact_override%month%has_simple = .true.
+    locale_cak%compact_override%has_year = .true.
+    locale_cak%compact_override%year%simple = '{n}y'
+    locale_cak%compact_override%year%has_simple = .true.
+    locale_cak%compact_override%has_half = .false.
+    locale_cak%compact_override%half = ''
+    locale_cak%compact_override%has_delimiter = .true.
+    locale_cak%compact_override%delimiter = ''
+    locale_cak%compact_override%delimiter_len = 0
+    locale_cak%compact_override%has_ago = .true.
+    locale_cak%compact_override%ago = '{0} k''o chi'
+    locale_cak%compact_override%has_in_future = .true.
+    locale_cak%compact_override%in_future = 'pa {0}'
+
+  end subroutine init_cak
 
   ! Source: duration/locales/src/ceb.json
   subroutine init_ceb()
@@ -4212,6 +4412,99 @@ contains
 
   end subroutine init_dje
 
+  ! Source: duration/locales/src/dv.json
+  subroutine init_dv()
+    locale_dv%code = 'dv'
+    locale_dv%plural => plural_other_only
+
+    locale_dv%units%second%simple = '{n} ސިކުންތު'
+    locale_dv%units%second%has_simple = .true.
+    locale_dv%units%minute%simple = '{n} މިނެޓު'
+    locale_dv%units%minute%has_simple = .true.
+    locale_dv%units%hour%simple = '{n} ގަޑިއިރު'
+    locale_dv%units%hour%has_simple = .true.
+    locale_dv%units%day%simple = '{n} ދުވަސް'
+    locale_dv%units%day%has_simple = .true.
+    locale_dv%units%week%simple = '{n} ހަފްތާ'
+    locale_dv%units%week%has_simple = .true.
+    locale_dv%units%month%simple = '{n} މަސް'
+    locale_dv%units%month%has_simple = .true.
+    locale_dv%units%year%simple = '{n} އަހަރު'
+    locale_dv%units%year%has_simple = .true.
+
+    locale_dv%half = '{0} ބައި'
+    locale_dv%delimiter = '، '
+    locale_dv%delimiter_len = 3
+    locale_dv%just_now = 'މިހާރު'
+    locale_dv%ago = 'މީގެ {0} ކުރިން'
+    locale_dv%in_future = '{0} ފަހުން'
+
+    locale_dv%has_short = .true.
+    locale_dv%short_override%has_second = .true.
+    locale_dv%short_override%second%simple = '{n} ސިކު'
+    locale_dv%short_override%second%has_simple = .true.
+    locale_dv%short_override%has_minute = .true.
+    locale_dv%short_override%minute%simple = '{n} މިނެ'
+    locale_dv%short_override%minute%has_simple = .true.
+    locale_dv%short_override%has_hour = .true.
+    locale_dv%short_override%hour%simple = '{n} ގަޑި'
+    locale_dv%short_override%hour%has_simple = .true.
+    locale_dv%short_override%has_day = .true.
+    locale_dv%short_override%day%simple = '{n} ދުވަ'
+    locale_dv%short_override%day%has_simple = .true.
+    locale_dv%short_override%has_week = .true.
+    locale_dv%short_override%week%simple = '{n} ހަފް'
+    locale_dv%short_override%week%has_simple = .true.
+    locale_dv%short_override%has_month = .true.
+    locale_dv%short_override%month%simple = '{n} މަސް'
+    locale_dv%short_override%month%has_simple = .true.
+    locale_dv%short_override%has_year = .true.
+    locale_dv%short_override%year%simple = '{n} އަހަ'
+    locale_dv%short_override%year%has_simple = .true.
+    locale_dv%short_override%has_half = .false.
+    locale_dv%short_override%half = ''
+    locale_dv%short_override%has_delimiter = .false.
+    locale_dv%short_override%delimiter = ''
+    locale_dv%short_override%delimiter_len = 0
+    locale_dv%short_override%has_ago = .true.
+    locale_dv%short_override%ago = 'މީގެ {0} ކުރިން'
+    locale_dv%short_override%has_in_future = .true.
+    locale_dv%short_override%in_future = '{0} ފަހުން'
+
+    locale_dv%has_compact = .true.
+    locale_dv%compact_override%has_second = .true.
+    locale_dv%compact_override%second%simple = '{n}s'
+    locale_dv%compact_override%second%has_simple = .true.
+    locale_dv%compact_override%has_minute = .true.
+    locale_dv%compact_override%minute%simple = '{n}m'
+    locale_dv%compact_override%minute%has_simple = .true.
+    locale_dv%compact_override%has_hour = .true.
+    locale_dv%compact_override%hour%simple = '{n}h'
+    locale_dv%compact_override%hour%has_simple = .true.
+    locale_dv%compact_override%has_day = .true.
+    locale_dv%compact_override%day%simple = '{n}d'
+    locale_dv%compact_override%day%has_simple = .true.
+    locale_dv%compact_override%has_week = .true.
+    locale_dv%compact_override%week%simple = '{n}w'
+    locale_dv%compact_override%week%has_simple = .true.
+    locale_dv%compact_override%has_month = .true.
+    locale_dv%compact_override%month%simple = '{n}mo'
+    locale_dv%compact_override%month%has_simple = .true.
+    locale_dv%compact_override%has_year = .true.
+    locale_dv%compact_override%year%simple = '{n}y'
+    locale_dv%compact_override%year%has_simple = .true.
+    locale_dv%compact_override%has_half = .false.
+    locale_dv%compact_override%half = ''
+    locale_dv%compact_override%has_delimiter = .true.
+    locale_dv%compact_override%delimiter = ''
+    locale_dv%compact_override%delimiter_len = 0
+    locale_dv%compact_override%has_ago = .true.
+    locale_dv%compact_override%ago = 'މީގެ {0} ކުރިން'
+    locale_dv%compact_override%has_in_future = .true.
+    locale_dv%compact_override%in_future = '{0} ފަހުން'
+
+  end subroutine init_dv
+
   ! Source: duration/locales/src/dyu.json
   subroutine init_dyu()
     locale_dyu%code = 'dyu'
@@ -4304,6 +4597,99 @@ contains
     locale_dyu%compact_override%in_future = 'ka {0}'
 
   end subroutine init_dyu
+
+  ! Source: duration/locales/src/dz.json
+  subroutine init_dz()
+    locale_dz%code = 'dz'
+    locale_dz%plural => plural_other_only
+
+    locale_dz%units%second%simple = 'སྐར་ཆ་ {n}'
+    locale_dz%units%second%has_simple = .true.
+    locale_dz%units%minute%simple = 'སྐར་མ་ {n}'
+    locale_dz%units%minute%has_simple = .true.
+    locale_dz%units%hour%simple = 'ཆུ་ཚོད་ {n}'
+    locale_dz%units%hour%has_simple = .true.
+    locale_dz%units%day%simple = 'ཉིན་ {n}'
+    locale_dz%units%day%has_simple = .true.
+    locale_dz%units%week%simple = 'བདུན་ཕྲག་ {n}'
+    locale_dz%units%week%has_simple = .true.
+    locale_dz%units%month%simple = 'ཟླ་ {n}'
+    locale_dz%units%month%has_simple = .true.
+    locale_dz%units%year%simple = 'ལོ་ {n}'
+    locale_dz%units%year%has_simple = .true.
+
+    locale_dz%half = '{0} ཕྱེད'
+    locale_dz%delimiter = ' '
+    locale_dz%delimiter_len = 1
+    locale_dz%just_now = 'ད་ལྟ'
+    locale_dz%ago = '{0} ཧེ་མ'
+    locale_dz%in_future = '{0} ཤུལ་ལས'
+
+    locale_dz%has_short = .true.
+    locale_dz%short_override%has_second = .true.
+    locale_dz%short_override%second%simple = 'སྐར་ཆ་ {n}'
+    locale_dz%short_override%second%has_simple = .true.
+    locale_dz%short_override%has_minute = .true.
+    locale_dz%short_override%minute%simple = 'སྐར་མ་ {n}'
+    locale_dz%short_override%minute%has_simple = .true.
+    locale_dz%short_override%has_hour = .true.
+    locale_dz%short_override%hour%simple = 'ཆུ་ཚོད་ {n}'
+    locale_dz%short_override%hour%has_simple = .true.
+    locale_dz%short_override%has_day = .true.
+    locale_dz%short_override%day%simple = 'ཉིན་ {n}'
+    locale_dz%short_override%day%has_simple = .true.
+    locale_dz%short_override%has_week = .true.
+    locale_dz%short_override%week%simple = 'བདུན་ཕྲག་ {n}'
+    locale_dz%short_override%week%has_simple = .true.
+    locale_dz%short_override%has_month = .true.
+    locale_dz%short_override%month%simple = 'ཟླ་ {n}'
+    locale_dz%short_override%month%has_simple = .true.
+    locale_dz%short_override%has_year = .true.
+    locale_dz%short_override%year%simple = 'ལོ་ {n}'
+    locale_dz%short_override%year%has_simple = .true.
+    locale_dz%short_override%has_half = .false.
+    locale_dz%short_override%half = ''
+    locale_dz%short_override%has_delimiter = .false.
+    locale_dz%short_override%delimiter = ''
+    locale_dz%short_override%delimiter_len = 0
+    locale_dz%short_override%has_ago = .true.
+    locale_dz%short_override%ago = '{0} ཧེ་མ'
+    locale_dz%short_override%has_in_future = .true.
+    locale_dz%short_override%in_future = '{0} ཤུལ་ལས'
+
+    locale_dz%has_compact = .true.
+    locale_dz%compact_override%has_second = .true.
+    locale_dz%compact_override%second%simple = '{n}s'
+    locale_dz%compact_override%second%has_simple = .true.
+    locale_dz%compact_override%has_minute = .true.
+    locale_dz%compact_override%minute%simple = '{n}m'
+    locale_dz%compact_override%minute%has_simple = .true.
+    locale_dz%compact_override%has_hour = .true.
+    locale_dz%compact_override%hour%simple = '{n}h'
+    locale_dz%compact_override%hour%has_simple = .true.
+    locale_dz%compact_override%has_day = .true.
+    locale_dz%compact_override%day%simple = '{n}d'
+    locale_dz%compact_override%day%has_simple = .true.
+    locale_dz%compact_override%has_week = .true.
+    locale_dz%compact_override%week%simple = '{n}w'
+    locale_dz%compact_override%week%has_simple = .true.
+    locale_dz%compact_override%has_month = .true.
+    locale_dz%compact_override%month%simple = '{n}mo'
+    locale_dz%compact_override%month%has_simple = .true.
+    locale_dz%compact_override%has_year = .true.
+    locale_dz%compact_override%year%simple = '{n}y'
+    locale_dz%compact_override%year%has_simple = .true.
+    locale_dz%compact_override%has_half = .false.
+    locale_dz%compact_override%half = ''
+    locale_dz%compact_override%has_delimiter = .true.
+    locale_dz%compact_override%delimiter = ''
+    locale_dz%compact_override%delimiter_len = 0
+    locale_dz%compact_override%has_ago = .true.
+    locale_dz%compact_override%ago = '{0} ཧེ་མ'
+    locale_dz%compact_override%has_in_future = .true.
+    locale_dz%compact_override%in_future = '{0} ཤུལ་ལས'
+
+  end subroutine init_dz
 
   ! Source: duration/locales/src/ee.json
   subroutine init_ee()
@@ -6288,6 +6674,99 @@ contains
 
   end subroutine init_fil
 
+  ! Source: duration/locales/src/fj.json
+  subroutine init_fj()
+    locale_fj%code = 'fj'
+    locale_fj%plural => plural_other_only
+
+    locale_fj%units%second%simple = '{n} na sekodi'
+    locale_fj%units%second%has_simple = .true.
+    locale_fj%units%minute%simple = '{n} na miniti'
+    locale_fj%units%minute%has_simple = .true.
+    locale_fj%units%hour%simple = '{n} na aua'
+    locale_fj%units%hour%has_simple = .true.
+    locale_fj%units%day%simple = '{n} na siga'
+    locale_fj%units%day%has_simple = .true.
+    locale_fj%units%week%simple = '{n} na macawa'
+    locale_fj%units%week%has_simple = .true.
+    locale_fj%units%month%simple = '{n} na vula'
+    locale_fj%units%month%has_simple = .true.
+    locale_fj%units%year%simple = '{n} na yabaki'
+    locale_fj%units%year%has_simple = .true.
+
+    locale_fj%half = '{n} kei na levu ni wasei'
+    locale_fj%delimiter = ', '
+    locale_fj%delimiter_len = 2
+    locale_fj%just_now = 'edaidai ga'
+    locale_fj%ago = '{0} sa oti'
+    locale_fj%in_future = 'ena {0}'
+
+    locale_fj%has_short = .true.
+    locale_fj%short_override%has_second = .true.
+    locale_fj%short_override%second%simple = '{n} sek'
+    locale_fj%short_override%second%has_simple = .true.
+    locale_fj%short_override%has_minute = .true.
+    locale_fj%short_override%minute%simple = '{n} min'
+    locale_fj%short_override%minute%has_simple = .true.
+    locale_fj%short_override%has_hour = .true.
+    locale_fj%short_override%hour%simple = '{n} aua'
+    locale_fj%short_override%hour%has_simple = .true.
+    locale_fj%short_override%has_day = .true.
+    locale_fj%short_override%day%simple = '{n} siga'
+    locale_fj%short_override%day%has_simple = .true.
+    locale_fj%short_override%has_week = .true.
+    locale_fj%short_override%week%simple = '{n} mac'
+    locale_fj%short_override%week%has_simple = .true.
+    locale_fj%short_override%has_month = .true.
+    locale_fj%short_override%month%simple = '{n} vul'
+    locale_fj%short_override%month%has_simple = .true.
+    locale_fj%short_override%has_year = .true.
+    locale_fj%short_override%year%simple = '{n} yab'
+    locale_fj%short_override%year%has_simple = .true.
+    locale_fj%short_override%has_half = .false.
+    locale_fj%short_override%half = ''
+    locale_fj%short_override%has_delimiter = .false.
+    locale_fj%short_override%delimiter = ''
+    locale_fj%short_override%delimiter_len = 0
+    locale_fj%short_override%has_ago = .true.
+    locale_fj%short_override%ago = '{0} sa oti'
+    locale_fj%short_override%has_in_future = .true.
+    locale_fj%short_override%in_future = 'ena {0}'
+
+    locale_fj%has_compact = .true.
+    locale_fj%compact_override%has_second = .true.
+    locale_fj%compact_override%second%simple = '{n}s'
+    locale_fj%compact_override%second%has_simple = .true.
+    locale_fj%compact_override%has_minute = .true.
+    locale_fj%compact_override%minute%simple = '{n}m'
+    locale_fj%compact_override%minute%has_simple = .true.
+    locale_fj%compact_override%has_hour = .true.
+    locale_fj%compact_override%hour%simple = '{n}h'
+    locale_fj%compact_override%hour%has_simple = .true.
+    locale_fj%compact_override%has_day = .true.
+    locale_fj%compact_override%day%simple = '{n}d'
+    locale_fj%compact_override%day%has_simple = .true.
+    locale_fj%compact_override%has_week = .true.
+    locale_fj%compact_override%week%simple = '{n}w'
+    locale_fj%compact_override%week%has_simple = .true.
+    locale_fj%compact_override%has_month = .true.
+    locale_fj%compact_override%month%simple = '{n}mo'
+    locale_fj%compact_override%month%has_simple = .true.
+    locale_fj%compact_override%has_year = .true.
+    locale_fj%compact_override%year%simple = '{n}y'
+    locale_fj%compact_override%year%has_simple = .true.
+    locale_fj%compact_override%has_half = .false.
+    locale_fj%compact_override%half = ''
+    locale_fj%compact_override%has_delimiter = .true.
+    locale_fj%compact_override%delimiter = ''
+    locale_fj%compact_override%delimiter_len = 0
+    locale_fj%compact_override%has_ago = .true.
+    locale_fj%compact_override%ago = '{0} sa oti'
+    locale_fj%compact_override%has_in_future = .true.
+    locale_fj%compact_override%in_future = 'ena {0}'
+
+  end subroutine init_fj
+
   ! Source: duration/locales/src/fon.json
   subroutine init_fon()
     locale_fon%code = 'fon'
@@ -8151,6 +8630,99 @@ contains
 
   end subroutine init_hi
 
+  ! Source: duration/locales/src/hmn.json
+  subroutine init_hmn()
+    locale_hmn%code = 'hmn'
+    locale_hmn%plural => plural_other_only
+
+    locale_hmn%units%second%simple = '{n} chib'
+    locale_hmn%units%second%has_simple = .true.
+    locale_hmn%units%minute%simple = '{n} feeb'
+    locale_hmn%units%minute%has_simple = .true.
+    locale_hmn%units%hour%simple = '{n} teev'
+    locale_hmn%units%hour%has_simple = .true.
+    locale_hmn%units%day%simple = '{n} hnub'
+    locale_hmn%units%day%has_simple = .true.
+    locale_hmn%units%week%simple = '{n} lub lim tiam'
+    locale_hmn%units%week%has_simple = .true.
+    locale_hmn%units%month%simple = '{n} lub hlis'
+    locale_hmn%units%month%has_simple = .true.
+    locale_hmn%units%year%simple = '{n} xyoo'
+    locale_hmn%units%year%has_simple = .true.
+
+    locale_hmn%half = '{0} thiab ib nrab'
+    locale_hmn%delimiter = ', '
+    locale_hmn%delimiter_len = 2
+    locale_hmn%just_now = 'tam sim no'
+    locale_hmn%ago = '{0} dhau los'
+    locale_hmn%in_future = 'hauv {0}'
+
+    locale_hmn%has_short = .true.
+    locale_hmn%short_override%has_second = .true.
+    locale_hmn%short_override%second%simple = '{n} chib'
+    locale_hmn%short_override%second%has_simple = .true.
+    locale_hmn%short_override%has_minute = .true.
+    locale_hmn%short_override%minute%simple = '{n} feeb'
+    locale_hmn%short_override%minute%has_simple = .true.
+    locale_hmn%short_override%has_hour = .true.
+    locale_hmn%short_override%hour%simple = '{n} teev'
+    locale_hmn%short_override%hour%has_simple = .true.
+    locale_hmn%short_override%has_day = .true.
+    locale_hmn%short_override%day%simple = '{n} hnub'
+    locale_hmn%short_override%day%has_simple = .true.
+    locale_hmn%short_override%has_week = .true.
+    locale_hmn%short_override%week%simple = '{n} lim tiam'
+    locale_hmn%short_override%week%has_simple = .true.
+    locale_hmn%short_override%has_month = .true.
+    locale_hmn%short_override%month%simple = '{n} hlis'
+    locale_hmn%short_override%month%has_simple = .true.
+    locale_hmn%short_override%has_year = .true.
+    locale_hmn%short_override%year%simple = '{n} xyoo'
+    locale_hmn%short_override%year%has_simple = .true.
+    locale_hmn%short_override%has_half = .false.
+    locale_hmn%short_override%half = ''
+    locale_hmn%short_override%has_delimiter = .false.
+    locale_hmn%short_override%delimiter = ''
+    locale_hmn%short_override%delimiter_len = 0
+    locale_hmn%short_override%has_ago = .true.
+    locale_hmn%short_override%ago = '{0} dhau los'
+    locale_hmn%short_override%has_in_future = .true.
+    locale_hmn%short_override%in_future = 'hauv {0}'
+
+    locale_hmn%has_compact = .true.
+    locale_hmn%compact_override%has_second = .true.
+    locale_hmn%compact_override%second%simple = '{n}s'
+    locale_hmn%compact_override%second%has_simple = .true.
+    locale_hmn%compact_override%has_minute = .true.
+    locale_hmn%compact_override%minute%simple = '{n}m'
+    locale_hmn%compact_override%minute%has_simple = .true.
+    locale_hmn%compact_override%has_hour = .true.
+    locale_hmn%compact_override%hour%simple = '{n}h'
+    locale_hmn%compact_override%hour%has_simple = .true.
+    locale_hmn%compact_override%has_day = .true.
+    locale_hmn%compact_override%day%simple = '{n}d'
+    locale_hmn%compact_override%day%has_simple = .true.
+    locale_hmn%compact_override%has_week = .true.
+    locale_hmn%compact_override%week%simple = '{n}w'
+    locale_hmn%compact_override%week%has_simple = .true.
+    locale_hmn%compact_override%has_month = .true.
+    locale_hmn%compact_override%month%simple = '{n}mo'
+    locale_hmn%compact_override%month%has_simple = .true.
+    locale_hmn%compact_override%has_year = .true.
+    locale_hmn%compact_override%year%simple = '{n}y'
+    locale_hmn%compact_override%year%has_simple = .true.
+    locale_hmn%compact_override%has_half = .false.
+    locale_hmn%compact_override%half = ''
+    locale_hmn%compact_override%has_delimiter = .true.
+    locale_hmn%compact_override%delimiter = ''
+    locale_hmn%compact_override%delimiter_len = 0
+    locale_hmn%compact_override%has_ago = .true.
+    locale_hmn%compact_override%ago = '{0} dhau los'
+    locale_hmn%compact_override%has_in_future = .true.
+    locale_hmn%compact_override%in_future = 'hauv {0}'
+
+  end subroutine init_hmn
+
   ! Source: duration/locales/src/hr.json
   subroutine init_hr()
     locale_hr%code = 'hr'
@@ -9735,6 +10307,99 @@ contains
 
   end subroutine init_kbp
 
+  ! Source: duration/locales/src/kek.json
+  subroutine init_kek()
+    locale_kek%code = 'kek'
+    locale_kek%plural => plural_other_only
+
+    locale_kek%units%second%simple = '{n} segundo'
+    locale_kek%units%second%has_simple = .true.
+    locale_kek%units%minute%simple = '{n} minuto'
+    locale_kek%units%minute%has_simple = .true.
+    locale_kek%units%hour%simple = '{n} hora'
+    locale_kek%units%hour%has_simple = .true.
+    locale_kek%units%day%simple = '{n} q''e'
+    locale_kek%units%day%has_simple = .true.
+    locale_kek%units%week%simple = '{n} seman'
+    locale_kek%units%week%has_simple = .true.
+    locale_kek%units%month%simple = '{n} po'
+    locale_kek%units%month%has_simple = .true.
+    locale_kek%units%year%simple = '{n} chihab'''
+    locale_kek%units%year%has_simple = .true.
+
+    locale_kek%half = '{0} ro'''
+    locale_kek%delimiter = ', '
+    locale_kek%delimiter_len = 2
+    locale_kek%just_now = 'anaqwan'
+    locale_kek%ago = '{0} qakab'''
+    locale_kek%in_future = 'chi {0}'
+
+    locale_kek%has_short = .true.
+    locale_kek%short_override%has_second = .true.
+    locale_kek%short_override%second%simple = '{n} seg.'
+    locale_kek%short_override%second%has_simple = .true.
+    locale_kek%short_override%has_minute = .true.
+    locale_kek%short_override%minute%simple = '{n} min.'
+    locale_kek%short_override%minute%has_simple = .true.
+    locale_kek%short_override%has_hour = .true.
+    locale_kek%short_override%hour%simple = '{n} hora'
+    locale_kek%short_override%hour%has_simple = .true.
+    locale_kek%short_override%has_day = .true.
+    locale_kek%short_override%day%simple = '{n} q''e'
+    locale_kek%short_override%day%has_simple = .true.
+    locale_kek%short_override%has_week = .true.
+    locale_kek%short_override%week%simple = '{n} sem.'
+    locale_kek%short_override%week%has_simple = .true.
+    locale_kek%short_override%has_month = .true.
+    locale_kek%short_override%month%simple = '{n} po'
+    locale_kek%short_override%month%has_simple = .true.
+    locale_kek%short_override%has_year = .true.
+    locale_kek%short_override%year%simple = '{n} chih.'
+    locale_kek%short_override%year%has_simple = .true.
+    locale_kek%short_override%has_half = .false.
+    locale_kek%short_override%half = ''
+    locale_kek%short_override%has_delimiter = .false.
+    locale_kek%short_override%delimiter = ''
+    locale_kek%short_override%delimiter_len = 0
+    locale_kek%short_override%has_ago = .true.
+    locale_kek%short_override%ago = '{0} qakab'''
+    locale_kek%short_override%has_in_future = .true.
+    locale_kek%short_override%in_future = 'chi {0}'
+
+    locale_kek%has_compact = .true.
+    locale_kek%compact_override%has_second = .true.
+    locale_kek%compact_override%second%simple = '{n}s'
+    locale_kek%compact_override%second%has_simple = .true.
+    locale_kek%compact_override%has_minute = .true.
+    locale_kek%compact_override%minute%simple = '{n}m'
+    locale_kek%compact_override%minute%has_simple = .true.
+    locale_kek%compact_override%has_hour = .true.
+    locale_kek%compact_override%hour%simple = '{n}h'
+    locale_kek%compact_override%hour%has_simple = .true.
+    locale_kek%compact_override%has_day = .true.
+    locale_kek%compact_override%day%simple = '{n}d'
+    locale_kek%compact_override%day%has_simple = .true.
+    locale_kek%compact_override%has_week = .true.
+    locale_kek%compact_override%week%simple = '{n}w'
+    locale_kek%compact_override%week%has_simple = .true.
+    locale_kek%compact_override%has_month = .true.
+    locale_kek%compact_override%month%simple = '{n}mo'
+    locale_kek%compact_override%month%has_simple = .true.
+    locale_kek%compact_override%has_year = .true.
+    locale_kek%compact_override%year%simple = '{n}y'
+    locale_kek%compact_override%year%has_simple = .true.
+    locale_kek%compact_override%has_half = .false.
+    locale_kek%compact_override%half = ''
+    locale_kek%compact_override%has_delimiter = .true.
+    locale_kek%compact_override%delimiter = ''
+    locale_kek%compact_override%delimiter_len = 0
+    locale_kek%compact_override%has_ago = .true.
+    locale_kek%compact_override%ago = '{0} qakab'''
+    locale_kek%compact_override%has_in_future = .true.
+    locale_kek%compact_override%in_future = 'chi {0}'
+
+  end subroutine init_kek
+
   ! Source: duration/locales/src/kk.json
   subroutine init_kk()
     locale_kk%code = 'kk'
@@ -9875,6 +10540,99 @@ contains
     locale_kk%compact_override%in_future = '{0} кейін'
 
   end subroutine init_kk
+
+  ! Source: duration/locales/src/kl.json
+  subroutine init_kl()
+    locale_kl%code = 'kl'
+    locale_kl%plural => plural_other_only
+
+    locale_kl%units%second%simple = 'sekundit {n}'
+    locale_kl%units%second%has_simple = .true.
+    locale_kl%units%minute%simple = 'minutsit {n}'
+    locale_kl%units%minute%has_simple = .true.
+    locale_kl%units%hour%simple = 'nalunaaqutap akunnera {n}'
+    locale_kl%units%hour%has_simple = .true.
+    locale_kl%units%day%simple = 'ullut {n}'
+    locale_kl%units%day%has_simple = .true.
+    locale_kl%units%week%simple = 'sapaatit {n}'
+    locale_kl%units%week%has_simple = .true.
+    locale_kl%units%month%simple = 'qaammatit {n}'
+    locale_kl%units%month%has_simple = .true.
+    locale_kl%units%year%simple = 'ukiut {n}'
+    locale_kl%units%year%has_simple = .true.
+
+    locale_kl%half = '{0} affaa'
+    locale_kl%delimiter = ', '
+    locale_kl%delimiter_len = 2
+    locale_kl%just_now = 'maanna'
+    locale_kl%ago = '{0} matuma siorna'
+    locale_kl%in_future = '{0} siunissami'
+
+    locale_kl%has_short = .true.
+    locale_kl%short_override%has_second = .true.
+    locale_kl%short_override%second%simple = 'sek. {n}'
+    locale_kl%short_override%second%has_simple = .true.
+    locale_kl%short_override%has_minute = .true.
+    locale_kl%short_override%minute%simple = 'min. {n}'
+    locale_kl%short_override%minute%has_simple = .true.
+    locale_kl%short_override%has_hour = .true.
+    locale_kl%short_override%hour%simple = 'nal. {n}'
+    locale_kl%short_override%hour%has_simple = .true.
+    locale_kl%short_override%has_day = .true.
+    locale_kl%short_override%day%simple = 'ull. {n}'
+    locale_kl%short_override%day%has_simple = .true.
+    locale_kl%short_override%has_week = .true.
+    locale_kl%short_override%week%simple = 'sap. {n}'
+    locale_kl%short_override%week%has_simple = .true.
+    locale_kl%short_override%has_month = .true.
+    locale_kl%short_override%month%simple = 'qaam. {n}'
+    locale_kl%short_override%month%has_simple = .true.
+    locale_kl%short_override%has_year = .true.
+    locale_kl%short_override%year%simple = 'uk. {n}'
+    locale_kl%short_override%year%has_simple = .true.
+    locale_kl%short_override%has_half = .false.
+    locale_kl%short_override%half = ''
+    locale_kl%short_override%has_delimiter = .false.
+    locale_kl%short_override%delimiter = ''
+    locale_kl%short_override%delimiter_len = 0
+    locale_kl%short_override%has_ago = .true.
+    locale_kl%short_override%ago = '{0} matuma siorna'
+    locale_kl%short_override%has_in_future = .true.
+    locale_kl%short_override%in_future = '{0} siunissami'
+
+    locale_kl%has_compact = .true.
+    locale_kl%compact_override%has_second = .true.
+    locale_kl%compact_override%second%simple = '{n}s'
+    locale_kl%compact_override%second%has_simple = .true.
+    locale_kl%compact_override%has_minute = .true.
+    locale_kl%compact_override%minute%simple = '{n}m'
+    locale_kl%compact_override%minute%has_simple = .true.
+    locale_kl%compact_override%has_hour = .true.
+    locale_kl%compact_override%hour%simple = '{n}h'
+    locale_kl%compact_override%hour%has_simple = .true.
+    locale_kl%compact_override%has_day = .true.
+    locale_kl%compact_override%day%simple = '{n}d'
+    locale_kl%compact_override%day%has_simple = .true.
+    locale_kl%compact_override%has_week = .true.
+    locale_kl%compact_override%week%simple = '{n}w'
+    locale_kl%compact_override%week%has_simple = .true.
+    locale_kl%compact_override%has_month = .true.
+    locale_kl%compact_override%month%simple = '{n}mo'
+    locale_kl%compact_override%month%has_simple = .true.
+    locale_kl%compact_override%has_year = .true.
+    locale_kl%compact_override%year%simple = '{n}y'
+    locale_kl%compact_override%year%has_simple = .true.
+    locale_kl%compact_override%has_half = .false.
+    locale_kl%compact_override%half = ''
+    locale_kl%compact_override%has_delimiter = .true.
+    locale_kl%compact_override%delimiter = ''
+    locale_kl%compact_override%delimiter_len = 0
+    locale_kl%compact_override%has_ago = .true.
+    locale_kl%compact_override%ago = '{0} matuma siorna'
+    locale_kl%compact_override%has_in_future = .true.
+    locale_kl%compact_override%in_future = '{0} siunissami'
+
+  end subroutine init_kl
 
   ! Source: duration/locales/src/km.json
   subroutine init_km()
@@ -11948,6 +12706,99 @@ contains
     locale_lv%compact_override%in_future = 'pēc {0}'
 
   end subroutine init_lv
+
+  ! Source: duration/locales/src/mam.json
+  subroutine init_mam()
+    locale_mam%code = 'mam'
+    locale_mam%plural => plural_other_only
+
+    locale_mam%units%second%simple = '{n} segundo'
+    locale_mam%units%second%has_simple = .true.
+    locale_mam%units%minute%simple = '{n} minuto'
+    locale_mam%units%minute%has_simple = .true.
+    locale_mam%units%hour%simple = '{n} hora'
+    locale_mam%units%hour%has_simple = .true.
+    locale_mam%units%day%simple = '{n} q''ij'
+    locale_mam%units%day%has_simple = .true.
+    locale_mam%units%week%simple = '{n} xjaw'
+    locale_mam%units%week%has_simple = .true.
+    locale_mam%units%month%simple = '{n} xjaw'
+    locale_mam%units%month%has_simple = .true.
+    locale_mam%units%year%simple = '{n} ab''q''ii'
+    locale_mam%units%year%has_simple = .true.
+
+    locale_mam%half = '{0} nik'''
+    locale_mam%delimiter = ', '
+    locale_mam%delimiter_len = 2
+    locale_mam%just_now = 'iky''x'
+    locale_mam%ago = '{0} chi''j'
+    locale_mam%in_future = 'tu''n {0}'
+
+    locale_mam%has_short = .true.
+    locale_mam%short_override%has_second = .true.
+    locale_mam%short_override%second%simple = '{n} seg.'
+    locale_mam%short_override%second%has_simple = .true.
+    locale_mam%short_override%has_minute = .true.
+    locale_mam%short_override%minute%simple = '{n} min.'
+    locale_mam%short_override%minute%has_simple = .true.
+    locale_mam%short_override%has_hour = .true.
+    locale_mam%short_override%hour%simple = '{n} hora'
+    locale_mam%short_override%hour%has_simple = .true.
+    locale_mam%short_override%has_day = .true.
+    locale_mam%short_override%day%simple = '{n} q''ij'
+    locale_mam%short_override%day%has_simple = .true.
+    locale_mam%short_override%has_week = .true.
+    locale_mam%short_override%week%simple = '{n} xjaw'
+    locale_mam%short_override%week%has_simple = .true.
+    locale_mam%short_override%has_month = .true.
+    locale_mam%short_override%month%simple = '{n} xjaw'
+    locale_mam%short_override%month%has_simple = .true.
+    locale_mam%short_override%has_year = .true.
+    locale_mam%short_override%year%simple = '{n} ab''.'
+    locale_mam%short_override%year%has_simple = .true.
+    locale_mam%short_override%has_half = .false.
+    locale_mam%short_override%half = ''
+    locale_mam%short_override%has_delimiter = .false.
+    locale_mam%short_override%delimiter = ''
+    locale_mam%short_override%delimiter_len = 0
+    locale_mam%short_override%has_ago = .true.
+    locale_mam%short_override%ago = '{0} chi''j'
+    locale_mam%short_override%has_in_future = .true.
+    locale_mam%short_override%in_future = 'tu''n {0}'
+
+    locale_mam%has_compact = .true.
+    locale_mam%compact_override%has_second = .true.
+    locale_mam%compact_override%second%simple = '{n}s'
+    locale_mam%compact_override%second%has_simple = .true.
+    locale_mam%compact_override%has_minute = .true.
+    locale_mam%compact_override%minute%simple = '{n}m'
+    locale_mam%compact_override%minute%has_simple = .true.
+    locale_mam%compact_override%has_hour = .true.
+    locale_mam%compact_override%hour%simple = '{n}h'
+    locale_mam%compact_override%hour%has_simple = .true.
+    locale_mam%compact_override%has_day = .true.
+    locale_mam%compact_override%day%simple = '{n}d'
+    locale_mam%compact_override%day%has_simple = .true.
+    locale_mam%compact_override%has_week = .true.
+    locale_mam%compact_override%week%simple = '{n}w'
+    locale_mam%compact_override%week%has_simple = .true.
+    locale_mam%compact_override%has_month = .true.
+    locale_mam%compact_override%month%simple = '{n}mo'
+    locale_mam%compact_override%month%has_simple = .true.
+    locale_mam%compact_override%has_year = .true.
+    locale_mam%compact_override%year%simple = '{n}y'
+    locale_mam%compact_override%year%has_simple = .true.
+    locale_mam%compact_override%has_half = .false.
+    locale_mam%compact_override%half = ''
+    locale_mam%compact_override%has_delimiter = .true.
+    locale_mam%compact_override%delimiter = ''
+    locale_mam%compact_override%delimiter_len = 0
+    locale_mam%compact_override%has_ago = .true.
+    locale_mam%compact_override%ago = '{0} chi''j'
+    locale_mam%compact_override%has_in_future = .true.
+    locale_mam%compact_override%in_future = 'tu''n {0}'
+
+  end subroutine init_mam
 
   ! Source: duration/locales/src/men.json
   subroutine init_men()
@@ -15993,6 +16844,99 @@ contains
 
   end subroutine init_pa
 
+  ! Source: duration/locales/src/pis.json
+  subroutine init_pis()
+    locale_pis%code = 'pis'
+    locale_pis%plural => plural_other_only
+
+    locale_pis%units%second%simple = '{n} sekon'
+    locale_pis%units%second%has_simple = .true.
+    locale_pis%units%minute%simple = '{n} minit'
+    locale_pis%units%minute%has_simple = .true.
+    locale_pis%units%hour%simple = '{n} aoa'
+    locale_pis%units%hour%has_simple = .true.
+    locale_pis%units%day%simple = '{n} dei'
+    locale_pis%units%day%has_simple = .true.
+    locale_pis%units%week%simple = '{n} wik'
+    locale_pis%units%week%has_simple = .true.
+    locale_pis%units%month%simple = '{n} manis'
+    locale_pis%units%month%has_simple = .true.
+    locale_pis%units%year%simple = '{n} yia'
+    locale_pis%units%year%has_simple = .true.
+
+    locale_pis%half = '{n} en haf'
+    locale_pis%delimiter = ', '
+    locale_pis%delimiter_len = 2
+    locale_pis%just_now = 'nomoa nao'
+    locale_pis%ago = '{0} bifoa'
+    locale_pis%in_future = 'long {0}'
+
+    locale_pis%has_short = .true.
+    locale_pis%short_override%has_second = .true.
+    locale_pis%short_override%second%simple = '{n} sek'
+    locale_pis%short_override%second%has_simple = .true.
+    locale_pis%short_override%has_minute = .true.
+    locale_pis%short_override%minute%simple = '{n} min'
+    locale_pis%short_override%minute%has_simple = .true.
+    locale_pis%short_override%has_hour = .true.
+    locale_pis%short_override%hour%simple = '{n} aoa'
+    locale_pis%short_override%hour%has_simple = .true.
+    locale_pis%short_override%has_day = .true.
+    locale_pis%short_override%day%simple = '{n} dei'
+    locale_pis%short_override%day%has_simple = .true.
+    locale_pis%short_override%has_week = .true.
+    locale_pis%short_override%week%simple = '{n} wik'
+    locale_pis%short_override%week%has_simple = .true.
+    locale_pis%short_override%has_month = .true.
+    locale_pis%short_override%month%simple = '{n} man'
+    locale_pis%short_override%month%has_simple = .true.
+    locale_pis%short_override%has_year = .true.
+    locale_pis%short_override%year%simple = '{n} yia'
+    locale_pis%short_override%year%has_simple = .true.
+    locale_pis%short_override%has_half = .false.
+    locale_pis%short_override%half = ''
+    locale_pis%short_override%has_delimiter = .false.
+    locale_pis%short_override%delimiter = ''
+    locale_pis%short_override%delimiter_len = 0
+    locale_pis%short_override%has_ago = .true.
+    locale_pis%short_override%ago = '{0} bifoa'
+    locale_pis%short_override%has_in_future = .true.
+    locale_pis%short_override%in_future = 'long {0}'
+
+    locale_pis%has_compact = .true.
+    locale_pis%compact_override%has_second = .true.
+    locale_pis%compact_override%second%simple = '{n}s'
+    locale_pis%compact_override%second%has_simple = .true.
+    locale_pis%compact_override%has_minute = .true.
+    locale_pis%compact_override%minute%simple = '{n}m'
+    locale_pis%compact_override%minute%has_simple = .true.
+    locale_pis%compact_override%has_hour = .true.
+    locale_pis%compact_override%hour%simple = '{n}h'
+    locale_pis%compact_override%hour%has_simple = .true.
+    locale_pis%compact_override%has_day = .true.
+    locale_pis%compact_override%day%simple = '{n}d'
+    locale_pis%compact_override%day%has_simple = .true.
+    locale_pis%compact_override%has_week = .true.
+    locale_pis%compact_override%week%simple = '{n}w'
+    locale_pis%compact_override%week%has_simple = .true.
+    locale_pis%compact_override%has_month = .true.
+    locale_pis%compact_override%month%simple = '{n}mo'
+    locale_pis%compact_override%month%has_simple = .true.
+    locale_pis%compact_override%has_year = .true.
+    locale_pis%compact_override%year%simple = '{n}y'
+    locale_pis%compact_override%year%has_simple = .true.
+    locale_pis%compact_override%has_half = .false.
+    locale_pis%compact_override%half = ''
+    locale_pis%compact_override%has_delimiter = .true.
+    locale_pis%compact_override%delimiter = ''
+    locale_pis%compact_override%delimiter_len = 0
+    locale_pis%compact_override%has_ago = .true.
+    locale_pis%compact_override%ago = '{0} bifoa'
+    locale_pis%compact_override%has_in_future = .true.
+    locale_pis%compact_override%in_future = 'long {0}'
+
+  end subroutine init_pis
+
   ! Source: duration/locales/src/pl.json
   subroutine init_pl()
     locale_pl%code = 'pl'
@@ -16901,6 +17845,99 @@ contains
     locale_qu%compact_override%in_future = '{0} qhipata'
 
   end subroutine init_qu
+
+  ! Source: duration/locales/src/quc.json
+  subroutine init_quc()
+    locale_quc%code = 'quc'
+    locale_quc%plural => plural_other_only
+
+    locale_quc%units%second%simple = '{n} tz''aqat'
+    locale_quc%units%second%has_simple = .true.
+    locale_quc%units%minute%simple = '{n} ch''utaq ramaj'
+    locale_quc%units%minute%has_simple = .true.
+    locale_quc%units%hour%simple = '{n} ramaj'
+    locale_quc%units%hour%has_simple = .true.
+    locale_quc%units%day%simple = '{n} q''ij'
+    locale_quc%units%day%has_simple = .true.
+    locale_quc%units%week%simple = '{n} wuqq''ij'
+    locale_quc%units%week%has_simple = .true.
+    locale_quc%units%month%simple = '{n} ik'''
+    locale_quc%units%month%has_simple = .true.
+    locale_quc%units%year%simple = '{n} junab'''
+    locale_quc%units%year%has_simple = .true.
+
+    locale_quc%half = '{0} nik''aj'
+    locale_quc%delimiter = ', '
+    locale_quc%delimiter_len = 2
+    locale_quc%just_now = 'kamik'
+    locale_quc%ago = '{0} k''o chi'
+    locale_quc%in_future = 'pa {0}'
+
+    locale_quc%has_short = .true.
+    locale_quc%short_override%has_second = .true.
+    locale_quc%short_override%second%simple = '{n} tz''aq.'
+    locale_quc%short_override%second%has_simple = .true.
+    locale_quc%short_override%has_minute = .true.
+    locale_quc%short_override%minute%simple = '{n} ch''ut.'
+    locale_quc%short_override%minute%has_simple = .true.
+    locale_quc%short_override%has_hour = .true.
+    locale_quc%short_override%hour%simple = '{n} ram.'
+    locale_quc%short_override%hour%has_simple = .true.
+    locale_quc%short_override%has_day = .true.
+    locale_quc%short_override%day%simple = '{n} q''ij'
+    locale_quc%short_override%day%has_simple = .true.
+    locale_quc%short_override%has_week = .true.
+    locale_quc%short_override%week%simple = '{n} wuqq''ij'
+    locale_quc%short_override%week%has_simple = .true.
+    locale_quc%short_override%has_month = .true.
+    locale_quc%short_override%month%simple = '{n} ik'''
+    locale_quc%short_override%month%has_simple = .true.
+    locale_quc%short_override%has_year = .true.
+    locale_quc%short_override%year%simple = '{n} jun.'
+    locale_quc%short_override%year%has_simple = .true.
+    locale_quc%short_override%has_half = .false.
+    locale_quc%short_override%half = ''
+    locale_quc%short_override%has_delimiter = .false.
+    locale_quc%short_override%delimiter = ''
+    locale_quc%short_override%delimiter_len = 0
+    locale_quc%short_override%has_ago = .true.
+    locale_quc%short_override%ago = '{0} k''o chi'
+    locale_quc%short_override%has_in_future = .true.
+    locale_quc%short_override%in_future = 'pa {0}'
+
+    locale_quc%has_compact = .true.
+    locale_quc%compact_override%has_second = .true.
+    locale_quc%compact_override%second%simple = '{n}s'
+    locale_quc%compact_override%second%has_simple = .true.
+    locale_quc%compact_override%has_minute = .true.
+    locale_quc%compact_override%minute%simple = '{n}m'
+    locale_quc%compact_override%minute%has_simple = .true.
+    locale_quc%compact_override%has_hour = .true.
+    locale_quc%compact_override%hour%simple = '{n}h'
+    locale_quc%compact_override%hour%has_simple = .true.
+    locale_quc%compact_override%has_day = .true.
+    locale_quc%compact_override%day%simple = '{n}d'
+    locale_quc%compact_override%day%has_simple = .true.
+    locale_quc%compact_override%has_week = .true.
+    locale_quc%compact_override%week%simple = '{n}w'
+    locale_quc%compact_override%week%has_simple = .true.
+    locale_quc%compact_override%has_month = .true.
+    locale_quc%compact_override%month%simple = '{n}mo'
+    locale_quc%compact_override%month%has_simple = .true.
+    locale_quc%compact_override%has_year = .true.
+    locale_quc%compact_override%year%simple = '{n}y'
+    locale_quc%compact_override%year%has_simple = .true.
+    locale_quc%compact_override%has_half = .false.
+    locale_quc%compact_override%half = ''
+    locale_quc%compact_override%has_delimiter = .true.
+    locale_quc%compact_override%delimiter = ''
+    locale_quc%compact_override%delimiter_len = 0
+    locale_quc%compact_override%has_ago = .true.
+    locale_quc%compact_override%ago = '{0} k''o chi'
+    locale_quc%compact_override%has_in_future = .true.
+    locale_quc%compact_override%in_future = 'pa {0}'
+
+  end subroutine init_quc
 
   ! Source: duration/locales/src/ro.json
   subroutine init_ro()
@@ -18008,6 +19045,99 @@ contains
     locale_shi%compact_override%in_future = 'ɣ {0}'
 
   end subroutine init_shi
+
+  ! Source: duration/locales/src/shn.json
+  subroutine init_shn()
+    locale_shn%code = 'shn'
+    locale_shn%plural => plural_other_only
+
+    locale_shn%units%second%simple = '{n} ဝိၼႃးတီႇ'
+    locale_shn%units%second%has_simple = .true.
+    locale_shn%units%minute%simple = '{n} မိၼိတ်ႉ'
+    locale_shn%units%minute%has_simple = .true.
+    locale_shn%units%hour%simple = '{n} ၸူဝ်ႈမူင်း'
+    locale_shn%units%hour%has_simple = .true.
+    locale_shn%units%day%simple = '{n} ဝၼ်း'
+    locale_shn%units%day%has_simple = .true.
+    locale_shn%units%week%simple = '{n} ဝူင်ႈ'
+    locale_shn%units%week%has_simple = .true.
+    locale_shn%units%month%simple = '{n} လိူၼ်'
+    locale_shn%units%month%has_simple = .true.
+    locale_shn%units%year%simple = '{n} ပီ'
+    locale_shn%units%year%has_simple = .true.
+
+    locale_shn%half = '{0}ၶိုင်ႈ'
+    locale_shn%delimiter = ' '
+    locale_shn%delimiter_len = 1
+    locale_shn%just_now = 'ယၢမ်းလဵဝ်'
+    locale_shn%ago = '{0} ပူၼ်ႉမႃး'
+    locale_shn%in_future = 'ထႅင်ႈ {0}'
+
+    locale_shn%has_short = .true.
+    locale_shn%short_override%has_second = .true.
+    locale_shn%short_override%second%simple = '{n} ဝိၼႃး'
+    locale_shn%short_override%second%has_simple = .true.
+    locale_shn%short_override%has_minute = .true.
+    locale_shn%short_override%minute%simple = '{n} မိၼိတ်ႉ'
+    locale_shn%short_override%minute%has_simple = .true.
+    locale_shn%short_override%has_hour = .true.
+    locale_shn%short_override%hour%simple = '{n} ၸူဝ်ႈ'
+    locale_shn%short_override%hour%has_simple = .true.
+    locale_shn%short_override%has_day = .true.
+    locale_shn%short_override%day%simple = '{n} ဝၼ်း'
+    locale_shn%short_override%day%has_simple = .true.
+    locale_shn%short_override%has_week = .true.
+    locale_shn%short_override%week%simple = '{n} ဝူင်ႈ'
+    locale_shn%short_override%week%has_simple = .true.
+    locale_shn%short_override%has_month = .true.
+    locale_shn%short_override%month%simple = '{n} လိူၼ်'
+    locale_shn%short_override%month%has_simple = .true.
+    locale_shn%short_override%has_year = .true.
+    locale_shn%short_override%year%simple = '{n} ပီ'
+    locale_shn%short_override%year%has_simple = .true.
+    locale_shn%short_override%has_half = .false.
+    locale_shn%short_override%half = ''
+    locale_shn%short_override%has_delimiter = .false.
+    locale_shn%short_override%delimiter = ''
+    locale_shn%short_override%delimiter_len = 0
+    locale_shn%short_override%has_ago = .true.
+    locale_shn%short_override%ago = '{0} ပူၼ်ႉမႃး'
+    locale_shn%short_override%has_in_future = .true.
+    locale_shn%short_override%in_future = 'ထႅင်ႈ {0}'
+
+    locale_shn%has_compact = .true.
+    locale_shn%compact_override%has_second = .true.
+    locale_shn%compact_override%second%simple = '{n}s'
+    locale_shn%compact_override%second%has_simple = .true.
+    locale_shn%compact_override%has_minute = .true.
+    locale_shn%compact_override%minute%simple = '{n}m'
+    locale_shn%compact_override%minute%has_simple = .true.
+    locale_shn%compact_override%has_hour = .true.
+    locale_shn%compact_override%hour%simple = '{n}h'
+    locale_shn%compact_override%hour%has_simple = .true.
+    locale_shn%compact_override%has_day = .true.
+    locale_shn%compact_override%day%simple = '{n}d'
+    locale_shn%compact_override%day%has_simple = .true.
+    locale_shn%compact_override%has_week = .true.
+    locale_shn%compact_override%week%simple = '{n}w'
+    locale_shn%compact_override%week%has_simple = .true.
+    locale_shn%compact_override%has_month = .true.
+    locale_shn%compact_override%month%simple = '{n}mo'
+    locale_shn%compact_override%month%has_simple = .true.
+    locale_shn%compact_override%has_year = .true.
+    locale_shn%compact_override%year%simple = '{n}y'
+    locale_shn%compact_override%year%has_simple = .true.
+    locale_shn%compact_override%has_half = .false.
+    locale_shn%compact_override%half = ''
+    locale_shn%compact_override%has_delimiter = .true.
+    locale_shn%compact_override%delimiter = ''
+    locale_shn%compact_override%delimiter_len = 0
+    locale_shn%compact_override%has_ago = .true.
+    locale_shn%compact_override%ago = '{0} ပူၼ်ႉမႃး'
+    locale_shn%compact_override%has_in_future = .true.
+    locale_shn%compact_override%in_future = 'ထႅင်ႈ {0}'
+
+  end subroutine init_shn
 
   ! Source: duration/locales/src/si.json
   subroutine init_si()
@@ -21222,6 +22352,99 @@ contains
 
   end subroutine init_tem
 
+  ! Source: duration/locales/src/tet.json
+  subroutine init_tet()
+    locale_tet%code = 'tet'
+    locale_tet%plural => plural_other_only
+
+    locale_tet%units%second%simple = 'segundu {n}'
+    locale_tet%units%second%has_simple = .true.
+    locale_tet%units%minute%simple = 'minutu {n}'
+    locale_tet%units%minute%has_simple = .true.
+    locale_tet%units%hour%simple = 'oras {n}'
+    locale_tet%units%hour%has_simple = .true.
+    locale_tet%units%day%simple = 'loron {n}'
+    locale_tet%units%day%has_simple = .true.
+    locale_tet%units%week%simple = 'semana {n}'
+    locale_tet%units%week%has_simple = .true.
+    locale_tet%units%month%simple = 'fulan {n}'
+    locale_tet%units%month%has_simple = .true.
+    locale_tet%units%year%simple = 'tinan {n}'
+    locale_tet%units%year%has_simple = .true.
+
+    locale_tet%half = '{0} ho balun'
+    locale_tet%delimiter = ', '
+    locale_tet%delimiter_len = 2
+    locale_tet%just_now = 'agora deit'
+    locale_tet%ago = '{0} liu ba'
+    locale_tet%in_future = 'iha {0}'
+
+    locale_tet%has_short = .true.
+    locale_tet%short_override%has_second = .true.
+    locale_tet%short_override%second%simple = 'seg. {n}'
+    locale_tet%short_override%second%has_simple = .true.
+    locale_tet%short_override%has_minute = .true.
+    locale_tet%short_override%minute%simple = 'min. {n}'
+    locale_tet%short_override%minute%has_simple = .true.
+    locale_tet%short_override%has_hour = .true.
+    locale_tet%short_override%hour%simple = 'oras {n}'
+    locale_tet%short_override%hour%has_simple = .true.
+    locale_tet%short_override%has_day = .true.
+    locale_tet%short_override%day%simple = 'loron {n}'
+    locale_tet%short_override%day%has_simple = .true.
+    locale_tet%short_override%has_week = .true.
+    locale_tet%short_override%week%simple = 'sem. {n}'
+    locale_tet%short_override%week%has_simple = .true.
+    locale_tet%short_override%has_month = .true.
+    locale_tet%short_override%month%simple = 'fulan {n}'
+    locale_tet%short_override%month%has_simple = .true.
+    locale_tet%short_override%has_year = .true.
+    locale_tet%short_override%year%simple = 'tinan {n}'
+    locale_tet%short_override%year%has_simple = .true.
+    locale_tet%short_override%has_half = .false.
+    locale_tet%short_override%half = ''
+    locale_tet%short_override%has_delimiter = .false.
+    locale_tet%short_override%delimiter = ''
+    locale_tet%short_override%delimiter_len = 0
+    locale_tet%short_override%has_ago = .true.
+    locale_tet%short_override%ago = '{0} liu ba'
+    locale_tet%short_override%has_in_future = .true.
+    locale_tet%short_override%in_future = 'iha {0}'
+
+    locale_tet%has_compact = .true.
+    locale_tet%compact_override%has_second = .true.
+    locale_tet%compact_override%second%simple = '{n}s'
+    locale_tet%compact_override%second%has_simple = .true.
+    locale_tet%compact_override%has_minute = .true.
+    locale_tet%compact_override%minute%simple = '{n}m'
+    locale_tet%compact_override%minute%has_simple = .true.
+    locale_tet%compact_override%has_hour = .true.
+    locale_tet%compact_override%hour%simple = '{n}h'
+    locale_tet%compact_override%hour%has_simple = .true.
+    locale_tet%compact_override%has_day = .true.
+    locale_tet%compact_override%day%simple = '{n}d'
+    locale_tet%compact_override%day%has_simple = .true.
+    locale_tet%compact_override%has_week = .true.
+    locale_tet%compact_override%week%simple = '{n}w'
+    locale_tet%compact_override%week%has_simple = .true.
+    locale_tet%compact_override%has_month = .true.
+    locale_tet%compact_override%month%simple = '{n}mo'
+    locale_tet%compact_override%month%has_simple = .true.
+    locale_tet%compact_override%has_year = .true.
+    locale_tet%compact_override%year%simple = '{n}y'
+    locale_tet%compact_override%year%has_simple = .true.
+    locale_tet%compact_override%has_half = .false.
+    locale_tet%compact_override%half = ''
+    locale_tet%compact_override%has_delimiter = .true.
+    locale_tet%compact_override%delimiter = ''
+    locale_tet%compact_override%delimiter_len = 0
+    locale_tet%compact_override%has_ago = .true.
+    locale_tet%compact_override%ago = '{0} liu ba'
+    locale_tet%compact_override%has_in_future = .true.
+    locale_tet%compact_override%in_future = 'iha {0}'
+
+  end subroutine init_tet
+
   ! Source: duration/locales/src/tg.json
   subroutine init_tg()
     locale_tg%code = 'tg'
@@ -22211,6 +23434,99 @@ contains
     locale_tn%compact_override%in_future = 'ka {0}'
 
   end subroutine init_tn
+
+  ! Source: duration/locales/src/tpi.json
+  subroutine init_tpi()
+    locale_tpi%code = 'tpi'
+    locale_tpi%plural => plural_other_only
+
+    locale_tpi%units%second%simple = '{n} sekon'
+    locale_tpi%units%second%has_simple = .true.
+    locale_tpi%units%minute%simple = '{n} minit'
+    locale_tpi%units%minute%has_simple = .true.
+    locale_tpi%units%hour%simple = '{n} aua'
+    locale_tpi%units%hour%has_simple = .true.
+    locale_tpi%units%day%simple = '{n} de'
+    locale_tpi%units%day%has_simple = .true.
+    locale_tpi%units%week%simple = '{n} wik'
+    locale_tpi%units%week%has_simple = .true.
+    locale_tpi%units%month%simple = '{n} mun'
+    locale_tpi%units%month%has_simple = .true.
+    locale_tpi%units%year%simple = '{n} yia'
+    locale_tpi%units%year%has_simple = .true.
+
+    locale_tpi%half = '{n} na hap'
+    locale_tpi%delimiter = ', '
+    locale_tpi%delimiter_len = 2
+    locale_tpi%just_now = 'nau tasol'
+    locale_tpi%ago = '{0} i go pinis'
+    locale_tpi%in_future = 'long {0}'
+
+    locale_tpi%has_short = .true.
+    locale_tpi%short_override%has_second = .true.
+    locale_tpi%short_override%second%simple = '{n} sek'
+    locale_tpi%short_override%second%has_simple = .true.
+    locale_tpi%short_override%has_minute = .true.
+    locale_tpi%short_override%minute%simple = '{n} min'
+    locale_tpi%short_override%minute%has_simple = .true.
+    locale_tpi%short_override%has_hour = .true.
+    locale_tpi%short_override%hour%simple = '{n} aua'
+    locale_tpi%short_override%hour%has_simple = .true.
+    locale_tpi%short_override%has_day = .true.
+    locale_tpi%short_override%day%simple = '{n} de'
+    locale_tpi%short_override%day%has_simple = .true.
+    locale_tpi%short_override%has_week = .true.
+    locale_tpi%short_override%week%simple = '{n} wik'
+    locale_tpi%short_override%week%has_simple = .true.
+    locale_tpi%short_override%has_month = .true.
+    locale_tpi%short_override%month%simple = '{n} mun'
+    locale_tpi%short_override%month%has_simple = .true.
+    locale_tpi%short_override%has_year = .true.
+    locale_tpi%short_override%year%simple = '{n} yia'
+    locale_tpi%short_override%year%has_simple = .true.
+    locale_tpi%short_override%has_half = .false.
+    locale_tpi%short_override%half = ''
+    locale_tpi%short_override%has_delimiter = .false.
+    locale_tpi%short_override%delimiter = ''
+    locale_tpi%short_override%delimiter_len = 0
+    locale_tpi%short_override%has_ago = .true.
+    locale_tpi%short_override%ago = '{0} i go pinis'
+    locale_tpi%short_override%has_in_future = .true.
+    locale_tpi%short_override%in_future = 'long {0}'
+
+    locale_tpi%has_compact = .true.
+    locale_tpi%compact_override%has_second = .true.
+    locale_tpi%compact_override%second%simple = '{n}s'
+    locale_tpi%compact_override%second%has_simple = .true.
+    locale_tpi%compact_override%has_minute = .true.
+    locale_tpi%compact_override%minute%simple = '{n}m'
+    locale_tpi%compact_override%minute%has_simple = .true.
+    locale_tpi%compact_override%has_hour = .true.
+    locale_tpi%compact_override%hour%simple = '{n}h'
+    locale_tpi%compact_override%hour%has_simple = .true.
+    locale_tpi%compact_override%has_day = .true.
+    locale_tpi%compact_override%day%simple = '{n}d'
+    locale_tpi%compact_override%day%has_simple = .true.
+    locale_tpi%compact_override%has_week = .true.
+    locale_tpi%compact_override%week%simple = '{n}w'
+    locale_tpi%compact_override%week%has_simple = .true.
+    locale_tpi%compact_override%has_month = .true.
+    locale_tpi%compact_override%month%simple = '{n}mo'
+    locale_tpi%compact_override%month%has_simple = .true.
+    locale_tpi%compact_override%has_year = .true.
+    locale_tpi%compact_override%year%simple = '{n}y'
+    locale_tpi%compact_override%year%has_simple = .true.
+    locale_tpi%compact_override%has_half = .false.
+    locale_tpi%compact_override%half = ''
+    locale_tpi%compact_override%has_delimiter = .true.
+    locale_tpi%compact_override%delimiter = ''
+    locale_tpi%compact_override%delimiter_len = 0
+    locale_tpi%compact_override%has_ago = .true.
+    locale_tpi%compact_override%ago = '{0} i go pinis'
+    locale_tpi%compact_override%has_in_future = .true.
+    locale_tpi%compact_override%in_future = 'long {0}'
+
+  end subroutine init_tpi
 
   ! Source: duration/locales/src/tr.json
   subroutine init_tr()
@@ -24911,11 +26227,13 @@ contains
     call init_be()
     call init_bem()
     call init_bg()
+    call init_bi()
     call init_bm()
     call init_bn()
     call init_br()
     call init_bs()
     call init_ca()
+    call init_cak()
     call init_ceb()
     call init_cs()
     call init_cy()
@@ -24923,7 +26241,9 @@ contains
     call init_de()
     call init_din()
     call init_dje()
+    call init_dv()
     call init_dyu()
+    call init_dz()
     call init_ee()
     call init_el()
     call init_en()
@@ -24935,6 +26255,7 @@ contains
     call init_ff()
     call init_fi()
     call init_fil()
+    call init_fj()
     call init_fon()
     call init_fr()
     call init_ga()
@@ -24946,6 +26267,7 @@ contains
     call init_ha()
     call init_he()
     call init_hi()
+    call init_hmn()
     call init_hr()
     call init_ht()
     call init_hu()
@@ -24958,7 +26280,9 @@ contains
     call init_jv()
     call init_ka()
     call init_kbp()
+    call init_kek()
     call init_kk()
+    call init_kl()
     call init_km()
     call init_kn()
     call init_ko()
@@ -24972,6 +26296,7 @@ contains
     call init_lo()
     call init_lt()
     call init_lv()
+    call init_mam()
     call init_men()
     call init_mfe()
     call init_mg()
@@ -24996,11 +26321,13 @@ contains
     call init_om()
     call init_or()
     call init_pa()
+    call init_pis()
     call init_pl()
     call init_pov()
     call init_ps()
     call init_pt()
     call init_qu()
+    call init_quc()
     call init_ro()
     call init_ru()
     call init_rw()
@@ -25008,6 +26335,7 @@ contains
     call init_sd()
     call init_sg()
     call init_shi()
+    call init_shn()
     call init_si()
     call init_sk()
     call init_sl()
@@ -25025,12 +26353,14 @@ contains
     call init_ta()
     call init_te()
     call init_tem()
+    call init_tet()
     call init_tg()
     call init_th()
     call init_ti()
     call init_tig()
     call init_tk()
     call init_tn()
+    call init_tpi()
     call init_tr()
     call init_ts()
     call init_tzm()
@@ -25090,6 +26420,10 @@ contains
       loc => locale_bg
       return
     end if
+    if (code == 'bi') then
+      loc => locale_bi
+      return
+    end if
     if (code == 'bm') then
       loc => locale_bm
       return
@@ -25108,6 +26442,10 @@ contains
     end if
     if (code == 'ca') then
       loc => locale_ca
+      return
+    end if
+    if (code == 'cak') then
+      loc => locale_cak
       return
     end if
     if (code == 'ceb') then
@@ -25138,8 +26476,16 @@ contains
       loc => locale_dje
       return
     end if
+    if (code == 'dv') then
+      loc => locale_dv
+      return
+    end if
     if (code == 'dyu') then
       loc => locale_dyu
+      return
+    end if
+    if (code == 'dz') then
+      loc => locale_dz
       return
     end if
     if (code == 'ee') then
@@ -25186,6 +26532,10 @@ contains
       loc => locale_fil
       return
     end if
+    if (code == 'fj') then
+      loc => locale_fj
+      return
+    end if
     if (code == 'fon') then
       loc => locale_fon
       return
@@ -25228,6 +26578,10 @@ contains
     end if
     if (code == 'hi') then
       loc => locale_hi
+      return
+    end if
+    if (code == 'hmn') then
+      loc => locale_hmn
       return
     end if
     if (code == 'hr') then
@@ -25278,8 +26632,16 @@ contains
       loc => locale_kbp
       return
     end if
+    if (code == 'kek') then
+      loc => locale_kek
+      return
+    end if
     if (code == 'kk') then
       loc => locale_kk
+      return
+    end if
+    if (code == 'kl') then
+      loc => locale_kl
       return
     end if
     if (code == 'km') then
@@ -25332,6 +26694,10 @@ contains
     end if
     if (code == 'lv') then
       loc => locale_lv
+      return
+    end if
+    if (code == 'mam') then
+      loc => locale_mam
       return
     end if
     if (code == 'men') then
@@ -25430,6 +26796,10 @@ contains
       loc => locale_pa
       return
     end if
+    if (code == 'pis') then
+      loc => locale_pis
+      return
+    end if
     if (code == 'pl') then
       loc => locale_pl
       return
@@ -25448,6 +26818,10 @@ contains
     end if
     if (code == 'qu') then
       loc => locale_qu
+      return
+    end if
+    if (code == 'quc') then
+      loc => locale_quc
       return
     end if
     if (code == 'ro') then
@@ -25476,6 +26850,10 @@ contains
     end if
     if (code == 'shi') then
       loc => locale_shi
+      return
+    end if
+    if (code == 'shn') then
+      loc => locale_shn
       return
     end if
     if (code == 'si') then
@@ -25546,6 +26924,10 @@ contains
       loc => locale_tem
       return
     end if
+    if (code == 'tet') then
+      loc => locale_tet
+      return
+    end if
     if (code == 'tg') then
       loc => locale_tg
       return
@@ -25568,6 +26950,10 @@ contains
     end if
     if (code == 'tn') then
       loc => locale_tn
+      return
+    end if
+    if (code == 'tpi') then
+      loc => locale_tpi
       return
     end if
     if (code == 'tr') then

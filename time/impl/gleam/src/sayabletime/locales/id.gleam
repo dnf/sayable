@@ -19,7 +19,7 @@ pub fn locale() -> types.TimeLocale {
       midnight: "tengah malam",
       noon: "tengah hari",
       patterns: [
-        #(0, "{h} o'clock"),
+        #(0, "pukul {h}"),
         #(5, "lima lewat {h}"),
         #(10, "sepuluh lewat {h}"),
         #(15, "seperempat lewat {h}"),
@@ -34,10 +34,10 @@ pub fn locale() -> types.TimeLocale {
       ],
     ),
     short: Ok(types.CompactnessOverride(
-      clock: Ok(types.ShortClockConfig(use24h: True, format: "{h}:{mm}", am_pm: Error(Nil))),
+      clock: Ok(types.ShortClockConfig(use24h: True, format: "{h}.{mm}", am_pm: Error(Nil))),
     )),
     compact: Ok(types.CompactnessOverride(
-      clock: Ok(types.ShortClockConfig(use24h: True, format: "{h}:{mm}", am_pm: Error(Nil))),
+      clock: Ok(types.ShortClockConfig(use24h: True, format: "{h}.{mm}", am_pm: Error(Nil))),
     )),
   )
 }

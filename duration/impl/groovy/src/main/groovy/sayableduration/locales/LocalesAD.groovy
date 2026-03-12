@@ -489,6 +489,57 @@ class LocalesAD {
         null
     )
 
+    // Source: duration/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    static final DurationLocale BI = new DurationLocale(
+        'bi',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} sekon'),
+            UnitForms.simpleUnit('{n} minit'),
+            UnitForms.simpleUnit('{n} aoa'),
+            UnitForms.simpleUnit('{n} dei'),
+            UnitForms.simpleUnit('{n} wik'),
+            UnitForms.simpleUnit('{n} manis'),
+            UnitForms.simpleUnit('{n} yia')
+        ),
+        '{n} mo haf',
+        ', ',
+        'jas nao',
+        '{0} bifo',
+        'long {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} sek'),
+            UnitForms.simpleUnit('{n} min'),
+            UnitForms.simpleUnit('{n} aoa'),
+            UnitForms.simpleUnit('{n} dei'),
+            UnitForms.simpleUnit('{n} wik'),
+            UnitForms.simpleUnit('{n} man'),
+            UnitForms.simpleUnit('{n} yia'),
+            null,
+            null,
+            '{0} bifo',
+            'long {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} bifo',
+            'long {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/bm.json
     // ================================================================
     // BM — Bambara
@@ -753,6 +804,57 @@ class LocalesAD {
             '',
             'fa {0}',
             'd\'aquí a {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    static final DurationLocale CAK = new DurationLocale(
+        'cak',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} tz\'aqät'),
+            UnitForms.simpleUnit('{n} ch\'utik ramaj'),
+            UnitForms.simpleUnit('{n} ramaj'),
+            UnitForms.simpleUnit('{n} q\'ij'),
+            UnitForms.simpleUnit('{n} wuqq\'ij'),
+            UnitForms.simpleUnit('{n} ik\''),
+            UnitForms.simpleUnit('{n} junab\'')
+        ),
+        '{0} nik\'aj',
+        ', ',
+        'wakami',
+        '{0} k\'o chi',
+        'pa {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} tz\'aq.'),
+            UnitForms.simpleUnit('{n} ch\'ut.'),
+            UnitForms.simpleUnit('{n} ram.'),
+            UnitForms.simpleUnit('{n} q\'ij'),
+            UnitForms.simpleUnit('{n} wuqq\'ij'),
+            UnitForms.simpleUnit('{n} ik\''),
+            UnitForms.simpleUnit('{n} jun.'),
+            null,
+            null,
+            '{0} k\'o chi',
+            'pa {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} k\'o chi',
+            'pa {0}'
         ),
         null,
         null
@@ -1128,6 +1230,57 @@ class LocalesAD {
         null
     )
 
+    // Source: duration/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    static final DurationLocale DV = new DurationLocale(
+        'dv',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} ސިކުންތު'),
+            UnitForms.simpleUnit('{n} މިނެޓު'),
+            UnitForms.simpleUnit('{n} ގަޑިއިރު'),
+            UnitForms.simpleUnit('{n} ދުވަސް'),
+            UnitForms.simpleUnit('{n} ހަފްތާ'),
+            UnitForms.simpleUnit('{n} މަސް'),
+            UnitForms.simpleUnit('{n} އަހަރު')
+        ),
+        '{0} ބައި',
+        '، ',
+        'މިހާރު',
+        'މީގެ {0} ކުރިން',
+        '{0} ފަހުން',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} ސިކު'),
+            UnitForms.simpleUnit('{n} މިނެ'),
+            UnitForms.simpleUnit('{n} ގަޑި'),
+            UnitForms.simpleUnit('{n} ދުވަ'),
+            UnitForms.simpleUnit('{n} ހަފް'),
+            UnitForms.simpleUnit('{n} މަސް'),
+            UnitForms.simpleUnit('{n} އަހަ'),
+            null,
+            null,
+            'މީގެ {0} ކުރިން',
+            '{0} ފަހުން'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            'މީގެ {0} ކުރިން',
+            '{0} ފަހުން'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/dyu.json
     // ================================================================
     // DYU — Dyula
@@ -1174,6 +1327,57 @@ class LocalesAD {
             '',
             '{0} tɛmɛnen',
             'ka {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    static final DurationLocale DZ = new DurationLocale(
+        'dz',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('སྐར་ཆ་ {n}'),
+            UnitForms.simpleUnit('སྐར་མ་ {n}'),
+            UnitForms.simpleUnit('ཆུ་ཚོད་ {n}'),
+            UnitForms.simpleUnit('ཉིན་ {n}'),
+            UnitForms.simpleUnit('བདུན་ཕྲག་ {n}'),
+            UnitForms.simpleUnit('ཟླ་ {n}'),
+            UnitForms.simpleUnit('ལོ་ {n}')
+        ),
+        '{0} ཕྱེད',
+        ' ',
+        'ད་ལྟ',
+        '{0} ཧེ་མ',
+        '{0} ཤུལ་ལས',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('སྐར་ཆ་ {n}'),
+            UnitForms.simpleUnit('སྐར་མ་ {n}'),
+            UnitForms.simpleUnit('ཆུ་ཚོད་ {n}'),
+            UnitForms.simpleUnit('ཉིན་ {n}'),
+            UnitForms.simpleUnit('བདུན་ཕྲག་ {n}'),
+            UnitForms.simpleUnit('ཟླ་ {n}'),
+            UnitForms.simpleUnit('ལོ་ {n}'),
+            null,
+            null,
+            '{0} ཧེ་མ',
+            '{0} ཤུལ་ལས'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}mo'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} ཧེ་མ',
+            '{0} ཤུལ་ལས'
         ),
         null,
         null

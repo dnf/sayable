@@ -33,7 +33,7 @@ defmodule SayableTime.Locales.ID do
         midnight: "tengah malam",
         noon: "tengah hari",
         patterns: %{
-          0 => "{h} o'clock",
+          0 => "pukul {h}",
           5 => "lima lewat {h}",
           10 => "sepuluh lewat {h}",
           15 => "seperempat lewat {h}",
@@ -50,14 +50,14 @@ defmodule SayableTime.Locales.ID do
       short: %{
         clock: %{
         use24h: true,
-        format: "{h}:{mm}",
+        format: "{h}.{mm}",
         am_pm: nil
         }
       },
       compact: %{
         clock: %{
         use24h: true,
-        format: "{h}:{mm}",
+        format: "{h}.{mm}",
         am_pm: nil
         }
       }

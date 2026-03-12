@@ -13,7 +13,7 @@ Imports System.Collections.Generic
 Namespace SayableDurationLib
 
 ''' <summary>
-''' All 145 locale definitions for sayable-duration.
+''' All 159 locale definitions for sayable-duration.
 ''' </summary>
 Public Module Locales
 
@@ -599,6 +599,55 @@ Public Module Locales
         )
     )
 
+    ' Source: duration/locales/src/bi.json
+    ' ================================================================
+    ' BI — Bislama
+    ' ================================================================
+    Public ReadOnly BI As New DurationLocale(
+        "bi",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} sekon"),
+            UnitForms.Simple("{n} minit"),
+            UnitForms.Simple("{n} aoa"),
+            UnitForms.Simple("{n} dei"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} manis"),
+            UnitForms.Simple("{n} yia")
+        ),
+        "{n} mo haf",
+        ", ",
+        "jas nao",
+        "{0} bifo",
+        "long {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} sek"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} aoa"),
+            UnitForms.Simple("{n} dei"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} man"),
+            UnitForms.Simple("{n} yia"),
+            Nothing,
+            Nothing,
+            "{0} bifo",
+            "long {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} bifo",
+            "long {0}"
+        )
+    )
+
     ' Source: duration/locales/src/bm.json
     ' ================================================================
     ' BM — Bambara
@@ -841,6 +890,55 @@ Public Module Locales
             "",
             "fa {0}",
             "d'aquí a {0}"
+        )
+    )
+
+    ' Source: duration/locales/src/cak.json
+    ' ================================================================
+    ' CAK — Kaqchikel
+    ' ================================================================
+    Public ReadOnly CAK As New DurationLocale(
+        "cak",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} tz'aqät"),
+            UnitForms.Simple("{n} ch'utik ramaj"),
+            UnitForms.Simple("{n} ramaj"),
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} wuqq'ij"),
+            UnitForms.Simple("{n} ik'"),
+            UnitForms.Simple("{n} junab'")
+        ),
+        "{0} nik'aj",
+        ", ",
+        "wakami",
+        "{0} k'o chi",
+        "pa {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} tz'aq."),
+            UnitForms.Simple("{n} ch'ut."),
+            UnitForms.Simple("{n} ram."),
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} wuqq'ij"),
+            UnitForms.Simple("{n} ik'"),
+            UnitForms.Simple("{n} jun."),
+            Nothing,
+            Nothing,
+            "{0} k'o chi",
+            "pa {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} k'o chi",
+            "pa {0}"
         )
     )
 
@@ -1187,6 +1285,55 @@ Public Module Locales
         )
     )
 
+    ' Source: duration/locales/src/dv.json
+    ' ================================================================
+    ' DV — Dhivehi
+    ' ================================================================
+    Public ReadOnly DV As New DurationLocale(
+        "dv",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} ސިކުންތު"),
+            UnitForms.Simple("{n} މިނެޓު"),
+            UnitForms.Simple("{n} ގަޑިއިރު"),
+            UnitForms.Simple("{n} ދުވަސް"),
+            UnitForms.Simple("{n} ހަފްތާ"),
+            UnitForms.Simple("{n} މަސް"),
+            UnitForms.Simple("{n} އަހަރު")
+        ),
+        "{0} ބައި",
+        "، ",
+        "މިހާރު",
+        "މީގެ {0} ކުރިން",
+        "{0} ފަހުން",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} ސިކު"),
+            UnitForms.Simple("{n} މިނެ"),
+            UnitForms.Simple("{n} ގަޑި"),
+            UnitForms.Simple("{n} ދުވަ"),
+            UnitForms.Simple("{n} ހަފް"),
+            UnitForms.Simple("{n} މަސް"),
+            UnitForms.Simple("{n} އަހަ"),
+            Nothing,
+            Nothing,
+            "މީގެ {0} ކުރިން",
+            "{0} ފަހުން"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "މީގެ {0} ކުރިން",
+            "{0} ފަހުން"
+        )
+    )
+
     ' Source: duration/locales/src/dyu.json
     ' ================================================================
     ' DYU — Dyula
@@ -1233,6 +1380,55 @@ Public Module Locales
             "",
             "{0} tɛmɛnen",
             "ka {0}"
+        )
+    )
+
+    ' Source: duration/locales/src/dz.json
+    ' ================================================================
+    ' DZ — Dzongkha
+    ' ================================================================
+    Public ReadOnly DZ As New DurationLocale(
+        "dz",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("སྐར་ཆ་ {n}"),
+            UnitForms.Simple("སྐར་མ་ {n}"),
+            UnitForms.Simple("ཆུ་ཚོད་ {n}"),
+            UnitForms.Simple("ཉིན་ {n}"),
+            UnitForms.Simple("བདུན་ཕྲག་ {n}"),
+            UnitForms.Simple("ཟླ་ {n}"),
+            UnitForms.Simple("ལོ་ {n}")
+        ),
+        "{0} ཕྱེད",
+        " ",
+        "ད་ལྟ",
+        "{0} ཧེ་མ",
+        "{0} ཤུལ་ལས",
+        New CompactnessOverride(
+            UnitForms.Simple("སྐར་ཆ་ {n}"),
+            UnitForms.Simple("སྐར་མ་ {n}"),
+            UnitForms.Simple("ཆུ་ཚོད་ {n}"),
+            UnitForms.Simple("ཉིན་ {n}"),
+            UnitForms.Simple("བདུན་ཕྲག་ {n}"),
+            UnitForms.Simple("ཟླ་ {n}"),
+            UnitForms.Simple("ལོ་ {n}"),
+            Nothing,
+            Nothing,
+            "{0} ཧེ་མ",
+            "{0} ཤུལ་ལས"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} ཧེ་མ",
+            "{0} ཤུལ་ལས"
         )
     )
 
@@ -1775,6 +1971,55 @@ Public Module Locales
         )
     )
 
+    ' Source: duration/locales/src/fj.json
+    ' ================================================================
+    ' FJ — Fijian
+    ' ================================================================
+    Public ReadOnly FJ As New DurationLocale(
+        "fj",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} na sekodi"),
+            UnitForms.Simple("{n} na miniti"),
+            UnitForms.Simple("{n} na aua"),
+            UnitForms.Simple("{n} na siga"),
+            UnitForms.Simple("{n} na macawa"),
+            UnitForms.Simple("{n} na vula"),
+            UnitForms.Simple("{n} na yabaki")
+        ),
+        "{n} kei na levu ni wasei",
+        ", ",
+        "edaidai ga",
+        "{0} sa oti",
+        "ena {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} sek"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} aua"),
+            UnitForms.Simple("{n} siga"),
+            UnitForms.Simple("{n} mac"),
+            UnitForms.Simple("{n} vul"),
+            UnitForms.Simple("{n} yab"),
+            Nothing,
+            Nothing,
+            "{0} sa oti",
+            "ena {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} sa oti",
+            "ena {0}"
+        )
+    )
+
     ' Source: duration/locales/src/fon.json
     ' ================================================================
     ' FON — Fon
@@ -2311,6 +2556,55 @@ Public Module Locales
             "",
             "{0} पहले",
             "{0} में"
+        )
+    )
+
+    ' Source: duration/locales/src/hmn.json
+    ' ================================================================
+    ' HMN — Hmong
+    ' ================================================================
+    Public ReadOnly HMN As New DurationLocale(
+        "hmn",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} chib"),
+            UnitForms.Simple("{n} feeb"),
+            UnitForms.Simple("{n} teev"),
+            UnitForms.Simple("{n} hnub"),
+            UnitForms.Simple("{n} lub lim tiam"),
+            UnitForms.Simple("{n} lub hlis"),
+            UnitForms.Simple("{n} xyoo")
+        ),
+        "{0} thiab ib nrab",
+        ", ",
+        "tam sim no",
+        "{0} dhau los",
+        "hauv {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} chib"),
+            UnitForms.Simple("{n} feeb"),
+            UnitForms.Simple("{n} teev"),
+            UnitForms.Simple("{n} hnub"),
+            UnitForms.Simple("{n} lim tiam"),
+            UnitForms.Simple("{n} hlis"),
+            UnitForms.Simple("{n} xyoo"),
+            Nothing,
+            Nothing,
+            "{0} dhau los",
+            "hauv {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} dhau los",
+            "hauv {0}"
         )
     )
 
@@ -2902,6 +3196,55 @@ Public Module Locales
         )
     )
 
+    ' Source: duration/locales/src/kek.json
+    ' ================================================================
+    ' KEK — Q'eqchi'
+    ' ================================================================
+    Public ReadOnly KEK As New DurationLocale(
+        "kek",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} segundo"),
+            UnitForms.Simple("{n} minuto"),
+            UnitForms.Simple("{n} hora"),
+            UnitForms.Simple("{n} q'e"),
+            UnitForms.Simple("{n} seman"),
+            UnitForms.Simple("{n} po"),
+            UnitForms.Simple("{n} chihab'")
+        ),
+        "{0} ro'",
+        ", ",
+        "anaqwan",
+        "{0} qakab'",
+        "chi {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} seg."),
+            UnitForms.Simple("{n} min."),
+            UnitForms.Simple("{n} hora"),
+            UnitForms.Simple("{n} q'e"),
+            UnitForms.Simple("{n} sem."),
+            UnitForms.Simple("{n} po"),
+            UnitForms.Simple("{n} chih."),
+            Nothing,
+            Nothing,
+            "{0} qakab'",
+            "chi {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} qakab'",
+            "chi {0}"
+        )
+    )
+
     ' Source: duration/locales/src/kk.json
     ' ================================================================
     ' KK — Kazakh
@@ -2948,6 +3291,55 @@ Public Module Locales
             "",
             "{0} бұрын",
             "{0} кейін"
+        )
+    )
+
+    ' Source: duration/locales/src/kl.json
+    ' ================================================================
+    ' KL — Kalaallisut
+    ' ================================================================
+    Public ReadOnly KL As New DurationLocale(
+        "kl",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("sekundit {n}"),
+            UnitForms.Simple("minutsit {n}"),
+            UnitForms.Simple("nalunaaqutap akunnera {n}"),
+            UnitForms.Simple("ullut {n}"),
+            UnitForms.Simple("sapaatit {n}"),
+            UnitForms.Simple("qaammatit {n}"),
+            UnitForms.Simple("ukiut {n}")
+        ),
+        "{0} affaa",
+        ", ",
+        "maanna",
+        "{0} matuma siorna",
+        "{0} siunissami",
+        New CompactnessOverride(
+            UnitForms.Simple("sek. {n}"),
+            UnitForms.Simple("min. {n}"),
+            UnitForms.Simple("nal. {n}"),
+            UnitForms.Simple("ull. {n}"),
+            UnitForms.Simple("sap. {n}"),
+            UnitForms.Simple("qaam. {n}"),
+            UnitForms.Simple("uk. {n}"),
+            Nothing,
+            Nothing,
+            "{0} matuma siorna",
+            "{0} siunissami"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} matuma siorna",
+            "{0} siunissami"
         )
     )
 
@@ -3585,6 +3977,55 @@ Public Module Locales
             "",
             "pirms {0}",
             "pēc {0}"
+        )
+    )
+
+    ' Source: duration/locales/src/mam.json
+    ' ================================================================
+    ' MAM — Mam
+    ' ================================================================
+    Public ReadOnly MAM As New DurationLocale(
+        "mam",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} segundo"),
+            UnitForms.Simple("{n} minuto"),
+            UnitForms.Simple("{n} hora"),
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} ab'q'ii")
+        ),
+        "{0} nik'",
+        ", ",
+        "iky'x",
+        "{0} chi'j",
+        "tu'n {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} seg."),
+            UnitForms.Simple("{n} min."),
+            UnitForms.Simple("{n} hora"),
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} xjaw"),
+            UnitForms.Simple("{n} ab'."),
+            Nothing,
+            Nothing,
+            "{0} chi'j",
+            "tu'n {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} chi'j",
+            "tu'n {0}"
         )
     )
 
@@ -4764,6 +5205,55 @@ Public Module Locales
         )
     )
 
+    ' Source: duration/locales/src/pis.json
+    ' ================================================================
+    ' PIS — Pijin
+    ' ================================================================
+    Public ReadOnly PIS As New DurationLocale(
+        "pis",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} sekon"),
+            UnitForms.Simple("{n} minit"),
+            UnitForms.Simple("{n} aoa"),
+            UnitForms.Simple("{n} dei"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} manis"),
+            UnitForms.Simple("{n} yia")
+        ),
+        "{n} en haf",
+        ", ",
+        "nomoa nao",
+        "{0} bifoa",
+        "long {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} sek"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} aoa"),
+            UnitForms.Simple("{n} dei"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} man"),
+            UnitForms.Simple("{n} yia"),
+            Nothing,
+            Nothing,
+            "{0} bifoa",
+            "long {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} bifoa",
+            "long {0}"
+        )
+    )
+
     ' Source: duration/locales/src/pl.json
     ' ================================================================
     ' PL — Polish
@@ -5006,6 +5496,55 @@ Public Module Locales
             "",
             "{0} ñawpaqta",
             "{0} qhipata"
+        )
+    )
+
+    ' Source: duration/locales/src/quc.json
+    ' ================================================================
+    ' QUC — K'iche'
+    ' ================================================================
+    Public ReadOnly QUC As New DurationLocale(
+        "quc",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} tz'aqat"),
+            UnitForms.Simple("{n} ch'utaq ramaj"),
+            UnitForms.Simple("{n} ramaj"),
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} wuqq'ij"),
+            UnitForms.Simple("{n} ik'"),
+            UnitForms.Simple("{n} junab'")
+        ),
+        "{0} nik'aj",
+        ", ",
+        "kamik",
+        "{0} k'o chi",
+        "pa {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} tz'aq."),
+            UnitForms.Simple("{n} ch'ut."),
+            UnitForms.Simple("{n} ram."),
+            UnitForms.Simple("{n} q'ij"),
+            UnitForms.Simple("{n} wuqq'ij"),
+            UnitForms.Simple("{n} ik'"),
+            UnitForms.Simple("{n} jun."),
+            Nothing,
+            Nothing,
+            "{0} k'o chi",
+            "pa {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} k'o chi",
+            "pa {0}"
         )
     )
 
@@ -5349,6 +5888,55 @@ Public Module Locales
             "",
             "ɣ {0} zzrin",
             "ɣ {0}"
+        )
+    )
+
+    ' Source: duration/locales/src/shn.json
+    ' ================================================================
+    ' SHN — Shan
+    ' ================================================================
+    Public ReadOnly SHN As New DurationLocale(
+        "shn",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} ဝိၼႃးတီႇ"),
+            UnitForms.Simple("{n} မိၼိတ်ႉ"),
+            UnitForms.Simple("{n} ၸူဝ်ႈမူင်း"),
+            UnitForms.Simple("{n} ဝၼ်း"),
+            UnitForms.Simple("{n} ဝူင်ႈ"),
+            UnitForms.Simple("{n} လိူၼ်"),
+            UnitForms.Simple("{n} ပီ")
+        ),
+        "{0}ၶိုင်ႈ",
+        " ",
+        "ယၢမ်းလဵဝ်",
+        "{0} ပူၼ်ႉမႃး",
+        "ထႅင်ႈ {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} ဝိၼႃး"),
+            UnitForms.Simple("{n} မိၼိတ်ႉ"),
+            UnitForms.Simple("{n} ၸူဝ်ႈ"),
+            UnitForms.Simple("{n} ဝၼ်း"),
+            UnitForms.Simple("{n} ဝူင်ႈ"),
+            UnitForms.Simple("{n} လိူၼ်"),
+            UnitForms.Simple("{n} ပီ"),
+            Nothing,
+            Nothing,
+            "{0} ပူၼ်ႉမႃး",
+            "ထႅင်ႈ {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} ပူၼ်ႉမႃး",
+            "ထႅင်ႈ {0}"
         )
     )
 
@@ -6185,6 +6773,55 @@ Public Module Locales
         )
     )
 
+    ' Source: duration/locales/src/tet.json
+    ' ================================================================
+    ' TET — Tetum
+    ' ================================================================
+    Public ReadOnly TET As New DurationLocale(
+        "tet",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("segundu {n}"),
+            UnitForms.Simple("minutu {n}"),
+            UnitForms.Simple("oras {n}"),
+            UnitForms.Simple("loron {n}"),
+            UnitForms.Simple("semana {n}"),
+            UnitForms.Simple("fulan {n}"),
+            UnitForms.Simple("tinan {n}")
+        ),
+        "{0} ho balun",
+        ", ",
+        "agora deit",
+        "{0} liu ba",
+        "iha {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("seg. {n}"),
+            UnitForms.Simple("min. {n}"),
+            UnitForms.Simple("oras {n}"),
+            UnitForms.Simple("loron {n}"),
+            UnitForms.Simple("sem. {n}"),
+            UnitForms.Simple("fulan {n}"),
+            UnitForms.Simple("tinan {n}"),
+            Nothing,
+            Nothing,
+            "{0} liu ba",
+            "iha {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} liu ba",
+            "iha {0}"
+        )
+    )
+
     ' Source: duration/locales/src/tg.json
     ' ================================================================
     ' TG — Tajik
@@ -6476,6 +7113,55 @@ Public Module Locales
             "",
             "{0} e e fetileng",
             "ka {0}"
+        )
+    )
+
+    ' Source: duration/locales/src/tpi.json
+    ' ================================================================
+    ' TPI — Tok Pisin
+    ' ================================================================
+    Public ReadOnly TPI As New DurationLocale(
+        "tpi",
+        Function(n) PluralCategory.Other,
+        New Units(
+            UnitForms.Simple("{n} sekon"),
+            UnitForms.Simple("{n} minit"),
+            UnitForms.Simple("{n} aua"),
+            UnitForms.Simple("{n} de"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} mun"),
+            UnitForms.Simple("{n} yia")
+        ),
+        "{n} na hap",
+        ", ",
+        "nau tasol",
+        "{0} i go pinis",
+        "long {0}",
+        New CompactnessOverride(
+            UnitForms.Simple("{n} sek"),
+            UnitForms.Simple("{n} min"),
+            UnitForms.Simple("{n} aua"),
+            UnitForms.Simple("{n} de"),
+            UnitForms.Simple("{n} wik"),
+            UnitForms.Simple("{n} mun"),
+            UnitForms.Simple("{n} yia"),
+            Nothing,
+            Nothing,
+            "{0} i go pinis",
+            "long {0}"
+        ),
+        New CompactnessOverride(
+            UnitForms.Simple("{n}s"),
+            UnitForms.Simple("{n}m"),
+            UnitForms.Simple("{n}h"),
+            UnitForms.Simple("{n}d"),
+            UnitForms.Simple("{n}w"),
+            UnitForms.Simple("{n}mo"),
+            UnitForms.Simple("{n}y"),
+            Nothing,
+            "",
+            "{0} i go pinis",
+            "long {0}"
         )
     )
 
@@ -7273,11 +7959,13 @@ Public Module Locales
         { "be", BE },
         { "bem", BEM },
         { "bg", BG },
+        { "bi", BI },
         { "bm", BM },
         { "bn", BN },
         { "br", BR },
         { "bs", BS },
         { "ca", CA },
+        { "cak", CAK },
         { "ceb", CEB },
         { "cs", CS },
         { "cy", CY },
@@ -7285,7 +7973,9 @@ Public Module Locales
         { "de", DE },
         { "din", DIN },
         { "dje", DJE },
+        { "dv", DV },
         { "dyu", DYU },
+        { "dz", DZ },
         { "ee", EE },
         { "el", EL },
         { "en", EN },
@@ -7297,6 +7987,7 @@ Public Module Locales
         { "ff", FF },
         { "fi", FI },
         { "fil", FIL },
+        { "fj", FJ },
         { "fon", FON },
         { "fr", FR },
         { "ga", GA },
@@ -7308,6 +7999,7 @@ Public Module Locales
         { "ha", HA },
         { "he", HE },
         { "hi", HI },
+        { "hmn", HMN },
         { "hr", HR },
         { "ht", HT },
         { "hu", HU },
@@ -7320,7 +8012,9 @@ Public Module Locales
         { "jv", JV },
         { "ka", KA },
         { "kbp", KBP },
+        { "kek", KEK },
         { "kk", KK },
+        { "kl", KL },
         { "km", KM },
         { "kn", KN },
         { "ko", KO },
@@ -7334,6 +8028,7 @@ Public Module Locales
         { "lo", LO },
         { "lt", LT },
         { "lv", LV },
+        { "mam", MAM },
         { "men", MEN },
         { "mfe", MFE },
         { "mg", MG },
@@ -7358,11 +8053,13 @@ Public Module Locales
         { "om", OM },
         { "or", [OR] },
         { "pa", PA },
+        { "pis", PIS },
         { "pl", PL },
         { "pov", POV },
         { "ps", PS },
         { "pt", PT },
         { "qu", QU },
+        { "quc", QUC },
         { "ro", RO },
         { "ru", RU },
         { "rw", RW },
@@ -7370,6 +8067,7 @@ Public Module Locales
         { "sd", SD },
         { "sg", SG },
         { "shi", SHI },
+        { "shn", SHN },
         { "si", SI },
         { "sk", SK },
         { "sl", SL },
@@ -7387,12 +8085,14 @@ Public Module Locales
         { "ta", TA },
         { "te", TE },
         { "tem", TEM },
+        { "tet", TET },
         { "tg", TG },
         { "th", TH },
         { "ti", TI },
         { "tig", TIG },
         { "tk", TK },
         { "tn", TN },
+        { "tpi", TPI },
         { "tr", TR },
         { "ts", TS },
         { "tzm", TZM },

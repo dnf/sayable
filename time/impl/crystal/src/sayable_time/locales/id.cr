@@ -17,7 +17,7 @@ module SayableTime
         midnight: "tengah malam",
         noon: "tengah hari",
         patterns: {
-          0 => "{h} o'clock",
+          0 => "pukul {h}",
           5 => "lima lewat {h}",
           10 => "sepuluh lewat {h}",
           15 => "seperempat lewat {h}",
@@ -32,10 +32,10 @@ module SayableTime
         }
       ),
       short: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: "{h}:{mm}")
+        clock: ShortClockConfig.new(use24h: true, format: "{h}.{mm}")
       ),
       compact: CompactnessOverride.new(
-        clock: ShortClockConfig.new(use24h: true, format: "{h}:{mm}")
+        clock: ShortClockConfig.new(use24h: true, format: "{h}.{mm}")
       ),
     )
   end

@@ -19,7 +19,7 @@ final id = TimeLocale(
     midnight: 'tengah malam',
     noon: 'tengah hari',
     patterns: {
-      0: '{h} o\'clock',
+      0: 'pukul {h}',
       5: 'lima lewat {h}',
       10: 'sepuluh lewat {h}',
       15: 'seperempat lewat {h}',
@@ -34,9 +34,9 @@ final id = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+    clock: ShortClockConfig(use24h: true, format: '{h}.{mm}'),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+    clock: ShortClockConfig(use24h: true, format: '{h}.{mm}'),
   ),
 );

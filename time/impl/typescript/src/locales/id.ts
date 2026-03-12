@@ -18,7 +18,7 @@ export const id: TimeLocale = {
     midnight: 'tengah malam',
     noon: 'tengah hari',
     patterns: {
-      0: '{h} o\'clock',
+      0: 'pukul {h}',
       5: 'lima lewat {h}',
       10: 'sepuluh lewat {h}',
       15: 'seperempat lewat {h}',
@@ -33,9 +33,9 @@ export const id: TimeLocale = {
     },
   },
   short: {
-    clock: { use24h: true, format: '{h}:{mm}' },
+    clock: { use24h: true, format: '{h}.{mm}' },
   },
   compact: {
-    clock: { use24h: true, format: '{h}:{mm}' },
+    clock: { use24h: true, format: '{h}.{mm}' },
   },
 };

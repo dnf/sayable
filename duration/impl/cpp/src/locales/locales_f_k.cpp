@@ -267,6 +267,56 @@ const DurationLocale& FIL() {
     return loc;
 }
 
+// Source: duration/locales/src/fj.json
+const DurationLocale& FJ() {
+    static const DurationLocale loc{
+        "fj",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} na sekodi"),
+            UnitForms::Simple("{n} na miniti"),
+            UnitForms::Simple("{n} na aua"),
+            UnitForms::Simple("{n} na siga"),
+            UnitForms::Simple("{n} na macawa"),
+            UnitForms::Simple("{n} na vula"),
+            UnitForms::Simple("{n} na yabaki")
+        },
+        "edaidai ga",
+        "{n} kei na levu ni wasei", ", ",
+        "{0} sa oti", "ena {0}",
+        CompactnessOverride{
+            UnitForms::Simple("{n} sek"),
+            UnitForms::Simple("{n} min"),
+            UnitForms::Simple("{n} aua"),
+            UnitForms::Simple("{n} siga"),
+            UnitForms::Simple("{n} mac"),
+            UnitForms::Simple("{n} vul"),
+            UnitForms::Simple("{n} yab"),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} sa oti"),
+            std::string("ena {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}mo"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::string("{0} sa oti"),
+            std::string("ena {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: duration/locales/src/fon.json
 const DurationLocale& FON() {
     static const DurationLocale loc{
@@ -831,6 +881,56 @@ const DurationLocale& HI() {
             std::string(""),
             std::string("{0} पहले"),
             std::string("{0} में")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/hmn.json
+const DurationLocale& HMN() {
+    static const DurationLocale loc{
+        "hmn",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} chib"),
+            UnitForms::Simple("{n} feeb"),
+            UnitForms::Simple("{n} teev"),
+            UnitForms::Simple("{n} hnub"),
+            UnitForms::Simple("{n} lub lim tiam"),
+            UnitForms::Simple("{n} lub hlis"),
+            UnitForms::Simple("{n} xyoo")
+        },
+        "tam sim no",
+        "{0} thiab ib nrab", ", ",
+        "{0} dhau los", "hauv {0}",
+        CompactnessOverride{
+            UnitForms::Simple("{n} chib"),
+            UnitForms::Simple("{n} feeb"),
+            UnitForms::Simple("{n} teev"),
+            UnitForms::Simple("{n} hnub"),
+            UnitForms::Simple("{n} lim tiam"),
+            UnitForms::Simple("{n} hlis"),
+            UnitForms::Simple("{n} xyoo"),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} dhau los"),
+            std::string("hauv {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}mo"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::string("{0} dhau los"),
+            std::string("hauv {0}")
         },
         nullptr, nullptr
     };
@@ -1448,6 +1548,56 @@ const DurationLocale& KBP() {
     return loc;
 }
 
+// Source: duration/locales/src/kek.json
+const DurationLocale& KEK() {
+    static const DurationLocale loc{
+        "kek",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} segundo"),
+            UnitForms::Simple("{n} minuto"),
+            UnitForms::Simple("{n} hora"),
+            UnitForms::Simple("{n} q'e"),
+            UnitForms::Simple("{n} seman"),
+            UnitForms::Simple("{n} po"),
+            UnitForms::Simple("{n} chihab'")
+        },
+        "anaqwan",
+        "{0} ro'", ", ",
+        "{0} qakab'", "chi {0}",
+        CompactnessOverride{
+            UnitForms::Simple("{n} seg."),
+            UnitForms::Simple("{n} min."),
+            UnitForms::Simple("{n} hora"),
+            UnitForms::Simple("{n} q'e"),
+            UnitForms::Simple("{n} sem."),
+            UnitForms::Simple("{n} po"),
+            UnitForms::Simple("{n} chih."),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} qakab'"),
+            std::string("chi {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}mo"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::string("{0} qakab'"),
+            std::string("chi {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: duration/locales/src/kk.json
 const DurationLocale& KK() {
     static const DurationLocale loc{
@@ -1493,6 +1643,56 @@ const DurationLocale& KK() {
             std::string(""),
             std::string("{0} бұрын"),
             std::string("{0} кейін")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/kl.json
+const DurationLocale& KL() {
+    static const DurationLocale loc{
+        "kl",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("sekundit {n}"),
+            UnitForms::Simple("minutsit {n}"),
+            UnitForms::Simple("nalunaaqutap akunnera {n}"),
+            UnitForms::Simple("ullut {n}"),
+            UnitForms::Simple("sapaatit {n}"),
+            UnitForms::Simple("qaammatit {n}"),
+            UnitForms::Simple("ukiut {n}")
+        },
+        "maanna",
+        "{0} affaa", ", ",
+        "{0} matuma siorna", "{0} siunissami",
+        CompactnessOverride{
+            UnitForms::Simple("sek. {n}"),
+            UnitForms::Simple("min. {n}"),
+            UnitForms::Simple("nal. {n}"),
+            UnitForms::Simple("ull. {n}"),
+            UnitForms::Simple("sap. {n}"),
+            UnitForms::Simple("qaam. {n}"),
+            UnitForms::Simple("uk. {n}"),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} matuma siorna"),
+            std::string("{0} siunissami")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}mo"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::string("{0} matuma siorna"),
+            std::string("{0} siunissami")
         },
         nullptr, nullptr
     };

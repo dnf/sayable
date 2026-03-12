@@ -17,5 +17,5 @@
            :midnight "midnat"
            :noon "middag"
            :patterns {0 "klokken {h}" 5 "fem over {h}" 10 "ti over {h}" 15 "kvart over {h}" 20 "tyve over {h}" 25 "fem i halv {next_h}" 30 "halv {next_h}" 35 "fem over halv {next_h}" 40 "tyve i {next_h}" 45 "kvart i {next_h}" 50 "ti i {next_h}" 55 "fem i {next_h}"}}
-   :short {:clock {:use-24h true :am-pm nil :format "{h}:{mm}"}}
-   :compact {:clock {:use-24h true :am-pm nil :format "{h}:{mm}"}}})
+   :short {:clock {:use-24h true :am-pm nil :format "{h}.{mm}"}}
+   :compact {:clock {:use-24h true :am-pm nil :format "{h}.{mm}"}}})

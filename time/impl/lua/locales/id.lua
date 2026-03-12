@@ -17,7 +17,7 @@ M.clock = {
     midnight = "tengah malam",
     noon = "tengah hari",
     patterns = {
-        [0] = "{h} o'clock",
+        [0] = "pukul {h}",
         [5] = "lima lewat {h}",
         [10] = "sepuluh lewat {h}",
         [15] = "seperempat lewat {h}",
@@ -34,13 +34,13 @@ M.clock = {
 M.short = {
     clock = {
         use24h = true,
-        format = "{h}:{mm}",
+        format = "{h}.{mm}",
     },
 }
 M.compact = {
     clock = {
         use24h = true,
-        format = "{h}:{mm}",
+        format = "{h}.{mm}",
     },
 }
 

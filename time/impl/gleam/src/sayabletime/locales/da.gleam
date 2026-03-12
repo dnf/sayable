@@ -34,10 +34,10 @@ pub fn locale() -> types.TimeLocale {
       ],
     ),
     short: Ok(types.CompactnessOverride(
-      clock: Ok(types.ShortClockConfig(use24h: True, format: "{h}:{mm}", am_pm: Error(Nil))),
+      clock: Ok(types.ShortClockConfig(use24h: True, format: "{h}.{mm}", am_pm: Error(Nil))),
     )),
     compact: Ok(types.CompactnessOverride(
-      clock: Ok(types.ShortClockConfig(use24h: True, format: "{h}:{mm}", am_pm: Error(Nil))),
+      clock: Ok(types.ShortClockConfig(use24h: True, format: "{h}.{mm}", am_pm: Error(Nil))),
     )),
   )
 }
