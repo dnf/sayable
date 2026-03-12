@@ -21,9 +21,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Bash</td>
   <td><a href="age/impl/bash/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/bash/">✅</a></td>
+  <td><a href="duration/impl/bash/">✅</a></td>
+  <td><a href="time/impl/bash/">✅</a></td>
 </tr>
 <tr>
   <td>C</td>
@@ -189,9 +189,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Mojo</td>
   <td><a href="age/impl/mojo/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/mojo/">✅</a></td>
+  <td><a href="duration/impl/mojo/">✅</a></td>
+  <td><a href="time/impl/mojo/">✅</a></td>
 </tr>
 <tr>
   <td>Nim</td>
@@ -210,16 +210,16 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Octave</td>
   <td><a href="age/impl/octave/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/octave/">✅</a></td>
+  <td><a href="duration/impl/octave/">✅</a></td>
+  <td><a href="time/impl/octave/">✅</a></td>
 </tr>
 <tr>
   <td>Odin</td>
   <td><a href="age/impl/odin/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/odin/">✅</a></td>
+  <td><a href="duration/impl/odin/">✅</a></td>
+  <td><a href="time/impl/odin/">✅</a></td>
 </tr>
 <tr>
   <td>Pascal</td>
@@ -238,9 +238,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Pharo</td>
   <td><a href="age/impl/pharo/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/pharo/">✅</a></td>
+  <td><a href="duration/impl/pharo/">✅</a></td>
+  <td><a href="time/impl/pharo/">✅</a></td>
 </tr>
 <tr>
   <td>PHP</td>
@@ -252,9 +252,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>PowerShell</td>
   <td><a href="age/impl/powershell/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/powershell/">✅</a></td>
+  <td><a href="duration/impl/powershell/">✅</a></td>
+  <td><a href="time/impl/powershell/">✅</a></td>
 </tr>
 <tr>
   <td>Prolog</td>
