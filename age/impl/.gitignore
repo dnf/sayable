@@ -155,6 +155,8 @@ v/sayableage
 # VB.NET
 vbnet/SayableAge/bin/
 vbnet/SayableAge/obj/
+vbnet/SayableAge.Tests/bin/
+vbnet/SayableAge.Tests/obj/
 
 # Zig
 zig/zig-out/
