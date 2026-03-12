@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Sayable CLI — Dart implementation wrapper
+set -euo pipefail
+
+_dir="$(cd "$(dirname "$0")" && pwd)"
+
+# Ensure dependencies are resolved
+if [[ ! -d "${_dir}/.dart_tool" ]]; then
+    dart pub get --directory="${_dir}" >/dev/null 2>&1
+fi
+
+exec dart run "${_dir}/bin/sayable.dart" "$@"

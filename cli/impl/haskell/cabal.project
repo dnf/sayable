@@ -1,0 +1,6 @@
+packages:
+  .
+  ../../../age/impl/haskell
+  ../../../date/impl/haskell
+  ../../../time/impl/haskell
+  ../../../duration/impl/haskell

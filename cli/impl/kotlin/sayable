@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Resolve the directory this script lives in
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+
+# Component jar locations (built by Gradle)
+AGE_JAR="${PROJECT_ROOT}/age/impl/kotlin/build/libs/sayable-age-0.5.0.jar"
+DATE_JAR="${PROJECT_ROOT}/date/impl/kotlin/build/libs/sayable-date-0.5.0.jar"
+TIME_JAR="${PROJECT_ROOT}/time/impl/kotlin/build/libs/sayable-time-0.5.0.jar"
+DURATION_JAR="${PROJECT_ROOT}/duration/impl/kotlin/build/libs/sayable-duration-0.5.0.jar"
+
+# Build component jars if they don't exist
+build_if_needed() {
+    local component="$1" jar="$2"
+    if [[ ! -f "${jar}" ]]; then
+        echo "Building ${component} jar..." >&2
+        (cd "${PROJECT_ROOT}/${component}/impl/kotlin" && ./gradlew jar --quiet)
+    fi
+}
+
+build_if_needed "age" "${AGE_JAR}"
+build_if_needed "date" "${DATE_JAR}"
+build_if_needed "time" "${TIME_JAR}"
+build_if_needed "duration" "${DURATION_JAR}"
+
+# Classpath with all component jars
+CP="${AGE_JAR}:${DATE_JAR}:${TIME_JAR}:${DURATION_JAR}"
+
+# Locate Kotlin stdlib for compile and runtime
+# kotlinc is a shell script; follow the real path to find the libexec dir
+KOTLINC_PATH="$(command -v kotlinc)"
+KOTLINC_REAL="$(cd "$(dirname "${KOTLINC_PATH}")" && pwd)/$(basename "${KOTLINC_PATH}")"
+# The Kotlin home is typically two levels up from bin, or via libexec
+KOTLIN_LIB=""
+# Try Homebrew layout: /opt/homebrew/Cellar/kotlin/<version>/libexec/lib
+for candidate in \
+    "$(dirname "${KOTLINC_REAL}")/../libexec/lib" \
+    "$(dirname "${KOTLINC_REAL}")/../lib" \
+    "$(dirname "$(readlink -f "${KOTLINC_PATH}" 2>/dev/null || echo "${KOTLINC_PATH}")")/../lib" \
+    "$(dirname "$(readlink -f "${KOTLINC_PATH}" 2>/dev/null || echo "${KOTLINC_PATH}")")/../libexec/lib"; do
+    if [[ -d "${candidate}" ]] && ls "${candidate}"/kotlin-stdlib.jar &>/dev/null; then
+        KOTLIN_LIB="${candidate}"
+        break
+    fi
+done
+
+if [[ -z "${KOTLIN_LIB}" ]]; then
+    echo "error: cannot find Kotlin stdlib. Ensure kotlinc is on PATH." >&2
+    exit 2
+fi
+
+KOTLIN_STDLIB="${KOTLIN_LIB}/kotlin-stdlib.jar"
+
+# Build directory for the CLI
+BUILD_DIR="${SCRIPT_DIR}/build"
+
+# Compile CLI if needed
+if [[ ! -f "${BUILD_DIR}/SayableKt.class" ]] || \
+   [[ "${SCRIPT_DIR}/Sayable.kt" -nt "${BUILD_DIR}/SayableKt.class" ]]; then
+    mkdir -p "${BUILD_DIR}"
+    kotlinc -nowarn \
+        -cp "${CP}" \
+        "${SCRIPT_DIR}/Sayable.kt" \
+        -d "${BUILD_DIR}" 2>&1
+fi
+
+# Run
+java -cp "${BUILD_DIR}:${CP}:${KOTLIN_STDLIB}" SayableKt "$@"

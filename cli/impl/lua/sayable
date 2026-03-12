@@ -1,0 +1,493 @@
+#!/usr/bin/env lua
+--- Sayable CLI — unified command-line interface to all four Sayable components.
+--
+-- See cli/SPEC.md for the full specification.
+
+local VERSION = "0.5.0"
+
+local HELP = [[
+Usage: sayable <command> [arguments] [options]
+
+Commands:
+  age <dob>              Format an age
+  stage <dob>            Get developmental stage
+  date <date>            Format a calendar date
+  relative <date>        Format a relative date
+  time <time>            Format a clock time
+  duration <value> [end] Format a duration
+  since <start>          Format elapsed time
+  until <target>         Format remaining time
+  locales                List available locale codes
+  version                Show version
+  help                   Show this help
+
+Options:
+  -l, --locale <code>    Locale code (default: en)
+  -d, --as-of <value>    Reference date/timestamp
+      --short            Short compactness
+      --compact          Compact compactness
+  -g, --gender <m|f>     Gender for stage labels
+      --with-year        Include year (date only)
+  -h, --help             Show this help
+  -v, --version          Show version]]
+
+-- Resolve this script's absolute directory and project root
+local script_dir
+do
+    local info = debug.getinfo(1, "S")
+    local src = info.source
+    if src:sub(1, 1) == "@" then
+        src = src:sub(2)
+    end
+    -- Resolve to absolute path
+    if src:sub(1, 1) ~= "/" then
+        local pipe = io.popen("pwd")
+        local cwd = pipe:read("*l")
+        pipe:close()
+        src = cwd .. "/" .. src
+    end
+    -- Normalize: remove trailing filename
+    script_dir = src:match("^(.+)/[^/]+$") or "."
+end
+local project_root = script_dir .. "/../../.."
+
+-- Each component has its own locales/ directory with identically-named modules.
+-- To avoid collisions in package.loaded, we clear locale entries between loads
+-- and build per-component locale caches that load on demand.
+
+local saved_path = package.path
+
+local function clear_locale_cache()
+    local to_remove = {}
+    for k, _ in pairs(package.loaded) do
+        if k == "locales" or k:match("^locales%.") then
+            to_remove[#to_remove + 1] = k
+        end
+    end
+    for _, k in ipairs(to_remove) do
+        package.loaded[k] = nil
+    end
+end
+
+local function load_component(component, module_name)
+    clear_locale_cache()
+    local impl_dir = project_root .. "/" .. component .. "/impl/lua"
+    package.path = impl_dir .. "/?.lua;" .. impl_dir .. "/?/init.lua"
+    local mod = require(module_name)
+    return mod, impl_dir
+end
+
+local sayableage, age_dir = load_component("age", "sayableage")
+local sayabledate, date_dir = load_component("date", "sayabledate")
+local sayabletime, time_dir = load_component("time", "sayabletime")
+local sayableduration, duration_dir = load_component("duration", "sayableduration")
+
+-- Restore package.path
+package.path = saved_path
+
+-- Per-component locale caches with on-demand loading.
+-- Each component gets its own cache so locale modules don't collide.
+local function make_locale_getter(impl_dir)
+    local cache = {}
+    return function(code)
+        if cache[code] ~= nil then return cache[code] end
+        -- Temporarily set package.path and clear locale cache to load the right locale
+        local old_path = package.path
+        clear_locale_cache()
+        package.path = impl_dir .. "/?.lua;" .. impl_dir .. "/?/init.lua"
+        local ok, locale = pcall(require, "locales." .. code)
+        package.path = old_path
+        if ok and locale then
+            cache[code] = locale
+            return locale
+        end
+        return nil
+    end
+end
+
+local get_age_locale = make_locale_getter(age_dir)
+local get_date_locale = make_locale_getter(date_dir)
+local get_time_locale = make_locale_getter(time_dir)
+local get_duration_locale = make_locale_getter(duration_dir)
+
+-- Print error to stderr and exit with code 2
+local function error_exit(msg)
+    io.stderr:write("error: " .. msg .. "\n")
+    io.stderr:write("Run 'sayable help' for usage.\n")
+    os.exit(2)
+end
+
+-- Convert the CLI "null" sentinel to Lua nil
+local function nullify(value)
+    if value == "null" then
+        return nil
+    end
+    return value
+end
+
+-- Get today's date as YYYY-MM-DD
+local function get_today()
+    return os.date("%Y-%m-%d")
+end
+
+-- Parse CLI arguments into (command, positionals, options)
+local function parse_args(argv)
+    if #argv == 0 then
+        return nil, {}, {}
+    end
+
+    -- Global flags that can appear as the first argument
+    if argv[1] == "-h" or argv[1] == "--help" or argv[1] == "help" then
+        return "help", {}, {}
+    end
+    if argv[1] == "-v" or argv[1] == "--version" or argv[1] == "version" then
+        return "version", {}, {}
+    end
+
+    local command = argv[1]
+    local positionals = {}
+    local options = {
+        locale = "en",
+        as_of = nil,
+        compactness = "normal",
+        gender = nil,
+        with_year = false,
+    }
+
+    local i = 2
+    local stop_opts = false
+    while i <= #argv do
+        local a = argv[i]
+
+        if a == "--" and not stop_opts then
+            stop_opts = true
+        elseif not stop_opts and a:sub(1, 1) == "-" then
+            if a == "-l" or a == "--locale" then
+                if i + 1 > #argv then
+                    error_exit("'" .. a .. "' requires a value")
+                end
+                i = i + 1
+                options.locale = argv[i]
+            elseif a == "-d" or a == "--as-of" then
+                if i + 1 > #argv then
+                    error_exit("'" .. a .. "' requires a value")
+                end
+                i = i + 1
+                options.as_of = argv[i]
+            elseif a == "-g" or a == "--gender" then
+                if i + 1 > #argv then
+                    error_exit("'" .. a .. "' requires a value")
+                end
+                i = i + 1
+                options.gender = argv[i]
+            elseif a == "--short" then
+                options.compactness = "short"
+            elseif a == "--compact" then
+                options.compactness = "compact"
+            elseif a == "--with-year" then
+                options.with_year = true
+            elseif a == "-h" or a == "--help" then
+                return "help", {}, {}
+            elseif a == "-v" or a == "--version" then
+                return "version", {}, {}
+            else
+                error_exit("unknown option '" .. a .. "'")
+            end
+        else
+            positionals[#positionals + 1] = a
+        end
+
+        i = i + 1
+    end
+
+    return command, positionals, options
+end
+
+-- Command implementations
+
+local function cmd_age(positionals, options)
+    if #positionals == 0 then
+        error_exit("age requires a date-of-birth argument")
+    end
+    local dob = nullify(positionals[1])
+
+    local locale_code = options.locale
+    local locale = get_age_locale(locale_code)
+    if locale == nil then
+        error_exit("unknown locale '" .. locale_code .. "'")
+    end
+
+    local as_of = options.as_of
+    if as_of ~= nil then
+        as_of = nullify(as_of)
+    else
+        as_of = get_today()
+    end
+
+    local formatter = sayableage.new(locale, options.compactness)
+    local result = formatter.format_age(dob, as_of)
+
+    if result == nil then
+        os.exit(1)
+    end
+    print(result)
+end
+
+local function cmd_stage(positionals, options)
+    if #positionals == 0 then
+        error_exit("stage requires a date-of-birth argument")
+    end
+    local dob = nullify(positionals[1])
+
+    local locale_code = options.locale
+    local locale = get_age_locale(locale_code)
+    if locale == nil then
+        error_exit("unknown locale '" .. locale_code .. "'")
+    end
+
+    local as_of = options.as_of
+    if as_of ~= nil then
+        as_of = nullify(as_of)
+    else
+        as_of = get_today()
+    end
+
+    local gender = options.gender
+
+    local formatter = sayableage.new(locale, options.compactness)
+    local result = formatter.format_stage(dob, as_of, gender)
+
+    if result == nil then
+        os.exit(1)
+    end
+    print(result)
+end
+
+local function cmd_date(positionals, options)
+    if #positionals == 0 then
+        error_exit("date requires a date argument")
+    end
+    local date_val = nullify(positionals[1])
+
+    local locale_code = options.locale
+    local locale = get_date_locale(locale_code)
+    if locale == nil then
+        error_exit("unknown locale '" .. locale_code .. "'")
+    end
+
+    local formatter = sayabledate.new(locale, options.compactness)
+
+    local result
+    if options.with_year then
+        result = formatter.format_date_with_year(date_val)
+    else
+        result = formatter.format_date(date_val)
+    end
+
+    if result == nil then
+        os.exit(1)
+    end
+    print(result)
+end
+
+local function cmd_relative(positionals, options)
+    if #positionals == 0 then
+        error_exit("relative requires a date argument")
+    end
+    local date_val = nullify(positionals[1])
+
+    local as_of = options.as_of
+    if as_of == nil then
+        error_exit("relative requires --as-of / -d option")
+    end
+    as_of = nullify(as_of)
+
+    local locale_code = options.locale
+    local locale = get_date_locale(locale_code)
+    if locale == nil then
+        error_exit("unknown locale '" .. locale_code .. "'")
+    end
+
+    local formatter = sayabledate.new(locale, options.compactness)
+    local result = formatter.format_relative(date_val, as_of)
+
+    if result == nil then
+        os.exit(1)
+    end
+    print(result)
+end
+
+local function cmd_time(positionals, options)
+    if #positionals == 0 then
+        error_exit("time requires a time argument")
+    end
+    local time_val = nullify(positionals[1])
+
+    local locale_code = options.locale
+    local locale = get_time_locale(locale_code)
+    if locale == nil then
+        error_exit("unknown locale '" .. locale_code .. "'")
+    end
+
+    local formatter = sayabletime.new(locale, options.compactness)
+    local result = formatter.format_time(time_val)
+
+    if result == nil then
+        os.exit(1)
+    end
+    print(result)
+end
+
+local function cmd_duration(positionals, options)
+    if #positionals == 0 then
+        error_exit("duration requires a value argument")
+    end
+    local value = nullify(positionals[1])
+
+    local locale_code = options.locale
+    local locale = get_duration_locale(locale_code)
+    if locale == nil then
+        error_exit("unknown locale '" .. locale_code .. "'")
+    end
+
+    local formatter = sayableduration.new(locale, options.compactness)
+
+    local result
+    if value == nil then
+        result = formatter.format_duration(nil)
+    elseif value:match("^%-?%d+$") then
+        result = formatter.format_duration(tonumber(value))
+    else
+        -- Timestamp mode: need an end argument
+        if #positionals < 2 then
+            error_exit("duration with timestamps requires start and end arguments")
+        end
+        local end_val = nullify(positionals[2])
+        result = formatter.format_duration_iso(value, end_val)
+    end
+
+    if result == nil then
+        os.exit(1)
+    end
+    print(result)
+end
+
+local function cmd_since(positionals, options)
+    if #positionals == 0 then
+        error_exit("since requires a start timestamp argument")
+    end
+    local start = nullify(positionals[1])
+
+    local as_of = options.as_of
+    if as_of == nil then
+        error_exit("since requires --as-of / -d option")
+    end
+    as_of = nullify(as_of)
+
+    local locale_code = options.locale
+    local locale = get_duration_locale(locale_code)
+    if locale == nil then
+        error_exit("unknown locale '" .. locale_code .. "'")
+    end
+
+    local formatter = sayableduration.new(locale, options.compactness)
+    local result = formatter.format_since(start, as_of)
+
+    if result == nil then
+        os.exit(1)
+    end
+    print(result)
+end
+
+local function cmd_until(positionals, options)
+    if #positionals == 0 then
+        error_exit("until requires a target timestamp argument")
+    end
+    local target = nullify(positionals[1])
+
+    local as_of = options.as_of
+    if as_of == nil then
+        error_exit("until requires --as-of / -d option")
+    end
+    as_of = nullify(as_of)
+
+    local locale_code = options.locale
+    local locale = get_duration_locale(locale_code)
+    if locale == nil then
+        error_exit("unknown locale '" .. locale_code .. "'")
+    end
+
+    local formatter = sayableduration.new(locale, options.compactness)
+    local result = formatter.format_until(target, as_of)
+
+    if result == nil then
+        os.exit(1)
+    end
+    print(result)
+end
+
+local function cmd_locales()
+    -- Use age locales as the canonical list (all components share the same set).
+    -- Extract codes by probing the registry for all known codes.
+    local codes = {
+        "af", "ak", "am", "ar", "az", "bci", "be", "bem", "bg", "bm",
+        "bn", "br", "bs", "ca", "ceb", "cs", "cy", "da", "de", "din",
+        "dje", "dyu", "ee", "el", "en", "es", "et", "eu", "fa", "fan",
+        "ff", "fi", "fil", "fon", "fr", "ga", "gd", "gl", "gn", "gu",
+        "gv", "ha", "he", "hi", "hr", "ht", "hu", "hy", "id", "ig",
+        "is", "it", "ja", "jv", "ka", "kbp", "kk", "km", "kn", "ko",
+        "kpe", "ktu", "ku", "kw", "ky", "lg", "ln", "lo", "lt", "lv",
+        "men", "mfe", "mg", "mi", "mk", "ml", "mn", "mnk", "mos", "mr",
+        "ms", "mt", "my", "nb", "nd", "ne", "ng", "nl", "nso", "nus",
+        "ny", "om", "or", "pa", "pl", "pov", "ps", "pt", "qu", "ro",
+        "ru", "rw", "sar", "sd", "sg", "shi", "si", "sk", "sl", "sn",
+        "snk", "so", "sq", "sr", "ss", "st", "su", "suk", "sv", "sw",
+        "ta", "te", "tem", "tg", "th", "ti", "tig", "tk", "tn", "tr",
+        "ts", "tzm", "uk", "umb", "ur", "uz", "vi", "vmw", "wo", "xh",
+        "yo", "yue", "zdj", "zh", "zu",
+    }
+    for _, code in ipairs(codes) do
+        print(code)
+    end
+end
+
+local COMMANDS = {
+    age = cmd_age,
+    stage = cmd_stage,
+    date = cmd_date,
+    relative = cmd_relative,
+    time = cmd_time,
+    duration = cmd_duration,
+    since = cmd_since,
+    ["until"] = cmd_until,
+}
+
+-- Main
+local command, positionals, options = parse_args(arg)
+
+if command == nil then
+    print(HELP)
+    os.exit(2)
+end
+
+if command == "help" then
+    print(HELP)
+    os.exit(0)
+end
+
+if command == "version" then
+    print("sayable " .. VERSION)
+    os.exit(0)
+end
+
+if command == "locales" then
+    cmd_locales()
+    os.exit(0)
+end
+
+local cmd_fn = COMMANDS[command]
+if cmd_fn == nil then
+    error_exit("unknown command '" .. command .. "'")
+end
+
+cmd_fn(positionals, options)

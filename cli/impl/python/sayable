@@ -1,0 +1,380 @@
+#!/usr/bin/env python3
+"""Sayable CLI — unified command-line interface to all four Sayable components.
+
+See cli/SPEC.md for the full specification.
+"""
+
+import os
+import sys
+
+# Add all component source directories to the Python path
+_root = os.path.dirname(os.path.abspath(__file__))
+_project = os.path.normpath(os.path.join(_root, "..", "..", ".."))
+for _component in ("age", "date", "duration", "time"):
+    _src = os.path.join(_project, _component, "impl", "python", "src")
+    if _src not in sys.path:
+        sys.path.insert(0, _src)
+
+from sayable_age import SayableAge
+from sayable_age.locales import get_locale as get_age_locale
+from sayable_date import SayableDate
+from sayable_date.locales import get_locale as get_date_locale
+from sayable_time import SayableTime
+from sayable_time.locales import get_locale as get_time_locale
+from sayable_duration import SayableDuration
+from sayable_duration.locales import get_locale as get_duration_locale
+
+VERSION = "0.5.0"
+
+HELP = """\
+Usage: sayable <command> [arguments] [options]
+
+Commands:
+  age <dob>              Format an age
+  stage <dob>            Get developmental stage
+  date <date>            Format a calendar date
+  relative <date>        Format a relative date
+  time <time>            Format a clock time
+  duration <value> [end] Format a duration
+  since <start>          Format elapsed time
+  until <target>         Format remaining time
+  locales                List available locale codes
+  version                Show version
+  help                   Show this help
+
+Options:
+  -l, --locale <code>    Locale code (default: en)
+  -d, --as-of <value>    Reference date/timestamp
+      --short            Short compactness
+      --compact          Compact compactness
+  -g, --gender <m|f>     Gender for stage labels
+      --with-year        Include year (date only)
+  -h, --help             Show this help
+  -v, --version          Show version"""
+
+
+def parse_args(argv):
+    """Parse CLI arguments into (command, positionals, options)."""
+    if not argv:
+        return None, [], {}
+
+    # Global flags that can appear as the first argument
+    if argv[0] in ("-h", "--help", "help"):
+        return "help", [], {}
+    if argv[0] in ("-v", "--version", "version"):
+        return "version", [], {}
+
+    command = argv[0]
+    positionals = []
+    options = {
+        "locale": "en",
+        "as_of": None,
+        "compactness": "normal",
+        "gender": None,
+        "with_year": False,
+    }
+
+    i = 1
+    stop_opts = False
+    while i < len(argv):
+        arg = argv[i]
+
+        if arg == "--" and not stop_opts:
+            stop_opts = True
+            i += 1
+            continue
+
+        if not stop_opts and arg.startswith("-"):
+            if arg in ("-l", "--locale"):
+                if i + 1 >= len(argv):
+                    error(f"'{arg}' requires a value")
+                i += 1
+                options["locale"] = argv[i]
+            elif arg in ("-d", "--as-of"):
+                if i + 1 >= len(argv):
+                    error(f"'{arg}' requires a value")
+                i += 1
+                options["as_of"] = argv[i]
+            elif arg in ("-g", "--gender"):
+                if i + 1 >= len(argv):
+                    error(f"'{arg}' requires a value")
+                i += 1
+                options["gender"] = argv[i]
+            elif arg == "--short":
+                options["compactness"] = "short"
+            elif arg == "--compact":
+                options["compactness"] = "compact"
+            elif arg == "--with-year":
+                options["with_year"] = True
+            elif arg in ("-h", "--help"):
+                return "help", [], {}
+            elif arg in ("-v", "--version"):
+                return "version", [], {}
+            else:
+                error(f"unknown option '{arg}'")
+        else:
+            positionals.append(arg)
+
+        i += 1
+
+    return command, positionals, options
+
+
+def nullify(value):
+    """Convert the CLI 'null' sentinel to Python None."""
+    if value == "null":
+        return None
+    return value
+
+
+def error(msg):
+    """Print error to stderr and exit with code 2."""
+    print(f"error: {msg}", file=sys.stderr)
+    print("Run 'sayable help' for usage.", file=sys.stderr)
+    sys.exit(2)
+
+
+def get_today():
+    """Get today's date as YYYY-MM-DD."""
+    from datetime import date
+    return date.today().isoformat()
+
+
+def cmd_age(positionals, options):
+    if not positionals:
+        error("age requires a date-of-birth argument")
+    dob = nullify(positionals[0])
+
+    locale_code = options["locale"]
+    locale = get_age_locale(locale_code)
+    if locale is None:
+        error(f"unknown locale '{locale_code}'")
+
+    as_of = options["as_of"]
+    if as_of is not None:
+        as_of = nullify(as_of)
+    else:
+        as_of = get_today()
+
+    formatter = SayableAge(locale, compactness=options["compactness"])
+    result = formatter.format_age(dob, as_of)
+
+    if result is None:
+        sys.exit(1)
+    print(result)
+
+
+def cmd_stage(positionals, options):
+    if not positionals:
+        error("stage requires a date-of-birth argument")
+    dob = nullify(positionals[0])
+
+    locale_code = options["locale"]
+    locale = get_age_locale(locale_code)
+    if locale is None:
+        error(f"unknown locale '{locale_code}'")
+
+    as_of = options["as_of"]
+    if as_of is not None:
+        as_of = nullify(as_of)
+    else:
+        as_of = get_today()
+
+    gender = options["gender"]
+
+    formatter = SayableAge(locale, compactness=options["compactness"])
+    result = formatter.format_stage(dob, as_of, gender)
+
+    if result is None:
+        sys.exit(1)
+    print(result)
+
+
+def cmd_date(positionals, options):
+    if not positionals:
+        error("date requires a date argument")
+    date_val = nullify(positionals[0])
+
+    locale_code = options["locale"]
+    locale = get_date_locale(locale_code)
+    if locale is None:
+        error(f"unknown locale '{locale_code}'")
+
+    formatter = SayableDate(locale, compactness=options["compactness"])
+
+    if options["with_year"]:
+        result = formatter.format_date_with_year(date_val)
+    else:
+        result = formatter.format_date(date_val)
+
+    if result is None:
+        sys.exit(1)
+    print(result)
+
+
+def cmd_relative(positionals, options):
+    if not positionals:
+        error("relative requires a date argument")
+    date_val = nullify(positionals[0])
+
+    as_of = options["as_of"]
+    if as_of is None:
+        error("relative requires --as-of / -d option")
+    as_of = nullify(as_of)
+
+    locale_code = options["locale"]
+    locale = get_date_locale(locale_code)
+    if locale is None:
+        error(f"unknown locale '{locale_code}'")
+
+    formatter = SayableDate(locale, compactness=options["compactness"])
+    result = formatter.format_relative(date_val, as_of=as_of)
+
+    if result is None:
+        sys.exit(1)
+    print(result)
+
+
+def cmd_time(positionals, options):
+    if not positionals:
+        error("time requires a time argument")
+    time_val = nullify(positionals[0])
+
+    locale_code = options["locale"]
+    locale = get_time_locale(locale_code)
+    if locale is None:
+        error(f"unknown locale '{locale_code}'")
+
+    formatter = SayableTime(locale, compactness=options["compactness"])
+    result = formatter.format_time(time_val)
+
+    if result is None:
+        sys.exit(1)
+    print(result)
+
+
+def cmd_duration(positionals, options):
+    if not positionals:
+        error("duration requires a value argument")
+    value = nullify(positionals[0])
+
+    locale_code = options["locale"]
+    locale = get_duration_locale(locale_code)
+    if locale is None:
+        error(f"unknown locale '{locale_code}'")
+
+    formatter = SayableDuration(locale, compactness=options["compactness"])
+
+    if value is None:
+        result = formatter.format_duration(None)
+    elif value.lstrip("-").isdigit():
+        result = formatter.format_duration(int(value))
+    else:
+        # Timestamp mode: need an end argument
+        if len(positionals) < 2:
+            error("duration with timestamps requires start and end arguments")
+        end = nullify(positionals[1])
+        result = formatter.format_duration(value, end)
+
+    if result is None:
+        sys.exit(1)
+    print(result)
+
+
+def cmd_since(positionals, options):
+    if not positionals:
+        error("since requires a start timestamp argument")
+    start = nullify(positionals[0])
+
+    as_of = options["as_of"]
+    if as_of is None:
+        error("since requires --as-of / -d option")
+    as_of = nullify(as_of)
+
+    locale_code = options["locale"]
+    locale = get_duration_locale(locale_code)
+    if locale is None:
+        error(f"unknown locale '{locale_code}'")
+
+    formatter = SayableDuration(locale, compactness=options["compactness"])
+    result = formatter.format_since(start, as_of)
+
+    if result is None:
+        sys.exit(1)
+    print(result)
+
+
+def cmd_until(positionals, options):
+    if not positionals:
+        error("until requires a target timestamp argument")
+    target = nullify(positionals[0])
+
+    as_of = options["as_of"]
+    if as_of is None:
+        error("until requires --as-of / -d option")
+    as_of = nullify(as_of)
+
+    locale_code = options["locale"]
+    locale = get_duration_locale(locale_code)
+    if locale is None:
+        error(f"unknown locale '{locale_code}'")
+
+    formatter = SayableDuration(locale, compactness=options["compactness"])
+    result = formatter.format_until(target, as_of)
+
+    if result is None:
+        sys.exit(1)
+    print(result)
+
+
+def cmd_locales():
+    # Use age locales as the canonical list (all components share the same set)
+    codes = []
+    import sayable_age.locales as age_locales
+    for name in sorted(dir(age_locales)):
+        obj = getattr(age_locales, name)
+        if hasattr(obj, "code") and isinstance(obj.code, str):
+            codes.append(obj.code)
+    for code in sorted(set(codes)):
+        print(code)
+
+
+COMMANDS = {
+    "age": cmd_age,
+    "stage": cmd_stage,
+    "date": cmd_date,
+    "relative": cmd_relative,
+    "time": cmd_time,
+    "duration": cmd_duration,
+    "since": cmd_since,
+    "until": cmd_until,
+}
+
+
+def main():
+    command, positionals, options = parse_args(sys.argv[1:])
+
+    if command is None:
+        print(HELP)
+        sys.exit(2)
+
+    if command == "help":
+        print(HELP)
+        sys.exit(0)
+
+    if command == "version":
+        print(f"sayable {VERSION}")
+        sys.exit(0)
+
+    if command == "locales":
+        cmd_locales()
+        sys.exit(0)
+
+    if command not in COMMANDS:
+        error(f"unknown command '{command}'")
+
+    COMMANDS[command](positionals, options)
+
+
+if __name__ == "__main__":
+    main()

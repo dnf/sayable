@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Sayable CLI -- Elixir implementation wrapper
+set -euo pipefail
+
+_dir="$(cd "$(dirname "$0")" && pwd)"
+
+# Ensure dependencies are compiled (first run only)
+if [[ ! -d "${_dir}/_build" ]]; then
+    (cd "${_dir}" && mix deps.get --quiet >/dev/null 2>&1 && mix compile --no-warnings-as-errors >/dev/null 2>&1)
+fi
+
+exec elixir -pa "${_dir}/_build/dev/lib/sayable_age/ebin" \
+            -pa "${_dir}/_build/dev/lib/sayable_date/ebin" \
+            -pa "${_dir}/_build/dev/lib/sayable_time/ebin" \
+            -pa "${_dir}/_build/dev/lib/sayable_duration/ebin" \
+            -pa "${_dir}/_build/dev/lib/sayable_cli/ebin" \
+            -e "SayableCli.main(System.argv())" -- "$@"

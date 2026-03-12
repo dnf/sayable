@@ -1,0 +1,22 @@
+{
+    "type": "application",
+    "source-directories": [
+        "src",
+        "../../../age/impl/elm/src",
+        "../../../date/impl/elm/src",
+        "../../../duration/impl/elm/src",
+        "../../../time/impl/elm/src"
+    ],
+    "elm-version": "0.19.1",
+    "dependencies": {
+        "direct": {
+            "elm/core": "1.0.5",
+            "elm/json": "1.1.3"
+        },
+        "indirect": {}
+    },
+    "test-dependencies": {
+        "direct": {},
+        "indirect": {}
+    }
+}

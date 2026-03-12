@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Sayable CLI — TypeScript implementation wrapper
+set -euo pipefail
+
+_dir="$(cd "$(dirname "$0")" && pwd)"
+
+exec npx tsx "${_dir}/main.ts" "$@"

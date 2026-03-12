@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Sayable CLI wrapper for Clojure
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+cd "${SCRIPT_DIR}"
+exec clj -M -m sayable-cli.core "$@" < /dev/null

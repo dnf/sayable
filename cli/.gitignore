@@ -1,0 +1,71 @@
+# Ada
+ada/build/
+
+# C
+c/build/
+
+# C++
+cpp/build/
+
+# C#
+csharp/bin/
+csharp/obj/
+
+# Clojure
+clojure/.cpcache/
+
+# COBOL
+cobol/build/
+
+# Crystal
+crystal/sayable-crystal
+
+# Dart
+dart/.dart_tool/
+dart/pubspec.lock
+
+# Elixir
+elixir/_build/
+
+# Elm
+elm/build/
+elm/elm-stuff/
+
+# Erlang
+erlang/_build/
+
+# F#
+fsharp/bin/
+fsharp/obj/
+
+# Fortran
+fortran/build/
+
+# Gleam
+gleam/manifest.toml
+
+# Go
+go/sayable
+
+# Haskell
+haskell/dist-newstyle/
+
+# Nim
+nim/sayable-nim
+
+# OCaml
+ocaml/_build/
+
+# Rust
+rust/target/
+
+# Swift
+swift/.build/
+swift/.deps/
+
+# VB.NET
+vbnet/bin/
+vbnet/obj/
+
+# Zig
+zig/.zig-cache/

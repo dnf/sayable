@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Sayable CLI — Elm implementation wrapper
+set -euo pipefail
+
+_dir="$(cd "$(dirname "$0")" && pwd)"
+
+# Build if needed
+if [[ ! -f "${_dir}/build/elm.js" ]]; then
+    cd "${_dir}"
+    elm make src/Main.elm --output=build/elm.js --optimize 2>/dev/null
+fi
+
+exec node "${_dir}/runner.js" "$@"

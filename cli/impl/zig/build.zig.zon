@@ -1,0 +1,10 @@
+.{
+    .name = .sayable_cli_zig,
+    .version = "0.5.0",
+    .fingerprint = 0xfa8c3fe2f7fe9835,
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "main.zig",
+    },
+}

@@ -1,0 +1,605 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Sayable CLI — unified command-line interface to all four Sayable components.
+ *
+ * See cli/SPEC.md for the full specification.
+ */
+
+declare(strict_types=1);
+
+// Compute project root from this script's location: cli/impl/php/sayable -> project root
+$root = dirname(__DIR__, 3);
+
+// --- Age component ---
+$ageSrc = $root . '/age/impl/php/src';
+require_once $ageSrc . '/PluralCategory.php';
+require_once $ageSrc . '/Compactness.php';
+require_once $ageSrc . '/CompactnessOverride.php';
+require_once $ageSrc . '/StageLabel.php';
+require_once $ageSrc . '/Stages.php';
+require_once $ageSrc . '/Units.php';
+require_once $ageSrc . '/AgeLocale.php';
+require_once $ageSrc . '/SayableAge.php';
+require_once $ageSrc . '/functions.php';
+require_once $ageSrc . '/Locales/Locales.php';
+
+// --- Date component ---
+$dateSrc = $root . '/date/impl/php/src';
+require_once $dateSrc . '/Compactness.php';
+require_once $dateSrc . '/CompactnessOverride.php';
+require_once $dateSrc . '/DateLocale.php';
+require_once $dateSrc . '/SayableDate.php';
+require_once $dateSrc . '/functions.php';
+require_once $dateSrc . '/Locales/Locales.php';
+
+// --- Time component ---
+$timeSrc = $root . '/time/impl/php/src';
+require_once $timeSrc . '/Compactness.php';
+require_once $timeSrc . '/CompactnessOverride.php';
+require_once $timeSrc . '/ShortClockConfig.php';
+require_once $timeSrc . '/ClockConfig.php';
+require_once $timeSrc . '/TimeLocale.php';
+require_once $timeSrc . '/SayableTime.php';
+require_once $timeSrc . '/functions.php';
+require_once $timeSrc . '/Locales/Locales.php';
+
+// --- Duration component ---
+$durationSrc = $root . '/duration/impl/php/src';
+require_once $durationSrc . '/PluralCategory.php';
+require_once $durationSrc . '/Compactness.php';
+require_once $durationSrc . '/CompactnessOverride.php';
+require_once $durationSrc . '/Units.php';
+require_once $durationSrc . '/DurationLocale.php';
+require_once $durationSrc . '/SayableDuration.php';
+require_once $durationSrc . '/functions.php';
+require_once $durationSrc . '/Locales/Locales.php';
+
+// ---------------------------------------------------------------------------
+
+const VERSION = '0.5.0';
+
+const HELP = <<<'HELP'
+Usage: sayable <command> [arguments] [options]
+
+Commands:
+  age <dob>              Format an age
+  stage <dob>            Get developmental stage
+  date <date>            Format a calendar date
+  relative <date>        Format a relative date
+  time <time>            Format a clock time
+  duration <value> [end] Format a duration
+  since <start>          Format elapsed time
+  until <target>         Format remaining time
+  locales                List available locale codes
+  version                Show version
+  help                   Show this help
+
+Options:
+  -l, --locale <code>    Locale code (default: en)
+  -d, --as-of <value>    Reference date/timestamp
+      --short            Short compactness
+      --compact          Compact compactness
+  -g, --gender <m|f>     Gender for stage labels
+      --with-year        Include year (date only)
+  -h, --help             Show this help
+  -v, --version          Show version
+HELP;
+
+/**
+ * Print error to stderr and exit with code 2.
+ */
+function error(string $msg): never
+{
+    fwrite(STDERR, "error: {$msg}\n");
+    fwrite(STDERR, "Run 'sayable help' for usage.\n");
+    exit(2);
+}
+
+/**
+ * Convert the CLI 'null' sentinel to PHP null.
+ */
+function nullify(?string $value): ?string
+{
+    if ($value === 'null') {
+        return null;
+    }
+    return $value;
+}
+
+/**
+ * Get today's date as YYYY-MM-DD.
+ */
+function getToday(): string
+{
+    return date('Y-m-d');
+}
+
+/**
+ * Map a compactness string to the Age Compactness enum.
+ */
+function ageCompactness(string $level): SayableAge\Compactness
+{
+    return match ($level) {
+        'short' => SayableAge\Compactness::Short,
+        'compact' => SayableAge\Compactness::Compact,
+        default => SayableAge\Compactness::Normal,
+    };
+}
+
+/**
+ * Map a compactness string to the Date Compactness enum.
+ */
+function dateCompactness(string $level): SayableDate\Compactness
+{
+    return match ($level) {
+        'short' => SayableDate\Compactness::Short,
+        'compact' => SayableDate\Compactness::Compact,
+        default => SayableDate\Compactness::Normal,
+    };
+}
+
+/**
+ * Map a compactness string to the Time Compactness enum.
+ */
+function timeCompactness(string $level): SayableTime\Compactness
+{
+    return match ($level) {
+        'short' => SayableTime\Compactness::Short,
+        'compact' => SayableTime\Compactness::Compact,
+        default => SayableTime\Compactness::Normal,
+    };
+}
+
+/**
+ * Map a compactness string to the Duration Compactness enum.
+ */
+function durationCompactness(string $level): SayableDuration\Compactness
+{
+    return match ($level) {
+        'short' => SayableDuration\Compactness::Short,
+        'compact' => SayableDuration\Compactness::Compact,
+        default => SayableDuration\Compactness::Normal,
+    };
+}
+
+/**
+ * Parse CLI arguments into [command, positionals, options].
+ *
+ * @param list<string> $argv
+ * @return array{?string, list<string>, array<string, mixed>}
+ */
+function parseArgs(array $argv): array
+{
+    if (count($argv) === 0) {
+        return [null, [], []];
+    }
+
+    // Global flags that can appear as the first argument
+    if (in_array($argv[0], ['-h', '--help', 'help'], true)) {
+        return ['help', [], []];
+    }
+    if (in_array($argv[0], ['-v', '--version', 'version'], true)) {
+        return ['version', [], []];
+    }
+
+    $command = $argv[0];
+    $positionals = [];
+    $options = [
+        'locale' => 'en',
+        'as_of' => null,
+        'compactness' => 'normal',
+        'gender' => null,
+        'with_year' => false,
+    ];
+
+    $i = 1;
+    $stopOpts = false;
+    $argc = count($argv);
+
+    while ($i < $argc) {
+        $arg = $argv[$i];
+
+        if ($arg === '--' && !$stopOpts) {
+            $stopOpts = true;
+            $i++;
+            continue;
+        }
+
+        if (!$stopOpts && str_starts_with($arg, '-')) {
+            if ($arg === '-l' || $arg === '--locale') {
+                if ($i + 1 >= $argc) {
+                    error("'{$arg}' requires a value");
+                }
+                $i++;
+                $options['locale'] = $argv[$i];
+            } elseif ($arg === '-d' || $arg === '--as-of') {
+                if ($i + 1 >= $argc) {
+                    error("'{$arg}' requires a value");
+                }
+                $i++;
+                $options['as_of'] = $argv[$i];
+            } elseif ($arg === '-g' || $arg === '--gender') {
+                if ($i + 1 >= $argc) {
+                    error("'{$arg}' requires a value");
+                }
+                $i++;
+                $options['gender'] = $argv[$i];
+            } elseif ($arg === '--short') {
+                $options['compactness'] = 'short';
+            } elseif ($arg === '--compact') {
+                $options['compactness'] = 'compact';
+            } elseif ($arg === '--with-year') {
+                $options['with_year'] = true;
+            } elseif ($arg === '-h' || $arg === '--help') {
+                return ['help', [], []];
+            } elseif ($arg === '-v' || $arg === '--version') {
+                return ['version', [], []];
+            } else {
+                error("unknown option '{$arg}'");
+            }
+        } else {
+            $positionals[] = $arg;
+        }
+
+        $i++;
+    }
+
+    return [$command, $positionals, $options];
+}
+
+// ---------------------------------------------------------------------------
+// Command handlers
+// ---------------------------------------------------------------------------
+
+/**
+ * @param list<string> $positionals
+ * @param array<string, mixed> $options
+ */
+function cmdAge(array $positionals, array $options): void
+{
+    if (count($positionals) === 0) {
+        error('age requires a date-of-birth argument');
+    }
+    $dob = nullify($positionals[0]);
+
+    $localeCode = $options['locale'];
+    $locale = SayableAge\Locales\Locales::get($localeCode);
+    if ($locale === null) {
+        error("unknown locale '{$localeCode}'");
+    }
+
+    $asOf = $options['as_of'];
+    if ($asOf !== null) {
+        $asOf = nullify($asOf);
+    } else {
+        $asOf = getToday();
+    }
+
+    $formatter = new SayableAge\SayableAge($locale, ageCompactness($options['compactness']));
+    $result = $formatter->formatAge($dob, $asOf);
+
+    if ($result === null) {
+        exit(1);
+    }
+    echo $result . "\n";
+}
+
+/**
+ * @param list<string> $positionals
+ * @param array<string, mixed> $options
+ */
+function cmdStage(array $positionals, array $options): void
+{
+    if (count($positionals) === 0) {
+        error('stage requires a date-of-birth argument');
+    }
+    $dob = nullify($positionals[0]);
+
+    $localeCode = $options['locale'];
+    $locale = SayableAge\Locales\Locales::get($localeCode);
+    if ($locale === null) {
+        error("unknown locale '{$localeCode}'");
+    }
+
+    $asOf = $options['as_of'];
+    if ($asOf !== null) {
+        $asOf = nullify($asOf);
+    } else {
+        $asOf = getToday();
+    }
+
+    $gender = $options['gender'];
+
+    $formatter = new SayableAge\SayableAge($locale, ageCompactness($options['compactness']));
+    $result = $formatter->formatStage($dob, $asOf, $gender);
+
+    if ($result === null) {
+        exit(1);
+    }
+    echo $result . "\n";
+}
+
+/**
+ * @param list<string> $positionals
+ * @param array<string, mixed> $options
+ */
+function cmdDate(array $positionals, array $options): void
+{
+    if (count($positionals) === 0) {
+        error('date requires a date argument');
+    }
+    $dateVal = nullify($positionals[0]);
+
+    $localeCode = $options['locale'];
+    $locale = SayableDate\Locales\Locales::get($localeCode);
+    if ($locale === null) {
+        error("unknown locale '{$localeCode}'");
+    }
+
+    $formatter = new SayableDate\SayableDate($locale, dateCompactness($options['compactness']));
+
+    if ($options['with_year']) {
+        $result = $formatter->formatDateWithYear($dateVal);
+    } else {
+        $result = $formatter->formatDate($dateVal);
+    }
+
+    if ($result === null) {
+        exit(1);
+    }
+    echo $result . "\n";
+}
+
+/**
+ * @param list<string> $positionals
+ * @param array<string, mixed> $options
+ */
+function cmdRelative(array $positionals, array $options): void
+{
+    if (count($positionals) === 0) {
+        error('relative requires a date argument');
+    }
+    $dateVal = nullify($positionals[0]);
+
+    $asOf = $options['as_of'];
+    if ($asOf === null) {
+        error('relative requires --as-of / -d option');
+    }
+    $asOf = nullify($asOf);
+
+    $localeCode = $options['locale'];
+    $locale = SayableDate\Locales\Locales::get($localeCode);
+    if ($locale === null) {
+        error("unknown locale '{$localeCode}'");
+    }
+
+    $formatter = new SayableDate\SayableDate($locale, dateCompactness($options['compactness']));
+    $result = $formatter->formatRelative($dateVal, $asOf);
+
+    if ($result === null) {
+        exit(1);
+    }
+    echo $result . "\n";
+}
+
+/**
+ * @param list<string> $positionals
+ * @param array<string, mixed> $options
+ */
+function cmdTime(array $positionals, array $options): void
+{
+    if (count($positionals) === 0) {
+        error('time requires a time argument');
+    }
+    $timeVal = nullify($positionals[0]);
+
+    $localeCode = $options['locale'];
+    $locale = SayableTime\Locales\Locales::get($localeCode);
+    if ($locale === null) {
+        error("unknown locale '{$localeCode}'");
+    }
+
+    $formatter = new SayableTime\SayableTime($locale, timeCompactness($options['compactness']));
+    $result = $formatter->formatTime($timeVal);
+
+    if ($result === null) {
+        exit(1);
+    }
+    echo $result . "\n";
+}
+
+/**
+ * @param list<string> $positionals
+ * @param array<string, mixed> $options
+ */
+function cmdDuration(array $positionals, array $options): void
+{
+    if (count($positionals) === 0) {
+        error('duration requires a value argument');
+    }
+    $value = nullify($positionals[0]);
+
+    $localeCode = $options['locale'];
+    $locale = SayableDuration\Locales\Locales::get($localeCode);
+    if ($locale === null) {
+        error("unknown locale '{$localeCode}'");
+    }
+
+    $formatter = new SayableDuration\SayableDuration($locale, durationCompactness($options['compactness']));
+
+    if ($value === null) {
+        // Null input -> null result
+        exit(1);
+    } elseif (isIntegerString($value)) {
+        $result = $formatter->formatDuration((int) $value);
+    } else {
+        // Timestamp mode: need an end argument
+        if (count($positionals) < 2) {
+            error('duration with timestamps requires start and end arguments');
+        }
+        $end = nullify($positionals[1]);
+        if ($end === null) {
+            exit(1);
+        }
+        $result = $formatter->formatDurationIso($value, $end);
+    }
+
+    if ($result === null) {
+        exit(1);
+    }
+    echo $result . "\n";
+}
+
+/**
+ * Check if a string represents an integer (including negative).
+ */
+function isIntegerString(string $s): bool
+{
+    if ($s === '') {
+        return false;
+    }
+    $start = 0;
+    if ($s[0] === '-') {
+        if (strlen($s) === 1) {
+            return false;
+        }
+        $start = 1;
+    }
+    for ($i = $start, $len = strlen($s); $i < $len; $i++) {
+        if ($s[$i] < '0' || $s[$i] > '9') {
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
+ * @param list<string> $positionals
+ * @param array<string, mixed> $options
+ */
+function cmdSince(array $positionals, array $options): void
+{
+    if (count($positionals) === 0) {
+        error('since requires a start timestamp argument');
+    }
+    $start = nullify($positionals[0]);
+
+    $asOf = $options['as_of'];
+    if ($asOf === null) {
+        error('since requires --as-of / -d option');
+    }
+    $asOf = nullify($asOf);
+
+    $localeCode = $options['locale'];
+    $locale = SayableDuration\Locales\Locales::get($localeCode);
+    if ($locale === null) {
+        error("unknown locale '{$localeCode}'");
+    }
+
+    $formatter = new SayableDuration\SayableDuration($locale, durationCompactness($options['compactness']));
+    $result = $formatter->formatSince($start, $asOf);
+
+    if ($result === null) {
+        exit(1);
+    }
+    echo $result . "\n";
+}
+
+/**
+ * @param list<string> $positionals
+ * @param array<string, mixed> $options
+ */
+function cmdUntil(array $positionals, array $options): void
+{
+    if (count($positionals) === 0) {
+        error('until requires a target timestamp argument');
+    }
+    $target = nullify($positionals[0]);
+
+    $asOf = $options['as_of'];
+    if ($asOf === null) {
+        error('until requires --as-of / -d option');
+    }
+    $asOf = nullify($asOf);
+
+    $localeCode = $options['locale'];
+    $locale = SayableDuration\Locales\Locales::get($localeCode);
+    if ($locale === null) {
+        error("unknown locale '{$localeCode}'");
+    }
+
+    $formatter = new SayableDuration\SayableDuration($locale, durationCompactness($options['compactness']));
+    $result = $formatter->formatUntil($target, $asOf);
+
+    if ($result === null) {
+        exit(1);
+    }
+    echo $result . "\n";
+}
+
+function cmdLocales(): void
+{
+    // Use age locales as the canonical list (all components share the same set)
+    $ref = new ReflectionClass(SayableAge\Locales\Locales::class);
+    $codes = [];
+    foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC | ReflectionMethod::IS_STATIC) as $method) {
+        // Skip the get() lookup method and any methods that require parameters
+        if ($method->getName() === 'get' || $method->getNumberOfRequiredParameters() > 0) {
+            continue;
+        }
+        $locale = $method->invoke(null);
+        if ($locale instanceof SayableAge\AgeLocale) {
+            $codes[] = $locale->code;
+        }
+    }
+    sort($codes);
+    $unique = array_unique($codes);
+    foreach ($unique as $code) {
+        echo $code . "\n";
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------------
+
+$args = array_slice($argv, 1);
+[$command, $positionals, $options] = parseArgs($args);
+
+if ($command === null) {
+    echo HELP . "\n";
+    exit(2);
+}
+
+if ($command === 'help') {
+    echo HELP . "\n";
+    exit(0);
+}
+
+if ($command === 'version') {
+    echo 'sayable ' . VERSION . "\n";
+    exit(0);
+}
+
+if ($command === 'locales') {
+    cmdLocales();
+    exit(0);
+}
+
+$commands = [
+    'age' => 'cmdAge',
+    'stage' => 'cmdStage',
+    'date' => 'cmdDate',
+    'relative' => 'cmdRelative',
+    'time' => 'cmdTime',
+    'duration' => 'cmdDuration',
+    'since' => 'cmdSince',
+    'until' => 'cmdUntil',
+];
+
+if (!isset($commands[$command])) {
+    error("unknown command '{$command}'");
+}
+
+$commands[$command]($positionals, $options);

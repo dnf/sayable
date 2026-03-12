@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>SayableCli</RootNamespace>
+    <OptionStrict>On</OptionStrict>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../age/impl/vbnet/SayableAge/SayableAge.vbproj" />
+    <ProjectReference Include="../../../date/impl/vbnet/SayableDate/SayableDate.vbproj" />
+    <ProjectReference Include="../../../time/impl/vbnet/SayableTime/SayableTime.vbproj" />
+    <ProjectReference Include="../../../duration/impl/vbnet/SayableDuration/SayableDuration.vbproj" />
+  </ItemGroup>
+
+</Project>

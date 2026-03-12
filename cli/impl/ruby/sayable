@@ -1,0 +1,351 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Sayable CLI -- unified command-line interface to all four Sayable components.
+#
+# See cli/SPEC.md for the full specification.
+
+# Add all component source directories to the load path
+root = File.dirname(File.expand_path(__FILE__))
+project = File.expand_path(File.join(root, '..', '..', '..'))
+%w[age date duration time].each do |component|
+  lib = File.join(project, component, 'impl', 'ruby', 'lib')
+  $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+end
+
+require 'sayable_age'
+require 'sayable_date'
+require 'sayable_time'
+require 'sayable_duration'
+
+VERSION = '0.5.0'
+
+HELP = <<~HELP.chomp
+  Usage: sayable <command> [arguments] [options]
+
+  Commands:
+    age <dob>              Format an age
+    stage <dob>            Get developmental stage
+    date <date>            Format a calendar date
+    relative <date>        Format a relative date
+    time <time>            Format a clock time
+    duration <value> [end] Format a duration
+    since <start>          Format elapsed time
+    until <target>         Format remaining time
+    locales                List available locale codes
+    version                Show version
+    help                   Show this help
+
+  Options:
+    -l, --locale <code>    Locale code (default: en)
+    -d, --as-of <value>    Reference date/timestamp
+        --short            Short compactness
+        --compact          Compact compactness
+    -g, --gender <m|f>     Gender for stage labels
+        --with-year        Include year (date only)
+    -h, --help             Show this help
+    -v, --version          Show version
+HELP
+
+def error(msg)
+  $stderr.puts "error: #{msg}"
+  $stderr.puts "Run 'sayable help' for usage."
+  exit 2
+end
+
+def nullify(value)
+  value == 'null' ? nil : value
+end
+
+def get_today
+  require 'date'
+  Date.today.strftime('%Y-%m-%d')
+end
+
+def parse_args(argv)
+  return [nil, [], {}] if argv.empty?
+
+  # Global flags that can appear as the first argument
+  return ['help', [], {}] if %w[-h --help help].include?(argv[0])
+  return ['version', [], {}] if %w[-v --version version].include?(argv[0])
+
+  command = argv[0]
+  positionals = []
+  options = {
+    locale: 'en',
+    as_of: nil,
+    compactness: :normal,
+    gender: nil,
+    with_year: false
+  }
+
+  i = 1
+  stop_opts = false
+  while i < argv.length
+    arg = argv[i]
+
+    if arg == '--' && !stop_opts
+      stop_opts = true
+      i += 1
+      next
+    end
+
+    if !stop_opts && arg.start_with?('-')
+      case arg
+      when '-l', '--locale'
+        error("'#{arg}' requires a value") if i + 1 >= argv.length
+        i += 1
+        options[:locale] = argv[i]
+      when '-d', '--as-of'
+        error("'#{arg}' requires a value") if i + 1 >= argv.length
+        i += 1
+        options[:as_of] = argv[i]
+      when '-g', '--gender'
+        error("'#{arg}' requires a value") if i + 1 >= argv.length
+        i += 1
+        options[:gender] = argv[i]
+      when '--short'
+        options[:compactness] = :short
+      when '--compact'
+        options[:compactness] = :compact
+      when '--with-year'
+        options[:with_year] = true
+      when '-h', '--help'
+        return ['help', [], {}]
+      when '-v', '--version'
+        return ['version', [], {}]
+      else
+        error("unknown option '#{arg}'")
+      end
+    else
+      positionals << arg
+    end
+
+    i += 1
+  end
+
+  [command, positionals, options]
+end
+
+def cmd_age(positionals, options)
+  error('age requires a date-of-birth argument') if positionals.empty?
+  dob = nullify(positionals[0])
+
+  locale_code = options[:locale]
+  locale = SayableAge::Locales.get(locale_code)
+  error("unknown locale '#{locale_code}'") if locale.nil?
+
+  as_of = options[:as_of]
+  as_of = as_of.nil? ? get_today : nullify(as_of)
+
+  formatter = SayableAge::Formatter.new(locale, compactness: options[:compactness])
+  result = formatter.format_age(dob, as_of)
+
+  if result.nil?
+    exit 1
+  end
+  puts result
+end
+
+def cmd_stage(positionals, options)
+  error('stage requires a date-of-birth argument') if positionals.empty?
+  dob = nullify(positionals[0])
+
+  locale_code = options[:locale]
+  locale = SayableAge::Locales.get(locale_code)
+  error("unknown locale '#{locale_code}'") if locale.nil?
+
+  as_of = options[:as_of]
+  as_of = as_of.nil? ? get_today : nullify(as_of)
+
+  gender = options[:gender]
+
+  formatter = SayableAge::Formatter.new(locale, compactness: options[:compactness])
+  result = formatter.format_stage(dob, as_of, gender: gender)
+
+  if result.nil?
+    exit 1
+  end
+  puts result
+end
+
+def cmd_date(positionals, options)
+  error('date requires a date argument') if positionals.empty?
+  date_val = nullify(positionals[0])
+
+  locale_code = options[:locale]
+  locale = SayableDate::Locales.get(locale_code)
+  error("unknown locale '#{locale_code}'") if locale.nil?
+
+  formatter = SayableDate::Formatter.new(locale, compactness: options[:compactness])
+
+  result = if options[:with_year]
+             formatter.format_date_with_year(date_val)
+           else
+             formatter.format_date(date_val)
+           end
+
+  if result.nil?
+    exit 1
+  end
+  puts result
+end
+
+def cmd_relative(positionals, options)
+  error('relative requires a date argument') if positionals.empty?
+  date_val = nullify(positionals[0])
+
+  as_of = options[:as_of]
+  error('relative requires --as-of / -d option') if as_of.nil?
+  as_of = nullify(as_of)
+
+  locale_code = options[:locale]
+  locale = SayableDate::Locales.get(locale_code)
+  error("unknown locale '#{locale_code}'") if locale.nil?
+
+  formatter = SayableDate::Formatter.new(locale, compactness: options[:compactness])
+  result = formatter.format_relative(date_val, as_of)
+
+  if result.nil?
+    exit 1
+  end
+  puts result
+end
+
+def cmd_time(positionals, options)
+  error('time requires a time argument') if positionals.empty?
+  time_val = nullify(positionals[0])
+
+  locale_code = options[:locale]
+  locale = SayableTime::Locales.get(locale_code)
+  error("unknown locale '#{locale_code}'") if locale.nil?
+
+  formatter = SayableTime::Formatter.new(locale, options[:compactness])
+  result = formatter.format_time(time_val)
+
+  if result.nil?
+    exit 1
+  end
+  puts result
+end
+
+def cmd_duration(positionals, options)
+  error('duration requires a value argument') if positionals.empty?
+  value = nullify(positionals[0])
+
+  locale_code = options[:locale]
+  locale = SayableDuration::Locales.get(locale_code)
+  error("unknown locale '#{locale_code}'") if locale.nil?
+
+  formatter = SayableDuration::Formatter.new(locale, compactness: options[:compactness])
+
+  if value.nil?
+    result = formatter.format_duration(nil)
+  elsif value.gsub(/^-/, '').match?(/\A\d+\z/)
+    result = formatter.format_duration(value.to_i)
+  else
+    error('duration with timestamps requires start and end arguments') if positionals.length < 2
+    end_val = nullify(positionals[1])
+    result = formatter.format_duration(value, end_val)
+  end
+
+  if result.nil?
+    exit 1
+  end
+  puts result
+end
+
+def cmd_since(positionals, options)
+  error('since requires a start timestamp argument') if positionals.empty?
+  start = nullify(positionals[0])
+
+  as_of = options[:as_of]
+  error('since requires --as-of / -d option') if as_of.nil?
+  as_of = nullify(as_of)
+
+  locale_code = options[:locale]
+  locale = SayableDuration::Locales.get(locale_code)
+  error("unknown locale '#{locale_code}'") if locale.nil?
+
+  formatter = SayableDuration::Formatter.new(locale, compactness: options[:compactness])
+  result = formatter.format_since(start, as_of)
+
+  if result.nil?
+    exit 1
+  end
+  puts result
+end
+
+def cmd_until(positionals, options)
+  error('until requires a target timestamp argument') if positionals.empty?
+  target = nullify(positionals[0])
+
+  as_of = options[:as_of]
+  error('until requires --as-of / -d option') if as_of.nil?
+  as_of = nullify(as_of)
+
+  locale_code = options[:locale]
+  locale = SayableDuration::Locales.get(locale_code)
+  error("unknown locale '#{locale_code}'") if locale.nil?
+
+  formatter = SayableDuration::Formatter.new(locale, compactness: options[:compactness])
+  result = formatter.format_until(target, as_of)
+
+  if result.nil?
+    exit 1
+  end
+  puts result
+end
+
+def cmd_locales
+  # Use age locales as the canonical list (all components share the same set)
+  codes = []
+  SayableAge::Locales.constants.each do |name|
+    obj = SayableAge::Locales.const_get(name)
+    codes << obj.code if obj.respond_to?(:code) && obj.code.is_a?(String)
+  end
+  codes.uniq.sort.each { |code| puts code }
+end
+
+COMMANDS = {
+  'age' => method(:cmd_age),
+  'stage' => method(:cmd_stage),
+  'date' => method(:cmd_date),
+  'relative' => method(:cmd_relative),
+  'time' => method(:cmd_time),
+  'duration' => method(:cmd_duration),
+  'since' => method(:cmd_since),
+  'until' => method(:cmd_until)
+}.freeze
+
+def main
+  command, positionals, options = parse_args(ARGV)
+
+  if command.nil?
+    puts HELP
+    exit 2
+  end
+
+  if command == 'help'
+    puts HELP
+    exit 0
+  end
+
+  if command == 'version'
+    puts "sayable #{VERSION}"
+    exit 0
+  end
+
+  if command == 'locales'
+    cmd_locales
+    exit 0
+  end
+
+  unless COMMANDS.key?(command)
+    error("unknown command '#{command}'")
+  end
+
+  COMMANDS[command].call(positionals, options)
+end
+
+main

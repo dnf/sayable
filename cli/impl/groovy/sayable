@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Resolve the directory this script lives in
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+
+# Java source directories for all four components
+AGE_SRC="${PROJECT_ROOT}/age/impl/java/src/main/java"
+DATE_SRC="${PROJECT_ROOT}/date/impl/java/src/main/java"
+TIME_SRC="${PROJECT_ROOT}/time/impl/java/src/main/java"
+DURATION_SRC="${PROJECT_ROOT}/duration/impl/java/src/main/java"
+
+# Build directory for compiled component classes
+BUILD_DIR="${SCRIPT_DIR}/build"
+
+# Compile Java component classes if needed
+_needs_build=false
+if [[ ! -d "${BUILD_DIR}" ]]; then
+    _needs_build=true
+else
+    # Rebuild if any source is newer than the build dir
+    for _src_dir in "${AGE_SRC}" "${DATE_SRC}" "${TIME_SRC}" "${DURATION_SRC}"; do
+        if [[ $(find "${_src_dir}" -name "*.java" -newer "${BUILD_DIR}" 2>/dev/null | head -1) ]]; then
+            _needs_build=true
+            break
+        fi
+    done
+fi
+
+if ${_needs_build}; then
+    mkdir -p "${BUILD_DIR}"
+    javac -encoding UTF-8 \
+        -sourcepath "${AGE_SRC}:${DATE_SRC}:${TIME_SRC}:${DURATION_SRC}" \
+        -d "${BUILD_DIR}" \
+        "${AGE_SRC}"/sayableage/*.java \
+        "${AGE_SRC}"/sayableage/locales/*.java \
+        "${DATE_SRC}"/sayabledate/*.java \
+        "${DATE_SRC}"/sayabledate/locales/*.java \
+        "${TIME_SRC}"/sayabletime/*.java \
+        "${TIME_SRC}"/sayabletime/locales/*.java \
+        "${DURATION_SRC}"/sayableduration/*.java \
+        "${DURATION_SRC}"/sayableduration/locales/*.java 2>&1
+fi
+
+# Find the Groovy jar from Gradle wrapper distribution
+GROOVY_JAR=$(find "${HOME}/.gradle" -name "groovy-4*.jar" -not -name "groovy-*-*" 2>/dev/null | head -1)
+if [[ -z "${GROOVY_JAR}" ]]; then
+    # Try to bootstrap by running any component's gradlew
+    (cd "${PROJECT_ROOT}/date/impl/groovy" && ./gradlew -q dependencies >/dev/null 2>&1) || true
+    GROOVY_JAR=$(find "${HOME}/.gradle" -name "groovy-4*.jar" -not -name "groovy-*-*" 2>/dev/null | head -1)
+fi
+
+if [[ -z "${GROOVY_JAR}" ]]; then
+    echo "error: Groovy jar not found. Run a Groovy Gradle build first." >&2
+    exit 2
+fi
+
+# Run the Groovy CLI script with compiled component classes on the classpath
+java -cp "${GROOVY_JAR}:${BUILD_DIR}:${SCRIPT_DIR}" groovy.ui.GroovyMain "${SCRIPT_DIR}/Sayable.groovy" "$@"

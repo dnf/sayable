@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Wrapper script to build (if needed) and run the Sayable OCaml CLI.
+set -euo pipefail
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+BIN="${DIR}/_build/default/bin/main.exe"
+
+# Build if binary doesn't exist or source is newer
+if [[ ! -x "${BIN}" ]] || [[ "${DIR}/bin/main.ml" -nt "${BIN}" ]]; then
+    cd "${DIR}"
+    dune build 2>/dev/null
+fi
+
+exec "${BIN}" "$@"

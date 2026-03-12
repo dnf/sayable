@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Wrapper script: builds the Fortran CLI if needed, then runs it.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
+BINARY="${SCRIPT_DIR}/build/sayable"
+
+if [[ ! -x "${BINARY}" ]]; then
+    bash "${SCRIPT_DIR}/build.sh" >&2
+fi
+
+exec "${BINARY}" "$@"

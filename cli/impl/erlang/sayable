@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+# Sayable CLI wrapper for Erlang — compiles all components and runs the CLI.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+BUILD_DIR="${SCRIPT_DIR}/_build"
+
+# Component source and include directories
+AGE_SRC="${PROJECT_ROOT}/age/impl/erlang/src"
+AGE_INC="${PROJECT_ROOT}/age/impl/erlang/include"
+DATE_SRC="${PROJECT_ROOT}/date/impl/erlang/src"
+DATE_INC="${PROJECT_ROOT}/date/impl/erlang/include"
+TIME_SRC="${PROJECT_ROOT}/time/impl/erlang/src"
+TIME_INC="${PROJECT_ROOT}/time/impl/erlang/include"
+DUR_SRC="${PROJECT_ROOT}/duration/impl/erlang/src"
+DUR_INC="${PROJECT_ROOT}/duration/impl/erlang/include"
+CLI_SRC="${SCRIPT_DIR}/src"
+
+# Stamp file to track if rebuild is needed
+STAMP="${BUILD_DIR}/.stamp"
+
+needs_rebuild() {
+    [[ ! -f "${STAMP}" ]] && return 0
+
+    # Check if any source file is newer than the stamp
+    for dir in "${AGE_SRC}" "${DATE_SRC}" "${TIME_SRC}" "${DUR_SRC}" "${CLI_SRC}"; do
+        for f in $(find "${dir}" -name '*.erl' -o -name '*.hrl' 2>/dev/null); do
+            [[ "${f}" -nt "${STAMP}" ]] && return 0
+        done
+    done
+    for dir in "${AGE_INC}" "${DATE_INC}" "${TIME_INC}" "${DUR_INC}"; do
+        for f in $(find "${dir}" -name '*.hrl' 2>/dev/null); do
+            [[ "${f}" -nt "${STAMP}" ]] && return 0
+        done
+    done
+    return 1
+}
+
+compile() {
+    mkdir -p "${BUILD_DIR}"
+
+    # Collect all .erl source files (main modules + locale modules)
+    local src_files=()
+
+    # Age sources
+    for f in "${AGE_SRC}"/*.erl "${AGE_SRC}"/locales/*.erl; do
+        [[ -f "${f}" ]] && src_files+=("${f}")
+    done
+
+    # Date sources
+    for f in "${DATE_SRC}"/*.erl "${DATE_SRC}"/locales/*.erl; do
+        [[ -f "${f}" ]] && src_files+=("${f}")
+    done
+
+    # Time sources
+    for f in "${TIME_SRC}"/*.erl "${TIME_SRC}"/locales/*.erl; do
+        [[ -f "${f}" ]] && src_files+=("${f}")
+    done
+
+    # Duration sources
+    for f in "${DUR_SRC}"/*.erl "${DUR_SRC}"/locales/*.erl; do
+        [[ -f "${f}" ]] && src_files+=("${f}")
+    done
+
+    # CLI source
+    for f in "${CLI_SRC}"/*.erl; do
+        [[ -f "${f}" ]] && src_files+=("${f}")
+    done
+
+    # Compile all source files with include paths
+    erlc -o "${BUILD_DIR}" \
+        -I "${AGE_INC}" \
+        -I "${DATE_INC}" \
+        -I "${TIME_INC}" \
+        -I "${DUR_INC}" \
+        "${src_files[@]}"
+
+    touch "${STAMP}"
+}
+
+if needs_rebuild; then
+    compile
+fi
+
+# Run the CLI module
+exec erl -noshell -pa "${BUILD_DIR}" -run sayable_cli main -extra "$@"

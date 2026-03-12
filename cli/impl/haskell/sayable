@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Wrapper script to build (if needed) and run the Sayable Haskell CLI.
+set -euo pipefail
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+BIN="${DIR}/dist-newstyle/sayable-cli"
+
+# Build if binary doesn't exist or Main.hs is newer
+if [[ ! -x "${BIN}" ]] || [[ "${DIR}/Main.hs" -nt "${BIN}" ]]; then
+    cd "${DIR}"
+    cabal build exe:sayable-cli --project-file=cabal.project 2>/dev/null
+    # Find and copy the built binary
+    BUILT=$(cabal list-bin exe:sayable-cli --project-file=cabal.project 2>/dev/null)
+    mkdir -p "${DIR}/dist-newstyle"
+    cp "${BUILT}" "${BIN}"
+fi
+
+exec "${BIN}" "$@"

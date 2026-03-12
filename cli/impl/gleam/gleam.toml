@@ -1,0 +1,12 @@
+name = "sayable_cli"
+version = "0.5.0"
+description = "Sayable CLI — unified command-line interface to all four Sayable components"
+licences = ["MIT"]
+target = "erlang"
+
+[dependencies]
+gleam_stdlib = ">= 0.44.0 and < 2.0.0"
+sayableage = { path = "../../../age/impl/gleam" }
+sayabledate = { path = "../../../date/impl/gleam" }
+sayabletime = { path = "../../../time/impl/gleam" }
+sayableduration = { path = "../../../duration/impl/gleam" }

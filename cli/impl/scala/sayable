@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Resolve the directory this script lives in
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+
+# Source directories for all four components
+AGE_SRC="${PROJECT_ROOT}/age/impl/scala/src/main/scala"
+DATE_SRC="${PROJECT_ROOT}/date/impl/scala/src/main/scala"
+TIME_SRC="${PROJECT_ROOT}/time/impl/scala/src/main/scala"
+DURATION_SRC="${PROJECT_ROOT}/duration/impl/scala/src/main/scala"
+
+# Build directory
+BUILD_DIR="${SCRIPT_DIR}/build"
+
+# Locate Scala library jars for classpath
+# Follow symlinks to find the real Scala home (handles Homebrew layout)
+SCALAC_PATH="$(command -v scalac)"
+SCALAC_REAL="${SCALAC_PATH}"
+# Resolve symlinks (portable: works on macOS and Linux)
+while [[ -L "${SCALAC_REAL}" ]]; do
+    link="$(readlink "${SCALAC_REAL}")"
+    case "${link}" in
+        /*) SCALAC_REAL="${link}" ;;
+        *)  SCALAC_REAL="$(dirname "${SCALAC_REAL}")/${link}" ;;
+    esac
+done
+SCALA_HOME="$(cd "$(dirname "${SCALAC_REAL}")/.." && pwd)"
+
+# Find scala3-library jar (needed at runtime)
+SCALA3_LIB=""
+for candidate in \
+    "${SCALA_HOME}/libexec/maven2/org/scala-lang/scala3-library_3" \
+    "${SCALA_HOME}/maven2/org/scala-lang/scala3-library_3" \
+    "${SCALA_HOME}/lib"; do
+    jar="$(find "${candidate}" -name 'scala3-library_3-*.jar' 2>/dev/null | head -1)"
+    if [[ -n "${jar}" ]]; then
+        SCALA3_LIB="${jar}"
+        break
+    fi
+done
+
+SCALA2_LIB=""
+for candidate in \
+    "${SCALA_HOME}/libexec/maven2/org/scala-lang/scala-library" \
+    "${SCALA_HOME}/maven2/org/scala-lang/scala-library" \
+    "${SCALA_HOME}/lib"; do
+    jar="$(find "${candidate}" -name 'scala-library-*.jar' 2>/dev/null | head -1)"
+    if [[ -n "${jar}" ]]; then
+        SCALA2_LIB="${jar}"
+        break
+    fi
+done
+
+if [[ -z "${SCALA3_LIB}" ]]; then
+    echo "error: cannot find scala3-library jar. Ensure scalac is on PATH." >&2
+    exit 2
+fi
+
+if [[ -z "${SCALA2_LIB}" ]]; then
+    echo "error: cannot find scala-library jar. Ensure scalac is on PATH." >&2
+    exit 2
+fi
+
+# Compile if needed (check if Sayable.class exists and is newer than source)
+needs_compile=false
+if [[ ! -f "${BUILD_DIR}/Sayable.class" ]]; then
+    needs_compile=true
+elif [[ "${SCRIPT_DIR}/Sayable.scala" -nt "${BUILD_DIR}/Sayable.class" ]]; then
+    needs_compile=true
+fi
+
+if ${needs_compile}; then
+    mkdir -p "${BUILD_DIR}"
+
+    # Collect all Scala source files from all four components + CLI
+    SOURCES=()
+    while IFS= read -r f; do
+        SOURCES+=("${f}")
+    done < <(find "${AGE_SRC}" "${DATE_SRC}" "${TIME_SRC}" "${DURATION_SRC}" -name '*.scala')
+    SOURCES+=("${SCRIPT_DIR}/Sayable.scala")
+
+    scalac -d "${BUILD_DIR}" "${SOURCES[@]}" 2>&1
+fi
+
+# Run
+java -cp "${BUILD_DIR}:${SCALA3_LIB}:${SCALA2_LIB}" Sayable "$@"

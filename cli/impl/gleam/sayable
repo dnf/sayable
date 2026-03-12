@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Sayable CLI — Gleam implementation wrapper
+set -euo pipefail
+
+_dir="$(cd "$(dirname "$0")" && pwd)"
+
+# Ensure dependencies are resolved (first run only)
+if [[ ! -d "${_dir}/build" ]]; then
+    (cd "${_dir}" && gleam build >/dev/null 2>&1)
+fi
+
+exec erl -noshell -pa "${_dir}"/build/dev/erlang/*/ebin \
+    -eval "sayable_cli:main(), halt(0)." \
+    -extra "$@"

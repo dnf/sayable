@@ -1,0 +1,6 @@
+{:paths ["src"
+         "../../../age/impl/clojure/src"
+         "../../../date/impl/clojure/src"
+         "../../../time/impl/clojure/src"
+         "../../../duration/impl/clojure/src"]
+ :deps {}}

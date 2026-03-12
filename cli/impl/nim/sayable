@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Sayable CLI wrapper for Nim — compiles if needed, then runs.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+SOURCE="${SCRIPT_DIR}/main.nim"
+BINARY="${SCRIPT_DIR}/sayable-nim"
+
+# Source paths for all four component libraries
+AGE_SRC="${PROJECT_ROOT}/age/impl/nim/src"
+DATE_SRC="${PROJECT_ROOT}/date/impl/nim/src"
+TIME_SRC="${PROJECT_ROOT}/time/impl/nim/src"
+DURATION_SRC="${PROJECT_ROOT}/duration/impl/nim/src"
+
+# Recompile if binary is missing or source is newer
+if [[ ! -f "${BINARY}" ]] || [[ "${SOURCE}" -nt "${BINARY}" ]]; then
+    nim compile \
+        --path:"${AGE_SRC}" \
+        --path:"${DATE_SRC}" \
+        --path:"${TIME_SRC}" \
+        --path:"${DURATION_SRC}" \
+        --out:"${BINARY}" \
+        --hints:off \
+        --warnings:off \
+        -d:release \
+        "${SOURCE}" 2>&1
+fi
+
+exec "${BINARY}" "$@"

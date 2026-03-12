@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Resolve the directory this script lives in
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Build if needed (check if the DLL exists and is newer than source)
+BUILD_DIR="${SCRIPT_DIR}/bin/Release/net10.0"
+DLL="${BUILD_DIR}/SayableCli.dll"
+
+if [[ ! -f "${DLL}" ]] || \
+   [[ "${SCRIPT_DIR}/Program.cs" -nt "${DLL}" ]] || \
+   [[ "${SCRIPT_DIR}/SayableCli.csproj" -nt "${DLL}" ]]; then
+    dotnet build "${SCRIPT_DIR}/SayableCli.csproj" -c Release --nologo -v quiet 2>&1 >/dev/null
+fi
+
+# Run via dotnet exec (avoids native host DOTNET_ROOT issues)
+exec dotnet exec "${DLL}" "$@"
