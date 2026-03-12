@@ -1,4 +1,9 @@
+# Ada
+ada/build/
+ada/obj/
+
 # C
+c/.cache/
 c/build/
 
 # C#
@@ -12,9 +17,42 @@ cpp/build/
 # Clojure
 clojure/.cpcache/
 
+# COBOL
+cobol/build/
+
+# Dart
+dart/.dart_tool/
+dart/.packages
+dart/pubspec.lock
+
+# Elixir
+elixir/_build/
+
+# Elm
+elm/elm-stuff/
+
+# Erlang
+erlang/_build/
+erlang/rebar.lock
+erlang/rebar3.crashdump
+
 # F#
 fsharp/*/bin/
 fsharp/*/obj/
+
+# Fortran
+fortran/build/
+
+# Gleam
+gleam/build/
+gleam/manifest.toml
+
+# Go
+go/bin/
+
+# Groovy
+groovy/.gradle/
+groovy/build/
 
 # Haskell
 haskell/dist-newstyle/
@@ -29,6 +67,14 @@ kotlin/build/
 
 # Lua
 lua/.busted
+lua/luarocks/
+
+# OCaml
+ocaml/_build/
+ocaml/_opam/
+
+# Perl
+perl/local/
 
 # PHP
 php/.php-cs-fixer.cache
@@ -37,6 +83,19 @@ php/.phpunit.cache/
 php/composer.lock
 php/vendor/
 
+# Ruby
+ruby/*.gem
+ruby/.bundle/
+ruby/Gemfile.lock
+ruby/bin/
+ruby/cache/
+ruby/extensions/
+ruby/gems/
+ruby/pkg/
+ruby/specifications/
+ruby/tmp/
+ruby/vendor/
+
 # Rust
 rust/target/
 
@@ -44,6 +103,13 @@ rust/target/
 scala/.gradle/
 scala/build/
 
+# Swift
+swift/.build/
+swift/Package.resolved
+
+# TypeScript
+typescript/node_modules/
+
 # Zig
-zig/zig-out/
 zig/.zig-cache/
+zig/zig-out/

@@ -3,6 +3,7 @@ ada/build/
 ada/obj/
 
 # C
+c/.cache/
 c/build/
 
 # C#
