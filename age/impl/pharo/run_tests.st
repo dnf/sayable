@@ -30,9 +30,9 @@ loader value: 'SayableAgeTest.st'.
 
 "Run tests"
 suite := TestSuite new.
-suite addTests: SayableAgeFormatAgeTest buildSuite tests.
-suite addTests: SayableAgeFormatStageTest buildSuite tests.
-suite addTests: SayableAgeFormatterTest buildSuite tests.
+suite addTests: (Smalltalk at: #SayableAgeFormatAgeTest) buildSuite tests.
+suite addTests: (Smalltalk at: #SayableAgeFormatStageTest) buildSuite tests.
+suite addTests: (Smalltalk at: #SayableAgeFormatterTest) buildSuite tests.
 
 result := suite run.
 
