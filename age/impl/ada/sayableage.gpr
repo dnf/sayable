@@ -1,4 +1,4 @@
-project Parenttime is
+project Sayableage is
 
    type Build_Mode_Type is ("build", "test");
    Build_Mode : Build_Mode_Type := external ("BUILD_MODE", "test");
@@ -24,4 +24,4 @@ project Parenttime is
          for Exec_Dir use "build";
    end case;
 
-end Parenttime;
+end Sayableage;

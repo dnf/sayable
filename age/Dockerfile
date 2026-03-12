@@ -135,10 +135,12 @@ RUN git clone --depth 1 https://github.com/vlang/v.git /opt/v && \
     cd /opt/v && make && \
     ln -s /opt/v/v /usr/local/bin/v
 
-# Build wren_cli from source
-RUN git clone --depth 1 https://github.com/wren-lang/wren-cli.git /tmp/wren-cli && \
-    cd /tmp/wren-cli && make && cp bin/wren_cli /usr/local/bin/wren_cli && \
-    rm -rf /tmp/wren-cli
+# Install wren_cli from prebuilt release
+RUN curl -fsSL -o /tmp/wren-cli.zip https://github.com/wren-lang/wren-cli/releases/download/0.4.0/wren-cli-linux-0.4.0.zip && \
+    unzip -o /tmp/wren-cli.zip -d /tmp && \
+    cp /tmp/wren-cli-linux-0.4.0/wren_cli /usr/local/bin/wren_cli && \
+    chmod +x /usr/local/bin/wren_cli && \
+    rm -rf /tmp/wren-cli.zip /tmp/wren-cli-linux-0.4.0
 
 # Zig
 RUN ARCH="$(dpkg --print-architecture)" && \

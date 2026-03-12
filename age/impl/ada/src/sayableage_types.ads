@@ -1,6 +1,6 @@
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
-package Parenttime_Types is
+package Sayableage_Types is
 
    type Plural_Category is (Zero, One, Two, Few, Many, Other);
 
@@ -74,4 +74,4 @@ package Parenttime_Types is
 
    type Locale_Access is access all Locale;
 
-end Parenttime_Types;
+end Sayableage_Types;

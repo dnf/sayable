@@ -15,3 +15,4 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m codegen.generate --check
+        working-directory: age

@@ -9,7 +9,7 @@
 --  ╚══════════════════════════════════════════════════════════════╝
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
-package body Parenttime_Locales is
+package body Sayableage_Locales is
 
    Locale_Af : aliased Locale;
    Locale_Ak : aliased Locale;
@@ -17912,4 +17912,4 @@ package body Parenttime_Locales is
       return null;
    end Get_Locale;
 
-end Parenttime_Locales;
+end Sayableage_Locales;

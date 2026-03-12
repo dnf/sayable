@@ -96,13 +96,13 @@ def emit_spec(all_locales: list[dict]) -> str:
     """Generate the sayableage_locales.ads spec file."""
     lines: list[str] = []
     lines.append(HEADER.rstrip())
-    lines.append("with Parenttime_Types; use Parenttime_Types;")
+    lines.append("with Sayableage_Types; use Sayableage_Types;")
     lines.append("")
-    lines.append("package Parenttime_Locales is")
+    lines.append("package Sayableage_Locales is")
     lines.append("")
     lines.append("   function Get_Locale (Code : String) return Locale_Access;")
     lines.append("")
-    lines.append("end Parenttime_Locales;")
+    lines.append("end Sayableage_Locales;")
     lines.append("")
     return "\n".join(lines)
 
@@ -115,7 +115,7 @@ def emit_body(all_locales: list[dict]) -> str:
     lines.append(HEADER.rstrip())
     lines.append("with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;")
     lines.append("")
-    lines.append("package body Parenttime_Locales is")
+    lines.append("package body Sayableage_Locales is")
     lines.append("")
 
     # Locale variables
@@ -224,7 +224,7 @@ def emit_body(all_locales: list[dict]) -> str:
     lines.append("   end Get_Locale;")
     lines.append("")
 
-    lines.append("end Parenttime_Locales;")
+    lines.append("end Sayableage_Locales;")
     lines.append("")
 
     return "\n".join(lines)

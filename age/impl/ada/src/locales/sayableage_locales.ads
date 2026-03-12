@@ -7,10 +7,10 @@
 --  ║ Changes will be overwritten the next time codegen runs.      ║
 --  ║ Edit the generator or locale JSON instead.                   ║
 --  ╚══════════════════════════════════════════════════════════════╝
-with Parenttime_Types; use Parenttime_Types;
+with Sayableage_Types; use Sayableage_Types;
 
-package Parenttime_Locales is
+package Sayableage_Locales is
 
    function Get_Locale (Code : String) return Locale_Access;
 
-end Parenttime_Locales;
+end Sayableage_Locales;

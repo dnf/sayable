@@ -1,6 +1,6 @@
-with Parenttime_Types; use Parenttime_Types;
+with Sayableage_Types; use Sayableage_Types;
 
-package Parenttime is
+package Sayableage is
 
    Version : constant String := "0.5.0";
 
@@ -16,4 +16,4 @@ package Parenttime is
       As_Of  : String;
       Gender : String := "") return String;
 
-end Parenttime;
+end Sayableage;

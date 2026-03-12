@@ -123,7 +123,7 @@ class TestGenerateSubset(unittest.TestCase):
         self._run_generate("--lang", "go")
         go_dir = os.path.join(ROOT, "impl", "go", "locales")
         full_count = len([f for f in os.listdir(go_dir) if f.startswith("locale_") and f.endswith(".go") and f != "locale_registry.go"])
-        self.assertEqual(full_count, 110)
+        self.assertEqual(full_count, 168)
 
         # Generate subset
         self._run_generate("--locales", "cjk", "--lang", "go")

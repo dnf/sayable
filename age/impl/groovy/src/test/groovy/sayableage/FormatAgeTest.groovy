@@ -915,23 +915,29 @@ class FormatAgeTest {
     }
 
     // ================================================================
-    // All 110 locales exist and have correct codes
+    // All 168 locales exist and have correct codes
     // ================================================================
     @Test
-    void 'all 110 locales exist'() {
-        assertEquals(110, Locales.ALL.size())
+    void 'all 168 locales exist'() {
+        assertEquals(168, Locales.ALL.size())
         def expectedCodes = [
-            'af', 'ak', 'am', 'ar', 'az', 'be', 'bg', 'bn', 'br', 'bs',
-            'ca', 'ceb', 'cs', 'cy', 'da', 'de', 'el', 'en', 'es', 'et',
-            'eu', 'fa', 'ff', 'fi', 'fil', 'fr', 'ga', 'gd', 'gl', 'gn',
-            'gu', 'gv', 'ha', 'he', 'hi', 'hr', 'ht', 'hu', 'hy', 'id',
-            'ig', 'is', 'it', 'ja', 'jv', 'ka', 'kk', 'km', 'kn', 'ko',
-            'ku', 'kw', 'ky', 'lg', 'ln', 'lo', 'lt', 'lv', 'mg', 'mi',
-            'mk', 'ml', 'mn', 'mr', 'ms', 'mt', 'my', 'nb', 'ne', 'nl',
-            'ny', 'om', 'or', 'pa', 'pl', 'ps', 'pt', 'qu', 'ro', 'ru',
-            'rw', 'sd', 'shi', 'si', 'sk', 'sl', 'sn', 'so', 'sq', 'sr',
-            'su', 'sv', 'sw', 'ta', 'te', 'tg', 'th', 'ti', 'tk', 'tr',
-            'tzm', 'uk', 'ur', 'uz', 'vi', 'xh', 'yo', 'yue', 'zh', 'zu'
+            'af', 'ak', 'am', 'ar', 'ay', 'az', 'bci', 'be', 'bem', 'bg',
+            'bi', 'bm', 'bn', 'br', 'bs', 'ca', 'cak', 'ceb', 'cs', 'cy',
+            'da', 'de', 'din', 'dje', 'dv', 'dyu', 'dz', 'ee', 'el', 'en',
+            'es', 'et', 'eu', 'fa', 'fan', 'ff', 'fi', 'fil', 'fj', 'fon',
+            'fr', 'ga', 'gd', 'gl', 'gn', 'gu', 'gv', 'ha', 'he', 'hi',
+            'hmn', 'hr', 'ht', 'hu', 'hy', 'id', 'ig', 'is', 'it', 'ja',
+            'jv', 'ka', 'kbp', 'kek', 'ki', 'kk', 'kl', 'km', 'kn', 'ko',
+            'kpe', 'kri', 'ktu', 'ku', 'kw', 'ky', 'lb', 'lg', 'ln', 'lo',
+            'lt', 'luo', 'lv', 'mam', 'men', 'mfe', 'mg', 'mi', 'mk', 'ml',
+            'mn', 'mnk', 'mos', 'mr', 'ms', 'mt', 'my', 'nb', 'nd', 'ne',
+            'ng', 'nl', 'nr', 'nso', 'nus', 'ny', 'om', 'or', 'pa', 'pis',
+            'pl', 'pov', 'ps', 'pt', 'qu', 'quc', 'ro', 'ru', 'rw', 'sar',
+            'sd', 'sg', 'shi', 'shn', 'si', 'sk', 'sl', 'sn', 'snk', 'so',
+            'sq', 'sr', 'ss', 'st', 'su', 'suk', 'sv', 'sw', 'ta', 'te',
+            'tem', 'tet', 'tg', 'th', 'ti', 'tig', 'tk', 'tn', 'tpi', 'tr',
+            'ts', 'tum', 'tzm', 'uk', 'umb', 'ur', 'uz', 've', 'vi', 'vmw',
+            'wo', 'xh', 'yao', 'yo', 'yue', 'zdj', 'zh', 'zu'
         ]
         for (String code : expectedCodes) {
             def locale = Locales.ALL[code]

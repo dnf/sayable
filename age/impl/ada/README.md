@@ -3,12 +3,12 @@
 Human-friendly age formatting — how parents actually talk about little ones.
 
 ```ada
-with Parenttime;
-with Parenttime_Types; use Parenttime_Types;
-with Parenttime_Locales;
+with Sayableage;
+with Sayableage_Types; use Sayableage_Types;
+with Sayableage_Locales;
 
-Loc : Locale_Access := Parenttime_Locales.Get_Locale ("en");
-Put_Line (Parenttime.Format_Age (Loc.all, Normal, "2025-06-01", "2025-06-15"));
+Loc : Locale_Access := Sayableage_Locales.Get_Locale ("en");
+Put_Line (Sayableage.Format_Age (Loc.all, Normal, "2025-06-01", "2025-06-15"));
 --  "2 weeks"
 ```
 
@@ -26,18 +26,18 @@ Requires GNAT (GCC Ada compiler) and GPRbuild.
 ## Usage
 
 ```ada
-with Parenttime;
-with Parenttime_Types; use Parenttime_Types;
-with Parenttime_Locales;
+with Sayableage;
+with Sayableage_Types; use Sayableage_Types;
+with Sayableage_Locales;
 
 procedure Example is
-   Loc    : Locale_Access := Parenttime_Locales.Get_Locale ("en");
+   Loc    : Locale_Access := Sayableage_Locales.Get_Locale ("en");
    Result : constant String :=
-     Parenttime.Format_Age (Loc.all, Normal, "2025-01-15", "2025-07-15");
+     Sayableage.Format_Age (Loc.all, Normal, "2025-01-15", "2025-07-15");
 begin
    Put_Line (Result);  --  "6 months"
 
-   Put_Line (Parenttime.Format_Stage (Loc.all, "2025-01-15", "2025-06-15"));
+   Put_Line (Sayableage.Format_Stage (Loc.all, "2025-01-15", "2025-06-15"));
    --  "Infant"
 end Example;
 ```
@@ -45,8 +45,8 @@ end Example;
 ## Internationalization
 
 ```ada
-Ja : Locale_Access := Parenttime_Locales.Get_Locale ("ja");
-Put_Line (Parenttime.Format_Age (Ja.all, Normal, "2025-01-01", "2025-07-15"));
+Ja : Locale_Access := Sayableage_Locales.Get_Locale ("ja");
+Put_Line (Sayableage.Format_Age (Ja.all, Normal, "2025-01-01", "2025-07-15"));
 --  "6ヶ月"
 ```
 

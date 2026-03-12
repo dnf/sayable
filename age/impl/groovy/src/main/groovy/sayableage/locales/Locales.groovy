@@ -21,147 +21,1146 @@ class Locales {
     // ================================================================
     // AF — Afrikaans
     // ================================================================
-    static final AgeLocale AF = new AgeLocale(
-        'af',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dae']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} week', (PluralCategory.OTHER): '{n} weke']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} maand', (PluralCategory.OTHER): '{n} maande']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} jaar', (PluralCategory.OTHER): '{n} jaar']),
-        ),
-        '{n}½',
-        ', ',
-        'Pasgebore',
-        new Stages(
-            StageLabel.neutral('Pasgebore'),
-            StageLabel.neutral('Baba'),
-            StageLabel.neutral('Kleuter'),
-            StageLabel.neutral('Kind'),
-            StageLabel.neutral('Tiener'),
-            StageLabel.neutral('Volwassene'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} w.'),
-            UnitForms.simpleUnit('{n} md.'),
-            UnitForms.simpleUnit('{n} j.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}j'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    static final AgeLocale AF = _af()
 
     // Source: age/locales/src/ak.json
     // ================================================================
     // AK — Akan
     // ================================================================
-    static final AgeLocale AK = new AgeLocale(
-        'ak',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'da {n}', (PluralCategory.OTHER): 'nna {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'dapɛn {n}', (PluralCategory.OTHER): 'nnapɛn {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'bosome {n}', (PluralCategory.OTHER): 'abosome {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'afe {n}', (PluralCategory.OTHER): 'mfe {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Abofra foforo',
-        new Stages(
-            StageLabel.neutral('Abofra foforo'),
-            StageLabel.neutral('Akwadaa'),
-            StageLabel.neutral('Abofra'),
-            StageLabel.neutral('Abofra'),
-            StageLabel.neutral('Abarimaa'),
-            StageLabel.neutral('Ɔpanyin'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('nna {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'dapɛn {n}', (PluralCategory.OTHER): 'nnapɛn {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'bosome {n}', (PluralCategory.OTHER): 'abosome {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'afe {n}', (PluralCategory.OTHER): 'mfe {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('nna {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'dapɛn {n}', (PluralCategory.OTHER): 'nnapɛn {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'bos {n}', (PluralCategory.OTHER): 'abos {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'afe {n}', (PluralCategory.OTHER): 'mfe {n}']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    static final AgeLocale AK = _ak()
 
     // Source: age/locales/src/am.json
     // ================================================================
     // AM — Amharic
     // ================================================================
-    static final AgeLocale AM = new AgeLocale(
-        'am',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ቀን', (PluralCategory.OTHER): '{n} ቀናት']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሳምንት', (PluralCategory.OTHER): '{n} ሳምንታት']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ወር', (PluralCategory.OTHER): '{n} ወራት']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
-        ),
-        '{0} ተኩል',
-        '፣ ',
-        'አዲስ የተወለደ',
-        new Stages(
-            StageLabel.neutral('አዲስ የተወለደ'),
-            StageLabel.neutral('ሕፃን'),
-            StageLabel.neutral('ሕፃን ልጅ'),
-            StageLabel.neutral('ልጅ'),
-            StageLabel.neutral('ታዳጊ'),
-            StageLabel.neutral('አዋቂ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ቀናት'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሳምንት', (PluralCategory.OTHER): '{n} ሳምንታት']),
-            UnitForms.simpleUnit('{n} ወራት'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ቀ'),
-            UnitForms.simpleUnit('{n} ሳምንት'),
-            UnitForms.simpleUnit('{n} ወር'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓ']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    static final AgeLocale AM = _am()
 
     // Source: age/locales/src/ar.json
     // ================================================================
     // AR — Arabic
     // ================================================================
-    static final AgeLocale AR = new AgeLocale(
-        'ar',
-        { int n ->
+    static final AgeLocale AR = _ar()
+
+    // Source: age/locales/src/ay.json
+    // ================================================================
+    // AY — Aymara
+    // ================================================================
+    static final AgeLocale AY = _ay()
+
+    // Source: age/locales/src/az.json
+    // ================================================================
+    // AZ — Azerbaijani
+    // ================================================================
+    static final AgeLocale AZ = _az()
+
+    // Source: age/locales/src/bci.json
+    // ================================================================
+    // BCI — Baoulé
+    // ================================================================
+    static final AgeLocale BCI = _bci()
+
+    // Source: age/locales/src/be.json
+    // ================================================================
+    // BE — Belarusian
+    // ================================================================
+    static final AgeLocale BE = _be()
+
+    // Source: age/locales/src/bem.json
+    // ================================================================
+    // BEM — Bemba
+    // ================================================================
+    static final AgeLocale BEM = _bem()
+
+    // Source: age/locales/src/bg.json
+    // ================================================================
+    // BG — Bulgarian
+    // ================================================================
+    static final AgeLocale BG = _bg()
+
+    // Source: age/locales/src/bi.json
+    // ================================================================
+    // BI — Bislama
+    // ================================================================
+    static final AgeLocale BI = _bi()
+
+    // Source: age/locales/src/bm.json
+    // ================================================================
+    // BM — Bambara
+    // ================================================================
+    static final AgeLocale BM = _bm()
+
+    // Source: age/locales/src/bn.json
+    // ================================================================
+    // BN — Bengali
+    // ================================================================
+    static final AgeLocale BN = _bn()
+
+    // Source: age/locales/src/br.json
+    // ================================================================
+    // BR — Breton
+    // ================================================================
+    static final AgeLocale BR = _br()
+
+    // Source: age/locales/src/bs.json
+    // ================================================================
+    // BS — Bosnian
+    // ================================================================
+    static final AgeLocale BS = _bs()
+
+    // Source: age/locales/src/ca.json
+    // ================================================================
+    // CA — Catalan
+    // ================================================================
+    static final AgeLocale CA = _ca()
+
+    // Source: age/locales/src/cak.json
+    // ================================================================
+    // CAK — Kaqchikel
+    // ================================================================
+    static final AgeLocale CAK = _cak()
+
+    // Source: age/locales/src/ceb.json
+    // ================================================================
+    // CEB — Cebuano
+    // ================================================================
+    static final AgeLocale CEB = _ceb()
+
+    // Source: age/locales/src/cs.json
+    // ================================================================
+    // CS — Czech
+    // ================================================================
+    static final AgeLocale CS = _cs()
+
+    // Source: age/locales/src/cy.json
+    // ================================================================
+    // CY — Welsh
+    // ================================================================
+    static final AgeLocale CY = _cy()
+
+    // Source: age/locales/src/da.json
+    // ================================================================
+    // DA — Danish
+    // ================================================================
+    static final AgeLocale DA = _da()
+
+    // Source: age/locales/src/de.json
+    // ================================================================
+    // DE — German
+    // ================================================================
+    static final AgeLocale DE = _de()
+
+    // Source: age/locales/src/din.json
+    // ================================================================
+    // DIN — Dinka
+    // ================================================================
+    static final AgeLocale DIN = _din()
+
+    // Source: age/locales/src/dje.json
+    // ================================================================
+    // DJE — Zarma
+    // ================================================================
+    static final AgeLocale DJE = _dje()
+
+    // Source: age/locales/src/dv.json
+    // ================================================================
+    // DV — Dhivehi
+    // ================================================================
+    static final AgeLocale DV = _dv()
+
+    // Source: age/locales/src/dyu.json
+    // ================================================================
+    // DYU — Dyula
+    // ================================================================
+    static final AgeLocale DYU = _dyu()
+
+    // Source: age/locales/src/dz.json
+    // ================================================================
+    // DZ — Dzongkha
+    // ================================================================
+    static final AgeLocale DZ = _dz()
+
+    // Source: age/locales/src/ee.json
+    // ================================================================
+    // EE — Ewe
+    // ================================================================
+    static final AgeLocale EE = _ee()
+
+    // Source: age/locales/src/el.json
+    // ================================================================
+    // EL — Greek
+    // ================================================================
+    static final AgeLocale EL = _el()
+
+    // Source: age/locales/src/en.json
+    // ================================================================
+    // EN — English
+    // ================================================================
+    static final AgeLocale EN = _en()
+
+    // Source: age/locales/src/es.json
+    // ================================================================
+    // ES — Spanish
+    // ================================================================
+    static final AgeLocale ES = _es()
+
+    // Source: age/locales/src/et.json
+    // ================================================================
+    // ET — Estonian
+    // ================================================================
+    static final AgeLocale ET = _et()
+
+    // Source: age/locales/src/eu.json
+    // ================================================================
+    // EU — Basque
+    // ================================================================
+    static final AgeLocale EU = _eu()
+
+    // Source: age/locales/src/fa.json
+    // ================================================================
+    // FA — Persian
+    // ================================================================
+    static final AgeLocale FA = _fa()
+
+    // Source: age/locales/src/fan.json
+    // ================================================================
+    // FAN — Fang
+    // ================================================================
+    static final AgeLocale FAN = _fan()
+
+    // Source: age/locales/src/ff.json
+    // ================================================================
+    // FF — Fulah
+    // ================================================================
+    static final AgeLocale FF = _ff()
+
+    // Source: age/locales/src/fi.json
+    // ================================================================
+    // FI — Finnish
+    // ================================================================
+    static final AgeLocale FI = _fi()
+
+    // Source: age/locales/src/fil.json
+    // ================================================================
+    // FIL — Filipino
+    // ================================================================
+    static final AgeLocale FIL = _fil()
+
+    // Source: age/locales/src/fj.json
+    // ================================================================
+    // FJ — Fijian
+    // ================================================================
+    static final AgeLocale FJ = _fj()
+
+    // Source: age/locales/src/fon.json
+    // ================================================================
+    // FON — Fon
+    // ================================================================
+    static final AgeLocale FON = _fon()
+
+    // Source: age/locales/src/fr.json
+    // ================================================================
+    // FR — French
+    // ================================================================
+    static final AgeLocale FR = _fr()
+
+    // Source: age/locales/src/ga.json
+    // ================================================================
+    // GA — Irish
+    // ================================================================
+    static final AgeLocale GA = _ga()
+
+    // Source: age/locales/src/gd.json
+    // ================================================================
+    // GD — Scottish Gaelic
+    // ================================================================
+    static final AgeLocale GD = _gd()
+
+    // Source: age/locales/src/gl.json
+    // ================================================================
+    // GL — Galician
+    // ================================================================
+    static final AgeLocale GL = _gl()
+
+    // Source: age/locales/src/gn.json
+    // ================================================================
+    // GN — Guarani
+    // ================================================================
+    static final AgeLocale GN = _gn()
+
+    // Source: age/locales/src/gu.json
+    // ================================================================
+    // GU — Gujarati
+    // ================================================================
+    static final AgeLocale GU = _gu()
+
+    // Source: age/locales/src/gv.json
+    // ================================================================
+    // GV — Manx
+    // ================================================================
+    static final AgeLocale GV = _gv()
+
+    // Source: age/locales/src/ha.json
+    // ================================================================
+    // HA — Hausa
+    // ================================================================
+    static final AgeLocale HA = _ha()
+
+    // Source: age/locales/src/he.json
+    // ================================================================
+    // HE — Hebrew
+    // ================================================================
+    static final AgeLocale HE = _he()
+
+    // Source: age/locales/src/hi.json
+    // ================================================================
+    // HI — Hindi
+    // ================================================================
+    static final AgeLocale HI = _hi()
+
+    // Source: age/locales/src/hmn.json
+    // ================================================================
+    // HMN — Hmong
+    // ================================================================
+    static final AgeLocale HMN = _hmn()
+
+    // Source: age/locales/src/hr.json
+    // ================================================================
+    // HR — Croatian
+    // ================================================================
+    static final AgeLocale HR = _hr()
+
+    // Source: age/locales/src/ht.json
+    // ================================================================
+    // HT — Haitian Creole
+    // ================================================================
+    static final AgeLocale HT = _ht()
+
+    // Source: age/locales/src/hu.json
+    // ================================================================
+    // HU — Hungarian
+    // ================================================================
+    static final AgeLocale HU = _hu()
+
+    // Source: age/locales/src/hy.json
+    // ================================================================
+    // HY — Armenian
+    // ================================================================
+    static final AgeLocale HY = _hy()
+
+    // Source: age/locales/src/id.json
+    // ================================================================
+    // ID — Indonesian
+    // ================================================================
+    static final AgeLocale ID = _id()
+
+    // Source: age/locales/src/ig.json
+    // ================================================================
+    // IG — Igbo
+    // ================================================================
+    static final AgeLocale IG = _ig()
+
+    // Source: age/locales/src/is.json
+    // ================================================================
+    // IS — Icelandic
+    // ================================================================
+    static final AgeLocale IS = _is()
+
+    // Source: age/locales/src/it.json
+    // ================================================================
+    // IT — Italian
+    // ================================================================
+    static final AgeLocale IT = _it()
+
+    // Source: age/locales/src/ja.json
+    // ================================================================
+    // JA — Japanese
+    // ================================================================
+    static final AgeLocale JA = _ja()
+
+    // Source: age/locales/src/jv.json
+    // ================================================================
+    // JV — Javanese
+    // ================================================================
+    static final AgeLocale JV = _jv()
+
+    // Source: age/locales/src/ka.json
+    // ================================================================
+    // KA — Georgian
+    // ================================================================
+    static final AgeLocale KA = _ka()
+
+    // Source: age/locales/src/kbp.json
+    // ================================================================
+    // KBP — Kabiye
+    // ================================================================
+    static final AgeLocale KBP = _kbp()
+
+    // Source: age/locales/src/kek.json
+    // ================================================================
+    // KEK — Q'eqchi'
+    // ================================================================
+    static final AgeLocale KEK = _kek()
+
+    // Source: age/locales/src/ki.json
+    // ================================================================
+    // KI — Kikuyu
+    // ================================================================
+    static final AgeLocale KI = _ki()
+
+    // Source: age/locales/src/kk.json
+    // ================================================================
+    // KK — Kazakh
+    // ================================================================
+    static final AgeLocale KK = _kk()
+
+    // Source: age/locales/src/kl.json
+    // ================================================================
+    // KL — Kalaallisut
+    // ================================================================
+    static final AgeLocale KL = _kl()
+
+    // Source: age/locales/src/km.json
+    // ================================================================
+    // KM — Khmer
+    // ================================================================
+    static final AgeLocale KM = _km()
+
+    // Source: age/locales/src/kn.json
+    // ================================================================
+    // KN — Kannada
+    // ================================================================
+    static final AgeLocale KN = _kn()
+
+    // Source: age/locales/src/ko.json
+    // ================================================================
+    // KO — Korean
+    // ================================================================
+    static final AgeLocale KO = _ko()
+
+    // Source: age/locales/src/kpe.json
+    // ================================================================
+    // KPE — Kpelle
+    // ================================================================
+    static final AgeLocale KPE = _kpe()
+
+    // Source: age/locales/src/kri.json
+    // ================================================================
+    // KRI — Krio
+    // ================================================================
+    static final AgeLocale KRI = _kri()
+
+    // Source: age/locales/src/ktu.json
+    // ================================================================
+    // KTU — Kituba
+    // ================================================================
+    static final AgeLocale KTU = _ktu()
+
+    // Source: age/locales/src/ku.json
+    // ================================================================
+    // KU — Kurdish
+    // ================================================================
+    static final AgeLocale KU = _ku()
+
+    // Source: age/locales/src/kw.json
+    // ================================================================
+    // KW — Cornish
+    // ================================================================
+    static final AgeLocale KW = _kw()
+
+    // Source: age/locales/src/ky.json
+    // ================================================================
+    // KY — Kyrgyz
+    // ================================================================
+    static final AgeLocale KY = _ky()
+
+    // Source: age/locales/src/lb.json
+    // ================================================================
+    // LB — Luxembourgish
+    // ================================================================
+    static final AgeLocale LB = _lb()
+
+    // Source: age/locales/src/lg.json
+    // ================================================================
+    // LG — Luganda
+    // ================================================================
+    static final AgeLocale LG = _lg()
+
+    // Source: age/locales/src/ln.json
+    // ================================================================
+    // LN — Lingala
+    // ================================================================
+    static final AgeLocale LN = _ln()
+
+    // Source: age/locales/src/lo.json
+    // ================================================================
+    // LO — Lao
+    // ================================================================
+    static final AgeLocale LO = _lo()
+
+    // Source: age/locales/src/lt.json
+    // ================================================================
+    // LT — Lithuanian
+    // ================================================================
+    static final AgeLocale LT = _lt()
+
+    // Source: age/locales/src/luo.json
+    // ================================================================
+    // LUO — Dholuo
+    // ================================================================
+    static final AgeLocale LUO = _luo()
+
+    // Source: age/locales/src/lv.json
+    // ================================================================
+    // LV — Latvian
+    // ================================================================
+    static final AgeLocale LV = _lv()
+
+    // Source: age/locales/src/mam.json
+    // ================================================================
+    // MAM — Mam
+    // ================================================================
+    static final AgeLocale MAM = _mam()
+
+    // Source: age/locales/src/men.json
+    // ================================================================
+    // MEN — Mende
+    // ================================================================
+    static final AgeLocale MEN = _men()
+
+    // Source: age/locales/src/mfe.json
+    // ================================================================
+    // MFE — Mauritian Creole
+    // ================================================================
+    static final AgeLocale MFE = _mfe()
+
+    // Source: age/locales/src/mg.json
+    // ================================================================
+    // MG — Malagasy
+    // ================================================================
+    static final AgeLocale MG = _mg()
+
+    // Source: age/locales/src/mi.json
+    // ================================================================
+    // MI — Māori
+    // ================================================================
+    static final AgeLocale MI = _mi()
+
+    // Source: age/locales/src/mk.json
+    // ================================================================
+    // MK — Macedonian
+    // ================================================================
+    static final AgeLocale MK = _mk()
+
+    // Source: age/locales/src/ml.json
+    // ================================================================
+    // ML — Malayalam
+    // ================================================================
+    static final AgeLocale ML = _ml()
+
+    // Source: age/locales/src/mn.json
+    // ================================================================
+    // MN — Mongolian
+    // ================================================================
+    static final AgeLocale MN = _mn()
+
+    // Source: age/locales/src/mnk.json
+    // ================================================================
+    // MNK — Mandinka
+    // ================================================================
+    static final AgeLocale MNK = _mnk()
+
+    // Source: age/locales/src/mos.json
+    // ================================================================
+    // MOS — Moore
+    // ================================================================
+    static final AgeLocale MOS = _mos()
+
+    // Source: age/locales/src/mr.json
+    // ================================================================
+    // MR — Marathi
+    // ================================================================
+    static final AgeLocale MR = _mr()
+
+    // Source: age/locales/src/ms.json
+    // ================================================================
+    // MS — Malay
+    // ================================================================
+    static final AgeLocale MS = _ms()
+
+    // Source: age/locales/src/mt.json
+    // ================================================================
+    // MT — Maltese
+    // ================================================================
+    static final AgeLocale MT = _mt()
+
+    // Source: age/locales/src/my.json
+    // ================================================================
+    // MY — Burmese
+    // ================================================================
+    static final AgeLocale MY = _my()
+
+    // Source: age/locales/src/nb.json
+    // ================================================================
+    // NB — Norwegian Bokmål
+    // ================================================================
+    static final AgeLocale NB = _nb()
+
+    // Source: age/locales/src/nd.json
+    // ================================================================
+    // ND — Northern Ndebele
+    // ================================================================
+    static final AgeLocale ND = _nd()
+
+    // Source: age/locales/src/ne.json
+    // ================================================================
+    // NE — Nepali
+    // ================================================================
+    static final AgeLocale NE = _ne()
+
+    // Source: age/locales/src/ng.json
+    // ================================================================
+    // NG — Oshiwambo
+    // ================================================================
+    static final AgeLocale NG = _ng()
+
+    // Source: age/locales/src/nl.json
+    // ================================================================
+    // NL — Dutch
+    // ================================================================
+    static final AgeLocale NL = _nl()
+
+    // Source: age/locales/src/nr.json
+    // ================================================================
+    // NR — Southern Ndebele
+    // ================================================================
+    static final AgeLocale NR = _nr()
+
+    // Source: age/locales/src/nso.json
+    // ================================================================
+    // NSO — Northern Sotho
+    // ================================================================
+    static final AgeLocale NSO = _nso()
+
+    // Source: age/locales/src/nus.json
+    // ================================================================
+    // NUS — Nuer
+    // ================================================================
+    static final AgeLocale NUS = _nus()
+
+    // Source: age/locales/src/ny.json
+    // ================================================================
+    // NY — Chichewa
+    // ================================================================
+    static final AgeLocale NY = _ny()
+
+    // Source: age/locales/src/om.json
+    // ================================================================
+    // OM — Oromo
+    // ================================================================
+    static final AgeLocale OM = _om()
+
+    // Source: age/locales/src/or.json
+    // ================================================================
+    // OR — Odia
+    // ================================================================
+    static final AgeLocale OR = _or()
+
+    // Source: age/locales/src/pa.json
+    // ================================================================
+    // PA — Punjabi
+    // ================================================================
+    static final AgeLocale PA = _pa()
+
+    // Source: age/locales/src/pis.json
+    // ================================================================
+    // PIS — Pijin
+    // ================================================================
+    static final AgeLocale PIS = _pis()
+
+    // Source: age/locales/src/pl.json
+    // ================================================================
+    // PL — Polish
+    // ================================================================
+    static final AgeLocale PL = _pl()
+
+    // Source: age/locales/src/pov.json
+    // ================================================================
+    // POV — Guinea-Bissau Creole
+    // ================================================================
+    static final AgeLocale POV = _pov()
+
+    // Source: age/locales/src/ps.json
+    // ================================================================
+    // PS — Pashto
+    // ================================================================
+    static final AgeLocale PS = _ps()
+
+    // Source: age/locales/src/pt.json
+    // ================================================================
+    // PT — Portuguese
+    // ================================================================
+    static final AgeLocale PT = _pt()
+
+    // Source: age/locales/src/qu.json
+    // ================================================================
+    // QU — Quechua
+    // ================================================================
+    static final AgeLocale QU = _qu()
+
+    // Source: age/locales/src/quc.json
+    // ================================================================
+    // QUC — K'iche'
+    // ================================================================
+    static final AgeLocale QUC = _quc()
+
+    // Source: age/locales/src/ro.json
+    // ================================================================
+    // RO — Romanian
+    // ================================================================
+    static final AgeLocale RO = _ro()
+
+    // Source: age/locales/src/ru.json
+    // ================================================================
+    // RU — Russian
+    // ================================================================
+    static final AgeLocale RU = _ru()
+
+    // Source: age/locales/src/rw.json
+    // ================================================================
+    // RW — Kinyarwanda
+    // ================================================================
+    static final AgeLocale RW = _rw()
+
+    // Source: age/locales/src/sar.json
+    // ================================================================
+    // SAR — Sara
+    // ================================================================
+    static final AgeLocale SAR = _sar()
+
+    // Source: age/locales/src/sd.json
+    // ================================================================
+    // SD — Sindhi
+    // ================================================================
+    static final AgeLocale SD = _sd()
+
+    // Source: age/locales/src/sg.json
+    // ================================================================
+    // SG — Sango
+    // ================================================================
+    static final AgeLocale SG = _sg()
+
+    // Source: age/locales/src/shi.json
+    // ================================================================
+    // SHI — Tachelhit
+    // ================================================================
+    static final AgeLocale SHI = _shi()
+
+    // Source: age/locales/src/shn.json
+    // ================================================================
+    // SHN — Shan
+    // ================================================================
+    static final AgeLocale SHN = _shn()
+
+    // Source: age/locales/src/si.json
+    // ================================================================
+    // SI — Sinhala
+    // ================================================================
+    static final AgeLocale SI = _si()
+
+    // Source: age/locales/src/sk.json
+    // ================================================================
+    // SK — Slovak
+    // ================================================================
+    static final AgeLocale SK = _sk()
+
+    // Source: age/locales/src/sl.json
+    // ================================================================
+    // SL — Slovenian
+    // ================================================================
+    static final AgeLocale SL = _sl()
+
+    // Source: age/locales/src/sn.json
+    // ================================================================
+    // SN — Shona
+    // ================================================================
+    static final AgeLocale SN = _sn()
+
+    // Source: age/locales/src/snk.json
+    // ================================================================
+    // SNK — Soninke
+    // ================================================================
+    static final AgeLocale SNK = _snk()
+
+    // Source: age/locales/src/so.json
+    // ================================================================
+    // SO — Somali
+    // ================================================================
+    static final AgeLocale SO = _so()
+
+    // Source: age/locales/src/sq.json
+    // ================================================================
+    // SQ — Albanian
+    // ================================================================
+    static final AgeLocale SQ = _sq()
+
+    // Source: age/locales/src/sr.json
+    // ================================================================
+    // SR — Serbian
+    // ================================================================
+    static final AgeLocale SR = _sr()
+
+    // Source: age/locales/src/ss.json
+    // ================================================================
+    // SS — siSwati
+    // ================================================================
+    static final AgeLocale SS = _ss()
+
+    // Source: age/locales/src/st.json
+    // ================================================================
+    // ST — Southern Sotho
+    // ================================================================
+    static final AgeLocale ST = _st()
+
+    // Source: age/locales/src/su.json
+    // ================================================================
+    // SU — Sundanese
+    // ================================================================
+    static final AgeLocale SU = _su()
+
+    // Source: age/locales/src/suk.json
+    // ================================================================
+    // SUK — Sukuma
+    // ================================================================
+    static final AgeLocale SUK = _suk()
+
+    // Source: age/locales/src/sv.json
+    // ================================================================
+    // SV — Swedish
+    // ================================================================
+    static final AgeLocale SV = _sv()
+
+    // Source: age/locales/src/sw.json
+    // ================================================================
+    // SW — Swahili
+    // ================================================================
+    static final AgeLocale SW = _sw()
+
+    // Source: age/locales/src/ta.json
+    // ================================================================
+    // TA — Tamil
+    // ================================================================
+    static final AgeLocale TA = _ta()
+
+    // Source: age/locales/src/te.json
+    // ================================================================
+    // TE — Telugu
+    // ================================================================
+    static final AgeLocale TE = _te()
+
+    // Source: age/locales/src/tem.json
+    // ================================================================
+    // TEM — Temne
+    // ================================================================
+    static final AgeLocale TEM = _tem()
+
+    // Source: age/locales/src/tet.json
+    // ================================================================
+    // TET — Tetum
+    // ================================================================
+    static final AgeLocale TET = _tet()
+
+    // Source: age/locales/src/tg.json
+    // ================================================================
+    // TG — Tajik
+    // ================================================================
+    static final AgeLocale TG = _tg()
+
+    // Source: age/locales/src/th.json
+    // ================================================================
+    // TH — Thai
+    // ================================================================
+    static final AgeLocale TH = _th()
+
+    // Source: age/locales/src/ti.json
+    // ================================================================
+    // TI — Tigrinya
+    // ================================================================
+    static final AgeLocale TI = _ti()
+
+    // Source: age/locales/src/tig.json
+    // ================================================================
+    // TIG — Tigre
+    // ================================================================
+    static final AgeLocale TIG = _tig()
+
+    // Source: age/locales/src/tk.json
+    // ================================================================
+    // TK — Turkmen
+    // ================================================================
+    static final AgeLocale TK = _tk()
+
+    // Source: age/locales/src/tn.json
+    // ================================================================
+    // TN — Tswana
+    // ================================================================
+    static final AgeLocale TN = _tn()
+
+    // Source: age/locales/src/tpi.json
+    // ================================================================
+    // TPI — Tok Pisin
+    // ================================================================
+    static final AgeLocale TPI = _tpi()
+
+    // Source: age/locales/src/tr.json
+    // ================================================================
+    // TR — Turkish
+    // ================================================================
+    static final AgeLocale TR = _tr()
+
+    // Source: age/locales/src/ts.json
+    // ================================================================
+    // TS — Tsonga
+    // ================================================================
+    static final AgeLocale TS = _ts()
+
+    // Source: age/locales/src/tum.json
+    // ================================================================
+    // TUM — Tumbuka
+    // ================================================================
+    static final AgeLocale TUM = _tum()
+
+    // Source: age/locales/src/tzm.json
+    // ================================================================
+    // TZM — Central Atlas Tamazight
+    // ================================================================
+    static final AgeLocale TZM = _tzm()
+
+    // Source: age/locales/src/uk.json
+    // ================================================================
+    // UK — Ukrainian
+    // ================================================================
+    static final AgeLocale UK = _uk()
+
+    // Source: age/locales/src/umb.json
+    // ================================================================
+    // UMB — Umbundu
+    // ================================================================
+    static final AgeLocale UMB = _umb()
+
+    // Source: age/locales/src/ur.json
+    // ================================================================
+    // UR — Urdu
+    // ================================================================
+    static final AgeLocale UR = _ur()
+
+    // Source: age/locales/src/uz.json
+    // ================================================================
+    // UZ — Uzbek
+    // ================================================================
+    static final AgeLocale UZ = _uz()
+
+    // Source: age/locales/src/ve.json
+    // ================================================================
+    // VE — Venda
+    // ================================================================
+    static final AgeLocale VE = _ve()
+
+    // Source: age/locales/src/vi.json
+    // ================================================================
+    // VI — Vietnamese
+    // ================================================================
+    static final AgeLocale VI = _vi()
+
+    // Source: age/locales/src/vmw.json
+    // ================================================================
+    // VMW — Makhuwa
+    // ================================================================
+    static final AgeLocale VMW = _vmw()
+
+    // Source: age/locales/src/wo.json
+    // ================================================================
+    // WO — Wolof
+    // ================================================================
+    static final AgeLocale WO = _wo()
+
+    // Source: age/locales/src/xh.json
+    // ================================================================
+    // XH — Xhosa
+    // ================================================================
+    static final AgeLocale XH = _xh()
+
+    // Source: age/locales/src/yao.json
+    // ================================================================
+    // YAO — Yao
+    // ================================================================
+    static final AgeLocale YAO = _yao()
+
+    // Source: age/locales/src/yo.json
+    // ================================================================
+    // YO — Yoruba
+    // ================================================================
+    static final AgeLocale YO = _yo()
+
+    // Source: age/locales/src/yue.json
+    // ================================================================
+    // YUE — Cantonese
+    // ================================================================
+    static final AgeLocale YUE = _yue()
+
+    // Source: age/locales/src/zdj.json
+    // ================================================================
+    // ZDJ — Comorian
+    // ================================================================
+    static final AgeLocale ZDJ = _zdj()
+
+    // Source: age/locales/src/zh.json
+    // ================================================================
+    // ZH — Chinese
+    // ================================================================
+    static final AgeLocale ZH = _zh()
+
+    // Source: age/locales/src/zu.json
+    // ================================================================
+    // ZU — Zulu
+    // ================================================================
+    static final AgeLocale ZU = _zu()
+
+    private static AgeLocale _af() {
+        new AgeLocale(
+            'af',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dae']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} week', (PluralCategory.OTHER): '{n} weke']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} maand', (PluralCategory.OTHER): '{n} maande']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} jaar', (PluralCategory.OTHER): '{n} jaar']),
+            ),
+            '{n}½',
+            ', ',
+            'Pasgebore',
+            new Stages(
+                StageLabel.neutral('Pasgebore'),
+                StageLabel.neutral('Baba'),
+                StageLabel.neutral('Kleuter'),
+                StageLabel.neutral('Kind'),
+                StageLabel.neutral('Tiener'),
+                StageLabel.neutral('Volwassene'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} w.'),
+                UnitForms.simpleUnit('{n} md.'),
+                UnitForms.simpleUnit('{n} j.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}j'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ak() {
+        new AgeLocale(
+            'ak',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'da {n}', (PluralCategory.OTHER): 'nna {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'dapɛn {n}', (PluralCategory.OTHER): 'nnapɛn {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'bosome {n}', (PluralCategory.OTHER): 'abosome {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'afe {n}', (PluralCategory.OTHER): 'mfe {n}']),
+            ),
+            '{n}½',
+            ', ',
+            'Abofra foforo',
+            new Stages(
+                StageLabel.neutral('Abofra foforo'),
+                StageLabel.neutral('Akwadaa'),
+                StageLabel.neutral('Abofra'),
+                StageLabel.neutral('Abofra'),
+                StageLabel.neutral('Abarimaa'),
+                StageLabel.neutral('Ɔpanyin'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('nna {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'dapɛn {n}', (PluralCategory.OTHER): 'nnapɛn {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'bosome {n}', (PluralCategory.OTHER): 'abosome {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'afe {n}', (PluralCategory.OTHER): 'mfe {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('nna {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'dapɛn {n}', (PluralCategory.OTHER): 'nnapɛn {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'bos {n}', (PluralCategory.OTHER): 'abos {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'afe {n}', (PluralCategory.OTHER): 'mfe {n}']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _am() {
+        new AgeLocale(
+            'am',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ቀን', (PluralCategory.OTHER): '{n} ቀናት']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሳምንት', (PluralCategory.OTHER): '{n} ሳምንታት']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ወር', (PluralCategory.OTHER): '{n} ወራት']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
+            ),
+            '{0} ተኩል',
+            '፣ ',
+            'አዲስ የተወለደ',
+            new Stages(
+                StageLabel.neutral('አዲስ የተወለደ'),
+                StageLabel.neutral('ሕፃን'),
+                StageLabel.neutral('ሕፃን ልጅ'),
+                StageLabel.neutral('ልጅ'),
+                StageLabel.neutral('ታዳጊ'),
+                StageLabel.neutral('አዋቂ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ቀናት'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሳምንት', (PluralCategory.OTHER): '{n} ሳምንታት']),
+                UnitForms.simpleUnit('{n} ወራት'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ቀ'),
+                UnitForms.simpleUnit('{n} ሳምንት'),
+                UnitForms.simpleUnit('{n} ወር'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓ']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ar() {
+        new AgeLocale(
+            'ar',
+            { int n ->
             if (n == 0) return PluralCategory.ZERO
             if (n == 1) return PluralCategory.ONE
             if (n == 2) return PluralCategory.TWO
@@ -169,472 +1168,452 @@ class Locales {
             if (n % 100 >= 11 && n % 100 <= 99) return PluralCategory.MANY
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} يوم', (PluralCategory.ONE): 'يوم', (PluralCategory.TWO): 'يومان', (PluralCategory.FEW): '{n} أيام', (PluralCategory.MANY): '{n} يومًا', (PluralCategory.OTHER): '{n} يوم']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} أسبوع', (PluralCategory.ONE): 'أسبوع', (PluralCategory.TWO): 'أسبوعان', (PluralCategory.FEW): '{n} أسابيع', (PluralCategory.MANY): '{n} أسبوعًا', (PluralCategory.OTHER): '{n} أسبوع']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} سنة', (PluralCategory.ONE): 'سنة', (PluralCategory.TWO): 'سنتان', (PluralCategory.FEW): '{n} سنوات', (PluralCategory.MANY): '{n} سنة', (PluralCategory.OTHER): '{n} سنة']),
-        ),
-        '{0} ونصف',
-        ' و',
-        'حديث الولادة',
-        new Stages(
-            StageLabel.gendered('حديث الولادة', 'حديثة الولادة'),
-            StageLabel.gendered('رضيع', 'رضيعة'),
-            StageLabel.gendered('طفل صغير', 'طفلة صغيرة'),
-            StageLabel.gendered('طفل', 'طفلة'),
-            StageLabel.gendered('مراهق', 'مراهقة'),
-            StageLabel.gendered('بالغ', 'بالغة'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} يوم', (PluralCategory.ONE): 'يوم', (PluralCategory.TWO): 'يومان', (PluralCategory.FEW): '{n} أيام', (PluralCategory.MANY): '{n} يومًا', (PluralCategory.OTHER): '{n} يوم']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} أسبوع', (PluralCategory.ONE): 'أسبوع', (PluralCategory.TWO): 'أسبوعان', (PluralCategory.FEW): '{n} أسابيع', (PluralCategory.MANY): '{n} أسبوعًا', (PluralCategory.OTHER): '{n} أسبوع']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} سنة', (PluralCategory.ONE): 'سنة واحدة', (PluralCategory.TWO): 'سنتان', (PluralCategory.FEW): '{n} سنوات', (PluralCategory.MANY): '{n} سنة', (PluralCategory.OTHER): '{n} سنة']),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} يوم', (PluralCategory.ONE): 'يوم', (PluralCategory.TWO): 'يومان', (PluralCategory.FEW): '{n} أيام', (PluralCategory.MANY): '{n} يومًا', (PluralCategory.OTHER): '{n} يوم']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} أسبوع', (PluralCategory.ONE): 'أسبوع', (PluralCategory.TWO): 'أسبوعان', (PluralCategory.FEW): '{n} أسابيع', (PluralCategory.MANY): '{n} أسبوعًا', (PluralCategory.OTHER): '{n} أسبوع']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} سنة', (PluralCategory.ONE): 'سنة', (PluralCategory.TWO): 'سنتان', (PluralCategory.FEW): '{n} سنوات', (PluralCategory.MANY): '{n} سنة', (PluralCategory.OTHER): '{n} سنة']),
+            ),
+            '{0} ونصف',
+            ' و',
+            'حديث الولادة',
+            new Stages(
+                StageLabel.gendered('حديث الولادة', 'حديثة الولادة'),
+                StageLabel.gendered('رضيع', 'رضيعة'),
+                StageLabel.gendered('طفل صغير', 'طفلة صغيرة'),
+                StageLabel.gendered('طفل', 'طفلة'),
+                StageLabel.gendered('مراهق', 'مراهقة'),
+                StageLabel.gendered('بالغ', 'بالغة'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} يوم', (PluralCategory.ONE): 'يوم', (PluralCategory.TWO): 'يومان', (PluralCategory.FEW): '{n} أيام', (PluralCategory.MANY): '{n} يومًا', (PluralCategory.OTHER): '{n} يوم']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} أسبوع', (PluralCategory.ONE): 'أسبوع', (PluralCategory.TWO): 'أسبوعان', (PluralCategory.FEW): '{n} أسابيع', (PluralCategory.MANY): '{n} أسبوعًا', (PluralCategory.OTHER): '{n} أسبوع']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} سنة', (PluralCategory.ONE): 'سنة واحدة', (PluralCategory.TWO): 'سنتان', (PluralCategory.FEW): '{n} سنوات', (PluralCategory.MANY): '{n} سنة', (PluralCategory.OTHER): '{n} سنة']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ي'),
+                UnitForms.simpleUnit('{n} أ'),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
+                UnitForms.simpleUnit('{n} سنة'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ي'),
-            UnitForms.simpleUnit('{n} أ'),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} شهر', (PluralCategory.ONE): 'شهر', (PluralCategory.TWO): 'شهران', (PluralCategory.FEW): '{n} أشهر', (PluralCategory.MANY): '{n} شهرًا', (PluralCategory.OTHER): '{n} شهر']),
-            UnitForms.simpleUnit('{n} سنة'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ay.json
-    // ================================================================
-    // AY — Aymara
-    // ================================================================
-    static final AgeLocale AY = new AgeLocale(
-        'ay',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('uru {n}'),
-            UnitForms.simpleUnit('simana {n}'),
-            UnitForms.simpleUnit('phaxsi {n}'),
-            UnitForms.simpleUnit('mara {n}'),
-        ),
-        '{0} chika',
-        ', ',
-        'Wawa machaqa',
-        new Stages(
-            StageLabel.neutral('Wawa machaqa'),
-            StageLabel.neutral('Wawa'),
-            StageLabel.neutral('Jisk\'a wawa'),
-            StageLabel.neutral('Yuqalla'),
-            StageLabel.neutral('Wayna'),
-            StageLabel.neutral('Jaqi'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ur.'),
-            UnitForms.simpleUnit('{n} sim.'),
-            UnitForms.simpleUnit('{n} phx.'),
-            UnitForms.simpleUnit('{n} mr.'),
-            null,
+    private static AgeLocale _ay() {
+        new AgeLocale(
+            'ay',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('uru {n}'),
+                UnitForms.simpleUnit('simana {n}'),
+                UnitForms.simpleUnit('phaxsi {n}'),
+                UnitForms.simpleUnit('mara {n}'),
+            ),
+            '{0} chika',
+            ', ',
+            'Wawa machaqa',
+            new Stages(
+                StageLabel.neutral('Wawa machaqa'),
+                StageLabel.neutral('Wawa'),
+                StageLabel.neutral('Jisk\'a wawa'),
+                StageLabel.neutral('Yuqalla'),
+                StageLabel.neutral('Wayna'),
+                StageLabel.neutral('Jaqi'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ur.'),
+                UnitForms.simpleUnit('{n} sim.'),
+                UnitForms.simpleUnit('{n} phx.'),
+                UnitForms.simpleUnit('{n} mr.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/az.json
-    // ================================================================
-    // AZ — Azerbaijani
-    // ================================================================
-    static final AgeLocale AZ = new AgeLocale(
-        'az',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} gün', (PluralCategory.OTHER): '{n} gün']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} həftə', (PluralCategory.OTHER): '{n} həftə']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ay', (PluralCategory.OTHER): '{n} ay']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} yaş', (PluralCategory.OTHER): '{n} yaş']),
-        ),
-        '{n} yarım',
-        ', ',
-        'Təzə doğulub',
-        new Stages(
-            StageLabel.neutral('Təzə doğulub'),
-            StageLabel.neutral('Körpə'),
-            StageLabel.neutral('Azyaşlı'),
-            StageLabel.neutral('Uşaq'),
-            StageLabel.neutral('Yeniyetmə'),
-            StageLabel.neutral('Böyük'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} gün'),
-            UnitForms.simpleUnit('{n} hft'),
-            UnitForms.simpleUnit('{n} ay'),
-            UnitForms.simpleUnit('{n} il'),
-            null,
+    private static AgeLocale _az() {
+        new AgeLocale(
+            'az',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} gün', (PluralCategory.OTHER): '{n} gün']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} həftə', (PluralCategory.OTHER): '{n} həftə']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ay', (PluralCategory.OTHER): '{n} ay']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} yaş', (PluralCategory.OTHER): '{n} yaş']),
+            ),
+            '{n} yarım',
+            ', ',
+            'Təzə doğulub',
+            new Stages(
+                StageLabel.neutral('Təzə doğulub'),
+                StageLabel.neutral('Körpə'),
+                StageLabel.neutral('Azyaşlı'),
+                StageLabel.neutral('Uşaq'),
+                StageLabel.neutral('Yeniyetmə'),
+                StageLabel.neutral('Böyük'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} gün'),
+                UnitForms.simpleUnit('{n} hft'),
+                UnitForms.simpleUnit('{n} ay'),
+                UnitForms.simpleUnit('{n} il'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} gün'),
+                UnitForms.simpleUnit('{n} hft'),
+                UnitForms.simpleUnit('{n} ay'),
+                UnitForms.simpleUnit('{n} il'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} gün'),
-            UnitForms.simpleUnit('{n} hft'),
-            UnitForms.simpleUnit('{n} ay'),
-            UnitForms.simpleUnit('{n} il'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/bci.json
-    // ================================================================
-    // BCI — Baoulé
-    // ================================================================
-    static final AgeLocale BCI = new AgeLocale(
-        'bci',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('cɛn {n}'),
-            UnitForms.simpleUnit('lemɔcuɛ {n}'),
-            UnitForms.simpleUnit('anglɛ {n}'),
-            UnitForms.simpleUnit('afuɛ {n}'),
-        ),
-        '{0} nin sin',
-        ', ',
-        'Ba nɔn kaan',
-        new Stages(
-            StageLabel.neutral('Ba nɔn kaan wɛ'),
-            StageLabel.neutral('Ba nɔn'),
-            StageLabel.neutral('Ba kanngan'),
-            StageLabel.neutral('Ba'),
-            StageLabel.neutral('Gbanflɛn'),
-            StageLabel.neutral('Sran kpɛnngbɛn'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('cɛn {n}'),
-            UnitForms.simpleUnit('lem. {n}'),
-            UnitForms.simpleUnit('ang. {n}'),
-            UnitForms.simpleUnit('af. {n}'),
-            null,
+    private static AgeLocale _bci() {
+        new AgeLocale(
+            'bci',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('cɛn {n}'),
+                UnitForms.simpleUnit('lemɔcuɛ {n}'),
+                UnitForms.simpleUnit('anglɛ {n}'),
+                UnitForms.simpleUnit('afuɛ {n}'),
+            ),
+            '{0} nin sin',
+            ', ',
+            'Ba nɔn kaan',
+            new Stages(
+                StageLabel.neutral('Ba nɔn kaan wɛ'),
+                StageLabel.neutral('Ba nɔn'),
+                StageLabel.neutral('Ba kanngan'),
+                StageLabel.neutral('Ba'),
+                StageLabel.neutral('Gbanflɛn'),
+                StageLabel.neutral('Sran kpɛnngbɛn'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('cɛn {n}'),
+                UnitForms.simpleUnit('lem. {n}'),
+                UnitForms.simpleUnit('ang. {n}'),
+                UnitForms.simpleUnit('af. {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('cɛn {n}'),
+                UnitForms.simpleUnit('lem {n}'),
+                UnitForms.simpleUnit('ang {n}'),
+                UnitForms.simpleUnit('af {n}'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('cɛn {n}'),
-            UnitForms.simpleUnit('lem {n}'),
-            UnitForms.simpleUnit('ang {n}'),
-            UnitForms.simpleUnit('af {n}'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/be.json
-    // ================================================================
-    // BE — Belarusian
-    // ================================================================
-    static final AgeLocale BE = new AgeLocale(
-        'be',
-        { int n ->
+    private static AgeLocale _be() {
+        new AgeLocale(
+            'be',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1 && mod100 != 11) return PluralCategory.ONE
             if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.FEW
             return PluralCategory.MANY
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дзень', (PluralCategory.FEW): '{n} дні', (PluralCategory.MANY): '{n} дзён', (PluralCategory.OTHER): '{n} дзён']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} тыдзень', (PluralCategory.FEW): '{n} тыдні', (PluralCategory.MANY): '{n} тыдняў', (PluralCategory.OTHER): '{n} тыдняў']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месяц', (PluralCategory.FEW): '{n} месяцы', (PluralCategory.MANY): '{n} месяцаў', (PluralCategory.OTHER): '{n} месяцаў']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} гады', (PluralCategory.MANY): '{n} гадоў', (PluralCategory.OTHER): '{n} гадоў']),
-        ),
-        '{n} з паловай',
-        ', ',
-        'Нованароджаны',
-        new Stages(
-            StageLabel.gendered('Нованароджаны', 'Нованароджаная'),
-            StageLabel.neutral('Немаўля'),
-            StageLabel.neutral('Малыш'),
-            StageLabel.neutral('Дзіця'),
-            StageLabel.neutral('Падлетак'),
-            StageLabel.gendered('Дарослы', 'Дарослая'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} дн.'),
-            UnitForms.simpleUnit('{n} тыд.'),
-            UnitForms.simpleUnit('{n} мес.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} г.', (PluralCategory.OTHER): '{n} г.']),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дзень', (PluralCategory.FEW): '{n} дні', (PluralCategory.MANY): '{n} дзён', (PluralCategory.OTHER): '{n} дзён']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} тыдзень', (PluralCategory.FEW): '{n} тыдні', (PluralCategory.MANY): '{n} тыдняў', (PluralCategory.OTHER): '{n} тыдняў']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месяц', (PluralCategory.FEW): '{n} месяцы', (PluralCategory.MANY): '{n} месяцаў', (PluralCategory.OTHER): '{n} месяцаў']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} гады', (PluralCategory.MANY): '{n} гадоў', (PluralCategory.OTHER): '{n} гадоў']),
+            ),
+            '{n} з паловай',
+            ', ',
+            'Нованароджаны',
+            new Stages(
+                StageLabel.gendered('Нованароджаны', 'Нованароджаная'),
+                StageLabel.neutral('Немаўля'),
+                StageLabel.neutral('Малыш'),
+                StageLabel.neutral('Дзіця'),
+                StageLabel.neutral('Падлетак'),
+                StageLabel.gendered('Дарослы', 'Дарослая'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} дн.'),
+                UnitForms.simpleUnit('{n} тыд.'),
+                UnitForms.simpleUnit('{n} мес.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} г.', (PluralCategory.OTHER): '{n} г.']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} д.'),
+                UnitForms.simpleUnit('{n} т.'),
+                UnitForms.simpleUnit('{n} м.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} г.', (PluralCategory.OTHER): '{n} г.']),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} д.'),
-            UnitForms.simpleUnit('{n} т.'),
-            UnitForms.simpleUnit('{n} м.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} г.', (PluralCategory.OTHER): '{n} г.']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/bem.json
-    // ================================================================
-    // BEM — Bemba
-    // ================================================================
-    static final AgeLocale BEM = new AgeLocale(
-        'bem',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ubushiku {n}', (PluralCategory.OTHER): 'inshiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umulungu {n}', (PluralCategory.OTHER): 'imilungu {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umweshi {n}', (PluralCategory.OTHER): 'imyeshi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umwaka {n}', (PluralCategory.OTHER): 'imyaka {n}']),
-        ),
-        '{0} na hafu',
-        ', ',
-        'Umwana uwafyalwa fye',
-        new Stages(
-            StageLabel.neutral('Umwana uwafyalwa fye'),
-            StageLabel.neutral('Akamwana'),
-            StageLabel.neutral('Umwana'),
-            StageLabel.neutral('Umwana'),
-            StageLabel.neutral('Umunyamata'),
-            StageLabel.neutral('Umulumendo'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ubushiku {n}', (PluralCategory.OTHER): 'inshiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umulungu {n}', (PluralCategory.OTHER): 'imilungu {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umweshi {n}', (PluralCategory.OTHER): 'imyeshi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umwaka {n}', (PluralCategory.OTHER): 'imyaka {n}']),
-            null,
+    private static AgeLocale _bem() {
+        new AgeLocale(
+            'bem',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ubushiku {n}', (PluralCategory.OTHER): 'inshiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umulungu {n}', (PluralCategory.OTHER): 'imilungu {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umweshi {n}', (PluralCategory.OTHER): 'imyeshi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umwaka {n}', (PluralCategory.OTHER): 'imyaka {n}']),
+            ),
+            '{0} na hafu',
+            ', ',
+            'Umwana uwafyalwa fye',
+            new Stages(
+                StageLabel.neutral('Umwana uwafyalwa fye'),
+                StageLabel.neutral('Akamwana'),
+                StageLabel.neutral('Umwana'),
+                StageLabel.neutral('Umwana'),
+                StageLabel.neutral('Umunyamata'),
+                StageLabel.neutral('Umulumendo'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ubushiku {n}', (PluralCategory.OTHER): 'inshiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umulungu {n}', (PluralCategory.OTHER): 'imilungu {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umweshi {n}', (PluralCategory.OTHER): 'imyeshi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umwaka {n}', (PluralCategory.OTHER): 'imyaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/bg.json
-    // ================================================================
-    // BG — Bulgarian
-    // ================================================================
-    static final AgeLocale BG = new AgeLocale(
-        'bg',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ден', (PluralCategory.OTHER): '{n} дни']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} седмица', (PluralCategory.OTHER): '{n} седмици']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месец', (PluralCategory.OTHER): '{n} месеца']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} година', (PluralCategory.OTHER): '{n} години']),
-        ),
-        '{0} и половина',
-        ', ',
-        'Новородено',
-        new Stages(
-            StageLabel.neutral('Новородено'),
-            StageLabel.neutral('Бебе'),
-            StageLabel.neutral('Малко дете'),
-            StageLabel.neutral('Дете'),
-            StageLabel.neutral('Тийнейджър'),
-            StageLabel.gendered('Възрастен', 'Възрастна'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} д'),
-            UnitForms.simpleUnit('{n} седм.'),
-            UnitForms.simpleUnit('{n} мес.'),
-            UnitForms.simpleUnit('{n} год.'),
-            null,
+    private static AgeLocale _bg() {
+        new AgeLocale(
+            'bg',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ден', (PluralCategory.OTHER): '{n} дни']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} седмица', (PluralCategory.OTHER): '{n} седмици']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месец', (PluralCategory.OTHER): '{n} месеца']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} година', (PluralCategory.OTHER): '{n} години']),
+            ),
+            '{0} и половина',
+            ', ',
+            'Новородено',
+            new Stages(
+                StageLabel.neutral('Новородено'),
+                StageLabel.neutral('Бебе'),
+                StageLabel.neutral('Малко дете'),
+                StageLabel.neutral('Дете'),
+                StageLabel.neutral('Тийнейджър'),
+                StageLabel.gendered('Възрастен', 'Възрастна'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} д'),
+                UnitForms.simpleUnit('{n} седм.'),
+                UnitForms.simpleUnit('{n} мес.'),
+                UnitForms.simpleUnit('{n} год.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} д'),
+                UnitForms.simpleUnit('{n} седм.'),
+                UnitForms.simpleUnit('{n} мес.'),
+                UnitForms.simpleUnit('{n} г.'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} д'),
-            UnitForms.simpleUnit('{n} седм.'),
-            UnitForms.simpleUnit('{n} мес.'),
-            UnitForms.simpleUnit('{n} г.'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/bi.json
-    // ================================================================
-    // BI — Bislama
-    // ================================================================
-    static final AgeLocale BI = new AgeLocale(
-        'bi',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} dei'),
-            UnitForms.simpleUnit('{n} wik'),
-            UnitForms.simpleUnit('{n} manis'),
-            UnitForms.simpleUnit('{n} yia'),
-        ),
-        '{n} mo haf',
-        ', ',
-        'Niufala bebe',
-        new Stages(
-            StageLabel.neutral('Niufala bebe'),
-            StageLabel.neutral('Bebe'),
-            StageLabel.neutral('Smol pikinini'),
-            StageLabel.neutral('Pikinini'),
-            StageLabel.neutral('Yangfala'),
-            StageLabel.neutral('Bigfala'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} dei'),
-            UnitForms.simpleUnit('{n} wik'),
-            UnitForms.simpleUnit('{n} man'),
-            UnitForms.simpleUnit('{n} yia'),
-            null,
+    private static AgeLocale _bi() {
+        new AgeLocale(
+            'bi',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} dei'),
+                UnitForms.simpleUnit('{n} wik'),
+                UnitForms.simpleUnit('{n} manis'),
+                UnitForms.simpleUnit('{n} yia'),
+            ),
+            '{n} mo haf',
+            ', ',
+            'Niufala bebe',
+            new Stages(
+                StageLabel.neutral('Niufala bebe'),
+                StageLabel.neutral('Bebe'),
+                StageLabel.neutral('Smol pikinini'),
+                StageLabel.neutral('Pikinini'),
+                StageLabel.neutral('Yangfala'),
+                StageLabel.neutral('Bigfala'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} dei'),
+                UnitForms.simpleUnit('{n} wik'),
+                UnitForms.simpleUnit('{n} man'),
+                UnitForms.simpleUnit('{n} yia'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/bm.json
-    // ================================================================
-    // BM — Bambara
-    // ================================================================
-    static final AgeLocale BM = new AgeLocale(
-        'bm',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('don {n}'),
-            UnitForms.simpleUnit('dɔgɔkun {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('san {n}'),
-        ),
-        '{0} ni tilancɛ',
-        ', ',
-        'A sɛgɛra ka wolo',
-        new Stages(
-            StageLabel.neutral('Denmisɛn kura'),
-            StageLabel.neutral('Denmisɛn'),
-            StageLabel.neutral('Den fitinin'),
-            StageLabel.neutral('Den'),
-            StageLabel.neutral('Kamalen'),
-            StageLabel.neutral('Mɔgɔkɔrɔba'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('don {n}'),
-            UnitForms.simpleUnit('dɔgɔk. {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('san {n}'),
-            null,
+    private static AgeLocale _bm() {
+        new AgeLocale(
+            'bm',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('don {n}'),
+                UnitForms.simpleUnit('dɔgɔkun {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('san {n}'),
+            ),
+            '{0} ni tilancɛ',
+            ', ',
+            'A sɛgɛra ka wolo',
+            new Stages(
+                StageLabel.neutral('Denmisɛn kura'),
+                StageLabel.neutral('Denmisɛn'),
+                StageLabel.neutral('Den fitinin'),
+                StageLabel.neutral('Den'),
+                StageLabel.neutral('Kamalen'),
+                StageLabel.neutral('Mɔgɔkɔrɔba'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('don {n}'),
+                UnitForms.simpleUnit('dɔgɔk. {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('san {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('don {n}'),
+                UnitForms.simpleUnit('dɔgɔk {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('san {n}'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('don {n}'),
-            UnitForms.simpleUnit('dɔgɔk {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('san {n}'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/bn.json
-    // ================================================================
-    // BN — Bengali
-    // ================================================================
-    static final AgeLocale BN = new AgeLocale(
-        'bn',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} দিন', (PluralCategory.OTHER): '{n} দিন']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} সপ্তাহ', (PluralCategory.OTHER): '{n} সপ্তাহ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} মাস', (PluralCategory.OTHER): '{n} মাস']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} বছর', (PluralCategory.OTHER): '{n} বছর']),
-        ),
-        'সাড়ে {n}',
-        ', ',
-        'নবজাতক',
-        new Stages(
-            StageLabel.neutral('নবজাতক'),
-            StageLabel.neutral('শিশু'),
-            StageLabel.neutral('ছোট শিশু'),
-            StageLabel.neutral('শিশু'),
-            StageLabel.gendered('কিশোর', 'কিশোরী'),
-            StageLabel.neutral('প্রাপ্তবয়স্ক'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} দিন'),
-            UnitForms.simpleUnit('{n} সপ্তাহ'),
-            UnitForms.simpleUnit('{n} মাস'),
-            UnitForms.simpleUnit('{n} বছর'),
-            null,
+    private static AgeLocale _bn() {
+        new AgeLocale(
+            'bn',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} দিন', (PluralCategory.OTHER): '{n} দিন']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} সপ্তাহ', (PluralCategory.OTHER): '{n} সপ্তাহ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} মাস', (PluralCategory.OTHER): '{n} মাস']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} বছর', (PluralCategory.OTHER): '{n} বছর']),
+            ),
+            'সাড়ে {n}',
+            ', ',
+            'নবজাতক',
+            new Stages(
+                StageLabel.neutral('নবজাতক'),
+                StageLabel.neutral('শিশু'),
+                StageLabel.neutral('ছোট শিশু'),
+                StageLabel.neutral('শিশু'),
+                StageLabel.gendered('কিশোর', 'কিশোরী'),
+                StageLabel.neutral('প্রাপ্তবয়স্ক'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} দিন'),
+                UnitForms.simpleUnit('{n} সপ্তাহ'),
+                UnitForms.simpleUnit('{n} মাস'),
+                UnitForms.simpleUnit('{n} বছর'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} দিন'),
+                UnitForms.simpleUnit('{n} সপ্তাহ'),
+                UnitForms.simpleUnit('{n} মাস'),
+                UnitForms.simpleUnit('{n} বছর'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} দিন'),
-            UnitForms.simpleUnit('{n} সপ্তাহ'),
-            UnitForms.simpleUnit('{n} মাস'),
-            UnitForms.simpleUnit('{n} বছর'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/br.json
-    // ================================================================
-    // BR — Breton
-    // ================================================================
-    static final AgeLocale BR = new AgeLocale(
-        'br',
-        { int n ->
+    private static AgeLocale _br() {
+        new AgeLocale(
+            'br',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91) return PluralCategory.ONE
@@ -643,292 +1622,280 @@ class Locales {
             if (n != 0 && n % 1000000 == 0) return PluralCategory.MANY
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} devezh', (PluralCategory.TWO): '{n} zevezh', (PluralCategory.FEW): '{n} devezh', (PluralCategory.MANY): '{n} devezh', (PluralCategory.OTHER): '{n} devezh']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} sizhun', (PluralCategory.TWO): '{n} sizhun', (PluralCategory.FEW): '{n} sizhun', (PluralCategory.MANY): '{n} sizhun', (PluralCategory.OTHER): '{n} sizhun']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} miz', (PluralCategory.TWO): '{n} viz', (PluralCategory.FEW): '{n} miz', (PluralCategory.MANY): '{n} miz', (PluralCategory.OTHER): '{n} miz']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bloaz', (PluralCategory.TWO): '{n} vloaz', (PluralCategory.FEW): '{n} bloaz', (PluralCategory.MANY): '{n} bloaz', (PluralCategory.OTHER): '{n} bloaz']),
-        ),
-        '{0} hag un hanter',
-        ', ',
-        'Nevez ganet',
-        new Stages(
-            StageLabel.neutral('Nevez ganet'),
-            StageLabel.neutral('Babig'),
-            StageLabel.neutral('Bugel bihan'),
-            StageLabel.neutral('Bugel'),
-            StageLabel.neutral('Den yaouank'),
-            StageLabel.neutral('Den deuet da vad'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} sizh.'),
-            UnitForms.simpleUnit('{n} m.'),
-            UnitForms.simpleUnit('{n} bl.'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} devezh', (PluralCategory.TWO): '{n} zevezh', (PluralCategory.FEW): '{n} devezh', (PluralCategory.MANY): '{n} devezh', (PluralCategory.OTHER): '{n} devezh']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} sizhun', (PluralCategory.TWO): '{n} sizhun', (PluralCategory.FEW): '{n} sizhun', (PluralCategory.MANY): '{n} sizhun', (PluralCategory.OTHER): '{n} sizhun']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} miz', (PluralCategory.TWO): '{n} viz', (PluralCategory.FEW): '{n} miz', (PluralCategory.MANY): '{n} miz', (PluralCategory.OTHER): '{n} miz']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bloaz', (PluralCategory.TWO): '{n} vloaz', (PluralCategory.FEW): '{n} bloaz', (PluralCategory.MANY): '{n} bloaz', (PluralCategory.OTHER): '{n} bloaz']),
+            ),
+            '{0} hag un hanter',
+            ', ',
+            'Nevez ganet',
+            new Stages(
+                StageLabel.neutral('Nevez ganet'),
+                StageLabel.neutral('Babig'),
+                StageLabel.neutral('Bugel bihan'),
+                StageLabel.neutral('Bugel'),
+                StageLabel.neutral('Den yaouank'),
+                StageLabel.neutral('Den deuet da vad'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} sizh.'),
+                UnitForms.simpleUnit('{n} m.'),
+                UnitForms.simpleUnit('{n} bl.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}sizh.'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}b'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}sizh.'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}b'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/bs.json
-    // ================================================================
-    // BS — Bosnian
-    // ================================================================
-    static final AgeLocale BS = new AgeLocale(
-        'bs',
-        { int n ->
+    private static AgeLocale _bs() {
+        new AgeLocale(
+            'bs',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1 && mod100 != 11) return PluralCategory.ONE
             if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.MANY): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} sedmica', (PluralCategory.FEW): '{n} sedmice', (PluralCategory.MANY): '{n} sedmica', (PluralCategory.OTHER): '{n} sedmica']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mjesec', (PluralCategory.FEW): '{n} mjeseca', (PluralCategory.MANY): '{n} mjeseci', (PluralCategory.OTHER): '{n} mjeseci']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} godina', (PluralCategory.FEW): '{n} godine', (PluralCategory.MANY): '{n} godina', (PluralCategory.OTHER): '{n} godina']),
-        ),
-        '{0} i po',
-        ', ',
-        'Novorođenče',
-        new Stages(
-            StageLabel.neutral('Novorođenče'),
-            StageLabel.neutral('Beba'),
-            StageLabel.neutral('Malo dijete'),
-            StageLabel.neutral('Dijete'),
-            StageLabel.neutral('Tinejdžer'),
-            StageLabel.neutral('Odrasla osoba'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
-            UnitForms.simpleUnit('{n} sedm.'),
-            UnitForms.simpleUnit('{n} mj.'),
-            UnitForms.simpleUnit('{n} god.'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.MANY): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} sedmica', (PluralCategory.FEW): '{n} sedmice', (PluralCategory.MANY): '{n} sedmica', (PluralCategory.OTHER): '{n} sedmica']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mjesec', (PluralCategory.FEW): '{n} mjeseca', (PluralCategory.MANY): '{n} mjeseci', (PluralCategory.OTHER): '{n} mjeseci']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} godina', (PluralCategory.FEW): '{n} godine', (PluralCategory.MANY): '{n} godina', (PluralCategory.OTHER): '{n} godina']),
+            ),
+            '{0} i po',
+            ', ',
+            'Novorođenče',
+            new Stages(
+                StageLabel.neutral('Novorođenče'),
+                StageLabel.neutral('Beba'),
+                StageLabel.neutral('Malo dijete'),
+                StageLabel.neutral('Dijete'),
+                StageLabel.neutral('Tinejdžer'),
+                StageLabel.neutral('Odrasla osoba'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
+                UnitForms.simpleUnit('{n} sedm.'),
+                UnitForms.simpleUnit('{n} mj.'),
+                UnitForms.simpleUnit('{n} god.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} sedm.'),
+                UnitForms.simpleUnit('{n} mj.'),
+                UnitForms.simpleUnit('{n} god.'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} sedm.'),
-            UnitForms.simpleUnit('{n} mj.'),
-            UnitForms.simpleUnit('{n} god.'),
+        )
+    }
+
+    private static AgeLocale _ca() {
+        new AgeLocale(
+            'ca',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dies']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} setmana', (PluralCategory.OTHER): '{n} setmanes']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} mesos']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} any', (PluralCategory.OTHER): '{n} anys']),
+            ),
+            '{n} i mig',
+            ', ',
+            'Nounat',
+            new Stages(
+                StageLabel.gendered('Nounat', 'Nounada'),
+                StageLabel.neutral('Nadó'),
+                StageLabel.neutral('Infant'),
+                StageLabel.neutral('Criatura'),
+                StageLabel.neutral('Adolescent'),
+                StageLabel.gendered('Adult', 'Adulta'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dies']),
+                UnitForms.simpleUnit('{n} setm.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} m']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} any', (PluralCategory.OTHER): '{n} anys']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} setm.'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} any', (PluralCategory.OTHER): '{n} anys']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _cak() {
+        new AgeLocale(
+            'cak',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} q\'ij'),
+                UnitForms.simpleUnit('{n} wuqq\'ij'),
+                UnitForms.simpleUnit('{n} ik\''),
+                UnitForms.simpleUnit('{n} junab\''),
+            ),
+            '{0} nik\'aj',
+            ', ',
+            'K\'ak\'a\' ak\'wal',
+            new Stages(
+                StageLabel.neutral('K\'ak\'a\' ak\'wal'),
+                StageLabel.neutral('Yal ak\'wal'),
+                StageLabel.neutral('Ak\'wal'),
+                StageLabel.neutral('Ak\'wal'),
+                StageLabel.neutral('K\'ajol'),
+                StageLabel.neutral('Achi'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} q\'ij'),
+                UnitForms.simpleUnit('{n} wuqq\'ij'),
+                UnitForms.simpleUnit('{n} ik\''),
+                UnitForms.simpleUnit('{n} jun.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ceb() {
+        new AgeLocale(
+            'ceb',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ka adlaw'),
+                UnitForms.simpleUnit('{n} ka semana'),
+                UnitForms.simpleUnit('{n} ka bulan'),
+                UnitForms.simpleUnit('{n} ka tuig'),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Bag-ong natawo',
+            new Stages(
+                StageLabel.neutral('Bag-ong natawo'),
+                StageLabel.neutral('Masuso'),
+                StageLabel.neutral('Gamay nga bata'),
+                StageLabel.neutral('Bata'),
+                StageLabel.neutral('Tin-edyer'),
+                StageLabel.neutral('Hamtong'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ka adlaw'),
+                UnitForms.simpleUnit('{n} ka semana'),
+                UnitForms.simpleUnit('{n} ka bulan'),
+                UnitForms.simpleUnit('{n} ka tuig'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ca.json
-    // ================================================================
-    // CA — Catalan
-    // ================================================================
-    static final AgeLocale CA = new AgeLocale(
-        'ca',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dies']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} setmana', (PluralCategory.OTHER): '{n} setmanes']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} mesos']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} any', (PluralCategory.OTHER): '{n} anys']),
-        ),
-        '{n} i mig',
-        ', ',
-        'Nounat',
-        new Stages(
-            StageLabel.gendered('Nounat', 'Nounada'),
-            StageLabel.neutral('Nadó'),
-            StageLabel.neutral('Infant'),
-            StageLabel.neutral('Criatura'),
-            StageLabel.neutral('Adolescent'),
-            StageLabel.gendered('Adult', 'Adulta'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dies']),
-            UnitForms.simpleUnit('{n} setm.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} m']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} any', (PluralCategory.OTHER): '{n} anys']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} setm.'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} any', (PluralCategory.OTHER): '{n} anys']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/cak.json
-    // ================================================================
-    // CAK — Kaqchikel
-    // ================================================================
-    static final AgeLocale CAK = new AgeLocale(
-        'cak',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} q\'ij'),
-            UnitForms.simpleUnit('{n} wuqq\'ij'),
-            UnitForms.simpleUnit('{n} ik\''),
-            UnitForms.simpleUnit('{n} junab\''),
-        ),
-        '{0} nik\'aj',
-        ', ',
-        'K\'ak\'a\' ak\'wal',
-        new Stages(
-            StageLabel.neutral('K\'ak\'a\' ak\'wal'),
-            StageLabel.neutral('Yal ak\'wal'),
-            StageLabel.neutral('Ak\'wal'),
-            StageLabel.neutral('Ak\'wal'),
-            StageLabel.neutral('K\'ajol'),
-            StageLabel.neutral('Achi'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} q\'ij'),
-            UnitForms.simpleUnit('{n} wuqq\'ij'),
-            UnitForms.simpleUnit('{n} ik\''),
-            UnitForms.simpleUnit('{n} jun.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ceb.json
-    // ================================================================
-    // CEB — Cebuano
-    // ================================================================
-    static final AgeLocale CEB = new AgeLocale(
-        'ceb',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ka adlaw'),
-            UnitForms.simpleUnit('{n} ka semana'),
-            UnitForms.simpleUnit('{n} ka bulan'),
-            UnitForms.simpleUnit('{n} ka tuig'),
-        ),
-        '{n}½',
-        ', ',
-        'Bag-ong natawo',
-        new Stages(
-            StageLabel.neutral('Bag-ong natawo'),
-            StageLabel.neutral('Masuso'),
-            StageLabel.neutral('Gamay nga bata'),
-            StageLabel.neutral('Bata'),
-            StageLabel.neutral('Tin-edyer'),
-            StageLabel.neutral('Hamtong'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ka adlaw'),
-            UnitForms.simpleUnit('{n} ka semana'),
-            UnitForms.simpleUnit('{n} ka bulan'),
-            UnitForms.simpleUnit('{n} ka tuig'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/cs.json
-    // ================================================================
-    // CS — Czech
-    // ================================================================
-    static final AgeLocale CS = new AgeLocale(
-        'cs',
-        { int n ->
+    private static AgeLocale _cs() {
+        new AgeLocale(
+            'cs',
+            { int n ->
             if (n == 1) return PluralCategory.ONE
             if (n >= 2 && n <= 4) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} den', (PluralCategory.FEW): '{n} dny', (PluralCategory.OTHER): '{n} dní']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} týden', (PluralCategory.FEW): '{n} týdny', (PluralCategory.OTHER): '{n} týdnů']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} měsíc', (PluralCategory.FEW): '{n} měsíce', (PluralCategory.OTHER): '{n} měsíců']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} roky', (PluralCategory.OTHER): '{n} let']),
-        ),
-        '{n}½',
-        ', ',
-        'Novorozenec',
-        new Stages(
-            StageLabel.neutral('Novorozenec'),
-            StageLabel.neutral('Kojenec'),
-            StageLabel.neutral('Batole'),
-            StageLabel.neutral('Dítě'),
-            StageLabel.neutral('Teenager'),
-            StageLabel.gendered('Dospělý', 'Dospělá'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} den', (PluralCategory.FEW): '{n} dny', (PluralCategory.MANY): '{n} dne', (PluralCategory.OTHER): '{n} dnů']),
-            UnitForms.simpleUnit('{n} týd.'),
-            UnitForms.simpleUnit('{n} měs.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} roky', (PluralCategory.MANY): '{n} roku', (PluralCategory.OTHER): '{n} let']),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} den', (PluralCategory.FEW): '{n} dny', (PluralCategory.OTHER): '{n} dní']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} týden', (PluralCategory.FEW): '{n} týdny', (PluralCategory.OTHER): '{n} týdnů']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} měsíc', (PluralCategory.FEW): '{n} měsíce', (PluralCategory.OTHER): '{n} měsíců']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} roky', (PluralCategory.OTHER): '{n} let']),
+            ),
+            '{n}½',
+            ', ',
+            'Novorozenec',
+            new Stages(
+                StageLabel.neutral('Novorozenec'),
+                StageLabel.neutral('Kojenec'),
+                StageLabel.neutral('Batole'),
+                StageLabel.neutral('Dítě'),
+                StageLabel.neutral('Teenager'),
+                StageLabel.gendered('Dospělý', 'Dospělá'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} den', (PluralCategory.FEW): '{n} dny', (PluralCategory.MANY): '{n} dne', (PluralCategory.OTHER): '{n} dnů']),
+                UnitForms.simpleUnit('{n} týd.'),
+                UnitForms.simpleUnit('{n} měs.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} roky', (PluralCategory.MANY): '{n} roku', (PluralCategory.OTHER): '{n} let']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} t.'),
+                UnitForms.simpleUnit('{n} m.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} r.', (PluralCategory.FEW): '{n} r.', (PluralCategory.MANY): '{n} r.', (PluralCategory.OTHER): '{n} l.']),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} t.'),
-            UnitForms.simpleUnit('{n} m.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} r.', (PluralCategory.FEW): '{n} r.', (PluralCategory.MANY): '{n} r.', (PluralCategory.OTHER): '{n} l.']),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/cy.json
-    // ================================================================
-    // CY — Welsh
-    // ================================================================
-    static final AgeLocale CY = new AgeLocale(
-        'cy',
-        { int n ->
+    private static AgeLocale _cy() {
+        new AgeLocale(
+            'cy',
+            { int n ->
             switch (n) {
                 case 0: return PluralCategory.ZERO
                 case 1: return PluralCategory.ONE
@@ -938,1259 +1905,1205 @@ class Locales {
                 default: return PluralCategory.OTHER
             }
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} diwrnod', (PluralCategory.ONE): '{n} diwrnod', (PluralCategory.TWO): '{n} ddiwrnod', (PluralCategory.FEW): '{n} diwrnod', (PluralCategory.MANY): '{n} niwrnod', (PluralCategory.OTHER): '{n} diwrnod']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} wythnos', (PluralCategory.ONE): '{n} wythnos', (PluralCategory.TWO): '{n} wythnos', (PluralCategory.FEW): '{n} wythnos', (PluralCategory.MANY): '{n} wythnos', (PluralCategory.OTHER): '{n} wythnos']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mis', (PluralCategory.ONE): '{n} mis', (PluralCategory.TWO): '{n} fis', (PluralCategory.FEW): '{n} mis', (PluralCategory.MANY): '{n} mis', (PluralCategory.OTHER): '{n} mis']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} blwyddyn', (PluralCategory.ONE): '{n} blwyddyn', (PluralCategory.TWO): '{n} flynedd', (PluralCategory.FEW): '{n} blynedd', (PluralCategory.MANY): '{n} blynedd', (PluralCategory.OTHER): '{n} blynedd']),
-        ),
-        '{0} a hanner',
-        ', ',
-        'Newydd-anedig',
-        new Stages(
-            StageLabel.neutral('Newydd-anedig'),
-            StageLabel.neutral('Baban'),
-            StageLabel.neutral('Plentyn bach'),
-            StageLabel.neutral('Plentyn'),
-            StageLabel.neutral('Glaslanc'),
-            StageLabel.neutral('Oedolyn'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} diwrnod', (PluralCategory.ONE): '{n} diwrnod', (PluralCategory.TWO): '{n} ddiwrnod', (PluralCategory.FEW): '{n} diwrnod', (PluralCategory.MANY): '{n} diwrnod', (PluralCategory.OTHER): '{n} diwrnod']),
-            UnitForms.simpleUnit('{n} ws'),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mis', (PluralCategory.ONE): '{n} mis', (PluralCategory.TWO): '{n} fis', (PluralCategory.FEW): '{n} mis', (PluralCategory.MANY): '{n} mis', (PluralCategory.OTHER): '{n} mis']),
-            UnitForms.simpleUnit('{n} bl'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} diwrnod', (PluralCategory.ONE): '{n} diwrnod', (PluralCategory.TWO): '{n} ddiwrnod', (PluralCategory.FEW): '{n} diwrnod', (PluralCategory.MANY): '{n} niwrnod', (PluralCategory.OTHER): '{n} diwrnod']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} wythnos', (PluralCategory.ONE): '{n} wythnos', (PluralCategory.TWO): '{n} wythnos', (PluralCategory.FEW): '{n} wythnos', (PluralCategory.MANY): '{n} wythnos', (PluralCategory.OTHER): '{n} wythnos']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mis', (PluralCategory.ONE): '{n} mis', (PluralCategory.TWO): '{n} fis', (PluralCategory.FEW): '{n} mis', (PluralCategory.MANY): '{n} mis', (PluralCategory.OTHER): '{n} mis']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} blwyddyn', (PluralCategory.ONE): '{n} blwyddyn', (PluralCategory.TWO): '{n} flynedd', (PluralCategory.FEW): '{n} blynedd', (PluralCategory.MANY): '{n} blynedd', (PluralCategory.OTHER): '{n} blynedd']),
+            ),
+            '{0} a hanner',
+            ', ',
+            'Newydd-anedig',
+            new Stages(
+                StageLabel.neutral('Newydd-anedig'),
+                StageLabel.neutral('Baban'),
+                StageLabel.neutral('Plentyn bach'),
+                StageLabel.neutral('Plentyn'),
+                StageLabel.neutral('Glaslanc'),
+                StageLabel.neutral('Oedolyn'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} diwrnod', (PluralCategory.ONE): '{n} diwrnod', (PluralCategory.TWO): '{n} ddiwrnod', (PluralCategory.FEW): '{n} diwrnod', (PluralCategory.MANY): '{n} diwrnod', (PluralCategory.OTHER): '{n} diwrnod']),
+                UnitForms.simpleUnit('{n} ws'),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mis', (PluralCategory.ONE): '{n} mis', (PluralCategory.TWO): '{n} fis', (PluralCategory.FEW): '{n} mis', (PluralCategory.MANY): '{n} mis', (PluralCategory.OTHER): '{n} mis']),
+                UnitForms.simpleUnit('{n} bl'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} ws', (PluralCategory.ONE): '{n}w', (PluralCategory.TWO): '{n} ws', (PluralCategory.FEW): '{n} ws', (PluralCategory.MANY): '{n} ws', (PluralCategory.OTHER): '{n}w']),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}bl'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} ws', (PluralCategory.ONE): '{n}w', (PluralCategory.TWO): '{n} ws', (PluralCategory.FEW): '{n} ws', (PluralCategory.MANY): '{n} ws', (PluralCategory.OTHER): '{n}w']),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}bl'),
+        )
+    }
+
+    private static AgeLocale _da() {
+        new AgeLocale(
+            'da',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dage']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} uge', (PluralCategory.OTHER): '{n} uger']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} måned', (PluralCategory.OTHER): '{n} måneder']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} år', (PluralCategory.OTHER): '{n} år']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Nyfødt',
+            new Stages(
+                StageLabel.neutral('Nyfødt'),
+                StageLabel.neutral('Spædbarn'),
+                StageLabel.neutral('Småbarn'),
+                StageLabel.neutral('Barn'),
+                StageLabel.neutral('Teenager'),
+                StageLabel.neutral('Voksen'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dage']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} uge', (PluralCategory.OTHER): '{n} uger']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} md.', (PluralCategory.OTHER): '{n} mdr.']),
+                UnitForms.simpleUnit('{n} år'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} u'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.simpleUnit('{n} år'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/da.json
-    // ================================================================
-    // DA — Danish
-    // ================================================================
-    static final AgeLocale DA = new AgeLocale(
-        'da',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dage']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} uge', (PluralCategory.OTHER): '{n} uger']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} måned', (PluralCategory.OTHER): '{n} måneder']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} år', (PluralCategory.OTHER): '{n} år']),
-        ),
-        '{n}½',
-        ', ',
-        'Nyfødt',
-        new Stages(
-            StageLabel.neutral('Nyfødt'),
-            StageLabel.neutral('Spædbarn'),
-            StageLabel.neutral('Småbarn'),
-            StageLabel.neutral('Barn'),
-            StageLabel.neutral('Teenager'),
-            StageLabel.neutral('Voksen'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dage']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} uge', (PluralCategory.OTHER): '{n} uger']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} md.', (PluralCategory.OTHER): '{n} mdr.']),
-            UnitForms.simpleUnit('{n} år'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} u'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.simpleUnit('{n} år'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/de.json
-    // ================================================================
-    // DE — German
-    // ================================================================
-    static final AgeLocale DE = new AgeLocale(
-        'de',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Tag', (PluralCategory.OTHER): '{n} Tage']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Woche', (PluralCategory.OTHER): '{n} Wochen']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Monat', (PluralCategory.OTHER): '{n} Monate']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Jahr', (PluralCategory.OTHER): '{n} Jahre']),
-        ),
-        '{n}½',
-        ', ',
-        'Neugeboren',
-        new Stages(
-            StageLabel.neutral('Neugeborenes'),
-            StageLabel.neutral('Säugling'),
-            StageLabel.neutral('Kleinkind'),
-            StageLabel.neutral('Kind'),
-            StageLabel.neutral('Teenager'),
-            StageLabel.gendered('Erwachsener', 'Erwachsene'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} Tg.'),
-            UnitForms.simpleUnit('{n} Wo.'),
-            UnitForms.simpleUnit('{n} Mon.'),
-            UnitForms.simpleUnit('{n} J'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} T'),
-            UnitForms.simpleUnit('{n} W'),
-            UnitForms.simpleUnit('{n} M'),
-            UnitForms.simpleUnit('{n} J'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/din.json
-    // ================================================================
-    // DIN — Dinka
-    // ================================================================
-    static final AgeLocale DIN = new AgeLocale(
-        'din',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'akɔl {n}', (PluralCategory.OTHER): 'akɔl {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'bɛ̈t {n}', (PluralCategory.OTHER): 'bɛ̈t {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'pɛi {n}', (PluralCategory.OTHER): 'pɛi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈n {n}']),
-        ),
-        '{0} ku abɛ̈c',
-        ', ',
-        'Meth yen dhiëth',
-        new Stages(
-            StageLabel.neutral('Meth yen dhiëth'),
-            StageLabel.neutral('Meth'),
-            StageLabel.neutral('Meth thiiŋ'),
-            StageLabel.neutral('Meth'),
-            StageLabel.neutral('Dhɔ̈l'),
-            StageLabel.neutral('Raan dit'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('akɔl {n}'),
-            UnitForms.simpleUnit('bɛ̈t {n}'),
-            UnitForms.simpleUnit('pɛi {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈n {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+    private static AgeLocale _de() {
+        new AgeLocale(
+            'de',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Tag', (PluralCategory.OTHER): '{n} Tage']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Woche', (PluralCategory.OTHER): '{n} Wochen']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Monat', (PluralCategory.OTHER): '{n} Monate']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Jahr', (PluralCategory.OTHER): '{n} Jahre']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Neugeboren',
+            new Stages(
+                StageLabel.neutral('Neugeborenes'),
+                StageLabel.neutral('Säugling'),
+                StageLabel.neutral('Kleinkind'),
+                StageLabel.neutral('Kind'),
+                StageLabel.neutral('Teenager'),
+                StageLabel.gendered('Erwachsener', 'Erwachsene'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} Tg.'),
+                UnitForms.simpleUnit('{n} Wo.'),
+                UnitForms.simpleUnit('{n} Mon.'),
+                UnitForms.simpleUnit('{n} J'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} T'),
+                UnitForms.simpleUnit('{n} W'),
+                UnitForms.simpleUnit('{n} M'),
+                UnitForms.simpleUnit('{n} J'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/dje.json
-    // ================================================================
-    // DJE — Zarma
-    // ================================================================
-    static final AgeLocale DJE = new AgeLocale(
-        'dje',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('zaari {n}'),
-            UnitForms.simpleUnit('hebu {n}'),
-            UnitForms.simpleUnit('handu {n}'),
-            UnitForms.simpleUnit('jiiri {n}'),
-        ),
-        '{0} d\'iddeka',
-        ', ',
-        'Izo hayni',
-        new Stages(
-            StageLabel.neutral('Izo hayni zaari'),
-            StageLabel.neutral('Izo kayna'),
-            StageLabel.neutral('Izo kayna beerey'),
-            StageLabel.neutral('Izo'),
-            StageLabel.neutral('Haŋ kayna'),
-            StageLabel.neutral('Boro beerey'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('zaa. {n}'),
-            UnitForms.simpleUnit('heb. {n}'),
-            UnitForms.simpleUnit('han. {n}'),
-            UnitForms.simpleUnit('jii. {n}'),
-            null,
+    private static AgeLocale _din() {
+        new AgeLocale(
+            'din',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'akɔl {n}', (PluralCategory.OTHER): 'akɔl {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'bɛ̈t {n}', (PluralCategory.OTHER): 'bɛ̈t {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'pɛi {n}', (PluralCategory.OTHER): 'pɛi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈n {n}']),
+            ),
+            '{0} ku abɛ̈c',
+            ', ',
+            'Meth yen dhiëth',
+            new Stages(
+                StageLabel.neutral('Meth yen dhiëth'),
+                StageLabel.neutral('Meth'),
+                StageLabel.neutral('Meth thiiŋ'),
+                StageLabel.neutral('Meth'),
+                StageLabel.neutral('Dhɔ̈l'),
+                StageLabel.neutral('Raan dit'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('akɔl {n}'),
+                UnitForms.simpleUnit('bɛ̈t {n}'),
+                UnitForms.simpleUnit('pɛi {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈n {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('zaa {n}'),
-            UnitForms.simpleUnit('heb {n}'),
-            UnitForms.simpleUnit('han {n}'),
-            UnitForms.simpleUnit('jii {n}'),
+        )
+    }
+
+    private static AgeLocale _dje() {
+        new AgeLocale(
+            'dje',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('zaari {n}'),
+                UnitForms.simpleUnit('hebu {n}'),
+                UnitForms.simpleUnit('handu {n}'),
+                UnitForms.simpleUnit('jiiri {n}'),
+            ),
+            '{0} d\'iddeka',
+            ', ',
+            'Izo hayni',
+            new Stages(
+                StageLabel.neutral('Izo hayni zaari'),
+                StageLabel.neutral('Izo kayna'),
+                StageLabel.neutral('Izo kayna beerey'),
+                StageLabel.neutral('Izo'),
+                StageLabel.neutral('Haŋ kayna'),
+                StageLabel.neutral('Boro beerey'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('zaa. {n}'),
+                UnitForms.simpleUnit('heb. {n}'),
+                UnitForms.simpleUnit('han. {n}'),
+                UnitForms.simpleUnit('jii. {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('zaa {n}'),
+                UnitForms.simpleUnit('heb {n}'),
+                UnitForms.simpleUnit('han {n}'),
+                UnitForms.simpleUnit('jii {n}'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _dv() {
+        new AgeLocale(
+            'dv',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ދުވަސް'),
+                UnitForms.simpleUnit('{n} ހަފްތާ'),
+                UnitForms.simpleUnit('{n} މަސް'),
+                UnitForms.simpleUnit('{n} އަހަރު'),
+            ),
+            '{0} ބައި',
+            '، ',
+            'އަލަށް އުފަންވި',
+            new Stages(
+                StageLabel.neutral('އަލަށް އުފަންވި'),
+                StageLabel.neutral('ތުއްތު ކުއްޖާ'),
+                StageLabel.neutral('ހިނގާ ކުއްޖާ'),
+                StageLabel.neutral('ކުޑަ ކުއްޖާ'),
+                StageLabel.neutral('ފުރާވަރު'),
+                StageLabel.neutral('ބޮޑު މީހާ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ދުވަސް'),
+                UnitForms.simpleUnit('{n} ހަފްތާ'),
+                UnitForms.simpleUnit('{n} މަސް'),
+                UnitForms.simpleUnit('{n} އަހަރު'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _dyu() {
+        new AgeLocale(
+            'dyu',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('don {n}'),
+                UnitForms.simpleUnit('dɔgɔkun {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('san {n}'),
+            ),
+            '{0} ni tilancɛ',
+            ', ',
+            'Den fɛn bɛ wolo',
+            new Stages(
+                StageLabel.neutral('Denmisɛn kura'),
+                StageLabel.neutral('Denmisɛn'),
+                StageLabel.neutral('Den fitinin'),
+                StageLabel.neutral('Den'),
+                StageLabel.neutral('Kamalen'),
+                StageLabel.neutral('Mɔgɔkɔrɔba'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('don {n}'),
+                UnitForms.simpleUnit('dɔgɔk. {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('san {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('don {n}'),
+                UnitForms.simpleUnit('dɔgɔk {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('san {n}'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _dz() {
+        new AgeLocale(
+            'dz',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('ཉིན་ {n}'),
+                UnitForms.simpleUnit('བདུན་ཕྲག་ {n}'),
+                UnitForms.simpleUnit('ཟླ་ {n}'),
+                UnitForms.simpleUnit('ལོ་ {n}'),
+            ),
+            '{0} ཕྱེད',
+            ' ',
+            'གསར་སྐྱེས',
+            new Stages(
+                StageLabel.neutral('གསར་སྐྱེས'),
+                StageLabel.neutral('ཕྲུ་གུ'),
+                StageLabel.neutral('བྱིས་པ'),
+                StageLabel.neutral('ཨ་ཅུང'),
+                StageLabel.neutral('ན་གཞོན'),
+                StageLabel.neutral('མི་ལོན་ཚང'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ཉིན་ {n}'),
+                UnitForms.simpleUnit('བདུན་ཕྲག་ {n}'),
+                UnitForms.simpleUnit('ཟླ་ {n}'),
+                UnitForms.simpleUnit('ལོ་ {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ee() {
+        new AgeLocale(
+            'ee',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ŋkeke {n}', (PluralCategory.OTHER): 'ŋkekewo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kɔsiɖa {n}', (PluralCategory.OTHER): 'kɔsiɖawo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ɣleti {n}', (PluralCategory.OTHER): 'ɣletiwo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ƒe {n}', (PluralCategory.OTHER): 'ƒewo {n}']),
+            ),
+            '{0} kple afã',
+            ', ',
+            'Evi yeye',
+            new Stages(
+                StageLabel.neutral('Evi yeye'),
+                StageLabel.neutral('Ɖevi'),
+                StageLabel.neutral('Ɖevi sue'),
+                StageLabel.neutral('Ɖevi'),
+                StageLabel.neutral('Ŋutsuviwo'),
+                StageLabel.neutral('Ame tsitsi'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ŋkekewo {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kɔsiɖa {n}', (PluralCategory.OTHER): 'kɔsiɖawo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ɣleti {n}', (PluralCategory.OTHER): 'ɣletiwo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ƒe {n}', (PluralCategory.OTHER): 'ƒewo {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _el() {
+        new AgeLocale(
+            'el',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} μέρα', (PluralCategory.OTHER): '{n} μέρες']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} εβδομάδα', (PluralCategory.OTHER): '{n} εβδομάδες']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} μήνας', (PluralCategory.OTHER): '{n} μήνες']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} χρόνος', (PluralCategory.OTHER): '{n} χρόνια']),
+            ),
+            '{0} και μισό',
+            ', ',
+            'Νεογέννητο',
+            new Stages(
+                StageLabel.neutral('Νεογέννητο'),
+                StageLabel.neutral('Βρέφος'),
+                StageLabel.neutral('Νήπιο'),
+                StageLabel.neutral('Παιδί'),
+                StageLabel.gendered('Έφηβος', 'Έφηβη'),
+                StageLabel.gendered('Ενήλικας', 'Ενήλικη'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ημέρα', (PluralCategory.OTHER): '{n} ημέρες']),
+                UnitForms.simpleUnit('{n} εβδ.'),
+                UnitForms.simpleUnit('{n} μήν.'),
+                UnitForms.simpleUnit('{n} έτ.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} η'),
+                UnitForms.simpleUnit('{n} ε'),
+                UnitForms.simpleUnit('{n} μ'),
+                UnitForms.simpleUnit('{n} έ'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _en() {
+        new AgeLocale(
+            'en',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} day', (PluralCategory.OTHER): '{n} days']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} week', (PluralCategory.OTHER): '{n} weeks']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} month', (PluralCategory.OTHER): '{n} months']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} year', (PluralCategory.OTHER): '{n} years']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Newborn',
+            new Stages(
+                StageLabel.neutral('Newborn'),
+                StageLabel.neutral('Infant'),
+                StageLabel.neutral('Toddler'),
+                StageLabel.neutral('Child'),
+                StageLabel.neutral('Teenager'),
+                StageLabel.neutral('Adult'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} wk'),
+                UnitForms.simpleUnit('{n} mo'),
+                UnitForms.simpleUnit('{n} yr'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/dv.json
-    // ================================================================
-    // DV — Dhivehi
-    // ================================================================
-    static final AgeLocale DV = new AgeLocale(
-        'dv',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ދުވަސް'),
-            UnitForms.simpleUnit('{n} ހަފްތާ'),
-            UnitForms.simpleUnit('{n} މަސް'),
-            UnitForms.simpleUnit('{n} އަހަރު'),
-        ),
-        '{0} ބައި',
-        '، ',
-        'އަލަށް އުފަންވި',
-        new Stages(
-            StageLabel.neutral('އަލަށް އުފަންވި'),
-            StageLabel.neutral('ތުއްތު ކުއްޖާ'),
-            StageLabel.neutral('ހިނގާ ކުއްޖާ'),
-            StageLabel.neutral('ކުޑަ ކުއްޖާ'),
-            StageLabel.neutral('ފުރާވަރު'),
-            StageLabel.neutral('ބޮޑު މީހާ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ދުވަސް'),
-            UnitForms.simpleUnit('{n} ހަފްތާ'),
-            UnitForms.simpleUnit('{n} މަސް'),
-            UnitForms.simpleUnit('{n} އަހަރު'),
-            null,
+    private static AgeLocale _es() {
+        new AgeLocale(
+            'es',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} día', (PluralCategory.OTHER): '{n} días']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} semana', (PluralCategory.OTHER): '{n} semanas']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} meses']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} año', (PluralCategory.OTHER): '{n} años']),
+            ),
+            '{n} y medio',
+            ', ',
+            'Recién nacido',
+            new Stages(
+                StageLabel.gendered('Recién nacido', 'Recién nacida'),
+                StageLabel.neutral('Bebé'),
+                StageLabel.gendered('Niño pequeño', 'Niña pequeña'),
+                StageLabel.gendered('Niño', 'Niña'),
+                StageLabel.neutral('Adolescente'),
+                StageLabel.gendered('Adulto', 'Adulta'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} sem.'),
+                UnitForms.simpleUnit('{n} m.'),
+                UnitForms.simpleUnit('{n} a'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}sem'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}a'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/dyu.json
-    // ================================================================
-    // DYU — Dyula
-    // ================================================================
-    static final AgeLocale DYU = new AgeLocale(
-        'dyu',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('don {n}'),
-            UnitForms.simpleUnit('dɔgɔkun {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('san {n}'),
-        ),
-        '{0} ni tilancɛ',
-        ', ',
-        'Den fɛn bɛ wolo',
-        new Stages(
-            StageLabel.neutral('Denmisɛn kura'),
-            StageLabel.neutral('Denmisɛn'),
-            StageLabel.neutral('Den fitinin'),
-            StageLabel.neutral('Den'),
-            StageLabel.neutral('Kamalen'),
-            StageLabel.neutral('Mɔgɔkɔrɔba'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('don {n}'),
-            UnitForms.simpleUnit('dɔgɔk. {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('san {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('don {n}'),
-            UnitForms.simpleUnit('dɔgɔk {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('san {n}'),
+    private static AgeLocale _et() {
+        new AgeLocale(
+            'et',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} päev', (PluralCategory.OTHER): '{n} päeva']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} nädal', (PluralCategory.OTHER): '{n} nädalat']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kuu', (PluralCategory.OTHER): '{n} kuud']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} aasta', (PluralCategory.OTHER): '{n} aastat']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Vastsündinu',
+            new Stages(
+                StageLabel.neutral('Vastsündinu'),
+                StageLabel.neutral('Imik'),
+                StageLabel.neutral('Väikelaps'),
+                StageLabel.neutral('Laps'),
+                StageLabel.neutral('Teismeline'),
+                StageLabel.neutral('Täiskasvanu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} päev', (PluralCategory.OTHER): '{n} päeva']),
+                UnitForms.simpleUnit('{n} näd'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kuu', (PluralCategory.OTHER): '{n} kuud']),
+                UnitForms.simpleUnit('{n} a'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} p'),
+                UnitForms.simpleUnit('{n} n'),
+                UnitForms.simpleUnit('{n} k'),
+                UnitForms.simpleUnit('{n} a'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/dz.json
-    // ================================================================
-    // DZ — Dzongkha
-    // ================================================================
-    static final AgeLocale DZ = new AgeLocale(
-        'dz',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('ཉིན་ {n}'),
-            UnitForms.simpleUnit('བདུན་ཕྲག་ {n}'),
-            UnitForms.simpleUnit('ཟླ་ {n}'),
-            UnitForms.simpleUnit('ལོ་ {n}'),
-        ),
-        '{0} ཕྱེད',
-        ' ',
-        'གསར་སྐྱེས',
-        new Stages(
-            StageLabel.neutral('གསར་སྐྱེས'),
-            StageLabel.neutral('ཕྲུ་གུ'),
-            StageLabel.neutral('བྱིས་པ'),
-            StageLabel.neutral('ཨ་ཅུང'),
-            StageLabel.neutral('ན་གཞོན'),
-            StageLabel.neutral('མི་ལོན་ཚང'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ཉིན་ {n}'),
-            UnitForms.simpleUnit('བདུན་ཕྲག་ {n}'),
-            UnitForms.simpleUnit('ཟླ་ {n}'),
-            UnitForms.simpleUnit('ལོ་ {n}'),
-            null,
+    private static AgeLocale _eu() {
+        new AgeLocale(
+            'eu',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} egun'),
+                UnitForms.simpleUnit('{n} aste'),
+                UnitForms.simpleUnit('{n} hilabete'),
+                UnitForms.simpleUnit('{n} urte'),
+            ),
+            '{0} eta erdi',
+            ', ',
+            'Jaioberria',
+            new Stages(
+                StageLabel.neutral('Jaioberria'),
+                StageLabel.neutral('Haurra'),
+                StageLabel.neutral('Haur txikia'),
+                StageLabel.neutral('Umea'),
+                StageLabel.neutral('Nerabea'),
+                StageLabel.neutral('Heldua'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} egun'),
+                UnitForms.simpleUnit('{n} aste'),
+                UnitForms.simpleUnit('{n} hilabete'),
+                UnitForms.simpleUnit('{n} urte'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} e.'),
+                UnitForms.simpleUnit('{n} aste'),
+                UnitForms.simpleUnit('{n} hil'),
+                UnitForms.simpleUnit('{n} u.'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ee.json
-    // ================================================================
-    // EE — Ewe
-    // ================================================================
-    static final AgeLocale EE = new AgeLocale(
-        'ee',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ŋkeke {n}', (PluralCategory.OTHER): 'ŋkekewo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kɔsiɖa {n}', (PluralCategory.OTHER): 'kɔsiɖawo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ɣleti {n}', (PluralCategory.OTHER): 'ɣletiwo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ƒe {n}', (PluralCategory.OTHER): 'ƒewo {n}']),
-        ),
-        '{0} kple afã',
-        ', ',
-        'Evi yeye',
-        new Stages(
-            StageLabel.neutral('Evi yeye'),
-            StageLabel.neutral('Ɖevi'),
-            StageLabel.neutral('Ɖevi sue'),
-            StageLabel.neutral('Ɖevi'),
-            StageLabel.neutral('Ŋutsuviwo'),
-            StageLabel.neutral('Ame tsitsi'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ŋkekewo {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kɔsiɖa {n}', (PluralCategory.OTHER): 'kɔsiɖawo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ɣleti {n}', (PluralCategory.OTHER): 'ɣletiwo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ƒe {n}', (PluralCategory.OTHER): 'ƒewo {n}']),
-            null,
+    private static AgeLocale _fa() {
+        new AgeLocale(
+            'fa',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} روز', (PluralCategory.OTHER): '{n} روز']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} هفته', (PluralCategory.OTHER): '{n} هفته']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ماه', (PluralCategory.OTHER): '{n} ماه']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} سال', (PluralCategory.OTHER): '{n} سال']),
+            ),
+            '{0} و نیم',
+            ' و ',
+            'نوزاد',
+            new Stages(
+                StageLabel.neutral('نوزاد'),
+                StageLabel.neutral('شیرخوار'),
+                StageLabel.neutral('نوپا'),
+                StageLabel.neutral('کودک'),
+                StageLabel.neutral('نوجوان'),
+                StageLabel.neutral('بزرگسال'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} روز'),
+                UnitForms.simpleUnit('{n} هفته'),
+                UnitForms.simpleUnit('{n} ماه'),
+                UnitForms.simpleUnit('{n} سال'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} روز'),
+                UnitForms.simpleUnit('{n} هفته'),
+                UnitForms.simpleUnit('{n} ماه'),
+                UnitForms.simpleUnit('{n} سال'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+        )
+    }
+
+    private static AgeLocale _fan() {
+        new AgeLocale(
+            'fan',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mos {n}', (PluralCategory.OTHER): 'bimos {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sone {n}', (PluralCategory.OTHER): 'bisone {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mbu {n}', (PluralCategory.OTHER): 'mimbu {n}']),
+            ),
+            '{0} e ndamba',
+            ', ',
+            'Mone a biai',
+            new Stages(
+                StageLabel.neutral('Mone a biai'),
+                StageLabel.neutral('Mone'),
+                StageLabel.neutral('Mone'),
+                StageLabel.neutral('Mone'),
+                StageLabel.neutral('Mon-nnam'),
+                StageLabel.neutral('Mot'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mos {n}', (PluralCategory.OTHER): 'bimos {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sone {n}', (PluralCategory.OTHER): 'bisone {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mbu {n}', (PluralCategory.OTHER): 'mimbu {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ff() {
+        new AgeLocale(
+            'ff',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ñalawma {n}', (PluralCategory.OTHER): 'ñalɗe {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'yontere {n}', (PluralCategory.OTHER): 'yontereeji {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lewru {n}', (PluralCategory.OTHER): 'lebbi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'hitaande {n}', (PluralCategory.OTHER): 'duuɓi {n}']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Ɓinngel kesol',
+            new Stages(
+                StageLabel.neutral('Ɓinngel kesol'),
+                StageLabel.neutral('Ɓinngel'),
+                StageLabel.neutral('Cukalel'),
+                StageLabel.neutral('Suka'),
+                StageLabel.neutral('Suka debbo'),
+                StageLabel.neutral('Mawɗo'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ñalɗe {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'yontere {n}', (PluralCategory.OTHER): 'yontereeji {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lewru {n}', (PluralCategory.OTHER): 'lebbi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'hitaande {n}', (PluralCategory.OTHER): 'duuɓi {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ñalɗe {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'yont {n}', (PluralCategory.OTHER): 'yontji {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lew {n}', (PluralCategory.OTHER): 'leb {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'hit {n}', (PluralCategory.OTHER): 'duuɓi {n}']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/el.json
-    // ================================================================
-    // EL — Greek
-    // ================================================================
-    static final AgeLocale EL = new AgeLocale(
-        'el',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} μέρα', (PluralCategory.OTHER): '{n} μέρες']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} εβδομάδα', (PluralCategory.OTHER): '{n} εβδομάδες']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} μήνας', (PluralCategory.OTHER): '{n} μήνες']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} χρόνος', (PluralCategory.OTHER): '{n} χρόνια']),
-        ),
-        '{0} και μισό',
-        ', ',
-        'Νεογέννητο',
-        new Stages(
-            StageLabel.neutral('Νεογέννητο'),
-            StageLabel.neutral('Βρέφος'),
-            StageLabel.neutral('Νήπιο'),
-            StageLabel.neutral('Παιδί'),
-            StageLabel.gendered('Έφηβος', 'Έφηβη'),
-            StageLabel.gendered('Ενήλικας', 'Ενήλικη'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ημέρα', (PluralCategory.OTHER): '{n} ημέρες']),
-            UnitForms.simpleUnit('{n} εβδ.'),
-            UnitForms.simpleUnit('{n} μήν.'),
-            UnitForms.simpleUnit('{n} έτ.'),
-            null,
+    private static AgeLocale _fi() {
+        new AgeLocale(
+            'fi',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} päivä', (PluralCategory.OTHER): '{n} päivää']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} viikko', (PluralCategory.OTHER): '{n} viikkoa']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kuukausi', (PluralCategory.OTHER): '{n} kuukautta']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vuosi', (PluralCategory.OTHER): '{n} vuotta']),
+            ),
+            '{n} ja puoli',
+            ', ',
+            'Vastasyntynyt',
+            new Stages(
+                StageLabel.neutral('Vastasyntynyt'),
+                StageLabel.neutral('Vauva'),
+                StageLabel.neutral('Taapero'),
+                StageLabel.neutral('Lapsi'),
+                StageLabel.neutral('Teini'),
+                StageLabel.neutral('Aikuinen'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} pv'),
+                UnitForms.simpleUnit('{n} vk'),
+                UnitForms.simpleUnit('{n} kk'),
+                UnitForms.simpleUnit('{n} v'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}pv'),
+                UnitForms.simpleUnit('{n}vk'),
+                UnitForms.simpleUnit('{n}kk'),
+                UnitForms.simpleUnit('{n}v'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} η'),
-            UnitForms.simpleUnit('{n} ε'),
-            UnitForms.simpleUnit('{n} μ'),
-            UnitForms.simpleUnit('{n} έ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/en.json
-    // ================================================================
-    // EN — English
-    // ================================================================
-    static final AgeLocale EN = new AgeLocale(
-        'en',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} day', (PluralCategory.OTHER): '{n} days']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} week', (PluralCategory.OTHER): '{n} weeks']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} month', (PluralCategory.OTHER): '{n} months']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} year', (PluralCategory.OTHER): '{n} years']),
-        ),
-        '{n}½',
-        ', ',
-        'Newborn',
-        new Stages(
-            StageLabel.neutral('Newborn'),
-            StageLabel.neutral('Infant'),
-            StageLabel.neutral('Toddler'),
-            StageLabel.neutral('Child'),
-            StageLabel.neutral('Teenager'),
-            StageLabel.neutral('Adult'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} wk'),
-            UnitForms.simpleUnit('{n} mo'),
-            UnitForms.simpleUnit('{n} yr'),
-            null,
+    private static AgeLocale _fil() {
+        new AgeLocale(
+            'fil',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} araw'),
+                UnitForms.simpleUnit('{n} linggo'),
+                UnitForms.simpleUnit('{n} buwan'),
+                UnitForms.simpleUnit('{n} taon'),
+            ),
+            '{0} at kalahati',
+            ', ',
+            'Bagong silang',
+            new Stages(
+                StageLabel.neutral('Bagong silang'),
+                StageLabel.neutral('Sanggol'),
+                StageLabel.neutral('Batang paslit'),
+                StageLabel.neutral('Bata'),
+                StageLabel.neutral('Tinedyer'),
+                StageLabel.neutral('Matanda'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} araw'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} linggo', (PluralCategory.OTHER): '{n} na linggo']),
+                UnitForms.simpleUnit('{n} buwan'),
+                UnitForms.simpleUnit('{n} taon'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} araw', (PluralCategory.OTHER): '{n} na araw']),
+                UnitForms.simpleUnit('{n}linggo'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n}buwan', (PluralCategory.OTHER): '{n} buwan']),
+                UnitForms.simpleUnit('{n}taon'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/es.json
-    // ================================================================
-    // ES — Spanish
-    // ================================================================
-    static final AgeLocale ES = new AgeLocale(
-        'es',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} día', (PluralCategory.OTHER): '{n} días']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} semana', (PluralCategory.OTHER): '{n} semanas']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} meses']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} año', (PluralCategory.OTHER): '{n} años']),
-        ),
-        '{n} y medio',
-        ', ',
-        'Recién nacido',
-        new Stages(
-            StageLabel.gendered('Recién nacido', 'Recién nacida'),
-            StageLabel.neutral('Bebé'),
-            StageLabel.gendered('Niño pequeño', 'Niña pequeña'),
-            StageLabel.gendered('Niño', 'Niña'),
-            StageLabel.neutral('Adolescente'),
-            StageLabel.gendered('Adulto', 'Adulta'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} sem.'),
-            UnitForms.simpleUnit('{n} m.'),
-            UnitForms.simpleUnit('{n} a'),
-            null,
+    private static AgeLocale _fj() {
+        new AgeLocale(
+            'fj',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} na siga'),
+                UnitForms.simpleUnit('{n} na macawa'),
+                UnitForms.simpleUnit('{n} na vula'),
+                UnitForms.simpleUnit('{n} na yabaki'),
+            ),
+            '{n} kei na levu ni wasei',
+            ', ',
+            'Gone vou',
+            new Stages(
+                StageLabel.neutral('Gone vou'),
+                StageLabel.neutral('Gone lalai'),
+                StageLabel.neutral('Gone lailai'),
+                StageLabel.neutral('Gone'),
+                StageLabel.neutral('Cauravou'),
+                StageLabel.neutral('Tamata qase'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} siga'),
+                UnitForms.simpleUnit('{n} mac.'),
+                UnitForms.simpleUnit('{n} vula'),
+                UnitForms.simpleUnit('{n} yab.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}sem'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}a'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/et.json
-    // ================================================================
-    // ET — Estonian
-    // ================================================================
-    static final AgeLocale ET = new AgeLocale(
-        'et',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} päev', (PluralCategory.OTHER): '{n} päeva']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} nädal', (PluralCategory.OTHER): '{n} nädalat']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kuu', (PluralCategory.OTHER): '{n} kuud']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} aasta', (PluralCategory.OTHER): '{n} aastat']),
-        ),
-        '{n}½',
-        ', ',
-        'Vastsündinu',
-        new Stages(
-            StageLabel.neutral('Vastsündinu'),
-            StageLabel.neutral('Imik'),
-            StageLabel.neutral('Väikelaps'),
-            StageLabel.neutral('Laps'),
-            StageLabel.neutral('Teismeline'),
-            StageLabel.neutral('Täiskasvanu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} päev', (PluralCategory.OTHER): '{n} päeva']),
-            UnitForms.simpleUnit('{n} näd'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kuu', (PluralCategory.OTHER): '{n} kuud']),
-            UnitForms.simpleUnit('{n} a'),
-            null,
+    private static AgeLocale _fon() {
+        new AgeLocale(
+            'fon',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('azǎn {n}'),
+                UnitForms.simpleUnit('aklunɔ̌zán {n}'),
+                UnitForms.simpleUnit('sun {n}'),
+                UnitForms.simpleUnit('xwè {n}'),
+            ),
+            '{0} kpo vlavo kpo',
+            ', ',
+            'Vǐ yɔ̌yɔ́',
+            new Stages(
+                StageLabel.neutral('Vǐ yɔ̌yɔ́'),
+                StageLabel.neutral('Vǐ'),
+                StageLabel.neutral('Vǐ'),
+                StageLabel.neutral('Vǐ'),
+                StageLabel.neutral('Nyɔ̌nu'),
+                StageLabel.neutral('Mɛ̌xo'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('azǎn {n}'),
+                UnitForms.simpleUnit('aklunɔ̌zán {n}'),
+                UnitForms.simpleUnit('sun {n}'),
+                UnitForms.simpleUnit('xwè {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} p'),
-            UnitForms.simpleUnit('{n} n'),
-            UnitForms.simpleUnit('{n} k'),
-            UnitForms.simpleUnit('{n} a'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/eu.json
-    // ================================================================
-    // EU — Basque
-    // ================================================================
-    static final AgeLocale EU = new AgeLocale(
-        'eu',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} egun'),
-            UnitForms.simpleUnit('{n} aste'),
-            UnitForms.simpleUnit('{n} hilabete'),
-            UnitForms.simpleUnit('{n} urte'),
-        ),
-        '{0} eta erdi',
-        ', ',
-        'Jaioberria',
-        new Stages(
-            StageLabel.neutral('Jaioberria'),
-            StageLabel.neutral('Haurra'),
-            StageLabel.neutral('Haur txikia'),
-            StageLabel.neutral('Umea'),
-            StageLabel.neutral('Nerabea'),
-            StageLabel.neutral('Heldua'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} egun'),
-            UnitForms.simpleUnit('{n} aste'),
-            UnitForms.simpleUnit('{n} hilabete'),
-            UnitForms.simpleUnit('{n} urte'),
-            null,
+    private static AgeLocale _fr() {
+        new AgeLocale(
+            'fr',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} jour', (PluralCategory.OTHER): '{n} jours']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} semaine', (PluralCategory.OTHER): '{n} semaines']),
+                UnitForms.simpleUnit('{n} mois'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.OTHER): '{n} ans']),
+            ),
+            '{0} et demi',
+            ', ',
+            'Nouveau-né',
+            new Stages(
+                StageLabel.gendered('Nouveau-né', 'Nouveau-née'),
+                StageLabel.neutral('Nourrisson'),
+                StageLabel.neutral('Tout-petit'),
+                StageLabel.neutral('Enfant'),
+                StageLabel.gendered('Adolescent', 'Adolescente'),
+                StageLabel.neutral('Adulte'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} j'),
+                UnitForms.simpleUnit('{n} sem.'),
+                UnitForms.simpleUnit('{n} m.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.OTHER): '{n} ans']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}j'),
+                UnitForms.simpleUnit('{n}sem.'),
+                UnitForms.simpleUnit('{n}m.'),
+                UnitForms.simpleUnit('{n}a'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} e.'),
-            UnitForms.simpleUnit('{n} aste'),
-            UnitForms.simpleUnit('{n} hil'),
-            UnitForms.simpleUnit('{n} u.'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/fa.json
-    // ================================================================
-    // FA — Persian
-    // ================================================================
-    static final AgeLocale FA = new AgeLocale(
-        'fa',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} روز', (PluralCategory.OTHER): '{n} روز']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} هفته', (PluralCategory.OTHER): '{n} هفته']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ماه', (PluralCategory.OTHER): '{n} ماه']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} سال', (PluralCategory.OTHER): '{n} سال']),
-        ),
-        '{0} و نیم',
-        ' و ',
-        'نوزاد',
-        new Stages(
-            StageLabel.neutral('نوزاد'),
-            StageLabel.neutral('شیرخوار'),
-            StageLabel.neutral('نوپا'),
-            StageLabel.neutral('کودک'),
-            StageLabel.neutral('نوجوان'),
-            StageLabel.neutral('بزرگسال'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} روز'),
-            UnitForms.simpleUnit('{n} هفته'),
-            UnitForms.simpleUnit('{n} ماه'),
-            UnitForms.simpleUnit('{n} سال'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} روز'),
-            UnitForms.simpleUnit('{n} هفته'),
-            UnitForms.simpleUnit('{n} ماه'),
-            UnitForms.simpleUnit('{n} سال'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/fan.json
-    // ================================================================
-    // FAN — Fang
-    // ================================================================
-    static final AgeLocale FAN = new AgeLocale(
-        'fan',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mos {n}', (PluralCategory.OTHER): 'bimos {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sone {n}', (PluralCategory.OTHER): 'bisone {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mbu {n}', (PluralCategory.OTHER): 'mimbu {n}']),
-        ),
-        '{0} e ndamba',
-        ', ',
-        'Mone a biai',
-        new Stages(
-            StageLabel.neutral('Mone a biai'),
-            StageLabel.neutral('Mone'),
-            StageLabel.neutral('Mone'),
-            StageLabel.neutral('Mone'),
-            StageLabel.neutral('Mon-nnam'),
-            StageLabel.neutral('Mot'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mos {n}', (PluralCategory.OTHER): 'bimos {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sone {n}', (PluralCategory.OTHER): 'bisone {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mbu {n}', (PluralCategory.OTHER): 'mimbu {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ff.json
-    // ================================================================
-    // FF — Fulah
-    // ================================================================
-    static final AgeLocale FF = new AgeLocale(
-        'ff',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ñalawma {n}', (PluralCategory.OTHER): 'ñalɗe {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'yontere {n}', (PluralCategory.OTHER): 'yontereeji {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lewru {n}', (PluralCategory.OTHER): 'lebbi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'hitaande {n}', (PluralCategory.OTHER): 'duuɓi {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Ɓinngel kesol',
-        new Stages(
-            StageLabel.neutral('Ɓinngel kesol'),
-            StageLabel.neutral('Ɓinngel'),
-            StageLabel.neutral('Cukalel'),
-            StageLabel.neutral('Suka'),
-            StageLabel.neutral('Suka debbo'),
-            StageLabel.neutral('Mawɗo'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ñalɗe {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'yontere {n}', (PluralCategory.OTHER): 'yontereeji {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lewru {n}', (PluralCategory.OTHER): 'lebbi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'hitaande {n}', (PluralCategory.OTHER): 'duuɓi {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ñalɗe {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'yont {n}', (PluralCategory.OTHER): 'yontji {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lew {n}', (PluralCategory.OTHER): 'leb {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'hit {n}', (PluralCategory.OTHER): 'duuɓi {n}']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/fi.json
-    // ================================================================
-    // FI — Finnish
-    // ================================================================
-    static final AgeLocale FI = new AgeLocale(
-        'fi',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} päivä', (PluralCategory.OTHER): '{n} päivää']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} viikko', (PluralCategory.OTHER): '{n} viikkoa']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kuukausi', (PluralCategory.OTHER): '{n} kuukautta']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vuosi', (PluralCategory.OTHER): '{n} vuotta']),
-        ),
-        '{n} ja puoli',
-        ', ',
-        'Vastasyntynyt',
-        new Stages(
-            StageLabel.neutral('Vastasyntynyt'),
-            StageLabel.neutral('Vauva'),
-            StageLabel.neutral('Taapero'),
-            StageLabel.neutral('Lapsi'),
-            StageLabel.neutral('Teini'),
-            StageLabel.neutral('Aikuinen'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} pv'),
-            UnitForms.simpleUnit('{n} vk'),
-            UnitForms.simpleUnit('{n} kk'),
-            UnitForms.simpleUnit('{n} v'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}pv'),
-            UnitForms.simpleUnit('{n}vk'),
-            UnitForms.simpleUnit('{n}kk'),
-            UnitForms.simpleUnit('{n}v'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/fil.json
-    // ================================================================
-    // FIL — Filipino
-    // ================================================================
-    static final AgeLocale FIL = new AgeLocale(
-        'fil',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} araw'),
-            UnitForms.simpleUnit('{n} linggo'),
-            UnitForms.simpleUnit('{n} buwan'),
-            UnitForms.simpleUnit('{n} taon'),
-        ),
-        '{0} at kalahati',
-        ', ',
-        'Bagong silang',
-        new Stages(
-            StageLabel.neutral('Bagong silang'),
-            StageLabel.neutral('Sanggol'),
-            StageLabel.neutral('Batang paslit'),
-            StageLabel.neutral('Bata'),
-            StageLabel.neutral('Tinedyer'),
-            StageLabel.neutral('Matanda'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} araw'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} linggo', (PluralCategory.OTHER): '{n} na linggo']),
-            UnitForms.simpleUnit('{n} buwan'),
-            UnitForms.simpleUnit('{n} taon'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} araw', (PluralCategory.OTHER): '{n} na araw']),
-            UnitForms.simpleUnit('{n}linggo'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n}buwan', (PluralCategory.OTHER): '{n} buwan']),
-            UnitForms.simpleUnit('{n}taon'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/fj.json
-    // ================================================================
-    // FJ — Fijian
-    // ================================================================
-    static final AgeLocale FJ = new AgeLocale(
-        'fj',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} na siga'),
-            UnitForms.simpleUnit('{n} na macawa'),
-            UnitForms.simpleUnit('{n} na vula'),
-            UnitForms.simpleUnit('{n} na yabaki'),
-        ),
-        '{n} kei na levu ni wasei',
-        ', ',
-        'Gone vou',
-        new Stages(
-            StageLabel.neutral('Gone vou'),
-            StageLabel.neutral('Gone lalai'),
-            StageLabel.neutral('Gone lailai'),
-            StageLabel.neutral('Gone'),
-            StageLabel.neutral('Cauravou'),
-            StageLabel.neutral('Tamata qase'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} siga'),
-            UnitForms.simpleUnit('{n} mac.'),
-            UnitForms.simpleUnit('{n} vula'),
-            UnitForms.simpleUnit('{n} yab.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/fon.json
-    // ================================================================
-    // FON — Fon
-    // ================================================================
-    static final AgeLocale FON = new AgeLocale(
-        'fon',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('azǎn {n}'),
-            UnitForms.simpleUnit('aklunɔ̌zán {n}'),
-            UnitForms.simpleUnit('sun {n}'),
-            UnitForms.simpleUnit('xwè {n}'),
-        ),
-        '{0} kpo vlavo kpo',
-        ', ',
-        'Vǐ yɔ̌yɔ́',
-        new Stages(
-            StageLabel.neutral('Vǐ yɔ̌yɔ́'),
-            StageLabel.neutral('Vǐ'),
-            StageLabel.neutral('Vǐ'),
-            StageLabel.neutral('Vǐ'),
-            StageLabel.neutral('Nyɔ̌nu'),
-            StageLabel.neutral('Mɛ̌xo'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('azǎn {n}'),
-            UnitForms.simpleUnit('aklunɔ̌zán {n}'),
-            UnitForms.simpleUnit('sun {n}'),
-            UnitForms.simpleUnit('xwè {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/fr.json
-    // ================================================================
-    // FR — French
-    // ================================================================
-    static final AgeLocale FR = new AgeLocale(
-        'fr',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} jour', (PluralCategory.OTHER): '{n} jours']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} semaine', (PluralCategory.OTHER): '{n} semaines']),
-            UnitForms.simpleUnit('{n} mois'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.OTHER): '{n} ans']),
-        ),
-        '{0} et demi',
-        ', ',
-        'Nouveau-né',
-        new Stages(
-            StageLabel.gendered('Nouveau-né', 'Nouveau-née'),
-            StageLabel.neutral('Nourrisson'),
-            StageLabel.neutral('Tout-petit'),
-            StageLabel.neutral('Enfant'),
-            StageLabel.gendered('Adolescent', 'Adolescente'),
-            StageLabel.neutral('Adulte'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} j'),
-            UnitForms.simpleUnit('{n} sem.'),
-            UnitForms.simpleUnit('{n} m.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.OTHER): '{n} ans']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}j'),
-            UnitForms.simpleUnit('{n}sem.'),
-            UnitForms.simpleUnit('{n}m.'),
-            UnitForms.simpleUnit('{n}a'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ga.json
-    // ================================================================
-    // GA — Irish
-    // ================================================================
-    static final AgeLocale GA = new AgeLocale(
-        'ga',
-        { int n ->
+    private static AgeLocale _ga() {
+        new AgeLocale(
+            'ga',
+            { int n ->
             if (n == 1) return PluralCategory.ONE
             if (n == 2) return PluralCategory.TWO
             if (n >= 3 && n <= 6) return PluralCategory.FEW
             if (n >= 7 && n <= 10) return PluralCategory.MANY
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} lá', (PluralCategory.TWO): '{n} lá', (PluralCategory.FEW): '{n} lá', (PluralCategory.MANY): '{n} lá', (PluralCategory.OTHER): '{n} lá']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} seachtain', (PluralCategory.TWO): '{n} sheachtain', (PluralCategory.FEW): '{n} seachtaine', (PluralCategory.MANY): '{n} seachtaine', (PluralCategory.OTHER): '{n} seachtain']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mhí', (PluralCategory.TWO): '{n} mhí', (PluralCategory.FEW): '{n} mhí', (PluralCategory.MANY): '{n} mí', (PluralCategory.OTHER): '{n} mí']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bhliain', (PluralCategory.TWO): '{n} bhliain', (PluralCategory.FEW): '{n} bliana', (PluralCategory.MANY): '{n} mbliana', (PluralCategory.OTHER): '{n} bliain']),
-        ),
-        '{0} go leith',
-        ', ',
-        'Nuabheirthe',
-        new Stages(
-            StageLabel.neutral('Nuabheirthe'),
-            StageLabel.neutral('Naíonán'),
-            StageLabel.neutral('Lapadán'),
-            StageLabel.neutral('Páiste'),
-            StageLabel.neutral('Déagóir'),
-            StageLabel.neutral('Duine fásta'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} lá'),
-            UnitForms.simpleUnit('{n} scht'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mí', (PluralCategory.TWO): '{n} mí', (PluralCategory.FEW): '{n} mí', (PluralCategory.MANY): '{n} mí', (PluralCategory.OTHER): '{n} m']),
-            UnitForms.simpleUnit('{n} bl'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} lá', (PluralCategory.TWO): '{n} lá', (PluralCategory.FEW): '{n} lá', (PluralCategory.MANY): '{n} lá', (PluralCategory.OTHER): '{n} lá']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} seachtain', (PluralCategory.TWO): '{n} sheachtain', (PluralCategory.FEW): '{n} seachtaine', (PluralCategory.MANY): '{n} seachtaine', (PluralCategory.OTHER): '{n} seachtain']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mhí', (PluralCategory.TWO): '{n} mhí', (PluralCategory.FEW): '{n} mhí', (PluralCategory.MANY): '{n} mí', (PluralCategory.OTHER): '{n} mí']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bhliain', (PluralCategory.TWO): '{n} bhliain', (PluralCategory.FEW): '{n} bliana', (PluralCategory.MANY): '{n} mbliana', (PluralCategory.OTHER): '{n} bliain']),
+            ),
+            '{0} go leith',
+            ', ',
+            'Nuabheirthe',
+            new Stages(
+                StageLabel.neutral('Nuabheirthe'),
+                StageLabel.neutral('Naíonán'),
+                StageLabel.neutral('Lapadán'),
+                StageLabel.neutral('Páiste'),
+                StageLabel.neutral('Déagóir'),
+                StageLabel.neutral('Duine fásta'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} lá'),
+                UnitForms.simpleUnit('{n} scht'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mí', (PluralCategory.TWO): '{n} mí', (PluralCategory.FEW): '{n} mí', (PluralCategory.MANY): '{n} mí', (PluralCategory.OTHER): '{n} m']),
+                UnitForms.simpleUnit('{n} bl'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} lá'),
+                UnitForms.simpleUnit('{n} scht'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n}m', (PluralCategory.TWO): '{n}m', (PluralCategory.FEW): '{n}m', (PluralCategory.MANY): '{n}m', (PluralCategory.OTHER): '{n} m']),
+                UnitForms.simpleUnit('{n} bl'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} lá'),
-            UnitForms.simpleUnit('{n} scht'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n}m', (PluralCategory.TWO): '{n}m', (PluralCategory.FEW): '{n}m', (PluralCategory.MANY): '{n}m', (PluralCategory.OTHER): '{n} m']),
-            UnitForms.simpleUnit('{n} bl'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/gd.json
-    // ================================================================
-    // GD — Scottish Gaelic
-    // ================================================================
-    static final AgeLocale GD = new AgeLocale(
-        'gd',
-        { int n ->
+    private static AgeLocale _gd() {
+        new AgeLocale(
+            'gd',
+            { int n ->
             if (n == 1 || n == 11) return PluralCategory.ONE
             if (n == 2 || n == 12) return PluralCategory.TWO
             if ((n >= 3 && n <= 10) || (n >= 13 && n <= 19)) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} latha', (PluralCategory.TWO): '{n} latha', (PluralCategory.FEW): '{n} làithean', (PluralCategory.OTHER): '{n} latha']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} sheachdain', (PluralCategory.TWO): '{n} sheachdain', (PluralCategory.FEW): '{n} seachdainean', (PluralCategory.OTHER): '{n} seachdain']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mhìos', (PluralCategory.TWO): '{n} mhìos', (PluralCategory.FEW): '{n} mìosan', (PluralCategory.OTHER): '{n} mìos']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bhliadhna', (PluralCategory.TWO): '{n} bhliadhna', (PluralCategory.FEW): '{n} bliadhna', (PluralCategory.OTHER): '{n} bliadhna']),
-        ),
-        '{0} gu leth',
-        ', ',
-        'Ùr-bhreith',
-        new Stages(
-            StageLabel.neutral('Ùr-bhreith'),
-            StageLabel.neutral('Naoidhean'),
-            StageLabel.neutral('Pàiste beag'),
-            StageLabel.neutral('Pàiste'),
-            StageLabel.neutral('Deugaire'),
-            StageLabel.neutral('Inbheach'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} là'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} shn', (PluralCategory.TWO): '{n} shn', (PluralCategory.FEW): '{n} sn', (PluralCategory.OTHER): '{n} sn']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mhìos', (PluralCategory.TWO): '{n} mhìos', (PluralCategory.FEW): '{n} mìos', (PluralCategory.OTHER): '{n} mìos']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bhlia', (PluralCategory.TWO): '{n} bhlia', (PluralCategory.FEW): '{n} blia', (PluralCategory.OTHER): '{n} blia']),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} latha', (PluralCategory.TWO): '{n} latha', (PluralCategory.FEW): '{n} làithean', (PluralCategory.OTHER): '{n} latha']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} sheachdain', (PluralCategory.TWO): '{n} sheachdain', (PluralCategory.FEW): '{n} seachdainean', (PluralCategory.OTHER): '{n} seachdain']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mhìos', (PluralCategory.TWO): '{n} mhìos', (PluralCategory.FEW): '{n} mìosan', (PluralCategory.OTHER): '{n} mìos']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bhliadhna', (PluralCategory.TWO): '{n} bhliadhna', (PluralCategory.FEW): '{n} bliadhna', (PluralCategory.OTHER): '{n} bliadhna']),
+            ),
+            '{0} gu leth',
+            ', ',
+            'Ùr-bhreith',
+            new Stages(
+                StageLabel.neutral('Ùr-bhreith'),
+                StageLabel.neutral('Naoidhean'),
+                StageLabel.neutral('Pàiste beag'),
+                StageLabel.neutral('Pàiste'),
+                StageLabel.neutral('Deugaire'),
+                StageLabel.neutral('Inbheach'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} là'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} shn', (PluralCategory.TWO): '{n} shn', (PluralCategory.FEW): '{n} sn', (PluralCategory.OTHER): '{n} sn']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mhìos', (PluralCategory.TWO): '{n} mhìos', (PluralCategory.FEW): '{n} mìos', (PluralCategory.OTHER): '{n} mìos']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} bhlia', (PluralCategory.TWO): '{n} bhlia', (PluralCategory.FEW): '{n} blia', (PluralCategory.OTHER): '{n} blia']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}là'),
+                UnitForms.simpleUnit('{n}s'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}bl'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}là'),
-            UnitForms.simpleUnit('{n}s'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}bl'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/gl.json
-    // ================================================================
-    // GL — Galician
-    // ================================================================
-    static final AgeLocale GL = new AgeLocale(
-        'gl',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} día', (PluralCategory.OTHER): '{n} días']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} semana', (PluralCategory.OTHER): '{n} semanas']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} meses']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
-        ),
-        '{0} e medio',
-        ', ',
-        'Recén nacido',
-        new Stages(
-            StageLabel.gendered('Recén nacido', 'Recén nacida'),
-            StageLabel.neutral('Bebé'),
-            StageLabel.neutral('Neno'),
-            StageLabel.gendered('Neno', 'Nena'),
-            StageLabel.neutral('Adolescente'),
-            StageLabel.gendered('Adulto', 'Adulta'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} sem.'),
-            UnitForms.simpleUnit('{n} mes.'),
-            UnitForms.simpleUnit('{n} a.'),
-            null,
+    private static AgeLocale _gl() {
+        new AgeLocale(
+            'gl',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} día', (PluralCategory.OTHER): '{n} días']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} semana', (PluralCategory.OTHER): '{n} semanas']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mes', (PluralCategory.OTHER): '{n} meses']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
+            ),
+            '{0} e medio',
+            ', ',
+            'Recén nacido',
+            new Stages(
+                StageLabel.gendered('Recén nacido', 'Recén nacida'),
+                StageLabel.neutral('Bebé'),
+                StageLabel.neutral('Neno'),
+                StageLabel.gendered('Neno', 'Nena'),
+                StageLabel.neutral('Adolescente'),
+                StageLabel.gendered('Adulto', 'Adulta'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} sem.'),
+                UnitForms.simpleUnit('{n} mes.'),
+                UnitForms.simpleUnit('{n} a.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} s'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.simpleUnit('{n} a'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} s'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.simpleUnit('{n} a'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/gn.json
-    // ================================================================
-    // GN — Guarani
-    // ================================================================
-    static final AgeLocale GN = new AgeLocale(
-        'gn',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ára'),
-            UnitForms.simpleUnit('{n} arapokõindy'),
-            UnitForms.simpleUnit('{n} jasy'),
-            UnitForms.simpleUnit('{n} ary'),
-        ),
-        '{n}½',
-        ', ',
-        'Mitã pyahu',
-        new Stages(
-            StageLabel.neutral('Mitã pyahu'),
-            StageLabel.neutral('Mitã\'i'),
-            StageLabel.neutral('Mitã'),
-            StageLabel.neutral('Mitã'),
-            StageLabel.neutral('Mitãrusu'),
-            StageLabel.neutral('Karai'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ára'),
-            UnitForms.simpleUnit('{n} ara'),
-            UnitForms.simpleUnit('{n} jas'),
-            UnitForms.simpleUnit('{n} ary'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+    private static AgeLocale _gn() {
+        new AgeLocale(
+            'gn',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ára'),
+                UnitForms.simpleUnit('{n} arapokõindy'),
+                UnitForms.simpleUnit('{n} jasy'),
+                UnitForms.simpleUnit('{n} ary'),
+            ),
             '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/gu.json
-    // ================================================================
-    // GU — Gujarati
-    // ================================================================
-    static final AgeLocale GU = new AgeLocale(
-        'gu',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} દિવસ', (PluralCategory.OTHER): '{n} દિવસ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} અઠવાડિયું', (PluralCategory.OTHER): '{n} અઠવાડિયા']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} મહિનો', (PluralCategory.OTHER): '{n} મહિના']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} વર્ષ', (PluralCategory.OTHER): '{n} વર્ષ']),
-        ),
-        'સાડા {n}',
-        ', ',
-        'નવજાત',
-        new Stages(
-            StageLabel.neutral('નવજાત'),
-            StageLabel.neutral('શિશુ'),
-            StageLabel.neutral('નાનું બાળક'),
-            StageLabel.neutral('બાળક'),
-            StageLabel.gendered('કિશોર', 'કિશોરી'),
-            StageLabel.neutral('પુખ્ત'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} દિવસ'),
-            UnitForms.simpleUnit('{n} અઠ.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} મહિનો', (PluralCategory.OTHER): '{n} મહિના']),
-            UnitForms.simpleUnit('{n} વર્ષ'),
-            null,
+            ', ',
+            'Mitã pyahu',
+            new Stages(
+                StageLabel.neutral('Mitã pyahu'),
+                StageLabel.neutral('Mitã\'i'),
+                StageLabel.neutral('Mitã'),
+                StageLabel.neutral('Mitã'),
+                StageLabel.neutral('Mitãrusu'),
+                StageLabel.neutral('Karai'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ára'),
+                UnitForms.simpleUnit('{n} ara'),
+                UnitForms.simpleUnit('{n} jas'),
+                UnitForms.simpleUnit('{n} ary'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} દિ'),
-            UnitForms.simpleUnit('{n} અઠ.'),
-            UnitForms.simpleUnit('{n} મ'),
-            UnitForms.simpleUnit('{n} વ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/gv.json
-    // ================================================================
-    // GV — Manx
-    // ================================================================
-    static final AgeLocale GV = new AgeLocale(
-        'gv',
-        { int n ->
+    private static AgeLocale _gu() {
+        new AgeLocale(
+            'gu',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} દિવસ', (PluralCategory.OTHER): '{n} દિવસ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} અઠવાડિયું', (PluralCategory.OTHER): '{n} અઠવાડિયા']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} મહિનો', (PluralCategory.OTHER): '{n} મહિના']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} વર્ષ', (PluralCategory.OTHER): '{n} વર્ષ']),
+            ),
+            'સાડા {n}',
+            ', ',
+            'નવજાત',
+            new Stages(
+                StageLabel.neutral('નવજાત'),
+                StageLabel.neutral('શિશુ'),
+                StageLabel.neutral('નાનું બાળક'),
+                StageLabel.neutral('બાળક'),
+                StageLabel.gendered('કિશોર', 'કિશોરી'),
+                StageLabel.neutral('પુખ્ત'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} દિવસ'),
+                UnitForms.simpleUnit('{n} અઠ.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} મહિનો', (PluralCategory.OTHER): '{n} મહિના']),
+                UnitForms.simpleUnit('{n} વર્ષ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} દિ'),
+                UnitForms.simpleUnit('{n} અઠ.'),
+                UnitForms.simpleUnit('{n} મ'),
+                UnitForms.simpleUnit('{n} વ'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _gv() {
+        new AgeLocale(
+            'gv',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1) return PluralCategory.ONE
@@ -2198,1300 +3111,1244 @@ class Locales {
             if (mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} laa', (PluralCategory.TWO): '{n} laa', (PluralCategory.FEW): '{n} laa', (PluralCategory.OTHER): '{n} laa']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} hiaghtin', (PluralCategory.TWO): '{n} hiaghtin', (PluralCategory.FEW): '{n} shiaghtin', (PluralCategory.OTHER): '{n} shiaghtin']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vee', (PluralCategory.TWO): '{n} vee', (PluralCategory.FEW): '{n} mee', (PluralCategory.OTHER): '{n} mee']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vlein', (PluralCategory.TWO): '{n} vlein', (PluralCategory.FEW): '{n} blein', (PluralCategory.OTHER): '{n} blein']),
-        ),
-        '{0} as lieh',
-        ', ',
-        'Ruggit noa',
-        new Stages(
-            StageLabel.neutral('Ruggit noa'),
-            StageLabel.neutral('Oikanagh'),
-            StageLabel.neutral('Lhiannoo'),
-            StageLabel.neutral('Paitchey'),
-            StageLabel.neutral('Fer aeg'),
-            StageLabel.neutral('Dooinney aasit'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} wk'),
-            UnitForms.simpleUnit('{n} mo'),
-            UnitForms.simpleUnit('{n} yr'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} laa', (PluralCategory.TWO): '{n} laa', (PluralCategory.FEW): '{n} laa', (PluralCategory.OTHER): '{n} laa']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} hiaghtin', (PluralCategory.TWO): '{n} hiaghtin', (PluralCategory.FEW): '{n} shiaghtin', (PluralCategory.OTHER): '{n} shiaghtin']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vee', (PluralCategory.TWO): '{n} vee', (PluralCategory.FEW): '{n} mee', (PluralCategory.OTHER): '{n} mee']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vlein', (PluralCategory.TWO): '{n} vlein', (PluralCategory.FEW): '{n} blein', (PluralCategory.OTHER): '{n} blein']),
+            ),
+            '{0} as lieh',
+            ', ',
+            'Ruggit noa',
+            new Stages(
+                StageLabel.neutral('Ruggit noa'),
+                StageLabel.neutral('Oikanagh'),
+                StageLabel.neutral('Lhiannoo'),
+                StageLabel.neutral('Paitchey'),
+                StageLabel.neutral('Fer aeg'),
+                StageLabel.neutral('Dooinney aasit'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} wk'),
+                UnitForms.simpleUnit('{n} mo'),
+                UnitForms.simpleUnit('{n} yr'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+        )
+    }
+
+    private static AgeLocale _ha() {
+        new AgeLocale(
+            'ha',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kwana', (PluralCategory.OTHER): '{n} kwanaki']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mako', (PluralCategory.OTHER): '{n} makonni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} wata', (PluralCategory.OTHER): '{n} watanni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} shekara', (PluralCategory.OTHER): '{n} shekaru']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Sabon haihuwa',
+            new Stages(
+                StageLabel.neutral('Jariri'),
+                StageLabel.neutral('Jariri'),
+                StageLabel.neutral('Ƙaramin yaro'),
+                StageLabel.neutral('Yaro'),
+                StageLabel.neutral('Saurayi'),
+                StageLabel.neutral('Babba'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} kw.'),
+                UnitForms.simpleUnit('{n} mk.'),
+                UnitForms.simpleUnit('{n} wt.'),
+                UnitForms.simpleUnit('{n} shk.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ha.json
-    // ================================================================
-    // HA — Hausa
-    // ================================================================
-    static final AgeLocale HA = new AgeLocale(
-        'ha',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kwana', (PluralCategory.OTHER): '{n} kwanaki']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mako', (PluralCategory.OTHER): '{n} makonni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} wata', (PluralCategory.OTHER): '{n} watanni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} shekara', (PluralCategory.OTHER): '{n} shekaru']),
-        ),
-        '{n}½',
-        ', ',
-        'Sabon haihuwa',
-        new Stages(
-            StageLabel.neutral('Jariri'),
-            StageLabel.neutral('Jariri'),
-            StageLabel.neutral('Ƙaramin yaro'),
-            StageLabel.neutral('Yaro'),
-            StageLabel.neutral('Saurayi'),
-            StageLabel.neutral('Babba'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} kw.'),
-            UnitForms.simpleUnit('{n} mk.'),
-            UnitForms.simpleUnit('{n} wt.'),
-            UnitForms.simpleUnit('{n} shk.'),
-            null,
+    private static AgeLocale _he() {
+        new AgeLocale(
+            'he',
+            { int n -> n == 1 ? PluralCategory.ONE : n == 2 ? PluralCategory.TWO : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'יום {n}', (PluralCategory.TWO): 'יומיים', (PluralCategory.OTHER): '{n} ימים']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'שבוע {n}', (PluralCategory.TWO): 'שבועיים', (PluralCategory.OTHER): '{n} שבועות']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'חודש {n}', (PluralCategory.TWO): 'חודשיים', (PluralCategory.OTHER): '{n} חודשים']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'שנה', (PluralCategory.TWO): 'שנתיים', (PluralCategory.OTHER): '{n} שנים']),
+            ),
+            '{0} וחצי',
+            ', ',
+            'רק נולד',
+            new Stages(
+                StageLabel.gendered('רק נולד', 'רק נולדה'),
+                StageLabel.neutral('תינוק'),
+                StageLabel.neutral('פעוט'),
+                StageLabel.gendered('ילד', 'ילדה'),
+                StageLabel.gendered('נער', 'נערה'),
+                StageLabel.gendered('מבוגר', 'מבוגרת'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} יום', (PluralCategory.TWO): 'יומיים', (PluralCategory.OTHER): '{n} ימ׳']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} שבוע', (PluralCategory.TWO): 'שבועיים', (PluralCategory.OTHER): '{n} שבועות']),
+                UnitForms.simpleUnit('{n} ח׳'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} שנה', (PluralCategory.TWO): '{n} שנים', (PluralCategory.OTHER): '{n} שנים']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} י׳'),
+                UnitForms.simpleUnit('{n} ש′'),
+                UnitForms.simpleUnit('{n} ח׳'),
+                UnitForms.simpleUnit('{n} ש′'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/he.json
-    // ================================================================
-    // HE — Hebrew
-    // ================================================================
-    static final AgeLocale HE = new AgeLocale(
-        'he',
-        { int n -> n == 1 ? PluralCategory.ONE : n == 2 ? PluralCategory.TWO : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'יום {n}', (PluralCategory.TWO): 'יומיים', (PluralCategory.OTHER): '{n} ימים']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'שבוע {n}', (PluralCategory.TWO): 'שבועיים', (PluralCategory.OTHER): '{n} שבועות']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'חודש {n}', (PluralCategory.TWO): 'חודשיים', (PluralCategory.OTHER): '{n} חודשים']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'שנה', (PluralCategory.TWO): 'שנתיים', (PluralCategory.OTHER): '{n} שנים']),
-        ),
-        '{0} וחצי',
-        ', ',
-        'רק נולד',
-        new Stages(
-            StageLabel.gendered('רק נולד', 'רק נולדה'),
-            StageLabel.neutral('תינוק'),
-            StageLabel.neutral('פעוט'),
-            StageLabel.gendered('ילד', 'ילדה'),
-            StageLabel.gendered('נער', 'נערה'),
-            StageLabel.gendered('מבוגר', 'מבוגרת'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} יום', (PluralCategory.TWO): 'יומיים', (PluralCategory.OTHER): '{n} ימ׳']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} שבוע', (PluralCategory.TWO): 'שבועיים', (PluralCategory.OTHER): '{n} שבועות']),
-            UnitForms.simpleUnit('{n} ח׳'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} שנה', (PluralCategory.TWO): '{n} שנים', (PluralCategory.OTHER): '{n} שנים']),
-            null,
+    private static AgeLocale _hi() {
+        new AgeLocale(
+            'hi',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} दिन', (PluralCategory.OTHER): '{n} दिन']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} सप्ताह', (PluralCategory.OTHER): '{n} सप्ताह']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महीना', (PluralCategory.OTHER): '{n} महीने']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} साल', (PluralCategory.OTHER): '{n} साल']),
+            ),
+            'साढ़े {n}',
+            ', ',
+            'नवजात',
+            new Stages(
+                StageLabel.neutral('नवजात'),
+                StageLabel.neutral('शिशु'),
+                StageLabel.gendered('छोटा बच्चा', 'छोटी बच्ची'),
+                StageLabel.gendered('बच्चा', 'बच्ची'),
+                StageLabel.gendered('किशोर', 'किशोरी'),
+                StageLabel.neutral('वयस्क'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} दिन'),
+                UnitForms.simpleUnit('{n} सप्ताह'),
+                UnitForms.simpleUnit('{n} माह'),
+                UnitForms.simpleUnit('{n} वर्ष'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} दि'),
+                UnitForms.simpleUnit('{n} सप्ताह'),
+                UnitForms.simpleUnit('{n} माह'),
+                UnitForms.simpleUnit('{n} व'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} י׳'),
-            UnitForms.simpleUnit('{n} ש′'),
-            UnitForms.simpleUnit('{n} ח׳'),
-            UnitForms.simpleUnit('{n} ש′'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/hi.json
-    // ================================================================
-    // HI — Hindi
-    // ================================================================
-    static final AgeLocale HI = new AgeLocale(
-        'hi',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} दिन', (PluralCategory.OTHER): '{n} दिन']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} सप्ताह', (PluralCategory.OTHER): '{n} सप्ताह']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महीना', (PluralCategory.OTHER): '{n} महीने']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} साल', (PluralCategory.OTHER): '{n} साल']),
-        ),
-        'साढ़े {n}',
-        ', ',
-        'नवजात',
-        new Stages(
-            StageLabel.neutral('नवजात'),
-            StageLabel.neutral('शिशु'),
-            StageLabel.gendered('छोटा बच्चा', 'छोटी बच्ची'),
-            StageLabel.gendered('बच्चा', 'बच्ची'),
-            StageLabel.gendered('किशोर', 'किशोरी'),
-            StageLabel.neutral('वयस्क'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} दिन'),
-            UnitForms.simpleUnit('{n} सप्ताह'),
-            UnitForms.simpleUnit('{n} माह'),
-            UnitForms.simpleUnit('{n} वर्ष'),
-            null,
+    private static AgeLocale _hmn() {
+        new AgeLocale(
+            'hmn',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} hnub'),
+                UnitForms.simpleUnit('{n} lub lim tiam'),
+                UnitForms.simpleUnit('{n} lub hlis'),
+                UnitForms.simpleUnit('{n} xyoo'),
+            ),
+            '{0} thiab ib nrab',
+            ', ',
+            'Nyuam qhuav yug',
+            new Stages(
+                StageLabel.neutral('Nyuam qhuav yug'),
+                StageLabel.neutral('Me nyuam mos'),
+                StageLabel.neutral('Me nyuam tseem taug kev'),
+                StageLabel.neutral('Me nyuam'),
+                StageLabel.neutral('Tub ntxhais hluas'),
+                StageLabel.neutral('Neeg laus'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} hnub'),
+                UnitForms.simpleUnit('{n} lim tiam'),
+                UnitForms.simpleUnit('{n} hlis'),
+                UnitForms.simpleUnit('{n} xyoo'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} दि'),
-            UnitForms.simpleUnit('{n} सप्ताह'),
-            UnitForms.simpleUnit('{n} माह'),
-            UnitForms.simpleUnit('{n} व'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/hmn.json
-    // ================================================================
-    // HMN — Hmong
-    // ================================================================
-    static final AgeLocale HMN = new AgeLocale(
-        'hmn',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} hnub'),
-            UnitForms.simpleUnit('{n} lub lim tiam'),
-            UnitForms.simpleUnit('{n} lub hlis'),
-            UnitForms.simpleUnit('{n} xyoo'),
-        ),
-        '{0} thiab ib nrab',
-        ', ',
-        'Nyuam qhuav yug',
-        new Stages(
-            StageLabel.neutral('Nyuam qhuav yug'),
-            StageLabel.neutral('Me nyuam mos'),
-            StageLabel.neutral('Me nyuam tseem taug kev'),
-            StageLabel.neutral('Me nyuam'),
-            StageLabel.neutral('Tub ntxhais hluas'),
-            StageLabel.neutral('Neeg laus'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} hnub'),
-            UnitForms.simpleUnit('{n} lim tiam'),
-            UnitForms.simpleUnit('{n} hlis'),
-            UnitForms.simpleUnit('{n} xyoo'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/hr.json
-    // ================================================================
-    // HR — Croatian
-    // ================================================================
-    static final AgeLocale HR = new AgeLocale(
-        'hr',
-        { int n ->
+    private static AgeLocale _hr() {
+        new AgeLocale(
+            'hr',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1 && mod100 != 11) return PluralCategory.ONE
             if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.MANY): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} tjedan', (PluralCategory.FEW): '{n} tjedna', (PluralCategory.MANY): '{n} tjedana', (PluralCategory.OTHER): '{n} tjedana']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mjesec', (PluralCategory.FEW): '{n} mjeseca', (PluralCategory.MANY): '{n} mjeseci', (PluralCategory.OTHER): '{n} mjeseci']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} godina', (PluralCategory.FEW): '{n} godine', (PluralCategory.MANY): '{n} godina', (PluralCategory.OTHER): '{n} godina']),
-        ),
-        '{0} i pol',
-        ', ',
-        'Novorođenče',
-        new Stages(
-            StageLabel.neutral('Novorođenče'),
-            StageLabel.neutral('Dojenče'),
-            StageLabel.neutral('Malo dijete'),
-            StageLabel.neutral('Dijete'),
-            StageLabel.neutral('Tinejdžer'),
-            StageLabel.neutral('Odrasla osoba'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
-            UnitForms.simpleUnit('{n} tj.'),
-            UnitForms.simpleUnit('{n} mj.'),
-            UnitForms.simpleUnit('{n} g.'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.MANY): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} tjedan', (PluralCategory.FEW): '{n} tjedna', (PluralCategory.MANY): '{n} tjedana', (PluralCategory.OTHER): '{n} tjedana']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mjesec', (PluralCategory.FEW): '{n} mjeseca', (PluralCategory.MANY): '{n} mjeseci', (PluralCategory.OTHER): '{n} mjeseci']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} godina', (PluralCategory.FEW): '{n} godine', (PluralCategory.MANY): '{n} godina', (PluralCategory.OTHER): '{n} godina']),
+            ),
+            '{0} i pol',
+            ', ',
+            'Novorođenče',
+            new Stages(
+                StageLabel.neutral('Novorođenče'),
+                StageLabel.neutral('Dojenče'),
+                StageLabel.neutral('Malo dijete'),
+                StageLabel.neutral('Dijete'),
+                StageLabel.neutral('Tinejdžer'),
+                StageLabel.neutral('Odrasla osoba'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.FEW): '{n} dana', (PluralCategory.OTHER): '{n} dana']),
+                UnitForms.simpleUnit('{n} tj.'),
+                UnitForms.simpleUnit('{n} mj.'),
+                UnitForms.simpleUnit('{n} g.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} tj.'),
+                UnitForms.simpleUnit('{n} mj.'),
+                UnitForms.simpleUnit('{n} g.'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} tj.'),
-            UnitForms.simpleUnit('{n} mj.'),
-            UnitForms.simpleUnit('{n} g.'),
+        )
+    }
+
+    private static AgeLocale _ht() {
+        new AgeLocale(
+            'ht',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} jou'),
+                UnitForms.simpleUnit('{n} semèn'),
+                UnitForms.simpleUnit('{n} mwa'),
+                UnitForms.simpleUnit('{n} an'),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Tibebe fèk fèt',
+            new Stages(
+                StageLabel.neutral('Tibebe fèk fèt'),
+                StageLabel.neutral('Tibebe'),
+                StageLabel.neutral('Ti moun'),
+                StageLabel.neutral('Timoun'),
+                StageLabel.neutral('Adolesan'),
+                StageLabel.neutral('Granmoun'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} j'),
+                UnitForms.simpleUnit('{n} sem'),
+                UnitForms.simpleUnit('{n} mwa'),
+                UnitForms.simpleUnit('{n} an'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}j'),
+                UnitForms.simpleUnit('{n}sem'),
+                UnitForms.simpleUnit('{n}mwa'),
+                UnitForms.simpleUnit('{n}an'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ht.json
-    // ================================================================
-    // HT — Haitian Creole
-    // ================================================================
-    static final AgeLocale HT = new AgeLocale(
-        'ht',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} jou'),
-            UnitForms.simpleUnit('{n} semèn'),
-            UnitForms.simpleUnit('{n} mwa'),
-            UnitForms.simpleUnit('{n} an'),
-        ),
-        '{n}½',
-        ', ',
-        'Tibebe fèk fèt',
-        new Stages(
-            StageLabel.neutral('Tibebe fèk fèt'),
-            StageLabel.neutral('Tibebe'),
-            StageLabel.neutral('Ti moun'),
-            StageLabel.neutral('Timoun'),
-            StageLabel.neutral('Adolesan'),
-            StageLabel.neutral('Granmoun'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} j'),
-            UnitForms.simpleUnit('{n} sem'),
-            UnitForms.simpleUnit('{n} mwa'),
-            UnitForms.simpleUnit('{n} an'),
-            null,
+    private static AgeLocale _hu() {
+        new AgeLocale(
+            'hu',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} nap'),
+                UnitForms.simpleUnit('{n} hét'),
+                UnitForms.simpleUnit('{n} hónap'),
+                UnitForms.simpleUnit('{n} év'),
+            ),
+            '{n} és fél',
+            ', ',
+            'Újszülött',
+            new Stages(
+                StageLabel.neutral('Újszülött'),
+                StageLabel.neutral('Csecsemő'),
+                StageLabel.neutral('Kisgyermek'),
+                StageLabel.neutral('Gyermek'),
+                StageLabel.neutral('Tinédzser'),
+                StageLabel.neutral('Felnőtt'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} nap'),
+                UnitForms.simpleUnit('{n} hét'),
+                UnitForms.simpleUnit('{n} hónap'),
+                UnitForms.simpleUnit('{n} év'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} nap'),
+                UnitForms.simpleUnit('{n} hét'),
+                UnitForms.simpleUnit('{n} h.'),
+                UnitForms.simpleUnit('{n} év'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}j'),
-            UnitForms.simpleUnit('{n}sem'),
-            UnitForms.simpleUnit('{n}mwa'),
-            UnitForms.simpleUnit('{n}an'),
+        )
+    }
+
+    private static AgeLocale _hy() {
+        new AgeLocale(
+            'hy',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} օր', (PluralCategory.OTHER): '{n} օր']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} շաբաթ', (PluralCategory.OTHER): '{n} շաբաթ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ամիս', (PluralCategory.OTHER): '{n} ամիս']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} տարի', (PluralCategory.OTHER): '{n} տարի']),
+            ),
+            '{0} ու կես',
+            ', ',
+            'Նորածին',
+            new Stages(
+                StageLabel.neutral('Նորածին'),
+                StageLabel.neutral('Մանկիկ'),
+                StageLabel.neutral('Փոքրիկ'),
+                StageLabel.neutral('Երեխա'),
+                StageLabel.neutral('Պատանի'),
+                StageLabel.neutral('Մեծահասակ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} օր'),
+                UnitForms.simpleUnit('{n} շաբ'),
+                UnitForms.simpleUnit('{n} ամս'),
+                UnitForms.simpleUnit('{n} տ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} օ'),
+                UnitForms.simpleUnit('{n} շ'),
+                UnitForms.simpleUnit('{n} ա'),
+                UnitForms.simpleUnit('{n} տ'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _id() {
+        new AgeLocale(
+            'id',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} hari'),
+                UnitForms.simpleUnit('{n} minggu'),
+                UnitForms.simpleUnit('{n} bulan'),
+                UnitForms.simpleUnit('{n} tahun'),
+            ),
+            '{0} setengah',
+            ', ',
+            'Baru lahir',
+            new Stages(
+                StageLabel.neutral('Baru lahir'),
+                StageLabel.neutral('Bayi'),
+                StageLabel.neutral('Balita'),
+                StageLabel.neutral('Anak-anak'),
+                StageLabel.neutral('Remaja'),
+                StageLabel.neutral('Dewasa'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} hr'),
+                UnitForms.simpleUnit('{n} mgg'),
+                UnitForms.simpleUnit('{n} bln'),
+                UnitForms.simpleUnit('{n} thn'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} hr'),
+                UnitForms.simpleUnit('{n} mgg'),
+                UnitForms.simpleUnit('{n} bln'),
+                UnitForms.simpleUnit('{n} thn'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ig() {
+        new AgeLocale(
+            'ig',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ụbọchị'),
+                UnitForms.simpleUnit('{n} izu'),
+                UnitForms.simpleUnit('{n} ọnwa'),
+                UnitForms.simpleUnit('{n} afọ'),
+            ),
+            '{0} na ọkara',
+            ', ',
+            'Nwa ọhụrụ',
+            new Stages(
+                StageLabel.neutral('Nwa ọhụrụ'),
+                StageLabel.neutral('Nwa ọhụrụ'),
+                StageLabel.neutral('Nwa nta'),
+                StageLabel.neutral('Nwa'),
+                StageLabel.neutral('Nwokorobịa'),
+                StageLabel.neutral('Okenye'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ụbọchị'),
+                UnitForms.simpleUnit('{n} izu'),
+                UnitForms.simpleUnit('{n} ọnwa'),
+                UnitForms.simpleUnit('{n} afọ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _is() {
+        new AgeLocale(
+            'is',
+            { int n -> (n % 10 == 1 && n % 100 != 11) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dagur', (PluralCategory.OTHER): '{n} dagar']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vika', (PluralCategory.OTHER): '{n} vikur']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mánuður', (PluralCategory.OTHER): '{n} mánuðir']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ár', (PluralCategory.OTHER): '{n} ár']),
+            ),
+            '{0} og hálft',
+            ', ',
+            'Nýfætt',
+            new Stages(
+                StageLabel.neutral('Nýfæðingur'),
+                StageLabel.neutral('Ungbarn'),
+                StageLabel.neutral('Smábarn'),
+                StageLabel.neutral('Barn'),
+                StageLabel.neutral('Unglingur'),
+                StageLabel.neutral('Fullorðinn'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} v.'),
+                UnitForms.simpleUnit('{n} mán.'),
+                UnitForms.simpleUnit('{n} ár'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}v'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}á'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _it() {
+        new AgeLocale(
+            'it',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} giorno', (PluralCategory.OTHER): '{n} giorni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} settimana', (PluralCategory.OTHER): '{n} settimane']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mese', (PluralCategory.OTHER): '{n} mesi']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} anno', (PluralCategory.OTHER): '{n} anni']),
+            ),
+            '{0} e mezzo',
+            ', ',
+            'Neonato',
+            new Stages(
+                StageLabel.gendered('Neonato', 'Neonata'),
+                StageLabel.neutral('Lattante'),
+                StageLabel.gendered('Bimbo', 'Bimba'),
+                StageLabel.gendered('Bambino', 'Bambina'),
+                StageLabel.neutral('Adolescente'),
+                StageLabel.gendered('Adulto', 'Adulta'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} giorno', (PluralCategory.OTHER): '{n} giorni']),
+                UnitForms.simpleUnit('{n} sett.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mese', (PluralCategory.OTHER): '{n} mesi']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} anno', (PluralCategory.OTHER): '{n} anni']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n}g', (PluralCategory.OTHER): '{n}gg']),
+                UnitForms.simpleUnit('{n}sett.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mese', (PluralCategory.OTHER): '{n} mesi']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n}anno', (PluralCategory.OTHER): '{n}anni']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ja() {
+        new AgeLocale(
+            'ja',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n}日'),
+                UnitForms.simpleUnit('{n}週'),
+                UnitForms.simpleUnit('{n}ヶ月'),
+                UnitForms.simpleUnit('{n}歳'),
+            ),
+            '{0}半',
+            '',
+            '新生児',
+            new Stages(
+                StageLabel.neutral('新生児'),
+                StageLabel.neutral('乳児'),
+                StageLabel.neutral('幼児'),
+                StageLabel.neutral('児童'),
+                StageLabel.neutral('青少年'),
+                StageLabel.neutral('成人'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} 日'),
+                UnitForms.simpleUnit('{n} 週間'),
+                UnitForms.simpleUnit('{n} か月'),
+                UnitForms.simpleUnit('{n} 年'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                null,
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _jv() {
+        new AgeLocale(
+            'jv',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} dina'),
+                UnitForms.simpleUnit('{n} minggu'),
+                UnitForms.simpleUnit('{n} wulan'),
+                UnitForms.simpleUnit('{n} taun'),
+            ),
+            '{0} setengah',
+            ', ',
+            'Bayi anyar',
+            new Stages(
+                StageLabel.neutral('Bayi anyar'),
+                StageLabel.neutral('Bayi'),
+                StageLabel.neutral('Balita'),
+                StageLabel.neutral('Bocah'),
+                StageLabel.neutral('Remaja'),
+                StageLabel.neutral('Diwasa'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} dina'),
+                UnitForms.simpleUnit('{n} peken'),
+                UnitForms.simpleUnit('{n} sasi'),
+                UnitForms.simpleUnit('{n} taun'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n} peken'),
+                UnitForms.simpleUnit('{n} sasi'),
+                UnitForms.simpleUnit('{n} taun'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ka() {
+        new AgeLocale(
+            'ka',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} დღე', (PluralCategory.OTHER): '{n} დღე']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} კვირა', (PluralCategory.OTHER): '{n} კვირა']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} თვე', (PluralCategory.OTHER): '{n} თვე']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} წელი', (PluralCategory.OTHER): '{n} წელი']),
+            ),
+            '{0} და ნახევარი',
+            ', ',
+            'ახალშობილი',
+            new Stages(
+                StageLabel.neutral('ახალშობილი'),
+                StageLabel.neutral('ჩვილი'),
+                StageLabel.neutral('პატარა ბავშვი'),
+                StageLabel.neutral('ბავშვი'),
+                StageLabel.neutral('მოზარდი'),
+                StageLabel.neutral('ზრდასრული'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} დღე'),
+                UnitForms.simpleUnit('{n} კვრ'),
+                UnitForms.simpleUnit('{n} თვე'),
+                UnitForms.simpleUnit('{n} წ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} დღე'),
+                UnitForms.simpleUnit('{n} კვრ'),
+                UnitForms.simpleUnit('{n} თვე'),
+                UnitForms.simpleUnit('{n} წ'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _kbp() {
+        new AgeLocale(
+            'kbp',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('kɩyakʊ {n}'),
+                UnitForms.simpleUnit('kpɩtaʊ {n}'),
+                UnitForms.simpleUnit('fenaɣ {n}'),
+                UnitForms.simpleUnit('pɩnzɩ {n}'),
+            ),
+            '{0} nɛ hɔɔlʊʊ',
+            ', ',
+            'Pɩɣa ŋga palɩ lɛ',
+            new Stages(
+                StageLabel.neutral('Pɩɣa ŋga palɩ lɛ'),
+                StageLabel.neutral('Pɩɣa'),
+                StageLabel.neutral('Pɩɣa'),
+                StageLabel.neutral('Pɩɣa'),
+                StageLabel.neutral('Evebu'),
+                StageLabel.neutral('Ɛyʊ sɔsɔ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('kɩyakʊ {n}'),
+                UnitForms.simpleUnit('kpɩtaʊ {n}'),
+                UnitForms.simpleUnit('fenaɣ {n}'),
+                UnitForms.simpleUnit('pɩnzɩ {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _kek() {
+        new AgeLocale(
+            'kek',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} q\'e'),
+                UnitForms.simpleUnit('{n} seman'),
+                UnitForms.simpleUnit('{n} po'),
+                UnitForms.simpleUnit('{n} chihab\''),
+            ),
+            '{0} ro\'',
+            ', ',
+            'Ch\'ina al',
+            new Stages(
+                StageLabel.neutral('Ch\'ina al'),
+                StageLabel.neutral('Ch\'ina al'),
+                StageLabel.neutral('Ko\'kal'),
+                StageLabel.neutral('Ko\'kal'),
+                StageLabel.neutral('Xk\'aalum'),
+                StageLabel.neutral('Winq'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} q\'e'),
+                UnitForms.simpleUnit('{n} sem.'),
+                UnitForms.simpleUnit('{n} po'),
+                UnitForms.simpleUnit('{n} chih.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ki() {
+        new AgeLocale(
+            'ki',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mũthenya {n}', (PluralCategory.OTHER): 'mĩthenya {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kiumia {n}', (PluralCategory.OTHER): 'kiumia {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwerĩ {n}', (PluralCategory.OTHER): 'mĩerĩ {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'mĩaka {n}']),
+            ),
+            '{0} na nusu',
+            ', ',
+            'Kaana gakĩ',
+            new Stages(
+                StageLabel.neutral('Kaana gakĩ'),
+                StageLabel.neutral('Kaana'),
+                StageLabel.neutral('Kaana kanini'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Kĩhĩĩ'),
+                StageLabel.neutral('Mũndũ mũkũrũ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mũth. {n}', (PluralCategory.OTHER): 'mĩth. {n}']),
+                UnitForms.simpleUnit('{n} kiu.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwerĩ {n}', (PluralCategory.OTHER): 'mĩerĩ {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'mĩaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _kk() {
+        new AgeLocale(
+            'kk',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} күн', (PluralCategory.OTHER): '{n} күн']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} апта', (PluralCategory.OTHER): '{n} апта']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ай', (PluralCategory.OTHER): '{n} ай']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} жас', (PluralCategory.OTHER): '{n} жас']),
+            ),
+            '{n} жарым',
+            ', ',
+            'Жаңа туған',
+            new Stages(
+                StageLabel.neutral('Жаңа туған'),
+                StageLabel.neutral('Нәресте'),
+                StageLabel.neutral('Сәби'),
+                StageLabel.neutral('Бала'),
+                StageLabel.neutral('Жасөспірім'),
+                StageLabel.neutral('Ересек'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} күн'),
+                UnitForms.simpleUnit('{n} ап.'),
+                UnitForms.simpleUnit('{n} ай'),
+                UnitForms.simpleUnit('{n} ж.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} к.'),
+                UnitForms.simpleUnit('{n} ап.'),
+                UnitForms.simpleUnit('{n} ай'),
+                UnitForms.simpleUnit('{n} ж.'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _kl() {
+        new AgeLocale(
+            'kl',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('ullut {n}'),
+                UnitForms.simpleUnit('sapaatit {n}'),
+                UnitForms.simpleUnit('qaammatit {n}'),
+                UnitForms.simpleUnit('ukiut {n}'),
+            ),
+            '{0} affaa',
+            ', ',
+            'Inuuneq nutaaq',
+            new Stages(
+                StageLabel.neutral('Inuuneq nutaaq'),
+                StageLabel.neutral('Naalunngiaatitaq'),
+                StageLabel.neutral('Meeraq'),
+                StageLabel.neutral('Meeraq'),
+                StageLabel.neutral('Inuusuttuaq'),
+                StageLabel.neutral('Inuk'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ull. {n}'),
+                UnitForms.simpleUnit('sap. {n}'),
+                UnitForms.simpleUnit('qaam. {n}'),
+                UnitForms.simpleUnit('uk. {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _km() {
+        new AgeLocale(
+            'km',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ថ្ងៃ'),
+                UnitForms.simpleUnit('{n} សប្ដាហ៍'),
+                UnitForms.simpleUnit('{n} ខែ'),
+                UnitForms.simpleUnit('{n} ឆ្នាំ'),
+            ),
+            '{0}កន្លះ',
+            ', ',
+            'ទើបនឹងកើត',
+            new Stages(
+                StageLabel.neutral('ទើបនឹងកើត'),
+                StageLabel.neutral('ទារក'),
+                StageLabel.neutral('កុមារតូច'),
+                StageLabel.neutral('កុមារ'),
+                StageLabel.neutral('យុវវ័យ'),
+                StageLabel.neutral('មនុស្សពេញវ័យ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ថ្ងៃ'),
+                UnitForms.simpleUnit('{n} សប្ដាហ៍'),
+                UnitForms.simpleUnit('{n} ខែ'),
+                UnitForms.simpleUnit('{n} ឆ្នាំ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ថ្ងៃ'),
+                UnitForms.simpleUnit('{n} សប្ដាហ៍'),
+                UnitForms.simpleUnit('{n} ខែ'),
+                UnitForms.simpleUnit('{n} ឆ្នាំ'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _kn() {
+        new AgeLocale(
+            'kn',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ದಿನ', (PluralCategory.OTHER): '{n} ದಿನಗಳು']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ವಾರ', (PluralCategory.OTHER): '{n} ವಾರಗಳು']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ತಿಂಗಳು', (PluralCategory.OTHER): '{n} ತಿಂಗಳುಗಳು']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ವರ್ಷ', (PluralCategory.OTHER): '{n} ವರ್ಷಗಳು']),
+            ),
+            '{0}ವರೆ',
+            ', ',
+            'ನವಜಾತ ಶಿಶು',
+            new Stages(
+                StageLabel.neutral('ನವಜಾತ ಶಿಶು'),
+                StageLabel.neutral('ಶಿಶು'),
+                StageLabel.neutral('ಪುಟ್ಟ ಮಗು'),
+                StageLabel.neutral('ಮಗು'),
+                StageLabel.neutral('ಹದಿಹರೆಯದವರು'),
+                StageLabel.neutral('ವಯಸ್ಕ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ದಿನ'),
+                UnitForms.simpleUnit('{n} ವಾರ'),
+                UnitForms.simpleUnit('{n} ತಿಂಗಳು'),
+                UnitForms.simpleUnit('{n} ವರ್ಷ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ದಿ'),
+                UnitForms.simpleUnit('{n} ವಾ'),
+                UnitForms.simpleUnit('{n} ತಿಂ'),
+                UnitForms.simpleUnit('{n} ವ'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ko() {
+        new AgeLocale(
+            'ko',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n}일'),
+                UnitForms.simpleUnit('{n}주'),
+                UnitForms.simpleUnit('{n}개월'),
+                UnitForms.simpleUnit('{n}살'),
+            ),
+            '{0} 반',
+            ' ',
+            '신생아',
+            new Stages(
+                StageLabel.neutral('신생아'),
+                StageLabel.neutral('영아'),
+                StageLabel.neutral('유아'),
+                StageLabel.neutral('아동'),
+                StageLabel.neutral('청소년'),
+                StageLabel.neutral('성인'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}일'),
+                UnitForms.simpleUnit('{n}주'),
+                UnitForms.simpleUnit('{n}개월'),
+                UnitForms.simpleUnit('{n}년'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}일'),
+                UnitForms.simpleUnit('{n}주'),
+                UnitForms.simpleUnit('{n}개월'),
+                UnitForms.simpleUnit('{n}년'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _kpe() {
+        new AgeLocale(
+            'kpe',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('ɓɛlɛɛ {n}'),
+                UnitForms.simpleUnit('wikii {n}'),
+                UnitForms.simpleUnit('ŋuŋ {n}'),
+                UnitForms.simpleUnit('kɛ̃ɛ̃ {n}'),
+            ),
+            '{0} da kɔlɛ',
+            ', ',
+            'Lóŋ tɔ̃ɔ̃',
+            new Stages(
+                StageLabel.neutral('Lóŋ tɔ̃ɔ̃ kɛlɛɛ'),
+                StageLabel.neutral('Lóŋ pɔlɔ'),
+                StageLabel.neutral('Lóŋ kɛlɛɛ'),
+                StageLabel.neutral('Lóŋ'),
+                StageLabel.neutral('Kɛlɛɛ mɛni'),
+                StageLabel.neutral('Nuu kpɔŋ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ɓɛl. {n}'),
+                UnitForms.simpleUnit('wik. {n}'),
+                UnitForms.simpleUnit('ŋuŋ {n}'),
+                UnitForms.simpleUnit('kɛ̃ɛ̃ {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ɓɛl {n}'),
+                UnitForms.simpleUnit('wik {n}'),
+                UnitForms.simpleUnit('ŋuŋ {n}'),
+                UnitForms.simpleUnit('kɛ̃ɛ̃ {n}'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _kri() {
+        new AgeLocale(
+            'kri',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} de'),
+                UnitForms.simpleUnit('{n} wik'),
+                UnitForms.simpleUnit('{n} mont'),
+                UnitForms.simpleUnit('{n} ia'),
+            ),
+            '{n} na af',
+            ', ',
+            'Nyubon bebi',
+            new Stages(
+                StageLabel.neutral('Nyubon bebi'),
+                StageLabel.neutral('Smol pikin'),
+                StageLabel.neutral('Smol pikin'),
+                StageLabel.neutral('Pikin'),
+                StageLabel.neutral('Yong posin'),
+                StageLabel.neutral('Big posin'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} de'),
+                UnitForms.simpleUnit('{n} wik'),
+                UnitForms.simpleUnit('{n} mont'),
+                UnitForms.simpleUnit('{n} ia'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ktu() {
+        new AgeLocale(
+            'ktu',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lumbu {n}', (PluralCategory.OTHER): 'malumbu {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngonda {n}', (PluralCategory.OTHER): 'mingonda {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimvula {n}']),
+            ),
+            '{0} na ndambu',
+            ', ',
+            'Mwana ya buta',
+            new Stages(
+                StageLabel.neutral('Mwana ya buta'),
+                StageLabel.neutral('Mwana moke'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Elenge'),
+                StageLabel.neutral('Muntu ya nene'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('malumbu {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngonda {n}', (PluralCategory.OTHER): 'mingonda {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimvula {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('malumbu {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimv {n}']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ku() {
+        new AgeLocale(
+            'ku',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} roj', (PluralCategory.OTHER): '{n} roj']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} hefte', (PluralCategory.OTHER): '{n} hefte']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} meh', (PluralCategory.OTHER): '{n} meh']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} sal', (PluralCategory.OTHER): '{n} sal']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Nûbûyî',
+            new Stages(
+                StageLabel.neutral('Nûbûyî'),
+                StageLabel.neutral('Şîrexwar'),
+                StageLabel.neutral('Zarok'),
+                StageLabel.neutral('Zarok'),
+                StageLabel.neutral('Ciwan'),
+                StageLabel.neutral('Mezin'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} roj'),
+                UnitForms.simpleUnit('{n} hft.'),
+                UnitForms.simpleUnit('{n} meh'),
+                UnitForms.simpleUnit('{n} sal'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}r'),
+                UnitForms.simpleUnit('{n}h'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}s'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/hu.json
-    // ================================================================
-    // HU — Hungarian
-    // ================================================================
-    static final AgeLocale HU = new AgeLocale(
-        'hu',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} nap'),
-            UnitForms.simpleUnit('{n} hét'),
-            UnitForms.simpleUnit('{n} hónap'),
-            UnitForms.simpleUnit('{n} év'),
-        ),
-        '{n} és fél',
-        ', ',
-        'Újszülött',
-        new Stages(
-            StageLabel.neutral('Újszülött'),
-            StageLabel.neutral('Csecsemő'),
-            StageLabel.neutral('Kisgyermek'),
-            StageLabel.neutral('Gyermek'),
-            StageLabel.neutral('Tinédzser'),
-            StageLabel.neutral('Felnőtt'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} nap'),
-            UnitForms.simpleUnit('{n} hét'),
-            UnitForms.simpleUnit('{n} hónap'),
-            UnitForms.simpleUnit('{n} év'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} nap'),
-            UnitForms.simpleUnit('{n} hét'),
-            UnitForms.simpleUnit('{n} h.'),
-            UnitForms.simpleUnit('{n} év'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/hy.json
-    // ================================================================
-    // HY — Armenian
-    // ================================================================
-    static final AgeLocale HY = new AgeLocale(
-        'hy',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} օր', (PluralCategory.OTHER): '{n} օր']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} շաբաթ', (PluralCategory.OTHER): '{n} շաբաթ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ամիս', (PluralCategory.OTHER): '{n} ամիս']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} տարի', (PluralCategory.OTHER): '{n} տարի']),
-        ),
-        '{0} ու կես',
-        ', ',
-        'Նորածին',
-        new Stages(
-            StageLabel.neutral('Նորածին'),
-            StageLabel.neutral('Մանկիկ'),
-            StageLabel.neutral('Փոքրիկ'),
-            StageLabel.neutral('Երեխա'),
-            StageLabel.neutral('Պատանի'),
-            StageLabel.neutral('Մեծահասակ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} օր'),
-            UnitForms.simpleUnit('{n} շաբ'),
-            UnitForms.simpleUnit('{n} ամս'),
-            UnitForms.simpleUnit('{n} տ'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} օ'),
-            UnitForms.simpleUnit('{n} շ'),
-            UnitForms.simpleUnit('{n} ա'),
-            UnitForms.simpleUnit('{n} տ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/id.json
-    // ================================================================
-    // ID — Indonesian
-    // ================================================================
-    static final AgeLocale ID = new AgeLocale(
-        'id',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} hari'),
-            UnitForms.simpleUnit('{n} minggu'),
-            UnitForms.simpleUnit('{n} bulan'),
-            UnitForms.simpleUnit('{n} tahun'),
-        ),
-        '{0} setengah',
-        ', ',
-        'Baru lahir',
-        new Stages(
-            StageLabel.neutral('Baru lahir'),
-            StageLabel.neutral('Bayi'),
-            StageLabel.neutral('Balita'),
-            StageLabel.neutral('Anak-anak'),
-            StageLabel.neutral('Remaja'),
-            StageLabel.neutral('Dewasa'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} hr'),
-            UnitForms.simpleUnit('{n} mgg'),
-            UnitForms.simpleUnit('{n} bln'),
-            UnitForms.simpleUnit('{n} thn'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} hr'),
-            UnitForms.simpleUnit('{n} mgg'),
-            UnitForms.simpleUnit('{n} bln'),
-            UnitForms.simpleUnit('{n} thn'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ig.json
-    // ================================================================
-    // IG — Igbo
-    // ================================================================
-    static final AgeLocale IG = new AgeLocale(
-        'ig',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ụbọchị'),
-            UnitForms.simpleUnit('{n} izu'),
-            UnitForms.simpleUnit('{n} ọnwa'),
-            UnitForms.simpleUnit('{n} afọ'),
-        ),
-        '{0} na ọkara',
-        ', ',
-        'Nwa ọhụrụ',
-        new Stages(
-            StageLabel.neutral('Nwa ọhụrụ'),
-            StageLabel.neutral('Nwa ọhụrụ'),
-            StageLabel.neutral('Nwa nta'),
-            StageLabel.neutral('Nwa'),
-            StageLabel.neutral('Nwokorobịa'),
-            StageLabel.neutral('Okenye'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ụbọchị'),
-            UnitForms.simpleUnit('{n} izu'),
-            UnitForms.simpleUnit('{n} ọnwa'),
-            UnitForms.simpleUnit('{n} afọ'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/is.json
-    // ================================================================
-    // IS — Icelandic
-    // ================================================================
-    static final AgeLocale IS = new AgeLocale(
-        'is',
-        { int n -> (n % 10 == 1 && n % 100 != 11) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dagur', (PluralCategory.OTHER): '{n} dagar']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vika', (PluralCategory.OTHER): '{n} vikur']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mánuður', (PluralCategory.OTHER): '{n} mánuðir']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ár', (PluralCategory.OTHER): '{n} ár']),
-        ),
-        '{0} og hálft',
-        ', ',
-        'Nýfætt',
-        new Stages(
-            StageLabel.neutral('Nýfæðingur'),
-            StageLabel.neutral('Ungbarn'),
-            StageLabel.neutral('Smábarn'),
-            StageLabel.neutral('Barn'),
-            StageLabel.neutral('Unglingur'),
-            StageLabel.neutral('Fullorðinn'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} v.'),
-            UnitForms.simpleUnit('{n} mán.'),
-            UnitForms.simpleUnit('{n} ár'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}v'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}á'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/it.json
-    // ================================================================
-    // IT — Italian
-    // ================================================================
-    static final AgeLocale IT = new AgeLocale(
-        'it',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} giorno', (PluralCategory.OTHER): '{n} giorni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} settimana', (PluralCategory.OTHER): '{n} settimane']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mese', (PluralCategory.OTHER): '{n} mesi']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} anno', (PluralCategory.OTHER): '{n} anni']),
-        ),
-        '{0} e mezzo',
-        ', ',
-        'Neonato',
-        new Stages(
-            StageLabel.gendered('Neonato', 'Neonata'),
-            StageLabel.neutral('Lattante'),
-            StageLabel.gendered('Bimbo', 'Bimba'),
-            StageLabel.gendered('Bambino', 'Bambina'),
-            StageLabel.neutral('Adolescente'),
-            StageLabel.gendered('Adulto', 'Adulta'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} giorno', (PluralCategory.OTHER): '{n} giorni']),
-            UnitForms.simpleUnit('{n} sett.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mese', (PluralCategory.OTHER): '{n} mesi']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} anno', (PluralCategory.OTHER): '{n} anni']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n}g', (PluralCategory.OTHER): '{n}gg']),
-            UnitForms.simpleUnit('{n}sett.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mese', (PluralCategory.OTHER): '{n} mesi']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n}anno', (PluralCategory.OTHER): '{n}anni']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ja.json
-    // ================================================================
-    // JA — Japanese
-    // ================================================================
-    static final AgeLocale JA = new AgeLocale(
-        'ja',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n}日'),
-            UnitForms.simpleUnit('{n}週'),
-            UnitForms.simpleUnit('{n}ヶ月'),
-            UnitForms.simpleUnit('{n}歳'),
-        ),
-        '{0}半',
-        '',
-        '新生児',
-        new Stages(
-            StageLabel.neutral('新生児'),
-            StageLabel.neutral('乳児'),
-            StageLabel.neutral('幼児'),
-            StageLabel.neutral('児童'),
-            StageLabel.neutral('青少年'),
-            StageLabel.neutral('成人'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} 日'),
-            UnitForms.simpleUnit('{n} 週間'),
-            UnitForms.simpleUnit('{n} か月'),
-            UnitForms.simpleUnit('{n} 年'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            null,
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/jv.json
-    // ================================================================
-    // JV — Javanese
-    // ================================================================
-    static final AgeLocale JV = new AgeLocale(
-        'jv',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} dina'),
-            UnitForms.simpleUnit('{n} minggu'),
-            UnitForms.simpleUnit('{n} wulan'),
-            UnitForms.simpleUnit('{n} taun'),
-        ),
-        '{0} setengah',
-        ', ',
-        'Bayi anyar',
-        new Stages(
-            StageLabel.neutral('Bayi anyar'),
-            StageLabel.neutral('Bayi'),
-            StageLabel.neutral('Balita'),
-            StageLabel.neutral('Bocah'),
-            StageLabel.neutral('Remaja'),
-            StageLabel.neutral('Diwasa'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} dina'),
-            UnitForms.simpleUnit('{n} peken'),
-            UnitForms.simpleUnit('{n} sasi'),
-            UnitForms.simpleUnit('{n} taun'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n} peken'),
-            UnitForms.simpleUnit('{n} sasi'),
-            UnitForms.simpleUnit('{n} taun'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ka.json
-    // ================================================================
-    // KA — Georgian
-    // ================================================================
-    static final AgeLocale KA = new AgeLocale(
-        'ka',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} დღე', (PluralCategory.OTHER): '{n} დღე']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} კვირა', (PluralCategory.OTHER): '{n} კვირა']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} თვე', (PluralCategory.OTHER): '{n} თვე']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} წელი', (PluralCategory.OTHER): '{n} წელი']),
-        ),
-        '{0} და ნახევარი',
-        ', ',
-        'ახალშობილი',
-        new Stages(
-            StageLabel.neutral('ახალშობილი'),
-            StageLabel.neutral('ჩვილი'),
-            StageLabel.neutral('პატარა ბავშვი'),
-            StageLabel.neutral('ბავშვი'),
-            StageLabel.neutral('მოზარდი'),
-            StageLabel.neutral('ზრდასრული'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} დღე'),
-            UnitForms.simpleUnit('{n} კვრ'),
-            UnitForms.simpleUnit('{n} თვე'),
-            UnitForms.simpleUnit('{n} წ'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} დღე'),
-            UnitForms.simpleUnit('{n} კვრ'),
-            UnitForms.simpleUnit('{n} თვე'),
-            UnitForms.simpleUnit('{n} წ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/kbp.json
-    // ================================================================
-    // KBP — Kabiye
-    // ================================================================
-    static final AgeLocale KBP = new AgeLocale(
-        'kbp',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('kɩyakʊ {n}'),
-            UnitForms.simpleUnit('kpɩtaʊ {n}'),
-            UnitForms.simpleUnit('fenaɣ {n}'),
-            UnitForms.simpleUnit('pɩnzɩ {n}'),
-        ),
-        '{0} nɛ hɔɔlʊʊ',
-        ', ',
-        'Pɩɣa ŋga palɩ lɛ',
-        new Stages(
-            StageLabel.neutral('Pɩɣa ŋga palɩ lɛ'),
-            StageLabel.neutral('Pɩɣa'),
-            StageLabel.neutral('Pɩɣa'),
-            StageLabel.neutral('Pɩɣa'),
-            StageLabel.neutral('Evebu'),
-            StageLabel.neutral('Ɛyʊ sɔsɔ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('kɩyakʊ {n}'),
-            UnitForms.simpleUnit('kpɩtaʊ {n}'),
-            UnitForms.simpleUnit('fenaɣ {n}'),
-            UnitForms.simpleUnit('pɩnzɩ {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/kek.json
-    // ================================================================
-    // KEK — Q'eqchi'
-    // ================================================================
-    static final AgeLocale KEK = new AgeLocale(
-        'kek',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} q\'e'),
-            UnitForms.simpleUnit('{n} seman'),
-            UnitForms.simpleUnit('{n} po'),
-            UnitForms.simpleUnit('{n} chihab\''),
-        ),
-        '{0} ro\'',
-        ', ',
-        'Ch\'ina al',
-        new Stages(
-            StageLabel.neutral('Ch\'ina al'),
-            StageLabel.neutral('Ch\'ina al'),
-            StageLabel.neutral('Ko\'kal'),
-            StageLabel.neutral('Ko\'kal'),
-            StageLabel.neutral('Xk\'aalum'),
-            StageLabel.neutral('Winq'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} q\'e'),
-            UnitForms.simpleUnit('{n} sem.'),
-            UnitForms.simpleUnit('{n} po'),
-            UnitForms.simpleUnit('{n} chih.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ki.json
-    // ================================================================
-    // KI — Kikuyu
-    // ================================================================
-    static final AgeLocale KI = new AgeLocale(
-        'ki',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mũthenya {n}', (PluralCategory.OTHER): 'mĩthenya {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kiumia {n}', (PluralCategory.OTHER): 'kiumia {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwerĩ {n}', (PluralCategory.OTHER): 'mĩerĩ {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'mĩaka {n}']),
-        ),
-        '{0} na nusu',
-        ', ',
-        'Kaana gakĩ',
-        new Stages(
-            StageLabel.neutral('Kaana gakĩ'),
-            StageLabel.neutral('Kaana'),
-            StageLabel.neutral('Kaana kanini'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Kĩhĩĩ'),
-            StageLabel.neutral('Mũndũ mũkũrũ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mũth. {n}', (PluralCategory.OTHER): 'mĩth. {n}']),
-            UnitForms.simpleUnit('{n} kiu.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwerĩ {n}', (PluralCategory.OTHER): 'mĩerĩ {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'mĩaka {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/kk.json
-    // ================================================================
-    // KK — Kazakh
-    // ================================================================
-    static final AgeLocale KK = new AgeLocale(
-        'kk',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} күн', (PluralCategory.OTHER): '{n} күн']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} апта', (PluralCategory.OTHER): '{n} апта']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ай', (PluralCategory.OTHER): '{n} ай']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} жас', (PluralCategory.OTHER): '{n} жас']),
-        ),
-        '{n} жарым',
-        ', ',
-        'Жаңа туған',
-        new Stages(
-            StageLabel.neutral('Жаңа туған'),
-            StageLabel.neutral('Нәресте'),
-            StageLabel.neutral('Сәби'),
-            StageLabel.neutral('Бала'),
-            StageLabel.neutral('Жасөспірім'),
-            StageLabel.neutral('Ересек'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} күн'),
-            UnitForms.simpleUnit('{n} ап.'),
-            UnitForms.simpleUnit('{n} ай'),
-            UnitForms.simpleUnit('{n} ж.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} к.'),
-            UnitForms.simpleUnit('{n} ап.'),
-            UnitForms.simpleUnit('{n} ай'),
-            UnitForms.simpleUnit('{n} ж.'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/kl.json
-    // ================================================================
-    // KL — Kalaallisut
-    // ================================================================
-    static final AgeLocale KL = new AgeLocale(
-        'kl',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('ullut {n}'),
-            UnitForms.simpleUnit('sapaatit {n}'),
-            UnitForms.simpleUnit('qaammatit {n}'),
-            UnitForms.simpleUnit('ukiut {n}'),
-        ),
-        '{0} affaa',
-        ', ',
-        'Inuuneq nutaaq',
-        new Stages(
-            StageLabel.neutral('Inuuneq nutaaq'),
-            StageLabel.neutral('Naalunngiaatitaq'),
-            StageLabel.neutral('Meeraq'),
-            StageLabel.neutral('Meeraq'),
-            StageLabel.neutral('Inuusuttuaq'),
-            StageLabel.neutral('Inuk'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ull. {n}'),
-            UnitForms.simpleUnit('sap. {n}'),
-            UnitForms.simpleUnit('qaam. {n}'),
-            UnitForms.simpleUnit('uk. {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/km.json
-    // ================================================================
-    // KM — Khmer
-    // ================================================================
-    static final AgeLocale KM = new AgeLocale(
-        'km',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ថ្ងៃ'),
-            UnitForms.simpleUnit('{n} សប្ដាហ៍'),
-            UnitForms.simpleUnit('{n} ខែ'),
-            UnitForms.simpleUnit('{n} ឆ្នាំ'),
-        ),
-        '{0}កន្លះ',
-        ', ',
-        'ទើបនឹងកើត',
-        new Stages(
-            StageLabel.neutral('ទើបនឹងកើត'),
-            StageLabel.neutral('ទារក'),
-            StageLabel.neutral('កុមារតូច'),
-            StageLabel.neutral('កុមារ'),
-            StageLabel.neutral('យុវវ័យ'),
-            StageLabel.neutral('មនុស្សពេញវ័យ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ថ្ងៃ'),
-            UnitForms.simpleUnit('{n} សប្ដាហ៍'),
-            UnitForms.simpleUnit('{n} ខែ'),
-            UnitForms.simpleUnit('{n} ឆ្នាំ'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ថ្ងៃ'),
-            UnitForms.simpleUnit('{n} សប្ដាហ៍'),
-            UnitForms.simpleUnit('{n} ខែ'),
-            UnitForms.simpleUnit('{n} ឆ្នាំ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/kn.json
-    // ================================================================
-    // KN — Kannada
-    // ================================================================
-    static final AgeLocale KN = new AgeLocale(
-        'kn',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ದಿನ', (PluralCategory.OTHER): '{n} ದಿನಗಳು']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ವಾರ', (PluralCategory.OTHER): '{n} ವಾರಗಳು']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ತಿಂಗಳು', (PluralCategory.OTHER): '{n} ತಿಂಗಳುಗಳು']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ವರ್ಷ', (PluralCategory.OTHER): '{n} ವರ್ಷಗಳು']),
-        ),
-        '{0}ವರೆ',
-        ', ',
-        'ನವಜಾತ ಶಿಶು',
-        new Stages(
-            StageLabel.neutral('ನವಜಾತ ಶಿಶು'),
-            StageLabel.neutral('ಶಿಶು'),
-            StageLabel.neutral('ಪುಟ್ಟ ಮಗು'),
-            StageLabel.neutral('ಮಗು'),
-            StageLabel.neutral('ಹದಿಹರೆಯದವರು'),
-            StageLabel.neutral('ವಯಸ್ಕ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ದಿನ'),
-            UnitForms.simpleUnit('{n} ವಾರ'),
-            UnitForms.simpleUnit('{n} ತಿಂಗಳು'),
-            UnitForms.simpleUnit('{n} ವರ್ಷ'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ದಿ'),
-            UnitForms.simpleUnit('{n} ವಾ'),
-            UnitForms.simpleUnit('{n} ತಿಂ'),
-            UnitForms.simpleUnit('{n} ವ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ko.json
-    // ================================================================
-    // KO — Korean
-    // ================================================================
-    static final AgeLocale KO = new AgeLocale(
-        'ko',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n}일'),
-            UnitForms.simpleUnit('{n}주'),
-            UnitForms.simpleUnit('{n}개월'),
-            UnitForms.simpleUnit('{n}살'),
-        ),
-        '{0} 반',
-        ' ',
-        '신생아',
-        new Stages(
-            StageLabel.neutral('신생아'),
-            StageLabel.neutral('영아'),
-            StageLabel.neutral('유아'),
-            StageLabel.neutral('아동'),
-            StageLabel.neutral('청소년'),
-            StageLabel.neutral('성인'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}일'),
-            UnitForms.simpleUnit('{n}주'),
-            UnitForms.simpleUnit('{n}개월'),
-            UnitForms.simpleUnit('{n}년'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}일'),
-            UnitForms.simpleUnit('{n}주'),
-            UnitForms.simpleUnit('{n}개월'),
-            UnitForms.simpleUnit('{n}년'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/kpe.json
-    // ================================================================
-    // KPE — Kpelle
-    // ================================================================
-    static final AgeLocale KPE = new AgeLocale(
-        'kpe',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('ɓɛlɛɛ {n}'),
-            UnitForms.simpleUnit('wikii {n}'),
-            UnitForms.simpleUnit('ŋuŋ {n}'),
-            UnitForms.simpleUnit('kɛ̃ɛ̃ {n}'),
-        ),
-        '{0} da kɔlɛ',
-        ', ',
-        'Lóŋ tɔ̃ɔ̃',
-        new Stages(
-            StageLabel.neutral('Lóŋ tɔ̃ɔ̃ kɛlɛɛ'),
-            StageLabel.neutral('Lóŋ pɔlɔ'),
-            StageLabel.neutral('Lóŋ kɛlɛɛ'),
-            StageLabel.neutral('Lóŋ'),
-            StageLabel.neutral('Kɛlɛɛ mɛni'),
-            StageLabel.neutral('Nuu kpɔŋ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ɓɛl. {n}'),
-            UnitForms.simpleUnit('wik. {n}'),
-            UnitForms.simpleUnit('ŋuŋ {n}'),
-            UnitForms.simpleUnit('kɛ̃ɛ̃ {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ɓɛl {n}'),
-            UnitForms.simpleUnit('wik {n}'),
-            UnitForms.simpleUnit('ŋuŋ {n}'),
-            UnitForms.simpleUnit('kɛ̃ɛ̃ {n}'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/kri.json
-    // ================================================================
-    // KRI — Krio
-    // ================================================================
-    static final AgeLocale KRI = new AgeLocale(
-        'kri',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} de'),
-            UnitForms.simpleUnit('{n} wik'),
-            UnitForms.simpleUnit('{n} mont'),
-            UnitForms.simpleUnit('{n} ia'),
-        ),
-        '{n} na af',
-        ', ',
-        'Nyubon bebi',
-        new Stages(
-            StageLabel.neutral('Nyubon bebi'),
-            StageLabel.neutral('Smol pikin'),
-            StageLabel.neutral('Smol pikin'),
-            StageLabel.neutral('Pikin'),
-            StageLabel.neutral('Yong posin'),
-            StageLabel.neutral('Big posin'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} de'),
-            UnitForms.simpleUnit('{n} wik'),
-            UnitForms.simpleUnit('{n} mont'),
-            UnitForms.simpleUnit('{n} ia'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ktu.json
-    // ================================================================
-    // KTU — Kituba
-    // ================================================================
-    static final AgeLocale KTU = new AgeLocale(
-        'ktu',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lumbu {n}', (PluralCategory.OTHER): 'malumbu {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngonda {n}', (PluralCategory.OTHER): 'mingonda {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimvula {n}']),
-        ),
-        '{0} na ndambu',
-        ', ',
-        'Mwana ya buta',
-        new Stages(
-            StageLabel.neutral('Mwana ya buta'),
-            StageLabel.neutral('Mwana moke'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Elenge'),
-            StageLabel.neutral('Muntu ya nene'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('malumbu {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngonda {n}', (PluralCategory.OTHER): 'mingonda {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimvula {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('malumbu {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimv {n}']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ku.json
-    // ================================================================
-    // KU — Kurdish
-    // ================================================================
-    static final AgeLocale KU = new AgeLocale(
-        'ku',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} roj', (PluralCategory.OTHER): '{n} roj']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} hefte', (PluralCategory.OTHER): '{n} hefte']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} meh', (PluralCategory.OTHER): '{n} meh']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} sal', (PluralCategory.OTHER): '{n} sal']),
-        ),
-        '{n}½',
-        ', ',
-        'Nûbûyî',
-        new Stages(
-            StageLabel.neutral('Nûbûyî'),
-            StageLabel.neutral('Şîrexwar'),
-            StageLabel.neutral('Zarok'),
-            StageLabel.neutral('Zarok'),
-            StageLabel.neutral('Ciwan'),
-            StageLabel.neutral('Mezin'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} roj'),
-            UnitForms.simpleUnit('{n} hft.'),
-            UnitForms.simpleUnit('{n} meh'),
-            UnitForms.simpleUnit('{n} sal'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}r'),
-            UnitForms.simpleUnit('{n}h'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}s'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/kw.json
-    // ================================================================
-    // KW — Cornish
-    // ================================================================
-    static final AgeLocale KW = new AgeLocale(
-        'kw',
-        { int n ->
+    private static AgeLocale _kw() {
+        new AgeLocale(
+            'kw',
+            { int n ->
             if (n == 0) return PluralCategory.ZERO
             if (n == 1) return PluralCategory.ONE
             int mod100 = n % 100
@@ -3500,4444 +4357,4395 @@ class Locales {
             if (n != 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81)) return PluralCategory.MANY
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} dydh', (PluralCategory.ONE): 'dydh', (PluralCategory.TWO): '{n} dhydh', (PluralCategory.FEW): '{n} dydh', (PluralCategory.MANY): '{n} dydh', (PluralCategory.OTHER): '{n} dydh']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} seythun', (PluralCategory.ONE): 'seythun', (PluralCategory.TWO): '{n} seythun', (PluralCategory.FEW): '{n} seythun', (PluralCategory.MANY): '{n} seythun', (PluralCategory.OTHER): '{n} seythun']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mis', (PluralCategory.ONE): 'mis', (PluralCategory.TWO): '{n} vis', (PluralCategory.FEW): '{n} mis', (PluralCategory.MANY): '{n} mis', (PluralCategory.OTHER): '{n} mis']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} blydhen', (PluralCategory.ONE): 'blydhen', (PluralCategory.TWO): '{n} vlydhen', (PluralCategory.FEW): '{n} blydhen', (PluralCategory.MANY): '{n} blydhen', (PluralCategory.OTHER): '{n} blydhen']),
-        ),
-        '{0} hag hanter',
-        ', ',
-        'Nowyth genys',
-        new Stages(
-            StageLabel.neutral('Nowyth genys'),
-            StageLabel.neutral('Babi'),
-            StageLabel.neutral('Flogh byhan'),
-            StageLabel.neutral('Flogh'),
-            StageLabel.neutral('Den yowynk'),
-            StageLabel.neutral('Den tevys'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} wk'),
-            UnitForms.simpleUnit('{n} mo'),
-            UnitForms.simpleUnit('{n} yr'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} dydh', (PluralCategory.ONE): 'dydh', (PluralCategory.TWO): '{n} dhydh', (PluralCategory.FEW): '{n} dydh', (PluralCategory.MANY): '{n} dydh', (PluralCategory.OTHER): '{n} dydh']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} seythun', (PluralCategory.ONE): 'seythun', (PluralCategory.TWO): '{n} seythun', (PluralCategory.FEW): '{n} seythun', (PluralCategory.MANY): '{n} seythun', (PluralCategory.OTHER): '{n} seythun']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mis', (PluralCategory.ONE): 'mis', (PluralCategory.TWO): '{n} vis', (PluralCategory.FEW): '{n} mis', (PluralCategory.MANY): '{n} mis', (PluralCategory.OTHER): '{n} mis']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} blydhen', (PluralCategory.ONE): 'blydhen', (PluralCategory.TWO): '{n} vlydhen', (PluralCategory.FEW): '{n} blydhen', (PluralCategory.MANY): '{n} blydhen', (PluralCategory.OTHER): '{n} blydhen']),
+            ),
+            '{0} hag hanter',
+            ', ',
+            'Nowyth genys',
+            new Stages(
+                StageLabel.neutral('Nowyth genys'),
+                StageLabel.neutral('Babi'),
+                StageLabel.neutral('Flogh byhan'),
+                StageLabel.neutral('Flogh'),
+                StageLabel.neutral('Den yowynk'),
+                StageLabel.neutral('Den tevys'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} wk'),
+                UnitForms.simpleUnit('{n} mo'),
+                UnitForms.simpleUnit('{n} yr'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+        )
+    }
+
+    private static AgeLocale _ky() {
+        new AgeLocale(
+            'ky',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} күн'),
+                UnitForms.simpleUnit('{n} апта'),
+                UnitForms.simpleUnit('{n} ай'),
+                UnitForms.simpleUnit('{n} жаш'),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Жаңы төрөлгөн',
+            new Stages(
+                StageLabel.neutral('Жаңы төрөлгөн'),
+                StageLabel.neutral('Наристе'),
+                StageLabel.neutral('Бөбөк'),
+                StageLabel.neutral('Бала'),
+                StageLabel.neutral('Жаш өспүрүм'),
+                StageLabel.neutral('Чоң адам'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} күн'),
+                UnitForms.simpleUnit('{n} апта'),
+                UnitForms.simpleUnit('{n} ай'),
+                UnitForms.simpleUnit('{n} жаш'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ky.json
-    // ================================================================
-    // KY — Kyrgyz
-    // ================================================================
-    static final AgeLocale KY = new AgeLocale(
-        'ky',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} күн'),
-            UnitForms.simpleUnit('{n} апта'),
-            UnitForms.simpleUnit('{n} ай'),
-            UnitForms.simpleUnit('{n} жаш'),
-        ),
-        '{n}½',
-        ', ',
-        'Жаңы төрөлгөн',
-        new Stages(
-            StageLabel.neutral('Жаңы төрөлгөн'),
-            StageLabel.neutral('Наристе'),
-            StageLabel.neutral('Бөбөк'),
-            StageLabel.neutral('Бала'),
-            StageLabel.neutral('Жаш өспүрүм'),
-            StageLabel.neutral('Чоң адам'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} күн'),
-            UnitForms.simpleUnit('{n} апта'),
-            UnitForms.simpleUnit('{n} ай'),
-            UnitForms.simpleUnit('{n} жаш'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+    private static AgeLocale _lb() {
+        new AgeLocale(
+            'lb',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Dag', (PluralCategory.OTHER): '{n} Deeg']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Woch', (PluralCategory.OTHER): '{n} Wochen']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Mount', (PluralCategory.OTHER): '{n} Méint']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Joer', (PluralCategory.OTHER): '{n} Joer']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Neigebuerenen',
+            new Stages(
+                StageLabel.neutral('Neigebuerenen'),
+                StageLabel.neutral('Puppelchen'),
+                StageLabel.neutral('Klengkand'),
+                StageLabel.neutral('Kand'),
+                StageLabel.neutral('Jugendlechen'),
+                StageLabel.gendered('Erwuessenen', 'Erwuessen'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} D.'),
+                UnitForms.simpleUnit('{n} W.'),
+                UnitForms.simpleUnit('{n} M.'),
+                UnitForms.simpleUnit('{n} J.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}D'),
+                UnitForms.simpleUnit('{n}W'),
+                UnitForms.simpleUnit('{n}M'),
+                UnitForms.simpleUnit('{n}J'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/lb.json
-    // ================================================================
-    // LB — Luxembourgish
-    // ================================================================
-    static final AgeLocale LB = new AgeLocale(
-        'lb',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Dag', (PluralCategory.OTHER): '{n} Deeg']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Woch', (PluralCategory.OTHER): '{n} Wochen']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Mount', (PluralCategory.OTHER): '{n} Méint']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} Joer', (PluralCategory.OTHER): '{n} Joer']),
-        ),
-        '{n}½',
-        ', ',
-        'Neigebuerenen',
-        new Stages(
-            StageLabel.neutral('Neigebuerenen'),
-            StageLabel.neutral('Puppelchen'),
-            StageLabel.neutral('Klengkand'),
-            StageLabel.neutral('Kand'),
-            StageLabel.neutral('Jugendlechen'),
-            StageLabel.gendered('Erwuessenen', 'Erwuessen'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} D.'),
-            UnitForms.simpleUnit('{n} W.'),
-            UnitForms.simpleUnit('{n} M.'),
-            UnitForms.simpleUnit('{n} J.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}D'),
-            UnitForms.simpleUnit('{n}W'),
-            UnitForms.simpleUnit('{n}M'),
-            UnitForms.simpleUnit('{n}J'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/lg.json
-    // ================================================================
-    // LG — Luganda
-    // ================================================================
-    static final AgeLocale LG = new AgeLocale(
-        'lg',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'olunaku {n}', (PluralCategory.OTHER): 'ennaku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sabbiiti {n}', (PluralCategory.OTHER): 'sabiiti {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omwezi {n}', (PluralCategory.OTHER): 'emyezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omwaka {n}', (PluralCategory.OTHER): 'emyaka {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Omwana omuto',
-        new Stages(
-            StageLabel.neutral('Omwana omuto'),
-            StageLabel.neutral('Omwana'),
-            StageLabel.neutral('Omwana omuto'),
-            StageLabel.neutral('Omwana'),
-            StageLabel.neutral('Omuvubuka'),
-            StageLabel.neutral('Omukulu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ennaku {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sabbiiti {n}', (PluralCategory.OTHER): 'sabiiti {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omwezi {n}', (PluralCategory.OTHER): 'emyezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omwaka {n}', (PluralCategory.OTHER): 'emyaka {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ennaku {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sab {n}', (PluralCategory.OTHER): 'sab {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'myezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'myaka {n}']),
+    private static AgeLocale _lg() {
+        new AgeLocale(
+            'lg',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'olunaku {n}', (PluralCategory.OTHER): 'ennaku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sabbiiti {n}', (PluralCategory.OTHER): 'sabiiti {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omwezi {n}', (PluralCategory.OTHER): 'emyezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omwaka {n}', (PluralCategory.OTHER): 'emyaka {n}']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Omwana omuto',
+            new Stages(
+                StageLabel.neutral('Omwana omuto'),
+                StageLabel.neutral('Omwana'),
+                StageLabel.neutral('Omwana omuto'),
+                StageLabel.neutral('Omwana'),
+                StageLabel.neutral('Omuvubuka'),
+                StageLabel.neutral('Omukulu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ennaku {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sabbiiti {n}', (PluralCategory.OTHER): 'sabiiti {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omwezi {n}', (PluralCategory.OTHER): 'emyezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omwaka {n}', (PluralCategory.OTHER): 'emyaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ennaku {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sab {n}', (PluralCategory.OTHER): 'sab {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'myezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'myaka {n}']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ln.json
-    // ================================================================
-    // LN — Lingala
-    // ================================================================
-    static final AgeLocale LN = new AgeLocale(
-        'ln',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mokolo {n}', (PluralCategory.OTHER): 'mikolo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'baposo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sanza {n}', (PluralCategory.OTHER): 'basanza {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mobu {n}', (PluralCategory.OTHER): 'mibu {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Mwana ya sika',
-        new Stages(
-            StageLabel.neutral('Mwana ya sika'),
-            StageLabel.neutral('Mwana mokɛ́'),
-            StageLabel.neutral('Mwana mokɛ́'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Elɛ́ngɛ'),
-            StageLabel.neutral('Mokóló'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mokolo {n}', (PluralCategory.OTHER): 'mik {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'bap {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sanza {n}', (PluralCategory.OTHER): 'basanza {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mobu {n}', (PluralCategory.OTHER): 'mibu {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mok {n}', (PluralCategory.OTHER): 'mik {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'pos {n}', (PluralCategory.OTHER): 'bap {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sza {n}', (PluralCategory.OTHER): 'bsza {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mb {n}', (PluralCategory.OTHER): 'mib {n}']),
+    private static AgeLocale _ln() {
+        new AgeLocale(
+            'ln',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mokolo {n}', (PluralCategory.OTHER): 'mikolo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'baposo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sanza {n}', (PluralCategory.OTHER): 'basanza {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mobu {n}', (PluralCategory.OTHER): 'mibu {n}']),
+            ),
             '{n}½',
+            ', ',
+            'Mwana ya sika',
+            new Stages(
+                StageLabel.neutral('Mwana ya sika'),
+                StageLabel.neutral('Mwana mokɛ́'),
+                StageLabel.neutral('Mwana mokɛ́'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Elɛ́ngɛ'),
+                StageLabel.neutral('Mokóló'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mokolo {n}', (PluralCategory.OTHER): 'mik {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'bap {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sanza {n}', (PluralCategory.OTHER): 'basanza {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mobu {n}', (PluralCategory.OTHER): 'mibu {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mok {n}', (PluralCategory.OTHER): 'mik {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'pos {n}', (PluralCategory.OTHER): 'bap {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sza {n}', (PluralCategory.OTHER): 'bsza {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mb {n}', (PluralCategory.OTHER): 'mib {n}']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _lo() {
+        new AgeLocale(
+            'lo',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ມື້'),
+                UnitForms.simpleUnit('{n} ອາທິດ'),
+                UnitForms.simpleUnit('{n} ເດືອນ'),
+                UnitForms.simpleUnit('{n} ປີ'),
+            ),
+            '{0}ເຄິ່ງ',
             '',
+            'ເກີດໃໝ່',
+            new Stages(
+                StageLabel.neutral('ເດັກເກີດໃໝ່'),
+                StageLabel.neutral('ເດັກນ້ອຍ'),
+                StageLabel.neutral('ເດັກນ້ອຍ'),
+                StageLabel.neutral('ເດັກ'),
+                StageLabel.neutral('ໄວລຸ້ນ'),
+                StageLabel.neutral('ຜູ້ໃຫຍ່'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ມ.'),
+                UnitForms.simpleUnit('{n} ອທ.'),
+                UnitForms.simpleUnit('{n} ດ.'),
+                UnitForms.simpleUnit('{n} ປ.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                null,
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/lo.json
-    // ================================================================
-    // LO — Lao
-    // ================================================================
-    static final AgeLocale LO = new AgeLocale(
-        'lo',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ມື້'),
-            UnitForms.simpleUnit('{n} ອາທິດ'),
-            UnitForms.simpleUnit('{n} ເດືອນ'),
-            UnitForms.simpleUnit('{n} ປີ'),
-        ),
-        '{0}ເຄິ່ງ',
-        '',
-        'ເກີດໃໝ່',
-        new Stages(
-            StageLabel.neutral('ເດັກເກີດໃໝ່'),
-            StageLabel.neutral('ເດັກນ້ອຍ'),
-            StageLabel.neutral('ເດັກນ້ອຍ'),
-            StageLabel.neutral('ເດັກ'),
-            StageLabel.neutral('ໄວລຸ້ນ'),
-            StageLabel.neutral('ຜູ້ໃຫຍ່'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ມ.'),
-            UnitForms.simpleUnit('{n} ອທ.'),
-            UnitForms.simpleUnit('{n} ດ.'),
-            UnitForms.simpleUnit('{n} ປ.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            null,
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/lt.json
-    // ================================================================
-    // LT — Lithuanian
-    // ================================================================
-    static final AgeLocale LT = new AgeLocale(
-        'lt',
-        { int n ->
+    private static AgeLocale _lt() {
+        new AgeLocale(
+            'lt',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1 && mod100 != 11) return PluralCategory.ONE
             if (mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19)) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} diena', (PluralCategory.FEW): '{n} dienos', (PluralCategory.OTHER): '{n} dienų']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} savaitė', (PluralCategory.FEW): '{n} savaitės', (PluralCategory.OTHER): '{n} savaičių']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mėnuo', (PluralCategory.FEW): '{n} mėnesiai', (PluralCategory.OTHER): '{n} mėnesių']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} metai', (PluralCategory.FEW): '{n} metai', (PluralCategory.OTHER): '{n} metų']),
-        ),
-        '{n}½',
-        ', ',
-        'Naujagimis',
-        new Stages(
-            StageLabel.gendered('Naujagimis', 'Naujagimė'),
-            StageLabel.gendered('Kūdikis', 'Kūdikė'),
-            StageLabel.gendered('Mažylis', 'Mažylė'),
-            StageLabel.neutral('Vaikas'),
-            StageLabel.gendered('Paauglys', 'Paauglė'),
-            StageLabel.gendered('Suaugęs', 'Suaugusi'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} sav.'),
-            UnitForms.simpleUnit('{n} mėn.'),
-            UnitForms.simpleUnit('{n} m.'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} diena', (PluralCategory.FEW): '{n} dienos', (PluralCategory.OTHER): '{n} dienų']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} savaitė', (PluralCategory.FEW): '{n} savaitės', (PluralCategory.OTHER): '{n} savaičių']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mėnuo', (PluralCategory.FEW): '{n} mėnesiai', (PluralCategory.OTHER): '{n} mėnesių']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} metai', (PluralCategory.FEW): '{n} metai', (PluralCategory.OTHER): '{n} metų']),
+            ),
+            '{n}½',
+            ', ',
+            'Naujagimis',
+            new Stages(
+                StageLabel.gendered('Naujagimis', 'Naujagimė'),
+                StageLabel.gendered('Kūdikis', 'Kūdikė'),
+                StageLabel.gendered('Mažylis', 'Mažylė'),
+                StageLabel.neutral('Vaikas'),
+                StageLabel.gendered('Paauglys', 'Paauglė'),
+                StageLabel.gendered('Suaugęs', 'Suaugusi'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} sav.'),
+                UnitForms.simpleUnit('{n} mėn.'),
+                UnitForms.simpleUnit('{n} m.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} sav.'),
+                UnitForms.simpleUnit('{n} mėn.'),
+                UnitForms.simpleUnit('{n} m.'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} sav.'),
-            UnitForms.simpleUnit('{n} mėn.'),
-            UnitForms.simpleUnit('{n} m.'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/luo.json
-    // ================================================================
-    // LUO — Dholuo
-    // ================================================================
-    static final AgeLocale LUO = new AgeLocale(
-        'luo',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'odiechieng\' {n}', (PluralCategory.OTHER): 'ndalo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'jumbe {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'dwe {n}', (PluralCategory.OTHER): 'dweche {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'higa {n}', (PluralCategory.OTHER): 'higni {n}']),
-        ),
-        '{0} gi nus',
-        ', ',
-        'Nyathi manyien',
-        new Stages(
-            StageLabel.neutral('Nyathi manyien'),
-            StageLabel.neutral('Kidoro'),
-            StageLabel.neutral('Nyathi matin'),
-            StageLabel.neutral('Nyathi'),
-            StageLabel.neutral('Rawera'),
-            StageLabel.neutral('Ng\'ama duong\''),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'odie. {n}', (PluralCategory.OTHER): 'ndalo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'jumbe {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'dwe {n}', (PluralCategory.OTHER): 'dwe. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'higa {n}', (PluralCategory.OTHER): 'higni {n}']),
-            null,
+    private static AgeLocale _luo() {
+        new AgeLocale(
+            'luo',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'odiechieng\' {n}', (PluralCategory.OTHER): 'ndalo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'jumbe {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'dwe {n}', (PluralCategory.OTHER): 'dweche {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'higa {n}', (PluralCategory.OTHER): 'higni {n}']),
+            ),
+            '{0} gi nus',
+            ', ',
+            'Nyathi manyien',
+            new Stages(
+                StageLabel.neutral('Nyathi manyien'),
+                StageLabel.neutral('Kidoro'),
+                StageLabel.neutral('Nyathi matin'),
+                StageLabel.neutral('Nyathi'),
+                StageLabel.neutral('Rawera'),
+                StageLabel.neutral('Ng\'ama duong\''),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'odie. {n}', (PluralCategory.OTHER): 'ndalo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'jumbe {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'dwe {n}', (PluralCategory.OTHER): 'dwe. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'higa {n}', (PluralCategory.OTHER): 'higni {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/lv.json
-    // ================================================================
-    // LV — Latvian
-    // ================================================================
-    static final AgeLocale LV = new AgeLocale(
-        'lv',
-        { int n ->
+    private static AgeLocale _lv() {
+        new AgeLocale(
+            'lv',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 0 || (mod100 >= 11 && mod100 <= 19)) return PluralCategory.ZERO
             if (mod10 == 1 && mod100 != 11) return PluralCategory.ONE
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} dienu', (PluralCategory.ONE): '{n} diena', (PluralCategory.OTHER): '{n} dienas']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} nedēļu', (PluralCategory.ONE): '{n} nedēļa', (PluralCategory.OTHER): '{n} nedēļas']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mēnešu', (PluralCategory.ONE): '{n} mēnesis', (PluralCategory.OTHER): '{n} mēneši']),
-            UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} gadu', (PluralCategory.ONE): '{n} gads', (PluralCategory.OTHER): '{n} gadi']),
-        ),
-        '{n}½',
-        ', ',
-        'Jaundzimušais',
-        new Stages(
-            StageLabel.gendered('Jaundzimušais', 'Jaundzimušā'),
-            StageLabel.gendered('Zīdainis', 'Zīdaine'),
-            StageLabel.gendered('Mazulis', 'Mazule'),
-            StageLabel.neutral('Bērns'),
-            StageLabel.gendered('Pusaudzis', 'Pusaudze'),
-            StageLabel.gendered('Pieaugušais', 'Pieaugusī'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} ned.'),
-            UnitForms.simpleUnit('{n} mēn.'),
-            UnitForms.simpleUnit('{n} g.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} n.'),
-            UnitForms.simpleUnit('{n} m.'),
-            UnitForms.simpleUnit('{n} g.'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/mam.json
-    // ================================================================
-    // MAM — Mam
-    // ================================================================
-    static final AgeLocale MAM = new AgeLocale(
-        'mam',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} q\'ij'),
-            UnitForms.simpleUnit('{n} xjaw'),
-            UnitForms.simpleUnit('{n} xjaw'),
-            UnitForms.simpleUnit('{n} ab\'q\'ii'),
-        ),
-        '{0} nik\'',
-        ', ',
-        'Yal xjal',
-        new Stages(
-            StageLabel.neutral('Yal xjal'),
-            StageLabel.neutral('Xkub\''),
-            StageLabel.neutral('K\'wal'),
-            StageLabel.neutral('K\'wal'),
-            StageLabel.neutral('Q\'a'),
-            StageLabel.neutral('Xjal'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} q\'ij'),
-            UnitForms.simpleUnit('{n} xjaw'),
-            UnitForms.simpleUnit('{n} xjaw'),
-            UnitForms.simpleUnit('{n} ab\'.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/men.json
-    // ================================================================
-    // MEN — Mende
-    // ================================================================
-    static final AgeLocale MEN = new AgeLocale(
-        'men',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lɔhɔ {n}', (PluralCategory.OTHER): 'lɔhɔnga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'wikii {n}', (PluralCategory.OTHER): 'wikii {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ndɔlɔ {n}', (PluralCategory.OTHER): 'ndɔlɔnga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'saŋ {n}', (PluralCategory.OTHER): 'saŋga {n}']),
-        ),
-        '{0} ta fele',
-        ', ',
-        'Ndɔpɔi fele',
-        new Stages(
-            StageLabel.neutral('Ndɔpɔi fele'),
-            StageLabel.neutral('Ndɔpɔi'),
-            StageLabel.neutral('Ndɔpɔi'),
-            StageLabel.neutral('Ndopoi'),
-            StageLabel.neutral('Ndakpayei'),
-            StageLabel.neutral('Numu-waa'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lɔhɔ {n}', (PluralCategory.OTHER): 'lɔhɔnga {n}']),
-            UnitForms.simpleUnit('wikii {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ndɔlɔ {n}', (PluralCategory.OTHER): 'ndɔlɔnga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'saŋ {n}', (PluralCategory.OTHER): 'saŋga {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} dienu', (PluralCategory.ONE): '{n} diena', (PluralCategory.OTHER): '{n} dienas']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} nedēļu', (PluralCategory.ONE): '{n} nedēļa', (PluralCategory.OTHER): '{n} nedēļas']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} mēnešu', (PluralCategory.ONE): '{n} mēnesis', (PluralCategory.OTHER): '{n} mēneši']),
+                UnitForms.pluralUnit([(PluralCategory.ZERO): '{n} gadu', (PluralCategory.ONE): '{n} gads', (PluralCategory.OTHER): '{n} gadi']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Jaundzimušais',
+            new Stages(
+                StageLabel.gendered('Jaundzimušais', 'Jaundzimušā'),
+                StageLabel.gendered('Zīdainis', 'Zīdaine'),
+                StageLabel.gendered('Mazulis', 'Mazule'),
+                StageLabel.neutral('Bērns'),
+                StageLabel.gendered('Pusaudzis', 'Pusaudze'),
+                StageLabel.gendered('Pieaugušais', 'Pieaugusī'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} ned.'),
+                UnitForms.simpleUnit('{n} mēn.'),
+                UnitForms.simpleUnit('{n} g.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} n.'),
+                UnitForms.simpleUnit('{n} m.'),
+                UnitForms.simpleUnit('{n} g.'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/mfe.json
-    // ================================================================
-    // MFE — Mauritian Creole
-    // ================================================================
-    static final AgeLocale MFE = new AgeLocale(
-        'mfe',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} zour'),
-            UnitForms.simpleUnit('{n} semenn'),
-            UnitForms.simpleUnit('{n} mwa'),
-            UnitForms.simpleUnit('{n} lane'),
-        ),
-        '{0} edmi',
-        ', ',
-        'Zanfan fek ne',
-        new Stages(
-            StageLabel.neutral('Zanfan fek ne'),
-            StageLabel.neutral('Ti baba'),
-            StageLabel.neutral('Ti zanfan'),
-            StageLabel.neutral('Zanfan'),
-            StageLabel.neutral('Adolesan'),
-            StageLabel.neutral('Gran dimoun'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} zr'),
-            UnitForms.simpleUnit('{n} sem'),
-            UnitForms.simpleUnit('{n} mwa'),
-            UnitForms.simpleUnit('{n} la'),
-            null,
+    private static AgeLocale _mam() {
+        new AgeLocale(
+            'mam',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} q\'ij'),
+                UnitForms.simpleUnit('{n} xjaw'),
+                UnitForms.simpleUnit('{n} xjaw'),
+                UnitForms.simpleUnit('{n} ab\'q\'ii'),
+            ),
+            '{0} nik\'',
+            ', ',
+            'Yal xjal',
+            new Stages(
+                StageLabel.neutral('Yal xjal'),
+                StageLabel.neutral('Xkub\''),
+                StageLabel.neutral('K\'wal'),
+                StageLabel.neutral('K\'wal'),
+                StageLabel.neutral('Q\'a'),
+                StageLabel.neutral('Xjal'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} q\'ij'),
+                UnitForms.simpleUnit('{n} xjaw'),
+                UnitForms.simpleUnit('{n} xjaw'),
+                UnitForms.simpleUnit('{n} ab\'.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} zr'),
-            UnitForms.simpleUnit('{n} sem'),
-            UnitForms.simpleUnit('{n} mwa'),
-            UnitForms.simpleUnit('{n} la'),
+        )
+    }
+
+    private static AgeLocale _men() {
+        new AgeLocale(
+            'men',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lɔhɔ {n}', (PluralCategory.OTHER): 'lɔhɔnga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'wikii {n}', (PluralCategory.OTHER): 'wikii {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ndɔlɔ {n}', (PluralCategory.OTHER): 'ndɔlɔnga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'saŋ {n}', (PluralCategory.OTHER): 'saŋga {n}']),
+            ),
+            '{0} ta fele',
+            ', ',
+            'Ndɔpɔi fele',
+            new Stages(
+                StageLabel.neutral('Ndɔpɔi fele'),
+                StageLabel.neutral('Ndɔpɔi'),
+                StageLabel.neutral('Ndɔpɔi'),
+                StageLabel.neutral('Ndopoi'),
+                StageLabel.neutral('Ndakpayei'),
+                StageLabel.neutral('Numu-waa'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lɔhɔ {n}', (PluralCategory.OTHER): 'lɔhɔnga {n}']),
+                UnitForms.simpleUnit('wikii {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ndɔlɔ {n}', (PluralCategory.OTHER): 'ndɔlɔnga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'saŋ {n}', (PluralCategory.OTHER): 'saŋga {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _mfe() {
+        new AgeLocale(
+            'mfe',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} zour'),
+                UnitForms.simpleUnit('{n} semenn'),
+                UnitForms.simpleUnit('{n} mwa'),
+                UnitForms.simpleUnit('{n} lane'),
+            ),
+            '{0} edmi',
+            ', ',
+            'Zanfan fek ne',
+            new Stages(
+                StageLabel.neutral('Zanfan fek ne'),
+                StageLabel.neutral('Ti baba'),
+                StageLabel.neutral('Ti zanfan'),
+                StageLabel.neutral('Zanfan'),
+                StageLabel.neutral('Adolesan'),
+                StageLabel.neutral('Gran dimoun'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} zr'),
+                UnitForms.simpleUnit('{n} sem'),
+                UnitForms.simpleUnit('{n} mwa'),
+                UnitForms.simpleUnit('{n} la'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} zr'),
+                UnitForms.simpleUnit('{n} sem'),
+                UnitForms.simpleUnit('{n} mwa'),
+                UnitForms.simpleUnit('{n} la'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _mg() {
+        new AgeLocale(
+            'mg',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} andro'),
+                UnitForms.simpleUnit('{n} herinandro'),
+                UnitForms.simpleUnit('{n} volana'),
+                UnitForms.simpleUnit('{n} taona'),
+            ),
+            '{0} sy sasany',
+            ', ',
+            'Vao teraka',
+            new Stages(
+                StageLabel.neutral('Vao teraka'),
+                StageLabel.neutral('Zazakely'),
+                StageLabel.neutral('Zazakely'),
+                StageLabel.neutral('Ankizy'),
+                StageLabel.neutral('Tanora'),
+                StageLabel.neutral('Olon-dehibe'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} and'),
+                UnitForms.simpleUnit('{n} her'),
+                UnitForms.simpleUnit('{n} vol'),
+                UnitForms.simpleUnit('{n} tna'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} a'),
+                UnitForms.simpleUnit('{n} h'),
+                UnitForms.simpleUnit('{n} v'),
+                UnitForms.simpleUnit('{n} t'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _mi() {
+        new AgeLocale(
+            'mi',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('rā {n}'),
+                UnitForms.simpleUnit('wiki {n}'),
+                UnitForms.simpleUnit('marama {n}'),
+                UnitForms.simpleUnit('tau {n}'),
+            ),
+            '{0}½',
+            ', ',
+            'Pēpi hou',
+            new Stages(
+                StageLabel.neutral('Pēpi hou'),
+                StageLabel.neutral('Pēpi'),
+                StageLabel.neutral('Kōhungahunga'),
+                StageLabel.neutral('Tamariki'),
+                StageLabel.neutral('Rangatahi'),
+                StageLabel.neutral('Pakeke'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('rā {n}'),
+                UnitForms.simpleUnit('w {n}'),
+                UnitForms.simpleUnit('m {n}'),
+                UnitForms.simpleUnit('t {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}r'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}t'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _mk() {
+        new AgeLocale(
+            'mk',
+            { int n -> (n % 10 == 1 && n % 100 != 11) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ден', (PluralCategory.OTHER): '{n} дена']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} недела', (PluralCategory.OTHER): '{n} недели']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месец', (PluralCategory.OTHER): '{n} месеци']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} година', (PluralCategory.OTHER): '{n} години']),
+            ),
+            '{0} и пол',
+            ', ',
+            'Новороденче',
+            new Stages(
+                StageLabel.neutral('Новороденче'),
+                StageLabel.neutral('Бебе'),
+                StageLabel.neutral('Мало дете'),
+                StageLabel.neutral('Дете'),
+                StageLabel.neutral('Тинејџер'),
+                StageLabel.neutral('Возрасен'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ден', (PluralCategory.OTHER): '{n} дена']),
+                UnitForms.simpleUnit('{n} сед.'),
+                UnitForms.simpleUnit('{n} мес.'),
+                UnitForms.simpleUnit('{n} год.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} д.'),
+                UnitForms.simpleUnit('{n} с.'),
+                UnitForms.simpleUnit('{n} м.'),
+                UnitForms.simpleUnit('{n} г.'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ml() {
+        new AgeLocale(
+            'ml',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ദിവസം', (PluralCategory.OTHER): '{n} ദിവസങ്ങൾ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ആഴ്ച', (PluralCategory.OTHER): '{n} ആഴ്ചകൾ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} മാസം', (PluralCategory.OTHER): '{n} മാസങ്ങൾ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} വയസ്സ്', (PluralCategory.OTHER): '{n} വയസ്സ്']),
+            ),
+            '{0} ര',
+            ', ',
+            'നവജാതശിശു',
+            new Stages(
+                StageLabel.neutral('നവജാതശിശു'),
+                StageLabel.neutral('ശിശു'),
+                StageLabel.neutral('കുഞ്ഞ്'),
+                StageLabel.neutral('കുട്ടി'),
+                StageLabel.neutral('കൗമാരക്കാരൻ'),
+                StageLabel.neutral('മുതിർന്നയാൾ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ദിവസം'),
+                UnitForms.simpleUnit('{n} ആഴ്ച'),
+                UnitForms.simpleUnit('{n} മാസം'),
+                UnitForms.simpleUnit('{n} വർഷം'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ദി'),
+                UnitForms.simpleUnit('{n} ആ'),
+                UnitForms.simpleUnit('{n} മാ'),
+                UnitForms.simpleUnit('{n} വ'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _mn() {
+        new AgeLocale(
+            'mn',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} өдөр'),
+                UnitForms.simpleUnit('{n} долоо хоног'),
+                UnitForms.simpleUnit('{n} сар'),
+                UnitForms.simpleUnit('{n} нас'),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Нярай',
+            new Stages(
+                StageLabel.neutral('Нярай'),
+                StageLabel.neutral('Нярай'),
+                StageLabel.neutral('Бага нялх'),
+                StageLabel.neutral('Хүүхэд'),
+                StageLabel.neutral('Өсвөр насны'),
+                StageLabel.neutral('Насанд хүрсэн'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} өдөр'),
+                UnitForms.simpleUnit('{n} д/х'),
+                UnitForms.simpleUnit('{n} сар'),
+                UnitForms.simpleUnit('{n} нас'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ө'),
+                UnitForms.simpleUnit('{n} д'),
+                UnitForms.simpleUnit('{n} с'),
+                UnitForms.simpleUnit('{n} н'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/mg.json
-    // ================================================================
-    // MG — Malagasy
-    // ================================================================
-    static final AgeLocale MG = new AgeLocale(
-        'mg',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} andro'),
-            UnitForms.simpleUnit('{n} herinandro'),
-            UnitForms.simpleUnit('{n} volana'),
-            UnitForms.simpleUnit('{n} taona'),
-        ),
-        '{0} sy sasany',
-        ', ',
-        'Vao teraka',
-        new Stages(
-            StageLabel.neutral('Vao teraka'),
-            StageLabel.neutral('Zazakely'),
-            StageLabel.neutral('Zazakely'),
-            StageLabel.neutral('Ankizy'),
-            StageLabel.neutral('Tanora'),
-            StageLabel.neutral('Olon-dehibe'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} and'),
-            UnitForms.simpleUnit('{n} her'),
-            UnitForms.simpleUnit('{n} vol'),
-            UnitForms.simpleUnit('{n} tna'),
-            null,
+    private static AgeLocale _mnk() {
+        new AgeLocale(
+            'mnk',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('tili {n}'),
+                UnitForms.simpleUnit('lɔkɔ {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('sanji {n}'),
+            ),
+            '{0} ning tilinkiliŋo',
+            ', ',
+            'A banta ka wolo',
+            new Stages(
+                StageLabel.neutral('Dindinkoto'),
+                StageLabel.neutral('Dindiŋo'),
+                StageLabel.neutral('Dindinkuto'),
+                StageLabel.neutral('Diŋo'),
+                StageLabel.neutral('Kambaaŋo'),
+                StageLabel.neutral('Moo koto'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('tili {n}'),
+                UnitForms.simpleUnit('lɔkɔ {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('sanj. {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('tili {n}'),
+                UnitForms.simpleUnit('lɔkɔ {n}'),
+                UnitForms.simpleUnit('kalo {n}'),
+                UnitForms.simpleUnit('sanj {n}'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} a'),
-            UnitForms.simpleUnit('{n} h'),
-            UnitForms.simpleUnit('{n} v'),
-            UnitForms.simpleUnit('{n} t'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/mi.json
-    // ================================================================
-    // MI — Māori
-    // ================================================================
-    static final AgeLocale MI = new AgeLocale(
-        'mi',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('rā {n}'),
-            UnitForms.simpleUnit('wiki {n}'),
-            UnitForms.simpleUnit('marama {n}'),
-            UnitForms.simpleUnit('tau {n}'),
-        ),
-        '{0}½',
-        ', ',
-        'Pēpi hou',
-        new Stages(
-            StageLabel.neutral('Pēpi hou'),
-            StageLabel.neutral('Pēpi'),
-            StageLabel.neutral('Kōhungahunga'),
-            StageLabel.neutral('Tamariki'),
-            StageLabel.neutral('Rangatahi'),
-            StageLabel.neutral('Pakeke'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('rā {n}'),
-            UnitForms.simpleUnit('w {n}'),
-            UnitForms.simpleUnit('m {n}'),
-            UnitForms.simpleUnit('t {n}'),
-            null,
+    private static AgeLocale _mos() {
+        new AgeLocale(
+            'mos',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('daare {n}'),
+                UnitForms.simpleUnit('semaana {n}'),
+                UnitForms.simpleUnit('kiuugu {n}'),
+                UnitForms.simpleUnit('yʋʋmde {n}'),
+            ),
+            '{0} la pʋɩ-sʋka',
+            ', ',
+            'A sẽn dog-a',
+            new Stages(
+                StageLabel.neutral('Bi-paalga'),
+                StageLabel.neutral('Bi-bɩɩga'),
+                StageLabel.neutral('Bi-kɩdga'),
+                StageLabel.neutral('Biiga'),
+                StageLabel.neutral('Bi-raaga'),
+                StageLabel.neutral('Nin-kẽema'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('daar. {n}'),
+                UnitForms.simpleUnit('sem. {n}'),
+                UnitForms.simpleUnit('kiu. {n}'),
+                UnitForms.simpleUnit('yʋʋm. {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('daar {n}'),
+                UnitForms.simpleUnit('sem {n}'),
+                UnitForms.simpleUnit('kiu {n}'),
+                UnitForms.simpleUnit('yʋʋm {n}'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}r'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}t'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/mk.json
-    // ================================================================
-    // MK — Macedonian
-    // ================================================================
-    static final AgeLocale MK = new AgeLocale(
-        'mk',
-        { int n -> (n % 10 == 1 && n % 100 != 11) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ден', (PluralCategory.OTHER): '{n} дена']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} недела', (PluralCategory.OTHER): '{n} недели']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месец', (PluralCategory.OTHER): '{n} месеци']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} година', (PluralCategory.OTHER): '{n} години']),
-        ),
-        '{0} и пол',
-        ', ',
-        'Новороденче',
-        new Stages(
-            StageLabel.neutral('Новороденче'),
-            StageLabel.neutral('Бебе'),
-            StageLabel.neutral('Мало дете'),
-            StageLabel.neutral('Дете'),
-            StageLabel.neutral('Тинејџер'),
-            StageLabel.neutral('Возрасен'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ден', (PluralCategory.OTHER): '{n} дена']),
-            UnitForms.simpleUnit('{n} сед.'),
-            UnitForms.simpleUnit('{n} мес.'),
-            UnitForms.simpleUnit('{n} год.'),
-            null,
+    private static AgeLocale _mr() {
+        new AgeLocale(
+            'mr',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} दिवस', (PluralCategory.OTHER): '{n} दिवस']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} आठवडा', (PluralCategory.OTHER): '{n} आठवडे']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महिना', (PluralCategory.OTHER): '{n} महिने']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} वर्ष', (PluralCategory.OTHER): '{n} वर्षे']),
+            ),
+            'साडे {n}',
+            ', ',
+            'नवजात',
+            new Stages(
+                StageLabel.neutral('नवजात'),
+                StageLabel.neutral('अर्भक'),
+                StageLabel.neutral('बाळ'),
+                StageLabel.neutral('मूल'),
+                StageLabel.gendered('किशोर', 'किशोरी'),
+                StageLabel.neutral('प्रौढ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} दिवस'),
+                UnitForms.simpleUnit('{n} आ'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महिना', (PluralCategory.OTHER): '{n} महिने']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} वर्ष', (PluralCategory.OTHER): '{n} वर्षे']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}दि'),
+                UnitForms.simpleUnit('{n}आ'),
+                UnitForms.simpleUnit('{n}म'),
+                UnitForms.simpleUnit('{n}व'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} д.'),
-            UnitForms.simpleUnit('{n} с.'),
-            UnitForms.simpleUnit('{n} м.'),
-            UnitForms.simpleUnit('{n} г.'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ml.json
-    // ================================================================
-    // ML — Malayalam
-    // ================================================================
-    static final AgeLocale ML = new AgeLocale(
-        'ml',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ദിവസം', (PluralCategory.OTHER): '{n} ദിവസങ്ങൾ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ആഴ്ച', (PluralCategory.OTHER): '{n} ആഴ്ചകൾ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} മാസം', (PluralCategory.OTHER): '{n} മാസങ്ങൾ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} വയസ്സ്', (PluralCategory.OTHER): '{n} വയസ്സ്']),
-        ),
-        '{0} ര',
-        ', ',
-        'നവജാതശിശു',
-        new Stages(
-            StageLabel.neutral('നവജാതശിശു'),
-            StageLabel.neutral('ശിശു'),
-            StageLabel.neutral('കുഞ്ഞ്'),
-            StageLabel.neutral('കുട്ടി'),
-            StageLabel.neutral('കൗമാരക്കാരൻ'),
-            StageLabel.neutral('മുതിർന്നയാൾ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ദിവസം'),
-            UnitForms.simpleUnit('{n} ആഴ്ച'),
-            UnitForms.simpleUnit('{n} മാസം'),
-            UnitForms.simpleUnit('{n} വർഷം'),
-            null,
+    private static AgeLocale _ms() {
+        new AgeLocale(
+            'ms',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} hari'),
+                UnitForms.simpleUnit('{n} minggu'),
+                UnitForms.simpleUnit('{n} bulan'),
+                UnitForms.simpleUnit('{n} tahun'),
+            ),
+            '{0} setengah',
+            ', ',
+            'Baru lahir',
+            new Stages(
+                StageLabel.neutral('Baru lahir'),
+                StageLabel.neutral('Bayi'),
+                StageLabel.neutral('Kanak-kanak kecil'),
+                StageLabel.neutral('Kanak-kanak'),
+                StageLabel.neutral('Remaja'),
+                StageLabel.neutral('Dewasa'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} hari'),
+                UnitForms.simpleUnit('{n} mgu'),
+                UnitForms.simpleUnit('{n} bln'),
+                UnitForms.simpleUnit('{n} thn'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} h'),
+                UnitForms.simpleUnit('{n} mgu'),
+                UnitForms.simpleUnit('{n} bln'),
+                UnitForms.simpleUnit('{n} thn'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ദി'),
-            UnitForms.simpleUnit('{n} ആ'),
-            UnitForms.simpleUnit('{n} മാ'),
-            UnitForms.simpleUnit('{n} വ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/mn.json
-    // ================================================================
-    // MN — Mongolian
-    // ================================================================
-    static final AgeLocale MN = new AgeLocale(
-        'mn',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} өдөр'),
-            UnitForms.simpleUnit('{n} долоо хоног'),
-            UnitForms.simpleUnit('{n} сар'),
-            UnitForms.simpleUnit('{n} нас'),
-        ),
-        '{n}½',
-        ', ',
-        'Нярай',
-        new Stages(
-            StageLabel.neutral('Нярай'),
-            StageLabel.neutral('Нярай'),
-            StageLabel.neutral('Бага нялх'),
-            StageLabel.neutral('Хүүхэд'),
-            StageLabel.neutral('Өсвөр насны'),
-            StageLabel.neutral('Насанд хүрсэн'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} өдөр'),
-            UnitForms.simpleUnit('{n} д/х'),
-            UnitForms.simpleUnit('{n} сар'),
-            UnitForms.simpleUnit('{n} нас'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ө'),
-            UnitForms.simpleUnit('{n} д'),
-            UnitForms.simpleUnit('{n} с'),
-            UnitForms.simpleUnit('{n} н'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/mnk.json
-    // ================================================================
-    // MNK — Mandinka
-    // ================================================================
-    static final AgeLocale MNK = new AgeLocale(
-        'mnk',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('tili {n}'),
-            UnitForms.simpleUnit('lɔkɔ {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('sanji {n}'),
-        ),
-        '{0} ning tilinkiliŋo',
-        ', ',
-        'A banta ka wolo',
-        new Stages(
-            StageLabel.neutral('Dindinkoto'),
-            StageLabel.neutral('Dindiŋo'),
-            StageLabel.neutral('Dindinkuto'),
-            StageLabel.neutral('Diŋo'),
-            StageLabel.neutral('Kambaaŋo'),
-            StageLabel.neutral('Moo koto'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('tili {n}'),
-            UnitForms.simpleUnit('lɔkɔ {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('sanj. {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('tili {n}'),
-            UnitForms.simpleUnit('lɔkɔ {n}'),
-            UnitForms.simpleUnit('kalo {n}'),
-            UnitForms.simpleUnit('sanj {n}'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/mos.json
-    // ================================================================
-    // MOS — Moore
-    // ================================================================
-    static final AgeLocale MOS = new AgeLocale(
-        'mos',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('daare {n}'),
-            UnitForms.simpleUnit('semaana {n}'),
-            UnitForms.simpleUnit('kiuugu {n}'),
-            UnitForms.simpleUnit('yʋʋmde {n}'),
-        ),
-        '{0} la pʋɩ-sʋka',
-        ', ',
-        'A sẽn dog-a',
-        new Stages(
-            StageLabel.neutral('Bi-paalga'),
-            StageLabel.neutral('Bi-bɩɩga'),
-            StageLabel.neutral('Bi-kɩdga'),
-            StageLabel.neutral('Biiga'),
-            StageLabel.neutral('Bi-raaga'),
-            StageLabel.neutral('Nin-kẽema'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('daar. {n}'),
-            UnitForms.simpleUnit('sem. {n}'),
-            UnitForms.simpleUnit('kiu. {n}'),
-            UnitForms.simpleUnit('yʋʋm. {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('daar {n}'),
-            UnitForms.simpleUnit('sem {n}'),
-            UnitForms.simpleUnit('kiu {n}'),
-            UnitForms.simpleUnit('yʋʋm {n}'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/mr.json
-    // ================================================================
-    // MR — Marathi
-    // ================================================================
-    static final AgeLocale MR = new AgeLocale(
-        'mr',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} दिवस', (PluralCategory.OTHER): '{n} दिवस']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} आठवडा', (PluralCategory.OTHER): '{n} आठवडे']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महिना', (PluralCategory.OTHER): '{n} महिने']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} वर्ष', (PluralCategory.OTHER): '{n} वर्षे']),
-        ),
-        'साडे {n}',
-        ', ',
-        'नवजात',
-        new Stages(
-            StageLabel.neutral('नवजात'),
-            StageLabel.neutral('अर्भक'),
-            StageLabel.neutral('बाळ'),
-            StageLabel.neutral('मूल'),
-            StageLabel.gendered('किशोर', 'किशोरी'),
-            StageLabel.neutral('प्रौढ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} दिवस'),
-            UnitForms.simpleUnit('{n} आ'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महिना', (PluralCategory.OTHER): '{n} महिने']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} वर्ष', (PluralCategory.OTHER): '{n} वर्षे']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}दि'),
-            UnitForms.simpleUnit('{n}आ'),
-            UnitForms.simpleUnit('{n}म'),
-            UnitForms.simpleUnit('{n}व'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ms.json
-    // ================================================================
-    // MS — Malay
-    // ================================================================
-    static final AgeLocale MS = new AgeLocale(
-        'ms',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} hari'),
-            UnitForms.simpleUnit('{n} minggu'),
-            UnitForms.simpleUnit('{n} bulan'),
-            UnitForms.simpleUnit('{n} tahun'),
-        ),
-        '{0} setengah',
-        ', ',
-        'Baru lahir',
-        new Stages(
-            StageLabel.neutral('Baru lahir'),
-            StageLabel.neutral('Bayi'),
-            StageLabel.neutral('Kanak-kanak kecil'),
-            StageLabel.neutral('Kanak-kanak'),
-            StageLabel.neutral('Remaja'),
-            StageLabel.neutral('Dewasa'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} hari'),
-            UnitForms.simpleUnit('{n} mgu'),
-            UnitForms.simpleUnit('{n} bln'),
-            UnitForms.simpleUnit('{n} thn'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} h'),
-            UnitForms.simpleUnit('{n} mgu'),
-            UnitForms.simpleUnit('{n} bln'),
-            UnitForms.simpleUnit('{n} thn'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/mt.json
-    // ================================================================
-    // MT — Maltese
-    // ================================================================
-    static final AgeLocale MT = new AgeLocale(
-        'mt',
-        { int n ->
+    private static AgeLocale _mt() {
+        new AgeLocale(
+            'mt',
+            { int n ->
             if (n == 1) return PluralCategory.ONE
             if (n == 2) return PluralCategory.TWO
             if (n == 0 || (n % 100 >= 3 && n % 100 <= 10)) return PluralCategory.FEW
             if (n % 100 >= 11 && n % 100 <= 19) return PluralCategory.MANY
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ġurnata', (PluralCategory.TWO): 'jumejn', (PluralCategory.FEW): '{n} ijiem', (PluralCategory.MANY): '{n}-il jum', (PluralCategory.OTHER): '{n} jum']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ġimgħa', (PluralCategory.TWO): 'ġimgħatejn', (PluralCategory.FEW): '{n} ġimgħat', (PluralCategory.MANY): '{n}-il ġimgħa', (PluralCategory.OTHER): '{n} ġimgħa']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'xahar', (PluralCategory.TWO): 'xahrejn', (PluralCategory.FEW): '{n} xhur', (PluralCategory.MANY): '{n}-il xahar', (PluralCategory.OTHER): '{n} xahar']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sena', (PluralCategory.TWO): 'sentejn', (PluralCategory.FEW): '{n} snin', (PluralCategory.MANY): '{n}-il sena', (PluralCategory.OTHER): '{n} sena']),
-        ),
-        '{0} u nofs',
-        ' u ',
-        'Tarbija ġdida',
-        new Stages(
-            StageLabel.neutral('Tarbija ġdida'),
-            StageLabel.neutral('Tarbija'),
-            StageLabel.gendered('Tifel żgħir', 'Tifla żgħira'),
-            StageLabel.gendered('Tifel', 'Tifla'),
-            StageLabel.gendered('Adolexxent', 'Adolexxenta'),
-            StageLabel.gendered('Adult', 'Adulta'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} w'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.simpleUnit('{n} y'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ġurnata', (PluralCategory.TWO): 'jumejn', (PluralCategory.FEW): '{n} ijiem', (PluralCategory.MANY): '{n}-il jum', (PluralCategory.OTHER): '{n} jum']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ġimgħa', (PluralCategory.TWO): 'ġimgħatejn', (PluralCategory.FEW): '{n} ġimgħat', (PluralCategory.MANY): '{n}-il ġimgħa', (PluralCategory.OTHER): '{n} ġimgħa']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'xahar', (PluralCategory.TWO): 'xahrejn', (PluralCategory.FEW): '{n} xhur', (PluralCategory.MANY): '{n}-il xahar', (PluralCategory.OTHER): '{n} xahar']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sena', (PluralCategory.TWO): 'sentejn', (PluralCategory.FEW): '{n} snin', (PluralCategory.MANY): '{n}-il sena', (PluralCategory.OTHER): '{n} sena']),
+            ),
+            '{0} u nofs',
+            ' u ',
+            'Tarbija ġdida',
+            new Stages(
+                StageLabel.neutral('Tarbija ġdida'),
+                StageLabel.neutral('Tarbija'),
+                StageLabel.gendered('Tifel żgħir', 'Tifla żgħira'),
+                StageLabel.gendered('Tifel', 'Tifla'),
+                StageLabel.gendered('Adolexxent', 'Adolexxenta'),
+                StageLabel.gendered('Adult', 'Adulta'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} w'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.simpleUnit('{n} y'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} w'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.simpleUnit('{n} y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} w'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.simpleUnit('{n} y'),
+        )
+    }
+
+    private static AgeLocale _my() {
+        new AgeLocale(
+            'my',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ရက်'),
+                UnitForms.simpleUnit('{n} ပတ်'),
+                UnitForms.simpleUnit('{n} လ'),
+                UnitForms.simpleUnit('{n} နှစ်'),
+            ),
+            '{0}ခွဲ',
+            '၊ ',
+            'မွေးကင်းစ',
+            new Stages(
+                StageLabel.neutral('မွေးကင်းစ'),
+                StageLabel.neutral('နို့စို့ကလေး'),
+                StageLabel.neutral('ခြေဦးသလျှား'),
+                StageLabel.neutral('ကလေး'),
+                StageLabel.neutral('ဆယ်ကျော်သက်'),
+                StageLabel.neutral('အရွယ်ရောက်'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ရက်'),
+                UnitForms.simpleUnit('{n} ပတ်'),
+                UnitForms.simpleUnit('{n} လ'),
+                UnitForms.simpleUnit('{n} နှစ်'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ရက်'),
+                UnitForms.simpleUnit('{n} ပတ်'),
+                UnitForms.simpleUnit('{n} လ'),
+                UnitForms.simpleUnit('{n} နှစ်'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _nb() {
+        new AgeLocale(
+            'nb',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dager']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} uke', (PluralCategory.OTHER): '{n} uker']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} måned', (PluralCategory.OTHER): '{n} måneder']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} år', (PluralCategory.OTHER): '{n} år']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Nyfødt',
+            new Stages(
+                StageLabel.neutral('Nyfødt'),
+                StageLabel.neutral('Spedbarn'),
+                StageLabel.neutral('Småbarn'),
+                StageLabel.neutral('Barn'),
+                StageLabel.neutral('Tenåring'),
+                StageLabel.neutral('Voksen'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} u'),
+                UnitForms.simpleUnit('{n} md.'),
+                UnitForms.simpleUnit('{n} år'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}u'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.simpleUnit('{n}å'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/my.json
-    // ================================================================
-    // MY — Burmese
-    // ================================================================
-    static final AgeLocale MY = new AgeLocale(
-        'my',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ရက်'),
-            UnitForms.simpleUnit('{n} ပတ်'),
-            UnitForms.simpleUnit('{n} လ'),
-            UnitForms.simpleUnit('{n} နှစ်'),
-        ),
-        '{0}ခွဲ',
-        '၊ ',
-        'မွေးကင်းစ',
-        new Stages(
-            StageLabel.neutral('မွေးကင်းစ'),
-            StageLabel.neutral('နို့စို့ကလေး'),
-            StageLabel.neutral('ခြေဦးသလျှား'),
-            StageLabel.neutral('ကလေး'),
-            StageLabel.neutral('ဆယ်ကျော်သက်'),
-            StageLabel.neutral('အရွယ်ရောက်'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ရက်'),
-            UnitForms.simpleUnit('{n} ပတ်'),
-            UnitForms.simpleUnit('{n} လ'),
-            UnitForms.simpleUnit('{n} နှစ်'),
-            null,
+    private static AgeLocale _nd() {
+        new AgeLocale(
+            'nd',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'insuku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iviki {n}', (PluralCategory.OTHER): 'amaviki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'izinyanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umnyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
+            ),
+            '{0} lengxenye',
+            ', ',
+            'Usanda kuzalwa',
+            new Stages(
+                StageLabel.neutral('Usane olusanda kuzalwa'),
+                StageLabel.neutral('Usane'),
+                StageLabel.neutral('Umntwana omncane'),
+                StageLabel.neutral('Umntwana'),
+                StageLabel.neutral('Isitsha'),
+                StageLabel.neutral('Umuntu omdala'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'insuku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iviki {n}', (PluralCategory.OTHER): 'amaviki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iny. {n}', (PluralCategory.OTHER): 'iziny. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umny. {n}', (PluralCategory.OTHER): 'iminy. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ရက်'),
-            UnitForms.simpleUnit('{n} ပတ်'),
-            UnitForms.simpleUnit('{n} လ'),
-            UnitForms.simpleUnit('{n} နှစ်'),
+        )
+    }
+
+    private static AgeLocale _ne() {
+        new AgeLocale(
+            'ne',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} दिन', (PluralCategory.OTHER): '{n} दिन']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} हप्ता', (PluralCategory.OTHER): '{n} हप्ता']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महिना', (PluralCategory.OTHER): '{n} महिना']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} वर्ष', (PluralCategory.OTHER): '{n} वर्ष']),
+            ),
+            'साढे {n}',
+            ', ',
+            'नवजात शिशु',
+            new Stages(
+                StageLabel.neutral('नवजात शिशु'),
+                StageLabel.neutral('शिशु'),
+                StageLabel.neutral('बाल्यकाल'),
+                StageLabel.neutral('बालक'),
+                StageLabel.neutral('किशोर'),
+                StageLabel.neutral('वयस्क'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} दिन'),
+                UnitForms.simpleUnit('{n} हप्ता'),
+                UnitForms.simpleUnit('{n} महिना'),
+                UnitForms.simpleUnit('{n} वर्ष'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} दिन'),
+                UnitForms.simpleUnit('{n} हप्ता'),
+                UnitForms.simpleUnit('{n} महिना'),
+                UnitForms.simpleUnit('{n} वर्ष'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ng() {
+        new AgeLocale(
+            'ng',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'esiku {n}', (PluralCategory.OTHER): 'omasiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'oshiwike {n}', (PluralCategory.OTHER): 'iiwike {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omuedhi {n}', (PluralCategory.OTHER): 'omiedhi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omvula {n}', (PluralCategory.OTHER): 'omivula {n}']),
+            ),
+            '{0} netata',
+            ', ',
+            'Okwa dalwa po',
+            new Stages(
+                StageLabel.neutral('Okaana ke li po'),
+                StageLabel.neutral('Okaana'),
+                StageLabel.neutral('Okanona'),
+                StageLabel.neutral('Okanona'),
+                StageLabel.neutral('Omunyasha'),
+                StageLabel.neutral('Omuntu omukulu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('omasiku {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'oshiwike {n}', (PluralCategory.OTHER): 'iiwike {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omuedhi {n}', (PluralCategory.OTHER): 'omiedhi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omvula {n}', (PluralCategory.OTHER): 'omivula {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('omasiku {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'oshiw {n}', (PluralCategory.OTHER): 'iiw {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omued {n}', (PluralCategory.OTHER): 'omied {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omv {n}', (PluralCategory.OTHER): 'omiv {n}']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _nl() {
+        new AgeLocale(
+            'nl',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dagen']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} week', (PluralCategory.OTHER): '{n} weken']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} maand', (PluralCategory.OTHER): '{n} maanden']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} jaar', (PluralCategory.OTHER): '{n} jaar']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Pasgeboren',
+            new Stages(
+                StageLabel.neutral('Pasgeborene'),
+                StageLabel.neutral('Baby'),
+                StageLabel.neutral('Peuter'),
+                StageLabel.neutral('Kind'),
+                StageLabel.neutral('Tiener'),
+                StageLabel.neutral('Volwassene'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dagen']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} wk', (PluralCategory.OTHER): '{n} wkn']),
+                UnitForms.simpleUnit('{n} mnd'),
+                UnitForms.simpleUnit('{n} jr'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} w'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.simpleUnit('{n} jr'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/nb.json
-    // ================================================================
-    // NB — Norwegian Bokmål
-    // ================================================================
-    static final AgeLocale NB = new AgeLocale(
-        'nb',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dager']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} uke', (PluralCategory.OTHER): '{n} uker']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} måned', (PluralCategory.OTHER): '{n} måneder']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} år', (PluralCategory.OTHER): '{n} år']),
-        ),
-        '{n}½',
-        ', ',
-        'Nyfødt',
-        new Stages(
-            StageLabel.neutral('Nyfødt'),
-            StageLabel.neutral('Spedbarn'),
-            StageLabel.neutral('Småbarn'),
-            StageLabel.neutral('Barn'),
-            StageLabel.neutral('Tenåring'),
-            StageLabel.neutral('Voksen'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} u'),
-            UnitForms.simpleUnit('{n} md.'),
-            UnitForms.simpleUnit('{n} år'),
-            null,
+    private static AgeLocale _nr() {
+        new AgeLocale(
+            'nr',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ilanga {n}', (PluralCategory.OTHER): 'amalanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iveke {n}', (PluralCategory.OTHER): 'amaveke {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'iinyanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'unyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
+            ),
+            '{0} nesiquntu',
+            ', ',
+            'Usana olusanda kubeletwa',
+            new Stages(
+                StageLabel.neutral('Usana olusanda kubeletwa'),
+                StageLabel.neutral('Usana'),
+                StageLabel.neutral('Umntwana omncani'),
+                StageLabel.neutral('Umntwana'),
+                StageLabel.neutral('Isokana'),
+                StageLabel.neutral('Umuntu omkhulu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ilanga {n}', (PluralCategory.OTHER): 'amal. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iveke {n}', (PluralCategory.OTHER): 'amav. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iny. {n}', (PluralCategory.OTHER): 'iiny. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'uny. {n}', (PluralCategory.OTHER): 'imin. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}u'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.simpleUnit('{n}å'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/nd.json
-    // ================================================================
-    // ND — Northern Ndebele
-    // ================================================================
-    static final AgeLocale ND = new AgeLocale(
-        'nd',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'insuku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iviki {n}', (PluralCategory.OTHER): 'amaviki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'izinyanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umnyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
-        ),
-        '{0} lengxenye',
-        ', ',
-        'Usanda kuzalwa',
-        new Stages(
-            StageLabel.neutral('Usane olusanda kuzalwa'),
-            StageLabel.neutral('Usane'),
-            StageLabel.neutral('Umntwana omncane'),
-            StageLabel.neutral('Umntwana'),
-            StageLabel.neutral('Isitsha'),
-            StageLabel.neutral('Umuntu omdala'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'insuku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iviki {n}', (PluralCategory.OTHER): 'amaviki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iny. {n}', (PluralCategory.OTHER): 'iziny. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umny. {n}', (PluralCategory.OTHER): 'iminy. {n}']),
-            null,
+    private static AgeLocale _nso() {
+        new AgeLocale(
+            'nso',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'letšatši {n}', (PluralCategory.OTHER): 'matšatši {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kgwedi {n}', (PluralCategory.OTHER): 'dikgwedi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngwaga {n}', (PluralCategory.OTHER): 'mengwaga {n}']),
+            ),
+            '{0} le seripagare',
+            ', ',
+            'O sa tšwa belegwa',
+            new Stages(
+                StageLabel.neutral('Lesea le sa tšwa belegwa'),
+                StageLabel.neutral('Lesea'),
+                StageLabel.neutral('Ngwanyana'),
+                StageLabel.neutral('Ngwana'),
+                StageLabel.neutral('Moša'),
+                StageLabel.neutral('Motho yo mogolo'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'letšatši {n}', (PluralCategory.OTHER): 'matšatši {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kgw. {n}', (PluralCategory.OTHER): 'dikgw. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngw. {n}', (PluralCategory.OTHER): 'mengw. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+        )
+    }
+
+    private static AgeLocale _nus() {
+        new AgeLocale(
+            'nus',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'cäŋ {n}', (PluralCategory.OTHER): 'cëŋ {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'korɛ {n}', (PluralCategory.OTHER): 'korni {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'pay {n}', (PluralCategory.OTHER): 'pei {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈ni {n}']),
+            ),
+            '{0} ku kel',
+            ', ',
+            'Gaat mä dhiëëth',
+            new Stages(
+                StageLabel.neutral('Gaat mä dhiëëth thiin'),
+                StageLabel.neutral('Gaat'),
+                StageLabel.neutral('Gaat cɛɛk'),
+                StageLabel.neutral('Gaat raan'),
+                StageLabel.neutral('Raan thok'),
+                StageLabel.neutral('Raan dit'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'cäŋ {n}', (PluralCategory.OTHER): 'cëŋ {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kor. {n}', (PluralCategory.OTHER): 'kor. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'pay {n}', (PluralCategory.OTHER): 'pei {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈ni {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ny() {
+        new AgeLocale(
+            'ny',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'tsiku {n}', (PluralCategory.OTHER): 'masiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sabata {n}', (PluralCategory.OTHER): 'masabata {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miyezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'zaka {n}']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Wobadwa kumene',
+            new Stages(
+                StageLabel.neutral('Wobadwa kumene'),
+                StageLabel.neutral('Khanda'),
+                StageLabel.neutral('Mwana wamng\'ono'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Mnyamata'),
+                StageLabel.neutral('Munthu wamkulu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'tsiku {n}', (PluralCategory.OTHER): 'mas {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sabata {n}', (PluralCategory.OTHER): 'masab {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miyezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'zaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ts {n}', (PluralCategory.OTHER): 'mas {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sab {n}', (PluralCategory.OTHER): 'msb {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mw {n}', (PluralCategory.OTHER): 'miy {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ch {n}', (PluralCategory.OTHER): 'z {n}']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ne.json
-    // ================================================================
-    // NE — Nepali
-    // ================================================================
-    static final AgeLocale NE = new AgeLocale(
-        'ne',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} दिन', (PluralCategory.OTHER): '{n} दिन']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} हप्ता', (PluralCategory.OTHER): '{n} हप्ता']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} महिना', (PluralCategory.OTHER): '{n} महिना']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} वर्ष', (PluralCategory.OTHER): '{n} वर्ष']),
-        ),
-        'साढे {n}',
-        ', ',
-        'नवजात शिशु',
-        new Stages(
-            StageLabel.neutral('नवजात शिशु'),
-            StageLabel.neutral('शिशु'),
-            StageLabel.neutral('बाल्यकाल'),
-            StageLabel.neutral('बालक'),
-            StageLabel.neutral('किशोर'),
-            StageLabel.neutral('वयस्क'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} दिन'),
-            UnitForms.simpleUnit('{n} हप्ता'),
-            UnitForms.simpleUnit('{n} महिना'),
-            UnitForms.simpleUnit('{n} वर्ष'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} दिन'),
-            UnitForms.simpleUnit('{n} हप्ता'),
-            UnitForms.simpleUnit('{n} महिना'),
-            UnitForms.simpleUnit('{n} वर्ष'),
+    private static AgeLocale _om() {
+        new AgeLocale(
+            'om',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'guyyaa {n}', (PluralCategory.OTHER): 'guyyoota {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'torban {n}', (PluralCategory.OTHER): 'torbanota {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ji\'a {n}', (PluralCategory.OTHER): 'ji\'oota {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'waggaa {n}', (PluralCategory.OTHER): 'waggoota {n}']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Dhalate haaraa',
+            new Stages(
+                StageLabel.neutral('Daa\'ima'),
+                StageLabel.neutral('Daa\'ima'),
+                StageLabel.neutral('Ijoollee xiqqaa'),
+                StageLabel.neutral('Ijoollee'),
+                StageLabel.neutral('Dargaggeessa'),
+                StageLabel.neutral('Ga\'eessa'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('gy {n}'),
+                UnitForms.simpleUnit('trb {n}'),
+                UnitForms.simpleUnit('ji {n}'),
+                UnitForms.simpleUnit('wg {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}g'),
+                UnitForms.simpleUnit('{n}t'),
+                UnitForms.simpleUnit('{n}j'),
+                UnitForms.simpleUnit('{n}w'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ng.json
-    // ================================================================
-    // NG — Oshiwambo
-    // ================================================================
-    static final AgeLocale NG = new AgeLocale(
-        'ng',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'esiku {n}', (PluralCategory.OTHER): 'omasiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'oshiwike {n}', (PluralCategory.OTHER): 'iiwike {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omuedhi {n}', (PluralCategory.OTHER): 'omiedhi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omvula {n}', (PluralCategory.OTHER): 'omivula {n}']),
-        ),
-        '{0} netata',
-        ', ',
-        'Okwa dalwa po',
-        new Stages(
-            StageLabel.neutral('Okaana ke li po'),
-            StageLabel.neutral('Okaana'),
-            StageLabel.neutral('Okanona'),
-            StageLabel.neutral('Okanona'),
-            StageLabel.neutral('Omunyasha'),
-            StageLabel.neutral('Omuntu omukulu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('omasiku {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'oshiwike {n}', (PluralCategory.OTHER): 'iiwike {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omuedhi {n}', (PluralCategory.OTHER): 'omiedhi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omvula {n}', (PluralCategory.OTHER): 'omivula {n}']),
-            null,
+    private static AgeLocale _or() {
+        new AgeLocale(
+            'or',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ଦିନ', (PluralCategory.OTHER): '{n} ଦିନ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ସପ୍ତାହ', (PluralCategory.OTHER): '{n} ସପ୍ତାହ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ମାସ', (PluralCategory.OTHER): '{n} ମାସ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ବର୍ଷ', (PluralCategory.OTHER): '{n} ବର୍ଷ']),
+            ),
+            '{0}ଅଧା',
+            ', ',
+            'ନବଜାତ',
+            new Stages(
+                StageLabel.neutral('ନବଜାତ'),
+                StageLabel.neutral('ଶିଶୁ'),
+                StageLabel.neutral('ଛୋଟ ପିଲା'),
+                StageLabel.neutral('ପିଲା'),
+                StageLabel.neutral('କିଶୋର'),
+                StageLabel.neutral('ବୟସ୍କ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ଦିନ'),
+                UnitForms.simpleUnit('{n} ସପ୍ତାହ'),
+                UnitForms.simpleUnit('{n} ମାସ'),
+                UnitForms.simpleUnit('{n} ବର୍ଷ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ଦି'),
+                UnitForms.simpleUnit('{n} ସ'),
+                UnitForms.simpleUnit('{n} ମା'),
+                UnitForms.simpleUnit('{n} ବ'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('omasiku {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'oshiw {n}', (PluralCategory.OTHER): 'iiw {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omued {n}', (PluralCategory.OTHER): 'omied {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omv {n}', (PluralCategory.OTHER): 'omiv {n}']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/nl.json
-    // ================================================================
-    // NL — Dutch
-    // ================================================================
-    static final AgeLocale NL = new AgeLocale(
-        'nl',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dagen']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} week', (PluralCategory.OTHER): '{n} weken']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} maand', (PluralCategory.OTHER): '{n} maanden']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} jaar', (PluralCategory.OTHER): '{n} jaar']),
-        ),
-        '{n}½',
-        ', ',
-        'Pasgeboren',
-        new Stages(
-            StageLabel.neutral('Pasgeborene'),
-            StageLabel.neutral('Baby'),
-            StageLabel.neutral('Peuter'),
-            StageLabel.neutral('Kind'),
-            StageLabel.neutral('Tiener'),
-            StageLabel.neutral('Volwassene'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dagen']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} wk', (PluralCategory.OTHER): '{n} wkn']),
-            UnitForms.simpleUnit('{n} mnd'),
-            UnitForms.simpleUnit('{n} jr'),
-            null,
+    private static AgeLocale _pa() {
+        new AgeLocale(
+            'pa',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਦਿਨ', (PluralCategory.OTHER): '{n} ਦਿਨ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਹਫ਼ਤਾ', (PluralCategory.OTHER): '{n} ਹਫ਼ਤੇ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਮਹੀਨਾ', (PluralCategory.OTHER): '{n} ਮਹੀਨੇ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਸਾਲ', (PluralCategory.OTHER): '{n} ਸਾਲ']),
+            ),
+            'ਸਾਢੇ {n}',
+            ', ',
+            'ਨਵਜੰਮਿਆ',
+            new Stages(
+                StageLabel.gendered('ਨਵਜੰਮਿਆ', 'ਨਵਜੰਮੀ'),
+                StageLabel.neutral('ਸ਼ਿਸ਼ੂ'),
+                StageLabel.gendered('ਛੋਟਾ ਬੱਚਾ', 'ਛੋਟੀ ਬੱਚੀ'),
+                StageLabel.gendered('ਬੱਚਾ', 'ਬੱਚੀ'),
+                StageLabel.gendered('ਕਿਸ਼ੋਰ', 'ਕਿਸ਼ੋਰੀ'),
+                StageLabel.neutral('ਬਾਲਗ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ਦਿਨ'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਹਫ਼ਤਾ', (PluralCategory.OTHER): '{n} ਹਫ਼ਤੇ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਮਹੀਨਾ', (PluralCategory.OTHER): '{n} ਮਹੀਨੇ']),
+                UnitForms.simpleUnit('{n} ਸਾਲ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ਦਿਨ'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਹਫ਼ਤਾ', (PluralCategory.OTHER): '{n} ਹਫ਼ਤੇ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਮਹੀਨਾ', (PluralCategory.OTHER): '{n} ਮਹੀਨੇ']),
+                UnitForms.simpleUnit('{n} ਸਾਲ'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} w'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.simpleUnit('{n} jr'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/nr.json
-    // ================================================================
-    // NR — Southern Ndebele
-    // ================================================================
-    static final AgeLocale NR = new AgeLocale(
-        'nr',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ilanga {n}', (PluralCategory.OTHER): 'amalanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iveke {n}', (PluralCategory.OTHER): 'amaveke {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'iinyanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'unyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
-        ),
-        '{0} nesiquntu',
-        ', ',
-        'Usana olusanda kubeletwa',
-        new Stages(
-            StageLabel.neutral('Usana olusanda kubeletwa'),
-            StageLabel.neutral('Usana'),
-            StageLabel.neutral('Umntwana omncani'),
-            StageLabel.neutral('Umntwana'),
-            StageLabel.neutral('Isokana'),
-            StageLabel.neutral('Umuntu omkhulu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ilanga {n}', (PluralCategory.OTHER): 'amal. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iveke {n}', (PluralCategory.OTHER): 'amav. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iny. {n}', (PluralCategory.OTHER): 'iiny. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'uny. {n}', (PluralCategory.OTHER): 'imin. {n}']),
-            null,
+    private static AgeLocale _pis() {
+        new AgeLocale(
+            'pis',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} dei'),
+                UnitForms.simpleUnit('{n} wik'),
+                UnitForms.simpleUnit('{n} manis'),
+                UnitForms.simpleUnit('{n} yia'),
+            ),
+            '{n} en haf',
+            ', ',
+            'Niufala bebi',
+            new Stages(
+                StageLabel.neutral('Niufala bebi'),
+                StageLabel.neutral('Bebi'),
+                StageLabel.neutral('Smol pikinini'),
+                StageLabel.neutral('Pikinini'),
+                StageLabel.neutral('Yangfala'),
+                StageLabel.neutral('Bigfala'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} dei'),
+                UnitForms.simpleUnit('{n} wik'),
+                UnitForms.simpleUnit('{n} man'),
+                UnitForms.simpleUnit('{n} yia'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/nso.json
-    // ================================================================
-    // NSO — Northern Sotho
-    // ================================================================
-    static final AgeLocale NSO = new AgeLocale(
-        'nso',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'letšatši {n}', (PluralCategory.OTHER): 'matšatši {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kgwedi {n}', (PluralCategory.OTHER): 'dikgwedi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngwaga {n}', (PluralCategory.OTHER): 'mengwaga {n}']),
-        ),
-        '{0} le seripagare',
-        ', ',
-        'O sa tšwa belegwa',
-        new Stages(
-            StageLabel.neutral('Lesea le sa tšwa belegwa'),
-            StageLabel.neutral('Lesea'),
-            StageLabel.neutral('Ngwanyana'),
-            StageLabel.neutral('Ngwana'),
-            StageLabel.neutral('Moša'),
-            StageLabel.neutral('Motho yo mogolo'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'letšatši {n}', (PluralCategory.OTHER): 'matšatši {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kgw. {n}', (PluralCategory.OTHER): 'dikgw. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngw. {n}', (PluralCategory.OTHER): 'mengw. {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/nus.json
-    // ================================================================
-    // NUS — Nuer
-    // ================================================================
-    static final AgeLocale NUS = new AgeLocale(
-        'nus',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'cäŋ {n}', (PluralCategory.OTHER): 'cëŋ {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'korɛ {n}', (PluralCategory.OTHER): 'korni {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'pay {n}', (PluralCategory.OTHER): 'pei {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈ni {n}']),
-        ),
-        '{0} ku kel',
-        ', ',
-        'Gaat mä dhiëëth',
-        new Stages(
-            StageLabel.neutral('Gaat mä dhiëëth thiin'),
-            StageLabel.neutral('Gaat'),
-            StageLabel.neutral('Gaat cɛɛk'),
-            StageLabel.neutral('Gaat raan'),
-            StageLabel.neutral('Raan thok'),
-            StageLabel.neutral('Raan dit'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'cäŋ {n}', (PluralCategory.OTHER): 'cëŋ {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kor. {n}', (PluralCategory.OTHER): 'kor. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'pay {n}', (PluralCategory.OTHER): 'pei {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈ni {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ny.json
-    // ================================================================
-    // NY — Chichewa
-    // ================================================================
-    static final AgeLocale NY = new AgeLocale(
-        'ny',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'tsiku {n}', (PluralCategory.OTHER): 'masiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sabata {n}', (PluralCategory.OTHER): 'masabata {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miyezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'zaka {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Wobadwa kumene',
-        new Stages(
-            StageLabel.neutral('Wobadwa kumene'),
-            StageLabel.neutral('Khanda'),
-            StageLabel.neutral('Mwana wamng\'ono'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Mnyamata'),
-            StageLabel.neutral('Munthu wamkulu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'tsiku {n}', (PluralCategory.OTHER): 'mas {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sabata {n}', (PluralCategory.OTHER): 'masab {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miyezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'zaka {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ts {n}', (PluralCategory.OTHER): 'mas {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sab {n}', (PluralCategory.OTHER): 'msb {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mw {n}', (PluralCategory.OTHER): 'miy {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ch {n}', (PluralCategory.OTHER): 'z {n}']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/om.json
-    // ================================================================
-    // OM — Oromo
-    // ================================================================
-    static final AgeLocale OM = new AgeLocale(
-        'om',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'guyyaa {n}', (PluralCategory.OTHER): 'guyyoota {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'torban {n}', (PluralCategory.OTHER): 'torbanota {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ji\'a {n}', (PluralCategory.OTHER): 'ji\'oota {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'waggaa {n}', (PluralCategory.OTHER): 'waggoota {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Dhalate haaraa',
-        new Stages(
-            StageLabel.neutral('Daa\'ima'),
-            StageLabel.neutral('Daa\'ima'),
-            StageLabel.neutral('Ijoollee xiqqaa'),
-            StageLabel.neutral('Ijoollee'),
-            StageLabel.neutral('Dargaggeessa'),
-            StageLabel.neutral('Ga\'eessa'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('gy {n}'),
-            UnitForms.simpleUnit('trb {n}'),
-            UnitForms.simpleUnit('ji {n}'),
-            UnitForms.simpleUnit('wg {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}g'),
-            UnitForms.simpleUnit('{n}t'),
-            UnitForms.simpleUnit('{n}j'),
-            UnitForms.simpleUnit('{n}w'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/or.json
-    // ================================================================
-    // OR — Odia
-    // ================================================================
-    static final AgeLocale OR = new AgeLocale(
-        'or',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ଦିନ', (PluralCategory.OTHER): '{n} ଦିନ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ସପ୍ତାହ', (PluralCategory.OTHER): '{n} ସପ୍ତାହ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ମାସ', (PluralCategory.OTHER): '{n} ମାସ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ବର୍ଷ', (PluralCategory.OTHER): '{n} ବର୍ଷ']),
-        ),
-        '{0}ଅଧା',
-        ', ',
-        'ନବଜାତ',
-        new Stages(
-            StageLabel.neutral('ନବଜାତ'),
-            StageLabel.neutral('ଶିଶୁ'),
-            StageLabel.neutral('ଛୋଟ ପିଲା'),
-            StageLabel.neutral('ପିଲା'),
-            StageLabel.neutral('କିଶୋର'),
-            StageLabel.neutral('ବୟସ୍କ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ଦିନ'),
-            UnitForms.simpleUnit('{n} ସପ୍ତାହ'),
-            UnitForms.simpleUnit('{n} ମାସ'),
-            UnitForms.simpleUnit('{n} ବର୍ଷ'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ଦି'),
-            UnitForms.simpleUnit('{n} ସ'),
-            UnitForms.simpleUnit('{n} ମା'),
-            UnitForms.simpleUnit('{n} ବ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/pa.json
-    // ================================================================
-    // PA — Punjabi
-    // ================================================================
-    static final AgeLocale PA = new AgeLocale(
-        'pa',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਦਿਨ', (PluralCategory.OTHER): '{n} ਦਿਨ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਹਫ਼ਤਾ', (PluralCategory.OTHER): '{n} ਹਫ਼ਤੇ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਮਹੀਨਾ', (PluralCategory.OTHER): '{n} ਮਹੀਨੇ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਸਾਲ', (PluralCategory.OTHER): '{n} ਸਾਲ']),
-        ),
-        'ਸਾਢੇ {n}',
-        ', ',
-        'ਨਵਜੰਮਿਆ',
-        new Stages(
-            StageLabel.gendered('ਨਵਜੰਮਿਆ', 'ਨਵਜੰਮੀ'),
-            StageLabel.neutral('ਸ਼ਿਸ਼ੂ'),
-            StageLabel.gendered('ਛੋਟਾ ਬੱਚਾ', 'ਛੋਟੀ ਬੱਚੀ'),
-            StageLabel.gendered('ਬੱਚਾ', 'ਬੱਚੀ'),
-            StageLabel.gendered('ਕਿਸ਼ੋਰ', 'ਕਿਸ਼ੋਰੀ'),
-            StageLabel.neutral('ਬਾਲਗ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ਦਿਨ'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਹਫ਼ਤਾ', (PluralCategory.OTHER): '{n} ਹਫ਼ਤੇ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਮਹੀਨਾ', (PluralCategory.OTHER): '{n} ਮਹੀਨੇ']),
-            UnitForms.simpleUnit('{n} ਸਾਲ'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ਦਿਨ'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਹਫ਼ਤਾ', (PluralCategory.OTHER): '{n} ਹਫ਼ਤੇ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ਮਹੀਨਾ', (PluralCategory.OTHER): '{n} ਮਹੀਨੇ']),
-            UnitForms.simpleUnit('{n} ਸਾਲ'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/pis.json
-    // ================================================================
-    // PIS — Pijin
-    // ================================================================
-    static final AgeLocale PIS = new AgeLocale(
-        'pis',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} dei'),
-            UnitForms.simpleUnit('{n} wik'),
-            UnitForms.simpleUnit('{n} manis'),
-            UnitForms.simpleUnit('{n} yia'),
-        ),
-        '{n} en haf',
-        ', ',
-        'Niufala bebi',
-        new Stages(
-            StageLabel.neutral('Niufala bebi'),
-            StageLabel.neutral('Bebi'),
-            StageLabel.neutral('Smol pikinini'),
-            StageLabel.neutral('Pikinini'),
-            StageLabel.neutral('Yangfala'),
-            StageLabel.neutral('Bigfala'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} dei'),
-            UnitForms.simpleUnit('{n} wik'),
-            UnitForms.simpleUnit('{n} man'),
-            UnitForms.simpleUnit('{n} yia'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/pl.json
-    // ================================================================
-    // PL — Polish
-    // ================================================================
-    static final AgeLocale PL = new AgeLocale(
-        'pl',
-        { int n ->
+    private static AgeLocale _pl() {
+        new AgeLocale(
+            'pl',
+            { int n ->
             if (n == 1) return PluralCategory.ONE
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.FEW
             return PluralCategory.MANY
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dzień', (PluralCategory.FEW): '{n} dni', (PluralCategory.MANY): '{n} dni', (PluralCategory.OTHER): '{n} dni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} tydzień', (PluralCategory.FEW): '{n} tygodnie', (PluralCategory.MANY): '{n} tygodni', (PluralCategory.OTHER): '{n} tygodni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} miesiąc', (PluralCategory.FEW): '{n} miesiące', (PluralCategory.MANY): '{n} miesięcy', (PluralCategory.OTHER): '{n} miesięcy']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} lata', (PluralCategory.MANY): '{n} lat', (PluralCategory.OTHER): '{n} lat']),
-        ),
-        '{n} i pół',
-        ', ',
-        'Noworodek',
-        new Stages(
-            StageLabel.neutral('Noworodek'),
-            StageLabel.neutral('Niemowlę'),
-            StageLabel.neutral('Maluch'),
-            StageLabel.neutral('Dziecko'),
-            StageLabel.gendered('Nastolatek', 'Nastolatka'),
-            StageLabel.gendered('Dorosły', 'Dorosła'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dzień', (PluralCategory.FEW): '{n} dni', (PluralCategory.MANY): '{n} dni', (PluralCategory.OTHER): '{n} dnia']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} tydz.', (PluralCategory.FEW): '{n} tyg.', (PluralCategory.MANY): '{n} tyg.', (PluralCategory.OTHER): '{n} tyg.']),
-            UnitForms.simpleUnit('{n} mies.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} lata', (PluralCategory.MANY): '{n} lat', (PluralCategory.OTHER): '{n} roku']),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dzień', (PluralCategory.FEW): '{n} dni', (PluralCategory.MANY): '{n} dni', (PluralCategory.OTHER): '{n} dni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} tydzień', (PluralCategory.FEW): '{n} tygodnie', (PluralCategory.MANY): '{n} tygodni', (PluralCategory.OTHER): '{n} tygodni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} miesiąc', (PluralCategory.FEW): '{n} miesiące', (PluralCategory.MANY): '{n} miesięcy', (PluralCategory.OTHER): '{n} miesięcy']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} lata', (PluralCategory.MANY): '{n} lat', (PluralCategory.OTHER): '{n} lat']),
+            ),
+            '{n} i pół',
+            ', ',
+            'Noworodek',
+            new Stages(
+                StageLabel.neutral('Noworodek'),
+                StageLabel.neutral('Niemowlę'),
+                StageLabel.neutral('Maluch'),
+                StageLabel.neutral('Dziecko'),
+                StageLabel.gendered('Nastolatek', 'Nastolatka'),
+                StageLabel.gendered('Dorosły', 'Dorosła'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dzień', (PluralCategory.FEW): '{n} dni', (PluralCategory.MANY): '{n} dni', (PluralCategory.OTHER): '{n} dnia']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} tydz.', (PluralCategory.FEW): '{n} tyg.', (PluralCategory.MANY): '{n} tyg.', (PluralCategory.OTHER): '{n} tyg.']),
+                UnitForms.simpleUnit('{n} mies.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} lata', (PluralCategory.MANY): '{n} lat', (PluralCategory.OTHER): '{n} roku']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} t.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} m-c', (PluralCategory.FEW): '{n} m-ce', (PluralCategory.MANY): '{n} m-cy', (PluralCategory.OTHER): '{n} m-ca']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} r.', (PluralCategory.FEW): '{n} l.', (PluralCategory.MANY): '{n} l.', (PluralCategory.OTHER): '{n} r.']),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} t.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} m-c', (PluralCategory.FEW): '{n} m-ce', (PluralCategory.MANY): '{n} m-cy', (PluralCategory.OTHER): '{n} m-ca']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} r.', (PluralCategory.FEW): '{n} l.', (PluralCategory.MANY): '{n} l.', (PluralCategory.OTHER): '{n} r.']),
+        )
+    }
+
+    private static AgeLocale _pov() {
+        new AgeLocale(
+            'pov',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} dia'),
+                UnitForms.simpleUnit('{n} simana'),
+                UnitForms.simpleUnit('{n} mis'),
+                UnitForms.simpleUnit('{n} anu'),
+            ),
+            '{0} i meiu',
+            ', ',
+            'Mininu kaba di nasi',
+            new Stages(
+                StageLabel.neutral('Mininu nobu'),
+                StageLabel.neutral('Bebi'),
+                StageLabel.neutral('Mininu pikiñu'),
+                StageLabel.neutral('Mininu'),
+                StageLabel.neutral('Rapas'),
+                StageLabel.neutral('Omi garandi'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} dia'),
+                UnitForms.simpleUnit('{n} sim'),
+                UnitForms.simpleUnit('{n} mis'),
+                UnitForms.simpleUnit('{n} anu'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} dia'),
+                UnitForms.simpleUnit('{n} sim'),
+                UnitForms.simpleUnit('{n} mis'),
+                UnitForms.simpleUnit('{n} anu'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ps() {
+        new AgeLocale(
+            'ps',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ورځ', (PluralCategory.OTHER): '{n} ورځې']),
+                UnitForms.simpleUnit('{n} اونۍ'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مياشت', (PluralCategory.OTHER): '{n} مياشتې']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} کال', (PluralCategory.OTHER): '{n} کالونه']),
+            ),
             '{n}½',
-            '',
+            '، ',
+            'نوي زېږېدلی',
+            new Stages(
+                StageLabel.neutral('نوزېږی'),
+                StageLabel.neutral('ماشوم'),
+                StageLabel.neutral('وړکوټی'),
+                StageLabel.neutral('ماشوم'),
+                StageLabel.neutral('ځوان'),
+                StageLabel.neutral('لوی'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ورځ', (PluralCategory.OTHER): '{n} ورځې']),
+                UnitForms.simpleUnit('{n} اونۍ'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مياشت', (PluralCategory.OTHER): '{n} مياشتې']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} کال', (PluralCategory.OTHER): '{n} کالونه']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} و'),
+                UnitForms.simpleUnit('{n} او'),
+                UnitForms.simpleUnit('{n} م'),
+                UnitForms.simpleUnit('{n} ک'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/pov.json
-    // ================================================================
-    // POV — Guinea-Bissau Creole
-    // ================================================================
-    static final AgeLocale POV = new AgeLocale(
-        'pov',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} dia'),
-            UnitForms.simpleUnit('{n} simana'),
-            UnitForms.simpleUnit('{n} mis'),
-            UnitForms.simpleUnit('{n} anu'),
-        ),
-        '{0} i meiu',
-        ', ',
-        'Mininu kaba di nasi',
-        new Stages(
-            StageLabel.neutral('Mininu nobu'),
-            StageLabel.neutral('Bebi'),
-            StageLabel.neutral('Mininu pikiñu'),
-            StageLabel.neutral('Mininu'),
-            StageLabel.neutral('Rapas'),
-            StageLabel.neutral('Omi garandi'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} dia'),
-            UnitForms.simpleUnit('{n} sim'),
-            UnitForms.simpleUnit('{n} mis'),
-            UnitForms.simpleUnit('{n} anu'),
-            null,
+    private static AgeLocale _pt() {
+        new AgeLocale(
+            'pt',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dias']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} semana', (PluralCategory.OTHER): '{n} semanas']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mês', (PluralCategory.OTHER): '{n} meses']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
+            ),
+            '{0} e meio',
+            ', ',
+            'Recém-nascido',
+            new Stages(
+                StageLabel.gendered('Recém-nascido', 'Recém-nascida'),
+                StageLabel.neutral('Bebê'),
+                StageLabel.neutral('Criança pequena'),
+                StageLabel.neutral('Criança'),
+                StageLabel.neutral('Adolescente'),
+                StageLabel.gendered('Adulto', 'Adulta'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dias']),
+                UnitForms.simpleUnit('{n} sem.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mês', (PluralCategory.OTHER): '{n} meses']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dias']),
+                UnitForms.simpleUnit('{n} sem.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mês', (PluralCategory.OTHER): '{n} meses']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} dia'),
-            UnitForms.simpleUnit('{n} sim'),
-            UnitForms.simpleUnit('{n} mis'),
-            UnitForms.simpleUnit('{n} anu'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ps.json
-    // ================================================================
-    // PS — Pashto
-    // ================================================================
-    static final AgeLocale PS = new AgeLocale(
-        'ps',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ورځ', (PluralCategory.OTHER): '{n} ورځې']),
-            UnitForms.simpleUnit('{n} اونۍ'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مياشت', (PluralCategory.OTHER): '{n} مياشتې']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} کال', (PluralCategory.OTHER): '{n} کالونه']),
-        ),
-        '{n}½',
-        '، ',
-        'نوي زېږېدلی',
-        new Stages(
-            StageLabel.neutral('نوزېږی'),
-            StageLabel.neutral('ماشوم'),
-            StageLabel.neutral('وړکوټی'),
-            StageLabel.neutral('ماشوم'),
-            StageLabel.neutral('ځوان'),
-            StageLabel.neutral('لوی'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ورځ', (PluralCategory.OTHER): '{n} ورځې']),
-            UnitForms.simpleUnit('{n} اونۍ'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مياشت', (PluralCategory.OTHER): '{n} مياشتې']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} کال', (PluralCategory.OTHER): '{n} کالونه']),
-            null,
+    private static AgeLocale _qu() {
+        new AgeLocale(
+            'qu',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} p\'unchaw'),
+                UnitForms.simpleUnit('{n} simana'),
+                UnitForms.simpleUnit('{n} killa'),
+                UnitForms.simpleUnit('{n} wata'),
+            ),
+            '{0} khuskannin',
+            ', ',
+            'Musuq wawa',
+            new Stages(
+                StageLabel.neutral('Musuq wawa'),
+                StageLabel.neutral('Wawa'),
+                StageLabel.neutral('Irqi'),
+                StageLabel.neutral('Warma'),
+                StageLabel.neutral('Wayna'),
+                StageLabel.neutral('Runa'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} p\'un'),
+                UnitForms.simpleUnit('{n} sim'),
+                UnitForms.simpleUnit('{n} kil'),
+                UnitForms.simpleUnit('{n} wat'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} و'),
-            UnitForms.simpleUnit('{n} او'),
-            UnitForms.simpleUnit('{n} م'),
-            UnitForms.simpleUnit('{n} ک'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/pt.json
-    // ================================================================
-    // PT — Portuguese
-    // ================================================================
-    static final AgeLocale PT = new AgeLocale(
-        'pt',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dias']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} semana', (PluralCategory.OTHER): '{n} semanas']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mês', (PluralCategory.OTHER): '{n} meses']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
-        ),
-        '{0} e meio',
-        ', ',
-        'Recém-nascido',
-        new Stages(
-            StageLabel.gendered('Recém-nascido', 'Recém-nascida'),
-            StageLabel.neutral('Bebê'),
-            StageLabel.neutral('Criança pequena'),
-            StageLabel.neutral('Criança'),
-            StageLabel.neutral('Adolescente'),
-            StageLabel.gendered('Adulto', 'Adulta'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dias']),
-            UnitForms.simpleUnit('{n} sem.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mês', (PluralCategory.OTHER): '{n} meses']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
-            null,
+    private static AgeLocale _quc() {
+        new AgeLocale(
+            'quc',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} q\'ij'),
+                UnitForms.simpleUnit('{n} wuqq\'ij'),
+                UnitForms.simpleUnit('{n} ik\''),
+                UnitForms.simpleUnit('{n} junab\''),
+            ),
+            '{0} nik\'aj',
+            ', ',
+            'K\'ak\'a alaj',
+            new Stages(
+                StageLabel.neutral('K\'ak\'a alaj'),
+                StageLabel.neutral('Alaj ak\'al'),
+                StageLabel.neutral('Ak\'al'),
+                StageLabel.neutral('Ak\'al'),
+                StageLabel.neutral('K\'ajol'),
+                StageLabel.neutral('Achi'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} q\'ij'),
+                UnitForms.simpleUnit('{n} wuqq\'ij'),
+                UnitForms.simpleUnit('{n} ik\''),
+                UnitForms.simpleUnit('{n} jun.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dia', (PluralCategory.OTHER): '{n} dias']),
-            UnitForms.simpleUnit('{n} sem.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mês', (PluralCategory.OTHER): '{n} meses']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ano', (PluralCategory.OTHER): '{n} anos']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/qu.json
-    // ================================================================
-    // QU — Quechua
-    // ================================================================
-    static final AgeLocale QU = new AgeLocale(
-        'qu',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} p\'unchaw'),
-            UnitForms.simpleUnit('{n} simana'),
-            UnitForms.simpleUnit('{n} killa'),
-            UnitForms.simpleUnit('{n} wata'),
-        ),
-        '{0} khuskannin',
-        ', ',
-        'Musuq wawa',
-        new Stages(
-            StageLabel.neutral('Musuq wawa'),
-            StageLabel.neutral('Wawa'),
-            StageLabel.neutral('Irqi'),
-            StageLabel.neutral('Warma'),
-            StageLabel.neutral('Wayna'),
-            StageLabel.neutral('Runa'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} p\'un'),
-            UnitForms.simpleUnit('{n} sim'),
-            UnitForms.simpleUnit('{n} kil'),
-            UnitForms.simpleUnit('{n} wat'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/quc.json
-    // ================================================================
-    // QUC — K'iche'
-    // ================================================================
-    static final AgeLocale QUC = new AgeLocale(
-        'quc',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} q\'ij'),
-            UnitForms.simpleUnit('{n} wuqq\'ij'),
-            UnitForms.simpleUnit('{n} ik\''),
-            UnitForms.simpleUnit('{n} junab\''),
-        ),
-        '{0} nik\'aj',
-        ', ',
-        'K\'ak\'a alaj',
-        new Stages(
-            StageLabel.neutral('K\'ak\'a alaj'),
-            StageLabel.neutral('Alaj ak\'al'),
-            StageLabel.neutral('Ak\'al'),
-            StageLabel.neutral('Ak\'al'),
-            StageLabel.neutral('K\'ajol'),
-            StageLabel.neutral('Achi'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} q\'ij'),
-            UnitForms.simpleUnit('{n} wuqq\'ij'),
-            UnitForms.simpleUnit('{n} ik\''),
-            UnitForms.simpleUnit('{n} jun.'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ro.json
-    // ================================================================
-    // RO — Romanian
-    // ================================================================
-    static final AgeLocale RO = new AgeLocale(
-        'ro',
-        { int n ->
+    private static AgeLocale _ro() {
+        new AgeLocale(
+            'ro',
+            { int n ->
             if (n == 1) return PluralCategory.ONE
             if (n == 0 || (n % 100 >= 1 && n % 100 <= 19)) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} zi', (PluralCategory.FEW): '{n} zile', (PluralCategory.OTHER): '{n} de zile']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} săptămână', (PluralCategory.FEW): '{n} săptămâni', (PluralCategory.OTHER): '{n} de săptămâni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} lună', (PluralCategory.FEW): '{n} luni', (PluralCategory.OTHER): '{n} de luni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.FEW): '{n} ani', (PluralCategory.OTHER): '{n} de ani']),
-        ),
-        '{0} și jumătate',
-        ', ',
-        'Nou-născut',
-        new Stages(
-            StageLabel.gendered('Nou-născut', 'Nou-născută'),
-            StageLabel.neutral('Sugar'),
-            StageLabel.neutral('Copil mic'),
-            StageLabel.neutral('Copil'),
-            StageLabel.gendered('Adolescent', 'Adolescentă'),
-            StageLabel.gendered('Adult', 'Adultă'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} zi', (PluralCategory.FEW): '{n} zile', (PluralCategory.OTHER): '{n} zile']),
-            UnitForms.simpleUnit('{n} săpt.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} lună', (PluralCategory.FEW): '{n} luni', (PluralCategory.OTHER): '{n} luni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.FEW): '{n} ani', (PluralCategory.OTHER): '{n} ani']),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} zi', (PluralCategory.FEW): '{n} zile', (PluralCategory.OTHER): '{n} de zile']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} săptămână', (PluralCategory.FEW): '{n} săptămâni', (PluralCategory.OTHER): '{n} de săptămâni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} lună', (PluralCategory.FEW): '{n} luni', (PluralCategory.OTHER): '{n} de luni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.FEW): '{n} ani', (PluralCategory.OTHER): '{n} de ani']),
+            ),
+            '{0} și jumătate',
+            ', ',
+            'Nou-născut',
+            new Stages(
+                StageLabel.gendered('Nou-născut', 'Nou-născută'),
+                StageLabel.neutral('Sugar'),
+                StageLabel.neutral('Copil mic'),
+                StageLabel.neutral('Copil'),
+                StageLabel.gendered('Adolescent', 'Adolescentă'),
+                StageLabel.gendered('Adult', 'Adultă'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} zi', (PluralCategory.FEW): '{n} zile', (PluralCategory.OTHER): '{n} zile']),
+                UnitForms.simpleUnit('{n} săpt.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} lună', (PluralCategory.FEW): '{n} luni', (PluralCategory.OTHER): '{n} luni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} an', (PluralCategory.FEW): '{n} ani', (PluralCategory.OTHER): '{n} ani']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} z'),
+                UnitForms.simpleUnit('{n} săpt.'),
+                UnitForms.simpleUnit('{n} l'),
+                UnitForms.simpleUnit('{n} a'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} z'),
-            UnitForms.simpleUnit('{n} săpt.'),
-            UnitForms.simpleUnit('{n} l'),
-            UnitForms.simpleUnit('{n} a'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ru.json
-    // ================================================================
-    // RU — Russian
-    // ================================================================
-    static final AgeLocale RU = new AgeLocale(
-        'ru',
-        { int n ->
+    private static AgeLocale _ru() {
+        new AgeLocale(
+            'ru',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1 && mod100 != 11) return PluralCategory.ONE
             if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.FEW
             return PluralCategory.MANY
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} день', (PluralCategory.FEW): '{n} дня', (PluralCategory.MANY): '{n} дней', (PluralCategory.OTHER): '{n} дней']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} неделя', (PluralCategory.FEW): '{n} недели', (PluralCategory.MANY): '{n} недель', (PluralCategory.OTHER): '{n} недель']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месяц', (PluralCategory.FEW): '{n} месяца', (PluralCategory.MANY): '{n} месяцев', (PluralCategory.OTHER): '{n} месяцев']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} года', (PluralCategory.MANY): '{n} лет', (PluralCategory.OTHER): '{n} лет']),
-        ),
-        '{n} с половиной',
-        ', ',
-        'Новорождённый',
-        new Stages(
-            StageLabel.gendered('Новорождённый', 'Новорождённая'),
-            StageLabel.neutral('Младенец'),
-            StageLabel.gendered('Малыш', 'Малышка'),
-            StageLabel.neutral('Ребёнок'),
-            StageLabel.neutral('Подросток'),
-            StageLabel.gendered('Взрослый', 'Взрослая'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} дн.'),
-            UnitForms.simpleUnit('{n} нед.'),
-            UnitForms.simpleUnit('{n} мес.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} л.', (PluralCategory.OTHER): '{n} г.']),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} день', (PluralCategory.FEW): '{n} дня', (PluralCategory.MANY): '{n} дней', (PluralCategory.OTHER): '{n} дней']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} неделя', (PluralCategory.FEW): '{n} недели', (PluralCategory.MANY): '{n} недель', (PluralCategory.OTHER): '{n} недель']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месяц', (PluralCategory.FEW): '{n} месяца', (PluralCategory.MANY): '{n} месяцев', (PluralCategory.OTHER): '{n} месяцев']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} года', (PluralCategory.MANY): '{n} лет', (PluralCategory.OTHER): '{n} лет']),
+            ),
+            '{n} с половиной',
+            ', ',
+            'Новорождённый',
+            new Stages(
+                StageLabel.gendered('Новорождённый', 'Новорождённая'),
+                StageLabel.neutral('Младенец'),
+                StageLabel.gendered('Малыш', 'Малышка'),
+                StageLabel.neutral('Ребёнок'),
+                StageLabel.neutral('Подросток'),
+                StageLabel.gendered('Взрослый', 'Взрослая'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} дн.'),
+                UnitForms.simpleUnit('{n} нед.'),
+                UnitForms.simpleUnit('{n} мес.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} л.', (PluralCategory.OTHER): '{n} г.']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} д.'),
+                UnitForms.simpleUnit('{n} н.'),
+                UnitForms.simpleUnit('{n} м.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} л.', (PluralCategory.OTHER): '{n} г.']),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} д.'),
-            UnitForms.simpleUnit('{n} н.'),
-            UnitForms.simpleUnit('{n} м.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} г.', (PluralCategory.FEW): '{n} г.', (PluralCategory.MANY): '{n} л.', (PluralCategory.OTHER): '{n} г.']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/rw.json
-    // ================================================================
-    // RW — Kinyarwanda
-    // ================================================================
-    static final AgeLocale RW = new AgeLocale(
-        'rw',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umunsi {n}', (PluralCategory.OTHER): 'iminsi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'icyumweru {n}', (PluralCategory.OTHER): 'ibyumweru {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ukwezi {n}', (PluralCategory.OTHER): 'amezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umwaka {n}', (PluralCategory.OTHER): 'imyaka {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Avutse',
-        new Stages(
-            StageLabel.neutral('Uruhinja'),
-            StageLabel.neutral('Uruhinja'),
-            StageLabel.neutral('Umwana muto'),
-            StageLabel.neutral('Umwana'),
-            StageLabel.neutral('Umusore'),
-            StageLabel.neutral('Umuntu mukuru'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('mns {n}'),
-            UnitForms.simpleUnit('cyu {n}'),
-            UnitForms.simpleUnit('kwe {n}'),
-            UnitForms.simpleUnit('mwk {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}c'),
-            UnitForms.simpleUnit('{n}k'),
-            UnitForms.simpleUnit('{n}u'),
+    private static AgeLocale _rw() {
+        new AgeLocale(
+            'rw',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umunsi {n}', (PluralCategory.OTHER): 'iminsi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'icyumweru {n}', (PluralCategory.OTHER): 'ibyumweru {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ukwezi {n}', (PluralCategory.OTHER): 'amezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umwaka {n}', (PluralCategory.OTHER): 'imyaka {n}']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Avutse',
+            new Stages(
+                StageLabel.neutral('Uruhinja'),
+                StageLabel.neutral('Uruhinja'),
+                StageLabel.neutral('Umwana muto'),
+                StageLabel.neutral('Umwana'),
+                StageLabel.neutral('Umusore'),
+                StageLabel.neutral('Umuntu mukuru'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('mns {n}'),
+                UnitForms.simpleUnit('cyu {n}'),
+                UnitForms.simpleUnit('kwe {n}'),
+                UnitForms.simpleUnit('mwk {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}c'),
+                UnitForms.simpleUnit('{n}k'),
+                UnitForms.simpleUnit('{n}u'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sar.json
-    // ================================================================
-    // SAR — Sara
-    // ================================================================
-    static final AgeLocale SAR = new AgeLocale(
-        'sar',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('ndɔ {n}'),
-            UnitForms.simpleUnit('lɔtɛ {n}'),
-            UnitForms.simpleUnit('ndɔɔ {n}'),
-            UnitForms.simpleUnit('bɛɛ {n}'),
-        ),
-        '{0} kɩ̀ ndá̰ŋ',
-        ', ',
-        'Gɔ dɔɔ ya',
-        new Stages(
-            StageLabel.neutral('Gɔ dɔɔ ya'),
-            StageLabel.neutral('Gɔ'),
-            StageLabel.neutral('Gɔ njè'),
-            StageLabel.neutral('Gɔ'),
-            StageLabel.neutral('Kàw'),
-            StageLabel.neutral('Dèē'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ndɔ {n}'),
-            UnitForms.simpleUnit('lɔtɛ {n}'),
-            UnitForms.simpleUnit('ndɔɔ {n}'),
-            UnitForms.simpleUnit('bɛɛ {n}'),
-            null,
+    private static AgeLocale _sar() {
+        new AgeLocale(
+            'sar',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('ndɔ {n}'),
+                UnitForms.simpleUnit('lɔtɛ {n}'),
+                UnitForms.simpleUnit('ndɔɔ {n}'),
+                UnitForms.simpleUnit('bɛɛ {n}'),
+            ),
+            '{0} kɩ̀ ndá̰ŋ',
+            ', ',
+            'Gɔ dɔɔ ya',
+            new Stages(
+                StageLabel.neutral('Gɔ dɔɔ ya'),
+                StageLabel.neutral('Gɔ'),
+                StageLabel.neutral('Gɔ njè'),
+                StageLabel.neutral('Gɔ'),
+                StageLabel.neutral('Kàw'),
+                StageLabel.neutral('Dèē'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ndɔ {n}'),
+                UnitForms.simpleUnit('lɔtɛ {n}'),
+                UnitForms.simpleUnit('ndɔɔ {n}'),
+                UnitForms.simpleUnit('bɛɛ {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
+        )
+    }
+
+    private static AgeLocale _sd() {
+        new AgeLocale(
+            'sd',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ڏينهن'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} هفتو', (PluralCategory.OTHER): '{n} هفتا']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مهينو', (PluralCategory.OTHER): '{n} مهينا']),
+                UnitForms.simpleUnit('{n} سال'),
+            ),
             '{n}½',
-            '',
+            '، ',
+            'نئون ڄائو',
+            new Stages(
+                StageLabel.neutral('نئون ڄائو'),
+                StageLabel.neutral('ننڍو ٻار'),
+                StageLabel.neutral('ننڍو ٻار'),
+                StageLabel.neutral('ٻار'),
+                StageLabel.neutral('نوجوان'),
+                StageLabel.neutral('وڏو'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ڏينهن'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} هفتو', (PluralCategory.OTHER): '{n} هفتا']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مهينو', (PluralCategory.OTHER): '{n} مهينا']),
+                UnitForms.simpleUnit('{n} سال'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ڏ'),
+                UnitForms.simpleUnit('{n} ه'),
+                UnitForms.simpleUnit('{n} م'),
+                UnitForms.simpleUnit('{n} س'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sd.json
-    // ================================================================
-    // SD — Sindhi
-    // ================================================================
-    static final AgeLocale SD = new AgeLocale(
-        'sd',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ڏينهن'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} هفتو', (PluralCategory.OTHER): '{n} هفتا']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مهينو', (PluralCategory.OTHER): '{n} مهينا']),
-            UnitForms.simpleUnit('{n} سال'),
-        ),
-        '{n}½',
-        '، ',
-        'نئون ڄائو',
-        new Stages(
-            StageLabel.neutral('نئون ڄائو'),
-            StageLabel.neutral('ننڍو ٻار'),
-            StageLabel.neutral('ننڍو ٻار'),
-            StageLabel.neutral('ٻار'),
-            StageLabel.neutral('نوجوان'),
-            StageLabel.neutral('وڏو'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ڏينهن'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} هفتو', (PluralCategory.OTHER): '{n} هفتا']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مهينو', (PluralCategory.OTHER): '{n} مهينا']),
-            UnitForms.simpleUnit('{n} سال'),
-            null,
+    private static AgeLocale _sg() {
+        new AgeLocale(
+            'sg',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('lâ {n}'),
+                UnitForms.simpleUnit('bîkua-ûse {n}'),
+                UnitForms.simpleUnit('nze {n}'),
+                UnitForms.simpleUnit('ngû {n}'),
+            ),
+            '{0} na ndâ',
+            ', ',
+            'A duti tî dûngö',
+            new Stages(
+                StageLabel.neutral('Molengê tî dûngö'),
+                StageLabel.neutral('Molengê kêtê'),
+                StageLabel.neutral('Molengê'),
+                StageLabel.neutral('Wan'),
+                StageLabel.neutral('Kôlï-wa'),
+                StageLabel.neutral('Kôlï'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('lâ {n}'),
+                UnitForms.simpleUnit('bîk. {n}'),
+                UnitForms.simpleUnit('nze {n}'),
+                UnitForms.simpleUnit('ngû {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ڏ'),
-            UnitForms.simpleUnit('{n} ه'),
-            UnitForms.simpleUnit('{n} م'),
-            UnitForms.simpleUnit('{n} س'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sg.json
-    // ================================================================
-    // SG — Sango
-    // ================================================================
-    static final AgeLocale SG = new AgeLocale(
-        'sg',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('lâ {n}'),
-            UnitForms.simpleUnit('bîkua-ûse {n}'),
-            UnitForms.simpleUnit('nze {n}'),
-            UnitForms.simpleUnit('ngû {n}'),
-        ),
-        '{0} na ndâ',
-        ', ',
-        'A duti tî dûngö',
-        new Stages(
-            StageLabel.neutral('Molengê tî dûngö'),
-            StageLabel.neutral('Molengê kêtê'),
-            StageLabel.neutral('Molengê'),
-            StageLabel.neutral('Wan'),
-            StageLabel.neutral('Kôlï-wa'),
-            StageLabel.neutral('Kôlï'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('lâ {n}'),
-            UnitForms.simpleUnit('bîk. {n}'),
-            UnitForms.simpleUnit('nze {n}'),
-            UnitForms.simpleUnit('ngû {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/shi.json
-    // ================================================================
-    // SHI — Tachelhit
-    // ================================================================
-    static final AgeLocale SHI = new AgeLocale(
-        'shi',
-        { int n ->
+    private static AgeLocale _shi() {
+        new AgeLocale(
+            'shi',
+            { int n ->
             if (n == 0 || n == 1) return PluralCategory.ONE
             if (n >= 2 && n <= 10) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ass', (PluralCategory.FEW): '{n} ussan', (PluralCategory.OTHER): '{n} ass']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} imalass', (PluralCategory.FEW): '{n} imalassn', (PluralCategory.OTHER): '{n} imalass']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ayyur', (PluralCategory.FEW): '{n} ayyurn', (PluralCategory.OTHER): '{n} ayyur']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} aseggas', (PluralCategory.FEW): '{n} iseggasen', (PluralCategory.OTHER): '{n} aseggas']),
-        ),
-        '{0} d uzgen',
-        ', ',
-        'Iɣ d illul',
-        new Stages(
-            StageLabel.neutral('Iɣ d illul'),
-            StageLabel.neutral('Agellid'),
-            StageLabel.gendered('Aḥenjir', 'Taḥenjirt'),
-            StageLabel.gendered('Afrux', 'Tafruxṭ'),
-            StageLabel.gendered('Aɛrim', 'Taɛrimt'),
-            StageLabel.gendered('Argaz', 'Tamṭṭuṭ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} wk'),
-            UnitForms.simpleUnit('{n} mo'),
-            UnitForms.simpleUnit('{n} yr'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ass', (PluralCategory.FEW): '{n} ussan', (PluralCategory.OTHER): '{n} ass']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} imalass', (PluralCategory.FEW): '{n} imalassn', (PluralCategory.OTHER): '{n} imalass']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ayyur', (PluralCategory.FEW): '{n} ayyurn', (PluralCategory.OTHER): '{n} ayyur']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} aseggas', (PluralCategory.FEW): '{n} iseggasen', (PluralCategory.OTHER): '{n} aseggas']),
+            ),
+            '{0} d uzgen',
+            ', ',
+            'Iɣ d illul',
+            new Stages(
+                StageLabel.neutral('Iɣ d illul'),
+                StageLabel.neutral('Agellid'),
+                StageLabel.gendered('Aḥenjir', 'Taḥenjirt'),
+                StageLabel.gendered('Afrux', 'Tafruxṭ'),
+                StageLabel.gendered('Aɛrim', 'Taɛrimt'),
+                StageLabel.gendered('Argaz', 'Tamṭṭuṭ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} wk'),
+                UnitForms.simpleUnit('{n} mo'),
+                UnitForms.simpleUnit('{n} yr'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/shn.json
-    // ================================================================
-    // SHN — Shan
-    // ================================================================
-    static final AgeLocale SHN = new AgeLocale(
-        'shn',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ဝၼ်း'),
-            UnitForms.simpleUnit('{n} ဝူင်ႈ'),
-            UnitForms.simpleUnit('{n} လိူၼ်'),
-            UnitForms.simpleUnit('{n} ပီ'),
-        ),
-        '{0}ၶိုင်ႈ',
-        ' ',
-        'ၶဝ်ႈမႃး',
-        new Stages(
-            StageLabel.neutral('ၶဝ်ႈမႃး'),
-            StageLabel.neutral('လုၵ်ႈဢွၼ်ႇ'),
-            StageLabel.neutral('လုၵ်ႈဢွၼ်ႇ'),
-            StageLabel.neutral('လုၵ်ႈဢွၼ်ႇ'),
-            StageLabel.neutral('ၵူၼ်းၼုမ်ႇ'),
-            StageLabel.neutral('ၵူၼ်းလူင်'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ဝၼ်း'),
-            UnitForms.simpleUnit('{n} ဝူင်ႈ'),
-            UnitForms.simpleUnit('{n} လိူၼ်'),
-            UnitForms.simpleUnit('{n} ပီ'),
-            null,
+    private static AgeLocale _shn() {
+        new AgeLocale(
+            'shn',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ဝၼ်း'),
+                UnitForms.simpleUnit('{n} ဝူင်ႈ'),
+                UnitForms.simpleUnit('{n} လိူၼ်'),
+                UnitForms.simpleUnit('{n} ပီ'),
+            ),
+            '{0}ၶိုင်ႈ',
+            ' ',
+            'ၶဝ်ႈမႃး',
+            new Stages(
+                StageLabel.neutral('ၶဝ်ႈမႃး'),
+                StageLabel.neutral('လုၵ်ႈဢွၼ်ႇ'),
+                StageLabel.neutral('လုၵ်ႈဢွၼ်ႇ'),
+                StageLabel.neutral('လုၵ်ႈဢွၼ်ႇ'),
+                StageLabel.neutral('ၵူၼ်းၼုမ်ႇ'),
+                StageLabel.neutral('ၵူၼ်းလူင်'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ဝၼ်း'),
+                UnitForms.simpleUnit('{n} ဝူင်ႈ'),
+                UnitForms.simpleUnit('{n} လိူၼ်'),
+                UnitForms.simpleUnit('{n} ပီ'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/si.json
-    // ================================================================
-    // SI — Sinhala
-    // ================================================================
-    static final AgeLocale SI = new AgeLocale(
-        'si',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'දින {n}', (PluralCategory.OTHER): 'දින {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'සති {n}', (PluralCategory.OTHER): 'සති {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'මාස {n}', (PluralCategory.OTHER): 'මාස {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'වසර {n}', (PluralCategory.OTHER): 'වසර {n}']),
-        ),
-        '{0}යි භාගයයි',
-        ', ',
-        'අලුත උපන්',
-        new Stages(
-            StageLabel.neutral('අලුත උපන්'),
-            StageLabel.neutral('බිළිඳා'),
-            StageLabel.neutral('ගමන් යන දරුවා'),
-            StageLabel.neutral('ළමයා'),
-            StageLabel.neutral('නව යොවුන්'),
-            StageLabel.neutral('වැඩිහිටි'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('දින {n}'),
-            UnitForms.simpleUnit('සති {n}'),
-            UnitForms.simpleUnit('මාස {n}'),
-            UnitForms.simpleUnit('වසර {n}'),
-            null,
+    private static AgeLocale _si() {
+        new AgeLocale(
+            'si',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'දින {n}', (PluralCategory.OTHER): 'දින {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'සති {n}', (PluralCategory.OTHER): 'සති {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'මාස {n}', (PluralCategory.OTHER): 'මාස {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'වසර {n}', (PluralCategory.OTHER): 'වසර {n}']),
+            ),
+            '{0}යි භාගයයි',
+            ', ',
+            'අලුත උපන්',
+            new Stages(
+                StageLabel.neutral('අලුත උපන්'),
+                StageLabel.neutral('බිළිඳා'),
+                StageLabel.neutral('ගමන් යන දරුවා'),
+                StageLabel.neutral('ළමයා'),
+                StageLabel.neutral('නව යොවුන්'),
+                StageLabel.neutral('වැඩිහිටි'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('දින {n}'),
+                UnitForms.simpleUnit('සති {n}'),
+                UnitForms.simpleUnit('මාස {n}'),
+                UnitForms.simpleUnit('වසර {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('දි {n}'),
+                UnitForms.simpleUnit('ස {n}'),
+                UnitForms.simpleUnit('මා {n}'),
+                UnitForms.simpleUnit('ව {n}'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('දි {n}'),
-            UnitForms.simpleUnit('ස {n}'),
-            UnitForms.simpleUnit('මා {n}'),
-            UnitForms.simpleUnit('ව {n}'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sk.json
-    // ================================================================
-    // SK — Slovak
-    // ================================================================
-    static final AgeLocale SK = new AgeLocale(
-        'sk',
-        { int n ->
+    private static AgeLocale _sk() {
+        new AgeLocale(
+            'sk',
+            { int n ->
             if (n == 1) return PluralCategory.ONE
             if (n >= 2 && n <= 4) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} deň', (PluralCategory.FEW): '{n} dni', (PluralCategory.OTHER): '{n} dní']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} týždeň', (PluralCategory.FEW): '{n} týždne', (PluralCategory.OTHER): '{n} týždňov']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mesiac', (PluralCategory.FEW): '{n} mesiace', (PluralCategory.OTHER): '{n} mesiacov']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} roky', (PluralCategory.OTHER): '{n} rokov']),
-        ),
-        '{n}½',
-        ', ',
-        'Novorodenec',
-        new Stages(
-            StageLabel.neutral('Novorodenec'),
-            StageLabel.neutral('Dojča'),
-            StageLabel.neutral('Batoľa'),
-            StageLabel.neutral('Dieťa'),
-            StageLabel.neutral('Tínedžer'),
-            StageLabel.gendered('Dospelý', 'Dospelá'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} deň', (PluralCategory.FEW): '{n} dni', (PluralCategory.MANY): '{n} dňa', (PluralCategory.OTHER): '{n} dní']),
-            UnitForms.simpleUnit('{n} týž.'),
-            UnitForms.simpleUnit('{n} mes.'),
-            UnitForms.simpleUnit('{n} r.'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} deň', (PluralCategory.FEW): '{n} dni', (PluralCategory.OTHER): '{n} dní']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} týždeň', (PluralCategory.FEW): '{n} týždne', (PluralCategory.OTHER): '{n} týždňov']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mesiac', (PluralCategory.FEW): '{n} mesiace', (PluralCategory.OTHER): '{n} mesiacov']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} rok', (PluralCategory.FEW): '{n} roky', (PluralCategory.OTHER): '{n} rokov']),
+            ),
+            '{n}½',
+            ', ',
+            'Novorodenec',
+            new Stages(
+                StageLabel.neutral('Novorodenec'),
+                StageLabel.neutral('Dojča'),
+                StageLabel.neutral('Batoľa'),
+                StageLabel.neutral('Dieťa'),
+                StageLabel.neutral('Tínedžer'),
+                StageLabel.gendered('Dospelý', 'Dospelá'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} deň', (PluralCategory.FEW): '{n} dni', (PluralCategory.MANY): '{n} dňa', (PluralCategory.OTHER): '{n} dní']),
+                UnitForms.simpleUnit('{n} týž.'),
+                UnitForms.simpleUnit('{n} mes.'),
+                UnitForms.simpleUnit('{n} r.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d.'),
+                UnitForms.simpleUnit('{n} t.'),
+                UnitForms.simpleUnit('{n} m.'),
+                UnitForms.simpleUnit('{n} r.'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d.'),
-            UnitForms.simpleUnit('{n} t.'),
-            UnitForms.simpleUnit('{n} m.'),
-            UnitForms.simpleUnit('{n} r.'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sl.json
-    // ================================================================
-    // SL — Slovenian
-    // ================================================================
-    static final AgeLocale SL = new AgeLocale(
-        'sl',
-        { int n ->
+    private static AgeLocale _sl() {
+        new AgeLocale(
+            'sl',
+            { int n ->
             int mod100 = n % 100
             if (mod100 == 1) return PluralCategory.ONE
             if (mod100 == 2) return PluralCategory.TWO
             if (mod100 == 3 || mod100 == 4) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.TWO): '{n} dneva', (PluralCategory.FEW): '{n} dni', (PluralCategory.OTHER): '{n} dni']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} teden', (PluralCategory.TWO): '{n} tedna', (PluralCategory.FEW): '{n} tedne', (PluralCategory.OTHER): '{n} tednov']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mesec', (PluralCategory.TWO): '{n} meseca', (PluralCategory.FEW): '{n} mesece', (PluralCategory.OTHER): '{n} mesecev']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} leto', (PluralCategory.TWO): '{n} leti', (PluralCategory.FEW): '{n} leta', (PluralCategory.OTHER): '{n} let']),
-        ),
-        '{0} in pol',
-        ', ',
-        'Novorojenček',
-        new Stages(
-            StageLabel.gendered('Novorojenček', 'Novorojenčica'),
-            StageLabel.gendered('Dojenček', 'Dojenčica'),
-            StageLabel.gendered('Malček', 'Malčica'),
-            StageLabel.neutral('Otrok'),
-            StageLabel.gendered('Najstnik', 'Najstnica'),
-            StageLabel.gendered('Odrasel', 'Odrasla'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} t'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.simpleUnit('{n} l'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dan', (PluralCategory.TWO): '{n} dneva', (PluralCategory.FEW): '{n} dni', (PluralCategory.OTHER): '{n} dni']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} teden', (PluralCategory.TWO): '{n} tedna', (PluralCategory.FEW): '{n} tedne', (PluralCategory.OTHER): '{n} tednov']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} mesec', (PluralCategory.TWO): '{n} meseca', (PluralCategory.FEW): '{n} mesece', (PluralCategory.OTHER): '{n} mesecev']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} leto', (PluralCategory.TWO): '{n} leti', (PluralCategory.FEW): '{n} leta', (PluralCategory.OTHER): '{n} let']),
+            ),
+            '{0} in pol',
+            ', ',
+            'Novorojenček',
+            new Stages(
+                StageLabel.gendered('Novorojenček', 'Novorojenčica'),
+                StageLabel.gendered('Dojenček', 'Dojenčica'),
+                StageLabel.gendered('Malček', 'Malčica'),
+                StageLabel.neutral('Otrok'),
+                StageLabel.gendered('Najstnik', 'Najstnica'),
+                StageLabel.gendered('Odrasel', 'Odrasla'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} t'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.simpleUnit('{n} l'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} t'),
+                UnitForms.simpleUnit('{n} m'),
+                UnitForms.simpleUnit('{n} l'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} t'),
-            UnitForms.simpleUnit('{n} m'),
-            UnitForms.simpleUnit('{n} l'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sn.json
-    // ================================================================
-    // SN — Shona
-    // ================================================================
-    static final AgeLocale SN = new AgeLocale(
-        'sn',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'zuva {n}', (PluralCategory.OTHER): 'mazuva {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'vhiki {n}', (PluralCategory.OTHER): 'mavhiki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwedzi {n}', (PluralCategory.OTHER): 'mwedzi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'gore {n}', (PluralCategory.OTHER): 'makore {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Mwana mutsva',
-        new Stages(
-            StageLabel.neutral('Mwana mutsva'),
-            StageLabel.neutral('Mucheche'),
-            StageLabel.neutral('Mwana mudiki'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Mudiki'),
-            StageLabel.neutral('Munhu mukuru'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'zuva {n}', (PluralCategory.OTHER): 'maz {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'vhiki {n}', (PluralCategory.OTHER): 'mavh {n}']),
-            UnitForms.simpleUnit('mwedzi {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'gore {n}', (PluralCategory.OTHER): 'mak {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'z {n}', (PluralCategory.OTHER): 'maz {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'vh {n}', (PluralCategory.OTHER): 'mvh {n}']),
-            UnitForms.simpleUnit('mw {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'g {n}', (PluralCategory.OTHER): 'mak {n}']),
+    private static AgeLocale _sn() {
+        new AgeLocale(
+            'sn',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'zuva {n}', (PluralCategory.OTHER): 'mazuva {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'vhiki {n}', (PluralCategory.OTHER): 'mavhiki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwedzi {n}', (PluralCategory.OTHER): 'mwedzi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'gore {n}', (PluralCategory.OTHER): 'makore {n}']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Mwana mutsva',
+            new Stages(
+                StageLabel.neutral('Mwana mutsva'),
+                StageLabel.neutral('Mucheche'),
+                StageLabel.neutral('Mwana mudiki'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Mudiki'),
+                StageLabel.neutral('Munhu mukuru'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'zuva {n}', (PluralCategory.OTHER): 'maz {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'vhiki {n}', (PluralCategory.OTHER): 'mavh {n}']),
+                UnitForms.simpleUnit('mwedzi {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'gore {n}', (PluralCategory.OTHER): 'mak {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'z {n}', (PluralCategory.OTHER): 'maz {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'vh {n}', (PluralCategory.OTHER): 'mvh {n}']),
+                UnitForms.simpleUnit('mw {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'g {n}', (PluralCategory.OTHER): 'mak {n}']),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/snk.json
-    // ================================================================
-    // SNK — Soninke
-    // ================================================================
-    static final AgeLocale SNK = new AgeLocale(
-        'snk',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('xanne {n}'),
-            UnitForms.simpleUnit('simanxe {n}'),
-            UnitForms.simpleUnit('kare {n}'),
-            UnitForms.simpleUnit('jara {n}'),
-        ),
-        '{0} do faabe',
-        ', ',
-        'Lenme yille',
-        new Stages(
-            StageLabel.neutral('Lenme yille'),
-            StageLabel.neutral('Lenme'),
-            StageLabel.neutral('Yaxare yitte'),
-            StageLabel.neutral('Yaxare'),
-            StageLabel.neutral('Kanbonme'),
-            StageLabel.neutral('Xirise'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('xan. {n}'),
-            UnitForms.simpleUnit('sim. {n}'),
-            UnitForms.simpleUnit('kare {n}'),
-            UnitForms.simpleUnit('jara {n}'),
-            null,
+    private static AgeLocale _snk() {
+        new AgeLocale(
+            'snk',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('xanne {n}'),
+                UnitForms.simpleUnit('simanxe {n}'),
+                UnitForms.simpleUnit('kare {n}'),
+                UnitForms.simpleUnit('jara {n}'),
+            ),
+            '{0} do faabe',
+            ', ',
+            'Lenme yille',
+            new Stages(
+                StageLabel.neutral('Lenme yille'),
+                StageLabel.neutral('Lenme'),
+                StageLabel.neutral('Yaxare yitte'),
+                StageLabel.neutral('Yaxare'),
+                StageLabel.neutral('Kanbonme'),
+                StageLabel.neutral('Xirise'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('xan. {n}'),
+                UnitForms.simpleUnit('sim. {n}'),
+                UnitForms.simpleUnit('kare {n}'),
+                UnitForms.simpleUnit('jara {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('xan {n}'),
+                UnitForms.simpleUnit('sim {n}'),
+                UnitForms.simpleUnit('kare {n}'),
+                UnitForms.simpleUnit('jara {n}'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('xan {n}'),
-            UnitForms.simpleUnit('sim {n}'),
-            UnitForms.simpleUnit('kare {n}'),
-            UnitForms.simpleUnit('jara {n}'),
+        )
+    }
+
+    private static AgeLocale _so() {
+        new AgeLocale(
+            'so',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'maalin {n}', (PluralCategory.OTHER): 'maalmood {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'toddobaad {n}', (PluralCategory.OTHER): 'toddobaadyo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'bil {n}', (PluralCategory.OTHER): 'bilood {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sano {n}', (PluralCategory.OTHER): 'sanooyin {n}']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Dhashay cusub',
+            new Stages(
+                StageLabel.neutral('Dhashay cusub'),
+                StageLabel.neutral('Naaso-nuug'),
+                StageLabel.neutral('Cunug yar'),
+                StageLabel.neutral('Cunug'),
+                StageLabel.neutral('Dhallinyaro'),
+                StageLabel.neutral('Qaangaar'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('mln {n}'),
+                UnitForms.simpleUnit('tdb {n}'),
+                UnitForms.simpleUnit('bil {n}'),
+                UnitForms.simpleUnit('sno {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}t'),
+                UnitForms.simpleUnit('{n}b'),
+                UnitForms.simpleUnit('{n}s'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/so.json
-    // ================================================================
-    // SO — Somali
-    // ================================================================
-    static final AgeLocale SO = new AgeLocale(
-        'so',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'maalin {n}', (PluralCategory.OTHER): 'maalmood {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'toddobaad {n}', (PluralCategory.OTHER): 'toddobaadyo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'bil {n}', (PluralCategory.OTHER): 'bilood {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sano {n}', (PluralCategory.OTHER): 'sanooyin {n}']),
-        ),
-        '{n}½',
-        ', ',
-        'Dhashay cusub',
-        new Stages(
-            StageLabel.neutral('Dhashay cusub'),
-            StageLabel.neutral('Naaso-nuug'),
-            StageLabel.neutral('Cunug yar'),
-            StageLabel.neutral('Cunug'),
-            StageLabel.neutral('Dhallinyaro'),
-            StageLabel.neutral('Qaangaar'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('mln {n}'),
-            UnitForms.simpleUnit('tdb {n}'),
-            UnitForms.simpleUnit('bil {n}'),
-            UnitForms.simpleUnit('sno {n}'),
-            null,
+    private static AgeLocale _sq() {
+        new AgeLocale(
+            'sq',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ditë', (PluralCategory.OTHER): '{n} ditë']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} javë', (PluralCategory.OTHER): '{n} javë']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} muaj', (PluralCategory.OTHER): '{n} muaj']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vit', (PluralCategory.OTHER): '{n} vjet']),
+            ),
+            '{0} e gjysmë',
+            ', ',
+            'Sapolindur',
+            new Stages(
+                StageLabel.gendered('Sapolindur', 'Sapolindure'),
+                StageLabel.neutral('Foshnjë'),
+                StageLabel.gendered('Fëmijë i vogël', 'Fëmijë e vogël'),
+                StageLabel.neutral('Fëmijë'),
+                StageLabel.gendered('Adoleshent', 'Adoleshente'),
+                StageLabel.gendered('I rritur', 'E rritur'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ditë'),
+                UnitForms.simpleUnit('{n} javë'),
+                UnitForms.simpleUnit('{n} muaj'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vit', (PluralCategory.OTHER): '{n} vjet']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ditë'),
+                UnitForms.simpleUnit('{n} javë'),
+                UnitForms.simpleUnit('{n} muaj'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vit', (PluralCategory.OTHER): '{n} vjet']),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}t'),
-            UnitForms.simpleUnit('{n}b'),
-            UnitForms.simpleUnit('{n}s'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sq.json
-    // ================================================================
-    // SQ — Albanian
-    // ================================================================
-    static final AgeLocale SQ = new AgeLocale(
-        'sq',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ditë', (PluralCategory.OTHER): '{n} ditë']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} javë', (PluralCategory.OTHER): '{n} javë']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} muaj', (PluralCategory.OTHER): '{n} muaj']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vit', (PluralCategory.OTHER): '{n} vjet']),
-        ),
-        '{0} e gjysmë',
-        ', ',
-        'Sapolindur',
-        new Stages(
-            StageLabel.gendered('Sapolindur', 'Sapolindure'),
-            StageLabel.neutral('Foshnjë'),
-            StageLabel.gendered('Fëmijë i vogël', 'Fëmijë e vogël'),
-            StageLabel.neutral('Fëmijë'),
-            StageLabel.gendered('Adoleshent', 'Adoleshente'),
-            StageLabel.gendered('I rritur', 'E rritur'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ditë'),
-            UnitForms.simpleUnit('{n} javë'),
-            UnitForms.simpleUnit('{n} muaj'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vit', (PluralCategory.OTHER): '{n} vjet']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ditë'),
-            UnitForms.simpleUnit('{n} javë'),
-            UnitForms.simpleUnit('{n} muaj'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vit', (PluralCategory.OTHER): '{n} vjet']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/sr.json
-    // ================================================================
-    // SR — Serbian
-    // ================================================================
-    static final AgeLocale SR = new AgeLocale(
-        'sr',
-        { int n ->
+    private static AgeLocale _sr() {
+        new AgeLocale(
+            'sr',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1 && mod100 != 11) return PluralCategory.ONE
             if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.FEW
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дан', (PluralCategory.FEW): '{n} дана', (PluralCategory.MANY): '{n} дана', (PluralCategory.OTHER): '{n} дана']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} недеља', (PluralCategory.FEW): '{n} недеље', (PluralCategory.MANY): '{n} недеља', (PluralCategory.OTHER): '{n} недеља']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месец', (PluralCategory.FEW): '{n} месеца', (PluralCategory.MANY): '{n} месеци', (PluralCategory.OTHER): '{n} месеци']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} година', (PluralCategory.FEW): '{n} године', (PluralCategory.MANY): '{n} година', (PluralCategory.OTHER): '{n} година']),
-        ),
-        '{0} и по',
-        ', ',
-        'Новорођенче',
-        new Stages(
-            StageLabel.neutral('Новорођенче'),
-            StageLabel.neutral('Одојче'),
-            StageLabel.neutral('Мало дете'),
-            StageLabel.neutral('Дете'),
-            StageLabel.neutral('Тинејџер'),
-            StageLabel.neutral('Одрасла особа'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дан', (PluralCategory.FEW): '{n} дана', (PluralCategory.OTHER): '{n} дана']),
-            UnitForms.simpleUnit('{n} нед.'),
-            UnitForms.simpleUnit('{n} мес.'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} год.', (PluralCategory.OTHER): '{n} год.']),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дан', (PluralCategory.FEW): '{n} дана', (PluralCategory.MANY): '{n} дана', (PluralCategory.OTHER): '{n} дана']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} недеља', (PluralCategory.FEW): '{n} недеље', (PluralCategory.MANY): '{n} недеља', (PluralCategory.OTHER): '{n} недеља']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} месец', (PluralCategory.FEW): '{n} месеца', (PluralCategory.MANY): '{n} месеци', (PluralCategory.OTHER): '{n} месеци']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} година', (PluralCategory.FEW): '{n} године', (PluralCategory.MANY): '{n} година', (PluralCategory.OTHER): '{n} година']),
+            ),
+            '{0} и по',
+            ', ',
+            'Новорођенче',
+            new Stages(
+                StageLabel.neutral('Новорођенче'),
+                StageLabel.neutral('Одојче'),
+                StageLabel.neutral('Мало дете'),
+                StageLabel.neutral('Дете'),
+                StageLabel.neutral('Тинејџер'),
+                StageLabel.neutral('Одрасла особа'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} дан', (PluralCategory.FEW): '{n} дана', (PluralCategory.OTHER): '{n} дана']),
+                UnitForms.simpleUnit('{n} нед.'),
+                UnitForms.simpleUnit('{n} мес.'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} год', (PluralCategory.FEW): '{n} год.', (PluralCategory.OTHER): '{n} год.']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} д'),
+                UnitForms.simpleUnit('{n} н'),
+                UnitForms.simpleUnit('{n} м'),
+                UnitForms.simpleUnit('{n} г'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} д'),
-            UnitForms.simpleUnit('{n} н'),
-            UnitForms.simpleUnit('{n} м'),
-            UnitForms.simpleUnit('{n} г'),
+        )
+    }
+
+    private static AgeLocale _ss() {
+        new AgeLocale(
+            'ss',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lilanga {n}', (PluralCategory.OTHER): 'emalanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'liviki {n}', (PluralCategory.OTHER): 'emaviki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'tinyanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umnyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
+            ),
+            '{0} nenhafu',
+            ', ',
+            'Usandza kutalwa',
+            new Stages(
+                StageLabel.neutral('Luswane lolusandza kutalwa'),
+                StageLabel.neutral('Luswane'),
+                StageLabel.neutral('Umntfwana lomncane'),
+                StageLabel.neutral('Umntfwana'),
+                StageLabel.neutral('Licinsi'),
+                StageLabel.neutral('Umuntfu lomdala'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lilanga {n}', (PluralCategory.OTHER): 'emalanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'liviki {n}', (PluralCategory.OTHER): 'emaviki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iny. {n}', (PluralCategory.OTHER): 'tiny. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'umny. {n}', (PluralCategory.OTHER): 'imy. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _st() {
+        new AgeLocale(
+            'st',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'letsatsi {n}', (PluralCategory.OTHER): 'matsatsi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kgwedi {n}', (PluralCategory.OTHER): 'dikgwedi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'selemo {n}', (PluralCategory.OTHER): 'dilemo {n}']),
+            ),
+            '{0} le halofo',
+            ', ',
+            'O sa tswa hlaha',
+            new Stages(
+                StageLabel.neutral('Lesea le sa tswa hlaha'),
+                StageLabel.neutral('Lesea'),
+                StageLabel.neutral('Ngwanana'),
+                StageLabel.neutral('Ngwana'),
+                StageLabel.neutral('Mosha'),
+                StageLabel.neutral('Motho e moholo'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'letsatsi {n}', (PluralCategory.OTHER): 'matsatsi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kgw. {n}', (PluralCategory.OTHER): 'dikgw. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sel. {n}', (PluralCategory.OTHER): 'dil. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _su() {
+        new AgeLocale(
+            'su',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} dinten'),
+                UnitForms.simpleUnit('{n} minggu'),
+                UnitForms.simpleUnit('{n} sasih'),
+                UnitForms.simpleUnit('{n} taun'),
+            ),
+            '{0} satengah',
+            ', ',
+            'Orok anyar',
+            new Stages(
+                StageLabel.neutral('Orok anyar'),
+                StageLabel.neutral('Orok'),
+                StageLabel.neutral('Budak leutik'),
+                StageLabel.neutral('Budak'),
+                StageLabel.neutral('Rumaja'),
+                StageLabel.neutral('Dewasa'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} dinten'),
+                UnitForms.simpleUnit('{n} minggu'),
+                UnitForms.simpleUnit('{n} sasih'),
+                UnitForms.simpleUnit('{n} taun'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _suk() {
+        new AgeLocale(
+            'suk',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'isiku {n}', (PluralCategory.OTHER): 'amasiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ishuma {n}', (PluralCategory.OTHER): 'amashuma {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngweli {n}', (PluralCategory.OTHER): 'ngweli {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'myaka {n}']),
+            ),
+            '{0} na nusu',
+            ', ',
+            'Mwana wa kubelekwa',
+            new Stages(
+                StageLabel.neutral('Mwana wa kubelekwa kwenda'),
+                StageLabel.neutral('Mwana mdogo'),
+                StageLabel.neutral('Mwana wa kutembea'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Mhemba'),
+                StageLabel.neutral('Muntu mkulu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'isiku {n}', (PluralCategory.OTHER): 'amasiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ish. {n}', (PluralCategory.OTHER): 'amash. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngw. {n}', (PluralCategory.OTHER): 'ngw. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mw. {n}', (PluralCategory.OTHER): 'my. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _sv() {
+        new AgeLocale(
+            'sv',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dagar']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vecka', (PluralCategory.OTHER): '{n} veckor']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} månad', (PluralCategory.OTHER): '{n} månader']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} år', (PluralCategory.OTHER): '{n} år']),
+            ),
             '{n}½',
-            '',
+            ', ',
+            'Nyfödd',
+            new Stages(
+                StageLabel.neutral('Nyfödd'),
+                StageLabel.neutral('Spädbarn'),
+                StageLabel.neutral('Litet barn'),
+                StageLabel.neutral('Barn'),
+                StageLabel.neutral('Tonåring'),
+                StageLabel.neutral('Vuxen'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} v'),
+                UnitForms.simpleUnit('{n} mån'),
+                UnitForms.simpleUnit('{n} år'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}v'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}å'),
+                null,
+                '',
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ss.json
-    // ================================================================
-    // SS — siSwati
-    // ================================================================
-    static final AgeLocale SS = new AgeLocale(
-        'ss',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lilanga {n}', (PluralCategory.OTHER): 'emalanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'liviki {n}', (PluralCategory.OTHER): 'emaviki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'tinyanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umnyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
-        ),
-        '{0} nenhafu',
-        ', ',
-        'Usandza kutalwa',
-        new Stages(
-            StageLabel.neutral('Luswane lolusandza kutalwa'),
-            StageLabel.neutral('Luswane'),
-            StageLabel.neutral('Umntfwana lomncane'),
-            StageLabel.neutral('Umntfwana'),
-            StageLabel.neutral('Licinsi'),
-            StageLabel.neutral('Umuntfu lomdala'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lilanga {n}', (PluralCategory.OTHER): 'emalanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'liviki {n}', (PluralCategory.OTHER): 'emaviki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iny. {n}', (PluralCategory.OTHER): 'tiny. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'umny. {n}', (PluralCategory.OTHER): 'imy. {n}']),
-            null,
+    private static AgeLocale _sw() {
+        new AgeLocale(
+            'sw',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'siku {n}', (PluralCategory.OTHER): 'siku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'wiki {n}', (PluralCategory.OTHER): 'wiki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miaka {n}']),
+            ),
+            '{0} na nusu',
+            ', ',
+            'Mzaliwa mpya',
+            new Stages(
+                StageLabel.neutral('Mzaliwa mpya'),
+                StageLabel.neutral('Mtoto mchanga'),
+                StageLabel.neutral('Mtoto mdogo'),
+                StageLabel.neutral('Mtoto'),
+                StageLabel.neutral('Kijana'),
+                StageLabel.neutral('Mtu mzima'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('siku {n}'),
+                UnitForms.simpleUnit('wiki {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('siku {n}'),
+                UnitForms.simpleUnit('wiki {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miaka {n}']),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/st.json
-    // ================================================================
-    // ST — Southern Sotho
-    // ================================================================
-    static final AgeLocale ST = new AgeLocale(
-        'st',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'letsatsi {n}', (PluralCategory.OTHER): 'matsatsi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kgwedi {n}', (PluralCategory.OTHER): 'dikgwedi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'selemo {n}', (PluralCategory.OTHER): 'dilemo {n}']),
-        ),
-        '{0} le halofo',
-        ', ',
-        'O sa tswa hlaha',
-        new Stages(
-            StageLabel.neutral('Lesea le sa tswa hlaha'),
-            StageLabel.neutral('Lesea'),
-            StageLabel.neutral('Ngwanana'),
-            StageLabel.neutral('Ngwana'),
-            StageLabel.neutral('Mosha'),
-            StageLabel.neutral('Motho e moholo'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'letsatsi {n}', (PluralCategory.OTHER): 'matsatsi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kgw. {n}', (PluralCategory.OTHER): 'dikgw. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sel. {n}', (PluralCategory.OTHER): 'dil. {n}']),
-            null,
+    private static AgeLocale _ta() {
+        new AgeLocale(
+            'ta',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} நாள்', (PluralCategory.OTHER): '{n} நாட்கள்']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} வாரம்', (PluralCategory.OTHER): '{n} வாரங்கள்']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} மாதம்', (PluralCategory.OTHER): '{n} மாதங்கள்']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} வயது', (PluralCategory.OTHER): '{n} வயது']),
+            ),
+            '{0}ரை',
+            ', ',
+            'பிறந்த குழந்தை',
+            new Stages(
+                StageLabel.neutral('பிறந்த குழந்தை'),
+                StageLabel.neutral('குழந்தை'),
+                StageLabel.neutral('சிறு குழந்தை'),
+                StageLabel.neutral('சிறார்'),
+                StageLabel.neutral('இளம்பருவம்'),
+                StageLabel.neutral('பெரியவர்'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} நாள்', (PluralCategory.OTHER): '{n} நாட்கள்']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} வாரம்', (PluralCategory.OTHER): '{n} வார.']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} மாதம்', (PluralCategory.OTHER): '{n} மாத.']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ஆண்டு', (PluralCategory.OTHER): '{n} ஆண்டு.']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} நா'),
+                UnitForms.simpleUnit('{n} வா'),
+                UnitForms.simpleUnit('{n} மா'),
+                UnitForms.simpleUnit('{n} ஆ'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/su.json
-    // ================================================================
-    // SU — Sundanese
-    // ================================================================
-    static final AgeLocale SU = new AgeLocale(
-        'su',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} dinten'),
-            UnitForms.simpleUnit('{n} minggu'),
-            UnitForms.simpleUnit('{n} sasih'),
-            UnitForms.simpleUnit('{n} taun'),
-        ),
-        '{0} satengah',
-        ', ',
-        'Orok anyar',
-        new Stages(
-            StageLabel.neutral('Orok anyar'),
-            StageLabel.neutral('Orok'),
-            StageLabel.neutral('Budak leutik'),
-            StageLabel.neutral('Budak'),
-            StageLabel.neutral('Rumaja'),
-            StageLabel.neutral('Dewasa'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} dinten'),
-            UnitForms.simpleUnit('{n} minggu'),
-            UnitForms.simpleUnit('{n} sasih'),
-            UnitForms.simpleUnit('{n} taun'),
-            null,
+    private static AgeLocale _te() {
+        new AgeLocale(
+            'te',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} రోజు', (PluralCategory.OTHER): '{n} రోజులు']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} వారం', (PluralCategory.OTHER): '{n} వారాలు']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} నెల', (PluralCategory.OTHER): '{n} నెలలు']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} సంవత్సరం', (PluralCategory.OTHER): '{n} సంవత్సరాలు']),
+            ),
+            '{0}న్నర',
+            ', ',
+            'నవజాత శిశువు',
+            new Stages(
+                StageLabel.neutral('నవజాత శిశువు'),
+                StageLabel.neutral('శిశువు'),
+                StageLabel.neutral('చిన్న బిడ్డ'),
+                StageLabel.neutral('బిడ్డ'),
+                StageLabel.neutral('కౌమారదశ'),
+                StageLabel.neutral('వయోజనులు'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} రోజు', (PluralCategory.OTHER): '{n} రోజులు']),
+                UnitForms.simpleUnit('{n} వా.'),
+                UnitForms.simpleUnit('{n} నె.'),
+                UnitForms.simpleUnit('{n} సం.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}రో'),
+                UnitForms.simpleUnit('{n}వా'),
+                UnitForms.simpleUnit('{n}నె'),
+                UnitForms.simpleUnit('{n}సం'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/suk.json
-    // ================================================================
-    // SUK — Sukuma
-    // ================================================================
-    static final AgeLocale SUK = new AgeLocale(
-        'suk',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'isiku {n}', (PluralCategory.OTHER): 'amasiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ishuma {n}', (PluralCategory.OTHER): 'amashuma {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngweli {n}', (PluralCategory.OTHER): 'ngweli {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'myaka {n}']),
-        ),
-        '{0} na nusu',
-        ', ',
-        'Mwana wa kubelekwa',
-        new Stages(
-            StageLabel.neutral('Mwana wa kubelekwa kwenda'),
-            StageLabel.neutral('Mwana mdogo'),
-            StageLabel.neutral('Mwana wa kutembea'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Mhemba'),
-            StageLabel.neutral('Muntu mkulu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'isiku {n}', (PluralCategory.OTHER): 'amasiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ish. {n}', (PluralCategory.OTHER): 'amash. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngw. {n}', (PluralCategory.OTHER): 'ngw. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mw. {n}', (PluralCategory.OTHER): 'my. {n}']),
-            null,
+    private static AgeLocale _tem() {
+        new AgeLocale(
+            'tem',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ləfɔr {n}', (PluralCategory.OTHER): 'ɔfɔr {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'wik {n}', (PluralCategory.OTHER): 'wik {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kətha {n}', (PluralCategory.OTHER): 'ɔtha {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'əsor {n}', (PluralCategory.OTHER): 'ɔsor {n}']),
+            ),
+            '{0} a gbankɛ',
+            ', ',
+            'A mabɔrn',
+            new Stages(
+                StageLabel.neutral('A mabɔrn'),
+                StageLabel.neutral('Kəbom'),
+                StageLabel.neutral('Kəbom'),
+                StageLabel.neutral('Ɔmɔnthɔ'),
+                StageLabel.neutral('Ɔkəranthɔ'),
+                StageLabel.neutral('Ɔpa'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ləfɔr {n}', (PluralCategory.OTHER): 'ɔfɔr {n}']),
+                UnitForms.simpleUnit('wik {n}'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kətha {n}', (PluralCategory.OTHER): 'ɔtha {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'əsor {n}', (PluralCategory.OTHER): 'ɔsor {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sv.json
-    // ================================================================
-    // SV — Swedish
-    // ================================================================
-    static final AgeLocale SV = new AgeLocale(
-        'sv',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} dag', (PluralCategory.OTHER): '{n} dagar']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} vecka', (PluralCategory.OTHER): '{n} veckor']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} månad', (PluralCategory.OTHER): '{n} månader']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} år', (PluralCategory.OTHER): '{n} år']),
-        ),
-        '{n}½',
-        ', ',
-        'Nyfödd',
-        new Stages(
-            StageLabel.neutral('Nyfödd'),
-            StageLabel.neutral('Spädbarn'),
-            StageLabel.neutral('Litet barn'),
-            StageLabel.neutral('Barn'),
-            StageLabel.neutral('Tonåring'),
-            StageLabel.neutral('Vuxen'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} v'),
-            UnitForms.simpleUnit('{n} mån'),
-            UnitForms.simpleUnit('{n} år'),
-            null,
+    private static AgeLocale _tet() {
+        new AgeLocale(
+            'tet',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('loron {n}'),
+                UnitForms.simpleUnit('semana {n}'),
+                UnitForms.simpleUnit('fulan {n}'),
+                UnitForms.simpleUnit('tinan {n}'),
+            ),
+            '{0} ho balun',
+            ', ',
+            'Foin moris',
+            new Stages(
+                StageLabel.neutral('Foin moris'),
+                StageLabel.neutral('Labarik ki\'ik'),
+                StageLabel.neutral('Labarik'),
+                StageLabel.neutral('Baruk'),
+                StageLabel.neutral('Joven'),
+                StageLabel.neutral('Ema boot'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('loron {n}'),
+                UnitForms.simpleUnit('sem. {n}'),
+                UnitForms.simpleUnit('fulan {n}'),
+                UnitForms.simpleUnit('tinan {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}v'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}å'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/sw.json
-    // ================================================================
-    // SW — Swahili
-    // ================================================================
-    static final AgeLocale SW = new AgeLocale(
-        'sw',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'siku {n}', (PluralCategory.OTHER): 'siku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'wiki {n}', (PluralCategory.OTHER): 'wiki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miaka {n}']),
-        ),
-        '{0} na nusu',
-        ', ',
-        'Mzaliwa mpya',
-        new Stages(
-            StageLabel.neutral('Mzaliwa mpya'),
-            StageLabel.neutral('Mtoto mchanga'),
-            StageLabel.neutral('Mtoto mdogo'),
-            StageLabel.neutral('Mtoto'),
-            StageLabel.neutral('Kijana'),
-            StageLabel.neutral('Mtu mzima'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('siku {n}'),
-            UnitForms.simpleUnit('wiki {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miaka {n}']),
-            null,
+    private static AgeLocale _tg() {
+        new AgeLocale(
+            'tg',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} рӯз'),
+                UnitForms.simpleUnit('{n} ҳафта'),
+                UnitForms.simpleUnit('{n} моҳ'),
+                UnitForms.simpleUnit('{n} сол'),
+            ),
+            '{0} ним',
+            ', ',
+            'Навзод',
+            new Stages(
+                StageLabel.neutral('Навзод'),
+                StageLabel.neutral('Тифл'),
+                StageLabel.neutral('Кӯдак'),
+                StageLabel.neutral('Кӯдак'),
+                StageLabel.neutral('Наврас'),
+                StageLabel.neutral('Калонсол'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} р'),
+                UnitForms.simpleUnit('{n} ҳ'),
+                UnitForms.simpleUnit('{n} м'),
+                UnitForms.simpleUnit('{n} с'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}р'),
+                UnitForms.simpleUnit('{n}ҳ'),
+                UnitForms.simpleUnit('{n}м'),
+                UnitForms.simpleUnit('{n}с'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('siku {n}'),
-            UnitForms.simpleUnit('wiki {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miaka {n}']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ta.json
-    // ================================================================
-    // TA — Tamil
-    // ================================================================
-    static final AgeLocale TA = new AgeLocale(
-        'ta',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} நாள்', (PluralCategory.OTHER): '{n} நாட்கள்']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} வாரம்', (PluralCategory.OTHER): '{n} வாரங்கள்']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} மாதம்', (PluralCategory.OTHER): '{n} மாதங்கள்']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} வயது', (PluralCategory.OTHER): '{n} வயது']),
-        ),
-        '{0}ரை',
-        ', ',
-        'பிறந்த குழந்தை',
-        new Stages(
-            StageLabel.neutral('பிறந்த குழந்தை'),
-            StageLabel.neutral('குழந்தை'),
-            StageLabel.neutral('சிறு குழந்தை'),
-            StageLabel.neutral('சிறார்'),
-            StageLabel.neutral('இளம்பருவம்'),
-            StageLabel.neutral('பெரியவர்'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} நாள்', (PluralCategory.OTHER): '{n} நாட்கள்']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} வாரம்', (PluralCategory.OTHER): '{n} வார.']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} மாதம்', (PluralCategory.OTHER): '{n} மாத.']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ஆண்டு', (PluralCategory.OTHER): '{n} ஆண்டு.']),
-            null,
+    private static AgeLocale _th() {
+        new AgeLocale(
+            'th',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} วัน'),
+                UnitForms.simpleUnit('{n} สัปดาห์'),
+                UnitForms.simpleUnit('{n} เดือน'),
+                UnitForms.simpleUnit('{n} ปี'),
+            ),
+            '{0}ครึ่ง',
+            ' ',
+            'แรกเกิด',
+            new Stages(
+                StageLabel.neutral('แรกเกิด'),
+                StageLabel.neutral('ทารก'),
+                StageLabel.neutral('เด็กวัยเตาะแตะ'),
+                StageLabel.neutral('เด็ก'),
+                StageLabel.neutral('วัยรุ่น'),
+                StageLabel.neutral('ผู้ใหญ่'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} วัน'),
+                UnitForms.simpleUnit('{n} สัปดาห์'),
+                UnitForms.simpleUnit('{n} เดือน'),
+                UnitForms.simpleUnit('{n} ปี'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}วัน'),
+                UnitForms.simpleUnit('{n}สัปดาห์'),
+                UnitForms.simpleUnit('{n}เดือน'),
+                UnitForms.simpleUnit('{n}ปี'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} நா'),
-            UnitForms.simpleUnit('{n} வா'),
-            UnitForms.simpleUnit('{n} மா'),
-            UnitForms.simpleUnit('{n} ஆ'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/te.json
-    // ================================================================
-    // TE — Telugu
-    // ================================================================
-    static final AgeLocale TE = new AgeLocale(
-        'te',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} రోజు', (PluralCategory.OTHER): '{n} రోజులు']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} వారం', (PluralCategory.OTHER): '{n} వారాలు']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} నెల', (PluralCategory.OTHER): '{n} నెలలు']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} సంవత్సరం', (PluralCategory.OTHER): '{n} సంవత్సరాలు']),
-        ),
-        '{0}న్నర',
-        ', ',
-        'నవజాత శిశువు',
-        new Stages(
-            StageLabel.neutral('నవజాత శిశువు'),
-            StageLabel.neutral('శిశువు'),
-            StageLabel.neutral('చిన్న బిడ్డ'),
-            StageLabel.neutral('బిడ్డ'),
-            StageLabel.neutral('కౌమారదశ'),
-            StageLabel.neutral('వయోజనులు'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} రోజు', (PluralCategory.OTHER): '{n} రోజులు']),
-            UnitForms.simpleUnit('{n} వా.'),
-            UnitForms.simpleUnit('{n} నె.'),
-            UnitForms.simpleUnit('{n} సం.'),
-            null,
+    private static AgeLocale _ti() {
+        new AgeLocale(
+            'ti',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} መዓልቲ', (PluralCategory.OTHER): '{n} መዓልትታት']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሰሙን', (PluralCategory.OTHER): '{n} ሰሙናት']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ወርሒ', (PluralCategory.OTHER): '{n} ኣዋርሕ']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
+            ),
+            '{0} ተኹል',
+            '፣ ',
+            'ሓድሽ ዝተወልደ',
+            new Stages(
+                StageLabel.neutral('ሓድሽ ዝተወልደ'),
+                StageLabel.neutral('ጨቓዊ'),
+                StageLabel.neutral('ንእሽተይ ህጻን'),
+                StageLabel.neutral('ቆልዓ'),
+                StageLabel.neutral('መንእሰይ'),
+                StageLabel.neutral('ዓቢይ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} መዓልትታት'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሰሙን', (PluralCategory.OTHER): '{n} ሰሙናት']),
+                UnitForms.simpleUnit('{n} ኣዋርሕ'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} መ'),
+                UnitForms.simpleUnit('{n} ሰሙን'),
+                UnitForms.simpleUnit('{n} ወር'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓ']),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}రో'),
-            UnitForms.simpleUnit('{n}వా'),
-            UnitForms.simpleUnit('{n}నె'),
-            UnitForms.simpleUnit('{n}సం'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/tem.json
-    // ================================================================
-    // TEM — Temne
-    // ================================================================
-    static final AgeLocale TEM = new AgeLocale(
-        'tem',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ləfɔr {n}', (PluralCategory.OTHER): 'ɔfɔr {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'wik {n}', (PluralCategory.OTHER): 'wik {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kətha {n}', (PluralCategory.OTHER): 'ɔtha {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'əsor {n}', (PluralCategory.OTHER): 'ɔsor {n}']),
-        ),
-        '{0} a gbankɛ',
-        ', ',
-        'A mabɔrn',
-        new Stages(
-            StageLabel.neutral('A mabɔrn'),
-            StageLabel.neutral('Kəbom'),
-            StageLabel.neutral('Kəbom'),
-            StageLabel.neutral('Ɔmɔnthɔ'),
-            StageLabel.neutral('Ɔkəranthɔ'),
-            StageLabel.neutral('Ɔpa'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ləfɔr {n}', (PluralCategory.OTHER): 'ɔfɔr {n}']),
-            UnitForms.simpleUnit('wik {n}'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kətha {n}', (PluralCategory.OTHER): 'ɔtha {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'əsor {n}', (PluralCategory.OTHER): 'ɔsor {n}']),
-            null,
+    private static AgeLocale _tig() {
+        new AgeLocale(
+            'tig',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'yom {n}', (PluralCategory.OTHER): 'ayam {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'semun {n}', (PluralCategory.OTHER): 'semunat {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'werḥi {n}', (PluralCategory.OTHER): 'awerḥi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ʿam {n}', (PluralCategory.OTHER): 'aʿwam {n}']),
+            ),
+            '{0} we nəs',
+            ', ',
+            'Ḥadis tewlid',
+            new Stages(
+                StageLabel.neutral('Ḥadis tewlid'),
+                StageLabel.neutral('Ḥaṣin'),
+                StageLabel.neutral('Ḥaṣin'),
+                StageLabel.neutral('Wädi'),
+                StageLabel.neutral('Mänäʿ'),
+                StageLabel.neutral('Säb'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'yom {n}', (PluralCategory.OTHER): 'ayam {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'semun {n}', (PluralCategory.OTHER): 'semunat {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'werḥi {n}', (PluralCategory.OTHER): 'awerḥi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ʿam {n}', (PluralCategory.OTHER): 'aʿwam {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/tet.json
-    // ================================================================
-    // TET — Tetum
-    // ================================================================
-    static final AgeLocale TET = new AgeLocale(
-        'tet',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('loron {n}'),
-            UnitForms.simpleUnit('semana {n}'),
-            UnitForms.simpleUnit('fulan {n}'),
-            UnitForms.simpleUnit('tinan {n}'),
-        ),
-        '{0} ho balun',
-        ', ',
-        'Foin moris',
-        new Stages(
-            StageLabel.neutral('Foin moris'),
-            StageLabel.neutral('Labarik ki\'ik'),
-            StageLabel.neutral('Labarik'),
-            StageLabel.neutral('Baruk'),
-            StageLabel.neutral('Joven'),
-            StageLabel.neutral('Ema boot'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('loron {n}'),
-            UnitForms.simpleUnit('sem. {n}'),
-            UnitForms.simpleUnit('fulan {n}'),
-            UnitForms.simpleUnit('tinan {n}'),
-            null,
+    private static AgeLocale _tk() {
+        new AgeLocale(
+            'tk',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} gün'),
+                UnitForms.simpleUnit('{n} hepde'),
+                UnitForms.simpleUnit('{n} aý'),
+                UnitForms.simpleUnit('{n} ýaş'),
+            ),
+            '{0}½',
+            ', ',
+            'Täze doglan',
+            new Stages(
+                StageLabel.neutral('Täze doglan'),
+                StageLabel.neutral('Bäbek'),
+                StageLabel.neutral('Kiçijik'),
+                StageLabel.neutral('Çaga'),
+                StageLabel.neutral('Ýetginjek'),
+                StageLabel.neutral('Ulular'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} g'),
+                UnitForms.simpleUnit('{n} h'),
+                UnitForms.simpleUnit('{n} a'),
+                UnitForms.simpleUnit('{n} ý'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}g'),
+                UnitForms.simpleUnit('{n}h'),
+                UnitForms.simpleUnit('{n}a'),
+                UnitForms.simpleUnit('{n}ý'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/tg.json
-    // ================================================================
-    // TG — Tajik
-    // ================================================================
-    static final AgeLocale TG = new AgeLocale(
-        'tg',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} рӯз'),
-            UnitForms.simpleUnit('{n} ҳафта'),
-            UnitForms.simpleUnit('{n} моҳ'),
-            UnitForms.simpleUnit('{n} сол'),
-        ),
-        '{0} ним',
-        ', ',
-        'Навзод',
-        new Stages(
-            StageLabel.neutral('Навзод'),
-            StageLabel.neutral('Тифл'),
-            StageLabel.neutral('Кӯдак'),
-            StageLabel.neutral('Кӯдак'),
-            StageLabel.neutral('Наврас'),
-            StageLabel.neutral('Калонсол'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} р'),
-            UnitForms.simpleUnit('{n} ҳ'),
-            UnitForms.simpleUnit('{n} м'),
-            UnitForms.simpleUnit('{n} с'),
-            null,
+    private static AgeLocale _tn() {
+        new AgeLocale(
+            'tn',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'letsatsi {n}', (PluralCategory.OTHER): 'malatsi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kgwedi {n}', (PluralCategory.OTHER): 'dikgwedi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngwaga {n}', (PluralCategory.OTHER): 'dingwaga {n}']),
+            ),
+            '{0} le halofo',
+            ', ',
+            'O sa tswa tsalwa',
+            new Stages(
+                StageLabel.neutral('Lesea le sa tswa tsalwa'),
+                StageLabel.neutral('Lesea'),
+                StageLabel.neutral('Ngwana yo monnye'),
+                StageLabel.neutral('Ngwana'),
+                StageLabel.neutral('Lekgarebe'),
+                StageLabel.neutral('Motho yo mogolo'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'letsatsi {n}', (PluralCategory.OTHER): 'malatsi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'kgw. {n}', (PluralCategory.OTHER): 'dikgw. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngw. {n}', (PluralCategory.OTHER): 'dingw. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}р'),
-            UnitForms.simpleUnit('{n}ҳ'),
-            UnitForms.simpleUnit('{n}м'),
-            UnitForms.simpleUnit('{n}с'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/th.json
-    // ================================================================
-    // TH — Thai
-    // ================================================================
-    static final AgeLocale TH = new AgeLocale(
-        'th',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} วัน'),
-            UnitForms.simpleUnit('{n} สัปดาห์'),
-            UnitForms.simpleUnit('{n} เดือน'),
-            UnitForms.simpleUnit('{n} ปี'),
-        ),
-        '{0}ครึ่ง',
-        ' ',
-        'แรกเกิด',
-        new Stages(
-            StageLabel.neutral('แรกเกิด'),
-            StageLabel.neutral('ทารก'),
-            StageLabel.neutral('เด็กวัยเตาะแตะ'),
-            StageLabel.neutral('เด็ก'),
-            StageLabel.neutral('วัยรุ่น'),
-            StageLabel.neutral('ผู้ใหญ่'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} วัน'),
-            UnitForms.simpleUnit('{n} สัปดาห์'),
-            UnitForms.simpleUnit('{n} เดือน'),
-            UnitForms.simpleUnit('{n} ปี'),
-            null,
+    private static AgeLocale _tpi() {
+        new AgeLocale(
+            'tpi',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} de'),
+                UnitForms.simpleUnit('{n} wik'),
+                UnitForms.simpleUnit('{n} mun'),
+                UnitForms.simpleUnit('{n} yia'),
+            ),
+            '{n} na hap',
+            ', ',
+            'Nupela pikinini',
+            new Stages(
+                StageLabel.neutral('Nupela pikinini'),
+                StageLabel.neutral('Pikinini'),
+                StageLabel.neutral('Liklik pikinini'),
+                StageLabel.neutral('Pikinini'),
+                StageLabel.neutral('Yangpela'),
+                StageLabel.neutral('Bikpela man'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} de'),
+                UnitForms.simpleUnit('{n} wik'),
+                UnitForms.simpleUnit('{n} mun'),
+                UnitForms.simpleUnit('{n} yia'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}วัน'),
-            UnitForms.simpleUnit('{n}สัปดาห์'),
-            UnitForms.simpleUnit('{n}เดือน'),
-            UnitForms.simpleUnit('{n}ปี'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ti.json
-    // ================================================================
-    // TI — Tigrinya
-    // ================================================================
-    static final AgeLocale TI = new AgeLocale(
-        'ti',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} መዓልቲ', (PluralCategory.OTHER): '{n} መዓልትታት']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሰሙን', (PluralCategory.OTHER): '{n} ሰሙናት']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ወርሒ', (PluralCategory.OTHER): '{n} ኣዋርሕ']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
-        ),
-        '{0} ተኹል',
-        '፣ ',
-        'ሓድሽ ዝተወልደ',
-        new Stages(
-            StageLabel.neutral('ሓድሽ ዝተወልደ'),
-            StageLabel.neutral('ጨቓዊ'),
-            StageLabel.neutral('ንእሽተይ ህጻን'),
-            StageLabel.neutral('ቆልዓ'),
-            StageLabel.neutral('መንእሰይ'),
-            StageLabel.neutral('ዓቢይ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} መዓልትታት'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ሰሙን', (PluralCategory.OTHER): '{n} ሰሙናት']),
-            UnitForms.simpleUnit('{n} ኣዋርሕ'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓመታት']),
-            null,
+    private static AgeLocale _tr() {
+        new AgeLocale(
+            'tr',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} gün', (PluralCategory.OTHER): '{n} gün']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} hafta', (PluralCategory.OTHER): '{n} hafta']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ay', (PluralCategory.OTHER): '{n} ay']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} yaş', (PluralCategory.OTHER): '{n} yaş']),
+            ),
+            '{n} buçuk',
+            ', ',
+            'Yeni doğan',
+            new Stages(
+                StageLabel.neutral('Yeni doğan'),
+                StageLabel.neutral('Bebek'),
+                StageLabel.neutral('Küçük çocuk'),
+                StageLabel.neutral('Çocuk'),
+                StageLabel.neutral('Ergen'),
+                StageLabel.neutral('Yetişkin'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} gün'),
+                UnitForms.simpleUnit('{n} hf.'),
+                UnitForms.simpleUnit('{n} ay'),
+                UnitForms.simpleUnit('{n} yıl'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}g'),
+                UnitForms.simpleUnit('{n}h'),
+                UnitForms.simpleUnit('{n}a'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} መ'),
-            UnitForms.simpleUnit('{n} ሰሙን'),
-            UnitForms.simpleUnit('{n} ወር'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ዓመት', (PluralCategory.OTHER): '{n} ዓ']),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/tig.json
-    // ================================================================
-    // TIG — Tigre
-    // ================================================================
-    static final AgeLocale TIG = new AgeLocale(
-        'tig',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'yom {n}', (PluralCategory.OTHER): 'ayam {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'semun {n}', (PluralCategory.OTHER): 'semunat {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'werḥi {n}', (PluralCategory.OTHER): 'awerḥi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ʿam {n}', (PluralCategory.OTHER): 'aʿwam {n}']),
-        ),
-        '{0} we nəs',
-        ', ',
-        'Ḥadis tewlid',
-        new Stages(
-            StageLabel.neutral('Ḥadis tewlid'),
-            StageLabel.neutral('Ḥaṣin'),
-            StageLabel.neutral('Ḥaṣin'),
-            StageLabel.neutral('Wädi'),
-            StageLabel.neutral('Mänäʿ'),
-            StageLabel.neutral('Säb'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'yom {n}', (PluralCategory.OTHER): 'ayam {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'semun {n}', (PluralCategory.OTHER): 'semunat {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'werḥi {n}', (PluralCategory.OTHER): 'awerḥi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ʿam {n}', (PluralCategory.OTHER): 'aʿwam {n}']),
-            null,
+    private static AgeLocale _ts() {
+        new AgeLocale(
+            'ts',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'siku {n}', (PluralCategory.OTHER): 'masiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'vhiki {n}', (PluralCategory.OTHER): 'mavhiki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'n\'hweti {n}', (PluralCategory.OTHER): 'tin\'hweti {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lembe {n}', (PluralCategory.OTHER): 'malembe {n}']),
+            ),
+            '{0} ni hafu',
+            ', ',
+            'N\'wana loyi a ha ku velekiwa',
+            new Stages(
+                StageLabel.neutral('N\'wana wo velekiwa'),
+                StageLabel.neutral('Xihlangi'),
+                StageLabel.neutral('N\'wana lontsongo'),
+                StageLabel.neutral('N\'wana'),
+                StageLabel.neutral('Jaha'),
+                StageLabel.neutral('Munhu lonkulu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'siku {n}', (PluralCategory.OTHER): 'masiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'vhiki {n}', (PluralCategory.OTHER): 'mavhiki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'n\'hw. {n}', (PluralCategory.OTHER): 'tin\'hw. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lembe {n}', (PluralCategory.OTHER): 'mal. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/tk.json
-    // ================================================================
-    // TK — Turkmen
-    // ================================================================
-    static final AgeLocale TK = new AgeLocale(
-        'tk',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} gün'),
-            UnitForms.simpleUnit('{n} hepde'),
-            UnitForms.simpleUnit('{n} aý'),
-            UnitForms.simpleUnit('{n} ýaş'),
-        ),
-        '{0}½',
-        ', ',
-        'Täze doglan',
-        new Stages(
-            StageLabel.neutral('Täze doglan'),
-            StageLabel.neutral('Bäbek'),
-            StageLabel.neutral('Kiçijik'),
-            StageLabel.neutral('Çaga'),
-            StageLabel.neutral('Ýetginjek'),
-            StageLabel.neutral('Ulular'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} g'),
-            UnitForms.simpleUnit('{n} h'),
-            UnitForms.simpleUnit('{n} a'),
-            UnitForms.simpleUnit('{n} ý'),
-            null,
+    private static AgeLocale _tum() {
+        new AgeLocale(
+            'tum',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'dazi {n}', (PluralCategory.OTHER): 'madazi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sabata {n}', (PluralCategory.OTHER): 'masabata {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miyezi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
+            ),
+            '{0} na hafu',
+            ', ',
+            'Mwana wabadwa wala',
+            new Stages(
+                StageLabel.neutral('Mwana wabadwa wala'),
+                StageLabel.neutral('Mwana wakumawere'),
+                StageLabel.neutral('Kamwana'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Munyamata'),
+                StageLabel.neutral('Munthu mukuru'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'dazi {n}', (PluralCategory.OTHER): 'mad. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'sab. {n}', (PluralCategory.OTHER): 'mas. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miy. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}g'),
-            UnitForms.simpleUnit('{n}h'),
-            UnitForms.simpleUnit('{n}a'),
-            UnitForms.simpleUnit('{n}ý'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/tn.json
-    // ================================================================
-    // TN — Tswana
-    // ================================================================
-    static final AgeLocale TN = new AgeLocale(
-        'tn',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'letsatsi {n}', (PluralCategory.OTHER): 'malatsi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kgwedi {n}', (PluralCategory.OTHER): 'dikgwedi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngwaga {n}', (PluralCategory.OTHER): 'dingwaga {n}']),
-        ),
-        '{0} le halofo',
-        ', ',
-        'O sa tswa tsalwa',
-        new Stages(
-            StageLabel.neutral('Lesea le sa tswa tsalwa'),
-            StageLabel.neutral('Lesea'),
-            StageLabel.neutral('Ngwana yo monnye'),
-            StageLabel.neutral('Ngwana'),
-            StageLabel.neutral('Lekgarebe'),
-            StageLabel.neutral('Motho yo mogolo'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'letsatsi {n}', (PluralCategory.OTHER): 'malatsi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'beke {n}', (PluralCategory.OTHER): 'dibeke {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'kgw. {n}', (PluralCategory.OTHER): 'dikgw. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngw. {n}', (PluralCategory.OTHER): 'dingw. {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/tpi.json
-    // ================================================================
-    // TPI — Tok Pisin
-    // ================================================================
-    static final AgeLocale TPI = new AgeLocale(
-        'tpi',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} de'),
-            UnitForms.simpleUnit('{n} wik'),
-            UnitForms.simpleUnit('{n} mun'),
-            UnitForms.simpleUnit('{n} yia'),
-        ),
-        '{n} na hap',
-        ', ',
-        'Nupela pikinini',
-        new Stages(
-            StageLabel.neutral('Nupela pikinini'),
-            StageLabel.neutral('Pikinini'),
-            StageLabel.neutral('Liklik pikinini'),
-            StageLabel.neutral('Pikinini'),
-            StageLabel.neutral('Yangpela'),
-            StageLabel.neutral('Bikpela man'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} de'),
-            UnitForms.simpleUnit('{n} wik'),
-            UnitForms.simpleUnit('{n} mun'),
-            UnitForms.simpleUnit('{n} yia'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/tr.json
-    // ================================================================
-    // TR — Turkish
-    // ================================================================
-    static final AgeLocale TR = new AgeLocale(
-        'tr',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} gün', (PluralCategory.OTHER): '{n} gün']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} hafta', (PluralCategory.OTHER): '{n} hafta']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ay', (PluralCategory.OTHER): '{n} ay']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} yaş', (PluralCategory.OTHER): '{n} yaş']),
-        ),
-        '{n} buçuk',
-        ', ',
-        'Yeni doğan',
-        new Stages(
-            StageLabel.neutral('Yeni doğan'),
-            StageLabel.neutral('Bebek'),
-            StageLabel.neutral('Küçük çocuk'),
-            StageLabel.neutral('Çocuk'),
-            StageLabel.neutral('Ergen'),
-            StageLabel.neutral('Yetişkin'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} gün'),
-            UnitForms.simpleUnit('{n} hf.'),
-            UnitForms.simpleUnit('{n} ay'),
-            UnitForms.simpleUnit('{n} yıl'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}g'),
-            UnitForms.simpleUnit('{n}h'),
-            UnitForms.simpleUnit('{n}a'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/ts.json
-    // ================================================================
-    // TS — Tsonga
-    // ================================================================
-    static final AgeLocale TS = new AgeLocale(
-        'ts',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'siku {n}', (PluralCategory.OTHER): 'masiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'vhiki {n}', (PluralCategory.OTHER): 'mavhiki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'n\'hweti {n}', (PluralCategory.OTHER): 'tin\'hweti {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lembe {n}', (PluralCategory.OTHER): 'malembe {n}']),
-        ),
-        '{0} ni hafu',
-        ', ',
-        'N\'wana loyi a ha ku velekiwa',
-        new Stages(
-            StageLabel.neutral('N\'wana wo velekiwa'),
-            StageLabel.neutral('Xihlangi'),
-            StageLabel.neutral('N\'wana lontsongo'),
-            StageLabel.neutral('N\'wana'),
-            StageLabel.neutral('Jaha'),
-            StageLabel.neutral('Munhu lonkulu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'siku {n}', (PluralCategory.OTHER): 'masiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'vhiki {n}', (PluralCategory.OTHER): 'mavhiki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'n\'hw. {n}', (PluralCategory.OTHER): 'tin\'hw. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lembe {n}', (PluralCategory.OTHER): 'mal. {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/tum.json
-    // ================================================================
-    // TUM — Tumbuka
-    // ================================================================
-    static final AgeLocale TUM = new AgeLocale(
-        'tum',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'dazi {n}', (PluralCategory.OTHER): 'madazi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sabata {n}', (PluralCategory.OTHER): 'masabata {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miyezi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
-        ),
-        '{0} na hafu',
-        ', ',
-        'Mwana wabadwa wala',
-        new Stages(
-            StageLabel.neutral('Mwana wabadwa wala'),
-            StageLabel.neutral('Mwana wakumawere'),
-            StageLabel.neutral('Kamwana'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Munyamata'),
-            StageLabel.neutral('Munthu mukuru'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'dazi {n}', (PluralCategory.OTHER): 'mad. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'sab. {n}', (PluralCategory.OTHER): 'mas. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miy. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
-
-    // Source: age/locales/src/tzm.json
-    // ================================================================
-    // TZM — Central Atlas Tamazight
-    // ================================================================
-    static final AgeLocale TZM = new AgeLocale(
-        'tzm',
-        { int n ->
+    private static AgeLocale _tzm() {
+        new AgeLocale(
+            'tzm',
+            { int n ->
             if (n == 0 || n == 1 || (n >= 11 && n <= 99)) return PluralCategory.ONE
             return PluralCategory.OTHER
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ass', (PluralCategory.OTHER): '{n} ussan']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} imalass', (PluralCategory.OTHER): '{n} imalassn']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ayyur', (PluralCategory.OTHER): '{n} ayyurn']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} aseggas', (PluralCategory.OTHER): '{n} iseggasen']),
-        ),
-        '{0} d uzgen',
-        ', ',
-        'Iɣ d illul',
-        new Stages(
-            StageLabel.neutral('Iɣ d illul'),
-            StageLabel.neutral('Agellid'),
-            StageLabel.gendered('Aḥenjir', 'Taḥenjirt'),
-            StageLabel.gendered('Afrux', 'Tafruxṭ'),
-            StageLabel.gendered('Aɛrim', 'Taɛrimt'),
-            StageLabel.gendered('Argaz', 'Tamṭṭuṭ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} d'),
-            UnitForms.simpleUnit('{n} wk'),
-            UnitForms.simpleUnit('{n} mo'),
-            UnitForms.simpleUnit('{n} yr'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ass', (PluralCategory.OTHER): '{n} ussan']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} imalass', (PluralCategory.OTHER): '{n} imalassn']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ayyur', (PluralCategory.OTHER): '{n} ayyurn']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} aseggas', (PluralCategory.OTHER): '{n} iseggasen']),
+            ),
+            '{0} d uzgen',
+            ', ',
+            'Iɣ d illul',
+            new Stages(
+                StageLabel.neutral('Iɣ d illul'),
+                StageLabel.neutral('Agellid'),
+                StageLabel.gendered('Aḥenjir', 'Taḥenjirt'),
+                StageLabel.gendered('Afrux', 'Tafruxṭ'),
+                StageLabel.gendered('Aɛrim', 'Taɛrimt'),
+                StageLabel.gendered('Argaz', 'Tamṭṭuṭ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} d'),
+                UnitForms.simpleUnit('{n} wk'),
+                UnitForms.simpleUnit('{n} mo'),
+                UnitForms.simpleUnit('{n} yr'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/uk.json
-    // ================================================================
-    // UK — Ukrainian
-    // ================================================================
-    static final AgeLocale UK = new AgeLocale(
-        'uk',
-        { int n ->
+    private static AgeLocale _uk() {
+        new AgeLocale(
+            'uk',
+            { int n ->
             int mod10 = n % 10
             int mod100 = n % 100
             if (mod10 == 1 && mod100 != 11) return PluralCategory.ONE
             if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.FEW
             return PluralCategory.MANY
         },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} день', (PluralCategory.FEW): '{n} дні', (PluralCategory.MANY): '{n} днів', (PluralCategory.OTHER): '{n} днів']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} тиждень', (PluralCategory.FEW): '{n} тижні', (PluralCategory.MANY): '{n} тижнів', (PluralCategory.OTHER): '{n} тижнів']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} місяць', (PluralCategory.FEW): '{n} місяці', (PluralCategory.MANY): '{n} місяців', (PluralCategory.OTHER): '{n} місяців']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} рік', (PluralCategory.FEW): '{n} роки', (PluralCategory.MANY): '{n} років', (PluralCategory.OTHER): '{n} років']),
-        ),
-        '{n} з половиною',
-        ', ',
-        'Новонароджений',
-        new Stages(
-            StageLabel.gendered('Новонароджений', 'Новонароджена'),
-            StageLabel.neutral('Немовля'),
-            StageLabel.neutral('Малюк'),
-            StageLabel.neutral('Дитина'),
-            StageLabel.neutral('Підліток'),
-            StageLabel.gendered('Дорослий', 'Доросла'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} дн.'),
-            UnitForms.simpleUnit('{n} тиж.'),
-            UnitForms.simpleUnit('{n} міс.'),
-            UnitForms.simpleUnit('{n} р.'),
-            null,
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} день', (PluralCategory.FEW): '{n} дні', (PluralCategory.MANY): '{n} днів', (PluralCategory.OTHER): '{n} днів']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} тиждень', (PluralCategory.FEW): '{n} тижні', (PluralCategory.MANY): '{n} тижнів', (PluralCategory.OTHER): '{n} тижнів']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} місяць', (PluralCategory.FEW): '{n} місяці', (PluralCategory.MANY): '{n} місяців', (PluralCategory.OTHER): '{n} місяців']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} рік', (PluralCategory.FEW): '{n} роки', (PluralCategory.MANY): '{n} років', (PluralCategory.OTHER): '{n} років']),
+            ),
+            '{n} з половиною',
+            ', ',
+            'Новонароджений',
+            new Stages(
+                StageLabel.gendered('Новонароджений', 'Новонароджена'),
+                StageLabel.neutral('Немовля'),
+                StageLabel.neutral('Малюк'),
+                StageLabel.neutral('Дитина'),
+                StageLabel.neutral('Підліток'),
+                StageLabel.gendered('Дорослий', 'Доросла'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} дн.'),
+                UnitForms.simpleUnit('{n} тиж.'),
+                UnitForms.simpleUnit('{n} міс.'),
+                UnitForms.simpleUnit('{n} р.'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}д'),
+                UnitForms.simpleUnit('{n}т'),
+                UnitForms.simpleUnit('{n}м'),
+                UnitForms.simpleUnit('{n}р'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}д'),
-            UnitForms.simpleUnit('{n}т'),
-            UnitForms.simpleUnit('{n}м'),
-            UnitForms.simpleUnit('{n}р'),
-            '{n}½',
+        )
+    }
+
+    private static AgeLocale _umb() {
+        new AgeLocale(
+            'umb',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'elityi {n}', (PluralCategory.OTHER): 'omatyi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'osemana {n}', (PluralCategory.OTHER): 'olosemana {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ondjambi {n}', (PluralCategory.OTHER): 'olondjambi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ombula {n}', (PluralCategory.OTHER): 'olombula {n}']),
+            ),
+            '{0} na oñali',
+            ', ',
+            'Omola wa kulwa',
+            new Stages(
+                StageLabel.neutral('Omola wa kulwa kwenda'),
+                StageLabel.neutral('Okambulu'),
+                StageLabel.neutral('Omola okanini'),
+                StageLabel.neutral('Omola'),
+                StageLabel.neutral('Oloneke'),
+                StageLabel.neutral('Omundu onene'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'elit. {n}', (PluralCategory.OTHER): 'omat. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'osem. {n}', (PluralCategory.OTHER): 'olosem. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ondj. {n}', (PluralCategory.OTHER): 'olondj. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'omb. {n}', (PluralCategory.OTHER): 'olomb. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ur() {
+        new AgeLocale(
+            'ur',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} دن', (PluralCategory.OTHER): '{n} دن']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ہفتہ', (PluralCategory.OTHER): '{n} ہفتے']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مہینہ', (PluralCategory.OTHER): '{n} مہینے']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} سال', (PluralCategory.OTHER): '{n} سال']),
+            ),
+            'ساڑھے {n}',
+            '، ',
+            'نومولود',
+            new Stages(
+                StageLabel.neutral('نومولود'),
+                StageLabel.neutral('شیرخوار'),
+                StageLabel.gendered('چھوٹا بچہ', 'چھوٹی بچی'),
+                StageLabel.gendered('بچہ', 'بچی'),
+                StageLabel.neutral('نوجوان'),
+                StageLabel.neutral('بالغ'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} دن'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ہفتہ', (PluralCategory.OTHER): '{n} ہفتے']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مہینہ', (PluralCategory.OTHER): '{n} مہینے']),
+                UnitForms.simpleUnit('{n} سال'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} دن'),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ہفتہ', (PluralCategory.OTHER): '{n} ہفتے']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مہینہ', (PluralCategory.OTHER): '{n} مہینے']),
+                UnitForms.simpleUnit('{n} سال'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _uz() {
+        new AgeLocale(
+            'uz',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kun', (PluralCategory.OTHER): '{n} kun']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} hafta', (PluralCategory.OTHER): '{n} hafta']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} oy', (PluralCategory.OTHER): '{n} oy']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): '{n} yosh', (PluralCategory.OTHER): '{n} yosh']),
+            ),
+            '{n} yarim',
+            ', ',
+            'Yangi tugʻilgan',
+            new Stages(
+                StageLabel.neutral('Yangi tugʻilgan'),
+                StageLabel.neutral('Chaqaloq'),
+                StageLabel.neutral('Kichkintoy'),
+                StageLabel.neutral('Bola'),
+                StageLabel.neutral('Oʻsmir'),
+                StageLabel.neutral('Katta'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} kun'),
+                UnitForms.simpleUnit('{n} hafta'),
+                UnitForms.simpleUnit('{n} oy'),
+                UnitForms.simpleUnit('{n} yil'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} kun'),
+                UnitForms.simpleUnit('{n} hafta'),
+                UnitForms.simpleUnit('{n} oy'),
+                UnitForms.simpleUnit('{n} yil'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _ve() {
+        new AgeLocale(
+            've',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'duvha {n}', (PluralCategory.OTHER): 'maduvha {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'vhege {n}', (PluralCategory.OTHER): 'mavhege {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'nwedzi {n}', (PluralCategory.OTHER): 'minwedzi {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'nwaha {n}', (PluralCategory.OTHER): 'minwaha {n}']),
+            ),
+            '{0} na hafu',
+            ', ',
+            'Mbuwe',
+            new Stages(
+                StageLabel.neutral('Mbuwe'),
+                StageLabel.neutral('Kwana'),
+                StageLabel.neutral('Nwana mutuku'),
+                StageLabel.neutral('Nwana'),
+                StageLabel.neutral('Mutukana'),
+                StageLabel.neutral('Muthu muhulwane'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'duv. {n}', (PluralCategory.OTHER): 'mad. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'vheg. {n}', (PluralCategory.OTHER): 'mav. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'nwedzi {n}', (PluralCategory.OTHER): 'min. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'nwaha {n}', (PluralCategory.OTHER): 'min. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _vi() {
+        new AgeLocale(
+            'vi',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n} ngày'),
+                UnitForms.simpleUnit('{n} tuần'),
+                UnitForms.simpleUnit('{n} tháng'),
+                UnitForms.simpleUnit('{n} tuổi'),
+            ),
+            '{0} rưỡi',
+            ', ',
+            'Sơ sinh',
+            new Stages(
+                StageLabel.neutral('Sơ sinh'),
+                StageLabel.neutral('Trẻ sơ sinh'),
+                StageLabel.neutral('Trẻ mới biết đi'),
+                StageLabel.neutral('Trẻ em'),
+                StageLabel.neutral('Thiếu niên'),
+                StageLabel.neutral('Người lớn'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ngày'),
+                UnitForms.simpleUnit('{n} tuần'),
+                UnitForms.simpleUnit('{n} tháng'),
+                UnitForms.simpleUnit('{n} năm'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ngày'),
+                UnitForms.simpleUnit('{n} tuần'),
+                UnitForms.simpleUnit('{n} tháng'),
+                UnitForms.simpleUnit('{n} năm'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _vmw() {
+        new AgeLocale(
+            'vmw',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'eshuku {n}', (PluralCategory.OTHER): 'mshuku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'esumana {n}', (PluralCategory.OTHER): 'msumana {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mweri {n}', (PluralCategory.OTHER): 'miyeri {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miyaka {n}']),
+            ),
+            '{0} na mettenhe',
+            ', ',
+            'Mwana opakiwa',
+            new Stages(
+                StageLabel.neutral('Mwana opakiwa'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Mutthu'),
+                StageLabel.neutral('Mutthu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'eshuku {n}', (PluralCategory.OTHER): 'mshuku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'esumana {n}', (PluralCategory.OTHER): 'msumana {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mweri {n}', (PluralCategory.OTHER): 'miyeri {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miyaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _wo() {
+        new AgeLocale(
+            'wo',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('bés {n}'),
+                UnitForms.simpleUnit('ayubés {n}'),
+                UnitForms.simpleUnit('weer {n}'),
+                UnitForms.simpleUnit('at {n}'),
+            ),
+            '{0} ak genn-wàll',
+            ', ',
+            'Dees ko sax juddu',
+            new Stages(
+                StageLabel.neutral('Dees ko sax juddu'),
+                StageLabel.neutral('Njàmbaar bu ndaw'),
+                StageLabel.neutral('Xale bu ndaw'),
+                StageLabel.neutral('Xale'),
+                StageLabel.neutral('Ndaw-ndaw'),
+                StageLabel.neutral('Mag'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('bés {n}'),
+                UnitForms.simpleUnit('ayub. {n}'),
+                UnitForms.simpleUnit('weer {n}'),
+                UnitForms.simpleUnit('at {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('bés {n}'),
+                UnitForms.simpleUnit('ayub {n}'),
+                UnitForms.simpleUnit('weer {n}'),
+                UnitForms.simpleUnit('at {n}'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _xh() {
+        new AgeLocale(
+            'xh',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'iintsuku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iveki {n}', (PluralCategory.OTHER): 'iiveki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'iinyanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'unyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
+            ),
+            '{0} nehafu',
+            ', ',
+            'Usanda kuzalwa',
+            new Stages(
+                StageLabel.neutral('Usana olusanda kuzalwa'),
+                StageLabel.neutral('Usana'),
+                StageLabel.neutral('Umntwana omncinane'),
+                StageLabel.neutral('Umntwana'),
+                StageLabel.neutral('Ulutsha'),
+                StageLabel.neutral('Umntu omdala'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'iintsuku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iveki {n}', (PluralCategory.OTHER): 'iiveki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iny. {n}', (PluralCategory.OTHER): 'iiny. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'uny. {n}', (PluralCategory.OTHER): 'imy. {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _yao() {
+        new AgeLocale(
+            'yao',
+            { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lisiku {n}', (PluralCategory.OTHER): 'masiku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'majuma {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngondo {n}', (PluralCategory.OTHER): 'mingondo {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
+            ),
+            '{0} na nusu',
+            ', ',
+            'Mwanache jwabadwa',
+            new Stages(
+                StageLabel.neutral('Mwanache jwabadwa'),
+                StageLabel.neutral('Kamwanache'),
+                StageLabel.neutral('Kamwanache kanandi'),
+                StageLabel.neutral('Mwanache'),
+                StageLabel.neutral('Jeje'),
+                StageLabel.neutral('Mundu'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'lis. {n}', (PluralCategory.OTHER): 'mas. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'maj. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'ngo. {n}', (PluralCategory.OTHER): 'min. {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                null,
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _yo() {
+        new AgeLocale(
+            'yo',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('ọjọ́ {n}'),
+                UnitForms.simpleUnit('ọ̀sẹ̀ {n}'),
+                UnitForms.simpleUnit('oṣù {n}'),
+                UnitForms.simpleUnit('ọdún {n}'),
+            ),
+            '{0} àbọ̀',
+            ', ',
+            'Ọmọ tuntun',
+            new Stages(
+                StageLabel.neutral('Ọmọ tuntun'),
+                StageLabel.neutral('Ọmọ ọwọ́'),
+                StageLabel.neutral('Ọmọ kékeré'),
+                StageLabel.neutral('Ọmọ'),
+                StageLabel.neutral('Ọ̀dọ́'),
+                StageLabel.neutral('Àgbàlagbà'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('ọjọ́ {n}'),
+                UnitForms.simpleUnit('ọ̀sẹ̀ {n}'),
+                UnitForms.simpleUnit('oṣù {n}'),
+                UnitForms.simpleUnit('ọdún {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
+            null,
+            null
+        )
+    }
+
+    private static AgeLocale _yue() {
+        new AgeLocale(
+            'yue',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n}日'),
+                UnitForms.simpleUnit('{n}個星期'),
+                UnitForms.simpleUnit('{n}個月'),
+                UnitForms.simpleUnit('{n}歲'),
+            ),
+            '{0}半',
             '',
+            '初生嬰兒',
+            new Stages(
+                StageLabel.neutral('初生嬰兒'),
+                StageLabel.neutral('嬰兒'),
+                StageLabel.neutral('幼兒'),
+                StageLabel.neutral('細路'),
+                StageLabel.neutral('後生'),
+                StageLabel.neutral('成人'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} 日'),
+                UnitForms.simpleUnit('{n} 個星期'),
+                UnitForms.simpleUnit('{n} 個月'),
+                UnitForms.simpleUnit('{n} 年'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}日'),
+                UnitForms.simpleUnit('{n}週'),
+                UnitForms.simpleUnit('{n}月'),
+                UnitForms.simpleUnit('{n}年'),
+                null,
+                null,
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/umb.json
-    // ================================================================
-    // UMB — Umbundu
-    // ================================================================
-    static final AgeLocale UMB = new AgeLocale(
-        'umb',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'elityi {n}', (PluralCategory.OTHER): 'omatyi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'osemana {n}', (PluralCategory.OTHER): 'olosemana {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ondjambi {n}', (PluralCategory.OTHER): 'olondjambi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ombula {n}', (PluralCategory.OTHER): 'olombula {n}']),
-        ),
-        '{0} na oñali',
-        ', ',
-        'Omola wa kulwa',
-        new Stages(
-            StageLabel.neutral('Omola wa kulwa kwenda'),
-            StageLabel.neutral('Okambulu'),
-            StageLabel.neutral('Omola okanini'),
-            StageLabel.neutral('Omola'),
-            StageLabel.neutral('Oloneke'),
-            StageLabel.neutral('Omundu onene'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'elit. {n}', (PluralCategory.OTHER): 'omat. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'osem. {n}', (PluralCategory.OTHER): 'olosem. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ondj. {n}', (PluralCategory.OTHER): 'olondj. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'omb. {n}', (PluralCategory.OTHER): 'olomb. {n}']),
-            null,
+    private static AgeLocale _zdj() {
+        new AgeLocale(
+            'zdj',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('suku {n}'),
+                UnitForms.simpleUnit('djumwa {n}'),
+                UnitForms.simpleUnit('mwezi {n}'),
+                UnitForms.simpleUnit('mwaha {n}'),
+            ),
+            '{0} na nusu',
+            ', ',
+            'Mwana mdzuhu',
+            new Stages(
+                StageLabel.neutral('Mwana mdzuhu'),
+                StageLabel.neutral('Mwana mdzo'),
+                StageLabel.neutral('Mwana mtsanga'),
+                StageLabel.neutral('Mwana'),
+                StageLabel.neutral('Mwanantsi'),
+                StageLabel.neutral('Mtu mzima'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('suku {n}'),
+                UnitForms.simpleUnit('djum. {n}'),
+                UnitForms.simpleUnit('mw. {n}'),
+                UnitForms.simpleUnit('mwa. {n}'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}d'),
+                UnitForms.simpleUnit('{n}w'),
+                UnitForms.simpleUnit('{n}m'),
+                UnitForms.simpleUnit('{n}y'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
+        )
+    }
+
+    private static AgeLocale _zh() {
+        new AgeLocale(
+            'zh',
+            { int n -> PluralCategory.OTHER },
+            new Units(
+                UnitForms.simpleUnit('{n}天'),
+                UnitForms.simpleUnit('{n}周'),
+                UnitForms.simpleUnit('{n}个月'),
+                UnitForms.simpleUnit('{n}岁'),
+            ),
+            '{0}半',
             '',
+            '新生儿',
+            new Stages(
+                StageLabel.neutral('新生儿'),
+                StageLabel.neutral('婴儿'),
+                StageLabel.neutral('幼儿'),
+                StageLabel.neutral('儿童'),
+                StageLabel.neutral('青少年'),
+                StageLabel.neutral('成人'),
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}天'),
+                UnitForms.simpleUnit('{n}周'),
+                UnitForms.simpleUnit('{n}个月'),
+                UnitForms.simpleUnit('{n}年'),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n}天'),
+                UnitForms.simpleUnit('{n}周'),
+                UnitForms.simpleUnit('{n}个月'),
+                UnitForms.simpleUnit('{n}年'),
+                null,
+                null,
+                null
+            ),
+            null,
             null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/ur.json
-    // ================================================================
-    // UR — Urdu
-    // ================================================================
-    static final AgeLocale UR = new AgeLocale(
-        'ur',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} دن', (PluralCategory.OTHER): '{n} دن']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ہفتہ', (PluralCategory.OTHER): '{n} ہفتے']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مہینہ', (PluralCategory.OTHER): '{n} مہینے']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} سال', (PluralCategory.OTHER): '{n} سال']),
-        ),
-        'ساڑھے {n}',
-        '، ',
-        'نومولود',
-        new Stages(
-            StageLabel.neutral('نومولود'),
-            StageLabel.neutral('شیرخوار'),
-            StageLabel.gendered('چھوٹا بچہ', 'چھوٹی بچی'),
-            StageLabel.gendered('بچہ', 'بچی'),
-            StageLabel.neutral('نوجوان'),
-            StageLabel.neutral('بالغ'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} دن'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ہفتہ', (PluralCategory.OTHER): '{n} ہفتے']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مہینہ', (PluralCategory.OTHER): '{n} مہینے']),
-            UnitForms.simpleUnit('{n} سال'),
-            null,
+    private static AgeLocale _zu() {
+        new AgeLocale(
+            'zu',
+            { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
+            new Units(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'izinsuku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iviki {n}', (PluralCategory.OTHER): 'amaviki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'izinyanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'unyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
+            ),
+            '{0} nohhafu',
+            ', ',
+            'Usanda kuzalwa',
+            new Stages(
+                StageLabel.neutral('Usana olusanda kuzalwa'),
+                StageLabel.neutral('Usana'),
+                StageLabel.neutral('Umntwana omncane'),
+                StageLabel.neutral('Umntwana'),
+                StageLabel.neutral('Intsha'),
+                StageLabel.neutral('Umuntu omdala'),
+            ),
+            new CompactnessOverride(
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'izinsuku {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'iviki {n}', (PluralCategory.OTHER): 'amaviki {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'izinyanga {n}']),
+                UnitForms.pluralUnit([(PluralCategory.ONE): 'unyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
+                null,
+                null,
+                null
+            ),
+            new CompactnessOverride(
+                UnitForms.simpleUnit('{n} ns'),
+                UnitForms.simpleUnit('{n} vk'),
+                UnitForms.simpleUnit('{n} ny'),
+                UnitForms.simpleUnit('{n} mk'),
+                '{n}½',
+                '',
+                null
+            ),
             null,
             null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} دن'),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} ہفتہ', (PluralCategory.OTHER): '{n} ہفتے']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} مہینہ', (PluralCategory.OTHER): '{n} مہینے']),
-            UnitForms.simpleUnit('{n} سال'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+        )
+    }
 
-    // Source: age/locales/src/uz.json
-    // ================================================================
-    // UZ — Uzbek
-    // ================================================================
-    static final AgeLocale UZ = new AgeLocale(
-        'uz',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} kun', (PluralCategory.OTHER): '{n} kun']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} hafta', (PluralCategory.OTHER): '{n} hafta']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} oy', (PluralCategory.OTHER): '{n} oy']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): '{n} yosh', (PluralCategory.OTHER): '{n} yosh']),
-        ),
-        '{n} yarim',
-        ', ',
-        'Yangi tugʻilgan',
-        new Stages(
-            StageLabel.neutral('Yangi tugʻilgan'),
-            StageLabel.neutral('Chaqaloq'),
-            StageLabel.neutral('Kichkintoy'),
-            StageLabel.neutral('Bola'),
-            StageLabel.neutral('Oʻsmir'),
-            StageLabel.neutral('Katta'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} kun'),
-            UnitForms.simpleUnit('{n} hafta'),
-            UnitForms.simpleUnit('{n} oy'),
-            UnitForms.simpleUnit('{n} yil'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} kun'),
-            UnitForms.simpleUnit('{n} hafta'),
-            UnitForms.simpleUnit('{n} oy'),
-            UnitForms.simpleUnit('{n} yil'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesA() {
+        [
+            ('af'): AF, ('ak'): AK, ('am'): AM,
+            ('ar'): AR, ('ay'): AY, ('az'): AZ
+        ]
+    }
 
-    // Source: age/locales/src/ve.json
-    // ================================================================
-    // VE — Venda
-    // ================================================================
-    static final AgeLocale VE = new AgeLocale(
-        've',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'duvha {n}', (PluralCategory.OTHER): 'maduvha {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'vhege {n}', (PluralCategory.OTHER): 'mavhege {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'nwedzi {n}', (PluralCategory.OTHER): 'minwedzi {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'nwaha {n}', (PluralCategory.OTHER): 'minwaha {n}']),
-        ),
-        '{0} na hafu',
-        ', ',
-        'Mbuwe',
-        new Stages(
-            StageLabel.neutral('Mbuwe'),
-            StageLabel.neutral('Kwana'),
-            StageLabel.neutral('Nwana mutuku'),
-            StageLabel.neutral('Nwana'),
-            StageLabel.neutral('Mutukana'),
-            StageLabel.neutral('Muthu muhulwane'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'duv. {n}', (PluralCategory.OTHER): 'mad. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'vheg. {n}', (PluralCategory.OTHER): 'mav. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'nwedzi {n}', (PluralCategory.OTHER): 'min. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'nwaha {n}', (PluralCategory.OTHER): 'min. {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesB() {
+        [
+            ('bci'): BCI, ('be'): BE, ('bem'): BEM,
+            ('bg'): BG, ('bi'): BI, ('bm'): BM,
+            ('bn'): BN, ('br'): BR, ('bs'): BS
+        ]
+    }
 
-    // Source: age/locales/src/vi.json
-    // ================================================================
-    // VI — Vietnamese
-    // ================================================================
-    static final AgeLocale VI = new AgeLocale(
-        'vi',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n} ngày'),
-            UnitForms.simpleUnit('{n} tuần'),
-            UnitForms.simpleUnit('{n} tháng'),
-            UnitForms.simpleUnit('{n} tuổi'),
-        ),
-        '{0} rưỡi',
-        ', ',
-        'Sơ sinh',
-        new Stages(
-            StageLabel.neutral('Sơ sinh'),
-            StageLabel.neutral('Trẻ sơ sinh'),
-            StageLabel.neutral('Trẻ mới biết đi'),
-            StageLabel.neutral('Trẻ em'),
-            StageLabel.neutral('Thiếu niên'),
-            StageLabel.neutral('Người lớn'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ngày'),
-            UnitForms.simpleUnit('{n} tuần'),
-            UnitForms.simpleUnit('{n} tháng'),
-            UnitForms.simpleUnit('{n} năm'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ngày'),
-            UnitForms.simpleUnit('{n} tuần'),
-            UnitForms.simpleUnit('{n} tháng'),
-            UnitForms.simpleUnit('{n} năm'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesC() {
+        [
+            ('ca'): CA, ('cak'): CAK, ('ceb'): CEB,
+            ('cs'): CS, ('cy'): CY
+        ]
+    }
 
-    // Source: age/locales/src/vmw.json
-    // ================================================================
-    // VMW — Makhuwa
-    // ================================================================
-    static final AgeLocale VMW = new AgeLocale(
-        'vmw',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'eshuku {n}', (PluralCategory.OTHER): 'mshuku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'esumana {n}', (PluralCategory.OTHER): 'msumana {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mweri {n}', (PluralCategory.OTHER): 'miyeri {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miyaka {n}']),
-        ),
-        '{0} na mettenhe',
-        ', ',
-        'Mwana opakiwa',
-        new Stages(
-            StageLabel.neutral('Mwana opakiwa'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Mutthu'),
-            StageLabel.neutral('Mutthu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'eshuku {n}', (PluralCategory.OTHER): 'mshuku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'esumana {n}', (PluralCategory.OTHER): 'msumana {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mweri {n}', (PluralCategory.OTHER): 'miyeri {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'miyaka {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesD() {
+        [
+            ('da'): DA, ('de'): DE, ('din'): DIN,
+            ('dje'): DJE, ('dv'): DV, ('dyu'): DYU,
+            ('dz'): DZ
+        ]
+    }
 
-    // Source: age/locales/src/wo.json
-    // ================================================================
-    // WO — Wolof
-    // ================================================================
-    static final AgeLocale WO = new AgeLocale(
-        'wo',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('bés {n}'),
-            UnitForms.simpleUnit('ayubés {n}'),
-            UnitForms.simpleUnit('weer {n}'),
-            UnitForms.simpleUnit('at {n}'),
-        ),
-        '{0} ak genn-wàll',
-        ', ',
-        'Dees ko sax juddu',
-        new Stages(
-            StageLabel.neutral('Dees ko sax juddu'),
-            StageLabel.neutral('Njàmbaar bu ndaw'),
-            StageLabel.neutral('Xale bu ndaw'),
-            StageLabel.neutral('Xale'),
-            StageLabel.neutral('Ndaw-ndaw'),
-            StageLabel.neutral('Mag'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('bés {n}'),
-            UnitForms.simpleUnit('ayub. {n}'),
-            UnitForms.simpleUnit('weer {n}'),
-            UnitForms.simpleUnit('at {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('bés {n}'),
-            UnitForms.simpleUnit('ayub {n}'),
-            UnitForms.simpleUnit('weer {n}'),
-            UnitForms.simpleUnit('at {n}'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesE() {
+        [
+            ('ee'): EE, ('el'): EL, ('en'): EN,
+            ('es'): ES, ('et'): ET, ('eu'): EU
+        ]
+    }
 
-    // Source: age/locales/src/xh.json
-    // ================================================================
-    // XH — Xhosa
-    // ================================================================
-    static final AgeLocale XH = new AgeLocale(
-        'xh',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'iintsuku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iveki {n}', (PluralCategory.OTHER): 'iiveki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'iinyanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'unyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
-        ),
-        '{0} nehafu',
-        ', ',
-        'Usanda kuzalwa',
-        new Stages(
-            StageLabel.neutral('Usana olusanda kuzalwa'),
-            StageLabel.neutral('Usana'),
-            StageLabel.neutral('Umntwana omncinane'),
-            StageLabel.neutral('Umntwana'),
-            StageLabel.neutral('Ulutsha'),
-            StageLabel.neutral('Umntu omdala'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'iintsuku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iveki {n}', (PluralCategory.OTHER): 'iiveki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iny. {n}', (PluralCategory.OTHER): 'iiny. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'uny. {n}', (PluralCategory.OTHER): 'imy. {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesF() {
+        [
+            ('fa'): FA, ('fan'): FAN, ('ff'): FF,
+            ('fi'): FI, ('fil'): FIL, ('fj'): FJ,
+            ('fon'): FON, ('fr'): FR
+        ]
+    }
 
-    // Source: age/locales/src/yao.json
-    // ================================================================
-    // YAO — Yao
-    // ================================================================
-    static final AgeLocale YAO = new AgeLocale(
-        'yao',
-        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lisiku {n}', (PluralCategory.OTHER): 'masiku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'majuma {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngondo {n}', (PluralCategory.OTHER): 'mingondo {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
-        ),
-        '{0} na nusu',
-        ', ',
-        'Mwanache jwabadwa',
-        new Stages(
-            StageLabel.neutral('Mwanache jwabadwa'),
-            StageLabel.neutral('Kamwanache'),
-            StageLabel.neutral('Kamwanache kanandi'),
-            StageLabel.neutral('Mwanache'),
-            StageLabel.neutral('Jeje'),
-            StageLabel.neutral('Mundu'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'lis. {n}', (PluralCategory.OTHER): 'mas. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'maj. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngo. {n}', (PluralCategory.OTHER): 'min. {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            null,
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesG() {
+        [
+            ('ga'): GA, ('gd'): GD, ('gl'): GL,
+            ('gn'): GN, ('gu'): GU, ('gv'): GV
+        ]
+    }
 
-    // Source: age/locales/src/yo.json
-    // ================================================================
-    // YO — Yoruba
-    // ================================================================
-    static final AgeLocale YO = new AgeLocale(
-        'yo',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('ọjọ́ {n}'),
-            UnitForms.simpleUnit('ọ̀sẹ̀ {n}'),
-            UnitForms.simpleUnit('oṣù {n}'),
-            UnitForms.simpleUnit('ọdún {n}'),
-        ),
-        '{0} àbọ̀',
-        ', ',
-        'Ọmọ tuntun',
-        new Stages(
-            StageLabel.neutral('Ọmọ tuntun'),
-            StageLabel.neutral('Ọmọ ọwọ́'),
-            StageLabel.neutral('Ọmọ kékeré'),
-            StageLabel.neutral('Ọmọ'),
-            StageLabel.neutral('Ọ̀dọ́'),
-            StageLabel.neutral('Àgbàlagbà'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('ọjọ́ {n}'),
-            UnitForms.simpleUnit('ọ̀sẹ̀ {n}'),
-            UnitForms.simpleUnit('oṣù {n}'),
-            UnitForms.simpleUnit('ọdún {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesH() {
+        [
+            ('ha'): HA, ('he'): HE, ('hi'): HI,
+            ('hmn'): HMN, ('hr'): HR, ('ht'): HT,
+            ('hu'): HU, ('hy'): HY
+        ]
+    }
 
-    // Source: age/locales/src/yue.json
-    // ================================================================
-    // YUE — Cantonese
-    // ================================================================
-    static final AgeLocale YUE = new AgeLocale(
-        'yue',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n}日'),
-            UnitForms.simpleUnit('{n}個星期'),
-            UnitForms.simpleUnit('{n}個月'),
-            UnitForms.simpleUnit('{n}歲'),
-        ),
-        '{0}半',
-        '',
-        '初生嬰兒',
-        new Stages(
-            StageLabel.neutral('初生嬰兒'),
-            StageLabel.neutral('嬰兒'),
-            StageLabel.neutral('幼兒'),
-            StageLabel.neutral('細路'),
-            StageLabel.neutral('後生'),
-            StageLabel.neutral('成人'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} 日'),
-            UnitForms.simpleUnit('{n} 個星期'),
-            UnitForms.simpleUnit('{n} 個月'),
-            UnitForms.simpleUnit('{n} 年'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}日'),
-            UnitForms.simpleUnit('{n}週'),
-            UnitForms.simpleUnit('{n}月'),
-            UnitForms.simpleUnit('{n}年'),
-            null,
-            null,
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesI() {
+        [
+            ('id'): ID, ('ig'): IG, ('is'): IS,
+            ('it'): IT
+        ]
+    }
 
-    // Source: age/locales/src/zdj.json
-    // ================================================================
-    // ZDJ — Comorian
-    // ================================================================
-    static final AgeLocale ZDJ = new AgeLocale(
-        'zdj',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('suku {n}'),
-            UnitForms.simpleUnit('djumwa {n}'),
-            UnitForms.simpleUnit('mwezi {n}'),
-            UnitForms.simpleUnit('mwaha {n}'),
-        ),
-        '{0} na nusu',
-        ', ',
-        'Mwana mdzuhu',
-        new Stages(
-            StageLabel.neutral('Mwana mdzuhu'),
-            StageLabel.neutral('Mwana mdzo'),
-            StageLabel.neutral('Mwana mtsanga'),
-            StageLabel.neutral('Mwana'),
-            StageLabel.neutral('Mwanantsi'),
-            StageLabel.neutral('Mtu mzima'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('suku {n}'),
-            UnitForms.simpleUnit('djum. {n}'),
-            UnitForms.simpleUnit('mw. {n}'),
-            UnitForms.simpleUnit('mwa. {n}'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}d'),
-            UnitForms.simpleUnit('{n}w'),
-            UnitForms.simpleUnit('{n}m'),
-            UnitForms.simpleUnit('{n}y'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesJ() {
+        [
+            ('ja'): JA, ('jv'): JV
+        ]
+    }
 
-    // Source: age/locales/src/zh.json
-    // ================================================================
-    // ZH — Chinese
-    // ================================================================
-    static final AgeLocale ZH = new AgeLocale(
-        'zh',
-        { int n -> PluralCategory.OTHER },
-        new Units(
-            UnitForms.simpleUnit('{n}天'),
-            UnitForms.simpleUnit('{n}周'),
-            UnitForms.simpleUnit('{n}个月'),
-            UnitForms.simpleUnit('{n}岁'),
-        ),
-        '{0}半',
-        '',
-        '新生儿',
-        new Stages(
-            StageLabel.neutral('新生儿'),
-            StageLabel.neutral('婴儿'),
-            StageLabel.neutral('幼儿'),
-            StageLabel.neutral('儿童'),
-            StageLabel.neutral('青少年'),
-            StageLabel.neutral('成人'),
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}天'),
-            UnitForms.simpleUnit('{n}周'),
-            UnitForms.simpleUnit('{n}个月'),
-            UnitForms.simpleUnit('{n}年'),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n}天'),
-            UnitForms.simpleUnit('{n}周'),
-            UnitForms.simpleUnit('{n}个月'),
-            UnitForms.simpleUnit('{n}年'),
-            null,
-            null,
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesK() {
+        [
+            ('ka'): KA, ('kbp'): KBP, ('kek'): KEK,
+            ('ki'): KI, ('kk'): KK, ('kl'): KL,
+            ('km'): KM, ('kn'): KN, ('ko'): KO,
+            ('kpe'): KPE, ('kri'): KRI, ('ktu'): KTU,
+            ('ku'): KU, ('kw'): KW, ('ky'): KY
+        ]
+    }
 
-    // Source: age/locales/src/zu.json
-    // ================================================================
-    // ZU — Zulu
-    // ================================================================
-    static final AgeLocale ZU = new AgeLocale(
-        'zu',
-        { int n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER },
-        new Units(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'izinsuku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iviki {n}', (PluralCategory.OTHER): 'amaviki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'izinyanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'unyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
-        ),
-        '{0} nohhafu',
-        ', ',
-        'Usanda kuzalwa',
-        new Stages(
-            StageLabel.neutral('Usana olusanda kuzalwa'),
-            StageLabel.neutral('Usana'),
-            StageLabel.neutral('Umntwana omncane'),
-            StageLabel.neutral('Umntwana'),
-            StageLabel.neutral('Intsha'),
-            StageLabel.neutral('Umuntu omdala'),
-        ),
-        new CompactnessOverride(
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'usuku {n}', (PluralCategory.OTHER): 'izinsuku {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'iviki {n}', (PluralCategory.OTHER): 'amaviki {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'inyanga {n}', (PluralCategory.OTHER): 'izinyanga {n}']),
-            UnitForms.pluralUnit([(PluralCategory.ONE): 'unyaka {n}', (PluralCategory.OTHER): 'iminyaka {n}']),
-            null,
-            null,
-            null
-        ),
-        new CompactnessOverride(
-            UnitForms.simpleUnit('{n} ns'),
-            UnitForms.simpleUnit('{n} vk'),
-            UnitForms.simpleUnit('{n} ny'),
-            UnitForms.simpleUnit('{n} mk'),
-            '{n}½',
-            '',
-            null
-        ),
-        null,
-        null
-    )
+    private static Map<String, AgeLocale> _localesL() {
+        [
+            ('lb'): LB, ('lg'): LG, ('ln'): LN,
+            ('lo'): LO, ('lt'): LT, ('luo'): LUO,
+            ('lv'): LV
+        ]
+    }
 
-    static final Map<String, AgeLocale> ALL = Collections.unmodifiableMap([
-        ('af'): AF, ('ak'): AK, ('am'): AM,
-        ('ar'): AR, ('ay'): AY, ('az'): AZ,
-        ('bci'): BCI, ('be'): BE, ('bem'): BEM,
-        ('bg'): BG, ('bi'): BI, ('bm'): BM,
-        ('bn'): BN, ('br'): BR, ('bs'): BS,
-        ('ca'): CA, ('cak'): CAK, ('ceb'): CEB,
-        ('cs'): CS, ('cy'): CY, ('da'): DA,
-        ('de'): DE, ('din'): DIN, ('dje'): DJE,
-        ('dv'): DV, ('dyu'): DYU, ('dz'): DZ,
-        ('ee'): EE, ('el'): EL, ('en'): EN,
-        ('es'): ES, ('et'): ET, ('eu'): EU,
-        ('fa'): FA, ('fan'): FAN, ('ff'): FF,
-        ('fi'): FI, ('fil'): FIL, ('fj'): FJ,
-        ('fon'): FON, ('fr'): FR, ('ga'): GA,
-        ('gd'): GD, ('gl'): GL, ('gn'): GN,
-        ('gu'): GU, ('gv'): GV, ('ha'): HA,
-        ('he'): HE, ('hi'): HI, ('hmn'): HMN,
-        ('hr'): HR, ('ht'): HT, ('hu'): HU,
-        ('hy'): HY, ('id'): ID, ('ig'): IG,
-        ('is'): IS, ('it'): IT, ('ja'): JA,
-        ('jv'): JV, ('ka'): KA, ('kbp'): KBP,
-        ('kek'): KEK, ('ki'): KI, ('kk'): KK,
-        ('kl'): KL, ('km'): KM, ('kn'): KN,
-        ('ko'): KO, ('kpe'): KPE, ('kri'): KRI,
-        ('ktu'): KTU, ('ku'): KU, ('kw'): KW,
-        ('ky'): KY, ('lb'): LB, ('lg'): LG,
-        ('ln'): LN, ('lo'): LO, ('lt'): LT,
-        ('luo'): LUO, ('lv'): LV, ('mam'): MAM,
-        ('men'): MEN, ('mfe'): MFE, ('mg'): MG,
-        ('mi'): MI, ('mk'): MK, ('ml'): ML,
-        ('mn'): MN, ('mnk'): MNK, ('mos'): MOS,
-        ('mr'): MR, ('ms'): MS, ('mt'): MT,
-        ('my'): MY, ('nb'): NB, ('nd'): ND,
-        ('ne'): NE, ('ng'): NG, ('nl'): NL,
-        ('nr'): NR, ('nso'): NSO, ('nus'): NUS,
-        ('ny'): NY, ('om'): OM, ('or'): OR,
-        ('pa'): PA, ('pis'): PIS, ('pl'): PL,
-        ('pov'): POV, ('ps'): PS, ('pt'): PT,
-        ('qu'): QU, ('quc'): QUC, ('ro'): RO,
-        ('ru'): RU, ('rw'): RW, ('sar'): SAR,
-        ('sd'): SD, ('sg'): SG, ('shi'): SHI,
-        ('shn'): SHN, ('si'): SI, ('sk'): SK,
-        ('sl'): SL, ('sn'): SN, ('snk'): SNK,
-        ('so'): SO, ('sq'): SQ, ('sr'): SR,
-        ('ss'): SS, ('st'): ST, ('su'): SU,
-        ('suk'): SUK, ('sv'): SV, ('sw'): SW,
-        ('ta'): TA, ('te'): TE, ('tem'): TEM,
-        ('tet'): TET, ('tg'): TG, ('th'): TH,
-        ('ti'): TI, ('tig'): TIG, ('tk'): TK,
-        ('tn'): TN, ('tpi'): TPI, ('tr'): TR,
-        ('ts'): TS, ('tum'): TUM, ('tzm'): TZM,
-        ('uk'): UK, ('umb'): UMB, ('ur'): UR,
-        ('uz'): UZ, ('ve'): VE, ('vi'): VI,
-        ('vmw'): VMW, ('wo'): WO, ('xh'): XH,
-        ('yao'): YAO, ('yo'): YO, ('yue'): YUE,
-        ('zdj'): ZDJ, ('zh'): ZH, ('zu'): ZU
-    ])
+    private static Map<String, AgeLocale> _localesM() {
+        [
+            ('mam'): MAM, ('men'): MEN, ('mfe'): MFE,
+            ('mg'): MG, ('mi'): MI, ('mk'): MK,
+            ('ml'): ML, ('mn'): MN, ('mnk'): MNK,
+            ('mos'): MOS, ('mr'): MR, ('ms'): MS,
+            ('mt'): MT, ('my'): MY
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesN() {
+        [
+            ('nb'): NB, ('nd'): ND, ('ne'): NE,
+            ('ng'): NG, ('nl'): NL, ('nr'): NR,
+            ('nso'): NSO, ('nus'): NUS, ('ny'): NY
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesO() {
+        [
+            ('om'): OM, ('or'): OR
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesP() {
+        [
+            ('pa'): PA, ('pis'): PIS, ('pl'): PL,
+            ('pov'): POV, ('ps'): PS, ('pt'): PT
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesQ() {
+        [
+            ('qu'): QU, ('quc'): QUC
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesR() {
+        [
+            ('ro'): RO, ('ru'): RU, ('rw'): RW
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesS() {
+        [
+            ('sar'): SAR, ('sd'): SD, ('sg'): SG,
+            ('shi'): SHI, ('shn'): SHN, ('si'): SI,
+            ('sk'): SK, ('sl'): SL, ('sn'): SN,
+            ('snk'): SNK, ('so'): SO, ('sq'): SQ,
+            ('sr'): SR, ('ss'): SS, ('st'): ST,
+            ('su'): SU, ('suk'): SUK, ('sv'): SV,
+            ('sw'): SW
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesT() {
+        [
+            ('ta'): TA, ('te'): TE, ('tem'): TEM,
+            ('tet'): TET, ('tg'): TG, ('th'): TH,
+            ('ti'): TI, ('tig'): TIG, ('tk'): TK,
+            ('tn'): TN, ('tpi'): TPI, ('tr'): TR,
+            ('ts'): TS, ('tum'): TUM, ('tzm'): TZM
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesU() {
+        [
+            ('uk'): UK, ('umb'): UMB, ('ur'): UR,
+            ('uz'): UZ
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesV() {
+        [
+            ('ve'): VE, ('vi'): VI, ('vmw'): VMW
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesW() {
+        [
+            ('wo'): WO
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesX() {
+        [
+            ('xh'): XH
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesY() {
+        [
+            ('yao'): YAO, ('yo'): YO, ('yue'): YUE
+        ]
+    }
+
+    private static Map<String, AgeLocale> _localesZ() {
+        [
+            ('zdj'): ZDJ, ('zh'): ZH, ('zu'): ZU
+        ]
+    }
+
+    static final Map<String, AgeLocale> ALL = Collections.unmodifiableMap(_localesA() + _localesB() + _localesC() + _localesD() + _localesE() + _localesF() + _localesG() + _localesH() + _localesI() + _localesJ() + _localesK() + _localesL() + _localesM() + _localesN() + _localesO() + _localesP() + _localesQ() + _localesR() + _localesS() + _localesT() + _localesU() + _localesV() + _localesW() + _localesX() + _localesY() + _localesZ())
 
     static AgeLocale get(String code) { ALL[code] }
 }
