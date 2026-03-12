@@ -4,7 +4,7 @@
 
 ## Status
 
-The most mature component: v0.5.0, 29 languages, 110 locales, 217 canonical tests. Has CLI, benchmarks, stress tests, and comprehensive docs.
+The most mature component: v0.5.0, 33 languages, 159 locales, 217 canonical tests. Has CLI, benchmarks, stress tests, and comprehensive docs.
 
 ## Directory structure
 
@@ -15,16 +15,16 @@ age/
     metadata.json          # Package metadata (name, description, author, license, repo)
     tests.json             # 217 canonical test cases
   locales/
-    src/                   # 110 canonical JSON locale files (single source of truth)
+    src/                   # 159 canonical JSON locale files (single source of truth)
   codegen/
-    generate.py            # Main codegen orchestrator (JSON -> all 29 languages)
+    generate.py            # Main codegen orchestrator (JSON -> all 33 languages)
     docgen.py              # Documentation generator
     banner.py              # DO NOT EDIT banner utility
-    targets/               # 29 language emitters (one dir per language)
+    targets/               # 33 language emitters (one dir per language)
       <lang>/
         emitter.py         # Generates locale source files from JSON
         plural_rules.py    # CLDR plural rules for this language
-  impl/                    # 29 language implementations
+  impl/                    # 33 language implementations
     <lang>/
       README.md            # Per-language API docs
       locales/             # Generated locale files (DO NOT EDIT)
@@ -45,9 +45,9 @@ age/
   Dockerfile               # Generated (never edit by hand)
 ```
 
-## Languages (29)
+## Languages (33)
 
-Ada, C, C#, C++, Clojure, COBOL, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, OCaml, Perl, PHP, Python, Ruby, Rust, Scala, Swift, TypeScript, Zig
+Ada, C, C#, C++, Clojure, COBOL, Crystal, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, Nim, OCaml, Perl, PHP, Python, R, Ruby, Rust, Scala, Swift, TypeScript, VB.NET, Zig
 
 ## Locale JSON schema
 
@@ -90,7 +90,7 @@ Plural forms vary by language: one/other (English), zero/one/two/few/many/other 
 Commands are run from the **project root** using the root justfile:
 
 ```
-just test              # all 29 languages in parallel
+just test              # all 33 languages in parallel
 just test go           # single language
 just build rust        # build one compiled language
 just lint python       # lint one language

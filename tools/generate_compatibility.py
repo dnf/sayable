@@ -16,6 +16,7 @@ _DISPLAY_NAMES: dict[str, str] = {
     "ocaml": "OCaml",
     "php": "PHP",
     "typescript": "TypeScript",
+    "vbnet": "VB.NET",
 }
 
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

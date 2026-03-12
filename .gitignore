@@ -14,4 +14,6 @@ benchmarks/cpu/reports/
 benchmarks/cpu/results/
 cli/build/
 dist/
+erl_crash.dump
+test_io
 node_modules/

@@ -170,3 +170,20 @@ describe "Locale — Japanese" do
     formatter.format_time("15:30").should eq "三時半"
   end
 end
+
+# ================================================================
+# Section 8: Locale — Finnish (dot separator, short)
+# ================================================================
+describe "Locale — Finnish (dot separator, short)" do
+  formatter = SayableTime::Formatter.new(SayableTime::Locales::FI, :short)
+
+  # 8.1
+  it "formats 14:15 as 14.15" do
+    formatter.format_time("14:15").should eq "14.15"
+  end
+
+  # 8.2
+  it "formats 00:00 as 0.00" do
+    formatter.format_time("00:00").should eq "0.00"
+  end
+end

@@ -4,7 +4,7 @@
 
 ## Status
 
-v0.5.0, 15 languages, 110 locales, 27 canonical tests.
+v0.5.0, 33 languages, 159 locales, 26 canonical tests.
 
 ## Directory structure
 
@@ -13,26 +13,26 @@ time/
   config/
     version.json           # Single source of truth for version (0.5.0)
     metadata.json          # Package metadata
-    tests.json             # 27 canonical test cases
+    tests.json             # 26 canonical test cases
   locales/
-    src/                   # 110 canonical JSON locale files
+    src/                   # 159 canonical JSON locale files
     examples/              # Generated markdown docs per locale
   codegen/
     generate.py            # Main codegen orchestrator
     docgen.py              # Documentation generator
     banner.py              # DO NOT EDIT banner utility
-    targets/               # 15 language emitters (no plural_rules — time doesn't need them)
+    targets/               # 33 language emitters (no plural_rules — time doesn't need them)
       <lang>/
         emitter.py         # Generates locale source files
-  impl/                    # 15 language implementations
+  impl/                    # 33 language implementations
     .gitignore             # Language-specific build artifacts
     <lang>/                # Types, formatter, tests, generated locales
   justfile                 # Component-level task runner
 ```
 
-## Languages (15)
+## Languages (33)
 
-C++, Clojure, C#, F#, Go, Haskell, Java, Kotlin, Lua, PHP, Python, Ruby, Rust, Scala, TypeScript
+Ada, C, C++, C#, Clojure, COBOL, Crystal, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, Nim, OCaml, Perl, PHP, Python, R, Ruby, Rust, Scala, Swift, TypeScript, VB.NET, Zig
 
 ## Locale JSON schema
 
@@ -72,6 +72,25 @@ C++, Clojure, C#, F#, Go, Haskell, Java, Kotlin, Lua, PHP, Python, Ruby, Rust, S
 - **Short compactness**: Digital format with AM/PM or 24-hour clock.
 - **Compact compactness**: Abbreviated digital format.
 
+### Time separator conventions
+
+The `format` field in short/compact clock config controls the separator between hours and minutes. Most locales use a colon (`{h}:{mm}`), but several use a dot/period (`{h}.{mm}`) per their CLDR data:
+
+| Locale | Language | CLDR short format | Source |
+|--------|----------|-------------------|--------|
+| `da` | Danish | `HH.mm` | [CLDR da/ca-gregorian.json](https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/da/ca-gregorian.json) |
+| `fi` | Finnish | `H.mm` | [CLDR fi/ca-gregorian.json](https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/fi/ca-gregorian.json) |
+| `id` | Indonesian | `HH.mm` | [CLDR id/ca-gregorian.json](https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/id/ca-gregorian.json) |
+| `kl` | Kalaallisut | `H.mm` | [CLDR kl/ca-gregorian.json](https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-dates-full/main/kl/ca-gregorian.json) |
+
+Some languages (Norwegian Bokmål `nb`, Swedish `sv`) have dot format as a CLDR `short-alt-variant` but use colon in their primary format — we follow the primary format.
+
+The formatter's `_format_digital` does string replacement on the `format` template, so `{h}.{mm}` works without any code changes. Test coverage for this is in Section 8 of `config/tests.json`.
+
+### Numeric clock pattern fallback
+
+Languages without established spoken clock conventions (e.g., pidgin and creole languages like Tok Pisin, Pijin, Bislama) use a numeric pattern for normal compactness: `"{h}:05"`, `"{h}:15"`, etc. This avoids inventing spoken time expressions that don't exist in the language. The hours array still uses native-language number words, and midnight/noon get native terms. Short and compact modes use the standard digital format.
+
 ## API functions
 
 - `format_time(time)` — Format a time string (HH:MM) as human-readable spoken time
@@ -83,7 +102,7 @@ Supports three compactness levels: normal (default), short, compact.
 Commands are run from the **time/** directory using the component justfile:
 
 ```
-just test              # all 15 languages in parallel + codegen check
+just test              # all 33 languages in parallel + codegen check
 just test go           # single language
 just build rust        # build one compiled language
 just lint python       # lint one language
@@ -96,15 +115,15 @@ just clean             # remove build artifacts
 
 | Strategy | Languages |
 |----------|-----------|
-| Per-file (one locale per file + barrel/registry) | Clojure, Go, Haskell, Lua, Python, Ruby, Rust, TypeScript |
-| Single-file (all locales in one file) | C#, F#, Java, Kotlin, PHP, Scala |
+| Per-file (one locale per file + barrel/registry) | Clojure, Crystal, Dart, Elixir, Elm, Erlang, Gleam, Go, Groovy, Haskell, Lua, Nim, OCaml, Perl, Python, R, Ruby, Rust, Swift, TypeScript |
+| Single-file (all locales in one file) | Ada, C, C#, COBOL, F#, Fortran, Java, Kotlin, PHP, Scala, VB.NET, Zig |
 | Range-split (locales split into alpha ranges) | C++ |
 
 No `plural_rules.py` needed — time formatting doesn't use plural forms.
 
 ## Test structure
 
-27 tests across 7 sections in `config/tests.json`:
+26 tests across 8 sections in `config/tests.json`:
 - Null/edge cases
 - Clock time (normal, short, compact compactness)
-- Locale-specific: German, French, Japanese
+- Locale-specific: German, French, Japanese, Finnish (dot separator)

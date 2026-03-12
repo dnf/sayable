@@ -4,7 +4,7 @@
 
 ## Status
 
-v0.5.0, 15 languages, 110 locales, 52 canonical tests.
+v0.5.0, 33 languages, 159 locales, 52 canonical tests.
 
 ## Directory structure
 
@@ -15,16 +15,16 @@ date/
     metadata.json          # Package metadata
     tests.json             # 52 canonical test cases
   locales/
-    src/                   # 110 canonical JSON locale files
+    src/                   # 159 canonical JSON locale files
     examples/              # Generated markdown docs per locale
   codegen/
     generate.py            # Main codegen orchestrator
     docgen.py              # Documentation generator
     banner.py              # DO NOT EDIT banner utility
-    targets/               # 15 language emitters (no plural_rules — date doesn't need them)
+    targets/               # 33 language emitters (no plural_rules — date doesn't need them)
       <lang>/
         emitter.py         # Generates locale source files
-  impl/                    # 15 language implementations
+  impl/                    # 33 language implementations
     .gitignore             # Language-specific build artifacts
     <lang>/                # Types, formatter, tests, generated locales
   justfile                 # Component-level task runner
@@ -32,9 +32,9 @@ date/
   tests/                   # Test documentation
 ```
 
-## Languages (15)
+## Languages (33)
 
-C++, Clojure, C#, F#, Go, Haskell, Java, Kotlin, Lua, PHP, Python, Ruby, Rust, Scala, TypeScript
+Ada, C, C++, C#, Clojure, COBOL, Crystal, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, Nim, OCaml, Perl, PHP, Python, R, Ruby, Rust, Scala, Swift, TypeScript, VB.NET, Zig
 
 ## Locale JSON schema
 
@@ -102,7 +102,7 @@ Both support three compactness levels: normal (default), short, compact.
 Commands are run from the **date/** directory using the component justfile:
 
 ```
-just test              # all 15 languages in parallel + codegen check
+just test              # all 33 languages in parallel + codegen check
 just test go           # single language
 just build rust        # build one compiled language
 just lint python       # lint one language

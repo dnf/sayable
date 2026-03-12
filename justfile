@@ -296,6 +296,9 @@ generate target *args:
         locales)
             (cd age && {{python}} -m codegen.generate {{args}})
             (cd age && uv run --project impl/python {{python}} -m codegen.docgen {{args}})
+            (cd date && {{python}} -m codegen.generate {{args}})
+            (cd duration && {{python}} -m codegen.generate {{args}})
+            (cd time && {{python}} -m codegen.generate {{args}})
             ;;
         *)
             echo "error: unknown generate target '{{target}}'" >&2
@@ -330,6 +333,9 @@ check:
     set -euo pipefail
     (cd age && {{python}} -m codegen.generate --check)
     (cd age && uv run --project impl/python {{python}} -m codegen.docgen --check)
+    (cd date && {{python}} -m codegen.generate --check)
+    (cd duration && {{python}} -m codegen.generate --check)
+    (cd time && {{python}} -m codegen.generate --check)
     {{python}} .hecatron/tools/codegen/dockerfile.py --check
     {{python}} tools/generate_compatibility.py --check
     uv run --with geopandas --with matplotlib {{python}} tools/geography/generate.py --check

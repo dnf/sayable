@@ -41,89 +41,27 @@ Sayable is a family of zero-dependency formatting libraries. Each library tackle
 </tr>
 <tr>
   <td><strong>Languages</strong></td>
-  <td>29</td>
-  <td>15</td>
-  <td>15</td>
-  <td>15</td>
+  <td>33</td>
+  <td>33</td>
+  <td>33</td>
+  <td>33</td>
 </tr>
 <tr>
   <td><strong>Locales</strong></td>
-  <td>71</td>
-  <td>71</td>
-  <td>71</td>
-  <td>71</td>
+  <td>159</td>
+  <td>159</td>
+  <td>159</td>
+  <td>159</td>
 </tr>
 </table>
 
 ### Language support
 
-<table>
-<tr>
-  <th>Language</th>
-  <th align="center">Age</th>
-  <th align="center">Date</th>
-  <th align="center">Duration</th>
-  <th align="center">Time</th>
-</tr>
-<tr>
-  <td>C++</td>
-  <td align="center"><a href="age/impl/cpp/">✅</a></td>
-  <td align="center"><a href="date/impl/cpp/">✅</a></td>
-  <td align="center"><a href="duration/impl/cpp/">✅</a></td>
-  <td align="center"><a href="time/impl/cpp/">✅</a></td>
-</tr>
-<tr>
-  <td>Go</td>
-  <td align="center"><a href="age/impl/go/">✅</a></td>
-  <td align="center"><a href="date/impl/go/">✅</a></td>
-  <td align="center"><a href="duration/impl/go/">✅</a></td>
-  <td align="center"><a href="time/impl/go/">✅</a></td>
-</tr>
-<tr>
-  <td>Java</td>
-  <td align="center"><a href="age/impl/java/">✅</a></td>
-  <td align="center"><a href="date/impl/java/">✅</a></td>
-  <td align="center"><a href="duration/impl/java/">✅</a></td>
-  <td align="center"><a href="time/impl/java/">✅</a></td>
-</tr>
-<tr>
-  <td>Kotlin</td>
-  <td align="center"><a href="age/impl/kotlin/">✅</a></td>
-  <td align="center"><a href="date/impl/kotlin/">✅</a></td>
-  <td align="center"><a href="duration/impl/kotlin/">✅</a></td>
-  <td align="center"><a href="time/impl/kotlin/">✅</a></td>
-</tr>
-<tr>
-  <td>Python</td>
-  <td align="center"><a href="age/impl/python/">✅</a></td>
-  <td align="center"><a href="date/impl/python/">✅</a></td>
-  <td align="center"><a href="duration/impl/python/">✅</a></td>
-  <td align="center"><a href="time/impl/python/">✅</a></td>
-</tr>
-<tr>
-  <td>Ruby</td>
-  <td align="center"><a href="age/impl/ruby/">✅</a></td>
-  <td align="center"><a href="date/impl/ruby/">✅</a></td>
-  <td align="center"><a href="duration/impl/ruby/">✅</a></td>
-  <td align="center"><a href="time/impl/ruby/">✅</a></td>
-</tr>
-<tr>
-  <td>Rust</td>
-  <td align="center"><a href="age/impl/rust/">✅</a></td>
-  <td align="center"><a href="date/impl/rust/">✅</a></td>
-  <td align="center"><a href="duration/impl/rust/">✅</a></td>
-  <td align="center"><a href="time/impl/rust/">✅</a></td>
-</tr>
-<tr>
-  <td>TypeScript</td>
-  <td align="center"><a href="age/impl/typescript/">✅</a></td>
-  <td align="center"><a href="date/impl/typescript/">✅</a></td>
-  <td align="center"><a href="duration/impl/typescript/">✅</a></td>
-  <td align="center"><a href="time/impl/typescript/">✅</a></td>
-</tr>
-</table>
+All 33 languages have identical implementations across all 4 libraries:
 
-Plus Ada, C, C#, Clojure, COBOL, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Groovy, Haskell, Lua, OCaml, Perl, PHP, Scala, Swift, and Zig. See the [full compatibility matrix](Compatibility.md).
+Ada, C, C#, C++, Clojure, COBOL, Crystal, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, Nim, OCaml, Perl, PHP, Python, R, Ruby, Rust, Scala, Swift, TypeScript, VB.NET, Zig
+
+See the [full compatibility matrix](Compatibility.md).
 
 ### Locale coverage
 
