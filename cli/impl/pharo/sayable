@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Sayable CLI wrapper — invokes the Pharo Smalltalk CLI script.
+# See cli/SPEC.md for the full specification.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
+
+# Find the Pharo VM
+if command -v pharo &>/dev/null; then
+	PHARO=pharo
+elif [[ -x "${HOME}/.pharo/pharo" ]]; then
+	PHARO="${HOME}/.pharo/pharo"
+else
+	echo "error: pharo VM not found" >&2
+	exit 2
+fi
+
+# Find or create Pharo image
+IMAGE="${SCRIPT_DIR}/Pharo.image"
+if [[ ! -f "${IMAGE}" ]]; then
+	echo "error: Pharo.image not found in ${SCRIPT_DIR}" >&2
+	echo "Run: cd ${SCRIPT_DIR} && curl -fsSL https://get.pharo.org/64/120 | bash" >&2
+	exit 2
+fi
+
+exec "${PHARO}" --headless "${IMAGE}" st "${SCRIPT_DIR}/sayable.st" -- "$@"
