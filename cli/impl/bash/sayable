@@ -1,0 +1,408 @@
+#!/usr/bin/env bash
+# sayable — Unified CLI for all four Sayable components (age, date, duration, time).
+# See cli/SPEC.md for the full specification.
+set -euo pipefail
+
+VERSION="0.5.0"
+
+# Resolve the project root relative to this script
+_script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+_project_root="$(cd "${_script_dir}/../../.." && pwd)"
+
+# Source all four component libraries
+# shellcheck disable=SC1091
+source "${_project_root}/age/impl/bash/sayableage.sh"
+# shellcheck disable=SC1091
+source "${_project_root}/date/impl/bash/sayabledate.sh"
+# shellcheck disable=SC1091
+source "${_project_root}/duration/impl/bash/sayableduration.sh"
+# shellcheck disable=SC1091
+source "${_project_root}/time/impl/bash/sayabletime.sh"
+
+HELP="Usage: sayable <command> [arguments] [options]
+
+Commands:
+  age <dob>              Format an age
+  stage <dob>            Get developmental stage
+  date <date>            Format a calendar date
+  relative <date>        Format a relative date
+  time <time>            Format a clock time
+  duration <value> [end] Format a duration
+  since <start>          Format elapsed time
+  until <target>         Format remaining time
+  locales                List available locale codes
+  version                Show version
+  help                   Show this help
+
+Options:
+  -l, --locale <code>    Locale code (default: en)
+  -d, --as-of <value>    Reference date/timestamp
+      --short            Short compactness
+      --compact          Compact compactness
+  -g, --gender <m|f>     Gender for stage labels
+      --with-year        Include year (date only)
+  -h, --help             Show this help
+  -v, --version          Show version"
+
+_error() {
+    echo "error: $1" >&2
+    echo "Run 'sayable help' for usage." >&2
+    exit 2
+}
+
+_nullify() {
+    if [ "$1" = "null" ]; then
+        echo ""
+    else
+        echo "$1"
+    fi
+}
+
+_get_today() {
+    date +%Y-%m-%d
+}
+
+# Parse CLI arguments into globals:
+#   _command, _positionals (array), _locale, _as_of, _compactness, _gender, _with_year
+_parse_args() {
+    _command=""
+    _positionals=()
+    _locale="en"
+    _as_of=""
+    _compactness="normal"
+    _gender=""
+    _with_year=0
+
+    if [ $# -eq 0 ]; then
+        return
+    fi
+
+    # Global flags that can appear as the first argument
+    case "$1" in
+        -h|--help|help)
+            _command="help"
+            return
+            ;;
+        -v|--version|version)
+            _command="version"
+            return
+            ;;
+    esac
+
+    _command="$1"
+    shift
+
+    local stop_opts=0
+    while [ $# -gt 0 ]; do
+        local arg="$1"
+
+        if [ "${arg}" = "--" ] && [ ${stop_opts} -eq 0 ]; then
+            stop_opts=1
+            shift
+            continue
+        fi
+
+        if [ ${stop_opts} -eq 0 ] && [[ "${arg}" == -* ]]; then
+            case "${arg}" in
+                -l|--locale)
+                    if [ $# -lt 2 ]; then
+                        _error "'${arg}' requires a value"
+                    fi
+                    shift
+                    _locale="$1"
+                    ;;
+                -d|--as-of)
+                    if [ $# -lt 2 ]; then
+                        _error "'${arg}' requires a value"
+                    fi
+                    shift
+                    _as_of="$1"
+                    ;;
+                -g|--gender)
+                    if [ $# -lt 2 ]; then
+                        _error "'${arg}' requires a value"
+                    fi
+                    shift
+                    _gender="$1"
+                    ;;
+                --short)
+                    _compactness="short"
+                    ;;
+                --compact)
+                    _compactness="compact"
+                    ;;
+                --with-year)
+                    _with_year=1
+                    ;;
+                -h|--help)
+                    _command="help"
+                    return
+                    ;;
+                -v|--version)
+                    _command="version"
+                    return
+                    ;;
+                *)
+                    _error "unknown option '${arg}'"
+                    ;;
+            esac
+        else
+            _positionals+=("${arg}")
+        fi
+
+        shift
+    done
+}
+
+cmd_age() {
+    if [ ${#_positionals[@]} -eq 0 ]; then
+        _error "age requires a date-of-birth argument"
+    fi
+    local dob
+    dob=$(_nullify "${_positionals[0]}")
+
+    local as_of="${_as_of}"
+    if [ -n "${as_of}" ]; then
+        as_of=$(_nullify "${as_of}")
+    else
+        as_of=$(_get_today)
+    fi
+
+    local result
+    result=$(sayableage_format_age "${_locale}" "${dob}" "${as_of}" "${_compactness}")
+
+    if [ -z "${result}" ]; then
+        exit 1
+    fi
+    echo "${result}"
+}
+
+cmd_stage() {
+    if [ ${#_positionals[@]} -eq 0 ]; then
+        _error "stage requires a date-of-birth argument"
+    fi
+    local dob
+    dob=$(_nullify "${_positionals[0]}")
+
+    local as_of="${_as_of}"
+    if [ -n "${as_of}" ]; then
+        as_of=$(_nullify "${as_of}")
+    else
+        as_of=$(_get_today)
+    fi
+
+    local result
+    result=$(sayableage_format_stage "${_locale}" "${dob}" "${as_of}" "${_gender}")
+
+    if [ -z "${result}" ]; then
+        exit 1
+    fi
+    echo "${result}"
+}
+
+cmd_date() {
+    if [ ${#_positionals[@]} -eq 0 ]; then
+        _error "date requires a date argument"
+    fi
+    local date_val
+    date_val=$(_nullify "${_positionals[0]}")
+
+    local result
+    if [ ${_with_year} -eq 1 ]; then
+        result=$(sayabledate_format_date_with_year "${_locale}" "${date_val}" "${_compactness}")
+    else
+        result=$(sayabledate_format_date "${_locale}" "${date_val}" "${_compactness}")
+    fi
+
+    if [ -z "${result}" ]; then
+        exit 1
+    fi
+    echo "${result}"
+}
+
+cmd_relative() {
+    if [ ${#_positionals[@]} -eq 0 ]; then
+        _error "relative requires a date argument"
+    fi
+    local date_val
+    date_val=$(_nullify "${_positionals[0]}")
+
+    if [ -z "${_as_of}" ]; then
+        _error "relative requires --as-of / -d option"
+    fi
+    local as_of
+    as_of=$(_nullify "${_as_of}")
+
+    local result
+    result=$(sayabledate_format_relative "${_locale}" "${date_val}" "${as_of}" "${_compactness}")
+
+    if [ -z "${result}" ]; then
+        exit 1
+    fi
+    echo "${result}"
+}
+
+cmd_time() {
+    if [ ${#_positionals[@]} -eq 0 ]; then
+        _error "time requires a time argument"
+    fi
+    local time_val
+    time_val=$(_nullify "${_positionals[0]}")
+
+    local result
+    result=$(sayabletime_format_time "${_locale}" "${time_val}" "${_compactness}")
+
+    if [ -z "${result}" ]; then
+        exit 1
+    fi
+    echo "${result}"
+}
+
+cmd_duration() {
+    if [ ${#_positionals[@]} -eq 0 ]; then
+        _error "duration requires a value argument"
+    fi
+    local value
+    value=$(_nullify "${_positionals[0]}")
+
+    if [ -z "${value}" ]; then
+        # null input
+        local result
+        result=$(sayableduration_format_duration "${_locale}" "" "" "${_compactness}")
+        if [ -z "${result}" ]; then
+            exit 1
+        fi
+        echo "${result}"
+        return
+    fi
+
+    # Detect mode: integer (seconds) vs timestamp
+    # Strip leading minus to check if remaining is all digits
+    local stripped="${value#-}"
+    if [[ "${stripped}" =~ ^[0-9]+$ ]]; then
+        # Seconds mode (includes negative integers)
+        local result
+        result=$(sayableduration_format_duration "${_locale}" "${value}" "" "${_compactness}")
+        if [ -z "${result}" ]; then
+            exit 1
+        fi
+        echo "${result}"
+    else
+        # Timestamp mode: need an end argument
+        if [ ${#_positionals[@]} -lt 2 ]; then
+            _error "duration with timestamps requires start and end arguments"
+        fi
+        local end
+        end=$(_nullify "${_positionals[1]}")
+        local result
+        result=$(sayableduration_format_duration "${_locale}" "${value}" "${end}" "${_compactness}")
+        if [ -z "${result}" ]; then
+            exit 1
+        fi
+        echo "${result}"
+    fi
+}
+
+cmd_since() {
+    if [ ${#_positionals[@]} -eq 0 ]; then
+        _error "since requires a start timestamp argument"
+    fi
+    local start
+    start=$(_nullify "${_positionals[0]}")
+
+    if [ -z "${_as_of}" ]; then
+        _error "since requires --as-of / -d option"
+    fi
+    local as_of
+    as_of=$(_nullify "${_as_of}")
+
+    local result
+    result=$(sayableduration_format_since "${_locale}" "${start}" "${as_of}" "${_compactness}")
+
+    if [ -z "${result}" ]; then
+        exit 1
+    fi
+    echo "${result}"
+}
+
+cmd_until() {
+    if [ ${#_positionals[@]} -eq 0 ]; then
+        _error "until requires a target timestamp argument"
+    fi
+    local target
+    target=$(_nullify "${_positionals[0]}")
+
+    if [ -z "${_as_of}" ]; then
+        _error "until requires --as-of / -d option"
+    fi
+    local as_of
+    as_of=$(_nullify "${_as_of}")
+
+    local result
+    result=$(sayableduration_format_until "${_locale}" "${target}" "${as_of}" "${_compactness}")
+
+    if [ -z "${result}" ]; then
+        exit 1
+    fi
+    echo "${result}"
+}
+
+cmd_locales() {
+    # Use age locales as the canonical list
+    _sayableage_ensure_registry
+    local code
+    for code in ${_SAYABLEAGE_LOCALES}; do
+        echo "${code}"
+    done
+}
+
+# --- Main ---
+
+_parse_args "$@"
+
+if [ -z "${_command}" ]; then
+    echo "${HELP}"
+    exit 2
+fi
+
+case "${_command}" in
+    help)
+        echo "${HELP}"
+        exit 0
+        ;;
+    version)
+        echo "sayable ${VERSION}"
+        exit 0
+        ;;
+    locales)
+        cmd_locales
+        exit 0
+        ;;
+    age)
+        cmd_age
+        ;;
+    stage)
+        cmd_stage
+        ;;
+    date)
+        cmd_date
+        ;;
+    relative)
+        cmd_relative
+        ;;
+    time)
+        cmd_time
+        ;;
+    duration)
+        cmd_duration
+        ;;
+    since)
+        cmd_since
+        ;;
+    until)
+        cmd_until
+        ;;
+    *)
+        _error "unknown command '${_command}'"
+        ;;
+esac

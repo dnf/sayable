@@ -1,0 +1,113 @@
+# Ada
+ada/build/
+ada/obj/
+
+# C
+c/build/
+
+# C++
+cpp/build/
+
+# C#
+csharp/bin/
+csharp/obj/
+
+# Clojure
+clojure/.cpcache/
+
+# COBOL
+cobol/build/
+
+# Crystal
+crystal/.cache/
+
+# D
+d/build/
+d/*.o
+
+# Dart
+dart/.dart_tool/
+dart/.packages
+dart/pubspec.lock
+
+# Elixir
+elixir/_build/
+
+# Elm
+elm/build/
+elm/elm-stuff/
+
+# Erlang
+erlang/_build/
+erlang/rebar.lock
+
+# F#
+fsharp/bin/
+fsharp/obj/
+
+# Fortran
+fortran/build/
+
+# Gleam
+gleam/build/
+gleam/manifest.toml
+
+# Go
+go/bin/
+
+# Groovy
+groovy/.gradle/
+groovy/build/
+
+# Haskell
+haskell/dist-newstyle/
+
+# Java
+java/.gradle/
+java/build/
+
+# Kotlin
+kotlin/.gradle/
+kotlin/build/
+
+# Mojo
+mojo/build/
+mojo/*.mojopkg
+
+# Nim
+nim/nimcache/
+
+# OCaml
+ocaml/_build/
+ocaml/_opam/
+
+# Odin
+odin/sayable
+odin/*.o
+
+# Pascal
+pascal/build/
+
+# Rust
+rust/target/
+
+# Scala
+scala/.gradle/
+scala/build/
+
+# Swift
+swift/.build/
+swift/Package.resolved
+
+# TypeScript
+typescript/node_modules/
+typescript/package-lock.json
+
+# VB.NET
+vbnet/bin/
+vbnet/obj/
+
+# Zig
+zig/.zig-cache/
+zig/build/
+zig/zig-out/

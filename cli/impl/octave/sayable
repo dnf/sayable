@@ -1,0 +1,474 @@
+#!/usr/bin/env octave --no-gui
+% Sayable CLI — unified command-line interface to all four Sayable components.
+%
+% See cli/SPEC.md for the full specification.
+
+% --- All function definitions must precede the main script code in Octave ---
+
+function result = nullify(value)
+  if (strcmp(value, 'null'))
+    result = [];
+  else
+    result = value;
+  endif
+endfunction
+
+function cli_error(msg)
+  fprintf(stderr, 'error: %s\n', msg);
+  fprintf(stderr, "Run 'sayable help' for usage.\n");
+  exit(2);
+endfunction
+
+function today_str = get_today()
+  v = clock();
+  today_str = sprintf('%04d-%02d-%02d', floor(v(1)), floor(v(2)), floor(v(3)));
+endfunction
+
+function result = is_integer_string(s)
+  if (isempty(s))
+    result = false;
+    return;
+  endif
+  if (s(1) == '-')
+    digits = s(2:end);
+  else
+    digits = s;
+  endif
+  if (isempty(digits))
+    result = false;
+    return;
+  endif
+  result = all(digits >= '0' & digits <= '9');
+endfunction
+
+function [command, positionals, options] = parse_cli_args(args)
+  if (length(args) == 0)
+    command = '';
+    positionals = {};
+    options = struct();
+    return;
+  endif
+
+  first = args{1};
+  if (strcmp(first, '-h') || strcmp(first, '--help') || strcmp(first, 'help'))
+    command = 'help';
+    positionals = {};
+    options = struct();
+    return;
+  endif
+  if (strcmp(first, '-v') || strcmp(first, '--version') || strcmp(first, 'version'))
+    command = 'version';
+    positionals = {};
+    options = struct();
+    return;
+  endif
+
+  command = first;
+  positionals = {};
+  options.locale = 'en';
+  options.as_of = '';
+  options.compactness = 'normal';
+  options.gender = '';
+  options.with_year = false;
+
+  i = 2;
+  stop_opts = false;
+  while (i <= length(args))
+    a = args{i};
+
+    if (strcmp(a, '--') && !stop_opts)
+      stop_opts = true;
+      i = i + 1;
+      continue;
+    endif
+
+    if (!stop_opts && length(a) > 0 && a(1) == '-')
+      if (strcmp(a, '-l') || strcmp(a, '--locale'))
+        if (i + 1 > length(args))
+          cli_error(sprintf("'%s' requires a value", a));
+        endif
+        i = i + 1;
+        options.locale = args{i};
+      elseif (strcmp(a, '-d') || strcmp(a, '--as-of'))
+        if (i + 1 > length(args))
+          cli_error(sprintf("'%s' requires a value", a));
+        endif
+        i = i + 1;
+        options.as_of = args{i};
+      elseif (strcmp(a, '-g') || strcmp(a, '--gender'))
+        if (i + 1 > length(args))
+          cli_error(sprintf("'%s' requires a value", a));
+        endif
+        i = i + 1;
+        options.gender = args{i};
+      elseif (strcmp(a, '--short'))
+        options.compactness = 'short';
+      elseif (strcmp(a, '--compact'))
+        options.compactness = 'compact';
+      elseif (strcmp(a, '--with-year'))
+        options.with_year = true;
+      elseif (strcmp(a, '-h') || strcmp(a, '--help'))
+        command = 'help';
+        positionals = {};
+        options = struct();
+        return;
+      elseif (strcmp(a, '-v') || strcmp(a, '--version'))
+        command = 'version';
+        positionals = {};
+        options = struct();
+        return;
+      else
+        cli_error(sprintf("unknown option '%s'", a));
+      endif
+    else
+      positionals{end + 1} = a;
+    endif
+
+    i = i + 1;
+  endwhile
+endfunction
+
+function cmd_age(positionals, options)
+  if (length(positionals) == 0)
+    cli_error('age requires a date-of-birth argument');
+  endif
+  dob = nullify(positionals{1});
+
+  locale_code = options.locale;
+  loc = get_age_locale(locale_code);
+  if (isempty(loc))
+    cli_error(sprintf("unknown locale '%s'", locale_code));
+  endif
+
+  as_of = options.as_of;
+  if (!isempty(as_of))
+    as_of = nullify(as_of);
+  else
+    as_of = get_today();
+  endif
+
+  formatter = sayable_age_new(loc, options.compactness);
+  result = formatter.format_age(dob, as_of);
+
+  if (isempty(result))
+    exit(1);
+  endif
+  fprintf(stdout, '%s\n', result);
+endfunction
+
+function cmd_stage(positionals, options)
+  if (length(positionals) == 0)
+    cli_error('stage requires a date-of-birth argument');
+  endif
+  dob = nullify(positionals{1});
+
+  locale_code = options.locale;
+  loc = get_age_locale(locale_code);
+  if (isempty(loc))
+    cli_error(sprintf("unknown locale '%s'", locale_code));
+  endif
+
+  as_of = options.as_of;
+  if (!isempty(as_of))
+    as_of = nullify(as_of);
+  else
+    as_of = get_today();
+  endif
+
+  gender = options.gender;
+
+  formatter = sayable_age_new(loc, options.compactness);
+  result = formatter.format_stage(dob, as_of, gender);
+
+  if (isempty(result))
+    exit(1);
+  endif
+  fprintf(stdout, '%s\n', result);
+endfunction
+
+function cmd_date(positionals, options)
+  if (length(positionals) == 0)
+    cli_error('date requires a date argument');
+  endif
+  date_val = nullify(positionals{1});
+
+  locale_code = options.locale;
+  loc = get_date_locale(locale_code);
+  if (isempty(loc))
+    cli_error(sprintf("unknown locale '%s'", locale_code));
+  endif
+
+  formatter = sayable_date_new(loc, options.compactness);
+
+  if (options.with_year)
+    result = formatter.format_date_with_year(date_val);
+  else
+    result = formatter.format_date(date_val);
+  endif
+
+  if (isempty(result))
+    exit(1);
+  endif
+  fprintf(stdout, '%s\n', result);
+endfunction
+
+function cmd_relative(positionals, options)
+  if (length(positionals) == 0)
+    cli_error('relative requires a date argument');
+  endif
+  date_val = nullify(positionals{1});
+
+  as_of = options.as_of;
+  if (isempty(as_of))
+    cli_error('relative requires --as-of / -d option');
+  endif
+  as_of = nullify(as_of);
+
+  locale_code = options.locale;
+  loc = get_date_locale(locale_code);
+  if (isempty(loc))
+    cli_error(sprintf("unknown locale '%s'", locale_code));
+  endif
+
+  formatter = sayable_date_new(loc, options.compactness);
+  result = formatter.format_relative(date_val, as_of);
+
+  if (isempty(result))
+    exit(1);
+  endif
+  fprintf(stdout, '%s\n', result);
+endfunction
+
+function cmd_time(positionals, options)
+  if (length(positionals) == 0)
+    cli_error('time requires a time argument');
+  endif
+  time_val = nullify(positionals{1});
+
+  locale_code = options.locale;
+  loc = get_time_locale(locale_code);
+  if (isempty(loc))
+    cli_error(sprintf("unknown locale '%s'", locale_code));
+  endif
+
+  formatter = sayable_time_new(loc, options.compactness);
+  result = formatter.format_time(time_val);
+
+  if (isempty(result))
+    exit(1);
+  endif
+  fprintf(stdout, '%s\n', result);
+endfunction
+
+function cmd_duration(positionals, options)
+  if (length(positionals) == 0)
+    cli_error('duration requires a value argument');
+  endif
+  value = nullify(positionals{1});
+
+  locale_code = options.locale;
+  loc = get_duration_locale(locale_code);
+  if (isempty(loc))
+    cli_error(sprintf("unknown locale '%s'", locale_code));
+  endif
+
+  formatter = sayable_duration_new(loc, options.compactness);
+
+  if (isempty(value))
+    result = formatter.format_duration([], '');
+  elseif (is_integer_string(value))
+    result = formatter.format_duration(str2double(value), '');
+  else
+    if (length(positionals) < 2)
+      cli_error('duration with timestamps requires start and end arguments');
+    endif
+    end_val = nullify(positionals{2});
+    result = formatter.format_duration(value, end_val);
+  endif
+
+  if (isempty(result))
+    exit(1);
+  endif
+  fprintf(stdout, '%s\n', result);
+endfunction
+
+function cmd_since(positionals, options)
+  if (length(positionals) == 0)
+    cli_error('since requires a start timestamp argument');
+  endif
+  start_val = nullify(positionals{1});
+
+  as_of = options.as_of;
+  if (isempty(as_of))
+    cli_error('since requires --as-of / -d option');
+  endif
+  as_of = nullify(as_of);
+
+  locale_code = options.locale;
+  loc = get_duration_locale(locale_code);
+  if (isempty(loc))
+    cli_error(sprintf("unknown locale '%s'", locale_code));
+  endif
+
+  formatter = sayable_duration_new(loc, options.compactness);
+  result = formatter.format_since(start_val, as_of);
+
+  if (isempty(result))
+    exit(1);
+  endif
+  fprintf(stdout, '%s\n', result);
+endfunction
+
+function cmd_until(positionals, options)
+  if (length(positionals) == 0)
+    cli_error('until requires a target timestamp argument');
+  endif
+  target = nullify(positionals{1});
+
+  as_of = options.as_of;
+  if (isempty(as_of))
+    cli_error('until requires --as-of / -d option');
+  endif
+  as_of = nullify(as_of);
+
+  locale_code = options.locale;
+  loc = get_duration_locale(locale_code);
+  if (isempty(loc))
+    cli_error(sprintf("unknown locale '%s'", locale_code));
+  endif
+
+  formatter = sayable_duration_new(loc, options.compactness);
+  result = formatter.format_until(target, as_of);
+
+  if (isempty(result))
+    exit(1);
+  endif
+  fprintf(stdout, '%s\n', result);
+endfunction
+
+function cmd_locales()
+  codes = {
+    'af', 'ak', 'am', 'ar', 'ay', 'az', ...
+    'bci', 'be', 'bem', 'bg', 'bi', 'bm', 'bn', 'br', 'bs', ...
+    'ca', 'cak', 'ceb', 'cs', 'cy', ...
+    'da', 'de', 'din', 'dje', 'dv', 'dyu', 'dz', ...
+    'ee', 'el', 'en', 'es', 'et', 'eu', ...
+    'fa', 'fan', 'ff', 'fi', 'fil', 'fj', 'fon', 'fr', ...
+    'ga', 'gd', 'gl', 'gn', 'gu', 'gv', ...
+    'ha', 'he', 'hi', 'hmn', 'hr', 'ht', 'hu', 'hy', ...
+    'id', 'ig', 'is', 'it', ...
+    'ja', 'jv', ...
+    'ka', 'kbp', 'kek', 'ki', 'kk', 'kl', 'km', 'kn', 'ko', 'kpe', 'kri', 'ktu', 'ku', 'kw', 'ky', ...
+    'lb', 'lg', 'ln', 'lo', 'lt', 'luo', 'lv', ...
+    'mam', 'men', 'mfe', 'mg', 'mi', 'mk', 'ml', 'mn', 'mnk', 'mos', 'mr', 'ms', 'mt', 'my', ...
+    'nb', 'nd', 'ne', 'ng', 'nl', 'nr', 'nso', 'nus', 'ny', ...
+    'om', 'or', ...
+    'pa', 'pis', 'pl', 'pov', 'ps', 'pt', ...
+    'qu', 'quc', ...
+    'ro', 'ru', 'rw', ...
+    'sar', 'sd', 'sg', 'shi', 'shn', 'si', 'sk', 'sl', 'sn', 'snk', 'so', 'sq', 'sr', 'ss', 'st', 'su', 'suk', 'sv', 'sw', ...
+    'ta', 'te', 'tem', 'tet', 'tg', 'th', 'ti', 'tig', 'tk', 'tn', 'tpi', 'tr', 'ts', 'tum', 'tzm', ...
+    'uk', 'umb', 'ur', 'uz', ...
+    've', 'vi', 'vmw', ...
+    'wo', ...
+    'xh', ...
+    'yao', 'yo', 'yue', ...
+    'zdj', 'zh', 'zu'
+  };
+  for i = 1:length(codes)
+    fprintf(stdout, '%s\n', codes{i});
+  endfor
+endfunction
+
+% ===== MAIN SCRIPT =====
+
+VERSION = '0.5.0';
+
+HELP_TEXT = strjoin({
+  'Usage: sayable <command> [arguments] [options]', ...
+  '', ...
+  'Commands:', ...
+  '  age <dob>              Format an age', ...
+  '  stage <dob>            Get developmental stage', ...
+  '  date <date>            Format a calendar date', ...
+  '  relative <date>        Format a relative date', ...
+  '  time <time>            Format a clock time', ...
+  '  duration <value> [end] Format a duration', ...
+  '  since <start>          Format elapsed time', ...
+  '  until <target>         Format remaining time', ...
+  '  locales                List available locale codes', ...
+  '  version                Show version', ...
+  '  help                   Show this help', ...
+  '', ...
+  'Options:', ...
+  '  -l, --locale <code>    Locale code (default: en)', ...
+  '  -d, --as-of <value>    Reference date/timestamp', ...
+  '      --short            Short compactness', ...
+  '      --compact          Compact compactness', ...
+  '  -g, --gender <m|f>     Gender for stage labels', ...
+  '      --with-year        Include year (date only)', ...
+  '  -h, --help             Show this help', ...
+  '  -v, --version          Show version'}, '\n');
+
+% Resolve project root from this script's location
+script_path = mfilename('fullpath');
+if (isempty(script_path))
+  script_dir = '.';
+else
+  script_dir = fileparts(script_path);
+endif
+project_root = fullfile(script_dir, '..', '..', '..');
+
+% Add all component source directories to the path
+addpath(fullfile(project_root, 'age', 'impl', 'octave'));
+addpath(fullfile(project_root, 'age', 'impl', 'octave', 'locales'));
+addpath(fullfile(project_root, 'date', 'impl', 'octave'));
+addpath(fullfile(project_root, 'date', 'impl', 'octave', 'locales'));
+addpath(fullfile(project_root, 'duration', 'impl', 'octave'));
+addpath(fullfile(project_root, 'duration', 'impl', 'octave', 'locales'));
+addpath(fullfile(project_root, 'time', 'impl', 'octave'));
+addpath(fullfile(project_root, 'time', 'impl', 'octave', 'locales'));
+
+% Parse command line arguments
+args = argv();
+[command, positionals, options] = parse_cli_args(args);
+
+if (isempty(command))
+  fprintf(stdout, '%s\n', HELP_TEXT);
+  exit(2);
+endif
+
+if (strcmp(command, 'help'))
+  fprintf(stdout, '%s\n', HELP_TEXT);
+  exit(0);
+endif
+
+if (strcmp(command, 'version'))
+  fprintf(stdout, 'sayable %s\n', VERSION);
+  exit(0);
+endif
+
+if (strcmp(command, 'locales'))
+  cmd_locales();
+  exit(0);
+endif
+
+if (strcmp(command, 'age'))
+  cmd_age(positionals, options);
+elseif (strcmp(command, 'stage'))
+  cmd_stage(positionals, options);
+elseif (strcmp(command, 'date'))
+  cmd_date(positionals, options);
+elseif (strcmp(command, 'relative'))
+  cmd_relative(positionals, options);
+elseif (strcmp(command, 'time'))
+  cmd_time(positionals, options);
+elseif (strcmp(command, 'duration'))
+  cmd_duration(positionals, options);
+elseif (strcmp(command, 'since'))
+  cmd_since(positionals, options);
+elseif (strcmp(command, 'until'))
+  cmd_until(positionals, options);
+else
+  cli_error(sprintf("unknown command '%s'", command));
+endif
