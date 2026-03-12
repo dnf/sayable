@@ -30,35 +30,37 @@ fn build_ka() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} დღე"), Tuple[String, String]("other", "{n} დღე")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} კვირა"), Tuple[String, String]("other", "{n} კვირა")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} თვე"), Tuple[String, String]("other", "{n} თვე")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} წელი"), Tuple[String, String]("other", "{n} წელი")))
+    var day = plural_unit(one="{n} დღე", other="{n} დღე")
+    var week = plural_unit(one="{n} კვირა", other="{n} კვირა")
+    var month = plural_unit(one="{n} თვე", other="{n} თვე")
+    var year = plural_unit(one="{n} წელი", other="{n} წელი")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("ახალშობილი")
-    stages["infant"] = stage_neutral("ჩვილი")
-    stages["toddler"] = stage_neutral("პატარა ბავშვი")
-    stages["child"] = stage_neutral("ბავშვი")
-    stages["teenager"] = stage_neutral("მოზარდი")
-    stages["adult"] = stage_neutral("ზრდასრული")
+    var newborn = stage_neutral("ახალშობილი")
+    var infant = stage_neutral("ჩვილი")
+    var toddler = stage_neutral("პატარა ბავშვი")
+    var child = stage_neutral("ბავშვი")
+    var teenager = stage_neutral("მოზარდი")
+    var adult = stage_neutral("ზრდასრული")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} დღე")
-    short_units["week"] = simple_unit("{n} კვრ")
-    short_units["month"] = simple_unit("{n} თვე")
-    short_units["year"] = simple_unit("{n} წ")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} დღე")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} კვრ")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} თვე")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} წ")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} დღე")
-    compact_units["week"] = simple_unit("{n} კვრ")
-    compact_units["month"] = simple_unit("{n} თვე")
-    compact_units["year"] = simple_unit("{n} წ")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} დღე")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} კვრ")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} თვე")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} წ")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_ka() -> AgeLocale:
     return AgeLocale(
         code="ka",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} და ნახევარი",
         delimiter=", ",
         just_born="ახალშობილი",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

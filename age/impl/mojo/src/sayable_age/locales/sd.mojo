@@ -30,35 +30,37 @@ fn build_sd() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} ڏينهن")
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} هفتو"), Tuple[String, String]("other", "{n} هفتا")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} مهينو"), Tuple[String, String]("other", "{n} مهينا")))
-    units["year"] = simple_unit("{n} سال")
+    var day = simple_unit("{n} ڏينهن")
+    var week = plural_unit(one="{n} هفتو", other="{n} هفتا")
+    var month = plural_unit(one="{n} مهينو", other="{n} مهينا")
+    var year = simple_unit("{n} سال")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("نئون ڄائو")
-    stages["infant"] = stage_neutral("ننڍو ٻار")
-    stages["toddler"] = stage_neutral("ننڍو ٻار")
-    stages["child"] = stage_neutral("ٻار")
-    stages["teenager"] = stage_neutral("نوجوان")
-    stages["adult"] = stage_neutral("وڏو")
+    var newborn = stage_neutral("نئون ڄائو")
+    var infant = stage_neutral("ننڍو ٻار")
+    var toddler = stage_neutral("ننڍو ٻار")
+    var child = stage_neutral("ٻار")
+    var teenager = stage_neutral("نوجوان")
+    var adult = stage_neutral("وڏو")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} ڏينهن")
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} هفتو"), Tuple[String, String]("other", "{n} هفتا")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} مهينو"), Tuple[String, String]("other", "{n} مهينا")))
-    short_units["year"] = simple_unit("{n} سال")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} ڏينهن")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="{n} هفتو", other="{n} هفتا")
+    short_ovr.has_week = True
+    short_ovr.month = plural_unit(one="{n} مهينو", other="{n} مهينا")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} سال")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} ڏ")
-    compact_units["week"] = simple_unit("{n} ه")
-    compact_units["month"] = simple_unit("{n} م")
-    compact_units["year"] = simple_unit("{n} س")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} ڏ")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} ه")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} م")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} س")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_sd() -> AgeLocale:
     return AgeLocale(
         code="sd",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter="، ",
         just_born="نئون ڄائو",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

@@ -30,35 +30,37 @@ fn build_el() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} μέρα"), Tuple[String, String]("other", "{n} μέρες")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} εβδομάδα"), Tuple[String, String]("other", "{n} εβδομάδες")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} μήνας"), Tuple[String, String]("other", "{n} μήνες")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} χρόνος"), Tuple[String, String]("other", "{n} χρόνια")))
+    var day = plural_unit(one="{n} μέρα", other="{n} μέρες")
+    var week = plural_unit(one="{n} εβδομάδα", other="{n} εβδομάδες")
+    var month = plural_unit(one="{n} μήνας", other="{n} μήνες")
+    var year = plural_unit(one="{n} χρόνος", other="{n} χρόνια")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Νεογέννητο")
-    stages["infant"] = stage_neutral("Βρέφος")
-    stages["toddler"] = stage_neutral("Νήπιο")
-    stages["child"] = stage_neutral("Παιδί")
-    stages["teenager"] = stage_gendered("Έφηβος", "Έφηβη")
-    stages["adult"] = stage_gendered("Ενήλικας", "Ενήλικη")
+    var newborn = stage_neutral("Νεογέννητο")
+    var infant = stage_neutral("Βρέφος")
+    var toddler = stage_neutral("Νήπιο")
+    var child = stage_neutral("Παιδί")
+    var teenager = stage_gendered("Έφηβος", "Έφηβη")
+    var adult = stage_gendered("Ενήλικας", "Ενήλικη")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ημέρα"), Tuple[String, String]("other", "{n} ημέρες")))
-    short_units["week"] = simple_unit("{n} εβδ.")
-    short_units["month"] = simple_unit("{n} μήν.")
-    short_units["year"] = simple_unit("{n} έτ.")
-    short_ovr.units = short_units^
+    short_ovr.day = plural_unit(one="{n} ημέρα", other="{n} ημέρες")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} εβδ.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} μήν.")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} έτ.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} η")
-    compact_units["week"] = simple_unit("{n} ε")
-    compact_units["month"] = simple_unit("{n} μ")
-    compact_units["year"] = simple_unit("{n} έ")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} η")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} ε")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} μ")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} έ")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_el() -> AgeLocale:
     return AgeLocale(
         code="el",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} και μισό",
         delimiter=", ",
         just_born="Νεογέννητο",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

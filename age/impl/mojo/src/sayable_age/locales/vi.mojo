@@ -28,35 +28,37 @@ fn build_vi() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} ngày")
-    units["week"] = simple_unit("{n} tuần")
-    units["month"] = simple_unit("{n} tháng")
-    units["year"] = simple_unit("{n} tuổi")
+    var day = simple_unit("{n} ngày")
+    var week = simple_unit("{n} tuần")
+    var month = simple_unit("{n} tháng")
+    var year = simple_unit("{n} tuổi")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Sơ sinh")
-    stages["infant"] = stage_neutral("Trẻ sơ sinh")
-    stages["toddler"] = stage_neutral("Trẻ mới biết đi")
-    stages["child"] = stage_neutral("Trẻ em")
-    stages["teenager"] = stage_neutral("Thiếu niên")
-    stages["adult"] = stage_neutral("Người lớn")
+    var newborn = stage_neutral("Sơ sinh")
+    var infant = stage_neutral("Trẻ sơ sinh")
+    var toddler = stage_neutral("Trẻ mới biết đi")
+    var child = stage_neutral("Trẻ em")
+    var teenager = stage_neutral("Thiếu niên")
+    var adult = stage_neutral("Người lớn")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} ngày")
-    short_units["week"] = simple_unit("{n} tuần")
-    short_units["month"] = simple_unit("{n} tháng")
-    short_units["year"] = simple_unit("{n} năm")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} ngày")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} tuần")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} tháng")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} năm")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} ngày")
-    compact_units["week"] = simple_unit("{n} tuần")
-    compact_units["month"] = simple_unit("{n} tháng")
-    compact_units["year"] = simple_unit("{n} năm")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} ngày")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} tuần")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} tháng")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} năm")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_vi() -> AgeLocale:
     return AgeLocale(
         code="vi",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} rưỡi",
         delimiter=", ",
         just_born="Sơ sinh",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

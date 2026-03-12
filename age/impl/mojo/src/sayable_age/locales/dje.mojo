@@ -28,35 +28,37 @@ fn build_dje() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("zaari {n}")
-    units["week"] = simple_unit("hebu {n}")
-    units["month"] = simple_unit("handu {n}")
-    units["year"] = simple_unit("jiiri {n}")
+    var day = simple_unit("zaari {n}")
+    var week = simple_unit("hebu {n}")
+    var month = simple_unit("handu {n}")
+    var year = simple_unit("jiiri {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Izo hayni zaari")
-    stages["infant"] = stage_neutral("Izo kayna")
-    stages["toddler"] = stage_neutral("Izo kayna beerey")
-    stages["child"] = stage_neutral("Izo")
-    stages["teenager"] = stage_neutral("Haŋ kayna")
-    stages["adult"] = stage_neutral("Boro beerey")
+    var newborn = stage_neutral("Izo hayni zaari")
+    var infant = stage_neutral("Izo kayna")
+    var toddler = stage_neutral("Izo kayna beerey")
+    var child = stage_neutral("Izo")
+    var teenager = stage_neutral("Haŋ kayna")
+    var adult = stage_neutral("Boro beerey")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("zaa. {n}")
-    short_units["week"] = simple_unit("heb. {n}")
-    short_units["month"] = simple_unit("han. {n}")
-    short_units["year"] = simple_unit("jii. {n}")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("zaa. {n}")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("heb. {n}")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("han. {n}")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("jii. {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("zaa {n}")
-    compact_units["week"] = simple_unit("heb {n}")
-    compact_units["month"] = simple_unit("han {n}")
-    compact_units["year"] = simple_unit("jii {n}")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("zaa {n}")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("heb {n}")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("han {n}")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("jii {n}")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_dje() -> AgeLocale:
     return AgeLocale(
         code="dje",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} d'iddeka",
         delimiter=", ",
         just_born="Izo hayni",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

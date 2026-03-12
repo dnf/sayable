@@ -30,48 +30,58 @@ fn build_af() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} dag"), Tuple[String, String]("other", "{n} dae")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} week"), Tuple[String, String]("other", "{n} weke")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} maand"), Tuple[String, String]("other", "{n} maande")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} jaar"), Tuple[String, String]("other", "{n} jaar")))
+    var day = plural_unit(one="{n} dag", other="{n} dae")
+    var week = plural_unit(one="{n} week", other="{n} weke")
+    var month = plural_unit(one="{n} maand", other="{n} maande")
+    var year = plural_unit(one="{n} jaar", other="{n} jaar")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Pasgebore")
-    stages["infant"] = stage_neutral("Baba")
-    stages["toddler"] = stage_neutral("Kleuter")
-    stages["child"] = stage_neutral("Kind")
-    stages["teenager"] = stage_neutral("Tiener")
-    stages["adult"] = stage_neutral("Volwassene")
+    var newborn = stage_neutral("Pasgebore")
+    var infant = stage_neutral("Baba")
+    var toddler = stage_neutral("Kleuter")
+    var child = stage_neutral("Kind")
+    var teenager = stage_neutral("Tiener")
+    var adult = stage_neutral("Volwassene")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} d.")
-    short_units["week"] = simple_unit("{n} w.")
-    short_units["month"] = simple_unit("{n} md.")
-    short_units["year"] = simple_unit("{n} j.")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} d.")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} w.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} md.")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} j.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}j")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}j")
+    compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="af",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter=", ",
         just_born="Pasgebore",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

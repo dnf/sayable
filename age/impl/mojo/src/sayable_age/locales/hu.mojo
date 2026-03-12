@@ -28,35 +28,37 @@ fn build_hu() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} nap")
-    units["week"] = simple_unit("{n} hét")
-    units["month"] = simple_unit("{n} hónap")
-    units["year"] = simple_unit("{n} év")
+    var day = simple_unit("{n} nap")
+    var week = simple_unit("{n} hét")
+    var month = simple_unit("{n} hónap")
+    var year = simple_unit("{n} év")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Újszülött")
-    stages["infant"] = stage_neutral("Csecsemő")
-    stages["toddler"] = stage_neutral("Kisgyermek")
-    stages["child"] = stage_neutral("Gyermek")
-    stages["teenager"] = stage_neutral("Tinédzser")
-    stages["adult"] = stage_neutral("Felnőtt")
+    var newborn = stage_neutral("Újszülött")
+    var infant = stage_neutral("Csecsemő")
+    var toddler = stage_neutral("Kisgyermek")
+    var child = stage_neutral("Gyermek")
+    var teenager = stage_neutral("Tinédzser")
+    var adult = stage_neutral("Felnőtt")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} nap")
-    short_units["week"] = simple_unit("{n} hét")
-    short_units["month"] = simple_unit("{n} hónap")
-    short_units["year"] = simple_unit("{n} év")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} nap")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} hét")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} hónap")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} év")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} nap")
-    compact_units["week"] = simple_unit("{n} hét")
-    compact_units["month"] = simple_unit("{n} h.")
-    compact_units["year"] = simple_unit("{n} év")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} nap")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} hét")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} h.")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} év")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_hu() -> AgeLocale:
     return AgeLocale(
         code="hu",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n} és fél",
         delimiter=", ",
         just_born="Újszülött",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

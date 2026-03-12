@@ -34,35 +34,37 @@ fn _plural(n: Int) -> String:
 fn build_he() -> AgeLocale:
     """Build the Hebrew locale."""
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "יום {n}"), Tuple[String, String]("two", "יומיים"), Tuple[String, String]("other", "{n} ימים")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "שבוע {n}"), Tuple[String, String]("two", "שבועיים"), Tuple[String, String]("other", "{n} שבועות")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "חודש {n}"), Tuple[String, String]("two", "חודשיים"), Tuple[String, String]("other", "{n} חודשים")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "שנה"), Tuple[String, String]("two", "שנתיים"), Tuple[String, String]("other", "{n} שנים")))
+    var day = plural_unit(one="יום {n}", two="יומיים", other="{n} ימים")
+    var week = plural_unit(one="שבוע {n}", two="שבועיים", other="{n} שבועות")
+    var month = plural_unit(one="חודש {n}", two="חודשיים", other="{n} חודשים")
+    var year = plural_unit(one="שנה", two="שנתיים", other="{n} שנים")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_gendered("רק נולד", "רק נולדה")
-    stages["infant"] = stage_neutral("תינוק")
-    stages["toddler"] = stage_neutral("פעוט")
-    stages["child"] = stage_gendered("ילד", "ילדה")
-    stages["teenager"] = stage_gendered("נער", "נערה")
-    stages["adult"] = stage_gendered("מבוגר", "מבוגרת")
+    var newborn = stage_gendered("רק נולד", "רק נולדה")
+    var infant = stage_neutral("תינוק")
+    var toddler = stage_neutral("פעוט")
+    var child = stage_gendered("ילד", "ילדה")
+    var teenager = stage_gendered("נער", "נערה")
+    var adult = stage_gendered("מבוגר", "מבוגרת")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} יום"), Tuple[String, String]("two", "יומיים"), Tuple[String, String]("other", "{n} ימ׳")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} שבוע"), Tuple[String, String]("two", "שבועיים"), Tuple[String, String]("other", "{n} שבועות")))
-    short_units["month"] = simple_unit("{n} ח׳")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} שנה"), Tuple[String, String]("two", "{n} שנים"), Tuple[String, String]("other", "{n} שנים")))
-    short_ovr.units = short_units^
+    short_ovr.day = plural_unit(one="{n} יום", two="יומיים", other="{n} ימ׳")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="{n} שבוע", two="שבועיים", other="{n} שבועות")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ח׳")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="{n} שנה", two="{n} שנים", other="{n} שנים")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} י׳")
-    compact_units["week"] = simple_unit("{n} ש′")
-    compact_units["month"] = simple_unit("{n} ח׳")
-    compact_units["year"] = simple_unit("{n} ש′")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} י׳")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} ש′")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} ח׳")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} ש′")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -71,13 +73,21 @@ fn build_he() -> AgeLocale:
     return AgeLocale(
         code="he",
         plural_fn=_plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} וחצי",
         delimiter=", ",
         just_born="רק נולד",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

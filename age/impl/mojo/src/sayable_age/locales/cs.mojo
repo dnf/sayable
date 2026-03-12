@@ -34,48 +34,58 @@ fn _plural(n: Int) -> String:
 fn build_cs() -> AgeLocale:
     """Build the Czech locale."""
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} den"), Tuple[String, String]("few", "{n} dny"), Tuple[String, String]("other", "{n} dní")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} týden"), Tuple[String, String]("few", "{n} týdny"), Tuple[String, String]("other", "{n} týdnů")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} měsíc"), Tuple[String, String]("few", "{n} měsíce"), Tuple[String, String]("other", "{n} měsíců")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} rok"), Tuple[String, String]("few", "{n} roky"), Tuple[String, String]("other", "{n} let")))
+    var day = plural_unit(one="{n} den", few="{n} dny", other="{n} dní")
+    var week = plural_unit(one="{n} týden", few="{n} týdny", other="{n} týdnů")
+    var month = plural_unit(one="{n} měsíc", few="{n} měsíce", other="{n} měsíců")
+    var year = plural_unit(one="{n} rok", few="{n} roky", other="{n} let")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Novorozenec")
-    stages["infant"] = stage_neutral("Kojenec")
-    stages["toddler"] = stage_neutral("Batole")
-    stages["child"] = stage_neutral("Dítě")
-    stages["teenager"] = stage_neutral("Teenager")
-    stages["adult"] = stage_gendered("Dospělý", "Dospělá")
+    var newborn = stage_neutral("Novorozenec")
+    var infant = stage_neutral("Kojenec")
+    var toddler = stage_neutral("Batole")
+    var child = stage_neutral("Dítě")
+    var teenager = stage_neutral("Teenager")
+    var adult = stage_gendered("Dospělý", "Dospělá")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} den"), Tuple[String, String]("few", "{n} dny"), Tuple[String, String]("many", "{n} dne"), Tuple[String, String]("other", "{n} dnů")))
-    short_units["week"] = simple_unit("{n} týd.")
-    short_units["month"] = simple_unit("{n} měs.")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} rok"), Tuple[String, String]("few", "{n} roky"), Tuple[String, String]("many", "{n} roku"), Tuple[String, String]("other", "{n} let")))
-    short_ovr.units = short_units^
+    short_ovr.day = plural_unit(one="{n} den", few="{n} dny", many="{n} dne", other="{n} dnů")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} týd.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} měs.")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="{n} rok", few="{n} roky", many="{n} roku", other="{n} let")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} d.")
-    compact_units["week"] = simple_unit("{n} t.")
-    compact_units["month"] = simple_unit("{n} m.")
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} r."), Tuple[String, String]("few", "{n} r."), Tuple[String, String]("many", "{n} r."), Tuple[String, String]("other", "{n} l.")))
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} d.")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} t.")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} m.")
+    compact_ovr.has_month = True
+    compact_ovr.year = plural_unit(one="{n} r.", few="{n} r.", many="{n} r.", other="{n} l.")
+    compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="cs",
         plural_fn=_plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter=", ",
         just_born="Novorozenec",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

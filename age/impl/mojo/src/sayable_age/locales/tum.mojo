@@ -30,48 +30,58 @@ fn build_tum() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "dazi {n}"), Tuple[String, String]("other", "madazi {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sabata {n}"), Tuple[String, String]("other", "masabata {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mwezi {n}"), Tuple[String, String]("other", "miyezi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "chaka {n}"), Tuple[String, String]("other", "vyaka {n}")))
+    var day = plural_unit(one="dazi {n}", other="madazi {n}")
+    var week = plural_unit(one="sabata {n}", other="masabata {n}")
+    var month = plural_unit(one="mwezi {n}", other="miyezi {n}")
+    var year = plural_unit(one="chaka {n}", other="vyaka {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Mwana wabadwa wala")
-    stages["infant"] = stage_neutral("Mwana wakumawere")
-    stages["toddler"] = stage_neutral("Kamwana")
-    stages["child"] = stage_neutral("Mwana")
-    stages["teenager"] = stage_neutral("Munyamata")
-    stages["adult"] = stage_neutral("Munthu mukuru")
+    var newborn = stage_neutral("Mwana wabadwa wala")
+    var infant = stage_neutral("Mwana wakumawere")
+    var toddler = stage_neutral("Kamwana")
+    var child = stage_neutral("Mwana")
+    var teenager = stage_neutral("Munyamata")
+    var adult = stage_neutral("Munthu mukuru")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "dazi {n}"), Tuple[String, String]("other", "mad. {n}")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sab. {n}"), Tuple[String, String]("other", "mas. {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mwezi {n}"), Tuple[String, String]("other", "miy. {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "chaka {n}"), Tuple[String, String]("other", "vyaka {n}")))
-    short_ovr.units = short_units^
+    short_ovr.day = plural_unit(one="dazi {n}", other="mad. {n}")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="sab. {n}", other="mas. {n}")
+    short_ovr.has_week = True
+    short_ovr.month = plural_unit(one="mwezi {n}", other="miy. {n}")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="chaka {n}", other="vyaka {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="tum",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} na hafu",
         delimiter=", ",
         just_born="Mwana wabadwa wala",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

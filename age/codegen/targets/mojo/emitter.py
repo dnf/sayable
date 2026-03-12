@@ -38,11 +38,11 @@ def _unit_forms(unit: object) -> str:
     if isinstance(unit, str):
         return f"simple_unit({_quote(unit)})"
     cats = ["zero", "one", "two", "few", "many", "other"]
-    pairs = []
+    args = []
     for cat in cats:
         if cat in unit:
-            pairs.append(f'Tuple[String, String]({_quote(cat)}, {_quote(unit[cat])})')
-    return "plural_unit(List[Tuple[String, String]](" + ", ".join(pairs) + "))"
+            args.append(f'{cat}={_quote(unit[cat])}')
+    return "plural_unit(" + ", ".join(args) + ")"
 
 
 def _stage_label(stage: object) -> str:
@@ -104,17 +104,17 @@ def emit_locale(data: dict) -> str:
         # Use the named function defined above
         pass
 
+    # Units as individual variables
     lines.append("")
-    lines.append("    var units = Dict[String, UnitForms]()")
     for unit_name in ("day", "week", "month", "year"):
         val = _unit_forms(data["units"][unit_name])
-        lines.append(f"    units[{_quote(unit_name)}] = {val}")
+        lines.append(f"    var {unit_name} = {val}")
 
+    # Stages as individual variables
     lines.append("")
-    lines.append("    var stages = Dict[String, StageLabel]()")
     for stage in ("newborn", "infant", "toddler", "child", "teenager", "adult"):
         val = _stage_label(data["stages"][stage])
-        lines.append(f"    stages[{_quote(stage)}] = {val}")
+        lines.append(f"    var {stage} = {val}")
 
     # Short/compact overrides
     for mode in ("short", "compact"):
@@ -123,12 +123,11 @@ def emit_locale(data: dict) -> str:
             lines.append("")
             lines.append(f"    var {mode}_ovr = CompactnessOverride()")
             if "units" in ovr:
-                lines.append(f"    var {mode}_units = Dict[String, UnitForms]()")
                 for unit_name in ("day", "week", "month", "year"):
                     if unit_name in ovr["units"]:
                         val = _unit_forms(ovr["units"][unit_name])
-                        lines.append(f"    {mode}_units[{_quote(unit_name)}] = {val}")
-                lines.append(f"    {mode}_ovr.units = {mode}_units^")
+                        lines.append(f"    {mode}_ovr.{unit_name} = {val}")
+                        lines.append(f"    {mode}_ovr.has_{unit_name} = True")
             if "half" in ovr:
                 lines.append(f"    {mode}_ovr.half = {_quote(ovr['half'])}")
                 lines.append(f"    {mode}_ovr.has_half = True")
@@ -150,15 +149,23 @@ def emit_locale(data: dict) -> str:
     lines.append("    return AgeLocale(")
     lines.append(f"        code={_quote(code)},")
     lines.append(f"        plural_fn={plural_ref},")
-    lines.append("        units=units^,")
+    lines.append("        day=day,")
+    lines.append("        week=week,")
+    lines.append("        month=month,")
+    lines.append("        year=year,")
     lines.append(f"        half={_quote(data['half'])},")
     lines.append(f"        delimiter={_quote(data['delimiter'])},")
     lines.append(f"        just_born={_quote(data['justBorn'])},")
-    lines.append("        stages=stages^,")
+    lines.append("        newborn=newborn,")
+    lines.append("        infant=infant,")
+    lines.append("        toddler=toddler,")
+    lines.append("        child=child,")
+    lines.append("        teenager=teenager,")
+    lines.append("        adult=adult,")
 
     for mode in ("short", "compact"):
         if mode in data:
-            lines.append(f"        {mode}_override={mode}_ovr^,")
+            lines.append(f"        {mode}_override={mode}_ovr,")
             lines.append(f"        has_{mode}=True,")
 
     lines.append("    )")

@@ -28,46 +28,56 @@ fn build_ja() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n}日")
-    units["week"] = simple_unit("{n}週")
-    units["month"] = simple_unit("{n}ヶ月")
-    units["year"] = simple_unit("{n}歳")
+    var day = simple_unit("{n}日")
+    var week = simple_unit("{n}週")
+    var month = simple_unit("{n}ヶ月")
+    var year = simple_unit("{n}歳")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("新生児")
-    stages["infant"] = stage_neutral("乳児")
-    stages["toddler"] = stage_neutral("幼児")
-    stages["child"] = stage_neutral("児童")
-    stages["teenager"] = stage_neutral("青少年")
-    stages["adult"] = stage_neutral("成人")
+    var newborn = stage_neutral("新生児")
+    var infant = stage_neutral("乳児")
+    var toddler = stage_neutral("幼児")
+    var child = stage_neutral("児童")
+    var teenager = stage_neutral("青少年")
+    var adult = stage_neutral("成人")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} 日")
-    short_units["week"] = simple_unit("{n} 週間")
-    short_units["month"] = simple_unit("{n} か月")
-    short_units["year"] = simple_unit("{n} 年")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} 日")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} 週間")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} か月")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} 年")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
 
     return AgeLocale(
         code="ja",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0}半",
         delimiter="",
         just_born="新生児",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

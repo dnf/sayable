@@ -36,35 +36,37 @@ fn _plural(n: Int) -> String:
 fn build_uk() -> AgeLocale:
     """Build the Ukrainian locale."""
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} день"), Tuple[String, String]("few", "{n} дні"), Tuple[String, String]("many", "{n} днів"), Tuple[String, String]("other", "{n} днів")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} тиждень"), Tuple[String, String]("few", "{n} тижні"), Tuple[String, String]("many", "{n} тижнів"), Tuple[String, String]("other", "{n} тижнів")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} місяць"), Tuple[String, String]("few", "{n} місяці"), Tuple[String, String]("many", "{n} місяців"), Tuple[String, String]("other", "{n} місяців")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} рік"), Tuple[String, String]("few", "{n} роки"), Tuple[String, String]("many", "{n} років"), Tuple[String, String]("other", "{n} років")))
+    var day = plural_unit(one="{n} день", few="{n} дні", many="{n} днів", other="{n} днів")
+    var week = plural_unit(one="{n} тиждень", few="{n} тижні", many="{n} тижнів", other="{n} тижнів")
+    var month = plural_unit(one="{n} місяць", few="{n} місяці", many="{n} місяців", other="{n} місяців")
+    var year = plural_unit(one="{n} рік", few="{n} роки", many="{n} років", other="{n} років")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_gendered("Новонароджений", "Новонароджена")
-    stages["infant"] = stage_neutral("Немовля")
-    stages["toddler"] = stage_neutral("Малюк")
-    stages["child"] = stage_neutral("Дитина")
-    stages["teenager"] = stage_neutral("Підліток")
-    stages["adult"] = stage_gendered("Дорослий", "Доросла")
+    var newborn = stage_gendered("Новонароджений", "Новонароджена")
+    var infant = stage_neutral("Немовля")
+    var toddler = stage_neutral("Малюк")
+    var child = stage_neutral("Дитина")
+    var teenager = stage_neutral("Підліток")
+    var adult = stage_gendered("Дорослий", "Доросла")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} дн.")
-    short_units["week"] = simple_unit("{n} тиж.")
-    short_units["month"] = simple_unit("{n} міс.")
-    short_units["year"] = simple_unit("{n} р.")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} дн.")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} тиж.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} міс.")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} р.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}д")
-    compact_units["week"] = simple_unit("{n}т")
-    compact_units["month"] = simple_unit("{n}м")
-    compact_units["year"] = simple_unit("{n}р")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}д")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}т")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}м")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}р")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -73,13 +75,21 @@ fn build_uk() -> AgeLocale:
     return AgeLocale(
         code="uk",
         plural_fn=_plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n} з половиною",
         delimiter=", ",
         just_born="Новонароджений",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

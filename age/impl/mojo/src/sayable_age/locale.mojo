@@ -6,20 +6,38 @@ struct UnitForms(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
 
     var is_simple: Bool
     var template_str: String
-    var forms: Dict[String, String]
+    var zero: String
+    var one: String
+    var two: String
+    var few: String
+    var many: String
+    var other: String
 
     fn __init__(out self):
         self.is_simple = True
         self.template_str = ""
-        self.forms = Dict[String, String]()
+        self.zero = ""
+        self.one = ""
+        self.two = ""
+        self.few = ""
+        self.many = ""
+        self.other = ""
 
     fn get_template(self, category: String) -> String:
         """Get the template for a plural category."""
         if self.is_simple:
             return self.template_str
-        if category in self.forms:
-            return self.forms[category]
-        return self.forms.get("other", "")
+        if category == "zero":
+            return self.zero
+        if category == "one":
+            return self.one
+        if category == "two":
+            return self.two
+        if category == "few":
+            return self.few
+        if category == "many":
+            return self.many
+        return self.other
 
 
 fn simple_unit(template: String) -> UnitForms:
@@ -30,12 +48,23 @@ fn simple_unit(template: String) -> UnitForms:
     return uf
 
 
-fn plural_unit(pairs: List[Tuple[String, String]]) -> UnitForms:
+fn plural_unit(
+    zero: String = "",
+    one: String = "",
+    two: String = "",
+    few: String = "",
+    many: String = "",
+    other: String = "",
+) -> UnitForms:
     """Create a plural unit with category-template pairs."""
     var uf = UnitForms()
     uf.is_simple = False
-    for i in range(len(pairs)):
-        uf.forms[pairs[i][0]] = pairs[i][1]
+    uf.zero = zero
+    uf.one = one
+    uf.two = two
+    uf.few = few
+    uf.many = many
+    uf.other = other
     return uf
 
 
@@ -74,7 +103,14 @@ fn stage_gendered(m: String, f: String) -> StageLabel:
 struct CompactnessOverride(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """Optional overrides for short/compact display modes."""
 
-    var units: Dict[String, UnitForms]
+    var day: UnitForms
+    var has_day: Bool
+    var week: UnitForms
+    var has_week: Bool
+    var month: UnitForms
+    var has_month: Bool
+    var year: UnitForms
+    var has_year: Bool
     var half: String
     var has_half: Bool
     var delimiter: String
@@ -83,13 +119,32 @@ struct CompactnessOverride(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDest
     var has_just_born: Bool
 
     fn __init__(out self):
-        self.units = Dict[String, UnitForms]()
+        self.day = UnitForms()
+        self.has_day = False
+        self.week = UnitForms()
+        self.has_week = False
+        self.month = UnitForms()
+        self.has_month = False
+        self.year = UnitForms()
+        self.has_year = False
         self.half = ""
         self.has_half = False
         self.delimiter = ""
         self.has_delimiter = False
         self.just_born = ""
         self.has_just_born = False
+
+    fn get_unit(self, name: String, fallback: UnitForms) -> UnitForms:
+        """Get override unit or fallback."""
+        if name == "day" and self.has_day:
+            return self.day
+        if name == "week" and self.has_week:
+            return self.week
+        if name == "month" and self.has_month:
+            return self.month
+        if name == "year" and self.has_year:
+            return self.year
+        return fallback
 
 
 alias PluralFn = fn (Int) -> String
@@ -100,11 +155,19 @@ struct AgeLocale(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
 
     var code: String
     var plural_fn: PluralFn
-    var units: Dict[String, UnitForms]
+    var day: UnitForms
+    var week: UnitForms
+    var month: UnitForms
+    var year: UnitForms
     var half: String
     var delimiter: String
     var just_born: String
-    var stages: Dict[String, StageLabel]
+    var newborn: StageLabel
+    var infant: StageLabel
+    var toddler: StageLabel
+    var child: StageLabel
+    var teenager: StageLabel
+    var adult: StageLabel
     var short_override: CompactnessOverride
     var has_short: Bool
     var compact_override: CompactnessOverride
@@ -114,11 +177,19 @@ struct AgeLocale(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
         out self,
         code: String,
         plural_fn: PluralFn,
-        units: Dict[String, UnitForms],
+        day: UnitForms,
+        week: UnitForms,
+        month: UnitForms,
+        year: UnitForms,
         half: String,
         delimiter: String,
         just_born: String,
-        stages: Dict[String, StageLabel],
+        newborn: StageLabel,
+        infant: StageLabel,
+        toddler: StageLabel,
+        child: StageLabel,
+        teenager: StageLabel,
+        adult: StageLabel,
         short_override: CompactnessOverride = CompactnessOverride(),
         has_short: Bool = False,
         compact_override: CompactnessOverride = CompactnessOverride(),
@@ -126,11 +197,19 @@ struct AgeLocale(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     ):
         self.code = code
         self.plural_fn = plural_fn
-        self.units = units
+        self.day = day
+        self.week = week
+        self.month = month
+        self.year = year
         self.half = half
         self.delimiter = delimiter
         self.just_born = just_born
-        self.stages = stages
+        self.newborn = newborn
+        self.infant = infant
+        self.toddler = toddler
+        self.child = child
+        self.teenager = teenager
+        self.adult = adult
         self.short_override = short_override
         self.has_short = has_short
         self.compact_override = compact_override

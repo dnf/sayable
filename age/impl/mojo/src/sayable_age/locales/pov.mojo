@@ -28,35 +28,37 @@ fn build_pov() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} dia")
-    units["week"] = simple_unit("{n} simana")
-    units["month"] = simple_unit("{n} mis")
-    units["year"] = simple_unit("{n} anu")
+    var day = simple_unit("{n} dia")
+    var week = simple_unit("{n} simana")
+    var month = simple_unit("{n} mis")
+    var year = simple_unit("{n} anu")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Mininu nobu")
-    stages["infant"] = stage_neutral("Bebi")
-    stages["toddler"] = stage_neutral("Mininu pikiñu")
-    stages["child"] = stage_neutral("Mininu")
-    stages["teenager"] = stage_neutral("Rapas")
-    stages["adult"] = stage_neutral("Omi garandi")
+    var newborn = stage_neutral("Mininu nobu")
+    var infant = stage_neutral("Bebi")
+    var toddler = stage_neutral("Mininu pikiñu")
+    var child = stage_neutral("Mininu")
+    var teenager = stage_neutral("Rapas")
+    var adult = stage_neutral("Omi garandi")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} dia")
-    short_units["week"] = simple_unit("{n} sim")
-    short_units["month"] = simple_unit("{n} mis")
-    short_units["year"] = simple_unit("{n} anu")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} dia")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} sim")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} mis")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} anu")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} dia")
-    compact_units["week"] = simple_unit("{n} sim")
-    compact_units["month"] = simple_unit("{n} mis")
-    compact_units["year"] = simple_unit("{n} anu")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} dia")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} sim")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} mis")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} anu")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_pov() -> AgeLocale:
     return AgeLocale(
         code="pov",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} i meiu",
         delimiter=", ",
         just_born="Mininu kaba di nasi",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

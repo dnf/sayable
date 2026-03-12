@@ -28,35 +28,37 @@ fn build_fil() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} araw")
-    units["week"] = simple_unit("{n} linggo")
-    units["month"] = simple_unit("{n} buwan")
-    units["year"] = simple_unit("{n} taon")
+    var day = simple_unit("{n} araw")
+    var week = simple_unit("{n} linggo")
+    var month = simple_unit("{n} buwan")
+    var year = simple_unit("{n} taon")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Bagong silang")
-    stages["infant"] = stage_neutral("Sanggol")
-    stages["toddler"] = stage_neutral("Batang paslit")
-    stages["child"] = stage_neutral("Bata")
-    stages["teenager"] = stage_neutral("Tinedyer")
-    stages["adult"] = stage_neutral("Matanda")
+    var newborn = stage_neutral("Bagong silang")
+    var infant = stage_neutral("Sanggol")
+    var toddler = stage_neutral("Batang paslit")
+    var child = stage_neutral("Bata")
+    var teenager = stage_neutral("Tinedyer")
+    var adult = stage_neutral("Matanda")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} araw")
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} linggo"), Tuple[String, String]("other", "{n} na linggo")))
-    short_units["month"] = simple_unit("{n} buwan")
-    short_units["year"] = simple_unit("{n} taon")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} araw")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="{n} linggo", other="{n} na linggo")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} buwan")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} taon")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} araw"), Tuple[String, String]("other", "{n} na araw")))
-    compact_units["week"] = simple_unit("{n}linggo")
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n}buwan"), Tuple[String, String]("other", "{n} buwan")))
-    compact_units["year"] = simple_unit("{n}taon")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = plural_unit(one="{n} araw", other="{n} na araw")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}linggo")
+    compact_ovr.has_week = True
+    compact_ovr.month = plural_unit(one="{n}buwan", other="{n} buwan")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}taon")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_fil() -> AgeLocale:
     return AgeLocale(
         code="fil",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} at kalahati",
         delimiter=", ",
         just_born="Bagong silang",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

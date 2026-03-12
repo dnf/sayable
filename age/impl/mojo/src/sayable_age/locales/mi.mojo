@@ -30,35 +30,37 @@ fn build_mi() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("rā {n}")
-    units["week"] = simple_unit("wiki {n}")
-    units["month"] = simple_unit("marama {n}")
-    units["year"] = simple_unit("tau {n}")
+    var day = simple_unit("rā {n}")
+    var week = simple_unit("wiki {n}")
+    var month = simple_unit("marama {n}")
+    var year = simple_unit("tau {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Pēpi hou")
-    stages["infant"] = stage_neutral("Pēpi")
-    stages["toddler"] = stage_neutral("Kōhungahunga")
-    stages["child"] = stage_neutral("Tamariki")
-    stages["teenager"] = stage_neutral("Rangatahi")
-    stages["adult"] = stage_neutral("Pakeke")
+    var newborn = stage_neutral("Pēpi hou")
+    var infant = stage_neutral("Pēpi")
+    var toddler = stage_neutral("Kōhungahunga")
+    var child = stage_neutral("Tamariki")
+    var teenager = stage_neutral("Rangatahi")
+    var adult = stage_neutral("Pakeke")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("rā {n}")
-    short_units["week"] = simple_unit("w {n}")
-    short_units["month"] = simple_unit("m {n}")
-    short_units["year"] = simple_unit("t {n}")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("rā {n}")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("w {n}")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("m {n}")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("t {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}r")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}t")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}r")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}t")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_mi() -> AgeLocale:
     return AgeLocale(
         code="mi",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0}½",
         delimiter=", ",
         just_born="Pēpi hou",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

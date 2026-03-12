@@ -36,35 +36,37 @@ fn _plural(n: Int) -> String:
 fn build_be() -> AgeLocale:
     """Build the Belarusian locale."""
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} дзень"), Tuple[String, String]("few", "{n} дні"), Tuple[String, String]("many", "{n} дзён"), Tuple[String, String]("other", "{n} дзён")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} тыдзень"), Tuple[String, String]("few", "{n} тыдні"), Tuple[String, String]("many", "{n} тыдняў"), Tuple[String, String]("other", "{n} тыдняў")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} месяц"), Tuple[String, String]("few", "{n} месяцы"), Tuple[String, String]("many", "{n} месяцаў"), Tuple[String, String]("other", "{n} месяцаў")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} год"), Tuple[String, String]("few", "{n} гады"), Tuple[String, String]("many", "{n} гадоў"), Tuple[String, String]("other", "{n} гадоў")))
+    var day = plural_unit(one="{n} дзень", few="{n} дні", many="{n} дзён", other="{n} дзён")
+    var week = plural_unit(one="{n} тыдзень", few="{n} тыдні", many="{n} тыдняў", other="{n} тыдняў")
+    var month = plural_unit(one="{n} месяц", few="{n} месяцы", many="{n} месяцаў", other="{n} месяцаў")
+    var year = plural_unit(one="{n} год", few="{n} гады", many="{n} гадоў", other="{n} гадоў")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_gendered("Нованароджаны", "Нованароджаная")
-    stages["infant"] = stage_neutral("Немаўля")
-    stages["toddler"] = stage_neutral("Малыш")
-    stages["child"] = stage_neutral("Дзіця")
-    stages["teenager"] = stage_neutral("Падлетак")
-    stages["adult"] = stage_gendered("Дарослы", "Дарослая")
+    var newborn = stage_gendered("Нованароджаны", "Нованароджаная")
+    var infant = stage_neutral("Немаўля")
+    var toddler = stage_neutral("Малыш")
+    var child = stage_neutral("Дзіця")
+    var teenager = stage_neutral("Падлетак")
+    var adult = stage_gendered("Дарослы", "Дарослая")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} дн.")
-    short_units["week"] = simple_unit("{n} тыд.")
-    short_units["month"] = simple_unit("{n} мес.")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} г."), Tuple[String, String]("few", "{n} г."), Tuple[String, String]("many", "{n} г."), Tuple[String, String]("other", "{n} г.")))
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} дн.")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} тыд.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} мес.")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="{n} г.", few="{n} г.", many="{n} г.", other="{n} г.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} д.")
-    compact_units["week"] = simple_unit("{n} т.")
-    compact_units["month"] = simple_unit("{n} м.")
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} г."), Tuple[String, String]("few", "{n} г."), Tuple[String, String]("many", "{n} г."), Tuple[String, String]("other", "{n} г.")))
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} д.")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} т.")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} м.")
+    compact_ovr.has_month = True
+    compact_ovr.year = plural_unit(one="{n} г.", few="{n} г.", many="{n} г.", other="{n} г.")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -73,13 +75,21 @@ fn build_be() -> AgeLocale:
     return AgeLocale(
         code="be",
         plural_fn=_plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n} з паловай",
         delimiter=", ",
         just_born="Нованароджаны",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

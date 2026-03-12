@@ -28,48 +28,58 @@ fn build_fj() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} na siga")
-    units["week"] = simple_unit("{n} na macawa")
-    units["month"] = simple_unit("{n} na vula")
-    units["year"] = simple_unit("{n} na yabaki")
+    var day = simple_unit("{n} na siga")
+    var week = simple_unit("{n} na macawa")
+    var month = simple_unit("{n} na vula")
+    var year = simple_unit("{n} na yabaki")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Gone vou")
-    stages["infant"] = stage_neutral("Gone lalai")
-    stages["toddler"] = stage_neutral("Gone lailai")
-    stages["child"] = stage_neutral("Gone")
-    stages["teenager"] = stage_neutral("Cauravou")
-    stages["adult"] = stage_neutral("Tamata qase")
+    var newborn = stage_neutral("Gone vou")
+    var infant = stage_neutral("Gone lalai")
+    var toddler = stage_neutral("Gone lailai")
+    var child = stage_neutral("Gone")
+    var teenager = stage_neutral("Cauravou")
+    var adult = stage_neutral("Tamata qase")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} siga")
-    short_units["week"] = simple_unit("{n} mac.")
-    short_units["month"] = simple_unit("{n} vula")
-    short_units["year"] = simple_unit("{n} yab.")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} siga")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} mac.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} vula")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} yab.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="fj",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n} kei na levu ni wasei",
         delimiter=", ",
         just_born="Gone vou",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

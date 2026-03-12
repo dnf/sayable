@@ -28,48 +28,58 @@ fn build_ko() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n}일")
-    units["week"] = simple_unit("{n}주")
-    units["month"] = simple_unit("{n}개월")
-    units["year"] = simple_unit("{n}살")
+    var day = simple_unit("{n}일")
+    var week = simple_unit("{n}주")
+    var month = simple_unit("{n}개월")
+    var year = simple_unit("{n}살")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("신생아")
-    stages["infant"] = stage_neutral("영아")
-    stages["toddler"] = stage_neutral("유아")
-    stages["child"] = stage_neutral("아동")
-    stages["teenager"] = stage_neutral("청소년")
-    stages["adult"] = stage_neutral("성인")
+    var newborn = stage_neutral("신생아")
+    var infant = stage_neutral("영아")
+    var toddler = stage_neutral("유아")
+    var child = stage_neutral("아동")
+    var teenager = stage_neutral("청소년")
+    var adult = stage_neutral("성인")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n}일")
-    short_units["week"] = simple_unit("{n}주")
-    short_units["month"] = simple_unit("{n}개월")
-    short_units["year"] = simple_unit("{n}년")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n}일")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n}주")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n}개월")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n}년")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}일")
-    compact_units["week"] = simple_unit("{n}주")
-    compact_units["month"] = simple_unit("{n}개월")
-    compact_units["year"] = simple_unit("{n}년")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}일")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}주")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}개월")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}년")
+    compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="ko",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} 반",
         delimiter=" ",
         just_born="신생아",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

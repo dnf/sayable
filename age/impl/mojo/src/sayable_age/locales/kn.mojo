@@ -30,35 +30,37 @@ fn build_kn() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ದಿನ"), Tuple[String, String]("other", "{n} ದಿನಗಳು")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ವಾರ"), Tuple[String, String]("other", "{n} ವಾರಗಳು")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ತಿಂಗಳು"), Tuple[String, String]("other", "{n} ತಿಂಗಳುಗಳು")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ವರ್ಷ"), Tuple[String, String]("other", "{n} ವರ್ಷಗಳು")))
+    var day = plural_unit(one="{n} ದಿನ", other="{n} ದಿನಗಳು")
+    var week = plural_unit(one="{n} ವಾರ", other="{n} ವಾರಗಳು")
+    var month = plural_unit(one="{n} ತಿಂಗಳು", other="{n} ತಿಂಗಳುಗಳು")
+    var year = plural_unit(one="{n} ವರ್ಷ", other="{n} ವರ್ಷಗಳು")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("ನವಜಾತ ಶಿಶು")
-    stages["infant"] = stage_neutral("ಶಿಶು")
-    stages["toddler"] = stage_neutral("ಪುಟ್ಟ ಮಗು")
-    stages["child"] = stage_neutral("ಮಗು")
-    stages["teenager"] = stage_neutral("ಹದಿಹರೆಯದವರು")
-    stages["adult"] = stage_neutral("ವಯಸ್ಕ")
+    var newborn = stage_neutral("ನವಜಾತ ಶಿಶು")
+    var infant = stage_neutral("ಶಿಶು")
+    var toddler = stage_neutral("ಪುಟ್ಟ ಮಗು")
+    var child = stage_neutral("ಮಗು")
+    var teenager = stage_neutral("ಹದಿಹರೆಯದವರು")
+    var adult = stage_neutral("ವಯಸ್ಕ")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} ದಿನ")
-    short_units["week"] = simple_unit("{n} ವಾರ")
-    short_units["month"] = simple_unit("{n} ತಿಂಗಳು")
-    short_units["year"] = simple_unit("{n} ವರ್ಷ")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} ದಿನ")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} ವಾರ")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ತಿಂಗಳು")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} ವರ್ಷ")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} ದಿ")
-    compact_units["week"] = simple_unit("{n} ವಾ")
-    compact_units["month"] = simple_unit("{n} ತಿಂ")
-    compact_units["year"] = simple_unit("{n} ವ")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} ದಿ")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} ವಾ")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} ತಿಂ")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} ವ")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_kn() -> AgeLocale:
     return AgeLocale(
         code="kn",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0}ವರೆ",
         delimiter=", ",
         just_born="ನವಜಾತ ಶಿಶು",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

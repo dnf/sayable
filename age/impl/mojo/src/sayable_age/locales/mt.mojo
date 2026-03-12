@@ -39,35 +39,37 @@ fn _plural(n: Int) -> String:
 fn build_mt() -> AgeLocale:
     """Build the Maltese locale."""
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ġurnata"), Tuple[String, String]("two", "jumejn"), Tuple[String, String]("few", "{n} ijiem"), Tuple[String, String]("many", "{n}-il jum"), Tuple[String, String]("other", "{n} jum")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ġimgħa"), Tuple[String, String]("two", "ġimgħatejn"), Tuple[String, String]("few", "{n} ġimgħat"), Tuple[String, String]("many", "{n}-il ġimgħa"), Tuple[String, String]("other", "{n} ġimgħa")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "xahar"), Tuple[String, String]("two", "xahrejn"), Tuple[String, String]("few", "{n} xhur"), Tuple[String, String]("many", "{n}-il xahar"), Tuple[String, String]("other", "{n} xahar")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sena"), Tuple[String, String]("two", "sentejn"), Tuple[String, String]("few", "{n} snin"), Tuple[String, String]("many", "{n}-il sena"), Tuple[String, String]("other", "{n} sena")))
+    var day = plural_unit(one="ġurnata", two="jumejn", few="{n} ijiem", many="{n}-il jum", other="{n} jum")
+    var week = plural_unit(one="ġimgħa", two="ġimgħatejn", few="{n} ġimgħat", many="{n}-il ġimgħa", other="{n} ġimgħa")
+    var month = plural_unit(one="xahar", two="xahrejn", few="{n} xhur", many="{n}-il xahar", other="{n} xahar")
+    var year = plural_unit(one="sena", two="sentejn", few="{n} snin", many="{n}-il sena", other="{n} sena")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Tarbija ġdida")
-    stages["infant"] = stage_neutral("Tarbija")
-    stages["toddler"] = stage_gendered("Tifel żgħir", "Tifla żgħira")
-    stages["child"] = stage_gendered("Tifel", "Tifla")
-    stages["teenager"] = stage_gendered("Adolexxent", "Adolexxenta")
-    stages["adult"] = stage_gendered("Adult", "Adulta")
+    var newborn = stage_neutral("Tarbija ġdida")
+    var infant = stage_neutral("Tarbija")
+    var toddler = stage_gendered("Tifel żgħir", "Tifla żgħira")
+    var child = stage_gendered("Tifel", "Tifla")
+    var teenager = stage_gendered("Adolexxent", "Adolexxenta")
+    var adult = stage_gendered("Adult", "Adulta")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} d")
-    short_units["week"] = simple_unit("{n} w")
-    short_units["month"] = simple_unit("{n} m")
-    short_units["year"] = simple_unit("{n} y")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} d")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} w")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} m")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} y")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} d")
-    compact_units["week"] = simple_unit("{n} w")
-    compact_units["month"] = simple_unit("{n} m")
-    compact_units["year"] = simple_unit("{n} y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} y")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -76,13 +78,21 @@ fn build_mt() -> AgeLocale:
     return AgeLocale(
         code="mt",
         plural_fn=_plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} u nofs",
         delimiter=" u ",
         just_born="Tarbija ġdida",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

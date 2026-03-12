@@ -28,35 +28,37 @@ fn build_ig() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} ụbọchị")
-    units["week"] = simple_unit("{n} izu")
-    units["month"] = simple_unit("{n} ọnwa")
-    units["year"] = simple_unit("{n} afọ")
+    var day = simple_unit("{n} ụbọchị")
+    var week = simple_unit("{n} izu")
+    var month = simple_unit("{n} ọnwa")
+    var year = simple_unit("{n} afọ")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Nwa ọhụrụ")
-    stages["infant"] = stage_neutral("Nwa ọhụrụ")
-    stages["toddler"] = stage_neutral("Nwa nta")
-    stages["child"] = stage_neutral("Nwa")
-    stages["teenager"] = stage_neutral("Nwokorobịa")
-    stages["adult"] = stage_neutral("Okenye")
+    var newborn = stage_neutral("Nwa ọhụrụ")
+    var infant = stage_neutral("Nwa ọhụrụ")
+    var toddler = stage_neutral("Nwa nta")
+    var child = stage_neutral("Nwa")
+    var teenager = stage_neutral("Nwokorobịa")
+    var adult = stage_neutral("Okenye")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} ụbọchị")
-    short_units["week"] = simple_unit("{n} izu")
-    short_units["month"] = simple_unit("{n} ọnwa")
-    short_units["year"] = simple_unit("{n} afọ")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} ụbọchị")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} izu")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ọnwa")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} afọ")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_ig() -> AgeLocale:
     return AgeLocale(
         code="ig",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} na ọkara",
         delimiter=", ",
         just_born="Nwa ọhụrụ",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

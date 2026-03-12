@@ -30,35 +30,37 @@ fn build_bn() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} দিন"), Tuple[String, String]("other", "{n} দিন")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} সপ্তাহ"), Tuple[String, String]("other", "{n} সপ্তাহ")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} মাস"), Tuple[String, String]("other", "{n} মাস")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} বছর"), Tuple[String, String]("other", "{n} বছর")))
+    var day = plural_unit(one="{n} দিন", other="{n} দিন")
+    var week = plural_unit(one="{n} সপ্তাহ", other="{n} সপ্তাহ")
+    var month = plural_unit(one="{n} মাস", other="{n} মাস")
+    var year = plural_unit(one="{n} বছর", other="{n} বছর")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("নবজাতক")
-    stages["infant"] = stage_neutral("শিশু")
-    stages["toddler"] = stage_neutral("ছোট শিশু")
-    stages["child"] = stage_neutral("শিশু")
-    stages["teenager"] = stage_gendered("কিশোর", "কিশোরী")
-    stages["adult"] = stage_neutral("প্রাপ্তবয়স্ক")
+    var newborn = stage_neutral("নবজাতক")
+    var infant = stage_neutral("শিশু")
+    var toddler = stage_neutral("ছোট শিশু")
+    var child = stage_neutral("শিশু")
+    var teenager = stage_gendered("কিশোর", "কিশোরী")
+    var adult = stage_neutral("প্রাপ্তবয়স্ক")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} দিন")
-    short_units["week"] = simple_unit("{n} সপ্তাহ")
-    short_units["month"] = simple_unit("{n} মাস")
-    short_units["year"] = simple_unit("{n} বছর")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} দিন")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} সপ্তাহ")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} মাস")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} বছর")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} দিন")
-    compact_units["week"] = simple_unit("{n} সপ্তাহ")
-    compact_units["month"] = simple_unit("{n} মাস")
-    compact_units["year"] = simple_unit("{n} বছর")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} দিন")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} সপ্তাহ")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} মাস")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} বছর")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_bn() -> AgeLocale:
     return AgeLocale(
         code="bn",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="সাড়ে {n}",
         delimiter=", ",
         just_born="নবজাতক",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

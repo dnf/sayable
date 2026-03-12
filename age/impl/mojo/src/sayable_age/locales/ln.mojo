@@ -30,35 +30,37 @@ fn build_ln() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mokolo {n}"), Tuple[String, String]("other", "mikolo {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "poso {n}"), Tuple[String, String]("other", "baposo {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sanza {n}"), Tuple[String, String]("other", "basanza {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mobu {n}"), Tuple[String, String]("other", "mibu {n}")))
+    var day = plural_unit(one="mokolo {n}", other="mikolo {n}")
+    var week = plural_unit(one="poso {n}", other="baposo {n}")
+    var month = plural_unit(one="sanza {n}", other="basanza {n}")
+    var year = plural_unit(one="mobu {n}", other="mibu {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Mwana ya sika")
-    stages["infant"] = stage_neutral("Mwana mokɛ́")
-    stages["toddler"] = stage_neutral("Mwana mokɛ́")
-    stages["child"] = stage_neutral("Mwana")
-    stages["teenager"] = stage_neutral("Elɛ́ngɛ")
-    stages["adult"] = stage_neutral("Mokóló")
+    var newborn = stage_neutral("Mwana ya sika")
+    var infant = stage_neutral("Mwana mokɛ́")
+    var toddler = stage_neutral("Mwana mokɛ́")
+    var child = stage_neutral("Mwana")
+    var teenager = stage_neutral("Elɛ́ngɛ")
+    var adult = stage_neutral("Mokóló")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mokolo {n}"), Tuple[String, String]("other", "mik {n}")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "poso {n}"), Tuple[String, String]("other", "bap {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sanza {n}"), Tuple[String, String]("other", "basanza {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mobu {n}"), Tuple[String, String]("other", "mibu {n}")))
-    short_ovr.units = short_units^
+    short_ovr.day = plural_unit(one="mokolo {n}", other="mik {n}")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="poso {n}", other="bap {n}")
+    short_ovr.has_week = True
+    short_ovr.month = plural_unit(one="sanza {n}", other="basanza {n}")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="mobu {n}", other="mibu {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mok {n}"), Tuple[String, String]("other", "mik {n}")))
-    compact_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "pos {n}"), Tuple[String, String]("other", "bap {n}")))
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sza {n}"), Tuple[String, String]("other", "bsza {n}")))
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mb {n}"), Tuple[String, String]("other", "mib {n}")))
-    compact_ovr.units = compact_units^
+    compact_ovr.day = plural_unit(one="mok {n}", other="mik {n}")
+    compact_ovr.has_day = True
+    compact_ovr.week = plural_unit(one="pos {n}", other="bap {n}")
+    compact_ovr.has_week = True
+    compact_ovr.month = plural_unit(one="sza {n}", other="bsza {n}")
+    compact_ovr.has_month = True
+    compact_ovr.year = plural_unit(one="mb {n}", other="mib {n}")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_ln() -> AgeLocale:
     return AgeLocale(
         code="ln",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter=", ",
         just_born="Mwana ya sika",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

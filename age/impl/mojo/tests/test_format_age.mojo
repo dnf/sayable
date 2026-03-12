@@ -718,36 +718,34 @@ fn _build_mock_es() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(
-        List[Tuple[String, String]](Tuple[String, String]("one", "{n} d\xc3\xada"), Tuple[String, String]("other", "{n} d\xc3\xadas"))
-    )
-    units["week"] = plural_unit(
-        List[Tuple[String, String]](Tuple[String, String]("one", "{n} semana"), Tuple[String, String]("other", "{n} semanas"))
-    )
-    units["month"] = plural_unit(
-        List[Tuple[String, String]](Tuple[String, String]("one", "{n} mes"), Tuple[String, String]("other", "{n} meses"))
-    )
-    units["year"] = plural_unit(
-        List[Tuple[String, String]](Tuple[String, String]("one", "{n} a\xc3\xb1o"), Tuple[String, String]("other", "{n} a\xc3\xb1os"))
-    )
+    var day = plural_unit(one="{n} d\xc3\xada", other="{n} d\xc3\xadas")
+    var week = plural_unit(one="{n} semana", other="{n} semanas")
+    var month = plural_unit(one="{n} mes", other="{n} meses")
+    var year = plural_unit(one="{n} a\xc3\xb1o", other="{n} a\xc3\xb1os")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Reci\xc3\xa9n nacido")
-    stages["infant"] = stage_neutral("Beb\xc3\xa9")
-    stages["toddler"] = stage_neutral("Ni\xc3\xb1o peque\xc3\xb1o")
-    stages["child"] = stage_neutral("Ni\xc3\xb1o")
-    stages["teenager"] = stage_neutral("Adolescente")
-    stages["adult"] = stage_neutral("Adulto")
+    var newborn = stage_neutral("Reci\xc3\xa9n nacido")
+    var infant = stage_neutral("Beb\xc3\xa9")
+    var toddler = stage_neutral("Ni\xc3\xb1o peque\xc3\xb1o")
+    var child = stage_neutral("Ni\xc3\xb1o")
+    var teenager = stage_neutral("Adolescente")
+    var adult = stage_neutral("Adulto")
 
     return AgeLocale(
         code="es",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n} y medio",
         delimiter=", ",
         just_born="Reci\xc3\xa9n nacido",
-        stages=stages^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
     )
 
 

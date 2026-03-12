@@ -28,35 +28,37 @@ fn build_dyu() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("don {n}")
-    units["week"] = simple_unit("dɔgɔkun {n}")
-    units["month"] = simple_unit("kalo {n}")
-    units["year"] = simple_unit("san {n}")
+    var day = simple_unit("don {n}")
+    var week = simple_unit("dɔgɔkun {n}")
+    var month = simple_unit("kalo {n}")
+    var year = simple_unit("san {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Denmisɛn kura")
-    stages["infant"] = stage_neutral("Denmisɛn")
-    stages["toddler"] = stage_neutral("Den fitinin")
-    stages["child"] = stage_neutral("Den")
-    stages["teenager"] = stage_neutral("Kamalen")
-    stages["adult"] = stage_neutral("Mɔgɔkɔrɔba")
+    var newborn = stage_neutral("Denmisɛn kura")
+    var infant = stage_neutral("Denmisɛn")
+    var toddler = stage_neutral("Den fitinin")
+    var child = stage_neutral("Den")
+    var teenager = stage_neutral("Kamalen")
+    var adult = stage_neutral("Mɔgɔkɔrɔba")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("don {n}")
-    short_units["week"] = simple_unit("dɔgɔk. {n}")
-    short_units["month"] = simple_unit("kalo {n}")
-    short_units["year"] = simple_unit("san {n}")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("don {n}")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("dɔgɔk. {n}")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("kalo {n}")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("san {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("don {n}")
-    compact_units["week"] = simple_unit("dɔgɔk {n}")
-    compact_units["month"] = simple_unit("kalo {n}")
-    compact_units["year"] = simple_unit("san {n}")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("don {n}")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("dɔgɔk {n}")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("kalo {n}")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("san {n}")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_dyu() -> AgeLocale:
     return AgeLocale(
         code="dyu",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} ni tilancɛ",
         delimiter=", ",
         just_born="Den fɛn bɛ wolo",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

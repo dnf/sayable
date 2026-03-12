@@ -30,35 +30,37 @@ fn build_gn() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} ára")
-    units["week"] = simple_unit("{n} arapokõindy")
-    units["month"] = simple_unit("{n} jasy")
-    units["year"] = simple_unit("{n} ary")
+    var day = simple_unit("{n} ára")
+    var week = simple_unit("{n} arapokõindy")
+    var month = simple_unit("{n} jasy")
+    var year = simple_unit("{n} ary")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Mitã pyahu")
-    stages["infant"] = stage_neutral("Mitã'i")
-    stages["toddler"] = stage_neutral("Mitã")
-    stages["child"] = stage_neutral("Mitã")
-    stages["teenager"] = stage_neutral("Mitãrusu")
-    stages["adult"] = stage_neutral("Karai")
+    var newborn = stage_neutral("Mitã pyahu")
+    var infant = stage_neutral("Mitã'i")
+    var toddler = stage_neutral("Mitã")
+    var child = stage_neutral("Mitã")
+    var teenager = stage_neutral("Mitãrusu")
+    var adult = stage_neutral("Karai")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} ára")
-    short_units["week"] = simple_unit("{n} ara")
-    short_units["month"] = simple_unit("{n} jas")
-    short_units["year"] = simple_unit("{n} ary")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} ára")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} ara")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} jas")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} ary")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_gn() -> AgeLocale:
     return AgeLocale(
         code="gn",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter=", ",
         just_born="Mitã pyahu",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

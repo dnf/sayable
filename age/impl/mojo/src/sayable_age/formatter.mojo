@@ -46,11 +46,29 @@ fn _pick_str(
     return default
 
 
+fn _get_stage(locale: AgeLocale, key: String, gender: String) -> String:
+    """Look up a stage label by key and resolve it."""
+    if key == "newborn":
+        return resolve_stage(locale.newborn, gender)
+    if key == "infant":
+        return resolve_stage(locale.infant, gender)
+    if key == "toddler":
+        return resolve_stage(locale.toddler, gender)
+    if key == "child":
+        return resolve_stage(locale.child, gender)
+    if key == "teenager":
+        return resolve_stage(locale.teenager, gender)
+    return resolve_stage(locale.adult, gender)
+
+
 struct SayableAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """Locale-aware age formatter."""
 
     var locale: AgeLocale
-    var units: Dict[String, UnitForms]
+    var day: UnitForms
+    var week: UnitForms
+    var month: UnitForms
+    var year: UnitForms
     var half: String
     var delimiter: String
     var just_born: String
@@ -60,8 +78,6 @@ struct SayableAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
         locale: AgeLocale,
         compactness: String = "normal",
     ):
-        self.locale = locale
-
         var use_override = False
         var ovr = CompactnessOverride()
 
@@ -72,18 +88,21 @@ struct SayableAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
             ovr = locale.compact_override
             use_override = True
 
-        # Build units dict with overrides
-        var units = Dict[String, UnitForms]()
-        for key in List[String]("day", "week", "month", "year"):
-            if use_override and key[] in ovr.units:
-                units[key[]] = ovr.units[key[]]
-            else:
-                units[key[]] = locale.units[key[]]
+        if use_override:
+            self.day = ovr.get_unit("day", locale.day)
+            self.week = ovr.get_unit("week", locale.week)
+            self.month = ovr.get_unit("month", locale.month)
+            self.year = ovr.get_unit("year", locale.year)
+        else:
+            self.day = locale.day
+            self.week = locale.week
+            self.month = locale.month
+            self.year = locale.year
 
-        self.units = units^
         self.half = _pick_str(ovr, use_override, "half", locale.half)
         self.delimiter = _pick_str(ovr, use_override, "delimiter", locale.delimiter)
         self.just_born = _pick_str(ovr, use_override, "just_born", locale.just_born)
+        self.locale = locale
 
     fn format_age(self, date_of_birth: String, as_of: String = "") -> String:
         """Human-friendly age string.
@@ -102,33 +121,33 @@ struct SayableAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
         if diff_days == 0:
             return self.just_born
         if diff_days < 7:
-            return resolve_unit(diff_days, self.units["day"], self.locale)
+            return resolve_unit(diff_days, self.day, self.locale)
 
         # Tier 2: weeks + days until 3 calendar months
         if months < 3:
             var weeks = diff_days // 7
             var days = diff_days % 7
-            var result = resolve_unit(weeks, self.units["week"], self.locale)
+            var result = resolve_unit(weeks, self.week, self.locale)
             if days > 0:
                 result = result + self.delimiter + resolve_unit(
-                    days, self.units["day"], self.locale
+                    days, self.day, self.locale
                 )
             return result
 
         # Tier 3: 3-23 months
         if months < 24:
-            return resolve_unit(months, self.units["month"], self.locale)
+            return resolve_unit(months, self.month, self.locale)
 
         # Tier 4: 24-35 months -> years + months
         if months < 36:
             var years = months // 12
             var rem = months % 12
             if rem == 0:
-                return resolve_unit(years, self.units["year"], self.locale)
+                return resolve_unit(years, self.year, self.locale)
             return (
-                resolve_unit(years, self.units["year"], self.locale)
+                resolve_unit(years, self.year, self.locale)
                 + self.delimiter
-                + resolve_unit(rem, self.units["month"], self.locale)
+                + resolve_unit(rem, self.month, self.locale)
             )
 
         # Tier 5: 3-6 years -> years with half marker
@@ -136,11 +155,11 @@ struct SayableAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
             var years = months // 12
             var rem = months % 12
             if rem >= 6:
-                return resolve_unit(years, self.units["year"], self.locale, self.half)
-            return resolve_unit(years, self.units["year"], self.locale)
+                return resolve_unit(years, self.year, self.locale, self.half)
+            return resolve_unit(years, self.year, self.locale)
 
         # Tier 6: 7+ years
-        return resolve_unit(months // 12, self.units["year"], self.locale)
+        return resolve_unit(months // 12, self.year, self.locale)
 
     fn format_stage(
         self,
@@ -156,7 +175,7 @@ struct SayableAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
         if not parsed.valid:
             return ""
         var key = _stage_key(parsed.months)
-        return resolve_stage(self.locale.stages[key], gender)
+        return _get_stage(self.locale, key, gender)
 
 
 fn format_age(date_of_birth: String, as_of: String = "") -> String:

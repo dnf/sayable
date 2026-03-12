@@ -30,35 +30,37 @@ fn build_ng() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "esiku {n}"), Tuple[String, String]("other", "omasiku {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "oshiwike {n}"), Tuple[String, String]("other", "iiwike {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omuedhi {n}"), Tuple[String, String]("other", "omiedhi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omvula {n}"), Tuple[String, String]("other", "omivula {n}")))
+    var day = plural_unit(one="esiku {n}", other="omasiku {n}")
+    var week = plural_unit(one="oshiwike {n}", other="iiwike {n}")
+    var month = plural_unit(one="omuedhi {n}", other="omiedhi {n}")
+    var year = plural_unit(one="omvula {n}", other="omivula {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Okaana ke li po")
-    stages["infant"] = stage_neutral("Okaana")
-    stages["toddler"] = stage_neutral("Okanona")
-    stages["child"] = stage_neutral("Okanona")
-    stages["teenager"] = stage_neutral("Omunyasha")
-    stages["adult"] = stage_neutral("Omuntu omukulu")
+    var newborn = stage_neutral("Okaana ke li po")
+    var infant = stage_neutral("Okaana")
+    var toddler = stage_neutral("Okanona")
+    var child = stage_neutral("Okanona")
+    var teenager = stage_neutral("Omunyasha")
+    var adult = stage_neutral("Omuntu omukulu")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("omasiku {n}")
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "oshiwike {n}"), Tuple[String, String]("other", "iiwike {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omuedhi {n}"), Tuple[String, String]("other", "omiedhi {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omvula {n}"), Tuple[String, String]("other", "omivula {n}")))
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("omasiku {n}")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="oshiwike {n}", other="iiwike {n}")
+    short_ovr.has_week = True
+    short_ovr.month = plural_unit(one="omuedhi {n}", other="omiedhi {n}")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="omvula {n}", other="omivula {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("omasiku {n}")
-    compact_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "oshiw {n}"), Tuple[String, String]("other", "iiw {n}")))
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omued {n}"), Tuple[String, String]("other", "omied {n}")))
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omv {n}"), Tuple[String, String]("other", "omiv {n}")))
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("omasiku {n}")
+    compact_ovr.has_day = True
+    compact_ovr.week = plural_unit(one="oshiw {n}", other="iiw {n}")
+    compact_ovr.has_week = True
+    compact_ovr.month = plural_unit(one="omued {n}", other="omied {n}")
+    compact_ovr.has_month = True
+    compact_ovr.year = plural_unit(one="omv {n}", other="omiv {n}")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_ng() -> AgeLocale:
     return AgeLocale(
         code="ng",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} netata",
         delimiter=", ",
         just_born="Okwa dalwa po",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

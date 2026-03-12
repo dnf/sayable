@@ -28,35 +28,37 @@ fn build_tg() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} рӯз")
-    units["week"] = simple_unit("{n} ҳафта")
-    units["month"] = simple_unit("{n} моҳ")
-    units["year"] = simple_unit("{n} сол")
+    var day = simple_unit("{n} рӯз")
+    var week = simple_unit("{n} ҳафта")
+    var month = simple_unit("{n} моҳ")
+    var year = simple_unit("{n} сол")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Навзод")
-    stages["infant"] = stage_neutral("Тифл")
-    stages["toddler"] = stage_neutral("Кӯдак")
-    stages["child"] = stage_neutral("Кӯдак")
-    stages["teenager"] = stage_neutral("Наврас")
-    stages["adult"] = stage_neutral("Калонсол")
+    var newborn = stage_neutral("Навзод")
+    var infant = stage_neutral("Тифл")
+    var toddler = stage_neutral("Кӯдак")
+    var child = stage_neutral("Кӯдак")
+    var teenager = stage_neutral("Наврас")
+    var adult = stage_neutral("Калонсол")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} р")
-    short_units["week"] = simple_unit("{n} ҳ")
-    short_units["month"] = simple_unit("{n} м")
-    short_units["year"] = simple_unit("{n} с")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} р")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} ҳ")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} м")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} с")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}р")
-    compact_units["week"] = simple_unit("{n}ҳ")
-    compact_units["month"] = simple_unit("{n}м")
-    compact_units["year"] = simple_unit("{n}с")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}р")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}ҳ")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}м")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}с")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_tg() -> AgeLocale:
     return AgeLocale(
         code="tg",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} ним",
         delimiter=", ",
         just_born="Навзод",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

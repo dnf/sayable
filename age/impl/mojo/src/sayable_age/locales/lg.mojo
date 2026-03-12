@@ -30,35 +30,37 @@ fn build_lg() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "olunaku {n}"), Tuple[String, String]("other", "ennaku {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sabbiiti {n}"), Tuple[String, String]("other", "sabiiti {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omwezi {n}"), Tuple[String, String]("other", "emyezi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omwaka {n}"), Tuple[String, String]("other", "emyaka {n}")))
+    var day = plural_unit(one="olunaku {n}", other="ennaku {n}")
+    var week = plural_unit(one="sabbiiti {n}", other="sabiiti {n}")
+    var month = plural_unit(one="omwezi {n}", other="emyezi {n}")
+    var year = plural_unit(one="omwaka {n}", other="emyaka {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Omwana omuto")
-    stages["infant"] = stage_neutral("Omwana")
-    stages["toddler"] = stage_neutral("Omwana omuto")
-    stages["child"] = stage_neutral("Omwana")
-    stages["teenager"] = stage_neutral("Omuvubuka")
-    stages["adult"] = stage_neutral("Omukulu")
+    var newborn = stage_neutral("Omwana omuto")
+    var infant = stage_neutral("Omwana")
+    var toddler = stage_neutral("Omwana omuto")
+    var child = stage_neutral("Omwana")
+    var teenager = stage_neutral("Omuvubuka")
+    var adult = stage_neutral("Omukulu")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("ennaku {n}")
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sabbiiti {n}"), Tuple[String, String]("other", "sabiiti {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omwezi {n}"), Tuple[String, String]("other", "emyezi {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "omwaka {n}"), Tuple[String, String]("other", "emyaka {n}")))
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("ennaku {n}")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="sabbiiti {n}", other="sabiiti {n}")
+    short_ovr.has_week = True
+    short_ovr.month = plural_unit(one="omwezi {n}", other="emyezi {n}")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="omwaka {n}", other="emyaka {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("ennaku {n}")
-    compact_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sab {n}"), Tuple[String, String]("other", "sab {n}")))
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mwezi {n}"), Tuple[String, String]("other", "myezi {n}")))
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mwaka {n}"), Tuple[String, String]("other", "myaka {n}")))
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("ennaku {n}")
+    compact_ovr.has_day = True
+    compact_ovr.week = plural_unit(one="sab {n}", other="sab {n}")
+    compact_ovr.has_week = True
+    compact_ovr.month = plural_unit(one="mwezi {n}", other="myezi {n}")
+    compact_ovr.has_month = True
+    compact_ovr.year = plural_unit(one="mwaka {n}", other="myaka {n}")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_lg() -> AgeLocale:
     return AgeLocale(
         code="lg",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter=", ",
         just_born="Omwana omuto",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

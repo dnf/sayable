@@ -30,35 +30,37 @@ fn build_ny() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "tsiku {n}"), Tuple[String, String]("other", "masiku {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sabata {n}"), Tuple[String, String]("other", "masabata {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mwezi {n}"), Tuple[String, String]("other", "miyezi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "chaka {n}"), Tuple[String, String]("other", "zaka {n}")))
+    var day = plural_unit(one="tsiku {n}", other="masiku {n}")
+    var week = plural_unit(one="sabata {n}", other="masabata {n}")
+    var month = plural_unit(one="mwezi {n}", other="miyezi {n}")
+    var year = plural_unit(one="chaka {n}", other="zaka {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Wobadwa kumene")
-    stages["infant"] = stage_neutral("Khanda")
-    stages["toddler"] = stage_neutral("Mwana wamng'ono")
-    stages["child"] = stage_neutral("Mwana")
-    stages["teenager"] = stage_neutral("Mnyamata")
-    stages["adult"] = stage_neutral("Munthu wamkulu")
+    var newborn = stage_neutral("Wobadwa kumene")
+    var infant = stage_neutral("Khanda")
+    var toddler = stage_neutral("Mwana wamng'ono")
+    var child = stage_neutral("Mwana")
+    var teenager = stage_neutral("Mnyamata")
+    var adult = stage_neutral("Munthu wamkulu")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "tsiku {n}"), Tuple[String, String]("other", "mas {n}")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sabata {n}"), Tuple[String, String]("other", "masab {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mwezi {n}"), Tuple[String, String]("other", "miyezi {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "chaka {n}"), Tuple[String, String]("other", "zaka {n}")))
-    short_ovr.units = short_units^
+    short_ovr.day = plural_unit(one="tsiku {n}", other="mas {n}")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="sabata {n}", other="masab {n}")
+    short_ovr.has_week = True
+    short_ovr.month = plural_unit(one="mwezi {n}", other="miyezi {n}")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="chaka {n}", other="zaka {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ts {n}"), Tuple[String, String]("other", "mas {n}")))
-    compact_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sab {n}"), Tuple[String, String]("other", "msb {n}")))
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mw {n}"), Tuple[String, String]("other", "miy {n}")))
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ch {n}"), Tuple[String, String]("other", "z {n}")))
-    compact_ovr.units = compact_units^
+    compact_ovr.day = plural_unit(one="ts {n}", other="mas {n}")
+    compact_ovr.has_day = True
+    compact_ovr.week = plural_unit(one="sab {n}", other="msb {n}")
+    compact_ovr.has_week = True
+    compact_ovr.month = plural_unit(one="mw {n}", other="miy {n}")
+    compact_ovr.has_month = True
+    compact_ovr.year = plural_unit(one="ch {n}", other="z {n}")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_ny() -> AgeLocale:
     return AgeLocale(
         code="ny",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter=", ",
         just_born="Wobadwa kumene",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

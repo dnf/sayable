@@ -30,35 +30,37 @@ fn build_fa() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} روز"), Tuple[String, String]("other", "{n} روز")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} هفته"), Tuple[String, String]("other", "{n} هفته")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ماه"), Tuple[String, String]("other", "{n} ماه")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} سال"), Tuple[String, String]("other", "{n} سال")))
+    var day = plural_unit(one="{n} روز", other="{n} روز")
+    var week = plural_unit(one="{n} هفته", other="{n} هفته")
+    var month = plural_unit(one="{n} ماه", other="{n} ماه")
+    var year = plural_unit(one="{n} سال", other="{n} سال")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("نوزاد")
-    stages["infant"] = stage_neutral("شیرخوار")
-    stages["toddler"] = stage_neutral("نوپا")
-    stages["child"] = stage_neutral("کودک")
-    stages["teenager"] = stage_neutral("نوجوان")
-    stages["adult"] = stage_neutral("بزرگسال")
+    var newborn = stage_neutral("نوزاد")
+    var infant = stage_neutral("شیرخوار")
+    var toddler = stage_neutral("نوپا")
+    var child = stage_neutral("کودک")
+    var teenager = stage_neutral("نوجوان")
+    var adult = stage_neutral("بزرگسال")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} روز")
-    short_units["week"] = simple_unit("{n} هفته")
-    short_units["month"] = simple_unit("{n} ماه")
-    short_units["year"] = simple_unit("{n} سال")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} روز")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} هفته")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ماه")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} سال")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} روز")
-    compact_units["week"] = simple_unit("{n} هفته")
-    compact_units["month"] = simple_unit("{n} ماه")
-    compact_units["year"] = simple_unit("{n} سال")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} روز")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} هفته")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} ماه")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} سال")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_fa() -> AgeLocale:
     return AgeLocale(
         code="fa",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} و نیم",
         delimiter=" و ",
         just_born="نوزاد",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

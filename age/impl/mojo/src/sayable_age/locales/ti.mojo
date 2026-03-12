@@ -30,35 +30,37 @@ fn build_ti() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} መዓልቲ"), Tuple[String, String]("other", "{n} መዓልትታት")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ሰሙን"), Tuple[String, String]("other", "{n} ሰሙናት")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ወርሒ"), Tuple[String, String]("other", "{n} ኣዋርሕ")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ዓመት"), Tuple[String, String]("other", "{n} ዓመታት")))
+    var day = plural_unit(one="{n} መዓልቲ", other="{n} መዓልትታት")
+    var week = plural_unit(one="{n} ሰሙን", other="{n} ሰሙናት")
+    var month = plural_unit(one="{n} ወርሒ", other="{n} ኣዋርሕ")
+    var year = plural_unit(one="{n} ዓመት", other="{n} ዓመታት")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("ሓድሽ ዝተወልደ")
-    stages["infant"] = stage_neutral("ጨቓዊ")
-    stages["toddler"] = stage_neutral("ንእሽተይ ህጻን")
-    stages["child"] = stage_neutral("ቆልዓ")
-    stages["teenager"] = stage_neutral("መንእሰይ")
-    stages["adult"] = stage_neutral("ዓቢይ")
+    var newborn = stage_neutral("ሓድሽ ዝተወልደ")
+    var infant = stage_neutral("ጨቓዊ")
+    var toddler = stage_neutral("ንእሽተይ ህጻን")
+    var child = stage_neutral("ቆልዓ")
+    var teenager = stage_neutral("መንእሰይ")
+    var adult = stage_neutral("ዓቢይ")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} መዓልትታት")
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ሰሙን"), Tuple[String, String]("other", "{n} ሰሙናት")))
-    short_units["month"] = simple_unit("{n} ኣዋርሕ")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ዓመት"), Tuple[String, String]("other", "{n} ዓመታት")))
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} መዓልትታት")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(one="{n} ሰሙን", other="{n} ሰሙናት")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ኣዋርሕ")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(one="{n} ዓመት", other="{n} ዓመታት")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} መ")
-    compact_units["week"] = simple_unit("{n} ሰሙን")
-    compact_units["month"] = simple_unit("{n} ወር")
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ዓመት"), Tuple[String, String]("other", "{n} ዓ")))
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} መ")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} ሰሙን")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} ወር")
+    compact_ovr.has_month = True
+    compact_ovr.year = plural_unit(one="{n} ዓመት", other="{n} ዓ")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_ti() -> AgeLocale:
     return AgeLocale(
         code="ti",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} ተኹል",
         delimiter="፣ ",
         just_born="ሓድሽ ዝተወልደ",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

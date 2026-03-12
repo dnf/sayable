@@ -30,35 +30,37 @@ fn build_tk() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} gün")
-    units["week"] = simple_unit("{n} hepde")
-    units["month"] = simple_unit("{n} aý")
-    units["year"] = simple_unit("{n} ýaş")
+    var day = simple_unit("{n} gün")
+    var week = simple_unit("{n} hepde")
+    var month = simple_unit("{n} aý")
+    var year = simple_unit("{n} ýaş")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Täze doglan")
-    stages["infant"] = stage_neutral("Bäbek")
-    stages["toddler"] = stage_neutral("Kiçijik")
-    stages["child"] = stage_neutral("Çaga")
-    stages["teenager"] = stage_neutral("Ýetginjek")
-    stages["adult"] = stage_neutral("Ulular")
+    var newborn = stage_neutral("Täze doglan")
+    var infant = stage_neutral("Bäbek")
+    var toddler = stage_neutral("Kiçijik")
+    var child = stage_neutral("Çaga")
+    var teenager = stage_neutral("Ýetginjek")
+    var adult = stage_neutral("Ulular")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} g")
-    short_units["week"] = simple_unit("{n} h")
-    short_units["month"] = simple_unit("{n} a")
-    short_units["year"] = simple_unit("{n} ý")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} g")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} h")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} a")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} ý")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}g")
-    compact_units["week"] = simple_unit("{n}h")
-    compact_units["month"] = simple_unit("{n}a")
-    compact_units["year"] = simple_unit("{n}ý")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}g")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}h")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}a")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}ý")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_tk() -> AgeLocale:
     return AgeLocale(
         code="tk",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0}½",
         delimiter=", ",
         just_born="Täze doglan",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

@@ -28,35 +28,37 @@ fn build_th() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} วัน")
-    units["week"] = simple_unit("{n} สัปดาห์")
-    units["month"] = simple_unit("{n} เดือน")
-    units["year"] = simple_unit("{n} ปี")
+    var day = simple_unit("{n} วัน")
+    var week = simple_unit("{n} สัปดาห์")
+    var month = simple_unit("{n} เดือน")
+    var year = simple_unit("{n} ปี")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("แรกเกิด")
-    stages["infant"] = stage_neutral("ทารก")
-    stages["toddler"] = stage_neutral("เด็กวัยเตาะแตะ")
-    stages["child"] = stage_neutral("เด็ก")
-    stages["teenager"] = stage_neutral("วัยรุ่น")
-    stages["adult"] = stage_neutral("ผู้ใหญ่")
+    var newborn = stage_neutral("แรกเกิด")
+    var infant = stage_neutral("ทารก")
+    var toddler = stage_neutral("เด็กวัยเตาะแตะ")
+    var child = stage_neutral("เด็ก")
+    var teenager = stage_neutral("วัยรุ่น")
+    var adult = stage_neutral("ผู้ใหญ่")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} วัน")
-    short_units["week"] = simple_unit("{n} สัปดาห์")
-    short_units["month"] = simple_unit("{n} เดือน")
-    short_units["year"] = simple_unit("{n} ปี")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} วัน")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} สัปดาห์")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} เดือน")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} ปี")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}วัน")
-    compact_units["week"] = simple_unit("{n}สัปดาห์")
-    compact_units["month"] = simple_unit("{n}เดือน")
-    compact_units["year"] = simple_unit("{n}ปี")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}วัน")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}สัปดาห์")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}เดือน")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}ปี")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_th() -> AgeLocale:
     return AgeLocale(
         code="th",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0}ครึ่ง",
         delimiter=" ",
         just_born="แรกเกิด",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

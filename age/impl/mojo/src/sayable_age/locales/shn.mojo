@@ -28,48 +28,58 @@ fn build_shn() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} ဝၼ်း")
-    units["week"] = simple_unit("{n} ဝူင်ႈ")
-    units["month"] = simple_unit("{n} လိူၼ်")
-    units["year"] = simple_unit("{n} ပီ")
+    var day = simple_unit("{n} ဝၼ်း")
+    var week = simple_unit("{n} ဝူင်ႈ")
+    var month = simple_unit("{n} လိူၼ်")
+    var year = simple_unit("{n} ပီ")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("ၶဝ်ႈမႃး")
-    stages["infant"] = stage_neutral("လုၵ်ႈဢွၼ်ႇ")
-    stages["toddler"] = stage_neutral("လုၵ်ႈဢွၼ်ႇ")
-    stages["child"] = stage_neutral("လုၵ်ႈဢွၼ်ႇ")
-    stages["teenager"] = stage_neutral("ၵူၼ်းၼုမ်ႇ")
-    stages["adult"] = stage_neutral("ၵူၼ်းလူင်")
+    var newborn = stage_neutral("ၶဝ်ႈမႃး")
+    var infant = stage_neutral("လုၵ်ႈဢွၼ်ႇ")
+    var toddler = stage_neutral("လုၵ်ႈဢွၼ်ႇ")
+    var child = stage_neutral("လုၵ်ႈဢွၼ်ႇ")
+    var teenager = stage_neutral("ၵူၼ်းၼုမ်ႇ")
+    var adult = stage_neutral("ၵူၼ်းလူင်")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} ဝၼ်း")
-    short_units["week"] = simple_unit("{n} ဝူင်ႈ")
-    short_units["month"] = simple_unit("{n} လိူၼ်")
-    short_units["year"] = simple_unit("{n} ပီ")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} ဝၼ်း")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} ဝူင်ႈ")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} လိူၼ်")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} ပီ")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="shn",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0}ၶိုင်ႈ",
         delimiter=" ",
         just_born="ၶဝ်ႈမႃး",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

@@ -41,35 +41,37 @@ fn _plural(n: Int) -> String:
 fn build_ar() -> AgeLocale:
     """Build the Arabic locale."""
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} يوم"), Tuple[String, String]("one", "يوم"), Tuple[String, String]("two", "يومان"), Tuple[String, String]("few", "{n} أيام"), Tuple[String, String]("many", "{n} يومًا"), Tuple[String, String]("other", "{n} يوم")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} أسبوع"), Tuple[String, String]("one", "أسبوع"), Tuple[String, String]("two", "أسبوعان"), Tuple[String, String]("few", "{n} أسابيع"), Tuple[String, String]("many", "{n} أسبوعًا"), Tuple[String, String]("other", "{n} أسبوع")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} شهر"), Tuple[String, String]("one", "شهر"), Tuple[String, String]("two", "شهران"), Tuple[String, String]("few", "{n} أشهر"), Tuple[String, String]("many", "{n} شهرًا"), Tuple[String, String]("other", "{n} شهر")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} سنة"), Tuple[String, String]("one", "سنة"), Tuple[String, String]("two", "سنتان"), Tuple[String, String]("few", "{n} سنوات"), Tuple[String, String]("many", "{n} سنة"), Tuple[String, String]("other", "{n} سنة")))
+    var day = plural_unit(zero="{n} يوم", one="يوم", two="يومان", few="{n} أيام", many="{n} يومًا", other="{n} يوم")
+    var week = plural_unit(zero="{n} أسبوع", one="أسبوع", two="أسبوعان", few="{n} أسابيع", many="{n} أسبوعًا", other="{n} أسبوع")
+    var month = plural_unit(zero="{n} شهر", one="شهر", two="شهران", few="{n} أشهر", many="{n} شهرًا", other="{n} شهر")
+    var year = plural_unit(zero="{n} سنة", one="سنة", two="سنتان", few="{n} سنوات", many="{n} سنة", other="{n} سنة")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_gendered("حديث الولادة", "حديثة الولادة")
-    stages["infant"] = stage_gendered("رضيع", "رضيعة")
-    stages["toddler"] = stage_gendered("طفل صغير", "طفلة صغيرة")
-    stages["child"] = stage_gendered("طفل", "طفلة")
-    stages["teenager"] = stage_gendered("مراهق", "مراهقة")
-    stages["adult"] = stage_gendered("بالغ", "بالغة")
+    var newborn = stage_gendered("حديث الولادة", "حديثة الولادة")
+    var infant = stage_gendered("رضيع", "رضيعة")
+    var toddler = stage_gendered("طفل صغير", "طفلة صغيرة")
+    var child = stage_gendered("طفل", "طفلة")
+    var teenager = stage_gendered("مراهق", "مراهقة")
+    var adult = stage_gendered("بالغ", "بالغة")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} يوم"), Tuple[String, String]("one", "يوم"), Tuple[String, String]("two", "يومان"), Tuple[String, String]("few", "{n} أيام"), Tuple[String, String]("many", "{n} يومًا"), Tuple[String, String]("other", "{n} يوم")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} أسبوع"), Tuple[String, String]("one", "أسبوع"), Tuple[String, String]("two", "أسبوعان"), Tuple[String, String]("few", "{n} أسابيع"), Tuple[String, String]("many", "{n} أسبوعًا"), Tuple[String, String]("other", "{n} أسبوع")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} شهر"), Tuple[String, String]("one", "شهر"), Tuple[String, String]("two", "شهران"), Tuple[String, String]("few", "{n} أشهر"), Tuple[String, String]("many", "{n} شهرًا"), Tuple[String, String]("other", "{n} شهر")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} سنة"), Tuple[String, String]("one", "سنة واحدة"), Tuple[String, String]("two", "سنتان"), Tuple[String, String]("few", "{n} سنوات"), Tuple[String, String]("many", "{n} سنة"), Tuple[String, String]("other", "{n} سنة")))
-    short_ovr.units = short_units^
+    short_ovr.day = plural_unit(zero="{n} يوم", one="يوم", two="يومان", few="{n} أيام", many="{n} يومًا", other="{n} يوم")
+    short_ovr.has_day = True
+    short_ovr.week = plural_unit(zero="{n} أسبوع", one="أسبوع", two="أسبوعان", few="{n} أسابيع", many="{n} أسبوعًا", other="{n} أسبوع")
+    short_ovr.has_week = True
+    short_ovr.month = plural_unit(zero="{n} شهر", one="شهر", two="شهران", few="{n} أشهر", many="{n} شهرًا", other="{n} شهر")
+    short_ovr.has_month = True
+    short_ovr.year = plural_unit(zero="{n} سنة", one="سنة واحدة", two="سنتان", few="{n} سنوات", many="{n} سنة", other="{n} سنة")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} ي")
-    compact_units["week"] = simple_unit("{n} أ")
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} شهر"), Tuple[String, String]("one", "شهر"), Tuple[String, String]("two", "شهران"), Tuple[String, String]("few", "{n} أشهر"), Tuple[String, String]("many", "{n} شهرًا"), Tuple[String, String]("other", "{n} شهر")))
-    compact_units["year"] = simple_unit("{n} سنة")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} ي")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} أ")
+    compact_ovr.has_week = True
+    compact_ovr.month = plural_unit(zero="{n} شهر", one="شهر", two="شهران", few="{n} أشهر", many="{n} شهرًا", other="{n} شهر")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} سنة")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -78,13 +80,21 @@ fn build_ar() -> AgeLocale:
     return AgeLocale(
         code="ar",
         plural_fn=_plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} ونصف",
         delimiter=" و",
         just_born="حديث الولادة",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

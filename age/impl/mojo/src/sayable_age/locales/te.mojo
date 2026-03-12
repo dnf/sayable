@@ -30,35 +30,37 @@ fn build_te() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} రోజు"), Tuple[String, String]("other", "{n} రోజులు")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} వారం"), Tuple[String, String]("other", "{n} వారాలు")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} నెల"), Tuple[String, String]("other", "{n} నెలలు")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} సంవత్సరం"), Tuple[String, String]("other", "{n} సంవత్సరాలు")))
+    var day = plural_unit(one="{n} రోజు", other="{n} రోజులు")
+    var week = plural_unit(one="{n} వారం", other="{n} వారాలు")
+    var month = plural_unit(one="{n} నెల", other="{n} నెలలు")
+    var year = plural_unit(one="{n} సంవత్సరం", other="{n} సంవత్సరాలు")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("నవజాత శిశువు")
-    stages["infant"] = stage_neutral("శిశువు")
-    stages["toddler"] = stage_neutral("చిన్న బిడ్డ")
-    stages["child"] = stage_neutral("బిడ్డ")
-    stages["teenager"] = stage_neutral("కౌమారదశ")
-    stages["adult"] = stage_neutral("వయోజనులు")
+    var newborn = stage_neutral("నవజాత శిశువు")
+    var infant = stage_neutral("శిశువు")
+    var toddler = stage_neutral("చిన్న బిడ్డ")
+    var child = stage_neutral("బిడ్డ")
+    var teenager = stage_neutral("కౌమారదశ")
+    var adult = stage_neutral("వయోజనులు")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} రోజు"), Tuple[String, String]("other", "{n} రోజులు")))
-    short_units["week"] = simple_unit("{n} వా.")
-    short_units["month"] = simple_unit("{n} నె.")
-    short_units["year"] = simple_unit("{n} సం.")
-    short_ovr.units = short_units^
+    short_ovr.day = plural_unit(one="{n} రోజు", other="{n} రోజులు")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} వా.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} నె.")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} సం.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}రో")
-    compact_units["week"] = simple_unit("{n}వా")
-    compact_units["month"] = simple_unit("{n}నె")
-    compact_units["year"] = simple_unit("{n}సం")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}రో")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}వా")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}నె")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}సం")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_te() -> AgeLocale:
     return AgeLocale(
         code="te",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0}న్నర",
         delimiter=", ",
         just_born="నవజాత శిశువు",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

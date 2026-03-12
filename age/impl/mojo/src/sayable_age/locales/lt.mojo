@@ -36,48 +36,58 @@ fn _plural(n: Int) -> String:
 fn build_lt() -> AgeLocale:
     """Build the Lithuanian locale."""
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} diena"), Tuple[String, String]("few", "{n} dienos"), Tuple[String, String]("other", "{n} dienų")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} savaitė"), Tuple[String, String]("few", "{n} savaitės"), Tuple[String, String]("other", "{n} savaičių")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mėnuo"), Tuple[String, String]("few", "{n} mėnesiai"), Tuple[String, String]("other", "{n} mėnesių")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} metai"), Tuple[String, String]("few", "{n} metai"), Tuple[String, String]("other", "{n} metų")))
+    var day = plural_unit(one="{n} diena", few="{n} dienos", other="{n} dienų")
+    var week = plural_unit(one="{n} savaitė", few="{n} savaitės", other="{n} savaičių")
+    var month = plural_unit(one="{n} mėnuo", few="{n} mėnesiai", other="{n} mėnesių")
+    var year = plural_unit(one="{n} metai", few="{n} metai", other="{n} metų")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_gendered("Naujagimis", "Naujagimė")
-    stages["infant"] = stage_gendered("Kūdikis", "Kūdikė")
-    stages["toddler"] = stage_gendered("Mažylis", "Mažylė")
-    stages["child"] = stage_neutral("Vaikas")
-    stages["teenager"] = stage_gendered("Paauglys", "Paauglė")
-    stages["adult"] = stage_gendered("Suaugęs", "Suaugusi")
+    var newborn = stage_gendered("Naujagimis", "Naujagimė")
+    var infant = stage_gendered("Kūdikis", "Kūdikė")
+    var toddler = stage_gendered("Mažylis", "Mažylė")
+    var child = stage_neutral("Vaikas")
+    var teenager = stage_gendered("Paauglys", "Paauglė")
+    var adult = stage_gendered("Suaugęs", "Suaugusi")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} d.")
-    short_units["week"] = simple_unit("{n} sav.")
-    short_units["month"] = simple_unit("{n} mėn.")
-    short_units["year"] = simple_unit("{n} m.")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} d.")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} sav.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} mėn.")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} m.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} d.")
-    compact_units["week"] = simple_unit("{n} sav.")
-    compact_units["month"] = simple_unit("{n} mėn.")
-    compact_units["year"] = simple_unit("{n} m.")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} d.")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} sav.")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} mėn.")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} m.")
+    compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="lt",
         plural_fn=_plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter=", ",
         just_born="Naujagimis",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

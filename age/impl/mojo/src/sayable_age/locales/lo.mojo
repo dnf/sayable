@@ -28,46 +28,56 @@ fn build_lo() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} ມື້")
-    units["week"] = simple_unit("{n} ອາທິດ")
-    units["month"] = simple_unit("{n} ເດືອນ")
-    units["year"] = simple_unit("{n} ປີ")
+    var day = simple_unit("{n} ມື້")
+    var week = simple_unit("{n} ອາທິດ")
+    var month = simple_unit("{n} ເດືອນ")
+    var year = simple_unit("{n} ປີ")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("ເດັກເກີດໃໝ່")
-    stages["infant"] = stage_neutral("ເດັກນ້ອຍ")
-    stages["toddler"] = stage_neutral("ເດັກນ້ອຍ")
-    stages["child"] = stage_neutral("ເດັກ")
-    stages["teenager"] = stage_neutral("ໄວລຸ້ນ")
-    stages["adult"] = stage_neutral("ຜູ້ໃຫຍ່")
+    var newborn = stage_neutral("ເດັກເກີດໃໝ່")
+    var infant = stage_neutral("ເດັກນ້ອຍ")
+    var toddler = stage_neutral("ເດັກນ້ອຍ")
+    var child = stage_neutral("ເດັກ")
+    var teenager = stage_neutral("ໄວລຸ້ນ")
+    var adult = stage_neutral("ຜູ້ໃຫຍ່")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} ມ.")
-    short_units["week"] = simple_unit("{n} ອທ.")
-    short_units["month"] = simple_unit("{n} ດ.")
-    short_units["year"] = simple_unit("{n} ປ.")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} ມ.")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} ອທ.")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ດ.")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} ປ.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
 
     return AgeLocale(
         code="lo",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0}ເຄິ່ງ",
         delimiter="",
         just_born="ເກີດໃໝ່",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

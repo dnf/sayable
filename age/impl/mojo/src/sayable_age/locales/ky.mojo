@@ -30,35 +30,37 @@ fn build_ky() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} күн")
-    units["week"] = simple_unit("{n} апта")
-    units["month"] = simple_unit("{n} ай")
-    units["year"] = simple_unit("{n} жаш")
+    var day = simple_unit("{n} күн")
+    var week = simple_unit("{n} апта")
+    var month = simple_unit("{n} ай")
+    var year = simple_unit("{n} жаш")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Жаңы төрөлгөн")
-    stages["infant"] = stage_neutral("Наристе")
-    stages["toddler"] = stage_neutral("Бөбөк")
-    stages["child"] = stage_neutral("Бала")
-    stages["teenager"] = stage_neutral("Жаш өспүрүм")
-    stages["adult"] = stage_neutral("Чоң адам")
+    var newborn = stage_neutral("Жаңы төрөлгөн")
+    var infant = stage_neutral("Наристе")
+    var toddler = stage_neutral("Бөбөк")
+    var child = stage_neutral("Бала")
+    var teenager = stage_neutral("Жаш өспүрүм")
+    var adult = stage_neutral("Чоң адам")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} күн")
-    short_units["week"] = simple_unit("{n} апта")
-    short_units["month"] = simple_unit("{n} ай")
-    short_units["year"] = simple_unit("{n} жаш")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} күн")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} апта")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ай")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} жаш")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_ky() -> AgeLocale:
     return AgeLocale(
         code="ky",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{n}½",
         delimiter=", ",
         just_born="Жаңы төрөлгөн",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

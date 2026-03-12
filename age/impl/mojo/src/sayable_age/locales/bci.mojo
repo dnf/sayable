@@ -28,35 +28,37 @@ fn build_bci() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("cɛn {n}")
-    units["week"] = simple_unit("lemɔcuɛ {n}")
-    units["month"] = simple_unit("anglɛ {n}")
-    units["year"] = simple_unit("afuɛ {n}")
+    var day = simple_unit("cɛn {n}")
+    var week = simple_unit("lemɔcuɛ {n}")
+    var month = simple_unit("anglɛ {n}")
+    var year = simple_unit("afuɛ {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Ba nɔn kaan wɛ")
-    stages["infant"] = stage_neutral("Ba nɔn")
-    stages["toddler"] = stage_neutral("Ba kanngan")
-    stages["child"] = stage_neutral("Ba")
-    stages["teenager"] = stage_neutral("Gbanflɛn")
-    stages["adult"] = stage_neutral("Sran kpɛnngbɛn")
+    var newborn = stage_neutral("Ba nɔn kaan wɛ")
+    var infant = stage_neutral("Ba nɔn")
+    var toddler = stage_neutral("Ba kanngan")
+    var child = stage_neutral("Ba")
+    var teenager = stage_neutral("Gbanflɛn")
+    var adult = stage_neutral("Sran kpɛnngbɛn")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("cɛn {n}")
-    short_units["week"] = simple_unit("lem. {n}")
-    short_units["month"] = simple_unit("ang. {n}")
-    short_units["year"] = simple_unit("af. {n}")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("cɛn {n}")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("lem. {n}")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("ang. {n}")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("af. {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("cɛn {n}")
-    compact_units["week"] = simple_unit("lem {n}")
-    compact_units["month"] = simple_unit("ang {n}")
-    compact_units["year"] = simple_unit("af {n}")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("cɛn {n}")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("lem {n}")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("ang {n}")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("af {n}")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_bci() -> AgeLocale:
     return AgeLocale(
         code="bci",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} nin sin",
         delimiter=", ",
         just_born="Ba nɔn kaan",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

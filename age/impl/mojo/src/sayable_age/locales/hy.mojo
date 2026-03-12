@@ -30,35 +30,37 @@ fn build_hy() -> AgeLocale:
             return "one"
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} օր"), Tuple[String, String]("other", "{n} օր")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} շաբաթ"), Tuple[String, String]("other", "{n} շաբաթ")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ամիս"), Tuple[String, String]("other", "{n} ամիս")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} տարի"), Tuple[String, String]("other", "{n} տարի")))
+    var day = plural_unit(one="{n} օր", other="{n} օր")
+    var week = plural_unit(one="{n} շաբաթ", other="{n} շաբաթ")
+    var month = plural_unit(one="{n} ամիս", other="{n} ամիս")
+    var year = plural_unit(one="{n} տարի", other="{n} տարի")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Նորածին")
-    stages["infant"] = stage_neutral("Մանկիկ")
-    stages["toddler"] = stage_neutral("Փոքրիկ")
-    stages["child"] = stage_neutral("Երեխա")
-    stages["teenager"] = stage_neutral("Պատանի")
-    stages["adult"] = stage_neutral("Մեծահասակ")
+    var newborn = stage_neutral("Նորածին")
+    var infant = stage_neutral("Մանկիկ")
+    var toddler = stage_neutral("Փոքրիկ")
+    var child = stage_neutral("Երեխա")
+    var teenager = stage_neutral("Պատանի")
+    var adult = stage_neutral("Մեծահասակ")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} օր")
-    short_units["week"] = simple_unit("{n} շաբ")
-    short_units["month"] = simple_unit("{n} ամս")
-    short_units["year"] = simple_unit("{n} տ")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} օր")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} շաբ")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ամս")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} տ")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} օ")
-    compact_units["week"] = simple_unit("{n} շ")
-    compact_units["month"] = simple_unit("{n} ա")
-    compact_units["year"] = simple_unit("{n} տ")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} օ")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} շ")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n} ա")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} տ")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +69,21 @@ fn build_hy() -> AgeLocale:
     return AgeLocale(
         code="hy",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} ու կես",
         delimiter=", ",
         just_born="Նորածին",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

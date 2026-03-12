@@ -28,35 +28,37 @@ fn build_zdj() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("suku {n}")
-    units["week"] = simple_unit("djumwa {n}")
-    units["month"] = simple_unit("mwezi {n}")
-    units["year"] = simple_unit("mwaha {n}")
+    var day = simple_unit("suku {n}")
+    var week = simple_unit("djumwa {n}")
+    var month = simple_unit("mwezi {n}")
+    var year = simple_unit("mwaha {n}")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Mwana mdzuhu")
-    stages["infant"] = stage_neutral("Mwana mdzo")
-    stages["toddler"] = stage_neutral("Mwana mtsanga")
-    stages["child"] = stage_neutral("Mwana")
-    stages["teenager"] = stage_neutral("Mwanantsi")
-    stages["adult"] = stage_neutral("Mtu mzima")
+    var newborn = stage_neutral("Mwana mdzuhu")
+    var infant = stage_neutral("Mwana mdzo")
+    var toddler = stage_neutral("Mwana mtsanga")
+    var child = stage_neutral("Mwana")
+    var teenager = stage_neutral("Mwanantsi")
+    var adult = stage_neutral("Mtu mzima")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("suku {n}")
-    short_units["week"] = simple_unit("djum. {n}")
-    short_units["month"] = simple_unit("mw. {n}")
-    short_units["year"] = simple_unit("mwa. {n}")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("suku {n}")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("djum. {n}")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("mw. {n}")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("mwa. {n}")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +67,21 @@ fn build_zdj() -> AgeLocale:
     return AgeLocale(
         code="zdj",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} na nusu",
         delimiter=", ",
         just_born="Mwana mdzuhu",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

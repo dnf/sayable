@@ -38,35 +38,37 @@ fn _plural(n: Int) -> String:
 fn build_ga() -> AgeLocale:
     """Build the Irish locale."""
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} lá"), Tuple[String, String]("two", "{n} lá"), Tuple[String, String]("few", "{n} lá"), Tuple[String, String]("many", "{n} lá"), Tuple[String, String]("other", "{n} lá")))
-    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} seachtain"), Tuple[String, String]("two", "{n} sheachtain"), Tuple[String, String]("few", "{n} seachtaine"), Tuple[String, String]("many", "{n} seachtaine"), Tuple[String, String]("other", "{n} seachtain")))
-    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mhí"), Tuple[String, String]("two", "{n} mhí"), Tuple[String, String]("few", "{n} mhí"), Tuple[String, String]("many", "{n} mí"), Tuple[String, String]("other", "{n} mí")))
-    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} bhliain"), Tuple[String, String]("two", "{n} bhliain"), Tuple[String, String]("few", "{n} bliana"), Tuple[String, String]("many", "{n} mbliana"), Tuple[String, String]("other", "{n} bliain")))
+    var day = plural_unit(one="{n} lá", two="{n} lá", few="{n} lá", many="{n} lá", other="{n} lá")
+    var week = plural_unit(one="{n} seachtain", two="{n} sheachtain", few="{n} seachtaine", many="{n} seachtaine", other="{n} seachtain")
+    var month = plural_unit(one="{n} mhí", two="{n} mhí", few="{n} mhí", many="{n} mí", other="{n} mí")
+    var year = plural_unit(one="{n} bhliain", two="{n} bhliain", few="{n} bliana", many="{n} mbliana", other="{n} bliain")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("Nuabheirthe")
-    stages["infant"] = stage_neutral("Naíonán")
-    stages["toddler"] = stage_neutral("Lapadán")
-    stages["child"] = stage_neutral("Páiste")
-    stages["teenager"] = stage_neutral("Déagóir")
-    stages["adult"] = stage_neutral("Duine fásta")
+    var newborn = stage_neutral("Nuabheirthe")
+    var infant = stage_neutral("Naíonán")
+    var toddler = stage_neutral("Lapadán")
+    var child = stage_neutral("Páiste")
+    var teenager = stage_neutral("Déagóir")
+    var adult = stage_neutral("Duine fásta")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} lá")
-    short_units["week"] = simple_unit("{n} scht")
-    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mí"), Tuple[String, String]("two", "{n} mí"), Tuple[String, String]("few", "{n} mí"), Tuple[String, String]("many", "{n} mí"), Tuple[String, String]("other", "{n} m")))
-    short_units["year"] = simple_unit("{n} bl")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} lá")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} scht")
+    short_ovr.has_week = True
+    short_ovr.month = plural_unit(one="{n} mí", two="{n} mí", few="{n} mí", many="{n} mí", other="{n} m")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} bl")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n} lá")
-    compact_units["week"] = simple_unit("{n} scht")
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n}m"), Tuple[String, String]("two", "{n}m"), Tuple[String, String]("few", "{n}m"), Tuple[String, String]("many", "{n}m"), Tuple[String, String]("other", "{n} m")))
-    compact_units["year"] = simple_unit("{n} bl")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n} lá")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n} scht")
+    compact_ovr.has_week = True
+    compact_ovr.month = plural_unit(one="{n}m", two="{n}m", few="{n}m", many="{n}m", other="{n} m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n} bl")
+    compact_ovr.has_year = True
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -75,13 +77,21 @@ fn build_ga() -> AgeLocale:
     return AgeLocale(
         code="ga",
         plural_fn=_plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} go leith",
         delimiter=", ",
         just_born="Nuabheirthe",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )

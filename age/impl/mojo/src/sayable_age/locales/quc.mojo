@@ -28,48 +28,58 @@ fn build_quc() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var units = Dict[String, UnitForms]()
-    units["day"] = simple_unit("{n} q'ij")
-    units["week"] = simple_unit("{n} wuqq'ij")
-    units["month"] = simple_unit("{n} ik'")
-    units["year"] = simple_unit("{n} junab'")
+    var day = simple_unit("{n} q'ij")
+    var week = simple_unit("{n} wuqq'ij")
+    var month = simple_unit("{n} ik'")
+    var year = simple_unit("{n} junab'")
 
-    var stages = Dict[String, StageLabel]()
-    stages["newborn"] = stage_neutral("K'ak'a alaj")
-    stages["infant"] = stage_neutral("Alaj ak'al")
-    stages["toddler"] = stage_neutral("Ak'al")
-    stages["child"] = stage_neutral("Ak'al")
-    stages["teenager"] = stage_neutral("K'ajol")
-    stages["adult"] = stage_neutral("Achi")
+    var newborn = stage_neutral("K'ak'a alaj")
+    var infant = stage_neutral("Alaj ak'al")
+    var toddler = stage_neutral("Ak'al")
+    var child = stage_neutral("Ak'al")
+    var teenager = stage_neutral("K'ajol")
+    var adult = stage_neutral("Achi")
 
     var short_ovr = CompactnessOverride()
-    var short_units = Dict[String, UnitForms]()
-    short_units["day"] = simple_unit("{n} q'ij")
-    short_units["week"] = simple_unit("{n} wuqq'ij")
-    short_units["month"] = simple_unit("{n} ik'")
-    short_units["year"] = simple_unit("{n} jun.")
-    short_ovr.units = short_units^
+    short_ovr.day = simple_unit("{n} q'ij")
+    short_ovr.has_day = True
+    short_ovr.week = simple_unit("{n} wuqq'ij")
+    short_ovr.has_week = True
+    short_ovr.month = simple_unit("{n} ik'")
+    short_ovr.has_month = True
+    short_ovr.year = simple_unit("{n} jun.")
+    short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = simple_unit("{n}d")
-    compact_units["week"] = simple_unit("{n}w")
-    compact_units["month"] = simple_unit("{n}m")
-    compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units^
+    compact_ovr.day = simple_unit("{n}d")
+    compact_ovr.has_day = True
+    compact_ovr.week = simple_unit("{n}w")
+    compact_ovr.has_week = True
+    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.has_month = True
+    compact_ovr.year = simple_unit("{n}y")
+    compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="quc",
         plural_fn=plural,
-        units=units^,
+        day=day,
+        week=week,
+        month=month,
+        year=year,
         half="{0} nik'aj",
         delimiter=", ",
         just_born="K'ak'a alaj",
-        stages=stages^,
-        short_override=short_ovr^,
+        newborn=newborn,
+        infant=infant,
+        toddler=toddler,
+        child=child,
+        teenager=teenager,
+        adult=adult,
+        short_override=short_ovr,
         has_short=True,
-        compact_override=compact_ovr^,
+        compact_override=compact_ovr,
         has_compact=True,
     )
