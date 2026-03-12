@@ -9,7 +9,7 @@
 ## Summary
 
 - **Countries**: 19
-- **Average coverage**: 95%
+- **Average coverage**: 99%
 
 ## Countries
 
@@ -23,8 +23,8 @@
 | Cuba | 95% | Spanish (95%) | — |
 | Dominican Republic | 100% | Spanish (95%), English (8%) | — |
 | El Salvador | 99% | Spanish (99%) | — |
-| Greenland | 52% | Danish (66%), English (25%) | Kalaallisut (Greenlandic) (85%) |
-| Guatemala | 75% | Spanish (93%) | K'iche' (9%), Kaqchikel (8%), Mam (8%), Q'eqchi' (6%) |
+| Greenland | 100% | Danish (66%), English (25%), Kalaallisut (Greenlandic) (85%) | — |
+| Guatemala | 100% | Spanish (93%), K'iche' (9%), Kaqchikel (8%), Mam (8%), Q'eqchi' (6%) | — |
 | Haiti | 100% | Haitian Creole (96%), French (10%) | — |
 | Honduras | 100% | Spanish (98%), English (4%) | — |
 | Jamaica | 95% | English (95%) | — |
@@ -34,6 +34,12 @@
 | Puerto Rico | 100% | Spanish (94%), English (49%) | — |
 | Trinidad and Tobago | 100% | English (95%), Hindi (2%), Spanish (4%) | — |
 | United States | 100% | English (78%), Spanish (13%), Chinese (1%), Filipino (1%), Vietnamese (1%), Arabic (1%), French (1%), Korean (1%), German (1%), Hindi (1%), Portuguese (1%), Japanese (0%), Russian (0%) | — |
+
+## Notes
+
+Guatemala's Mayan languages — K'iche' (9%), Kaqchikel (8%), Mam (8%), and Q'eqchi' (6%) — are living languages with millions of speakers and official recognition. Their locales use Latin-based orthographies standardized by Guatemala's Academia de Lenguas Mayas, but digital tooling for these languages remains limited. Native speaker review is especially important for these locales.
+
+Barbados, Cuba, and Jamaica show 95% because 5% of their populations speak languages other than English/Spanish (Bajan Creole, Cuban Spanish variants, Jamaican Patois) that are not separately tracked.
 
 ---
 

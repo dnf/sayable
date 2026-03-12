@@ -9,7 +9,7 @@
 ## Summary
 
 - **Countries**: 49
-- **Average coverage**: 94%
+- **Average coverage**: 97%
 
 ## Countries
 
@@ -20,7 +20,7 @@
 | Azerbaijan | 100% | Azerbaijani (93%), Russian (15%) | — |
 | Bahrain | 100% | Arabic (70%), English (30%), Persian (10%), Urdu (8%) | — |
 | Bangladesh | 100% | Bengali (98%), English (10%) | — |
-| Bhutan | 32% | Nepali (22%), English (10%) | Dzongkha (25%), Tshangla (22%) |
+| Bhutan | 57% | Nepali (22%), English (10%), Dzongkha (25%) | Tshangla (22%) |
 | Brunei | 100% | Malay (83%), English (30%), Chinese (10%) | — |
 | Cambodia | 100% | Khmer (96%), English (5%), French (2%) | — |
 | China | 89% | Chinese (Mandarin) (73%), Cantonese (6%), English (10%) | — |
@@ -36,12 +36,12 @@
 | Kazakhstan | 100% | Kazakh (74%), Russian (84%), English (15%) | — |
 | Kuwait | 100% | Arabic (78%), English (40%) | — |
 | Kyrgyzstan | 100% | Kyrgyz (72%), Russian (49%), Uzbek (14%) | — |
-| Laos | 59% | Lao (53%), French (3%), English (3%) | Khmu (11%), Hmong (9%) |
+| Laos | 68% | Lao (53%), French (3%), English (3%), Hmong (9%) | Khmu (11%) |
 | Lebanon | 100% | Arabic (93%), French (40%), English (30%), Armenian (4%) | — |
 | Malaysia | 100% | Malay (69%), English (50%), Chinese (23%), Tamil (7%) | — |
-| Maldives | 20% | English (25%) | Dhivehi (Maldivian) (99%) |
+| Maldives | 100% | English (25%), Dhivehi (Maldivian) (99%) | — |
 | Mongolia | 100% | Mongolian (95%), Russian (5%), English (10%) | — |
-| Myanmar | 73% | Burmese (68%), English (5%) | Shan (9%), Karen languages (7%) |
+| Myanmar | 82% | Burmese (68%), English (5%), Shan (9%) | Karen languages (7%) |
 | Nepal | 93% | Nepali (77%), Hindi (8%), English (8%) | — |
 | North Korea | 99% | Korean (99%) | — |
 | Oman | 100% | Arabic (74%), English (25%), Urdu (7%), Hindi (5%) | — |
@@ -57,13 +57,21 @@
 | Taiwan | 100% | Chinese (Mandarin) (83%), English (28%), Japanese (6%) | — |
 | Tajikistan | 100% | Tajik (80%), Russian (28%), Uzbek (17%) | — |
 | Thailand | 100% | Thai (92%), Malay (3%), English (15%), Chinese (11%) | — |
-| Timor-Leste | 49% | Portuguese (36%), Indonesian (36%), English (16%) | Tetum (91%) |
+| Timor-Leste | 100% | Portuguese (36%), Indonesian (36%), English (16%), Tetum (91%) | — |
 | Turkey | 100% | Turkish (88%), Kurdish (12%), Arabic (2%), English (17%) | — |
 | Turkmenistan | 100% | Turkmen (85%), Russian (12%), Uzbek (5%) | — |
 | United Arab Emirates | 100% | Arabic (40%), English (70%), Hindi (15%), Urdu (10%), Malayalam (8%), Filipino (6%), Bengali (4%) | — |
 | Uzbekistan | 97% | Uzbek (74%), Russian (15%), Tajik (4%), Kazakh (4%) | — |
 | Vietnam | 95% | Vietnamese (85%), English (10%) | — |
 | Yemen | 99% | Arabic (99%) | — |
+
+## Notes
+
+Bhutan's remaining gap is Tshangla (22%), a Sino-Tibetan language spoken in eastern Bhutan. It has no standardized written form — it is primarily oral, with speakers using Dzongkha or Tibetan script informally. Adding a locale is not feasible without an established orthography.
+
+Laos's gap is Khmu (11%), a Mon-Khmer language with limited written standardization. Multiple orthographic conventions exist but none is widely adopted for digital use.
+
+Myanmar's gap is the Karen language family (7%), which encompasses multiple distinct languages (S'gaw Karen, Pwo Karen, etc.) each with its own script variant. No single locale would cover the group.
 
 ---
 

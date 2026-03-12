@@ -1,0 +1,39 @@
+{
+  "code": "kek",
+  "name": "Q'eqchi'",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "{n} q'e",
+    "week": "{n} seman",
+    "month": "{n} po",
+    "year": "{n} chihab'"
+  },
+  "half": "{0} ro'",
+  "delimiter": ", ",
+  "justBorn": "Ch'ina al",
+  "stages": {
+    "newborn": "Ch'ina al",
+    "infant": "Ch'ina al",
+    "toddler": "Ko'kal",
+    "child": "Ko'kal",
+    "teenager": "Xk'aalum",
+    "adult": "Winq"
+  },
+  "short": {
+    "units": {
+      "day": "{n} q'e",
+      "week": "{n} sem.",
+      "month": "{n} po",
+      "year": "{n} chih."
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": ""
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "code": "dz",
+  "name": "Dzongkha",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "ཉིན་ {n}",
+    "week": "བདུན་ཕྲག་ {n}",
+    "month": "ཟླ་ {n}",
+    "year": "ལོ་ {n}"
+  },
+  "half": "{0} ཕྱེད",
+  "delimiter": " ",
+  "justBorn": "གསར་སྐྱེས",
+  "stages": {
+    "newborn": "གསར་སྐྱེས",
+    "infant": "ཕྲུ་གུ",
+    "toddler": "བྱིས་པ",
+    "child": "ཨ་ཅུང",
+    "teenager": "ན་གཞོན",
+    "adult": "མི་ལོན་ཚང"
+  },
+  "short": {
+    "units": {
+      "day": "ཉིན་ {n}",
+      "week": "བདུན་ཕྲག་ {n}",
+      "month": "ཟླ་ {n}",
+      "year": "ལོ་ {n}"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": ""
+  }
+}

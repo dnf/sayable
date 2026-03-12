@@ -1,0 +1,70 @@
+{
+  "code": "tet",
+  "name": "Tetum",
+  "months": [
+    "Janeiru",
+    "Fevereiru",
+    "Marsu",
+    "Abríl",
+    "Maiu",
+    "Juñu",
+    "Jullu",
+    "Agostu",
+    "Setembru",
+    "Outubru",
+    "Novembru",
+    "Dezembru"
+  ],
+  "weekdays": [
+    "Domingu",
+    "Segunda",
+    "Tersa",
+    "Kuarta",
+    "Kinta",
+    "Sesta",
+    "Sábadu"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "ohin",
+  "tomorrow": "aban",
+  "yesterday": "horiseik",
+  "dayAfterTomorrow": "aban bainrua",
+  "dayBeforeYesterday": "horiseik liu",
+  "thisWeekday": "{weekday} ida ne'e",
+  "nextWeekday": "{weekday} oin mai",
+  "lastWeekday": "{weekday} kotuk",
+  "short": {
+    "months": [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez"
+    ],
+    "weekdays": [
+      "Dom",
+      "Seg",
+      "Ter",
+      "Kua",
+      "Kin",
+      "Ses",
+      "Sáb"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

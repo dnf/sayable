@@ -1,0 +1,39 @@
+{
+  "code": "cak",
+  "name": "Kaqchikel",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "{n} q'ij",
+    "week": "{n} wuqq'ij",
+    "month": "{n} ik'",
+    "year": "{n} junab'"
+  },
+  "half": "{0} nik'aj",
+  "delimiter": ", ",
+  "justBorn": "K'ak'a' ak'wal",
+  "stages": {
+    "newborn": "K'ak'a' ak'wal",
+    "infant": "Yal ak'wal",
+    "toddler": "Ak'wal",
+    "child": "Ak'wal",
+    "teenager": "K'ajol",
+    "adult": "Achi"
+  },
+  "short": {
+    "units": {
+      "day": "{n} q'ij",
+      "week": "{n} wuqq'ij",
+      "month": "{n} ik'",
+      "year": "{n} jun."
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": ""
+  }
+}

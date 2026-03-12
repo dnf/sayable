@@ -1,0 +1,39 @@
+{
+  "code": "pis",
+  "name": "Pijin",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "{n} dei",
+    "week": "{n} wik",
+    "month": "{n} manis",
+    "year": "{n} yia"
+  },
+  "half": "{n} en haf",
+  "delimiter": ", ",
+  "justBorn": "Niufala bebi",
+  "stages": {
+    "newborn": "Niufala bebi",
+    "infant": "Bebi",
+    "toddler": "Smol pikinini",
+    "child": "Pikinini",
+    "teenager": "Yangfala",
+    "adult": "Bigfala"
+  },
+  "short": {
+    "units": {
+      "day": "{n} dei",
+      "week": "{n} wik",
+      "month": "{n} man",
+      "year": "{n} yia"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": ""
+  }
+}

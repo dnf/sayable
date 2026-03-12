@@ -1,0 +1,39 @@
+{
+  "code": "kl",
+  "name": "Kalaallisut",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "ullut {n}",
+    "week": "sapaatit {n}",
+    "month": "qaammatit {n}",
+    "year": "ukiut {n}"
+  },
+  "half": "{0} affaa",
+  "delimiter": ", ",
+  "justBorn": "Inuuneq nutaaq",
+  "stages": {
+    "newborn": "Inuuneq nutaaq",
+    "infant": "Naalunngiaatitaq",
+    "toddler": "Meeraq",
+    "child": "Meeraq",
+    "teenager": "Inuusuttuaq",
+    "adult": "Inuk"
+  },
+  "short": {
+    "units": {
+      "day": "ull. {n}",
+      "week": "sap. {n}",
+      "month": "qaam. {n}",
+      "year": "uk. {n}"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": ""
+  }
+}
