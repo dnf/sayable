@@ -102,6 +102,12 @@ def _clean_lua(selected: set[str], all_codes: set[str], check: bool, diffs: list
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_crystal(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.crystal.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 def _clean_dart(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
     from codegen.targets.dart.emitter import output_path
     for code in sorted(all_codes - selected):
@@ -126,20 +132,40 @@ def _clean_gleam(selected: set[str], all_codes: set[str], check: bool, diffs: li
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_r(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.r.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
     "clojure": _clean_clojure,
+    "crystal": _clean_crystal,
     "dart": _clean_dart,
     "elixir": _clean_elixir,
-    "gleam": _clean_gleam,
     "gleam": _clean_gleam,
     "go": _clean_go,
     "haskell": _clean_haskell,
     "lua": _clean_lua,
     "python": _clean_python,
+    "r": _clean_r,
     "ruby": _clean_ruby,
     "rust": _clean_rust,
     "typescript": _clean_typescript,
 }
+
+
+def generate_crystal(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.crystal.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
 
 
 def generate_cpp(locales: list[dict], check: bool, diffs: list[str]) -> None:
@@ -483,12 +509,56 @@ def generate_ada(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_r(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.r.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_vbnet(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.vbnet.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_nim(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.nim.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def _clean_nim(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.nim.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+_PER_FILE_CLEANERS["nim"] = _clean_nim
+
+
 _GENERATORS = {
     "ada": generate_ada,
     "c": generate_c,
     "clojure": generate_clojure,
     "cobol": generate_cobol,
     "cpp": generate_cpp,
+    "crystal": generate_crystal,
     "csharp": generate_csharp,
     "dart": generate_dart,
     "elixir": generate_elixir,
@@ -513,6 +583,9 @@ _GENERATORS = {
     "swift": generate_swift,
     "typescript": generate_typescript,
     "zig": generate_zig,
+    "r": generate_r,
+    "nim": generate_nim,
+    "vbnet": generate_vbnet,
 }
 
 

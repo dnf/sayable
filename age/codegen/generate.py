@@ -165,13 +165,32 @@ def _clean_dart(selected: set[str], all_codes: set[str], check: bool, diffs: lis
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_crystal(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.crystal.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 def _clean_gleam(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
     from codegen.targets.gleam.emitter import output_path
     for code in sorted(all_codes - selected):
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_nim(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.nim.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_r(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.r.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
+    "crystal": _clean_crystal,
     "typescript": _clean_typescript,
     "python": _clean_python,
     "go": _clean_go,
@@ -188,6 +207,8 @@ _PER_FILE_CLEANERS = {
     "perl": _clean_perl,
     "dart": _clean_dart,
     "gleam": _clean_gleam,
+    "nim": _clean_nim,
+    "r": _clean_r,
 }
 
 
@@ -527,11 +548,58 @@ def generate_groovy(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_vbnet(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.vbnet.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_zig(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.zig.emitter import emit_all, output_path
 
     path = output_path(ROOT)
     content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_crystal(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.crystal.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_nim(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.nim.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_r(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.r.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
     _write_or_check(path, content, check, diffs)
 
 
@@ -550,6 +618,7 @@ _GENERATORS = {
     "swift": generate_swift,
     "c": generate_c,
     "cobol": generate_cobol,
+    "crystal": generate_crystal,
     "haskell": generate_haskell,
     "erlang": generate_erlang,
     "fsharp": generate_fsharp,
@@ -565,6 +634,9 @@ _GENERATORS = {
     "dart": generate_dart,
     "gleam": generate_gleam,
     "groovy": generate_groovy,
+    "nim": generate_nim,
+    "r": generate_r,
+    "vbnet": generate_vbnet,
 }
 
 

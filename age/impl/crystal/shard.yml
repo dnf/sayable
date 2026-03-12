@@ -1,0 +1,7 @@
+name: sayable_age
+version: 0.5.0
+description: Human-friendly age formatting — how parents actually talk about little ones
+authors:
+  - Don Neufeld
+license: MIT
+crystal: ">= 1.0.0"

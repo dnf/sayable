@@ -1,0 +1,172 @@
+require "spec"
+require "../src/sayable_time"
+
+# All tests use explicit inputs for determinism.
+# Canonical test IDs from time/config/tests.json
+
+# ================================================================
+# Section 1: Null / edge cases
+# ================================================================
+describe "Null / edge cases" do
+  # 1.1
+  it "returns nil for null input" do
+    SayableTime.format_time(nil).should be_nil
+  end
+
+  # 1.2
+  it "returns nil for empty string" do
+    SayableTime.format_time("").should be_nil
+  end
+
+  # 1.3
+  it "returns nil for invalid string" do
+    SayableTime.format_time("invalid").should be_nil
+  end
+
+  # 1.4
+  it "returns nil for out-of-range hour" do
+    SayableTime.format_time("25:00").should be_nil
+  end
+end
+
+# ================================================================
+# Section 2: Clock time (normal compactness)
+# ================================================================
+describe "Clock time — normal compactness" do
+  formatter = SayableTime::Formatter.new(SayableTime::Locales::EN)
+
+  # 2.1
+  it "formats midnight" do
+    formatter.format_time("00:00").should eq "midnight"
+  end
+
+  # 2.2
+  it "formats noon" do
+    formatter.format_time("12:00").should eq "noon"
+  end
+
+  # 2.3
+  it "formats three o'clock" do
+    formatter.format_time("15:00").should eq "three o'clock"
+  end
+
+  # 2.4
+  it "formats a quarter past two" do
+    formatter.format_time("14:15").should eq "a quarter past two"
+  end
+
+  # 2.5
+  it "formats half past nine" do
+    formatter.format_time("09:30").should eq "half past nine"
+  end
+
+  # 2.6
+  it "formats a quarter to eleven" do
+    formatter.format_time("10:45").should eq "a quarter to eleven"
+  end
+
+  # 2.7
+  it "formats five past eight" do
+    formatter.format_time("08:05").should eq "five past eight"
+  end
+
+  # 2.8
+  it "formats five to five" do
+    formatter.format_time("16:55").should eq "five to five"
+  end
+
+  # 2.9
+  it "rounds 23:58 to midnight" do
+    formatter.format_time("23:58").should eq "midnight"
+  end
+
+  # 2.10
+  it "rounds 07:22 to twenty past seven" do
+    formatter.format_time("07:22").should eq "twenty past seven"
+  end
+
+  # 2.11
+  it "handles ISO datetime input" do
+    formatter.format_time("2025-01-15T14:15:00").should eq "a quarter past two"
+  end
+end
+
+# ================================================================
+# Section 3: Clock time (short compactness)
+# ================================================================
+describe "Clock time — short compactness" do
+  formatter = SayableTime::Formatter.new(SayableTime::Locales::EN, :short)
+
+  # 3.1
+  it "formats 14:15 as 2:15 PM" do
+    formatter.format_time("14:15").should eq "2:15 PM"
+  end
+
+  # 3.2
+  it "formats 09:30 as 9:30 AM" do
+    formatter.format_time("09:30").should eq "9:30 AM"
+  end
+
+  # 3.3
+  it "formats 00:00 as 12:00 AM" do
+    formatter.format_time("00:00").should eq "12:00 AM"
+  end
+
+  # 3.4
+  it "formats 12:00 as 12:00 PM" do
+    formatter.format_time("12:00").should eq "12:00 PM"
+  end
+end
+
+# ================================================================
+# Section 4: Clock time (compact)
+# ================================================================
+describe "Clock time — compact" do
+  formatter = SayableTime::Formatter.new(SayableTime::Locales::EN, :compact)
+
+  # 4.1
+  it "formats 14:15 as 2:15p" do
+    formatter.format_time("14:15").should eq "2:15p"
+  end
+
+  # 4.2
+  it "formats 09:30 as 9:30a" do
+    formatter.format_time("09:30").should eq "9:30a"
+  end
+end
+
+# ================================================================
+# Section 5: Locale — German
+# ================================================================
+describe "Locale — German" do
+  formatter = SayableTime::Formatter.new(SayableTime::Locales::DE)
+
+  # 5.1
+  it "formats 15:30 as halb vier" do
+    formatter.format_time("15:30").should eq "halb vier"
+  end
+end
+
+# ================================================================
+# Section 6: Locale — French
+# ================================================================
+describe "Locale — French" do
+  formatter = SayableTime::Formatter.new(SayableTime::Locales::FR)
+
+  # 6.1
+  it "formats 15:15 as trois heures et quart" do
+    formatter.format_time("15:15").should eq "trois heures et quart"
+  end
+end
+
+# ================================================================
+# Section 7: Locale — Japanese
+# ================================================================
+describe "Locale — Japanese" do
+  formatter = SayableTime::Formatter.new(SayableTime::Locales::JA)
+
+  # 7.1
+  it "formats 15:30 as 三時半" do
+    formatter.format_time("15:30").should eq "三時半"
+  end
+end

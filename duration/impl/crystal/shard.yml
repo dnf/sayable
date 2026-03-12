@@ -1,0 +1,7 @@
+name: sayable_duration
+version: 0.5.0
+description: Human-friendly duration formatting — how people talk about time spans
+authors:
+  - Don Neufeld
+license: MIT
+crystal: ">= 1.0.0"

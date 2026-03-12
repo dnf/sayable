@@ -1,0 +1,10 @@
+Package: sayableduration
+Title: Human-Friendly Duration Formatting
+Version: 0.5.0
+Authors@R: person("Don Sifry", role = c("aut", "cre"))
+Description: Formats durations the way people speak in conversation.
+    Zero runtime dependencies.
+License: MIT
+Encoding: UTF-8
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3

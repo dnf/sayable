@@ -1,0 +1,7 @@
+name: sayable_time
+version: 0.5.0
+description: Human-friendly clock time formatting — how people talk about time
+authors:
+  - Don Neufeld
+license: MIT
+crystal: ">= 1.0.0"
