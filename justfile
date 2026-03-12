@@ -96,9 +96,44 @@ test *target:
             elif [ "$_target" = "c" ]; then
                 just build c
                 cd age/impl/c/build && ctest --output-on-failure
-            elif [ "$_target" = "cli" ]; then
-                just build cli
-                bash age/cli/test.sh
+            elif [ "$_target" = "cli" ] || [[ "$_target" = cli\ * ]]; then
+                _cli_lang="${_target#cli}"
+                _cli_lang="${_cli_lang# }"
+                if [ -n "${_cli_lang}" ]; then
+                    _cli_lang=$(_name "$_cli_lang")
+                    _cli_bin="cli/impl/${_cli_lang}/sayable"
+                    if [ ! -x "${_cli_bin}" ]; then
+                        echo "error: ${_cli_bin} is not executable or not found" >&2
+                        exit 1
+                    fi
+                    bash cli/test-harness.sh "${_cli_bin}"
+                else
+                    _cli_pass=0; _cli_fail=0; _cli_skip=0
+                    for _cli_dir in cli/impl/*/; do
+                        _cl=$(basename "$_cli_dir")
+                        _cli_bin="${_cli_dir}sayable"
+                        if [ ! -x "${_cli_bin}" ]; then
+                            echo "⊘ ${_cl}: no executable 'sayable' — skipping"
+                            _cli_skip=$((_cli_skip + 1))
+                            continue
+                        fi
+                        dep=$(_dep "$_cl" 2>/dev/null || true)
+                        if [ -n "${dep}" ] && ! command -v "${dep}" &>/dev/null; then
+                            echo "⊘ ${_cl}: ${dep} not installed — skipping"
+                            _cli_skip=$((_cli_skip + 1))
+                            continue
+                        fi
+                        if bash cli/test-harness.sh "${_cli_bin}" 2>&1 | tail -1 | grep -q "passed"; then
+                            _cli_pass=$((_cli_pass + 1))
+                        else
+                            echo "✗ ${_cl}: FAILED"
+                            _cli_fail=$((_cli_fail + 1))
+                        fi
+                    done
+                    echo ""
+                    echo "CLI summary: ${_cli_pass} passed, ${_cli_fail} failed, ${_cli_skip} skipped"
+                    [ "${_cli_fail}" -gt 0 ] && exit 1
+                fi
             elif [ "$_target" = "php" ]; then
                 cd age/impl/php && php vendor/bin/phpunit tests/
             elif [ "$_target" = "java" ]; then
@@ -165,7 +200,7 @@ test *target:
             elif [ "$_target" = "prolog" ] || [ "$_target" = "swi" ]; then
                 cd age/impl/prolog && swipl -g run_tests -t halt test_format_age.pl
             elif [ "$_target" = "raku" ] || [ "$_target" = "rk" ]; then
-                cd age/impl/raku && prove6 -Ilib t/
+                cd age/impl/raku && raku -Ilib t/01-formatter.rakutest
             elif [ "$_target" = "v" ]; then
                 cd age/impl/v && v test .
             elif [ "$_target" = "lisp" ] || [ "$_target" = "cl" ]; then
@@ -193,7 +228,7 @@ test *target:
                 fi
                 pharo --headless Pharo.image st run_tests.st
             elif [ "$_target" = "powershell" ] || [ "$_target" = "ps1" ]; then
-                cd age/impl/powershell && pwsh -NoProfile -File test_format_age.ps1
+                cd age/impl/powershell && pwsh -NoProfile -Command "Invoke-Pester tests/ -EnableExit"
             elif [ "$_target" = "mojo" ] || [ "$_target" = "mj" ]; then
                 cd age/impl/mojo && mojo run -I src tests/test_format_age.mojo
             elif [ "$_target" = "codegen" ]; then
@@ -295,7 +330,7 @@ build *target:
             elif [ "$_target" = "cobol" ] || [ "$_target" = "cb" ]; then
                 cd age/impl/cobol && cmake -B build && cmake --build build
             elif [ "$_target" = "cli" ]; then
-                cd age/cli && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
+                echo "No build step for CLI (language-specific builds handled by each implementation)"
             elif [ "$_target" = "java" ]; then
                 cd age/impl/java && ./gradlew build
             elif [ "$_target" = "csharp" ] || [ "$_target" = "cs" ]; then
@@ -685,7 +720,7 @@ clean *target:
     elif [ "$_target" = "c" ]; then
         rm -rf age/impl/c/build || rm -rf age/impl/c/build
     elif [ "$_target" = "cli" ]; then
-        rm -rf age/cli/build || rm -rf age/cli/build
+        echo "No build artifacts for: cli"
     elif [ "$_target" = "cpp" ] || [ "$_target" = "c++" ]; then
         rm -rf age/impl/cpp/build || rm -rf age/impl/cpp/build
     elif [ "$_target" = "java" ]; then
@@ -783,10 +818,10 @@ install *langs:
     fi
     {{python}} .hecatron/tools/language/install.py $langs
 
-# Build the CLI tool
-[group('build')]
-cli:
-    cd cli && cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build
+# Run CLI test harness (all languages or specify one: just cli python)
+[group('test')]
+cli *lang:
+    just test cli {{lang}}
 
 # Internal: clean then build a single target
 [private]
@@ -928,7 +963,13 @@ retest *target:
         done
         .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} retest "${args[@]}"
     else
-        just clean "$_target" && just test "$_target"
+        if [ "$_target" = "check" ]; then
+            just check
+        elif [ "$_target" = "codegen" ]; then
+            just test codegen
+        else
+            just clean "$_target" && just test "$_target"
+        fi
     fi
 
 # Interactive onboarding: show project info, installed languages, and install menu

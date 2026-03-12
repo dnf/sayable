@@ -3,6 +3,10 @@
 %
 % See cli/SPEC.md for the full specification.
 
+% Suppress warnings from component files that shadow Octave built-ins
+% (is_leap_year.m, version.m in the age/date/duration implementations)
+warning('off', 'Octave:shadowed-function');
+
 % --- All function definitions must precede the main script code in Octave ---
 
 function result = nullify(value)

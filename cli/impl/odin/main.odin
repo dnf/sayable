@@ -6,7 +6,6 @@ package main
 import "core:fmt"
 import "core:os"
 import "core:time"
-import "core:time/datetime"
 
 import age "sayable:age/impl/odin"
 import date "sayable:date/impl/odin"
@@ -55,11 +54,6 @@ str_eq :: proc(a, b: string) -> bool {
         if a[i] != b[i] do return false
     }
     return true
-}
-
-starts_with :: proc(s, prefix: string) -> bool {
-    if len(s) < len(prefix) do return false
-    return str_eq(s[0:len(prefix)], prefix)
 }
 
 parse_args :: proc(argv: []string) -> (command: string, positionals: [dynamic]string, opts: Options) {

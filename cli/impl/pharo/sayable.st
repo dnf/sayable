@@ -1,7 +1,7 @@
 "Sayable CLI — unified command-line interface to all four Sayable components.
 See cli/SPEC.md for the full specification."
 
-| projectRoot loader loadComponent
+| projectRoot scriptRef scriptDir loader loadComponent
   SayableAgeClass SayableAgeLocalesClass
   SayableDateClass SayableDateLocalesClass
   SayableTimeClass SayableTimeLocalesClass
@@ -13,8 +13,18 @@ See cli/SPEC.md for the full specification."
   rawArgs argv foundSep parsed command positionals options
   commands handler |
 
-"Resolve project root (cli/impl/pharo -> project root)"
-projectRoot := FileSystem workingDirectory parent parent parent.
+"Resolve project root from script location (cli/impl/pharo -> project root).
+ Find the .st script path in the command line arguments."
+projectRoot := nil.
+Smalltalk commandLine arguments do: [ :a |
+	(projectRoot isNil and: [ a endsWith: '.st' ]) ifTrue: [
+		scriptRef := a asFileReference asAbsolute.
+		scriptDir := scriptRef parent.
+		"Navigate from cli/impl/pharo up to project root"
+		projectRoot := scriptDir parent parent parent ] ].
+"Fall back: assume CWD is cli/impl/pharo"
+projectRoot ifNil: [
+	projectRoot := FileSystem workingDirectory parent parent parent ].
 
 "File loader helper"
 loader := [ :dir :filename |
@@ -118,8 +128,7 @@ isIntegerString := [ :str |
 
 "Argument parser — returns { command. positionals. options }"
 parseArgs := [ :argArray |
-	| cmd pos opts i stopOpts a matched knownOpts |
-	knownOpts := #('-l' '--locale' '-d' '--as-of' '-g' '--gender' '--short' '--compact' '--with-year' '-h' '--help' '-v' '--version').
+	| cmd pos opts i stopOpts a matched |
 	argArray isEmpty
 		ifTrue: [ { nil. #(). Dictionary new } ]
 		ifFalse: [
@@ -329,16 +338,19 @@ cmdLocales := [
 
 "Main: extract user arguments from command line.
  When invoked as 'pharo --headless Pharo.image st sayable.st -- arg1 arg2',
- Smalltalk commandLine arguments contains tokens after the image name.
- We find the .st script name and take everything after it.
- The '--' separator between script name and user args is consumed by pharo st."
+ Smalltalk commandLine arguments returns all tokens after the image name:
+ #('st' '/path/to/sayable.st' '--' 'age' '2020-01-01' ...).
+ We skip past the .st file and any '--' separator to get user args."
 rawArgs := Smalltalk commandLine arguments.
 
 argv := OrderedCollection new.
 foundSep := false.
 rawArgs do: [ :a |
 	foundSep
-		ifTrue: [ argv add: a ]
+		ifTrue: [
+			"Skip the '--' immediately after the script name"
+			(a = '--' and: [ argv isEmpty ])
+				ifFalse: [ argv add: a ] ]
 		ifFalse: [
 			(a endsWith: '.st')
 				ifTrue: [ foundSep := true ] ] ].

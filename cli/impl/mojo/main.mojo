@@ -4,7 +4,7 @@ See cli/SPEC.md for the full specification.
 """
 
 from sys import argv, exit
-from time import now
+from sys.ffi import external_call
 
 from sayable_age.formatter import SayableAge
 from sayable_age.locales.registry import get_locale as get_age_locale
@@ -46,10 +46,6 @@ Options:
       --with-year        Include year (date only)
   -h, --help             Show this help
   -v, --version          Show version"""
-
-# All 168 locale codes, sorted alphabetically
-alias NUM_LOCALES = 168
-
 
 fn _all_locale_codes() -> List[String]:
     """Return a sorted list of all supported locale codes."""
@@ -225,10 +221,18 @@ fn _all_locale_codes() -> List[String]:
     return codes
 
 
+fn _write_stderr(s: String):
+    """Write a string followed by newline to stderr using POSIX write()."""
+    var line = s + "\n"
+    _ = external_call["write", Int, Int32, UnsafePointer[UInt8], Int](
+        Int32(2), line.unsafe_ptr(), len(line)
+    )
+
+
 fn _error(msg: String):
     """Print error to stderr and exit with code 2."""
-    print("error: " + msg, file=2)
-    print("Run 'sayable help' for usage.", file=2)
+    _write_stderr("error: " + msg)
+    _write_stderr("Run 'sayable help' for usage.")
     exit(2)
 
 
@@ -278,11 +282,6 @@ fn _str_to_int(s: String) -> Int:
     return result
 
 
-fn _contains(s: String, sub: String) -> Bool:
-    """Check if string contains a substring."""
-    return s.find(sub) != -1
-
-
 fn _zfill2(n: Int) -> String:
     """Zero-pad an integer to 2 digits."""
     if n < 10:
@@ -291,15 +290,18 @@ fn _zfill2(n: Int) -> String:
 
 
 fn _get_today() -> String:
-    """Get today's date as YYYY-MM-DD using epoch arithmetic."""
-    # now() returns nanoseconds since epoch
-    var ns = now()
-    var total_seconds = ns // 1_000_000_000
-    var total_days = total_seconds // 86400
+    """Get today's date as YYYY-MM-DD using C time() and epoch arithmetic."""
+    # C time() returns seconds since Unix epoch (1970-01-01 00:00:00 UTC)
+    var epoch_seconds = Int(
+        external_call["time", Int64, UnsafePointer[Int64]](
+            UnsafePointer[Int64]()
+        )
+    )
+    var total_days = epoch_seconds // 86400
 
     # Convert days since Unix epoch (1970-01-01) to date
-    # Using the same algorithm as other implementations
-    var days = Int(total_days)
+    # Howard Hinnant's civil_from_days algorithm
+    var days = total_days
     # Shift to March-based year (Mar 1 = day 0)
     days += 719468
     var era = days // 146097
@@ -553,6 +555,15 @@ fn _cmd_time(args: ParsedArgs):
     print(result)
 
 
+fn _is_negative_int(s: String) -> Bool:
+    """Check if string is a negative integer like '-1'."""
+    if len(s) < 2:
+        return False
+    if s[0:1] != "-":
+        return False
+    return _is_all_digits(s[1:])
+
+
 fn _cmd_duration(args: ParsedArgs):
     """Handle the 'duration' command."""
     if args.num_positionals < 1:
@@ -646,15 +657,6 @@ fn _cmd_locales():
     var codes = _all_locale_codes()
     for i in range(len(codes)):
         print(codes[i])
-
-
-fn _is_negative_int(s: String) -> Bool:
-    """Check if string is a negative integer like '-1'."""
-    if len(s) < 2:
-        return False
-    if s[0:1] != "-":
-        return False
-    return _is_all_digits(s[1:])
 
 
 fn main():
