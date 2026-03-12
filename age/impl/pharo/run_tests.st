@@ -1,6 +1,6 @@
 "Load all source files and run tests headlessly."
 
-| dir loader |
+| dir loader suite result |
 dir := FileSystem workingDirectory.
 
 "Load classes in order"
@@ -29,7 +29,6 @@ loader value: 'SayableAge.st'.
 loader value: 'SayableAgeTest.st'.
 
 "Run tests"
-| suite result |
 suite := TestSuite new.
 suite addTests: SayableAgeFormatAgeTest buildSuite tests.
 suite addTests: SayableAgeFormatStageTest buildSuite tests.
