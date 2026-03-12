@@ -180,6 +180,22 @@ test *target:
                 cd age/impl/nim && nimble test -y
             elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
                 cd age/impl/vbnet && dotnet test
+            elif [ "$_target" = "bash" ] || [ "$_target" = "sh" ]; then
+                cd age/impl/bash && bash test_format_age.sh
+            elif [ "$_target" = "odin" ] || [ "$_target" = "od" ]; then
+                cd age/impl/odin && odin test .
+            elif [ "$_target" = "octave" ] || [ "$_target" = "oct" ]; then
+                cd age/impl/octave && octave --no-gui --eval "test_format_age"
+            elif [ "$_target" = "pharo" ] || [ "$_target" = "ph" ]; then
+                cd age/impl/pharo
+                if [ ! -f Pharo.image ]; then
+                    curl -fsSL https://get.pharo.org/64/120 | bash
+                fi
+                pharo --headless Pharo.image st run_tests.st
+            elif [ "$_target" = "powershell" ] || [ "$_target" = "ps1" ]; then
+                cd age/impl/powershell && pwsh -NoProfile -File test_format_age.ps1
+            elif [ "$_target" = "mojo" ] || [ "$_target" = "mj" ]; then
+                cd age/impl/mojo && mojo test tests/
             elif [ "$_target" = "codegen" ]; then
                 cd age && {{python}} -m unittest codegen.test_locale_groups -v
             else
@@ -318,6 +334,8 @@ build *target:
                 cd age/impl/nim && nim c --noMain --path:src src/sayable_age/formatter.nim
             elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
                 cd age/impl/vbnet && dotnet build
+            elif [ "$_target" = "mojo" ] || [ "$_target" = "mj" ]; then
+                cd age/impl/mojo && mojo build src/
             else
                 echo "No build step for: $_target"
             fi
@@ -727,7 +745,12 @@ clean *target:
         find age/impl/nim -type d -name nimcache -exec rm -rf {} + 2>/dev/null || true
     elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
         rm -rf age/impl/vbnet/SayableAge/bin age/impl/vbnet/SayableAge/obj age/impl/vbnet/SayableAge.Tests/bin age/impl/vbnet/SayableAge.Tests/obj
-    elif [ "$_target" = "go" ] || [ "$_target" = "julia" ] || [ "$_target" = "jl" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ] || [ "$_target" = "tcl" ] || [ "$_target" = "wren" ] || [ "$_target" = "janet" ] || [ "$_target" = "jt" ] || [ "$_target" = "r" ]; then
+    elif [ "$_target" = "mojo" ] || [ "$_target" = "mj" ]; then
+        rm -rf age/impl/mojo/.mojopkg age/impl/mojo/build
+    elif [ "$_target" = "pharo" ] || [ "$_target" = "ph" ]; then
+        rm -f age/impl/pharo/Pharo.image age/impl/pharo/Pharo.changes age/impl/pharo/*.sources
+        rm -rf age/impl/pharo/pharo-local
+    elif [ "$_target" = "go" ] || [ "$_target" = "julia" ] || [ "$_target" = "jl" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ] || [ "$_target" = "tcl" ] || [ "$_target" = "wren" ] || [ "$_target" = "janet" ] || [ "$_target" = "jt" ] || [ "$_target" = "r" ] || [ "$_target" = "bash" ] || [ "$_target" = "sh" ] || [ "$_target" = "odin" ] || [ "$_target" = "od" ] || [ "$_target" = "octave" ] || [ "$_target" = "oct" ] || [ "$_target" = "powershell" ] || [ "$_target" = "ps1" ]; then
         echo "No build artifacts for: $_target"
     else
         echo "Unknown target: $_target (try 'just clean help')" >&2

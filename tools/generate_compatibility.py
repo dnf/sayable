@@ -16,6 +16,7 @@ _DISPLAY_NAMES: dict[str, str] = {
     "lisp": "Common Lisp",
     "ocaml": "OCaml",
     "php": "PHP",
+    "powershell": "PowerShell",
     "typescript": "TypeScript",
     "vbnet": "VB.NET",
 }

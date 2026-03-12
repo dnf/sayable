@@ -16,6 +16,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
+    clang-14 \
     cmake \
     curl \
     dotnet-sdk-10.0 \
@@ -33,15 +34,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     julia \
     ldc \
     liblua5.4-dev \
+    llvm-14 \
     lua5.4 \
     luarocks \
     make \
     nim \
+    octave \
     opam \
     openjdk-17-jdk-headless \
     php-cli \
     php-mbstring \
     php-xml \
+    powershell \
     python3 \
     python3-venv \
     r-base \
@@ -95,14 +99,33 @@ RUN cd /tmp && \
 # Lua testing framework (busted) via LuaRocks
 RUN luarocks install busted
 
+# Mojo via Modular CLI
+RUN curl -s https://get.modular.com | sh -
+RUN modular install mojo
+ENV PATH="/root/.modular/bin:${PATH}"
+
 # OCaml via opam
 RUN opam init --disable-sandboxing --yes \
     && eval $(opam env) \
     && opam install dune alcotest --yes
 ENV PATH="/root/.opam/default/bin:${PATH}"
 
+# Odin
+RUN ARCH="$(dpkg --print-architecture)" && \
+    ODIN_VERSION="dev-2025-03" && \
+    curl -fsSL "https://github.com/odin-lang/Odin/releases/download/${ODIN_VERSION}/odin-ubuntu_amd64-${ODIN_VERSION}.zip" -o /tmp/odin.zip && \
+    mkdir -p /opt/odin && \
+    unzip -qo /tmp/odin.zip -d /opt/odin && \
+    rm /tmp/odin.zip && \
+    ln -sf /opt/odin/odin /usr/local/bin/odin
+
+RUN mkdir -p /opt/pharo && cd /opt/pharo && curl -fsSL https://get.pharo.org/64/120+vm | bash
+ENV PATH="/opt/pharo:${PATH}"
+
 # Composer (PHP package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN pwsh -Command "Install-Module -Name Pester -Force -SkipPublisherCheck -Scope AllUsers"
 
 # uv (Python package manager)
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh

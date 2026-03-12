@@ -231,6 +231,36 @@ def _clean_v(selected: set[str], all_codes: set[str], check: bool, diffs: list[s
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_bash(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.bash.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_octave(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.octave.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_pharo(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.pharo.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_powershell(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.powershell.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_mojo(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.mojo.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
     "crystal": _clean_crystal,
     "typescript": _clean_typescript,
@@ -258,6 +288,11 @@ _PER_FILE_CLEANERS = {
     "tcl": _clean_tcl,
     "wren": _clean_wren,
     "janet": _clean_janet,
+    "bash": _clean_bash,
+    "octave": _clean_octave,
+    "pharo": _clean_pharo,
+    "powershell": _clean_powershell,
+    "mojo": _clean_mojo,
 }
 
 
@@ -787,6 +822,79 @@ def generate_janet(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_bash(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.bash.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_odin(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.odin.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_octave(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.octave.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_pharo(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.pharo.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_powershell(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.powershell.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_mojo(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.mojo.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 _GENERATORS = {
     "ada": generate_ada,
     "typescript": generate_typescript,
@@ -832,6 +940,12 @@ _GENERATORS = {
     "tcl": generate_tcl,
     "wren": generate_wren,
     "janet": generate_janet,
+    "bash": generate_bash,
+    "odin": generate_odin,
+    "octave": generate_octave,
+    "pharo": generate_pharo,
+    "powershell": generate_powershell,
+    "mojo": generate_mojo,
 }
 
 

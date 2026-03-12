@@ -85,6 +85,10 @@ lisp/*.fasl
 # Lua
 lua/luarocks/
 
+# Mojo
+mojo/.mojopkg
+mojo/build/
+
 # Nim
 nim/nimcache/
 nim/tests/nimcache/
@@ -93,8 +97,17 @@ nim/tests/nimcache/
 ocaml/_build/
 ocaml/_opam/
 
+# Odin
+odin/test_format_age
+
 # Pascal
 pascal/build/
+
+# Pharo
+pharo/Pharo.image
+pharo/Pharo.changes
+pharo/pharo-local/
+pharo/*.sources
 
 # PHP
 php/vendor/

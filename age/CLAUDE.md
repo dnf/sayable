@@ -4,7 +4,7 @@
 
 ## Status
 
-The most mature component: v0.5.0, 44 languages (40 fully wired, 4 pending tooling), 168 locales, 217 canonical tests. Has CLI, benchmarks, stress tests, and comprehensive docs.
+The most mature component: v0.5.0, 50 languages, 168 locales, 217 canonical tests. Has CLI, benchmarks, stress tests, and comprehensive docs.
 
 ## Directory structure
 
@@ -45,9 +45,9 @@ age/
   Dockerfile               # Generated (never edit by hand)
 ```
 
-## Languages (44)
+## Languages (50)
 
-Ada, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Nim, OCaml, Pascal, Perl, PHP, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig
+Ada, Bash, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Mojo, Nim, OCaml, Octave, Odin, Pascal, Perl, Pharo, PHP, PowerShell, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig
 
 ## Locale JSON schema
 
@@ -80,10 +80,10 @@ Plural forms vary by language: one/other (English), zero/one/two/few/many/other 
 
 | Strategy | Languages |
 |----------|-----------|
-| Per-file (one locale per file + barrel) | Clojure, Dart, Elixir, Elm, Erlang, Gleam, Go, Haskell, Lua, OCaml, Perl, Python, Ruby, Rust, Swift, TypeScript |
+| Per-file (one locale per file + barrel) | Bash, Clojure, Dart, Elixir, Elm, Erlang, Gleam, Go, Haskell, Lua, Mojo, OCaml, Octave, Perl, Pharo, PowerShell, Python, Ruby, Rust, Swift, TypeScript |
 | Single-file (all locales in one file) | C#, F#, Groovy, Java, Kotlin, PHP, Scala |
 | Range-split (locales split into alpha ranges) | C, C++, Fortran |
-| Custom | Ada (spec+body pairs), COBOL (copybooks), Zig (comptime) |
+| Custom | Ada (spec+body pairs), COBOL (copybooks), Odin (single-file), Zig (comptime) |
 
 ## Build and test
 

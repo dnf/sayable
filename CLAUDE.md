@@ -2,7 +2,7 @@
 
 ## What this project is
 
-Sayable is a family of zero-dependency formatting libraries for how humans actually speak. The first component is **sayable-age**, which formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 44 identical implementations (Ada, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Nim, OCaml, Pascal, Perl, PHP, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig) and 168 locales.
+Sayable is a family of zero-dependency formatting libraries for how humans actually speak. The first component is **sayable-age**, which formats ages the way parents talk ("6 weeks", "14 months", "3½ years"). It has 50 identical implementations (Ada, Bash, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Mojo, Nim, OCaml, Octave, Odin, Pascal, Perl, Pharo, PHP, PowerShell, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig) and 168 locales.
 
 ## Build and test commands
 
