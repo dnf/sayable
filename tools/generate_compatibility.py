@@ -6,7 +6,7 @@ from __future__ import annotations
 import os
 import sys
 
-_COMPONENTS = ["age", "date", "duration", "time"]
+_COMPONENTS = ["age", "date", "duration", "time", "cli"]
 
 _DISPLAY_NAMES: dict[str, str] = {
     "cobol": "COBOL",
@@ -67,7 +67,7 @@ def _generate() -> str:
     lines.append("<tr>\n")
     lines.append("  <th>Language</th>\n")
     for comp in _COMPONENTS:
-        lines.append(f"  <th>{comp}</th>\n")
+        lines.append(f'  <th align="center">{comp}</th>\n')
     lines.append("</tr>\n")
 
     for dirname in sorted_langs:
@@ -77,10 +77,10 @@ def _generate() -> str:
         for comp in _COMPONENTS:
             if dirname in data[comp]:
                 lines.append(
-                    f'  <td><a href="{comp}/impl/{dirname}/">✅</a></td>\n'
+                    f'  <td align="center"><a href="{comp}/impl/{dirname}/">✅</a></td>\n'
                 )
             else:
-                lines.append("  <td>❌</td>\n")
+                lines.append('  <td align="center">❌</td>\n')
         lines.append("</tr>\n")
 
     lines.append("</table>\n")
