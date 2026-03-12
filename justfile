@@ -195,7 +195,7 @@ test *target:
             elif [ "$_target" = "powershell" ] || [ "$_target" = "ps1" ]; then
                 cd age/impl/powershell && pwsh -NoProfile -File test_format_age.ps1
             elif [ "$_target" = "mojo" ] || [ "$_target" = "mj" ]; then
-                cd age/impl/mojo && mojo test tests/
+                cd age/impl/mojo && mojo run -I src tests/test_format_age.mojo
             elif [ "$_target" = "codegen" ]; then
                 cd age && {{python}} -m unittest codegen.test_locale_groups -v
             else
