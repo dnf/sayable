@@ -81,13 +81,13 @@ fn parse_date(s: String) -> DateParts:
         return result
 
     # Check separator positions
-    if s[4] != "-" or s[7] != "-":
+    if s[4:5] != "-" or s[7:8] != "-":
         return result
 
     # Parse year (positions 0-3)
     var year = 0
     for i in range(4):
-        var d = _char_to_digit(s[i])
+        var d = _char_to_digit(s[i : i + 1])
         if d < 0:
             return result
         year = year * 10 + d
@@ -95,7 +95,7 @@ fn parse_date(s: String) -> DateParts:
     # Parse month (positions 5-6)
     var month = 0
     for i in range(5, 7):
-        var d = _char_to_digit(s[i])
+        var d = _char_to_digit(s[i : i + 1])
         if d < 0:
             return result
         month = month * 10 + d
@@ -103,7 +103,7 @@ fn parse_date(s: String) -> DateParts:
     # Parse day (positions 8-9)
     var day = 0
     for i in range(8, 10):
-        var d = _char_to_digit(s[i])
+        var d = _char_to_digit(s[i : i + 1])
         if d < 0:
             return result
         day = day * 10 + d
@@ -151,24 +151,24 @@ fn parse_age(date_of_birth: String, as_of: String) -> ParsedAge:
     if len(as_of) == 0:
         return result
 
-    var ref = parse_date(as_of)
-    if not ref.valid:
+    var ref_date = parse_date(as_of)
+    if not ref_date.valid:
         return result
 
-    var diff_days = julian_day_number(ref.year, ref.month, ref.day) - julian_day_number(
+    var diff_days = julian_day_number(ref_date.year, ref_date.month, ref_date.day) - julian_day_number(
         dob.year, dob.month, dob.day
     )
     if diff_days < 0:
         return result
 
-    var last_day = days_in_month(ref.year, ref.month)
+    var last_day = days_in_month(ref_date.year, ref_date.month)
     var clamped_birthday: Int
     if dob.day < last_day:
         clamped_birthday = dob.day
     else:
         clamped_birthday = last_day
-    var months = (ref.year - dob.year) * 12 + (ref.month - dob.month)
-    if ref.day < clamped_birthday:
+    var months = (ref_date.year - dob.year) * 12 + (ref_date.month - dob.month)
+    if ref_date.day < clamped_birthday:
         months -= 1
     if months > MAX_AGE_MONTHS:
         return result
