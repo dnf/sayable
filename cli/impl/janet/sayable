@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Shell wrapper for the Janet sayable CLI.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+
+# Janet resolves module paths relative to the working directory,
+# so we must run from the project root for imports to work.
+cd "${PROJECT_ROOT}"
+exec janet "${SCRIPT_DIR}/main.janet" "$@"

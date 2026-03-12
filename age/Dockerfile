@@ -48,7 +48,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rebar3 \
     rlwrap \
     ruby \
+    sbcl \
     swi-prolog \
+    tcl \
     unzip \
     && rm -rf /var/lib/apt/lists/*
 
@@ -78,6 +80,12 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
     BOOTSTRAP_HASKELL_INSTALL_GHC=1 \
     sh
 ENV PATH="/root/.ghcup/bin:${PATH}"
+
+# Janet (built from source — not in standard apt repos)
+RUN cd /tmp && \
+    curl -sL https://github.com/janet-lang/janet/archive/refs/tags/v1.37.1.tar.gz | tar xz && \
+    cd janet-1.37.1 && make -j$(nproc) && make install && \
+    rm -rf /tmp/janet-1.37.1
 
 # Lua testing framework (busted) via LuaRocks
 RUN luarocks install busted
@@ -126,6 +134,11 @@ RUN ARCH="$(dpkg --print-architecture)" && \
 RUN git clone --depth 1 https://github.com/vlang/v.git /opt/v && \
     cd /opt/v && make && \
     ln -s /opt/v/v /usr/local/bin/v
+
+# Build wren_cli from source
+RUN git clone --depth 1 https://github.com/wren-lang/wren-cli.git /tmp/wren-cli && \
+    cd /tmp/wren-cli && make && cp bin/wren_cli /usr/local/bin/wren_cli && \
+    rm -rf /tmp/wren-cli
 
 # Zig
 RUN ARCH="$(dpkg --print-architecture)" && \

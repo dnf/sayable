@@ -69,12 +69,18 @@ haskell/dist-newstyle/
 java/build/
 java/.gradle/
 
+# Janet
+janet/build/
+
 # Julia
 julia/Manifest.toml
 
 # Kotlin
 kotlin/build/
 kotlin/.gradle/
+
+# Lisp
+lisp/*.fasl
 
 # Lua
 lua/luarocks/

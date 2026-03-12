@@ -61,6 +61,13 @@ Which languages are available for each Sayable library.
   <td><a href="time/impl/crystal/">✅</a></td>
 </tr>
 <tr>
+  <td>D</td>
+  <td><a href="age/impl/d/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
   <td>Dart</td>
   <td><a href="age/impl/dart/">✅</a></td>
   <td><a href="date/impl/dart/">✅</a></td>
@@ -131,6 +138,13 @@ Which languages are available for each Sayable library.
   <td><a href="time/impl/haskell/">✅</a></td>
 </tr>
 <tr>
+  <td>Janet</td>
+  <td><a href="age/impl/janet/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
   <td>Java</td>
   <td><a href="age/impl/java/">✅</a></td>
   <td><a href="date/impl/java/">✅</a></td>
@@ -138,11 +152,25 @@ Which languages are available for each Sayable library.
   <td><a href="time/impl/java/">✅</a></td>
 </tr>
 <tr>
+  <td>Julia</td>
+  <td><a href="age/impl/julia/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
   <td>Kotlin</td>
   <td><a href="age/impl/kotlin/">✅</a></td>
   <td><a href="date/impl/kotlin/">✅</a></td>
   <td><a href="duration/impl/kotlin/">✅</a></td>
   <td><a href="time/impl/kotlin/">✅</a></td>
+</tr>
+<tr>
+  <td>Lisp</td>
+  <td><a href="age/impl/lisp/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
 </tr>
 <tr>
   <td>Lua</td>
@@ -166,6 +194,13 @@ Which languages are available for each Sayable library.
   <td><a href="time/impl/ocaml/">✅</a></td>
 </tr>
 <tr>
+  <td>Pascal</td>
+  <td><a href="age/impl/pascal/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
   <td>Perl</td>
   <td><a href="age/impl/perl/">✅</a></td>
   <td><a href="date/impl/perl/">✅</a></td>
@@ -180,6 +215,13 @@ Which languages are available for each Sayable library.
   <td><a href="time/impl/php/">✅</a></td>
 </tr>
 <tr>
+  <td>Prolog</td>
+  <td><a href="age/impl/prolog/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
   <td>Python</td>
   <td><a href="age/impl/python/">✅</a></td>
   <td><a href="date/impl/python/">✅</a></td>
@@ -192,6 +234,20 @@ Which languages are available for each Sayable library.
   <td><a href="date/impl/r/">✅</a></td>
   <td><a href="duration/impl/r/">✅</a></td>
   <td><a href="time/impl/r/">✅</a></td>
+</tr>
+<tr>
+  <td>Racket</td>
+  <td><a href="age/impl/racket/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
+  <td>Raku</td>
+  <td><a href="age/impl/raku/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
 </tr>
 <tr>
   <td>Ruby</td>
@@ -222,6 +278,13 @@ Which languages are available for each Sayable library.
   <td><a href="time/impl/swift/">✅</a></td>
 </tr>
 <tr>
+  <td>Tcl</td>
+  <td><a href="age/impl/tcl/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
   <td>TypeScript</td>
   <td><a href="age/impl/typescript/">✅</a></td>
   <td><a href="date/impl/typescript/">✅</a></td>
@@ -229,11 +292,25 @@ Which languages are available for each Sayable library.
   <td><a href="time/impl/typescript/">✅</a></td>
 </tr>
 <tr>
+  <td>V</td>
+  <td><a href="age/impl/v/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+</tr>
+<tr>
   <td>VB.NET</td>
   <td><a href="age/impl/vbnet/">✅</a></td>
   <td><a href="date/impl/vbnet/">✅</a></td>
   <td><a href="duration/impl/vbnet/">✅</a></td>
   <td><a href="time/impl/vbnet/">✅</a></td>
+</tr>
+<tr>
+  <td>Wren</td>
+  <td><a href="age/impl/wren/">✅</a></td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
 </tr>
 <tr>
   <td>Zig</td>

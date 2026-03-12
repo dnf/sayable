@@ -1,0 +1,298 @@
+#!/usr/bin/env raku
+use v6.d;
+
+# Sayable CLI — unified command-line interface to all four Sayable components.
+# See cli/SPEC.md for the full specification.
+
+# Add component library paths at compile time
+BEGIN {
+    my $root = $*PROGRAM.parent.parent.parent.parent.resolve;
+    for <age date duration time> -> $comp {
+        my $lib-path = $root.child($comp).child('impl').child('raku').child('lib');
+        if $lib-path.d {
+            my $repo = CompUnit::Repository::FileSystem.new(prefix => $lib-path.Str);
+            CompUnit::RepositoryRegistry.use-repository($repo);
+        }
+    }
+}
+
+use SayableAge::Formatter;
+use SayableAge::Locales::Registry;
+use SayableDate::Formatter;
+use SayableDate::Locales::Registry;
+use SayableDuration::Formatter;
+use SayableDuration::Locales::Registry;
+use SayableTime::Formatter;
+use SayableTime::Locales::Registry;
+
+my $VERSION = '0.5.0';
+
+my $HELP = q:to/END/;
+Usage: sayable <command> [arguments] [options]
+
+Commands:
+  age <dob>              Format an age
+  stage <dob>            Get developmental stage
+  date <date>            Format a calendar date
+  relative <date>        Format a relative date
+  time <time>            Format a clock time
+  duration <value> [end] Format a duration
+  since <start>          Format elapsed time
+  until <target>         Format remaining time
+  locales                List available locale codes
+  version                Show version
+  help                   Show this help
+
+Options:
+  -l, --locale <code>    Locale code (default: en)
+  -d, --as-of <value>    Reference date/timestamp
+      --short            Short compactness
+      --compact          Compact compactness
+  -g, --gender <m|f>     Gender for stage labels
+      --with-year        Include year (date only)
+  -h, --help             Show this help
+  -v, --version          Show version
+END
+
+sub cli-error(Str $msg) {
+    $*ERR.say("error: $msg");
+    $*ERR.say("Run 'sayable help' for usage.");
+    exit 2;
+}
+
+sub nullify(Str $value) {
+    return Str if $value eq 'null';
+    return $value;
+}
+
+sub get-today() {
+    return Date.today.Str;
+}
+
+sub parse-args(@argv) {
+    return (Str, [], {}) unless @argv.elems > 0;
+
+    if @argv[0] eq '-h' | '--help' | 'help' {
+        return ('help', [], {});
+    }
+    if @argv[0] eq '-v' | '--version' | 'version' {
+        return ('version', [], {});
+    }
+
+    my $command = @argv[0];
+    my @positionals;
+    my %options = (
+        locale => 'en',
+        as-of => Str,
+        compactness => 'normal',
+        gender => Str,
+        with-year => False,
+    );
+
+    my $i = 1;
+    my $stop-opts = False;
+    while $i < @argv.elems {
+        my $arg = @argv[$i];
+
+        if $arg eq '--' && !$stop-opts {
+            $stop-opts = True;
+            $i++;
+            next;
+        }
+
+        if !$stop-opts && $arg.starts-with('-') {
+            if $arg eq '-l' | '--locale' {
+                cli-error("'$arg' requires a value") if $i + 1 >= @argv.elems;
+                $i++;
+                %options<locale> = @argv[$i];
+            } elsif $arg eq '-d' | '--as-of' {
+                cli-error("'$arg' requires a value") if $i + 1 >= @argv.elems;
+                $i++;
+                %options<as-of> = @argv[$i];
+            } elsif $arg eq '-g' | '--gender' {
+                cli-error("'$arg' requires a value") if $i + 1 >= @argv.elems;
+                $i++;
+                %options<gender> = @argv[$i];
+            } elsif $arg eq '--short' {
+                %options<compactness> = 'short';
+            } elsif $arg eq '--compact' {
+                %options<compactness> = 'compact';
+            } elsif $arg eq '--with-year' {
+                %options<with-year> = True;
+            } elsif $arg eq '-h' | '--help' {
+                return ('help', [], {});
+            } elsif $arg eq '-v' | '--version' {
+                return ('version', [], {});
+            } else {
+                cli-error("unknown option '$arg'");
+            }
+        } else {
+            @positionals.push($arg);
+        }
+
+        $i++;
+    }
+
+    return ($command, @positionals, %options);
+}
+
+sub cmd-age(@pos, %opts) {
+    cli-error('age requires a date-of-birth argument') unless @pos.elems > 0;
+    my $dob = nullify(@pos[0]);
+
+    my $locale-code = %opts<locale>;
+    my $locale = SayableAge::Locales::Registry::get-locale($locale-code);
+    cli-error("unknown locale '$locale-code'") unless $locale.defined;
+
+    my $as-of = %opts<as-of>.defined ?? nullify(%opts<as-of>) !! get-today();
+    my $f = SayableAge::Formatter.new($locale, compactness => %opts<compactness>);
+    my $result = $f.format-age($dob, $as-of);
+    if $result.defined { say $result; } else { exit 1; }
+}
+
+sub cmd-stage(@pos, %opts) {
+    cli-error('stage requires a date-of-birth argument') unless @pos.elems > 0;
+    my $dob = nullify(@pos[0]);
+
+    my $locale-code = %opts<locale>;
+    my $locale = SayableAge::Locales::Registry::get-locale($locale-code);
+    cli-error("unknown locale '$locale-code'") unless $locale.defined;
+
+    my $as-of = %opts<as-of>.defined ?? nullify(%opts<as-of>) !! get-today();
+    my $gender = %opts<gender> // '';
+    my $f = SayableAge::Formatter.new($locale, compactness => %opts<compactness>);
+    my $result = $f.format-stage($dob, $as-of, gender => $gender);
+    if $result.defined { say $result; } else { exit 1; }
+}
+
+sub cmd-date(@pos, %opts) {
+    cli-error('date requires a date argument') unless @pos.elems > 0;
+    my $date-val = nullify(@pos[0]);
+
+    my $locale-code = %opts<locale>;
+    my $locale = SayableDate::Locales::Registry::get-locale($locale-code);
+    cli-error("unknown locale '$locale-code'") unless $locale.defined;
+
+    my $f = SayableDate::Formatter.new($locale, compactness => %opts<compactness>);
+    my $result;
+    if %opts<with-year> {
+        $result = $f.format-date-with-year($date-val);
+    } else {
+        $result = $f.format-date($date-val);
+    }
+    if $result.defined { say $result; } else { exit 1; }
+}
+
+sub cmd-relative(@pos, %opts) {
+    cli-error('relative requires a date argument') unless @pos.elems > 0;
+    my $date-val = nullify(@pos[0]);
+
+    cli-error('relative requires --as-of / -d option') unless %opts<as-of>.defined;
+    my $as-of = nullify(%opts<as-of>);
+
+    my $locale-code = %opts<locale>;
+    my $locale = SayableDate::Locales::Registry::get-locale($locale-code);
+    cli-error("unknown locale '$locale-code'") unless $locale.defined;
+
+    my $f = SayableDate::Formatter.new($locale, compactness => %opts<compactness>);
+    my $result = $f.format-relative($date-val, as-of => $as-of);
+    if $result.defined { say $result; } else { exit 1; }
+}
+
+sub cmd-time(@pos, %opts) {
+    cli-error('time requires a time argument') unless @pos.elems > 0;
+    my $time-val = nullify(@pos[0]);
+
+    my $locale-code = %opts<locale>;
+    my $locale = SayableTime::Locales::Registry::get-locale($locale-code);
+    cli-error("unknown locale '$locale-code'") unless $locale.defined;
+
+    my $f = SayableTime::Formatter.new($locale, compactness => %opts<compactness>);
+    my $result = $f.format-time($time-val);
+    if $result.defined { say $result; } else { exit 1; }
+}
+
+sub cmd-duration(@pos, %opts) {
+    cli-error('duration requires a value argument') unless @pos.elems > 0;
+    my $value = nullify(@pos[0]);
+
+    my $locale-code = %opts<locale>;
+    my $locale = SayableDuration::Locales::Registry::get-locale($locale-code);
+    cli-error("unknown locale '$locale-code'") unless $locale.defined;
+
+    my $f = SayableDuration::Formatter.new($locale, compactness => %opts<compactness>);
+    my $result;
+    if !$value.defined {
+        $result = $f.format-duration(Int);
+    } elsif $value ~~ /^ '-'? \d+ $/ {
+        $result = $f.format-duration($value.Int);
+    } else {
+        cli-error('duration with timestamps requires start and end arguments') unless @pos.elems >= 2;
+        my $end = nullify(@pos[1]);
+        $result = $f.format-duration($value, $end);
+    }
+    if $result.defined { say $result; } else { exit 1; }
+}
+
+sub cmd-since(@pos, %opts) {
+    cli-error('since requires a start timestamp argument') unless @pos.elems > 0;
+    my $start = nullify(@pos[0]);
+
+    cli-error('since requires --as-of / -d option') unless %opts<as-of>.defined;
+    my $as-of = nullify(%opts<as-of>);
+
+    my $locale-code = %opts<locale>;
+    my $locale = SayableDuration::Locales::Registry::get-locale($locale-code);
+    cli-error("unknown locale '$locale-code'") unless $locale.defined;
+
+    my $f = SayableDuration::Formatter.new($locale, compactness => %opts<compactness>);
+    my $result = $f.format-since($start, $as-of);
+    if $result.defined { say $result; } else { exit 1; }
+}
+
+sub cmd-until(@pos, %opts) {
+    cli-error('until requires a target timestamp argument') unless @pos.elems > 0;
+    my $target = nullify(@pos[0]);
+
+    cli-error('until requires --as-of / -d option') unless %opts<as-of>.defined;
+    my $as-of = nullify(%opts<as-of>);
+
+    my $locale-code = %opts<locale>;
+    my $locale = SayableDuration::Locales::Registry::get-locale($locale-code);
+    cli-error("unknown locale '$locale-code'") unless $locale.defined;
+
+    my $f = SayableDuration::Formatter.new($locale, compactness => %opts<compactness>);
+    my $result = $f.format-until($target, $as-of);
+    if $result.defined { say $result; } else { exit 1; }
+}
+
+sub cmd-locales() {
+    say 'en';
+}
+
+sub MAIN(*@args) {
+    my @parsed = parse-args(@args);
+    my $command = @parsed[0];
+    my @positionals = @parsed[1].list;
+    my %options = @parsed[2];
+
+    if !$command.defined {
+        print $HELP;
+        exit 2;
+    }
+
+    given $command {
+        when 'help'     { print $HELP; exit 0; }
+        when 'version'  { say "sayable $VERSION"; exit 0; }
+        when 'locales'  { cmd-locales(); exit 0; }
+        when 'age'      { cmd-age(@positionals, %options); }
+        when 'stage'    { cmd-stage(@positionals, %options); }
+        when 'date'     { cmd-date(@positionals, %options); }
+        when 'relative' { cmd-relative(@positionals, %options); }
+        when 'time'     { cmd-time(@positionals, %options); }
+        when 'duration' { cmd-duration(@positionals, %options); }
+        when 'since'    { cmd-since(@positionals, %options); }
+        when 'until'    { cmd-until(@positionals, %options); }
+        default         { cli-error("unknown command '$command'"); }
+    }
+}

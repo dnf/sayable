@@ -20,6 +20,9 @@ impl/cobol/build/
 # Crystal
 impl/crystal/sayable-crystal
 
+# D
+impl/d/sayable
+
 # Dart
 impl/dart/.dart_tool/
 impl/dart/pubspec.lock
@@ -57,6 +60,9 @@ impl/haskell/dist-newstyle/
 # Java
 impl/java/build/
 
+# Julia
+impl/julia/Manifest.toml
+
 # Kotlin
 impl/kotlin/build/
 
@@ -67,6 +73,9 @@ impl/nim/sayable-nim
 impl/ocaml/_build/
 impl/ocaml/bin/
 
+# Pascal
+impl/pascal/build/
+
 # Rust
 impl/rust/target/
 
@@ -76,6 +85,9 @@ impl/scala/build/
 # Swift
 impl/swift/.build/
 impl/swift/.deps/
+
+# V
+impl/v/build/
 
 # VB.NET
 impl/vbnet/bin/

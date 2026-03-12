@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Sayable CLI wrapper for Wren.
+# Handles exit codes and stderr since wren_cli 0.4.0 lacks Process.exit() and Stderr.
+#
+# Protocol: The Wren script prints special prefixes to stdout:
+#   __EXIT_1__           = null result (exit 1, no stdout)
+#   __EXIT_2__<message>  = usage error (exit 2, message to stderr)
+#   __EXIT_2_HELP__      = no args (exit 2, print help to stderr)
+#   Otherwise            = success (exit 0, print to stdout)
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Capture all output (wren_cli writes everything to stdout)
+output=$(wren_cli "${SCRIPT_DIR}/main.wren" "$@" 2>/dev/null) || {
+    # Fiber.abort was called — check output for our exit protocol
+    if [[ "${output}" == "__EXIT_1__" ]]; then
+        exit 1
+    elif [[ "${output}" == __EXIT_2__* ]]; then
+        msg="${output#__EXIT_2__}"
+        echo "error: ${msg}" >&2
+        echo "Run 'sayable help' for usage." >&2
+        exit 2
+    elif [[ "${output}" == "__EXIT_2_HELP__" ]]; then
+        # Print help to stderr when no args given
+        wren_cli "${SCRIPT_DIR}/main.wren" help 2>/dev/null >&2
+        exit 2
+    else
+        # Unknown error from wren
+        echo "${output}" >&2
+        exit 2
+    fi
+}
+
+# Normal success — print output
+if [[ -n "${output}" ]]; then
+    echo "${output}"
+fi

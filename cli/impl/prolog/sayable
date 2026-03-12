@@ -1,0 +1,8 @@
+#!/bin/sh
+# Sayable CLI -- SWI-Prolog implementation.
+# See cli/SPEC.md for the full specification.
+
+# Resolve the directory this script lives in.
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+exec swipl -g main -t halt "${SCRIPT_DIR}/main.pl" -- "$@"

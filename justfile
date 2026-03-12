@@ -164,6 +164,14 @@ test *target:
                 cd age/impl/raku && prove6 -Ilib t/
             elif [ "$_target" = "v" ]; then
                 cd age/impl/v && v test .
+            elif [ "$_target" = "lisp" ] || [ "$_target" = "cl" ]; then
+                cd age/impl/lisp && sbcl --noinform --non-interactive --load package.lisp --load types.lisp --load formatter.lisp --load load-locales.lisp --load test/test-formatter.lisp --eval '(sayable-age-test:run-tests)'
+            elif [ "$_target" = "tcl" ]; then
+                cd age/impl/tcl && tclsh test_format_age.tcl
+            elif [ "$_target" = "wren" ]; then
+                cd age/impl/wren && wren_cli test_format_age.wren
+            elif [ "$_target" = "janet" ] || [ "$_target" = "jt" ]; then
+                cd age/impl/janet && janet test_format_age.janet
             elif [ "$_target" = "codegen" ]; then
                 cd age && {{python}} -m unittest codegen.test_locale_groups -v
             else
@@ -688,7 +696,9 @@ clean *target:
         rm -rf age/impl/raku/.precomp
     elif [ "$_target" = "v" ]; then
         rm -rf age/impl/v/v
-    elif [ "$_target" = "go" ] || [ "$_target" = "julia" ] || [ "$_target" = "jl" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ]; then
+    elif [ "$_target" = "lisp" ] || [ "$_target" = "cl" ]; then
+        rm -f age/impl/lisp/*.fasl
+    elif [ "$_target" = "go" ] || [ "$_target" = "julia" ] || [ "$_target" = "jl" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ] || [ "$_target" = "tcl" ] || [ "$_target" = "wren" ] || [ "$_target" = "janet" ] || [ "$_target" = "jt" ]; then
         echo "No build artifacts for: $_target"
     else
         echo "Unknown target: $_target (try 'just clean help')" >&2

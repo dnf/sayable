@@ -189,6 +189,30 @@ def _clean_r(selected: set[str], all_codes: set[str], check: bool, diffs: list[s
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_janet(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.janet.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_lisp(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.lisp.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_tcl(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.tcl.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_wren(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.wren.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 def _clean_d(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
     from codegen.targets.d.emitter import output_path
     for code in sorted(all_codes - selected):
@@ -230,6 +254,10 @@ _PER_FILE_CLEANERS = {
     "d": _clean_d,
     "raku": _clean_raku,
     "v": _clean_v,
+    "lisp": _clean_lisp,
+    "tcl": _clean_tcl,
+    "wren": _clean_wren,
+    "janet": _clean_janet,
 }
 
 
@@ -707,6 +735,58 @@ def generate_pascal(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_lisp(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.lisp.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_tcl(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.tcl.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_wren(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.wren.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_janet(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.janet.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 _GENERATORS = {
     "ada": generate_ada,
     "typescript": generate_typescript,
@@ -748,6 +828,10 @@ _GENERATORS = {
     "d": generate_d,
     "raku": generate_raku,
     "v": generate_v,
+    "lisp": generate_lisp,
+    "tcl": generate_tcl,
+    "wren": generate_wren,
+    "janet": generate_janet,
 }
 
 

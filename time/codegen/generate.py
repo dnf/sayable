@@ -532,11 +532,209 @@ _PER_FILE_CLEANERS["nim"] = _clean_nim
 _PER_FILE_CLEANERS["r"] = _clean_r
 
 
+def _clean_v(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.v.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_janet(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.janet.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_julia(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.julia.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_lisp(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.lisp.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_prolog(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.prolog.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_racket(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.racket.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_raku(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.raku.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_tcl(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.tcl.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_wren(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.wren.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+_PER_FILE_CLEANERS["v"] = _clean_v
+_PER_FILE_CLEANERS["janet"] = _clean_janet
+_PER_FILE_CLEANERS["julia"] = _clean_julia
+_PER_FILE_CLEANERS["lisp"] = _clean_lisp
+_PER_FILE_CLEANERS["prolog"] = _clean_prolog
+_PER_FILE_CLEANERS["racket"] = _clean_racket
+_PER_FILE_CLEANERS["raku"] = _clean_raku
+_PER_FILE_CLEANERS["tcl"] = _clean_tcl
+_PER_FILE_CLEANERS["wren"] = _clean_wren
+
+
+def generate_v(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.v.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_vbnet(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.vbnet.emitter import emit_all, output_path
 
     path = output_path(ROOT)
     content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_d(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.d.emitter import barrel_path, emit_barrel
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_julia(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.julia.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_prolog(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.prolog.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_raku(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.raku.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_racket(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.racket.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_pascal(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.pascal.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_lisp(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.lisp.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_tcl(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.tcl.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_wren(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.wren.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_janet(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.janet.emitter import emit_locale, emit_registry, output_path, registry_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = registry_path(ROOT)
+    content = emit_registry(locales)
     _write_or_check(path, content, check, diffs)
 
 
@@ -548,6 +746,7 @@ _GENERATORS = {
     "cpp": generate_cpp,
     "crystal": generate_crystal,
     "csharp": generate_csharp,
+    "d": generate_d,
     "dart": generate_dart,
     "elixir": generate_elixir,
     "elm": generate_elm,
@@ -558,22 +757,32 @@ _GENERATORS = {
     "go": generate_go,
     "groovy": generate_groovy,
     "haskell": generate_haskell,
+    "janet": generate_janet,
     "java": generate_java,
+    "julia": generate_julia,
     "kotlin": generate_kotlin,
+    "lisp": generate_lisp,
     "lua": generate_lua,
+    "nim": generate_nim,
     "ocaml": generate_ocaml,
+    "pascal": generate_pascal,
     "perl": generate_perl,
     "php": generate_php,
+    "prolog": generate_prolog,
     "python": generate_python,
+    "r": generate_r,
+    "racket": generate_racket,
+    "raku": generate_raku,
     "ruby": generate_ruby,
     "rust": generate_rust,
     "scala": generate_scala,
     "swift": generate_swift,
+    "tcl": generate_tcl,
     "typescript": generate_typescript,
-    "zig": generate_zig,
-    "r": generate_r,
-    "nim": generate_nim,
+    "v": generate_v,
     "vbnet": generate_vbnet,
+    "wren": generate_wren,
+    "zig": generate_zig,
 }
 
 

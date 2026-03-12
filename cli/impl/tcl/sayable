@@ -1,0 +1,465 @@
+#!/usr/bin/env tclsh
+# Sayable CLI — unified command-line interface to all four Sayable components.
+# See cli/SPEC.md for the full specification.
+
+set VERSION "0.5.0"
+
+# Find project root (cli/impl/tcl -> project root)
+set script_dir [file dirname [file normalize [info script]]]
+set project_root [file normalize [file join $script_dir .. .. ..]]
+
+# Source all component libraries
+source [file join $project_root age impl tcl sayableage.tcl]
+source [file join $project_root date impl tcl format_date.tcl]
+source [file join $project_root duration impl tcl format_duration.tcl]
+source [file join $project_root time impl tcl format_time.tcl]
+
+# Pre-load age locale registry (age uses info script internally,
+# which resolves to this CLI file, so we load it explicitly)
+source [file join $project_root age impl tcl locales registry.tcl]
+set ::sayableage::_registry_loaded 1
+
+set HELP {Usage: sayable <command> [arguments] [options]
+
+Commands:
+  age <dob>              Format an age
+  stage <dob>            Get developmental stage
+  date <date>            Format a calendar date
+  relative <date>        Format a relative date
+  time <time>            Format a clock time
+  duration <value> [end] Format a duration
+  since <start>          Format elapsed time
+  until <target>         Format remaining time
+  locales                List available locale codes
+  version                Show version
+  help                   Show this help
+
+Options:
+  -l, --locale <code>    Locale code (default: en)
+  -d, --as-of <value>    Reference date/timestamp
+      --short            Short compactness
+      --compact          Compact compactness
+  -g, --gender <m|f>     Gender for stage labels
+      --with-year        Include year (date only)
+  -h, --help             Show this help
+  -v, --version          Show version}
+
+proc cli_error {msg} {
+    puts stderr "error: $msg"
+    puts stderr "Run 'sayable help' for usage."
+    exit 2
+}
+
+proc nullify {value} {
+    # Convert CLI "null" sentinel to empty string (our Tcl null equivalent)
+    if {$value eq "null"} {
+        return "_NULL_"
+    }
+    return $value
+}
+
+proc is_null {value} {
+    return [expr {$value eq "_NULL_"}]
+}
+
+proc get_today {} {
+    set now [clock seconds]
+    return [clock format $now -format "%Y-%m-%d"]
+}
+
+proc parse_args {argv} {
+    if {[llength $argv] == 0} {
+        return [list "" {} [dict create locale en as_of "" compactness normal gender "" with_year 0]]
+    }
+
+    set first [lindex $argv 0]
+    if {$first eq "-h" || $first eq "--help" || $first eq "help"} {
+        return [list "help" {} [dict create]]
+    }
+    if {$first eq "-v" || $first eq "--version" || $first eq "version"} {
+        return [list "version" {} [dict create]]
+    }
+
+    set command $first
+    set positionals {}
+    set options [dict create locale en as_of "" compactness normal gender "" with_year 0]
+
+    set i 1
+    set stop_opts 0
+    while {$i < [llength $argv]} {
+        set arg [lindex $argv $i]
+
+        if {$arg eq "--" && !$stop_opts} {
+            set stop_opts 1
+            incr i
+            continue
+        }
+
+        if {!$stop_opts && [string index $arg 0] eq "-" && ![string is integer -strict $arg]} {
+            if {$arg eq "-l" || $arg eq "--locale"} {
+                incr i
+                if {$i >= [llength $argv]} {
+                    cli_error "'$arg' requires a value"
+                }
+                dict set options locale [lindex $argv $i]
+            } elseif {$arg eq "-d" || $arg eq "--as-of"} {
+                incr i
+                if {$i >= [llength $argv]} {
+                    cli_error "'$arg' requires a value"
+                }
+                dict set options as_of [lindex $argv $i]
+            } elseif {$arg eq "-g" || $arg eq "--gender"} {
+                incr i
+                if {$i >= [llength $argv]} {
+                    cli_error "'$arg' requires a value"
+                }
+                dict set options gender [lindex $argv $i]
+            } elseif {$arg eq "--short"} {
+                dict set options compactness short
+            } elseif {$arg eq "--compact"} {
+                dict set options compactness compact
+            } elseif {$arg eq "--with-year"} {
+                dict set options with_year 1
+            } elseif {$arg eq "-h" || $arg eq "--help"} {
+                return [list "help" {} [dict create]]
+            } elseif {$arg eq "-v" || $arg eq "--version"} {
+                return [list "version" {} [dict create]]
+            } else {
+                cli_error "unknown option '$arg'"
+            }
+        } else {
+            lappend positionals $arg
+        }
+
+        incr i
+    }
+
+    return [list $command $positionals $options]
+}
+
+proc cmd_age {positionals options} {
+    if {[llength $positionals] == 0} {
+        cli_error "age requires a date-of-birth argument"
+    }
+    set dob [nullify [lindex $positionals 0]]
+
+    set locale_code [dict get $options locale]
+    set locale [::sayableage::get_locale $locale_code]
+    if {$locale eq ""} {
+        cli_error "unknown locale '$locale_code'"
+    }
+
+    set as_of [dict get $options as_of]
+    if {$as_of ne ""} {
+        set as_of [nullify $as_of]
+    } else {
+        set as_of [get_today]
+    }
+
+    set compactness [dict get $options compactness]
+    set formatter [::sayableage::new $locale $compactness]
+
+    if {[is_null $dob]} {
+        set result [::sayableage::format_age $formatter "" $as_of]
+    } elseif {[is_null $as_of]} {
+        set result [::sayableage::format_age $formatter $dob ""]
+    } else {
+        set result [::sayableage::format_age $formatter $dob $as_of]
+    }
+
+    if {$result eq ""} {
+        exit 1
+    }
+    puts $result
+}
+
+proc cmd_stage {positionals options} {
+    if {[llength $positionals] == 0} {
+        cli_error "stage requires a date-of-birth argument"
+    }
+    set dob [nullify [lindex $positionals 0]]
+
+    set locale_code [dict get $options locale]
+    set locale [::sayableage::get_locale $locale_code]
+    if {$locale eq ""} {
+        cli_error "unknown locale '$locale_code'"
+    }
+
+    set as_of [dict get $options as_of]
+    if {$as_of ne ""} {
+        set as_of [nullify $as_of]
+    } else {
+        set as_of [get_today]
+    }
+
+    set gender [dict get $options gender]
+    set compactness [dict get $options compactness]
+    set formatter [::sayableage::new $locale $compactness]
+
+    if {[is_null $dob]} {
+        set result [::sayableage::format_stage $formatter "" $as_of $gender]
+    } elseif {[is_null $as_of]} {
+        set result [::sayableage::format_stage $formatter $dob "" $gender]
+    } else {
+        set result [::sayableage::format_stage $formatter $dob $as_of $gender]
+    }
+
+    if {$result eq ""} {
+        exit 1
+    }
+    puts $result
+}
+
+proc cmd_date {positionals options} {
+    if {[llength $positionals] == 0} {
+        cli_error "date requires a date argument"
+    }
+    set date_val [nullify [lindex $positionals 0]]
+
+    set locale_code [dict get $options locale]
+    set locale [::sayabledate::get_locale $locale_code]
+    if {$locale eq ""} {
+        cli_error "unknown locale '$locale_code'"
+    }
+
+    set compactness [dict get $options compactness]
+    set formatter [::sayabledate::new $locale $compactness]
+
+    if {[is_null $date_val]} {
+        set date_val ""
+    }
+
+    if {[dict get $options with_year]} {
+        set result [::sayabledate::format_date_with_year $formatter $date_val]
+    } else {
+        set result [::sayabledate::format_date $formatter $date_val]
+    }
+
+    if {$result eq ""} {
+        exit 1
+    }
+    puts $result
+}
+
+proc cmd_relative {positionals options} {
+    if {[llength $positionals] == 0} {
+        cli_error "relative requires a date argument"
+    }
+    set date_val [nullify [lindex $positionals 0]]
+
+    set as_of [dict get $options as_of]
+    if {$as_of eq ""} {
+        cli_error "relative requires --as-of / -d option"
+    }
+    set as_of [nullify $as_of]
+
+    set locale_code [dict get $options locale]
+    set locale [::sayabledate::get_locale $locale_code]
+    if {$locale eq ""} {
+        cli_error "unknown locale '$locale_code'"
+    }
+
+    set compactness [dict get $options compactness]
+    set formatter [::sayabledate::new $locale $compactness]
+
+    if {[is_null $date_val]} {
+        set result [::sayabledate::format_relative $formatter "" $as_of]
+    } elseif {[is_null $as_of]} {
+        set result [::sayabledate::format_relative $formatter $date_val ""]
+    } else {
+        set result [::sayabledate::format_relative $formatter $date_val $as_of]
+    }
+
+    if {$result eq ""} {
+        exit 1
+    }
+    puts $result
+}
+
+proc cmd_time {positionals options} {
+    if {[llength $positionals] == 0} {
+        cli_error "time requires a time argument"
+    }
+    set time_val [nullify [lindex $positionals 0]]
+
+    set locale_code [dict get $options locale]
+    set locale [::sayabletime::get_locale $locale_code]
+    if {$locale eq ""} {
+        cli_error "unknown locale '$locale_code'"
+    }
+
+    set compactness [dict get $options compactness]
+    set formatter [::sayabletime::new $locale $compactness]
+
+    if {[is_null $time_val]} {
+        set result [::sayabletime::format_time $formatter ""]
+    } else {
+        set result [::sayabletime::format_time $formatter $time_val]
+    }
+
+    if {$result eq ""} {
+        exit 1
+    }
+    puts $result
+}
+
+proc cmd_duration {positionals options} {
+    if {[llength $positionals] == 0} {
+        cli_error "duration requires a value argument"
+    }
+    set value [nullify [lindex $positionals 0]]
+
+    set locale_code [dict get $options locale]
+    set locale [::sayableduration::get_locale $locale_code]
+    if {$locale eq ""} {
+        cli_error "unknown locale '$locale_code'"
+    }
+
+    set compactness [dict get $options compactness]
+    set formatter [::sayableduration::new $locale $compactness]
+
+    if {[is_null $value]} {
+        set result [::sayableduration::format_duration $formatter ""]
+    } elseif {[string is integer -strict $value]} {
+        set result [::sayableduration::format_duration $formatter $value]
+    } else {
+        # Timestamp mode: need end argument
+        if {[llength $positionals] < 2} {
+            cli_error "duration with timestamps requires start and end arguments"
+        }
+        set end_val [nullify [lindex $positionals 1]]
+        if {[is_null $end_val]} {
+            set result [::sayableduration::format_duration $formatter $value ""]
+        } else {
+            set result [::sayableduration::format_duration $formatter $value $end_val]
+        }
+    }
+
+    if {$result eq ""} {
+        exit 1
+    }
+    puts $result
+}
+
+proc cmd_since {positionals options} {
+    if {[llength $positionals] == 0} {
+        cli_error "since requires a start timestamp argument"
+    }
+    set start [nullify [lindex $positionals 0]]
+
+    set as_of [dict get $options as_of]
+    if {$as_of eq ""} {
+        cli_error "since requires --as-of / -d option"
+    }
+    set as_of [nullify $as_of]
+
+    set locale_code [dict get $options locale]
+    set locale [::sayableduration::get_locale $locale_code]
+    if {$locale eq ""} {
+        cli_error "unknown locale '$locale_code'"
+    }
+
+    set compactness [dict get $options compactness]
+    set formatter [::sayableduration::new $locale $compactness]
+
+    if {[is_null $start]} {
+        set result [::sayableduration::format_since $formatter "" $as_of]
+    } elseif {[is_null $as_of]} {
+        set result [::sayableduration::format_since $formatter $start ""]
+    } else {
+        set result [::sayableduration::format_since $formatter $start $as_of]
+    }
+
+    if {$result eq ""} {
+        exit 1
+    }
+    puts $result
+}
+
+proc cmd_until {positionals options} {
+    if {[llength $positionals] == 0} {
+        cli_error "until requires a target timestamp argument"
+    }
+    set target [nullify [lindex $positionals 0]]
+
+    set as_of [dict get $options as_of]
+    if {$as_of eq ""} {
+        cli_error "until requires --as-of / -d option"
+    }
+    set as_of [nullify $as_of]
+
+    set locale_code [dict get $options locale]
+    set locale [::sayableduration::get_locale $locale_code]
+    if {$locale eq ""} {
+        cli_error "unknown locale '$locale_code'"
+    }
+
+    set compactness [dict get $options compactness]
+    set formatter [::sayableduration::new $locale $compactness]
+
+    if {[is_null $target]} {
+        set result [::sayableduration::format_until $formatter "" $as_of]
+    } elseif {[is_null $as_of]} {
+        set result [::sayableduration::format_until $formatter $target ""]
+    } else {
+        set result [::sayableduration::format_until $formatter $target $as_of]
+    }
+
+    if {$result eq ""} {
+        exit 1
+    }
+    puts $result
+}
+
+proc cmd_locales {} {
+    # Use age locales as the canonical list (all components share the same set)
+    ::sayableage::_ensure_registry
+    set codes {}
+    dict for {code _} $::_sayableage_registry {
+        lappend codes $code
+    }
+    foreach code [lsort $codes] {
+        puts $code
+    }
+}
+
+# --- Main ---
+proc main {} {
+    global VERSION HELP argv
+
+    lassign [parse_args $argv] command positionals options
+
+    if {$command eq ""} {
+        puts $HELP
+        exit 2
+    }
+
+    if {$command eq "help"} {
+        puts $HELP
+        exit 0
+    }
+
+    if {$command eq "version"} {
+        puts "sayable $VERSION"
+        exit 0
+    }
+
+    if {$command eq "locales"} {
+        cmd_locales
+        exit 0
+    }
+
+    switch -- $command {
+        age       { cmd_age $positionals $options }
+        stage     { cmd_stage $positionals $options }
+        date      { cmd_date $positionals $options }
+        relative  { cmd_relative $positionals $options }
+        time      { cmd_time $positionals $options }
+        duration  { cmd_duration $positionals $options }
+        since     { cmd_since $positionals $options }
+        until     { cmd_until $positionals $options }
+        default   { cli_error "unknown command '$command'" }
+    }
+}
+
+main

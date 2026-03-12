@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Wrapper script: builds the V CLI if needed, then runs it.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
+BINARY="${SCRIPT_DIR}/build/sayable"
+
+if [[ ! -x "${BINARY}" ]]; then
+    mkdir -p "${SCRIPT_DIR}/build"
+    v -o "${BINARY}" "${SCRIPT_DIR}/sayable.v" >&2
+fi
+
+exec "${BINARY}" "$@"

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Sayable CLI wrapper for Common Lisp (SBCL).
+# Loads all four component libraries and runs the CLI.
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+
+exec sbcl --noinform --non-interactive --disable-debugger \
+  --load "${PROJECT_ROOT}/age/impl/lisp/package.lisp" \
+  --load "${PROJECT_ROOT}/age/impl/lisp/types.lisp" \
+  --load "${PROJECT_ROOT}/age/impl/lisp/formatter.lisp" \
+  --load "${PROJECT_ROOT}/age/impl/lisp/load-locales.lisp" \
+  --load "${PROJECT_ROOT}/date/impl/lisp/package.lisp" \
+  --load "${PROJECT_ROOT}/date/impl/lisp/types.lisp" \
+  --load "${PROJECT_ROOT}/date/impl/lisp/formatter.lisp" \
+  --load "${PROJECT_ROOT}/date/impl/lisp/load-locales.lisp" \
+  --load "${PROJECT_ROOT}/duration/impl/lisp/package.lisp" \
+  --load "${PROJECT_ROOT}/duration/impl/lisp/types.lisp" \
+  --load "${PROJECT_ROOT}/duration/impl/lisp/formatter.lisp" \
+  --load "${PROJECT_ROOT}/duration/impl/lisp/load-locales.lisp" \
+  --load "${PROJECT_ROOT}/time/impl/lisp/package.lisp" \
+  --load "${PROJECT_ROOT}/time/impl/lisp/types.lisp" \
+  --load "${PROJECT_ROOT}/time/impl/lisp/formatter.lisp" \
+  --load "${PROJECT_ROOT}/time/impl/lisp/load-locales.lisp" \
+  --load "${SCRIPT_DIR}/main.lisp" \
+  "$@"
