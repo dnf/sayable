@@ -25,11 +25,20 @@
                WHEN "az"
                    PERFORM INIT-LOCALE-AZ
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bci"
+                   PERFORM INIT-LOCALE-BCI
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "be"
                    PERFORM INIT-LOCALE-BE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bem"
+                   PERFORM INIT-LOCALE-BEM
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "bg"
                    PERFORM INIT-LOCALE-BG
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bm"
+                   PERFORM INIT-LOCALE-BM
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "bn"
                    PERFORM INIT-LOCALE-BN
@@ -58,6 +67,18 @@
                WHEN "de"
                    PERFORM INIT-LOCALE-DE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "din"
+                   PERFORM INIT-LOCALE-DIN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "dje"
+                   PERFORM INIT-LOCALE-DJE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "dyu"
+                   PERFORM INIT-LOCALE-DYU
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ee"
+                   PERFORM INIT-LOCALE-EE
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "el"
                    PERFORM INIT-LOCALE-EL
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -76,6 +97,9 @@
                WHEN "fa"
                    PERFORM INIT-LOCALE-FA
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "fan"
+                   PERFORM INIT-LOCALE-FAN
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ff"
                    PERFORM INIT-LOCALE-FF
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -84,6 +108,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "fil"
                    PERFORM INIT-LOCALE-FIL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "fon"
+                   PERFORM INIT-LOCALE-FON
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "fr"
                    PERFORM INIT-LOCALE-FR
@@ -148,6 +175,9 @@
                WHEN "ka"
                    PERFORM INIT-LOCALE-KA
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "kbp"
+                   PERFORM INIT-LOCALE-KBP
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "kk"
                    PERFORM INIT-LOCALE-KK
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -159,6 +189,12 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ko"
                    PERFORM INIT-LOCALE-KO
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "kpe"
+                   PERFORM INIT-LOCALE-KPE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ktu"
+                   PERFORM INIT-LOCALE-KTU
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ku"
                    PERFORM INIT-LOCALE-KU
@@ -184,6 +220,12 @@
                WHEN "lv"
                    PERFORM INIT-LOCALE-LV
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "men"
+                   PERFORM INIT-LOCALE-MEN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mfe"
+                   PERFORM INIT-LOCALE-MFE
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mg"
                    PERFORM INIT-LOCALE-MG
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -198,6 +240,12 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mn"
                    PERFORM INIT-LOCALE-MN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mnk"
+                   PERFORM INIT-LOCALE-MNK
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mos"
+                   PERFORM INIT-LOCALE-MOS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mr"
                    PERFORM INIT-LOCALE-MR
@@ -214,11 +262,23 @@
                WHEN "nb"
                    PERFORM INIT-LOCALE-NB
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nd"
+                   PERFORM INIT-LOCALE-ND
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ne"
                    PERFORM INIT-LOCALE-NE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ng"
+                   PERFORM INIT-LOCALE-NG
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "nl"
                    PERFORM INIT-LOCALE-NL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nso"
+                   PERFORM INIT-LOCALE-NSO
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nus"
+                   PERFORM INIT-LOCALE-NUS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ny"
                    PERFORM INIT-LOCALE-NY
@@ -234,6 +294,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "pl"
                    PERFORM INIT-LOCALE-PL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "pov"
+                   PERFORM INIT-LOCALE-POV
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ps"
                    PERFORM INIT-LOCALE-PS
@@ -253,8 +316,14 @@
                WHEN "rw"
                    PERFORM INIT-LOCALE-RW
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "sar"
+                   PERFORM INIT-LOCALE-SAR
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "sd"
                    PERFORM INIT-LOCALE-SD
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "sg"
+                   PERFORM INIT-LOCALE-SG
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "shi"
                    PERFORM INIT-LOCALE-SHI
@@ -271,6 +340,9 @@
                WHEN "sn"
                    PERFORM INIT-LOCALE-SN
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "snk"
+                   PERFORM INIT-LOCALE-SNK
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "so"
                    PERFORM INIT-LOCALE-SO
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -280,8 +352,17 @@
                WHEN "sr"
                    PERFORM INIT-LOCALE-SR
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ss"
+                   PERFORM INIT-LOCALE-SS
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "st"
+                   PERFORM INIT-LOCALE-ST
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "su"
                    PERFORM INIT-LOCALE-SU
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "suk"
+                   PERFORM INIT-LOCALE-SUK
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "sv"
                    PERFORM INIT-LOCALE-SV
@@ -295,6 +376,9 @@
                WHEN "te"
                    PERFORM INIT-LOCALE-TE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tem"
+                   PERFORM INIT-LOCALE-TEM
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tg"
                    PERFORM INIT-LOCALE-TG
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -304,17 +388,29 @@
                WHEN "ti"
                    PERFORM INIT-LOCALE-TI
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tig"
+                   PERFORM INIT-LOCALE-TIG
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tk"
                    PERFORM INIT-LOCALE-TK
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tn"
+                   PERFORM INIT-LOCALE-TN
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tr"
                    PERFORM INIT-LOCALE-TR
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ts"
+                   PERFORM INIT-LOCALE-TS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tzm"
                    PERFORM INIT-LOCALE-TZM
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "uk"
                    PERFORM INIT-LOCALE-UK
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "umb"
+                   PERFORM INIT-LOCALE-UMB
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ur"
                    PERFORM INIT-LOCALE-UR
@@ -325,6 +421,12 @@
                WHEN "vi"
                    PERFORM INIT-LOCALE-VI
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "vmw"
+                   PERFORM INIT-LOCALE-VMW
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "wo"
+                   PERFORM INIT-LOCALE-WO
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "xh"
                    PERFORM INIT-LOCALE-XH
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -333,6 +435,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "yue"
                    PERFORM INIT-LOCALE-YUE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "zdj"
+                   PERFORM INIT-LOCALE-ZDJ
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "zh"
                    PERFORM INIT-LOCALE-ZH
@@ -1797,6 +1902,146 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/bci.json
+       INIT-LOCALE-BCI.
+           MOVE "bci" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "cɛn {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "lemɔcuɛ {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "anglɛ {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "afuɛ {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} nin sin"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Ba nɔn kaan"
+               TO WS-ACT-JUST-BORN
+           MOVE "Ba nɔn kaan wɛ" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Ba nɔn" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Ba kanngan" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Ba" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Gbanflɛn" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Sran kpɛnngbɛn" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "cɛn {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "lem. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "ang. {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "af. {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "cɛn {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "lem {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "ang {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "af {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/be.json
        INIT-LOCALE-BE.
            MOVE "be" TO WS-ACT-CODE
@@ -1997,6 +2242,210 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/bem.json
+       INIT-LOCALE-BEM.
+           MOVE "bem" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "ubushiku {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "inshiku {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "umulungu {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "imilungu {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "umweshi {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "imyeshi {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "umwaka {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "imyaka {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} na hafu"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Umwana uwafyalwa fye"
+               TO WS-ACT-JUST-BORN
+           MOVE "Umwana uwafyalwa fye" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Akamwana" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Umwana" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Umwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Umunyamata" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Umulumendo" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "ubushiku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "inshiku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "umulungu {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "imilungu {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "umweshi {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "imyeshi {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "umwaka {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "imyaka {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/bg.json
        INIT-LOCALE-BG.
            MOVE "bg" TO WS-ACT-CODE
@@ -2155,6 +2604,146 @@
            MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
            MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
            MOVE "{n} г." TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/bm.json
+       INIT-LOCALE-BM.
+           MOVE "bm" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "don {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "dɔgɔkun {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "san {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} ni tilancɛ"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "A sɛgɛra ka wolo"
+               TO WS-ACT-JUST-BORN
+           MOVE "Denmisɛn kura" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Denmisɛn" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Den fitinin" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Den" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Kamalen" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Mɔgɔkɔrɔba" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "don {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "dɔgɔk. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "san {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "don {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "dɔgɔk {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "san {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
@@ -3853,6 +4442,662 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/din.json
+       INIT-LOCALE-DIN.
+           MOVE "din" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "akɔl {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "akɔl {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "bɛ̈t {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "bɛ̈t {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "pɛi {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "pɛi {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "ruɔ̈n {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "ruɔ̈ɔ̈n {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} ku abɛ̈c"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Meth yen dhiëth"
+               TO WS-ACT-JUST-BORN
+           MOVE "Meth yen dhiëth" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Meth" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Meth thiiŋ" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Meth" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Dhɔ̈l" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Raan dit" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "akɔl {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "bɛ̈t {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "pɛi {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "ruɔ̈n {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "ruɔ̈ɔ̈n {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/dje.json
+       INIT-LOCALE-DJE.
+           MOVE "dje" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "zaari {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "hebu {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "handu {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "jiiri {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} d'iddeka"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Izo hayni"
+               TO WS-ACT-JUST-BORN
+           MOVE "Izo hayni zaari" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Izo kayna" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Izo kayna beerey" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Izo" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Haŋ kayna" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Boro beerey" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "zaa. {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "heb. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "han. {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "jii. {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "zaa {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "heb {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "han {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "jii {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/dyu.json
+       INIT-LOCALE-DYU.
+           MOVE "dyu" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "don {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "dɔgɔkun {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "san {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} ni tilancɛ"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Den fɛn bɛ wolo"
+               TO WS-ACT-JUST-BORN
+           MOVE "Denmisɛn kura" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Denmisɛn" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Den fitinin" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Den" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Kamalen" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Mɔgɔkɔrɔba" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "don {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "dɔgɔk. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "san {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "don {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "dɔgɔk {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "san {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/ee.json
+       INIT-LOCALE-EE.
+           MOVE "ee" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "ŋkeke {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "ŋkekewo {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "kɔsiɖa {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "kɔsiɖawo {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "ɣleti {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "ɣletiwo {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "ƒe {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "ƒewo {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} kple afã"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Evi yeye"
+               TO WS-ACT-JUST-BORN
+           MOVE "Evi yeye" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Ɖevi" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Ɖevi sue" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Ɖevi" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Ŋutsuviwo" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Ame tsitsi" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "ŋkekewo {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "kɔsiɖa {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "kɔsiɖawo {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "ɣleti {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "ɣletiwo {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "ƒe {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "ƒewo {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/el.json
        INIT-LOCALE-EL.
            MOVE "el" TO WS-ACT-CODE
@@ -4875,6 +6120,210 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/fan.json
+       INIT-LOCALE-FAN.
+           MOVE "fan" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "mos {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "bimos {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "sone {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "bisone {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "ngon {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "mingon {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "mbu {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "mimbu {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} e ndamba"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Mone a biai"
+               TO WS-ACT-JUST-BORN
+           MOVE "Mone a biai" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Mone" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Mone" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Mone" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Mon-nnam" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Mot" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "mos {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "bimos {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "sone {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "bisone {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "ngon {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "mingon {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "mbu {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "mimbu {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/ff.json
        INIT-LOCALE-FF.
            MOVE "ff" TO WS-ACT-CODE
@@ -5417,6 +6866,146 @@
            MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
            MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
            MOVE "{n}taon" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/fon.json
+       INIT-LOCALE-FON.
+           MOVE "fon" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "azǎn {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "aklunɔ̌zán {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "sun {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "xwè {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} kpo vlavo kpo"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Vǐ yɔ̌yɔ́"
+               TO WS-ACT-JUST-BORN
+           MOVE "Vǐ yɔ̌yɔ́" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Vǐ" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Vǐ" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Vǐ" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Nyɔ̌nu" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Mɛ̌xo" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "azǎn {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "aklunɔ̌zán {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "sun {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "xwè {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
@@ -8999,6 +10588,146 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/kbp.json
+       INIT-LOCALE-KBP.
+           MOVE "kbp" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "kɩyakʊ {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "kpɩtaʊ {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "fenaɣ {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "pɩnzɩ {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} nɛ hɔɔlʊʊ"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Pɩɣa ŋga palɩ lɛ"
+               TO WS-ACT-JUST-BORN
+           MOVE "Pɩɣa ŋga palɩ lɛ" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Pɩɣa" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Pɩɣa" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Pɩɣa" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Evebu" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Ɛyʊ sɔsɔ" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "kɩyakʊ {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "kpɩtaʊ {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "fenaɣ {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "pɩnzɩ {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/kk.json
        INIT-LOCALE-KK.
            MOVE "kk" TO WS-ACT-CODE
@@ -9616,6 +11345,366 @@
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
            MOVE 0 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/kpe.json
+       INIT-LOCALE-KPE.
+           MOVE "kpe" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "ɓɛlɛɛ {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "wikii {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "ŋuŋ {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "kɛ̃ɛ̃ {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} da kɔlɛ"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Lóŋ tɔ̃ɔ̃"
+               TO WS-ACT-JUST-BORN
+           MOVE "Lóŋ tɔ̃ɔ̃ kɛlɛɛ" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Lóŋ pɔlɔ" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Lóŋ kɛlɛɛ" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Lóŋ" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Kɛlɛɛ mɛni" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Nuu kpɔŋ" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "ɓɛl. {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "wik. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "ŋuŋ {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "kɛ̃ɛ̃ {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "ɓɛl {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "wik {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "ŋuŋ {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "kɛ̃ɛ̃ {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/ktu.json
+       INIT-LOCALE-KTU.
+           MOVE "ktu" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "lumbu {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "malumbu {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "poso {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "maposo {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "ngonda {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "mingonda {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "mvula {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "mimvula {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} na ndambu"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Mwana ya buta"
+               TO WS-ACT-JUST-BORN
+           MOVE "Mwana ya buta" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Mwana moke" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Mwana" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Mwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Elenge" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Muntu ya nene" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "malumbu {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "poso {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "maposo {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "ngonda {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "mingonda {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "mvula {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "mimvula {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "malumbu {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE "poso {n}"
+               TO WS-ACT-COMPACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE "maposo {n}"
+               TO WS-ACT-COMPACT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE "ngon {n}"
+               TO WS-ACT-COMPACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE "mingon {n}"
+               TO WS-ACT-COMPACT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE "mvula {n}"
+               TO WS-ACT-COMPACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE "mimv {n}"
+               TO WS-ACT-COMPACT-YEAR-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
            MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
            MOVE SPACES TO WS-ACT-COMPACT-DELIM
            MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
@@ -11064,6 +13153,342 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/men.json
+       INIT-LOCALE-MEN.
+           MOVE "men" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "lɔhɔ {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "lɔhɔnga {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "wikii {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "wikii {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "ndɔlɔ {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "ndɔlɔnga {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "saŋ {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "saŋga {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} ta fele"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Ndɔpɔi fele"
+               TO WS-ACT-JUST-BORN
+           MOVE "Ndɔpɔi fele" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Ndɔpɔi" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Ndɔpɔi" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Ndopoi" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Ndakpayei" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Numu-waa" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "lɔhɔ {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "lɔhɔnga {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "wikii {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "ndɔlɔ {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "ndɔlɔnga {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "saŋ {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "saŋga {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/mfe.json
+       INIT-LOCALE-MFE.
+           MOVE "mfe" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "{n} zour" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "{n} semenn" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "{n} mwa" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "{n} lane" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} edmi"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Zanfan fek ne"
+               TO WS-ACT-JUST-BORN
+           MOVE "Zanfan fek ne" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Ti baba" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Ti zanfan" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Zanfan" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Adolesan" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Gran dimoun" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "{n} zr" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "{n} sem" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "{n} mwa" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "{n} la" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n} zr" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n} sem" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n} mwa" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n} la" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/mg.json
        INIT-LOCALE-MG.
            MOVE "mg" TO WS-ACT-CODE
@@ -11822,6 +14247,286 @@
            MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
            MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
            MOVE "{n} н" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/mnk.json
+       INIT-LOCALE-MNK.
+           MOVE "mnk" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "tili {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "lɔkɔ {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "sanji {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} ning tilinkiliŋo"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "A banta ka wolo"
+               TO WS-ACT-JUST-BORN
+           MOVE "Dindinkoto" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Dindiŋo" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Dindinkuto" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Diŋo" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Kambaaŋo" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Moo koto" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "tili {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "lɔkɔ {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "sanj. {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "tili {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "lɔkɔ {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "kalo {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "sanj {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/mos.json
+       INIT-LOCALE-MOS.
+           MOVE "mos" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "daare {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "semaana {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "kiuugu {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "yʋʋmde {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} la pʋɩ-sʋka"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "A sẽn dog-a"
+               TO WS-ACT-JUST-BORN
+           MOVE "Bi-paalga" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Bi-bɩɩga" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Bi-kɩdga" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Biiga" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Bi-raaga" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Nin-kẽema" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "daar. {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "sem. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "kiu. {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "yʋʋm. {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "daar {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "sem {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "kiu {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "yʋʋm {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
@@ -12659,6 +15364,210 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/nd.json
+       INIT-LOCALE-ND.
+           MOVE "nd" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "usuku {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "insuku {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "iviki {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "amaviki {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "inyanga {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "izinyanga {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "umnyaka {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "iminyaka {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} lengxenye"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Usanda kuzalwa"
+               TO WS-ACT-JUST-BORN
+           MOVE "Usane olusanda kuzalwa" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Usane" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Umntwana omncane" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Umntwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Isitsha" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Umuntu omdala" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "usuku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "insuku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "iviki {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "amaviki {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "iny. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "iziny. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "umny. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "iminy. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/ne.json
        INIT-LOCALE-NE.
            MOVE "ne" TO WS-ACT-CODE
@@ -12823,6 +15732,226 @@
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/ng.json
+       INIT-LOCALE-NG.
+           MOVE "ng" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "esiku {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "omasiku {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "oshiwike {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "iiwike {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "omuedhi {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "omiedhi {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "omvula {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "omivula {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} netata"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Okwa dalwa po"
+               TO WS-ACT-JUST-BORN
+           MOVE "Okaana ke li po" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Okaana" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Okanona" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Okanona" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Omunyasha" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Omuntu omukulu" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "omasiku {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "oshiwike {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "iiwike {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "omuedhi {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "omiedhi {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "omvula {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "omivula {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "omasiku {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE "oshiw {n}"
+               TO WS-ACT-COMPACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-COMPACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE "iiw {n}"
+               TO WS-ACT-COMPACT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE "omued {n}"
+               TO WS-ACT-COMPACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-COMPACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE "omied {n}"
+               TO WS-ACT-COMPACT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE "omv {n}"
+               TO WS-ACT-COMPACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-COMPACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE "omiv {n}"
+               TO WS-ACT-COMPACT-YEAR-FORM(6)
            MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
            MOVE "{n}½" TO WS-ACT-COMPACT-HALF
            MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
@@ -13012,6 +16141,414 @@
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
            MOVE 0 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/nso.json
+       INIT-LOCALE-NSO.
+           MOVE "nso" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "letšatši {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "matšatši {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "beke {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "dibeke {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "kgwedi {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "dikgwedi {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "ngwaga {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "mengwaga {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} le seripagare"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "O sa tšwa belegwa"
+               TO WS-ACT-JUST-BORN
+           MOVE "Lesea le sa tšwa belegwa" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Lesea" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Ngwanyana" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Ngwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Moša" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Motho yo mogolo" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "letšatši {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "matšatši {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "beke {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "dibeke {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "kgw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "dikgw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "ngw. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "mengw. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/nus.json
+       INIT-LOCALE-NUS.
+           MOVE "nus" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "cäŋ {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "cëŋ {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "korɛ {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "korni {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "pay {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "pei {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "ruɔ̈n {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "ruɔ̈ɔ̈ni {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} ku kel"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Gaat mä dhiëëth"
+               TO WS-ACT-JUST-BORN
+           MOVE "Gaat mä dhiëëth thiin" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Gaat" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Gaat cɛɛk" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Gaat raan" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Raan thok" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Raan dit" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "cäŋ {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "cëŋ {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "kor. {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "kor. {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "pay {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "pei {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "ruɔ̈n {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "ruɔ̈ɔ̈ni {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
            MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
            MOVE SPACES TO WS-ACT-COMPACT-DELIM
            MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
@@ -14024,6 +17561,146 @@
            MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
            MOVE "{n} r."
                TO WS-ACT-COMPACT-YEAR-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/pov.json
+       INIT-LOCALE-POV.
+           MOVE "pov" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "{n} dia" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "{n} simana" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "{n} mis" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "{n} anu" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} i meiu"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Mininu kaba di nasi"
+               TO WS-ACT-JUST-BORN
+           MOVE "Mininu nobu" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Bebi" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Mininu pikiñu" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Mininu" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Rapas" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Omi garandi" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "{n} dia" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "{n} sim" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "{n} mis" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "{n} anu" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n} dia" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n} sim" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n} mis" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n} anu" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
            MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
            MOVE "{n}½" TO WS-ACT-COMPACT-HALF
            MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
@@ -15155,6 +18832,146 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/sar.json
+       INIT-LOCALE-SAR.
+           MOVE "sar" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "ndɔ {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "lɔtɛ {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "ndɔɔ {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "bɛɛ {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} kɩ̀ ndá̰ŋ"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Gɔ dɔɔ ya"
+               TO WS-ACT-JUST-BORN
+           MOVE "Gɔ dɔɔ ya" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Gɔ" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Gɔ njè" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Gɔ" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Kàw" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Dèē" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "ndɔ {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "lɔtɛ {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "ndɔɔ {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "bɛɛ {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/sd.json
        INIT-LOCALE-SD.
            MOVE "sd" TO WS-ACT-CODE
@@ -15313,6 +19130,146 @@
            MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
            MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
            MOVE "{n} س" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/sg.json
+       INIT-LOCALE-SG.
+           MOVE "sg" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "lâ {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "bîkua-ûse {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "nze {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "ngû {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} na ndâ"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "A duti tî dûngö"
+               TO WS-ACT-JUST-BORN
+           MOVE "Molengê tî dûngö" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Molengê kêtê" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Molengê" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Wan" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Kôlï-wa" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Kôlï" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "lâ {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "bîk. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "nze {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "ngû {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
@@ -16260,6 +20217,146 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/snk.json
+       INIT-LOCALE-SNK.
+           MOVE "snk" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "xanne {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "simanxe {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "kare {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "jara {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} do faabe"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Lenme yille"
+               TO WS-ACT-JUST-BORN
+           MOVE "Lenme yille" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Lenme" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Yaxare yitte" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Yaxare" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Kanbonme" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Xirise" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "xan. {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "sim. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "kare {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "jara {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "xan {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "sim {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "kare {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "jara {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/so.json
        INIT-LOCALE-SO.
            MOVE "so" TO WS-ACT-CODE
@@ -16818,6 +20915,414 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/ss.json
+       INIT-LOCALE-SS.
+           MOVE "ss" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "lilanga {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "emalanga {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "liviki {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "emaviki {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "inyanga {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "tinyanga {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "umnyaka {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "iminyaka {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} nenhafu"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Usandza kutalwa"
+               TO WS-ACT-JUST-BORN
+           MOVE "Luswane lolusandza kutalwa" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Luswane" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Umntfwana lomncane" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Umntfwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Licinsi" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Umuntfu lomdala" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "lilanga {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "emalanga {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "liviki {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "emaviki {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "iny. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "tiny. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "umny. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "imy. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/st.json
+       INIT-LOCALE-ST.
+           MOVE "st" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "letsatsi {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "matsatsi {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "beke {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "dibeke {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "kgwedi {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "dikgwedi {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "selemo {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "dilemo {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} le halofo"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "O sa tswa hlaha"
+               TO WS-ACT-JUST-BORN
+           MOVE "Lesea le sa tswa hlaha" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Lesea" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Ngwanana" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Ngwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Mosha" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Motho e moholo" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "letsatsi {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "matsatsi {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "beke {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "dibeke {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "kgw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "dikgw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "sel. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "dil. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/su.json
        INIT-LOCALE-SU.
            MOVE "su" TO WS-ACT-CODE
@@ -16910,6 +21415,210 @@
            MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
            MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
            MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/suk.json
+       INIT-LOCALE-SUK.
+           MOVE "suk" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "isiku {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "amasiku {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "ishuma {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "amashuma {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "ngweli {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "ngweli {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "mwaka {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "myaka {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} na nusu"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Mwana wa kubelekwa"
+               TO WS-ACT-JUST-BORN
+           MOVE "Mwana wa kubelekwa kwenda" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Mwana mdogo" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Mwana wa kutembea" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Mwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Mhemba" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Muntu mkulu" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "isiku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "amasiku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "ish. {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "amash. {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "ngw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "ngw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "mw. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "my. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
            MOVE 0 TO WS-ACT-SHORT-HAS-HALF
            MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
            MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
@@ -17716,6 +22425,202 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/tem.json
+       INIT-LOCALE-TEM.
+           MOVE "tem" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "ləfɔr {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "ɔfɔr {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "wik {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "wik {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "kətha {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "ɔtha {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "əsor {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "ɔsor {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} a gbankɛ"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "A mabɔrn"
+               TO WS-ACT-JUST-BORN
+           MOVE "A mabɔrn" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Kəbom" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Kəbom" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Ɔmɔnthɔ" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Ɔkəranthɔ" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Ɔpa" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "ləfɔr {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "ɔfɔr {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "wik {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "kətha {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "ɔtha {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "əsor {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "ɔsor {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/tg.json
        INIT-LOCALE-TG.
            MOVE "tg" TO WS-ACT-CODE
@@ -18192,6 +23097,210 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/tig.json
+       INIT-LOCALE-TIG.
+           MOVE "tig" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "yom {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "ayam {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "semun {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "semunat {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "werḥi {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "awerḥi {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "ʿam {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "aʿwam {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} we nəs"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Ḥadis tewlid"
+               TO WS-ACT-JUST-BORN
+           MOVE "Ḥadis tewlid" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Ḥaṣin" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Ḥaṣin" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Wädi" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Mänäʿ" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Säb" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "yom {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "ayam {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "semun {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "semunat {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "werḥi {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "awerḥi {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "ʿam {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "aʿwam {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/tk.json
        INIT-LOCALE-TK.
            MOVE "tk" TO WS-ACT-CODE
@@ -18318,6 +23427,210 @@
            MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
            MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
            MOVE "{n}ý" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/tn.json
+       INIT-LOCALE-TN.
+           MOVE "tn" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "letsatsi {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "malatsi {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "beke {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "dibeke {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "kgwedi {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "dikgwedi {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "ngwaga {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "dingwaga {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} le halofo"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "O sa tswa tsalwa"
+               TO WS-ACT-JUST-BORN
+           MOVE "Lesea le sa tswa tsalwa" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Lesea" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Ngwana yo monnye" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Ngwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Lekgarebe" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Motho yo mogolo" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "letsatsi {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "malatsi {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "beke {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "dibeke {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "kgw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "dikgw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "ngw. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "dingw. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
@@ -18481,6 +23794,210 @@
            MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
            MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
            MOVE "{n}a" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/ts.json
+       INIT-LOCALE-TS.
+           MOVE "ts" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "siku {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "masiku {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "vhiki {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "mavhiki {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "n'hweti {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "tin'hweti {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "lembe {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "malembe {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} ni hafu"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "N'wana loyi a ha ku velekiwa"
+               TO WS-ACT-JUST-BORN
+           MOVE "N'wana wo velekiwa" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Xihlangi" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "N'wana lontsongo" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "N'wana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Jaha" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Munhu lonkulu" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "siku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "masiku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "vhiki {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "mavhiki {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "n'hw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "tin'hw. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "lembe {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "mal. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
@@ -18842,6 +24359,210 @@
            MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
            MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
            MOVE "{n}р" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/umb.json
+       INIT-LOCALE-UMB.
+           MOVE "umb" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "elityi {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "omatyi {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "osemana {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "olosemana {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "ondjambi {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "olondjambi {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "ombula {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "olombula {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} na oñali"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Omola wa kulwa"
+               TO WS-ACT-JUST-BORN
+           MOVE "Omola wa kulwa kwenda" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Okambulu" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Omola okanini" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Omola" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Oloneke" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Omundu onene" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "elit. {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "omat. {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "osem. {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "olosem. {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "ondj. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "olondj. {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "omb. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "olomb. {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
@@ -19372,6 +25093,350 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 
+*> Source: age/locales/src/vmw.json
+       INIT-LOCALE-VMW.
+           MOVE "vmw" TO WS-ACT-CODE
+           MOVE "one_other" TO WS-ACT-PLURAL-RULE
+           MOVE 0 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE "eshuku {n}"
+               TO WS-ACT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE "mshuku {n}"
+               TO WS-ACT-DAY-FORM(6)
+           MOVE 0 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE "esumana {n}"
+               TO WS-ACT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE "msumana {n}"
+               TO WS-ACT-WEEK-FORM(6)
+           MOVE 0 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE "mweri {n}"
+               TO WS-ACT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE "miyeri {n}"
+               TO WS-ACT-MONTH-FORM(6)
+           MOVE 0 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE "mwaka {n}"
+               TO WS-ACT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "miyaka {n}"
+               TO WS-ACT-YEAR-FORM(6)
+           MOVE "{0} na mettenhe"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Mwana opakiwa"
+               TO WS-ACT-JUST-BORN
+           MOVE "Mwana opakiwa" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Mwana" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Mwana" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Mwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Mutthu" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Mutthu" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE "eshuku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-DAY-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE "mshuku {n}"
+               TO WS-ACT-SHORT-DAY-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE "esumana {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-WEEK-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE "msumana {n}"
+               TO WS-ACT-SHORT-WEEK-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE "mweri {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-MONTH-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE "miyeri {n}"
+               TO WS-ACT-SHORT-MONTH-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(1)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE "mwaka {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE SPACES TO WS-ACT-SHORT-YEAR-FORM(5)
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE "miyaka {n}"
+               TO WS-ACT-SHORT-YEAR-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/wo.json
+       INIT-LOCALE-WO.
+           MOVE "wo" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "bés {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "ayubés {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "weer {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "at {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} ak genn-wàll"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Dees ko sax juddu"
+               TO WS-ACT-JUST-BORN
+           MOVE "Dees ko sax juddu" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Njàmbaar bu ndaw" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Xale bu ndaw" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Xale" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Ndaw-ndaw" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Mag" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "bés {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "ayub. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "weer {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "at {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "bés {n}" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "ayub {n}" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "weer {n}" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "at {n}" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
 *> Source: age/locales/src/xh.json
        INIT-LOCALE-XH.
            MOVE "xh" TO WS-ACT-CODE
@@ -19850,6 +25915,146 @@
            MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
            MOVE 0 TO WS-ACT-COMPACT-HAS-HALF
            MOVE 0 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
+           .
+
+*> Source: age/locales/src/zdj.json
+       INIT-LOCALE-ZDJ.
+           MOVE "zdj" TO WS-ACT-CODE
+           MOVE "other_only" TO WS-ACT-PLURAL-RULE
+           MOVE 1 TO WS-ACT-DAY-HAS-SIMPLE
+           MOVE "suku {n}" TO WS-ACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-WEEK-HAS-SIMPLE
+           MOVE "djumwa {n}" TO WS-ACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-MONTH-HAS-SIMPLE
+           MOVE "mwezi {n}" TO WS-ACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-YEAR-HAS-SIMPLE
+           MOVE "mwaha {n}" TO WS-ACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-YEAR-HAS-FORM(6)
+           MOVE "{0} na nusu"
+               TO WS-ACT-HALF
+           MOVE ", "
+               TO WS-ACT-DELIMITER
+           MOVE 2 TO WS-ACT-DELIM-LEN
+           MOVE "Mwana mdzuhu"
+               TO WS-ACT-JUST-BORN
+           MOVE "Mwana mdzuhu" TO WS-ACT-NEWBORN-LABEL
+           MOVE SPACES TO WS-ACT-NEWBORN-F-LABEL
+           MOVE "Mwana mdzo" TO WS-ACT-INFANT-LABEL
+           MOVE SPACES TO WS-ACT-INFANT-F-LABEL
+           MOVE "Mwana mtsanga" TO WS-ACT-TODDLER-LABEL
+           MOVE SPACES TO WS-ACT-TODDLER-F-LABEL
+           MOVE "Mwana" TO WS-ACT-CHILD-LABEL
+           MOVE SPACES TO WS-ACT-CHILD-F-LABEL
+           MOVE "Mwanantsi" TO WS-ACT-TEENAGER-LABEL
+           MOVE SPACES TO WS-ACT-TEENAGER-F-LABEL
+           MOVE "Mtu mzima" TO WS-ACT-ADULT-LABEL
+           MOVE SPACES TO WS-ACT-ADULT-F-LABEL
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY
+           MOVE 1 TO WS-ACT-SHORT-DAY-HAS-SIMPLE
+           MOVE "suku {n}" TO WS-ACT-SHORT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-WEEK
+           MOVE 1 TO WS-ACT-SHORT-WEEK-HAS-SIMPLE
+           MOVE "djum. {n}" TO WS-ACT-SHORT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTH
+           MOVE 1 TO WS-ACT-SHORT-MONTH-HAS-SIMPLE
+           MOVE "mw. {n}" TO WS-ACT-SHORT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-SHORT-HAS-YEAR
+           MOVE 1 TO WS-ACT-SHORT-YEAR-HAS-SIMPLE
+           MOVE "mwa. {n}" TO WS-ACT-SHORT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-SHORT-YEAR-HAS-FORM(6)
+           MOVE 0 TO WS-ACT-SHORT-HAS-HALF
+           MOVE 0 TO WS-ACT-SHORT-HAS-DELIM
+           MOVE 0 TO WS-ACT-SHORT-HAS-JUST-BORN
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DAY
+           MOVE 1 TO WS-ACT-COMPACT-DAY-HAS-SIMPLE
+           MOVE "{n}d" TO WS-ACT-COMPACT-DAY-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-DAY-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-WEEK
+           MOVE 1 TO WS-ACT-COMPACT-WEEK-HAS-SIMPLE
+           MOVE "{n}w" TO WS-ACT-COMPACT-WEEK-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-WEEK-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-MONTH
+           MOVE 1 TO WS-ACT-COMPACT-MONTH-HAS-SIMPLE
+           MOVE "{n}m" TO WS-ACT-COMPACT-MONTH-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-MONTH-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-YEAR
+           MOVE 1 TO WS-ACT-COMPACT-YEAR-HAS-SIMPLE
+           MOVE "{n}y" TO WS-ACT-COMPACT-YEAR-SIMPLE
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(1)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(2)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(3)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(4)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(5)
+           MOVE 0 TO WS-ACT-COMPACT-YEAR-HAS-FORM(6)
+           MOVE 1 TO WS-ACT-COMPACT-HAS-HALF
+           MOVE "{n}½" TO WS-ACT-COMPACT-HALF
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DELIM
+           MOVE SPACES TO WS-ACT-COMPACT-DELIM
+           MOVE 0 TO WS-ACT-COMPACT-DELIM-LEN
            MOVE 0 TO WS-ACT-COMPACT-HAS-JUST-BORN
            .
 

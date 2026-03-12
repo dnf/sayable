@@ -19,8 +19,11 @@ module sayabletime_locales
   type(st_locale), target, save :: locale_am
   type(st_locale), target, save :: locale_ar
   type(st_locale), target, save :: locale_az
+  type(st_locale), target, save :: locale_bci
   type(st_locale), target, save :: locale_be
+  type(st_locale), target, save :: locale_bem
   type(st_locale), target, save :: locale_bg
+  type(st_locale), target, save :: locale_bm
   type(st_locale), target, save :: locale_bn
   type(st_locale), target, save :: locale_br
   type(st_locale), target, save :: locale_bs
@@ -30,15 +33,21 @@ module sayabletime_locales
   type(st_locale), target, save :: locale_cy
   type(st_locale), target, save :: locale_da
   type(st_locale), target, save :: locale_de
+  type(st_locale), target, save :: locale_din
+  type(st_locale), target, save :: locale_dje
+  type(st_locale), target, save :: locale_dyu
+  type(st_locale), target, save :: locale_ee
   type(st_locale), target, save :: locale_el
   type(st_locale), target, save :: locale_en
   type(st_locale), target, save :: locale_es
   type(st_locale), target, save :: locale_et
   type(st_locale), target, save :: locale_eu
   type(st_locale), target, save :: locale_fa
+  type(st_locale), target, save :: locale_fan
   type(st_locale), target, save :: locale_ff
   type(st_locale), target, save :: locale_fi
   type(st_locale), target, save :: locale_fil
+  type(st_locale), target, save :: locale_fon
   type(st_locale), target, save :: locale_fr
   type(st_locale), target, save :: locale_ga
   type(st_locale), target, save :: locale_gd
@@ -60,10 +69,13 @@ module sayabletime_locales
   type(st_locale), target, save :: locale_ja
   type(st_locale), target, save :: locale_jv
   type(st_locale), target, save :: locale_ka
+  type(st_locale), target, save :: locale_kbp
   type(st_locale), target, save :: locale_kk
   type(st_locale), target, save :: locale_km
   type(st_locale), target, save :: locale_kn
   type(st_locale), target, save :: locale_ko
+  type(st_locale), target, save :: locale_kpe
+  type(st_locale), target, save :: locale_ktu
   type(st_locale), target, save :: locale_ku
   type(st_locale), target, save :: locale_kw
   type(st_locale), target, save :: locale_ky
@@ -72,56 +84,79 @@ module sayabletime_locales
   type(st_locale), target, save :: locale_lo
   type(st_locale), target, save :: locale_lt
   type(st_locale), target, save :: locale_lv
+  type(st_locale), target, save :: locale_men
+  type(st_locale), target, save :: locale_mfe
   type(st_locale), target, save :: locale_mg
   type(st_locale), target, save :: locale_mi
   type(st_locale), target, save :: locale_mk
   type(st_locale), target, save :: locale_ml
   type(st_locale), target, save :: locale_mn
+  type(st_locale), target, save :: locale_mnk
+  type(st_locale), target, save :: locale_mos
   type(st_locale), target, save :: locale_mr
   type(st_locale), target, save :: locale_ms
   type(st_locale), target, save :: locale_mt
   type(st_locale), target, save :: locale_my
   type(st_locale), target, save :: locale_nb
+  type(st_locale), target, save :: locale_nd
   type(st_locale), target, save :: locale_ne
+  type(st_locale), target, save :: locale_ng
   type(st_locale), target, save :: locale_nl
+  type(st_locale), target, save :: locale_nso
+  type(st_locale), target, save :: locale_nus
   type(st_locale), target, save :: locale_ny
   type(st_locale), target, save :: locale_om
   type(st_locale), target, save :: locale_or
   type(st_locale), target, save :: locale_pa
   type(st_locale), target, save :: locale_pl
+  type(st_locale), target, save :: locale_pov
   type(st_locale), target, save :: locale_ps
   type(st_locale), target, save :: locale_pt
   type(st_locale), target, save :: locale_qu
   type(st_locale), target, save :: locale_ro
   type(st_locale), target, save :: locale_ru
   type(st_locale), target, save :: locale_rw
+  type(st_locale), target, save :: locale_sar
   type(st_locale), target, save :: locale_sd
+  type(st_locale), target, save :: locale_sg
   type(st_locale), target, save :: locale_shi
   type(st_locale), target, save :: locale_si
   type(st_locale), target, save :: locale_sk
   type(st_locale), target, save :: locale_sl
   type(st_locale), target, save :: locale_sn
+  type(st_locale), target, save :: locale_snk
   type(st_locale), target, save :: locale_so
   type(st_locale), target, save :: locale_sq
   type(st_locale), target, save :: locale_sr
+  type(st_locale), target, save :: locale_ss
+  type(st_locale), target, save :: locale_st
   type(st_locale), target, save :: locale_su
+  type(st_locale), target, save :: locale_suk
   type(st_locale), target, save :: locale_sv
   type(st_locale), target, save :: locale_sw
   type(st_locale), target, save :: locale_ta
   type(st_locale), target, save :: locale_te
+  type(st_locale), target, save :: locale_tem
   type(st_locale), target, save :: locale_tg
   type(st_locale), target, save :: locale_th
   type(st_locale), target, save :: locale_ti
+  type(st_locale), target, save :: locale_tig
   type(st_locale), target, save :: locale_tk
+  type(st_locale), target, save :: locale_tn
   type(st_locale), target, save :: locale_tr
+  type(st_locale), target, save :: locale_ts
   type(st_locale), target, save :: locale_tzm
   type(st_locale), target, save :: locale_uk
+  type(st_locale), target, save :: locale_umb
   type(st_locale), target, save :: locale_ur
   type(st_locale), target, save :: locale_uz
   type(st_locale), target, save :: locale_vi
+  type(st_locale), target, save :: locale_vmw
+  type(st_locale), target, save :: locale_wo
   type(st_locale), target, save :: locale_xh
   type(st_locale), target, save :: locale_yo
   type(st_locale), target, save :: locale_yue
+  type(st_locale), target, save :: locale_zdj
   type(st_locale), target, save :: locale_zh
   type(st_locale), target, save :: locale_zu
 
@@ -422,6 +457,67 @@ contains
 
   end subroutine init_az
 
+  ! Source: time/locales/src/bci.json
+  subroutine init_bci()
+    locale_bci%code = 'bci'
+
+    locale_bci%clock%hours(1) = 'blu-nɲɔn'
+    locale_bci%clock%hours(2) = 'kun'
+    locale_bci%clock%hours(3) = 'nɲɔn'
+    locale_bci%clock%hours(4) = 'nsan'
+    locale_bci%clock%hours(5) = 'nan'
+    locale_bci%clock%hours(6) = 'nnun'
+    locale_bci%clock%hours(7) = 'nsiɛn'
+    locale_bci%clock%hours(8) = 'nso'
+    locale_bci%clock%hours(9) = 'mɔcuɛ'
+    locale_bci%clock%hours(10) = 'ngwlan'
+    locale_bci%clock%hours(11) = 'blu'
+    locale_bci%clock%hours(12) = 'blu-kun'
+
+    locale_bci%clock%midnight = 'kɔnguɛ afiɛn'
+    locale_bci%clock%noon = 'nnɔsua'
+
+    locale_bci%clock%has_pattern(1) = .true.
+    locale_bci%clock%patterns(1) = '{h}:00'
+    locale_bci%clock%has_pattern(2) = .true.
+    locale_bci%clock%patterns(2) = '{h}:05'
+    locale_bci%clock%has_pattern(3) = .true.
+    locale_bci%clock%patterns(3) = '{h}:10'
+    locale_bci%clock%has_pattern(4) = .true.
+    locale_bci%clock%patterns(4) = '{h}:15'
+    locale_bci%clock%has_pattern(5) = .true.
+    locale_bci%clock%patterns(5) = '{h}:20'
+    locale_bci%clock%has_pattern(6) = .true.
+    locale_bci%clock%patterns(6) = '{h}:25'
+    locale_bci%clock%has_pattern(7) = .true.
+    locale_bci%clock%patterns(7) = '{h}:30'
+    locale_bci%clock%has_pattern(8) = .true.
+    locale_bci%clock%patterns(8) = '{h}:35'
+    locale_bci%clock%has_pattern(9) = .true.
+    locale_bci%clock%patterns(9) = '{h}:40'
+    locale_bci%clock%has_pattern(10) = .true.
+    locale_bci%clock%patterns(10) = '{h}:45'
+    locale_bci%clock%has_pattern(11) = .true.
+    locale_bci%clock%patterns(11) = '{h}:50'
+    locale_bci%clock%has_pattern(12) = .true.
+    locale_bci%clock%patterns(12) = '{h}:55'
+
+    locale_bci%has_short = .true.
+    locale_bci%short_clock%use24h = .false.
+    locale_bci%short_clock%format = '{h}:{mm} {ampm}'
+    locale_bci%short_clock%has_am_pm = .true.
+    locale_bci%short_clock%am = 'AM'
+    locale_bci%short_clock%pm = 'PM'
+
+    locale_bci%has_compact = .true.
+    locale_bci%compact_clock%use24h = .false.
+    locale_bci%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_bci%compact_clock%has_am_pm = .true.
+    locale_bci%compact_clock%am = 'a'
+    locale_bci%compact_clock%pm = 'p'
+
+  end subroutine init_bci
+
   ! Source: time/locales/src/be.json
   subroutine init_be()
     locale_be%code = 'be'
@@ -479,6 +575,67 @@ contains
 
   end subroutine init_be
 
+  ! Source: time/locales/src/bem.json
+  subroutine init_bem()
+    locale_bem%code = 'bem'
+
+    locale_bem%clock%hours(1) = 'ikumi na ibili'
+    locale_bem%clock%hours(2) = 'cimo'
+    locale_bem%clock%hours(3) = 'fibili'
+    locale_bem%clock%hours(4) = 'fitatu'
+    locale_bem%clock%hours(5) = 'fine'
+    locale_bem%clock%hours(6) = 'fisano'
+    locale_bem%clock%hours(7) = 'mutanda'
+    locale_bem%clock%hours(8) = 'cine lubali'
+    locale_bem%clock%hours(9) = 'cine konse konse'
+    locale_bem%clock%hours(10) = 'pabula'
+    locale_bem%clock%hours(11) = 'ikumi'
+    locale_bem%clock%hours(12) = 'ikumi na cimo'
+
+    locale_bem%clock%midnight = 'pakati ka bushiku'
+    locale_bem%clock%noon = 'akasuba'
+
+    locale_bem%clock%has_pattern(1) = .true.
+    locale_bem%clock%patterns(1) = '{h}:00'
+    locale_bem%clock%has_pattern(2) = .true.
+    locale_bem%clock%patterns(2) = '{h}:05'
+    locale_bem%clock%has_pattern(3) = .true.
+    locale_bem%clock%patterns(3) = '{h}:10'
+    locale_bem%clock%has_pattern(4) = .true.
+    locale_bem%clock%patterns(4) = '{h}:15'
+    locale_bem%clock%has_pattern(5) = .true.
+    locale_bem%clock%patterns(5) = '{h}:20'
+    locale_bem%clock%has_pattern(6) = .true.
+    locale_bem%clock%patterns(6) = '{h}:25'
+    locale_bem%clock%has_pattern(7) = .true.
+    locale_bem%clock%patterns(7) = '{h}:30'
+    locale_bem%clock%has_pattern(8) = .true.
+    locale_bem%clock%patterns(8) = '{h}:35'
+    locale_bem%clock%has_pattern(9) = .true.
+    locale_bem%clock%patterns(9) = '{h}:40'
+    locale_bem%clock%has_pattern(10) = .true.
+    locale_bem%clock%patterns(10) = '{h}:45'
+    locale_bem%clock%has_pattern(11) = .true.
+    locale_bem%clock%patterns(11) = '{h}:50'
+    locale_bem%clock%has_pattern(12) = .true.
+    locale_bem%clock%patterns(12) = '{h}:55'
+
+    locale_bem%has_short = .true.
+    locale_bem%short_clock%use24h = .false.
+    locale_bem%short_clock%format = '{h}:{mm} {ampm}'
+    locale_bem%short_clock%has_am_pm = .true.
+    locale_bem%short_clock%am = 'AM'
+    locale_bem%short_clock%pm = 'PM'
+
+    locale_bem%has_compact = .true.
+    locale_bem%compact_clock%use24h = .false.
+    locale_bem%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_bem%compact_clock%has_am_pm = .true.
+    locale_bem%compact_clock%am = 'a'
+    locale_bem%compact_clock%pm = 'p'
+
+  end subroutine init_bem
+
   ! Source: time/locales/src/bg.json
   subroutine init_bg()
     locale_bg%code = 'bg'
@@ -535,6 +692,67 @@ contains
     locale_bg%compact_clock%has_am_pm = .false.
 
   end subroutine init_bg
+
+  ! Source: time/locales/src/bm.json
+  subroutine init_bm()
+    locale_bm%code = 'bm'
+
+    locale_bm%clock%hours(1) = 'tan ni fila'
+    locale_bm%clock%hours(2) = 'kelen'
+    locale_bm%clock%hours(3) = 'fila'
+    locale_bm%clock%hours(4) = 'saba'
+    locale_bm%clock%hours(5) = 'naani'
+    locale_bm%clock%hours(6) = 'duuru'
+    locale_bm%clock%hours(7) = 'wɔɔrɔ'
+    locale_bm%clock%hours(8) = 'wolonwula'
+    locale_bm%clock%hours(9) = 'segin'
+    locale_bm%clock%hours(10) = 'kɔnɔntɔn'
+    locale_bm%clock%hours(11) = 'tan'
+    locale_bm%clock%hours(12) = 'tan ni kelen'
+
+    locale_bm%clock%midnight = 'dugutilama'
+    locale_bm%clock%noon = 'tilgari'
+
+    locale_bm%clock%has_pattern(1) = .true.
+    locale_bm%clock%patterns(1) = '{h}:00'
+    locale_bm%clock%has_pattern(2) = .true.
+    locale_bm%clock%patterns(2) = '{h}:05'
+    locale_bm%clock%has_pattern(3) = .true.
+    locale_bm%clock%patterns(3) = '{h}:10'
+    locale_bm%clock%has_pattern(4) = .true.
+    locale_bm%clock%patterns(4) = '{h}:15'
+    locale_bm%clock%has_pattern(5) = .true.
+    locale_bm%clock%patterns(5) = '{h}:20'
+    locale_bm%clock%has_pattern(6) = .true.
+    locale_bm%clock%patterns(6) = '{h}:25'
+    locale_bm%clock%has_pattern(7) = .true.
+    locale_bm%clock%patterns(7) = '{h}:30'
+    locale_bm%clock%has_pattern(8) = .true.
+    locale_bm%clock%patterns(8) = '{h}:35'
+    locale_bm%clock%has_pattern(9) = .true.
+    locale_bm%clock%patterns(9) = '{h}:40'
+    locale_bm%clock%has_pattern(10) = .true.
+    locale_bm%clock%patterns(10) = '{h}:45'
+    locale_bm%clock%has_pattern(11) = .true.
+    locale_bm%clock%patterns(11) = '{h}:50'
+    locale_bm%clock%has_pattern(12) = .true.
+    locale_bm%clock%patterns(12) = '{h}:55'
+
+    locale_bm%has_short = .true.
+    locale_bm%short_clock%use24h = .false.
+    locale_bm%short_clock%format = '{h}:{mm} {ampm}'
+    locale_bm%short_clock%has_am_pm = .true.
+    locale_bm%short_clock%am = 'AM'
+    locale_bm%short_clock%pm = 'PM'
+
+    locale_bm%has_compact = .true.
+    locale_bm%compact_clock%use24h = .false.
+    locale_bm%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_bm%compact_clock%has_am_pm = .true.
+    locale_bm%compact_clock%am = 'a'
+    locale_bm%compact_clock%pm = 'p'
+
+  end subroutine init_bm
 
   ! Source: time/locales/src/bn.json
   subroutine init_bn()
@@ -1057,6 +1275,250 @@ contains
 
   end subroutine init_de
 
+  ! Source: time/locales/src/din.json
+  subroutine init_din()
+    locale_din%code = 'din'
+
+    locale_din%clock%hours(1) = 'thiäär ku rou'
+    locale_din%clock%hours(2) = 'tök'
+    locale_din%clock%hours(3) = 'rou'
+    locale_din%clock%hours(4) = 'diäk'
+    locale_din%clock%hours(5) = 'ŋuän'
+    locale_din%clock%hours(6) = 'dhiëc'
+    locale_din%clock%hours(7) = 'dhetem'
+    locale_din%clock%hours(8) = 'dhorou'
+    locale_din%clock%hours(9) = 'bɛ̈t'
+    locale_din%clock%hours(10) = 'dhoŋuan'
+    locale_din%clock%hours(11) = 'thiäär'
+    locale_din%clock%hours(12) = 'thiäär ku tök'
+
+    locale_din%clock%midnight = 'wakɔ̈u'
+    locale_din%clock%noon = 'akɔ̈l ciëŋ'
+
+    locale_din%clock%has_pattern(1) = .true.
+    locale_din%clock%patterns(1) = '{h}:00'
+    locale_din%clock%has_pattern(2) = .true.
+    locale_din%clock%patterns(2) = '{h}:05'
+    locale_din%clock%has_pattern(3) = .true.
+    locale_din%clock%patterns(3) = '{h}:10'
+    locale_din%clock%has_pattern(4) = .true.
+    locale_din%clock%patterns(4) = '{h}:15'
+    locale_din%clock%has_pattern(5) = .true.
+    locale_din%clock%patterns(5) = '{h}:20'
+    locale_din%clock%has_pattern(6) = .true.
+    locale_din%clock%patterns(6) = '{h}:25'
+    locale_din%clock%has_pattern(7) = .true.
+    locale_din%clock%patterns(7) = '{h}:30'
+    locale_din%clock%has_pattern(8) = .true.
+    locale_din%clock%patterns(8) = '{h}:35'
+    locale_din%clock%has_pattern(9) = .true.
+    locale_din%clock%patterns(9) = '{h}:40'
+    locale_din%clock%has_pattern(10) = .true.
+    locale_din%clock%patterns(10) = '{h}:45'
+    locale_din%clock%has_pattern(11) = .true.
+    locale_din%clock%patterns(11) = '{h}:50'
+    locale_din%clock%has_pattern(12) = .true.
+    locale_din%clock%patterns(12) = '{h}:55'
+
+    locale_din%has_short = .true.
+    locale_din%short_clock%use24h = .false.
+    locale_din%short_clock%format = '{h}:{mm} {ampm}'
+    locale_din%short_clock%has_am_pm = .true.
+    locale_din%short_clock%am = 'AM'
+    locale_din%short_clock%pm = 'PM'
+
+    locale_din%has_compact = .true.
+    locale_din%compact_clock%use24h = .false.
+    locale_din%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_din%compact_clock%has_am_pm = .true.
+    locale_din%compact_clock%am = 'a'
+    locale_din%compact_clock%pm = 'p'
+
+  end subroutine init_din
+
+  ! Source: time/locales/src/dje.json
+  subroutine init_dje()
+    locale_dje%code = 'dje'
+
+    locale_dje%clock%hours(1) = 'way cindi'
+    locale_dje%clock%hours(2) = 'afoo'
+    locale_dje%clock%hours(3) = 'ihinka'
+    locale_dje%clock%hours(4) = 'ihinza'
+    locale_dje%clock%hours(5) = 'itaaci'
+    locale_dje%clock%hours(6) = 'igu'
+    locale_dje%clock%hours(7) = 'iddu'
+    locale_dje%clock%hours(8) = 'iyye'
+    locale_dje%clock%hours(9) = 'isahkay'
+    locale_dje%clock%hours(10) = 'iyegga'
+    locale_dje%clock%hours(11) = 'iwoy'
+    locale_dje%clock%hours(12) = 'iwoy cindi'
+
+    locale_dje%clock%midnight = 'cin beri'
+    locale_dje%clock%noon = 'zaari gaaham'
+
+    locale_dje%clock%has_pattern(1) = .true.
+    locale_dje%clock%patterns(1) = '{h}:00'
+    locale_dje%clock%has_pattern(2) = .true.
+    locale_dje%clock%patterns(2) = '{h}:05'
+    locale_dje%clock%has_pattern(3) = .true.
+    locale_dje%clock%patterns(3) = '{h}:10'
+    locale_dje%clock%has_pattern(4) = .true.
+    locale_dje%clock%patterns(4) = '{h}:15'
+    locale_dje%clock%has_pattern(5) = .true.
+    locale_dje%clock%patterns(5) = '{h}:20'
+    locale_dje%clock%has_pattern(6) = .true.
+    locale_dje%clock%patterns(6) = '{h}:25'
+    locale_dje%clock%has_pattern(7) = .true.
+    locale_dje%clock%patterns(7) = '{h}:30'
+    locale_dje%clock%has_pattern(8) = .true.
+    locale_dje%clock%patterns(8) = '{h}:35'
+    locale_dje%clock%has_pattern(9) = .true.
+    locale_dje%clock%patterns(9) = '{h}:40'
+    locale_dje%clock%has_pattern(10) = .true.
+    locale_dje%clock%patterns(10) = '{h}:45'
+    locale_dje%clock%has_pattern(11) = .true.
+    locale_dje%clock%patterns(11) = '{h}:50'
+    locale_dje%clock%has_pattern(12) = .true.
+    locale_dje%clock%patterns(12) = '{h}:55'
+
+    locale_dje%has_short = .true.
+    locale_dje%short_clock%use24h = .false.
+    locale_dje%short_clock%format = '{h}:{mm} {ampm}'
+    locale_dje%short_clock%has_am_pm = .true.
+    locale_dje%short_clock%am = 'AM'
+    locale_dje%short_clock%pm = 'PM'
+
+    locale_dje%has_compact = .true.
+    locale_dje%compact_clock%use24h = .false.
+    locale_dje%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_dje%compact_clock%has_am_pm = .true.
+    locale_dje%compact_clock%am = 'a'
+    locale_dje%compact_clock%pm = 'p'
+
+  end subroutine init_dje
+
+  ! Source: time/locales/src/dyu.json
+  subroutine init_dyu()
+    locale_dyu%code = 'dyu'
+
+    locale_dyu%clock%hours(1) = 'tan ni fila'
+    locale_dyu%clock%hours(2) = 'kelen'
+    locale_dyu%clock%hours(3) = 'fila'
+    locale_dyu%clock%hours(4) = 'saba'
+    locale_dyu%clock%hours(5) = 'naani'
+    locale_dyu%clock%hours(6) = 'duuru'
+    locale_dyu%clock%hours(7) = 'wɔɔrɔ'
+    locale_dyu%clock%hours(8) = 'wolonwula'
+    locale_dyu%clock%hours(9) = 'segin'
+    locale_dyu%clock%hours(10) = 'kɔnɔntɔn'
+    locale_dyu%clock%hours(11) = 'tan'
+    locale_dyu%clock%hours(12) = 'tan ni kelen'
+
+    locale_dyu%clock%midnight = 'dugutilama'
+    locale_dyu%clock%noon = 'tilgari'
+
+    locale_dyu%clock%has_pattern(1) = .true.
+    locale_dyu%clock%patterns(1) = '{h}:00'
+    locale_dyu%clock%has_pattern(2) = .true.
+    locale_dyu%clock%patterns(2) = '{h}:05'
+    locale_dyu%clock%has_pattern(3) = .true.
+    locale_dyu%clock%patterns(3) = '{h}:10'
+    locale_dyu%clock%has_pattern(4) = .true.
+    locale_dyu%clock%patterns(4) = '{h}:15'
+    locale_dyu%clock%has_pattern(5) = .true.
+    locale_dyu%clock%patterns(5) = '{h}:20'
+    locale_dyu%clock%has_pattern(6) = .true.
+    locale_dyu%clock%patterns(6) = '{h}:25'
+    locale_dyu%clock%has_pattern(7) = .true.
+    locale_dyu%clock%patterns(7) = '{h}:30'
+    locale_dyu%clock%has_pattern(8) = .true.
+    locale_dyu%clock%patterns(8) = '{h}:35'
+    locale_dyu%clock%has_pattern(9) = .true.
+    locale_dyu%clock%patterns(9) = '{h}:40'
+    locale_dyu%clock%has_pattern(10) = .true.
+    locale_dyu%clock%patterns(10) = '{h}:45'
+    locale_dyu%clock%has_pattern(11) = .true.
+    locale_dyu%clock%patterns(11) = '{h}:50'
+    locale_dyu%clock%has_pattern(12) = .true.
+    locale_dyu%clock%patterns(12) = '{h}:55'
+
+    locale_dyu%has_short = .true.
+    locale_dyu%short_clock%use24h = .false.
+    locale_dyu%short_clock%format = '{h}:{mm} {ampm}'
+    locale_dyu%short_clock%has_am_pm = .true.
+    locale_dyu%short_clock%am = 'AM'
+    locale_dyu%short_clock%pm = 'PM'
+
+    locale_dyu%has_compact = .true.
+    locale_dyu%compact_clock%use24h = .false.
+    locale_dyu%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_dyu%compact_clock%has_am_pm = .true.
+    locale_dyu%compact_clock%am = 'a'
+    locale_dyu%compact_clock%pm = 'p'
+
+  end subroutine init_dyu
+
+  ! Source: time/locales/src/ee.json
+  subroutine init_ee()
+    locale_ee%code = 'ee'
+
+    locale_ee%clock%hours(1) = 'wuieve'
+    locale_ee%clock%hours(2) = 'ɖeka'
+    locale_ee%clock%hours(3) = 'eve'
+    locale_ee%clock%hours(4) = 'etɔ̃'
+    locale_ee%clock%hours(5) = 'ene'
+    locale_ee%clock%hours(6) = 'atɔ̃'
+    locale_ee%clock%hours(7) = 'ade'
+    locale_ee%clock%hours(8) = 'adre'
+    locale_ee%clock%hours(9) = 'enyi'
+    locale_ee%clock%hours(10) = 'asieke'
+    locale_ee%clock%hours(11) = 'ewo'
+    locale_ee%clock%hours(12) = 'wuiɖeka'
+
+    locale_ee%clock%midnight = 'zã titina'
+    locale_ee%clock%noon = 'ŋdɔ'
+
+    locale_ee%clock%has_pattern(1) = .true.
+    locale_ee%clock%patterns(1) = '{h}:00'
+    locale_ee%clock%has_pattern(2) = .true.
+    locale_ee%clock%patterns(2) = '{h}:05'
+    locale_ee%clock%has_pattern(3) = .true.
+    locale_ee%clock%patterns(3) = '{h}:10'
+    locale_ee%clock%has_pattern(4) = .true.
+    locale_ee%clock%patterns(4) = '{h}:15'
+    locale_ee%clock%has_pattern(5) = .true.
+    locale_ee%clock%patterns(5) = '{h}:20'
+    locale_ee%clock%has_pattern(6) = .true.
+    locale_ee%clock%patterns(6) = '{h}:25'
+    locale_ee%clock%has_pattern(7) = .true.
+    locale_ee%clock%patterns(7) = '{h}:30'
+    locale_ee%clock%has_pattern(8) = .true.
+    locale_ee%clock%patterns(8) = '{h}:35'
+    locale_ee%clock%has_pattern(9) = .true.
+    locale_ee%clock%patterns(9) = '{h}:40'
+    locale_ee%clock%has_pattern(10) = .true.
+    locale_ee%clock%patterns(10) = '{h}:45'
+    locale_ee%clock%has_pattern(11) = .true.
+    locale_ee%clock%patterns(11) = '{h}:50'
+    locale_ee%clock%has_pattern(12) = .true.
+    locale_ee%clock%patterns(12) = '{h}:55'
+
+    locale_ee%has_short = .true.
+    locale_ee%short_clock%use24h = .false.
+    locale_ee%short_clock%format = '{h}:{mm} {ampm}'
+    locale_ee%short_clock%has_am_pm = .true.
+    locale_ee%short_clock%am = 'AM'
+    locale_ee%short_clock%pm = 'PM'
+
+    locale_ee%has_compact = .true.
+    locale_ee%compact_clock%use24h = .false.
+    locale_ee%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_ee%compact_clock%has_am_pm = .true.
+    locale_ee%compact_clock%am = 'a'
+    locale_ee%compact_clock%pm = 'p'
+
+  end subroutine init_ee
+
   ! Source: time/locales/src/el.json
   subroutine init_el()
     locale_el%code = 'el'
@@ -1403,6 +1865,67 @@ contains
 
   end subroutine init_fa
 
+  ! Source: time/locales/src/fan.json
+  subroutine init_fan()
+    locale_fan%code = 'fan'
+
+    locale_fan%clock%hours(1) = 'awom mebú'
+    locale_fan%clock%hours(2) = 'fóg'
+    locale_fan%clock%hours(3) = 'abúi'
+    locale_fan%clock%hours(4) = 'aláa'
+    locale_fan%clock%hours(5) = 'anyin'
+    locale_fan%clock%hours(6) = 'atán'
+    locale_fan%clock%hours(7) = 'asaman'
+    locale_fan%clock%hours(8) = 'zamgbala'
+    locale_fan%clock%hours(9) = 'mwom'
+    locale_fan%clock%hours(10) = 'ebulú'
+    locale_fan%clock%hours(11) = 'awom'
+    locale_fan%clock%hours(12) = 'awom mefóg'
+
+    locale_fan%clock%midnight = 'akiri alúk'
+    locale_fan%clock%noon = 'ewaŋ'
+
+    locale_fan%clock%has_pattern(1) = .true.
+    locale_fan%clock%patterns(1) = '{h}:00'
+    locale_fan%clock%has_pattern(2) = .true.
+    locale_fan%clock%patterns(2) = '{h}:05'
+    locale_fan%clock%has_pattern(3) = .true.
+    locale_fan%clock%patterns(3) = '{h}:10'
+    locale_fan%clock%has_pattern(4) = .true.
+    locale_fan%clock%patterns(4) = '{h}:15'
+    locale_fan%clock%has_pattern(5) = .true.
+    locale_fan%clock%patterns(5) = '{h}:20'
+    locale_fan%clock%has_pattern(6) = .true.
+    locale_fan%clock%patterns(6) = '{h}:25'
+    locale_fan%clock%has_pattern(7) = .true.
+    locale_fan%clock%patterns(7) = '{h}:30'
+    locale_fan%clock%has_pattern(8) = .true.
+    locale_fan%clock%patterns(8) = '{h}:35'
+    locale_fan%clock%has_pattern(9) = .true.
+    locale_fan%clock%patterns(9) = '{h}:40'
+    locale_fan%clock%has_pattern(10) = .true.
+    locale_fan%clock%patterns(10) = '{h}:45'
+    locale_fan%clock%has_pattern(11) = .true.
+    locale_fan%clock%patterns(11) = '{h}:50'
+    locale_fan%clock%has_pattern(12) = .true.
+    locale_fan%clock%patterns(12) = '{h}:55'
+
+    locale_fan%has_short = .true.
+    locale_fan%short_clock%use24h = .false.
+    locale_fan%short_clock%format = '{h}:{mm} {ampm}'
+    locale_fan%short_clock%has_am_pm = .true.
+    locale_fan%short_clock%am = 'AM'
+    locale_fan%short_clock%pm = 'PM'
+
+    locale_fan%has_compact = .true.
+    locale_fan%compact_clock%use24h = .false.
+    locale_fan%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_fan%compact_clock%has_am_pm = .true.
+    locale_fan%compact_clock%am = 'a'
+    locale_fan%compact_clock%pm = 'p'
+
+  end subroutine init_fan
+
   ! Source: time/locales/src/ff.json
   subroutine init_ff()
     locale_ff%code = 'ff'
@@ -1581,6 +2104,67 @@ contains
     locale_fil%compact_clock%pm = 'p'
 
   end subroutine init_fil
+
+  ! Source: time/locales/src/fon.json
+  subroutine init_fon()
+    locale_fon%code = 'fon'
+
+    locale_fon%clock%hours(1) = 'wěwè'
+    locale_fon%clock%hours(2) = 'ɖokpo'
+    locale_fon%clock%hours(3) = 'wè'
+    locale_fon%clock%hours(4) = 'atɔn'
+    locale_fon%clock%hours(5) = 'ɛnɛ'
+    locale_fon%clock%hours(6) = 'atɔ́ɔ́n'
+    locale_fon%clock%hours(7) = 'ayizɛ̀n'
+    locale_fon%clock%hours(8) = 'tɛnwè'
+    locale_fon%clock%hours(9) = 'tantɔn'
+    locale_fon%clock%hours(10) = 'tɛnɛnɛ'
+    locale_fon%clock%hours(11) = 'wǒ'
+    locale_fon%clock%hours(12) = 'ɖokpo-wǒ'
+
+    locale_fon%clock%midnight = 'zǎnmɛ'
+    locale_fon%clock%noon = 'hwemɛnu'
+
+    locale_fon%clock%has_pattern(1) = .true.
+    locale_fon%clock%patterns(1) = '{h}:00'
+    locale_fon%clock%has_pattern(2) = .true.
+    locale_fon%clock%patterns(2) = '{h}:05'
+    locale_fon%clock%has_pattern(3) = .true.
+    locale_fon%clock%patterns(3) = '{h}:10'
+    locale_fon%clock%has_pattern(4) = .true.
+    locale_fon%clock%patterns(4) = '{h}:15'
+    locale_fon%clock%has_pattern(5) = .true.
+    locale_fon%clock%patterns(5) = '{h}:20'
+    locale_fon%clock%has_pattern(6) = .true.
+    locale_fon%clock%patterns(6) = '{h}:25'
+    locale_fon%clock%has_pattern(7) = .true.
+    locale_fon%clock%patterns(7) = '{h}:30'
+    locale_fon%clock%has_pattern(8) = .true.
+    locale_fon%clock%patterns(8) = '{h}:35'
+    locale_fon%clock%has_pattern(9) = .true.
+    locale_fon%clock%patterns(9) = '{h}:40'
+    locale_fon%clock%has_pattern(10) = .true.
+    locale_fon%clock%patterns(10) = '{h}:45'
+    locale_fon%clock%has_pattern(11) = .true.
+    locale_fon%clock%patterns(11) = '{h}:50'
+    locale_fon%clock%has_pattern(12) = .true.
+    locale_fon%clock%patterns(12) = '{h}:55'
+
+    locale_fon%has_short = .true.
+    locale_fon%short_clock%use24h = .false.
+    locale_fon%short_clock%format = '{h}:{mm} {ampm}'
+    locale_fon%short_clock%has_am_pm = .true.
+    locale_fon%short_clock%am = 'AM'
+    locale_fon%short_clock%pm = 'PM'
+
+    locale_fon%has_compact = .true.
+    locale_fon%compact_clock%use24h = .false.
+    locale_fon%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_fon%compact_clock%has_am_pm = .true.
+    locale_fon%compact_clock%am = 'a'
+    locale_fon%compact_clock%pm = 'p'
+
+  end subroutine init_fon
 
   ! Source: time/locales/src/fr.json
   subroutine init_fr()
@@ -2803,6 +3387,67 @@ contains
 
   end subroutine init_ka
 
+  ! Source: time/locales/src/kbp.json
+  subroutine init_kbp()
+    locale_kbp%code = 'kbp'
+
+    locale_kbp%clock%hours(1) = 'hiu nɛ naalɛ'
+    locale_kbp%clock%hours(2) = 'kʊɖʊm'
+    locale_kbp%clock%hours(3) = 'naalɛ'
+    locale_kbp%clock%hours(4) = 'naadozo'
+    locale_kbp%clock%hours(5) = 'naanaza'
+    locale_kbp%clock%hours(6) = 'kagbanzɩ'
+    locale_kbp%clock%hours(7) = 'loɖo'
+    locale_kbp%clock%hours(8) = 'lʊbɛ'
+    locale_kbp%clock%hours(9) = 'lɛɛtɛ'
+    locale_kbp%clock%hours(10) = 'nakʊ'
+    locale_kbp%clock%hours(11) = 'hiu'
+    locale_kbp%clock%hours(12) = 'hiu nɛ kʊɖʊm'
+
+    locale_kbp%clock%midnight = 'ɖoo hɛkʊ'
+    locale_kbp%clock%noon = 'wɩsɩ taa'
+
+    locale_kbp%clock%has_pattern(1) = .true.
+    locale_kbp%clock%patterns(1) = '{h}:00'
+    locale_kbp%clock%has_pattern(2) = .true.
+    locale_kbp%clock%patterns(2) = '{h}:05'
+    locale_kbp%clock%has_pattern(3) = .true.
+    locale_kbp%clock%patterns(3) = '{h}:10'
+    locale_kbp%clock%has_pattern(4) = .true.
+    locale_kbp%clock%patterns(4) = '{h}:15'
+    locale_kbp%clock%has_pattern(5) = .true.
+    locale_kbp%clock%patterns(5) = '{h}:20'
+    locale_kbp%clock%has_pattern(6) = .true.
+    locale_kbp%clock%patterns(6) = '{h}:25'
+    locale_kbp%clock%has_pattern(7) = .true.
+    locale_kbp%clock%patterns(7) = '{h}:30'
+    locale_kbp%clock%has_pattern(8) = .true.
+    locale_kbp%clock%patterns(8) = '{h}:35'
+    locale_kbp%clock%has_pattern(9) = .true.
+    locale_kbp%clock%patterns(9) = '{h}:40'
+    locale_kbp%clock%has_pattern(10) = .true.
+    locale_kbp%clock%patterns(10) = '{h}:45'
+    locale_kbp%clock%has_pattern(11) = .true.
+    locale_kbp%clock%patterns(11) = '{h}:50'
+    locale_kbp%clock%has_pattern(12) = .true.
+    locale_kbp%clock%patterns(12) = '{h}:55'
+
+    locale_kbp%has_short = .true.
+    locale_kbp%short_clock%use24h = .false.
+    locale_kbp%short_clock%format = '{h}:{mm} {ampm}'
+    locale_kbp%short_clock%has_am_pm = .true.
+    locale_kbp%short_clock%am = 'AM'
+    locale_kbp%short_clock%pm = 'PM'
+
+    locale_kbp%has_compact = .true.
+    locale_kbp%compact_clock%use24h = .false.
+    locale_kbp%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_kbp%compact_clock%has_am_pm = .true.
+    locale_kbp%compact_clock%am = 'a'
+    locale_kbp%compact_clock%pm = 'p'
+
+  end subroutine init_kbp
+
   ! Source: time/locales/src/kk.json
   subroutine init_kk()
     locale_kk%code = 'kk'
@@ -3034,6 +3679,128 @@ contains
     locale_ko%compact_clock%has_am_pm = .false.
 
   end subroutine init_ko
+
+  ! Source: time/locales/src/kpe.json
+  subroutine init_kpe()
+    locale_kpe%code = 'kpe'
+
+    locale_kpe%clock%hours(1) = 'puu lɔŋ'
+    locale_kpe%clock%hours(2) = 'tɔŋ'
+    locale_kpe%clock%hours(3) = 'feere'
+    locale_kpe%clock%hours(4) = 'sawa'
+    locale_kpe%clock%hours(5) = 'naŋ'
+    locale_kpe%clock%hours(6) = 'lɔɔlu'
+    locale_kpe%clock%hours(7) = 'mɛi da tɔŋ'
+    locale_kpe%clock%hours(8) = 'mɛi da feere'
+    locale_kpe%clock%hours(9) = 'mɛi da sawa'
+    locale_kpe%clock%hours(10) = 'mɛi da naŋ'
+    locale_kpe%clock%hours(11) = 'puu'
+    locale_kpe%clock%hours(12) = 'puu da tɔŋ'
+
+    locale_kpe%clock%midnight = 'kpindi kɔlɛ'
+    locale_kpe%clock%noon = 'tili-ma'
+
+    locale_kpe%clock%has_pattern(1) = .true.
+    locale_kpe%clock%patterns(1) = '{h}:00'
+    locale_kpe%clock%has_pattern(2) = .true.
+    locale_kpe%clock%patterns(2) = '{h}:05'
+    locale_kpe%clock%has_pattern(3) = .true.
+    locale_kpe%clock%patterns(3) = '{h}:10'
+    locale_kpe%clock%has_pattern(4) = .true.
+    locale_kpe%clock%patterns(4) = '{h}:15'
+    locale_kpe%clock%has_pattern(5) = .true.
+    locale_kpe%clock%patterns(5) = '{h}:20'
+    locale_kpe%clock%has_pattern(6) = .true.
+    locale_kpe%clock%patterns(6) = '{h}:25'
+    locale_kpe%clock%has_pattern(7) = .true.
+    locale_kpe%clock%patterns(7) = '{h}:30'
+    locale_kpe%clock%has_pattern(8) = .true.
+    locale_kpe%clock%patterns(8) = '{h}:35'
+    locale_kpe%clock%has_pattern(9) = .true.
+    locale_kpe%clock%patterns(9) = '{h}:40'
+    locale_kpe%clock%has_pattern(10) = .true.
+    locale_kpe%clock%patterns(10) = '{h}:45'
+    locale_kpe%clock%has_pattern(11) = .true.
+    locale_kpe%clock%patterns(11) = '{h}:50'
+    locale_kpe%clock%has_pattern(12) = .true.
+    locale_kpe%clock%patterns(12) = '{h}:55'
+
+    locale_kpe%has_short = .true.
+    locale_kpe%short_clock%use24h = .false.
+    locale_kpe%short_clock%format = '{h}:{mm} {ampm}'
+    locale_kpe%short_clock%has_am_pm = .true.
+    locale_kpe%short_clock%am = 'AM'
+    locale_kpe%short_clock%pm = 'PM'
+
+    locale_kpe%has_compact = .true.
+    locale_kpe%compact_clock%use24h = .false.
+    locale_kpe%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_kpe%compact_clock%has_am_pm = .true.
+    locale_kpe%compact_clock%am = 'a'
+    locale_kpe%compact_clock%pm = 'p'
+
+  end subroutine init_kpe
+
+  ! Source: time/locales/src/ktu.json
+  subroutine init_ktu()
+    locale_ktu%code = 'ktu'
+
+    locale_ktu%clock%hours(1) = 'zomi na zole'
+    locale_ktu%clock%hours(2) = 'mosi'
+    locale_ktu%clock%hours(3) = 'zole'
+    locale_ktu%clock%hours(4) = 'tatu'
+    locale_ktu%clock%hours(5) = 'ya'
+    locale_ktu%clock%hours(6) = 'tanu'
+    locale_ktu%clock%hours(7) = 'sambanu'
+    locale_ktu%clock%hours(8) = 'nsambwadi'
+    locale_ktu%clock%hours(9) = 'nana'
+    locale_ktu%clock%hours(10) = 'vwa'
+    locale_ktu%clock%hours(11) = 'zomi'
+    locale_ktu%clock%hours(12) = 'zomi na mosi'
+
+    locale_ktu%clock%midnight = 'midi ya butu'
+    locale_ktu%clock%noon = 'midi'
+
+    locale_ktu%clock%has_pattern(1) = .true.
+    locale_ktu%clock%patterns(1) = '{h}:00'
+    locale_ktu%clock%has_pattern(2) = .true.
+    locale_ktu%clock%patterns(2) = '{h}:05'
+    locale_ktu%clock%has_pattern(3) = .true.
+    locale_ktu%clock%patterns(3) = '{h}:10'
+    locale_ktu%clock%has_pattern(4) = .true.
+    locale_ktu%clock%patterns(4) = '{h}:15'
+    locale_ktu%clock%has_pattern(5) = .true.
+    locale_ktu%clock%patterns(5) = '{h}:20'
+    locale_ktu%clock%has_pattern(6) = .true.
+    locale_ktu%clock%patterns(6) = '{h}:25'
+    locale_ktu%clock%has_pattern(7) = .true.
+    locale_ktu%clock%patterns(7) = '{h}:30'
+    locale_ktu%clock%has_pattern(8) = .true.
+    locale_ktu%clock%patterns(8) = '{h}:35'
+    locale_ktu%clock%has_pattern(9) = .true.
+    locale_ktu%clock%patterns(9) = '{h}:40'
+    locale_ktu%clock%has_pattern(10) = .true.
+    locale_ktu%clock%patterns(10) = '{h}:45'
+    locale_ktu%clock%has_pattern(11) = .true.
+    locale_ktu%clock%patterns(11) = '{h}:50'
+    locale_ktu%clock%has_pattern(12) = .true.
+    locale_ktu%clock%patterns(12) = '{h}:55'
+
+    locale_ktu%has_short = .true.
+    locale_ktu%short_clock%use24h = .false.
+    locale_ktu%short_clock%format = '{h}:{mm} {ampm}'
+    locale_ktu%short_clock%has_am_pm = .true.
+    locale_ktu%short_clock%am = 'AM'
+    locale_ktu%short_clock%pm = 'PM'
+
+    locale_ktu%has_compact = .true.
+    locale_ktu%compact_clock%use24h = .false.
+    locale_ktu%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_ktu%compact_clock%has_am_pm = .true.
+    locale_ktu%compact_clock%am = 'a'
+    locale_ktu%compact_clock%pm = 'p'
+
+  end subroutine init_ktu
 
   ! Source: time/locales/src/ku.json
   subroutine init_ku()
@@ -3499,6 +4266,128 @@ contains
 
   end subroutine init_lv
 
+  ! Source: time/locales/src/men.json
+  subroutine init_men()
+    locale_men%code = 'men'
+
+    locale_men%clock%hours(1) = 'pu wɛlɛ'
+    locale_men%clock%hours(2) = 'yila'
+    locale_men%clock%hours(3) = 'fele'
+    locale_men%clock%hours(4) = 'sawa'
+    locale_men%clock%hours(5) = 'nani'
+    locale_men%clock%hours(6) = 'lɔlu'
+    locale_men%clock%hours(7) = 'wɛita'
+    locale_men%clock%hours(8) = 'wɔfela'
+    locale_men%clock%hours(9) = 'wayakpa'
+    locale_men%clock%hours(10) = 'taawu'
+    locale_men%clock%hours(11) = 'pu'
+    locale_men%clock%hours(12) = 'pu mahu yila'
+
+    locale_men%clock%midnight = 'kpindi gbɔyɔŋ'
+    locale_men%clock%noon = 'ndɔlei-ma'
+
+    locale_men%clock%has_pattern(1) = .true.
+    locale_men%clock%patterns(1) = '{h}:00'
+    locale_men%clock%has_pattern(2) = .true.
+    locale_men%clock%patterns(2) = '{h}:05'
+    locale_men%clock%has_pattern(3) = .true.
+    locale_men%clock%patterns(3) = '{h}:10'
+    locale_men%clock%has_pattern(4) = .true.
+    locale_men%clock%patterns(4) = '{h}:15'
+    locale_men%clock%has_pattern(5) = .true.
+    locale_men%clock%patterns(5) = '{h}:20'
+    locale_men%clock%has_pattern(6) = .true.
+    locale_men%clock%patterns(6) = '{h}:25'
+    locale_men%clock%has_pattern(7) = .true.
+    locale_men%clock%patterns(7) = '{h}:30'
+    locale_men%clock%has_pattern(8) = .true.
+    locale_men%clock%patterns(8) = '{h}:35'
+    locale_men%clock%has_pattern(9) = .true.
+    locale_men%clock%patterns(9) = '{h}:40'
+    locale_men%clock%has_pattern(10) = .true.
+    locale_men%clock%patterns(10) = '{h}:45'
+    locale_men%clock%has_pattern(11) = .true.
+    locale_men%clock%patterns(11) = '{h}:50'
+    locale_men%clock%has_pattern(12) = .true.
+    locale_men%clock%patterns(12) = '{h}:55'
+
+    locale_men%has_short = .true.
+    locale_men%short_clock%use24h = .false.
+    locale_men%short_clock%format = '{h}:{mm} {ampm}'
+    locale_men%short_clock%has_am_pm = .true.
+    locale_men%short_clock%am = 'AM'
+    locale_men%short_clock%pm = 'PM'
+
+    locale_men%has_compact = .true.
+    locale_men%compact_clock%use24h = .false.
+    locale_men%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_men%compact_clock%has_am_pm = .true.
+    locale_men%compact_clock%am = 'a'
+    locale_men%compact_clock%pm = 'p'
+
+  end subroutine init_men
+
+  ! Source: time/locales/src/mfe.json
+  subroutine init_mfe()
+    locale_mfe%code = 'mfe'
+
+    locale_mfe%clock%hours(1) = 'douz'
+    locale_mfe%clock%hours(2) = 'enn'
+    locale_mfe%clock%hours(3) = 'de'
+    locale_mfe%clock%hours(4) = 'trwa'
+    locale_mfe%clock%hours(5) = 'kat'
+    locale_mfe%clock%hours(6) = 'senk'
+    locale_mfe%clock%hours(7) = 'sis'
+    locale_mfe%clock%hours(8) = 'set'
+    locale_mfe%clock%hours(9) = 'wit'
+    locale_mfe%clock%hours(10) = 'nef'
+    locale_mfe%clock%hours(11) = 'dis'
+    locale_mfe%clock%hours(12) = 'onz'
+
+    locale_mfe%clock%midnight = 'minwi'
+    locale_mfe%clock%noon = 'midi'
+
+    locale_mfe%clock%has_pattern(1) = .true.
+    locale_mfe%clock%patterns(1) = '{h}:00'
+    locale_mfe%clock%has_pattern(2) = .true.
+    locale_mfe%clock%patterns(2) = '{h}:05'
+    locale_mfe%clock%has_pattern(3) = .true.
+    locale_mfe%clock%patterns(3) = '{h}:10'
+    locale_mfe%clock%has_pattern(4) = .true.
+    locale_mfe%clock%patterns(4) = '{h}:15'
+    locale_mfe%clock%has_pattern(5) = .true.
+    locale_mfe%clock%patterns(5) = '{h}:20'
+    locale_mfe%clock%has_pattern(6) = .true.
+    locale_mfe%clock%patterns(6) = '{h}:25'
+    locale_mfe%clock%has_pattern(7) = .true.
+    locale_mfe%clock%patterns(7) = '{h}:30'
+    locale_mfe%clock%has_pattern(8) = .true.
+    locale_mfe%clock%patterns(8) = '{h}:35'
+    locale_mfe%clock%has_pattern(9) = .true.
+    locale_mfe%clock%patterns(9) = '{h}:40'
+    locale_mfe%clock%has_pattern(10) = .true.
+    locale_mfe%clock%patterns(10) = '{h}:45'
+    locale_mfe%clock%has_pattern(11) = .true.
+    locale_mfe%clock%patterns(11) = '{h}:50'
+    locale_mfe%clock%has_pattern(12) = .true.
+    locale_mfe%clock%patterns(12) = '{h}:55'
+
+    locale_mfe%has_short = .true.
+    locale_mfe%short_clock%use24h = .false.
+    locale_mfe%short_clock%format = '{h}:{mm} {ampm}'
+    locale_mfe%short_clock%has_am_pm = .true.
+    locale_mfe%short_clock%am = 'AM'
+    locale_mfe%short_clock%pm = 'PM'
+
+    locale_mfe%has_compact = .true.
+    locale_mfe%compact_clock%use24h = .false.
+    locale_mfe%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_mfe%compact_clock%has_am_pm = .true.
+    locale_mfe%compact_clock%am = 'a'
+    locale_mfe%compact_clock%pm = 'p'
+
+  end subroutine init_mfe
+
   ! Source: time/locales/src/mg.json
   subroutine init_mg()
     locale_mg%code = 'mg'
@@ -3796,6 +4685,128 @@ contains
 
   end subroutine init_mn
 
+  ! Source: time/locales/src/mnk.json
+  subroutine init_mnk()
+    locale_mnk%code = 'mnk'
+
+    locale_mnk%clock%hours(1) = 'tan ning fula'
+    locale_mnk%clock%hours(2) = 'kiliŋ'
+    locale_mnk%clock%hours(3) = 'fula'
+    locale_mnk%clock%hours(4) = 'saba'
+    locale_mnk%clock%hours(5) = 'naani'
+    locale_mnk%clock%hours(6) = 'luulu'
+    locale_mnk%clock%hours(7) = 'wɔɔrɔ'
+    locale_mnk%clock%hours(8) = 'wolonfila'
+    locale_mnk%clock%hours(9) = 'sey'
+    locale_mnk%clock%hours(10) = 'kɔnɔntɔ'
+    locale_mnk%clock%hours(11) = 'taŋ'
+    locale_mnk%clock%hours(12) = 'taŋ ning kiliŋ'
+
+    locale_mnk%clock%midnight = 'sutu-tili-laŋ'
+    locale_mnk%clock%noon = 'tili-konto'
+
+    locale_mnk%clock%has_pattern(1) = .true.
+    locale_mnk%clock%patterns(1) = '{h}:00'
+    locale_mnk%clock%has_pattern(2) = .true.
+    locale_mnk%clock%patterns(2) = '{h}:05'
+    locale_mnk%clock%has_pattern(3) = .true.
+    locale_mnk%clock%patterns(3) = '{h}:10'
+    locale_mnk%clock%has_pattern(4) = .true.
+    locale_mnk%clock%patterns(4) = '{h}:15'
+    locale_mnk%clock%has_pattern(5) = .true.
+    locale_mnk%clock%patterns(5) = '{h}:20'
+    locale_mnk%clock%has_pattern(6) = .true.
+    locale_mnk%clock%patterns(6) = '{h}:25'
+    locale_mnk%clock%has_pattern(7) = .true.
+    locale_mnk%clock%patterns(7) = '{h}:30'
+    locale_mnk%clock%has_pattern(8) = .true.
+    locale_mnk%clock%patterns(8) = '{h}:35'
+    locale_mnk%clock%has_pattern(9) = .true.
+    locale_mnk%clock%patterns(9) = '{h}:40'
+    locale_mnk%clock%has_pattern(10) = .true.
+    locale_mnk%clock%patterns(10) = '{h}:45'
+    locale_mnk%clock%has_pattern(11) = .true.
+    locale_mnk%clock%patterns(11) = '{h}:50'
+    locale_mnk%clock%has_pattern(12) = .true.
+    locale_mnk%clock%patterns(12) = '{h}:55'
+
+    locale_mnk%has_short = .true.
+    locale_mnk%short_clock%use24h = .false.
+    locale_mnk%short_clock%format = '{h}:{mm} {ampm}'
+    locale_mnk%short_clock%has_am_pm = .true.
+    locale_mnk%short_clock%am = 'AM'
+    locale_mnk%short_clock%pm = 'PM'
+
+    locale_mnk%has_compact = .true.
+    locale_mnk%compact_clock%use24h = .false.
+    locale_mnk%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_mnk%compact_clock%has_am_pm = .true.
+    locale_mnk%compact_clock%am = 'a'
+    locale_mnk%compact_clock%pm = 'p'
+
+  end subroutine init_mnk
+
+  ! Source: time/locales/src/mos.json
+  subroutine init_mos()
+    locale_mos%code = 'mos'
+
+    locale_mos%clock%hours(1) = 'piig la a yiibu'
+    locale_mos%clock%hours(2) = 'a yembre'
+    locale_mos%clock%hours(3) = 'a yiibu'
+    locale_mos%clock%hours(4) = 'a tãabo'
+    locale_mos%clock%hours(5) = 'a naase'
+    locale_mos%clock%hours(6) = 'a nu'
+    locale_mos%clock%hours(7) = 'a yoobe'
+    locale_mos%clock%hours(8) = 'a yopoe'
+    locale_mos%clock%hours(9) = 'a niini'
+    locale_mos%clock%hours(10) = 'a wae'
+    locale_mos%clock%hours(11) = 'piiga'
+    locale_mos%clock%hours(12) = 'piig la a yembre'
+
+    locale_mos%clock%midnight = 'yʋng-vɩɩse'
+    locale_mos%clock%noon = 'wĩntoog zabre'
+
+    locale_mos%clock%has_pattern(1) = .true.
+    locale_mos%clock%patterns(1) = '{h}:00'
+    locale_mos%clock%has_pattern(2) = .true.
+    locale_mos%clock%patterns(2) = '{h}:05'
+    locale_mos%clock%has_pattern(3) = .true.
+    locale_mos%clock%patterns(3) = '{h}:10'
+    locale_mos%clock%has_pattern(4) = .true.
+    locale_mos%clock%patterns(4) = '{h}:15'
+    locale_mos%clock%has_pattern(5) = .true.
+    locale_mos%clock%patterns(5) = '{h}:20'
+    locale_mos%clock%has_pattern(6) = .true.
+    locale_mos%clock%patterns(6) = '{h}:25'
+    locale_mos%clock%has_pattern(7) = .true.
+    locale_mos%clock%patterns(7) = '{h}:30'
+    locale_mos%clock%has_pattern(8) = .true.
+    locale_mos%clock%patterns(8) = '{h}:35'
+    locale_mos%clock%has_pattern(9) = .true.
+    locale_mos%clock%patterns(9) = '{h}:40'
+    locale_mos%clock%has_pattern(10) = .true.
+    locale_mos%clock%patterns(10) = '{h}:45'
+    locale_mos%clock%has_pattern(11) = .true.
+    locale_mos%clock%patterns(11) = '{h}:50'
+    locale_mos%clock%has_pattern(12) = .true.
+    locale_mos%clock%patterns(12) = '{h}:55'
+
+    locale_mos%has_short = .true.
+    locale_mos%short_clock%use24h = .false.
+    locale_mos%short_clock%format = '{h}:{mm} {ampm}'
+    locale_mos%short_clock%has_am_pm = .true.
+    locale_mos%short_clock%am = 'AM'
+    locale_mos%short_clock%pm = 'PM'
+
+    locale_mos%has_compact = .true.
+    locale_mos%compact_clock%use24h = .false.
+    locale_mos%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_mos%compact_clock%has_am_pm = .true.
+    locale_mos%compact_clock%am = 'a'
+    locale_mos%compact_clock%pm = 'p'
+
+  end subroutine init_mos
+
   ! Source: time/locales/src/mr.json
   subroutine init_mr()
     locale_mr%code = 'mr'
@@ -4085,6 +5096,67 @@ contains
 
   end subroutine init_nb
 
+  ! Source: time/locales/src/nd.json
+  subroutine init_nd()
+    locale_nd%code = 'nd'
+
+    locale_nd%clock%hours(1) = 'litshumi lambili'
+    locale_nd%clock%hours(2) = 'kunye'
+    locale_nd%clock%hours(3) = 'kubili'
+    locale_nd%clock%hours(4) = 'kuthathu'
+    locale_nd%clock%hours(5) = 'kune'
+    locale_nd%clock%hours(6) = 'kuhlanu'
+    locale_nd%clock%hours(7) = 'isithupha'
+    locale_nd%clock%hours(8) = 'isikhombisa'
+    locale_nd%clock%hours(9) = 'isitshiyangalombili'
+    locale_nd%clock%hours(10) = 'isitshiyangalolunye'
+    locale_nd%clock%hours(11) = 'litshumi'
+    locale_nd%clock%hours(12) = 'litshumi lanye'
+
+    locale_nd%clock%midnight = 'phakathi kobusuku'
+    locale_nd%clock%noon = 'emini'
+
+    locale_nd%clock%has_pattern(1) = .true.
+    locale_nd%clock%patterns(1) = '{h}:00'
+    locale_nd%clock%has_pattern(2) = .true.
+    locale_nd%clock%patterns(2) = '{h}:05'
+    locale_nd%clock%has_pattern(3) = .true.
+    locale_nd%clock%patterns(3) = '{h}:10'
+    locale_nd%clock%has_pattern(4) = .true.
+    locale_nd%clock%patterns(4) = '{h}:15'
+    locale_nd%clock%has_pattern(5) = .true.
+    locale_nd%clock%patterns(5) = '{h}:20'
+    locale_nd%clock%has_pattern(6) = .true.
+    locale_nd%clock%patterns(6) = '{h}:25'
+    locale_nd%clock%has_pattern(7) = .true.
+    locale_nd%clock%patterns(7) = '{h}:30'
+    locale_nd%clock%has_pattern(8) = .true.
+    locale_nd%clock%patterns(8) = '{h}:35'
+    locale_nd%clock%has_pattern(9) = .true.
+    locale_nd%clock%patterns(9) = '{h}:40'
+    locale_nd%clock%has_pattern(10) = .true.
+    locale_nd%clock%patterns(10) = '{h}:45'
+    locale_nd%clock%has_pattern(11) = .true.
+    locale_nd%clock%patterns(11) = '{h}:50'
+    locale_nd%clock%has_pattern(12) = .true.
+    locale_nd%clock%patterns(12) = '{h}:55'
+
+    locale_nd%has_short = .true.
+    locale_nd%short_clock%use24h = .false.
+    locale_nd%short_clock%format = '{h}:{mm} {ampm}'
+    locale_nd%short_clock%has_am_pm = .true.
+    locale_nd%short_clock%am = 'AM'
+    locale_nd%short_clock%pm = 'PM'
+
+    locale_nd%has_compact = .true.
+    locale_nd%compact_clock%use24h = .false.
+    locale_nd%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_nd%compact_clock%has_am_pm = .true.
+    locale_nd%compact_clock%am = 'a'
+    locale_nd%compact_clock%pm = 'p'
+
+  end subroutine init_nd
+
   ! Source: time/locales/src/ne.json
   subroutine init_ne()
     locale_ne%code = 'ne'
@@ -4146,6 +5218,67 @@ contains
 
   end subroutine init_ne
 
+  ! Source: time/locales/src/ng.json
+  subroutine init_ng()
+    locale_ng%code = 'ng'
+
+    locale_ng%clock%hours(1) = 'omulongo nambali'
+    locale_ng%clock%hours(2) = 'imwe'
+    locale_ng%clock%hours(3) = 'mbali'
+    locale_ng%clock%hours(4) = 'ndatu'
+    locale_ng%clock%hours(5) = 'ne'
+    locale_ng%clock%hours(6) = 'ntano'
+    locale_ng%clock%hours(7) = 'hamano'
+    locale_ng%clock%hours(8) = 'heyali'
+    locale_ng%clock%hours(9) = 'hetatu'
+    locale_ng%clock%hours(10) = 'omugoyi'
+    locale_ng%clock%hours(11) = 'omulongo'
+    locale_ng%clock%hours(12) = 'omulongo nimwe'
+
+    locale_ng%clock%midnight = 'onguloshi pakati'
+    locale_ng%clock%noon = 'omutenya'
+
+    locale_ng%clock%has_pattern(1) = .true.
+    locale_ng%clock%patterns(1) = '{h}:00'
+    locale_ng%clock%has_pattern(2) = .true.
+    locale_ng%clock%patterns(2) = '{h}:05'
+    locale_ng%clock%has_pattern(3) = .true.
+    locale_ng%clock%patterns(3) = '{h}:10'
+    locale_ng%clock%has_pattern(4) = .true.
+    locale_ng%clock%patterns(4) = '{h}:15'
+    locale_ng%clock%has_pattern(5) = .true.
+    locale_ng%clock%patterns(5) = '{h}:20'
+    locale_ng%clock%has_pattern(6) = .true.
+    locale_ng%clock%patterns(6) = '{h}:25'
+    locale_ng%clock%has_pattern(7) = .true.
+    locale_ng%clock%patterns(7) = '{h}:30'
+    locale_ng%clock%has_pattern(8) = .true.
+    locale_ng%clock%patterns(8) = '{h}:35'
+    locale_ng%clock%has_pattern(9) = .true.
+    locale_ng%clock%patterns(9) = '{h}:40'
+    locale_ng%clock%has_pattern(10) = .true.
+    locale_ng%clock%patterns(10) = '{h}:45'
+    locale_ng%clock%has_pattern(11) = .true.
+    locale_ng%clock%patterns(11) = '{h}:50'
+    locale_ng%clock%has_pattern(12) = .true.
+    locale_ng%clock%patterns(12) = '{h}:55'
+
+    locale_ng%has_short = .true.
+    locale_ng%short_clock%use24h = .false.
+    locale_ng%short_clock%format = '{h}:{mm} {ampm}'
+    locale_ng%short_clock%has_am_pm = .true.
+    locale_ng%short_clock%am = 'AM'
+    locale_ng%short_clock%pm = 'PM'
+
+    locale_ng%has_compact = .true.
+    locale_ng%compact_clock%use24h = .false.
+    locale_ng%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_ng%compact_clock%has_am_pm = .true.
+    locale_ng%compact_clock%am = 'a'
+    locale_ng%compact_clock%pm = 'p'
+
+  end subroutine init_ng
+
   ! Source: time/locales/src/nl.json
   subroutine init_nl()
     locale_nl%code = 'nl'
@@ -4202,6 +5335,128 @@ contains
     locale_nl%compact_clock%has_am_pm = .false.
 
   end subroutine init_nl
+
+  ! Source: time/locales/src/nso.json
+  subroutine init_nso()
+    locale_nso%code = 'nso'
+
+    locale_nso%clock%hours(1) = 'lesome pedi'
+    locale_nso%clock%hours(2) = 'tee'
+    locale_nso%clock%hours(3) = 'pedi'
+    locale_nso%clock%hours(4) = 'tharo'
+    locale_nso%clock%hours(5) = 'nne'
+    locale_nso%clock%hours(6) = 'hlano'
+    locale_nso%clock%hours(7) = 'tshela'
+    locale_nso%clock%hours(8) = 'šupa'
+    locale_nso%clock%hours(9) = 'seswai'
+    locale_nso%clock%hours(10) = 'senyane'
+    locale_nso%clock%hours(11) = 'lesome'
+    locale_nso%clock%hours(12) = 'lesome tee'
+
+    locale_nso%clock%midnight = 'bošego gare'
+    locale_nso%clock%noon = 'mosegare'
+
+    locale_nso%clock%has_pattern(1) = .true.
+    locale_nso%clock%patterns(1) = '{h}:00'
+    locale_nso%clock%has_pattern(2) = .true.
+    locale_nso%clock%patterns(2) = '{h}:05'
+    locale_nso%clock%has_pattern(3) = .true.
+    locale_nso%clock%patterns(3) = '{h}:10'
+    locale_nso%clock%has_pattern(4) = .true.
+    locale_nso%clock%patterns(4) = '{h}:15'
+    locale_nso%clock%has_pattern(5) = .true.
+    locale_nso%clock%patterns(5) = '{h}:20'
+    locale_nso%clock%has_pattern(6) = .true.
+    locale_nso%clock%patterns(6) = '{h}:25'
+    locale_nso%clock%has_pattern(7) = .true.
+    locale_nso%clock%patterns(7) = '{h}:30'
+    locale_nso%clock%has_pattern(8) = .true.
+    locale_nso%clock%patterns(8) = '{h}:35'
+    locale_nso%clock%has_pattern(9) = .true.
+    locale_nso%clock%patterns(9) = '{h}:40'
+    locale_nso%clock%has_pattern(10) = .true.
+    locale_nso%clock%patterns(10) = '{h}:45'
+    locale_nso%clock%has_pattern(11) = .true.
+    locale_nso%clock%patterns(11) = '{h}:50'
+    locale_nso%clock%has_pattern(12) = .true.
+    locale_nso%clock%patterns(12) = '{h}:55'
+
+    locale_nso%has_short = .true.
+    locale_nso%short_clock%use24h = .false.
+    locale_nso%short_clock%format = '{h}:{mm} {ampm}'
+    locale_nso%short_clock%has_am_pm = .true.
+    locale_nso%short_clock%am = 'AM'
+    locale_nso%short_clock%pm = 'PM'
+
+    locale_nso%has_compact = .true.
+    locale_nso%compact_clock%use24h = .false.
+    locale_nso%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_nso%compact_clock%has_am_pm = .true.
+    locale_nso%compact_clock%am = 'a'
+    locale_nso%compact_clock%pm = 'p'
+
+  end subroutine init_nso
+
+  ! Source: time/locales/src/nus.json
+  subroutine init_nus()
+    locale_nus%code = 'nus'
+
+    locale_nus%clock%hours(1) = 'thiäär ke rou'
+    locale_nus%clock%hours(2) = 'tök'
+    locale_nus%clock%hours(3) = 'rou'
+    locale_nus%clock%hours(4) = 'diäk'
+    locale_nus%clock%hours(5) = 'ŋuan'
+    locale_nus%clock%hours(6) = 'dhiëc'
+    locale_nus%clock%hours(7) = 'bäkɛl'
+    locale_nus%clock%hours(8) = 'dhorou'
+    locale_nus%clock%hours(9) = 'bät'
+    locale_nus%clock%hours(10) = 'kuɔn'
+    locale_nus%clock%hours(11) = 'thiäär'
+    locale_nus%clock%hours(12) = 'thiäär ku tök'
+
+    locale_nus%clock%midnight = 'wakɔ̈u'
+    locale_nus%clock%noon = 'cäŋ kɔ̈k'
+
+    locale_nus%clock%has_pattern(1) = .true.
+    locale_nus%clock%patterns(1) = '{h}:00'
+    locale_nus%clock%has_pattern(2) = .true.
+    locale_nus%clock%patterns(2) = '{h}:05'
+    locale_nus%clock%has_pattern(3) = .true.
+    locale_nus%clock%patterns(3) = '{h}:10'
+    locale_nus%clock%has_pattern(4) = .true.
+    locale_nus%clock%patterns(4) = '{h}:15'
+    locale_nus%clock%has_pattern(5) = .true.
+    locale_nus%clock%patterns(5) = '{h}:20'
+    locale_nus%clock%has_pattern(6) = .true.
+    locale_nus%clock%patterns(6) = '{h}:25'
+    locale_nus%clock%has_pattern(7) = .true.
+    locale_nus%clock%patterns(7) = '{h}:30'
+    locale_nus%clock%has_pattern(8) = .true.
+    locale_nus%clock%patterns(8) = '{h}:35'
+    locale_nus%clock%has_pattern(9) = .true.
+    locale_nus%clock%patterns(9) = '{h}:40'
+    locale_nus%clock%has_pattern(10) = .true.
+    locale_nus%clock%patterns(10) = '{h}:45'
+    locale_nus%clock%has_pattern(11) = .true.
+    locale_nus%clock%patterns(11) = '{h}:50'
+    locale_nus%clock%has_pattern(12) = .true.
+    locale_nus%clock%patterns(12) = '{h}:55'
+
+    locale_nus%has_short = .true.
+    locale_nus%short_clock%use24h = .false.
+    locale_nus%short_clock%format = '{h}:{mm} {ampm}'
+    locale_nus%short_clock%has_am_pm = .true.
+    locale_nus%short_clock%am = 'AM'
+    locale_nus%short_clock%pm = 'PM'
+
+    locale_nus%has_compact = .true.
+    locale_nus%compact_clock%use24h = .false.
+    locale_nus%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_nus%compact_clock%has_am_pm = .true.
+    locale_nus%compact_clock%am = 'a'
+    locale_nus%compact_clock%pm = 'p'
+
+  end subroutine init_nus
 
   ! Source: time/locales/src/ny.json
   subroutine init_ny()
@@ -4503,6 +5758,67 @@ contains
     locale_pl%compact_clock%has_am_pm = .false.
 
   end subroutine init_pl
+
+  ! Source: time/locales/src/pov.json
+  subroutine init_pov()
+    locale_pov%code = 'pov'
+
+    locale_pov%clock%hours(1) = 'dozi'
+    locale_pov%clock%hours(2) = 'un'
+    locale_pov%clock%hours(3) = 'dos'
+    locale_pov%clock%hours(4) = 'tres'
+    locale_pov%clock%hours(5) = 'kuatru'
+    locale_pov%clock%hours(6) = 'sinku'
+    locale_pov%clock%hours(7) = 'seis'
+    locale_pov%clock%hours(8) = 'seti'
+    locale_pov%clock%hours(9) = 'oitu'
+    locale_pov%clock%hours(10) = 'novi'
+    locale_pov%clock%hours(11) = 'des'
+    locale_pov%clock%hours(12) = 'onzi'
+
+    locale_pov%clock%midnight = 'meia noti'
+    locale_pov%clock%noon = 'meiu dia'
+
+    locale_pov%clock%has_pattern(1) = .true.
+    locale_pov%clock%patterns(1) = '{h}:00'
+    locale_pov%clock%has_pattern(2) = .true.
+    locale_pov%clock%patterns(2) = '{h}:05'
+    locale_pov%clock%has_pattern(3) = .true.
+    locale_pov%clock%patterns(3) = '{h}:10'
+    locale_pov%clock%has_pattern(4) = .true.
+    locale_pov%clock%patterns(4) = '{h}:15'
+    locale_pov%clock%has_pattern(5) = .true.
+    locale_pov%clock%patterns(5) = '{h}:20'
+    locale_pov%clock%has_pattern(6) = .true.
+    locale_pov%clock%patterns(6) = '{h}:25'
+    locale_pov%clock%has_pattern(7) = .true.
+    locale_pov%clock%patterns(7) = '{h}:30'
+    locale_pov%clock%has_pattern(8) = .true.
+    locale_pov%clock%patterns(8) = '{h}:35'
+    locale_pov%clock%has_pattern(9) = .true.
+    locale_pov%clock%patterns(9) = '{h}:40'
+    locale_pov%clock%has_pattern(10) = .true.
+    locale_pov%clock%patterns(10) = '{h}:45'
+    locale_pov%clock%has_pattern(11) = .true.
+    locale_pov%clock%patterns(11) = '{h}:50'
+    locale_pov%clock%has_pattern(12) = .true.
+    locale_pov%clock%patterns(12) = '{h}:55'
+
+    locale_pov%has_short = .true.
+    locale_pov%short_clock%use24h = .false.
+    locale_pov%short_clock%format = '{h}:{mm} {ampm}'
+    locale_pov%short_clock%has_am_pm = .true.
+    locale_pov%short_clock%am = 'AM'
+    locale_pov%short_clock%pm = 'PM'
+
+    locale_pov%has_compact = .true.
+    locale_pov%compact_clock%use24h = .false.
+    locale_pov%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_pov%compact_clock%has_am_pm = .true.
+    locale_pov%compact_clock%am = 'a'
+    locale_pov%compact_clock%pm = 'p'
+
+  end subroutine init_pov
 
   ! Source: time/locales/src/ps.json
   subroutine init_ps()
@@ -4858,6 +6174,67 @@ contains
 
   end subroutine init_rw
 
+  ! Source: time/locales/src/sar.json
+  subroutine init_sar()
+    locale_sar%code = 'sar'
+
+    locale_sar%clock%hours(1) = 'mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi'
+    locale_sar%clock%hours(2) = 'kɨ̀ndá'
+    locale_sar%clock%hours(3) = 'ɗìi'
+    locale_sar%clock%hours(4) = 'mùtá'
+    locale_sar%clock%hours(5) = 'sɔ̀'
+    locale_sar%clock%hours(6) = 'mɨ̀ndɨ̀'
+    locale_sar%clock%hours(7) = 'mɨ̀ndɨ̀ kɨ̀ndá'
+    locale_sar%clock%hours(8) = 'mɨ̀sá'
+    locale_sar%clock%hours(9) = 'mɨ̀ndɨ̀ mùtá'
+    locale_sar%clock%hours(10) = 'mɨ̀ndɨ̀ sɔ̀'
+    locale_sar%clock%hours(11) = 'mɔ̀ɔ́'
+    locale_sar%clock%hours(12) = 'mɔ̀ɔ́ kɨ̀ndá'
+
+    locale_sar%clock%midnight = 'badɔ'
+    locale_sar%clock%noon = 'mbɔr ndɔ'
+
+    locale_sar%clock%has_pattern(1) = .true.
+    locale_sar%clock%patterns(1) = '{h}:00'
+    locale_sar%clock%has_pattern(2) = .true.
+    locale_sar%clock%patterns(2) = '{h}:05'
+    locale_sar%clock%has_pattern(3) = .true.
+    locale_sar%clock%patterns(3) = '{h}:10'
+    locale_sar%clock%has_pattern(4) = .true.
+    locale_sar%clock%patterns(4) = '{h}:15'
+    locale_sar%clock%has_pattern(5) = .true.
+    locale_sar%clock%patterns(5) = '{h}:20'
+    locale_sar%clock%has_pattern(6) = .true.
+    locale_sar%clock%patterns(6) = '{h}:25'
+    locale_sar%clock%has_pattern(7) = .true.
+    locale_sar%clock%patterns(7) = '{h}:30'
+    locale_sar%clock%has_pattern(8) = .true.
+    locale_sar%clock%patterns(8) = '{h}:35'
+    locale_sar%clock%has_pattern(9) = .true.
+    locale_sar%clock%patterns(9) = '{h}:40'
+    locale_sar%clock%has_pattern(10) = .true.
+    locale_sar%clock%patterns(10) = '{h}:45'
+    locale_sar%clock%has_pattern(11) = .true.
+    locale_sar%clock%patterns(11) = '{h}:50'
+    locale_sar%clock%has_pattern(12) = .true.
+    locale_sar%clock%patterns(12) = '{h}:55'
+
+    locale_sar%has_short = .true.
+    locale_sar%short_clock%use24h = .false.
+    locale_sar%short_clock%format = '{h}:{mm} {ampm}'
+    locale_sar%short_clock%has_am_pm = .true.
+    locale_sar%short_clock%am = 'AM'
+    locale_sar%short_clock%pm = 'PM'
+
+    locale_sar%has_compact = .true.
+    locale_sar%compact_clock%use24h = .false.
+    locale_sar%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_sar%compact_clock%has_am_pm = .true.
+    locale_sar%compact_clock%am = 'a'
+    locale_sar%compact_clock%pm = 'p'
+
+  end subroutine init_sar
+
   ! Source: time/locales/src/sd.json
   subroutine init_sd()
     locale_sd%code = 'sd'
@@ -4918,6 +6295,67 @@ contains
     locale_sd%compact_clock%pm = 'p'
 
   end subroutine init_sd
+
+  ! Source: time/locales/src/sg.json
+  subroutine init_sg()
+    locale_sg%code = 'sg'
+
+    locale_sg%clock%hours(1) = 'bâlè-ûse'
+    locale_sg%clock%hours(2) = 'ôko'
+    locale_sg%clock%hours(3) = 'ûse'
+    locale_sg%clock%hours(4) = 'otâ'
+    locale_sg%clock%hours(5) = 'usïö'
+    locale_sg%clock%hours(6) = 'okü'
+    locale_sg%clock%hours(7) = 'ömënë'
+    locale_sg%clock%hours(8) = 'mbïrïmbïrï'
+    locale_sg%clock%hours(9) = 'mënâmbârâ'
+    locale_sg%clock%hours(10) = 'gonambâlâ'
+    locale_sg%clock%hours(11) = 'bâlè'
+    locale_sg%clock%hours(12) = 'bâlè na ôko'
+
+    locale_sg%clock%midnight = 'gï na lögö'
+    locale_sg%clock%noon = 'lâ nzönï'
+
+    locale_sg%clock%has_pattern(1) = .true.
+    locale_sg%clock%patterns(1) = '{h}:00'
+    locale_sg%clock%has_pattern(2) = .true.
+    locale_sg%clock%patterns(2) = '{h}:05'
+    locale_sg%clock%has_pattern(3) = .true.
+    locale_sg%clock%patterns(3) = '{h}:10'
+    locale_sg%clock%has_pattern(4) = .true.
+    locale_sg%clock%patterns(4) = '{h}:15'
+    locale_sg%clock%has_pattern(5) = .true.
+    locale_sg%clock%patterns(5) = '{h}:20'
+    locale_sg%clock%has_pattern(6) = .true.
+    locale_sg%clock%patterns(6) = '{h}:25'
+    locale_sg%clock%has_pattern(7) = .true.
+    locale_sg%clock%patterns(7) = '{h}:30'
+    locale_sg%clock%has_pattern(8) = .true.
+    locale_sg%clock%patterns(8) = '{h}:35'
+    locale_sg%clock%has_pattern(9) = .true.
+    locale_sg%clock%patterns(9) = '{h}:40'
+    locale_sg%clock%has_pattern(10) = .true.
+    locale_sg%clock%patterns(10) = '{h}:45'
+    locale_sg%clock%has_pattern(11) = .true.
+    locale_sg%clock%patterns(11) = '{h}:50'
+    locale_sg%clock%has_pattern(12) = .true.
+    locale_sg%clock%patterns(12) = '{h}:55'
+
+    locale_sg%has_short = .true.
+    locale_sg%short_clock%use24h = .false.
+    locale_sg%short_clock%format = '{h}:{mm} {ampm}'
+    locale_sg%short_clock%has_am_pm = .true.
+    locale_sg%short_clock%am = 'AM'
+    locale_sg%short_clock%pm = 'PM'
+
+    locale_sg%has_compact = .true.
+    locale_sg%compact_clock%use24h = .false.
+    locale_sg%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_sg%compact_clock%has_am_pm = .true.
+    locale_sg%compact_clock%am = 'a'
+    locale_sg%compact_clock%pm = 'p'
+
+  end subroutine init_sg
 
   ! Source: time/locales/src/shi.json
   subroutine init_shi()
@@ -5208,6 +6646,67 @@ contains
 
   end subroutine init_sn
 
+  ! Source: time/locales/src/snk.json
+  subroutine init_snk()
+    locale_snk%code = 'snk'
+
+    locale_snk%clock%hours(1) = 'tanmu fillo'
+    locale_snk%clock%hours(2) = 'baane'
+    locale_snk%clock%hours(3) = 'fillo'
+    locale_snk%clock%hours(4) = 'sikko'
+    locale_snk%clock%hours(5) = 'naaxato'
+    locale_snk%clock%hours(6) = 'karago'
+    locale_snk%clock%hours(7) = 'tunmu'
+    locale_snk%clock%hours(8) = 'ñerru'
+    locale_snk%clock%hours(9) = 'segu'
+    locale_snk%clock%hours(10) = 'kaburu'
+    locale_snk%clock%hours(11) = 'tanmu'
+    locale_snk%clock%hours(12) = 'tanmu baane'
+
+    locale_snk%clock%midnight = 'sulen noxo'
+    locale_snk%clock%noon = 'tili seren'
+
+    locale_snk%clock%has_pattern(1) = .true.
+    locale_snk%clock%patterns(1) = '{h}:00'
+    locale_snk%clock%has_pattern(2) = .true.
+    locale_snk%clock%patterns(2) = '{h}:05'
+    locale_snk%clock%has_pattern(3) = .true.
+    locale_snk%clock%patterns(3) = '{h}:10'
+    locale_snk%clock%has_pattern(4) = .true.
+    locale_snk%clock%patterns(4) = '{h}:15'
+    locale_snk%clock%has_pattern(5) = .true.
+    locale_snk%clock%patterns(5) = '{h}:20'
+    locale_snk%clock%has_pattern(6) = .true.
+    locale_snk%clock%patterns(6) = '{h}:25'
+    locale_snk%clock%has_pattern(7) = .true.
+    locale_snk%clock%patterns(7) = '{h}:30'
+    locale_snk%clock%has_pattern(8) = .true.
+    locale_snk%clock%patterns(8) = '{h}:35'
+    locale_snk%clock%has_pattern(9) = .true.
+    locale_snk%clock%patterns(9) = '{h}:40'
+    locale_snk%clock%has_pattern(10) = .true.
+    locale_snk%clock%patterns(10) = '{h}:45'
+    locale_snk%clock%has_pattern(11) = .true.
+    locale_snk%clock%patterns(11) = '{h}:50'
+    locale_snk%clock%has_pattern(12) = .true.
+    locale_snk%clock%patterns(12) = '{h}:55'
+
+    locale_snk%has_short = .true.
+    locale_snk%short_clock%use24h = .false.
+    locale_snk%short_clock%format = '{h}:{mm} {ampm}'
+    locale_snk%short_clock%has_am_pm = .true.
+    locale_snk%short_clock%am = 'AM'
+    locale_snk%short_clock%pm = 'PM'
+
+    locale_snk%has_compact = .true.
+    locale_snk%compact_clock%use24h = .false.
+    locale_snk%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_snk%compact_clock%has_am_pm = .true.
+    locale_snk%compact_clock%am = 'a'
+    locale_snk%compact_clock%pm = 'p'
+
+  end subroutine init_snk
+
   ! Source: time/locales/src/so.json
   subroutine init_so()
     locale_so%code = 'so'
@@ -5383,6 +6882,128 @@ contains
 
   end subroutine init_sr
 
+  ! Source: time/locales/src/ss.json
+  subroutine init_ss()
+    locale_ss%code = 'ss'
+
+    locale_ss%clock%hours(1) = 'lishumi nambili'
+    locale_ss%clock%hours(2) = 'kunye'
+    locale_ss%clock%hours(3) = 'kubili'
+    locale_ss%clock%hours(4) = 'kutsatfu'
+    locale_ss%clock%hours(5) = 'kune'
+    locale_ss%clock%hours(6) = 'kusihlanu'
+    locale_ss%clock%hours(7) = 'sitfupha'
+    locale_ss%clock%hours(8) = 'sikhombisa'
+    locale_ss%clock%hours(9) = 'siphohlongo'
+    locale_ss%clock%hours(10) = 'sifisagcina'
+    locale_ss%clock%hours(11) = 'lishumi'
+    locale_ss%clock%hours(12) = 'lishumi nakunye'
+
+    locale_ss%clock%midnight = 'phakathi kwebusuku'
+    locale_ss%clock%noon = 'emini'
+
+    locale_ss%clock%has_pattern(1) = .true.
+    locale_ss%clock%patterns(1) = '{h}:00'
+    locale_ss%clock%has_pattern(2) = .true.
+    locale_ss%clock%patterns(2) = '{h}:05'
+    locale_ss%clock%has_pattern(3) = .true.
+    locale_ss%clock%patterns(3) = '{h}:10'
+    locale_ss%clock%has_pattern(4) = .true.
+    locale_ss%clock%patterns(4) = '{h}:15'
+    locale_ss%clock%has_pattern(5) = .true.
+    locale_ss%clock%patterns(5) = '{h}:20'
+    locale_ss%clock%has_pattern(6) = .true.
+    locale_ss%clock%patterns(6) = '{h}:25'
+    locale_ss%clock%has_pattern(7) = .true.
+    locale_ss%clock%patterns(7) = '{h}:30'
+    locale_ss%clock%has_pattern(8) = .true.
+    locale_ss%clock%patterns(8) = '{h}:35'
+    locale_ss%clock%has_pattern(9) = .true.
+    locale_ss%clock%patterns(9) = '{h}:40'
+    locale_ss%clock%has_pattern(10) = .true.
+    locale_ss%clock%patterns(10) = '{h}:45'
+    locale_ss%clock%has_pattern(11) = .true.
+    locale_ss%clock%patterns(11) = '{h}:50'
+    locale_ss%clock%has_pattern(12) = .true.
+    locale_ss%clock%patterns(12) = '{h}:55'
+
+    locale_ss%has_short = .true.
+    locale_ss%short_clock%use24h = .false.
+    locale_ss%short_clock%format = '{h}:{mm} {ampm}'
+    locale_ss%short_clock%has_am_pm = .true.
+    locale_ss%short_clock%am = 'AM'
+    locale_ss%short_clock%pm = 'PM'
+
+    locale_ss%has_compact = .true.
+    locale_ss%compact_clock%use24h = .false.
+    locale_ss%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_ss%compact_clock%has_am_pm = .true.
+    locale_ss%compact_clock%am = 'a'
+    locale_ss%compact_clock%pm = 'p'
+
+  end subroutine init_ss
+
+  ! Source: time/locales/src/st.json
+  subroutine init_st()
+    locale_st%code = 'st'
+
+    locale_st%clock%hours(1) = 'leshome le metso e mmedi'
+    locale_st%clock%hours(2) = 'e nngwe'
+    locale_st%clock%hours(3) = 'tse pedi'
+    locale_st%clock%hours(4) = 'tse tharo'
+    locale_st%clock%hours(5) = 'tse nne'
+    locale_st%clock%hours(6) = 'tse hlano'
+    locale_st%clock%hours(7) = 'tse tshelela'
+    locale_st%clock%hours(8) = 'tse supileng'
+    locale_st%clock%hours(9) = 'tse robedi'
+    locale_st%clock%hours(10) = 'tse robong'
+    locale_st%clock%hours(11) = 'leshome'
+    locale_st%clock%hours(12) = 'leshome le motso o le mong'
+
+    locale_st%clock%midnight = 'hara bosiu'
+    locale_st%clock%noon = 'motsheare'
+
+    locale_st%clock%has_pattern(1) = .true.
+    locale_st%clock%patterns(1) = '{h}:00'
+    locale_st%clock%has_pattern(2) = .true.
+    locale_st%clock%patterns(2) = '{h}:05'
+    locale_st%clock%has_pattern(3) = .true.
+    locale_st%clock%patterns(3) = '{h}:10'
+    locale_st%clock%has_pattern(4) = .true.
+    locale_st%clock%patterns(4) = '{h}:15'
+    locale_st%clock%has_pattern(5) = .true.
+    locale_st%clock%patterns(5) = '{h}:20'
+    locale_st%clock%has_pattern(6) = .true.
+    locale_st%clock%patterns(6) = '{h}:25'
+    locale_st%clock%has_pattern(7) = .true.
+    locale_st%clock%patterns(7) = '{h}:30'
+    locale_st%clock%has_pattern(8) = .true.
+    locale_st%clock%patterns(8) = '{h}:35'
+    locale_st%clock%has_pattern(9) = .true.
+    locale_st%clock%patterns(9) = '{h}:40'
+    locale_st%clock%has_pattern(10) = .true.
+    locale_st%clock%patterns(10) = '{h}:45'
+    locale_st%clock%has_pattern(11) = .true.
+    locale_st%clock%patterns(11) = '{h}:50'
+    locale_st%clock%has_pattern(12) = .true.
+    locale_st%clock%patterns(12) = '{h}:55'
+
+    locale_st%has_short = .true.
+    locale_st%short_clock%use24h = .false.
+    locale_st%short_clock%format = '{h}:{mm} {ampm}'
+    locale_st%short_clock%has_am_pm = .true.
+    locale_st%short_clock%am = 'AM'
+    locale_st%short_clock%pm = 'PM'
+
+    locale_st%has_compact = .true.
+    locale_st%compact_clock%use24h = .false.
+    locale_st%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_st%compact_clock%has_am_pm = .true.
+    locale_st%compact_clock%am = 'a'
+    locale_st%compact_clock%pm = 'p'
+
+  end subroutine init_st
+
   ! Source: time/locales/src/su.json
   subroutine init_su()
     locale_su%code = 'su'
@@ -5443,6 +7064,67 @@ contains
     locale_su%compact_clock%pm = 'p'
 
   end subroutine init_su
+
+  ! Source: time/locales/src/suk.json
+  subroutine init_suk()
+    locale_suk%code = 'suk'
+
+    locale_suk%clock%hours(1) = 'kumi na mbili'
+    locale_suk%clock%hours(2) = 'moja'
+    locale_suk%clock%hours(3) = 'mbili'
+    locale_suk%clock%hours(4) = 'tatu'
+    locale_suk%clock%hours(5) = 'nne'
+    locale_suk%clock%hours(6) = 'tano'
+    locale_suk%clock%hours(7) = 'sita'
+    locale_suk%clock%hours(8) = 'saba'
+    locale_suk%clock%hours(9) = 'nane'
+    locale_suk%clock%hours(10) = 'tisa'
+    locale_suk%clock%hours(11) = 'kumi'
+    locale_suk%clock%hours(12) = 'kumi na moja'
+
+    locale_suk%clock%midnight = 'usiku gati'
+    locale_suk%clock%noon = 'adhuhuri'
+
+    locale_suk%clock%has_pattern(1) = .true.
+    locale_suk%clock%patterns(1) = '{h}:00'
+    locale_suk%clock%has_pattern(2) = .true.
+    locale_suk%clock%patterns(2) = '{h}:05'
+    locale_suk%clock%has_pattern(3) = .true.
+    locale_suk%clock%patterns(3) = '{h}:10'
+    locale_suk%clock%has_pattern(4) = .true.
+    locale_suk%clock%patterns(4) = '{h}:15'
+    locale_suk%clock%has_pattern(5) = .true.
+    locale_suk%clock%patterns(5) = '{h}:20'
+    locale_suk%clock%has_pattern(6) = .true.
+    locale_suk%clock%patterns(6) = '{h}:25'
+    locale_suk%clock%has_pattern(7) = .true.
+    locale_suk%clock%patterns(7) = '{h}:30'
+    locale_suk%clock%has_pattern(8) = .true.
+    locale_suk%clock%patterns(8) = '{h}:35'
+    locale_suk%clock%has_pattern(9) = .true.
+    locale_suk%clock%patterns(9) = '{h}:40'
+    locale_suk%clock%has_pattern(10) = .true.
+    locale_suk%clock%patterns(10) = '{h}:45'
+    locale_suk%clock%has_pattern(11) = .true.
+    locale_suk%clock%patterns(11) = '{h}:50'
+    locale_suk%clock%has_pattern(12) = .true.
+    locale_suk%clock%patterns(12) = '{h}:55'
+
+    locale_suk%has_short = .true.
+    locale_suk%short_clock%use24h = .false.
+    locale_suk%short_clock%format = '{h}:{mm} {ampm}'
+    locale_suk%short_clock%has_am_pm = .true.
+    locale_suk%short_clock%am = 'AM'
+    locale_suk%short_clock%pm = 'PM'
+
+    locale_suk%has_compact = .true.
+    locale_suk%compact_clock%use24h = .false.
+    locale_suk%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_suk%compact_clock%has_am_pm = .true.
+    locale_suk%compact_clock%am = 'a'
+    locale_suk%compact_clock%pm = 'p'
+
+  end subroutine init_suk
 
   ! Source: time/locales/src/sv.json
   subroutine init_sv()
@@ -5680,6 +7362,67 @@ contains
 
   end subroutine init_te
 
+  ! Source: time/locales/src/tem.json
+  subroutine init_tem()
+    locale_tem%code = 'tem'
+
+    locale_tem%clock%hours(1) = 'pɛn pu'
+    locale_tem%clock%hours(2) = 'kɩrɩŋ'
+    locale_tem%clock%hours(3) = 'rɔŋ'
+    locale_tem%clock%hours(4) = 'rasar'
+    locale_tem%clock%hours(5) = 'rɔŋ-anat'
+    locale_tem%clock%hours(6) = 'rɔman'
+    locale_tem%clock%hours(7) = 'rɔmata'
+    locale_tem%clock%hours(8) = 'rɔmbot'
+    locale_tem%clock%hours(9) = 'rɔmɔntat'
+    locale_tem%clock%hours(10) = 'rɔmɔntaŋka'
+    locale_tem%clock%hours(11) = 'pɛn'
+    locale_tem%clock%hours(12) = 'pɛn nɛ kɩrɩŋ'
+
+    locale_tem%clock%midnight = 'rofɛt anpa'
+    locale_tem%clock%noon = 'lən'
+
+    locale_tem%clock%has_pattern(1) = .true.
+    locale_tem%clock%patterns(1) = '{h}:00'
+    locale_tem%clock%has_pattern(2) = .true.
+    locale_tem%clock%patterns(2) = '{h}:05'
+    locale_tem%clock%has_pattern(3) = .true.
+    locale_tem%clock%patterns(3) = '{h}:10'
+    locale_tem%clock%has_pattern(4) = .true.
+    locale_tem%clock%patterns(4) = '{h}:15'
+    locale_tem%clock%has_pattern(5) = .true.
+    locale_tem%clock%patterns(5) = '{h}:20'
+    locale_tem%clock%has_pattern(6) = .true.
+    locale_tem%clock%patterns(6) = '{h}:25'
+    locale_tem%clock%has_pattern(7) = .true.
+    locale_tem%clock%patterns(7) = '{h}:30'
+    locale_tem%clock%has_pattern(8) = .true.
+    locale_tem%clock%patterns(8) = '{h}:35'
+    locale_tem%clock%has_pattern(9) = .true.
+    locale_tem%clock%patterns(9) = '{h}:40'
+    locale_tem%clock%has_pattern(10) = .true.
+    locale_tem%clock%patterns(10) = '{h}:45'
+    locale_tem%clock%has_pattern(11) = .true.
+    locale_tem%clock%patterns(11) = '{h}:50'
+    locale_tem%clock%has_pattern(12) = .true.
+    locale_tem%clock%patterns(12) = '{h}:55'
+
+    locale_tem%has_short = .true.
+    locale_tem%short_clock%use24h = .false.
+    locale_tem%short_clock%format = '{h}:{mm} {ampm}'
+    locale_tem%short_clock%has_am_pm = .true.
+    locale_tem%short_clock%am = 'AM'
+    locale_tem%short_clock%pm = 'PM'
+
+    locale_tem%has_compact = .true.
+    locale_tem%compact_clock%use24h = .false.
+    locale_tem%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_tem%compact_clock%has_am_pm = .true.
+    locale_tem%compact_clock%am = 'a'
+    locale_tem%compact_clock%pm = 'p'
+
+  end subroutine init_tem
+
   ! Source: time/locales/src/tg.json
   subroutine init_tg()
     locale_tg%code = 'tg'
@@ -5851,6 +7594,67 @@ contains
 
   end subroutine init_ti
 
+  ! Source: time/locales/src/tig.json
+  subroutine init_tig()
+    locale_tig%code = 'tig'
+
+    locale_tig%clock%hours(1) = 'ʿasərte wəkəlte'
+    locale_tig%clock%hours(2) = 'ḥante'
+    locale_tig%clock%hours(3) = 'kəlʾe'
+    locale_tig%clock%hours(4) = 'səleste'
+    locale_tig%clock%hours(5) = 'arbaʿte'
+    locale_tig%clock%hours(6) = 'ḥamməste'
+    locale_tig%clock%hours(7) = 'səste'
+    locale_tig%clock%hours(8) = 'sabʿate'
+    locale_tig%clock%hours(9) = 'səmmunte'
+    locale_tig%clock%hours(10) = 'təsʿate'
+    locale_tig%clock%hours(11) = 'ʿasərte'
+    locale_tig%clock%hours(12) = 'ʿasərte wəḥante'
+
+    locale_tig%clock%midnight = 'nəs-leyla'
+    locale_tig%clock%noon = 'qayḥ'
+
+    locale_tig%clock%has_pattern(1) = .true.
+    locale_tig%clock%patterns(1) = '{h}:00'
+    locale_tig%clock%has_pattern(2) = .true.
+    locale_tig%clock%patterns(2) = '{h}:05'
+    locale_tig%clock%has_pattern(3) = .true.
+    locale_tig%clock%patterns(3) = '{h}:10'
+    locale_tig%clock%has_pattern(4) = .true.
+    locale_tig%clock%patterns(4) = '{h}:15'
+    locale_tig%clock%has_pattern(5) = .true.
+    locale_tig%clock%patterns(5) = '{h}:20'
+    locale_tig%clock%has_pattern(6) = .true.
+    locale_tig%clock%patterns(6) = '{h}:25'
+    locale_tig%clock%has_pattern(7) = .true.
+    locale_tig%clock%patterns(7) = '{h}:30'
+    locale_tig%clock%has_pattern(8) = .true.
+    locale_tig%clock%patterns(8) = '{h}:35'
+    locale_tig%clock%has_pattern(9) = .true.
+    locale_tig%clock%patterns(9) = '{h}:40'
+    locale_tig%clock%has_pattern(10) = .true.
+    locale_tig%clock%patterns(10) = '{h}:45'
+    locale_tig%clock%has_pattern(11) = .true.
+    locale_tig%clock%patterns(11) = '{h}:50'
+    locale_tig%clock%has_pattern(12) = .true.
+    locale_tig%clock%patterns(12) = '{h}:55'
+
+    locale_tig%has_short = .true.
+    locale_tig%short_clock%use24h = .false.
+    locale_tig%short_clock%format = '{h}:{mm} {ampm}'
+    locale_tig%short_clock%has_am_pm = .true.
+    locale_tig%short_clock%am = 'AM'
+    locale_tig%short_clock%pm = 'PM'
+
+    locale_tig%has_compact = .true.
+    locale_tig%compact_clock%use24h = .false.
+    locale_tig%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_tig%compact_clock%has_am_pm = .true.
+    locale_tig%compact_clock%am = 'a'
+    locale_tig%compact_clock%pm = 'p'
+
+  end subroutine init_tig
+
   ! Source: time/locales/src/tk.json
   subroutine init_tk()
     locale_tk%code = 'tk'
@@ -5908,6 +7712,67 @@ contains
 
   end subroutine init_tk
 
+  ! Source: time/locales/src/tn.json
+  subroutine init_tn()
+    locale_tn%code = 'tn'
+
+    locale_tn%clock%hours(1) = 'lesome le bobedi'
+    locale_tn%clock%hours(2) = 'nngwe'
+    locale_tn%clock%hours(3) = 'pedi'
+    locale_tn%clock%hours(4) = 'tharo'
+    locale_tn%clock%hours(5) = 'nne'
+    locale_tn%clock%hours(6) = 'tlhano'
+    locale_tn%clock%hours(7) = 'thataro'
+    locale_tn%clock%hours(8) = 'supa'
+    locale_tn%clock%hours(9) = 'robedi'
+    locale_tn%clock%hours(10) = 'robongwe'
+    locale_tn%clock%hours(11) = 'lesome'
+    locale_tn%clock%hours(12) = 'lesome le bongwe'
+
+    locale_tn%clock%midnight = 'bosigo jwa magareng'
+    locale_tn%clock%noon = 'motshegare'
+
+    locale_tn%clock%has_pattern(1) = .true.
+    locale_tn%clock%patterns(1) = '{h}:00'
+    locale_tn%clock%has_pattern(2) = .true.
+    locale_tn%clock%patterns(2) = '{h}:05'
+    locale_tn%clock%has_pattern(3) = .true.
+    locale_tn%clock%patterns(3) = '{h}:10'
+    locale_tn%clock%has_pattern(4) = .true.
+    locale_tn%clock%patterns(4) = '{h}:15'
+    locale_tn%clock%has_pattern(5) = .true.
+    locale_tn%clock%patterns(5) = '{h}:20'
+    locale_tn%clock%has_pattern(6) = .true.
+    locale_tn%clock%patterns(6) = '{h}:25'
+    locale_tn%clock%has_pattern(7) = .true.
+    locale_tn%clock%patterns(7) = '{h}:30'
+    locale_tn%clock%has_pattern(8) = .true.
+    locale_tn%clock%patterns(8) = '{h}:35'
+    locale_tn%clock%has_pattern(9) = .true.
+    locale_tn%clock%patterns(9) = '{h}:40'
+    locale_tn%clock%has_pattern(10) = .true.
+    locale_tn%clock%patterns(10) = '{h}:45'
+    locale_tn%clock%has_pattern(11) = .true.
+    locale_tn%clock%patterns(11) = '{h}:50'
+    locale_tn%clock%has_pattern(12) = .true.
+    locale_tn%clock%patterns(12) = '{h}:55'
+
+    locale_tn%has_short = .true.
+    locale_tn%short_clock%use24h = .false.
+    locale_tn%short_clock%format = '{h}:{mm} {ampm}'
+    locale_tn%short_clock%has_am_pm = .true.
+    locale_tn%short_clock%am = 'AM'
+    locale_tn%short_clock%pm = 'PM'
+
+    locale_tn%has_compact = .true.
+    locale_tn%compact_clock%use24h = .false.
+    locale_tn%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_tn%compact_clock%has_am_pm = .true.
+    locale_tn%compact_clock%am = 'a'
+    locale_tn%compact_clock%pm = 'p'
+
+  end subroutine init_tn
+
   ! Source: time/locales/src/tr.json
   subroutine init_tr()
     locale_tr%code = 'tr'
@@ -5964,6 +7829,67 @@ contains
     locale_tr%compact_clock%has_am_pm = .false.
 
   end subroutine init_tr
+
+  ! Source: time/locales/src/ts.json
+  subroutine init_ts()
+    locale_ts%code = 'ts'
+
+    locale_ts%clock%hours(1) = 'khume mbiri'
+    locale_ts%clock%hours(2) = 'yin''we'
+    locale_ts%clock%hours(3) = 'mbirhi'
+    locale_ts%clock%hours(4) = 'nharhu'
+    locale_ts%clock%hours(5) = 'mune'
+    locale_ts%clock%hours(6) = 'ntlhanu'
+    locale_ts%clock%hours(7) = 'tsevu'
+    locale_ts%clock%hours(8) = 'nkombo'
+    locale_ts%clock%hours(9) = 'nhungu'
+    locale_ts%clock%hours(10) = 'kaye'
+    locale_ts%clock%hours(11) = 'khume'
+    locale_ts%clock%hours(12) = 'khume yin''we'
+
+    locale_ts%clock%midnight = 'vusiku exikarhi'
+    locale_ts%clock%noon = 'nhlekanhi'
+
+    locale_ts%clock%has_pattern(1) = .true.
+    locale_ts%clock%patterns(1) = '{h}:00'
+    locale_ts%clock%has_pattern(2) = .true.
+    locale_ts%clock%patterns(2) = '{h}:05'
+    locale_ts%clock%has_pattern(3) = .true.
+    locale_ts%clock%patterns(3) = '{h}:10'
+    locale_ts%clock%has_pattern(4) = .true.
+    locale_ts%clock%patterns(4) = '{h}:15'
+    locale_ts%clock%has_pattern(5) = .true.
+    locale_ts%clock%patterns(5) = '{h}:20'
+    locale_ts%clock%has_pattern(6) = .true.
+    locale_ts%clock%patterns(6) = '{h}:25'
+    locale_ts%clock%has_pattern(7) = .true.
+    locale_ts%clock%patterns(7) = '{h}:30'
+    locale_ts%clock%has_pattern(8) = .true.
+    locale_ts%clock%patterns(8) = '{h}:35'
+    locale_ts%clock%has_pattern(9) = .true.
+    locale_ts%clock%patterns(9) = '{h}:40'
+    locale_ts%clock%has_pattern(10) = .true.
+    locale_ts%clock%patterns(10) = '{h}:45'
+    locale_ts%clock%has_pattern(11) = .true.
+    locale_ts%clock%patterns(11) = '{h}:50'
+    locale_ts%clock%has_pattern(12) = .true.
+    locale_ts%clock%patterns(12) = '{h}:55'
+
+    locale_ts%has_short = .true.
+    locale_ts%short_clock%use24h = .false.
+    locale_ts%short_clock%format = '{h}:{mm} {ampm}'
+    locale_ts%short_clock%has_am_pm = .true.
+    locale_ts%short_clock%am = 'AM'
+    locale_ts%short_clock%pm = 'PM'
+
+    locale_ts%has_compact = .true.
+    locale_ts%compact_clock%use24h = .false.
+    locale_ts%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_ts%compact_clock%has_am_pm = .true.
+    locale_ts%compact_clock%am = 'a'
+    locale_ts%compact_clock%pm = 'p'
+
+  end subroutine init_ts
 
   ! Source: time/locales/src/tzm.json
   subroutine init_tzm()
@@ -6078,6 +8004,67 @@ contains
     locale_uk%compact_clock%has_am_pm = .false.
 
   end subroutine init_uk
+
+  ! Source: time/locales/src/umb.json
+  subroutine init_umb()
+    locale_umb%code = 'umb'
+
+    locale_umb%clock%hours(1) = 'olohola likumi na yivali'
+    locale_umb%clock%hours(2) = 'yimosi'
+    locale_umb%clock%hours(3) = 'yivali'
+    locale_umb%clock%hours(4) = 'yitathu'
+    locale_umb%clock%hours(5) = 'yinyali'
+    locale_umb%clock%hours(6) = 'yitanu'
+    locale_umb%clock%hours(7) = 'yitathu-va-yivali'
+    locale_umb%clock%hours(8) = 'yisemba'
+    locale_umb%clock%hours(9) = 'yinyali-va-yivali'
+    locale_umb%clock%hours(10) = 'yitanu-va-yivali'
+    locale_umb%clock%hours(11) = 'likumi'
+    locale_umb%clock%hours(12) = 'likumi na yimosi'
+
+    locale_umb%clock%midnight = 'ocitapi'
+    locale_umb%clock%noon = 'ocivali'
+
+    locale_umb%clock%has_pattern(1) = .true.
+    locale_umb%clock%patterns(1) = '{h}:00'
+    locale_umb%clock%has_pattern(2) = .true.
+    locale_umb%clock%patterns(2) = '{h}:05'
+    locale_umb%clock%has_pattern(3) = .true.
+    locale_umb%clock%patterns(3) = '{h}:10'
+    locale_umb%clock%has_pattern(4) = .true.
+    locale_umb%clock%patterns(4) = '{h}:15'
+    locale_umb%clock%has_pattern(5) = .true.
+    locale_umb%clock%patterns(5) = '{h}:20'
+    locale_umb%clock%has_pattern(6) = .true.
+    locale_umb%clock%patterns(6) = '{h}:25'
+    locale_umb%clock%has_pattern(7) = .true.
+    locale_umb%clock%patterns(7) = '{h}:30'
+    locale_umb%clock%has_pattern(8) = .true.
+    locale_umb%clock%patterns(8) = '{h}:35'
+    locale_umb%clock%has_pattern(9) = .true.
+    locale_umb%clock%patterns(9) = '{h}:40'
+    locale_umb%clock%has_pattern(10) = .true.
+    locale_umb%clock%patterns(10) = '{h}:45'
+    locale_umb%clock%has_pattern(11) = .true.
+    locale_umb%clock%patterns(11) = '{h}:50'
+    locale_umb%clock%has_pattern(12) = .true.
+    locale_umb%clock%patterns(12) = '{h}:55'
+
+    locale_umb%has_short = .true.
+    locale_umb%short_clock%use24h = .false.
+    locale_umb%short_clock%format = '{h}:{mm} {ampm}'
+    locale_umb%short_clock%has_am_pm = .true.
+    locale_umb%short_clock%am = 'AM'
+    locale_umb%short_clock%pm = 'PM'
+
+    locale_umb%has_compact = .true.
+    locale_umb%compact_clock%use24h = .false.
+    locale_umb%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_umb%compact_clock%has_am_pm = .true.
+    locale_umb%compact_clock%am = 'a'
+    locale_umb%compact_clock%pm = 'p'
+
+  end subroutine init_umb
 
   ! Source: time/locales/src/ur.json
   subroutine init_ur()
@@ -6253,6 +8240,128 @@ contains
     locale_vi%compact_clock%has_am_pm = .false.
 
   end subroutine init_vi
+
+  ! Source: time/locales/src/vmw.json
+  subroutine init_vmw()
+    locale_vmw%code = 'vmw'
+
+    locale_vmw%clock%hours(1) = 'khumi na pili'
+    locale_vmw%clock%hours(2) = 'mosa'
+    locale_vmw%clock%hours(3) = 'pili'
+    locale_vmw%clock%hours(4) = 'ttatthu'
+    locale_vmw%clock%hours(5) = 'ncheche'
+    locale_vmw%clock%hours(6) = 'thanu'
+    locale_vmw%clock%hours(7) = 'thanu na mosa'
+    locale_vmw%clock%hours(8) = 'thanu na pili'
+    locale_vmw%clock%hours(9) = 'thanu na ttatthu'
+    locale_vmw%clock%hours(10) = 'thanu na ncheche'
+    locale_vmw%clock%hours(11) = 'khumi'
+    locale_vmw%clock%hours(12) = 'khumi na mosa'
+
+    locale_vmw%clock%midnight = 'usiku wopakhala'
+    locale_vmw%clock%noon = 'muttana'
+
+    locale_vmw%clock%has_pattern(1) = .true.
+    locale_vmw%clock%patterns(1) = '{h}:00'
+    locale_vmw%clock%has_pattern(2) = .true.
+    locale_vmw%clock%patterns(2) = '{h}:05'
+    locale_vmw%clock%has_pattern(3) = .true.
+    locale_vmw%clock%patterns(3) = '{h}:10'
+    locale_vmw%clock%has_pattern(4) = .true.
+    locale_vmw%clock%patterns(4) = '{h}:15'
+    locale_vmw%clock%has_pattern(5) = .true.
+    locale_vmw%clock%patterns(5) = '{h}:20'
+    locale_vmw%clock%has_pattern(6) = .true.
+    locale_vmw%clock%patterns(6) = '{h}:25'
+    locale_vmw%clock%has_pattern(7) = .true.
+    locale_vmw%clock%patterns(7) = '{h}:30'
+    locale_vmw%clock%has_pattern(8) = .true.
+    locale_vmw%clock%patterns(8) = '{h}:35'
+    locale_vmw%clock%has_pattern(9) = .true.
+    locale_vmw%clock%patterns(9) = '{h}:40'
+    locale_vmw%clock%has_pattern(10) = .true.
+    locale_vmw%clock%patterns(10) = '{h}:45'
+    locale_vmw%clock%has_pattern(11) = .true.
+    locale_vmw%clock%patterns(11) = '{h}:50'
+    locale_vmw%clock%has_pattern(12) = .true.
+    locale_vmw%clock%patterns(12) = '{h}:55'
+
+    locale_vmw%has_short = .true.
+    locale_vmw%short_clock%use24h = .false.
+    locale_vmw%short_clock%format = '{h}:{mm} {ampm}'
+    locale_vmw%short_clock%has_am_pm = .true.
+    locale_vmw%short_clock%am = 'AM'
+    locale_vmw%short_clock%pm = 'PM'
+
+    locale_vmw%has_compact = .true.
+    locale_vmw%compact_clock%use24h = .false.
+    locale_vmw%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_vmw%compact_clock%has_am_pm = .true.
+    locale_vmw%compact_clock%am = 'a'
+    locale_vmw%compact_clock%pm = 'p'
+
+  end subroutine init_vmw
+
+  ! Source: time/locales/src/wo.json
+  subroutine init_wo()
+    locale_wo%code = 'wo'
+
+    locale_wo%clock%hours(1) = 'fukki ñaar'
+    locale_wo%clock%hours(2) = 'benn'
+    locale_wo%clock%hours(3) = 'ñaar'
+    locale_wo%clock%hours(4) = 'ñett'
+    locale_wo%clock%hours(5) = 'ñeent'
+    locale_wo%clock%hours(6) = 'juróom'
+    locale_wo%clock%hours(7) = 'juróom-benn'
+    locale_wo%clock%hours(8) = 'juróom-ñaar'
+    locale_wo%clock%hours(9) = 'juróom-ñett'
+    locale_wo%clock%hours(10) = 'juróom-ñeent'
+    locale_wo%clock%hours(11) = 'fukk'
+    locale_wo%clock%hours(12) = 'fukki benn'
+
+    locale_wo%clock%midnight = 'bu guddi'
+    locale_wo%clock%noon = 'ci àttaya'
+
+    locale_wo%clock%has_pattern(1) = .true.
+    locale_wo%clock%patterns(1) = '{h}:00'
+    locale_wo%clock%has_pattern(2) = .true.
+    locale_wo%clock%patterns(2) = '{h}:05'
+    locale_wo%clock%has_pattern(3) = .true.
+    locale_wo%clock%patterns(3) = '{h}:10'
+    locale_wo%clock%has_pattern(4) = .true.
+    locale_wo%clock%patterns(4) = '{h}:15'
+    locale_wo%clock%has_pattern(5) = .true.
+    locale_wo%clock%patterns(5) = '{h}:20'
+    locale_wo%clock%has_pattern(6) = .true.
+    locale_wo%clock%patterns(6) = '{h}:25'
+    locale_wo%clock%has_pattern(7) = .true.
+    locale_wo%clock%patterns(7) = '{h}:30'
+    locale_wo%clock%has_pattern(8) = .true.
+    locale_wo%clock%patterns(8) = '{h}:35'
+    locale_wo%clock%has_pattern(9) = .true.
+    locale_wo%clock%patterns(9) = '{h}:40'
+    locale_wo%clock%has_pattern(10) = .true.
+    locale_wo%clock%patterns(10) = '{h}:45'
+    locale_wo%clock%has_pattern(11) = .true.
+    locale_wo%clock%patterns(11) = '{h}:50'
+    locale_wo%clock%has_pattern(12) = .true.
+    locale_wo%clock%patterns(12) = '{h}:55'
+
+    locale_wo%has_short = .true.
+    locale_wo%short_clock%use24h = .false.
+    locale_wo%short_clock%format = '{h}:{mm} {ampm}'
+    locale_wo%short_clock%has_am_pm = .true.
+    locale_wo%short_clock%am = 'AM'
+    locale_wo%short_clock%pm = 'PM'
+
+    locale_wo%has_compact = .true.
+    locale_wo%compact_clock%use24h = .false.
+    locale_wo%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_wo%compact_clock%has_am_pm = .true.
+    locale_wo%compact_clock%am = 'a'
+    locale_wo%compact_clock%pm = 'p'
+
+  end subroutine init_wo
 
   ! Source: time/locales/src/xh.json
   subroutine init_xh()
@@ -6433,6 +8542,67 @@ contains
 
   end subroutine init_yue
 
+  ! Source: time/locales/src/zdj.json
+  subroutine init_zdj()
+    locale_zdj%code = 'zdj'
+
+    locale_zdj%clock%hours(1) = 'kumi na mbili'
+    locale_zdj%clock%hours(2) = 'moja'
+    locale_zdj%clock%hours(3) = 'mbili'
+    locale_zdj%clock%hours(4) = 'tatu'
+    locale_zdj%clock%hours(5) = 'nne'
+    locale_zdj%clock%hours(6) = 'tano'
+    locale_zdj%clock%hours(7) = 'sita'
+    locale_zdj%clock%hours(8) = 'saba'
+    locale_zdj%clock%hours(9) = 'nane'
+    locale_zdj%clock%hours(10) = 'tisa'
+    locale_zdj%clock%hours(11) = 'kumi'
+    locale_zdj%clock%hours(12) = 'kumi na moja'
+
+    locale_zdj%clock%midnight = 'usiku wa manane'
+    locale_zdj%clock%noon = 'adhuhuri'
+
+    locale_zdj%clock%has_pattern(1) = .true.
+    locale_zdj%clock%patterns(1) = '{h}:00'
+    locale_zdj%clock%has_pattern(2) = .true.
+    locale_zdj%clock%patterns(2) = '{h}:05'
+    locale_zdj%clock%has_pattern(3) = .true.
+    locale_zdj%clock%patterns(3) = '{h}:10'
+    locale_zdj%clock%has_pattern(4) = .true.
+    locale_zdj%clock%patterns(4) = '{h}:15'
+    locale_zdj%clock%has_pattern(5) = .true.
+    locale_zdj%clock%patterns(5) = '{h}:20'
+    locale_zdj%clock%has_pattern(6) = .true.
+    locale_zdj%clock%patterns(6) = '{h}:25'
+    locale_zdj%clock%has_pattern(7) = .true.
+    locale_zdj%clock%patterns(7) = '{h}:30'
+    locale_zdj%clock%has_pattern(8) = .true.
+    locale_zdj%clock%patterns(8) = '{h}:35'
+    locale_zdj%clock%has_pattern(9) = .true.
+    locale_zdj%clock%patterns(9) = '{h}:40'
+    locale_zdj%clock%has_pattern(10) = .true.
+    locale_zdj%clock%patterns(10) = '{h}:45'
+    locale_zdj%clock%has_pattern(11) = .true.
+    locale_zdj%clock%patterns(11) = '{h}:50'
+    locale_zdj%clock%has_pattern(12) = .true.
+    locale_zdj%clock%patterns(12) = '{h}:55'
+
+    locale_zdj%has_short = .true.
+    locale_zdj%short_clock%use24h = .false.
+    locale_zdj%short_clock%format = '{h}:{mm} {ampm}'
+    locale_zdj%short_clock%has_am_pm = .true.
+    locale_zdj%short_clock%am = 'AM'
+    locale_zdj%short_clock%pm = 'PM'
+
+    locale_zdj%has_compact = .true.
+    locale_zdj%compact_clock%use24h = .false.
+    locale_zdj%compact_clock%format = '{h}:{mm}{ampm}'
+    locale_zdj%compact_clock%has_am_pm = .true.
+    locale_zdj%compact_clock%am = 'a'
+    locale_zdj%compact_clock%pm = 'p'
+
+  end subroutine init_zdj
+
   ! Source: time/locales/src/zh.json
   subroutine init_zh()
     locale_zh%code = 'zh'
@@ -6558,8 +8728,11 @@ contains
     call init_am()
     call init_ar()
     call init_az()
+    call init_bci()
     call init_be()
+    call init_bem()
     call init_bg()
+    call init_bm()
     call init_bn()
     call init_br()
     call init_bs()
@@ -6569,15 +8742,21 @@ contains
     call init_cy()
     call init_da()
     call init_de()
+    call init_din()
+    call init_dje()
+    call init_dyu()
+    call init_ee()
     call init_el()
     call init_en()
     call init_es()
     call init_et()
     call init_eu()
     call init_fa()
+    call init_fan()
     call init_ff()
     call init_fi()
     call init_fil()
+    call init_fon()
     call init_fr()
     call init_ga()
     call init_gd()
@@ -6599,10 +8778,13 @@ contains
     call init_ja()
     call init_jv()
     call init_ka()
+    call init_kbp()
     call init_kk()
     call init_km()
     call init_kn()
     call init_ko()
+    call init_kpe()
+    call init_ktu()
     call init_ku()
     call init_kw()
     call init_ky()
@@ -6611,56 +8793,79 @@ contains
     call init_lo()
     call init_lt()
     call init_lv()
+    call init_men()
+    call init_mfe()
     call init_mg()
     call init_mi()
     call init_mk()
     call init_ml()
     call init_mn()
+    call init_mnk()
+    call init_mos()
     call init_mr()
     call init_ms()
     call init_mt()
     call init_my()
     call init_nb()
+    call init_nd()
     call init_ne()
+    call init_ng()
     call init_nl()
+    call init_nso()
+    call init_nus()
     call init_ny()
     call init_om()
     call init_or()
     call init_pa()
     call init_pl()
+    call init_pov()
     call init_ps()
     call init_pt()
     call init_qu()
     call init_ro()
     call init_ru()
     call init_rw()
+    call init_sar()
     call init_sd()
+    call init_sg()
     call init_shi()
     call init_si()
     call init_sk()
     call init_sl()
     call init_sn()
+    call init_snk()
     call init_so()
     call init_sq()
     call init_sr()
+    call init_ss()
+    call init_st()
     call init_su()
+    call init_suk()
     call init_sv()
     call init_sw()
     call init_ta()
     call init_te()
+    call init_tem()
     call init_tg()
     call init_th()
     call init_ti()
+    call init_tig()
     call init_tk()
+    call init_tn()
     call init_tr()
+    call init_ts()
     call init_tzm()
     call init_uk()
+    call init_umb()
     call init_ur()
     call init_uz()
     call init_vi()
+    call init_vmw()
+    call init_wo()
     call init_xh()
     call init_yo()
     call init_yue()
+    call init_zdj()
     call init_zh()
     call init_zu()
     locales_initialized = .true.
@@ -6690,12 +8895,24 @@ contains
       loc => locale_az
       return
     end if
+    if (code == 'bci') then
+      loc => locale_bci
+      return
+    end if
     if (code == 'be') then
       loc => locale_be
       return
     end if
+    if (code == 'bem') then
+      loc => locale_bem
+      return
+    end if
     if (code == 'bg') then
       loc => locale_bg
+      return
+    end if
+    if (code == 'bm') then
+      loc => locale_bm
       return
     end if
     if (code == 'bn') then
@@ -6734,6 +8951,22 @@ contains
       loc => locale_de
       return
     end if
+    if (code == 'din') then
+      loc => locale_din
+      return
+    end if
+    if (code == 'dje') then
+      loc => locale_dje
+      return
+    end if
+    if (code == 'dyu') then
+      loc => locale_dyu
+      return
+    end if
+    if (code == 'ee') then
+      loc => locale_ee
+      return
+    end if
     if (code == 'el') then
       loc => locale_el
       return
@@ -6758,6 +8991,10 @@ contains
       loc => locale_fa
       return
     end if
+    if (code == 'fan') then
+      loc => locale_fan
+      return
+    end if
     if (code == 'ff') then
       loc => locale_ff
       return
@@ -6768,6 +9005,10 @@ contains
     end if
     if (code == 'fil') then
       loc => locale_fil
+      return
+    end if
+    if (code == 'fon') then
+      loc => locale_fon
       return
     end if
     if (code == 'fr') then
@@ -6854,6 +9095,10 @@ contains
       loc => locale_ka
       return
     end if
+    if (code == 'kbp') then
+      loc => locale_kbp
+      return
+    end if
     if (code == 'kk') then
       loc => locale_kk
       return
@@ -6868,6 +9113,14 @@ contains
     end if
     if (code == 'ko') then
       loc => locale_ko
+      return
+    end if
+    if (code == 'kpe') then
+      loc => locale_kpe
+      return
+    end if
+    if (code == 'ktu') then
+      loc => locale_ktu
       return
     end if
     if (code == 'ku') then
@@ -6902,6 +9155,14 @@ contains
       loc => locale_lv
       return
     end if
+    if (code == 'men') then
+      loc => locale_men
+      return
+    end if
+    if (code == 'mfe') then
+      loc => locale_mfe
+      return
+    end if
     if (code == 'mg') then
       loc => locale_mg
       return
@@ -6920,6 +9181,14 @@ contains
     end if
     if (code == 'mn') then
       loc => locale_mn
+      return
+    end if
+    if (code == 'mnk') then
+      loc => locale_mnk
+      return
+    end if
+    if (code == 'mos') then
+      loc => locale_mos
       return
     end if
     if (code == 'mr') then
@@ -6942,12 +9211,28 @@ contains
       loc => locale_nb
       return
     end if
+    if (code == 'nd') then
+      loc => locale_nd
+      return
+    end if
     if (code == 'ne') then
       loc => locale_ne
       return
     end if
+    if (code == 'ng') then
+      loc => locale_ng
+      return
+    end if
     if (code == 'nl') then
       loc => locale_nl
+      return
+    end if
+    if (code == 'nso') then
+      loc => locale_nso
+      return
+    end if
+    if (code == 'nus') then
+      loc => locale_nus
       return
     end if
     if (code == 'ny') then
@@ -6968,6 +9253,10 @@ contains
     end if
     if (code == 'pl') then
       loc => locale_pl
+      return
+    end if
+    if (code == 'pov') then
+      loc => locale_pov
       return
     end if
     if (code == 'ps') then
@@ -6994,8 +9283,16 @@ contains
       loc => locale_rw
       return
     end if
+    if (code == 'sar') then
+      loc => locale_sar
+      return
+    end if
     if (code == 'sd') then
       loc => locale_sd
+      return
+    end if
+    if (code == 'sg') then
+      loc => locale_sg
       return
     end if
     if (code == 'shi') then
@@ -7018,6 +9315,10 @@ contains
       loc => locale_sn
       return
     end if
+    if (code == 'snk') then
+      loc => locale_snk
+      return
+    end if
     if (code == 'so') then
       loc => locale_so
       return
@@ -7030,8 +9331,20 @@ contains
       loc => locale_sr
       return
     end if
+    if (code == 'ss') then
+      loc => locale_ss
+      return
+    end if
+    if (code == 'st') then
+      loc => locale_st
+      return
+    end if
     if (code == 'su') then
       loc => locale_su
+      return
+    end if
+    if (code == 'suk') then
+      loc => locale_suk
       return
     end if
     if (code == 'sv') then
@@ -7050,6 +9363,10 @@ contains
       loc => locale_te
       return
     end if
+    if (code == 'tem') then
+      loc => locale_tem
+      return
+    end if
     if (code == 'tg') then
       loc => locale_tg
       return
@@ -7062,12 +9379,24 @@ contains
       loc => locale_ti
       return
     end if
+    if (code == 'tig') then
+      loc => locale_tig
+      return
+    end if
     if (code == 'tk') then
       loc => locale_tk
       return
     end if
+    if (code == 'tn') then
+      loc => locale_tn
+      return
+    end if
     if (code == 'tr') then
       loc => locale_tr
+      return
+    end if
+    if (code == 'ts') then
+      loc => locale_ts
       return
     end if
     if (code == 'tzm') then
@@ -7076,6 +9405,10 @@ contains
     end if
     if (code == 'uk') then
       loc => locale_uk
+      return
+    end if
+    if (code == 'umb') then
+      loc => locale_umb
       return
     end if
     if (code == 'ur') then
@@ -7090,6 +9423,14 @@ contains
       loc => locale_vi
       return
     end if
+    if (code == 'vmw') then
+      loc => locale_vmw
+      return
+    end if
+    if (code == 'wo') then
+      loc => locale_wo
+      return
+    end if
     if (code == 'xh') then
       loc => locale_xh
       return
@@ -7100,6 +9441,10 @@ contains
     end if
     if (code == 'yue') then
       loc => locale_yue
+      return
+    end if
+    if (code == 'zdj') then
+      loc => locale_zdj
       return
     end if
     if (code == 'zh') then

@@ -18,8 +18,11 @@ from sayable_duration.locales.ak import AK
 from sayable_duration.locales.am import AM
 from sayable_duration.locales.ar import AR
 from sayable_duration.locales.az import AZ
+from sayable_duration.locales.bci import BCI
 from sayable_duration.locales.be import BE
+from sayable_duration.locales.bem import BEM
 from sayable_duration.locales.bg import BG
+from sayable_duration.locales.bm import BM
 from sayable_duration.locales.bn import BN
 from sayable_duration.locales.br import BR
 from sayable_duration.locales.bs import BS
@@ -29,15 +32,21 @@ from sayable_duration.locales.cs import CS
 from sayable_duration.locales.cy import CY
 from sayable_duration.locales.da import DA
 from sayable_duration.locales.de import DE
+from sayable_duration.locales.din import DIN
+from sayable_duration.locales.dje import DJE
+from sayable_duration.locales.dyu import DYU
+from sayable_duration.locales.ee import EE
 from sayable_duration.locales.el import EL
 from sayable_duration.locales.en import EN
 from sayable_duration.locales.es import ES
 from sayable_duration.locales.et import ET
 from sayable_duration.locales.eu import EU
 from sayable_duration.locales.fa import FA
+from sayable_duration.locales.fan import FAN
 from sayable_duration.locales.ff import FF
 from sayable_duration.locales.fi import FI
 from sayable_duration.locales.fil import FIL
+from sayable_duration.locales.fon import FON
 from sayable_duration.locales.fr import FR
 from sayable_duration.locales.ga import GA
 from sayable_duration.locales.gd import GD
@@ -58,10 +67,13 @@ from sayable_duration.locales.it import IT
 from sayable_duration.locales.ja import JA
 from sayable_duration.locales.jv import JV
 from sayable_duration.locales.ka import KA
+from sayable_duration.locales.kbp import KBP
 from sayable_duration.locales.kk import KK
 from sayable_duration.locales.km import KM
 from sayable_duration.locales.kn import KN
 from sayable_duration.locales.ko import KO
+from sayable_duration.locales.kpe import KPE
+from sayable_duration.locales.ktu import KTU
 from sayable_duration.locales.ku import KU
 from sayable_duration.locales.kw import KW
 from sayable_duration.locales.ky import KY
@@ -70,55 +82,78 @@ from sayable_duration.locales.ln import LN
 from sayable_duration.locales.lo import LO
 from sayable_duration.locales.lt import LT
 from sayable_duration.locales.lv import LV
+from sayable_duration.locales.men import MEN
+from sayable_duration.locales.mfe import MFE
 from sayable_duration.locales.mg import MG
 from sayable_duration.locales.mi import MI
 from sayable_duration.locales.mk import MK
 from sayable_duration.locales.ml import ML
 from sayable_duration.locales.mn import MN
+from sayable_duration.locales.mnk import MNK
+from sayable_duration.locales.mos import MOS
 from sayable_duration.locales.mr import MR
 from sayable_duration.locales.ms import MS
 from sayable_duration.locales.mt import MT
 from sayable_duration.locales.my import MY
 from sayable_duration.locales.nb import NB
+from sayable_duration.locales.nd import ND
 from sayable_duration.locales.ne import NE
+from sayable_duration.locales.ng import NG
 from sayable_duration.locales.nl import NL
+from sayable_duration.locales.nso import NSO
+from sayable_duration.locales.nus import NUS
 from sayable_duration.locales.ny import NY
 from sayable_duration.locales.om import OM
 from sayable_duration.locales.pa import PA
 from sayable_duration.locales.pl import PL
+from sayable_duration.locales.pov import POV
 from sayable_duration.locales.ps import PS
 from sayable_duration.locales.pt import PT
 from sayable_duration.locales.qu import QU
 from sayable_duration.locales.ro import RO
 from sayable_duration.locales.ru import RU
 from sayable_duration.locales.rw import RW
+from sayable_duration.locales.sar import SAR
 from sayable_duration.locales.sd import SD
+from sayable_duration.locales.sg import SG
 from sayable_duration.locales.shi import SHI
 from sayable_duration.locales.si import SI
 from sayable_duration.locales.sk import SK
 from sayable_duration.locales.sl import SL
 from sayable_duration.locales.sn import SN
+from sayable_duration.locales.snk import SNK
 from sayable_duration.locales.so import SO
 from sayable_duration.locales.sq import SQ
 from sayable_duration.locales.sr import SR
+from sayable_duration.locales.ss import SS
+from sayable_duration.locales.st import ST
 from sayable_duration.locales.su import SU
+from sayable_duration.locales.suk import SUK
 from sayable_duration.locales.sv import SV
 from sayable_duration.locales.sw import SW
 from sayable_duration.locales.ta import TA
 from sayable_duration.locales.te import TE
+from sayable_duration.locales.tem import TEM
 from sayable_duration.locales.tg import TG
 from sayable_duration.locales.th import TH
 from sayable_duration.locales.ti import TI
+from sayable_duration.locales.tig import TIG
 from sayable_duration.locales.tk import TK
+from sayable_duration.locales.tn import TN
 from sayable_duration.locales.tr import TR
+from sayable_duration.locales.ts import TS
 from sayable_duration.locales.tzm import TZM
 from sayable_duration.locales.uk import UK
+from sayable_duration.locales.umb import UMB
 from sayable_duration.locales.ur import UR
 from sayable_duration.locales.uz import UZ
 from sayable_duration.locales.vi import VI
+from sayable_duration.locales.vmw import VMW
+from sayable_duration.locales.wo import WO
 from sayable_duration.locales.xh import XH
 from sayable_duration.locales.yo import YO
 from sayable_duration.locales.yue import YUE
+from sayable_duration.locales.zdj import ZDJ
 from sayable_duration.locales.zh import ZH
 from sayable_duration.locales.zu import ZU
 
@@ -127,33 +162,42 @@ OR = importlib.import_module("sayable_duration.locales.or").OR
 
 _ALL: dict[str, DurationLocale] = {
     "af": AF, "ak": AK, "am": AM, "ar": AR,
-    "az": AZ, "be": BE, "bg": BG, "bn": BN,
-    "br": BR, "bs": BS, "ca": CA, "ceb": CEB,
-    "cs": CS, "cy": CY, "da": DA, "de": DE,
-    "el": EL, "en": EN, "es": ES, "et": ET,
-    "eu": EU, "fa": FA, "ff": FF, "fi": FI,
-    "fil": FIL, "fr": FR, "ga": GA, "gd": GD,
-    "gl": GL, "gn": GN, "gu": GU, "gv": GV,
-    "ha": HA, "he": HE, "hi": HI, "hr": HR,
-    "ht": HT, "hu": HU, "hy": HY, "id": ID,
-    "ig": IG, "is": IS, "it": IT, "ja": JA,
-    "jv": JV, "ka": KA, "kk": KK, "km": KM,
-    "kn": KN, "ko": KO, "ku": KU, "kw": KW,
+    "az": AZ, "bci": BCI, "be": BE, "bem": BEM,
+    "bg": BG, "bm": BM, "bn": BN, "br": BR,
+    "bs": BS, "ca": CA, "ceb": CEB, "cs": CS,
+    "cy": CY, "da": DA, "de": DE, "din": DIN,
+    "dje": DJE, "dyu": DYU, "ee": EE, "el": EL,
+    "en": EN, "es": ES, "et": ET, "eu": EU,
+    "fa": FA, "fan": FAN, "ff": FF, "fi": FI,
+    "fil": FIL, "fon": FON, "fr": FR, "ga": GA,
+    "gd": GD, "gl": GL, "gn": GN, "gu": GU,
+    "gv": GV, "ha": HA, "he": HE, "hi": HI,
+    "hr": HR, "ht": HT, "hu": HU, "hy": HY,
+    "id": ID, "ig": IG, "is": IS, "it": IT,
+    "ja": JA, "jv": JV, "ka": KA, "kbp": KBP,
+    "kk": KK, "km": KM, "kn": KN, "ko": KO,
+    "kpe": KPE, "ktu": KTU, "ku": KU, "kw": KW,
     "ky": KY, "lg": LG, "ln": LN, "lo": LO,
-    "lt": LT, "lv": LV, "mg": MG, "mi": MI,
-    "mk": MK, "ml": ML, "mn": MN, "mr": MR,
+    "lt": LT, "lv": LV, "men": MEN, "mfe": MFE,
+    "mg": MG, "mi": MI, "mk": MK, "ml": ML,
+    "mn": MN, "mnk": MNK, "mos": MOS, "mr": MR,
     "ms": MS, "mt": MT, "my": MY, "nb": NB,
-    "ne": NE, "nl": NL, "ny": NY, "om": OM,
-    "or": OR, "pa": PA, "pl": PL, "ps": PS,
-    "pt": PT, "qu": QU, "ro": RO, "ru": RU,
-    "rw": RW, "sd": SD, "shi": SHI, "si": SI,
-    "sk": SK, "sl": SL, "sn": SN, "so": SO,
-    "sq": SQ, "sr": SR, "su": SU, "sv": SV,
-    "sw": SW, "ta": TA, "te": TE, "tg": TG,
-    "th": TH, "ti": TI, "tk": TK, "tr": TR,
-    "tzm": TZM, "uk": UK, "ur": UR, "uz": UZ,
-    "vi": VI, "xh": XH, "yo": YO, "yue": YUE,
-    "zh": ZH, "zu": ZU,
+    "nd": ND, "ne": NE, "ng": NG, "nl": NL,
+    "nso": NSO, "nus": NUS, "ny": NY, "om": OM,
+    "or": OR, "pa": PA, "pl": PL, "pov": POV,
+    "ps": PS, "pt": PT, "qu": QU, "ro": RO,
+    "ru": RU, "rw": RW, "sar": SAR, "sd": SD,
+    "sg": SG, "shi": SHI, "si": SI, "sk": SK,
+    "sl": SL, "sn": SN, "snk": SNK, "so": SO,
+    "sq": SQ, "sr": SR, "ss": SS, "st": ST,
+    "su": SU, "suk": SUK, "sv": SV, "sw": SW,
+    "ta": TA, "te": TE, "tem": TEM, "tg": TG,
+    "th": TH, "ti": TI, "tig": TIG, "tk": TK,
+    "tn": TN, "tr": TR, "ts": TS, "tzm": TZM,
+    "uk": UK, "umb": UMB, "ur": UR, "uz": UZ,
+    "vi": VI, "vmw": VMW, "wo": WO, "xh": XH,
+    "yo": YO, "yue": YUE, "zdj": ZDJ, "zh": ZH,
+    "zu": ZU,
 }
 
 
@@ -162,19 +206,24 @@ def get_locale(code: str) -> DurationLocale | None:
     return _ALL.get(code)
 
 __all__ = [
-    "AF", "AK", "AM", "AR", "AZ", "BE", "BG", "BN",
-    "BR", "BS", "CA", "CEB", "CS", "CY", "DA", "DE",
-    "EL", "EN", "ES", "ET", "EU", "FA", "FF", "FI",
-    "FIL", "FR", "GA", "GD", "GL", "GN", "GU", "GV",
-    "HA", "HE", "HI", "HR", "HT", "HU", "HY", "ID",
-    "IG", "IS", "IT", "JA", "JV", "KA", "KK", "KM",
-    "KN", "KO", "KU", "KW", "KY", "LG", "LN", "LO",
-    "LT", "LV", "MG", "MI", "MK", "ML", "MN", "MR",
-    "MS", "MT", "MY", "NB", "NE", "NL", "NY", "OM",
-    "OR", "PA", "PL", "PS", "PT", "QU", "RO", "RU",
-    "RW", "SD", "SHI", "SI", "SK", "SL", "SN", "SO",
-    "SQ", "SR", "SU", "SV", "SW", "TA", "TE", "TG",
-    "TH", "TI", "TK", "TR", "TZM", "UK", "UR", "UZ",
-    "VI", "XH", "YO", "YUE", "ZH", "ZU",
+    "AF", "AK", "AM", "AR", "AZ", "BCI", "BE", "BEM",
+    "BG", "BM", "BN", "BR", "BS", "CA", "CEB", "CS",
+    "CY", "DA", "DE", "DIN", "DJE", "DYU", "EE", "EL",
+    "EN", "ES", "ET", "EU", "FA", "FAN", "FF", "FI",
+    "FIL", "FON", "FR", "GA", "GD", "GL", "GN", "GU",
+    "GV", "HA", "HE", "HI", "HR", "HT", "HU", "HY",
+    "ID", "IG", "IS", "IT", "JA", "JV", "KA", "KBP",
+    "KK", "KM", "KN", "KO", "KPE", "KTU", "KU", "KW",
+    "KY", "LG", "LN", "LO", "LT", "LV", "MEN", "MFE",
+    "MG", "MI", "MK", "ML", "MN", "MNK", "MOS", "MR",
+    "MS", "MT", "MY", "NB", "ND", "NE", "NG", "NL",
+    "NSO", "NUS", "NY", "OM", "OR", "PA", "PL", "POV",
+    "PS", "PT", "QU", "RO", "RU", "RW", "SAR", "SD",
+    "SG", "SHI", "SI", "SK", "SL", "SN", "SNK", "SO",
+    "SQ", "SR", "SS", "ST", "SU", "SUK", "SV", "SW",
+    "TA", "TE", "TEM", "TG", "TH", "TI", "TIG", "TK",
+    "TN", "TR", "TS", "TZM", "UK", "UMB", "UR", "UZ",
+    "VI", "VMW", "WO", "XH", "YO", "YUE", "ZDJ", "ZH",
+    "ZU",
     "get_locale",
 ]

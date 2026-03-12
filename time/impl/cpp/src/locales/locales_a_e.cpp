@@ -93,6 +93,22 @@ const TimeLocale& AZ() {
     return loc;
 }
 
+// Source: time/locales/src/bci.json
+const TimeLocale& BCI() {
+    static const TimeLocale loc{
+        "bci",
+        ClockConfig{
+            {"blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun"},
+            "kɔnguɛ afiɛn",
+            "nnɔsua",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/be.json
 const TimeLocale& BE() {
     static const TimeLocale loc{
@@ -109,6 +125,22 @@ const TimeLocale& BE() {
     return loc;
 }
 
+// Source: time/locales/src/bem.json
+const TimeLocale& BEM() {
+    static const TimeLocale loc{
+        "bem",
+        ClockConfig{
+            {"ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo"},
+            "pakati ka bushiku",
+            "akasuba",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/bg.json
 const TimeLocale& BG() {
     static const TimeLocale loc{
@@ -121,6 +153,22 @@ const TimeLocale& BG() {
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/bm.json
+const TimeLocale& BM() {
+    static const TimeLocale loc{
+        "bm",
+        ClockConfig{
+            {"tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"},
+            "dugutilama",
+            "tilgari",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
     };
     return loc;
 }
@@ -265,6 +313,70 @@ const TimeLocale& DE() {
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/din.json
+const TimeLocale& DIN() {
+    static const TimeLocale loc{
+        "din",
+        ClockConfig{
+            {"thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök"},
+            "wakɔ̈u",
+            "akɔ̈l ciëŋ",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/dje.json
+const TimeLocale& DJE() {
+    static const TimeLocale loc{
+        "dje",
+        ClockConfig{
+            {"way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi"},
+            "cin beri",
+            "zaari gaaham",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/dyu.json
+const TimeLocale& DYU() {
+    static const TimeLocale loc{
+        "dyu",
+        ClockConfig{
+            {"tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"},
+            "dugutilama",
+            "tilgari",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/ee.json
+const TimeLocale& EE() {
+    static const TimeLocale loc{
+        "ee",
+        ClockConfig{
+            {"wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"},
+            "zã titina",
+            "ŋdɔ",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
     };
     return loc;
 }

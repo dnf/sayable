@@ -1,0 +1,70 @@
+{
+  "code": "ee",
+  "name": "Ewe",
+  "months": [
+    "Dzove",
+    "Dzodze",
+    "Tedoxe",
+    "Afɔfĩe",
+    "Damɛ",
+    "Masa",
+    "Siamlɔm",
+    "Dasiamime",
+    "Anyɔnyɔ",
+    "Kele",
+    "Adeɛmekpɔxe",
+    "Dzome"
+  ],
+  "weekdays": [
+    "Kɔsiɖa",
+    "Dzoɖa",
+    "Braɖa",
+    "Kuɖa",
+    "Yawoɖa",
+    "Fiɖa",
+    "Memleɖa"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "egbe",
+  "tomorrow": "etsɔ",
+  "yesterday": "etso",
+  "dayAfterTomorrow": "etsɔ megbe",
+  "dayBeforeYesterday": "etso nyitsɔ",
+  "thisWeekday": "{weekday} sia",
+  "nextWeekday": "{weekday} si gbɔna",
+  "lastWeekday": "{weekday} si va yi",
+  "short": {
+    "months": [
+      "Dzv",
+      "Dzd",
+      "Ted",
+      "Afɔ",
+      "Dam",
+      "Mas",
+      "Sia",
+      "Das",
+      "Any",
+      "Kel",
+      "Ade",
+      "Dzm"
+    ],
+    "weekdays": [
+      "Kɔs",
+      "Dzo",
+      "Bra",
+      "Kuɖ",
+      "Yaw",
+      "Fiɖ",
+      "Mem"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

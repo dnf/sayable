@@ -25,11 +25,20 @@
                WHEN "az"
                    PERFORM INIT-LOCALE-AZ
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bci"
+                   PERFORM INIT-LOCALE-BCI
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "be"
                    PERFORM INIT-LOCALE-BE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bem"
+                   PERFORM INIT-LOCALE-BEM
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "bg"
                    PERFORM INIT-LOCALE-BG
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bm"
+                   PERFORM INIT-LOCALE-BM
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "bn"
                    PERFORM INIT-LOCALE-BN
@@ -58,6 +67,18 @@
                WHEN "de"
                    PERFORM INIT-LOCALE-DE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "din"
+                   PERFORM INIT-LOCALE-DIN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "dje"
+                   PERFORM INIT-LOCALE-DJE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "dyu"
+                   PERFORM INIT-LOCALE-DYU
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ee"
+                   PERFORM INIT-LOCALE-EE
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "el"
                    PERFORM INIT-LOCALE-EL
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -76,6 +97,9 @@
                WHEN "fa"
                    PERFORM INIT-LOCALE-FA
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "fan"
+                   PERFORM INIT-LOCALE-FAN
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ff"
                    PERFORM INIT-LOCALE-FF
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -84,6 +108,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "fil"
                    PERFORM INIT-LOCALE-FIL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "fon"
+                   PERFORM INIT-LOCALE-FON
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "fr"
                    PERFORM INIT-LOCALE-FR
@@ -148,6 +175,9 @@
                WHEN "ka"
                    PERFORM INIT-LOCALE-KA
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "kbp"
+                   PERFORM INIT-LOCALE-KBP
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "kk"
                    PERFORM INIT-LOCALE-KK
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -159,6 +189,12 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ko"
                    PERFORM INIT-LOCALE-KO
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "kpe"
+                   PERFORM INIT-LOCALE-KPE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ktu"
+                   PERFORM INIT-LOCALE-KTU
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ku"
                    PERFORM INIT-LOCALE-KU
@@ -184,6 +220,12 @@
                WHEN "lv"
                    PERFORM INIT-LOCALE-LV
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "men"
+                   PERFORM INIT-LOCALE-MEN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mfe"
+                   PERFORM INIT-LOCALE-MFE
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mg"
                    PERFORM INIT-LOCALE-MG
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -198,6 +240,12 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mn"
                    PERFORM INIT-LOCALE-MN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mnk"
+                   PERFORM INIT-LOCALE-MNK
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mos"
+                   PERFORM INIT-LOCALE-MOS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mr"
                    PERFORM INIT-LOCALE-MR
@@ -214,11 +262,23 @@
                WHEN "nb"
                    PERFORM INIT-LOCALE-NB
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nd"
+                   PERFORM INIT-LOCALE-ND
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ne"
                    PERFORM INIT-LOCALE-NE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ng"
+                   PERFORM INIT-LOCALE-NG
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "nl"
                    PERFORM INIT-LOCALE-NL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nso"
+                   PERFORM INIT-LOCALE-NSO
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nus"
+                   PERFORM INIT-LOCALE-NUS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ny"
                    PERFORM INIT-LOCALE-NY
@@ -234,6 +294,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "pl"
                    PERFORM INIT-LOCALE-PL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "pov"
+                   PERFORM INIT-LOCALE-POV
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ps"
                    PERFORM INIT-LOCALE-PS
@@ -253,8 +316,14 @@
                WHEN "rw"
                    PERFORM INIT-LOCALE-RW
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "sar"
+                   PERFORM INIT-LOCALE-SAR
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "sd"
                    PERFORM INIT-LOCALE-SD
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "sg"
+                   PERFORM INIT-LOCALE-SG
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "shi"
                    PERFORM INIT-LOCALE-SHI
@@ -271,6 +340,9 @@
                WHEN "sn"
                    PERFORM INIT-LOCALE-SN
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "snk"
+                   PERFORM INIT-LOCALE-SNK
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "so"
                    PERFORM INIT-LOCALE-SO
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -280,8 +352,17 @@
                WHEN "sr"
                    PERFORM INIT-LOCALE-SR
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ss"
+                   PERFORM INIT-LOCALE-SS
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "st"
+                   PERFORM INIT-LOCALE-ST
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "su"
                    PERFORM INIT-LOCALE-SU
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "suk"
+                   PERFORM INIT-LOCALE-SUK
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "sv"
                    PERFORM INIT-LOCALE-SV
@@ -295,6 +376,9 @@
                WHEN "te"
                    PERFORM INIT-LOCALE-TE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tem"
+                   PERFORM INIT-LOCALE-TEM
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tg"
                    PERFORM INIT-LOCALE-TG
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -304,17 +388,29 @@
                WHEN "ti"
                    PERFORM INIT-LOCALE-TI
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tig"
+                   PERFORM INIT-LOCALE-TIG
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tk"
                    PERFORM INIT-LOCALE-TK
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tn"
+                   PERFORM INIT-LOCALE-TN
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tr"
                    PERFORM INIT-LOCALE-TR
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ts"
+                   PERFORM INIT-LOCALE-TS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tzm"
                    PERFORM INIT-LOCALE-TZM
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "uk"
                    PERFORM INIT-LOCALE-UK
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "umb"
+                   PERFORM INIT-LOCALE-UMB
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ur"
                    PERFORM INIT-LOCALE-UR
@@ -325,6 +421,12 @@
                WHEN "vi"
                    PERFORM INIT-LOCALE-VI
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "vmw"
+                   PERFORM INIT-LOCALE-VMW
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "wo"
+                   PERFORM INIT-LOCALE-WO
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "xh"
                    PERFORM INIT-LOCALE-XH
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -333,6 +435,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "yue"
                    PERFORM INIT-LOCALE-YUE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "zdj"
+                   PERFORM INIT-LOCALE-ZDJ
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "zh"
                    PERFORM INIT-LOCALE-ZH
@@ -1028,6 +1133,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/bci.json
+       INIT-LOCALE-BCI.
+           MOVE "bci" TO WS-ACT-CODE
+           MOVE "Zanvie"
+               TO WS-ACT-MONTH(1)
+           MOVE "Flevie"
+               TO WS-ACT-MONTH(2)
+           MOVE "Masi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Avrili"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mɛ"
+               TO WS-ACT-MONTH(5)
+           MOVE "Zuɛn"
+               TO WS-ACT-MONTH(6)
+           MOVE "Zulɛ"
+               TO WS-ACT-MONTH(7)
+           MOVE "Uti"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtanbu"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ɔtɔbu"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novanbu"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desanbu"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Mɔndi"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Lunji"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Madi"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Mliku"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Juedi"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Vaandredi"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Sanmdi"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "andɛ"
+               TO WS-ACT-TODAY
+           MOVE "ainman"
+               TO WS-ACT-TOMORROW
+           MOVE "nglɛmun"
+               TO WS-ACT-YESTERDAY
+           MOVE "ainman sin"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "nglɛmun sin"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} nga"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ng'ɔ ba"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ng'ɔ sín"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Zan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fle"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mas"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Avr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mɛ"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Zuɛ"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Zul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Uti"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ɔtɔ"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Mɔn"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Lun"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Mad"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Mli"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Jue"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Vaa"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "San"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/be.json
        INIT-LOCALE-BE.
            MOVE "be" TO WS-ACT-CODE
@@ -1189,6 +1431,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/bem.json
+       INIT-LOCALE-BEM.
+           MOVE "bem" TO WS-ACT-CODE
+           MOVE "Januari"
+               TO WS-ACT-MONTH(1)
+           MOVE "Februari"
+               TO WS-ACT-MONTH(2)
+           MOVE "Machi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Epreli"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-MONTH(5)
+           MOVE "Juni"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julai"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ogasti"
+               TO WS-ACT-MONTH(8)
+           MOVE "Septemba"
+               TO WS-ACT-MONTH(9)
+           MOVE "Oktoba"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novemba"
+               TO WS-ACT-MONTH(11)
+           MOVE "Disemba"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Pa Mulungu"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Pa Bwali"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Pa Bibili"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Pa Butatu"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Pa Bune"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Pa Busano"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Pa Mulembe"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "lelo"
+               TO WS-ACT-TODAY
+           MOVE "mailo"
+               TO WS-ACT-TOMORROW
+           MOVE "icungulo"
+               TO WS-ACT-YESTERDAY
+           MOVE "mailo kabili"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "icungulo kabili"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} ubu"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ukwisa"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ukupita"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mac"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Epr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Oga"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sep"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Okt"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dis"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Mul"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Bwa"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Bib"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "But"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Bun"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Bus"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Mul"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/bg.json
        INIT-LOCALE-BG.
            MOVE "bg" TO WS-ACT-CODE
@@ -1295,6 +1674,143 @@
            MOVE "пт"
                TO WS-ACT-SHORT-WKDAY(6)
            MOVE "сб"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/bm.json
+       INIT-LOCALE-BM.
+           MOVE "bm" TO WS-ACT-CODE
+           MOVE "Zanwuye"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fewuriye"
+               TO WS-ACT-MONTH(2)
+           MOVE "Marisi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Awirili"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mɛ"
+               TO WS-ACT-MONTH(5)
+           MOVE "Zuwɛn"
+               TO WS-ACT-MONTH(6)
+           MOVE "Zuluye"
+               TO WS-ACT-MONTH(7)
+           MOVE "Uti"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtanburu"
+               TO WS-ACT-MONTH(9)
+           MOVE "ɔkutɔburu"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nowanbudu"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desanburu"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Kari"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Ntɛnɛn"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Tarata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Araba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alamisa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Juma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Sibiri"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "bi"
+               TO WS-ACT-TODAY
+           MOVE "sini"
+               TO WS-ACT-TOMORROW
+           MOVE "kunu"
+               TO WS-ACT-YESTERDAY
+           MOVE "sini kɔfɛ"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "kunu kɔfɛ"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} nin"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} nata"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} tɛmɛnen"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Zan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Few"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Awi"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mɛ"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Zuw"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Zul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Uti"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "ɔku"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Now"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Kar"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Ntɛ"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Tar"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ara"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Jum"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Sib"
                TO WS-ACT-SHORT-WKDAY(7)
            MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
            MOVE "{n}"
@@ -2583,6 +3099,554 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/din.json
+       INIT-LOCALE-DIN.
+           MOVE "din" TO WS-ACT-CODE
+           MOVE "Tiɔp in dit"
+               TO WS-ACT-MONTH(1)
+           MOVE "Pɛt"
+               TO WS-ACT-MONTH(2)
+           MOVE "Duɔ̈ɔ̈ŋ"
+               TO WS-ACT-MONTH(3)
+           MOVE "Guak"
+               TO WS-ACT-MONTH(4)
+           MOVE "Duät"
+               TO WS-ACT-MONTH(5)
+           MOVE "Kornyot"
+               TO WS-ACT-MONTH(6)
+           MOVE "Payi"
+               TO WS-ACT-MONTH(7)
+           MOVE "Tio̱p in thii"
+               TO WS-ACT-MONTH(8)
+           MOVE "Laath"
+               TO WS-ACT-MONTH(9)
+           MOVE "Kur"
+               TO WS-ACT-MONTH(10)
+           MOVE "Tio̱p in laat"
+               TO WS-ACT-MONTH(11)
+           MOVE "Jiɔk"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Akɔl dhorou"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Kɔl jöŋ"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Kɔl rou"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Kɔl diäk"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Kɔl ŋuän"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Kɔl dhiëc"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Kɔl bäkäl"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "yïn"
+               TO WS-ACT-TODAY
+           MOVE "riak"
+               TO WS-ACT-TOMORROW
+           MOVE "aköl"
+               TO WS-ACT-YESTERDAY
+           MOVE "riak cök"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "aköl cök"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} kënë"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} bɛ̈n"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} cï wëëŋ"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Tiɔp"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Pɛt"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Duɔ̈ɔ̈ŋ"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Guak"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Duät"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Kor"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Pay"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Tio̱p"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Laa"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Kur"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Tio̱p"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Jiɔk"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Dho"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Jöŋ"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Rou"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Diäk"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Ŋuän"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Dhiëc"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Bäk"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/dje.json
+       INIT-LOCALE-DJE.
+           MOVE "dje" TO WS-ACT-CODE
+           MOVE "Žanwiye"
+               TO WS-ACT-MONTH(1)
+           MOVE "Feewiriye"
+               TO WS-ACT-MONTH(2)
+           MOVE "Marsi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Awiril"
+               TO WS-ACT-MONTH(4)
+           MOVE "Me"
+               TO WS-ACT-MONTH(5)
+           MOVE "Žuweŋ"
+               TO WS-ACT-MONTH(6)
+           MOVE "Žuyye"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ut"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sektanbur"
+               TO WS-ACT-MONTH(9)
+           MOVE "Oktoobur"
+               TO WS-ACT-MONTH(10)
+           MOVE "Noowanbur"
+               TO WS-ACT-MONTH(11)
+           MOVE "Deesanbur"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Alhadi"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Atini"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Atalaata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Alarba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alhamisi"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Alzuma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Asibiti"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "hõ"
+               TO WS-ACT-TODAY
+           MOVE "suba"
+               TO WS-ACT-TOMORROW
+           MOVE "bi"
+               TO WS-ACT-YESTERDAY
+           MOVE "suba cine"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "bi fo"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} wo"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ka kaa"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ka ban"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Žan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fee"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Awi"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Me"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Žuw"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Žuy"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ut"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sek"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Okt"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Noo"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dee"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Alh"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Ati"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Ata"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Alh"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Alz"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Asi"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/dyu.json
+       INIT-LOCALE-DYU.
+           MOVE "dyu" TO WS-ACT-CODE
+           MOVE "Zanwuyekalo"
+               TO WS-ACT-MONTH(1)
+           MOVE "Feburuyekalo"
+               TO WS-ACT-MONTH(2)
+           MOVE "Marisikalo"
+               TO WS-ACT-MONTH(3)
+           MOVE "Awirilikalo"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mɛkalo"
+               TO WS-ACT-MONTH(5)
+           MOVE "Zuwɛnkalo"
+               TO WS-ACT-MONTH(6)
+           MOVE "Zuluyekalo"
+               TO WS-ACT-MONTH(7)
+           MOVE "Utikalo"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtanburukalo"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ɔkutɔburukalo"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nowanburdukalo"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desanburukalo"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Kari"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Ntɛnɛn"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Tarata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Araba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alamisa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Juma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Sibiri"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "bi"
+               TO WS-ACT-TODAY
+           MOVE "sini"
+               TO WS-ACT-TOMORROW
+           MOVE "kunu"
+               TO WS-ACT-YESTERDAY
+           MOVE "sini kɔfɛ"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "kunu kɔfɛ"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} nin"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} nata"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} tɛmɛnen"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Zan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Awi"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mɛ"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Zuw"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Zul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Uti"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ɔku"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Now"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Kar"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Ntɛ"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Tar"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ara"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Jum"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Sib"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/ee.json
+       INIT-LOCALE-EE.
+           MOVE "ee" TO WS-ACT-CODE
+           MOVE "Dzove"
+               TO WS-ACT-MONTH(1)
+           MOVE "Dzodze"
+               TO WS-ACT-MONTH(2)
+           MOVE "Tedoxe"
+               TO WS-ACT-MONTH(3)
+           MOVE "Afɔfĩe"
+               TO WS-ACT-MONTH(4)
+           MOVE "Damɛ"
+               TO WS-ACT-MONTH(5)
+           MOVE "Masa"
+               TO WS-ACT-MONTH(6)
+           MOVE "Siamlɔm"
+               TO WS-ACT-MONTH(7)
+           MOVE "Dasiamime"
+               TO WS-ACT-MONTH(8)
+           MOVE "Anyɔnyɔ"
+               TO WS-ACT-MONTH(9)
+           MOVE "Kele"
+               TO WS-ACT-MONTH(10)
+           MOVE "Adeɛmekpɔxe"
+               TO WS-ACT-MONTH(11)
+           MOVE "Dzome"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Kɔsiɖa"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Dzoɖa"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Braɖa"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Kuɖa"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Yawoɖa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Fiɖa"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Memleɖa"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "egbe"
+               TO WS-ACT-TODAY
+           MOVE "etsɔ"
+               TO WS-ACT-TOMORROW
+           MOVE "etso"
+               TO WS-ACT-YESTERDAY
+           MOVE "etsɔ megbe"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "etso nyitsɔ"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} sia"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} si gbɔna"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} si va yi"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Dzv"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Dzd"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Ted"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Afɔ"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Dam"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Mas"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Sia"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Das"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Any"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Kel"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Ade"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dzm"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Kɔs"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Dzo"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Bra"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Kuɖ"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Yaw"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Fiɖ"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Mem"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/el.json
        INIT-LOCALE-EL.
            MOVE "el" TO WS-ACT-CODE
@@ -3478,6 +4542,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/fan.json
+       INIT-LOCALE-FAN.
+           MOVE "fan" TO WS-ACT-CODE
+           MOVE "Nzas Ngon"
+               TO WS-ACT-MONTH(1)
+           MOVE "Nzas Mekié"
+               TO WS-ACT-MONTH(2)
+           MOVE "Nzas Okúa"
+               TO WS-ACT-MONTH(3)
+           MOVE "Nzas Angón"
+               TO WS-ACT-MONTH(4)
+           MOVE "Nzas Obuí"
+               TO WS-ACT-MONTH(5)
+           MOVE "Nzas Okéna"
+               TO WS-ACT-MONTH(6)
+           MOVE "Nzas Osúa"
+               TO WS-ACT-MONTH(7)
+           MOVE "Nzas Mwom"
+               TO WS-ACT-MONTH(8)
+           MOVE "Nzas Ebulú"
+               TO WS-ACT-MONTH(9)
+           MOVE "Nzas Owono"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nzas Owono-abé"
+               TO WS-ACT-MONTH(11)
+           MOVE "Nzas Nkéng"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Esig"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Amvus"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Amvus-abé"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Amvus-alú"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Amvus-anyin"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Mba"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Ngon"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "anú"
+               TO WS-ACT-TODAY
+           MOVE "kie"
+               TO WS-ACT-TOMORROW
+           MOVE "angogomé"
+               TO WS-ACT-YESTERDAY
+           MOVE "kie okúa"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "angogomé okúa"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} ane"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} a bé za"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} a ja"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Ngo"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Mek"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Oku"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Ang"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Obu"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Oke"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Osu"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Mwo"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Ebu"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Owo"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Owa"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Nke"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Esi"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Amv"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Ama"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Aml"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Amn"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Mba"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Ngo"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/ff.json
        INIT-LOCALE-FF.
            MOVE "ff" TO WS-ACT-CODE
@@ -3907,6 +5108,143 @@
                TO WS-ACT-COMPACT-DATE-PAT
            MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
            MOVE "{m}/{d}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/fon.json
+       INIT-LOCALE-FON.
+           MOVE "fon" TO WS-ACT-CODE
+           MOVE "Alɔfí"
+               TO WS-ACT-MONTH(1)
+           MOVE "Alɔnyɔ"
+               TO WS-ACT-MONTH(2)
+           MOVE "Ataɖaxɔ"
+               TO WS-ACT-MONTH(3)
+           MOVE "Tlɛsún"
+               TO WS-ACT-MONTH(4)
+           MOVE "Axɔsún"
+               TO WS-ACT-MONTH(5)
+           MOVE "Ayɛsún"
+               TO WS-ACT-MONTH(6)
+           MOVE "Nùxwásún"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ayidosún"
+               TO WS-ACT-MONTH(8)
+           MOVE "Kɛnísún"
+               TO WS-ACT-MONTH(9)
+           MOVE "Kanyásún"
+               TO WS-ACT-MONTH(10)
+           MOVE "Abɔxwísún"
+               TO WS-ACT-MONTH(11)
+           MOVE "Adɔxwísún"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Sidégbe"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Tɛnígbe"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Talɛtagbe"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Azǎngagbe"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Nyɔnúgbe"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Axɔ́sùgbe"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Abámɛ́ta"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "egbè"
+               TO WS-ACT-TODAY
+           MOVE "sɔ"
+               TO WS-ACT-TOMORROW
+           MOVE "sá"
+               TO WS-ACT-YESTERDAY
+           MOVE "sɔ gudo"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "sá gudo"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} elɔ"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} e ja"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} e wá yí"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Alɔ"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Any"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Ata"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Tlɛ"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Axɔ"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Ayɛ"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Nùx"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ayi"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Kɛn"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Kan"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Abɔ"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Adɔ"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Sid"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Tɛn"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Tal"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Azǎ"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Nyɔ"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Axɔ"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Abá"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
                TO WS-ACT-COMPACT-DATE-PAT-YR
            MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
            MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
@@ -6821,6 +8159,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/kbp.json
+       INIT-LOCALE-KBP.
+           MOVE "kbp" TO WS-ACT-CODE
+           MOVE "Kɔlaɣ"
+               TO WS-ACT-MONTH(1)
+           MOVE "Naaɣ Kɩŋ"
+               TO WS-ACT-MONTH(2)
+           MOVE "Naataŋgʊ"
+               TO WS-ACT-MONTH(3)
+           MOVE "Naalɩɩ"
+               TO WS-ACT-MONTH(4)
+           MOVE "Lɛlɩɩ"
+               TO WS-ACT-MONTH(5)
+           MOVE "Kʊɖʊmaa"
+               TO WS-ACT-MONTH(6)
+           MOVE "Saŋayɩɩ"
+               TO WS-ACT-MONTH(7)
+           MOVE "Kɩyɛɛna"
+               TO WS-ACT-MONTH(8)
+           MOVE "Lɩtɩɩ"
+               TO WS-ACT-MONTH(9)
+           MOVE "Kʊɖʊmaɣ"
+               TO WS-ACT-MONTH(10)
+           MOVE "Tɩŋgɩzɩɩ"
+               TO WS-ACT-MONTH(11)
+           MOVE "Abranɩɩ"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Pɩsɩ"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Tɛɖɛɣa"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Taata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Aranzɩɩ"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Aramnza"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Azɩma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Asɩbɩ"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "sɔnɔ"
+               TO WS-ACT-TODAY
+           MOVE "cee"
+               TO WS-ACT-TOMORROW
+           MOVE "ɖooo"
+               TO WS-ACT-YESTERDAY
+           MOVE "cee wayɩ"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "ɖooo wayɩ"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} kɩ"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} nɛ ŋga"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} nɛ wɛ"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Kɔl"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Naa"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Nat"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Nal"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Lɛl"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Kʊɖ"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Saŋ"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Kɩy"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Lɩt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Kʊɖ"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Tɩŋ"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Abr"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Pɩs"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Tɛɖ"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Taa"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ara"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Arm"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Azɩ"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Asɩ"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/kk.json
        INIT-LOCALE-KK.
            MOVE "kk" TO WS-ACT-CODE
@@ -7363,6 +8838,280 @@
                TO WS-ACT-COMPACT-DATE-PAT
            MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
            MOVE "{yy}/{m}/{d}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/kpe.json
+       INIT-LOCALE-KPE.
+           MOVE "kpe" TO WS-ACT-CODE
+           MOVE "Yanuwali"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fɛbɛli"
+               TO WS-ACT-MONTH(2)
+           MOVE "Maachi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Eepɛli"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mɛɛ"
+               TO WS-ACT-MONTH(5)
+           MOVE "Juŋ"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julai"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ɔɔgɔsi"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtɛmba"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ɔtɔba"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nɔvɛmba"
+               TO WS-ACT-MONTH(11)
+           MOVE "Disɛmba"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Saadee"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Tɛnɛɛ"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Talata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Alaba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Aimisa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Juma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Satɛdee"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "nɔ̃ɔ̃"
+               TO WS-ACT-TODAY
+           MOVE "sila"
+               TO WS-ACT-TOMORROW
+           MOVE "ɓii"
+               TO WS-ACT-YESTERDAY
+           MOVE "sila pɔlɔ"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "ɓii pɔlɔ"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} yi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ya kɛ"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} kɛ pɔlɔ"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Yan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fɛb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Maa"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Eep"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mɛɛ"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Juŋ"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ɔɔg"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ɔtɔ"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nɔv"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dis"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Saa"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Tɛn"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Tal"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Aim"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Jum"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Sat"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/ktu.json
+       INIT-LOCALE-KTU.
+           MOVE "ktu" TO WS-ACT-CODE
+           MOVE "Yanvye"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fevrye"
+               TO WS-ACT-MONTH(2)
+           MOVE "Marsi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Avrili"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mɛ"
+               TO WS-ACT-MONTH(5)
+           MOVE "Yuwɛ"
+               TO WS-ACT-MONTH(6)
+           MOVE "Yulɛ"
+               TO WS-ACT-MONTH(7)
+           MOVE "Uti"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtambre"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ɔtɔbre"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nɔvambre"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desambre"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Lumingu"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Kimosi"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Kizole"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Kizoluntatu"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Kinya"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Kisabala"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Kimpwanza"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "bubu"
+               TO WS-ACT-TODAY
+           MOVE "mbazi"
+               TO WS-ACT-TOMORROW
+           MOVE "zono"
+               TO WS-ACT-YESTERDAY
+           MOVE "mbazi ya mbazi"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "zono ya zono"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} yayi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ya kwiza"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ya vioka"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Yan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fev"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Avr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mɛ"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Yuw"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Yul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Uti"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ɔtɔ"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nɔv"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Lum"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Kim"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Kiz"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Kzn"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Kin"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Kis"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Kmp"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
                TO WS-ACT-COMPACT-DATE-PAT-YR
            MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
            MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
@@ -8489,6 +10238,280 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/men.json
+       INIT-LOCALE-MEN.
+           MOVE "men" TO WS-ACT-CODE
+           MOVE "Januwali"
+               TO WS-ACT-MONTH(1)
+           MOVE "Febluwali"
+               TO WS-ACT-MONTH(2)
+           MOVE "Maachi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Epuli"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-MONTH(5)
+           MOVE "Juun"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julai"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ɔgɔsi"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtɛmba"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ɔtɔba"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nɔvɛmba"
+               TO WS-ACT-MONTH(11)
+           MOVE "Disɛmba"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Lahadi"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Tɛɛnɛɛ"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Talata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Alaba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Aimisa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Juma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Satidei"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "wii"
+               TO WS-ACT-TODAY
+           MOVE "sina"
+               TO WS-ACT-TOMORROW
+           MOVE "bii"
+               TO WS-ACT-YESTERDAY
+           MOVE "sina gɔlɔ"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "bii gɔlɔ"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} yɛ"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} yɛ gbɔyɔ"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} taa gbɔyɔ"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Maa"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Epu"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Juu"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ɔgɔ"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ɔtɔ"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nɔv"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dis"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Lah"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Tɛɛ"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Tal"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Aim"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Jum"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Sat"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/mfe.json
+       INIT-LOCALE-MFE.
+           MOVE "mfe" TO WS-ACT-CODE
+           MOVE "Zanvie"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fevrie"
+               TO WS-ACT-MONTH(2)
+           MOVE "Mars"
+               TO WS-ACT-MONTH(3)
+           MOVE "Avril"
+               TO WS-ACT-MONTH(4)
+           MOVE "Me"
+               TO WS-ACT-MONTH(5)
+           MOVE "Zwin"
+               TO WS-ACT-MONTH(6)
+           MOVE "Zwiye"
+               TO WS-ACT-MONTH(7)
+           MOVE "Out"
+               TO WS-ACT-MONTH(8)
+           MOVE "Septam"
+               TO WS-ACT-MONTH(9)
+           MOVE "Oktob"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novam"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desam"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Dimans"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Lindi"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Mardi"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Merkredi"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Zedi"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Vandredi"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Samdi"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "zordi"
+               TO WS-ACT-TODAY
+           MOVE "dimin"
+               TO WS-ACT-TOMORROW
+           MOVE "yer"
+               TO WS-ACT-YESTERDAY
+           MOVE "apre dimin"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "avan yer"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} la"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} prosenn"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} pase"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Zan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fev"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Avr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Me"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Zwn"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Zwy"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Out"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sep"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Okt"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Dim"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Lin"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Mer"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Zed"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Van"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Sam"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/mg.json
        INIT-LOCALE-MG.
            MOVE "mg" TO WS-ACT-CODE
@@ -9168,6 +11191,280 @@
                TO WS-ACT-COMPACT-DATE-PAT
            MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
            MOVE "{yy}/{m}/{d}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/mnk.json
+       INIT-LOCALE-MNK.
+           MOVE "mnk" TO WS-ACT-CODE
+           MOVE "Samwiye"
+               TO WS-ACT-MONTH(1)
+           MOVE "Feburiye"
+               TO WS-ACT-MONTH(2)
+           MOVE "Marsi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Afiril"
+               TO WS-ACT-MONTH(4)
+           MOVE "Meyi"
+               TO WS-ACT-MONTH(5)
+           MOVE "Juŋ"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julaa"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ooti"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtɛmba"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ɔtɔba"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nuwɛmba"
+               TO WS-ACT-MONTH(11)
+           MOVE "Disɛmba"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Ari"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Teniŋ"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Talata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Araba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alamisa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Juma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Sibiti"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "bi"
+               TO WS-ACT-TODAY
+           MOVE "siniŋ"
+               TO WS-ACT-TOMORROW
+           MOVE "kuŋ"
+               TO WS-ACT-YESTERDAY
+           MOVE "siniŋ kɔma"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "kuŋ kɔma"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} niŋ"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} nataa"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} taata"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Sam"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Afi"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mey"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Juŋ"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Oot"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ɔtɔ"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nuw"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dis"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Ari"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Ten"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Tal"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ara"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Jum"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Sib"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/mos.json
+       INIT-LOCALE-MOS.
+           MOVE "mos" TO WS-ACT-CODE
+           MOVE "Zãn-naabu"
+               TO WS-ACT-MONTH(1)
+           MOVE "Sig-noy-yaadre"
+               TO WS-ACT-MONTH(2)
+           MOVE "Sig-noy-taabo"
+               TO WS-ACT-MONTH(3)
+           MOVE "Kãn-saglem"
+               TO WS-ACT-MONTH(4)
+           MOVE "Koabg-taabo"
+               TO WS-ACT-MONTH(5)
+           MOVE "Koabg-yaadre"
+               TO WS-ACT-MONTH(6)
+           MOVE "Baspɩɩre"
+               TO WS-ACT-MONTH(7)
+           MOVE "Gɩ-sõongo"
+               TO WS-ACT-MONTH(8)
+           MOVE "Tũubg-sõongo"
+               TO WS-ACT-MONTH(9)
+           MOVE "Pẽemb-sõongo"
+               TO WS-ACT-MONTH(10)
+           MOVE "Laafi-bãaga"
+               TO WS-ACT-MONTH(11)
+           MOVE "Filiga-bãaga"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Alhadi"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Atɩnni"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Atalaata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Alarba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alkamisa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Arjuma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Asibti"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "rũnda"
+               TO WS-ACT-TODAY
+           MOVE "beoog"
+               TO WS-ACT-TOMORROW
+           MOVE "zaame"
+               TO WS-ACT-YESTERDAY
+           MOVE "beoog sẽn wat"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "zaame sẽn loog"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} kãnga"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} sẽn wat"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} sẽn loog"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Zãn"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "S-y"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "S-t"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Kãn"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "K-t"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "K-y"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Bas"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Gɩ"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Tũu"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Pẽe"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Laa"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Fil"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Alh"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Atɩ"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Ata"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Alk"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Arj"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Asi"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
                TO WS-ACT-COMPACT-DATE-PAT-YR
            MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
            MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
@@ -9859,6 +12156,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/nd.json
+       INIT-LOCALE-ND.
+           MOVE "nd" TO WS-ACT-CODE
+           MOVE "Zibandlela"
+               TO WS-ACT-MONTH(1)
+           MOVE "Nhlolanja"
+               TO WS-ACT-MONTH(2)
+           MOVE "Mbimbitho"
+               TO WS-ACT-MONTH(3)
+           MOVE "Mabasa"
+               TO WS-ACT-MONTH(4)
+           MOVE "Nkwenkwezi"
+               TO WS-ACT-MONTH(5)
+           MOVE "Nhlangula"
+               TO WS-ACT-MONTH(6)
+           MOVE "Kholwane"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ingci"
+               TO WS-ACT-MONTH(8)
+           MOVE "Inyoni"
+               TO WS-ACT-MONTH(9)
+           MOVE "Imphala"
+               TO WS-ACT-MONTH(10)
+           MOVE "Lwezi"
+               TO WS-ACT-MONTH(11)
+           MOVE "Mpalakazi"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Sonto"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Mvulo"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Sibili"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Sithathu"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Sine"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Sihlanu"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Mgqibelo"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "lamuhla"
+               TO WS-ACT-TODAY
+           MOVE "kusasa"
+               TO WS-ACT-TOMORROW
+           MOVE "izolo"
+               TO WS-ACT-YESTERDAY
+           MOVE "ngomhlomunye"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "usuku olwedlule izolo"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "leli {weekday}"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} elizayo"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} eledlule"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Zib"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Nhl"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mbi"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Mab"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Nkw"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Nhl"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Kho"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ing"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Iny"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Imp"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Lwe"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Mpa"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Son"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Mvu"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Sib"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Sit"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Sin"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Sih"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Mgq"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/ne.json
        INIT-LOCALE-NE.
            MOVE "ne" TO WS-ACT-CODE
@@ -9996,6 +12430,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/ng.json
+       INIT-LOCALE-NG.
+           MOVE "ng" TO WS-ACT-CODE
+           MOVE "Januali"
+               TO WS-ACT-MONTH(1)
+           MOVE "Febluali"
+               TO WS-ACT-MONTH(2)
+           MOVE "Malitsi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Aplili"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-MONTH(5)
+           MOVE "Juni"
+               TO WS-ACT-MONTH(6)
+           MOVE "Juli"
+               TO WS-ACT-MONTH(7)
+           MOVE "Augustu"
+               TO WS-ACT-MONTH(8)
+           MOVE "Septemba"
+               TO WS-ACT-MONTH(9)
+           MOVE "Oktoba"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novemba"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desemba"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Osoondaha"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Omaandaha"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Etitatu"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Etitano"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Etine"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Oshitimuine"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Eshabati"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "nena"
+               TO WS-ACT-TODAY
+           MOVE "mongula"
+               TO WS-ACT-TOMORROW
+           MOVE "ongula ya dja ko"
+               TO WS-ACT-YESTERDAY
+           MOVE "mongula e li ko"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "ongula ya dja ko nale"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} eshi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} e li ko"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ya dja ko"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mal"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Apl"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Aug"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sep"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Okt"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Oso"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Oma"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Eti"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Etn"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Etn"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Osh"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Esh"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/nl.json
        INIT-LOCALE-NL.
            MOVE "nl" TO WS-ACT-CODE
@@ -10102,6 +12673,280 @@
            MOVE "vr"
                TO WS-ACT-SHORT-WKDAY(6)
            MOVE "za"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/nso.json
+       INIT-LOCALE-NSO.
+           MOVE "nso" TO WS-ACT-CODE
+           MOVE "Pherekgong"
+               TO WS-ACT-MONTH(1)
+           MOVE "Hlakola"
+               TO WS-ACT-MONTH(2)
+           MOVE "Mopitlo"
+               TO WS-ACT-MONTH(3)
+           MOVE "Moranang"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mosegamanye"
+               TO WS-ACT-MONTH(5)
+           MOVE "Ngoatobošego"
+               TO WS-ACT-MONTH(6)
+           MOVE "Phukwi"
+               TO WS-ACT-MONTH(7)
+           MOVE "Phatwe"
+               TO WS-ACT-MONTH(8)
+           MOVE "Lewedi"
+               TO WS-ACT-MONTH(9)
+           MOVE "Diphalane"
+               TO WS-ACT-MONTH(10)
+           MOVE "Dibatsela"
+               TO WS-ACT-MONTH(11)
+           MOVE "Manthole"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Lamorena"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Mošupologo"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Labobedi"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Laboraro"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Labone"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Labohlano"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Mokibelo"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "lehono"
+               TO WS-ACT-TODAY
+           MOVE "gosasa"
+               TO WS-ACT-TOMORROW
+           MOVE "maabane"
+               TO WS-ACT-YESTERDAY
+           MOVE "morago ga gosasa"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "maabane a go feta"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} ye"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ye e tlago"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ye e fetilego"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Pher"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Hlak"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mop"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Mor"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mos"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Ngoa"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Phu"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Pha"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Lew"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Diph"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Dib"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Man"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Lam"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Moš"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Lbb"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Lbr"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Lbn"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Lbh"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Mok"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/nus.json
+       INIT-LOCALE-NUS.
+           MOVE "nus" TO WS-ACT-CODE
+           MOVE "Tiɔp thar"
+               TO WS-ACT-MONTH(1)
+           MOVE "Pɛt"
+               TO WS-ACT-MONTH(2)
+           MOVE "Duɔɔŋ"
+               TO WS-ACT-MONTH(3)
+           MOVE "Guak"
+               TO WS-ACT-MONTH(4)
+           MOVE "Duät"
+               TO WS-ACT-MONTH(5)
+           MOVE "Kornyot"
+               TO WS-ACT-MONTH(6)
+           MOVE "Payi"
+               TO WS-ACT-MONTH(7)
+           MOVE "Tio̱p in thii"
+               TO WS-ACT-MONTH(8)
+           MOVE "Laath"
+               TO WS-ACT-MONTH(9)
+           MOVE "Kur"
+               TO WS-ACT-MONTH(10)
+           MOVE "Tio̱p in laat"
+               TO WS-ACT-MONTH(11)
+           MOVE "Jiɔk"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Cäŋ nhial"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Jiec la̱t"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Rɛw la̱t"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Diɔk la̱t"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Ŋuaan la̱t"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Dhieec la̱t"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Bäkɛl"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "walɛ"
+               TO WS-ACT-TODAY
+           MOVE "riak"
+               TO WS-ACT-TOMORROW
+           MOVE "dhorou"
+               TO WS-ACT-YESTERDAY
+           MOVE "riak kɛnɛ"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "dhorou kɛnɛ"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} ɛn"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} tɛ bɛ̈n"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} cï kuɔ̈ɔ̈t"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Tiɔp"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Pɛt"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Duɔɔ"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Gua"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Duä"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Kor"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Pay"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Tio̱p"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Laa"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Kur"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Tio̱"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Jiɔ"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Nhial"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Jiec"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Rɛw"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Diɔk"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Ŋuaan"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Dhiec"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Bäk"
                TO WS-ACT-SHORT-WKDAY(7)
            MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
            MOVE "{n}"
@@ -10836,6 +13681,143 @@
                TO WS-ACT-COMPACT-DATE-PAT
            MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
            MOVE "{d}.{m}.{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/pov.json
+       INIT-LOCALE-POV.
+           MOVE "pov" TO WS-ACT-CODE
+           MOVE "Janeru"
+               TO WS-ACT-MONTH(1)
+           MOVE "Febreru"
+               TO WS-ACT-MONTH(2)
+           MOVE "Marsu"
+               TO WS-ACT-MONTH(3)
+           MOVE "Abril"
+               TO WS-ACT-MONTH(4)
+           MOVE "Maiu"
+               TO WS-ACT-MONTH(5)
+           MOVE "Junhu"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julhu"
+               TO WS-ACT-MONTH(7)
+           MOVE "Agostu"
+               TO WS-ACT-MONTH(8)
+           MOVE "Setembru"
+               TO WS-ACT-MONTH(9)
+           MOVE "Otubru"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novembru"
+               TO WS-ACT-MONTH(11)
+           MOVE "Dizembru"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Dumingu"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Sigunda"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Tersa"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Kuarta"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Kinta"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Sesta"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Sabadu"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "oji"
+               TO WS-ACT-TODAY
+           MOVE "manan"
+               TO WS-ACT-TOMORROW
+           MOVE "onfo"
+               TO WS-ACT-YESTERDAY
+           MOVE "dipus di manan"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "antis di onfo"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} kel"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ki bin"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} pasadu"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Abr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mai"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ago"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Set"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Otu"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Diz"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Dum"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Sig"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Ter"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Kua"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Kin"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Ses"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Sab"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
                TO WS-ACT-COMPACT-DATE-PAT-YR
            MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
            MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
@@ -11712,6 +14694,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/sar.json
+       INIT-LOCALE-SAR.
+           MOVE "sar" TO WS-ACT-CODE
+           MOVE "Zanviye"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fevriye"
+               TO WS-ACT-MONTH(2)
+           MOVE "Maars"
+               TO WS-ACT-MONTH(3)
+           MOVE "Avriil"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mee"
+               TO WS-ACT-MONTH(5)
+           MOVE "Zuɛ̃"
+               TO WS-ACT-MONTH(6)
+           MOVE "Zulɛ"
+               TO WS-ACT-MONTH(7)
+           MOVE "Uut"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtɛmbar"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ɔtɔbar"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nɔvambar"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desambar"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Paskaa"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Nɔy"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Talata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Alarba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alkamisa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Juma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Sibiti"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "ɗgá"
+               TO WS-ACT-TODAY
+           MOVE "gɨ́nā"
+               TO WS-ACT-TOMORROW
+           MOVE "ɗáà"
+               TO WS-ACT-YESTERDAY
+           MOVE "gɨ́nā gɨ́nā"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "ɗáà ɗáà"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} nè"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ga"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ɓòo kɔ"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Zan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fev"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Avr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mee"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Zuɛ"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Zul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Uut"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ɔtɔ"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nɔv"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Pas"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Nɔy"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Tal"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Alk"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Jum"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Sib"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/sd.json
        INIT-LOCALE-SD.
            MOVE "sd" TO WS-ACT-CODE
@@ -11818,6 +14937,143 @@
            MOVE "جمع"
                TO WS-ACT-SHORT-WKDAY(6)
            MOVE "ڇن"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/sg.json
+       INIT-LOCALE-SG.
+           MOVE "sg" TO WS-ACT-CODE
+           MOVE "Nyenye"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fulundïgi"
+               TO WS-ACT-MONTH(2)
+           MOVE "Mbängü"
+               TO WS-ACT-MONTH(3)
+           MOVE "Ngubùe"
+               TO WS-ACT-MONTH(4)
+           MOVE "Bêläwü"
+               TO WS-ACT-MONTH(5)
+           MOVE "Föndo"
+               TO WS-ACT-MONTH(6)
+           MOVE "Lengua"
+               TO WS-ACT-MONTH(7)
+           MOVE "Kükürü"
+               TO WS-ACT-MONTH(8)
+           MOVE "Mvuka"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ngberere"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nabändüru"
+               TO WS-ACT-MONTH(11)
+           MOVE "Kakauka"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Bikua-ôko"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Bïkua-ûse"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Bïkua-ptâ"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Bïkua-usïö"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Bïkua-okü"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Lâpôsö"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Lâyenga"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "lâsô"
+               TO WS-ACT-TODAY
+           MOVE "kêkerêke"
+               TO WS-ACT-TOMORROW
+           MOVE "bîrî"
+               TO WS-ACT-YESTERDAY
+           MOVE "lâ tî kêkerêke"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "lâ tî bîrî"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} sô"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} tî âla"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} tî pekô"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Nye"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Ful"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mbä"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Ngu"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Bêl"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Fön"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Len"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Kük"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Mvu"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ngb"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nab"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Kak"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Ôko"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Ûse"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Ptâ"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Usï"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Okü"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Pôs"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Yng"
                TO WS-ACT-SHORT-WKDAY(7)
            MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
            MOVE "{n}"
@@ -12582,6 +15838,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/snk.json
+       INIT-LOCALE-SNK.
+           MOVE "snk" TO WS-ACT-CODE
+           MOVE "Janwiye"
+               TO WS-ACT-MONTH(1)
+           MOVE "Feburiye"
+               TO WS-ACT-MONTH(2)
+           MOVE "Marasi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Abirili"
+               TO WS-ACT-MONTH(4)
+           MOVE "Meyi"
+               TO WS-ACT-MONTH(5)
+           MOVE "Juwɛ"
+               TO WS-ACT-MONTH(6)
+           MOVE "Juliye"
+               TO WS-ACT-MONTH(7)
+           MOVE "Awutu"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtanburu"
+               TO WS-ACT-MONTH(9)
+           MOVE "Okutoburu"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nuwanburu"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desanburu"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Alhadi"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Atinni"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Ataalaata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Alarba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alxamiisa"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Arjuma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Asibiti"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "haqun"
+               TO WS-ACT-TODAY
+           MOVE "kinni"
+               TO WS-ACT-TOMORROW
+           MOVE "noxone"
+               TO WS-ACT-YESTERDAY
+           MOVE "kinni xenqa"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "noxone xenqa"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} yi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} na tage"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} toxo kille"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Abi"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mey"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Juw"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Awu"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Oku"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nuw"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Alh"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Ati"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Ata"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Ala"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Alx"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Arj"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Asi"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/so.json
        INIT-LOCALE-SO.
            MOVE "so" TO WS-ACT-CODE
@@ -12993,6 +16386,280 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/ss.json
+       INIT-LOCALE-SS.
+           MOVE "ss" TO WS-ACT-CODE
+           MOVE "Bhimbidvwane"
+               TO WS-ACT-MONTH(1)
+           MOVE "iNdlovana"
+               TO WS-ACT-MONTH(2)
+           MOVE "iNdlovulenkhulu"
+               TO WS-ACT-MONTH(3)
+           MOVE "Mabasa"
+               TO WS-ACT-MONTH(4)
+           MOVE "iNkhwekhweti"
+               TO WS-ACT-MONTH(5)
+           MOVE "iNhlaba"
+               TO WS-ACT-MONTH(6)
+           MOVE "Kholwane"
+               TO WS-ACT-MONTH(7)
+           MOVE "iNgci"
+               TO WS-ACT-MONTH(8)
+           MOVE "iNyoni"
+               TO WS-ACT-MONTH(9)
+           MOVE "iMphala"
+               TO WS-ACT-MONTH(10)
+           MOVE "Lweti"
+               TO WS-ACT-MONTH(11)
+           MOVE "iNgongoni"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "LiSontfo"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "uMsombuluko"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Lesibili"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Lesitsatfu"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Lesine"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Lesihlanu"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "uMgcibelo"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "lamuhla"
+               TO WS-ACT-TODAY
+           MOVE "kusasa"
+               TO WS-ACT-TOMORROW
+           MOVE "itolo"
+               TO WS-ACT-YESTERDAY
+           MOVE "ngemhlomunye"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "kutolo lokwengca"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "leli {weekday}"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} letako"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} leledlule"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Bhi"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Ind"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Ink"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Mab"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Inkw"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Inh"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Kho"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ingc"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Iny"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Imp"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Lwe"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Ingo"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Son"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Mso"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Bil"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Tsa"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Sin"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Hla"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Mgc"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/st.json
+       INIT-LOCALE-ST.
+           MOVE "st" TO WS-ACT-CODE
+           MOVE "Pherekgong"
+               TO WS-ACT-MONTH(1)
+           MOVE "Hlakola"
+               TO WS-ACT-MONTH(2)
+           MOVE "Hlakubele"
+               TO WS-ACT-MONTH(3)
+           MOVE "Mmese"
+               TO WS-ACT-MONTH(4)
+           MOVE "Motsheanong"
+               TO WS-ACT-MONTH(5)
+           MOVE "Phupjane"
+               TO WS-ACT-MONTH(6)
+           MOVE "Phupu"
+               TO WS-ACT-MONTH(7)
+           MOVE "Phato"
+               TO WS-ACT-MONTH(8)
+           MOVE "Leotshe"
+               TO WS-ACT-MONTH(9)
+           MOVE "Mphalane"
+               TO WS-ACT-MONTH(10)
+           MOVE "Pudungwana"
+               TO WS-ACT-MONTH(11)
+           MOVE "Tshitwe"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Sontaha"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Mmantaha"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Labobedi"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Laboraro"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Labone"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Labohlano"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Moqebelo"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "kajeno"
+               TO WS-ACT-TODAY
+           MOVE "hosane"
+               TO WS-ACT-TOMORROW
+           MOVE "maobane"
+               TO WS-ACT-YESTERDAY
+           MOVE "hosanemane"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "maobanyane"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} ena"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} e tlang"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} e fetileng"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Phe"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Hlk"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Hlb"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Mme"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mot"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Phj"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Php"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Pha"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Leo"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Mph"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Pud"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Tsh"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Son"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Mma"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Bed"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Rar"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Bon"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Hla"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Moq"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/su.json
        INIT-LOCALE-SU.
            MOVE "su" TO WS-ACT-CODE
@@ -13099,6 +16766,143 @@
            MOVE "Jum"
                TO WS-ACT-SHORT-WKDAY(6)
            MOVE "Sap"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/suk.json
+       INIT-LOCALE-SUK.
+           MOVE "suk" TO WS-ACT-CODE
+           MOVE "Januari"
+               TO WS-ACT-MONTH(1)
+           MOVE "Februari"
+               TO WS-ACT-MONTH(2)
+           MOVE "Machi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Aprili"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-MONTH(5)
+           MOVE "Juni"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julai"
+               TO WS-ACT-MONTH(7)
+           MOVE "Agosti"
+               TO WS-ACT-MONTH(8)
+           MOVE "Septemba"
+               TO WS-ACT-MONTH(9)
+           MOVE "Oktoba"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novemba"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desemba"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Jumapili"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Jumatatu"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Jumanne"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Jumatano"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alhamisi"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Ijumaa"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Jumamosi"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "lelo"
+               TO WS-ACT-TODAY
+           MOVE "milau"
+               TO WS-ACT-TOMORROW
+           MOVE "igolo"
+               TO WS-ACT-YESTERDAY
+           MOVE "milau ya pili"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "igolo ya pili"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} iyi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ya kuja"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} iliyopita"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mac"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Apr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ago"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sep"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Okt"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Jpl"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Jtt"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Jnn"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Jtn"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Alh"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Ijm"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Jms"
                TO WS-ACT-SHORT-WKDAY(7)
            MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
            MOVE "{n}"
@@ -13678,6 +17482,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/tem.json
+       INIT-LOCALE-TEM.
+           MOVE "tem" TO WS-ACT-CODE
+           MOVE "Janɛri"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fɛbrɛri"
+               TO WS-ACT-MONTH(2)
+           MOVE "Mach"
+               TO WS-ACT-MONTH(3)
+           MOVE "Epril"
+               TO WS-ACT-MONTH(4)
+           MOVE "Me"
+               TO WS-ACT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julai"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ɔgɔst"
+               TO WS-ACT-MONTH(8)
+           MOVE "Sɛtɛmba"
+               TO WS-ACT-MONTH(9)
+           MOVE "Ɔktoba"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novɛmba"
+               TO WS-ACT-MONTH(11)
+           MOVE "Disɛmba"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Ləpɛt"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Lətalɛ"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Ləsalɛ"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Lərarɛ"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Lənɛr"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Ləjuma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Ləsɛbɛ"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "ani"
+               TO WS-ACT-TODAY
+           MOVE "tənɔŋ"
+               TO WS-ACT-TOMORROW
+           MOVE "yenɛ"
+               TO WS-ACT-YESTERDAY
+           MOVE "tənɔŋ tənɔŋ"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "yenɛ yenɛ"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} yi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ro ba"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ro ba kɛ"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fɛb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mac"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Epr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Me"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ɔgɔ"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sɛt"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Ɔkt"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dis"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Lpɛ"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Lta"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Lsa"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Lra"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Lnɛ"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Lju"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Lsɛ"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/tg.json
        INIT-LOCALE-TG.
            MOVE "tg" TO WS-ACT-CODE
@@ -14089,6 +18030,143 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/tig.json
+       INIT-LOCALE-TIG.
+           MOVE "tig" TO WS-ACT-CODE
+           MOVE "Yannaayer"
+               TO WS-ACT-MONTH(1)
+           MOVE "Febbraayer"
+               TO WS-ACT-MONTH(2)
+           MOVE "Maaris"
+               TO WS-ACT-MONTH(3)
+           MOVE "Abriil"
+               TO WS-ACT-MONTH(4)
+           MOVE "Maay"
+               TO WS-ACT-MONTH(5)
+           MOVE "Yuunyo"
+               TO WS-ACT-MONTH(6)
+           MOVE "Yulyo"
+               TO WS-ACT-MONTH(7)
+           MOVE "Agoosṭo"
+               TO WS-ACT-MONTH(8)
+           MOVE "Seṭṭembre"
+               TO WS-ACT-MONTH(9)
+           MOVE "Oṭṭoobre"
+               TO WS-ACT-MONTH(10)
+           MOVE "Noovembre"
+               TO WS-ACT-MONTH(11)
+           MOVE "Diičembre"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Sənbət"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Sənuy"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Sələs"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Rəbuʿ"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Ḥamus"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "ʿArbi"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Qədami"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "yom"
+               TO WS-ACT-TODAY
+           MOVE "gədam"
+               TO WS-ACT-TOMORROW
+           MOVE "timali"
+               TO WS-ACT-YESTERDAY
+           MOVE "gədam gədam"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "timali timali"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} ʾənta"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ba"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} qədmi"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Yan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Abr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "May"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Yun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Yul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ago"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Seṭ"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Oṭṭ"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dii"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Sən"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Snu"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Səl"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Rəb"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Ḥam"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "ʿAr"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Qəd"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/tk.json
        INIT-LOCALE-TK.
            MOVE "tk" TO WS-ACT-CODE
@@ -14195,6 +18273,143 @@
            MOVE "Ann"
                TO WS-ACT-SHORT-WKDAY(6)
            MOVE "Şen"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/tn.json
+       INIT-LOCALE-TN.
+           MOVE "tn" TO WS-ACT-CODE
+           MOVE "Ferikgong"
+               TO WS-ACT-MONTH(1)
+           MOVE "Tlhakole"
+               TO WS-ACT-MONTH(2)
+           MOVE "Mopitlo"
+               TO WS-ACT-MONTH(3)
+           MOVE "Moranang"
+               TO WS-ACT-MONTH(4)
+           MOVE "Motsheganong"
+               TO WS-ACT-MONTH(5)
+           MOVE "Seetebosigo"
+               TO WS-ACT-MONTH(6)
+           MOVE "Phukwi"
+               TO WS-ACT-MONTH(7)
+           MOVE "Phatwe"
+               TO WS-ACT-MONTH(8)
+           MOVE "Lwetse"
+               TO WS-ACT-MONTH(9)
+           MOVE "Diphalane"
+               TO WS-ACT-MONTH(10)
+           MOVE "Ngwanatsele"
+               TO WS-ACT-MONTH(11)
+           MOVE "Sedimothole"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Tshipi"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Mosopulogo"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Labobedi"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Laboraro"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Labone"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Labotlhano"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Matlhatso"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "gompieno"
+               TO WS-ACT-TODAY
+           MOVE "kamoso"
+               TO WS-ACT-TOMORROW
+           MOVE "maabane"
+               TO WS-ACT-YESTERDAY
+           MOVE "morago ga kamoso"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "maabanyane"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} e"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} e e tlang"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} e e fetileng"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Fer"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Tlh"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mop"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Mor"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mot"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "See"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Phk"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Pha"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Lwe"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Dip"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Ngw"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Sed"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Tsh"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Mos"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Bed"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Rar"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Bon"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Tlh"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Mat"
                TO WS-ACT-SHORT-WKDAY(7)
            MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
            MOVE "{n}"
@@ -14357,6 +18572,143 @@
                TO WS-ACT-COMPACT-DATE-PAT
            MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
            MOVE "{d}.{m}.{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/ts.json
+       INIT-LOCALE-TS.
+           MOVE "ts" TO WS-ACT-CODE
+           MOVE "Sunguti"
+               TO WS-ACT-MONTH(1)
+           MOVE "Nyenyenyani"
+               TO WS-ACT-MONTH(2)
+           MOVE "Nyenyankulu"
+               TO WS-ACT-MONTH(3)
+           MOVE "Dzivamisoko"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mudyaxihi"
+               TO WS-ACT-MONTH(5)
+           MOVE "Khotavuxika"
+               TO WS-ACT-MONTH(6)
+           MOVE "Mawuwani"
+               TO WS-ACT-MONTH(7)
+           MOVE "Mhawuri"
+               TO WS-ACT-MONTH(8)
+           MOVE "Ndzhati"
+               TO WS-ACT-MONTH(9)
+           MOVE "Nhlangula"
+               TO WS-ACT-MONTH(10)
+           MOVE "Hukuri"
+               TO WS-ACT-MONTH(11)
+           MOVE "N'wendzamhala"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Sonto"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Musumbhunuku"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Ravumbirhi"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Ravunharhu"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Ravumune"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Ravuntlhanu"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Mugqivela"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "namuntlha"
+               TO WS-ACT-TODAY
+           MOVE "mundzuku"
+               TO WS-ACT-TOMORROW
+           MOVE "tolo"
+               TO WS-ACT-YESTERDAY
+           MOVE "mundzuku wa vumbirhi"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "tolo ra vumbirhi"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} leyi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} leyi taka"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} leyi nga hundza"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Sun"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Nye"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Nyk"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Dzi"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mud"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Kho"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Maw"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Mha"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Ndz"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Nhl"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Huk"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "N'w"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Son"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Mus"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Bir"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Har"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Mun"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Tlh"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Mug"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
                TO WS-ACT-COMPACT-DATE-PAT-YR
            MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
            MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
@@ -14630,6 +18982,143 @@
            MOVE "пт"
                TO WS-ACT-SHORT-WKDAY(6)
            MOVE "сб"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/umb.json
+       INIT-LOCALE-UMB.
+           MOVE "umb" TO WS-ACT-CODE
+           MOVE "Janelu"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fevelelu"
+               TO WS-ACT-MONTH(2)
+           MOVE "Malsu"
+               TO WS-ACT-MONTH(3)
+           MOVE "Abili"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mayu"
+               TO WS-ACT-MONTH(5)
+           MOVE "Junyu"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julyu"
+               TO WS-ACT-MONTH(7)
+           MOVE "Agostu"
+               TO WS-ACT-MONTH(8)
+           MOVE "Setembu"
+               TO WS-ACT-MONTH(9)
+           MOVE "Otubu"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novembu"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desembu"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Lumingu"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Cimosi"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Civali"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Citathu"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Cinyali"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Citanu"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Cisabalu"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "oloku"
+               TO WS-ACT-TODAY
+           MOVE "ocisungu"
+               TO WS-ACT-TOMORROW
+           MOVE "ondjo"
+               TO WS-ACT-YESTERDAY
+           MOVE "ocisungu va pili"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "ondjo va pili"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} yo"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ya kuvela"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ya pita"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fev"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mal"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Abi"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "May"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ago"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Set"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Otu"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Lum"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Cim"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Civ"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Cit"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Cin"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Cit"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Cis"
                TO WS-ACT-SHORT-WKDAY(7)
            MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
            MOVE "{n}"
@@ -15072,6 +19561,280 @@
            MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
            .
 
+*> Source: date/locales/src/vmw.json
+       INIT-LOCALE-VMW.
+           MOVE "vmw" TO WS-ACT-CODE
+           MOVE "Januário"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fevereiro"
+               TO WS-ACT-MONTH(2)
+           MOVE "Março"
+               TO WS-ACT-MONTH(3)
+           MOVE "Abril"
+               TO WS-ACT-MONTH(4)
+           MOVE "Maio"
+               TO WS-ACT-MONTH(5)
+           MOVE "Junho"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julho"
+               TO WS-ACT-MONTH(7)
+           MOVE "Agosto"
+               TO WS-ACT-MONTH(8)
+           MOVE "Setembro"
+               TO WS-ACT-MONTH(9)
+           MOVE "Outubro"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novembro"
+               TO WS-ACT-MONTH(11)
+           MOVE "Dezembro"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Jumaaphi"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Jumaataatu"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Jumaanne"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Jumaatano"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alaahamisi"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Ijumaa"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Jumaamo"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "lelo"
+               TO WS-ACT-TODAY
+           MOVE "muttetthe"
+               TO WS-ACT-TOMORROW
+           MOVE "oova"
+               TO WS-ACT-YESTERDAY
+           MOVE "muttetthe opela"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "oova opela"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} yano"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ohima"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} opita"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Fev"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mar"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Abr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mai"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ago"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Set"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Out"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Dez"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Jph"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Jtt"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Jan"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Jtn"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Alh"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Iju"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Jmo"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/wo.json
+       INIT-LOCALE-WO.
+           MOVE "wo" TO WS-ACT-CODE
+           MOVE "Samwiyee"
+               TO WS-ACT-MONTH(1)
+           MOVE "Fewriyee"
+               TO WS-ACT-MONTH(2)
+           MOVE "Maars"
+               TO WS-ACT-MONTH(3)
+           MOVE "Awril"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mee"
+               TO WS-ACT-MONTH(5)
+           MOVE "Suwe"
+               TO WS-ACT-MONTH(6)
+           MOVE "Sullet"
+               TO WS-ACT-MONTH(7)
+           MOVE "Ut"
+               TO WS-ACT-MONTH(8)
+           MOVE "Septàmbar"
+               TO WS-ACT-MONTH(9)
+           MOVE "Oktoobar"
+               TO WS-ACT-MONTH(10)
+           MOVE "Nowàmbar"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desàmbar"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Dibéer"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Altine"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Talaata"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Àllarba"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alxames"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Àjjuma"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Gaawu"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "tey"
+               TO WS-ACT-TODAY
+           MOVE "suba"
+               TO WS-ACT-TOMORROW
+           MOVE "démb"
+               TO WS-ACT-YESTERDAY
+           MOVE "suba-suba"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "démb-démb"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} bi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} bi ñëw"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} bi weex"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Sam"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Few"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Maa"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Awr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mee"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Suw"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Sul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ut"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sep"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Okt"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Now"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Dib"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Alt"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Tal"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Àll"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Alx"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Àjj"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Gaa"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
 *> Source: date/locales/src/xh.json
        INIT-LOCALE-XH.
            MOVE "xh" TO WS-ACT-CODE
@@ -15477,6 +20240,143 @@
                TO WS-ACT-COMPACT-DATE-PAT
            MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
            MOVE "{yy}/{m}/{d}"
+               TO WS-ACT-COMPACT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
+           MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-COMPACT-HAS-YESTERDAY
+           .
+
+*> Source: date/locales/src/zdj.json
+       INIT-LOCALE-ZDJ.
+           MOVE "zdj" TO WS-ACT-CODE
+           MOVE "Januari"
+               TO WS-ACT-MONTH(1)
+           MOVE "Februari"
+               TO WS-ACT-MONTH(2)
+           MOVE "Machi"
+               TO WS-ACT-MONTH(3)
+           MOVE "Aprili"
+               TO WS-ACT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-MONTH(5)
+           MOVE "Juni"
+               TO WS-ACT-MONTH(6)
+           MOVE "Julai"
+               TO WS-ACT-MONTH(7)
+           MOVE "Agosti"
+               TO WS-ACT-MONTH(8)
+           MOVE "Septemba"
+               TO WS-ACT-MONTH(9)
+           MOVE "Oktoba"
+               TO WS-ACT-MONTH(10)
+           MOVE "Novemba"
+               TO WS-ACT-MONTH(11)
+           MOVE "Desemba"
+               TO WS-ACT-MONTH(12)
+           MOVE 0 TO WS-ACT-HAS-MONTHS-IN-DATE
+           MOVE "Jumapili"
+               TO WS-ACT-WEEKDAY(1)
+           MOVE "Jumatatu"
+               TO WS-ACT-WEEKDAY(2)
+           MOVE "Jumanne"
+               TO WS-ACT-WEEKDAY(3)
+           MOVE "Jumatano"
+               TO WS-ACT-WEEKDAY(4)
+           MOVE "Alhamisi"
+               TO WS-ACT-WEEKDAY(5)
+           MOVE "Ijumaa"
+               TO WS-ACT-WEEKDAY(6)
+           MOVE "Jumamosi"
+               TO WS-ACT-WEEKDAY(7)
+           MOVE "{n}"
+               TO WS-ACT-DAY-FORMAT
+           MOVE 0 TO WS-ACT-DAY-FMT-EXC-COUNT
+           MOVE "{day} {month}"
+               TO WS-ACT-DATE-PATTERN
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-DATE-PAT-WITH-YEAR
+           MOVE "leo"
+               TO WS-ACT-TODAY
+           MOVE "mesha"
+               TO WS-ACT-TOMORROW
+           MOVE "jana"
+               TO WS-ACT-YESTERDAY
+           MOVE "kesho kutwa"
+               TO WS-ACT-DAY-AFTER-TOMORROW
+           MOVE "juzi"
+               TO WS-ACT-DAY-BEFORE-YESTERDAY
+           MOVE "{weekday} iyi"
+               TO WS-ACT-THIS-WEEKDAY
+           MOVE "{weekday} ya udjayo"
+               TO WS-ACT-NEXT-WEEKDAY
+           MOVE "{weekday} ya hupitsa"
+               TO WS-ACT-LAST-WEEKDAY
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 1 TO WS-ACT-SHORT-HAS-MONTHS
+           MOVE "Jan"
+               TO WS-ACT-SHORT-MONTH(1)
+           MOVE "Feb"
+               TO WS-ACT-SHORT-MONTH(2)
+           MOVE "Mac"
+               TO WS-ACT-SHORT-MONTH(3)
+           MOVE "Apr"
+               TO WS-ACT-SHORT-MONTH(4)
+           MOVE "Mei"
+               TO WS-ACT-SHORT-MONTH(5)
+           MOVE "Jun"
+               TO WS-ACT-SHORT-MONTH(6)
+           MOVE "Jul"
+               TO WS-ACT-SHORT-MONTH(7)
+           MOVE "Ago"
+               TO WS-ACT-SHORT-MONTH(8)
+           MOVE "Sep"
+               TO WS-ACT-SHORT-MONTH(9)
+           MOVE "Okt"
+               TO WS-ACT-SHORT-MONTH(10)
+           MOVE "Nov"
+               TO WS-ACT-SHORT-MONTH(11)
+           MOVE "Des"
+               TO WS-ACT-SHORT-MONTH(12)
+           MOVE 0 TO WS-ACT-SHORT-HAS-MID
+           MOVE 1 TO WS-ACT-SHORT-HAS-WKDAYS
+           MOVE "Pil"
+               TO WS-ACT-SHORT-WKDAY(1)
+           MOVE "Tat"
+               TO WS-ACT-SHORT-WKDAY(2)
+           MOVE "Nne"
+               TO WS-ACT-SHORT-WKDAY(3)
+           MOVE "Tan"
+               TO WS-ACT-SHORT-WKDAY(4)
+           MOVE "Alh"
+               TO WS-ACT-SHORT-WKDAY(5)
+           MOVE "Iju"
+               TO WS-ACT-SHORT-WKDAY(6)
+           MOVE "Mos"
+               TO WS-ACT-SHORT-WKDAY(7)
+           MOVE 1 TO WS-ACT-SHORT-HAS-DAY-FMT
+           MOVE "{n}"
+               TO WS-ACT-SHORT-DAY-FMT
+           MOVE 0 TO WS-ACT-SHORT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT
+           MOVE "{day} {month}"
+               TO WS-ACT-SHORT-DATE-PAT
+           MOVE 1 TO WS-ACT-SHORT-HAS-DATE-PAT-YR
+           MOVE "{day} {month} {year}"
+               TO WS-ACT-SHORT-DATE-PAT-YR
+           MOVE 0 TO WS-ACT-SHORT-HAS-TODAY
+           MOVE 0 TO WS-ACT-SHORT-HAS-TOMORROW
+           MOVE 0 TO WS-ACT-SHORT-HAS-YESTERDAY
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MONTHS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-MID
+           MOVE 0 TO WS-ACT-COMPACT-HAS-WKDAYS
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-FMT
+           MOVE 0 TO WS-ACT-COMPACT-HAS-DAY-EXC
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT
+           MOVE "{d}/{m}"
+               TO WS-ACT-COMPACT-DATE-PAT
+           MOVE 1 TO WS-ACT-COMPACT-HAS-DATE-PAT-YR
+           MOVE "{d}/{m}/{yy}"
                TO WS-ACT-COMPACT-DATE-PAT-YR
            MOVE 0 TO WS-ACT-COMPACT-HAS-TODAY
            MOVE 0 TO WS-ACT-COMPACT-HAS-TOMORROW

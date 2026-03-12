@@ -34,12 +34,24 @@ function M.get_locale(code)
         cache[code] = require("locales.az")
         return cache[code]
     end
+    if code == "bci" then
+        cache[code] = require("locales.bci")
+        return cache[code]
+    end
     if code == "be" then
         cache[code] = require("locales.be")
         return cache[code]
     end
+    if code == "bem" then
+        cache[code] = require("locales.bem")
+        return cache[code]
+    end
     if code == "bg" then
         cache[code] = require("locales.bg")
+        return cache[code]
+    end
+    if code == "bm" then
+        cache[code] = require("locales.bm")
         return cache[code]
     end
     if code == "bn" then
@@ -78,6 +90,22 @@ function M.get_locale(code)
         cache[code] = require("locales.de")
         return cache[code]
     end
+    if code == "din" then
+        cache[code] = require("locales.din")
+        return cache[code]
+    end
+    if code == "dje" then
+        cache[code] = require("locales.dje")
+        return cache[code]
+    end
+    if code == "dyu" then
+        cache[code] = require("locales.dyu")
+        return cache[code]
+    end
+    if code == "ee" then
+        cache[code] = require("locales.ee")
+        return cache[code]
+    end
     if code == "el" then
         cache[code] = require("locales.el")
         return cache[code]
@@ -102,6 +130,10 @@ function M.get_locale(code)
         cache[code] = require("locales.fa")
         return cache[code]
     end
+    if code == "fan" then
+        cache[code] = require("locales.fan")
+        return cache[code]
+    end
     if code == "ff" then
         cache[code] = require("locales.ff")
         return cache[code]
@@ -112,6 +144,10 @@ function M.get_locale(code)
     end
     if code == "fil" then
         cache[code] = require("locales.fil")
+        return cache[code]
+    end
+    if code == "fon" then
+        cache[code] = require("locales.fon")
         return cache[code]
     end
     if code == "fr" then
@@ -198,6 +234,10 @@ function M.get_locale(code)
         cache[code] = require("locales.ka")
         return cache[code]
     end
+    if code == "kbp" then
+        cache[code] = require("locales.kbp")
+        return cache[code]
+    end
     if code == "kk" then
         cache[code] = require("locales.kk")
         return cache[code]
@@ -212,6 +252,14 @@ function M.get_locale(code)
     end
     if code == "ko" then
         cache[code] = require("locales.ko")
+        return cache[code]
+    end
+    if code == "kpe" then
+        cache[code] = require("locales.kpe")
+        return cache[code]
+    end
+    if code == "ktu" then
+        cache[code] = require("locales.ktu")
         return cache[code]
     end
     if code == "ku" then
@@ -246,6 +294,14 @@ function M.get_locale(code)
         cache[code] = require("locales.lv")
         return cache[code]
     end
+    if code == "men" then
+        cache[code] = require("locales.men")
+        return cache[code]
+    end
+    if code == "mfe" then
+        cache[code] = require("locales.mfe")
+        return cache[code]
+    end
     if code == "mg" then
         cache[code] = require("locales.mg")
         return cache[code]
@@ -264,6 +320,14 @@ function M.get_locale(code)
     end
     if code == "mn" then
         cache[code] = require("locales.mn")
+        return cache[code]
+    end
+    if code == "mnk" then
+        cache[code] = require("locales.mnk")
+        return cache[code]
+    end
+    if code == "mos" then
+        cache[code] = require("locales.mos")
         return cache[code]
     end
     if code == "mr" then
@@ -286,12 +350,28 @@ function M.get_locale(code)
         cache[code] = require("locales.nb")
         return cache[code]
     end
+    if code == "nd" then
+        cache[code] = require("locales.nd")
+        return cache[code]
+    end
     if code == "ne" then
         cache[code] = require("locales.ne")
         return cache[code]
     end
+    if code == "ng" then
+        cache[code] = require("locales.ng")
+        return cache[code]
+    end
     if code == "nl" then
         cache[code] = require("locales.nl")
+        return cache[code]
+    end
+    if code == "nso" then
+        cache[code] = require("locales.nso")
+        return cache[code]
+    end
+    if code == "nus" then
+        cache[code] = require("locales.nus")
         return cache[code]
     end
     if code == "ny" then
@@ -312,6 +392,10 @@ function M.get_locale(code)
     end
     if code == "pl" then
         cache[code] = require("locales.pl")
+        return cache[code]
+    end
+    if code == "pov" then
+        cache[code] = require("locales.pov")
         return cache[code]
     end
     if code == "ps" then
@@ -338,8 +422,16 @@ function M.get_locale(code)
         cache[code] = require("locales.rw")
         return cache[code]
     end
+    if code == "sar" then
+        cache[code] = require("locales.sar")
+        return cache[code]
+    end
     if code == "sd" then
         cache[code] = require("locales.sd")
+        return cache[code]
+    end
+    if code == "sg" then
+        cache[code] = require("locales.sg")
         return cache[code]
     end
     if code == "shi" then
@@ -362,6 +454,10 @@ function M.get_locale(code)
         cache[code] = require("locales.sn")
         return cache[code]
     end
+    if code == "snk" then
+        cache[code] = require("locales.snk")
+        return cache[code]
+    end
     if code == "so" then
         cache[code] = require("locales.so")
         return cache[code]
@@ -374,8 +470,20 @@ function M.get_locale(code)
         cache[code] = require("locales.sr")
         return cache[code]
     end
+    if code == "ss" then
+        cache[code] = require("locales.ss")
+        return cache[code]
+    end
+    if code == "st" then
+        cache[code] = require("locales.st")
+        return cache[code]
+    end
     if code == "su" then
         cache[code] = require("locales.su")
+        return cache[code]
+    end
+    if code == "suk" then
+        cache[code] = require("locales.suk")
         return cache[code]
     end
     if code == "sv" then
@@ -394,6 +502,10 @@ function M.get_locale(code)
         cache[code] = require("locales.te")
         return cache[code]
     end
+    if code == "tem" then
+        cache[code] = require("locales.tem")
+        return cache[code]
+    end
     if code == "tg" then
         cache[code] = require("locales.tg")
         return cache[code]
@@ -406,12 +518,24 @@ function M.get_locale(code)
         cache[code] = require("locales.ti")
         return cache[code]
     end
+    if code == "tig" then
+        cache[code] = require("locales.tig")
+        return cache[code]
+    end
     if code == "tk" then
         cache[code] = require("locales.tk")
         return cache[code]
     end
+    if code == "tn" then
+        cache[code] = require("locales.tn")
+        return cache[code]
+    end
     if code == "tr" then
         cache[code] = require("locales.tr")
+        return cache[code]
+    end
+    if code == "ts" then
+        cache[code] = require("locales.ts")
         return cache[code]
     end
     if code == "tzm" then
@@ -420,6 +544,10 @@ function M.get_locale(code)
     end
     if code == "uk" then
         cache[code] = require("locales.uk")
+        return cache[code]
+    end
+    if code == "umb" then
+        cache[code] = require("locales.umb")
         return cache[code]
     end
     if code == "ur" then
@@ -434,6 +562,14 @@ function M.get_locale(code)
         cache[code] = require("locales.vi")
         return cache[code]
     end
+    if code == "vmw" then
+        cache[code] = require("locales.vmw")
+        return cache[code]
+    end
+    if code == "wo" then
+        cache[code] = require("locales.wo")
+        return cache[code]
+    end
     if code == "xh" then
         cache[code] = require("locales.xh")
         return cache[code]
@@ -444,6 +580,10 @@ function M.get_locale(code)
     end
     if code == "yue" then
         cache[code] = require("locales.yue")
+        return cache[code]
+    end
+    if code == "zdj" then
+        cache[code] = require("locales.zdj")
         return cache[code]
     end
     if code == "zh" then

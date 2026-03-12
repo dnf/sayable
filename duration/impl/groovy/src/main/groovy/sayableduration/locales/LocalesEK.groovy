@@ -17,6 +17,57 @@ import sayableduration.*
  */
 class LocalesEK {
 
+    // Source: duration/locales/src/ee.json
+    // ================================================================
+    // EE — Ewe
+    // ================================================================
+    static final DurationLocale EE = new DurationLocale(
+        'ee',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sekend {n}', (PluralCategory.OTHER): 'sekendwo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'aɖabaƒoƒo {n}', (PluralCategory.OTHER): 'aɖabaƒoƒowo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'gaƒoƒo {n}', (PluralCategory.OTHER): 'gaƒoƒowo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ŋkeke {n}', (PluralCategory.OTHER): 'ŋkekewo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'kɔsiɖa {n}', (PluralCategory.OTHER): 'kɔsiɖawo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ɣleti {n}', (PluralCategory.OTHER): 'ɣletiwo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ƒe {n}', (PluralCategory.OTHER): 'ƒewo {n}'])
+        ),
+        '{0} kple afã',
+        ', ',
+        'fifia',
+        'ɖe {0} me',
+        'le {0} me',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sek. {n}'),
+            UnitForms.simpleUnit('aɖaba. {n}'),
+            UnitForms.simpleUnit('gaƒ. {n}'),
+            UnitForms.simpleUnit('ŋkekewo {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'kɔsiɖa {n}', (PluralCategory.OTHER): 'kɔsiɖawo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ɣleti {n}', (PluralCategory.OTHER): 'ɣletiwo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ƒe {n}', (PluralCategory.OTHER): 'ƒewo {n}']),
+            null,
+            null,
+            'ɖe {0} me',
+            'le {0} me'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            'ɖe {0} me',
+            'le {0} me'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/el.json
     // ================================================================
     // EL — Greek
@@ -323,6 +374,57 @@ class LocalesEK {
         null
     )
 
+    // Source: duration/locales/src/fan.json
+    // ================================================================
+    // FAN — Fang
+    // ================================================================
+    static final DurationLocale FAN = new DurationLocale(
+        'fan',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sɛgon {n}', (PluralCategory.OTHER): 'bisɛgon {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'minit {n}', (PluralCategory.OTHER): 'biminit {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'awola {n}', (PluralCategory.OTHER): 'biawola {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mos {n}', (PluralCategory.OTHER): 'bimos {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sone {n}', (PluralCategory.OTHER): 'bisone {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mbu {n}', (PluralCategory.OTHER): 'mimbu {n}'])
+        ),
+        '{0} e ndamba',
+        ', ',
+        'fii',
+        '{0} a ja',
+        'a {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sɛg. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('aw. {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mos {n}', (PluralCategory.OTHER): 'bimos {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sone {n}', (PluralCategory.OTHER): 'bisone {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mbu {n}', (PluralCategory.OTHER): 'mimbu {n}']),
+            null,
+            null,
+            '{0} a ja',
+            'a {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} a ja',
+            'a {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/ff.json
     // ================================================================
     // FF — Fulah
@@ -471,6 +573,57 @@ class LocalesEK {
             '',
             '{0} na ang nakalipas',
             'sa loob ng {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/fon.json
+    // ================================================================
+    // FON — Fon
+    // ================================================================
+    static final DurationLocale FON = new DurationLocale(
+        'fon',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('segɔ́ndu {n}'),
+            UnitForms.simpleUnit('miniti {n}'),
+            UnitForms.simpleUnit('ganxixo {n}'),
+            UnitForms.simpleUnit('azǎn {n}'),
+            UnitForms.simpleUnit('aklunɔ̌zán {n}'),
+            UnitForms.simpleUnit('sun {n}'),
+            UnitForms.simpleUnit('xwè {n}')
+        ),
+        '{0} kpo vlavo kpo',
+        ', ',
+        'dìn dìn',
+        '{0} ɖo',
+        'ɖo {0} mɛ',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('seg. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('gan. {n}'),
+            UnitForms.simpleUnit('azǎn {n}'),
+            UnitForms.simpleUnit('aklunɔ̌zán {n}'),
+            UnitForms.simpleUnit('sun {n}'),
+            UnitForms.simpleUnit('xwè {n}'),
+            null,
+            null,
+            '{0} ɖo',
+            'ɖo {0} mɛ'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} ɖo',
+            'ɖo {0} mɛ'
         ),
         null,
         null
@@ -1571,6 +1724,57 @@ class LocalesEK {
         null
     )
 
+    // Source: duration/locales/src/kbp.json
+    // ================================================================
+    // KBP — Kabiye
+    // ================================================================
+    static final DurationLocale KBP = new DurationLocale(
+        'kbp',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('sɛɡɔŋ {n}'),
+            UnitForms.simpleUnit('miniti {n}'),
+            UnitForms.simpleUnit('ñɩɣyʊʊ {n}'),
+            UnitForms.simpleUnit('kɩyakʊ {n}'),
+            UnitForms.simpleUnit('kpɩtaʊ {n}'),
+            UnitForms.simpleUnit('fenaɣ {n}'),
+            UnitForms.simpleUnit('pɩnzɩ {n}')
+        ),
+        '{0} nɛ hɔɔlʊʊ',
+        ', ',
+        'lɛɛlɛɛ',
+        '{0} yɔ',
+        'pɩ {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sɛɡ. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('ñɩɣ. {n}'),
+            UnitForms.simpleUnit('kɩyakʊ {n}'),
+            UnitForms.simpleUnit('kpɩtaʊ {n}'),
+            UnitForms.simpleUnit('fenaɣ {n}'),
+            UnitForms.simpleUnit('pɩnzɩ {n}'),
+            null,
+            null,
+            '{0} yɔ',
+            'pɩ {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} yɔ',
+            'pɩ {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -1770,6 +1974,108 @@ class LocalesEK {
             '',
             '{0} 전',
             '{0} 후'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/kpe.json
+    // ================================================================
+    // KPE — Kpelle
+    // ================================================================
+    static final DurationLocale KPE = new DurationLocale(
+        'kpe',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('sɛkɔŋ {n}'),
+            UnitForms.simpleUnit('miniti {n}'),
+            UnitForms.simpleUnit('awa {n}'),
+            UnitForms.simpleUnit('ɓɛlɛɛ {n}'),
+            UnitForms.simpleUnit('wikii {n}'),
+            UnitForms.simpleUnit('ŋuŋ {n}'),
+            UnitForms.simpleUnit('kɛ̃ɛ̃ {n}')
+        ),
+        '{0} da kɔlɛ',
+        ', ',
+        'ɓaai',
+        '{0} kɛ pɔlɔ',
+        'ya {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sɛk. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('awa {n}'),
+            UnitForms.simpleUnit('ɓɛl. {n}'),
+            UnitForms.simpleUnit('wik. {n}'),
+            UnitForms.simpleUnit('ŋuŋ {n}'),
+            UnitForms.simpleUnit('kɛ̃ɛ̃ {n}'),
+            null,
+            null,
+            '{0} kɛ pɔlɔ',
+            'ya {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} pɔlɔ',
+            'ya {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/ktu.json
+    // ================================================================
+    // KTU — Kituba
+    // ================================================================
+    static final DurationLocale KTU = new DurationLocale(
+        'ktu',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sekonde {n}', (PluralCategory.OTHER): 'masekonde {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'miniti {n}', (PluralCategory.OTHER): 'maminiti {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngonga {n}', (PluralCategory.OTHER): 'mingonga {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'lumbu {n}', (PluralCategory.OTHER): 'malumbu {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngonda {n}', (PluralCategory.OTHER): 'mingonda {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimvula {n}'])
+        ),
+        '{0} na ndambu',
+        ', ',
+        'sik\'oyo',
+        '{0} ya vioka',
+        'na {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('masekonde {n}'),
+            UnitForms.simpleUnit('maminiti {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngonga {n}', (PluralCategory.OTHER): 'mingonga {n}']),
+            UnitForms.simpleUnit('malumbu {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngonda {n}', (PluralCategory.OTHER): 'mingonda {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimvula {n}']),
+            null,
+            null,
+            '{0} ya vioka',
+            'na {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('masek {n}'),
+            UnitForms.simpleUnit('mamin {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
+            UnitForms.simpleUnit('malum {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'poso {n}', (PluralCategory.OTHER): 'maposo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngon {n}', (PluralCategory.OTHER): 'mingon {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mvula {n}', (PluralCategory.OTHER): 'mimv {n}']),
+            '{n}½',
+            '',
+            '{0} vioka',
+            'na {0}'
         ),
         null,
         null

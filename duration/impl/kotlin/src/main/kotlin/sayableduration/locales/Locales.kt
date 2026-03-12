@@ -13,7 +13,7 @@ package sayableduration.locales
 import sayableduration.*
 
 /**
- * All 110 locale definitions for sayable-duration.
+ * All 145 locale definitions for sayable-duration.
  */
 public object Locales {
 
@@ -261,6 +261,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/bci.json
+    // ================================================================
+    // BCI — Baoulé
+    // ================================================================
+    public val BCI: DurationLocale = DurationLocale(
+        code = "bci",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sɛgɔn {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("dɔ {n}"),
+            day = simpleUnit("cɛn {n}"),
+            week = simpleUnit("lemɔcuɛ {n}"),
+            month = simpleUnit("anglɛ {n}"),
+            year = simpleUnit("afuɛ {n}"),
+        ),
+        half = "{0} nin sin",
+        delimiter = ", ",
+        justNow = "siɛn yɛ",
+        ago = "{0} sín",
+        inFuture = "ɔ {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛg. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("dɔ {n}"),
+            day = simpleUnit("cɛn {n}"),
+            week = simpleUnit("lem. {n}"),
+            month = simpleUnit("ang. {n}"),
+            year = simpleUnit("af. {n}"),
+            ago = "{0} sín",
+            inFuture = "ɔ {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} sín",
+            inFuture = "ɔ {0}",
+        ),
+    )
+
     // Source: duration/locales/src/be.json
     // ================================================================
     // BE — Belarusian
@@ -316,6 +363,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/bem.json
+    // ================================================================
+    // BEM — Bemba
+    // ================================================================
+    public val BEM: DurationLocale = DurationLocale(
+        code = "bem",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "isekondi {n}", PluralCategory.OTHER to "amasekondi {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "iminiti {n}", PluralCategory.OTHER to "amaminiti {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "insa {n}", PluralCategory.OTHER to "amanso {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "ubushiku {n}", PluralCategory.OTHER to "inshiku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "umulungu {n}", PluralCategory.OTHER to "imilungu {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "umweshi {n}", PluralCategory.OTHER to "imyeshi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "umwaka {n}", PluralCategory.OTHER to "imyaka {n}")),
+        ),
+        half = "{0} na hafu",
+        delimiter = ", ",
+        justNow = "pali ino nshita",
+        ago = "{0} iyapita",
+        inFuture = "mu {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sek. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("insa {n}"),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "ubushiku {n}", PluralCategory.OTHER to "inshiku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "umulungu {n}", PluralCategory.OTHER to "imilungu {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "umweshi {n}", PluralCategory.OTHER to "imyeshi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "umwaka {n}", PluralCategory.OTHER to "imyaka {n}")),
+            ago = "{0} iyapita",
+            inFuture = "mu {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} iyapita",
+            inFuture = "mu {0}",
+        ),
+    )
+
     // Source: duration/locales/src/bg.json
     // ================================================================
     // BG — Bulgarian
@@ -360,6 +454,53 @@ public object Locales {
             half = "{n}½",
             ago = "преди {0}",
             inFuture = "след {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/bm.json
+    // ================================================================
+    // BM — Bambara
+    // ================================================================
+    public val BM: DurationLocale = DurationLocale(
+        code = "bm",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sekondi {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("lɛrɛ {n}"),
+            day = simpleUnit("don {n}"),
+            week = simpleUnit("dɔgɔkun {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("san {n}"),
+        ),
+        half = "{0} ni tilancɛ",
+        delimiter = ", ",
+        justNow = "sisan",
+        ago = "{0} bɔlen",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sek. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("lɛr. {n}"),
+            day = simpleUnit("don {n}"),
+            week = simpleUnit("dɔgɔk. {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("san {n}"),
+            ago = "{0} bɔlen",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("sek {n}"),
+            minute = simpleUnit("min {n}"),
+            hour = simpleUnit("lɛr {n}"),
+            day = simpleUnit("don {n}"),
+            week = simpleUnit("dɔgɔk {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("san {n}"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} bɔlen",
+            inFuture = "ka {0}",
         ),
     )
 
@@ -816,6 +957,194 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/din.json
+    // ================================================================
+    // DIN — Dinka
+    // ================================================================
+    public val DIN: DurationLocale = DurationLocale(
+        code = "din",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "thiɛ̈kɛn {n}", PluralCategory.OTHER to "thiɛ̈kɛn {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "minitö {n}", PluralCategory.OTHER to "minitö {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "thä {n}", PluralCategory.OTHER to "thä {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "akɔl {n}", PluralCategory.OTHER to "akɔl {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "bɛ̈t {n}", PluralCategory.OTHER to "bɛ̈t {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "pɛi {n}", PluralCategory.OTHER to "pɛi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ruɔ̈n {n}", PluralCategory.OTHER to "ruɔ̈ɔ̈n {n}")),
+        ),
+        half = "{0} ku abɛ̈c",
+        delimiter = ", ",
+        justNow = "ëmën",
+        ago = "{0} cï wëëŋ",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("thiɛ̈kɛn {n}"),
+            minute = simpleUnit("minitö {n}"),
+            hour = simpleUnit("thä {n}"),
+            day = simpleUnit("akɔl {n}"),
+            week = simpleUnit("bɛ̈t {n}"),
+            month = simpleUnit("pɛi {n}"),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ruɔ̈n {n}", PluralCategory.OTHER to "ruɔ̈ɔ̈n {n}")),
+            ago = "{0} cï wëëŋ",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} cï wëëŋ",
+            inFuture = "ka {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/dje.json
+    // ================================================================
+    // DJE — Zarma
+    // ================================================================
+    public val DJE: DurationLocale = DurationLocale(
+        code = "dje",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sɛkondi {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("guuru {n}"),
+            day = simpleUnit("zaari {n}"),
+            week = simpleUnit("hebu {n}"),
+            month = simpleUnit("handu {n}"),
+            year = simpleUnit("jiiri {n}"),
+        ),
+        half = "{0} d'iddeka",
+        delimiter = ", ",
+        justNow = "sohõ",
+        ago = "{0} ka ban",
+        inFuture = "da {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛk. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("guu. {n}"),
+            day = simpleUnit("zaa. {n}"),
+            week = simpleUnit("heb. {n}"),
+            month = simpleUnit("han. {n}"),
+            year = simpleUnit("jii. {n}"),
+            ago = "{0} ka ban",
+            inFuture = "da {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} ban",
+            inFuture = "da {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/dyu.json
+    // ================================================================
+    // DYU — Dyula
+    // ================================================================
+    public val DYU: DurationLocale = DurationLocale(
+        code = "dyu",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sɛkondi {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("lɛrɛ {n}"),
+            day = simpleUnit("don {n}"),
+            week = simpleUnit("dɔgɔkun {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("san {n}"),
+        ),
+        half = "{0} ni tilancɛ",
+        delimiter = ", ",
+        justNow = "sisan",
+        ago = "{0} tɛmɛnen",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛk. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("lɛr. {n}"),
+            day = simpleUnit("don {n}"),
+            week = simpleUnit("dɔgɔk. {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("san {n}"),
+            ago = "{0} tɛmɛnen",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} tɛmɛnen",
+            inFuture = "ka {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/ee.json
+    // ================================================================
+    // EE — Ewe
+    // ================================================================
+    public val EE: DurationLocale = DurationLocale(
+        code = "ee",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sekend {n}", PluralCategory.OTHER to "sekendwo {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "aɖabaƒoƒo {n}", PluralCategory.OTHER to "aɖabaƒoƒowo {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "gaƒoƒo {n}", PluralCategory.OTHER to "gaƒoƒowo {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "ŋkeke {n}", PluralCategory.OTHER to "ŋkekewo {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "kɔsiɖa {n}", PluralCategory.OTHER to "kɔsiɖawo {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ɣleti {n}", PluralCategory.OTHER to "ɣletiwo {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ƒe {n}", PluralCategory.OTHER to "ƒewo {n}")),
+        ),
+        half = "{0} kple afã",
+        delimiter = ", ",
+        justNow = "fifia",
+        ago = "ɖe {0} me",
+        inFuture = "le {0} me",
+        short = CompactnessOverride(
+            second = simpleUnit("sek. {n}"),
+            minute = simpleUnit("aɖaba. {n}"),
+            hour = simpleUnit("gaƒ. {n}"),
+            day = simpleUnit("ŋkekewo {n}"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "kɔsiɖa {n}", PluralCategory.OTHER to "kɔsiɖawo {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ɣleti {n}", PluralCategory.OTHER to "ɣletiwo {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ƒe {n}", PluralCategory.OTHER to "ƒewo {n}")),
+            ago = "ɖe {0} me",
+            inFuture = "le {0} me",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "ɖe {0} me",
+            inFuture = "le {0} me",
+        ),
+    )
+
     // Source: duration/locales/src/el.json
     // ================================================================
     // EL — Greek
@@ -1096,6 +1425,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/fan.json
+    // ================================================================
+    // FAN — Fang
+    // ================================================================
+    public val FAN: DurationLocale = DurationLocale(
+        code = "fan",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sɛgon {n}", PluralCategory.OTHER to "bisɛgon {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "minit {n}", PluralCategory.OTHER to "biminit {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "awola {n}", PluralCategory.OTHER to "biawola {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "mos {n}", PluralCategory.OTHER to "bimos {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "sone {n}", PluralCategory.OTHER to "bisone {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ngon {n}", PluralCategory.OTHER to "mingon {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mbu {n}", PluralCategory.OTHER to "mimbu {n}")),
+        ),
+        half = "{0} e ndamba",
+        delimiter = ", ",
+        justNow = "fii",
+        ago = "{0} a ja",
+        inFuture = "a {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛg. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("aw. {n}"),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "mos {n}", PluralCategory.OTHER to "bimos {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "sone {n}", PluralCategory.OTHER to "bisone {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ngon {n}", PluralCategory.OTHER to "mingon {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mbu {n}", PluralCategory.OTHER to "mimbu {n}")),
+            ago = "{0} a ja",
+            inFuture = "a {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} a ja",
+            inFuture = "a {0}",
+        ),
+    )
+
     // Source: duration/locales/src/ff.json
     // ================================================================
     // FF — Fulah
@@ -1234,6 +1610,53 @@ public object Locales {
             half = "{n}½",
             ago = "{0} na ang nakalipas",
             inFuture = "sa loob ng {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/fon.json
+    // ================================================================
+    // FON — Fon
+    // ================================================================
+    public val FON: DurationLocale = DurationLocale(
+        code = "fon",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("segɔ́ndu {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("ganxixo {n}"),
+            day = simpleUnit("azǎn {n}"),
+            week = simpleUnit("aklunɔ̌zán {n}"),
+            month = simpleUnit("sun {n}"),
+            year = simpleUnit("xwè {n}"),
+        ),
+        half = "{0} kpo vlavo kpo",
+        delimiter = ", ",
+        justNow = "dìn dìn",
+        ago = "{0} ɖo",
+        inFuture = "ɖo {0} mɛ",
+        short = CompactnessOverride(
+            second = simpleUnit("seg. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("gan. {n}"),
+            day = simpleUnit("azǎn {n}"),
+            week = simpleUnit("aklunɔ̌zán {n}"),
+            month = simpleUnit("sun {n}"),
+            year = simpleUnit("xwè {n}"),
+            ago = "{0} ɖo",
+            inFuture = "ɖo {0} mɛ",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} ɖo",
+            inFuture = "ɖo {0} mɛ",
         ),
     )
 
@@ -2265,6 +2688,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/kbp.json
+    // ================================================================
+    // KBP — Kabiye
+    // ================================================================
+    public val KBP: DurationLocale = DurationLocale(
+        code = "kbp",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sɛɡɔŋ {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("ñɩɣyʊʊ {n}"),
+            day = simpleUnit("kɩyakʊ {n}"),
+            week = simpleUnit("kpɩtaʊ {n}"),
+            month = simpleUnit("fenaɣ {n}"),
+            year = simpleUnit("pɩnzɩ {n}"),
+        ),
+        half = "{0} nɛ hɔɔlʊʊ",
+        delimiter = ", ",
+        justNow = "lɛɛlɛɛ",
+        ago = "{0} yɔ",
+        inFuture = "pɩ {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛɡ. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("ñɩɣ. {n}"),
+            day = simpleUnit("kɩyakʊ {n}"),
+            week = simpleUnit("kpɩtaʊ {n}"),
+            month = simpleUnit("fenaɣ {n}"),
+            year = simpleUnit("pɩnzɩ {n}"),
+            ago = "{0} yɔ",
+            inFuture = "pɩ {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} yɔ",
+            inFuture = "pɩ {0}",
+        ),
+    )
+
     // Source: duration/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -2449,6 +2919,100 @@ public object Locales {
             delimiter = "",
             ago = "{0} 전",
             inFuture = "{0} 후",
+        ),
+    )
+
+    // Source: duration/locales/src/kpe.json
+    // ================================================================
+    // KPE — Kpelle
+    // ================================================================
+    public val KPE: DurationLocale = DurationLocale(
+        code = "kpe",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sɛkɔŋ {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("awa {n}"),
+            day = simpleUnit("ɓɛlɛɛ {n}"),
+            week = simpleUnit("wikii {n}"),
+            month = simpleUnit("ŋuŋ {n}"),
+            year = simpleUnit("kɛ̃ɛ̃ {n}"),
+        ),
+        half = "{0} da kɔlɛ",
+        delimiter = ", ",
+        justNow = "ɓaai",
+        ago = "{0} kɛ pɔlɔ",
+        inFuture = "ya {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛk. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("awa {n}"),
+            day = simpleUnit("ɓɛl. {n}"),
+            week = simpleUnit("wik. {n}"),
+            month = simpleUnit("ŋuŋ {n}"),
+            year = simpleUnit("kɛ̃ɛ̃ {n}"),
+            ago = "{0} kɛ pɔlɔ",
+            inFuture = "ya {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} pɔlɔ",
+            inFuture = "ya {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/ktu.json
+    // ================================================================
+    // KTU — Kituba
+    // ================================================================
+    public val KTU: DurationLocale = DurationLocale(
+        code = "ktu",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sekonde {n}", PluralCategory.OTHER to "masekonde {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "miniti {n}", PluralCategory.OTHER to "maminiti {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ngonga {n}", PluralCategory.OTHER to "mingonga {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "lumbu {n}", PluralCategory.OTHER to "malumbu {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "poso {n}", PluralCategory.OTHER to "maposo {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ngonda {n}", PluralCategory.OTHER to "mingonda {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mvula {n}", PluralCategory.OTHER to "mimvula {n}")),
+        ),
+        half = "{0} na ndambu",
+        delimiter = ", ",
+        justNow = "sik'oyo",
+        ago = "{0} ya vioka",
+        inFuture = "na {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("masekonde {n}"),
+            minute = simpleUnit("maminiti {n}"),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ngonga {n}", PluralCategory.OTHER to "mingonga {n}")),
+            day = simpleUnit("malumbu {n}"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "poso {n}", PluralCategory.OTHER to "maposo {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ngonda {n}", PluralCategory.OTHER to "mingonda {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mvula {n}", PluralCategory.OTHER to "mimvula {n}")),
+            ago = "{0} ya vioka",
+            inFuture = "na {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("masek {n}"),
+            minute = simpleUnit("mamin {n}"),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ngon {n}", PluralCategory.OTHER to "mingon {n}")),
+            day = simpleUnit("malum {n}"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "poso {n}", PluralCategory.OTHER to "maposo {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ngon {n}", PluralCategory.OTHER to "mingon {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mvula {n}", PluralCategory.OTHER to "mimv {n}")),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} vioka",
+            inFuture = "na {0}",
         ),
     )
 
@@ -2856,6 +3420,100 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/men.json
+    // ================================================================
+    // MEN — Mende
+    // ================================================================
+    public val MEN: DurationLocale = DurationLocale(
+        code = "men",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sɛkɔn {n}", PluralCategory.OTHER to "sɛkɔn {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "miniti {n}", PluralCategory.OTHER to "miniti {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "awa {n}", PluralCategory.OTHER to "awa {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "lɔhɔ {n}", PluralCategory.OTHER to "lɔhɔnga {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "wikii {n}", PluralCategory.OTHER to "wikii {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ndɔlɔ {n}", PluralCategory.OTHER to "ndɔlɔnga {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "saŋ {n}", PluralCategory.OTHER to "saŋga {n}")),
+        ),
+        half = "{0} ta fele",
+        delimiter = ", ",
+        justNow = "kɛnɛi",
+        ago = "{0} taa gbɔyɔ",
+        inFuture = "yɛ {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛk. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("awa {n}"),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "lɔhɔ {n}", PluralCategory.OTHER to "lɔhɔnga {n}")),
+            week = simpleUnit("wikii {n}"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ndɔlɔ {n}", PluralCategory.OTHER to "ndɔlɔnga {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "saŋ {n}", PluralCategory.OTHER to "saŋga {n}")),
+            ago = "{0} taa gbɔyɔ",
+            inFuture = "yɛ {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} taa gbɔyɔ",
+            inFuture = "yɛ {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/mfe.json
+    // ================================================================
+    // MFE — Mauritian Creole
+    // ================================================================
+    public val MFE: DurationLocale = DurationLocale(
+        code = "mfe",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("{n} segonn"),
+            minute = simpleUnit("{n} minit"),
+            hour = simpleUnit("{n} ler"),
+            day = simpleUnit("{n} zour"),
+            week = simpleUnit("{n} semenn"),
+            month = simpleUnit("{n} mwa"),
+            year = simpleUnit("{n} lane"),
+        ),
+        half = "{0} edmi",
+        delimiter = ", ",
+        justNow = "aster la",
+        ago = "sa fer {0}",
+        inFuture = "dan {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("{n} seg"),
+            minute = simpleUnit("{n} min"),
+            hour = simpleUnit("{n} ler"),
+            day = simpleUnit("{n} zr"),
+            week = simpleUnit("{n} sem"),
+            month = simpleUnit("{n} mwa"),
+            year = simpleUnit("{n} la"),
+            ago = "sa fer {0}",
+            inFuture = "dan {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n} seg"),
+            minute = simpleUnit("{n} min"),
+            hour = simpleUnit("{n} ler"),
+            day = simpleUnit("{n} zr"),
+            week = simpleUnit("{n} sem"),
+            month = simpleUnit("{n} mwa"),
+            year = simpleUnit("{n} la"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "sa fer {0}",
+            inFuture = "dan {0}",
+        ),
+    )
+
     // Source: duration/locales/src/mg.json
     // ================================================================
     // MG — Malagasy
@@ -3092,6 +3750,100 @@ public object Locales {
             half = "{n}½",
             ago = "{0}-н өмнө",
             inFuture = "{0}-н дараа",
+        ),
+    )
+
+    // Source: duration/locales/src/mnk.json
+    // ================================================================
+    // MNK — Mandinka
+    // ================================================================
+    public val MNK: DurationLocale = DurationLocale(
+        code = "mnk",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sɛkɔŋ {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("tili-waati {n}"),
+            day = simpleUnit("tili {n}"),
+            week = simpleUnit("lɔkɔ {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("sanji {n}"),
+        ),
+        half = "{0} ning tilinkiliŋo",
+        delimiter = ", ",
+        justNow = "sisan",
+        ago = "{0} taata",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛk. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("waati {n}"),
+            day = simpleUnit("tili {n}"),
+            week = simpleUnit("lɔkɔ {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("sanj. {n}"),
+            ago = "{0} taata",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("sɛk {n}"),
+            minute = simpleUnit("min {n}"),
+            hour = simpleUnit("waa {n}"),
+            day = simpleUnit("tili {n}"),
+            week = simpleUnit("lɔkɔ {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("sanj {n}"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} taata",
+            inFuture = "ka {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/mos.json
+    // ================================================================
+    // MOS — Moore
+    // ================================================================
+    public val MOS: DurationLocale = DurationLocale(
+        code = "mos",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sẽk {n}"),
+            minute = simpleUnit("minit {n}"),
+            hour = simpleUnit("lɛɛre {n}"),
+            day = simpleUnit("daare {n}"),
+            week = simpleUnit("semaana {n}"),
+            month = simpleUnit("kiuugu {n}"),
+            year = simpleUnit("yʋʋmde {n}"),
+        ),
+        half = "{0} la pʋɩ-sʋka",
+        delimiter = ", ",
+        justNow = "masã",
+        ago = "{0} sẽn loog",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sẽk {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("lɛɛr. {n}"),
+            day = simpleUnit("daar. {n}"),
+            week = simpleUnit("sem. {n}"),
+            month = simpleUnit("kiu. {n}"),
+            year = simpleUnit("yʋʋm. {n}"),
+            ago = "{0} sẽn loog",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("sẽk {n}"),
+            minute = simpleUnit("min {n}"),
+            hour = simpleUnit("lɛɛr {n}"),
+            day = simpleUnit("daar {n}"),
+            week = simpleUnit("sem {n}"),
+            month = simpleUnit("kiu {n}"),
+            year = simpleUnit("yʋʋm {n}"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} loog",
+            inFuture = "ka {0}",
         ),
     )
 
@@ -3337,6 +4089,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/nd.json
+    // ================================================================
+    // ND — Northern Ndebele
+    // ================================================================
+    public val ND: DurationLocale = DurationLocale(
+        code = "nd",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "umzuzwana {n}", PluralCategory.OTHER to "imizuzwana {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "umzuzu {n}", PluralCategory.OTHER to "imizuzu {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ihora {n}", PluralCategory.OTHER to "amahora {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "usuku {n}", PluralCategory.OTHER to "insuku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "iviki {n}", PluralCategory.OTHER to "amaviki {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "inyanga {n}", PluralCategory.OTHER to "izinyanga {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "umnyaka {n}", PluralCategory.OTHER to "iminyaka {n}")),
+        ),
+        half = "{0} lengxenye",
+        delimiter = ", ",
+        justNow = "khathesi",
+        ago = "{0} edlulileyo",
+        inFuture = "nge-{0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "umzuzw. {n}", PluralCategory.OTHER to "imizuzw. {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "umzuzu {n}", PluralCategory.OTHER to "imizuzu {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ihora {n}", PluralCategory.OTHER to "amahora {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "usuku {n}", PluralCategory.OTHER to "insuku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "iviki {n}", PluralCategory.OTHER to "amaviki {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "iny. {n}", PluralCategory.OTHER to "iziny. {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "umny. {n}", PluralCategory.OTHER to "iminy. {n}")),
+            ago = "{0} edlulileyo",
+            inFuture = "nge-{0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} edlulileyo",
+            inFuture = "nge-{0}",
+        ),
+    )
+
     // Source: duration/locales/src/ne.json
     // ================================================================
     // NE — Nepali
@@ -3384,6 +4183,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/ng.json
+    // ================================================================
+    // NG — Oshiwambo
+    // ================================================================
+    public val NG: DurationLocale = DurationLocale(
+        code = "ng",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "osekonde {n}", PluralCategory.OTHER to "oosekonde {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "ominute {n}", PluralCategory.OTHER to "oominute {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "owoola {n}", PluralCategory.OTHER to "iiwoola {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "esiku {n}", PluralCategory.OTHER to "omasiku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "oshiwike {n}", PluralCategory.OTHER to "iiwike {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "omuedhi {n}", PluralCategory.OTHER to "omiedhi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "omvula {n}", PluralCategory.OTHER to "omivula {n}")),
+        ),
+        half = "{0} netata",
+        delimiter = ", ",
+        justNow = "ngashingeyi",
+        ago = "{0} ya pita",
+        inFuture = "mo {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("oosekonde {n}"),
+            minute = simpleUnit("oominute {n}"),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "owoola {n}", PluralCategory.OTHER to "iiwoola {n}")),
+            day = simpleUnit("omasiku {n}"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "oshiwike {n}", PluralCategory.OTHER to "iiwike {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "omuedhi {n}", PluralCategory.OTHER to "omiedhi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "omvula {n}", PluralCategory.OTHER to "omivula {n}")),
+            ago = "{0} ya pita",
+            inFuture = "mo {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("oosek {n}"),
+            minute = simpleUnit("oomin {n}"),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "owool {n}", PluralCategory.OTHER to "iiwool {n}")),
+            day = simpleUnit("omasik {n}"),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "oshiw {n}", PluralCategory.OTHER to "iiw {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "omued {n}", PluralCategory.OTHER to "omied {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "omv {n}", PluralCategory.OTHER to "omiv {n}")),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} pita",
+            inFuture = "mo {0}",
+        ),
+    )
+
     // Source: duration/locales/src/nl.json
     // ================================================================
     // NL — Dutch
@@ -3427,6 +4273,100 @@ public object Locales {
             delimiter = "",
             ago = "{0} geleden",
             inFuture = "over {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/nso.json
+    // ================================================================
+    // NSO — Northern Sotho
+    // ================================================================
+    public val NSO: DurationLocale = DurationLocale(
+        code = "nso",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "motsotswana {n}", PluralCategory.OTHER to "dimetsotswana {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "metsotso {n}", PluralCategory.OTHER to "dimetsotso {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "iri {n}", PluralCategory.OTHER to "diiri {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "letšatši {n}", PluralCategory.OTHER to "matšatši {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "beke {n}", PluralCategory.OTHER to "dibeke {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "kgwedi {n}", PluralCategory.OTHER to "dikgwedi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ngwaga {n}", PluralCategory.OTHER to "mengwaga {n}")),
+        ),
+        half = "{0} le seripagare",
+        delimiter = ", ",
+        justNow = "bjale",
+        ago = "{0} ye e fetilego",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "mots. {n}", PluralCategory.OTHER to "dimets. {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "mets. {n}", PluralCategory.OTHER to "dimets. {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "iri {n}", PluralCategory.OTHER to "diiri {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "letšatši {n}", PluralCategory.OTHER to "matšatši {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "beke {n}", PluralCategory.OTHER to "dibeke {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "kgw. {n}", PluralCategory.OTHER to "dikgw. {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ngw. {n}", PluralCategory.OTHER to "mengw. {n}")),
+            ago = "{0} ye e fetilego",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} fetilego",
+            inFuture = "ka {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/nus.json
+    // ================================================================
+    // NUS — Nuer
+    // ================================================================
+    public val NUS: DurationLocale = DurationLocale(
+        code = "nus",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "thɛkɛni {n}", PluralCategory.OTHER to "thɛkni {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "minit {n}", PluralCategory.OTHER to "minitni {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "thaar {n}", PluralCategory.OTHER to "thaarni {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "cäŋ {n}", PluralCategory.OTHER to "cëŋ {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "korɛ {n}", PluralCategory.OTHER to "korni {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "pay {n}", PluralCategory.OTHER to "pei {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ruɔ̈n {n}", PluralCategory.OTHER to "ruɔ̈ɔ̈ni {n}")),
+        ),
+        half = "{0} ku kel",
+        delimiter = ", ",
+        justNow = "mën",
+        ago = "{0} cï kuɔ̈ɔ̈t",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "thɛk. {n}", PluralCategory.OTHER to "thɛk. {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "min. {n}", PluralCategory.OTHER to "min. {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "thaar {n}", PluralCategory.OTHER to "thaarni {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "cäŋ {n}", PluralCategory.OTHER to "cëŋ {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "kor. {n}", PluralCategory.OTHER to "kor. {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "pay {n}", PluralCategory.OTHER to "pei {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ruɔ̈n {n}", PluralCategory.OTHER to "ruɔ̈ɔ̈ni {n}")),
+            ago = "{0} cï kuɔ̈ɔ̈t",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} kuɔ̈ɔ̈t",
+            inFuture = "ka {0}",
         ),
     )
 
@@ -3670,6 +4610,53 @@ public object Locales {
             half = "{n}½",
             ago = "{0} temu",
             inFuture = "za {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/pov.json
+    // ================================================================
+    // POV — Guinea-Bissau Creole
+    // ================================================================
+    public val POV: DurationLocale = DurationLocale(
+        code = "pov",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("{n} sigundu"),
+            minute = simpleUnit("{n} minutu"),
+            hour = simpleUnit("{n} ora"),
+            day = simpleUnit("{n} dia"),
+            week = simpleUnit("{n} simana"),
+            month = simpleUnit("{n} mis"),
+            year = simpleUnit("{n} anu"),
+        ),
+        half = "{0} i meiu",
+        delimiter = ", ",
+        justNow = "agora mesmu",
+        ago = "faz {0}",
+        inFuture = "di {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("{n} sig"),
+            minute = simpleUnit("{n} min"),
+            hour = simpleUnit("{n} ora"),
+            day = simpleUnit("{n} dia"),
+            week = simpleUnit("{n} sim"),
+            month = simpleUnit("{n} mis"),
+            year = simpleUnit("{n} anu"),
+            ago = "faz {0}",
+            inFuture = "di {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n} sig"),
+            minute = simpleUnit("{n} min"),
+            hour = simpleUnit("{n} ora"),
+            day = simpleUnit("{n} dia"),
+            week = simpleUnit("{n} sim"),
+            month = simpleUnit("{n} mis"),
+            year = simpleUnit("{n} anu"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "faz {0}",
+            inFuture = "di {0}",
         ),
     )
 
@@ -3969,6 +4956,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/sar.json
+    // ================================================================
+    // SAR — Sara
+    // ================================================================
+    public val SAR: DurationLocale = DurationLocale(
+        code = "sar",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sɛɡɔn {n}"),
+            minute = simpleUnit("minít {n}"),
+            hour = simpleUnit("lɛɛr {n}"),
+            day = simpleUnit("ndɔ {n}"),
+            week = simpleUnit("lɔtɛ {n}"),
+            month = simpleUnit("ndɔɔ {n}"),
+            year = simpleUnit("bɛɛ {n}"),
+        ),
+        half = "{0} kɩ̀ ndá̰ŋ",
+        delimiter = ", ",
+        justNow = "ndɔrɔ",
+        ago = "{0} ɓòo kɔ",
+        inFuture = "ga {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛɡ. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("lɛɛr {n}"),
+            day = simpleUnit("ndɔ {n}"),
+            week = simpleUnit("lɔtɛ {n}"),
+            month = simpleUnit("ndɔɔ {n}"),
+            year = simpleUnit("bɛɛ {n}"),
+            ago = "{0} ɓòo kɔ",
+            inFuture = "ga {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} ɓòo kɔ",
+            inFuture = "ga {0}",
+        ),
+    )
+
     // Source: duration/locales/src/sd.json
     // ================================================================
     // SD — Sindhi
@@ -4013,6 +5047,53 @@ public object Locales {
             half = "{n}½",
             ago = "{0} اڳ",
             inFuture = "{0} ۾",
+        ),
+    )
+
+    // Source: duration/locales/src/sg.json
+    // ================================================================
+    // SG — Sango
+    // ================================================================
+    public val SG: DurationLocale = DurationLocale(
+        code = "sg",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("ndo-sêse {n}"),
+            minute = simpleUnit("ndo {n}"),
+            hour = simpleUnit("ngbonga {n}"),
+            day = simpleUnit("lâ {n}"),
+            week = simpleUnit("bîkua-ûse {n}"),
+            month = simpleUnit("nze {n}"),
+            year = simpleUnit("ngû {n}"),
+        ),
+        half = "{0} na ndâ",
+        delimiter = ", ",
+        justNow = "sô awe",
+        ago = "{0} na pekô",
+        inFuture = "na {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("ndo-s. {n}"),
+            minute = simpleUnit("ndo {n}"),
+            hour = simpleUnit("ngb. {n}"),
+            day = simpleUnit("lâ {n}"),
+            week = simpleUnit("bîk. {n}"),
+            month = simpleUnit("nze {n}"),
+            year = simpleUnit("ngû {n}"),
+            ago = "{0} na pekô",
+            inFuture = "na {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} na pekô",
+            inFuture = "na {0}",
         ),
     )
 
@@ -4270,6 +5351,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/snk.json
+    // ================================================================
+    // SNK — Soninke
+    // ================================================================
+    public val SNK: DurationLocale = DurationLocale(
+        code = "snk",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sɛgɔndi {n}"),
+            minute = simpleUnit("miniti {n}"),
+            hour = simpleUnit("waxati {n}"),
+            day = simpleUnit("xanne {n}"),
+            week = simpleUnit("simanxe {n}"),
+            month = simpleUnit("kare {n}"),
+            year = simpleUnit("jara {n}"),
+        ),
+        half = "{0} do faabe",
+        delimiter = ", ",
+        justNow = "toxo yi",
+        ago = "{0} toxo kille",
+        inFuture = "do {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛg. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("wax. {n}"),
+            day = simpleUnit("xan. {n}"),
+            week = simpleUnit("sim. {n}"),
+            month = simpleUnit("kare {n}"),
+            year = simpleUnit("jara {n}"),
+            ago = "{0} toxo kille",
+            inFuture = "do {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} kille",
+            inFuture = "do {0}",
+        ),
+    )
+
     // Source: duration/locales/src/so.json
     // ================================================================
     // SO — Somali
@@ -4419,6 +5547,100 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/ss.json
+    // ================================================================
+    // SS — siSwati
+    // ================================================================
+    public val SS: DurationLocale = DurationLocale(
+        code = "ss",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "umzuzwana {n}", PluralCategory.OTHER to "imizuzwana {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "umzuzu {n}", PluralCategory.OTHER to "imizuzu {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "lihora {n}", PluralCategory.OTHER to "emahora {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "lilanga {n}", PluralCategory.OTHER to "emalanga {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "liviki {n}", PluralCategory.OTHER to "emaviki {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "inyanga {n}", PluralCategory.OTHER to "tinyanga {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "umnyaka {n}", PluralCategory.OTHER to "iminyaka {n}")),
+        ),
+        half = "{0} nenhafu",
+        delimiter = ", ",
+        justNow = "nyalo nje",
+        ago = "{0} lokwendlulile",
+        inFuture = "nge-{0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "umzuzwana {n}", PluralCategory.OTHER to "imizuzwana {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "umzuzu {n}", PluralCategory.OTHER to "imizuzu {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "lihora {n}", PluralCategory.OTHER to "emahora {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "lilanga {n}", PluralCategory.OTHER to "emalanga {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "liviki {n}", PluralCategory.OTHER to "emaviki {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "iny. {n}", PluralCategory.OTHER to "tiny. {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "umny. {n}", PluralCategory.OTHER to "imy. {n}")),
+            ago = "{0} lokwendlulile",
+            inFuture = "nge-{0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} lokwendlulile",
+            inFuture = "nge-{0}",
+        ),
+    )
+
+    // Source: duration/locales/src/st.json
+    // ================================================================
+    // ST — Southern Sotho
+    // ================================================================
+    public val ST: DurationLocale = DurationLocale(
+        code = "st",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "motsotswana {n}", PluralCategory.OTHER to "dimetsotswana {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "metsotso {n}", PluralCategory.OTHER to "dimetsotso {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "hora {n}", PluralCategory.OTHER to "dihora {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "letsatsi {n}", PluralCategory.OTHER to "matsatsi {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "beke {n}", PluralCategory.OTHER to "dibeke {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "kgwedi {n}", PluralCategory.OTHER to "dikgwedi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "selemo {n}", PluralCategory.OTHER to "dilemo {n}")),
+        ),
+        half = "{0} le halofo",
+        delimiter = ", ",
+        justNow = "hona jwale",
+        ago = "{0} e fetileng",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "motsotswana {n}", PluralCategory.OTHER to "dimetsotswana {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "metsotso {n}", PluralCategory.OTHER to "dimetsotso {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "hora {n}", PluralCategory.OTHER to "dihora {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "letsatsi {n}", PluralCategory.OTHER to "matsatsi {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "beke {n}", PluralCategory.OTHER to "dibeke {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "kgw. {n}", PluralCategory.OTHER to "dikgw. {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "sel. {n}", PluralCategory.OTHER to "dil. {n}")),
+            ago = "{0} e fetileng",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} e fetileng",
+            inFuture = "ka {0}",
+        ),
+    )
+
     // Source: duration/locales/src/su.json
     // ================================================================
     // SU — Sundanese
@@ -4463,6 +5685,53 @@ public object Locales {
             half = "{n}½",
             ago = "{0} kapengker",
             inFuture = "dina {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/suk.json
+    // ================================================================
+    // SUK — Sukuma
+    // ================================================================
+    public val SUK: DurationLocale = DurationLocale(
+        code = "suk",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sekunde {n}", PluralCategory.OTHER to "sekunde {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "dakika {n}", PluralCategory.OTHER to "dakika {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "isaa {n}", PluralCategory.OTHER to "amasaa {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "isiku {n}", PluralCategory.OTHER to "amasiku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "ishuma {n}", PluralCategory.OTHER to "amashuma {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ngweli {n}", PluralCategory.OTHER to "ngweli {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mwaka {n}", PluralCategory.OTHER to "myaka {n}")),
+        ),
+        half = "{0} na nusu",
+        delimiter = ", ",
+        justNow = "haha",
+        ago = "{0} zilizopita",
+        inFuture = "kwa {0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sek. {n}", PluralCategory.OTHER to "sek. {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "dak. {n}", PluralCategory.OTHER to "dak. {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "isaa {n}", PluralCategory.OTHER to "amasaa {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "isiku {n}", PluralCategory.OTHER to "amasiku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "ish. {n}", PluralCategory.OTHER to "amash. {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ngw. {n}", PluralCategory.OTHER to "ngw. {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mw. {n}", PluralCategory.OTHER to "my. {n}")),
+            ago = "{0} zilizopita",
+            inFuture = "kwa {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} zilizopita",
+            inFuture = "kwa {0}",
         ),
     )
 
@@ -4652,6 +5921,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/tem.json
+    // ================================================================
+    // TEM — Temne
+    // ================================================================
+    public val TEM: DurationLocale = DurationLocale(
+        code = "tem",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sɛkɔn {n}", PluralCategory.OTHER to "sɛkɔn {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "minit {n}", PluralCategory.OTHER to "minit {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "awa {n}", PluralCategory.OTHER to "awa {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "ləfɔr {n}", PluralCategory.OTHER to "ɔfɔr {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "wik {n}", PluralCategory.OTHER to "wik {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "kətha {n}", PluralCategory.OTHER to "ɔtha {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "əsor {n}", PluralCategory.OTHER to "ɔsor {n}")),
+        ),
+        half = "{0} a gbankɛ",
+        delimiter = ", ",
+        justNow = "kɛna yi",
+        ago = "{0} ro ba",
+        inFuture = "ro {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sɛk. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("awa {n}"),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "ləfɔr {n}", PluralCategory.OTHER to "ɔfɔr {n}")),
+            week = simpleUnit("wik {n}"),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "kətha {n}", PluralCategory.OTHER to "ɔtha {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "əsor {n}", PluralCategory.OTHER to "ɔsor {n}")),
+            ago = "{0} ro ba",
+            inFuture = "ro {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} ro ba",
+            inFuture = "ro {0}",
+        ),
+    )
+
     // Source: duration/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -4793,6 +6109,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/tig.json
+    // ================================================================
+    // TIG — Tigre
+    // ================================================================
+    public val TIG: DurationLocale = DurationLocale(
+        code = "tig",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sanya {n}", PluralCategory.OTHER to "sanayat {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "daqiqa {n}", PluralCategory.OTHER to "daqiqat {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "saʿa {n}", PluralCategory.OTHER to "saʿat {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "yom {n}", PluralCategory.OTHER to "ayam {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "semun {n}", PluralCategory.OTHER to "semunat {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "werḥi {n}", PluralCategory.OTHER to "awerḥi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ʿam {n}", PluralCategory.OTHER to "aʿwam {n}")),
+        ),
+        half = "{0} we nəs",
+        delimiter = ", ",
+        justNow = "hassab",
+        ago = "qədmi {0}",
+        inFuture = "ba {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("san. {n}"),
+            minute = simpleUnit("daq. {n}"),
+            hour = simpleUnit("saʿa {n}"),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "yom {n}", PluralCategory.OTHER to "ayam {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "semun {n}", PluralCategory.OTHER to "semunat {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "werḥi {n}", PluralCategory.OTHER to "awerḥi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ʿam {n}", PluralCategory.OTHER to "aʿwam {n}")),
+            ago = "qədmi {0}",
+            inFuture = "ba {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "qədmi {0}",
+            inFuture = "ba {0}",
+        ),
+    )
+
     // Source: duration/locales/src/tk.json
     // ================================================================
     // TK — Turkmen
@@ -4840,6 +6203,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/tn.json
+    // ================================================================
+    // TN — Tswana
+    // ================================================================
+    public val TN: DurationLocale = DurationLocale(
+        code = "tn",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "motsotswana {n}", PluralCategory.OTHER to "dimetsotswana {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "metsotso {n}", PluralCategory.OTHER to "dimetsotso {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ura {n}", PluralCategory.OTHER to "diura {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "letsatsi {n}", PluralCategory.OTHER to "malatsi {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "beke {n}", PluralCategory.OTHER to "dibeke {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "kgwedi {n}", PluralCategory.OTHER to "dikgwedi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ngwaga {n}", PluralCategory.OTHER to "dingwaga {n}")),
+        ),
+        half = "{0} le halofo",
+        delimiter = ", ",
+        justNow = "jaanong fela",
+        ago = "{0} e e fetileng",
+        inFuture = "ka {0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "motsotswana {n}", PluralCategory.OTHER to "dimetsotswana {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "metsotso {n}", PluralCategory.OTHER to "dimetsotso {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ura {n}", PluralCategory.OTHER to "diura {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "letsatsi {n}", PluralCategory.OTHER to "malatsi {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "beke {n}", PluralCategory.OTHER to "dibeke {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "kgw. {n}", PluralCategory.OTHER to "dikgw. {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ngw. {n}", PluralCategory.OTHER to "dingw. {n}")),
+            ago = "{0} e e fetileng",
+            inFuture = "ka {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} e e fetileng",
+            inFuture = "ka {0}",
+        ),
+    )
+
     // Source: duration/locales/src/tr.json
     // ================================================================
     // TR — Turkish
@@ -4884,6 +6294,53 @@ public object Locales {
             half = "{n}½",
             ago = "{0} önce",
             inFuture = "{0} sonra",
+        ),
+    )
+
+    // Source: duration/locales/src/ts.json
+    // ================================================================
+    // TS — Tsonga
+    // ================================================================
+    public val TS: DurationLocale = DurationLocale(
+        code = "ts",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "xikontiri {n}", PluralCategory.OTHER to "swikontiri {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "minete {n}", PluralCategory.OTHER to "timinete {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "awara {n}", PluralCategory.OTHER to "tiawara {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "siku {n}", PluralCategory.OTHER to "masiku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "vhiki {n}", PluralCategory.OTHER to "mavhiki {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "n'hweti {n}", PluralCategory.OTHER to "tin'hweti {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "lembe {n}", PluralCategory.OTHER to "malembe {n}")),
+        ),
+        half = "{0} ni hafu",
+        delimiter = ", ",
+        justNow = "sweswi",
+        ago = "{0} leri nga hundza",
+        inFuture = "hi {0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "xikon. {n}", PluralCategory.OTHER to "swikon. {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "min. {n}", PluralCategory.OTHER to "timin. {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "awa. {n}", PluralCategory.OTHER to "tiawa. {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "siku {n}", PluralCategory.OTHER to "masiku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "vhiki {n}", PluralCategory.OTHER to "mavhiki {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "n'hw. {n}", PluralCategory.OTHER to "tin'hw. {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "lembe {n}", PluralCategory.OTHER to "mal. {n}")),
+            ago = "{0} leri nga hundza",
+            inFuture = "hi {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} hundza",
+            inFuture = "hi {0}",
         ),
     )
 
@@ -4991,6 +6448,53 @@ public object Locales {
             half = "{n}½",
             ago = "{0} тому",
             inFuture = "через {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/umb.json
+    // ================================================================
+    // UMB — Umbundu
+    // ================================================================
+    public val UMB: DurationLocale = DurationLocale(
+        code = "umb",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "osekunde {n}", PluralCategory.OTHER to "olosekunde {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "ominute {n}", PluralCategory.OTHER to "olominute {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ohola {n}", PluralCategory.OTHER to "olohola {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "elityi {n}", PluralCategory.OTHER to "omatyi {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "osemana {n}", PluralCategory.OTHER to "olosemana {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ondjambi {n}", PluralCategory.OTHER to "olondjambi {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "ombula {n}", PluralCategory.OTHER to "olombula {n}")),
+        ),
+        half = "{0} na oñali",
+        delimiter = ", ",
+        justNow = "kosi",
+        ago = "{0} ya pita",
+        inFuture = "ko {0}",
+        short = CompactnessOverride(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "osek. {n}", PluralCategory.OTHER to "olosek. {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "omin. {n}", PluralCategory.OTHER to "olomin. {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "ohola {n}", PluralCategory.OTHER to "olohola {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "elit. {n}", PluralCategory.OTHER to "omat. {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "osem. {n}", PluralCategory.OTHER to "olosem. {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "ondj. {n}", PluralCategory.OTHER to "olondj. {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "omb. {n}", PluralCategory.OTHER to "olomb. {n}")),
+            ago = "{0} ya pita",
+            inFuture = "ko {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} pita",
+            inFuture = "ko {0}",
         ),
     )
 
@@ -5135,6 +6639,100 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/vmw.json
+    // ================================================================
+    // VMW — Makhuwa
+    // ================================================================
+    public val VMW: DurationLocale = DurationLocale(
+        code = "vmw",
+        plural = { n -> if (n == 1) PluralCategory.ONE else PluralCategory.OTHER },
+        units = Units(
+            second = pluralUnit(mapOf(PluralCategory.ONE to "sekuundu {n}", PluralCategory.OTHER to "sekuundu {n}")),
+            minute = pluralUnit(mapOf(PluralCategory.ONE to "minuto {n}", PluralCategory.OTHER to "minuto {n}")),
+            hour = pluralUnit(mapOf(PluralCategory.ONE to "hora {n}", PluralCategory.OTHER to "hora {n}")),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "eshuku {n}", PluralCategory.OTHER to "mshuku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "esumana {n}", PluralCategory.OTHER to "msumana {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "mweri {n}", PluralCategory.OTHER to "miyeri {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mwaka {n}", PluralCategory.OTHER to "miyaka {n}")),
+        ),
+        half = "{0} na mettenhe",
+        delimiter = ", ",
+        justNow = "vano vivi",
+        ago = "{0} zapita",
+        inFuture = "mu {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sek. {n}"),
+            minute = simpleUnit("min. {n}"),
+            hour = simpleUnit("hora {n}"),
+            day = pluralUnit(mapOf(PluralCategory.ONE to "eshuku {n}", PluralCategory.OTHER to "mshuku {n}")),
+            week = pluralUnit(mapOf(PluralCategory.ONE to "esumana {n}", PluralCategory.OTHER to "msumana {n}")),
+            month = pluralUnit(mapOf(PluralCategory.ONE to "mweri {n}", PluralCategory.OTHER to "miyeri {n}")),
+            year = pluralUnit(mapOf(PluralCategory.ONE to "mwaka {n}", PluralCategory.OTHER to "miyaka {n}")),
+            ago = "{0} zapita",
+            inFuture = "mu {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} zapita",
+            inFuture = "mu {0}",
+        ),
+    )
+
+    // Source: duration/locales/src/wo.json
+    // ================================================================
+    // WO — Wolof
+    // ================================================================
+    public val WO: DurationLocale = DurationLocale(
+        code = "wo",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("saa-yépp {n}"),
+            minute = simpleUnit("simili {n}"),
+            hour = simpleUnit("waxtu {n}"),
+            day = simpleUnit("bés {n}"),
+            week = simpleUnit("ayubés {n}"),
+            month = simpleUnit("weer {n}"),
+            year = simpleUnit("at {n}"),
+        ),
+        half = "{0} ak genn-wàll",
+        delimiter = ", ",
+        justNow = "léegi",
+        ago = "{0} ci ginaaw",
+        inFuture = "ci {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("saa-y. {n}"),
+            minute = simpleUnit("sim. {n}"),
+            hour = simpleUnit("wax. {n}"),
+            day = simpleUnit("bés {n}"),
+            week = simpleUnit("ayub. {n}"),
+            month = simpleUnit("weer {n}"),
+            year = simpleUnit("at {n}"),
+            ago = "{0} ci ginaaw",
+            inFuture = "ci {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("saa {n}"),
+            minute = simpleUnit("sim {n}"),
+            hour = simpleUnit("wax {n}"),
+            day = simpleUnit("bés {n}"),
+            week = simpleUnit("ayub {n}"),
+            month = simpleUnit("weer {n}"),
+            year = simpleUnit("at {n}"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} ci gin.",
+            inFuture = "ci {0}",
+        ),
+    )
+
     // Source: duration/locales/src/xh.json
     // ================================================================
     // XH — Xhosa
@@ -5276,6 +6874,53 @@ public object Locales {
         ),
     )
 
+    // Source: duration/locales/src/zdj.json
+    // ================================================================
+    // ZDJ — Comorian
+    // ================================================================
+    public val ZDJ: DurationLocale = DurationLocale(
+        code = "zdj",
+        plural = { _ -> PluralCategory.OTHER },
+        units = Units(
+            second = simpleUnit("sekunde {n}"),
+            minute = simpleUnit("dakika {n}"),
+            hour = simpleUnit("saa {n}"),
+            day = simpleUnit("suku {n}"),
+            week = simpleUnit("djumwa {n}"),
+            month = simpleUnit("mwezi {n}"),
+            year = simpleUnit("mwaha {n}"),
+        ),
+        half = "{0} na nusu",
+        delimiter = ", ",
+        justNow = "vavo hangu",
+        ago = "{0} zilizopita",
+        inFuture = "ha {0}",
+        short = CompactnessOverride(
+            second = simpleUnit("sek. {n}"),
+            minute = simpleUnit("dak. {n}"),
+            hour = simpleUnit("saa {n}"),
+            day = simpleUnit("suku {n}"),
+            week = simpleUnit("djum. {n}"),
+            month = simpleUnit("mw. {n}"),
+            year = simpleUnit("mwa. {n}"),
+            ago = "{0} zilizopita",
+            inFuture = "ha {0}",
+        ),
+        compact = CompactnessOverride(
+            second = simpleUnit("{n}s"),
+            minute = simpleUnit("{n}m"),
+            hour = simpleUnit("{n}h"),
+            day = simpleUnit("{n}d"),
+            week = simpleUnit("{n}w"),
+            month = simpleUnit("{n}m"),
+            year = simpleUnit("{n}y"),
+            delimiter = "",
+            half = "{n}½",
+            ago = "{0} zilizopita",
+            inFuture = "ha {0}",
+        ),
+    )
+
     // Source: duration/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -5371,27 +7016,34 @@ public object Locales {
 
     public val ALL: Map<String, DurationLocale> = mapOf(
         "af" to AF, "ak" to AK, "am" to AM, "ar" to AR, "az" to AZ,
-        "be" to BE, "bg" to BG, "bn" to BN, "br" to BR, "bs" to BS,
-        "ca" to CA, "ceb" to CEB, "cs" to CS, "cy" to CY, "da" to DA,
-        "de" to DE, "el" to EL, "en" to EN, "es" to ES, "et" to ET,
-        "eu" to EU, "fa" to FA, "ff" to FF, "fi" to FI, "fil" to FIL,
-        "fr" to FR, "ga" to GA, "gd" to GD, "gl" to GL, "gn" to GN,
-        "gu" to GU, "gv" to GV, "ha" to HA, "he" to HE, "hi" to HI,
-        "hr" to HR, "ht" to HT, "hu" to HU, "hy" to HY, "id" to ID,
-        "ig" to IG, "is" to IS, "it" to IT, "ja" to JA, "jv" to JV,
-        "ka" to KA, "kk" to KK, "km" to KM, "kn" to KN, "ko" to KO,
-        "ku" to KU, "kw" to KW, "ky" to KY, "lg" to LG, "ln" to LN,
-        "lo" to LO, "lt" to LT, "lv" to LV, "mg" to MG, "mi" to MI,
-        "mk" to MK, "ml" to ML, "mn" to MN, "mr" to MR, "ms" to MS,
-        "mt" to MT, "my" to MY, "nb" to NB, "ne" to NE, "nl" to NL,
+        "bci" to BCI, "be" to BE, "bem" to BEM, "bg" to BG, "bm" to BM,
+        "bn" to BN, "br" to BR, "bs" to BS, "ca" to CA, "ceb" to CEB,
+        "cs" to CS, "cy" to CY, "da" to DA, "de" to DE, "din" to DIN,
+        "dje" to DJE, "dyu" to DYU, "ee" to EE, "el" to EL, "en" to EN,
+        "es" to ES, "et" to ET, "eu" to EU, "fa" to FA, "fan" to FAN,
+        "ff" to FF, "fi" to FI, "fil" to FIL, "fon" to FON, "fr" to FR,
+        "ga" to GA, "gd" to GD, "gl" to GL, "gn" to GN, "gu" to GU,
+        "gv" to GV, "ha" to HA, "he" to HE, "hi" to HI, "hr" to HR,
+        "ht" to HT, "hu" to HU, "hy" to HY, "id" to ID, "ig" to IG,
+        "is" to IS, "it" to IT, "ja" to JA, "jv" to JV, "ka" to KA,
+        "kbp" to KBP, "kk" to KK, "km" to KM, "kn" to KN, "ko" to KO,
+        "kpe" to KPE, "ktu" to KTU, "ku" to KU, "kw" to KW, "ky" to KY,
+        "lg" to LG, "ln" to LN, "lo" to LO, "lt" to LT, "lv" to LV,
+        "men" to MEN, "mfe" to MFE, "mg" to MG, "mi" to MI, "mk" to MK,
+        "ml" to ML, "mn" to MN, "mnk" to MNK, "mos" to MOS, "mr" to MR,
+        "ms" to MS, "mt" to MT, "my" to MY, "nb" to NB, "nd" to ND,
+        "ne" to NE, "ng" to NG, "nl" to NL, "nso" to NSO, "nus" to NUS,
         "ny" to NY, "om" to OM, "or" to OR, "pa" to PA, "pl" to PL,
-        "ps" to PS, "pt" to PT, "qu" to QU, "ro" to RO, "ru" to RU,
-        "rw" to RW, "sd" to SD, "shi" to SHI, "si" to SI, "sk" to SK,
-        "sl" to SL, "sn" to SN, "so" to SO, "sq" to SQ, "sr" to SR,
-        "su" to SU, "sv" to SV, "sw" to SW, "ta" to TA, "te" to TE,
-        "tg" to TG, "th" to TH, "ti" to TI, "tk" to TK, "tr" to TR,
-        "tzm" to TZM, "uk" to UK, "ur" to UR, "uz" to UZ, "vi" to VI,
-        "xh" to XH, "yo" to YO, "yue" to YUE, "zh" to ZH, "zu" to ZU
+        "pov" to POV, "ps" to PS, "pt" to PT, "qu" to QU, "ro" to RO,
+        "ru" to RU, "rw" to RW, "sar" to SAR, "sd" to SD, "sg" to SG,
+        "shi" to SHI, "si" to SI, "sk" to SK, "sl" to SL, "sn" to SN,
+        "snk" to SNK, "so" to SO, "sq" to SQ, "sr" to SR, "ss" to SS,
+        "st" to ST, "su" to SU, "suk" to SUK, "sv" to SV, "sw" to SW,
+        "ta" to TA, "te" to TE, "tem" to TEM, "tg" to TG, "th" to TH,
+        "ti" to TI, "tig" to TIG, "tk" to TK, "tn" to TN, "tr" to TR,
+        "ts" to TS, "tzm" to TZM, "uk" to UK, "umb" to UMB, "ur" to UR,
+        "uz" to UZ, "vi" to VI, "vmw" to VMW, "wo" to WO, "xh" to XH,
+        "yo" to YO, "yue" to YUE, "zdj" to ZDJ, "zh" to ZH, "zu" to ZU
     )
 
     public fun get(code: String): DurationLocale? = ALL[code]

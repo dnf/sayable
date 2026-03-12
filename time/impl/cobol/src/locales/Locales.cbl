@@ -25,11 +25,20 @@
                WHEN "az"
                    PERFORM INIT-LOCALE-AZ
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bci"
+                   PERFORM INIT-LOCALE-BCI
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "be"
                    PERFORM INIT-LOCALE-BE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bem"
+                   PERFORM INIT-LOCALE-BEM
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "bg"
                    PERFORM INIT-LOCALE-BG
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "bm"
+                   PERFORM INIT-LOCALE-BM
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "bn"
                    PERFORM INIT-LOCALE-BN
@@ -58,6 +67,18 @@
                WHEN "de"
                    PERFORM INIT-LOCALE-DE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "din"
+                   PERFORM INIT-LOCALE-DIN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "dje"
+                   PERFORM INIT-LOCALE-DJE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "dyu"
+                   PERFORM INIT-LOCALE-DYU
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ee"
+                   PERFORM INIT-LOCALE-EE
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "el"
                    PERFORM INIT-LOCALE-EL
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -76,6 +97,9 @@
                WHEN "fa"
                    PERFORM INIT-LOCALE-FA
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "fan"
+                   PERFORM INIT-LOCALE-FAN
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ff"
                    PERFORM INIT-LOCALE-FF
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -84,6 +108,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "fil"
                    PERFORM INIT-LOCALE-FIL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "fon"
+                   PERFORM INIT-LOCALE-FON
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "fr"
                    PERFORM INIT-LOCALE-FR
@@ -148,6 +175,9 @@
                WHEN "ka"
                    PERFORM INIT-LOCALE-KA
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "kbp"
+                   PERFORM INIT-LOCALE-KBP
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "kk"
                    PERFORM INIT-LOCALE-KK
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -159,6 +189,12 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ko"
                    PERFORM INIT-LOCALE-KO
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "kpe"
+                   PERFORM INIT-LOCALE-KPE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ktu"
+                   PERFORM INIT-LOCALE-KTU
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ku"
                    PERFORM INIT-LOCALE-KU
@@ -184,6 +220,12 @@
                WHEN "lv"
                    PERFORM INIT-LOCALE-LV
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "men"
+                   PERFORM INIT-LOCALE-MEN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mfe"
+                   PERFORM INIT-LOCALE-MFE
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mg"
                    PERFORM INIT-LOCALE-MG
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -198,6 +240,12 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mn"
                    PERFORM INIT-LOCALE-MN
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mnk"
+                   PERFORM INIT-LOCALE-MNK
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "mos"
+                   PERFORM INIT-LOCALE-MOS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "mr"
                    PERFORM INIT-LOCALE-MR
@@ -214,11 +262,23 @@
                WHEN "nb"
                    PERFORM INIT-LOCALE-NB
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nd"
+                   PERFORM INIT-LOCALE-ND
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ne"
                    PERFORM INIT-LOCALE-NE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ng"
+                   PERFORM INIT-LOCALE-NG
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "nl"
                    PERFORM INIT-LOCALE-NL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nso"
+                   PERFORM INIT-LOCALE-NSO
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "nus"
+                   PERFORM INIT-LOCALE-NUS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ny"
                    PERFORM INIT-LOCALE-NY
@@ -234,6 +294,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "pl"
                    PERFORM INIT-LOCALE-PL
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "pov"
+                   PERFORM INIT-LOCALE-POV
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ps"
                    PERFORM INIT-LOCALE-PS
@@ -253,8 +316,14 @@
                WHEN "rw"
                    PERFORM INIT-LOCALE-RW
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "sar"
+                   PERFORM INIT-LOCALE-SAR
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "sd"
                    PERFORM INIT-LOCALE-SD
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "sg"
+                   PERFORM INIT-LOCALE-SG
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "shi"
                    PERFORM INIT-LOCALE-SHI
@@ -271,6 +340,9 @@
                WHEN "sn"
                    PERFORM INIT-LOCALE-SN
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "snk"
+                   PERFORM INIT-LOCALE-SNK
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "so"
                    PERFORM INIT-LOCALE-SO
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -280,8 +352,17 @@
                WHEN "sr"
                    PERFORM INIT-LOCALE-SR
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ss"
+                   PERFORM INIT-LOCALE-SS
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "st"
+                   PERFORM INIT-LOCALE-ST
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "su"
                    PERFORM INIT-LOCALE-SU
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "suk"
+                   PERFORM INIT-LOCALE-SUK
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "sv"
                    PERFORM INIT-LOCALE-SV
@@ -295,6 +376,9 @@
                WHEN "te"
                    PERFORM INIT-LOCALE-TE
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tem"
+                   PERFORM INIT-LOCALE-TEM
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tg"
                    PERFORM INIT-LOCALE-TG
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -304,17 +388,29 @@
                WHEN "ti"
                    PERFORM INIT-LOCALE-TI
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tig"
+                   PERFORM INIT-LOCALE-TIG
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tk"
                    PERFORM INIT-LOCALE-TK
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "tn"
+                   PERFORM INIT-LOCALE-TN
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tr"
                    PERFORM INIT-LOCALE-TR
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "ts"
+                   PERFORM INIT-LOCALE-TS
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "tzm"
                    PERFORM INIT-LOCALE-TZM
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "uk"
                    PERFORM INIT-LOCALE-UK
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "umb"
+                   PERFORM INIT-LOCALE-UMB
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "ur"
                    PERFORM INIT-LOCALE-UR
@@ -325,6 +421,12 @@
                WHEN "vi"
                    PERFORM INIT-LOCALE-VI
                    MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "vmw"
+                   PERFORM INIT-LOCALE-VMW
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "wo"
+                   PERFORM INIT-LOCALE-WO
+                   MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "xh"
                    PERFORM INIT-LOCALE-XH
                    MOVE 1 TO WS-LOOKUP-FOUND
@@ -333,6 +435,9 @@
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "yue"
                    PERFORM INIT-LOCALE-YUE
+                   MOVE 1 TO WS-LOOKUP-FOUND
+               WHEN "zdj"
+                   PERFORM INIT-LOCALE-ZDJ
                    MOVE 1 TO WS-LOOKUP-FOUND
                WHEN "zh"
                    PERFORM INIT-LOCALE-ZH
@@ -718,6 +823,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/bci.json
+       INIT-LOCALE-BCI.
+           MOVE "bci" TO WS-ACT-CODE
+           MOVE "blu-nɲɔn"
+               TO WS-ACT-HOUR(1)
+           MOVE "kun"
+               TO WS-ACT-HOUR(2)
+           MOVE "nɲɔn"
+               TO WS-ACT-HOUR(3)
+           MOVE "nsan"
+               TO WS-ACT-HOUR(4)
+           MOVE "nan"
+               TO WS-ACT-HOUR(5)
+           MOVE "nnun"
+               TO WS-ACT-HOUR(6)
+           MOVE "nsiɛn"
+               TO WS-ACT-HOUR(7)
+           MOVE "nso"
+               TO WS-ACT-HOUR(8)
+           MOVE "mɔcuɛ"
+               TO WS-ACT-HOUR(9)
+           MOVE "ngwlan"
+               TO WS-ACT-HOUR(10)
+           MOVE "blu"
+               TO WS-ACT-HOUR(11)
+           MOVE "blu-kun"
+               TO WS-ACT-HOUR(12)
+           MOVE "kɔnguɛ afiɛn"
+               TO WS-ACT-MIDNIGHT
+           MOVE "nnɔsua"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/be.json
        INIT-LOCALE-BE.
            MOVE "be" TO WS-ACT-CODE
@@ -793,6 +973,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/bem.json
+       INIT-LOCALE-BEM.
+           MOVE "bem" TO WS-ACT-CODE
+           MOVE "ikumi na ibili"
+               TO WS-ACT-HOUR(1)
+           MOVE "cimo"
+               TO WS-ACT-HOUR(2)
+           MOVE "fibili"
+               TO WS-ACT-HOUR(3)
+           MOVE "fitatu"
+               TO WS-ACT-HOUR(4)
+           MOVE "fine"
+               TO WS-ACT-HOUR(5)
+           MOVE "fisano"
+               TO WS-ACT-HOUR(6)
+           MOVE "mutanda"
+               TO WS-ACT-HOUR(7)
+           MOVE "cine lubali"
+               TO WS-ACT-HOUR(8)
+           MOVE "cine konse konse"
+               TO WS-ACT-HOUR(9)
+           MOVE "pabula"
+               TO WS-ACT-HOUR(10)
+           MOVE "ikumi"
+               TO WS-ACT-HOUR(11)
+           MOVE "ikumi na cimo"
+               TO WS-ACT-HOUR(12)
+           MOVE "pakati ka bushiku"
+               TO WS-ACT-MIDNIGHT
+           MOVE "akasuba"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/bg.json
        INIT-LOCALE-BG.
            MOVE "bg" TO WS-ACT-CODE
@@ -865,6 +1120,81 @@
            MOVE SPACES
                TO WS-ACT-COMPACT-AM
            MOVE SPACES
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/bm.json
+       INIT-LOCALE-BM.
+           MOVE "bm" TO WS-ACT-CODE
+           MOVE "tan ni fila"
+               TO WS-ACT-HOUR(1)
+           MOVE "kelen"
+               TO WS-ACT-HOUR(2)
+           MOVE "fila"
+               TO WS-ACT-HOUR(3)
+           MOVE "saba"
+               TO WS-ACT-HOUR(4)
+           MOVE "naani"
+               TO WS-ACT-HOUR(5)
+           MOVE "duuru"
+               TO WS-ACT-HOUR(6)
+           MOVE "wɔɔrɔ"
+               TO WS-ACT-HOUR(7)
+           MOVE "wolonwula"
+               TO WS-ACT-HOUR(8)
+           MOVE "segin"
+               TO WS-ACT-HOUR(9)
+           MOVE "kɔnɔntɔn"
+               TO WS-ACT-HOUR(10)
+           MOVE "tan"
+               TO WS-ACT-HOUR(11)
+           MOVE "tan ni kelen"
+               TO WS-ACT-HOUR(12)
+           MOVE "dugutilama"
+               TO WS-ACT-MIDNIGHT
+           MOVE "tilgari"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
                TO WS-ACT-COMPACT-PM
            .
 
@@ -1543,6 +1873,306 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/din.json
+       INIT-LOCALE-DIN.
+           MOVE "din" TO WS-ACT-CODE
+           MOVE "thiäär ku rou"
+               TO WS-ACT-HOUR(1)
+           MOVE "tök"
+               TO WS-ACT-HOUR(2)
+           MOVE "rou"
+               TO WS-ACT-HOUR(3)
+           MOVE "diäk"
+               TO WS-ACT-HOUR(4)
+           MOVE "ŋuän"
+               TO WS-ACT-HOUR(5)
+           MOVE "dhiëc"
+               TO WS-ACT-HOUR(6)
+           MOVE "dhetem"
+               TO WS-ACT-HOUR(7)
+           MOVE "dhorou"
+               TO WS-ACT-HOUR(8)
+           MOVE "bɛ̈t"
+               TO WS-ACT-HOUR(9)
+           MOVE "dhoŋuan"
+               TO WS-ACT-HOUR(10)
+           MOVE "thiäär"
+               TO WS-ACT-HOUR(11)
+           MOVE "thiäär ku tök"
+               TO WS-ACT-HOUR(12)
+           MOVE "wakɔ̈u"
+               TO WS-ACT-MIDNIGHT
+           MOVE "akɔ̈l ciëŋ"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/dje.json
+       INIT-LOCALE-DJE.
+           MOVE "dje" TO WS-ACT-CODE
+           MOVE "way cindi"
+               TO WS-ACT-HOUR(1)
+           MOVE "afoo"
+               TO WS-ACT-HOUR(2)
+           MOVE "ihinka"
+               TO WS-ACT-HOUR(3)
+           MOVE "ihinza"
+               TO WS-ACT-HOUR(4)
+           MOVE "itaaci"
+               TO WS-ACT-HOUR(5)
+           MOVE "igu"
+               TO WS-ACT-HOUR(6)
+           MOVE "iddu"
+               TO WS-ACT-HOUR(7)
+           MOVE "iyye"
+               TO WS-ACT-HOUR(8)
+           MOVE "isahkay"
+               TO WS-ACT-HOUR(9)
+           MOVE "iyegga"
+               TO WS-ACT-HOUR(10)
+           MOVE "iwoy"
+               TO WS-ACT-HOUR(11)
+           MOVE "iwoy cindi"
+               TO WS-ACT-HOUR(12)
+           MOVE "cin beri"
+               TO WS-ACT-MIDNIGHT
+           MOVE "zaari gaaham"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/dyu.json
+       INIT-LOCALE-DYU.
+           MOVE "dyu" TO WS-ACT-CODE
+           MOVE "tan ni fila"
+               TO WS-ACT-HOUR(1)
+           MOVE "kelen"
+               TO WS-ACT-HOUR(2)
+           MOVE "fila"
+               TO WS-ACT-HOUR(3)
+           MOVE "saba"
+               TO WS-ACT-HOUR(4)
+           MOVE "naani"
+               TO WS-ACT-HOUR(5)
+           MOVE "duuru"
+               TO WS-ACT-HOUR(6)
+           MOVE "wɔɔrɔ"
+               TO WS-ACT-HOUR(7)
+           MOVE "wolonwula"
+               TO WS-ACT-HOUR(8)
+           MOVE "segin"
+               TO WS-ACT-HOUR(9)
+           MOVE "kɔnɔntɔn"
+               TO WS-ACT-HOUR(10)
+           MOVE "tan"
+               TO WS-ACT-HOUR(11)
+           MOVE "tan ni kelen"
+               TO WS-ACT-HOUR(12)
+           MOVE "dugutilama"
+               TO WS-ACT-MIDNIGHT
+           MOVE "tilgari"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/ee.json
+       INIT-LOCALE-EE.
+           MOVE "ee" TO WS-ACT-CODE
+           MOVE "wuieve"
+               TO WS-ACT-HOUR(1)
+           MOVE "ɖeka"
+               TO WS-ACT-HOUR(2)
+           MOVE "eve"
+               TO WS-ACT-HOUR(3)
+           MOVE "etɔ̃"
+               TO WS-ACT-HOUR(4)
+           MOVE "ene"
+               TO WS-ACT-HOUR(5)
+           MOVE "atɔ̃"
+               TO WS-ACT-HOUR(6)
+           MOVE "ade"
+               TO WS-ACT-HOUR(7)
+           MOVE "adre"
+               TO WS-ACT-HOUR(8)
+           MOVE "enyi"
+               TO WS-ACT-HOUR(9)
+           MOVE "asieke"
+               TO WS-ACT-HOUR(10)
+           MOVE "ewo"
+               TO WS-ACT-HOUR(11)
+           MOVE "wuiɖeka"
+               TO WS-ACT-HOUR(12)
+           MOVE "zã titina"
+               TO WS-ACT-MIDNIGHT
+           MOVE "ŋdɔ"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/el.json
        INIT-LOCALE-EL.
            MOVE "el" TO WS-ACT-CODE
@@ -1993,6 +2623,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/fan.json
+       INIT-LOCALE-FAN.
+           MOVE "fan" TO WS-ACT-CODE
+           MOVE "awom mebú"
+               TO WS-ACT-HOUR(1)
+           MOVE "fóg"
+               TO WS-ACT-HOUR(2)
+           MOVE "abúi"
+               TO WS-ACT-HOUR(3)
+           MOVE "aláa"
+               TO WS-ACT-HOUR(4)
+           MOVE "anyin"
+               TO WS-ACT-HOUR(5)
+           MOVE "atán"
+               TO WS-ACT-HOUR(6)
+           MOVE "asaman"
+               TO WS-ACT-HOUR(7)
+           MOVE "zamgbala"
+               TO WS-ACT-HOUR(8)
+           MOVE "mwom"
+               TO WS-ACT-HOUR(9)
+           MOVE "ebulú"
+               TO WS-ACT-HOUR(10)
+           MOVE "awom"
+               TO WS-ACT-HOUR(11)
+           MOVE "awom mefóg"
+               TO WS-ACT-HOUR(12)
+           MOVE "akiri alúk"
+               TO WS-ACT-MIDNIGHT
+           MOVE "ewaŋ"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/ff.json
        INIT-LOCALE-FF.
            MOVE "ff" TO WS-ACT-CODE
@@ -2197,6 +2902,81 @@
            MOVE "sampu bago mag {next_h}"
                TO WS-ACT-PATTERN(11)
            MOVE "lima bago mag {next_h}"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/fon.json
+       INIT-LOCALE-FON.
+           MOVE "fon" TO WS-ACT-CODE
+           MOVE "wěwè"
+               TO WS-ACT-HOUR(1)
+           MOVE "ɖokpo"
+               TO WS-ACT-HOUR(2)
+           MOVE "wè"
+               TO WS-ACT-HOUR(3)
+           MOVE "atɔn"
+               TO WS-ACT-HOUR(4)
+           MOVE "ɛnɛ"
+               TO WS-ACT-HOUR(5)
+           MOVE "atɔ́ɔ́n"
+               TO WS-ACT-HOUR(6)
+           MOVE "ayizɛ̀n"
+               TO WS-ACT-HOUR(7)
+           MOVE "tɛnwè"
+               TO WS-ACT-HOUR(8)
+           MOVE "tantɔn"
+               TO WS-ACT-HOUR(9)
+           MOVE "tɛnɛnɛ"
+               TO WS-ACT-HOUR(10)
+           MOVE "wǒ"
+               TO WS-ACT-HOUR(11)
+           MOVE "ɖokpo-wǒ"
+               TO WS-ACT-HOUR(12)
+           MOVE "zǎnmɛ"
+               TO WS-ACT-MIDNIGHT
+           MOVE "hwemɛnu"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -3793,6 +4573,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/kbp.json
+       INIT-LOCALE-KBP.
+           MOVE "kbp" TO WS-ACT-CODE
+           MOVE "hiu nɛ naalɛ"
+               TO WS-ACT-HOUR(1)
+           MOVE "kʊɖʊm"
+               TO WS-ACT-HOUR(2)
+           MOVE "naalɛ"
+               TO WS-ACT-HOUR(3)
+           MOVE "naadozo"
+               TO WS-ACT-HOUR(4)
+           MOVE "naanaza"
+               TO WS-ACT-HOUR(5)
+           MOVE "kagbanzɩ"
+               TO WS-ACT-HOUR(6)
+           MOVE "loɖo"
+               TO WS-ACT-HOUR(7)
+           MOVE "lʊbɛ"
+               TO WS-ACT-HOUR(8)
+           MOVE "lɛɛtɛ"
+               TO WS-ACT-HOUR(9)
+           MOVE "nakʊ"
+               TO WS-ACT-HOUR(10)
+           MOVE "hiu"
+               TO WS-ACT-HOUR(11)
+           MOVE "hiu nɛ kʊɖʊm"
+               TO WS-ACT-HOUR(12)
+           MOVE "ɖoo hɛkʊ"
+               TO WS-ACT-MIDNIGHT
+           MOVE "wɩsɩ taa"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/kk.json
        INIT-LOCALE-KK.
            MOVE "kk" TO WS-ACT-CODE
@@ -4090,6 +4945,156 @@
            MOVE SPACES
                TO WS-ACT-COMPACT-AM
            MOVE SPACES
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/kpe.json
+       INIT-LOCALE-KPE.
+           MOVE "kpe" TO WS-ACT-CODE
+           MOVE "puu lɔŋ"
+               TO WS-ACT-HOUR(1)
+           MOVE "tɔŋ"
+               TO WS-ACT-HOUR(2)
+           MOVE "feere"
+               TO WS-ACT-HOUR(3)
+           MOVE "sawa"
+               TO WS-ACT-HOUR(4)
+           MOVE "naŋ"
+               TO WS-ACT-HOUR(5)
+           MOVE "lɔɔlu"
+               TO WS-ACT-HOUR(6)
+           MOVE "mɛi da tɔŋ"
+               TO WS-ACT-HOUR(7)
+           MOVE "mɛi da feere"
+               TO WS-ACT-HOUR(8)
+           MOVE "mɛi da sawa"
+               TO WS-ACT-HOUR(9)
+           MOVE "mɛi da naŋ"
+               TO WS-ACT-HOUR(10)
+           MOVE "puu"
+               TO WS-ACT-HOUR(11)
+           MOVE "puu da tɔŋ"
+               TO WS-ACT-HOUR(12)
+           MOVE "kpindi kɔlɛ"
+               TO WS-ACT-MIDNIGHT
+           MOVE "tili-ma"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/ktu.json
+       INIT-LOCALE-KTU.
+           MOVE "ktu" TO WS-ACT-CODE
+           MOVE "zomi na zole"
+               TO WS-ACT-HOUR(1)
+           MOVE "mosi"
+               TO WS-ACT-HOUR(2)
+           MOVE "zole"
+               TO WS-ACT-HOUR(3)
+           MOVE "tatu"
+               TO WS-ACT-HOUR(4)
+           MOVE "ya"
+               TO WS-ACT-HOUR(5)
+           MOVE "tanu"
+               TO WS-ACT-HOUR(6)
+           MOVE "sambanu"
+               TO WS-ACT-HOUR(7)
+           MOVE "nsambwadi"
+               TO WS-ACT-HOUR(8)
+           MOVE "nana"
+               TO WS-ACT-HOUR(9)
+           MOVE "vwa"
+               TO WS-ACT-HOUR(10)
+           MOVE "zomi"
+               TO WS-ACT-HOUR(11)
+           MOVE "zomi na mosi"
+               TO WS-ACT-HOUR(12)
+           MOVE "midi ya butu"
+               TO WS-ACT-MIDNIGHT
+           MOVE "midi"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
                TO WS-ACT-COMPACT-PM
            .
 
@@ -4693,6 +5698,156 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/men.json
+       INIT-LOCALE-MEN.
+           MOVE "men" TO WS-ACT-CODE
+           MOVE "pu wɛlɛ"
+               TO WS-ACT-HOUR(1)
+           MOVE "yila"
+               TO WS-ACT-HOUR(2)
+           MOVE "fele"
+               TO WS-ACT-HOUR(3)
+           MOVE "sawa"
+               TO WS-ACT-HOUR(4)
+           MOVE "nani"
+               TO WS-ACT-HOUR(5)
+           MOVE "lɔlu"
+               TO WS-ACT-HOUR(6)
+           MOVE "wɛita"
+               TO WS-ACT-HOUR(7)
+           MOVE "wɔfela"
+               TO WS-ACT-HOUR(8)
+           MOVE "wayakpa"
+               TO WS-ACT-HOUR(9)
+           MOVE "taawu"
+               TO WS-ACT-HOUR(10)
+           MOVE "pu"
+               TO WS-ACT-HOUR(11)
+           MOVE "pu mahu yila"
+               TO WS-ACT-HOUR(12)
+           MOVE "kpindi gbɔyɔŋ"
+               TO WS-ACT-MIDNIGHT
+           MOVE "ndɔlei-ma"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/mfe.json
+       INIT-LOCALE-MFE.
+           MOVE "mfe" TO WS-ACT-CODE
+           MOVE "douz"
+               TO WS-ACT-HOUR(1)
+           MOVE "enn"
+               TO WS-ACT-HOUR(2)
+           MOVE "de"
+               TO WS-ACT-HOUR(3)
+           MOVE "trwa"
+               TO WS-ACT-HOUR(4)
+           MOVE "kat"
+               TO WS-ACT-HOUR(5)
+           MOVE "senk"
+               TO WS-ACT-HOUR(6)
+           MOVE "sis"
+               TO WS-ACT-HOUR(7)
+           MOVE "set"
+               TO WS-ACT-HOUR(8)
+           MOVE "wit"
+               TO WS-ACT-HOUR(9)
+           MOVE "nef"
+               TO WS-ACT-HOUR(10)
+           MOVE "dis"
+               TO WS-ACT-HOUR(11)
+           MOVE "onz"
+               TO WS-ACT-HOUR(12)
+           MOVE "minwi"
+               TO WS-ACT-MIDNIGHT
+           MOVE "midi"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/mg.json
        INIT-LOCALE-MG.
            MOVE "mg" TO WS-ACT-CODE
@@ -5065,6 +6220,156 @@
            MOVE SPACES
                TO WS-ACT-COMPACT-AM
            MOVE SPACES
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/mnk.json
+       INIT-LOCALE-MNK.
+           MOVE "mnk" TO WS-ACT-CODE
+           MOVE "tan ning fula"
+               TO WS-ACT-HOUR(1)
+           MOVE "kiliŋ"
+               TO WS-ACT-HOUR(2)
+           MOVE "fula"
+               TO WS-ACT-HOUR(3)
+           MOVE "saba"
+               TO WS-ACT-HOUR(4)
+           MOVE "naani"
+               TO WS-ACT-HOUR(5)
+           MOVE "luulu"
+               TO WS-ACT-HOUR(6)
+           MOVE "wɔɔrɔ"
+               TO WS-ACT-HOUR(7)
+           MOVE "wolonfila"
+               TO WS-ACT-HOUR(8)
+           MOVE "sey"
+               TO WS-ACT-HOUR(9)
+           MOVE "kɔnɔntɔ"
+               TO WS-ACT-HOUR(10)
+           MOVE "taŋ"
+               TO WS-ACT-HOUR(11)
+           MOVE "taŋ ning kiliŋ"
+               TO WS-ACT-HOUR(12)
+           MOVE "sutu-tili-laŋ"
+               TO WS-ACT-MIDNIGHT
+           MOVE "tili-konto"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/mos.json
+       INIT-LOCALE-MOS.
+           MOVE "mos" TO WS-ACT-CODE
+           MOVE "piig la a yiibu"
+               TO WS-ACT-HOUR(1)
+           MOVE "a yembre"
+               TO WS-ACT-HOUR(2)
+           MOVE "a yiibu"
+               TO WS-ACT-HOUR(3)
+           MOVE "a tãabo"
+               TO WS-ACT-HOUR(4)
+           MOVE "a naase"
+               TO WS-ACT-HOUR(5)
+           MOVE "a nu"
+               TO WS-ACT-HOUR(6)
+           MOVE "a yoobe"
+               TO WS-ACT-HOUR(7)
+           MOVE "a yopoe"
+               TO WS-ACT-HOUR(8)
+           MOVE "a niini"
+               TO WS-ACT-HOUR(9)
+           MOVE "a wae"
+               TO WS-ACT-HOUR(10)
+           MOVE "piiga"
+               TO WS-ACT-HOUR(11)
+           MOVE "piig la a yembre"
+               TO WS-ACT-HOUR(12)
+           MOVE "yʋng-vɩɩse"
+               TO WS-ACT-MIDNIGHT
+           MOVE "wĩntoog zabre"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
                TO WS-ACT-COMPACT-PM
            .
 
@@ -5443,6 +6748,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/nd.json
+       INIT-LOCALE-ND.
+           MOVE "nd" TO WS-ACT-CODE
+           MOVE "litshumi lambili"
+               TO WS-ACT-HOUR(1)
+           MOVE "kunye"
+               TO WS-ACT-HOUR(2)
+           MOVE "kubili"
+               TO WS-ACT-HOUR(3)
+           MOVE "kuthathu"
+               TO WS-ACT-HOUR(4)
+           MOVE "kune"
+               TO WS-ACT-HOUR(5)
+           MOVE "kuhlanu"
+               TO WS-ACT-HOUR(6)
+           MOVE "isithupha"
+               TO WS-ACT-HOUR(7)
+           MOVE "isikhombisa"
+               TO WS-ACT-HOUR(8)
+           MOVE "isitshiyangalombili"
+               TO WS-ACT-HOUR(9)
+           MOVE "isitshiyangalolunye"
+               TO WS-ACT-HOUR(10)
+           MOVE "litshumi"
+               TO WS-ACT-HOUR(11)
+           MOVE "litshumi lanye"
+               TO WS-ACT-HOUR(12)
+           MOVE "phakathi kobusuku"
+               TO WS-ACT-MIDNIGHT
+           MOVE "emini"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/ne.json
        INIT-LOCALE-NE.
            MOVE "ne" TO WS-ACT-CODE
@@ -5473,6 +6853,81 @@
            MOVE "मध्यरात"
                TO WS-ACT-MIDNIGHT
            MOVE "मध्यान्ह"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/ng.json
+       INIT-LOCALE-NG.
+           MOVE "ng" TO WS-ACT-CODE
+           MOVE "omulongo nambali"
+               TO WS-ACT-HOUR(1)
+           MOVE "imwe"
+               TO WS-ACT-HOUR(2)
+           MOVE "mbali"
+               TO WS-ACT-HOUR(3)
+           MOVE "ndatu"
+               TO WS-ACT-HOUR(4)
+           MOVE "ne"
+               TO WS-ACT-HOUR(5)
+           MOVE "ntano"
+               TO WS-ACT-HOUR(6)
+           MOVE "hamano"
+               TO WS-ACT-HOUR(7)
+           MOVE "heyali"
+               TO WS-ACT-HOUR(8)
+           MOVE "hetatu"
+               TO WS-ACT-HOUR(9)
+           MOVE "omugoyi"
+               TO WS-ACT-HOUR(10)
+           MOVE "omulongo"
+               TO WS-ACT-HOUR(11)
+           MOVE "omulongo nimwe"
+               TO WS-ACT-HOUR(12)
+           MOVE "onguloshi pakati"
+               TO WS-ACT-MIDNIGHT
+           MOVE "omutenya"
                TO WS-ACT-NOON
            MOVE "{h}:00"
                TO WS-ACT-PATTERN(1)
@@ -5590,6 +7045,156 @@
            MOVE SPACES
                TO WS-ACT-COMPACT-AM
            MOVE SPACES
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/nso.json
+       INIT-LOCALE-NSO.
+           MOVE "nso" TO WS-ACT-CODE
+           MOVE "lesome pedi"
+               TO WS-ACT-HOUR(1)
+           MOVE "tee"
+               TO WS-ACT-HOUR(2)
+           MOVE "pedi"
+               TO WS-ACT-HOUR(3)
+           MOVE "tharo"
+               TO WS-ACT-HOUR(4)
+           MOVE "nne"
+               TO WS-ACT-HOUR(5)
+           MOVE "hlano"
+               TO WS-ACT-HOUR(6)
+           MOVE "tshela"
+               TO WS-ACT-HOUR(7)
+           MOVE "šupa"
+               TO WS-ACT-HOUR(8)
+           MOVE "seswai"
+               TO WS-ACT-HOUR(9)
+           MOVE "senyane"
+               TO WS-ACT-HOUR(10)
+           MOVE "lesome"
+               TO WS-ACT-HOUR(11)
+           MOVE "lesome tee"
+               TO WS-ACT-HOUR(12)
+           MOVE "bošego gare"
+               TO WS-ACT-MIDNIGHT
+           MOVE "mosegare"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/nus.json
+       INIT-LOCALE-NUS.
+           MOVE "nus" TO WS-ACT-CODE
+           MOVE "thiäär ke rou"
+               TO WS-ACT-HOUR(1)
+           MOVE "tök"
+               TO WS-ACT-HOUR(2)
+           MOVE "rou"
+               TO WS-ACT-HOUR(3)
+           MOVE "diäk"
+               TO WS-ACT-HOUR(4)
+           MOVE "ŋuan"
+               TO WS-ACT-HOUR(5)
+           MOVE "dhiëc"
+               TO WS-ACT-HOUR(6)
+           MOVE "bäkɛl"
+               TO WS-ACT-HOUR(7)
+           MOVE "dhorou"
+               TO WS-ACT-HOUR(8)
+           MOVE "bät"
+               TO WS-ACT-HOUR(9)
+           MOVE "kuɔn"
+               TO WS-ACT-HOUR(10)
+           MOVE "thiäär"
+               TO WS-ACT-HOUR(11)
+           MOVE "thiäär ku tök"
+               TO WS-ACT-HOUR(12)
+           MOVE "wakɔ̈u"
+               TO WS-ACT-MIDNIGHT
+           MOVE "cäŋ kɔ̈k"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
                TO WS-ACT-COMPACT-PM
            .
 
@@ -5965,6 +7570,81 @@
            MOVE SPACES
                TO WS-ACT-COMPACT-AM
            MOVE SPACES
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/pov.json
+       INIT-LOCALE-POV.
+           MOVE "pov" TO WS-ACT-CODE
+           MOVE "dozi"
+               TO WS-ACT-HOUR(1)
+           MOVE "un"
+               TO WS-ACT-HOUR(2)
+           MOVE "dos"
+               TO WS-ACT-HOUR(3)
+           MOVE "tres"
+               TO WS-ACT-HOUR(4)
+           MOVE "kuatru"
+               TO WS-ACT-HOUR(5)
+           MOVE "sinku"
+               TO WS-ACT-HOUR(6)
+           MOVE "seis"
+               TO WS-ACT-HOUR(7)
+           MOVE "seti"
+               TO WS-ACT-HOUR(8)
+           MOVE "oitu"
+               TO WS-ACT-HOUR(9)
+           MOVE "novi"
+               TO WS-ACT-HOUR(10)
+           MOVE "des"
+               TO WS-ACT-HOUR(11)
+           MOVE "onzi"
+               TO WS-ACT-HOUR(12)
+           MOVE "meia noti"
+               TO WS-ACT-MIDNIGHT
+           MOVE "meiu dia"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
                TO WS-ACT-COMPACT-PM
            .
 
@@ -6418,6 +8098,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/sar.json
+       INIT-LOCALE-SAR.
+           MOVE "sar" TO WS-ACT-CODE
+           MOVE "mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi"
+               TO WS-ACT-HOUR(1)
+           MOVE "kɨ̀ndá"
+               TO WS-ACT-HOUR(2)
+           MOVE "ɗìi"
+               TO WS-ACT-HOUR(3)
+           MOVE "mùtá"
+               TO WS-ACT-HOUR(4)
+           MOVE "sɔ̀"
+               TO WS-ACT-HOUR(5)
+           MOVE "mɨ̀ndɨ̀"
+               TO WS-ACT-HOUR(6)
+           MOVE "mɨ̀ndɨ̀ kɨ̀ndá"
+               TO WS-ACT-HOUR(7)
+           MOVE "mɨ̀sá"
+               TO WS-ACT-HOUR(8)
+           MOVE "mɨ̀ndɨ̀ mùtá"
+               TO WS-ACT-HOUR(9)
+           MOVE "mɨ̀ndɨ̀ sɔ̀"
+               TO WS-ACT-HOUR(10)
+           MOVE "mɔ̀ɔ́"
+               TO WS-ACT-HOUR(11)
+           MOVE "mɔ̀ɔ́ kɨ̀ndá"
+               TO WS-ACT-HOUR(12)
+           MOVE "badɔ"
+               TO WS-ACT-MIDNIGHT
+           MOVE "mbɔr ndɔ"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/sd.json
        INIT-LOCALE-SD.
            MOVE "sd" TO WS-ACT-CODE
@@ -6448,6 +8203,81 @@
            MOVE "اڌ رات"
                TO WS-ACT-MIDNIGHT
            MOVE "ٽپھر"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/sg.json
+       INIT-LOCALE-SG.
+           MOVE "sg" TO WS-ACT-CODE
+           MOVE "bâlè-ûse"
+               TO WS-ACT-HOUR(1)
+           MOVE "ôko"
+               TO WS-ACT-HOUR(2)
+           MOVE "ûse"
+               TO WS-ACT-HOUR(3)
+           MOVE "otâ"
+               TO WS-ACT-HOUR(4)
+           MOVE "usïö"
+               TO WS-ACT-HOUR(5)
+           MOVE "okü"
+               TO WS-ACT-HOUR(6)
+           MOVE "ömënë"
+               TO WS-ACT-HOUR(7)
+           MOVE "mbïrïmbïrï"
+               TO WS-ACT-HOUR(8)
+           MOVE "mënâmbârâ"
+               TO WS-ACT-HOUR(9)
+           MOVE "gonambâlâ"
+               TO WS-ACT-HOUR(10)
+           MOVE "bâlè"
+               TO WS-ACT-HOUR(11)
+           MOVE "bâlè na ôko"
+               TO WS-ACT-HOUR(12)
+           MOVE "gï na lögö"
+               TO WS-ACT-MIDNIGHT
+           MOVE "lâ nzönï"
                TO WS-ACT-NOON
            MOVE "{h}:00"
                TO WS-ACT-PATTERN(1)
@@ -6868,6 +8698,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/snk.json
+       INIT-LOCALE-SNK.
+           MOVE "snk" TO WS-ACT-CODE
+           MOVE "tanmu fillo"
+               TO WS-ACT-HOUR(1)
+           MOVE "baane"
+               TO WS-ACT-HOUR(2)
+           MOVE "fillo"
+               TO WS-ACT-HOUR(3)
+           MOVE "sikko"
+               TO WS-ACT-HOUR(4)
+           MOVE "naaxato"
+               TO WS-ACT-HOUR(5)
+           MOVE "karago"
+               TO WS-ACT-HOUR(6)
+           MOVE "tunmu"
+               TO WS-ACT-HOUR(7)
+           MOVE "ñerru"
+               TO WS-ACT-HOUR(8)
+           MOVE "segu"
+               TO WS-ACT-HOUR(9)
+           MOVE "kaburu"
+               TO WS-ACT-HOUR(10)
+           MOVE "tanmu"
+               TO WS-ACT-HOUR(11)
+           MOVE "tanmu baane"
+               TO WS-ACT-HOUR(12)
+           MOVE "sulen noxo"
+               TO WS-ACT-MIDNIGHT
+           MOVE "tili seren"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/so.json
        INIT-LOCALE-SO.
            MOVE "so" TO WS-ACT-CODE
@@ -7093,6 +8998,156 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/ss.json
+       INIT-LOCALE-SS.
+           MOVE "ss" TO WS-ACT-CODE
+           MOVE "lishumi nambili"
+               TO WS-ACT-HOUR(1)
+           MOVE "kunye"
+               TO WS-ACT-HOUR(2)
+           MOVE "kubili"
+               TO WS-ACT-HOUR(3)
+           MOVE "kutsatfu"
+               TO WS-ACT-HOUR(4)
+           MOVE "kune"
+               TO WS-ACT-HOUR(5)
+           MOVE "kusihlanu"
+               TO WS-ACT-HOUR(6)
+           MOVE "sitfupha"
+               TO WS-ACT-HOUR(7)
+           MOVE "sikhombisa"
+               TO WS-ACT-HOUR(8)
+           MOVE "siphohlongo"
+               TO WS-ACT-HOUR(9)
+           MOVE "sifisagcina"
+               TO WS-ACT-HOUR(10)
+           MOVE "lishumi"
+               TO WS-ACT-HOUR(11)
+           MOVE "lishumi nakunye"
+               TO WS-ACT-HOUR(12)
+           MOVE "phakathi kwebusuku"
+               TO WS-ACT-MIDNIGHT
+           MOVE "emini"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/st.json
+       INIT-LOCALE-ST.
+           MOVE "st" TO WS-ACT-CODE
+           MOVE "leshome le metso e mmedi"
+               TO WS-ACT-HOUR(1)
+           MOVE "e nngwe"
+               TO WS-ACT-HOUR(2)
+           MOVE "tse pedi"
+               TO WS-ACT-HOUR(3)
+           MOVE "tse tharo"
+               TO WS-ACT-HOUR(4)
+           MOVE "tse nne"
+               TO WS-ACT-HOUR(5)
+           MOVE "tse hlano"
+               TO WS-ACT-HOUR(6)
+           MOVE "tse tshelela"
+               TO WS-ACT-HOUR(7)
+           MOVE "tse supileng"
+               TO WS-ACT-HOUR(8)
+           MOVE "tse robedi"
+               TO WS-ACT-HOUR(9)
+           MOVE "tse robong"
+               TO WS-ACT-HOUR(10)
+           MOVE "leshome"
+               TO WS-ACT-HOUR(11)
+           MOVE "leshome le motso o le mong"
+               TO WS-ACT-HOUR(12)
+           MOVE "hara bosiu"
+               TO WS-ACT-MIDNIGHT
+           MOVE "motsheare"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/su.json
        INIT-LOCALE-SU.
            MOVE "su" TO WS-ACT-CODE
@@ -7123,6 +9178,81 @@
            MOVE "tengah peuting"
                TO WS-ACT-MIDNIGHT
            MOVE "beurang"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/suk.json
+       INIT-LOCALE-SUK.
+           MOVE "suk" TO WS-ACT-CODE
+           MOVE "kumi na mbili"
+               TO WS-ACT-HOUR(1)
+           MOVE "moja"
+               TO WS-ACT-HOUR(2)
+           MOVE "mbili"
+               TO WS-ACT-HOUR(3)
+           MOVE "tatu"
+               TO WS-ACT-HOUR(4)
+           MOVE "nne"
+               TO WS-ACT-HOUR(5)
+           MOVE "tano"
+               TO WS-ACT-HOUR(6)
+           MOVE "sita"
+               TO WS-ACT-HOUR(7)
+           MOVE "saba"
+               TO WS-ACT-HOUR(8)
+           MOVE "nane"
+               TO WS-ACT-HOUR(9)
+           MOVE "tisa"
+               TO WS-ACT-HOUR(10)
+           MOVE "kumi"
+               TO WS-ACT-HOUR(11)
+           MOVE "kumi na moja"
+               TO WS-ACT-HOUR(12)
+           MOVE "usiku gati"
+               TO WS-ACT-MIDNIGHT
+           MOVE "adhuhuri"
                TO WS-ACT-NOON
            MOVE "{h}:00"
                TO WS-ACT-PATTERN(1)
@@ -7468,6 +9598,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/tem.json
+       INIT-LOCALE-TEM.
+           MOVE "tem" TO WS-ACT-CODE
+           MOVE "pɛn pu"
+               TO WS-ACT-HOUR(1)
+           MOVE "kɩrɩŋ"
+               TO WS-ACT-HOUR(2)
+           MOVE "rɔŋ"
+               TO WS-ACT-HOUR(3)
+           MOVE "rasar"
+               TO WS-ACT-HOUR(4)
+           MOVE "rɔŋ-anat"
+               TO WS-ACT-HOUR(5)
+           MOVE "rɔman"
+               TO WS-ACT-HOUR(6)
+           MOVE "rɔmata"
+               TO WS-ACT-HOUR(7)
+           MOVE "rɔmbot"
+               TO WS-ACT-HOUR(8)
+           MOVE "rɔmɔntat"
+               TO WS-ACT-HOUR(9)
+           MOVE "rɔmɔntaŋka"
+               TO WS-ACT-HOUR(10)
+           MOVE "pɛn"
+               TO WS-ACT-HOUR(11)
+           MOVE "pɛn nɛ kɩrɩŋ"
+               TO WS-ACT-HOUR(12)
+           MOVE "rofɛt anpa"
+               TO WS-ACT-MIDNIGHT
+           MOVE "lən"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/tg.json
        INIT-LOCALE-TG.
            MOVE "tg" TO WS-ACT-CODE
@@ -7693,6 +9898,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/tig.json
+       INIT-LOCALE-TIG.
+           MOVE "tig" TO WS-ACT-CODE
+           MOVE "ʿasərte wəkəlte"
+               TO WS-ACT-HOUR(1)
+           MOVE "ḥante"
+               TO WS-ACT-HOUR(2)
+           MOVE "kəlʾe"
+               TO WS-ACT-HOUR(3)
+           MOVE "səleste"
+               TO WS-ACT-HOUR(4)
+           MOVE "arbaʿte"
+               TO WS-ACT-HOUR(5)
+           MOVE "ḥamməste"
+               TO WS-ACT-HOUR(6)
+           MOVE "səste"
+               TO WS-ACT-HOUR(7)
+           MOVE "sabʿate"
+               TO WS-ACT-HOUR(8)
+           MOVE "səmmunte"
+               TO WS-ACT-HOUR(9)
+           MOVE "təsʿate"
+               TO WS-ACT-HOUR(10)
+           MOVE "ʿasərte"
+               TO WS-ACT-HOUR(11)
+           MOVE "ʿasərte wəḥante"
+               TO WS-ACT-HOUR(12)
+           MOVE "nəs-leyla"
+               TO WS-ACT-MIDNIGHT
+           MOVE "qayḥ"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/tk.json
        INIT-LOCALE-TK.
            MOVE "tk" TO WS-ACT-CODE
@@ -7768,6 +10048,81 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/tn.json
+       INIT-LOCALE-TN.
+           MOVE "tn" TO WS-ACT-CODE
+           MOVE "lesome le bobedi"
+               TO WS-ACT-HOUR(1)
+           MOVE "nngwe"
+               TO WS-ACT-HOUR(2)
+           MOVE "pedi"
+               TO WS-ACT-HOUR(3)
+           MOVE "tharo"
+               TO WS-ACT-HOUR(4)
+           MOVE "nne"
+               TO WS-ACT-HOUR(5)
+           MOVE "tlhano"
+               TO WS-ACT-HOUR(6)
+           MOVE "thataro"
+               TO WS-ACT-HOUR(7)
+           MOVE "supa"
+               TO WS-ACT-HOUR(8)
+           MOVE "robedi"
+               TO WS-ACT-HOUR(9)
+           MOVE "robongwe"
+               TO WS-ACT-HOUR(10)
+           MOVE "lesome"
+               TO WS-ACT-HOUR(11)
+           MOVE "lesome le bongwe"
+               TO WS-ACT-HOUR(12)
+           MOVE "bosigo jwa magareng"
+               TO WS-ACT-MIDNIGHT
+           MOVE "motshegare"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/tr.json
        INIT-LOCALE-TR.
            MOVE "tr" TO WS-ACT-CODE
@@ -7840,6 +10195,81 @@
            MOVE SPACES
                TO WS-ACT-COMPACT-AM
            MOVE SPACES
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/ts.json
+       INIT-LOCALE-TS.
+           MOVE "ts" TO WS-ACT-CODE
+           MOVE "khume mbiri"
+               TO WS-ACT-HOUR(1)
+           MOVE "yin'we"
+               TO WS-ACT-HOUR(2)
+           MOVE "mbirhi"
+               TO WS-ACT-HOUR(3)
+           MOVE "nharhu"
+               TO WS-ACT-HOUR(4)
+           MOVE "mune"
+               TO WS-ACT-HOUR(5)
+           MOVE "ntlhanu"
+               TO WS-ACT-HOUR(6)
+           MOVE "tsevu"
+               TO WS-ACT-HOUR(7)
+           MOVE "nkombo"
+               TO WS-ACT-HOUR(8)
+           MOVE "nhungu"
+               TO WS-ACT-HOUR(9)
+           MOVE "kaye"
+               TO WS-ACT-HOUR(10)
+           MOVE "khume"
+               TO WS-ACT-HOUR(11)
+           MOVE "khume yin'we"
+               TO WS-ACT-HOUR(12)
+           MOVE "vusiku exikarhi"
+               TO WS-ACT-MIDNIGHT
+           MOVE "nhlekanhi"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
                TO WS-ACT-COMPACT-PM
            .
 
@@ -7990,6 +10420,81 @@
            MOVE SPACES
                TO WS-ACT-COMPACT-AM
            MOVE SPACES
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/umb.json
+       INIT-LOCALE-UMB.
+           MOVE "umb" TO WS-ACT-CODE
+           MOVE "olohola likumi na yivali"
+               TO WS-ACT-HOUR(1)
+           MOVE "yimosi"
+               TO WS-ACT-HOUR(2)
+           MOVE "yivali"
+               TO WS-ACT-HOUR(3)
+           MOVE "yitathu"
+               TO WS-ACT-HOUR(4)
+           MOVE "yinyali"
+               TO WS-ACT-HOUR(5)
+           MOVE "yitanu"
+               TO WS-ACT-HOUR(6)
+           MOVE "yitathu-va-yivali"
+               TO WS-ACT-HOUR(7)
+           MOVE "yisemba"
+               TO WS-ACT-HOUR(8)
+           MOVE "yinyali-va-yivali"
+               TO WS-ACT-HOUR(9)
+           MOVE "yitanu-va-yivali"
+               TO WS-ACT-HOUR(10)
+           MOVE "likumi"
+               TO WS-ACT-HOUR(11)
+           MOVE "likumi na yimosi"
+               TO WS-ACT-HOUR(12)
+           MOVE "ocitapi"
+               TO WS-ACT-MIDNIGHT
+           MOVE "ocivali"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
                TO WS-ACT-COMPACT-PM
            .
 
@@ -8218,6 +10723,156 @@
                TO WS-ACT-COMPACT-PM
            .
 
+*> Source: time/locales/src/vmw.json
+       INIT-LOCALE-VMW.
+           MOVE "vmw" TO WS-ACT-CODE
+           MOVE "khumi na pili"
+               TO WS-ACT-HOUR(1)
+           MOVE "mosa"
+               TO WS-ACT-HOUR(2)
+           MOVE "pili"
+               TO WS-ACT-HOUR(3)
+           MOVE "ttatthu"
+               TO WS-ACT-HOUR(4)
+           MOVE "ncheche"
+               TO WS-ACT-HOUR(5)
+           MOVE "thanu"
+               TO WS-ACT-HOUR(6)
+           MOVE "thanu na mosa"
+               TO WS-ACT-HOUR(7)
+           MOVE "thanu na pili"
+               TO WS-ACT-HOUR(8)
+           MOVE "thanu na ttatthu"
+               TO WS-ACT-HOUR(9)
+           MOVE "thanu na ncheche"
+               TO WS-ACT-HOUR(10)
+           MOVE "khumi"
+               TO WS-ACT-HOUR(11)
+           MOVE "khumi na mosa"
+               TO WS-ACT-HOUR(12)
+           MOVE "usiku wopakhala"
+               TO WS-ACT-MIDNIGHT
+           MOVE "muttana"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/wo.json
+       INIT-LOCALE-WO.
+           MOVE "wo" TO WS-ACT-CODE
+           MOVE "fukki ñaar"
+               TO WS-ACT-HOUR(1)
+           MOVE "benn"
+               TO WS-ACT-HOUR(2)
+           MOVE "ñaar"
+               TO WS-ACT-HOUR(3)
+           MOVE "ñett"
+               TO WS-ACT-HOUR(4)
+           MOVE "ñeent"
+               TO WS-ACT-HOUR(5)
+           MOVE "juróom"
+               TO WS-ACT-HOUR(6)
+           MOVE "juróom-benn"
+               TO WS-ACT-HOUR(7)
+           MOVE "juróom-ñaar"
+               TO WS-ACT-HOUR(8)
+           MOVE "juróom-ñett"
+               TO WS-ACT-HOUR(9)
+           MOVE "juróom-ñeent"
+               TO WS-ACT-HOUR(10)
+           MOVE "fukk"
+               TO WS-ACT-HOUR(11)
+           MOVE "fukki benn"
+               TO WS-ACT-HOUR(12)
+           MOVE "bu guddi"
+               TO WS-ACT-MIDNIGHT
+           MOVE "ci àttaya"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
+               TO WS-ACT-COMPACT-PM
+           .
+
 *> Source: time/locales/src/xh.json
        INIT-LOCALE-XH.
            MOVE "xh" TO WS-ACT-CODE
@@ -8440,6 +11095,81 @@
            MOVE SPACES
                TO WS-ACT-COMPACT-AM
            MOVE SPACES
+               TO WS-ACT-COMPACT-PM
+           .
+
+*> Source: time/locales/src/zdj.json
+       INIT-LOCALE-ZDJ.
+           MOVE "zdj" TO WS-ACT-CODE
+           MOVE "kumi na mbili"
+               TO WS-ACT-HOUR(1)
+           MOVE "moja"
+               TO WS-ACT-HOUR(2)
+           MOVE "mbili"
+               TO WS-ACT-HOUR(3)
+           MOVE "tatu"
+               TO WS-ACT-HOUR(4)
+           MOVE "nne"
+               TO WS-ACT-HOUR(5)
+           MOVE "tano"
+               TO WS-ACT-HOUR(6)
+           MOVE "sita"
+               TO WS-ACT-HOUR(7)
+           MOVE "saba"
+               TO WS-ACT-HOUR(8)
+           MOVE "nane"
+               TO WS-ACT-HOUR(9)
+           MOVE "tisa"
+               TO WS-ACT-HOUR(10)
+           MOVE "kumi"
+               TO WS-ACT-HOUR(11)
+           MOVE "kumi na moja"
+               TO WS-ACT-HOUR(12)
+           MOVE "usiku wa manane"
+               TO WS-ACT-MIDNIGHT
+           MOVE "adhuhuri"
+               TO WS-ACT-NOON
+           MOVE "{h}:00"
+               TO WS-ACT-PATTERN(1)
+           MOVE "{h}:05"
+               TO WS-ACT-PATTERN(2)
+           MOVE "{h}:10"
+               TO WS-ACT-PATTERN(3)
+           MOVE "{h}:15"
+               TO WS-ACT-PATTERN(4)
+           MOVE "{h}:20"
+               TO WS-ACT-PATTERN(5)
+           MOVE "{h}:25"
+               TO WS-ACT-PATTERN(6)
+           MOVE "{h}:30"
+               TO WS-ACT-PATTERN(7)
+           MOVE "{h}:35"
+               TO WS-ACT-PATTERN(8)
+           MOVE "{h}:40"
+               TO WS-ACT-PATTERN(9)
+           MOVE "{h}:45"
+               TO WS-ACT-PATTERN(10)
+           MOVE "{h}:50"
+               TO WS-ACT-PATTERN(11)
+           MOVE "{h}:55"
+               TO WS-ACT-PATTERN(12)
+           MOVE 1 TO WS-ACT-HAS-SHORT
+           MOVE 0
+               TO WS-ACT-SHORT-USE24H
+           MOVE "{h}:{mm} {ampm}"
+               TO WS-ACT-SHORT-FORMAT
+           MOVE "AM"
+               TO WS-ACT-SHORT-AM
+           MOVE "PM"
+               TO WS-ACT-SHORT-PM
+           MOVE 1 TO WS-ACT-HAS-COMPACT
+           MOVE 0
+               TO WS-ACT-COMPACT-USE24H
+           MOVE "{h}:{mm}{ampm}"
+               TO WS-ACT-COMPACT-FORMAT
+           MOVE "a"
+               TO WS-ACT-COMPACT-AM
+           MOVE "p"
                TO WS-ACT-COMPACT-PM
            .
 

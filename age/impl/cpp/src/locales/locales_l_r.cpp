@@ -213,6 +213,83 @@ const AgeLocale& LV() {
     return loc;
 }
 
+// Source: age/locales/src/men.json
+const AgeLocale& MEN() {
+    static const AgeLocale loc{
+        "men",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "lɔhɔ {n}"}, {PluralCategory::Other, "lɔhɔnga {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "wikii {n}"}, {PluralCategory::Other, "wikii {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ndɔlɔ {n}"}, {PluralCategory::Other, "ndɔlɔnga {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "saŋ {n}"}, {PluralCategory::Other, "saŋga {n}"}})
+        },
+        "{0} ta fele", ", ", "Ndɔpɔi fele",
+        StageLabels{{"Ndɔpɔi fele", ""}, {"Ndɔpɔi", ""}, {"Ndɔpɔi", ""}, {"Ndopoi", ""}, {"Ndakpayei", ""}, {"Numu-waa", ""}},
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "lɔhɔ {n}"}, {PluralCategory::Other, "lɔhɔnga {n}"}}),
+            UnitForms::Simple("wikii {n}"),
+            UnitForms::Plural({{PluralCategory::One, "ndɔlɔ {n}"}, {PluralCategory::Other, "ndɔlɔnga {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "saŋ {n}"}, {PluralCategory::Other, "saŋga {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/mfe.json
+const AgeLocale& MFE() {
+    static const AgeLocale loc{
+        "mfe",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} zour"),
+            UnitForms::Simple("{n} semenn"),
+            UnitForms::Simple("{n} mwa"),
+            UnitForms::Simple("{n} lane")
+        },
+        "{0} edmi", ", ", "Zanfan fek ne",
+        StageLabels{{"Zanfan fek ne", ""}, {"Ti baba", ""}, {"Ti zanfan", ""}, {"Zanfan", ""}, {"Adolesan", ""}, {"Gran dimoun", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} zr"),
+            UnitForms::Simple("{n} sem"),
+            UnitForms::Simple("{n} mwa"),
+            UnitForms::Simple("{n} la"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} zr"),
+            UnitForms::Simple("{n} sem"),
+            UnitForms::Simple("{n} mwa"),
+            UnitForms::Simple("{n} la"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: age/locales/src/mg.json
 const AgeLocale& MG() {
     static const AgeLocale loc{
@@ -401,6 +478,82 @@ const AgeLocale& MN() {
             UnitForms::Simple("{n} д"),
             UnitForms::Simple("{n} с"),
             UnitForms::Simple("{n} н"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/mnk.json
+const AgeLocale& MNK() {
+    static const AgeLocale loc{
+        "mnk",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("tili {n}"),
+            UnitForms::Simple("lɔkɔ {n}"),
+            UnitForms::Simple("kalo {n}"),
+            UnitForms::Simple("sanji {n}")
+        },
+        "{0} ning tilinkiliŋo", ", ", "A banta ka wolo",
+        StageLabels{{"Dindinkoto", ""}, {"Dindiŋo", ""}, {"Dindinkuto", ""}, {"Diŋo", ""}, {"Kambaaŋo", ""}, {"Moo koto", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("tili {n}"),
+            UnitForms::Simple("lɔkɔ {n}"),
+            UnitForms::Simple("kalo {n}"),
+            UnitForms::Simple("sanj. {n}"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("tili {n}"),
+            UnitForms::Simple("lɔkɔ {n}"),
+            UnitForms::Simple("kalo {n}"),
+            UnitForms::Simple("sanj {n}"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/mos.json
+const AgeLocale& MOS() {
+    static const AgeLocale loc{
+        "mos",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("daare {n}"),
+            UnitForms::Simple("semaana {n}"),
+            UnitForms::Simple("kiuugu {n}"),
+            UnitForms::Simple("yʋʋmde {n}")
+        },
+        "{0} la pʋɩ-sʋka", ", ", "A sẽn dog-a",
+        StageLabels{{"Bi-paalga", ""}, {"Bi-bɩɩga", ""}, {"Bi-kɩdga", ""}, {"Biiga", ""}, {"Bi-raaga", ""}, {"Nin-kẽema", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("daar. {n}"),
+            UnitForms::Simple("sem. {n}"),
+            UnitForms::Simple("kiu. {n}"),
+            UnitForms::Simple("yʋʋm. {n}"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("daar {n}"),
+            UnitForms::Simple("sem {n}"),
+            UnitForms::Simple("kiu {n}"),
+            UnitForms::Simple("yʋʋm {n}"),
             std::string("{n}½"),
             std::string(""),
             std::nullopt
@@ -607,6 +760,45 @@ const AgeLocale& NB() {
     return loc;
 }
 
+// Source: age/locales/src/nd.json
+const AgeLocale& ND() {
+    static const AgeLocale loc{
+        "nd",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "usuku {n}"}, {PluralCategory::Other, "insuku {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "iviki {n}"}, {PluralCategory::Other, "amaviki {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "inyanga {n}"}, {PluralCategory::Other, "izinyanga {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "umnyaka {n}"}, {PluralCategory::Other, "iminyaka {n}"}})
+        },
+        "{0} lengxenye", ", ", "Usanda kuzalwa",
+        StageLabels{{"Usane olusanda kuzalwa", ""}, {"Usane", ""}, {"Umntwana omncane", ""}, {"Umntwana", ""}, {"Isitsha", ""}, {"Umuntu omdala", ""}},
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "usuku {n}"}, {PluralCategory::Other, "insuku {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "iviki {n}"}, {PluralCategory::Other, "amaviki {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "iny. {n}"}, {PluralCategory::Other, "iziny. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "umny. {n}"}, {PluralCategory::Other, "iminy. {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: age/locales/src/ne.json
 const AgeLocale& NE() {
     static const AgeLocale loc{
@@ -637,6 +829,45 @@ const AgeLocale& NE() {
             UnitForms::Simple("{n} हप्ता"),
             UnitForms::Simple("{n} महिना"),
             UnitForms::Simple("{n} वर्ष"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/ng.json
+const AgeLocale& NG() {
+    static const AgeLocale loc{
+        "ng",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "esiku {n}"}, {PluralCategory::Other, "omasiku {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "oshiwike {n}"}, {PluralCategory::Other, "iiwike {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omuedhi {n}"}, {PluralCategory::Other, "omiedhi {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omvula {n}"}, {PluralCategory::Other, "omivula {n}"}})
+        },
+        "{0} netata", ", ", "Okwa dalwa po",
+        StageLabels{{"Okaana ke li po", ""}, {"Okaana", ""}, {"Okanona", ""}, {"Okanona", ""}, {"Omunyasha", ""}, {"Omuntu omukulu", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("omasiku {n}"),
+            UnitForms::Plural({{PluralCategory::One, "oshiwike {n}"}, {PluralCategory::Other, "iiwike {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omuedhi {n}"}, {PluralCategory::Other, "omiedhi {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omvula {n}"}, {PluralCategory::Other, "omivula {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("omasiku {n}"),
+            UnitForms::Plural({{PluralCategory::One, "oshiw {n}"}, {PluralCategory::Other, "iiw {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omued {n}"}, {PluralCategory::Other, "omied {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omv {n}"}, {PluralCategory::Other, "omiv {n}"}}),
             std::string("{n}½"),
             std::string(""),
             std::nullopt
@@ -677,6 +908,84 @@ const AgeLocale& NL() {
             UnitForms::Simple("{n} m"),
             UnitForms::Simple("{n} jr"),
             std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/nso.json
+const AgeLocale& NSO() {
+    static const AgeLocale loc{
+        "nso",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "letšatši {n}"}, {PluralCategory::Other, "matšatši {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "beke {n}"}, {PluralCategory::Other, "dibeke {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "kgwedi {n}"}, {PluralCategory::Other, "dikgwedi {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ngwaga {n}"}, {PluralCategory::Other, "mengwaga {n}"}})
+        },
+        "{0} le seripagare", ", ", "O sa tšwa belegwa",
+        StageLabels{{"Lesea le sa tšwa belegwa", ""}, {"Lesea", ""}, {"Ngwanyana", ""}, {"Ngwana", ""}, {"Moša", ""}, {"Motho yo mogolo", ""}},
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "letšatši {n}"}, {PluralCategory::Other, "matšatši {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "beke {n}"}, {PluralCategory::Other, "dibeke {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "kgw. {n}"}, {PluralCategory::Other, "dikgw. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ngw. {n}"}, {PluralCategory::Other, "mengw. {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/nus.json
+const AgeLocale& NUS() {
+    static const AgeLocale loc{
+        "nus",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "cäŋ {n}"}, {PluralCategory::Other, "cëŋ {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "korɛ {n}"}, {PluralCategory::Other, "korni {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "pay {n}"}, {PluralCategory::Other, "pei {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ruɔ̈n {n}"}, {PluralCategory::Other, "ruɔ̈ɔ̈ni {n}"}})
+        },
+        "{0} ku kel", ", ", "Gaat mä dhiëëth",
+        StageLabels{{"Gaat mä dhiëëth thiin", ""}, {"Gaat", ""}, {"Gaat cɛɛk", ""}, {"Gaat raan", ""}, {"Raan thok", ""}, {"Raan dit", ""}},
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "cäŋ {n}"}, {PluralCategory::Other, "cëŋ {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "kor. {n}"}, {PluralCategory::Other, "kor. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "pay {n}"}, {PluralCategory::Other, "pei {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ruɔ̈n {n}"}, {PluralCategory::Other, "ruɔ̈ɔ̈ni {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::string("{n}½"),
             std::string(""),
             std::nullopt
         },
@@ -874,6 +1183,44 @@ const AgeLocale& PL() {
             UnitForms::Simple("{n} t."),
             UnitForms::Plural({{PluralCategory::One, "{n} m-c"}, {PluralCategory::Few, "{n} m-ce"}, {PluralCategory::Many, "{n} m-cy"}, {PluralCategory::Other, "{n} m-ca"}}),
             UnitForms::Plural({{PluralCategory::One, "{n} r."}, {PluralCategory::Few, "{n} l."}, {PluralCategory::Many, "{n} l."}, {PluralCategory::Other, "{n} r."}}),
+            std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/pov.json
+const AgeLocale& POV() {
+    static const AgeLocale loc{
+        "pov",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} dia"),
+            UnitForms::Simple("{n} simana"),
+            UnitForms::Simple("{n} mis"),
+            UnitForms::Simple("{n} anu")
+        },
+        "{0} i meiu", ", ", "Mininu kaba di nasi",
+        StageLabels{{"Mininu nobu", ""}, {"Bebi", ""}, {"Mininu pikiñu", ""}, {"Mininu", ""}, {"Rapas", ""}, {"Omi garandi", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} dia"),
+            UnitForms::Simple("{n} sim"),
+            UnitForms::Simple("{n} mis"),
+            UnitForms::Simple("{n} anu"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} dia"),
+            UnitForms::Simple("{n} sim"),
+            UnitForms::Simple("{n} mis"),
+            UnitForms::Simple("{n} anu"),
             std::string("{n}½"),
             std::string(""),
             std::nullopt

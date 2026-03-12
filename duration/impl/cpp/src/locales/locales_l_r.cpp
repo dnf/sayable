@@ -273,6 +273,107 @@ const DurationLocale& LV() {
     return loc;
 }
 
+// Source: duration/locales/src/men.json
+const DurationLocale& MEN() {
+    static const DurationLocale loc{
+        "men",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "sɛkɔn {n}"}, {PluralCategory::Other, "sɛkɔn {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "miniti {n}"}, {PluralCategory::Other, "miniti {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "awa {n}"}, {PluralCategory::Other, "awa {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "lɔhɔ {n}"}, {PluralCategory::Other, "lɔhɔnga {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "wikii {n}"}, {PluralCategory::Other, "wikii {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ndɔlɔ {n}"}, {PluralCategory::Other, "ndɔlɔnga {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "saŋ {n}"}, {PluralCategory::Other, "saŋga {n}"}})
+        },
+        "kɛnɛi",
+        "{0} ta fele", ", ",
+        "{0} taa gbɔyɔ", "yɛ {0}",
+        CompactnessOverride{
+            UnitForms::Simple("sɛk. {n}"),
+            UnitForms::Simple("min. {n}"),
+            UnitForms::Simple("awa {n}"),
+            UnitForms::Plural({{PluralCategory::One, "lɔhɔ {n}"}, {PluralCategory::Other, "lɔhɔnga {n}"}}),
+            UnitForms::Simple("wikii {n}"),
+            UnitForms::Plural({{PluralCategory::One, "ndɔlɔ {n}"}, {PluralCategory::Other, "ndɔlɔnga {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "saŋ {n}"}, {PluralCategory::Other, "saŋga {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} taa gbɔyɔ"),
+            std::string("yɛ {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("{0} taa gbɔyɔ"),
+            std::string("yɛ {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/mfe.json
+const DurationLocale& MFE() {
+    static const DurationLocale loc{
+        "mfe",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} segonn"),
+            UnitForms::Simple("{n} minit"),
+            UnitForms::Simple("{n} ler"),
+            UnitForms::Simple("{n} zour"),
+            UnitForms::Simple("{n} semenn"),
+            UnitForms::Simple("{n} mwa"),
+            UnitForms::Simple("{n} lane")
+        },
+        "aster la",
+        "{0} edmi", ", ",
+        "sa fer {0}", "dan {0}",
+        CompactnessOverride{
+            UnitForms::Simple("{n} seg"),
+            UnitForms::Simple("{n} min"),
+            UnitForms::Simple("{n} ler"),
+            UnitForms::Simple("{n} zr"),
+            UnitForms::Simple("{n} sem"),
+            UnitForms::Simple("{n} mwa"),
+            UnitForms::Simple("{n} la"),
+            std::nullopt,
+            std::nullopt,
+            std::string("sa fer {0}"),
+            std::string("dan {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} seg"),
+            UnitForms::Simple("{n} min"),
+            UnitForms::Simple("{n} ler"),
+            UnitForms::Simple("{n} zr"),
+            UnitForms::Simple("{n} sem"),
+            UnitForms::Simple("{n} mwa"),
+            UnitForms::Simple("{n} la"),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("sa fer {0}"),
+            std::string("dan {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: duration/locales/src/mg.json
 const DurationLocale& MG() {
     static const DurationLocale loc{
@@ -524,6 +625,106 @@ const DurationLocale& MN() {
             std::string(""),
             std::string("{0}-н өмнө"),
             std::string("{0}-н дараа")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/mnk.json
+const DurationLocale& MNK() {
+    static const DurationLocale loc{
+        "mnk",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("sɛkɔŋ {n}"),
+            UnitForms::Simple("miniti {n}"),
+            UnitForms::Simple("tili-waati {n}"),
+            UnitForms::Simple("tili {n}"),
+            UnitForms::Simple("lɔkɔ {n}"),
+            UnitForms::Simple("kalo {n}"),
+            UnitForms::Simple("sanji {n}")
+        },
+        "sisan",
+        "{0} ning tilinkiliŋo", ", ",
+        "{0} taata", "ka {0}",
+        CompactnessOverride{
+            UnitForms::Simple("sɛk. {n}"),
+            UnitForms::Simple("min. {n}"),
+            UnitForms::Simple("waati {n}"),
+            UnitForms::Simple("tili {n}"),
+            UnitForms::Simple("lɔkɔ {n}"),
+            UnitForms::Simple("kalo {n}"),
+            UnitForms::Simple("sanj. {n}"),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} taata"),
+            std::string("ka {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("sɛk {n}"),
+            UnitForms::Simple("min {n}"),
+            UnitForms::Simple("waa {n}"),
+            UnitForms::Simple("tili {n}"),
+            UnitForms::Simple("lɔkɔ {n}"),
+            UnitForms::Simple("kalo {n}"),
+            UnitForms::Simple("sanj {n}"),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("{0} taata"),
+            std::string("ka {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/mos.json
+const DurationLocale& MOS() {
+    static const DurationLocale loc{
+        "mos",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("sẽk {n}"),
+            UnitForms::Simple("minit {n}"),
+            UnitForms::Simple("lɛɛre {n}"),
+            UnitForms::Simple("daare {n}"),
+            UnitForms::Simple("semaana {n}"),
+            UnitForms::Simple("kiuugu {n}"),
+            UnitForms::Simple("yʋʋmde {n}")
+        },
+        "masã",
+        "{0} la pʋɩ-sʋka", ", ",
+        "{0} sẽn loog", "ka {0}",
+        CompactnessOverride{
+            UnitForms::Simple("sẽk {n}"),
+            UnitForms::Simple("min. {n}"),
+            UnitForms::Simple("lɛɛr. {n}"),
+            UnitForms::Simple("daar. {n}"),
+            UnitForms::Simple("sem. {n}"),
+            UnitForms::Simple("kiu. {n}"),
+            UnitForms::Simple("yʋʋm. {n}"),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} sẽn loog"),
+            std::string("ka {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("sẽk {n}"),
+            UnitForms::Simple("min {n}"),
+            UnitForms::Simple("lɛɛr {n}"),
+            UnitForms::Simple("daar {n}"),
+            UnitForms::Simple("sem {n}"),
+            UnitForms::Simple("kiu {n}"),
+            UnitForms::Simple("yʋʋm {n}"),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("{0} loog"),
+            std::string("ka {0}")
         },
         nullptr, nullptr
     };
@@ -787,6 +988,57 @@ const DurationLocale& NB() {
     return loc;
 }
 
+// Source: duration/locales/src/nd.json
+const DurationLocale& ND() {
+    static const DurationLocale loc{
+        "nd",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "umzuzwana {n}"}, {PluralCategory::Other, "imizuzwana {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "umzuzu {n}"}, {PluralCategory::Other, "imizuzu {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ihora {n}"}, {PluralCategory::Other, "amahora {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "usuku {n}"}, {PluralCategory::Other, "insuku {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "iviki {n}"}, {PluralCategory::Other, "amaviki {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "inyanga {n}"}, {PluralCategory::Other, "izinyanga {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "umnyaka {n}"}, {PluralCategory::Other, "iminyaka {n}"}})
+        },
+        "khathesi",
+        "{0} lengxenye", ", ",
+        "{0} edlulileyo", "nge-{0}",
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "umzuzw. {n}"}, {PluralCategory::Other, "imizuzw. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "umzuzu {n}"}, {PluralCategory::Other, "imizuzu {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ihora {n}"}, {PluralCategory::Other, "amahora {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "usuku {n}"}, {PluralCategory::Other, "insuku {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "iviki {n}"}, {PluralCategory::Other, "amaviki {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "iny. {n}"}, {PluralCategory::Other, "iziny. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "umny. {n}"}, {PluralCategory::Other, "iminy. {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} edlulileyo"),
+            std::string("nge-{0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("{0} edlulileyo"),
+            std::string("nge-{0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: duration/locales/src/ne.json
 const DurationLocale& NE() {
     static const DurationLocale loc{
@@ -838,6 +1090,57 @@ const DurationLocale& NE() {
     return loc;
 }
 
+// Source: duration/locales/src/ng.json
+const DurationLocale& NG() {
+    static const DurationLocale loc{
+        "ng",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "osekonde {n}"}, {PluralCategory::Other, "oosekonde {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ominute {n}"}, {PluralCategory::Other, "oominute {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "owoola {n}"}, {PluralCategory::Other, "iiwoola {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "esiku {n}"}, {PluralCategory::Other, "omasiku {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "oshiwike {n}"}, {PluralCategory::Other, "iiwike {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omuedhi {n}"}, {PluralCategory::Other, "omiedhi {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omvula {n}"}, {PluralCategory::Other, "omivula {n}"}})
+        },
+        "ngashingeyi",
+        "{0} netata", ", ",
+        "{0} ya pita", "mo {0}",
+        CompactnessOverride{
+            UnitForms::Simple("oosekonde {n}"),
+            UnitForms::Simple("oominute {n}"),
+            UnitForms::Plural({{PluralCategory::One, "owoola {n}"}, {PluralCategory::Other, "iiwoola {n}"}}),
+            UnitForms::Simple("omasiku {n}"),
+            UnitForms::Plural({{PluralCategory::One, "oshiwike {n}"}, {PluralCategory::Other, "iiwike {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omuedhi {n}"}, {PluralCategory::Other, "omiedhi {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omvula {n}"}, {PluralCategory::Other, "omivula {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} ya pita"),
+            std::string("mo {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("oosek {n}"),
+            UnitForms::Simple("oomin {n}"),
+            UnitForms::Plural({{PluralCategory::One, "owool {n}"}, {PluralCategory::Other, "iiwool {n}"}}),
+            UnitForms::Simple("omasik {n}"),
+            UnitForms::Plural({{PluralCategory::One, "oshiw {n}"}, {PluralCategory::Other, "iiw {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omued {n}"}, {PluralCategory::Other, "omied {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "omv {n}"}, {PluralCategory::Other, "omiv {n}"}}),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("{0} pita"),
+            std::string("mo {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: duration/locales/src/nl.json
 const DurationLocale& NL() {
     static const DurationLocale loc{
@@ -883,6 +1186,108 @@ const DurationLocale& NL() {
             std::string(""),
             std::string("{0} geleden"),
             std::string("over {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/nso.json
+const DurationLocale& NSO() {
+    static const DurationLocale loc{
+        "nso",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "motsotswana {n}"}, {PluralCategory::Other, "dimetsotswana {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "metsotso {n}"}, {PluralCategory::Other, "dimetsotso {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "iri {n}"}, {PluralCategory::Other, "diiri {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "letšatši {n}"}, {PluralCategory::Other, "matšatši {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "beke {n}"}, {PluralCategory::Other, "dibeke {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "kgwedi {n}"}, {PluralCategory::Other, "dikgwedi {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ngwaga {n}"}, {PluralCategory::Other, "mengwaga {n}"}})
+        },
+        "bjale",
+        "{0} le seripagare", ", ",
+        "{0} ye e fetilego", "ka {0}",
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "mots. {n}"}, {PluralCategory::Other, "dimets. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mets. {n}"}, {PluralCategory::Other, "dimets. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "iri {n}"}, {PluralCategory::Other, "diiri {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "letšatši {n}"}, {PluralCategory::Other, "matšatši {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "beke {n}"}, {PluralCategory::Other, "dibeke {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "kgw. {n}"}, {PluralCategory::Other, "dikgw. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ngw. {n}"}, {PluralCategory::Other, "mengw. {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} ye e fetilego"),
+            std::string("ka {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("{0} fetilego"),
+            std::string("ka {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/nus.json
+const DurationLocale& NUS() {
+    static const DurationLocale loc{
+        "nus",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "thɛkɛni {n}"}, {PluralCategory::Other, "thɛkni {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "minit {n}"}, {PluralCategory::Other, "minitni {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "thaar {n}"}, {PluralCategory::Other, "thaarni {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "cäŋ {n}"}, {PluralCategory::Other, "cëŋ {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "korɛ {n}"}, {PluralCategory::Other, "korni {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "pay {n}"}, {PluralCategory::Other, "pei {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ruɔ̈n {n}"}, {PluralCategory::Other, "ruɔ̈ɔ̈ni {n}"}})
+        },
+        "mën",
+        "{0} ku kel", ", ",
+        "{0} cï kuɔ̈ɔ̈t", "ka {0}",
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "thɛk. {n}"}, {PluralCategory::Other, "thɛk. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "min. {n}"}, {PluralCategory::Other, "min. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "thaar {n}"}, {PluralCategory::Other, "thaarni {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "cäŋ {n}"}, {PluralCategory::Other, "cëŋ {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "kor. {n}"}, {PluralCategory::Other, "kor. {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "pay {n}"}, {PluralCategory::Other, "pei {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ruɔ̈n {n}"}, {PluralCategory::Other, "ruɔ̈ɔ̈ni {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} cï kuɔ̈ɔ̈t"),
+            std::string("ka {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("{0} kuɔ̈ɔ̈t"),
+            std::string("ka {0}")
         },
         nullptr, nullptr
     };
@@ -1141,6 +1546,56 @@ const DurationLocale& PL() {
             std::string(""),
             std::string("{0} temu"),
             std::string("za {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/pov.json
+const DurationLocale& POV() {
+    static const DurationLocale loc{
+        "pov",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} sigundu"),
+            UnitForms::Simple("{n} minutu"),
+            UnitForms::Simple("{n} ora"),
+            UnitForms::Simple("{n} dia"),
+            UnitForms::Simple("{n} simana"),
+            UnitForms::Simple("{n} mis"),
+            UnitForms::Simple("{n} anu")
+        },
+        "agora mesmu",
+        "{0} i meiu", ", ",
+        "faz {0}", "di {0}",
+        CompactnessOverride{
+            UnitForms::Simple("{n} sig"),
+            UnitForms::Simple("{n} min"),
+            UnitForms::Simple("{n} ora"),
+            UnitForms::Simple("{n} dia"),
+            UnitForms::Simple("{n} sim"),
+            UnitForms::Simple("{n} mis"),
+            UnitForms::Simple("{n} anu"),
+            std::nullopt,
+            std::nullopt,
+            std::string("faz {0}"),
+            std::string("di {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n} sig"),
+            UnitForms::Simple("{n} min"),
+            UnitForms::Simple("{n} ora"),
+            UnitForms::Simple("{n} dia"),
+            UnitForms::Simple("{n} sim"),
+            UnitForms::Simple("{n} mis"),
+            UnitForms::Simple("{n} anu"),
+            std::string("{n}½"),
+            std::string(""),
+            std::string("faz {0}"),
+            std::string("di {0}")
         },
         nullptr, nullptr
     };

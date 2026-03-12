@@ -16,8 +16,11 @@ defmodule SayableDuration.Locales do
   def get("am"), do: {:ok, SayableDuration.Locales.AM.locale()}
   def get("ar"), do: {:ok, SayableDuration.Locales.AR.locale()}
   def get("az"), do: {:ok, SayableDuration.Locales.AZ.locale()}
+  def get("bci"), do: {:ok, SayableDuration.Locales.BCI.locale()}
   def get("be"), do: {:ok, SayableDuration.Locales.BE.locale()}
+  def get("bem"), do: {:ok, SayableDuration.Locales.BEM.locale()}
   def get("bg"), do: {:ok, SayableDuration.Locales.BG.locale()}
+  def get("bm"), do: {:ok, SayableDuration.Locales.BM.locale()}
   def get("bn"), do: {:ok, SayableDuration.Locales.BN.locale()}
   def get("br"), do: {:ok, SayableDuration.Locales.BR.locale()}
   def get("bs"), do: {:ok, SayableDuration.Locales.BS.locale()}
@@ -27,15 +30,21 @@ defmodule SayableDuration.Locales do
   def get("cy"), do: {:ok, SayableDuration.Locales.CY.locale()}
   def get("da"), do: {:ok, SayableDuration.Locales.DA.locale()}
   def get("de"), do: {:ok, SayableDuration.Locales.DE.locale()}
+  def get("din"), do: {:ok, SayableDuration.Locales.DIN.locale()}
+  def get("dje"), do: {:ok, SayableDuration.Locales.DJE.locale()}
+  def get("dyu"), do: {:ok, SayableDuration.Locales.DYU.locale()}
+  def get("ee"), do: {:ok, SayableDuration.Locales.EE.locale()}
   def get("el"), do: {:ok, SayableDuration.Locales.EL.locale()}
   def get("en"), do: {:ok, SayableDuration.Locales.EN.locale()}
   def get("es"), do: {:ok, SayableDuration.Locales.ES.locale()}
   def get("et"), do: {:ok, SayableDuration.Locales.ET.locale()}
   def get("eu"), do: {:ok, SayableDuration.Locales.EU.locale()}
   def get("fa"), do: {:ok, SayableDuration.Locales.FA.locale()}
+  def get("fan"), do: {:ok, SayableDuration.Locales.FAN.locale()}
   def get("ff"), do: {:ok, SayableDuration.Locales.FF.locale()}
   def get("fi"), do: {:ok, SayableDuration.Locales.FI.locale()}
   def get("fil"), do: {:ok, SayableDuration.Locales.FIL.locale()}
+  def get("fon"), do: {:ok, SayableDuration.Locales.FON.locale()}
   def get("fr"), do: {:ok, SayableDuration.Locales.FR.locale()}
   def get("ga"), do: {:ok, SayableDuration.Locales.GA.locale()}
   def get("gd"), do: {:ok, SayableDuration.Locales.GD.locale()}
@@ -57,10 +66,13 @@ defmodule SayableDuration.Locales do
   def get("ja"), do: {:ok, SayableDuration.Locales.JA.locale()}
   def get("jv"), do: {:ok, SayableDuration.Locales.JV.locale()}
   def get("ka"), do: {:ok, SayableDuration.Locales.KA.locale()}
+  def get("kbp"), do: {:ok, SayableDuration.Locales.KBP.locale()}
   def get("kk"), do: {:ok, SayableDuration.Locales.KK.locale()}
   def get("km"), do: {:ok, SayableDuration.Locales.KM.locale()}
   def get("kn"), do: {:ok, SayableDuration.Locales.KN.locale()}
   def get("ko"), do: {:ok, SayableDuration.Locales.KO.locale()}
+  def get("kpe"), do: {:ok, SayableDuration.Locales.KPE.locale()}
+  def get("ktu"), do: {:ok, SayableDuration.Locales.KTU.locale()}
   def get("ku"), do: {:ok, SayableDuration.Locales.KU.locale()}
   def get("kw"), do: {:ok, SayableDuration.Locales.KW.locale()}
   def get("ky"), do: {:ok, SayableDuration.Locales.KY.locale()}
@@ -69,56 +81,79 @@ defmodule SayableDuration.Locales do
   def get("lo"), do: {:ok, SayableDuration.Locales.LO.locale()}
   def get("lt"), do: {:ok, SayableDuration.Locales.LT.locale()}
   def get("lv"), do: {:ok, SayableDuration.Locales.LV.locale()}
+  def get("men"), do: {:ok, SayableDuration.Locales.MEN.locale()}
+  def get("mfe"), do: {:ok, SayableDuration.Locales.MFE.locale()}
   def get("mg"), do: {:ok, SayableDuration.Locales.MG.locale()}
   def get("mi"), do: {:ok, SayableDuration.Locales.MI.locale()}
   def get("mk"), do: {:ok, SayableDuration.Locales.MK.locale()}
   def get("ml"), do: {:ok, SayableDuration.Locales.ML.locale()}
   def get("mn"), do: {:ok, SayableDuration.Locales.MN.locale()}
+  def get("mnk"), do: {:ok, SayableDuration.Locales.MNK.locale()}
+  def get("mos"), do: {:ok, SayableDuration.Locales.MOS.locale()}
   def get("mr"), do: {:ok, SayableDuration.Locales.MR.locale()}
   def get("ms"), do: {:ok, SayableDuration.Locales.MS.locale()}
   def get("mt"), do: {:ok, SayableDuration.Locales.MT.locale()}
   def get("my"), do: {:ok, SayableDuration.Locales.MY.locale()}
   def get("nb"), do: {:ok, SayableDuration.Locales.NB.locale()}
+  def get("nd"), do: {:ok, SayableDuration.Locales.ND.locale()}
   def get("ne"), do: {:ok, SayableDuration.Locales.NE.locale()}
+  def get("ng"), do: {:ok, SayableDuration.Locales.NG.locale()}
   def get("nl"), do: {:ok, SayableDuration.Locales.NL.locale()}
+  def get("nso"), do: {:ok, SayableDuration.Locales.NSO.locale()}
+  def get("nus"), do: {:ok, SayableDuration.Locales.NUS.locale()}
   def get("ny"), do: {:ok, SayableDuration.Locales.NY.locale()}
   def get("om"), do: {:ok, SayableDuration.Locales.OM.locale()}
   def get("or"), do: {:ok, SayableDuration.Locales.OR.locale()}
   def get("pa"), do: {:ok, SayableDuration.Locales.PA.locale()}
   def get("pl"), do: {:ok, SayableDuration.Locales.PL.locale()}
+  def get("pov"), do: {:ok, SayableDuration.Locales.POV.locale()}
   def get("ps"), do: {:ok, SayableDuration.Locales.PS.locale()}
   def get("pt"), do: {:ok, SayableDuration.Locales.PT.locale()}
   def get("qu"), do: {:ok, SayableDuration.Locales.QU.locale()}
   def get("ro"), do: {:ok, SayableDuration.Locales.RO.locale()}
   def get("ru"), do: {:ok, SayableDuration.Locales.RU.locale()}
   def get("rw"), do: {:ok, SayableDuration.Locales.RW.locale()}
+  def get("sar"), do: {:ok, SayableDuration.Locales.SAR.locale()}
   def get("sd"), do: {:ok, SayableDuration.Locales.SD.locale()}
+  def get("sg"), do: {:ok, SayableDuration.Locales.SG.locale()}
   def get("shi"), do: {:ok, SayableDuration.Locales.SHI.locale()}
   def get("si"), do: {:ok, SayableDuration.Locales.SI.locale()}
   def get("sk"), do: {:ok, SayableDuration.Locales.SK.locale()}
   def get("sl"), do: {:ok, SayableDuration.Locales.SL.locale()}
   def get("sn"), do: {:ok, SayableDuration.Locales.SN.locale()}
+  def get("snk"), do: {:ok, SayableDuration.Locales.SNK.locale()}
   def get("so"), do: {:ok, SayableDuration.Locales.SO.locale()}
   def get("sq"), do: {:ok, SayableDuration.Locales.SQ.locale()}
   def get("sr"), do: {:ok, SayableDuration.Locales.SR.locale()}
+  def get("ss"), do: {:ok, SayableDuration.Locales.SS.locale()}
+  def get("st"), do: {:ok, SayableDuration.Locales.ST.locale()}
   def get("su"), do: {:ok, SayableDuration.Locales.SU.locale()}
+  def get("suk"), do: {:ok, SayableDuration.Locales.SUK.locale()}
   def get("sv"), do: {:ok, SayableDuration.Locales.SV.locale()}
   def get("sw"), do: {:ok, SayableDuration.Locales.SW.locale()}
   def get("ta"), do: {:ok, SayableDuration.Locales.TA.locale()}
   def get("te"), do: {:ok, SayableDuration.Locales.TE.locale()}
+  def get("tem"), do: {:ok, SayableDuration.Locales.TEM.locale()}
   def get("tg"), do: {:ok, SayableDuration.Locales.TG.locale()}
   def get("th"), do: {:ok, SayableDuration.Locales.TH.locale()}
   def get("ti"), do: {:ok, SayableDuration.Locales.TI.locale()}
+  def get("tig"), do: {:ok, SayableDuration.Locales.TIG.locale()}
   def get("tk"), do: {:ok, SayableDuration.Locales.TK.locale()}
+  def get("tn"), do: {:ok, SayableDuration.Locales.TN.locale()}
   def get("tr"), do: {:ok, SayableDuration.Locales.TR.locale()}
+  def get("ts"), do: {:ok, SayableDuration.Locales.TS.locale()}
   def get("tzm"), do: {:ok, SayableDuration.Locales.TZM.locale()}
   def get("uk"), do: {:ok, SayableDuration.Locales.UK.locale()}
+  def get("umb"), do: {:ok, SayableDuration.Locales.UMB.locale()}
   def get("ur"), do: {:ok, SayableDuration.Locales.UR.locale()}
   def get("uz"), do: {:ok, SayableDuration.Locales.UZ.locale()}
   def get("vi"), do: {:ok, SayableDuration.Locales.VI.locale()}
+  def get("vmw"), do: {:ok, SayableDuration.Locales.VMW.locale()}
+  def get("wo"), do: {:ok, SayableDuration.Locales.WO.locale()}
   def get("xh"), do: {:ok, SayableDuration.Locales.XH.locale()}
   def get("yo"), do: {:ok, SayableDuration.Locales.YO.locale()}
   def get("yue"), do: {:ok, SayableDuration.Locales.YUE.locale()}
+  def get("zdj"), do: {:ok, SayableDuration.Locales.ZDJ.locale()}
   def get("zh"), do: {:ok, SayableDuration.Locales.ZH.locale()}
   def get("zu"), do: {:ok, SayableDuration.Locales.ZU.locale()}
   def get(_), do: :error

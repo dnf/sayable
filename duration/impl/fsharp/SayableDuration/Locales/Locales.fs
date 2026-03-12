@@ -8,7 +8,7 @@
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-/// All 110 locale definitions for sayable-duration.
+/// All 145 locale definitions for sayable-duration.
 module SayableDurationLib.Locales
 
 open SayableDurationLib.Types
@@ -404,6 +404,59 @@ let AZ: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/bci.json
+// ================================================================
+// BCI — Baoulé
+// ================================================================
+let BCI: DurationLocale =
+    {
+        Code = "bci"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sɛgɔn {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "dɔ {n}"
+                Day = Simple "cɛn {n}"
+                Week = Simple "lemɔcuɛ {n}"
+                Month = Simple "anglɛ {n}"
+                Year = Simple "afuɛ {n}"
+            }
+        Half = "{0} nin sin"
+        Delimiter = ", "
+        JustNow = "siɛn yɛ"
+        Ago = "{0} sín"
+        InFuture = "ɔ {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛg. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "dɔ {n}")
+            Day = Some (Simple "cɛn {n}")
+            Week = Some (Simple "lem. {n}")
+            Month = Some (Simple "ang. {n}")
+            Year = Some (Simple "af. {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} sín"
+            InFuture = Some "ɔ {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} sín"
+            InFuture = Some "ɔ {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/be.json
 // ================================================================
 // BE — Belarusian
@@ -457,6 +510,59 @@ let BE: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/bem.json
+// ================================================================
+// BEM — Bemba
+// ================================================================
+let BEM: DurationLocale =
+    {
+        Code = "bem"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "isekondi {n}"); (Other, "amasekondi {n}") ])
+                Minute = Plural (Map.ofList [ (One, "iminiti {n}"); (Other, "amaminiti {n}") ])
+                Hour = Plural (Map.ofList [ (One, "insa {n}"); (Other, "amanso {n}") ])
+                Day = Plural (Map.ofList [ (One, "ubushiku {n}"); (Other, "inshiku {n}") ])
+                Week = Plural (Map.ofList [ (One, "umulungu {n}"); (Other, "imilungu {n}") ])
+                Month = Plural (Map.ofList [ (One, "umweshi {n}"); (Other, "imyeshi {n}") ])
+                Year = Plural (Map.ofList [ (One, "umwaka {n}"); (Other, "imyaka {n}") ])
+            }
+        Half = "{0} na hafu"
+        Delimiter = ", "
+        JustNow = "pali ino nshita"
+        Ago = "{0} iyapita"
+        InFuture = "mu {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sek. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "insa {n}")
+            Day = Some (Plural (Map.ofList [ (One, "ubushiku {n}"); (Other, "inshiku {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "umulungu {n}"); (Other, "imilungu {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "umweshi {n}"); (Other, "imyeshi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "umwaka {n}"); (Other, "imyaka {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} iyapita"
+            InFuture = Some "mu {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} iyapita"
+            InFuture = Some "mu {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/bg.json
 // ================================================================
 // BG — Bulgarian
@@ -505,6 +611,59 @@ let BG: DurationLocale =
             Delimiter = Some ""
             Ago = Some "преди {0}"
             InFuture = Some "след {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/bm.json
+// ================================================================
+// BM — Bambara
+// ================================================================
+let BM: DurationLocale =
+    {
+        Code = "bm"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sekondi {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "lɛrɛ {n}"
+                Day = Simple "don {n}"
+                Week = Simple "dɔgɔkun {n}"
+                Month = Simple "kalo {n}"
+                Year = Simple "san {n}"
+            }
+        Half = "{0} ni tilancɛ"
+        Delimiter = ", "
+        JustNow = "sisan"
+        Ago = "{0} bɔlen"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sek. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "lɛr. {n}")
+            Day = Some (Simple "don {n}")
+            Week = Some (Simple "dɔgɔk. {n}")
+            Month = Some (Simple "kalo {n}")
+            Year = Some (Simple "san {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} bɔlen"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "sek {n}")
+            Minute = Some (Simple "min {n}")
+            Hour = Some (Simple "lɛr {n}")
+            Day = Some (Simple "don {n}")
+            Week = Some (Simple "dɔgɔk {n}")
+            Month = Some (Simple "kalo {n}")
+            Year = Some (Simple "san {n}")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} bɔlen"
+            InFuture = Some "ka {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -987,6 +1146,218 @@ let DE: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/din.json
+// ================================================================
+// DIN — Dinka
+// ================================================================
+let DIN: DurationLocale =
+    {
+        Code = "din"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "thiɛ̈kɛn {n}"); (Other, "thiɛ̈kɛn {n}") ])
+                Minute = Plural (Map.ofList [ (One, "minitö {n}"); (Other, "minitö {n}") ])
+                Hour = Plural (Map.ofList [ (One, "thä {n}"); (Other, "thä {n}") ])
+                Day = Plural (Map.ofList [ (One, "akɔl {n}"); (Other, "akɔl {n}") ])
+                Week = Plural (Map.ofList [ (One, "bɛ̈t {n}"); (Other, "bɛ̈t {n}") ])
+                Month = Plural (Map.ofList [ (One, "pɛi {n}"); (Other, "pɛi {n}") ])
+                Year = Plural (Map.ofList [ (One, "ruɔ̈n {n}"); (Other, "ruɔ̈ɔ̈n {n}") ])
+            }
+        Half = "{0} ku abɛ̈c"
+        Delimiter = ", "
+        JustNow = "ëmën"
+        Ago = "{0} cï wëëŋ"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "thiɛ̈kɛn {n}")
+            Minute = Some (Simple "minitö {n}")
+            Hour = Some (Simple "thä {n}")
+            Day = Some (Simple "akɔl {n}")
+            Week = Some (Simple "bɛ̈t {n}")
+            Month = Some (Simple "pɛi {n}")
+            Year = Some (Plural (Map.ofList [ (One, "ruɔ̈n {n}"); (Other, "ruɔ̈ɔ̈n {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} cï wëëŋ"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} cï wëëŋ"
+            InFuture = Some "ka {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/dje.json
+// ================================================================
+// DJE — Zarma
+// ================================================================
+let DJE: DurationLocale =
+    {
+        Code = "dje"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sɛkondi {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "guuru {n}"
+                Day = Simple "zaari {n}"
+                Week = Simple "hebu {n}"
+                Month = Simple "handu {n}"
+                Year = Simple "jiiri {n}"
+            }
+        Half = "{0} d'iddeka"
+        Delimiter = ", "
+        JustNow = "sohõ"
+        Ago = "{0} ka ban"
+        InFuture = "da {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛk. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "guu. {n}")
+            Day = Some (Simple "zaa. {n}")
+            Week = Some (Simple "heb. {n}")
+            Month = Some (Simple "han. {n}")
+            Year = Some (Simple "jii. {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ka ban"
+            InFuture = Some "da {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} ban"
+            InFuture = Some "da {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/dyu.json
+// ================================================================
+// DYU — Dyula
+// ================================================================
+let DYU: DurationLocale =
+    {
+        Code = "dyu"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sɛkondi {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "lɛrɛ {n}"
+                Day = Simple "don {n}"
+                Week = Simple "dɔgɔkun {n}"
+                Month = Simple "kalo {n}"
+                Year = Simple "san {n}"
+            }
+        Half = "{0} ni tilancɛ"
+        Delimiter = ", "
+        JustNow = "sisan"
+        Ago = "{0} tɛmɛnen"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛk. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "lɛr. {n}")
+            Day = Some (Simple "don {n}")
+            Week = Some (Simple "dɔgɔk. {n}")
+            Month = Some (Simple "kalo {n}")
+            Year = Some (Simple "san {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} tɛmɛnen"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} tɛmɛnen"
+            InFuture = Some "ka {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/ee.json
+// ================================================================
+// EE — Ewe
+// ================================================================
+let EE: DurationLocale =
+    {
+        Code = "ee"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "sekend {n}"); (Other, "sekendwo {n}") ])
+                Minute = Plural (Map.ofList [ (One, "aɖabaƒoƒo {n}"); (Other, "aɖabaƒoƒowo {n}") ])
+                Hour = Plural (Map.ofList [ (One, "gaƒoƒo {n}"); (Other, "gaƒoƒowo {n}") ])
+                Day = Plural (Map.ofList [ (One, "ŋkeke {n}"); (Other, "ŋkekewo {n}") ])
+                Week = Plural (Map.ofList [ (One, "kɔsiɖa {n}"); (Other, "kɔsiɖawo {n}") ])
+                Month = Plural (Map.ofList [ (One, "ɣleti {n}"); (Other, "ɣletiwo {n}") ])
+                Year = Plural (Map.ofList [ (One, "ƒe {n}"); (Other, "ƒewo {n}") ])
+            }
+        Half = "{0} kple afã"
+        Delimiter = ", "
+        JustNow = "fifia"
+        Ago = "ɖe {0} me"
+        InFuture = "le {0} me"
+        ShortOverride = Some {
+            Second = Some (Simple "sek. {n}")
+            Minute = Some (Simple "aɖaba. {n}")
+            Hour = Some (Simple "gaƒ. {n}")
+            Day = Some (Simple "ŋkekewo {n}")
+            Week = Some (Plural (Map.ofList [ (One, "kɔsiɖa {n}"); (Other, "kɔsiɖawo {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "ɣleti {n}"); (Other, "ɣletiwo {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "ƒe {n}"); (Other, "ƒewo {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "ɖe {0} me"
+            InFuture = Some "le {0} me"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "ɖe {0} me"
+            InFuture = Some "le {0} me"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/el.json
 // ================================================================
 // EL — Greek
@@ -1305,6 +1676,59 @@ let FA: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/fan.json
+// ================================================================
+// FAN — Fang
+// ================================================================
+let FAN: DurationLocale =
+    {
+        Code = "fan"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "sɛgon {n}"); (Other, "bisɛgon {n}") ])
+                Minute = Plural (Map.ofList [ (One, "minit {n}"); (Other, "biminit {n}") ])
+                Hour = Plural (Map.ofList [ (One, "awola {n}"); (Other, "biawola {n}") ])
+                Day = Plural (Map.ofList [ (One, "mos {n}"); (Other, "bimos {n}") ])
+                Week = Plural (Map.ofList [ (One, "sone {n}"); (Other, "bisone {n}") ])
+                Month = Plural (Map.ofList [ (One, "ngon {n}"); (Other, "mingon {n}") ])
+                Year = Plural (Map.ofList [ (One, "mbu {n}"); (Other, "mimbu {n}") ])
+            }
+        Half = "{0} e ndamba"
+        Delimiter = ", "
+        JustNow = "fii"
+        Ago = "{0} a ja"
+        InFuture = "a {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛg. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "aw. {n}")
+            Day = Some (Plural (Map.ofList [ (One, "mos {n}"); (Other, "bimos {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "sone {n}"); (Other, "bisone {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "ngon {n}"); (Other, "mingon {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mbu {n}"); (Other, "mimbu {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} a ja"
+            InFuture = Some "a {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} a ja"
+            InFuture = Some "a {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/ff.json
 // ================================================================
 // FF — Fulah
@@ -1459,6 +1883,59 @@ let FIL: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} na ang nakalipas"
             InFuture = Some "sa loob ng {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/fon.json
+// ================================================================
+// FON — Fon
+// ================================================================
+let FON: DurationLocale =
+    {
+        Code = "fon"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "segɔ́ndu {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "ganxixo {n}"
+                Day = Simple "azǎn {n}"
+                Week = Simple "aklunɔ̌zán {n}"
+                Month = Simple "sun {n}"
+                Year = Simple "xwè {n}"
+            }
+        Half = "{0} kpo vlavo kpo"
+        Delimiter = ", "
+        JustNow = "dìn dìn"
+        Ago = "{0} ɖo"
+        InFuture = "ɖo {0} mɛ"
+        ShortOverride = Some {
+            Second = Some (Simple "seg. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "gan. {n}")
+            Day = Some (Simple "azǎn {n}")
+            Week = Some (Simple "aklunɔ̌zán {n}")
+            Month = Some (Simple "sun {n}")
+            Year = Some (Simple "xwè {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ɖo"
+            InFuture = Some "ɖo {0} mɛ"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} ɖo"
+            InFuture = Some "ɖo {0} mɛ"
             }
         FormatNumber = None
         FormatUnit = None
@@ -2577,6 +3054,59 @@ let KA: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/kbp.json
+// ================================================================
+// KBP — Kabiye
+// ================================================================
+let KBP: DurationLocale =
+    {
+        Code = "kbp"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sɛɡɔŋ {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "ñɩɣyʊʊ {n}"
+                Day = Simple "kɩyakʊ {n}"
+                Week = Simple "kpɩtaʊ {n}"
+                Month = Simple "fenaɣ {n}"
+                Year = Simple "pɩnzɩ {n}"
+            }
+        Half = "{0} nɛ hɔɔlʊʊ"
+        Delimiter = ", "
+        JustNow = "lɛɛlɛɛ"
+        Ago = "{0} yɔ"
+        InFuture = "pɩ {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛɡ. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "ñɩɣ. {n}")
+            Day = Some (Simple "kɩyakʊ {n}")
+            Week = Some (Simple "kpɩtaʊ {n}")
+            Month = Some (Simple "fenaɣ {n}")
+            Year = Some (Simple "pɩnzɩ {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} yɔ"
+            InFuture = Some "pɩ {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} yɔ"
+            InFuture = Some "pɩ {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/kk.json
 // ================================================================
 // KK — Kazakh
@@ -2784,6 +3314,112 @@ let KO: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} 전"
             InFuture = Some "{0} 후"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/kpe.json
+// ================================================================
+// KPE — Kpelle
+// ================================================================
+let KPE: DurationLocale =
+    {
+        Code = "kpe"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sɛkɔŋ {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "awa {n}"
+                Day = Simple "ɓɛlɛɛ {n}"
+                Week = Simple "wikii {n}"
+                Month = Simple "ŋuŋ {n}"
+                Year = Simple "kɛ̃ɛ̃ {n}"
+            }
+        Half = "{0} da kɔlɛ"
+        Delimiter = ", "
+        JustNow = "ɓaai"
+        Ago = "{0} kɛ pɔlɔ"
+        InFuture = "ya {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛk. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "awa {n}")
+            Day = Some (Simple "ɓɛl. {n}")
+            Week = Some (Simple "wik. {n}")
+            Month = Some (Simple "ŋuŋ {n}")
+            Year = Some (Simple "kɛ̃ɛ̃ {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} kɛ pɔlɔ"
+            InFuture = Some "ya {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} pɔlɔ"
+            InFuture = Some "ya {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/ktu.json
+// ================================================================
+// KTU — Kituba
+// ================================================================
+let KTU: DurationLocale =
+    {
+        Code = "ktu"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "sekonde {n}"); (Other, "masekonde {n}") ])
+                Minute = Plural (Map.ofList [ (One, "miniti {n}"); (Other, "maminiti {n}") ])
+                Hour = Plural (Map.ofList [ (One, "ngonga {n}"); (Other, "mingonga {n}") ])
+                Day = Plural (Map.ofList [ (One, "lumbu {n}"); (Other, "malumbu {n}") ])
+                Week = Plural (Map.ofList [ (One, "poso {n}"); (Other, "maposo {n}") ])
+                Month = Plural (Map.ofList [ (One, "ngonda {n}"); (Other, "mingonda {n}") ])
+                Year = Plural (Map.ofList [ (One, "mvula {n}"); (Other, "mimvula {n}") ])
+            }
+        Half = "{0} na ndambu"
+        Delimiter = ", "
+        JustNow = "sik'oyo"
+        Ago = "{0} ya vioka"
+        InFuture = "na {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "masekonde {n}")
+            Minute = Some (Simple "maminiti {n}")
+            Hour = Some (Plural (Map.ofList [ (One, "ngonga {n}"); (Other, "mingonga {n}") ]))
+            Day = Some (Simple "malumbu {n}")
+            Week = Some (Plural (Map.ofList [ (One, "poso {n}"); (Other, "maposo {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "ngonda {n}"); (Other, "mingonda {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mvula {n}"); (Other, "mimvula {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ya vioka"
+            InFuture = Some "na {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "masek {n}")
+            Minute = Some (Simple "mamin {n}")
+            Hour = Some (Plural (Map.ofList [ (One, "ngon {n}"); (Other, "mingon {n}") ]))
+            Day = Some (Simple "malum {n}")
+            Week = Some (Plural (Map.ofList [ (One, "poso {n}"); (Other, "maposo {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "ngon {n}"); (Other, "mingon {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mvula {n}"); (Other, "mimv {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} vioka"
+            InFuture = Some "na {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -3213,6 +3849,112 @@ let LV: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/men.json
+// ================================================================
+// MEN — Mende
+// ================================================================
+let MEN: DurationLocale =
+    {
+        Code = "men"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "sɛkɔn {n}"); (Other, "sɛkɔn {n}") ])
+                Minute = Plural (Map.ofList [ (One, "miniti {n}"); (Other, "miniti {n}") ])
+                Hour = Plural (Map.ofList [ (One, "awa {n}"); (Other, "awa {n}") ])
+                Day = Plural (Map.ofList [ (One, "lɔhɔ {n}"); (Other, "lɔhɔnga {n}") ])
+                Week = Plural (Map.ofList [ (One, "wikii {n}"); (Other, "wikii {n}") ])
+                Month = Plural (Map.ofList [ (One, "ndɔlɔ {n}"); (Other, "ndɔlɔnga {n}") ])
+                Year = Plural (Map.ofList [ (One, "saŋ {n}"); (Other, "saŋga {n}") ])
+            }
+        Half = "{0} ta fele"
+        Delimiter = ", "
+        JustNow = "kɛnɛi"
+        Ago = "{0} taa gbɔyɔ"
+        InFuture = "yɛ {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛk. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "awa {n}")
+            Day = Some (Plural (Map.ofList [ (One, "lɔhɔ {n}"); (Other, "lɔhɔnga {n}") ]))
+            Week = Some (Simple "wikii {n}")
+            Month = Some (Plural (Map.ofList [ (One, "ndɔlɔ {n}"); (Other, "ndɔlɔnga {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "saŋ {n}"); (Other, "saŋga {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} taa gbɔyɔ"
+            InFuture = Some "yɛ {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} taa gbɔyɔ"
+            InFuture = Some "yɛ {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/mfe.json
+// ================================================================
+// MFE — Mauritian Creole
+// ================================================================
+let MFE: DurationLocale =
+    {
+        Code = "mfe"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} segonn"
+                Minute = Simple "{n} minit"
+                Hour = Simple "{n} ler"
+                Day = Simple "{n} zour"
+                Week = Simple "{n} semenn"
+                Month = Simple "{n} mwa"
+                Year = Simple "{n} lane"
+            }
+        Half = "{0} edmi"
+        Delimiter = ", "
+        JustNow = "aster la"
+        Ago = "sa fer {0}"
+        InFuture = "dan {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} seg")
+            Minute = Some (Simple "{n} min")
+            Hour = Some (Simple "{n} ler")
+            Day = Some (Simple "{n} zr")
+            Week = Some (Simple "{n} sem")
+            Month = Some (Simple "{n} mwa")
+            Year = Some (Simple "{n} la")
+            Half = None
+            Delimiter = None
+            Ago = Some "sa fer {0}"
+            InFuture = Some "dan {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n} seg")
+            Minute = Some (Simple "{n} min")
+            Hour = Some (Simple "{n} ler")
+            Day = Some (Simple "{n} zr")
+            Week = Some (Simple "{n} sem")
+            Month = Some (Simple "{n} mwa")
+            Year = Some (Simple "{n} la")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "sa fer {0}"
+            InFuture = Some "dan {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/mg.json
 // ================================================================
 // MG — Malagasy
@@ -3473,6 +4215,112 @@ let MN: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0}-н өмнө"
             InFuture = Some "{0}-н дараа"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/mnk.json
+// ================================================================
+// MNK — Mandinka
+// ================================================================
+let MNK: DurationLocale =
+    {
+        Code = "mnk"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sɛkɔŋ {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "tili-waati {n}"
+                Day = Simple "tili {n}"
+                Week = Simple "lɔkɔ {n}"
+                Month = Simple "kalo {n}"
+                Year = Simple "sanji {n}"
+            }
+        Half = "{0} ning tilinkiliŋo"
+        Delimiter = ", "
+        JustNow = "sisan"
+        Ago = "{0} taata"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛk. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "waati {n}")
+            Day = Some (Simple "tili {n}")
+            Week = Some (Simple "lɔkɔ {n}")
+            Month = Some (Simple "kalo {n}")
+            Year = Some (Simple "sanj. {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} taata"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "sɛk {n}")
+            Minute = Some (Simple "min {n}")
+            Hour = Some (Simple "waa {n}")
+            Day = Some (Simple "tili {n}")
+            Week = Some (Simple "lɔkɔ {n}")
+            Month = Some (Simple "kalo {n}")
+            Year = Some (Simple "sanj {n}")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} taata"
+            InFuture = Some "ka {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/mos.json
+// ================================================================
+// MOS — Moore
+// ================================================================
+let MOS: DurationLocale =
+    {
+        Code = "mos"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sẽk {n}"
+                Minute = Simple "minit {n}"
+                Hour = Simple "lɛɛre {n}"
+                Day = Simple "daare {n}"
+                Week = Simple "semaana {n}"
+                Month = Simple "kiuugu {n}"
+                Year = Simple "yʋʋmde {n}"
+            }
+        Half = "{0} la pʋɩ-sʋka"
+        Delimiter = ", "
+        JustNow = "masã"
+        Ago = "{0} sẽn loog"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sẽk {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "lɛɛr. {n}")
+            Day = Some (Simple "daar. {n}")
+            Week = Some (Simple "sem. {n}")
+            Month = Some (Simple "kiu. {n}")
+            Year = Some (Simple "yʋʋm. {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} sẽn loog"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "sẽk {n}")
+            Minute = Some (Simple "min {n}")
+            Hour = Some (Simple "lɛɛr {n}")
+            Day = Some (Simple "daar {n}")
+            Week = Some (Simple "sem {n}")
+            Month = Some (Simple "kiu {n}")
+            Year = Some (Simple "yʋʋm {n}")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} loog"
+            InFuture = Some "ka {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -3743,6 +4591,59 @@ let NB: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/nd.json
+// ================================================================
+// ND — Northern Ndebele
+// ================================================================
+let ND: DurationLocale =
+    {
+        Code = "nd"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "umzuzwana {n}"); (Other, "imizuzwana {n}") ])
+                Minute = Plural (Map.ofList [ (One, "umzuzu {n}"); (Other, "imizuzu {n}") ])
+                Hour = Plural (Map.ofList [ (One, "ihora {n}"); (Other, "amahora {n}") ])
+                Day = Plural (Map.ofList [ (One, "usuku {n}"); (Other, "insuku {n}") ])
+                Week = Plural (Map.ofList [ (One, "iviki {n}"); (Other, "amaviki {n}") ])
+                Month = Plural (Map.ofList [ (One, "inyanga {n}"); (Other, "izinyanga {n}") ])
+                Year = Plural (Map.ofList [ (One, "umnyaka {n}"); (Other, "iminyaka {n}") ])
+            }
+        Half = "{0} lengxenye"
+        Delimiter = ", "
+        JustNow = "khathesi"
+        Ago = "{0} edlulileyo"
+        InFuture = "nge-{0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "umzuzw. {n}"); (Other, "imizuzw. {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "umzuzu {n}"); (Other, "imizuzu {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "ihora {n}"); (Other, "amahora {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "usuku {n}"); (Other, "insuku {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "iviki {n}"); (Other, "amaviki {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "iny. {n}"); (Other, "iziny. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "umny. {n}"); (Other, "iminy. {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} edlulileyo"
+            InFuture = Some "nge-{0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} edlulileyo"
+            InFuture = Some "nge-{0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/ne.json
 // ================================================================
 // NE — Nepali
@@ -3796,6 +4697,59 @@ let NE: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/ng.json
+// ================================================================
+// NG — Oshiwambo
+// ================================================================
+let NG: DurationLocale =
+    {
+        Code = "ng"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "osekonde {n}"); (Other, "oosekonde {n}") ])
+                Minute = Plural (Map.ofList [ (One, "ominute {n}"); (Other, "oominute {n}") ])
+                Hour = Plural (Map.ofList [ (One, "owoola {n}"); (Other, "iiwoola {n}") ])
+                Day = Plural (Map.ofList [ (One, "esiku {n}"); (Other, "omasiku {n}") ])
+                Week = Plural (Map.ofList [ (One, "oshiwike {n}"); (Other, "iiwike {n}") ])
+                Month = Plural (Map.ofList [ (One, "omuedhi {n}"); (Other, "omiedhi {n}") ])
+                Year = Plural (Map.ofList [ (One, "omvula {n}"); (Other, "omivula {n}") ])
+            }
+        Half = "{0} netata"
+        Delimiter = ", "
+        JustNow = "ngashingeyi"
+        Ago = "{0} ya pita"
+        InFuture = "mo {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "oosekonde {n}")
+            Minute = Some (Simple "oominute {n}")
+            Hour = Some (Plural (Map.ofList [ (One, "owoola {n}"); (Other, "iiwoola {n}") ]))
+            Day = Some (Simple "omasiku {n}")
+            Week = Some (Plural (Map.ofList [ (One, "oshiwike {n}"); (Other, "iiwike {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "omuedhi {n}"); (Other, "omiedhi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "omvula {n}"); (Other, "omivula {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ya pita"
+            InFuture = Some "mo {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "oosek {n}")
+            Minute = Some (Simple "oomin {n}")
+            Hour = Some (Plural (Map.ofList [ (One, "owool {n}"); (Other, "iiwool {n}") ]))
+            Day = Some (Simple "omasik {n}")
+            Week = Some (Plural (Map.ofList [ (One, "oshiw {n}"); (Other, "iiw {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "omued {n}"); (Other, "omied {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "omv {n}"); (Other, "omiv {n}") ]))
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} pita"
+            InFuture = Some "mo {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/nl.json
 // ================================================================
 // NL — Dutch
@@ -3844,6 +4798,112 @@ let NL: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} geleden"
             InFuture = Some "over {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/nso.json
+// ================================================================
+// NSO — Northern Sotho
+// ================================================================
+let NSO: DurationLocale =
+    {
+        Code = "nso"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "motsotswana {n}"); (Other, "dimetsotswana {n}") ])
+                Minute = Plural (Map.ofList [ (One, "metsotso {n}"); (Other, "dimetsotso {n}") ])
+                Hour = Plural (Map.ofList [ (One, "iri {n}"); (Other, "diiri {n}") ])
+                Day = Plural (Map.ofList [ (One, "letšatši {n}"); (Other, "matšatši {n}") ])
+                Week = Plural (Map.ofList [ (One, "beke {n}"); (Other, "dibeke {n}") ])
+                Month = Plural (Map.ofList [ (One, "kgwedi {n}"); (Other, "dikgwedi {n}") ])
+                Year = Plural (Map.ofList [ (One, "ngwaga {n}"); (Other, "mengwaga {n}") ])
+            }
+        Half = "{0} le seripagare"
+        Delimiter = ", "
+        JustNow = "bjale"
+        Ago = "{0} ye e fetilego"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "mots. {n}"); (Other, "dimets. {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "mets. {n}"); (Other, "dimets. {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "iri {n}"); (Other, "diiri {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "letšatši {n}"); (Other, "matšatši {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "beke {n}"); (Other, "dibeke {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "kgw. {n}"); (Other, "dikgw. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "ngw. {n}"); (Other, "mengw. {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ye e fetilego"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} fetilego"
+            InFuture = Some "ka {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/nus.json
+// ================================================================
+// NUS — Nuer
+// ================================================================
+let NUS: DurationLocale =
+    {
+        Code = "nus"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "thɛkɛni {n}"); (Other, "thɛkni {n}") ])
+                Minute = Plural (Map.ofList [ (One, "minit {n}"); (Other, "minitni {n}") ])
+                Hour = Plural (Map.ofList [ (One, "thaar {n}"); (Other, "thaarni {n}") ])
+                Day = Plural (Map.ofList [ (One, "cäŋ {n}"); (Other, "cëŋ {n}") ])
+                Week = Plural (Map.ofList [ (One, "korɛ {n}"); (Other, "korni {n}") ])
+                Month = Plural (Map.ofList [ (One, "pay {n}"); (Other, "pei {n}") ])
+                Year = Plural (Map.ofList [ (One, "ruɔ̈n {n}"); (Other, "ruɔ̈ɔ̈ni {n}") ])
+            }
+        Half = "{0} ku kel"
+        Delimiter = ", "
+        JustNow = "mën"
+        Ago = "{0} cï kuɔ̈ɔ̈t"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "thɛk. {n}"); (Other, "thɛk. {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "min. {n}"); (Other, "min. {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "thaar {n}"); (Other, "thaarni {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "cäŋ {n}"); (Other, "cëŋ {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "kor. {n}"); (Other, "kor. {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "pay {n}"); (Other, "pei {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "ruɔ̈n {n}"); (Other, "ruɔ̈ɔ̈ni {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} cï kuɔ̈ɔ̈t"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} kuɔ̈ɔ̈t"
+            InFuture = Some "ka {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -4109,6 +5169,59 @@ let PL: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} temu"
             InFuture = Some "za {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/pov.json
+// ================================================================
+// POV — Guinea-Bissau Creole
+// ================================================================
+let POV: DurationLocale =
+    {
+        Code = "pov"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "{n} sigundu"
+                Minute = Simple "{n} minutu"
+                Hour = Simple "{n} ora"
+                Day = Simple "{n} dia"
+                Week = Simple "{n} simana"
+                Month = Simple "{n} mis"
+                Year = Simple "{n} anu"
+            }
+        Half = "{0} i meiu"
+        Delimiter = ", "
+        JustNow = "agora mesmu"
+        Ago = "faz {0}"
+        InFuture = "di {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "{n} sig")
+            Minute = Some (Simple "{n} min")
+            Hour = Some (Simple "{n} ora")
+            Day = Some (Simple "{n} dia")
+            Week = Some (Simple "{n} sim")
+            Month = Some (Simple "{n} mis")
+            Year = Some (Simple "{n} anu")
+            Half = None
+            Delimiter = None
+            Ago = Some "faz {0}"
+            InFuture = Some "di {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n} sig")
+            Minute = Some (Simple "{n} min")
+            Hour = Some (Simple "{n} ora")
+            Day = Some (Simple "{n} dia")
+            Week = Some (Simple "{n} sim")
+            Month = Some (Simple "{n} mis")
+            Year = Some (Simple "{n} anu")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "faz {0}"
+            InFuture = Some "di {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -4432,6 +5545,59 @@ let RW: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/sar.json
+// ================================================================
+// SAR — Sara
+// ================================================================
+let SAR: DurationLocale =
+    {
+        Code = "sar"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sɛɡɔn {n}"
+                Minute = Simple "minít {n}"
+                Hour = Simple "lɛɛr {n}"
+                Day = Simple "ndɔ {n}"
+                Week = Simple "lɔtɛ {n}"
+                Month = Simple "ndɔɔ {n}"
+                Year = Simple "bɛɛ {n}"
+            }
+        Half = "{0} kɩ̀ ndá̰ŋ"
+        Delimiter = ", "
+        JustNow = "ndɔrɔ"
+        Ago = "{0} ɓòo kɔ"
+        InFuture = "ga {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛɡ. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "lɛɛr {n}")
+            Day = Some (Simple "ndɔ {n}")
+            Week = Some (Simple "lɔtɛ {n}")
+            Month = Some (Simple "ndɔɔ {n}")
+            Year = Some (Simple "bɛɛ {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ɓòo kɔ"
+            InFuture = Some "ga {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} ɓòo kɔ"
+            InFuture = Some "ga {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/sd.json
 // ================================================================
 // SD — Sindhi
@@ -4480,6 +5646,59 @@ let SD: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} اڳ"
             InFuture = Some "{0} ۾"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/sg.json
+// ================================================================
+// SG — Sango
+// ================================================================
+let SG: DurationLocale =
+    {
+        Code = "sg"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "ndo-sêse {n}"
+                Minute = Simple "ndo {n}"
+                Hour = Simple "ngbonga {n}"
+                Day = Simple "lâ {n}"
+                Week = Simple "bîkua-ûse {n}"
+                Month = Simple "nze {n}"
+                Year = Simple "ngû {n}"
+            }
+        Half = "{0} na ndâ"
+        Delimiter = ", "
+        JustNow = "sô awe"
+        Ago = "{0} na pekô"
+        InFuture = "na {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "ndo-s. {n}")
+            Minute = Some (Simple "ndo {n}")
+            Hour = Some (Simple "ngb. {n}")
+            Day = Some (Simple "lâ {n}")
+            Week = Some (Simple "bîk. {n}")
+            Month = Some (Simple "nze {n}")
+            Year = Some (Simple "ngû {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} na pekô"
+            InFuture = Some "na {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} na pekô"
+            InFuture = Some "na {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -4750,6 +5969,59 @@ let SN: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/snk.json
+// ================================================================
+// SNK — Soninke
+// ================================================================
+let SNK: DurationLocale =
+    {
+        Code = "snk"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sɛgɔndi {n}"
+                Minute = Simple "miniti {n}"
+                Hour = Simple "waxati {n}"
+                Day = Simple "xanne {n}"
+                Week = Simple "simanxe {n}"
+                Month = Simple "kare {n}"
+                Year = Simple "jara {n}"
+            }
+        Half = "{0} do faabe"
+        Delimiter = ", "
+        JustNow = "toxo yi"
+        Ago = "{0} toxo kille"
+        InFuture = "do {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛg. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "wax. {n}")
+            Day = Some (Simple "xan. {n}")
+            Week = Some (Simple "sim. {n}")
+            Month = Some (Simple "kare {n}")
+            Year = Some (Simple "jara {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} toxo kille"
+            InFuture = Some "do {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} kille"
+            InFuture = Some "do {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/so.json
 // ================================================================
 // SO — Somali
@@ -4909,6 +6181,112 @@ let SR: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/ss.json
+// ================================================================
+// SS — siSwati
+// ================================================================
+let SS: DurationLocale =
+    {
+        Code = "ss"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "umzuzwana {n}"); (Other, "imizuzwana {n}") ])
+                Minute = Plural (Map.ofList [ (One, "umzuzu {n}"); (Other, "imizuzu {n}") ])
+                Hour = Plural (Map.ofList [ (One, "lihora {n}"); (Other, "emahora {n}") ])
+                Day = Plural (Map.ofList [ (One, "lilanga {n}"); (Other, "emalanga {n}") ])
+                Week = Plural (Map.ofList [ (One, "liviki {n}"); (Other, "emaviki {n}") ])
+                Month = Plural (Map.ofList [ (One, "inyanga {n}"); (Other, "tinyanga {n}") ])
+                Year = Plural (Map.ofList [ (One, "umnyaka {n}"); (Other, "iminyaka {n}") ])
+            }
+        Half = "{0} nenhafu"
+        Delimiter = ", "
+        JustNow = "nyalo nje"
+        Ago = "{0} lokwendlulile"
+        InFuture = "nge-{0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "umzuzwana {n}"); (Other, "imizuzwana {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "umzuzu {n}"); (Other, "imizuzu {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "lihora {n}"); (Other, "emahora {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "lilanga {n}"); (Other, "emalanga {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "liviki {n}"); (Other, "emaviki {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "iny. {n}"); (Other, "tiny. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "umny. {n}"); (Other, "imy. {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} lokwendlulile"
+            InFuture = Some "nge-{0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} lokwendlulile"
+            InFuture = Some "nge-{0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/st.json
+// ================================================================
+// ST — Southern Sotho
+// ================================================================
+let ST: DurationLocale =
+    {
+        Code = "st"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "motsotswana {n}"); (Other, "dimetsotswana {n}") ])
+                Minute = Plural (Map.ofList [ (One, "metsotso {n}"); (Other, "dimetsotso {n}") ])
+                Hour = Plural (Map.ofList [ (One, "hora {n}"); (Other, "dihora {n}") ])
+                Day = Plural (Map.ofList [ (One, "letsatsi {n}"); (Other, "matsatsi {n}") ])
+                Week = Plural (Map.ofList [ (One, "beke {n}"); (Other, "dibeke {n}") ])
+                Month = Plural (Map.ofList [ (One, "kgwedi {n}"); (Other, "dikgwedi {n}") ])
+                Year = Plural (Map.ofList [ (One, "selemo {n}"); (Other, "dilemo {n}") ])
+            }
+        Half = "{0} le halofo"
+        Delimiter = ", "
+        JustNow = "hona jwale"
+        Ago = "{0} e fetileng"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "motsotswana {n}"); (Other, "dimetsotswana {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "metsotso {n}"); (Other, "dimetsotso {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "hora {n}"); (Other, "dihora {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "letsatsi {n}"); (Other, "matsatsi {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "beke {n}"); (Other, "dibeke {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "kgw. {n}"); (Other, "dikgw. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "sel. {n}"); (Other, "dil. {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} e fetileng"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} e fetileng"
+            InFuture = Some "ka {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/su.json
 // ================================================================
 // SU — Sundanese
@@ -4957,6 +6335,59 @@ let SU: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} kapengker"
             InFuture = Some "dina {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/suk.json
+// ================================================================
+// SUK — Sukuma
+// ================================================================
+let SUK: DurationLocale =
+    {
+        Code = "suk"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "sekunde {n}"); (Other, "sekunde {n}") ])
+                Minute = Plural (Map.ofList [ (One, "dakika {n}"); (Other, "dakika {n}") ])
+                Hour = Plural (Map.ofList [ (One, "isaa {n}"); (Other, "amasaa {n}") ])
+                Day = Plural (Map.ofList [ (One, "isiku {n}"); (Other, "amasiku {n}") ])
+                Week = Plural (Map.ofList [ (One, "ishuma {n}"); (Other, "amashuma {n}") ])
+                Month = Plural (Map.ofList [ (One, "ngweli {n}"); (Other, "ngweli {n}") ])
+                Year = Plural (Map.ofList [ (One, "mwaka {n}"); (Other, "myaka {n}") ])
+            }
+        Half = "{0} na nusu"
+        Delimiter = ", "
+        JustNow = "haha"
+        Ago = "{0} zilizopita"
+        InFuture = "kwa {0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "sek. {n}"); (Other, "sek. {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "dak. {n}"); (Other, "dak. {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "isaa {n}"); (Other, "amasaa {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "isiku {n}"); (Other, "amasiku {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "ish. {n}"); (Other, "amash. {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "ngw. {n}"); (Other, "ngw. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mw. {n}"); (Other, "my. {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} zilizopita"
+            InFuture = Some "kwa {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} zilizopita"
+            InFuture = Some "kwa {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -5174,6 +6605,59 @@ let TE: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/tem.json
+// ================================================================
+// TEM — Temne
+// ================================================================
+let TEM: DurationLocale =
+    {
+        Code = "tem"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "sɛkɔn {n}"); (Other, "sɛkɔn {n}") ])
+                Minute = Plural (Map.ofList [ (One, "minit {n}"); (Other, "minit {n}") ])
+                Hour = Plural (Map.ofList [ (One, "awa {n}"); (Other, "awa {n}") ])
+                Day = Plural (Map.ofList [ (One, "ləfɔr {n}"); (Other, "ɔfɔr {n}") ])
+                Week = Plural (Map.ofList [ (One, "wik {n}"); (Other, "wik {n}") ])
+                Month = Plural (Map.ofList [ (One, "kətha {n}"); (Other, "ɔtha {n}") ])
+                Year = Plural (Map.ofList [ (One, "əsor {n}"); (Other, "ɔsor {n}") ])
+            }
+        Half = "{0} a gbankɛ"
+        Delimiter = ", "
+        JustNow = "kɛna yi"
+        Ago = "{0} ro ba"
+        InFuture = "ro {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sɛk. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "awa {n}")
+            Day = Some (Plural (Map.ofList [ (One, "ləfɔr {n}"); (Other, "ɔfɔr {n}") ]))
+            Week = Some (Simple "wik {n}")
+            Month = Some (Plural (Map.ofList [ (One, "kətha {n}"); (Other, "ɔtha {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "əsor {n}"); (Other, "ɔsor {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ro ba"
+            InFuture = Some "ro {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} ro ba"
+            InFuture = Some "ro {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/tg.json
 // ================================================================
 // TG — Tajik
@@ -5333,6 +6817,59 @@ let TI: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/tig.json
+// ================================================================
+// TIG — Tigre
+// ================================================================
+let TIG: DurationLocale =
+    {
+        Code = "tig"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "sanya {n}"); (Other, "sanayat {n}") ])
+                Minute = Plural (Map.ofList [ (One, "daqiqa {n}"); (Other, "daqiqat {n}") ])
+                Hour = Plural (Map.ofList [ (One, "saʿa {n}"); (Other, "saʿat {n}") ])
+                Day = Plural (Map.ofList [ (One, "yom {n}"); (Other, "ayam {n}") ])
+                Week = Plural (Map.ofList [ (One, "semun {n}"); (Other, "semunat {n}") ])
+                Month = Plural (Map.ofList [ (One, "werḥi {n}"); (Other, "awerḥi {n}") ])
+                Year = Plural (Map.ofList [ (One, "ʿam {n}"); (Other, "aʿwam {n}") ])
+            }
+        Half = "{0} we nəs"
+        Delimiter = ", "
+        JustNow = "hassab"
+        Ago = "qədmi {0}"
+        InFuture = "ba {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "san. {n}")
+            Minute = Some (Simple "daq. {n}")
+            Hour = Some (Simple "saʿa {n}")
+            Day = Some (Plural (Map.ofList [ (One, "yom {n}"); (Other, "ayam {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "semun {n}"); (Other, "semunat {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "werḥi {n}"); (Other, "awerḥi {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "ʿam {n}"); (Other, "aʿwam {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "qədmi {0}"
+            InFuture = Some "ba {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "qədmi {0}"
+            InFuture = Some "ba {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/tk.json
 // ================================================================
 // TK — Turkmen
@@ -5386,6 +6923,59 @@ let TK: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/tn.json
+// ================================================================
+// TN — Tswana
+// ================================================================
+let TN: DurationLocale =
+    {
+        Code = "tn"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "motsotswana {n}"); (Other, "dimetsotswana {n}") ])
+                Minute = Plural (Map.ofList [ (One, "metsotso {n}"); (Other, "dimetsotso {n}") ])
+                Hour = Plural (Map.ofList [ (One, "ura {n}"); (Other, "diura {n}") ])
+                Day = Plural (Map.ofList [ (One, "letsatsi {n}"); (Other, "malatsi {n}") ])
+                Week = Plural (Map.ofList [ (One, "beke {n}"); (Other, "dibeke {n}") ])
+                Month = Plural (Map.ofList [ (One, "kgwedi {n}"); (Other, "dikgwedi {n}") ])
+                Year = Plural (Map.ofList [ (One, "ngwaga {n}"); (Other, "dingwaga {n}") ])
+            }
+        Half = "{0} le halofo"
+        Delimiter = ", "
+        JustNow = "jaanong fela"
+        Ago = "{0} e e fetileng"
+        InFuture = "ka {0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "motsotswana {n}"); (Other, "dimetsotswana {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "metsotso {n}"); (Other, "dimetsotso {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "ura {n}"); (Other, "diura {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "letsatsi {n}"); (Other, "malatsi {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "beke {n}"); (Other, "dibeke {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "kgw. {n}"); (Other, "dikgw. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "ngw. {n}"); (Other, "dingw. {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} e e fetileng"
+            InFuture = Some "ka {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} e e fetileng"
+            InFuture = Some "ka {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/tr.json
 // ================================================================
 // TR — Turkish
@@ -5434,6 +7024,59 @@ let TR: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} önce"
             InFuture = Some "{0} sonra"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/ts.json
+// ================================================================
+// TS — Tsonga
+// ================================================================
+let TS: DurationLocale =
+    {
+        Code = "ts"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "xikontiri {n}"); (Other, "swikontiri {n}") ])
+                Minute = Plural (Map.ofList [ (One, "minete {n}"); (Other, "timinete {n}") ])
+                Hour = Plural (Map.ofList [ (One, "awara {n}"); (Other, "tiawara {n}") ])
+                Day = Plural (Map.ofList [ (One, "siku {n}"); (Other, "masiku {n}") ])
+                Week = Plural (Map.ofList [ (One, "vhiki {n}"); (Other, "mavhiki {n}") ])
+                Month = Plural (Map.ofList [ (One, "n'hweti {n}"); (Other, "tin'hweti {n}") ])
+                Year = Plural (Map.ofList [ (One, "lembe {n}"); (Other, "malembe {n}") ])
+            }
+        Half = "{0} ni hafu"
+        Delimiter = ", "
+        JustNow = "sweswi"
+        Ago = "{0} leri nga hundza"
+        InFuture = "hi {0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "xikon. {n}"); (Other, "swikon. {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "min. {n}"); (Other, "timin. {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "awa. {n}"); (Other, "tiawa. {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "siku {n}"); (Other, "masiku {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "vhiki {n}"); (Other, "mavhiki {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "n'hw. {n}"); (Other, "tin'hw. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "lembe {n}"); (Other, "mal. {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} leri nga hundza"
+            InFuture = Some "hi {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} hundza"
+            InFuture = Some "hi {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -5540,6 +7183,59 @@ let UK: DurationLocale =
             Delimiter = Some ""
             Ago = Some "{0} тому"
             InFuture = Some "через {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/umb.json
+// ================================================================
+// UMB — Umbundu
+// ================================================================
+let UMB: DurationLocale =
+    {
+        Code = "umb"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "osekunde {n}"); (Other, "olosekunde {n}") ])
+                Minute = Plural (Map.ofList [ (One, "ominute {n}"); (Other, "olominute {n}") ])
+                Hour = Plural (Map.ofList [ (One, "ohola {n}"); (Other, "olohola {n}") ])
+                Day = Plural (Map.ofList [ (One, "elityi {n}"); (Other, "omatyi {n}") ])
+                Week = Plural (Map.ofList [ (One, "osemana {n}"); (Other, "olosemana {n}") ])
+                Month = Plural (Map.ofList [ (One, "ondjambi {n}"); (Other, "olondjambi {n}") ])
+                Year = Plural (Map.ofList [ (One, "ombula {n}"); (Other, "olombula {n}") ])
+            }
+        Half = "{0} na oñali"
+        Delimiter = ", "
+        JustNow = "kosi"
+        Ago = "{0} ya pita"
+        InFuture = "ko {0}"
+        ShortOverride = Some {
+            Second = Some (Plural (Map.ofList [ (One, "osek. {n}"); (Other, "olosek. {n}") ]))
+            Minute = Some (Plural (Map.ofList [ (One, "omin. {n}"); (Other, "olomin. {n}") ]))
+            Hour = Some (Plural (Map.ofList [ (One, "ohola {n}"); (Other, "olohola {n}") ]))
+            Day = Some (Plural (Map.ofList [ (One, "elit. {n}"); (Other, "omat. {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "osem. {n}"); (Other, "olosem. {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "ondj. {n}"); (Other, "olondj. {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "omb. {n}"); (Other, "olomb. {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ya pita"
+            InFuture = Some "ko {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} pita"
+            InFuture = Some "ko {0}"
             }
         FormatNumber = None
         FormatUnit = None
@@ -5704,6 +7400,112 @@ let VI: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/vmw.json
+// ================================================================
+// VMW — Makhuwa
+// ================================================================
+let VMW: DurationLocale =
+    {
+        Code = "vmw"
+        Plural = (fun n -> if n = 1 then One else Other)
+        Units =
+            {
+                Second = Plural (Map.ofList [ (One, "sekuundu {n}"); (Other, "sekuundu {n}") ])
+                Minute = Plural (Map.ofList [ (One, "minuto {n}"); (Other, "minuto {n}") ])
+                Hour = Plural (Map.ofList [ (One, "hora {n}"); (Other, "hora {n}") ])
+                Day = Plural (Map.ofList [ (One, "eshuku {n}"); (Other, "mshuku {n}") ])
+                Week = Plural (Map.ofList [ (One, "esumana {n}"); (Other, "msumana {n}") ])
+                Month = Plural (Map.ofList [ (One, "mweri {n}"); (Other, "miyeri {n}") ])
+                Year = Plural (Map.ofList [ (One, "mwaka {n}"); (Other, "miyaka {n}") ])
+            }
+        Half = "{0} na mettenhe"
+        Delimiter = ", "
+        JustNow = "vano vivi"
+        Ago = "{0} zapita"
+        InFuture = "mu {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sek. {n}")
+            Minute = Some (Simple "min. {n}")
+            Hour = Some (Simple "hora {n}")
+            Day = Some (Plural (Map.ofList [ (One, "eshuku {n}"); (Other, "mshuku {n}") ]))
+            Week = Some (Plural (Map.ofList [ (One, "esumana {n}"); (Other, "msumana {n}") ]))
+            Month = Some (Plural (Map.ofList [ (One, "mweri {n}"); (Other, "miyeri {n}") ]))
+            Year = Some (Plural (Map.ofList [ (One, "mwaka {n}"); (Other, "miyaka {n}") ]))
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} zapita"
+            InFuture = Some "mu {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} zapita"
+            InFuture = Some "mu {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
+// Source: duration/locales/src/wo.json
+// ================================================================
+// WO — Wolof
+// ================================================================
+let WO: DurationLocale =
+    {
+        Code = "wo"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "saa-yépp {n}"
+                Minute = Simple "simili {n}"
+                Hour = Simple "waxtu {n}"
+                Day = Simple "bés {n}"
+                Week = Simple "ayubés {n}"
+                Month = Simple "weer {n}"
+                Year = Simple "at {n}"
+            }
+        Half = "{0} ak genn-wàll"
+        Delimiter = ", "
+        JustNow = "léegi"
+        Ago = "{0} ci ginaaw"
+        InFuture = "ci {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "saa-y. {n}")
+            Minute = Some (Simple "sim. {n}")
+            Hour = Some (Simple "wax. {n}")
+            Day = Some (Simple "bés {n}")
+            Week = Some (Simple "ayub. {n}")
+            Month = Some (Simple "weer {n}")
+            Year = Some (Simple "at {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} ci ginaaw"
+            InFuture = Some "ci {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "saa {n}")
+            Minute = Some (Simple "sim {n}")
+            Hour = Some (Simple "wax {n}")
+            Day = Some (Simple "bés {n}")
+            Week = Some (Simple "ayub {n}")
+            Month = Some (Simple "weer {n}")
+            Year = Some (Simple "at {n}")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} ci gin."
+            InFuture = Some "ci {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/xh.json
 // ================================================================
 // XH — Xhosa
@@ -5863,6 +7665,59 @@ let YUE: DurationLocale =
         FormatUnit = None
     }
 
+// Source: duration/locales/src/zdj.json
+// ================================================================
+// ZDJ — Comorian
+// ================================================================
+let ZDJ: DurationLocale =
+    {
+        Code = "zdj"
+        Plural = (fun _ -> Other)
+        Units =
+            {
+                Second = Simple "sekunde {n}"
+                Minute = Simple "dakika {n}"
+                Hour = Simple "saa {n}"
+                Day = Simple "suku {n}"
+                Week = Simple "djumwa {n}"
+                Month = Simple "mwezi {n}"
+                Year = Simple "mwaha {n}"
+            }
+        Half = "{0} na nusu"
+        Delimiter = ", "
+        JustNow = "vavo hangu"
+        Ago = "{0} zilizopita"
+        InFuture = "ha {0}"
+        ShortOverride = Some {
+            Second = Some (Simple "sek. {n}")
+            Minute = Some (Simple "dak. {n}")
+            Hour = Some (Simple "saa {n}")
+            Day = Some (Simple "suku {n}")
+            Week = Some (Simple "djum. {n}")
+            Month = Some (Simple "mw. {n}")
+            Year = Some (Simple "mwa. {n}")
+            Half = None
+            Delimiter = None
+            Ago = Some "{0} zilizopita"
+            InFuture = Some "ha {0}"
+            }
+        CompactOverride = Some {
+            Second = Some (Simple "{n}s")
+            Minute = Some (Simple "{n}m")
+            Hour = Some (Simple "{n}h")
+            Day = Some (Simple "{n}d")
+            Week = Some (Simple "{n}w")
+            Month = Some (Simple "{n}m")
+            Year = Some (Simple "{n}y")
+            Half = Some "{n}½"
+            Delimiter = Some ""
+            Ago = Some "{0} zilizopita"
+            InFuture = Some "ha {0}"
+            }
+        FormatNumber = None
+        FormatUnit = None
+    }
+
 // Source: duration/locales/src/zh.json
 // ================================================================
 // ZH — Chinese
@@ -5977,8 +7832,11 @@ let All: Map<string, DurationLocale> =
             ("am", AM)
             ("ar", AR)
             ("az", AZ)
+            ("bci", BCI)
             ("be", BE)
+            ("bem", BEM)
             ("bg", BG)
+            ("bm", BM)
             ("bn", BN)
             ("br", BR)
             ("bs", BS)
@@ -5988,15 +7846,21 @@ let All: Map<string, DurationLocale> =
             ("cy", CY)
             ("da", DA)
             ("de", DE)
+            ("din", DIN)
+            ("dje", DJE)
+            ("dyu", DYU)
+            ("ee", EE)
             ("el", EL)
             ("en", EN)
             ("es", ES)
             ("et", ET)
             ("eu", EU)
             ("fa", FA)
+            ("fan", FAN)
             ("ff", FF)
             ("fi", FI)
             ("fil", FIL)
+            ("fon", FON)
             ("fr", FR)
             ("ga", GA)
             ("gd", GD)
@@ -6018,10 +7882,13 @@ let All: Map<string, DurationLocale> =
             ("ja", JA)
             ("jv", JV)
             ("ka", KA)
+            ("kbp", KBP)
             ("kk", KK)
             ("km", KM)
             ("kn", KN)
             ("ko", KO)
+            ("kpe", KPE)
+            ("ktu", KTU)
             ("ku", KU)
             ("kw", KW)
             ("ky", KY)
@@ -6030,56 +7897,79 @@ let All: Map<string, DurationLocale> =
             ("lo", LO)
             ("lt", LT)
             ("lv", LV)
+            ("men", MEN)
+            ("mfe", MFE)
             ("mg", MG)
             ("mi", MI)
             ("mk", MK)
             ("ml", ML)
             ("mn", MN)
+            ("mnk", MNK)
+            ("mos", MOS)
             ("mr", MR)
             ("ms", MS)
             ("mt", MT)
             ("my", MY)
             ("nb", NB)
+            ("nd", ND)
             ("ne", NE)
+            ("ng", NG)
             ("nl", NL)
+            ("nso", NSO)
+            ("nus", NUS)
             ("ny", NY)
             ("om", OM)
             ("or", OR)
             ("pa", PA)
             ("pl", PL)
+            ("pov", POV)
             ("ps", PS)
             ("pt", PT)
             ("qu", QU)
             ("ro", RO)
             ("ru", RU)
             ("rw", RW)
+            ("sar", SAR)
             ("sd", SD)
+            ("sg", SG)
             ("shi", SHI)
             ("si", SI)
             ("sk", SK)
             ("sl", SL)
             ("sn", SN)
+            ("snk", SNK)
             ("so", SO)
             ("sq", SQ)
             ("sr", SR)
+            ("ss", SS)
+            ("st", ST)
             ("su", SU)
+            ("suk", SUK)
             ("sv", SV)
             ("sw", SW)
             ("ta", TA)
             ("te", TE)
+            ("tem", TEM)
             ("tg", TG)
             ("th", TH)
             ("ti", TI)
+            ("tig", TIG)
             ("tk", TK)
+            ("tn", TN)
             ("tr", TR)
+            ("ts", TS)
             ("tzm", TZM)
             ("uk", UK)
+            ("umb", UMB)
             ("ur", UR)
             ("uz", UZ)
             ("vi", VI)
+            ("vmw", VMW)
+            ("wo", WO)
             ("xh", XH)
             ("yo", YO)
             ("yue", YUE)
+            ("zdj", ZDJ)
             ("zh", ZH)
             ("zu", ZU)
         ]

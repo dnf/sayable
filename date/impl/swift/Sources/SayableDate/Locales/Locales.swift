@@ -10,7 +10,7 @@
 
 // swiftlint:disable file_length
 
-/// All 110 locale definitions for sayable-date.
+/// All 145 locale definitions for sayable-date.
 public enum Locales {
 
     // Source: date/locales/src/af.json
@@ -243,6 +243,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/bci.json
+    // ================================================================
+    // BCI — Baoulé
+    // ================================================================
+    public static let BCI = DateLocale(
+        code: "bci",
+        months: ["Zanvie", "Flevie", "Masi", "Avrili", "Mɛ", "Zuɛn", "Zulɛ", "Uti", "Sɛtanbu", "Ɔtɔbu", "Novanbu", "Desanbu"],
+        weekdays: ["Mɔndi", "Lunji", "Madi", "Mliku", "Juedi", "Vaandredi", "Sanmdi"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "andɛ",
+        tomorrow: "ainman",
+        yesterday: "nglɛmun",
+        dayAfterTomorrow: "ainman sin",
+        dayBeforeYesterday: "nglɛmun sin",
+        thisWeekday: "{weekday} nga",
+        nextWeekday: "{weekday} ng'ɔ ba",
+        lastWeekday: "{weekday} ng'ɔ sín",
+        short: CompactnessOverride(
+            months: ["Zan", "Fle", "Mas", "Avr", "Mɛ", "Zuɛ", "Zul", "Uti", "Sɛt", "Ɔtɔ", "Nov", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Mɔn", "Lun", "Mad", "Mli", "Jue", "Vaa", "San"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/be.json
     // ================================================================
     // BE — Belarusian
@@ -290,6 +336,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/bem.json
+    // ================================================================
+    // BEM — Bemba
+    // ================================================================
+    public static let BEM = DateLocale(
+        code: "bem",
+        months: ["Januari", "Februari", "Machi", "Epreli", "Mei", "Juni", "Julai", "Ogasti", "Septemba", "Oktoba", "Novemba", "Disemba"],
+        weekdays: ["Pa Mulungu", "Pa Bwali", "Pa Bibili", "Pa Butatu", "Pa Bune", "Pa Busano", "Pa Mulembe"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "lelo",
+        tomorrow: "mailo",
+        yesterday: "icungulo",
+        dayAfterTomorrow: "mailo kabili",
+        dayBeforeYesterday: "icungulo kabili",
+        thisWeekday: "{weekday} ubu",
+        nextWeekday: "{weekday} ukwisa",
+        lastWeekday: "{weekday} ukupita",
+        short: CompactnessOverride(
+            months: ["Jan", "Feb", "Mac", "Epr", "Mei", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis"],
+            monthsInDate: nil,
+            weekdays: ["Mul", "Bwa", "Bib", "But", "Bun", "Bus", "Mul"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/bg.json
     // ================================================================
     // BG — Bulgarian
@@ -314,6 +406,52 @@ public enum Locales {
             months: ["яну", "фев", "мар", "апр", "май", "юни", "юли", "авг", "сеп", "окт", "ное", "дек"],
             monthsInDate: nil,
             weekdays: ["нд", "пн", "вт", "ср", "чт", "пт", "сб"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/bm.json
+    // ================================================================
+    // BM — Bambara
+    // ================================================================
+    public static let BM = DateLocale(
+        code: "bm",
+        months: ["Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"],
+        weekdays: ["Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "bi",
+        tomorrow: "sini",
+        yesterday: "kunu",
+        dayAfterTomorrow: "sini kɔfɛ",
+        dayBeforeYesterday: "kunu kɔfɛ",
+        thisWeekday: "{weekday} nin",
+        nextWeekday: "{weekday} nata",
+        lastWeekday: "{weekday} tɛmɛnen",
+        short: CompactnessOverride(
+            months: ["Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"],
             dayFormat: "{n}",
             dayFormatExceptions: nil,
             datePattern: "{day} {month}",
@@ -749,6 +887,190 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/din.json
+    // ================================================================
+    // DIN — Dinka
+    // ================================================================
+    public static let DIN = DateLocale(
+        code: "din",
+        months: ["Tiɔp in dit", "Pɛt", "Duɔ̈ɔ̈ŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk"],
+        weekdays: ["Akɔl dhorou", "Kɔl jöŋ", "Kɔl rou", "Kɔl diäk", "Kɔl ŋuän", "Kɔl dhiëc", "Kɔl bäkäl"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "yïn",
+        tomorrow: "riak",
+        yesterday: "aköl",
+        dayAfterTomorrow: "riak cök",
+        dayBeforeYesterday: "aköl cök",
+        thisWeekday: "{weekday} kënë",
+        nextWeekday: "{weekday} bɛ̈n",
+        lastWeekday: "{weekday} cï wëëŋ",
+        short: CompactnessOverride(
+            months: ["Tiɔp", "Pɛt", "Duɔ̈ɔ̈ŋ", "Guak", "Duät", "Kor", "Pay", "Tio̱p", "Laa", "Kur", "Tio̱p", "Jiɔk"],
+            monthsInDate: nil,
+            weekdays: ["Dho", "Jöŋ", "Rou", "Diäk", "Ŋuän", "Dhiëc", "Bäk"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/dje.json
+    // ================================================================
+    // DJE — Zarma
+    // ================================================================
+    public static let DJE = DateLocale(
+        code: "dje",
+        months: ["Žanwiye", "Feewiriye", "Marsi", "Awiril", "Me", "Žuweŋ", "Žuyye", "Ut", "Sektanbur", "Oktoobur", "Noowanbur", "Deesanbur"],
+        weekdays: ["Alhadi", "Atini", "Atalaata", "Alarba", "Alhamisi", "Alzuma", "Asibiti"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "hõ",
+        tomorrow: "suba",
+        yesterday: "bi",
+        dayAfterTomorrow: "suba cine",
+        dayBeforeYesterday: "bi fo",
+        thisWeekday: "{weekday} wo",
+        nextWeekday: "{weekday} ka kaa",
+        lastWeekday: "{weekday} ka ban",
+        short: CompactnessOverride(
+            months: ["Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee"],
+            monthsInDate: nil,
+            weekdays: ["Alh", "Ati", "Ata", "Ala", "Alh", "Alz", "Asi"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/dyu.json
+    // ================================================================
+    // DYU — Dyula
+    // ================================================================
+    public static let DYU = DateLocale(
+        code: "dyu",
+        months: ["Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburdukalo", "Desanburukalo"],
+        weekdays: ["Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "bi",
+        tomorrow: "sini",
+        yesterday: "kunu",
+        dayAfterTomorrow: "sini kɔfɛ",
+        dayBeforeYesterday: "kunu kɔfɛ",
+        thisWeekday: "{weekday} nin",
+        nextWeekday: "{weekday} nata",
+        lastWeekday: "{weekday} tɛmɛnen",
+        short: CompactnessOverride(
+            months: ["Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/ee.json
+    // ================================================================
+    // EE — Ewe
+    // ================================================================
+    public static let EE = DateLocale(
+        code: "ee",
+        months: ["Dzove", "Dzodze", "Tedoxe", "Afɔfĩe", "Damɛ", "Masa", "Siamlɔm", "Dasiamime", "Anyɔnyɔ", "Kele", "Adeɛmekpɔxe", "Dzome"],
+        weekdays: ["Kɔsiɖa", "Dzoɖa", "Braɖa", "Kuɖa", "Yawoɖa", "Fiɖa", "Memleɖa"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "egbe",
+        tomorrow: "etsɔ",
+        yesterday: "etso",
+        dayAfterTomorrow: "etsɔ megbe",
+        dayBeforeYesterday: "etso nyitsɔ",
+        thisWeekday: "{weekday} sia",
+        nextWeekday: "{weekday} si gbɔna",
+        lastWeekday: "{weekday} si va yi",
+        short: CompactnessOverride(
+            months: ["Dzv", "Dzd", "Ted", "Afɔ", "Dam", "Mas", "Sia", "Das", "Any", "Kel", "Ade", "Dzm"],
+            monthsInDate: nil,
+            weekdays: ["Kɔs", "Dzo", "Bra", "Kuɖ", "Yaw", "Fiɖ", "Mem"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/el.json
     // ================================================================
     // EL — Greek
@@ -1026,6 +1348,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/fan.json
+    // ================================================================
+    // FAN — Fang
+    // ================================================================
+    public static let FAN = DateLocale(
+        code: "fan",
+        months: ["Nzas Ngon", "Nzas Mekié", "Nzas Okúa", "Nzas Angón", "Nzas Obuí", "Nzas Okéna", "Nzas Osúa", "Nzas Mwom", "Nzas Ebulú", "Nzas Owono", "Nzas Owono-abé", "Nzas Nkéng"],
+        weekdays: ["Esig", "Amvus", "Amvus-abé", "Amvus-alú", "Amvus-anyin", "Mba", "Ngon"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "anú",
+        tomorrow: "kie",
+        yesterday: "angogomé",
+        dayAfterTomorrow: "kie okúa",
+        dayBeforeYesterday: "angogomé okúa",
+        thisWeekday: "{weekday} ane",
+        nextWeekday: "{weekday} a bé za",
+        lastWeekday: "{weekday} a ja",
+        short: CompactnessOverride(
+            months: ["Ngo", "Mek", "Oku", "Ang", "Obu", "Oke", "Osu", "Mwo", "Ebu", "Owo", "Owa", "Nke"],
+            monthsInDate: nil,
+            weekdays: ["Esi", "Amv", "Ama", "Aml", "Amn", "Mba", "Ngo"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/ff.json
     // ================================================================
     // FF — Fulah
@@ -1159,6 +1527,52 @@ public enum Locales {
             dayFormatExceptions: nil,
             datePattern: "{m}/{d}",
             datePatternWithYear: "{m}/{d}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/fon.json
+    // ================================================================
+    // FON — Fon
+    // ================================================================
+    public static let FON = DateLocale(
+        code: "fon",
+        months: ["Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"],
+        weekdays: ["Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "egbè",
+        tomorrow: "sɔ",
+        yesterday: "sá",
+        dayAfterTomorrow: "sɔ gudo",
+        dayBeforeYesterday: "sá gudo",
+        thisWeekday: "{weekday} elɔ",
+        nextWeekday: "{weekday} e ja",
+        lastWeekday: "{weekday} e wá yí",
+        short: CompactnessOverride(
+            months: ["Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"],
+            monthsInDate: nil,
+            weekdays: ["Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
             today: nil,
             tomorrow: nil,
             yesterday: nil
@@ -2130,6 +2544,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/kbp.json
+    // ================================================================
+    // KBP — Kabiye
+    // ================================================================
+    public static let KBP = DateLocale(
+        code: "kbp",
+        months: ["Kɔlaɣ", "Naaɣ Kɩŋ", "Naataŋgʊ", "Naalɩɩ", "Lɛlɩɩ", "Kʊɖʊmaa", "Saŋayɩɩ", "Kɩyɛɛna", "Lɩtɩɩ", "Kʊɖʊmaɣ", "Tɩŋgɩzɩɩ", "Abranɩɩ"],
+        weekdays: ["Pɩsɩ", "Tɛɖɛɣa", "Taata", "Aranzɩɩ", "Aramnza", "Azɩma", "Asɩbɩ"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "sɔnɔ",
+        tomorrow: "cee",
+        yesterday: "ɖooo",
+        dayAfterTomorrow: "cee wayɩ",
+        dayBeforeYesterday: "ɖooo wayɩ",
+        thisWeekday: "{weekday} kɩ",
+        nextWeekday: "{weekday} nɛ ŋga",
+        lastWeekday: "{weekday} nɛ wɛ",
+        short: CompactnessOverride(
+            months: ["Kɔl", "Naa", "Nat", "Nal", "Lɛl", "Kʊɖ", "Saŋ", "Kɩy", "Lɩt", "Kʊɖ", "Tɩŋ", "Abr"],
+            monthsInDate: nil,
+            weekdays: ["Pɩs", "Tɛɖ", "Taa", "Ara", "Arm", "Azɩ", "Asɩ"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -2308,6 +2768,98 @@ public enum Locales {
             dayFormatExceptions: nil,
             datePattern: "{m}/{d}",
             datePatternWithYear: "{yy}/{m}/{d}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/kpe.json
+    // ================================================================
+    // KPE — Kpelle
+    // ================================================================
+    public static let KPE = DateLocale(
+        code: "kpe",
+        months: ["Yanuwali", "Fɛbɛli", "Maachi", "Eepɛli", "Mɛɛ", "Juŋ", "Julai", "Ɔɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba"],
+        weekdays: ["Saadee", "Tɛnɛɛ", "Talata", "Alaba", "Aimisa", "Juma", "Satɛdee"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "nɔ̃ɔ̃",
+        tomorrow: "sila",
+        yesterday: "ɓii",
+        dayAfterTomorrow: "sila pɔlɔ",
+        dayBeforeYesterday: "ɓii pɔlɔ",
+        thisWeekday: "{weekday} yi",
+        nextWeekday: "{weekday} ya kɛ",
+        lastWeekday: "{weekday} kɛ pɔlɔ",
+        short: CompactnessOverride(
+            months: ["Yan", "Fɛb", "Maa", "Eep", "Mɛɛ", "Juŋ", "Jul", "Ɔɔg", "Sɛt", "Ɔtɔ", "Nɔv", "Dis"],
+            monthsInDate: nil,
+            weekdays: ["Saa", "Tɛn", "Tal", "Ala", "Aim", "Jum", "Sat"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/ktu.json
+    // ================================================================
+    // KTU — Kituba
+    // ================================================================
+    public static let KTU = DateLocale(
+        code: "ktu",
+        months: ["Yanvye", "Fevrye", "Marsi", "Avrili", "Mɛ", "Yuwɛ", "Yulɛ", "Uti", "Sɛtambre", "Ɔtɔbre", "Nɔvambre", "Desambre"],
+        weekdays: ["Lumingu", "Kimosi", "Kizole", "Kizoluntatu", "Kinya", "Kisabala", "Kimpwanza"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "bubu",
+        tomorrow: "mbazi",
+        yesterday: "zono",
+        dayAfterTomorrow: "mbazi ya mbazi",
+        dayBeforeYesterday: "zono ya zono",
+        thisWeekday: "{weekday} yayi",
+        nextWeekday: "{weekday} ya kwiza",
+        lastWeekday: "{weekday} ya vioka",
+        short: CompactnessOverride(
+            months: ["Yan", "Fev", "Mar", "Avr", "Mɛ", "Yuw", "Yul", "Uti", "Sɛt", "Ɔtɔ", "Nɔv", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Lum", "Kim", "Kiz", "Kzn", "Kin", "Kis", "Kmp"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
             today: nil,
             tomorrow: nil,
             yesterday: nil
@@ -2681,6 +3233,98 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/men.json
+    // ================================================================
+    // MEN — Mende
+    // ================================================================
+    public static let MEN = DateLocale(
+        code: "men",
+        months: ["Januwali", "Febluwali", "Maachi", "Epuli", "Mei", "Juun", "Julai", "Ɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba"],
+        weekdays: ["Lahadi", "Tɛɛnɛɛ", "Talata", "Alaba", "Aimisa", "Juma", "Satidei"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "wii",
+        tomorrow: "sina",
+        yesterday: "bii",
+        dayAfterTomorrow: "sina gɔlɔ",
+        dayBeforeYesterday: "bii gɔlɔ",
+        thisWeekday: "{weekday} yɛ",
+        nextWeekday: "{weekday} yɛ gbɔyɔ",
+        lastWeekday: "{weekday} taa gbɔyɔ",
+        short: CompactnessOverride(
+            months: ["Jan", "Feb", "Maa", "Epu", "Mei", "Juu", "Jul", "Ɔgɔ", "Sɛt", "Ɔtɔ", "Nɔv", "Dis"],
+            monthsInDate: nil,
+            weekdays: ["Lah", "Tɛɛ", "Tal", "Ala", "Aim", "Jum", "Sat"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/mfe.json
+    // ================================================================
+    // MFE — Mauritian Creole
+    // ================================================================
+    public static let MFE = DateLocale(
+        code: "mfe",
+        months: ["Zanvie", "Fevrie", "Mars", "Avril", "Me", "Zwin", "Zwiye", "Out", "Septam", "Oktob", "Novam", "Desam"],
+        weekdays: ["Dimans", "Lindi", "Mardi", "Merkredi", "Zedi", "Vandredi", "Samdi"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "zordi",
+        tomorrow: "dimin",
+        yesterday: "yer",
+        dayAfterTomorrow: "apre dimin",
+        dayBeforeYesterday: "avan yer",
+        thisWeekday: "{weekday} la",
+        nextWeekday: "{weekday} prosenn",
+        lastWeekday: "{weekday} pase",
+        short: CompactnessOverride(
+            months: ["Zan", "Fev", "Mar", "Avr", "Me", "Zwn", "Zwy", "Out", "Sep", "Okt", "Nov", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Dim", "Lin", "Mar", "Mer", "Zed", "Van", "Sam"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/mg.json
     // ================================================================
     // MG — Malagasy
@@ -2905,6 +3549,98 @@ public enum Locales {
             dayFormatExceptions: nil,
             datePattern: "{yy}/{m}/{d}",
             datePatternWithYear: "{yy}/{m}/{d}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/mnk.json
+    // ================================================================
+    // MNK — Mandinka
+    // ================================================================
+    public static let MNK = DateLocale(
+        code: "mnk",
+        months: ["Samwiye", "Feburiye", "Marsi", "Afiril", "Meyi", "Juŋ", "Julaa", "Ooti", "Sɛtɛmba", "Ɔtɔba", "Nuwɛmba", "Disɛmba"],
+        weekdays: ["Ari", "Teniŋ", "Talata", "Araba", "Alamisa", "Juma", "Sibiti"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "bi",
+        tomorrow: "siniŋ",
+        yesterday: "kuŋ",
+        dayAfterTomorrow: "siniŋ kɔma",
+        dayBeforeYesterday: "kuŋ kɔma",
+        thisWeekday: "{weekday} niŋ",
+        nextWeekday: "{weekday} nataa",
+        lastWeekday: "{weekday} taata",
+        short: CompactnessOverride(
+            months: ["Sam", "Feb", "Mar", "Afi", "Mey", "Juŋ", "Jul", "Oot", "Sɛt", "Ɔtɔ", "Nuw", "Dis"],
+            monthsInDate: nil,
+            weekdays: ["Ari", "Ten", "Tal", "Ara", "Ala", "Jum", "Sib"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/mos.json
+    // ================================================================
+    // MOS — Moore
+    // ================================================================
+    public static let MOS = DateLocale(
+        code: "mos",
+        months: ["Zãn-naabu", "Sig-noy-yaadre", "Sig-noy-taabo", "Kãn-saglem", "Koabg-taabo", "Koabg-yaadre", "Baspɩɩre", "Gɩ-sõongo", "Tũubg-sõongo", "Pẽemb-sõongo", "Laafi-bãaga", "Filiga-bãaga"],
+        weekdays: ["Alhadi", "Atɩnni", "Atalaata", "Alarba", "Alkamisa", "Arjuma", "Asibti"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "rũnda",
+        tomorrow: "beoog",
+        yesterday: "zaame",
+        dayAfterTomorrow: "beoog sẽn wat",
+        dayBeforeYesterday: "zaame sẽn loog",
+        thisWeekday: "{weekday} kãnga",
+        nextWeekday: "{weekday} sẽn wat",
+        lastWeekday: "{weekday} sẽn loog",
+        short: CompactnessOverride(
+            months: ["Zãn", "S-y", "S-t", "Kãn", "K-t", "K-y", "Bas", "Gɩ", "Tũu", "Pẽe", "Laa", "Fil"],
+            monthsInDate: nil,
+            weekdays: ["Alh", "Atɩ", "Ata", "Ala", "Alk", "Arj", "Asi"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
             today: nil,
             tomorrow: nil,
             yesterday: nil
@@ -3141,6 +3877,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/nd.json
+    // ================================================================
+    // ND — Northern Ndebele
+    // ================================================================
+    public static let ND = DateLocale(
+        code: "nd",
+        months: ["Zibandlela", "Nhlolanja", "Mbimbitho", "Mabasa", "Nkwenkwezi", "Nhlangula", "Kholwane", "Ingci", "Inyoni", "Imphala", "Lwezi", "Mpalakazi"],
+        weekdays: ["Sonto", "Mvulo", "Sibili", "Sithathu", "Sine", "Sihlanu", "Mgqibelo"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "lamuhla",
+        tomorrow: "kusasa",
+        yesterday: "izolo",
+        dayAfterTomorrow: "ngomhlomunye",
+        dayBeforeYesterday: "usuku olwedlule izolo",
+        thisWeekday: "leli {weekday}",
+        nextWeekday: "{weekday} elizayo",
+        lastWeekday: "{weekday} eledlule",
+        short: CompactnessOverride(
+            months: ["Zib", "Nhl", "Mbi", "Mab", "Nkw", "Nhl", "Kho", "Ing", "Iny", "Imp", "Lwe", "Mpa"],
+            monthsInDate: nil,
+            weekdays: ["Son", "Mvu", "Sib", "Sit", "Sin", "Sih", "Mgq"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/ne.json
     // ================================================================
     // NE — Nepali
@@ -3187,6 +3969,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/ng.json
+    // ================================================================
+    // NG — Oshiwambo
+    // ================================================================
+    public static let NG = DateLocale(
+        code: "ng",
+        months: ["Januali", "Febluali", "Malitsi", "Aplili", "Mei", "Juni", "Juli", "Augustu", "Septemba", "Oktoba", "Novemba", "Desemba"],
+        weekdays: ["Osoondaha", "Omaandaha", "Etitatu", "Etitano", "Etine", "Oshitimuine", "Eshabati"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "nena",
+        tomorrow: "mongula",
+        yesterday: "ongula ya dja ko",
+        dayAfterTomorrow: "mongula e li ko",
+        dayBeforeYesterday: "ongula ya dja ko nale",
+        thisWeekday: "{weekday} eshi",
+        nextWeekday: "{weekday} e li ko",
+        lastWeekday: "{weekday} ya dja ko",
+        short: CompactnessOverride(
+            months: ["Jan", "Feb", "Mal", "Apl", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Oso", "Oma", "Eti", "Etn", "Etn", "Osh", "Esh"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/nl.json
     // ================================================================
     // NL — Dutch
@@ -3211,6 +4039,98 @@ public enum Locales {
             months: ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
             monthsInDate: nil,
             weekdays: ["zo", "ma", "di", "wo", "do", "vr", "za"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/nso.json
+    // ================================================================
+    // NSO — Northern Sotho
+    // ================================================================
+    public static let NSO = DateLocale(
+        code: "nso",
+        months: ["Pherekgong", "Hlakola", "Mopitlo", "Moranang", "Mosegamanye", "Ngoatobošego", "Phukwi", "Phatwe", "Lewedi", "Diphalane", "Dibatsela", "Manthole"],
+        weekdays: ["Lamorena", "Mošupologo", "Labobedi", "Laboraro", "Labone", "Labohlano", "Mokibelo"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "lehono",
+        tomorrow: "gosasa",
+        yesterday: "maabane",
+        dayAfterTomorrow: "morago ga gosasa",
+        dayBeforeYesterday: "maabane a go feta",
+        thisWeekday: "{weekday} ye",
+        nextWeekday: "{weekday} ye e tlago",
+        lastWeekday: "{weekday} ye e fetilego",
+        short: CompactnessOverride(
+            months: ["Pher", "Hlak", "Mop", "Mor", "Mos", "Ngoa", "Phu", "Pha", "Lew", "Diph", "Dib", "Man"],
+            monthsInDate: nil,
+            weekdays: ["Lam", "Moš", "Lbb", "Lbr", "Lbn", "Lbh", "Mok"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/nus.json
+    // ================================================================
+    // NUS — Nuer
+    // ================================================================
+    public static let NUS = DateLocale(
+        code: "nus",
+        months: ["Tiɔp thar", "Pɛt", "Duɔɔŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk"],
+        weekdays: ["Cäŋ nhial", "Jiec la̱t", "Rɛw la̱t", "Diɔk la̱t", "Ŋuaan la̱t", "Dhieec la̱t", "Bäkɛl"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "walɛ",
+        tomorrow: "riak",
+        yesterday: "dhorou",
+        dayAfterTomorrow: "riak kɛnɛ",
+        dayBeforeYesterday: "dhorou kɛnɛ",
+        thisWeekday: "{weekday} ɛn",
+        nextWeekday: "{weekday} tɛ bɛ̈n",
+        lastWeekday: "{weekday} cï kuɔ̈ɔ̈t",
+        short: CompactnessOverride(
+            months: ["Tiɔp", "Pɛt", "Duɔɔ", "Gua", "Duä", "Kor", "Pay", "Tio̱p", "Laa", "Kur", "Tio̱", "Jiɔ"],
+            monthsInDate: nil,
+            weekdays: ["Nhial", "Jiec", "Rɛw", "Diɔk", "Ŋuaan", "Dhiec", "Bäk"],
             dayFormat: "{n}",
             dayFormatExceptions: nil,
             datePattern: "{day} {month}",
@@ -3458,6 +4378,52 @@ public enum Locales {
             dayFormatExceptions: nil,
             datePattern: "{d}.{m}.",
             datePatternWithYear: "{d}.{m}.{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/pov.json
+    // ================================================================
+    // POV — Guinea-Bissau Creole
+    // ================================================================
+    public static let POV = DateLocale(
+        code: "pov",
+        months: ["Janeru", "Febreru", "Marsu", "Abril", "Maiu", "Junhu", "Julhu", "Agostu", "Setembru", "Otubru", "Novembru", "Dizembru"],
+        weekdays: ["Dumingu", "Sigunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sabadu"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "oji",
+        tomorrow: "manan",
+        yesterday: "onfo",
+        dayAfterTomorrow: "dipus di manan",
+        dayBeforeYesterday: "antis di onfo",
+        thisWeekday: "{weekday} kel",
+        nextWeekday: "{weekday} ki bin",
+        lastWeekday: "{weekday} pasadu",
+        short: CompactnessOverride(
+            months: ["Jan", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Otu", "Nov", "Diz"],
+            monthsInDate: nil,
+            weekdays: ["Dum", "Sig", "Ter", "Kua", "Kin", "Ses", "Sab"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
             today: nil,
             tomorrow: nil,
             yesterday: nil
@@ -3742,6 +4708,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/sar.json
+    // ================================================================
+    // SAR — Sara
+    // ================================================================
+    public static let SAR = DateLocale(
+        code: "sar",
+        months: ["Zanviye", "Fevriye", "Maars", "Avriil", "Mee", "Zuɛ̃", "Zulɛ", "Uut", "Sɛtɛmbar", "Ɔtɔbar", "Nɔvambar", "Desambar"],
+        weekdays: ["Paskaa", "Nɔy", "Talata", "Alarba", "Alkamisa", "Juma", "Sibiti"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "ɗgá",
+        tomorrow: "gɨ́nā",
+        yesterday: "ɗáà",
+        dayAfterTomorrow: "gɨ́nā gɨ́nā",
+        dayBeforeYesterday: "ɗáà ɗáà",
+        thisWeekday: "{weekday} nè",
+        nextWeekday: "{weekday} ga",
+        lastWeekday: "{weekday} ɓòo kɔ",
+        short: CompactnessOverride(
+            months: ["Zan", "Fev", "Mar", "Avr", "Mee", "Zuɛ", "Zul", "Uut", "Sɛt", "Ɔtɔ", "Nɔv", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Pas", "Nɔy", "Tal", "Ala", "Alk", "Jum", "Sib"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/sd.json
     // ================================================================
     // SD — Sindhi
@@ -3766,6 +4778,52 @@ public enum Locales {
             months: ["جن", "فيب", "مار", "اپر", "مئي", "جون", "جول", "آگس", "سيپ", "آڪٽ", "نوم", "ڊسم"],
             monthsInDate: nil,
             weekdays: ["آچ", "سوم", "اڱا", "ارب", "خم", "جمع", "ڇن"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/sg.json
+    // ================================================================
+    // SG — Sango
+    // ================================================================
+    public static let SG = DateLocale(
+        code: "sg",
+        months: ["Nyenye", "Fulundïgi", "Mbängü", "Ngubùe", "Bêläwü", "Föndo", "Lengua", "Kükürü", "Mvuka", "Ngberere", "Nabändüru", "Kakauka"],
+        weekdays: ["Bikua-ôko", "Bïkua-ûse", "Bïkua-ptâ", "Bïkua-usïö", "Bïkua-okü", "Lâpôsö", "Lâyenga"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "lâsô",
+        tomorrow: "kêkerêke",
+        yesterday: "bîrî",
+        dayAfterTomorrow: "lâ tî kêkerêke",
+        dayBeforeYesterday: "lâ tî bîrî",
+        thisWeekday: "{weekday} sô",
+        nextWeekday: "{weekday} tî âla",
+        lastWeekday: "{weekday} tî pekô",
+        short: CompactnessOverride(
+            months: ["Nye", "Ful", "Mbä", "Ngu", "Bêl", "Fön", "Len", "Kük", "Mvu", "Ngb", "Nab", "Kak"],
+            monthsInDate: nil,
+            weekdays: ["Ôko", "Ûse", "Ptâ", "Usï", "Okü", "Pôs", "Yng"],
             dayFormat: "{n}",
             dayFormatExceptions: nil,
             datePattern: "{day} {month}",
@@ -4018,6 +5076,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/snk.json
+    // ================================================================
+    // SNK — Soninke
+    // ================================================================
+    public static let SNK = DateLocale(
+        code: "snk",
+        months: ["Janwiye", "Feburiye", "Marasi", "Abirili", "Meyi", "Juwɛ", "Juliye", "Awutu", "Sɛtanburu", "Okutoburu", "Nuwanburu", "Desanburu"],
+        weekdays: ["Alhadi", "Atinni", "Ataalaata", "Alarba", "Alxamiisa", "Arjuma", "Asibiti"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "haqun",
+        tomorrow: "kinni",
+        yesterday: "noxone",
+        dayAfterTomorrow: "kinni xenqa",
+        dayBeforeYesterday: "noxone xenqa",
+        thisWeekday: "{weekday} yi",
+        nextWeekday: "{weekday} na tage",
+        lastWeekday: "{weekday} toxo kille",
+        short: CompactnessOverride(
+            months: ["Jan", "Feb", "Mar", "Abi", "Mey", "Juw", "Jul", "Awu", "Sɛt", "Oku", "Nuw", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Alh", "Ati", "Ata", "Ala", "Alx", "Arj", "Asi"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/so.json
     // ================================================================
     // SO — Somali
@@ -4156,6 +5260,98 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/ss.json
+    // ================================================================
+    // SS — siSwati
+    // ================================================================
+    public static let SS = DateLocale(
+        code: "ss",
+        months: ["Bhimbidvwane", "iNdlovana", "iNdlovulenkhulu", "Mabasa", "iNkhwekhweti", "iNhlaba", "Kholwane", "iNgci", "iNyoni", "iMphala", "Lweti", "iNgongoni"],
+        weekdays: ["LiSontfo", "uMsombuluko", "Lesibili", "Lesitsatfu", "Lesine", "Lesihlanu", "uMgcibelo"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "lamuhla",
+        tomorrow: "kusasa",
+        yesterday: "itolo",
+        dayAfterTomorrow: "ngemhlomunye",
+        dayBeforeYesterday: "kutolo lokwengca",
+        thisWeekday: "leli {weekday}",
+        nextWeekday: "{weekday} letako",
+        lastWeekday: "{weekday} leledlule",
+        short: CompactnessOverride(
+            months: ["Bhi", "Ind", "Ink", "Mab", "Inkw", "Inh", "Kho", "Ingc", "Iny", "Imp", "Lwe", "Ingo"],
+            monthsInDate: nil,
+            weekdays: ["Son", "Mso", "Bil", "Tsa", "Sin", "Hla", "Mgc"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/st.json
+    // ================================================================
+    // ST — Southern Sotho
+    // ================================================================
+    public static let ST = DateLocale(
+        code: "st",
+        months: ["Pherekgong", "Hlakola", "Hlakubele", "Mmese", "Motsheanong", "Phupjane", "Phupu", "Phato", "Leotshe", "Mphalane", "Pudungwana", "Tshitwe"],
+        weekdays: ["Sontaha", "Mmantaha", "Labobedi", "Laboraro", "Labone", "Labohlano", "Moqebelo"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "kajeno",
+        tomorrow: "hosane",
+        yesterday: "maobane",
+        dayAfterTomorrow: "hosanemane",
+        dayBeforeYesterday: "maobanyane",
+        thisWeekday: "{weekday} ena",
+        nextWeekday: "{weekday} e tlang",
+        lastWeekday: "{weekday} e fetileng",
+        short: CompactnessOverride(
+            months: ["Phe", "Hlk", "Hlb", "Mme", "Mot", "Phj", "Php", "Pha", "Leo", "Mph", "Pud", "Tsh"],
+            monthsInDate: nil,
+            weekdays: ["Son", "Mma", "Bed", "Rar", "Bon", "Hla", "Moq"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/su.json
     // ================================================================
     // SU — Sundanese
@@ -4180,6 +5376,52 @@ public enum Locales {
             months: ["Jan", "Péb", "Mar", "Apr", "Méi", "Jun", "Jul", "Ags", "Sép", "Okt", "Nop", "Dés"],
             monthsInDate: nil,
             weekdays: ["Mng", "Sen", "Sal", "Reb", "Kem", "Jum", "Sap"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/suk.json
+    // ================================================================
+    // SUK — Sukuma
+    // ================================================================
+    public static let SUK = DateLocale(
+        code: "suk",
+        months: ["Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"],
+        weekdays: ["Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "lelo",
+        tomorrow: "milau",
+        yesterday: "igolo",
+        dayAfterTomorrow: "milau ya pili",
+        dayBeforeYesterday: "igolo ya pili",
+        thisWeekday: "{weekday} iyi",
+        nextWeekday: "{weekday} ya kuja",
+        lastWeekday: "{weekday} iliyopita",
+        short: CompactnessOverride(
+            months: ["Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Jpl", "Jtt", "Jnn", "Jtn", "Alh", "Ijm", "Jms"],
             dayFormat: "{n}",
             dayFormatExceptions: nil,
             datePattern: "{day} {month}",
@@ -4386,6 +5628,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/tem.json
+    // ================================================================
+    // TEM — Temne
+    // ================================================================
+    public static let TEM = DateLocale(
+        code: "tem",
+        months: ["Janɛri", "Fɛbrɛri", "Mach", "Epril", "Me", "Jun", "Julai", "Ɔgɔst", "Sɛtɛmba", "Ɔktoba", "Novɛmba", "Disɛmba"],
+        weekdays: ["Ləpɛt", "Lətalɛ", "Ləsalɛ", "Lərarɛ", "Lənɛr", "Ləjuma", "Ləsɛbɛ"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "ani",
+        tomorrow: "tənɔŋ",
+        yesterday: "yenɛ",
+        dayAfterTomorrow: "tənɔŋ tənɔŋ",
+        dayBeforeYesterday: "yenɛ yenɛ",
+        thisWeekday: "{weekday} yi",
+        nextWeekday: "{weekday} ro ba",
+        lastWeekday: "{weekday} ro ba kɛ",
+        short: CompactnessOverride(
+            months: ["Jan", "Fɛb", "Mac", "Epr", "Me", "Jun", "Jul", "Ɔgɔ", "Sɛt", "Ɔkt", "Nov", "Dis"],
+            monthsInDate: nil,
+            weekdays: ["Lpɛ", "Lta", "Lsa", "Lra", "Lnɛ", "Lju", "Lsɛ"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -4524,6 +5812,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/tig.json
+    // ================================================================
+    // TIG — Tigre
+    // ================================================================
+    public static let TIG = DateLocale(
+        code: "tig",
+        months: ["Yannaayer", "Febbraayer", "Maaris", "Abriil", "Maay", "Yuunyo", "Yulyo", "Agoosṭo", "Seṭṭembre", "Oṭṭoobre", "Noovembre", "Diičembre"],
+        weekdays: ["Sənbət", "Sənuy", "Sələs", "Rəbuʿ", "Ḥamus", "ʿArbi", "Qədami"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "yom",
+        tomorrow: "gədam",
+        yesterday: "timali",
+        dayAfterTomorrow: "gədam gədam",
+        dayBeforeYesterday: "timali timali",
+        thisWeekday: "{weekday} ʾənta",
+        nextWeekday: "{weekday} ba",
+        lastWeekday: "{weekday} qədmi",
+        short: CompactnessOverride(
+            months: ["Yan", "Feb", "Mar", "Abr", "May", "Yun", "Yul", "Ago", "Seṭ", "Oṭṭ", "Nov", "Dii"],
+            monthsInDate: nil,
+            weekdays: ["Sən", "Snu", "Səl", "Rəb", "Ḥam", "ʿAr", "Qəd"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/tk.json
     // ================================================================
     // TK — Turkmen
@@ -4548,6 +5882,52 @@ public enum Locales {
             months: ["Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"],
             monthsInDate: nil,
             weekdays: ["Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/tn.json
+    // ================================================================
+    // TN — Tswana
+    // ================================================================
+    public static let TN = DateLocale(
+        code: "tn",
+        months: ["Ferikgong", "Tlhakole", "Mopitlo", "Moranang", "Motsheganong", "Seetebosigo", "Phukwi", "Phatwe", "Lwetse", "Diphalane", "Ngwanatsele", "Sedimothole"],
+        weekdays: ["Tshipi", "Mosopulogo", "Labobedi", "Laboraro", "Labone", "Labotlhano", "Matlhatso"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "gompieno",
+        tomorrow: "kamoso",
+        yesterday: "maabane",
+        dayAfterTomorrow: "morago ga kamoso",
+        dayBeforeYesterday: "maabanyane",
+        thisWeekday: "{weekday} e",
+        nextWeekday: "{weekday} e e tlang",
+        lastWeekday: "{weekday} e e fetileng",
+        short: CompactnessOverride(
+            months: ["Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phk", "Pha", "Lwe", "Dip", "Ngw", "Sed"],
+            monthsInDate: nil,
+            weekdays: ["Tsh", "Mos", "Bed", "Rar", "Bon", "Tlh", "Mat"],
             dayFormat: "{n}",
             dayFormatExceptions: nil,
             datePattern: "{day} {month}",
@@ -4610,6 +5990,52 @@ public enum Locales {
             dayFormatExceptions: nil,
             datePattern: "{d}.{m}.",
             datePatternWithYear: "{d}.{m}.{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/ts.json
+    // ================================================================
+    // TS — Tsonga
+    // ================================================================
+    public static let TS = DateLocale(
+        code: "ts",
+        months: ["Sunguti", "Nyenyenyani", "Nyenyankulu", "Dzivamisoko", "Mudyaxihi", "Khotavuxika", "Mawuwani", "Mhawuri", "Ndzhati", "Nhlangula", "Hukuri", "N'wendzamhala"],
+        weekdays: ["Sonto", "Musumbhunuku", "Ravumbirhi", "Ravunharhu", "Ravumune", "Ravuntlhanu", "Mugqivela"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "namuntlha",
+        tomorrow: "mundzuku",
+        yesterday: "tolo",
+        dayAfterTomorrow: "mundzuku wa vumbirhi",
+        dayBeforeYesterday: "tolo ra vumbirhi",
+        thisWeekday: "{weekday} leyi",
+        nextWeekday: "{weekday} leyi taka",
+        lastWeekday: "{weekday} leyi nga hundza",
+        short: CompactnessOverride(
+            months: ["Sun", "Nye", "Nyk", "Dzi", "Mud", "Kho", "Maw", "Mha", "Ndz", "Nhl", "Huk", "N'w"],
+            monthsInDate: nil,
+            weekdays: ["Son", "Mus", "Bir", "Har", "Mun", "Tlh", "Mug"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
             today: nil,
             tomorrow: nil,
             yesterday: nil
@@ -4685,6 +6111,52 @@ public enum Locales {
             months: ["січ", "лют", "бер", "квіт", "трав", "черв", "лип", "серп", "вер", "жовт", "лист", "груд"],
             monthsInDate: nil,
             weekdays: ["нд", "пн", "вт", "ср", "чт", "пт", "сб"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/umb.json
+    // ================================================================
+    // UMB — Umbundu
+    // ================================================================
+    public static let UMB = DateLocale(
+        code: "umb",
+        months: ["Janelu", "Fevelelu", "Malsu", "Abili", "Mayu", "Junyu", "Julyu", "Agostu", "Setembu", "Otubu", "Novembu", "Desembu"],
+        weekdays: ["Lumingu", "Cimosi", "Civali", "Citathu", "Cinyali", "Citanu", "Cisabalu"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "oloku",
+        tomorrow: "ocisungu",
+        yesterday: "ondjo",
+        dayAfterTomorrow: "ocisungu va pili",
+        dayBeforeYesterday: "ondjo va pili",
+        thisWeekday: "{weekday} yo",
+        nextWeekday: "{weekday} ya kuvela",
+        lastWeekday: "{weekday} ya pita",
+        short: CompactnessOverride(
+            months: ["Jan", "Fev", "Mal", "Abi", "May", "Jun", "Jul", "Ago", "Set", "Otu", "Nov", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Lum", "Cim", "Civ", "Cit", "Cin", "Cit", "Cis"],
             dayFormat: "{n}",
             dayFormatExceptions: nil,
             datePattern: "{day} {month}",
@@ -4845,6 +6317,98 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/vmw.json
+    // ================================================================
+    // VMW — Makhuwa
+    // ================================================================
+    public static let VMW = DateLocale(
+        code: "vmw",
+        months: ["Januário", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        weekdays: ["Jumaaphi", "Jumaataatu", "Jumaanne", "Jumaatano", "Alaahamisi", "Ijumaa", "Jumaamo"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "lelo",
+        tomorrow: "muttetthe",
+        yesterday: "oova",
+        dayAfterTomorrow: "muttetthe opela",
+        dayBeforeYesterday: "oova opela",
+        thisWeekday: "{weekday} yano",
+        nextWeekday: "{weekday} ohima",
+        lastWeekday: "{weekday} opita",
+        short: CompactnessOverride(
+            months: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+            monthsInDate: nil,
+            weekdays: ["Jph", "Jtt", "Jan", "Jtn", "Alh", "Iju", "Jmo"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
+    // Source: date/locales/src/wo.json
+    // ================================================================
+    // WO — Wolof
+    // ================================================================
+    public static let WO = DateLocale(
+        code: "wo",
+        months: ["Samwiyee", "Fewriyee", "Maars", "Awril", "Mee", "Suwe", "Sullet", "Ut", "Septàmbar", "Oktoobar", "Nowàmbar", "Desàmbar"],
+        weekdays: ["Dibéer", "Altine", "Talaata", "Àllarba", "Alxames", "Àjjuma", "Gaawu"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "tey",
+        tomorrow: "suba",
+        yesterday: "démb",
+        dayAfterTomorrow: "suba-suba",
+        dayBeforeYesterday: "démb-démb",
+        thisWeekday: "{weekday} bi",
+        nextWeekday: "{weekday} bi ñëw",
+        lastWeekday: "{weekday} bi weex",
+        short: CompactnessOverride(
+            months: ["Sam", "Few", "Maa", "Awr", "Mee", "Suw", "Sul", "Ut", "Sep", "Okt", "Now", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Dib", "Alt", "Tal", "Àll", "Alx", "Àjj", "Gaa"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/xh.json
     // ================================================================
     // XH — Xhosa
@@ -4983,6 +6547,52 @@ public enum Locales {
         )
     )
 
+    // Source: date/locales/src/zdj.json
+    // ================================================================
+    // ZDJ — Comorian
+    // ================================================================
+    public static let ZDJ = DateLocale(
+        code: "zdj",
+        months: ["Januari", "Februari", "Machi", "Aprili", "Mei", "Juni", "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"],
+        weekdays: ["Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"],
+        dayFormat: "{n}",
+        dayFormatExceptions: [:],
+        datePattern: "{day} {month}",
+        datePatternWithYear: "{day} {month} {year}",
+        today: "leo",
+        tomorrow: "mesha",
+        yesterday: "jana",
+        dayAfterTomorrow: "kesho kutwa",
+        dayBeforeYesterday: "juzi",
+        thisWeekday: "{weekday} iyi",
+        nextWeekday: "{weekday} ya udjayo",
+        lastWeekday: "{weekday} ya hupitsa",
+        short: CompactnessOverride(
+            months: ["Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des"],
+            monthsInDate: nil,
+            weekdays: ["Pil", "Tat", "Nne", "Tan", "Alh", "Iju", "Mos"],
+            dayFormat: "{n}",
+            dayFormatExceptions: nil,
+            datePattern: "{day} {month}",
+            datePatternWithYear: "{day} {month} {year}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        ),
+        compact: CompactnessOverride(
+            months: nil,
+            monthsInDate: nil,
+            weekdays: nil,
+            dayFormat: nil,
+            dayFormatExceptions: nil,
+            datePattern: "{d}/{m}",
+            datePatternWithYear: "{d}/{m}/{yy}",
+            today: nil,
+            tomorrow: nil,
+            yesterday: nil
+        )
+    )
+
     // Source: date/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -5081,8 +6691,11 @@ public enum Locales {
         "am": AM,
         "ar": AR,
         "az": AZ,
+        "bci": BCI,
         "be": BE,
+        "bem": BEM,
         "bg": BG,
+        "bm": BM,
         "bn": BN,
         "br": BR,
         "bs": BS,
@@ -5092,15 +6705,21 @@ public enum Locales {
         "cy": CY,
         "da": DA,
         "de": DE,
+        "din": DIN,
+        "dje": DJE,
+        "dyu": DYU,
+        "ee": EE,
         "el": EL,
         "en": EN,
         "es": ES,
         "et": ET,
         "eu": EU,
         "fa": FA,
+        "fan": FAN,
         "ff": FF,
         "fi": FI,
         "fil": FIL,
+        "fon": FON,
         "fr": FR,
         "ga": GA,
         "gd": GD,
@@ -5122,10 +6741,13 @@ public enum Locales {
         "ja": JA,
         "jv": JV,
         "ka": KA,
+        "kbp": KBP,
         "kk": KK,
         "km": KM,
         "kn": KN,
         "ko": KO,
+        "kpe": KPE,
+        "ktu": KTU,
         "ku": KU,
         "kw": KW,
         "ky": KY,
@@ -5134,56 +6756,79 @@ public enum Locales {
         "lo": LO,
         "lt": LT,
         "lv": LV,
+        "men": MEN,
+        "mfe": MFE,
         "mg": MG,
         "mi": MI,
         "mk": MK,
         "ml": ML,
         "mn": MN,
+        "mnk": MNK,
+        "mos": MOS,
         "mr": MR,
         "ms": MS,
         "mt": MT,
         "my": MY,
         "nb": NB,
+        "nd": ND,
         "ne": NE,
+        "ng": NG,
         "nl": NL,
+        "nso": NSO,
+        "nus": NUS,
         "ny": NY,
         "om": OM,
         "or": OR,
         "pa": PA,
         "pl": PL,
+        "pov": POV,
         "ps": PS,
         "pt": PT,
         "qu": QU,
         "ro": RO,
         "ru": RU,
         "rw": RW,
+        "sar": SAR,
         "sd": SD,
+        "sg": SG,
         "shi": SHI,
         "si": SI,
         "sk": SK,
         "sl": SL,
         "sn": SN,
+        "snk": SNK,
         "so": SO,
         "sq": SQ,
         "sr": SR,
+        "ss": SS,
+        "st": ST,
         "su": SU,
+        "suk": SUK,
         "sv": SV,
         "sw": SW,
         "ta": TA,
         "te": TE,
+        "tem": TEM,
         "tg": TG,
         "th": TH,
         "ti": TI,
+        "tig": TIG,
         "tk": TK,
+        "tn": TN,
         "tr": TR,
+        "ts": TS,
         "tzm": TZM,
         "uk": UK,
+        "umb": UMB,
         "ur": UR,
         "uz": UZ,
         "vi": VI,
+        "vmw": VMW,
+        "wo": WO,
         "xh": XH,
         "yo": YO,
         "yue": YUE,
+        "zdj": ZDJ,
         "zh": ZH,
         "zu": ZU,
     ]

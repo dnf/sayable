@@ -1,0 +1,40 @@
+{
+  "code": "bci",
+  "name": "Baoulé",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "cɛn {n}",
+    "week": "lemɔcuɛ {n}",
+    "month": "anglɛ {n}",
+    "year": "afuɛ {n}"
+  },
+  "half": "{0} nin sin",
+  "delimiter": ", ",
+  "justBorn": "Ba nɔn kaan",
+  "stages": {
+    "newborn": "Ba nɔn kaan wɛ",
+    "infant": "Ba nɔn",
+    "toddler": "Ba kanngan",
+    "child": "Ba",
+    "teenager": "Gbanflɛn",
+    "adult": "Sran kpɛnngbɛn"
+  },
+  "short": {
+    "units": {
+      "day": "cɛn {n}",
+      "week": "lem. {n}",
+      "month": "ang. {n}",
+      "year": "af. {n}"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "cɛn {n}",
+      "week": "lem {n}",
+      "month": "ang {n}",
+      "year": "af {n}"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

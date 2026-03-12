@@ -1,0 +1,70 @@
+{
+  "code": "st",
+  "name": "Southern Sotho",
+  "months": [
+    "Pherekgong",
+    "Hlakola",
+    "Hlakubele",
+    "Mmese",
+    "Motsheanong",
+    "Phupjane",
+    "Phupu",
+    "Phato",
+    "Leotshe",
+    "Mphalane",
+    "Pudungwana",
+    "Tshitwe"
+  ],
+  "weekdays": [
+    "Sontaha",
+    "Mmantaha",
+    "Labobedi",
+    "Laboraro",
+    "Labone",
+    "Labohlano",
+    "Moqebelo"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "kajeno",
+  "tomorrow": "hosane",
+  "yesterday": "maobane",
+  "dayAfterTomorrow": "hosanemane",
+  "dayBeforeYesterday": "maobanyane",
+  "thisWeekday": "{weekday} ena",
+  "nextWeekday": "{weekday} e tlang",
+  "lastWeekday": "{weekday} e fetileng",
+  "short": {
+    "months": [
+      "Phe",
+      "Hlk",
+      "Hlb",
+      "Mme",
+      "Mot",
+      "Phj",
+      "Php",
+      "Pha",
+      "Leo",
+      "Mph",
+      "Pud",
+      "Tsh"
+    ],
+    "weekdays": [
+      "Son",
+      "Mma",
+      "Bed",
+      "Rar",
+      "Bon",
+      "Hla",
+      "Moq"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

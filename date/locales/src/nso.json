@@ -1,0 +1,70 @@
+{
+  "code": "nso",
+  "name": "Northern Sotho",
+  "months": [
+    "Pherekgong",
+    "Hlakola",
+    "Mopitlo",
+    "Moranang",
+    "Mosegamanye",
+    "Ngoatobošego",
+    "Phukwi",
+    "Phatwe",
+    "Lewedi",
+    "Diphalane",
+    "Dibatsela",
+    "Manthole"
+  ],
+  "weekdays": [
+    "Lamorena",
+    "Mošupologo",
+    "Labobedi",
+    "Laboraro",
+    "Labone",
+    "Labohlano",
+    "Mokibelo"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "lehono",
+  "tomorrow": "gosasa",
+  "yesterday": "maabane",
+  "dayAfterTomorrow": "morago ga gosasa",
+  "dayBeforeYesterday": "maabane a go feta",
+  "thisWeekday": "{weekday} ye",
+  "nextWeekday": "{weekday} ye e tlago",
+  "lastWeekday": "{weekday} ye e fetilego",
+  "short": {
+    "months": [
+      "Pher",
+      "Hlak",
+      "Mop",
+      "Mor",
+      "Mos",
+      "Ngoa",
+      "Phu",
+      "Pha",
+      "Lew",
+      "Diph",
+      "Dib",
+      "Man"
+    ],
+    "weekdays": [
+      "Lam",
+      "Moš",
+      "Lbb",
+      "Lbr",
+      "Lbn",
+      "Lbh",
+      "Mok"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

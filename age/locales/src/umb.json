@@ -1,0 +1,64 @@
+{
+  "code": "umb",
+  "name": "Umbundu",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "elityi {n}",
+      "other": "omatyi {n}"
+    },
+    "week": {
+      "one": "osemana {n}",
+      "other": "olosemana {n}"
+    },
+    "month": {
+      "one": "ondjambi {n}",
+      "other": "olondjambi {n}"
+    },
+    "year": {
+      "one": "ombula {n}",
+      "other": "olombula {n}"
+    }
+  },
+  "half": "{0} na oñali",
+  "delimiter": ", ",
+  "justBorn": "Omola wa kulwa",
+  "stages": {
+    "newborn": "Omola wa kulwa kwenda",
+    "infant": "Okambulu",
+    "toddler": "Omola okanini",
+    "child": "Omola",
+    "teenager": "Oloneke",
+    "adult": "Omundu onene"
+  },
+  "short": {
+    "units": {
+      "day": {
+        "one": "elit. {n}",
+        "other": "omat. {n}"
+      },
+      "week": {
+        "one": "osem. {n}",
+        "other": "olosem. {n}"
+      },
+      "month": {
+        "one": "ondj. {n}",
+        "other": "olondj. {n}"
+      },
+      "year": {
+        "one": "omb. {n}",
+        "other": "olomb. {n}"
+      }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

@@ -9,64 +9,64 @@
 ## Summary
 
 - **Countries**: 52
-- **Average coverage**: 64%
+- **Average coverage**: 89%
 
 ## Countries
 
 | Country | Coverage | Covered Languages | Uncovered Languages |
 |---------|:--------:|-------------------|---------------------|
 | Algeria | 100% | Arabic (72%), Tamazight (27%), French (33%) | — |
-| Angola | 64% | Portuguese (71%), Lingala (3%) | Umbundu (17%), Kimbundu (11%), Kikongo/Kituba (7%), Chokwe (7%) |
-| Benin | 47% | French (35%), Yoruba (12%) | Fon (24%), Bariba (10%), Aja (8%) |
-| Botswana | 25% | English (30%), Shona (2%) | Tswana (78%), Kalanga (17%) |
-| Burkina Faso | 33% | French (25%), Fulfulde (8%) | Moore (Mossi) (52%), Dyula (6%), Gourmanche (6%) |
+| Angola | 84% | Portuguese (71%), Lingala (3%), Umbundu (17%), Kikongo/Kituba (7%) | Kimbundu (11%), Chokwe (7%) |
+| Benin | 71% | French (35%), Yoruba (12%), Fon (24%) | Bariba (10%), Aja (8%) |
+| Botswana | 87% | English (30%), Shona (2%), Tswana (78%) | Kalanga (17%) |
+| Burkina Faso | 91% | French (25%), Fulfulde (8%), Moore (Mossi) (52%), Dyula (6%) | Gourmanche (6%) |
 | Burundi | 100% | Kirundi (97%), French (8%), Swahili (2%), English (3%) | — |
 | Cameroon | 79% | French (57%), English (22%), Fulfulde (7%) | Bamileke languages (15%), Ewondo (8%) |
-| Central African Republic | 23% | French (23%), Lingala (5%) | Sango (92%) |
-| Chad | 39% | French (13%), Arabic (26%) | Sara (Ngambay) (31%), Kanuri (10%) |
-| Comoros | 27% | Arabic (20%), French (15%) | Comorian (Shikomori) (97%) |
-| Congo | 64% | French (60%), Lingala (30%) | Kituba (Munukutuba) (50%) |
-| Cote d'Ivoire | 34% | French (34%) | Baoule (17%), Dyula (15%), Senufo (9%), Bete (6%) |
-| Democratic Republic of the Congo | 85% | French (51%), Lingala (20%), Swahili (15%), Luganda (4%) | Kituba (Kikongo) (10%), Tshiluba (6%) |
+| Central African Republic | 100% | French (23%), Lingala (5%), Sango (92%) | — |
+| Chad | 70% | French (13%), Arabic (26%), Sara (Ngambay) (31%) | Kanuri (10%) |
+| Comoros | 100% | Arabic (20%), French (15%), Comorian (Shikomori) (97%) | — |
+| Congo | 100% | French (60%), Lingala (30%), Kituba (Munukutuba) (50%) | — |
+| Cote d'Ivoire | 66% | French (34%), Baoule (17%), Dyula (15%) | Senufo (9%), Bete (6%) |
+| Democratic Republic of the Congo | 94% | French (51%), Lingala (20%), Swahili (15%), Luganda (4%), Kituba (Kikongo) (10%) | Tshiluba (6%) |
 | Djibouti | 100% | French (34%), Arabic (11%), Somali (60%), Afar (34%) | — |
 | Egypt | 100% | Arabic (94%), English (14%), French (3%) | — |
 | Equatorial Guinea | 100% | Spanish (68%), French (27%), Portuguese (5%) | — |
-| Eritrea | 73% | Tigrinya (55%), Arabic (20%), English (5%) | Tigre (30%) |
-| Eswatini | 17% | English (20%) | Swazi (siSwati) (95%) |
+| Eritrea | 100% | Tigrinya (55%), Arabic (20%), English (5%), Tigre (30%) | — |
+| Eswatini | 100% | English (20%), Swazi (siSwati) (95%) | — |
 | Ethiopia | 83% | Amharic (32%), Oromo (34%), Somali (6%), Tigrinya (6%), English (5%) | — |
-| Gabon | 71% | French (80%) | Fang (32%) |
-| Gambia | 38% | English (20%), Fulfulde (18%), Yoruba (2%) | Mandinka (38%), Wolof (18%), Soninke (9%) |
-| Ghana | 81% | English (58%), Akan (44%), Hausa (5%), Igbo (1%), Yoruba (1%) | Ewe (13%), Ga-Dangme (7%), Dagbani (5%) |
-| Guinea | 77% | French (25%), Fulfulde (33%), Susu (21%) | Maninka (23%) |
-| Guinea-Bissau | 28% | Portuguese (14%), Fulfulde (16%) | Guinea-Bissau Creole (50%), Balanta (22%), Mandinka (7%) |
+| Gabon | 100% | French (80%), Fang (32%) | — |
+| Gambia | 100% | English (20%), Fulfulde (18%), Yoruba (2%), Mandinka (38%), Wolof (18%), Soninke (9%) | — |
+| Ghana | 91% | English (58%), Akan (44%), Hausa (5%), Igbo (1%), Yoruba (1%), Ewe (13%) | Ga-Dangme (7%), Dagbani (5%) |
+| Guinea | 100% | French (25%), Fulfulde (33%), Susu (21%), Maninka (23%) | — |
+| Guinea-Bissau | 80% | Portuguese (14%), Fulfulde (16%), Guinea-Bissau Creole (50%), Mandinka (7%) | Balanta (22%) |
 | Kenya | 61% | Swahili (67%), English (31%), Ganda (1%), Somali (1%) | Kikuyu (17%), Luhya (14%), Kalenjin (13%), Dholuo (Luo) (11%), Kamba (10%) |
-| Lesotho | 26% | English (30%), Zulu (2%) | Sesotho (Southern Sotho) (90%) |
-| Liberia | 20% | English (20%) | Kpelle (20%), Bassa (13%), Grebo (10%), Dan (Gio) (8%), Mano (8%) |
+| Lesotho | 100% | English (30%), Zulu (2%), Sesotho (Southern Sotho) (90%) | — |
+| Liberia | 40% | English (20%), Kpelle (20%) | Bassa (13%), Grebo (10%), Dan (Gio) (8%), Mano (8%) |
 | Libya | 95% | Arabic (95%) | — |
 | Madagascar | 100% | Malagasy (95%), French (20%), English (5%) | — |
 | Malawi | 65% | Chewa (57%), English (15%) | Lomwe (15%), Yao (14%), Tumbuka (9%) |
-| Mali | 34% | French (20%), Fulfulde (14%) | Bambara (50%), Soninke (9%) |
+| Mali | 93% | French (20%), Fulfulde (14%), Bambara (50%), Soninke (9%) | — |
 | Mauritania | 100% | Arabic (80%), French (15%), Fulfulde (8%) | — |
-| Mauritius | 59% | English (50%), French (73%), Hindi (3%) | Mauritian Creole (87%) |
+| Mauritius | 100% | English (50%), French (73%), Hindi (3%), Mauritian Creole (87%) | — |
 | Morocco | 100% | Arabic (65%), Tamazight (26%), French (33%) | — |
-| Mozambique | 56% | Portuguese (50%), Swahili (6%) | Makhuwa (26%), Tsonga (9%), Sena (7%) |
-| Namibia | 27% | English (17%), Afrikaans (11%), German (1%) | Oshiwambo (49%), Khoekhoegowab (Nama/Damara) (11%), RuKwangali (9%), Otjiherero (9%) |
-| Niger | 71% | French (13%), Hausa (53%), Fulfulde (6%), Arabic (1%) | Zarma-Songhay (21%), Tamasheq (9%) |
+| Mozambique | 91% | Portuguese (50%), Swahili (6%), Makhuwa (26%), Tsonga (9%) | Sena (7%) |
+| Namibia | 73% | English (17%), Afrikaans (11%), German (1%), Oshiwambo (49%) | Khoekhoegowab (Nama/Damara) (11%), RuKwangali (9%), Otjiherero (9%) |
+| Niger | 91% | French (13%), Hausa (53%), Fulfulde (6%), Arabic (1%), Zarma-Songhay (21%) | Tamasheq (9%) |
 | Nigeria | 82% | English (53%), Hausa (27%), Yoruba (15%), Igbo (12%), Fulfulde (5%) | Ijaw languages (10%), Kanuri (5%), Tiv (5%), Ibibio (5%) |
 | Rwanda | 100% | Kinyarwanda (93%), French (8%), English (15%), Swahili (2%) | — |
-| Senegal | 43% | French (26%), Fulfulde (23%) | Wolof (50%), Serer (11%), Soninke (5%) |
-| Sierra Leone | 20% | English (20%) | Mende (31%), Temne (32%), Krio (10%) |
+| Senegal | 90% | French (26%), Fulfulde (23%), Wolof (50%), Soninke (5%) | Serer (11%) |
+| Sierra Leone | 83% | English (20%), Mende (31%), Temne (32%) | Krio (10%) |
 | Somalia | 100% | Somali (95%), Arabic (20%), English (5%) | — |
-| South Africa | 62% | Zulu (23%), Xhosa (16%), Afrikaans (13%), English (10%), Shona (1%) | Northern Sotho (Sepedi) (10%), Tswana (8%), Southern Sotho (8%), Tsonga (5%), Swazi (siSwati) (3%), Venda (2%), Southern Ndebele (2%) |
-| South Sudan | 27% | English (10%), Arabic (15%), Swahili (2%) | Dinka (36%), Nuer (16%), Bari (7%), Zande (6%), Shilluk (5%) |
+| South Africa | 96% | Zulu (23%), Xhosa (16%), Afrikaans (13%), English (10%), Shona (1%), Northern Sotho (Sepedi) (10%), Tswana (8%), Southern Sotho (8%), Tsonga (5%), Swazi (siSwati) (3%) | Venda (2%), Southern Ndebele (2%) |
+| South Sudan | 79% | English (10%), Arabic (15%), Swahili (2%), Dinka (36%), Nuer (16%) | Bari (7%), Zande (6%), Shilluk (5%) |
 | Sudan | 74% | Arabic (70%), English (5%) | Beja (12%), Nubian languages (8%), Fur (6%) |
-| Tanzania | 87% | Swahili (90%), English (15%) | Sukuma (16%) |
-| Togo | 37% | French (37%) | Ewe (26%), Kabiye (27%) |
+| Tanzania | 100% | Swahili (90%), English (15%), Sukuma (16%) | — |
+| Togo | 90% | French (37%), Ewe (26%), Kabiye (27%) | — |
 | Tunisia | 100% | Arabic (93%), French (52%), English (8%) | — |
 | Uganda | 66% | English (30%), Swahili (30%), Luganda (16%), Chewa (2%) | Nyankore (Runyankole) (10%), Soga (Lusoga) (10%), Teso (10%), Lango (6%), Acholi (5%) |
 | Western Sahara | 90% | Arabic (90%) | — |
-| Zambia | 35% | English (20%), Chewa (15%) | Bemba (35%), Tonga (12%), Lozi (6%) |
-| Zimbabwe | 86% | English (30%), Shona (70%) | Northern Ndebele (16%) |
+| Zambia | 70% | English (20%), Chewa (15%), Bemba (35%) | Tonga (12%), Lozi (6%) |
+| Zimbabwe | 100% | English (30%), Shona (70%), Northern Ndebele (16%) | — |
 
 ---
 

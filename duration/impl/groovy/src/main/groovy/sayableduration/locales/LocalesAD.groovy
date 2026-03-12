@@ -279,6 +279,57 @@ class LocalesAD {
         null
     )
 
+    // Source: duration/locales/src/bci.json
+    // ================================================================
+    // BCI — Baoulé
+    // ================================================================
+    static final DurationLocale BCI = new DurationLocale(
+        'bci',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('sɛgɔn {n}'),
+            UnitForms.simpleUnit('miniti {n}'),
+            UnitForms.simpleUnit('dɔ {n}'),
+            UnitForms.simpleUnit('cɛn {n}'),
+            UnitForms.simpleUnit('lemɔcuɛ {n}'),
+            UnitForms.simpleUnit('anglɛ {n}'),
+            UnitForms.simpleUnit('afuɛ {n}')
+        ),
+        '{0} nin sin',
+        ', ',
+        'siɛn yɛ',
+        '{0} sín',
+        'ɔ {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sɛg. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('dɔ {n}'),
+            UnitForms.simpleUnit('cɛn {n}'),
+            UnitForms.simpleUnit('lem. {n}'),
+            UnitForms.simpleUnit('ang. {n}'),
+            UnitForms.simpleUnit('af. {n}'),
+            null,
+            null,
+            '{0} sín',
+            'ɔ {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} sín',
+            'ɔ {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/be.json
     // ================================================================
     // BE — Belarusian
@@ -336,6 +387,57 @@ class LocalesAD {
         null
     )
 
+    // Source: duration/locales/src/bem.json
+    // ================================================================
+    // BEM — Bemba
+    // ================================================================
+    static final DurationLocale BEM = new DurationLocale(
+        'bem',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'isekondi {n}', (PluralCategory.OTHER): 'amasekondi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'iminiti {n}', (PluralCategory.OTHER): 'amaminiti {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'insa {n}', (PluralCategory.OTHER): 'amanso {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ubushiku {n}', (PluralCategory.OTHER): 'inshiku {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'umulungu {n}', (PluralCategory.OTHER): 'imilungu {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'umweshi {n}', (PluralCategory.OTHER): 'imyeshi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'umwaka {n}', (PluralCategory.OTHER): 'imyaka {n}'])
+        ),
+        '{0} na hafu',
+        ', ',
+        'pali ino nshita',
+        '{0} iyapita',
+        'mu {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sek. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('insa {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ubushiku {n}', (PluralCategory.OTHER): 'inshiku {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'umulungu {n}', (PluralCategory.OTHER): 'imilungu {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'umweshi {n}', (PluralCategory.OTHER): 'imyeshi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'umwaka {n}', (PluralCategory.OTHER): 'imyaka {n}']),
+            null,
+            null,
+            '{0} iyapita',
+            'mu {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} iyapita',
+            'mu {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/bg.json
     // ================================================================
     // BG — Bulgarian
@@ -382,6 +484,57 @@ class LocalesAD {
             '',
             'преди {0}',
             'след {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/bm.json
+    // ================================================================
+    // BM — Bambara
+    // ================================================================
+    static final DurationLocale BM = new DurationLocale(
+        'bm',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('sekondi {n}'),
+            UnitForms.simpleUnit('miniti {n}'),
+            UnitForms.simpleUnit('lɛrɛ {n}'),
+            UnitForms.simpleUnit('don {n}'),
+            UnitForms.simpleUnit('dɔgɔkun {n}'),
+            UnitForms.simpleUnit('kalo {n}'),
+            UnitForms.simpleUnit('san {n}')
+        ),
+        '{0} ni tilancɛ',
+        ', ',
+        'sisan',
+        '{0} bɔlen',
+        'ka {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sek. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('lɛr. {n}'),
+            UnitForms.simpleUnit('don {n}'),
+            UnitForms.simpleUnit('dɔgɔk. {n}'),
+            UnitForms.simpleUnit('kalo {n}'),
+            UnitForms.simpleUnit('san {n}'),
+            null,
+            null,
+            '{0} bɔlen',
+            'ka {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sek {n}'),
+            UnitForms.simpleUnit('min {n}'),
+            UnitForms.simpleUnit('lɛr {n}'),
+            UnitForms.simpleUnit('don {n}'),
+            UnitForms.simpleUnit('dɔgɔk {n}'),
+            UnitForms.simpleUnit('kalo {n}'),
+            UnitForms.simpleUnit('san {n}'),
+            '{n}½',
+            '',
+            '{0} bɔlen',
+            'ka {0}'
         ),
         null,
         null
@@ -868,6 +1021,159 @@ class LocalesAD {
             '',
             'vor {0}',
             'in {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/din.json
+    // ================================================================
+    // DIN — Dinka
+    // ================================================================
+    static final DurationLocale DIN = new DurationLocale(
+        'din',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'thiɛ̈kɛn {n}', (PluralCategory.OTHER): 'thiɛ̈kɛn {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'minitö {n}', (PluralCategory.OTHER): 'minitö {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'thä {n}', (PluralCategory.OTHER): 'thä {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'akɔl {n}', (PluralCategory.OTHER): 'akɔl {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'bɛ̈t {n}', (PluralCategory.OTHER): 'bɛ̈t {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'pɛi {n}', (PluralCategory.OTHER): 'pɛi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈n {n}'])
+        ),
+        '{0} ku abɛ̈c',
+        ', ',
+        'ëmën',
+        '{0} cï wëëŋ',
+        'ka {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('thiɛ̈kɛn {n}'),
+            UnitForms.simpleUnit('minitö {n}'),
+            UnitForms.simpleUnit('thä {n}'),
+            UnitForms.simpleUnit('akɔl {n}'),
+            UnitForms.simpleUnit('bɛ̈t {n}'),
+            UnitForms.simpleUnit('pɛi {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ruɔ̈n {n}', (PluralCategory.OTHER): 'ruɔ̈ɔ̈n {n}']),
+            null,
+            null,
+            '{0} cï wëëŋ',
+            'ka {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} cï wëëŋ',
+            'ka {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/dje.json
+    // ================================================================
+    // DJE — Zarma
+    // ================================================================
+    static final DurationLocale DJE = new DurationLocale(
+        'dje',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('sɛkondi {n}'),
+            UnitForms.simpleUnit('miniti {n}'),
+            UnitForms.simpleUnit('guuru {n}'),
+            UnitForms.simpleUnit('zaari {n}'),
+            UnitForms.simpleUnit('hebu {n}'),
+            UnitForms.simpleUnit('handu {n}'),
+            UnitForms.simpleUnit('jiiri {n}')
+        ),
+        '{0} d\'iddeka',
+        ', ',
+        'sohõ',
+        '{0} ka ban',
+        'da {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sɛk. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('guu. {n}'),
+            UnitForms.simpleUnit('zaa. {n}'),
+            UnitForms.simpleUnit('heb. {n}'),
+            UnitForms.simpleUnit('han. {n}'),
+            UnitForms.simpleUnit('jii. {n}'),
+            null,
+            null,
+            '{0} ka ban',
+            'da {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} ban',
+            'da {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/dyu.json
+    // ================================================================
+    // DYU — Dyula
+    // ================================================================
+    static final DurationLocale DYU = new DurationLocale(
+        'dyu',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('sɛkondi {n}'),
+            UnitForms.simpleUnit('miniti {n}'),
+            UnitForms.simpleUnit('lɛrɛ {n}'),
+            UnitForms.simpleUnit('don {n}'),
+            UnitForms.simpleUnit('dɔgɔkun {n}'),
+            UnitForms.simpleUnit('kalo {n}'),
+            UnitForms.simpleUnit('san {n}')
+        ),
+        '{0} ni tilancɛ',
+        ', ',
+        'sisan',
+        '{0} tɛmɛnen',
+        'ka {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sɛk. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('lɛr. {n}'),
+            UnitForms.simpleUnit('don {n}'),
+            UnitForms.simpleUnit('dɔgɔk. {n}'),
+            UnitForms.simpleUnit('kalo {n}'),
+            UnitForms.simpleUnit('san {n}'),
+            null,
+            null,
+            '{0} tɛmɛnen',
+            'ka {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            '{n}½',
+            '',
+            '{0} tɛmɛnen',
+            'ka {0}'
         ),
         null,
         null

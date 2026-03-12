@@ -1,0 +1,108 @@
+{
+  "code": "ktu",
+  "name": "Kituba",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "sekonde {n}",
+      "other": "masekonde {n}"
+    },
+    "minute": {
+      "one": "miniti {n}",
+      "other": "maminiti {n}"
+    },
+    "hour": {
+      "one": "ngonga {n}",
+      "other": "mingonga {n}"
+    },
+    "day": {
+      "one": "lumbu {n}",
+      "other": "malumbu {n}"
+    },
+    "week": {
+      "one": "poso {n}",
+      "other": "maposo {n}"
+    },
+    "month": {
+      "one": "ngonda {n}",
+      "other": "mingonda {n}"
+    },
+    "year": {
+      "one": "mvula {n}",
+      "other": "mimvula {n}"
+    }
+  },
+  "half": "{0} na ndambu",
+  "delimiter": ", ",
+  "justNow": "sik'oyo",
+  "ago": "{0} ya vioka",
+  "inFuture": "na {0}",
+  "short": {
+    "units": {
+      "second": "masekonde {n}",
+      "minute": "maminiti {n}",
+      "hour": {
+        "one": "ngonga {n}",
+        "other": "mingonga {n}"
+      },
+      "day": "malumbu {n}",
+      "week": {
+        "one": "poso {n}",
+        "other": "maposo {n}"
+      },
+      "month": {
+        "one": "ngonda {n}",
+        "other": "mingonda {n}"
+      },
+      "year": {
+        "one": "mvula {n}",
+        "other": "mimvula {n}"
+      }
+    },
+    "ago": "{0} ya vioka",
+    "inFuture": "na {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "masek {n}",
+      "minute": "mamin {n}",
+      "hour": {
+        "one": "ngon {n}",
+        "other": "mingon {n}"
+      },
+      "day": "malum {n}",
+      "week": {
+        "one": "poso {n}",
+        "other": "maposo {n}"
+      },
+      "month": {
+        "one": "ngon {n}",
+        "other": "mingon {n}"
+      },
+      "year": {
+        "one": "mvula {n}",
+        "other": "mimv {n}"
+      }
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} vioka",
+    "inFuture": "na {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

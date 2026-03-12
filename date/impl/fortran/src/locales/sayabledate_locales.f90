@@ -19,8 +19,11 @@ module sayabledate_locales
   type(sd_locale), target, save :: locale_am
   type(sd_locale), target, save :: locale_ar
   type(sd_locale), target, save :: locale_az
+  type(sd_locale), target, save :: locale_bci
   type(sd_locale), target, save :: locale_be
+  type(sd_locale), target, save :: locale_bem
   type(sd_locale), target, save :: locale_bg
+  type(sd_locale), target, save :: locale_bm
   type(sd_locale), target, save :: locale_bn
   type(sd_locale), target, save :: locale_br
   type(sd_locale), target, save :: locale_bs
@@ -30,15 +33,21 @@ module sayabledate_locales
   type(sd_locale), target, save :: locale_cy
   type(sd_locale), target, save :: locale_da
   type(sd_locale), target, save :: locale_de
+  type(sd_locale), target, save :: locale_din
+  type(sd_locale), target, save :: locale_dje
+  type(sd_locale), target, save :: locale_dyu
+  type(sd_locale), target, save :: locale_ee
   type(sd_locale), target, save :: locale_el
   type(sd_locale), target, save :: locale_en
   type(sd_locale), target, save :: locale_es
   type(sd_locale), target, save :: locale_et
   type(sd_locale), target, save :: locale_eu
   type(sd_locale), target, save :: locale_fa
+  type(sd_locale), target, save :: locale_fan
   type(sd_locale), target, save :: locale_ff
   type(sd_locale), target, save :: locale_fi
   type(sd_locale), target, save :: locale_fil
+  type(sd_locale), target, save :: locale_fon
   type(sd_locale), target, save :: locale_fr
   type(sd_locale), target, save :: locale_ga
   type(sd_locale), target, save :: locale_gd
@@ -60,10 +69,13 @@ module sayabledate_locales
   type(sd_locale), target, save :: locale_ja
   type(sd_locale), target, save :: locale_jv
   type(sd_locale), target, save :: locale_ka
+  type(sd_locale), target, save :: locale_kbp
   type(sd_locale), target, save :: locale_kk
   type(sd_locale), target, save :: locale_km
   type(sd_locale), target, save :: locale_kn
   type(sd_locale), target, save :: locale_ko
+  type(sd_locale), target, save :: locale_kpe
+  type(sd_locale), target, save :: locale_ktu
   type(sd_locale), target, save :: locale_ku
   type(sd_locale), target, save :: locale_kw
   type(sd_locale), target, save :: locale_ky
@@ -72,56 +84,79 @@ module sayabledate_locales
   type(sd_locale), target, save :: locale_lo
   type(sd_locale), target, save :: locale_lt
   type(sd_locale), target, save :: locale_lv
+  type(sd_locale), target, save :: locale_men
+  type(sd_locale), target, save :: locale_mfe
   type(sd_locale), target, save :: locale_mg
   type(sd_locale), target, save :: locale_mi
   type(sd_locale), target, save :: locale_mk
   type(sd_locale), target, save :: locale_ml
   type(sd_locale), target, save :: locale_mn
+  type(sd_locale), target, save :: locale_mnk
+  type(sd_locale), target, save :: locale_mos
   type(sd_locale), target, save :: locale_mr
   type(sd_locale), target, save :: locale_ms
   type(sd_locale), target, save :: locale_mt
   type(sd_locale), target, save :: locale_my
   type(sd_locale), target, save :: locale_nb
+  type(sd_locale), target, save :: locale_nd
   type(sd_locale), target, save :: locale_ne
+  type(sd_locale), target, save :: locale_ng
   type(sd_locale), target, save :: locale_nl
+  type(sd_locale), target, save :: locale_nso
+  type(sd_locale), target, save :: locale_nus
   type(sd_locale), target, save :: locale_ny
   type(sd_locale), target, save :: locale_om
   type(sd_locale), target, save :: locale_or
   type(sd_locale), target, save :: locale_pa
   type(sd_locale), target, save :: locale_pl
+  type(sd_locale), target, save :: locale_pov
   type(sd_locale), target, save :: locale_ps
   type(sd_locale), target, save :: locale_pt
   type(sd_locale), target, save :: locale_qu
   type(sd_locale), target, save :: locale_ro
   type(sd_locale), target, save :: locale_ru
   type(sd_locale), target, save :: locale_rw
+  type(sd_locale), target, save :: locale_sar
   type(sd_locale), target, save :: locale_sd
+  type(sd_locale), target, save :: locale_sg
   type(sd_locale), target, save :: locale_shi
   type(sd_locale), target, save :: locale_si
   type(sd_locale), target, save :: locale_sk
   type(sd_locale), target, save :: locale_sl
   type(sd_locale), target, save :: locale_sn
+  type(sd_locale), target, save :: locale_snk
   type(sd_locale), target, save :: locale_so
   type(sd_locale), target, save :: locale_sq
   type(sd_locale), target, save :: locale_sr
+  type(sd_locale), target, save :: locale_ss
+  type(sd_locale), target, save :: locale_st
   type(sd_locale), target, save :: locale_su
+  type(sd_locale), target, save :: locale_suk
   type(sd_locale), target, save :: locale_sv
   type(sd_locale), target, save :: locale_sw
   type(sd_locale), target, save :: locale_ta
   type(sd_locale), target, save :: locale_te
+  type(sd_locale), target, save :: locale_tem
   type(sd_locale), target, save :: locale_tg
   type(sd_locale), target, save :: locale_th
   type(sd_locale), target, save :: locale_ti
+  type(sd_locale), target, save :: locale_tig
   type(sd_locale), target, save :: locale_tk
+  type(sd_locale), target, save :: locale_tn
   type(sd_locale), target, save :: locale_tr
+  type(sd_locale), target, save :: locale_ts
   type(sd_locale), target, save :: locale_tzm
   type(sd_locale), target, save :: locale_uk
+  type(sd_locale), target, save :: locale_umb
   type(sd_locale), target, save :: locale_ur
   type(sd_locale), target, save :: locale_uz
   type(sd_locale), target, save :: locale_vi
+  type(sd_locale), target, save :: locale_vmw
+  type(sd_locale), target, save :: locale_wo
   type(sd_locale), target, save :: locale_xh
   type(sd_locale), target, save :: locale_yo
   type(sd_locale), target, save :: locale_yue
+  type(sd_locale), target, save :: locale_zdj
   type(sd_locale), target, save :: locale_zh
   type(sd_locale), target, save :: locale_zu
 
@@ -599,6 +634,100 @@ contains
 
   end subroutine init_az
 
+  ! Source: date/locales/src/bci.json
+  subroutine init_bci()
+    locale_bci%code = 'bci'
+
+    locale_bci%months(1) = 'Zanvie'
+    locale_bci%months(2) = 'Flevie'
+    locale_bci%months(3) = 'Masi'
+    locale_bci%months(4) = 'Avrili'
+    locale_bci%months(5) = 'Mɛ'
+    locale_bci%months(6) = 'Zuɛn'
+    locale_bci%months(7) = 'Zulɛ'
+    locale_bci%months(8) = 'Uti'
+    locale_bci%months(9) = 'Sɛtanbu'
+    locale_bci%months(10) = 'Ɔtɔbu'
+    locale_bci%months(11) = 'Novanbu'
+    locale_bci%months(12) = 'Desanbu'
+
+    locale_bci%weekdays(1) = 'Mɔndi'
+    locale_bci%weekdays(2) = 'Lunji'
+    locale_bci%weekdays(3) = 'Madi'
+    locale_bci%weekdays(4) = 'Mliku'
+    locale_bci%weekdays(5) = 'Juedi'
+    locale_bci%weekdays(6) = 'Vaandredi'
+    locale_bci%weekdays(7) = 'Sanmdi'
+
+    locale_bci%day_format = '{n}'
+
+    locale_bci%num_exceptions = 0
+
+    locale_bci%date_pattern = '{day} {month}'
+    locale_bci%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_bci%today = 'andɛ'
+    locale_bci%tomorrow = 'ainman'
+    locale_bci%yesterday = 'nglɛmun'
+
+    locale_bci%day_after_tomorrow = 'ainman sin'
+    locale_bci%day_before_yesterday = 'nglɛmun sin'
+    locale_bci%this_weekday = '{weekday} nga'
+    locale_bci%next_weekday = '{weekday} ng''ɔ ba'
+    locale_bci%last_weekday = '{weekday} ng''ɔ sín'
+
+    locale_bci%has_months_in_date = .false.
+
+    locale_bci%has_short = .true.
+    locale_bci%short_override%has_months = .true.
+    locale_bci%short_override%months(1) = 'Zan'
+    locale_bci%short_override%months(2) = 'Fle'
+    locale_bci%short_override%months(3) = 'Mas'
+    locale_bci%short_override%months(4) = 'Avr'
+    locale_bci%short_override%months(5) = 'Mɛ'
+    locale_bci%short_override%months(6) = 'Zuɛ'
+    locale_bci%short_override%months(7) = 'Zul'
+    locale_bci%short_override%months(8) = 'Uti'
+    locale_bci%short_override%months(9) = 'Sɛt'
+    locale_bci%short_override%months(10) = 'Ɔtɔ'
+    locale_bci%short_override%months(11) = 'Nov'
+    locale_bci%short_override%months(12) = 'Des'
+    locale_bci%short_override%has_months_in_date = .false.
+    locale_bci%short_override%has_weekdays = .true.
+    locale_bci%short_override%weekdays(1) = 'Mɔn'
+    locale_bci%short_override%weekdays(2) = 'Lun'
+    locale_bci%short_override%weekdays(3) = 'Mad'
+    locale_bci%short_override%weekdays(4) = 'Mli'
+    locale_bci%short_override%weekdays(5) = 'Jue'
+    locale_bci%short_override%weekdays(6) = 'Vaa'
+    locale_bci%short_override%weekdays(7) = 'San'
+    locale_bci%short_override%has_day_format = .true.
+    locale_bci%short_override%day_format = '{n}'
+    locale_bci%short_override%has_day_format_exceptions = .false.
+    locale_bci%short_override%has_date_pattern = .true.
+    locale_bci%short_override%date_pattern = '{day} {month}'
+    locale_bci%short_override%has_date_pattern_with_year = .true.
+    locale_bci%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_bci%short_override%has_today = .false.
+    locale_bci%short_override%has_tomorrow = .false.
+    locale_bci%short_override%has_yesterday = .false.
+
+    locale_bci%has_compact = .true.
+    locale_bci%compact_override%has_months = .false.
+    locale_bci%compact_override%has_months_in_date = .false.
+    locale_bci%compact_override%has_weekdays = .false.
+    locale_bci%compact_override%has_day_format = .false.
+    locale_bci%compact_override%has_day_format_exceptions = .false.
+    locale_bci%compact_override%has_date_pattern = .true.
+    locale_bci%compact_override%date_pattern = '{d}/{m}'
+    locale_bci%compact_override%has_date_pattern_with_year = .true.
+    locale_bci%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_bci%compact_override%has_today = .false.
+    locale_bci%compact_override%has_tomorrow = .false.
+    locale_bci%compact_override%has_yesterday = .false.
+
+  end subroutine init_bci
+
   ! Source: date/locales/src/be.json
   subroutine init_be()
     locale_be%code = 'be'
@@ -705,6 +834,100 @@ contains
 
   end subroutine init_be
 
+  ! Source: date/locales/src/bem.json
+  subroutine init_bem()
+    locale_bem%code = 'bem'
+
+    locale_bem%months(1) = 'Januari'
+    locale_bem%months(2) = 'Februari'
+    locale_bem%months(3) = 'Machi'
+    locale_bem%months(4) = 'Epreli'
+    locale_bem%months(5) = 'Mei'
+    locale_bem%months(6) = 'Juni'
+    locale_bem%months(7) = 'Julai'
+    locale_bem%months(8) = 'Ogasti'
+    locale_bem%months(9) = 'Septemba'
+    locale_bem%months(10) = 'Oktoba'
+    locale_bem%months(11) = 'Novemba'
+    locale_bem%months(12) = 'Disemba'
+
+    locale_bem%weekdays(1) = 'Pa Mulungu'
+    locale_bem%weekdays(2) = 'Pa Bwali'
+    locale_bem%weekdays(3) = 'Pa Bibili'
+    locale_bem%weekdays(4) = 'Pa Butatu'
+    locale_bem%weekdays(5) = 'Pa Bune'
+    locale_bem%weekdays(6) = 'Pa Busano'
+    locale_bem%weekdays(7) = 'Pa Mulembe'
+
+    locale_bem%day_format = '{n}'
+
+    locale_bem%num_exceptions = 0
+
+    locale_bem%date_pattern = '{day} {month}'
+    locale_bem%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_bem%today = 'lelo'
+    locale_bem%tomorrow = 'mailo'
+    locale_bem%yesterday = 'icungulo'
+
+    locale_bem%day_after_tomorrow = 'mailo kabili'
+    locale_bem%day_before_yesterday = 'icungulo kabili'
+    locale_bem%this_weekday = '{weekday} ubu'
+    locale_bem%next_weekday = '{weekday} ukwisa'
+    locale_bem%last_weekday = '{weekday} ukupita'
+
+    locale_bem%has_months_in_date = .false.
+
+    locale_bem%has_short = .true.
+    locale_bem%short_override%has_months = .true.
+    locale_bem%short_override%months(1) = 'Jan'
+    locale_bem%short_override%months(2) = 'Feb'
+    locale_bem%short_override%months(3) = 'Mac'
+    locale_bem%short_override%months(4) = 'Epr'
+    locale_bem%short_override%months(5) = 'Mei'
+    locale_bem%short_override%months(6) = 'Jun'
+    locale_bem%short_override%months(7) = 'Jul'
+    locale_bem%short_override%months(8) = 'Oga'
+    locale_bem%short_override%months(9) = 'Sep'
+    locale_bem%short_override%months(10) = 'Okt'
+    locale_bem%short_override%months(11) = 'Nov'
+    locale_bem%short_override%months(12) = 'Dis'
+    locale_bem%short_override%has_months_in_date = .false.
+    locale_bem%short_override%has_weekdays = .true.
+    locale_bem%short_override%weekdays(1) = 'Mul'
+    locale_bem%short_override%weekdays(2) = 'Bwa'
+    locale_bem%short_override%weekdays(3) = 'Bib'
+    locale_bem%short_override%weekdays(4) = 'But'
+    locale_bem%short_override%weekdays(5) = 'Bun'
+    locale_bem%short_override%weekdays(6) = 'Bus'
+    locale_bem%short_override%weekdays(7) = 'Mul'
+    locale_bem%short_override%has_day_format = .true.
+    locale_bem%short_override%day_format = '{n}'
+    locale_bem%short_override%has_day_format_exceptions = .false.
+    locale_bem%short_override%has_date_pattern = .true.
+    locale_bem%short_override%date_pattern = '{day} {month}'
+    locale_bem%short_override%has_date_pattern_with_year = .true.
+    locale_bem%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_bem%short_override%has_today = .false.
+    locale_bem%short_override%has_tomorrow = .false.
+    locale_bem%short_override%has_yesterday = .false.
+
+    locale_bem%has_compact = .true.
+    locale_bem%compact_override%has_months = .false.
+    locale_bem%compact_override%has_months_in_date = .false.
+    locale_bem%compact_override%has_weekdays = .false.
+    locale_bem%compact_override%has_day_format = .false.
+    locale_bem%compact_override%has_day_format_exceptions = .false.
+    locale_bem%compact_override%has_date_pattern = .true.
+    locale_bem%compact_override%date_pattern = '{d}/{m}'
+    locale_bem%compact_override%has_date_pattern_with_year = .true.
+    locale_bem%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_bem%compact_override%has_today = .false.
+    locale_bem%compact_override%has_tomorrow = .false.
+    locale_bem%compact_override%has_yesterday = .false.
+
+  end subroutine init_bem
+
   ! Source: date/locales/src/bg.json
   subroutine init_bg()
     locale_bg%code = 'bg'
@@ -798,6 +1021,100 @@ contains
     locale_bg%compact_override%has_yesterday = .false.
 
   end subroutine init_bg
+
+  ! Source: date/locales/src/bm.json
+  subroutine init_bm()
+    locale_bm%code = 'bm'
+
+    locale_bm%months(1) = 'Zanwuye'
+    locale_bm%months(2) = 'Fewuriye'
+    locale_bm%months(3) = 'Marisi'
+    locale_bm%months(4) = 'Awirili'
+    locale_bm%months(5) = 'Mɛ'
+    locale_bm%months(6) = 'Zuwɛn'
+    locale_bm%months(7) = 'Zuluye'
+    locale_bm%months(8) = 'Uti'
+    locale_bm%months(9) = 'Sɛtanburu'
+    locale_bm%months(10) = 'ɔkutɔburu'
+    locale_bm%months(11) = 'Nowanbudu'
+    locale_bm%months(12) = 'Desanburu'
+
+    locale_bm%weekdays(1) = 'Kari'
+    locale_bm%weekdays(2) = 'Ntɛnɛn'
+    locale_bm%weekdays(3) = 'Tarata'
+    locale_bm%weekdays(4) = 'Araba'
+    locale_bm%weekdays(5) = 'Alamisa'
+    locale_bm%weekdays(6) = 'Juma'
+    locale_bm%weekdays(7) = 'Sibiri'
+
+    locale_bm%day_format = '{n}'
+
+    locale_bm%num_exceptions = 0
+
+    locale_bm%date_pattern = '{day} {month}'
+    locale_bm%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_bm%today = 'bi'
+    locale_bm%tomorrow = 'sini'
+    locale_bm%yesterday = 'kunu'
+
+    locale_bm%day_after_tomorrow = 'sini kɔfɛ'
+    locale_bm%day_before_yesterday = 'kunu kɔfɛ'
+    locale_bm%this_weekday = '{weekday} nin'
+    locale_bm%next_weekday = '{weekday} nata'
+    locale_bm%last_weekday = '{weekday} tɛmɛnen'
+
+    locale_bm%has_months_in_date = .false.
+
+    locale_bm%has_short = .true.
+    locale_bm%short_override%has_months = .true.
+    locale_bm%short_override%months(1) = 'Zan'
+    locale_bm%short_override%months(2) = 'Few'
+    locale_bm%short_override%months(3) = 'Mar'
+    locale_bm%short_override%months(4) = 'Awi'
+    locale_bm%short_override%months(5) = 'Mɛ'
+    locale_bm%short_override%months(6) = 'Zuw'
+    locale_bm%short_override%months(7) = 'Zul'
+    locale_bm%short_override%months(8) = 'Uti'
+    locale_bm%short_override%months(9) = 'Sɛt'
+    locale_bm%short_override%months(10) = 'ɔku'
+    locale_bm%short_override%months(11) = 'Now'
+    locale_bm%short_override%months(12) = 'Des'
+    locale_bm%short_override%has_months_in_date = .false.
+    locale_bm%short_override%has_weekdays = .true.
+    locale_bm%short_override%weekdays(1) = 'Kar'
+    locale_bm%short_override%weekdays(2) = 'Ntɛ'
+    locale_bm%short_override%weekdays(3) = 'Tar'
+    locale_bm%short_override%weekdays(4) = 'Ara'
+    locale_bm%short_override%weekdays(5) = 'Ala'
+    locale_bm%short_override%weekdays(6) = 'Jum'
+    locale_bm%short_override%weekdays(7) = 'Sib'
+    locale_bm%short_override%has_day_format = .true.
+    locale_bm%short_override%day_format = '{n}'
+    locale_bm%short_override%has_day_format_exceptions = .false.
+    locale_bm%short_override%has_date_pattern = .true.
+    locale_bm%short_override%date_pattern = '{day} {month}'
+    locale_bm%short_override%has_date_pattern_with_year = .true.
+    locale_bm%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_bm%short_override%has_today = .false.
+    locale_bm%short_override%has_tomorrow = .false.
+    locale_bm%short_override%has_yesterday = .false.
+
+    locale_bm%has_compact = .true.
+    locale_bm%compact_override%has_months = .false.
+    locale_bm%compact_override%has_months_in_date = .false.
+    locale_bm%compact_override%has_weekdays = .false.
+    locale_bm%compact_override%has_day_format = .false.
+    locale_bm%compact_override%has_day_format_exceptions = .false.
+    locale_bm%compact_override%has_date_pattern = .true.
+    locale_bm%compact_override%date_pattern = '{d}/{m}'
+    locale_bm%compact_override%has_date_pattern_with_year = .true.
+    locale_bm%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_bm%compact_override%has_today = .false.
+    locale_bm%compact_override%has_tomorrow = .false.
+    locale_bm%compact_override%has_yesterday = .false.
+
+  end subroutine init_bm
 
   ! Source: date/locales/src/bn.json
   subroutine init_bn()
@@ -1657,6 +1974,382 @@ contains
 
   end subroutine init_de
 
+  ! Source: date/locales/src/din.json
+  subroutine init_din()
+    locale_din%code = 'din'
+
+    locale_din%months(1) = 'Tiɔp in dit'
+    locale_din%months(2) = 'Pɛt'
+    locale_din%months(3) = 'Duɔ̈ɔ̈ŋ'
+    locale_din%months(4) = 'Guak'
+    locale_din%months(5) = 'Duät'
+    locale_din%months(6) = 'Kornyot'
+    locale_din%months(7) = 'Payi'
+    locale_din%months(8) = 'Tio̱p in thii'
+    locale_din%months(9) = 'Laath'
+    locale_din%months(10) = 'Kur'
+    locale_din%months(11) = 'Tio̱p in laat'
+    locale_din%months(12) = 'Jiɔk'
+
+    locale_din%weekdays(1) = 'Akɔl dhorou'
+    locale_din%weekdays(2) = 'Kɔl jöŋ'
+    locale_din%weekdays(3) = 'Kɔl rou'
+    locale_din%weekdays(4) = 'Kɔl diäk'
+    locale_din%weekdays(5) = 'Kɔl ŋuän'
+    locale_din%weekdays(6) = 'Kɔl dhiëc'
+    locale_din%weekdays(7) = 'Kɔl bäkäl'
+
+    locale_din%day_format = '{n}'
+
+    locale_din%num_exceptions = 0
+
+    locale_din%date_pattern = '{day} {month}'
+    locale_din%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_din%today = 'yïn'
+    locale_din%tomorrow = 'riak'
+    locale_din%yesterday = 'aköl'
+
+    locale_din%day_after_tomorrow = 'riak cök'
+    locale_din%day_before_yesterday = 'aköl cök'
+    locale_din%this_weekday = '{weekday} kënë'
+    locale_din%next_weekday = '{weekday} bɛ̈n'
+    locale_din%last_weekday = '{weekday} cï wëëŋ'
+
+    locale_din%has_months_in_date = .false.
+
+    locale_din%has_short = .true.
+    locale_din%short_override%has_months = .true.
+    locale_din%short_override%months(1) = 'Tiɔp'
+    locale_din%short_override%months(2) = 'Pɛt'
+    locale_din%short_override%months(3) = 'Duɔ̈ɔ̈ŋ'
+    locale_din%short_override%months(4) = 'Guak'
+    locale_din%short_override%months(5) = 'Duät'
+    locale_din%short_override%months(6) = 'Kor'
+    locale_din%short_override%months(7) = 'Pay'
+    locale_din%short_override%months(8) = 'Tio̱p'
+    locale_din%short_override%months(9) = 'Laa'
+    locale_din%short_override%months(10) = 'Kur'
+    locale_din%short_override%months(11) = 'Tio̱p'
+    locale_din%short_override%months(12) = 'Jiɔk'
+    locale_din%short_override%has_months_in_date = .false.
+    locale_din%short_override%has_weekdays = .true.
+    locale_din%short_override%weekdays(1) = 'Dho'
+    locale_din%short_override%weekdays(2) = 'Jöŋ'
+    locale_din%short_override%weekdays(3) = 'Rou'
+    locale_din%short_override%weekdays(4) = 'Diäk'
+    locale_din%short_override%weekdays(5) = 'Ŋuän'
+    locale_din%short_override%weekdays(6) = 'Dhiëc'
+    locale_din%short_override%weekdays(7) = 'Bäk'
+    locale_din%short_override%has_day_format = .true.
+    locale_din%short_override%day_format = '{n}'
+    locale_din%short_override%has_day_format_exceptions = .false.
+    locale_din%short_override%has_date_pattern = .true.
+    locale_din%short_override%date_pattern = '{day} {month}'
+    locale_din%short_override%has_date_pattern_with_year = .true.
+    locale_din%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_din%short_override%has_today = .false.
+    locale_din%short_override%has_tomorrow = .false.
+    locale_din%short_override%has_yesterday = .false.
+
+    locale_din%has_compact = .true.
+    locale_din%compact_override%has_months = .false.
+    locale_din%compact_override%has_months_in_date = .false.
+    locale_din%compact_override%has_weekdays = .false.
+    locale_din%compact_override%has_day_format = .false.
+    locale_din%compact_override%has_day_format_exceptions = .false.
+    locale_din%compact_override%has_date_pattern = .true.
+    locale_din%compact_override%date_pattern = '{d}/{m}'
+    locale_din%compact_override%has_date_pattern_with_year = .true.
+    locale_din%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_din%compact_override%has_today = .false.
+    locale_din%compact_override%has_tomorrow = .false.
+    locale_din%compact_override%has_yesterday = .false.
+
+  end subroutine init_din
+
+  ! Source: date/locales/src/dje.json
+  subroutine init_dje()
+    locale_dje%code = 'dje'
+
+    locale_dje%months(1) = 'Žanwiye'
+    locale_dje%months(2) = 'Feewiriye'
+    locale_dje%months(3) = 'Marsi'
+    locale_dje%months(4) = 'Awiril'
+    locale_dje%months(5) = 'Me'
+    locale_dje%months(6) = 'Žuweŋ'
+    locale_dje%months(7) = 'Žuyye'
+    locale_dje%months(8) = 'Ut'
+    locale_dje%months(9) = 'Sektanbur'
+    locale_dje%months(10) = 'Oktoobur'
+    locale_dje%months(11) = 'Noowanbur'
+    locale_dje%months(12) = 'Deesanbur'
+
+    locale_dje%weekdays(1) = 'Alhadi'
+    locale_dje%weekdays(2) = 'Atini'
+    locale_dje%weekdays(3) = 'Atalaata'
+    locale_dje%weekdays(4) = 'Alarba'
+    locale_dje%weekdays(5) = 'Alhamisi'
+    locale_dje%weekdays(6) = 'Alzuma'
+    locale_dje%weekdays(7) = 'Asibiti'
+
+    locale_dje%day_format = '{n}'
+
+    locale_dje%num_exceptions = 0
+
+    locale_dje%date_pattern = '{day} {month}'
+    locale_dje%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_dje%today = 'hõ'
+    locale_dje%tomorrow = 'suba'
+    locale_dje%yesterday = 'bi'
+
+    locale_dje%day_after_tomorrow = 'suba cine'
+    locale_dje%day_before_yesterday = 'bi fo'
+    locale_dje%this_weekday = '{weekday} wo'
+    locale_dje%next_weekday = '{weekday} ka kaa'
+    locale_dje%last_weekday = '{weekday} ka ban'
+
+    locale_dje%has_months_in_date = .false.
+
+    locale_dje%has_short = .true.
+    locale_dje%short_override%has_months = .true.
+    locale_dje%short_override%months(1) = 'Žan'
+    locale_dje%short_override%months(2) = 'Fee'
+    locale_dje%short_override%months(3) = 'Mar'
+    locale_dje%short_override%months(4) = 'Awi'
+    locale_dje%short_override%months(5) = 'Me'
+    locale_dje%short_override%months(6) = 'Žuw'
+    locale_dje%short_override%months(7) = 'Žuy'
+    locale_dje%short_override%months(8) = 'Ut'
+    locale_dje%short_override%months(9) = 'Sek'
+    locale_dje%short_override%months(10) = 'Okt'
+    locale_dje%short_override%months(11) = 'Noo'
+    locale_dje%short_override%months(12) = 'Dee'
+    locale_dje%short_override%has_months_in_date = .false.
+    locale_dje%short_override%has_weekdays = .true.
+    locale_dje%short_override%weekdays(1) = 'Alh'
+    locale_dje%short_override%weekdays(2) = 'Ati'
+    locale_dje%short_override%weekdays(3) = 'Ata'
+    locale_dje%short_override%weekdays(4) = 'Ala'
+    locale_dje%short_override%weekdays(5) = 'Alh'
+    locale_dje%short_override%weekdays(6) = 'Alz'
+    locale_dje%short_override%weekdays(7) = 'Asi'
+    locale_dje%short_override%has_day_format = .true.
+    locale_dje%short_override%day_format = '{n}'
+    locale_dje%short_override%has_day_format_exceptions = .false.
+    locale_dje%short_override%has_date_pattern = .true.
+    locale_dje%short_override%date_pattern = '{day} {month}'
+    locale_dje%short_override%has_date_pattern_with_year = .true.
+    locale_dje%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_dje%short_override%has_today = .false.
+    locale_dje%short_override%has_tomorrow = .false.
+    locale_dje%short_override%has_yesterday = .false.
+
+    locale_dje%has_compact = .true.
+    locale_dje%compact_override%has_months = .false.
+    locale_dje%compact_override%has_months_in_date = .false.
+    locale_dje%compact_override%has_weekdays = .false.
+    locale_dje%compact_override%has_day_format = .false.
+    locale_dje%compact_override%has_day_format_exceptions = .false.
+    locale_dje%compact_override%has_date_pattern = .true.
+    locale_dje%compact_override%date_pattern = '{d}/{m}'
+    locale_dje%compact_override%has_date_pattern_with_year = .true.
+    locale_dje%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_dje%compact_override%has_today = .false.
+    locale_dje%compact_override%has_tomorrow = .false.
+    locale_dje%compact_override%has_yesterday = .false.
+
+  end subroutine init_dje
+
+  ! Source: date/locales/src/dyu.json
+  subroutine init_dyu()
+    locale_dyu%code = 'dyu'
+
+    locale_dyu%months(1) = 'Zanwuyekalo'
+    locale_dyu%months(2) = 'Feburuyekalo'
+    locale_dyu%months(3) = 'Marisikalo'
+    locale_dyu%months(4) = 'Awirilikalo'
+    locale_dyu%months(5) = 'Mɛkalo'
+    locale_dyu%months(6) = 'Zuwɛnkalo'
+    locale_dyu%months(7) = 'Zuluyekalo'
+    locale_dyu%months(8) = 'Utikalo'
+    locale_dyu%months(9) = 'Sɛtanburukalo'
+    locale_dyu%months(10) = 'Ɔkutɔburukalo'
+    locale_dyu%months(11) = 'Nowanburdukalo'
+    locale_dyu%months(12) = 'Desanburukalo'
+
+    locale_dyu%weekdays(1) = 'Kari'
+    locale_dyu%weekdays(2) = 'Ntɛnɛn'
+    locale_dyu%weekdays(3) = 'Tarata'
+    locale_dyu%weekdays(4) = 'Araba'
+    locale_dyu%weekdays(5) = 'Alamisa'
+    locale_dyu%weekdays(6) = 'Juma'
+    locale_dyu%weekdays(7) = 'Sibiri'
+
+    locale_dyu%day_format = '{n}'
+
+    locale_dyu%num_exceptions = 0
+
+    locale_dyu%date_pattern = '{day} {month}'
+    locale_dyu%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_dyu%today = 'bi'
+    locale_dyu%tomorrow = 'sini'
+    locale_dyu%yesterday = 'kunu'
+
+    locale_dyu%day_after_tomorrow = 'sini kɔfɛ'
+    locale_dyu%day_before_yesterday = 'kunu kɔfɛ'
+    locale_dyu%this_weekday = '{weekday} nin'
+    locale_dyu%next_weekday = '{weekday} nata'
+    locale_dyu%last_weekday = '{weekday} tɛmɛnen'
+
+    locale_dyu%has_months_in_date = .false.
+
+    locale_dyu%has_short = .true.
+    locale_dyu%short_override%has_months = .true.
+    locale_dyu%short_override%months(1) = 'Zan'
+    locale_dyu%short_override%months(2) = 'Feb'
+    locale_dyu%short_override%months(3) = 'Mar'
+    locale_dyu%short_override%months(4) = 'Awi'
+    locale_dyu%short_override%months(5) = 'Mɛ'
+    locale_dyu%short_override%months(6) = 'Zuw'
+    locale_dyu%short_override%months(7) = 'Zul'
+    locale_dyu%short_override%months(8) = 'Uti'
+    locale_dyu%short_override%months(9) = 'Sɛt'
+    locale_dyu%short_override%months(10) = 'Ɔku'
+    locale_dyu%short_override%months(11) = 'Now'
+    locale_dyu%short_override%months(12) = 'Des'
+    locale_dyu%short_override%has_months_in_date = .false.
+    locale_dyu%short_override%has_weekdays = .true.
+    locale_dyu%short_override%weekdays(1) = 'Kar'
+    locale_dyu%short_override%weekdays(2) = 'Ntɛ'
+    locale_dyu%short_override%weekdays(3) = 'Tar'
+    locale_dyu%short_override%weekdays(4) = 'Ara'
+    locale_dyu%short_override%weekdays(5) = 'Ala'
+    locale_dyu%short_override%weekdays(6) = 'Jum'
+    locale_dyu%short_override%weekdays(7) = 'Sib'
+    locale_dyu%short_override%has_day_format = .true.
+    locale_dyu%short_override%day_format = '{n}'
+    locale_dyu%short_override%has_day_format_exceptions = .false.
+    locale_dyu%short_override%has_date_pattern = .true.
+    locale_dyu%short_override%date_pattern = '{day} {month}'
+    locale_dyu%short_override%has_date_pattern_with_year = .true.
+    locale_dyu%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_dyu%short_override%has_today = .false.
+    locale_dyu%short_override%has_tomorrow = .false.
+    locale_dyu%short_override%has_yesterday = .false.
+
+    locale_dyu%has_compact = .true.
+    locale_dyu%compact_override%has_months = .false.
+    locale_dyu%compact_override%has_months_in_date = .false.
+    locale_dyu%compact_override%has_weekdays = .false.
+    locale_dyu%compact_override%has_day_format = .false.
+    locale_dyu%compact_override%has_day_format_exceptions = .false.
+    locale_dyu%compact_override%has_date_pattern = .true.
+    locale_dyu%compact_override%date_pattern = '{d}/{m}'
+    locale_dyu%compact_override%has_date_pattern_with_year = .true.
+    locale_dyu%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_dyu%compact_override%has_today = .false.
+    locale_dyu%compact_override%has_tomorrow = .false.
+    locale_dyu%compact_override%has_yesterday = .false.
+
+  end subroutine init_dyu
+
+  ! Source: date/locales/src/ee.json
+  subroutine init_ee()
+    locale_ee%code = 'ee'
+
+    locale_ee%months(1) = 'Dzove'
+    locale_ee%months(2) = 'Dzodze'
+    locale_ee%months(3) = 'Tedoxe'
+    locale_ee%months(4) = 'Afɔfĩe'
+    locale_ee%months(5) = 'Damɛ'
+    locale_ee%months(6) = 'Masa'
+    locale_ee%months(7) = 'Siamlɔm'
+    locale_ee%months(8) = 'Dasiamime'
+    locale_ee%months(9) = 'Anyɔnyɔ'
+    locale_ee%months(10) = 'Kele'
+    locale_ee%months(11) = 'Adeɛmekpɔxe'
+    locale_ee%months(12) = 'Dzome'
+
+    locale_ee%weekdays(1) = 'Kɔsiɖa'
+    locale_ee%weekdays(2) = 'Dzoɖa'
+    locale_ee%weekdays(3) = 'Braɖa'
+    locale_ee%weekdays(4) = 'Kuɖa'
+    locale_ee%weekdays(5) = 'Yawoɖa'
+    locale_ee%weekdays(6) = 'Fiɖa'
+    locale_ee%weekdays(7) = 'Memleɖa'
+
+    locale_ee%day_format = '{n}'
+
+    locale_ee%num_exceptions = 0
+
+    locale_ee%date_pattern = '{day} {month}'
+    locale_ee%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_ee%today = 'egbe'
+    locale_ee%tomorrow = 'etsɔ'
+    locale_ee%yesterday = 'etso'
+
+    locale_ee%day_after_tomorrow = 'etsɔ megbe'
+    locale_ee%day_before_yesterday = 'etso nyitsɔ'
+    locale_ee%this_weekday = '{weekday} sia'
+    locale_ee%next_weekday = '{weekday} si gbɔna'
+    locale_ee%last_weekday = '{weekday} si va yi'
+
+    locale_ee%has_months_in_date = .false.
+
+    locale_ee%has_short = .true.
+    locale_ee%short_override%has_months = .true.
+    locale_ee%short_override%months(1) = 'Dzv'
+    locale_ee%short_override%months(2) = 'Dzd'
+    locale_ee%short_override%months(3) = 'Ted'
+    locale_ee%short_override%months(4) = 'Afɔ'
+    locale_ee%short_override%months(5) = 'Dam'
+    locale_ee%short_override%months(6) = 'Mas'
+    locale_ee%short_override%months(7) = 'Sia'
+    locale_ee%short_override%months(8) = 'Das'
+    locale_ee%short_override%months(9) = 'Any'
+    locale_ee%short_override%months(10) = 'Kel'
+    locale_ee%short_override%months(11) = 'Ade'
+    locale_ee%short_override%months(12) = 'Dzm'
+    locale_ee%short_override%has_months_in_date = .false.
+    locale_ee%short_override%has_weekdays = .true.
+    locale_ee%short_override%weekdays(1) = 'Kɔs'
+    locale_ee%short_override%weekdays(2) = 'Dzo'
+    locale_ee%short_override%weekdays(3) = 'Bra'
+    locale_ee%short_override%weekdays(4) = 'Kuɖ'
+    locale_ee%short_override%weekdays(5) = 'Yaw'
+    locale_ee%short_override%weekdays(6) = 'Fiɖ'
+    locale_ee%short_override%weekdays(7) = 'Mem'
+    locale_ee%short_override%has_day_format = .true.
+    locale_ee%short_override%day_format = '{n}'
+    locale_ee%short_override%has_day_format_exceptions = .false.
+    locale_ee%short_override%has_date_pattern = .true.
+    locale_ee%short_override%date_pattern = '{day} {month}'
+    locale_ee%short_override%has_date_pattern_with_year = .true.
+    locale_ee%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_ee%short_override%has_today = .false.
+    locale_ee%short_override%has_tomorrow = .false.
+    locale_ee%short_override%has_yesterday = .false.
+
+    locale_ee%has_compact = .true.
+    locale_ee%compact_override%has_months = .false.
+    locale_ee%compact_override%has_months_in_date = .false.
+    locale_ee%compact_override%has_weekdays = .false.
+    locale_ee%compact_override%has_day_format = .false.
+    locale_ee%compact_override%has_day_format_exceptions = .false.
+    locale_ee%compact_override%has_date_pattern = .true.
+    locale_ee%compact_override%date_pattern = '{d}/{m}'
+    locale_ee%compact_override%has_date_pattern_with_year = .true.
+    locale_ee%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_ee%compact_override%has_today = .false.
+    locale_ee%compact_override%has_tomorrow = .false.
+    locale_ee%compact_override%has_yesterday = .false.
+
+  end subroutine init_ee
+
   ! Source: date/locales/src/el.json
   subroutine init_el()
     locale_el%code = 'el'
@@ -2247,6 +2940,100 @@ contains
 
   end subroutine init_fa
 
+  ! Source: date/locales/src/fan.json
+  subroutine init_fan()
+    locale_fan%code = 'fan'
+
+    locale_fan%months(1) = 'Nzas Ngon'
+    locale_fan%months(2) = 'Nzas Mekié'
+    locale_fan%months(3) = 'Nzas Okúa'
+    locale_fan%months(4) = 'Nzas Angón'
+    locale_fan%months(5) = 'Nzas Obuí'
+    locale_fan%months(6) = 'Nzas Okéna'
+    locale_fan%months(7) = 'Nzas Osúa'
+    locale_fan%months(8) = 'Nzas Mwom'
+    locale_fan%months(9) = 'Nzas Ebulú'
+    locale_fan%months(10) = 'Nzas Owono'
+    locale_fan%months(11) = 'Nzas Owono-abé'
+    locale_fan%months(12) = 'Nzas Nkéng'
+
+    locale_fan%weekdays(1) = 'Esig'
+    locale_fan%weekdays(2) = 'Amvus'
+    locale_fan%weekdays(3) = 'Amvus-abé'
+    locale_fan%weekdays(4) = 'Amvus-alú'
+    locale_fan%weekdays(5) = 'Amvus-anyin'
+    locale_fan%weekdays(6) = 'Mba'
+    locale_fan%weekdays(7) = 'Ngon'
+
+    locale_fan%day_format = '{n}'
+
+    locale_fan%num_exceptions = 0
+
+    locale_fan%date_pattern = '{day} {month}'
+    locale_fan%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_fan%today = 'anú'
+    locale_fan%tomorrow = 'kie'
+    locale_fan%yesterday = 'angogomé'
+
+    locale_fan%day_after_tomorrow = 'kie okúa'
+    locale_fan%day_before_yesterday = 'angogomé okúa'
+    locale_fan%this_weekday = '{weekday} ane'
+    locale_fan%next_weekday = '{weekday} a bé za'
+    locale_fan%last_weekday = '{weekday} a ja'
+
+    locale_fan%has_months_in_date = .false.
+
+    locale_fan%has_short = .true.
+    locale_fan%short_override%has_months = .true.
+    locale_fan%short_override%months(1) = 'Ngo'
+    locale_fan%short_override%months(2) = 'Mek'
+    locale_fan%short_override%months(3) = 'Oku'
+    locale_fan%short_override%months(4) = 'Ang'
+    locale_fan%short_override%months(5) = 'Obu'
+    locale_fan%short_override%months(6) = 'Oke'
+    locale_fan%short_override%months(7) = 'Osu'
+    locale_fan%short_override%months(8) = 'Mwo'
+    locale_fan%short_override%months(9) = 'Ebu'
+    locale_fan%short_override%months(10) = 'Owo'
+    locale_fan%short_override%months(11) = 'Owa'
+    locale_fan%short_override%months(12) = 'Nke'
+    locale_fan%short_override%has_months_in_date = .false.
+    locale_fan%short_override%has_weekdays = .true.
+    locale_fan%short_override%weekdays(1) = 'Esi'
+    locale_fan%short_override%weekdays(2) = 'Amv'
+    locale_fan%short_override%weekdays(3) = 'Ama'
+    locale_fan%short_override%weekdays(4) = 'Aml'
+    locale_fan%short_override%weekdays(5) = 'Amn'
+    locale_fan%short_override%weekdays(6) = 'Mba'
+    locale_fan%short_override%weekdays(7) = 'Ngo'
+    locale_fan%short_override%has_day_format = .true.
+    locale_fan%short_override%day_format = '{n}'
+    locale_fan%short_override%has_day_format_exceptions = .false.
+    locale_fan%short_override%has_date_pattern = .true.
+    locale_fan%short_override%date_pattern = '{day} {month}'
+    locale_fan%short_override%has_date_pattern_with_year = .true.
+    locale_fan%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_fan%short_override%has_today = .false.
+    locale_fan%short_override%has_tomorrow = .false.
+    locale_fan%short_override%has_yesterday = .false.
+
+    locale_fan%has_compact = .true.
+    locale_fan%compact_override%has_months = .false.
+    locale_fan%compact_override%has_months_in_date = .false.
+    locale_fan%compact_override%has_weekdays = .false.
+    locale_fan%compact_override%has_day_format = .false.
+    locale_fan%compact_override%has_day_format_exceptions = .false.
+    locale_fan%compact_override%has_date_pattern = .true.
+    locale_fan%compact_override%date_pattern = '{d}/{m}'
+    locale_fan%compact_override%has_date_pattern_with_year = .true.
+    locale_fan%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_fan%compact_override%has_today = .false.
+    locale_fan%compact_override%has_tomorrow = .false.
+    locale_fan%compact_override%has_yesterday = .false.
+
+  end subroutine init_fan
+
   ! Source: date/locales/src/ff.json
   subroutine init_ff()
     locale_ff%code = 'ff'
@@ -2540,6 +3327,100 @@ contains
     locale_fil%compact_override%has_yesterday = .false.
 
   end subroutine init_fil
+
+  ! Source: date/locales/src/fon.json
+  subroutine init_fon()
+    locale_fon%code = 'fon'
+
+    locale_fon%months(1) = 'Alɔfí'
+    locale_fon%months(2) = 'Alɔnyɔ'
+    locale_fon%months(3) = 'Ataɖaxɔ'
+    locale_fon%months(4) = 'Tlɛsún'
+    locale_fon%months(5) = 'Axɔsún'
+    locale_fon%months(6) = 'Ayɛsún'
+    locale_fon%months(7) = 'Nùxwásún'
+    locale_fon%months(8) = 'Ayidosún'
+    locale_fon%months(9) = 'Kɛnísún'
+    locale_fon%months(10) = 'Kanyásún'
+    locale_fon%months(11) = 'Abɔxwísún'
+    locale_fon%months(12) = 'Adɔxwísún'
+
+    locale_fon%weekdays(1) = 'Sidégbe'
+    locale_fon%weekdays(2) = 'Tɛnígbe'
+    locale_fon%weekdays(3) = 'Talɛtagbe'
+    locale_fon%weekdays(4) = 'Azǎngagbe'
+    locale_fon%weekdays(5) = 'Nyɔnúgbe'
+    locale_fon%weekdays(6) = 'Axɔ́sùgbe'
+    locale_fon%weekdays(7) = 'Abámɛ́ta'
+
+    locale_fon%day_format = '{n}'
+
+    locale_fon%num_exceptions = 0
+
+    locale_fon%date_pattern = '{day} {month}'
+    locale_fon%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_fon%today = 'egbè'
+    locale_fon%tomorrow = 'sɔ'
+    locale_fon%yesterday = 'sá'
+
+    locale_fon%day_after_tomorrow = 'sɔ gudo'
+    locale_fon%day_before_yesterday = 'sá gudo'
+    locale_fon%this_weekday = '{weekday} elɔ'
+    locale_fon%next_weekday = '{weekday} e ja'
+    locale_fon%last_weekday = '{weekday} e wá yí'
+
+    locale_fon%has_months_in_date = .false.
+
+    locale_fon%has_short = .true.
+    locale_fon%short_override%has_months = .true.
+    locale_fon%short_override%months(1) = 'Alɔ'
+    locale_fon%short_override%months(2) = 'Any'
+    locale_fon%short_override%months(3) = 'Ata'
+    locale_fon%short_override%months(4) = 'Tlɛ'
+    locale_fon%short_override%months(5) = 'Axɔ'
+    locale_fon%short_override%months(6) = 'Ayɛ'
+    locale_fon%short_override%months(7) = 'Nùx'
+    locale_fon%short_override%months(8) = 'Ayi'
+    locale_fon%short_override%months(9) = 'Kɛn'
+    locale_fon%short_override%months(10) = 'Kan'
+    locale_fon%short_override%months(11) = 'Abɔ'
+    locale_fon%short_override%months(12) = 'Adɔ'
+    locale_fon%short_override%has_months_in_date = .false.
+    locale_fon%short_override%has_weekdays = .true.
+    locale_fon%short_override%weekdays(1) = 'Sid'
+    locale_fon%short_override%weekdays(2) = 'Tɛn'
+    locale_fon%short_override%weekdays(3) = 'Tal'
+    locale_fon%short_override%weekdays(4) = 'Azǎ'
+    locale_fon%short_override%weekdays(5) = 'Nyɔ'
+    locale_fon%short_override%weekdays(6) = 'Axɔ'
+    locale_fon%short_override%weekdays(7) = 'Abá'
+    locale_fon%short_override%has_day_format = .true.
+    locale_fon%short_override%day_format = '{n}'
+    locale_fon%short_override%has_day_format_exceptions = .false.
+    locale_fon%short_override%has_date_pattern = .true.
+    locale_fon%short_override%date_pattern = '{day} {month}'
+    locale_fon%short_override%has_date_pattern_with_year = .true.
+    locale_fon%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_fon%short_override%has_today = .false.
+    locale_fon%short_override%has_tomorrow = .false.
+    locale_fon%short_override%has_yesterday = .false.
+
+    locale_fon%has_compact = .true.
+    locale_fon%compact_override%has_months = .false.
+    locale_fon%compact_override%has_months_in_date = .false.
+    locale_fon%compact_override%has_weekdays = .false.
+    locale_fon%compact_override%has_day_format = .false.
+    locale_fon%compact_override%has_day_format_exceptions = .false.
+    locale_fon%compact_override%has_date_pattern = .true.
+    locale_fon%compact_override%date_pattern = '{d}/{m}'
+    locale_fon%compact_override%has_date_pattern_with_year = .true.
+    locale_fon%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_fon%compact_override%has_today = .false.
+    locale_fon%compact_override%has_tomorrow = .false.
+    locale_fon%compact_override%has_yesterday = .false.
+
+  end subroutine init_fon
 
   ! Source: date/locales/src/fr.json
   subroutine init_fr()
@@ -4529,6 +5410,100 @@ contains
 
   end subroutine init_ka
 
+  ! Source: date/locales/src/kbp.json
+  subroutine init_kbp()
+    locale_kbp%code = 'kbp'
+
+    locale_kbp%months(1) = 'Kɔlaɣ'
+    locale_kbp%months(2) = 'Naaɣ Kɩŋ'
+    locale_kbp%months(3) = 'Naataŋgʊ'
+    locale_kbp%months(4) = 'Naalɩɩ'
+    locale_kbp%months(5) = 'Lɛlɩɩ'
+    locale_kbp%months(6) = 'Kʊɖʊmaa'
+    locale_kbp%months(7) = 'Saŋayɩɩ'
+    locale_kbp%months(8) = 'Kɩyɛɛna'
+    locale_kbp%months(9) = 'Lɩtɩɩ'
+    locale_kbp%months(10) = 'Kʊɖʊmaɣ'
+    locale_kbp%months(11) = 'Tɩŋgɩzɩɩ'
+    locale_kbp%months(12) = 'Abranɩɩ'
+
+    locale_kbp%weekdays(1) = 'Pɩsɩ'
+    locale_kbp%weekdays(2) = 'Tɛɖɛɣa'
+    locale_kbp%weekdays(3) = 'Taata'
+    locale_kbp%weekdays(4) = 'Aranzɩɩ'
+    locale_kbp%weekdays(5) = 'Aramnza'
+    locale_kbp%weekdays(6) = 'Azɩma'
+    locale_kbp%weekdays(7) = 'Asɩbɩ'
+
+    locale_kbp%day_format = '{n}'
+
+    locale_kbp%num_exceptions = 0
+
+    locale_kbp%date_pattern = '{day} {month}'
+    locale_kbp%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_kbp%today = 'sɔnɔ'
+    locale_kbp%tomorrow = 'cee'
+    locale_kbp%yesterday = 'ɖooo'
+
+    locale_kbp%day_after_tomorrow = 'cee wayɩ'
+    locale_kbp%day_before_yesterday = 'ɖooo wayɩ'
+    locale_kbp%this_weekday = '{weekday} kɩ'
+    locale_kbp%next_weekday = '{weekday} nɛ ŋga'
+    locale_kbp%last_weekday = '{weekday} nɛ wɛ'
+
+    locale_kbp%has_months_in_date = .false.
+
+    locale_kbp%has_short = .true.
+    locale_kbp%short_override%has_months = .true.
+    locale_kbp%short_override%months(1) = 'Kɔl'
+    locale_kbp%short_override%months(2) = 'Naa'
+    locale_kbp%short_override%months(3) = 'Nat'
+    locale_kbp%short_override%months(4) = 'Nal'
+    locale_kbp%short_override%months(5) = 'Lɛl'
+    locale_kbp%short_override%months(6) = 'Kʊɖ'
+    locale_kbp%short_override%months(7) = 'Saŋ'
+    locale_kbp%short_override%months(8) = 'Kɩy'
+    locale_kbp%short_override%months(9) = 'Lɩt'
+    locale_kbp%short_override%months(10) = 'Kʊɖ'
+    locale_kbp%short_override%months(11) = 'Tɩŋ'
+    locale_kbp%short_override%months(12) = 'Abr'
+    locale_kbp%short_override%has_months_in_date = .false.
+    locale_kbp%short_override%has_weekdays = .true.
+    locale_kbp%short_override%weekdays(1) = 'Pɩs'
+    locale_kbp%short_override%weekdays(2) = 'Tɛɖ'
+    locale_kbp%short_override%weekdays(3) = 'Taa'
+    locale_kbp%short_override%weekdays(4) = 'Ara'
+    locale_kbp%short_override%weekdays(5) = 'Arm'
+    locale_kbp%short_override%weekdays(6) = 'Azɩ'
+    locale_kbp%short_override%weekdays(7) = 'Asɩ'
+    locale_kbp%short_override%has_day_format = .true.
+    locale_kbp%short_override%day_format = '{n}'
+    locale_kbp%short_override%has_day_format_exceptions = .false.
+    locale_kbp%short_override%has_date_pattern = .true.
+    locale_kbp%short_override%date_pattern = '{day} {month}'
+    locale_kbp%short_override%has_date_pattern_with_year = .true.
+    locale_kbp%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_kbp%short_override%has_today = .false.
+    locale_kbp%short_override%has_tomorrow = .false.
+    locale_kbp%short_override%has_yesterday = .false.
+
+    locale_kbp%has_compact = .true.
+    locale_kbp%compact_override%has_months = .false.
+    locale_kbp%compact_override%has_months_in_date = .false.
+    locale_kbp%compact_override%has_weekdays = .false.
+    locale_kbp%compact_override%has_day_format = .false.
+    locale_kbp%compact_override%has_day_format_exceptions = .false.
+    locale_kbp%compact_override%has_date_pattern = .true.
+    locale_kbp%compact_override%date_pattern = '{d}/{m}'
+    locale_kbp%compact_override%has_date_pattern_with_year = .true.
+    locale_kbp%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_kbp%compact_override%has_today = .false.
+    locale_kbp%compact_override%has_tomorrow = .false.
+    locale_kbp%compact_override%has_yesterday = .false.
+
+  end subroutine init_kbp
+
   ! Source: date/locales/src/kk.json
   subroutine init_kk()
     locale_kk%code = 'kk'
@@ -4904,6 +5879,194 @@ contains
     locale_ko%compact_override%has_yesterday = .false.
 
   end subroutine init_ko
+
+  ! Source: date/locales/src/kpe.json
+  subroutine init_kpe()
+    locale_kpe%code = 'kpe'
+
+    locale_kpe%months(1) = 'Yanuwali'
+    locale_kpe%months(2) = 'Fɛbɛli'
+    locale_kpe%months(3) = 'Maachi'
+    locale_kpe%months(4) = 'Eepɛli'
+    locale_kpe%months(5) = 'Mɛɛ'
+    locale_kpe%months(6) = 'Juŋ'
+    locale_kpe%months(7) = 'Julai'
+    locale_kpe%months(8) = 'Ɔɔgɔsi'
+    locale_kpe%months(9) = 'Sɛtɛmba'
+    locale_kpe%months(10) = 'Ɔtɔba'
+    locale_kpe%months(11) = 'Nɔvɛmba'
+    locale_kpe%months(12) = 'Disɛmba'
+
+    locale_kpe%weekdays(1) = 'Saadee'
+    locale_kpe%weekdays(2) = 'Tɛnɛɛ'
+    locale_kpe%weekdays(3) = 'Talata'
+    locale_kpe%weekdays(4) = 'Alaba'
+    locale_kpe%weekdays(5) = 'Aimisa'
+    locale_kpe%weekdays(6) = 'Juma'
+    locale_kpe%weekdays(7) = 'Satɛdee'
+
+    locale_kpe%day_format = '{n}'
+
+    locale_kpe%num_exceptions = 0
+
+    locale_kpe%date_pattern = '{day} {month}'
+    locale_kpe%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_kpe%today = 'nɔ̃ɔ̃'
+    locale_kpe%tomorrow = 'sila'
+    locale_kpe%yesterday = 'ɓii'
+
+    locale_kpe%day_after_tomorrow = 'sila pɔlɔ'
+    locale_kpe%day_before_yesterday = 'ɓii pɔlɔ'
+    locale_kpe%this_weekday = '{weekday} yi'
+    locale_kpe%next_weekday = '{weekday} ya kɛ'
+    locale_kpe%last_weekday = '{weekday} kɛ pɔlɔ'
+
+    locale_kpe%has_months_in_date = .false.
+
+    locale_kpe%has_short = .true.
+    locale_kpe%short_override%has_months = .true.
+    locale_kpe%short_override%months(1) = 'Yan'
+    locale_kpe%short_override%months(2) = 'Fɛb'
+    locale_kpe%short_override%months(3) = 'Maa'
+    locale_kpe%short_override%months(4) = 'Eep'
+    locale_kpe%short_override%months(5) = 'Mɛɛ'
+    locale_kpe%short_override%months(6) = 'Juŋ'
+    locale_kpe%short_override%months(7) = 'Jul'
+    locale_kpe%short_override%months(8) = 'Ɔɔg'
+    locale_kpe%short_override%months(9) = 'Sɛt'
+    locale_kpe%short_override%months(10) = 'Ɔtɔ'
+    locale_kpe%short_override%months(11) = 'Nɔv'
+    locale_kpe%short_override%months(12) = 'Dis'
+    locale_kpe%short_override%has_months_in_date = .false.
+    locale_kpe%short_override%has_weekdays = .true.
+    locale_kpe%short_override%weekdays(1) = 'Saa'
+    locale_kpe%short_override%weekdays(2) = 'Tɛn'
+    locale_kpe%short_override%weekdays(3) = 'Tal'
+    locale_kpe%short_override%weekdays(4) = 'Ala'
+    locale_kpe%short_override%weekdays(5) = 'Aim'
+    locale_kpe%short_override%weekdays(6) = 'Jum'
+    locale_kpe%short_override%weekdays(7) = 'Sat'
+    locale_kpe%short_override%has_day_format = .true.
+    locale_kpe%short_override%day_format = '{n}'
+    locale_kpe%short_override%has_day_format_exceptions = .false.
+    locale_kpe%short_override%has_date_pattern = .true.
+    locale_kpe%short_override%date_pattern = '{day} {month}'
+    locale_kpe%short_override%has_date_pattern_with_year = .true.
+    locale_kpe%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_kpe%short_override%has_today = .false.
+    locale_kpe%short_override%has_tomorrow = .false.
+    locale_kpe%short_override%has_yesterday = .false.
+
+    locale_kpe%has_compact = .true.
+    locale_kpe%compact_override%has_months = .false.
+    locale_kpe%compact_override%has_months_in_date = .false.
+    locale_kpe%compact_override%has_weekdays = .false.
+    locale_kpe%compact_override%has_day_format = .false.
+    locale_kpe%compact_override%has_day_format_exceptions = .false.
+    locale_kpe%compact_override%has_date_pattern = .true.
+    locale_kpe%compact_override%date_pattern = '{d}/{m}'
+    locale_kpe%compact_override%has_date_pattern_with_year = .true.
+    locale_kpe%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_kpe%compact_override%has_today = .false.
+    locale_kpe%compact_override%has_tomorrow = .false.
+    locale_kpe%compact_override%has_yesterday = .false.
+
+  end subroutine init_kpe
+
+  ! Source: date/locales/src/ktu.json
+  subroutine init_ktu()
+    locale_ktu%code = 'ktu'
+
+    locale_ktu%months(1) = 'Yanvye'
+    locale_ktu%months(2) = 'Fevrye'
+    locale_ktu%months(3) = 'Marsi'
+    locale_ktu%months(4) = 'Avrili'
+    locale_ktu%months(5) = 'Mɛ'
+    locale_ktu%months(6) = 'Yuwɛ'
+    locale_ktu%months(7) = 'Yulɛ'
+    locale_ktu%months(8) = 'Uti'
+    locale_ktu%months(9) = 'Sɛtambre'
+    locale_ktu%months(10) = 'Ɔtɔbre'
+    locale_ktu%months(11) = 'Nɔvambre'
+    locale_ktu%months(12) = 'Desambre'
+
+    locale_ktu%weekdays(1) = 'Lumingu'
+    locale_ktu%weekdays(2) = 'Kimosi'
+    locale_ktu%weekdays(3) = 'Kizole'
+    locale_ktu%weekdays(4) = 'Kizoluntatu'
+    locale_ktu%weekdays(5) = 'Kinya'
+    locale_ktu%weekdays(6) = 'Kisabala'
+    locale_ktu%weekdays(7) = 'Kimpwanza'
+
+    locale_ktu%day_format = '{n}'
+
+    locale_ktu%num_exceptions = 0
+
+    locale_ktu%date_pattern = '{day} {month}'
+    locale_ktu%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_ktu%today = 'bubu'
+    locale_ktu%tomorrow = 'mbazi'
+    locale_ktu%yesterday = 'zono'
+
+    locale_ktu%day_after_tomorrow = 'mbazi ya mbazi'
+    locale_ktu%day_before_yesterday = 'zono ya zono'
+    locale_ktu%this_weekday = '{weekday} yayi'
+    locale_ktu%next_weekday = '{weekday} ya kwiza'
+    locale_ktu%last_weekday = '{weekday} ya vioka'
+
+    locale_ktu%has_months_in_date = .false.
+
+    locale_ktu%has_short = .true.
+    locale_ktu%short_override%has_months = .true.
+    locale_ktu%short_override%months(1) = 'Yan'
+    locale_ktu%short_override%months(2) = 'Fev'
+    locale_ktu%short_override%months(3) = 'Mar'
+    locale_ktu%short_override%months(4) = 'Avr'
+    locale_ktu%short_override%months(5) = 'Mɛ'
+    locale_ktu%short_override%months(6) = 'Yuw'
+    locale_ktu%short_override%months(7) = 'Yul'
+    locale_ktu%short_override%months(8) = 'Uti'
+    locale_ktu%short_override%months(9) = 'Sɛt'
+    locale_ktu%short_override%months(10) = 'Ɔtɔ'
+    locale_ktu%short_override%months(11) = 'Nɔv'
+    locale_ktu%short_override%months(12) = 'Des'
+    locale_ktu%short_override%has_months_in_date = .false.
+    locale_ktu%short_override%has_weekdays = .true.
+    locale_ktu%short_override%weekdays(1) = 'Lum'
+    locale_ktu%short_override%weekdays(2) = 'Kim'
+    locale_ktu%short_override%weekdays(3) = 'Kiz'
+    locale_ktu%short_override%weekdays(4) = 'Kzn'
+    locale_ktu%short_override%weekdays(5) = 'Kin'
+    locale_ktu%short_override%weekdays(6) = 'Kis'
+    locale_ktu%short_override%weekdays(7) = 'Kmp'
+    locale_ktu%short_override%has_day_format = .true.
+    locale_ktu%short_override%day_format = '{n}'
+    locale_ktu%short_override%has_day_format_exceptions = .false.
+    locale_ktu%short_override%has_date_pattern = .true.
+    locale_ktu%short_override%date_pattern = '{day} {month}'
+    locale_ktu%short_override%has_date_pattern_with_year = .true.
+    locale_ktu%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_ktu%short_override%has_today = .false.
+    locale_ktu%short_override%has_tomorrow = .false.
+    locale_ktu%short_override%has_yesterday = .false.
+
+    locale_ktu%has_compact = .true.
+    locale_ktu%compact_override%has_months = .false.
+    locale_ktu%compact_override%has_months_in_date = .false.
+    locale_ktu%compact_override%has_weekdays = .false.
+    locale_ktu%compact_override%has_day_format = .false.
+    locale_ktu%compact_override%has_day_format_exceptions = .false.
+    locale_ktu%compact_override%has_date_pattern = .true.
+    locale_ktu%compact_override%date_pattern = '{d}/{m}'
+    locale_ktu%compact_override%has_date_pattern_with_year = .true.
+    locale_ktu%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_ktu%compact_override%has_today = .false.
+    locale_ktu%compact_override%has_tomorrow = .false.
+    locale_ktu%compact_override%has_yesterday = .false.
+
+  end subroutine init_ktu
 
   ! Source: date/locales/src/ku.json
   subroutine init_ku()
@@ -5669,6 +6832,194 @@ contains
 
   end subroutine init_lv
 
+  ! Source: date/locales/src/men.json
+  subroutine init_men()
+    locale_men%code = 'men'
+
+    locale_men%months(1) = 'Januwali'
+    locale_men%months(2) = 'Febluwali'
+    locale_men%months(3) = 'Maachi'
+    locale_men%months(4) = 'Epuli'
+    locale_men%months(5) = 'Mei'
+    locale_men%months(6) = 'Juun'
+    locale_men%months(7) = 'Julai'
+    locale_men%months(8) = 'Ɔgɔsi'
+    locale_men%months(9) = 'Sɛtɛmba'
+    locale_men%months(10) = 'Ɔtɔba'
+    locale_men%months(11) = 'Nɔvɛmba'
+    locale_men%months(12) = 'Disɛmba'
+
+    locale_men%weekdays(1) = 'Lahadi'
+    locale_men%weekdays(2) = 'Tɛɛnɛɛ'
+    locale_men%weekdays(3) = 'Talata'
+    locale_men%weekdays(4) = 'Alaba'
+    locale_men%weekdays(5) = 'Aimisa'
+    locale_men%weekdays(6) = 'Juma'
+    locale_men%weekdays(7) = 'Satidei'
+
+    locale_men%day_format = '{n}'
+
+    locale_men%num_exceptions = 0
+
+    locale_men%date_pattern = '{day} {month}'
+    locale_men%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_men%today = 'wii'
+    locale_men%tomorrow = 'sina'
+    locale_men%yesterday = 'bii'
+
+    locale_men%day_after_tomorrow = 'sina gɔlɔ'
+    locale_men%day_before_yesterday = 'bii gɔlɔ'
+    locale_men%this_weekday = '{weekday} yɛ'
+    locale_men%next_weekday = '{weekday} yɛ gbɔyɔ'
+    locale_men%last_weekday = '{weekday} taa gbɔyɔ'
+
+    locale_men%has_months_in_date = .false.
+
+    locale_men%has_short = .true.
+    locale_men%short_override%has_months = .true.
+    locale_men%short_override%months(1) = 'Jan'
+    locale_men%short_override%months(2) = 'Feb'
+    locale_men%short_override%months(3) = 'Maa'
+    locale_men%short_override%months(4) = 'Epu'
+    locale_men%short_override%months(5) = 'Mei'
+    locale_men%short_override%months(6) = 'Juu'
+    locale_men%short_override%months(7) = 'Jul'
+    locale_men%short_override%months(8) = 'Ɔgɔ'
+    locale_men%short_override%months(9) = 'Sɛt'
+    locale_men%short_override%months(10) = 'Ɔtɔ'
+    locale_men%short_override%months(11) = 'Nɔv'
+    locale_men%short_override%months(12) = 'Dis'
+    locale_men%short_override%has_months_in_date = .false.
+    locale_men%short_override%has_weekdays = .true.
+    locale_men%short_override%weekdays(1) = 'Lah'
+    locale_men%short_override%weekdays(2) = 'Tɛɛ'
+    locale_men%short_override%weekdays(3) = 'Tal'
+    locale_men%short_override%weekdays(4) = 'Ala'
+    locale_men%short_override%weekdays(5) = 'Aim'
+    locale_men%short_override%weekdays(6) = 'Jum'
+    locale_men%short_override%weekdays(7) = 'Sat'
+    locale_men%short_override%has_day_format = .true.
+    locale_men%short_override%day_format = '{n}'
+    locale_men%short_override%has_day_format_exceptions = .false.
+    locale_men%short_override%has_date_pattern = .true.
+    locale_men%short_override%date_pattern = '{day} {month}'
+    locale_men%short_override%has_date_pattern_with_year = .true.
+    locale_men%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_men%short_override%has_today = .false.
+    locale_men%short_override%has_tomorrow = .false.
+    locale_men%short_override%has_yesterday = .false.
+
+    locale_men%has_compact = .true.
+    locale_men%compact_override%has_months = .false.
+    locale_men%compact_override%has_months_in_date = .false.
+    locale_men%compact_override%has_weekdays = .false.
+    locale_men%compact_override%has_day_format = .false.
+    locale_men%compact_override%has_day_format_exceptions = .false.
+    locale_men%compact_override%has_date_pattern = .true.
+    locale_men%compact_override%date_pattern = '{d}/{m}'
+    locale_men%compact_override%has_date_pattern_with_year = .true.
+    locale_men%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_men%compact_override%has_today = .false.
+    locale_men%compact_override%has_tomorrow = .false.
+    locale_men%compact_override%has_yesterday = .false.
+
+  end subroutine init_men
+
+  ! Source: date/locales/src/mfe.json
+  subroutine init_mfe()
+    locale_mfe%code = 'mfe'
+
+    locale_mfe%months(1) = 'Zanvie'
+    locale_mfe%months(2) = 'Fevrie'
+    locale_mfe%months(3) = 'Mars'
+    locale_mfe%months(4) = 'Avril'
+    locale_mfe%months(5) = 'Me'
+    locale_mfe%months(6) = 'Zwin'
+    locale_mfe%months(7) = 'Zwiye'
+    locale_mfe%months(8) = 'Out'
+    locale_mfe%months(9) = 'Septam'
+    locale_mfe%months(10) = 'Oktob'
+    locale_mfe%months(11) = 'Novam'
+    locale_mfe%months(12) = 'Desam'
+
+    locale_mfe%weekdays(1) = 'Dimans'
+    locale_mfe%weekdays(2) = 'Lindi'
+    locale_mfe%weekdays(3) = 'Mardi'
+    locale_mfe%weekdays(4) = 'Merkredi'
+    locale_mfe%weekdays(5) = 'Zedi'
+    locale_mfe%weekdays(6) = 'Vandredi'
+    locale_mfe%weekdays(7) = 'Samdi'
+
+    locale_mfe%day_format = '{n}'
+
+    locale_mfe%num_exceptions = 0
+
+    locale_mfe%date_pattern = '{day} {month}'
+    locale_mfe%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_mfe%today = 'zordi'
+    locale_mfe%tomorrow = 'dimin'
+    locale_mfe%yesterday = 'yer'
+
+    locale_mfe%day_after_tomorrow = 'apre dimin'
+    locale_mfe%day_before_yesterday = 'avan yer'
+    locale_mfe%this_weekday = '{weekday} la'
+    locale_mfe%next_weekday = '{weekday} prosenn'
+    locale_mfe%last_weekday = '{weekday} pase'
+
+    locale_mfe%has_months_in_date = .false.
+
+    locale_mfe%has_short = .true.
+    locale_mfe%short_override%has_months = .true.
+    locale_mfe%short_override%months(1) = 'Zan'
+    locale_mfe%short_override%months(2) = 'Fev'
+    locale_mfe%short_override%months(3) = 'Mar'
+    locale_mfe%short_override%months(4) = 'Avr'
+    locale_mfe%short_override%months(5) = 'Me'
+    locale_mfe%short_override%months(6) = 'Zwn'
+    locale_mfe%short_override%months(7) = 'Zwy'
+    locale_mfe%short_override%months(8) = 'Out'
+    locale_mfe%short_override%months(9) = 'Sep'
+    locale_mfe%short_override%months(10) = 'Okt'
+    locale_mfe%short_override%months(11) = 'Nov'
+    locale_mfe%short_override%months(12) = 'Des'
+    locale_mfe%short_override%has_months_in_date = .false.
+    locale_mfe%short_override%has_weekdays = .true.
+    locale_mfe%short_override%weekdays(1) = 'Dim'
+    locale_mfe%short_override%weekdays(2) = 'Lin'
+    locale_mfe%short_override%weekdays(3) = 'Mar'
+    locale_mfe%short_override%weekdays(4) = 'Mer'
+    locale_mfe%short_override%weekdays(5) = 'Zed'
+    locale_mfe%short_override%weekdays(6) = 'Van'
+    locale_mfe%short_override%weekdays(7) = 'Sam'
+    locale_mfe%short_override%has_day_format = .true.
+    locale_mfe%short_override%day_format = '{n}'
+    locale_mfe%short_override%has_day_format_exceptions = .false.
+    locale_mfe%short_override%has_date_pattern = .true.
+    locale_mfe%short_override%date_pattern = '{day} {month}'
+    locale_mfe%short_override%has_date_pattern_with_year = .true.
+    locale_mfe%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_mfe%short_override%has_today = .false.
+    locale_mfe%short_override%has_tomorrow = .false.
+    locale_mfe%short_override%has_yesterday = .false.
+
+    locale_mfe%has_compact = .true.
+    locale_mfe%compact_override%has_months = .false.
+    locale_mfe%compact_override%has_months_in_date = .false.
+    locale_mfe%compact_override%has_weekdays = .false.
+    locale_mfe%compact_override%has_day_format = .false.
+    locale_mfe%compact_override%has_day_format_exceptions = .false.
+    locale_mfe%compact_override%has_date_pattern = .true.
+    locale_mfe%compact_override%date_pattern = '{d}/{m}'
+    locale_mfe%compact_override%has_date_pattern_with_year = .true.
+    locale_mfe%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_mfe%compact_override%has_today = .false.
+    locale_mfe%compact_override%has_tomorrow = .false.
+    locale_mfe%compact_override%has_yesterday = .false.
+
+  end subroutine init_mfe
+
   ! Source: date/locales/src/mg.json
   subroutine init_mg()
     locale_mg%code = 'mg'
@@ -6138,6 +7489,194 @@ contains
     locale_mn%compact_override%has_yesterday = .false.
 
   end subroutine init_mn
+
+  ! Source: date/locales/src/mnk.json
+  subroutine init_mnk()
+    locale_mnk%code = 'mnk'
+
+    locale_mnk%months(1) = 'Samwiye'
+    locale_mnk%months(2) = 'Feburiye'
+    locale_mnk%months(3) = 'Marsi'
+    locale_mnk%months(4) = 'Afiril'
+    locale_mnk%months(5) = 'Meyi'
+    locale_mnk%months(6) = 'Juŋ'
+    locale_mnk%months(7) = 'Julaa'
+    locale_mnk%months(8) = 'Ooti'
+    locale_mnk%months(9) = 'Sɛtɛmba'
+    locale_mnk%months(10) = 'Ɔtɔba'
+    locale_mnk%months(11) = 'Nuwɛmba'
+    locale_mnk%months(12) = 'Disɛmba'
+
+    locale_mnk%weekdays(1) = 'Ari'
+    locale_mnk%weekdays(2) = 'Teniŋ'
+    locale_mnk%weekdays(3) = 'Talata'
+    locale_mnk%weekdays(4) = 'Araba'
+    locale_mnk%weekdays(5) = 'Alamisa'
+    locale_mnk%weekdays(6) = 'Juma'
+    locale_mnk%weekdays(7) = 'Sibiti'
+
+    locale_mnk%day_format = '{n}'
+
+    locale_mnk%num_exceptions = 0
+
+    locale_mnk%date_pattern = '{day} {month}'
+    locale_mnk%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_mnk%today = 'bi'
+    locale_mnk%tomorrow = 'siniŋ'
+    locale_mnk%yesterday = 'kuŋ'
+
+    locale_mnk%day_after_tomorrow = 'siniŋ kɔma'
+    locale_mnk%day_before_yesterday = 'kuŋ kɔma'
+    locale_mnk%this_weekday = '{weekday} niŋ'
+    locale_mnk%next_weekday = '{weekday} nataa'
+    locale_mnk%last_weekday = '{weekday} taata'
+
+    locale_mnk%has_months_in_date = .false.
+
+    locale_mnk%has_short = .true.
+    locale_mnk%short_override%has_months = .true.
+    locale_mnk%short_override%months(1) = 'Sam'
+    locale_mnk%short_override%months(2) = 'Feb'
+    locale_mnk%short_override%months(3) = 'Mar'
+    locale_mnk%short_override%months(4) = 'Afi'
+    locale_mnk%short_override%months(5) = 'Mey'
+    locale_mnk%short_override%months(6) = 'Juŋ'
+    locale_mnk%short_override%months(7) = 'Jul'
+    locale_mnk%short_override%months(8) = 'Oot'
+    locale_mnk%short_override%months(9) = 'Sɛt'
+    locale_mnk%short_override%months(10) = 'Ɔtɔ'
+    locale_mnk%short_override%months(11) = 'Nuw'
+    locale_mnk%short_override%months(12) = 'Dis'
+    locale_mnk%short_override%has_months_in_date = .false.
+    locale_mnk%short_override%has_weekdays = .true.
+    locale_mnk%short_override%weekdays(1) = 'Ari'
+    locale_mnk%short_override%weekdays(2) = 'Ten'
+    locale_mnk%short_override%weekdays(3) = 'Tal'
+    locale_mnk%short_override%weekdays(4) = 'Ara'
+    locale_mnk%short_override%weekdays(5) = 'Ala'
+    locale_mnk%short_override%weekdays(6) = 'Jum'
+    locale_mnk%short_override%weekdays(7) = 'Sib'
+    locale_mnk%short_override%has_day_format = .true.
+    locale_mnk%short_override%day_format = '{n}'
+    locale_mnk%short_override%has_day_format_exceptions = .false.
+    locale_mnk%short_override%has_date_pattern = .true.
+    locale_mnk%short_override%date_pattern = '{day} {month}'
+    locale_mnk%short_override%has_date_pattern_with_year = .true.
+    locale_mnk%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_mnk%short_override%has_today = .false.
+    locale_mnk%short_override%has_tomorrow = .false.
+    locale_mnk%short_override%has_yesterday = .false.
+
+    locale_mnk%has_compact = .true.
+    locale_mnk%compact_override%has_months = .false.
+    locale_mnk%compact_override%has_months_in_date = .false.
+    locale_mnk%compact_override%has_weekdays = .false.
+    locale_mnk%compact_override%has_day_format = .false.
+    locale_mnk%compact_override%has_day_format_exceptions = .false.
+    locale_mnk%compact_override%has_date_pattern = .true.
+    locale_mnk%compact_override%date_pattern = '{d}/{m}'
+    locale_mnk%compact_override%has_date_pattern_with_year = .true.
+    locale_mnk%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_mnk%compact_override%has_today = .false.
+    locale_mnk%compact_override%has_tomorrow = .false.
+    locale_mnk%compact_override%has_yesterday = .false.
+
+  end subroutine init_mnk
+
+  ! Source: date/locales/src/mos.json
+  subroutine init_mos()
+    locale_mos%code = 'mos'
+
+    locale_mos%months(1) = 'Zãn-naabu'
+    locale_mos%months(2) = 'Sig-noy-yaadre'
+    locale_mos%months(3) = 'Sig-noy-taabo'
+    locale_mos%months(4) = 'Kãn-saglem'
+    locale_mos%months(5) = 'Koabg-taabo'
+    locale_mos%months(6) = 'Koabg-yaadre'
+    locale_mos%months(7) = 'Baspɩɩre'
+    locale_mos%months(8) = 'Gɩ-sõongo'
+    locale_mos%months(9) = 'Tũubg-sõongo'
+    locale_mos%months(10) = 'Pẽemb-sõongo'
+    locale_mos%months(11) = 'Laafi-bãaga'
+    locale_mos%months(12) = 'Filiga-bãaga'
+
+    locale_mos%weekdays(1) = 'Alhadi'
+    locale_mos%weekdays(2) = 'Atɩnni'
+    locale_mos%weekdays(3) = 'Atalaata'
+    locale_mos%weekdays(4) = 'Alarba'
+    locale_mos%weekdays(5) = 'Alkamisa'
+    locale_mos%weekdays(6) = 'Arjuma'
+    locale_mos%weekdays(7) = 'Asibti'
+
+    locale_mos%day_format = '{n}'
+
+    locale_mos%num_exceptions = 0
+
+    locale_mos%date_pattern = '{day} {month}'
+    locale_mos%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_mos%today = 'rũnda'
+    locale_mos%tomorrow = 'beoog'
+    locale_mos%yesterday = 'zaame'
+
+    locale_mos%day_after_tomorrow = 'beoog sẽn wat'
+    locale_mos%day_before_yesterday = 'zaame sẽn loog'
+    locale_mos%this_weekday = '{weekday} kãnga'
+    locale_mos%next_weekday = '{weekday} sẽn wat'
+    locale_mos%last_weekday = '{weekday} sẽn loog'
+
+    locale_mos%has_months_in_date = .false.
+
+    locale_mos%has_short = .true.
+    locale_mos%short_override%has_months = .true.
+    locale_mos%short_override%months(1) = 'Zãn'
+    locale_mos%short_override%months(2) = 'S-y'
+    locale_mos%short_override%months(3) = 'S-t'
+    locale_mos%short_override%months(4) = 'Kãn'
+    locale_mos%short_override%months(5) = 'K-t'
+    locale_mos%short_override%months(6) = 'K-y'
+    locale_mos%short_override%months(7) = 'Bas'
+    locale_mos%short_override%months(8) = 'Gɩ'
+    locale_mos%short_override%months(9) = 'Tũu'
+    locale_mos%short_override%months(10) = 'Pẽe'
+    locale_mos%short_override%months(11) = 'Laa'
+    locale_mos%short_override%months(12) = 'Fil'
+    locale_mos%short_override%has_months_in_date = .false.
+    locale_mos%short_override%has_weekdays = .true.
+    locale_mos%short_override%weekdays(1) = 'Alh'
+    locale_mos%short_override%weekdays(2) = 'Atɩ'
+    locale_mos%short_override%weekdays(3) = 'Ata'
+    locale_mos%short_override%weekdays(4) = 'Ala'
+    locale_mos%short_override%weekdays(5) = 'Alk'
+    locale_mos%short_override%weekdays(6) = 'Arj'
+    locale_mos%short_override%weekdays(7) = 'Asi'
+    locale_mos%short_override%has_day_format = .true.
+    locale_mos%short_override%day_format = '{n}'
+    locale_mos%short_override%has_day_format_exceptions = .false.
+    locale_mos%short_override%has_date_pattern = .true.
+    locale_mos%short_override%date_pattern = '{day} {month}'
+    locale_mos%short_override%has_date_pattern_with_year = .true.
+    locale_mos%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_mos%short_override%has_today = .false.
+    locale_mos%short_override%has_tomorrow = .false.
+    locale_mos%short_override%has_yesterday = .false.
+
+    locale_mos%has_compact = .true.
+    locale_mos%compact_override%has_months = .false.
+    locale_mos%compact_override%has_months_in_date = .false.
+    locale_mos%compact_override%has_weekdays = .false.
+    locale_mos%compact_override%has_day_format = .false.
+    locale_mos%compact_override%has_day_format_exceptions = .false.
+    locale_mos%compact_override%has_date_pattern = .true.
+    locale_mos%compact_override%date_pattern = '{d}/{m}'
+    locale_mos%compact_override%has_date_pattern_with_year = .true.
+    locale_mos%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_mos%compact_override%has_today = .false.
+    locale_mos%compact_override%has_tomorrow = .false.
+    locale_mos%compact_override%has_yesterday = .false.
+
+  end subroutine init_mos
 
   ! Source: date/locales/src/mr.json
   subroutine init_mr()
@@ -6609,6 +8148,100 @@ contains
 
   end subroutine init_nb
 
+  ! Source: date/locales/src/nd.json
+  subroutine init_nd()
+    locale_nd%code = 'nd'
+
+    locale_nd%months(1) = 'Zibandlela'
+    locale_nd%months(2) = 'Nhlolanja'
+    locale_nd%months(3) = 'Mbimbitho'
+    locale_nd%months(4) = 'Mabasa'
+    locale_nd%months(5) = 'Nkwenkwezi'
+    locale_nd%months(6) = 'Nhlangula'
+    locale_nd%months(7) = 'Kholwane'
+    locale_nd%months(8) = 'Ingci'
+    locale_nd%months(9) = 'Inyoni'
+    locale_nd%months(10) = 'Imphala'
+    locale_nd%months(11) = 'Lwezi'
+    locale_nd%months(12) = 'Mpalakazi'
+
+    locale_nd%weekdays(1) = 'Sonto'
+    locale_nd%weekdays(2) = 'Mvulo'
+    locale_nd%weekdays(3) = 'Sibili'
+    locale_nd%weekdays(4) = 'Sithathu'
+    locale_nd%weekdays(5) = 'Sine'
+    locale_nd%weekdays(6) = 'Sihlanu'
+    locale_nd%weekdays(7) = 'Mgqibelo'
+
+    locale_nd%day_format = '{n}'
+
+    locale_nd%num_exceptions = 0
+
+    locale_nd%date_pattern = '{day} {month}'
+    locale_nd%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_nd%today = 'lamuhla'
+    locale_nd%tomorrow = 'kusasa'
+    locale_nd%yesterday = 'izolo'
+
+    locale_nd%day_after_tomorrow = 'ngomhlomunye'
+    locale_nd%day_before_yesterday = 'usuku olwedlule izolo'
+    locale_nd%this_weekday = 'leli {weekday}'
+    locale_nd%next_weekday = '{weekday} elizayo'
+    locale_nd%last_weekday = '{weekday} eledlule'
+
+    locale_nd%has_months_in_date = .false.
+
+    locale_nd%has_short = .true.
+    locale_nd%short_override%has_months = .true.
+    locale_nd%short_override%months(1) = 'Zib'
+    locale_nd%short_override%months(2) = 'Nhl'
+    locale_nd%short_override%months(3) = 'Mbi'
+    locale_nd%short_override%months(4) = 'Mab'
+    locale_nd%short_override%months(5) = 'Nkw'
+    locale_nd%short_override%months(6) = 'Nhl'
+    locale_nd%short_override%months(7) = 'Kho'
+    locale_nd%short_override%months(8) = 'Ing'
+    locale_nd%short_override%months(9) = 'Iny'
+    locale_nd%short_override%months(10) = 'Imp'
+    locale_nd%short_override%months(11) = 'Lwe'
+    locale_nd%short_override%months(12) = 'Mpa'
+    locale_nd%short_override%has_months_in_date = .false.
+    locale_nd%short_override%has_weekdays = .true.
+    locale_nd%short_override%weekdays(1) = 'Son'
+    locale_nd%short_override%weekdays(2) = 'Mvu'
+    locale_nd%short_override%weekdays(3) = 'Sib'
+    locale_nd%short_override%weekdays(4) = 'Sit'
+    locale_nd%short_override%weekdays(5) = 'Sin'
+    locale_nd%short_override%weekdays(6) = 'Sih'
+    locale_nd%short_override%weekdays(7) = 'Mgq'
+    locale_nd%short_override%has_day_format = .true.
+    locale_nd%short_override%day_format = '{n}'
+    locale_nd%short_override%has_day_format_exceptions = .false.
+    locale_nd%short_override%has_date_pattern = .true.
+    locale_nd%short_override%date_pattern = '{day} {month}'
+    locale_nd%short_override%has_date_pattern_with_year = .true.
+    locale_nd%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_nd%short_override%has_today = .false.
+    locale_nd%short_override%has_tomorrow = .false.
+    locale_nd%short_override%has_yesterday = .false.
+
+    locale_nd%has_compact = .true.
+    locale_nd%compact_override%has_months = .false.
+    locale_nd%compact_override%has_months_in_date = .false.
+    locale_nd%compact_override%has_weekdays = .false.
+    locale_nd%compact_override%has_day_format = .false.
+    locale_nd%compact_override%has_day_format_exceptions = .false.
+    locale_nd%compact_override%has_date_pattern = .true.
+    locale_nd%compact_override%date_pattern = '{d}/{m}'
+    locale_nd%compact_override%has_date_pattern_with_year = .true.
+    locale_nd%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_nd%compact_override%has_today = .false.
+    locale_nd%compact_override%has_tomorrow = .false.
+    locale_nd%compact_override%has_yesterday = .false.
+
+  end subroutine init_nd
+
   ! Source: date/locales/src/ne.json
   subroutine init_ne()
     locale_ne%code = 'ne'
@@ -6703,6 +8336,100 @@ contains
 
   end subroutine init_ne
 
+  ! Source: date/locales/src/ng.json
+  subroutine init_ng()
+    locale_ng%code = 'ng'
+
+    locale_ng%months(1) = 'Januali'
+    locale_ng%months(2) = 'Febluali'
+    locale_ng%months(3) = 'Malitsi'
+    locale_ng%months(4) = 'Aplili'
+    locale_ng%months(5) = 'Mei'
+    locale_ng%months(6) = 'Juni'
+    locale_ng%months(7) = 'Juli'
+    locale_ng%months(8) = 'Augustu'
+    locale_ng%months(9) = 'Septemba'
+    locale_ng%months(10) = 'Oktoba'
+    locale_ng%months(11) = 'Novemba'
+    locale_ng%months(12) = 'Desemba'
+
+    locale_ng%weekdays(1) = 'Osoondaha'
+    locale_ng%weekdays(2) = 'Omaandaha'
+    locale_ng%weekdays(3) = 'Etitatu'
+    locale_ng%weekdays(4) = 'Etitano'
+    locale_ng%weekdays(5) = 'Etine'
+    locale_ng%weekdays(6) = 'Oshitimuine'
+    locale_ng%weekdays(7) = 'Eshabati'
+
+    locale_ng%day_format = '{n}'
+
+    locale_ng%num_exceptions = 0
+
+    locale_ng%date_pattern = '{day} {month}'
+    locale_ng%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_ng%today = 'nena'
+    locale_ng%tomorrow = 'mongula'
+    locale_ng%yesterday = 'ongula ya dja ko'
+
+    locale_ng%day_after_tomorrow = 'mongula e li ko'
+    locale_ng%day_before_yesterday = 'ongula ya dja ko nale'
+    locale_ng%this_weekday = '{weekday} eshi'
+    locale_ng%next_weekday = '{weekday} e li ko'
+    locale_ng%last_weekday = '{weekday} ya dja ko'
+
+    locale_ng%has_months_in_date = .false.
+
+    locale_ng%has_short = .true.
+    locale_ng%short_override%has_months = .true.
+    locale_ng%short_override%months(1) = 'Jan'
+    locale_ng%short_override%months(2) = 'Feb'
+    locale_ng%short_override%months(3) = 'Mal'
+    locale_ng%short_override%months(4) = 'Apl'
+    locale_ng%short_override%months(5) = 'Mei'
+    locale_ng%short_override%months(6) = 'Jun'
+    locale_ng%short_override%months(7) = 'Jul'
+    locale_ng%short_override%months(8) = 'Aug'
+    locale_ng%short_override%months(9) = 'Sep'
+    locale_ng%short_override%months(10) = 'Okt'
+    locale_ng%short_override%months(11) = 'Nov'
+    locale_ng%short_override%months(12) = 'Des'
+    locale_ng%short_override%has_months_in_date = .false.
+    locale_ng%short_override%has_weekdays = .true.
+    locale_ng%short_override%weekdays(1) = 'Oso'
+    locale_ng%short_override%weekdays(2) = 'Oma'
+    locale_ng%short_override%weekdays(3) = 'Eti'
+    locale_ng%short_override%weekdays(4) = 'Etn'
+    locale_ng%short_override%weekdays(5) = 'Etn'
+    locale_ng%short_override%weekdays(6) = 'Osh'
+    locale_ng%short_override%weekdays(7) = 'Esh'
+    locale_ng%short_override%has_day_format = .true.
+    locale_ng%short_override%day_format = '{n}'
+    locale_ng%short_override%has_day_format_exceptions = .false.
+    locale_ng%short_override%has_date_pattern = .true.
+    locale_ng%short_override%date_pattern = '{day} {month}'
+    locale_ng%short_override%has_date_pattern_with_year = .true.
+    locale_ng%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_ng%short_override%has_today = .false.
+    locale_ng%short_override%has_tomorrow = .false.
+    locale_ng%short_override%has_yesterday = .false.
+
+    locale_ng%has_compact = .true.
+    locale_ng%compact_override%has_months = .false.
+    locale_ng%compact_override%has_months_in_date = .false.
+    locale_ng%compact_override%has_weekdays = .false.
+    locale_ng%compact_override%has_day_format = .false.
+    locale_ng%compact_override%has_day_format_exceptions = .false.
+    locale_ng%compact_override%has_date_pattern = .true.
+    locale_ng%compact_override%date_pattern = '{d}/{m}'
+    locale_ng%compact_override%has_date_pattern_with_year = .true.
+    locale_ng%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_ng%compact_override%has_today = .false.
+    locale_ng%compact_override%has_tomorrow = .false.
+    locale_ng%compact_override%has_yesterday = .false.
+
+  end subroutine init_ng
+
   ! Source: date/locales/src/nl.json
   subroutine init_nl()
     locale_nl%code = 'nl'
@@ -6796,6 +8523,194 @@ contains
     locale_nl%compact_override%has_yesterday = .false.
 
   end subroutine init_nl
+
+  ! Source: date/locales/src/nso.json
+  subroutine init_nso()
+    locale_nso%code = 'nso'
+
+    locale_nso%months(1) = 'Pherekgong'
+    locale_nso%months(2) = 'Hlakola'
+    locale_nso%months(3) = 'Mopitlo'
+    locale_nso%months(4) = 'Moranang'
+    locale_nso%months(5) = 'Mosegamanye'
+    locale_nso%months(6) = 'Ngoatobošego'
+    locale_nso%months(7) = 'Phukwi'
+    locale_nso%months(8) = 'Phatwe'
+    locale_nso%months(9) = 'Lewedi'
+    locale_nso%months(10) = 'Diphalane'
+    locale_nso%months(11) = 'Dibatsela'
+    locale_nso%months(12) = 'Manthole'
+
+    locale_nso%weekdays(1) = 'Lamorena'
+    locale_nso%weekdays(2) = 'Mošupologo'
+    locale_nso%weekdays(3) = 'Labobedi'
+    locale_nso%weekdays(4) = 'Laboraro'
+    locale_nso%weekdays(5) = 'Labone'
+    locale_nso%weekdays(6) = 'Labohlano'
+    locale_nso%weekdays(7) = 'Mokibelo'
+
+    locale_nso%day_format = '{n}'
+
+    locale_nso%num_exceptions = 0
+
+    locale_nso%date_pattern = '{day} {month}'
+    locale_nso%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_nso%today = 'lehono'
+    locale_nso%tomorrow = 'gosasa'
+    locale_nso%yesterday = 'maabane'
+
+    locale_nso%day_after_tomorrow = 'morago ga gosasa'
+    locale_nso%day_before_yesterday = 'maabane a go feta'
+    locale_nso%this_weekday = '{weekday} ye'
+    locale_nso%next_weekday = '{weekday} ye e tlago'
+    locale_nso%last_weekday = '{weekday} ye e fetilego'
+
+    locale_nso%has_months_in_date = .false.
+
+    locale_nso%has_short = .true.
+    locale_nso%short_override%has_months = .true.
+    locale_nso%short_override%months(1) = 'Pher'
+    locale_nso%short_override%months(2) = 'Hlak'
+    locale_nso%short_override%months(3) = 'Mop'
+    locale_nso%short_override%months(4) = 'Mor'
+    locale_nso%short_override%months(5) = 'Mos'
+    locale_nso%short_override%months(6) = 'Ngoa'
+    locale_nso%short_override%months(7) = 'Phu'
+    locale_nso%short_override%months(8) = 'Pha'
+    locale_nso%short_override%months(9) = 'Lew'
+    locale_nso%short_override%months(10) = 'Diph'
+    locale_nso%short_override%months(11) = 'Dib'
+    locale_nso%short_override%months(12) = 'Man'
+    locale_nso%short_override%has_months_in_date = .false.
+    locale_nso%short_override%has_weekdays = .true.
+    locale_nso%short_override%weekdays(1) = 'Lam'
+    locale_nso%short_override%weekdays(2) = 'Moš'
+    locale_nso%short_override%weekdays(3) = 'Lbb'
+    locale_nso%short_override%weekdays(4) = 'Lbr'
+    locale_nso%short_override%weekdays(5) = 'Lbn'
+    locale_nso%short_override%weekdays(6) = 'Lbh'
+    locale_nso%short_override%weekdays(7) = 'Mok'
+    locale_nso%short_override%has_day_format = .true.
+    locale_nso%short_override%day_format = '{n}'
+    locale_nso%short_override%has_day_format_exceptions = .false.
+    locale_nso%short_override%has_date_pattern = .true.
+    locale_nso%short_override%date_pattern = '{day} {month}'
+    locale_nso%short_override%has_date_pattern_with_year = .true.
+    locale_nso%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_nso%short_override%has_today = .false.
+    locale_nso%short_override%has_tomorrow = .false.
+    locale_nso%short_override%has_yesterday = .false.
+
+    locale_nso%has_compact = .true.
+    locale_nso%compact_override%has_months = .false.
+    locale_nso%compact_override%has_months_in_date = .false.
+    locale_nso%compact_override%has_weekdays = .false.
+    locale_nso%compact_override%has_day_format = .false.
+    locale_nso%compact_override%has_day_format_exceptions = .false.
+    locale_nso%compact_override%has_date_pattern = .true.
+    locale_nso%compact_override%date_pattern = '{d}/{m}'
+    locale_nso%compact_override%has_date_pattern_with_year = .true.
+    locale_nso%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_nso%compact_override%has_today = .false.
+    locale_nso%compact_override%has_tomorrow = .false.
+    locale_nso%compact_override%has_yesterday = .false.
+
+  end subroutine init_nso
+
+  ! Source: date/locales/src/nus.json
+  subroutine init_nus()
+    locale_nus%code = 'nus'
+
+    locale_nus%months(1) = 'Tiɔp thar'
+    locale_nus%months(2) = 'Pɛt'
+    locale_nus%months(3) = 'Duɔɔŋ'
+    locale_nus%months(4) = 'Guak'
+    locale_nus%months(5) = 'Duät'
+    locale_nus%months(6) = 'Kornyot'
+    locale_nus%months(7) = 'Payi'
+    locale_nus%months(8) = 'Tio̱p in thii'
+    locale_nus%months(9) = 'Laath'
+    locale_nus%months(10) = 'Kur'
+    locale_nus%months(11) = 'Tio̱p in laat'
+    locale_nus%months(12) = 'Jiɔk'
+
+    locale_nus%weekdays(1) = 'Cäŋ nhial'
+    locale_nus%weekdays(2) = 'Jiec la̱t'
+    locale_nus%weekdays(3) = 'Rɛw la̱t'
+    locale_nus%weekdays(4) = 'Diɔk la̱t'
+    locale_nus%weekdays(5) = 'Ŋuaan la̱t'
+    locale_nus%weekdays(6) = 'Dhieec la̱t'
+    locale_nus%weekdays(7) = 'Bäkɛl'
+
+    locale_nus%day_format = '{n}'
+
+    locale_nus%num_exceptions = 0
+
+    locale_nus%date_pattern = '{day} {month}'
+    locale_nus%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_nus%today = 'walɛ'
+    locale_nus%tomorrow = 'riak'
+    locale_nus%yesterday = 'dhorou'
+
+    locale_nus%day_after_tomorrow = 'riak kɛnɛ'
+    locale_nus%day_before_yesterday = 'dhorou kɛnɛ'
+    locale_nus%this_weekday = '{weekday} ɛn'
+    locale_nus%next_weekday = '{weekday} tɛ bɛ̈n'
+    locale_nus%last_weekday = '{weekday} cï kuɔ̈ɔ̈t'
+
+    locale_nus%has_months_in_date = .false.
+
+    locale_nus%has_short = .true.
+    locale_nus%short_override%has_months = .true.
+    locale_nus%short_override%months(1) = 'Tiɔp'
+    locale_nus%short_override%months(2) = 'Pɛt'
+    locale_nus%short_override%months(3) = 'Duɔɔ'
+    locale_nus%short_override%months(4) = 'Gua'
+    locale_nus%short_override%months(5) = 'Duä'
+    locale_nus%short_override%months(6) = 'Kor'
+    locale_nus%short_override%months(7) = 'Pay'
+    locale_nus%short_override%months(8) = 'Tio̱p'
+    locale_nus%short_override%months(9) = 'Laa'
+    locale_nus%short_override%months(10) = 'Kur'
+    locale_nus%short_override%months(11) = 'Tio̱'
+    locale_nus%short_override%months(12) = 'Jiɔ'
+    locale_nus%short_override%has_months_in_date = .false.
+    locale_nus%short_override%has_weekdays = .true.
+    locale_nus%short_override%weekdays(1) = 'Nhial'
+    locale_nus%short_override%weekdays(2) = 'Jiec'
+    locale_nus%short_override%weekdays(3) = 'Rɛw'
+    locale_nus%short_override%weekdays(4) = 'Diɔk'
+    locale_nus%short_override%weekdays(5) = 'Ŋuaan'
+    locale_nus%short_override%weekdays(6) = 'Dhiec'
+    locale_nus%short_override%weekdays(7) = 'Bäk'
+    locale_nus%short_override%has_day_format = .true.
+    locale_nus%short_override%day_format = '{n}'
+    locale_nus%short_override%has_day_format_exceptions = .false.
+    locale_nus%short_override%has_date_pattern = .true.
+    locale_nus%short_override%date_pattern = '{day} {month}'
+    locale_nus%short_override%has_date_pattern_with_year = .true.
+    locale_nus%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_nus%short_override%has_today = .false.
+    locale_nus%short_override%has_tomorrow = .false.
+    locale_nus%short_override%has_yesterday = .false.
+
+    locale_nus%has_compact = .true.
+    locale_nus%compact_override%has_months = .false.
+    locale_nus%compact_override%has_months_in_date = .false.
+    locale_nus%compact_override%has_weekdays = .false.
+    locale_nus%compact_override%has_day_format = .false.
+    locale_nus%compact_override%has_day_format_exceptions = .false.
+    locale_nus%compact_override%has_date_pattern = .true.
+    locale_nus%compact_override%date_pattern = '{d}/{m}'
+    locale_nus%compact_override%has_date_pattern_with_year = .true.
+    locale_nus%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_nus%compact_override%has_today = .false.
+    locale_nus%compact_override%has_tomorrow = .false.
+    locale_nus%compact_override%has_yesterday = .false.
+
+  end subroutine init_nus
 
   ! Source: date/locales/src/ny.json
   subroutine init_ny()
@@ -7278,6 +9193,100 @@ contains
     locale_pl%compact_override%has_yesterday = .false.
 
   end subroutine init_pl
+
+  ! Source: date/locales/src/pov.json
+  subroutine init_pov()
+    locale_pov%code = 'pov'
+
+    locale_pov%months(1) = 'Janeru'
+    locale_pov%months(2) = 'Febreru'
+    locale_pov%months(3) = 'Marsu'
+    locale_pov%months(4) = 'Abril'
+    locale_pov%months(5) = 'Maiu'
+    locale_pov%months(6) = 'Junhu'
+    locale_pov%months(7) = 'Julhu'
+    locale_pov%months(8) = 'Agostu'
+    locale_pov%months(9) = 'Setembru'
+    locale_pov%months(10) = 'Otubru'
+    locale_pov%months(11) = 'Novembru'
+    locale_pov%months(12) = 'Dizembru'
+
+    locale_pov%weekdays(1) = 'Dumingu'
+    locale_pov%weekdays(2) = 'Sigunda'
+    locale_pov%weekdays(3) = 'Tersa'
+    locale_pov%weekdays(4) = 'Kuarta'
+    locale_pov%weekdays(5) = 'Kinta'
+    locale_pov%weekdays(6) = 'Sesta'
+    locale_pov%weekdays(7) = 'Sabadu'
+
+    locale_pov%day_format = '{n}'
+
+    locale_pov%num_exceptions = 0
+
+    locale_pov%date_pattern = '{day} {month}'
+    locale_pov%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_pov%today = 'oji'
+    locale_pov%tomorrow = 'manan'
+    locale_pov%yesterday = 'onfo'
+
+    locale_pov%day_after_tomorrow = 'dipus di manan'
+    locale_pov%day_before_yesterday = 'antis di onfo'
+    locale_pov%this_weekday = '{weekday} kel'
+    locale_pov%next_weekday = '{weekday} ki bin'
+    locale_pov%last_weekday = '{weekday} pasadu'
+
+    locale_pov%has_months_in_date = .false.
+
+    locale_pov%has_short = .true.
+    locale_pov%short_override%has_months = .true.
+    locale_pov%short_override%months(1) = 'Jan'
+    locale_pov%short_override%months(2) = 'Feb'
+    locale_pov%short_override%months(3) = 'Mar'
+    locale_pov%short_override%months(4) = 'Abr'
+    locale_pov%short_override%months(5) = 'Mai'
+    locale_pov%short_override%months(6) = 'Jun'
+    locale_pov%short_override%months(7) = 'Jul'
+    locale_pov%short_override%months(8) = 'Ago'
+    locale_pov%short_override%months(9) = 'Set'
+    locale_pov%short_override%months(10) = 'Otu'
+    locale_pov%short_override%months(11) = 'Nov'
+    locale_pov%short_override%months(12) = 'Diz'
+    locale_pov%short_override%has_months_in_date = .false.
+    locale_pov%short_override%has_weekdays = .true.
+    locale_pov%short_override%weekdays(1) = 'Dum'
+    locale_pov%short_override%weekdays(2) = 'Sig'
+    locale_pov%short_override%weekdays(3) = 'Ter'
+    locale_pov%short_override%weekdays(4) = 'Kua'
+    locale_pov%short_override%weekdays(5) = 'Kin'
+    locale_pov%short_override%weekdays(6) = 'Ses'
+    locale_pov%short_override%weekdays(7) = 'Sab'
+    locale_pov%short_override%has_day_format = .true.
+    locale_pov%short_override%day_format = '{n}'
+    locale_pov%short_override%has_day_format_exceptions = .false.
+    locale_pov%short_override%has_date_pattern = .true.
+    locale_pov%short_override%date_pattern = '{day} {month}'
+    locale_pov%short_override%has_date_pattern_with_year = .true.
+    locale_pov%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_pov%short_override%has_today = .false.
+    locale_pov%short_override%has_tomorrow = .false.
+    locale_pov%short_override%has_yesterday = .false.
+
+    locale_pov%has_compact = .true.
+    locale_pov%compact_override%has_months = .false.
+    locale_pov%compact_override%has_months_in_date = .false.
+    locale_pov%compact_override%has_weekdays = .false.
+    locale_pov%compact_override%has_day_format = .false.
+    locale_pov%compact_override%has_day_format_exceptions = .false.
+    locale_pov%compact_override%has_date_pattern = .true.
+    locale_pov%compact_override%date_pattern = '{d}/{m}'
+    locale_pov%compact_override%has_date_pattern_with_year = .true.
+    locale_pov%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_pov%compact_override%has_today = .false.
+    locale_pov%compact_override%has_tomorrow = .false.
+    locale_pov%compact_override%has_yesterday = .false.
+
+  end subroutine init_pov
 
   ! Source: date/locales/src/ps.json
   subroutine init_ps()
@@ -7867,6 +9876,100 @@ contains
 
   end subroutine init_rw
 
+  ! Source: date/locales/src/sar.json
+  subroutine init_sar()
+    locale_sar%code = 'sar'
+
+    locale_sar%months(1) = 'Zanviye'
+    locale_sar%months(2) = 'Fevriye'
+    locale_sar%months(3) = 'Maars'
+    locale_sar%months(4) = 'Avriil'
+    locale_sar%months(5) = 'Mee'
+    locale_sar%months(6) = 'Zuɛ̃'
+    locale_sar%months(7) = 'Zulɛ'
+    locale_sar%months(8) = 'Uut'
+    locale_sar%months(9) = 'Sɛtɛmbar'
+    locale_sar%months(10) = 'Ɔtɔbar'
+    locale_sar%months(11) = 'Nɔvambar'
+    locale_sar%months(12) = 'Desambar'
+
+    locale_sar%weekdays(1) = 'Paskaa'
+    locale_sar%weekdays(2) = 'Nɔy'
+    locale_sar%weekdays(3) = 'Talata'
+    locale_sar%weekdays(4) = 'Alarba'
+    locale_sar%weekdays(5) = 'Alkamisa'
+    locale_sar%weekdays(6) = 'Juma'
+    locale_sar%weekdays(7) = 'Sibiti'
+
+    locale_sar%day_format = '{n}'
+
+    locale_sar%num_exceptions = 0
+
+    locale_sar%date_pattern = '{day} {month}'
+    locale_sar%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_sar%today = 'ɗgá'
+    locale_sar%tomorrow = 'gɨ́nā'
+    locale_sar%yesterday = 'ɗáà'
+
+    locale_sar%day_after_tomorrow = 'gɨ́nā gɨ́nā'
+    locale_sar%day_before_yesterday = 'ɗáà ɗáà'
+    locale_sar%this_weekday = '{weekday} nè'
+    locale_sar%next_weekday = '{weekday} ga'
+    locale_sar%last_weekday = '{weekday} ɓòo kɔ'
+
+    locale_sar%has_months_in_date = .false.
+
+    locale_sar%has_short = .true.
+    locale_sar%short_override%has_months = .true.
+    locale_sar%short_override%months(1) = 'Zan'
+    locale_sar%short_override%months(2) = 'Fev'
+    locale_sar%short_override%months(3) = 'Mar'
+    locale_sar%short_override%months(4) = 'Avr'
+    locale_sar%short_override%months(5) = 'Mee'
+    locale_sar%short_override%months(6) = 'Zuɛ'
+    locale_sar%short_override%months(7) = 'Zul'
+    locale_sar%short_override%months(8) = 'Uut'
+    locale_sar%short_override%months(9) = 'Sɛt'
+    locale_sar%short_override%months(10) = 'Ɔtɔ'
+    locale_sar%short_override%months(11) = 'Nɔv'
+    locale_sar%short_override%months(12) = 'Des'
+    locale_sar%short_override%has_months_in_date = .false.
+    locale_sar%short_override%has_weekdays = .true.
+    locale_sar%short_override%weekdays(1) = 'Pas'
+    locale_sar%short_override%weekdays(2) = 'Nɔy'
+    locale_sar%short_override%weekdays(3) = 'Tal'
+    locale_sar%short_override%weekdays(4) = 'Ala'
+    locale_sar%short_override%weekdays(5) = 'Alk'
+    locale_sar%short_override%weekdays(6) = 'Jum'
+    locale_sar%short_override%weekdays(7) = 'Sib'
+    locale_sar%short_override%has_day_format = .true.
+    locale_sar%short_override%day_format = '{n}'
+    locale_sar%short_override%has_day_format_exceptions = .false.
+    locale_sar%short_override%has_date_pattern = .true.
+    locale_sar%short_override%date_pattern = '{day} {month}'
+    locale_sar%short_override%has_date_pattern_with_year = .true.
+    locale_sar%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_sar%short_override%has_today = .false.
+    locale_sar%short_override%has_tomorrow = .false.
+    locale_sar%short_override%has_yesterday = .false.
+
+    locale_sar%has_compact = .true.
+    locale_sar%compact_override%has_months = .false.
+    locale_sar%compact_override%has_months_in_date = .false.
+    locale_sar%compact_override%has_weekdays = .false.
+    locale_sar%compact_override%has_day_format = .false.
+    locale_sar%compact_override%has_day_format_exceptions = .false.
+    locale_sar%compact_override%has_date_pattern = .true.
+    locale_sar%compact_override%date_pattern = '{d}/{m}'
+    locale_sar%compact_override%has_date_pattern_with_year = .true.
+    locale_sar%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_sar%compact_override%has_today = .false.
+    locale_sar%compact_override%has_tomorrow = .false.
+    locale_sar%compact_override%has_yesterday = .false.
+
+  end subroutine init_sar
+
   ! Source: date/locales/src/sd.json
   subroutine init_sd()
     locale_sd%code = 'sd'
@@ -7960,6 +10063,100 @@ contains
     locale_sd%compact_override%has_yesterday = .false.
 
   end subroutine init_sd
+
+  ! Source: date/locales/src/sg.json
+  subroutine init_sg()
+    locale_sg%code = 'sg'
+
+    locale_sg%months(1) = 'Nyenye'
+    locale_sg%months(2) = 'Fulundïgi'
+    locale_sg%months(3) = 'Mbängü'
+    locale_sg%months(4) = 'Ngubùe'
+    locale_sg%months(5) = 'Bêläwü'
+    locale_sg%months(6) = 'Föndo'
+    locale_sg%months(7) = 'Lengua'
+    locale_sg%months(8) = 'Kükürü'
+    locale_sg%months(9) = 'Mvuka'
+    locale_sg%months(10) = 'Ngberere'
+    locale_sg%months(11) = 'Nabändüru'
+    locale_sg%months(12) = 'Kakauka'
+
+    locale_sg%weekdays(1) = 'Bikua-ôko'
+    locale_sg%weekdays(2) = 'Bïkua-ûse'
+    locale_sg%weekdays(3) = 'Bïkua-ptâ'
+    locale_sg%weekdays(4) = 'Bïkua-usïö'
+    locale_sg%weekdays(5) = 'Bïkua-okü'
+    locale_sg%weekdays(6) = 'Lâpôsö'
+    locale_sg%weekdays(7) = 'Lâyenga'
+
+    locale_sg%day_format = '{n}'
+
+    locale_sg%num_exceptions = 0
+
+    locale_sg%date_pattern = '{day} {month}'
+    locale_sg%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_sg%today = 'lâsô'
+    locale_sg%tomorrow = 'kêkerêke'
+    locale_sg%yesterday = 'bîrî'
+
+    locale_sg%day_after_tomorrow = 'lâ tî kêkerêke'
+    locale_sg%day_before_yesterday = 'lâ tî bîrî'
+    locale_sg%this_weekday = '{weekday} sô'
+    locale_sg%next_weekday = '{weekday} tî âla'
+    locale_sg%last_weekday = '{weekday} tî pekô'
+
+    locale_sg%has_months_in_date = .false.
+
+    locale_sg%has_short = .true.
+    locale_sg%short_override%has_months = .true.
+    locale_sg%short_override%months(1) = 'Nye'
+    locale_sg%short_override%months(2) = 'Ful'
+    locale_sg%short_override%months(3) = 'Mbä'
+    locale_sg%short_override%months(4) = 'Ngu'
+    locale_sg%short_override%months(5) = 'Bêl'
+    locale_sg%short_override%months(6) = 'Fön'
+    locale_sg%short_override%months(7) = 'Len'
+    locale_sg%short_override%months(8) = 'Kük'
+    locale_sg%short_override%months(9) = 'Mvu'
+    locale_sg%short_override%months(10) = 'Ngb'
+    locale_sg%short_override%months(11) = 'Nab'
+    locale_sg%short_override%months(12) = 'Kak'
+    locale_sg%short_override%has_months_in_date = .false.
+    locale_sg%short_override%has_weekdays = .true.
+    locale_sg%short_override%weekdays(1) = 'Ôko'
+    locale_sg%short_override%weekdays(2) = 'Ûse'
+    locale_sg%short_override%weekdays(3) = 'Ptâ'
+    locale_sg%short_override%weekdays(4) = 'Usï'
+    locale_sg%short_override%weekdays(5) = 'Okü'
+    locale_sg%short_override%weekdays(6) = 'Pôs'
+    locale_sg%short_override%weekdays(7) = 'Yng'
+    locale_sg%short_override%has_day_format = .true.
+    locale_sg%short_override%day_format = '{n}'
+    locale_sg%short_override%has_day_format_exceptions = .false.
+    locale_sg%short_override%has_date_pattern = .true.
+    locale_sg%short_override%date_pattern = '{day} {month}'
+    locale_sg%short_override%has_date_pattern_with_year = .true.
+    locale_sg%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_sg%short_override%has_today = .false.
+    locale_sg%short_override%has_tomorrow = .false.
+    locale_sg%short_override%has_yesterday = .false.
+
+    locale_sg%has_compact = .true.
+    locale_sg%compact_override%has_months = .false.
+    locale_sg%compact_override%has_months_in_date = .false.
+    locale_sg%compact_override%has_weekdays = .false.
+    locale_sg%compact_override%has_day_format = .false.
+    locale_sg%compact_override%has_day_format_exceptions = .false.
+    locale_sg%compact_override%has_date_pattern = .true.
+    locale_sg%compact_override%date_pattern = '{d}/{m}'
+    locale_sg%compact_override%has_date_pattern_with_year = .true.
+    locale_sg%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_sg%compact_override%has_today = .false.
+    locale_sg%compact_override%has_tomorrow = .false.
+    locale_sg%compact_override%has_yesterday = .false.
+
+  end subroutine init_sg
 
   ! Source: date/locales/src/shi.json
   subroutine init_shi()
@@ -8455,6 +10652,100 @@ contains
 
   end subroutine init_sn
 
+  ! Source: date/locales/src/snk.json
+  subroutine init_snk()
+    locale_snk%code = 'snk'
+
+    locale_snk%months(1) = 'Janwiye'
+    locale_snk%months(2) = 'Feburiye'
+    locale_snk%months(3) = 'Marasi'
+    locale_snk%months(4) = 'Abirili'
+    locale_snk%months(5) = 'Meyi'
+    locale_snk%months(6) = 'Juwɛ'
+    locale_snk%months(7) = 'Juliye'
+    locale_snk%months(8) = 'Awutu'
+    locale_snk%months(9) = 'Sɛtanburu'
+    locale_snk%months(10) = 'Okutoburu'
+    locale_snk%months(11) = 'Nuwanburu'
+    locale_snk%months(12) = 'Desanburu'
+
+    locale_snk%weekdays(1) = 'Alhadi'
+    locale_snk%weekdays(2) = 'Atinni'
+    locale_snk%weekdays(3) = 'Ataalaata'
+    locale_snk%weekdays(4) = 'Alarba'
+    locale_snk%weekdays(5) = 'Alxamiisa'
+    locale_snk%weekdays(6) = 'Arjuma'
+    locale_snk%weekdays(7) = 'Asibiti'
+
+    locale_snk%day_format = '{n}'
+
+    locale_snk%num_exceptions = 0
+
+    locale_snk%date_pattern = '{day} {month}'
+    locale_snk%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_snk%today = 'haqun'
+    locale_snk%tomorrow = 'kinni'
+    locale_snk%yesterday = 'noxone'
+
+    locale_snk%day_after_tomorrow = 'kinni xenqa'
+    locale_snk%day_before_yesterday = 'noxone xenqa'
+    locale_snk%this_weekday = '{weekday} yi'
+    locale_snk%next_weekday = '{weekday} na tage'
+    locale_snk%last_weekday = '{weekday} toxo kille'
+
+    locale_snk%has_months_in_date = .false.
+
+    locale_snk%has_short = .true.
+    locale_snk%short_override%has_months = .true.
+    locale_snk%short_override%months(1) = 'Jan'
+    locale_snk%short_override%months(2) = 'Feb'
+    locale_snk%short_override%months(3) = 'Mar'
+    locale_snk%short_override%months(4) = 'Abi'
+    locale_snk%short_override%months(5) = 'Mey'
+    locale_snk%short_override%months(6) = 'Juw'
+    locale_snk%short_override%months(7) = 'Jul'
+    locale_snk%short_override%months(8) = 'Awu'
+    locale_snk%short_override%months(9) = 'Sɛt'
+    locale_snk%short_override%months(10) = 'Oku'
+    locale_snk%short_override%months(11) = 'Nuw'
+    locale_snk%short_override%months(12) = 'Des'
+    locale_snk%short_override%has_months_in_date = .false.
+    locale_snk%short_override%has_weekdays = .true.
+    locale_snk%short_override%weekdays(1) = 'Alh'
+    locale_snk%short_override%weekdays(2) = 'Ati'
+    locale_snk%short_override%weekdays(3) = 'Ata'
+    locale_snk%short_override%weekdays(4) = 'Ala'
+    locale_snk%short_override%weekdays(5) = 'Alx'
+    locale_snk%short_override%weekdays(6) = 'Arj'
+    locale_snk%short_override%weekdays(7) = 'Asi'
+    locale_snk%short_override%has_day_format = .true.
+    locale_snk%short_override%day_format = '{n}'
+    locale_snk%short_override%has_day_format_exceptions = .false.
+    locale_snk%short_override%has_date_pattern = .true.
+    locale_snk%short_override%date_pattern = '{day} {month}'
+    locale_snk%short_override%has_date_pattern_with_year = .true.
+    locale_snk%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_snk%short_override%has_today = .false.
+    locale_snk%short_override%has_tomorrow = .false.
+    locale_snk%short_override%has_yesterday = .false.
+
+    locale_snk%has_compact = .true.
+    locale_snk%compact_override%has_months = .false.
+    locale_snk%compact_override%has_months_in_date = .false.
+    locale_snk%compact_override%has_weekdays = .false.
+    locale_snk%compact_override%has_day_format = .false.
+    locale_snk%compact_override%has_day_format_exceptions = .false.
+    locale_snk%compact_override%has_date_pattern = .true.
+    locale_snk%compact_override%date_pattern = '{d}/{m}'
+    locale_snk%compact_override%has_date_pattern_with_year = .true.
+    locale_snk%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_snk%compact_override%has_today = .false.
+    locale_snk%compact_override%has_tomorrow = .false.
+    locale_snk%compact_override%has_yesterday = .false.
+
+  end subroutine init_snk
+
   ! Source: date/locales/src/so.json
   subroutine init_so()
     locale_so%code = 'so'
@@ -8737,6 +11028,194 @@ contains
 
   end subroutine init_sr
 
+  ! Source: date/locales/src/ss.json
+  subroutine init_ss()
+    locale_ss%code = 'ss'
+
+    locale_ss%months(1) = 'Bhimbidvwane'
+    locale_ss%months(2) = 'iNdlovana'
+    locale_ss%months(3) = 'iNdlovulenkhulu'
+    locale_ss%months(4) = 'Mabasa'
+    locale_ss%months(5) = 'iNkhwekhweti'
+    locale_ss%months(6) = 'iNhlaba'
+    locale_ss%months(7) = 'Kholwane'
+    locale_ss%months(8) = 'iNgci'
+    locale_ss%months(9) = 'iNyoni'
+    locale_ss%months(10) = 'iMphala'
+    locale_ss%months(11) = 'Lweti'
+    locale_ss%months(12) = 'iNgongoni'
+
+    locale_ss%weekdays(1) = 'LiSontfo'
+    locale_ss%weekdays(2) = 'uMsombuluko'
+    locale_ss%weekdays(3) = 'Lesibili'
+    locale_ss%weekdays(4) = 'Lesitsatfu'
+    locale_ss%weekdays(5) = 'Lesine'
+    locale_ss%weekdays(6) = 'Lesihlanu'
+    locale_ss%weekdays(7) = 'uMgcibelo'
+
+    locale_ss%day_format = '{n}'
+
+    locale_ss%num_exceptions = 0
+
+    locale_ss%date_pattern = '{day} {month}'
+    locale_ss%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_ss%today = 'lamuhla'
+    locale_ss%tomorrow = 'kusasa'
+    locale_ss%yesterday = 'itolo'
+
+    locale_ss%day_after_tomorrow = 'ngemhlomunye'
+    locale_ss%day_before_yesterday = 'kutolo lokwengca'
+    locale_ss%this_weekday = 'leli {weekday}'
+    locale_ss%next_weekday = '{weekday} letako'
+    locale_ss%last_weekday = '{weekday} leledlule'
+
+    locale_ss%has_months_in_date = .false.
+
+    locale_ss%has_short = .true.
+    locale_ss%short_override%has_months = .true.
+    locale_ss%short_override%months(1) = 'Bhi'
+    locale_ss%short_override%months(2) = 'Ind'
+    locale_ss%short_override%months(3) = 'Ink'
+    locale_ss%short_override%months(4) = 'Mab'
+    locale_ss%short_override%months(5) = 'Inkw'
+    locale_ss%short_override%months(6) = 'Inh'
+    locale_ss%short_override%months(7) = 'Kho'
+    locale_ss%short_override%months(8) = 'Ingc'
+    locale_ss%short_override%months(9) = 'Iny'
+    locale_ss%short_override%months(10) = 'Imp'
+    locale_ss%short_override%months(11) = 'Lwe'
+    locale_ss%short_override%months(12) = 'Ingo'
+    locale_ss%short_override%has_months_in_date = .false.
+    locale_ss%short_override%has_weekdays = .true.
+    locale_ss%short_override%weekdays(1) = 'Son'
+    locale_ss%short_override%weekdays(2) = 'Mso'
+    locale_ss%short_override%weekdays(3) = 'Bil'
+    locale_ss%short_override%weekdays(4) = 'Tsa'
+    locale_ss%short_override%weekdays(5) = 'Sin'
+    locale_ss%short_override%weekdays(6) = 'Hla'
+    locale_ss%short_override%weekdays(7) = 'Mgc'
+    locale_ss%short_override%has_day_format = .true.
+    locale_ss%short_override%day_format = '{n}'
+    locale_ss%short_override%has_day_format_exceptions = .false.
+    locale_ss%short_override%has_date_pattern = .true.
+    locale_ss%short_override%date_pattern = '{day} {month}'
+    locale_ss%short_override%has_date_pattern_with_year = .true.
+    locale_ss%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_ss%short_override%has_today = .false.
+    locale_ss%short_override%has_tomorrow = .false.
+    locale_ss%short_override%has_yesterday = .false.
+
+    locale_ss%has_compact = .true.
+    locale_ss%compact_override%has_months = .false.
+    locale_ss%compact_override%has_months_in_date = .false.
+    locale_ss%compact_override%has_weekdays = .false.
+    locale_ss%compact_override%has_day_format = .false.
+    locale_ss%compact_override%has_day_format_exceptions = .false.
+    locale_ss%compact_override%has_date_pattern = .true.
+    locale_ss%compact_override%date_pattern = '{d}/{m}'
+    locale_ss%compact_override%has_date_pattern_with_year = .true.
+    locale_ss%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_ss%compact_override%has_today = .false.
+    locale_ss%compact_override%has_tomorrow = .false.
+    locale_ss%compact_override%has_yesterday = .false.
+
+  end subroutine init_ss
+
+  ! Source: date/locales/src/st.json
+  subroutine init_st()
+    locale_st%code = 'st'
+
+    locale_st%months(1) = 'Pherekgong'
+    locale_st%months(2) = 'Hlakola'
+    locale_st%months(3) = 'Hlakubele'
+    locale_st%months(4) = 'Mmese'
+    locale_st%months(5) = 'Motsheanong'
+    locale_st%months(6) = 'Phupjane'
+    locale_st%months(7) = 'Phupu'
+    locale_st%months(8) = 'Phato'
+    locale_st%months(9) = 'Leotshe'
+    locale_st%months(10) = 'Mphalane'
+    locale_st%months(11) = 'Pudungwana'
+    locale_st%months(12) = 'Tshitwe'
+
+    locale_st%weekdays(1) = 'Sontaha'
+    locale_st%weekdays(2) = 'Mmantaha'
+    locale_st%weekdays(3) = 'Labobedi'
+    locale_st%weekdays(4) = 'Laboraro'
+    locale_st%weekdays(5) = 'Labone'
+    locale_st%weekdays(6) = 'Labohlano'
+    locale_st%weekdays(7) = 'Moqebelo'
+
+    locale_st%day_format = '{n}'
+
+    locale_st%num_exceptions = 0
+
+    locale_st%date_pattern = '{day} {month}'
+    locale_st%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_st%today = 'kajeno'
+    locale_st%tomorrow = 'hosane'
+    locale_st%yesterday = 'maobane'
+
+    locale_st%day_after_tomorrow = 'hosanemane'
+    locale_st%day_before_yesterday = 'maobanyane'
+    locale_st%this_weekday = '{weekday} ena'
+    locale_st%next_weekday = '{weekday} e tlang'
+    locale_st%last_weekday = '{weekday} e fetileng'
+
+    locale_st%has_months_in_date = .false.
+
+    locale_st%has_short = .true.
+    locale_st%short_override%has_months = .true.
+    locale_st%short_override%months(1) = 'Phe'
+    locale_st%short_override%months(2) = 'Hlk'
+    locale_st%short_override%months(3) = 'Hlb'
+    locale_st%short_override%months(4) = 'Mme'
+    locale_st%short_override%months(5) = 'Mot'
+    locale_st%short_override%months(6) = 'Phj'
+    locale_st%short_override%months(7) = 'Php'
+    locale_st%short_override%months(8) = 'Pha'
+    locale_st%short_override%months(9) = 'Leo'
+    locale_st%short_override%months(10) = 'Mph'
+    locale_st%short_override%months(11) = 'Pud'
+    locale_st%short_override%months(12) = 'Tsh'
+    locale_st%short_override%has_months_in_date = .false.
+    locale_st%short_override%has_weekdays = .true.
+    locale_st%short_override%weekdays(1) = 'Son'
+    locale_st%short_override%weekdays(2) = 'Mma'
+    locale_st%short_override%weekdays(3) = 'Bed'
+    locale_st%short_override%weekdays(4) = 'Rar'
+    locale_st%short_override%weekdays(5) = 'Bon'
+    locale_st%short_override%weekdays(6) = 'Hla'
+    locale_st%short_override%weekdays(7) = 'Moq'
+    locale_st%short_override%has_day_format = .true.
+    locale_st%short_override%day_format = '{n}'
+    locale_st%short_override%has_day_format_exceptions = .false.
+    locale_st%short_override%has_date_pattern = .true.
+    locale_st%short_override%date_pattern = '{day} {month}'
+    locale_st%short_override%has_date_pattern_with_year = .true.
+    locale_st%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_st%short_override%has_today = .false.
+    locale_st%short_override%has_tomorrow = .false.
+    locale_st%short_override%has_yesterday = .false.
+
+    locale_st%has_compact = .true.
+    locale_st%compact_override%has_months = .false.
+    locale_st%compact_override%has_months_in_date = .false.
+    locale_st%compact_override%has_weekdays = .false.
+    locale_st%compact_override%has_day_format = .false.
+    locale_st%compact_override%has_day_format_exceptions = .false.
+    locale_st%compact_override%has_date_pattern = .true.
+    locale_st%compact_override%date_pattern = '{d}/{m}'
+    locale_st%compact_override%has_date_pattern_with_year = .true.
+    locale_st%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_st%compact_override%has_today = .false.
+    locale_st%compact_override%has_tomorrow = .false.
+    locale_st%compact_override%has_yesterday = .false.
+
+  end subroutine init_st
+
   ! Source: date/locales/src/su.json
   subroutine init_su()
     locale_su%code = 'su'
@@ -8830,6 +11309,100 @@ contains
     locale_su%compact_override%has_yesterday = .false.
 
   end subroutine init_su
+
+  ! Source: date/locales/src/suk.json
+  subroutine init_suk()
+    locale_suk%code = 'suk'
+
+    locale_suk%months(1) = 'Januari'
+    locale_suk%months(2) = 'Februari'
+    locale_suk%months(3) = 'Machi'
+    locale_suk%months(4) = 'Aprili'
+    locale_suk%months(5) = 'Mei'
+    locale_suk%months(6) = 'Juni'
+    locale_suk%months(7) = 'Julai'
+    locale_suk%months(8) = 'Agosti'
+    locale_suk%months(9) = 'Septemba'
+    locale_suk%months(10) = 'Oktoba'
+    locale_suk%months(11) = 'Novemba'
+    locale_suk%months(12) = 'Desemba'
+
+    locale_suk%weekdays(1) = 'Jumapili'
+    locale_suk%weekdays(2) = 'Jumatatu'
+    locale_suk%weekdays(3) = 'Jumanne'
+    locale_suk%weekdays(4) = 'Jumatano'
+    locale_suk%weekdays(5) = 'Alhamisi'
+    locale_suk%weekdays(6) = 'Ijumaa'
+    locale_suk%weekdays(7) = 'Jumamosi'
+
+    locale_suk%day_format = '{n}'
+
+    locale_suk%num_exceptions = 0
+
+    locale_suk%date_pattern = '{day} {month}'
+    locale_suk%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_suk%today = 'lelo'
+    locale_suk%tomorrow = 'milau'
+    locale_suk%yesterday = 'igolo'
+
+    locale_suk%day_after_tomorrow = 'milau ya pili'
+    locale_suk%day_before_yesterday = 'igolo ya pili'
+    locale_suk%this_weekday = '{weekday} iyi'
+    locale_suk%next_weekday = '{weekday} ya kuja'
+    locale_suk%last_weekday = '{weekday} iliyopita'
+
+    locale_suk%has_months_in_date = .false.
+
+    locale_suk%has_short = .true.
+    locale_suk%short_override%has_months = .true.
+    locale_suk%short_override%months(1) = 'Jan'
+    locale_suk%short_override%months(2) = 'Feb'
+    locale_suk%short_override%months(3) = 'Mac'
+    locale_suk%short_override%months(4) = 'Apr'
+    locale_suk%short_override%months(5) = 'Mei'
+    locale_suk%short_override%months(6) = 'Jun'
+    locale_suk%short_override%months(7) = 'Jul'
+    locale_suk%short_override%months(8) = 'Ago'
+    locale_suk%short_override%months(9) = 'Sep'
+    locale_suk%short_override%months(10) = 'Okt'
+    locale_suk%short_override%months(11) = 'Nov'
+    locale_suk%short_override%months(12) = 'Des'
+    locale_suk%short_override%has_months_in_date = .false.
+    locale_suk%short_override%has_weekdays = .true.
+    locale_suk%short_override%weekdays(1) = 'Jpl'
+    locale_suk%short_override%weekdays(2) = 'Jtt'
+    locale_suk%short_override%weekdays(3) = 'Jnn'
+    locale_suk%short_override%weekdays(4) = 'Jtn'
+    locale_suk%short_override%weekdays(5) = 'Alh'
+    locale_suk%short_override%weekdays(6) = 'Ijm'
+    locale_suk%short_override%weekdays(7) = 'Jms'
+    locale_suk%short_override%has_day_format = .true.
+    locale_suk%short_override%day_format = '{n}'
+    locale_suk%short_override%has_day_format_exceptions = .false.
+    locale_suk%short_override%has_date_pattern = .true.
+    locale_suk%short_override%date_pattern = '{day} {month}'
+    locale_suk%short_override%has_date_pattern_with_year = .true.
+    locale_suk%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_suk%short_override%has_today = .false.
+    locale_suk%short_override%has_tomorrow = .false.
+    locale_suk%short_override%has_yesterday = .false.
+
+    locale_suk%has_compact = .true.
+    locale_suk%compact_override%has_months = .false.
+    locale_suk%compact_override%has_months_in_date = .false.
+    locale_suk%compact_override%has_weekdays = .false.
+    locale_suk%compact_override%has_day_format = .false.
+    locale_suk%compact_override%has_day_format_exceptions = .false.
+    locale_suk%compact_override%has_date_pattern = .true.
+    locale_suk%compact_override%date_pattern = '{d}/{m}'
+    locale_suk%compact_override%has_date_pattern_with_year = .true.
+    locale_suk%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_suk%compact_override%has_today = .false.
+    locale_suk%compact_override%has_tomorrow = .false.
+    locale_suk%compact_override%has_yesterday = .false.
+
+  end subroutine init_suk
 
   ! Source: date/locales/src/sv.json
   subroutine init_sv()
@@ -9207,6 +11780,100 @@ contains
 
   end subroutine init_te
 
+  ! Source: date/locales/src/tem.json
+  subroutine init_tem()
+    locale_tem%code = 'tem'
+
+    locale_tem%months(1) = 'Janɛri'
+    locale_tem%months(2) = 'Fɛbrɛri'
+    locale_tem%months(3) = 'Mach'
+    locale_tem%months(4) = 'Epril'
+    locale_tem%months(5) = 'Me'
+    locale_tem%months(6) = 'Jun'
+    locale_tem%months(7) = 'Julai'
+    locale_tem%months(8) = 'Ɔgɔst'
+    locale_tem%months(9) = 'Sɛtɛmba'
+    locale_tem%months(10) = 'Ɔktoba'
+    locale_tem%months(11) = 'Novɛmba'
+    locale_tem%months(12) = 'Disɛmba'
+
+    locale_tem%weekdays(1) = 'Ləpɛt'
+    locale_tem%weekdays(2) = 'Lətalɛ'
+    locale_tem%weekdays(3) = 'Ləsalɛ'
+    locale_tem%weekdays(4) = 'Lərarɛ'
+    locale_tem%weekdays(5) = 'Lənɛr'
+    locale_tem%weekdays(6) = 'Ləjuma'
+    locale_tem%weekdays(7) = 'Ləsɛbɛ'
+
+    locale_tem%day_format = '{n}'
+
+    locale_tem%num_exceptions = 0
+
+    locale_tem%date_pattern = '{day} {month}'
+    locale_tem%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_tem%today = 'ani'
+    locale_tem%tomorrow = 'tənɔŋ'
+    locale_tem%yesterday = 'yenɛ'
+
+    locale_tem%day_after_tomorrow = 'tənɔŋ tənɔŋ'
+    locale_tem%day_before_yesterday = 'yenɛ yenɛ'
+    locale_tem%this_weekday = '{weekday} yi'
+    locale_tem%next_weekday = '{weekday} ro ba'
+    locale_tem%last_weekday = '{weekday} ro ba kɛ'
+
+    locale_tem%has_months_in_date = .false.
+
+    locale_tem%has_short = .true.
+    locale_tem%short_override%has_months = .true.
+    locale_tem%short_override%months(1) = 'Jan'
+    locale_tem%short_override%months(2) = 'Fɛb'
+    locale_tem%short_override%months(3) = 'Mac'
+    locale_tem%short_override%months(4) = 'Epr'
+    locale_tem%short_override%months(5) = 'Me'
+    locale_tem%short_override%months(6) = 'Jun'
+    locale_tem%short_override%months(7) = 'Jul'
+    locale_tem%short_override%months(8) = 'Ɔgɔ'
+    locale_tem%short_override%months(9) = 'Sɛt'
+    locale_tem%short_override%months(10) = 'Ɔkt'
+    locale_tem%short_override%months(11) = 'Nov'
+    locale_tem%short_override%months(12) = 'Dis'
+    locale_tem%short_override%has_months_in_date = .false.
+    locale_tem%short_override%has_weekdays = .true.
+    locale_tem%short_override%weekdays(1) = 'Lpɛ'
+    locale_tem%short_override%weekdays(2) = 'Lta'
+    locale_tem%short_override%weekdays(3) = 'Lsa'
+    locale_tem%short_override%weekdays(4) = 'Lra'
+    locale_tem%short_override%weekdays(5) = 'Lnɛ'
+    locale_tem%short_override%weekdays(6) = 'Lju'
+    locale_tem%short_override%weekdays(7) = 'Lsɛ'
+    locale_tem%short_override%has_day_format = .true.
+    locale_tem%short_override%day_format = '{n}'
+    locale_tem%short_override%has_day_format_exceptions = .false.
+    locale_tem%short_override%has_date_pattern = .true.
+    locale_tem%short_override%date_pattern = '{day} {month}'
+    locale_tem%short_override%has_date_pattern_with_year = .true.
+    locale_tem%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_tem%short_override%has_today = .false.
+    locale_tem%short_override%has_tomorrow = .false.
+    locale_tem%short_override%has_yesterday = .false.
+
+    locale_tem%has_compact = .true.
+    locale_tem%compact_override%has_months = .false.
+    locale_tem%compact_override%has_months_in_date = .false.
+    locale_tem%compact_override%has_weekdays = .false.
+    locale_tem%compact_override%has_day_format = .false.
+    locale_tem%compact_override%has_day_format_exceptions = .false.
+    locale_tem%compact_override%has_date_pattern = .true.
+    locale_tem%compact_override%date_pattern = '{d}/{m}'
+    locale_tem%compact_override%has_date_pattern_with_year = .true.
+    locale_tem%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_tem%compact_override%has_today = .false.
+    locale_tem%compact_override%has_tomorrow = .false.
+    locale_tem%compact_override%has_yesterday = .false.
+
+  end subroutine init_tem
+
   ! Source: date/locales/src/tg.json
   subroutine init_tg()
     locale_tg%code = 'tg'
@@ -9489,6 +12156,100 @@ contains
 
   end subroutine init_ti
 
+  ! Source: date/locales/src/tig.json
+  subroutine init_tig()
+    locale_tig%code = 'tig'
+
+    locale_tig%months(1) = 'Yannaayer'
+    locale_tig%months(2) = 'Febbraayer'
+    locale_tig%months(3) = 'Maaris'
+    locale_tig%months(4) = 'Abriil'
+    locale_tig%months(5) = 'Maay'
+    locale_tig%months(6) = 'Yuunyo'
+    locale_tig%months(7) = 'Yulyo'
+    locale_tig%months(8) = 'Agoosṭo'
+    locale_tig%months(9) = 'Seṭṭembre'
+    locale_tig%months(10) = 'Oṭṭoobre'
+    locale_tig%months(11) = 'Noovembre'
+    locale_tig%months(12) = 'Diičembre'
+
+    locale_tig%weekdays(1) = 'Sənbət'
+    locale_tig%weekdays(2) = 'Sənuy'
+    locale_tig%weekdays(3) = 'Sələs'
+    locale_tig%weekdays(4) = 'Rəbuʿ'
+    locale_tig%weekdays(5) = 'Ḥamus'
+    locale_tig%weekdays(6) = 'ʿArbi'
+    locale_tig%weekdays(7) = 'Qədami'
+
+    locale_tig%day_format = '{n}'
+
+    locale_tig%num_exceptions = 0
+
+    locale_tig%date_pattern = '{day} {month}'
+    locale_tig%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_tig%today = 'yom'
+    locale_tig%tomorrow = 'gədam'
+    locale_tig%yesterday = 'timali'
+
+    locale_tig%day_after_tomorrow = 'gədam gədam'
+    locale_tig%day_before_yesterday = 'timali timali'
+    locale_tig%this_weekday = '{weekday} ʾənta'
+    locale_tig%next_weekday = '{weekday} ba'
+    locale_tig%last_weekday = '{weekday} qədmi'
+
+    locale_tig%has_months_in_date = .false.
+
+    locale_tig%has_short = .true.
+    locale_tig%short_override%has_months = .true.
+    locale_tig%short_override%months(1) = 'Yan'
+    locale_tig%short_override%months(2) = 'Feb'
+    locale_tig%short_override%months(3) = 'Mar'
+    locale_tig%short_override%months(4) = 'Abr'
+    locale_tig%short_override%months(5) = 'May'
+    locale_tig%short_override%months(6) = 'Yun'
+    locale_tig%short_override%months(7) = 'Yul'
+    locale_tig%short_override%months(8) = 'Ago'
+    locale_tig%short_override%months(9) = 'Seṭ'
+    locale_tig%short_override%months(10) = 'Oṭṭ'
+    locale_tig%short_override%months(11) = 'Nov'
+    locale_tig%short_override%months(12) = 'Dii'
+    locale_tig%short_override%has_months_in_date = .false.
+    locale_tig%short_override%has_weekdays = .true.
+    locale_tig%short_override%weekdays(1) = 'Sən'
+    locale_tig%short_override%weekdays(2) = 'Snu'
+    locale_tig%short_override%weekdays(3) = 'Səl'
+    locale_tig%short_override%weekdays(4) = 'Rəb'
+    locale_tig%short_override%weekdays(5) = 'Ḥam'
+    locale_tig%short_override%weekdays(6) = 'ʿAr'
+    locale_tig%short_override%weekdays(7) = 'Qəd'
+    locale_tig%short_override%has_day_format = .true.
+    locale_tig%short_override%day_format = '{n}'
+    locale_tig%short_override%has_day_format_exceptions = .false.
+    locale_tig%short_override%has_date_pattern = .true.
+    locale_tig%short_override%date_pattern = '{day} {month}'
+    locale_tig%short_override%has_date_pattern_with_year = .true.
+    locale_tig%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_tig%short_override%has_today = .false.
+    locale_tig%short_override%has_tomorrow = .false.
+    locale_tig%short_override%has_yesterday = .false.
+
+    locale_tig%has_compact = .true.
+    locale_tig%compact_override%has_months = .false.
+    locale_tig%compact_override%has_months_in_date = .false.
+    locale_tig%compact_override%has_weekdays = .false.
+    locale_tig%compact_override%has_day_format = .false.
+    locale_tig%compact_override%has_day_format_exceptions = .false.
+    locale_tig%compact_override%has_date_pattern = .true.
+    locale_tig%compact_override%date_pattern = '{d}/{m}'
+    locale_tig%compact_override%has_date_pattern_with_year = .true.
+    locale_tig%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_tig%compact_override%has_today = .false.
+    locale_tig%compact_override%has_tomorrow = .false.
+    locale_tig%compact_override%has_yesterday = .false.
+
+  end subroutine init_tig
+
   ! Source: date/locales/src/tk.json
   subroutine init_tk()
     locale_tk%code = 'tk'
@@ -9583,6 +12344,100 @@ contains
 
   end subroutine init_tk
 
+  ! Source: date/locales/src/tn.json
+  subroutine init_tn()
+    locale_tn%code = 'tn'
+
+    locale_tn%months(1) = 'Ferikgong'
+    locale_tn%months(2) = 'Tlhakole'
+    locale_tn%months(3) = 'Mopitlo'
+    locale_tn%months(4) = 'Moranang'
+    locale_tn%months(5) = 'Motsheganong'
+    locale_tn%months(6) = 'Seetebosigo'
+    locale_tn%months(7) = 'Phukwi'
+    locale_tn%months(8) = 'Phatwe'
+    locale_tn%months(9) = 'Lwetse'
+    locale_tn%months(10) = 'Diphalane'
+    locale_tn%months(11) = 'Ngwanatsele'
+    locale_tn%months(12) = 'Sedimothole'
+
+    locale_tn%weekdays(1) = 'Tshipi'
+    locale_tn%weekdays(2) = 'Mosopulogo'
+    locale_tn%weekdays(3) = 'Labobedi'
+    locale_tn%weekdays(4) = 'Laboraro'
+    locale_tn%weekdays(5) = 'Labone'
+    locale_tn%weekdays(6) = 'Labotlhano'
+    locale_tn%weekdays(7) = 'Matlhatso'
+
+    locale_tn%day_format = '{n}'
+
+    locale_tn%num_exceptions = 0
+
+    locale_tn%date_pattern = '{day} {month}'
+    locale_tn%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_tn%today = 'gompieno'
+    locale_tn%tomorrow = 'kamoso'
+    locale_tn%yesterday = 'maabane'
+
+    locale_tn%day_after_tomorrow = 'morago ga kamoso'
+    locale_tn%day_before_yesterday = 'maabanyane'
+    locale_tn%this_weekday = '{weekday} e'
+    locale_tn%next_weekday = '{weekday} e e tlang'
+    locale_tn%last_weekday = '{weekday} e e fetileng'
+
+    locale_tn%has_months_in_date = .false.
+
+    locale_tn%has_short = .true.
+    locale_tn%short_override%has_months = .true.
+    locale_tn%short_override%months(1) = 'Fer'
+    locale_tn%short_override%months(2) = 'Tlh'
+    locale_tn%short_override%months(3) = 'Mop'
+    locale_tn%short_override%months(4) = 'Mor'
+    locale_tn%short_override%months(5) = 'Mot'
+    locale_tn%short_override%months(6) = 'See'
+    locale_tn%short_override%months(7) = 'Phk'
+    locale_tn%short_override%months(8) = 'Pha'
+    locale_tn%short_override%months(9) = 'Lwe'
+    locale_tn%short_override%months(10) = 'Dip'
+    locale_tn%short_override%months(11) = 'Ngw'
+    locale_tn%short_override%months(12) = 'Sed'
+    locale_tn%short_override%has_months_in_date = .false.
+    locale_tn%short_override%has_weekdays = .true.
+    locale_tn%short_override%weekdays(1) = 'Tsh'
+    locale_tn%short_override%weekdays(2) = 'Mos'
+    locale_tn%short_override%weekdays(3) = 'Bed'
+    locale_tn%short_override%weekdays(4) = 'Rar'
+    locale_tn%short_override%weekdays(5) = 'Bon'
+    locale_tn%short_override%weekdays(6) = 'Tlh'
+    locale_tn%short_override%weekdays(7) = 'Mat'
+    locale_tn%short_override%has_day_format = .true.
+    locale_tn%short_override%day_format = '{n}'
+    locale_tn%short_override%has_day_format_exceptions = .false.
+    locale_tn%short_override%has_date_pattern = .true.
+    locale_tn%short_override%date_pattern = '{day} {month}'
+    locale_tn%short_override%has_date_pattern_with_year = .true.
+    locale_tn%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_tn%short_override%has_today = .false.
+    locale_tn%short_override%has_tomorrow = .false.
+    locale_tn%short_override%has_yesterday = .false.
+
+    locale_tn%has_compact = .true.
+    locale_tn%compact_override%has_months = .false.
+    locale_tn%compact_override%has_months_in_date = .false.
+    locale_tn%compact_override%has_weekdays = .false.
+    locale_tn%compact_override%has_day_format = .false.
+    locale_tn%compact_override%has_day_format_exceptions = .false.
+    locale_tn%compact_override%has_date_pattern = .true.
+    locale_tn%compact_override%date_pattern = '{d}/{m}'
+    locale_tn%compact_override%has_date_pattern_with_year = .true.
+    locale_tn%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_tn%compact_override%has_today = .false.
+    locale_tn%compact_override%has_tomorrow = .false.
+    locale_tn%compact_override%has_yesterday = .false.
+
+  end subroutine init_tn
+
   ! Source: date/locales/src/tr.json
   subroutine init_tr()
     locale_tr%code = 'tr'
@@ -9676,6 +12531,100 @@ contains
     locale_tr%compact_override%has_yesterday = .false.
 
   end subroutine init_tr
+
+  ! Source: date/locales/src/ts.json
+  subroutine init_ts()
+    locale_ts%code = 'ts'
+
+    locale_ts%months(1) = 'Sunguti'
+    locale_ts%months(2) = 'Nyenyenyani'
+    locale_ts%months(3) = 'Nyenyankulu'
+    locale_ts%months(4) = 'Dzivamisoko'
+    locale_ts%months(5) = 'Mudyaxihi'
+    locale_ts%months(6) = 'Khotavuxika'
+    locale_ts%months(7) = 'Mawuwani'
+    locale_ts%months(8) = 'Mhawuri'
+    locale_ts%months(9) = 'Ndzhati'
+    locale_ts%months(10) = 'Nhlangula'
+    locale_ts%months(11) = 'Hukuri'
+    locale_ts%months(12) = 'N''wendzamhala'
+
+    locale_ts%weekdays(1) = 'Sonto'
+    locale_ts%weekdays(2) = 'Musumbhunuku'
+    locale_ts%weekdays(3) = 'Ravumbirhi'
+    locale_ts%weekdays(4) = 'Ravunharhu'
+    locale_ts%weekdays(5) = 'Ravumune'
+    locale_ts%weekdays(6) = 'Ravuntlhanu'
+    locale_ts%weekdays(7) = 'Mugqivela'
+
+    locale_ts%day_format = '{n}'
+
+    locale_ts%num_exceptions = 0
+
+    locale_ts%date_pattern = '{day} {month}'
+    locale_ts%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_ts%today = 'namuntlha'
+    locale_ts%tomorrow = 'mundzuku'
+    locale_ts%yesterday = 'tolo'
+
+    locale_ts%day_after_tomorrow = 'mundzuku wa vumbirhi'
+    locale_ts%day_before_yesterday = 'tolo ra vumbirhi'
+    locale_ts%this_weekday = '{weekday} leyi'
+    locale_ts%next_weekday = '{weekday} leyi taka'
+    locale_ts%last_weekday = '{weekday} leyi nga hundza'
+
+    locale_ts%has_months_in_date = .false.
+
+    locale_ts%has_short = .true.
+    locale_ts%short_override%has_months = .true.
+    locale_ts%short_override%months(1) = 'Sun'
+    locale_ts%short_override%months(2) = 'Nye'
+    locale_ts%short_override%months(3) = 'Nyk'
+    locale_ts%short_override%months(4) = 'Dzi'
+    locale_ts%short_override%months(5) = 'Mud'
+    locale_ts%short_override%months(6) = 'Kho'
+    locale_ts%short_override%months(7) = 'Maw'
+    locale_ts%short_override%months(8) = 'Mha'
+    locale_ts%short_override%months(9) = 'Ndz'
+    locale_ts%short_override%months(10) = 'Nhl'
+    locale_ts%short_override%months(11) = 'Huk'
+    locale_ts%short_override%months(12) = 'N''w'
+    locale_ts%short_override%has_months_in_date = .false.
+    locale_ts%short_override%has_weekdays = .true.
+    locale_ts%short_override%weekdays(1) = 'Son'
+    locale_ts%short_override%weekdays(2) = 'Mus'
+    locale_ts%short_override%weekdays(3) = 'Bir'
+    locale_ts%short_override%weekdays(4) = 'Har'
+    locale_ts%short_override%weekdays(5) = 'Mun'
+    locale_ts%short_override%weekdays(6) = 'Tlh'
+    locale_ts%short_override%weekdays(7) = 'Mug'
+    locale_ts%short_override%has_day_format = .true.
+    locale_ts%short_override%day_format = '{n}'
+    locale_ts%short_override%has_day_format_exceptions = .false.
+    locale_ts%short_override%has_date_pattern = .true.
+    locale_ts%short_override%date_pattern = '{day} {month}'
+    locale_ts%short_override%has_date_pattern_with_year = .true.
+    locale_ts%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_ts%short_override%has_today = .false.
+    locale_ts%short_override%has_tomorrow = .false.
+    locale_ts%short_override%has_yesterday = .false.
+
+    locale_ts%has_compact = .true.
+    locale_ts%compact_override%has_months = .false.
+    locale_ts%compact_override%has_months_in_date = .false.
+    locale_ts%compact_override%has_weekdays = .false.
+    locale_ts%compact_override%has_day_format = .false.
+    locale_ts%compact_override%has_day_format_exceptions = .false.
+    locale_ts%compact_override%has_date_pattern = .true.
+    locale_ts%compact_override%date_pattern = '{d}/{m}'
+    locale_ts%compact_override%has_date_pattern_with_year = .true.
+    locale_ts%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_ts%compact_override%has_today = .false.
+    locale_ts%compact_override%has_tomorrow = .false.
+    locale_ts%compact_override%has_yesterday = .false.
+
+  end subroutine init_ts
 
   ! Source: date/locales/src/tzm.json
   subroutine init_tzm()
@@ -9876,6 +12825,100 @@ contains
     locale_uk%compact_override%has_yesterday = .false.
 
   end subroutine init_uk
+
+  ! Source: date/locales/src/umb.json
+  subroutine init_umb()
+    locale_umb%code = 'umb'
+
+    locale_umb%months(1) = 'Janelu'
+    locale_umb%months(2) = 'Fevelelu'
+    locale_umb%months(3) = 'Malsu'
+    locale_umb%months(4) = 'Abili'
+    locale_umb%months(5) = 'Mayu'
+    locale_umb%months(6) = 'Junyu'
+    locale_umb%months(7) = 'Julyu'
+    locale_umb%months(8) = 'Agostu'
+    locale_umb%months(9) = 'Setembu'
+    locale_umb%months(10) = 'Otubu'
+    locale_umb%months(11) = 'Novembu'
+    locale_umb%months(12) = 'Desembu'
+
+    locale_umb%weekdays(1) = 'Lumingu'
+    locale_umb%weekdays(2) = 'Cimosi'
+    locale_umb%weekdays(3) = 'Civali'
+    locale_umb%weekdays(4) = 'Citathu'
+    locale_umb%weekdays(5) = 'Cinyali'
+    locale_umb%weekdays(6) = 'Citanu'
+    locale_umb%weekdays(7) = 'Cisabalu'
+
+    locale_umb%day_format = '{n}'
+
+    locale_umb%num_exceptions = 0
+
+    locale_umb%date_pattern = '{day} {month}'
+    locale_umb%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_umb%today = 'oloku'
+    locale_umb%tomorrow = 'ocisungu'
+    locale_umb%yesterday = 'ondjo'
+
+    locale_umb%day_after_tomorrow = 'ocisungu va pili'
+    locale_umb%day_before_yesterday = 'ondjo va pili'
+    locale_umb%this_weekday = '{weekday} yo'
+    locale_umb%next_weekday = '{weekday} ya kuvela'
+    locale_umb%last_weekday = '{weekday} ya pita'
+
+    locale_umb%has_months_in_date = .false.
+
+    locale_umb%has_short = .true.
+    locale_umb%short_override%has_months = .true.
+    locale_umb%short_override%months(1) = 'Jan'
+    locale_umb%short_override%months(2) = 'Fev'
+    locale_umb%short_override%months(3) = 'Mal'
+    locale_umb%short_override%months(4) = 'Abi'
+    locale_umb%short_override%months(5) = 'May'
+    locale_umb%short_override%months(6) = 'Jun'
+    locale_umb%short_override%months(7) = 'Jul'
+    locale_umb%short_override%months(8) = 'Ago'
+    locale_umb%short_override%months(9) = 'Set'
+    locale_umb%short_override%months(10) = 'Otu'
+    locale_umb%short_override%months(11) = 'Nov'
+    locale_umb%short_override%months(12) = 'Des'
+    locale_umb%short_override%has_months_in_date = .false.
+    locale_umb%short_override%has_weekdays = .true.
+    locale_umb%short_override%weekdays(1) = 'Lum'
+    locale_umb%short_override%weekdays(2) = 'Cim'
+    locale_umb%short_override%weekdays(3) = 'Civ'
+    locale_umb%short_override%weekdays(4) = 'Cit'
+    locale_umb%short_override%weekdays(5) = 'Cin'
+    locale_umb%short_override%weekdays(6) = 'Cit'
+    locale_umb%short_override%weekdays(7) = 'Cis'
+    locale_umb%short_override%has_day_format = .true.
+    locale_umb%short_override%day_format = '{n}'
+    locale_umb%short_override%has_day_format_exceptions = .false.
+    locale_umb%short_override%has_date_pattern = .true.
+    locale_umb%short_override%date_pattern = '{day} {month}'
+    locale_umb%short_override%has_date_pattern_with_year = .true.
+    locale_umb%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_umb%short_override%has_today = .false.
+    locale_umb%short_override%has_tomorrow = .false.
+    locale_umb%short_override%has_yesterday = .false.
+
+    locale_umb%has_compact = .true.
+    locale_umb%compact_override%has_months = .false.
+    locale_umb%compact_override%has_months_in_date = .false.
+    locale_umb%compact_override%has_weekdays = .false.
+    locale_umb%compact_override%has_day_format = .false.
+    locale_umb%compact_override%has_day_format_exceptions = .false.
+    locale_umb%compact_override%has_date_pattern = .true.
+    locale_umb%compact_override%date_pattern = '{d}/{m}'
+    locale_umb%compact_override%has_date_pattern_with_year = .true.
+    locale_umb%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_umb%compact_override%has_today = .false.
+    locale_umb%compact_override%has_tomorrow = .false.
+    locale_umb%compact_override%has_yesterday = .false.
+
+  end subroutine init_umb
 
   ! Source: date/locales/src/ur.json
   subroutine init_ur()
@@ -10159,6 +13202,194 @@ contains
 
   end subroutine init_vi
 
+  ! Source: date/locales/src/vmw.json
+  subroutine init_vmw()
+    locale_vmw%code = 'vmw'
+
+    locale_vmw%months(1) = 'Januário'
+    locale_vmw%months(2) = 'Fevereiro'
+    locale_vmw%months(3) = 'Março'
+    locale_vmw%months(4) = 'Abril'
+    locale_vmw%months(5) = 'Maio'
+    locale_vmw%months(6) = 'Junho'
+    locale_vmw%months(7) = 'Julho'
+    locale_vmw%months(8) = 'Agosto'
+    locale_vmw%months(9) = 'Setembro'
+    locale_vmw%months(10) = 'Outubro'
+    locale_vmw%months(11) = 'Novembro'
+    locale_vmw%months(12) = 'Dezembro'
+
+    locale_vmw%weekdays(1) = 'Jumaaphi'
+    locale_vmw%weekdays(2) = 'Jumaataatu'
+    locale_vmw%weekdays(3) = 'Jumaanne'
+    locale_vmw%weekdays(4) = 'Jumaatano'
+    locale_vmw%weekdays(5) = 'Alaahamisi'
+    locale_vmw%weekdays(6) = 'Ijumaa'
+    locale_vmw%weekdays(7) = 'Jumaamo'
+
+    locale_vmw%day_format = '{n}'
+
+    locale_vmw%num_exceptions = 0
+
+    locale_vmw%date_pattern = '{day} {month}'
+    locale_vmw%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_vmw%today = 'lelo'
+    locale_vmw%tomorrow = 'muttetthe'
+    locale_vmw%yesterday = 'oova'
+
+    locale_vmw%day_after_tomorrow = 'muttetthe opela'
+    locale_vmw%day_before_yesterday = 'oova opela'
+    locale_vmw%this_weekday = '{weekday} yano'
+    locale_vmw%next_weekday = '{weekday} ohima'
+    locale_vmw%last_weekday = '{weekday} opita'
+
+    locale_vmw%has_months_in_date = .false.
+
+    locale_vmw%has_short = .true.
+    locale_vmw%short_override%has_months = .true.
+    locale_vmw%short_override%months(1) = 'Jan'
+    locale_vmw%short_override%months(2) = 'Fev'
+    locale_vmw%short_override%months(3) = 'Mar'
+    locale_vmw%short_override%months(4) = 'Abr'
+    locale_vmw%short_override%months(5) = 'Mai'
+    locale_vmw%short_override%months(6) = 'Jun'
+    locale_vmw%short_override%months(7) = 'Jul'
+    locale_vmw%short_override%months(8) = 'Ago'
+    locale_vmw%short_override%months(9) = 'Set'
+    locale_vmw%short_override%months(10) = 'Out'
+    locale_vmw%short_override%months(11) = 'Nov'
+    locale_vmw%short_override%months(12) = 'Dez'
+    locale_vmw%short_override%has_months_in_date = .false.
+    locale_vmw%short_override%has_weekdays = .true.
+    locale_vmw%short_override%weekdays(1) = 'Jph'
+    locale_vmw%short_override%weekdays(2) = 'Jtt'
+    locale_vmw%short_override%weekdays(3) = 'Jan'
+    locale_vmw%short_override%weekdays(4) = 'Jtn'
+    locale_vmw%short_override%weekdays(5) = 'Alh'
+    locale_vmw%short_override%weekdays(6) = 'Iju'
+    locale_vmw%short_override%weekdays(7) = 'Jmo'
+    locale_vmw%short_override%has_day_format = .true.
+    locale_vmw%short_override%day_format = '{n}'
+    locale_vmw%short_override%has_day_format_exceptions = .false.
+    locale_vmw%short_override%has_date_pattern = .true.
+    locale_vmw%short_override%date_pattern = '{day} {month}'
+    locale_vmw%short_override%has_date_pattern_with_year = .true.
+    locale_vmw%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_vmw%short_override%has_today = .false.
+    locale_vmw%short_override%has_tomorrow = .false.
+    locale_vmw%short_override%has_yesterday = .false.
+
+    locale_vmw%has_compact = .true.
+    locale_vmw%compact_override%has_months = .false.
+    locale_vmw%compact_override%has_months_in_date = .false.
+    locale_vmw%compact_override%has_weekdays = .false.
+    locale_vmw%compact_override%has_day_format = .false.
+    locale_vmw%compact_override%has_day_format_exceptions = .false.
+    locale_vmw%compact_override%has_date_pattern = .true.
+    locale_vmw%compact_override%date_pattern = '{d}/{m}'
+    locale_vmw%compact_override%has_date_pattern_with_year = .true.
+    locale_vmw%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_vmw%compact_override%has_today = .false.
+    locale_vmw%compact_override%has_tomorrow = .false.
+    locale_vmw%compact_override%has_yesterday = .false.
+
+  end subroutine init_vmw
+
+  ! Source: date/locales/src/wo.json
+  subroutine init_wo()
+    locale_wo%code = 'wo'
+
+    locale_wo%months(1) = 'Samwiyee'
+    locale_wo%months(2) = 'Fewriyee'
+    locale_wo%months(3) = 'Maars'
+    locale_wo%months(4) = 'Awril'
+    locale_wo%months(5) = 'Mee'
+    locale_wo%months(6) = 'Suwe'
+    locale_wo%months(7) = 'Sullet'
+    locale_wo%months(8) = 'Ut'
+    locale_wo%months(9) = 'Septàmbar'
+    locale_wo%months(10) = 'Oktoobar'
+    locale_wo%months(11) = 'Nowàmbar'
+    locale_wo%months(12) = 'Desàmbar'
+
+    locale_wo%weekdays(1) = 'Dibéer'
+    locale_wo%weekdays(2) = 'Altine'
+    locale_wo%weekdays(3) = 'Talaata'
+    locale_wo%weekdays(4) = 'Àllarba'
+    locale_wo%weekdays(5) = 'Alxames'
+    locale_wo%weekdays(6) = 'Àjjuma'
+    locale_wo%weekdays(7) = 'Gaawu'
+
+    locale_wo%day_format = '{n}'
+
+    locale_wo%num_exceptions = 0
+
+    locale_wo%date_pattern = '{day} {month}'
+    locale_wo%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_wo%today = 'tey'
+    locale_wo%tomorrow = 'suba'
+    locale_wo%yesterday = 'démb'
+
+    locale_wo%day_after_tomorrow = 'suba-suba'
+    locale_wo%day_before_yesterday = 'démb-démb'
+    locale_wo%this_weekday = '{weekday} bi'
+    locale_wo%next_weekday = '{weekday} bi ñëw'
+    locale_wo%last_weekday = '{weekday} bi weex'
+
+    locale_wo%has_months_in_date = .false.
+
+    locale_wo%has_short = .true.
+    locale_wo%short_override%has_months = .true.
+    locale_wo%short_override%months(1) = 'Sam'
+    locale_wo%short_override%months(2) = 'Few'
+    locale_wo%short_override%months(3) = 'Maa'
+    locale_wo%short_override%months(4) = 'Awr'
+    locale_wo%short_override%months(5) = 'Mee'
+    locale_wo%short_override%months(6) = 'Suw'
+    locale_wo%short_override%months(7) = 'Sul'
+    locale_wo%short_override%months(8) = 'Ut'
+    locale_wo%short_override%months(9) = 'Sep'
+    locale_wo%short_override%months(10) = 'Okt'
+    locale_wo%short_override%months(11) = 'Now'
+    locale_wo%short_override%months(12) = 'Des'
+    locale_wo%short_override%has_months_in_date = .false.
+    locale_wo%short_override%has_weekdays = .true.
+    locale_wo%short_override%weekdays(1) = 'Dib'
+    locale_wo%short_override%weekdays(2) = 'Alt'
+    locale_wo%short_override%weekdays(3) = 'Tal'
+    locale_wo%short_override%weekdays(4) = 'Àll'
+    locale_wo%short_override%weekdays(5) = 'Alx'
+    locale_wo%short_override%weekdays(6) = 'Àjj'
+    locale_wo%short_override%weekdays(7) = 'Gaa'
+    locale_wo%short_override%has_day_format = .true.
+    locale_wo%short_override%day_format = '{n}'
+    locale_wo%short_override%has_day_format_exceptions = .false.
+    locale_wo%short_override%has_date_pattern = .true.
+    locale_wo%short_override%date_pattern = '{day} {month}'
+    locale_wo%short_override%has_date_pattern_with_year = .true.
+    locale_wo%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_wo%short_override%has_today = .false.
+    locale_wo%short_override%has_tomorrow = .false.
+    locale_wo%short_override%has_yesterday = .false.
+
+    locale_wo%has_compact = .true.
+    locale_wo%compact_override%has_months = .false.
+    locale_wo%compact_override%has_months_in_date = .false.
+    locale_wo%compact_override%has_weekdays = .false.
+    locale_wo%compact_override%has_day_format = .false.
+    locale_wo%compact_override%has_day_format_exceptions = .false.
+    locale_wo%compact_override%has_date_pattern = .true.
+    locale_wo%compact_override%date_pattern = '{d}/{m}'
+    locale_wo%compact_override%has_date_pattern_with_year = .true.
+    locale_wo%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_wo%compact_override%has_today = .false.
+    locale_wo%compact_override%has_tomorrow = .false.
+    locale_wo%compact_override%has_yesterday = .false.
+
+  end subroutine init_wo
+
   ! Source: date/locales/src/xh.json
   subroutine init_xh()
     locale_xh%code = 'xh'
@@ -10441,6 +13672,100 @@ contains
 
   end subroutine init_yue
 
+  ! Source: date/locales/src/zdj.json
+  subroutine init_zdj()
+    locale_zdj%code = 'zdj'
+
+    locale_zdj%months(1) = 'Januari'
+    locale_zdj%months(2) = 'Februari'
+    locale_zdj%months(3) = 'Machi'
+    locale_zdj%months(4) = 'Aprili'
+    locale_zdj%months(5) = 'Mei'
+    locale_zdj%months(6) = 'Juni'
+    locale_zdj%months(7) = 'Julai'
+    locale_zdj%months(8) = 'Agosti'
+    locale_zdj%months(9) = 'Septemba'
+    locale_zdj%months(10) = 'Oktoba'
+    locale_zdj%months(11) = 'Novemba'
+    locale_zdj%months(12) = 'Desemba'
+
+    locale_zdj%weekdays(1) = 'Jumapili'
+    locale_zdj%weekdays(2) = 'Jumatatu'
+    locale_zdj%weekdays(3) = 'Jumanne'
+    locale_zdj%weekdays(4) = 'Jumatano'
+    locale_zdj%weekdays(5) = 'Alhamisi'
+    locale_zdj%weekdays(6) = 'Ijumaa'
+    locale_zdj%weekdays(7) = 'Jumamosi'
+
+    locale_zdj%day_format = '{n}'
+
+    locale_zdj%num_exceptions = 0
+
+    locale_zdj%date_pattern = '{day} {month}'
+    locale_zdj%date_pattern_with_year = '{day} {month} {year}'
+
+    locale_zdj%today = 'leo'
+    locale_zdj%tomorrow = 'mesha'
+    locale_zdj%yesterday = 'jana'
+
+    locale_zdj%day_after_tomorrow = 'kesho kutwa'
+    locale_zdj%day_before_yesterday = 'juzi'
+    locale_zdj%this_weekday = '{weekday} iyi'
+    locale_zdj%next_weekday = '{weekday} ya udjayo'
+    locale_zdj%last_weekday = '{weekday} ya hupitsa'
+
+    locale_zdj%has_months_in_date = .false.
+
+    locale_zdj%has_short = .true.
+    locale_zdj%short_override%has_months = .true.
+    locale_zdj%short_override%months(1) = 'Jan'
+    locale_zdj%short_override%months(2) = 'Feb'
+    locale_zdj%short_override%months(3) = 'Mac'
+    locale_zdj%short_override%months(4) = 'Apr'
+    locale_zdj%short_override%months(5) = 'Mei'
+    locale_zdj%short_override%months(6) = 'Jun'
+    locale_zdj%short_override%months(7) = 'Jul'
+    locale_zdj%short_override%months(8) = 'Ago'
+    locale_zdj%short_override%months(9) = 'Sep'
+    locale_zdj%short_override%months(10) = 'Okt'
+    locale_zdj%short_override%months(11) = 'Nov'
+    locale_zdj%short_override%months(12) = 'Des'
+    locale_zdj%short_override%has_months_in_date = .false.
+    locale_zdj%short_override%has_weekdays = .true.
+    locale_zdj%short_override%weekdays(1) = 'Pil'
+    locale_zdj%short_override%weekdays(2) = 'Tat'
+    locale_zdj%short_override%weekdays(3) = 'Nne'
+    locale_zdj%short_override%weekdays(4) = 'Tan'
+    locale_zdj%short_override%weekdays(5) = 'Alh'
+    locale_zdj%short_override%weekdays(6) = 'Iju'
+    locale_zdj%short_override%weekdays(7) = 'Mos'
+    locale_zdj%short_override%has_day_format = .true.
+    locale_zdj%short_override%day_format = '{n}'
+    locale_zdj%short_override%has_day_format_exceptions = .false.
+    locale_zdj%short_override%has_date_pattern = .true.
+    locale_zdj%short_override%date_pattern = '{day} {month}'
+    locale_zdj%short_override%has_date_pattern_with_year = .true.
+    locale_zdj%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_zdj%short_override%has_today = .false.
+    locale_zdj%short_override%has_tomorrow = .false.
+    locale_zdj%short_override%has_yesterday = .false.
+
+    locale_zdj%has_compact = .true.
+    locale_zdj%compact_override%has_months = .false.
+    locale_zdj%compact_override%has_months_in_date = .false.
+    locale_zdj%compact_override%has_weekdays = .false.
+    locale_zdj%compact_override%has_day_format = .false.
+    locale_zdj%compact_override%has_day_format_exceptions = .false.
+    locale_zdj%compact_override%has_date_pattern = .true.
+    locale_zdj%compact_override%date_pattern = '{d}/{m}'
+    locale_zdj%compact_override%has_date_pattern_with_year = .true.
+    locale_zdj%compact_override%date_pattern_with_year = '{d}/{m}/{yy}'
+    locale_zdj%compact_override%has_today = .false.
+    locale_zdj%compact_override%has_tomorrow = .false.
+    locale_zdj%compact_override%has_yesterday = .false.
+
+  end subroutine init_zdj
+
   ! Source: date/locales/src/zh.json
   subroutine init_zh()
     locale_zh%code = 'zh'
@@ -10636,8 +13961,11 @@ contains
     call init_am()
     call init_ar()
     call init_az()
+    call init_bci()
     call init_be()
+    call init_bem()
     call init_bg()
+    call init_bm()
     call init_bn()
     call init_br()
     call init_bs()
@@ -10647,15 +13975,21 @@ contains
     call init_cy()
     call init_da()
     call init_de()
+    call init_din()
+    call init_dje()
+    call init_dyu()
+    call init_ee()
     call init_el()
     call init_en()
     call init_es()
     call init_et()
     call init_eu()
     call init_fa()
+    call init_fan()
     call init_ff()
     call init_fi()
     call init_fil()
+    call init_fon()
     call init_fr()
     call init_ga()
     call init_gd()
@@ -10677,10 +14011,13 @@ contains
     call init_ja()
     call init_jv()
     call init_ka()
+    call init_kbp()
     call init_kk()
     call init_km()
     call init_kn()
     call init_ko()
+    call init_kpe()
+    call init_ktu()
     call init_ku()
     call init_kw()
     call init_ky()
@@ -10689,56 +14026,79 @@ contains
     call init_lo()
     call init_lt()
     call init_lv()
+    call init_men()
+    call init_mfe()
     call init_mg()
     call init_mi()
     call init_mk()
     call init_ml()
     call init_mn()
+    call init_mnk()
+    call init_mos()
     call init_mr()
     call init_ms()
     call init_mt()
     call init_my()
     call init_nb()
+    call init_nd()
     call init_ne()
+    call init_ng()
     call init_nl()
+    call init_nso()
+    call init_nus()
     call init_ny()
     call init_om()
     call init_or()
     call init_pa()
     call init_pl()
+    call init_pov()
     call init_ps()
     call init_pt()
     call init_qu()
     call init_ro()
     call init_ru()
     call init_rw()
+    call init_sar()
     call init_sd()
+    call init_sg()
     call init_shi()
     call init_si()
     call init_sk()
     call init_sl()
     call init_sn()
+    call init_snk()
     call init_so()
     call init_sq()
     call init_sr()
+    call init_ss()
+    call init_st()
     call init_su()
+    call init_suk()
     call init_sv()
     call init_sw()
     call init_ta()
     call init_te()
+    call init_tem()
     call init_tg()
     call init_th()
     call init_ti()
+    call init_tig()
     call init_tk()
+    call init_tn()
     call init_tr()
+    call init_ts()
     call init_tzm()
     call init_uk()
+    call init_umb()
     call init_ur()
     call init_uz()
     call init_vi()
+    call init_vmw()
+    call init_wo()
     call init_xh()
     call init_yo()
     call init_yue()
+    call init_zdj()
     call init_zh()
     call init_zu()
     locales_initialized = .true.
@@ -10768,12 +14128,24 @@ contains
       loc => locale_az
       return
     end if
+    if (code == 'bci') then
+      loc => locale_bci
+      return
+    end if
     if (code == 'be') then
       loc => locale_be
       return
     end if
+    if (code == 'bem') then
+      loc => locale_bem
+      return
+    end if
     if (code == 'bg') then
       loc => locale_bg
+      return
+    end if
+    if (code == 'bm') then
+      loc => locale_bm
       return
     end if
     if (code == 'bn') then
@@ -10812,6 +14184,22 @@ contains
       loc => locale_de
       return
     end if
+    if (code == 'din') then
+      loc => locale_din
+      return
+    end if
+    if (code == 'dje') then
+      loc => locale_dje
+      return
+    end if
+    if (code == 'dyu') then
+      loc => locale_dyu
+      return
+    end if
+    if (code == 'ee') then
+      loc => locale_ee
+      return
+    end if
     if (code == 'el') then
       loc => locale_el
       return
@@ -10836,6 +14224,10 @@ contains
       loc => locale_fa
       return
     end if
+    if (code == 'fan') then
+      loc => locale_fan
+      return
+    end if
     if (code == 'ff') then
       loc => locale_ff
       return
@@ -10846,6 +14238,10 @@ contains
     end if
     if (code == 'fil') then
       loc => locale_fil
+      return
+    end if
+    if (code == 'fon') then
+      loc => locale_fon
       return
     end if
     if (code == 'fr') then
@@ -10932,6 +14328,10 @@ contains
       loc => locale_ka
       return
     end if
+    if (code == 'kbp') then
+      loc => locale_kbp
+      return
+    end if
     if (code == 'kk') then
       loc => locale_kk
       return
@@ -10946,6 +14346,14 @@ contains
     end if
     if (code == 'ko') then
       loc => locale_ko
+      return
+    end if
+    if (code == 'kpe') then
+      loc => locale_kpe
+      return
+    end if
+    if (code == 'ktu') then
+      loc => locale_ktu
       return
     end if
     if (code == 'ku') then
@@ -10980,6 +14388,14 @@ contains
       loc => locale_lv
       return
     end if
+    if (code == 'men') then
+      loc => locale_men
+      return
+    end if
+    if (code == 'mfe') then
+      loc => locale_mfe
+      return
+    end if
     if (code == 'mg') then
       loc => locale_mg
       return
@@ -10998,6 +14414,14 @@ contains
     end if
     if (code == 'mn') then
       loc => locale_mn
+      return
+    end if
+    if (code == 'mnk') then
+      loc => locale_mnk
+      return
+    end if
+    if (code == 'mos') then
+      loc => locale_mos
       return
     end if
     if (code == 'mr') then
@@ -11020,12 +14444,28 @@ contains
       loc => locale_nb
       return
     end if
+    if (code == 'nd') then
+      loc => locale_nd
+      return
+    end if
     if (code == 'ne') then
       loc => locale_ne
       return
     end if
+    if (code == 'ng') then
+      loc => locale_ng
+      return
+    end if
     if (code == 'nl') then
       loc => locale_nl
+      return
+    end if
+    if (code == 'nso') then
+      loc => locale_nso
+      return
+    end if
+    if (code == 'nus') then
+      loc => locale_nus
       return
     end if
     if (code == 'ny') then
@@ -11046,6 +14486,10 @@ contains
     end if
     if (code == 'pl') then
       loc => locale_pl
+      return
+    end if
+    if (code == 'pov') then
+      loc => locale_pov
       return
     end if
     if (code == 'ps') then
@@ -11072,8 +14516,16 @@ contains
       loc => locale_rw
       return
     end if
+    if (code == 'sar') then
+      loc => locale_sar
+      return
+    end if
     if (code == 'sd') then
       loc => locale_sd
+      return
+    end if
+    if (code == 'sg') then
+      loc => locale_sg
       return
     end if
     if (code == 'shi') then
@@ -11096,6 +14548,10 @@ contains
       loc => locale_sn
       return
     end if
+    if (code == 'snk') then
+      loc => locale_snk
+      return
+    end if
     if (code == 'so') then
       loc => locale_so
       return
@@ -11108,8 +14564,20 @@ contains
       loc => locale_sr
       return
     end if
+    if (code == 'ss') then
+      loc => locale_ss
+      return
+    end if
+    if (code == 'st') then
+      loc => locale_st
+      return
+    end if
     if (code == 'su') then
       loc => locale_su
+      return
+    end if
+    if (code == 'suk') then
+      loc => locale_suk
       return
     end if
     if (code == 'sv') then
@@ -11128,6 +14596,10 @@ contains
       loc => locale_te
       return
     end if
+    if (code == 'tem') then
+      loc => locale_tem
+      return
+    end if
     if (code == 'tg') then
       loc => locale_tg
       return
@@ -11140,12 +14612,24 @@ contains
       loc => locale_ti
       return
     end if
+    if (code == 'tig') then
+      loc => locale_tig
+      return
+    end if
     if (code == 'tk') then
       loc => locale_tk
       return
     end if
+    if (code == 'tn') then
+      loc => locale_tn
+      return
+    end if
     if (code == 'tr') then
       loc => locale_tr
+      return
+    end if
+    if (code == 'ts') then
+      loc => locale_ts
       return
     end if
     if (code == 'tzm') then
@@ -11154,6 +14638,10 @@ contains
     end if
     if (code == 'uk') then
       loc => locale_uk
+      return
+    end if
+    if (code == 'umb') then
+      loc => locale_umb
       return
     end if
     if (code == 'ur') then
@@ -11168,6 +14656,14 @@ contains
       loc => locale_vi
       return
     end if
+    if (code == 'vmw') then
+      loc => locale_vmw
+      return
+    end if
+    if (code == 'wo') then
+      loc => locale_wo
+      return
+    end if
     if (code == 'xh') then
       loc => locale_xh
       return
@@ -11178,6 +14674,10 @@ contains
     end if
     if (code == 'yue') then
       loc => locale_yue
+      return
+    end if
+    if (code == 'zdj') then
+      loc => locale_zdj
       return
     end if
     if (code == 'zh') then

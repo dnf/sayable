@@ -1,0 +1,108 @@
+{
+  "code": "ng",
+  "name": "Oshiwambo",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "osekonde {n}",
+      "other": "oosekonde {n}"
+    },
+    "minute": {
+      "one": "ominute {n}",
+      "other": "oominute {n}"
+    },
+    "hour": {
+      "one": "owoola {n}",
+      "other": "iiwoola {n}"
+    },
+    "day": {
+      "one": "esiku {n}",
+      "other": "omasiku {n}"
+    },
+    "week": {
+      "one": "oshiwike {n}",
+      "other": "iiwike {n}"
+    },
+    "month": {
+      "one": "omuedhi {n}",
+      "other": "omiedhi {n}"
+    },
+    "year": {
+      "one": "omvula {n}",
+      "other": "omivula {n}"
+    }
+  },
+  "half": "{0} netata",
+  "delimiter": ", ",
+  "justNow": "ngashingeyi",
+  "ago": "{0} ya pita",
+  "inFuture": "mo {0}",
+  "short": {
+    "units": {
+      "second": "oosekonde {n}",
+      "minute": "oominute {n}",
+      "hour": {
+        "one": "owoola {n}",
+        "other": "iiwoola {n}"
+      },
+      "day": "omasiku {n}",
+      "week": {
+        "one": "oshiwike {n}",
+        "other": "iiwike {n}"
+      },
+      "month": {
+        "one": "omuedhi {n}",
+        "other": "omiedhi {n}"
+      },
+      "year": {
+        "one": "omvula {n}",
+        "other": "omivula {n}"
+      }
+    },
+    "ago": "{0} ya pita",
+    "inFuture": "mo {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "oosek {n}",
+      "minute": "oomin {n}",
+      "hour": {
+        "one": "owool {n}",
+        "other": "iiwool {n}"
+      },
+      "day": "omasik {n}",
+      "week": {
+        "one": "oshiw {n}",
+        "other": "iiw {n}"
+      },
+      "month": {
+        "one": "omued {n}",
+        "other": "omied {n}"
+      },
+      "year": {
+        "one": "omv {n}",
+        "other": "omiv {n}"
+      }
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} pita",
+    "inFuture": "mo {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

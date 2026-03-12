@@ -299,6 +299,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/bci.json
+    // ── Baoulé ──────────────────────────────────────────────────────
+
+    public static function BCI(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'bci',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sɛgɔn {n}',
+                minute: 'miniti {n}',
+                hour: 'dɔ {n}',
+                day: 'cɛn {n}',
+                week: 'lemɔcuɛ {n}',
+                month: 'anglɛ {n}',
+                year: 'afuɛ {n}',
+            ),
+            half: '{0} nin sin',
+            delimiter: ', ',
+            justNow: 'siɛn yɛ',
+            ago: '{0} sín',
+            inFuture: 'ɔ {0}',
+            short: new CompactnessOverride(
+                second: 'sɛg. {n}',
+                minute: 'min. {n}',
+                hour: 'dɔ {n}',
+                day: 'cɛn {n}',
+                week: 'lem. {n}',
+                month: 'ang. {n}',
+                year: 'af. {n}',
+                ago: '{0} sín',
+                inFuture: 'ɔ {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} sín',
+                inFuture: 'ɔ {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/be.json
     // ── Belarusian ──────────────────────────────────────────────────
 
@@ -364,6 +415,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/bem.json
+    // ── Bemba ───────────────────────────────────────────────────────
+
+    public static function BEM(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'bem',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'isekondi {n}', 'other' => 'amasekondi {n}'],
+                minute: ['one' => 'iminiti {n}', 'other' => 'amaminiti {n}'],
+                hour: ['one' => 'insa {n}', 'other' => 'amanso {n}'],
+                day: ['one' => 'ubushiku {n}', 'other' => 'inshiku {n}'],
+                week: ['one' => 'umulungu {n}', 'other' => 'imilungu {n}'],
+                month: ['one' => 'umweshi {n}', 'other' => 'imyeshi {n}'],
+                year: ['one' => 'umwaka {n}', 'other' => 'imyaka {n}'],
+            ),
+            half: '{0} na hafu',
+            delimiter: ', ',
+            justNow: 'pali ino nshita',
+            ago: '{0} iyapita',
+            inFuture: 'mu {0}',
+            short: new CompactnessOverride(
+                second: 'sek. {n}',
+                minute: 'min. {n}',
+                hour: 'insa {n}',
+                day: ['one' => 'ubushiku {n}', 'other' => 'inshiku {n}'],
+                week: ['one' => 'umulungu {n}', 'other' => 'imilungu {n}'],
+                month: ['one' => 'umweshi {n}', 'other' => 'imyeshi {n}'],
+                year: ['one' => 'umwaka {n}', 'other' => 'imyaka {n}'],
+                ago: '{0} iyapita',
+                inFuture: 'mu {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} iyapita',
+                inFuture: 'mu {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/bg.json
     // ── Bulgarian ───────────────────────────────────────────────────
 
@@ -411,6 +513,57 @@ final class Locales
                 delimiter: '',
                 ago: 'преди {0}',
                 inFuture: 'след {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/bm.json
+    // ── Bambara ─────────────────────────────────────────────────────
+
+    public static function BM(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'bm',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sekondi {n}',
+                minute: 'miniti {n}',
+                hour: 'lɛrɛ {n}',
+                day: 'don {n}',
+                week: 'dɔgɔkun {n}',
+                month: 'kalo {n}',
+                year: 'san {n}',
+            ),
+            half: '{0} ni tilancɛ',
+            delimiter: ', ',
+            justNow: 'sisan',
+            ago: '{0} bɔlen',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: 'sek. {n}',
+                minute: 'min. {n}',
+                hour: 'lɛr. {n}',
+                day: 'don {n}',
+                week: 'dɔgɔk. {n}',
+                month: 'kalo {n}',
+                year: 'san {n}',
+                ago: '{0} bɔlen',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: 'sek {n}',
+                minute: 'min {n}',
+                hour: 'lɛr {n}',
+                day: 'don {n}',
+                week: 'dɔgɔk {n}',
+                month: 'kalo {n}',
+                year: 'san {n}',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} bɔlen',
+                inFuture: 'ka {0}',
             ),
         );
     }
@@ -938,6 +1091,210 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/din.json
+    // ── Dinka ───────────────────────────────────────────────────────
+
+    public static function DIN(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'din',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'thiɛ̈kɛn {n}', 'other' => 'thiɛ̈kɛn {n}'],
+                minute: ['one' => 'minitö {n}', 'other' => 'minitö {n}'],
+                hour: ['one' => 'thä {n}', 'other' => 'thä {n}'],
+                day: ['one' => 'akɔl {n}', 'other' => 'akɔl {n}'],
+                week: ['one' => 'bɛ̈t {n}', 'other' => 'bɛ̈t {n}'],
+                month: ['one' => 'pɛi {n}', 'other' => 'pɛi {n}'],
+                year: ['one' => 'ruɔ̈n {n}', 'other' => 'ruɔ̈ɔ̈n {n}'],
+            ),
+            half: '{0} ku abɛ̈c',
+            delimiter: ', ',
+            justNow: 'ëmën',
+            ago: '{0} cï wëëŋ',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: 'thiɛ̈kɛn {n}',
+                minute: 'minitö {n}',
+                hour: 'thä {n}',
+                day: 'akɔl {n}',
+                week: 'bɛ̈t {n}',
+                month: 'pɛi {n}',
+                year: ['one' => 'ruɔ̈n {n}', 'other' => 'ruɔ̈ɔ̈n {n}'],
+                ago: '{0} cï wëëŋ',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} cï wëëŋ',
+                inFuture: 'ka {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/dje.json
+    // ── Zarma ───────────────────────────────────────────────────────
+
+    public static function DJE(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'dje',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sɛkondi {n}',
+                minute: 'miniti {n}',
+                hour: 'guuru {n}',
+                day: 'zaari {n}',
+                week: 'hebu {n}',
+                month: 'handu {n}',
+                year: 'jiiri {n}',
+            ),
+            half: '{0} d\'iddeka',
+            delimiter: ', ',
+            justNow: 'sohõ',
+            ago: '{0} ka ban',
+            inFuture: 'da {0}',
+            short: new CompactnessOverride(
+                second: 'sɛk. {n}',
+                minute: 'min. {n}',
+                hour: 'guu. {n}',
+                day: 'zaa. {n}',
+                week: 'heb. {n}',
+                month: 'han. {n}',
+                year: 'jii. {n}',
+                ago: '{0} ka ban',
+                inFuture: 'da {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} ban',
+                inFuture: 'da {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/dyu.json
+    // ── Dyula ───────────────────────────────────────────────────────
+
+    public static function DYU(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'dyu',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sɛkondi {n}',
+                minute: 'miniti {n}',
+                hour: 'lɛrɛ {n}',
+                day: 'don {n}',
+                week: 'dɔgɔkun {n}',
+                month: 'kalo {n}',
+                year: 'san {n}',
+            ),
+            half: '{0} ni tilancɛ',
+            delimiter: ', ',
+            justNow: 'sisan',
+            ago: '{0} tɛmɛnen',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: 'sɛk. {n}',
+                minute: 'min. {n}',
+                hour: 'lɛr. {n}',
+                day: 'don {n}',
+                week: 'dɔgɔk. {n}',
+                month: 'kalo {n}',
+                year: 'san {n}',
+                ago: '{0} tɛmɛnen',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} tɛmɛnen',
+                inFuture: 'ka {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/ee.json
+    // ── Ewe ─────────────────────────────────────────────────────────
+
+    public static function EE(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'ee',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'sekend {n}', 'other' => 'sekendwo {n}'],
+                minute: ['one' => 'aɖabaƒoƒo {n}', 'other' => 'aɖabaƒoƒowo {n}'],
+                hour: ['one' => 'gaƒoƒo {n}', 'other' => 'gaƒoƒowo {n}'],
+                day: ['one' => 'ŋkeke {n}', 'other' => 'ŋkekewo {n}'],
+                week: ['one' => 'kɔsiɖa {n}', 'other' => 'kɔsiɖawo {n}'],
+                month: ['one' => 'ɣleti {n}', 'other' => 'ɣletiwo {n}'],
+                year: ['one' => 'ƒe {n}', 'other' => 'ƒewo {n}'],
+            ),
+            half: '{0} kple afã',
+            delimiter: ', ',
+            justNow: 'fifia',
+            ago: 'ɖe {0} me',
+            inFuture: 'le {0} me',
+            short: new CompactnessOverride(
+                second: 'sek. {n}',
+                minute: 'aɖaba. {n}',
+                hour: 'gaƒ. {n}',
+                day: 'ŋkekewo {n}',
+                week: ['one' => 'kɔsiɖa {n}', 'other' => 'kɔsiɖawo {n}'],
+                month: ['one' => 'ɣleti {n}', 'other' => 'ɣletiwo {n}'],
+                year: ['one' => 'ƒe {n}', 'other' => 'ƒewo {n}'],
+                ago: 'ɖe {0} me',
+                inFuture: 'le {0} me',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: 'ɖe {0} me',
+                inFuture: 'le {0} me',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/el.json
     // ── Greek ───────────────────────────────────────────────────────
 
@@ -1242,6 +1599,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/fan.json
+    // ── Fang ────────────────────────────────────────────────────────
+
+    public static function FAN(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'fan',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'sɛgon {n}', 'other' => 'bisɛgon {n}'],
+                minute: ['one' => 'minit {n}', 'other' => 'biminit {n}'],
+                hour: ['one' => 'awola {n}', 'other' => 'biawola {n}'],
+                day: ['one' => 'mos {n}', 'other' => 'bimos {n}'],
+                week: ['one' => 'sone {n}', 'other' => 'bisone {n}'],
+                month: ['one' => 'ngon {n}', 'other' => 'mingon {n}'],
+                year: ['one' => 'mbu {n}', 'other' => 'mimbu {n}'],
+            ),
+            half: '{0} e ndamba',
+            delimiter: ', ',
+            justNow: 'fii',
+            ago: '{0} a ja',
+            inFuture: 'a {0}',
+            short: new CompactnessOverride(
+                second: 'sɛg. {n}',
+                minute: 'min. {n}',
+                hour: 'aw. {n}',
+                day: ['one' => 'mos {n}', 'other' => 'bimos {n}'],
+                week: ['one' => 'sone {n}', 'other' => 'bisone {n}'],
+                month: ['one' => 'ngon {n}', 'other' => 'mingon {n}'],
+                year: ['one' => 'mbu {n}', 'other' => 'mimbu {n}'],
+                ago: '{0} a ja',
+                inFuture: 'a {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} a ja',
+                inFuture: 'a {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/ff.json
     // ── Fulah ───────────────────────────────────────────────────────
 
@@ -1391,6 +1799,57 @@ final class Locales
                 delimiter: '',
                 ago: '{0} na ang nakalipas',
                 inFuture: 'sa loob ng {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/fon.json
+    // ── Fon ─────────────────────────────────────────────────────────
+
+    public static function FON(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'fon',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'segɔ́ndu {n}',
+                minute: 'miniti {n}',
+                hour: 'ganxixo {n}',
+                day: 'azǎn {n}',
+                week: 'aklunɔ̌zán {n}',
+                month: 'sun {n}',
+                year: 'xwè {n}',
+            ),
+            half: '{0} kpo vlavo kpo',
+            delimiter: ', ',
+            justNow: 'dìn dìn',
+            ago: '{0} ɖo',
+            inFuture: 'ɖo {0} mɛ',
+            short: new CompactnessOverride(
+                second: 'seg. {n}',
+                minute: 'min. {n}',
+                hour: 'gan. {n}',
+                day: 'azǎn {n}',
+                week: 'aklunɔ̌zán {n}',
+                month: 'sun {n}',
+                year: 'xwè {n}',
+                ago: '{0} ɖo',
+                inFuture: 'ɖo {0} mɛ',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} ɖo',
+                inFuture: 'ɖo {0} mɛ',
             ),
         );
     }
@@ -2552,6 +3011,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/kbp.json
+    // ── Kabiye ──────────────────────────────────────────────────────
+
+    public static function KBP(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'kbp',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sɛɡɔŋ {n}',
+                minute: 'miniti {n}',
+                hour: 'ñɩɣyʊʊ {n}',
+                day: 'kɩyakʊ {n}',
+                week: 'kpɩtaʊ {n}',
+                month: 'fenaɣ {n}',
+                year: 'pɩnzɩ {n}',
+            ),
+            half: '{0} nɛ hɔɔlʊʊ',
+            delimiter: ', ',
+            justNow: 'lɛɛlɛɛ',
+            ago: '{0} yɔ',
+            inFuture: 'pɩ {0}',
+            short: new CompactnessOverride(
+                second: 'sɛɡ. {n}',
+                minute: 'min. {n}',
+                hour: 'ñɩɣ. {n}',
+                day: 'kɩyakʊ {n}',
+                week: 'kpɩtaʊ {n}',
+                month: 'fenaɣ {n}',
+                year: 'pɩnzɩ {n}',
+                ago: '{0} yɔ',
+                inFuture: 'pɩ {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} yɔ',
+                inFuture: 'pɩ {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/kk.json
     // ── Kazakh ──────────────────────────────────────────────────────
 
@@ -2751,6 +3261,108 @@ final class Locales
                 delimiter: '',
                 ago: '{0} 전',
                 inFuture: '{0} 후',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/kpe.json
+    // ── Kpelle ──────────────────────────────────────────────────────
+
+    public static function KPE(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'kpe',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sɛkɔŋ {n}',
+                minute: 'miniti {n}',
+                hour: 'awa {n}',
+                day: 'ɓɛlɛɛ {n}',
+                week: 'wikii {n}',
+                month: 'ŋuŋ {n}',
+                year: 'kɛ̃ɛ̃ {n}',
+            ),
+            half: '{0} da kɔlɛ',
+            delimiter: ', ',
+            justNow: 'ɓaai',
+            ago: '{0} kɛ pɔlɔ',
+            inFuture: 'ya {0}',
+            short: new CompactnessOverride(
+                second: 'sɛk. {n}',
+                minute: 'min. {n}',
+                hour: 'awa {n}',
+                day: 'ɓɛl. {n}',
+                week: 'wik. {n}',
+                month: 'ŋuŋ {n}',
+                year: 'kɛ̃ɛ̃ {n}',
+                ago: '{0} kɛ pɔlɔ',
+                inFuture: 'ya {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} pɔlɔ',
+                inFuture: 'ya {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/ktu.json
+    // ── Kituba ──────────────────────────────────────────────────────
+
+    public static function KTU(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'ktu',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'sekonde {n}', 'other' => 'masekonde {n}'],
+                minute: ['one' => 'miniti {n}', 'other' => 'maminiti {n}'],
+                hour: ['one' => 'ngonga {n}', 'other' => 'mingonga {n}'],
+                day: ['one' => 'lumbu {n}', 'other' => 'malumbu {n}'],
+                week: ['one' => 'poso {n}', 'other' => 'maposo {n}'],
+                month: ['one' => 'ngonda {n}', 'other' => 'mingonda {n}'],
+                year: ['one' => 'mvula {n}', 'other' => 'mimvula {n}'],
+            ),
+            half: '{0} na ndambu',
+            delimiter: ', ',
+            justNow: 'sik\'oyo',
+            ago: '{0} ya vioka',
+            inFuture: 'na {0}',
+            short: new CompactnessOverride(
+                second: 'masekonde {n}',
+                minute: 'maminiti {n}',
+                hour: ['one' => 'ngonga {n}', 'other' => 'mingonga {n}'],
+                day: 'malumbu {n}',
+                week: ['one' => 'poso {n}', 'other' => 'maposo {n}'],
+                month: ['one' => 'ngonda {n}', 'other' => 'mingonda {n}'],
+                year: ['one' => 'mvula {n}', 'other' => 'mimvula {n}'],
+                ago: '{0} ya vioka',
+                inFuture: 'na {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: 'masek {n}',
+                minute: 'mamin {n}',
+                hour: ['one' => 'ngon {n}', 'other' => 'mingon {n}'],
+                day: 'malum {n}',
+                week: ['one' => 'poso {n}', 'other' => 'maposo {n}'],
+                month: ['one' => 'ngon {n}', 'other' => 'mingon {n}'],
+                year: ['one' => 'mvula {n}', 'other' => 'mimv {n}'],
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} vioka',
+                inFuture: 'na {0}',
             ),
         );
     }
@@ -3211,6 +3823,108 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/men.json
+    // ── Mende ───────────────────────────────────────────────────────
+
+    public static function MEN(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'men',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'sɛkɔn {n}', 'other' => 'sɛkɔn {n}'],
+                minute: ['one' => 'miniti {n}', 'other' => 'miniti {n}'],
+                hour: ['one' => 'awa {n}', 'other' => 'awa {n}'],
+                day: ['one' => 'lɔhɔ {n}', 'other' => 'lɔhɔnga {n}'],
+                week: ['one' => 'wikii {n}', 'other' => 'wikii {n}'],
+                month: ['one' => 'ndɔlɔ {n}', 'other' => 'ndɔlɔnga {n}'],
+                year: ['one' => 'saŋ {n}', 'other' => 'saŋga {n}'],
+            ),
+            half: '{0} ta fele',
+            delimiter: ', ',
+            justNow: 'kɛnɛi',
+            ago: '{0} taa gbɔyɔ',
+            inFuture: 'yɛ {0}',
+            short: new CompactnessOverride(
+                second: 'sɛk. {n}',
+                minute: 'min. {n}',
+                hour: 'awa {n}',
+                day: ['one' => 'lɔhɔ {n}', 'other' => 'lɔhɔnga {n}'],
+                week: 'wikii {n}',
+                month: ['one' => 'ndɔlɔ {n}', 'other' => 'ndɔlɔnga {n}'],
+                year: ['one' => 'saŋ {n}', 'other' => 'saŋga {n}'],
+                ago: '{0} taa gbɔyɔ',
+                inFuture: 'yɛ {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} taa gbɔyɔ',
+                inFuture: 'yɛ {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/mfe.json
+    // ── Mauritian Creole ────────────────────────────────────────────
+
+    public static function MFE(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'mfe',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: '{n} segonn',
+                minute: '{n} minit',
+                hour: '{n} ler',
+                day: '{n} zour',
+                week: '{n} semenn',
+                month: '{n} mwa',
+                year: '{n} lane',
+            ),
+            half: '{0} edmi',
+            delimiter: ', ',
+            justNow: 'aster la',
+            ago: 'sa fer {0}',
+            inFuture: 'dan {0}',
+            short: new CompactnessOverride(
+                second: '{n} seg',
+                minute: '{n} min',
+                hour: '{n} ler',
+                day: '{n} zr',
+                week: '{n} sem',
+                month: '{n} mwa',
+                year: '{n} la',
+                ago: 'sa fer {0}',
+                inFuture: 'dan {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n} seg',
+                minute: '{n} min',
+                hour: '{n} ler',
+                day: '{n} zr',
+                week: '{n} sem',
+                month: '{n} mwa',
+                year: '{n} la',
+                half: '{n}½',
+                delimiter: '',
+                ago: 'sa fer {0}',
+                inFuture: 'dan {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/mg.json
     // ── Malagasy ────────────────────────────────────────────────────
 
@@ -3473,6 +4187,108 @@ final class Locales
                 delimiter: '',
                 ago: '{0}-н өмнө',
                 inFuture: '{0}-н дараа',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/mnk.json
+    // ── Mandinka ────────────────────────────────────────────────────
+
+    public static function MNK(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'mnk',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sɛkɔŋ {n}',
+                minute: 'miniti {n}',
+                hour: 'tili-waati {n}',
+                day: 'tili {n}',
+                week: 'lɔkɔ {n}',
+                month: 'kalo {n}',
+                year: 'sanji {n}',
+            ),
+            half: '{0} ning tilinkiliŋo',
+            delimiter: ', ',
+            justNow: 'sisan',
+            ago: '{0} taata',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: 'sɛk. {n}',
+                minute: 'min. {n}',
+                hour: 'waati {n}',
+                day: 'tili {n}',
+                week: 'lɔkɔ {n}',
+                month: 'kalo {n}',
+                year: 'sanj. {n}',
+                ago: '{0} taata',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: 'sɛk {n}',
+                minute: 'min {n}',
+                hour: 'waa {n}',
+                day: 'tili {n}',
+                week: 'lɔkɔ {n}',
+                month: 'kalo {n}',
+                year: 'sanj {n}',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} taata',
+                inFuture: 'ka {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/mos.json
+    // ── Moore ───────────────────────────────────────────────────────
+
+    public static function MOS(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'mos',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sẽk {n}',
+                minute: 'minit {n}',
+                hour: 'lɛɛre {n}',
+                day: 'daare {n}',
+                week: 'semaana {n}',
+                month: 'kiuugu {n}',
+                year: 'yʋʋmde {n}',
+            ),
+            half: '{0} la pʋɩ-sʋka',
+            delimiter: ', ',
+            justNow: 'masã',
+            ago: '{0} sẽn loog',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: 'sẽk {n}',
+                minute: 'min. {n}',
+                hour: 'lɛɛr. {n}',
+                day: 'daar. {n}',
+                week: 'sem. {n}',
+                month: 'kiu. {n}',
+                year: 'yʋʋm. {n}',
+                ago: '{0} sẽn loog',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: 'sẽk {n}',
+                minute: 'min {n}',
+                hour: 'lɛɛr {n}',
+                day: 'daar {n}',
+                week: 'sem {n}',
+                month: 'kiu {n}',
+                year: 'yʋʋm {n}',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} loog',
+                inFuture: 'ka {0}',
             ),
         );
     }
@@ -3750,6 +4566,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/nd.json
+    // ── Northern Ndebele ────────────────────────────────────────────
+
+    public static function ND(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'nd',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'umzuzwana {n}', 'other' => 'imizuzwana {n}'],
+                minute: ['one' => 'umzuzu {n}', 'other' => 'imizuzu {n}'],
+                hour: ['one' => 'ihora {n}', 'other' => 'amahora {n}'],
+                day: ['one' => 'usuku {n}', 'other' => 'insuku {n}'],
+                week: ['one' => 'iviki {n}', 'other' => 'amaviki {n}'],
+                month: ['one' => 'inyanga {n}', 'other' => 'izinyanga {n}'],
+                year: ['one' => 'umnyaka {n}', 'other' => 'iminyaka {n}'],
+            ),
+            half: '{0} lengxenye',
+            delimiter: ', ',
+            justNow: 'khathesi',
+            ago: '{0} edlulileyo',
+            inFuture: 'nge-{0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'umzuzw. {n}', 'other' => 'imizuzw. {n}'],
+                minute: ['one' => 'umzuzu {n}', 'other' => 'imizuzu {n}'],
+                hour: ['one' => 'ihora {n}', 'other' => 'amahora {n}'],
+                day: ['one' => 'usuku {n}', 'other' => 'insuku {n}'],
+                week: ['one' => 'iviki {n}', 'other' => 'amaviki {n}'],
+                month: ['one' => 'iny. {n}', 'other' => 'iziny. {n}'],
+                year: ['one' => 'umny. {n}', 'other' => 'iminy. {n}'],
+                ago: '{0} edlulileyo',
+                inFuture: 'nge-{0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} edlulileyo',
+                inFuture: 'nge-{0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/ne.json
     // ── Nepali ──────────────────────────────────────────────────────
 
@@ -3801,6 +4668,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/ng.json
+    // ── Oshiwambo ───────────────────────────────────────────────────
+
+    public static function NG(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'ng',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'osekonde {n}', 'other' => 'oosekonde {n}'],
+                minute: ['one' => 'ominute {n}', 'other' => 'oominute {n}'],
+                hour: ['one' => 'owoola {n}', 'other' => 'iiwoola {n}'],
+                day: ['one' => 'esiku {n}', 'other' => 'omasiku {n}'],
+                week: ['one' => 'oshiwike {n}', 'other' => 'iiwike {n}'],
+                month: ['one' => 'omuedhi {n}', 'other' => 'omiedhi {n}'],
+                year: ['one' => 'omvula {n}', 'other' => 'omivula {n}'],
+            ),
+            half: '{0} netata',
+            delimiter: ', ',
+            justNow: 'ngashingeyi',
+            ago: '{0} ya pita',
+            inFuture: 'mo {0}',
+            short: new CompactnessOverride(
+                second: 'oosekonde {n}',
+                minute: 'oominute {n}',
+                hour: ['one' => 'owoola {n}', 'other' => 'iiwoola {n}'],
+                day: 'omasiku {n}',
+                week: ['one' => 'oshiwike {n}', 'other' => 'iiwike {n}'],
+                month: ['one' => 'omuedhi {n}', 'other' => 'omiedhi {n}'],
+                year: ['one' => 'omvula {n}', 'other' => 'omivula {n}'],
+                ago: '{0} ya pita',
+                inFuture: 'mo {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: 'oosek {n}',
+                minute: 'oomin {n}',
+                hour: ['one' => 'owool {n}', 'other' => 'iiwool {n}'],
+                day: 'omasik {n}',
+                week: ['one' => 'oshiw {n}', 'other' => 'iiw {n}'],
+                month: ['one' => 'omued {n}', 'other' => 'omied {n}'],
+                year: ['one' => 'omv {n}', 'other' => 'omiv {n}'],
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} pita',
+                inFuture: 'mo {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/nl.json
     // ── Dutch ───────────────────────────────────────────────────────
 
@@ -3847,6 +4765,108 @@ final class Locales
                 delimiter: '',
                 ago: '{0} geleden',
                 inFuture: 'over {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/nso.json
+    // ── Northern Sotho ──────────────────────────────────────────────
+
+    public static function NSO(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'nso',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'motsotswana {n}', 'other' => 'dimetsotswana {n}'],
+                minute: ['one' => 'metsotso {n}', 'other' => 'dimetsotso {n}'],
+                hour: ['one' => 'iri {n}', 'other' => 'diiri {n}'],
+                day: ['one' => 'letšatši {n}', 'other' => 'matšatši {n}'],
+                week: ['one' => 'beke {n}', 'other' => 'dibeke {n}'],
+                month: ['one' => 'kgwedi {n}', 'other' => 'dikgwedi {n}'],
+                year: ['one' => 'ngwaga {n}', 'other' => 'mengwaga {n}'],
+            ),
+            half: '{0} le seripagare',
+            delimiter: ', ',
+            justNow: 'bjale',
+            ago: '{0} ye e fetilego',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'mots. {n}', 'other' => 'dimets. {n}'],
+                minute: ['one' => 'mets. {n}', 'other' => 'dimets. {n}'],
+                hour: ['one' => 'iri {n}', 'other' => 'diiri {n}'],
+                day: ['one' => 'letšatši {n}', 'other' => 'matšatši {n}'],
+                week: ['one' => 'beke {n}', 'other' => 'dibeke {n}'],
+                month: ['one' => 'kgw. {n}', 'other' => 'dikgw. {n}'],
+                year: ['one' => 'ngw. {n}', 'other' => 'mengw. {n}'],
+                ago: '{0} ye e fetilego',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} fetilego',
+                inFuture: 'ka {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/nus.json
+    // ── Nuer ────────────────────────────────────────────────────────
+
+    public static function NUS(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'nus',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'thɛkɛni {n}', 'other' => 'thɛkni {n}'],
+                minute: ['one' => 'minit {n}', 'other' => 'minitni {n}'],
+                hour: ['one' => 'thaar {n}', 'other' => 'thaarni {n}'],
+                day: ['one' => 'cäŋ {n}', 'other' => 'cëŋ {n}'],
+                week: ['one' => 'korɛ {n}', 'other' => 'korni {n}'],
+                month: ['one' => 'pay {n}', 'other' => 'pei {n}'],
+                year: ['one' => 'ruɔ̈n {n}', 'other' => 'ruɔ̈ɔ̈ni {n}'],
+            ),
+            half: '{0} ku kel',
+            delimiter: ', ',
+            justNow: 'mën',
+            ago: '{0} cï kuɔ̈ɔ̈t',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'thɛk. {n}', 'other' => 'thɛk. {n}'],
+                minute: ['one' => 'min. {n}', 'other' => 'min. {n}'],
+                hour: ['one' => 'thaar {n}', 'other' => 'thaarni {n}'],
+                day: ['one' => 'cäŋ {n}', 'other' => 'cëŋ {n}'],
+                week: ['one' => 'kor. {n}', 'other' => 'kor. {n}'],
+                month: ['one' => 'pay {n}', 'other' => 'pei {n}'],
+                year: ['one' => 'ruɔ̈n {n}', 'other' => 'ruɔ̈ɔ̈ni {n}'],
+                ago: '{0} cï kuɔ̈ɔ̈t',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} kuɔ̈ɔ̈t',
+                inFuture: 'ka {0}',
             ),
         );
     }
@@ -4116,6 +5136,57 @@ final class Locales
                 delimiter: '',
                 ago: '{0} temu',
                 inFuture: 'za {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/pov.json
+    // ── Guinea-Bissau Creole ────────────────────────────────────────
+
+    public static function POV(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'pov',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: '{n} sigundu',
+                minute: '{n} minutu',
+                hour: '{n} ora',
+                day: '{n} dia',
+                week: '{n} simana',
+                month: '{n} mis',
+                year: '{n} anu',
+            ),
+            half: '{0} i meiu',
+            delimiter: ', ',
+            justNow: 'agora mesmu',
+            ago: 'faz {0}',
+            inFuture: 'di {0}',
+            short: new CompactnessOverride(
+                second: '{n} sig',
+                minute: '{n} min',
+                hour: '{n} ora',
+                day: '{n} dia',
+                week: '{n} sim',
+                month: '{n} mis',
+                year: '{n} anu',
+                ago: 'faz {0}',
+                inFuture: 'di {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n} sig',
+                minute: '{n} min',
+                hour: '{n} ora',
+                day: '{n} dia',
+                week: '{n} sim',
+                month: '{n} mis',
+                year: '{n} anu',
+                half: '{n}½',
+                delimiter: '',
+                ago: 'faz {0}',
+                inFuture: 'di {0}',
             ),
         );
     }
@@ -4452,6 +5523,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/sar.json
+    // ── Sara ────────────────────────────────────────────────────────
+
+    public static function SAR(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'sar',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sɛɡɔn {n}',
+                minute: 'minít {n}',
+                hour: 'lɛɛr {n}',
+                day: 'ndɔ {n}',
+                week: 'lɔtɛ {n}',
+                month: 'ndɔɔ {n}',
+                year: 'bɛɛ {n}',
+            ),
+            half: '{0} kɩ̀ ndá̰ŋ',
+            delimiter: ', ',
+            justNow: 'ndɔrɔ',
+            ago: '{0} ɓòo kɔ',
+            inFuture: 'ga {0}',
+            short: new CompactnessOverride(
+                second: 'sɛɡ. {n}',
+                minute: 'min. {n}',
+                hour: 'lɛɛr {n}',
+                day: 'ndɔ {n}',
+                week: 'lɔtɛ {n}',
+                month: 'ndɔɔ {n}',
+                year: 'bɛɛ {n}',
+                ago: '{0} ɓòo kɔ',
+                inFuture: 'ga {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} ɓòo kɔ',
+                inFuture: 'ga {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/sd.json
     // ── Sindhi ──────────────────────────────────────────────────────
 
@@ -4499,6 +5621,57 @@ final class Locales
                 delimiter: '',
                 ago: '{0} اڳ',
                 inFuture: '{0} ۾',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/sg.json
+    // ── Sango ───────────────────────────────────────────────────────
+
+    public static function SG(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'sg',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'ndo-sêse {n}',
+                minute: 'ndo {n}',
+                hour: 'ngbonga {n}',
+                day: 'lâ {n}',
+                week: 'bîkua-ûse {n}',
+                month: 'nze {n}',
+                year: 'ngû {n}',
+            ),
+            half: '{0} na ndâ',
+            delimiter: ', ',
+            justNow: 'sô awe',
+            ago: '{0} na pekô',
+            inFuture: 'na {0}',
+            short: new CompactnessOverride(
+                second: 'ndo-s. {n}',
+                minute: 'ndo {n}',
+                hour: 'ngb. {n}',
+                day: 'lâ {n}',
+                week: 'bîk. {n}',
+                month: 'nze {n}',
+                year: 'ngû {n}',
+                ago: '{0} na pekô',
+                inFuture: 'na {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} na pekô',
+                inFuture: 'na {0}',
             ),
         );
     }
@@ -4797,6 +5970,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/snk.json
+    // ── Soninke ─────────────────────────────────────────────────────
+
+    public static function SNK(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'snk',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sɛgɔndi {n}',
+                minute: 'miniti {n}',
+                hour: 'waxati {n}',
+                day: 'xanne {n}',
+                week: 'simanxe {n}',
+                month: 'kare {n}',
+                year: 'jara {n}',
+            ),
+            half: '{0} do faabe',
+            delimiter: ', ',
+            justNow: 'toxo yi',
+            ago: '{0} toxo kille',
+            inFuture: 'do {0}',
+            short: new CompactnessOverride(
+                second: 'sɛg. {n}',
+                minute: 'min. {n}',
+                hour: 'wax. {n}',
+                day: 'xan. {n}',
+                week: 'sim. {n}',
+                month: 'kare {n}',
+                year: 'jara {n}',
+                ago: '{0} toxo kille',
+                inFuture: 'do {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} kille',
+                inFuture: 'do {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/so.json
     // ── Somali ──────────────────────────────────────────────────────
 
@@ -4964,6 +6188,108 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/ss.json
+    // ── siSwati ─────────────────────────────────────────────────────
+
+    public static function SS(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'ss',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'umzuzwana {n}', 'other' => 'imizuzwana {n}'],
+                minute: ['one' => 'umzuzu {n}', 'other' => 'imizuzu {n}'],
+                hour: ['one' => 'lihora {n}', 'other' => 'emahora {n}'],
+                day: ['one' => 'lilanga {n}', 'other' => 'emalanga {n}'],
+                week: ['one' => 'liviki {n}', 'other' => 'emaviki {n}'],
+                month: ['one' => 'inyanga {n}', 'other' => 'tinyanga {n}'],
+                year: ['one' => 'umnyaka {n}', 'other' => 'iminyaka {n}'],
+            ),
+            half: '{0} nenhafu',
+            delimiter: ', ',
+            justNow: 'nyalo nje',
+            ago: '{0} lokwendlulile',
+            inFuture: 'nge-{0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'umzuzwana {n}', 'other' => 'imizuzwana {n}'],
+                minute: ['one' => 'umzuzu {n}', 'other' => 'imizuzu {n}'],
+                hour: ['one' => 'lihora {n}', 'other' => 'emahora {n}'],
+                day: ['one' => 'lilanga {n}', 'other' => 'emalanga {n}'],
+                week: ['one' => 'liviki {n}', 'other' => 'emaviki {n}'],
+                month: ['one' => 'iny. {n}', 'other' => 'tiny. {n}'],
+                year: ['one' => 'umny. {n}', 'other' => 'imy. {n}'],
+                ago: '{0} lokwendlulile',
+                inFuture: 'nge-{0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} lokwendlulile',
+                inFuture: 'nge-{0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/st.json
+    // ── Southern Sotho ──────────────────────────────────────────────
+
+    public static function ST(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'st',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'motsotswana {n}', 'other' => 'dimetsotswana {n}'],
+                minute: ['one' => 'metsotso {n}', 'other' => 'dimetsotso {n}'],
+                hour: ['one' => 'hora {n}', 'other' => 'dihora {n}'],
+                day: ['one' => 'letsatsi {n}', 'other' => 'matsatsi {n}'],
+                week: ['one' => 'beke {n}', 'other' => 'dibeke {n}'],
+                month: ['one' => 'kgwedi {n}', 'other' => 'dikgwedi {n}'],
+                year: ['one' => 'selemo {n}', 'other' => 'dilemo {n}'],
+            ),
+            half: '{0} le halofo',
+            delimiter: ', ',
+            justNow: 'hona jwale',
+            ago: '{0} e fetileng',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'motsotswana {n}', 'other' => 'dimetsotswana {n}'],
+                minute: ['one' => 'metsotso {n}', 'other' => 'dimetsotso {n}'],
+                hour: ['one' => 'hora {n}', 'other' => 'dihora {n}'],
+                day: ['one' => 'letsatsi {n}', 'other' => 'matsatsi {n}'],
+                week: ['one' => 'beke {n}', 'other' => 'dibeke {n}'],
+                month: ['one' => 'kgw. {n}', 'other' => 'dikgw. {n}'],
+                year: ['one' => 'sel. {n}', 'other' => 'dil. {n}'],
+                ago: '{0} e fetileng',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} e fetileng',
+                inFuture: 'ka {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/su.json
     // ── Sundanese ───────────────────────────────────────────────────
 
@@ -5011,6 +6337,57 @@ final class Locales
                 delimiter: '',
                 ago: '{0} kapengker',
                 inFuture: 'dina {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/suk.json
+    // ── Sukuma ──────────────────────────────────────────────────────
+
+    public static function SUK(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'suk',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'sekunde {n}', 'other' => 'sekunde {n}'],
+                minute: ['one' => 'dakika {n}', 'other' => 'dakika {n}'],
+                hour: ['one' => 'isaa {n}', 'other' => 'amasaa {n}'],
+                day: ['one' => 'isiku {n}', 'other' => 'amasiku {n}'],
+                week: ['one' => 'ishuma {n}', 'other' => 'amashuma {n}'],
+                month: ['one' => 'ngweli {n}', 'other' => 'ngweli {n}'],
+                year: ['one' => 'mwaka {n}', 'other' => 'myaka {n}'],
+            ),
+            half: '{0} na nusu',
+            delimiter: ', ',
+            justNow: 'haha',
+            ago: '{0} zilizopita',
+            inFuture: 'kwa {0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'sek. {n}', 'other' => 'sek. {n}'],
+                minute: ['one' => 'dak. {n}', 'other' => 'dak. {n}'],
+                hour: ['one' => 'isaa {n}', 'other' => 'amasaa {n}'],
+                day: ['one' => 'isiku {n}', 'other' => 'amasiku {n}'],
+                week: ['one' => 'ish. {n}', 'other' => 'amash. {n}'],
+                month: ['one' => 'ngw. {n}', 'other' => 'ngw. {n}'],
+                year: ['one' => 'mw. {n}', 'other' => 'my. {n}'],
+                ago: '{0} zilizopita',
+                inFuture: 'kwa {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} zilizopita',
+                inFuture: 'kwa {0}',
             ),
         );
     }
@@ -5217,6 +6594,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/tem.json
+    // ── Temne ───────────────────────────────────────────────────────
+
+    public static function TEM(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'tem',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'sɛkɔn {n}', 'other' => 'sɛkɔn {n}'],
+                minute: ['one' => 'minit {n}', 'other' => 'minit {n}'],
+                hour: ['one' => 'awa {n}', 'other' => 'awa {n}'],
+                day: ['one' => 'ləfɔr {n}', 'other' => 'ɔfɔr {n}'],
+                week: ['one' => 'wik {n}', 'other' => 'wik {n}'],
+                month: ['one' => 'kətha {n}', 'other' => 'ɔtha {n}'],
+                year: ['one' => 'əsor {n}', 'other' => 'ɔsor {n}'],
+            ),
+            half: '{0} a gbankɛ',
+            delimiter: ', ',
+            justNow: 'kɛna yi',
+            ago: '{0} ro ba',
+            inFuture: 'ro {0}',
+            short: new CompactnessOverride(
+                second: 'sɛk. {n}',
+                minute: 'min. {n}',
+                hour: 'awa {n}',
+                day: ['one' => 'ləfɔr {n}', 'other' => 'ɔfɔr {n}'],
+                week: 'wik {n}',
+                month: ['one' => 'kətha {n}', 'other' => 'ɔtha {n}'],
+                year: ['one' => 'əsor {n}', 'other' => 'ɔsor {n}'],
+                ago: '{0} ro ba',
+                inFuture: 'ro {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} ro ba',
+                inFuture: 'ro {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/tg.json
     // ── Tajik ───────────────────────────────────────────────────────
 
@@ -5370,6 +6798,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/tig.json
+    // ── Tigre ───────────────────────────────────────────────────────
+
+    public static function TIG(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'tig',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'sanya {n}', 'other' => 'sanayat {n}'],
+                minute: ['one' => 'daqiqa {n}', 'other' => 'daqiqat {n}'],
+                hour: ['one' => 'saʿa {n}', 'other' => 'saʿat {n}'],
+                day: ['one' => 'yom {n}', 'other' => 'ayam {n}'],
+                week: ['one' => 'semun {n}', 'other' => 'semunat {n}'],
+                month: ['one' => 'werḥi {n}', 'other' => 'awerḥi {n}'],
+                year: ['one' => 'ʿam {n}', 'other' => 'aʿwam {n}'],
+            ),
+            half: '{0} we nəs',
+            delimiter: ', ',
+            justNow: 'hassab',
+            ago: 'qədmi {0}',
+            inFuture: 'ba {0}',
+            short: new CompactnessOverride(
+                second: 'san. {n}',
+                minute: 'daq. {n}',
+                hour: 'saʿa {n}',
+                day: ['one' => 'yom {n}', 'other' => 'ayam {n}'],
+                week: ['one' => 'semun {n}', 'other' => 'semunat {n}'],
+                month: ['one' => 'werḥi {n}', 'other' => 'awerḥi {n}'],
+                year: ['one' => 'ʿam {n}', 'other' => 'aʿwam {n}'],
+                ago: 'qədmi {0}',
+                inFuture: 'ba {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: 'qədmi {0}',
+                inFuture: 'ba {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/tk.json
     // ── Turkmen ─────────────────────────────────────────────────────
 
@@ -5421,6 +6900,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/tn.json
+    // ── Tswana ──────────────────────────────────────────────────────
+
+    public static function TN(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'tn',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'motsotswana {n}', 'other' => 'dimetsotswana {n}'],
+                minute: ['one' => 'metsotso {n}', 'other' => 'dimetsotso {n}'],
+                hour: ['one' => 'ura {n}', 'other' => 'diura {n}'],
+                day: ['one' => 'letsatsi {n}', 'other' => 'malatsi {n}'],
+                week: ['one' => 'beke {n}', 'other' => 'dibeke {n}'],
+                month: ['one' => 'kgwedi {n}', 'other' => 'dikgwedi {n}'],
+                year: ['one' => 'ngwaga {n}', 'other' => 'dingwaga {n}'],
+            ),
+            half: '{0} le halofo',
+            delimiter: ', ',
+            justNow: 'jaanong fela',
+            ago: '{0} e e fetileng',
+            inFuture: 'ka {0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'motsotswana {n}', 'other' => 'dimetsotswana {n}'],
+                minute: ['one' => 'metsotso {n}', 'other' => 'dimetsotso {n}'],
+                hour: ['one' => 'ura {n}', 'other' => 'diura {n}'],
+                day: ['one' => 'letsatsi {n}', 'other' => 'malatsi {n}'],
+                week: ['one' => 'beke {n}', 'other' => 'dibeke {n}'],
+                month: ['one' => 'kgw. {n}', 'other' => 'dikgw. {n}'],
+                year: ['one' => 'ngw. {n}', 'other' => 'dingw. {n}'],
+                ago: '{0} e e fetileng',
+                inFuture: 'ka {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} e e fetileng',
+                inFuture: 'ka {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/tr.json
     // ── Turkish ─────────────────────────────────────────────────────
 
@@ -5468,6 +6998,57 @@ final class Locales
                 delimiter: '',
                 ago: '{0} önce',
                 inFuture: '{0} sonra',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/ts.json
+    // ── Tsonga ──────────────────────────────────────────────────────
+
+    public static function TS(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'ts',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'xikontiri {n}', 'other' => 'swikontiri {n}'],
+                minute: ['one' => 'minete {n}', 'other' => 'timinete {n}'],
+                hour: ['one' => 'awara {n}', 'other' => 'tiawara {n}'],
+                day: ['one' => 'siku {n}', 'other' => 'masiku {n}'],
+                week: ['one' => 'vhiki {n}', 'other' => 'mavhiki {n}'],
+                month: ['one' => 'n\'hweti {n}', 'other' => 'tin\'hweti {n}'],
+                year: ['one' => 'lembe {n}', 'other' => 'malembe {n}'],
+            ),
+            half: '{0} ni hafu',
+            delimiter: ', ',
+            justNow: 'sweswi',
+            ago: '{0} leri nga hundza',
+            inFuture: 'hi {0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'xikon. {n}', 'other' => 'swikon. {n}'],
+                minute: ['one' => 'min. {n}', 'other' => 'timin. {n}'],
+                hour: ['one' => 'awa. {n}', 'other' => 'tiawa. {n}'],
+                day: ['one' => 'siku {n}', 'other' => 'masiku {n}'],
+                week: ['one' => 'vhiki {n}', 'other' => 'mavhiki {n}'],
+                month: ['one' => 'n\'hw. {n}', 'other' => 'tin\'hw. {n}'],
+                year: ['one' => 'lembe {n}', 'other' => 'mal. {n}'],
+                ago: '{0} leri nga hundza',
+                inFuture: 'hi {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} hundza',
+                inFuture: 'hi {0}',
             ),
         );
     }
@@ -5593,6 +7174,57 @@ final class Locales
                 delimiter: '',
                 ago: '{0} тому',
                 inFuture: 'через {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/umb.json
+    // ── Umbundu ─────────────────────────────────────────────────────
+
+    public static function UMB(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'umb',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'osekunde {n}', 'other' => 'olosekunde {n}'],
+                minute: ['one' => 'ominute {n}', 'other' => 'olominute {n}'],
+                hour: ['one' => 'ohola {n}', 'other' => 'olohola {n}'],
+                day: ['one' => 'elityi {n}', 'other' => 'omatyi {n}'],
+                week: ['one' => 'osemana {n}', 'other' => 'olosemana {n}'],
+                month: ['one' => 'ondjambi {n}', 'other' => 'olondjambi {n}'],
+                year: ['one' => 'ombula {n}', 'other' => 'olombula {n}'],
+            ),
+            half: '{0} na oñali',
+            delimiter: ', ',
+            justNow: 'kosi',
+            ago: '{0} ya pita',
+            inFuture: 'ko {0}',
+            short: new CompactnessOverride(
+                second: ['one' => 'osek. {n}', 'other' => 'olosek. {n}'],
+                minute: ['one' => 'omin. {n}', 'other' => 'olomin. {n}'],
+                hour: ['one' => 'ohola {n}', 'other' => 'olohola {n}'],
+                day: ['one' => 'elit. {n}', 'other' => 'omat. {n}'],
+                week: ['one' => 'osem. {n}', 'other' => 'olosem. {n}'],
+                month: ['one' => 'ondj. {n}', 'other' => 'olondj. {n}'],
+                year: ['one' => 'omb. {n}', 'other' => 'olomb. {n}'],
+                ago: '{0} ya pita',
+                inFuture: 'ko {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} pita',
+                inFuture: 'ko {0}',
             ),
         );
     }
@@ -5750,6 +7382,108 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/vmw.json
+    // ── Makhuwa ─────────────────────────────────────────────────────
+
+    public static function VMW(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'vmw',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                second: ['one' => 'sekuundu {n}', 'other' => 'sekuundu {n}'],
+                minute: ['one' => 'minuto {n}', 'other' => 'minuto {n}'],
+                hour: ['one' => 'hora {n}', 'other' => 'hora {n}'],
+                day: ['one' => 'eshuku {n}', 'other' => 'mshuku {n}'],
+                week: ['one' => 'esumana {n}', 'other' => 'msumana {n}'],
+                month: ['one' => 'mweri {n}', 'other' => 'miyeri {n}'],
+                year: ['one' => 'mwaka {n}', 'other' => 'miyaka {n}'],
+            ),
+            half: '{0} na mettenhe',
+            delimiter: ', ',
+            justNow: 'vano vivi',
+            ago: '{0} zapita',
+            inFuture: 'mu {0}',
+            short: new CompactnessOverride(
+                second: 'sek. {n}',
+                minute: 'min. {n}',
+                hour: 'hora {n}',
+                day: ['one' => 'eshuku {n}', 'other' => 'mshuku {n}'],
+                week: ['one' => 'esumana {n}', 'other' => 'msumana {n}'],
+                month: ['one' => 'mweri {n}', 'other' => 'miyeri {n}'],
+                year: ['one' => 'mwaka {n}', 'other' => 'miyaka {n}'],
+                ago: '{0} zapita',
+                inFuture: 'mu {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} zapita',
+                inFuture: 'mu {0}',
+            ),
+        );
+    }
+
+    // Source: duration/locales/src/wo.json
+    // ── Wolof ───────────────────────────────────────────────────────
+
+    public static function WO(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'wo',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'saa-yépp {n}',
+                minute: 'simili {n}',
+                hour: 'waxtu {n}',
+                day: 'bés {n}',
+                week: 'ayubés {n}',
+                month: 'weer {n}',
+                year: 'at {n}',
+            ),
+            half: '{0} ak genn-wàll',
+            delimiter: ', ',
+            justNow: 'léegi',
+            ago: '{0} ci ginaaw',
+            inFuture: 'ci {0}',
+            short: new CompactnessOverride(
+                second: 'saa-y. {n}',
+                minute: 'sim. {n}',
+                hour: 'wax. {n}',
+                day: 'bés {n}',
+                week: 'ayub. {n}',
+                month: 'weer {n}',
+                year: 'at {n}',
+                ago: '{0} ci ginaaw',
+                inFuture: 'ci {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: 'saa {n}',
+                minute: 'sim {n}',
+                hour: 'wax {n}',
+                day: 'bés {n}',
+                week: 'ayub {n}',
+                month: 'weer {n}',
+                year: 'at {n}',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} ci gin.',
+                inFuture: 'ci {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/xh.json
     // ── Xhosa ───────────────────────────────────────────────────────
 
@@ -5903,6 +7637,57 @@ final class Locales
         );
     }
 
+    // Source: duration/locales/src/zdj.json
+    // ── Comorian ────────────────────────────────────────────────────
+
+    public static function ZDJ(): DurationLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DurationLocale(
+            code: 'zdj',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                second: 'sekunde {n}',
+                minute: 'dakika {n}',
+                hour: 'saa {n}',
+                day: 'suku {n}',
+                week: 'djumwa {n}',
+                month: 'mwezi {n}',
+                year: 'mwaha {n}',
+            ),
+            half: '{0} na nusu',
+            delimiter: ', ',
+            justNow: 'vavo hangu',
+            ago: '{0} zilizopita',
+            inFuture: 'ha {0}',
+            short: new CompactnessOverride(
+                second: 'sek. {n}',
+                minute: 'dak. {n}',
+                hour: 'saa {n}',
+                day: 'suku {n}',
+                week: 'djum. {n}',
+                month: 'mw. {n}',
+                year: 'mwa. {n}',
+                ago: '{0} zilizopita',
+                inFuture: 'ha {0}',
+            ),
+            compact: new CompactnessOverride(
+                second: '{n}s',
+                minute: '{n}m',
+                hour: '{n}h',
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                half: '{n}½',
+                delimiter: '',
+                ago: '{0} zilizopita',
+                inFuture: 'ha {0}',
+            ),
+        );
+    }
+
     // Source: duration/locales/src/zh.json
     // ── Chinese ─────────────────────────────────────────────────────
 
@@ -6012,8 +7797,11 @@ final class Locales
             'am' => self::AM(),
             'ar' => self::AR(),
             'az' => self::AZ(),
+            'bci' => self::BCI(),
             'be' => self::BE(),
+            'bem' => self::BEM(),
             'bg' => self::BG(),
+            'bm' => self::BM(),
             'bn' => self::BN(),
             'br' => self::BR(),
             'bs' => self::BS(),
@@ -6023,15 +7811,21 @@ final class Locales
             'cy' => self::CY(),
             'da' => self::DA(),
             'de' => self::DE(),
+            'din' => self::DIN(),
+            'dje' => self::DJE(),
+            'dyu' => self::DYU(),
+            'ee' => self::EE(),
             'el' => self::EL(),
             'en' => self::EN(),
             'es' => self::ES(),
             'et' => self::ET(),
             'eu' => self::EU(),
             'fa' => self::FA(),
+            'fan' => self::FAN(),
             'ff' => self::FF(),
             'fi' => self::FI(),
             'fil' => self::FIL(),
+            'fon' => self::FON(),
             'fr' => self::FR(),
             'ga' => self::GA(),
             'gd' => self::GD(),
@@ -6053,10 +7847,13 @@ final class Locales
             'ja' => self::JA(),
             'jv' => self::JV(),
             'ka' => self::KA(),
+            'kbp' => self::KBP(),
             'kk' => self::KK(),
             'km' => self::KM(),
             'kn' => self::KN(),
             'ko' => self::KO(),
+            'kpe' => self::KPE(),
+            'ktu' => self::KTU(),
             'ku' => self::KU(),
             'kw' => self::KW(),
             'ky' => self::KY(),
@@ -6065,56 +7862,79 @@ final class Locales
             'lo' => self::LO(),
             'lt' => self::LT(),
             'lv' => self::LV(),
+            'men' => self::MEN(),
+            'mfe' => self::MFE(),
             'mg' => self::MG(),
             'mi' => self::MI(),
             'mk' => self::MK(),
             'ml' => self::ML(),
             'mn' => self::MN(),
+            'mnk' => self::MNK(),
+            'mos' => self::MOS(),
             'mr' => self::MR(),
             'ms' => self::MS(),
             'mt' => self::MT(),
             'my' => self::MY(),
             'nb' => self::NB(),
+            'nd' => self::ND(),
             'ne' => self::NE(),
+            'ng' => self::NG(),
             'nl' => self::NL(),
+            'nso' => self::NSO(),
+            'nus' => self::NUS(),
             'ny' => self::NY(),
             'om' => self::OM(),
             'or' => self::OR(),
             'pa' => self::PA(),
             'pl' => self::PL(),
+            'pov' => self::POV(),
             'ps' => self::PS(),
             'pt' => self::PT(),
             'qu' => self::QU(),
             'ro' => self::RO(),
             'ru' => self::RU(),
             'rw' => self::RW(),
+            'sar' => self::SAR(),
             'sd' => self::SD(),
+            'sg' => self::SG(),
             'shi' => self::SHI(),
             'si' => self::SI(),
             'sk' => self::SK(),
             'sl' => self::SL(),
             'sn' => self::SN(),
+            'snk' => self::SNK(),
             'so' => self::SO(),
             'sq' => self::SQ(),
             'sr' => self::SR(),
+            'ss' => self::SS(),
+            'st' => self::ST(),
             'su' => self::SU(),
+            'suk' => self::SUK(),
             'sv' => self::SV(),
             'sw' => self::SW(),
             'ta' => self::TA(),
             'te' => self::TE(),
+            'tem' => self::TEM(),
             'tg' => self::TG(),
             'th' => self::TH(),
             'ti' => self::TI(),
+            'tig' => self::TIG(),
             'tk' => self::TK(),
+            'tn' => self::TN(),
             'tr' => self::TR(),
+            'ts' => self::TS(),
             'tzm' => self::TZM(),
             'uk' => self::UK(),
+            'umb' => self::UMB(),
             'ur' => self::UR(),
             'uz' => self::UZ(),
             'vi' => self::VI(),
+            'vmw' => self::VMW(),
+            'wo' => self::WO(),
             'xh' => self::XH(),
             'yo' => self::YO(),
             'yue' => self::YUE(),
+            'zdj' => self::ZDJ(),
             'zh' => self::ZH(),
             'zu' => self::ZU(),
             default => null,

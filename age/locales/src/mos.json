@@ -1,0 +1,40 @@
+{
+  "code": "mos",
+  "name": "Moore",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "daare {n}",
+    "week": "semaana {n}",
+    "month": "kiuugu {n}",
+    "year": "yʋʋmde {n}"
+  },
+  "half": "{0} la pʋɩ-sʋka",
+  "delimiter": ", ",
+  "justBorn": "A sẽn dog-a",
+  "stages": {
+    "newborn": "Bi-paalga",
+    "infant": "Bi-bɩɩga",
+    "toddler": "Bi-kɩdga",
+    "child": "Biiga",
+    "teenager": "Bi-raaga",
+    "adult": "Nin-kẽema"
+  },
+  "short": {
+    "units": {
+      "day": "daar. {n}",
+      "week": "sem. {n}",
+      "month": "kiu. {n}",
+      "year": "yʋʋm. {n}"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "daar {n}",
+      "week": "sem {n}",
+      "month": "kiu {n}",
+      "year": "yʋʋm {n}"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

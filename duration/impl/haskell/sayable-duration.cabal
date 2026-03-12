@@ -14,8 +14,11 @@ library
     SayableDuration.Locales.Am
     SayableDuration.Locales.Ar
     SayableDuration.Locales.Az
+    SayableDuration.Locales.Bci
     SayableDuration.Locales.Be
+    SayableDuration.Locales.Bem
     SayableDuration.Locales.Bg
+    SayableDuration.Locales.Bm
     SayableDuration.Locales.Bn
     SayableDuration.Locales.Br
     SayableDuration.Locales.Bs
@@ -25,15 +28,21 @@ library
     SayableDuration.Locales.Cy
     SayableDuration.Locales.Da
     SayableDuration.Locales.De
+    SayableDuration.Locales.Din
+    SayableDuration.Locales.Dje
+    SayableDuration.Locales.Dyu
+    SayableDuration.Locales.Ee
     SayableDuration.Locales.El
     SayableDuration.Locales.En
     SayableDuration.Locales.Es
     SayableDuration.Locales.Et
     SayableDuration.Locales.Eu
     SayableDuration.Locales.Fa
+    SayableDuration.Locales.Fan
     SayableDuration.Locales.Ff
     SayableDuration.Locales.Fi
     SayableDuration.Locales.Fil
+    SayableDuration.Locales.Fon
     SayableDuration.Locales.Fr
     SayableDuration.Locales.Ga
     SayableDuration.Locales.Gd
@@ -55,10 +64,13 @@ library
     SayableDuration.Locales.Ja
     SayableDuration.Locales.Jv
     SayableDuration.Locales.Ka
+    SayableDuration.Locales.Kbp
     SayableDuration.Locales.Kk
     SayableDuration.Locales.Km
     SayableDuration.Locales.Kn
     SayableDuration.Locales.Ko
+    SayableDuration.Locales.Kpe
+    SayableDuration.Locales.Ktu
     SayableDuration.Locales.Ku
     SayableDuration.Locales.Kw
     SayableDuration.Locales.Ky
@@ -67,56 +79,79 @@ library
     SayableDuration.Locales.Lo
     SayableDuration.Locales.Lt
     SayableDuration.Locales.Lv
+    SayableDuration.Locales.Men
+    SayableDuration.Locales.Mfe
     SayableDuration.Locales.Mg
     SayableDuration.Locales.Mi
     SayableDuration.Locales.Mk
     SayableDuration.Locales.Ml
     SayableDuration.Locales.Mn
+    SayableDuration.Locales.Mnk
+    SayableDuration.Locales.Mos
     SayableDuration.Locales.Mr
     SayableDuration.Locales.Ms
     SayableDuration.Locales.Mt
     SayableDuration.Locales.My
     SayableDuration.Locales.Nb
+    SayableDuration.Locales.Nd
     SayableDuration.Locales.Ne
+    SayableDuration.Locales.Ng
     SayableDuration.Locales.Nl
+    SayableDuration.Locales.Nso
+    SayableDuration.Locales.Nus
     SayableDuration.Locales.Ny
     SayableDuration.Locales.Om
     SayableDuration.Locales.Or
     SayableDuration.Locales.Pa
     SayableDuration.Locales.Pl
+    SayableDuration.Locales.Pov
     SayableDuration.Locales.Ps
     SayableDuration.Locales.Pt
     SayableDuration.Locales.Qu
     SayableDuration.Locales.Ro
     SayableDuration.Locales.Ru
     SayableDuration.Locales.Rw
+    SayableDuration.Locales.Sar
     SayableDuration.Locales.Sd
+    SayableDuration.Locales.Sg
     SayableDuration.Locales.Shi
     SayableDuration.Locales.Si
     SayableDuration.Locales.Sk
     SayableDuration.Locales.Sl
     SayableDuration.Locales.Sn
+    SayableDuration.Locales.Snk
     SayableDuration.Locales.So
     SayableDuration.Locales.Sq
     SayableDuration.Locales.Sr
+    SayableDuration.Locales.Ss
+    SayableDuration.Locales.St
     SayableDuration.Locales.Su
+    SayableDuration.Locales.Suk
     SayableDuration.Locales.Sv
     SayableDuration.Locales.Sw
     SayableDuration.Locales.Ta
     SayableDuration.Locales.Te
+    SayableDuration.Locales.Tem
     SayableDuration.Locales.Tg
     SayableDuration.Locales.Th
     SayableDuration.Locales.Ti
+    SayableDuration.Locales.Tig
     SayableDuration.Locales.Tk
+    SayableDuration.Locales.Tn
     SayableDuration.Locales.Tr
+    SayableDuration.Locales.Ts
     SayableDuration.Locales.Tzm
     SayableDuration.Locales.Uk
+    SayableDuration.Locales.Umb
     SayableDuration.Locales.Ur
     SayableDuration.Locales.Uz
     SayableDuration.Locales.Vi
+    SayableDuration.Locales.Vmw
+    SayableDuration.Locales.Wo
     SayableDuration.Locales.Xh
     SayableDuration.Locales.Yo
     SayableDuration.Locales.Yue
+    SayableDuration.Locales.Zdj
     SayableDuration.Locales.Zh
     SayableDuration.Locales.Zu
   hs-source-dirs: src

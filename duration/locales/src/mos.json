@@ -1,0 +1,63 @@
+{
+  "code": "mos",
+  "name": "Moore",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "sẽk {n}",
+    "minute": "minit {n}",
+    "hour": "lɛɛre {n}",
+    "day": "daare {n}",
+    "week": "semaana {n}",
+    "month": "kiuugu {n}",
+    "year": "yʋʋmde {n}"
+  },
+  "half": "{0} la pʋɩ-sʋka",
+  "delimiter": ", ",
+  "justNow": "masã",
+  "ago": "{0} sẽn loog",
+  "inFuture": "ka {0}",
+  "short": {
+    "units": {
+      "second": "sẽk {n}",
+      "minute": "min. {n}",
+      "hour": "lɛɛr. {n}",
+      "day": "daar. {n}",
+      "week": "sem. {n}",
+      "month": "kiu. {n}",
+      "year": "yʋʋm. {n}"
+    },
+    "ago": "{0} sẽn loog",
+    "inFuture": "ka {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "sẽk {n}",
+      "minute": "min {n}",
+      "hour": "lɛɛr {n}",
+      "day": "daar {n}",
+      "week": "sem {n}",
+      "month": "kiu {n}",
+      "year": "yʋʋm {n}"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} loog",
+    "inFuture": "ka {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

@@ -14,8 +14,11 @@ library
     SayableDate.Locales.Am
     SayableDate.Locales.Ar
     SayableDate.Locales.Az
+    SayableDate.Locales.Bci
     SayableDate.Locales.Be
+    SayableDate.Locales.Bem
     SayableDate.Locales.Bg
+    SayableDate.Locales.Bm
     SayableDate.Locales.Bn
     SayableDate.Locales.Br
     SayableDate.Locales.Bs
@@ -25,15 +28,21 @@ library
     SayableDate.Locales.Cy
     SayableDate.Locales.Da
     SayableDate.Locales.De
+    SayableDate.Locales.Din
+    SayableDate.Locales.Dje
+    SayableDate.Locales.Dyu
+    SayableDate.Locales.Ee
     SayableDate.Locales.El
     SayableDate.Locales.En
     SayableDate.Locales.Es
     SayableDate.Locales.Et
     SayableDate.Locales.Eu
     SayableDate.Locales.Fa
+    SayableDate.Locales.Fan
     SayableDate.Locales.Ff
     SayableDate.Locales.Fi
     SayableDate.Locales.Fil
+    SayableDate.Locales.Fon
     SayableDate.Locales.Fr
     SayableDate.Locales.Ga
     SayableDate.Locales.Gd
@@ -55,10 +64,13 @@ library
     SayableDate.Locales.Ja
     SayableDate.Locales.Jv
     SayableDate.Locales.Ka
+    SayableDate.Locales.Kbp
     SayableDate.Locales.Kk
     SayableDate.Locales.Km
     SayableDate.Locales.Kn
     SayableDate.Locales.Ko
+    SayableDate.Locales.Kpe
+    SayableDate.Locales.Ktu
     SayableDate.Locales.Ku
     SayableDate.Locales.Kw
     SayableDate.Locales.Ky
@@ -67,56 +79,79 @@ library
     SayableDate.Locales.Lo
     SayableDate.Locales.Lt
     SayableDate.Locales.Lv
+    SayableDate.Locales.Men
+    SayableDate.Locales.Mfe
     SayableDate.Locales.Mg
     SayableDate.Locales.Mi
     SayableDate.Locales.Mk
     SayableDate.Locales.Ml
     SayableDate.Locales.Mn
+    SayableDate.Locales.Mnk
+    SayableDate.Locales.Mos
     SayableDate.Locales.Mr
     SayableDate.Locales.Ms
     SayableDate.Locales.Mt
     SayableDate.Locales.My
     SayableDate.Locales.Nb
+    SayableDate.Locales.Nd
     SayableDate.Locales.Ne
+    SayableDate.Locales.Ng
     SayableDate.Locales.Nl
+    SayableDate.Locales.Nso
+    SayableDate.Locales.Nus
     SayableDate.Locales.Ny
     SayableDate.Locales.Om
     SayableDate.Locales.Or
     SayableDate.Locales.Pa
     SayableDate.Locales.Pl
+    SayableDate.Locales.Pov
     SayableDate.Locales.Ps
     SayableDate.Locales.Pt
     SayableDate.Locales.Qu
     SayableDate.Locales.Ro
     SayableDate.Locales.Ru
     SayableDate.Locales.Rw
+    SayableDate.Locales.Sar
     SayableDate.Locales.Sd
+    SayableDate.Locales.Sg
     SayableDate.Locales.Shi
     SayableDate.Locales.Si
     SayableDate.Locales.Sk
     SayableDate.Locales.Sl
     SayableDate.Locales.Sn
+    SayableDate.Locales.Snk
     SayableDate.Locales.So
     SayableDate.Locales.Sq
     SayableDate.Locales.Sr
+    SayableDate.Locales.Ss
+    SayableDate.Locales.St
     SayableDate.Locales.Su
+    SayableDate.Locales.Suk
     SayableDate.Locales.Sv
     SayableDate.Locales.Sw
     SayableDate.Locales.Ta
     SayableDate.Locales.Te
+    SayableDate.Locales.Tem
     SayableDate.Locales.Tg
     SayableDate.Locales.Th
     SayableDate.Locales.Ti
+    SayableDate.Locales.Tig
     SayableDate.Locales.Tk
+    SayableDate.Locales.Tn
     SayableDate.Locales.Tr
+    SayableDate.Locales.Ts
     SayableDate.Locales.Tzm
     SayableDate.Locales.Uk
+    SayableDate.Locales.Umb
     SayableDate.Locales.Ur
     SayableDate.Locales.Uz
     SayableDate.Locales.Vi
+    SayableDate.Locales.Vmw
+    SayableDate.Locales.Wo
     SayableDate.Locales.Xh
     SayableDate.Locales.Yo
     SayableDate.Locales.Yue
+    SayableDate.Locales.Zdj
     SayableDate.Locales.Zh
     SayableDate.Locales.Zu
   hs-source-dirs: src

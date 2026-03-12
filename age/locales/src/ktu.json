@@ -1,0 +1,70 @@
+{
+  "code": "ktu",
+  "name": "Kituba",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "lumbu {n}",
+      "other": "malumbu {n}"
+    },
+    "week": {
+      "one": "poso {n}",
+      "other": "maposo {n}"
+    },
+    "month": {
+      "one": "ngonda {n}",
+      "other": "mingonda {n}"
+    },
+    "year": {
+      "one": "mvula {n}",
+      "other": "mimvula {n}"
+    }
+  },
+  "half": "{0} na ndambu",
+  "delimiter": ", ",
+  "justBorn": "Mwana ya buta",
+  "stages": {
+    "newborn": "Mwana ya buta",
+    "infant": "Mwana moke",
+    "toddler": "Mwana",
+    "child": "Mwana",
+    "teenager": "Elenge",
+    "adult": "Muntu ya nene"
+  },
+  "short": {
+    "units": {
+      "day": "malumbu {n}",
+      "week": {
+        "one": "poso {n}",
+        "other": "maposo {n}"
+      },
+      "month": {
+        "one": "ngonda {n}",
+        "other": "mingonda {n}"
+      },
+      "year": {
+        "one": "mvula {n}",
+        "other": "mimvula {n}"
+      }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "malumbu {n}",
+      "week": {
+        "one": "poso {n}",
+        "other": "maposo {n}"
+      },
+      "month": {
+        "one": "ngon {n}",
+        "other": "mingon {n}"
+      },
+      "year": {
+        "one": "mvula {n}",
+        "other": "mimv {n}"
+      }
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

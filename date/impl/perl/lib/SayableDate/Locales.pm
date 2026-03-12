@@ -17,8 +17,11 @@ use SayableDate::Locales::AK;
 use SayableDate::Locales::AM;
 use SayableDate::Locales::AR;
 use SayableDate::Locales::AZ;
+use SayableDate::Locales::BCI;
 use SayableDate::Locales::BE;
+use SayableDate::Locales::BEM;
 use SayableDate::Locales::BG;
+use SayableDate::Locales::BM;
 use SayableDate::Locales::BN;
 use SayableDate::Locales::BR;
 use SayableDate::Locales::BS;
@@ -28,15 +31,21 @@ use SayableDate::Locales::CS;
 use SayableDate::Locales::CY;
 use SayableDate::Locales::DA;
 use SayableDate::Locales::DE;
+use SayableDate::Locales::DIN;
+use SayableDate::Locales::DJE;
+use SayableDate::Locales::DYU;
+use SayableDate::Locales::EE;
 use SayableDate::Locales::EL;
 use SayableDate::Locales::EN;
 use SayableDate::Locales::ES;
 use SayableDate::Locales::ET;
 use SayableDate::Locales::EU;
 use SayableDate::Locales::FA;
+use SayableDate::Locales::FAN;
 use SayableDate::Locales::FF;
 use SayableDate::Locales::FI;
 use SayableDate::Locales::FIL;
+use SayableDate::Locales::FON;
 use SayableDate::Locales::FR;
 use SayableDate::Locales::GA;
 use SayableDate::Locales::GD;
@@ -58,10 +67,13 @@ use SayableDate::Locales::IT;
 use SayableDate::Locales::JA;
 use SayableDate::Locales::JV;
 use SayableDate::Locales::KA;
+use SayableDate::Locales::KBP;
 use SayableDate::Locales::KK;
 use SayableDate::Locales::KM;
 use SayableDate::Locales::KN;
 use SayableDate::Locales::KO;
+use SayableDate::Locales::KPE;
+use SayableDate::Locales::KTU;
 use SayableDate::Locales::KU;
 use SayableDate::Locales::KW;
 use SayableDate::Locales::KY;
@@ -70,56 +82,79 @@ use SayableDate::Locales::LN;
 use SayableDate::Locales::LO;
 use SayableDate::Locales::LT;
 use SayableDate::Locales::LV;
+use SayableDate::Locales::MEN;
+use SayableDate::Locales::MFE;
 use SayableDate::Locales::MG;
 use SayableDate::Locales::MI;
 use SayableDate::Locales::MK;
 use SayableDate::Locales::ML;
 use SayableDate::Locales::MN;
+use SayableDate::Locales::MNK;
+use SayableDate::Locales::MOS;
 use SayableDate::Locales::MR;
 use SayableDate::Locales::MS;
 use SayableDate::Locales::MT;
 use SayableDate::Locales::MY;
 use SayableDate::Locales::NB;
+use SayableDate::Locales::ND;
 use SayableDate::Locales::NE;
+use SayableDate::Locales::NG;
 use SayableDate::Locales::NL;
+use SayableDate::Locales::NSO;
+use SayableDate::Locales::NUS;
 use SayableDate::Locales::NY;
 use SayableDate::Locales::OM;
 use SayableDate::Locales::OR;
 use SayableDate::Locales::PA;
 use SayableDate::Locales::PL;
+use SayableDate::Locales::POV;
 use SayableDate::Locales::PS;
 use SayableDate::Locales::PT;
 use SayableDate::Locales::QU;
 use SayableDate::Locales::RO;
 use SayableDate::Locales::RU;
 use SayableDate::Locales::RW;
+use SayableDate::Locales::SAR;
 use SayableDate::Locales::SD;
+use SayableDate::Locales::SG;
 use SayableDate::Locales::SHI;
 use SayableDate::Locales::SI;
 use SayableDate::Locales::SK;
 use SayableDate::Locales::SL;
 use SayableDate::Locales::SN;
+use SayableDate::Locales::SNK;
 use SayableDate::Locales::SO;
 use SayableDate::Locales::SQ;
 use SayableDate::Locales::SR;
+use SayableDate::Locales::SS;
+use SayableDate::Locales::ST;
 use SayableDate::Locales::SU;
+use SayableDate::Locales::SUK;
 use SayableDate::Locales::SV;
 use SayableDate::Locales::SW;
 use SayableDate::Locales::TA;
 use SayableDate::Locales::TE;
+use SayableDate::Locales::TEM;
 use SayableDate::Locales::TG;
 use SayableDate::Locales::TH;
 use SayableDate::Locales::TI;
+use SayableDate::Locales::TIG;
 use SayableDate::Locales::TK;
+use SayableDate::Locales::TN;
 use SayableDate::Locales::TR;
+use SayableDate::Locales::TS;
 use SayableDate::Locales::TZM;
 use SayableDate::Locales::UK;
+use SayableDate::Locales::UMB;
 use SayableDate::Locales::UR;
 use SayableDate::Locales::UZ;
 use SayableDate::Locales::VI;
+use SayableDate::Locales::VMW;
+use SayableDate::Locales::WO;
 use SayableDate::Locales::XH;
 use SayableDate::Locales::YO;
 use SayableDate::Locales::YUE;
+use SayableDate::Locales::ZDJ;
 use SayableDate::Locales::ZH;
 use SayableDate::Locales::ZU;
 
@@ -129,8 +164,11 @@ my %_LOCALES = (
   'am' => SayableDate::Locales::AM::locale(),
   'ar' => SayableDate::Locales::AR::locale(),
   'az' => SayableDate::Locales::AZ::locale(),
+  'bci' => SayableDate::Locales::BCI::locale(),
   'be' => SayableDate::Locales::BE::locale(),
+  'bem' => SayableDate::Locales::BEM::locale(),
   'bg' => SayableDate::Locales::BG::locale(),
+  'bm' => SayableDate::Locales::BM::locale(),
   'bn' => SayableDate::Locales::BN::locale(),
   'br' => SayableDate::Locales::BR::locale(),
   'bs' => SayableDate::Locales::BS::locale(),
@@ -140,15 +178,21 @@ my %_LOCALES = (
   'cy' => SayableDate::Locales::CY::locale(),
   'da' => SayableDate::Locales::DA::locale(),
   'de' => SayableDate::Locales::DE::locale(),
+  'din' => SayableDate::Locales::DIN::locale(),
+  'dje' => SayableDate::Locales::DJE::locale(),
+  'dyu' => SayableDate::Locales::DYU::locale(),
+  'ee' => SayableDate::Locales::EE::locale(),
   'el' => SayableDate::Locales::EL::locale(),
   'en' => SayableDate::Locales::EN::locale(),
   'es' => SayableDate::Locales::ES::locale(),
   'et' => SayableDate::Locales::ET::locale(),
   'eu' => SayableDate::Locales::EU::locale(),
   'fa' => SayableDate::Locales::FA::locale(),
+  'fan' => SayableDate::Locales::FAN::locale(),
   'ff' => SayableDate::Locales::FF::locale(),
   'fi' => SayableDate::Locales::FI::locale(),
   'fil' => SayableDate::Locales::FIL::locale(),
+  'fon' => SayableDate::Locales::FON::locale(),
   'fr' => SayableDate::Locales::FR::locale(),
   'ga' => SayableDate::Locales::GA::locale(),
   'gd' => SayableDate::Locales::GD::locale(),
@@ -170,10 +214,13 @@ my %_LOCALES = (
   'ja' => SayableDate::Locales::JA::locale(),
   'jv' => SayableDate::Locales::JV::locale(),
   'ka' => SayableDate::Locales::KA::locale(),
+  'kbp' => SayableDate::Locales::KBP::locale(),
   'kk' => SayableDate::Locales::KK::locale(),
   'km' => SayableDate::Locales::KM::locale(),
   'kn' => SayableDate::Locales::KN::locale(),
   'ko' => SayableDate::Locales::KO::locale(),
+  'kpe' => SayableDate::Locales::KPE::locale(),
+  'ktu' => SayableDate::Locales::KTU::locale(),
   'ku' => SayableDate::Locales::KU::locale(),
   'kw' => SayableDate::Locales::KW::locale(),
   'ky' => SayableDate::Locales::KY::locale(),
@@ -182,56 +229,79 @@ my %_LOCALES = (
   'lo' => SayableDate::Locales::LO::locale(),
   'lt' => SayableDate::Locales::LT::locale(),
   'lv' => SayableDate::Locales::LV::locale(),
+  'men' => SayableDate::Locales::MEN::locale(),
+  'mfe' => SayableDate::Locales::MFE::locale(),
   'mg' => SayableDate::Locales::MG::locale(),
   'mi' => SayableDate::Locales::MI::locale(),
   'mk' => SayableDate::Locales::MK::locale(),
   'ml' => SayableDate::Locales::ML::locale(),
   'mn' => SayableDate::Locales::MN::locale(),
+  'mnk' => SayableDate::Locales::MNK::locale(),
+  'mos' => SayableDate::Locales::MOS::locale(),
   'mr' => SayableDate::Locales::MR::locale(),
   'ms' => SayableDate::Locales::MS::locale(),
   'mt' => SayableDate::Locales::MT::locale(),
   'my' => SayableDate::Locales::MY::locale(),
   'nb' => SayableDate::Locales::NB::locale(),
+  'nd' => SayableDate::Locales::ND::locale(),
   'ne' => SayableDate::Locales::NE::locale(),
+  'ng' => SayableDate::Locales::NG::locale(),
   'nl' => SayableDate::Locales::NL::locale(),
+  'nso' => SayableDate::Locales::NSO::locale(),
+  'nus' => SayableDate::Locales::NUS::locale(),
   'ny' => SayableDate::Locales::NY::locale(),
   'om' => SayableDate::Locales::OM::locale(),
   'or' => SayableDate::Locales::OR::locale(),
   'pa' => SayableDate::Locales::PA::locale(),
   'pl' => SayableDate::Locales::PL::locale(),
+  'pov' => SayableDate::Locales::POV::locale(),
   'ps' => SayableDate::Locales::PS::locale(),
   'pt' => SayableDate::Locales::PT::locale(),
   'qu' => SayableDate::Locales::QU::locale(),
   'ro' => SayableDate::Locales::RO::locale(),
   'ru' => SayableDate::Locales::RU::locale(),
   'rw' => SayableDate::Locales::RW::locale(),
+  'sar' => SayableDate::Locales::SAR::locale(),
   'sd' => SayableDate::Locales::SD::locale(),
+  'sg' => SayableDate::Locales::SG::locale(),
   'shi' => SayableDate::Locales::SHI::locale(),
   'si' => SayableDate::Locales::SI::locale(),
   'sk' => SayableDate::Locales::SK::locale(),
   'sl' => SayableDate::Locales::SL::locale(),
   'sn' => SayableDate::Locales::SN::locale(),
+  'snk' => SayableDate::Locales::SNK::locale(),
   'so' => SayableDate::Locales::SO::locale(),
   'sq' => SayableDate::Locales::SQ::locale(),
   'sr' => SayableDate::Locales::SR::locale(),
+  'ss' => SayableDate::Locales::SS::locale(),
+  'st' => SayableDate::Locales::ST::locale(),
   'su' => SayableDate::Locales::SU::locale(),
+  'suk' => SayableDate::Locales::SUK::locale(),
   'sv' => SayableDate::Locales::SV::locale(),
   'sw' => SayableDate::Locales::SW::locale(),
   'ta' => SayableDate::Locales::TA::locale(),
   'te' => SayableDate::Locales::TE::locale(),
+  'tem' => SayableDate::Locales::TEM::locale(),
   'tg' => SayableDate::Locales::TG::locale(),
   'th' => SayableDate::Locales::TH::locale(),
   'ti' => SayableDate::Locales::TI::locale(),
+  'tig' => SayableDate::Locales::TIG::locale(),
   'tk' => SayableDate::Locales::TK::locale(),
+  'tn' => SayableDate::Locales::TN::locale(),
   'tr' => SayableDate::Locales::TR::locale(),
+  'ts' => SayableDate::Locales::TS::locale(),
   'tzm' => SayableDate::Locales::TZM::locale(),
   'uk' => SayableDate::Locales::UK::locale(),
+  'umb' => SayableDate::Locales::UMB::locale(),
   'ur' => SayableDate::Locales::UR::locale(),
   'uz' => SayableDate::Locales::UZ::locale(),
   'vi' => SayableDate::Locales::VI::locale(),
+  'vmw' => SayableDate::Locales::VMW::locale(),
+  'wo' => SayableDate::Locales::WO::locale(),
   'xh' => SayableDate::Locales::XH::locale(),
   'yo' => SayableDate::Locales::YO::locale(),
   'yue' => SayableDate::Locales::YUE::locale(),
+  'zdj' => SayableDate::Locales::ZDJ::locale(),
   'zh' => SayableDate::Locales::ZH::locale(),
   'zu' => SayableDate::Locales::ZU::locale(),
 );

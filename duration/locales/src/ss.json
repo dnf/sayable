@@ -1,0 +1,99 @@
+{
+  "code": "ss",
+  "name": "siSwati",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "umzuzwana {n}",
+      "other": "imizuzwana {n}"
+    },
+    "minute": {
+      "one": "umzuzu {n}",
+      "other": "imizuzu {n}"
+    },
+    "hour": {
+      "one": "lihora {n}",
+      "other": "emahora {n}"
+    },
+    "day": {
+      "one": "lilanga {n}",
+      "other": "emalanga {n}"
+    },
+    "week": {
+      "one": "liviki {n}",
+      "other": "emaviki {n}"
+    },
+    "month": {
+      "one": "inyanga {n}",
+      "other": "tinyanga {n}"
+    },
+    "year": {
+      "one": "umnyaka {n}",
+      "other": "iminyaka {n}"
+    }
+  },
+  "half": "{0} nenhafu",
+  "delimiter": ", ",
+  "justNow": "nyalo nje",
+  "ago": "{0} lokwendlulile",
+  "inFuture": "nge-{0}",
+  "short": {
+    "units": {
+      "second": {
+        "one": "umzuzwana {n}",
+        "other": "imizuzwana {n}"
+      },
+      "minute": {
+        "one": "umzuzu {n}",
+        "other": "imizuzu {n}"
+      },
+      "hour": {
+        "one": "lihora {n}",
+        "other": "emahora {n}"
+      },
+      "day": {
+        "one": "lilanga {n}",
+        "other": "emalanga {n}"
+      },
+      "week": {
+        "one": "liviki {n}",
+        "other": "emaviki {n}"
+      },
+      "month": {
+        "one": "iny. {n}",
+        "other": "tiny. {n}"
+      },
+      "year": {
+        "one": "umny. {n}",
+        "other": "imy. {n}"
+      }
+    },
+    "ago": "{0} lokwendlulile",
+    "inFuture": "nge-{0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["AM", "PM"],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} lokwendlulile",
+    "inFuture": "nge-{0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["a", "p"],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

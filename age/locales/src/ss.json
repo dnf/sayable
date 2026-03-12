@@ -1,0 +1,64 @@
+{
+  "code": "ss",
+  "name": "siSwati",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "lilanga {n}",
+      "other": "emalanga {n}"
+    },
+    "week": {
+      "one": "liviki {n}",
+      "other": "emaviki {n}"
+    },
+    "month": {
+      "one": "inyanga {n}",
+      "other": "tinyanga {n}"
+    },
+    "year": {
+      "one": "umnyaka {n}",
+      "other": "iminyaka {n}"
+    }
+  },
+  "half": "{0} nenhafu",
+  "delimiter": ", ",
+  "justBorn": "Usandza kutalwa",
+  "stages": {
+    "newborn": "Luswane lolusandza kutalwa",
+    "infant": "Luswane",
+    "toddler": "Umntfwana lomncane",
+    "child": "Umntfwana",
+    "teenager": "Licinsi",
+    "adult": "Umuntfu lomdala"
+  },
+  "short": {
+    "units": {
+      "day": {
+        "one": "lilanga {n}",
+        "other": "emalanga {n}"
+      },
+      "week": {
+        "one": "liviki {n}",
+        "other": "emaviki {n}"
+      },
+      "month": {
+        "one": "iny. {n}",
+        "other": "tiny. {n}"
+      },
+      "year": {
+        "one": "umny. {n}",
+        "other": "imy. {n}"
+      }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

@@ -13,7 +13,7 @@ package sayableage.locales
 import sayableage._
 
 /**
- * All 110 locale definitions for sayable-age.
+ * All 145 locale definitions for sayable-age.
  */
 object Locales {
 
@@ -223,6 +223,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/bci.json
+    // ================================================================
+    // BCI — Baoulé
+    // ================================================================
+    lazy val BCI: AgeLocale = AgeLocale(
+        code = "bci",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("cɛn {n}"),
+            week = simpleUnit("lemɔcuɛ {n}"),
+            month = simpleUnit("anglɛ {n}"),
+            year = simpleUnit("afuɛ {n}"),
+        ),
+        half = "{0} nin sin",
+        delimiter = ", ",
+        justBorn = "Ba nɔn kaan",
+        stages = Stages(
+            newborn = s("Ba nɔn kaan wɛ"),
+            infant = s("Ba nɔn"),
+            toddler = s("Ba kanngan"),
+            child = s("Ba"),
+            teenager = s("Gbanflɛn"),
+            adult = s("Sran kpɛnngbɛn"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("cɛn {n}")),
+            week = Some(simpleUnit("lem. {n}")),
+            month = Some(simpleUnit("ang. {n}")),
+            year = Some(simpleUnit("af. {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("cɛn {n}")),
+            week = Some(simpleUnit("lem {n}")),
+            month = Some(simpleUnit("ang {n}")),
+            year = Some(simpleUnit("af {n}")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/be.json
     // ================================================================
     // BE — Belarusian
@@ -269,6 +309,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/bem.json
+    // ================================================================
+    // BEM — Bemba
+    // ================================================================
+    lazy val BEM: AgeLocale = AgeLocale(
+        code = "bem",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "ubushiku {n}", PluralCategory.OTHER -> "inshiku {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "umulungu {n}", PluralCategory.OTHER -> "imilungu {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "umweshi {n}", PluralCategory.OTHER -> "imyeshi {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "umwaka {n}", PluralCategory.OTHER -> "imyaka {n}")),
+        ),
+        half = "{0} na hafu",
+        delimiter = ", ",
+        justBorn = "Umwana uwafyalwa fye",
+        stages = Stages(
+            newborn = s("Umwana uwafyalwa fye"),
+            infant = s("Akamwana"),
+            toddler = s("Umwana"),
+            child = s("Umwana"),
+            teenager = s("Umunyamata"),
+            adult = s("Umulumendo"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "ubushiku {n}", PluralCategory.OTHER -> "inshiku {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "umulungu {n}", PluralCategory.OTHER -> "imilungu {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "umweshi {n}", PluralCategory.OTHER -> "imyeshi {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "umwaka {n}", PluralCategory.OTHER -> "imyaka {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/bg.json
     // ================================================================
     // BG — Bulgarian
@@ -304,6 +384,46 @@ object Locales {
             week = Some(simpleUnit("{n} седм.")),
             month = Some(simpleUnit("{n} мес.")),
             year = Some(simpleUnit("{n} г.")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/bm.json
+    // ================================================================
+    // BM — Bambara
+    // ================================================================
+    lazy val BM: AgeLocale = AgeLocale(
+        code = "bm",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("don {n}"),
+            week = simpleUnit("dɔgɔkun {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("san {n}"),
+        ),
+        half = "{0} ni tilancɛ",
+        delimiter = ", ",
+        justBorn = "A sɛgɛra ka wolo",
+        stages = Stages(
+            newborn = s("Denmisɛn kura"),
+            infant = s("Denmisɛn"),
+            toddler = s("Den fitinin"),
+            child = s("Den"),
+            teenager = s("Kamalen"),
+            adult = s("Mɔgɔkɔrɔba"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("don {n}")),
+            week = Some(simpleUnit("dɔgɔk. {n}")),
+            month = Some(simpleUnit("kalo {n}")),
+            year = Some(simpleUnit("san {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("don {n}")),
+            week = Some(simpleUnit("dɔgɔk {n}")),
+            month = Some(simpleUnit("kalo {n}")),
+            year = Some(simpleUnit("san {n}")),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),
@@ -691,6 +811,166 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/din.json
+    // ================================================================
+    // DIN — Dinka
+    // ================================================================
+    lazy val DIN: AgeLocale = AgeLocale(
+        code = "din",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "akɔl {n}", PluralCategory.OTHER -> "akɔl {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "bɛ̈t {n}", PluralCategory.OTHER -> "bɛ̈t {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "pɛi {n}", PluralCategory.OTHER -> "pɛi {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "ruɔ̈n {n}", PluralCategory.OTHER -> "ruɔ̈ɔ̈n {n}")),
+        ),
+        half = "{0} ku abɛ̈c",
+        delimiter = ", ",
+        justBorn = "Meth yen dhiëth",
+        stages = Stages(
+            newborn = s("Meth yen dhiëth"),
+            infant = s("Meth"),
+            toddler = s("Meth thiiŋ"),
+            child = s("Meth"),
+            teenager = s("Dhɔ̈l"),
+            adult = s("Raan dit"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("akɔl {n}")),
+            week = Some(simpleUnit("bɛ̈t {n}")),
+            month = Some(simpleUnit("pɛi {n}")),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "ruɔ̈n {n}", PluralCategory.OTHER -> "ruɔ̈ɔ̈n {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/dje.json
+    // ================================================================
+    // DJE — Zarma
+    // ================================================================
+    lazy val DJE: AgeLocale = AgeLocale(
+        code = "dje",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("zaari {n}"),
+            week = simpleUnit("hebu {n}"),
+            month = simpleUnit("handu {n}"),
+            year = simpleUnit("jiiri {n}"),
+        ),
+        half = "{0} d'iddeka",
+        delimiter = ", ",
+        justBorn = "Izo hayni",
+        stages = Stages(
+            newborn = s("Izo hayni zaari"),
+            infant = s("Izo kayna"),
+            toddler = s("Izo kayna beerey"),
+            child = s("Izo"),
+            teenager = s("Haŋ kayna"),
+            adult = s("Boro beerey"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("zaa. {n}")),
+            week = Some(simpleUnit("heb. {n}")),
+            month = Some(simpleUnit("han. {n}")),
+            year = Some(simpleUnit("jii. {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("zaa {n}")),
+            week = Some(simpleUnit("heb {n}")),
+            month = Some(simpleUnit("han {n}")),
+            year = Some(simpleUnit("jii {n}")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/dyu.json
+    // ================================================================
+    // DYU — Dyula
+    // ================================================================
+    lazy val DYU: AgeLocale = AgeLocale(
+        code = "dyu",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("don {n}"),
+            week = simpleUnit("dɔgɔkun {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("san {n}"),
+        ),
+        half = "{0} ni tilancɛ",
+        delimiter = ", ",
+        justBorn = "Den fɛn bɛ wolo",
+        stages = Stages(
+            newborn = s("Denmisɛn kura"),
+            infant = s("Denmisɛn"),
+            toddler = s("Den fitinin"),
+            child = s("Den"),
+            teenager = s("Kamalen"),
+            adult = s("Mɔgɔkɔrɔba"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("don {n}")),
+            week = Some(simpleUnit("dɔgɔk. {n}")),
+            month = Some(simpleUnit("kalo {n}")),
+            year = Some(simpleUnit("san {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("don {n}")),
+            week = Some(simpleUnit("dɔgɔk {n}")),
+            month = Some(simpleUnit("kalo {n}")),
+            year = Some(simpleUnit("san {n}")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/ee.json
+    // ================================================================
+    // EE — Ewe
+    // ================================================================
+    lazy val EE: AgeLocale = AgeLocale(
+        code = "ee",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "ŋkeke {n}", PluralCategory.OTHER -> "ŋkekewo {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "kɔsiɖa {n}", PluralCategory.OTHER -> "kɔsiɖawo {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "ɣleti {n}", PluralCategory.OTHER -> "ɣletiwo {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "ƒe {n}", PluralCategory.OTHER -> "ƒewo {n}")),
+        ),
+        half = "{0} kple afã",
+        delimiter = ", ",
+        justBorn = "Evi yeye",
+        stages = Stages(
+            newborn = s("Evi yeye"),
+            infant = s("Ɖevi"),
+            toddler = s("Ɖevi sue"),
+            child = s("Ɖevi"),
+            teenager = s("Ŋutsuviwo"),
+            adult = s("Ame tsitsi"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("ŋkekewo {n}")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "kɔsiɖa {n}", PluralCategory.OTHER -> "kɔsiɖawo {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "ɣleti {n}", PluralCategory.OTHER -> "ɣletiwo {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "ƒe {n}", PluralCategory.OTHER -> "ƒewo {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/el.json
     // ================================================================
     // EL — Greek
@@ -929,6 +1209,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/fan.json
+    // ================================================================
+    // FAN — Fang
+    // ================================================================
+    lazy val FAN: AgeLocale = AgeLocale(
+        code = "fan",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "mos {n}", PluralCategory.OTHER -> "bimos {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "sone {n}", PluralCategory.OTHER -> "bisone {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "ngon {n}", PluralCategory.OTHER -> "mingon {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "mbu {n}", PluralCategory.OTHER -> "mimbu {n}")),
+        ),
+        half = "{0} e ndamba",
+        delimiter = ", ",
+        justBorn = "Mone a biai",
+        stages = Stages(
+            newborn = s("Mone a biai"),
+            infant = s("Mone"),
+            toddler = s("Mone"),
+            child = s("Mone"),
+            teenager = s("Mon-nnam"),
+            adult = s("Mot"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "mos {n}", PluralCategory.OTHER -> "bimos {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "sone {n}", PluralCategory.OTHER -> "bisone {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "ngon {n}", PluralCategory.OTHER -> "mingon {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "mbu {n}", PluralCategory.OTHER -> "mimbu {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/ff.json
     // ================================================================
     // FF — Fulah
@@ -1044,6 +1364,46 @@ object Locales {
             week = Some(simpleUnit("{n}linggo")),
             month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n}buwan", PluralCategory.OTHER -> "{n} buwan"))),
             year = Some(simpleUnit("{n}taon")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/fon.json
+    // ================================================================
+    // FON — Fon
+    // ================================================================
+    lazy val FON: AgeLocale = AgeLocale(
+        code = "fon",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("azǎn {n}"),
+            week = simpleUnit("aklunɔ̌zán {n}"),
+            month = simpleUnit("sun {n}"),
+            year = simpleUnit("xwè {n}"),
+        ),
+        half = "{0} kpo vlavo kpo",
+        delimiter = ", ",
+        justBorn = "Vǐ yɔ̌yɔ́",
+        stages = Stages(
+            newborn = s("Vǐ yɔ̌yɔ́"),
+            infant = s("Vǐ"),
+            toddler = s("Vǐ"),
+            child = s("Vǐ"),
+            teenager = s("Nyɔ̌nu"),
+            adult = s("Mɛ̌xo"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("azǎn {n}")),
+            week = Some(simpleUnit("aklunɔ̌zán {n}")),
+            month = Some(simpleUnit("sun {n}")),
+            year = Some(simpleUnit("xwè {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),
@@ -1918,6 +2278,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/kbp.json
+    // ================================================================
+    // KBP — Kabiye
+    // ================================================================
+    lazy val KBP: AgeLocale = AgeLocale(
+        code = "kbp",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("kɩyakʊ {n}"),
+            week = simpleUnit("kpɩtaʊ {n}"),
+            month = simpleUnit("fenaɣ {n}"),
+            year = simpleUnit("pɩnzɩ {n}"),
+        ),
+        half = "{0} nɛ hɔɔlʊʊ",
+        delimiter = ", ",
+        justBorn = "Pɩɣa ŋga palɩ lɛ",
+        stages = Stages(
+            newborn = s("Pɩɣa ŋga palɩ lɛ"),
+            infant = s("Pɩɣa"),
+            toddler = s("Pɩɣa"),
+            child = s("Pɩɣa"),
+            teenager = s("Evebu"),
+            adult = s("Ɛyʊ sɔsɔ"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("kɩyakʊ {n}")),
+            week = Some(simpleUnit("kpɩtaʊ {n}")),
+            month = Some(simpleUnit("fenaɣ {n}")),
+            year = Some(simpleUnit("pɩnzɩ {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -2074,6 +2474,86 @@ object Locales {
             month = Some(simpleUnit("{n}개월")),
             year = Some(simpleUnit("{n}년")),
             delimiter = Some(""),
+        )),
+    )
+
+    // Source: age/locales/src/kpe.json
+    // ================================================================
+    // KPE — Kpelle
+    // ================================================================
+    lazy val KPE: AgeLocale = AgeLocale(
+        code = "kpe",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("ɓɛlɛɛ {n}"),
+            week = simpleUnit("wikii {n}"),
+            month = simpleUnit("ŋuŋ {n}"),
+            year = simpleUnit("kɛ̃ɛ̃ {n}"),
+        ),
+        half = "{0} da kɔlɛ",
+        delimiter = ", ",
+        justBorn = "Lóŋ tɔ̃ɔ̃",
+        stages = Stages(
+            newborn = s("Lóŋ tɔ̃ɔ̃ kɛlɛɛ"),
+            infant = s("Lóŋ pɔlɔ"),
+            toddler = s("Lóŋ kɛlɛɛ"),
+            child = s("Lóŋ"),
+            teenager = s("Kɛlɛɛ mɛni"),
+            adult = s("Nuu kpɔŋ"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("ɓɛl. {n}")),
+            week = Some(simpleUnit("wik. {n}")),
+            month = Some(simpleUnit("ŋuŋ {n}")),
+            year = Some(simpleUnit("kɛ̃ɛ̃ {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("ɓɛl {n}")),
+            week = Some(simpleUnit("wik {n}")),
+            month = Some(simpleUnit("ŋuŋ {n}")),
+            year = Some(simpleUnit("kɛ̃ɛ̃ {n}")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/ktu.json
+    // ================================================================
+    // KTU — Kituba
+    // ================================================================
+    lazy val KTU: AgeLocale = AgeLocale(
+        code = "ktu",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "lumbu {n}", PluralCategory.OTHER -> "malumbu {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "poso {n}", PluralCategory.OTHER -> "maposo {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "ngonda {n}", PluralCategory.OTHER -> "mingonda {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "mvula {n}", PluralCategory.OTHER -> "mimvula {n}")),
+        ),
+        half = "{0} na ndambu",
+        delimiter = ", ",
+        justBorn = "Mwana ya buta",
+        stages = Stages(
+            newborn = s("Mwana ya buta"),
+            infant = s("Mwana moke"),
+            toddler = s("Mwana"),
+            child = s("Mwana"),
+            teenager = s("Elenge"),
+            adult = s("Muntu ya nene"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("malumbu {n}")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "poso {n}", PluralCategory.OTHER -> "maposo {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "ngonda {n}", PluralCategory.OTHER -> "mingonda {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "mvula {n}", PluralCategory.OTHER -> "mimvula {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("malumbu {n}")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "poso {n}", PluralCategory.OTHER -> "maposo {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "ngon {n}", PluralCategory.OTHER -> "mingon {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "mvula {n}", PluralCategory.OTHER -> "mimv {n}"))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -2414,6 +2894,86 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/men.json
+    // ================================================================
+    // MEN — Mende
+    // ================================================================
+    lazy val MEN: AgeLocale = AgeLocale(
+        code = "men",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "lɔhɔ {n}", PluralCategory.OTHER -> "lɔhɔnga {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "wikii {n}", PluralCategory.OTHER -> "wikii {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "ndɔlɔ {n}", PluralCategory.OTHER -> "ndɔlɔnga {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "saŋ {n}", PluralCategory.OTHER -> "saŋga {n}")),
+        ),
+        half = "{0} ta fele",
+        delimiter = ", ",
+        justBorn = "Ndɔpɔi fele",
+        stages = Stages(
+            newborn = s("Ndɔpɔi fele"),
+            infant = s("Ndɔpɔi"),
+            toddler = s("Ndɔpɔi"),
+            child = s("Ndopoi"),
+            teenager = s("Ndakpayei"),
+            adult = s("Numu-waa"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "lɔhɔ {n}", PluralCategory.OTHER -> "lɔhɔnga {n}"))),
+            week = Some(simpleUnit("wikii {n}")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "ndɔlɔ {n}", PluralCategory.OTHER -> "ndɔlɔnga {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "saŋ {n}", PluralCategory.OTHER -> "saŋga {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/mfe.json
+    // ================================================================
+    // MFE — Mauritian Creole
+    // ================================================================
+    lazy val MFE: AgeLocale = AgeLocale(
+        code = "mfe",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("{n} zour"),
+            week = simpleUnit("{n} semenn"),
+            month = simpleUnit("{n} mwa"),
+            year = simpleUnit("{n} lane"),
+        ),
+        half = "{0} edmi",
+        delimiter = ", ",
+        justBorn = "Zanfan fek ne",
+        stages = Stages(
+            newborn = s("Zanfan fek ne"),
+            infant = s("Ti baba"),
+            toddler = s("Ti zanfan"),
+            child = s("Zanfan"),
+            teenager = s("Adolesan"),
+            adult = s("Gran dimoun"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} zr")),
+            week = Some(simpleUnit("{n} sem")),
+            month = Some(simpleUnit("{n} mwa")),
+            year = Some(simpleUnit("{n} la")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} zr")),
+            week = Some(simpleUnit("{n} sem")),
+            month = Some(simpleUnit("{n} mwa")),
+            year = Some(simpleUnit("{n} la")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/mg.json
     // ================================================================
     // MG — Malagasy
@@ -2613,6 +3173,86 @@ object Locales {
             week = Some(simpleUnit("{n} д")),
             month = Some(simpleUnit("{n} с")),
             year = Some(simpleUnit("{n} н")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/mnk.json
+    // ================================================================
+    // MNK — Mandinka
+    // ================================================================
+    lazy val MNK: AgeLocale = AgeLocale(
+        code = "mnk",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("tili {n}"),
+            week = simpleUnit("lɔkɔ {n}"),
+            month = simpleUnit("kalo {n}"),
+            year = simpleUnit("sanji {n}"),
+        ),
+        half = "{0} ning tilinkiliŋo",
+        delimiter = ", ",
+        justBorn = "A banta ka wolo",
+        stages = Stages(
+            newborn = s("Dindinkoto"),
+            infant = s("Dindiŋo"),
+            toddler = s("Dindinkuto"),
+            child = s("Diŋo"),
+            teenager = s("Kambaaŋo"),
+            adult = s("Moo koto"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("tili {n}")),
+            week = Some(simpleUnit("lɔkɔ {n}")),
+            month = Some(simpleUnit("kalo {n}")),
+            year = Some(simpleUnit("sanj. {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("tili {n}")),
+            week = Some(simpleUnit("lɔkɔ {n}")),
+            month = Some(simpleUnit("kalo {n}")),
+            year = Some(simpleUnit("sanj {n}")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/mos.json
+    // ================================================================
+    // MOS — Moore
+    // ================================================================
+    lazy val MOS: AgeLocale = AgeLocale(
+        code = "mos",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("daare {n}"),
+            week = simpleUnit("semaana {n}"),
+            month = simpleUnit("kiuugu {n}"),
+            year = simpleUnit("yʋʋmde {n}"),
+        ),
+        half = "{0} la pʋɩ-sʋka",
+        delimiter = ", ",
+        justBorn = "A sẽn dog-a",
+        stages = Stages(
+            newborn = s("Bi-paalga"),
+            infant = s("Bi-bɩɩga"),
+            toddler = s("Bi-kɩdga"),
+            child = s("Biiga"),
+            teenager = s("Bi-raaga"),
+            adult = s("Nin-kẽema"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("daar. {n}")),
+            week = Some(simpleUnit("sem. {n}")),
+            month = Some(simpleUnit("kiu. {n}")),
+            year = Some(simpleUnit("yʋʋm. {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("daar {n}")),
+            week = Some(simpleUnit("sem {n}")),
+            month = Some(simpleUnit("kiu {n}")),
+            year = Some(simpleUnit("yʋʋm {n}")),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),
@@ -2823,6 +3463,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/nd.json
+    // ================================================================
+    // ND — Northern Ndebele
+    // ================================================================
+    lazy val ND: AgeLocale = AgeLocale(
+        code = "nd",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "usuku {n}", PluralCategory.OTHER -> "insuku {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "iviki {n}", PluralCategory.OTHER -> "amaviki {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "inyanga {n}", PluralCategory.OTHER -> "izinyanga {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "umnyaka {n}", PluralCategory.OTHER -> "iminyaka {n}")),
+        ),
+        half = "{0} lengxenye",
+        delimiter = ", ",
+        justBorn = "Usanda kuzalwa",
+        stages = Stages(
+            newborn = s("Usane olusanda kuzalwa"),
+            infant = s("Usane"),
+            toddler = s("Umntwana omncane"),
+            child = s("Umntwana"),
+            teenager = s("Isitsha"),
+            adult = s("Umuntu omdala"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "usuku {n}", PluralCategory.OTHER -> "insuku {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "iviki {n}", PluralCategory.OTHER -> "amaviki {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "iny. {n}", PluralCategory.OTHER -> "iziny. {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "umny. {n}", PluralCategory.OTHER -> "iminy. {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/ne.json
     // ================================================================
     // NE — Nepali
@@ -2858,6 +3538,46 @@ object Locales {
             week = Some(simpleUnit("{n} हप्ता")),
             month = Some(simpleUnit("{n} महिना")),
             year = Some(simpleUnit("{n} वर्ष")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/ng.json
+    // ================================================================
+    // NG — Oshiwambo
+    // ================================================================
+    lazy val NG: AgeLocale = AgeLocale(
+        code = "ng",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "esiku {n}", PluralCategory.OTHER -> "omasiku {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "oshiwike {n}", PluralCategory.OTHER -> "iiwike {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "omuedhi {n}", PluralCategory.OTHER -> "omiedhi {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "omvula {n}", PluralCategory.OTHER -> "omivula {n}")),
+        ),
+        half = "{0} netata",
+        delimiter = ", ",
+        justBorn = "Okwa dalwa po",
+        stages = Stages(
+            newborn = s("Okaana ke li po"),
+            infant = s("Okaana"),
+            toddler = s("Okanona"),
+            child = s("Okanona"),
+            teenager = s("Omunyasha"),
+            adult = s("Omuntu omukulu"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("omasiku {n}")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "oshiwike {n}", PluralCategory.OTHER -> "iiwike {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "omuedhi {n}", PluralCategory.OTHER -> "omiedhi {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "omvula {n}", PluralCategory.OTHER -> "omivula {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("omasiku {n}")),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "oshiw {n}", PluralCategory.OTHER -> "iiw {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "omued {n}", PluralCategory.OTHER -> "omied {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "omv {n}", PluralCategory.OTHER -> "omiv {n}"))),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),
@@ -2899,6 +3619,86 @@ object Locales {
             month = Some(simpleUnit("{n} m")),
             year = Some(simpleUnit("{n} jr")),
             delimiter = Some(""),
+        )),
+    )
+
+    // Source: age/locales/src/nso.json
+    // ================================================================
+    // NSO — Northern Sotho
+    // ================================================================
+    lazy val NSO: AgeLocale = AgeLocale(
+        code = "nso",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "letšatši {n}", PluralCategory.OTHER -> "matšatši {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "beke {n}", PluralCategory.OTHER -> "dibeke {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "kgwedi {n}", PluralCategory.OTHER -> "dikgwedi {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "ngwaga {n}", PluralCategory.OTHER -> "mengwaga {n}")),
+        ),
+        half = "{0} le seripagare",
+        delimiter = ", ",
+        justBorn = "O sa tšwa belegwa",
+        stages = Stages(
+            newborn = s("Lesea le sa tšwa belegwa"),
+            infant = s("Lesea"),
+            toddler = s("Ngwanyana"),
+            child = s("Ngwana"),
+            teenager = s("Moša"),
+            adult = s("Motho yo mogolo"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "letšatši {n}", PluralCategory.OTHER -> "matšatši {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "beke {n}", PluralCategory.OTHER -> "dibeke {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "kgw. {n}", PluralCategory.OTHER -> "dikgw. {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "ngw. {n}", PluralCategory.OTHER -> "mengw. {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/nus.json
+    // ================================================================
+    // NUS — Nuer
+    // ================================================================
+    lazy val NUS: AgeLocale = AgeLocale(
+        code = "nus",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "cäŋ {n}", PluralCategory.OTHER -> "cëŋ {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "korɛ {n}", PluralCategory.OTHER -> "korni {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "pay {n}", PluralCategory.OTHER -> "pei {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "ruɔ̈n {n}", PluralCategory.OTHER -> "ruɔ̈ɔ̈ni {n}")),
+        ),
+        half = "{0} ku kel",
+        delimiter = ", ",
+        justBorn = "Gaat mä dhiëëth",
+        stages = Stages(
+            newborn = s("Gaat mä dhiëëth thiin"),
+            infant = s("Gaat"),
+            toddler = s("Gaat cɛɛk"),
+            child = s("Gaat raan"),
+            teenager = s("Raan thok"),
+            adult = s("Raan dit"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "cäŋ {n}", PluralCategory.OTHER -> "cëŋ {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "kor. {n}", PluralCategory.OTHER -> "kor. {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "pay {n}", PluralCategory.OTHER -> "pei {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "ruɔ̈n {n}", PluralCategory.OTHER -> "ruɔ̈ɔ̈ni {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
         )),
     )
 
@@ -3105,6 +3905,46 @@ object Locales {
             week = Some(simpleUnit("{n} t.")),
             month = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} m-c", PluralCategory.FEW -> "{n} m-ce", PluralCategory.MANY -> "{n} m-cy", PluralCategory.OTHER -> "{n} m-ca"))),
             year = Some(pluralUnit(Map(PluralCategory.ONE -> "{n} r.", PluralCategory.FEW -> "{n} l.", PluralCategory.MANY -> "{n} l.", PluralCategory.OTHER -> "{n} r."))),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/pov.json
+    // ================================================================
+    // POV — Guinea-Bissau Creole
+    // ================================================================
+    lazy val POV: AgeLocale = AgeLocale(
+        code = "pov",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("{n} dia"),
+            week = simpleUnit("{n} simana"),
+            month = simpleUnit("{n} mis"),
+            year = simpleUnit("{n} anu"),
+        ),
+        half = "{0} i meiu",
+        delimiter = ", ",
+        justBorn = "Mininu kaba di nasi",
+        stages = Stages(
+            newborn = s("Mininu nobu"),
+            infant = s("Bebi"),
+            toddler = s("Mininu pikiñu"),
+            child = s("Mininu"),
+            teenager = s("Rapas"),
+            adult = s("Omi garandi"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} dia")),
+            week = Some(simpleUnit("{n} sim")),
+            month = Some(simpleUnit("{n} mis")),
+            year = Some(simpleUnit("{n} anu")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n} dia")),
+            week = Some(simpleUnit("{n} sim")),
+            month = Some(simpleUnit("{n} mis")),
+            year = Some(simpleUnit("{n} anu")),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),
@@ -3360,6 +4200,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/sar.json
+    // ================================================================
+    // SAR — Sara
+    // ================================================================
+    lazy val SAR: AgeLocale = AgeLocale(
+        code = "sar",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("ndɔ {n}"),
+            week = simpleUnit("lɔtɛ {n}"),
+            month = simpleUnit("ndɔɔ {n}"),
+            year = simpleUnit("bɛɛ {n}"),
+        ),
+        half = "{0} kɩ̀ ndá̰ŋ",
+        delimiter = ", ",
+        justBorn = "Gɔ dɔɔ ya",
+        stages = Stages(
+            newborn = s("Gɔ dɔɔ ya"),
+            infant = s("Gɔ"),
+            toddler = s("Gɔ njè"),
+            child = s("Gɔ"),
+            teenager = s("Kàw"),
+            adult = s("Dèē"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("ndɔ {n}")),
+            week = Some(simpleUnit("lɔtɛ {n}")),
+            month = Some(simpleUnit("ndɔɔ {n}")),
+            year = Some(simpleUnit("bɛɛ {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/sd.json
     // ================================================================
     // SD — Sindhi
@@ -3395,6 +4275,46 @@ object Locales {
             week = Some(simpleUnit("{n} ه")),
             month = Some(simpleUnit("{n} م")),
             year = Some(simpleUnit("{n} س")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/sg.json
+    // ================================================================
+    // SG — Sango
+    // ================================================================
+    lazy val SG: AgeLocale = AgeLocale(
+        code = "sg",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("lâ {n}"),
+            week = simpleUnit("bîkua-ûse {n}"),
+            month = simpleUnit("nze {n}"),
+            year = simpleUnit("ngû {n}"),
+        ),
+        half = "{0} na ndâ",
+        delimiter = ", ",
+        justBorn = "A duti tî dûngö",
+        stages = Stages(
+            newborn = s("Molengê tî dûngö"),
+            infant = s("Molengê kêtê"),
+            toddler = s("Molengê"),
+            child = s("Wan"),
+            teenager = s("Kôlï-wa"),
+            adult = s("Kôlï"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("lâ {n}")),
+            week = Some(simpleUnit("bîk. {n}")),
+            month = Some(simpleUnit("nze {n}")),
+            year = Some(simpleUnit("ngû {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),
@@ -3613,6 +4533,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/snk.json
+    // ================================================================
+    // SNK — Soninke
+    // ================================================================
+    lazy val SNK: AgeLocale = AgeLocale(
+        code = "snk",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("xanne {n}"),
+            week = simpleUnit("simanxe {n}"),
+            month = simpleUnit("kare {n}"),
+            year = simpleUnit("jara {n}"),
+        ),
+        half = "{0} do faabe",
+        delimiter = ", ",
+        justBorn = "Lenme yille",
+        stages = Stages(
+            newborn = s("Lenme yille"),
+            infant = s("Lenme"),
+            toddler = s("Yaxare yitte"),
+            child = s("Yaxare"),
+            teenager = s("Kanbonme"),
+            adult = s("Xirise"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("xan. {n}")),
+            week = Some(simpleUnit("sim. {n}")),
+            month = Some(simpleUnit("kare {n}")),
+            year = Some(simpleUnit("jara {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("xan {n}")),
+            week = Some(simpleUnit("sim {n}")),
+            month = Some(simpleUnit("kare {n}")),
+            year = Some(simpleUnit("jara {n}")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/so.json
     // ================================================================
     // SO — Somali
@@ -3739,6 +4699,86 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/ss.json
+    // ================================================================
+    // SS — siSwati
+    // ================================================================
+    lazy val SS: AgeLocale = AgeLocale(
+        code = "ss",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "lilanga {n}", PluralCategory.OTHER -> "emalanga {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "liviki {n}", PluralCategory.OTHER -> "emaviki {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "inyanga {n}", PluralCategory.OTHER -> "tinyanga {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "umnyaka {n}", PluralCategory.OTHER -> "iminyaka {n}")),
+        ),
+        half = "{0} nenhafu",
+        delimiter = ", ",
+        justBorn = "Usandza kutalwa",
+        stages = Stages(
+            newborn = s("Luswane lolusandza kutalwa"),
+            infant = s("Luswane"),
+            toddler = s("Umntfwana lomncane"),
+            child = s("Umntfwana"),
+            teenager = s("Licinsi"),
+            adult = s("Umuntfu lomdala"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "lilanga {n}", PluralCategory.OTHER -> "emalanga {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "liviki {n}", PluralCategory.OTHER -> "emaviki {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "iny. {n}", PluralCategory.OTHER -> "tiny. {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "umny. {n}", PluralCategory.OTHER -> "imy. {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/st.json
+    // ================================================================
+    // ST — Southern Sotho
+    // ================================================================
+    lazy val ST: AgeLocale = AgeLocale(
+        code = "st",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "letsatsi {n}", PluralCategory.OTHER -> "matsatsi {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "beke {n}", PluralCategory.OTHER -> "dibeke {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "kgwedi {n}", PluralCategory.OTHER -> "dikgwedi {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "selemo {n}", PluralCategory.OTHER -> "dilemo {n}")),
+        ),
+        half = "{0} le halofo",
+        delimiter = ", ",
+        justBorn = "O sa tswa hlaha",
+        stages = Stages(
+            newborn = s("Lesea le sa tswa hlaha"),
+            infant = s("Lesea"),
+            toddler = s("Ngwanana"),
+            child = s("Ngwana"),
+            teenager = s("Mosha"),
+            adult = s("Motho e moholo"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "letsatsi {n}", PluralCategory.OTHER -> "matsatsi {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "beke {n}", PluralCategory.OTHER -> "dibeke {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "kgw. {n}", PluralCategory.OTHER -> "dikgw. {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "sel. {n}", PluralCategory.OTHER -> "dil. {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/su.json
     // ================================================================
     // SU — Sundanese
@@ -3768,6 +4808,46 @@ object Locales {
             week = Some(simpleUnit("{n} minggu")),
             month = Some(simpleUnit("{n} sasih")),
             year = Some(simpleUnit("{n} taun")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/suk.json
+    // ================================================================
+    // SUK — Sukuma
+    // ================================================================
+    lazy val SUK: AgeLocale = AgeLocale(
+        code = "suk",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "isiku {n}", PluralCategory.OTHER -> "amasiku {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "ishuma {n}", PluralCategory.OTHER -> "amashuma {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "ngweli {n}", PluralCategory.OTHER -> "ngweli {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "mwaka {n}", PluralCategory.OTHER -> "myaka {n}")),
+        ),
+        half = "{0} na nusu",
+        delimiter = ", ",
+        justBorn = "Mwana wa kubelekwa",
+        stages = Stages(
+            newborn = s("Mwana wa kubelekwa kwenda"),
+            infant = s("Mwana mdogo"),
+            toddler = s("Mwana wa kutembea"),
+            child = s("Mwana"),
+            teenager = s("Mhemba"),
+            adult = s("Muntu mkulu"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "isiku {n}", PluralCategory.OTHER -> "amasiku {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "ish. {n}", PluralCategory.OTHER -> "amash. {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "ngw. {n}", PluralCategory.OTHER -> "ngw. {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "mw. {n}", PluralCategory.OTHER -> "my. {n}"))),
         )),
         compact = Some(CompactnessOverride(
             day = Some(simpleUnit("{n}d")),
@@ -3937,6 +5017,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/tem.json
+    // ================================================================
+    // TEM — Temne
+    // ================================================================
+    lazy val TEM: AgeLocale = AgeLocale(
+        code = "tem",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "ləfɔr {n}", PluralCategory.OTHER -> "ɔfɔr {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "wik {n}", PluralCategory.OTHER -> "wik {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "kətha {n}", PluralCategory.OTHER -> "ɔtha {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "əsor {n}", PluralCategory.OTHER -> "ɔsor {n}")),
+        ),
+        half = "{0} a gbankɛ",
+        delimiter = ", ",
+        justBorn = "A mabɔrn",
+        stages = Stages(
+            newborn = s("A mabɔrn"),
+            infant = s("Kəbom"),
+            toddler = s("Kəbom"),
+            child = s("Ɔmɔnthɔ"),
+            teenager = s("Ɔkəranthɔ"),
+            adult = s("Ɔpa"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "ləfɔr {n}", PluralCategory.OTHER -> "ɔfɔr {n}"))),
+            week = Some(simpleUnit("wik {n}")),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "kətha {n}", PluralCategory.OTHER -> "ɔtha {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "əsor {n}", PluralCategory.OTHER -> "ɔsor {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -4057,6 +5177,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/tig.json
+    // ================================================================
+    // TIG — Tigre
+    // ================================================================
+    lazy val TIG: AgeLocale = AgeLocale(
+        code = "tig",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "yom {n}", PluralCategory.OTHER -> "ayam {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "semun {n}", PluralCategory.OTHER -> "semunat {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "werḥi {n}", PluralCategory.OTHER -> "awerḥi {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "ʿam {n}", PluralCategory.OTHER -> "aʿwam {n}")),
+        ),
+        half = "{0} we nəs",
+        delimiter = ", ",
+        justBorn = "Ḥadis tewlid",
+        stages = Stages(
+            newborn = s("Ḥadis tewlid"),
+            infant = s("Ḥaṣin"),
+            toddler = s("Ḥaṣin"),
+            child = s("Wädi"),
+            teenager = s("Mänäʿ"),
+            adult = s("Säb"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "yom {n}", PluralCategory.OTHER -> "ayam {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "semun {n}", PluralCategory.OTHER -> "semunat {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "werḥi {n}", PluralCategory.OTHER -> "awerḥi {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "ʿam {n}", PluralCategory.OTHER -> "aʿwam {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/tk.json
     // ================================================================
     // TK — Turkmen
@@ -4097,6 +5257,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/tn.json
+    // ================================================================
+    // TN — Tswana
+    // ================================================================
+    lazy val TN: AgeLocale = AgeLocale(
+        code = "tn",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "letsatsi {n}", PluralCategory.OTHER -> "malatsi {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "beke {n}", PluralCategory.OTHER -> "dibeke {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "kgwedi {n}", PluralCategory.OTHER -> "dikgwedi {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "ngwaga {n}", PluralCategory.OTHER -> "dingwaga {n}")),
+        ),
+        half = "{0} le halofo",
+        delimiter = ", ",
+        justBorn = "O sa tswa tsalwa",
+        stages = Stages(
+            newborn = s("Lesea le sa tswa tsalwa"),
+            infant = s("Lesea"),
+            toddler = s("Ngwana yo monnye"),
+            child = s("Ngwana"),
+            teenager = s("Lekgarebe"),
+            adult = s("Motho yo mogolo"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "letsatsi {n}", PluralCategory.OTHER -> "malatsi {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "beke {n}", PluralCategory.OTHER -> "dibeke {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "kgw. {n}", PluralCategory.OTHER -> "dikgw. {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "ngw. {n}", PluralCategory.OTHER -> "dingw. {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/tr.json
     // ================================================================
     // TR — Turkish
@@ -4131,6 +5331,46 @@ object Locales {
             day = Some(simpleUnit("{n}g")),
             week = Some(simpleUnit("{n}h")),
             month = Some(simpleUnit("{n}a")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/ts.json
+    // ================================================================
+    // TS — Tsonga
+    // ================================================================
+    lazy val TS: AgeLocale = AgeLocale(
+        code = "ts",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "siku {n}", PluralCategory.OTHER -> "masiku {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "vhiki {n}", PluralCategory.OTHER -> "mavhiki {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "n'hweti {n}", PluralCategory.OTHER -> "tin'hweti {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "lembe {n}", PluralCategory.OTHER -> "malembe {n}")),
+        ),
+        half = "{0} ni hafu",
+        delimiter = ", ",
+        justBorn = "N'wana loyi a ha ku velekiwa",
+        stages = Stages(
+            newborn = s("N'wana wo velekiwa"),
+            infant = s("Xihlangi"),
+            toddler = s("N'wana lontsongo"),
+            child = s("N'wana"),
+            teenager = s("Jaha"),
+            adult = s("Munhu lonkulu"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "siku {n}", PluralCategory.OTHER -> "masiku {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "vhiki {n}", PluralCategory.OTHER -> "mavhiki {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "n'hw. {n}", PluralCategory.OTHER -> "tin'hw. {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "lembe {n}", PluralCategory.OTHER -> "mal. {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
             year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
             half = Some("{n}½"),
@@ -4221,6 +5461,46 @@ object Locales {
             week = Some(simpleUnit("{n}т")),
             month = Some(simpleUnit("{n}м")),
             year = Some(simpleUnit("{n}р")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/umb.json
+    // ================================================================
+    // UMB — Umbundu
+    // ================================================================
+    lazy val UMB: AgeLocale = AgeLocale(
+        code = "umb",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "elityi {n}", PluralCategory.OTHER -> "omatyi {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "osemana {n}", PluralCategory.OTHER -> "olosemana {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "ondjambi {n}", PluralCategory.OTHER -> "olondjambi {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "ombula {n}", PluralCategory.OTHER -> "olombula {n}")),
+        ),
+        half = "{0} na oñali",
+        delimiter = ", ",
+        justBorn = "Omola wa kulwa",
+        stages = Stages(
+            newborn = s("Omola wa kulwa kwenda"),
+            infant = s("Okambulu"),
+            toddler = s("Omola okanini"),
+            child = s("Omola"),
+            teenager = s("Oloneke"),
+            adult = s("Omundu onene"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "elit. {n}", PluralCategory.OTHER -> "omat. {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "osem. {n}", PluralCategory.OTHER -> "olosem. {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "ondj. {n}", PluralCategory.OTHER -> "olondj. {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "omb. {n}", PluralCategory.OTHER -> "olomb. {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
             delimiter = Some(""),
             half = Some("{n}½"),
         )),
@@ -4346,6 +5626,86 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/vmw.json
+    // ================================================================
+    // VMW — Makhuwa
+    // ================================================================
+    lazy val VMW: AgeLocale = AgeLocale(
+        code = "vmw",
+        plural = n => if (n == 1) PluralCategory.ONE else PluralCategory.OTHER,
+        units = Units(
+            day = pluralUnit(Map(PluralCategory.ONE -> "eshuku {n}", PluralCategory.OTHER -> "mshuku {n}")),
+            week = pluralUnit(Map(PluralCategory.ONE -> "esumana {n}", PluralCategory.OTHER -> "msumana {n}")),
+            month = pluralUnit(Map(PluralCategory.ONE -> "mweri {n}", PluralCategory.OTHER -> "miyeri {n}")),
+            year = pluralUnit(Map(PluralCategory.ONE -> "mwaka {n}", PluralCategory.OTHER -> "miyaka {n}")),
+        ),
+        half = "{0} na mettenhe",
+        delimiter = ", ",
+        justBorn = "Mwana opakiwa",
+        stages = Stages(
+            newborn = s("Mwana opakiwa"),
+            infant = s("Mwana"),
+            toddler = s("Mwana"),
+            child = s("Mwana"),
+            teenager = s("Mutthu"),
+            adult = s("Mutthu"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(pluralUnit(Map(PluralCategory.ONE -> "eshuku {n}", PluralCategory.OTHER -> "mshuku {n}"))),
+            week = Some(pluralUnit(Map(PluralCategory.ONE -> "esumana {n}", PluralCategory.OTHER -> "msumana {n}"))),
+            month = Some(pluralUnit(Map(PluralCategory.ONE -> "mweri {n}", PluralCategory.OTHER -> "miyeri {n}"))),
+            year = Some(pluralUnit(Map(PluralCategory.ONE -> "mwaka {n}", PluralCategory.OTHER -> "miyaka {n}"))),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
+    // Source: age/locales/src/wo.json
+    // ================================================================
+    // WO — Wolof
+    // ================================================================
+    lazy val WO: AgeLocale = AgeLocale(
+        code = "wo",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("bés {n}"),
+            week = simpleUnit("ayubés {n}"),
+            month = simpleUnit("weer {n}"),
+            year = simpleUnit("at {n}"),
+        ),
+        half = "{0} ak genn-wàll",
+        delimiter = ", ",
+        justBorn = "Dees ko sax juddu",
+        stages = Stages(
+            newborn = s("Dees ko sax juddu"),
+            infant = s("Njàmbaar bu ndaw"),
+            toddler = s("Xale bu ndaw"),
+            child = s("Xale"),
+            teenager = s("Ndaw-ndaw"),
+            adult = s("Mag"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("bés {n}")),
+            week = Some(simpleUnit("ayub. {n}")),
+            month = Some(simpleUnit("weer {n}")),
+            year = Some(simpleUnit("at {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("bés {n}")),
+            week = Some(simpleUnit("ayub {n}")),
+            month = Some(simpleUnit("weer {n}")),
+            year = Some(simpleUnit("at {n}")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/xh.json
     // ================================================================
     // XH — Xhosa
@@ -4464,6 +5824,46 @@ object Locales {
         )),
     )
 
+    // Source: age/locales/src/zdj.json
+    // ================================================================
+    // ZDJ — Comorian
+    // ================================================================
+    lazy val ZDJ: AgeLocale = AgeLocale(
+        code = "zdj",
+        plural = _ => PluralCategory.OTHER,
+        units = Units(
+            day = simpleUnit("suku {n}"),
+            week = simpleUnit("djumwa {n}"),
+            month = simpleUnit("mwezi {n}"),
+            year = simpleUnit("mwaha {n}"),
+        ),
+        half = "{0} na nusu",
+        delimiter = ", ",
+        justBorn = "Mwana mdzuhu",
+        stages = Stages(
+            newborn = s("Mwana mdzuhu"),
+            infant = s("Mwana mdzo"),
+            toddler = s("Mwana mtsanga"),
+            child = s("Mwana"),
+            teenager = s("Mwanantsi"),
+            adult = s("Mtu mzima"),
+        ),
+        short = Some(CompactnessOverride(
+            day = Some(simpleUnit("suku {n}")),
+            week = Some(simpleUnit("djum. {n}")),
+            month = Some(simpleUnit("mw. {n}")),
+            year = Some(simpleUnit("mwa. {n}")),
+        )),
+        compact = Some(CompactnessOverride(
+            day = Some(simpleUnit("{n}d")),
+            week = Some(simpleUnit("{n}w")),
+            month = Some(simpleUnit("{n}m")),
+            year = Some(simpleUnit("{n}y")),
+            delimiter = Some(""),
+            half = Some("{n}½"),
+        )),
+    )
+
     // Source: age/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -4547,7 +5947,8 @@ object Locales {
     )
 
     private def localesB: Map[String, AgeLocale] = Map(
-        "be" -> BE, "bg" -> BG, "bn" -> BN, "br" -> BR, "bs" -> BS
+        "bci" -> BCI, "be" -> BE, "bem" -> BEM, "bg" -> BG, "bm" -> BM,
+        "bn" -> BN, "br" -> BR, "bs" -> BS
     )
 
     private def localesC: Map[String, AgeLocale] = Map(
@@ -4555,15 +5956,17 @@ object Locales {
     )
 
     private def localesD: Map[String, AgeLocale] = Map(
-        "da" -> DA, "de" -> DE
+        "da" -> DA, "de" -> DE, "din" -> DIN, "dje" -> DJE, "dyu" -> DYU
     )
 
     private def localesE: Map[String, AgeLocale] = Map(
-        "el" -> EL, "en" -> EN, "es" -> ES, "et" -> ET, "eu" -> EU
+        "ee" -> EE, "el" -> EL, "en" -> EN, "es" -> ES, "et" -> ET,
+        "eu" -> EU
     )
 
     private def localesF: Map[String, AgeLocale] = Map(
-        "fa" -> FA, "ff" -> FF, "fi" -> FI, "fil" -> FIL, "fr" -> FR
+        "fa" -> FA, "fan" -> FAN, "ff" -> FF, "fi" -> FI, "fil" -> FIL,
+        "fon" -> FON, "fr" -> FR
     )
 
     private def localesG: Map[String, AgeLocale] = Map(
@@ -4585,8 +5988,9 @@ object Locales {
     )
 
     private def localesK: Map[String, AgeLocale] = Map(
-        "ka" -> KA, "kk" -> KK, "km" -> KM, "kn" -> KN, "ko" -> KO,
-        "ku" -> KU, "kw" -> KW, "ky" -> KY
+        "ka" -> KA, "kbp" -> KBP, "kk" -> KK, "km" -> KM, "kn" -> KN,
+        "ko" -> KO, "kpe" -> KPE, "ktu" -> KTU, "ku" -> KU, "kw" -> KW,
+        "ky" -> KY
     )
 
     private def localesL: Map[String, AgeLocale] = Map(
@@ -4594,12 +5998,14 @@ object Locales {
     )
 
     private def localesM: Map[String, AgeLocale] = Map(
-        "mg" -> MG, "mi" -> MI, "mk" -> MK, "ml" -> ML, "mn" -> MN,
-        "mr" -> MR, "ms" -> MS, "mt" -> MT, "my" -> MY
+        "men" -> MEN, "mfe" -> MFE, "mg" -> MG, "mi" -> MI, "mk" -> MK,
+        "ml" -> ML, "mn" -> MN, "mnk" -> MNK, "mos" -> MOS, "mr" -> MR,
+        "ms" -> MS, "mt" -> MT, "my" -> MY
     )
 
     private def localesN: Map[String, AgeLocale] = Map(
-        "nb" -> NB, "ne" -> NE, "nl" -> NL, "ny" -> NY
+        "nb" -> NB, "nd" -> ND, "ne" -> NE, "ng" -> NG, "nl" -> NL,
+        "nso" -> NSO, "nus" -> NUS, "ny" -> NY
     )
 
     private def localesO: Map[String, AgeLocale] = Map(
@@ -4607,7 +6013,7 @@ object Locales {
     )
 
     private def localesP: Map[String, AgeLocale] = Map(
-        "pa" -> PA, "pl" -> PL, "ps" -> PS, "pt" -> PT
+        "pa" -> PA, "pl" -> PL, "pov" -> POV, "ps" -> PS, "pt" -> PT
     )
 
     private def localesQ: Map[String, AgeLocale] = Map(
@@ -4619,22 +6025,28 @@ object Locales {
     )
 
     private def localesS: Map[String, AgeLocale] = Map(
-        "sd" -> SD, "shi" -> SHI, "si" -> SI, "sk" -> SK, "sl" -> SL,
-        "sn" -> SN, "so" -> SO, "sq" -> SQ, "sr" -> SR, "su" -> SU,
-        "sv" -> SV, "sw" -> SW
+        "sar" -> SAR, "sd" -> SD, "sg" -> SG, "shi" -> SHI, "si" -> SI,
+        "sk" -> SK, "sl" -> SL, "sn" -> SN, "snk" -> SNK, "so" -> SO,
+        "sq" -> SQ, "sr" -> SR, "ss" -> SS, "st" -> ST, "su" -> SU,
+        "suk" -> SUK, "sv" -> SV, "sw" -> SW
     )
 
     private def localesT: Map[String, AgeLocale] = Map(
-        "ta" -> TA, "te" -> TE, "tg" -> TG, "th" -> TH, "ti" -> TI,
-        "tk" -> TK, "tr" -> TR, "tzm" -> TZM
+        "ta" -> TA, "te" -> TE, "tem" -> TEM, "tg" -> TG, "th" -> TH,
+        "ti" -> TI, "tig" -> TIG, "tk" -> TK, "tn" -> TN, "tr" -> TR,
+        "ts" -> TS, "tzm" -> TZM
     )
 
     private def localesU: Map[String, AgeLocale] = Map(
-        "uk" -> UK, "ur" -> UR, "uz" -> UZ
+        "uk" -> UK, "umb" -> UMB, "ur" -> UR, "uz" -> UZ
     )
 
     private def localesV: Map[String, AgeLocale] = Map(
-        "vi" -> VI
+        "vi" -> VI, "vmw" -> VMW
+    )
+
+    private def localesW: Map[String, AgeLocale] = Map(
+        "wo" -> WO
     )
 
     private def localesX: Map[String, AgeLocale] = Map(
@@ -4646,10 +6058,10 @@ object Locales {
     )
 
     private def localesZ: Map[String, AgeLocale] = Map(
-        "zh" -> ZH, "zu" -> ZU
+        "zdj" -> ZDJ, "zh" -> ZH, "zu" -> ZU
     )
 
-    lazy val ALL: Map[String, AgeLocale] = localesA ++ localesB ++ localesC ++ localesD ++ localesE ++ localesF ++ localesG ++ localesH ++ localesI ++ localesJ ++ localesK ++ localesL ++ localesM ++ localesN ++ localesO ++ localesP ++ localesQ ++ localesR ++ localesS ++ localesT ++ localesU ++ localesV ++ localesX ++ localesY ++ localesZ
+    lazy val ALL: Map[String, AgeLocale] = localesA ++ localesB ++ localesC ++ localesD ++ localesE ++ localesF ++ localesG ++ localesH ++ localesI ++ localesJ ++ localesK ++ localesL ++ localesM ++ localesN ++ localesO ++ localesP ++ localesQ ++ localesR ++ localesS ++ localesT ++ localesU ++ localesV ++ localesW ++ localesX ++ localesY ++ localesZ
 
     def get(code: String): Option[AgeLocale] = ALL.get(code)
 }

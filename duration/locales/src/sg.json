@@ -1,0 +1,57 @@
+{
+  "code": "sg",
+  "name": "Sango",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "ndo-sêse {n}",
+    "minute": "ndo {n}",
+    "hour": "ngbonga {n}",
+    "day": "lâ {n}",
+    "week": "bîkua-ûse {n}",
+    "month": "nze {n}",
+    "year": "ngû {n}"
+  },
+  "half": "{0} na ndâ",
+  "delimiter": ", ",
+  "justNow": "sô awe",
+  "ago": "{0} na pekô",
+  "inFuture": "na {0}",
+  "short": {
+    "units": {
+      "second": "ndo-s. {n}",
+      "minute": "ndo {n}",
+      "hour": "ngb. {n}",
+      "day": "lâ {n}",
+      "week": "bîk. {n}",
+      "month": "nze {n}",
+      "year": "ngû {n}"
+    },
+    "ago": "{0} na pekô",
+    "inFuture": "na {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["AM", "PM"],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} na pekô",
+    "inFuture": "na {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["a", "p"],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

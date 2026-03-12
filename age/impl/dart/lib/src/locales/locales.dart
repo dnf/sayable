@@ -14,8 +14,11 @@ import 'ak.dart' as loc_ak;
 import 'am.dart' as loc_am;
 import 'ar.dart' as loc_ar;
 import 'az.dart' as loc_az;
+import 'bci.dart' as loc_bci;
 import 'be.dart' as loc_be;
+import 'bem.dart' as loc_bem;
 import 'bg.dart' as loc_bg;
+import 'bm.dart' as loc_bm;
 import 'bn.dart' as loc_bn;
 import 'br.dart' as loc_br;
 import 'bs.dart' as loc_bs;
@@ -25,15 +28,21 @@ import 'cs.dart' as loc_cs;
 import 'cy.dart' as loc_cy;
 import 'da.dart' as loc_da;
 import 'de.dart' as loc_de;
+import 'din.dart' as loc_din;
+import 'dje.dart' as loc_dje;
+import 'dyu.dart' as loc_dyu;
+import 'ee.dart' as loc_ee;
 import 'el.dart' as loc_el;
 import 'en.dart' as loc_en;
 import 'es.dart' as loc_es;
 import 'et.dart' as loc_et;
 import 'eu.dart' as loc_eu;
 import 'fa.dart' as loc_fa;
+import 'fan.dart' as loc_fan;
 import 'ff.dart' as loc_ff;
 import 'fi.dart' as loc_fi;
 import 'fil.dart' as loc_fil;
+import 'fon.dart' as loc_fon;
 import 'fr.dart' as loc_fr;
 import 'ga.dart' as loc_ga;
 import 'gd.dart' as loc_gd;
@@ -55,10 +64,13 @@ import 'it.dart' as loc_it;
 import 'ja.dart' as loc_ja;
 import 'jv.dart' as loc_jv;
 import 'ka.dart' as loc_ka;
+import 'kbp.dart' as loc_kbp;
 import 'kk.dart' as loc_kk;
 import 'km.dart' as loc_km;
 import 'kn.dart' as loc_kn;
 import 'ko.dart' as loc_ko;
+import 'kpe.dart' as loc_kpe;
+import 'ktu.dart' as loc_ktu;
 import 'ku.dart' as loc_ku;
 import 'kw.dart' as loc_kw;
 import 'ky.dart' as loc_ky;
@@ -67,56 +79,79 @@ import 'ln.dart' as loc_ln;
 import 'lo.dart' as loc_lo;
 import 'lt.dart' as loc_lt;
 import 'lv.dart' as loc_lv;
+import 'men.dart' as loc_men;
+import 'mfe.dart' as loc_mfe;
 import 'mg.dart' as loc_mg;
 import 'mi.dart' as loc_mi;
 import 'mk.dart' as loc_mk;
 import 'ml.dart' as loc_ml;
 import 'mn.dart' as loc_mn;
+import 'mnk.dart' as loc_mnk;
+import 'mos.dart' as loc_mos;
 import 'mr.dart' as loc_mr;
 import 'ms.dart' as loc_ms;
 import 'mt.dart' as loc_mt;
 import 'my.dart' as loc_my;
 import 'nb.dart' as loc_nb;
+import 'nd.dart' as loc_nd;
 import 'ne.dart' as loc_ne;
+import 'ng.dart' as loc_ng;
 import 'nl.dart' as loc_nl;
+import 'nso.dart' as loc_nso;
+import 'nus.dart' as loc_nus;
 import 'ny.dart' as loc_ny;
 import 'om.dart' as loc_om;
 import 'or.dart' as loc_or;
 import 'pa.dart' as loc_pa;
 import 'pl.dart' as loc_pl;
+import 'pov.dart' as loc_pov;
 import 'ps.dart' as loc_ps;
 import 'pt.dart' as loc_pt;
 import 'qu.dart' as loc_qu;
 import 'ro.dart' as loc_ro;
 import 'ru.dart' as loc_ru;
 import 'rw.dart' as loc_rw;
+import 'sar.dart' as loc_sar;
 import 'sd.dart' as loc_sd;
+import 'sg.dart' as loc_sg;
 import 'shi.dart' as loc_shi;
 import 'si.dart' as loc_si;
 import 'sk.dart' as loc_sk;
 import 'sl.dart' as loc_sl;
 import 'sn.dart' as loc_sn;
+import 'snk.dart' as loc_snk;
 import 'so.dart' as loc_so;
 import 'sq.dart' as loc_sq;
 import 'sr.dart' as loc_sr;
+import 'ss.dart' as loc_ss;
+import 'st.dart' as loc_st;
 import 'su.dart' as loc_su;
+import 'suk.dart' as loc_suk;
 import 'sv.dart' as loc_sv;
 import 'sw.dart' as loc_sw;
 import 'ta.dart' as loc_ta;
 import 'te.dart' as loc_te;
+import 'tem.dart' as loc_tem;
 import 'tg.dart' as loc_tg;
 import 'th.dart' as loc_th;
 import 'ti.dart' as loc_ti;
+import 'tig.dart' as loc_tig;
 import 'tk.dart' as loc_tk;
+import 'tn.dart' as loc_tn;
 import 'tr.dart' as loc_tr;
+import 'ts.dart' as loc_ts;
 import 'tzm.dart' as loc_tzm;
 import 'uk.dart' as loc_uk;
+import 'umb.dart' as loc_umb;
 import 'ur.dart' as loc_ur;
 import 'uz.dart' as loc_uz;
 import 'vi.dart' as loc_vi;
+import 'vmw.dart' as loc_vmw;
+import 'wo.dart' as loc_wo;
 import 'xh.dart' as loc_xh;
 import 'yo.dart' as loc_yo;
 import 'yue.dart' as loc_yue;
+import 'zdj.dart' as loc_zdj;
 import 'zh.dart' as loc_zh;
 import 'zu.dart' as loc_zu;
 
@@ -133,10 +168,16 @@ AgeLocale? getLocale(String code) {
       return loc_ar.ar;
     case 'az':
       return loc_az.az;
+    case 'bci':
+      return loc_bci.bci;
     case 'be':
       return loc_be.be;
+    case 'bem':
+      return loc_bem.bem;
     case 'bg':
       return loc_bg.bg;
+    case 'bm':
+      return loc_bm.bm;
     case 'bn':
       return loc_bn.bn;
     case 'br':
@@ -155,6 +196,14 @@ AgeLocale? getLocale(String code) {
       return loc_da.da;
     case 'de':
       return loc_de.de;
+    case 'din':
+      return loc_din.din;
+    case 'dje':
+      return loc_dje.dje;
+    case 'dyu':
+      return loc_dyu.dyu;
+    case 'ee':
+      return loc_ee.ee;
     case 'el':
       return loc_el.el;
     case 'en':
@@ -167,12 +216,16 @@ AgeLocale? getLocale(String code) {
       return loc_eu.eu;
     case 'fa':
       return loc_fa.fa;
+    case 'fan':
+      return loc_fan.fan;
     case 'ff':
       return loc_ff.ff;
     case 'fi':
       return loc_fi.fi;
     case 'fil':
       return loc_fil.fil;
+    case 'fon':
+      return loc_fon.fon;
     case 'fr':
       return loc_fr.fr;
     case 'ga':
@@ -215,6 +268,8 @@ AgeLocale? getLocale(String code) {
       return loc_jv.jv;
     case 'ka':
       return loc_ka.ka;
+    case 'kbp':
+      return loc_kbp.kbp;
     case 'kk':
       return loc_kk.kk;
     case 'km':
@@ -223,6 +278,10 @@ AgeLocale? getLocale(String code) {
       return loc_kn.kn;
     case 'ko':
       return loc_ko.ko;
+    case 'kpe':
+      return loc_kpe.kpe;
+    case 'ktu':
+      return loc_ktu.ktu;
     case 'ku':
       return loc_ku.ku;
     case 'kw':
@@ -239,6 +298,10 @@ AgeLocale? getLocale(String code) {
       return loc_lt.lt;
     case 'lv':
       return loc_lv.lv;
+    case 'men':
+      return loc_men.men;
+    case 'mfe':
+      return loc_mfe.mfe;
     case 'mg':
       return loc_mg.mg;
     case 'mi':
@@ -249,6 +312,10 @@ AgeLocale? getLocale(String code) {
       return loc_ml.ml;
     case 'mn':
       return loc_mn.mn;
+    case 'mnk':
+      return loc_mnk.mnk;
+    case 'mos':
+      return loc_mos.mos;
     case 'mr':
       return loc_mr.mr;
     case 'ms':
@@ -259,10 +326,18 @@ AgeLocale? getLocale(String code) {
       return loc_my.my;
     case 'nb':
       return loc_nb.nb;
+    case 'nd':
+      return loc_nd.nd;
     case 'ne':
       return loc_ne.ne;
+    case 'ng':
+      return loc_ng.ng;
     case 'nl':
       return loc_nl.nl;
+    case 'nso':
+      return loc_nso.nso;
+    case 'nus':
+      return loc_nus.nus;
     case 'ny':
       return loc_ny.ny;
     case 'om':
@@ -273,6 +348,8 @@ AgeLocale? getLocale(String code) {
       return loc_pa.pa;
     case 'pl':
       return loc_pl.pl;
+    case 'pov':
+      return loc_pov.pov;
     case 'ps':
       return loc_ps.ps;
     case 'pt':
@@ -285,8 +362,12 @@ AgeLocale? getLocale(String code) {
       return loc_ru.ru;
     case 'rw':
       return loc_rw.rw;
+    case 'sar':
+      return loc_sar.sar;
     case 'sd':
       return loc_sd.sd;
+    case 'sg':
+      return loc_sg.sg;
     case 'shi':
       return loc_shi.shi;
     case 'si':
@@ -297,14 +378,22 @@ AgeLocale? getLocale(String code) {
       return loc_sl.sl;
     case 'sn':
       return loc_sn.sn;
+    case 'snk':
+      return loc_snk.snk;
     case 'so':
       return loc_so.so;
     case 'sq':
       return loc_sq.sq;
     case 'sr':
       return loc_sr.sr;
+    case 'ss':
+      return loc_ss.ss;
+    case 'st':
+      return loc_st.st;
     case 'su':
       return loc_su.su;
+    case 'suk':
+      return loc_suk.suk;
     case 'sv':
       return loc_sv.sv;
     case 'sw':
@@ -313,32 +402,48 @@ AgeLocale? getLocale(String code) {
       return loc_ta.ta;
     case 'te':
       return loc_te.te;
+    case 'tem':
+      return loc_tem.tem;
     case 'tg':
       return loc_tg.tg;
     case 'th':
       return loc_th.th;
     case 'ti':
       return loc_ti.ti;
+    case 'tig':
+      return loc_tig.tig;
     case 'tk':
       return loc_tk.tk;
+    case 'tn':
+      return loc_tn.tn;
     case 'tr':
       return loc_tr.tr;
+    case 'ts':
+      return loc_ts.ts;
     case 'tzm':
       return loc_tzm.tzm;
     case 'uk':
       return loc_uk.uk;
+    case 'umb':
+      return loc_umb.umb;
     case 'ur':
       return loc_ur.ur;
     case 'uz':
       return loc_uz.uz;
     case 'vi':
       return loc_vi.vi;
+    case 'vmw':
+      return loc_vmw.vmw;
+    case 'wo':
+      return loc_wo.wo;
     case 'xh':
       return loc_xh.xh;
     case 'yo':
       return loc_yo.yo;
     case 'yue':
       return loc_yue.yue;
+    case 'zdj':
+      return loc_zdj.zdj;
     case 'zh':
       return loc_zh.zh;
     case 'zu':

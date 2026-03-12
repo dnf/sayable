@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace SayableTimeLib;
 
 /// <summary>
-/// All 110 locale definitions for sayable-time.
+/// All 145 locale definitions for sayable-time.
 /// </summary>
 public static class Locales
 {
@@ -118,6 +118,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/bci.json
+    // ================================================================
+    // BCI — Baoulé
+    // ================================================================
+    public static readonly TimeLocale BCI = new(
+        "bci",
+        new ClockConfig(
+            new[] { "blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun" },
+            "kɔnguɛ afiɛn",
+            "nnɔsua",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/be.json
     // ================================================================
     // BE — Belarusian
@@ -138,6 +158,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/bem.json
+    // ================================================================
+    // BEM — Bemba
+    // ================================================================
+    public static readonly TimeLocale BEM = new(
+        "bem",
+        new ClockConfig(
+            new[] { "ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo" },
+            "pakati ka bushiku",
+            "akasuba",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/bg.json
     // ================================================================
     // BG — Bulgarian
@@ -155,6 +195,26 @@ public static class Locales
         ),
         new CompactnessOverride(
             new ShortClockConfig(true, null, "{h}:{mm}")
+        )
+    );
+
+    // Source: time/locales/src/bm.json
+    // ================================================================
+    // BM — Bambara
+    // ================================================================
+    public static readonly TimeLocale BM = new(
+        "bm",
+        new ClockConfig(
+            new[] { "tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen" },
+            "dugutilama",
+            "tilgari",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
         )
     );
 
@@ -338,6 +398,86 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/din.json
+    // ================================================================
+    // DIN — Dinka
+    // ================================================================
+    public static readonly TimeLocale DIN = new(
+        "din",
+        new ClockConfig(
+            new[] { "thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök" },
+            "wakɔ̈u",
+            "akɔ̈l ciëŋ",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/dje.json
+    // ================================================================
+    // DJE — Zarma
+    // ================================================================
+    public static readonly TimeLocale DJE = new(
+        "dje",
+        new ClockConfig(
+            new[] { "way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi" },
+            "cin beri",
+            "zaari gaaham",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/dyu.json
+    // ================================================================
+    // DYU — Dyula
+    // ================================================================
+    public static readonly TimeLocale DYU = new(
+        "dyu",
+        new ClockConfig(
+            new[] { "tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen" },
+            "dugutilama",
+            "tilgari",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/ee.json
+    // ================================================================
+    // EE — Ewe
+    // ================================================================
+    public static readonly TimeLocale EE = new(
+        "ee",
+        new ClockConfig(
+            new[] { "wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka" },
+            "zã titina",
+            "ŋdɔ",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/el.json
     // ================================================================
     // EL — Greek
@@ -458,6 +598,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/fan.json
+    // ================================================================
+    // FAN — Fang
+    // ================================================================
+    public static readonly TimeLocale FAN = new(
+        "fan",
+        new ClockConfig(
+            new[] { "awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg" },
+            "akiri alúk",
+            "ewaŋ",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/ff.json
     // ================================================================
     // FF — Fulah
@@ -509,6 +669,26 @@ public static class Locales
             "hatinggabi",
             "tanghali",
             new Dictionary<int, string> { { 0, "{h} o'clock" }, { 5, "lima dan {h}" }, { 10, "sampu dan {h}" }, { 15, "labinlima dan {h}" }, { 20, "dalawampu dan {h}" }, { 25, "dalawampu't lima dan {h}" }, { 30, "tatlumpu dan {h}" }, { 35, "dalawampu't lima bago mag {next_h}" }, { 40, "dalawampu bago mag {next_h}" }, { 45, "labinlima bago mag {next_h}" }, { 50, "sampu bago mag {next_h}" }, { 55, "lima bago mag {next_h}" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/fon.json
+    // ================================================================
+    // FON — Fon
+    // ================================================================
+    public static readonly TimeLocale FON = new(
+        "fon",
+        new ClockConfig(
+            new[] { "wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "ɖokpo-wǒ" },
+            "zǎnmɛ",
+            "hwemɛnu",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
         ),
         new CompactnessOverride(
             new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
@@ -938,6 +1118,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/kbp.json
+    // ================================================================
+    // KBP — Kabiye
+    // ================================================================
+    public static readonly TimeLocale KBP = new(
+        "kbp",
+        new ClockConfig(
+            new[] { "hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm" },
+            "ɖoo hɛkʊ",
+            "wɩsɩ taa",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -1015,6 +1215,46 @@ public static class Locales
         ),
         new CompactnessOverride(
             new ShortClockConfig(true, null, "{h}:{mm}")
+        )
+    );
+
+    // Source: time/locales/src/kpe.json
+    // ================================================================
+    // KPE — Kpelle
+    // ================================================================
+    public static readonly TimeLocale KPE = new(
+        "kpe",
+        new ClockConfig(
+            new[] { "puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ" },
+            "kpindi kɔlɛ",
+            "tili-ma",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/ktu.json
+    // ================================================================
+    // KTU — Kituba
+    // ================================================================
+    public static readonly TimeLocale KTU = new(
+        "ktu",
+        new ClockConfig(
+            new[] { "zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi" },
+            "midi ya butu",
+            "midi",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
         )
     );
 
@@ -1178,6 +1418,46 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/men.json
+    // ================================================================
+    // MEN — Mende
+    // ================================================================
+    public static readonly TimeLocale MEN = new(
+        "men",
+        new ClockConfig(
+            new[] { "pu wɛlɛ", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila" },
+            "kpindi gbɔyɔŋ",
+            "ndɔlei-ma",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/mfe.json
+    // ================================================================
+    // MFE — Mauritian Creole
+    // ================================================================
+    public static readonly TimeLocale MFE = new(
+        "mfe",
+        new ClockConfig(
+            new[] { "douz", "enn", "de", "trwa", "kat", "senk", "sis", "set", "wit", "nef", "dis", "onz" },
+            "minwi",
+            "midi",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/mg.json
     // ================================================================
     // MG — Malagasy
@@ -1275,6 +1555,46 @@ public static class Locales
         ),
         new CompactnessOverride(
             new ShortClockConfig(true, null, "{h}:{mm}")
+        )
+    );
+
+    // Source: time/locales/src/mnk.json
+    // ================================================================
+    // MNK — Mandinka
+    // ================================================================
+    public static readonly TimeLocale MNK = new(
+        "mnk",
+        new ClockConfig(
+            new[] { "tan ning fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ ning kiliŋ" },
+            "sutu-tili-laŋ",
+            "tili-konto",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/mos.json
+    // ================================================================
+    // MOS — Moore
+    // ================================================================
+    public static readonly TimeLocale MOS = new(
+        "mos",
+        new ClockConfig(
+            new[] { "piig la a yiibu", "a yembre", "a yiibu", "a tãabo", "a naase", "a nu", "a yoobe", "a yopoe", "a niini", "a wae", "piiga", "piig la a yembre" },
+            "yʋng-vɩɩse",
+            "wĩntoog zabre",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
         )
     );
 
@@ -1378,6 +1698,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/nd.json
+    // ================================================================
+    // ND — Northern Ndebele
+    // ================================================================
+    public static readonly TimeLocale ND = new(
+        "nd",
+        new ClockConfig(
+            new[] { "litshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyangalombili", "isitshiyangalolunye", "litshumi", "litshumi lanye" },
+            "phakathi kobusuku",
+            "emini",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/ne.json
     // ================================================================
     // NE — Nepali
@@ -1388,6 +1728,26 @@ public static class Locales
             new[] { "बाह्र", "एक", "दुई", "तीन", "चार", "पाँच", "छ", "सात", "आठ", "नौ", "दश", "एघार" },
             "मध्यरात",
             "मध्यान्ह",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/ng.json
+    // ================================================================
+    // NG — Oshiwambo
+    // ================================================================
+    public static readonly TimeLocale NG = new(
+        "ng",
+        new ClockConfig(
+            new[] { "omulongo nambali", "imwe", "mbali", "ndatu", "ne", "ntano", "hamano", "heyali", "hetatu", "omugoyi", "omulongo", "omulongo nimwe" },
+            "onguloshi pakati",
+            "omutenya",
             new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
         ),
         new CompactnessOverride(
@@ -1415,6 +1775,46 @@ public static class Locales
         ),
         new CompactnessOverride(
             new ShortClockConfig(true, null, "{h}:{mm}")
+        )
+    );
+
+    // Source: time/locales/src/nso.json
+    // ================================================================
+    // NSO — Northern Sotho
+    // ================================================================
+    public static readonly TimeLocale NSO = new(
+        "nso",
+        new ClockConfig(
+            new[] { "lesome pedi", "tee", "pedi", "tharo", "nne", "hlano", "tshela", "šupa", "seswai", "senyane", "lesome", "lesome tee" },
+            "bošego gare",
+            "mosegare",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/nus.json
+    // ================================================================
+    // NUS — Nuer
+    // ================================================================
+    public static readonly TimeLocale NUS = new(
+        "nus",
+        new ClockConfig(
+            new[] { "thiäär ke rou", "tök", "rou", "diäk", "ŋuan", "dhiëc", "bäkɛl", "dhorou", "bät", "kuɔn", "thiäär", "thiäär ku tök" },
+            "wakɔ̈u",
+            "cäŋ kɔ̈k",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
         )
     );
 
@@ -1515,6 +1915,26 @@ public static class Locales
         ),
         new CompactnessOverride(
             new ShortClockConfig(true, null, "{h}:{mm}")
+        )
+    );
+
+    // Source: time/locales/src/pov.json
+    // ================================================================
+    // POV — Guinea-Bissau Creole
+    // ================================================================
+    public static readonly TimeLocale POV = new(
+        "pov",
+        new ClockConfig(
+            new[] { "dozi", "un", "dos", "tres", "kuatru", "sinku", "seis", "seti", "oitu", "novi", "des", "onzi" },
+            "meia noti",
+            "meiu dia",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
         )
     );
 
@@ -1638,6 +2058,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/sar.json
+    // ================================================================
+    // SAR — Sara
+    // ================================================================
+    public static readonly TimeLocale SAR = new(
+        "sar",
+        new ClockConfig(
+            new[] { "mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "kɨ̀ndá", "ɗìi", "mùtá", "sɔ̀", "mɨ̀ndɨ̀", "mɨ̀ndɨ̀ kɨ̀ndá", "mɨ̀sá", "mɨ̀ndɨ̀ mùtá", "mɨ̀ndɨ̀ sɔ̀", "mɔ̀ɔ́", "mɔ̀ɔ́ kɨ̀ndá" },
+            "badɔ",
+            "mbɔr ndɔ",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/sd.json
     // ================================================================
     // SD — Sindhi
@@ -1648,6 +2088,26 @@ public static class Locales
             new[] { "ٻارھ", "ھڪ", "ٻه", "ٽي", "چار", "پنج", "ڇھ", "ست", "اٺ", "نائن", "ڏھ", "يارھ" },
             "اڌ رات",
             "ٽپھر",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/sg.json
+    // ================================================================
+    // SG — Sango
+    // ================================================================
+    public static readonly TimeLocale SG = new(
+        "sg",
+        new ClockConfig(
+            new[] { "bâlè-ûse", "ôko", "ûse", "otâ", "usïö", "okü", "ömënë", "mbïrïmbïrï", "mënâmbârâ", "gonambâlâ", "bâlè", "bâlè na ôko" },
+            "gï na lögö",
+            "lâ nzönï",
             new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
         ),
         new CompactnessOverride(
@@ -1758,6 +2218,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/snk.json
+    // ================================================================
+    // SNK — Soninke
+    // ================================================================
+    public static readonly TimeLocale SNK = new(
+        "snk",
+        new ClockConfig(
+            new[] { "tanmu fillo", "baane", "fillo", "sikko", "naaxato", "karago", "tunmu", "ñerru", "segu", "kaburu", "tanmu", "tanmu baane" },
+            "sulen noxo",
+            "tili seren",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/so.json
     // ================================================================
     // SO — Somali
@@ -1818,6 +2298,46 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/ss.json
+    // ================================================================
+    // SS — siSwati
+    // ================================================================
+    public static readonly TimeLocale SS = new(
+        "ss",
+        new ClockConfig(
+            new[] { "lishumi nambili", "kunye", "kubili", "kutsatfu", "kune", "kusihlanu", "sitfupha", "sikhombisa", "siphohlongo", "sifisagcina", "lishumi", "lishumi nakunye" },
+            "phakathi kwebusuku",
+            "emini",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/st.json
+    // ================================================================
+    // ST — Southern Sotho
+    // ================================================================
+    public static readonly TimeLocale ST = new(
+        "st",
+        new ClockConfig(
+            new[] { "leshome le metso e mmedi", "e nngwe", "tse pedi", "tse tharo", "tse nne", "tse hlano", "tse tshelela", "tse supileng", "tse robedi", "tse robong", "leshome", "leshome le motso o le mong" },
+            "hara bosiu",
+            "motsheare",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/su.json
     // ================================================================
     // SU — Sundanese
@@ -1828,6 +2348,26 @@ public static class Locales
             new[] { "dua welas", "hiji", "dua", "tilu", "opat", "lima", "genep", "tujuh", "dalapan", "salapan", "sapuluh", "sabelas" },
             "tengah peuting",
             "beurang",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/suk.json
+    // ================================================================
+    // SUK — Sukuma
+    // ================================================================
+    public static readonly TimeLocale SUK = new(
+        "suk",
+        new ClockConfig(
+            new[] { "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja" },
+            "usiku gati",
+            "adhuhuri",
             new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
         ),
         new CompactnessOverride(
@@ -1918,6 +2458,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/tem.json
+    // ================================================================
+    // TEM — Temne
+    // ================================================================
+    public static readonly TimeLocale TEM = new(
+        "tem",
+        new ClockConfig(
+            new[] { "pɛn pu", "kɩrɩŋ", "rɔŋ", "rasar", "rɔŋ-anat", "rɔman", "rɔmata", "rɔmbot", "rɔmɔntat", "rɔmɔntaŋka", "pɛn", "pɛn nɛ kɩrɩŋ" },
+            "rofɛt anpa",
+            "lən",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -1978,6 +2538,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/tig.json
+    // ================================================================
+    // TIG — Tigre
+    // ================================================================
+    public static readonly TimeLocale TIG = new(
+        "tig",
+        new ClockConfig(
+            new[] { "ʿasərte wəkəlte", "ḥante", "kəlʾe", "səleste", "arbaʿte", "ḥamməste", "səste", "sabʿate", "səmmunte", "təsʿate", "ʿasərte", "ʿasərte wəḥante" },
+            "nəs-leyla",
+            "qayḥ",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/tk.json
     // ================================================================
     // TK — Turkmen
@@ -1998,6 +2578,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/tn.json
+    // ================================================================
+    // TN — Tswana
+    // ================================================================
+    public static readonly TimeLocale TN = new(
+        "tn",
+        new ClockConfig(
+            new[] { "lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe" },
+            "bosigo jwa magareng",
+            "motshegare",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/tr.json
     // ================================================================
     // TR — Turkish
@@ -2015,6 +2615,26 @@ public static class Locales
         ),
         new CompactnessOverride(
             new ShortClockConfig(true, null, "{h}:{mm}")
+        )
+    );
+
+    // Source: time/locales/src/ts.json
+    // ================================================================
+    // TS — Tsonga
+    // ================================================================
+    public static readonly TimeLocale TS = new(
+        "ts",
+        new ClockConfig(
+            new[] { "khume mbiri", "yin'we", "mbirhi", "nharhu", "mune", "ntlhanu", "tsevu", "nkombo", "nhungu", "kaye", "khume", "khume yin'we" },
+            "vusiku exikarhi",
+            "nhlekanhi",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
         )
     );
 
@@ -2055,6 +2675,26 @@ public static class Locales
         ),
         new CompactnessOverride(
             new ShortClockConfig(true, null, "{h}:{mm}")
+        )
+    );
+
+    // Source: time/locales/src/umb.json
+    // ================================================================
+    // UMB — Umbundu
+    // ================================================================
+    public static readonly TimeLocale UMB = new(
+        "umb",
+        new ClockConfig(
+            new[] { "olohola likumi na yivali", "yimosi", "yivali", "yitathu", "yinyali", "yitanu", "yitathu-va-yivali", "yisemba", "yinyali-va-yivali", "yitanu-va-yivali", "likumi", "likumi na yimosi" },
+            "ocitapi",
+            "ocivali",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
         )
     );
 
@@ -2118,6 +2758,46 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/vmw.json
+    // ================================================================
+    // VMW — Makhuwa
+    // ================================================================
+    public static readonly TimeLocale VMW = new(
+        "vmw",
+        new ClockConfig(
+            new[] { "khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa" },
+            "usiku wopakhala",
+            "muttana",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
+    // Source: time/locales/src/wo.json
+    // ================================================================
+    // WO — Wolof
+    // ================================================================
+    public static readonly TimeLocale WO = new(
+        "wo",
+        new ClockConfig(
+            new[] { "fukki ñaar", "benn", "ñaar", "ñett", "ñeent", "juróom", "juróom-benn", "juróom-ñaar", "juróom-ñett", "juróom-ñeent", "fukk", "fukki benn" },
+            "bu guddi",
+            "ci àttaya",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/xh.json
     // ================================================================
     // XH — Xhosa
@@ -2178,6 +2858,26 @@ public static class Locales
         )
     );
 
+    // Source: time/locales/src/zdj.json
+    // ================================================================
+    // ZDJ — Comorian
+    // ================================================================
+    public static readonly TimeLocale ZDJ = new(
+        "zdj",
+        new ClockConfig(
+            new[] { "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja" },
+            "usiku wa manane",
+            "adhuhuri",
+            new Dictionary<int, string> { { 0, "{h}:00" }, { 5, "{h}:05" }, { 10, "{h}:10" }, { 15, "{h}:15" }, { 20, "{h}:20" }, { 25, "{h}:25" }, { 30, "{h}:30" }, { 35, "{h}:35" }, { 40, "{h}:40" }, { 45, "{h}:45" }, { 50, "{h}:50" }, { 55, "{h}:55" } }
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("AM", "PM"), "{h}:{mm} {ampm}")
+        ),
+        new CompactnessOverride(
+            new ShortClockConfig(false, ("a", "p"), "{h}:{mm}{ampm}")
+        )
+    );
+
     // Source: time/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -2226,8 +2926,11 @@ public static class Locales
             { "am", AM },
             { "ar", AR },
             { "az", AZ },
+            { "bci", BCI },
             { "be", BE },
+            { "bem", BEM },
             { "bg", BG },
+            { "bm", BM },
             { "bn", BN },
             { "br", BR },
             { "bs", BS },
@@ -2237,15 +2940,21 @@ public static class Locales
             { "cy", CY },
             { "da", DA },
             { "de", DE },
+            { "din", DIN },
+            { "dje", DJE },
+            { "dyu", DYU },
+            { "ee", EE },
             { "el", EL },
             { "en", EN },
             { "es", ES },
             { "et", ET },
             { "eu", EU },
             { "fa", FA },
+            { "fan", FAN },
             { "ff", FF },
             { "fi", FI },
             { "fil", FIL },
+            { "fon", FON },
             { "fr", FR },
             { "ga", GA },
             { "gd", GD },
@@ -2267,10 +2976,13 @@ public static class Locales
             { "ja", JA },
             { "jv", JV },
             { "ka", KA },
+            { "kbp", KBP },
             { "kk", KK },
             { "km", KM },
             { "kn", KN },
             { "ko", KO },
+            { "kpe", KPE },
+            { "ktu", KTU },
             { "ku", KU },
             { "kw", KW },
             { "ky", KY },
@@ -2279,56 +2991,79 @@ public static class Locales
             { "lo", LO },
             { "lt", LT },
             { "lv", LV },
+            { "men", MEN },
+            { "mfe", MFE },
             { "mg", MG },
             { "mi", MI },
             { "mk", MK },
             { "ml", ML },
             { "mn", MN },
+            { "mnk", MNK },
+            { "mos", MOS },
             { "mr", MR },
             { "ms", MS },
             { "mt", MT },
             { "my", MY },
             { "nb", NB },
+            { "nd", ND },
             { "ne", NE },
+            { "ng", NG },
             { "nl", NL },
+            { "nso", NSO },
+            { "nus", NUS },
             { "ny", NY },
             { "om", OM },
             { "or", OR },
             { "pa", PA },
             { "pl", PL },
+            { "pov", POV },
             { "ps", PS },
             { "pt", PT },
             { "qu", QU },
             { "ro", RO },
             { "ru", RU },
             { "rw", RW },
+            { "sar", SAR },
             { "sd", SD },
+            { "sg", SG },
             { "shi", SHI },
             { "si", SI },
             { "sk", SK },
             { "sl", SL },
             { "sn", SN },
+            { "snk", SNK },
             { "so", SO },
             { "sq", SQ },
             { "sr", SR },
+            { "ss", SS },
+            { "st", ST },
             { "su", SU },
+            { "suk", SUK },
             { "sv", SV },
             { "sw", SW },
             { "ta", TA },
             { "te", TE },
+            { "tem", TEM },
             { "tg", TG },
             { "th", TH },
             { "ti", TI },
+            { "tig", TIG },
             { "tk", TK },
+            { "tn", TN },
             { "tr", TR },
+            { "ts", TS },
             { "tzm", TZM },
             { "uk", UK },
+            { "umb", UMB },
             { "ur", UR },
             { "uz", UZ },
             { "vi", VI },
+            { "vmw", VMW },
+            { "wo", WO },
             { "xh", XH },
             { "yo", YO },
             { "yue", YUE },
+            { "zdj", ZDJ },
             { "zh", ZH },
             { "zu", ZU },
         };

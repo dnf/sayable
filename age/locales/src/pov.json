@@ -1,0 +1,40 @@
+{
+  "code": "pov",
+  "name": "Guinea-Bissau Creole",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "{n} dia",
+    "week": "{n} simana",
+    "month": "{n} mis",
+    "year": "{n} anu"
+  },
+  "half": "{0} i meiu",
+  "delimiter": ", ",
+  "justBorn": "Mininu kaba di nasi",
+  "stages": {
+    "newborn": "Mininu nobu",
+    "infant": "Bebi",
+    "toddler": "Mininu pikiñu",
+    "child": "Mininu",
+    "teenager": "Rapas",
+    "adult": "Omi garandi"
+  },
+  "short": {
+    "units": {
+      "day": "{n} dia",
+      "week": "{n} sim",
+      "month": "{n} mis",
+      "year": "{n} anu"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n} dia",
+      "week": "{n} sim",
+      "month": "{n} mis",
+      "year": "{n} anu"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

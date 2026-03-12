@@ -205,6 +205,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/bci.json
+    // ── Baoulé ──────────────────────────────────────────────────────
+
+    public static function BCI(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'bci',
+            months: ['Zanvie', 'Flevie', 'Masi', 'Avrili', 'Mɛ', 'Zuɛn', 'Zulɛ', 'Uti', 'Sɛtanbu', 'Ɔtɔbu', 'Novanbu', 'Desanbu'],
+            weekdays: ['Mɔndi', 'Lunji', 'Madi', 'Mliku', 'Juedi', 'Vaandredi', 'Sanmdi'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'andɛ',
+            tomorrow: 'ainman',
+            yesterday: 'nglɛmun',
+            dayAfterTomorrow: 'ainman sin',
+            dayBeforeYesterday: 'nglɛmun sin',
+            thisWeekday: '{weekday} nga',
+            nextWeekday: '{weekday} ng\'ɔ ba',
+            lastWeekday: '{weekday} ng\'ɔ sín',
+            short: new CompactnessOverride(
+                months: ['Zan', 'Fle', 'Mas', 'Avr', 'Mɛ', 'Zuɛ', 'Zul', 'Uti', 'Sɛt', 'Ɔtɔ', 'Nov', 'Des'],
+                weekdays: ['Mɔn', 'Lun', 'Mad', 'Mli', 'Jue', 'Vaa', 'San'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/be.json
     // ── Belarusian ──────────────────────────────────────────────────
 
@@ -243,6 +280,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/bem.json
+    // ── Bemba ───────────────────────────────────────────────────────
+
+    public static function BEM(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'bem',
+            months: ['Januari', 'Februari', 'Machi', 'Epreli', 'Mei', 'Juni', 'Julai', 'Ogasti', 'Septemba', 'Oktoba', 'Novemba', 'Disemba'],
+            weekdays: ['Pa Mulungu', 'Pa Bwali', 'Pa Bibili', 'Pa Butatu', 'Pa Bune', 'Pa Busano', 'Pa Mulembe'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'lelo',
+            tomorrow: 'mailo',
+            yesterday: 'icungulo',
+            dayAfterTomorrow: 'mailo kabili',
+            dayBeforeYesterday: 'icungulo kabili',
+            thisWeekday: '{weekday} ubu',
+            nextWeekday: '{weekday} ukwisa',
+            lastWeekday: '{weekday} ukupita',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Feb', 'Mac', 'Epr', 'Mei', 'Jun', 'Jul', 'Oga', 'Sep', 'Okt', 'Nov', 'Dis'],
+                weekdays: ['Mul', 'Bwa', 'Bib', 'But', 'Bun', 'Bus', 'Mul'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/bg.json
     // ── Bulgarian ───────────────────────────────────────────────────
 
@@ -269,6 +343,43 @@ final class Locales
             short: new CompactnessOverride(
                 months: ['яну', 'фев', 'мар', 'апр', 'май', 'юни', 'юли', 'авг', 'сеп', 'окт', 'ное', 'дек'],
                 weekdays: ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/bm.json
+    // ── Bambara ─────────────────────────────────────────────────────
+
+    public static function BM(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'bm',
+            months: ['Zanwuye', 'Fewuriye', 'Marisi', 'Awirili', 'Mɛ', 'Zuwɛn', 'Zuluye', 'Uti', 'Sɛtanburu', 'ɔkutɔburu', 'Nowanbudu', 'Desanburu'],
+            weekdays: ['Kari', 'Ntɛnɛn', 'Tarata', 'Araba', 'Alamisa', 'Juma', 'Sibiri'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'bi',
+            tomorrow: 'sini',
+            yesterday: 'kunu',
+            dayAfterTomorrow: 'sini kɔfɛ',
+            dayBeforeYesterday: 'kunu kɔfɛ',
+            thisWeekday: '{weekday} nin',
+            nextWeekday: '{weekday} nata',
+            lastWeekday: '{weekday} tɛmɛnen',
+            short: new CompactnessOverride(
+                months: ['Zan', 'Few', 'Mar', 'Awi', 'Mɛ', 'Zuw', 'Zul', 'Uti', 'Sɛt', 'ɔku', 'Now', 'Des'],
+                weekdays: ['Kar', 'Ntɛ', 'Tar', 'Ara', 'Ala', 'Jum', 'Sib'],
                 dayFormat: '{n}',
                 datePattern: '{day} {month}',
                 datePatternWithYear: '{day} {month} {year}',
@@ -612,6 +723,154 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/din.json
+    // ── Dinka ───────────────────────────────────────────────────────
+
+    public static function DIN(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'din',
+            months: ['Tiɔp in dit', 'Pɛt', 'Duɔ̈ɔ̈ŋ', 'Guak', 'Duät', 'Kornyot', 'Payi', 'Tio̱p in thii', 'Laath', 'Kur', 'Tio̱p in laat', 'Jiɔk'],
+            weekdays: ['Akɔl dhorou', 'Kɔl jöŋ', 'Kɔl rou', 'Kɔl diäk', 'Kɔl ŋuän', 'Kɔl dhiëc', 'Kɔl bäkäl'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'yïn',
+            tomorrow: 'riak',
+            yesterday: 'aköl',
+            dayAfterTomorrow: 'riak cök',
+            dayBeforeYesterday: 'aköl cök',
+            thisWeekday: '{weekday} kënë',
+            nextWeekday: '{weekday} bɛ̈n',
+            lastWeekday: '{weekday} cï wëëŋ',
+            short: new CompactnessOverride(
+                months: ['Tiɔp', 'Pɛt', 'Duɔ̈ɔ̈ŋ', 'Guak', 'Duät', 'Kor', 'Pay', 'Tio̱p', 'Laa', 'Kur', 'Tio̱p', 'Jiɔk'],
+                weekdays: ['Dho', 'Jöŋ', 'Rou', 'Diäk', 'Ŋuän', 'Dhiëc', 'Bäk'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/dje.json
+    // ── Zarma ───────────────────────────────────────────────────────
+
+    public static function DJE(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'dje',
+            months: ['Žanwiye', 'Feewiriye', 'Marsi', 'Awiril', 'Me', 'Žuweŋ', 'Žuyye', 'Ut', 'Sektanbur', 'Oktoobur', 'Noowanbur', 'Deesanbur'],
+            weekdays: ['Alhadi', 'Atini', 'Atalaata', 'Alarba', 'Alhamisi', 'Alzuma', 'Asibiti'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'hõ',
+            tomorrow: 'suba',
+            yesterday: 'bi',
+            dayAfterTomorrow: 'suba cine',
+            dayBeforeYesterday: 'bi fo',
+            thisWeekday: '{weekday} wo',
+            nextWeekday: '{weekday} ka kaa',
+            lastWeekday: '{weekday} ka ban',
+            short: new CompactnessOverride(
+                months: ['Žan', 'Fee', 'Mar', 'Awi', 'Me', 'Žuw', 'Žuy', 'Ut', 'Sek', 'Okt', 'Noo', 'Dee'],
+                weekdays: ['Alh', 'Ati', 'Ata', 'Ala', 'Alh', 'Alz', 'Asi'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/dyu.json
+    // ── Dyula ───────────────────────────────────────────────────────
+
+    public static function DYU(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'dyu',
+            months: ['Zanwuyekalo', 'Feburuyekalo', 'Marisikalo', 'Awirilikalo', 'Mɛkalo', 'Zuwɛnkalo', 'Zuluyekalo', 'Utikalo', 'Sɛtanburukalo', 'Ɔkutɔburukalo', 'Nowanburdukalo', 'Desanburukalo'],
+            weekdays: ['Kari', 'Ntɛnɛn', 'Tarata', 'Araba', 'Alamisa', 'Juma', 'Sibiri'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'bi',
+            tomorrow: 'sini',
+            yesterday: 'kunu',
+            dayAfterTomorrow: 'sini kɔfɛ',
+            dayBeforeYesterday: 'kunu kɔfɛ',
+            thisWeekday: '{weekday} nin',
+            nextWeekday: '{weekday} nata',
+            lastWeekday: '{weekday} tɛmɛnen',
+            short: new CompactnessOverride(
+                months: ['Zan', 'Feb', 'Mar', 'Awi', 'Mɛ', 'Zuw', 'Zul', 'Uti', 'Sɛt', 'Ɔku', 'Now', 'Des'],
+                weekdays: ['Kar', 'Ntɛ', 'Tar', 'Ara', 'Ala', 'Jum', 'Sib'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/ee.json
+    // ── Ewe ─────────────────────────────────────────────────────────
+
+    public static function EE(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'ee',
+            months: ['Dzove', 'Dzodze', 'Tedoxe', 'Afɔfĩe', 'Damɛ', 'Masa', 'Siamlɔm', 'Dasiamime', 'Anyɔnyɔ', 'Kele', 'Adeɛmekpɔxe', 'Dzome'],
+            weekdays: ['Kɔsiɖa', 'Dzoɖa', 'Braɖa', 'Kuɖa', 'Yawoɖa', 'Fiɖa', 'Memleɖa'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'egbe',
+            tomorrow: 'etsɔ',
+            yesterday: 'etso',
+            dayAfterTomorrow: 'etsɔ megbe',
+            dayBeforeYesterday: 'etso nyitsɔ',
+            thisWeekday: '{weekday} sia',
+            nextWeekday: '{weekday} si gbɔna',
+            lastWeekday: '{weekday} si va yi',
+            short: new CompactnessOverride(
+                months: ['Dzv', 'Dzd', 'Ted', 'Afɔ', 'Dam', 'Mas', 'Sia', 'Das', 'Any', 'Kel', 'Ade', 'Dzm'],
+                weekdays: ['Kɔs', 'Dzo', 'Bra', 'Kuɖ', 'Yaw', 'Fiɖ', 'Mem'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/el.json
     // ── Greek ───────────────────────────────────────────────────────
 
@@ -835,6 +1094,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/fan.json
+    // ── Fang ────────────────────────────────────────────────────────
+
+    public static function FAN(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'fan',
+            months: ['Nzas Ngon', 'Nzas Mekié', 'Nzas Okúa', 'Nzas Angón', 'Nzas Obuí', 'Nzas Okéna', 'Nzas Osúa', 'Nzas Mwom', 'Nzas Ebulú', 'Nzas Owono', 'Nzas Owono-abé', 'Nzas Nkéng'],
+            weekdays: ['Esig', 'Amvus', 'Amvus-abé', 'Amvus-alú', 'Amvus-anyin', 'Mba', 'Ngon'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'anú',
+            tomorrow: 'kie',
+            yesterday: 'angogomé',
+            dayAfterTomorrow: 'kie okúa',
+            dayBeforeYesterday: 'angogomé okúa',
+            thisWeekday: '{weekday} ane',
+            nextWeekday: '{weekday} a bé za',
+            lastWeekday: '{weekday} a ja',
+            short: new CompactnessOverride(
+                months: ['Ngo', 'Mek', 'Oku', 'Ang', 'Obu', 'Oke', 'Osu', 'Mwo', 'Ebu', 'Owo', 'Owa', 'Nke'],
+                weekdays: ['Esi', 'Amv', 'Ama', 'Aml', 'Amn', 'Mba', 'Ngo'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/ff.json
     // ── Fulah ───────────────────────────────────────────────────────
 
@@ -943,6 +1239,43 @@ final class Locales
             compact: new CompactnessOverride(
                 datePattern: '{m}/{d}',
                 datePatternWithYear: '{m}/{d}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/fon.json
+    // ── Fon ─────────────────────────────────────────────────────────
+
+    public static function FON(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'fon',
+            months: ['Alɔfí', 'Alɔnyɔ', 'Ataɖaxɔ', 'Tlɛsún', 'Axɔsún', 'Ayɛsún', 'Nùxwásún', 'Ayidosún', 'Kɛnísún', 'Kanyásún', 'Abɔxwísún', 'Adɔxwísún'],
+            weekdays: ['Sidégbe', 'Tɛnígbe', 'Talɛtagbe', 'Azǎngagbe', 'Nyɔnúgbe', 'Axɔ́sùgbe', 'Abámɛ́ta'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'egbè',
+            tomorrow: 'sɔ',
+            yesterday: 'sá',
+            dayAfterTomorrow: 'sɔ gudo',
+            dayBeforeYesterday: 'sá gudo',
+            thisWeekday: '{weekday} elɔ',
+            nextWeekday: '{weekday} e ja',
+            lastWeekday: '{weekday} e wá yí',
+            short: new CompactnessOverride(
+                months: ['Alɔ', 'Any', 'Ata', 'Tlɛ', 'Axɔ', 'Ayɛ', 'Nùx', 'Ayi', 'Kɛn', 'Kan', 'Abɔ', 'Adɔ'],
+                weekdays: ['Sid', 'Tɛn', 'Tal', 'Azǎ', 'Nyɔ', 'Axɔ', 'Abá'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
             ),
         );
     }
@@ -1723,6 +2056,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/kbp.json
+    // ── Kabiye ──────────────────────────────────────────────────────
+
+    public static function KBP(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'kbp',
+            months: ['Kɔlaɣ', 'Naaɣ Kɩŋ', 'Naataŋgʊ', 'Naalɩɩ', 'Lɛlɩɩ', 'Kʊɖʊmaa', 'Saŋayɩɩ', 'Kɩyɛɛna', 'Lɩtɩɩ', 'Kʊɖʊmaɣ', 'Tɩŋgɩzɩɩ', 'Abranɩɩ'],
+            weekdays: ['Pɩsɩ', 'Tɛɖɛɣa', 'Taata', 'Aranzɩɩ', 'Aramnza', 'Azɩma', 'Asɩbɩ'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'sɔnɔ',
+            tomorrow: 'cee',
+            yesterday: 'ɖooo',
+            dayAfterTomorrow: 'cee wayɩ',
+            dayBeforeYesterday: 'ɖooo wayɩ',
+            thisWeekday: '{weekday} kɩ',
+            nextWeekday: '{weekday} nɛ ŋga',
+            lastWeekday: '{weekday} nɛ wɛ',
+            short: new CompactnessOverride(
+                months: ['Kɔl', 'Naa', 'Nat', 'Nal', 'Lɛl', 'Kʊɖ', 'Saŋ', 'Kɩy', 'Lɩt', 'Kʊɖ', 'Tɩŋ', 'Abr'],
+                weekdays: ['Pɩs', 'Tɛɖ', 'Taa', 'Ara', 'Arm', 'Azɩ', 'Asɩ'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/kk.json
     // ── Kazakh ──────────────────────────────────────────────────────
 
@@ -1867,6 +2237,80 @@ final class Locales
             compact: new CompactnessOverride(
                 datePattern: '{m}/{d}',
                 datePatternWithYear: '{yy}/{m}/{d}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/kpe.json
+    // ── Kpelle ──────────────────────────────────────────────────────
+
+    public static function KPE(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'kpe',
+            months: ['Yanuwali', 'Fɛbɛli', 'Maachi', 'Eepɛli', 'Mɛɛ', 'Juŋ', 'Julai', 'Ɔɔgɔsi', 'Sɛtɛmba', 'Ɔtɔba', 'Nɔvɛmba', 'Disɛmba'],
+            weekdays: ['Saadee', 'Tɛnɛɛ', 'Talata', 'Alaba', 'Aimisa', 'Juma', 'Satɛdee'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'nɔ̃ɔ̃',
+            tomorrow: 'sila',
+            yesterday: 'ɓii',
+            dayAfterTomorrow: 'sila pɔlɔ',
+            dayBeforeYesterday: 'ɓii pɔlɔ',
+            thisWeekday: '{weekday} yi',
+            nextWeekday: '{weekday} ya kɛ',
+            lastWeekday: '{weekday} kɛ pɔlɔ',
+            short: new CompactnessOverride(
+                months: ['Yan', 'Fɛb', 'Maa', 'Eep', 'Mɛɛ', 'Juŋ', 'Jul', 'Ɔɔg', 'Sɛt', 'Ɔtɔ', 'Nɔv', 'Dis'],
+                weekdays: ['Saa', 'Tɛn', 'Tal', 'Ala', 'Aim', 'Jum', 'Sat'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/ktu.json
+    // ── Kituba ──────────────────────────────────────────────────────
+
+    public static function KTU(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'ktu',
+            months: ['Yanvye', 'Fevrye', 'Marsi', 'Avrili', 'Mɛ', 'Yuwɛ', 'Yulɛ', 'Uti', 'Sɛtambre', 'Ɔtɔbre', 'Nɔvambre', 'Desambre'],
+            weekdays: ['Lumingu', 'Kimosi', 'Kizole', 'Kizoluntatu', 'Kinya', 'Kisabala', 'Kimpwanza'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'bubu',
+            tomorrow: 'mbazi',
+            yesterday: 'zono',
+            dayAfterTomorrow: 'mbazi ya mbazi',
+            dayBeforeYesterday: 'zono ya zono',
+            thisWeekday: '{weekday} yayi',
+            nextWeekday: '{weekday} ya kwiza',
+            lastWeekday: '{weekday} ya vioka',
+            short: new CompactnessOverride(
+                months: ['Yan', 'Fev', 'Mar', 'Avr', 'Mɛ', 'Yuw', 'Yul', 'Uti', 'Sɛt', 'Ɔtɔ', 'Nɔv', 'Des'],
+                weekdays: ['Lum', 'Kim', 'Kiz', 'Kzn', 'Kin', 'Kis', 'Kmp'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
             ),
         );
     }
@@ -2166,6 +2610,80 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/men.json
+    // ── Mende ───────────────────────────────────────────────────────
+
+    public static function MEN(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'men',
+            months: ['Januwali', 'Febluwali', 'Maachi', 'Epuli', 'Mei', 'Juun', 'Julai', 'Ɔgɔsi', 'Sɛtɛmba', 'Ɔtɔba', 'Nɔvɛmba', 'Disɛmba'],
+            weekdays: ['Lahadi', 'Tɛɛnɛɛ', 'Talata', 'Alaba', 'Aimisa', 'Juma', 'Satidei'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'wii',
+            tomorrow: 'sina',
+            yesterday: 'bii',
+            dayAfterTomorrow: 'sina gɔlɔ',
+            dayBeforeYesterday: 'bii gɔlɔ',
+            thisWeekday: '{weekday} yɛ',
+            nextWeekday: '{weekday} yɛ gbɔyɔ',
+            lastWeekday: '{weekday} taa gbɔyɔ',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Feb', 'Maa', 'Epu', 'Mei', 'Juu', 'Jul', 'Ɔgɔ', 'Sɛt', 'Ɔtɔ', 'Nɔv', 'Dis'],
+                weekdays: ['Lah', 'Tɛɛ', 'Tal', 'Ala', 'Aim', 'Jum', 'Sat'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/mfe.json
+    // ── Mauritian Creole ────────────────────────────────────────────
+
+    public static function MFE(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'mfe',
+            months: ['Zanvie', 'Fevrie', 'Mars', 'Avril', 'Me', 'Zwin', 'Zwiye', 'Out', 'Septam', 'Oktob', 'Novam', 'Desam'],
+            weekdays: ['Dimans', 'Lindi', 'Mardi', 'Merkredi', 'Zedi', 'Vandredi', 'Samdi'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'zordi',
+            tomorrow: 'dimin',
+            yesterday: 'yer',
+            dayAfterTomorrow: 'apre dimin',
+            dayBeforeYesterday: 'avan yer',
+            thisWeekday: '{weekday} la',
+            nextWeekday: '{weekday} prosenn',
+            lastWeekday: '{weekday} pase',
+            short: new CompactnessOverride(
+                months: ['Zan', 'Fev', 'Mar', 'Avr', 'Me', 'Zwn', 'Zwy', 'Out', 'Sep', 'Okt', 'Nov', 'Des'],
+                weekdays: ['Dim', 'Lin', 'Mar', 'Mer', 'Zed', 'Van', 'Sam'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/mg.json
     // ── Malagasy ────────────────────────────────────────────────────
 
@@ -2347,6 +2865,80 @@ final class Locales
             compact: new CompactnessOverride(
                 datePattern: '{yy}/{m}/{d}',
                 datePatternWithYear: '{yy}/{m}/{d}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/mnk.json
+    // ── Mandinka ────────────────────────────────────────────────────
+
+    public static function MNK(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'mnk',
+            months: ['Samwiye', 'Feburiye', 'Marsi', 'Afiril', 'Meyi', 'Juŋ', 'Julaa', 'Ooti', 'Sɛtɛmba', 'Ɔtɔba', 'Nuwɛmba', 'Disɛmba'],
+            weekdays: ['Ari', 'Teniŋ', 'Talata', 'Araba', 'Alamisa', 'Juma', 'Sibiti'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'bi',
+            tomorrow: 'siniŋ',
+            yesterday: 'kuŋ',
+            dayAfterTomorrow: 'siniŋ kɔma',
+            dayBeforeYesterday: 'kuŋ kɔma',
+            thisWeekday: '{weekday} niŋ',
+            nextWeekday: '{weekday} nataa',
+            lastWeekday: '{weekday} taata',
+            short: new CompactnessOverride(
+                months: ['Sam', 'Feb', 'Mar', 'Afi', 'Mey', 'Juŋ', 'Jul', 'Oot', 'Sɛt', 'Ɔtɔ', 'Nuw', 'Dis'],
+                weekdays: ['Ari', 'Ten', 'Tal', 'Ara', 'Ala', 'Jum', 'Sib'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/mos.json
+    // ── Moore ───────────────────────────────────────────────────────
+
+    public static function MOS(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'mos',
+            months: ['Zãn-naabu', 'Sig-noy-yaadre', 'Sig-noy-taabo', 'Kãn-saglem', 'Koabg-taabo', 'Koabg-yaadre', 'Baspɩɩre', 'Gɩ-sõongo', 'Tũubg-sõongo', 'Pẽemb-sõongo', 'Laafi-bãaga', 'Filiga-bãaga'],
+            weekdays: ['Alhadi', 'Atɩnni', 'Atalaata', 'Alarba', 'Alkamisa', 'Arjuma', 'Asibti'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'rũnda',
+            tomorrow: 'beoog',
+            yesterday: 'zaame',
+            dayAfterTomorrow: 'beoog sẽn wat',
+            dayBeforeYesterday: 'zaame sẽn loog',
+            thisWeekday: '{weekday} kãnga',
+            nextWeekday: '{weekday} sẽn wat',
+            lastWeekday: '{weekday} sẽn loog',
+            short: new CompactnessOverride(
+                months: ['Zãn', 'S-y', 'S-t', 'Kãn', 'K-t', 'K-y', 'Bas', 'Gɩ', 'Tũu', 'Pẽe', 'Laa', 'Fil'],
+                weekdays: ['Alh', 'Atɩ', 'Ata', 'Ala', 'Alk', 'Arj', 'Asi'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
             ),
         );
     }
@@ -2536,6 +3128,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/nd.json
+    // ── Northern Ndebele ────────────────────────────────────────────
+
+    public static function ND(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'nd',
+            months: ['Zibandlela', 'Nhlolanja', 'Mbimbitho', 'Mabasa', 'Nkwenkwezi', 'Nhlangula', 'Kholwane', 'Ingci', 'Inyoni', 'Imphala', 'Lwezi', 'Mpalakazi'],
+            weekdays: ['Sonto', 'Mvulo', 'Sibili', 'Sithathu', 'Sine', 'Sihlanu', 'Mgqibelo'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'lamuhla',
+            tomorrow: 'kusasa',
+            yesterday: 'izolo',
+            dayAfterTomorrow: 'ngomhlomunye',
+            dayBeforeYesterday: 'usuku olwedlule izolo',
+            thisWeekday: 'leli {weekday}',
+            nextWeekday: '{weekday} elizayo',
+            lastWeekday: '{weekday} eledlule',
+            short: new CompactnessOverride(
+                months: ['Zib', 'Nhl', 'Mbi', 'Mab', 'Nkw', 'Nhl', 'Kho', 'Ing', 'Iny', 'Imp', 'Lwe', 'Mpa'],
+                weekdays: ['Son', 'Mvu', 'Sib', 'Sit', 'Sin', 'Sih', 'Mgq'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/ne.json
     // ── Nepali ──────────────────────────────────────────────────────
 
@@ -2573,6 +3202,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/ng.json
+    // ── Oshiwambo ───────────────────────────────────────────────────
+
+    public static function NG(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'ng',
+            months: ['Januali', 'Febluali', 'Malitsi', 'Aplili', 'Mei', 'Juni', 'Juli', 'Augustu', 'Septemba', 'Oktoba', 'Novemba', 'Desemba'],
+            weekdays: ['Osoondaha', 'Omaandaha', 'Etitatu', 'Etitano', 'Etine', 'Oshitimuine', 'Eshabati'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'nena',
+            tomorrow: 'mongula',
+            yesterday: 'ongula ya dja ko',
+            dayAfterTomorrow: 'mongula e li ko',
+            dayBeforeYesterday: 'ongula ya dja ko nale',
+            thisWeekday: '{weekday} eshi',
+            nextWeekday: '{weekday} e li ko',
+            lastWeekday: '{weekday} ya dja ko',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Feb', 'Mal', 'Apl', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+                weekdays: ['Oso', 'Oma', 'Eti', 'Etn', 'Etn', 'Osh', 'Esh'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/nl.json
     // ── Dutch ───────────────────────────────────────────────────────
 
@@ -2599,6 +3265,80 @@ final class Locales
             short: new CompactnessOverride(
                 months: ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'],
                 weekdays: ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/nso.json
+    // ── Northern Sotho ──────────────────────────────────────────────
+
+    public static function NSO(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'nso',
+            months: ['Pherekgong', 'Hlakola', 'Mopitlo', 'Moranang', 'Mosegamanye', 'Ngoatobošego', 'Phukwi', 'Phatwe', 'Lewedi', 'Diphalane', 'Dibatsela', 'Manthole'],
+            weekdays: ['Lamorena', 'Mošupologo', 'Labobedi', 'Laboraro', 'Labone', 'Labohlano', 'Mokibelo'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'lehono',
+            tomorrow: 'gosasa',
+            yesterday: 'maabane',
+            dayAfterTomorrow: 'morago ga gosasa',
+            dayBeforeYesterday: 'maabane a go feta',
+            thisWeekday: '{weekday} ye',
+            nextWeekday: '{weekday} ye e tlago',
+            lastWeekday: '{weekday} ye e fetilego',
+            short: new CompactnessOverride(
+                months: ['Pher', 'Hlak', 'Mop', 'Mor', 'Mos', 'Ngoa', 'Phu', 'Pha', 'Lew', 'Diph', 'Dib', 'Man'],
+                weekdays: ['Lam', 'Moš', 'Lbb', 'Lbr', 'Lbn', 'Lbh', 'Mok'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/nus.json
+    // ── Nuer ────────────────────────────────────────────────────────
+
+    public static function NUS(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'nus',
+            months: ['Tiɔp thar', 'Pɛt', 'Duɔɔŋ', 'Guak', 'Duät', 'Kornyot', 'Payi', 'Tio̱p in thii', 'Laath', 'Kur', 'Tio̱p in laat', 'Jiɔk'],
+            weekdays: ['Cäŋ nhial', 'Jiec la̱t', 'Rɛw la̱t', 'Diɔk la̱t', 'Ŋuaan la̱t', 'Dhieec la̱t', 'Bäkɛl'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'walɛ',
+            tomorrow: 'riak',
+            yesterday: 'dhorou',
+            dayAfterTomorrow: 'riak kɛnɛ',
+            dayBeforeYesterday: 'dhorou kɛnɛ',
+            thisWeekday: '{weekday} ɛn',
+            nextWeekday: '{weekday} tɛ bɛ̈n',
+            lastWeekday: '{weekday} cï kuɔ̈ɔ̈t',
+            short: new CompactnessOverride(
+                months: ['Tiɔp', 'Pɛt', 'Duɔɔ', 'Gua', 'Duä', 'Kor', 'Pay', 'Tio̱p', 'Laa', 'Kur', 'Tio̱', 'Jiɔ'],
+                weekdays: ['Nhial', 'Jiec', 'Rɛw', 'Diɔk', 'Ŋuaan', 'Dhiec', 'Bäk'],
                 dayFormat: '{n}',
                 datePattern: '{day} {month}',
                 datePatternWithYear: '{day} {month} {year}',
@@ -2792,6 +3532,43 @@ final class Locales
             compact: new CompactnessOverride(
                 datePattern: '{d}.{m}.',
                 datePatternWithYear: '{d}.{m}.{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/pov.json
+    // ── Guinea-Bissau Creole ────────────────────────────────────────
+
+    public static function POV(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'pov',
+            months: ['Janeru', 'Febreru', 'Marsu', 'Abril', 'Maiu', 'Junhu', 'Julhu', 'Agostu', 'Setembru', 'Otubru', 'Novembru', 'Dizembru'],
+            weekdays: ['Dumingu', 'Sigunda', 'Tersa', 'Kuarta', 'Kinta', 'Sesta', 'Sabadu'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'oji',
+            tomorrow: 'manan',
+            yesterday: 'onfo',
+            dayAfterTomorrow: 'dipus di manan',
+            dayBeforeYesterday: 'antis di onfo',
+            thisWeekday: '{weekday} kel',
+            nextWeekday: '{weekday} ki bin',
+            lastWeekday: '{weekday} pasadu',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Otu', 'Nov', 'Diz'],
+                weekdays: ['Dum', 'Sig', 'Ter', 'Kua', 'Kin', 'Ses', 'Sab'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
             ),
         );
     }
@@ -3020,6 +3797,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/sar.json
+    // ── Sara ────────────────────────────────────────────────────────
+
+    public static function SAR(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'sar',
+            months: ['Zanviye', 'Fevriye', 'Maars', 'Avriil', 'Mee', 'Zuɛ̃', 'Zulɛ', 'Uut', 'Sɛtɛmbar', 'Ɔtɔbar', 'Nɔvambar', 'Desambar'],
+            weekdays: ['Paskaa', 'Nɔy', 'Talata', 'Alarba', 'Alkamisa', 'Juma', 'Sibiti'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'ɗgá',
+            tomorrow: 'gɨ́nā',
+            yesterday: 'ɗáà',
+            dayAfterTomorrow: 'gɨ́nā gɨ́nā',
+            dayBeforeYesterday: 'ɗáà ɗáà',
+            thisWeekday: '{weekday} nè',
+            nextWeekday: '{weekday} ga',
+            lastWeekday: '{weekday} ɓòo kɔ',
+            short: new CompactnessOverride(
+                months: ['Zan', 'Fev', 'Mar', 'Avr', 'Mee', 'Zuɛ', 'Zul', 'Uut', 'Sɛt', 'Ɔtɔ', 'Nɔv', 'Des'],
+                weekdays: ['Pas', 'Nɔy', 'Tal', 'Ala', 'Alk', 'Jum', 'Sib'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/sd.json
     // ── Sindhi ──────────────────────────────────────────────────────
 
@@ -3046,6 +3860,43 @@ final class Locales
             short: new CompactnessOverride(
                 months: ['جن', 'فيب', 'مار', 'اپر', 'مئي', 'جون', 'جول', 'آگس', 'سيپ', 'آڪٽ', 'نوم', 'ڊسم'],
                 weekdays: ['آچ', 'سوم', 'اڱا', 'ارب', 'خم', 'جمع', 'ڇن'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/sg.json
+    // ── Sango ───────────────────────────────────────────────────────
+
+    public static function SG(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'sg',
+            months: ['Nyenye', 'Fulundïgi', 'Mbängü', 'Ngubùe', 'Bêläwü', 'Föndo', 'Lengua', 'Kükürü', 'Mvuka', 'Ngberere', 'Nabändüru', 'Kakauka'],
+            weekdays: ['Bikua-ôko', 'Bïkua-ûse', 'Bïkua-ptâ', 'Bïkua-usïö', 'Bïkua-okü', 'Lâpôsö', 'Lâyenga'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'lâsô',
+            tomorrow: 'kêkerêke',
+            yesterday: 'bîrî',
+            dayAfterTomorrow: 'lâ tî kêkerêke',
+            dayBeforeYesterday: 'lâ tî bîrî',
+            thisWeekday: '{weekday} sô',
+            nextWeekday: '{weekday} tî âla',
+            lastWeekday: '{weekday} tî pekô',
+            short: new CompactnessOverride(
+                months: ['Nye', 'Ful', 'Mbä', 'Ngu', 'Bêl', 'Fön', 'Len', 'Kük', 'Mvu', 'Ngb', 'Nab', 'Kak'],
+                weekdays: ['Ôko', 'Ûse', 'Ptâ', 'Usï', 'Okü', 'Pôs', 'Yng'],
                 dayFormat: '{n}',
                 datePattern: '{day} {month}',
                 datePatternWithYear: '{day} {month} {year}',
@@ -3242,6 +4093,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/snk.json
+    // ── Soninke ─────────────────────────────────────────────────────
+
+    public static function SNK(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'snk',
+            months: ['Janwiye', 'Feburiye', 'Marasi', 'Abirili', 'Meyi', 'Juwɛ', 'Juliye', 'Awutu', 'Sɛtanburu', 'Okutoburu', 'Nuwanburu', 'Desanburu'],
+            weekdays: ['Alhadi', 'Atinni', 'Ataalaata', 'Alarba', 'Alxamiisa', 'Arjuma', 'Asibiti'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'haqun',
+            tomorrow: 'kinni',
+            yesterday: 'noxone',
+            dayAfterTomorrow: 'kinni xenqa',
+            dayBeforeYesterday: 'noxone xenqa',
+            thisWeekday: '{weekday} yi',
+            nextWeekday: '{weekday} na tage',
+            lastWeekday: '{weekday} toxo kille',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Feb', 'Mar', 'Abi', 'Mey', 'Juw', 'Jul', 'Awu', 'Sɛt', 'Oku', 'Nuw', 'Des'],
+                weekdays: ['Alh', 'Ati', 'Ata', 'Ala', 'Alx', 'Arj', 'Asi'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/so.json
     // ── Somali ──────────────────────────────────────────────────────
 
@@ -3353,6 +4241,80 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/ss.json
+    // ── siSwati ─────────────────────────────────────────────────────
+
+    public static function SS(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'ss',
+            months: ['Bhimbidvwane', 'iNdlovana', 'iNdlovulenkhulu', 'Mabasa', 'iNkhwekhweti', 'iNhlaba', 'Kholwane', 'iNgci', 'iNyoni', 'iMphala', 'Lweti', 'iNgongoni'],
+            weekdays: ['LiSontfo', 'uMsombuluko', 'Lesibili', 'Lesitsatfu', 'Lesine', 'Lesihlanu', 'uMgcibelo'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'lamuhla',
+            tomorrow: 'kusasa',
+            yesterday: 'itolo',
+            dayAfterTomorrow: 'ngemhlomunye',
+            dayBeforeYesterday: 'kutolo lokwengca',
+            thisWeekday: 'leli {weekday}',
+            nextWeekday: '{weekday} letako',
+            lastWeekday: '{weekday} leledlule',
+            short: new CompactnessOverride(
+                months: ['Bhi', 'Ind', 'Ink', 'Mab', 'Inkw', 'Inh', 'Kho', 'Ingc', 'Iny', 'Imp', 'Lwe', 'Ingo'],
+                weekdays: ['Son', 'Mso', 'Bil', 'Tsa', 'Sin', 'Hla', 'Mgc'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/st.json
+    // ── Southern Sotho ──────────────────────────────────────────────
+
+    public static function ST(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'st',
+            months: ['Pherekgong', 'Hlakola', 'Hlakubele', 'Mmese', 'Motsheanong', 'Phupjane', 'Phupu', 'Phato', 'Leotshe', 'Mphalane', 'Pudungwana', 'Tshitwe'],
+            weekdays: ['Sontaha', 'Mmantaha', 'Labobedi', 'Laboraro', 'Labone', 'Labohlano', 'Moqebelo'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'kajeno',
+            tomorrow: 'hosane',
+            yesterday: 'maobane',
+            dayAfterTomorrow: 'hosanemane',
+            dayBeforeYesterday: 'maobanyane',
+            thisWeekday: '{weekday} ena',
+            nextWeekday: '{weekday} e tlang',
+            lastWeekday: '{weekday} e fetileng',
+            short: new CompactnessOverride(
+                months: ['Phe', 'Hlk', 'Hlb', 'Mme', 'Mot', 'Phj', 'Php', 'Pha', 'Leo', 'Mph', 'Pud', 'Tsh'],
+                weekdays: ['Son', 'Mma', 'Bed', 'Rar', 'Bon', 'Hla', 'Moq'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/su.json
     // ── Sundanese ───────────────────────────────────────────────────
 
@@ -3379,6 +4341,43 @@ final class Locales
             short: new CompactnessOverride(
                 months: ['Jan', 'Péb', 'Mar', 'Apr', 'Méi', 'Jun', 'Jul', 'Ags', 'Sép', 'Okt', 'Nop', 'Dés'],
                 weekdays: ['Mng', 'Sen', 'Sal', 'Reb', 'Kem', 'Jum', 'Sap'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/suk.json
+    // ── Sukuma ──────────────────────────────────────────────────────
+
+    public static function SUK(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'suk',
+            months: ['Januari', 'Februari', 'Machi', 'Aprili', 'Mei', 'Juni', 'Julai', 'Agosti', 'Septemba', 'Oktoba', 'Novemba', 'Desemba'],
+            weekdays: ['Jumapili', 'Jumatatu', 'Jumanne', 'Jumatano', 'Alhamisi', 'Ijumaa', 'Jumamosi'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'lelo',
+            tomorrow: 'milau',
+            yesterday: 'igolo',
+            dayAfterTomorrow: 'milau ya pili',
+            dayBeforeYesterday: 'igolo ya pili',
+            thisWeekday: '{weekday} iyi',
+            nextWeekday: '{weekday} ya kuja',
+            lastWeekday: '{weekday} iliyopita',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun', 'Jul', 'Ago', 'Sep', 'Okt', 'Nov', 'Des'],
+                weekdays: ['Jpl', 'Jtt', 'Jnn', 'Jtn', 'Alh', 'Ijm', 'Jms'],
                 dayFormat: '{n}',
                 datePattern: '{day} {month}',
                 datePatternWithYear: '{day} {month} {year}',
@@ -3538,6 +4537,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/tem.json
+    // ── Temne ───────────────────────────────────────────────────────
+
+    public static function TEM(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'tem',
+            months: ['Janɛri', 'Fɛbrɛri', 'Mach', 'Epril', 'Me', 'Jun', 'Julai', 'Ɔgɔst', 'Sɛtɛmba', 'Ɔktoba', 'Novɛmba', 'Disɛmba'],
+            weekdays: ['Ləpɛt', 'Lətalɛ', 'Ləsalɛ', 'Lərarɛ', 'Lənɛr', 'Ləjuma', 'Ləsɛbɛ'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'ani',
+            tomorrow: 'tənɔŋ',
+            yesterday: 'yenɛ',
+            dayAfterTomorrow: 'tənɔŋ tənɔŋ',
+            dayBeforeYesterday: 'yenɛ yenɛ',
+            thisWeekday: '{weekday} yi',
+            nextWeekday: '{weekday} ro ba',
+            lastWeekday: '{weekday} ro ba kɛ',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Fɛb', 'Mac', 'Epr', 'Me', 'Jun', 'Jul', 'Ɔgɔ', 'Sɛt', 'Ɔkt', 'Nov', 'Dis'],
+                weekdays: ['Lpɛ', 'Lta', 'Lsa', 'Lra', 'Lnɛ', 'Lju', 'Lsɛ'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/tg.json
     // ── Tajik ───────────────────────────────────────────────────────
 
@@ -3649,6 +4685,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/tig.json
+    // ── Tigre ───────────────────────────────────────────────────────
+
+    public static function TIG(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'tig',
+            months: ['Yannaayer', 'Febbraayer', 'Maaris', 'Abriil', 'Maay', 'Yuunyo', 'Yulyo', 'Agoosṭo', 'Seṭṭembre', 'Oṭṭoobre', 'Noovembre', 'Diičembre'],
+            weekdays: ['Sənbət', 'Sənuy', 'Sələs', 'Rəbuʿ', 'Ḥamus', 'ʿArbi', 'Qədami'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'yom',
+            tomorrow: 'gədam',
+            yesterday: 'timali',
+            dayAfterTomorrow: 'gədam gədam',
+            dayBeforeYesterday: 'timali timali',
+            thisWeekday: '{weekday} ʾənta',
+            nextWeekday: '{weekday} ba',
+            lastWeekday: '{weekday} qədmi',
+            short: new CompactnessOverride(
+                months: ['Yan', 'Feb', 'Mar', 'Abr', 'May', 'Yun', 'Yul', 'Ago', 'Seṭ', 'Oṭṭ', 'Nov', 'Dii'],
+                weekdays: ['Sən', 'Snu', 'Səl', 'Rəb', 'Ḥam', 'ʿAr', 'Qəd'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/tk.json
     // ── Turkmen ─────────────────────────────────────────────────────
 
@@ -3675,6 +4748,43 @@ final class Locales
             short: new CompactnessOverride(
                 months: ['Ýan', 'Few', 'Mar', 'Apr', 'Maý', 'Iýn', 'Iýl', 'Awg', 'Sen', 'Okt', 'Noý', 'Dek'],
                 weekdays: ['Ýek', 'Duş', 'Siş', 'Çar', 'Pen', 'Ann', 'Şen'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/tn.json
+    // ── Tswana ──────────────────────────────────────────────────────
+
+    public static function TN(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'tn',
+            months: ['Ferikgong', 'Tlhakole', 'Mopitlo', 'Moranang', 'Motsheganong', 'Seetebosigo', 'Phukwi', 'Phatwe', 'Lwetse', 'Diphalane', 'Ngwanatsele', 'Sedimothole'],
+            weekdays: ['Tshipi', 'Mosopulogo', 'Labobedi', 'Laboraro', 'Labone', 'Labotlhano', 'Matlhatso'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'gompieno',
+            tomorrow: 'kamoso',
+            yesterday: 'maabane',
+            dayAfterTomorrow: 'morago ga kamoso',
+            dayBeforeYesterday: 'maabanyane',
+            thisWeekday: '{weekday} e',
+            nextWeekday: '{weekday} e e tlang',
+            lastWeekday: '{weekday} e e fetileng',
+            short: new CompactnessOverride(
+                months: ['Fer', 'Tlh', 'Mop', 'Mor', 'Mot', 'See', 'Phk', 'Pha', 'Lwe', 'Dip', 'Ngw', 'Sed'],
+                weekdays: ['Tsh', 'Mos', 'Bed', 'Rar', 'Bon', 'Tlh', 'Mat'],
                 dayFormat: '{n}',
                 datePattern: '{day} {month}',
                 datePatternWithYear: '{day} {month} {year}',
@@ -3719,6 +4829,43 @@ final class Locales
             compact: new CompactnessOverride(
                 datePattern: '{d}.{m}.',
                 datePatternWithYear: '{d}.{m}.{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/ts.json
+    // ── Tsonga ──────────────────────────────────────────────────────
+
+    public static function TS(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'ts',
+            months: ['Sunguti', 'Nyenyenyani', 'Nyenyankulu', 'Dzivamisoko', 'Mudyaxihi', 'Khotavuxika', 'Mawuwani', 'Mhawuri', 'Ndzhati', 'Nhlangula', 'Hukuri', 'N\'wendzamhala'],
+            weekdays: ['Sonto', 'Musumbhunuku', 'Ravumbirhi', 'Ravunharhu', 'Ravumune', 'Ravuntlhanu', 'Mugqivela'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'namuntlha',
+            tomorrow: 'mundzuku',
+            yesterday: 'tolo',
+            dayAfterTomorrow: 'mundzuku wa vumbirhi',
+            dayBeforeYesterday: 'tolo ra vumbirhi',
+            thisWeekday: '{weekday} leyi',
+            nextWeekday: '{weekday} leyi taka',
+            lastWeekday: '{weekday} leyi nga hundza',
+            short: new CompactnessOverride(
+                months: ['Sun', 'Nye', 'Nyk', 'Dzi', 'Mud', 'Kho', 'Maw', 'Mha', 'Ndz', 'Nhl', 'Huk', 'N\'w'],
+                weekdays: ['Son', 'Mus', 'Bir', 'Har', 'Mun', 'Tlh', 'Mug'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
             ),
         );
     }
@@ -3785,6 +4932,43 @@ final class Locales
             short: new CompactnessOverride(
                 months: ['січ', 'лют', 'бер', 'квіт', 'трав', 'черв', 'лип', 'серп', 'вер', 'жовт', 'лист', 'груд'],
                 weekdays: ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/umb.json
+    // ── Umbundu ─────────────────────────────────────────────────────
+
+    public static function UMB(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'umb',
+            months: ['Janelu', 'Fevelelu', 'Malsu', 'Abili', 'Mayu', 'Junyu', 'Julyu', 'Agostu', 'Setembu', 'Otubu', 'Novembu', 'Desembu'],
+            weekdays: ['Lumingu', 'Cimosi', 'Civali', 'Citathu', 'Cinyali', 'Citanu', 'Cisabalu'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'oloku',
+            tomorrow: 'ocisungu',
+            yesterday: 'ondjo',
+            dayAfterTomorrow: 'ocisungu va pili',
+            dayBeforeYesterday: 'ondjo va pili',
+            thisWeekday: '{weekday} yo',
+            nextWeekday: '{weekday} ya kuvela',
+            lastWeekday: '{weekday} ya pita',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Fev', 'Mal', 'Abi', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Otu', 'Nov', 'Des'],
+                weekdays: ['Lum', 'Cim', 'Civ', 'Cit', 'Cin', 'Cit', 'Cis'],
                 dayFormat: '{n}',
                 datePattern: '{day} {month}',
                 datePatternWithYear: '{day} {month} {year}',
@@ -3907,6 +5091,80 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/vmw.json
+    // ── Makhuwa ─────────────────────────────────────────────────────
+
+    public static function VMW(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'vmw',
+            months: ['Januário', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+            weekdays: ['Jumaaphi', 'Jumaataatu', 'Jumaanne', 'Jumaatano', 'Alaahamisi', 'Ijumaa', 'Jumaamo'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'lelo',
+            tomorrow: 'muttetthe',
+            yesterday: 'oova',
+            dayAfterTomorrow: 'muttetthe opela',
+            dayBeforeYesterday: 'oova opela',
+            thisWeekday: '{weekday} yano',
+            nextWeekday: '{weekday} ohima',
+            lastWeekday: '{weekday} opita',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                weekdays: ['Jph', 'Jtt', 'Jan', 'Jtn', 'Alh', 'Iju', 'Jmo'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
+    // Source: date/locales/src/wo.json
+    // ── Wolof ───────────────────────────────────────────────────────
+
+    public static function WO(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'wo',
+            months: ['Samwiyee', 'Fewriyee', 'Maars', 'Awril', 'Mee', 'Suwe', 'Sullet', 'Ut', 'Septàmbar', 'Oktoobar', 'Nowàmbar', 'Desàmbar'],
+            weekdays: ['Dibéer', 'Altine', 'Talaata', 'Àllarba', 'Alxames', 'Àjjuma', 'Gaawu'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'tey',
+            tomorrow: 'suba',
+            yesterday: 'démb',
+            dayAfterTomorrow: 'suba-suba',
+            dayBeforeYesterday: 'démb-démb',
+            thisWeekday: '{weekday} bi',
+            nextWeekday: '{weekday} bi ñëw',
+            lastWeekday: '{weekday} bi weex',
+            short: new CompactnessOverride(
+                months: ['Sam', 'Few', 'Maa', 'Awr', 'Mee', 'Suw', 'Sul', 'Ut', 'Sep', 'Okt', 'Now', 'Des'],
+                weekdays: ['Dib', 'Alt', 'Tal', 'Àll', 'Alx', 'Àjj', 'Gaa'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/xh.json
     // ── Xhosa ───────────────────────────────────────────────────────
 
@@ -4018,6 +5276,43 @@ final class Locales
         );
     }
 
+    // Source: date/locales/src/zdj.json
+    // ── Comorian ────────────────────────────────────────────────────
+
+    public static function ZDJ(): DateLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new DateLocale(
+            code: 'zdj',
+            months: ['Januari', 'Februari', 'Machi', 'Aprili', 'Mei', 'Juni', 'Julai', 'Agosti', 'Septemba', 'Oktoba', 'Novemba', 'Desemba'],
+            weekdays: ['Jumapili', 'Jumatatu', 'Jumanne', 'Jumatano', 'Alhamisi', 'Ijumaa', 'Jumamosi'],
+            dayFormat: '{n}',
+            dayFormatExceptions: [],
+            datePattern: '{day} {month}',
+            datePatternWithYear: '{day} {month} {year}',
+            today: 'leo',
+            tomorrow: 'mesha',
+            yesterday: 'jana',
+            dayAfterTomorrow: 'kesho kutwa',
+            dayBeforeYesterday: 'juzi',
+            thisWeekday: '{weekday} iyi',
+            nextWeekday: '{weekday} ya udjayo',
+            lastWeekday: '{weekday} ya hupitsa',
+            short: new CompactnessOverride(
+                months: ['Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun', 'Jul', 'Ago', 'Sep', 'Okt', 'Nov', 'Des'],
+                weekdays: ['Pil', 'Tat', 'Nne', 'Tan', 'Alh', 'Iju', 'Mos'],
+                dayFormat: '{n}',
+                datePattern: '{day} {month}',
+                datePatternWithYear: '{day} {month} {year}',
+            ),
+            compact: new CompactnessOverride(
+                datePattern: '{d}/{m}',
+                datePatternWithYear: '{d}/{m}/{yy}',
+            ),
+        );
+    }
+
     // Source: date/locales/src/zh.json
     // ── Chinese ─────────────────────────────────────────────────────
 
@@ -4100,8 +5395,11 @@ final class Locales
             'am' => self::AM(),
             'ar' => self::AR(),
             'az' => self::AZ(),
+            'bci' => self::BCI(),
             'be' => self::BE(),
+            'bem' => self::BEM(),
             'bg' => self::BG(),
+            'bm' => self::BM(),
             'bn' => self::BN(),
             'br' => self::BR(),
             'bs' => self::BS(),
@@ -4111,15 +5409,21 @@ final class Locales
             'cy' => self::CY(),
             'da' => self::DA(),
             'de' => self::DE(),
+            'din' => self::DIN(),
+            'dje' => self::DJE(),
+            'dyu' => self::DYU(),
+            'ee' => self::EE(),
             'el' => self::EL(),
             'en' => self::EN(),
             'es' => self::ES(),
             'et' => self::ET(),
             'eu' => self::EU(),
             'fa' => self::FA(),
+            'fan' => self::FAN(),
             'ff' => self::FF(),
             'fi' => self::FI(),
             'fil' => self::FIL(),
+            'fon' => self::FON(),
             'fr' => self::FR(),
             'ga' => self::GA(),
             'gd' => self::GD(),
@@ -4141,10 +5445,13 @@ final class Locales
             'ja' => self::JA(),
             'jv' => self::JV(),
             'ka' => self::KA(),
+            'kbp' => self::KBP(),
             'kk' => self::KK(),
             'km' => self::KM(),
             'kn' => self::KN(),
             'ko' => self::KO(),
+            'kpe' => self::KPE(),
+            'ktu' => self::KTU(),
             'ku' => self::KU(),
             'kw' => self::KW(),
             'ky' => self::KY(),
@@ -4153,56 +5460,79 @@ final class Locales
             'lo' => self::LO(),
             'lt' => self::LT(),
             'lv' => self::LV(),
+            'men' => self::MEN(),
+            'mfe' => self::MFE(),
             'mg' => self::MG(),
             'mi' => self::MI(),
             'mk' => self::MK(),
             'ml' => self::ML(),
             'mn' => self::MN(),
+            'mnk' => self::MNK(),
+            'mos' => self::MOS(),
             'mr' => self::MR(),
             'ms' => self::MS(),
             'mt' => self::MT(),
             'my' => self::MY(),
             'nb' => self::NB(),
+            'nd' => self::ND(),
             'ne' => self::NE(),
+            'ng' => self::NG(),
             'nl' => self::NL(),
+            'nso' => self::NSO(),
+            'nus' => self::NUS(),
             'ny' => self::NY(),
             'om' => self::OM(),
             'or' => self::OR(),
             'pa' => self::PA(),
             'pl' => self::PL(),
+            'pov' => self::POV(),
             'ps' => self::PS(),
             'pt' => self::PT(),
             'qu' => self::QU(),
             'ro' => self::RO(),
             'ru' => self::RU(),
             'rw' => self::RW(),
+            'sar' => self::SAR(),
             'sd' => self::SD(),
+            'sg' => self::SG(),
             'shi' => self::SHI(),
             'si' => self::SI(),
             'sk' => self::SK(),
             'sl' => self::SL(),
             'sn' => self::SN(),
+            'snk' => self::SNK(),
             'so' => self::SO(),
             'sq' => self::SQ(),
             'sr' => self::SR(),
+            'ss' => self::SS(),
+            'st' => self::ST(),
             'su' => self::SU(),
+            'suk' => self::SUK(),
             'sv' => self::SV(),
             'sw' => self::SW(),
             'ta' => self::TA(),
             'te' => self::TE(),
+            'tem' => self::TEM(),
             'tg' => self::TG(),
             'th' => self::TH(),
             'ti' => self::TI(),
+            'tig' => self::TIG(),
             'tk' => self::TK(),
+            'tn' => self::TN(),
             'tr' => self::TR(),
+            'ts' => self::TS(),
             'tzm' => self::TZM(),
             'uk' => self::UK(),
+            'umb' => self::UMB(),
             'ur' => self::UR(),
             'uz' => self::UZ(),
             'vi' => self::VI(),
+            'vmw' => self::VMW(),
+            'wo' => self::WO(),
             'xh' => self::XH(),
             'yo' => self::YO(),
             'yue' => self::YUE(),
+            'zdj' => self::ZDJ(),
             'zh' => self::ZH(),
             'zu' => self::ZU(),
             default => null,

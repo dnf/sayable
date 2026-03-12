@@ -14,8 +14,11 @@ library
     SayableTime.Locales.Am
     SayableTime.Locales.Ar
     SayableTime.Locales.Az
+    SayableTime.Locales.Bci
     SayableTime.Locales.Be
+    SayableTime.Locales.Bem
     SayableTime.Locales.Bg
+    SayableTime.Locales.Bm
     SayableTime.Locales.Bn
     SayableTime.Locales.Br
     SayableTime.Locales.Bs
@@ -25,15 +28,21 @@ library
     SayableTime.Locales.Cy
     SayableTime.Locales.Da
     SayableTime.Locales.De
+    SayableTime.Locales.Din
+    SayableTime.Locales.Dje
+    SayableTime.Locales.Dyu
+    SayableTime.Locales.Ee
     SayableTime.Locales.El
     SayableTime.Locales.En
     SayableTime.Locales.Es
     SayableTime.Locales.Et
     SayableTime.Locales.Eu
     SayableTime.Locales.Fa
+    SayableTime.Locales.Fan
     SayableTime.Locales.Ff
     SayableTime.Locales.Fi
     SayableTime.Locales.Fil
+    SayableTime.Locales.Fon
     SayableTime.Locales.Fr
     SayableTime.Locales.Ga
     SayableTime.Locales.Gd
@@ -55,10 +64,13 @@ library
     SayableTime.Locales.Ja
     SayableTime.Locales.Jv
     SayableTime.Locales.Ka
+    SayableTime.Locales.Kbp
     SayableTime.Locales.Kk
     SayableTime.Locales.Km
     SayableTime.Locales.Kn
     SayableTime.Locales.Ko
+    SayableTime.Locales.Kpe
+    SayableTime.Locales.Ktu
     SayableTime.Locales.Ku
     SayableTime.Locales.Kw
     SayableTime.Locales.Ky
@@ -67,56 +79,79 @@ library
     SayableTime.Locales.Lo
     SayableTime.Locales.Lt
     SayableTime.Locales.Lv
+    SayableTime.Locales.Men
+    SayableTime.Locales.Mfe
     SayableTime.Locales.Mg
     SayableTime.Locales.Mi
     SayableTime.Locales.Mk
     SayableTime.Locales.Ml
     SayableTime.Locales.Mn
+    SayableTime.Locales.Mnk
+    SayableTime.Locales.Mos
     SayableTime.Locales.Mr
     SayableTime.Locales.Ms
     SayableTime.Locales.Mt
     SayableTime.Locales.My
     SayableTime.Locales.Nb
+    SayableTime.Locales.Nd
     SayableTime.Locales.Ne
+    SayableTime.Locales.Ng
     SayableTime.Locales.Nl
+    SayableTime.Locales.Nso
+    SayableTime.Locales.Nus
     SayableTime.Locales.Ny
     SayableTime.Locales.Om
     SayableTime.Locales.Or
     SayableTime.Locales.Pa
     SayableTime.Locales.Pl
+    SayableTime.Locales.Pov
     SayableTime.Locales.Ps
     SayableTime.Locales.Pt
     SayableTime.Locales.Qu
     SayableTime.Locales.Ro
     SayableTime.Locales.Ru
     SayableTime.Locales.Rw
+    SayableTime.Locales.Sar
     SayableTime.Locales.Sd
+    SayableTime.Locales.Sg
     SayableTime.Locales.Shi
     SayableTime.Locales.Si
     SayableTime.Locales.Sk
     SayableTime.Locales.Sl
     SayableTime.Locales.Sn
+    SayableTime.Locales.Snk
     SayableTime.Locales.So
     SayableTime.Locales.Sq
     SayableTime.Locales.Sr
+    SayableTime.Locales.Ss
+    SayableTime.Locales.St
     SayableTime.Locales.Su
+    SayableTime.Locales.Suk
     SayableTime.Locales.Sv
     SayableTime.Locales.Sw
     SayableTime.Locales.Ta
     SayableTime.Locales.Te
+    SayableTime.Locales.Tem
     SayableTime.Locales.Tg
     SayableTime.Locales.Th
     SayableTime.Locales.Ti
+    SayableTime.Locales.Tig
     SayableTime.Locales.Tk
+    SayableTime.Locales.Tn
     SayableTime.Locales.Tr
+    SayableTime.Locales.Ts
     SayableTime.Locales.Tzm
     SayableTime.Locales.Uk
+    SayableTime.Locales.Umb
     SayableTime.Locales.Ur
     SayableTime.Locales.Uz
     SayableTime.Locales.Vi
+    SayableTime.Locales.Vmw
+    SayableTime.Locales.Wo
     SayableTime.Locales.Xh
     SayableTime.Locales.Yo
     SayableTime.Locales.Yue
+    SayableTime.Locales.Zdj
     SayableTime.Locales.Zh
     SayableTime.Locales.Zu
   hs-source-dirs: src

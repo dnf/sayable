@@ -13,7 +13,7 @@ package sayableduration.locales
 import sayableduration.*
 
 /**
- * All 110 locale definitions for sayable-duration.
+ * All 145 locale definitions for sayable-duration.
  * Locales are split across range files to stay within JVM method size limits.
  */
 class Locales {
@@ -23,8 +23,11 @@ class Locales {
     static final DurationLocale AM = LocalesAD.AM
     static final DurationLocale AR = LocalesAD.AR
     static final DurationLocale AZ = LocalesAD.AZ
+    static final DurationLocale BCI = LocalesAD.BCI
     static final DurationLocale BE = LocalesAD.BE
+    static final DurationLocale BEM = LocalesAD.BEM
     static final DurationLocale BG = LocalesAD.BG
+    static final DurationLocale BM = LocalesAD.BM
     static final DurationLocale BN = LocalesAD.BN
     static final DurationLocale BR = LocalesAD.BR
     static final DurationLocale BS = LocalesAD.BS
@@ -34,15 +37,21 @@ class Locales {
     static final DurationLocale CY = LocalesAD.CY
     static final DurationLocale DA = LocalesAD.DA
     static final DurationLocale DE = LocalesAD.DE
+    static final DurationLocale DIN = LocalesAD.DIN
+    static final DurationLocale DJE = LocalesAD.DJE
+    static final DurationLocale DYU = LocalesAD.DYU
+    static final DurationLocale EE = LocalesEK.EE
     static final DurationLocale EL = LocalesEK.EL
     static final DurationLocale EN = LocalesEK.EN
     static final DurationLocale ES = LocalesEK.ES
     static final DurationLocale ET = LocalesEK.ET
     static final DurationLocale EU = LocalesEK.EU
     static final DurationLocale FA = LocalesEK.FA
+    static final DurationLocale FAN = LocalesEK.FAN
     static final DurationLocale FF = LocalesEK.FF
     static final DurationLocale FI = LocalesEK.FI
     static final DurationLocale FIL = LocalesEK.FIL
+    static final DurationLocale FON = LocalesEK.FON
     static final DurationLocale FR = LocalesEK.FR
     static final DurationLocale GA = LocalesEK.GA
     static final DurationLocale GD = LocalesEK.GD
@@ -64,10 +73,13 @@ class Locales {
     static final DurationLocale JA = LocalesEK.JA
     static final DurationLocale JV = LocalesEK.JV
     static final DurationLocale KA = LocalesEK.KA
+    static final DurationLocale KBP = LocalesEK.KBP
     static final DurationLocale KK = LocalesEK.KK
     static final DurationLocale KM = LocalesEK.KM
     static final DurationLocale KN = LocalesEK.KN
     static final DurationLocale KO = LocalesEK.KO
+    static final DurationLocale KPE = LocalesEK.KPE
+    static final DurationLocale KTU = LocalesEK.KTU
     static final DurationLocale KU = LocalesEK.KU
     static final DurationLocale KW = LocalesEK.KW
     static final DurationLocale KY = LocalesEK.KY
@@ -76,97 +88,132 @@ class Locales {
     static final DurationLocale LO = LocalesLP.LO
     static final DurationLocale LT = LocalesLP.LT
     static final DurationLocale LV = LocalesLP.LV
+    static final DurationLocale MEN = LocalesLP.MEN
+    static final DurationLocale MFE = LocalesLP.MFE
     static final DurationLocale MG = LocalesLP.MG
     static final DurationLocale MI = LocalesLP.MI
     static final DurationLocale MK = LocalesLP.MK
     static final DurationLocale ML = LocalesLP.ML
     static final DurationLocale MN = LocalesLP.MN
+    static final DurationLocale MNK = LocalesLP.MNK
+    static final DurationLocale MOS = LocalesLP.MOS
     static final DurationLocale MR = LocalesLP.MR
     static final DurationLocale MS = LocalesLP.MS
     static final DurationLocale MT = LocalesLP.MT
     static final DurationLocale MY = LocalesLP.MY
     static final DurationLocale NB = LocalesLP.NB
+    static final DurationLocale ND = LocalesLP.ND
     static final DurationLocale NE = LocalesLP.NE
+    static final DurationLocale NG = LocalesLP.NG
     static final DurationLocale NL = LocalesLP.NL
+    static final DurationLocale NSO = LocalesLP.NSO
+    static final DurationLocale NUS = LocalesLP.NUS
     static final DurationLocale NY = LocalesLP.NY
     static final DurationLocale OM = LocalesLP.OM
     static final DurationLocale OR = LocalesLP.OR
     static final DurationLocale PA = LocalesLP.PA
     static final DurationLocale PL = LocalesLP.PL
+    static final DurationLocale POV = LocalesLP.POV
     static final DurationLocale PS = LocalesLP.PS
     static final DurationLocale PT = LocalesLP.PT
     static final DurationLocale QU = LocalesQZ.QU
     static final DurationLocale RO = LocalesQZ.RO
     static final DurationLocale RU = LocalesQZ.RU
     static final DurationLocale RW = LocalesQZ.RW
+    static final DurationLocale SAR = LocalesQZ.SAR
     static final DurationLocale SD = LocalesQZ.SD
+    static final DurationLocale SG = LocalesQZ.SG
     static final DurationLocale SHI = LocalesQZ.SHI
     static final DurationLocale SI = LocalesQZ.SI
     static final DurationLocale SK = LocalesQZ.SK
     static final DurationLocale SL = LocalesQZ.SL
     static final DurationLocale SN = LocalesQZ.SN
+    static final DurationLocale SNK = LocalesQZ.SNK
     static final DurationLocale SO = LocalesQZ.SO
     static final DurationLocale SQ = LocalesQZ.SQ
     static final DurationLocale SR = LocalesQZ.SR
+    static final DurationLocale SS = LocalesQZ.SS
+    static final DurationLocale ST = LocalesQZ.ST
     static final DurationLocale SU = LocalesQZ.SU
+    static final DurationLocale SUK = LocalesQZ.SUK
     static final DurationLocale SV = LocalesQZ.SV
     static final DurationLocale SW = LocalesQZ.SW
     static final DurationLocale TA = LocalesQZ.TA
     static final DurationLocale TE = LocalesQZ.TE
+    static final DurationLocale TEM = LocalesQZ.TEM
     static final DurationLocale TG = LocalesQZ.TG
     static final DurationLocale TH = LocalesQZ.TH
     static final DurationLocale TI = LocalesQZ.TI
+    static final DurationLocale TIG = LocalesQZ.TIG
     static final DurationLocale TK = LocalesQZ.TK
+    static final DurationLocale TN = LocalesQZ.TN
     static final DurationLocale TR = LocalesQZ.TR
+    static final DurationLocale TS = LocalesQZ.TS
     static final DurationLocale TZM = LocalesQZ.TZM
     static final DurationLocale UK = LocalesQZ.UK
+    static final DurationLocale UMB = LocalesQZ.UMB
     static final DurationLocale UR = LocalesQZ.UR
     static final DurationLocale UZ = LocalesQZ.UZ
     static final DurationLocale VI = LocalesQZ.VI
+    static final DurationLocale VMW = LocalesQZ.VMW
+    static final DurationLocale WO = LocalesQZ.WO
     static final DurationLocale XH = LocalesQZ.XH
     static final DurationLocale YO = LocalesQZ.YO
     static final DurationLocale YUE = LocalesQZ.YUE
+    static final DurationLocale ZDJ = LocalesQZ.ZDJ
     static final DurationLocale ZH = LocalesQZ.ZH
     static final DurationLocale ZU = LocalesQZ.ZU
 
     static final Map<String, DurationLocale> ALL = Collections.unmodifiableMap([
         ('af'): AF, ('ak'): AK, ('am'): AM,
-        ('ar'): AR, ('az'): AZ, ('be'): BE,
-        ('bg'): BG, ('bn'): BN, ('br'): BR,
+        ('ar'): AR, ('az'): AZ, ('bci'): BCI,
+        ('be'): BE, ('bem'): BEM, ('bg'): BG,
+        ('bm'): BM, ('bn'): BN, ('br'): BR,
         ('bs'): BS, ('ca'): CA, ('ceb'): CEB,
         ('cs'): CS, ('cy'): CY, ('da'): DA,
-        ('de'): DE, ('el'): EL, ('en'): EN,
-        ('es'): ES, ('et'): ET, ('eu'): EU,
-        ('fa'): FA, ('ff'): FF, ('fi'): FI,
-        ('fil'): FIL, ('fr'): FR, ('ga'): GA,
+        ('de'): DE, ('din'): DIN, ('dje'): DJE,
+        ('dyu'): DYU, ('ee'): EE, ('el'): EL,
+        ('en'): EN, ('es'): ES, ('et'): ET,
+        ('eu'): EU, ('fa'): FA, ('fan'): FAN,
+        ('ff'): FF, ('fi'): FI, ('fil'): FIL,
+        ('fon'): FON, ('fr'): FR, ('ga'): GA,
         ('gd'): GD, ('gl'): GL, ('gn'): GN,
         ('gu'): GU, ('gv'): GV, ('ha'): HA,
         ('he'): HE, ('hi'): HI, ('hr'): HR,
         ('ht'): HT, ('hu'): HU, ('hy'): HY,
         ('id'): ID, ('ig'): IG, ('is'): IS,
         ('it'): IT, ('ja'): JA, ('jv'): JV,
-        ('ka'): KA, ('kk'): KK, ('km'): KM,
-        ('kn'): KN, ('ko'): KO, ('ku'): KU,
+        ('ka'): KA, ('kbp'): KBP, ('kk'): KK,
+        ('km'): KM, ('kn'): KN, ('ko'): KO,
+        ('kpe'): KPE, ('ktu'): KTU, ('ku'): KU,
         ('kw'): KW, ('ky'): KY, ('lg'): LG,
         ('ln'): LN, ('lo'): LO, ('lt'): LT,
-        ('lv'): LV, ('mg'): MG, ('mi'): MI,
-        ('mk'): MK, ('ml'): ML, ('mn'): MN,
-        ('mr'): MR, ('ms'): MS, ('mt'): MT,
-        ('my'): MY, ('nb'): NB, ('ne'): NE,
-        ('nl'): NL, ('ny'): NY, ('om'): OM,
-        ('or'): OR, ('pa'): PA, ('pl'): PL,
+        ('lv'): LV, ('men'): MEN, ('mfe'): MFE,
+        ('mg'): MG, ('mi'): MI, ('mk'): MK,
+        ('ml'): ML, ('mn'): MN, ('mnk'): MNK,
+        ('mos'): MOS, ('mr'): MR, ('ms'): MS,
+        ('mt'): MT, ('my'): MY, ('nb'): NB,
+        ('nd'): ND, ('ne'): NE, ('ng'): NG,
+        ('nl'): NL, ('nso'): NSO, ('nus'): NUS,
+        ('ny'): NY, ('om'): OM, ('or'): OR,
+        ('pa'): PA, ('pl'): PL, ('pov'): POV,
         ('ps'): PS, ('pt'): PT, ('qu'): QU,
         ('ro'): RO, ('ru'): RU, ('rw'): RW,
-        ('sd'): SD, ('shi'): SHI, ('si'): SI,
-        ('sk'): SK, ('sl'): SL, ('sn'): SN,
+        ('sar'): SAR, ('sd'): SD, ('sg'): SG,
+        ('shi'): SHI, ('si'): SI, ('sk'): SK,
+        ('sl'): SL, ('sn'): SN, ('snk'): SNK,
         ('so'): SO, ('sq'): SQ, ('sr'): SR,
-        ('su'): SU, ('sv'): SV, ('sw'): SW,
-        ('ta'): TA, ('te'): TE, ('tg'): TG,
-        ('th'): TH, ('ti'): TI, ('tk'): TK,
-        ('tr'): TR, ('tzm'): TZM, ('uk'): UK,
-        ('ur'): UR, ('uz'): UZ, ('vi'): VI,
-        ('xh'): XH, ('yo'): YO, ('yue'): YUE,
-        ('zh'): ZH, ('zu'): ZU
+        ('ss'): SS, ('st'): ST, ('su'): SU,
+        ('suk'): SUK, ('sv'): SV, ('sw'): SW,
+        ('ta'): TA, ('te'): TE, ('tem'): TEM,
+        ('tg'): TG, ('th'): TH, ('ti'): TI,
+        ('tig'): TIG, ('tk'): TK, ('tn'): TN,
+        ('tr'): TR, ('ts'): TS, ('tzm'): TZM,
+        ('uk'): UK, ('umb'): UMB, ('ur'): UR,
+        ('uz'): UZ, ('vi'): VI, ('vmw'): VMW,
+        ('wo'): WO, ('xh'): XH, ('yo'): YO,
+        ('yue'): YUE, ('zdj'): ZDJ, ('zh'): ZH,
+        ('zu'): ZU
     ])
 
     static DurationLocale get(String code) { ALL[code] }

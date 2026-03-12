@@ -1,0 +1,70 @@
+{
+  "code": "ss",
+  "name": "siSwati",
+  "months": [
+    "Bhimbidvwane",
+    "iNdlovana",
+    "iNdlovulenkhulu",
+    "Mabasa",
+    "iNkhwekhweti",
+    "iNhlaba",
+    "Kholwane",
+    "iNgci",
+    "iNyoni",
+    "iMphala",
+    "Lweti",
+    "iNgongoni"
+  ],
+  "weekdays": [
+    "LiSontfo",
+    "uMsombuluko",
+    "Lesibili",
+    "Lesitsatfu",
+    "Lesine",
+    "Lesihlanu",
+    "uMgcibelo"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "lamuhla",
+  "tomorrow": "kusasa",
+  "yesterday": "itolo",
+  "dayAfterTomorrow": "ngemhlomunye",
+  "dayBeforeYesterday": "kutolo lokwengca",
+  "thisWeekday": "leli {weekday}",
+  "nextWeekday": "{weekday} letako",
+  "lastWeekday": "{weekday} leledlule",
+  "short": {
+    "months": [
+      "Bhi",
+      "Ind",
+      "Ink",
+      "Mab",
+      "Inkw",
+      "Inh",
+      "Kho",
+      "Ingc",
+      "Iny",
+      "Imp",
+      "Lwe",
+      "Ingo"
+    ],
+    "weekdays": [
+      "Son",
+      "Mso",
+      "Bil",
+      "Tsa",
+      "Sin",
+      "Hla",
+      "Mgc"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

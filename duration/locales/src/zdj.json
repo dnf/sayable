@@ -1,0 +1,57 @@
+{
+  "code": "zdj",
+  "name": "Comorian",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "sekunde {n}",
+    "minute": "dakika {n}",
+    "hour": "saa {n}",
+    "day": "suku {n}",
+    "week": "djumwa {n}",
+    "month": "mwezi {n}",
+    "year": "mwaha {n}"
+  },
+  "half": "{0} na nusu",
+  "delimiter": ", ",
+  "justNow": "vavo hangu",
+  "ago": "{0} zilizopita",
+  "inFuture": "ha {0}",
+  "short": {
+    "units": {
+      "second": "sek. {n}",
+      "minute": "dak. {n}",
+      "hour": "saa {n}",
+      "day": "suku {n}",
+      "week": "djum. {n}",
+      "month": "mw. {n}",
+      "year": "mwa. {n}"
+    },
+    "ago": "{0} zilizopita",
+    "inFuture": "ha {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["AM", "PM"],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} zilizopita",
+    "inFuture": "ha {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["a", "p"],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

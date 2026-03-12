@@ -13,7 +13,7 @@ package sayabletime.locales
 import sayabletime._
 
 /**
- * All 110 locale definitions for sayable-time.
+ * All 145 locale definitions for sayable-time.
  */
 private object Batch0 {
     // Source: time/locales/src/af.json
@@ -116,6 +116,26 @@ private object Batch0 {
         )),
     )
 
+    // Source: time/locales/src/bci.json
+    // ================================================================
+    // BCI — Baoulé
+    // ================================================================
+    val BCI: TimeLocale = TimeLocale(
+        code = "bci",
+        clock = ClockConfig(
+            hours = List("blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun"),
+            midnight = "kɔnguɛ afiɛn",
+            noon = "nnɔsua",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/be.json
     // ================================================================
     // BE — Belarusian
@@ -136,6 +156,26 @@ private object Batch0 {
         )),
     )
 
+    // Source: time/locales/src/bem.json
+    // ================================================================
+    // BEM — Bemba
+    // ================================================================
+    val BEM: TimeLocale = TimeLocale(
+        code = "bem",
+        clock = ClockConfig(
+            hours = List("ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo"),
+            midnight = "pakati ka bushiku",
+            noon = "akasuba",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/bg.json
     // ================================================================
     // BG — Bulgarian
@@ -153,6 +193,26 @@ private object Batch0 {
         )),
         compact = Some(CompactnessOverride(
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
+        )),
+    )
+
+    // Source: time/locales/src/bm.json
+    // ================================================================
+    // BM — Bambara
+    // ================================================================
+    val BM: TimeLocale = TimeLocale(
+        code = "bm",
+        clock = ClockConfig(
+            hours = List("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
+            midnight = "dugutilama",
+            noon = "tilgari",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
 
@@ -315,7 +375,9 @@ private object Batch0 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
+}
 
+private object Batch1 {
     // Source: time/locales/src/de.json
     // ================================================================
     // DE — German
@@ -333,6 +395,86 @@ private object Batch0 {
         )),
         compact = Some(CompactnessOverride(
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
+        )),
+    )
+
+    // Source: time/locales/src/din.json
+    // ================================================================
+    // DIN — Dinka
+    // ================================================================
+    val DIN: TimeLocale = TimeLocale(
+        code = "din",
+        clock = ClockConfig(
+            hours = List("thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök"),
+            midnight = "wakɔ̈u",
+            noon = "akɔ̈l ciëŋ",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/dje.json
+    // ================================================================
+    // DJE — Zarma
+    // ================================================================
+    val DJE: TimeLocale = TimeLocale(
+        code = "dje",
+        clock = ClockConfig(
+            hours = List("way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi"),
+            midnight = "cin beri",
+            noon = "zaari gaaham",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/dyu.json
+    // ================================================================
+    // DYU — Dyula
+    // ================================================================
+    val DYU: TimeLocale = TimeLocale(
+        code = "dyu",
+        clock = ClockConfig(
+            hours = List("tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"),
+            midnight = "dugutilama",
+            noon = "tilgari",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/ee.json
+    // ================================================================
+    // EE — Ewe
+    // ================================================================
+    val EE: TimeLocale = TimeLocale(
+        code = "ee",
+        clock = ClockConfig(
+            hours = List("wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"),
+            midnight = "zã titina",
+            noon = "ŋdɔ",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
 
@@ -375,9 +517,7 @@ private object Batch0 {
             clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
-}
 
-private object Batch1 {
     // Source: time/locales/src/es.json
     // ================================================================
     // ES — Spanish
@@ -458,6 +598,26 @@ private object Batch1 {
         )),
     )
 
+    // Source: time/locales/src/fan.json
+    // ================================================================
+    // FAN — Fang
+    // ================================================================
+    val FAN: TimeLocale = TimeLocale(
+        code = "fan",
+        clock = ClockConfig(
+            hours = List("awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg"),
+            midnight = "akiri alúk",
+            noon = "ewaŋ",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/ff.json
     // ================================================================
     // FF — Fulah
@@ -518,6 +678,26 @@ private object Batch1 {
         )),
     )
 
+    // Source: time/locales/src/fon.json
+    // ================================================================
+    // FON — Fon
+    // ================================================================
+    val FON: TimeLocale = TimeLocale(
+        code = "fon",
+        clock = ClockConfig(
+            hours = List("wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "ɖokpo-wǒ"),
+            midnight = "zǎnmɛ",
+            noon = "hwemɛnu",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/fr.json
     // ================================================================
     // FR — French
@@ -557,7 +737,9 @@ private object Batch1 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
+}
 
+private object Batch2 {
     // Source: time/locales/src/gd.json
     // ================================================================
     // GD — Scottish Gaelic
@@ -737,9 +919,7 @@ private object Batch1 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
-}
 
-private object Batch2 {
     // Source: time/locales/src/ht.json
     // ================================================================
     // HT — Haitian Creole
@@ -919,7 +1099,9 @@ private object Batch2 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
+}
 
+private object Batch3 {
     // Source: time/locales/src/ka.json
     // ================================================================
     // KA — Georgian
@@ -937,6 +1119,26 @@ private object Batch2 {
         )),
         compact = Some(CompactnessOverride(
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
+        )),
+    )
+
+    // Source: time/locales/src/kbp.json
+    // ================================================================
+    // KBP — Kabiye
+    // ================================================================
+    val KBP: TimeLocale = TimeLocale(
+        code = "kbp",
+        clock = ClockConfig(
+            hours = List("hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm"),
+            midnight = "ɖoo hɛkʊ",
+            noon = "wɩsɩ taa",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
 
@@ -1020,6 +1222,46 @@ private object Batch2 {
         )),
     )
 
+    // Source: time/locales/src/kpe.json
+    // ================================================================
+    // KPE — Kpelle
+    // ================================================================
+    val KPE: TimeLocale = TimeLocale(
+        code = "kpe",
+        clock = ClockConfig(
+            hours = List("puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"),
+            midnight = "kpindi kɔlɛ",
+            noon = "tili-ma",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/ktu.json
+    // ================================================================
+    // KTU — Kituba
+    // ================================================================
+    val KTU: TimeLocale = TimeLocale(
+        code = "ktu",
+        clock = ClockConfig(
+            hours = List("zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi"),
+            midnight = "midi ya butu",
+            noon = "midi",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/ku.json
     // ================================================================
     // KU — Kurdish
@@ -1099,9 +1341,7 @@ private object Batch2 {
             clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
-}
 
-private object Batch3 {
     // Source: time/locales/src/ln.json
     // ================================================================
     // LN — Lingala
@@ -1182,6 +1422,48 @@ private object Batch3 {
         )),
     )
 
+    // Source: time/locales/src/men.json
+    // ================================================================
+    // MEN — Mende
+    // ================================================================
+    val MEN: TimeLocale = TimeLocale(
+        code = "men",
+        clock = ClockConfig(
+            hours = List("pu wɛlɛ", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila"),
+            midnight = "kpindi gbɔyɔŋ",
+            noon = "ndɔlei-ma",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/mfe.json
+    // ================================================================
+    // MFE — Mauritian Creole
+    // ================================================================
+    val MFE: TimeLocale = TimeLocale(
+        code = "mfe",
+        clock = ClockConfig(
+            hours = List("douz", "enn", "de", "trwa", "kat", "senk", "sis", "set", "wit", "nef", "dis", "onz"),
+            midnight = "minwi",
+            noon = "midi",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+}
+
+private object Batch4 {
     // Source: time/locales/src/mg.json
     // ================================================================
     // MG — Malagasy
@@ -1279,6 +1561,46 @@ private object Batch3 {
         )),
         compact = Some(CompactnessOverride(
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
+        )),
+    )
+
+    // Source: time/locales/src/mnk.json
+    // ================================================================
+    // MNK — Mandinka
+    // ================================================================
+    val MNK: TimeLocale = TimeLocale(
+        code = "mnk",
+        clock = ClockConfig(
+            hours = List("tan ning fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ ning kiliŋ"),
+            midnight = "sutu-tili-laŋ",
+            noon = "tili-konto",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/mos.json
+    // ================================================================
+    // MOS — Moore
+    // ================================================================
+    val MOS: TimeLocale = TimeLocale(
+        code = "mos",
+        clock = ClockConfig(
+            hours = List("piig la a yiibu", "a yembre", "a yiibu", "a tãabo", "a naase", "a nu", "a yoobe", "a yopoe", "a niini", "a wae", "piiga", "piig la a yembre"),
+            midnight = "yʋng-vɩɩse",
+            noon = "wĩntoog zabre",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
 
@@ -1382,6 +1704,26 @@ private object Batch3 {
         )),
     )
 
+    // Source: time/locales/src/nd.json
+    // ================================================================
+    // ND — Northern Ndebele
+    // ================================================================
+    val ND: TimeLocale = TimeLocale(
+        code = "nd",
+        clock = ClockConfig(
+            hours = List("litshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyangalombili", "isitshiyangalolunye", "litshumi", "litshumi lanye"),
+            midnight = "phakathi kobusuku",
+            noon = "emini",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/ne.json
     // ================================================================
     // NE — Nepali
@@ -1392,6 +1734,26 @@ private object Batch3 {
             hours = List("बाह्र", "एक", "दुई", "तीन", "चार", "पाँच", "छ", "सात", "आठ", "नौ", "दश", "एघार"),
             midnight = "मध्यरात",
             noon = "मध्यान्ह",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/ng.json
+    // ================================================================
+    // NG — Oshiwambo
+    // ================================================================
+    val NG: TimeLocale = TimeLocale(
+        code = "ng",
+        clock = ClockConfig(
+            hours = List("omulongo nambali", "imwe", "mbali", "ndatu", "ne", "ntano", "hamano", "heyali", "hetatu", "omugoyi", "omulongo", "omulongo nimwe"),
+            midnight = "onguloshi pakati",
+            noon = "omutenya",
             patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
         ),
         short = Some(CompactnessOverride(
@@ -1422,6 +1784,48 @@ private object Batch3 {
         )),
     )
 
+    // Source: time/locales/src/nso.json
+    // ================================================================
+    // NSO — Northern Sotho
+    // ================================================================
+    val NSO: TimeLocale = TimeLocale(
+        code = "nso",
+        clock = ClockConfig(
+            hours = List("lesome pedi", "tee", "pedi", "tharo", "nne", "hlano", "tshela", "šupa", "seswai", "senyane", "lesome", "lesome tee"),
+            midnight = "bošego gare",
+            noon = "mosegare",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/nus.json
+    // ================================================================
+    // NUS — Nuer
+    // ================================================================
+    val NUS: TimeLocale = TimeLocale(
+        code = "nus",
+        clock = ClockConfig(
+            hours = List("thiäär ke rou", "tök", "rou", "diäk", "ŋuan", "dhiëc", "bäkɛl", "dhorou", "bät", "kuɔn", "thiäär", "thiäär ku tök"),
+            midnight = "wakɔ̈u",
+            noon = "cäŋ kɔ̈k",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+}
+
+private object Batch5 {
     // Source: time/locales/src/ny.json
     // ================================================================
     // NY — Chichewa
@@ -1461,9 +1865,7 @@ private object Batch3 {
             clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
-}
 
-private object Batch4 {
     // Source: time/locales/src/or.json
     // ================================================================
     // OR — Odia
@@ -1521,6 +1923,26 @@ private object Batch4 {
         )),
         compact = Some(CompactnessOverride(
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
+        )),
+    )
+
+    // Source: time/locales/src/pov.json
+    // ================================================================
+    // POV — Guinea-Bissau Creole
+    // ================================================================
+    val POV: TimeLocale = TimeLocale(
+        code = "pov",
+        clock = ClockConfig(
+            hours = List("dozi", "un", "dos", "tres", "kuatru", "sinku", "seis", "seti", "oitu", "novi", "des", "onzi"),
+            midnight = "meia noti",
+            noon = "meiu dia",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
 
@@ -1644,6 +2066,26 @@ private object Batch4 {
         )),
     )
 
+    // Source: time/locales/src/sar.json
+    // ================================================================
+    // SAR — Sara
+    // ================================================================
+    val SAR: TimeLocale = TimeLocale(
+        code = "sar",
+        clock = ClockConfig(
+            hours = List("mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "kɨ̀ndá", "ɗìi", "mùtá", "sɔ̀", "mɨ̀ndɨ̀", "mɨ̀ndɨ̀ kɨ̀ndá", "mɨ̀sá", "mɨ̀ndɨ̀ mùtá", "mɨ̀ndɨ̀ sɔ̀", "mɔ̀ɔ́", "mɔ̀ɔ́ kɨ̀ndá"),
+            midnight = "badɔ",
+            noon = "mbɔr ndɔ",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/sd.json
     // ================================================================
     // SD — Sindhi
@@ -1654,6 +2096,26 @@ private object Batch4 {
             hours = List("ٻارھ", "ھڪ", "ٻه", "ٽي", "چار", "پنج", "ڇھ", "ست", "اٺ", "نائن", "ڏھ", "يارھ"),
             midnight = "اڌ رات",
             noon = "ٽپھر",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/sg.json
+    // ================================================================
+    // SG — Sango
+    // ================================================================
+    val SG: TimeLocale = TimeLocale(
+        code = "sg",
+        clock = ClockConfig(
+            hours = List("bâlè-ûse", "ôko", "ûse", "otâ", "usïö", "okü", "ömënë", "mbïrïmbïrï", "mënâmbârâ", "gonambâlâ", "bâlè", "bâlè na ôko"),
+            midnight = "gï na lögö",
+            noon = "lâ nzönï",
             patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
         ),
         short = Some(CompactnessOverride(
@@ -1723,7 +2185,9 @@ private object Batch4 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
+}
 
+private object Batch6 {
     // Source: time/locales/src/sl.json
     // ================================================================
     // SL — Slovenian
@@ -1754,6 +2218,26 @@ private object Batch4 {
             hours = List("gumi nembiri", "imwe", "mbiri", "nhatu", "ina", "shanu", "nhanhatu", "nomwe", "sere", "pfumbamwe", "gumi", "gumi neimwe"),
             midnight = "usiku hwepakati",
             noon = "masikati",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/snk.json
+    // ================================================================
+    // SNK — Soninke
+    // ================================================================
+    val SNK: TimeLocale = TimeLocale(
+        code = "snk",
+        clock = ClockConfig(
+            hours = List("tanmu fillo", "baane", "fillo", "sikko", "naaxato", "karago", "tunmu", "ñerru", "segu", "kaburu", "tanmu", "tanmu baane"),
+            midnight = "sulen noxo",
+            noon = "tili seren",
             patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
         ),
         short = Some(CompactnessOverride(
@@ -1823,9 +2307,47 @@ private object Batch4 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
-}
 
-private object Batch5 {
+    // Source: time/locales/src/ss.json
+    // ================================================================
+    // SS — siSwati
+    // ================================================================
+    val SS: TimeLocale = TimeLocale(
+        code = "ss",
+        clock = ClockConfig(
+            hours = List("lishumi nambili", "kunye", "kubili", "kutsatfu", "kune", "kusihlanu", "sitfupha", "sikhombisa", "siphohlongo", "sifisagcina", "lishumi", "lishumi nakunye"),
+            midnight = "phakathi kwebusuku",
+            noon = "emini",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/st.json
+    // ================================================================
+    // ST — Southern Sotho
+    // ================================================================
+    val ST: TimeLocale = TimeLocale(
+        code = "st",
+        clock = ClockConfig(
+            hours = List("leshome le metso e mmedi", "e nngwe", "tse pedi", "tse tharo", "tse nne", "tse hlano", "tse tshelela", "tse supileng", "tse robedi", "tse robong", "leshome", "leshome le motso o le mong"),
+            midnight = "hara bosiu",
+            noon = "motsheare",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/su.json
     // ================================================================
     // SU — Sundanese
@@ -1836,6 +2358,26 @@ private object Batch5 {
             hours = List("dua welas", "hiji", "dua", "tilu", "opat", "lima", "genep", "tujuh", "dalapan", "salapan", "sapuluh", "sabelas"),
             midnight = "tengah peuting",
             noon = "beurang",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/suk.json
+    // ================================================================
+    // SUK — Sukuma
+    // ================================================================
+    val SUK: TimeLocale = TimeLocale(
+        code = "suk",
+        clock = ClockConfig(
+            hours = List("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
+            midnight = "usiku gati",
+            noon = "adhuhuri",
             patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
         ),
         short = Some(CompactnessOverride(
@@ -1926,6 +2468,26 @@ private object Batch5 {
         )),
     )
 
+    // Source: time/locales/src/tem.json
+    // ================================================================
+    // TEM — Temne
+    // ================================================================
+    val TEM: TimeLocale = TimeLocale(
+        code = "tem",
+        clock = ClockConfig(
+            hours = List("pɛn pu", "kɩrɩŋ", "rɔŋ", "rasar", "rɔŋ-anat", "rɔman", "rɔmata", "rɔmbot", "rɔmɔntat", "rɔmɔntaŋka", "pɛn", "pɛn nɛ kɩrɩŋ"),
+            midnight = "rofɛt anpa",
+            noon = "lən",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/tg.json
     // ================================================================
     // TG — Tajik
@@ -1985,6 +2547,28 @@ private object Batch5 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
+}
+
+private object Batch7 {
+    // Source: time/locales/src/tig.json
+    // ================================================================
+    // TIG — Tigre
+    // ================================================================
+    val TIG: TimeLocale = TimeLocale(
+        code = "tig",
+        clock = ClockConfig(
+            hours = List("ʿasərte wəkəlte", "ḥante", "kəlʾe", "səleste", "arbaʿte", "ḥamməste", "səste", "sabʿate", "səmmunte", "təsʿate", "ʿasərte", "ʿasərte wəḥante"),
+            midnight = "nəs-leyla",
+            noon = "qayḥ",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
 
     // Source: time/locales/src/tk.json
     // ================================================================
@@ -2006,6 +2590,26 @@ private object Batch5 {
         )),
     )
 
+    // Source: time/locales/src/tn.json
+    // ================================================================
+    // TN — Tswana
+    // ================================================================
+    val TN: TimeLocale = TimeLocale(
+        code = "tn",
+        clock = ClockConfig(
+            hours = List("lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe"),
+            midnight = "bosigo jwa magareng",
+            noon = "motshegare",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/tr.json
     // ================================================================
     // TR — Turkish
@@ -2023,6 +2627,26 @@ private object Batch5 {
         )),
         compact = Some(CompactnessOverride(
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
+        )),
+    )
+
+    // Source: time/locales/src/ts.json
+    // ================================================================
+    // TS — Tsonga
+    // ================================================================
+    val TS: TimeLocale = TimeLocale(
+        code = "ts",
+        clock = ClockConfig(
+            hours = List("khume mbiri", "yin'we", "mbirhi", "nharhu", "mune", "ntlhanu", "tsevu", "nkombo", "nhungu", "kaye", "khume", "khume yin'we"),
+            midnight = "vusiku exikarhi",
+            noon = "nhlekanhi",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
 
@@ -2063,6 +2687,26 @@ private object Batch5 {
         )),
         compact = Some(CompactnessOverride(
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
+        )),
+    )
+
+    // Source: time/locales/src/umb.json
+    // ================================================================
+    // UMB — Umbundu
+    // ================================================================
+    val UMB: TimeLocale = TimeLocale(
+        code = "umb",
+        clock = ClockConfig(
+            hours = List("olohola likumi na yivali", "yimosi", "yivali", "yitathu", "yinyali", "yitanu", "yitathu-va-yivali", "yisemba", "yinyali-va-yivali", "yitanu-va-yivali", "likumi", "likumi na yimosi"),
+            midnight = "ocitapi",
+            noon = "ocivali",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
         )),
     )
 
@@ -2126,6 +2770,46 @@ private object Batch5 {
         )),
     )
 
+    // Source: time/locales/src/vmw.json
+    // ================================================================
+    // VMW — Makhuwa
+    // ================================================================
+    val VMW: TimeLocale = TimeLocale(
+        code = "vmw",
+        clock = ClockConfig(
+            hours = List("khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa"),
+            midnight = "usiku wopakhala",
+            noon = "muttana",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
+    // Source: time/locales/src/wo.json
+    // ================================================================
+    // WO — Wolof
+    // ================================================================
+    val WO: TimeLocale = TimeLocale(
+        code = "wo",
+        clock = ClockConfig(
+            hours = List("fukki ñaar", "benn", "ñaar", "ñett", "ñeent", "juróom", "juróom-benn", "juróom-ñaar", "juróom-ñett", "juróom-ñeent", "fukk", "fukki benn"),
+            midnight = "bu guddi",
+            noon = "ci àttaya",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/xh.json
     // ================================================================
     // XH — Xhosa
@@ -2185,9 +2869,27 @@ private object Batch5 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
-}
 
-private object Batch6 {
+    // Source: time/locales/src/zdj.json
+    // ================================================================
+    // ZDJ — Comorian
+    // ================================================================
+    val ZDJ: TimeLocale = TimeLocale(
+        code = "zdj",
+        clock = ClockConfig(
+            hours = List("kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"),
+            midnight = "usiku wa manane",
+            noon = "adhuhuri",
+            patterns = Map(0 -> "{h}:00", 5 -> "{h}:05", 10 -> "{h}:10", 15 -> "{h}:15", 20 -> "{h}:20", 25 -> "{h}:25", 30 -> "{h}:30", 35 -> "{h}:35", 40 -> "{h}:40", 45 -> "{h}:45", 50 -> "{h}:50", 55 -> "{h}:55"),
+        ),
+        short = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("AM", "PM")), format = "{h}:{mm} {ampm}")),
+        )),
+        compact = Some(CompactnessOverride(
+            clock = Some(ShortClockConfig(use24h = false, amPm = Some(("a", "p")), format = "{h}:{mm}{ampm}")),
+        )),
+    )
+
     // Source: time/locales/src/zh.json
     // ================================================================
     // ZH — Chinese
@@ -2207,7 +2909,9 @@ private object Batch6 {
             clock = Some(ShortClockConfig(use24h = true, format = "{h}:{mm}")),
         )),
     )
+}
 
+private object Batch8 {
     // Source: time/locales/src/zu.json
     // ================================================================
     // ZU — Zulu
@@ -2236,8 +2940,11 @@ object Locales {
     val AM: TimeLocale = Batch0.AM
     val AR: TimeLocale = Batch0.AR
     val AZ: TimeLocale = Batch0.AZ
+    val BCI: TimeLocale = Batch0.BCI
     val BE: TimeLocale = Batch0.BE
+    val BEM: TimeLocale = Batch0.BEM
     val BG: TimeLocale = Batch0.BG
+    val BM: TimeLocale = Batch0.BM
     val BN: TimeLocale = Batch0.BN
     val BR: TimeLocale = Batch0.BR
     val BS: TimeLocale = Batch0.BS
@@ -2246,27 +2953,33 @@ object Locales {
     val CS: TimeLocale = Batch0.CS
     val CY: TimeLocale = Batch0.CY
     val DA: TimeLocale = Batch0.DA
-    val DE: TimeLocale = Batch0.DE
-    val EL: TimeLocale = Batch0.EL
-    val EN: TimeLocale = Batch0.EN
+    val DE: TimeLocale = Batch1.DE
+    val DIN: TimeLocale = Batch1.DIN
+    val DJE: TimeLocale = Batch1.DJE
+    val DYU: TimeLocale = Batch1.DYU
+    val EE: TimeLocale = Batch1.EE
+    val EL: TimeLocale = Batch1.EL
+    val EN: TimeLocale = Batch1.EN
     val ES: TimeLocale = Batch1.ES
     val ET: TimeLocale = Batch1.ET
     val EU: TimeLocale = Batch1.EU
     val FA: TimeLocale = Batch1.FA
+    val FAN: TimeLocale = Batch1.FAN
     val FF: TimeLocale = Batch1.FF
     val FI: TimeLocale = Batch1.FI
     val FIL: TimeLocale = Batch1.FIL
+    val FON: TimeLocale = Batch1.FON
     val FR: TimeLocale = Batch1.FR
     val GA: TimeLocale = Batch1.GA
-    val GD: TimeLocale = Batch1.GD
-    val GL: TimeLocale = Batch1.GL
-    val GN: TimeLocale = Batch1.GN
-    val GU: TimeLocale = Batch1.GU
-    val GV: TimeLocale = Batch1.GV
-    val HA: TimeLocale = Batch1.HA
-    val HE: TimeLocale = Batch1.HE
-    val HI: TimeLocale = Batch1.HI
-    val HR: TimeLocale = Batch1.HR
+    val GD: TimeLocale = Batch2.GD
+    val GL: TimeLocale = Batch2.GL
+    val GN: TimeLocale = Batch2.GN
+    val GU: TimeLocale = Batch2.GU
+    val GV: TimeLocale = Batch2.GV
+    val HA: TimeLocale = Batch2.HA
+    val HE: TimeLocale = Batch2.HE
+    val HI: TimeLocale = Batch2.HI
+    val HR: TimeLocale = Batch2.HR
     val HT: TimeLocale = Batch2.HT
     val HU: TimeLocale = Batch2.HU
     val HY: TimeLocale = Batch2.HY
@@ -2276,95 +2989,128 @@ object Locales {
     val IT: TimeLocale = Batch2.IT
     val JA: TimeLocale = Batch2.JA
     val JV: TimeLocale = Batch2.JV
-    val KA: TimeLocale = Batch2.KA
-    val KK: TimeLocale = Batch2.KK
-    val KM: TimeLocale = Batch2.KM
-    val KN: TimeLocale = Batch2.KN
-    val KO: TimeLocale = Batch2.KO
-    val KU: TimeLocale = Batch2.KU
-    val KW: TimeLocale = Batch2.KW
-    val KY: TimeLocale = Batch2.KY
-    val LG: TimeLocale = Batch2.LG
+    val KA: TimeLocale = Batch3.KA
+    val KBP: TimeLocale = Batch3.KBP
+    val KK: TimeLocale = Batch3.KK
+    val KM: TimeLocale = Batch3.KM
+    val KN: TimeLocale = Batch3.KN
+    val KO: TimeLocale = Batch3.KO
+    val KPE: TimeLocale = Batch3.KPE
+    val KTU: TimeLocale = Batch3.KTU
+    val KU: TimeLocale = Batch3.KU
+    val KW: TimeLocale = Batch3.KW
+    val KY: TimeLocale = Batch3.KY
+    val LG: TimeLocale = Batch3.LG
     val LN: TimeLocale = Batch3.LN
     val LO: TimeLocale = Batch3.LO
     val LT: TimeLocale = Batch3.LT
     val LV: TimeLocale = Batch3.LV
-    val MG: TimeLocale = Batch3.MG
-    val MI: TimeLocale = Batch3.MI
-    val MK: TimeLocale = Batch3.MK
-    val ML: TimeLocale = Batch3.ML
-    val MN: TimeLocale = Batch3.MN
-    val MR: TimeLocale = Batch3.MR
-    val MS: TimeLocale = Batch3.MS
-    val MT: TimeLocale = Batch3.MT
-    val MY: TimeLocale = Batch3.MY
-    val NB: TimeLocale = Batch3.NB
-    val NE: TimeLocale = Batch3.NE
-    val NL: TimeLocale = Batch3.NL
-    val NY: TimeLocale = Batch3.NY
-    val OM: TimeLocale = Batch3.OM
-    val OR: TimeLocale = Batch4.OR
-    val PA: TimeLocale = Batch4.PA
-    val PL: TimeLocale = Batch4.PL
-    val PS: TimeLocale = Batch4.PS
-    val PT: TimeLocale = Batch4.PT
-    val QU: TimeLocale = Batch4.QU
-    val RO: TimeLocale = Batch4.RO
-    val RU: TimeLocale = Batch4.RU
-    val RW: TimeLocale = Batch4.RW
-    val SD: TimeLocale = Batch4.SD
-    val SHI: TimeLocale = Batch4.SHI
-    val SI: TimeLocale = Batch4.SI
-    val SK: TimeLocale = Batch4.SK
-    val SL: TimeLocale = Batch4.SL
-    val SN: TimeLocale = Batch4.SN
-    val SO: TimeLocale = Batch4.SO
-    val SQ: TimeLocale = Batch4.SQ
-    val SR: TimeLocale = Batch4.SR
-    val SU: TimeLocale = Batch5.SU
-    val SV: TimeLocale = Batch5.SV
-    val SW: TimeLocale = Batch5.SW
-    val TA: TimeLocale = Batch5.TA
-    val TE: TimeLocale = Batch5.TE
-    val TG: TimeLocale = Batch5.TG
-    val TH: TimeLocale = Batch5.TH
-    val TI: TimeLocale = Batch5.TI
-    val TK: TimeLocale = Batch5.TK
-    val TR: TimeLocale = Batch5.TR
-    val TZM: TimeLocale = Batch5.TZM
-    val UK: TimeLocale = Batch5.UK
-    val UR: TimeLocale = Batch5.UR
-    val UZ: TimeLocale = Batch5.UZ
-    val VI: TimeLocale = Batch5.VI
-    val XH: TimeLocale = Batch5.XH
-    val YO: TimeLocale = Batch5.YO
-    val YUE: TimeLocale = Batch5.YUE
-    val ZH: TimeLocale = Batch6.ZH
-    val ZU: TimeLocale = Batch6.ZU
+    val MEN: TimeLocale = Batch3.MEN
+    val MFE: TimeLocale = Batch3.MFE
+    val MG: TimeLocale = Batch4.MG
+    val MI: TimeLocale = Batch4.MI
+    val MK: TimeLocale = Batch4.MK
+    val ML: TimeLocale = Batch4.ML
+    val MN: TimeLocale = Batch4.MN
+    val MNK: TimeLocale = Batch4.MNK
+    val MOS: TimeLocale = Batch4.MOS
+    val MR: TimeLocale = Batch4.MR
+    val MS: TimeLocale = Batch4.MS
+    val MT: TimeLocale = Batch4.MT
+    val MY: TimeLocale = Batch4.MY
+    val NB: TimeLocale = Batch4.NB
+    val ND: TimeLocale = Batch4.ND
+    val NE: TimeLocale = Batch4.NE
+    val NG: TimeLocale = Batch4.NG
+    val NL: TimeLocale = Batch4.NL
+    val NSO: TimeLocale = Batch4.NSO
+    val NUS: TimeLocale = Batch4.NUS
+    val NY: TimeLocale = Batch5.NY
+    val OM: TimeLocale = Batch5.OM
+    val OR: TimeLocale = Batch5.OR
+    val PA: TimeLocale = Batch5.PA
+    val PL: TimeLocale = Batch5.PL
+    val POV: TimeLocale = Batch5.POV
+    val PS: TimeLocale = Batch5.PS
+    val PT: TimeLocale = Batch5.PT
+    val QU: TimeLocale = Batch5.QU
+    val RO: TimeLocale = Batch5.RO
+    val RU: TimeLocale = Batch5.RU
+    val RW: TimeLocale = Batch5.RW
+    val SAR: TimeLocale = Batch5.SAR
+    val SD: TimeLocale = Batch5.SD
+    val SG: TimeLocale = Batch5.SG
+    val SHI: TimeLocale = Batch5.SHI
+    val SI: TimeLocale = Batch5.SI
+    val SK: TimeLocale = Batch5.SK
+    val SL: TimeLocale = Batch6.SL
+    val SN: TimeLocale = Batch6.SN
+    val SNK: TimeLocale = Batch6.SNK
+    val SO: TimeLocale = Batch6.SO
+    val SQ: TimeLocale = Batch6.SQ
+    val SR: TimeLocale = Batch6.SR
+    val SS: TimeLocale = Batch6.SS
+    val ST: TimeLocale = Batch6.ST
+    val SU: TimeLocale = Batch6.SU
+    val SUK: TimeLocale = Batch6.SUK
+    val SV: TimeLocale = Batch6.SV
+    val SW: TimeLocale = Batch6.SW
+    val TA: TimeLocale = Batch6.TA
+    val TE: TimeLocale = Batch6.TE
+    val TEM: TimeLocale = Batch6.TEM
+    val TG: TimeLocale = Batch6.TG
+    val TH: TimeLocale = Batch6.TH
+    val TI: TimeLocale = Batch6.TI
+    val TIG: TimeLocale = Batch7.TIG
+    val TK: TimeLocale = Batch7.TK
+    val TN: TimeLocale = Batch7.TN
+    val TR: TimeLocale = Batch7.TR
+    val TS: TimeLocale = Batch7.TS
+    val TZM: TimeLocale = Batch7.TZM
+    val UK: TimeLocale = Batch7.UK
+    val UMB: TimeLocale = Batch7.UMB
+    val UR: TimeLocale = Batch7.UR
+    val UZ: TimeLocale = Batch7.UZ
+    val VI: TimeLocale = Batch7.VI
+    val VMW: TimeLocale = Batch7.VMW
+    val WO: TimeLocale = Batch7.WO
+    val XH: TimeLocale = Batch7.XH
+    val YO: TimeLocale = Batch7.YO
+    val YUE: TimeLocale = Batch7.YUE
+    val ZDJ: TimeLocale = Batch7.ZDJ
+    val ZH: TimeLocale = Batch7.ZH
+    val ZU: TimeLocale = Batch8.ZU
 
     val ALL: Map[String, TimeLocale] = Map(
         "af" -> AF, "ak" -> AK, "am" -> AM, "ar" -> AR, "az" -> AZ,
-        "be" -> BE, "bg" -> BG, "bn" -> BN, "br" -> BR, "bs" -> BS,
-        "ca" -> CA, "ceb" -> CEB, "cs" -> CS, "cy" -> CY, "da" -> DA,
-        "de" -> DE, "el" -> EL, "en" -> EN, "es" -> ES, "et" -> ET,
-        "eu" -> EU, "fa" -> FA, "ff" -> FF, "fi" -> FI, "fil" -> FIL,
-        "fr" -> FR, "ga" -> GA, "gd" -> GD, "gl" -> GL, "gn" -> GN,
-        "gu" -> GU, "gv" -> GV, "ha" -> HA, "he" -> HE, "hi" -> HI,
-        "hr" -> HR, "ht" -> HT, "hu" -> HU, "hy" -> HY, "id" -> ID,
-        "ig" -> IG, "is" -> IS, "it" -> IT, "ja" -> JA, "jv" -> JV,
-        "ka" -> KA, "kk" -> KK, "km" -> KM, "kn" -> KN, "ko" -> KO,
-        "ku" -> KU, "kw" -> KW, "ky" -> KY, "lg" -> LG, "ln" -> LN,
-        "lo" -> LO, "lt" -> LT, "lv" -> LV, "mg" -> MG, "mi" -> MI,
-        "mk" -> MK, "ml" -> ML, "mn" -> MN, "mr" -> MR, "ms" -> MS,
-        "mt" -> MT, "my" -> MY, "nb" -> NB, "ne" -> NE, "nl" -> NL,
+        "bci" -> BCI, "be" -> BE, "bem" -> BEM, "bg" -> BG, "bm" -> BM,
+        "bn" -> BN, "br" -> BR, "bs" -> BS, "ca" -> CA, "ceb" -> CEB,
+        "cs" -> CS, "cy" -> CY, "da" -> DA, "de" -> DE, "din" -> DIN,
+        "dje" -> DJE, "dyu" -> DYU, "ee" -> EE, "el" -> EL, "en" -> EN,
+        "es" -> ES, "et" -> ET, "eu" -> EU, "fa" -> FA, "fan" -> FAN,
+        "ff" -> FF, "fi" -> FI, "fil" -> FIL, "fon" -> FON, "fr" -> FR,
+        "ga" -> GA, "gd" -> GD, "gl" -> GL, "gn" -> GN, "gu" -> GU,
+        "gv" -> GV, "ha" -> HA, "he" -> HE, "hi" -> HI, "hr" -> HR,
+        "ht" -> HT, "hu" -> HU, "hy" -> HY, "id" -> ID, "ig" -> IG,
+        "is" -> IS, "it" -> IT, "ja" -> JA, "jv" -> JV, "ka" -> KA,
+        "kbp" -> KBP, "kk" -> KK, "km" -> KM, "kn" -> KN, "ko" -> KO,
+        "kpe" -> KPE, "ktu" -> KTU, "ku" -> KU, "kw" -> KW, "ky" -> KY,
+        "lg" -> LG, "ln" -> LN, "lo" -> LO, "lt" -> LT, "lv" -> LV,
+        "men" -> MEN, "mfe" -> MFE, "mg" -> MG, "mi" -> MI, "mk" -> MK,
+        "ml" -> ML, "mn" -> MN, "mnk" -> MNK, "mos" -> MOS, "mr" -> MR,
+        "ms" -> MS, "mt" -> MT, "my" -> MY, "nb" -> NB, "nd" -> ND,
+        "ne" -> NE, "ng" -> NG, "nl" -> NL, "nso" -> NSO, "nus" -> NUS,
         "ny" -> NY, "om" -> OM, "or" -> OR, "pa" -> PA, "pl" -> PL,
-        "ps" -> PS, "pt" -> PT, "qu" -> QU, "ro" -> RO, "ru" -> RU,
-        "rw" -> RW, "sd" -> SD, "shi" -> SHI, "si" -> SI, "sk" -> SK,
-        "sl" -> SL, "sn" -> SN, "so" -> SO, "sq" -> SQ, "sr" -> SR,
-        "su" -> SU, "sv" -> SV, "sw" -> SW, "ta" -> TA, "te" -> TE,
-        "tg" -> TG, "th" -> TH, "ti" -> TI, "tk" -> TK, "tr" -> TR,
-        "tzm" -> TZM, "uk" -> UK, "ur" -> UR, "uz" -> UZ, "vi" -> VI,
-        "xh" -> XH, "yo" -> YO, "yue" -> YUE, "zh" -> ZH, "zu" -> ZU
+        "pov" -> POV, "ps" -> PS, "pt" -> PT, "qu" -> QU, "ro" -> RO,
+        "ru" -> RU, "rw" -> RW, "sar" -> SAR, "sd" -> SD, "sg" -> SG,
+        "shi" -> SHI, "si" -> SI, "sk" -> SK, "sl" -> SL, "sn" -> SN,
+        "snk" -> SNK, "so" -> SO, "sq" -> SQ, "sr" -> SR, "ss" -> SS,
+        "st" -> ST, "su" -> SU, "suk" -> SUK, "sv" -> SV, "sw" -> SW,
+        "ta" -> TA, "te" -> TE, "tem" -> TEM, "tg" -> TG, "th" -> TH,
+        "ti" -> TI, "tig" -> TIG, "tk" -> TK, "tn" -> TN, "tr" -> TR,
+        "ts" -> TS, "tzm" -> TZM, "uk" -> UK, "umb" -> UMB, "ur" -> UR,
+        "uz" -> UZ, "vi" -> VI, "vmw" -> VMW, "wo" -> WO, "xh" -> XH,
+        "yo" -> YO, "yue" -> YUE, "zdj" -> ZDJ, "zh" -> ZH, "zu" -> ZU
     )
 
     def get(code: String): Option[TimeLocale] = ALL.get(code)

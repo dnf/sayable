@@ -16,8 +16,11 @@ package body Sayabledate_Locales is
    Locale_Am : aliased Date_Locale;
    Locale_Ar : aliased Date_Locale;
    Locale_Az : aliased Date_Locale;
+   Locale_Bci : aliased Date_Locale;
    Locale_Be : aliased Date_Locale;
+   Locale_Bem : aliased Date_Locale;
    Locale_Bg : aliased Date_Locale;
+   Locale_Bm : aliased Date_Locale;
    Locale_Bn : aliased Date_Locale;
    Locale_Br : aliased Date_Locale;
    Locale_Bs : aliased Date_Locale;
@@ -27,15 +30,21 @@ package body Sayabledate_Locales is
    Locale_Cy : aliased Date_Locale;
    Locale_Da : aliased Date_Locale;
    Locale_De : aliased Date_Locale;
+   Locale_Din : aliased Date_Locale;
+   Locale_Dje : aliased Date_Locale;
+   Locale_Dyu : aliased Date_Locale;
+   Locale_Ee : aliased Date_Locale;
    Locale_El : aliased Date_Locale;
    Locale_En : aliased Date_Locale;
    Locale_Es : aliased Date_Locale;
    Locale_Et : aliased Date_Locale;
    Locale_Eu : aliased Date_Locale;
    Locale_Fa : aliased Date_Locale;
+   Locale_Fan : aliased Date_Locale;
    Locale_Ff : aliased Date_Locale;
    Locale_Fi : aliased Date_Locale;
    Locale_Fil : aliased Date_Locale;
+   Locale_Fon : aliased Date_Locale;
    Locale_Fr : aliased Date_Locale;
    Locale_Ga : aliased Date_Locale;
    Locale_Gd : aliased Date_Locale;
@@ -57,10 +66,13 @@ package body Sayabledate_Locales is
    Locale_Ja : aliased Date_Locale;
    Locale_Jv : aliased Date_Locale;
    Locale_Ka : aliased Date_Locale;
+   Locale_Kbp : aliased Date_Locale;
    Locale_Kk : aliased Date_Locale;
    Locale_Km : aliased Date_Locale;
    Locale_Kn : aliased Date_Locale;
    Locale_Ko : aliased Date_Locale;
+   Locale_Kpe : aliased Date_Locale;
+   Locale_Ktu : aliased Date_Locale;
    Locale_Ku : aliased Date_Locale;
    Locale_Kw : aliased Date_Locale;
    Locale_Ky : aliased Date_Locale;
@@ -69,56 +81,79 @@ package body Sayabledate_Locales is
    Locale_Lo : aliased Date_Locale;
    Locale_Lt : aliased Date_Locale;
    Locale_Lv : aliased Date_Locale;
+   Locale_Men : aliased Date_Locale;
+   Locale_Mfe : aliased Date_Locale;
    Locale_Mg : aliased Date_Locale;
    Locale_Mi : aliased Date_Locale;
    Locale_Mk : aliased Date_Locale;
    Locale_Ml : aliased Date_Locale;
    Locale_Mn : aliased Date_Locale;
+   Locale_Mnk : aliased Date_Locale;
+   Locale_Mos : aliased Date_Locale;
    Locale_Mr : aliased Date_Locale;
    Locale_Ms : aliased Date_Locale;
    Locale_Mt : aliased Date_Locale;
    Locale_My : aliased Date_Locale;
    Locale_Nb : aliased Date_Locale;
+   Locale_Nd : aliased Date_Locale;
    Locale_Ne : aliased Date_Locale;
+   Locale_Ng : aliased Date_Locale;
    Locale_Nl : aliased Date_Locale;
+   Locale_Nso : aliased Date_Locale;
+   Locale_Nus : aliased Date_Locale;
    Locale_Ny : aliased Date_Locale;
    Locale_Om : aliased Date_Locale;
    Locale_Or : aliased Date_Locale;
    Locale_Pa : aliased Date_Locale;
    Locale_Pl : aliased Date_Locale;
+   Locale_Pov : aliased Date_Locale;
    Locale_Ps : aliased Date_Locale;
    Locale_Pt : aliased Date_Locale;
    Locale_Qu : aliased Date_Locale;
    Locale_Ro : aliased Date_Locale;
    Locale_Ru : aliased Date_Locale;
    Locale_Rw : aliased Date_Locale;
+   Locale_Sar : aliased Date_Locale;
    Locale_Sd : aliased Date_Locale;
+   Locale_Sg : aliased Date_Locale;
    Locale_Shi : aliased Date_Locale;
    Locale_Si : aliased Date_Locale;
    Locale_Sk : aliased Date_Locale;
    Locale_Sl : aliased Date_Locale;
    Locale_Sn : aliased Date_Locale;
+   Locale_Snk : aliased Date_Locale;
    Locale_So : aliased Date_Locale;
    Locale_Sq : aliased Date_Locale;
    Locale_Sr : aliased Date_Locale;
+   Locale_Ss : aliased Date_Locale;
+   Locale_St : aliased Date_Locale;
    Locale_Su : aliased Date_Locale;
+   Locale_Suk : aliased Date_Locale;
    Locale_Sv : aliased Date_Locale;
    Locale_Sw : aliased Date_Locale;
    Locale_Ta : aliased Date_Locale;
    Locale_Te : aliased Date_Locale;
+   Locale_Tem : aliased Date_Locale;
    Locale_Tg : aliased Date_Locale;
    Locale_Th : aliased Date_Locale;
    Locale_Ti : aliased Date_Locale;
+   Locale_Tig : aliased Date_Locale;
    Locale_Tk : aliased Date_Locale;
+   Locale_Tn : aliased Date_Locale;
    Locale_Tr : aliased Date_Locale;
+   Locale_Ts : aliased Date_Locale;
    Locale_Tzm : aliased Date_Locale;
    Locale_Uk : aliased Date_Locale;
+   Locale_Umb : aliased Date_Locale;
    Locale_Ur : aliased Date_Locale;
    Locale_Uz : aliased Date_Locale;
    Locale_Vi : aliased Date_Locale;
+   Locale_Vmw : aliased Date_Locale;
+   Locale_Wo : aliased Date_Locale;
    Locale_Xh : aliased Date_Locale;
    Locale_Yo : aliased Date_Locale;
    Locale_Yue : aliased Date_Locale;
+   Locale_Zdj : aliased Date_Locale;
    Locale_Zh : aliased Date_Locale;
    Locale_Zu : aliased Date_Locale;
 
@@ -609,6 +644,103 @@ package body Sayabledate_Locales is
 
    end Init_az;
 
+   --  Source: date/locales/src/bci.json
+   procedure Init_bci is
+   begin
+      Locale_Bci.Code := To_Unbounded_String ("bci");
+
+      Locale_Bci.Months (1) := To_Unbounded_String ("Zanvie");
+      Locale_Bci.Months (2) := To_Unbounded_String ("Flevie");
+      Locale_Bci.Months (3) := To_Unbounded_String ("Masi");
+      Locale_Bci.Months (4) := To_Unbounded_String ("Avrili");
+      Locale_Bci.Months (5) := To_Unbounded_String ("Mɛ");
+      Locale_Bci.Months (6) := To_Unbounded_String ("Zuɛn");
+      Locale_Bci.Months (7) := To_Unbounded_String ("Zulɛ");
+      Locale_Bci.Months (8) := To_Unbounded_String ("Uti");
+      Locale_Bci.Months (9) := To_Unbounded_String ("Sɛtanbu");
+      Locale_Bci.Months (10) := To_Unbounded_String ("Ɔtɔbu");
+      Locale_Bci.Months (11) := To_Unbounded_String ("Novanbu");
+      Locale_Bci.Months (12) := To_Unbounded_String ("Desanbu");
+
+      Locale_Bci.Weekdays (1) := To_Unbounded_String ("Mɔndi");
+      Locale_Bci.Weekdays (2) := To_Unbounded_String ("Lunji");
+      Locale_Bci.Weekdays (3) := To_Unbounded_String ("Madi");
+      Locale_Bci.Weekdays (4) := To_Unbounded_String ("Mliku");
+      Locale_Bci.Weekdays (5) := To_Unbounded_String ("Juedi");
+      Locale_Bci.Weekdays (6) := To_Unbounded_String ("Vaandredi");
+      Locale_Bci.Weekdays (7) := To_Unbounded_String ("Sanmdi");
+
+      Locale_Bci.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Bci.Day_Format_Exception_Count := 0;
+
+      Locale_Bci.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Bci.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Bci.Today := To_Unbounded_String ("andɛ");
+      Locale_Bci.Tomorrow := To_Unbounded_String ("ainman");
+      Locale_Bci.Yesterday := To_Unbounded_String ("nglɛmun");
+      Locale_Bci.Has_Day_After_Tomorrow := True;
+      Locale_Bci.Day_After_Tomorrow := To_Unbounded_String ("ainman sin");
+      Locale_Bci.Has_Day_Before_Yesterday := True;
+      Locale_Bci.Day_Before_Yesterday := To_Unbounded_String ("nglɛmun sin");
+      Locale_Bci.Has_This_Weekday := True;
+      Locale_Bci.This_Weekday := To_Unbounded_String ("{weekday} nga");
+      Locale_Bci.Has_Next_Weekday := True;
+      Locale_Bci.Next_Weekday := To_Unbounded_String ("{weekday} ng'ɔ ba");
+      Locale_Bci.Has_Last_Weekday := True;
+      Locale_Bci.Last_Weekday := To_Unbounded_String ("{weekday} ng'ɔ sín");
+      Locale_Bci.Has_Months_In_Date := False;
+
+      Locale_Bci.Has_Short := True;
+      Locale_Bci.Short_Override.Has_Months := True;
+      Locale_Bci.Short_Override.Months (1) := To_Unbounded_String ("Zan");
+      Locale_Bci.Short_Override.Months (2) := To_Unbounded_String ("Fle");
+      Locale_Bci.Short_Override.Months (3) := To_Unbounded_String ("Mas");
+      Locale_Bci.Short_Override.Months (4) := To_Unbounded_String ("Avr");
+      Locale_Bci.Short_Override.Months (5) := To_Unbounded_String ("Mɛ");
+      Locale_Bci.Short_Override.Months (6) := To_Unbounded_String ("Zuɛ");
+      Locale_Bci.Short_Override.Months (7) := To_Unbounded_String ("Zul");
+      Locale_Bci.Short_Override.Months (8) := To_Unbounded_String ("Uti");
+      Locale_Bci.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Bci.Short_Override.Months (10) := To_Unbounded_String ("Ɔtɔ");
+      Locale_Bci.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Bci.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Bci.Short_Override.Has_Months_In_Date := False;
+      Locale_Bci.Short_Override.Has_Weekdays := True;
+      Locale_Bci.Short_Override.Weekdays (1) := To_Unbounded_String ("Mɔn");
+      Locale_Bci.Short_Override.Weekdays (2) := To_Unbounded_String ("Lun");
+      Locale_Bci.Short_Override.Weekdays (3) := To_Unbounded_String ("Mad");
+      Locale_Bci.Short_Override.Weekdays (4) := To_Unbounded_String ("Mli");
+      Locale_Bci.Short_Override.Weekdays (5) := To_Unbounded_String ("Jue");
+      Locale_Bci.Short_Override.Weekdays (6) := To_Unbounded_String ("Vaa");
+      Locale_Bci.Short_Override.Weekdays (7) := To_Unbounded_String ("San");
+      Locale_Bci.Short_Override.Has_Day_Format := True;
+      Locale_Bci.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Bci.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Bci.Short_Override.Has_Date_Pattern := True;
+      Locale_Bci.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Bci.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Bci.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Bci.Short_Override.Has_Today := False;
+      Locale_Bci.Short_Override.Has_Tomorrow := False;
+      Locale_Bci.Short_Override.Has_Yesterday := False;
+
+      Locale_Bci.Has_Compact := True;
+      Locale_Bci.Compact_Override.Has_Months := False;
+      Locale_Bci.Compact_Override.Has_Months_In_Date := False;
+      Locale_Bci.Compact_Override.Has_Weekdays := False;
+      Locale_Bci.Compact_Override.Has_Day_Format := False;
+      Locale_Bci.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Bci.Compact_Override.Has_Date_Pattern := True;
+      Locale_Bci.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Bci.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Bci.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Bci.Compact_Override.Has_Today := False;
+      Locale_Bci.Compact_Override.Has_Tomorrow := False;
+      Locale_Bci.Compact_Override.Has_Yesterday := False;
+
+   end Init_bci;
+
    --  Source: date/locales/src/be.json
    procedure Init_be is
    begin
@@ -718,6 +850,103 @@ package body Sayabledate_Locales is
 
    end Init_be;
 
+   --  Source: date/locales/src/bem.json
+   procedure Init_bem is
+   begin
+      Locale_Bem.Code := To_Unbounded_String ("bem");
+
+      Locale_Bem.Months (1) := To_Unbounded_String ("Januari");
+      Locale_Bem.Months (2) := To_Unbounded_String ("Februari");
+      Locale_Bem.Months (3) := To_Unbounded_String ("Machi");
+      Locale_Bem.Months (4) := To_Unbounded_String ("Epreli");
+      Locale_Bem.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Bem.Months (6) := To_Unbounded_String ("Juni");
+      Locale_Bem.Months (7) := To_Unbounded_String ("Julai");
+      Locale_Bem.Months (8) := To_Unbounded_String ("Ogasti");
+      Locale_Bem.Months (9) := To_Unbounded_String ("Septemba");
+      Locale_Bem.Months (10) := To_Unbounded_String ("Oktoba");
+      Locale_Bem.Months (11) := To_Unbounded_String ("Novemba");
+      Locale_Bem.Months (12) := To_Unbounded_String ("Disemba");
+
+      Locale_Bem.Weekdays (1) := To_Unbounded_String ("Pa Mulungu");
+      Locale_Bem.Weekdays (2) := To_Unbounded_String ("Pa Bwali");
+      Locale_Bem.Weekdays (3) := To_Unbounded_String ("Pa Bibili");
+      Locale_Bem.Weekdays (4) := To_Unbounded_String ("Pa Butatu");
+      Locale_Bem.Weekdays (5) := To_Unbounded_String ("Pa Bune");
+      Locale_Bem.Weekdays (6) := To_Unbounded_String ("Pa Busano");
+      Locale_Bem.Weekdays (7) := To_Unbounded_String ("Pa Mulembe");
+
+      Locale_Bem.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Bem.Day_Format_Exception_Count := 0;
+
+      Locale_Bem.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Bem.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Bem.Today := To_Unbounded_String ("lelo");
+      Locale_Bem.Tomorrow := To_Unbounded_String ("mailo");
+      Locale_Bem.Yesterday := To_Unbounded_String ("icungulo");
+      Locale_Bem.Has_Day_After_Tomorrow := True;
+      Locale_Bem.Day_After_Tomorrow := To_Unbounded_String ("mailo kabili");
+      Locale_Bem.Has_Day_Before_Yesterday := True;
+      Locale_Bem.Day_Before_Yesterday := To_Unbounded_String ("icungulo kabili");
+      Locale_Bem.Has_This_Weekday := True;
+      Locale_Bem.This_Weekday := To_Unbounded_String ("{weekday} ubu");
+      Locale_Bem.Has_Next_Weekday := True;
+      Locale_Bem.Next_Weekday := To_Unbounded_String ("{weekday} ukwisa");
+      Locale_Bem.Has_Last_Weekday := True;
+      Locale_Bem.Last_Weekday := To_Unbounded_String ("{weekday} ukupita");
+      Locale_Bem.Has_Months_In_Date := False;
+
+      Locale_Bem.Has_Short := True;
+      Locale_Bem.Short_Override.Has_Months := True;
+      Locale_Bem.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Bem.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Bem.Short_Override.Months (3) := To_Unbounded_String ("Mac");
+      Locale_Bem.Short_Override.Months (4) := To_Unbounded_String ("Epr");
+      Locale_Bem.Short_Override.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Bem.Short_Override.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Bem.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Bem.Short_Override.Months (8) := To_Unbounded_String ("Oga");
+      Locale_Bem.Short_Override.Months (9) := To_Unbounded_String ("Sep");
+      Locale_Bem.Short_Override.Months (10) := To_Unbounded_String ("Okt");
+      Locale_Bem.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Bem.Short_Override.Months (12) := To_Unbounded_String ("Dis");
+      Locale_Bem.Short_Override.Has_Months_In_Date := False;
+      Locale_Bem.Short_Override.Has_Weekdays := True;
+      Locale_Bem.Short_Override.Weekdays (1) := To_Unbounded_String ("Mul");
+      Locale_Bem.Short_Override.Weekdays (2) := To_Unbounded_String ("Bwa");
+      Locale_Bem.Short_Override.Weekdays (3) := To_Unbounded_String ("Bib");
+      Locale_Bem.Short_Override.Weekdays (4) := To_Unbounded_String ("But");
+      Locale_Bem.Short_Override.Weekdays (5) := To_Unbounded_String ("Bun");
+      Locale_Bem.Short_Override.Weekdays (6) := To_Unbounded_String ("Bus");
+      Locale_Bem.Short_Override.Weekdays (7) := To_Unbounded_String ("Mul");
+      Locale_Bem.Short_Override.Has_Day_Format := True;
+      Locale_Bem.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Bem.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Bem.Short_Override.Has_Date_Pattern := True;
+      Locale_Bem.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Bem.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Bem.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Bem.Short_Override.Has_Today := False;
+      Locale_Bem.Short_Override.Has_Tomorrow := False;
+      Locale_Bem.Short_Override.Has_Yesterday := False;
+
+      Locale_Bem.Has_Compact := True;
+      Locale_Bem.Compact_Override.Has_Months := False;
+      Locale_Bem.Compact_Override.Has_Months_In_Date := False;
+      Locale_Bem.Compact_Override.Has_Weekdays := False;
+      Locale_Bem.Compact_Override.Has_Day_Format := False;
+      Locale_Bem.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Bem.Compact_Override.Has_Date_Pattern := True;
+      Locale_Bem.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Bem.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Bem.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Bem.Compact_Override.Has_Today := False;
+      Locale_Bem.Compact_Override.Has_Tomorrow := False;
+      Locale_Bem.Compact_Override.Has_Yesterday := False;
+
+   end Init_bem;
+
    --  Source: date/locales/src/bg.json
    procedure Init_bg is
    begin
@@ -814,6 +1043,103 @@ package body Sayabledate_Locales is
       Locale_Bg.Compact_Override.Has_Yesterday := False;
 
    end Init_bg;
+
+   --  Source: date/locales/src/bm.json
+   procedure Init_bm is
+   begin
+      Locale_Bm.Code := To_Unbounded_String ("bm");
+
+      Locale_Bm.Months (1) := To_Unbounded_String ("Zanwuye");
+      Locale_Bm.Months (2) := To_Unbounded_String ("Fewuriye");
+      Locale_Bm.Months (3) := To_Unbounded_String ("Marisi");
+      Locale_Bm.Months (4) := To_Unbounded_String ("Awirili");
+      Locale_Bm.Months (5) := To_Unbounded_String ("Mɛ");
+      Locale_Bm.Months (6) := To_Unbounded_String ("Zuwɛn");
+      Locale_Bm.Months (7) := To_Unbounded_String ("Zuluye");
+      Locale_Bm.Months (8) := To_Unbounded_String ("Uti");
+      Locale_Bm.Months (9) := To_Unbounded_String ("Sɛtanburu");
+      Locale_Bm.Months (10) := To_Unbounded_String ("ɔkutɔburu");
+      Locale_Bm.Months (11) := To_Unbounded_String ("Nowanbudu");
+      Locale_Bm.Months (12) := To_Unbounded_String ("Desanburu");
+
+      Locale_Bm.Weekdays (1) := To_Unbounded_String ("Kari");
+      Locale_Bm.Weekdays (2) := To_Unbounded_String ("Ntɛnɛn");
+      Locale_Bm.Weekdays (3) := To_Unbounded_String ("Tarata");
+      Locale_Bm.Weekdays (4) := To_Unbounded_String ("Araba");
+      Locale_Bm.Weekdays (5) := To_Unbounded_String ("Alamisa");
+      Locale_Bm.Weekdays (6) := To_Unbounded_String ("Juma");
+      Locale_Bm.Weekdays (7) := To_Unbounded_String ("Sibiri");
+
+      Locale_Bm.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Bm.Day_Format_Exception_Count := 0;
+
+      Locale_Bm.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Bm.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Bm.Today := To_Unbounded_String ("bi");
+      Locale_Bm.Tomorrow := To_Unbounded_String ("sini");
+      Locale_Bm.Yesterday := To_Unbounded_String ("kunu");
+      Locale_Bm.Has_Day_After_Tomorrow := True;
+      Locale_Bm.Day_After_Tomorrow := To_Unbounded_String ("sini kɔfɛ");
+      Locale_Bm.Has_Day_Before_Yesterday := True;
+      Locale_Bm.Day_Before_Yesterday := To_Unbounded_String ("kunu kɔfɛ");
+      Locale_Bm.Has_This_Weekday := True;
+      Locale_Bm.This_Weekday := To_Unbounded_String ("{weekday} nin");
+      Locale_Bm.Has_Next_Weekday := True;
+      Locale_Bm.Next_Weekday := To_Unbounded_String ("{weekday} nata");
+      Locale_Bm.Has_Last_Weekday := True;
+      Locale_Bm.Last_Weekday := To_Unbounded_String ("{weekday} tɛmɛnen");
+      Locale_Bm.Has_Months_In_Date := False;
+
+      Locale_Bm.Has_Short := True;
+      Locale_Bm.Short_Override.Has_Months := True;
+      Locale_Bm.Short_Override.Months (1) := To_Unbounded_String ("Zan");
+      Locale_Bm.Short_Override.Months (2) := To_Unbounded_String ("Few");
+      Locale_Bm.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Bm.Short_Override.Months (4) := To_Unbounded_String ("Awi");
+      Locale_Bm.Short_Override.Months (5) := To_Unbounded_String ("Mɛ");
+      Locale_Bm.Short_Override.Months (6) := To_Unbounded_String ("Zuw");
+      Locale_Bm.Short_Override.Months (7) := To_Unbounded_String ("Zul");
+      Locale_Bm.Short_Override.Months (8) := To_Unbounded_String ("Uti");
+      Locale_Bm.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Bm.Short_Override.Months (10) := To_Unbounded_String ("ɔku");
+      Locale_Bm.Short_Override.Months (11) := To_Unbounded_String ("Now");
+      Locale_Bm.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Bm.Short_Override.Has_Months_In_Date := False;
+      Locale_Bm.Short_Override.Has_Weekdays := True;
+      Locale_Bm.Short_Override.Weekdays (1) := To_Unbounded_String ("Kar");
+      Locale_Bm.Short_Override.Weekdays (2) := To_Unbounded_String ("Ntɛ");
+      Locale_Bm.Short_Override.Weekdays (3) := To_Unbounded_String ("Tar");
+      Locale_Bm.Short_Override.Weekdays (4) := To_Unbounded_String ("Ara");
+      Locale_Bm.Short_Override.Weekdays (5) := To_Unbounded_String ("Ala");
+      Locale_Bm.Short_Override.Weekdays (6) := To_Unbounded_String ("Jum");
+      Locale_Bm.Short_Override.Weekdays (7) := To_Unbounded_String ("Sib");
+      Locale_Bm.Short_Override.Has_Day_Format := True;
+      Locale_Bm.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Bm.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Bm.Short_Override.Has_Date_Pattern := True;
+      Locale_Bm.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Bm.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Bm.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Bm.Short_Override.Has_Today := False;
+      Locale_Bm.Short_Override.Has_Tomorrow := False;
+      Locale_Bm.Short_Override.Has_Yesterday := False;
+
+      Locale_Bm.Has_Compact := True;
+      Locale_Bm.Compact_Override.Has_Months := False;
+      Locale_Bm.Compact_Override.Has_Months_In_Date := False;
+      Locale_Bm.Compact_Override.Has_Weekdays := False;
+      Locale_Bm.Compact_Override.Has_Day_Format := False;
+      Locale_Bm.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Bm.Compact_Override.Has_Date_Pattern := True;
+      Locale_Bm.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Bm.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Bm.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Bm.Compact_Override.Has_Today := False;
+      Locale_Bm.Compact_Override.Has_Tomorrow := False;
+      Locale_Bm.Compact_Override.Has_Yesterday := False;
+
+   end Init_bm;
 
    --  Source: date/locales/src/bn.json
    procedure Init_bn is
@@ -1698,6 +2024,394 @@ package body Sayabledate_Locales is
 
    end Init_de;
 
+   --  Source: date/locales/src/din.json
+   procedure Init_din is
+   begin
+      Locale_Din.Code := To_Unbounded_String ("din");
+
+      Locale_Din.Months (1) := To_Unbounded_String ("Tiɔp in dit");
+      Locale_Din.Months (2) := To_Unbounded_String ("Pɛt");
+      Locale_Din.Months (3) := To_Unbounded_String ("Duɔ̈ɔ̈ŋ");
+      Locale_Din.Months (4) := To_Unbounded_String ("Guak");
+      Locale_Din.Months (5) := To_Unbounded_String ("Duät");
+      Locale_Din.Months (6) := To_Unbounded_String ("Kornyot");
+      Locale_Din.Months (7) := To_Unbounded_String ("Payi");
+      Locale_Din.Months (8) := To_Unbounded_String ("Tio̱p in thii");
+      Locale_Din.Months (9) := To_Unbounded_String ("Laath");
+      Locale_Din.Months (10) := To_Unbounded_String ("Kur");
+      Locale_Din.Months (11) := To_Unbounded_String ("Tio̱p in laat");
+      Locale_Din.Months (12) := To_Unbounded_String ("Jiɔk");
+
+      Locale_Din.Weekdays (1) := To_Unbounded_String ("Akɔl dhorou");
+      Locale_Din.Weekdays (2) := To_Unbounded_String ("Kɔl jöŋ");
+      Locale_Din.Weekdays (3) := To_Unbounded_String ("Kɔl rou");
+      Locale_Din.Weekdays (4) := To_Unbounded_String ("Kɔl diäk");
+      Locale_Din.Weekdays (5) := To_Unbounded_String ("Kɔl ŋuän");
+      Locale_Din.Weekdays (6) := To_Unbounded_String ("Kɔl dhiëc");
+      Locale_Din.Weekdays (7) := To_Unbounded_String ("Kɔl bäkäl");
+
+      Locale_Din.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Din.Day_Format_Exception_Count := 0;
+
+      Locale_Din.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Din.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Din.Today := To_Unbounded_String ("yïn");
+      Locale_Din.Tomorrow := To_Unbounded_String ("riak");
+      Locale_Din.Yesterday := To_Unbounded_String ("aköl");
+      Locale_Din.Has_Day_After_Tomorrow := True;
+      Locale_Din.Day_After_Tomorrow := To_Unbounded_String ("riak cök");
+      Locale_Din.Has_Day_Before_Yesterday := True;
+      Locale_Din.Day_Before_Yesterday := To_Unbounded_String ("aköl cök");
+      Locale_Din.Has_This_Weekday := True;
+      Locale_Din.This_Weekday := To_Unbounded_String ("{weekday} kënë");
+      Locale_Din.Has_Next_Weekday := True;
+      Locale_Din.Next_Weekday := To_Unbounded_String ("{weekday} bɛ̈n");
+      Locale_Din.Has_Last_Weekday := True;
+      Locale_Din.Last_Weekday := To_Unbounded_String ("{weekday} cï wëëŋ");
+      Locale_Din.Has_Months_In_Date := False;
+
+      Locale_Din.Has_Short := True;
+      Locale_Din.Short_Override.Has_Months := True;
+      Locale_Din.Short_Override.Months (1) := To_Unbounded_String ("Tiɔp");
+      Locale_Din.Short_Override.Months (2) := To_Unbounded_String ("Pɛt");
+      Locale_Din.Short_Override.Months (3) := To_Unbounded_String ("Duɔ̈ɔ̈ŋ");
+      Locale_Din.Short_Override.Months (4) := To_Unbounded_String ("Guak");
+      Locale_Din.Short_Override.Months (5) := To_Unbounded_String ("Duät");
+      Locale_Din.Short_Override.Months (6) := To_Unbounded_String ("Kor");
+      Locale_Din.Short_Override.Months (7) := To_Unbounded_String ("Pay");
+      Locale_Din.Short_Override.Months (8) := To_Unbounded_String ("Tio̱p");
+      Locale_Din.Short_Override.Months (9) := To_Unbounded_String ("Laa");
+      Locale_Din.Short_Override.Months (10) := To_Unbounded_String ("Kur");
+      Locale_Din.Short_Override.Months (11) := To_Unbounded_String ("Tio̱p");
+      Locale_Din.Short_Override.Months (12) := To_Unbounded_String ("Jiɔk");
+      Locale_Din.Short_Override.Has_Months_In_Date := False;
+      Locale_Din.Short_Override.Has_Weekdays := True;
+      Locale_Din.Short_Override.Weekdays (1) := To_Unbounded_String ("Dho");
+      Locale_Din.Short_Override.Weekdays (2) := To_Unbounded_String ("Jöŋ");
+      Locale_Din.Short_Override.Weekdays (3) := To_Unbounded_String ("Rou");
+      Locale_Din.Short_Override.Weekdays (4) := To_Unbounded_String ("Diäk");
+      Locale_Din.Short_Override.Weekdays (5) := To_Unbounded_String ("Ŋuän");
+      Locale_Din.Short_Override.Weekdays (6) := To_Unbounded_String ("Dhiëc");
+      Locale_Din.Short_Override.Weekdays (7) := To_Unbounded_String ("Bäk");
+      Locale_Din.Short_Override.Has_Day_Format := True;
+      Locale_Din.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Din.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Din.Short_Override.Has_Date_Pattern := True;
+      Locale_Din.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Din.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Din.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Din.Short_Override.Has_Today := False;
+      Locale_Din.Short_Override.Has_Tomorrow := False;
+      Locale_Din.Short_Override.Has_Yesterday := False;
+
+      Locale_Din.Has_Compact := True;
+      Locale_Din.Compact_Override.Has_Months := False;
+      Locale_Din.Compact_Override.Has_Months_In_Date := False;
+      Locale_Din.Compact_Override.Has_Weekdays := False;
+      Locale_Din.Compact_Override.Has_Day_Format := False;
+      Locale_Din.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Din.Compact_Override.Has_Date_Pattern := True;
+      Locale_Din.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Din.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Din.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Din.Compact_Override.Has_Today := False;
+      Locale_Din.Compact_Override.Has_Tomorrow := False;
+      Locale_Din.Compact_Override.Has_Yesterday := False;
+
+   end Init_din;
+
+   --  Source: date/locales/src/dje.json
+   procedure Init_dje is
+   begin
+      Locale_Dje.Code := To_Unbounded_String ("dje");
+
+      Locale_Dje.Months (1) := To_Unbounded_String ("Žanwiye");
+      Locale_Dje.Months (2) := To_Unbounded_String ("Feewiriye");
+      Locale_Dje.Months (3) := To_Unbounded_String ("Marsi");
+      Locale_Dje.Months (4) := To_Unbounded_String ("Awiril");
+      Locale_Dje.Months (5) := To_Unbounded_String ("Me");
+      Locale_Dje.Months (6) := To_Unbounded_String ("Žuweŋ");
+      Locale_Dje.Months (7) := To_Unbounded_String ("Žuyye");
+      Locale_Dje.Months (8) := To_Unbounded_String ("Ut");
+      Locale_Dje.Months (9) := To_Unbounded_String ("Sektanbur");
+      Locale_Dje.Months (10) := To_Unbounded_String ("Oktoobur");
+      Locale_Dje.Months (11) := To_Unbounded_String ("Noowanbur");
+      Locale_Dje.Months (12) := To_Unbounded_String ("Deesanbur");
+
+      Locale_Dje.Weekdays (1) := To_Unbounded_String ("Alhadi");
+      Locale_Dje.Weekdays (2) := To_Unbounded_String ("Atini");
+      Locale_Dje.Weekdays (3) := To_Unbounded_String ("Atalaata");
+      Locale_Dje.Weekdays (4) := To_Unbounded_String ("Alarba");
+      Locale_Dje.Weekdays (5) := To_Unbounded_String ("Alhamisi");
+      Locale_Dje.Weekdays (6) := To_Unbounded_String ("Alzuma");
+      Locale_Dje.Weekdays (7) := To_Unbounded_String ("Asibiti");
+
+      Locale_Dje.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Dje.Day_Format_Exception_Count := 0;
+
+      Locale_Dje.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Dje.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Dje.Today := To_Unbounded_String ("hõ");
+      Locale_Dje.Tomorrow := To_Unbounded_String ("suba");
+      Locale_Dje.Yesterday := To_Unbounded_String ("bi");
+      Locale_Dje.Has_Day_After_Tomorrow := True;
+      Locale_Dje.Day_After_Tomorrow := To_Unbounded_String ("suba cine");
+      Locale_Dje.Has_Day_Before_Yesterday := True;
+      Locale_Dje.Day_Before_Yesterday := To_Unbounded_String ("bi fo");
+      Locale_Dje.Has_This_Weekday := True;
+      Locale_Dje.This_Weekday := To_Unbounded_String ("{weekday} wo");
+      Locale_Dje.Has_Next_Weekday := True;
+      Locale_Dje.Next_Weekday := To_Unbounded_String ("{weekday} ka kaa");
+      Locale_Dje.Has_Last_Weekday := True;
+      Locale_Dje.Last_Weekday := To_Unbounded_String ("{weekday} ka ban");
+      Locale_Dje.Has_Months_In_Date := False;
+
+      Locale_Dje.Has_Short := True;
+      Locale_Dje.Short_Override.Has_Months := True;
+      Locale_Dje.Short_Override.Months (1) := To_Unbounded_String ("Žan");
+      Locale_Dje.Short_Override.Months (2) := To_Unbounded_String ("Fee");
+      Locale_Dje.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Dje.Short_Override.Months (4) := To_Unbounded_String ("Awi");
+      Locale_Dje.Short_Override.Months (5) := To_Unbounded_String ("Me");
+      Locale_Dje.Short_Override.Months (6) := To_Unbounded_String ("Žuw");
+      Locale_Dje.Short_Override.Months (7) := To_Unbounded_String ("Žuy");
+      Locale_Dje.Short_Override.Months (8) := To_Unbounded_String ("Ut");
+      Locale_Dje.Short_Override.Months (9) := To_Unbounded_String ("Sek");
+      Locale_Dje.Short_Override.Months (10) := To_Unbounded_String ("Okt");
+      Locale_Dje.Short_Override.Months (11) := To_Unbounded_String ("Noo");
+      Locale_Dje.Short_Override.Months (12) := To_Unbounded_String ("Dee");
+      Locale_Dje.Short_Override.Has_Months_In_Date := False;
+      Locale_Dje.Short_Override.Has_Weekdays := True;
+      Locale_Dje.Short_Override.Weekdays (1) := To_Unbounded_String ("Alh");
+      Locale_Dje.Short_Override.Weekdays (2) := To_Unbounded_String ("Ati");
+      Locale_Dje.Short_Override.Weekdays (3) := To_Unbounded_String ("Ata");
+      Locale_Dje.Short_Override.Weekdays (4) := To_Unbounded_String ("Ala");
+      Locale_Dje.Short_Override.Weekdays (5) := To_Unbounded_String ("Alh");
+      Locale_Dje.Short_Override.Weekdays (6) := To_Unbounded_String ("Alz");
+      Locale_Dje.Short_Override.Weekdays (7) := To_Unbounded_String ("Asi");
+      Locale_Dje.Short_Override.Has_Day_Format := True;
+      Locale_Dje.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Dje.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Dje.Short_Override.Has_Date_Pattern := True;
+      Locale_Dje.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Dje.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Dje.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Dje.Short_Override.Has_Today := False;
+      Locale_Dje.Short_Override.Has_Tomorrow := False;
+      Locale_Dje.Short_Override.Has_Yesterday := False;
+
+      Locale_Dje.Has_Compact := True;
+      Locale_Dje.Compact_Override.Has_Months := False;
+      Locale_Dje.Compact_Override.Has_Months_In_Date := False;
+      Locale_Dje.Compact_Override.Has_Weekdays := False;
+      Locale_Dje.Compact_Override.Has_Day_Format := False;
+      Locale_Dje.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Dje.Compact_Override.Has_Date_Pattern := True;
+      Locale_Dje.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Dje.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Dje.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Dje.Compact_Override.Has_Today := False;
+      Locale_Dje.Compact_Override.Has_Tomorrow := False;
+      Locale_Dje.Compact_Override.Has_Yesterday := False;
+
+   end Init_dje;
+
+   --  Source: date/locales/src/dyu.json
+   procedure Init_dyu is
+   begin
+      Locale_Dyu.Code := To_Unbounded_String ("dyu");
+
+      Locale_Dyu.Months (1) := To_Unbounded_String ("Zanwuyekalo");
+      Locale_Dyu.Months (2) := To_Unbounded_String ("Feburuyekalo");
+      Locale_Dyu.Months (3) := To_Unbounded_String ("Marisikalo");
+      Locale_Dyu.Months (4) := To_Unbounded_String ("Awirilikalo");
+      Locale_Dyu.Months (5) := To_Unbounded_String ("Mɛkalo");
+      Locale_Dyu.Months (6) := To_Unbounded_String ("Zuwɛnkalo");
+      Locale_Dyu.Months (7) := To_Unbounded_String ("Zuluyekalo");
+      Locale_Dyu.Months (8) := To_Unbounded_String ("Utikalo");
+      Locale_Dyu.Months (9) := To_Unbounded_String ("Sɛtanburukalo");
+      Locale_Dyu.Months (10) := To_Unbounded_String ("Ɔkutɔburukalo");
+      Locale_Dyu.Months (11) := To_Unbounded_String ("Nowanburdukalo");
+      Locale_Dyu.Months (12) := To_Unbounded_String ("Desanburukalo");
+
+      Locale_Dyu.Weekdays (1) := To_Unbounded_String ("Kari");
+      Locale_Dyu.Weekdays (2) := To_Unbounded_String ("Ntɛnɛn");
+      Locale_Dyu.Weekdays (3) := To_Unbounded_String ("Tarata");
+      Locale_Dyu.Weekdays (4) := To_Unbounded_String ("Araba");
+      Locale_Dyu.Weekdays (5) := To_Unbounded_String ("Alamisa");
+      Locale_Dyu.Weekdays (6) := To_Unbounded_String ("Juma");
+      Locale_Dyu.Weekdays (7) := To_Unbounded_String ("Sibiri");
+
+      Locale_Dyu.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Dyu.Day_Format_Exception_Count := 0;
+
+      Locale_Dyu.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Dyu.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Dyu.Today := To_Unbounded_String ("bi");
+      Locale_Dyu.Tomorrow := To_Unbounded_String ("sini");
+      Locale_Dyu.Yesterday := To_Unbounded_String ("kunu");
+      Locale_Dyu.Has_Day_After_Tomorrow := True;
+      Locale_Dyu.Day_After_Tomorrow := To_Unbounded_String ("sini kɔfɛ");
+      Locale_Dyu.Has_Day_Before_Yesterday := True;
+      Locale_Dyu.Day_Before_Yesterday := To_Unbounded_String ("kunu kɔfɛ");
+      Locale_Dyu.Has_This_Weekday := True;
+      Locale_Dyu.This_Weekday := To_Unbounded_String ("{weekday} nin");
+      Locale_Dyu.Has_Next_Weekday := True;
+      Locale_Dyu.Next_Weekday := To_Unbounded_String ("{weekday} nata");
+      Locale_Dyu.Has_Last_Weekday := True;
+      Locale_Dyu.Last_Weekday := To_Unbounded_String ("{weekday} tɛmɛnen");
+      Locale_Dyu.Has_Months_In_Date := False;
+
+      Locale_Dyu.Has_Short := True;
+      Locale_Dyu.Short_Override.Has_Months := True;
+      Locale_Dyu.Short_Override.Months (1) := To_Unbounded_String ("Zan");
+      Locale_Dyu.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Dyu.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Dyu.Short_Override.Months (4) := To_Unbounded_String ("Awi");
+      Locale_Dyu.Short_Override.Months (5) := To_Unbounded_String ("Mɛ");
+      Locale_Dyu.Short_Override.Months (6) := To_Unbounded_String ("Zuw");
+      Locale_Dyu.Short_Override.Months (7) := To_Unbounded_String ("Zul");
+      Locale_Dyu.Short_Override.Months (8) := To_Unbounded_String ("Uti");
+      Locale_Dyu.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Dyu.Short_Override.Months (10) := To_Unbounded_String ("Ɔku");
+      Locale_Dyu.Short_Override.Months (11) := To_Unbounded_String ("Now");
+      Locale_Dyu.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Dyu.Short_Override.Has_Months_In_Date := False;
+      Locale_Dyu.Short_Override.Has_Weekdays := True;
+      Locale_Dyu.Short_Override.Weekdays (1) := To_Unbounded_String ("Kar");
+      Locale_Dyu.Short_Override.Weekdays (2) := To_Unbounded_String ("Ntɛ");
+      Locale_Dyu.Short_Override.Weekdays (3) := To_Unbounded_String ("Tar");
+      Locale_Dyu.Short_Override.Weekdays (4) := To_Unbounded_String ("Ara");
+      Locale_Dyu.Short_Override.Weekdays (5) := To_Unbounded_String ("Ala");
+      Locale_Dyu.Short_Override.Weekdays (6) := To_Unbounded_String ("Jum");
+      Locale_Dyu.Short_Override.Weekdays (7) := To_Unbounded_String ("Sib");
+      Locale_Dyu.Short_Override.Has_Day_Format := True;
+      Locale_Dyu.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Dyu.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Dyu.Short_Override.Has_Date_Pattern := True;
+      Locale_Dyu.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Dyu.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Dyu.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Dyu.Short_Override.Has_Today := False;
+      Locale_Dyu.Short_Override.Has_Tomorrow := False;
+      Locale_Dyu.Short_Override.Has_Yesterday := False;
+
+      Locale_Dyu.Has_Compact := True;
+      Locale_Dyu.Compact_Override.Has_Months := False;
+      Locale_Dyu.Compact_Override.Has_Months_In_Date := False;
+      Locale_Dyu.Compact_Override.Has_Weekdays := False;
+      Locale_Dyu.Compact_Override.Has_Day_Format := False;
+      Locale_Dyu.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Dyu.Compact_Override.Has_Date_Pattern := True;
+      Locale_Dyu.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Dyu.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Dyu.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Dyu.Compact_Override.Has_Today := False;
+      Locale_Dyu.Compact_Override.Has_Tomorrow := False;
+      Locale_Dyu.Compact_Override.Has_Yesterday := False;
+
+   end Init_dyu;
+
+   --  Source: date/locales/src/ee.json
+   procedure Init_ee is
+   begin
+      Locale_Ee.Code := To_Unbounded_String ("ee");
+
+      Locale_Ee.Months (1) := To_Unbounded_String ("Dzove");
+      Locale_Ee.Months (2) := To_Unbounded_String ("Dzodze");
+      Locale_Ee.Months (3) := To_Unbounded_String ("Tedoxe");
+      Locale_Ee.Months (4) := To_Unbounded_String ("Afɔfĩe");
+      Locale_Ee.Months (5) := To_Unbounded_String ("Damɛ");
+      Locale_Ee.Months (6) := To_Unbounded_String ("Masa");
+      Locale_Ee.Months (7) := To_Unbounded_String ("Siamlɔm");
+      Locale_Ee.Months (8) := To_Unbounded_String ("Dasiamime");
+      Locale_Ee.Months (9) := To_Unbounded_String ("Anyɔnyɔ");
+      Locale_Ee.Months (10) := To_Unbounded_String ("Kele");
+      Locale_Ee.Months (11) := To_Unbounded_String ("Adeɛmekpɔxe");
+      Locale_Ee.Months (12) := To_Unbounded_String ("Dzome");
+
+      Locale_Ee.Weekdays (1) := To_Unbounded_String ("Kɔsiɖa");
+      Locale_Ee.Weekdays (2) := To_Unbounded_String ("Dzoɖa");
+      Locale_Ee.Weekdays (3) := To_Unbounded_String ("Braɖa");
+      Locale_Ee.Weekdays (4) := To_Unbounded_String ("Kuɖa");
+      Locale_Ee.Weekdays (5) := To_Unbounded_String ("Yawoɖa");
+      Locale_Ee.Weekdays (6) := To_Unbounded_String ("Fiɖa");
+      Locale_Ee.Weekdays (7) := To_Unbounded_String ("Memleɖa");
+
+      Locale_Ee.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ee.Day_Format_Exception_Count := 0;
+
+      Locale_Ee.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ee.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Ee.Today := To_Unbounded_String ("egbe");
+      Locale_Ee.Tomorrow := To_Unbounded_String ("etsɔ");
+      Locale_Ee.Yesterday := To_Unbounded_String ("etso");
+      Locale_Ee.Has_Day_After_Tomorrow := True;
+      Locale_Ee.Day_After_Tomorrow := To_Unbounded_String ("etsɔ megbe");
+      Locale_Ee.Has_Day_Before_Yesterday := True;
+      Locale_Ee.Day_Before_Yesterday := To_Unbounded_String ("etso nyitsɔ");
+      Locale_Ee.Has_This_Weekday := True;
+      Locale_Ee.This_Weekday := To_Unbounded_String ("{weekday} sia");
+      Locale_Ee.Has_Next_Weekday := True;
+      Locale_Ee.Next_Weekday := To_Unbounded_String ("{weekday} si gbɔna");
+      Locale_Ee.Has_Last_Weekday := True;
+      Locale_Ee.Last_Weekday := To_Unbounded_String ("{weekday} si va yi");
+      Locale_Ee.Has_Months_In_Date := False;
+
+      Locale_Ee.Has_Short := True;
+      Locale_Ee.Short_Override.Has_Months := True;
+      Locale_Ee.Short_Override.Months (1) := To_Unbounded_String ("Dzv");
+      Locale_Ee.Short_Override.Months (2) := To_Unbounded_String ("Dzd");
+      Locale_Ee.Short_Override.Months (3) := To_Unbounded_String ("Ted");
+      Locale_Ee.Short_Override.Months (4) := To_Unbounded_String ("Afɔ");
+      Locale_Ee.Short_Override.Months (5) := To_Unbounded_String ("Dam");
+      Locale_Ee.Short_Override.Months (6) := To_Unbounded_String ("Mas");
+      Locale_Ee.Short_Override.Months (7) := To_Unbounded_String ("Sia");
+      Locale_Ee.Short_Override.Months (8) := To_Unbounded_String ("Das");
+      Locale_Ee.Short_Override.Months (9) := To_Unbounded_String ("Any");
+      Locale_Ee.Short_Override.Months (10) := To_Unbounded_String ("Kel");
+      Locale_Ee.Short_Override.Months (11) := To_Unbounded_String ("Ade");
+      Locale_Ee.Short_Override.Months (12) := To_Unbounded_String ("Dzm");
+      Locale_Ee.Short_Override.Has_Months_In_Date := False;
+      Locale_Ee.Short_Override.Has_Weekdays := True;
+      Locale_Ee.Short_Override.Weekdays (1) := To_Unbounded_String ("Kɔs");
+      Locale_Ee.Short_Override.Weekdays (2) := To_Unbounded_String ("Dzo");
+      Locale_Ee.Short_Override.Weekdays (3) := To_Unbounded_String ("Bra");
+      Locale_Ee.Short_Override.Weekdays (4) := To_Unbounded_String ("Kuɖ");
+      Locale_Ee.Short_Override.Weekdays (5) := To_Unbounded_String ("Yaw");
+      Locale_Ee.Short_Override.Weekdays (6) := To_Unbounded_String ("Fiɖ");
+      Locale_Ee.Short_Override.Weekdays (7) := To_Unbounded_String ("Mem");
+      Locale_Ee.Short_Override.Has_Day_Format := True;
+      Locale_Ee.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ee.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ee.Short_Override.Has_Date_Pattern := True;
+      Locale_Ee.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ee.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ee.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Ee.Short_Override.Has_Today := False;
+      Locale_Ee.Short_Override.Has_Tomorrow := False;
+      Locale_Ee.Short_Override.Has_Yesterday := False;
+
+      Locale_Ee.Has_Compact := True;
+      Locale_Ee.Compact_Override.Has_Months := False;
+      Locale_Ee.Compact_Override.Has_Months_In_Date := False;
+      Locale_Ee.Compact_Override.Has_Weekdays := False;
+      Locale_Ee.Compact_Override.Has_Day_Format := False;
+      Locale_Ee.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ee.Compact_Override.Has_Date_Pattern := True;
+      Locale_Ee.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Ee.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ee.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Ee.Compact_Override.Has_Today := False;
+      Locale_Ee.Compact_Override.Has_Tomorrow := False;
+      Locale_Ee.Compact_Override.Has_Yesterday := False;
+
+   end Init_ee;
+
    --  Source: date/locales/src/el.json
    procedure Init_el is
    begin
@@ -2306,6 +3020,103 @@ package body Sayabledate_Locales is
 
    end Init_fa;
 
+   --  Source: date/locales/src/fan.json
+   procedure Init_fan is
+   begin
+      Locale_Fan.Code := To_Unbounded_String ("fan");
+
+      Locale_Fan.Months (1) := To_Unbounded_String ("Nzas Ngon");
+      Locale_Fan.Months (2) := To_Unbounded_String ("Nzas Mekié");
+      Locale_Fan.Months (3) := To_Unbounded_String ("Nzas Okúa");
+      Locale_Fan.Months (4) := To_Unbounded_String ("Nzas Angón");
+      Locale_Fan.Months (5) := To_Unbounded_String ("Nzas Obuí");
+      Locale_Fan.Months (6) := To_Unbounded_String ("Nzas Okéna");
+      Locale_Fan.Months (7) := To_Unbounded_String ("Nzas Osúa");
+      Locale_Fan.Months (8) := To_Unbounded_String ("Nzas Mwom");
+      Locale_Fan.Months (9) := To_Unbounded_String ("Nzas Ebulú");
+      Locale_Fan.Months (10) := To_Unbounded_String ("Nzas Owono");
+      Locale_Fan.Months (11) := To_Unbounded_String ("Nzas Owono-abé");
+      Locale_Fan.Months (12) := To_Unbounded_String ("Nzas Nkéng");
+
+      Locale_Fan.Weekdays (1) := To_Unbounded_String ("Esig");
+      Locale_Fan.Weekdays (2) := To_Unbounded_String ("Amvus");
+      Locale_Fan.Weekdays (3) := To_Unbounded_String ("Amvus-abé");
+      Locale_Fan.Weekdays (4) := To_Unbounded_String ("Amvus-alú");
+      Locale_Fan.Weekdays (5) := To_Unbounded_String ("Amvus-anyin");
+      Locale_Fan.Weekdays (6) := To_Unbounded_String ("Mba");
+      Locale_Fan.Weekdays (7) := To_Unbounded_String ("Ngon");
+
+      Locale_Fan.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Fan.Day_Format_Exception_Count := 0;
+
+      Locale_Fan.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Fan.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Fan.Today := To_Unbounded_String ("anú");
+      Locale_Fan.Tomorrow := To_Unbounded_String ("kie");
+      Locale_Fan.Yesterday := To_Unbounded_String ("angogomé");
+      Locale_Fan.Has_Day_After_Tomorrow := True;
+      Locale_Fan.Day_After_Tomorrow := To_Unbounded_String ("kie okúa");
+      Locale_Fan.Has_Day_Before_Yesterday := True;
+      Locale_Fan.Day_Before_Yesterday := To_Unbounded_String ("angogomé okúa");
+      Locale_Fan.Has_This_Weekday := True;
+      Locale_Fan.This_Weekday := To_Unbounded_String ("{weekday} ane");
+      Locale_Fan.Has_Next_Weekday := True;
+      Locale_Fan.Next_Weekday := To_Unbounded_String ("{weekday} a bé za");
+      Locale_Fan.Has_Last_Weekday := True;
+      Locale_Fan.Last_Weekday := To_Unbounded_String ("{weekday} a ja");
+      Locale_Fan.Has_Months_In_Date := False;
+
+      Locale_Fan.Has_Short := True;
+      Locale_Fan.Short_Override.Has_Months := True;
+      Locale_Fan.Short_Override.Months (1) := To_Unbounded_String ("Ngo");
+      Locale_Fan.Short_Override.Months (2) := To_Unbounded_String ("Mek");
+      Locale_Fan.Short_Override.Months (3) := To_Unbounded_String ("Oku");
+      Locale_Fan.Short_Override.Months (4) := To_Unbounded_String ("Ang");
+      Locale_Fan.Short_Override.Months (5) := To_Unbounded_String ("Obu");
+      Locale_Fan.Short_Override.Months (6) := To_Unbounded_String ("Oke");
+      Locale_Fan.Short_Override.Months (7) := To_Unbounded_String ("Osu");
+      Locale_Fan.Short_Override.Months (8) := To_Unbounded_String ("Mwo");
+      Locale_Fan.Short_Override.Months (9) := To_Unbounded_String ("Ebu");
+      Locale_Fan.Short_Override.Months (10) := To_Unbounded_String ("Owo");
+      Locale_Fan.Short_Override.Months (11) := To_Unbounded_String ("Owa");
+      Locale_Fan.Short_Override.Months (12) := To_Unbounded_String ("Nke");
+      Locale_Fan.Short_Override.Has_Months_In_Date := False;
+      Locale_Fan.Short_Override.Has_Weekdays := True;
+      Locale_Fan.Short_Override.Weekdays (1) := To_Unbounded_String ("Esi");
+      Locale_Fan.Short_Override.Weekdays (2) := To_Unbounded_String ("Amv");
+      Locale_Fan.Short_Override.Weekdays (3) := To_Unbounded_String ("Ama");
+      Locale_Fan.Short_Override.Weekdays (4) := To_Unbounded_String ("Aml");
+      Locale_Fan.Short_Override.Weekdays (5) := To_Unbounded_String ("Amn");
+      Locale_Fan.Short_Override.Weekdays (6) := To_Unbounded_String ("Mba");
+      Locale_Fan.Short_Override.Weekdays (7) := To_Unbounded_String ("Ngo");
+      Locale_Fan.Short_Override.Has_Day_Format := True;
+      Locale_Fan.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Fan.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Fan.Short_Override.Has_Date_Pattern := True;
+      Locale_Fan.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Fan.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Fan.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Fan.Short_Override.Has_Today := False;
+      Locale_Fan.Short_Override.Has_Tomorrow := False;
+      Locale_Fan.Short_Override.Has_Yesterday := False;
+
+      Locale_Fan.Has_Compact := True;
+      Locale_Fan.Compact_Override.Has_Months := False;
+      Locale_Fan.Compact_Override.Has_Months_In_Date := False;
+      Locale_Fan.Compact_Override.Has_Weekdays := False;
+      Locale_Fan.Compact_Override.Has_Day_Format := False;
+      Locale_Fan.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Fan.Compact_Override.Has_Date_Pattern := True;
+      Locale_Fan.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Fan.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Fan.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Fan.Compact_Override.Has_Today := False;
+      Locale_Fan.Compact_Override.Has_Tomorrow := False;
+      Locale_Fan.Compact_Override.Has_Yesterday := False;
+
+   end Init_fan;
+
    --  Source: date/locales/src/ff.json
    procedure Init_ff is
    begin
@@ -2608,6 +3419,103 @@ package body Sayabledate_Locales is
       Locale_Fil.Compact_Override.Has_Yesterday := False;
 
    end Init_fil;
+
+   --  Source: date/locales/src/fon.json
+   procedure Init_fon is
+   begin
+      Locale_Fon.Code := To_Unbounded_String ("fon");
+
+      Locale_Fon.Months (1) := To_Unbounded_String ("Alɔfí");
+      Locale_Fon.Months (2) := To_Unbounded_String ("Alɔnyɔ");
+      Locale_Fon.Months (3) := To_Unbounded_String ("Ataɖaxɔ");
+      Locale_Fon.Months (4) := To_Unbounded_String ("Tlɛsún");
+      Locale_Fon.Months (5) := To_Unbounded_String ("Axɔsún");
+      Locale_Fon.Months (6) := To_Unbounded_String ("Ayɛsún");
+      Locale_Fon.Months (7) := To_Unbounded_String ("Nùxwásún");
+      Locale_Fon.Months (8) := To_Unbounded_String ("Ayidosún");
+      Locale_Fon.Months (9) := To_Unbounded_String ("Kɛnísún");
+      Locale_Fon.Months (10) := To_Unbounded_String ("Kanyásún");
+      Locale_Fon.Months (11) := To_Unbounded_String ("Abɔxwísún");
+      Locale_Fon.Months (12) := To_Unbounded_String ("Adɔxwísún");
+
+      Locale_Fon.Weekdays (1) := To_Unbounded_String ("Sidégbe");
+      Locale_Fon.Weekdays (2) := To_Unbounded_String ("Tɛnígbe");
+      Locale_Fon.Weekdays (3) := To_Unbounded_String ("Talɛtagbe");
+      Locale_Fon.Weekdays (4) := To_Unbounded_String ("Azǎngagbe");
+      Locale_Fon.Weekdays (5) := To_Unbounded_String ("Nyɔnúgbe");
+      Locale_Fon.Weekdays (6) := To_Unbounded_String ("Axɔ́sùgbe");
+      Locale_Fon.Weekdays (7) := To_Unbounded_String ("Abámɛ́ta");
+
+      Locale_Fon.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Fon.Day_Format_Exception_Count := 0;
+
+      Locale_Fon.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Fon.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Fon.Today := To_Unbounded_String ("egbè");
+      Locale_Fon.Tomorrow := To_Unbounded_String ("sɔ");
+      Locale_Fon.Yesterday := To_Unbounded_String ("sá");
+      Locale_Fon.Has_Day_After_Tomorrow := True;
+      Locale_Fon.Day_After_Tomorrow := To_Unbounded_String ("sɔ gudo");
+      Locale_Fon.Has_Day_Before_Yesterday := True;
+      Locale_Fon.Day_Before_Yesterday := To_Unbounded_String ("sá gudo");
+      Locale_Fon.Has_This_Weekday := True;
+      Locale_Fon.This_Weekday := To_Unbounded_String ("{weekday} elɔ");
+      Locale_Fon.Has_Next_Weekday := True;
+      Locale_Fon.Next_Weekday := To_Unbounded_String ("{weekday} e ja");
+      Locale_Fon.Has_Last_Weekday := True;
+      Locale_Fon.Last_Weekday := To_Unbounded_String ("{weekday} e wá yí");
+      Locale_Fon.Has_Months_In_Date := False;
+
+      Locale_Fon.Has_Short := True;
+      Locale_Fon.Short_Override.Has_Months := True;
+      Locale_Fon.Short_Override.Months (1) := To_Unbounded_String ("Alɔ");
+      Locale_Fon.Short_Override.Months (2) := To_Unbounded_String ("Any");
+      Locale_Fon.Short_Override.Months (3) := To_Unbounded_String ("Ata");
+      Locale_Fon.Short_Override.Months (4) := To_Unbounded_String ("Tlɛ");
+      Locale_Fon.Short_Override.Months (5) := To_Unbounded_String ("Axɔ");
+      Locale_Fon.Short_Override.Months (6) := To_Unbounded_String ("Ayɛ");
+      Locale_Fon.Short_Override.Months (7) := To_Unbounded_String ("Nùx");
+      Locale_Fon.Short_Override.Months (8) := To_Unbounded_String ("Ayi");
+      Locale_Fon.Short_Override.Months (9) := To_Unbounded_String ("Kɛn");
+      Locale_Fon.Short_Override.Months (10) := To_Unbounded_String ("Kan");
+      Locale_Fon.Short_Override.Months (11) := To_Unbounded_String ("Abɔ");
+      Locale_Fon.Short_Override.Months (12) := To_Unbounded_String ("Adɔ");
+      Locale_Fon.Short_Override.Has_Months_In_Date := False;
+      Locale_Fon.Short_Override.Has_Weekdays := True;
+      Locale_Fon.Short_Override.Weekdays (1) := To_Unbounded_String ("Sid");
+      Locale_Fon.Short_Override.Weekdays (2) := To_Unbounded_String ("Tɛn");
+      Locale_Fon.Short_Override.Weekdays (3) := To_Unbounded_String ("Tal");
+      Locale_Fon.Short_Override.Weekdays (4) := To_Unbounded_String ("Azǎ");
+      Locale_Fon.Short_Override.Weekdays (5) := To_Unbounded_String ("Nyɔ");
+      Locale_Fon.Short_Override.Weekdays (6) := To_Unbounded_String ("Axɔ");
+      Locale_Fon.Short_Override.Weekdays (7) := To_Unbounded_String ("Abá");
+      Locale_Fon.Short_Override.Has_Day_Format := True;
+      Locale_Fon.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Fon.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Fon.Short_Override.Has_Date_Pattern := True;
+      Locale_Fon.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Fon.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Fon.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Fon.Short_Override.Has_Today := False;
+      Locale_Fon.Short_Override.Has_Tomorrow := False;
+      Locale_Fon.Short_Override.Has_Yesterday := False;
+
+      Locale_Fon.Has_Compact := True;
+      Locale_Fon.Compact_Override.Has_Months := False;
+      Locale_Fon.Compact_Override.Has_Months_In_Date := False;
+      Locale_Fon.Compact_Override.Has_Weekdays := False;
+      Locale_Fon.Compact_Override.Has_Day_Format := False;
+      Locale_Fon.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Fon.Compact_Override.Has_Date_Pattern := True;
+      Locale_Fon.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Fon.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Fon.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Fon.Compact_Override.Has_Today := False;
+      Locale_Fon.Compact_Override.Has_Tomorrow := False;
+      Locale_Fon.Compact_Override.Has_Yesterday := False;
+
+   end Init_fon;
 
    --  Source: date/locales/src/fr.json
    procedure Init_fr is
@@ -4658,6 +5566,103 @@ package body Sayabledate_Locales is
 
    end Init_ka;
 
+   --  Source: date/locales/src/kbp.json
+   procedure Init_kbp is
+   begin
+      Locale_Kbp.Code := To_Unbounded_String ("kbp");
+
+      Locale_Kbp.Months (1) := To_Unbounded_String ("Kɔlaɣ");
+      Locale_Kbp.Months (2) := To_Unbounded_String ("Naaɣ Kɩŋ");
+      Locale_Kbp.Months (3) := To_Unbounded_String ("Naataŋgʊ");
+      Locale_Kbp.Months (4) := To_Unbounded_String ("Naalɩɩ");
+      Locale_Kbp.Months (5) := To_Unbounded_String ("Lɛlɩɩ");
+      Locale_Kbp.Months (6) := To_Unbounded_String ("Kʊɖʊmaa");
+      Locale_Kbp.Months (7) := To_Unbounded_String ("Saŋayɩɩ");
+      Locale_Kbp.Months (8) := To_Unbounded_String ("Kɩyɛɛna");
+      Locale_Kbp.Months (9) := To_Unbounded_String ("Lɩtɩɩ");
+      Locale_Kbp.Months (10) := To_Unbounded_String ("Kʊɖʊmaɣ");
+      Locale_Kbp.Months (11) := To_Unbounded_String ("Tɩŋgɩzɩɩ");
+      Locale_Kbp.Months (12) := To_Unbounded_String ("Abranɩɩ");
+
+      Locale_Kbp.Weekdays (1) := To_Unbounded_String ("Pɩsɩ");
+      Locale_Kbp.Weekdays (2) := To_Unbounded_String ("Tɛɖɛɣa");
+      Locale_Kbp.Weekdays (3) := To_Unbounded_String ("Taata");
+      Locale_Kbp.Weekdays (4) := To_Unbounded_String ("Aranzɩɩ");
+      Locale_Kbp.Weekdays (5) := To_Unbounded_String ("Aramnza");
+      Locale_Kbp.Weekdays (6) := To_Unbounded_String ("Azɩma");
+      Locale_Kbp.Weekdays (7) := To_Unbounded_String ("Asɩbɩ");
+
+      Locale_Kbp.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Kbp.Day_Format_Exception_Count := 0;
+
+      Locale_Kbp.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Kbp.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Kbp.Today := To_Unbounded_String ("sɔnɔ");
+      Locale_Kbp.Tomorrow := To_Unbounded_String ("cee");
+      Locale_Kbp.Yesterday := To_Unbounded_String ("ɖooo");
+      Locale_Kbp.Has_Day_After_Tomorrow := True;
+      Locale_Kbp.Day_After_Tomorrow := To_Unbounded_String ("cee wayɩ");
+      Locale_Kbp.Has_Day_Before_Yesterday := True;
+      Locale_Kbp.Day_Before_Yesterday := To_Unbounded_String ("ɖooo wayɩ");
+      Locale_Kbp.Has_This_Weekday := True;
+      Locale_Kbp.This_Weekday := To_Unbounded_String ("{weekday} kɩ");
+      Locale_Kbp.Has_Next_Weekday := True;
+      Locale_Kbp.Next_Weekday := To_Unbounded_String ("{weekday} nɛ ŋga");
+      Locale_Kbp.Has_Last_Weekday := True;
+      Locale_Kbp.Last_Weekday := To_Unbounded_String ("{weekday} nɛ wɛ");
+      Locale_Kbp.Has_Months_In_Date := False;
+
+      Locale_Kbp.Has_Short := True;
+      Locale_Kbp.Short_Override.Has_Months := True;
+      Locale_Kbp.Short_Override.Months (1) := To_Unbounded_String ("Kɔl");
+      Locale_Kbp.Short_Override.Months (2) := To_Unbounded_String ("Naa");
+      Locale_Kbp.Short_Override.Months (3) := To_Unbounded_String ("Nat");
+      Locale_Kbp.Short_Override.Months (4) := To_Unbounded_String ("Nal");
+      Locale_Kbp.Short_Override.Months (5) := To_Unbounded_String ("Lɛl");
+      Locale_Kbp.Short_Override.Months (6) := To_Unbounded_String ("Kʊɖ");
+      Locale_Kbp.Short_Override.Months (7) := To_Unbounded_String ("Saŋ");
+      Locale_Kbp.Short_Override.Months (8) := To_Unbounded_String ("Kɩy");
+      Locale_Kbp.Short_Override.Months (9) := To_Unbounded_String ("Lɩt");
+      Locale_Kbp.Short_Override.Months (10) := To_Unbounded_String ("Kʊɖ");
+      Locale_Kbp.Short_Override.Months (11) := To_Unbounded_String ("Tɩŋ");
+      Locale_Kbp.Short_Override.Months (12) := To_Unbounded_String ("Abr");
+      Locale_Kbp.Short_Override.Has_Months_In_Date := False;
+      Locale_Kbp.Short_Override.Has_Weekdays := True;
+      Locale_Kbp.Short_Override.Weekdays (1) := To_Unbounded_String ("Pɩs");
+      Locale_Kbp.Short_Override.Weekdays (2) := To_Unbounded_String ("Tɛɖ");
+      Locale_Kbp.Short_Override.Weekdays (3) := To_Unbounded_String ("Taa");
+      Locale_Kbp.Short_Override.Weekdays (4) := To_Unbounded_String ("Ara");
+      Locale_Kbp.Short_Override.Weekdays (5) := To_Unbounded_String ("Arm");
+      Locale_Kbp.Short_Override.Weekdays (6) := To_Unbounded_String ("Azɩ");
+      Locale_Kbp.Short_Override.Weekdays (7) := To_Unbounded_String ("Asɩ");
+      Locale_Kbp.Short_Override.Has_Day_Format := True;
+      Locale_Kbp.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Kbp.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Kbp.Short_Override.Has_Date_Pattern := True;
+      Locale_Kbp.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Kbp.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Kbp.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Kbp.Short_Override.Has_Today := False;
+      Locale_Kbp.Short_Override.Has_Tomorrow := False;
+      Locale_Kbp.Short_Override.Has_Yesterday := False;
+
+      Locale_Kbp.Has_Compact := True;
+      Locale_Kbp.Compact_Override.Has_Months := False;
+      Locale_Kbp.Compact_Override.Has_Months_In_Date := False;
+      Locale_Kbp.Compact_Override.Has_Weekdays := False;
+      Locale_Kbp.Compact_Override.Has_Day_Format := False;
+      Locale_Kbp.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Kbp.Compact_Override.Has_Date_Pattern := True;
+      Locale_Kbp.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Kbp.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Kbp.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Kbp.Compact_Override.Has_Today := False;
+      Locale_Kbp.Compact_Override.Has_Tomorrow := False;
+      Locale_Kbp.Compact_Override.Has_Yesterday := False;
+
+   end Init_kbp;
+
    --  Source: date/locales/src/kk.json
    procedure Init_kk is
    begin
@@ -5045,6 +6050,200 @@ package body Sayabledate_Locales is
       Locale_Ko.Compact_Override.Has_Yesterday := False;
 
    end Init_ko;
+
+   --  Source: date/locales/src/kpe.json
+   procedure Init_kpe is
+   begin
+      Locale_Kpe.Code := To_Unbounded_String ("kpe");
+
+      Locale_Kpe.Months (1) := To_Unbounded_String ("Yanuwali");
+      Locale_Kpe.Months (2) := To_Unbounded_String ("Fɛbɛli");
+      Locale_Kpe.Months (3) := To_Unbounded_String ("Maachi");
+      Locale_Kpe.Months (4) := To_Unbounded_String ("Eepɛli");
+      Locale_Kpe.Months (5) := To_Unbounded_String ("Mɛɛ");
+      Locale_Kpe.Months (6) := To_Unbounded_String ("Juŋ");
+      Locale_Kpe.Months (7) := To_Unbounded_String ("Julai");
+      Locale_Kpe.Months (8) := To_Unbounded_String ("Ɔɔgɔsi");
+      Locale_Kpe.Months (9) := To_Unbounded_String ("Sɛtɛmba");
+      Locale_Kpe.Months (10) := To_Unbounded_String ("Ɔtɔba");
+      Locale_Kpe.Months (11) := To_Unbounded_String ("Nɔvɛmba");
+      Locale_Kpe.Months (12) := To_Unbounded_String ("Disɛmba");
+
+      Locale_Kpe.Weekdays (1) := To_Unbounded_String ("Saadee");
+      Locale_Kpe.Weekdays (2) := To_Unbounded_String ("Tɛnɛɛ");
+      Locale_Kpe.Weekdays (3) := To_Unbounded_String ("Talata");
+      Locale_Kpe.Weekdays (4) := To_Unbounded_String ("Alaba");
+      Locale_Kpe.Weekdays (5) := To_Unbounded_String ("Aimisa");
+      Locale_Kpe.Weekdays (6) := To_Unbounded_String ("Juma");
+      Locale_Kpe.Weekdays (7) := To_Unbounded_String ("Satɛdee");
+
+      Locale_Kpe.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Kpe.Day_Format_Exception_Count := 0;
+
+      Locale_Kpe.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Kpe.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Kpe.Today := To_Unbounded_String ("nɔ̃ɔ̃");
+      Locale_Kpe.Tomorrow := To_Unbounded_String ("sila");
+      Locale_Kpe.Yesterday := To_Unbounded_String ("ɓii");
+      Locale_Kpe.Has_Day_After_Tomorrow := True;
+      Locale_Kpe.Day_After_Tomorrow := To_Unbounded_String ("sila pɔlɔ");
+      Locale_Kpe.Has_Day_Before_Yesterday := True;
+      Locale_Kpe.Day_Before_Yesterday := To_Unbounded_String ("ɓii pɔlɔ");
+      Locale_Kpe.Has_This_Weekday := True;
+      Locale_Kpe.This_Weekday := To_Unbounded_String ("{weekday} yi");
+      Locale_Kpe.Has_Next_Weekday := True;
+      Locale_Kpe.Next_Weekday := To_Unbounded_String ("{weekday} ya kɛ");
+      Locale_Kpe.Has_Last_Weekday := True;
+      Locale_Kpe.Last_Weekday := To_Unbounded_String ("{weekday} kɛ pɔlɔ");
+      Locale_Kpe.Has_Months_In_Date := False;
+
+      Locale_Kpe.Has_Short := True;
+      Locale_Kpe.Short_Override.Has_Months := True;
+      Locale_Kpe.Short_Override.Months (1) := To_Unbounded_String ("Yan");
+      Locale_Kpe.Short_Override.Months (2) := To_Unbounded_String ("Fɛb");
+      Locale_Kpe.Short_Override.Months (3) := To_Unbounded_String ("Maa");
+      Locale_Kpe.Short_Override.Months (4) := To_Unbounded_String ("Eep");
+      Locale_Kpe.Short_Override.Months (5) := To_Unbounded_String ("Mɛɛ");
+      Locale_Kpe.Short_Override.Months (6) := To_Unbounded_String ("Juŋ");
+      Locale_Kpe.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Kpe.Short_Override.Months (8) := To_Unbounded_String ("Ɔɔg");
+      Locale_Kpe.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Kpe.Short_Override.Months (10) := To_Unbounded_String ("Ɔtɔ");
+      Locale_Kpe.Short_Override.Months (11) := To_Unbounded_String ("Nɔv");
+      Locale_Kpe.Short_Override.Months (12) := To_Unbounded_String ("Dis");
+      Locale_Kpe.Short_Override.Has_Months_In_Date := False;
+      Locale_Kpe.Short_Override.Has_Weekdays := True;
+      Locale_Kpe.Short_Override.Weekdays (1) := To_Unbounded_String ("Saa");
+      Locale_Kpe.Short_Override.Weekdays (2) := To_Unbounded_String ("Tɛn");
+      Locale_Kpe.Short_Override.Weekdays (3) := To_Unbounded_String ("Tal");
+      Locale_Kpe.Short_Override.Weekdays (4) := To_Unbounded_String ("Ala");
+      Locale_Kpe.Short_Override.Weekdays (5) := To_Unbounded_String ("Aim");
+      Locale_Kpe.Short_Override.Weekdays (6) := To_Unbounded_String ("Jum");
+      Locale_Kpe.Short_Override.Weekdays (7) := To_Unbounded_String ("Sat");
+      Locale_Kpe.Short_Override.Has_Day_Format := True;
+      Locale_Kpe.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Kpe.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Kpe.Short_Override.Has_Date_Pattern := True;
+      Locale_Kpe.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Kpe.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Kpe.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Kpe.Short_Override.Has_Today := False;
+      Locale_Kpe.Short_Override.Has_Tomorrow := False;
+      Locale_Kpe.Short_Override.Has_Yesterday := False;
+
+      Locale_Kpe.Has_Compact := True;
+      Locale_Kpe.Compact_Override.Has_Months := False;
+      Locale_Kpe.Compact_Override.Has_Months_In_Date := False;
+      Locale_Kpe.Compact_Override.Has_Weekdays := False;
+      Locale_Kpe.Compact_Override.Has_Day_Format := False;
+      Locale_Kpe.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Kpe.Compact_Override.Has_Date_Pattern := True;
+      Locale_Kpe.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Kpe.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Kpe.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Kpe.Compact_Override.Has_Today := False;
+      Locale_Kpe.Compact_Override.Has_Tomorrow := False;
+      Locale_Kpe.Compact_Override.Has_Yesterday := False;
+
+   end Init_kpe;
+
+   --  Source: date/locales/src/ktu.json
+   procedure Init_ktu is
+   begin
+      Locale_Ktu.Code := To_Unbounded_String ("ktu");
+
+      Locale_Ktu.Months (1) := To_Unbounded_String ("Yanvye");
+      Locale_Ktu.Months (2) := To_Unbounded_String ("Fevrye");
+      Locale_Ktu.Months (3) := To_Unbounded_String ("Marsi");
+      Locale_Ktu.Months (4) := To_Unbounded_String ("Avrili");
+      Locale_Ktu.Months (5) := To_Unbounded_String ("Mɛ");
+      Locale_Ktu.Months (6) := To_Unbounded_String ("Yuwɛ");
+      Locale_Ktu.Months (7) := To_Unbounded_String ("Yulɛ");
+      Locale_Ktu.Months (8) := To_Unbounded_String ("Uti");
+      Locale_Ktu.Months (9) := To_Unbounded_String ("Sɛtambre");
+      Locale_Ktu.Months (10) := To_Unbounded_String ("Ɔtɔbre");
+      Locale_Ktu.Months (11) := To_Unbounded_String ("Nɔvambre");
+      Locale_Ktu.Months (12) := To_Unbounded_String ("Desambre");
+
+      Locale_Ktu.Weekdays (1) := To_Unbounded_String ("Lumingu");
+      Locale_Ktu.Weekdays (2) := To_Unbounded_String ("Kimosi");
+      Locale_Ktu.Weekdays (3) := To_Unbounded_String ("Kizole");
+      Locale_Ktu.Weekdays (4) := To_Unbounded_String ("Kizoluntatu");
+      Locale_Ktu.Weekdays (5) := To_Unbounded_String ("Kinya");
+      Locale_Ktu.Weekdays (6) := To_Unbounded_String ("Kisabala");
+      Locale_Ktu.Weekdays (7) := To_Unbounded_String ("Kimpwanza");
+
+      Locale_Ktu.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ktu.Day_Format_Exception_Count := 0;
+
+      Locale_Ktu.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ktu.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Ktu.Today := To_Unbounded_String ("bubu");
+      Locale_Ktu.Tomorrow := To_Unbounded_String ("mbazi");
+      Locale_Ktu.Yesterday := To_Unbounded_String ("zono");
+      Locale_Ktu.Has_Day_After_Tomorrow := True;
+      Locale_Ktu.Day_After_Tomorrow := To_Unbounded_String ("mbazi ya mbazi");
+      Locale_Ktu.Has_Day_Before_Yesterday := True;
+      Locale_Ktu.Day_Before_Yesterday := To_Unbounded_String ("zono ya zono");
+      Locale_Ktu.Has_This_Weekday := True;
+      Locale_Ktu.This_Weekday := To_Unbounded_String ("{weekday} yayi");
+      Locale_Ktu.Has_Next_Weekday := True;
+      Locale_Ktu.Next_Weekday := To_Unbounded_String ("{weekday} ya kwiza");
+      Locale_Ktu.Has_Last_Weekday := True;
+      Locale_Ktu.Last_Weekday := To_Unbounded_String ("{weekday} ya vioka");
+      Locale_Ktu.Has_Months_In_Date := False;
+
+      Locale_Ktu.Has_Short := True;
+      Locale_Ktu.Short_Override.Has_Months := True;
+      Locale_Ktu.Short_Override.Months (1) := To_Unbounded_String ("Yan");
+      Locale_Ktu.Short_Override.Months (2) := To_Unbounded_String ("Fev");
+      Locale_Ktu.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Ktu.Short_Override.Months (4) := To_Unbounded_String ("Avr");
+      Locale_Ktu.Short_Override.Months (5) := To_Unbounded_String ("Mɛ");
+      Locale_Ktu.Short_Override.Months (6) := To_Unbounded_String ("Yuw");
+      Locale_Ktu.Short_Override.Months (7) := To_Unbounded_String ("Yul");
+      Locale_Ktu.Short_Override.Months (8) := To_Unbounded_String ("Uti");
+      Locale_Ktu.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Ktu.Short_Override.Months (10) := To_Unbounded_String ("Ɔtɔ");
+      Locale_Ktu.Short_Override.Months (11) := To_Unbounded_String ("Nɔv");
+      Locale_Ktu.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Ktu.Short_Override.Has_Months_In_Date := False;
+      Locale_Ktu.Short_Override.Has_Weekdays := True;
+      Locale_Ktu.Short_Override.Weekdays (1) := To_Unbounded_String ("Lum");
+      Locale_Ktu.Short_Override.Weekdays (2) := To_Unbounded_String ("Kim");
+      Locale_Ktu.Short_Override.Weekdays (3) := To_Unbounded_String ("Kiz");
+      Locale_Ktu.Short_Override.Weekdays (4) := To_Unbounded_String ("Kzn");
+      Locale_Ktu.Short_Override.Weekdays (5) := To_Unbounded_String ("Kin");
+      Locale_Ktu.Short_Override.Weekdays (6) := To_Unbounded_String ("Kis");
+      Locale_Ktu.Short_Override.Weekdays (7) := To_Unbounded_String ("Kmp");
+      Locale_Ktu.Short_Override.Has_Day_Format := True;
+      Locale_Ktu.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ktu.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ktu.Short_Override.Has_Date_Pattern := True;
+      Locale_Ktu.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ktu.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ktu.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Ktu.Short_Override.Has_Today := False;
+      Locale_Ktu.Short_Override.Has_Tomorrow := False;
+      Locale_Ktu.Short_Override.Has_Yesterday := False;
+
+      Locale_Ktu.Has_Compact := True;
+      Locale_Ktu.Compact_Override.Has_Months := False;
+      Locale_Ktu.Compact_Override.Has_Months_In_Date := False;
+      Locale_Ktu.Compact_Override.Has_Weekdays := False;
+      Locale_Ktu.Compact_Override.Has_Day_Format := False;
+      Locale_Ktu.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ktu.Compact_Override.Has_Date_Pattern := True;
+      Locale_Ktu.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Ktu.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ktu.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Ktu.Compact_Override.Has_Today := False;
+      Locale_Ktu.Compact_Override.Has_Tomorrow := False;
+      Locale_Ktu.Compact_Override.Has_Yesterday := False;
+
+   end Init_ktu;
 
    --  Source: date/locales/src/ku.json
    procedure Init_ku is
@@ -5832,6 +7031,200 @@ package body Sayabledate_Locales is
 
    end Init_lv;
 
+   --  Source: date/locales/src/men.json
+   procedure Init_men is
+   begin
+      Locale_Men.Code := To_Unbounded_String ("men");
+
+      Locale_Men.Months (1) := To_Unbounded_String ("Januwali");
+      Locale_Men.Months (2) := To_Unbounded_String ("Febluwali");
+      Locale_Men.Months (3) := To_Unbounded_String ("Maachi");
+      Locale_Men.Months (4) := To_Unbounded_String ("Epuli");
+      Locale_Men.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Men.Months (6) := To_Unbounded_String ("Juun");
+      Locale_Men.Months (7) := To_Unbounded_String ("Julai");
+      Locale_Men.Months (8) := To_Unbounded_String ("Ɔgɔsi");
+      Locale_Men.Months (9) := To_Unbounded_String ("Sɛtɛmba");
+      Locale_Men.Months (10) := To_Unbounded_String ("Ɔtɔba");
+      Locale_Men.Months (11) := To_Unbounded_String ("Nɔvɛmba");
+      Locale_Men.Months (12) := To_Unbounded_String ("Disɛmba");
+
+      Locale_Men.Weekdays (1) := To_Unbounded_String ("Lahadi");
+      Locale_Men.Weekdays (2) := To_Unbounded_String ("Tɛɛnɛɛ");
+      Locale_Men.Weekdays (3) := To_Unbounded_String ("Talata");
+      Locale_Men.Weekdays (4) := To_Unbounded_String ("Alaba");
+      Locale_Men.Weekdays (5) := To_Unbounded_String ("Aimisa");
+      Locale_Men.Weekdays (6) := To_Unbounded_String ("Juma");
+      Locale_Men.Weekdays (7) := To_Unbounded_String ("Satidei");
+
+      Locale_Men.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Men.Day_Format_Exception_Count := 0;
+
+      Locale_Men.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Men.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Men.Today := To_Unbounded_String ("wii");
+      Locale_Men.Tomorrow := To_Unbounded_String ("sina");
+      Locale_Men.Yesterday := To_Unbounded_String ("bii");
+      Locale_Men.Has_Day_After_Tomorrow := True;
+      Locale_Men.Day_After_Tomorrow := To_Unbounded_String ("sina gɔlɔ");
+      Locale_Men.Has_Day_Before_Yesterday := True;
+      Locale_Men.Day_Before_Yesterday := To_Unbounded_String ("bii gɔlɔ");
+      Locale_Men.Has_This_Weekday := True;
+      Locale_Men.This_Weekday := To_Unbounded_String ("{weekday} yɛ");
+      Locale_Men.Has_Next_Weekday := True;
+      Locale_Men.Next_Weekday := To_Unbounded_String ("{weekday} yɛ gbɔyɔ");
+      Locale_Men.Has_Last_Weekday := True;
+      Locale_Men.Last_Weekday := To_Unbounded_String ("{weekday} taa gbɔyɔ");
+      Locale_Men.Has_Months_In_Date := False;
+
+      Locale_Men.Has_Short := True;
+      Locale_Men.Short_Override.Has_Months := True;
+      Locale_Men.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Men.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Men.Short_Override.Months (3) := To_Unbounded_String ("Maa");
+      Locale_Men.Short_Override.Months (4) := To_Unbounded_String ("Epu");
+      Locale_Men.Short_Override.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Men.Short_Override.Months (6) := To_Unbounded_String ("Juu");
+      Locale_Men.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Men.Short_Override.Months (8) := To_Unbounded_String ("Ɔgɔ");
+      Locale_Men.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Men.Short_Override.Months (10) := To_Unbounded_String ("Ɔtɔ");
+      Locale_Men.Short_Override.Months (11) := To_Unbounded_String ("Nɔv");
+      Locale_Men.Short_Override.Months (12) := To_Unbounded_String ("Dis");
+      Locale_Men.Short_Override.Has_Months_In_Date := False;
+      Locale_Men.Short_Override.Has_Weekdays := True;
+      Locale_Men.Short_Override.Weekdays (1) := To_Unbounded_String ("Lah");
+      Locale_Men.Short_Override.Weekdays (2) := To_Unbounded_String ("Tɛɛ");
+      Locale_Men.Short_Override.Weekdays (3) := To_Unbounded_String ("Tal");
+      Locale_Men.Short_Override.Weekdays (4) := To_Unbounded_String ("Ala");
+      Locale_Men.Short_Override.Weekdays (5) := To_Unbounded_String ("Aim");
+      Locale_Men.Short_Override.Weekdays (6) := To_Unbounded_String ("Jum");
+      Locale_Men.Short_Override.Weekdays (7) := To_Unbounded_String ("Sat");
+      Locale_Men.Short_Override.Has_Day_Format := True;
+      Locale_Men.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Men.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Men.Short_Override.Has_Date_Pattern := True;
+      Locale_Men.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Men.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Men.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Men.Short_Override.Has_Today := False;
+      Locale_Men.Short_Override.Has_Tomorrow := False;
+      Locale_Men.Short_Override.Has_Yesterday := False;
+
+      Locale_Men.Has_Compact := True;
+      Locale_Men.Compact_Override.Has_Months := False;
+      Locale_Men.Compact_Override.Has_Months_In_Date := False;
+      Locale_Men.Compact_Override.Has_Weekdays := False;
+      Locale_Men.Compact_Override.Has_Day_Format := False;
+      Locale_Men.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Men.Compact_Override.Has_Date_Pattern := True;
+      Locale_Men.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Men.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Men.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Men.Compact_Override.Has_Today := False;
+      Locale_Men.Compact_Override.Has_Tomorrow := False;
+      Locale_Men.Compact_Override.Has_Yesterday := False;
+
+   end Init_men;
+
+   --  Source: date/locales/src/mfe.json
+   procedure Init_mfe is
+   begin
+      Locale_Mfe.Code := To_Unbounded_String ("mfe");
+
+      Locale_Mfe.Months (1) := To_Unbounded_String ("Zanvie");
+      Locale_Mfe.Months (2) := To_Unbounded_String ("Fevrie");
+      Locale_Mfe.Months (3) := To_Unbounded_String ("Mars");
+      Locale_Mfe.Months (4) := To_Unbounded_String ("Avril");
+      Locale_Mfe.Months (5) := To_Unbounded_String ("Me");
+      Locale_Mfe.Months (6) := To_Unbounded_String ("Zwin");
+      Locale_Mfe.Months (7) := To_Unbounded_String ("Zwiye");
+      Locale_Mfe.Months (8) := To_Unbounded_String ("Out");
+      Locale_Mfe.Months (9) := To_Unbounded_String ("Septam");
+      Locale_Mfe.Months (10) := To_Unbounded_String ("Oktob");
+      Locale_Mfe.Months (11) := To_Unbounded_String ("Novam");
+      Locale_Mfe.Months (12) := To_Unbounded_String ("Desam");
+
+      Locale_Mfe.Weekdays (1) := To_Unbounded_String ("Dimans");
+      Locale_Mfe.Weekdays (2) := To_Unbounded_String ("Lindi");
+      Locale_Mfe.Weekdays (3) := To_Unbounded_String ("Mardi");
+      Locale_Mfe.Weekdays (4) := To_Unbounded_String ("Merkredi");
+      Locale_Mfe.Weekdays (5) := To_Unbounded_String ("Zedi");
+      Locale_Mfe.Weekdays (6) := To_Unbounded_String ("Vandredi");
+      Locale_Mfe.Weekdays (7) := To_Unbounded_String ("Samdi");
+
+      Locale_Mfe.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Mfe.Day_Format_Exception_Count := 0;
+
+      Locale_Mfe.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Mfe.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Mfe.Today := To_Unbounded_String ("zordi");
+      Locale_Mfe.Tomorrow := To_Unbounded_String ("dimin");
+      Locale_Mfe.Yesterday := To_Unbounded_String ("yer");
+      Locale_Mfe.Has_Day_After_Tomorrow := True;
+      Locale_Mfe.Day_After_Tomorrow := To_Unbounded_String ("apre dimin");
+      Locale_Mfe.Has_Day_Before_Yesterday := True;
+      Locale_Mfe.Day_Before_Yesterday := To_Unbounded_String ("avan yer");
+      Locale_Mfe.Has_This_Weekday := True;
+      Locale_Mfe.This_Weekday := To_Unbounded_String ("{weekday} la");
+      Locale_Mfe.Has_Next_Weekday := True;
+      Locale_Mfe.Next_Weekday := To_Unbounded_String ("{weekday} prosenn");
+      Locale_Mfe.Has_Last_Weekday := True;
+      Locale_Mfe.Last_Weekday := To_Unbounded_String ("{weekday} pase");
+      Locale_Mfe.Has_Months_In_Date := False;
+
+      Locale_Mfe.Has_Short := True;
+      Locale_Mfe.Short_Override.Has_Months := True;
+      Locale_Mfe.Short_Override.Months (1) := To_Unbounded_String ("Zan");
+      Locale_Mfe.Short_Override.Months (2) := To_Unbounded_String ("Fev");
+      Locale_Mfe.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Mfe.Short_Override.Months (4) := To_Unbounded_String ("Avr");
+      Locale_Mfe.Short_Override.Months (5) := To_Unbounded_String ("Me");
+      Locale_Mfe.Short_Override.Months (6) := To_Unbounded_String ("Zwn");
+      Locale_Mfe.Short_Override.Months (7) := To_Unbounded_String ("Zwy");
+      Locale_Mfe.Short_Override.Months (8) := To_Unbounded_String ("Out");
+      Locale_Mfe.Short_Override.Months (9) := To_Unbounded_String ("Sep");
+      Locale_Mfe.Short_Override.Months (10) := To_Unbounded_String ("Okt");
+      Locale_Mfe.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Mfe.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Mfe.Short_Override.Has_Months_In_Date := False;
+      Locale_Mfe.Short_Override.Has_Weekdays := True;
+      Locale_Mfe.Short_Override.Weekdays (1) := To_Unbounded_String ("Dim");
+      Locale_Mfe.Short_Override.Weekdays (2) := To_Unbounded_String ("Lin");
+      Locale_Mfe.Short_Override.Weekdays (3) := To_Unbounded_String ("Mar");
+      Locale_Mfe.Short_Override.Weekdays (4) := To_Unbounded_String ("Mer");
+      Locale_Mfe.Short_Override.Weekdays (5) := To_Unbounded_String ("Zed");
+      Locale_Mfe.Short_Override.Weekdays (6) := To_Unbounded_String ("Van");
+      Locale_Mfe.Short_Override.Weekdays (7) := To_Unbounded_String ("Sam");
+      Locale_Mfe.Short_Override.Has_Day_Format := True;
+      Locale_Mfe.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Mfe.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Mfe.Short_Override.Has_Date_Pattern := True;
+      Locale_Mfe.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Mfe.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Mfe.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Mfe.Short_Override.Has_Today := False;
+      Locale_Mfe.Short_Override.Has_Tomorrow := False;
+      Locale_Mfe.Short_Override.Has_Yesterday := False;
+
+      Locale_Mfe.Has_Compact := True;
+      Locale_Mfe.Compact_Override.Has_Months := False;
+      Locale_Mfe.Compact_Override.Has_Months_In_Date := False;
+      Locale_Mfe.Compact_Override.Has_Weekdays := False;
+      Locale_Mfe.Compact_Override.Has_Day_Format := False;
+      Locale_Mfe.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Mfe.Compact_Override.Has_Date_Pattern := True;
+      Locale_Mfe.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Mfe.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Mfe.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Mfe.Compact_Override.Has_Today := False;
+      Locale_Mfe.Compact_Override.Has_Tomorrow := False;
+      Locale_Mfe.Compact_Override.Has_Yesterday := False;
+
+   end Init_mfe;
+
    --  Source: date/locales/src/mg.json
    procedure Init_mg is
    begin
@@ -6316,6 +7709,200 @@ package body Sayabledate_Locales is
       Locale_Mn.Compact_Override.Has_Yesterday := False;
 
    end Init_mn;
+
+   --  Source: date/locales/src/mnk.json
+   procedure Init_mnk is
+   begin
+      Locale_Mnk.Code := To_Unbounded_String ("mnk");
+
+      Locale_Mnk.Months (1) := To_Unbounded_String ("Samwiye");
+      Locale_Mnk.Months (2) := To_Unbounded_String ("Feburiye");
+      Locale_Mnk.Months (3) := To_Unbounded_String ("Marsi");
+      Locale_Mnk.Months (4) := To_Unbounded_String ("Afiril");
+      Locale_Mnk.Months (5) := To_Unbounded_String ("Meyi");
+      Locale_Mnk.Months (6) := To_Unbounded_String ("Juŋ");
+      Locale_Mnk.Months (7) := To_Unbounded_String ("Julaa");
+      Locale_Mnk.Months (8) := To_Unbounded_String ("Ooti");
+      Locale_Mnk.Months (9) := To_Unbounded_String ("Sɛtɛmba");
+      Locale_Mnk.Months (10) := To_Unbounded_String ("Ɔtɔba");
+      Locale_Mnk.Months (11) := To_Unbounded_String ("Nuwɛmba");
+      Locale_Mnk.Months (12) := To_Unbounded_String ("Disɛmba");
+
+      Locale_Mnk.Weekdays (1) := To_Unbounded_String ("Ari");
+      Locale_Mnk.Weekdays (2) := To_Unbounded_String ("Teniŋ");
+      Locale_Mnk.Weekdays (3) := To_Unbounded_String ("Talata");
+      Locale_Mnk.Weekdays (4) := To_Unbounded_String ("Araba");
+      Locale_Mnk.Weekdays (5) := To_Unbounded_String ("Alamisa");
+      Locale_Mnk.Weekdays (6) := To_Unbounded_String ("Juma");
+      Locale_Mnk.Weekdays (7) := To_Unbounded_String ("Sibiti");
+
+      Locale_Mnk.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Mnk.Day_Format_Exception_Count := 0;
+
+      Locale_Mnk.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Mnk.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Mnk.Today := To_Unbounded_String ("bi");
+      Locale_Mnk.Tomorrow := To_Unbounded_String ("siniŋ");
+      Locale_Mnk.Yesterday := To_Unbounded_String ("kuŋ");
+      Locale_Mnk.Has_Day_After_Tomorrow := True;
+      Locale_Mnk.Day_After_Tomorrow := To_Unbounded_String ("siniŋ kɔma");
+      Locale_Mnk.Has_Day_Before_Yesterday := True;
+      Locale_Mnk.Day_Before_Yesterday := To_Unbounded_String ("kuŋ kɔma");
+      Locale_Mnk.Has_This_Weekday := True;
+      Locale_Mnk.This_Weekday := To_Unbounded_String ("{weekday} niŋ");
+      Locale_Mnk.Has_Next_Weekday := True;
+      Locale_Mnk.Next_Weekday := To_Unbounded_String ("{weekday} nataa");
+      Locale_Mnk.Has_Last_Weekday := True;
+      Locale_Mnk.Last_Weekday := To_Unbounded_String ("{weekday} taata");
+      Locale_Mnk.Has_Months_In_Date := False;
+
+      Locale_Mnk.Has_Short := True;
+      Locale_Mnk.Short_Override.Has_Months := True;
+      Locale_Mnk.Short_Override.Months (1) := To_Unbounded_String ("Sam");
+      Locale_Mnk.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Mnk.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Mnk.Short_Override.Months (4) := To_Unbounded_String ("Afi");
+      Locale_Mnk.Short_Override.Months (5) := To_Unbounded_String ("Mey");
+      Locale_Mnk.Short_Override.Months (6) := To_Unbounded_String ("Juŋ");
+      Locale_Mnk.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Mnk.Short_Override.Months (8) := To_Unbounded_String ("Oot");
+      Locale_Mnk.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Mnk.Short_Override.Months (10) := To_Unbounded_String ("Ɔtɔ");
+      Locale_Mnk.Short_Override.Months (11) := To_Unbounded_String ("Nuw");
+      Locale_Mnk.Short_Override.Months (12) := To_Unbounded_String ("Dis");
+      Locale_Mnk.Short_Override.Has_Months_In_Date := False;
+      Locale_Mnk.Short_Override.Has_Weekdays := True;
+      Locale_Mnk.Short_Override.Weekdays (1) := To_Unbounded_String ("Ari");
+      Locale_Mnk.Short_Override.Weekdays (2) := To_Unbounded_String ("Ten");
+      Locale_Mnk.Short_Override.Weekdays (3) := To_Unbounded_String ("Tal");
+      Locale_Mnk.Short_Override.Weekdays (4) := To_Unbounded_String ("Ara");
+      Locale_Mnk.Short_Override.Weekdays (5) := To_Unbounded_String ("Ala");
+      Locale_Mnk.Short_Override.Weekdays (6) := To_Unbounded_String ("Jum");
+      Locale_Mnk.Short_Override.Weekdays (7) := To_Unbounded_String ("Sib");
+      Locale_Mnk.Short_Override.Has_Day_Format := True;
+      Locale_Mnk.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Mnk.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Mnk.Short_Override.Has_Date_Pattern := True;
+      Locale_Mnk.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Mnk.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Mnk.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Mnk.Short_Override.Has_Today := False;
+      Locale_Mnk.Short_Override.Has_Tomorrow := False;
+      Locale_Mnk.Short_Override.Has_Yesterday := False;
+
+      Locale_Mnk.Has_Compact := True;
+      Locale_Mnk.Compact_Override.Has_Months := False;
+      Locale_Mnk.Compact_Override.Has_Months_In_Date := False;
+      Locale_Mnk.Compact_Override.Has_Weekdays := False;
+      Locale_Mnk.Compact_Override.Has_Day_Format := False;
+      Locale_Mnk.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Mnk.Compact_Override.Has_Date_Pattern := True;
+      Locale_Mnk.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Mnk.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Mnk.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Mnk.Compact_Override.Has_Today := False;
+      Locale_Mnk.Compact_Override.Has_Tomorrow := False;
+      Locale_Mnk.Compact_Override.Has_Yesterday := False;
+
+   end Init_mnk;
+
+   --  Source: date/locales/src/mos.json
+   procedure Init_mos is
+   begin
+      Locale_Mos.Code := To_Unbounded_String ("mos");
+
+      Locale_Mos.Months (1) := To_Unbounded_String ("Zãn-naabu");
+      Locale_Mos.Months (2) := To_Unbounded_String ("Sig-noy-yaadre");
+      Locale_Mos.Months (3) := To_Unbounded_String ("Sig-noy-taabo");
+      Locale_Mos.Months (4) := To_Unbounded_String ("Kãn-saglem");
+      Locale_Mos.Months (5) := To_Unbounded_String ("Koabg-taabo");
+      Locale_Mos.Months (6) := To_Unbounded_String ("Koabg-yaadre");
+      Locale_Mos.Months (7) := To_Unbounded_String ("Baspɩɩre");
+      Locale_Mos.Months (8) := To_Unbounded_String ("Gɩ-sõongo");
+      Locale_Mos.Months (9) := To_Unbounded_String ("Tũubg-sõongo");
+      Locale_Mos.Months (10) := To_Unbounded_String ("Pẽemb-sõongo");
+      Locale_Mos.Months (11) := To_Unbounded_String ("Laafi-bãaga");
+      Locale_Mos.Months (12) := To_Unbounded_String ("Filiga-bãaga");
+
+      Locale_Mos.Weekdays (1) := To_Unbounded_String ("Alhadi");
+      Locale_Mos.Weekdays (2) := To_Unbounded_String ("Atɩnni");
+      Locale_Mos.Weekdays (3) := To_Unbounded_String ("Atalaata");
+      Locale_Mos.Weekdays (4) := To_Unbounded_String ("Alarba");
+      Locale_Mos.Weekdays (5) := To_Unbounded_String ("Alkamisa");
+      Locale_Mos.Weekdays (6) := To_Unbounded_String ("Arjuma");
+      Locale_Mos.Weekdays (7) := To_Unbounded_String ("Asibti");
+
+      Locale_Mos.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Mos.Day_Format_Exception_Count := 0;
+
+      Locale_Mos.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Mos.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Mos.Today := To_Unbounded_String ("rũnda");
+      Locale_Mos.Tomorrow := To_Unbounded_String ("beoog");
+      Locale_Mos.Yesterday := To_Unbounded_String ("zaame");
+      Locale_Mos.Has_Day_After_Tomorrow := True;
+      Locale_Mos.Day_After_Tomorrow := To_Unbounded_String ("beoog sẽn wat");
+      Locale_Mos.Has_Day_Before_Yesterday := True;
+      Locale_Mos.Day_Before_Yesterday := To_Unbounded_String ("zaame sẽn loog");
+      Locale_Mos.Has_This_Weekday := True;
+      Locale_Mos.This_Weekday := To_Unbounded_String ("{weekday} kãnga");
+      Locale_Mos.Has_Next_Weekday := True;
+      Locale_Mos.Next_Weekday := To_Unbounded_String ("{weekday} sẽn wat");
+      Locale_Mos.Has_Last_Weekday := True;
+      Locale_Mos.Last_Weekday := To_Unbounded_String ("{weekday} sẽn loog");
+      Locale_Mos.Has_Months_In_Date := False;
+
+      Locale_Mos.Has_Short := True;
+      Locale_Mos.Short_Override.Has_Months := True;
+      Locale_Mos.Short_Override.Months (1) := To_Unbounded_String ("Zãn");
+      Locale_Mos.Short_Override.Months (2) := To_Unbounded_String ("S-y");
+      Locale_Mos.Short_Override.Months (3) := To_Unbounded_String ("S-t");
+      Locale_Mos.Short_Override.Months (4) := To_Unbounded_String ("Kãn");
+      Locale_Mos.Short_Override.Months (5) := To_Unbounded_String ("K-t");
+      Locale_Mos.Short_Override.Months (6) := To_Unbounded_String ("K-y");
+      Locale_Mos.Short_Override.Months (7) := To_Unbounded_String ("Bas");
+      Locale_Mos.Short_Override.Months (8) := To_Unbounded_String ("Gɩ");
+      Locale_Mos.Short_Override.Months (9) := To_Unbounded_String ("Tũu");
+      Locale_Mos.Short_Override.Months (10) := To_Unbounded_String ("Pẽe");
+      Locale_Mos.Short_Override.Months (11) := To_Unbounded_String ("Laa");
+      Locale_Mos.Short_Override.Months (12) := To_Unbounded_String ("Fil");
+      Locale_Mos.Short_Override.Has_Months_In_Date := False;
+      Locale_Mos.Short_Override.Has_Weekdays := True;
+      Locale_Mos.Short_Override.Weekdays (1) := To_Unbounded_String ("Alh");
+      Locale_Mos.Short_Override.Weekdays (2) := To_Unbounded_String ("Atɩ");
+      Locale_Mos.Short_Override.Weekdays (3) := To_Unbounded_String ("Ata");
+      Locale_Mos.Short_Override.Weekdays (4) := To_Unbounded_String ("Ala");
+      Locale_Mos.Short_Override.Weekdays (5) := To_Unbounded_String ("Alk");
+      Locale_Mos.Short_Override.Weekdays (6) := To_Unbounded_String ("Arj");
+      Locale_Mos.Short_Override.Weekdays (7) := To_Unbounded_String ("Asi");
+      Locale_Mos.Short_Override.Has_Day_Format := True;
+      Locale_Mos.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Mos.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Mos.Short_Override.Has_Date_Pattern := True;
+      Locale_Mos.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Mos.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Mos.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Mos.Short_Override.Has_Today := False;
+      Locale_Mos.Short_Override.Has_Tomorrow := False;
+      Locale_Mos.Short_Override.Has_Yesterday := False;
+
+      Locale_Mos.Has_Compact := True;
+      Locale_Mos.Compact_Override.Has_Months := False;
+      Locale_Mos.Compact_Override.Has_Months_In_Date := False;
+      Locale_Mos.Compact_Override.Has_Weekdays := False;
+      Locale_Mos.Compact_Override.Has_Day_Format := False;
+      Locale_Mos.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Mos.Compact_Override.Has_Date_Pattern := True;
+      Locale_Mos.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Mos.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Mos.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Mos.Compact_Override.Has_Today := False;
+      Locale_Mos.Compact_Override.Has_Tomorrow := False;
+      Locale_Mos.Compact_Override.Has_Yesterday := False;
+
+   end Init_mos;
 
    --  Source: date/locales/src/mr.json
    procedure Init_mr is
@@ -6802,6 +8389,103 @@ package body Sayabledate_Locales is
 
    end Init_nb;
 
+   --  Source: date/locales/src/nd.json
+   procedure Init_nd is
+   begin
+      Locale_Nd.Code := To_Unbounded_String ("nd");
+
+      Locale_Nd.Months (1) := To_Unbounded_String ("Zibandlela");
+      Locale_Nd.Months (2) := To_Unbounded_String ("Nhlolanja");
+      Locale_Nd.Months (3) := To_Unbounded_String ("Mbimbitho");
+      Locale_Nd.Months (4) := To_Unbounded_String ("Mabasa");
+      Locale_Nd.Months (5) := To_Unbounded_String ("Nkwenkwezi");
+      Locale_Nd.Months (6) := To_Unbounded_String ("Nhlangula");
+      Locale_Nd.Months (7) := To_Unbounded_String ("Kholwane");
+      Locale_Nd.Months (8) := To_Unbounded_String ("Ingci");
+      Locale_Nd.Months (9) := To_Unbounded_String ("Inyoni");
+      Locale_Nd.Months (10) := To_Unbounded_String ("Imphala");
+      Locale_Nd.Months (11) := To_Unbounded_String ("Lwezi");
+      Locale_Nd.Months (12) := To_Unbounded_String ("Mpalakazi");
+
+      Locale_Nd.Weekdays (1) := To_Unbounded_String ("Sonto");
+      Locale_Nd.Weekdays (2) := To_Unbounded_String ("Mvulo");
+      Locale_Nd.Weekdays (3) := To_Unbounded_String ("Sibili");
+      Locale_Nd.Weekdays (4) := To_Unbounded_String ("Sithathu");
+      Locale_Nd.Weekdays (5) := To_Unbounded_String ("Sine");
+      Locale_Nd.Weekdays (6) := To_Unbounded_String ("Sihlanu");
+      Locale_Nd.Weekdays (7) := To_Unbounded_String ("Mgqibelo");
+
+      Locale_Nd.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Nd.Day_Format_Exception_Count := 0;
+
+      Locale_Nd.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Nd.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Nd.Today := To_Unbounded_String ("lamuhla");
+      Locale_Nd.Tomorrow := To_Unbounded_String ("kusasa");
+      Locale_Nd.Yesterday := To_Unbounded_String ("izolo");
+      Locale_Nd.Has_Day_After_Tomorrow := True;
+      Locale_Nd.Day_After_Tomorrow := To_Unbounded_String ("ngomhlomunye");
+      Locale_Nd.Has_Day_Before_Yesterday := True;
+      Locale_Nd.Day_Before_Yesterday := To_Unbounded_String ("usuku olwedlule izolo");
+      Locale_Nd.Has_This_Weekday := True;
+      Locale_Nd.This_Weekday := To_Unbounded_String ("leli {weekday}");
+      Locale_Nd.Has_Next_Weekday := True;
+      Locale_Nd.Next_Weekday := To_Unbounded_String ("{weekday} elizayo");
+      Locale_Nd.Has_Last_Weekday := True;
+      Locale_Nd.Last_Weekday := To_Unbounded_String ("{weekday} eledlule");
+      Locale_Nd.Has_Months_In_Date := False;
+
+      Locale_Nd.Has_Short := True;
+      Locale_Nd.Short_Override.Has_Months := True;
+      Locale_Nd.Short_Override.Months (1) := To_Unbounded_String ("Zib");
+      Locale_Nd.Short_Override.Months (2) := To_Unbounded_String ("Nhl");
+      Locale_Nd.Short_Override.Months (3) := To_Unbounded_String ("Mbi");
+      Locale_Nd.Short_Override.Months (4) := To_Unbounded_String ("Mab");
+      Locale_Nd.Short_Override.Months (5) := To_Unbounded_String ("Nkw");
+      Locale_Nd.Short_Override.Months (6) := To_Unbounded_String ("Nhl");
+      Locale_Nd.Short_Override.Months (7) := To_Unbounded_String ("Kho");
+      Locale_Nd.Short_Override.Months (8) := To_Unbounded_String ("Ing");
+      Locale_Nd.Short_Override.Months (9) := To_Unbounded_String ("Iny");
+      Locale_Nd.Short_Override.Months (10) := To_Unbounded_String ("Imp");
+      Locale_Nd.Short_Override.Months (11) := To_Unbounded_String ("Lwe");
+      Locale_Nd.Short_Override.Months (12) := To_Unbounded_String ("Mpa");
+      Locale_Nd.Short_Override.Has_Months_In_Date := False;
+      Locale_Nd.Short_Override.Has_Weekdays := True;
+      Locale_Nd.Short_Override.Weekdays (1) := To_Unbounded_String ("Son");
+      Locale_Nd.Short_Override.Weekdays (2) := To_Unbounded_String ("Mvu");
+      Locale_Nd.Short_Override.Weekdays (3) := To_Unbounded_String ("Sib");
+      Locale_Nd.Short_Override.Weekdays (4) := To_Unbounded_String ("Sit");
+      Locale_Nd.Short_Override.Weekdays (5) := To_Unbounded_String ("Sin");
+      Locale_Nd.Short_Override.Weekdays (6) := To_Unbounded_String ("Sih");
+      Locale_Nd.Short_Override.Weekdays (7) := To_Unbounded_String ("Mgq");
+      Locale_Nd.Short_Override.Has_Day_Format := True;
+      Locale_Nd.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Nd.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Nd.Short_Override.Has_Date_Pattern := True;
+      Locale_Nd.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Nd.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Nd.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Nd.Short_Override.Has_Today := False;
+      Locale_Nd.Short_Override.Has_Tomorrow := False;
+      Locale_Nd.Short_Override.Has_Yesterday := False;
+
+      Locale_Nd.Has_Compact := True;
+      Locale_Nd.Compact_Override.Has_Months := False;
+      Locale_Nd.Compact_Override.Has_Months_In_Date := False;
+      Locale_Nd.Compact_Override.Has_Weekdays := False;
+      Locale_Nd.Compact_Override.Has_Day_Format := False;
+      Locale_Nd.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Nd.Compact_Override.Has_Date_Pattern := True;
+      Locale_Nd.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Nd.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Nd.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Nd.Compact_Override.Has_Today := False;
+      Locale_Nd.Compact_Override.Has_Tomorrow := False;
+      Locale_Nd.Compact_Override.Has_Yesterday := False;
+
+   end Init_nd;
+
    --  Source: date/locales/src/ne.json
    procedure Init_ne is
    begin
@@ -6899,6 +8583,103 @@ package body Sayabledate_Locales is
 
    end Init_ne;
 
+   --  Source: date/locales/src/ng.json
+   procedure Init_ng is
+   begin
+      Locale_Ng.Code := To_Unbounded_String ("ng");
+
+      Locale_Ng.Months (1) := To_Unbounded_String ("Januali");
+      Locale_Ng.Months (2) := To_Unbounded_String ("Febluali");
+      Locale_Ng.Months (3) := To_Unbounded_String ("Malitsi");
+      Locale_Ng.Months (4) := To_Unbounded_String ("Aplili");
+      Locale_Ng.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Ng.Months (6) := To_Unbounded_String ("Juni");
+      Locale_Ng.Months (7) := To_Unbounded_String ("Juli");
+      Locale_Ng.Months (8) := To_Unbounded_String ("Augustu");
+      Locale_Ng.Months (9) := To_Unbounded_String ("Septemba");
+      Locale_Ng.Months (10) := To_Unbounded_String ("Oktoba");
+      Locale_Ng.Months (11) := To_Unbounded_String ("Novemba");
+      Locale_Ng.Months (12) := To_Unbounded_String ("Desemba");
+
+      Locale_Ng.Weekdays (1) := To_Unbounded_String ("Osoondaha");
+      Locale_Ng.Weekdays (2) := To_Unbounded_String ("Omaandaha");
+      Locale_Ng.Weekdays (3) := To_Unbounded_String ("Etitatu");
+      Locale_Ng.Weekdays (4) := To_Unbounded_String ("Etitano");
+      Locale_Ng.Weekdays (5) := To_Unbounded_String ("Etine");
+      Locale_Ng.Weekdays (6) := To_Unbounded_String ("Oshitimuine");
+      Locale_Ng.Weekdays (7) := To_Unbounded_String ("Eshabati");
+
+      Locale_Ng.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ng.Day_Format_Exception_Count := 0;
+
+      Locale_Ng.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ng.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Ng.Today := To_Unbounded_String ("nena");
+      Locale_Ng.Tomorrow := To_Unbounded_String ("mongula");
+      Locale_Ng.Yesterday := To_Unbounded_String ("ongula ya dja ko");
+      Locale_Ng.Has_Day_After_Tomorrow := True;
+      Locale_Ng.Day_After_Tomorrow := To_Unbounded_String ("mongula e li ko");
+      Locale_Ng.Has_Day_Before_Yesterday := True;
+      Locale_Ng.Day_Before_Yesterday := To_Unbounded_String ("ongula ya dja ko nale");
+      Locale_Ng.Has_This_Weekday := True;
+      Locale_Ng.This_Weekday := To_Unbounded_String ("{weekday} eshi");
+      Locale_Ng.Has_Next_Weekday := True;
+      Locale_Ng.Next_Weekday := To_Unbounded_String ("{weekday} e li ko");
+      Locale_Ng.Has_Last_Weekday := True;
+      Locale_Ng.Last_Weekday := To_Unbounded_String ("{weekday} ya dja ko");
+      Locale_Ng.Has_Months_In_Date := False;
+
+      Locale_Ng.Has_Short := True;
+      Locale_Ng.Short_Override.Has_Months := True;
+      Locale_Ng.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Ng.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Ng.Short_Override.Months (3) := To_Unbounded_String ("Mal");
+      Locale_Ng.Short_Override.Months (4) := To_Unbounded_String ("Apl");
+      Locale_Ng.Short_Override.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Ng.Short_Override.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Ng.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Ng.Short_Override.Months (8) := To_Unbounded_String ("Aug");
+      Locale_Ng.Short_Override.Months (9) := To_Unbounded_String ("Sep");
+      Locale_Ng.Short_Override.Months (10) := To_Unbounded_String ("Okt");
+      Locale_Ng.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Ng.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Ng.Short_Override.Has_Months_In_Date := False;
+      Locale_Ng.Short_Override.Has_Weekdays := True;
+      Locale_Ng.Short_Override.Weekdays (1) := To_Unbounded_String ("Oso");
+      Locale_Ng.Short_Override.Weekdays (2) := To_Unbounded_String ("Oma");
+      Locale_Ng.Short_Override.Weekdays (3) := To_Unbounded_String ("Eti");
+      Locale_Ng.Short_Override.Weekdays (4) := To_Unbounded_String ("Etn");
+      Locale_Ng.Short_Override.Weekdays (5) := To_Unbounded_String ("Etn");
+      Locale_Ng.Short_Override.Weekdays (6) := To_Unbounded_String ("Osh");
+      Locale_Ng.Short_Override.Weekdays (7) := To_Unbounded_String ("Esh");
+      Locale_Ng.Short_Override.Has_Day_Format := True;
+      Locale_Ng.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ng.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ng.Short_Override.Has_Date_Pattern := True;
+      Locale_Ng.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ng.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ng.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Ng.Short_Override.Has_Today := False;
+      Locale_Ng.Short_Override.Has_Tomorrow := False;
+      Locale_Ng.Short_Override.Has_Yesterday := False;
+
+      Locale_Ng.Has_Compact := True;
+      Locale_Ng.Compact_Override.Has_Months := False;
+      Locale_Ng.Compact_Override.Has_Months_In_Date := False;
+      Locale_Ng.Compact_Override.Has_Weekdays := False;
+      Locale_Ng.Compact_Override.Has_Day_Format := False;
+      Locale_Ng.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ng.Compact_Override.Has_Date_Pattern := True;
+      Locale_Ng.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Ng.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ng.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Ng.Compact_Override.Has_Today := False;
+      Locale_Ng.Compact_Override.Has_Tomorrow := False;
+      Locale_Ng.Compact_Override.Has_Yesterday := False;
+
+   end Init_ng;
+
    --  Source: date/locales/src/nl.json
    procedure Init_nl is
    begin
@@ -6995,6 +8776,200 @@ package body Sayabledate_Locales is
       Locale_Nl.Compact_Override.Has_Yesterday := False;
 
    end Init_nl;
+
+   --  Source: date/locales/src/nso.json
+   procedure Init_nso is
+   begin
+      Locale_Nso.Code := To_Unbounded_String ("nso");
+
+      Locale_Nso.Months (1) := To_Unbounded_String ("Pherekgong");
+      Locale_Nso.Months (2) := To_Unbounded_String ("Hlakola");
+      Locale_Nso.Months (3) := To_Unbounded_String ("Mopitlo");
+      Locale_Nso.Months (4) := To_Unbounded_String ("Moranang");
+      Locale_Nso.Months (5) := To_Unbounded_String ("Mosegamanye");
+      Locale_Nso.Months (6) := To_Unbounded_String ("Ngoatobošego");
+      Locale_Nso.Months (7) := To_Unbounded_String ("Phukwi");
+      Locale_Nso.Months (8) := To_Unbounded_String ("Phatwe");
+      Locale_Nso.Months (9) := To_Unbounded_String ("Lewedi");
+      Locale_Nso.Months (10) := To_Unbounded_String ("Diphalane");
+      Locale_Nso.Months (11) := To_Unbounded_String ("Dibatsela");
+      Locale_Nso.Months (12) := To_Unbounded_String ("Manthole");
+
+      Locale_Nso.Weekdays (1) := To_Unbounded_String ("Lamorena");
+      Locale_Nso.Weekdays (2) := To_Unbounded_String ("Mošupologo");
+      Locale_Nso.Weekdays (3) := To_Unbounded_String ("Labobedi");
+      Locale_Nso.Weekdays (4) := To_Unbounded_String ("Laboraro");
+      Locale_Nso.Weekdays (5) := To_Unbounded_String ("Labone");
+      Locale_Nso.Weekdays (6) := To_Unbounded_String ("Labohlano");
+      Locale_Nso.Weekdays (7) := To_Unbounded_String ("Mokibelo");
+
+      Locale_Nso.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Nso.Day_Format_Exception_Count := 0;
+
+      Locale_Nso.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Nso.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Nso.Today := To_Unbounded_String ("lehono");
+      Locale_Nso.Tomorrow := To_Unbounded_String ("gosasa");
+      Locale_Nso.Yesterday := To_Unbounded_String ("maabane");
+      Locale_Nso.Has_Day_After_Tomorrow := True;
+      Locale_Nso.Day_After_Tomorrow := To_Unbounded_String ("morago ga gosasa");
+      Locale_Nso.Has_Day_Before_Yesterday := True;
+      Locale_Nso.Day_Before_Yesterday := To_Unbounded_String ("maabane a go feta");
+      Locale_Nso.Has_This_Weekday := True;
+      Locale_Nso.This_Weekday := To_Unbounded_String ("{weekday} ye");
+      Locale_Nso.Has_Next_Weekday := True;
+      Locale_Nso.Next_Weekday := To_Unbounded_String ("{weekday} ye e tlago");
+      Locale_Nso.Has_Last_Weekday := True;
+      Locale_Nso.Last_Weekday := To_Unbounded_String ("{weekday} ye e fetilego");
+      Locale_Nso.Has_Months_In_Date := False;
+
+      Locale_Nso.Has_Short := True;
+      Locale_Nso.Short_Override.Has_Months := True;
+      Locale_Nso.Short_Override.Months (1) := To_Unbounded_String ("Pher");
+      Locale_Nso.Short_Override.Months (2) := To_Unbounded_String ("Hlak");
+      Locale_Nso.Short_Override.Months (3) := To_Unbounded_String ("Mop");
+      Locale_Nso.Short_Override.Months (4) := To_Unbounded_String ("Mor");
+      Locale_Nso.Short_Override.Months (5) := To_Unbounded_String ("Mos");
+      Locale_Nso.Short_Override.Months (6) := To_Unbounded_String ("Ngoa");
+      Locale_Nso.Short_Override.Months (7) := To_Unbounded_String ("Phu");
+      Locale_Nso.Short_Override.Months (8) := To_Unbounded_String ("Pha");
+      Locale_Nso.Short_Override.Months (9) := To_Unbounded_String ("Lew");
+      Locale_Nso.Short_Override.Months (10) := To_Unbounded_String ("Diph");
+      Locale_Nso.Short_Override.Months (11) := To_Unbounded_String ("Dib");
+      Locale_Nso.Short_Override.Months (12) := To_Unbounded_String ("Man");
+      Locale_Nso.Short_Override.Has_Months_In_Date := False;
+      Locale_Nso.Short_Override.Has_Weekdays := True;
+      Locale_Nso.Short_Override.Weekdays (1) := To_Unbounded_String ("Lam");
+      Locale_Nso.Short_Override.Weekdays (2) := To_Unbounded_String ("Moš");
+      Locale_Nso.Short_Override.Weekdays (3) := To_Unbounded_String ("Lbb");
+      Locale_Nso.Short_Override.Weekdays (4) := To_Unbounded_String ("Lbr");
+      Locale_Nso.Short_Override.Weekdays (5) := To_Unbounded_String ("Lbn");
+      Locale_Nso.Short_Override.Weekdays (6) := To_Unbounded_String ("Lbh");
+      Locale_Nso.Short_Override.Weekdays (7) := To_Unbounded_String ("Mok");
+      Locale_Nso.Short_Override.Has_Day_Format := True;
+      Locale_Nso.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Nso.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Nso.Short_Override.Has_Date_Pattern := True;
+      Locale_Nso.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Nso.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Nso.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Nso.Short_Override.Has_Today := False;
+      Locale_Nso.Short_Override.Has_Tomorrow := False;
+      Locale_Nso.Short_Override.Has_Yesterday := False;
+
+      Locale_Nso.Has_Compact := True;
+      Locale_Nso.Compact_Override.Has_Months := False;
+      Locale_Nso.Compact_Override.Has_Months_In_Date := False;
+      Locale_Nso.Compact_Override.Has_Weekdays := False;
+      Locale_Nso.Compact_Override.Has_Day_Format := False;
+      Locale_Nso.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Nso.Compact_Override.Has_Date_Pattern := True;
+      Locale_Nso.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Nso.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Nso.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Nso.Compact_Override.Has_Today := False;
+      Locale_Nso.Compact_Override.Has_Tomorrow := False;
+      Locale_Nso.Compact_Override.Has_Yesterday := False;
+
+   end Init_nso;
+
+   --  Source: date/locales/src/nus.json
+   procedure Init_nus is
+   begin
+      Locale_Nus.Code := To_Unbounded_String ("nus");
+
+      Locale_Nus.Months (1) := To_Unbounded_String ("Tiɔp thar");
+      Locale_Nus.Months (2) := To_Unbounded_String ("Pɛt");
+      Locale_Nus.Months (3) := To_Unbounded_String ("Duɔɔŋ");
+      Locale_Nus.Months (4) := To_Unbounded_String ("Guak");
+      Locale_Nus.Months (5) := To_Unbounded_String ("Duät");
+      Locale_Nus.Months (6) := To_Unbounded_String ("Kornyot");
+      Locale_Nus.Months (7) := To_Unbounded_String ("Payi");
+      Locale_Nus.Months (8) := To_Unbounded_String ("Tio̱p in thii");
+      Locale_Nus.Months (9) := To_Unbounded_String ("Laath");
+      Locale_Nus.Months (10) := To_Unbounded_String ("Kur");
+      Locale_Nus.Months (11) := To_Unbounded_String ("Tio̱p in laat");
+      Locale_Nus.Months (12) := To_Unbounded_String ("Jiɔk");
+
+      Locale_Nus.Weekdays (1) := To_Unbounded_String ("Cäŋ nhial");
+      Locale_Nus.Weekdays (2) := To_Unbounded_String ("Jiec la̱t");
+      Locale_Nus.Weekdays (3) := To_Unbounded_String ("Rɛw la̱t");
+      Locale_Nus.Weekdays (4) := To_Unbounded_String ("Diɔk la̱t");
+      Locale_Nus.Weekdays (5) := To_Unbounded_String ("Ŋuaan la̱t");
+      Locale_Nus.Weekdays (6) := To_Unbounded_String ("Dhieec la̱t");
+      Locale_Nus.Weekdays (7) := To_Unbounded_String ("Bäkɛl");
+
+      Locale_Nus.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Nus.Day_Format_Exception_Count := 0;
+
+      Locale_Nus.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Nus.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Nus.Today := To_Unbounded_String ("walɛ");
+      Locale_Nus.Tomorrow := To_Unbounded_String ("riak");
+      Locale_Nus.Yesterday := To_Unbounded_String ("dhorou");
+      Locale_Nus.Has_Day_After_Tomorrow := True;
+      Locale_Nus.Day_After_Tomorrow := To_Unbounded_String ("riak kɛnɛ");
+      Locale_Nus.Has_Day_Before_Yesterday := True;
+      Locale_Nus.Day_Before_Yesterday := To_Unbounded_String ("dhorou kɛnɛ");
+      Locale_Nus.Has_This_Weekday := True;
+      Locale_Nus.This_Weekday := To_Unbounded_String ("{weekday} ɛn");
+      Locale_Nus.Has_Next_Weekday := True;
+      Locale_Nus.Next_Weekday := To_Unbounded_String ("{weekday} tɛ bɛ̈n");
+      Locale_Nus.Has_Last_Weekday := True;
+      Locale_Nus.Last_Weekday := To_Unbounded_String ("{weekday} cï kuɔ̈ɔ̈t");
+      Locale_Nus.Has_Months_In_Date := False;
+
+      Locale_Nus.Has_Short := True;
+      Locale_Nus.Short_Override.Has_Months := True;
+      Locale_Nus.Short_Override.Months (1) := To_Unbounded_String ("Tiɔp");
+      Locale_Nus.Short_Override.Months (2) := To_Unbounded_String ("Pɛt");
+      Locale_Nus.Short_Override.Months (3) := To_Unbounded_String ("Duɔɔ");
+      Locale_Nus.Short_Override.Months (4) := To_Unbounded_String ("Gua");
+      Locale_Nus.Short_Override.Months (5) := To_Unbounded_String ("Duä");
+      Locale_Nus.Short_Override.Months (6) := To_Unbounded_String ("Kor");
+      Locale_Nus.Short_Override.Months (7) := To_Unbounded_String ("Pay");
+      Locale_Nus.Short_Override.Months (8) := To_Unbounded_String ("Tio̱p");
+      Locale_Nus.Short_Override.Months (9) := To_Unbounded_String ("Laa");
+      Locale_Nus.Short_Override.Months (10) := To_Unbounded_String ("Kur");
+      Locale_Nus.Short_Override.Months (11) := To_Unbounded_String ("Tio̱");
+      Locale_Nus.Short_Override.Months (12) := To_Unbounded_String ("Jiɔ");
+      Locale_Nus.Short_Override.Has_Months_In_Date := False;
+      Locale_Nus.Short_Override.Has_Weekdays := True;
+      Locale_Nus.Short_Override.Weekdays (1) := To_Unbounded_String ("Nhial");
+      Locale_Nus.Short_Override.Weekdays (2) := To_Unbounded_String ("Jiec");
+      Locale_Nus.Short_Override.Weekdays (3) := To_Unbounded_String ("Rɛw");
+      Locale_Nus.Short_Override.Weekdays (4) := To_Unbounded_String ("Diɔk");
+      Locale_Nus.Short_Override.Weekdays (5) := To_Unbounded_String ("Ŋuaan");
+      Locale_Nus.Short_Override.Weekdays (6) := To_Unbounded_String ("Dhiec");
+      Locale_Nus.Short_Override.Weekdays (7) := To_Unbounded_String ("Bäk");
+      Locale_Nus.Short_Override.Has_Day_Format := True;
+      Locale_Nus.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Nus.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Nus.Short_Override.Has_Date_Pattern := True;
+      Locale_Nus.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Nus.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Nus.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Nus.Short_Override.Has_Today := False;
+      Locale_Nus.Short_Override.Has_Tomorrow := False;
+      Locale_Nus.Short_Override.Has_Yesterday := False;
+
+      Locale_Nus.Has_Compact := True;
+      Locale_Nus.Compact_Override.Has_Months := False;
+      Locale_Nus.Compact_Override.Has_Months_In_Date := False;
+      Locale_Nus.Compact_Override.Has_Weekdays := False;
+      Locale_Nus.Compact_Override.Has_Day_Format := False;
+      Locale_Nus.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Nus.Compact_Override.Has_Date_Pattern := True;
+      Locale_Nus.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Nus.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Nus.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Nus.Compact_Override.Has_Today := False;
+      Locale_Nus.Compact_Override.Has_Tomorrow := False;
+      Locale_Nus.Compact_Override.Has_Yesterday := False;
+
+   end Init_nus;
 
    --  Source: date/locales/src/ny.json
    procedure Init_ny is
@@ -7492,6 +9467,103 @@ package body Sayabledate_Locales is
       Locale_Pl.Compact_Override.Has_Yesterday := False;
 
    end Init_pl;
+
+   --  Source: date/locales/src/pov.json
+   procedure Init_pov is
+   begin
+      Locale_Pov.Code := To_Unbounded_String ("pov");
+
+      Locale_Pov.Months (1) := To_Unbounded_String ("Janeru");
+      Locale_Pov.Months (2) := To_Unbounded_String ("Febreru");
+      Locale_Pov.Months (3) := To_Unbounded_String ("Marsu");
+      Locale_Pov.Months (4) := To_Unbounded_String ("Abril");
+      Locale_Pov.Months (5) := To_Unbounded_String ("Maiu");
+      Locale_Pov.Months (6) := To_Unbounded_String ("Junhu");
+      Locale_Pov.Months (7) := To_Unbounded_String ("Julhu");
+      Locale_Pov.Months (8) := To_Unbounded_String ("Agostu");
+      Locale_Pov.Months (9) := To_Unbounded_String ("Setembru");
+      Locale_Pov.Months (10) := To_Unbounded_String ("Otubru");
+      Locale_Pov.Months (11) := To_Unbounded_String ("Novembru");
+      Locale_Pov.Months (12) := To_Unbounded_String ("Dizembru");
+
+      Locale_Pov.Weekdays (1) := To_Unbounded_String ("Dumingu");
+      Locale_Pov.Weekdays (2) := To_Unbounded_String ("Sigunda");
+      Locale_Pov.Weekdays (3) := To_Unbounded_String ("Tersa");
+      Locale_Pov.Weekdays (4) := To_Unbounded_String ("Kuarta");
+      Locale_Pov.Weekdays (5) := To_Unbounded_String ("Kinta");
+      Locale_Pov.Weekdays (6) := To_Unbounded_String ("Sesta");
+      Locale_Pov.Weekdays (7) := To_Unbounded_String ("Sabadu");
+
+      Locale_Pov.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Pov.Day_Format_Exception_Count := 0;
+
+      Locale_Pov.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Pov.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Pov.Today := To_Unbounded_String ("oji");
+      Locale_Pov.Tomorrow := To_Unbounded_String ("manan");
+      Locale_Pov.Yesterday := To_Unbounded_String ("onfo");
+      Locale_Pov.Has_Day_After_Tomorrow := True;
+      Locale_Pov.Day_After_Tomorrow := To_Unbounded_String ("dipus di manan");
+      Locale_Pov.Has_Day_Before_Yesterday := True;
+      Locale_Pov.Day_Before_Yesterday := To_Unbounded_String ("antis di onfo");
+      Locale_Pov.Has_This_Weekday := True;
+      Locale_Pov.This_Weekday := To_Unbounded_String ("{weekday} kel");
+      Locale_Pov.Has_Next_Weekday := True;
+      Locale_Pov.Next_Weekday := To_Unbounded_String ("{weekday} ki bin");
+      Locale_Pov.Has_Last_Weekday := True;
+      Locale_Pov.Last_Weekday := To_Unbounded_String ("{weekday} pasadu");
+      Locale_Pov.Has_Months_In_Date := False;
+
+      Locale_Pov.Has_Short := True;
+      Locale_Pov.Short_Override.Has_Months := True;
+      Locale_Pov.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Pov.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Pov.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Pov.Short_Override.Months (4) := To_Unbounded_String ("Abr");
+      Locale_Pov.Short_Override.Months (5) := To_Unbounded_String ("Mai");
+      Locale_Pov.Short_Override.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Pov.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Pov.Short_Override.Months (8) := To_Unbounded_String ("Ago");
+      Locale_Pov.Short_Override.Months (9) := To_Unbounded_String ("Set");
+      Locale_Pov.Short_Override.Months (10) := To_Unbounded_String ("Otu");
+      Locale_Pov.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Pov.Short_Override.Months (12) := To_Unbounded_String ("Diz");
+      Locale_Pov.Short_Override.Has_Months_In_Date := False;
+      Locale_Pov.Short_Override.Has_Weekdays := True;
+      Locale_Pov.Short_Override.Weekdays (1) := To_Unbounded_String ("Dum");
+      Locale_Pov.Short_Override.Weekdays (2) := To_Unbounded_String ("Sig");
+      Locale_Pov.Short_Override.Weekdays (3) := To_Unbounded_String ("Ter");
+      Locale_Pov.Short_Override.Weekdays (4) := To_Unbounded_String ("Kua");
+      Locale_Pov.Short_Override.Weekdays (5) := To_Unbounded_String ("Kin");
+      Locale_Pov.Short_Override.Weekdays (6) := To_Unbounded_String ("Ses");
+      Locale_Pov.Short_Override.Weekdays (7) := To_Unbounded_String ("Sab");
+      Locale_Pov.Short_Override.Has_Day_Format := True;
+      Locale_Pov.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Pov.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Pov.Short_Override.Has_Date_Pattern := True;
+      Locale_Pov.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Pov.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Pov.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Pov.Short_Override.Has_Today := False;
+      Locale_Pov.Short_Override.Has_Tomorrow := False;
+      Locale_Pov.Short_Override.Has_Yesterday := False;
+
+      Locale_Pov.Has_Compact := True;
+      Locale_Pov.Compact_Override.Has_Months := False;
+      Locale_Pov.Compact_Override.Has_Months_In_Date := False;
+      Locale_Pov.Compact_Override.Has_Weekdays := False;
+      Locale_Pov.Compact_Override.Has_Day_Format := False;
+      Locale_Pov.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Pov.Compact_Override.Has_Date_Pattern := True;
+      Locale_Pov.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Pov.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Pov.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Pov.Compact_Override.Has_Today := False;
+      Locale_Pov.Compact_Override.Has_Tomorrow := False;
+      Locale_Pov.Compact_Override.Has_Yesterday := False;
+
+   end Init_pov;
 
    --  Source: date/locales/src/ps.json
    procedure Init_ps is
@@ -8099,6 +10171,103 @@ package body Sayabledate_Locales is
 
    end Init_rw;
 
+   --  Source: date/locales/src/sar.json
+   procedure Init_sar is
+   begin
+      Locale_Sar.Code := To_Unbounded_String ("sar");
+
+      Locale_Sar.Months (1) := To_Unbounded_String ("Zanviye");
+      Locale_Sar.Months (2) := To_Unbounded_String ("Fevriye");
+      Locale_Sar.Months (3) := To_Unbounded_String ("Maars");
+      Locale_Sar.Months (4) := To_Unbounded_String ("Avriil");
+      Locale_Sar.Months (5) := To_Unbounded_String ("Mee");
+      Locale_Sar.Months (6) := To_Unbounded_String ("Zuɛ̃");
+      Locale_Sar.Months (7) := To_Unbounded_String ("Zulɛ");
+      Locale_Sar.Months (8) := To_Unbounded_String ("Uut");
+      Locale_Sar.Months (9) := To_Unbounded_String ("Sɛtɛmbar");
+      Locale_Sar.Months (10) := To_Unbounded_String ("Ɔtɔbar");
+      Locale_Sar.Months (11) := To_Unbounded_String ("Nɔvambar");
+      Locale_Sar.Months (12) := To_Unbounded_String ("Desambar");
+
+      Locale_Sar.Weekdays (1) := To_Unbounded_String ("Paskaa");
+      Locale_Sar.Weekdays (2) := To_Unbounded_String ("Nɔy");
+      Locale_Sar.Weekdays (3) := To_Unbounded_String ("Talata");
+      Locale_Sar.Weekdays (4) := To_Unbounded_String ("Alarba");
+      Locale_Sar.Weekdays (5) := To_Unbounded_String ("Alkamisa");
+      Locale_Sar.Weekdays (6) := To_Unbounded_String ("Juma");
+      Locale_Sar.Weekdays (7) := To_Unbounded_String ("Sibiti");
+
+      Locale_Sar.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Sar.Day_Format_Exception_Count := 0;
+
+      Locale_Sar.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Sar.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Sar.Today := To_Unbounded_String ("ɗgá");
+      Locale_Sar.Tomorrow := To_Unbounded_String ("gɨ́nā");
+      Locale_Sar.Yesterday := To_Unbounded_String ("ɗáà");
+      Locale_Sar.Has_Day_After_Tomorrow := True;
+      Locale_Sar.Day_After_Tomorrow := To_Unbounded_String ("gɨ́nā gɨ́nā");
+      Locale_Sar.Has_Day_Before_Yesterday := True;
+      Locale_Sar.Day_Before_Yesterday := To_Unbounded_String ("ɗáà ɗáà");
+      Locale_Sar.Has_This_Weekday := True;
+      Locale_Sar.This_Weekday := To_Unbounded_String ("{weekday} nè");
+      Locale_Sar.Has_Next_Weekday := True;
+      Locale_Sar.Next_Weekday := To_Unbounded_String ("{weekday} ga");
+      Locale_Sar.Has_Last_Weekday := True;
+      Locale_Sar.Last_Weekday := To_Unbounded_String ("{weekday} ɓòo kɔ");
+      Locale_Sar.Has_Months_In_Date := False;
+
+      Locale_Sar.Has_Short := True;
+      Locale_Sar.Short_Override.Has_Months := True;
+      Locale_Sar.Short_Override.Months (1) := To_Unbounded_String ("Zan");
+      Locale_Sar.Short_Override.Months (2) := To_Unbounded_String ("Fev");
+      Locale_Sar.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Sar.Short_Override.Months (4) := To_Unbounded_String ("Avr");
+      Locale_Sar.Short_Override.Months (5) := To_Unbounded_String ("Mee");
+      Locale_Sar.Short_Override.Months (6) := To_Unbounded_String ("Zuɛ");
+      Locale_Sar.Short_Override.Months (7) := To_Unbounded_String ("Zul");
+      Locale_Sar.Short_Override.Months (8) := To_Unbounded_String ("Uut");
+      Locale_Sar.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Sar.Short_Override.Months (10) := To_Unbounded_String ("Ɔtɔ");
+      Locale_Sar.Short_Override.Months (11) := To_Unbounded_String ("Nɔv");
+      Locale_Sar.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Sar.Short_Override.Has_Months_In_Date := False;
+      Locale_Sar.Short_Override.Has_Weekdays := True;
+      Locale_Sar.Short_Override.Weekdays (1) := To_Unbounded_String ("Pas");
+      Locale_Sar.Short_Override.Weekdays (2) := To_Unbounded_String ("Nɔy");
+      Locale_Sar.Short_Override.Weekdays (3) := To_Unbounded_String ("Tal");
+      Locale_Sar.Short_Override.Weekdays (4) := To_Unbounded_String ("Ala");
+      Locale_Sar.Short_Override.Weekdays (5) := To_Unbounded_String ("Alk");
+      Locale_Sar.Short_Override.Weekdays (6) := To_Unbounded_String ("Jum");
+      Locale_Sar.Short_Override.Weekdays (7) := To_Unbounded_String ("Sib");
+      Locale_Sar.Short_Override.Has_Day_Format := True;
+      Locale_Sar.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Sar.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Sar.Short_Override.Has_Date_Pattern := True;
+      Locale_Sar.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Sar.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Sar.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Sar.Short_Override.Has_Today := False;
+      Locale_Sar.Short_Override.Has_Tomorrow := False;
+      Locale_Sar.Short_Override.Has_Yesterday := False;
+
+      Locale_Sar.Has_Compact := True;
+      Locale_Sar.Compact_Override.Has_Months := False;
+      Locale_Sar.Compact_Override.Has_Months_In_Date := False;
+      Locale_Sar.Compact_Override.Has_Weekdays := False;
+      Locale_Sar.Compact_Override.Has_Day_Format := False;
+      Locale_Sar.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Sar.Compact_Override.Has_Date_Pattern := True;
+      Locale_Sar.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Sar.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Sar.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Sar.Compact_Override.Has_Today := False;
+      Locale_Sar.Compact_Override.Has_Tomorrow := False;
+      Locale_Sar.Compact_Override.Has_Yesterday := False;
+
+   end Init_sar;
+
    --  Source: date/locales/src/sd.json
    procedure Init_sd is
    begin
@@ -8195,6 +10364,103 @@ package body Sayabledate_Locales is
       Locale_Sd.Compact_Override.Has_Yesterday := False;
 
    end Init_sd;
+
+   --  Source: date/locales/src/sg.json
+   procedure Init_sg is
+   begin
+      Locale_Sg.Code := To_Unbounded_String ("sg");
+
+      Locale_Sg.Months (1) := To_Unbounded_String ("Nyenye");
+      Locale_Sg.Months (2) := To_Unbounded_String ("Fulundïgi");
+      Locale_Sg.Months (3) := To_Unbounded_String ("Mbängü");
+      Locale_Sg.Months (4) := To_Unbounded_String ("Ngubùe");
+      Locale_Sg.Months (5) := To_Unbounded_String ("Bêläwü");
+      Locale_Sg.Months (6) := To_Unbounded_String ("Föndo");
+      Locale_Sg.Months (7) := To_Unbounded_String ("Lengua");
+      Locale_Sg.Months (8) := To_Unbounded_String ("Kükürü");
+      Locale_Sg.Months (9) := To_Unbounded_String ("Mvuka");
+      Locale_Sg.Months (10) := To_Unbounded_String ("Ngberere");
+      Locale_Sg.Months (11) := To_Unbounded_String ("Nabändüru");
+      Locale_Sg.Months (12) := To_Unbounded_String ("Kakauka");
+
+      Locale_Sg.Weekdays (1) := To_Unbounded_String ("Bikua-ôko");
+      Locale_Sg.Weekdays (2) := To_Unbounded_String ("Bïkua-ûse");
+      Locale_Sg.Weekdays (3) := To_Unbounded_String ("Bïkua-ptâ");
+      Locale_Sg.Weekdays (4) := To_Unbounded_String ("Bïkua-usïö");
+      Locale_Sg.Weekdays (5) := To_Unbounded_String ("Bïkua-okü");
+      Locale_Sg.Weekdays (6) := To_Unbounded_String ("Lâpôsö");
+      Locale_Sg.Weekdays (7) := To_Unbounded_String ("Lâyenga");
+
+      Locale_Sg.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Sg.Day_Format_Exception_Count := 0;
+
+      Locale_Sg.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Sg.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Sg.Today := To_Unbounded_String ("lâsô");
+      Locale_Sg.Tomorrow := To_Unbounded_String ("kêkerêke");
+      Locale_Sg.Yesterday := To_Unbounded_String ("bîrî");
+      Locale_Sg.Has_Day_After_Tomorrow := True;
+      Locale_Sg.Day_After_Tomorrow := To_Unbounded_String ("lâ tî kêkerêke");
+      Locale_Sg.Has_Day_Before_Yesterday := True;
+      Locale_Sg.Day_Before_Yesterday := To_Unbounded_String ("lâ tî bîrî");
+      Locale_Sg.Has_This_Weekday := True;
+      Locale_Sg.This_Weekday := To_Unbounded_String ("{weekday} sô");
+      Locale_Sg.Has_Next_Weekday := True;
+      Locale_Sg.Next_Weekday := To_Unbounded_String ("{weekday} tî âla");
+      Locale_Sg.Has_Last_Weekday := True;
+      Locale_Sg.Last_Weekday := To_Unbounded_String ("{weekday} tî pekô");
+      Locale_Sg.Has_Months_In_Date := False;
+
+      Locale_Sg.Has_Short := True;
+      Locale_Sg.Short_Override.Has_Months := True;
+      Locale_Sg.Short_Override.Months (1) := To_Unbounded_String ("Nye");
+      Locale_Sg.Short_Override.Months (2) := To_Unbounded_String ("Ful");
+      Locale_Sg.Short_Override.Months (3) := To_Unbounded_String ("Mbä");
+      Locale_Sg.Short_Override.Months (4) := To_Unbounded_String ("Ngu");
+      Locale_Sg.Short_Override.Months (5) := To_Unbounded_String ("Bêl");
+      Locale_Sg.Short_Override.Months (6) := To_Unbounded_String ("Fön");
+      Locale_Sg.Short_Override.Months (7) := To_Unbounded_String ("Len");
+      Locale_Sg.Short_Override.Months (8) := To_Unbounded_String ("Kük");
+      Locale_Sg.Short_Override.Months (9) := To_Unbounded_String ("Mvu");
+      Locale_Sg.Short_Override.Months (10) := To_Unbounded_String ("Ngb");
+      Locale_Sg.Short_Override.Months (11) := To_Unbounded_String ("Nab");
+      Locale_Sg.Short_Override.Months (12) := To_Unbounded_String ("Kak");
+      Locale_Sg.Short_Override.Has_Months_In_Date := False;
+      Locale_Sg.Short_Override.Has_Weekdays := True;
+      Locale_Sg.Short_Override.Weekdays (1) := To_Unbounded_String ("Ôko");
+      Locale_Sg.Short_Override.Weekdays (2) := To_Unbounded_String ("Ûse");
+      Locale_Sg.Short_Override.Weekdays (3) := To_Unbounded_String ("Ptâ");
+      Locale_Sg.Short_Override.Weekdays (4) := To_Unbounded_String ("Usï");
+      Locale_Sg.Short_Override.Weekdays (5) := To_Unbounded_String ("Okü");
+      Locale_Sg.Short_Override.Weekdays (6) := To_Unbounded_String ("Pôs");
+      Locale_Sg.Short_Override.Weekdays (7) := To_Unbounded_String ("Yng");
+      Locale_Sg.Short_Override.Has_Day_Format := True;
+      Locale_Sg.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Sg.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Sg.Short_Override.Has_Date_Pattern := True;
+      Locale_Sg.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Sg.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Sg.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Sg.Short_Override.Has_Today := False;
+      Locale_Sg.Short_Override.Has_Tomorrow := False;
+      Locale_Sg.Short_Override.Has_Yesterday := False;
+
+      Locale_Sg.Has_Compact := True;
+      Locale_Sg.Compact_Override.Has_Months := False;
+      Locale_Sg.Compact_Override.Has_Months_In_Date := False;
+      Locale_Sg.Compact_Override.Has_Weekdays := False;
+      Locale_Sg.Compact_Override.Has_Day_Format := False;
+      Locale_Sg.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Sg.Compact_Override.Has_Date_Pattern := True;
+      Locale_Sg.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Sg.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Sg.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Sg.Compact_Override.Has_Today := False;
+      Locale_Sg.Compact_Override.Has_Tomorrow := False;
+      Locale_Sg.Compact_Override.Has_Yesterday := False;
+
+   end Init_sg;
 
    --  Source: date/locales/src/shi.json
    procedure Init_shi is
@@ -8703,6 +10969,103 @@ package body Sayabledate_Locales is
 
    end Init_sn;
 
+   --  Source: date/locales/src/snk.json
+   procedure Init_snk is
+   begin
+      Locale_Snk.Code := To_Unbounded_String ("snk");
+
+      Locale_Snk.Months (1) := To_Unbounded_String ("Janwiye");
+      Locale_Snk.Months (2) := To_Unbounded_String ("Feburiye");
+      Locale_Snk.Months (3) := To_Unbounded_String ("Marasi");
+      Locale_Snk.Months (4) := To_Unbounded_String ("Abirili");
+      Locale_Snk.Months (5) := To_Unbounded_String ("Meyi");
+      Locale_Snk.Months (6) := To_Unbounded_String ("Juwɛ");
+      Locale_Snk.Months (7) := To_Unbounded_String ("Juliye");
+      Locale_Snk.Months (8) := To_Unbounded_String ("Awutu");
+      Locale_Snk.Months (9) := To_Unbounded_String ("Sɛtanburu");
+      Locale_Snk.Months (10) := To_Unbounded_String ("Okutoburu");
+      Locale_Snk.Months (11) := To_Unbounded_String ("Nuwanburu");
+      Locale_Snk.Months (12) := To_Unbounded_String ("Desanburu");
+
+      Locale_Snk.Weekdays (1) := To_Unbounded_String ("Alhadi");
+      Locale_Snk.Weekdays (2) := To_Unbounded_String ("Atinni");
+      Locale_Snk.Weekdays (3) := To_Unbounded_String ("Ataalaata");
+      Locale_Snk.Weekdays (4) := To_Unbounded_String ("Alarba");
+      Locale_Snk.Weekdays (5) := To_Unbounded_String ("Alxamiisa");
+      Locale_Snk.Weekdays (6) := To_Unbounded_String ("Arjuma");
+      Locale_Snk.Weekdays (7) := To_Unbounded_String ("Asibiti");
+
+      Locale_Snk.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Snk.Day_Format_Exception_Count := 0;
+
+      Locale_Snk.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Snk.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Snk.Today := To_Unbounded_String ("haqun");
+      Locale_Snk.Tomorrow := To_Unbounded_String ("kinni");
+      Locale_Snk.Yesterday := To_Unbounded_String ("noxone");
+      Locale_Snk.Has_Day_After_Tomorrow := True;
+      Locale_Snk.Day_After_Tomorrow := To_Unbounded_String ("kinni xenqa");
+      Locale_Snk.Has_Day_Before_Yesterday := True;
+      Locale_Snk.Day_Before_Yesterday := To_Unbounded_String ("noxone xenqa");
+      Locale_Snk.Has_This_Weekday := True;
+      Locale_Snk.This_Weekday := To_Unbounded_String ("{weekday} yi");
+      Locale_Snk.Has_Next_Weekday := True;
+      Locale_Snk.Next_Weekday := To_Unbounded_String ("{weekday} na tage");
+      Locale_Snk.Has_Last_Weekday := True;
+      Locale_Snk.Last_Weekday := To_Unbounded_String ("{weekday} toxo kille");
+      Locale_Snk.Has_Months_In_Date := False;
+
+      Locale_Snk.Has_Short := True;
+      Locale_Snk.Short_Override.Has_Months := True;
+      Locale_Snk.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Snk.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Snk.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Snk.Short_Override.Months (4) := To_Unbounded_String ("Abi");
+      Locale_Snk.Short_Override.Months (5) := To_Unbounded_String ("Mey");
+      Locale_Snk.Short_Override.Months (6) := To_Unbounded_String ("Juw");
+      Locale_Snk.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Snk.Short_Override.Months (8) := To_Unbounded_String ("Awu");
+      Locale_Snk.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Snk.Short_Override.Months (10) := To_Unbounded_String ("Oku");
+      Locale_Snk.Short_Override.Months (11) := To_Unbounded_String ("Nuw");
+      Locale_Snk.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Snk.Short_Override.Has_Months_In_Date := False;
+      Locale_Snk.Short_Override.Has_Weekdays := True;
+      Locale_Snk.Short_Override.Weekdays (1) := To_Unbounded_String ("Alh");
+      Locale_Snk.Short_Override.Weekdays (2) := To_Unbounded_String ("Ati");
+      Locale_Snk.Short_Override.Weekdays (3) := To_Unbounded_String ("Ata");
+      Locale_Snk.Short_Override.Weekdays (4) := To_Unbounded_String ("Ala");
+      Locale_Snk.Short_Override.Weekdays (5) := To_Unbounded_String ("Alx");
+      Locale_Snk.Short_Override.Weekdays (6) := To_Unbounded_String ("Arj");
+      Locale_Snk.Short_Override.Weekdays (7) := To_Unbounded_String ("Asi");
+      Locale_Snk.Short_Override.Has_Day_Format := True;
+      Locale_Snk.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Snk.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Snk.Short_Override.Has_Date_Pattern := True;
+      Locale_Snk.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Snk.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Snk.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Snk.Short_Override.Has_Today := False;
+      Locale_Snk.Short_Override.Has_Tomorrow := False;
+      Locale_Snk.Short_Override.Has_Yesterday := False;
+
+      Locale_Snk.Has_Compact := True;
+      Locale_Snk.Compact_Override.Has_Months := False;
+      Locale_Snk.Compact_Override.Has_Months_In_Date := False;
+      Locale_Snk.Compact_Override.Has_Weekdays := False;
+      Locale_Snk.Compact_Override.Has_Day_Format := False;
+      Locale_Snk.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Snk.Compact_Override.Has_Date_Pattern := True;
+      Locale_Snk.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Snk.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Snk.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Snk.Compact_Override.Has_Today := False;
+      Locale_Snk.Compact_Override.Has_Tomorrow := False;
+      Locale_Snk.Compact_Override.Has_Yesterday := False;
+
+   end Init_snk;
+
    --  Source: date/locales/src/so.json
    procedure Init_so is
    begin
@@ -8994,6 +11357,200 @@ package body Sayabledate_Locales is
 
    end Init_sr;
 
+   --  Source: date/locales/src/ss.json
+   procedure Init_ss is
+   begin
+      Locale_Ss.Code := To_Unbounded_String ("ss");
+
+      Locale_Ss.Months (1) := To_Unbounded_String ("Bhimbidvwane");
+      Locale_Ss.Months (2) := To_Unbounded_String ("iNdlovana");
+      Locale_Ss.Months (3) := To_Unbounded_String ("iNdlovulenkhulu");
+      Locale_Ss.Months (4) := To_Unbounded_String ("Mabasa");
+      Locale_Ss.Months (5) := To_Unbounded_String ("iNkhwekhweti");
+      Locale_Ss.Months (6) := To_Unbounded_String ("iNhlaba");
+      Locale_Ss.Months (7) := To_Unbounded_String ("Kholwane");
+      Locale_Ss.Months (8) := To_Unbounded_String ("iNgci");
+      Locale_Ss.Months (9) := To_Unbounded_String ("iNyoni");
+      Locale_Ss.Months (10) := To_Unbounded_String ("iMphala");
+      Locale_Ss.Months (11) := To_Unbounded_String ("Lweti");
+      Locale_Ss.Months (12) := To_Unbounded_String ("iNgongoni");
+
+      Locale_Ss.Weekdays (1) := To_Unbounded_String ("LiSontfo");
+      Locale_Ss.Weekdays (2) := To_Unbounded_String ("uMsombuluko");
+      Locale_Ss.Weekdays (3) := To_Unbounded_String ("Lesibili");
+      Locale_Ss.Weekdays (4) := To_Unbounded_String ("Lesitsatfu");
+      Locale_Ss.Weekdays (5) := To_Unbounded_String ("Lesine");
+      Locale_Ss.Weekdays (6) := To_Unbounded_String ("Lesihlanu");
+      Locale_Ss.Weekdays (7) := To_Unbounded_String ("uMgcibelo");
+
+      Locale_Ss.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ss.Day_Format_Exception_Count := 0;
+
+      Locale_Ss.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ss.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Ss.Today := To_Unbounded_String ("lamuhla");
+      Locale_Ss.Tomorrow := To_Unbounded_String ("kusasa");
+      Locale_Ss.Yesterday := To_Unbounded_String ("itolo");
+      Locale_Ss.Has_Day_After_Tomorrow := True;
+      Locale_Ss.Day_After_Tomorrow := To_Unbounded_String ("ngemhlomunye");
+      Locale_Ss.Has_Day_Before_Yesterday := True;
+      Locale_Ss.Day_Before_Yesterday := To_Unbounded_String ("kutolo lokwengca");
+      Locale_Ss.Has_This_Weekday := True;
+      Locale_Ss.This_Weekday := To_Unbounded_String ("leli {weekday}");
+      Locale_Ss.Has_Next_Weekday := True;
+      Locale_Ss.Next_Weekday := To_Unbounded_String ("{weekday} letako");
+      Locale_Ss.Has_Last_Weekday := True;
+      Locale_Ss.Last_Weekday := To_Unbounded_String ("{weekday} leledlule");
+      Locale_Ss.Has_Months_In_Date := False;
+
+      Locale_Ss.Has_Short := True;
+      Locale_Ss.Short_Override.Has_Months := True;
+      Locale_Ss.Short_Override.Months (1) := To_Unbounded_String ("Bhi");
+      Locale_Ss.Short_Override.Months (2) := To_Unbounded_String ("Ind");
+      Locale_Ss.Short_Override.Months (3) := To_Unbounded_String ("Ink");
+      Locale_Ss.Short_Override.Months (4) := To_Unbounded_String ("Mab");
+      Locale_Ss.Short_Override.Months (5) := To_Unbounded_String ("Inkw");
+      Locale_Ss.Short_Override.Months (6) := To_Unbounded_String ("Inh");
+      Locale_Ss.Short_Override.Months (7) := To_Unbounded_String ("Kho");
+      Locale_Ss.Short_Override.Months (8) := To_Unbounded_String ("Ingc");
+      Locale_Ss.Short_Override.Months (9) := To_Unbounded_String ("Iny");
+      Locale_Ss.Short_Override.Months (10) := To_Unbounded_String ("Imp");
+      Locale_Ss.Short_Override.Months (11) := To_Unbounded_String ("Lwe");
+      Locale_Ss.Short_Override.Months (12) := To_Unbounded_String ("Ingo");
+      Locale_Ss.Short_Override.Has_Months_In_Date := False;
+      Locale_Ss.Short_Override.Has_Weekdays := True;
+      Locale_Ss.Short_Override.Weekdays (1) := To_Unbounded_String ("Son");
+      Locale_Ss.Short_Override.Weekdays (2) := To_Unbounded_String ("Mso");
+      Locale_Ss.Short_Override.Weekdays (3) := To_Unbounded_String ("Bil");
+      Locale_Ss.Short_Override.Weekdays (4) := To_Unbounded_String ("Tsa");
+      Locale_Ss.Short_Override.Weekdays (5) := To_Unbounded_String ("Sin");
+      Locale_Ss.Short_Override.Weekdays (6) := To_Unbounded_String ("Hla");
+      Locale_Ss.Short_Override.Weekdays (7) := To_Unbounded_String ("Mgc");
+      Locale_Ss.Short_Override.Has_Day_Format := True;
+      Locale_Ss.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ss.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ss.Short_Override.Has_Date_Pattern := True;
+      Locale_Ss.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ss.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ss.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Ss.Short_Override.Has_Today := False;
+      Locale_Ss.Short_Override.Has_Tomorrow := False;
+      Locale_Ss.Short_Override.Has_Yesterday := False;
+
+      Locale_Ss.Has_Compact := True;
+      Locale_Ss.Compact_Override.Has_Months := False;
+      Locale_Ss.Compact_Override.Has_Months_In_Date := False;
+      Locale_Ss.Compact_Override.Has_Weekdays := False;
+      Locale_Ss.Compact_Override.Has_Day_Format := False;
+      Locale_Ss.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ss.Compact_Override.Has_Date_Pattern := True;
+      Locale_Ss.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Ss.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ss.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Ss.Compact_Override.Has_Today := False;
+      Locale_Ss.Compact_Override.Has_Tomorrow := False;
+      Locale_Ss.Compact_Override.Has_Yesterday := False;
+
+   end Init_ss;
+
+   --  Source: date/locales/src/st.json
+   procedure Init_st is
+   begin
+      Locale_St.Code := To_Unbounded_String ("st");
+
+      Locale_St.Months (1) := To_Unbounded_String ("Pherekgong");
+      Locale_St.Months (2) := To_Unbounded_String ("Hlakola");
+      Locale_St.Months (3) := To_Unbounded_String ("Hlakubele");
+      Locale_St.Months (4) := To_Unbounded_String ("Mmese");
+      Locale_St.Months (5) := To_Unbounded_String ("Motsheanong");
+      Locale_St.Months (6) := To_Unbounded_String ("Phupjane");
+      Locale_St.Months (7) := To_Unbounded_String ("Phupu");
+      Locale_St.Months (8) := To_Unbounded_String ("Phato");
+      Locale_St.Months (9) := To_Unbounded_String ("Leotshe");
+      Locale_St.Months (10) := To_Unbounded_String ("Mphalane");
+      Locale_St.Months (11) := To_Unbounded_String ("Pudungwana");
+      Locale_St.Months (12) := To_Unbounded_String ("Tshitwe");
+
+      Locale_St.Weekdays (1) := To_Unbounded_String ("Sontaha");
+      Locale_St.Weekdays (2) := To_Unbounded_String ("Mmantaha");
+      Locale_St.Weekdays (3) := To_Unbounded_String ("Labobedi");
+      Locale_St.Weekdays (4) := To_Unbounded_String ("Laboraro");
+      Locale_St.Weekdays (5) := To_Unbounded_String ("Labone");
+      Locale_St.Weekdays (6) := To_Unbounded_String ("Labohlano");
+      Locale_St.Weekdays (7) := To_Unbounded_String ("Moqebelo");
+
+      Locale_St.Day_Format := To_Unbounded_String ("{n}");
+      Locale_St.Day_Format_Exception_Count := 0;
+
+      Locale_St.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_St.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_St.Today := To_Unbounded_String ("kajeno");
+      Locale_St.Tomorrow := To_Unbounded_String ("hosane");
+      Locale_St.Yesterday := To_Unbounded_String ("maobane");
+      Locale_St.Has_Day_After_Tomorrow := True;
+      Locale_St.Day_After_Tomorrow := To_Unbounded_String ("hosanemane");
+      Locale_St.Has_Day_Before_Yesterday := True;
+      Locale_St.Day_Before_Yesterday := To_Unbounded_String ("maobanyane");
+      Locale_St.Has_This_Weekday := True;
+      Locale_St.This_Weekday := To_Unbounded_String ("{weekday} ena");
+      Locale_St.Has_Next_Weekday := True;
+      Locale_St.Next_Weekday := To_Unbounded_String ("{weekday} e tlang");
+      Locale_St.Has_Last_Weekday := True;
+      Locale_St.Last_Weekday := To_Unbounded_String ("{weekday} e fetileng");
+      Locale_St.Has_Months_In_Date := False;
+
+      Locale_St.Has_Short := True;
+      Locale_St.Short_Override.Has_Months := True;
+      Locale_St.Short_Override.Months (1) := To_Unbounded_String ("Phe");
+      Locale_St.Short_Override.Months (2) := To_Unbounded_String ("Hlk");
+      Locale_St.Short_Override.Months (3) := To_Unbounded_String ("Hlb");
+      Locale_St.Short_Override.Months (4) := To_Unbounded_String ("Mme");
+      Locale_St.Short_Override.Months (5) := To_Unbounded_String ("Mot");
+      Locale_St.Short_Override.Months (6) := To_Unbounded_String ("Phj");
+      Locale_St.Short_Override.Months (7) := To_Unbounded_String ("Php");
+      Locale_St.Short_Override.Months (8) := To_Unbounded_String ("Pha");
+      Locale_St.Short_Override.Months (9) := To_Unbounded_String ("Leo");
+      Locale_St.Short_Override.Months (10) := To_Unbounded_String ("Mph");
+      Locale_St.Short_Override.Months (11) := To_Unbounded_String ("Pud");
+      Locale_St.Short_Override.Months (12) := To_Unbounded_String ("Tsh");
+      Locale_St.Short_Override.Has_Months_In_Date := False;
+      Locale_St.Short_Override.Has_Weekdays := True;
+      Locale_St.Short_Override.Weekdays (1) := To_Unbounded_String ("Son");
+      Locale_St.Short_Override.Weekdays (2) := To_Unbounded_String ("Mma");
+      Locale_St.Short_Override.Weekdays (3) := To_Unbounded_String ("Bed");
+      Locale_St.Short_Override.Weekdays (4) := To_Unbounded_String ("Rar");
+      Locale_St.Short_Override.Weekdays (5) := To_Unbounded_String ("Bon");
+      Locale_St.Short_Override.Weekdays (6) := To_Unbounded_String ("Hla");
+      Locale_St.Short_Override.Weekdays (7) := To_Unbounded_String ("Moq");
+      Locale_St.Short_Override.Has_Day_Format := True;
+      Locale_St.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_St.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_St.Short_Override.Has_Date_Pattern := True;
+      Locale_St.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_St.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_St.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_St.Short_Override.Has_Today := False;
+      Locale_St.Short_Override.Has_Tomorrow := False;
+      Locale_St.Short_Override.Has_Yesterday := False;
+
+      Locale_St.Has_Compact := True;
+      Locale_St.Compact_Override.Has_Months := False;
+      Locale_St.Compact_Override.Has_Months_In_Date := False;
+      Locale_St.Compact_Override.Has_Weekdays := False;
+      Locale_St.Compact_Override.Has_Day_Format := False;
+      Locale_St.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_St.Compact_Override.Has_Date_Pattern := True;
+      Locale_St.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_St.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_St.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_St.Compact_Override.Has_Today := False;
+      Locale_St.Compact_Override.Has_Tomorrow := False;
+      Locale_St.Compact_Override.Has_Yesterday := False;
+
+   end Init_st;
+
    --  Source: date/locales/src/su.json
    procedure Init_su is
    begin
@@ -9090,6 +11647,103 @@ package body Sayabledate_Locales is
       Locale_Su.Compact_Override.Has_Yesterday := False;
 
    end Init_su;
+
+   --  Source: date/locales/src/suk.json
+   procedure Init_suk is
+   begin
+      Locale_Suk.Code := To_Unbounded_String ("suk");
+
+      Locale_Suk.Months (1) := To_Unbounded_String ("Januari");
+      Locale_Suk.Months (2) := To_Unbounded_String ("Februari");
+      Locale_Suk.Months (3) := To_Unbounded_String ("Machi");
+      Locale_Suk.Months (4) := To_Unbounded_String ("Aprili");
+      Locale_Suk.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Suk.Months (6) := To_Unbounded_String ("Juni");
+      Locale_Suk.Months (7) := To_Unbounded_String ("Julai");
+      Locale_Suk.Months (8) := To_Unbounded_String ("Agosti");
+      Locale_Suk.Months (9) := To_Unbounded_String ("Septemba");
+      Locale_Suk.Months (10) := To_Unbounded_String ("Oktoba");
+      Locale_Suk.Months (11) := To_Unbounded_String ("Novemba");
+      Locale_Suk.Months (12) := To_Unbounded_String ("Desemba");
+
+      Locale_Suk.Weekdays (1) := To_Unbounded_String ("Jumapili");
+      Locale_Suk.Weekdays (2) := To_Unbounded_String ("Jumatatu");
+      Locale_Suk.Weekdays (3) := To_Unbounded_String ("Jumanne");
+      Locale_Suk.Weekdays (4) := To_Unbounded_String ("Jumatano");
+      Locale_Suk.Weekdays (5) := To_Unbounded_String ("Alhamisi");
+      Locale_Suk.Weekdays (6) := To_Unbounded_String ("Ijumaa");
+      Locale_Suk.Weekdays (7) := To_Unbounded_String ("Jumamosi");
+
+      Locale_Suk.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Suk.Day_Format_Exception_Count := 0;
+
+      Locale_Suk.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Suk.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Suk.Today := To_Unbounded_String ("lelo");
+      Locale_Suk.Tomorrow := To_Unbounded_String ("milau");
+      Locale_Suk.Yesterday := To_Unbounded_String ("igolo");
+      Locale_Suk.Has_Day_After_Tomorrow := True;
+      Locale_Suk.Day_After_Tomorrow := To_Unbounded_String ("milau ya pili");
+      Locale_Suk.Has_Day_Before_Yesterday := True;
+      Locale_Suk.Day_Before_Yesterday := To_Unbounded_String ("igolo ya pili");
+      Locale_Suk.Has_This_Weekday := True;
+      Locale_Suk.This_Weekday := To_Unbounded_String ("{weekday} iyi");
+      Locale_Suk.Has_Next_Weekday := True;
+      Locale_Suk.Next_Weekday := To_Unbounded_String ("{weekday} ya kuja");
+      Locale_Suk.Has_Last_Weekday := True;
+      Locale_Suk.Last_Weekday := To_Unbounded_String ("{weekday} iliyopita");
+      Locale_Suk.Has_Months_In_Date := False;
+
+      Locale_Suk.Has_Short := True;
+      Locale_Suk.Short_Override.Has_Months := True;
+      Locale_Suk.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Suk.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Suk.Short_Override.Months (3) := To_Unbounded_String ("Mac");
+      Locale_Suk.Short_Override.Months (4) := To_Unbounded_String ("Apr");
+      Locale_Suk.Short_Override.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Suk.Short_Override.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Suk.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Suk.Short_Override.Months (8) := To_Unbounded_String ("Ago");
+      Locale_Suk.Short_Override.Months (9) := To_Unbounded_String ("Sep");
+      Locale_Suk.Short_Override.Months (10) := To_Unbounded_String ("Okt");
+      Locale_Suk.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Suk.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Suk.Short_Override.Has_Months_In_Date := False;
+      Locale_Suk.Short_Override.Has_Weekdays := True;
+      Locale_Suk.Short_Override.Weekdays (1) := To_Unbounded_String ("Jpl");
+      Locale_Suk.Short_Override.Weekdays (2) := To_Unbounded_String ("Jtt");
+      Locale_Suk.Short_Override.Weekdays (3) := To_Unbounded_String ("Jnn");
+      Locale_Suk.Short_Override.Weekdays (4) := To_Unbounded_String ("Jtn");
+      Locale_Suk.Short_Override.Weekdays (5) := To_Unbounded_String ("Alh");
+      Locale_Suk.Short_Override.Weekdays (6) := To_Unbounded_String ("Ijm");
+      Locale_Suk.Short_Override.Weekdays (7) := To_Unbounded_String ("Jms");
+      Locale_Suk.Short_Override.Has_Day_Format := True;
+      Locale_Suk.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Suk.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Suk.Short_Override.Has_Date_Pattern := True;
+      Locale_Suk.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Suk.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Suk.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Suk.Short_Override.Has_Today := False;
+      Locale_Suk.Short_Override.Has_Tomorrow := False;
+      Locale_Suk.Short_Override.Has_Yesterday := False;
+
+      Locale_Suk.Has_Compact := True;
+      Locale_Suk.Compact_Override.Has_Months := False;
+      Locale_Suk.Compact_Override.Has_Months_In_Date := False;
+      Locale_Suk.Compact_Override.Has_Weekdays := False;
+      Locale_Suk.Compact_Override.Has_Day_Format := False;
+      Locale_Suk.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Suk.Compact_Override.Has_Date_Pattern := True;
+      Locale_Suk.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Suk.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Suk.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Suk.Compact_Override.Has_Today := False;
+      Locale_Suk.Compact_Override.Has_Tomorrow := False;
+      Locale_Suk.Compact_Override.Has_Yesterday := False;
+
+   end Init_suk;
 
    --  Source: date/locales/src/sv.json
    procedure Init_sv is
@@ -9479,6 +12133,103 @@ package body Sayabledate_Locales is
 
    end Init_te;
 
+   --  Source: date/locales/src/tem.json
+   procedure Init_tem is
+   begin
+      Locale_Tem.Code := To_Unbounded_String ("tem");
+
+      Locale_Tem.Months (1) := To_Unbounded_String ("Janɛri");
+      Locale_Tem.Months (2) := To_Unbounded_String ("Fɛbrɛri");
+      Locale_Tem.Months (3) := To_Unbounded_String ("Mach");
+      Locale_Tem.Months (4) := To_Unbounded_String ("Epril");
+      Locale_Tem.Months (5) := To_Unbounded_String ("Me");
+      Locale_Tem.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Tem.Months (7) := To_Unbounded_String ("Julai");
+      Locale_Tem.Months (8) := To_Unbounded_String ("Ɔgɔst");
+      Locale_Tem.Months (9) := To_Unbounded_String ("Sɛtɛmba");
+      Locale_Tem.Months (10) := To_Unbounded_String ("Ɔktoba");
+      Locale_Tem.Months (11) := To_Unbounded_String ("Novɛmba");
+      Locale_Tem.Months (12) := To_Unbounded_String ("Disɛmba");
+
+      Locale_Tem.Weekdays (1) := To_Unbounded_String ("Ləpɛt");
+      Locale_Tem.Weekdays (2) := To_Unbounded_String ("Lətalɛ");
+      Locale_Tem.Weekdays (3) := To_Unbounded_String ("Ləsalɛ");
+      Locale_Tem.Weekdays (4) := To_Unbounded_String ("Lərarɛ");
+      Locale_Tem.Weekdays (5) := To_Unbounded_String ("Lənɛr");
+      Locale_Tem.Weekdays (6) := To_Unbounded_String ("Ləjuma");
+      Locale_Tem.Weekdays (7) := To_Unbounded_String ("Ləsɛbɛ");
+
+      Locale_Tem.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Tem.Day_Format_Exception_Count := 0;
+
+      Locale_Tem.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Tem.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Tem.Today := To_Unbounded_String ("ani");
+      Locale_Tem.Tomorrow := To_Unbounded_String ("tənɔŋ");
+      Locale_Tem.Yesterday := To_Unbounded_String ("yenɛ");
+      Locale_Tem.Has_Day_After_Tomorrow := True;
+      Locale_Tem.Day_After_Tomorrow := To_Unbounded_String ("tənɔŋ tənɔŋ");
+      Locale_Tem.Has_Day_Before_Yesterday := True;
+      Locale_Tem.Day_Before_Yesterday := To_Unbounded_String ("yenɛ yenɛ");
+      Locale_Tem.Has_This_Weekday := True;
+      Locale_Tem.This_Weekday := To_Unbounded_String ("{weekday} yi");
+      Locale_Tem.Has_Next_Weekday := True;
+      Locale_Tem.Next_Weekday := To_Unbounded_String ("{weekday} ro ba");
+      Locale_Tem.Has_Last_Weekday := True;
+      Locale_Tem.Last_Weekday := To_Unbounded_String ("{weekday} ro ba kɛ");
+      Locale_Tem.Has_Months_In_Date := False;
+
+      Locale_Tem.Has_Short := True;
+      Locale_Tem.Short_Override.Has_Months := True;
+      Locale_Tem.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Tem.Short_Override.Months (2) := To_Unbounded_String ("Fɛb");
+      Locale_Tem.Short_Override.Months (3) := To_Unbounded_String ("Mac");
+      Locale_Tem.Short_Override.Months (4) := To_Unbounded_String ("Epr");
+      Locale_Tem.Short_Override.Months (5) := To_Unbounded_String ("Me");
+      Locale_Tem.Short_Override.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Tem.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Tem.Short_Override.Months (8) := To_Unbounded_String ("Ɔgɔ");
+      Locale_Tem.Short_Override.Months (9) := To_Unbounded_String ("Sɛt");
+      Locale_Tem.Short_Override.Months (10) := To_Unbounded_String ("Ɔkt");
+      Locale_Tem.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Tem.Short_Override.Months (12) := To_Unbounded_String ("Dis");
+      Locale_Tem.Short_Override.Has_Months_In_Date := False;
+      Locale_Tem.Short_Override.Has_Weekdays := True;
+      Locale_Tem.Short_Override.Weekdays (1) := To_Unbounded_String ("Lpɛ");
+      Locale_Tem.Short_Override.Weekdays (2) := To_Unbounded_String ("Lta");
+      Locale_Tem.Short_Override.Weekdays (3) := To_Unbounded_String ("Lsa");
+      Locale_Tem.Short_Override.Weekdays (4) := To_Unbounded_String ("Lra");
+      Locale_Tem.Short_Override.Weekdays (5) := To_Unbounded_String ("Lnɛ");
+      Locale_Tem.Short_Override.Weekdays (6) := To_Unbounded_String ("Lju");
+      Locale_Tem.Short_Override.Weekdays (7) := To_Unbounded_String ("Lsɛ");
+      Locale_Tem.Short_Override.Has_Day_Format := True;
+      Locale_Tem.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Tem.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Tem.Short_Override.Has_Date_Pattern := True;
+      Locale_Tem.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Tem.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Tem.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Tem.Short_Override.Has_Today := False;
+      Locale_Tem.Short_Override.Has_Tomorrow := False;
+      Locale_Tem.Short_Override.Has_Yesterday := False;
+
+      Locale_Tem.Has_Compact := True;
+      Locale_Tem.Compact_Override.Has_Months := False;
+      Locale_Tem.Compact_Override.Has_Months_In_Date := False;
+      Locale_Tem.Compact_Override.Has_Weekdays := False;
+      Locale_Tem.Compact_Override.Has_Day_Format := False;
+      Locale_Tem.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Tem.Compact_Override.Has_Date_Pattern := True;
+      Locale_Tem.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Tem.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Tem.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Tem.Compact_Override.Has_Today := False;
+      Locale_Tem.Compact_Override.Has_Tomorrow := False;
+      Locale_Tem.Compact_Override.Has_Yesterday := False;
+
+   end Init_tem;
+
    --  Source: date/locales/src/tg.json
    procedure Init_tg is
    begin
@@ -9770,6 +12521,103 @@ package body Sayabledate_Locales is
 
    end Init_ti;
 
+   --  Source: date/locales/src/tig.json
+   procedure Init_tig is
+   begin
+      Locale_Tig.Code := To_Unbounded_String ("tig");
+
+      Locale_Tig.Months (1) := To_Unbounded_String ("Yannaayer");
+      Locale_Tig.Months (2) := To_Unbounded_String ("Febbraayer");
+      Locale_Tig.Months (3) := To_Unbounded_String ("Maaris");
+      Locale_Tig.Months (4) := To_Unbounded_String ("Abriil");
+      Locale_Tig.Months (5) := To_Unbounded_String ("Maay");
+      Locale_Tig.Months (6) := To_Unbounded_String ("Yuunyo");
+      Locale_Tig.Months (7) := To_Unbounded_String ("Yulyo");
+      Locale_Tig.Months (8) := To_Unbounded_String ("Agoosṭo");
+      Locale_Tig.Months (9) := To_Unbounded_String ("Seṭṭembre");
+      Locale_Tig.Months (10) := To_Unbounded_String ("Oṭṭoobre");
+      Locale_Tig.Months (11) := To_Unbounded_String ("Noovembre");
+      Locale_Tig.Months (12) := To_Unbounded_String ("Diičembre");
+
+      Locale_Tig.Weekdays (1) := To_Unbounded_String ("Sənbət");
+      Locale_Tig.Weekdays (2) := To_Unbounded_String ("Sənuy");
+      Locale_Tig.Weekdays (3) := To_Unbounded_String ("Sələs");
+      Locale_Tig.Weekdays (4) := To_Unbounded_String ("Rəbuʿ");
+      Locale_Tig.Weekdays (5) := To_Unbounded_String ("Ḥamus");
+      Locale_Tig.Weekdays (6) := To_Unbounded_String ("ʿArbi");
+      Locale_Tig.Weekdays (7) := To_Unbounded_String ("Qədami");
+
+      Locale_Tig.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Tig.Day_Format_Exception_Count := 0;
+
+      Locale_Tig.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Tig.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Tig.Today := To_Unbounded_String ("yom");
+      Locale_Tig.Tomorrow := To_Unbounded_String ("gədam");
+      Locale_Tig.Yesterday := To_Unbounded_String ("timali");
+      Locale_Tig.Has_Day_After_Tomorrow := True;
+      Locale_Tig.Day_After_Tomorrow := To_Unbounded_String ("gədam gədam");
+      Locale_Tig.Has_Day_Before_Yesterday := True;
+      Locale_Tig.Day_Before_Yesterday := To_Unbounded_String ("timali timali");
+      Locale_Tig.Has_This_Weekday := True;
+      Locale_Tig.This_Weekday := To_Unbounded_String ("{weekday} ʾənta");
+      Locale_Tig.Has_Next_Weekday := True;
+      Locale_Tig.Next_Weekday := To_Unbounded_String ("{weekday} ba");
+      Locale_Tig.Has_Last_Weekday := True;
+      Locale_Tig.Last_Weekday := To_Unbounded_String ("{weekday} qədmi");
+      Locale_Tig.Has_Months_In_Date := False;
+
+      Locale_Tig.Has_Short := True;
+      Locale_Tig.Short_Override.Has_Months := True;
+      Locale_Tig.Short_Override.Months (1) := To_Unbounded_String ("Yan");
+      Locale_Tig.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Tig.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Tig.Short_Override.Months (4) := To_Unbounded_String ("Abr");
+      Locale_Tig.Short_Override.Months (5) := To_Unbounded_String ("May");
+      Locale_Tig.Short_Override.Months (6) := To_Unbounded_String ("Yun");
+      Locale_Tig.Short_Override.Months (7) := To_Unbounded_String ("Yul");
+      Locale_Tig.Short_Override.Months (8) := To_Unbounded_String ("Ago");
+      Locale_Tig.Short_Override.Months (9) := To_Unbounded_String ("Seṭ");
+      Locale_Tig.Short_Override.Months (10) := To_Unbounded_String ("Oṭṭ");
+      Locale_Tig.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Tig.Short_Override.Months (12) := To_Unbounded_String ("Dii");
+      Locale_Tig.Short_Override.Has_Months_In_Date := False;
+      Locale_Tig.Short_Override.Has_Weekdays := True;
+      Locale_Tig.Short_Override.Weekdays (1) := To_Unbounded_String ("Sən");
+      Locale_Tig.Short_Override.Weekdays (2) := To_Unbounded_String ("Snu");
+      Locale_Tig.Short_Override.Weekdays (3) := To_Unbounded_String ("Səl");
+      Locale_Tig.Short_Override.Weekdays (4) := To_Unbounded_String ("Rəb");
+      Locale_Tig.Short_Override.Weekdays (5) := To_Unbounded_String ("Ḥam");
+      Locale_Tig.Short_Override.Weekdays (6) := To_Unbounded_String ("ʿAr");
+      Locale_Tig.Short_Override.Weekdays (7) := To_Unbounded_String ("Qəd");
+      Locale_Tig.Short_Override.Has_Day_Format := True;
+      Locale_Tig.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Tig.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Tig.Short_Override.Has_Date_Pattern := True;
+      Locale_Tig.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Tig.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Tig.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Tig.Short_Override.Has_Today := False;
+      Locale_Tig.Short_Override.Has_Tomorrow := False;
+      Locale_Tig.Short_Override.Has_Yesterday := False;
+
+      Locale_Tig.Has_Compact := True;
+      Locale_Tig.Compact_Override.Has_Months := False;
+      Locale_Tig.Compact_Override.Has_Months_In_Date := False;
+      Locale_Tig.Compact_Override.Has_Weekdays := False;
+      Locale_Tig.Compact_Override.Has_Day_Format := False;
+      Locale_Tig.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Tig.Compact_Override.Has_Date_Pattern := True;
+      Locale_Tig.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Tig.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Tig.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Tig.Compact_Override.Has_Today := False;
+      Locale_Tig.Compact_Override.Has_Tomorrow := False;
+      Locale_Tig.Compact_Override.Has_Yesterday := False;
+
+   end Init_tig;
+
    --  Source: date/locales/src/tk.json
    procedure Init_tk is
    begin
@@ -9867,6 +12715,103 @@ package body Sayabledate_Locales is
 
    end Init_tk;
 
+   --  Source: date/locales/src/tn.json
+   procedure Init_tn is
+   begin
+      Locale_Tn.Code := To_Unbounded_String ("tn");
+
+      Locale_Tn.Months (1) := To_Unbounded_String ("Ferikgong");
+      Locale_Tn.Months (2) := To_Unbounded_String ("Tlhakole");
+      Locale_Tn.Months (3) := To_Unbounded_String ("Mopitlo");
+      Locale_Tn.Months (4) := To_Unbounded_String ("Moranang");
+      Locale_Tn.Months (5) := To_Unbounded_String ("Motsheganong");
+      Locale_Tn.Months (6) := To_Unbounded_String ("Seetebosigo");
+      Locale_Tn.Months (7) := To_Unbounded_String ("Phukwi");
+      Locale_Tn.Months (8) := To_Unbounded_String ("Phatwe");
+      Locale_Tn.Months (9) := To_Unbounded_String ("Lwetse");
+      Locale_Tn.Months (10) := To_Unbounded_String ("Diphalane");
+      Locale_Tn.Months (11) := To_Unbounded_String ("Ngwanatsele");
+      Locale_Tn.Months (12) := To_Unbounded_String ("Sedimothole");
+
+      Locale_Tn.Weekdays (1) := To_Unbounded_String ("Tshipi");
+      Locale_Tn.Weekdays (2) := To_Unbounded_String ("Mosopulogo");
+      Locale_Tn.Weekdays (3) := To_Unbounded_String ("Labobedi");
+      Locale_Tn.Weekdays (4) := To_Unbounded_String ("Laboraro");
+      Locale_Tn.Weekdays (5) := To_Unbounded_String ("Labone");
+      Locale_Tn.Weekdays (6) := To_Unbounded_String ("Labotlhano");
+      Locale_Tn.Weekdays (7) := To_Unbounded_String ("Matlhatso");
+
+      Locale_Tn.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Tn.Day_Format_Exception_Count := 0;
+
+      Locale_Tn.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Tn.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Tn.Today := To_Unbounded_String ("gompieno");
+      Locale_Tn.Tomorrow := To_Unbounded_String ("kamoso");
+      Locale_Tn.Yesterday := To_Unbounded_String ("maabane");
+      Locale_Tn.Has_Day_After_Tomorrow := True;
+      Locale_Tn.Day_After_Tomorrow := To_Unbounded_String ("morago ga kamoso");
+      Locale_Tn.Has_Day_Before_Yesterday := True;
+      Locale_Tn.Day_Before_Yesterday := To_Unbounded_String ("maabanyane");
+      Locale_Tn.Has_This_Weekday := True;
+      Locale_Tn.This_Weekday := To_Unbounded_String ("{weekday} e");
+      Locale_Tn.Has_Next_Weekday := True;
+      Locale_Tn.Next_Weekday := To_Unbounded_String ("{weekday} e e tlang");
+      Locale_Tn.Has_Last_Weekday := True;
+      Locale_Tn.Last_Weekday := To_Unbounded_String ("{weekday} e e fetileng");
+      Locale_Tn.Has_Months_In_Date := False;
+
+      Locale_Tn.Has_Short := True;
+      Locale_Tn.Short_Override.Has_Months := True;
+      Locale_Tn.Short_Override.Months (1) := To_Unbounded_String ("Fer");
+      Locale_Tn.Short_Override.Months (2) := To_Unbounded_String ("Tlh");
+      Locale_Tn.Short_Override.Months (3) := To_Unbounded_String ("Mop");
+      Locale_Tn.Short_Override.Months (4) := To_Unbounded_String ("Mor");
+      Locale_Tn.Short_Override.Months (5) := To_Unbounded_String ("Mot");
+      Locale_Tn.Short_Override.Months (6) := To_Unbounded_String ("See");
+      Locale_Tn.Short_Override.Months (7) := To_Unbounded_String ("Phk");
+      Locale_Tn.Short_Override.Months (8) := To_Unbounded_String ("Pha");
+      Locale_Tn.Short_Override.Months (9) := To_Unbounded_String ("Lwe");
+      Locale_Tn.Short_Override.Months (10) := To_Unbounded_String ("Dip");
+      Locale_Tn.Short_Override.Months (11) := To_Unbounded_String ("Ngw");
+      Locale_Tn.Short_Override.Months (12) := To_Unbounded_String ("Sed");
+      Locale_Tn.Short_Override.Has_Months_In_Date := False;
+      Locale_Tn.Short_Override.Has_Weekdays := True;
+      Locale_Tn.Short_Override.Weekdays (1) := To_Unbounded_String ("Tsh");
+      Locale_Tn.Short_Override.Weekdays (2) := To_Unbounded_String ("Mos");
+      Locale_Tn.Short_Override.Weekdays (3) := To_Unbounded_String ("Bed");
+      Locale_Tn.Short_Override.Weekdays (4) := To_Unbounded_String ("Rar");
+      Locale_Tn.Short_Override.Weekdays (5) := To_Unbounded_String ("Bon");
+      Locale_Tn.Short_Override.Weekdays (6) := To_Unbounded_String ("Tlh");
+      Locale_Tn.Short_Override.Weekdays (7) := To_Unbounded_String ("Mat");
+      Locale_Tn.Short_Override.Has_Day_Format := True;
+      Locale_Tn.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Tn.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Tn.Short_Override.Has_Date_Pattern := True;
+      Locale_Tn.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Tn.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Tn.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Tn.Short_Override.Has_Today := False;
+      Locale_Tn.Short_Override.Has_Tomorrow := False;
+      Locale_Tn.Short_Override.Has_Yesterday := False;
+
+      Locale_Tn.Has_Compact := True;
+      Locale_Tn.Compact_Override.Has_Months := False;
+      Locale_Tn.Compact_Override.Has_Months_In_Date := False;
+      Locale_Tn.Compact_Override.Has_Weekdays := False;
+      Locale_Tn.Compact_Override.Has_Day_Format := False;
+      Locale_Tn.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Tn.Compact_Override.Has_Date_Pattern := True;
+      Locale_Tn.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Tn.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Tn.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Tn.Compact_Override.Has_Today := False;
+      Locale_Tn.Compact_Override.Has_Tomorrow := False;
+      Locale_Tn.Compact_Override.Has_Yesterday := False;
+
+   end Init_tn;
+
    --  Source: date/locales/src/tr.json
    procedure Init_tr is
    begin
@@ -9963,6 +12908,103 @@ package body Sayabledate_Locales is
       Locale_Tr.Compact_Override.Has_Yesterday := False;
 
    end Init_tr;
+
+   --  Source: date/locales/src/ts.json
+   procedure Init_ts is
+   begin
+      Locale_Ts.Code := To_Unbounded_String ("ts");
+
+      Locale_Ts.Months (1) := To_Unbounded_String ("Sunguti");
+      Locale_Ts.Months (2) := To_Unbounded_String ("Nyenyenyani");
+      Locale_Ts.Months (3) := To_Unbounded_String ("Nyenyankulu");
+      Locale_Ts.Months (4) := To_Unbounded_String ("Dzivamisoko");
+      Locale_Ts.Months (5) := To_Unbounded_String ("Mudyaxihi");
+      Locale_Ts.Months (6) := To_Unbounded_String ("Khotavuxika");
+      Locale_Ts.Months (7) := To_Unbounded_String ("Mawuwani");
+      Locale_Ts.Months (8) := To_Unbounded_String ("Mhawuri");
+      Locale_Ts.Months (9) := To_Unbounded_String ("Ndzhati");
+      Locale_Ts.Months (10) := To_Unbounded_String ("Nhlangula");
+      Locale_Ts.Months (11) := To_Unbounded_String ("Hukuri");
+      Locale_Ts.Months (12) := To_Unbounded_String ("N'wendzamhala");
+
+      Locale_Ts.Weekdays (1) := To_Unbounded_String ("Sonto");
+      Locale_Ts.Weekdays (2) := To_Unbounded_String ("Musumbhunuku");
+      Locale_Ts.Weekdays (3) := To_Unbounded_String ("Ravumbirhi");
+      Locale_Ts.Weekdays (4) := To_Unbounded_String ("Ravunharhu");
+      Locale_Ts.Weekdays (5) := To_Unbounded_String ("Ravumune");
+      Locale_Ts.Weekdays (6) := To_Unbounded_String ("Ravuntlhanu");
+      Locale_Ts.Weekdays (7) := To_Unbounded_String ("Mugqivela");
+
+      Locale_Ts.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ts.Day_Format_Exception_Count := 0;
+
+      Locale_Ts.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ts.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Ts.Today := To_Unbounded_String ("namuntlha");
+      Locale_Ts.Tomorrow := To_Unbounded_String ("mundzuku");
+      Locale_Ts.Yesterday := To_Unbounded_String ("tolo");
+      Locale_Ts.Has_Day_After_Tomorrow := True;
+      Locale_Ts.Day_After_Tomorrow := To_Unbounded_String ("mundzuku wa vumbirhi");
+      Locale_Ts.Has_Day_Before_Yesterday := True;
+      Locale_Ts.Day_Before_Yesterday := To_Unbounded_String ("tolo ra vumbirhi");
+      Locale_Ts.Has_This_Weekday := True;
+      Locale_Ts.This_Weekday := To_Unbounded_String ("{weekday} leyi");
+      Locale_Ts.Has_Next_Weekday := True;
+      Locale_Ts.Next_Weekday := To_Unbounded_String ("{weekday} leyi taka");
+      Locale_Ts.Has_Last_Weekday := True;
+      Locale_Ts.Last_Weekday := To_Unbounded_String ("{weekday} leyi nga hundza");
+      Locale_Ts.Has_Months_In_Date := False;
+
+      Locale_Ts.Has_Short := True;
+      Locale_Ts.Short_Override.Has_Months := True;
+      Locale_Ts.Short_Override.Months (1) := To_Unbounded_String ("Sun");
+      Locale_Ts.Short_Override.Months (2) := To_Unbounded_String ("Nye");
+      Locale_Ts.Short_Override.Months (3) := To_Unbounded_String ("Nyk");
+      Locale_Ts.Short_Override.Months (4) := To_Unbounded_String ("Dzi");
+      Locale_Ts.Short_Override.Months (5) := To_Unbounded_String ("Mud");
+      Locale_Ts.Short_Override.Months (6) := To_Unbounded_String ("Kho");
+      Locale_Ts.Short_Override.Months (7) := To_Unbounded_String ("Maw");
+      Locale_Ts.Short_Override.Months (8) := To_Unbounded_String ("Mha");
+      Locale_Ts.Short_Override.Months (9) := To_Unbounded_String ("Ndz");
+      Locale_Ts.Short_Override.Months (10) := To_Unbounded_String ("Nhl");
+      Locale_Ts.Short_Override.Months (11) := To_Unbounded_String ("Huk");
+      Locale_Ts.Short_Override.Months (12) := To_Unbounded_String ("N'w");
+      Locale_Ts.Short_Override.Has_Months_In_Date := False;
+      Locale_Ts.Short_Override.Has_Weekdays := True;
+      Locale_Ts.Short_Override.Weekdays (1) := To_Unbounded_String ("Son");
+      Locale_Ts.Short_Override.Weekdays (2) := To_Unbounded_String ("Mus");
+      Locale_Ts.Short_Override.Weekdays (3) := To_Unbounded_String ("Bir");
+      Locale_Ts.Short_Override.Weekdays (4) := To_Unbounded_String ("Har");
+      Locale_Ts.Short_Override.Weekdays (5) := To_Unbounded_String ("Mun");
+      Locale_Ts.Short_Override.Weekdays (6) := To_Unbounded_String ("Tlh");
+      Locale_Ts.Short_Override.Weekdays (7) := To_Unbounded_String ("Mug");
+      Locale_Ts.Short_Override.Has_Day_Format := True;
+      Locale_Ts.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Ts.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ts.Short_Override.Has_Date_Pattern := True;
+      Locale_Ts.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Ts.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ts.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Ts.Short_Override.Has_Today := False;
+      Locale_Ts.Short_Override.Has_Tomorrow := False;
+      Locale_Ts.Short_Override.Has_Yesterday := False;
+
+      Locale_Ts.Has_Compact := True;
+      Locale_Ts.Compact_Override.Has_Months := False;
+      Locale_Ts.Compact_Override.Has_Months_In_Date := False;
+      Locale_Ts.Compact_Override.Has_Weekdays := False;
+      Locale_Ts.Compact_Override.Has_Day_Format := False;
+      Locale_Ts.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Ts.Compact_Override.Has_Date_Pattern := True;
+      Locale_Ts.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Ts.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Ts.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Ts.Compact_Override.Has_Today := False;
+      Locale_Ts.Compact_Override.Has_Tomorrow := False;
+      Locale_Ts.Compact_Override.Has_Yesterday := False;
+
+   end Init_ts;
 
    --  Source: date/locales/src/tzm.json
    procedure Init_tzm is
@@ -10167,6 +13209,103 @@ package body Sayabledate_Locales is
       Locale_Uk.Compact_Override.Has_Yesterday := False;
 
    end Init_uk;
+
+   --  Source: date/locales/src/umb.json
+   procedure Init_umb is
+   begin
+      Locale_Umb.Code := To_Unbounded_String ("umb");
+
+      Locale_Umb.Months (1) := To_Unbounded_String ("Janelu");
+      Locale_Umb.Months (2) := To_Unbounded_String ("Fevelelu");
+      Locale_Umb.Months (3) := To_Unbounded_String ("Malsu");
+      Locale_Umb.Months (4) := To_Unbounded_String ("Abili");
+      Locale_Umb.Months (5) := To_Unbounded_String ("Mayu");
+      Locale_Umb.Months (6) := To_Unbounded_String ("Junyu");
+      Locale_Umb.Months (7) := To_Unbounded_String ("Julyu");
+      Locale_Umb.Months (8) := To_Unbounded_String ("Agostu");
+      Locale_Umb.Months (9) := To_Unbounded_String ("Setembu");
+      Locale_Umb.Months (10) := To_Unbounded_String ("Otubu");
+      Locale_Umb.Months (11) := To_Unbounded_String ("Novembu");
+      Locale_Umb.Months (12) := To_Unbounded_String ("Desembu");
+
+      Locale_Umb.Weekdays (1) := To_Unbounded_String ("Lumingu");
+      Locale_Umb.Weekdays (2) := To_Unbounded_String ("Cimosi");
+      Locale_Umb.Weekdays (3) := To_Unbounded_String ("Civali");
+      Locale_Umb.Weekdays (4) := To_Unbounded_String ("Citathu");
+      Locale_Umb.Weekdays (5) := To_Unbounded_String ("Cinyali");
+      Locale_Umb.Weekdays (6) := To_Unbounded_String ("Citanu");
+      Locale_Umb.Weekdays (7) := To_Unbounded_String ("Cisabalu");
+
+      Locale_Umb.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Umb.Day_Format_Exception_Count := 0;
+
+      Locale_Umb.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Umb.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Umb.Today := To_Unbounded_String ("oloku");
+      Locale_Umb.Tomorrow := To_Unbounded_String ("ocisungu");
+      Locale_Umb.Yesterday := To_Unbounded_String ("ondjo");
+      Locale_Umb.Has_Day_After_Tomorrow := True;
+      Locale_Umb.Day_After_Tomorrow := To_Unbounded_String ("ocisungu va pili");
+      Locale_Umb.Has_Day_Before_Yesterday := True;
+      Locale_Umb.Day_Before_Yesterday := To_Unbounded_String ("ondjo va pili");
+      Locale_Umb.Has_This_Weekday := True;
+      Locale_Umb.This_Weekday := To_Unbounded_String ("{weekday} yo");
+      Locale_Umb.Has_Next_Weekday := True;
+      Locale_Umb.Next_Weekday := To_Unbounded_String ("{weekday} ya kuvela");
+      Locale_Umb.Has_Last_Weekday := True;
+      Locale_Umb.Last_Weekday := To_Unbounded_String ("{weekday} ya pita");
+      Locale_Umb.Has_Months_In_Date := False;
+
+      Locale_Umb.Has_Short := True;
+      Locale_Umb.Short_Override.Has_Months := True;
+      Locale_Umb.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Umb.Short_Override.Months (2) := To_Unbounded_String ("Fev");
+      Locale_Umb.Short_Override.Months (3) := To_Unbounded_String ("Mal");
+      Locale_Umb.Short_Override.Months (4) := To_Unbounded_String ("Abi");
+      Locale_Umb.Short_Override.Months (5) := To_Unbounded_String ("May");
+      Locale_Umb.Short_Override.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Umb.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Umb.Short_Override.Months (8) := To_Unbounded_String ("Ago");
+      Locale_Umb.Short_Override.Months (9) := To_Unbounded_String ("Set");
+      Locale_Umb.Short_Override.Months (10) := To_Unbounded_String ("Otu");
+      Locale_Umb.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Umb.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Umb.Short_Override.Has_Months_In_Date := False;
+      Locale_Umb.Short_Override.Has_Weekdays := True;
+      Locale_Umb.Short_Override.Weekdays (1) := To_Unbounded_String ("Lum");
+      Locale_Umb.Short_Override.Weekdays (2) := To_Unbounded_String ("Cim");
+      Locale_Umb.Short_Override.Weekdays (3) := To_Unbounded_String ("Civ");
+      Locale_Umb.Short_Override.Weekdays (4) := To_Unbounded_String ("Cit");
+      Locale_Umb.Short_Override.Weekdays (5) := To_Unbounded_String ("Cin");
+      Locale_Umb.Short_Override.Weekdays (6) := To_Unbounded_String ("Cit");
+      Locale_Umb.Short_Override.Weekdays (7) := To_Unbounded_String ("Cis");
+      Locale_Umb.Short_Override.Has_Day_Format := True;
+      Locale_Umb.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Umb.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Umb.Short_Override.Has_Date_Pattern := True;
+      Locale_Umb.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Umb.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Umb.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Umb.Short_Override.Has_Today := False;
+      Locale_Umb.Short_Override.Has_Tomorrow := False;
+      Locale_Umb.Short_Override.Has_Yesterday := False;
+
+      Locale_Umb.Has_Compact := True;
+      Locale_Umb.Compact_Override.Has_Months := False;
+      Locale_Umb.Compact_Override.Has_Months_In_Date := False;
+      Locale_Umb.Compact_Override.Has_Weekdays := False;
+      Locale_Umb.Compact_Override.Has_Day_Format := False;
+      Locale_Umb.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Umb.Compact_Override.Has_Date_Pattern := True;
+      Locale_Umb.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Umb.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Umb.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Umb.Compact_Override.Has_Today := False;
+      Locale_Umb.Compact_Override.Has_Tomorrow := False;
+      Locale_Umb.Compact_Override.Has_Yesterday := False;
+
+   end Init_umb;
 
    --  Source: date/locales/src/ur.json
    procedure Init_ur is
@@ -10459,6 +13598,200 @@ package body Sayabledate_Locales is
 
    end Init_vi;
 
+   --  Source: date/locales/src/vmw.json
+   procedure Init_vmw is
+   begin
+      Locale_Vmw.Code := To_Unbounded_String ("vmw");
+
+      Locale_Vmw.Months (1) := To_Unbounded_String ("Januário");
+      Locale_Vmw.Months (2) := To_Unbounded_String ("Fevereiro");
+      Locale_Vmw.Months (3) := To_Unbounded_String ("Março");
+      Locale_Vmw.Months (4) := To_Unbounded_String ("Abril");
+      Locale_Vmw.Months (5) := To_Unbounded_String ("Maio");
+      Locale_Vmw.Months (6) := To_Unbounded_String ("Junho");
+      Locale_Vmw.Months (7) := To_Unbounded_String ("Julho");
+      Locale_Vmw.Months (8) := To_Unbounded_String ("Agosto");
+      Locale_Vmw.Months (9) := To_Unbounded_String ("Setembro");
+      Locale_Vmw.Months (10) := To_Unbounded_String ("Outubro");
+      Locale_Vmw.Months (11) := To_Unbounded_String ("Novembro");
+      Locale_Vmw.Months (12) := To_Unbounded_String ("Dezembro");
+
+      Locale_Vmw.Weekdays (1) := To_Unbounded_String ("Jumaaphi");
+      Locale_Vmw.Weekdays (2) := To_Unbounded_String ("Jumaataatu");
+      Locale_Vmw.Weekdays (3) := To_Unbounded_String ("Jumaanne");
+      Locale_Vmw.Weekdays (4) := To_Unbounded_String ("Jumaatano");
+      Locale_Vmw.Weekdays (5) := To_Unbounded_String ("Alaahamisi");
+      Locale_Vmw.Weekdays (6) := To_Unbounded_String ("Ijumaa");
+      Locale_Vmw.Weekdays (7) := To_Unbounded_String ("Jumaamo");
+
+      Locale_Vmw.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Vmw.Day_Format_Exception_Count := 0;
+
+      Locale_Vmw.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Vmw.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Vmw.Today := To_Unbounded_String ("lelo");
+      Locale_Vmw.Tomorrow := To_Unbounded_String ("muttetthe");
+      Locale_Vmw.Yesterday := To_Unbounded_String ("oova");
+      Locale_Vmw.Has_Day_After_Tomorrow := True;
+      Locale_Vmw.Day_After_Tomorrow := To_Unbounded_String ("muttetthe opela");
+      Locale_Vmw.Has_Day_Before_Yesterday := True;
+      Locale_Vmw.Day_Before_Yesterday := To_Unbounded_String ("oova opela");
+      Locale_Vmw.Has_This_Weekday := True;
+      Locale_Vmw.This_Weekday := To_Unbounded_String ("{weekday} yano");
+      Locale_Vmw.Has_Next_Weekday := True;
+      Locale_Vmw.Next_Weekday := To_Unbounded_String ("{weekday} ohima");
+      Locale_Vmw.Has_Last_Weekday := True;
+      Locale_Vmw.Last_Weekday := To_Unbounded_String ("{weekday} opita");
+      Locale_Vmw.Has_Months_In_Date := False;
+
+      Locale_Vmw.Has_Short := True;
+      Locale_Vmw.Short_Override.Has_Months := True;
+      Locale_Vmw.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Vmw.Short_Override.Months (2) := To_Unbounded_String ("Fev");
+      Locale_Vmw.Short_Override.Months (3) := To_Unbounded_String ("Mar");
+      Locale_Vmw.Short_Override.Months (4) := To_Unbounded_String ("Abr");
+      Locale_Vmw.Short_Override.Months (5) := To_Unbounded_String ("Mai");
+      Locale_Vmw.Short_Override.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Vmw.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Vmw.Short_Override.Months (8) := To_Unbounded_String ("Ago");
+      Locale_Vmw.Short_Override.Months (9) := To_Unbounded_String ("Set");
+      Locale_Vmw.Short_Override.Months (10) := To_Unbounded_String ("Out");
+      Locale_Vmw.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Vmw.Short_Override.Months (12) := To_Unbounded_String ("Dez");
+      Locale_Vmw.Short_Override.Has_Months_In_Date := False;
+      Locale_Vmw.Short_Override.Has_Weekdays := True;
+      Locale_Vmw.Short_Override.Weekdays (1) := To_Unbounded_String ("Jph");
+      Locale_Vmw.Short_Override.Weekdays (2) := To_Unbounded_String ("Jtt");
+      Locale_Vmw.Short_Override.Weekdays (3) := To_Unbounded_String ("Jan");
+      Locale_Vmw.Short_Override.Weekdays (4) := To_Unbounded_String ("Jtn");
+      Locale_Vmw.Short_Override.Weekdays (5) := To_Unbounded_String ("Alh");
+      Locale_Vmw.Short_Override.Weekdays (6) := To_Unbounded_String ("Iju");
+      Locale_Vmw.Short_Override.Weekdays (7) := To_Unbounded_String ("Jmo");
+      Locale_Vmw.Short_Override.Has_Day_Format := True;
+      Locale_Vmw.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Vmw.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Vmw.Short_Override.Has_Date_Pattern := True;
+      Locale_Vmw.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Vmw.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Vmw.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Vmw.Short_Override.Has_Today := False;
+      Locale_Vmw.Short_Override.Has_Tomorrow := False;
+      Locale_Vmw.Short_Override.Has_Yesterday := False;
+
+      Locale_Vmw.Has_Compact := True;
+      Locale_Vmw.Compact_Override.Has_Months := False;
+      Locale_Vmw.Compact_Override.Has_Months_In_Date := False;
+      Locale_Vmw.Compact_Override.Has_Weekdays := False;
+      Locale_Vmw.Compact_Override.Has_Day_Format := False;
+      Locale_Vmw.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Vmw.Compact_Override.Has_Date_Pattern := True;
+      Locale_Vmw.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Vmw.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Vmw.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Vmw.Compact_Override.Has_Today := False;
+      Locale_Vmw.Compact_Override.Has_Tomorrow := False;
+      Locale_Vmw.Compact_Override.Has_Yesterday := False;
+
+   end Init_vmw;
+
+   --  Source: date/locales/src/wo.json
+   procedure Init_wo is
+   begin
+      Locale_Wo.Code := To_Unbounded_String ("wo");
+
+      Locale_Wo.Months (1) := To_Unbounded_String ("Samwiyee");
+      Locale_Wo.Months (2) := To_Unbounded_String ("Fewriyee");
+      Locale_Wo.Months (3) := To_Unbounded_String ("Maars");
+      Locale_Wo.Months (4) := To_Unbounded_String ("Awril");
+      Locale_Wo.Months (5) := To_Unbounded_String ("Mee");
+      Locale_Wo.Months (6) := To_Unbounded_String ("Suwe");
+      Locale_Wo.Months (7) := To_Unbounded_String ("Sullet");
+      Locale_Wo.Months (8) := To_Unbounded_String ("Ut");
+      Locale_Wo.Months (9) := To_Unbounded_String ("Septàmbar");
+      Locale_Wo.Months (10) := To_Unbounded_String ("Oktoobar");
+      Locale_Wo.Months (11) := To_Unbounded_String ("Nowàmbar");
+      Locale_Wo.Months (12) := To_Unbounded_String ("Desàmbar");
+
+      Locale_Wo.Weekdays (1) := To_Unbounded_String ("Dibéer");
+      Locale_Wo.Weekdays (2) := To_Unbounded_String ("Altine");
+      Locale_Wo.Weekdays (3) := To_Unbounded_String ("Talaata");
+      Locale_Wo.Weekdays (4) := To_Unbounded_String ("Àllarba");
+      Locale_Wo.Weekdays (5) := To_Unbounded_String ("Alxames");
+      Locale_Wo.Weekdays (6) := To_Unbounded_String ("Àjjuma");
+      Locale_Wo.Weekdays (7) := To_Unbounded_String ("Gaawu");
+
+      Locale_Wo.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Wo.Day_Format_Exception_Count := 0;
+
+      Locale_Wo.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Wo.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Wo.Today := To_Unbounded_String ("tey");
+      Locale_Wo.Tomorrow := To_Unbounded_String ("suba");
+      Locale_Wo.Yesterday := To_Unbounded_String ("démb");
+      Locale_Wo.Has_Day_After_Tomorrow := True;
+      Locale_Wo.Day_After_Tomorrow := To_Unbounded_String ("suba-suba");
+      Locale_Wo.Has_Day_Before_Yesterday := True;
+      Locale_Wo.Day_Before_Yesterday := To_Unbounded_String ("démb-démb");
+      Locale_Wo.Has_This_Weekday := True;
+      Locale_Wo.This_Weekday := To_Unbounded_String ("{weekday} bi");
+      Locale_Wo.Has_Next_Weekday := True;
+      Locale_Wo.Next_Weekday := To_Unbounded_String ("{weekday} bi ñëw");
+      Locale_Wo.Has_Last_Weekday := True;
+      Locale_Wo.Last_Weekday := To_Unbounded_String ("{weekday} bi weex");
+      Locale_Wo.Has_Months_In_Date := False;
+
+      Locale_Wo.Has_Short := True;
+      Locale_Wo.Short_Override.Has_Months := True;
+      Locale_Wo.Short_Override.Months (1) := To_Unbounded_String ("Sam");
+      Locale_Wo.Short_Override.Months (2) := To_Unbounded_String ("Few");
+      Locale_Wo.Short_Override.Months (3) := To_Unbounded_String ("Maa");
+      Locale_Wo.Short_Override.Months (4) := To_Unbounded_String ("Awr");
+      Locale_Wo.Short_Override.Months (5) := To_Unbounded_String ("Mee");
+      Locale_Wo.Short_Override.Months (6) := To_Unbounded_String ("Suw");
+      Locale_Wo.Short_Override.Months (7) := To_Unbounded_String ("Sul");
+      Locale_Wo.Short_Override.Months (8) := To_Unbounded_String ("Ut");
+      Locale_Wo.Short_Override.Months (9) := To_Unbounded_String ("Sep");
+      Locale_Wo.Short_Override.Months (10) := To_Unbounded_String ("Okt");
+      Locale_Wo.Short_Override.Months (11) := To_Unbounded_String ("Now");
+      Locale_Wo.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Wo.Short_Override.Has_Months_In_Date := False;
+      Locale_Wo.Short_Override.Has_Weekdays := True;
+      Locale_Wo.Short_Override.Weekdays (1) := To_Unbounded_String ("Dib");
+      Locale_Wo.Short_Override.Weekdays (2) := To_Unbounded_String ("Alt");
+      Locale_Wo.Short_Override.Weekdays (3) := To_Unbounded_String ("Tal");
+      Locale_Wo.Short_Override.Weekdays (4) := To_Unbounded_String ("Àll");
+      Locale_Wo.Short_Override.Weekdays (5) := To_Unbounded_String ("Alx");
+      Locale_Wo.Short_Override.Weekdays (6) := To_Unbounded_String ("Àjj");
+      Locale_Wo.Short_Override.Weekdays (7) := To_Unbounded_String ("Gaa");
+      Locale_Wo.Short_Override.Has_Day_Format := True;
+      Locale_Wo.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Wo.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Wo.Short_Override.Has_Date_Pattern := True;
+      Locale_Wo.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Wo.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Wo.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Wo.Short_Override.Has_Today := False;
+      Locale_Wo.Short_Override.Has_Tomorrow := False;
+      Locale_Wo.Short_Override.Has_Yesterday := False;
+
+      Locale_Wo.Has_Compact := True;
+      Locale_Wo.Compact_Override.Has_Months := False;
+      Locale_Wo.Compact_Override.Has_Months_In_Date := False;
+      Locale_Wo.Compact_Override.Has_Weekdays := False;
+      Locale_Wo.Compact_Override.Has_Day_Format := False;
+      Locale_Wo.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Wo.Compact_Override.Has_Date_Pattern := True;
+      Locale_Wo.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Wo.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Wo.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Wo.Compact_Override.Has_Today := False;
+      Locale_Wo.Compact_Override.Has_Tomorrow := False;
+      Locale_Wo.Compact_Override.Has_Yesterday := False;
+
+   end Init_wo;
+
    --  Source: date/locales/src/xh.json
    procedure Init_xh is
    begin
@@ -10750,6 +14083,103 @@ package body Sayabledate_Locales is
 
    end Init_yue;
 
+   --  Source: date/locales/src/zdj.json
+   procedure Init_zdj is
+   begin
+      Locale_Zdj.Code := To_Unbounded_String ("zdj");
+
+      Locale_Zdj.Months (1) := To_Unbounded_String ("Januari");
+      Locale_Zdj.Months (2) := To_Unbounded_String ("Februari");
+      Locale_Zdj.Months (3) := To_Unbounded_String ("Machi");
+      Locale_Zdj.Months (4) := To_Unbounded_String ("Aprili");
+      Locale_Zdj.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Zdj.Months (6) := To_Unbounded_String ("Juni");
+      Locale_Zdj.Months (7) := To_Unbounded_String ("Julai");
+      Locale_Zdj.Months (8) := To_Unbounded_String ("Agosti");
+      Locale_Zdj.Months (9) := To_Unbounded_String ("Septemba");
+      Locale_Zdj.Months (10) := To_Unbounded_String ("Oktoba");
+      Locale_Zdj.Months (11) := To_Unbounded_String ("Novemba");
+      Locale_Zdj.Months (12) := To_Unbounded_String ("Desemba");
+
+      Locale_Zdj.Weekdays (1) := To_Unbounded_String ("Jumapili");
+      Locale_Zdj.Weekdays (2) := To_Unbounded_String ("Jumatatu");
+      Locale_Zdj.Weekdays (3) := To_Unbounded_String ("Jumanne");
+      Locale_Zdj.Weekdays (4) := To_Unbounded_String ("Jumatano");
+      Locale_Zdj.Weekdays (5) := To_Unbounded_String ("Alhamisi");
+      Locale_Zdj.Weekdays (6) := To_Unbounded_String ("Ijumaa");
+      Locale_Zdj.Weekdays (7) := To_Unbounded_String ("Jumamosi");
+
+      Locale_Zdj.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Zdj.Day_Format_Exception_Count := 0;
+
+      Locale_Zdj.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Zdj.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+
+      Locale_Zdj.Today := To_Unbounded_String ("leo");
+      Locale_Zdj.Tomorrow := To_Unbounded_String ("mesha");
+      Locale_Zdj.Yesterday := To_Unbounded_String ("jana");
+      Locale_Zdj.Has_Day_After_Tomorrow := True;
+      Locale_Zdj.Day_After_Tomorrow := To_Unbounded_String ("kesho kutwa");
+      Locale_Zdj.Has_Day_Before_Yesterday := True;
+      Locale_Zdj.Day_Before_Yesterday := To_Unbounded_String ("juzi");
+      Locale_Zdj.Has_This_Weekday := True;
+      Locale_Zdj.This_Weekday := To_Unbounded_String ("{weekday} iyi");
+      Locale_Zdj.Has_Next_Weekday := True;
+      Locale_Zdj.Next_Weekday := To_Unbounded_String ("{weekday} ya udjayo");
+      Locale_Zdj.Has_Last_Weekday := True;
+      Locale_Zdj.Last_Weekday := To_Unbounded_String ("{weekday} ya hupitsa");
+      Locale_Zdj.Has_Months_In_Date := False;
+
+      Locale_Zdj.Has_Short := True;
+      Locale_Zdj.Short_Override.Has_Months := True;
+      Locale_Zdj.Short_Override.Months (1) := To_Unbounded_String ("Jan");
+      Locale_Zdj.Short_Override.Months (2) := To_Unbounded_String ("Feb");
+      Locale_Zdj.Short_Override.Months (3) := To_Unbounded_String ("Mac");
+      Locale_Zdj.Short_Override.Months (4) := To_Unbounded_String ("Apr");
+      Locale_Zdj.Short_Override.Months (5) := To_Unbounded_String ("Mei");
+      Locale_Zdj.Short_Override.Months (6) := To_Unbounded_String ("Jun");
+      Locale_Zdj.Short_Override.Months (7) := To_Unbounded_String ("Jul");
+      Locale_Zdj.Short_Override.Months (8) := To_Unbounded_String ("Ago");
+      Locale_Zdj.Short_Override.Months (9) := To_Unbounded_String ("Sep");
+      Locale_Zdj.Short_Override.Months (10) := To_Unbounded_String ("Okt");
+      Locale_Zdj.Short_Override.Months (11) := To_Unbounded_String ("Nov");
+      Locale_Zdj.Short_Override.Months (12) := To_Unbounded_String ("Des");
+      Locale_Zdj.Short_Override.Has_Months_In_Date := False;
+      Locale_Zdj.Short_Override.Has_Weekdays := True;
+      Locale_Zdj.Short_Override.Weekdays (1) := To_Unbounded_String ("Pil");
+      Locale_Zdj.Short_Override.Weekdays (2) := To_Unbounded_String ("Tat");
+      Locale_Zdj.Short_Override.Weekdays (3) := To_Unbounded_String ("Nne");
+      Locale_Zdj.Short_Override.Weekdays (4) := To_Unbounded_String ("Tan");
+      Locale_Zdj.Short_Override.Weekdays (5) := To_Unbounded_String ("Alh");
+      Locale_Zdj.Short_Override.Weekdays (6) := To_Unbounded_String ("Iju");
+      Locale_Zdj.Short_Override.Weekdays (7) := To_Unbounded_String ("Mos");
+      Locale_Zdj.Short_Override.Has_Day_Format := True;
+      Locale_Zdj.Short_Override.Day_Format := To_Unbounded_String ("{n}");
+      Locale_Zdj.Short_Override.Has_Day_Format_Exceptions := False;
+      Locale_Zdj.Short_Override.Has_Date_Pattern := True;
+      Locale_Zdj.Short_Override.Date_Pattern := To_Unbounded_String ("{day} {month}");
+      Locale_Zdj.Short_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Zdj.Short_Override.Date_Pattern_With_Year := To_Unbounded_String ("{day} {month} {year}");
+      Locale_Zdj.Short_Override.Has_Today := False;
+      Locale_Zdj.Short_Override.Has_Tomorrow := False;
+      Locale_Zdj.Short_Override.Has_Yesterday := False;
+
+      Locale_Zdj.Has_Compact := True;
+      Locale_Zdj.Compact_Override.Has_Months := False;
+      Locale_Zdj.Compact_Override.Has_Months_In_Date := False;
+      Locale_Zdj.Compact_Override.Has_Weekdays := False;
+      Locale_Zdj.Compact_Override.Has_Day_Format := False;
+      Locale_Zdj.Compact_Override.Has_Day_Format_Exceptions := False;
+      Locale_Zdj.Compact_Override.Has_Date_Pattern := True;
+      Locale_Zdj.Compact_Override.Date_Pattern := To_Unbounded_String ("{d}/{m}");
+      Locale_Zdj.Compact_Override.Has_Date_Pattern_With_Year := True;
+      Locale_Zdj.Compact_Override.Date_Pattern_With_Year := To_Unbounded_String ("{d}/{m}/{yy}");
+      Locale_Zdj.Compact_Override.Has_Today := False;
+      Locale_Zdj.Compact_Override.Has_Tomorrow := False;
+      Locale_Zdj.Compact_Override.Has_Yesterday := False;
+
+   end Init_zdj;
+
    --  Source: date/locales/src/zh.json
    procedure Init_zh is
    begin
@@ -10954,8 +14384,11 @@ package body Sayabledate_Locales is
       Init_am;
       Init_ar;
       Init_az;
+      Init_bci;
       Init_be;
+      Init_bem;
       Init_bg;
+      Init_bm;
       Init_bn;
       Init_br;
       Init_bs;
@@ -10965,15 +14398,21 @@ package body Sayabledate_Locales is
       Init_cy;
       Init_da;
       Init_de;
+      Init_din;
+      Init_dje;
+      Init_dyu;
+      Init_ee;
       Init_el;
       Init_en;
       Init_es;
       Init_et;
       Init_eu;
       Init_fa;
+      Init_fan;
       Init_ff;
       Init_fi;
       Init_fil;
+      Init_fon;
       Init_fr;
       Init_ga;
       Init_gd;
@@ -10995,10 +14434,13 @@ package body Sayabledate_Locales is
       Init_ja;
       Init_jv;
       Init_ka;
+      Init_kbp;
       Init_kk;
       Init_km;
       Init_kn;
       Init_ko;
+      Init_kpe;
+      Init_ktu;
       Init_ku;
       Init_kw;
       Init_ky;
@@ -11007,56 +14449,79 @@ package body Sayabledate_Locales is
       Init_lo;
       Init_lt;
       Init_lv;
+      Init_men;
+      Init_mfe;
       Init_mg;
       Init_mi;
       Init_mk;
       Init_ml;
       Init_mn;
+      Init_mnk;
+      Init_mos;
       Init_mr;
       Init_ms;
       Init_mt;
       Init_my;
       Init_nb;
+      Init_nd;
       Init_ne;
+      Init_ng;
       Init_nl;
+      Init_nso;
+      Init_nus;
       Init_ny;
       Init_om;
       Init_or;
       Init_pa;
       Init_pl;
+      Init_pov;
       Init_ps;
       Init_pt;
       Init_qu;
       Init_ro;
       Init_ru;
       Init_rw;
+      Init_sar;
       Init_sd;
+      Init_sg;
       Init_shi;
       Init_si;
       Init_sk;
       Init_sl;
       Init_sn;
+      Init_snk;
       Init_so;
       Init_sq;
       Init_sr;
+      Init_ss;
+      Init_st;
       Init_su;
+      Init_suk;
       Init_sv;
       Init_sw;
       Init_ta;
       Init_te;
+      Init_tem;
       Init_tg;
       Init_th;
       Init_ti;
+      Init_tig;
       Init_tk;
+      Init_tn;
       Init_tr;
+      Init_ts;
       Init_tzm;
       Init_uk;
+      Init_umb;
       Init_ur;
       Init_uz;
       Init_vi;
+      Init_vmw;
+      Init_wo;
       Init_xh;
       Init_yo;
       Init_yue;
+      Init_zdj;
       Init_zh;
       Init_zu;
       Initialized := True;
@@ -11080,11 +14545,20 @@ package body Sayabledate_Locales is
       if Code = "az" then
          return Locale_Az'Access;
       end if;
+      if Code = "bci" then
+         return Locale_Bci'Access;
+      end if;
       if Code = "be" then
          return Locale_Be'Access;
       end if;
+      if Code = "bem" then
+         return Locale_Bem'Access;
+      end if;
       if Code = "bg" then
          return Locale_Bg'Access;
+      end if;
+      if Code = "bm" then
+         return Locale_Bm'Access;
       end if;
       if Code = "bn" then
          return Locale_Bn'Access;
@@ -11113,6 +14587,18 @@ package body Sayabledate_Locales is
       if Code = "de" then
          return Locale_De'Access;
       end if;
+      if Code = "din" then
+         return Locale_Din'Access;
+      end if;
+      if Code = "dje" then
+         return Locale_Dje'Access;
+      end if;
+      if Code = "dyu" then
+         return Locale_Dyu'Access;
+      end if;
+      if Code = "ee" then
+         return Locale_Ee'Access;
+      end if;
       if Code = "el" then
          return Locale_El'Access;
       end if;
@@ -11131,6 +14617,9 @@ package body Sayabledate_Locales is
       if Code = "fa" then
          return Locale_Fa'Access;
       end if;
+      if Code = "fan" then
+         return Locale_Fan'Access;
+      end if;
       if Code = "ff" then
          return Locale_Ff'Access;
       end if;
@@ -11139,6 +14628,9 @@ package body Sayabledate_Locales is
       end if;
       if Code = "fil" then
          return Locale_Fil'Access;
+      end if;
+      if Code = "fon" then
+         return Locale_Fon'Access;
       end if;
       if Code = "fr" then
          return Locale_Fr'Access;
@@ -11203,6 +14695,9 @@ package body Sayabledate_Locales is
       if Code = "ka" then
          return Locale_Ka'Access;
       end if;
+      if Code = "kbp" then
+         return Locale_Kbp'Access;
+      end if;
       if Code = "kk" then
          return Locale_Kk'Access;
       end if;
@@ -11214,6 +14709,12 @@ package body Sayabledate_Locales is
       end if;
       if Code = "ko" then
          return Locale_Ko'Access;
+      end if;
+      if Code = "kpe" then
+         return Locale_Kpe'Access;
+      end if;
+      if Code = "ktu" then
+         return Locale_Ktu'Access;
       end if;
       if Code = "ku" then
          return Locale_Ku'Access;
@@ -11239,6 +14740,12 @@ package body Sayabledate_Locales is
       if Code = "lv" then
          return Locale_Lv'Access;
       end if;
+      if Code = "men" then
+         return Locale_Men'Access;
+      end if;
+      if Code = "mfe" then
+         return Locale_Mfe'Access;
+      end if;
       if Code = "mg" then
          return Locale_Mg'Access;
       end if;
@@ -11253,6 +14760,12 @@ package body Sayabledate_Locales is
       end if;
       if Code = "mn" then
          return Locale_Mn'Access;
+      end if;
+      if Code = "mnk" then
+         return Locale_Mnk'Access;
+      end if;
+      if Code = "mos" then
+         return Locale_Mos'Access;
       end if;
       if Code = "mr" then
          return Locale_Mr'Access;
@@ -11269,11 +14782,23 @@ package body Sayabledate_Locales is
       if Code = "nb" then
          return Locale_Nb'Access;
       end if;
+      if Code = "nd" then
+         return Locale_Nd'Access;
+      end if;
       if Code = "ne" then
          return Locale_Ne'Access;
       end if;
+      if Code = "ng" then
+         return Locale_Ng'Access;
+      end if;
       if Code = "nl" then
          return Locale_Nl'Access;
+      end if;
+      if Code = "nso" then
+         return Locale_Nso'Access;
+      end if;
+      if Code = "nus" then
+         return Locale_Nus'Access;
       end if;
       if Code = "ny" then
          return Locale_Ny'Access;
@@ -11289,6 +14814,9 @@ package body Sayabledate_Locales is
       end if;
       if Code = "pl" then
          return Locale_Pl'Access;
+      end if;
+      if Code = "pov" then
+         return Locale_Pov'Access;
       end if;
       if Code = "ps" then
          return Locale_Ps'Access;
@@ -11308,8 +14836,14 @@ package body Sayabledate_Locales is
       if Code = "rw" then
          return Locale_Rw'Access;
       end if;
+      if Code = "sar" then
+         return Locale_Sar'Access;
+      end if;
       if Code = "sd" then
          return Locale_Sd'Access;
+      end if;
+      if Code = "sg" then
+         return Locale_Sg'Access;
       end if;
       if Code = "shi" then
          return Locale_Shi'Access;
@@ -11326,6 +14860,9 @@ package body Sayabledate_Locales is
       if Code = "sn" then
          return Locale_Sn'Access;
       end if;
+      if Code = "snk" then
+         return Locale_Snk'Access;
+      end if;
       if Code = "so" then
          return Locale_So'Access;
       end if;
@@ -11335,8 +14872,17 @@ package body Sayabledate_Locales is
       if Code = "sr" then
          return Locale_Sr'Access;
       end if;
+      if Code = "ss" then
+         return Locale_Ss'Access;
+      end if;
+      if Code = "st" then
+         return Locale_St'Access;
+      end if;
       if Code = "su" then
          return Locale_Su'Access;
+      end if;
+      if Code = "suk" then
+         return Locale_Suk'Access;
       end if;
       if Code = "sv" then
          return Locale_Sv'Access;
@@ -11350,6 +14896,9 @@ package body Sayabledate_Locales is
       if Code = "te" then
          return Locale_Te'Access;
       end if;
+      if Code = "tem" then
+         return Locale_Tem'Access;
+      end if;
       if Code = "tg" then
          return Locale_Tg'Access;
       end if;
@@ -11359,17 +14908,29 @@ package body Sayabledate_Locales is
       if Code = "ti" then
          return Locale_Ti'Access;
       end if;
+      if Code = "tig" then
+         return Locale_Tig'Access;
+      end if;
       if Code = "tk" then
          return Locale_Tk'Access;
       end if;
+      if Code = "tn" then
+         return Locale_Tn'Access;
+      end if;
       if Code = "tr" then
          return Locale_Tr'Access;
+      end if;
+      if Code = "ts" then
+         return Locale_Ts'Access;
       end if;
       if Code = "tzm" then
          return Locale_Tzm'Access;
       end if;
       if Code = "uk" then
          return Locale_Uk'Access;
+      end if;
+      if Code = "umb" then
+         return Locale_Umb'Access;
       end if;
       if Code = "ur" then
          return Locale_Ur'Access;
@@ -11380,6 +14941,12 @@ package body Sayabledate_Locales is
       if Code = "vi" then
          return Locale_Vi'Access;
       end if;
+      if Code = "vmw" then
+         return Locale_Vmw'Access;
+      end if;
+      if Code = "wo" then
+         return Locale_Wo'Access;
+      end if;
       if Code = "xh" then
          return Locale_Xh'Access;
       end if;
@@ -11388,6 +14955,9 @@ package body Sayabledate_Locales is
       end if;
       if Code = "yue" then
          return Locale_Yue'Access;
+      end if;
+      if Code = "zdj" then
+         return Locale_Zdj'Access;
       end if;
       if Code = "zh" then
          return Locale_Zh'Access;

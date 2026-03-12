@@ -1,0 +1,70 @@
+{
+  "code": "pov",
+  "name": "Guinea-Bissau Creole",
+  "months": [
+    "Janeru",
+    "Febreru",
+    "Marsu",
+    "Abril",
+    "Maiu",
+    "Junhu",
+    "Julhu",
+    "Agostu",
+    "Setembru",
+    "Otubru",
+    "Novembru",
+    "Dizembru"
+  ],
+  "weekdays": [
+    "Dumingu",
+    "Sigunda",
+    "Tersa",
+    "Kuarta",
+    "Kinta",
+    "Sesta",
+    "Sabadu"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "oji",
+  "tomorrow": "manan",
+  "yesterday": "onfo",
+  "dayAfterTomorrow": "dipus di manan",
+  "dayBeforeYesterday": "antis di onfo",
+  "thisWeekday": "{weekday} kel",
+  "nextWeekday": "{weekday} ki bin",
+  "lastWeekday": "{weekday} pasadu",
+  "short": {
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Otu",
+      "Nov",
+      "Diz"
+    ],
+    "weekdays": [
+      "Dum",
+      "Sig",
+      "Ter",
+      "Kua",
+      "Kin",
+      "Ses",
+      "Sab"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

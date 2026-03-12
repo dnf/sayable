@@ -1,0 +1,64 @@
+{
+  "code": "nso",
+  "name": "Northern Sotho",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "letšatši {n}",
+      "other": "matšatši {n}"
+    },
+    "week": {
+      "one": "beke {n}",
+      "other": "dibeke {n}"
+    },
+    "month": {
+      "one": "kgwedi {n}",
+      "other": "dikgwedi {n}"
+    },
+    "year": {
+      "one": "ngwaga {n}",
+      "other": "mengwaga {n}"
+    }
+  },
+  "half": "{0} le seripagare",
+  "delimiter": ", ",
+  "justBorn": "O sa tšwa belegwa",
+  "stages": {
+    "newborn": "Lesea le sa tšwa belegwa",
+    "infant": "Lesea",
+    "toddler": "Ngwanyana",
+    "child": "Ngwana",
+    "teenager": "Moša",
+    "adult": "Motho yo mogolo"
+  },
+  "short": {
+    "units": {
+      "day": {
+        "one": "letšatši {n}",
+        "other": "matšatši {n}"
+      },
+      "week": {
+        "one": "beke {n}",
+        "other": "dibeke {n}"
+      },
+      "month": {
+        "one": "kgw. {n}",
+        "other": "dikgw. {n}"
+      },
+      "year": {
+        "one": "ngw. {n}",
+        "other": "mengw. {n}"
+      }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

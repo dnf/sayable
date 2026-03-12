@@ -15,8 +15,11 @@ let get_locale (code : string) : Types.date_locale option =
   | "am" -> Some Am.locale
   | "ar" -> Some Ar.locale
   | "az" -> Some Az.locale
+  | "bci" -> Some Bci.locale
   | "be" -> Some Be.locale
+  | "bem" -> Some Bem.locale
   | "bg" -> Some Bg.locale
+  | "bm" -> Some Bm.locale
   | "bn" -> Some Bn.locale
   | "br" -> Some Br.locale
   | "bs" -> Some Bs.locale
@@ -26,15 +29,21 @@ let get_locale (code : string) : Types.date_locale option =
   | "cy" -> Some Cy.locale
   | "da" -> Some Da.locale
   | "de" -> Some De.locale
+  | "din" -> Some Din.locale
+  | "dje" -> Some Dje.locale
+  | "dyu" -> Some Dyu.locale
+  | "ee" -> Some Ee.locale
   | "el" -> Some El.locale
   | "en" -> Some En.locale
   | "es" -> Some Es.locale
   | "et" -> Some Et.locale
   | "eu" -> Some Eu.locale
   | "fa" -> Some Fa.locale
+  | "fan" -> Some Fan.locale
   | "ff" -> Some Ff.locale
   | "fi" -> Some Fi.locale
   | "fil" -> Some Fil.locale
+  | "fon" -> Some Fon.locale
   | "fr" -> Some Fr.locale
   | "ga" -> Some Ga.locale
   | "gd" -> Some Gd.locale
@@ -56,10 +65,13 @@ let get_locale (code : string) : Types.date_locale option =
   | "ja" -> Some Ja.locale
   | "jv" -> Some Jv.locale
   | "ka" -> Some Ka.locale
+  | "kbp" -> Some Kbp.locale
   | "kk" -> Some Kk.locale
   | "km" -> Some Km.locale
   | "kn" -> Some Kn.locale
   | "ko" -> Some Ko.locale
+  | "kpe" -> Some Kpe.locale
+  | "ktu" -> Some Ktu.locale
   | "ku" -> Some Ku.locale
   | "kw" -> Some Kw.locale
   | "ky" -> Some Ky.locale
@@ -68,56 +80,79 @@ let get_locale (code : string) : Types.date_locale option =
   | "lo" -> Some Lo.locale
   | "lt" -> Some Lt.locale
   | "lv" -> Some Lv.locale
+  | "men" -> Some Men.locale
+  | "mfe" -> Some Mfe.locale
   | "mg" -> Some Mg.locale
   | "mi" -> Some Mi.locale
   | "mk" -> Some Mk.locale
   | "ml" -> Some Ml.locale
   | "mn" -> Some Mn.locale
+  | "mnk" -> Some Mnk.locale
+  | "mos" -> Some Mos.locale
   | "mr" -> Some Mr.locale
   | "ms" -> Some Ms.locale
   | "mt" -> Some Mt.locale
   | "my" -> Some My.locale
   | "nb" -> Some Nb.locale
+  | "nd" -> Some Nd.locale
   | "ne" -> Some Ne.locale
+  | "ng" -> Some Ng.locale
   | "nl" -> Some Nl.locale
+  | "nso" -> Some Nso.locale
+  | "nus" -> Some Nus.locale
   | "ny" -> Some Ny.locale
   | "om" -> Some Om.locale
   | "or" -> Some Or.locale
   | "pa" -> Some Pa.locale
   | "pl" -> Some Pl.locale
+  | "pov" -> Some Pov.locale
   | "ps" -> Some Ps.locale
   | "pt" -> Some Pt.locale
   | "qu" -> Some Qu.locale
   | "ro" -> Some Ro.locale
   | "ru" -> Some Ru.locale
   | "rw" -> Some Rw.locale
+  | "sar" -> Some Sar.locale
   | "sd" -> Some Sd.locale
+  | "sg" -> Some Sg.locale
   | "shi" -> Some Shi.locale
   | "si" -> Some Si.locale
   | "sk" -> Some Sk.locale
   | "sl" -> Some Sl.locale
   | "sn" -> Some Sn.locale
+  | "snk" -> Some Snk.locale
   | "so" -> Some So.locale
   | "sq" -> Some Sq.locale
   | "sr" -> Some Sr.locale
+  | "ss" -> Some Ss.locale
+  | "st" -> Some St.locale
   | "su" -> Some Su.locale
+  | "suk" -> Some Suk.locale
   | "sv" -> Some Sv.locale
   | "sw" -> Some Sw.locale
   | "ta" -> Some Ta.locale
   | "te" -> Some Te.locale
+  | "tem" -> Some Tem.locale
   | "tg" -> Some Tg.locale
   | "th" -> Some Th.locale
   | "ti" -> Some Ti.locale
+  | "tig" -> Some Tig.locale
   | "tk" -> Some Tk.locale
+  | "tn" -> Some Tn.locale
   | "tr" -> Some Tr.locale
+  | "ts" -> Some Ts.locale
   | "tzm" -> Some Tzm.locale
   | "uk" -> Some Uk.locale
+  | "umb" -> Some Umb.locale
   | "ur" -> Some Ur.locale
   | "uz" -> Some Uz.locale
   | "vi" -> Some Vi.locale
+  | "vmw" -> Some Vmw.locale
+  | "wo" -> Some Wo.locale
   | "xh" -> Some Xh.locale
   | "yo" -> Some Yo.locale
   | "yue" -> Some Yue.locale
+  | "zdj" -> Some Zdj.locale
   | "zh" -> Some Zh.locale
   | "zu" -> Some Zu.locale
   | _ -> None

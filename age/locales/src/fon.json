@@ -1,0 +1,40 @@
+{
+  "code": "fon",
+  "name": "Fon",
+  "pluralRule": "other_only",
+  "units": {
+    "day": "azǎn {n}",
+    "week": "aklunɔ̌zán {n}",
+    "month": "sun {n}",
+    "year": "xwè {n}"
+  },
+  "half": "{0} kpo vlavo kpo",
+  "delimiter": ", ",
+  "justBorn": "Vǐ yɔ̌yɔ́",
+  "stages": {
+    "newborn": "Vǐ yɔ̌yɔ́",
+    "infant": "Vǐ",
+    "toddler": "Vǐ",
+    "child": "Vǐ",
+    "teenager": "Nyɔ̌nu",
+    "adult": "Mɛ̌xo"
+  },
+  "short": {
+    "units": {
+      "day": "azǎn {n}",
+      "week": "aklunɔ̌zán {n}",
+      "month": "sun {n}",
+      "year": "xwè {n}"
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

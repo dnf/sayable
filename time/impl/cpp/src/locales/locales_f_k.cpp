@@ -29,6 +29,22 @@ const TimeLocale& FA() {
     return loc;
 }
 
+// Source: time/locales/src/fan.json
+const TimeLocale& FAN() {
+    static const TimeLocale loc{
+        "fan",
+        ClockConfig{
+            {"awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg"},
+            "akiri alúk",
+            "ewaŋ",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/ff.json
 const TimeLocale& FF() {
     static const TimeLocale loc{
@@ -70,6 +86,22 @@ const TimeLocale& FIL() {
             "hatinggabi",
             "tanghali",
             {{0, "{h} o'clock"}, {5, "lima dan {h}"}, {10, "sampu dan {h}"}, {15, "labinlima dan {h}"}, {20, "dalawampu dan {h}"}, {25, "dalawampu't lima dan {h}"}, {30, "tatlumpu dan {h}"}, {35, "dalawampu't lima bago mag {next_h}"}, {40, "dalawampu bago mag {next_h}"}, {45, "labinlima bago mag {next_h}"}, {50, "sampu bago mag {next_h}"}, {55, "lima bago mag {next_h}"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/fon.json
+const TimeLocale& FON() {
+    static const TimeLocale loc{
+        "fon",
+        ClockConfig{
+            {"wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "ɖokpo-wǒ"},
+            "zǎnmɛ",
+            "hwemɛnu",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
@@ -413,6 +445,22 @@ const TimeLocale& KA() {
     return loc;
 }
 
+// Source: time/locales/src/kbp.json
+const TimeLocale& KBP() {
+    static const TimeLocale loc{
+        "kbp",
+        ClockConfig{
+            {"hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm"},
+            "ɖoo hɛkʊ",
+            "wɩsɩ taa",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/kk.json
 const TimeLocale& KK() {
     static const TimeLocale loc{
@@ -473,6 +521,38 @@ const TimeLocale& KO() {
         },
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
         CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/kpe.json
+const TimeLocale& KPE() {
+    static const TimeLocale loc{
+        "kpe",
+        ClockConfig{
+            {"puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"},
+            "kpindi kɔlɛ",
+            "tili-ma",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/ktu.json
+const TimeLocale& KTU() {
+    static const TimeLocale loc{
+        "ktu",
+        ClockConfig{
+            {"zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi"},
+            "midi ya butu",
+            "midi",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
     };
     return loc;
 }

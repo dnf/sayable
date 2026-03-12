@@ -1,0 +1,105 @@
+{
+  "code": "nd",
+  "name": "Northern Ndebele",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "umzuzwana {n}",
+      "other": "imizuzwana {n}"
+    },
+    "minute": {
+      "one": "umzuzu {n}",
+      "other": "imizuzu {n}"
+    },
+    "hour": {
+      "one": "ihora {n}",
+      "other": "amahora {n}"
+    },
+    "day": {
+      "one": "usuku {n}",
+      "other": "insuku {n}"
+    },
+    "week": {
+      "one": "iviki {n}",
+      "other": "amaviki {n}"
+    },
+    "month": {
+      "one": "inyanga {n}",
+      "other": "izinyanga {n}"
+    },
+    "year": {
+      "one": "umnyaka {n}",
+      "other": "iminyaka {n}"
+    }
+  },
+  "half": "{0} lengxenye",
+  "delimiter": ", ",
+  "justNow": "khathesi",
+  "ago": "{0} edlulileyo",
+  "inFuture": "nge-{0}",
+  "short": {
+    "units": {
+      "second": {
+        "one": "umzuzw. {n}",
+        "other": "imizuzw. {n}"
+      },
+      "minute": {
+        "one": "umzuzu {n}",
+        "other": "imizuzu {n}"
+      },
+      "hour": {
+        "one": "ihora {n}",
+        "other": "amahora {n}"
+      },
+      "day": {
+        "one": "usuku {n}",
+        "other": "insuku {n}"
+      },
+      "week": {
+        "one": "iviki {n}",
+        "other": "amaviki {n}"
+      },
+      "month": {
+        "one": "iny. {n}",
+        "other": "iziny. {n}"
+      },
+      "year": {
+        "one": "umny. {n}",
+        "other": "iminy. {n}"
+      }
+    },
+    "ago": "{0} edlulileyo",
+    "inFuture": "nge-{0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} edlulileyo",
+    "inFuture": "nge-{0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

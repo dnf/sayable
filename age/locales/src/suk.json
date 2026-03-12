@@ -1,0 +1,64 @@
+{
+  "code": "suk",
+  "name": "Sukuma",
+  "pluralRule": "one_other",
+  "units": {
+    "day": {
+      "one": "isiku {n}",
+      "other": "amasiku {n}"
+    },
+    "week": {
+      "one": "ishuma {n}",
+      "other": "amashuma {n}"
+    },
+    "month": {
+      "one": "ngweli {n}",
+      "other": "ngweli {n}"
+    },
+    "year": {
+      "one": "mwaka {n}",
+      "other": "myaka {n}"
+    }
+  },
+  "half": "{0} na nusu",
+  "delimiter": ", ",
+  "justBorn": "Mwana wa kubelekwa",
+  "stages": {
+    "newborn": "Mwana wa kubelekwa kwenda",
+    "infant": "Mwana mdogo",
+    "toddler": "Mwana wa kutembea",
+    "child": "Mwana",
+    "teenager": "Mhemba",
+    "adult": "Muntu mkulu"
+  },
+  "short": {
+    "units": {
+      "day": {
+        "one": "isiku {n}",
+        "other": "amasiku {n}"
+      },
+      "week": {
+        "one": "ish. {n}",
+        "other": "amash. {n}"
+      },
+      "month": {
+        "one": "ngw. {n}",
+        "other": "ngw. {n}"
+      },
+      "year": {
+        "one": "mw. {n}",
+        "other": "my. {n}"
+      }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½"
+  }
+}

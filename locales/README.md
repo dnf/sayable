@@ -93,6 +93,32 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/az.md">Example</a></td>
 </tr>
 <tr>
+  <td>Bambara</td>
+  <td><code>bm</code></td>
+  <td>Mande</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/bm.json">Source</a></td>
+  <td><a href="../age/locales/examples/bm.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/bm.json">Source</a></td>
+  <td><a href="../date/locales/examples/bm.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/bm.json">Source</a></td>
+  <td><a href="../duration/locales/examples/bm.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/bm.json">Source</a></td>
+  <td><a href="../time/locales/examples/bm.md">Example</a></td>
+</tr>
+<tr>
+  <td>Baoule</td>
+  <td><code>bci</code></td>
+  <td>Kwa</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/bci.json">Source</a></td>
+  <td><a href="../age/locales/examples/bci.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/bci.json">Source</a></td>
+  <td><a href="../date/locales/examples/bci.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/bci.json">Source</a></td>
+  <td><a href="../duration/locales/examples/bci.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/bci.json">Source</a></td>
+  <td><a href="../time/locales/examples/bci.md">Example</a></td>
+</tr>
+<tr>
   <td>Basque</td>
   <td><code>eu</code></td>
   <td>Isolate</td>
@@ -104,6 +130,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/eu.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/eu.json">Source</a></td>
   <td><a href="../time/locales/examples/eu.md">Example</a></td>
+</tr>
+<tr>
+  <td>Bemba</td>
+  <td><code>bem</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/bem.json">Source</a></td>
+  <td><a href="../age/locales/examples/bem.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/bem.json">Source</a></td>
+  <td><a href="../date/locales/examples/bem.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/bem.json">Source</a></td>
+  <td><a href="../duration/locales/examples/bem.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/bem.json">Source</a></td>
+  <td><a href="../time/locales/examples/bem.md">Example</a></td>
 </tr>
 <tr>
   <td>Bengali</td>
@@ -210,6 +249,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/zh.md">Example</a></td>
 </tr>
 <tr>
+  <td>Comorian</td>
+  <td><code>zdj</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/zdj.json">Source</a></td>
+  <td><a href="../age/locales/examples/zdj.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/zdj.json">Source</a></td>
+  <td><a href="../date/locales/examples/zdj.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/zdj.json">Source</a></td>
+  <td><a href="../duration/locales/examples/zdj.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/zdj.json">Source</a></td>
+  <td><a href="../time/locales/examples/zdj.md">Example</a></td>
+</tr>
+<tr>
   <td>Cornish</td>
   <td><code>kw</code></td>
   <td>Celtic</td>
@@ -262,6 +314,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/da.md">Example</a></td>
 </tr>
 <tr>
+  <td>Dinka</td>
+  <td><code>din</code></td>
+  <td>Nilotic</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/din.json">Source</a></td>
+  <td><a href="../age/locales/examples/din.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/din.json">Source</a></td>
+  <td><a href="../date/locales/examples/din.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/din.json">Source</a></td>
+  <td><a href="../duration/locales/examples/din.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/din.json">Source</a></td>
+  <td><a href="../time/locales/examples/din.md">Example</a></td>
+</tr>
+<tr>
   <td>Dutch</td>
   <td><code>nl</code></td>
   <td>Germanic</td>
@@ -273,6 +338,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/nl.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/nl.json">Source</a></td>
   <td><a href="../time/locales/examples/nl.md">Example</a></td>
+</tr>
+<tr>
+  <td>Dyula</td>
+  <td><code>dyu</code></td>
+  <td>Mande</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/dyu.json">Source</a></td>
+  <td><a href="../age/locales/examples/dyu.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/dyu.json">Source</a></td>
+  <td><a href="../date/locales/examples/dyu.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/dyu.json">Source</a></td>
+  <td><a href="../duration/locales/examples/dyu.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/dyu.json">Source</a></td>
+  <td><a href="../time/locales/examples/dyu.md">Example</a></td>
 </tr>
 <tr>
   <td>English</td>
@@ -301,6 +379,32 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/et.md">Example</a></td>
 </tr>
 <tr>
+  <td>Ewe</td>
+  <td><code>ee</code></td>
+  <td>Kwa</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/ee.json">Source</a></td>
+  <td><a href="../age/locales/examples/ee.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/ee.json">Source</a></td>
+  <td><a href="../date/locales/examples/ee.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/ee.json">Source</a></td>
+  <td><a href="../duration/locales/examples/ee.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/ee.json">Source</a></td>
+  <td><a href="../time/locales/examples/ee.md">Example</a></td>
+</tr>
+<tr>
+  <td>Fang</td>
+  <td><code>fan</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/fan.json">Source</a></td>
+  <td><a href="../age/locales/examples/fan.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/fan.json">Source</a></td>
+  <td><a href="../date/locales/examples/fan.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/fan.json">Source</a></td>
+  <td><a href="../duration/locales/examples/fan.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/fan.json">Source</a></td>
+  <td><a href="../time/locales/examples/fan.md">Example</a></td>
+</tr>
+<tr>
   <td>Filipino</td>
   <td><code>fil</code></td>
   <td>Austronesian</td>
@@ -325,6 +429,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/fi.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/fi.json">Source</a></td>
   <td><a href="../time/locales/examples/fi.md">Example</a></td>
+</tr>
+<tr>
+  <td>Fon</td>
+  <td><code>fon</code></td>
+  <td>Kwa</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/fon.json">Source</a></td>
+  <td><a href="../age/locales/examples/fon.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/fon.json">Source</a></td>
+  <td><a href="../date/locales/examples/fon.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/fon.json">Source</a></td>
+  <td><a href="../duration/locales/examples/fon.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/fon.json">Source</a></td>
+  <td><a href="../time/locales/examples/fon.md">Example</a></td>
 </tr>
 <tr>
   <td>French</td>
@@ -377,6 +494,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/el.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/el.json">Source</a></td>
   <td><a href="../time/locales/examples/el.md">Example</a></td>
+</tr>
+<tr>
+  <td>Guinea-Bissau Creole</td>
+  <td><code>pov</code></td>
+  <td>Creole</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/pov.json">Source</a></td>
+  <td><a href="../age/locales/examples/pov.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/pov.json">Source</a></td>
+  <td><a href="../date/locales/examples/pov.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/pov.json">Source</a></td>
+  <td><a href="../duration/locales/examples/pov.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/pov.json">Source</a></td>
+  <td><a href="../time/locales/examples/pov.md">Example</a></td>
 </tr>
 <tr>
   <td>Gujarati</td>
@@ -496,6 +626,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/jv.md">Example</a></td>
 </tr>
 <tr>
+  <td>Kabiye</td>
+  <td><code>kbp</code></td>
+  <td>Gur</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/kbp.json">Source</a></td>
+  <td><a href="../age/locales/examples/kbp.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/kbp.json">Source</a></td>
+  <td><a href="../date/locales/examples/kbp.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/kbp.json">Source</a></td>
+  <td><a href="../duration/locales/examples/kbp.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/kbp.json">Source</a></td>
+  <td><a href="../time/locales/examples/kbp.md">Example</a></td>
+</tr>
+<tr>
   <td>Kazakh</td>
   <td><code>kk</code></td>
   <td>Turkic</td>
@@ -522,6 +665,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/km.md">Example</a></td>
 </tr>
 <tr>
+  <td>Kituba</td>
+  <td><code>ktu</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/ktu.json">Source</a></td>
+  <td><a href="../age/locales/examples/ktu.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/ktu.json">Source</a></td>
+  <td><a href="../date/locales/examples/ktu.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/ktu.json">Source</a></td>
+  <td><a href="../duration/locales/examples/ktu.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/ktu.json">Source</a></td>
+  <td><a href="../time/locales/examples/ktu.md">Example</a></td>
+</tr>
+<tr>
   <td>Korean</td>
   <td><code>ko</code></td>
   <td>Koreanic</td>
@@ -533,6 +689,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/ko.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/ko.json">Source</a></td>
   <td><a href="../time/locales/examples/ko.md">Example</a></td>
+</tr>
+<tr>
+  <td>Kpelle</td>
+  <td><code>kpe</code></td>
+  <td>Mande</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/kpe.json">Source</a></td>
+  <td><a href="../age/locales/examples/kpe.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/kpe.json">Source</a></td>
+  <td><a href="../date/locales/examples/kpe.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/kpe.json">Source</a></td>
+  <td><a href="../duration/locales/examples/kpe.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/kpe.json">Source</a></td>
+  <td><a href="../time/locales/examples/kpe.md">Example</a></td>
 </tr>
 <tr>
   <td>Latvian</td>
@@ -574,6 +743,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/mk.md">Example</a></td>
 </tr>
 <tr>
+  <td>Makhuwa</td>
+  <td><code>vmw</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/vmw.json">Source</a></td>
+  <td><a href="../age/locales/examples/vmw.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/vmw.json">Source</a></td>
+  <td><a href="../date/locales/examples/vmw.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/vmw.json">Source</a></td>
+  <td><a href="../duration/locales/examples/vmw.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/vmw.json">Source</a></td>
+  <td><a href="../time/locales/examples/vmw.md">Example</a></td>
+</tr>
+<tr>
   <td>Malay</td>
   <td><code>ms</code></td>
   <td>Austronesian</td>
@@ -598,6 +780,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/mt.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/mt.json">Source</a></td>
   <td><a href="../time/locales/examples/mt.md">Example</a></td>
+</tr>
+<tr>
+  <td>Mandinka</td>
+  <td><code>mnk</code></td>
+  <td>Mande</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/mnk.json">Source</a></td>
+  <td><a href="../age/locales/examples/mnk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/mnk.json">Source</a></td>
+  <td><a href="../date/locales/examples/mnk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/mnk.json">Source</a></td>
+  <td><a href="../duration/locales/examples/mnk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/mnk.json">Source</a></td>
+  <td><a href="../time/locales/examples/mnk.md">Example</a></td>
 </tr>
 <tr>
   <td>Manx</td>
@@ -626,6 +821,45 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/mr.md">Example</a></td>
 </tr>
 <tr>
+  <td>Mauritian Creole</td>
+  <td><code>mfe</code></td>
+  <td>Creole</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/mfe.json">Source</a></td>
+  <td><a href="../age/locales/examples/mfe.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/mfe.json">Source</a></td>
+  <td><a href="../date/locales/examples/mfe.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/mfe.json">Source</a></td>
+  <td><a href="../duration/locales/examples/mfe.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/mfe.json">Source</a></td>
+  <td><a href="../time/locales/examples/mfe.md">Example</a></td>
+</tr>
+<tr>
+  <td>Mende</td>
+  <td><code>men</code></td>
+  <td>Mande</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/men.json">Source</a></td>
+  <td><a href="../age/locales/examples/men.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/men.json">Source</a></td>
+  <td><a href="../date/locales/examples/men.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/men.json">Source</a></td>
+  <td><a href="../duration/locales/examples/men.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/men.json">Source</a></td>
+  <td><a href="../time/locales/examples/men.md">Example</a></td>
+</tr>
+<tr>
+  <td>Moore</td>
+  <td><code>mos</code></td>
+  <td>Gur</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/mos.json">Source</a></td>
+  <td><a href="../age/locales/examples/mos.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/mos.json">Source</a></td>
+  <td><a href="../date/locales/examples/mos.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/mos.json">Source</a></td>
+  <td><a href="../duration/locales/examples/mos.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/mos.json">Source</a></td>
+  <td><a href="../time/locales/examples/mos.md">Example</a></td>
+</tr>
+<tr>
   <td>Nepali</td>
   <td><code>ne</code></td>
   <td>Indo-Aryan</td>
@@ -639,6 +873,32 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/ne.md">Example</a></td>
 </tr>
 <tr>
+  <td>Northern Ndebele</td>
+  <td><code>nd</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/nd.json">Source</a></td>
+  <td><a href="../age/locales/examples/nd.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/nd.json">Source</a></td>
+  <td><a href="../date/locales/examples/nd.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/nd.json">Source</a></td>
+  <td><a href="../duration/locales/examples/nd.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/nd.json">Source</a></td>
+  <td><a href="../time/locales/examples/nd.md">Example</a></td>
+</tr>
+<tr>
+  <td>Northern Sotho</td>
+  <td><code>nso</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/nso.json">Source</a></td>
+  <td><a href="../age/locales/examples/nso.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/nso.json">Source</a></td>
+  <td><a href="../date/locales/examples/nso.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/nso.json">Source</a></td>
+  <td><a href="../duration/locales/examples/nso.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/nso.json">Source</a></td>
+  <td><a href="../time/locales/examples/nso.md">Example</a></td>
+</tr>
+<tr>
   <td>Norwegian Bokmål</td>
   <td><code>nb</code></td>
   <td>Germanic</td>
@@ -650,6 +910,32 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/nb.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/nb.json">Source</a></td>
   <td><a href="../time/locales/examples/nb.md">Example</a></td>
+</tr>
+<tr>
+  <td>Nuer</td>
+  <td><code>nus</code></td>
+  <td>Nilotic</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/nus.json">Source</a></td>
+  <td><a href="../age/locales/examples/nus.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/nus.json">Source</a></td>
+  <td><a href="../date/locales/examples/nus.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/nus.json">Source</a></td>
+  <td><a href="../duration/locales/examples/nus.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/nus.json">Source</a></td>
+  <td><a href="../time/locales/examples/nus.md">Example</a></td>
+</tr>
+<tr>
+  <td>Oshiwambo</td>
+  <td><code>ng</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/ng.json">Source</a></td>
+  <td><a href="../age/locales/examples/ng.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/ng.json">Source</a></td>
+  <td><a href="../date/locales/examples/ng.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/ng.json">Source</a></td>
+  <td><a href="../duration/locales/examples/ng.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/ng.json">Source</a></td>
+  <td><a href="../time/locales/examples/ng.md">Example</a></td>
 </tr>
 <tr>
   <td>Persian</td>
@@ -730,6 +1016,32 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/ru.md">Example</a></td>
 </tr>
 <tr>
+  <td>Sango</td>
+  <td><code>sg</code></td>
+  <td>Creole</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/sg.json">Source</a></td>
+  <td><a href="../age/locales/examples/sg.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/sg.json">Source</a></td>
+  <td><a href="../date/locales/examples/sg.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/sg.json">Source</a></td>
+  <td><a href="../duration/locales/examples/sg.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/sg.json">Source</a></td>
+  <td><a href="../time/locales/examples/sg.md">Example</a></td>
+</tr>
+<tr>
+  <td>Sara</td>
+  <td><code>sar</code></td>
+  <td>Nilo-Saharan</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/sar.json">Source</a></td>
+  <td><a href="../age/locales/examples/sar.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/sar.json">Source</a></td>
+  <td><a href="../date/locales/examples/sar.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/sar.json">Source</a></td>
+  <td><a href="../duration/locales/examples/sar.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/sar.json">Source</a></td>
+  <td><a href="../time/locales/examples/sar.md">Example</a></td>
+</tr>
+<tr>
   <td>Scottish Gaelic</td>
   <td><code>gd</code></td>
   <td>Celtic</td>
@@ -769,6 +1081,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/si.md">Example</a></td>
 </tr>
 <tr>
+  <td>siSwati</td>
+  <td><code>ss</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/ss.json">Source</a></td>
+  <td><a href="../age/locales/examples/ss.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/ss.json">Source</a></td>
+  <td><a href="../date/locales/examples/ss.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/ss.json">Source</a></td>
+  <td><a href="../duration/locales/examples/ss.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/ss.json">Source</a></td>
+  <td><a href="../time/locales/examples/ss.md">Example</a></td>
+</tr>
+<tr>
   <td>Slovak</td>
   <td><code>sk</code></td>
   <td>Slavic</td>
@@ -795,6 +1120,32 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/sl.md">Example</a></td>
 </tr>
 <tr>
+  <td>Soninke</td>
+  <td><code>snk</code></td>
+  <td>Mande</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/snk.json">Source</a></td>
+  <td><a href="../age/locales/examples/snk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/snk.json">Source</a></td>
+  <td><a href="../date/locales/examples/snk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/snk.json">Source</a></td>
+  <td><a href="../duration/locales/examples/snk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/snk.json">Source</a></td>
+  <td><a href="../time/locales/examples/snk.md">Example</a></td>
+</tr>
+<tr>
+  <td>Southern Sotho</td>
+  <td><code>st</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/st.json">Source</a></td>
+  <td><a href="../age/locales/examples/st.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/st.json">Source</a></td>
+  <td><a href="../date/locales/examples/st.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/st.json">Source</a></td>
+  <td><a href="../duration/locales/examples/st.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/st.json">Source</a></td>
+  <td><a href="../time/locales/examples/st.md">Example</a></td>
+</tr>
+<tr>
   <td>Spanish</td>
   <td><code>es</code></td>
   <td>Romance</td>
@@ -806,6 +1157,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/es.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/es.json">Source</a></td>
   <td><a href="../time/locales/examples/es.md">Example</a></td>
+</tr>
+<tr>
+  <td>Sukuma</td>
+  <td><code>suk</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/suk.json">Source</a></td>
+  <td><a href="../age/locales/examples/suk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/suk.json">Source</a></td>
+  <td><a href="../date/locales/examples/suk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/suk.json">Source</a></td>
+  <td><a href="../duration/locales/examples/suk.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/suk.json">Source</a></td>
+  <td><a href="../time/locales/examples/suk.md">Example</a></td>
 </tr>
 <tr>
   <td>Swahili</td>
@@ -873,6 +1237,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../time/locales/examples/te.md">Example</a></td>
 </tr>
 <tr>
+  <td>Temne</td>
+  <td><code>tem</code></td>
+  <td>Atlantic</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/tem.json">Source</a></td>
+  <td><a href="../age/locales/examples/tem.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/tem.json">Source</a></td>
+  <td><a href="../date/locales/examples/tem.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/tem.json">Source</a></td>
+  <td><a href="../duration/locales/examples/tem.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/tem.json">Source</a></td>
+  <td><a href="../time/locales/examples/tem.md">Example</a></td>
+</tr>
+<tr>
   <td>Thai</td>
   <td><code>th</code></td>
   <td>Kra-Dai</td>
@@ -884,6 +1261,45 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/th.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/th.json">Source</a></td>
   <td><a href="../time/locales/examples/th.md">Example</a></td>
+</tr>
+<tr>
+  <td>Tigre</td>
+  <td><code>tig</code></td>
+  <td>Semitic</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/tig.json">Source</a></td>
+  <td><a href="../age/locales/examples/tig.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/tig.json">Source</a></td>
+  <td><a href="../date/locales/examples/tig.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/tig.json">Source</a></td>
+  <td><a href="../duration/locales/examples/tig.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/tig.json">Source</a></td>
+  <td><a href="../time/locales/examples/tig.md">Example</a></td>
+</tr>
+<tr>
+  <td>Tsonga</td>
+  <td><code>ts</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/ts.json">Source</a></td>
+  <td><a href="../age/locales/examples/ts.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/ts.json">Source</a></td>
+  <td><a href="../date/locales/examples/ts.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/ts.json">Source</a></td>
+  <td><a href="../duration/locales/examples/ts.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/ts.json">Source</a></td>
+  <td><a href="../time/locales/examples/ts.md">Example</a></td>
+</tr>
+<tr>
+  <td>Tswana</td>
+  <td><code>tn</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/tn.json">Source</a></td>
+  <td><a href="../age/locales/examples/tn.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/tn.json">Source</a></td>
+  <td><a href="../date/locales/examples/tn.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/tn.json">Source</a></td>
+  <td><a href="../duration/locales/examples/tn.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/tn.json">Source</a></td>
+  <td><a href="../time/locales/examples/tn.md">Example</a></td>
 </tr>
 <tr>
   <td>Turkish</td>
@@ -910,6 +1326,19 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/uk.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/uk.json">Source</a></td>
   <td><a href="../time/locales/examples/uk.md">Example</a></td>
+</tr>
+<tr>
+  <td>Umbundu</td>
+  <td><code>umb</code></td>
+  <td>Bantu</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/umb.json">Source</a></td>
+  <td><a href="../age/locales/examples/umb.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/umb.json">Source</a></td>
+  <td><a href="../date/locales/examples/umb.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/umb.json">Source</a></td>
+  <td><a href="../duration/locales/examples/umb.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/umb.json">Source</a></td>
+  <td><a href="../time/locales/examples/umb.md">Example</a></td>
 </tr>
 <tr>
   <td>Urdu</td>
@@ -962,6 +1391,32 @@ Each locale is defined in a single JSON file per library. Edit the JSON, then ru
   <td><a href="../duration/locales/examples/cy.md">Example</a></td>
   <td style="border-left: 2px solid #888"><a href="../time/locales/src/cy.json">Source</a></td>
   <td><a href="../time/locales/examples/cy.md">Example</a></td>
+</tr>
+<tr>
+  <td>Wolof</td>
+  <td><code>wo</code></td>
+  <td>Atlantic</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/wo.json">Source</a></td>
+  <td><a href="../age/locales/examples/wo.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/wo.json">Source</a></td>
+  <td><a href="../date/locales/examples/wo.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/wo.json">Source</a></td>
+  <td><a href="../duration/locales/examples/wo.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/wo.json">Source</a></td>
+  <td><a href="../time/locales/examples/wo.md">Example</a></td>
+</tr>
+<tr>
+  <td>Zarma-Songhay</td>
+  <td><code>dje</code></td>
+  <td>Songhay</td>
+  <td style="border-left: 2px solid #888"><a href="../age/locales/src/dje.json">Source</a></td>
+  <td><a href="../age/locales/examples/dje.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../date/locales/src/dje.json">Source</a></td>
+  <td><a href="../date/locales/examples/dje.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../duration/locales/src/dje.json">Source</a></td>
+  <td><a href="../duration/locales/examples/dje.md">Example</a></td>
+  <td style="border-left: 2px solid #888"><a href="../time/locales/src/dje.json">Source</a></td>
+  <td><a href="../time/locales/examples/dje.md">Example</a></td>
 </tr>
 </tbody>
 </table>

@@ -19,8 +19,11 @@ import SayableDuration.Locales.Ak as Ak
 import SayableDuration.Locales.Am as Am
 import SayableDuration.Locales.Ar as Ar
 import SayableDuration.Locales.Az as Az
+import SayableDuration.Locales.Bci as Bci
 import SayableDuration.Locales.Be as Be
+import SayableDuration.Locales.Bem as Bem
 import SayableDuration.Locales.Bg as Bg
+import SayableDuration.Locales.Bm as Bm
 import SayableDuration.Locales.Bn as Bn
 import SayableDuration.Locales.Br as Br
 import SayableDuration.Locales.Bs as Bs
@@ -30,15 +33,21 @@ import SayableDuration.Locales.Cs as Cs
 import SayableDuration.Locales.Cy as Cy
 import SayableDuration.Locales.Da as Da
 import SayableDuration.Locales.De as De
+import SayableDuration.Locales.Din as Din
+import SayableDuration.Locales.Dje as Dje
+import SayableDuration.Locales.Dyu as Dyu
+import SayableDuration.Locales.Ee as Ee
 import SayableDuration.Locales.El as El
 import SayableDuration.Locales.En as En
 import SayableDuration.Locales.Es as Es
 import SayableDuration.Locales.Et as Et
 import SayableDuration.Locales.Eu as Eu
 import SayableDuration.Locales.Fa as Fa
+import SayableDuration.Locales.Fan as Fan
 import SayableDuration.Locales.Ff as Ff
 import SayableDuration.Locales.Fi as Fi
 import SayableDuration.Locales.Fil as Fil
+import SayableDuration.Locales.Fon as Fon
 import SayableDuration.Locales.Fr as Fr
 import SayableDuration.Locales.Ga as Ga
 import SayableDuration.Locales.Gd as Gd
@@ -60,10 +69,13 @@ import SayableDuration.Locales.It as It
 import SayableDuration.Locales.Ja as Ja
 import SayableDuration.Locales.Jv as Jv
 import SayableDuration.Locales.Ka as Ka
+import SayableDuration.Locales.Kbp as Kbp
 import SayableDuration.Locales.Kk as Kk
 import SayableDuration.Locales.Km as Km
 import SayableDuration.Locales.Kn as Kn
 import SayableDuration.Locales.Ko as Ko
+import SayableDuration.Locales.Kpe as Kpe
+import SayableDuration.Locales.Ktu as Ktu
 import SayableDuration.Locales.Ku as Ku
 import SayableDuration.Locales.Kw as Kw
 import SayableDuration.Locales.Ky as Ky
@@ -72,56 +84,79 @@ import SayableDuration.Locales.Ln as Ln
 import SayableDuration.Locales.Lo as Lo
 import SayableDuration.Locales.Lt as Lt
 import SayableDuration.Locales.Lv as Lv
+import SayableDuration.Locales.Men as Men
+import SayableDuration.Locales.Mfe as Mfe
 import SayableDuration.Locales.Mg as Mg
 import SayableDuration.Locales.Mi as Mi
 import SayableDuration.Locales.Mk as Mk
 import SayableDuration.Locales.Ml as Ml
 import SayableDuration.Locales.Mn as Mn
+import SayableDuration.Locales.Mnk as Mnk
+import SayableDuration.Locales.Mos as Mos
 import SayableDuration.Locales.Mr as Mr
 import SayableDuration.Locales.Ms as Ms
 import SayableDuration.Locales.Mt as Mt
 import SayableDuration.Locales.My as My
 import SayableDuration.Locales.Nb as Nb
+import SayableDuration.Locales.Nd as Nd
 import SayableDuration.Locales.Ne as Ne
+import SayableDuration.Locales.Ng as Ng
 import SayableDuration.Locales.Nl as Nl
+import SayableDuration.Locales.Nso as Nso
+import SayableDuration.Locales.Nus as Nus
 import SayableDuration.Locales.Ny as Ny
 import SayableDuration.Locales.Om as Om
 import SayableDuration.Locales.Or as Or
 import SayableDuration.Locales.Pa as Pa
 import SayableDuration.Locales.Pl as Pl
+import SayableDuration.Locales.Pov as Pov
 import SayableDuration.Locales.Ps as Ps
 import SayableDuration.Locales.Pt as Pt
 import SayableDuration.Locales.Qu as Qu
 import SayableDuration.Locales.Ro as Ro
 import SayableDuration.Locales.Ru as Ru
 import SayableDuration.Locales.Rw as Rw
+import SayableDuration.Locales.Sar as Sar
 import SayableDuration.Locales.Sd as Sd
+import SayableDuration.Locales.Sg as Sg
 import SayableDuration.Locales.Shi as Shi
 import SayableDuration.Locales.Si as Si
 import SayableDuration.Locales.Sk as Sk
 import SayableDuration.Locales.Sl as Sl
 import SayableDuration.Locales.Sn as Sn
+import SayableDuration.Locales.Snk as Snk
 import SayableDuration.Locales.So as So
 import SayableDuration.Locales.Sq as Sq
 import SayableDuration.Locales.Sr as Sr
+import SayableDuration.Locales.Ss as Ss
+import SayableDuration.Locales.St as St
 import SayableDuration.Locales.Su as Su
+import SayableDuration.Locales.Suk as Suk
 import SayableDuration.Locales.Sv as Sv
 import SayableDuration.Locales.Sw as Sw
 import SayableDuration.Locales.Ta as Ta
 import SayableDuration.Locales.Te as Te
+import SayableDuration.Locales.Tem as Tem
 import SayableDuration.Locales.Tg as Tg
 import SayableDuration.Locales.Th as Th
 import SayableDuration.Locales.Ti as Ti
+import SayableDuration.Locales.Tig as Tig
 import SayableDuration.Locales.Tk as Tk
+import SayableDuration.Locales.Tn as Tn
 import SayableDuration.Locales.Tr as Tr
+import SayableDuration.Locales.Ts as Ts
 import SayableDuration.Locales.Tzm as Tzm
 import SayableDuration.Locales.Uk as Uk
+import SayableDuration.Locales.Umb as Umb
 import SayableDuration.Locales.Ur as Ur
 import SayableDuration.Locales.Uz as Uz
 import SayableDuration.Locales.Vi as Vi
+import SayableDuration.Locales.Vmw as Vmw
+import SayableDuration.Locales.Wo as Wo
 import SayableDuration.Locales.Xh as Xh
 import SayableDuration.Locales.Yo as Yo
 import SayableDuration.Locales.Yue as Yue
+import SayableDuration.Locales.Zdj as Zdj
 import SayableDuration.Locales.Zh as Zh
 import SayableDuration.Locales.Zu as Zu
 
@@ -134,8 +169,11 @@ allLocales =
         , ( "am", Am.locale )
         , ( "ar", Ar.locale )
         , ( "az", Az.locale )
+        , ( "bci", Bci.locale )
         , ( "be", Be.locale )
+        , ( "bem", Bem.locale )
         , ( "bg", Bg.locale )
+        , ( "bm", Bm.locale )
         , ( "bn", Bn.locale )
         , ( "br", Br.locale )
         , ( "bs", Bs.locale )
@@ -145,15 +183,21 @@ allLocales =
         , ( "cy", Cy.locale )
         , ( "da", Da.locale )
         , ( "de", De.locale )
+        , ( "din", Din.locale )
+        , ( "dje", Dje.locale )
+        , ( "dyu", Dyu.locale )
+        , ( "ee", Ee.locale )
         , ( "el", El.locale )
         , ( "en", En.locale )
         , ( "es", Es.locale )
         , ( "et", Et.locale )
         , ( "eu", Eu.locale )
         , ( "fa", Fa.locale )
+        , ( "fan", Fan.locale )
         , ( "ff", Ff.locale )
         , ( "fi", Fi.locale )
         , ( "fil", Fil.locale )
+        , ( "fon", Fon.locale )
         , ( "fr", Fr.locale )
         , ( "ga", Ga.locale )
         , ( "gd", Gd.locale )
@@ -175,10 +219,13 @@ allLocales =
         , ( "ja", Ja.locale )
         , ( "jv", Jv.locale )
         , ( "ka", Ka.locale )
+        , ( "kbp", Kbp.locale )
         , ( "kk", Kk.locale )
         , ( "km", Km.locale )
         , ( "kn", Kn.locale )
         , ( "ko", Ko.locale )
+        , ( "kpe", Kpe.locale )
+        , ( "ktu", Ktu.locale )
         , ( "ku", Ku.locale )
         , ( "kw", Kw.locale )
         , ( "ky", Ky.locale )
@@ -187,56 +234,79 @@ allLocales =
         , ( "lo", Lo.locale )
         , ( "lt", Lt.locale )
         , ( "lv", Lv.locale )
+        , ( "men", Men.locale )
+        , ( "mfe", Mfe.locale )
         , ( "mg", Mg.locale )
         , ( "mi", Mi.locale )
         , ( "mk", Mk.locale )
         , ( "ml", Ml.locale )
         , ( "mn", Mn.locale )
+        , ( "mnk", Mnk.locale )
+        , ( "mos", Mos.locale )
         , ( "mr", Mr.locale )
         , ( "ms", Ms.locale )
         , ( "mt", Mt.locale )
         , ( "my", My.locale )
         , ( "nb", Nb.locale )
+        , ( "nd", Nd.locale )
         , ( "ne", Ne.locale )
+        , ( "ng", Ng.locale )
         , ( "nl", Nl.locale )
+        , ( "nso", Nso.locale )
+        , ( "nus", Nus.locale )
         , ( "ny", Ny.locale )
         , ( "om", Om.locale )
         , ( "or", Or.locale )
         , ( "pa", Pa.locale )
         , ( "pl", Pl.locale )
+        , ( "pov", Pov.locale )
         , ( "ps", Ps.locale )
         , ( "pt", Pt.locale )
         , ( "qu", Qu.locale )
         , ( "ro", Ro.locale )
         , ( "ru", Ru.locale )
         , ( "rw", Rw.locale )
+        , ( "sar", Sar.locale )
         , ( "sd", Sd.locale )
+        , ( "sg", Sg.locale )
         , ( "shi", Shi.locale )
         , ( "si", Si.locale )
         , ( "sk", Sk.locale )
         , ( "sl", Sl.locale )
         , ( "sn", Sn.locale )
+        , ( "snk", Snk.locale )
         , ( "so", So.locale )
         , ( "sq", Sq.locale )
         , ( "sr", Sr.locale )
+        , ( "ss", Ss.locale )
+        , ( "st", St.locale )
         , ( "su", Su.locale )
+        , ( "suk", Suk.locale )
         , ( "sv", Sv.locale )
         , ( "sw", Sw.locale )
         , ( "ta", Ta.locale )
         , ( "te", Te.locale )
+        , ( "tem", Tem.locale )
         , ( "tg", Tg.locale )
         , ( "th", Th.locale )
         , ( "ti", Ti.locale )
+        , ( "tig", Tig.locale )
         , ( "tk", Tk.locale )
+        , ( "tn", Tn.locale )
         , ( "tr", Tr.locale )
+        , ( "ts", Ts.locale )
         , ( "tzm", Tzm.locale )
         , ( "uk", Uk.locale )
+        , ( "umb", Umb.locale )
         , ( "ur", Ur.locale )
         , ( "uz", Uz.locale )
         , ( "vi", Vi.locale )
+        , ( "vmw", Vmw.locale )
+        , ( "wo", Wo.locale )
         , ( "xh", Xh.locale )
         , ( "yo", Yo.locale )
         , ( "yue", Yue.locale )
+        , ( "zdj", Zdj.locale )
         , ( "zh", Zh.locale )
         , ( "zu", Zu.locale )
         ]

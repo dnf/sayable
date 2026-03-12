@@ -14,8 +14,11 @@ import sayableduration/locales/ak as locale_ak
 import sayableduration/locales/am as locale_am
 import sayableduration/locales/ar as locale_ar
 import sayableduration/locales/az as locale_az
+import sayableduration/locales/bci as locale_bci
 import sayableduration/locales/be as locale_be
+import sayableduration/locales/bem as locale_bem
 import sayableduration/locales/bg as locale_bg
+import sayableduration/locales/bm as locale_bm
 import sayableduration/locales/bn as locale_bn
 import sayableduration/locales/br as locale_br
 import sayableduration/locales/bs as locale_bs
@@ -25,15 +28,21 @@ import sayableduration/locales/cs as locale_cs
 import sayableduration/locales/cy as locale_cy
 import sayableduration/locales/da as locale_da
 import sayableduration/locales/de as locale_de
+import sayableduration/locales/din as locale_din
+import sayableduration/locales/dje as locale_dje
+import sayableduration/locales/dyu as locale_dyu
+import sayableduration/locales/ee as locale_ee
 import sayableduration/locales/el as locale_el
 import sayableduration/locales/en as locale_en
 import sayableduration/locales/es as locale_es
 import sayableduration/locales/et as locale_et
 import sayableduration/locales/eu as locale_eu
 import sayableduration/locales/fa as locale_fa
+import sayableduration/locales/fan as locale_fan
 import sayableduration/locales/ff as locale_ff
 import sayableduration/locales/fi as locale_fi
 import sayableduration/locales/fil as locale_fil
+import sayableduration/locales/fon as locale_fon
 import sayableduration/locales/fr as locale_fr
 import sayableduration/locales/ga as locale_ga
 import sayableduration/locales/gd as locale_gd
@@ -55,10 +64,13 @@ import sayableduration/locales/it as locale_it
 import sayableduration/locales/ja as locale_ja
 import sayableduration/locales/jv as locale_jv
 import sayableduration/locales/ka as locale_ka
+import sayableduration/locales/kbp as locale_kbp
 import sayableduration/locales/kk as locale_kk
 import sayableduration/locales/km as locale_km
 import sayableduration/locales/kn as locale_kn
 import sayableduration/locales/ko as locale_ko
+import sayableduration/locales/kpe as locale_kpe
+import sayableduration/locales/ktu as locale_ktu
 import sayableduration/locales/ku as locale_ku
 import sayableduration/locales/kw as locale_kw
 import sayableduration/locales/ky as locale_ky
@@ -67,56 +79,79 @@ import sayableduration/locales/ln as locale_ln
 import sayableduration/locales/lo as locale_lo
 import sayableduration/locales/lt as locale_lt
 import sayableduration/locales/lv as locale_lv
+import sayableduration/locales/men as locale_men
+import sayableduration/locales/mfe as locale_mfe
 import sayableduration/locales/mg as locale_mg
 import sayableduration/locales/mi as locale_mi
 import sayableduration/locales/mk as locale_mk
 import sayableduration/locales/ml as locale_ml
 import sayableduration/locales/mn as locale_mn
+import sayableduration/locales/mnk as locale_mnk
+import sayableduration/locales/mos as locale_mos
 import sayableduration/locales/mr as locale_mr
 import sayableduration/locales/ms as locale_ms
 import sayableduration/locales/mt as locale_mt
 import sayableduration/locales/my as locale_my
 import sayableduration/locales/nb as locale_nb
+import sayableduration/locales/nd as locale_nd
 import sayableduration/locales/ne as locale_ne
+import sayableduration/locales/ng as locale_ng
 import sayableduration/locales/nl as locale_nl
+import sayableduration/locales/nso as locale_nso
+import sayableduration/locales/nus as locale_nus
 import sayableduration/locales/ny as locale_ny
 import sayableduration/locales/om as locale_om
 import sayableduration/locales/or as locale_or
 import sayableduration/locales/pa as locale_pa
 import sayableduration/locales/pl as locale_pl
+import sayableduration/locales/pov as locale_pov
 import sayableduration/locales/ps as locale_ps
 import sayableduration/locales/pt as locale_pt
 import sayableduration/locales/qu as locale_qu
 import sayableduration/locales/ro as locale_ro
 import sayableduration/locales/ru as locale_ru
 import sayableduration/locales/rw as locale_rw
+import sayableduration/locales/sar as locale_sar
 import sayableduration/locales/sd as locale_sd
+import sayableduration/locales/sg as locale_sg
 import sayableduration/locales/shi as locale_shi
 import sayableduration/locales/si as locale_si
 import sayableduration/locales/sk as locale_sk
 import sayableduration/locales/sl as locale_sl
 import sayableduration/locales/sn as locale_sn
+import sayableduration/locales/snk as locale_snk
 import sayableduration/locales/so as locale_so
 import sayableduration/locales/sq as locale_sq
 import sayableduration/locales/sr as locale_sr
+import sayableduration/locales/ss as locale_ss
+import sayableduration/locales/st as locale_st
 import sayableduration/locales/su as locale_su
+import sayableduration/locales/suk as locale_suk
 import sayableduration/locales/sv as locale_sv
 import sayableduration/locales/sw as locale_sw
 import sayableduration/locales/ta as locale_ta
 import sayableduration/locales/te as locale_te
+import sayableduration/locales/tem as locale_tem
 import sayableduration/locales/tg as locale_tg
 import sayableduration/locales/th as locale_th
 import sayableduration/locales/ti as locale_ti
+import sayableduration/locales/tig as locale_tig
 import sayableduration/locales/tk as locale_tk
+import sayableduration/locales/tn as locale_tn
 import sayableduration/locales/tr as locale_tr
+import sayableduration/locales/ts as locale_ts
 import sayableduration/locales/tzm as locale_tzm
 import sayableduration/locales/uk as locale_uk
+import sayableduration/locales/umb as locale_umb
 import sayableduration/locales/ur as locale_ur
 import sayableduration/locales/uz as locale_uz
 import sayableduration/locales/vi as locale_vi
+import sayableduration/locales/vmw as locale_vmw
+import sayableduration/locales/wo as locale_wo
 import sayableduration/locales/xh as locale_xh
 import sayableduration/locales/yo as locale_yo
 import sayableduration/locales/yue as locale_yue
+import sayableduration/locales/zdj as locale_zdj
 import sayableduration/locales/zh as locale_zh
 import sayableduration/locales/zu as locale_zu
 
@@ -127,8 +162,11 @@ pub fn get(code: String) -> Result(types.DurationLocale, Nil) {
     "am" -> Ok(locale_am.locale())
     "ar" -> Ok(locale_ar.locale())
     "az" -> Ok(locale_az.locale())
+    "bci" -> Ok(locale_bci.locale())
     "be" -> Ok(locale_be.locale())
+    "bem" -> Ok(locale_bem.locale())
     "bg" -> Ok(locale_bg.locale())
+    "bm" -> Ok(locale_bm.locale())
     "bn" -> Ok(locale_bn.locale())
     "br" -> Ok(locale_br.locale())
     "bs" -> Ok(locale_bs.locale())
@@ -138,15 +176,21 @@ pub fn get(code: String) -> Result(types.DurationLocale, Nil) {
     "cy" -> Ok(locale_cy.locale())
     "da" -> Ok(locale_da.locale())
     "de" -> Ok(locale_de.locale())
+    "din" -> Ok(locale_din.locale())
+    "dje" -> Ok(locale_dje.locale())
+    "dyu" -> Ok(locale_dyu.locale())
+    "ee" -> Ok(locale_ee.locale())
     "el" -> Ok(locale_el.locale())
     "en" -> Ok(locale_en.locale())
     "es" -> Ok(locale_es.locale())
     "et" -> Ok(locale_et.locale())
     "eu" -> Ok(locale_eu.locale())
     "fa" -> Ok(locale_fa.locale())
+    "fan" -> Ok(locale_fan.locale())
     "ff" -> Ok(locale_ff.locale())
     "fi" -> Ok(locale_fi.locale())
     "fil" -> Ok(locale_fil.locale())
+    "fon" -> Ok(locale_fon.locale())
     "fr" -> Ok(locale_fr.locale())
     "ga" -> Ok(locale_ga.locale())
     "gd" -> Ok(locale_gd.locale())
@@ -168,10 +212,13 @@ pub fn get(code: String) -> Result(types.DurationLocale, Nil) {
     "ja" -> Ok(locale_ja.locale())
     "jv" -> Ok(locale_jv.locale())
     "ka" -> Ok(locale_ka.locale())
+    "kbp" -> Ok(locale_kbp.locale())
     "kk" -> Ok(locale_kk.locale())
     "km" -> Ok(locale_km.locale())
     "kn" -> Ok(locale_kn.locale())
     "ko" -> Ok(locale_ko.locale())
+    "kpe" -> Ok(locale_kpe.locale())
+    "ktu" -> Ok(locale_ktu.locale())
     "ku" -> Ok(locale_ku.locale())
     "kw" -> Ok(locale_kw.locale())
     "ky" -> Ok(locale_ky.locale())
@@ -180,56 +227,79 @@ pub fn get(code: String) -> Result(types.DurationLocale, Nil) {
     "lo" -> Ok(locale_lo.locale())
     "lt" -> Ok(locale_lt.locale())
     "lv" -> Ok(locale_lv.locale())
+    "men" -> Ok(locale_men.locale())
+    "mfe" -> Ok(locale_mfe.locale())
     "mg" -> Ok(locale_mg.locale())
     "mi" -> Ok(locale_mi.locale())
     "mk" -> Ok(locale_mk.locale())
     "ml" -> Ok(locale_ml.locale())
     "mn" -> Ok(locale_mn.locale())
+    "mnk" -> Ok(locale_mnk.locale())
+    "mos" -> Ok(locale_mos.locale())
     "mr" -> Ok(locale_mr.locale())
     "ms" -> Ok(locale_ms.locale())
     "mt" -> Ok(locale_mt.locale())
     "my" -> Ok(locale_my.locale())
     "nb" -> Ok(locale_nb.locale())
+    "nd" -> Ok(locale_nd.locale())
     "ne" -> Ok(locale_ne.locale())
+    "ng" -> Ok(locale_ng.locale())
     "nl" -> Ok(locale_nl.locale())
+    "nso" -> Ok(locale_nso.locale())
+    "nus" -> Ok(locale_nus.locale())
     "ny" -> Ok(locale_ny.locale())
     "om" -> Ok(locale_om.locale())
     "or" -> Ok(locale_or.locale())
     "pa" -> Ok(locale_pa.locale())
     "pl" -> Ok(locale_pl.locale())
+    "pov" -> Ok(locale_pov.locale())
     "ps" -> Ok(locale_ps.locale())
     "pt" -> Ok(locale_pt.locale())
     "qu" -> Ok(locale_qu.locale())
     "ro" -> Ok(locale_ro.locale())
     "ru" -> Ok(locale_ru.locale())
     "rw" -> Ok(locale_rw.locale())
+    "sar" -> Ok(locale_sar.locale())
     "sd" -> Ok(locale_sd.locale())
+    "sg" -> Ok(locale_sg.locale())
     "shi" -> Ok(locale_shi.locale())
     "si" -> Ok(locale_si.locale())
     "sk" -> Ok(locale_sk.locale())
     "sl" -> Ok(locale_sl.locale())
     "sn" -> Ok(locale_sn.locale())
+    "snk" -> Ok(locale_snk.locale())
     "so" -> Ok(locale_so.locale())
     "sq" -> Ok(locale_sq.locale())
     "sr" -> Ok(locale_sr.locale())
+    "ss" -> Ok(locale_ss.locale())
+    "st" -> Ok(locale_st.locale())
     "su" -> Ok(locale_su.locale())
+    "suk" -> Ok(locale_suk.locale())
     "sv" -> Ok(locale_sv.locale())
     "sw" -> Ok(locale_sw.locale())
     "ta" -> Ok(locale_ta.locale())
     "te" -> Ok(locale_te.locale())
+    "tem" -> Ok(locale_tem.locale())
     "tg" -> Ok(locale_tg.locale())
     "th" -> Ok(locale_th.locale())
     "ti" -> Ok(locale_ti.locale())
+    "tig" -> Ok(locale_tig.locale())
     "tk" -> Ok(locale_tk.locale())
+    "tn" -> Ok(locale_tn.locale())
     "tr" -> Ok(locale_tr.locale())
+    "ts" -> Ok(locale_ts.locale())
     "tzm" -> Ok(locale_tzm.locale())
     "uk" -> Ok(locale_uk.locale())
+    "umb" -> Ok(locale_umb.locale())
     "ur" -> Ok(locale_ur.locale())
     "uz" -> Ok(locale_uz.locale())
     "vi" -> Ok(locale_vi.locale())
+    "vmw" -> Ok(locale_vmw.locale())
+    "wo" -> Ok(locale_wo.locale())
     "xh" -> Ok(locale_xh.locale())
     "yo" -> Ok(locale_yo.locale())
     "yue" -> Ok(locale_yue.locale())
+    "zdj" -> Ok(locale_zdj.locale())
     "zh" -> Ok(locale_zh.locale())
     "zu" -> Ok(locale_zu.locale())
     _ -> Error(Nil)

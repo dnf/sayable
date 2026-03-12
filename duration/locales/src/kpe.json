@@ -1,0 +1,63 @@
+{
+  "code": "kpe",
+  "name": "Kpelle",
+  "pluralRule": "other_only",
+  "units": {
+    "second": "sɛkɔŋ {n}",
+    "minute": "miniti {n}",
+    "hour": "awa {n}",
+    "day": "ɓɛlɛɛ {n}",
+    "week": "wikii {n}",
+    "month": "ŋuŋ {n}",
+    "year": "kɛ̃ɛ̃ {n}"
+  },
+  "half": "{0} da kɔlɛ",
+  "delimiter": ", ",
+  "justNow": "ɓaai",
+  "ago": "{0} kɛ pɔlɔ",
+  "inFuture": "ya {0}",
+  "short": {
+    "units": {
+      "second": "sɛk. {n}",
+      "minute": "min. {n}",
+      "hour": "awa {n}",
+      "day": "ɓɛl. {n}",
+      "week": "wik. {n}",
+      "month": "ŋuŋ {n}",
+      "year": "kɛ̃ɛ̃ {n}"
+    },
+    "ago": "{0} kɛ pɔlɔ",
+    "inFuture": "ya {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} pɔlɔ",
+    "inFuture": "ya {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

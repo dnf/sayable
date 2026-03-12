@@ -1,0 +1,70 @@
+{
+  "code": "sar",
+  "name": "Sara",
+  "months": [
+    "Zanviye",
+    "Fevriye",
+    "Maars",
+    "Avriil",
+    "Mee",
+    "Zuɛ̃",
+    "Zulɛ",
+    "Uut",
+    "Sɛtɛmbar",
+    "Ɔtɔbar",
+    "Nɔvambar",
+    "Desambar"
+  ],
+  "weekdays": [
+    "Paskaa",
+    "Nɔy",
+    "Talata",
+    "Alarba",
+    "Alkamisa",
+    "Juma",
+    "Sibiti"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "ɗgá",
+  "tomorrow": "gɨ́nā",
+  "yesterday": "ɗáà",
+  "dayAfterTomorrow": "gɨ́nā gɨ́nā",
+  "dayBeforeYesterday": "ɗáà ɗáà",
+  "thisWeekday": "{weekday} nè",
+  "nextWeekday": "{weekday} ga",
+  "lastWeekday": "{weekday} ɓòo kɔ",
+  "short": {
+    "months": [
+      "Zan",
+      "Fev",
+      "Mar",
+      "Avr",
+      "Mee",
+      "Zuɛ",
+      "Zul",
+      "Uut",
+      "Sɛt",
+      "Ɔtɔ",
+      "Nɔv",
+      "Des"
+    ],
+    "weekdays": [
+      "Pas",
+      "Nɔy",
+      "Tal",
+      "Ala",
+      "Alk",
+      "Jum",
+      "Sib"
+    ],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

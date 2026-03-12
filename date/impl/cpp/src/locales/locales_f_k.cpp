@@ -60,6 +60,53 @@ const DateLocale& FA() {
     return loc;
 }
 
+// Source: date/locales/src/fan.json
+const DateLocale& FAN() {
+    static const DateLocale loc{
+        "fan",
+        {"Nzas Ngon", "Nzas Mekié", "Nzas Okúa", "Nzas Angón", "Nzas Obuí", "Nzas Okéna", "Nzas Osúa", "Nzas Mwom", "Nzas Ebulú", "Nzas Owono", "Nzas Owono-abé", "Nzas Nkéng"},
+        {"Esig", "Amvus", "Amvus-abé", "Amvus-alú", "Amvus-anyin", "Mba", "Ngon"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "anú", "kie", "angogomé",
+        "kie okúa",
+        "angogomé okúa",
+        "{weekday} ane",
+        "{weekday} a bé za",
+        "{weekday} a ja",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Ngo", "Mek", "Oku", "Ang", "Obu", "Oke", "Osu", "Mwo", "Ebu", "Owo", "Owa", "Nke"},
+            {},
+            {"Esi", "Amv", "Ama", "Aml", "Amn", "Mba", "Ngo"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/ff.json
 const DateLocale& FF() {
     static const DateLocale loc{
@@ -193,6 +240,53 @@ const DateLocale& FIL() {
             false,
             "{m}/{d}",
             "{m}/{d}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/fon.json
+const DateLocale& FON() {
+    static const DateLocale loc{
+        "fon",
+        {"Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"},
+        {"Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "egbè", "sɔ", "sá",
+        "sɔ gudo",
+        "sá gudo",
+        "{weekday} elɔ",
+        "{weekday} e ja",
+        "{weekday} e wá yí",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"},
+            {},
+            {"Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
             "",
             "",
             ""
@@ -1188,6 +1282,53 @@ const DateLocale& KA() {
     return loc;
 }
 
+// Source: date/locales/src/kbp.json
+const DateLocale& KBP() {
+    static const DateLocale loc{
+        "kbp",
+        {"Kɔlaɣ", "Naaɣ Kɩŋ", "Naataŋgʊ", "Naalɩɩ", "Lɛlɩɩ", "Kʊɖʊmaa", "Saŋayɩɩ", "Kɩyɛɛna", "Lɩtɩɩ", "Kʊɖʊmaɣ", "Tɩŋgɩzɩɩ", "Abranɩɩ"},
+        {"Pɩsɩ", "Tɛɖɛɣa", "Taata", "Aranzɩɩ", "Aramnza", "Azɩma", "Asɩbɩ"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "sɔnɔ", "cee", "ɖooo",
+        "cee wayɩ",
+        "ɖooo wayɩ",
+        "{weekday} kɩ",
+        "{weekday} nɛ ŋga",
+        "{weekday} nɛ wɛ",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Kɔl", "Naa", "Nat", "Nal", "Lɛl", "Kʊɖ", "Saŋ", "Kɩy", "Lɩt", "Kʊɖ", "Tɩŋ", "Abr"},
+            {},
+            {"Pɩs", "Tɛɖ", "Taa", "Ara", "Arm", "Azɩ", "Asɩ"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/kk.json
 const DateLocale& KK() {
     static const DateLocale loc{
@@ -1368,6 +1509,100 @@ const DateLocale& KO() {
             false,
             "{m}/{d}",
             "{yy}/{m}/{d}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/kpe.json
+const DateLocale& KPE() {
+    static const DateLocale loc{
+        "kpe",
+        {"Yanuwali", "Fɛbɛli", "Maachi", "Eepɛli", "Mɛɛ", "Juŋ", "Julai", "Ɔɔgɔsi", "Sɛtɛmba", "Ɔtɔba", "Nɔvɛmba", "Disɛmba"},
+        {"Saadee", "Tɛnɛɛ", "Talata", "Alaba", "Aimisa", "Juma", "Satɛdee"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "nɔ̃ɔ̃", "sila", "ɓii",
+        "sila pɔlɔ",
+        "ɓii pɔlɔ",
+        "{weekday} yi",
+        "{weekday} ya kɛ",
+        "{weekday} kɛ pɔlɔ",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Yan", "Fɛb", "Maa", "Eep", "Mɛɛ", "Juŋ", "Jul", "Ɔɔg", "Sɛt", "Ɔtɔ", "Nɔv", "Dis"},
+            {},
+            {"Saa", "Tɛn", "Tal", "Ala", "Aim", "Jum", "Sat"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/ktu.json
+const DateLocale& KTU() {
+    static const DateLocale loc{
+        "ktu",
+        {"Yanvye", "Fevrye", "Marsi", "Avrili", "Mɛ", "Yuwɛ", "Yulɛ", "Uti", "Sɛtambre", "Ɔtɔbre", "Nɔvambre", "Desambre"},
+        {"Lumingu", "Kimosi", "Kizole", "Kizoluntatu", "Kinya", "Kisabala", "Kimpwanza"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "bubu", "mbazi", "zono",
+        "mbazi ya mbazi",
+        "zono ya zono",
+        "{weekday} yayi",
+        "{weekday} ya kwiza",
+        "{weekday} ya vioka",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Yan", "Fev", "Mar", "Avr", "Mɛ", "Yuw", "Yul", "Uti", "Sɛt", "Ɔtɔ", "Nɔv", "Des"},
+            {},
+            {"Lum", "Kim", "Kiz", "Kzn", "Kin", "Kis", "Kmp"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
             "",
             "",
             ""

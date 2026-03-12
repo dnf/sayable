@@ -1,0 +1,99 @@
+{
+  "code": "st",
+  "name": "Southern Sotho",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "motsotswana {n}",
+      "other": "dimetsotswana {n}"
+    },
+    "minute": {
+      "one": "metsotso {n}",
+      "other": "dimetsotso {n}"
+    },
+    "hour": {
+      "one": "hora {n}",
+      "other": "dihora {n}"
+    },
+    "day": {
+      "one": "letsatsi {n}",
+      "other": "matsatsi {n}"
+    },
+    "week": {
+      "one": "beke {n}",
+      "other": "dibeke {n}"
+    },
+    "month": {
+      "one": "kgwedi {n}",
+      "other": "dikgwedi {n}"
+    },
+    "year": {
+      "one": "selemo {n}",
+      "other": "dilemo {n}"
+    }
+  },
+  "half": "{0} le halofo",
+  "delimiter": ", ",
+  "justNow": "hona jwale",
+  "ago": "{0} e fetileng",
+  "inFuture": "ka {0}",
+  "short": {
+    "units": {
+      "second": {
+        "one": "motsotswana {n}",
+        "other": "dimetsotswana {n}"
+      },
+      "minute": {
+        "one": "metsotso {n}",
+        "other": "dimetsotso {n}"
+      },
+      "hour": {
+        "one": "hora {n}",
+        "other": "dihora {n}"
+      },
+      "day": {
+        "one": "letsatsi {n}",
+        "other": "matsatsi {n}"
+      },
+      "week": {
+        "one": "beke {n}",
+        "other": "dibeke {n}"
+      },
+      "month": {
+        "one": "kgw. {n}",
+        "other": "dikgw. {n}"
+      },
+      "year": {
+        "one": "sel. {n}",
+        "other": "dil. {n}"
+      }
+    },
+    "ago": "{0} e fetileng",
+    "inFuture": "ka {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["AM", "PM"],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "{0} e fetileng",
+    "inFuture": "ka {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["a", "p"],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

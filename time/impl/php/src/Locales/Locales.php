@@ -142,6 +142,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/bci.json
+    // ── Baoulé ──────────────────────────────────────────────────────
+
+    public static function BCI(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'bci',
+            clock: new ClockConfig(
+                hours: ['blu-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-kun'],
+                midnight: 'kɔnguɛ afiɛn',
+                noon: 'nnɔsua',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/be.json
     // ── Belarusian ──────────────────────────────────────────────────
 
@@ -166,6 +190,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/bem.json
+    // ── Bemba ───────────────────────────────────────────────────────
+
+    public static function BEM(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'bem',
+            clock: new ClockConfig(
+                hours: ['ikumi na ibili', 'cimo', 'fibili', 'fitatu', 'fine', 'fisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na cimo'],
+                midnight: 'pakati ka bushiku',
+                noon: 'akasuba',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/bg.json
     // ── Bulgarian ───────────────────────────────────────────────────
 
@@ -186,6 +234,30 @@ final class Locales
             ),
             compact: new CompactnessOverride(
                 clock: new ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/bm.json
+    // ── Bambara ─────────────────────────────────────────────────────
+
+    public static function BM(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'bm',
+            clock: new ClockConfig(
+                hours: ['tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔɔrɔ', 'wolonwula', 'segin', 'kɔnɔntɔn', 'tan', 'tan ni kelen'],
+                midnight: 'dugutilama',
+                noon: 'tilgari',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
             ),
         );
     }
@@ -406,6 +478,102 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/din.json
+    // ── Dinka ───────────────────────────────────────────────────────
+
+    public static function DIN(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'din',
+            clock: new ClockConfig(
+                hours: ['thiäär ku rou', 'tök', 'rou', 'diäk', 'ŋuän', 'dhiëc', 'dhetem', 'dhorou', 'bɛ̈t', 'dhoŋuan', 'thiäär', 'thiäär ku tök'],
+                midnight: 'wakɔ̈u',
+                noon: 'akɔ̈l ciëŋ',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/dje.json
+    // ── Zarma ───────────────────────────────────────────────────────
+
+    public static function DJE(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'dje',
+            clock: new ClockConfig(
+                hours: ['way cindi', 'afoo', 'ihinka', 'ihinza', 'itaaci', 'igu', 'iddu', 'iyye', 'isahkay', 'iyegga', 'iwoy', 'iwoy cindi'],
+                midnight: 'cin beri',
+                noon: 'zaari gaaham',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/dyu.json
+    // ── Dyula ───────────────────────────────────────────────────────
+
+    public static function DYU(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'dyu',
+            clock: new ClockConfig(
+                hours: ['tan ni fila', 'kelen', 'fila', 'saba', 'naani', 'duuru', 'wɔɔrɔ', 'wolonwula', 'segin', 'kɔnɔntɔn', 'tan', 'tan ni kelen'],
+                midnight: 'dugutilama',
+                noon: 'tilgari',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/ee.json
+    // ── Ewe ─────────────────────────────────────────────────────────
+
+    public static function EE(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'ee',
+            clock: new ClockConfig(
+                hours: ['wuieve', 'ɖeka', 'eve', 'etɔ̃', 'ene', 'atɔ̃', 'ade', 'adre', 'enyi', 'asieke', 'ewo', 'wuiɖeka'],
+                midnight: 'zã titina',
+                noon: 'ŋdɔ',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/el.json
     // ── Greek ───────────────────────────────────────────────────────
 
@@ -550,6 +718,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/fan.json
+    // ── Fang ────────────────────────────────────────────────────────
+
+    public static function FAN(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'fan',
+            clock: new ClockConfig(
+                hours: ['awom mebú', 'fóg', 'abúi', 'aláa', 'anyin', 'atán', 'asaman', 'zamgbala', 'mwom', 'ebulú', 'awom', 'awom mefóg'],
+                midnight: 'akiri alúk',
+                noon: 'ewaŋ',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/ff.json
     // ── Fulah ───────────────────────────────────────────────────────
 
@@ -612,6 +804,30 @@ final class Locales
                 midnight: 'hatinggabi',
                 noon: 'tanghali',
                 patterns: [0 => '{h} o\'clock', 5 => 'lima dan {h}', 10 => 'sampu dan {h}', 15 => 'labinlima dan {h}', 20 => 'dalawampu dan {h}', 25 => 'dalawampu\'t lima dan {h}', 30 => 'tatlumpu dan {h}', 35 => 'dalawampu\'t lima bago mag {next_h}', 40 => 'dalawampu bago mag {next_h}', 45 => 'labinlima bago mag {next_h}', 50 => 'sampu bago mag {next_h}', 55 => 'lima bago mag {next_h}'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/fon.json
+    // ── Fon ─────────────────────────────────────────────────────────
+
+    public static function FON(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'fon',
+            clock: new ClockConfig(
+                hours: ['wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'ɖokpo-wǒ'],
+                midnight: 'zǎnmɛ',
+                noon: 'hwemɛnu',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
             ),
             short: new CompactnessOverride(
                 clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
@@ -1126,6 +1342,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/kbp.json
+    // ── Kabiye ──────────────────────────────────────────────────────
+
+    public static function KBP(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'kbp',
+            clock: new ClockConfig(
+                hours: ['hiu nɛ naalɛ', 'kʊɖʊm', 'naalɛ', 'naadozo', 'naanaza', 'kagbanzɩ', 'loɖo', 'lʊbɛ', 'lɛɛtɛ', 'nakʊ', 'hiu', 'hiu nɛ kʊɖʊm'],
+                midnight: 'ɖoo hɛkʊ',
+                noon: 'wɩsɩ taa',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/kk.json
     // ── Kazakh ──────────────────────────────────────────────────────
 
@@ -1218,6 +1458,54 @@ final class Locales
             ),
             compact: new CompactnessOverride(
                 clock: new ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/kpe.json
+    // ── Kpelle ──────────────────────────────────────────────────────
+
+    public static function KPE(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'kpe',
+            clock: new ClockConfig(
+                hours: ['puu lɔŋ', 'tɔŋ', 'feere', 'sawa', 'naŋ', 'lɔɔlu', 'mɛi da tɔŋ', 'mɛi da feere', 'mɛi da sawa', 'mɛi da naŋ', 'puu', 'puu da tɔŋ'],
+                midnight: 'kpindi kɔlɛ',
+                noon: 'tili-ma',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/ktu.json
+    // ── Kituba ──────────────────────────────────────────────────────
+
+    public static function KTU(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'ktu',
+            clock: new ClockConfig(
+                hours: ['zomi na zole', 'mosi', 'zole', 'tatu', 'ya', 'tanu', 'sambanu', 'nsambwadi', 'nana', 'vwa', 'zomi', 'zomi na mosi'],
+                midnight: 'midi ya butu',
+                noon: 'midi',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
             ),
         );
     }
@@ -1414,6 +1702,54 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/men.json
+    // ── Mende ───────────────────────────────────────────────────────
+
+    public static function MEN(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'men',
+            clock: new ClockConfig(
+                hours: ['pu wɛlɛ', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila'],
+                midnight: 'kpindi gbɔyɔŋ',
+                noon: 'ndɔlei-ma',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/mfe.json
+    // ── Mauritian Creole ────────────────────────────────────────────
+
+    public static function MFE(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'mfe',
+            clock: new ClockConfig(
+                hours: ['douz', 'enn', 'de', 'trwa', 'kat', 'senk', 'sis', 'set', 'wit', 'nef', 'dis', 'onz'],
+                midnight: 'minwi',
+                noon: 'midi',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/mg.json
     // ── Malagasy ────────────────────────────────────────────────────
 
@@ -1530,6 +1866,54 @@ final class Locales
             ),
             compact: new CompactnessOverride(
                 clock: new ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/mnk.json
+    // ── Mandinka ────────────────────────────────────────────────────
+
+    public static function MNK(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'mnk',
+            clock: new ClockConfig(
+                hours: ['tan ning fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ ning kiliŋ'],
+                midnight: 'sutu-tili-laŋ',
+                noon: 'tili-konto',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/mos.json
+    // ── Moore ───────────────────────────────────────────────────────
+
+    public static function MOS(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'mos',
+            clock: new ClockConfig(
+                hours: ['piig la a yiibu', 'a yembre', 'a yiibu', 'a tãabo', 'a naase', 'a nu', 'a yoobe', 'a yopoe', 'a niini', 'a wae', 'piiga', 'piig la a yembre'],
+                midnight: 'yʋng-vɩɩse',
+                noon: 'wĩntoog zabre',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
             ),
         );
     }
@@ -1654,6 +2038,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/nd.json
+    // ── Northern Ndebele ────────────────────────────────────────────
+
+    public static function ND(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'nd',
+            clock: new ClockConfig(
+                hours: ['litshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyangalombili', 'isitshiyangalolunye', 'litshumi', 'litshumi lanye'],
+                midnight: 'phakathi kobusuku',
+                noon: 'emini',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/ne.json
     // ── Nepali ──────────────────────────────────────────────────────
 
@@ -1667,6 +2075,30 @@ final class Locales
                 hours: ['बाह्र', 'एक', 'दुई', 'तीन', 'चार', 'पाँच', 'छ', 'सात', 'आठ', 'नौ', 'दश', 'एघार'],
                 midnight: 'मध्यरात',
                 noon: 'मध्यान्ह',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/ng.json
+    // ── Oshiwambo ───────────────────────────────────────────────────
+
+    public static function NG(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'ng',
+            clock: new ClockConfig(
+                hours: ['omulongo nambali', 'imwe', 'mbali', 'ndatu', 'ne', 'ntano', 'hamano', 'heyali', 'hetatu', 'omugoyi', 'omulongo', 'omulongo nimwe'],
+                midnight: 'onguloshi pakati',
+                noon: 'omutenya',
                 patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
             ),
             short: new CompactnessOverride(
@@ -1698,6 +2130,54 @@ final class Locales
             ),
             compact: new CompactnessOverride(
                 clock: new ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/nso.json
+    // ── Northern Sotho ──────────────────────────────────────────────
+
+    public static function NSO(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'nso',
+            clock: new ClockConfig(
+                hours: ['lesome pedi', 'tee', 'pedi', 'tharo', 'nne', 'hlano', 'tshela', 'šupa', 'seswai', 'senyane', 'lesome', 'lesome tee'],
+                midnight: 'bošego gare',
+                noon: 'mosegare',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/nus.json
+    // ── Nuer ────────────────────────────────────────────────────────
+
+    public static function NUS(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'nus',
+            clock: new ClockConfig(
+                hours: ['thiäär ke rou', 'tök', 'rou', 'diäk', 'ŋuan', 'dhiëc', 'bäkɛl', 'dhorou', 'bät', 'kuɔn', 'thiäär', 'thiäär ku tök'],
+                midnight: 'wakɔ̈u',
+                noon: 'cäŋ kɔ̈k',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
             ),
         );
     }
@@ -1818,6 +2298,30 @@ final class Locales
             ),
             compact: new CompactnessOverride(
                 clock: new ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/pov.json
+    // ── Guinea-Bissau Creole ────────────────────────────────────────
+
+    public static function POV(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'pov',
+            clock: new ClockConfig(
+                hours: ['dozi', 'un', 'dos', 'tres', 'kuatru', 'sinku', 'seis', 'seti', 'oitu', 'novi', 'des', 'onzi'],
+                midnight: 'meia noti',
+                noon: 'meiu dia',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
             ),
         );
     }
@@ -1966,6 +2470,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/sar.json
+    // ── Sara ────────────────────────────────────────────────────────
+
+    public static function SAR(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'sar',
+            clock: new ClockConfig(
+                hours: ['mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'kɨ̀ndá', 'ɗìi', 'mùtá', 'sɔ̀', 'mɨ̀ndɨ̀', 'mɨ̀ndɨ̀ kɨ̀ndá', 'mɨ̀sá', 'mɨ̀ndɨ̀ mùtá', 'mɨ̀ndɨ̀ sɔ̀', 'mɔ̀ɔ́', 'mɔ̀ɔ́ kɨ̀ndá'],
+                midnight: 'badɔ',
+                noon: 'mbɔr ndɔ',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/sd.json
     // ── Sindhi ──────────────────────────────────────────────────────
 
@@ -1979,6 +2507,30 @@ final class Locales
                 hours: ['ٻارھ', 'ھڪ', 'ٻه', 'ٽي', 'چار', 'پنج', 'ڇھ', 'ست', 'اٺ', 'نائن', 'ڏھ', 'يارھ'],
                 midnight: 'اڌ رات',
                 noon: 'ٽپھر',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/sg.json
+    // ── Sango ───────────────────────────────────────────────────────
+
+    public static function SG(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'sg',
+            clock: new ClockConfig(
+                hours: ['bâlè-ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'ömënë', 'mbïrïmbïrï', 'mënâmbârâ', 'gonambâlâ', 'bâlè', 'bâlè na ôko'],
+                midnight: 'gï na lögö',
+                noon: 'lâ nzönï',
                 patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
             ),
             short: new CompactnessOverride(
@@ -2110,6 +2662,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/snk.json
+    // ── Soninke ─────────────────────────────────────────────────────
+
+    public static function SNK(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'snk',
+            clock: new ClockConfig(
+                hours: ['tanmu fillo', 'baane', 'fillo', 'sikko', 'naaxato', 'karago', 'tunmu', 'ñerru', 'segu', 'kaburu', 'tanmu', 'tanmu baane'],
+                midnight: 'sulen noxo',
+                noon: 'tili seren',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/so.json
     // ── Somali ──────────────────────────────────────────────────────
 
@@ -2182,6 +2758,54 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/ss.json
+    // ── siSwati ─────────────────────────────────────────────────────
+
+    public static function SS(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'ss',
+            clock: new ClockConfig(
+                hours: ['lishumi nambili', 'kunye', 'kubili', 'kutsatfu', 'kune', 'kusihlanu', 'sitfupha', 'sikhombisa', 'siphohlongo', 'sifisagcina', 'lishumi', 'lishumi nakunye'],
+                midnight: 'phakathi kwebusuku',
+                noon: 'emini',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/st.json
+    // ── Southern Sotho ──────────────────────────────────────────────
+
+    public static function ST(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'st',
+            clock: new ClockConfig(
+                hours: ['leshome le metso e mmedi', 'e nngwe', 'tse pedi', 'tse tharo', 'tse nne', 'tse hlano', 'tse tshelela', 'tse supileng', 'tse robedi', 'tse robong', 'leshome', 'leshome le motso o le mong'],
+                midnight: 'hara bosiu',
+                noon: 'motsheare',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/su.json
     // ── Sundanese ───────────────────────────────────────────────────
 
@@ -2195,6 +2819,30 @@ final class Locales
                 hours: ['dua welas', 'hiji', 'dua', 'tilu', 'opat', 'lima', 'genep', 'tujuh', 'dalapan', 'salapan', 'sapuluh', 'sabelas'],
                 midnight: 'tengah peuting',
                 noon: 'beurang',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/suk.json
+    // ── Sukuma ──────────────────────────────────────────────────────
+
+    public static function SUK(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'suk',
+            clock: new ClockConfig(
+                hours: ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'],
+                midnight: 'usiku gati',
+                noon: 'adhuhuri',
                 patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
             ),
             short: new CompactnessOverride(
@@ -2302,6 +2950,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/tem.json
+    // ── Temne ───────────────────────────────────────────────────────
+
+    public static function TEM(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'tem',
+            clock: new ClockConfig(
+                hours: ['pɛn pu', 'kɩrɩŋ', 'rɔŋ', 'rasar', 'rɔŋ-anat', 'rɔman', 'rɔmata', 'rɔmbot', 'rɔmɔntat', 'rɔmɔntaŋka', 'pɛn', 'pɛn nɛ kɩrɩŋ'],
+                midnight: 'rofɛt anpa',
+                noon: 'lən',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/tg.json
     // ── Tajik ───────────────────────────────────────────────────────
 
@@ -2374,6 +3046,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/tig.json
+    // ── Tigre ───────────────────────────────────────────────────────
+
+    public static function TIG(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'tig',
+            clock: new ClockConfig(
+                hours: ['ʿasərte wəkəlte', 'ḥante', 'kəlʾe', 'səleste', 'arbaʿte', 'ḥamməste', 'səste', 'sabʿate', 'səmmunte', 'təsʿate', 'ʿasərte', 'ʿasərte wəḥante'],
+                midnight: 'nəs-leyla',
+                noon: 'qayḥ',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/tk.json
     // ── Turkmen ─────────────────────────────────────────────────────
 
@@ -2398,6 +3094,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/tn.json
+    // ── Tswana ──────────────────────────────────────────────────────
+
+    public static function TN(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'tn',
+            clock: new ClockConfig(
+                hours: ['lesome le bobedi', 'nngwe', 'pedi', 'tharo', 'nne', 'tlhano', 'thataro', 'supa', 'robedi', 'robongwe', 'lesome', 'lesome le bongwe'],
+                midnight: 'bosigo jwa magareng',
+                noon: 'motshegare',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/tr.json
     // ── Turkish ─────────────────────────────────────────────────────
 
@@ -2418,6 +3138,30 @@ final class Locales
             ),
             compact: new CompactnessOverride(
                 clock: new ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/ts.json
+    // ── Tsonga ──────────────────────────────────────────────────────
+
+    public static function TS(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'ts',
+            clock: new ClockConfig(
+                hours: ['khume mbiri', 'yin\'we', 'mbirhi', 'nharhu', 'mune', 'ntlhanu', 'tsevu', 'nkombo', 'nhungu', 'kaye', 'khume', 'khume yin\'we'],
+                midnight: 'vusiku exikarhi',
+                noon: 'nhlekanhi',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
             ),
         );
     }
@@ -2466,6 +3210,30 @@ final class Locales
             ),
             compact: new CompactnessOverride(
                 clock: new ShortClockConfig(use24h: true, format: '{h}:{mm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/umb.json
+    // ── Umbundu ─────────────────────────────────────────────────────
+
+    public static function UMB(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'umb',
+            clock: new ClockConfig(
+                hours: ['olohola likumi na yivali', 'yimosi', 'yivali', 'yitathu', 'yinyali', 'yitanu', 'yitathu-va-yivali', 'yisemba', 'yinyali-va-yivali', 'yitanu-va-yivali', 'likumi', 'likumi na yimosi'],
+                midnight: 'ocitapi',
+                noon: 'ocivali',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
             ),
         );
     }
@@ -2542,6 +3310,54 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/vmw.json
+    // ── Makhuwa ─────────────────────────────────────────────────────
+
+    public static function VMW(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'vmw',
+            clock: new ClockConfig(
+                hours: ['khumi na pili', 'mosa', 'pili', 'ttatthu', 'ncheche', 'thanu', 'thanu na mosa', 'thanu na pili', 'thanu na ttatthu', 'thanu na ncheche', 'khumi', 'khumi na mosa'],
+                midnight: 'usiku wopakhala',
+                noon: 'muttana',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
+    // Source: time/locales/src/wo.json
+    // ── Wolof ───────────────────────────────────────────────────────
+
+    public static function WO(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'wo',
+            clock: new ClockConfig(
+                hours: ['fukki ñaar', 'benn', 'ñaar', 'ñett', 'ñeent', 'juróom', 'juróom-benn', 'juróom-ñaar', 'juróom-ñett', 'juróom-ñeent', 'fukk', 'fukki benn'],
+                midnight: 'bu guddi',
+                noon: 'ci àttaya',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/xh.json
     // ── Xhosa ───────────────────────────────────────────────────────
 
@@ -2614,6 +3430,30 @@ final class Locales
         );
     }
 
+    // Source: time/locales/src/zdj.json
+    // ── Comorian ────────────────────────────────────────────────────
+
+    public static function ZDJ(): TimeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new TimeLocale(
+            code: 'zdj',
+            clock: new ClockConfig(
+                hours: ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'],
+                midnight: 'usiku wa manane',
+                noon: 'adhuhuri',
+                patterns: [0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55'],
+            ),
+            short: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['AM', 'PM'], format: '{h}:{mm} {ampm}'),
+            ),
+            compact: new CompactnessOverride(
+                clock: new ShortClockConfig(use24h: false, amPm: ['a', 'p'], format: '{h}:{mm}{ampm}'),
+            ),
+        );
+    }
+
     // Source: time/locales/src/zh.json
     // ── Chinese ─────────────────────────────────────────────────────
 
@@ -2670,8 +3510,11 @@ final class Locales
             'am' => self::AM(),
             'ar' => self::AR(),
             'az' => self::AZ(),
+            'bci' => self::BCI(),
             'be' => self::BE(),
+            'bem' => self::BEM(),
             'bg' => self::BG(),
+            'bm' => self::BM(),
             'bn' => self::BN(),
             'br' => self::BR(),
             'bs' => self::BS(),
@@ -2681,15 +3524,21 @@ final class Locales
             'cy' => self::CY(),
             'da' => self::DA(),
             'de' => self::DE(),
+            'din' => self::DIN(),
+            'dje' => self::DJE(),
+            'dyu' => self::DYU(),
+            'ee' => self::EE(),
             'el' => self::EL(),
             'en' => self::EN(),
             'es' => self::ES(),
             'et' => self::ET(),
             'eu' => self::EU(),
             'fa' => self::FA(),
+            'fan' => self::FAN(),
             'ff' => self::FF(),
             'fi' => self::FI(),
             'fil' => self::FIL(),
+            'fon' => self::FON(),
             'fr' => self::FR(),
             'ga' => self::GA(),
             'gd' => self::GD(),
@@ -2711,10 +3560,13 @@ final class Locales
             'ja' => self::JA(),
             'jv' => self::JV(),
             'ka' => self::KA(),
+            'kbp' => self::KBP(),
             'kk' => self::KK(),
             'km' => self::KM(),
             'kn' => self::KN(),
             'ko' => self::KO(),
+            'kpe' => self::KPE(),
+            'ktu' => self::KTU(),
             'ku' => self::KU(),
             'kw' => self::KW(),
             'ky' => self::KY(),
@@ -2723,56 +3575,79 @@ final class Locales
             'lo' => self::LO(),
             'lt' => self::LT(),
             'lv' => self::LV(),
+            'men' => self::MEN(),
+            'mfe' => self::MFE(),
             'mg' => self::MG(),
             'mi' => self::MI(),
             'mk' => self::MK(),
             'ml' => self::ML(),
             'mn' => self::MN(),
+            'mnk' => self::MNK(),
+            'mos' => self::MOS(),
             'mr' => self::MR(),
             'ms' => self::MS(),
             'mt' => self::MT(),
             'my' => self::MY(),
             'nb' => self::NB(),
+            'nd' => self::ND(),
             'ne' => self::NE(),
+            'ng' => self::NG(),
             'nl' => self::NL(),
+            'nso' => self::NSO(),
+            'nus' => self::NUS(),
             'ny' => self::NY(),
             'om' => self::OM(),
             'or' => self::OR(),
             'pa' => self::PA(),
             'pl' => self::PL(),
+            'pov' => self::POV(),
             'ps' => self::PS(),
             'pt' => self::PT(),
             'qu' => self::QU(),
             'ro' => self::RO(),
             'ru' => self::RU(),
             'rw' => self::RW(),
+            'sar' => self::SAR(),
             'sd' => self::SD(),
+            'sg' => self::SG(),
             'shi' => self::SHI(),
             'si' => self::SI(),
             'sk' => self::SK(),
             'sl' => self::SL(),
             'sn' => self::SN(),
+            'snk' => self::SNK(),
             'so' => self::SO(),
             'sq' => self::SQ(),
             'sr' => self::SR(),
+            'ss' => self::SS(),
+            'st' => self::ST(),
             'su' => self::SU(),
+            'suk' => self::SUK(),
             'sv' => self::SV(),
             'sw' => self::SW(),
             'ta' => self::TA(),
             'te' => self::TE(),
+            'tem' => self::TEM(),
             'tg' => self::TG(),
             'th' => self::TH(),
             'ti' => self::TI(),
+            'tig' => self::TIG(),
             'tk' => self::TK(),
+            'tn' => self::TN(),
             'tr' => self::TR(),
+            'ts' => self::TS(),
             'tzm' => self::TZM(),
             'uk' => self::UK(),
+            'umb' => self::UMB(),
             'ur' => self::UR(),
             'uz' => self::UZ(),
             'vi' => self::VI(),
+            'vmw' => self::VMW(),
+            'wo' => self::WO(),
             'xh' => self::XH(),
             'yo' => self::YO(),
             'yue' => self::YUE(),
+            'zdj' => self::ZDJ(),
             'zh' => self::ZH(),
             'zu' => self::ZU(),
             default => null,

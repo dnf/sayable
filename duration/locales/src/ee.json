@@ -1,0 +1,93 @@
+{
+  "code": "ee",
+  "name": "Ewe",
+  "pluralRule": "one_other",
+  "units": {
+    "second": {
+      "one": "sekend {n}",
+      "other": "sekendwo {n}"
+    },
+    "minute": {
+      "one": "aɖabaƒoƒo {n}",
+      "other": "aɖabaƒoƒowo {n}"
+    },
+    "hour": {
+      "one": "gaƒoƒo {n}",
+      "other": "gaƒoƒowo {n}"
+    },
+    "day": {
+      "one": "ŋkeke {n}",
+      "other": "ŋkekewo {n}"
+    },
+    "week": {
+      "one": "kɔsiɖa {n}",
+      "other": "kɔsiɖawo {n}"
+    },
+    "month": {
+      "one": "ɣleti {n}",
+      "other": "ɣletiwo {n}"
+    },
+    "year": {
+      "one": "ƒe {n}",
+      "other": "ƒewo {n}"
+    }
+  },
+  "half": "{0} kple afã",
+  "delimiter": ", ",
+  "justNow": "fifia",
+  "ago": "ɖe {0} me",
+  "inFuture": "le {0} me",
+  "short": {
+    "units": {
+      "second": "sek. {n}",
+      "minute": "aɖaba. {n}",
+      "hour": "gaƒ. {n}",
+      "day": "ŋkekewo {n}",
+      "week": {
+        "one": "kɔsiɖa {n}",
+        "other": "kɔsiɖawo {n}"
+      },
+      "month": {
+        "one": "ɣleti {n}",
+        "other": "ɣletiwo {n}"
+      },
+      "year": {
+        "one": "ƒe {n}",
+        "other": "ƒewo {n}"
+      }
+    },
+    "ago": "ɖe {0} me",
+    "inFuture": "le {0} me",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "AM",
+        "PM"
+      ],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "half": "{n}½",
+    "ago": "ɖe {0} me",
+    "inFuture": "le {0} me",
+    "clock": {
+      "use24h": false,
+      "amPm": [
+        "a",
+        "p"
+      ],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}
