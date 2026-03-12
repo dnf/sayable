@@ -108,31 +108,22 @@ test *target:
                     fi
                     bash cli/test-harness.sh "${_cli_bin}"
                 else
-                    _cli_pass=0; _cli_fail=0; _cli_skip=0
+                    args=()
                     for _cli_dir in cli/impl/*/; do
                         _cl=$(basename "$_cli_dir")
                         _cli_bin="${_cli_dir}sayable"
                         if [ ! -x "${_cli_bin}" ]; then
-                            echo "⊘ ${_cl}: no executable 'sayable' — skipping"
-                            _cli_skip=$((_cli_skip + 1))
+                            args+=("skip:${_cl}")
                             continue
                         fi
                         dep=$(_dep "$_cl" 2>/dev/null || true)
                         if [ -n "${dep}" ] && ! command -v "${dep}" &>/dev/null; then
-                            echo "⊘ ${_cl}: ${dep} not installed — skipping"
-                            _cli_skip=$((_cli_skip + 1))
+                            args+=("skip:${_cl}")
                             continue
                         fi
-                        if bash cli/test-harness.sh "${_cli_bin}" 2>&1 | tail -1 | grep -q "passed"; then
-                            _cli_pass=$((_cli_pass + 1))
-                        else
-                            echo "✗ ${_cl}: FAILED"
-                            _cli_fail=$((_cli_fail + 1))
-                        fi
+                        args+=("_test_cli ${_cl}")
                     done
-                    echo ""
-                    echo "CLI summary: ${_cli_pass} passed, ${_cli_fail} failed, ${_cli_skip} skipped"
-                    [ "${_cli_fail}" -gt 0 ] && exit 1
+                    .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} cli "${args[@]}"
                 fi
             elif [ "$_target" = "php" ]; then
                 cd age/impl/php && php vendor/bin/phpunit tests/
@@ -822,6 +813,18 @@ install *langs:
 [group('test')]
 cli *lang:
     just test cli {{lang}}
+
+# Internal: test a single CLI language
+[private]
+_test_cli lang:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _cli_bin="cli/impl/{{lang}}/sayable"
+    if [ ! -x "${_cli_bin}" ]; then
+        echo "error: ${_cli_bin} is not executable or not found" >&2
+        exit 1
+    fi
+    bash cli/test-harness.sh "${_cli_bin}"
 
 # Internal: clean then build a single target
 [private]
