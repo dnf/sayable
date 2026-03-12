@@ -1934,6 +1934,57 @@ class LocalesQZ {
         null
     )
 
+    // Source: duration/locales/src/tum.json
+    // ================================================================
+    // TUM — Tumbuka
+    // ================================================================
+    static final DurationLocale TUM = new DurationLocale(
+        'tum',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sekendi {n}', (PluralCategory.OTHER): 'masekendi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'miniti {n}', (PluralCategory.OTHER): 'maminiti {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ola {n}', (PluralCategory.OTHER): 'maola {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'dazi {n}', (PluralCategory.OTHER): 'madazi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sabata {n}', (PluralCategory.OTHER): 'masabata {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miyezi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}'])
+        ),
+        '{0} na hafu',
+        ', ',
+        'sono',
+        '{0} yamala',
+        'mu {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sek. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ola {n}', (PluralCategory.OTHER): 'maola {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'dazi {n}', (PluralCategory.OTHER): 'mad. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sab. {n}', (PluralCategory.OTHER): 'mas. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwezi {n}', (PluralCategory.OTHER): 'miy. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
+            null,
+            null,
+            '{0} yamala',
+            'mu {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} yamala',
+            'mu {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
@@ -2198,6 +2249,57 @@ class LocalesQZ {
         null
     )
 
+    // Source: duration/locales/src/ve.json
+    // ================================================================
+    // VE — Venda
+    // ================================================================
+    static final DurationLocale VE = new DurationLocale(
+        've',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sekondhe {n}', (PluralCategory.OTHER): 'disekondhe {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'minidhi {n}', (PluralCategory.OTHER): 'diminidhi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'awara {n}', (PluralCategory.OTHER): 'diawara {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'duvha {n}', (PluralCategory.OTHER): 'maduvha {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'vhege {n}', (PluralCategory.OTHER): 'mavhege {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'nwedzi {n}', (PluralCategory.OTHER): 'minwedzi {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'nwaha {n}', (PluralCategory.OTHER): 'minwaha {n}'])
+        ),
+        '{0} na hafu',
+        ', ',
+        'zwino',
+        '{0} yo fhiraho',
+        'nga {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sek. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'aw. {n}', (PluralCategory.OTHER): 'diaw. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'duv. {n}', (PluralCategory.OTHER): 'mad. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'vheg. {n}', (PluralCategory.OTHER): 'mav. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'nwedzi {n}', (PluralCategory.OTHER): 'min. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'nwaha {n}', (PluralCategory.OTHER): 'min. {n}']),
+            null,
+            null,
+            '{0} yo fhiraho',
+            'nga {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} yo fhiraho',
+            'nga {0}'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/vi.json
     // ================================================================
     // VI — Vietnamese
@@ -2397,6 +2499,57 @@ class LocalesQZ {
             '',
             'kwi{0} edlulileyo',
             'kwi{0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/yao.json
+    // ================================================================
+    // YAO — Yao
+    // ================================================================
+    static final DurationLocale YAO = new DurationLocale(
+        'yao',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sekunde {n}', (PluralCategory.OTHER): 'masekunde {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'dakika {n}', (PluralCategory.OTHER): 'madakika {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'saa {n}', (PluralCategory.OTHER): 'masaa {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'lisiku {n}', (PluralCategory.OTHER): 'masiku {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'majuma {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngondo {n}', (PluralCategory.OTHER): 'mingondo {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}'])
+        ),
+        '{0} na nusu',
+        ', ',
+        'sambano',
+        '{0} lyapite',
+        'mu {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sek. {n}'),
+            UnitForms.simpleUnit('dak. {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'saa {n}', (PluralCategory.OTHER): 'masaa {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'lis. {n}', (PluralCategory.OTHER): 'mas. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'juma {n}', (PluralCategory.OTHER): 'maj. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ngo. {n}', (PluralCategory.OTHER): 'min. {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'chaka {n}', (PluralCategory.OTHER): 'vyaka {n}']),
+            null,
+            null,
+            '{0} lyapite',
+            'mu {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} lyapite',
+            'mu {0}'
         ),
         null,
         null

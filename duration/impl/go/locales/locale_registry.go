@@ -23,6 +23,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &AM
 	case "ar":
 		return &AR
+	case "ay":
+		return &AY
 	case "az":
 		return &AZ
 	case "bci":
@@ -141,6 +143,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &KBP
 	case "kek":
 		return &KEK
+	case "ki":
+		return &KI
 	case "kk":
 		return &KK
 	case "kl":
@@ -153,6 +157,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &KO
 	case "kpe":
 		return &KPE
+	case "kri":
+		return &KRI
 	case "ktu":
 		return &KTU
 	case "ku":
@@ -161,6 +167,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &KW
 	case "ky":
 		return &KY
+	case "lb":
+		return &LB
 	case "lg":
 		return &LG
 	case "ln":
@@ -169,6 +177,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &LO
 	case "lt":
 		return &LT
+	case "luo":
+		return &LUO
 	case "lv":
 		return &LV
 	case "mam":
@@ -209,6 +219,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &NG
 	case "nl":
 		return &NL
+	case "nr":
+		return &NR
 	case "nso":
 		return &NSO
 	case "nus":
@@ -305,6 +317,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &TR
 	case "ts":
 		return &TS
+	case "tum":
+		return &TUM
 	case "tzm":
 		return &TZM
 	case "uk":
@@ -315,6 +329,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &UR
 	case "uz":
 		return &UZ
+	case "ve":
+		return &VE
 	case "vi":
 		return &VI
 	case "vmw":
@@ -323,6 +339,8 @@ func GetLocale(code string) *sd.DurationLocale {
 		return &WO
 	case "xh":
 		return &XH
+	case "yao":
+		return &YAO
 	case "yo":
 		return &YO
 	case "yue":

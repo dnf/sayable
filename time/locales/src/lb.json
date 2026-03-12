@@ -1,0 +1,38 @@
+{
+  "code": "lb",
+  "name": "Luxembourgish",
+  "clock": {
+    "hours": [
+      "zwielef", "eent", "zwee", "dräi", "véier", "fënnef",
+      "sechs", "siwen", "aacht", "néng", "zéng", "eelef"
+    ],
+    "midnight": "Mëtternuecht",
+    "noon": "Mëtteg",
+    "patterns": {
+      "0": "{h} Auer",
+      "5": "fënnef op {h}",
+      "10": "zéng op {h}",
+      "15": "Véierel op {h}",
+      "20": "zwanzeg op {h}",
+      "25": "fënnef vir hallwer {next_h}",
+      "30": "hallwer {next_h}",
+      "35": "fënnef op hallwer {next_h}",
+      "40": "zwanzeg vir {next_h}",
+      "45": "Véierel vir {next_h}",
+      "50": "zéng vir {next_h}",
+      "55": "fënnef vir {next_h}"
+    }
+  },
+  "short": {
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  },
+  "compact": {
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  }
+}

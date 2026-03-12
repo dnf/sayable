@@ -62,6 +62,19 @@ pub const ar: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
+// Source: time/locales/src/ay.json
+pub const ay: sayabletime.TimeLocale = .{
+    .code = "ay",
+    .clock = .{
+        .hours = .{ "tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llantunka", "tunka", "tunka mayani" },
+        .midnight = "aruma chika",
+        .noon = "chika uru",
+        .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "AM", "PM" }, .format = "{h}:{mm} {ampm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
+};
+
 // Source: time/locales/src/az.json
 pub const az: sayabletime.TimeLocale = .{
     .code = "az",
@@ -829,6 +842,19 @@ pub const kek: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
+// Source: time/locales/src/ki.json
+pub const ki: sayabletime.TimeLocale = .{
+    .code = "ki",
+    .clock = .{
+        .hours = .{ "ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano", "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe" },
+        .midnight = "ũtukũ gatagatĩ",
+        .noon = "mũthenya gatagatĩ",
+        .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = true, .am_pm = .{ "Kiroko", "Hwaĩ-inĩ" }, .format = "{h}:{mm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
+};
+
 // Source: time/locales/src/kk.json
 pub const kk: sayabletime.TimeLocale = .{
     .code = "kk",
@@ -907,6 +933,19 @@ pub const kpe: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
+// Source: time/locales/src/kri.json
+pub const kri: sayabletime.TimeLocale = .{
+    .code = "kri",
+    .clock = .{
+        .hours = .{ "twelv", "wan", "tu", "tri", "fo", "fayv", "siks", "sevin", "et", "nayn", "ten", "ilevin" },
+        .midnight = "midul net",
+        .noon = "midul de",
+        .patterns = .{ "{h} oklok", "fayv pas {h}", "ten pas {h}", "kwota pas {h}", "twenti pas {h}", "twenti fayv pas {h}", "af pas {h}", "twenti fayv tu {next_h}", "twenti tu {next_h}", "kwota tu {next_h}", "ten tu {next_h}", "fayv tu {next_h}" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "AM", "PM" }, .format = "{h}:{mm} {ampm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
+};
+
 // Source: time/locales/src/ktu.json
 pub const ktu: sayabletime.TimeLocale = .{
     .code = "ktu",
@@ -954,6 +993,19 @@ pub const ky: sayabletime.TimeLocale = .{
         .midnight = "түн ортосу",
         .noon = "түш",
         .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
+};
+
+// Source: time/locales/src/lb.json
+pub const lb: sayabletime.TimeLocale = .{
+    .code = "lb",
+    .clock = .{
+        .hours = .{ "zwielef", "eent", "zwee", "dräi", "véier", "fënnef", "sechs", "siwen", "aacht", "néng", "zéng", "eelef" },
+        .midnight = "Mëtternuecht",
+        .noon = "Mëtteg",
+        .patterns = .{ "{h} Auer", "fënnef op {h}", "zéng op {h}", "Véierel op {h}", "zwanzeg op {h}", "fënnef vir hallwer {next_h}", "hallwer {next_h}", "fënnef op hallwer {next_h}", "zwanzeg vir {next_h}", "Véierel vir {next_h}", "zéng vir {next_h}", "fënnef vir {next_h}" },
     },
     .short_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
@@ -1009,6 +1061,19 @@ pub const lt: sayabletime.TimeLocale = .{
     },
     .short_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
+};
+
+// Source: time/locales/src/luo.json
+pub const luo: sayabletime.TimeLocale = .{
+    .code = "luo",
+    .clock = .{
+        .hours = .{ "apar gi ariyo", "achiel", "ariyo", "adek", "ang'wen", "abich", "auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gi achiel" },
+        .midnight = "dier otieno",
+        .noon = "odiechieng' tir",
+        .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "AM", "PM" }, .format = "{h}:{mm} {ampm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
 // Source: time/locales/src/lv.json
@@ -1269,6 +1334,19 @@ pub const nl: sayabletime.TimeLocale = .{
     },
     .short_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
+};
+
+// Source: time/locales/src/nr.json
+pub const nr: sayabletime.TimeLocale = .{
+    .code = "nr",
+    .clock = .{
+        .hours = .{ "itshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyagalombili", "isitshiyagalolunye", "itshumi", "itshumi lanye" },
+        .midnight = "phakathi kobusuku",
+        .noon = "emini",
+        .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "AM", "PM" }, .format = "{h}:{mm} {ampm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
 // Source: time/locales/src/nso.json
@@ -1895,6 +1973,19 @@ pub const ts: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
 };
 
+// Source: time/locales/src/tum.json
+pub const tum: sayabletime.TimeLocale = .{
+    .code = "tum",
+    .clock = .{
+        .hours = .{ "khumi na yibili", "chimoza", "vibili", "vitatu", "vinayi", "vikhondi", "vikhondi na kamoza", "vikhondi na tubili", "vikhondi na tutatu", "vikhondi na tunayi", "khumi", "khumi na kamoza" },
+        .midnight = "pakati pa usiku",
+        .noon = "muhanya",
+        .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "AM", "PM" }, .format = "{h}:{mm} {ampm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
+};
+
 // Source: time/locales/src/tzm.json
 pub const tzm: sayabletime.TimeLocale = .{
     .code = "tzm",
@@ -1960,6 +2051,19 @@ pub const uz: sayabletime.TimeLocale = .{
     .compact_override = .{ .clock = .{ .use_24h = true, .format = "{h}:{mm}" } },
 };
 
+// Source: time/locales/src/ve.json
+pub const ve: sayabletime.TimeLocale = .{
+    .code = "ve",
+    .clock = .{
+        .hours = .{ "fumimbili", "thihi", "mbili", "raru", "ina", "thanu", "rathi", "sumbe", "malo", "tahe", "fumi", "fuminthihi" },
+        .midnight = "vhukati ha vhusiku",
+        .noon = "vhukati ha masiari",
+        .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "AM", "PM" }, .format = "{h}:{mm} {ampm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
+};
+
 // Source: time/locales/src/vi.json
 pub const vi: sayabletime.TimeLocale = .{
     .code = "vi",
@@ -2006,6 +2110,19 @@ pub const xh: sayabletime.TimeLocale = .{
         .hours = .{ "ishumi elinambini", "inye", "ezimbini", "ezintathu", "ezine", "ezintlanu", "ezintandathu", "ezisixhenxe", "ezisibhozo", "ethoba", "ishumi", "ishumi elinanye" },
         .midnight = "ezinzulwini zobusuku",
         .noon = "emini",
+        .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
+    },
+    .short_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "AM", "PM" }, .format = "{h}:{mm} {ampm}" } },
+    .compact_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "a", "p" }, .format = "{h}:{mm}{ampm}" } },
+};
+
+// Source: time/locales/src/yao.json
+pub const yao: sayabletime.TimeLocale = .{
+    .code = "yao",
+    .clock = .{
+        .hours = .{ "likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo" },
+        .midnight = "pakati pa usiku",
+        .noon = "pakati pa lisiku",
         .patterns = .{ "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" },
     },
     .short_override = .{ .clock = .{ .use_24h = false, .am_pm = .{ "AM", "PM" }, .format = "{h}:{mm} {ampm}" } },
@@ -2087,6 +2204,7 @@ const locale_map = struct {
         if (eql(code, "ak")) return &ak;
         if (eql(code, "am")) return &am;
         if (eql(code, "ar")) return &ar;
+        if (eql(code, "ay")) return &ay;
         if (eql(code, "az")) return &az;
         if (eql(code, "bci")) return &bci;
         if (eql(code, "be")) return &be;
@@ -2146,20 +2264,24 @@ const locale_map = struct {
         if (eql(code, "ka")) return &ka;
         if (eql(code, "kbp")) return &kbp;
         if (eql(code, "kek")) return &kek;
+        if (eql(code, "ki")) return &ki;
         if (eql(code, "kk")) return &kk;
         if (eql(code, "kl")) return &kl;
         if (eql(code, "km")) return &km;
         if (eql(code, "kn")) return &kn;
         if (eql(code, "ko")) return &ko;
         if (eql(code, "kpe")) return &kpe;
+        if (eql(code, "kri")) return &kri;
         if (eql(code, "ktu")) return &ktu;
         if (eql(code, "ku")) return &ku;
         if (eql(code, "kw")) return &kw;
         if (eql(code, "ky")) return &ky;
+        if (eql(code, "lb")) return &lb;
         if (eql(code, "lg")) return &lg;
         if (eql(code, "ln")) return &ln;
         if (eql(code, "lo")) return &lo;
         if (eql(code, "lt")) return &lt;
+        if (eql(code, "luo")) return &luo;
         if (eql(code, "lv")) return &lv;
         if (eql(code, "mam")) return &mam;
         if (eql(code, "men")) return &men;
@@ -2180,6 +2302,7 @@ const locale_map = struct {
         if (eql(code, "ne")) return &ne;
         if (eql(code, "ng")) return &ng;
         if (eql(code, "nl")) return &nl;
+        if (eql(code, "nr")) return &nr;
         if (eql(code, "nso")) return &nso;
         if (eql(code, "nus")) return &nus;
         if (eql(code, "ny")) return &ny;
@@ -2228,15 +2351,18 @@ const locale_map = struct {
         if (eql(code, "tpi")) return &tpi;
         if (eql(code, "tr")) return &tr;
         if (eql(code, "ts")) return &ts;
+        if (eql(code, "tum")) return &tum;
         if (eql(code, "tzm")) return &tzm;
         if (eql(code, "uk")) return &uk;
         if (eql(code, "umb")) return &umb;
         if (eql(code, "ur")) return &ur;
         if (eql(code, "uz")) return &uz;
+        if (eql(code, "ve")) return &ve;
         if (eql(code, "vi")) return &vi;
         if (eql(code, "vmw")) return &vmw;
         if (eql(code, "wo")) return &wo;
         if (eql(code, "xh")) return &xh;
+        if (eql(code, "yao")) return &yao;
         if (eql(code, "yo")) return &yo;
         if (eql(code, "yue")) return &yue;
         if (eql(code, "zdj")) return &zdj;
@@ -2259,6 +2385,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabletime.TimeLoc
     .{ .code = "ak", .locale = &ak },
     .{ .code = "am", .locale = &am },
     .{ .code = "ar", .locale = &ar },
+    .{ .code = "ay", .locale = &ay },
     .{ .code = "az", .locale = &az },
     .{ .code = "bci", .locale = &bci },
     .{ .code = "be", .locale = &be },
@@ -2318,20 +2445,24 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabletime.TimeLoc
     .{ .code = "ka", .locale = &ka },
     .{ .code = "kbp", .locale = &kbp },
     .{ .code = "kek", .locale = &kek },
+    .{ .code = "ki", .locale = &ki },
     .{ .code = "kk", .locale = &kk },
     .{ .code = "kl", .locale = &kl },
     .{ .code = "km", .locale = &km },
     .{ .code = "kn", .locale = &kn },
     .{ .code = "ko", .locale = &ko },
     .{ .code = "kpe", .locale = &kpe },
+    .{ .code = "kri", .locale = &kri },
     .{ .code = "ktu", .locale = &ktu },
     .{ .code = "ku", .locale = &ku },
     .{ .code = "kw", .locale = &kw },
     .{ .code = "ky", .locale = &ky },
+    .{ .code = "lb", .locale = &lb },
     .{ .code = "lg", .locale = &lg },
     .{ .code = "ln", .locale = &ln },
     .{ .code = "lo", .locale = &lo },
     .{ .code = "lt", .locale = &lt },
+    .{ .code = "luo", .locale = &luo },
     .{ .code = "lv", .locale = &lv },
     .{ .code = "mam", .locale = &mam },
     .{ .code = "men", .locale = &men },
@@ -2352,6 +2483,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabletime.TimeLoc
     .{ .code = "ne", .locale = &ne },
     .{ .code = "ng", .locale = &ng },
     .{ .code = "nl", .locale = &nl },
+    .{ .code = "nr", .locale = &nr },
     .{ .code = "nso", .locale = &nso },
     .{ .code = "nus", .locale = &nus },
     .{ .code = "ny", .locale = &ny },
@@ -2400,15 +2532,18 @@ pub const all = [_]struct { code: []const u8, locale: *const sayabletime.TimeLoc
     .{ .code = "tpi", .locale = &tpi },
     .{ .code = "tr", .locale = &tr },
     .{ .code = "ts", .locale = &ts },
+    .{ .code = "tum", .locale = &tum },
     .{ .code = "tzm", .locale = &tzm },
     .{ .code = "uk", .locale = &uk },
     .{ .code = "umb", .locale = &umb },
     .{ .code = "ur", .locale = &ur },
     .{ .code = "uz", .locale = &uz },
+    .{ .code = "ve", .locale = &ve },
     .{ .code = "vi", .locale = &vi },
     .{ .code = "vmw", .locale = &vmw },
     .{ .code = "wo", .locale = &wo },
     .{ .code = "xh", .locale = &xh },
+    .{ .code = "yao", .locale = &yao },
     .{ .code = "yo", .locale = &yo },
     .{ .code = "yue", .locale = &yue },
     .{ .code = "zdj", .locale = &zdj },

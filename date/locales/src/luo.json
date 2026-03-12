@@ -1,0 +1,37 @@
+{
+  "code": "luo",
+  "name": "Dholuo",
+  "months": [
+    "Dwe mar Achiel", "Dwe mar Ariyo", "Dwe mar Adek", "Dwe mar Ang'wen",
+    "Dwe mar Abich", "Dwe mar Auchiel", "Dwe mar Abiriyo", "Dwe mar Aboro",
+    "Dwe mar Ochiko", "Dwe mar Apar", "Dwe mar Apar gi Achiel", "Dwe mar Apar gi Ariyo"
+  ],
+  "weekdays": [
+    "Jumapil", "Wuok Tich", "Tich Ariyo", "Tich Adek",
+    "Tich Ang'wen", "Tich Abich", "Chieng' Ngeso"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "kawuono",
+  "tomorrow": "kiny",
+  "yesterday": "nyoro",
+  "dayAfterTomorrow": "orucha",
+  "thisWeekday": "{weekday} ma",
+  "nextWeekday": "{weekday} mabiro",
+  "lastWeekday": "{weekday} mokalo",
+  "short": {
+    "months": [
+      "Ach", "Ari", "Ade", "Ang", "Abi", "Auc",
+      "Abr", "Abo", "Och", "Apa", "ApA", "ApR"
+    ],
+    "weekdays": ["JMP", "WUT", "TAR", "TAD", "TAN", "TAB", "ChN"],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

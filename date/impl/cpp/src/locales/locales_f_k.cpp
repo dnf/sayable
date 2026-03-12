@@ -1470,6 +1470,53 @@ const DateLocale& KEK() {
     return loc;
 }
 
+// Source: date/locales/src/ki.json
+const DateLocale& KI() {
+    static const DateLocale loc{
+        "ki",
+        {"Njenuarĩ", "Mwere wa kerĩ", "Mwere wa gatatũ", "Mwere wa kana", "Mwere wa gatano", "Mwere wa gatandatũ", "Mwere wa mũgwanja", "Mwere wa kanana", "Mwere wa kenda", "Mwere wa ikũmi", "Mwere wa ikũmi na ũmwe", "Ndithemba"},
+        {"Kiumia", "Njumatatũ", "Njumaine", "Njumatana", "Aramithi", "Njumaa", "Njumamothi"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "Ũmũthĩ", "Rũciũ", "Ira",
+        "",
+        "",
+        "{weekday} ĩno",
+        "{weekday} ĩyothe",
+        "{weekday} ĩrĩa ĩhĩtũkĩte",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"JEN", "WKR", "WGT", "WKN", "WTN", "WTD", "WMJ", "WNN", "WKD", "WIK", "WMW", "DIT"},
+            {},
+            {"KMA", "NTT", "NMN", "NMT", "ART", "NMA", "NMM"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/kk.json
 const DateLocale& KK() {
     static const DateLocale loc{
@@ -1726,6 +1773,53 @@ const DateLocale& KPE() {
             {"Yan", "Fɛb", "Maa", "Eep", "Mɛɛ", "Juŋ", "Jul", "Ɔɔg", "Sɛt", "Ɔtɔ", "Nɔv", "Dis"},
             {},
             {"Saa", "Tɛn", "Tal", "Ala", "Aim", "Jum", "Sat"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/kri.json
+const DateLocale& KRI() {
+    static const DateLocale loc{
+        "kri",
+        {"Jenyuari", "Febyuari", "Mach", "Epril", "Me", "Jun", "Julay", "Ogost", "Septemba", "Oktoba", "Novemba", "Disemba"},
+        {"Sonde", "Monde", "Tyusde", "Wensde", "Tosde", "Frayde", "Satide"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "tide", "tumara", "yestade",
+        "afta tumara",
+        "bifo yestade",
+        "dis {weekday}",
+        "neks {weekday}",
+        "las {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jen", "Feb", "Mach", "Ep", "Me", "Jun", "Jul", "Og", "Sep", "Ok", "Nov", "Dis"},
+            {},
+            {"Son", "Mon", "Tyu", "Wen", "Tos", "Fra", "Sat"},
             "{n}",
             {},
             false,

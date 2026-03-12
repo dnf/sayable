@@ -14,6 +14,7 @@ let get_locale (code : string) : Types.date_locale option =
   | "ak" -> Some Ak.locale
   | "am" -> Some Am.locale
   | "ar" -> Some Ar.locale
+  | "ay" -> Some Ay.locale
   | "az" -> Some Az.locale
   | "bci" -> Some Bci.locale
   | "be" -> Some Be.locale
@@ -73,20 +74,24 @@ let get_locale (code : string) : Types.date_locale option =
   | "ka" -> Some Ka.locale
   | "kbp" -> Some Kbp.locale
   | "kek" -> Some Kek.locale
+  | "ki" -> Some Ki.locale
   | "kk" -> Some Kk.locale
   | "kl" -> Some Kl.locale
   | "km" -> Some Km.locale
   | "kn" -> Some Kn.locale
   | "ko" -> Some Ko.locale
   | "kpe" -> Some Kpe.locale
+  | "kri" -> Some Kri.locale
   | "ktu" -> Some Ktu.locale
   | "ku" -> Some Ku.locale
   | "kw" -> Some Kw.locale
   | "ky" -> Some Ky.locale
+  | "lb" -> Some Lb.locale
   | "lg" -> Some Lg.locale
   | "ln" -> Some Ln.locale
   | "lo" -> Some Lo.locale
   | "lt" -> Some Lt.locale
+  | "luo" -> Some Luo.locale
   | "lv" -> Some Lv.locale
   | "mam" -> Some Mam.locale
   | "men" -> Some Men.locale
@@ -107,6 +112,7 @@ let get_locale (code : string) : Types.date_locale option =
   | "ne" -> Some Ne.locale
   | "ng" -> Some Ng.locale
   | "nl" -> Some Nl.locale
+  | "nr" -> Some Nr.locale
   | "nso" -> Some Nso.locale
   | "nus" -> Some Nus.locale
   | "ny" -> Some Ny.locale
@@ -155,15 +161,18 @@ let get_locale (code : string) : Types.date_locale option =
   | "tpi" -> Some Tpi.locale
   | "tr" -> Some Tr.locale
   | "ts" -> Some Ts.locale
+  | "tum" -> Some Tum.locale
   | "tzm" -> Some Tzm.locale
   | "uk" -> Some Uk.locale
   | "umb" -> Some Umb.locale
   | "ur" -> Some Ur.locale
   | "uz" -> Some Uz.locale
+  | "ve" -> Some Ve.locale
   | "vi" -> Some Vi.locale
   | "vmw" -> Some Vmw.locale
   | "wo" -> Some Wo.locale
   | "xh" -> Some Xh.locale
+  | "yao" -> Some Yao.locale
   | "yo" -> Some Yo.locale
   | "yue" -> Some Yue.locale
   | "zdj" -> Some Zdj.locale

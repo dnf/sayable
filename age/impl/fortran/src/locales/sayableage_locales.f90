@@ -18,6 +18,7 @@ module sayableage_locales
   type(pt_locale), target, save :: locale_ak
   type(pt_locale), target, save :: locale_am
   type(pt_locale), target, save :: locale_ar
+  type(pt_locale), target, save :: locale_ay
   type(pt_locale), target, save :: locale_az
   type(pt_locale), target, save :: locale_bci
   type(pt_locale), target, save :: locale_be
@@ -77,20 +78,24 @@ module sayableage_locales
   type(pt_locale), target, save :: locale_ka
   type(pt_locale), target, save :: locale_kbp
   type(pt_locale), target, save :: locale_kek
+  type(pt_locale), target, save :: locale_ki
   type(pt_locale), target, save :: locale_kk
   type(pt_locale), target, save :: locale_kl
   type(pt_locale), target, save :: locale_km
   type(pt_locale), target, save :: locale_kn
   type(pt_locale), target, save :: locale_ko
   type(pt_locale), target, save :: locale_kpe
+  type(pt_locale), target, save :: locale_kri
   type(pt_locale), target, save :: locale_ktu
   type(pt_locale), target, save :: locale_ku
   type(pt_locale), target, save :: locale_kw
   type(pt_locale), target, save :: locale_ky
+  type(pt_locale), target, save :: locale_lb
   type(pt_locale), target, save :: locale_lg
   type(pt_locale), target, save :: locale_ln
   type(pt_locale), target, save :: locale_lo
   type(pt_locale), target, save :: locale_lt
+  type(pt_locale), target, save :: locale_luo
   type(pt_locale), target, save :: locale_lv
   type(pt_locale), target, save :: locale_mam
   type(pt_locale), target, save :: locale_men
@@ -111,6 +116,7 @@ module sayableage_locales
   type(pt_locale), target, save :: locale_ne
   type(pt_locale), target, save :: locale_ng
   type(pt_locale), target, save :: locale_nl
+  type(pt_locale), target, save :: locale_nr
   type(pt_locale), target, save :: locale_nso
   type(pt_locale), target, save :: locale_nus
   type(pt_locale), target, save :: locale_ny
@@ -159,15 +165,18 @@ module sayableage_locales
   type(pt_locale), target, save :: locale_tpi
   type(pt_locale), target, save :: locale_tr
   type(pt_locale), target, save :: locale_ts
+  type(pt_locale), target, save :: locale_tum
   type(pt_locale), target, save :: locale_tzm
   type(pt_locale), target, save :: locale_uk
   type(pt_locale), target, save :: locale_umb
   type(pt_locale), target, save :: locale_ur
   type(pt_locale), target, save :: locale_uz
+  type(pt_locale), target, save :: locale_ve
   type(pt_locale), target, save :: locale_vi
   type(pt_locale), target, save :: locale_vmw
   type(pt_locale), target, save :: locale_wo
   type(pt_locale), target, save :: locale_xh
+  type(pt_locale), target, save :: locale_yao
   type(pt_locale), target, save :: locale_yo
   type(pt_locale), target, save :: locale_yue
   type(pt_locale), target, save :: locale_zdj
@@ -1184,6 +1193,90 @@ contains
     locale_ar%compact_override%just_born = ''
 
   end subroutine init_ar
+
+  ! Source: age/locales/src/ay.json
+  subroutine init_ay()
+    locale_ay%code = 'ay'
+    locale_ay%plural => plural_other_only
+
+    locale_ay%units%day%has_simple = .true.
+    locale_ay%units%day%simple = 'uru {n}'
+    locale_ay%units%day%has_form = .false.
+    locale_ay%units%day%forms = ''
+    locale_ay%units%week%has_simple = .true.
+    locale_ay%units%week%simple = 'simana {n}'
+    locale_ay%units%week%has_form = .false.
+    locale_ay%units%week%forms = ''
+    locale_ay%units%month%has_simple = .true.
+    locale_ay%units%month%simple = 'phaxsi {n}'
+    locale_ay%units%month%has_form = .false.
+    locale_ay%units%month%forms = ''
+    locale_ay%units%year%has_simple = .true.
+    locale_ay%units%year%simple = 'mara {n}'
+    locale_ay%units%year%has_form = .false.
+    locale_ay%units%year%forms = ''
+
+    locale_ay%half = '{0} chika'
+    locale_ay%delimiter = ', '
+    locale_ay%delimiter_len = 2
+    locale_ay%just_born = 'Wawa machaqa'
+
+    locale_ay%stages%newborn%label = 'Wawa machaqa'
+    locale_ay%stages%newborn%f_label = ''
+    locale_ay%stages%infant%label = 'Wawa'
+    locale_ay%stages%infant%f_label = ''
+    locale_ay%stages%toddler%label = 'Jisk''a wawa'
+    locale_ay%stages%toddler%f_label = ''
+    locale_ay%stages%child%label = 'Yuqalla'
+    locale_ay%stages%child%f_label = ''
+    locale_ay%stages%teenager%label = 'Wayna'
+    locale_ay%stages%teenager%f_label = ''
+    locale_ay%stages%adult%label = 'Jaqi'
+    locale_ay%stages%adult%f_label = ''
+
+    locale_ay%has_short = .true.
+    locale_ay%short_override%has_day = .true.
+    locale_ay%short_override%day%simple = '{n} ur.'
+    locale_ay%short_override%day%has_simple = .true.
+    locale_ay%short_override%has_week = .true.
+    locale_ay%short_override%week%simple = '{n} sim.'
+    locale_ay%short_override%week%has_simple = .true.
+    locale_ay%short_override%has_month = .true.
+    locale_ay%short_override%month%simple = '{n} phx.'
+    locale_ay%short_override%month%has_simple = .true.
+    locale_ay%short_override%has_year = .true.
+    locale_ay%short_override%year%simple = '{n} mr.'
+    locale_ay%short_override%year%has_simple = .true.
+    locale_ay%short_override%has_half = .false.
+    locale_ay%short_override%half = ''
+    locale_ay%short_override%has_delimiter = .false.
+    locale_ay%short_override%delimiter = ''
+    locale_ay%short_override%delimiter_len = 0
+    locale_ay%short_override%has_just_born = .false.
+    locale_ay%short_override%just_born = ''
+
+    locale_ay%has_compact = .true.
+    locale_ay%compact_override%has_day = .true.
+    locale_ay%compact_override%day%simple = '{n}d'
+    locale_ay%compact_override%day%has_simple = .true.
+    locale_ay%compact_override%has_week = .true.
+    locale_ay%compact_override%week%simple = '{n}w'
+    locale_ay%compact_override%week%has_simple = .true.
+    locale_ay%compact_override%has_month = .true.
+    locale_ay%compact_override%month%simple = '{n}m'
+    locale_ay%compact_override%month%has_simple = .true.
+    locale_ay%compact_override%has_year = .true.
+    locale_ay%compact_override%year%simple = '{n}y'
+    locale_ay%compact_override%year%has_simple = .true.
+    locale_ay%compact_override%has_half = .false.
+    locale_ay%compact_override%half = ''
+    locale_ay%compact_override%has_delimiter = .true.
+    locale_ay%compact_override%delimiter = ''
+    locale_ay%compact_override%delimiter_len = 0
+    locale_ay%compact_override%has_just_born = .false.
+    locale_ay%compact_override%just_born = ''
+
+  end subroutine init_ay
 
   ! Source: age/locales/src/az.json
   subroutine init_az()
@@ -8255,6 +8348,166 @@ contains
 
   end subroutine init_kek
 
+  ! Source: age/locales/src/ki.json
+  subroutine init_ki()
+    locale_ki%code = 'ki'
+    locale_ki%plural => plural_one_other
+
+    locale_ki%units%day%has_simple = .false.
+    locale_ki%units%day%simple = ''
+    locale_ki%units%day%forms(1) = ''
+    locale_ki%units%day%has_form(1) = .false.
+    locale_ki%units%day%forms(2) = 'mũthenya {n}'
+    locale_ki%units%day%has_form(2) = .true.
+    locale_ki%units%day%forms(3) = ''
+    locale_ki%units%day%has_form(3) = .false.
+    locale_ki%units%day%forms(4) = ''
+    locale_ki%units%day%has_form(4) = .false.
+    locale_ki%units%day%forms(5) = ''
+    locale_ki%units%day%has_form(5) = .false.
+    locale_ki%units%day%forms(6) = 'mĩthenya {n}'
+    locale_ki%units%day%has_form(6) = .true.
+    locale_ki%units%week%has_simple = .false.
+    locale_ki%units%week%simple = ''
+    locale_ki%units%week%forms(1) = ''
+    locale_ki%units%week%has_form(1) = .false.
+    locale_ki%units%week%forms(2) = 'kiumia {n}'
+    locale_ki%units%week%has_form(2) = .true.
+    locale_ki%units%week%forms(3) = ''
+    locale_ki%units%week%has_form(3) = .false.
+    locale_ki%units%week%forms(4) = ''
+    locale_ki%units%week%has_form(4) = .false.
+    locale_ki%units%week%forms(5) = ''
+    locale_ki%units%week%has_form(5) = .false.
+    locale_ki%units%week%forms(6) = 'kiumia {n}'
+    locale_ki%units%week%has_form(6) = .true.
+    locale_ki%units%month%has_simple = .false.
+    locale_ki%units%month%simple = ''
+    locale_ki%units%month%forms(1) = ''
+    locale_ki%units%month%has_form(1) = .false.
+    locale_ki%units%month%forms(2) = 'mwerĩ {n}'
+    locale_ki%units%month%has_form(2) = .true.
+    locale_ki%units%month%forms(3) = ''
+    locale_ki%units%month%has_form(3) = .false.
+    locale_ki%units%month%forms(4) = ''
+    locale_ki%units%month%has_form(4) = .false.
+    locale_ki%units%month%forms(5) = ''
+    locale_ki%units%month%has_form(5) = .false.
+    locale_ki%units%month%forms(6) = 'mĩerĩ {n}'
+    locale_ki%units%month%has_form(6) = .true.
+    locale_ki%units%year%has_simple = .false.
+    locale_ki%units%year%simple = ''
+    locale_ki%units%year%forms(1) = ''
+    locale_ki%units%year%has_form(1) = .false.
+    locale_ki%units%year%forms(2) = 'mwaka {n}'
+    locale_ki%units%year%has_form(2) = .true.
+    locale_ki%units%year%forms(3) = ''
+    locale_ki%units%year%has_form(3) = .false.
+    locale_ki%units%year%forms(4) = ''
+    locale_ki%units%year%has_form(4) = .false.
+    locale_ki%units%year%forms(5) = ''
+    locale_ki%units%year%has_form(5) = .false.
+    locale_ki%units%year%forms(6) = 'mĩaka {n}'
+    locale_ki%units%year%has_form(6) = .true.
+
+    locale_ki%half = '{0} na nusu'
+    locale_ki%delimiter = ', '
+    locale_ki%delimiter_len = 2
+    locale_ki%just_born = 'Kaana gakĩ'
+
+    locale_ki%stages%newborn%label = 'Kaana gakĩ'
+    locale_ki%stages%newborn%f_label = ''
+    locale_ki%stages%infant%label = 'Kaana'
+    locale_ki%stages%infant%f_label = ''
+    locale_ki%stages%toddler%label = 'Kaana kanini'
+    locale_ki%stages%toddler%f_label = ''
+    locale_ki%stages%child%label = 'Mwana'
+    locale_ki%stages%child%f_label = ''
+    locale_ki%stages%teenager%label = 'Kĩhĩĩ'
+    locale_ki%stages%teenager%f_label = ''
+    locale_ki%stages%adult%label = 'Mũndũ mũkũrũ'
+    locale_ki%stages%adult%f_label = ''
+
+    locale_ki%has_short = .true.
+    locale_ki%short_override%has_day = .true.
+    locale_ki%short_override%day%has_simple = .false.
+    locale_ki%short_override%day%simple = ''
+    locale_ki%short_override%day%forms(1) = ''
+    locale_ki%short_override%day%has_form(1) = .false.
+    locale_ki%short_override%day%forms(2) = 'mũth. {n}'
+    locale_ki%short_override%day%has_form(2) = .true.
+    locale_ki%short_override%day%forms(3) = ''
+    locale_ki%short_override%day%has_form(3) = .false.
+    locale_ki%short_override%day%forms(4) = ''
+    locale_ki%short_override%day%has_form(4) = .false.
+    locale_ki%short_override%day%forms(5) = ''
+    locale_ki%short_override%day%has_form(5) = .false.
+    locale_ki%short_override%day%forms(6) = 'mĩth. {n}'
+    locale_ki%short_override%day%has_form(6) = .true.
+    locale_ki%short_override%has_week = .true.
+    locale_ki%short_override%week%simple = '{n} kiu.'
+    locale_ki%short_override%week%has_simple = .true.
+    locale_ki%short_override%has_month = .true.
+    locale_ki%short_override%month%has_simple = .false.
+    locale_ki%short_override%month%simple = ''
+    locale_ki%short_override%month%forms(1) = ''
+    locale_ki%short_override%month%has_form(1) = .false.
+    locale_ki%short_override%month%forms(2) = 'mwerĩ {n}'
+    locale_ki%short_override%month%has_form(2) = .true.
+    locale_ki%short_override%month%forms(3) = ''
+    locale_ki%short_override%month%has_form(3) = .false.
+    locale_ki%short_override%month%forms(4) = ''
+    locale_ki%short_override%month%has_form(4) = .false.
+    locale_ki%short_override%month%forms(5) = ''
+    locale_ki%short_override%month%has_form(5) = .false.
+    locale_ki%short_override%month%forms(6) = 'mĩerĩ {n}'
+    locale_ki%short_override%month%has_form(6) = .true.
+    locale_ki%short_override%has_year = .true.
+    locale_ki%short_override%year%has_simple = .false.
+    locale_ki%short_override%year%simple = ''
+    locale_ki%short_override%year%forms(1) = ''
+    locale_ki%short_override%year%has_form(1) = .false.
+    locale_ki%short_override%year%forms(2) = 'mwaka {n}'
+    locale_ki%short_override%year%has_form(2) = .true.
+    locale_ki%short_override%year%forms(3) = ''
+    locale_ki%short_override%year%has_form(3) = .false.
+    locale_ki%short_override%year%forms(4) = ''
+    locale_ki%short_override%year%has_form(4) = .false.
+    locale_ki%short_override%year%forms(5) = ''
+    locale_ki%short_override%year%has_form(5) = .false.
+    locale_ki%short_override%year%forms(6) = 'mĩaka {n}'
+    locale_ki%short_override%year%has_form(6) = .true.
+    locale_ki%short_override%has_half = .false.
+    locale_ki%short_override%half = ''
+    locale_ki%short_override%has_delimiter = .false.
+    locale_ki%short_override%delimiter = ''
+    locale_ki%short_override%delimiter_len = 0
+    locale_ki%short_override%has_just_born = .false.
+    locale_ki%short_override%just_born = ''
+
+    locale_ki%has_compact = .true.
+    locale_ki%compact_override%has_day = .true.
+    locale_ki%compact_override%day%simple = '{n}d'
+    locale_ki%compact_override%day%has_simple = .true.
+    locale_ki%compact_override%has_week = .true.
+    locale_ki%compact_override%week%simple = '{n}w'
+    locale_ki%compact_override%week%has_simple = .true.
+    locale_ki%compact_override%has_month = .true.
+    locale_ki%compact_override%month%simple = '{n}m'
+    locale_ki%compact_override%month%has_simple = .true.
+    locale_ki%compact_override%has_year = .true.
+    locale_ki%compact_override%year%simple = '{n}y'
+    locale_ki%compact_override%year%has_simple = .true.
+    locale_ki%compact_override%has_half = .false.
+    locale_ki%compact_override%half = ''
+    locale_ki%compact_override%has_delimiter = .true.
+    locale_ki%compact_override%delimiter = ''
+    locale_ki%compact_override%delimiter_len = 0
+    locale_ki%compact_override%has_just_born = .false.
+    locale_ki%compact_override%just_born = ''
+
+  end subroutine init_ki
+
   ! Source: age/locales/src/kk.json
   subroutine init_kk()
     locale_kk%code = 'kk'
@@ -8839,6 +9092,90 @@ contains
 
   end subroutine init_kpe
 
+  ! Source: age/locales/src/kri.json
+  subroutine init_kri()
+    locale_kri%code = 'kri'
+    locale_kri%plural => plural_other_only
+
+    locale_kri%units%day%has_simple = .true.
+    locale_kri%units%day%simple = '{n} de'
+    locale_kri%units%day%has_form = .false.
+    locale_kri%units%day%forms = ''
+    locale_kri%units%week%has_simple = .true.
+    locale_kri%units%week%simple = '{n} wik'
+    locale_kri%units%week%has_form = .false.
+    locale_kri%units%week%forms = ''
+    locale_kri%units%month%has_simple = .true.
+    locale_kri%units%month%simple = '{n} mont'
+    locale_kri%units%month%has_form = .false.
+    locale_kri%units%month%forms = ''
+    locale_kri%units%year%has_simple = .true.
+    locale_kri%units%year%simple = '{n} ia'
+    locale_kri%units%year%has_form = .false.
+    locale_kri%units%year%forms = ''
+
+    locale_kri%half = '{n} na af'
+    locale_kri%delimiter = ', '
+    locale_kri%delimiter_len = 2
+    locale_kri%just_born = 'Nyubon bebi'
+
+    locale_kri%stages%newborn%label = 'Nyubon bebi'
+    locale_kri%stages%newborn%f_label = ''
+    locale_kri%stages%infant%label = 'Smol pikin'
+    locale_kri%stages%infant%f_label = ''
+    locale_kri%stages%toddler%label = 'Smol pikin'
+    locale_kri%stages%toddler%f_label = ''
+    locale_kri%stages%child%label = 'Pikin'
+    locale_kri%stages%child%f_label = ''
+    locale_kri%stages%teenager%label = 'Yong posin'
+    locale_kri%stages%teenager%f_label = ''
+    locale_kri%stages%adult%label = 'Big posin'
+    locale_kri%stages%adult%f_label = ''
+
+    locale_kri%has_short = .true.
+    locale_kri%short_override%has_day = .true.
+    locale_kri%short_override%day%simple = '{n} de'
+    locale_kri%short_override%day%has_simple = .true.
+    locale_kri%short_override%has_week = .true.
+    locale_kri%short_override%week%simple = '{n} wik'
+    locale_kri%short_override%week%has_simple = .true.
+    locale_kri%short_override%has_month = .true.
+    locale_kri%short_override%month%simple = '{n} mont'
+    locale_kri%short_override%month%has_simple = .true.
+    locale_kri%short_override%has_year = .true.
+    locale_kri%short_override%year%simple = '{n} ia'
+    locale_kri%short_override%year%has_simple = .true.
+    locale_kri%short_override%has_half = .false.
+    locale_kri%short_override%half = ''
+    locale_kri%short_override%has_delimiter = .false.
+    locale_kri%short_override%delimiter = ''
+    locale_kri%short_override%delimiter_len = 0
+    locale_kri%short_override%has_just_born = .false.
+    locale_kri%short_override%just_born = ''
+
+    locale_kri%has_compact = .true.
+    locale_kri%compact_override%has_day = .true.
+    locale_kri%compact_override%day%simple = '{n}d'
+    locale_kri%compact_override%day%has_simple = .true.
+    locale_kri%compact_override%has_week = .true.
+    locale_kri%compact_override%week%simple = '{n}w'
+    locale_kri%compact_override%week%has_simple = .true.
+    locale_kri%compact_override%has_month = .true.
+    locale_kri%compact_override%month%simple = '{n}m'
+    locale_kri%compact_override%month%has_simple = .true.
+    locale_kri%compact_override%has_year = .true.
+    locale_kri%compact_override%year%simple = '{n}y'
+    locale_kri%compact_override%year%has_simple = .true.
+    locale_kri%compact_override%has_half = .false.
+    locale_kri%compact_override%half = ''
+    locale_kri%compact_override%has_delimiter = .true.
+    locale_kri%compact_override%delimiter = ''
+    locale_kri%compact_override%delimiter_len = 0
+    locale_kri%compact_override%has_just_born = .false.
+    locale_kri%compact_override%just_born = ''
+
+  end subroutine init_kri
+
   ! Source: age/locales/src/ktu.json
   subroutine init_ktu()
     locale_ktu%code = 'ktu'
@@ -9366,6 +9703,130 @@ contains
     locale_ky%compact_override%just_born = ''
 
   end subroutine init_ky
+
+  ! Source: age/locales/src/lb.json
+  subroutine init_lb()
+    locale_lb%code = 'lb'
+    locale_lb%plural => plural_one_other
+
+    locale_lb%units%day%has_simple = .false.
+    locale_lb%units%day%simple = ''
+    locale_lb%units%day%forms(1) = ''
+    locale_lb%units%day%has_form(1) = .false.
+    locale_lb%units%day%forms(2) = '{n} Dag'
+    locale_lb%units%day%has_form(2) = .true.
+    locale_lb%units%day%forms(3) = ''
+    locale_lb%units%day%has_form(3) = .false.
+    locale_lb%units%day%forms(4) = ''
+    locale_lb%units%day%has_form(4) = .false.
+    locale_lb%units%day%forms(5) = ''
+    locale_lb%units%day%has_form(5) = .false.
+    locale_lb%units%day%forms(6) = '{n} Deeg'
+    locale_lb%units%day%has_form(6) = .true.
+    locale_lb%units%week%has_simple = .false.
+    locale_lb%units%week%simple = ''
+    locale_lb%units%week%forms(1) = ''
+    locale_lb%units%week%has_form(1) = .false.
+    locale_lb%units%week%forms(2) = '{n} Woch'
+    locale_lb%units%week%has_form(2) = .true.
+    locale_lb%units%week%forms(3) = ''
+    locale_lb%units%week%has_form(3) = .false.
+    locale_lb%units%week%forms(4) = ''
+    locale_lb%units%week%has_form(4) = .false.
+    locale_lb%units%week%forms(5) = ''
+    locale_lb%units%week%has_form(5) = .false.
+    locale_lb%units%week%forms(6) = '{n} Wochen'
+    locale_lb%units%week%has_form(6) = .true.
+    locale_lb%units%month%has_simple = .false.
+    locale_lb%units%month%simple = ''
+    locale_lb%units%month%forms(1) = ''
+    locale_lb%units%month%has_form(1) = .false.
+    locale_lb%units%month%forms(2) = '{n} Mount'
+    locale_lb%units%month%has_form(2) = .true.
+    locale_lb%units%month%forms(3) = ''
+    locale_lb%units%month%has_form(3) = .false.
+    locale_lb%units%month%forms(4) = ''
+    locale_lb%units%month%has_form(4) = .false.
+    locale_lb%units%month%forms(5) = ''
+    locale_lb%units%month%has_form(5) = .false.
+    locale_lb%units%month%forms(6) = '{n} Méint'
+    locale_lb%units%month%has_form(6) = .true.
+    locale_lb%units%year%has_simple = .false.
+    locale_lb%units%year%simple = ''
+    locale_lb%units%year%forms(1) = ''
+    locale_lb%units%year%has_form(1) = .false.
+    locale_lb%units%year%forms(2) = '{n} Joer'
+    locale_lb%units%year%has_form(2) = .true.
+    locale_lb%units%year%forms(3) = ''
+    locale_lb%units%year%has_form(3) = .false.
+    locale_lb%units%year%forms(4) = ''
+    locale_lb%units%year%has_form(4) = .false.
+    locale_lb%units%year%forms(5) = ''
+    locale_lb%units%year%has_form(5) = .false.
+    locale_lb%units%year%forms(6) = '{n} Joer'
+    locale_lb%units%year%has_form(6) = .true.
+
+    locale_lb%half = '{n}½'
+    locale_lb%delimiter = ', '
+    locale_lb%delimiter_len = 2
+    locale_lb%just_born = 'Neigebuerenen'
+
+    locale_lb%stages%newborn%label = 'Neigebuerenen'
+    locale_lb%stages%newborn%f_label = ''
+    locale_lb%stages%infant%label = 'Puppelchen'
+    locale_lb%stages%infant%f_label = ''
+    locale_lb%stages%toddler%label = 'Klengkand'
+    locale_lb%stages%toddler%f_label = ''
+    locale_lb%stages%child%label = 'Kand'
+    locale_lb%stages%child%f_label = ''
+    locale_lb%stages%teenager%label = 'Jugendlechen'
+    locale_lb%stages%teenager%f_label = ''
+    locale_lb%stages%adult%label = 'Erwuessenen'
+    locale_lb%stages%adult%f_label = 'Erwuessen'
+
+    locale_lb%has_short = .true.
+    locale_lb%short_override%has_day = .true.
+    locale_lb%short_override%day%simple = '{n} D.'
+    locale_lb%short_override%day%has_simple = .true.
+    locale_lb%short_override%has_week = .true.
+    locale_lb%short_override%week%simple = '{n} W.'
+    locale_lb%short_override%week%has_simple = .true.
+    locale_lb%short_override%has_month = .true.
+    locale_lb%short_override%month%simple = '{n} M.'
+    locale_lb%short_override%month%has_simple = .true.
+    locale_lb%short_override%has_year = .true.
+    locale_lb%short_override%year%simple = '{n} J.'
+    locale_lb%short_override%year%has_simple = .true.
+    locale_lb%short_override%has_half = .false.
+    locale_lb%short_override%half = ''
+    locale_lb%short_override%has_delimiter = .false.
+    locale_lb%short_override%delimiter = ''
+    locale_lb%short_override%delimiter_len = 0
+    locale_lb%short_override%has_just_born = .false.
+    locale_lb%short_override%just_born = ''
+
+    locale_lb%has_compact = .true.
+    locale_lb%compact_override%has_day = .true.
+    locale_lb%compact_override%day%simple = '{n}D'
+    locale_lb%compact_override%day%has_simple = .true.
+    locale_lb%compact_override%has_week = .true.
+    locale_lb%compact_override%week%simple = '{n}W'
+    locale_lb%compact_override%week%has_simple = .true.
+    locale_lb%compact_override%has_month = .true.
+    locale_lb%compact_override%month%simple = '{n}M'
+    locale_lb%compact_override%month%has_simple = .true.
+    locale_lb%compact_override%has_year = .true.
+    locale_lb%compact_override%year%simple = '{n}J'
+    locale_lb%compact_override%year%has_simple = .true.
+    locale_lb%compact_override%has_half = .false.
+    locale_lb%compact_override%half = ''
+    locale_lb%compact_override%has_delimiter = .true.
+    locale_lb%compact_override%delimiter = ''
+    locale_lb%compact_override%delimiter_len = 0
+    locale_lb%compact_override%has_just_born = .false.
+    locale_lb%compact_override%just_born = ''
+
+  end subroutine init_lb
 
   ! Source: age/locales/src/lg.json
   subroutine init_lg()
@@ -9990,6 +10451,178 @@ contains
     locale_lt%compact_override%just_born = ''
 
   end subroutine init_lt
+
+  ! Source: age/locales/src/luo.json
+  subroutine init_luo()
+    locale_luo%code = 'luo'
+    locale_luo%plural => plural_one_other
+
+    locale_luo%units%day%has_simple = .false.
+    locale_luo%units%day%simple = ''
+    locale_luo%units%day%forms(1) = ''
+    locale_luo%units%day%has_form(1) = .false.
+    locale_luo%units%day%forms(2) = 'odiechieng'' {n}'
+    locale_luo%units%day%has_form(2) = .true.
+    locale_luo%units%day%forms(3) = ''
+    locale_luo%units%day%has_form(3) = .false.
+    locale_luo%units%day%forms(4) = ''
+    locale_luo%units%day%has_form(4) = .false.
+    locale_luo%units%day%forms(5) = ''
+    locale_luo%units%day%has_form(5) = .false.
+    locale_luo%units%day%forms(6) = 'ndalo {n}'
+    locale_luo%units%day%has_form(6) = .true.
+    locale_luo%units%week%has_simple = .false.
+    locale_luo%units%week%simple = ''
+    locale_luo%units%week%forms(1) = ''
+    locale_luo%units%week%has_form(1) = .false.
+    locale_luo%units%week%forms(2) = 'juma {n}'
+    locale_luo%units%week%has_form(2) = .true.
+    locale_luo%units%week%forms(3) = ''
+    locale_luo%units%week%has_form(3) = .false.
+    locale_luo%units%week%forms(4) = ''
+    locale_luo%units%week%has_form(4) = .false.
+    locale_luo%units%week%forms(5) = ''
+    locale_luo%units%week%has_form(5) = .false.
+    locale_luo%units%week%forms(6) = 'jumbe {n}'
+    locale_luo%units%week%has_form(6) = .true.
+    locale_luo%units%month%has_simple = .false.
+    locale_luo%units%month%simple = ''
+    locale_luo%units%month%forms(1) = ''
+    locale_luo%units%month%has_form(1) = .false.
+    locale_luo%units%month%forms(2) = 'dwe {n}'
+    locale_luo%units%month%has_form(2) = .true.
+    locale_luo%units%month%forms(3) = ''
+    locale_luo%units%month%has_form(3) = .false.
+    locale_luo%units%month%forms(4) = ''
+    locale_luo%units%month%has_form(4) = .false.
+    locale_luo%units%month%forms(5) = ''
+    locale_luo%units%month%has_form(5) = .false.
+    locale_luo%units%month%forms(6) = 'dweche {n}'
+    locale_luo%units%month%has_form(6) = .true.
+    locale_luo%units%year%has_simple = .false.
+    locale_luo%units%year%simple = ''
+    locale_luo%units%year%forms(1) = ''
+    locale_luo%units%year%has_form(1) = .false.
+    locale_luo%units%year%forms(2) = 'higa {n}'
+    locale_luo%units%year%has_form(2) = .true.
+    locale_luo%units%year%forms(3) = ''
+    locale_luo%units%year%has_form(3) = .false.
+    locale_luo%units%year%forms(4) = ''
+    locale_luo%units%year%has_form(4) = .false.
+    locale_luo%units%year%forms(5) = ''
+    locale_luo%units%year%has_form(5) = .false.
+    locale_luo%units%year%forms(6) = 'higni {n}'
+    locale_luo%units%year%has_form(6) = .true.
+
+    locale_luo%half = '{0} gi nus'
+    locale_luo%delimiter = ', '
+    locale_luo%delimiter_len = 2
+    locale_luo%just_born = 'Nyathi manyien'
+
+    locale_luo%stages%newborn%label = 'Nyathi manyien'
+    locale_luo%stages%newborn%f_label = ''
+    locale_luo%stages%infant%label = 'Kidoro'
+    locale_luo%stages%infant%f_label = ''
+    locale_luo%stages%toddler%label = 'Nyathi matin'
+    locale_luo%stages%toddler%f_label = ''
+    locale_luo%stages%child%label = 'Nyathi'
+    locale_luo%stages%child%f_label = ''
+    locale_luo%stages%teenager%label = 'Rawera'
+    locale_luo%stages%teenager%f_label = ''
+    locale_luo%stages%adult%label = 'Ng''ama duong'''
+    locale_luo%stages%adult%f_label = ''
+
+    locale_luo%has_short = .true.
+    locale_luo%short_override%has_day = .true.
+    locale_luo%short_override%day%has_simple = .false.
+    locale_luo%short_override%day%simple = ''
+    locale_luo%short_override%day%forms(1) = ''
+    locale_luo%short_override%day%has_form(1) = .false.
+    locale_luo%short_override%day%forms(2) = 'odie. {n}'
+    locale_luo%short_override%day%has_form(2) = .true.
+    locale_luo%short_override%day%forms(3) = ''
+    locale_luo%short_override%day%has_form(3) = .false.
+    locale_luo%short_override%day%forms(4) = ''
+    locale_luo%short_override%day%has_form(4) = .false.
+    locale_luo%short_override%day%forms(5) = ''
+    locale_luo%short_override%day%has_form(5) = .false.
+    locale_luo%short_override%day%forms(6) = 'ndalo {n}'
+    locale_luo%short_override%day%has_form(6) = .true.
+    locale_luo%short_override%has_week = .true.
+    locale_luo%short_override%week%has_simple = .false.
+    locale_luo%short_override%week%simple = ''
+    locale_luo%short_override%week%forms(1) = ''
+    locale_luo%short_override%week%has_form(1) = .false.
+    locale_luo%short_override%week%forms(2) = 'juma {n}'
+    locale_luo%short_override%week%has_form(2) = .true.
+    locale_luo%short_override%week%forms(3) = ''
+    locale_luo%short_override%week%has_form(3) = .false.
+    locale_luo%short_override%week%forms(4) = ''
+    locale_luo%short_override%week%has_form(4) = .false.
+    locale_luo%short_override%week%forms(5) = ''
+    locale_luo%short_override%week%has_form(5) = .false.
+    locale_luo%short_override%week%forms(6) = 'jumbe {n}'
+    locale_luo%short_override%week%has_form(6) = .true.
+    locale_luo%short_override%has_month = .true.
+    locale_luo%short_override%month%has_simple = .false.
+    locale_luo%short_override%month%simple = ''
+    locale_luo%short_override%month%forms(1) = ''
+    locale_luo%short_override%month%has_form(1) = .false.
+    locale_luo%short_override%month%forms(2) = 'dwe {n}'
+    locale_luo%short_override%month%has_form(2) = .true.
+    locale_luo%short_override%month%forms(3) = ''
+    locale_luo%short_override%month%has_form(3) = .false.
+    locale_luo%short_override%month%forms(4) = ''
+    locale_luo%short_override%month%has_form(4) = .false.
+    locale_luo%short_override%month%forms(5) = ''
+    locale_luo%short_override%month%has_form(5) = .false.
+    locale_luo%short_override%month%forms(6) = 'dwe. {n}'
+    locale_luo%short_override%month%has_form(6) = .true.
+    locale_luo%short_override%has_year = .true.
+    locale_luo%short_override%year%has_simple = .false.
+    locale_luo%short_override%year%simple = ''
+    locale_luo%short_override%year%forms(1) = ''
+    locale_luo%short_override%year%has_form(1) = .false.
+    locale_luo%short_override%year%forms(2) = 'higa {n}'
+    locale_luo%short_override%year%has_form(2) = .true.
+    locale_luo%short_override%year%forms(3) = ''
+    locale_luo%short_override%year%has_form(3) = .false.
+    locale_luo%short_override%year%forms(4) = ''
+    locale_luo%short_override%year%has_form(4) = .false.
+    locale_luo%short_override%year%forms(5) = ''
+    locale_luo%short_override%year%has_form(5) = .false.
+    locale_luo%short_override%year%forms(6) = 'higni {n}'
+    locale_luo%short_override%year%has_form(6) = .true.
+    locale_luo%short_override%has_half = .false.
+    locale_luo%short_override%half = ''
+    locale_luo%short_override%has_delimiter = .false.
+    locale_luo%short_override%delimiter = ''
+    locale_luo%short_override%delimiter_len = 0
+    locale_luo%short_override%has_just_born = .false.
+    locale_luo%short_override%just_born = ''
+
+    locale_luo%has_compact = .true.
+    locale_luo%compact_override%has_day = .true.
+    locale_luo%compact_override%day%simple = '{n}d'
+    locale_luo%compact_override%day%has_simple = .true.
+    locale_luo%compact_override%has_week = .true.
+    locale_luo%compact_override%week%simple = '{n}w'
+    locale_luo%compact_override%week%has_simple = .true.
+    locale_luo%compact_override%has_month = .true.
+    locale_luo%compact_override%month%simple = '{n}m'
+    locale_luo%compact_override%month%has_simple = .true.
+    locale_luo%compact_override%has_year = .true.
+    locale_luo%compact_override%year%simple = '{n}y'
+    locale_luo%compact_override%year%has_simple = .true.
+    locale_luo%compact_override%has_half = .false.
+    locale_luo%compact_override%half = ''
+    locale_luo%compact_override%has_delimiter = .true.
+    locale_luo%compact_override%delimiter = ''
+    locale_luo%compact_override%delimiter_len = 0
+    locale_luo%compact_override%has_just_born = .false.
+    locale_luo%compact_override%just_born = ''
+
+  end subroutine init_luo
 
   ! Source: age/locales/src/lv.json
   subroutine init_lv()
@@ -12326,6 +12959,178 @@ contains
     locale_nl%compact_override%just_born = ''
 
   end subroutine init_nl
+
+  ! Source: age/locales/src/nr.json
+  subroutine init_nr()
+    locale_nr%code = 'nr'
+    locale_nr%plural => plural_one_other
+
+    locale_nr%units%day%has_simple = .false.
+    locale_nr%units%day%simple = ''
+    locale_nr%units%day%forms(1) = ''
+    locale_nr%units%day%has_form(1) = .false.
+    locale_nr%units%day%forms(2) = 'ilanga {n}'
+    locale_nr%units%day%has_form(2) = .true.
+    locale_nr%units%day%forms(3) = ''
+    locale_nr%units%day%has_form(3) = .false.
+    locale_nr%units%day%forms(4) = ''
+    locale_nr%units%day%has_form(4) = .false.
+    locale_nr%units%day%forms(5) = ''
+    locale_nr%units%day%has_form(5) = .false.
+    locale_nr%units%day%forms(6) = 'amalanga {n}'
+    locale_nr%units%day%has_form(6) = .true.
+    locale_nr%units%week%has_simple = .false.
+    locale_nr%units%week%simple = ''
+    locale_nr%units%week%forms(1) = ''
+    locale_nr%units%week%has_form(1) = .false.
+    locale_nr%units%week%forms(2) = 'iveke {n}'
+    locale_nr%units%week%has_form(2) = .true.
+    locale_nr%units%week%forms(3) = ''
+    locale_nr%units%week%has_form(3) = .false.
+    locale_nr%units%week%forms(4) = ''
+    locale_nr%units%week%has_form(4) = .false.
+    locale_nr%units%week%forms(5) = ''
+    locale_nr%units%week%has_form(5) = .false.
+    locale_nr%units%week%forms(6) = 'amaveke {n}'
+    locale_nr%units%week%has_form(6) = .true.
+    locale_nr%units%month%has_simple = .false.
+    locale_nr%units%month%simple = ''
+    locale_nr%units%month%forms(1) = ''
+    locale_nr%units%month%has_form(1) = .false.
+    locale_nr%units%month%forms(2) = 'inyanga {n}'
+    locale_nr%units%month%has_form(2) = .true.
+    locale_nr%units%month%forms(3) = ''
+    locale_nr%units%month%has_form(3) = .false.
+    locale_nr%units%month%forms(4) = ''
+    locale_nr%units%month%has_form(4) = .false.
+    locale_nr%units%month%forms(5) = ''
+    locale_nr%units%month%has_form(5) = .false.
+    locale_nr%units%month%forms(6) = 'iinyanga {n}'
+    locale_nr%units%month%has_form(6) = .true.
+    locale_nr%units%year%has_simple = .false.
+    locale_nr%units%year%simple = ''
+    locale_nr%units%year%forms(1) = ''
+    locale_nr%units%year%has_form(1) = .false.
+    locale_nr%units%year%forms(2) = 'unyaka {n}'
+    locale_nr%units%year%has_form(2) = .true.
+    locale_nr%units%year%forms(3) = ''
+    locale_nr%units%year%has_form(3) = .false.
+    locale_nr%units%year%forms(4) = ''
+    locale_nr%units%year%has_form(4) = .false.
+    locale_nr%units%year%forms(5) = ''
+    locale_nr%units%year%has_form(5) = .false.
+    locale_nr%units%year%forms(6) = 'iminyaka {n}'
+    locale_nr%units%year%has_form(6) = .true.
+
+    locale_nr%half = '{0} nesiquntu'
+    locale_nr%delimiter = ', '
+    locale_nr%delimiter_len = 2
+    locale_nr%just_born = 'Usana olusanda kubeletwa'
+
+    locale_nr%stages%newborn%label = 'Usana olusanda kubeletwa'
+    locale_nr%stages%newborn%f_label = ''
+    locale_nr%stages%infant%label = 'Usana'
+    locale_nr%stages%infant%f_label = ''
+    locale_nr%stages%toddler%label = 'Umntwana omncani'
+    locale_nr%stages%toddler%f_label = ''
+    locale_nr%stages%child%label = 'Umntwana'
+    locale_nr%stages%child%f_label = ''
+    locale_nr%stages%teenager%label = 'Isokana'
+    locale_nr%stages%teenager%f_label = ''
+    locale_nr%stages%adult%label = 'Umuntu omkhulu'
+    locale_nr%stages%adult%f_label = ''
+
+    locale_nr%has_short = .true.
+    locale_nr%short_override%has_day = .true.
+    locale_nr%short_override%day%has_simple = .false.
+    locale_nr%short_override%day%simple = ''
+    locale_nr%short_override%day%forms(1) = ''
+    locale_nr%short_override%day%has_form(1) = .false.
+    locale_nr%short_override%day%forms(2) = 'ilanga {n}'
+    locale_nr%short_override%day%has_form(2) = .true.
+    locale_nr%short_override%day%forms(3) = ''
+    locale_nr%short_override%day%has_form(3) = .false.
+    locale_nr%short_override%day%forms(4) = ''
+    locale_nr%short_override%day%has_form(4) = .false.
+    locale_nr%short_override%day%forms(5) = ''
+    locale_nr%short_override%day%has_form(5) = .false.
+    locale_nr%short_override%day%forms(6) = 'amal. {n}'
+    locale_nr%short_override%day%has_form(6) = .true.
+    locale_nr%short_override%has_week = .true.
+    locale_nr%short_override%week%has_simple = .false.
+    locale_nr%short_override%week%simple = ''
+    locale_nr%short_override%week%forms(1) = ''
+    locale_nr%short_override%week%has_form(1) = .false.
+    locale_nr%short_override%week%forms(2) = 'iveke {n}'
+    locale_nr%short_override%week%has_form(2) = .true.
+    locale_nr%short_override%week%forms(3) = ''
+    locale_nr%short_override%week%has_form(3) = .false.
+    locale_nr%short_override%week%forms(4) = ''
+    locale_nr%short_override%week%has_form(4) = .false.
+    locale_nr%short_override%week%forms(5) = ''
+    locale_nr%short_override%week%has_form(5) = .false.
+    locale_nr%short_override%week%forms(6) = 'amav. {n}'
+    locale_nr%short_override%week%has_form(6) = .true.
+    locale_nr%short_override%has_month = .true.
+    locale_nr%short_override%month%has_simple = .false.
+    locale_nr%short_override%month%simple = ''
+    locale_nr%short_override%month%forms(1) = ''
+    locale_nr%short_override%month%has_form(1) = .false.
+    locale_nr%short_override%month%forms(2) = 'iny. {n}'
+    locale_nr%short_override%month%has_form(2) = .true.
+    locale_nr%short_override%month%forms(3) = ''
+    locale_nr%short_override%month%has_form(3) = .false.
+    locale_nr%short_override%month%forms(4) = ''
+    locale_nr%short_override%month%has_form(4) = .false.
+    locale_nr%short_override%month%forms(5) = ''
+    locale_nr%short_override%month%has_form(5) = .false.
+    locale_nr%short_override%month%forms(6) = 'iiny. {n}'
+    locale_nr%short_override%month%has_form(6) = .true.
+    locale_nr%short_override%has_year = .true.
+    locale_nr%short_override%year%has_simple = .false.
+    locale_nr%short_override%year%simple = ''
+    locale_nr%short_override%year%forms(1) = ''
+    locale_nr%short_override%year%has_form(1) = .false.
+    locale_nr%short_override%year%forms(2) = 'uny. {n}'
+    locale_nr%short_override%year%has_form(2) = .true.
+    locale_nr%short_override%year%forms(3) = ''
+    locale_nr%short_override%year%has_form(3) = .false.
+    locale_nr%short_override%year%forms(4) = ''
+    locale_nr%short_override%year%has_form(4) = .false.
+    locale_nr%short_override%year%forms(5) = ''
+    locale_nr%short_override%year%has_form(5) = .false.
+    locale_nr%short_override%year%forms(6) = 'imin. {n}'
+    locale_nr%short_override%year%has_form(6) = .true.
+    locale_nr%short_override%has_half = .false.
+    locale_nr%short_override%half = ''
+    locale_nr%short_override%has_delimiter = .false.
+    locale_nr%short_override%delimiter = ''
+    locale_nr%short_override%delimiter_len = 0
+    locale_nr%short_override%has_just_born = .false.
+    locale_nr%short_override%just_born = ''
+
+    locale_nr%has_compact = .true.
+    locale_nr%compact_override%has_day = .true.
+    locale_nr%compact_override%day%simple = '{n}d'
+    locale_nr%compact_override%day%has_simple = .true.
+    locale_nr%compact_override%has_week = .true.
+    locale_nr%compact_override%week%simple = '{n}w'
+    locale_nr%compact_override%week%has_simple = .true.
+    locale_nr%compact_override%has_month = .true.
+    locale_nr%compact_override%month%simple = '{n}m'
+    locale_nr%compact_override%month%has_simple = .true.
+    locale_nr%compact_override%has_year = .true.
+    locale_nr%compact_override%year%simple = '{n}y'
+    locale_nr%compact_override%year%has_simple = .true.
+    locale_nr%compact_override%has_half = .false.
+    locale_nr%compact_override%half = ''
+    locale_nr%compact_override%has_delimiter = .true.
+    locale_nr%compact_override%delimiter = ''
+    locale_nr%compact_override%delimiter_len = 0
+    locale_nr%compact_override%has_just_born = .false.
+    locale_nr%compact_override%just_born = ''
+
+  end subroutine init_nr
 
   ! Source: age/locales/src/nso.json
   subroutine init_nso()
@@ -18781,6 +19586,178 @@ contains
 
   end subroutine init_ts
 
+  ! Source: age/locales/src/tum.json
+  subroutine init_tum()
+    locale_tum%code = 'tum'
+    locale_tum%plural => plural_one_other
+
+    locale_tum%units%day%has_simple = .false.
+    locale_tum%units%day%simple = ''
+    locale_tum%units%day%forms(1) = ''
+    locale_tum%units%day%has_form(1) = .false.
+    locale_tum%units%day%forms(2) = 'dazi {n}'
+    locale_tum%units%day%has_form(2) = .true.
+    locale_tum%units%day%forms(3) = ''
+    locale_tum%units%day%has_form(3) = .false.
+    locale_tum%units%day%forms(4) = ''
+    locale_tum%units%day%has_form(4) = .false.
+    locale_tum%units%day%forms(5) = ''
+    locale_tum%units%day%has_form(5) = .false.
+    locale_tum%units%day%forms(6) = 'madazi {n}'
+    locale_tum%units%day%has_form(6) = .true.
+    locale_tum%units%week%has_simple = .false.
+    locale_tum%units%week%simple = ''
+    locale_tum%units%week%forms(1) = ''
+    locale_tum%units%week%has_form(1) = .false.
+    locale_tum%units%week%forms(2) = 'sabata {n}'
+    locale_tum%units%week%has_form(2) = .true.
+    locale_tum%units%week%forms(3) = ''
+    locale_tum%units%week%has_form(3) = .false.
+    locale_tum%units%week%forms(4) = ''
+    locale_tum%units%week%has_form(4) = .false.
+    locale_tum%units%week%forms(5) = ''
+    locale_tum%units%week%has_form(5) = .false.
+    locale_tum%units%week%forms(6) = 'masabata {n}'
+    locale_tum%units%week%has_form(6) = .true.
+    locale_tum%units%month%has_simple = .false.
+    locale_tum%units%month%simple = ''
+    locale_tum%units%month%forms(1) = ''
+    locale_tum%units%month%has_form(1) = .false.
+    locale_tum%units%month%forms(2) = 'mwezi {n}'
+    locale_tum%units%month%has_form(2) = .true.
+    locale_tum%units%month%forms(3) = ''
+    locale_tum%units%month%has_form(3) = .false.
+    locale_tum%units%month%forms(4) = ''
+    locale_tum%units%month%has_form(4) = .false.
+    locale_tum%units%month%forms(5) = ''
+    locale_tum%units%month%has_form(5) = .false.
+    locale_tum%units%month%forms(6) = 'miyezi {n}'
+    locale_tum%units%month%has_form(6) = .true.
+    locale_tum%units%year%has_simple = .false.
+    locale_tum%units%year%simple = ''
+    locale_tum%units%year%forms(1) = ''
+    locale_tum%units%year%has_form(1) = .false.
+    locale_tum%units%year%forms(2) = 'chaka {n}'
+    locale_tum%units%year%has_form(2) = .true.
+    locale_tum%units%year%forms(3) = ''
+    locale_tum%units%year%has_form(3) = .false.
+    locale_tum%units%year%forms(4) = ''
+    locale_tum%units%year%has_form(4) = .false.
+    locale_tum%units%year%forms(5) = ''
+    locale_tum%units%year%has_form(5) = .false.
+    locale_tum%units%year%forms(6) = 'vyaka {n}'
+    locale_tum%units%year%has_form(6) = .true.
+
+    locale_tum%half = '{0} na hafu'
+    locale_tum%delimiter = ', '
+    locale_tum%delimiter_len = 2
+    locale_tum%just_born = 'Mwana wabadwa wala'
+
+    locale_tum%stages%newborn%label = 'Mwana wabadwa wala'
+    locale_tum%stages%newborn%f_label = ''
+    locale_tum%stages%infant%label = 'Mwana wakumawere'
+    locale_tum%stages%infant%f_label = ''
+    locale_tum%stages%toddler%label = 'Kamwana'
+    locale_tum%stages%toddler%f_label = ''
+    locale_tum%stages%child%label = 'Mwana'
+    locale_tum%stages%child%f_label = ''
+    locale_tum%stages%teenager%label = 'Munyamata'
+    locale_tum%stages%teenager%f_label = ''
+    locale_tum%stages%adult%label = 'Munthu mukuru'
+    locale_tum%stages%adult%f_label = ''
+
+    locale_tum%has_short = .true.
+    locale_tum%short_override%has_day = .true.
+    locale_tum%short_override%day%has_simple = .false.
+    locale_tum%short_override%day%simple = ''
+    locale_tum%short_override%day%forms(1) = ''
+    locale_tum%short_override%day%has_form(1) = .false.
+    locale_tum%short_override%day%forms(2) = 'dazi {n}'
+    locale_tum%short_override%day%has_form(2) = .true.
+    locale_tum%short_override%day%forms(3) = ''
+    locale_tum%short_override%day%has_form(3) = .false.
+    locale_tum%short_override%day%forms(4) = ''
+    locale_tum%short_override%day%has_form(4) = .false.
+    locale_tum%short_override%day%forms(5) = ''
+    locale_tum%short_override%day%has_form(5) = .false.
+    locale_tum%short_override%day%forms(6) = 'mad. {n}'
+    locale_tum%short_override%day%has_form(6) = .true.
+    locale_tum%short_override%has_week = .true.
+    locale_tum%short_override%week%has_simple = .false.
+    locale_tum%short_override%week%simple = ''
+    locale_tum%short_override%week%forms(1) = ''
+    locale_tum%short_override%week%has_form(1) = .false.
+    locale_tum%short_override%week%forms(2) = 'sab. {n}'
+    locale_tum%short_override%week%has_form(2) = .true.
+    locale_tum%short_override%week%forms(3) = ''
+    locale_tum%short_override%week%has_form(3) = .false.
+    locale_tum%short_override%week%forms(4) = ''
+    locale_tum%short_override%week%has_form(4) = .false.
+    locale_tum%short_override%week%forms(5) = ''
+    locale_tum%short_override%week%has_form(5) = .false.
+    locale_tum%short_override%week%forms(6) = 'mas. {n}'
+    locale_tum%short_override%week%has_form(6) = .true.
+    locale_tum%short_override%has_month = .true.
+    locale_tum%short_override%month%has_simple = .false.
+    locale_tum%short_override%month%simple = ''
+    locale_tum%short_override%month%forms(1) = ''
+    locale_tum%short_override%month%has_form(1) = .false.
+    locale_tum%short_override%month%forms(2) = 'mwezi {n}'
+    locale_tum%short_override%month%has_form(2) = .true.
+    locale_tum%short_override%month%forms(3) = ''
+    locale_tum%short_override%month%has_form(3) = .false.
+    locale_tum%short_override%month%forms(4) = ''
+    locale_tum%short_override%month%has_form(4) = .false.
+    locale_tum%short_override%month%forms(5) = ''
+    locale_tum%short_override%month%has_form(5) = .false.
+    locale_tum%short_override%month%forms(6) = 'miy. {n}'
+    locale_tum%short_override%month%has_form(6) = .true.
+    locale_tum%short_override%has_year = .true.
+    locale_tum%short_override%year%has_simple = .false.
+    locale_tum%short_override%year%simple = ''
+    locale_tum%short_override%year%forms(1) = ''
+    locale_tum%short_override%year%has_form(1) = .false.
+    locale_tum%short_override%year%forms(2) = 'chaka {n}'
+    locale_tum%short_override%year%has_form(2) = .true.
+    locale_tum%short_override%year%forms(3) = ''
+    locale_tum%short_override%year%has_form(3) = .false.
+    locale_tum%short_override%year%forms(4) = ''
+    locale_tum%short_override%year%has_form(4) = .false.
+    locale_tum%short_override%year%forms(5) = ''
+    locale_tum%short_override%year%has_form(5) = .false.
+    locale_tum%short_override%year%forms(6) = 'vyaka {n}'
+    locale_tum%short_override%year%has_form(6) = .true.
+    locale_tum%short_override%has_half = .false.
+    locale_tum%short_override%half = ''
+    locale_tum%short_override%has_delimiter = .false.
+    locale_tum%short_override%delimiter = ''
+    locale_tum%short_override%delimiter_len = 0
+    locale_tum%short_override%has_just_born = .false.
+    locale_tum%short_override%just_born = ''
+
+    locale_tum%has_compact = .true.
+    locale_tum%compact_override%has_day = .true.
+    locale_tum%compact_override%day%simple = '{n}d'
+    locale_tum%compact_override%day%has_simple = .true.
+    locale_tum%compact_override%has_week = .true.
+    locale_tum%compact_override%week%simple = '{n}w'
+    locale_tum%compact_override%week%has_simple = .true.
+    locale_tum%compact_override%has_month = .true.
+    locale_tum%compact_override%month%simple = '{n}m'
+    locale_tum%compact_override%month%has_simple = .true.
+    locale_tum%compact_override%has_year = .true.
+    locale_tum%compact_override%year%simple = '{n}y'
+    locale_tum%compact_override%year%has_simple = .true.
+    locale_tum%compact_override%has_half = .false.
+    locale_tum%compact_override%half = ''
+    locale_tum%compact_override%has_delimiter = .true.
+    locale_tum%compact_override%delimiter = ''
+    locale_tum%compact_override%delimiter_len = 0
+    locale_tum%compact_override%has_just_born = .false.
+    locale_tum%compact_override%just_born = ''
+
+  end subroutine init_tum
+
   ! Source: age/locales/src/tzm.json
   subroutine init_tzm()
     locale_tzm%code = 'tzm'
@@ -19497,6 +20474,178 @@ contains
 
   end subroutine init_uz
 
+  ! Source: age/locales/src/ve.json
+  subroutine init_ve()
+    locale_ve%code = 've'
+    locale_ve%plural => plural_one_other
+
+    locale_ve%units%day%has_simple = .false.
+    locale_ve%units%day%simple = ''
+    locale_ve%units%day%forms(1) = ''
+    locale_ve%units%day%has_form(1) = .false.
+    locale_ve%units%day%forms(2) = 'duvha {n}'
+    locale_ve%units%day%has_form(2) = .true.
+    locale_ve%units%day%forms(3) = ''
+    locale_ve%units%day%has_form(3) = .false.
+    locale_ve%units%day%forms(4) = ''
+    locale_ve%units%day%has_form(4) = .false.
+    locale_ve%units%day%forms(5) = ''
+    locale_ve%units%day%has_form(5) = .false.
+    locale_ve%units%day%forms(6) = 'maduvha {n}'
+    locale_ve%units%day%has_form(6) = .true.
+    locale_ve%units%week%has_simple = .false.
+    locale_ve%units%week%simple = ''
+    locale_ve%units%week%forms(1) = ''
+    locale_ve%units%week%has_form(1) = .false.
+    locale_ve%units%week%forms(2) = 'vhege {n}'
+    locale_ve%units%week%has_form(2) = .true.
+    locale_ve%units%week%forms(3) = ''
+    locale_ve%units%week%has_form(3) = .false.
+    locale_ve%units%week%forms(4) = ''
+    locale_ve%units%week%has_form(4) = .false.
+    locale_ve%units%week%forms(5) = ''
+    locale_ve%units%week%has_form(5) = .false.
+    locale_ve%units%week%forms(6) = 'mavhege {n}'
+    locale_ve%units%week%has_form(6) = .true.
+    locale_ve%units%month%has_simple = .false.
+    locale_ve%units%month%simple = ''
+    locale_ve%units%month%forms(1) = ''
+    locale_ve%units%month%has_form(1) = .false.
+    locale_ve%units%month%forms(2) = 'nwedzi {n}'
+    locale_ve%units%month%has_form(2) = .true.
+    locale_ve%units%month%forms(3) = ''
+    locale_ve%units%month%has_form(3) = .false.
+    locale_ve%units%month%forms(4) = ''
+    locale_ve%units%month%has_form(4) = .false.
+    locale_ve%units%month%forms(5) = ''
+    locale_ve%units%month%has_form(5) = .false.
+    locale_ve%units%month%forms(6) = 'minwedzi {n}'
+    locale_ve%units%month%has_form(6) = .true.
+    locale_ve%units%year%has_simple = .false.
+    locale_ve%units%year%simple = ''
+    locale_ve%units%year%forms(1) = ''
+    locale_ve%units%year%has_form(1) = .false.
+    locale_ve%units%year%forms(2) = 'nwaha {n}'
+    locale_ve%units%year%has_form(2) = .true.
+    locale_ve%units%year%forms(3) = ''
+    locale_ve%units%year%has_form(3) = .false.
+    locale_ve%units%year%forms(4) = ''
+    locale_ve%units%year%has_form(4) = .false.
+    locale_ve%units%year%forms(5) = ''
+    locale_ve%units%year%has_form(5) = .false.
+    locale_ve%units%year%forms(6) = 'minwaha {n}'
+    locale_ve%units%year%has_form(6) = .true.
+
+    locale_ve%half = '{0} na hafu'
+    locale_ve%delimiter = ', '
+    locale_ve%delimiter_len = 2
+    locale_ve%just_born = 'Mbuwe'
+
+    locale_ve%stages%newborn%label = 'Mbuwe'
+    locale_ve%stages%newborn%f_label = ''
+    locale_ve%stages%infant%label = 'Kwana'
+    locale_ve%stages%infant%f_label = ''
+    locale_ve%stages%toddler%label = 'Nwana mutuku'
+    locale_ve%stages%toddler%f_label = ''
+    locale_ve%stages%child%label = 'Nwana'
+    locale_ve%stages%child%f_label = ''
+    locale_ve%stages%teenager%label = 'Mutukana'
+    locale_ve%stages%teenager%f_label = ''
+    locale_ve%stages%adult%label = 'Muthu muhulwane'
+    locale_ve%stages%adult%f_label = ''
+
+    locale_ve%has_short = .true.
+    locale_ve%short_override%has_day = .true.
+    locale_ve%short_override%day%has_simple = .false.
+    locale_ve%short_override%day%simple = ''
+    locale_ve%short_override%day%forms(1) = ''
+    locale_ve%short_override%day%has_form(1) = .false.
+    locale_ve%short_override%day%forms(2) = 'duv. {n}'
+    locale_ve%short_override%day%has_form(2) = .true.
+    locale_ve%short_override%day%forms(3) = ''
+    locale_ve%short_override%day%has_form(3) = .false.
+    locale_ve%short_override%day%forms(4) = ''
+    locale_ve%short_override%day%has_form(4) = .false.
+    locale_ve%short_override%day%forms(5) = ''
+    locale_ve%short_override%day%has_form(5) = .false.
+    locale_ve%short_override%day%forms(6) = 'mad. {n}'
+    locale_ve%short_override%day%has_form(6) = .true.
+    locale_ve%short_override%has_week = .true.
+    locale_ve%short_override%week%has_simple = .false.
+    locale_ve%short_override%week%simple = ''
+    locale_ve%short_override%week%forms(1) = ''
+    locale_ve%short_override%week%has_form(1) = .false.
+    locale_ve%short_override%week%forms(2) = 'vheg. {n}'
+    locale_ve%short_override%week%has_form(2) = .true.
+    locale_ve%short_override%week%forms(3) = ''
+    locale_ve%short_override%week%has_form(3) = .false.
+    locale_ve%short_override%week%forms(4) = ''
+    locale_ve%short_override%week%has_form(4) = .false.
+    locale_ve%short_override%week%forms(5) = ''
+    locale_ve%short_override%week%has_form(5) = .false.
+    locale_ve%short_override%week%forms(6) = 'mav. {n}'
+    locale_ve%short_override%week%has_form(6) = .true.
+    locale_ve%short_override%has_month = .true.
+    locale_ve%short_override%month%has_simple = .false.
+    locale_ve%short_override%month%simple = ''
+    locale_ve%short_override%month%forms(1) = ''
+    locale_ve%short_override%month%has_form(1) = .false.
+    locale_ve%short_override%month%forms(2) = 'nwedzi {n}'
+    locale_ve%short_override%month%has_form(2) = .true.
+    locale_ve%short_override%month%forms(3) = ''
+    locale_ve%short_override%month%has_form(3) = .false.
+    locale_ve%short_override%month%forms(4) = ''
+    locale_ve%short_override%month%has_form(4) = .false.
+    locale_ve%short_override%month%forms(5) = ''
+    locale_ve%short_override%month%has_form(5) = .false.
+    locale_ve%short_override%month%forms(6) = 'min. {n}'
+    locale_ve%short_override%month%has_form(6) = .true.
+    locale_ve%short_override%has_year = .true.
+    locale_ve%short_override%year%has_simple = .false.
+    locale_ve%short_override%year%simple = ''
+    locale_ve%short_override%year%forms(1) = ''
+    locale_ve%short_override%year%has_form(1) = .false.
+    locale_ve%short_override%year%forms(2) = 'nwaha {n}'
+    locale_ve%short_override%year%has_form(2) = .true.
+    locale_ve%short_override%year%forms(3) = ''
+    locale_ve%short_override%year%has_form(3) = .false.
+    locale_ve%short_override%year%forms(4) = ''
+    locale_ve%short_override%year%has_form(4) = .false.
+    locale_ve%short_override%year%forms(5) = ''
+    locale_ve%short_override%year%has_form(5) = .false.
+    locale_ve%short_override%year%forms(6) = 'min. {n}'
+    locale_ve%short_override%year%has_form(6) = .true.
+    locale_ve%short_override%has_half = .false.
+    locale_ve%short_override%half = ''
+    locale_ve%short_override%has_delimiter = .false.
+    locale_ve%short_override%delimiter = ''
+    locale_ve%short_override%delimiter_len = 0
+    locale_ve%short_override%has_just_born = .false.
+    locale_ve%short_override%just_born = ''
+
+    locale_ve%has_compact = .true.
+    locale_ve%compact_override%has_day = .true.
+    locale_ve%compact_override%day%simple = '{n}d'
+    locale_ve%compact_override%day%has_simple = .true.
+    locale_ve%compact_override%has_week = .true.
+    locale_ve%compact_override%week%simple = '{n}w'
+    locale_ve%compact_override%week%has_simple = .true.
+    locale_ve%compact_override%has_month = .true.
+    locale_ve%compact_override%month%simple = '{n}m'
+    locale_ve%compact_override%month%has_simple = .true.
+    locale_ve%compact_override%has_year = .true.
+    locale_ve%compact_override%year%simple = '{n}y'
+    locale_ve%compact_override%year%has_simple = .true.
+    locale_ve%compact_override%has_half = .false.
+    locale_ve%compact_override%half = ''
+    locale_ve%compact_override%has_delimiter = .true.
+    locale_ve%compact_override%delimiter = ''
+    locale_ve%compact_override%delimiter_len = 0
+    locale_ve%compact_override%has_just_born = .false.
+    locale_ve%compact_override%just_born = ''
+
+  end subroutine init_ve
+
   ! Source: age/locales/src/vi.json
   subroutine init_vi()
     locale_vi%code = 'vi'
@@ -20008,6 +21157,178 @@ contains
     locale_xh%compact_override%just_born = ''
 
   end subroutine init_xh
+
+  ! Source: age/locales/src/yao.json
+  subroutine init_yao()
+    locale_yao%code = 'yao'
+    locale_yao%plural => plural_one_other
+
+    locale_yao%units%day%has_simple = .false.
+    locale_yao%units%day%simple = ''
+    locale_yao%units%day%forms(1) = ''
+    locale_yao%units%day%has_form(1) = .false.
+    locale_yao%units%day%forms(2) = 'lisiku {n}'
+    locale_yao%units%day%has_form(2) = .true.
+    locale_yao%units%day%forms(3) = ''
+    locale_yao%units%day%has_form(3) = .false.
+    locale_yao%units%day%forms(4) = ''
+    locale_yao%units%day%has_form(4) = .false.
+    locale_yao%units%day%forms(5) = ''
+    locale_yao%units%day%has_form(5) = .false.
+    locale_yao%units%day%forms(6) = 'masiku {n}'
+    locale_yao%units%day%has_form(6) = .true.
+    locale_yao%units%week%has_simple = .false.
+    locale_yao%units%week%simple = ''
+    locale_yao%units%week%forms(1) = ''
+    locale_yao%units%week%has_form(1) = .false.
+    locale_yao%units%week%forms(2) = 'juma {n}'
+    locale_yao%units%week%has_form(2) = .true.
+    locale_yao%units%week%forms(3) = ''
+    locale_yao%units%week%has_form(3) = .false.
+    locale_yao%units%week%forms(4) = ''
+    locale_yao%units%week%has_form(4) = .false.
+    locale_yao%units%week%forms(5) = ''
+    locale_yao%units%week%has_form(5) = .false.
+    locale_yao%units%week%forms(6) = 'majuma {n}'
+    locale_yao%units%week%has_form(6) = .true.
+    locale_yao%units%month%has_simple = .false.
+    locale_yao%units%month%simple = ''
+    locale_yao%units%month%forms(1) = ''
+    locale_yao%units%month%has_form(1) = .false.
+    locale_yao%units%month%forms(2) = 'ngondo {n}'
+    locale_yao%units%month%has_form(2) = .true.
+    locale_yao%units%month%forms(3) = ''
+    locale_yao%units%month%has_form(3) = .false.
+    locale_yao%units%month%forms(4) = ''
+    locale_yao%units%month%has_form(4) = .false.
+    locale_yao%units%month%forms(5) = ''
+    locale_yao%units%month%has_form(5) = .false.
+    locale_yao%units%month%forms(6) = 'mingondo {n}'
+    locale_yao%units%month%has_form(6) = .true.
+    locale_yao%units%year%has_simple = .false.
+    locale_yao%units%year%simple = ''
+    locale_yao%units%year%forms(1) = ''
+    locale_yao%units%year%has_form(1) = .false.
+    locale_yao%units%year%forms(2) = 'chaka {n}'
+    locale_yao%units%year%has_form(2) = .true.
+    locale_yao%units%year%forms(3) = ''
+    locale_yao%units%year%has_form(3) = .false.
+    locale_yao%units%year%forms(4) = ''
+    locale_yao%units%year%has_form(4) = .false.
+    locale_yao%units%year%forms(5) = ''
+    locale_yao%units%year%has_form(5) = .false.
+    locale_yao%units%year%forms(6) = 'vyaka {n}'
+    locale_yao%units%year%has_form(6) = .true.
+
+    locale_yao%half = '{0} na nusu'
+    locale_yao%delimiter = ', '
+    locale_yao%delimiter_len = 2
+    locale_yao%just_born = 'Mwanache jwabadwa'
+
+    locale_yao%stages%newborn%label = 'Mwanache jwabadwa'
+    locale_yao%stages%newborn%f_label = ''
+    locale_yao%stages%infant%label = 'Kamwanache'
+    locale_yao%stages%infant%f_label = ''
+    locale_yao%stages%toddler%label = 'Kamwanache kanandi'
+    locale_yao%stages%toddler%f_label = ''
+    locale_yao%stages%child%label = 'Mwanache'
+    locale_yao%stages%child%f_label = ''
+    locale_yao%stages%teenager%label = 'Jeje'
+    locale_yao%stages%teenager%f_label = ''
+    locale_yao%stages%adult%label = 'Mundu'
+    locale_yao%stages%adult%f_label = ''
+
+    locale_yao%has_short = .true.
+    locale_yao%short_override%has_day = .true.
+    locale_yao%short_override%day%has_simple = .false.
+    locale_yao%short_override%day%simple = ''
+    locale_yao%short_override%day%forms(1) = ''
+    locale_yao%short_override%day%has_form(1) = .false.
+    locale_yao%short_override%day%forms(2) = 'lis. {n}'
+    locale_yao%short_override%day%has_form(2) = .true.
+    locale_yao%short_override%day%forms(3) = ''
+    locale_yao%short_override%day%has_form(3) = .false.
+    locale_yao%short_override%day%forms(4) = ''
+    locale_yao%short_override%day%has_form(4) = .false.
+    locale_yao%short_override%day%forms(5) = ''
+    locale_yao%short_override%day%has_form(5) = .false.
+    locale_yao%short_override%day%forms(6) = 'mas. {n}'
+    locale_yao%short_override%day%has_form(6) = .true.
+    locale_yao%short_override%has_week = .true.
+    locale_yao%short_override%week%has_simple = .false.
+    locale_yao%short_override%week%simple = ''
+    locale_yao%short_override%week%forms(1) = ''
+    locale_yao%short_override%week%has_form(1) = .false.
+    locale_yao%short_override%week%forms(2) = 'juma {n}'
+    locale_yao%short_override%week%has_form(2) = .true.
+    locale_yao%short_override%week%forms(3) = ''
+    locale_yao%short_override%week%has_form(3) = .false.
+    locale_yao%short_override%week%forms(4) = ''
+    locale_yao%short_override%week%has_form(4) = .false.
+    locale_yao%short_override%week%forms(5) = ''
+    locale_yao%short_override%week%has_form(5) = .false.
+    locale_yao%short_override%week%forms(6) = 'maj. {n}'
+    locale_yao%short_override%week%has_form(6) = .true.
+    locale_yao%short_override%has_month = .true.
+    locale_yao%short_override%month%has_simple = .false.
+    locale_yao%short_override%month%simple = ''
+    locale_yao%short_override%month%forms(1) = ''
+    locale_yao%short_override%month%has_form(1) = .false.
+    locale_yao%short_override%month%forms(2) = 'ngo. {n}'
+    locale_yao%short_override%month%has_form(2) = .true.
+    locale_yao%short_override%month%forms(3) = ''
+    locale_yao%short_override%month%has_form(3) = .false.
+    locale_yao%short_override%month%forms(4) = ''
+    locale_yao%short_override%month%has_form(4) = .false.
+    locale_yao%short_override%month%forms(5) = ''
+    locale_yao%short_override%month%has_form(5) = .false.
+    locale_yao%short_override%month%forms(6) = 'min. {n}'
+    locale_yao%short_override%month%has_form(6) = .true.
+    locale_yao%short_override%has_year = .true.
+    locale_yao%short_override%year%has_simple = .false.
+    locale_yao%short_override%year%simple = ''
+    locale_yao%short_override%year%forms(1) = ''
+    locale_yao%short_override%year%has_form(1) = .false.
+    locale_yao%short_override%year%forms(2) = 'chaka {n}'
+    locale_yao%short_override%year%has_form(2) = .true.
+    locale_yao%short_override%year%forms(3) = ''
+    locale_yao%short_override%year%has_form(3) = .false.
+    locale_yao%short_override%year%forms(4) = ''
+    locale_yao%short_override%year%has_form(4) = .false.
+    locale_yao%short_override%year%forms(5) = ''
+    locale_yao%short_override%year%has_form(5) = .false.
+    locale_yao%short_override%year%forms(6) = 'vyaka {n}'
+    locale_yao%short_override%year%has_form(6) = .true.
+    locale_yao%short_override%has_half = .false.
+    locale_yao%short_override%half = ''
+    locale_yao%short_override%has_delimiter = .false.
+    locale_yao%short_override%delimiter = ''
+    locale_yao%short_override%delimiter_len = 0
+    locale_yao%short_override%has_just_born = .false.
+    locale_yao%short_override%just_born = ''
+
+    locale_yao%has_compact = .true.
+    locale_yao%compact_override%has_day = .true.
+    locale_yao%compact_override%day%simple = '{n}d'
+    locale_yao%compact_override%day%has_simple = .true.
+    locale_yao%compact_override%has_week = .true.
+    locale_yao%compact_override%week%simple = '{n}w'
+    locale_yao%compact_override%week%has_simple = .true.
+    locale_yao%compact_override%has_month = .true.
+    locale_yao%compact_override%month%simple = '{n}m'
+    locale_yao%compact_override%month%has_simple = .true.
+    locale_yao%compact_override%has_year = .true.
+    locale_yao%compact_override%year%simple = '{n}y'
+    locale_yao%compact_override%year%has_simple = .true.
+    locale_yao%compact_override%has_half = .false.
+    locale_yao%compact_override%half = ''
+    locale_yao%compact_override%has_delimiter = .true.
+    locale_yao%compact_override%delimiter = ''
+    locale_yao%compact_override%delimiter_len = 0
+    locale_yao%compact_override%has_just_born = .false.
+    locale_yao%compact_override%just_born = ''
+
+  end subroutine init_yao
 
   ! Source: age/locales/src/yo.json
   subroutine init_yo()
@@ -20523,6 +21844,7 @@ contains
     call init_ak()
     call init_am()
     call init_ar()
+    call init_ay()
     call init_az()
     call init_bci()
     call init_be()
@@ -20582,20 +21904,24 @@ contains
     call init_ka()
     call init_kbp()
     call init_kek()
+    call init_ki()
     call init_kk()
     call init_kl()
     call init_km()
     call init_kn()
     call init_ko()
     call init_kpe()
+    call init_kri()
     call init_ktu()
     call init_ku()
     call init_kw()
     call init_ky()
+    call init_lb()
     call init_lg()
     call init_ln()
     call init_lo()
     call init_lt()
+    call init_luo()
     call init_lv()
     call init_mam()
     call init_men()
@@ -20616,6 +21942,7 @@ contains
     call init_ne()
     call init_ng()
     call init_nl()
+    call init_nr()
     call init_nso()
     call init_nus()
     call init_ny()
@@ -20664,15 +21991,18 @@ contains
     call init_tpi()
     call init_tr()
     call init_ts()
+    call init_tum()
     call init_tzm()
     call init_uk()
     call init_umb()
     call init_ur()
     call init_uz()
+    call init_ve()
     call init_vi()
     call init_vmw()
     call init_wo()
     call init_xh()
+    call init_yao()
     call init_yo()
     call init_yue()
     call init_zdj()
@@ -20699,6 +22029,10 @@ contains
     end if
     if (code == 'ar') then
       loc => locale_ar
+      return
+    end if
+    if (code == 'ay') then
+      loc => locale_ay
       return
     end if
     if (code == 'az') then
@@ -20937,6 +22271,10 @@ contains
       loc => locale_kek
       return
     end if
+    if (code == 'ki') then
+      loc => locale_ki
+      return
+    end if
     if (code == 'kk') then
       loc => locale_kk
       return
@@ -20961,6 +22299,10 @@ contains
       loc => locale_kpe
       return
     end if
+    if (code == 'kri') then
+      loc => locale_kri
+      return
+    end if
     if (code == 'ktu') then
       loc => locale_ktu
       return
@@ -20977,6 +22319,10 @@ contains
       loc => locale_ky
       return
     end if
+    if (code == 'lb') then
+      loc => locale_lb
+      return
+    end if
     if (code == 'lg') then
       loc => locale_lg
       return
@@ -20991,6 +22337,10 @@ contains
     end if
     if (code == 'lt') then
       loc => locale_lt
+      return
+    end if
+    if (code == 'luo') then
+      loc => locale_luo
       return
     end if
     if (code == 'lv') then
@@ -21071,6 +22421,10 @@ contains
     end if
     if (code == 'nl') then
       loc => locale_nl
+      return
+    end if
+    if (code == 'nr') then
+      loc => locale_nr
       return
     end if
     if (code == 'nso') then
@@ -21265,6 +22619,10 @@ contains
       loc => locale_ts
       return
     end if
+    if (code == 'tum') then
+      loc => locale_tum
+      return
+    end if
     if (code == 'tzm') then
       loc => locale_tzm
       return
@@ -21285,6 +22643,10 @@ contains
       loc => locale_uz
       return
     end if
+    if (code == 've') then
+      loc => locale_ve
+      return
+    end if
     if (code == 'vi') then
       loc => locale_vi
       return
@@ -21299,6 +22661,10 @@ contains
     end if
     if (code == 'xh') then
       loc => locale_xh
+      return
+    end if
+    if (code == 'yao') then
+      loc => locale_yao
       return
     end if
     if (code == 'yo') then

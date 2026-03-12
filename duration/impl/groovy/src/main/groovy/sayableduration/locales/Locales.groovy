@@ -13,7 +13,7 @@ package sayableduration.locales
 import sayableduration.*
 
 /**
- * All 159 locale definitions for sayable-duration.
+ * All 168 locale definitions for sayable-duration.
  * Locales are split across range files to stay within JVM method size limits.
  */
 class Locales {
@@ -22,6 +22,7 @@ class Locales {
     static final DurationLocale AK = LocalesAD.AK
     static final DurationLocale AM = LocalesAD.AM
     static final DurationLocale AR = LocalesAD.AR
+    static final DurationLocale AY = LocalesAD.AY
     static final DurationLocale AZ = LocalesAD.AZ
     static final DurationLocale BCI = LocalesAD.BCI
     static final DurationLocale BE = LocalesAD.BE
@@ -81,20 +82,24 @@ class Locales {
     static final DurationLocale KA = LocalesEK.KA
     static final DurationLocale KBP = LocalesEK.KBP
     static final DurationLocale KEK = LocalesEK.KEK
+    static final DurationLocale KI = LocalesEK.KI
     static final DurationLocale KK = LocalesEK.KK
     static final DurationLocale KL = LocalesEK.KL
     static final DurationLocale KM = LocalesEK.KM
     static final DurationLocale KN = LocalesEK.KN
     static final DurationLocale KO = LocalesEK.KO
     static final DurationLocale KPE = LocalesEK.KPE
+    static final DurationLocale KRI = LocalesEK.KRI
     static final DurationLocale KTU = LocalesEK.KTU
     static final DurationLocale KU = LocalesEK.KU
     static final DurationLocale KW = LocalesEK.KW
     static final DurationLocale KY = LocalesEK.KY
+    static final DurationLocale LB = LocalesLP.LB
     static final DurationLocale LG = LocalesLP.LG
     static final DurationLocale LN = LocalesLP.LN
     static final DurationLocale LO = LocalesLP.LO
     static final DurationLocale LT = LocalesLP.LT
+    static final DurationLocale LUO = LocalesLP.LUO
     static final DurationLocale LV = LocalesLP.LV
     static final DurationLocale MAM = LocalesLP.MAM
     static final DurationLocale MEN = LocalesLP.MEN
@@ -115,6 +120,7 @@ class Locales {
     static final DurationLocale NE = LocalesLP.NE
     static final DurationLocale NG = LocalesLP.NG
     static final DurationLocale NL = LocalesLP.NL
+    static final DurationLocale NR = LocalesLP.NR
     static final DurationLocale NSO = LocalesLP.NSO
     static final DurationLocale NUS = LocalesLP.NUS
     static final DurationLocale NY = LocalesLP.NY
@@ -163,15 +169,18 @@ class Locales {
     static final DurationLocale TPI = LocalesQZ.TPI
     static final DurationLocale TR = LocalesQZ.TR
     static final DurationLocale TS = LocalesQZ.TS
+    static final DurationLocale TUM = LocalesQZ.TUM
     static final DurationLocale TZM = LocalesQZ.TZM
     static final DurationLocale UK = LocalesQZ.UK
     static final DurationLocale UMB = LocalesQZ.UMB
     static final DurationLocale UR = LocalesQZ.UR
     static final DurationLocale UZ = LocalesQZ.UZ
+    static final DurationLocale VE = LocalesQZ.VE
     static final DurationLocale VI = LocalesQZ.VI
     static final DurationLocale VMW = LocalesQZ.VMW
     static final DurationLocale WO = LocalesQZ.WO
     static final DurationLocale XH = LocalesQZ.XH
+    static final DurationLocale YAO = LocalesQZ.YAO
     static final DurationLocale YO = LocalesQZ.YO
     static final DurationLocale YUE = LocalesQZ.YUE
     static final DurationLocale ZDJ = LocalesQZ.ZDJ
@@ -180,38 +189,40 @@ class Locales {
 
     static final Map<String, DurationLocale> ALL = Collections.unmodifiableMap([
         ('af'): AF, ('ak'): AK, ('am'): AM,
-        ('ar'): AR, ('az'): AZ, ('bci'): BCI,
-        ('be'): BE, ('bem'): BEM, ('bg'): BG,
-        ('bi'): BI, ('bm'): BM, ('bn'): BN,
-        ('br'): BR, ('bs'): BS, ('ca'): CA,
-        ('cak'): CAK, ('ceb'): CEB, ('cs'): CS,
-        ('cy'): CY, ('da'): DA, ('de'): DE,
-        ('din'): DIN, ('dje'): DJE, ('dv'): DV,
-        ('dyu'): DYU, ('dz'): DZ, ('ee'): EE,
-        ('el'): EL, ('en'): EN, ('es'): ES,
-        ('et'): ET, ('eu'): EU, ('fa'): FA,
-        ('fan'): FAN, ('ff'): FF, ('fi'): FI,
-        ('fil'): FIL, ('fj'): FJ, ('fon'): FON,
-        ('fr'): FR, ('ga'): GA, ('gd'): GD,
-        ('gl'): GL, ('gn'): GN, ('gu'): GU,
-        ('gv'): GV, ('ha'): HA, ('he'): HE,
-        ('hi'): HI, ('hmn'): HMN, ('hr'): HR,
-        ('ht'): HT, ('hu'): HU, ('hy'): HY,
-        ('id'): ID, ('ig'): IG, ('is'): IS,
-        ('it'): IT, ('ja'): JA, ('jv'): JV,
-        ('ka'): KA, ('kbp'): KBP, ('kek'): KEK,
-        ('kk'): KK, ('kl'): KL, ('km'): KM,
-        ('kn'): KN, ('ko'): KO, ('kpe'): KPE,
+        ('ar'): AR, ('ay'): AY, ('az'): AZ,
+        ('bci'): BCI, ('be'): BE, ('bem'): BEM,
+        ('bg'): BG, ('bi'): BI, ('bm'): BM,
+        ('bn'): BN, ('br'): BR, ('bs'): BS,
+        ('ca'): CA, ('cak'): CAK, ('ceb'): CEB,
+        ('cs'): CS, ('cy'): CY, ('da'): DA,
+        ('de'): DE, ('din'): DIN, ('dje'): DJE,
+        ('dv'): DV, ('dyu'): DYU, ('dz'): DZ,
+        ('ee'): EE, ('el'): EL, ('en'): EN,
+        ('es'): ES, ('et'): ET, ('eu'): EU,
+        ('fa'): FA, ('fan'): FAN, ('ff'): FF,
+        ('fi'): FI, ('fil'): FIL, ('fj'): FJ,
+        ('fon'): FON, ('fr'): FR, ('ga'): GA,
+        ('gd'): GD, ('gl'): GL, ('gn'): GN,
+        ('gu'): GU, ('gv'): GV, ('ha'): HA,
+        ('he'): HE, ('hi'): HI, ('hmn'): HMN,
+        ('hr'): HR, ('ht'): HT, ('hu'): HU,
+        ('hy'): HY, ('id'): ID, ('ig'): IG,
+        ('is'): IS, ('it'): IT, ('ja'): JA,
+        ('jv'): JV, ('ka'): KA, ('kbp'): KBP,
+        ('kek'): KEK, ('ki'): KI, ('kk'): KK,
+        ('kl'): KL, ('km'): KM, ('kn'): KN,
+        ('ko'): KO, ('kpe'): KPE, ('kri'): KRI,
         ('ktu'): KTU, ('ku'): KU, ('kw'): KW,
-        ('ky'): KY, ('lg'): LG, ('ln'): LN,
-        ('lo'): LO, ('lt'): LT, ('lv'): LV,
-        ('mam'): MAM, ('men'): MEN, ('mfe'): MFE,
-        ('mg'): MG, ('mi'): MI, ('mk'): MK,
-        ('ml'): ML, ('mn'): MN, ('mnk'): MNK,
-        ('mos'): MOS, ('mr'): MR, ('ms'): MS,
-        ('mt'): MT, ('my'): MY, ('nb'): NB,
-        ('nd'): ND, ('ne'): NE, ('ng'): NG,
-        ('nl'): NL, ('nso'): NSO, ('nus'): NUS,
+        ('ky'): KY, ('lb'): LB, ('lg'): LG,
+        ('ln'): LN, ('lo'): LO, ('lt'): LT,
+        ('luo'): LUO, ('lv'): LV, ('mam'): MAM,
+        ('men'): MEN, ('mfe'): MFE, ('mg'): MG,
+        ('mi'): MI, ('mk'): MK, ('ml'): ML,
+        ('mn'): MN, ('mnk'): MNK, ('mos'): MOS,
+        ('mr'): MR, ('ms'): MS, ('mt'): MT,
+        ('my'): MY, ('nb'): NB, ('nd'): ND,
+        ('ne'): NE, ('ng'): NG, ('nl'): NL,
+        ('nr'): NR, ('nso'): NSO, ('nus'): NUS,
         ('ny'): NY, ('om'): OM, ('or'): OR,
         ('pa'): PA, ('pis'): PIS, ('pl'): PL,
         ('pov'): POV, ('ps'): PS, ('pt'): PT,
@@ -227,10 +238,11 @@ class Locales {
         ('tet'): TET, ('tg'): TG, ('th'): TH,
         ('ti'): TI, ('tig'): TIG, ('tk'): TK,
         ('tn'): TN, ('tpi'): TPI, ('tr'): TR,
-        ('ts'): TS, ('tzm'): TZM, ('uk'): UK,
-        ('umb'): UMB, ('ur'): UR, ('uz'): UZ,
-        ('vi'): VI, ('vmw'): VMW, ('wo'): WO,
-        ('xh'): XH, ('yo'): YO, ('yue'): YUE,
+        ('ts'): TS, ('tum'): TUM, ('tzm'): TZM,
+        ('uk'): UK, ('umb'): UMB, ('ur'): UR,
+        ('uz'): UZ, ('ve'): VE, ('vi'): VI,
+        ('vmw'): VMW, ('wo'): WO, ('xh'): XH,
+        ('yao'): YAO, ('yo'): YO, ('yue'): YUE,
         ('zdj'): ZDJ, ('zh'): ZH, ('zu'): ZU
     ])
 

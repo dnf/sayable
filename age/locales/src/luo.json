@@ -1,0 +1,39 @@
+{
+  "code": "luo",
+  "name": "Dholuo",
+  "pluralRule": "one_other",
+  "units": {
+    "day": { "one": "odiechieng' {n}", "other": "ndalo {n}" },
+    "week": { "one": "juma {n}", "other": "jumbe {n}" },
+    "month": { "one": "dwe {n}", "other": "dweche {n}" },
+    "year": { "one": "higa {n}", "other": "higni {n}" }
+  },
+  "half": "{0} gi nus",
+  "delimiter": ", ",
+  "justBorn": "Nyathi manyien",
+  "stages": {
+    "newborn": "Nyathi manyien",
+    "infant": "Kidoro",
+    "toddler": "Nyathi matin",
+    "child": "Nyathi",
+    "teenager": "Rawera",
+    "adult": "Ng'ama duong'"
+  },
+  "short": {
+    "units": {
+      "day": { "one": "odie. {n}", "other": "ndalo {n}" },
+      "week": { "one": "juma {n}", "other": "jumbe {n}" },
+      "month": { "one": "dwe {n}", "other": "dwe. {n}" },
+      "year": { "one": "higa {n}", "other": "higni {n}" }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": ""
+  }
+}

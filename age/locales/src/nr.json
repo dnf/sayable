@@ -1,0 +1,39 @@
+{
+  "code": "nr",
+  "name": "Southern Ndebele",
+  "pluralRule": "one_other",
+  "units": {
+    "day": { "one": "ilanga {n}", "other": "amalanga {n}" },
+    "week": { "one": "iveke {n}", "other": "amaveke {n}" },
+    "month": { "one": "inyanga {n}", "other": "iinyanga {n}" },
+    "year": { "one": "unyaka {n}", "other": "iminyaka {n}" }
+  },
+  "half": "{0} nesiquntu",
+  "delimiter": ", ",
+  "justBorn": "Usana olusanda kubeletwa",
+  "stages": {
+    "newborn": "Usana olusanda kubeletwa",
+    "infant": "Usana",
+    "toddler": "Umntwana omncani",
+    "child": "Umntwana",
+    "teenager": "Isokana",
+    "adult": "Umuntu omkhulu"
+  },
+  "short": {
+    "units": {
+      "day": { "one": "ilanga {n}", "other": "amal. {n}" },
+      "week": { "one": "iveke {n}", "other": "amav. {n}" },
+      "month": { "one": "iny. {n}", "other": "iiny. {n}" },
+      "year": { "one": "uny. {n}", "other": "imin. {n}" }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": ""
+  }
+}

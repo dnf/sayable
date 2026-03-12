@@ -1226,6 +1226,45 @@ const AgeLocale& KEK() {
     return loc;
 }
 
+// Source: age/locales/src/ki.json
+const AgeLocale& KI() {
+    static const AgeLocale loc{
+        "ki",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "mũthenya {n}"}, {PluralCategory::Other, "mĩthenya {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "kiumia {n}"}, {PluralCategory::Other, "kiumia {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mwerĩ {n}"}, {PluralCategory::Other, "mĩerĩ {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mwaka {n}"}, {PluralCategory::Other, "mĩaka {n}"}})
+        },
+        "{0} na nusu", ", ", "Kaana gakĩ",
+        StageLabels{{"Kaana gakĩ", ""}, {"Kaana", ""}, {"Kaana kanini", ""}, {"Mwana", ""}, {"Kĩhĩĩ", ""}, {"Mũndũ mũkũrũ", ""}},
+        CompactnessOverride{
+            UnitForms::Plural({{PluralCategory::One, "mũth. {n}"}, {PluralCategory::Other, "mĩth. {n}"}}),
+            UnitForms::Simple("{n} kiu."),
+            UnitForms::Plural({{PluralCategory::One, "mwerĩ {n}"}, {PluralCategory::Other, "mĩerĩ {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mwaka {n}"}, {PluralCategory::Other, "mĩaka {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: age/locales/src/kk.json
 const AgeLocale& KK() {
     static const AgeLocale loc{
@@ -1448,6 +1487,44 @@ const AgeLocale& KPE() {
             UnitForms::Simple("ŋuŋ {n}"),
             UnitForms::Simple("kɛ̃ɛ̃ {n}"),
             std::string("{n}½"),
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: age/locales/src/kri.json
+const AgeLocale& KRI() {
+    static const AgeLocale loc{
+        "kri",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} de"),
+            UnitForms::Simple("{n} wik"),
+            UnitForms::Simple("{n} mont"),
+            UnitForms::Simple("{n} ia")
+        },
+        "{n} na af", ", ", "Nyubon bebi",
+        StageLabels{{"Nyubon bebi", ""}, {"Smol pikin", ""}, {"Smol pikin", ""}, {"Pikin", ""}, {"Yong posin", ""}, {"Big posin", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} de"),
+            UnitForms::Simple("{n} wik"),
+            UnitForms::Simple("{n} mont"),
+            UnitForms::Simple("{n} ia"),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
             std::string(""),
             std::nullopt
         },

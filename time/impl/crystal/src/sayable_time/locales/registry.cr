@@ -15,6 +15,7 @@ module SayableTime
       when "ak" then AK
       when "am" then AM
       when "ar" then AR
+      when "ay" then AY
       when "az" then AZ
       when "bci" then BCI
       when "be" then BE
@@ -74,20 +75,24 @@ module SayableTime
       when "ka" then KA
       when "kbp" then KBP
       when "kek" then KEK
+      when "ki" then KI
       when "kk" then KK
       when "kl" then KL
       when "km" then KM
       when "kn" then KN
       when "ko" then KO
       when "kpe" then KPE
+      when "kri" then KRI
       when "ktu" then KTU
       when "ku" then KU
       when "kw" then KW
       when "ky" then KY
+      when "lb" then LB
       when "lg" then LG
       when "ln" then LN
       when "lo" then LO
       when "lt" then LT
+      when "luo" then LUO
       when "lv" then LV
       when "mam" then MAM
       when "men" then MEN
@@ -108,6 +113,7 @@ module SayableTime
       when "ne" then NE
       when "ng" then NG
       when "nl" then NL
+      when "nr" then NR
       when "nso" then NSO
       when "nus" then NUS
       when "ny" then NY
@@ -156,15 +162,18 @@ module SayableTime
       when "tpi" then TPI
       when "tr" then TR
       when "ts" then TS
+      when "tum" then TUM
       when "tzm" then TZM
       when "uk" then UK
       when "umb" then UMB
       when "ur" then UR
       when "uz" then UZ
+      when "ve" then VE
       when "vi" then VI
       when "vmw" then VMW
       when "wo" then WO
       when "xh" then XH
+      when "yao" then YAO
       when "yo" then YO
       when "yue" then YUE
       when "zdj" then ZDJ

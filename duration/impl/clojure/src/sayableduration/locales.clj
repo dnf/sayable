@@ -14,6 +14,7 @@
     [sayableduration.locales.ak :as ak]
     [sayableduration.locales.am :as am]
     [sayableduration.locales.ar :as ar]
+    [sayableduration.locales.ay :as ay]
     [sayableduration.locales.az :as az]
     [sayableduration.locales.bci :as bci]
     [sayableduration.locales.be :as be]
@@ -73,20 +74,24 @@
     [sayableduration.locales.ka :as ka]
     [sayableduration.locales.kbp :as kbp]
     [sayableduration.locales.kek :as kek]
+    [sayableduration.locales.ki :as ki]
     [sayableduration.locales.kk :as kk]
     [sayableduration.locales.kl :as kl]
     [sayableduration.locales.km :as km]
     [sayableduration.locales.kn :as kn]
     [sayableduration.locales.ko :as ko]
     [sayableduration.locales.kpe :as kpe]
+    [sayableduration.locales.kri :as kri]
     [sayableduration.locales.ktu :as ktu]
     [sayableduration.locales.ku :as ku]
     [sayableduration.locales.kw :as kw]
     [sayableduration.locales.ky :as ky]
+    [sayableduration.locales.lb :as lb]
     [sayableduration.locales.lg :as lg]
     [sayableduration.locales.ln :as ln]
     [sayableduration.locales.lo :as lo]
     [sayableduration.locales.lt :as lt]
+    [sayableduration.locales.luo :as luo]
     [sayableduration.locales.lv :as lv]
     [sayableduration.locales.mam :as mam]
     [sayableduration.locales.men :as men]
@@ -107,6 +112,7 @@
     [sayableduration.locales.ne :as ne]
     [sayableduration.locales.ng :as ng]
     [sayableduration.locales.nl :as nl]
+    [sayableduration.locales.nr :as nr]
     [sayableduration.locales.nso :as nso]
     [sayableduration.locales.nus :as nus]
     [sayableduration.locales.ny :as ny]
@@ -155,15 +161,18 @@
     [sayableduration.locales.tpi :as tpi]
     [sayableduration.locales.tr :as tr]
     [sayableduration.locales.ts :as ts]
+    [sayableduration.locales.tum :as tum]
     [sayableduration.locales.tzm :as tzm]
     [sayableduration.locales.uk :as uk]
     [sayableduration.locales.umb :as umb]
     [sayableduration.locales.ur :as ur]
     [sayableduration.locales.uz :as uz]
+    [sayableduration.locales.ve :as ve]
     [sayableduration.locales.vi :as vi]
     [sayableduration.locales.vmw :as vmw]
     [sayableduration.locales.wo :as wo]
     [sayableduration.locales.xh :as xh]
+    [sayableduration.locales.yao :as yao]
     [sayableduration.locales.yo :as yo]
     [sayableduration.locales.yue :as yue]
     [sayableduration.locales.zdj :as zdj]
@@ -177,6 +186,7 @@
     "ak" ak/locale
     "am" am/locale
     "ar" ar/locale
+    "ay" ay/locale
     "az" az/locale
     "bci" bci/locale
     "be" be/locale
@@ -236,20 +246,24 @@
     "ka" ka/locale
     "kbp" kbp/locale
     "kek" kek/locale
+    "ki" ki/locale
     "kk" kk/locale
     "kl" kl/locale
     "km" km/locale
     "kn" kn/locale
     "ko" ko/locale
     "kpe" kpe/locale
+    "kri" kri/locale
     "ktu" ktu/locale
     "ku" ku/locale
     "kw" kw/locale
     "ky" ky/locale
+    "lb" lb/locale
     "lg" lg/locale
     "ln" ln/locale
     "lo" lo/locale
     "lt" lt/locale
+    "luo" luo/locale
     "lv" lv/locale
     "mam" mam/locale
     "men" men/locale
@@ -270,6 +284,7 @@
     "ne" ne/locale
     "ng" ng/locale
     "nl" nl/locale
+    "nr" nr/locale
     "nso" nso/locale
     "nus" nus/locale
     "ny" ny/locale
@@ -318,15 +333,18 @@
     "tpi" tpi/locale
     "tr" tr/locale
     "ts" ts/locale
+    "tum" tum/locale
     "tzm" tzm/locale
     "uk" uk/locale
     "umb" umb/locale
     "ur" ur/locale
     "uz" uz/locale
+    "ve" ve/locale
     "vi" vi/locale
     "vmw" vmw/locale
     "wo" wo/locale
     "xh" xh/locale
+    "yao" yao/locale
     "yo" yo/locale
     "yue" yue/locale
     "zdj" zdj/locale

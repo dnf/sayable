@@ -1,0 +1,54 @@
+{
+  "code": "lb",
+  "name": "Luxembourgish",
+  "pluralRule": "one_other",
+  "units": {
+    "second": { "one": "{n} Sekonn", "other": "{n} Sekonnen" },
+    "minute": { "one": "{n} Minutt", "other": "{n} Minutten" },
+    "hour": { "one": "{n} Stonn", "other": "{n} Stonnen" },
+    "day": { "one": "{n} Dag", "other": "{n} Deeg" },
+    "week": { "one": "{n} Woch", "other": "{n} Wochen" },
+    "month": { "one": "{n} Mount", "other": "{n} Méint" },
+    "year": { "one": "{n} Joer", "other": "{n} Joer" }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justNow": "elo grad",
+  "ago": "virun {0}",
+  "inFuture": "an {0}",
+  "short": {
+    "units": {
+      "second": "{n} Sek.",
+      "minute": "{n} Min.",
+      "hour": "{n} Std.",
+      "day": "{n} D.",
+      "week": "{n} W.",
+      "month": "{n} M.",
+      "year": "{n} J."
+    },
+    "ago": "virun {0}",
+    "inFuture": "an {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}D",
+      "week": "{n}W",
+      "month": "{n}M",
+      "year": "{n}J"
+    },
+    "delimiter": "",
+    "ago": "virun {0}",
+    "inFuture": "an {0}",
+    "clock": {
+      "use24h": true,
+      "format": "{h}:{mm}"
+    }
+  }
+}

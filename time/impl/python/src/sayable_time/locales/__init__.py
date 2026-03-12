@@ -17,6 +17,7 @@ from sayable_time.locales.af import AF
 from sayable_time.locales.ak import AK
 from sayable_time.locales.am import AM
 from sayable_time.locales.ar import AR
+from sayable_time.locales.ay import AY
 from sayable_time.locales.az import AZ
 from sayable_time.locales.bci import BCI
 from sayable_time.locales.be import BE
@@ -75,20 +76,24 @@ from sayable_time.locales.jv import JV
 from sayable_time.locales.ka import KA
 from sayable_time.locales.kbp import KBP
 from sayable_time.locales.kek import KEK
+from sayable_time.locales.ki import KI
 from sayable_time.locales.kk import KK
 from sayable_time.locales.kl import KL
 from sayable_time.locales.km import KM
 from sayable_time.locales.kn import KN
 from sayable_time.locales.ko import KO
 from sayable_time.locales.kpe import KPE
+from sayable_time.locales.kri import KRI
 from sayable_time.locales.ktu import KTU
 from sayable_time.locales.ku import KU
 from sayable_time.locales.kw import KW
 from sayable_time.locales.ky import KY
+from sayable_time.locales.lb import LB
 from sayable_time.locales.lg import LG
 from sayable_time.locales.ln import LN
 from sayable_time.locales.lo import LO
 from sayable_time.locales.lt import LT
+from sayable_time.locales.luo import LUO
 from sayable_time.locales.lv import LV
 from sayable_time.locales.mam import MAM
 from sayable_time.locales.men import MEN
@@ -109,6 +114,7 @@ from sayable_time.locales.nd import ND
 from sayable_time.locales.ne import NE
 from sayable_time.locales.ng import NG
 from sayable_time.locales.nl import NL
+from sayable_time.locales.nr import NR
 from sayable_time.locales.nso import NSO
 from sayable_time.locales.nus import NUS
 from sayable_time.locales.ny import NY
@@ -156,15 +162,18 @@ from sayable_time.locales.tn import TN
 from sayable_time.locales.tpi import TPI
 from sayable_time.locales.tr import TR
 from sayable_time.locales.ts import TS
+from sayable_time.locales.tum import TUM
 from sayable_time.locales.tzm import TZM
 from sayable_time.locales.uk import UK
 from sayable_time.locales.umb import UMB
 from sayable_time.locales.ur import UR
 from sayable_time.locales.uz import UZ
+from sayable_time.locales.ve import VE
 from sayable_time.locales.vi import VI
 from sayable_time.locales.vmw import VMW
 from sayable_time.locales.wo import WO
 from sayable_time.locales.xh import XH
+from sayable_time.locales.yao import YAO
 from sayable_time.locales.yo import YO
 from sayable_time.locales.yue import YUE
 from sayable_time.locales.zdj import ZDJ
@@ -176,45 +185,47 @@ OR = importlib.import_module("sayable_time.locales.or").OR
 
 _ALL: dict[str, TimeLocale] = {
     "af": AF, "ak": AK, "am": AM, "ar": AR,
-    "az": AZ, "bci": BCI, "be": BE, "bem": BEM,
-    "bg": BG, "bi": BI, "bm": BM, "bn": BN,
-    "br": BR, "bs": BS, "ca": CA, "cak": CAK,
-    "ceb": CEB, "cs": CS, "cy": CY, "da": DA,
-    "de": DE, "din": DIN, "dje": DJE, "dv": DV,
-    "dyu": DYU, "dz": DZ, "ee": EE, "el": EL,
-    "en": EN, "es": ES, "et": ET, "eu": EU,
-    "fa": FA, "fan": FAN, "ff": FF, "fi": FI,
-    "fil": FIL, "fj": FJ, "fon": FON, "fr": FR,
-    "ga": GA, "gd": GD, "gl": GL, "gn": GN,
-    "gu": GU, "gv": GV, "ha": HA, "he": HE,
-    "hi": HI, "hmn": HMN, "hr": HR, "ht": HT,
-    "hu": HU, "hy": HY, "id": ID, "ig": IG,
-    "is": IS, "it": IT, "ja": JA, "jv": JV,
-    "ka": KA, "kbp": KBP, "kek": KEK, "kk": KK,
-    "kl": KL, "km": KM, "kn": KN, "ko": KO,
-    "kpe": KPE, "ktu": KTU, "ku": KU, "kw": KW,
-    "ky": KY, "lg": LG, "ln": LN, "lo": LO,
-    "lt": LT, "lv": LV, "mam": MAM, "men": MEN,
-    "mfe": MFE, "mg": MG, "mi": MI, "mk": MK,
-    "ml": ML, "mn": MN, "mnk": MNK, "mos": MOS,
-    "mr": MR, "ms": MS, "mt": MT, "my": MY,
-    "nb": NB, "nd": ND, "ne": NE, "ng": NG,
-    "nl": NL, "nso": NSO, "nus": NUS, "ny": NY,
-    "om": OM, "or": OR, "pa": PA, "pis": PIS,
-    "pl": PL, "pov": POV, "ps": PS, "pt": PT,
-    "qu": QU, "quc": QUC, "ro": RO, "ru": RU,
-    "rw": RW, "sar": SAR, "sd": SD, "sg": SG,
-    "shi": SHI, "shn": SHN, "si": SI, "sk": SK,
-    "sl": SL, "sn": SN, "snk": SNK, "so": SO,
-    "sq": SQ, "sr": SR, "ss": SS, "st": ST,
-    "su": SU, "suk": SUK, "sv": SV, "sw": SW,
-    "ta": TA, "te": TE, "tem": TEM, "tet": TET,
-    "tg": TG, "th": TH, "ti": TI, "tig": TIG,
-    "tk": TK, "tn": TN, "tpi": TPI, "tr": TR,
-    "ts": TS, "tzm": TZM, "uk": UK, "umb": UMB,
-    "ur": UR, "uz": UZ, "vi": VI, "vmw": VMW,
-    "wo": WO, "xh": XH, "yo": YO, "yue": YUE,
-    "zdj": ZDJ, "zh": ZH, "zu": ZU,
+    "ay": AY, "az": AZ, "bci": BCI, "be": BE,
+    "bem": BEM, "bg": BG, "bi": BI, "bm": BM,
+    "bn": BN, "br": BR, "bs": BS, "ca": CA,
+    "cak": CAK, "ceb": CEB, "cs": CS, "cy": CY,
+    "da": DA, "de": DE, "din": DIN, "dje": DJE,
+    "dv": DV, "dyu": DYU, "dz": DZ, "ee": EE,
+    "el": EL, "en": EN, "es": ES, "et": ET,
+    "eu": EU, "fa": FA, "fan": FAN, "ff": FF,
+    "fi": FI, "fil": FIL, "fj": FJ, "fon": FON,
+    "fr": FR, "ga": GA, "gd": GD, "gl": GL,
+    "gn": GN, "gu": GU, "gv": GV, "ha": HA,
+    "he": HE, "hi": HI, "hmn": HMN, "hr": HR,
+    "ht": HT, "hu": HU, "hy": HY, "id": ID,
+    "ig": IG, "is": IS, "it": IT, "ja": JA,
+    "jv": JV, "ka": KA, "kbp": KBP, "kek": KEK,
+    "ki": KI, "kk": KK, "kl": KL, "km": KM,
+    "kn": KN, "ko": KO, "kpe": KPE, "kri": KRI,
+    "ktu": KTU, "ku": KU, "kw": KW, "ky": KY,
+    "lb": LB, "lg": LG, "ln": LN, "lo": LO,
+    "lt": LT, "luo": LUO, "lv": LV, "mam": MAM,
+    "men": MEN, "mfe": MFE, "mg": MG, "mi": MI,
+    "mk": MK, "ml": ML, "mn": MN, "mnk": MNK,
+    "mos": MOS, "mr": MR, "ms": MS, "mt": MT,
+    "my": MY, "nb": NB, "nd": ND, "ne": NE,
+    "ng": NG, "nl": NL, "nr": NR, "nso": NSO,
+    "nus": NUS, "ny": NY, "om": OM, "or": OR,
+    "pa": PA, "pis": PIS, "pl": PL, "pov": POV,
+    "ps": PS, "pt": PT, "qu": QU, "quc": QUC,
+    "ro": RO, "ru": RU, "rw": RW, "sar": SAR,
+    "sd": SD, "sg": SG, "shi": SHI, "shn": SHN,
+    "si": SI, "sk": SK, "sl": SL, "sn": SN,
+    "snk": SNK, "so": SO, "sq": SQ, "sr": SR,
+    "ss": SS, "st": ST, "su": SU, "suk": SUK,
+    "sv": SV, "sw": SW, "ta": TA, "te": TE,
+    "tem": TEM, "tet": TET, "tg": TG, "th": TH,
+    "ti": TI, "tig": TIG, "tk": TK, "tn": TN,
+    "tpi": TPI, "tr": TR, "ts": TS, "tum": TUM,
+    "tzm": TZM, "uk": UK, "umb": UMB, "ur": UR,
+    "uz": UZ, "ve": VE, "vi": VI, "vmw": VMW,
+    "wo": WO, "xh": XH, "yao": YAO, "yo": YO,
+    "yue": YUE, "zdj": ZDJ, "zh": ZH, "zu": ZU,
 }
 
 
@@ -223,25 +234,26 @@ def get_locale(code: str) -> TimeLocale | None:
     return _ALL.get(code)
 
 __all__ = [
-    "AF", "AK", "AM", "AR", "AZ", "BCI", "BE", "BEM",
-    "BG", "BI", "BM", "BN", "BR", "BS", "CA", "CAK",
-    "CEB", "CS", "CY", "DA", "DE", "DIN", "DJE", "DV",
-    "DYU", "DZ", "EE", "EL", "EN", "ES", "ET", "EU",
-    "FA", "FAN", "FF", "FI", "FIL", "FJ", "FON", "FR",
-    "GA", "GD", "GL", "GN", "GU", "GV", "HA", "HE",
-    "HI", "HMN", "HR", "HT", "HU", "HY", "ID", "IG",
-    "IS", "IT", "JA", "JV", "KA", "KBP", "KEK", "KK",
-    "KL", "KM", "KN", "KO", "KPE", "KTU", "KU", "KW",
-    "KY", "LG", "LN", "LO", "LT", "LV", "MAM", "MEN",
-    "MFE", "MG", "MI", "MK", "ML", "MN", "MNK", "MOS",
-    "MR", "MS", "MT", "MY", "NB", "ND", "NE", "NG",
-    "NL", "NSO", "NUS", "NY", "OM", "OR", "PA", "PIS",
-    "PL", "POV", "PS", "PT", "QU", "QUC", "RO", "RU",
-    "RW", "SAR", "SD", "SG", "SHI", "SHN", "SI", "SK",
-    "SL", "SN", "SNK", "SO", "SQ", "SR", "SS", "ST",
-    "SU", "SUK", "SV", "SW", "TA", "TE", "TEM", "TET",
-    "TG", "TH", "TI", "TIG", "TK", "TN", "TPI", "TR",
-    "TS", "TZM", "UK", "UMB", "UR", "UZ", "VI", "VMW",
-    "WO", "XH", "YO", "YUE", "ZDJ", "ZH", "ZU",
+    "AF", "AK", "AM", "AR", "AY", "AZ", "BCI", "BE",
+    "BEM", "BG", "BI", "BM", "BN", "BR", "BS", "CA",
+    "CAK", "CEB", "CS", "CY", "DA", "DE", "DIN", "DJE",
+    "DV", "DYU", "DZ", "EE", "EL", "EN", "ES", "ET",
+    "EU", "FA", "FAN", "FF", "FI", "FIL", "FJ", "FON",
+    "FR", "GA", "GD", "GL", "GN", "GU", "GV", "HA",
+    "HE", "HI", "HMN", "HR", "HT", "HU", "HY", "ID",
+    "IG", "IS", "IT", "JA", "JV", "KA", "KBP", "KEK",
+    "KI", "KK", "KL", "KM", "KN", "KO", "KPE", "KRI",
+    "KTU", "KU", "KW", "KY", "LB", "LG", "LN", "LO",
+    "LT", "LUO", "LV", "MAM", "MEN", "MFE", "MG", "MI",
+    "MK", "ML", "MN", "MNK", "MOS", "MR", "MS", "MT",
+    "MY", "NB", "ND", "NE", "NG", "NL", "NR", "NSO",
+    "NUS", "NY", "OM", "OR", "PA", "PIS", "PL", "POV",
+    "PS", "PT", "QU", "QUC", "RO", "RU", "RW", "SAR",
+    "SD", "SG", "SHI", "SHN", "SI", "SK", "SL", "SN",
+    "SNK", "SO", "SQ", "SR", "SS", "ST", "SU", "SUK",
+    "SV", "SW", "TA", "TE", "TEM", "TET", "TG", "TH",
+    "TI", "TIG", "TK", "TN", "TPI", "TR", "TS", "TUM",
+    "TZM", "UK", "UMB", "UR", "UZ", "VE", "VI", "VMW",
+    "WO", "XH", "YAO", "YO", "YUE", "ZDJ", "ZH", "ZU",
     "get_locale",
 ]

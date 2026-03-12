@@ -10,7 +10,7 @@
 
 // swiftlint:disable file_length
 
-/// All 159 locale definitions for sayable-age.
+/// All 168 locale definitions for sayable-age.
 public enum Locales {
 
     private static func pluralAr(_ n: Int) -> PluralCategory {
@@ -325,6 +325,50 @@ public enum Locales {
             month: .plural([.zero: "{n} شهر", .one: "شهر", .two: "شهران", .few: "{n} أشهر", .many: "{n} شهرًا", .other: "{n} شهر"]),
             year: .simple("{n} سنة"),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/ay.json
+    // ================================================================
+    // AY — Aymara
+    // ================================================================
+    public static let AY = AgeLocale(
+        code: "ay",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("uru {n}"),
+            week: .simple("simana {n}"),
+            month: .simple("phaxsi {n}"),
+            year: .simple("mara {n}")
+        ),
+        half: "{0} chika",
+        delimiter: ", ",
+        justBorn: "Wawa machaqa",
+        stages: Stages(
+            newborn: .neutral("Wawa machaqa"),
+            infant: .neutral("Wawa"),
+            toddler: .neutral("Jisk'a wawa"),
+            child: .neutral("Yuqalla"),
+            teenager: .neutral("Wayna"),
+            adult: .neutral("Jaqi")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} ur."),
+            week: .simple("{n} sim."),
+            month: .simple("{n} phx."),
+            year: .simple("{n} mr."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -2926,6 +2970,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/ki.json
+    // ================================================================
+    // KI — Kikuyu
+    // ================================================================
+    public static let KI = AgeLocale(
+        code: "ki",
+        plural: { $0 == 1 ? .one : .other },
+        units: Units(
+            day: .plural([.one: "mũthenya {n}", .other: "mĩthenya {n}"]),
+            week: .plural([.one: "kiumia {n}", .other: "kiumia {n}"]),
+            month: .plural([.one: "mwerĩ {n}", .other: "mĩerĩ {n}"]),
+            year: .plural([.one: "mwaka {n}", .other: "mĩaka {n}"])
+        ),
+        half: "{0} na nusu",
+        delimiter: ", ",
+        justBorn: "Kaana gakĩ",
+        stages: Stages(
+            newborn: .neutral("Kaana gakĩ"),
+            infant: .neutral("Kaana"),
+            toddler: .neutral("Kaana kanini"),
+            child: .neutral("Mwana"),
+            teenager: .neutral("Kĩhĩĩ"),
+            adult: .neutral("Mũndũ mũkũrũ")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "mũth. {n}", .other: "mĩth. {n}"]),
+            week: .simple("{n} kiu."),
+            month: .plural([.one: "mwerĩ {n}", .other: "mĩerĩ {n}"]),
+            year: .plural([.one: "mwaka {n}", .other: "mĩaka {n}"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -3190,6 +3278,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/kri.json
+    // ================================================================
+    // KRI — Krio
+    // ================================================================
+    public static let KRI = AgeLocale(
+        code: "kri",
+        plural: { _ in .other },
+        units: Units(
+            day: .simple("{n} de"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} mont"),
+            year: .simple("{n} ia")
+        ),
+        half: "{n} na af",
+        delimiter: ", ",
+        justBorn: "Nyubon bebi",
+        stages: Stages(
+            newborn: .neutral("Nyubon bebi"),
+            infant: .neutral("Smol pikin"),
+            toddler: .neutral("Smol pikin"),
+            child: .neutral("Pikin"),
+            teenager: .neutral("Yong posin"),
+            adult: .neutral("Big posin")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} de"),
+            week: .simple("{n} wik"),
+            month: .simple("{n} mont"),
+            year: .simple("{n} ia"),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/ktu.json
     // ================================================================
     // KTU — Kituba
@@ -3366,6 +3498,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/lb.json
+    // ================================================================
+    // LB — Luxembourgish
+    // ================================================================
+    public static let LB = AgeLocale(
+        code: "lb",
+        plural: { $0 == 1 ? .one : .other },
+        units: Units(
+            day: .plural([.one: "{n} Dag", .other: "{n} Deeg"]),
+            week: .plural([.one: "{n} Woch", .other: "{n} Wochen"]),
+            month: .plural([.one: "{n} Mount", .other: "{n} Méint"]),
+            year: .plural([.one: "{n} Joer", .other: "{n} Joer"])
+        ),
+        half: "{n}½",
+        delimiter: ", ",
+        justBorn: "Neigebuerenen",
+        stages: Stages(
+            newborn: .neutral("Neigebuerenen"),
+            infant: .neutral("Puppelchen"),
+            toddler: .neutral("Klengkand"),
+            child: .neutral("Kand"),
+            teenager: .neutral("Jugendlechen"),
+            adult: .gendered(m: "Erwuessenen", f: "Erwuessen")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .simple("{n} D."),
+            week: .simple("{n} W."),
+            month: .simple("{n} M."),
+            year: .simple("{n} J."),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}D"),
+            week: .simple("{n}W"),
+            month: .simple("{n}M"),
+            year: .simple("{n}J"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/lg.json
     // ================================================================
     // LG — Luganda
@@ -3536,6 +3712,50 @@ public enum Locales {
             week: .simple("{n} sav."),
             month: .simple("{n} mėn."),
             year: .simple("{n} m."),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/luo.json
+    // ================================================================
+    // LUO — Dholuo
+    // ================================================================
+    public static let LUO = AgeLocale(
+        code: "luo",
+        plural: { $0 == 1 ? .one : .other },
+        units: Units(
+            day: .plural([.one: "odiechieng' {n}", .other: "ndalo {n}"]),
+            week: .plural([.one: "juma {n}", .other: "jumbe {n}"]),
+            month: .plural([.one: "dwe {n}", .other: "dweche {n}"]),
+            year: .plural([.one: "higa {n}", .other: "higni {n}"])
+        ),
+        half: "{0} gi nus",
+        delimiter: ", ",
+        justBorn: "Nyathi manyien",
+        stages: Stages(
+            newborn: .neutral("Nyathi manyien"),
+            infant: .neutral("Kidoro"),
+            toddler: .neutral("Nyathi matin"),
+            child: .neutral("Nyathi"),
+            teenager: .neutral("Rawera"),
+            adult: .neutral("Ng'ama duong'")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "odie. {n}", .other: "ndalo {n}"]),
+            week: .plural([.one: "juma {n}", .other: "jumbe {n}"]),
+            month: .plural([.one: "dwe {n}", .other: "dwe. {n}"]),
+            year: .plural([.one: "higa {n}", .other: "higni {n}"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
             half: nil,
             delimiter: "",
             justBorn: nil
@@ -4416,6 +4636,50 @@ public enum Locales {
             week: .simple("{n} w"),
             month: .simple("{n} m"),
             year: .simple("{n} jr"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/nr.json
+    // ================================================================
+    // NR — Southern Ndebele
+    // ================================================================
+    public static let NR = AgeLocale(
+        code: "nr",
+        plural: { $0 == 1 ? .one : .other },
+        units: Units(
+            day: .plural([.one: "ilanga {n}", .other: "amalanga {n}"]),
+            week: .plural([.one: "iveke {n}", .other: "amaveke {n}"]),
+            month: .plural([.one: "inyanga {n}", .other: "iinyanga {n}"]),
+            year: .plural([.one: "unyaka {n}", .other: "iminyaka {n}"])
+        ),
+        half: "{0} nesiquntu",
+        delimiter: ", ",
+        justBorn: "Usana olusanda kubeletwa",
+        stages: Stages(
+            newborn: .neutral("Usana olusanda kubeletwa"),
+            infant: .neutral("Usana"),
+            toddler: .neutral("Umntwana omncani"),
+            child: .neutral("Umntwana"),
+            teenager: .neutral("Isokana"),
+            adult: .neutral("Umuntu omkhulu")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "ilanga {n}", .other: "amal. {n}"]),
+            week: .plural([.one: "iveke {n}", .other: "amav. {n}"]),
+            month: .plural([.one: "iny. {n}", .other: "iiny. {n}"]),
+            year: .plural([.one: "uny. {n}", .other: "imin. {n}"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
             half: nil,
             delimiter: "",
             justBorn: nil
@@ -6534,6 +6798,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/tum.json
+    // ================================================================
+    // TUM — Tumbuka
+    // ================================================================
+    public static let TUM = AgeLocale(
+        code: "tum",
+        plural: { $0 == 1 ? .one : .other },
+        units: Units(
+            day: .plural([.one: "dazi {n}", .other: "madazi {n}"]),
+            week: .plural([.one: "sabata {n}", .other: "masabata {n}"]),
+            month: .plural([.one: "mwezi {n}", .other: "miyezi {n}"]),
+            year: .plural([.one: "chaka {n}", .other: "vyaka {n}"])
+        ),
+        half: "{0} na hafu",
+        delimiter: ", ",
+        justBorn: "Mwana wabadwa wala",
+        stages: Stages(
+            newborn: .neutral("Mwana wabadwa wala"),
+            infant: .neutral("Mwana wakumawere"),
+            toddler: .neutral("Kamwana"),
+            child: .neutral("Mwana"),
+            teenager: .neutral("Munyamata"),
+            adult: .neutral("Munthu mukuru")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "dazi {n}", .other: "mad. {n}"]),
+            week: .plural([.one: "sab. {n}", .other: "mas. {n}"]),
+            month: .plural([.one: "mwezi {n}", .other: "miy. {n}"]),
+            year: .plural([.one: "chaka {n}", .other: "vyaka {n}"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
@@ -6754,6 +7062,50 @@ public enum Locales {
         )
     )
 
+    // Source: age/locales/src/ve.json
+    // ================================================================
+    // VE — Venda
+    // ================================================================
+    public static let VE = AgeLocale(
+        code: "ve",
+        plural: { $0 == 1 ? .one : .other },
+        units: Units(
+            day: .plural([.one: "duvha {n}", .other: "maduvha {n}"]),
+            week: .plural([.one: "vhege {n}", .other: "mavhege {n}"]),
+            month: .plural([.one: "nwedzi {n}", .other: "minwedzi {n}"]),
+            year: .plural([.one: "nwaha {n}", .other: "minwaha {n}"])
+        ),
+        half: "{0} na hafu",
+        delimiter: ", ",
+        justBorn: "Mbuwe",
+        stages: Stages(
+            newborn: .neutral("Mbuwe"),
+            infant: .neutral("Kwana"),
+            toddler: .neutral("Nwana mutuku"),
+            child: .neutral("Nwana"),
+            teenager: .neutral("Mutukana"),
+            adult: .neutral("Muthu muhulwane")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "duv. {n}", .other: "mad. {n}"]),
+            week: .plural([.one: "vheg. {n}", .other: "mav. {n}"]),
+            month: .plural([.one: "nwedzi {n}", .other: "min. {n}"]),
+            year: .plural([.one: "nwaha {n}", .other: "min. {n}"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
     // Source: age/locales/src/vi.json
     // ================================================================
     // VI — Vietnamese
@@ -6925,6 +7277,50 @@ public enum Locales {
             month: .simple("{n}m"),
             year: .simple("{n}y"),
             half: "{n}½",
+            delimiter: "",
+            justBorn: nil
+        )
+    )
+
+    // Source: age/locales/src/yao.json
+    // ================================================================
+    // YAO — Yao
+    // ================================================================
+    public static let YAO = AgeLocale(
+        code: "yao",
+        plural: { $0 == 1 ? .one : .other },
+        units: Units(
+            day: .plural([.one: "lisiku {n}", .other: "masiku {n}"]),
+            week: .plural([.one: "juma {n}", .other: "majuma {n}"]),
+            month: .plural([.one: "ngondo {n}", .other: "mingondo {n}"]),
+            year: .plural([.one: "chaka {n}", .other: "vyaka {n}"])
+        ),
+        half: "{0} na nusu",
+        delimiter: ", ",
+        justBorn: "Mwanache jwabadwa",
+        stages: Stages(
+            newborn: .neutral("Mwanache jwabadwa"),
+            infant: .neutral("Kamwanache"),
+            toddler: .neutral("Kamwanache kanandi"),
+            child: .neutral("Mwanache"),
+            teenager: .neutral("Jeje"),
+            adult: .neutral("Mundu")
+        ),
+        shortOverride: CompactnessOverride(
+            day: .plural([.one: "lis. {n}", .other: "mas. {n}"]),
+            week: .plural([.one: "juma {n}", .other: "maj. {n}"]),
+            month: .plural([.one: "ngo. {n}", .other: "min. {n}"]),
+            year: .plural([.one: "chaka {n}", .other: "vyaka {n}"]),
+            half: nil,
+            delimiter: nil,
+            justBorn: nil
+        ),
+        compactOverride: CompactnessOverride(
+            day: .simple("{n}d"),
+            week: .simple("{n}w"),
+            month: .simple("{n}m"),
+            year: .simple("{n}y"),
+            half: nil,
             delimiter: "",
             justBorn: nil
         )
@@ -7155,6 +7551,7 @@ public enum Locales {
         "ak": AK,
         "am": AM,
         "ar": AR,
+        "ay": AY,
         "az": AZ,
         "bci": BCI,
         "be": BE,
@@ -7214,20 +7611,24 @@ public enum Locales {
         "ka": KA,
         "kbp": KBP,
         "kek": KEK,
+        "ki": KI,
         "kk": KK,
         "kl": KL,
         "km": KM,
         "kn": KN,
         "ko": KO,
         "kpe": KPE,
+        "kri": KRI,
         "ktu": KTU,
         "ku": KU,
         "kw": KW,
         "ky": KY,
+        "lb": LB,
         "lg": LG,
         "ln": LN,
         "lo": LO,
         "lt": LT,
+        "luo": LUO,
         "lv": LV,
         "mam": MAM,
         "men": MEN,
@@ -7248,6 +7649,7 @@ public enum Locales {
         "ne": NE,
         "ng": NG,
         "nl": NL,
+        "nr": NR,
         "nso": NSO,
         "nus": NUS,
         "ny": NY,
@@ -7296,15 +7698,18 @@ public enum Locales {
         "tpi": TPI,
         "tr": TR,
         "ts": TS,
+        "tum": TUM,
         "tzm": TZM,
         "uk": UK,
         "umb": UMB,
         "ur": UR,
         "uz": UZ,
+        "ve": VE,
         "vi": VI,
         "vmw": VMW,
         "wo": WO,
         "xh": XH,
+        "yao": YAO,
         "yo": YO,
         "yue": YUE,
         "zdj": ZDJ,

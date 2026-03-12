@@ -13,6 +13,53 @@
 namespace sayabledate {
 namespace locales {
 
+// Source: date/locales/src/lb.json
+const DateLocale& LB() {
+    static const DateLocale loc{
+        "lb",
+        {"Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"},
+        {"Sonndeg", "Méindeg", "Dënschdeg", "Mëttwoch", "Donneschdeg", "Freideg", "Samschdeg"},
+        "{n}.",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "haut", "muer", "gëschter",
+        "iwwermuer",
+        "virgëschter",
+        "dësen {weekday}",
+        "nächsten {weekday}",
+        "leschten {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan.", "Feb.", "Mäe.", "Abr.", "Mee", "Jun.", "Jul.", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."},
+            {},
+            {"So.", "Mé.", "Dë.", "Më.", "Do.", "Fr.", "Sa."},
+            "{n}.",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}.{m}.",
+            "{d}.{m}.{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/lg.json
 const DateLocale& LG() {
     static const DateLocale loc{
@@ -193,6 +240,53 @@ const DateLocale& LT() {
             false,
             "{m}-{d}",
             "{yy}-{m}-{d}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/luo.json
+const DateLocale& LUO() {
+    static const DateLocale loc{
+        "luo",
+        {"Dwe mar Achiel", "Dwe mar Ariyo", "Dwe mar Adek", "Dwe mar Ang'wen", "Dwe mar Abich", "Dwe mar Auchiel", "Dwe mar Abiriyo", "Dwe mar Aboro", "Dwe mar Ochiko", "Dwe mar Apar", "Dwe mar Apar gi Achiel", "Dwe mar Apar gi Ariyo"},
+        {"Jumapil", "Wuok Tich", "Tich Ariyo", "Tich Adek", "Tich Ang'wen", "Tich Abich", "Chieng' Ngeso"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "kawuono", "kiny", "nyoro",
+        "orucha",
+        "",
+        "{weekday} ma",
+        "{weekday} mabiro",
+        "{weekday} mokalo",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Ach", "Ari", "Ade", "Ang", "Abi", "Auc", "Abr", "Abo", "Och", "Apa", "ApA", "ApR"},
+            {},
+            {"JMP", "WUT", "TAR", "TAD", "TAN", "TAB", "ChN"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
             "",
             "",
             ""
@@ -1115,6 +1209,53 @@ const DateLocale& NL() {
             {"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"},
             {},
             {"zo", "ma", "di", "wo", "do", "vr", "za"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/nr.json
+const DateLocale& NR() {
+    static const DateLocale loc{
+        "nr",
+        {"uTjhirhweni", "uMhlolanja", "iNtaka", "iSihlabantangana", "uMrhayili", "uMgwengweni", "uVelabahlinze", "uRhoboyi", "uKhukhulamungu", "iSewula", "uSikinyikhaba", "uNobayeni"},
+        {"uSonto", "uMvulo", "uLesibili", "uLesithathu", "uLesine", "uLesihlanu", "uMgqibelo"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "namhlanje", "kusasa", "izolo",
+        "",
+        "",
+        "le {weekday}",
+        "{weekday} elizako",
+        "{weekday} elidlulileko",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Tjh", "Mhl", "Nta", "Sih", "Mrh", "Mgw", "Vel", "Rho", "Khu", "Sew", "Sik", "Nob"},
+            {},
+            {"Son", "Mvu", "Bil", "Tha", "Sin", "Hla", "Mgq"},
             "{n}",
             {},
             false,

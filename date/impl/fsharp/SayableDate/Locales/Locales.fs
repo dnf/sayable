@@ -8,7 +8,7 @@
 // ║ Edit the generator or locale JSON instead.                   ║
 // ╚══════════════════════════════════════════════════════════════╝
 
-/// All 159 locale definitions for sayable-date.
+/// All 168 locale definitions for sayable-date.
 module SayableDateLib.Locales
 
 open SayableDateLib.Types
@@ -198,6 +198,58 @@ let AR: DateLocale =
                 Months = Some [| "ينا"; "فبر"; "مار"; "أبر"; "ماي"; "يون"; "يول"; "أغس"; "سبت"; "أكت"; "نوف"; "ديس" |]
                 MonthsInDate = None
                 Weekdays = Some [| "أحد"; "إثن"; "ثلا"; "أرب"; "خمي"; "جمع"; "سبت" |]
+                DayFormat = Some "{n}"
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}/{m}"
+                DatePatternWithYear = Some "{d}/{m}/{yy}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
+// Source: date/locales/src/ay.json
+// ================================================================
+// AY — Aymara
+// ================================================================
+let AY: DateLocale =
+    {
+        Code = "ay"
+        Months = [| "Chinuqa"; "Anata"; "Achuqa"; "Qasiwi"; "Llamayu"; "Marat'aqa"; "Willkakuti"; "Llumpaqa"; "Sata"; "Taypisata"; "Lapaqa"; "Jalluqallta" |]
+        Weekdays = [| "Samaya"; "Maytita"; "Paytita"; "Iritita"; "Yunkita"; "Chipanata"; "Takirita" |]
+        DayFormat = "{n}"
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "jichha uru"
+        Tomorrow = "q'aya"
+        Yesterday = "masüru"
+        DayAfterTomorrow = None
+        DayBeforeYesterday = None
+        ThisWeekday = Some "aka {weekday}"
+        NextWeekday = Some "jutir {weekday}"
+        LastWeekday = Some "nayra {weekday}"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "Chi"; "Ana"; "Ach"; "Qas"; "Lla"; "Mar"; "Wil"; "Llu"; "Sat"; "Tay"; "Lap"; "Jal" |]
+                MonthsInDate = None
+                Weekdays = Some [| "Sam"; "May"; "Pay"; "Iri"; "Yun"; "Chi"; "Tak" |]
                 DayFormat = Some "{n}"
                 DayFormatExceptions = None
                 DatePattern = Some "{day} {month}"
@@ -3290,6 +3342,58 @@ let KEK: DateLocale =
                 }
     }
 
+// Source: date/locales/src/ki.json
+// ================================================================
+// KI — Kikuyu
+// ================================================================
+let KI: DateLocale =
+    {
+        Code = "ki"
+        Months = [| "Njenuarĩ"; "Mwere wa kerĩ"; "Mwere wa gatatũ"; "Mwere wa kana"; "Mwere wa gatano"; "Mwere wa gatandatũ"; "Mwere wa mũgwanja"; "Mwere wa kanana"; "Mwere wa kenda"; "Mwere wa ikũmi"; "Mwere wa ikũmi na ũmwe"; "Ndithemba" |]
+        Weekdays = [| "Kiumia"; "Njumatatũ"; "Njumaine"; "Njumatana"; "Aramithi"; "Njumaa"; "Njumamothi" |]
+        DayFormat = "{n}"
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "Ũmũthĩ"
+        Tomorrow = "Rũciũ"
+        Yesterday = "Ira"
+        DayAfterTomorrow = None
+        DayBeforeYesterday = None
+        ThisWeekday = Some "{weekday} ĩno"
+        NextWeekday = Some "{weekday} ĩyothe"
+        LastWeekday = Some "{weekday} ĩrĩa ĩhĩtũkĩte"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "JEN"; "WKR"; "WGT"; "WKN"; "WTN"; "WTD"; "WMJ"; "WNN"; "WKD"; "WIK"; "WMW"; "DIT" |]
+                MonthsInDate = None
+                Weekdays = Some [| "KMA"; "NTT"; "NMN"; "NMT"; "ART"; "NMA"; "NMM" |]
+                DayFormat = Some "{n}"
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}/{m}"
+                DatePatternWithYear = Some "{d}/{m}/{yy}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
 // Source: date/locales/src/kk.json
 // ================================================================
 // KK — Kazakh
@@ -3602,6 +3706,58 @@ let KPE: DateLocale =
                 }
     }
 
+// Source: date/locales/src/kri.json
+// ================================================================
+// KRI — Krio
+// ================================================================
+let KRI: DateLocale =
+    {
+        Code = "kri"
+        Months = [| "Jenyuari"; "Febyuari"; "Mach"; "Epril"; "Me"; "Jun"; "Julay"; "Ogost"; "Septemba"; "Oktoba"; "Novemba"; "Disemba" |]
+        Weekdays = [| "Sonde"; "Monde"; "Tyusde"; "Wensde"; "Tosde"; "Frayde"; "Satide" |]
+        DayFormat = "{n}"
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "tide"
+        Tomorrow = "tumara"
+        Yesterday = "yestade"
+        DayAfterTomorrow = Some "afta tumara"
+        DayBeforeYesterday = Some "bifo yestade"
+        ThisWeekday = Some "dis {weekday}"
+        NextWeekday = Some "neks {weekday}"
+        LastWeekday = Some "las {weekday}"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "Jen"; "Feb"; "Mach"; "Ep"; "Me"; "Jun"; "Jul"; "Og"; "Sep"; "Ok"; "Nov"; "Dis" |]
+                MonthsInDate = None
+                Weekdays = Some [| "Son"; "Mon"; "Tyu"; "Wen"; "Tos"; "Fra"; "Sat" |]
+                DayFormat = Some "{n}"
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}/{m}"
+                DatePatternWithYear = Some "{d}/{m}/{yy}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
 // Source: date/locales/src/ktu.json
 // ================================================================
 // KTU — Kituba
@@ -3810,6 +3966,58 @@ let KY: DateLocale =
                 }
     }
 
+// Source: date/locales/src/lb.json
+// ================================================================
+// LB — Luxembourgish
+// ================================================================
+let LB: DateLocale =
+    {
+        Code = "lb"
+        Months = [| "Januar"; "Februar"; "Mäerz"; "Abrëll"; "Mee"; "Juni"; "Juli"; "August"; "September"; "Oktober"; "November"; "Dezember" |]
+        Weekdays = [| "Sonndeg"; "Méindeg"; "Dënschdeg"; "Mëttwoch"; "Donneschdeg"; "Freideg"; "Samschdeg" |]
+        DayFormat = "{n}."
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "haut"
+        Tomorrow = "muer"
+        Yesterday = "gëschter"
+        DayAfterTomorrow = Some "iwwermuer"
+        DayBeforeYesterday = Some "virgëschter"
+        ThisWeekday = Some "dësen {weekday}"
+        NextWeekday = Some "nächsten {weekday}"
+        LastWeekday = Some "leschten {weekday}"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "Jan."; "Feb."; "Mäe."; "Abr."; "Mee"; "Jun."; "Jul."; "Aug."; "Sep."; "Okt."; "Nov."; "Dez." |]
+                MonthsInDate = None
+                Weekdays = Some [| "So."; "Mé."; "Dë."; "Më."; "Do."; "Fr."; "Sa." |]
+                DayFormat = Some "{n}."
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}.{m}."
+                DatePatternWithYear = Some "{d}.{m}.{yy}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
 // Source: date/locales/src/lg.json
 // ================================================================
 // LG — Luganda
@@ -4012,6 +4220,58 @@ let LT: DateLocale =
                 DayFormatExceptions = None
                 DatePattern = Some "{m}-{d}"
                 DatePatternWithYear = Some "{yy}-{m}-{d}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
+// Source: date/locales/src/luo.json
+// ================================================================
+// LUO — Dholuo
+// ================================================================
+let LUO: DateLocale =
+    {
+        Code = "luo"
+        Months = [| "Dwe mar Achiel"; "Dwe mar Ariyo"; "Dwe mar Adek"; "Dwe mar Ang'wen"; "Dwe mar Abich"; "Dwe mar Auchiel"; "Dwe mar Abiriyo"; "Dwe mar Aboro"; "Dwe mar Ochiko"; "Dwe mar Apar"; "Dwe mar Apar gi Achiel"; "Dwe mar Apar gi Ariyo" |]
+        Weekdays = [| "Jumapil"; "Wuok Tich"; "Tich Ariyo"; "Tich Adek"; "Tich Ang'wen"; "Tich Abich"; "Chieng' Ngeso" |]
+        DayFormat = "{n}"
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "kawuono"
+        Tomorrow = "kiny"
+        Yesterday = "nyoro"
+        DayAfterTomorrow = Some "orucha"
+        DayBeforeYesterday = None
+        ThisWeekday = Some "{weekday} ma"
+        NextWeekday = Some "{weekday} mabiro"
+        LastWeekday = Some "{weekday} mokalo"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "Ach"; "Ari"; "Ade"; "Ang"; "Abi"; "Auc"; "Abr"; "Abo"; "Och"; "Apa"; "ApA"; "ApR" |]
+                MonthsInDate = None
+                Weekdays = Some [| "JMP"; "WUT"; "TAR"; "TAD"; "TAN"; "TAB"; "ChN" |]
+                DayFormat = Some "{n}"
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}/{m}"
+                DatePatternWithYear = Some "{d}/{m}/{yy}"
                 Today = None
                 Tomorrow = None
                 Yesterday = None
@@ -5034,6 +5294,58 @@ let NL: DateLocale =
                 Months = Some [| "jan"; "feb"; "mrt"; "apr"; "mei"; "jun"; "jul"; "aug"; "sep"; "okt"; "nov"; "dec" |]
                 MonthsInDate = None
                 Weekdays = Some [| "zo"; "ma"; "di"; "wo"; "do"; "vr"; "za" |]
+                DayFormat = Some "{n}"
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}/{m}"
+                DatePatternWithYear = Some "{d}/{m}/{yy}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
+// Source: date/locales/src/nr.json
+// ================================================================
+// NR — Southern Ndebele
+// ================================================================
+let NR: DateLocale =
+    {
+        Code = "nr"
+        Months = [| "uTjhirhweni"; "uMhlolanja"; "iNtaka"; "iSihlabantangana"; "uMrhayili"; "uMgwengweni"; "uVelabahlinze"; "uRhoboyi"; "uKhukhulamungu"; "iSewula"; "uSikinyikhaba"; "uNobayeni" |]
+        Weekdays = [| "uSonto"; "uMvulo"; "uLesibili"; "uLesithathu"; "uLesine"; "uLesihlanu"; "uMgqibelo" |]
+        DayFormat = "{n}"
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "namhlanje"
+        Tomorrow = "kusasa"
+        Yesterday = "izolo"
+        DayAfterTomorrow = None
+        DayBeforeYesterday = None
+        ThisWeekday = Some "le {weekday}"
+        NextWeekday = Some "{weekday} elizako"
+        LastWeekday = Some "{weekday} elidlulileko"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "Tjh"; "Mhl"; "Nta"; "Sih"; "Mrh"; "Mgw"; "Vel"; "Rho"; "Khu"; "Sew"; "Sik"; "Nob" |]
+                MonthsInDate = None
+                Weekdays = Some [| "Son"; "Mvu"; "Bil"; "Tha"; "Sin"; "Hla"; "Mgq" |]
                 DayFormat = Some "{n}"
                 DayFormatExceptions = None
                 DatePattern = Some "{day} {month}"
@@ -7554,6 +7866,58 @@ let TS: DateLocale =
                 }
     }
 
+// Source: date/locales/src/tum.json
+// ================================================================
+// TUM — Tumbuka
+// ================================================================
+let TUM: DateLocale =
+    {
+        Code = "tum"
+        Months = [| "Janyuwale"; "Feburuware"; "Marichi"; "Epurelo"; "Meyi"; "Juni"; "Julayi"; "Ogasiti"; "Seputembala"; "Okutobala"; "Novembala"; "Disembala" |]
+        Weekdays = [| "Sabata"; "Mande"; "Chibiri"; "Chitatu"; "Chinayi"; "Chinkondi"; "Chisulo" |]
+        DayFormat = "{n}"
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "lero"
+        Tomorrow = "namachero"
+        Yesterday = "mayiro"
+        DayAfterTomorrow = None
+        DayBeforeYesterday = None
+        ThisWeekday = Some "{weekday} yino"
+        NextWeekday = Some "{weekday} yikwiza"
+        LastWeekday = Some "{weekday} yamala"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "Jan"; "Feb"; "Mar"; "Epu"; "Mey"; "Jun"; "Jul"; "Oga"; "Sep"; "Oku"; "Nov"; "Dis" |]
+                MonthsInDate = None
+                Weekdays = Some [| "Sab"; "Man"; "Chb"; "Cht"; "Chn"; "Chk"; "Chs" |]
+                DayFormat = Some "{n}"
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}/{m}"
+                DatePatternWithYear = Some "{d}/{m}/{yy}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
 // Source: date/locales/src/tzm.json
 // ================================================================
 // TZM — Central Atlas Tamazight
@@ -7814,6 +8178,58 @@ let UZ: DateLocale =
                 }
     }
 
+// Source: date/locales/src/ve.json
+// ================================================================
+// VE — Venda
+// ================================================================
+let VE: DateLocale =
+    {
+        Code = "ve"
+        Months = [| "Phando"; "Luhuhi"; "Thafamuhwe"; "Lambamai"; "Shundunthule"; "Fulwi"; "Fulwana"; "Thangule"; "Khubvumedzi"; "Tshimedzi"; "Lara"; "Nyendavhusiku" |]
+        Weekdays = [| "Swondaha"; "Musumbuluwo"; "Lavhuvhili"; "Lavhuraru"; "Lavhuna"; "Lavhutanu"; "Mugivhela" |]
+        DayFormat = "{n}"
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "namusi"
+        Tomorrow = "matshelo"
+        Yesterday = "mulovha"
+        DayAfterTomorrow = None
+        DayBeforeYesterday = Some "mbamulovha"
+        ThisWeekday = Some "{weekday} ino"
+        NextWeekday = Some "{weekday} i daho"
+        LastWeekday = Some "{weekday} yo fhiraho"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "Pha"; "Luh"; "Tha"; "Lam"; "Shu"; "Ful"; "Fuw"; "Thg"; "Khu"; "Tsh"; "Lar"; "Nye" |]
+                MonthsInDate = None
+                Weekdays = Some [| "Swo"; "Mus"; "Vhi"; "Rar"; "Na"; "Tan"; "Mug" |]
+                DayFormat = Some "{n}"
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}/{m}"
+                DatePatternWithYear = Some "{d}/{m}/{yy}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
 // Source: date/locales/src/vi.json
 // ================================================================
 // VI — Vietnamese
@@ -7998,6 +8414,58 @@ let XH: DateLocale =
                 Months = Some [| "Jan"; "Feb"; "Mat"; "Epr"; "Mey"; "Jun"; "Jul"; "Aga"; "Sep"; "Okt"; "Nov"; "Dis" |]
                 MonthsInDate = None
                 Weekdays = Some [| "Caw"; "Mvu"; "Bin"; "Tha"; "Sin"; "Hla"; "Mgq" |]
+                DayFormat = Some "{n}"
+                DayFormatExceptions = None
+                DatePattern = Some "{day} {month}"
+                DatePatternWithYear = Some "{day} {month} {year}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+        CompactOverride =
+            Some
+                {
+                Months = None
+                MonthsInDate = None
+                Weekdays = None
+                DayFormat = None
+                DayFormatExceptions = None
+                DatePattern = Some "{d}/{m}"
+                DatePatternWithYear = Some "{d}/{m}/{yy}"
+                Today = None
+                Tomorrow = None
+                Yesterday = None
+                }
+    }
+
+// Source: date/locales/src/yao.json
+// ================================================================
+// YAO — Yao
+// ================================================================
+let YAO: DateLocale =
+    {
+        Code = "yao"
+        Months = [| "Janyuwale"; "Febuwale"; "Malichi"; "Epireli"; "Meyi"; "Juni"; "Julayi"; "Ogasiti"; "Seputemba"; "Okutoba"; "Novemba"; "Disemba" |]
+        Weekdays = [| "Lisiku lya Jumapili"; "Lisiku lya kwanda"; "Lisiku lya wili"; "Lisiku lya tatu"; "Lisiku lya ncece"; "Lisiku lya nsano"; "Lisiku lya Juma" |]
+        DayFormat = "{n}"
+        DayFormatExceptions = Map.empty
+        DatePattern = "{day} {month}"
+        DatePatternWithYear = "{day} {month} {year}"
+        Today = "lelo"
+        Tomorrow = "julo"
+        Yesterday = "liiso"
+        DayAfterTomorrow = None
+        DayBeforeYesterday = None
+        ThisWeekday = Some "{weekday} lino"
+        NextWeekday = Some "{weekday} likwisa"
+        LastWeekday = Some "{weekday} lyapite"
+        MonthsInDate = None
+        ShortOverride =
+            Some
+                {
+                Months = Some [| "Jan"; "Feb"; "Mal"; "Epi"; "Mey"; "Jun"; "Jul"; "Oga"; "Sep"; "Oku"; "Nov"; "Dis" |]
+                MonthsInDate = None
+                Weekdays = Some [| "Jpi"; "Kwa"; "Wil"; "Tat"; "Nce"; "Nsa"; "Jma" |]
                 DayFormat = Some "{n}"
                 DayFormatExceptions = None
                 DatePattern = Some "{day} {month}"
@@ -8289,6 +8757,7 @@ let All: Map<string, DateLocale> =
             ("ak", AK)
             ("am", AM)
             ("ar", AR)
+            ("ay", AY)
             ("az", AZ)
             ("bci", BCI)
             ("be", BE)
@@ -8348,20 +8817,24 @@ let All: Map<string, DateLocale> =
             ("ka", KA)
             ("kbp", KBP)
             ("kek", KEK)
+            ("ki", KI)
             ("kk", KK)
             ("kl", KL)
             ("km", KM)
             ("kn", KN)
             ("ko", KO)
             ("kpe", KPE)
+            ("kri", KRI)
             ("ktu", KTU)
             ("ku", KU)
             ("kw", KW)
             ("ky", KY)
+            ("lb", LB)
             ("lg", LG)
             ("ln", LN)
             ("lo", LO)
             ("lt", LT)
+            ("luo", LUO)
             ("lv", LV)
             ("mam", MAM)
             ("men", MEN)
@@ -8382,6 +8855,7 @@ let All: Map<string, DateLocale> =
             ("ne", NE)
             ("ng", NG)
             ("nl", NL)
+            ("nr", NR)
             ("nso", NSO)
             ("nus", NUS)
             ("ny", NY)
@@ -8430,15 +8904,18 @@ let All: Map<string, DateLocale> =
             ("tpi", TPI)
             ("tr", TR)
             ("ts", TS)
+            ("tum", TUM)
             ("tzm", TZM)
             ("uk", UK)
             ("umb", UMB)
             ("ur", UR)
             ("uz", UZ)
+            ("ve", VE)
             ("vi", VI)
             ("vmw", VMW)
             ("wo", WO)
             ("xh", XH)
+            ("yao", YAO)
             ("yo", YO)
             ("yue", YUE)
             ("zdj", ZDJ)

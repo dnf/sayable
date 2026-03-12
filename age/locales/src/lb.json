@@ -1,0 +1,39 @@
+{
+  "code": "lb",
+  "name": "Luxembourgish",
+  "pluralRule": "one_other",
+  "units": {
+    "day": { "one": "{n} Dag", "other": "{n} Deeg" },
+    "week": { "one": "{n} Woch", "other": "{n} Wochen" },
+    "month": { "one": "{n} Mount", "other": "{n} Méint" },
+    "year": { "one": "{n} Joer", "other": "{n} Joer" }
+  },
+  "half": "{n}½",
+  "delimiter": ", ",
+  "justBorn": "Neigebuerenen",
+  "stages": {
+    "newborn": "Neigebuerenen",
+    "infant": "Puppelchen",
+    "toddler": "Klengkand",
+    "child": "Kand",
+    "teenager": "Jugendlechen",
+    "adult": { "m": "Erwuessenen", "f": "Erwuessen" }
+  },
+  "short": {
+    "units": {
+      "day": "{n} D.",
+      "week": "{n} W.",
+      "month": "{n} M.",
+      "year": "{n} J."
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}D",
+      "week": "{n}W",
+      "month": "{n}M",
+      "year": "{n}J"
+    },
+    "delimiter": ""
+  }
+}

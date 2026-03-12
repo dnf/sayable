@@ -1517,6 +1517,53 @@ const DateLocale& TS() {
     return loc;
 }
 
+// Source: date/locales/src/tum.json
+const DateLocale& TUM() {
+    static const DateLocale loc{
+        "tum",
+        {"Janyuwale", "Feburuware", "Marichi", "Epurelo", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputembala", "Okutobala", "Novembala", "Disembala"},
+        {"Sabata", "Mande", "Chibiri", "Chitatu", "Chinayi", "Chinkondi", "Chisulo"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "lero", "namachero", "mayiro",
+        "",
+        "",
+        "{weekday} yino",
+        "{weekday} yikwiza",
+        "{weekday} yamala",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Feb", "Mar", "Epu", "Mey", "Jun", "Jul", "Oga", "Sep", "Oku", "Nov", "Dis"},
+            {},
+            {"Sab", "Man", "Chb", "Cht", "Chn", "Chk", "Chs"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/tzm.json
 const DateLocale& TZM() {
     static const DateLocale loc{
@@ -1752,6 +1799,53 @@ const DateLocale& UZ() {
     return loc;
 }
 
+// Source: date/locales/src/ve.json
+const DateLocale& VE() {
+    static const DateLocale loc{
+        "ve",
+        {"Phando", "Luhuhi", "Thafamuhwe", "Lambamai", "Shundunthule", "Fulwi", "Fulwana", "Thangule", "Khubvumedzi", "Tshimedzi", "Lara", "Nyendavhusiku"},
+        {"Swondaha", "Musumbuluwo", "Lavhuvhili", "Lavhuraru", "Lavhuna", "Lavhutanu", "Mugivhela"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "namusi", "matshelo", "mulovha",
+        "",
+        "mbamulovha",
+        "{weekday} ino",
+        "{weekday} i daho",
+        "{weekday} yo fhiraho",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Pha", "Luh", "Tha", "Lam", "Shu", "Ful", "Fuw", "Thg", "Khu", "Tsh", "Lar", "Nye"},
+            {},
+            {"Swo", "Mus", "Vhi", "Rar", "Na", "Tan", "Mug"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/vi.json
 const DateLocale& VI() {
     static const DateLocale loc{
@@ -1914,6 +2008,53 @@ const DateLocale& XH() {
             {"Jan", "Feb", "Mat", "Epr", "Mey", "Jun", "Jul", "Aga", "Sep", "Okt", "Nov", "Dis"},
             {},
             {"Caw", "Mvu", "Bin", "Tha", "Sin", "Hla", "Mgq"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
+// Source: date/locales/src/yao.json
+const DateLocale& YAO() {
+    static const DateLocale loc{
+        "yao",
+        {"Janyuwale", "Febuwale", "Malichi", "Epireli", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba"},
+        {"Lisiku lya Jumapili", "Lisiku lya kwanda", "Lisiku lya wili", "Lisiku lya tatu", "Lisiku lya ncece", "Lisiku lya nsano", "Lisiku lya Juma"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "lelo", "julo", "liiso",
+        "",
+        "",
+        "{weekday} lino",
+        "{weekday} likwisa",
+        "{weekday} lyapite",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Jan", "Feb", "Mal", "Epi", "Mey", "Jun", "Jul", "Oga", "Sep", "Oku", "Nov", "Dis"},
+            {},
+            {"Jpi", "Kwa", "Wil", "Tat", "Nce", "Nsa", "Jma"},
             "{n}",
             {},
             false,

@@ -1,0 +1,56 @@
+{
+  "code": "nr",
+  "name": "Southern Ndebele",
+  "pluralRule": "one_other",
+  "units": {
+    "second": { "one": "isekendi {n}", "other": "amasekendi {n}" },
+    "minute": { "one": "umzuzu {n}", "other": "imizuzu {n}" },
+    "hour": { "one": "ihora {n}", "other": "amahora {n}" },
+    "day": { "one": "ilanga {n}", "other": "amalanga {n}" },
+    "week": { "one": "iveke {n}", "other": "amaveke {n}" },
+    "month": { "one": "inyanga {n}", "other": "iinyanga {n}" },
+    "year": { "one": "unyaka {n}", "other": "iminyaka {n}" }
+  },
+  "half": "{0} nesiquntu",
+  "delimiter": ", ",
+  "justNow": "khathesi",
+  "ago": "{0} eyadlulileko",
+  "inFuture": "nge {0}",
+  "short": {
+    "units": {
+      "second": "isek. {n}",
+      "minute": "umz. {n}",
+      "hour": { "one": "ihora {n}", "other": "amah. {n}" },
+      "day": { "one": "ilanga {n}", "other": "amal. {n}" },
+      "week": { "one": "iveke {n}", "other": "amav. {n}" },
+      "month": { "one": "iny. {n}", "other": "iiny. {n}" },
+      "year": { "one": "uny. {n}", "other": "imin. {n}" }
+    },
+    "ago": "{0} eyadlulileko",
+    "inFuture": "nge {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["AM", "PM"],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} eyadlulileko",
+    "inFuture": "nge {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["a", "p"],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

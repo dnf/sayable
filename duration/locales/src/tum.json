@@ -1,0 +1,56 @@
+{
+  "code": "tum",
+  "name": "Tumbuka",
+  "pluralRule": "one_other",
+  "units": {
+    "second": { "one": "sekendi {n}", "other": "masekendi {n}" },
+    "minute": { "one": "miniti {n}", "other": "maminiti {n}" },
+    "hour": { "one": "ola {n}", "other": "maola {n}" },
+    "day": { "one": "dazi {n}", "other": "madazi {n}" },
+    "week": { "one": "sabata {n}", "other": "masabata {n}" },
+    "month": { "one": "mwezi {n}", "other": "miyezi {n}" },
+    "year": { "one": "chaka {n}", "other": "vyaka {n}" }
+  },
+  "half": "{0} na hafu",
+  "delimiter": ", ",
+  "justNow": "sono",
+  "ago": "{0} yamala",
+  "inFuture": "mu {0}",
+  "short": {
+    "units": {
+      "second": "sek. {n}",
+      "minute": "min. {n}",
+      "hour": { "one": "ola {n}", "other": "maola {n}" },
+      "day": { "one": "dazi {n}", "other": "mad. {n}" },
+      "week": { "one": "sab. {n}", "other": "mas. {n}" },
+      "month": { "one": "mwezi {n}", "other": "miy. {n}" },
+      "year": { "one": "chaka {n}", "other": "vyaka {n}" }
+    },
+    "ago": "{0} yamala",
+    "inFuture": "mu {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["AM", "PM"],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} yamala",
+    "inFuture": "mu {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["a", "p"],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

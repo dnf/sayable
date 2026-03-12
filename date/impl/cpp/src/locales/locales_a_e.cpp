@@ -201,6 +201,53 @@ const DateLocale& AR() {
     return loc;
 }
 
+// Source: date/locales/src/ay.json
+const DateLocale& AY() {
+    static const DateLocale loc{
+        "ay",
+        {"Chinuqa", "Anata", "Achuqa", "Qasiwi", "Llamayu", "Marat'aqa", "Willkakuti", "Llumpaqa", "Sata", "Taypisata", "Lapaqa", "Jalluqallta"},
+        {"Samaya", "Maytita", "Paytita", "Iritita", "Yunkita", "Chipanata", "Takirita"},
+        "{n}",
+        {},
+        "{day} {month}",
+        "{day} {month} {year}",
+        "jichha uru", "q'aya", "masüru",
+        "",
+        "",
+        "aka {weekday}",
+        "jutir {weekday}",
+        "nayra {weekday}",
+        {"", "", "", "", "", "", "", "", "", "", "", ""},
+        CompactnessOverride{
+            {"Chi", "Ana", "Ach", "Qas", "Lla", "Mar", "Wil", "Llu", "Sat", "Tay", "Lap", "Jal"},
+            {},
+            {"Sam", "May", "Pay", "Iri", "Yun", "Chi", "Tak"},
+            "{n}",
+            {},
+            false,
+            "{day} {month}",
+            "{day} {month} {year}",
+            "",
+            "",
+            ""
+        },
+        CompactnessOverride{
+            {},
+            {},
+            {},
+            "",
+            {},
+            false,
+            "{d}/{m}",
+            "{d}/{m}/{yy}",
+            "",
+            "",
+            ""
+        }
+    };
+    return loc;
+}
+
 // Source: date/locales/src/az.json
 const DateLocale& AZ() {
     static const DateLocale loc{

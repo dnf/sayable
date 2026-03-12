@@ -18,6 +18,7 @@ import SayableTime.Locales.Af as Af
 import SayableTime.Locales.Ak as Ak
 import SayableTime.Locales.Am as Am
 import SayableTime.Locales.Ar as Ar
+import SayableTime.Locales.Ay as Ay
 import SayableTime.Locales.Az as Az
 import SayableTime.Locales.Bci as Bci
 import SayableTime.Locales.Be as Be
@@ -77,20 +78,24 @@ import SayableTime.Locales.Jv as Jv
 import SayableTime.Locales.Ka as Ka
 import SayableTime.Locales.Kbp as Kbp
 import SayableTime.Locales.Kek as Kek
+import SayableTime.Locales.Ki as Ki
 import SayableTime.Locales.Kk as Kk
 import SayableTime.Locales.Kl as Kl
 import SayableTime.Locales.Km as Km
 import SayableTime.Locales.Kn as Kn
 import SayableTime.Locales.Ko as Ko
 import SayableTime.Locales.Kpe as Kpe
+import SayableTime.Locales.Kri as Kri
 import SayableTime.Locales.Ktu as Ktu
 import SayableTime.Locales.Ku as Ku
 import SayableTime.Locales.Kw as Kw
 import SayableTime.Locales.Ky as Ky
+import SayableTime.Locales.Lb as Lb
 import SayableTime.Locales.Lg as Lg
 import SayableTime.Locales.Ln as Ln
 import SayableTime.Locales.Lo as Lo
 import SayableTime.Locales.Lt as Lt
+import SayableTime.Locales.Luo as Luo
 import SayableTime.Locales.Lv as Lv
 import SayableTime.Locales.Mam as Mam
 import SayableTime.Locales.Men as Men
@@ -111,6 +116,7 @@ import SayableTime.Locales.Nd as Nd
 import SayableTime.Locales.Ne as Ne
 import SayableTime.Locales.Ng as Ng
 import SayableTime.Locales.Nl as Nl
+import SayableTime.Locales.Nr as Nr
 import SayableTime.Locales.Nso as Nso
 import SayableTime.Locales.Nus as Nus
 import SayableTime.Locales.Ny as Ny
@@ -159,15 +165,18 @@ import SayableTime.Locales.Tn as Tn
 import SayableTime.Locales.Tpi as Tpi
 import SayableTime.Locales.Tr as Tr
 import SayableTime.Locales.Ts as Ts
+import SayableTime.Locales.Tum as Tum
 import SayableTime.Locales.Tzm as Tzm
 import SayableTime.Locales.Uk as Uk
 import SayableTime.Locales.Umb as Umb
 import SayableTime.Locales.Ur as Ur
 import SayableTime.Locales.Uz as Uz
+import SayableTime.Locales.Ve as Ve
 import SayableTime.Locales.Vi as Vi
 import SayableTime.Locales.Vmw as Vmw
 import SayableTime.Locales.Wo as Wo
 import SayableTime.Locales.Xh as Xh
+import SayableTime.Locales.Yao as Yao
 import SayableTime.Locales.Yo as Yo
 import SayableTime.Locales.Yue as Yue
 import SayableTime.Locales.Zdj as Zdj
@@ -182,6 +191,7 @@ allLocales =
         , ( "ak", Ak.locale )
         , ( "am", Am.locale )
         , ( "ar", Ar.locale )
+        , ( "ay", Ay.locale )
         , ( "az", Az.locale )
         , ( "bci", Bci.locale )
         , ( "be", Be.locale )
@@ -241,20 +251,24 @@ allLocales =
         , ( "ka", Ka.locale )
         , ( "kbp", Kbp.locale )
         , ( "kek", Kek.locale )
+        , ( "ki", Ki.locale )
         , ( "kk", Kk.locale )
         , ( "kl", Kl.locale )
         , ( "km", Km.locale )
         , ( "kn", Kn.locale )
         , ( "ko", Ko.locale )
         , ( "kpe", Kpe.locale )
+        , ( "kri", Kri.locale )
         , ( "ktu", Ktu.locale )
         , ( "ku", Ku.locale )
         , ( "kw", Kw.locale )
         , ( "ky", Ky.locale )
+        , ( "lb", Lb.locale )
         , ( "lg", Lg.locale )
         , ( "ln", Ln.locale )
         , ( "lo", Lo.locale )
         , ( "lt", Lt.locale )
+        , ( "luo", Luo.locale )
         , ( "lv", Lv.locale )
         , ( "mam", Mam.locale )
         , ( "men", Men.locale )
@@ -275,6 +289,7 @@ allLocales =
         , ( "ne", Ne.locale )
         , ( "ng", Ng.locale )
         , ( "nl", Nl.locale )
+        , ( "nr", Nr.locale )
         , ( "nso", Nso.locale )
         , ( "nus", Nus.locale )
         , ( "ny", Ny.locale )
@@ -323,15 +338,18 @@ allLocales =
         , ( "tpi", Tpi.locale )
         , ( "tr", Tr.locale )
         , ( "ts", Ts.locale )
+        , ( "tum", Tum.locale )
         , ( "tzm", Tzm.locale )
         , ( "uk", Uk.locale )
         , ( "umb", Umb.locale )
         , ( "ur", Ur.locale )
         , ( "uz", Uz.locale )
+        , ( "ve", Ve.locale )
         , ( "vi", Vi.locale )
         , ( "vmw", Vmw.locale )
         , ( "wo", Wo.locale )
         , ( "xh", Xh.locale )
+        , ( "yao", Yao.locale )
         , ( "yo", Yo.locale )
         , ( "yue", Yue.locale )
         , ( "zdj", Zdj.locale )

@@ -1,0 +1,35 @@
+{
+  "code": "tum",
+  "name": "Tumbuka",
+  "months": [
+    "Janyuwale", "Feburuware", "Marichi", "Epurelo", "Meyi", "Juni",
+    "Julayi", "Ogasiti", "Seputembala", "Okutobala", "Novembala", "Disembala"
+  ],
+  "weekdays": [
+    "Sabata", "Mande", "Chibiri", "Chitatu",
+    "Chinayi", "Chinkondi", "Chisulo"
+  ],
+  "dayFormat": "{n}",
+  "datePattern": "{day} {month}",
+  "datePatternWithYear": "{day} {month} {year}",
+  "today": "lero",
+  "tomorrow": "namachero",
+  "yesterday": "mayiro",
+  "thisWeekday": "{weekday} yino",
+  "nextWeekday": "{weekday} yikwiza",
+  "lastWeekday": "{weekday} yamala",
+  "short": {
+    "months": [
+      "Jan", "Feb", "Mar", "Epu", "Mey", "Jun",
+      "Jul", "Oga", "Sep", "Oku", "Nov", "Dis"
+    ],
+    "weekdays": ["Sab", "Man", "Chb", "Cht", "Chn", "Chk", "Chs"],
+    "dayFormat": "{n}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} {year}"
+  },
+  "compact": {
+    "datePattern": "{d}/{m}",
+    "datePatternWithYear": "{d}/{m}/{yy}"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "code": "yao",
+  "name": "Yao",
+  "pluralRule": "one_other",
+  "units": {
+    "day": { "one": "lisiku {n}", "other": "masiku {n}" },
+    "week": { "one": "juma {n}", "other": "majuma {n}" },
+    "month": { "one": "ngondo {n}", "other": "mingondo {n}" },
+    "year": { "one": "chaka {n}", "other": "vyaka {n}" }
+  },
+  "half": "{0} na nusu",
+  "delimiter": ", ",
+  "justBorn": "Mwanache jwabadwa",
+  "stages": {
+    "newborn": "Mwanache jwabadwa",
+    "infant": "Kamwanache",
+    "toddler": "Kamwanache kanandi",
+    "child": "Mwanache",
+    "teenager": "Jeje",
+    "adult": "Mundu"
+  },
+  "short": {
+    "units": {
+      "day": { "one": "lis. {n}", "other": "mas. {n}" },
+      "week": { "one": "juma {n}", "other": "maj. {n}" },
+      "month": { "one": "ngo. {n}", "other": "min. {n}" },
+      "year": { "one": "chaka {n}", "other": "vyaka {n}" }
+    }
+  },
+  "compact": {
+    "units": {
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": ""
+  }
+}

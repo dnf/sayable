@@ -525,6 +525,22 @@ const TimeLocale& TS() {
     return loc;
 }
 
+// Source: time/locales/src/tum.json
+const TimeLocale& TUM() {
+    static const TimeLocale loc{
+        "tum",
+        ClockConfig{
+            {"khumi na yibili", "chimoza", "vibili", "vitatu", "vinayi", "vikhondi", "vikhondi na kamoza", "vikhondi na tubili", "vikhondi na tutatu", "vikhondi na tunayi", "khumi", "khumi na kamoza"},
+            "pakati pa usiku",
+            "muhanya",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/tzm.json
 const TimeLocale& TZM() {
     static const TimeLocale loc{
@@ -605,6 +621,22 @@ const TimeLocale& UZ() {
     return loc;
 }
 
+// Source: time/locales/src/ve.json
+const TimeLocale& VE() {
+    static const TimeLocale loc{
+        "ve",
+        ClockConfig{
+            {"fumimbili", "thihi", "mbili", "raru", "ina", "thanu", "rathi", "sumbe", "malo", "tahe", "fumi", "fuminthihi"},
+            "vhukati ha vhusiku",
+            "vhukati ha masiari",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/vi.json
 const TimeLocale& VI() {
     static const TimeLocale loc{
@@ -661,6 +693,22 @@ const TimeLocale& XH() {
             {"ishumi elinambini", "inye", "ezimbini", "ezintathu", "ezine", "ezintlanu", "ezintandathu", "ezisixhenxe", "ezisibhozo", "ethoba", "ishumi", "ishumi elinanye"},
             "ezinzulwini zobusuku",
             "emini",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/yao.json
+const TimeLocale& YAO() {
+    static const TimeLocale loc{
+        "yao",
+        ClockConfig{
+            {"likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo"},
+            "pakati pa usiku",
+            "pakati pa lisiku",
             {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},

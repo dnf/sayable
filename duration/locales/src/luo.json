@@ -1,0 +1,56 @@
+{
+  "code": "luo",
+  "name": "Dholuo",
+  "pluralRule": "one_other",
+  "units": {
+    "second": "sekunde {n}",
+    "minute": "dakika {n}",
+    "hour": "saa {n}",
+    "day": { "one": "odiechieng' {n}", "other": "ndalo {n}" },
+    "week": { "one": "juma {n}", "other": "jumbe {n}" },
+    "month": { "one": "dwe {n}", "other": "dweche {n}" },
+    "year": { "one": "higa {n}", "other": "higni {n}" }
+  },
+  "half": "{0} gi nus",
+  "delimiter": ", ",
+  "justNow": "sani",
+  "ago": "{0} mokalo",
+  "inFuture": "bang' {0}",
+  "short": {
+    "units": {
+      "second": "sek. {n}",
+      "minute": "dak. {n}",
+      "hour": "saa {n}",
+      "day": { "one": "odie. {n}", "other": "ndalo {n}" },
+      "week": { "one": "juma {n}", "other": "jumbe {n}" },
+      "month": { "one": "dwe {n}", "other": "dwe. {n}" },
+      "year": { "one": "higa {n}", "other": "higni {n}" }
+    },
+    "ago": "{0} mokalo",
+    "inFuture": "bang' {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["AM", "PM"],
+      "format": "{h}:{mm} {ampm}"
+    }
+  },
+  "compact": {
+    "units": {
+      "second": "{n}s",
+      "minute": "{n}m",
+      "hour": "{n}h",
+      "day": "{n}d",
+      "week": "{n}w",
+      "month": "{n}m",
+      "year": "{n}y"
+    },
+    "delimiter": "",
+    "ago": "{0} mokalo",
+    "inFuture": "bang' {0}",
+    "clock": {
+      "use24h": false,
+      "amPm": ["a", "p"],
+      "format": "{h}:{mm}{ampm}"
+    }
+  }
+}

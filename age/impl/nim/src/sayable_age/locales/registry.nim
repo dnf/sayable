@@ -16,6 +16,7 @@ import af
 import ak
 import am
 import ar
+import ay
 import az
 import bci
 import be
@@ -75,20 +76,24 @@ import jv
 import ka
 import kbp
 import kek
+import ki
 import kk
 import kl
 import km
 import kn
 import ko
 import kpe
+import kri
 import ktu
 import ku
 import kw
 import ky
+import lb
 import lg
 import ln
 import lo
 import lt
+import luo
 import lv
 import mam
 import men
@@ -109,6 +114,7 @@ import nd
 import ne
 import ng
 import nl
+import nr
 import nso
 import nus
 import ny
@@ -157,15 +163,18 @@ import tn
 import tpi
 import tr
 import ts
+import tum
 import tzm
 import uk
 import umb
 import ur
 import uz
+import ve
 import vi
 import vmw
 import wo
 import xh
+import yao
 import yo
 import yue
 import zdj
@@ -179,6 +188,7 @@ let allLocales = {
   "ak": AK,
   "am": AM,
   "ar": AR,
+  "ay": AY,
   "az": AZ,
   "bci": BCI,
   "be": BE,
@@ -238,20 +248,24 @@ let allLocales = {
   "ka": KA,
   "kbp": KBP,
   "kek": KEK,
+  "ki": KI,
   "kk": KK,
   "kl": KL,
   "km": KM,
   "kn": KN,
   "ko": KO,
   "kpe": KPE,
+  "kri": KRI,
   "ktu": KTU,
   "ku": KU,
   "kw": KW,
   "ky": KY,
+  "lb": LB,
   "lg": LG,
   "ln": LN,
   "lo": LO,
   "lt": LT,
+  "luo": LUO,
   "lv": LV,
   "mam": MAM,
   "men": MEN,
@@ -272,6 +286,7 @@ let allLocales = {
   "ne": NE,
   "ng": NG,
   "nl": NL,
+  "nr": NR,
   "nso": NSO,
   "nus": NUS,
   "ny": NY,
@@ -320,15 +335,18 @@ let allLocales = {
   "tpi": TPI,
   "tr": TR,
   "ts": TS,
+  "tum": TUM,
   "tzm": TZM,
   "uk": UK,
   "umb": UMB,
   "ur": UR,
   "uz": UZ,
+  "ve": VE,
   "vi": VI,
   "vmw": VMW,
   "wo": WO,
   "xh": XH,
+  "yao": YAO,
   "yo": YO,
   "yue": YUE,
   "zdj": ZDJ,

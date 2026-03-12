@@ -1928,6 +1928,57 @@ class LocalesEK {
         null
     )
 
+    // Source: duration/locales/src/ki.json
+    // ================================================================
+    // KI — Kikuyu
+    // ================================================================
+    static final DurationLocale KI = new DurationLocale(
+        'ki',
+        { int n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER },
+        new Units(
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'sekunde {n}', (PluralCategory.OTHER): 'sekunde {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ndagĩka {n}', (PluralCategory.OTHER): 'ndagĩka {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ithaa {n}', (PluralCategory.OTHER): 'mathaa {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mũthenya {n}', (PluralCategory.OTHER): 'mĩthenya {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'kiumia {n}', (PluralCategory.OTHER): 'kiumia {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwerĩ {n}', (PluralCategory.OTHER): 'mĩerĩ {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'mĩaka {n}'])
+        ),
+        '{0} na nusu',
+        ', ',
+        'ũmũthĩ',
+        '{0} ĩhĩtũkĩte',
+        '{0} ĩyothe',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sek. {n}'),
+            UnitForms.simpleUnit('ndag. {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'ithaa {n}', (PluralCategory.OTHER): 'mathaa {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mũth. {n}', (PluralCategory.OTHER): 'mĩth. {n}']),
+            UnitForms.simpleUnit('kiu. {n}'),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwerĩ {n}', (PluralCategory.OTHER): 'mĩerĩ {n}']),
+            UnitForms.pluralUnit([(PluralCategory.ONE): 'mwaka {n}', (PluralCategory.OTHER): 'mĩaka {n}']),
+            null,
+            null,
+            '{0} ĩhĩtũkĩte',
+            '{0} ĩyothe'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} ĩhĩtũkĩte',
+            '{0} ĩyothe'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -2229,6 +2280,57 @@ class LocalesEK {
             '',
             '{0} pɔlɔ',
             'ya {0}'
+        ),
+        null,
+        null
+    )
+
+    // Source: duration/locales/src/kri.json
+    // ================================================================
+    // KRI — Krio
+    // ================================================================
+    static final DurationLocale KRI = new DurationLocale(
+        'kri',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('{n} sekon'),
+            UnitForms.simpleUnit('{n} minit'),
+            UnitForms.simpleUnit('{n} awa'),
+            UnitForms.simpleUnit('{n} de'),
+            UnitForms.simpleUnit('{n} wik'),
+            UnitForms.simpleUnit('{n} mont'),
+            UnitForms.simpleUnit('{n} ia')
+        ),
+        '{n} na af',
+        ', ',
+        'jos naw',
+        '{0} bak',
+        'na {0}',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n} sek.'),
+            UnitForms.simpleUnit('{n} min.'),
+            UnitForms.simpleUnit('{n} awa'),
+            UnitForms.simpleUnit('{n} de'),
+            UnitForms.simpleUnit('{n} wik'),
+            UnitForms.simpleUnit('{n} mont'),
+            UnitForms.simpleUnit('{n} ia'),
+            null,
+            null,
+            '{0} bak',
+            'na {0}'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} bak',
+            'na {0}'
         ),
         null,
         null

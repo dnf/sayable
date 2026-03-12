@@ -509,6 +509,22 @@ const TimeLocale& KEK() {
     return loc;
 }
 
+// Source: time/locales/src/ki.json
+const TimeLocale& KI() {
+    static const TimeLocale loc{
+        "ki",
+        ClockConfig{
+            {"ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano", "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe"},
+            "ũtukũ gatagatĩ",
+            "mũthenya gatagatĩ",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"Kiroko", "Hwaĩ-inĩ"}}},
+        CompactnessOverride{ShortClockConfig{true, "{h}:{mm}", {"", ""}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/kk.json
 const TimeLocale& KK() {
     static const TimeLocale loc{
@@ -598,6 +614,22 @@ const TimeLocale& KPE() {
             "kpindi kɔlɛ",
             "tili-ma",
             {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
+// Source: time/locales/src/kri.json
+const TimeLocale& KRI() {
+    static const TimeLocale loc{
+        "kri",
+        ClockConfig{
+            {"twelv", "wan", "tu", "tri", "fo", "fayv", "siks", "sevin", "et", "nayn", "ten", "ilevin"},
+            "midul net",
+            "midul de",
+            {{0, "{h} oklok"}, {5, "fayv pas {h}"}, {10, "ten pas {h}"}, {15, "kwota pas {h}"}, {20, "twenti pas {h}"}, {25, "twenti fayv pas {h}"}, {30, "af pas {h}"}, {35, "twenti fayv tu {next_h}"}, {40, "twenti tu {next_h}"}, {45, "kwota tu {next_h}"}, {50, "ten tu {next_h}"}, {55, "fayv tu {next_h}"}}
         },
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
         CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},

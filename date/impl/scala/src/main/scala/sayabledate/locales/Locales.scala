@@ -13,7 +13,7 @@ package sayabledate.locales
 import sayabledate._
 
 /**
- * All 159 locale definitions for sayable-date.
+ * All 168 locale definitions for sayable-date.
  */
 private object Batch0 {
     // Source: date/locales/src/af.json
@@ -138,6 +138,37 @@ private object Batch0 {
         short = Some(CompactnessOverride(
             months = Some(List("ينا", "فبر", "مار", "أبر", "ماي", "يون", "يول", "أغس", "سبت", "أكت", "نوف", "ديس")),
             weekdays = Some(List("أحد", "إثن", "ثلا", "أرب", "خمي", "جمع", "سبت")),
+            dayFormat = Some("{n}"),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}/{m}"),
+            datePatternWithYear = Some("{d}/{m}/{yy}"),
+        )),
+    )
+
+    // Source: date/locales/src/ay.json
+    // ================================================================
+    // AY — Aymara
+    // ================================================================
+    val AY: DateLocale = DateLocale(
+        code = "ay",
+        months = List("Chinuqa", "Anata", "Achuqa", "Qasiwi", "Llamayu", "Marat'aqa", "Willkakuti", "Llumpaqa", "Sata", "Taypisata", "Lapaqa", "Jalluqallta"),
+        weekdays = List("Samaya", "Maytita", "Paytita", "Iritita", "Yunkita", "Chipanata", "Takirita"),
+        dayFormat = "{n}",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "jichha uru",
+        tomorrow = "q'aya",
+        yesterday = "masüru",
+        thisWeekday = Some("aka {weekday}"),
+        nextWeekday = Some("jutir {weekday}"),
+        lastWeekday = Some("nayra {weekday}"),
+        short = Some(CompactnessOverride(
+            months = Some(List("Chi", "Ana", "Ach", "Qas", "Lla", "Mar", "Wil", "Llu", "Sat", "Tay", "Lap", "Jal")),
+            weekdays = Some(List("Sam", "May", "Pay", "Iri", "Yun", "Chi", "Tak")),
             dayFormat = Some("{n}"),
             datePattern = Some("{day} {month}"),
             datePatternWithYear = Some("{day} {month} {year}"),
@@ -575,7 +606,9 @@ private object Batch0 {
             datePatternWithYear = Some("{m}/{d}/{yy}"),
         )),
     )
+}
 
+private object Batch1 {
     // Source: date/locales/src/cs.json
     // ================================================================
     // CS — Czech
@@ -609,9 +642,7 @@ private object Batch0 {
             datePatternWithYear = Some("{d}.{m}.{yy}"),
         )),
     )
-}
 
-private object Batch1 {
     // Source: date/locales/src/cy.json
     // ================================================================
     // CY — Welsh
@@ -1173,7 +1204,9 @@ private object Batch1 {
             datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
+}
 
+private object Batch2 {
     // Source: date/locales/src/fi.json
     // ================================================================
     // FI — Finnish
@@ -1207,9 +1240,7 @@ private object Batch1 {
             datePatternWithYear = Some("{d}.{m}.{yy}"),
         )),
     )
-}
 
-private object Batch2 {
     // Source: date/locales/src/fil.json
     // ================================================================
     // FIL — Filipino
@@ -1769,7 +1800,9 @@ private object Batch2 {
             datePatternWithYear = Some("{yy}.{m}.{d}."),
         )),
     )
+}
 
+private object Batch3 {
     // Source: date/locales/src/hy.json
     // ================================================================
     // HY — Armenian
@@ -1802,9 +1835,7 @@ private object Batch2 {
             datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
-}
 
-private object Batch3 {
     // Source: date/locales/src/id.json
     // ================================================================
     // ID — Indonesian
@@ -2100,6 +2131,37 @@ private object Batch3 {
         )),
     )
 
+    // Source: date/locales/src/ki.json
+    // ================================================================
+    // KI — Kikuyu
+    // ================================================================
+    val KI: DateLocale = DateLocale(
+        code = "ki",
+        months = List("Njenuarĩ", "Mwere wa kerĩ", "Mwere wa gatatũ", "Mwere wa kana", "Mwere wa gatano", "Mwere wa gatandatũ", "Mwere wa mũgwanja", "Mwere wa kanana", "Mwere wa kenda", "Mwere wa ikũmi", "Mwere wa ikũmi na ũmwe", "Ndithemba"),
+        weekdays = List("Kiumia", "Njumatatũ", "Njumaine", "Njumatana", "Aramithi", "Njumaa", "Njumamothi"),
+        dayFormat = "{n}",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "Ũmũthĩ",
+        tomorrow = "Rũciũ",
+        yesterday = "Ira",
+        thisWeekday = Some("{weekday} ĩno"),
+        nextWeekday = Some("{weekday} ĩyothe"),
+        lastWeekday = Some("{weekday} ĩrĩa ĩhĩtũkĩte"),
+        short = Some(CompactnessOverride(
+            months = Some(List("JEN", "WKR", "WGT", "WKN", "WTN", "WTD", "WMJ", "WNN", "WKD", "WIK", "WMW", "DIT")),
+            weekdays = Some(List("KMA", "NTT", "NMN", "NMT", "ART", "NMA", "NMM")),
+            dayFormat = Some("{n}"),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}/{m}"),
+            datePatternWithYear = Some("{d}/{m}/{yy}"),
+        )),
+    )
+
     // Source: date/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -2298,6 +2360,41 @@ private object Batch3 {
         )),
     )
 
+    // Source: date/locales/src/kri.json
+    // ================================================================
+    // KRI — Krio
+    // ================================================================
+    val KRI: DateLocale = DateLocale(
+        code = "kri",
+        months = List("Jenyuari", "Febyuari", "Mach", "Epril", "Me", "Jun", "Julay", "Ogost", "Septemba", "Oktoba", "Novemba", "Disemba"),
+        weekdays = List("Sonde", "Monde", "Tyusde", "Wensde", "Tosde", "Frayde", "Satide"),
+        dayFormat = "{n}",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "tide",
+        tomorrow = "tumara",
+        yesterday = "yestade",
+        dayAfterTomorrow = Some("afta tumara"),
+        dayBeforeYesterday = Some("bifo yestade"),
+        thisWeekday = Some("dis {weekday}"),
+        nextWeekday = Some("neks {weekday}"),
+        lastWeekday = Some("las {weekday}"),
+        short = Some(CompactnessOverride(
+            months = Some(List("Jen", "Feb", "Mach", "Ep", "Me", "Jun", "Jul", "Og", "Sep", "Ok", "Nov", "Dis")),
+            weekdays = Some(List("Son", "Mon", "Tyu", "Wen", "Tos", "Fra", "Sat")),
+            dayFormat = Some("{n}"),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}/{m}"),
+            datePatternWithYear = Some("{d}/{m}/{yy}"),
+        )),
+    )
+}
+
+private object Batch4 {
     // Source: date/locales/src/ktu.json
     // ================================================================
     // KTU — Kituba
@@ -2394,9 +2491,7 @@ private object Batch3 {
             datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
-}
 
-private object Batch4 {
     // Source: date/locales/src/ky.json
     // ================================================================
     // KY — Kyrgyz
@@ -2427,6 +2522,39 @@ private object Batch4 {
         compact = Some(CompactnessOverride(
             datePattern = Some("{d}/{m}"),
             datePatternWithYear = Some("{d}/{m}/{yy}"),
+        )),
+    )
+
+    // Source: date/locales/src/lb.json
+    // ================================================================
+    // LB — Luxembourgish
+    // ================================================================
+    val LB: DateLocale = DateLocale(
+        code = "lb",
+        months = List("Januar", "Februar", "Mäerz", "Abrëll", "Mee", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"),
+        weekdays = List("Sonndeg", "Méindeg", "Dënschdeg", "Mëttwoch", "Donneschdeg", "Freideg", "Samschdeg"),
+        dayFormat = "{n}.",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "haut",
+        tomorrow = "muer",
+        yesterday = "gëschter",
+        dayAfterTomorrow = Some("iwwermuer"),
+        dayBeforeYesterday = Some("virgëschter"),
+        thisWeekday = Some("dësen {weekday}"),
+        nextWeekday = Some("nächsten {weekday}"),
+        lastWeekday = Some("leschten {weekday}"),
+        short = Some(CompactnessOverride(
+            months = Some(List("Jan.", "Feb.", "Mäe.", "Abr.", "Mee", "Jun.", "Jul.", "Aug.", "Sep.", "Okt.", "Nov.", "Dez.")),
+            weekdays = Some(List("So.", "Mé.", "Dë.", "Më.", "Do.", "Fr.", "Sa.")),
+            dayFormat = Some("{n}."),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}.{m}."),
+            datePatternWithYear = Some("{d}.{m}.{yy}"),
         )),
     )
 
@@ -2560,6 +2688,38 @@ private object Batch4 {
         compact = Some(CompactnessOverride(
             datePattern = Some("{m}-{d}"),
             datePatternWithYear = Some("{yy}-{m}-{d}"),
+        )),
+    )
+
+    // Source: date/locales/src/luo.json
+    // ================================================================
+    // LUO — Dholuo
+    // ================================================================
+    val LUO: DateLocale = DateLocale(
+        code = "luo",
+        months = List("Dwe mar Achiel", "Dwe mar Ariyo", "Dwe mar Adek", "Dwe mar Ang'wen", "Dwe mar Abich", "Dwe mar Auchiel", "Dwe mar Abiriyo", "Dwe mar Aboro", "Dwe mar Ochiko", "Dwe mar Apar", "Dwe mar Apar gi Achiel", "Dwe mar Apar gi Ariyo"),
+        weekdays = List("Jumapil", "Wuok Tich", "Tich Ariyo", "Tich Adek", "Tich Ang'wen", "Tich Abich", "Chieng' Ngeso"),
+        dayFormat = "{n}",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "kawuono",
+        tomorrow = "kiny",
+        yesterday = "nyoro",
+        dayAfterTomorrow = Some("orucha"),
+        thisWeekday = Some("{weekday} ma"),
+        nextWeekday = Some("{weekday} mabiro"),
+        lastWeekday = Some("{weekday} mokalo"),
+        short = Some(CompactnessOverride(
+            months = Some(List("Ach", "Ari", "Ade", "Ang", "Abi", "Auc", "Abr", "Abo", "Och", "Apa", "ApA", "ApR")),
+            weekdays = Some(List("JMP", "WUT", "TAR", "TAD", "TAN", "TAB", "ChN")),
+            dayFormat = Some("{n}"),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}/{m}"),
+            datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
 
@@ -2824,7 +2984,9 @@ private object Batch4 {
             datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
+}
 
+private object Batch5 {
     // Source: date/locales/src/mn.json
     // ================================================================
     // MN — Mongolian
@@ -2989,9 +3151,7 @@ private object Batch4 {
             datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
-}
 
-private object Batch5 {
     // Source: date/locales/src/mt.json
     // ================================================================
     // MT — Maltese
@@ -3223,6 +3383,37 @@ private object Batch5 {
         )),
     )
 
+    // Source: date/locales/src/nr.json
+    // ================================================================
+    // NR — Southern Ndebele
+    // ================================================================
+    val NR: DateLocale = DateLocale(
+        code = "nr",
+        months = List("uTjhirhweni", "uMhlolanja", "iNtaka", "iSihlabantangana", "uMrhayili", "uMgwengweni", "uVelabahlinze", "uRhoboyi", "uKhukhulamungu", "iSewula", "uSikinyikhaba", "uNobayeni"),
+        weekdays = List("uSonto", "uMvulo", "uLesibili", "uLesithathu", "uLesine", "uLesihlanu", "uMgqibelo"),
+        dayFormat = "{n}",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "namhlanje",
+        tomorrow = "kusasa",
+        yesterday = "izolo",
+        thisWeekday = Some("le {weekday}"),
+        nextWeekday = Some("{weekday} elizako"),
+        lastWeekday = Some("{weekday} elidlulileko"),
+        short = Some(CompactnessOverride(
+            months = Some(List("Tjh", "Mhl", "Nta", "Sih", "Mrh", "Mgw", "Vel", "Rho", "Khu", "Sew", "Sik", "Nob")),
+            weekdays = Some(List("Son", "Mvu", "Bil", "Tha", "Sin", "Hla", "Mgq")),
+            dayFormat = Some("{n}"),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}/{m}"),
+            datePatternWithYear = Some("{d}/{m}/{yy}"),
+        )),
+    )
+
     // Source: date/locales/src/nso.json
     // ================================================================
     // NSO — Northern Sotho
@@ -3387,7 +3578,9 @@ private object Batch5 {
             datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
+}
 
+private object Batch6 {
     // Source: date/locales/src/pa.json
     // ================================================================
     // PA — Punjabi
@@ -3586,9 +3779,7 @@ private object Batch5 {
             datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
-}
 
-private object Batch6 {
     // Source: date/locales/src/qu.json
     // ================================================================
     // QU — Quechua
@@ -3985,7 +4176,9 @@ private object Batch6 {
             datePatternWithYear = Some("{d}.{m}.{yy}"),
         )),
     )
+}
 
+private object Batch7 {
     // Source: date/locales/src/sl.json
     // ================================================================
     // SL — Slovenian
@@ -4184,9 +4377,7 @@ private object Batch6 {
             datePatternWithYear = Some("{d}.{m}.{yy}"),
         )),
     )
-}
 
-private object Batch7 {
     // Source: date/locales/src/ss.json
     // ================================================================
     // SS — siSwati
@@ -4582,7 +4773,9 @@ private object Batch7 {
             datePatternWithYear = Some("{d}/{m}/{yy}"),
         )),
     )
+}
 
+private object Batch8 {
     // Source: date/locales/src/ti.json
     // ================================================================
     // TI — Tigrinya
@@ -4780,9 +4973,7 @@ private object Batch7 {
             datePatternWithYear = Some("{d}.{m}.{yy}"),
         )),
     )
-}
 
-private object Batch8 {
     // Source: date/locales/src/ts.json
     // ================================================================
     // TS — Tsonga
@@ -4806,6 +4997,37 @@ private object Batch8 {
         short = Some(CompactnessOverride(
             months = Some(List("Sun", "Nye", "Nyk", "Dzi", "Mud", "Kho", "Maw", "Mha", "Ndz", "Nhl", "Huk", "N'w")),
             weekdays = Some(List("Son", "Mus", "Bir", "Har", "Mun", "Tlh", "Mug")),
+            dayFormat = Some("{n}"),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}/{m}"),
+            datePatternWithYear = Some("{d}/{m}/{yy}"),
+        )),
+    )
+
+    // Source: date/locales/src/tum.json
+    // ================================================================
+    // TUM — Tumbuka
+    // ================================================================
+    val TUM: DateLocale = DateLocale(
+        code = "tum",
+        months = List("Janyuwale", "Feburuware", "Marichi", "Epurelo", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputembala", "Okutobala", "Novembala", "Disembala"),
+        weekdays = List("Sabata", "Mande", "Chibiri", "Chitatu", "Chinayi", "Chinkondi", "Chisulo"),
+        dayFormat = "{n}",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "lero",
+        tomorrow = "namachero",
+        yesterday = "mayiro",
+        thisWeekday = Some("{weekday} yino"),
+        nextWeekday = Some("{weekday} yikwiza"),
+        lastWeekday = Some("{weekday} yamala"),
+        short = Some(CompactnessOverride(
+            months = Some(List("Jan", "Feb", "Mar", "Epu", "Mey", "Jun", "Jul", "Oga", "Sep", "Oku", "Nov", "Dis")),
+            weekdays = Some(List("Sab", "Man", "Chb", "Cht", "Chn", "Chk", "Chs")),
             dayFormat = Some("{n}"),
             datePattern = Some("{day} {month}"),
             datePatternWithYear = Some("{day} {month} {year}"),
@@ -4980,6 +5202,38 @@ private object Batch8 {
         )),
     )
 
+    // Source: date/locales/src/ve.json
+    // ================================================================
+    // VE — Venda
+    // ================================================================
+    val VE: DateLocale = DateLocale(
+        code = "ve",
+        months = List("Phando", "Luhuhi", "Thafamuhwe", "Lambamai", "Shundunthule", "Fulwi", "Fulwana", "Thangule", "Khubvumedzi", "Tshimedzi", "Lara", "Nyendavhusiku"),
+        weekdays = List("Swondaha", "Musumbuluwo", "Lavhuvhili", "Lavhuraru", "Lavhuna", "Lavhutanu", "Mugivhela"),
+        dayFormat = "{n}",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "namusi",
+        tomorrow = "matshelo",
+        yesterday = "mulovha",
+        dayBeforeYesterday = Some("mbamulovha"),
+        thisWeekday = Some("{weekday} ino"),
+        nextWeekday = Some("{weekday} i daho"),
+        lastWeekday = Some("{weekday} yo fhiraho"),
+        short = Some(CompactnessOverride(
+            months = Some(List("Pha", "Luh", "Tha", "Lam", "Shu", "Ful", "Fuw", "Thg", "Khu", "Tsh", "Lar", "Nye")),
+            weekdays = Some(List("Swo", "Mus", "Vhi", "Rar", "Na", "Tan", "Mug")),
+            dayFormat = Some("{n}"),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}/{m}"),
+            datePatternWithYear = Some("{d}/{m}/{yy}"),
+        )),
+    )
+
     // Source: date/locales/src/vi.json
     // ================================================================
     // VI — Vietnamese
@@ -5102,6 +5356,39 @@ private object Batch8 {
         short = Some(CompactnessOverride(
             months = Some(List("Jan", "Feb", "Mat", "Epr", "Mey", "Jun", "Jul", "Aga", "Sep", "Okt", "Nov", "Dis")),
             weekdays = Some(List("Caw", "Mvu", "Bin", "Tha", "Sin", "Hla", "Mgq")),
+            dayFormat = Some("{n}"),
+            datePattern = Some("{day} {month}"),
+            datePatternWithYear = Some("{day} {month} {year}"),
+        )),
+        compact = Some(CompactnessOverride(
+            datePattern = Some("{d}/{m}"),
+            datePatternWithYear = Some("{d}/{m}/{yy}"),
+        )),
+    )
+}
+
+private object Batch9 {
+    // Source: date/locales/src/yao.json
+    // ================================================================
+    // YAO — Yao
+    // ================================================================
+    val YAO: DateLocale = DateLocale(
+        code = "yao",
+        months = List("Janyuwale", "Febuwale", "Malichi", "Epireli", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputemba", "Okutoba", "Novemba", "Disemba"),
+        weekdays = List("Lisiku lya Jumapili", "Lisiku lya kwanda", "Lisiku lya wili", "Lisiku lya tatu", "Lisiku lya ncece", "Lisiku lya nsano", "Lisiku lya Juma"),
+        dayFormat = "{n}",
+        dayFormatExceptions = Map.empty,
+        datePattern = "{day} {month}",
+        datePatternWithYear = "{day} {month} {year}",
+        today = "lelo",
+        tomorrow = "julo",
+        yesterday = "liiso",
+        thisWeekday = Some("{weekday} lino"),
+        nextWeekday = Some("{weekday} likwisa"),
+        lastWeekday = Some("{weekday} lyapite"),
+        short = Some(CompactnessOverride(
+            months = Some(List("Jan", "Feb", "Mal", "Epi", "Mey", "Jun", "Jul", "Oga", "Sep", "Oku", "Nov", "Dis")),
+            weekdays = Some(List("Jpi", "Kwa", "Wil", "Tat", "Nce", "Nsa", "Jma")),
             dayFormat = Some("{n}"),
             datePattern = Some("{day} {month}"),
             datePatternWithYear = Some("{day} {month} {year}"),
@@ -5284,6 +5571,7 @@ object Locales {
     val AK: DateLocale = Batch0.AK
     val AM: DateLocale = Batch0.AM
     val AR: DateLocale = Batch0.AR
+    val AY: DateLocale = Batch0.AY
     val AZ: DateLocale = Batch0.AZ
     val BCI: DateLocale = Batch0.BCI
     val BE: DateLocale = Batch0.BE
@@ -5297,7 +5585,7 @@ object Locales {
     val CA: DateLocale = Batch0.CA
     val CAK: DateLocale = Batch0.CAK
     val CEB: DateLocale = Batch0.CEB
-    val CS: DateLocale = Batch0.CS
+    val CS: DateLocale = Batch1.CS
     val CY: DateLocale = Batch1.CY
     val DA: DateLocale = Batch1.DA
     val DE: DateLocale = Batch1.DE
@@ -5315,7 +5603,7 @@ object Locales {
     val FA: DateLocale = Batch1.FA
     val FAN: DateLocale = Batch1.FAN
     val FF: DateLocale = Batch1.FF
-    val FI: DateLocale = Batch1.FI
+    val FI: DateLocale = Batch2.FI
     val FIL: DateLocale = Batch2.FIL
     val FJ: DateLocale = Batch2.FJ
     val FON: DateLocale = Batch2.FON
@@ -5333,7 +5621,7 @@ object Locales {
     val HR: DateLocale = Batch2.HR
     val HT: DateLocale = Batch2.HT
     val HU: DateLocale = Batch2.HU
-    val HY: DateLocale = Batch2.HY
+    val HY: DateLocale = Batch3.HY
     val ID: DateLocale = Batch3.ID
     val IG: DateLocale = Batch3.IG
     val IS: DateLocale = Batch3.IS
@@ -5343,20 +5631,24 @@ object Locales {
     val KA: DateLocale = Batch3.KA
     val KBP: DateLocale = Batch3.KBP
     val KEK: DateLocale = Batch3.KEK
+    val KI: DateLocale = Batch3.KI
     val KK: DateLocale = Batch3.KK
     val KL: DateLocale = Batch3.KL
     val KM: DateLocale = Batch3.KM
     val KN: DateLocale = Batch3.KN
     val KO: DateLocale = Batch3.KO
     val KPE: DateLocale = Batch3.KPE
-    val KTU: DateLocale = Batch3.KTU
-    val KU: DateLocale = Batch3.KU
-    val KW: DateLocale = Batch3.KW
+    val KRI: DateLocale = Batch3.KRI
+    val KTU: DateLocale = Batch4.KTU
+    val KU: DateLocale = Batch4.KU
+    val KW: DateLocale = Batch4.KW
     val KY: DateLocale = Batch4.KY
+    val LB: DateLocale = Batch4.LB
     val LG: DateLocale = Batch4.LG
     val LN: DateLocale = Batch4.LN
     val LO: DateLocale = Batch4.LO
     val LT: DateLocale = Batch4.LT
+    val LUO: DateLocale = Batch4.LUO
     val LV: DateLocale = Batch4.LV
     val MAM: DateLocale = Batch4.MAM
     val MEN: DateLocale = Batch4.MEN
@@ -5365,11 +5657,11 @@ object Locales {
     val MI: DateLocale = Batch4.MI
     val MK: DateLocale = Batch4.MK
     val ML: DateLocale = Batch4.ML
-    val MN: DateLocale = Batch4.MN
-    val MNK: DateLocale = Batch4.MNK
-    val MOS: DateLocale = Batch4.MOS
-    val MR: DateLocale = Batch4.MR
-    val MS: DateLocale = Batch4.MS
+    val MN: DateLocale = Batch5.MN
+    val MNK: DateLocale = Batch5.MNK
+    val MOS: DateLocale = Batch5.MOS
+    val MR: DateLocale = Batch5.MR
+    val MS: DateLocale = Batch5.MS
     val MT: DateLocale = Batch5.MT
     val MY: DateLocale = Batch5.MY
     val NB: DateLocale = Batch5.NB
@@ -5377,17 +5669,18 @@ object Locales {
     val NE: DateLocale = Batch5.NE
     val NG: DateLocale = Batch5.NG
     val NL: DateLocale = Batch5.NL
+    val NR: DateLocale = Batch5.NR
     val NSO: DateLocale = Batch5.NSO
     val NUS: DateLocale = Batch5.NUS
     val NY: DateLocale = Batch5.NY
     val OM: DateLocale = Batch5.OM
     val OR: DateLocale = Batch5.OR
-    val PA: DateLocale = Batch5.PA
-    val PIS: DateLocale = Batch5.PIS
-    val PL: DateLocale = Batch5.PL
-    val POV: DateLocale = Batch5.POV
-    val PS: DateLocale = Batch5.PS
-    val PT: DateLocale = Batch5.PT
+    val PA: DateLocale = Batch6.PA
+    val PIS: DateLocale = Batch6.PIS
+    val PL: DateLocale = Batch6.PL
+    val POV: DateLocale = Batch6.POV
+    val PS: DateLocale = Batch6.PS
+    val PT: DateLocale = Batch6.PT
     val QU: DateLocale = Batch6.QU
     val QUC: DateLocale = Batch6.QUC
     val RO: DateLocale = Batch6.RO
@@ -5400,12 +5693,12 @@ object Locales {
     val SHN: DateLocale = Batch6.SHN
     val SI: DateLocale = Batch6.SI
     val SK: DateLocale = Batch6.SK
-    val SL: DateLocale = Batch6.SL
-    val SN: DateLocale = Batch6.SN
-    val SNK: DateLocale = Batch6.SNK
-    val SO: DateLocale = Batch6.SO
-    val SQ: DateLocale = Batch6.SQ
-    val SR: DateLocale = Batch6.SR
+    val SL: DateLocale = Batch7.SL
+    val SN: DateLocale = Batch7.SN
+    val SNK: DateLocale = Batch7.SNK
+    val SO: DateLocale = Batch7.SO
+    val SQ: DateLocale = Batch7.SQ
+    val SR: DateLocale = Batch7.SR
     val SS: DateLocale = Batch7.SS
     val ST: DateLocale = Batch7.ST
     val SU: DateLocale = Batch7.SU
@@ -5418,61 +5711,66 @@ object Locales {
     val TET: DateLocale = Batch7.TET
     val TG: DateLocale = Batch7.TG
     val TH: DateLocale = Batch7.TH
-    val TI: DateLocale = Batch7.TI
-    val TIG: DateLocale = Batch7.TIG
-    val TK: DateLocale = Batch7.TK
-    val TN: DateLocale = Batch7.TN
-    val TPI: DateLocale = Batch7.TPI
-    val TR: DateLocale = Batch7.TR
+    val TI: DateLocale = Batch8.TI
+    val TIG: DateLocale = Batch8.TIG
+    val TK: DateLocale = Batch8.TK
+    val TN: DateLocale = Batch8.TN
+    val TPI: DateLocale = Batch8.TPI
+    val TR: DateLocale = Batch8.TR
     val TS: DateLocale = Batch8.TS
+    val TUM: DateLocale = Batch8.TUM
     val TZM: DateLocale = Batch8.TZM
     val UK: DateLocale = Batch8.UK
     val UMB: DateLocale = Batch8.UMB
     val UR: DateLocale = Batch8.UR
     val UZ: DateLocale = Batch8.UZ
+    val VE: DateLocale = Batch8.VE
     val VI: DateLocale = Batch8.VI
     val VMW: DateLocale = Batch8.VMW
     val WO: DateLocale = Batch8.WO
     val XH: DateLocale = Batch8.XH
-    val YO: DateLocale = Batch8.YO
-    val YUE: DateLocale = Batch8.YUE
-    val ZDJ: DateLocale = Batch8.ZDJ
-    val ZH: DateLocale = Batch8.ZH
-    val ZU: DateLocale = Batch8.ZU
+    val YAO: DateLocale = Batch9.YAO
+    val YO: DateLocale = Batch9.YO
+    val YUE: DateLocale = Batch9.YUE
+    val ZDJ: DateLocale = Batch9.ZDJ
+    val ZH: DateLocale = Batch9.ZH
+    val ZU: DateLocale = Batch9.ZU
 
     val ALL: Map[String, DateLocale] = Map(
-        "af" -> AF, "ak" -> AK, "am" -> AM, "ar" -> AR, "az" -> AZ,
-        "bci" -> BCI, "be" -> BE, "bem" -> BEM, "bg" -> BG, "bi" -> BI,
-        "bm" -> BM, "bn" -> BN, "br" -> BR, "bs" -> BS, "ca" -> CA,
-        "cak" -> CAK, "ceb" -> CEB, "cs" -> CS, "cy" -> CY, "da" -> DA,
-        "de" -> DE, "din" -> DIN, "dje" -> DJE, "dv" -> DV, "dyu" -> DYU,
-        "dz" -> DZ, "ee" -> EE, "el" -> EL, "en" -> EN, "es" -> ES,
-        "et" -> ET, "eu" -> EU, "fa" -> FA, "fan" -> FAN, "ff" -> FF,
-        "fi" -> FI, "fil" -> FIL, "fj" -> FJ, "fon" -> FON, "fr" -> FR,
-        "ga" -> GA, "gd" -> GD, "gl" -> GL, "gn" -> GN, "gu" -> GU,
-        "gv" -> GV, "ha" -> HA, "he" -> HE, "hi" -> HI, "hmn" -> HMN,
-        "hr" -> HR, "ht" -> HT, "hu" -> HU, "hy" -> HY, "id" -> ID,
-        "ig" -> IG, "is" -> IS, "it" -> IT, "ja" -> JA, "jv" -> JV,
-        "ka" -> KA, "kbp" -> KBP, "kek" -> KEK, "kk" -> KK, "kl" -> KL,
-        "km" -> KM, "kn" -> KN, "ko" -> KO, "kpe" -> KPE, "ktu" -> KTU,
-        "ku" -> KU, "kw" -> KW, "ky" -> KY, "lg" -> LG, "ln" -> LN,
-        "lo" -> LO, "lt" -> LT, "lv" -> LV, "mam" -> MAM, "men" -> MEN,
+        "af" -> AF, "ak" -> AK, "am" -> AM, "ar" -> AR, "ay" -> AY,
+        "az" -> AZ, "bci" -> BCI, "be" -> BE, "bem" -> BEM, "bg" -> BG,
+        "bi" -> BI, "bm" -> BM, "bn" -> BN, "br" -> BR, "bs" -> BS,
+        "ca" -> CA, "cak" -> CAK, "ceb" -> CEB, "cs" -> CS, "cy" -> CY,
+        "da" -> DA, "de" -> DE, "din" -> DIN, "dje" -> DJE, "dv" -> DV,
+        "dyu" -> DYU, "dz" -> DZ, "ee" -> EE, "el" -> EL, "en" -> EN,
+        "es" -> ES, "et" -> ET, "eu" -> EU, "fa" -> FA, "fan" -> FAN,
+        "ff" -> FF, "fi" -> FI, "fil" -> FIL, "fj" -> FJ, "fon" -> FON,
+        "fr" -> FR, "ga" -> GA, "gd" -> GD, "gl" -> GL, "gn" -> GN,
+        "gu" -> GU, "gv" -> GV, "ha" -> HA, "he" -> HE, "hi" -> HI,
+        "hmn" -> HMN, "hr" -> HR, "ht" -> HT, "hu" -> HU, "hy" -> HY,
+        "id" -> ID, "ig" -> IG, "is" -> IS, "it" -> IT, "ja" -> JA,
+        "jv" -> JV, "ka" -> KA, "kbp" -> KBP, "kek" -> KEK, "ki" -> KI,
+        "kk" -> KK, "kl" -> KL, "km" -> KM, "kn" -> KN, "ko" -> KO,
+        "kpe" -> KPE, "kri" -> KRI, "ktu" -> KTU, "ku" -> KU, "kw" -> KW,
+        "ky" -> KY, "lb" -> LB, "lg" -> LG, "ln" -> LN, "lo" -> LO,
+        "lt" -> LT, "luo" -> LUO, "lv" -> LV, "mam" -> MAM, "men" -> MEN,
         "mfe" -> MFE, "mg" -> MG, "mi" -> MI, "mk" -> MK, "ml" -> ML,
         "mn" -> MN, "mnk" -> MNK, "mos" -> MOS, "mr" -> MR, "ms" -> MS,
         "mt" -> MT, "my" -> MY, "nb" -> NB, "nd" -> ND, "ne" -> NE,
-        "ng" -> NG, "nl" -> NL, "nso" -> NSO, "nus" -> NUS, "ny" -> NY,
-        "om" -> OM, "or" -> OR, "pa" -> PA, "pis" -> PIS, "pl" -> PL,
-        "pov" -> POV, "ps" -> PS, "pt" -> PT, "qu" -> QU, "quc" -> QUC,
-        "ro" -> RO, "ru" -> RU, "rw" -> RW, "sar" -> SAR, "sd" -> SD,
-        "sg" -> SG, "shi" -> SHI, "shn" -> SHN, "si" -> SI, "sk" -> SK,
-        "sl" -> SL, "sn" -> SN, "snk" -> SNK, "so" -> SO, "sq" -> SQ,
-        "sr" -> SR, "ss" -> SS, "st" -> ST, "su" -> SU, "suk" -> SUK,
-        "sv" -> SV, "sw" -> SW, "ta" -> TA, "te" -> TE, "tem" -> TEM,
-        "tet" -> TET, "tg" -> TG, "th" -> TH, "ti" -> TI, "tig" -> TIG,
-        "tk" -> TK, "tn" -> TN, "tpi" -> TPI, "tr" -> TR, "ts" -> TS,
-        "tzm" -> TZM, "uk" -> UK, "umb" -> UMB, "ur" -> UR, "uz" -> UZ,
-        "vi" -> VI, "vmw" -> VMW, "wo" -> WO, "xh" -> XH, "yo" -> YO,
-        "yue" -> YUE, "zdj" -> ZDJ, "zh" -> ZH, "zu" -> ZU
+        "ng" -> NG, "nl" -> NL, "nr" -> NR, "nso" -> NSO, "nus" -> NUS,
+        "ny" -> NY, "om" -> OM, "or" -> OR, "pa" -> PA, "pis" -> PIS,
+        "pl" -> PL, "pov" -> POV, "ps" -> PS, "pt" -> PT, "qu" -> QU,
+        "quc" -> QUC, "ro" -> RO, "ru" -> RU, "rw" -> RW, "sar" -> SAR,
+        "sd" -> SD, "sg" -> SG, "shi" -> SHI, "shn" -> SHN, "si" -> SI,
+        "sk" -> SK, "sl" -> SL, "sn" -> SN, "snk" -> SNK, "so" -> SO,
+        "sq" -> SQ, "sr" -> SR, "ss" -> SS, "st" -> ST, "su" -> SU,
+        "suk" -> SUK, "sv" -> SV, "sw" -> SW, "ta" -> TA, "te" -> TE,
+        "tem" -> TEM, "tet" -> TET, "tg" -> TG, "th" -> TH, "ti" -> TI,
+        "tig" -> TIG, "tk" -> TK, "tn" -> TN, "tpi" -> TPI, "tr" -> TR,
+        "ts" -> TS, "tum" -> TUM, "tzm" -> TZM, "uk" -> UK, "umb" -> UMB,
+        "ur" -> UR, "uz" -> UZ, "ve" -> VE, "vi" -> VI, "vmw" -> VMW,
+        "wo" -> WO, "xh" -> XH, "yao" -> YAO, "yo" -> YO, "yue" -> YUE,
+        "zdj" -> ZDJ, "zh" -> ZH, "zu" -> ZU
     )
 
     def get(code: String): Option[DateLocale] = ALL.get(code)

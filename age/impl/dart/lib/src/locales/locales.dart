@@ -13,6 +13,7 @@ import 'af.dart' as loc_af;
 import 'ak.dart' as loc_ak;
 import 'am.dart' as loc_am;
 import 'ar.dart' as loc_ar;
+import 'ay.dart' as loc_ay;
 import 'az.dart' as loc_az;
 import 'bci.dart' as loc_bci;
 import 'be.dart' as loc_be;
@@ -72,20 +73,24 @@ import 'jv.dart' as loc_jv;
 import 'ka.dart' as loc_ka;
 import 'kbp.dart' as loc_kbp;
 import 'kek.dart' as loc_kek;
+import 'ki.dart' as loc_ki;
 import 'kk.dart' as loc_kk;
 import 'kl.dart' as loc_kl;
 import 'km.dart' as loc_km;
 import 'kn.dart' as loc_kn;
 import 'ko.dart' as loc_ko;
 import 'kpe.dart' as loc_kpe;
+import 'kri.dart' as loc_kri;
 import 'ktu.dart' as loc_ktu;
 import 'ku.dart' as loc_ku;
 import 'kw.dart' as loc_kw;
 import 'ky.dart' as loc_ky;
+import 'lb.dart' as loc_lb;
 import 'lg.dart' as loc_lg;
 import 'ln.dart' as loc_ln;
 import 'lo.dart' as loc_lo;
 import 'lt.dart' as loc_lt;
+import 'luo.dart' as loc_luo;
 import 'lv.dart' as loc_lv;
 import 'mam.dart' as loc_mam;
 import 'men.dart' as loc_men;
@@ -106,6 +111,7 @@ import 'nd.dart' as loc_nd;
 import 'ne.dart' as loc_ne;
 import 'ng.dart' as loc_ng;
 import 'nl.dart' as loc_nl;
+import 'nr.dart' as loc_nr;
 import 'nso.dart' as loc_nso;
 import 'nus.dart' as loc_nus;
 import 'ny.dart' as loc_ny;
@@ -154,15 +160,18 @@ import 'tn.dart' as loc_tn;
 import 'tpi.dart' as loc_tpi;
 import 'tr.dart' as loc_tr;
 import 'ts.dart' as loc_ts;
+import 'tum.dart' as loc_tum;
 import 'tzm.dart' as loc_tzm;
 import 'uk.dart' as loc_uk;
 import 'umb.dart' as loc_umb;
 import 'ur.dart' as loc_ur;
 import 'uz.dart' as loc_uz;
+import 've.dart' as loc_ve;
 import 'vi.dart' as loc_vi;
 import 'vmw.dart' as loc_vmw;
 import 'wo.dart' as loc_wo;
 import 'xh.dart' as loc_xh;
+import 'yao.dart' as loc_yao;
 import 'yo.dart' as loc_yo;
 import 'yue.dart' as loc_yue;
 import 'zdj.dart' as loc_zdj;
@@ -180,6 +189,8 @@ AgeLocale? getLocale(String code) {
       return loc_am.am;
     case 'ar':
       return loc_ar.ar;
+    case 'ay':
+      return loc_ay.ay;
     case 'az':
       return loc_az.az;
     case 'bci':
@@ -298,6 +309,8 @@ AgeLocale? getLocale(String code) {
       return loc_kbp.kbp;
     case 'kek':
       return loc_kek.kek;
+    case 'ki':
+      return loc_ki.ki;
     case 'kk':
       return loc_kk.kk;
     case 'kl':
@@ -310,6 +323,8 @@ AgeLocale? getLocale(String code) {
       return loc_ko.ko;
     case 'kpe':
       return loc_kpe.kpe;
+    case 'kri':
+      return loc_kri.kri;
     case 'ktu':
       return loc_ktu.ktu;
     case 'ku':
@@ -318,6 +333,8 @@ AgeLocale? getLocale(String code) {
       return loc_kw.kw;
     case 'ky':
       return loc_ky.ky;
+    case 'lb':
+      return loc_lb.lb;
     case 'lg':
       return loc_lg.lg;
     case 'ln':
@@ -326,6 +343,8 @@ AgeLocale? getLocale(String code) {
       return loc_lo.lo;
     case 'lt':
       return loc_lt.lt;
+    case 'luo':
+      return loc_luo.luo;
     case 'lv':
       return loc_lv.lv;
     case 'mam':
@@ -366,6 +385,8 @@ AgeLocale? getLocale(String code) {
       return loc_ng.ng;
     case 'nl':
       return loc_nl.nl;
+    case 'nr':
+      return loc_nr.nr;
     case 'nso':
       return loc_nso.nso;
     case 'nus':
@@ -462,6 +483,8 @@ AgeLocale? getLocale(String code) {
       return loc_tr.tr;
     case 'ts':
       return loc_ts.ts;
+    case 'tum':
+      return loc_tum.tum;
     case 'tzm':
       return loc_tzm.tzm;
     case 'uk':
@@ -472,6 +495,8 @@ AgeLocale? getLocale(String code) {
       return loc_ur.ur;
     case 'uz':
       return loc_uz.uz;
+    case 've':
+      return loc_ve.ve;
     case 'vi':
       return loc_vi.vi;
     case 'vmw':
@@ -480,6 +505,8 @@ AgeLocale? getLocale(String code) {
       return loc_wo.wo;
     case 'xh':
       return loc_xh.xh;
+    case 'yao':
+      return loc_yao.yao;
     case 'yo':
       return loc_yo.yo;
     case 'yue':

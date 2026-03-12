@@ -17,7 +17,7 @@ import java.util.Collections;
 import sayableage.*;
 
 /**
- * All 159 locale definitions for sayable-age.
+ * All 168 locale definitions for sayable-age.
  */
 @SuppressWarnings({"LineLength", "MethodLength"})
 public final class Locales {
@@ -342,6 +342,52 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} شهر", PluralCategory.ONE, "شهر", PluralCategory.TWO, "شهران", PluralCategory.FEW, "{n} أشهر", PluralCategory.MANY, "{n} شهرًا", PluralCategory.OTHER, "{n} شهر")),
             UnitForms.simpleUnit("{n} سنة"),
             "{n}½",
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
+    // Source: age/locales/src/ay.json
+    // ================================================================
+    // AY — Aymara
+    // ================================================================
+    public static final AgeLocale AY = new AgeLocale(
+        "ay",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("uru {n}"),
+            UnitForms.simpleUnit("simana {n}"),
+            UnitForms.simpleUnit("phaxsi {n}"),
+            UnitForms.simpleUnit("mara {n}")
+        ),
+        "{0} chika",
+        ", ",
+        "Wawa machaqa",
+        new Stages(
+            StageLabel.neutral("Wawa machaqa"),
+            StageLabel.neutral("Wawa"),
+            StageLabel.neutral("Jisk'a wawa"),
+            StageLabel.neutral("Yuqalla"),
+            StageLabel.neutral("Wayna"),
+            StageLabel.neutral("Jaqi")
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} ur."),
+            UnitForms.simpleUnit("{n} sim."),
+            UnitForms.simpleUnit("{n} phx."),
+            UnitForms.simpleUnit("{n} mr."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
             "",
             null
         ),
@@ -3063,6 +3109,52 @@ public final class Locales {
         null
     );
 
+    // Source: age/locales/src/ki.json
+    // ================================================================
+    // KI — Kikuyu
+    // ================================================================
+    public static final AgeLocale KI = new AgeLocale(
+        "ki",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mũthenya {n}", PluralCategory.OTHER, "mĩthenya {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "kiumia {n}", PluralCategory.OTHER, "kiumia {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwerĩ {n}", PluralCategory.OTHER, "mĩerĩ {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwaka {n}", PluralCategory.OTHER, "mĩaka {n}"))
+        ),
+        "{0} na nusu",
+        ", ",
+        "Kaana gakĩ",
+        new Stages(
+            StageLabel.neutral("Kaana gakĩ"),
+            StageLabel.neutral("Kaana"),
+            StageLabel.neutral("Kaana kanini"),
+            StageLabel.neutral("Mwana"),
+            StageLabel.neutral("Kĩhĩĩ"),
+            StageLabel.neutral("Mũndũ mũkũrũ")
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mũth. {n}", PluralCategory.OTHER, "mĩth. {n}")),
+            UnitForms.simpleUnit("{n} kiu."),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwerĩ {n}", PluralCategory.OTHER, "mĩerĩ {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwaka {n}", PluralCategory.OTHER, "mĩaka {n}")),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
     // Source: age/locales/src/kk.json
     // ================================================================
     // KK — Kazakh
@@ -3339,6 +3431,52 @@ public final class Locales {
         null
     );
 
+    // Source: age/locales/src/kri.json
+    // ================================================================
+    // KRI — Krio
+    // ================================================================
+    public static final AgeLocale KRI = new AgeLocale(
+        "kri",
+        n -> PluralCategory.OTHER,
+        new Units(
+            UnitForms.simpleUnit("{n} de"),
+            UnitForms.simpleUnit("{n} wik"),
+            UnitForms.simpleUnit("{n} mont"),
+            UnitForms.simpleUnit("{n} ia")
+        ),
+        "{n} na af",
+        ", ",
+        "Nyubon bebi",
+        new Stages(
+            StageLabel.neutral("Nyubon bebi"),
+            StageLabel.neutral("Smol pikin"),
+            StageLabel.neutral("Smol pikin"),
+            StageLabel.neutral("Pikin"),
+            StageLabel.neutral("Yong posin"),
+            StageLabel.neutral("Big posin")
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} de"),
+            UnitForms.simpleUnit("{n} wik"),
+            UnitForms.simpleUnit("{n} mont"),
+            UnitForms.simpleUnit("{n} ia"),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
     // Source: age/locales/src/ktu.json
     // ================================================================
     // KTU — Kituba
@@ -3523,6 +3661,52 @@ public final class Locales {
         null
     );
 
+    // Source: age/locales/src/lb.json
+    // ================================================================
+    // LB — Luxembourgish
+    // ================================================================
+    public static final AgeLocale LB = new AgeLocale(
+        "lb",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} Dag", PluralCategory.OTHER, "{n} Deeg")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} Woch", PluralCategory.OTHER, "{n} Wochen")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} Mount", PluralCategory.OTHER, "{n} Méint")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} Joer", PluralCategory.OTHER, "{n} Joer"))
+        ),
+        "{n}½",
+        ", ",
+        "Neigebuerenen",
+        new Stages(
+            StageLabel.neutral("Neigebuerenen"),
+            StageLabel.neutral("Puppelchen"),
+            StageLabel.neutral("Klengkand"),
+            StageLabel.neutral("Kand"),
+            StageLabel.neutral("Jugendlechen"),
+            StageLabel.gendered("Erwuessenen", "Erwuessen")
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n} D."),
+            UnitForms.simpleUnit("{n} W."),
+            UnitForms.simpleUnit("{n} M."),
+            UnitForms.simpleUnit("{n} J."),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}D"),
+            UnitForms.simpleUnit("{n}W"),
+            UnitForms.simpleUnit("{n}M"),
+            UnitForms.simpleUnit("{n}J"),
+            null,
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
     // Source: age/locales/src/lg.json
     // ================================================================
     // LG — Luganda
@@ -3699,6 +3883,52 @@ public final class Locales {
             UnitForms.simpleUnit("{n} sav."),
             UnitForms.simpleUnit("{n} mėn."),
             UnitForms.simpleUnit("{n} m."),
+            null,
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
+    // Source: age/locales/src/luo.json
+    // ================================================================
+    // LUO — Dholuo
+    // ================================================================
+    public static final AgeLocale LUO = new AgeLocale(
+        "luo",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "odiechieng' {n}", PluralCategory.OTHER, "ndalo {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "juma {n}", PluralCategory.OTHER, "jumbe {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dwe {n}", PluralCategory.OTHER, "dweche {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "higa {n}", PluralCategory.OTHER, "higni {n}"))
+        ),
+        "{0} gi nus",
+        ", ",
+        "Nyathi manyien",
+        new Stages(
+            StageLabel.neutral("Nyathi manyien"),
+            StageLabel.neutral("Kidoro"),
+            StageLabel.neutral("Nyathi matin"),
+            StageLabel.neutral("Nyathi"),
+            StageLabel.neutral("Rawera"),
+            StageLabel.neutral("Ng'ama duong'")
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "odie. {n}", PluralCategory.OTHER, "ndalo {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "juma {n}", PluralCategory.OTHER, "jumbe {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dwe {n}", PluralCategory.OTHER, "dwe. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "higa {n}", PluralCategory.OTHER, "higni {n}")),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
             null,
             "",
             null
@@ -4619,6 +4849,52 @@ public final class Locales {
             UnitForms.simpleUnit("{n} w"),
             UnitForms.simpleUnit("{n} m"),
             UnitForms.simpleUnit("{n} jr"),
+            null,
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
+    // Source: age/locales/src/nr.json
+    // ================================================================
+    // NR — Southern Ndebele
+    // ================================================================
+    public static final AgeLocale NR = new AgeLocale(
+        "nr",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ilanga {n}", PluralCategory.OTHER, "amalanga {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iveke {n}", PluralCategory.OTHER, "amaveke {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "inyanga {n}", PluralCategory.OTHER, "iinyanga {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "unyaka {n}", PluralCategory.OTHER, "iminyaka {n}"))
+        ),
+        "{0} nesiquntu",
+        ", ",
+        "Usana olusanda kubeletwa",
+        new Stages(
+            StageLabel.neutral("Usana olusanda kubeletwa"),
+            StageLabel.neutral("Usana"),
+            StageLabel.neutral("Umntwana omncani"),
+            StageLabel.neutral("Umntwana"),
+            StageLabel.neutral("Isokana"),
+            StageLabel.neutral("Umuntu omkhulu")
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ilanga {n}", PluralCategory.OTHER, "amal. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iveke {n}", PluralCategory.OTHER, "amav. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iny. {n}", PluralCategory.OTHER, "iiny. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "uny. {n}", PluralCategory.OTHER, "imin. {n}")),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
             null,
             "",
             null
@@ -6835,6 +7111,52 @@ public final class Locales {
         null
     );
 
+    // Source: age/locales/src/tum.json
+    // ================================================================
+    // TUM — Tumbuka
+    // ================================================================
+    public static final AgeLocale TUM = new AgeLocale(
+        "tum",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dazi {n}", PluralCategory.OTHER, "madazi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sabata {n}", PluralCategory.OTHER, "masabata {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwezi {n}", PluralCategory.OTHER, "miyezi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "chaka {n}", PluralCategory.OTHER, "vyaka {n}"))
+        ),
+        "{0} na hafu",
+        ", ",
+        "Mwana wabadwa wala",
+        new Stages(
+            StageLabel.neutral("Mwana wabadwa wala"),
+            StageLabel.neutral("Mwana wakumawere"),
+            StageLabel.neutral("Kamwana"),
+            StageLabel.neutral("Mwana"),
+            StageLabel.neutral("Munyamata"),
+            StageLabel.neutral("Munthu mukuru")
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dazi {n}", PluralCategory.OTHER, "mad. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sab. {n}", PluralCategory.OTHER, "mas. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwezi {n}", PluralCategory.OTHER, "miy. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "chaka {n}", PluralCategory.OTHER, "vyaka {n}")),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
     // Source: age/locales/src/tzm.json
     // ================================================================
     // TZM — Central Atlas Tamazight
@@ -7065,6 +7387,52 @@ public final class Locales {
         null
     );
 
+    // Source: age/locales/src/ve.json
+    // ================================================================
+    // VE — Venda
+    // ================================================================
+    public static final AgeLocale VE = new AgeLocale(
+        "ve",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "duvha {n}", PluralCategory.OTHER, "maduvha {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "vhege {n}", PluralCategory.OTHER, "mavhege {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "nwedzi {n}", PluralCategory.OTHER, "minwedzi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "nwaha {n}", PluralCategory.OTHER, "minwaha {n}"))
+        ),
+        "{0} na hafu",
+        ", ",
+        "Mbuwe",
+        new Stages(
+            StageLabel.neutral("Mbuwe"),
+            StageLabel.neutral("Kwana"),
+            StageLabel.neutral("Nwana mutuku"),
+            StageLabel.neutral("Nwana"),
+            StageLabel.neutral("Mutukana"),
+            StageLabel.neutral("Muthu muhulwane")
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "duv. {n}", PluralCategory.OTHER, "mad. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "vheg. {n}", PluralCategory.OTHER, "mav. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "nwedzi {n}", PluralCategory.OTHER, "min. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "nwaha {n}", PluralCategory.OTHER, "min. {n}")),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
     // Source: age/locales/src/vi.json
     // ================================================================
     // VI — Vietnamese
@@ -7242,6 +7610,52 @@ public final class Locales {
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
             "{n}½",
+            "",
+            null
+        ),
+        null,
+        null
+    );
+
+    // Source: age/locales/src/yao.json
+    // ================================================================
+    // YAO — Yao
+    // ================================================================
+    public static final AgeLocale YAO = new AgeLocale(
+        "yao",
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
+        new Units(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lisiku {n}", PluralCategory.OTHER, "masiku {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "juma {n}", PluralCategory.OTHER, "majuma {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ngondo {n}", PluralCategory.OTHER, "mingondo {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "chaka {n}", PluralCategory.OTHER, "vyaka {n}"))
+        ),
+        "{0} na nusu",
+        ", ",
+        "Mwanache jwabadwa",
+        new Stages(
+            StageLabel.neutral("Mwanache jwabadwa"),
+            StageLabel.neutral("Kamwanache"),
+            StageLabel.neutral("Kamwanache kanandi"),
+            StageLabel.neutral("Mwanache"),
+            StageLabel.neutral("Jeje"),
+            StageLabel.neutral("Mundu")
+        ),
+        new CompactnessOverride(
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lis. {n}", PluralCategory.OTHER, "mas. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "juma {n}", PluralCategory.OTHER, "maj. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ngo. {n}", PluralCategory.OTHER, "min. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "chaka {n}", PluralCategory.OTHER, "vyaka {n}")),
+            null,
+            null,
+            null
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit("{n}d"),
+            UnitForms.simpleUnit("{n}w"),
+            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}y"),
+            null,
             "",
             null
         ),
@@ -7481,11 +7895,12 @@ public final class Locales {
 
     public static final Map<String, AgeLocale> ALL;
     static {
-        Map<String, AgeLocale> map = new LinkedHashMap<>(159);
+        Map<String, AgeLocale> map = new LinkedHashMap<>(168);
         map.put("af", AF);
         map.put("ak", AK);
         map.put("am", AM);
         map.put("ar", AR);
+        map.put("ay", AY);
         map.put("az", AZ);
         map.put("bci", BCI);
         map.put("be", BE);
@@ -7545,20 +7960,24 @@ public final class Locales {
         map.put("ka", KA);
         map.put("kbp", KBP);
         map.put("kek", KEK);
+        map.put("ki", KI);
         map.put("kk", KK);
         map.put("kl", KL);
         map.put("km", KM);
         map.put("kn", KN);
         map.put("ko", KO);
         map.put("kpe", KPE);
+        map.put("kri", KRI);
         map.put("ktu", KTU);
         map.put("ku", KU);
         map.put("kw", KW);
         map.put("ky", KY);
+        map.put("lb", LB);
         map.put("lg", LG);
         map.put("ln", LN);
         map.put("lo", LO);
         map.put("lt", LT);
+        map.put("luo", LUO);
         map.put("lv", LV);
         map.put("mam", MAM);
         map.put("men", MEN);
@@ -7579,6 +7998,7 @@ public final class Locales {
         map.put("ne", NE);
         map.put("ng", NG);
         map.put("nl", NL);
+        map.put("nr", NR);
         map.put("nso", NSO);
         map.put("nus", NUS);
         map.put("ny", NY);
@@ -7627,15 +8047,18 @@ public final class Locales {
         map.put("tpi", TPI);
         map.put("tr", TR);
         map.put("ts", TS);
+        map.put("tum", TUM);
         map.put("tzm", TZM);
         map.put("uk", UK);
         map.put("umb", UMB);
         map.put("ur", UR);
         map.put("uz", UZ);
+        map.put("ve", VE);
         map.put("vi", VI);
         map.put("vmw", VMW);
         map.put("wo", WO);
         map.put("xh", XH);
+        map.put("yao", YAO);
         map.put("yo", YO);
         map.put("yue", YUE);
         map.put("zdj", ZDJ);

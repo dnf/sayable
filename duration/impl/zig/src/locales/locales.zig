@@ -269,6 +269,28 @@ pub const ar: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} ث" }, .minute = .{ .simple = "{n} د" }, .hour = .{ .simple = "{n} س" }, .day = .{ .simple = "{n} ي" }, .week = .{ .simple = "{n} أ" }, .month = .{ .forms = .{ .zero = "{n} شهر", .one = "شهر", .two = "شهران", .few = "{n} أشهر", .many = "{n} شهرًا", .other = "{n} شهر" } }, .year = .{ .simple = "{n} سنة" }, .half = "{n}½", .delimiter = "", .ago = "منذ {0}", .in_future = "بعد {0}" },
 };
 
+// Source: duration/locales/src/ay.json
+pub const ay: sayableduration.DurationLocale = .{
+    .code = "ay",
+    .plural = plural_other_only,
+    .units = .{
+        .second = .{ .simple = "sikundu {n}" },
+        .minute = .{ .simple = "minutu {n}" },
+        .hour = .{ .simple = "ura {n}" },
+        .day = .{ .simple = "uru {n}" },
+        .week = .{ .simple = "simana {n}" },
+        .month = .{ .simple = "phaxsi {n}" },
+        .year = .{ .simple = "mara {n}" },
+    },
+    .half = "{0} chika",
+    .delimiter = ", ",
+    .just_now = "jichha",
+    .ago = "{0} nayraqata",
+    .in_future = "{0} jutirïn",
+    .short_override = .{ .second = .{ .simple = "sik. {n}" }, .minute = .{ .simple = "min. {n}" }, .hour = .{ .simple = "ur. {n}" }, .day = .{ .simple = "{n} ur." }, .week = .{ .simple = "{n} sim." }, .month = .{ .simple = "{n} phx." }, .year = .{ .simple = "{n} mr." }, .half = null, .delimiter = null, .ago = "{0} nayraqata", .in_future = "{0} jutirïn" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} nayraqata", .in_future = "{0} jutirïn" },
+};
+
 // Source: duration/locales/src/az.json
 pub const az: sayableduration.DurationLocale = .{
     .code = "az",
@@ -1567,6 +1589,28 @@ pub const kek: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}mo" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} qakab'", .in_future = "chi {0}" },
 };
 
+// Source: duration/locales/src/ki.json
+pub const ki: sayableduration.DurationLocale = .{
+    .code = "ki",
+    .plural = plural_one_other,
+    .units = .{
+        .second = .{ .forms = .{ .zero = null, .one = "sekunde {n}", .two = null, .few = null, .many = null, .other = "sekunde {n}" } },
+        .minute = .{ .forms = .{ .zero = null, .one = "ndagĩka {n}", .two = null, .few = null, .many = null, .other = "ndagĩka {n}" } },
+        .hour = .{ .forms = .{ .zero = null, .one = "ithaa {n}", .two = null, .few = null, .many = null, .other = "mathaa {n}" } },
+        .day = .{ .forms = .{ .zero = null, .one = "mũthenya {n}", .two = null, .few = null, .many = null, .other = "mĩthenya {n}" } },
+        .week = .{ .forms = .{ .zero = null, .one = "kiumia {n}", .two = null, .few = null, .many = null, .other = "kiumia {n}" } },
+        .month = .{ .forms = .{ .zero = null, .one = "mwerĩ {n}", .two = null, .few = null, .many = null, .other = "mĩerĩ {n}" } },
+        .year = .{ .forms = .{ .zero = null, .one = "mwaka {n}", .two = null, .few = null, .many = null, .other = "mĩaka {n}" } },
+    },
+    .half = "{0} na nusu",
+    .delimiter = ", ",
+    .just_now = "ũmũthĩ",
+    .ago = "{0} ĩhĩtũkĩte",
+    .in_future = "{0} ĩyothe",
+    .short_override = .{ .second = .{ .simple = "sek. {n}" }, .minute = .{ .simple = "ndag. {n}" }, .hour = .{ .forms = .{ .zero = null, .one = "ithaa {n}", .two = null, .few = null, .many = null, .other = "mathaa {n}" } }, .day = .{ .forms = .{ .zero = null, .one = "mũth. {n}", .two = null, .few = null, .many = null, .other = "mĩth. {n}" } }, .week = .{ .simple = "kiu. {n}" }, .month = .{ .forms = .{ .zero = null, .one = "mwerĩ {n}", .two = null, .few = null, .many = null, .other = "mĩerĩ {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "mwaka {n}", .two = null, .few = null, .many = null, .other = "mĩaka {n}" } }, .half = null, .delimiter = null, .ago = "{0} ĩhĩtũkĩte", .in_future = "{0} ĩyothe" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} ĩhĩtũkĩte", .in_future = "{0} ĩyothe" },
+};
+
 // Source: duration/locales/src/kk.json
 pub const kk: sayableduration.DurationLocale = .{
     .code = "kk",
@@ -1699,6 +1743,28 @@ pub const kpe: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} pɔlɔ", .in_future = "ya {0}" },
 };
 
+// Source: duration/locales/src/kri.json
+pub const kri: sayableduration.DurationLocale = .{
+    .code = "kri",
+    .plural = plural_other_only,
+    .units = .{
+        .second = .{ .simple = "{n} sekon" },
+        .minute = .{ .simple = "{n} minit" },
+        .hour = .{ .simple = "{n} awa" },
+        .day = .{ .simple = "{n} de" },
+        .week = .{ .simple = "{n} wik" },
+        .month = .{ .simple = "{n} mont" },
+        .year = .{ .simple = "{n} ia" },
+    },
+    .half = "{n} na af",
+    .delimiter = ", ",
+    .just_now = "jos naw",
+    .ago = "{0} bak",
+    .in_future = "na {0}",
+    .short_override = .{ .second = .{ .simple = "{n} sek." }, .minute = .{ .simple = "{n} min." }, .hour = .{ .simple = "{n} awa" }, .day = .{ .simple = "{n} de" }, .week = .{ .simple = "{n} wik" }, .month = .{ .simple = "{n} mont" }, .year = .{ .simple = "{n} ia" }, .half = null, .delimiter = null, .ago = "{0} bak", .in_future = "na {0}" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} bak", .in_future = "na {0}" },
+};
+
 // Source: duration/locales/src/ktu.json
 pub const ktu: sayableduration.DurationLocale = .{
     .code = "ktu",
@@ -1787,6 +1853,28 @@ pub const ky: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} сек" }, .minute = .{ .simple = "{n} мүн" }, .hour = .{ .simple = "{n}ч" }, .day = .{ .simple = "{n} к" }, .week = .{ .simple = "{n} апт" }, .month = .{ .simple = "{n} ай" }, .year = .{ .simple = "{n} ж" }, .half = "{n}½", .delimiter = "", .ago = "{0} мурун", .in_future = "{0} кийин" },
 };
 
+// Source: duration/locales/src/lb.json
+pub const lb: sayableduration.DurationLocale = .{
+    .code = "lb",
+    .plural = plural_one_other,
+    .units = .{
+        .second = .{ .forms = .{ .zero = null, .one = "{n} Sekonn", .two = null, .few = null, .many = null, .other = "{n} Sekonnen" } },
+        .minute = .{ .forms = .{ .zero = null, .one = "{n} Minutt", .two = null, .few = null, .many = null, .other = "{n} Minutten" } },
+        .hour = .{ .forms = .{ .zero = null, .one = "{n} Stonn", .two = null, .few = null, .many = null, .other = "{n} Stonnen" } },
+        .day = .{ .forms = .{ .zero = null, .one = "{n} Dag", .two = null, .few = null, .many = null, .other = "{n} Deeg" } },
+        .week = .{ .forms = .{ .zero = null, .one = "{n} Woch", .two = null, .few = null, .many = null, .other = "{n} Wochen" } },
+        .month = .{ .forms = .{ .zero = null, .one = "{n} Mount", .two = null, .few = null, .many = null, .other = "{n} Méint" } },
+        .year = .{ .forms = .{ .zero = null, .one = "{n} Joer", .two = null, .few = null, .many = null, .other = "{n} Joer" } },
+    },
+    .half = "{n}½",
+    .delimiter = ", ",
+    .just_now = "elo grad",
+    .ago = "virun {0}",
+    .in_future = "an {0}",
+    .short_override = .{ .second = .{ .simple = "{n} Sek." }, .minute = .{ .simple = "{n} Min." }, .hour = .{ .simple = "{n} Std." }, .day = .{ .simple = "{n} D." }, .week = .{ .simple = "{n} W." }, .month = .{ .simple = "{n} M." }, .year = .{ .simple = "{n} J." }, .half = null, .delimiter = null, .ago = "virun {0}", .in_future = "an {0}" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}D" }, .week = .{ .simple = "{n}W" }, .month = .{ .simple = "{n}M" }, .year = .{ .simple = "{n}J" }, .half = null, .delimiter = "", .ago = "virun {0}", .in_future = "an {0}" },
+};
+
 // Source: duration/locales/src/lg.json
 pub const lg: sayableduration.DurationLocale = .{
     .code = "lg",
@@ -1873,6 +1961,28 @@ pub const lt: sayableduration.DurationLocale = .{
     .in_future = "po {0}",
     .short_override = .{ .second = .{ .simple = "{n} sek." }, .minute = .{ .simple = "{n} min." }, .hour = .{ .simple = "{n} val." }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} sav." }, .month = .{ .simple = "{n} mėn." }, .year = .{ .simple = "{n} m." }, .half = null, .delimiter = null, .ago = "prieš {0}", .in_future = "po {0}" },
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} min." }, .hour = .{ .simple = "{n} h" }, .day = .{ .simple = "{n} d." }, .week = .{ .simple = "{n} sav." }, .month = .{ .simple = "{n} mėn." }, .year = .{ .simple = "{n} m." }, .half = null, .delimiter = "", .ago = "prieš {0}", .in_future = "po {0}" },
+};
+
+// Source: duration/locales/src/luo.json
+pub const luo: sayableduration.DurationLocale = .{
+    .code = "luo",
+    .plural = plural_one_other,
+    .units = .{
+        .second = .{ .simple = "sekunde {n}" },
+        .minute = .{ .simple = "dakika {n}" },
+        .hour = .{ .simple = "saa {n}" },
+        .day = .{ .forms = .{ .zero = null, .one = "odiechieng' {n}", .two = null, .few = null, .many = null, .other = "ndalo {n}" } },
+        .week = .{ .forms = .{ .zero = null, .one = "juma {n}", .two = null, .few = null, .many = null, .other = "jumbe {n}" } },
+        .month = .{ .forms = .{ .zero = null, .one = "dwe {n}", .two = null, .few = null, .many = null, .other = "dweche {n}" } },
+        .year = .{ .forms = .{ .zero = null, .one = "higa {n}", .two = null, .few = null, .many = null, .other = "higni {n}" } },
+    },
+    .half = "{0} gi nus",
+    .delimiter = ", ",
+    .just_now = "sani",
+    .ago = "{0} mokalo",
+    .in_future = "bang' {0}",
+    .short_override = .{ .second = .{ .simple = "sek. {n}" }, .minute = .{ .simple = "dak. {n}" }, .hour = .{ .simple = "saa {n}" }, .day = .{ .forms = .{ .zero = null, .one = "odie. {n}", .two = null, .few = null, .many = null, .other = "ndalo {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "juma {n}", .two = null, .few = null, .many = null, .other = "jumbe {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "dwe {n}", .two = null, .few = null, .many = null, .other = "dwe. {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "higa {n}", .two = null, .few = null, .many = null, .other = "higni {n}" } }, .half = null, .delimiter = null, .ago = "{0} mokalo", .in_future = "bang' {0}" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} mokalo", .in_future = "bang' {0}" },
 };
 
 // Source: duration/locales/src/lv.json
@@ -2313,6 +2423,28 @@ pub const nl: sayableduration.DurationLocale = .{
     .in_future = "over {0}",
     .short_override = .{ .second = .{ .simple = "{n} sec" }, .minute = .{ .simple = "{n} min" }, .hour = .{ .simple = "{n} uur" }, .day = .{ .forms = .{ .zero = null, .one = "{n} dag", .two = null, .few = null, .many = null, .other = "{n} dagen" } }, .week = .{ .forms = .{ .zero = null, .one = "{n} wk", .two = null, .few = null, .many = null, .other = "{n} wkn" } }, .month = .{ .simple = "{n} mnd" }, .year = .{ .simple = "{n} jr" }, .half = null, .delimiter = null, .ago = "{0} geleden", .in_future = "over {0}" },
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} m" }, .hour = .{ .simple = "{n} u" }, .day = .{ .simple = "{n} d" }, .week = .{ .simple = "{n} w" }, .month = .{ .simple = "{n} m" }, .year = .{ .simple = "{n} jr" }, .half = null, .delimiter = "", .ago = "{0} geleden", .in_future = "over {0}" },
+};
+
+// Source: duration/locales/src/nr.json
+pub const nr: sayableduration.DurationLocale = .{
+    .code = "nr",
+    .plural = plural_one_other,
+    .units = .{
+        .second = .{ .forms = .{ .zero = null, .one = "isekendi {n}", .two = null, .few = null, .many = null, .other = "amasekendi {n}" } },
+        .minute = .{ .forms = .{ .zero = null, .one = "umzuzu {n}", .two = null, .few = null, .many = null, .other = "imizuzu {n}" } },
+        .hour = .{ .forms = .{ .zero = null, .one = "ihora {n}", .two = null, .few = null, .many = null, .other = "amahora {n}" } },
+        .day = .{ .forms = .{ .zero = null, .one = "ilanga {n}", .two = null, .few = null, .many = null, .other = "amalanga {n}" } },
+        .week = .{ .forms = .{ .zero = null, .one = "iveke {n}", .two = null, .few = null, .many = null, .other = "amaveke {n}" } },
+        .month = .{ .forms = .{ .zero = null, .one = "inyanga {n}", .two = null, .few = null, .many = null, .other = "iinyanga {n}" } },
+        .year = .{ .forms = .{ .zero = null, .one = "unyaka {n}", .two = null, .few = null, .many = null, .other = "iminyaka {n}" } },
+    },
+    .half = "{0} nesiquntu",
+    .delimiter = ", ",
+    .just_now = "khathesi",
+    .ago = "{0} eyadlulileko",
+    .in_future = "nge {0}",
+    .short_override = .{ .second = .{ .simple = "isek. {n}" }, .minute = .{ .simple = "umz. {n}" }, .hour = .{ .forms = .{ .zero = null, .one = "ihora {n}", .two = null, .few = null, .many = null, .other = "amah. {n}" } }, .day = .{ .forms = .{ .zero = null, .one = "ilanga {n}", .two = null, .few = null, .many = null, .other = "amal. {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "iveke {n}", .two = null, .few = null, .many = null, .other = "amav. {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "iny. {n}", .two = null, .few = null, .many = null, .other = "iiny. {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "uny. {n}", .two = null, .few = null, .many = null, .other = "imin. {n}" } }, .half = null, .delimiter = null, .ago = "{0} eyadlulileko", .in_future = "nge {0}" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} eyadlulileko", .in_future = "nge {0}" },
 };
 
 // Source: duration/locales/src/nso.json
@@ -3371,6 +3503,28 @@ pub const ts: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "{0} hundza", .in_future = "hi {0}" },
 };
 
+// Source: duration/locales/src/tum.json
+pub const tum: sayableduration.DurationLocale = .{
+    .code = "tum",
+    .plural = plural_one_other,
+    .units = .{
+        .second = .{ .forms = .{ .zero = null, .one = "sekendi {n}", .two = null, .few = null, .many = null, .other = "masekendi {n}" } },
+        .minute = .{ .forms = .{ .zero = null, .one = "miniti {n}", .two = null, .few = null, .many = null, .other = "maminiti {n}" } },
+        .hour = .{ .forms = .{ .zero = null, .one = "ola {n}", .two = null, .few = null, .many = null, .other = "maola {n}" } },
+        .day = .{ .forms = .{ .zero = null, .one = "dazi {n}", .two = null, .few = null, .many = null, .other = "madazi {n}" } },
+        .week = .{ .forms = .{ .zero = null, .one = "sabata {n}", .two = null, .few = null, .many = null, .other = "masabata {n}" } },
+        .month = .{ .forms = .{ .zero = null, .one = "mwezi {n}", .two = null, .few = null, .many = null, .other = "miyezi {n}" } },
+        .year = .{ .forms = .{ .zero = null, .one = "chaka {n}", .two = null, .few = null, .many = null, .other = "vyaka {n}" } },
+    },
+    .half = "{0} na hafu",
+    .delimiter = ", ",
+    .just_now = "sono",
+    .ago = "{0} yamala",
+    .in_future = "mu {0}",
+    .short_override = .{ .second = .{ .simple = "sek. {n}" }, .minute = .{ .simple = "min. {n}" }, .hour = .{ .forms = .{ .zero = null, .one = "ola {n}", .two = null, .few = null, .many = null, .other = "maola {n}" } }, .day = .{ .forms = .{ .zero = null, .one = "dazi {n}", .two = null, .few = null, .many = null, .other = "mad. {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "sab. {n}", .two = null, .few = null, .many = null, .other = "mas. {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "mwezi {n}", .two = null, .few = null, .many = null, .other = "miy. {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "chaka {n}", .two = null, .few = null, .many = null, .other = "vyaka {n}" } }, .half = null, .delimiter = null, .ago = "{0} yamala", .in_future = "mu {0}" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} yamala", .in_future = "mu {0}" },
+};
+
 // Source: duration/locales/src/tzm.json
 pub const tzm: sayableduration.DurationLocale = .{
     .code = "tzm",
@@ -3481,6 +3635,28 @@ pub const uz: sayableduration.DurationLocale = .{
     .compact_override = .{ .second = .{ .simple = "{n} s" }, .minute = .{ .simple = "{n} daq." }, .hour = .{ .simple = "{n} soat" }, .day = .{ .simple = "{n} kun" }, .week = .{ .simple = "{n} hafta" }, .month = .{ .simple = "{n} oy" }, .year = .{ .simple = "{n} yil" }, .half = "{n}½", .delimiter = "", .ago = "{0} oldin", .in_future = "{0} ichida" },
 };
 
+// Source: duration/locales/src/ve.json
+pub const ve: sayableduration.DurationLocale = .{
+    .code = "ve",
+    .plural = plural_one_other,
+    .units = .{
+        .second = .{ .forms = .{ .zero = null, .one = "sekondhe {n}", .two = null, .few = null, .many = null, .other = "disekondhe {n}" } },
+        .minute = .{ .forms = .{ .zero = null, .one = "minidhi {n}", .two = null, .few = null, .many = null, .other = "diminidhi {n}" } },
+        .hour = .{ .forms = .{ .zero = null, .one = "awara {n}", .two = null, .few = null, .many = null, .other = "diawara {n}" } },
+        .day = .{ .forms = .{ .zero = null, .one = "duvha {n}", .two = null, .few = null, .many = null, .other = "maduvha {n}" } },
+        .week = .{ .forms = .{ .zero = null, .one = "vhege {n}", .two = null, .few = null, .many = null, .other = "mavhege {n}" } },
+        .month = .{ .forms = .{ .zero = null, .one = "nwedzi {n}", .two = null, .few = null, .many = null, .other = "minwedzi {n}" } },
+        .year = .{ .forms = .{ .zero = null, .one = "nwaha {n}", .two = null, .few = null, .many = null, .other = "minwaha {n}" } },
+    },
+    .half = "{0} na hafu",
+    .delimiter = ", ",
+    .just_now = "zwino",
+    .ago = "{0} yo fhiraho",
+    .in_future = "nga {0}",
+    .short_override = .{ .second = .{ .simple = "sek. {n}" }, .minute = .{ .simple = "min. {n}" }, .hour = .{ .forms = .{ .zero = null, .one = "aw. {n}", .two = null, .few = null, .many = null, .other = "diaw. {n}" } }, .day = .{ .forms = .{ .zero = null, .one = "duv. {n}", .two = null, .few = null, .many = null, .other = "mad. {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "vheg. {n}", .two = null, .few = null, .many = null, .other = "mav. {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "nwedzi {n}", .two = null, .few = null, .many = null, .other = "min. {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "nwaha {n}", .two = null, .few = null, .many = null, .other = "min. {n}" } }, .half = null, .delimiter = null, .ago = "{0} yo fhiraho", .in_future = "nga {0}" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} yo fhiraho", .in_future = "nga {0}" },
+};
+
 // Source: duration/locales/src/vi.json
 pub const vi: sayableduration.DurationLocale = .{
     .code = "vi",
@@ -3567,6 +3743,28 @@ pub const xh: sayableduration.DurationLocale = .{
     .in_future = "kwi{0}",
     .short_override = .{ .second = .{ .forms = .{ .zero = null, .one = "umzuzwana {n}", .two = null, .few = null, .many = null, .other = "imizuzwana {n}" } }, .minute = .{ .forms = .{ .zero = null, .one = "umzuzu {n}", .two = null, .few = null, .many = null, .other = "imizuzu {n}" } }, .hour = .{ .forms = .{ .zero = null, .one = "iyure {n}", .two = null, .few = null, .many = null, .other = "iiyure {n}" } }, .day = .{ .forms = .{ .zero = null, .one = "usuku {n}", .two = null, .few = null, .many = null, .other = "iintsuku {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "iveki {n}", .two = null, .few = null, .many = null, .other = "iiveki {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "iny. {n}", .two = null, .few = null, .many = null, .other = "iiny. {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "uny. {n}", .two = null, .few = null, .many = null, .other = "imy. {n}" } }, .half = null, .delimiter = null, .ago = "kwi{0} edlulileyo", .in_future = "kwi{0}" },
     .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = "{n}½", .delimiter = "", .ago = "kwi{0} edlulileyo", .in_future = "kwi{0}" },
+};
+
+// Source: duration/locales/src/yao.json
+pub const yao: sayableduration.DurationLocale = .{
+    .code = "yao",
+    .plural = plural_one_other,
+    .units = .{
+        .second = .{ .forms = .{ .zero = null, .one = "sekunde {n}", .two = null, .few = null, .many = null, .other = "masekunde {n}" } },
+        .minute = .{ .forms = .{ .zero = null, .one = "dakika {n}", .two = null, .few = null, .many = null, .other = "madakika {n}" } },
+        .hour = .{ .forms = .{ .zero = null, .one = "saa {n}", .two = null, .few = null, .many = null, .other = "masaa {n}" } },
+        .day = .{ .forms = .{ .zero = null, .one = "lisiku {n}", .two = null, .few = null, .many = null, .other = "masiku {n}" } },
+        .week = .{ .forms = .{ .zero = null, .one = "juma {n}", .two = null, .few = null, .many = null, .other = "majuma {n}" } },
+        .month = .{ .forms = .{ .zero = null, .one = "ngondo {n}", .two = null, .few = null, .many = null, .other = "mingondo {n}" } },
+        .year = .{ .forms = .{ .zero = null, .one = "chaka {n}", .two = null, .few = null, .many = null, .other = "vyaka {n}" } },
+    },
+    .half = "{0} na nusu",
+    .delimiter = ", ",
+    .just_now = "sambano",
+    .ago = "{0} lyapite",
+    .in_future = "mu {0}",
+    .short_override = .{ .second = .{ .simple = "sek. {n}" }, .minute = .{ .simple = "dak. {n}" }, .hour = .{ .forms = .{ .zero = null, .one = "saa {n}", .two = null, .few = null, .many = null, .other = "masaa {n}" } }, .day = .{ .forms = .{ .zero = null, .one = "lis. {n}", .two = null, .few = null, .many = null, .other = "mas. {n}" } }, .week = .{ .forms = .{ .zero = null, .one = "juma {n}", .two = null, .few = null, .many = null, .other = "maj. {n}" } }, .month = .{ .forms = .{ .zero = null, .one = "ngo. {n}", .two = null, .few = null, .many = null, .other = "min. {n}" } }, .year = .{ .forms = .{ .zero = null, .one = "chaka {n}", .two = null, .few = null, .many = null, .other = "vyaka {n}" } }, .half = null, .delimiter = null, .ago = "{0} lyapite", .in_future = "mu {0}" },
+    .compact_override = .{ .second = .{ .simple = "{n}s" }, .minute = .{ .simple = "{n}m" }, .hour = .{ .simple = "{n}h" }, .day = .{ .simple = "{n}d" }, .week = .{ .simple = "{n}w" }, .month = .{ .simple = "{n}m" }, .year = .{ .simple = "{n}y" }, .half = null, .delimiter = "", .ago = "{0} lyapite", .in_future = "mu {0}" },
 };
 
 // Source: duration/locales/src/yo.json
@@ -3689,6 +3887,7 @@ const locale_map = struct {
         if (eql(code, "ak")) return &ak;
         if (eql(code, "am")) return &am;
         if (eql(code, "ar")) return &ar;
+        if (eql(code, "ay")) return &ay;
         if (eql(code, "az")) return &az;
         if (eql(code, "bci")) return &bci;
         if (eql(code, "be")) return &be;
@@ -3748,20 +3947,24 @@ const locale_map = struct {
         if (eql(code, "ka")) return &ka;
         if (eql(code, "kbp")) return &kbp;
         if (eql(code, "kek")) return &kek;
+        if (eql(code, "ki")) return &ki;
         if (eql(code, "kk")) return &kk;
         if (eql(code, "kl")) return &kl;
         if (eql(code, "km")) return &km;
         if (eql(code, "kn")) return &kn;
         if (eql(code, "ko")) return &ko;
         if (eql(code, "kpe")) return &kpe;
+        if (eql(code, "kri")) return &kri;
         if (eql(code, "ktu")) return &ktu;
         if (eql(code, "ku")) return &ku;
         if (eql(code, "kw")) return &kw;
         if (eql(code, "ky")) return &ky;
+        if (eql(code, "lb")) return &lb;
         if (eql(code, "lg")) return &lg;
         if (eql(code, "ln")) return &ln;
         if (eql(code, "lo")) return &lo;
         if (eql(code, "lt")) return &lt;
+        if (eql(code, "luo")) return &luo;
         if (eql(code, "lv")) return &lv;
         if (eql(code, "mam")) return &mam;
         if (eql(code, "men")) return &men;
@@ -3782,6 +3985,7 @@ const locale_map = struct {
         if (eql(code, "ne")) return &ne;
         if (eql(code, "ng")) return &ng;
         if (eql(code, "nl")) return &nl;
+        if (eql(code, "nr")) return &nr;
         if (eql(code, "nso")) return &nso;
         if (eql(code, "nus")) return &nus;
         if (eql(code, "ny")) return &ny;
@@ -3830,15 +4034,18 @@ const locale_map = struct {
         if (eql(code, "tpi")) return &tpi;
         if (eql(code, "tr")) return &tr;
         if (eql(code, "ts")) return &ts;
+        if (eql(code, "tum")) return &tum;
         if (eql(code, "tzm")) return &tzm;
         if (eql(code, "uk")) return &uk;
         if (eql(code, "umb")) return &umb;
         if (eql(code, "ur")) return &ur;
         if (eql(code, "uz")) return &uz;
+        if (eql(code, "ve")) return &ve;
         if (eql(code, "vi")) return &vi;
         if (eql(code, "vmw")) return &vmw;
         if (eql(code, "wo")) return &wo;
         if (eql(code, "xh")) return &xh;
+        if (eql(code, "yao")) return &yao;
         if (eql(code, "yo")) return &yo;
         if (eql(code, "yue")) return &yue;
         if (eql(code, "zdj")) return &zdj;
@@ -3861,6 +4068,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayableduration.Dur
     .{ .code = "ak", .locale = &ak },
     .{ .code = "am", .locale = &am },
     .{ .code = "ar", .locale = &ar },
+    .{ .code = "ay", .locale = &ay },
     .{ .code = "az", .locale = &az },
     .{ .code = "bci", .locale = &bci },
     .{ .code = "be", .locale = &be },
@@ -3920,20 +4128,24 @@ pub const all = [_]struct { code: []const u8, locale: *const sayableduration.Dur
     .{ .code = "ka", .locale = &ka },
     .{ .code = "kbp", .locale = &kbp },
     .{ .code = "kek", .locale = &kek },
+    .{ .code = "ki", .locale = &ki },
     .{ .code = "kk", .locale = &kk },
     .{ .code = "kl", .locale = &kl },
     .{ .code = "km", .locale = &km },
     .{ .code = "kn", .locale = &kn },
     .{ .code = "ko", .locale = &ko },
     .{ .code = "kpe", .locale = &kpe },
+    .{ .code = "kri", .locale = &kri },
     .{ .code = "ktu", .locale = &ktu },
     .{ .code = "ku", .locale = &ku },
     .{ .code = "kw", .locale = &kw },
     .{ .code = "ky", .locale = &ky },
+    .{ .code = "lb", .locale = &lb },
     .{ .code = "lg", .locale = &lg },
     .{ .code = "ln", .locale = &ln },
     .{ .code = "lo", .locale = &lo },
     .{ .code = "lt", .locale = &lt },
+    .{ .code = "luo", .locale = &luo },
     .{ .code = "lv", .locale = &lv },
     .{ .code = "mam", .locale = &mam },
     .{ .code = "men", .locale = &men },
@@ -3954,6 +4166,7 @@ pub const all = [_]struct { code: []const u8, locale: *const sayableduration.Dur
     .{ .code = "ne", .locale = &ne },
     .{ .code = "ng", .locale = &ng },
     .{ .code = "nl", .locale = &nl },
+    .{ .code = "nr", .locale = &nr },
     .{ .code = "nso", .locale = &nso },
     .{ .code = "nus", .locale = &nus },
     .{ .code = "ny", .locale = &ny },
@@ -4002,15 +4215,18 @@ pub const all = [_]struct { code: []const u8, locale: *const sayableduration.Dur
     .{ .code = "tpi", .locale = &tpi },
     .{ .code = "tr", .locale = &tr },
     .{ .code = "ts", .locale = &ts },
+    .{ .code = "tum", .locale = &tum },
     .{ .code = "tzm", .locale = &tzm },
     .{ .code = "uk", .locale = &uk },
     .{ .code = "umb", .locale = &umb },
     .{ .code = "ur", .locale = &ur },
     .{ .code = "uz", .locale = &uz },
+    .{ .code = "ve", .locale = &ve },
     .{ .code = "vi", .locale = &vi },
     .{ .code = "vmw", .locale = &vmw },
     .{ .code = "wo", .locale = &wo },
     .{ .code = "xh", .locale = &xh },
+    .{ .code = "yao", .locale = &yao },
     .{ .code = "yo", .locale = &yo },
     .{ .code = "yue", .locale = &yue },
     .{ .code = "zdj", .locale = &zdj },

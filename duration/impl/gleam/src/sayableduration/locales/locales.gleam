@@ -13,6 +13,7 @@ import sayableduration/locales/af as locale_af
 import sayableduration/locales/ak as locale_ak
 import sayableduration/locales/am as locale_am
 import sayableduration/locales/ar as locale_ar
+import sayableduration/locales/ay as locale_ay
 import sayableduration/locales/az as locale_az
 import sayableduration/locales/bci as locale_bci
 import sayableduration/locales/be as locale_be
@@ -72,20 +73,24 @@ import sayableduration/locales/jv as locale_jv
 import sayableduration/locales/ka as locale_ka
 import sayableduration/locales/kbp as locale_kbp
 import sayableduration/locales/kek as locale_kek
+import sayableduration/locales/ki as locale_ki
 import sayableduration/locales/kk as locale_kk
 import sayableduration/locales/kl as locale_kl
 import sayableduration/locales/km as locale_km
 import sayableduration/locales/kn as locale_kn
 import sayableduration/locales/ko as locale_ko
 import sayableduration/locales/kpe as locale_kpe
+import sayableduration/locales/kri as locale_kri
 import sayableduration/locales/ktu as locale_ktu
 import sayableduration/locales/ku as locale_ku
 import sayableduration/locales/kw as locale_kw
 import sayableduration/locales/ky as locale_ky
+import sayableduration/locales/lb as locale_lb
 import sayableduration/locales/lg as locale_lg
 import sayableduration/locales/ln as locale_ln
 import sayableduration/locales/lo as locale_lo
 import sayableduration/locales/lt as locale_lt
+import sayableduration/locales/luo as locale_luo
 import sayableduration/locales/lv as locale_lv
 import sayableduration/locales/mam as locale_mam
 import sayableduration/locales/men as locale_men
@@ -106,6 +111,7 @@ import sayableduration/locales/nd as locale_nd
 import sayableduration/locales/ne as locale_ne
 import sayableduration/locales/ng as locale_ng
 import sayableduration/locales/nl as locale_nl
+import sayableduration/locales/nr as locale_nr
 import sayableduration/locales/nso as locale_nso
 import sayableduration/locales/nus as locale_nus
 import sayableduration/locales/ny as locale_ny
@@ -154,15 +160,18 @@ import sayableduration/locales/tn as locale_tn
 import sayableduration/locales/tpi as locale_tpi
 import sayableduration/locales/tr as locale_tr
 import sayableduration/locales/ts as locale_ts
+import sayableduration/locales/tum as locale_tum
 import sayableduration/locales/tzm as locale_tzm
 import sayableduration/locales/uk as locale_uk
 import sayableduration/locales/umb as locale_umb
 import sayableduration/locales/ur as locale_ur
 import sayableduration/locales/uz as locale_uz
+import sayableduration/locales/ve as locale_ve
 import sayableduration/locales/vi as locale_vi
 import sayableduration/locales/vmw as locale_vmw
 import sayableduration/locales/wo as locale_wo
 import sayableduration/locales/xh as locale_xh
+import sayableduration/locales/yao as locale_yao
 import sayableduration/locales/yo as locale_yo
 import sayableduration/locales/yue as locale_yue
 import sayableduration/locales/zdj as locale_zdj
@@ -175,6 +184,7 @@ pub fn get(code: String) -> Result(types.DurationLocale, Nil) {
     "ak" -> Ok(locale_ak.locale())
     "am" -> Ok(locale_am.locale())
     "ar" -> Ok(locale_ar.locale())
+    "ay" -> Ok(locale_ay.locale())
     "az" -> Ok(locale_az.locale())
     "bci" -> Ok(locale_bci.locale())
     "be" -> Ok(locale_be.locale())
@@ -234,20 +244,24 @@ pub fn get(code: String) -> Result(types.DurationLocale, Nil) {
     "ka" -> Ok(locale_ka.locale())
     "kbp" -> Ok(locale_kbp.locale())
     "kek" -> Ok(locale_kek.locale())
+    "ki" -> Ok(locale_ki.locale())
     "kk" -> Ok(locale_kk.locale())
     "kl" -> Ok(locale_kl.locale())
     "km" -> Ok(locale_km.locale())
     "kn" -> Ok(locale_kn.locale())
     "ko" -> Ok(locale_ko.locale())
     "kpe" -> Ok(locale_kpe.locale())
+    "kri" -> Ok(locale_kri.locale())
     "ktu" -> Ok(locale_ktu.locale())
     "ku" -> Ok(locale_ku.locale())
     "kw" -> Ok(locale_kw.locale())
     "ky" -> Ok(locale_ky.locale())
+    "lb" -> Ok(locale_lb.locale())
     "lg" -> Ok(locale_lg.locale())
     "ln" -> Ok(locale_ln.locale())
     "lo" -> Ok(locale_lo.locale())
     "lt" -> Ok(locale_lt.locale())
+    "luo" -> Ok(locale_luo.locale())
     "lv" -> Ok(locale_lv.locale())
     "mam" -> Ok(locale_mam.locale())
     "men" -> Ok(locale_men.locale())
@@ -268,6 +282,7 @@ pub fn get(code: String) -> Result(types.DurationLocale, Nil) {
     "ne" -> Ok(locale_ne.locale())
     "ng" -> Ok(locale_ng.locale())
     "nl" -> Ok(locale_nl.locale())
+    "nr" -> Ok(locale_nr.locale())
     "nso" -> Ok(locale_nso.locale())
     "nus" -> Ok(locale_nus.locale())
     "ny" -> Ok(locale_ny.locale())
@@ -316,15 +331,18 @@ pub fn get(code: String) -> Result(types.DurationLocale, Nil) {
     "tpi" -> Ok(locale_tpi.locale())
     "tr" -> Ok(locale_tr.locale())
     "ts" -> Ok(locale_ts.locale())
+    "tum" -> Ok(locale_tum.locale())
     "tzm" -> Ok(locale_tzm.locale())
     "uk" -> Ok(locale_uk.locale())
     "umb" -> Ok(locale_umb.locale())
     "ur" -> Ok(locale_ur.locale())
     "uz" -> Ok(locale_uz.locale())
+    "ve" -> Ok(locale_ve.locale())
     "vi" -> Ok(locale_vi.locale())
     "vmw" -> Ok(locale_vmw.locale())
     "wo" -> Ok(locale_wo.locale())
     "xh" -> Ok(locale_xh.locale())
+    "yao" -> Ok(locale_yao.locale())
     "yo" -> Ok(locale_yo.locale())
     "yue" -> Ok(locale_yue.locale())
     "zdj" -> Ok(locale_zdj.locale())

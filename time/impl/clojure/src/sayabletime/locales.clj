@@ -14,6 +14,7 @@
     [sayabletime.locales.ak :as ak]
     [sayabletime.locales.am :as am]
     [sayabletime.locales.ar :as ar]
+    [sayabletime.locales.ay :as ay]
     [sayabletime.locales.az :as az]
     [sayabletime.locales.bci :as bci]
     [sayabletime.locales.be :as be]
@@ -73,20 +74,24 @@
     [sayabletime.locales.ka :as ka]
     [sayabletime.locales.kbp :as kbp]
     [sayabletime.locales.kek :as kek]
+    [sayabletime.locales.ki :as ki]
     [sayabletime.locales.kk :as kk]
     [sayabletime.locales.kl :as kl]
     [sayabletime.locales.km :as km]
     [sayabletime.locales.kn :as kn]
     [sayabletime.locales.ko :as ko]
     [sayabletime.locales.kpe :as kpe]
+    [sayabletime.locales.kri :as kri]
     [sayabletime.locales.ktu :as ktu]
     [sayabletime.locales.ku :as ku]
     [sayabletime.locales.kw :as kw]
     [sayabletime.locales.ky :as ky]
+    [sayabletime.locales.lb :as lb]
     [sayabletime.locales.lg :as lg]
     [sayabletime.locales.ln :as ln]
     [sayabletime.locales.lo :as lo]
     [sayabletime.locales.lt :as lt]
+    [sayabletime.locales.luo :as luo]
     [sayabletime.locales.lv :as lv]
     [sayabletime.locales.mam :as mam]
     [sayabletime.locales.men :as men]
@@ -107,6 +112,7 @@
     [sayabletime.locales.ne :as ne]
     [sayabletime.locales.ng :as ng]
     [sayabletime.locales.nl :as nl]
+    [sayabletime.locales.nr :as nr]
     [sayabletime.locales.nso :as nso]
     [sayabletime.locales.nus :as nus]
     [sayabletime.locales.ny :as ny]
@@ -155,15 +161,18 @@
     [sayabletime.locales.tpi :as tpi]
     [sayabletime.locales.tr :as tr]
     [sayabletime.locales.ts :as ts]
+    [sayabletime.locales.tum :as tum]
     [sayabletime.locales.tzm :as tzm]
     [sayabletime.locales.uk :as uk]
     [sayabletime.locales.umb :as umb]
     [sayabletime.locales.ur :as ur]
     [sayabletime.locales.uz :as uz]
+    [sayabletime.locales.ve :as ve]
     [sayabletime.locales.vi :as vi]
     [sayabletime.locales.vmw :as vmw]
     [sayabletime.locales.wo :as wo]
     [sayabletime.locales.xh :as xh]
+    [sayabletime.locales.yao :as yao]
     [sayabletime.locales.yo :as yo]
     [sayabletime.locales.yue :as yue]
     [sayabletime.locales.zdj :as zdj]
@@ -177,6 +186,7 @@
     "ak" ak/locale
     "am" am/locale
     "ar" ar/locale
+    "ay" ay/locale
     "az" az/locale
     "bci" bci/locale
     "be" be/locale
@@ -236,20 +246,24 @@
     "ka" ka/locale
     "kbp" kbp/locale
     "kek" kek/locale
+    "ki" ki/locale
     "kk" kk/locale
     "kl" kl/locale
     "km" km/locale
     "kn" kn/locale
     "ko" ko/locale
     "kpe" kpe/locale
+    "kri" kri/locale
     "ktu" ktu/locale
     "ku" ku/locale
     "kw" kw/locale
     "ky" ky/locale
+    "lb" lb/locale
     "lg" lg/locale
     "ln" ln/locale
     "lo" lo/locale
     "lt" lt/locale
+    "luo" luo/locale
     "lv" lv/locale
     "mam" mam/locale
     "men" men/locale
@@ -270,6 +284,7 @@
     "ne" ne/locale
     "ng" ng/locale
     "nl" nl/locale
+    "nr" nr/locale
     "nso" nso/locale
     "nus" nus/locale
     "ny" ny/locale
@@ -318,15 +333,18 @@
     "tpi" tpi/locale
     "tr" tr/locale
     "ts" ts/locale
+    "tum" tum/locale
     "tzm" tzm/locale
     "uk" uk/locale
     "umb" umb/locale
     "ur" ur/locale
     "uz" uz/locale
+    "ve" ve/locale
     "vi" vi/locale
     "vmw" vmw/locale
     "wo" wo/locale
     "xh" xh/locale
+    "yao" yao/locale
     "yo" yo/locale
     "yue" yue/locale
     "zdj" zdj/locale

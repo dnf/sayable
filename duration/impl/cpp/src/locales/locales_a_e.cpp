@@ -222,6 +222,56 @@ const DurationLocale& AR() {
     return loc;
 }
 
+// Source: duration/locales/src/ay.json
+const DurationLocale& AY() {
+    static const DurationLocale loc{
+        "ay",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("sikundu {n}"),
+            UnitForms::Simple("minutu {n}"),
+            UnitForms::Simple("ura {n}"),
+            UnitForms::Simple("uru {n}"),
+            UnitForms::Simple("simana {n}"),
+            UnitForms::Simple("phaxsi {n}"),
+            UnitForms::Simple("mara {n}")
+        },
+        "jichha",
+        "{0} chika", ", ",
+        "{0} nayraqata", "{0} jutirïn",
+        CompactnessOverride{
+            UnitForms::Simple("sik. {n}"),
+            UnitForms::Simple("min. {n}"),
+            UnitForms::Simple("ur. {n}"),
+            UnitForms::Simple("{n} ur."),
+            UnitForms::Simple("{n} sim."),
+            UnitForms::Simple("{n} phx."),
+            UnitForms::Simple("{n} mr."),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} nayraqata"),
+            std::string("{0} jutirïn")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::string("{0} nayraqata"),
+            std::string("{0} jutirïn")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: duration/locales/src/az.json
 const DurationLocale& AZ() {
     static const DurationLocale loc{

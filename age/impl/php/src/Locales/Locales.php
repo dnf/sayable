@@ -193,6 +193,42 @@ final class Locales
         );
     }
 
+    // Source: age/locales/src/ay.json
+    // ── Aymara ──────────────────────────────────────────────────────
+
+    public static function AY(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'ay',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                day: 'uru {n}',
+                week: 'simana {n}',
+                month: 'phaxsi {n}',
+                year: 'mara {n}',
+            ),
+            half: '{0} chika',
+            delimiter: ', ',
+            justBorn: 'Wawa machaqa',
+            stages: new Stages(new StageLabel('Wawa machaqa'), new StageLabel('Wawa'), new StageLabel('Jisk\'a wawa'), new StageLabel('Yuqalla'), new StageLabel('Wayna'), new StageLabel('Jaqi')),
+            short: new CompactnessOverride(
+                day: '{n} ur.',
+                week: '{n} sim.',
+                month: '{n} phx.',
+                year: '{n} mr.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                delimiter: '',
+            ),
+        );
+    }
+
     // Source: age/locales/src/az.json
     // ── Azerbaijani ─────────────────────────────────────────────────
 
@@ -2529,6 +2565,42 @@ final class Locales
         );
     }
 
+    // Source: age/locales/src/ki.json
+    // ── Kikuyu ──────────────────────────────────────────────────────
+
+    public static function KI(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'ki',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                day: ['one' => 'mũthenya {n}', 'other' => 'mĩthenya {n}'],
+                week: ['one' => 'kiumia {n}', 'other' => 'kiumia {n}'],
+                month: ['one' => 'mwerĩ {n}', 'other' => 'mĩerĩ {n}'],
+                year: ['one' => 'mwaka {n}', 'other' => 'mĩaka {n}'],
+            ),
+            half: '{0} na nusu',
+            delimiter: ', ',
+            justBorn: 'Kaana gakĩ',
+            stages: new Stages(new StageLabel('Kaana gakĩ'), new StageLabel('Kaana'), new StageLabel('Kaana kanini'), new StageLabel('Mwana'), new StageLabel('Kĩhĩĩ'), new StageLabel('Mũndũ mũkũrũ')),
+            short: new CompactnessOverride(
+                day: ['one' => 'mũth. {n}', 'other' => 'mĩth. {n}'],
+                week: '{n} kiu.',
+                month: ['one' => 'mwerĩ {n}', 'other' => 'mĩerĩ {n}'],
+                year: ['one' => 'mwaka {n}', 'other' => 'mĩaka {n}'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                delimiter: '',
+            ),
+        );
+    }
+
     // Source: age/locales/src/kk.json
     // ── Kazakh ──────────────────────────────────────────────────────
 
@@ -2749,6 +2821,42 @@ final class Locales
         );
     }
 
+    // Source: age/locales/src/kri.json
+    // ── Krio ────────────────────────────────────────────────────────
+
+    public static function KRI(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'kri',
+            plural: static fn(int $n): PluralCategory => PluralCategory::Other,
+            units: new Units(
+                day: '{n} de',
+                week: '{n} wik',
+                month: '{n} mont',
+                year: '{n} ia',
+            ),
+            half: '{n} na af',
+            delimiter: ', ',
+            justBorn: 'Nyubon bebi',
+            stages: new Stages(new StageLabel('Nyubon bebi'), new StageLabel('Smol pikin'), new StageLabel('Smol pikin'), new StageLabel('Pikin'), new StageLabel('Yong posin'), new StageLabel('Big posin')),
+            short: new CompactnessOverride(
+                day: '{n} de',
+                week: '{n} wik',
+                month: '{n} mont',
+                year: '{n} ia',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                delimiter: '',
+            ),
+        );
+    }
+
     // Source: age/locales/src/ktu.json
     // ── Kituba ──────────────────────────────────────────────────────
 
@@ -2918,6 +3026,42 @@ final class Locales
         );
     }
 
+    // Source: age/locales/src/lb.json
+    // ── Luxembourgish ───────────────────────────────────────────────
+
+    public static function LB(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'lb',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                day: ['one' => '{n} Dag', 'other' => '{n} Deeg'],
+                week: ['one' => '{n} Woch', 'other' => '{n} Wochen'],
+                month: ['one' => '{n} Mount', 'other' => '{n} Méint'],
+                year: ['one' => '{n} Joer', 'other' => '{n} Joer'],
+            ),
+            half: '{n}½',
+            delimiter: ', ',
+            justBorn: 'Neigebuerenen',
+            stages: new Stages(new StageLabel('Neigebuerenen'), new StageLabel('Puppelchen'), new StageLabel('Klengkand'), new StageLabel('Kand'), new StageLabel('Jugendlechen'), new StageLabel('Erwuessenen', 'Erwuessen')),
+            short: new CompactnessOverride(
+                day: '{n} D.',
+                week: '{n} W.',
+                month: '{n} M.',
+                year: '{n} J.',
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}D',
+                week: '{n}W',
+                month: '{n}M',
+                year: '{n}J',
+                delimiter: '',
+            ),
+        );
+    }
+
     // Source: age/locales/src/lg.json
     // ── Luganda ─────────────────────────────────────────────────────
 
@@ -3072,6 +3216,42 @@ final class Locales
                 week: '{n} sav.',
                 month: '{n} mėn.',
                 year: '{n} m.',
+                delimiter: '',
+            ),
+        );
+    }
+
+    // Source: age/locales/src/luo.json
+    // ── Dholuo ──────────────────────────────────────────────────────
+
+    public static function LUO(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'luo',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                day: ['one' => 'odiechieng\' {n}', 'other' => 'ndalo {n}'],
+                week: ['one' => 'juma {n}', 'other' => 'jumbe {n}'],
+                month: ['one' => 'dwe {n}', 'other' => 'dweche {n}'],
+                year: ['one' => 'higa {n}', 'other' => 'higni {n}'],
+            ),
+            half: '{0} gi nus',
+            delimiter: ', ',
+            justBorn: 'Nyathi manyien',
+            stages: new Stages(new StageLabel('Nyathi manyien'), new StageLabel('Kidoro'), new StageLabel('Nyathi matin'), new StageLabel('Nyathi'), new StageLabel('Rawera'), new StageLabel('Ng\'ama duong\'')),
+            short: new CompactnessOverride(
+                day: ['one' => 'odie. {n}', 'other' => 'ndalo {n}'],
+                week: ['one' => 'juma {n}', 'other' => 'jumbe {n}'],
+                month: ['one' => 'dwe {n}', 'other' => 'dwe. {n}'],
+                year: ['one' => 'higa {n}', 'other' => 'higni {n}'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
                 delimiter: '',
             ),
         );
@@ -3852,6 +4032,42 @@ final class Locales
                 week: '{n} w',
                 month: '{n} m',
                 year: '{n} jr',
+                delimiter: '',
+            ),
+        );
+    }
+
+    // Source: age/locales/src/nr.json
+    // ── Southern Ndebele ────────────────────────────────────────────
+
+    public static function NR(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'nr',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                day: ['one' => 'ilanga {n}', 'other' => 'amalanga {n}'],
+                week: ['one' => 'iveke {n}', 'other' => 'amaveke {n}'],
+                month: ['one' => 'inyanga {n}', 'other' => 'iinyanga {n}'],
+                year: ['one' => 'unyaka {n}', 'other' => 'iminyaka {n}'],
+            ),
+            half: '{0} nesiquntu',
+            delimiter: ', ',
+            justBorn: 'Usana olusanda kubeletwa',
+            stages: new Stages(new StageLabel('Usana olusanda kubeletwa'), new StageLabel('Usana'), new StageLabel('Umntwana omncani'), new StageLabel('Umntwana'), new StageLabel('Isokana'), new StageLabel('Umuntu omkhulu')),
+            short: new CompactnessOverride(
+                day: ['one' => 'ilanga {n}', 'other' => 'amal. {n}'],
+                week: ['one' => 'iveke {n}', 'other' => 'amav. {n}'],
+                month: ['one' => 'iny. {n}', 'other' => 'iiny. {n}'],
+                year: ['one' => 'uny. {n}', 'other' => 'imin. {n}'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
                 delimiter: '',
             ),
         );
@@ -5719,6 +5935,42 @@ final class Locales
         );
     }
 
+    // Source: age/locales/src/tum.json
+    // ── Tumbuka ─────────────────────────────────────────────────────
+
+    public static function TUM(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'tum',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                day: ['one' => 'dazi {n}', 'other' => 'madazi {n}'],
+                week: ['one' => 'sabata {n}', 'other' => 'masabata {n}'],
+                month: ['one' => 'mwezi {n}', 'other' => 'miyezi {n}'],
+                year: ['one' => 'chaka {n}', 'other' => 'vyaka {n}'],
+            ),
+            half: '{0} na hafu',
+            delimiter: ', ',
+            justBorn: 'Mwana wabadwa wala',
+            stages: new Stages(new StageLabel('Mwana wabadwa wala'), new StageLabel('Mwana wakumawere'), new StageLabel('Kamwana'), new StageLabel('Mwana'), new StageLabel('Munyamata'), new StageLabel('Munthu mukuru')),
+            short: new CompactnessOverride(
+                day: ['one' => 'dazi {n}', 'other' => 'mad. {n}'],
+                week: ['one' => 'sab. {n}', 'other' => 'mas. {n}'],
+                month: ['one' => 'mwezi {n}', 'other' => 'miy. {n}'],
+                year: ['one' => 'chaka {n}', 'other' => 'vyaka {n}'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                delimiter: '',
+            ),
+        );
+    }
+
     // Source: age/locales/src/tzm.json
     // ── Central Atlas Tamazight ─────────────────────────────────────
 
@@ -5927,6 +6179,42 @@ final class Locales
         );
     }
 
+    // Source: age/locales/src/ve.json
+    // ── Venda ───────────────────────────────────────────────────────
+
+    public static function VE(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 've',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                day: ['one' => 'duvha {n}', 'other' => 'maduvha {n}'],
+                week: ['one' => 'vhege {n}', 'other' => 'mavhege {n}'],
+                month: ['one' => 'nwedzi {n}', 'other' => 'minwedzi {n}'],
+                year: ['one' => 'nwaha {n}', 'other' => 'minwaha {n}'],
+            ),
+            half: '{0} na hafu',
+            delimiter: ', ',
+            justBorn: 'Mbuwe',
+            stages: new Stages(new StageLabel('Mbuwe'), new StageLabel('Kwana'), new StageLabel('Nwana mutuku'), new StageLabel('Nwana'), new StageLabel('Mutukana'), new StageLabel('Muthu muhulwane')),
+            short: new CompactnessOverride(
+                day: ['one' => 'duv. {n}', 'other' => 'mad. {n}'],
+                week: ['one' => 'vheg. {n}', 'other' => 'mav. {n}'],
+                month: ['one' => 'nwedzi {n}', 'other' => 'min. {n}'],
+                year: ['one' => 'nwaha {n}', 'other' => 'min. {n}'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
+                delimiter: '',
+            ),
+        );
+    }
+
     // Source: age/locales/src/vi.json
     // ── Vietnamese ──────────────────────────────────────────────────
 
@@ -6070,6 +6358,42 @@ final class Locales
                 month: '{n}m',
                 year: '{n}y',
                 half: '{n}½',
+                delimiter: '',
+            ),
+        );
+    }
+
+    // Source: age/locales/src/yao.json
+    // ── Yao ─────────────────────────────────────────────────────────
+
+    public static function YAO(): AgeLocale
+    {
+        static $locale = null;
+
+        return $locale ??= new AgeLocale(
+            code: 'yao',
+            plural: static fn(int $n): PluralCategory => $n === 1 ? PluralCategory::One : PluralCategory::Other,
+            units: new Units(
+                day: ['one' => 'lisiku {n}', 'other' => 'masiku {n}'],
+                week: ['one' => 'juma {n}', 'other' => 'majuma {n}'],
+                month: ['one' => 'ngondo {n}', 'other' => 'mingondo {n}'],
+                year: ['one' => 'chaka {n}', 'other' => 'vyaka {n}'],
+            ),
+            half: '{0} na nusu',
+            delimiter: ', ',
+            justBorn: 'Mwanache jwabadwa',
+            stages: new Stages(new StageLabel('Mwanache jwabadwa'), new StageLabel('Kamwanache'), new StageLabel('Kamwanache kanandi'), new StageLabel('Mwanache'), new StageLabel('Jeje'), new StageLabel('Mundu')),
+            short: new CompactnessOverride(
+                day: ['one' => 'lis. {n}', 'other' => 'mas. {n}'],
+                week: ['one' => 'juma {n}', 'other' => 'maj. {n}'],
+                month: ['one' => 'ngo. {n}', 'other' => 'min. {n}'],
+                year: ['one' => 'chaka {n}', 'other' => 'vyaka {n}'],
+            ),
+            compact: new CompactnessOverride(
+                day: '{n}d',
+                week: '{n}w',
+                month: '{n}m',
+                year: '{n}y',
                 delimiter: '',
             ),
         );
@@ -6263,6 +6587,7 @@ final class Locales
             'ak' => self::AK(),
             'am' => self::AM(),
             'ar' => self::AR(),
+            'ay' => self::AY(),
             'az' => self::AZ(),
             'bci' => self::BCI(),
             'be' => self::BE(),
@@ -6322,20 +6647,24 @@ final class Locales
             'ka' => self::KA(),
             'kbp' => self::KBP(),
             'kek' => self::KEK(),
+            'ki' => self::KI(),
             'kk' => self::KK(),
             'kl' => self::KL(),
             'km' => self::KM(),
             'kn' => self::KN(),
             'ko' => self::KO(),
             'kpe' => self::KPE(),
+            'kri' => self::KRI(),
             'ktu' => self::KTU(),
             'ku' => self::KU(),
             'kw' => self::KW(),
             'ky' => self::KY(),
+            'lb' => self::LB(),
             'lg' => self::LG(),
             'ln' => self::LN(),
             'lo' => self::LO(),
             'lt' => self::LT(),
+            'luo' => self::LUO(),
             'lv' => self::LV(),
             'mam' => self::MAM(),
             'men' => self::MEN(),
@@ -6356,6 +6685,7 @@ final class Locales
             'ne' => self::NE(),
             'ng' => self::NG(),
             'nl' => self::NL(),
+            'nr' => self::NR(),
             'nso' => self::NSO(),
             'nus' => self::NUS(),
             'ny' => self::NY(),
@@ -6404,15 +6734,18 @@ final class Locales
             'tpi' => self::TPI(),
             'tr' => self::TR(),
             'ts' => self::TS(),
+            'tum' => self::TUM(),
             'tzm' => self::TZM(),
             'uk' => self::UK(),
             'umb' => self::UMB(),
             'ur' => self::UR(),
             'uz' => self::UZ(),
+            've' => self::VE(),
             'vi' => self::VI(),
             'vmw' => self::VMW(),
             'wo' => self::WO(),
             'xh' => self::XH(),
+            'yao' => self::YAO(),
             'yo' => self::YO(),
             'yue' => self::YUE(),
             'zdj' => self::ZDJ(),

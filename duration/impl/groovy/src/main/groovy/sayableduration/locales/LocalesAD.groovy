@@ -228,6 +228,57 @@ class LocalesAD {
         null
     )
 
+    // Source: duration/locales/src/ay.json
+    // ================================================================
+    // AY — Aymara
+    // ================================================================
+    static final DurationLocale AY = new DurationLocale(
+        'ay',
+        { int n -> PluralCategory.OTHER },
+        new Units(
+            UnitForms.simpleUnit('sikundu {n}'),
+            UnitForms.simpleUnit('minutu {n}'),
+            UnitForms.simpleUnit('ura {n}'),
+            UnitForms.simpleUnit('uru {n}'),
+            UnitForms.simpleUnit('simana {n}'),
+            UnitForms.simpleUnit('phaxsi {n}'),
+            UnitForms.simpleUnit('mara {n}')
+        ),
+        '{0} chika',
+        ', ',
+        'jichha',
+        '{0} nayraqata',
+        '{0} jutirïn',
+        new CompactnessOverride(
+            UnitForms.simpleUnit('sik. {n}'),
+            UnitForms.simpleUnit('min. {n}'),
+            UnitForms.simpleUnit('ur. {n}'),
+            UnitForms.simpleUnit('{n} ur.'),
+            UnitForms.simpleUnit('{n} sim.'),
+            UnitForms.simpleUnit('{n} phx.'),
+            UnitForms.simpleUnit('{n} mr.'),
+            null,
+            null,
+            '{0} nayraqata',
+            '{0} jutirïn'
+        ),
+        new CompactnessOverride(
+            UnitForms.simpleUnit('{n}s'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}h'),
+            UnitForms.simpleUnit('{n}d'),
+            UnitForms.simpleUnit('{n}w'),
+            UnitForms.simpleUnit('{n}m'),
+            UnitForms.simpleUnit('{n}y'),
+            null,
+            '',
+            '{0} nayraqata',
+            '{0} jutirïn'
+        ),
+        null,
+        null
+    )
+
     // Source: duration/locales/src/az.json
     // ================================================================
     // AZ — Azerbaijani

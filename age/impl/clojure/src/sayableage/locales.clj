@@ -14,6 +14,7 @@
     [sayableage.locales.ak :as ak]
     [sayableage.locales.am :as am]
     [sayableage.locales.ar :as ar]
+    [sayableage.locales.ay :as ay]
     [sayableage.locales.az :as az]
     [sayableage.locales.bci :as bci]
     [sayableage.locales.be :as be]
@@ -73,20 +74,24 @@
     [sayableage.locales.ka :as ka]
     [sayableage.locales.kbp :as kbp]
     [sayableage.locales.kek :as kek]
+    [sayableage.locales.ki :as ki]
     [sayableage.locales.kk :as kk]
     [sayableage.locales.kl :as kl]
     [sayableage.locales.km :as km]
     [sayableage.locales.kn :as kn]
     [sayableage.locales.ko :as ko]
     [sayableage.locales.kpe :as kpe]
+    [sayableage.locales.kri :as kri]
     [sayableage.locales.ktu :as ktu]
     [sayableage.locales.ku :as ku]
     [sayableage.locales.kw :as kw]
     [sayableage.locales.ky :as ky]
+    [sayableage.locales.lb :as lb]
     [sayableage.locales.lg :as lg]
     [sayableage.locales.ln :as ln]
     [sayableage.locales.lo :as lo]
     [sayableage.locales.lt :as lt]
+    [sayableage.locales.luo :as luo]
     [sayableage.locales.lv :as lv]
     [sayableage.locales.mam :as mam]
     [sayableage.locales.men :as men]
@@ -107,6 +112,7 @@
     [sayableage.locales.ne :as ne]
     [sayableage.locales.ng :as ng]
     [sayableage.locales.nl :as nl]
+    [sayableage.locales.nr :as nr]
     [sayableage.locales.nso :as nso]
     [sayableage.locales.nus :as nus]
     [sayableage.locales.ny :as ny]
@@ -155,15 +161,18 @@
     [sayableage.locales.tpi :as tpi]
     [sayableage.locales.tr :as tr]
     [sayableage.locales.ts :as ts]
+    [sayableage.locales.tum :as tum]
     [sayableage.locales.tzm :as tzm]
     [sayableage.locales.uk :as uk]
     [sayableage.locales.umb :as umb]
     [sayableage.locales.ur :as ur]
     [sayableage.locales.uz :as uz]
+    [sayableage.locales.ve :as ve]
     [sayableage.locales.vi :as vi]
     [sayableage.locales.vmw :as vmw]
     [sayableage.locales.wo :as wo]
     [sayableage.locales.xh :as xh]
+    [sayableage.locales.yao :as yao]
     [sayableage.locales.yo :as yo]
     [sayableage.locales.yue :as yue]
     [sayableage.locales.zdj :as zdj]
@@ -177,6 +186,7 @@
     "ak" ak/locale
     "am" am/locale
     "ar" ar/locale
+    "ay" ay/locale
     "az" az/locale
     "bci" bci/locale
     "be" be/locale
@@ -236,20 +246,24 @@
     "ka" ka/locale
     "kbp" kbp/locale
     "kek" kek/locale
+    "ki" ki/locale
     "kk" kk/locale
     "kl" kl/locale
     "km" km/locale
     "kn" kn/locale
     "ko" ko/locale
     "kpe" kpe/locale
+    "kri" kri/locale
     "ktu" ktu/locale
     "ku" ku/locale
     "kw" kw/locale
     "ky" ky/locale
+    "lb" lb/locale
     "lg" lg/locale
     "ln" ln/locale
     "lo" lo/locale
     "lt" lt/locale
+    "luo" luo/locale
     "lv" lv/locale
     "mam" mam/locale
     "men" men/locale
@@ -270,6 +284,7 @@
     "ne" ne/locale
     "ng" ng/locale
     "nl" nl/locale
+    "nr" nr/locale
     "nso" nso/locale
     "nus" nus/locale
     "ny" ny/locale
@@ -318,15 +333,18 @@
     "tpi" tpi/locale
     "tr" tr/locale
     "ts" ts/locale
+    "tum" tum/locale
     "tzm" tzm/locale
     "uk" uk/locale
     "umb" umb/locale
     "ur" ur/locale
     "uz" uz/locale
+    "ve" ve/locale
     "vi" vi/locale
     "vmw" vmw/locale
     "wo" wo/locale
     "xh" xh/locale
+    "yao" yao/locale
     "yo" yo/locale
     "yue" yue/locale
     "zdj" zdj/locale

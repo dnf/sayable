@@ -1598,6 +1598,57 @@ const DurationLocale& KEK() {
     return loc;
 }
 
+// Source: duration/locales/src/ki.json
+const DurationLocale& KI() {
+    static const DurationLocale loc{
+        "ki",
+        [](int n) -> PluralCategory {
+            if (n == 1) return PluralCategory::One;
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Plural({{PluralCategory::One, "sekunde {n}"}, {PluralCategory::Other, "sekunde {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ndagĩka {n}"}, {PluralCategory::Other, "ndagĩka {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "ithaa {n}"}, {PluralCategory::Other, "mathaa {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mũthenya {n}"}, {PluralCategory::Other, "mĩthenya {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "kiumia {n}"}, {PluralCategory::Other, "kiumia {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mwerĩ {n}"}, {PluralCategory::Other, "mĩerĩ {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mwaka {n}"}, {PluralCategory::Other, "mĩaka {n}"}})
+        },
+        "ũmũthĩ",
+        "{0} na nusu", ", ",
+        "{0} ĩhĩtũkĩte", "{0} ĩyothe",
+        CompactnessOverride{
+            UnitForms::Simple("sek. {n}"),
+            UnitForms::Simple("ndag. {n}"),
+            UnitForms::Plural({{PluralCategory::One, "ithaa {n}"}, {PluralCategory::Other, "mathaa {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mũth. {n}"}, {PluralCategory::Other, "mĩth. {n}"}}),
+            UnitForms::Simple("kiu. {n}"),
+            UnitForms::Plural({{PluralCategory::One, "mwerĩ {n}"}, {PluralCategory::Other, "mĩerĩ {n}"}}),
+            UnitForms::Plural({{PluralCategory::One, "mwaka {n}"}, {PluralCategory::Other, "mĩaka {n}"}}),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} ĩhĩtũkĩte"),
+            std::string("{0} ĩyothe")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::string("{0} ĩhĩtũkĩte"),
+            std::string("{0} ĩyothe")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: duration/locales/src/kk.json
 const DurationLocale& KK() {
     static const DurationLocale loc{
@@ -1894,6 +1945,56 @@ const DurationLocale& KPE() {
             std::string(""),
             std::string("{0} pɔlɔ"),
             std::string("ya {0}")
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
+// Source: duration/locales/src/kri.json
+const DurationLocale& KRI() {
+    static const DurationLocale loc{
+        "kri",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("{n} sekon"),
+            UnitForms::Simple("{n} minit"),
+            UnitForms::Simple("{n} awa"),
+            UnitForms::Simple("{n} de"),
+            UnitForms::Simple("{n} wik"),
+            UnitForms::Simple("{n} mont"),
+            UnitForms::Simple("{n} ia")
+        },
+        "jos naw",
+        "{n} na af", ", ",
+        "{0} bak", "na {0}",
+        CompactnessOverride{
+            UnitForms::Simple("{n} sek."),
+            UnitForms::Simple("{n} min."),
+            UnitForms::Simple("{n} awa"),
+            UnitForms::Simple("{n} de"),
+            UnitForms::Simple("{n} wik"),
+            UnitForms::Simple("{n} mont"),
+            UnitForms::Simple("{n} ia"),
+            std::nullopt,
+            std::nullopt,
+            std::string("{0} bak"),
+            std::string("na {0}")
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}s"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}h"),
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::string("{0} bak"),
+            std::string("na {0}")
         },
         nullptr, nullptr
     };

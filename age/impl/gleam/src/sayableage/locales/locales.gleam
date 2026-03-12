@@ -13,6 +13,7 @@ import sayableage/locales/af as locale_af
 import sayableage/locales/ak as locale_ak
 import sayableage/locales/am as locale_am
 import sayableage/locales/ar as locale_ar
+import sayableage/locales/ay as locale_ay
 import sayableage/locales/az as locale_az
 import sayableage/locales/bci as locale_bci
 import sayableage/locales/be as locale_be
@@ -72,20 +73,24 @@ import sayableage/locales/jv as locale_jv
 import sayableage/locales/ka as locale_ka
 import sayableage/locales/kbp as locale_kbp
 import sayableage/locales/kek as locale_kek
+import sayableage/locales/ki as locale_ki
 import sayableage/locales/kk as locale_kk
 import sayableage/locales/kl as locale_kl
 import sayableage/locales/km as locale_km
 import sayableage/locales/kn as locale_kn
 import sayableage/locales/ko as locale_ko
 import sayableage/locales/kpe as locale_kpe
+import sayableage/locales/kri as locale_kri
 import sayableage/locales/ktu as locale_ktu
 import sayableage/locales/ku as locale_ku
 import sayableage/locales/kw as locale_kw
 import sayableage/locales/ky as locale_ky
+import sayableage/locales/lb as locale_lb
 import sayableage/locales/lg as locale_lg
 import sayableage/locales/ln as locale_ln
 import sayableage/locales/lo as locale_lo
 import sayableage/locales/lt as locale_lt
+import sayableage/locales/luo as locale_luo
 import sayableage/locales/lv as locale_lv
 import sayableage/locales/mam as locale_mam
 import sayableage/locales/men as locale_men
@@ -106,6 +111,7 @@ import sayableage/locales/nd as locale_nd
 import sayableage/locales/ne as locale_ne
 import sayableage/locales/ng as locale_ng
 import sayableage/locales/nl as locale_nl
+import sayableage/locales/nr as locale_nr
 import sayableage/locales/nso as locale_nso
 import sayableage/locales/nus as locale_nus
 import sayableage/locales/ny as locale_ny
@@ -154,15 +160,18 @@ import sayableage/locales/tn as locale_tn
 import sayableage/locales/tpi as locale_tpi
 import sayableage/locales/tr as locale_tr
 import sayableage/locales/ts as locale_ts
+import sayableage/locales/tum as locale_tum
 import sayableage/locales/tzm as locale_tzm
 import sayableage/locales/uk as locale_uk
 import sayableage/locales/umb as locale_umb
 import sayableage/locales/ur as locale_ur
 import sayableage/locales/uz as locale_uz
+import sayableage/locales/ve as locale_ve
 import sayableage/locales/vi as locale_vi
 import sayableage/locales/vmw as locale_vmw
 import sayableage/locales/wo as locale_wo
 import sayableage/locales/xh as locale_xh
+import sayableage/locales/yao as locale_yao
 import sayableage/locales/yo as locale_yo
 import sayableage/locales/yue as locale_yue
 import sayableage/locales/zdj as locale_zdj
@@ -175,6 +184,7 @@ pub fn get(code: String) -> Result(types.AgeLocale, Nil) {
     "ak" -> Ok(locale_ak.locale())
     "am" -> Ok(locale_am.locale())
     "ar" -> Ok(locale_ar.locale())
+    "ay" -> Ok(locale_ay.locale())
     "az" -> Ok(locale_az.locale())
     "bci" -> Ok(locale_bci.locale())
     "be" -> Ok(locale_be.locale())
@@ -234,20 +244,24 @@ pub fn get(code: String) -> Result(types.AgeLocale, Nil) {
     "ka" -> Ok(locale_ka.locale())
     "kbp" -> Ok(locale_kbp.locale())
     "kek" -> Ok(locale_kek.locale())
+    "ki" -> Ok(locale_ki.locale())
     "kk" -> Ok(locale_kk.locale())
     "kl" -> Ok(locale_kl.locale())
     "km" -> Ok(locale_km.locale())
     "kn" -> Ok(locale_kn.locale())
     "ko" -> Ok(locale_ko.locale())
     "kpe" -> Ok(locale_kpe.locale())
+    "kri" -> Ok(locale_kri.locale())
     "ktu" -> Ok(locale_ktu.locale())
     "ku" -> Ok(locale_ku.locale())
     "kw" -> Ok(locale_kw.locale())
     "ky" -> Ok(locale_ky.locale())
+    "lb" -> Ok(locale_lb.locale())
     "lg" -> Ok(locale_lg.locale())
     "ln" -> Ok(locale_ln.locale())
     "lo" -> Ok(locale_lo.locale())
     "lt" -> Ok(locale_lt.locale())
+    "luo" -> Ok(locale_luo.locale())
     "lv" -> Ok(locale_lv.locale())
     "mam" -> Ok(locale_mam.locale())
     "men" -> Ok(locale_men.locale())
@@ -268,6 +282,7 @@ pub fn get(code: String) -> Result(types.AgeLocale, Nil) {
     "ne" -> Ok(locale_ne.locale())
     "ng" -> Ok(locale_ng.locale())
     "nl" -> Ok(locale_nl.locale())
+    "nr" -> Ok(locale_nr.locale())
     "nso" -> Ok(locale_nso.locale())
     "nus" -> Ok(locale_nus.locale())
     "ny" -> Ok(locale_ny.locale())
@@ -316,15 +331,18 @@ pub fn get(code: String) -> Result(types.AgeLocale, Nil) {
     "tpi" -> Ok(locale_tpi.locale())
     "tr" -> Ok(locale_tr.locale())
     "ts" -> Ok(locale_ts.locale())
+    "tum" -> Ok(locale_tum.locale())
     "tzm" -> Ok(locale_tzm.locale())
     "uk" -> Ok(locale_uk.locale())
     "umb" -> Ok(locale_umb.locale())
     "ur" -> Ok(locale_ur.locale())
     "uz" -> Ok(locale_uz.locale())
+    "ve" -> Ok(locale_ve.locale())
     "vi" -> Ok(locale_vi.locale())
     "vmw" -> Ok(locale_vmw.locale())
     "wo" -> Ok(locale_wo.locale())
     "xh" -> Ok(locale_xh.locale())
+    "yao" -> Ok(locale_yao.locale())
     "yo" -> Ok(locale_yo.locale())
     "yue" -> Ok(locale_yue.locale())
     "zdj" -> Ok(locale_zdj.locale())

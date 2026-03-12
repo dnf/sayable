@@ -174,6 +174,44 @@ const AgeLocale& AR() {
     return loc;
 }
 
+// Source: age/locales/src/ay.json
+const AgeLocale& AY() {
+    static const AgeLocale loc{
+        "ay",
+        [](int) -> PluralCategory {
+            return PluralCategory::Other;
+        },
+        UnitSet{
+            UnitForms::Simple("uru {n}"),
+            UnitForms::Simple("simana {n}"),
+            UnitForms::Simple("phaxsi {n}"),
+            UnitForms::Simple("mara {n}")
+        },
+        "{0} chika", ", ", "Wawa machaqa",
+        StageLabels{{"Wawa machaqa", ""}, {"Wawa", ""}, {"Jisk'a wawa", ""}, {"Yuqalla", ""}, {"Wayna", ""}, {"Jaqi", ""}},
+        CompactnessOverride{
+            UnitForms::Simple("{n} ur."),
+            UnitForms::Simple("{n} sim."),
+            UnitForms::Simple("{n} phx."),
+            UnitForms::Simple("{n} mr."),
+            std::nullopt,
+            std::nullopt,
+            std::nullopt
+        },
+        CompactnessOverride{
+            UnitForms::Simple("{n}d"),
+            UnitForms::Simple("{n}w"),
+            UnitForms::Simple("{n}m"),
+            UnitForms::Simple("{n}y"),
+            std::nullopt,
+            std::string(""),
+            std::nullopt
+        },
+        nullptr, nullptr
+    };
+    return loc;
+}
+
 // Source: age/locales/src/az.json
 const AgeLocale& AZ() {
     static const AgeLocale loc{

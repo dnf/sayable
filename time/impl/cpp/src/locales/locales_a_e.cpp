@@ -77,6 +77,22 @@ const TimeLocale& AR() {
     return loc;
 }
 
+// Source: time/locales/src/ay.json
+const TimeLocale& AY() {
+    static const TimeLocale loc{
+        "ay",
+        ClockConfig{
+            {"tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llantunka", "tunka", "tunka mayani"},
+            "aruma chika",
+            "chika uru",
+            {{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}}
+        },
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm} {ampm}", {"AM", "PM"}}},
+        CompactnessOverride{ShortClockConfig{false, "{h}:{mm}{ampm}", {"a", "p"}}},
+    };
+    return loc;
+}
+
 // Source: time/locales/src/az.json
 const TimeLocale& AZ() {
     static const TimeLocale loc{
