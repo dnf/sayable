@@ -36,7 +36,7 @@
 | Kosovo | 98% | Albanian (92%), Serbian (5%), Turkish (1%) | — |
 | Latvia | 100% | Latvian (62%), Russian (34%), English (46%) | — |
 | Lithuania | 100% | Lithuanian (85%), Russian (19%), Polish (6%), English (38%) | — |
-| Luxembourg | 83% | French (96%), German (71%), English (56%), Portuguese (13%) | Luxembourgish (49%) |
+| Luxembourg | 100% | French (96%), German (71%), English (56%), Portuguese (13%), Luxembourgish (49%) | — |
 | Malta | 100% | Maltese (90%), English (89%), Italian (66%) | — |
 | Moldova | 100% | Romanian (76%), Russian (27%), Ukrainian (6%) | — |
 | Montenegro | 65% | Serbian (43%), Bosnian (15%), Albanian (5%), Croatian (2%) | Montenegrin (35%) |
@@ -54,6 +54,10 @@
 | Switzerland | 100% | German (63%), French (23%), Italian (8%), English (45%) | — |
 | Ukraine | 100% | Ukrainian (68%), Russian (30%), English (18%) | — |
 | United Kingdom | 100% | English (92%), Welsh (1%), Scottish Gaelic (0%), Polish (2%), Urdu (1%), Punjabi (1%), Bengali (1%), Arabic (1%), French (15%) | — |
+
+## Notes
+
+Montenegro's remaining gap is Montenegrin (35%). Montenegrin is mutually intelligible with Serbian (sr), which is already supported. The two differ only in two additional letters (Ś/ś and Ź/ź) and minor lexical preferences — the temporal vocabulary (month names, weekday names, time expressions) is identical. Any Montenegrin speaker can use the Serbian locale without loss of comprehension. The distinction is political rather than linguistic.
 
 ---
 

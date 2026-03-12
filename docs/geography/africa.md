@@ -9,7 +9,7 @@
 ## Summary
 
 - **Countries**: 52
-- **Average coverage**: 89%
+- **Average coverage**: 90%
 
 ## Countries
 
@@ -39,12 +39,12 @@
 | Ghana | 91% | English (58%), Akan (44%), Hausa (5%), Igbo (1%), Yoruba (1%), Ewe (13%) | Ga-Dangme (7%), Dagbani (5%) |
 | Guinea | 100% | French (25%), Fulfulde (33%), Susu (21%), Maninka (23%) | — |
 | Guinea-Bissau | 80% | Portuguese (14%), Fulfulde (16%), Guinea-Bissau Creole (50%), Mandinka (7%) | Balanta (22%) |
-| Kenya | 61% | Swahili (67%), English (31%), Ganda (1%), Somali (1%) | Kikuyu (17%), Luhya (14%), Kalenjin (13%), Dholuo (Luo) (11%), Kamba (10%) |
+| Kenya | 78% | Swahili (67%), English (31%), Ganda (1%), Somali (1%), Kikuyu (17%), Dholuo (Luo) (11%) | Luhya (14%), Kalenjin (13%), Kamba (10%) |
 | Lesotho | 100% | English (30%), Zulu (2%), Sesotho (Southern Sotho) (90%) | — |
 | Liberia | 40% | English (20%), Kpelle (20%) | Bassa (13%), Grebo (10%), Dan (Gio) (8%), Mano (8%) |
 | Libya | 95% | Arabic (95%) | — |
 | Madagascar | 100% | Malagasy (95%), French (20%), English (5%) | — |
-| Malawi | 65% | Chewa (57%), English (15%) | Lomwe (15%), Yao (14%), Tumbuka (9%) |
+| Malawi | 86% | Chewa (57%), English (15%), Yao (14%), Tumbuka (9%) | Lomwe (15%) |
 | Mali | 93% | French (20%), Fulfulde (14%), Bambara (50%), Soninke (9%) | — |
 | Mauritania | 100% | Arabic (80%), French (15%), Fulfulde (8%) | — |
 | Mauritius | 100% | English (50%), French (73%), Hindi (3%), Mauritian Creole (87%) | — |
@@ -55,9 +55,9 @@
 | Nigeria | 82% | English (53%), Hausa (27%), Yoruba (15%), Igbo (12%), Fulfulde (5%) | Ijaw languages (10%), Kanuri (5%), Tiv (5%), Ibibio (5%) |
 | Rwanda | 100% | Kinyarwanda (93%), French (8%), English (15%), Swahili (2%) | — |
 | Senegal | 90% | French (26%), Fulfulde (23%), Wolof (50%), Soninke (5%) | Serer (11%) |
-| Sierra Leone | 83% | English (20%), Mende (31%), Temne (32%) | Krio (10%) |
+| Sierra Leone | 93% | English (20%), Mende (31%), Temne (32%), Krio (10%) | — |
 | Somalia | 100% | Somali (95%), Arabic (20%), English (5%) | — |
-| South Africa | 96% | Zulu (23%), Xhosa (16%), Afrikaans (13%), English (10%), Shona (1%), Northern Sotho (Sepedi) (10%), Tswana (8%), Southern Sotho (8%), Tsonga (5%), Swazi (siSwati) (3%) | Venda (2%), Southern Ndebele (2%) |
+| South Africa | 100% | Zulu (23%), Xhosa (16%), Afrikaans (13%), English (10%), Shona (1%), Northern Sotho (Sepedi) (10%), Tswana (8%), Southern Sotho (8%), Tsonga (5%), Swazi (siSwati) (3%), Venda (2%), Southern Ndebele (2%) | — |
 | South Sudan | 79% | English (10%), Arabic (15%), Swahili (2%), Dinka (36%), Nuer (16%) | Bari (7%), Zande (6%), Shilluk (5%) |
 | Sudan | 74% | Arabic (70%), English (5%) | Beja (12%), Nubian languages (8%), Fur (6%) |
 | Tanzania | 100% | Swahili (90%), English (15%), Sukuma (16%) | — |
@@ -67,6 +67,26 @@
 | Western Sahara | 90% | Arabic (90%) | — |
 | Zambia | 70% | English (20%), Chewa (15%), Bemba (35%) | Tonga (12%), Lozi (6%) |
 | Zimbabwe | 100% | English (30%), Shona (70%), Northern Ndebele (16%) | — |
+
+## Notes
+
+Liberia's remaining gaps are Bassa (13%), Grebo (10%), Dan/Gio (8%), and Mano (8%). All four are Niger-Congo languages with limited written standardization and very little digital tooling. Bassa has its own unique script (Vah) alongside a Latin orthography, but neither has established calendar/temporal vocabulary in written form.
+
+Uganda's gaps are Nyankore/Runyankole (10%), Soga/Lusoga (10%), Teso (10%), Lango (6%), and Acholi (5%). While several are Bantu languages with some written tradition, none has CLDR data or standardized temporal vocabulary for digital use. Acholi and Lango are Western Nilotic languages closely related to Dholuo but with less documentation.
+
+Namibia's remaining gaps are Khoekhoegowab/Nama-Damara (11%), RuKwangali (9%), and Otjiherero (9%). Khoekhoegowab uses click consonants and has limited digital standardization. RuKwangali and Otjiherero are Bantu languages with some written tradition but no established temporal vocabulary in standardized written form.
+
+Sudan's gaps are Beja (12%), Nubian languages (8%), and Fur (6%). Beja is an Afroasiatic language with a primarily oral tradition. 'Nubian languages' is a family of multiple distinct languages, not a single locale. Fur has limited written standardization.
+
+Kenya's remaining gaps after Kikuyu (ki) and Dholuo (luo) are Luhya (14%), Kalenjin (13%), and Kamba (10%). Luhya is actually a macro-language comprising 18+ distinct dialects (Bukusu, Maragoli, Luyia, etc.) — no single locale would cover the group. Kalenjin is similarly a cluster of related but distinct languages (Nandi, Kipsigis, Pokot, etc.). Kamba has some written tradition but no CLDR data.
+
+Cameroon's gaps are Bamileke languages (15%) and Ewondo (8%). 'Bamileke languages' is a group of 11+ languages in the Grassfields Bantu family — not a single locale. Ewondo has CLDR data but limited temporal vocabulary documentation.
+
+Nigeria's gaps are Ijaw languages (10%), Kanuri (5%), Tiv (5%), and Ibibio (5%). 'Ijaw languages' is a family of 9+ languages. Kanuri has limited digital standardization. Tiv and Ibibio have some written tradition but no established temporal vocabulary for digital use.
+
+Senegal's remaining gap is Serer (11%). Despite having an established Latin orthography and being spoken by over 1.8 million people, research found no documented month names, weekday names, or temporal vocabulary in available linguistic references — only greeting and number vocabulary. Adding a Serer locale requires native speaker collaboration.
+
+Several countries have small gaps (5-17%) in languages that are either: language families rather than single languages (Bamileke, Ijaw, Karen, Nubian), lack standardized written forms, or have no documented temporal vocabulary. These gaps are structural and cannot be addressed without native speaker partnerships.
 
 ---
 

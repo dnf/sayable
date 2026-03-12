@@ -9,14 +9,14 @@
 ## Summary
 
 - **Countries**: 12
-- **Average coverage**: 97%
+- **Average coverage**: 98%
 
 ## Countries
 
 | Country | Coverage | Covered Languages | Uncovered Languages |
 |---------|:--------:|-------------------|---------------------|
 | Argentina | 100% | Spanish (97%), English (7%), Guarani (1%) | — |
-| Bolivia | 88% | Spanish (84%), Quechua (21%) | Aymara (15%) |
+| Bolivia | 100% | Spanish (84%), Quechua (21%), Aymara (15%) | — |
 | Brazil | 100% | Portuguese (98%), English (5%), Spanish (4%), German (1%), Italian (1%), Japanese (1%) | — |
 | Chile | 100% | Spanish (95%), English (10%) | — |
 | Colombia | 100% | Spanish (99%), English (4%) | — |
@@ -27,6 +27,10 @@
 | Suriname | 96% | Dutch (58%), English (20%), Hindi (10%), Javanese (8%) | — |
 | Uruguay | 100% | Spanish (95%), Portuguese (5%), English (10%) | — |
 | Venezuela | 100% | Spanish (97%), English (5%) | — |
+
+## Notes
+
+All remaining South American gaps are fully covered. Bolivia was the last gap at 88%, resolved by adding Aymara (ay). Every tracked South American country now has 100% locale coverage.
 
 ---
 

@@ -1,8 +1,22 @@
 {
+  "Africa": [
+    "Liberia's remaining gaps are Bassa (13%), Grebo (10%), Dan/Gio (8%), and Mano (8%). All four are Niger-Congo languages with limited written standardization and very little digital tooling. Bassa has its own unique script (Vah) alongside a Latin orthography, but neither has established calendar/temporal vocabulary in written form.",
+    "Uganda's gaps are Nyankore/Runyankole (10%), Soga/Lusoga (10%), Teso (10%), Lango (6%), and Acholi (5%). While several are Bantu languages with some written tradition, none has CLDR data or standardized temporal vocabulary for digital use. Acholi and Lango are Western Nilotic languages closely related to Dholuo but with less documentation.",
+    "Namibia's remaining gaps are Khoekhoegowab/Nama-Damara (11%), RuKwangali (9%), and Otjiherero (9%). Khoekhoegowab uses click consonants and has limited digital standardization. RuKwangali and Otjiherero are Bantu languages with some written tradition but no established temporal vocabulary in standardized written form.",
+    "Sudan's gaps are Beja (12%), Nubian languages (8%), and Fur (6%). Beja is an Afroasiatic language with a primarily oral tradition. 'Nubian languages' is a family of multiple distinct languages, not a single locale. Fur has limited written standardization.",
+    "Kenya's remaining gaps after Kikuyu (ki) and Dholuo (luo) are Luhya (14%), Kalenjin (13%), and Kamba (10%). Luhya is actually a macro-language comprising 18+ distinct dialects (Bukusu, Maragoli, Luyia, etc.) — no single locale would cover the group. Kalenjin is similarly a cluster of related but distinct languages (Nandi, Kipsigis, Pokot, etc.). Kamba has some written tradition but no CLDR data.",
+    "Cameroon's gaps are Bamileke languages (15%) and Ewondo (8%). 'Bamileke languages' is a group of 11+ languages in the Grassfields Bantu family — not a single locale. Ewondo has CLDR data but limited temporal vocabulary documentation.",
+    "Nigeria's gaps are Ijaw languages (10%), Kanuri (5%), Tiv (5%), and Ibibio (5%). 'Ijaw languages' is a family of 9+ languages. Kanuri has limited digital standardization. Tiv and Ibibio have some written tradition but no established temporal vocabulary for digital use.",
+    "Senegal's remaining gap is Serer (11%). Despite having an established Latin orthography and being spoken by over 1.8 million people, research found no documented month names, weekday names, or temporal vocabulary in available linguistic references — only greeting and number vocabulary. Adding a Serer locale requires native speaker collaboration.",
+    "Several countries have small gaps (5-17%) in languages that are either: language families rather than single languages (Bamileke, Ijaw, Karen, Nubian), lack standardized written forms, or have no documented temporal vocabulary. These gaps are structural and cannot be addressed without native speaker partnerships."
+  ],
   "Asia": [
     "Bhutan's remaining gap is Tshangla (22%), a Sino-Tibetan language spoken in eastern Bhutan. It has no standardized written form — it is primarily oral, with speakers using Dzongkha or Tibetan script informally. Adding a locale is not feasible without an established orthography.",
     "Laos's gap is Khmu (11%), a Mon-Khmer language with limited written standardization. Multiple orthographic conventions exist but none is widely adopted for digital use.",
     "Myanmar's gap is the Karen language family (7%), which encompasses multiple distinct languages (S'gaw Karen, Pwo Karen, etc.) each with its own script variant. No single locale would cover the group."
+  ],
+  "Europe": [
+    "Montenegro's remaining gap is Montenegrin (35%). Montenegrin is mutually intelligible with Serbian (sr), which is already supported. The two differ only in two additional letters (Ś/ś and Ź/ź) and minor lexical preferences — the temporal vocabulary (month names, weekday names, time expressions) is identical. Any Montenegrin speaker can use the Serbian locale without loss of comprehension. The distinction is political rather than linguistic."
   ],
   "North America": [
     "Guatemala's Mayan languages — K'iche' (9%), Kaqchikel (8%), Mam (8%), and Q'eqchi' (6%) — are living languages with millions of speakers and official recognition. Their locales use Latin-based orthographies standardized by Guatemala's Academia de Lenguas Mayas, but digital tooling for these languages remains limited. Native speaker review is especially important for these locales.",
@@ -11,5 +25,8 @@
   "Oceania": [
     "Oceania's remaining coverage gaps are structural rather than actionable. Papua New Guinea alone has over 800 indigenous languages, most without standardized written forms. Solomon Islands has 70+ local languages, none individually dominant enough to significantly move the coverage number. The lingua francas (English, Tok Pisin, Pijin, Bislama, Fijian) are all covered, meaning the practical communication coverage is higher than the percentage suggests.",
     "Australia's 85% reflects that the country data tracks only the top 8 community languages (all covered). The remaining 15% is spread across dozens of smaller immigrant and indigenous languages, none individually significant enough to be tracked."
+  ],
+  "South America": [
+    "All remaining South American gaps are fully covered. Bolivia was the last gap at 88%, resolved by adding Aymara (ay). Every tracked South American country now has 100% locale coverage."
   ]
 }

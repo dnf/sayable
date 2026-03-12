@@ -11,8 +11,8 @@ How well do Sayable's locales cover the world's languages?
 | Metric | Count |
 |--------|------:|
 | Countries tracked | 178 |
-| 100% coverage | 113 |
-| 76–100% (high) | 164 |
+| 100% coverage | 116 |
+| 76–100% (high) | 166 |
 | 51–75% (good) | 177 |
 | 1–50% (some) | 1 |
 | 0% (none) | 0 |
@@ -21,14 +21,14 @@ How well do Sayable's locales cover the world's languages?
 
 | Continent | Countries | Avg Coverage | Details |
 |-----------|----------:|-------------:|--------:|
-| Africa | 52 | 89% | [Africa](africa.md) |
+| Africa | 52 | 90% | [Africa](africa.md) |
 | Asia | 49 | 97% | [Asia](asia.md) |
 | Europe | 39 | 98% | [Europe](europe.md) |
 | North America | 19 | 99% | [North America](north-america.md) |
 | Oceania | 7 | 89% | [Oceania](oceania.md) |
-| South America | 12 | 97% | [South America](south-america.md) |
+| South America | 12 | 98% | [South America](south-america.md) |
 
-## Supported Locales (159)
+## Supported Locales (168)
 
 | Code | Name | Components |
 |------|------|------------|
@@ -36,6 +36,7 @@ How well do Sayable's locales cover the world's languages?
 | `ak` | Akan | age, date, duration, time |
 | `am` | Amharic | age, date, duration, time |
 | `ar` | Arabic | age, date, duration, time |
+| `ay` | Aymara | age, date, duration, time |
 | `az` | Azerbaijani | age, date, duration, time |
 | `bci` | Baoulé | age, date, duration, time |
 | `be` | Belarusian | age, date, duration, time |
@@ -95,20 +96,24 @@ How well do Sayable's locales cover the world's languages?
 | `ka` | Georgian | age, date, duration, time |
 | `kbp` | Kabiye | age, date, duration, time |
 | `kek` | Q'eqchi' | age, date, duration, time |
+| `ki` | Kikuyu | age, date, duration, time |
 | `kk` | Kazakh | age, date, duration, time |
 | `kl` | Kalaallisut | age, date, duration, time |
 | `km` | Khmer | age, date, duration, time |
 | `kn` | Kannada | age, date, duration, time |
 | `ko` | Korean | age, date, duration, time |
 | `kpe` | Kpelle | age, date, duration, time |
+| `kri` | Krio | age, date, duration, time |
 | `ktu` | Kituba | age, date, duration, time |
 | `ku` | Kurdish | age, date, duration, time |
 | `kw` | Cornish | age, date, duration, time |
 | `ky` | Kyrgyz | age, date, duration, time |
+| `lb` | Luxembourgish | age, date, duration, time |
 | `lg` | Luganda | age, date, duration, time |
 | `ln` | Lingala | age, date, duration, time |
 | `lo` | Lao | age, date, duration, time |
 | `lt` | Lithuanian | age, date, duration, time |
+| `luo` | Dholuo | age, date, duration, time |
 | `lv` | Latvian | age, date, duration, time |
 | `mam` | Mam | age, date, duration, time |
 | `men` | Mende | age, date, duration, time |
@@ -129,6 +134,7 @@ How well do Sayable's locales cover the world's languages?
 | `ne` | Nepali | age, date, duration, time |
 | `ng` | Oshiwambo | age, date, duration, time |
 | `nl` | Dutch | age, date, duration, time |
+| `nr` | Southern Ndebele | age, date, duration, time |
 | `nso` | Northern Sotho | age, date, duration, time |
 | `nus` | Nuer | age, date, duration, time |
 | `ny` | Chichewa | age, date, duration, time |
@@ -177,15 +183,18 @@ How well do Sayable's locales cover the world's languages?
 | `tpi` | Tok Pisin | age, date, duration, time |
 | `tr` | Turkish | age, date, duration, time |
 | `ts` | Tsonga | age, date, duration, time |
+| `tum` | Tumbuka | age, date, duration, time |
 | `tzm` | Central Atlas Tamazight | age, date, duration, time |
 | `uk` | Ukrainian | age, date, duration, time |
 | `umb` | Umbundu | age, date, duration, time |
 | `ur` | Urdu | age, date, duration, time |
 | `uz` | Uzbek | age, date, duration, time |
+| `ve` | Venda | age, date, duration, time |
 | `vi` | Vietnamese | age, date, duration, time |
 | `vmw` | Makhuwa | age, date, duration, time |
 | `wo` | Wolof | age, date, duration, time |
 | `xh` | Xhosa | age, date, duration, time |
+| `yao` | Yao | age, date, duration, time |
 | `yo` | Yoruba | age, date, duration, time |
 | `yue` | Cantonese | age, date, duration, time |
 | `zdj` | Comorian | age, date, duration, time |
