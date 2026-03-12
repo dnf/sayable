@@ -1,5 +1,7 @@
 module SayableTime
   class Formatter
+    @short_clock : ShortClockConfig?
+
     def initialize(@locale : TimeLocale, @compactness : Symbol = :normal)
       ovr = case @compactness
             when :short   then @locale.short

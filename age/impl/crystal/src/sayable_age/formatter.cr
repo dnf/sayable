@@ -2,6 +2,14 @@ module SayableAge
   MAX_AGE_MONTHS = 6000
 
   class Formatter
+    @day : UnitForms
+    @week : UnitForms
+    @month : UnitForms
+    @year : UnitForms
+    @half : String
+    @delimiter : String
+    @just_born : String
+
     def initialize(@locale : AgeLocale, compactness : Symbol = :normal)
       ovr = case compactness
             when :short   then @locale.short

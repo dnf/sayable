@@ -3,6 +3,7 @@ import { SayableTime, formatTime } from '../src/index.js';
 import { de } from '../src/locales/de.js';
 import { en } from '../src/locales/en.js';
 import { fr } from '../src/locales/fr.js';
+import { fi } from '../src/locales/fi.js';
 import { ja } from '../src/locales/ja.js';
 
 // ── Section 1: Null / edge cases ──────────────────────────────────────
@@ -99,4 +100,16 @@ describe('Locale — Japanese', () => {
 
   // 7.1
   it('half past', () => expect(st.formatTime('15:30')).toBe('三時半'));
+});
+
+// ── Section 8: Locale — Finnish (dot separator, short) ────────────────
+
+describe('Locale — Finnish (dot separator, short)', () => {
+  const st = new SayableTime(fi, 'short');
+
+  // 8.1
+  it('dot separator', () => expect(st.formatTime('14:15')).toBe('14.15'));
+
+  // 8.2
+  it('midnight dot', () => expect(st.formatTime('00:00')).toBe('0.00'));
 });

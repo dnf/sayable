@@ -220,4 +220,24 @@ public class FormatTimeTest
         var st = new SayableTime(Locales.JA);
         Assert.Equal("\u4E09\u6642\u534A", st.Format("15:30"));
     }
+
+    // ================================================================
+    // Section 8: Locale — Finnish (dot separator, short)
+    // ================================================================
+
+    // 8.1
+    [Fact]
+    public void Finnish_dot_separator()
+    {
+        var st = new SayableTime(Locales.FI, Compactness.Short);
+        Assert.Equal("14.15", st.Format("14:15"));
+    }
+
+    // 8.2
+    [Fact]
+    public void Finnish_midnight_dot()
+    {
+        var st = new SayableTime(Locales.FI, Compactness.Short);
+        Assert.Equal("0.00", st.Format("00:00"));
+    }
 }

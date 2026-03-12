@@ -1,6 +1,7 @@
 ## Locale definitions for date formatting.
 
 import std/[options, tables]
+export options, tables
 
 type
   CompactnessOverride* = object

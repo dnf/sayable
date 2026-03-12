@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Canonical test cases for sayable-time. This is the single source of truth — every test case listed here must be implemented in every language.",
-    "totalTests": 27,
+    "totalTests": 26,
     "notes": [
       "All test cases use explicit inputs for determinism.",
       "When a single test covers multiple canonical IDs, list them with commas."
@@ -77,6 +77,16 @@
       "locale": "ja",
       "tests": [
         {"id": "7.1", "function": "format_time", "input": {"time": "15:30"}, "expected": "三時半"}
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Locale — Finnish (dot separator, short)",
+      "locale": "fi",
+      "compactness": "short",
+      "tests": [
+        {"id": "8.1", "function": "format_time", "input": {"time": "14:15"}, "expected": "14.15", "notes": "dot separator per CLDR Finnish time format"},
+        {"id": "8.2", "function": "format_time", "input": {"time": "00:00"}, "expected": "0.00", "notes": "midnight in 24h dot format"}
       ]
     }
   ]

@@ -1,5 +1,16 @@
 module SayableDate
   class Formatter
+    @months : Array(String)
+    @months_in_date : Array(String)?
+    @weekdays : Array(String)
+    @day_format : String
+    @day_format_exceptions : Hash(String, String)
+    @date_pattern : String
+    @date_pattern_with_year : String
+    @today : String
+    @tomorrow : String
+    @yesterday : String
+
     def initialize(@locale : DateLocale, @compactness : Symbol = :normal)
       ovr = case @compactness
             when :short   then @locale.short

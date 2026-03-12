@@ -211,6 +211,23 @@ procedure Test_Format_Time is
          & Character'Val (16#8A#));
    end Test_Locale_Japanese;
 
+   ---------------------------------------------------------------------------
+   --  8. Locale -- Finnish (dot separator, short)
+   ---------------------------------------------------------------------------
+   procedure Test_Finnish_Dot_Separator is
+      Loc : constant Locale_Access :=
+        Sayabletime_Locales.Get_Locale ("fi");
+   begin
+      --  8.1
+      Assert_Eq ("8.1 Finnish dot separator",
+         Sayabletime.Format_Time (Loc.all, Short, "14:15"),
+         "14.15");
+      --  8.2
+      Assert_Eq ("8.2 Finnish midnight dot",
+         Sayabletime.Format_Time (Loc.all, Short, "00:00"),
+         "0.00");
+   end Test_Finnish_Dot_Separator;
+
 begin
    Test_Null_Edge_Cases;
    Test_Normal_Clock;
@@ -219,6 +236,7 @@ begin
    Test_Locale_German;
    Test_Locale_French;
    Test_Locale_Japanese;
+   Test_Finnish_Dot_Separator;
 
    Put_Line (Natural'Image (Tests_Passed) & " passed," &
              Natural'Image (Tests_Failed) & " failed");

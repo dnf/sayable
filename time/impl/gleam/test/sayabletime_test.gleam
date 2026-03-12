@@ -4,6 +4,7 @@ import sayabletime
 import sayabletime/locales/de as locale_de
 import sayabletime/locales/en as locale_en
 import sayabletime/locales/fr as locale_fr
+import sayabletime/locales/fi as locale_fi
 import sayabletime/locales/ja as locale_ja
 import sayabletime/types.{Compact, Normal, Short}
 
@@ -164,4 +165,18 @@ pub fn french_quarter_past_three_test() {
 pub fn japanese_half_past_three_test() {
   sayabletime.format_time(locale_ja.locale(), Normal, "15:30")
   |> should.equal(Ok("三時半"))
+}
+
+// 8. Locale -- Finnish (dot separator, short)
+
+// 8.1
+pub fn finnish_dot_separator_test() {
+  sayabletime.format_time(locale_fi.locale(), Short, "14:15")
+  |> should.equal(Ok("14.15"))
+}
+
+// 8.2
+pub fn finnish_midnight_dot_test() {
+  sayabletime.format_time(locale_fi.locale(), Short, "00:00")
+  |> should.equal(Ok("0.00"))
 }

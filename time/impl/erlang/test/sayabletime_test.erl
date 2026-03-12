@@ -63,6 +63,13 @@ japanese_test_() ->
     [?_assertEqual({ok, "三時半"}, fmt_locale(Ja, "15:30"))                     %% 7.1
     ].
 
+%% 8. Locale — Finnish (dot separator, short)
+finnish_dot_test_() ->
+    Fi = sayabletime_locales_fi:locale(),
+    [?_assertEqual({ok, "14.15"}, sayabletime:format_time(Fi, short, "14:15")),  %% 8.1
+     ?_assertEqual({ok, "0.00"}, sayabletime:format_time(Fi, short, "00:00"))    %% 8.2
+    ].
+
 %% Locale lookup
 locale_lookup_test_() ->
     [?_assertMatch({ok, #time_locale{code = "en"}}, sayabletime:get_locale("en")),

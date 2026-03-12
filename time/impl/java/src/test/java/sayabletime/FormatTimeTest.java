@@ -199,4 +199,22 @@ class FormatTimeTest {
         SayableTime st = new SayableTime(Locales.JA);
         assertEquals("\u4E09\u6642\u534A", st.formatTime("15:30"));
     }
+
+    // ================================================================
+    // Section 8: Locale — Finnish (dot separator, short)
+    // ================================================================
+
+    // 8.1
+    @Test
+    void finnishDotSeparator() {
+        SayableTime st = new SayableTime(Locales.FI, Compactness.SHORT);
+        assertEquals("14.15", st.formatTime("14:15"));
+    }
+
+    // 8.2
+    @Test
+    void finnishMidnightDot() {
+        SayableTime st = new SayableTime(Locales.FI, Compactness.SHORT);
+        assertEquals("0.00", st.formatTime("00:00"));
+    }
 }

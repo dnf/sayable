@@ -140,3 +140,16 @@ test_that("7.1 - Japanese locale", {
 
   expect_equal(st_ja$format_time("15:30"), "\u4e09\u6642\u534a")
 })
+
+# ================================================================
+# 8. Locale — Finnish (dot separator, short)
+# ================================================================
+test_that("8.1-8.2 - Finnish dot separator", {
+  fi <- load_locale("fi")
+  st_fi <- sayable_time_new(fi, "short")
+
+  # 8.1
+  expect_equal(st_fi$format_time("14:15"), "14.15")
+  # 8.2
+  expect_equal(st_fi$format_time("00:00"), "0.00")
+})

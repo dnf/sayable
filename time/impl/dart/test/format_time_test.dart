@@ -124,4 +124,17 @@ void main() {
       expect(st.formatTime('15:30'), '三時半'); // 7.1
     });
   });
+
+  // ================================================================
+  // Locale — Finnish (dot separator, short)
+  // ================================================================
+  group('Locale — Finnish (dot separator, short)', () {
+    final st = SayableTime(getLocale('fi')!, Compactness.short);
+    test('dot separator', () {
+      expect(st.formatTime('14:15'), '14.15'); // 8.1
+    });
+    test('midnight dot', () {
+      expect(st.formatTime('00:00'), '0.00'); // 8.2
+    });
+  });
 }

@@ -203,3 +203,21 @@ func TestLocaleJapanese(t *testing.T) {
 		assertEq(t, f.FormatTime("15:30"), "三時半")
 	})
 }
+
+// ================================================================
+// Section 8: Locale — Finnish (dot separator, short)
+// ================================================================
+
+func TestLocaleFinnishDotSeparator(t *testing.T) {
+	f := st.NewSayableTime(locales.FI, st.Short)
+
+	// 8.1
+	t.Run("dot_separator", func(t *testing.T) {
+		assertEq(t, f.FormatTime("14:15"), "14.15")
+	})
+
+	// 8.2
+	t.Run("midnight_dot", func(t *testing.T) {
+		assertEq(t, f.FormatTime("00:00"), "0.00")
+	})
+}

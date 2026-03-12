@@ -6,6 +6,7 @@ from sayable_time import SayableTime, format_time
 from sayable_time.locales.de import DE
 from sayable_time.locales.en import EN
 from sayable_time.locales.fr import FR
+from sayable_time.locales.fi import FI
 from sayable_time.locales.ja import JA
 
 
@@ -143,3 +144,18 @@ class TestLocaleJapanese:
     def test_half_past(self) -> None:
         st = SayableTime(JA)
         assert st.format_time("15:30") == "三時半"
+
+
+# ── Section 8: Locale — Finnish (dot separator, short) ────────────────
+
+class TestLocaleFinnishDotSeparator:
+    def setup_method(self) -> None:
+        self.st = SayableTime(FI, "short")
+
+    # 8.1
+    def test_dot_separator(self) -> None:
+        assert self.st.format_time("14:15") == "14.15"
+
+    # 8.2
+    def test_midnight_dot(self) -> None:
+        assert self.st.format_time("00:00") == "0.00"

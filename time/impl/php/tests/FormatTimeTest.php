@@ -196,4 +196,22 @@ final class FormatTimeTest extends TestCase
         $st = new SayableTime(Locales::JA());
         $this->assertSame("\u{4E09}\u{6642}\u{534A}", $st->formatTime('15:30'));
     }
+
+    // ================================================================
+    // Section 8: Locale — Finnish (dot separator, short)
+    // ================================================================
+
+    // 8.1
+    public function test_finnish_dot_separator(): void
+    {
+        $st = new SayableTime(Locales::FI(), Compactness::Short);
+        $this->assertSame('14.15', $st->formatTime('14:15'));
+    }
+
+    // 8.2
+    public function test_finnish_midnight_dot(): void
+    {
+        $st = new SayableTime(Locales::FI(), Compactness::Short);
+        $this->assertSame('0.00', $st->formatTime('00:00'));
+    }
 }

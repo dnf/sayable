@@ -106,4 +106,16 @@ is(SayableTime->format_time('25:00'), undef, '1.4 invalid hour');
   is($fmt->format_time('15:30'), "\x{4E09}\x{6642}\x{534A}", '7.1 ja half past');
 }
 
+
+# ================================================================
+# Locale — Finnish (dot separator, short)
+# ================================================================
+{
+  my $fmt = SayableTime::Formatter->new(SayableTime::Locales->get('fi'), compactness => 'short');
+  # 8.1
+  is($fmt->format_time('14:15'), '14.15', '8.1 fi dot separator');
+  # 8.2
+  is($fmt->format_time('00:00'), '0.00', '8.2 fi midnight dot');
+}
+
 done_testing();

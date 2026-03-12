@@ -166,3 +166,18 @@ class FormatTimeTest:
     def `Japanese half past`(): Unit =
         val st = SayableTime(Locales.JA)
         assertEquals(Some("\u4E09\u6642\u534A"), st.formatTime("15:30"))
+
+    // ================================================================
+    // Section 8: Locale — Finnish (dot separator, short)
+    // ================================================================
+    // 8.1
+    @Test
+    def `Finnish dot separator`(): Unit =
+        val st = SayableTime(Locales.FI, Compactness.SHORT)
+        assertEquals(Some("14.15"), st.formatTime("14:15"))
+
+    // 8.2
+    @Test
+    def `Finnish midnight dot`(): Unit =
+        val st = SayableTime(Locales.FI, Compactness.SHORT)
+        assertEquals(Some("0.00"), st.formatTime("00:00"))

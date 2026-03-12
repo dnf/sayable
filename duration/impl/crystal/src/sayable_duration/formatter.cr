@@ -1,5 +1,18 @@
 module SayableDuration
   class Formatter
+    @second : UnitForms
+    @minute : UnitForms
+    @hour : UnitForms
+    @day : UnitForms
+    @week : UnitForms
+    @month : UnitForms
+    @year : UnitForms
+    @half : String
+    @delimiter : String
+    @just_now : String
+    @ago : String
+    @in_future : String
+
     def initialize(@locale : DurationLocale, compactness : Symbol = :normal)
       ovr = case compactness
             when :short   then @locale.short

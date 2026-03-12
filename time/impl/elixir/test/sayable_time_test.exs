@@ -136,4 +136,17 @@ defmodule SayableTimeTest do
     ja = SayableTime.Locales.JA.locale()
     assert time_locale(ja, "15:30") == {:ok, "三時半"}
   end
+
+  # 8. Locale — Finnish (dot separator, short)
+  # 8.1
+  test "8.1 - Finnish: 14.15 dot separator" do
+    fi = SayableTime.Locales.FI.locale()
+    assert SayableTime.format_time(fi, :short, "14:15") == {:ok, "14.15"}
+  end
+
+  # 8.2
+  test "8.2 - Finnish: 0.00 midnight dot" do
+    fi = SayableTime.Locales.FI.locale()
+    assert SayableTime.format_time(fi, :short, "00:00") == {:ok, "0.00"}
+  end
 end

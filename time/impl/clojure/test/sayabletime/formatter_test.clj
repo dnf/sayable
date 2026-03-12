@@ -157,6 +157,20 @@
   (testing "7.1 Japanese half past"
     (is (= "\u4E09\u6642\u534A" (time-locale (locales/get-locale "ja") "15:30")))))
 
+;; ================================================================
+;; Section 8: Locale -- Finnish (dot separator, short)
+;; ================================================================
+
+;; 8.1
+(deftest finnish-dot-separator
+  (testing "8.1 Finnish dot separator"
+    (is (= "14.15" (st/format-time (locales/get-locale "fi") :short "14:15")))))
+
+;; 8.2
+(deftest finnish-midnight-dot
+  (testing "8.2 Finnish midnight dot"
+    (is (= "0.00" (st/format-time (locales/get-locale "fi") :short "00:00")))))
+
 ;; Version
 (deftest version-matches-config
   (testing "version matches config"

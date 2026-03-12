@@ -123,6 +123,10 @@ DISPATCH-TEST.
             PERFORM RUN-6-1
         WHEN "7.1"
             PERFORM RUN-7-1
+        WHEN "8.1"
+            PERFORM RUN-8-1
+        WHEN "8.2"
+            PERFORM RUN-8-2
         WHEN OTHER
             DISPLAY "Unknown test: " FUNCTION TRIM(WS-RUN-ID)
             MOVE 1 TO WS-TESTS-FAILED
@@ -156,6 +160,8 @@ RUN-ALL-TESTS.
     PERFORM RUN-5-1
     PERFORM RUN-6-1
     PERFORM RUN-7-1
+    PERFORM RUN-8-1
+    PERFORM RUN-8-2
     .
 *> ============================================================
 *> Individual test paragraphs
@@ -442,6 +448,30 @@ RUN-7-1.
     PERFORM FORMAT-TIME
     MOVE "7.1" TO WS-TEST-NAME
     MOVE X"E4B889E69982E58D8A" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 8.1: Finnish "14:15" short -> "14.15" (dot separator)
+RUN-8-1.
+    MOVE "fi" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-SHORT TO WS-FMT-COMPACTNESS
+    MOVE "14:15" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "8.1" TO WS-TEST-NAME
+    MOVE "14.15" TO WS-TEST-EXPECTED
+    PERFORM ASSERT-EQ
+    .
+
+*> Test 8.2: Finnish "00:00" short -> "0.00" (midnight dot)
+RUN-8-2.
+    MOVE "fi" TO WS-LOOKUP-CODE
+    PERFORM GET-LOCALE
+    MOVE PT-SHORT TO WS-FMT-COMPACTNESS
+    MOVE "00:00" TO WS-FMT-TIME
+    PERFORM FORMAT-TIME
+    MOVE "8.2" TO WS-TEST-NAME
+    MOVE "0.00" TO WS-TEST-EXPECTED
     PERFORM ASSERT-EQ
     .
 

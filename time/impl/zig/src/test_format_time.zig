@@ -189,3 +189,19 @@ test "Japanese half past" {
     var buf: [256]u8 = undefined;
     try expectStr("\xe4\xb8\x89\xe6\x99\x82\xe5\x8d\x8a", fmtWith(&buf, &st.locales.ja, .normal, "15:30"));
 }
+
+// ================================================================
+// Section 8: Locale — Finnish (dot separator, short)
+// ================================================================
+
+// 8.1
+test "Finnish dot separator" {
+    var buf: [256]u8 = undefined;
+    try expectStr("14.15", fmtWith(&buf, &st.locales.fi, .short_mode, "14:15"));
+}
+
+// 8.2
+test "Finnish midnight dot" {
+    var buf: [256]u8 = undefined;
+    try expectStr("0.00", fmtWith(&buf, &st.locales.fi, .short_mode, "00:00"));
+}

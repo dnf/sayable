@@ -161,3 +161,19 @@ let ``French 15:15 is trois heures et quart`` () =
 let ``Japanese 15:30`` () =
     let st = SayableTimeFormatter(JA)
     Assert.Equal(Some "\u4E09\u6642\u534A", st.FormatTime(Some "15:30"))
+
+// ================================================================
+// Locale -- Finnish (dot separator, short)
+// ================================================================
+
+// 8.1
+[<Fact>]
+let ``Finnish 14:15 is 14.15 with dot separator`` () =
+    let st = SayableTimeFormatter(FI, Short)
+    Assert.Equal(Some "14.15", st.FormatTime(Some "14:15"))
+
+// 8.2
+[<Fact>]
+let ``Finnish 00:00 is 0.00 midnight dot`` () =
+    let st = SayableTimeFormatter(FI, Short)
+    Assert.Equal(Some "0.00", st.FormatTime(Some "00:00"))

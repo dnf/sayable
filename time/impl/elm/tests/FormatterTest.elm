@@ -5,6 +5,7 @@ import SayableTime.Formatter exposing (formatTime)
 import SayableTime.Locales.De as De
 import SayableTime.Locales.En as En
 import SayableTime.Locales.Fr as Fr
+import SayableTime.Locales.Fi as Fi
 import SayableTime.Locales.Ja as Ja
 import SayableTime.Types exposing (..)
 import Test exposing (..)
@@ -98,5 +99,11 @@ suite =
         , describe "7. Locale - Japanese"
             [ test "7.1 \u{4E09}\u{6642}\u{534A}" <|
                 \_ -> Expect.equal (Just "\u{4E09}\u{6642}\u{534A}") (formatTime Ja.locale Normal "15:30")
+            ]
+        , describe "8. Locale - Finnish (dot separator, short)"
+            [ test "8.1 14.15 dot separator" <|
+                \_ -> Expect.equal (Just "14.15") (formatTime Fi.locale Short "14:15")
+            , test "8.2 0.00 midnight dot" <|
+                \_ -> Expect.equal (Just "0.00") (formatTime Fi.locale Short "00:00")
             ]
         ]

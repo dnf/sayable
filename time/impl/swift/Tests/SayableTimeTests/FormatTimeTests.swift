@@ -167,4 +167,19 @@ import Testing
         let st = SayableTimeFormatter(Locales.JA)
         #expect(st.formatTime("15:30") == "\u{4E09}\u{6642}\u{534A}")
     }
+
+    // ================================================================
+    // Locale -- Finnish (dot separator, short)
+    // ================================================================
+    // 8.1
+    @Test func finnishDotSeparator() {
+        let st = SayableTimeFormatter(Locales.FI, compactness: .short)
+        #expect(st.formatTime("14:15") == "14.15")
+    }
+
+    // 8.2
+    @Test func finnishMidnightDot() {
+        let st = SayableTimeFormatter(Locales.FI, compactness: .short)
+        #expect(st.formatTime("00:00") == "0.00")
+    }
 }

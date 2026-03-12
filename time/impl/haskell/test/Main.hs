@@ -11,6 +11,7 @@ import qualified SayableTime.Locales.En as En
 import qualified SayableTime.Locales.De as De
 import qualified SayableTime.Locales.Fr as Fr
 import qualified SayableTime.Locales.Ja as Ja
+import qualified SayableTime.Locales.Fi as Fi
 
 en :: TimeLocale
 en = En.locale
@@ -119,6 +120,15 @@ main = hspec $ do
         -- 7.1
         it "7.1 Japanese half past three" $
             formatTime Ja.locale Normal (Just "15:30") `shouldBe` Just "\19977\26178\21322"
+
+    -- Section 8: Locale -- Finnish (dot separator, short)
+    describe "8. Locale -- Finnish (dot separator, short)" $ do
+        -- 8.1
+        it "8.1 Finnish dot separator" $
+            formatTime Fi.locale Short (Just "14:15") `shouldBe` Just "14.15"
+        -- 8.2
+        it "8.2 Finnish midnight dot" $
+            formatTime Fi.locale Short (Just "00:00") `shouldBe` Just "0.00"
 
     -- Locale lookup
     describe "Locale lookup" $ do

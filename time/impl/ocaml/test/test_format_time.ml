@@ -4,6 +4,7 @@ let en = En.locale
 let de = De.locale
 let fr = Fr.locale
 let ja = Ja.locale
+let fi = Fi.locale
 
 let ftime loc input = Formatter.format_time loc Types.Normal input
 let ftime_s loc comp input = Formatter.format_time loc comp input
@@ -52,6 +53,10 @@ let test_6_1 () = check_some "trois heures et quart" (ftime fr "15:15")         
 (* 7. Locale — Japanese *)
 let test_7_1 () = check_some "\xe4\xb8\x89\xe6\x99\x82\xe5\x8d\x8a" (ftime ja "15:30") (* 7.1 *)
 
+(* 8. Locale Finnish (dot separator, short) *)
+let test_8_1 () = check_some "14.15" (ftime_s fi Types.Short "14:15")             (* 8.1 *)
+let test_8_2 () = check_some "0.00" (ftime_s fi Types.Short "00:00")              (* 8.2 *)
+
 let () =
   Alcotest.run "sayable-time"
     [ ( "1. Null / edge cases"
@@ -91,5 +96,9 @@ let () =
         ] )
     ; ( "7. Locale Japanese"
       , [ Alcotest.test_case "7.1 san ji han" `Quick test_7_1
+        ] )
+    ; ( "8. Locale Finnish (dot separator, short)"
+      , [ Alcotest.test_case "8.1 dot separator" `Quick test_8_1
+        ; Alcotest.test_case "8.2 midnight dot" `Quick test_8_2
         ] )
     ]

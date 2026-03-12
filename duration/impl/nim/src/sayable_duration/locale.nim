@@ -1,6 +1,7 @@
 ## Locale definitions for duration formatting.
 
-import std/[options, tables]
+import std/[options, tables, strutils]
+export options, tables, strutils
 
 type
   PluralCategory* = enum

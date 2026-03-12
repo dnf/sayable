@@ -166,4 +166,19 @@ class TestFormatTime < Minitest::Test
     st = SayableTime::Formatter.new(SayableTime::Locales::JA)
     assert_equal "\u4E09\u6642\u534A", st.format_time('15:30')
   end
+
+  # ================================================================
+  # Section 8: Locale — Finnish (dot separator, short)
+  # ================================================================
+  # 8.1
+  def test_finnish_dot_separator
+    st = SayableTime::Formatter.new(SayableTime::Locales::FI, :short)
+    assert_equal '14.15', st.format_time('14:15')
+  end
+
+  # 8.2
+  def test_finnish_midnight_dot
+    st = SayableTime::Formatter.new(SayableTime::Locales::FI, :short)
+    assert_equal '0.00', st.format_time('00:00')
+  end
 end

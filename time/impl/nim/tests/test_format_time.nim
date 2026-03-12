@@ -127,3 +127,15 @@ suite "Locale - Japanese":
   # 7.1
   test "san ji han":
     check st.formatTime("15:30").get == "\xE4\xB8\x89\xE6\x99\x82\xE5\x8D\x8A"
+
+
+suite "Locale - Finnish (dot separator, short)":
+  let st = newSayableTime(getLocale("fi").get, cShort)
+
+  # 8.1
+  test "14.15 dot separator":
+    check st.formatTime("14:15").get == "14.15"
+
+  # 8.2
+  test "0.00 midnight dot":
+    check st.formatTime("00:00").get == "0.00"

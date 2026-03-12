@@ -231,15 +231,14 @@ package body Sayabletime is
         (Find_Pattern (Clk, Rounded));
 
       declare
-         Result : String :=
+         Step1 : constant String :=
            Replace_First
              (To_String (Pattern), "{h}",
               To_String (Clk.Hours (H12)));
       begin
-         Result := Replace_First
-           (Result, "{next_h}",
+         return Replace_First
+           (Step1, "{next_h}",
             To_String (Clk.Hours (Next_12)));
-         return Result;
       end;
    end Format_Natural;
 

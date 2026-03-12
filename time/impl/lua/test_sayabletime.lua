@@ -174,3 +174,21 @@ describe("Locale — Japanese", function()
         assert.are.equal("三時半", stf.format_time("15:30"))
     end)
 end)
+
+-- ================================================================
+-- 8. Locale — Finnish (dot separator, short)
+-- ================================================================
+describe("Locale — Finnish (dot separator, short)", function()
+    local fi = get_locale("fi")
+    local stf = st.new(fi, "short")
+
+    -- 8.1
+    it("14.15 dot separator", function()
+        assert.are.equal("14.15", stf.format_time("14:15"))
+    end)
+
+    -- 8.2
+    it("0.00 midnight dot", function()
+        assert.are.equal("0.00", stf.format_time("00:00"))
+    end)
+end)

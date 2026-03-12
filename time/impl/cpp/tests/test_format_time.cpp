@@ -125,6 +125,17 @@ void test_japanese_locale() {
     ASSERT_EQ("7.1 ja 15:30", st.format_time("15:30"), "\xe4\xb8\x89\xe6\x99\x82\xe5\x8d\x8a");
 }
 
+// ================================================================
+// 8. Locale — Finnish (dot separator, short)
+// ================================================================
+void test_finnish_dot_separator() {
+    SayableTime st(locales::FI(), Compactness::Short);
+    // 8.1
+    ASSERT_EQ("8.1 fi short 14:15", st.format_time("14:15"), "14.15");
+    // 8.2
+    ASSERT_EQ("8.2 fi short 00:00", st.format_time("00:00"), "0.00");
+}
+
 int main() {
     test_null_edge_cases();
     test_normal_clock_time();
@@ -133,6 +144,7 @@ int main() {
     test_german_locale();
     test_french_locale();
     test_japanese_locale();
+    test_finnish_dot_separator();
 
     std::cout << tests_passed << " passed, " << tests_failed << " failed" << std::endl;
     return tests_failed == 0 ? 0 : 1;

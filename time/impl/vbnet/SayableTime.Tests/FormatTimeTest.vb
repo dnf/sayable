@@ -190,6 +190,23 @@ Namespace SayableTime.Tests
             Assert.Equal("三時半", st.Format("15:30"))
         End Sub
 
+        ' ================================================================
+        ' Section 8: Locale — Finnish (dot separator, short)
+        ' ================================================================
+        ' 8.1
+        <Fact>
+        Public Sub Finnish_dot_separator()
+            Dim st = New SayableTimeLib.SayableTime(Locales.FI, Compactness.Short)
+            Assert.Equal("14.15", st.Format("14:15"))
+        End Sub
+
+        ' 8.2
+        <Fact>
+        Public Sub Finnish_midnight_dot()
+            Dim st = New SayableTimeLib.SayableTime(Locales.FI, Compactness.Short)
+            Assert.Equal("0.00", st.Format("00:00"))
+        End Sub
+
     End Class
 
 End Namespace

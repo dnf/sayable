@@ -1,6 +1,7 @@
 ## Locale definitions for clock time formatting.
 
 import std/[options, tables]
+export options, tables
 
 type
   ClockConfig* = object

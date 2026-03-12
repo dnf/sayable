@@ -15,6 +15,7 @@ program test_format_time
   call test_locale_german()
   call test_locale_french()
   call test_locale_japanese()
+  call test_finnish_dot_separator()
 
   write(*, '(A)') ''
   write(*, '(A)') '=== Results ==='
@@ -212,5 +213,23 @@ contains
     call assert_eq('7.1 ja three half', res, char(228) // char(184) // char(137) // &
       char(230) // char(153) // char(130) // char(229) // char(141) // char(138))
   end subroutine test_locale_japanese
+
+  ! ================================================================
+  ! Locale — Finnish (dot separator, short)
+  ! ================================================================
+  subroutine test_finnish_dot_separator()
+    type(st_locale), pointer :: fi
+    character(len=ST_MAX_STR_LEN) :: res
+
+    fi => st_get_locale('fi')
+
+    ! 8.1 — dot separator
+    res = st_format_time(fi, ST_SHORT, '14:15')
+    call assert_eq('8.1 fi dot separator', res, '14.15')
+
+    ! 8.2 — midnight dot
+    res = st_format_time(fi, ST_SHORT, '00:00')
+    call assert_eq('8.2 fi midnight dot', res, '0.00')
+  end subroutine test_finnish_dot_separator
 
 end program test_format_time

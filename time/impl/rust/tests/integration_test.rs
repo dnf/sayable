@@ -214,6 +214,24 @@ fn test_japanese_half_past() {
 }
 
 // ================================================================
+// Section 8: Locale — Finnish (dot separator, short)
+// ================================================================
+
+// 8.1
+#[test]
+fn test_finnish_dot_separator() {
+    let f = SayableTime::new(&locales::FI, Compactness::Short);
+    assert_time("Finnish dot separator", f.format_time("14:15"), "14.15");
+}
+
+// 8.2
+#[test]
+fn test_finnish_midnight_dot() {
+    let f = SayableTime::new(&locales::FI, Compactness::Short);
+    assert_time("Finnish midnight dot", f.format_time("00:00"), "0.00");
+}
+
+// ================================================================
 // Additional coverage tests
 // ================================================================
 

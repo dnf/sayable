@@ -140,6 +140,20 @@ static void test_locale_japanese(void) {
 }
 
 /* ================================================================ */
+/* Section 8: Locale — Finnish (dot separator, short)               */
+/* ================================================================ */
+static void test_finnish_dot_separator(void) {
+    char buf[256];
+    int rc;
+    /* 8.1 */
+    rc = st_format_time(buf, sizeof(buf), &st_locale_fi, ST_SHORT, "14:15");
+    ASSERT_EQ("8.1 fi short 14:15", rc, buf, "14.15");
+    /* 8.2 */
+    rc = st_format_time(buf, sizeof(buf), &st_locale_fi, ST_SHORT, "00:00");
+    ASSERT_EQ("8.2 fi short 00:00", rc, buf, "0.00");
+}
+
+/* ================================================================ */
 /* Locale lookup                                                    */
 /* ================================================================ */
 static void test_locale_lookup(void) {
@@ -164,6 +178,7 @@ int main(void) {
     test_locale_german();
     test_locale_french();
     test_locale_japanese();
+    test_finnish_dot_separator();
     test_locale_lookup();
 
     printf("\n=== Results ===\n");
