@@ -46,8 +46,7 @@ fn _pick_str(
     return default
 
 
-@value
-struct SayableAge:
+struct SayableAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """Locale-aware age formatter."""
 
     var locale: AgeLocale

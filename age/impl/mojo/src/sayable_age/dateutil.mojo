@@ -30,8 +30,7 @@ fn julian_day_number(year: Int, month: Int, day: Int) -> Int:
     return day + (153 * m + 2) // 5 + 365 * y + y // 4 - y // 100 + y // 400 - 32045
 
 
-@value
-struct DateParts:
+struct DateParts(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """Parsed date components."""
 
     var year: Int
@@ -119,8 +118,7 @@ fn parse_date(s: String) -> DateParts:
     return result
 
 
-@value
-struct ParsedAge:
+struct ParsedAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """Result of parsing age from two dates."""
 
     var months: Int

@@ -1,8 +1,7 @@
 """Locale definitions for age formatting."""
 
 
-@value
-struct UnitForms(Copyable, Movable, ImplicitlyDestructible):
+struct UnitForms(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """A unit's display forms: either a single template or plural forms."""
 
     var is_simple: Bool
@@ -40,8 +39,7 @@ fn plural_unit(pairs: List[Tuple[String, String]]) -> UnitForms:
     return uf
 
 
-@value
-struct StageLabel(Copyable, Movable, ImplicitlyDestructible):
+struct StageLabel(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """A stage label: either neutral or gendered."""
 
     var is_gendered: Bool
@@ -73,8 +71,7 @@ fn stage_gendered(m: String, f: String) -> StageLabel:
     return sl
 
 
-@value
-struct CompactnessOverride(Copyable, Movable, ImplicitlyDestructible):
+struct CompactnessOverride(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """Optional overrides for short/compact display modes."""
 
     var units: Dict[String, UnitForms]
@@ -98,8 +95,7 @@ struct CompactnessOverride(Copyable, Movable, ImplicitlyDestructible):
 alias PluralFn = fn (Int) -> String
 
 
-@value
-struct AgeLocale(Copyable, Movable, ImplicitlyDestructible):
+struct AgeLocale(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
     """Locale definition for age formatting."""
 
     var code: String
