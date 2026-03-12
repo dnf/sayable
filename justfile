@@ -70,6 +70,23 @@ test *target:
             fi
         done
         .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} test "${args[@]}"
+    elif [ "$_target" = "cli" ]; then
+        args=()
+        for _cli_dir in cli/impl/*/; do
+            _cl=$(basename "$_cli_dir")
+            _cli_bin="${_cli_dir}sayable"
+            if [ ! -x "${_cli_bin}" ]; then
+                args+=("skip:${_cl}")
+                continue
+            fi
+            dep=$(_dep "$_cl" 2>/dev/null || true)
+            if [ -n "${dep}" ] && ! command -v "${dep}" &>/dev/null; then
+                args+=("skip:${_cl}")
+                continue
+            fi
+            args+=("_test_cli ${_cl}")
+        done
+        .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} cli "${args[@]}"
     else
         name=$(_name "$_target")
         if _is_removed "${name}"; then
@@ -96,35 +113,15 @@ test *target:
             elif [ "$_target" = "c" ]; then
                 just build c
                 cd age/impl/c/build && ctest --output-on-failure
-            elif [ "$_target" = "cli" ] || [[ "$_target" = cli\ * ]]; then
-                _cli_lang="${_target#cli}"
-                _cli_lang="${_cli_lang# }"
-                if [ -n "${_cli_lang}" ]; then
-                    _cli_lang=$(_name "$_cli_lang")
-                    _cli_bin="cli/impl/${_cli_lang}/sayable"
-                    if [ ! -x "${_cli_bin}" ]; then
-                        echo "error: ${_cli_bin} is not executable or not found" >&2
-                        exit 1
-                    fi
-                    bash cli/test-harness.sh "${_cli_bin}"
-                else
-                    args=()
-                    for _cli_dir in cli/impl/*/; do
-                        _cl=$(basename "$_cli_dir")
-                        _cli_bin="${_cli_dir}sayable"
-                        if [ ! -x "${_cli_bin}" ]; then
-                            args+=("skip:${_cl}")
-                            continue
-                        fi
-                        dep=$(_dep "$_cl" 2>/dev/null || true)
-                        if [ -n "${dep}" ] && ! command -v "${dep}" &>/dev/null; then
-                            args+=("skip:${_cl}")
-                            continue
-                        fi
-                        args+=("_test_cli ${_cl}")
-                    done
-                    .hecatron/tools/runner/run-parallel.sh ${_jflag:+-j "$_jflag"} ${_sflag:+-s "$_sflag"} cli "${args[@]}"
+            elif [[ "$_target" = cli\ * ]]; then
+                _cli_lang="${_target#cli }"
+                _cli_lang=$(_name "$_cli_lang")
+                _cli_bin="cli/impl/${_cli_lang}/sayable"
+                if [ ! -x "${_cli_bin}" ]; then
+                    echo "error: ${_cli_bin} is not executable or not found" >&2
+                    exit 1
                 fi
+                bash cli/test-harness.sh "${_cli_bin}"
             elif [ "$_target" = "php" ]; then
                 cd age/impl/php && php vendor/bin/phpunit tests/
             elif [ "$_target" = "java" ]; then
