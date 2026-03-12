@@ -6,7 +6,7 @@ dir := FileSystem workingDirectory.
 "Load classes in order"
 loader := [ :filename |
 	(dir / filename) readStreamDo: [ :stream |
-		OpalCompiler evaluate: stream contents ] ].
+		stream contents fileIn ] ].
 
 loader value: 'SayableAgeLocale.st'.
 loader value: 'SayableAgeLocales.st'.
@@ -16,11 +16,11 @@ loader value: 'SayableAgeLocales.st'.
 	select: [ :each | each extension = 'st' and: [ each basename ~= 'registry.st' ] ]
 	thenDo: [ :each |
 		each readStreamDo: [ :stream |
-			OpalCompiler evaluate: stream contents ] ].
+			stream contents fileIn ] ].
 
 "Load registry"
 (dir / 'locales' / 'registry.st') readStreamDo: [ :stream |
-	OpalCompiler evaluate: stream contents ].
+	stream contents fileIn ].
 
 "Load formatter"
 loader value: 'SayableAge.st'.
