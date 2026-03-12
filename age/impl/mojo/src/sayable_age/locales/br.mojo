@@ -41,10 +41,10 @@ fn build_br() -> AgeLocale:
     """Build the Breton locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} devezh"), ("two", "{n} zevezh"), ("few", "{n} devezh"), ("many", "{n} devezh"), ("other", "{n} devezh")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} sizhun"), ("two", "{n} sizhun"), ("few", "{n} sizhun"), ("many", "{n} sizhun"), ("other", "{n} sizhun")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} miz"), ("two", "{n} viz"), ("few", "{n} miz"), ("many", "{n} miz"), ("other", "{n} miz")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} bloaz"), ("two", "{n} vloaz"), ("few", "{n} bloaz"), ("many", "{n} bloaz"), ("other", "{n} bloaz")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} devezh"), Tuple[String, String]("two", "{n} zevezh"), Tuple[String, String]("few", "{n} devezh"), Tuple[String, String]("many", "{n} devezh"), Tuple[String, String]("other", "{n} devezh")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} sizhun"), Tuple[String, String]("two", "{n} sizhun"), Tuple[String, String]("few", "{n} sizhun"), Tuple[String, String]("many", "{n} sizhun"), Tuple[String, String]("other", "{n} sizhun")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} miz"), Tuple[String, String]("two", "{n} viz"), Tuple[String, String]("few", "{n} miz"), Tuple[String, String]("many", "{n} miz"), Tuple[String, String]("other", "{n} miz")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} bloaz"), Tuple[String, String]("two", "{n} vloaz"), Tuple[String, String]("few", "{n} bloaz"), Tuple[String, String]("many", "{n} bloaz"), Tuple[String, String]("other", "{n} bloaz")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Nevez ganet")
@@ -60,7 +60,7 @@ fn build_br() -> AgeLocale:
     short_units["week"] = simple_unit("{n} sizh.")
     short_units["month"] = simple_unit("{n} m.")
     short_units["year"] = simple_unit("{n} bl.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -68,7 +68,7 @@ fn build_br() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}sizh.")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}b")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -77,13 +77,13 @@ fn build_br() -> AgeLocale:
     return AgeLocale(
         code="br",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} hag un hanter",
         delimiter=", ",
         just_born="Nevez ganet",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

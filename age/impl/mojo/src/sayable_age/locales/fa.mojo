@@ -31,10 +31,10 @@ fn build_fa() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} روز"), ("other", "{n} روز")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} هفته"), ("other", "{n} هفته")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} ماه"), ("other", "{n} ماه")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} سال"), ("other", "{n} سال")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} روز"), Tuple[String, String]("other", "{n} روز")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} هفته"), Tuple[String, String]("other", "{n} هفته")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ماه"), Tuple[String, String]("other", "{n} ماه")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} سال"), Tuple[String, String]("other", "{n} سال")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("نوزاد")
@@ -50,7 +50,7 @@ fn build_fa() -> AgeLocale:
     short_units["week"] = simple_unit("{n} هفته")
     short_units["month"] = simple_unit("{n} ماه")
     short_units["year"] = simple_unit("{n} سال")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_fa() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} هفته")
     compact_units["month"] = simple_unit("{n} ماه")
     compact_units["year"] = simple_unit("{n} سال")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_fa() -> AgeLocale:
     return AgeLocale(
         code="fa",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} و نیم",
         delimiter=" و ",
         just_born="نوزاد",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

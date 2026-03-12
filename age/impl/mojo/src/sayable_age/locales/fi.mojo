@@ -31,10 +31,10 @@ fn build_fi() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} päivä"), ("other", "{n} päivää")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} viikko"), ("other", "{n} viikkoa")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} kuukausi"), ("other", "{n} kuukautta")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} vuosi"), ("other", "{n} vuotta")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} päivä"), Tuple[String, String]("other", "{n} päivää")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} viikko"), Tuple[String, String]("other", "{n} viikkoa")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} kuukausi"), Tuple[String, String]("other", "{n} kuukautta")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} vuosi"), Tuple[String, String]("other", "{n} vuotta")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Vastasyntynyt")
@@ -50,7 +50,7 @@ fn build_fi() -> AgeLocale:
     short_units["week"] = simple_unit("{n} vk")
     short_units["month"] = simple_unit("{n} kk")
     short_units["year"] = simple_unit("{n} v")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_fi() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}vk")
     compact_units["month"] = simple_unit("{n}kk")
     compact_units["year"] = simple_unit("{n}v")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_fi() -> AgeLocale:
     return AgeLocale(
         code="fi",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n} ja puoli",
         delimiter=", ",
         just_born="Vastasyntynyt",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

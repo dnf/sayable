@@ -31,10 +31,10 @@ fn build_ne() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} दिन"), ("other", "{n} दिन")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} हप्ता"), ("other", "{n} हप्ता")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} महिना"), ("other", "{n} महिना")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} वर्ष"), ("other", "{n} वर्ष")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} दिन"), Tuple[String, String]("other", "{n} दिन")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} हप्ता"), Tuple[String, String]("other", "{n} हप्ता")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} महिना"), Tuple[String, String]("other", "{n} महिना")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} वर्ष"), Tuple[String, String]("other", "{n} वर्ष")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("नवजात शिशु")
@@ -50,7 +50,7 @@ fn build_ne() -> AgeLocale:
     short_units["week"] = simple_unit("{n} हप्ता")
     short_units["month"] = simple_unit("{n} महिना")
     short_units["year"] = simple_unit("{n} वर्ष")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_ne() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} हप्ता")
     compact_units["month"] = simple_unit("{n} महिना")
     compact_units["year"] = simple_unit("{n} वर्ष")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_ne() -> AgeLocale:
     return AgeLocale(
         code="ne",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="साढे {n}",
         delimiter=", ",
         just_born="नवजात शिशु",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

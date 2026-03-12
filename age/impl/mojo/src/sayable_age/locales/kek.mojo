@@ -48,7 +48,7 @@ fn build_kek() -> AgeLocale:
     short_units["week"] = simple_unit("{n} sem.")
     short_units["month"] = simple_unit("{n} po")
     short_units["year"] = simple_unit("{n} chih.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,20 +56,20 @@ fn build_kek() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="kek",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} ro'",
         delimiter=", ",
         just_born="Ch'ina al",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

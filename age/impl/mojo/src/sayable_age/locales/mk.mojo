@@ -35,10 +35,10 @@ fn build_mk() -> AgeLocale:
     """Build the Macedonian locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ден"), ("other", "{n} дена")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} недела"), ("other", "{n} недели")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} месец"), ("other", "{n} месеци")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} година"), ("other", "{n} години")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ден"), Tuple[String, String]("other", "{n} дена")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} недела"), Tuple[String, String]("other", "{n} недели")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} месец"), Tuple[String, String]("other", "{n} месеци")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} година"), Tuple[String, String]("other", "{n} години")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Новороденче")
@@ -50,11 +50,11 @@ fn build_mk() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ден"), ("other", "{n} дена")))
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ден"), Tuple[String, String]("other", "{n} дена")))
     short_units["week"] = simple_unit("{n} сед.")
     short_units["month"] = simple_unit("{n} мес.")
     short_units["year"] = simple_unit("{n} год.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -62,7 +62,7 @@ fn build_mk() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} с.")
     compact_units["month"] = simple_unit("{n} м.")
     compact_units["year"] = simple_unit("{n} г.")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -71,13 +71,13 @@ fn build_mk() -> AgeLocale:
     return AgeLocale(
         code="mk",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} и пол",
         delimiter=", ",
         just_born="Новороденче",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

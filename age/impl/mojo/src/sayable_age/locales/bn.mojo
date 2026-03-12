@@ -31,10 +31,10 @@ fn build_bn() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} দিন"), ("other", "{n} দিন")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} সপ্তাহ"), ("other", "{n} সপ্তাহ")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} মাস"), ("other", "{n} মাস")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} বছর"), ("other", "{n} বছর")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} দিন"), Tuple[String, String]("other", "{n} দিন")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} সপ্তাহ"), Tuple[String, String]("other", "{n} সপ্তাহ")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} মাস"), Tuple[String, String]("other", "{n} মাস")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} বছর"), Tuple[String, String]("other", "{n} বছর")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("নবজাতক")
@@ -50,7 +50,7 @@ fn build_bn() -> AgeLocale:
     short_units["week"] = simple_unit("{n} সপ্তাহ")
     short_units["month"] = simple_unit("{n} মাস")
     short_units["year"] = simple_unit("{n} বছর")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_bn() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} সপ্তাহ")
     compact_units["month"] = simple_unit("{n} মাস")
     compact_units["year"] = simple_unit("{n} বছর")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_bn() -> AgeLocale:
     return AgeLocale(
         code="bn",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="সাড়ে {n}",
         delimiter=", ",
         just_born="নবজাতক",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

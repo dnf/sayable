@@ -35,10 +35,10 @@ fn build_is_locale() -> AgeLocale:
     """Build the Icelandic locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} dagur"), ("other", "{n} dagar")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} vika"), ("other", "{n} vikur")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} mánuður"), ("other", "{n} mánuðir")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} ár"), ("other", "{n} ár")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} dagur"), Tuple[String, String]("other", "{n} dagar")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} vika"), Tuple[String, String]("other", "{n} vikur")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mánuður"), Tuple[String, String]("other", "{n} mánuðir")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ár"), Tuple[String, String]("other", "{n} ár")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Nýfæðingur")
@@ -54,7 +54,7 @@ fn build_is_locale() -> AgeLocale:
     short_units["week"] = simple_unit("{n} v.")
     short_units["month"] = simple_unit("{n} mán.")
     short_units["year"] = simple_unit("{n} ár")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -62,7 +62,7 @@ fn build_is_locale() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}v")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}á")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -71,13 +71,13 @@ fn build_is_locale() -> AgeLocale:
     return AgeLocale(
         code="is",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} og hálft",
         delimiter=", ",
         just_born="Nýfætt",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

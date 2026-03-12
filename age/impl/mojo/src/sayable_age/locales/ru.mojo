@@ -37,10 +37,10 @@ fn build_ru() -> AgeLocale:
     """Build the Russian locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} день"), ("few", "{n} дня"), ("many", "{n} дней"), ("other", "{n} дней")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} неделя"), ("few", "{n} недели"), ("many", "{n} недель"), ("other", "{n} недель")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} месяц"), ("few", "{n} месяца"), ("many", "{n} месяцев"), ("other", "{n} месяцев")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} год"), ("few", "{n} года"), ("many", "{n} лет"), ("other", "{n} лет")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} день"), Tuple[String, String]("few", "{n} дня"), Tuple[String, String]("many", "{n} дней"), Tuple[String, String]("other", "{n} дней")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} неделя"), Tuple[String, String]("few", "{n} недели"), Tuple[String, String]("many", "{n} недель"), Tuple[String, String]("other", "{n} недель")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} месяц"), Tuple[String, String]("few", "{n} месяца"), Tuple[String, String]("many", "{n} месяцев"), Tuple[String, String]("other", "{n} месяцев")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} год"), Tuple[String, String]("few", "{n} года"), Tuple[String, String]("many", "{n} лет"), Tuple[String, String]("other", "{n} лет")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_gendered("Новорождённый", "Новорождённая")
@@ -55,16 +55,16 @@ fn build_ru() -> AgeLocale:
     short_units["day"] = simple_unit("{n} дн.")
     short_units["week"] = simple_unit("{n} нед.")
     short_units["month"] = simple_unit("{n} мес.")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} г."), ("few", "{n} г."), ("many", "{n} л."), ("other", "{n} г.")))
-    short_ovr.units = short_units
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} г."), Tuple[String, String]("few", "{n} г."), Tuple[String, String]("many", "{n} л."), Tuple[String, String]("other", "{n} г.")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
     compact_units["day"] = simple_unit("{n} д.")
     compact_units["week"] = simple_unit("{n} н.")
     compact_units["month"] = simple_unit("{n} м.")
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} г."), ("few", "{n} г."), ("many", "{n} л."), ("other", "{n} г.")))
-    compact_ovr.units = compact_units
+    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} г."), Tuple[String, String]("few", "{n} г."), Tuple[String, String]("many", "{n} л."), Tuple[String, String]("other", "{n} г.")))
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -73,13 +73,13 @@ fn build_ru() -> AgeLocale:
     return AgeLocale(
         code="ru",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{n} с половиной",
         delimiter=", ",
         just_born="Новорождённый",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

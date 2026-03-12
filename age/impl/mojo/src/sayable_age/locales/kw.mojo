@@ -42,10 +42,10 @@ fn build_kw() -> AgeLocale:
     """Build the Cornish locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("zero", "{n} dydh"), ("one", "dydh"), ("two", "{n} dhydh"), ("few", "{n} dydh"), ("many", "{n} dydh"), ("other", "{n} dydh")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("zero", "{n} seythun"), ("one", "seythun"), ("two", "{n} seythun"), ("few", "{n} seythun"), ("many", "{n} seythun"), ("other", "{n} seythun")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("zero", "{n} mis"), ("one", "mis"), ("two", "{n} vis"), ("few", "{n} mis"), ("many", "{n} mis"), ("other", "{n} mis")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("zero", "{n} blydhen"), ("one", "blydhen"), ("two", "{n} vlydhen"), ("few", "{n} blydhen"), ("many", "{n} blydhen"), ("other", "{n} blydhen")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} dydh"), Tuple[String, String]("one", "dydh"), Tuple[String, String]("two", "{n} dhydh"), Tuple[String, String]("few", "{n} dydh"), Tuple[String, String]("many", "{n} dydh"), Tuple[String, String]("other", "{n} dydh")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} seythun"), Tuple[String, String]("one", "seythun"), Tuple[String, String]("two", "{n} seythun"), Tuple[String, String]("few", "{n} seythun"), Tuple[String, String]("many", "{n} seythun"), Tuple[String, String]("other", "{n} seythun")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} mis"), Tuple[String, String]("one", "mis"), Tuple[String, String]("two", "{n} vis"), Tuple[String, String]("few", "{n} mis"), Tuple[String, String]("many", "{n} mis"), Tuple[String, String]("other", "{n} mis")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} blydhen"), Tuple[String, String]("one", "blydhen"), Tuple[String, String]("two", "{n} vlydhen"), Tuple[String, String]("few", "{n} blydhen"), Tuple[String, String]("many", "{n} blydhen"), Tuple[String, String]("other", "{n} blydhen")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Nowyth genys")
@@ -61,7 +61,7 @@ fn build_kw() -> AgeLocale:
     short_units["week"] = simple_unit("{n} wk")
     short_units["month"] = simple_unit("{n} mo")
     short_units["year"] = simple_unit("{n} yr")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -69,7 +69,7 @@ fn build_kw() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -78,13 +78,13 @@ fn build_kw() -> AgeLocale:
     return AgeLocale(
         code="kw",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} hag hanter",
         delimiter=", ",
         just_born="Nowyth genys",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

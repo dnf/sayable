@@ -720,16 +720,16 @@ fn _build_mock_es() -> AgeLocale:
 
     var units = Dict[String, UnitForms]()
     units["day"] = plural_unit(
-        List[Tuple[String, String]](("one", "{n} d\xc3\xada"), ("other", "{n} d\xc3\xadas"))
+        List[Tuple[String, String]](Tuple[String, String]("one", "{n} d\xc3\xada"), Tuple[String, String]("other", "{n} d\xc3\xadas"))
     )
     units["week"] = plural_unit(
-        List[Tuple[String, String]](("one", "{n} semana"), ("other", "{n} semanas"))
+        List[Tuple[String, String]](Tuple[String, String]("one", "{n} semana"), Tuple[String, String]("other", "{n} semanas"))
     )
     units["month"] = plural_unit(
-        List[Tuple[String, String]](("one", "{n} mes"), ("other", "{n} meses"))
+        List[Tuple[String, String]](Tuple[String, String]("one", "{n} mes"), Tuple[String, String]("other", "{n} meses"))
     )
     units["year"] = plural_unit(
-        List[Tuple[String, String]](("one", "{n} a\xc3\xb1o"), ("other", "{n} a\xc3\xb1os"))
+        List[Tuple[String, String]](Tuple[String, String]("one", "{n} a\xc3\xb1o"), Tuple[String, String]("other", "{n} a\xc3\xb1os"))
     )
 
     var stages = Dict[String, StageLabel]()
@@ -743,11 +743,11 @@ fn _build_mock_es() -> AgeLocale:
     return AgeLocale(
         code="es",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n} y medio",
         delimiter=", ",
         just_born="Reci\xc3\xa9n nacido",
-        stages=stages,
+        stages=stages^,
     )
 
 

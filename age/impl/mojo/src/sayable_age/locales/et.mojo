@@ -31,10 +31,10 @@ fn build_et() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} päev"), ("other", "{n} päeva")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} nädal"), ("other", "{n} nädalat")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} kuu"), ("other", "{n} kuud")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} aasta"), ("other", "{n} aastat")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} päev"), Tuple[String, String]("other", "{n} päeva")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} nädal"), Tuple[String, String]("other", "{n} nädalat")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} kuu"), Tuple[String, String]("other", "{n} kuud")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} aasta"), Tuple[String, String]("other", "{n} aastat")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Vastsündinu")
@@ -46,11 +46,11 @@ fn build_et() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} päev"), ("other", "{n} päeva")))
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} päev"), Tuple[String, String]("other", "{n} päeva")))
     short_units["week"] = simple_unit("{n} näd")
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} kuu"), ("other", "{n} kuud")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} kuu"), Tuple[String, String]("other", "{n} kuud")))
     short_units["year"] = simple_unit("{n} a")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,20 +58,20 @@ fn build_et() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} n")
     compact_units["month"] = simple_unit("{n} k")
     compact_units["year"] = simple_unit("{n} a")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="et",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Vastsündinu",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

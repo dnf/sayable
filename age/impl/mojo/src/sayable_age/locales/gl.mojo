@@ -31,10 +31,10 @@ fn build_gl() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} día"), ("other", "{n} días")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} semana"), ("other", "{n} semanas")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} mes"), ("other", "{n} meses")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} ano"), ("other", "{n} anos")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} día"), Tuple[String, String]("other", "{n} días")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} semana"), Tuple[String, String]("other", "{n} semanas")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mes"), Tuple[String, String]("other", "{n} meses")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ano"), Tuple[String, String]("other", "{n} anos")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_gendered("Recén nacido", "Recén nacida")
@@ -50,7 +50,7 @@ fn build_gl() -> AgeLocale:
     short_units["week"] = simple_unit("{n} sem.")
     short_units["month"] = simple_unit("{n} mes.")
     short_units["year"] = simple_unit("{n} a.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_gl() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} s")
     compact_units["month"] = simple_unit("{n} m")
     compact_units["year"] = simple_unit("{n} a")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_gl() -> AgeLocale:
     return AgeLocale(
         code="gl",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} e medio",
         delimiter=", ",
         just_born="Recén nacido",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

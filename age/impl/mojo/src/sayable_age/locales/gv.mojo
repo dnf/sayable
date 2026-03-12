@@ -39,10 +39,10 @@ fn build_gv() -> AgeLocale:
     """Build the Manx locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} laa"), ("two", "{n} laa"), ("few", "{n} laa"), ("other", "{n} laa")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} hiaghtin"), ("two", "{n} hiaghtin"), ("few", "{n} shiaghtin"), ("other", "{n} shiaghtin")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} vee"), ("two", "{n} vee"), ("few", "{n} mee"), ("other", "{n} mee")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} vlein"), ("two", "{n} vlein"), ("few", "{n} blein"), ("other", "{n} blein")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} laa"), Tuple[String, String]("two", "{n} laa"), Tuple[String, String]("few", "{n} laa"), Tuple[String, String]("other", "{n} laa")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} hiaghtin"), Tuple[String, String]("two", "{n} hiaghtin"), Tuple[String, String]("few", "{n} shiaghtin"), Tuple[String, String]("other", "{n} shiaghtin")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} vee"), Tuple[String, String]("two", "{n} vee"), Tuple[String, String]("few", "{n} mee"), Tuple[String, String]("other", "{n} mee")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} vlein"), Tuple[String, String]("two", "{n} vlein"), Tuple[String, String]("few", "{n} blein"), Tuple[String, String]("other", "{n} blein")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Ruggit noa")
@@ -58,7 +58,7 @@ fn build_gv() -> AgeLocale:
     short_units["week"] = simple_unit("{n} wk")
     short_units["month"] = simple_unit("{n} mo")
     short_units["year"] = simple_unit("{n} yr")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -66,7 +66,7 @@ fn build_gv() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -75,13 +75,13 @@ fn build_gv() -> AgeLocale:
     return AgeLocale(
         code="gv",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} as lieh",
         delimiter=", ",
         just_born="Ruggit noa",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

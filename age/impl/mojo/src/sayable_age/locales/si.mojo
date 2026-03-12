@@ -31,10 +31,10 @@ fn build_si() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "දින {n}"), ("other", "දින {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "සති {n}"), ("other", "සති {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "මාස {n}"), ("other", "මාස {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "වසර {n}"), ("other", "වසර {n}")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "දින {n}"), Tuple[String, String]("other", "දින {n}")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "සති {n}"), Tuple[String, String]("other", "සති {n}")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "මාස {n}"), Tuple[String, String]("other", "මාස {n}")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "වසර {n}"), Tuple[String, String]("other", "වසර {n}")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("අලුත උපන්")
@@ -50,7 +50,7 @@ fn build_si() -> AgeLocale:
     short_units["week"] = simple_unit("සති {n}")
     short_units["month"] = simple_unit("මාස {n}")
     short_units["year"] = simple_unit("වසර {n}")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_si() -> AgeLocale:
     compact_units["week"] = simple_unit("ස {n}")
     compact_units["month"] = simple_unit("මා {n}")
     compact_units["year"] = simple_unit("ව {n}")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_si() -> AgeLocale:
     return AgeLocale(
         code="si",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0}යි භාගයයි",
         delimiter=", ",
         just_born="අලුත උපන්",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

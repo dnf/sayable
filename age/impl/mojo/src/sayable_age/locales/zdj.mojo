@@ -48,7 +48,7 @@ fn build_zdj() -> AgeLocale:
     short_units["week"] = simple_unit("djum. {n}")
     short_units["month"] = simple_unit("mw. {n}")
     short_units["year"] = simple_unit("mwa. {n}")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,7 +56,7 @@ fn build_zdj() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +65,13 @@ fn build_zdj() -> AgeLocale:
     return AgeLocale(
         code="zdj",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} na nusu",
         delimiter=", ",
         just_born="Mwana mdzuhu",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

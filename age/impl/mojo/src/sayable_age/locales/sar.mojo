@@ -48,7 +48,7 @@ fn build_sar() -> AgeLocale:
     short_units["week"] = simple_unit("lɔtɛ {n}")
     short_units["month"] = simple_unit("ndɔɔ {n}")
     short_units["year"] = simple_unit("bɛɛ {n}")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,7 +56,7 @@ fn build_sar() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +65,13 @@ fn build_sar() -> AgeLocale:
     return AgeLocale(
         code="sar",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} kɩ̀ ndá̰ŋ",
         delimiter=", ",
         just_born="Gɔ dɔɔ ya",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

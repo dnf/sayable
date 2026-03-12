@@ -31,10 +31,10 @@ fn build_ps() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ورځ"), ("other", "{n} ورځې")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ورځ"), Tuple[String, String]("other", "{n} ورځې")))
     units["week"] = simple_unit("{n} اونۍ")
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} مياشت"), ("other", "{n} مياشتې")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} کال"), ("other", "{n} کالونه")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} مياشت"), Tuple[String, String]("other", "{n} مياشتې")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} کال"), Tuple[String, String]("other", "{n} کالونه")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("نوزېږی")
@@ -46,11 +46,11 @@ fn build_ps() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ورځ"), ("other", "{n} ورځې")))
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ورځ"), Tuple[String, String]("other", "{n} ورځې")))
     short_units["week"] = simple_unit("{n} اونۍ")
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} مياشت"), ("other", "{n} مياشتې")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} کال"), ("other", "{n} کالونه")))
-    short_ovr.units = short_units
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} مياشت"), Tuple[String, String]("other", "{n} مياشتې")))
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} کال"), Tuple[String, String]("other", "{n} کالونه")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_ps() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} او")
     compact_units["month"] = simple_unit("{n} م")
     compact_units["year"] = simple_unit("{n} ک")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_ps() -> AgeLocale:
     return AgeLocale(
         code="ps",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter="، ",
         just_born="نوي زېږېدلی",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

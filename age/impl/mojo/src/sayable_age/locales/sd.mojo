@@ -32,8 +32,8 @@ fn build_sd() -> AgeLocale:
 
     var units = Dict[String, UnitForms]()
     units["day"] = simple_unit("{n} ڏينهن")
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} هفتو"), ("other", "{n} هفتا")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} مهينو"), ("other", "{n} مهينا")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} هفتو"), Tuple[String, String]("other", "{n} هفتا")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} مهينو"), Tuple[String, String]("other", "{n} مهينا")))
     units["year"] = simple_unit("{n} سال")
 
     var stages = Dict[String, StageLabel]()
@@ -47,10 +47,10 @@ fn build_sd() -> AgeLocale:
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
     short_units["day"] = simple_unit("{n} ڏينهن")
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} هفتو"), ("other", "{n} هفتا")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} مهينو"), ("other", "{n} مهينا")))
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} هفتو"), Tuple[String, String]("other", "{n} هفتا")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} مهينو"), Tuple[String, String]("other", "{n} مهينا")))
     short_units["year"] = simple_unit("{n} سال")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_sd() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} ه")
     compact_units["month"] = simple_unit("{n} م")
     compact_units["year"] = simple_unit("{n} س")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_sd() -> AgeLocale:
     return AgeLocale(
         code="sd",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter="، ",
         just_born="نئون ڄائو",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

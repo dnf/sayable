@@ -31,10 +31,10 @@ fn build_sq() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ditë"), ("other", "{n} ditë")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} javë"), ("other", "{n} javë")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} muaj"), ("other", "{n} muaj")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} vit"), ("other", "{n} vjet")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ditë"), Tuple[String, String]("other", "{n} ditë")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} javë"), Tuple[String, String]("other", "{n} javë")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} muaj"), Tuple[String, String]("other", "{n} muaj")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} vit"), Tuple[String, String]("other", "{n} vjet")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_gendered("Sapolindur", "Sapolindure")
@@ -49,16 +49,16 @@ fn build_sq() -> AgeLocale:
     short_units["day"] = simple_unit("{n} ditë")
     short_units["week"] = simple_unit("{n} javë")
     short_units["month"] = simple_unit("{n} muaj")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} vit"), ("other", "{n} vjet")))
-    short_ovr.units = short_units
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} vit"), Tuple[String, String]("other", "{n} vjet")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
     compact_units["day"] = simple_unit("{n} ditë")
     compact_units["week"] = simple_unit("{n} javë")
     compact_units["month"] = simple_unit("{n} muaj")
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} vit"), ("other", "{n} vjet")))
-    compact_ovr.units = compact_units
+    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} vit"), Tuple[String, String]("other", "{n} vjet")))
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_sq() -> AgeLocale:
     return AgeLocale(
         code="sq",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} e gjysmë",
         delimiter=", ",
         just_born="Sapolindur",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

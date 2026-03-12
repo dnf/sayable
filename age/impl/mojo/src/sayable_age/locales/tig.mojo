@@ -31,10 +31,10 @@ fn build_tig() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "yom {n}"), ("other", "ayam {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "semun {n}"), ("other", "semunat {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "werḥi {n}"), ("other", "awerḥi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "ʿam {n}"), ("other", "aʿwam {n}")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "yom {n}"), Tuple[String, String]("other", "ayam {n}")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "semun {n}"), Tuple[String, String]("other", "semunat {n}")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "werḥi {n}"), Tuple[String, String]("other", "awerḥi {n}")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ʿam {n}"), Tuple[String, String]("other", "aʿwam {n}")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Ḥadis tewlid")
@@ -46,11 +46,11 @@ fn build_tig() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "yom {n}"), ("other", "ayam {n}")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("one", "semun {n}"), ("other", "semunat {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "werḥi {n}"), ("other", "awerḥi {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "ʿam {n}"), ("other", "aʿwam {n}")))
-    short_ovr.units = short_units
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "yom {n}"), Tuple[String, String]("other", "ayam {n}")))
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "semun {n}"), Tuple[String, String]("other", "semunat {n}")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "werḥi {n}"), Tuple[String, String]("other", "awerḥi {n}")))
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ʿam {n}"), Tuple[String, String]("other", "aʿwam {n}")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_tig() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_tig() -> AgeLocale:
     return AgeLocale(
         code="tig",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} we nəs",
         delimiter=", ",
         just_born="Ḥadis tewlid",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

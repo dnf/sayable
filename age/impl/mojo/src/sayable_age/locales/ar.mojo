@@ -42,10 +42,10 @@ fn build_ar() -> AgeLocale:
     """Build the Arabic locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("zero", "{n} يوم"), ("one", "يوم"), ("two", "يومان"), ("few", "{n} أيام"), ("many", "{n} يومًا"), ("other", "{n} يوم")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("zero", "{n} أسبوع"), ("one", "أسبوع"), ("two", "أسبوعان"), ("few", "{n} أسابيع"), ("many", "{n} أسبوعًا"), ("other", "{n} أسبوع")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("zero", "{n} شهر"), ("one", "شهر"), ("two", "شهران"), ("few", "{n} أشهر"), ("many", "{n} شهرًا"), ("other", "{n} شهر")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("zero", "{n} سنة"), ("one", "سنة"), ("two", "سنتان"), ("few", "{n} سنوات"), ("many", "{n} سنة"), ("other", "{n} سنة")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} يوم"), Tuple[String, String]("one", "يوم"), Tuple[String, String]("two", "يومان"), Tuple[String, String]("few", "{n} أيام"), Tuple[String, String]("many", "{n} يومًا"), Tuple[String, String]("other", "{n} يوم")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} أسبوع"), Tuple[String, String]("one", "أسبوع"), Tuple[String, String]("two", "أسبوعان"), Tuple[String, String]("few", "{n} أسابيع"), Tuple[String, String]("many", "{n} أسبوعًا"), Tuple[String, String]("other", "{n} أسبوع")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} شهر"), Tuple[String, String]("one", "شهر"), Tuple[String, String]("two", "شهران"), Tuple[String, String]("few", "{n} أشهر"), Tuple[String, String]("many", "{n} شهرًا"), Tuple[String, String]("other", "{n} شهر")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} سنة"), Tuple[String, String]("one", "سنة"), Tuple[String, String]("two", "سنتان"), Tuple[String, String]("few", "{n} سنوات"), Tuple[String, String]("many", "{n} سنة"), Tuple[String, String]("other", "{n} سنة")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_gendered("حديث الولادة", "حديثة الولادة")
@@ -57,19 +57,19 @@ fn build_ar() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("zero", "{n} يوم"), ("one", "يوم"), ("two", "يومان"), ("few", "{n} أيام"), ("many", "{n} يومًا"), ("other", "{n} يوم")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("zero", "{n} أسبوع"), ("one", "أسبوع"), ("two", "أسبوعان"), ("few", "{n} أسابيع"), ("many", "{n} أسبوعًا"), ("other", "{n} أسبوع")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("zero", "{n} شهر"), ("one", "شهر"), ("two", "شهران"), ("few", "{n} أشهر"), ("many", "{n} شهرًا"), ("other", "{n} شهر")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("zero", "{n} سنة"), ("one", "سنة واحدة"), ("two", "سنتان"), ("few", "{n} سنوات"), ("many", "{n} سنة"), ("other", "{n} سنة")))
-    short_ovr.units = short_units
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} يوم"), Tuple[String, String]("one", "يوم"), Tuple[String, String]("two", "يومان"), Tuple[String, String]("few", "{n} أيام"), Tuple[String, String]("many", "{n} يومًا"), Tuple[String, String]("other", "{n} يوم")))
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} أسبوع"), Tuple[String, String]("one", "أسبوع"), Tuple[String, String]("two", "أسبوعان"), Tuple[String, String]("few", "{n} أسابيع"), Tuple[String, String]("many", "{n} أسبوعًا"), Tuple[String, String]("other", "{n} أسبوع")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} شهر"), Tuple[String, String]("one", "شهر"), Tuple[String, String]("two", "شهران"), Tuple[String, String]("few", "{n} أشهر"), Tuple[String, String]("many", "{n} شهرًا"), Tuple[String, String]("other", "{n} شهر")))
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} سنة"), Tuple[String, String]("one", "سنة واحدة"), Tuple[String, String]("two", "سنتان"), Tuple[String, String]("few", "{n} سنوات"), Tuple[String, String]("many", "{n} سنة"), Tuple[String, String]("other", "{n} سنة")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
     compact_units["day"] = simple_unit("{n} ي")
     compact_units["week"] = simple_unit("{n} أ")
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](("zero", "{n} شهر"), ("one", "شهر"), ("two", "شهران"), ("few", "{n} أشهر"), ("many", "{n} شهرًا"), ("other", "{n} شهر")))
+    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("zero", "{n} شهر"), Tuple[String, String]("one", "شهر"), Tuple[String, String]("two", "شهران"), Tuple[String, String]("few", "{n} أشهر"), Tuple[String, String]("many", "{n} شهرًا"), Tuple[String, String]("other", "{n} شهر")))
     compact_units["year"] = simple_unit("{n} سنة")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -78,13 +78,13 @@ fn build_ar() -> AgeLocale:
     return AgeLocale(
         code="ar",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} ونصف",
         delimiter=" و",
         just_born="حديث الولادة",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

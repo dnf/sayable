@@ -48,7 +48,7 @@ fn build_dv() -> AgeLocale:
     short_units["week"] = simple_unit("{n} ހަފްތާ")
     short_units["month"] = simple_unit("{n} މަސް")
     short_units["year"] = simple_unit("{n} އަހަރު")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,20 +56,20 @@ fn build_dv() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="dv",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} ބައި",
         delimiter="، ",
         just_born="އަލަށް އުފަންވި",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

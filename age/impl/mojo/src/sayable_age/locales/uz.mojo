@@ -31,10 +31,10 @@ fn build_uz() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} kun"), ("other", "{n} kun")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} hafta"), ("other", "{n} hafta")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} oy"), ("other", "{n} oy")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} yosh"), ("other", "{n} yosh")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} kun"), Tuple[String, String]("other", "{n} kun")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} hafta"), Tuple[String, String]("other", "{n} hafta")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} oy"), Tuple[String, String]("other", "{n} oy")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} yosh"), Tuple[String, String]("other", "{n} yosh")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Yangi tugʻilgan")
@@ -50,7 +50,7 @@ fn build_uz() -> AgeLocale:
     short_units["week"] = simple_unit("{n} hafta")
     short_units["month"] = simple_unit("{n} oy")
     short_units["year"] = simple_unit("{n} yil")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_uz() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} hafta")
     compact_units["month"] = simple_unit("{n} oy")
     compact_units["year"] = simple_unit("{n} yil")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_uz() -> AgeLocale:
     return AgeLocale(
         code="uz",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n} yarim",
         delimiter=", ",
         just_born="Yangi tugʻilgan",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

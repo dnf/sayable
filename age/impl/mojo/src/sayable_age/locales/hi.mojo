@@ -31,10 +31,10 @@ fn build_hi() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} दिन"), ("other", "{n} दिन")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} सप्ताह"), ("other", "{n} सप्ताह")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} महीना"), ("other", "{n} महीने")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} साल"), ("other", "{n} साल")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} दिन"), Tuple[String, String]("other", "{n} दिन")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} सप्ताह"), Tuple[String, String]("other", "{n} सप्ताह")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} महीना"), Tuple[String, String]("other", "{n} महीने")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} साल"), Tuple[String, String]("other", "{n} साल")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("नवजात")
@@ -50,7 +50,7 @@ fn build_hi() -> AgeLocale:
     short_units["week"] = simple_unit("{n} सप्ताह")
     short_units["month"] = simple_unit("{n} माह")
     short_units["year"] = simple_unit("{n} वर्ष")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_hi() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} सप्ताह")
     compact_units["month"] = simple_unit("{n} माह")
     compact_units["year"] = simple_unit("{n} व")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_hi() -> AgeLocale:
     return AgeLocale(
         code="hi",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="साढ़े {n}",
         delimiter=", ",
         just_born="नवजात",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

@@ -48,7 +48,7 @@ fn build_eu() -> AgeLocale:
     short_units["week"] = simple_unit("{n} aste")
     short_units["month"] = simple_unit("{n} hilabete")
     short_units["year"] = simple_unit("{n} urte")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,7 +56,7 @@ fn build_eu() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} aste")
     compact_units["month"] = simple_unit("{n} hil")
     compact_units["year"] = simple_unit("{n} u.")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +65,13 @@ fn build_eu() -> AgeLocale:
     return AgeLocale(
         code="eu",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} eta erdi",
         delimiter=", ",
         just_born="Jaioberria",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

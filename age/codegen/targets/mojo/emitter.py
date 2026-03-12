@@ -41,7 +41,7 @@ def _unit_forms(unit: object) -> str:
     pairs = []
     for cat in cats:
         if cat in unit:
-            pairs.append(f'({_quote(cat)}, {_quote(unit[cat])})')
+            pairs.append(f'Tuple[String, String]({_quote(cat)}, {_quote(unit[cat])})')
     return "plural_unit(List[Tuple[String, String]](" + ", ".join(pairs) + "))"
 
 
@@ -128,7 +128,7 @@ def emit_locale(data: dict) -> str:
                     if unit_name in ovr["units"]:
                         val = _unit_forms(ovr["units"][unit_name])
                         lines.append(f"    {mode}_units[{_quote(unit_name)}] = {val}")
-                lines.append(f"    {mode}_ovr.units = {mode}_units")
+                lines.append(f"    {mode}_ovr.units = {mode}_units^")
             if "half" in ovr:
                 lines.append(f"    {mode}_ovr.half = {_quote(ovr['half'])}")
                 lines.append(f"    {mode}_ovr.has_half = True")
@@ -150,15 +150,15 @@ def emit_locale(data: dict) -> str:
     lines.append("    return AgeLocale(")
     lines.append(f"        code={_quote(code)},")
     lines.append(f"        plural_fn={plural_ref},")
-    lines.append("        units=units,")
+    lines.append("        units=units^,")
     lines.append(f"        half={_quote(data['half'])},")
     lines.append(f"        delimiter={_quote(data['delimiter'])},")
     lines.append(f"        just_born={_quote(data['justBorn'])},")
-    lines.append("        stages=stages,")
+    lines.append("        stages=stages^,")
 
     for mode in ("short", "compact"):
         if mode in data:
-            lines.append(f"        {mode}_override={mode}_ovr,")
+            lines.append(f"        {mode}_override={mode}_ovr^,")
             lines.append(f"        has_{mode}=True,")
 
     lines.append("    )")

@@ -31,10 +31,10 @@ fn build_ha() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} kwana"), ("other", "{n} kwanaki")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} mako"), ("other", "{n} makonni")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} wata"), ("other", "{n} watanni")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} shekara"), ("other", "{n} shekaru")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} kwana"), Tuple[String, String]("other", "{n} kwanaki")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mako"), Tuple[String, String]("other", "{n} makonni")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} wata"), Tuple[String, String]("other", "{n} watanni")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} shekara"), Tuple[String, String]("other", "{n} shekaru")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Jariri")
@@ -50,7 +50,7 @@ fn build_ha() -> AgeLocale:
     short_units["week"] = simple_unit("{n} mk.")
     short_units["month"] = simple_unit("{n} wt.")
     short_units["year"] = simple_unit("{n} shk.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,20 +58,20 @@ fn build_ha() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="ha",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Sabon haihuwa",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

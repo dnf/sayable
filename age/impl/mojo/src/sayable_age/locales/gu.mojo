@@ -31,10 +31,10 @@ fn build_gu() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} દિવસ"), ("other", "{n} દિવસ")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} અઠવાડિયું"), ("other", "{n} અઠવાડિયા")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} મહિનો"), ("other", "{n} મહિના")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} વર્ષ"), ("other", "{n} વર્ષ")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} દિવસ"), Tuple[String, String]("other", "{n} દિવસ")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} અઠવાડિયું"), Tuple[String, String]("other", "{n} અઠવાડિયા")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} મહિનો"), Tuple[String, String]("other", "{n} મહિના")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} વર્ષ"), Tuple[String, String]("other", "{n} વર્ષ")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("નવજાત")
@@ -48,9 +48,9 @@ fn build_gu() -> AgeLocale:
     var short_units = Dict[String, UnitForms]()
     short_units["day"] = simple_unit("{n} દિવસ")
     short_units["week"] = simple_unit("{n} અઠ.")
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} મહિનો"), ("other", "{n} મહિના")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} મહિનો"), Tuple[String, String]("other", "{n} મહિના")))
     short_units["year"] = simple_unit("{n} વર્ષ")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_gu() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} અઠ.")
     compact_units["month"] = simple_unit("{n} મ")
     compact_units["year"] = simple_unit("{n} વ")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_gu() -> AgeLocale:
     return AgeLocale(
         code="gu",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="સાડા {n}",
         delimiter=", ",
         just_born="નવજાત",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

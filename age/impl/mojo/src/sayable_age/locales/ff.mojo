@@ -31,10 +31,10 @@ fn build_ff() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "ñalawma {n}"), ("other", "ñalɗe {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "yontere {n}"), ("other", "yontereeji {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "lewru {n}"), ("other", "lebbi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "hitaande {n}"), ("other", "duuɓi {n}")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ñalawma {n}"), Tuple[String, String]("other", "ñalɗe {n}")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "yontere {n}"), Tuple[String, String]("other", "yontereeji {n}")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "lewru {n}"), Tuple[String, String]("other", "lebbi {n}")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "hitaande {n}"), Tuple[String, String]("other", "duuɓi {n}")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Ɓinngel kesol")
@@ -47,18 +47,18 @@ fn build_ff() -> AgeLocale:
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
     short_units["day"] = simple_unit("ñalɗe {n}")
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("one", "yontere {n}"), ("other", "yontereeji {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "lewru {n}"), ("other", "lebbi {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "hitaande {n}"), ("other", "duuɓi {n}")))
-    short_ovr.units = short_units
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "yontere {n}"), Tuple[String, String]("other", "yontereeji {n}")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "lewru {n}"), Tuple[String, String]("other", "lebbi {n}")))
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "hitaande {n}"), Tuple[String, String]("other", "duuɓi {n}")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
     compact_units["day"] = simple_unit("ñalɗe {n}")
-    compact_units["week"] = plural_unit(List[Tuple[String, String]](("one", "yont {n}"), ("other", "yontji {n}")))
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](("one", "lew {n}"), ("other", "leb {n}")))
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](("one", "hit {n}"), ("other", "duuɓi {n}")))
-    compact_ovr.units = compact_units
+    compact_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "yont {n}"), Tuple[String, String]("other", "yontji {n}")))
+    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "lew {n}"), Tuple[String, String]("other", "leb {n}")))
+    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "hit {n}"), Tuple[String, String]("other", "duuɓi {n}")))
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_ff() -> AgeLocale:
     return AgeLocale(
         code="ff",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Ɓinngel kesol",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

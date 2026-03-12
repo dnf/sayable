@@ -31,10 +31,10 @@ fn build_tr() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} gün"), ("other", "{n} gün")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} hafta"), ("other", "{n} hafta")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} ay"), ("other", "{n} ay")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} yaş"), ("other", "{n} yaş")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} gün"), Tuple[String, String]("other", "{n} gün")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} hafta"), Tuple[String, String]("other", "{n} hafta")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ay"), Tuple[String, String]("other", "{n} ay")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} yaş"), Tuple[String, String]("other", "{n} yaş")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Yeni doğan")
@@ -50,7 +50,7 @@ fn build_tr() -> AgeLocale:
     short_units["week"] = simple_unit("{n} hf.")
     short_units["month"] = simple_unit("{n} ay")
     short_units["year"] = simple_unit("{n} yıl")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_tr() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}h")
     compact_units["month"] = simple_unit("{n}a")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_tr() -> AgeLocale:
     return AgeLocale(
         code="tr",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n} buçuk",
         delimiter=", ",
         just_born="Yeni doğan",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

@@ -35,10 +35,10 @@ fn build_he() -> AgeLocale:
     """Build the Hebrew locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "יום {n}"), ("two", "יומיים"), ("other", "{n} ימים")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "שבוע {n}"), ("two", "שבועיים"), ("other", "{n} שבועות")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "חודש {n}"), ("two", "חודשיים"), ("other", "{n} חודשים")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "שנה"), ("two", "שנתיים"), ("other", "{n} שנים")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "יום {n}"), Tuple[String, String]("two", "יומיים"), Tuple[String, String]("other", "{n} ימים")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "שבוע {n}"), Tuple[String, String]("two", "שבועיים"), Tuple[String, String]("other", "{n} שבועות")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "חודש {n}"), Tuple[String, String]("two", "חודשיים"), Tuple[String, String]("other", "{n} חודשים")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "שנה"), Tuple[String, String]("two", "שנתיים"), Tuple[String, String]("other", "{n} שנים")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_gendered("רק נולד", "רק נולדה")
@@ -50,11 +50,11 @@ fn build_he() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} יום"), ("two", "יומיים"), ("other", "{n} ימ׳")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} שבוע"), ("two", "שבועיים"), ("other", "{n} שבועות")))
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} יום"), Tuple[String, String]("two", "יומיים"), Tuple[String, String]("other", "{n} ימ׳")))
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} שבוע"), Tuple[String, String]("two", "שבועיים"), Tuple[String, String]("other", "{n} שבועות")))
     short_units["month"] = simple_unit("{n} ח׳")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} שנה"), ("two", "{n} שנים"), ("other", "{n} שנים")))
-    short_ovr.units = short_units
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} שנה"), Tuple[String, String]("two", "{n} שנים"), Tuple[String, String]("other", "{n} שנים")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -62,7 +62,7 @@ fn build_he() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} ש′")
     compact_units["month"] = simple_unit("{n} ח׳")
     compact_units["year"] = simple_unit("{n} ש′")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -71,13 +71,13 @@ fn build_he() -> AgeLocale:
     return AgeLocale(
         code="he",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} וחצי",
         delimiter=", ",
         just_born="רק נולד",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

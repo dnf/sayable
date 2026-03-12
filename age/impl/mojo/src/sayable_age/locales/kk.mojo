@@ -31,10 +31,10 @@ fn build_kk() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} күн"), ("other", "{n} күн")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} апта"), ("other", "{n} апта")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} ай"), ("other", "{n} ай")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} жас"), ("other", "{n} жас")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} күн"), Tuple[String, String]("other", "{n} күн")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} апта"), Tuple[String, String]("other", "{n} апта")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ай"), Tuple[String, String]("other", "{n} ай")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} жас"), Tuple[String, String]("other", "{n} жас")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Жаңа туған")
@@ -50,7 +50,7 @@ fn build_kk() -> AgeLocale:
     short_units["week"] = simple_unit("{n} ап.")
     short_units["month"] = simple_unit("{n} ай")
     short_units["year"] = simple_unit("{n} ж.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_kk() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} ап.")
     compact_units["month"] = simple_unit("{n} ай")
     compact_units["year"] = simple_unit("{n} ж.")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_kk() -> AgeLocale:
     return AgeLocale(
         code="kk",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n} жарым",
         delimiter=", ",
         just_born="Жаңа туған",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

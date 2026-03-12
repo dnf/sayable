@@ -31,10 +31,10 @@ fn build_ml() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ദിവസം"), ("other", "{n} ദിവസങ്ങൾ")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} ആഴ്ച"), ("other", "{n} ആഴ്ചകൾ")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} മാസം"), ("other", "{n} മാസങ്ങൾ")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} വയസ്സ്"), ("other", "{n} വയസ്സ്")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ദിവസം"), Tuple[String, String]("other", "{n} ദിവസങ്ങൾ")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ആഴ്ച"), Tuple[String, String]("other", "{n} ആഴ്ചകൾ")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} മാസം"), Tuple[String, String]("other", "{n} മാസങ്ങൾ")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} വയസ്സ്"), Tuple[String, String]("other", "{n} വയസ്സ്")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("നവജാതശിശു")
@@ -50,7 +50,7 @@ fn build_ml() -> AgeLocale:
     short_units["week"] = simple_unit("{n} ആഴ്ച")
     short_units["month"] = simple_unit("{n} മാസം")
     short_units["year"] = simple_unit("{n} വർഷം")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_ml() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} ആ")
     compact_units["month"] = simple_unit("{n} മാ")
     compact_units["year"] = simple_unit("{n} വ")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_ml() -> AgeLocale:
     return AgeLocale(
         code="ml",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} ര",
         delimiter=", ",
         just_born="നവജാതശിശു",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

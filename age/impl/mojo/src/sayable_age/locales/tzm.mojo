@@ -33,10 +33,10 @@ fn build_tzm() -> AgeLocale:
     """Build the Central Atlas Tamazight locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ass"), ("other", "{n} ussan")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} imalass"), ("other", "{n} imalassn")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} ayyur"), ("other", "{n} ayyurn")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} aseggas"), ("other", "{n} iseggasen")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ass"), Tuple[String, String]("other", "{n} ussan")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} imalass"), Tuple[String, String]("other", "{n} imalassn")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ayyur"), Tuple[String, String]("other", "{n} ayyurn")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} aseggas"), Tuple[String, String]("other", "{n} iseggasen")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Iɣ d illul")
@@ -52,7 +52,7 @@ fn build_tzm() -> AgeLocale:
     short_units["week"] = simple_unit("{n} wk")
     short_units["month"] = simple_unit("{n} mo")
     short_units["year"] = simple_unit("{n} yr")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -60,7 +60,7 @@ fn build_tzm() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -69,13 +69,13 @@ fn build_tzm() -> AgeLocale:
     return AgeLocale(
         code="tzm",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} d uzgen",
         delimiter=", ",
         just_born="Iɣ d illul",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

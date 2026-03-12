@@ -31,10 +31,10 @@ fn build_sv() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} dag"), ("other", "{n} dagar")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} vecka"), ("other", "{n} veckor")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} månad"), ("other", "{n} månader")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} år"), ("other", "{n} år")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} dag"), Tuple[String, String]("other", "{n} dagar")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} vecka"), Tuple[String, String]("other", "{n} veckor")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} månad"), Tuple[String, String]("other", "{n} månader")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} år"), Tuple[String, String]("other", "{n} år")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Nyfödd")
@@ -50,7 +50,7 @@ fn build_sv() -> AgeLocale:
     short_units["week"] = simple_unit("{n} v")
     short_units["month"] = simple_unit("{n} mån")
     short_units["year"] = simple_unit("{n} år")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,20 +58,20 @@ fn build_sv() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}v")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}å")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="sv",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Nyfödd",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

@@ -80,7 +80,7 @@ struct SayableAge(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
             else:
                 units[key[]] = locale.units[key[]]
 
-        self.units = units
+        self.units = units^
         self.half = _pick_str(ovr, use_override, "half", locale.half)
         self.delimiter = _pick_str(ovr, use_override, "delimiter", locale.delimiter)
         self.just_born = _pick_str(ovr, use_override, "just_born", locale.just_born)

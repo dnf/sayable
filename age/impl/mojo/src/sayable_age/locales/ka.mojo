@@ -31,10 +31,10 @@ fn build_ka() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} დღე"), ("other", "{n} დღე")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} კვირა"), ("other", "{n} კვირა")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} თვე"), ("other", "{n} თვე")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} წელი"), ("other", "{n} წელი")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} დღე"), Tuple[String, String]("other", "{n} დღე")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} კვირა"), Tuple[String, String]("other", "{n} კვირა")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} თვე"), Tuple[String, String]("other", "{n} თვე")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} წელი"), Tuple[String, String]("other", "{n} წელი")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("ახალშობილი")
@@ -50,7 +50,7 @@ fn build_ka() -> AgeLocale:
     short_units["week"] = simple_unit("{n} კვრ")
     short_units["month"] = simple_unit("{n} თვე")
     short_units["year"] = simple_unit("{n} წ")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_ka() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} კვრ")
     compact_units["month"] = simple_unit("{n} თვე")
     compact_units["year"] = simple_unit("{n} წ")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_ka() -> AgeLocale:
     return AgeLocale(
         code="ka",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} და ნახევარი",
         delimiter=", ",
         just_born="ახალშობილი",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

@@ -48,7 +48,7 @@ fn build_pov() -> AgeLocale:
     short_units["week"] = simple_unit("{n} sim")
     short_units["month"] = simple_unit("{n} mis")
     short_units["year"] = simple_unit("{n} anu")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,7 +56,7 @@ fn build_pov() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} sim")
     compact_units["month"] = simple_unit("{n} mis")
     compact_units["year"] = simple_unit("{n} anu")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +65,13 @@ fn build_pov() -> AgeLocale:
     return AgeLocale(
         code="pov",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} i meiu",
         delimiter=", ",
         just_born="Mininu kaba di nasi",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

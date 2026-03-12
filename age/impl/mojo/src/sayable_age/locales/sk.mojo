@@ -35,10 +35,10 @@ fn build_sk() -> AgeLocale:
     """Build the Slovak locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} deň"), ("few", "{n} dni"), ("other", "{n} dní")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} týždeň"), ("few", "{n} týždne"), ("other", "{n} týždňov")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} mesiac"), ("few", "{n} mesiace"), ("other", "{n} mesiacov")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} rok"), ("few", "{n} roky"), ("other", "{n} rokov")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} deň"), Tuple[String, String]("few", "{n} dni"), Tuple[String, String]("other", "{n} dní")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} týždeň"), Tuple[String, String]("few", "{n} týždne"), Tuple[String, String]("other", "{n} týždňov")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mesiac"), Tuple[String, String]("few", "{n} mesiace"), Tuple[String, String]("other", "{n} mesiacov")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} rok"), Tuple[String, String]("few", "{n} roky"), Tuple[String, String]("other", "{n} rokov")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Novorodenec")
@@ -50,11 +50,11 @@ fn build_sk() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} deň"), ("few", "{n} dni"), ("many", "{n} dňa"), ("other", "{n} dní")))
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} deň"), Tuple[String, String]("few", "{n} dni"), Tuple[String, String]("many", "{n} dňa"), Tuple[String, String]("other", "{n} dní")))
     short_units["week"] = simple_unit("{n} týž.")
     short_units["month"] = simple_unit("{n} mes.")
     short_units["year"] = simple_unit("{n} r.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -62,20 +62,20 @@ fn build_sk() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} t.")
     compact_units["month"] = simple_unit("{n} m.")
     compact_units["year"] = simple_unit("{n} r.")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="sk",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Novorodenec",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

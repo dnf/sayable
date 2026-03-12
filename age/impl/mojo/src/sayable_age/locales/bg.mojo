@@ -31,10 +31,10 @@ fn build_bg() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ден"), ("other", "{n} дни")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} седмица"), ("other", "{n} седмици")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} месец"), ("other", "{n} месеца")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} година"), ("other", "{n} години")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ден"), Tuple[String, String]("other", "{n} дни")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} седмица"), Tuple[String, String]("other", "{n} седмици")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} месец"), Tuple[String, String]("other", "{n} месеца")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} година"), Tuple[String, String]("other", "{n} години")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Новородено")
@@ -50,7 +50,7 @@ fn build_bg() -> AgeLocale:
     short_units["week"] = simple_unit("{n} седм.")
     short_units["month"] = simple_unit("{n} мес.")
     short_units["year"] = simple_unit("{n} год.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_bg() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} седм.")
     compact_units["month"] = simple_unit("{n} мес.")
     compact_units["year"] = simple_unit("{n} г.")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_bg() -> AgeLocale:
     return AgeLocale(
         code="bg",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} и половина",
         delimiter=", ",
         just_born="Новородено",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

@@ -50,7 +50,7 @@ fn build_ht() -> AgeLocale:
     short_units["week"] = simple_unit("{n} sem")
     short_units["month"] = simple_unit("{n} mwa")
     short_units["year"] = simple_unit("{n} an")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_ht() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}sem")
     compact_units["month"] = simple_unit("{n}mwa")
     compact_units["year"] = simple_unit("{n}an")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_ht() -> AgeLocale:
     return AgeLocale(
         code="ht",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Tibebe fèk fèt",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

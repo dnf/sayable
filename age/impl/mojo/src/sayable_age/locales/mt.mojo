@@ -40,10 +40,10 @@ fn build_mt() -> AgeLocale:
     """Build the Maltese locale."""
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "ġurnata"), ("two", "jumejn"), ("few", "{n} ijiem"), ("many", "{n}-il jum"), ("other", "{n} jum")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "ġimgħa"), ("two", "ġimgħatejn"), ("few", "{n} ġimgħat"), ("many", "{n}-il ġimgħa"), ("other", "{n} ġimgħa")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "xahar"), ("two", "xahrejn"), ("few", "{n} xhur"), ("many", "{n}-il xahar"), ("other", "{n} xahar")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "sena"), ("two", "sentejn"), ("few", "{n} snin"), ("many", "{n}-il sena"), ("other", "{n} sena")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ġurnata"), Tuple[String, String]("two", "jumejn"), Tuple[String, String]("few", "{n} ijiem"), Tuple[String, String]("many", "{n}-il jum"), Tuple[String, String]("other", "{n} jum")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ġimgħa"), Tuple[String, String]("two", "ġimgħatejn"), Tuple[String, String]("few", "{n} ġimgħat"), Tuple[String, String]("many", "{n}-il ġimgħa"), Tuple[String, String]("other", "{n} ġimgħa")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "xahar"), Tuple[String, String]("two", "xahrejn"), Tuple[String, String]("few", "{n} xhur"), Tuple[String, String]("many", "{n}-il xahar"), Tuple[String, String]("other", "{n} xahar")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sena"), Tuple[String, String]("two", "sentejn"), Tuple[String, String]("few", "{n} snin"), Tuple[String, String]("many", "{n}-il sena"), Tuple[String, String]("other", "{n} sena")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Tarbija ġdida")
@@ -59,7 +59,7 @@ fn build_mt() -> AgeLocale:
     short_units["week"] = simple_unit("{n} w")
     short_units["month"] = simple_unit("{n} m")
     short_units["year"] = simple_unit("{n} y")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -67,7 +67,7 @@ fn build_mt() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} w")
     compact_units["month"] = simple_unit("{n} m")
     compact_units["year"] = simple_unit("{n} y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -76,13 +76,13 @@ fn build_mt() -> AgeLocale:
     return AgeLocale(
         code="mt",
         plural_fn=_plural,
-        units=units,
+        units=units^,
         half="{0} u nofs",
         delimiter=" u ",
         just_born="Tarbija ġdida",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

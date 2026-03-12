@@ -31,10 +31,10 @@ fn build_fr() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} jour"), ("other", "{n} jours")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} semaine"), ("other", "{n} semaines")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} jour"), Tuple[String, String]("other", "{n} jours")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} semaine"), Tuple[String, String]("other", "{n} semaines")))
     units["month"] = simple_unit("{n} mois")
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} an"), ("other", "{n} ans")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} an"), Tuple[String, String]("other", "{n} ans")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_gendered("Nouveau-né", "Nouveau-née")
@@ -49,8 +49,8 @@ fn build_fr() -> AgeLocale:
     short_units["day"] = simple_unit("{n} j")
     short_units["week"] = simple_unit("{n} sem.")
     short_units["month"] = simple_unit("{n} m.")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} an"), ("other", "{n} ans")))
-    short_ovr.units = short_units
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} an"), Tuple[String, String]("other", "{n} ans")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_fr() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}sem.")
     compact_units["month"] = simple_unit("{n}m.")
     compact_units["year"] = simple_unit("{n}a")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_fr() -> AgeLocale:
     return AgeLocale(
         code="fr",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} et demi",
         delimiter=", ",
         just_born="Nouveau-né",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

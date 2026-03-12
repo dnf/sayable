@@ -31,10 +31,10 @@ fn build_am() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ቀን"), ("other", "{n} ቀናት")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} ሳምንት"), ("other", "{n} ሳምንታት")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} ወር"), ("other", "{n} ወራት")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} ዓመት"), ("other", "{n} ዓመታት")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ቀን"), Tuple[String, String]("other", "{n} ቀናት")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ሳምንት"), Tuple[String, String]("other", "{n} ሳምንታት")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ወር"), Tuple[String, String]("other", "{n} ወራት")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ዓመት"), Tuple[String, String]("other", "{n} ዓመታት")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("አዲስ የተወለደ")
@@ -47,18 +47,18 @@ fn build_am() -> AgeLocale:
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
     short_units["day"] = simple_unit("{n} ቀናት")
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} ሳምንት"), ("other", "{n} ሳምንታት")))
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ሳምንት"), Tuple[String, String]("other", "{n} ሳምንታት")))
     short_units["month"] = simple_unit("{n} ወራት")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} ዓመት"), ("other", "{n} ዓመታት")))
-    short_ovr.units = short_units
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ዓመት"), Tuple[String, String]("other", "{n} ዓመታት")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
     compact_units["day"] = simple_unit("{n} ቀ")
     compact_units["week"] = simple_unit("{n} ሳምንት")
     compact_units["month"] = simple_unit("{n} ወር")
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} ዓመት"), ("other", "{n} ዓ")))
-    compact_ovr.units = compact_units
+    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ዓመት"), Tuple[String, String]("other", "{n} ዓ")))
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_am() -> AgeLocale:
     return AgeLocale(
         code="am",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} ተኩል",
         delimiter="፣ ",
         just_born="አዲስ የተወለደ",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

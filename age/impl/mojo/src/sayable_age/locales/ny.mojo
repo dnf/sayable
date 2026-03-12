@@ -31,10 +31,10 @@ fn build_ny() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "tsiku {n}"), ("other", "masiku {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "sabata {n}"), ("other", "masabata {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "mwezi {n}"), ("other", "miyezi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "chaka {n}"), ("other", "zaka {n}")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "tsiku {n}"), Tuple[String, String]("other", "masiku {n}")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sabata {n}"), Tuple[String, String]("other", "masabata {n}")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mwezi {n}"), Tuple[String, String]("other", "miyezi {n}")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "chaka {n}"), Tuple[String, String]("other", "zaka {n}")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Wobadwa kumene")
@@ -46,19 +46,19 @@ fn build_ny() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "tsiku {n}"), ("other", "mas {n}")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("one", "sabata {n}"), ("other", "masab {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "mwezi {n}"), ("other", "miyezi {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "chaka {n}"), ("other", "zaka {n}")))
-    short_ovr.units = short_units
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "tsiku {n}"), Tuple[String, String]("other", "mas {n}")))
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sabata {n}"), Tuple[String, String]("other", "masab {n}")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mwezi {n}"), Tuple[String, String]("other", "miyezi {n}")))
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "chaka {n}"), Tuple[String, String]("other", "zaka {n}")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = plural_unit(List[Tuple[String, String]](("one", "ts {n}"), ("other", "mas {n}")))
-    compact_units["week"] = plural_unit(List[Tuple[String, String]](("one", "sab {n}"), ("other", "msb {n}")))
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](("one", "mw {n}"), ("other", "miy {n}")))
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](("one", "ch {n}"), ("other", "z {n}")))
-    compact_ovr.units = compact_units
+    compact_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ts {n}"), Tuple[String, String]("other", "mas {n}")))
+    compact_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sab {n}"), Tuple[String, String]("other", "msb {n}")))
+    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "mw {n}"), Tuple[String, String]("other", "miy {n}")))
+    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ch {n}"), Tuple[String, String]("other", "z {n}")))
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_ny() -> AgeLocale:
     return AgeLocale(
         code="ny",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Wobadwa kumene",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

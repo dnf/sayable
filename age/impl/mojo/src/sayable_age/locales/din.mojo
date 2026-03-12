@@ -31,10 +31,10 @@ fn build_din() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "akɔl {n}"), ("other", "akɔl {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "bɛ̈t {n}"), ("other", "bɛ̈t {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "pɛi {n}"), ("other", "pɛi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "ruɔ̈n {n}"), ("other", "ruɔ̈ɔ̈n {n}")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "akɔl {n}"), Tuple[String, String]("other", "akɔl {n}")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "bɛ̈t {n}"), Tuple[String, String]("other", "bɛ̈t {n}")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "pɛi {n}"), Tuple[String, String]("other", "pɛi {n}")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ruɔ̈n {n}"), Tuple[String, String]("other", "ruɔ̈ɔ̈n {n}")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Meth yen dhiëth")
@@ -49,8 +49,8 @@ fn build_din() -> AgeLocale:
     short_units["day"] = simple_unit("akɔl {n}")
     short_units["week"] = simple_unit("bɛ̈t {n}")
     short_units["month"] = simple_unit("pɛi {n}")
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "ruɔ̈n {n}"), ("other", "ruɔ̈ɔ̈n {n}")))
-    short_ovr.units = short_units
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ruɔ̈n {n}"), Tuple[String, String]("other", "ruɔ̈ɔ̈n {n}")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_din() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_din() -> AgeLocale:
     return AgeLocale(
         code="din",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} ku abɛ̈c",
         delimiter=", ",
         just_born="Meth yen dhiëth",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

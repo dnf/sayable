@@ -31,10 +31,10 @@ fn build_af() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} dag"), ("other", "{n} dae")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} week"), ("other", "{n} weke")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} maand"), ("other", "{n} maande")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} jaar"), ("other", "{n} jaar")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} dag"), Tuple[String, String]("other", "{n} dae")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} week"), Tuple[String, String]("other", "{n} weke")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} maand"), Tuple[String, String]("other", "{n} maande")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} jaar"), Tuple[String, String]("other", "{n} jaar")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Pasgebore")
@@ -50,7 +50,7 @@ fn build_af() -> AgeLocale:
     short_units["week"] = simple_unit("{n} w.")
     short_units["month"] = simple_unit("{n} md.")
     short_units["year"] = simple_unit("{n} j.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,20 +58,20 @@ fn build_af() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}j")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="af",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Pasgebore",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

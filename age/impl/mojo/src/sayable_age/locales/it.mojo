@@ -31,10 +31,10 @@ fn build_it() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} giorno"), ("other", "{n} giorni")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} settimana"), ("other", "{n} settimane")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} mese"), ("other", "{n} mesi")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} anno"), ("other", "{n} anni")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} giorno"), Tuple[String, String]("other", "{n} giorni")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} settimana"), Tuple[String, String]("other", "{n} settimane")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mese"), Tuple[String, String]("other", "{n} mesi")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} anno"), Tuple[String, String]("other", "{n} anni")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_gendered("Neonato", "Neonata")
@@ -46,19 +46,19 @@ fn build_it() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} giorno"), ("other", "{n} giorni")))
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} giorno"), Tuple[String, String]("other", "{n} giorni")))
     short_units["week"] = simple_unit("{n} sett.")
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} mese"), ("other", "{n} mesi")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} anno"), ("other", "{n} anni")))
-    short_ovr.units = short_units
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mese"), Tuple[String, String]("other", "{n} mesi")))
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} anno"), Tuple[String, String]("other", "{n} anni")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
-    compact_units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n}g"), ("other", "{n}gg")))
+    compact_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n}g"), Tuple[String, String]("other", "{n}gg")))
     compact_units["week"] = simple_unit("{n}sett.")
-    compact_units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} mese"), ("other", "{n} mesi")))
-    compact_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n}anno"), ("other", "{n}anni")))
-    compact_ovr.units = compact_units
+    compact_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} mese"), Tuple[String, String]("other", "{n} mesi")))
+    compact_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n}anno"), Tuple[String, String]("other", "{n}anni")))
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_it() -> AgeLocale:
     return AgeLocale(
         code="it",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} e mezzo",
         delimiter=", ",
         just_born="Neonato",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

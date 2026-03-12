@@ -48,7 +48,7 @@ fn build_lo() -> AgeLocale:
     short_units["week"] = simple_unit("{n} ອທ.")
     short_units["month"] = simple_unit("{n} ດ.")
     short_units["year"] = simple_unit("{n} ປ.")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,18 +56,18 @@ fn build_lo() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
 
     return AgeLocale(
         code="lo",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0}ເຄິ່ງ",
         delimiter="",
         just_born="ເກີດໃໝ່",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

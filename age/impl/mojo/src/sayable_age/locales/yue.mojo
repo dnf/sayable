@@ -48,7 +48,7 @@ fn build_yue() -> AgeLocale:
     short_units["week"] = simple_unit("{n} 個星期")
     short_units["month"] = simple_unit("{n} 個月")
     short_units["year"] = simple_unit("{n} 年")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,18 +56,18 @@ fn build_yue() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}週")
     compact_units["month"] = simple_unit("{n}月")
     compact_units["year"] = simple_unit("{n}年")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
 
     return AgeLocale(
         code="yue",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0}半",
         delimiter="",
         just_born="初生嬰兒",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

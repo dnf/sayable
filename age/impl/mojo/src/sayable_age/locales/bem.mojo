@@ -31,10 +31,10 @@ fn build_bem() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "ubushiku {n}"), ("other", "inshiku {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "umulungu {n}"), ("other", "imilungu {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "umweshi {n}"), ("other", "imyeshi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "umwaka {n}"), ("other", "imyaka {n}")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ubushiku {n}"), Tuple[String, String]("other", "inshiku {n}")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "umulungu {n}"), Tuple[String, String]("other", "imilungu {n}")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "umweshi {n}"), Tuple[String, String]("other", "imyeshi {n}")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "umwaka {n}"), Tuple[String, String]("other", "imyaka {n}")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Umwana uwafyalwa fye")
@@ -46,11 +46,11 @@ fn build_bem() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "ubushiku {n}"), ("other", "inshiku {n}")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("one", "umulungu {n}"), ("other", "imilungu {n}")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "umweshi {n}"), ("other", "imyeshi {n}")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "umwaka {n}"), ("other", "imyaka {n}")))
-    short_ovr.units = short_units
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ubushiku {n}"), Tuple[String, String]("other", "inshiku {n}")))
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "umulungu {n}"), Tuple[String, String]("other", "imilungu {n}")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "umweshi {n}"), Tuple[String, String]("other", "imyeshi {n}")))
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "umwaka {n}"), Tuple[String, String]("other", "imyaka {n}")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_bem() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}w")
     compact_units["month"] = simple_unit("{n}m")
     compact_units["year"] = simple_unit("{n}y")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_bem() -> AgeLocale:
     return AgeLocale(
         code="bem",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} na hafu",
         delimiter=", ",
         just_born="Umwana uwafyalwa fye",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

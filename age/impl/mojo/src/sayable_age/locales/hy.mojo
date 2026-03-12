@@ -31,10 +31,10 @@ fn build_hy() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} օր"), ("other", "{n} օր")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} շաբաթ"), ("other", "{n} շաբաթ")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} ամիս"), ("other", "{n} ամիս")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} տարի"), ("other", "{n} տարի")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} օր"), Tuple[String, String]("other", "{n} օր")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} շաբաթ"), Tuple[String, String]("other", "{n} շաբաթ")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ամիս"), Tuple[String, String]("other", "{n} ամիս")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} տարի"), Tuple[String, String]("other", "{n} տարի")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Նորածին")
@@ -50,7 +50,7 @@ fn build_hy() -> AgeLocale:
     short_units["week"] = simple_unit("{n} շաբ")
     short_units["month"] = simple_unit("{n} ամս")
     short_units["year"] = simple_unit("{n} տ")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_hy() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} շ")
     compact_units["month"] = simple_unit("{n} ա")
     compact_units["year"] = simple_unit("{n} տ")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_hy() -> AgeLocale:
     return AgeLocale(
         code="hy",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} ու կես",
         delimiter=", ",
         just_born="Նորածին",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

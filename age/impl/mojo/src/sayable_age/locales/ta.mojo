@@ -31,10 +31,10 @@ fn build_ta() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} நாள்"), ("other", "{n} நாட்கள்")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} வாரம்"), ("other", "{n} வாரங்கள்")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} மாதம்"), ("other", "{n} மாதங்கள்")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} வயது"), ("other", "{n} வயது")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} நாள்"), Tuple[String, String]("other", "{n} நாட்கள்")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} வாரம்"), Tuple[String, String]("other", "{n} வாரங்கள்")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} மாதம்"), Tuple[String, String]("other", "{n} மாதங்கள்")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} வயது"), Tuple[String, String]("other", "{n} வயது")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("பிறந்த குழந்தை")
@@ -46,11 +46,11 @@ fn build_ta() -> AgeLocale:
 
     var short_ovr = CompactnessOverride()
     var short_units = Dict[String, UnitForms]()
-    short_units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} நாள்"), ("other", "{n} நாட்கள்")))
-    short_units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} வாரம்"), ("other", "{n} வார.")))
-    short_units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} மாதம்"), ("other", "{n} மாத.")))
-    short_units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} ஆண்டு"), ("other", "{n} ஆண்டு.")))
-    short_ovr.units = short_units
+    short_units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} நாள்"), Tuple[String, String]("other", "{n} நாட்கள்")))
+    short_units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} வாரம்"), Tuple[String, String]("other", "{n} வார.")))
+    short_units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} மாதம்"), Tuple[String, String]("other", "{n} மாத.")))
+    short_units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ஆண்டு"), Tuple[String, String]("other", "{n} ஆண்டு.")))
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,20 +58,20 @@ fn build_ta() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} வா")
     compact_units["month"] = simple_unit("{n} மா")
     compact_units["year"] = simple_unit("{n} ஆ")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 
     return AgeLocale(
         code="ta",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0}ரை",
         delimiter=", ",
         just_born="பிறந்த குழந்தை",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

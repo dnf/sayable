@@ -31,10 +31,10 @@ fn build_rw() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "umunsi {n}"), ("other", "iminsi {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "icyumweru {n}"), ("other", "ibyumweru {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "ukwezi {n}"), ("other", "amezi {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "umwaka {n}"), ("other", "imyaka {n}")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "umunsi {n}"), Tuple[String, String]("other", "iminsi {n}")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "icyumweru {n}"), Tuple[String, String]("other", "ibyumweru {n}")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "ukwezi {n}"), Tuple[String, String]("other", "amezi {n}")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "umwaka {n}"), Tuple[String, String]("other", "imyaka {n}")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Uruhinja")
@@ -50,7 +50,7 @@ fn build_rw() -> AgeLocale:
     short_units["week"] = simple_unit("cyu {n}")
     short_units["month"] = simple_unit("kwe {n}")
     short_units["year"] = simple_unit("mwk {n}")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_rw() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}c")
     compact_units["month"] = simple_unit("{n}k")
     compact_units["year"] = simple_unit("{n}u")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_rw() -> AgeLocale:
     return AgeLocale(
         code="rw",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Avutse",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

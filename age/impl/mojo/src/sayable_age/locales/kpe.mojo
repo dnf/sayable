@@ -48,7 +48,7 @@ fn build_kpe() -> AgeLocale:
     short_units["week"] = simple_unit("wik. {n}")
     short_units["month"] = simple_unit("ŋuŋ {n}")
     short_units["year"] = simple_unit("kɛ̃ɛ̃ {n}")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -56,7 +56,7 @@ fn build_kpe() -> AgeLocale:
     compact_units["week"] = simple_unit("wik {n}")
     compact_units["month"] = simple_unit("ŋuŋ {n}")
     compact_units["year"] = simple_unit("kɛ̃ɛ̃ {n}")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -65,13 +65,13 @@ fn build_kpe() -> AgeLocale:
     return AgeLocale(
         code="kpe",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0} da kɔlɛ",
         delimiter=", ",
         just_born="Lóŋ tɔ̃ɔ̃",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

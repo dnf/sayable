@@ -31,10 +31,10 @@ fn build_kn() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "{n} ದಿನ"), ("other", "{n} ದಿನಗಳು")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "{n} ವಾರ"), ("other", "{n} ವಾರಗಳು")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "{n} ತಿಂಗಳು"), ("other", "{n} ತಿಂಗಳುಗಳು")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "{n} ವರ್ಷ"), ("other", "{n} ವರ್ಷಗಳು")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ದಿನ"), Tuple[String, String]("other", "{n} ದಿನಗಳು")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ವಾರ"), Tuple[String, String]("other", "{n} ವಾರಗಳು")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ತಿಂಗಳು"), Tuple[String, String]("other", "{n} ತಿಂಗಳುಗಳು")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "{n} ವರ್ಷ"), Tuple[String, String]("other", "{n} ವರ್ಷಗಳು")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("ನವಜಾತ ಶಿಶು")
@@ -50,7 +50,7 @@ fn build_kn() -> AgeLocale:
     short_units["week"] = simple_unit("{n} ವಾರ")
     short_units["month"] = simple_unit("{n} ತಿಂಗಳು")
     short_units["year"] = simple_unit("{n} ವರ್ಷ")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_kn() -> AgeLocale:
     compact_units["week"] = simple_unit("{n} ವಾ")
     compact_units["month"] = simple_unit("{n} ತಿಂ")
     compact_units["year"] = simple_unit("{n} ವ")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_kn() -> AgeLocale:
     return AgeLocale(
         code="kn",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{0}ವರೆ",
         delimiter=", ",
         just_born="ನವಜಾತ ಶಿಶು",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )

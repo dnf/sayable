@@ -31,10 +31,10 @@ fn build_so() -> AgeLocale:
         return "other"
 
     var units = Dict[String, UnitForms]()
-    units["day"] = plural_unit(List[Tuple[String, String]](("one", "maalin {n}"), ("other", "maalmood {n}")))
-    units["week"] = plural_unit(List[Tuple[String, String]](("one", "toddobaad {n}"), ("other", "toddobaadyo {n}")))
-    units["month"] = plural_unit(List[Tuple[String, String]](("one", "bil {n}"), ("other", "bilood {n}")))
-    units["year"] = plural_unit(List[Tuple[String, String]](("one", "sano {n}"), ("other", "sanooyin {n}")))
+    units["day"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "maalin {n}"), Tuple[String, String]("other", "maalmood {n}")))
+    units["week"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "toddobaad {n}"), Tuple[String, String]("other", "toddobaadyo {n}")))
+    units["month"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "bil {n}"), Tuple[String, String]("other", "bilood {n}")))
+    units["year"] = plural_unit(List[Tuple[String, String]](Tuple[String, String]("one", "sano {n}"), Tuple[String, String]("other", "sanooyin {n}")))
 
     var stages = Dict[String, StageLabel]()
     stages["newborn"] = stage_neutral("Dhashay cusub")
@@ -50,7 +50,7 @@ fn build_so() -> AgeLocale:
     short_units["week"] = simple_unit("tdb {n}")
     short_units["month"] = simple_unit("bil {n}")
     short_units["year"] = simple_unit("sno {n}")
-    short_ovr.units = short_units
+    short_ovr.units = short_units^
 
     var compact_ovr = CompactnessOverride()
     var compact_units = Dict[String, UnitForms]()
@@ -58,7 +58,7 @@ fn build_so() -> AgeLocale:
     compact_units["week"] = simple_unit("{n}t")
     compact_units["month"] = simple_unit("{n}b")
     compact_units["year"] = simple_unit("{n}s")
-    compact_ovr.units = compact_units
+    compact_ovr.units = compact_units^
     compact_ovr.half = "{n}½"
     compact_ovr.has_half = True
     compact_ovr.delimiter = ""
@@ -67,13 +67,13 @@ fn build_so() -> AgeLocale:
     return AgeLocale(
         code="so",
         plural_fn=plural,
-        units=units,
+        units=units^,
         half="{n}½",
         delimiter=", ",
         just_born="Dhashay cusub",
-        stages=stages,
-        short_override=short_ovr,
+        stages=stages^,
+        short_override=short_ovr^,
         has_short=True,
-        compact_override=compact_ovr,
+        compact_override=compact_ovr^,
         has_compact=True,
     )
