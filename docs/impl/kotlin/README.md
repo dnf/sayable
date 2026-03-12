@@ -1,17 +1,16 @@
 # Kotlin Style Guide
 
-A comprehensive reference for idiomatic Kotlin coding style and best practices. Intended for code auditing Kotlin implementations.
+A reference for idiomatic Kotlin coding style, intended for auditing Kotlin implementations in this project.
 
 ## Sources
 
-This guide synthesizes conventions from the following authoritative references:
+This guide synthesizes conventions from:
 
 - [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
 - [Android Kotlin Style Guide](https://developer.android.com/kotlin/style-guide)
 - [Kotlin Idioms](https://kotlinlang.org/docs/idioms.html)
 - [Kotlin Null Safety](https://kotlinlang.org/docs/null-safety.html)
 - [Kotlin Scope Functions](https://kotlinlang.org/docs/scope-functions.html)
-- [Kotlin Coroutines Guide](https://kotlinlang.org/docs/coroutines-basics.html)
 - [Kotlin Exceptions](https://kotlinlang.org/docs/exceptions.html)
 - [detekt Rules](https://detekt.dev/docs/rules/style)
 - [ktlint](https://pinterest.github.io/ktlint/)
@@ -27,25 +26,37 @@ This guide synthesizes conventions from the following authoritative references:
 | Classes, objects, interfaces | PascalCase | `DeclarationProcessor`, `EmptyDeclarationProcessor` |
 | Functions | camelCase | `processDeclarations()`, `sendMessage()` |
 | Properties and local variables | camelCase | `declarationCount`, `currentMax` |
-| Constants (`const val`, top-level `val`) | SCREAMING_SNAKE_CASE | `MAX_COUNT`, `USER_NAME_FIELD` |
+| `const val` and deeply immutable top-level `val` | SCREAMING_SNAKE_CASE | `MAX_COUNT`, `USER_NAME_FIELD` |
+| Top-level/object `val` holding object references | camelCase | `defaultFormatter`, `logger` |
 | Mutable top-level/object properties | camelCase | `mutableCollection` |
-| Enum constants | SCREAMING_SNAKE_CASE or PascalCase | `RED`, `Green` (pick one style per project) |
+| Enum constants | SCREAMING_SNAKE_CASE | `RED`, `NORTH`, `OTHER` |
 | Packages | lowercase, no underscores | `org.example.myproject` |
 | Type parameters | Single capital letter, or name + `T` | `T`, `E`, `RequestT`, `FooBarT` |
 | Backing properties | `_` prefix on private property | `_elementList` |
 | Test methods | Backtick-quoted or underscore-separated | `` `ensure everything works`() ``, `pop_emptyStack()` |
-| Composable functions (Jetpack Compose) | PascalCase, noun | `NameTag()`, `ProfileCard()` |
+
+**Constants vs object references.** `SCREAMING_SNAKE_CASE` is for `const val` and for top-level/object `val` properties holding deeply immutable data (primitives, strings). When a `val` holds an object with behavior or identity (a `Regex`, a `Comparator`, a class instance), use `camelCase` -- the reference is immutable but the value is not a simple constant:
+
+```kotlin
+const val MAX_AGE_MONTHS = 6000          // Compile-time constant
+val DEFAULT_DELIMITER = ", "             // Deeply immutable string
+
+val defaultFormatter = SayableAge(EN)    // Object reference, not a constant
+val datePattern = Regex("\\d{4}-\\d{2}-\\d{2}")  // Object with behavior
+```
+
+**Enum constants.** Use `SCREAMING_SNAKE_CASE` consistently. This matches existing usage (`PluralCategory.ZERO`, `Compactness.NORMAL`) and is consistent with JVM conventions.
 
 ### Acronym Handling
 
-Two-letter acronyms stay fully uppercase. Longer acronyms capitalize only the first letter:
+Capitalize only the first letter of any acronym, regardless of length. This follows the Kotlin coding conventions (which deliberately departed from the older Java convention of keeping two-letter acronyms uppercase):
 
 | Prose form | Correct | Incorrect |
 |---|---|---|
 | "XML Http Request" | `XmlHttpRequest` | `XMLHTTPRequest` |
 | "new customer ID" | `newCustomerId` | `newCustomerID` |
 | "supports IPv6 on iOS" | `supportsIpv6OnIos` | `supportsIPv6OnIOS` |
-| "IO Stream" | `IOStream` | `IoStream` |
+| "IO Stream" | `IoStream` | `IOStream` |
 
 ### Naming Principles
 
@@ -104,7 +115,7 @@ try {
 
 ### Line Length
 
-Use **100 characters** as the column limit. Exceptions:
+Use **100 characters** as the column limit. This matches the Android Kotlin Style Guide and provides comfortable side-by-side diff viewing. Exceptions:
 
 - `package` and `import` statements.
 - Long URLs in KDoc.
@@ -249,18 +260,55 @@ private val foo: Foo
 
 ### Empty Blocks
 
-Use K&R style even for empty blocks:
+Use K&R style for empty blocks. Choose an example that is not misleading -- an empty override, not an empty `catch` (see Section 10 on swallowed exceptions):
 
 ```kotlin
-try {
-    doSomething()
-} catch (e: Exception) {
+override fun onStart() {
 }
 ```
 
 ---
 
-## 3. Null Safety
+## 3. Visibility
+
+Kotlin defaults to `public` visibility. Actively manage your API surface by choosing the most restrictive visibility that works.
+
+### Visibility Modifiers
+
+| Modifier | Scope |
+|---|---|
+| `private` | Visible within the declaring file (top-level) or class only |
+| `internal` | Visible within the same module (compilation unit) |
+| `protected` | Visible within the class and its subclasses |
+| `public` | Visible everywhere (default, can be omitted) |
+
+### When to Use `internal`
+
+Use `internal` for implementation details that must be accessible across files within a module but should not be part of the library's public API:
+
+```kotlin
+// Exposed to callers
+public class SayableAge(private val locale: AgeLocale) {
+    public fun formatAge(dateOfBirth: String, asOf: String? = null): String? { /* ... */ }
+}
+
+// Implementation detail: accessible within the module, hidden from consumers
+internal fun parseAge(dateOfBirth: String, asOf: String? = null): AgeComponents? { /* ... */ }
+
+internal data class AgeComponents(val months: Int, val diffDays: Int)
+```
+
+`internal` is also useful for making implementation details accessible to tests without the `@VisibleForTesting` annotation pattern.
+
+### Minimizing Public API
+
+- Start with `private`. Widen to `internal` when other files in the module need access. Widen to `public` only for the intended API surface.
+- Omit the `public` modifier on declarations that are intentionally public -- it is the default, and explicit `public` is redundant (ktlint and IntelliJ flag it).
+- Use `private` constructors with companion object factory methods when construction should be controlled.
+
+---
+
+## 4. Null Safety
 
 Kotlin's type system distinguishes nullable types (`String?`) from non-nullable types (`String`). Use the type system to enforce null safety at compile time.
 
@@ -332,31 +380,34 @@ Check initialization with `::property.isInitialized` when needed.
 
 **Restrictions:** `lateinit` works only with `var`, not `val`. It does not work with primitive types.
 
-### Avoiding `!!`
+### The Not-Null Assertion Operator (`!!`)
 
-The not-null assertion operator (`!!`) throws `NullPointerException` if the value is null. **Avoid it in production code.** Prefer alternatives:
+The `!!` operator throws `NullPointerException` if the value is null. Prefer safer alternatives as the default choice:
 
 ```kotlin
-// Bad: crashes if null
-val length = name!!.length
-
-// Good: safe call with default
+// Preferred: safe call with default
 val length = name?.length ?: 0
 
-// Good: smart cast after null check
+// Preferred: smart cast after null check
 if (name != null) {
     println(name.length)
 }
 
-// Good: let for transformation
-name?.let { println(it.length) }
-
-// Good: require for preconditions
+// Preferred: require for preconditions (adds a diagnostic message)
 fun process(name: String?) {
     requireNotNull(name) { "Name must not be null" }
-    println(name.length)  // Smart cast to non-null
+    println(name.length)
 }
 ```
+
+`!!` is acceptable when you have verified that null is impossible but the compiler cannot prove it -- for example, after control flow that crosses lambda boundaries, or with `var` properties that smart casts cannot track. When the reason is non-obvious, add a brief comment explaining the invariant:
+
+```kotlin
+// Safe: we checked isEmpty() above and the map is not modified concurrently
+val first = entries.firstEntry()!!.value
+```
+
+Avoid `!!` when `requireNotNull` would provide better diagnostics in the failure case.
 
 The only possible sources of `NullPointerException` in Kotlin are: explicit `!!`, `throw NullPointerException()`, Java interop, and `this` leaking during initialization.
 
@@ -395,7 +446,7 @@ fun main() {
 
 ---
 
-## 4. Type System
+## 5. Type System
 
 ### Data Classes
 
@@ -468,7 +519,7 @@ fun processEmployee(id: EmployeeId) { /* ... */ }
 
 ### Enums
 
-Use enums for fixed sets of constants. Prefer SCREAMING_SNAKE_CASE for consistency with Java conventions, or PascalCase -- pick one style and be consistent:
+Use enums for fixed sets of constants:
 
 ```kotlin
 enum class Direction { NORTH, SOUTH, EAST, WEST }
@@ -518,7 +569,7 @@ typealias NodeSet = Set<Network.Node>
 
 ---
 
-## 5. Function Design
+## 6. Function Design
 
 ### Default Parameter Values
 
@@ -593,7 +644,7 @@ Each scope function differs in how it references the context object and what it 
 | Function | Context reference | Return value | Use when |
 |---|---|---|---|
 | `let` | `it` | Lambda result | Null-safe transforms, introducing scoped variables |
-| `run` | `this` | Lambda result | Object configuration + computing a result |
+| `run` | `this` | Lambda result | Limiting variable scope; `this`-based computation on a receiver |
 | `with` | `this` | Lambda result | Grouping calls on an object (non-extension) |
 | `apply` | `this` | Context object | Object configuration / initialization |
 | `also` | `it` | Context object | Side effects (logging, validation) |
@@ -602,10 +653,12 @@ Each scope function differs in how it references the context object and what it 
 // let: transform nullable value
 val length = name?.let { it.uppercase().length } ?: 0
 
-// run: configure and compute
-val result = service.run {
-    port = 8080
-    query(prepareRequest())
+// run (non-extension): limit variable scope
+val hexColor = run {
+    val r = computeRed()
+    val g = computeGreen()
+    val b = computeBlue()
+    "#%02x%02x%02x".format(r, g, b)
 }
 
 // with: multiple operations, no result needed
@@ -631,6 +684,7 @@ val numbers = mutableListOf("one", "two", "three")
 **Avoid:**
 - Nesting scope functions (readability degrades rapidly).
 - Overusing scope functions where a simple `if` or local variable suffices.
+- Mixing mutation and computation in a single `run` block (use `apply` for mutation, separate the computation).
 
 ### `takeIf` and `takeUnless`
 
@@ -657,7 +711,7 @@ class Point(val x: Double, val y: Double) {
 
 ---
 
-## 6. Collections
+## 7. Collections
 
 ### Immutable by Default
 
@@ -677,28 +731,52 @@ mutableNames.add("Charlie")
 
 **Accept the most general read-only type** in function parameters. Return the most specific type callers need.
 
-### Standard Library Operations
+### Collection Type Declarations
 
-Prefer functional operations over manual loops:
+Declare collection variables using Kotlin's interface types (`List`, `MutableList`, `Map`, `MutableMap`) and Kotlin's factory functions (`listOf`, `mutableListOf`, `mapOf`, `mutableMapOf`) as the default:
 
 ```kotlin
-// Good: functional pipeline
+// Good: interface type, Kotlin factory
+val list: MutableList<String> = mutableListOf()
+
+// Acceptable: specific implementation when you need its guarantees
+val buffer = ArrayList<String>(1000)  // Pre-sized for performance
+val ordered: LinkedHashMap<String, Int> = linkedMapOf()  // Insertion order
+val queue: ArrayDeque<Task> = ArrayDeque()  // Double-ended queue
+```
+
+The key principle is declaring the variable with an interface type when possible, even when using a specific implementation.
+
+### Functional Operations and Loops
+
+Prefer functional operations for filter/map/reduce pipelines where they improve readability:
+
+```kotlin
 val adults = people
     .filter { it.age >= 18 }
     .sortedBy { it.name }
     .map { it.name }
-
-// Avoid: imperative loop for the same result
-val adults = mutableListOf<String>()
-for (person in people) {
-    if (person.age >= 18) {
-        adults.add(person.name)
-    }
-}
-adults.sort()
 ```
 
-Common operations:
+Use loops when they are clearer: early termination with side effects, accumulating multiple outputs, index-dependent logic, or performance-critical paths:
+
+```kotlin
+// Loop is appropriate: accumulating state with early exit
+var total = 0
+for (item in items) {
+    if (item.isInvalid) break
+    total += item.value
+}
+
+// Loop is appropriate: tight numeric conversion
+var n = 0
+for (c in s) {
+    if (c < '0' || c > '9') return null
+    n = n * 10 + (c - '0')
+}
+```
+
+Common functional operations:
 
 | Operation | Function |
 |---|---|
@@ -775,7 +853,7 @@ val squares = buildList {
 
 ---
 
-## 7. Error Handling
+## 8. Error Handling
 
 ### Exceptions
 
@@ -873,110 +951,6 @@ Annotate functions with `@Throws` when they need to be callable from Java code t
 @Throws(IOException::class)
 fun readFile(path: String): String { /* ... */ }
 ```
-
----
-
-## 8. Coroutines
-
-### Structured Concurrency
-
-Coroutines follow a parent-child hierarchy. Parent coroutines wait for children, and cancellation propagates through the tree:
-
-```kotlin
-suspend fun fetchUserData() = coroutineScope {
-    val profile = async { fetchProfile() }
-    val settings = async { fetchSettings() }
-    UserData(profile.await(), settings.await())
-}
-```
-
-Always launch coroutines within a `CoroutineScope`. Never use `GlobalScope` in production code.
-
-### Suspend Functions
-
-Mark functions with `suspend` when they perform long-running or asynchronous work. Suspend functions can only be called from other suspend functions or coroutine builders:
-
-```kotlin
-suspend fun fetchUser(id: String): User {
-    return httpClient.get("users/$id")
-}
-```
-
-### Coroutine Builders
-
-| Builder | Returns | Use when |
-|---|---|---|
-| `launch` | `Job` | Fire-and-forget; no result needed |
-| `async` | `Deferred<T>` | Concurrent computation with a result |
-| `runBlocking` | `T` | Bridging blocking and suspending code (tests, `main`) |
-
-```kotlin
-// launch: fire-and-forget
-scope.launch {
-    saveToDatabase(data)
-}
-
-// async: concurrent computation
-val first = async { computeFirst() }
-val second = async { computeSecond() }
-val result = first.await() + second.await()
-
-// runBlocking: only for tests or main entry points
-fun main() = runBlocking {
-    val data = fetchData()
-    println(data)
-}
-```
-
-### Dispatchers
-
-| Dispatcher | Use for |
-|---|---|
-| `Dispatchers.Default` | CPU-intensive work (sorting, parsing, computation) |
-| `Dispatchers.IO` | I/O operations (network, file, database) |
-| `Dispatchers.Main` | UI updates (Android/JavaFX) |
-
-```kotlin
-suspend fun loadData() = withContext(Dispatchers.IO) {
-    database.query("SELECT * FROM users")
-}
-```
-
-### Flow
-
-Use `Flow` for asynchronous streams of data:
-
-```kotlin
-fun userUpdates(): Flow<User> = flow {
-    while (true) {
-        emit(fetchLatestUser())
-        delay(5.seconds)
-    }
-}
-
-// Collect in a coroutine scope
-userUpdates()
-    .filter { it.isActive }
-    .map { it.name }
-    .collect { name -> println(name) }
-```
-
-Key operators: `map`, `filter`, `transform`, `collect`, `combine`, `flatMapLatest`, `catch`, `onEach`.
-
-### Cancellation
-
-Cooperative cancellation is built in. Suspend functions like `delay()` and `yield()` check for cancellation automatically. For CPU-intensive loops, check manually:
-
-```kotlin
-suspend fun processItems(items: List<Item>) {
-    for (item in items) {
-        ensureActive()  // Check cancellation
-        process(item)
-    }
-}
-```
-
-**Never catch `CancellationException`** without rethrowing it. This breaks structured concurrency.
 
 ---
 
@@ -1101,19 +1075,21 @@ object DatabaseConfig {
 
 ### `TODO()`
 
-Use `TODO()` to mark incomplete code. It throws `NotImplementedError` at runtime and appears in IDE task lists:
+Use `TODO()` to mark incomplete code during development. It throws `NotImplementedError` at runtime and appears in IDE task lists:
 
 ```kotlin
 fun calculateTax(): BigDecimal = TODO("Waiting for accounting feedback")
 ```
 
+Note: the `ForbiddenComment` detekt rule (see Section 11) should be enabled in CI to prevent `TODO` markers from reaching production. `TODO()` is a development aid, not a shipping construct.
+
 ---
 
 ## 10. Things to Avoid
 
-### Unnecessary `!!`
+### Unnecessary Not-Null Assertions
 
-The not-null assertion operator defeats Kotlin's null safety. Almost every use can be replaced with a safe alternative. See Section 3 for alternatives.
+See Section 4 for the full guidance on `!!`. The short version: prefer `?.`, `?:`, `requireNotNull`, and smart casts. Use `!!` only when null is provably impossible and the alternatives would add noise.
 
 ### Java-Style Getters and Setters
 
@@ -1148,8 +1124,6 @@ When lambdas are nested, use explicit parameter names. `it` becomes ambiguous:
 
 ```kotlin
 // Bad: which 'it' is which?
-list.filter { it > 0 }.map { it.toString() }  // Fine: single level
-
 people.forEach {
     it.children.forEach {
         println(it.name)  // Bad: unclear which 'it'
@@ -1193,7 +1167,7 @@ private val _names = mutableListOf<String>()
 val names: List<String> get() = _names
 ```
 
-### Catching `Exception` or `Throwable` Broadly
+### Catching Broadly
 
 Catch specific exception types. Broad catches hide bugs:
 
@@ -1244,33 +1218,23 @@ const val LEGAL_ADULT_AGE = 18
 if (age < LEGAL_ADULT_AGE) { /* ... */ }
 ```
 
-### Java Collection Types
+### Labeled Returns in `forEach`
 
-Do not use Java collection types (`ArrayList`, `HashMap`, `HashSet`) directly. Use Kotlin's `mutableListOf()`, `mutableMapOf()`, `mutableSetOf()`:
-
-```kotlin
-// Bad
-val list = ArrayList<String>()
-
-// Good
-val list = mutableListOf<String>()
-```
-
-### Multiple Labeled Returns
-
-Avoid multiple labeled returns in lambdas. Restructure for a single exit point or convert to an anonymous function:
+When a `forEach` with labeled returns is performing pure filtering, prefer functional operations:
 
 ```kotlin
-// Bad: multiple labeled returns
+// Prefer this:
+list.filterNotNull().filter { it.isNotEmpty() }.forEach { process(it) }
+
+// Over this, when the logic is purely filtering:
 list.forEach {
     if (it == null) return@forEach
     if (it.isEmpty()) return@forEach
     process(it)
 }
-
-// Good: single expression
-list.filterNotNull().filter { it.isNotEmpty() }.forEach { process(it) }
 ```
+
+When the loop body has complex control flow (stateful accumulation, side effects, multiple branches), labeled returns are the idiomatic way to express `continue` semantics in lambda-based iteration and are acceptable.
 
 ---
 
@@ -1322,16 +1286,16 @@ Key rule sets:
 
 Important style rules:
 
-| Rule | What it checks |
-|---|---|
-| `MagicNumber` | Flags hardcoded numeric values |
-| `MaxLineLength` | Enforces line length limit (default 120) |
-| `ModifierOrder` | Ensures canonical modifier ordering |
-| `WildcardImport` | Prohibits `*` imports |
-| `ReturnCount` | Limits return statements per function (default 2) |
-| `VarCouldBeVal` | Finds `var` that should be `val` |
-| `UnusedParameter` | Reports unused function parameters |
-| `ForbiddenComment` | Flags `TODO`/`FIXME`/`STOPSHIP` markers |
+| Rule | What it checks | Recommended configuration |
+|---|---|---|
+| `MagicNumber` | Flags hardcoded numeric values | Active; ignore -1, 0, 1, 2 |
+| `MaxLineLength` | Enforces line length limit | Active; set to 100 (project standard) |
+| `ModifierOrder` | Ensures canonical modifier ordering | Active |
+| `WildcardImport` | Prohibits `*` imports | Active |
+| `ReturnCount` | Limits return statements per function | Set to 5 or disable; early returns and `when` branches are idiomatic |
+| `VarCouldBeVal` | Finds `var` that should be `val` | Active |
+| `UnusedParameter` | Reports unused function parameters | Active |
+| `ForbiddenComment` | Flags `TODO`/`FIXME`/`STOPSHIP` markers | Active in CI to prevent shipping incomplete code |
 
 Configure via `detekt.yml`:
 
@@ -1347,6 +1311,15 @@ style:
   MaxLineLength:
     active: true
     maxLineLength: 100
+  ReturnCount:
+    active: true
+    max: 5
+  ForbiddenComment:
+    active: true
+    comments:
+      - 'TODO'
+      - 'FIXME'
+      - 'STOPSHIP'
 ```
 
 ### IntelliJ IDEA / Android Studio Inspections
@@ -1386,13 +1359,13 @@ Key compiler flags:
 For auditing a Kotlin implementation, verify:
 
 - [ ] `val` used unless mutation is required
-- [ ] No `!!` without documented justification
+- [ ] `!!` used only where null is provably impossible and alternatives would add noise
 - [ ] Null safety expressed through types (`String?` vs `String`), not runtime checks
 - [ ] `require`/`check`/`error` used for preconditions, not manual `if`/`throw`
 - [ ] Data classes used for data holders
 - [ ] Sealed classes used for restricted hierarchies with exhaustive `when`
 - [ ] Collections are read-only interfaces unless mutation is needed
-- [ ] No Java collection types (`ArrayList`, `HashMap`) used directly
+- [ ] Collection variables declared with interface types (`List`, `MutableList`), not concrete classes
 - [ ] String templates used instead of concatenation
 - [ ] Expression body used for single-expression functions
 - [ ] `when` used for three or more branches (not `if`/`else if` chains)
@@ -1404,10 +1377,13 @@ For auditing a Kotlin implementation, verify:
 - [ ] Scope functions chosen appropriately (no nesting, no overuse)
 - [ ] `it` not used in nested lambdas
 - [ ] Extension functions used where appropriate, with minimal visibility
-- [ ] Constants are `SCREAMING_SNAKE_CASE`
+- [ ] `const val` and deeply immutable `val` are `SCREAMING_SNAKE_CASE`; object-reference `val` are `camelCase`
+- [ ] Enum constants are `SCREAMING_SNAKE_CASE`
 - [ ] Modifier order follows canonical ordering
+- [ ] Visibility is as restrictive as possible (`private` > `internal` > `public`)
 - [ ] No empty `catch` blocks
 - [ ] Specific exception types caught, not `Exception`/`Throwable`
 - [ ] `.use()` for `Closeable`/`AutoCloseable` resources
 - [ ] KDoc on all public API members
 - [ ] Compiler warnings treated as errors
+- [ ] No `TODO` markers in code targeting production

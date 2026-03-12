@@ -1,25 +1,35 @@
 # Haskell Style Guide
 
-A comprehensive, actionable guide to idiomatic Haskell coding style and best practices. Intended for code auditing Haskell implementations.
+An actionable guide to Haskell coding style for the sayable-age library. Intended for code auditing and as a reference for contributors. Focuses on patterns actually used in this codebase, with pointers to broader Haskell conventions where relevant.
 
 ## Table of Contents
 
-1. [Naming Conventions](#1-naming-conventions)
-2. [Code Formatting](#2-code-formatting)
-3. [Type System](#3-type-system)
-4. [Module Design](#4-module-design)
-5. [Function Design](#5-function-design)
-6. [Error Handling](#6-error-handling)
-7. [Laziness and Strictness](#7-laziness-and-strictness)
-8. [Common Idioms](#8-common-idioms)
-9. [Text and Strings](#9-text-and-strings)
-10. [Things to Avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
-12. [References](#12-references)
+1. [Project Context](#1-project-context)
+2. [Naming Conventions](#2-naming-conventions)
+3. [Code Formatting](#3-code-formatting)
+4. [Type System](#4-type-system)
+5. [Module Design](#5-module-design)
+6. [Function Design](#6-function-design)
+7. [Error Handling](#7-error-handling)
+8. [Laziness and Strictness](#8-laziness-and-strictness)
+9. [Strings](#9-strings)
+10. [Common Idioms](#10-common-idioms)
+11. [Things to Avoid](#11-things-to-avoid)
+12. [Generated Code](#12-generated-code)
+13. [Tooling](#13-tooling)
+14. [References](#14-references)
 
 ---
 
-## 1. Naming Conventions
+## 1. Project Context
+
+This library has a zero runtime dependency constraint. The only allowed dependency is `base`. This rules out `text`, `bytestring`, `containers`, `deepseq`, `transformers`, `mtl`, and all other packages. All guidance in this document respects this constraint.
+
+The codebase consists of five hand-written source files and 110+ generated locale modules. Generated code has relaxed style expectations -- see [Section 12](#12-generated-code).
+
+---
+
+## 2. Naming Conventions
 
 ### Modules
 
@@ -34,14 +44,13 @@ module SayableAge.Locales.En      -- good: hierarchical locale
 
 ### Types, Type Classes, and Constructors
 
-Use `UpperCamelCase` for all type-level names: data types, newtypes, type aliases, type classes, and data constructors. Write abbreviations in mixed case, not all-caps.
+Use `UpperCamelCase` for all type-level names: data types, newtypes, type aliases, type classes, and data constructors.
+
+For abbreviations, prefer mixed case (`TomlException`) over all-caps (`TOMLException`) for consistency within this project. Note that GHC's own `base` library uses all-caps in some places (`IORef`, `IOException`), so both conventions exist in the ecosystem. The important thing is consistency within the codebase.
 
 ```haskell
 data PluralCategory = Zero | One | Two | Few | Many | Other  -- good
 data UnitForms = Simple String | Pluralized [(PluralCategory, String)]  -- good
-
-data TomlException   -- good: abbreviation in mixed case
-data TOMLException   -- bad: all-caps abbreviation
 ```
 
 ### Functions and Variables
@@ -73,15 +82,13 @@ class Functor f where         -- f for the type constructor
   fmap :: (a -> b) -> f a -> f b
 
 class MonadReader r m where   -- r for "reader environment", m for "monad"
-
-type family Key map :: Type   -- descriptive when it aids understanding
 ```
 
 Kind variables use `k` by convention.
 
 ### Record Fields
 
-Prefix record fields with a short form of the type name to avoid name clashes (Haskell has a flat namespace for record fields within a module). This is the traditional approach; `DuplicateRecordFields` is an alternative but has trade-offs.
+Prefix record fields with a short form of the type name to avoid name clashes (Haskell has a flat namespace for record fields within a module).
 
 ```haskell
 data Locale = Locale
@@ -99,29 +106,41 @@ data Stages = Stages
 
 ### Operators
 
-Avoid creating new operators unless the domain strongly warrants them (e.g., mathematical DSLs). If you do create operators, provide named function aliases. If using unicode symbols, provide ASCII alternatives.
+Avoid creating new operators unless the domain strongly warrants them (e.g., mathematical DSLs). If you do create operators, provide named function aliases.
 
 ---
 
-## 2. Code Formatting
+## 3. Code Formatting
 
-### Formatter Choice
+### Formatter
 
-Use an automated formatter for consistency. The two leading options:
+Use [Fourmolu](https://github.com/fourmolu/fourmolu) with a checked-in `fourmolu.yaml`. Fourmolu is a configurable fork of Ormolu -- idempotent, uses GHC's own parser, and produces minimal diffs. Enforce formatting in CI with `fourmolu --check .`.
 
-- **[Ormolu](https://github.com/tweag/ormolu)** -- opinionated, zero-configuration, uses 2-space indentation. Enforces a single style with no options.
-- **[Fourmolu](https://github.com/fourmolu/fourmolu)** -- fork of Ormolu with configurable options (indentation size, import grouping, etc.). Uses 4-space indentation by default. Configured via `fourmolu.yaml`.
+Recommended `fourmolu.yaml`:
 
-Both use GHC's own parser, are idempotent, and respect programmer intent about single-line vs multi-line layout. Pick one and enforce it project-wide.
+```yaml
+indentation: 4
+comma-style: leading
+record-brace-space: false
+indent-wheres: false
+respectful: true
+haddock-style: multi-line
+newlines-between-decls: 1
+```
+
+To disable formatting for a specific region (e.g., manually aligned tables):
+
+```haskell
+{- FOURMOLU_DISABLE -}
+manuallyFormattedCode = ...
+{- FOURMOLU_ENABLE -}
+```
 
 ### Indentation
 
-Use spaces, never tabs. The most common conventions:
+Use spaces, never tabs. Use 4-space indentation consistently.
 
-- **2 spaces** (Ormolu default, common in libraries)
-- **4 spaces** (Fourmolu default, Kowainik style guide)
-
-Whichever you choose, be consistent. The critical rule: **indentation of a line must not depend on the length of any identifier in a preceding line.** This prevents cascading reformats when renaming.
+The critical rule: **indentation of a line must not depend on the length of any identifier in a preceding line.** This prevents cascading reformats when renaming.
 
 ```haskell
 -- good: indentation is fixed
@@ -139,7 +158,7 @@ resolveLocale loc compactness =
 
 ### Line Length
 
-Keep lines under **90 characters** (Kowainik) or **80 characters** (Haskell Wiki). Long locale data lines are an expected exception. Break long type signatures and function applications across lines.
+Keep lines under 90 characters. Long locale data lines are an expected exception. Break long type signatures and function applications across lines.
 
 ```haskell
 -- break long signatures: one constraint/argument per line
@@ -191,9 +210,9 @@ module SayableAge.Types
 Both are valid; use them in their natural contexts:
 
 - **`where`** -- preferred in pure function definitions. Reads top-down: state the main computation first, then define helpers.
-- **`let`** -- preferred in `do` blocks and when bindings need to refer to each other in order or when you need the binding before the expression that uses it.
+- **`let`** -- preferred in `do` blocks and when bindings need to refer to each other in order.
 
-Do not mix `let` and `where` in the same definition; it hurts readability.
+Prefer not to mix `let` and `where` in the same definition. When you must (e.g., a `do` block that also has pure helpers), keep the division clear: `let` for bindings that depend on `do`-block variables, `where` for pure helpers that do not.
 
 ```haskell
 -- good: where for pure helpers
@@ -256,11 +275,11 @@ daysInMonth y m = case m of
 
 ---
 
-## 3. Type System
+## 4. Type System
 
 ### Algebraic Data Types
 
-Haskell's ADTs are one of its greatest strengths. Use them to make illegal states unrepresentable.
+Use ADTs to make illegal states unrepresentable. This is the single most important Haskell design principle.
 
 ```haskell
 -- good: encode all possibilities in the type
@@ -313,7 +332,7 @@ type UserId = Int  -- can accidentally pass any Int as a UserId
 Use `type` aliases only for specializing generic types or for local readability:
 
 ```haskell
-type Map = Data.Map.Map String Value  -- acceptable: specialization
+type LocaleMap = [(String, Locale)]  -- acceptable: specialization
 ```
 
 ### Type Classes
@@ -334,34 +353,6 @@ class Formattable a where
 ```
 
 Provide default implementations when a sensible one exists. Document laws that instances must satisfy.
-
-### Type Families and GADTs
-
-Use type families for type-level computation when needed. Use GADTs when you need the type checker to track more information through pattern matching. Both are powerful but add complexity; reach for them only when simpler alternatives fall short.
-
-```haskell
-{-# LANGUAGE GADTs #-}
-
-data Expr a where
-    LitInt  :: Int -> Expr Int
-    LitBool :: Bool -> Expr Bool
-    Add     :: Expr Int -> Expr Int -> Expr Int
-    If      :: Expr Bool -> Expr a -> Expr a -> Expr a
-```
-
-### Phantom Types
-
-Use phantom type parameters to encode invariants at the type level without runtime cost:
-
-```haskell
-data Validated
-data Unvalidated
-
-newtype Input a = Input String
-
-validate :: Input Unvalidated -> Maybe (Input Validated)
--- The phantom parameter prevents mixing validated and unvalidated inputs
-```
 
 ### Deriving
 
@@ -385,7 +376,7 @@ The three strategies:
 
 ---
 
-## 4. Module Design
+## 5. Module Design
 
 ### Explicit Export Lists
 
@@ -413,11 +404,10 @@ module Validated
 
 ### Import Organization
 
-Organize imports in consistent groups, separated by blank lines. A common ordering:
+Organize imports in consistent groups, separated by blank lines. The ordering for this project:
 
 1. Standard library / `base` imports
-2. Third-party library imports (if any)
-3. Project-internal imports
+2. Project-internal imports
 
 Within each group, sort alphabetically.
 
@@ -431,18 +421,11 @@ import SayableAge.Types
 
 ### Qualified Imports
 
-Use `import qualified` for modules whose names would clash with Prelude or with each other. The standard conventions:
+Use `import qualified` for modules whose names would clash with Prelude or with each other:
 
 ```haskell
-import qualified Data.Map.Strict as Map
-import qualified Data.Set as Set
-import qualified Data.Text as T
-import qualified Data.Text.Lazy as TL
-import qualified Data.ByteString as BS
-import qualified Data.ByteString.Lazy as BSL
-import qualified Data.HashMap.Strict as HM
-import qualified Data.IntMap.Strict as IM
-import qualified Data.Sequence as Seq
+import qualified SayableAge.Locales.En as En
+import qualified SayableAge.Locales.Es as Es
 ```
 
 ### Explicit Import Lists vs Qualified
@@ -454,10 +437,10 @@ Use either explicit import lists or qualified imports for all non-Prelude module
 import Data.Char (isDigit, isAlpha, toLower)
 
 -- good: qualified
-import qualified Data.Map.Strict as Map
+import qualified SayableAge.Locales.En as En
 
 -- bad: unqualified blanket import (except for re-export modules)
-import Data.Map
+import SayableAge.Types  -- acceptable only when re-exporting
 ```
 
 The exception: a top-level facade module that re-exports everything from internal modules may use unqualified blanket imports.
@@ -478,7 +461,7 @@ import SayableAge.Types
 
 ### Internal Modules
 
-Use an `Internal` module to separate private implementation details from public API. Name it `YourModule.Internal`. The public module re-exports only what users need.
+Use an `Internal` module to separate private implementation details from public API. Name it `YourModule.Internal`. The public module re-exports only what users need. List internal modules under `other-modules` in the `.cabal` file, not `exposed-modules`.
 
 ```haskell
 -- SayableAge.Internal: exports everything for testing, but not for users
@@ -502,15 +485,12 @@ import SayableAge.Internal (computeAge, today)
 
 ### Module Header Documentation
 
-Include a Haddock module header with purpose, copyright, and stability information:
+Include a Haddock module header with purpose and stability information:
 
 ```haskell
 {- |
 Module      : SayableAge.Formatter
 Description : Human-friendly age formatting
-Copyright   : (c) 2024 Author Name
-License     : MIT
-Maintainer  : author@example.com
 Stability   : stable
 -}
 module SayableAge.Formatter
@@ -521,7 +501,7 @@ module SayableAge.Formatter
 
 ---
 
-## 5. Function Design
+## 6. Function Design
 
 ### Type Signatures
 
@@ -547,7 +527,6 @@ Point-free (tacit) style is idiomatic when it improves readability. Stop when it
 ```haskell
 -- good: point-free is clearer
 sortByName = sortBy (comparing name)
-isEven = (== 0) . (`mod` 2)
 
 -- good: explicit parameter is clearer here
 formatAll loc = map (formatAge loc)
@@ -575,18 +554,23 @@ processInput input = either handleError id (parseInput (preprocessConfig input))
 
 ### Function Composition and Application
 
-Use `.` for composing pure functions and `$` to eliminate trailing parentheses. Do not chain `$` -- use `.` for intermediate steps.
+Use `.` for composing pure functions and `$` to eliminate trailing parentheses.
 
 ```haskell
--- good
+-- good: composition chain with final application
 result = process . transform . parse $ input
 
--- bad: chained $
-result = process $ transform $ parse $ input
+-- also fine: $ chaining when it reads clearly
+putStrLn $ show $ length xs
 
--- acceptable: single $
+-- good: single $ to eliminate parentheses
 putStrLn $ show result
+
+-- unnecessary: no nesting to eliminate
+f $ x    -- just write: f x
 ```
+
+The key principle: do not mix `.` and `$` in ways that require the reader to mentally track operator precedence.
 
 ### Sections
 
@@ -608,11 +592,11 @@ map (-1+) xs         -- bad: confusing
 
 ---
 
-## 6. Error Handling
+## 7. Error Handling
 
 ### `Maybe`
 
-Use `Maybe` for computations that can fail in exactly one way (absence of a value). This is the simplest and most common error-handling type.
+Use `Maybe` for computations that can fail in exactly one way (absence of a value). This is the primary error-handling type in this codebase.
 
 ```haskell
 parseDate :: String -> Maybe (Int, Int, Int)
@@ -654,7 +638,7 @@ parseDate s
 
 ### Monadic Error Handling with `do` Notation
 
-Both `Maybe` and `Either` are monads, so `do` notation works naturally for chaining fallible computations:
+Both `Maybe` and `Either` are monads, so `do` notation works naturally for chaining fallible computations. This is heavily used in the codebase:
 
 ```haskell
 computeAge :: String -> String -> Maybe (Int, Int)
@@ -667,35 +651,9 @@ computeAge dob asOf = do
         else Just (months, diffDays)
 ```
 
-### `ExceptT` and `MonadError`
-
-For applications with complex error handling across IO and pure code, use `ExceptT` from `transformers` or the `MonadError` class from `mtl`:
-
-```haskell
-import Control.Monad.Except
-
-data AppError = NotFound | ParseFailed String
-
-loadAndParse :: FilePath -> ExceptT AppError IO Result
-loadAndParse path = do
-    contents <- liftIO (readFile path) `catchError` \_ -> throwError NotFound
-    case parse contents of
-        Left msg -> throwError (ParseFailed msg)
-        Right r  -> return r
-```
-
 ### Exceptions
 
 Reserve exceptions (`throw`, `throwIO`, `catch`) for truly exceptional conditions in `IO` code. Never use exceptions for expected control flow. Pure code should use `Maybe` or `Either`.
-
-```haskell
--- good: exception for genuinely unexpected IO failure
-writeOutput :: FilePath -> String -> IO ()
-writeOutput path content = writeFile path content
-    `catch` \(e :: IOException) -> do
-        hPutStrLn stderr ("Failed to write: " ++ show e)
-        exitFailure
-```
 
 ### Error Handling Hierarchy
 
@@ -704,12 +662,13 @@ From simplest to most complex, prefer in this order:
 1. **Total functions** -- restructure to eliminate the error case entirely
 2. **`Maybe`** -- single failure mode, no error information needed
 3. **`Either e`** -- failure with structured error information
-4. **`ExceptT e m`** -- errors combined with other effects
-5. **Exceptions** -- last resort, IO-only, for truly exceptional conditions
+4. **Exceptions** -- last resort, IO-only, for truly exceptional conditions
+
+Note: `ExceptT` and `MonadError` (from the `transformers` and `mtl` packages) are common in larger Haskell applications but are not available in this codebase due to the zero-dependency constraint.
 
 ---
 
-## 7. Laziness and Strictness
+## 8. Laziness and Strictness
 
 ### Default: Lazy
 
@@ -735,19 +694,16 @@ goodSum = foldl' (+) 0
 
 ### Strict Fields with Bang Patterns
 
-Mark data type fields as strict when the data is always fully evaluated. This prevents thunks from hiding inside data structures.
+Mark data type fields as strict with `!` when the data is always fully evaluated. This prevents thunks from hiding inside data structures.
 
 ```haskell
-{-# LANGUAGE StrictData #-}  -- makes all fields strict by default
-
--- or mark individual fields
 data Stats = Stats
     { statsCount :: !Int
     , statsTotal :: !Double
     }
 ```
 
-The `StrictData` extension makes all fields in a module strict by default, which is appropriate for most application code. Use `~` (tilde) to explicitly mark a field as lazy when needed.
+Prefer explicit `!` annotations on individual fields over the `StrictData` extension. Explicit bangs are self-documenting -- a reader can see at the definition site that a field is strict. `StrictData` silently changes the semantics of every type in the module, which can cause surprises with recursive data structures or intentionally lazy fields.
 
 ### `BangPatterns`
 
@@ -763,35 +719,67 @@ mean xs = go 0 0 xs
     go !total !count (x:rest) = go (total + x) (count + 1) rest
 ```
 
-### `seq` and `deepseq`
+### `seq`
 
-- `seq a b` evaluates `a` to weak head normal form (WHNF -- outermost constructor) then returns `b`.
-- `deepseq a b` (from the `deepseq` package) fully evaluates `a` to normal form.
-
-```haskell
-import Control.DeepSeq (force, NFData)
-
--- force full evaluation before returning
-processStrict :: NFData a => a -> a
-processStrict x = force x
-```
+`seq a b` evaluates `a` to weak head normal form (WHNF -- outermost constructor) then returns `b`. Use `seq` when you need to force evaluation but bang patterns are not syntactically available.
 
 ### When to Add Strictness
 
 - **Accumulators** in recursive functions: always strict
-- **Record fields** that are always fully evaluated: strict
+- **Record fields** that are always fully evaluated: strict (use `!`)
 - **Numeric counters and totals**: strict
-- **Lazy data structures** that are consumed incrementally (streams, lists used once): keep lazy
+- **Lazy data structures** consumed incrementally (streams, lists used once): keep lazy
 - **Configuration and environment data** loaded once: strict
-
-### The `Strict` and `StrictData` Extensions
-
-- `StrictData` -- makes all data type fields strict in the module. Recommended for most application code.
-- `Strict` -- makes all bindings and patterns strict. More aggressive; use judiciously.
 
 ---
 
-## 8. Common Idioms
+## 9. Strings
+
+### Why This Codebase Uses `String`
+
+Haskell has three main string-like types:
+
+| Type | Representation | Use Case |
+|------|---------------|----------|
+| `String` (`[Char]`) | Linked list of characters | Small strings, zero-dependency libraries |
+| `Data.Text` | Packed Unicode array | Production text processing |
+| `Data.ByteString` | Packed byte array | Binary data, raw I/O, network protocols |
+
+In general Haskell code, `Text` is preferred for performance. However, `Data.Text` is in the `text` package, not `base`. This library uses `String` throughout because of the zero-dependency constraint. This is a deliberate design choice, not an oversight.
+
+Auditors should not flag `String` usage as a style violation in this codebase. The strings involved (locale names, formatted ages, date strings) are short and performance is not a concern.
+
+### String Operations
+
+With `String` being `[Char]`, standard list functions work directly:
+
+```haskell
+import Data.Char (isDigit)
+import Data.List (isPrefixOf)
+
+-- substring check
+isInfixOf' :: String -> String -> Bool
+isInfixOf' needle haystack = ...
+
+-- string replacement
+replace :: String -> String -> String -> String
+replace needle replacement haystack = ...
+```
+
+When building strings by concatenation, `++` is acceptable for short strings. For building large strings from many pieces, consider using `showString` and function composition to avoid quadratic behavior:
+
+```haskell
+-- acceptable for short strings
+result = prefix ++ middle ++ suffix
+
+-- for many concatenations, builder pattern with ShowS
+buildLarge :: [String] -> String
+buildLarge xs = foldr (\s acc -> showString s . showChar '\n' . acc) id xs ""
+```
+
+---
+
+## 10. Common Idioms
 
 ### Pattern Matching
 
@@ -885,9 +873,8 @@ Derive all instances you can. The most commonly derived classes:
 - **`Eq`** -- almost always derived. Needed for comparisons and as a prerequisite for `Ord`.
 - **`Ord`** -- derive when there is a natural ordering. Uses constructor declaration order.
 - **`Show`** -- derive for debugging and REPL use. Override with a custom instance for user-facing output.
-- **`Read`** -- derive sparingly. Prefer proper parsing (aeson, attoparsec, megaparsec).
+- **`Read`** -- derive sparingly. Prefer proper parsing.
 - **`Enum`** and **`Bounded`** -- derive for simple enumerations.
-- **`Generic`** -- derive when you need generic programming (aeson, binary, etc.).
 
 ```haskell
 data Compactness = Normal | Short | Compact
@@ -915,99 +902,9 @@ Use record update syntax for modifying one or two fields of a record:
 updatedLocale = locale { localeCode = "en-US", localeHalf = "1/2" }
 ```
 
-For complex updates with many fields, consider lenses (the `lens` or `optics` library) or define focused update functions.
-
 ---
 
-## 9. Text and Strings
-
-### `String` vs `Text` vs `ByteString`
-
-Haskell has three main string-like types with very different performance characteristics:
-
-| Type | Representation | Use Case |
-|------|---------------|----------|
-| `String` (`[Char]`) | Linked list of characters | Small strings, simple programs, prototyping |
-| `Data.Text` | Packed UTF-8 array | Production text processing |
-| `Data.ByteString` | Packed byte array | Binary data, raw I/O, network protocols |
-
-**For production code, prefer `Text` over `String`.** `String` is a linked list (`[Char]`), which means every character is a heap-allocated cons cell. `Text` is a packed array, offering far better time and space performance.
-
-```haskell
--- good: Text for production
-import qualified Data.Text as T
-import qualified Data.Text.IO as TIO
-
-processFile :: FilePath -> IO T.Text
-processFile path = do
-    contents <- TIO.readFile path
-    return (T.toUpper contents)
-
--- acceptable: String for simple, non-performance-critical code
-formatAge :: String -> String
-formatAge input = ...
-```
-
-### `OverloadedStrings`
-
-Enable `OverloadedStrings` to write string literals that work with `Text`, `ByteString`, and other `IsString` types:
-
-```haskell
-{-# LANGUAGE OverloadedStrings #-}
-
-import Data.Text (Text)
-
-greeting :: Text
-greeting = "Hello, world!"  -- no explicit pack needed
-```
-
-### Conversion Functions
-
-```haskell
-import qualified Data.Text as T
-
--- String <-> Text
-T.pack   :: String -> Text
-T.unpack :: Text -> String
-
--- Text <-> ByteString (encoding-aware)
-import qualified Data.Text.Encoding as TE
-TE.encodeUtf8 :: Text -> ByteString
-TE.decodeUtf8 :: ByteString -> Text        -- can throw on invalid UTF-8
-TE.decodeUtf8' :: ByteString -> Either UnicodeException Text  -- safe
-```
-
-### Strict vs Lazy Variants
-
-Both `Text` and `ByteString` have strict and lazy variants:
-
-- **`Data.Text`** / **`Data.ByteString`** -- strict, fully evaluated in memory. Use for most purposes.
-- **`Data.Text.Lazy`** / **`Data.ByteString.Lazy`** -- chunked, evaluated on demand. Use for streaming or very large data.
-
-Import conventions:
-
-```haskell
-import qualified Data.Text as T
-import qualified Data.Text.Lazy as TL
-import qualified Data.ByteString as BS
-import qualified Data.ByteString.Lazy as BSL
-```
-
-### Builder Pattern
-
-For building large text values incrementally, use the `Builder` type to avoid quadratic concatenation:
-
-```haskell
-import qualified Data.Text.Lazy.Builder as B
-
-buildReport :: [Item] -> Text
-buildReport items = TL.toStrict . B.toLazyText $
-    mconcat [B.fromText (formatItem item) <> B.singleton '\n' | item <- items]
-```
-
----
-
-## 10. Things to Avoid
+## 11. Things to Avoid
 
 ### Partial Functions
 
@@ -1017,58 +914,36 @@ Partial functions crash at runtime on certain inputs. Avoid these and use total 
 |-----------------|-------------------|
 | `head xs` | Pattern match: `case xs of (x:_) -> ...; [] -> ...` |
 | `tail xs` | Pattern match: `case xs of (_:rest) -> ...; [] -> ...` |
-| `init xs` | `Data.List.unsnoc` or explicit recursion |
-| `last xs` | `Data.List.unsnoc` or explicit recursion |
-| `xs !! n` | `drop n xs` then pattern match, or use `Data.Vector` |
+| `init xs` | Explicit pattern matching or recursion |
+| `last xs` | Explicit pattern matching or recursion |
+| `xs !! n` | `drop n xs` then pattern match, or use indexing with bounds check |
 | `fromJust mx` | Pattern match or `maybe`/`fromMaybe` |
-| `read s` | `readMaybe` from `Text.Read` |
-| `minimum xs` / `maximum xs` | Check non-emptiness first, or use `NonEmpty` |
-| `toEnum n` | Bounds check first, or use `toEnumMay` from `safe` |
+| `read s` | `readMaybe` from `Text.Read`, or validate input first (see below) |
 | `error msg` | `Maybe`, `Either`, or explicit error handling |
 
+**Exception: `read` after validation.** The codebase uses `read` in `parseDate` after confirming all characters are digits with `isDigit`. This is an acceptable pattern -- when you have validated the input structurally, `read` is effectively total. Document the validation invariant with a comment when using this pattern:
+
 ```haskell
--- bad
-firstElement xs = head xs
-
--- good
-firstElement [] = Nothing
-firstElement (x:_) = Just x
-
--- bad
-unsafeParse s = read s :: Int
-
--- good
-safeParse :: String -> Maybe Int
-safeParse = readMaybe
+parseDate s
+    | not (all isDigit yStr) = Nothing  -- validation
+    | ...
+    | otherwise = Just (y, m, d)
+  where
+    yStr = take 4 s
+    y = read yStr :: Int  -- safe: validated as all-digits above
 ```
-
-### `String` for Performance-Sensitive Code
-
-As discussed in section 9, `String` is a linked list. For any code that processes text at scale, use `Text`.
 
 ### Lazy I/O
 
-Lazy I/O (`hGetContents`, `readFile` from `Prelude`) ties resource lifetimes to garbage collection, making it impossible to predict when file handles close. This causes subtle bugs:
+Lazy I/O (`hGetContents`, `readFile` from `Prelude`) ties resource lifetimes to garbage collection, making it impossible to predict when file handles close. Avoid in production code.
 
 ```haskell
 -- bad: lazy IO
-import Prelude (readFile, writeFile)
-
 transform :: FilePath -> IO ()
 transform path = do
     contents <- readFile path    -- file handle stays open
     writeFile path (process contents)  -- may fail: handle still open!
-
--- good: strict IO
-import qualified Data.Text.IO as TIO
-
-transform :: FilePath -> IO ()
-transform path = do
-    contents <- TIO.readFile path  -- strict: reads everything, closes handle
-    TIO.writeFile path (process contents)
 ```
-
-For streaming, use a proper streaming library (`conduit`, `streaming`, `pipes`) instead of lazy I/O.
 
 ### Orphan Instances
 
@@ -1103,7 +978,7 @@ processAll opts items = map (\item -> formatWith opts (transform item)) items
 
 ### Incomplete Pattern Matches
 
-GHC warns about non-exhaustive patterns with `-Wall`. Always handle all cases, or document unreachable cases with `error` including the module and function name:
+GHC warns about non-exhaustive patterns with `-Wall`. Always handle all cases:
 
 ```haskell
 -- good: all cases handled
@@ -1113,25 +988,41 @@ lookupUnitForm cat forms =
         Nothing -> case lookup Other forms of
             Just s  -> s
             Nothing -> ""
-
--- if a case is truly unreachable, document it
-handleDirection North = ...
-handleDirection South = ...
-handleDirection East  = ...
-handleDirection West  = ...
 ```
 
 ### Unnecessary Language Extensions
 
-Start with Haskell 2010. Add extensions only when they provide clear value. Each extension is a point of complexity and potential non-portability. See section 11 for a recommended extension policy.
+Start with Haskell 2010. Add extensions only when they provide clear value. See [Section 13](#13-tooling) for the extension policy.
 
 ---
 
-## 11. Tooling
+## 12. Generated Code
+
+110+ locale modules in `SayableAge.Locales.*` are generated by `codegen/targets/haskell/emitter.py`. These modules carry a `DO NOT EDIT` banner and follow their own conventions:
+
+- **Do not hand-edit generated modules.** Edit the generator or locale JSON instead.
+- **Long lines are expected.** Locale data (pluralized forms, stage labels) often produces lines well over 90 characters. This is acceptable.
+- **Relaxed linting.** Generated modules may trigger HLint suggestions. Suppress these at the module level if needed rather than complicating the generator.
+- **Consistent structure.** All generated locale modules export a single `locale :: Locale` value and follow identical internal structure.
+- **The barrel module** (`SayableAge.Locales`) is also generated and re-exports `getLocale :: String -> Maybe Locale`.
+
+When auditing, focus review effort on the five hand-written source files, not the generated locale modules.
+
+---
+
+## 13. Tooling
 
 ### GHC Warning Flags
 
-Compile with comprehensive warnings. A recommended baseline:
+Compile with comprehensive warnings. The project baseline (from `sayable-age.cabal`):
+
+```
+-Wall
+-Wcompat
+-Werror
+```
+
+A fuller set for catching more issues:
 
 ```
 -Wall
@@ -1143,29 +1034,16 @@ Compile with comprehensive warnings. A recommended baseline:
 -Wmissing-home-modules
 -Wpartial-fields
 -Wredundant-constraints
--Wunused-packages
 ```
 
-In CI, add `-Werror` to treat all warnings as errors.
-
-In your `.cabal` file:
-
-```cabal
-ghc-options:
-  -Wall -Wcompat -Widentities -Wincomplete-record-updates
-  -Wincomplete-uni-patterns -Wmissing-export-lists
-  -Wpartial-fields -Wredundant-constraints
-```
+In CI, `-Werror` is already enabled to treat all warnings as errors.
 
 ### HLint
 
-[HLint](https://github.com/ndmitchell/hlint) suggests idiomatic improvements to Haskell code. It detects redundant brackets, suggests alternative functions, identifies code simplifications, and enforces consistent style.
-
-Run it on your entire project:
+[HLint](https://github.com/ndmitchell/hlint) suggests idiomatic improvements to Haskell code. Run it on the project:
 
 ```bash
-hlint .
-hlint . --report  # generates an HTML report
+hlint age/impl/haskell/src
 ```
 
 Configure via `.hlint.yaml`:
@@ -1177,7 +1055,7 @@ Configure via `.hlint.yaml`:
 # Ignore within specific modules
 - ignore: { name: "Use newtype instead of data", within: [SayableAge.Types] }
 
-# Add custom restrictions
+# Restrict partial functions
 - functions:
   - { name: "Data.List.head", within: [], message: "Use pattern matching" }
   - { name: "fromJust", within: [], message: "Use maybe or pattern matching" }
@@ -1187,71 +1065,6 @@ Suppress hints inline when justified:
 
 ```haskell
 {-# ANN module "HLint: ignore Use camelCase" #-}
-{- HLINT ignore "Eta reduce" -}
-```
-
-HLint severity levels:
-- **Error** -- parse errors
-- **Warning** -- always-desirable improvements (e.g., `concatMap` over `concat . map`)
-- **Suggestion** -- subjective recommendations that may not always apply
-
-### Ormolu / Fourmolu
-
-Choose one formatter and enforce it in CI.
-
-**[Ormolu](https://github.com/tweag/ormolu):**
-- Zero configuration
-- 2-space indentation
-- Opinionated: one format for any given input
-- `ormolu --check .` in CI to verify formatting
-
-**[Fourmolu](https://github.com/fourmolu/fourmolu):**
-- Configurable via `fourmolu.yaml`
-- 4-space indentation by default
-- All of Ormolu's design principles (idempotent, GHC parser, minimal diffs) with flexibility
-- `fourmolu --check .` in CI
-
-Example `fourmolu.yaml`:
-
-```yaml
-indentation: 4
-comma-style: leading
-record-brace-space: false
-indent-wheres: false
-respectful: true
-haddock-style: multi-line
-newlines-between-decls: 1
-```
-
-Both formatters support disabling formatting for specific regions:
-
-```haskell
-{- ORMOLU_DISABLE -}
--- or
-{- FOURMOLU_DISABLE -}
-manuallyFormattedCode = ...
-{- ORMOLU_ENABLE -}
--- or
-{- FOURMOLU_ENABLE -}
-```
-
-### stylish-haskell
-
-[stylish-haskell](https://github.com/haskell/stylish-haskell) focuses on import sorting and alignment rather than full formatting. It is commonly used alongside (or instead of) a full formatter for import organization. Configure via `.stylish-haskell.yaml`.
-
-### Weeder
-
-[Weeder](https://github.com/ocharles/weeder) performs whole-program dead code analysis. Unlike GHC's per-module warnings, Weeder finds functions that are exported but never used by any other module in the project.
-
-Setup:
-1. Enable HIE file generation: add `-fwrite-ide-info` to GHC options
-2. Configure `weeder.toml` with root entry points
-3. Run `weeder` after building
-
-```toml
-roots = ["^Main.main$", "^SayableAge\\..*"]
-type-class-roots = true
-unused-types = false
 ```
 
 ### GHC Extensions Policy
@@ -1259,7 +1072,7 @@ unused-types = false
 Extensions range from universally accepted to experimental. A tiered approach:
 
 **Tier 1: Safe defaults** -- enable freely, widely accepted:
-- `OverloadedStrings` -- string literals for `Text`, `ByteString`, etc.
+- `OverloadedStrings` -- string literals for `IsString` types
 - `ScopedTypeVariables` -- bring type variables into scope with `forall`
 - `TypeApplications` -- specify type arguments explicitly
 - `DerivingStrategies` -- explicit stock/newtype/anyclass derivation
@@ -1268,10 +1081,10 @@ Extensions range from universally accepted to experimental. A tiered approach:
 - `LambdaCase` -- `\case` for pattern matching
 - `TupleSections` -- `(,x)` as a function
 - `BangPatterns` -- strictness annotations on patterns
-- `StrictData` -- strict fields by default (application code)
 - `NumericUnderscores` -- `1_000_000` for readability
 
 **Tier 2: Use when needed** -- add per-module with `LANGUAGE` pragma:
+- `StrictData` -- strict fields by default (consider explicit `!` instead)
 - `GADTs` -- generalized algebraic data types
 - `TypeFamilies` -- type-level functions
 - `DataKinds` -- promote data constructors to types
@@ -1281,13 +1094,14 @@ Extensions range from universally accepted to experimental. A tiered approach:
 - `FunctionalDependencies` -- dependencies between class parameters
 - `FlexibleContexts` / `FlexibleInstances` -- relaxed context/instance rules
 - `ConstraintKinds` -- constraints as first-class types
-- `RecordWildCards` -- `MyRecord{..}` to bind all fields
+- `NamedFieldPuns` -- bind record fields by name without repeating
 
 **Tier 3: Use sparingly** -- powerful but increase complexity:
 - `TemplateHaskell` -- compile-time code generation
 - `UndecidableInstances` -- can cause the type checker to loop
 - `IncoherentInstances` -- almost never justified
 - `OverlappingInstances` -- prefer explicit specialization
+- `RecordWildCards` -- implicit bindings make code harder to review
 
 **Placement:** Put `LANGUAGE` pragmas at the top of the file, one per line, sorted alphabetically:
 
@@ -1300,17 +1114,31 @@ Extensions range from universally accepted to experimental. A tiered approach:
 module MyModule where
 ```
 
+### FFI Conventions
+
+The codebase uses the Foreign Function Interface to call `time()` for getting the current date. Follow these conventions:
+
+- Use `unsafe` for short, non-blocking C calls that do not call back into Haskell (`foreign import ccall unsafe`). The `time()` call is a correct use of `unsafe`.
+- Use `safe` (the default) for C calls that may block, call back into Haskell, or take a long time.
+- Import `Foreign.C.Types` for C-compatible types (`CTime`, `CInt`, etc.).
+- Keep FFI calls isolated in the `Internal` module, not in public-facing modules.
+
+```haskell
+import Foreign.C.Types (CTime(..))
+import Foreign.Ptr (Ptr, nullPtr)
+
+foreign import ccall unsafe "time" c_time :: Ptr CTime -> IO CTime
+```
+
 ---
 
-## 12. References
+## 14. References
 
 ### Style Guides
 
 - [Kowainik Haskell Style Guide](https://kowainik.github.io/posts/2019-02-06-style-guide) -- comprehensive, opinionated style guide with detailed formatting rules, naming conventions, and extension recommendations
 - [Haskell Wiki: Programming Guidelines](https://wiki.haskell.org/Programming_guidelines) -- community-maintained guidelines covering documentation, naming, formatting, and code organization
-- [Haskell Wiki: Programming Tips](https://wiki.haskell.org/Haskell_programming_tips) -- practical tips for writing concise, efficient, idiomatic Haskell
 - [Haskell Wiki: Avoiding Partial Functions](https://wiki.haskell.org/Avoiding_partial_functions) -- detailed guidance on replacing unsafe functions with total alternatives
-- [Haskell Wiki: Orphan Instances](https://wiki.haskell.org/Orphan_instance) -- explanation of why orphan instances are problematic and how to avoid them
 
 ### Type Design
 
@@ -1319,18 +1147,15 @@ module MyModule where
 ### Tools
 
 - [HLint](https://github.com/ndmitchell/hlint) -- Haskell linter that suggests idiomatic improvements
+- [Fourmolu](https://github.com/fourmolu/fourmolu) -- configurable Haskell formatter (recommended for this project)
 - [Ormolu](https://github.com/tweag/ormolu) -- opinionated, zero-configuration Haskell formatter
-- [Fourmolu](https://github.com/fourmolu/fourmolu) -- configurable fork of Ormolu
-- [stylish-haskell](https://github.com/haskell/stylish-haskell) -- import sorter and aligner
-- [Weeder](https://github.com/ocharles/weeder) -- whole-program dead code analysis
 
 ### GHC Documentation
 
 - [GHC User's Guide: Language Extensions](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts.html) -- official documentation for all GHC extensions
 - [GHC User's Guide: Warnings](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/using-warnings.html) -- comprehensive list of GHC warning flags
+- [GHC User's Guide: FFI](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/ffi.html) -- foreign function interface documentation
 
 ### Libraries
 
-- [Data.Text (text package)](https://hackage.haskell.org/package/text) -- efficient packed Unicode text
-- [safe package](https://hackage.haskell.org/package/safe) -- safe versions of partial Prelude functions
-- [deepseq package](https://hackage.haskell.org/package/deepseq) -- full evaluation to normal form
+- [safe package](https://hackage.haskell.org/package/safe) -- safe versions of partial Prelude functions (reference only; not used due to zero-dependency constraint)

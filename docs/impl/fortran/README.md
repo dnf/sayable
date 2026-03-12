@@ -27,8 +27,8 @@ This guide synthesizes conventions from the following authoritative references:
 | Derived type names | lowercase, underscores | `pt_locale`, `pt_unit_forms` |
 | Subroutine/function names | lowercase, underscores | `format_age`, `parse_date`, `is_leap_year` |
 | Variables | lowercase, underscores | `diff_days`, `month_count` |
-| Constants/parameters | lowercase or UPPER_CASE | `dp`, `PT_MAX_STR_LEN` |
-| Enumerator-style parameters | UPPER_CASE with prefix | `PT_ZERO`, `PT_ONE`, `PT_OTHER` |
+| Kind/precision parameters | lowercase | `dp`, `sp`, `qp`, `i32`, `i64` |
+| Domain constants and enumerators | UPPER_CASE with prefix | `PT_ZERO`, `PT_ONE`, `PT_MAX_STR_LEN` |
 
 Fortran is case-insensitive, so `MyModule` and `mymodule` refer to the same entity. Use a single consistent casing throughout the codebase to avoid confusion.
 
@@ -43,7 +43,7 @@ Fortran is case-insensitive, so `MyModule` and `mymodule` refer to the same enti
 
 ### Result Variables
 
-Use the `result` clause on functions to give the return value a descriptive name:
+The `result` clause gives the return value a name different from the function:
 
 ```fortran
 pure function days_in_month(year, month) result(days)
@@ -53,7 +53,7 @@ pure function days_in_month(year, month) result(days)
 end function days_in_month
 ```
 
-This is more readable than reusing the function name as the result variable.
+Use `result` when it improves clarity -- for instance, when the function name is long, when the natural name for the return value differs from the function name, or when the function name reads awkwardly as a variable (e.g., `is_valid`). For short, well-named functions, using the function name as the result variable is equally valid.
 
 ---
 
@@ -65,7 +65,7 @@ This is more readable than reusing the function name as the result variable.
 
 ### Indentation
 
-- Use **2 spaces** per indentation level. This is the most common choice in the Fortran community (3 and 4 spaces are also acceptable; pick one and be consistent).
+- Use **2 spaces** per indentation level. This is the project convention. (The broader Fortran ecosystem varies between 2 and 4 spaces; consistency within a project matters more than the specific choice.)
 - Indent the body of `module`, `subroutine`, `function`, `if`, `do`, `select case`, `type`, `interface`, and `associate` blocks.
 - The `contains` keyword in a module sits at the same level as `implicit none`, not indented further.
 - The body of `contains` (the procedures) is indented one level from the module.
@@ -178,10 +178,39 @@ subroutine parse_date(s, year, month, day, ok)
 | `intent(out)` | Write-only; undefined on entry, must be defined before return | Compiler warns if not set |
 | `intent(inout)` | Read-write; defined on entry, may be modified | No restrictions |
 
+**Warning: `intent(out)` and derived types.** When a derived type argument has `intent(out)`, all components become undefined on entry -- including components with default initialization in the type definition. This means default values are not preserved. Either use `intent(inout)` when you need to preserve defaults, or explicitly set every component in the procedure:
+
+```fortran
+type :: config
+  integer :: mode = 0
+  logical :: verbose = .false.
+end type config
+
+! WRONG: c%verbose is UNDEFINED after this call, not .false.
+subroutine partial_init(c)
+  type(config), intent(out) :: c
+  c%mode = 1
+  ! c%verbose is undefined here -- the default .false. does not apply
+end subroutine partial_init
+
+! CORRECT: either set all components...
+subroutine full_init(c)
+  type(config), intent(out) :: c
+  c%mode = 1
+  c%verbose = .false.
+end subroutine full_init
+
+! ...or use intent(inout) to preserve defaults
+subroutine update_mode(c)
+  type(config), intent(inout) :: c
+  c%mode = 1
+end subroutine update_mode
+```
+
 ### Pure and Elemental
 
 - Mark functions and subroutines as **`pure`** when they have no side effects (no I/O, no modification of module variables, no stop/error stop). Pure procedures can be called in `do concurrent`, `forall`, and array-valued expressions.
-- Mark procedures as **`elemental`** when they operate on scalar arguments but should also accept arrays. Elemental implies pure. The compiler automatically applies the procedure element-wise:
+- Mark procedures as **`elemental`** when they operate on scalar arguments but should also accept arrays. `elemental` implies `pure` -- all `pure` restrictions apply. The compiler automatically applies the procedure element-wise:
 
 ```fortran
 real(dp) elemental function nroot(n, x) result(y)
@@ -192,6 +221,8 @@ end function nroot
 ```
 
 Calling `nroot(2, array)` applies the function to every element of `array`.
+
+Since Fortran 2008, **`impure elemental`** allows elemental procedures with side effects (e.g., I/O or modifying module state). Use it when you need element-wise application but cannot satisfy `pure` constraints. Note that `impure elemental` procedures cannot be used in `do concurrent` or `forall`.
 
 ### Allocatable Arrays
 
@@ -252,7 +283,7 @@ Never rely on Fortran's default implicit typing rules (variables starting with I
 
 ### `use` with `only`
 
-**Always use explicit imports** with the `only` clause:
+**Prefer explicit imports** with the `only` clause:
 
 ```fortran
 use sayableage_types, only: pt_locale, PT_MAX_STR_LEN
@@ -263,6 +294,8 @@ Bare `use module_name` (without `only`) imports everything from the module, whic
 - Makes dependencies opaque (which symbols come from where?)
 - Risks name collisions
 - Prevents the reader from quickly understanding the module's interface
+
+`only` is most important when importing from large or widely-shared modules. For small, tightly-coupled companion modules where the consumer uses most or all of the module's public interface (e.g., a types module dedicated to a single formatter module), a bare `use` is acceptable -- the coupling is inherent in the design, and maintaining a long `only` list adds noise without improving clarity.
 
 Place `use` statements at the module level (before `implicit none`), not inside individual procedures, unless a procedure has a unique dependency not shared by the rest of the module.
 
@@ -333,7 +366,7 @@ real(dp) :: half = 0.5_dp
 real(dp) :: big = 1.34e8_dp
 ```
 
-Without the suffix, `3.14159265358979323846` is a default (single-precision) constant, silently losing precision when assigned to a `real(dp)` variable.
+Without the suffix, `3.14159265358979323846` is a default (single-precision) constant, silently losing precision when assigned to a `real(dp)` variable. The `d0` suffix (e.g., `1.0d0`) produces a double-precision literal and does not lose precision, but it is hardcoded to double precision. The `_dp` form is preferred because it is parametric: if you change what `dp` maps to, all literals follow automatically.
 
 ### Derived Types
 
@@ -410,9 +443,9 @@ type :: pt_locale
 end type pt_locale
 ```
 
-### Parameterized Derived Types
+### Parameterized Derived Types (Caution)
 
-Fortran 2003 supports parameterized types with `kind` and `len` parameters:
+Fortran 2003 introduced parameterized derived types (PDTs) with `kind` and `len` parameters. In theory they allow types whose layout depends on compile-time or runtime parameters:
 
 ```fortran
 type :: fixed_string(max_len)
@@ -424,7 +457,7 @@ end type fixed_string
 type(fixed_string(256)) :: name
 ```
 
-Use `kind` parameters for compile-time constants and `len` parameters for values that can vary at runtime. Note: compiler support for parameterized types varies; test with your target compilers.
+**Avoid PDTs in production code.** Compiler support remains incomplete and unreliable across all major compilers as of 2026. gfortran has known internal compiler error (ICE) bugs with PDTs. Intel ifx has partial support with restrictions. Even NAG, which has the most complete implementation, has edge cases. Using PDTs risks compiler crashes and portability failures. Prefer allocatable components or explicit kind parameters as practical alternatives.
 
 ---
 
@@ -522,12 +555,23 @@ character(len=20) :: name
 name = "Alice"   ! name is now "Alice               " (15 trailing blanks)
 ```
 
-Use `trim()` to remove trailing blanks when comparing, printing, or concatenating:
+Use `trim()` to remove trailing blanks when concatenating or printing:
 
 ```fortran
 print *, trim(name)                       ! prints "Alice"
 full = trim(first_name) // " " // trim(last_name)
 ```
+
+### String Comparison and Trailing Blanks
+
+Fortran's `==` operator on character strings pads the shorter operand with blanks before comparing. This means:
+
+```fortran
+"Alice" == "Alice   "    ! .true. -- Fortran pads before comparing
+"abc"   == "abc     "    ! .true.
+```
+
+This is the opposite of most other languages. `trim()` is unnecessary for equality comparisons alone (the padding makes them equivalent), but it is essential for concatenation, where trailing blanks produce unwanted whitespace.
 
 ### Assumed-Length Arguments
 
@@ -708,17 +752,13 @@ do concurrent (i = 1:n)
 end do
 ```
 
-Requirements:
-- No iteration may depend on a previous iteration
-- No I/O operations inside the loop
-- No `exit`, `stop`, or `error stop`
-- All called procedures must be `pure`
+The body of `do concurrent` must satisfy constraints similar to a `pure` procedure: no I/O, no `exit`/`cycle`/`return`/`stop`/`error stop` that would leave the construct, no inter-iteration data dependencies, and all called procedures must be `pure`. The full set of restrictions is specified in the standard (section 11.1.7.5 in Fortran 2018). Compilers vary in how strictly they enforce these constraints -- when in doubt, consult your compiler's documentation.
 
-Note: `do concurrent` is a hint, not a guarantee. The compiler decides whether to parallelize. Use appropriate compiler flags (e.g., `-ftree-parallelize-loops=N` for gfortran) to enable parallel execution.
+`do concurrent` is a hint, not a guarantee. The compiler decides whether to parallelize. Use appropriate compiler flags (e.g., `-ftree-parallelize-loops=N` for gfortran) to enable parallel execution.
 
 ### `associate` Construct
 
-Use `associate` to create temporary named aliases for complex expressions, improving readability:
+Use `associate` to create temporary named aliases for deeply nested access paths, improving readability:
 
 ```fortran
 associate(loc => locale%stages, lbl => stage%label)
@@ -730,35 +770,28 @@ associate(loc => locale%stages, lbl => stage%label)
 end associate
 ```
 
-This avoids repeating deeply nested component references without introducing new variables or copies. Available since Fortran 2003.
+**Semantics to be aware of:** When the selector is a variable or component reference (like `locale%stages`), the associate name is an alias -- modifications through it modify the original. When the selector is an expression (like `a + b`), the associate name refers to a read-only temporary. This distinction matters when you expect modifications to persist beyond the `associate` block.
+
+Prefer `associate` for read-only aliasing of deeply nested component paths, where the reference-vs-temporary distinction does not affect behavior. Available since Fortran 2003.
 
 ### `block` Construct
 
-Use `block` to introduce local scope within a procedure, allowing declarations mid-procedure:
+Use `block` to introduce local scope within a procedure, allowing declarations where they would otherwise be illegal. This is useful for declaring locals inside `select case` arms, or for isolating allocatable temporaries in a specific branch:
 
 ```fortran
-subroutine process(data, n)
-  integer, intent(in) :: n
-  real(dp), intent(inout) :: data(n)
-
-  ! First phase: normalize
-  block
-    real(dp) :: max_val
-    max_val = maxval(data)
-    if (max_val > 0.0_dp) data = data / max_val
-  end block
-
-  ! Second phase: transform
-  block
-    integer :: i
-    do i = 1, n
-      data(i) = sqrt(data(i))
-    end do
-  end block
-end subroutine process
+select case (mode)
+  case (1)
+    block
+      real(dp), allocatable :: work(:)
+      allocate(work(n))
+      ! ... use work only in this case ...
+    end block   ! work is automatically deallocated
+  case (2)
+    ! no work array needed here
+end select
 ```
 
-Available since Fortran 2008. Useful for limiting the scope of temporary variables.
+Available since Fortran 2008. Do not use `block` when a simple variable declaration at procedure scope suffices -- the syntactic overhead is not justified for routine temporaries.
 
 ### `select case`
 
@@ -779,7 +812,7 @@ end select
 
 ### Internal Procedures
 
-Subroutines and functions defined after `contains` inside a program unit or another procedure have access to the host's variables by host association. Use them for small helpers that don't warrant a separate module procedure:
+Subroutines and functions defined after `contains` inside a procedure have access to the host's variables by host association. They can be useful for small helpers that do not warrant a separate module procedure:
 
 ```fortran
 subroutine outer(x, n)
@@ -793,17 +826,24 @@ contains
 
   subroutine normalize()
     real(dp) :: mx
-    mx = maxval(x)
+    mx = maxval(x)    ! x comes from host association
     if (mx > 0.0_dp) x = x / mx
   end subroutine normalize
 
   subroutine scale(factor)
     real(dp), intent(in) :: factor
-    x = x * factor
+    x = x * factor    ! x comes from host association
   end subroutine scale
 
 end subroutine outer
 ```
+
+**Caveats:**
+- Internal procedures silently depend on (and can modify) all host variables. Accidentally referencing a host variable instead of declaring a local is a common source of bugs.
+- They cannot be passed as actual arguments to procedure dummy arguments.
+- They cannot be unit-tested independently.
+
+Keep internal procedures small (under ~10 lines) and prefer read-only access to host variables. For anything more substantial, extract to a module procedure with explicit arguments.
 
 ### Logical Operators
 
@@ -827,7 +867,11 @@ The `==`, `/=`, `<`, `<=`, `>`, `>=` forms are available since Fortran 90 and ar
 
 ## 10. Things to Avoid
 
-### `COMMON` Blocks
+### Dangerous Constructs
+
+These features are genuine correctness risks. Their presence in new code should be treated as a bug.
+
+#### `COMMON` Blocks
 
 `COMMON` blocks are the pre-module mechanism for sharing data between program units. They provide no type checking, no name scoping, and rely on storage sequence association. **Use modules instead.**
 
@@ -843,15 +887,15 @@ module shared_data
 end module shared_data
 ```
 
-### `EQUIVALENCE`
+#### `EQUIVALENCE`
 
 `EQUIVALENCE` lets two variables share the same memory location. It is type-unsafe, optimizer-hostile, and a frequent source of aliasing bugs. **Use `transfer()` or type punning through `iso_c_binding` if you truly need reinterpretation.**
 
-### Implicit Typing
+#### Implicit Typing
 
 Never rely on the default implicit typing rules. Always use `implicit none` in every module and program unit. Without it, a typo like `totla` instead of `total` silently creates a new variable with a default type.
 
-### `GOTO`
+#### `GOTO`
 
 Avoid `GOTO` in all new code. Every `GOTO` pattern has a structured replacement:
 
@@ -863,11 +907,7 @@ Avoid `GOTO` in all new code. Every `GOTO` pattern has a structured replacement:
 | Computed GOTO | `select case` |
 | Arithmetic IF | `if`/`else if`/`else` |
 
-### Fixed-Form Source
-
-Never write new code in fixed-form. If maintaining legacy fixed-form code, convert it to free-form before making significant changes. Most editors can automate this conversion.
-
-### Assumed-Size Arrays
+#### Assumed-Size Arrays
 
 Assumed-size arrays (`dimension(*)`) provide no compile-time or runtime bounds checking. Use assumed-shape arrays (`dimension(:)`) instead:
 
@@ -884,11 +924,15 @@ subroutine modern_style(a)
   n = size(a)
 ```
 
-### `FORALL`
+### Obsolescent and Deprecated Features
+
+These features are not inherently dangerous but are stylistically outdated. Prefer their modern replacements in all new code.
+
+#### `FORALL`
 
 `FORALL` was intended for parallel array assignment but has been largely superseded by `do concurrent`. `FORALL` has confusing semantics (it is a statement, not a loop) and offers no performance benefit over array operations or `do concurrent`. It is declared obsolescent in Fortran 2018.
 
-### Double Precision
+#### `double precision`
 
 Do not use the `double precision` type specifier. It is a fixed concept (usually 64-bit) that cannot be parameterized. Use `real(dp)` with an explicit kind parameter:
 
@@ -901,7 +945,7 @@ use iso_fortran_env, only: dp => real64
 real(dp) :: x
 ```
 
-### External Procedures
+#### External Procedures
 
 Do not use `external` declarations. Place all procedures in modules to get automatic explicit interfaces and argument checking:
 
@@ -913,11 +957,15 @@ external :: my_function
 use my_module, only: my_function
 ```
 
-### `include` Statements
+#### `include` Statements
 
 Do not use `include` for code sharing. Use modules instead. `include` provides textual inclusion with no scoping, no interface generation, and no dependency tracking.
 
-### Mutable Module Variables
+#### Fixed-Form Source
+
+Never write new code in fixed-form. If maintaining legacy fixed-form code, convert it to free-form before making significant changes. Most editors can automate this conversion.
+
+#### Mutable Module Variables
 
 Avoid mutable (non-parameter) variables at module scope. They are effectively global state, creating hidden dependencies between procedures. Pass data through arguments instead.
 
@@ -1018,10 +1066,14 @@ fpm install          # Install to ~/.local/bin
 
 #### CMake
 
-CMake is widely used for Fortran projects, especially those with C/C++ interoperability:
+CMake is widely used for Fortran projects, especially those with C/C++ interoperability.
+
+Since CMake 3.20, Fortran module dependencies are automatically scanned when using the Ninja or Makefile generators. For older CMake versions, source files must be listed so that modules are compiled before the units that `use` them.
+
+Always set a module output directory to keep `.mod` files in a predictable location:
 
 ```cmake
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.20)
 project(myproject LANGUAGES Fortran)
 
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
@@ -1035,8 +1087,6 @@ target_link_libraries(tests PRIVATE mylib)
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
 ```
-
-Note: Fortran source file order matters in CMake because of module dependencies. List files so that modules are compiled before the units that `use` them.
 
 ### Preprocessor (fypp)
 
@@ -1063,12 +1113,13 @@ For auditing a Fortran implementation, verify:
 
 - [ ] Free-form source (`.f90` extension, no fixed-form)
 - [ ] `implicit none` in every module and program unit
-- [ ] `use` statements have `only` clause with explicit imports
+- [ ] `use` statements have `only` clause for large/shared modules (bare `use` acceptable for tightly-coupled companion modules)
 - [ ] Module default visibility is `private` with explicit `public` exports
 - [ ] All dummy arguments have `intent` attributes
+- [ ] `intent(out)` procedures with derived types set all components (defaults are not preserved)
 - [ ] Functions that can be `pure` are marked `pure`
 - [ ] Kind parameters used for all numeric types (`real(dp)`, not `double precision` or `real*8`)
-- [ ] Floating-point literals carry kind suffix (`1.0_dp`, not `1.0d0` or `1.0`)
+- [ ] Floating-point literals carry kind suffix (`1.0_dp`; `1.0d0` is acceptable but non-parametric; bare `1.0` is wrong)
 - [ ] Assumed-shape arrays (`(:)`) used, not assumed-size (`(*)`)
 - [ ] `newunit=` used in `open` statements, not hardcoded unit numbers
 - [ ] `error stop` used for abnormal termination, not `stop`
@@ -1079,7 +1130,9 @@ For auditing a Fortran implementation, verify:
 - [ ] No implicit typing relied upon
 - [ ] No `external` declarations (procedures are in modules)
 - [ ] `end` statements name their construct (`end module m`, not `end module`)
-- [ ] Lowercase used for all keywords and identifiers (except UPPER_CASE constants)
-- [ ] Consistent indentation (2-4 spaces)
+- [ ] Lowercase used for all keywords and identifiers (UPPER_CASE for domain constants/enumerators)
+- [ ] Consistent indentation (2 spaces in this project)
 - [ ] Compiled with `-Wall -Wextra -Wpedantic -Werror` (zero warnings)
 - [ ] No mutable module-level variables (constants and parameters only)
+- [ ] No parameterized derived types (compiler support unreliable)
+- [ ] Internal procedures are small and document host variable access

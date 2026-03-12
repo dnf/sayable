@@ -1,7 +1,9 @@
 # Ruby Style Guide
 
-A comprehensive style guide for auditing and writing idiomatic Ruby code. Draws from
-community standards, the RuboCop Ruby Style Guide, and Shopify's production conventions.
+A project-specific style guide for writing and reviewing Ruby code in the Sayable project.
+Draws from the RuboCop Ruby Style Guide and community conventions, tailored to this
+project's constraints: zero runtime dependencies, Minitest, 110 locales, and cross-language
+consistency across 29 implementations.
 
 ---
 
@@ -15,10 +17,11 @@ community standards, the RuboCop Ruby Style Guide, and Shopify's production conv
 6. [Error Handling](#6-error-handling)
 7. [Collections](#7-collections)
 8. [String Handling](#8-string-handling)
-9. [Common Idioms](#9-common-idioms)
-10. [Things to Avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
-12. [Sources](#12-sources)
+9. [Date Handling](#9-date-handling)
+10. [Common Idioms](#10-common-idioms)
+11. [Things to Avoid](#11-things-to-avoid)
+12. [Tooling](#12-tooling)
+13. [Sources](#13-sources)
 
 ---
 
@@ -30,7 +33,7 @@ community standards, the RuboCop Ruby Style Guide, and Shopify's production conv
 |------|-----------|---------|
 | Local variables | `snake_case` | `user_name`, `total_count` |
 | Instance variables | `@snake_case` | `@first_name` |
-| Class variables | `@@snake_case` | `@@instance_count` (avoid; see Section 10) |
+| Class variables | `@@snake_case` | `@@instance_count` (avoid; see Section 11) |
 | Global variables | `$snake_case` | `$stdout` (avoid defining new ones) |
 | Methods | `snake_case` | `calculate_total`, `format_age` |
 | Constants | `SCREAMING_SNAKE_CASE` | `MAX_RETRIES`, `DEFAULT_TIMEOUT` |
@@ -79,32 +82,41 @@ sayable_age/locale.rb    -> SayableAge::AgeLocale (types/structs)
 
 ### Numbers in Identifiers
 
-Do not separate numbers from letters with underscores:
+Separate numbers from letters with underscores for readability. This matches RuboCop's
+default `Naming/VariableNumber` style (`snake_case`) and the project's test naming
+conventions:
 
 ```ruby
 # Good
-some_var1
-level3_value
-
-# Bad
 some_var_1
 level_3_value
+test_29_1_he_just_born
+
+# Bad -- numbers smashed against words
+some_var1
+level3_value
+test291_he_just_born
 ```
 
 ### Acronyms in Class Names
 
-Keep acronyms uppercase in PascalCase names:
+Treat acronyms as words in PascalCase names. This avoids word-boundary ambiguity (is
+`HTTPSServer` HTTPS+Server or HTTP+SServer?) and aligns with the cross-language naming
+conventions used across the project's 29 implementations:
 
 ```ruby
-# Good
-HTTPClient
-XMLParser
-HTMLRenderer
-
-# Bad
+# Preferred
 HttpClient
 XmlParser
+HtmlRenderer
+
+# Acceptable but can cause ambiguity
+HTTPClient
+XMLParser
 ```
+
+Consistency within the codebase matters more than which convention is chosen. If the project
+already uses one style, follow it.
 
 ---
 
@@ -126,8 +138,9 @@ end
 
 ### Line Length
 
-Limit lines to **80 characters** (community standard). Some teams allow up to 120, but
-never exceed 120. Long locale data lines are an acceptable exception.
+Limit lines to **120 characters**. This is the project's configured RuboCop limit and
+matches Shopify's convention. Long locale data lines are an acceptable exception and are
+excluded from enforcement in `.rubocop.yml`.
 
 ### Spacing
 
@@ -198,12 +211,12 @@ argument lists:
 
 ```ruby
 AgeLocale.new(
-  code: "en",
+  code: 'en',
   plural: ->(n) { n == 1 ? :one : :other },
   units: units,
   half: "\u00BD",
-  delimiter: ", ",
-  just_born: "Newborn",
+  delimiter: ', ',
+  just_born: 'Newborn',
   stages: stages,
 )
 ```
@@ -251,7 +264,7 @@ class Person
   end
 end
 
-# Bad — manual getters
+# Bad -- manual getters
 class Person
   def initialize(first_name, last_name)
     @first_name = first_name
@@ -264,9 +277,10 @@ class Person
 end
 ```
 
-### Struct for Simple Value Objects
+### Struct for Value Objects
 
-Use `Struct.new` with `keyword_init: true` for simple data-holding classes:
+Use `Struct.new` with `keyword_init: true` for data-holding classes. Call `freeze` in the
+constructor for immutability:
 
 ```ruby
 AgeLocale = Struct.new(
@@ -285,23 +299,9 @@ Key points:
 - Structs are mutable by default. Call `freeze` in the constructor for immutability.
 - Prefer `keyword_init: true` when the struct has more than two or three fields.
 
-### Data for Immutable Value Objects (Ruby 3.2+)
-
-`Data.define` creates immutable value classes. Instances are frozen automatically:
-
-```ruby
-Point = Data.define(:x, :y)
-p = Point.new(x: 1, y: 2)
-p.x  # => 1
-# p.x = 3  # => NoMethodError — no setters
-
-# Create modified copies with `with`:
-q = p.with(x: 10)  # => Point(x: 10, y: 2)
-```
-
-`Data` provides `==`, `eql?`, `hash`, `to_h`, `deconstruct`, and `deconstruct_keys` for
-pattern matching. Prefer `Data.define` over `Struct.new` when the object should be
-immutable and you are on Ruby 3.2+.
+When the project's minimum Ruby version reaches 3.2, prefer `Data.define` for immutable
+value objects -- it freezes instances automatically and provides `deconstruct_keys` for
+pattern matching. The project currently targets Ruby 3.0.
 
 ### Comparable
 
@@ -349,19 +349,21 @@ end
 
 ### Class Methods
 
-For a small number of class methods, use `def self.method_name`. For many class methods,
-use `class << self`:
+For a small number of class methods, use `def self.method_name`. This is the project's
+convention:
 
 ```ruby
-# Few class methods
-class SayableAge
+module SayableAge
   def self.format_age(date_of_birth, as_of = nil)
     @default_formatter ||= Formatter.new(Locales::EN)
     @default_formatter.format_age(date_of_birth, as_of)
   end
 end
+```
 
-# Many class methods — group in class << self
+For many class methods, use `class << self`:
+
+```ruby
 module Utilities
   class << self
     def helper_one
@@ -383,23 +385,31 @@ end
 
 ### Modules as Namespaces
 
-Modules serve two purposes: namespacing and mixins. When a module is purely a namespace
-(no instances), use `extend self` or `module_function`:
+Modules serve two purposes: namespacing and mixins. When using a module purely as a
+namespace with a small number of public methods, use `def self.method_name`:
 
 ```ruby
 module SayableAge
-  extend self
-
-  def format_age(date_of_birth, as_of = nil)
+  def self.format_age(date_of_birth, as_of = nil)
     # ...
   end
 end
 ```
 
+Other options for namespace modules:
+
+- **`extend self`** -- Makes all module methods callable as both `MyModule.method` and
+  available via `include MyModule`. Use when the module may be mixed in.
+- **`module_function`** -- Makes methods callable as `MyModule.method` but makes the
+  instance-method versions private. Use when the module should never be mixed in.
+
+These are not interchangeable. Choose based on whether the module will be included.
+
 ### One Class per File
 
 Each file should define one primary class or module. The file name should match the class
-name in `snake_case`.
+name in `snake_case`. Test files are an exception -- multiple test classes per file is the
+standard Minitest pattern.
 
 ---
 
@@ -409,7 +419,8 @@ name in `snake_case`.
 
 Methods should do one thing. If a method exceeds 10--15 lines, consider extracting helper
 methods. Name the extracted method to explain *what* it does, replacing the need for a
-comment.
+comment. The project's `.rubocop.yml` allows up to 30 lines for the formatter algorithm,
+which is a deliberate exception.
 
 ### Implicit Return
 
@@ -421,7 +432,7 @@ def full_name
   "#{first_name} #{last_name}"
 end
 
-# Bad — unnecessary return
+# Bad -- unnecessary return
 def full_name
   return "#{first_name} #{last_name}"
 end
@@ -440,20 +451,28 @@ end
 
 ### Keyword Arguments
 
-Prefer keyword arguments over positional arguments when a method has optional parameters
-or when the caller benefits from named parameters:
+Use keyword arguments when a method has multiple optional parameters or when the meaning of
+an argument is not obvious from the call site:
 
 ```ruby
-# Good — keyword argument with default
+# Good -- keyword for non-obvious optional parameter
 def initialize(locale, compactness: :normal)
   @locale = locale
   @compactness = compactness
 end
 
-# Bad — positional optional
-def initialize(locale, compactness = :normal)
-  @locale = locale
-  @compactness = compactness
+# Good -- keyword for clarity when multiple optionals exist
+def format_stage(date_of_birth, as_of = nil, gender: nil)
+  # ...
+end
+```
+
+Positional optionals are fine when the meaning is clear from context:
+
+```ruby
+# Good -- date pair is obvious from context
+def format_age(date_of_birth, as_of = nil)
+  # ...
 end
 ```
 
@@ -493,14 +512,14 @@ Omit parentheses for DSL-style / declarative methods:
 ```ruby
 attr_reader :name, :code
 private
-require_relative "sayable_age/locale"
+require_relative 'sayable_age/locale'
 include Comparable
 ```
 
 ### Limit Parameters
 
-Keep method signatures to five or fewer parameters. When you need more, consider a
-keyword arguments hash, a configuration object, or breaking the method apart.
+Keep method signatures to five or fewer parameters. When you need more, consider
+keyword arguments, a configuration object, or breaking the method apart.
 
 ---
 
@@ -530,7 +549,7 @@ Use `&:method_name` when a block calls a single method with no arguments:
 names.map(&:upcase)
 values.select(&:positive?)
 
-# Bad — unnecessarily verbose
+# Bad -- unnecessarily verbose
 names.map { |name| name.upcase }
 ```
 
@@ -560,10 +579,11 @@ end
 | Creation | `{ }` or `do...end` | `Proc.new { }` | `->() { }` or `lambda { }` |
 
 Prefer lambdas over procs when you need a callable object, because lambdas check arity
-and their `return` behavior is more intuitive:
+and their `return` behavior is more intuitive. The project uses lambdas for plural rule
+functions in locale definitions:
 
 ```ruby
-# Good — stabby lambda
+# Stabby lambda for plural rules
 pluralize = ->(n) { n == 1 ? :one : :other }
 
 # Calling
@@ -623,13 +643,13 @@ Use `raise`, not `fail`. Pass the exception class and message as separate argume
 # Good
 raise ArgumentError, "date_of_birth must be a string"
 
-# Good — RuntimeError is implied when no class given
+# Good -- RuntimeError is implied when no class given
 raise "something went wrong"
 
-# Bad — explicit RuntimeError
+# Bad -- explicit RuntimeError
 raise RuntimeError, "something went wrong"
 
-# Bad — instantiating the exception
+# Bad -- instantiating the exception
 raise ArgumentError.new("date_of_birth must be a string")
 ```
 
@@ -663,7 +683,7 @@ rescue SpecificError => e
   handle_error(e)
 end
 
-# Bad — unnecessary begin
+# Bad -- unnecessary begin
 def process
   begin
     dangerous_operation
@@ -672,6 +692,9 @@ def process
   end
 end
 ```
+
+An explicit `begin` is acceptable when you need setup code before the retryable block
+(see `retry` below).
 
 ### Custom Exceptions
 
@@ -686,7 +709,8 @@ end
 
 ### `retry`
 
-Use `retry` sparingly and always with a counter to prevent infinite loops:
+Use `retry` sparingly and always with a counter to prevent infinite loops. This is a valid
+case for explicit `begin`, since the counter setup must execute before the retryable block:
 
 ```ruby
 def fetch_with_retry(url, max_attempts: 3)
@@ -722,13 +746,13 @@ end
 ### Do Not Suppress Exceptions Silently
 
 ```ruby
-# Bad — swallows all errors
+# Bad -- swallows all errors
 begin
   dangerous_operation
 rescue StandardError
 end
 
-# Good — at minimum, log it
+# Good -- at minimum, log it
 begin
   dangerous_operation
 rescue StandardError => e
@@ -769,14 +793,14 @@ hash = Hash.new
 Use symbol shorthand for symbol keys. Use hash rockets when keys are not symbols:
 
 ```ruby
-# Good — symbol keys
-{ code: "en", half: "\u00BD" }
+# Good -- symbol keys
+{ code: 'en', half: "\u00BD" }
 
-# Good — non-symbol keys
-{ "day" => day_forms, "week" => week_forms }
+# Good -- non-symbol keys
+{ 'day' => day_forms, 'week' => week_forms }
 
-# Bad — hash rockets with symbol keys
-{ :code => "en", :half => "\u00BD" }
+# Bad -- hash rockets with symbol keys
+{ :code => 'en', :half => "\u00BD" }
 ```
 
 ### Hash Access
@@ -785,10 +809,10 @@ Use `fetch` when a missing key is an error or when you need a default:
 
 ```ruby
 # Raises KeyError if missing
-locale.units.fetch("day")
+locale.units.fetch('day')
 
 # Returns default if missing
-locale.units.fetch("century", "{n} centuries")
+locale.units.fetch('century', '{n} centuries')
 
 # Direct access is fine when nil is acceptable
 optional_value = config[:debug]
@@ -806,29 +830,30 @@ hash.has_key?(:name)
 
 ### Enumerable Methods
 
-Prefer semantic method names:
+Prefer semantic method names. Both aliases in a pair are acceptable; pick one and be
+consistent within the codebase:
 
-| Preferred | Avoid |
-|-----------|-------|
+| Preferred | Alternative |
+|-----------|-------------|
 | `map` | `collect` |
 | `select` / `filter` | `find_all` |
 | `find` | `detect` |
-| `reduce` | `inject` (acceptable but less clear) |
+| `reduce` / `inject` | (both widely used) |
 | `include?` | `member?` |
 | `size` | `length` (both acceptable; be consistent) |
 
 ### Useful Enumerable Methods
 
 ```ruby
-# filter_map — filter + transform in one pass (Ruby 2.7+)
+# filter_map -- filter + transform in one pass (Ruby 2.7+)
 [1, nil, 3, nil, 5].filter_map { |x| x&.to_s }
 # => ["1", "3", "5"]
 
-# tally — count occurrences (Ruby 2.7+)
-["a", "b", "a", "c", "a"].tally
+# tally -- count occurrences (Ruby 2.7+)
+['a', 'b', 'a', 'c', 'a'].tally
 # => {"a"=>3, "b"=>1, "c"=>1}
 
-# each_with_object — accumulate without needing to return the accumulator
+# each_with_object -- accumulate without needing to return the accumulator
 %w[foo bar baz].each_with_object({}) do |str, hash|
   hash[str] = str.length
 end
@@ -838,17 +863,13 @@ end
 users.group_by(&:role)
 # => { admin: [...], member: [...] }
 
-# flat_map — map + flatten(1)
+# flat_map -- map + flatten(1)
 [[1, 2], [3, 4]].flat_map { |a| a.map { |x| x * 2 } }
 # => [2, 4, 6, 8]
 
 # min_by / max_by / sort_by
 users.min_by(&:age)
 users.sort_by { |u| [u.last_name, u.first_name] }
-
-# chunk / chunk_while — group consecutive elements
-[1, 1, 2, 2, 3].chunk { |n| n }.to_a
-# => [[1, [1, 1]], [2, [2, 2]], [3, [3]]]
 ```
 
 ### Lazy Enumerators
@@ -858,8 +879,8 @@ large intermediate arrays:
 
 ```ruby
 # Process a huge file line by line without loading it all
-File.open("huge.log").each_line.lazy
-  .select { |line| line.include?("ERROR") }
+File.foreach('huge.log').lazy
+  .select { |line| line.include?('ERROR') }
   .first(10)
 ```
 
@@ -881,7 +902,7 @@ end
 Pin existing variables with `^`:
 
 ```ruby
-expected_code = "en"
+expected_code = 'en'
 case locale
 in { code: ^expected_code }
   # matches only when code == "en"
@@ -892,7 +913,7 @@ Find patterns search arrays:
 
 ```ruby
 case items
-in [*, { type: "error", message: String => msg }, *]
+in [*, { type: 'error', message: String => msg }, *]
   warn msg
 end
 ```
@@ -900,10 +921,10 @@ end
 ### Do Not Mutate During Iteration
 
 ```ruby
-# Bad — modifying the array while iterating
+# Bad -- modifying the array while iterating
 items.each { |item| items.delete(item) if item.expired? }
 
-# Good — use reject or select
+# Good -- use reject or select
 items.reject!(&:expired?)
 ```
 
@@ -918,7 +939,7 @@ items.reject!(&:expired?)
 "Hello, #{user.name}! You are #{age} years old."
 
 # Bad
-"Hello, " + user.name + "! You are " + age.to_s + " years old."
+'Hello, ' + user.name + '! You are ' + age.to_s + ' years old.'
 ```
 
 No padding inside interpolation braces:
@@ -937,21 +958,25 @@ Always use explicit braces for instance/class variables in interpolation:
 # Good
 "#{@first_name} #{@last_name}"
 
-# Bad — implicit, works but fragile
+# Bad -- implicit, works but fragile
 "#@first_name #@last_name"
 ```
 
 ### Quote Style
 
-Both single and double quotes are acceptable. Pick one and be consistent across the
-project.
+Use single quotes for strings without interpolation or escape sequences. Use double quotes
+when the string contains interpolation or special characters. This matches the project's
+existing code:
 
-- **Single-quote camp**: Use `'plain string'` for strings without interpolation or special
-  characters. Use `"interpolated #{value}"` only when needed.
-- **Double-quote camp** (Shopify convention): Always use `"double quotes"` for all strings,
-  whether or not they contain interpolation.
+```ruby
+# Strings without interpolation
+name = 'SayableAge'
+code = 'en'
 
-The community guide is agnostic. Whatever the project chooses, enforce it with RuboCop.
+# Strings with interpolation or escapes
+greeting = "Hello, #{name}"
+half_marker = "\u00BD"
+```
 
 ### Heredocs
 
@@ -971,13 +996,13 @@ TEXT
 Use symbols for identifiers, hash keys, and enum-like values. Use strings for text content:
 
 ```ruby
-# Symbols — identity, keys, flags
+# Symbols -- identity, keys, flags
 status = :active
 options = { compactness: :short }
 
-# Strings — text content
-greeting = "Hello, world"
-locale_code = "en"
+# Strings -- text content
+greeting = 'Hello, world'
+locale_code = 'en'
 ```
 
 Symbols are immutable and interned (deduplicated in memory). They are ideal for things
@@ -992,9 +1017,9 @@ string, use `String.new` or `+"mutable"`:
 ```ruby
 # frozen_string_literal: true
 
-frozen = "cannot modify this"  # frozen
-mutable = +"can modify this"   # unfrozen (unary +)
-mutable << " safely"
+frozen = 'cannot modify this'  # frozen
+mutable = +'can modify this'   # unfrozen (unary +)
+mutable << ' safely'
 ```
 
 ### String Replacement
@@ -1004,23 +1029,68 @@ character-level transliteration:
 
 ```ruby
 # Single replacement
-url.sub("http://", "https://")
+url.sub('http://', 'https://')
 
-# Character replacement — faster than gsub for single chars
-"lisp-case".tr("-", "_")  # => "lisp_case"
+# Character replacement -- faster than gsub for single chars
+'lisp-case'.tr('-', '_')  # => "lisp_case"
 ```
 
-### `sprintf` / `format`
+### `format` / `sprintf`
 
 Use `format` or `sprintf` for complex string formatting:
 
 ```ruby
-format("%-10s %5d", name, count)
+format('%-10s %5d', name, count)
 ```
 
 ---
 
-## 9. Common Idioms
+## 9. Date Handling
+
+This project's core domain is date arithmetic. All date handling uses the standard library
+`Date` class (zero dependencies).
+
+### Public API Boundary
+
+The public API accepts dates as `YYYY-MM-DD` strings. Convert to `Date` objects at the
+boundary:
+
+```ruby
+def parse_age(date_of_birth, as_of)
+  return nil if date_of_birth.nil? || date_of_birth.empty?
+
+  dob_y, dob_m, dob_d = date_of_birth.split('-').map(&:to_i)
+  dob_date = Date.new(dob_y, dob_m, dob_d)
+  # ...
+end
+```
+
+### Date Construction
+
+Prefer explicit `Date.new(year, month, day)` over string parsing. Use `Date.new(y, m, -1)`
+to get the last day of a month:
+
+```ruby
+last_day = Date.new(ref_y, ref_m, -1).day
+```
+
+### Default Dates
+
+Use `Date.today` for default reference dates. Accept it as a parameter to enable
+deterministic testing:
+
+```ruby
+def format_age(date_of_birth, as_of = nil)
+  # as_of defaults to today when nil
+end
+```
+
+Tests should always provide explicit `(dob, as_of)` pairs -- never rely on the current
+date.
+
+---
+
+## 10. Common Idioms
 
 ### Guard Clauses
 
@@ -1034,7 +1104,7 @@ def format_age(date_of_birth, as_of = nil)
   # main logic (not nested)
 end
 
-# Bad — deep nesting
+# Bad -- deep nesting
 def format_age(date_of_birth, as_of = nil)
   unless date_of_birth.nil? || date_of_birth.empty?
     # main logic (nested)
@@ -1049,12 +1119,12 @@ anything more complex:
 
 ```ruby
 # Good
-status = active? ? "on" : "off"
+status = active? ? 'on' : 'off'
 
-# Bad — ternary for complex logic
+# Bad -- ternary for complex logic
 result = condition ? (a + b * c / d) : (e + f * g / h)
 
-# Bad — nested ternaries
+# Bad -- nested ternaries
 result = a ? (b ? x : y) : z
 ```
 
@@ -1071,14 +1141,14 @@ process unless items.empty?
 # Bad
 return if !valid?
 
-# Bad — unless with else (confusing)
+# Bad -- unless with else (confusing)
 unless success?
   handle_failure
 else
   handle_success
 end
 
-# Bad — unless with compound condition (confusing)
+# Bad -- unless with compound condition (confusing)
 unless a? && b?
   # hard to reason about
 end
@@ -1116,13 +1186,12 @@ config.dig(:database, :primary, :host)
 
 ### `then` (alias `yield_self`)
 
-Use `then` for pipeline-style transformations (Ruby 2.6+):
+Use `then` for pipeline-style transformations when chaining optional operations (Ruby 2.6+):
 
 ```ruby
-url
-  .then { |u| URI.parse(u) }
-  .then { |uri| Net::HTTP.get(uri) }
-  .then { |body| JSON.parse(body) }
+value
+  .then { |v| transform(v) unless v.nil? }
+  .then { |v| format(v) }
 ```
 
 ### `||=` for Memoization
@@ -1134,7 +1203,7 @@ url
 Do not use `||=` for booleans (it will not memoize `false`):
 
 ```ruby
-# Bad — fails when @enabled is false
+# Bad -- fails when @enabled is false
 @enabled ||= compute_enabled
 
 # Good
@@ -1158,7 +1227,6 @@ Freeze mutable constants to prevent accidental modification:
 
 ```ruby
 STAGES = %i[newborn infant toddler child teenager adult].freeze
-DEFAULT_DELIMITER = ", ".freeze  # Not needed with frozen_string_literal: true
 ```
 
 With `# frozen_string_literal: true`, string literals are already frozen. You still need
@@ -1166,15 +1234,25 @@ to freeze arrays, hashes, and other mutable objects assigned to constants.
 
 ### `case` as an Expression
 
-Use `case` (and `if`) as expressions that return values:
+Use `case` (and `if`) as expressions that return values. Two-space indent for `when`
+clauses avoids rightward drift with long variable names:
 
 ```ruby
 stage = case months
-        when 0...2   then :newborn
-        when 2...12  then :infant
-        when 12...36 then :toddler
-        else              :child
-        end
+when 0...2   then :newborn
+when 2...12  then :infant
+when 12...36 then :toddler
+else              :child
+end
+```
+
+Aligning `when` with the `case` argument is also acceptable for short expressions:
+
+```ruby
+ovr = case compactness
+      when :short   then locale.short
+      when :compact then locale.compact
+      end
 ```
 
 ### `next` in Loops
@@ -1198,7 +1276,7 @@ end
 
 ---
 
-## 10. Things to Avoid
+## 11. Things to Avoid
 
 ### `for` Loops
 
@@ -1225,7 +1303,7 @@ Rescuing `Exception` catches `SignalException` (including `Interrupt`), `SystemE
 or a more specific class:
 
 ```ruby
-# Bad — catches Ctrl-C, kill signals, out-of-memory
+# Bad -- catches Ctrl-C, kill signals, out-of-memory
 begin
   work
 rescue Exception => e
@@ -1239,7 +1317,7 @@ rescue StandardError => e
   log(e)
 end
 
-# Also good — bare rescue catches StandardError
+# Also good -- bare rescue catches StandardError
 begin
   work
 rescue => e
@@ -1291,8 +1369,8 @@ global side effects and version conflicts.
 `and` and `or` have lower precedence than `=`, which causes subtle bugs:
 
 ```ruby
-# Surprising — assigns "hello" to x, then evaluates `or`
-x = something or raise "oops"
+# Surprising -- assigns "hello" to x, then evaluates `or`
+x = something or raise 'oops'
 # Equivalent to: (x = something) or (raise "oops")
 
 # Use && and || for boolean logic
@@ -1324,11 +1402,11 @@ end
 An explicit `return` in an `ensure` block silently discards any exception that was raised:
 
 ```ruby
-# Bad — swallows the exception
+# Bad -- swallows the exception
 def process
-  raise "error"
+  raise 'error'
 ensure
-  return "done"  # exception is silently lost
+  return 'done'  # exception is silently lost
 end
 ```
 
@@ -1344,7 +1422,7 @@ Do not define methods inside other methods. Each call redefines the inner method
 # Bad
 def outer
   def inner
-    "surprise"
+    'surprise'
   end
   inner
 end
@@ -1352,85 +1430,59 @@ end
 
 ---
 
-## 11. Tooling
+## 12. Tooling
 
 ### RuboCop
 
-[RuboCop](https://docs.rubocop.org/rubocop/) is the standard Ruby linter and formatter.
-It enforces style rules from the community guide and is highly configurable.
+[RuboCop](https://docs.rubocop.org/rubocop/) is the project's linter and formatter.
+Configuration lives in `.rubocop.yml` at the Ruby implementation root.
 
 Departments (cop categories):
-- **Layout** — Indentation, spacing, alignment, line length.
-- **Lint** — Suspicious code patterns (unused variables, unreachable code).
-- **Naming** — Identifier naming conventions.
-- **Style** — Idiomatic Ruby patterns (guard clauses, ternaries, `unless`).
-- **Metrics** — Method length, cyclomatic complexity, parameter counts.
-- **Security** — Dangerous patterns (eval, open with user input).
+- **Layout** -- Indentation, spacing, alignment, line length.
+- **Lint** -- Suspicious code patterns (unused variables, unreachable code).
+- **Naming** -- Identifier naming conventions.
+- **Style** -- Idiomatic Ruby patterns (guard clauses, ternaries, `unless`).
+- **Metrics** -- Method length, cyclomatic complexity, parameter counts.
+- **Security** -- Dangerous patterns (eval, open with user input).
 
-Configuration lives in `.rubocop.yml`:
+The project's `.rubocop.yml` includes deliberate overrides for:
+- **Line length**: 120 characters, with locale data and test files excluded.
+- **Method length**: 30 lines max, to accommodate the formatter algorithm.
+- **ABC size / complexity**: Elevated thresholds for the formatting algorithm.
+- **Documentation**: Disabled for locale data, internal modules, and tests.
+- **One class per file**: Disabled for test files (standard Minitest pattern).
 
-```yaml
-AllCops:
-  TargetRubyVersion: 3.2
-  NewCops: enable
+### Minitest
 
-Layout/LineLength:
-  Max: 120
-
-Style/FrozenStringLiteralComment:
-  Enabled: true
-  EnforcedStyle: always
-
-Style/StringLiterals:
-  EnforcedStyle: single_quotes
-```
-
-Use Shopify's config as a solid starting point:
-
-```yaml
-# .rubocop.yml
-inherit_gem:
-  rubocop-shopify: rubocop.yml
-```
-
-### Sorbet (Static + Runtime Type Checking)
-
-[Sorbet](https://sorbet.org/) adds gradual type checking to Ruby. It has two components:
-
-- **`srb`** (CLI): Static type checker that analyzes code before execution.
-- **`sorbet-runtime`** (gem): Runtime type enforcement via `sig` annotations.
+[Minitest](https://github.com/minitest/minitest) is the project's test framework. It is
+part of Ruby's standard library, requires no external dependencies, and aligns with the
+project's zero-dependency constraint.
 
 ```ruby
-class Calculator
-  extend T::Sig
+require 'minitest/autorun'
 
-  sig { params(x: Integer, y: Integer).returns(Integer) }
-  def add(x, y)
-    x + y
+class TestFormatter < Minitest::Test
+  def test_returns_nil_for_nil_input
+    assert_nil SayableAge.format_age(nil, '2025-06-15')
+  end
+
+  def test_born_today_newborn
+    assert_equal 'Newborn', SayableAge.format_age('2025-06-15', '2025-06-15')
   end
 end
 ```
 
-Sorbet supports gradual adoption: you can type-check one file at a time.
+Key assertions:
+- `assert_equal expected, actual` -- Value equality.
+- `assert_nil value` -- Value is `nil`.
+- `refute_nil value` -- Value is not `nil`.
+- `assert_match pattern, string` -- Regex or string match.
+- `assert_predicate obj, :method?` -- Predicate method returns truthy.
+- `assert_raises(ExceptionClass) { block }` -- Block raises expected exception.
+- `assert_includes collection, item` -- Collection includes item.
 
-### Steep (RBS-based Type Checking)
-
-[Steep](https://github.com/soutaro/steep) is an alternative type checker that uses RBS
-(Ruby Signature) files rather than inline annotations:
-
-```bash
-steep init       # Generate Steepfile
-steep check      # Run type checking
-```
-
-Type declarations live in `.rbs` files in a `sig/` directory:
-
-```rbs
-# sig/formatter.rbs
-class Formatter
-  def format_age: (String?, ?String?) -> String?
-end
-```
+All tests use explicit `(dob, as_of)` date pairs for determinism. Each test carries a
+comment with its canonical test ID from `age/config/tests.json`.
 
 ### Warnings Mode
 
@@ -1441,69 +1493,20 @@ ruby -w script.rb
 RUBYOPT=-w ruby script.rb
 ```
 
-### Minitest
-
-[Minitest](https://github.com/minitest/minitest) is Ruby's built-in test framework.
-It is lightweight, fast, and requires no external dependencies:
-
-```ruby
-require "minitest/autorun"
-
-class TestFormatter < Minitest::Test
-  def test_returns_nil_for_nil_input
-    assert_nil SayableAge.format_age(nil, "2025-06-15")
-  end
-
-  def test_born_today_newborn
-    assert_equal "Newborn", SayableAge.format_age("2025-06-15", "2025-06-15")
-  end
-end
-```
-
-Key assertions:
-- `assert_equal expected, actual` — Value equality.
-- `assert_nil value` — Value is `nil`.
-- `refute_nil value` — Value is not `nil`.
-- `assert_match pattern, string` — Regex or string match.
-- `assert_predicate obj, :method?` — Predicate method returns truthy.
-- `assert_raises(ExceptionClass) { block }` — Block raises expected exception.
-- `assert_includes collection, item` — Collection includes item.
-
-### RSpec
-
-[RSpec](https://rspec.info/) is the other major test framework, using a BDD-style DSL:
-
-```ruby
-RSpec.describe SayableAge do
-  describe ".format_age" do
-    it "returns nil for nil input" do
-      expect(SayableAge.format_age(nil, "2025-06-15")).to be_nil
-    end
-  end
-end
-```
-
-Choose one framework per project and stick with it. Minitest is preferred for libraries
-that target zero dependencies.
-
 ---
 
-## 12. Sources
+## 13. Sources
 
 ### Primary References
 
 - [The Ruby Style Guide](https://rubystyle.guide) (rubocop/ruby-style-guide) -- The
-  canonical community style guide, maintained by the RuboCop team. The single most
-  authoritative source for Ruby coding conventions.
-
-- [Shopify Ruby Style Guide](https://ruby-style-guide.shopify.dev/) -- Production-tested
-  conventions from one of the largest Ruby shops. Notable differences from the community
-  guide: 120-char line limit, double quotes always, trailing commas in multi-line
-  collections.
+  canonical community style guide, maintained by the RuboCop team.
 
 - [RuboCop Documentation](https://docs.rubocop.org/rubocop/) -- Full reference for all
-  cops (lint rules) organized by department: Layout, Lint, Naming, Style, Metrics,
-  Security.
+  cops organized by department: Layout, Lint, Naming, Style, Metrics, Security.
+
+- [Shopify Ruby Style Guide](https://ruby-style-guide.shopify.dev/) -- Production-tested
+  conventions from one of the largest Ruby shops.
 
 ### Ruby Documentation
 
@@ -1511,33 +1514,21 @@ that target zero dependencies.
   built-in classes and modules.
 
 - [Enumerable](https://docs.ruby-lang.org/en/3.3/Enumerable.html) -- The most important
-  mixin in Ruby. Every Ruby developer should know its methods.
+  mixin in Ruby.
 
 - [Comparable](https://docs.ruby-lang.org/en/3.3/Comparable.html) -- Include this module
   and define `<=>` to get comparison operators for free.
 
-- [Data](https://docs.ruby-lang.org/en/3.3/Data.html) -- Immutable value objects
-  (Ruby 3.2+).
-
 - [Struct](https://docs.ruby-lang.org/en/3.3/Struct.html) -- Lightweight classes for
   structured data.
 
+- [Data](https://docs.ruby-lang.org/en/3.3/Data.html) -- Immutable value objects
+  (Ruby 3.2+).
+
 - [Pattern Matching](https://docs.ruby-lang.org/en/3.3/syntax/pattern_matching_rdoc.html)
   -- `case`/`in` structural pattern matching (Ruby 3.0+).
-
-### Type Checking
-
-- [Sorbet](https://sorbet.org/) -- Gradual type system with inline `sig` annotations and
-  static analysis.
-
-- [Steep](https://github.com/soutaro/steep) -- Type checker using RBS signature files.
-
-- [RBS](https://github.com/ruby/rbs) -- The standard language for describing Ruby program
-  types, included in Ruby since 3.0.
 
 ### Testing
 
 - [Minitest](https://github.com/minitest/minitest) -- Built-in, lightweight test
   framework.
-
-- [RSpec](https://rspec.info/) -- BDD-style test framework with rich matcher DSL.

@@ -1,6 +1,6 @@
 # Groovy Style Guide
 
-A practical style guide for writing idiomatic, maintainable Groovy code. Designed for code auditing.
+A practical style guide for writing idiomatic, maintainable Groovy code. Designed for code auditing. This guide reflects the conventions used in the sayable-age codebase and targets Groovy as bundled with Gradle (currently Groovy 3.x/4.x).
 
 ## Table of Contents
 
@@ -208,20 +208,17 @@ if (! valid) { }
 
 ### Import Ordering
 
-Group imports in this order, separated by blank lines:
+Group imports into two sections, separated by a blank line:
 
-1. `java.*` / `javax.*`
-2. Third-party libraries
-3. `groovy.*` / Groovy-specific
-4. Project-internal packages
+1. Standard library and framework imports (`java.*`, `javax.*`, `groovy.*`, and test framework imports like `org.junit.*`)
+2. Project-internal packages (`sayableage.*`)
 
 Within each group, sort alphabetically. Prefer explicit imports over star imports.
 
 ```groovy
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
-
-import groovy.transform.CompileStatic
+import org.junit.jupiter.api.Test
 
 import sayableage.locales.Locales
 ```
@@ -278,15 +275,22 @@ When there are no other arguments, omit parentheses entirely:
 list.each { println it }
 ```
 
-Prefer explicit parameter names over the implicit `it` when the closure body is more than a single simple expression, or when `it` would be ambiguous:
+Use implicit `it` for simple one-line closures where the meaning is obvious from context. Use explicit parameter names when the closure body spans multiple lines, contains non-trivial logic, or when closures are nested (where `it` would be ambiguous):
 
 ```groovy
-// Fine: simple one-liner
+// Good: simple one-liner, 'it' is clear
 names.collect { it.toUpperCase() }
 
-// Better: explicit name for multi-line or complex logic
+// Good: explicit name for multi-line logic
 people.findAll { person ->
     person.age >= 18 && person.name.startsWith('A')
+}
+
+// Good: explicit names prevent ambiguity in nested closures
+people.collect { person ->
+    person.addresses.findAll { address ->
+        address.city == 'London'
+    }
 }
 ```
 
@@ -433,7 +437,7 @@ void doSomething(def param1, def param2) { }
 
 ### `@CompileStatic`
 
-Apply `@CompileStatic` to library code and performance-critical code. It enables compile-time type checking and generates faster bytecode by bypassing the Groovy Meta-Object Protocol (MOP).
+`@CompileStatic` enables compile-time type checking and generates faster bytecode by bypassing the Groovy Meta-Object Protocol (MOP). It is well-suited for pure computation, utility classes, and code that does not rely on closures as first-class typed callables or dynamic dispatch.
 
 ```groovy
 @CompileStatic
@@ -443,6 +447,10 @@ class AgeCalculator {
     }
 }
 ```
+
+**When to use it:** New utility classes, date/math computation, and any class that does not store `Closure`-typed fields or rely on dynamic dispatch.
+
+**When to skip it:** Classes that use `Closure<T>` fields with `.call()` (such as `AgeLocale` in this project), DSL builders, and code using Groovy metaprogramming. In these cases, `@CompileStatic` may produce compilation errors or require switching to `java.util.function` interfaces.
 
 Use `@CompileDynamic` on specific methods that need dynamic features within an otherwise `@CompileStatic` class:
 
@@ -485,15 +493,25 @@ class Service {
 
 ### Flow Typing
 
-Groovy's type checker performs flow typing -- a variable's inferred type changes as it is reassigned:
+Groovy's type checker performs flow typing -- a variable's inferred type narrows or changes as it is reassigned. This is a mechanism to be aware of, not a pattern to follow. In practice, avoid reassigning variables to unrelated types; use separate variables with descriptive names instead.
 
 ```groovy
+// How flow typing works (for awareness, not a recommended pattern):
 @TypeChecked
 void example() {
     def o = 'foo'
     o = o.toUpperCase()    // o is String here
     o = 9d
-    o = Math.sqrt(o)       // o is double here
+    o = Math.sqrt(o)       // o is double here -- type shifted silently
+}
+
+// Preferred: separate variables with clear types
+@TypeChecked
+void example() {
+    String text = 'foo'
+    String upper = text.toUpperCase()
+    double number = 9d
+    double root = Math.sqrt(number)
 }
 ```
 
@@ -529,7 +547,7 @@ def server = new Server(name: "Obelix", cluster: aCluster, port: 8080)
 
 ### `@Canonical`
 
-A meta-annotation combining `@ToString`, `@EqualsAndHashCode`, and `@TupleConstructor`. Use it for simple data classes.
+A meta-annotation combining `@ToString`, `@EqualsAndHashCode`, and `@TupleConstructor`. Use it for simple data classes with primitive and string fields.
 
 ```groovy
 @Canonical
@@ -543,6 +561,8 @@ def p2 = new Point(x: 1, y: 2)
 assert p1 == p2
 println p1  // Point(1, 2)
 ```
+
+Note: `@Canonical` has known edge cases with inheritance hierarchies. For Groovy 4.0+ on JDK 16+, consider Java-style `record` classes as an alternative for simple immutable value types.
 
 ### `@Immutable`
 
@@ -558,6 +578,8 @@ class Color {
 def c = new Color(name: 'white', red: 255, green: 255, blue: 255)
 // c.name = 'black'  // throws ReadOnlyPropertyException
 ```
+
+**Constraints:** All fields must be of known immutable types (primitives, `String`, other `@Immutable` classes, etc.). Fields of type `Closure`, `Map`, `List`, or custom mutable classes require either `@Immutable(knownImmutableClasses = [...])` or manual handling. For example, `AgeLocale` in this project cannot use `@Immutable` because it holds `Closure`-typed fields. Use `@Immutable` for simple value objects with primitive and string fields; use explicit `final` fields and manual constructors for complex types.
 
 ### `@ToString`
 
@@ -706,7 +728,7 @@ def empty = []
 def mixed = [1, 'two', true, null]
 
 def colors = [red: '#FF0000', green: '#00FF00', blue: '#0000FF']
-def empty = [:]
+def emptyMap = [:]
 ```
 
 Use `as` for specific collection types:
@@ -781,17 +803,27 @@ def map = ['a', 'bb', 'ccc'].collectEntries { [it, it.size()] }
 assert map == [a: 1, bb: 2, ccc: 3]
 ```
 
-### `sort` / `unique`
+### Mutation Hazard: `sort()` and `unique()`
 
-Sort or deduplicate. Both can take closures.
+`sort()` and `unique()` **mutate the original list in place**. This is a common source of bugs, especially for engineers accustomed to other languages where sort returns a new collection.
+
+**Prefer the non-mutating versions by default:**
 
 ```groovy
-def sorted = [3, 1, 2].sort()                          // [1, 2, 3]
-def byLength = ['cat', 'a', 'bb'].sort { it.size() }   // ['a', 'bb', 'cat']
-def unique = [1, 2, 2, 3, 3].unique()                  // [1, 2, 3]
+// Recommended: non-mutating
+def sorted = original.sort(false)                // returns new list, original unchanged
+def byLength = words.sort(false) { it.size() }   // non-mutating with comparator
+def unique = items.toUnique()                     // returns new list, original unchanged
 ```
 
-Note: `sort()` and `unique()` mutate the original list. Use `sort(false)` or `toUnique()` for non-mutating versions.
+The mutating versions are acceptable only when you intentionally want to modify the list in place and no other code holds a reference to it:
+
+```groovy
+// Acceptable: deliberate in-place mutation on a list you own
+def items = [3, 1, 2]
+items.sort()     // items is now [1, 2, 3]
+items.unique()   // removes duplicates in place
+```
 
 ### `sum` / `min` / `max` / `count`
 
@@ -847,27 +879,17 @@ assert list == [1, 2, 3]
 
 ### try/catch
 
-Groovy's `try/catch` works like Java's but with some differences.
-
-When you do not need the specific exception type, you can omit the type entirely. The untyped catch variable will catch all `Exception` subclasses (not `Throwable`):
+Always specify the exception type in catch blocks. This makes the contract explicit, works consistently under both dynamic and `@CompileStatic` compilation modes, and avoids version-dependent behavior.
 
 ```groovy
 try {
     riskyOperation()
-} catch (any) {
-    log.error("Operation failed: ${any.message}")
+} catch (IOException e) {
+    log.error("Operation failed: ${e.message}")
 }
 ```
 
-If you need to catch `Throwable` (including `Error`), specify it explicitly:
-
-```groovy
-try {
-    riskyOperation()
-} catch (Throwable t) {
-    // catches Error, Exception, and all subclasses
-}
-```
+**Awareness:** Groovy allows omitting the exception type in a catch block (`catch (e)`), which catches `Exception` subclasses. You may encounter this in existing code, but prefer explicit types for new code.
 
 ### Multi-catch
 
@@ -907,12 +929,12 @@ Never leave a catch block empty without explanation:
 
 ```groovy
 // Bad
-try { riskyOp() } catch (e) { }
+try { riskyOp() } catch (IOException e) { }
 
 // Acceptable if intentional and documented
 try {
     optionalCleanup()
-} catch (ignored) {
+} catch (IOException ignored) {
     // cleanup is best-effort; failure is non-fatal
 }
 ```
@@ -1038,7 +1060,9 @@ assert text ==~ /\d{4}-\d{2}-\d{2}/
 
 ### `with` and `tap`
 
-`with` executes a closure with `this` set to the receiver and returns the closure's last expression. `tap` does the same but returns the receiver.
+`with` sets the closure's delegate to the receiver with `DELEGATE_FIRST` strategy, so unqualified property and method references resolve against the receiver first. It returns the closure's last expression. `tap` does the same but returns the receiver instead.
+
+Note: `this` inside the closure still refers to the enclosing class instance, not the receiver. It is the *delegate* that changes, which affects how unqualified names are resolved.
 
 ```groovy
 // with: returns the last expression
@@ -1118,25 +1142,27 @@ POGOs get this for free with their default constructor:
 def p = new Person(firstName: 'Ada', lastName: 'Lovelace')
 ```
 
-### Optional Return
+### Return Statements
 
-The last expression in a method is implicitly returned. Omit `return` for short methods where intent is clear. Use explicit `return` for early exits, guard clauses, and multi-branch logic where it improves readability.
+Use explicit `return` in all methods that return a value. This makes intent unambiguous and prevents accidental return value changes during refactoring.
+
+The sole exception is single-expression methods and property-style getters, where implicit return is acceptable:
 
 ```groovy
-// Good: implicit return in short method
+// Good: implicit return in single-expression method
 String greeting(String name) {
     "Hello, ${name}"
 }
 
-// Good: explicit return for guard clauses and clarity
+// Good: explicit return in all other cases
 String formatAge(String dateOfBirth, String asOf) {
     int[] age = parseAge(dateOfBirth, asOf)
-    if (age == null) return null    // early exit: explicit return
+    if (age == null) return null
 
     int months = age[0]
     if (months < 3) return formatWeeks(months)
 
-    return formatMonths(months)     // explicit for consistency in multi-branch
+    return formatMonths(months)
 }
 ```
 
@@ -1253,10 +1279,6 @@ String name = 'Ada'
 void process(String input) { }
 ```
 
-### Missing `@CompileStatic` on Library Code
-
-Library code should use `@CompileStatic` for type safety and performance. Dynamic Groovy is appropriate for scripts, DSLs, and metaprogramming, but production library code benefits from compile-time checking.
-
 ### Over-Reliance on Dynamic Features
 
 Avoid using metaprogramming (`methodMissing`, `propertyMissing`, `ExpandoMetaClass`) in library code unless building a DSL. Dynamic features make code harder to understand, debug, and refactor.
@@ -1331,7 +1353,7 @@ List<String> getNames() {
 
 ### Overusing `it`
 
-The implicit closure parameter `it` obscures meaning in complex closures. Name parameters explicitly.
+The implicit closure parameter `it` obscures meaning in complex or nested closures. See [Section 3: Closures](#closures) for guidance on when `it` is appropriate vs. when to use named parameters.
 
 ```groovy
 // Bad: unclear what 'it' refers to in nested context
@@ -1368,89 +1390,60 @@ Key rule sets for style enforcement:
 | [Unused](https://codenarc.org/codenarc-rules-unused.html) | Unused variables, imports, methods |
 | [Design](https://codenarc.org/codenarc-rules-design.html) | Design issues (too many methods, abstract class without abstract method) |
 
-Notable convention rules to consider enabling:
+Recommended rules to enable:
 
-- **CompileStatic** -- require `@CompileStatic` or `@CompileDynamic` on classes
-- **NoDef** -- eliminate `def` in favor of explicit types
-- **MethodReturnTypeRequired** -- require explicit return types
+- **MethodReturnTypeRequired** -- require explicit return types on methods
 - **FieldTypeRequired** -- require explicit field types
-- **ImplicitClosureParameter** -- flag implicit `it` usage
-- **TrailingComma** -- require trailing commas in multiline list/map literals
+- **UnnecessarySemicolon** -- flag semicolons at end of line
+- **UnnecessaryPublicModifier** -- flag redundant `public` keyword
+
+Rules to evaluate on a per-project basis (may conflict with idiomatic patterns):
+
+- **CompileStatic** -- requires `@CompileStatic` or `@CompileDynamic` on every class; appropriate only if the codebase does not use `Closure`-typed fields
+- **NoDef** -- eliminates all `def` usage; conflicts with the common practice of using `def` for local variables with obvious types
 
 ### Groovy Compiler Flags
 
 Useful compiler configuration options:
 
-```groovy
-// compiler-config.groovy
-withConfig(configuration) {
-    ast(groovy.transform.CompileStatic)   // apply @CompileStatic globally
-}
-```
-
-This makes `@CompileStatic` the default for all classes in the compilation unit. Individual methods can opt out with `@CompileDynamic`.
-
-Other compiler flags:
-
 - `--configscript` -- apply a compiler configuration script
 - `-Werror` -- treat warnings as errors (Groovy 3+, limited support)
 - `groovyc --indy` -- use invokedynamic for better performance (default in Groovy 4+)
 
-### Spock Framework
+### Testing with JUnit 5
 
-[Spock](https://spockframework.org/) is the preferred testing framework for Groovy. It combines specification-style testing with powerful features.
-
-Test structure uses labeled blocks:
+This project uses [JUnit 5](https://junit.org/junit5/) (Jupiter) for testing. Test methods use quoted strings for readable names:
 
 ```groovy
-class FormatterSpec extends Specification {
+class FormatAgeTest {
 
-    def 'formats age in weeks for infants'() {
-        given: 'a formatter with English locale'
+    @Test
+    void 'empty string returns null'() {
+        assertNull(SayableAge.formatAgeDefault('', '2025-06-15'))
+    }
+
+    @Test
+    void 'formats age in weeks for infants'() {
         def formatter = new SayableAge(Locales.EN)
-
-        when: 'formatting a 2-week-old infant'
-        def result = formatter.formatAge('2025-01-01', '2025-01-15')
-
-        then: 'age is expressed in weeks'
-        result == '2 weeks'
+        assertEquals('2 weeks', formatter.formatAge('2025-01-01', '2025-01-15'))
     }
 }
 ```
 
-Data-driven testing with `where` blocks:
+Conventions:
 
-```groovy
-def 'age formatting for various inputs'() {
-    expect:
-    new SayableAge(Locales.EN).formatAge(dob, asOf) == expected
+- Use `@Test` from `org.junit.jupiter.api.Test`
+- Use quoted method names for readable test descriptions
+- Use `assertEquals`, `assertNull`, `assertNotNull`, `assertTrue` from JUnit assertions
+- Annotate test IDs from `age/config/tests.json` as comments above each test
 
-    where:
-    dob          | asOf         || expected
-    '2025-06-15' | '2025-06-15' || 'newborn'
-    '2025-06-14' | '2025-06-15' || '1 day'
-    '2025-06-08' | '2025-06-15' || '1 week'
-}
-```
+### Spock Framework (Alternative)
 
-Spock blocks:
-
-| Block | Purpose |
-|-------|---------|
-| `given:` / `setup:` | Preconditions and test fixtures |
-| `when:` | Stimulus / action under test |
-| `then:` | Assertions (implicit `assert` on every expression) |
-| `expect:` | Combined `when` + `then` for simple cases |
-| `where:` | Data tables for parameterized tests |
-| `cleanup:` | Teardown (always runs) |
-
-### JUnit
-
-JUnit 4 and 5 both work well with Groovy. `GroovyTestCase` extends JUnit 3's `TestCase` with additional helpers (`shouldFail`, `assertScript`, `notYetImplemented`), but JUnit 5 with `@Test` annotations is the modern standard.
+[Spock](https://spockframework.org/) is a popular alternative testing framework for Groovy that offers specification-style tests and built-in data-driven testing via `where` blocks. If the team adopts Spock in the future, its labeled blocks (`given`, `when`, `then`, `expect`, `where`) provide excellent readability. For now, all tests in this project use JUnit 5.
 
 ### Build Tools
 
-- **Gradle** -- the natural choice; its build scripts are Groovy (or Kotlin) DSLs
+- **Gradle** -- the build tool used by this project; its build scripts are Groovy (or Kotlin) DSLs
 - **Maven** -- works via `gmavenplus-plugin` or `groovy-eclipse-compiler`
 
 ---
@@ -1466,6 +1459,7 @@ JUnit 4 and 5 both work well with Groovy. `GroovyTestCase` extends JUnit 3's `Te
 - [Apache Groovy Metaprogramming](https://groovy-lang.org/metaprogramming.html) -- AST transformations (`@Canonical`, `@Immutable`, `@Builder`, etc.)
 - [Apache Groovy Syntax](https://groovy-lang.org/syntax.html) -- string types, literals, collection syntax
 - [Apache Groovy Testing](https://groovy-lang.org/testing.html) -- Spock, JUnit, power asserts, mocking
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/) -- testing framework used by this project
 - [CodeNarc Convention Rules](https://codenarc.org/codenarc-rules-convention.html)
 - [CodeNarc Formatting Rules](https://codenarc.org/codenarc-rules-formatting.html)
 - [CodeNarc Naming Rules](https://codenarc.org/codenarc-rules-naming.html)

@@ -14,7 +14,8 @@ A comprehensive, opinionated style guide for auditing TypeScript implementations
 8. [Immutability](#8-immutability)
 9. [Common Idioms](#9-common-idioms)
 10. [Things to Avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
+11. [Testing](#11-testing)
+12. [Tooling](#12-tooling)
 
 ---
 
@@ -29,11 +30,9 @@ A comprehensive, opinionated style guide for auditing TypeScript implementations
 | Parameter            | `camelCase`      | `dateOfBirth`, `localeCode`      |
 | Boolean variable     | `camelCase`      | `isValid`, `hasExpired`          |
 | Global constant      | `CONSTANT_CASE`  | `MAX_RETRIES`, `DEFAULT_LOCALE`  |
-| Class                | `PascalCase`     | `AgeFormatter`, `HttpClient`     |
+| Class                | `PascalCase`     | `AgeFormatter`, `HTTPClient`     |
 | Interface            | `PascalCase`     | `AgeLocale`, `FormatOptions`     |
 | Type alias           | `PascalCase`     | `PluralCategory`, `DatePair`     |
-| Enum                 | `PascalCase`     | `Direction` (prefer unions)      |
-| Enum member          | `CONSTANT_CASE`  | `Direction.NORTH`                |
 | Generic parameter    | `PascalCase`     | `T`, `TResult`, `TKey`          |
 | File name            | `kebab-case`     | `format-age.ts`, `age-locale.ts` |
 | Test file            | `kebab-case`     | `format-age.test.ts`             |
@@ -52,19 +51,24 @@ interface UserService { }
 type UserRole = "admin" | "viewer";
 ```
 
-**Treat abbreviations and acronyms as single words.** Capitalize only the first letter.
+**Preserve standard acronym casing.** Well-known acronyms (HTTP, URL, JSON, HTML, CSS, DOM, API, SQL, XML, IO) keep their standard casing in `PascalCase` identifiers. In `camelCase` identifiers, lowercase the acronym when it appears at the start.
 
 ```typescript
-// Bad
-let loadHTTPURL: string;
-class XMLParser { }
+// Good: standard acronyms preserved
+class HTTPClient { }
+class URLBuilder { }
+interface HTMLParser { }
 
-// Good
+// Good: lowercased at start of camelCase
+let httpClient: HTTPClient;
+let urlBuilder: URLBuilder;
+
+// Bad: fighting the platform
+class HttpClient { }
 let loadHttpUrl: string;
-class XmlParser { }
-
-// Exception: existing platform names like XMLHttpRequest
 ```
+
+This matches the platform types you interact with daily (`URL`, `HTMLElement`, `XMLHttpRequest`, `JSON`) and avoids a jarring style split between your code and the standard library.
 
 **Boolean variables use verb prefixes** (`is`, `has`, `can`, `should`, `did`, `will`).
 
@@ -101,38 +105,54 @@ function map<T, TResult>(items: T[], fn: (item: T) => TResult): TResult[] { }
 
 ## 2. Code Formatting
 
-### Indentation and Line Length
+### Principle: Delegate to the Formatter
+
+Do not argue about formatting in code review. Configure an automated formatter and let it decide. The rules below describe the formatter configuration, not rules for humans to enforce manually.
+
+### Formatter Configuration
+
+Choose one formatter for the project and configure it consistently. Either Prettier or Biome is appropriate.
+
+**Prettier** (most popular):
+```json
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "arrowParens": "always"
+}
+```
+
+**Biome** (faster alternative):
+```json
+{
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 80
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "all",
+      "semicolons": "always"
+    }
+  }
+}
+```
+
+The specific choices (semicolons yes/no, single vs. double quotes, 80 vs. 100 columns) are less important than consistency. Pick settings, configure the formatter, and stop thinking about it.
+
+### Non-Negotiable Formatting Rules
+
+These are the rules that actually matter and that formatters enforce:
 
 - **Indentation:** 2 spaces (no tabs). This is the dominant convention in the TypeScript ecosystem.
-- **Line length:** 80-100 characters. Configure your formatter. 80 is traditional; 100 is practical for modern displays.
 - **Trailing newline:** Every file ends with a single newline.
-
-### Semicolons
-
-Always use explicit semicolons. Never rely on Automatic Semicolon Insertion (ASI).
-
-```typescript
-// Bad: relies on ASI
-const x = 5
-const y = getValue()
-
-// Good
-const x = 5;
-const y = getValue();
-```
-
-### Quotes
-
-Use single quotes for strings. Use template literals for interpolation or multiline strings. Reserve double quotes for JSX attributes (if applicable).
-
-```typescript
-const greeting = 'hello';
-const message = `Hello, ${name}`;
-```
-
-### Braces
-
-Always use braces for control flow, even for single-statement bodies.
+- **Trailing commas in multiline constructs.** They produce cleaner diffs.
+- **Braces for all control flow.** Always use braces, even for single-statement bodies. This prevents bugs when adding statements later.
 
 ```typescript
 // Bad
@@ -142,24 +162,6 @@ if (isValid) return result;
 if (isValid) {
   return result;
 }
-```
-
-### Trailing Commas
-
-Use trailing commas in multiline constructs (arrays, objects, parameters, arguments). They produce cleaner diffs.
-
-```typescript
-const locales = [
-  'en',
-  'fr',
-  'de', // <-- trailing comma
-];
-
-function format(
-  dateOfBirth: Date,
-  asOf: Date,
-  locale: string, // <-- trailing comma
-): string { }
 ```
 
 ### Import Ordering
@@ -180,39 +182,6 @@ import { formatDate } from '@project/utils';
 
 import { AgeLocale } from './locale';
 import type { PluralCategory } from './types';
-```
-
-### Formatter and Linter Configuration
-
-Use an automated formatter. Do not argue about formatting in code review. Let the tool decide.
-
-**Prettier** (most popular):
-```json
-{
-  "semi": true,
-  "singleQuote": true,
-  "trailingComma": "all",
-  "printWidth": 80,
-  "tabWidth": 2
-}
-```
-
-**Biome** (faster alternative):
-```json
-{
-  "formatter": {
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 80
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "trailingCommas": "all",
-      "semicolons": "always"
-    }
-  }
-}
 ```
 
 ### Sources
@@ -393,7 +362,6 @@ Enable maximum type safety. Every project should start with `strict: true` and a
     // -- Strict type checking --
     "strict": true,                           // Enables all strict sub-flags
     "noUncheckedIndexedAccess": true,          // Index signatures include undefined
-    "exactOptionalPropertyTypes": true,        // Distinguish omitted vs explicitly undefined
     "noImplicitOverride": true,                // Require 'override' keyword on overrides
     "noPropertyAccessFromIndexSignature": true, // Require bracket notation for index sigs
     "noImplicitReturns": true,                 // Every code path must return
@@ -412,7 +380,6 @@ Enable maximum type safety. Every project should start with `strict: true` and a
 
     // -- Consistency --
     "forceConsistentCasingInFileNames": true,  // Prevent case-sensitivity bugs
-    "skipLibCheck": true,                      // Skip .d.ts checking for speed
     "verbatimModuleSyntax": true               // Enforce import type / export type
   }
 }
@@ -444,6 +411,12 @@ const value = map['key'];
 //    ^? number              (without -- dangerous!)
 ```
 
+**`verbatimModuleSyntax`** -- Replaces the older `importsNotUsedAsValues` and `preserveValueImports`. Forces you to use `import type` for type-only imports, which is enforced at the syntax level.
+
+### Advanced Optional Flags
+
+These flags provide additional strictness but have significant compatibility implications. Enable them only in greenfield projects where you control all type definitions.
+
 **`exactOptionalPropertyTypes`** -- Distinguishes between "property missing" and "property is `undefined`".
 
 ```typescript
@@ -457,7 +430,9 @@ const config: Config = { debug: undefined };
 //    Omit the property entirely instead
 ```
 
-**`verbatimModuleSyntax`** -- Replaces the older `importsNotUsedAsValues` and `preserveValueImports`. Forces you to use `import type` for type-only imports, which is enforced at the syntax level.
+This flag breaks a common JavaScript pattern (explicitly setting optional properties to `undefined`) and is incompatible with most third-party type definitions. The TypeScript team deliberately excluded it from `strict: true`. Enable it only if you have full ownership of all types in your project.
+
+**`skipLibCheck`** -- Skips type checking of `.d.ts` files for faster compilation. This is safe for application code consuming well-typed dependencies. However, for library projects that emit `.d.ts` files (with `"declaration": true`), disabling this means your own emitted declarations are never type-checked. Library authors should test without `skipLibCheck` before publishing.
 
 ### Sources
 
@@ -498,27 +473,26 @@ function daysBetween(a: Date, b: Date) {
 
 ### Overloads
 
-Use overloads when the return type depends on the input type. Place the implementation signature last. Prefer union types over overloads when the return type does not depend on the input.
+Use overloads when distinct call signatures represent meaningfully different contracts -- different return types, different parameter shapes, or different documented behaviors. Prefer union parameters when the function handles all input types uniformly.
 
 ```typescript
 // Good: overload because return type depends on input
 function parse(input: string): Date;
 function parse(input: number): Date;
 function parse(input: string | number): Date {
-  if (typeof input === 'string') {
-    return new Date(input);
-  }
   return new Date(input);
 }
 
-// Bad: overload not needed (same return type)
-function format(value: string): string;
-function format(value: number): string;
-function format(value: string | number): string { }
+// Good: overload because parameter shapes differ
+function createElement(tag: string): HTMLElement;
+function createElement(tag: string, props: Props): HTMLElement;
+function createElement(tag: string, props?: Props): HTMLElement { ... }
 
-// Good: use union instead
+// Prefer union when the function handles all inputs uniformly
 function format(value: string | number): string { }
 ```
+
+Place the implementation signature last.
 
 ### Generic Functions
 
@@ -674,22 +648,24 @@ if (result.ok) {
 }
 ```
 
+**Caveats:** The JavaScript/TypeScript ecosystem is built on thrown errors (`JSON.parse`, `fetch`, `fs` operations, and most third-party libraries all throw or reject). Adopting the Result pattern internally requires conversion at every boundary with throwing code. For small projects and utility libraries, thrown errors with documented error types are pragmatically simpler. If adopting Result at scale, consider an established library like `neverthrow` rather than a bespoke implementation.
+
 ### Handle Promises Properly
 
-Never leave a Promise floating. Always `await` it, return it, or explicitly discard it with `void`.
+Never leave a Promise floating. Always `await` it, return it, or handle its rejection.
 
 ```typescript
-// Bad: floating promise (silent failure)
+// Bad: floating promise (silent failure, unhandled rejection)
 fetchData();
 
-// Good
+// Good: awaited
 await fetchData();
 
-// Good: explicit discard
-void fetchData();
+// Good: error handled
+fetchData().catch(handleError);
 ```
 
-The `@typescript-eslint/no-floating-promises` rule enforces this.
+The `@typescript-eslint/no-floating-promises` rule enforces this. If you have a rare fire-and-forget case with a global `unhandledrejection` handler, `void fetchData()` suppresses the lint rule -- but understand that this does not add error handling.
 
 ### Sources
 
@@ -713,18 +689,21 @@ namespace Utils { }
 import { readFile } from 'node:fs/promises';
 ```
 
-### Named Exports Only
+### Prefer Named Exports
 
-Prefer named exports exclusively. Default exports lack a canonical name, making refactoring error-prone and imports inconsistent.
+Prefer named exports for modules that expose multiple symbols. They enforce a canonical name and make refactoring straightforward.
 
 ```typescript
-// Bad
-export default function formatAge() { }
-// Importers can name it anything: import blah from './format-age'
-
-// Good
+// Preferred for multi-export modules
 export function formatAge() { }
-// Importers must use the real name: import { formatAge } from './format-age'
+export function parseAge() { }
+```
+
+Default exports are appropriate for single-export modules (one class, one component, one factory) and when required by framework conventions (React.lazy, Next.js pages, route modules).
+
+```typescript
+// Acceptable: single-purpose module
+export default class AgeFormatter { }
 ```
 
 ### Type-Only Imports and Exports
@@ -743,6 +722,16 @@ export type { AgeLocale };
 ```
 
 With `verbatimModuleSyntax` enabled in tsconfig, this is enforced automatically.
+
+### Import Attributes
+
+When importing JSON modules, use import attributes (TypeScript 5.3+, Node 22+).
+
+```typescript
+import localeData from './locales/en.json' with { type: 'json' };
+```
+
+The older `assert` syntax is deprecated in favor of `with`.
 
 ### Barrel Exports
 
@@ -848,27 +837,25 @@ function getConfig(): Readonly<Config> {
 }
 ```
 
-For deeply nested structures, `Readonly<T>` is shallow. Consider a recursive `DeepReadonly<T>` type or a library like `ts-essentials` for deep immutability.
-
-```typescript
-type DeepReadonly<T> = {
-  readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];
-};
-```
+`Readonly<T>` is shallow -- it does not make nested objects readonly. For deeply nested structures, use a well-tested library type (e.g., `DeepReadonly` from `ts-essentials`) or accept that shallow readonly is sufficient for most cases.
 
 ### `Object.freeze` at Runtime
 
-TypeScript's `readonly` is compile-time only. For true runtime immutability, combine with `Object.freeze`.
+TypeScript's `readonly` is compile-time only. `Object.freeze` provides runtime immutability, but use it judiciously:
+
+- It only throws on assignment in strict mode (sloppy mode silently ignores the write).
+- It is shallow -- nested objects are not frozen.
+- It has a performance cost (transitions the object to a different V8 hidden class).
+
+`Object.freeze` is most useful at module boundaries -- frozen config objects, public API constants -- where you cannot rely on all consumers using TypeScript with `readonly`. For internal code, `as const` + `readonly` is sufficient and has zero runtime cost.
 
 ```typescript
-const DEFAULTS = Object.freeze({
+// Useful at module boundaries
+export const DEFAULTS = Object.freeze({
   locale: 'en',
   maxAge: 120,
 });
-// DEFAULTS.locale = 'fr' -- runtime error in strict mode
 ```
-
-Note: `Object.freeze` is shallow. It does not freeze nested objects.
 
 ### Prefer Immutable Operations
 
@@ -1031,7 +1018,7 @@ type Return<T> = T extends (...args: any[]) => infer R ? R : never;
 
 // Extract string template parts
 type ExtractId<T> = T extends `user_${infer Id}` ? Id : never;
-type A = ExtractId<'user_123'>; // '123'
+type B = ExtractId<'user_123'>; // '123'
 ```
 
 ### Optional Chaining and Nullish Coalescing
@@ -1243,7 +1230,103 @@ function process(data: Record<string, unknown>): void { }
 
 ---
 
-## 11. Tooling
+## 11. Testing
+
+### Test File Organization
+
+Place test files alongside source files using the `.test.ts` suffix.
+
+```
+age/src/typescript/
+  format-age.ts
+  format-age.test.ts
+  locale.ts
+  locale.test.ts
+```
+
+### Test Framework
+
+Use Vitest for TypeScript projects. It provides native TypeScript support, ESM compatibility, and a Jest-compatible API without the configuration overhead.
+
+```bash
+npx vitest run        # Run all tests
+npx vitest watch      # Watch mode
+npx vitest run --reporter=verbose  # Detailed output
+```
+
+### Test Structure
+
+Use `describe` blocks to group related tests. Use `it` or `test` for individual cases. Prefer descriptive names that read as sentences.
+
+```typescript
+import { describe, it, expect } from 'vitest';
+import { formatAge } from './format-age';
+
+describe('formatAge', () => {
+  // T001: annotate with canonical test ID from tests.json
+  it('formats a newborn as just born', () => {
+    const result = formatAge(
+      new Date('2024-01-15'),
+      new Date('2024-01-15'),
+      'en',
+    );
+    expect(result).toBe('just born');
+  });
+
+  // T002
+  it('formats weeks for infants under 4 weeks', () => {
+    const result = formatAge(
+      new Date('2024-01-01'),
+      new Date('2024-01-15'),
+      'en',
+    );
+    expect(result).toBe('2 weeks');
+  });
+});
+```
+
+### Canonical Test IDs
+
+Every test must be annotated with the ID(s) from `age/config/tests.json` that it implements. Place the ID in a comment above the test. This enables cross-language verification that all tests map to their canonical definition.
+
+```typescript
+// T042: Arabic masculine half years
+it('formats half years in Arabic', () => { ... });
+
+// T043, T044: covers multiple test cases
+it('formats compound ages in French', () => { ... });
+```
+
+### Assertion Patterns
+
+Prefer exact equality (`toBe`, `toEqual`) over loose checks. Use `toThrow` for error cases. Avoid `toBeTruthy`/`toBeFalsy` -- they obscure what you are actually testing.
+
+```typescript
+// Good: exact value
+expect(formatAge(dob, asOf, 'en')).toBe('14 months');
+
+// Bad: truthy check hides the actual value
+expect(formatAge(dob, asOf, 'en')).toBeTruthy();
+```
+
+### Test Data
+
+Use explicit `(dateOfBirth, asOf)` date pairs. Never use "today" or `new Date()` in tests -- tests must be deterministic.
+
+```typescript
+// Bad: non-deterministic
+const result = formatAge(new Date('2020-01-01'), new Date());
+
+// Good: explicit dates
+const result = formatAge(
+  new Date('2020-01-01'),
+  new Date('2024-06-15'),
+);
+```
+
+---
+
+## 12. Tooling
 
 ### TypeScript Compiler (`tsc`)
 
@@ -1310,7 +1393,6 @@ export default tseslint.config(
         { selector: 'default', format: ['camelCase'] },
         { selector: 'variable', format: ['camelCase', 'UPPER_CASE'] },
         { selector: 'typeLike', format: ['PascalCase'] },
-        { selector: 'enumMember', format: ['UPPER_CASE'] },
       ],
 
       // Restrict template expressions to safe types
@@ -1399,7 +1481,7 @@ steps:
 - [typescript-eslint: Rules](https://typescript-eslint.io/rules/)
 - [Prettier: Options](https://prettier.io/docs/en/options.html)
 - [Biome: Getting Started](https://biomejs.dev/guides/getting-started/)
-- [Total TypeScript: Essential resources](https://www.totaltypescript.com/)
+- [Vitest: Getting Started](https://vitest.dev/guide/)
 
 ---
 

@@ -23,17 +23,19 @@ A comprehensive style guide for auditing Elixir implementations. Covers idiomati
 
 ### Modules
 
-Use `CamelCase`. Preserve uppercase for acronyms.
+Use `CamelCase`. The community is split on whether acronyms should be fully uppercased (`HTTPClient`) or treated as regular words (`HttpClient`). Pick one convention per project and apply it consistently. The only true anti-pattern is mixing styles within a name.
 
 ```elixir
-# Good
+# Both acceptable — pick one per project
 defmodule MyApp.HTTPClient do
-defmodule MyApp.XMLParser do
+defmodule MyApp.HttpClient do
+
+# Fine — standard library uses full uppercase for short acronyms
 defmodule ExUnit.CaptureIO do
 
-# Bad
-defmodule MyApp.HttpClient do
+# Bad — mixed styles
 defmodule MyApp.Xml_Parser do
+defmodule MyApp.hTTPClient do
 ```
 
 Filenames mirror the module name in `snake_case`. A module `MyApp.HTTPClient` lives in `my_app/http_client.ex`. Nested modules map to directory structures: `Parser.Core.XMLParser` lives at `parser/core/xml_parser.ex`.
@@ -189,12 +191,16 @@ date_of_birth
 |> Date.diff(as_of)
 |> div(30)
 |> format_months(locale)
+```
 
-# Bad — single pipe (just use a function call)
-date_of_birth |> Date.diff(as_of)
+Avoid single pipes when the expression reads clearly as a direct function call:
 
-# Instead write:
+```elixir
+# Prefer direct call for trivial single-step pipes
 Date.diff(as_of, date_of_birth)
+
+# A single pipe is acceptable when it separates a complex computation from its transformation
+calculate_complex_value(a, b, c) |> format_output()
 ```
 
 ### Parentheses
@@ -309,6 +315,22 @@ def handle_result({:error, reason}), do: raise(reason)
 # Good — head | tail
 def first([head | _tail]), do: head
 ```
+
+### Binary Pattern Matching
+
+Use `<<>>` syntax to match on binary/string structure. This is essential for parsing fixed-format strings:
+
+```elixir
+# Match a date string "YYYY-MM-DD"
+def parse_date(<<y::binary-size(4), ?-, m::binary-size(2), ?-, d::binary-size(2), _rest::binary>>) do
+  {String.to_integer(y), String.to_integer(m), String.to_integer(d)}
+end
+
+# Match a UTF-8 codepoint
+def first_char(<<c::utf8, _rest::binary>>), do: c
+```
+
+Size specifiers (`binary-size(n)`, `integer-size(n)`, `utf8`) control how many bytes or bits to consume. Use binary patterns for protocol parsing, date string extraction, and any fixed-format data.
 
 ### case / cond / with
 
@@ -504,6 +526,32 @@ Use meaningful type names and custom `@type` definitions for domain concepts:
 @type age_string :: String.t()
 
 @spec format_age(Date.t(), Date.t(), locale_code()) :: age_string()
+```
+
+Consider `@spec` annotations on private functions when the function has a non-obvious type signature, especially for functions that return complex data structures like tuples with many elements. Dialyzer can infer types for private functions, but explicit specs help reviewers and future maintainers reason about correctness:
+
+```elixir
+@spec resolve_locale(map(), atom()) ::
+        {map(), map(), map(), map(), String.t(), String.t(), String.t()}
+defp resolve_locale(locale, compactness) do
+  ...
+end
+```
+
+### Module Attributes vs. Functions for Constants
+
+Module attributes (`@attr`) are inlined at every call site at compile time. This makes them efficient but means they cannot be overridden or inspected at runtime.
+
+- Use module attributes for internal constants that callers never need to see.
+- Expose constants via zero-arity functions when callers need to access them.
+
+```elixir
+# Internal constant — module attribute is fine
+@max_age_months 6000
+
+# Exposed constant — wrap in a function
+@version "0.5.0"
+def version, do: @version
 ```
 
 ### Behaviours
@@ -810,9 +858,7 @@ date_of_birth
 |> div(7)
 |> format_weeks(locale)
 
-# Bad — single pipe (just call the function)
-value |> String.downcase()
-# Better:
+# Prefer direct call for trivial single-step transformations
 String.downcase(value)
 
 # Bad — bare value not at the start
@@ -992,7 +1038,9 @@ Use `assert` for truthy checks, `refute` for falsy checks, and pattern matching 
 # Value equality
 assert result == "3 weeks"
 
-# Pattern matching (note: pattern on the left)
+# Pattern matching with = (match operator, not equality)
+# Uses = to destructure the result and verify its shape.
+# On failure, shows the actual value in the error message.
 assert {:ok, _value} = some_function()
 
 # Boolean
@@ -1010,13 +1058,13 @@ assert_raise ArgumentError, "as_of must not precede date_of_birth", fn ->
 end
 ```
 
-Put the expression under test on the left and the expected value on the right, unless the assertion is a pattern match (where the pattern must be on the left):
+Put the expression under test on the left and the expected value on the right. Use `=` (match) when destructuring, `==` (equality) when comparing concrete values:
 
 ```elixir
-# Good — expression on the left
+# Good — expression on the left, == for concrete equality
 assert format_age(dob, as_of, :en) == "3 weeks"
 
-# Good — pattern match (pattern must be on left)
+# Good — pattern match with = (pattern must be on left)
 assert {:ok, result} = process(params)
 
 # Bad — expected on the left
@@ -1173,7 +1221,7 @@ Uppercase sigils disable interpolation and escape sequences:
 
 ```elixir
 ~s(hello #{name})    # => "hello world"  (interpolated)
-~S(hello #{name})    # => "hello \#{name}"  (literal)
+~S(hello #{name})    # => "hello #{name}"  (literal, no interpolation)
 ```
 
 ### String Interpolation
@@ -1320,16 +1368,21 @@ unless valid?(date), do: :invalid
 
 But do not use `unless` with `else` or with complex conditions. In those cases, `if` is clearer.
 
-### do_name Private Functions
+### do_ Private Function Names
 
-Do not name private functions `do_<public_name>`. Use a more descriptive name that communicates the function's distinct purpose.
+The `do_` prefix is a common Elixir idiom for private functions that implement the recursive or accumulator-based guts of a public function. It is acceptable in that specific pattern. Avoid `do_` as a catch-all prefix for "private version of public function" when the private function does something conceptually different --- use a descriptive name instead.
 
 ```elixir
-# Bad
-def format(data), do: do_format(data, [])
-defp do_format(data, acc), do: ...
+# Acceptable — standard accumulator delegation pattern
+def collect(list), do: do_collect(list, [])
+defp do_collect([], acc), do: Enum.reverse(acc)
+defp do_collect([h | t], acc), do: do_collect(t, [transform(h) | acc])
 
-# Good
+# Bad — do_ hides a conceptually different operation
+def format(data), do: do_format(data)
+defp do_format(data), do: ... # just validates, doesn't format
+
+# Good — descriptive name when the private function has its own purpose
 def format(data), do: build_output(data, [])
 defp build_output(data, acc), do: ...
 ```
@@ -1348,7 +1401,7 @@ Map.get(config, :locale, :en)
 
 ### Large Modules
 
-If a module exceeds ~300 lines, consider extracting logically distinct sections into separate modules. A module should have a single, clear responsibility.
+Evaluate module size by cohesion, not line count. If a module handles multiple unrelated responsibilities, extract them regardless of length. A long module that addresses a single concern (like a comprehensive test file) is preferable to multiple small modules that fragment a logical unit. Use ~300 lines as a prompt to evaluate whether the module has grown beyond a single responsibility, not as a hard limit.
 
 ---
 
@@ -1406,7 +1459,7 @@ mix credo lib/my_app/formatter.ex
 mix credo gen.config
 ```
 
-Configuration in `.credo.exs`:
+Configuration in `.credo.exs`. For projects that enforce zero warnings in CI, consider using `strict: true` to catch low-priority issues:
 
 ```elixir
 %{
@@ -1424,7 +1477,7 @@ Configuration in `.credo.exs`:
           {Credo.Check.Refactor.Nesting, [max_nesting: 3]}
         ]
       },
-      strict: false
+      strict: true
     }
   ]
 }

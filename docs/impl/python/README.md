@@ -6,16 +6,18 @@ A comprehensive reference for writing idiomatic, maintainable Python. This guide
 
 1. [Naming Conventions](#1-naming-conventions)
 2. [Code Formatting](#2-code-formatting)
-3. [Type System](#3-type-system)
-4. [Module Design](#4-module-design)
-5. [Class Design](#5-class-design)
-6. [Error Handling](#6-error-handling)
-7. [Collections and Comprehensions](#7-collections-and-comprehensions)
-8. [String Handling](#8-string-handling)
-9. [Common Idioms](#9-common-idioms)
-10. [Things to Avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
-12. [References](#12-references)
+3. [Docstrings](#3-docstrings)
+4. [Type System](#4-type-system)
+5. [Module Design](#5-module-design)
+6. [Class Design](#6-class-design)
+7. [Error Handling](#7-error-handling)
+8. [Collections and Comprehensions](#8-collections-and-comprehensions)
+9. [String Handling](#9-string-handling)
+10. [Common Idioms](#10-common-idioms)
+11. [Things to Avoid](#11-things-to-avoid)
+12. [Testing](#12-testing)
+13. [Tooling](#13-tooling)
+14. [References](#14-references)
 
 ---
 
@@ -40,14 +42,21 @@ C extension modules that provide a Python wrapper use a leading underscore: `_so
 
 ### Classes
 
-Use `CapWords` (PascalCase). Acronyms stay uppercase within the name.
+Use `CapWords` (PascalCase).
 
 ```python
 class AgeFormatter:       # good
-class HTTPServerError:    # good: acronym stays uppercase
 class age_formatter:      # wrong: not CapWords
-class HttpServerError:    # acceptable but less conventional
 ```
+
+For classes containing acronyms, two conventions are in common use:
+
+```python
+class HTTPServerError:    # standard library convention: full-caps acronym
+class HttpServerError:    # Google style guide convention: capitalized first letter only
+```
+
+The standard library uses full-caps acronyms (`HTTPError`, `HTMLParser`). The Google Python Style Guide capitalizes only the first letter for readability at word boundaries. Either is acceptable --- pick one and be consistent within the project.
 
 ### Exceptions
 
@@ -87,7 +96,7 @@ DEFAULT_LOCALE = "en"
 DAYS_PER_YEAR = 365.2425
 ```
 
-### Private and Protected
+### Private and Internal
 
 Python has no access modifiers. Convention communicates intent:
 
@@ -149,12 +158,15 @@ Never use `l` (lowercase L), `O` (uppercase O), or `I` (uppercase I) as single-c
 
 ## 2. Code Formatting
 
+### Line Length
+
+This project uses a line length of **88 characters** for all code, comments, and docstrings, matching the Black/Ruff formatter default. This is a deliberate compromise between PEP 8's 79-character recommendation (designed for standard-library code and 80-column terminals) and the practical needs of modern codebases.
+
+PEP 8 itself notes: "Some teams strongly prefer a longer line length. For code maintained exclusively or primarily by a team that can reach agreement on this issue, it is okay to increase the line length limit up to 99 characters."
+
 ### PEP 8 Fundamentals
 
-[PEP 8](https://peps.python.org/pep-0008/) is the authoritative style guide. The essentials:
-
 - **Indentation:** 4 spaces. Never tabs. Python 3 forbids mixing tabs and spaces.
-- **Line length:** 79 characters for code, 72 for docstrings and comments. Teams may agree on up to 99 characters for code, but docstrings and comments stay at 72.
 - **Encoding:** UTF-8 (the default). No encoding declaration needed.
 
 ### Imports
@@ -218,14 +230,15 @@ spam (1)
 dct ['key']
 ```
 
-Surround binary operators with a single space on each side. Exception: in function signatures, no spaces around `=` for default values (unless the parameter has a type annotation).
+Surround binary operators with a single space on each side. In function signatures, no spaces around `=` for default values unless the parameter has a type annotation:
 
 ```python
-# Function defaults
-def format_age(dob: date, as_of: date = date.today()) -> str:  # space around = with annotation
+# With type annotation: space around =
+def format_age(dob: date, as_of: date | None = None) -> str:
     ...
 
-def format_age(dob, as_of=None):  # no space around = without annotation
+# Without type annotation: no space around =
+def format_age(dob, as_of=None):
     ...
 
 # Expressions: space around operators
@@ -308,20 +321,98 @@ message = 'He said "hello"'            # avoids escaping
 docstring = """Format an age value."""  # always double quotes for docstrings
 ```
 
-### Formatter: Black
+### Formatter: Ruff / Black
 
-[Black](https://black.readthedocs.io/) is the standard opinionated formatter. It enforces consistent style with minimal configuration. Key Black defaults:
+[Ruff](https://docs.astral.sh/ruff/) (or [Black](https://black.readthedocs.io/)) is the standard opinionated formatter. Key defaults:
 
-- Line length: 88 characters (a deliberate compromise between 79 and 99)
+- Line length: 88 characters
 - Double quotes for strings
 - Trailing commas in multi-line structures
 - Consistent parenthesization of long expressions
 
-Black is non-negotiable in many projects. If your project uses it, do not fight it.
+If the project uses an autoformatter, do not fight it. Let it own all formatting decisions.
 
 ---
 
-## 3. Type System
+## 3. Docstrings
+
+[PEP 257](https://peps.python.org/pep-0257/) defines docstring conventions. This project uses **Google-style** docstrings.
+
+### When to Write Docstrings
+
+Write docstrings for:
+- All public modules, classes, functions, and methods.
+- Non-obvious internal functions (prefix with `_` but still document if the logic is complex).
+
+Omit docstrings for:
+- Trivial `__init__` methods where the class docstring suffices.
+- Private helper methods where the function name is self-explanatory.
+
+### One-Line Docstrings
+
+Use for functions whose behavior is immediately obvious:
+
+```python
+def is_leap_year(year: int) -> bool:
+    """Return True if year is a leap year."""
+```
+
+The closing `"""` is on the same line. The docstring is a phrase ending in a period. It describes what the function does, not how.
+
+### Multi-Line Docstrings (Google Style)
+
+```python
+def format_age(date_of_birth: date, as_of: date, locale: str = "en") -> str:
+    """Format a person's age in natural language.
+
+    Computes the age from date_of_birth to as_of and returns a
+    human-readable string appropriate for the given locale.
+
+    Args:
+        date_of_birth: The person's date of birth.
+        as_of: The date to compute age relative to.
+        locale: BCP 47 locale code. Defaults to "en".
+
+    Returns:
+        A human-readable age string (e.g., "6 weeks", "14 months", "3 years").
+
+    Raises:
+        InvalidDateError: If date_of_birth is after as_of.
+        UnknownLocaleError: If the locale code is not recognized.
+    """
+```
+
+### Class Docstrings
+
+Document the class purpose in the class docstring. Document `__init__` parameters there as well, unless `__init__` has complex logic that warrants its own docstring.
+
+```python
+class AgeLocale:
+    """Locale configuration for age formatting.
+
+    Attributes:
+        code: BCP 47 locale code (e.g., "en", "fr").
+        just_born: String for age zero (e.g., "just born").
+        units: Mapping of unit names to their singular/plural forms.
+    """
+```
+
+### Module Docstrings
+
+Every module should start with a docstring describing its purpose:
+
+```python
+"""Format ages the way humans speak.
+
+This module provides the core formatting logic for the sayable-age
+library. It supports 110 locales and produces output matching natural
+human speech patterns.
+"""
+```
+
+---
+
+## 4. Type System
 
 Python's type system is gradual: type hints are optional and do not affect runtime behavior. They exist for static analysis, documentation, and IDE support. Authoritative reference: the [`typing` module documentation](https://docs.python.org/3/library/typing.html).
 
@@ -541,18 +632,26 @@ class AgeLocale:
     instance_count: ClassVar[int] = 0
 ```
 
+### `from __future__ import annotations`
+
+PEP 563 introduced `from __future__ import annotations` to defer annotation evaluation, avoiding forward reference issues and reducing import-time overhead. However, it has important caveats:
+
+- It converts all annotations to strings, breaking code that inspects annotations at runtime. This affects `@dataclass` field introspection, Pydantic models, FastAPI, and `typing.get_type_hints()` in edge cases.
+- PEP 649 (accepted for Python 3.14) provides deferred evaluation without stringification, superseding PEP 563 for new code.
+
+**Guidance:** For Python 3.14+, you do not need the future import --- PEP 649 is the default. For Python 3.12-3.13, use the future import only if you need forward references and your code does not inspect annotations at runtime.
+
 ### Practical Guidance
 
 - Annotate all public API functions and methods.
-- Use `from __future__ import annotations` to enable postponed evaluation (string-ified annotations), which avoids forward reference issues and slightly reduces import-time overhead.
 - Prefer `X | None` over `Optional[X]`.
 - Use abstract types (`Sequence`, `Mapping`, `Iterable`) for parameters; concrete types (`list`, `dict`) for return values.
-- Do not annotate `self`, `cls`, or `__init__` return types.
+- Do not annotate `self` or `cls` --- their types are inferred. Always annotate `__init__` with `-> None`.
 - Never use `Any` to silence a type checker. If you must, add a comment explaining why.
 
 ---
 
-## 4. Module Design
+## 5. Module Design
 
 ### `__init__.py`
 
@@ -573,7 +672,7 @@ Use `__init__.py` to define the public API surface. Import only the symbols user
 
 ### `__all__`
 
-Define `__all__` to explicitly declare the public API of a module. This controls what `from module import *` exports (which you should never use anyway) and serves as documentation of the intended public interface.
+`__all__` serves two purposes: it controls what `from module import *` exports, and more importantly, it documents the intended public API of a module at a glance. For published libraries, define `__all__` in every module that has public symbols. For internal modules, the `_` prefix convention is sufficient --- `__all__` is optional.
 
 ```python
 __all__ = ["format_age", "AgeLocale", "PluralCategory"]
@@ -619,7 +718,7 @@ from datetime import date
 
 ---
 
-## 5. Class Design
+## 6. Class Design
 
 ### Dataclasses
 
@@ -707,7 +806,16 @@ class AgeLocale:
         )
 ```
 
-Avoid `@staticmethod`. If a method does not use `self` or `cls`, it should probably be a module-level function. Static methods break caller expectations around named arguments and provide no real benefit over free functions.
+Use `@staticmethod` when a function logically belongs to a class's namespace but needs no instance or class state, and especially when subclasses may want to override the behavior:
+
+```python
+class Validator:
+    @staticmethod
+    def is_valid_locale_code(code: str) -> bool:
+        return len(code) >= 2 and code.isascii()
+```
+
+If a function has no logical association with the class, make it a module-level function instead. Do not use `@classmethod` as a substitute for `@staticmethod` just to avoid the latter --- an unused `cls` parameter misleads readers.
 
 ### Abstract Base Classes
 
@@ -739,7 +847,7 @@ Prefer `Protocol` over ABC when you do not need to share implementation. Protoco
 
 ---
 
-## 6. Error Handling
+## 7. Error Handling
 
 ### Catch Specific Exceptions
 
@@ -830,32 +938,44 @@ def temporary_locale(code: str):
         set_locale(previous)
 ```
 
-### EAFP vs. LBYL
+### EAFP and LBYL
 
-Python favors **EAFP** (Easier to Ask Forgiveness than Permission) over **LBYL** (Look Before You Leap). Use `try`/`except` rather than pre-checking conditions, especially for operations that could race or where the check is as expensive as the operation.
+Python supports two approaches to handling conditions that might fail:
+
+- **EAFP** (Easier to Ask Forgiveness than Permission): use `try`/`except`.
+- **LBYL** (Look Before You Leap): check conditions before acting.
+
+Both are idiomatic. Choose based on the situation:
+
+**Use LBYL** when a clean API exists for the check:
 
 ```python
-# EAFP (Pythonic)
-try:
-    value = mapping[key]
-except KeyError:
-    value = default
-
-# Even more Pythonic: use dict.get()
+# dict.get() is cleaner than try/except KeyError
 value = mapping.get(key, default)
 
-# LBYL (less Pythonic, but acceptable for clarity)
+# 'in' operator is clearer than catching KeyError
 if key in mapping:
     value = mapping[key]
-else:
-    value = default
 ```
 
-LBYL is acceptable when the `try`/`except` would be hard to read or when you need to distinguish between different failure modes.
+**Use EAFP** when the check would be as expensive as the operation, when the failure case is rare, or when you need to avoid TOCTOU (time-of-check-to-time-of-use) races:
 
-### Minimize `try` Block Scope
+```python
+# File access: avoid TOCTOU race between exists() and open()
+try:
+    with open(path) as f:
+        data = f.read()
+except FileNotFoundError:
+    data = default_data
 
-Keep `try` blocks as small as possible. The larger the `try` block, the more likely you will catch an exception from a line you did not intend to guard.
+# Permission check: just try it
+try:
+    os.remove(path)
+except PermissionError:
+    log.warning("Cannot remove %s", path)
+```
+
+**Caution with EAFP:** keep `try` blocks narrow. Broad `try` blocks can catch exceptions from unrelated code:
 
 ```python
 # Good: narrow try block
@@ -888,7 +1008,7 @@ if not isinstance(date_of_birth, date):
 
 ---
 
-## 7. Collections and Comprehensions
+## 8. Collections and Comprehensions
 
 ### List Comprehensions
 
@@ -969,7 +1089,7 @@ first_ten = list(islice(iterable, 10))
 
 ---
 
-## 8. String Handling
+## 9. String Handling
 
 ### f-strings (3.6+)
 
@@ -1038,19 +1158,29 @@ message = (
 
 ### Logging
 
-Pass format strings and arguments separately to logging functions. This avoids formatting the string when the log level is disabled and allows log aggregation tools to group by pattern.
+Two conventions exist for log message formatting, each with valid trade-offs:
+
+**%-style (preferred for libraries and structured logging):**
 
 ```python
 import logging
 
 logger = logging.getLogger(__name__)
 
-# Good: deferred formatting
+# Deferred formatting: string is only formatted if the log level is enabled.
+# Allows log aggregation tools (Sentry, Datadog) to group by message template.
 logger.info("Processing locale %s with %d units", code, len(units))
+```
 
-# Bad: eager formatting with f-string
+**f-strings (acceptable for application code):**
+
+```python
+# Eagerly formatted, but more readable for complex expressions.
+# The performance cost of f-string formatting is negligible in most code.
 logger.info(f"Processing locale {code} with {len(units)} units")
 ```
+
+Use %-style in libraries and code that feeds structured log aggregation. Use f-strings in application code where readability is the priority and structured grouping is not needed.
 
 ### `pathlib` for File Paths
 
@@ -1072,26 +1202,45 @@ locale_file = os.path.join(os.path.dirname(__file__), "config", "locales", f"{co
 
 ---
 
-## 9. Common Idioms
+## 10. Common Idioms
 
 ### Truthiness
 
-Python has well-defined truthiness rules. Use them directly --- do not compare to `True`, `False`, or check lengths.
+Python has well-defined truthiness rules. Use them for sequences and booleans:
 
 ```python
 # Good
 if items:            # non-empty sequence
 if not items:        # empty sequence
-if name:             # non-empty string
-if count:            # non-zero number
+if name:             # non-empty string (when "" means "absent")
+if flag:             # boolean
 
 # Bad
 if len(items) > 0:
 if items != []:
-if name != "":
-if count != 0:
 if flag == True:
-if flag is True:     # only correct when you literally need identity check with True
+```
+
+**Caution with numeric and string truthiness:** When `0` or `""` are valid values distinct from "absent" or `None`, use explicit checks:
+
+```python
+# Bug: treats 0 the same as None/absent
+def process(count=None):
+    if count:          # wrong: skips when count is 0
+        use(count)
+
+# Correct: distinguish 0 from None
+def process(count=None):
+    if count is not None:
+        use(count)
+
+# Bug: treats "" the same as None
+if name:               # wrong if "" is a valid, distinct value
+    ...
+
+# Correct:
+if name is not None:
+    ...
 ```
 
 ### `None` Comparison
@@ -1213,12 +1362,12 @@ match point:
         print(f"Point at ({x}, {y})")
 ```
 
-### Type Checking with `isinstance`
+### Runtime Type Checking
 
-Use `isinstance` for type checks, never direct type comparison.
+Minimize runtime type checking in favor of structural typing, protocols, and polymorphism. When runtime type checks are necessary, use `isinstance`, never direct type comparison:
 
 ```python
-# Good
+# Good: isinstance when you need a runtime check
 if isinstance(value, str):
     ...
 
@@ -1226,12 +1375,32 @@ if isinstance(value, str):
 if isinstance(value, (int, float)):
     ...
 
-# Bad
+# Bad: direct type comparison
 if type(value) is str:
     ...
 if type(value) == str:
     ...
 ```
+
+For functions that dispatch on argument type, prefer `functools.singledispatch` or `match`/`case` over `isinstance` chains:
+
+```python
+from functools import singledispatch
+
+@singledispatch
+def process(value):
+    raise TypeError(f"Unsupported type: {type(value)}")
+
+@process.register
+def _(value: str):
+    return handle_string(value)
+
+@process.register
+def _(value: int):
+    return handle_int(value)
+```
+
+For simple multi-type inputs (e.g., accepting `str | Path`), a single `isinstance` check is fine and idiomatic.
 
 ### Ternary Expression
 
@@ -1278,7 +1447,7 @@ Lambdas are fine as inline arguments to `sorted()`, `map()`, `filter()`, and sim
 
 ---
 
-## 10. Things to Avoid
+## 11. Things to Avoid
 
 ### Mutable Default Arguments
 
@@ -1299,6 +1468,20 @@ def append_to(element, target=None):
         target = []
     target.append(element)
     return target
+```
+
+The same principle applies to temporal defaults. `date.today()` as a default argument is evaluated once at function definition time, not at each call:
+
+```python
+# WRONG: date.today() is evaluated once when the module loads
+def format_age(dob: date, as_of: date = date.today()) -> str:
+    ...
+
+# CORRECT: use None sentinel
+def format_age(dob: date, as_of: date | None = None) -> str:
+    if as_of is None:
+        as_of = date.today()
+    ...
 ```
 
 ### Bare `except`
@@ -1335,59 +1518,38 @@ from sayableage.locales import en, fr
 
 ### Global Mutable State
 
-Avoid module-level mutable variables. They create hidden coupling between components and make testing difficult.
+Avoid unstructured module-level mutable variables. They create hidden coupling between components and make testing difficult.
+
+For caching and memoization, use `functools.cache` or `functools.lru_cache` instead of hand-rolled module-level dicts:
 
 ```python
-# Wrong: global mutable state
-_cache = {}
+# Good: standard library caching
+from functools import cache
 
-def get_locale(code):
-    if code not in _cache:
-        _cache[code] = load_locale(code)
-    return _cache[code]
+@cache
+def load_locale(code: str) -> AgeLocale:
+    return _parse_locale_file(code)
 
-# Better: use a class or pass the cache explicitly
+# Acceptable: module-level registry with well-defined access pattern
 class LocaleRegistry:
-    def __init__(self):
+    def __init__(self) -> None:
         self._cache: dict[str, AgeLocale] = {}
 
     def get(self, code: str) -> AgeLocale:
         if code not in self._cache:
             self._cache[code] = load_locale(code)
         return self._cache[code]
+
+# Avoid: unstructured global mutable state
+_cache = {}
+
+def get_locale(code):
+    if code not in _cache:
+        _cache[code] = load_locale(code)
+    return _cache[code]
 ```
 
 Module-level **constants** (immutable values with `UPPER_CASE` names) are fine and encouraged.
-
-### Overusing `isinstance` Checks
-
-Excessive type checking at runtime often signals a design problem. Use polymorphism, protocols, or pattern matching instead.
-
-```python
-# Smell: manual dispatch
-def process(value):
-    if isinstance(value, str):
-        return handle_string(value)
-    elif isinstance(value, int):
-        return handle_int(value)
-    elif isinstance(value, list):
-        return handle_list(value)
-
-# Better: use functools.singledispatch or match/case
-from functools import singledispatch
-
-@singledispatch
-def process(value):
-    raise TypeError(f"Unsupported type: {type(value)}")
-
-@process.register
-def _(value: str):
-    return handle_string(value)
-
-@process.register
-def _(value: int):
-    return handle_int(value)
-```
 
 ### Metaclasses, `__del__`, and Reflection Abuse
 
@@ -1435,7 +1597,102 @@ result = some_call()  # type: ignore[return-value]  # returns str at runtime des
 
 ---
 
-## 11. Tooling
+## 12. Testing
+
+### Framework
+
+[pytest](https://docs.pytest.org/) is the standard testing framework. Prefer it over `unittest`.
+
+### Naming Conventions
+
+- Test files: `test_<module>.py` (e.g., `test_format_age.py`).
+- Test functions: `test_<behavior>` --- describe what is being tested, not how.
+- Test classes (optional): `TestFormatAge`, `TestLocaleLoading`.
+
+```python
+# Good: describes the behavior
+def test_newborn_returns_just_born():
+    ...
+
+def test_negative_age_raises_invalid_date_error():
+    ...
+
+# Bad: describes the implementation
+def test_format_age_function():
+    ...
+```
+
+### Basic Tests
+
+```python
+import pytest
+from datetime import date
+from sayableage import format_age
+
+def test_newborn():
+    """T001: just born."""
+    dob = date(2024, 1, 1)
+    as_of = date(2024, 1, 1)
+    assert format_age(dob, as_of) == "just born"
+
+def test_invalid_date_raises():
+    """T099: future date of birth."""
+    with pytest.raises(InvalidDateError):
+        format_age(date(2024, 6, 1), date(2024, 1, 1))
+```
+
+### Parametrize
+
+Use `@pytest.mark.parametrize` for testing the same behavior with different inputs. This is especially useful for spec-driven tests:
+
+```python
+@pytest.mark.parametrize("dob,as_of,expected", [
+    (date(2024, 1, 1), date(2024, 2, 1), "1 month"),      # T010
+    (date(2024, 1, 1), date(2024, 3, 1), "2 months"),     # T011
+    (date(2024, 1, 1), date(2024, 7, 1), "6 months"),     # T015
+])
+def test_months(dob, as_of, expected):
+    assert format_age(dob, as_of) == expected
+```
+
+### Fixtures
+
+Use fixtures for shared setup. Prefer the narrowest scope that works:
+
+```python
+@pytest.fixture
+def en_locale():
+    return AgeLocale.from_code("en")
+
+@pytest.fixture(scope="module")
+def locale_registry():
+    """Expensive setup shared across all tests in the module."""
+    return LocaleRegistry.load_all()
+
+def test_english_formatting(en_locale):
+    result = format_with_locale(date(2024, 1, 1), date(2024, 2, 1), en_locale)
+    assert result == "1 month"
+```
+
+Place shared fixtures in `conftest.py`. pytest automatically discovers fixtures from `conftest.py` files at each directory level.
+
+### Test Organization
+
+```
+tests/
+    conftest.py          # shared fixtures
+    test_format_age.py   # core formatting tests
+    test_locales.py      # locale loading and validation
+    test_plural_rules.py # plural rule tests
+```
+
+### What Not to Mock
+
+Do not mock the code under test. Mock external dependencies (network, filesystem, time) when necessary. For pure functions like age formatting, prefer real inputs and outputs over mocks.
+
+---
+
+## 13. Tooling
 
 ### Ruff
 
@@ -1449,19 +1706,26 @@ line-length = 88
 
 [tool.ruff.lint]
 select = [
-    "E",    # pycodestyle errors
-    "W",    # pycodestyle warnings
-    "F",    # pyflakes
-    "I",    # isort
-    "UP",   # pyupgrade
-    "B",    # flake8-bugbear
-    "SIM",  # flake8-simplify
-    "RUF",  # ruff-specific rules
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes
+    "I",     # isort
+    "UP",    # pyupgrade
+    "B",     # flake8-bugbear
+    "SIM",   # flake8-simplify
+    "RUF",   # ruff-specific rules
+    "N",     # pep8-naming
+    "C4",    # flake8-comprehensions
+    "PTH",   # flake8-use-pathlib
+    "PERF",  # perflint
+    "T20",   # flake8-print (catches stray print() in library code)
 ]
 
 [tool.ruff.format]
 quote-style = "double"
 ```
+
+This is a starting point. See [Ruff's rule documentation](https://docs.astral.sh/ruff/rules/) for additional rule sets (`PL` for pylint rules, `ANN` for annotation enforcement, `D` for docstring checks, etc.).
 
 Ruff can both lint and format. Use `ruff check` for linting and `ruff format` for formatting.
 
@@ -1500,33 +1764,6 @@ typeCheckingMode = "strict"
 
 [isort](https://pycqa.github.io/isort/) sorts imports. Ruff includes isort functionality via the `I` rule set, so a standalone isort installation is unnecessary if you use Ruff.
 
-### pytest
-
-[pytest](https://docs.pytest.org/) is the standard testing framework. Prefer it over `unittest`.
-
-```python
-# test_format_age.py
-import pytest
-from datetime import date
-from sayableage import format_age
-
-def test_newborn():
-    dob = date(2024, 1, 1)
-    as_of = date(2024, 1, 1)
-    assert format_age(dob, as_of) == "just born"
-
-def test_invalid_date_raises():
-    with pytest.raises(InvalidDateError):
-        format_age(date(2024, 6, 1), date(2024, 1, 1))
-
-@pytest.mark.parametrize("dob,as_of,expected", [
-    (date(2024, 1, 1), date(2024, 2, 1), "1 month"),
-    (date(2024, 1, 1), date(2024, 3, 1), "2 months"),
-])
-def test_months(dob, as_of, expected):
-    assert format_age(dob, as_of) == expected
-```
-
 ### Recommended Toolchain
 
 | Purpose | Tool |
@@ -1541,7 +1778,7 @@ def test_months(dob, as_of, expected):
 
 ---
 
-## 12. References
+## 14. References
 
 ### PEPs
 
@@ -1554,6 +1791,7 @@ def test_months(dob, as_of, expected):
 - [PEP 604 -- Allow writing union types as X | Y](https://peps.python.org/pep-0604/) -- Union syntax (3.10+).
 - [PEP 612 -- Parameter Specification Variables](https://peps.python.org/pep-0612/) -- ParamSpec for decorators.
 - [PEP 613 -- Explicit Type Aliases](https://peps.python.org/pep-0613/) -- TypeAlias annotation.
+- [PEP 649 -- Deferred Evaluation of Annotations](https://peps.python.org/pep-0649/) -- Replaces PEP 563 in Python 3.14+.
 - [PEP 673 -- Self Type](https://peps.python.org/pep-0673/) -- Self for return types.
 - [PEP 695 -- Type Parameter Syntax](https://peps.python.org/pep-0695/) -- `type` statement and generic syntax (3.12+).
 

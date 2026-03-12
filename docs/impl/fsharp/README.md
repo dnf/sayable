@@ -1,10 +1,10 @@
 # F# Style Guide
 
-A comprehensive guide to idiomatic F# coding style and best practices, intended for code auditing F# implementations.
+A guide to idiomatic F# coding style and best practices, intended for code auditing F# implementations.
 
 ## Sources
 
-This guide synthesizes recommendations from the following authoritative references:
+This guide synthesizes recommendations from the following references:
 
 - [Microsoft F# Style Guide](https://learn.microsoft.com/en-us/dotnet/fsharp/style-guide/) -- the official style guide
 - [Microsoft F# Formatting Guidelines](https://learn.microsoft.com/en-us/dotnet/fsharp/style-guide/formatting) -- detailed formatting rules
@@ -24,11 +24,12 @@ This guide synthesizes recommendations from the following authoritative referenc
 4. [Module Design](#4-module-design)
 5. [Functional Patterns](#5-functional-patterns)
 6. [Pattern Matching](#6-pattern-matching)
-7. [Error Handling](#7-error-handling)
-8. [Collections](#8-collections)
-9. [Common Idioms](#9-common-idioms)
-10. [Things to Avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
+7. [Recursion](#7-recursion)
+8. [Error Handling](#8-error-handling)
+9. [Collections](#9-collections)
+10. [Common Idioms](#10-common-idioms)
+11. [Things to Avoid](#11-things-to-avoid)
+12. [Tooling](#12-tooling)
 
 ---
 
@@ -154,22 +155,22 @@ let result = input
 
 ### Record Formatting
 
-Three accepted multiline styles exist: **Cramped** (default), **Aligned**, and **Stroustrup**. Pick one and stay consistent.
+Fantomas's current default multiline style is **Aligned**. The two other accepted styles are **Cramped** and **Stroustrup**. Pick one project-wide and stay consistent. Configure it in `.editorconfig` via `fsharp_multiline_bracket_style`.
 
 ```fsharp
-// Cramped (historical default)
-let address =
-    { Street = "123 Main St"
-      City = "Springfield"
-      Zip = "62704" }
-
-// Aligned
+// Aligned (Fantomas default)
 let address =
     {
         Street = "123 Main St"
         City = "Springfield"
         Zip = "62704"
     }
+
+// Cramped (historical default)
+let address =
+    { Street = "123 Main St"
+      City = "Springfield"
+      Zip = "62704" }
 
 // Stroustrup
 let address = {
@@ -309,25 +310,33 @@ let f x = x + 1
 let f x = x + 1 // plus one
 ```
 
-Use `///` XML doc comments for public APIs:
+Use `///` doc comments for public APIs:
 
 ```fsharp
 /// Formats a human-readable age string from a date of birth.
-let formatAge (dateOfBirth: DateTime) (asOf: DateTime) (locale: AgeLocale) =
+let formatAge (dateOfBirth: DateTime) (asOf: DateTime) (locale: AgeLocale) : string =
     // ...
 ```
 
+For F#-to-F# libraries, a concise `///` summary is sufficient when parameters are well-named and type-annotated. Reserve full XML `<param>` and `<returns>` tags for libraries consumed from C# or that generate external API reference documentation.
+
 ### `open` Statement Ordering
 
-Sort `open` statements **topologically** (by dependency layer), not alphabetically. Separate layers with blank lines:
+Group `open` statements into two sections:
+
+1. `System.*` and external framework namespaces.
+2. Project-internal namespaces.
+
+Separate the groups with a blank line. Within each group, alphabetical ordering keeps things predictable and avoids subjective debates:
 
 ```fsharp
 namespace SayableAge
 
 open System
+open System.Collections.Generic
 
-open SayableAge.Types
 open SayableAge.Locales
+open SayableAge.Types
 ```
 
 ---
@@ -364,15 +373,31 @@ type Color =
     | Blue
 ```
 
-Use single-case unions for domain types that wrap primitives, rather than type abbreviations:
+### Single-Case Unions for Type Safety
+
+Single-case unions create distinct types that prevent accidental misuse. Use them when confusing two values of the same underlying type would be a bug:
 
 ```fsharp
-// Good -- a distinct type; the compiler prevents mixing with plain strings
-type EmailAddress = EmailAddress of string
+// Good -- the compiler prevents mixing CustomerId with OrderId
+type CustomerId = CustomerId of int
+type OrderId = OrderId of int
 
-// Bad -- just an alias; offers no type safety
-type EmailAddress = string
+let processOrder (customerId: CustomerId) (orderId: OrderId) = ...
 ```
+
+### Type Abbreviations
+
+Type abbreviations are aliases, not new types. They provide readability and documentation without enforcement:
+
+```fsharp
+// Good -- shortens a complex signature
+type Computation = DeviceDescriptor -> Variable -> Function
+
+// Good -- documents intent, acceptable when wrapping overhead is not justified
+type BufferSize = int
+```
+
+Type abbreviations do not create type safety -- `BufferSize` and `int` are interchangeable. When that matters, use a single-case DU instead. When it does not, abbreviations are a lightweight and practical choice.
 
 ### Records
 
@@ -422,20 +447,6 @@ let validateDates (dob: DateTime) (asOf: DateTime) : Result<unit, ValidationErro
     else Ok ()
 ```
 
-### Type Abbreviations
-
-Type abbreviations are aliases, not new types. Use them for shortening complex signatures, not for domain modeling:
-
-```fsharp
-// Good -- shortens a complex signature
-type Computation = DeviceDescriptor -> Variable -> Function
-
-// Bad -- does not create a real abstraction
-type BufferSize = int
-```
-
-For domain modeling, prefer single-case discriminated unions (see above).
-
 ### Units of Measure
 
 F# supports compile-time units of measure for numeric types:
@@ -453,7 +464,7 @@ Units are erased at runtime and not visible to other .NET languages.
 
 ### Struct Annotations
 
-For small, frequently allocated types (16 bytes or less), consider `[<Struct>]` for performance:
+For small, frequently allocated types, `[<Struct>]` can improve performance by avoiding heap allocation:
 
 ```fsharp
 [<Struct>]
@@ -463,7 +474,12 @@ type Point = { X: float; Y: float }
 type Name = Name of string
 ```
 
-Always measure before and after. Structs are not always faster due to copy overhead.
+Important caveats:
+
+- Struct types have value semantics -- assignment copies the data.
+- Structs captured by closures (e.g., inside a lambda passed to `List.map`) are boxed onto the heap, eliminating the benefit.
+- Struct records and DUs cannot be recursive.
+- **Always benchmark with realistic workloads.** There is no universal size threshold that determines when structs help -- it depends on allocation patterns, closure capture, and whether the type is passed by value or reference.
 
 ---
 
@@ -638,14 +654,19 @@ let numbers = seq {
 }
 ```
 
-For list and array comprehensions, prefer `->` over `do ... yield` when a value is always generated:
+Since F# 6, `yield` is implicit in computation expressions. Use the implicit style for list and array comprehensions:
 
 ```fsharp
-// Good
-let squares = [ for x in 1..10 -> x * x ]
+// Modern F# -- implicit yield (preferred)
+let squares = [ for x in 1..10 do x * x ]
 
-// Less preferred
-let squares = [ for x in 1..10 do yield x * x ]
+let evens = [
+    for x in 1..20 do
+        if x % 2 = 0 then x
+]
+
+// Arrow syntax -- concise alternative for simple projections
+let squares = [ for x in 1..10 -> x * x ]
 ```
 
 ---
@@ -711,21 +732,30 @@ match number with
 
 ### The `function` Keyword
 
-The `function` keyword combines a function definition with a match expression on its last argument:
+The `function` keyword combines a function definition with a match expression on its last argument. Use it when a function's body is a single match on its argument and the argument name would be meaningless:
 
 ```fsharp
-let rec length = function
-    | [] -> 0
-    | _ :: tail -> 1 + length tail
-```
+// Good -- the argument name would add nothing
+let rec depth = function
+    | Leaf -> 0
+    | Node(_, l, r) -> 1 + max (depth l) (depth r)
 
-Prefer explicit `match` in most cases for clarity. `function` is useful in pipeline lambda arguments:
-
-```fsharp
+// Also good -- function in a pipeline lambda
 items
 |> List.map (function
     | Some x -> x
     | None -> defaultValue)
+```
+
+Prefer `match` when the argument has a meaningful name, when you reference the argument outside the match, or when the function does work before matching:
+
+```fsharp
+// Good -- meaningful argument name, used in the error message
+let validateAge age =
+    match age with
+    | a when a < 0 -> invalidArg (nameof age) $"Age cannot be negative: {age}"
+    | a when a > 150 -> invalidArg (nameof age) $"Age exceeds maximum: {age}"
+    | a -> a
 ```
 
 ### Exhaustive Matching
@@ -750,7 +780,79 @@ match category with
 
 ---
 
-## 7. Error Handling
+## 7. Recursion
+
+### Prefer Higher-Order Functions
+
+When a standard library function fits, use it instead of writing explicit recursion:
+
+```fsharp
+// Good -- use the standard library
+let total = items |> List.sum
+let flattened = nested |> List.collect id
+
+// Unnecessary -- hand-rolling what List.fold does
+let rec sum acc = function
+    | [] -> acc
+    | x :: xs -> sum (acc + x) xs
+```
+
+### Tail Recursion
+
+When explicit recursion is necessary (e.g., for custom traversals or parsers), ensure it is tail-recursive for unbounded inputs. A function is tail-recursive when the recursive call is the last operation -- no work remains after it returns.
+
+```fsharp
+// Not tail-recursive -- the addition happens after the recursive call
+let rec length = function
+    | [] -> 0
+    | _ :: tail -> 1 + length tail  // length returns, THEN we add 1
+
+// Tail-recursive -- use an accumulator
+let length list =
+    let rec loop acc = function
+        | [] -> acc
+        | _ :: tail -> loop (acc + 1) tail  // loop is the last call
+    loop 0 list
+```
+
+Non-tail-recursive functions will overflow the stack on large inputs. This is one of the most important things to check during F# code review.
+
+### The `[<TailCall>]` Attribute
+
+F# 8 introduced `[<TailCall>]` to get compiler warnings when a recursive call is not in tail position:
+
+```fsharp
+let length list =
+    [<TailCall>]
+    let rec loop acc = function
+        | [] -> acc
+        | _ :: tail -> loop (acc + 1) tail
+    loop 0 list
+```
+
+Use this attribute on any recursive function that processes unbounded data. The compiler will warn if the recursion is not actually tail-recursive.
+
+### Continuation-Passing Style
+
+For tree-shaped recursion where an accumulator does not work, continuation-passing style (CPS) converts the recursion to tail-recursive form:
+
+```fsharp
+let rec depthCps tree cont =
+    match tree with
+    | Leaf -> cont 0
+    | Node(_, l, r) ->
+        depthCps l (fun dl ->
+            depthCps r (fun dr ->
+                cont (1 + max dl dr)))
+
+let depth tree = depthCps tree id
+```
+
+CPS trades stack depth for heap-allocated closures. Use it only when stack overflow is a real concern (deeply nested structures) and you cannot restructure the algorithm.
+
+---
+
+## 8. Error Handling
 
 ### Choosing Between Option, Result, and Exceptions
 
@@ -787,22 +889,12 @@ let validateAge (dob: DateTime) (asOf: DateTime) =
     else Ok (asOf - dob).Days
 ```
 
-### Railway-Oriented Programming
+### Composing Results
 
-Chain `Result`-returning functions by using `Result.bind` and `Result.map`:
+Chain `Result`-returning functions using `Result.bind` and `Result.map` from FSharp.Core:
 
 ```fsharp
-let bind f result =
-    match result with
-    | Ok value -> f value
-    | Error e -> Error e
-
-let map f result =
-    match result with
-    | Ok value -> Ok (f value)
-    | Error e -> Error e
-
-// Compose a pipeline of operations that can fail
+// All three functions are in FSharp.Core -- do not redefine them
 let processRequest input =
     input
     |> validate
@@ -810,11 +902,11 @@ let processRequest input =
     |> Result.map serialize
 ```
 
-This keeps the "happy path" clean and automatically short-circuits on the first error.
+This keeps the "happy path" clean and automatically short-circuits on the first error. For more complex pipelines, a `result` computation expression (available via community libraries like FsToolkit.ErrorHandling) can improve readability.
 
 ### Exceptions
 
-When exceptions are appropriate, prefer the specific F# exception-raising functions:
+Use the specific F# exception-raising functions at public API boundaries:
 
 | Function | Exception Raised | Use Case |
 |---|---|---|
@@ -823,23 +915,37 @@ When exceptions are appropriate, prefer the specific F# exception-raising functi
 | `invalidOp "message"` | `InvalidOperationException` | Invalid state |
 | `raise (SomeException(...))` | Any specific exception | General-purpose |
 
-Avoid `failwith` and `failwithf` -- they raise the base `System.Exception`, which is too generic.
+For internal invariant violations -- unreachable code, defensive wildcard match arms, and logic errors -- `failwith` is appropriate and idiomatic:
 
 ```fsharp
-// Good
+// Public API boundary -- use specific exceptions
 let processValue value =
     if value < 0 then invalidArg (nameof value) "Value must be non-negative"
     else value * 2
 
-// Bad -- raises base Exception
-let processValue value =
-    if value < 0 then failwith "Value must be non-negative"
-    else value * 2
+// Internal invariant -- failwith signals a programming error
+let private resolveCategory category =
+    match category with
+    | Zero -> "zero"
+    | One -> "one"
+    | Two -> "two"
+    | Few -> "few"
+    | Many -> "many"
+    | Other -> "other"
+
+let private handleStage stage =
+    match stage with
+    | "newborn" -> locale.Stages.Newborn
+    | "infant" -> locale.Stages.Infant
+    // ... other cases ...
+    | unknown -> failwith $"Unknown stage: {unknown}"  // Should never happen
 ```
+
+The distinction matters: `ArgumentException` tells callers they passed bad data. A bare `Exception` from `failwith` tells developers they have a bug. Use the right signal for the right audience.
 
 ### Do Not Over-Wrap Exceptions in Result
 
-The Microsoft guidelines explicitly warn against replacing all exception handling with `Result`. Exceptions carry stack traces and diagnostic information. Wrapping every exception in `Result` leads to deeply nested types like `Result<Result<MyType, string>, string list>` and "stringly typed" error matching:
+The Microsoft guidelines explicitly warn against replacing all exception handling with `Result`. Exceptions carry stack traces and diagnostic information. Wrapping every exception in `Result` leads to deeply nested types and "stringly typed" error matching:
 
 ```fsharp
 // Problematic -- callers can only string-match on errors
@@ -859,7 +965,7 @@ let tryReadFileIfPresent path =
 
 ---
 
-## 8. Collections
+## 9. Collections
 
 ### Choosing the Right Collection
 
@@ -867,11 +973,22 @@ let tryReadFileIfPresent path =
 |---|---|---|
 | `list` | Immutable singly-linked list; O(1) prepend, O(n) index | Default for functional pipelines; small to medium sequences; pattern matching on head/tail |
 | `array` | Mutable, fixed-size, contiguous memory; O(1) index | Performance-critical indexed access; interop with .NET APIs; large datasets |
-| `seq` (alias for `IEnumerable<T>`) | Lazy evaluation | Large or infinite sequences; when you want deferred computation; API boundaries |
+| `seq` (alias for `IEnumerable<T>`) | Lazy evaluation; re-evaluable | Deferred computation; large or infinite sequences; API input parameters accepting any collection |
 | `Map<'K, 'V>` | Immutable balanced tree; O(log n) lookup | Associative data with immutable semantics |
 | `Set<'T>` | Immutable balanced tree; O(log n) membership test | Unique element collections |
 | `ResizeArray<'T>` (alias for `List<T>`) | Mutable, growable array | When you need .NET `List<T>` semantics |
 | `dict` / `Dictionary<'K, 'V>` | Mutable hash table; O(1) average lookup | Performance-critical lookup; interop |
+
+### Choosing Collection Types in APIs
+
+For F#-centric libraries:
+
+- **Return `list` by default.** It is the idiomatic F# collection, supports pattern matching, has structural equality, and works naturally with the `List.*` module functions.
+- **Return `array` when performance or .NET interop matters.** Arrays have O(1) indexing and contiguous memory layout.
+- **Accept `seq<'T>` for input parameters** when you want to accept any collection type. This gives callers flexibility.
+- **Return `seq<'T>` only when laziness is intentional** and documented. Returning a `seq` that the caller evaluates twice will compute twice -- a common source of subtle bugs.
+
+For libraries consumed from C#, `seq<'T>` (i.e., `IEnumerable<'T>`) is the standard boundary type for both inputs and outputs.
 
 ### List Operations
 
@@ -933,21 +1050,9 @@ Follow the naming patterns established by `FSharp.Core`:
 | `Module.verbBy` | `List.sortBy`, `List.groupBy`, `List.maxBy` |
 | `Module.ofX` / `Module.toX` | `List.ofArray`, `Array.toList`, `Set.ofList` |
 
-### Prefer `seq<'T>` for API Boundaries
-
-When defining public APIs that accept or return collections, prefer `seq<'T>` (i.e., `IEnumerable<'T>`) for maximum flexibility:
-
-```fsharp
-// Good -- callers can pass any collection
-let processItems (items: seq<string>) = ...
-
-// Less flexible -- requires a specific collection type
-let processItems (items: string list) = ...
-```
-
 ---
 
-## 9. Common Idioms
+## 10. Common Idioms
 
 ### `let` Bindings
 
@@ -1027,6 +1132,8 @@ let message = $"Age: {years} years and {months} months"
 let message = sprintf "Age: %d years and %d months" years months
 ```
 
+Note: `sprintf` with format specifiers provides compile-time type checking that interpolated strings do not. In performance-critical code or when type safety of format arguments matters, `sprintf` remains valuable.
+
 ### The `ignore` Function
 
 Use `ignore` to discard a return value explicitly:
@@ -1039,24 +1146,9 @@ sideEffectFunction () |> ignore
 sideEffectFunction ()  // If this returns a value, the compiler warns
 ```
 
-### XML Documentation
-
-Provide XML documentation on public types and functions:
-
-```fsharp
-/// Formats a human-readable age string.
-///
-/// <param name="dateOfBirth">The date of birth.</param>
-/// <param name="asOf">The reference date to calculate age from.</param>
-/// <param name="locale">The locale controlling output language.</param>
-/// <returns>A human-readable age string like "6 weeks" or "3 1/2 years".</returns>
-let formatAge (dateOfBirth: DateTime) (asOf: DateTime) (locale: AgeLocale) : string =
-    ...
-```
-
 ---
 
-## 10. Things to Avoid
+## 11. Things to Avoid
 
 ### Mutable State
 
@@ -1072,17 +1164,15 @@ for x in items do
 let total = items |> List.sum
 ```
 
-When mutation is genuinely needed for performance, encapsulate it behind an immutable interface:
+When mutation is genuinely needed for performance, encapsulate it behind an immutable interface. Good reasons to reach for `mutable` include building lookup tables, interop with .NET APIs that require mutable buffers, and hot-loop optimizations verified by benchmarking:
 
 ```fsharp
-// Acceptable -- mutation is an implementation detail, not exposed
-let contains value (array: 'T[]) =
-    let mutable found = false
-    let mutable i = 0
-    while not found && i < array.Length do
-        found <- value = array[i]
-        i <- i + 1
-    found
+// Acceptable -- building a lookup table that the .NET API requires as Dictionary
+let buildLookup (entries: (string * int) list) =
+    let dict = System.Collections.Generic.Dictionary<string, int>()
+    for (key, value) in entries do
+        dict[key] <- value
+    dict :> System.Collections.Generic.IReadOnlyDictionary<_, _>
 ```
 
 Prefer `let mutable` over `ref` cells when mutation is required:
@@ -1214,7 +1304,7 @@ type Config(path) =
 
 ---
 
-## 11. Tooling
+## 12. Tooling
 
 ### Fantomas (Code Formatter)
 
@@ -1270,7 +1360,7 @@ Key Fantomas settings:
 | `fsharp_space_before_lowercase_invocation` | `true` | Space before `(` in lowercase function calls |
 | `fsharp_space_before_uppercase_invocation` | `false` | Space before `(` in uppercase/method calls |
 | `fsharp_max_record_width` | 40 | Records wider than this go multiline |
-| `fsharp_bar_before_discriminated_union_declaration` | `false` | Whether to put `\|` before every DU case |
+| `fsharp_bar_before_discriminated_union_declaration` | `false` | Whether to put `|` before every DU case |
 
 ### FSharpLint (Static Analyzer)
 

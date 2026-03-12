@@ -33,8 +33,10 @@ This guide synthesizes conventions from the following authoritative references:
 | Type parameters | Single uppercase letter or UpperCamelCase | `A`, `B`, `Key`, `Value` |
 | Higher-kinded type params | Single uppercase letter with `[_]` | `F[_]`, `M[_]` |
 | Enums | UpperCamelCase | `PluralCategory`, `Compactness` |
-| Enum cases | UPPER_CASE or UpperCamelCase | `ZERO`, `ONE`, `Small`, `Medium` |
+| Enum cases | UpperCamelCase | `Zero`, `One`, `Small`, `Medium` |
 | Annotations | lowerCamelCase | `@volatile`, `@tailrec` |
+
+**Project-specific exception:** This project uses `UPPER_CASE` for `PluralCategory` and `Compactness` enum cases (`ZERO`, `ONE`, `NORMAL`, `SHORT`) because these are cross-language domain constants that must be recognizable across all 29 implementations. In general Scala code, UpperCamelCase is idiomatic for enum cases -- it aligns with the standard library (`Option.Some`, `Option.None`, `List.Nil`) and with how the pattern matcher treats uppercase identifiers as stable references.
 
 ### Naming Principles
 
@@ -124,7 +126,7 @@ indent.main = 2
 indent.callSite = 2
 indent.defnSite = 4
 
-align.preset = more
+align.preset = some
 align.stripMargin = true
 assumeStandardLibraryStripMargin = true
 
@@ -140,8 +142,10 @@ Key settings:
 | `runner.dialect` | Scala version dialect | `scala3`, `scala213` |
 | `maxColumn` | Maximum line width | 80--100 |
 | `indent.main` | Primary indentation | 2 |
-| `align.preset` | Vertical alignment level | `more` or `some` |
+| `align.preset` | Vertical alignment level | `some` or `none` |
 | `newlines.source` | How to handle existing line breaks | `keep` |
+
+**A note on `align.preset`:** The `more` preset vertically aligns `=`, `=>`, `<-`, and other tokens across adjacent lines. This improves readability in isolation but creates noisy git diffs -- adding or removing one line can cause the formatter to realign every adjacent line, making diffs misleading and `git blame` less useful. Prefer `some` (aligns only `=>` in case expressions and `<-` in for-comprehensions) or `none` for projects that prioritize reviewable diffs.
 
 ### Line Wrapping
 
@@ -174,8 +178,9 @@ val locale = AgeLocale(
 ### Import Ordering
 
 - Sort imports alphabetically.
-- Use braces for multiple imports from one package; use wildcards (`*`) for six or more names.
+- Use braces for multiple imports from one package; use wildcards (`*`) for six or more names from the same package.
 - Qualify mutable collection types explicitly to distinguish from immutable.
+- In test files, wildcard imports for assertion libraries (e.g., `import org.scalatest.Assertions.*`) are acceptable.
 
 ```scala
 import java.time.LocalDate
@@ -236,12 +241,12 @@ def simple: Unit = ()
 
 /** Returns the formatted age string.
  *
- *  Formats the age based on the locale's plural rules
- *  and stage thresholds.
+ * Formats the age based on the locale's plural rules
+ * and stage thresholds.
  *
- *  @param dateOfBirth  ISO 8601 date string (YYYY-MM-DD)
- *  @param asOf         reference date for age calculation
- *  @return formatted age string, or None if input is invalid
+ * @param dateOfBirth ISO 8601 date string (YYYY-MM-DD)
+ * @param asOf        reference date for age calculation
+ * @return formatted age string, or None if input is invalid
  */
 def formatAge(dateOfBirth: String, asOf: String): Option[String]
 ```
@@ -252,6 +257,7 @@ Guidelines:
 - Use active voice: "Returns the result" not "The result is returned".
 - Document all `@param` and `@tparam` parameters.
 - Link to other types with `[[scala.Option]]` syntax.
+- Use single-space after `*` consistently. This matches what scalafmt produces.
 
 ---
 
@@ -291,10 +297,10 @@ object StageLabel:
 ```scala
 // Scala 3 enums for simple sum types
 enum PluralCategory:
-  case ZERO, ONE, TWO, FEW, MANY, OTHER
+  case Zero, One, Two, Few, Many, Other
 
 enum Compactness:
-  case NORMAL, SHORT, COMPACT
+  case Normal, Short, Compact
 ```
 
 Enums with parameters:
@@ -369,7 +375,7 @@ private val localeMap: Map[String, AgeLocale] =
 
 ### Structural Types
 
-Avoid structural types in production code. They use runtime reflection and are significantly slower than nominal types.
+In Scala 2, structural types use runtime reflection and should be avoided in production code. In Scala 3, structural types can be implemented without reflection using `Selectable`, which compiles to direct field access. Even so, use them sparingly -- they bypass the compiler's nominal type checking and make code harder to trace.
 
 ---
 
@@ -419,15 +425,17 @@ object StringUtils:
 Place factory methods and shared logic in the companion object. Companion objects can access private members of their companion class:
 
 ```scala
-class SayableAge(locale: AgeLocale, compactness: Compactness = Compactness.NORMAL):
-  def formatAge(dateOfBirth: String, asOf: String = null): Option[String] = ...
+class SayableAge(locale: AgeLocale, compactness: Compactness = Compactness.Normal):
+  def formatAge(dateOfBirth: String, asOf: Option[String] = None): Option[String] = ...
 
 object SayableAge:
   private lazy val defaultInstance: SayableAge = new SayableAge(Locales.EN)
 
-  def formatAge(dateOfBirth: String, asOf: String = null): Option[String] =
+  def formatAge(dateOfBirth: String, asOf: Option[String] = None): Option[String] =
     defaultInstance.formatAge(dateOfBirth, asOf)
 ```
+
+**Project-specific note:** The sayable-age codebase uses `asOf: String = null` instead of `Option[String]` for cross-language API consistency. This is a deliberate trade-off, not idiomatic Scala. If you encounter this pattern, note that the `null` should be wrapped with `Option(asOf)` immediately at the boundary. In new Scala code without cross-language constraints, always prefer `Option[String]` with a default of `None`.
 
 ### Traits for Composition
 
@@ -628,7 +636,7 @@ val fullHandler = primaryHandler orElse fallbackHandler
 
 ### Tail Recursion
 
-Annotate recursive methods with `@tailrec` to guarantee the compiler optimizes them into loops:
+Annotate methods that are intended to be tail-recursive with `@tailrec`. This is a verification annotation -- the compiler will error if the method is not actually tail-recursive:
 
 ```scala
 import scala.annotation.tailrec
@@ -637,6 +645,41 @@ import scala.annotation.tailrec
 def factorial(n: Int, acc: Int = 1): Int =
   if n <= 1 then acc
   else factorial(n - 1, n * acc)
+```
+
+Not all recursive methods are tail-recursive, and not all should be. Tree traversals, divide-and-conquer algorithms, and other naturally recursive patterns should be expressed as regular recursion. Use `@tailrec` only on methods where tail-call optimization is intended and necessary.
+
+### Boundary and Break (Scala 3.3+)
+
+For early exit from loops or nested computations, use `boundary`/`break` instead of `return`. This is the modern, safe alternative that does not break referential transparency:
+
+```scala
+import scala.util.boundary, boundary.break
+
+def safeAtoi(s: String): Option[Int] =
+  boundary:
+    var n = 0
+    var i = 0
+    while i < s.length do
+      val c = s.charAt(i)
+      if c < '0' || c > '9' then break(None)
+      n = n * 10 + (c - '0')
+      i += 1
+    Some(n)
+```
+
+`boundary`/`break` is scoped, type-safe, and works correctly inside closures and lambdas (unlike `return`). Prefer it for any new code that needs early exit.
+
+Alternatively, express the same logic with tail recursion to avoid mutation entirely:
+
+```scala
+@tailrec
+private def safeAtoi(s: String, i: Int = 0, acc: Int = 0): Option[Int] =
+  if i >= s.length then Some(acc)
+  else
+    val c = s.charAt(i)
+    if c < '0' || c > '9' then None
+    else safeAtoi(s, i + 1, acc * 10 + (c - '0'))
 ```
 
 ---
@@ -671,10 +714,10 @@ buffer += "Alice"
 
 Decision rules:
 
-- Use **`Vector`** as the default general-purpose sequence. It has efficient indexed access, append, and prepend.
-- Use **`List`** when algorithms are primarily prepend-based and pattern-match on `head :: tail`.
+- Use **`List`** when the algorithm is primarily prepend-based, iterate-only, or pattern-matches on `head :: tail`. For small, fixed collections this is the natural choice.
+- Use **`Vector`** when indexed access or both-end operations (append and prepend) are needed. Its effectively-constant-time random access makes it appropriate for collections that will be indexed into.
 - Use **`ArrayBuffer`** when building a collection incrementally with mutation.
-- Accept **`Seq[T]`** in method signatures rather than a specific implementation, to keep APIs flexible.
+- In method signatures, prefer the most specific collection trait that matches the required access pattern: **`IndexedSeq`** for indexed access, **`Iterable`** for iteration-only, or the concrete type if performance characteristics matter. Avoid bare `Seq` in public APIs -- it provides no performance guarantees, and code that indexes into a `Seq` that happens to be a `List` will be accidentally quadratic.
 
 ### Collection Operations
 
@@ -736,7 +779,6 @@ list.reduce(_ + _)
 list.headOption
 list.drop(1)
 list.reduceOption(_ + _)
-list.foldLeft(identity)(_ + _)
 ```
 
 ---
@@ -778,6 +820,8 @@ val name = optionalUser.get.name
 val name = optionalUser.map(_.name).getOrElse("unknown")
 val name = optionalUser.fold("unknown")(_.name)
 ```
+
+**Clarification:** The prohibition is on `Option.get`, `Try.get`, and `Either` projection `.get` -- these are partial methods that throw on the failure case. `Map.get(key)` is safe (it returns `Option`) and is not subject to this rule.
 
 ### Either
 
@@ -866,6 +910,23 @@ def formatAge(dob: String)(using AgeLocale): String =
   val locale = summon[AgeLocale]
   ...
 ```
+
+### Importing Givens (Scala 3)
+
+In Scala 3, given instances are not imported by regular wildcard imports. You must use `given` imports:
+
+```scala
+// Import all givens from a scope
+import sayableage.given
+
+// Import only specific given types
+import sayableage.{given AgeLocale}
+
+// Import both regular members and givens
+import sayableage.{*, given}
+```
+
+This is a common source of confusion for developers migrating from Scala 2, where `import pkg._` brought implicit values into scope automatically.
 
 ### Extension Methods (Scala 3)
 
@@ -1081,6 +1142,8 @@ def find(id: Int): Option[User] = if exists(id) then Some(getUser(id)) else None
 
 The only acceptable use of `null` is at Java interop boundaries, immediately wrapped with `Option(value)`.
 
+**Project-specific exception:** The sayable-age codebase uses `null` as a default parameter value in public API methods (`asOf: String = null`) for cross-language API consistency. This is wrapped with `Option(asOf)` at the method boundary. In new Scala code without cross-language constraints, use `Option[String] = None` instead.
+
 ### return Statements
 
 Avoid explicit `return`. In Scala, the last expression in a block is the return value. Using `return` breaks referential transparency and interacts poorly with closures and lambdas:
@@ -1095,21 +1158,35 @@ def add(a: Int, b: Int): Int = {
 def add(a: Int, b: Int): Int = a + b
 ```
 
+For early exit from imperative loops, use `boundary`/`break` (Scala 3.3+) instead of `return`. See Section 5 (Boundary and Break).
+
+**Narrow exception:** In Scala versions before 3.3 where `boundary`/`break` is unavailable, `return` inside a `while` loop in a private method is tolerable when the alternative is significantly less readable. This should not appear in public APIs.
+
 ### Mutable vars
 
-Minimize `var` usage. When mutation is needed (performance-critical loops, local accumulators), keep the scope as narrow as possible:
+Minimize `var` usage. When mutation is needed (performance-critical loops, local accumulators), keep the scope as narrow as possible and prefer `boundary`/`break` or tail recursion to avoid the need for mutable state:
 
 ```scala
-// Acceptable: local mutation in a tight loop
-private def safeAtoi(s: String): Option[Int] =
-  var n = 0
-  var i = 0
-  while i < s.length do
+// Preferred: tail recursion avoids mutation entirely
+@tailrec
+private def safeAtoi(s: String, i: Int = 0, acc: Int = 0): Option[Int] =
+  if i >= s.length then Some(acc)
+  else
     val c = s.charAt(i)
-    if c < '0' || c > '9' then return None
-    n = n * 10 + (c - '0')
-    i += 1
-  Some(n)
+    if c < '0' || c > '9' then None
+    else safeAtoi(s, i + 1, acc * 10 + (c - '0'))
+
+// Acceptable: local mutation with boundary/break (Scala 3.3+)
+private def safeAtoi(s: String): Option[Int] =
+  boundary:
+    var n = 0
+    var i = 0
+    while i < s.length do
+      val c = s.charAt(i)
+      if c < '0' || c > '9' then break(None)
+      n = n * 10 + (c - '0')
+      i += 1
+    Some(n)
 ```
 
 Prefer functional alternatives when they are comparably readable and performant.
@@ -1161,7 +1238,14 @@ def parseAge(s: String): Option[Int] =
 
 ### Wildcard Imports in Production Code
 
-Avoid `import pkg.*` (or `import pkg._` in Scala 2) except when importing from a companion object, enum, or a well-known DSL. Wildcard imports obscure which names are in scope.
+Avoid `import pkg.*` (or `import pkg._` in Scala 2) in production code unless importing from a companion object, enum, or a small well-scoped object. Wildcard imports obscure which names are in scope.
+
+Wildcard imports are acceptable for:
+
+- Companion objects and enum members
+- Test assertion libraries (`import org.scalatest.Assertions.*`)
+- Well-known DSLs with a small, stable surface area
+- Any package where you import six or more names (per Section 2, Import Ordering)
 
 ### Implicit Conversions
 
@@ -1178,7 +1262,7 @@ extension (s: String)
 
 ### Other Anti-Patterns
 
-- **`.get` on `Option`, `Try`, or `Either` projections.** These throw on failure. Use `getOrElse`, `fold`, or pattern matching.
+- **`.get` on `Option`, `Try`, or `Either` projections.** These throw on failure. Use `getOrElse`, `fold`, or pattern matching. (Note: `Map.get(key)` is safe -- it returns `Option`.)
 - **`Enumeration`** (the old `scala.Enumeration` trait). Use Scala 3 `enum` or sealed trait hierarchies instead -- `Enumeration` lacks exhaustive match checking and relies on reflection.
 - **Overloading** when default parameters suffice. Method overloading complicates type inference and makes methods harder to pass as function values.
 - **`???` in production code.** The `???` placeholder throws `NotImplementedError`. Use it only during development.
@@ -1341,8 +1425,8 @@ For auditing a Scala implementation, verify:
 - [ ] Sealed traits or enums used for algebraic data types
 - [ ] Pattern matches are exhaustive (no missing cases on sealed types)
 - [ ] `Option` used instead of `null` for absent values
-- [ ] No `.get` calls on `Option`, `Try`, or `Either` projections
-- [ ] No explicit `return` statements
+- [ ] No `.get` calls on `Option`, `Try`, or `Either` projections (`Map.get` is fine -- it returns `Option`)
+- [ ] No explicit `return` statements (use `boundary`/`break` for early exit)
 - [ ] No deprecated procedure syntax (methods without `=`)
 - [ ] No `asInstanceOf` or `isInstanceOf` (use pattern matching)
 - [ ] Immutable collections by default; mutable collections qualified with `mutable.`
@@ -1350,10 +1434,11 @@ For auditing a Scala implementation, verify:
 - [ ] String interpolation used instead of `+` concatenation
 - [ ] `lazy val` used appropriately (expensive initialization, not in hot paths)
 - [ ] For-comprehensions used for chaining monadic operations
-- [ ] `@tailrec` annotation on recursive methods
+- [ ] `@tailrec` annotation on methods intended to be tail-recursive
 - [ ] Two-space indentation, no tabs
 - [ ] scalafmt configuration present and applied
 - [ ] Compiler warnings enabled and clean (zero warnings in CI)
 - [ ] Scaladoc on all public types and methods
 - [ ] Constants use UpperCamelCase, not SCREAMING_SNAKE_CASE
-- [ ] No wildcard imports in production code (except companions/enums)
+- [ ] No wildcard imports in production code (except companions, enums, and test assertions)
+- [ ] Given instances imported with `import pkg.given` (Scala 3)

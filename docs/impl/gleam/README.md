@@ -1,42 +1,44 @@
 # Gleam Style Guide
 
-A comprehensive guide to idiomatic Gleam coding style and best practices for code auditing.
+Style conventions and best practices for Gleam code in this project. This guide covers project-specific decisions and opinionated choices; for general Gleam syntax, see the [Language Tour](https://tour.gleam.run/everything/).
 
 ## Table of Contents
 
 1. [Naming Conventions](#1-naming-conventions)
 2. [Code Formatting](#2-code-formatting)
-3. [Type System](#3-type-system)
-4. [Module Design](#4-module-design)
+3. [Imports](#3-imports)
+4. [Type System](#4-type-system)
 5. [Pattern Matching](#5-pattern-matching)
 6. [Error Handling](#6-error-handling)
-7. [Functional Patterns](#7-functional-patterns)
-8. [Data Modeling](#8-data-modeling)
-9. [Common Idioms](#9-common-idioms)
-10. [Things to Avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
-12. [References](#12-references)
+7. [Control Flow with `use`](#7-control-flow-with-use)
+8. [Functional Patterns](#8-functional-patterns)
+9. [Data Modeling](#9-data-modeling)
+10. [API Design](#10-api-design)
+11. [Things to Avoid](#11-things-to-avoid)
+12. [Tooling](#12-tooling)
+13. [References](#13-references)
 
 ---
 
 ## 1. Naming Conventions
 
-### Functions and Variables: `snake_case`
+### Functions, variables, and constants: `snake_case`
 
-All function names, variable bindings, and module-level constants use lowercase with underscores.
+All function names, variable bindings, and module-level constants use lowercase with underscores. Unlike many languages, constants are `snake_case`, not `SCREAMING_SNAKE_CASE`.
 
 ```gleam
 let user_name = "Alice"
-let max_retries = 3
+const max_retries = 3
+const default_name = "world"
 
 fn calculate_total(unit_price: Float, quantity: Int) -> Float {
   unit_price *. int.to_float(quantity)
 }
 ```
 
-### Types and Constructors: `PascalCase`
+### Types and constructors: `PascalCase`
 
-Custom type names and their constructors use PascalCase. This is the only place PascalCase appears in Gleam.
+Custom type names and their constructors are the only place PascalCase appears in Gleam.
 
 ```gleam
 pub type Season {
@@ -53,42 +55,23 @@ pub type HttpError {
 }
 ```
 
-### Constants: `snake_case`
-
-Unlike many languages, Gleam constants use `snake_case`, not `SCREAMING_SNAKE_CASE`. Constants are defined at module level with the `const` keyword and may only contain literal values (no function calls).
-
-```gleam
-// Correct
-const max_retries = 3
-const default_name = "world"
-const supported_codes = ["en", "fr", "de"]
-
-// Wrong -- do not use SCREAMING_SNAKE_CASE
-const MAX_RETRIES = 3
-```
-
 ### Modules: `snake_case` path segments
 
-Modules are named by their file path relative to `src/`, using `snake_case` for each segment. There is no explicit module declaration -- the file path is the module name.
+Module names are derived from the file path relative to `src/`. There is no explicit module declaration.
 
 ```
-src/my_app.gleam           -> module: my_app
-src/my_app/http_client.gleam -> module: my_app/http_client
-src/my_app/json_decoder.gleam -> module: my_app/json_decoder
+src/my_app.gleam              -> module: my_app
+src/my_app/http_client.gleam  -> module: my_app/http_client
 ```
 
 ### Discard variables: prefix with `_`
 
-Unused variables must be prefixed with `_` to suppress compiler warnings. The name after `_` is documentation for the reader.
+Unused variables must be prefixed with `_` to suppress compiler warnings. The name after `_` is documentation for the reader. A bare `_` discards without naming.
 
 ```gleam
 let _unused = expensive_computation()
 let #(_first, second, _third) = triple
-```
 
-A bare `_` discards without naming:
-
-```gleam
 case value {
   #(_, second) -> second
 }
@@ -96,7 +79,7 @@ case value {
 
 ### Test functions: suffix with `_test`
 
-Any public function in the `test/` directory with a name ending in `_test` is automatically run as a test by `gleeunit`.
+Any public function in the `test/` directory whose name ends in `_test` is automatically run by `gleeunit`.
 
 ```gleam
 pub fn addition_test() {
@@ -110,39 +93,22 @@ pub fn addition_test() {
 
 ### `gleam format` is authoritative
 
-All Gleam code must be formatted with `gleam format`. This is the single, non-configurable formatter for the language. There are no options, no configuration files, and no debates. Run it before every commit.
+All code must be formatted with `gleam format`. It is the single, non-configurable formatter. No options, no configuration files. Run it before every commit.
 
 ```sh
 gleam format           # Format all .gleam files in src/ and test/
-gleam format --check   # Check without modifying (useful in CI)
+gleam format --check   # Check without modifying (CI)
 ```
 
-### Indentation: 2 spaces
+### Indentation and line length
 
-The formatter uses 2-space indentation. Tabs are not used.
-
-```gleam
-pub fn greet(name: String) -> String {
-  case name {
-    "" -> "Hello, stranger!"
-    _ -> "Hello, " <> name <> "!"
-  }
-}
-```
-
-### Line length
-
-The formatter targets 80 columns but will not break all long lines. Long expressions (especially in locale data or generated code) are acceptable. The formatter handles wrapping of function signatures and pipelines automatically.
+The formatter uses 2-space indentation. It targets 80 columns but will not break all long lines. Long expressions in locale data or generated code are acceptable.
 
 ### Pipeline formatting
 
-When a pipeline spans multiple lines, each step goes on its own line with `|>` at the start. The formatter enforces this.
+Multi-line pipelines place each step on its own line with `|>` at the start. The formatter enforces this.
 
 ```gleam
-// Single line is fine when short
-"hello" |> string.uppercase
-
-// Multi-line: one step per line
 "Hello, Mike!"
 |> string.drop_end(1)
 |> string.drop_start(7)
@@ -150,9 +116,9 @@ When a pipeline spans multiple lines, each step goes on its own line with `|>` a
 |> io.println
 ```
 
-### Function call wrapping
+### Function call wrapping and trailing commas
 
-When a function call's arguments don't fit on one line, each argument goes on its own line, indented by 2 spaces.
+When arguments do not fit on one line, each goes on its own line indented by 2 spaces. The formatter adds trailing commas to multi-line argument lists, record fields, and list literals.
 
 ```gleam
 pub fn format_age(
@@ -165,27 +131,85 @@ pub fn format_age(
 }
 ```
 
-### Trailing commas
+---
 
-The formatter adds trailing commas to multi-line argument lists, record fields, and list literals. This reduces diff noise when adding items.
+## 3. Imports
+
+### Qualified imports are the default
+
+Qualified access via the module name is the preferred style. It makes the origin of every function explicit.
 
 ```gleam
-pub type AgeLocale {
-  AgeLocale(
-    code: String,
-    day: UnitForms,
-    week: UnitForms,
-  )
+import gleam/int
+import gleam/string
+import gleam/list
+
+pub fn format_items(items: List(Int)) -> String {
+  items
+  |> list.map(int.to_string)
+  |> string.join(", ")
 }
 ```
 
+### Unqualified imports: types and constructors only
+
+Import types and constructors unqualified when they appear in type annotations or pattern matching. Keep functions qualified.
+
+```gleam
+import gleam/option.{type Option, None, Some}
+import sayableage/types.{type AgeLocale, type Gender, Female, Male}
+
+fn describe(opt: Option(String)) -> String {
+  case opt {
+    Some(value) -> value
+    None -> "nothing"
+  }
+}
+```
+
+Import types with the `type` keyword prefix:
+
+```gleam
+import gleam/string_tree.{type StringTree}
+```
+
+### Module aliases
+
+Use `as` to shorten long module paths. Choose meaningful short names.
+
+```gleam
+import gleam/string_tree as st
+import my_app/database/queries as db
+```
+
+### Import ordering
+
+Separate imports into three groups with blank lines between them. Sort alphabetically within each group.
+
+1. Standard library (`gleam/*`)
+2. External packages
+3. Project modules
+
+```gleam
+import gleam/int
+import gleam/list
+import gleam/string
+
+import gleeunit/should
+
+import sayableage/formatter
+import sayableage/types.{type AgeLocale}
+```
+
+The formatter does not enforce import ordering, so this convention must be followed manually and enforced in code review.
+
 ---
 
-## 3. Type System
+## 4. Type System
 
 ### Custom types
 
-Custom types are Gleam's primary data modeling tool. They replace enums, structs, tagged unions, and sum types from other languages. Every custom type has one or more constructors.
+Custom types are the primary data modeling tool, replacing enums, structs, and tagged unions from other languages. Every custom type has one or more constructors.
 
 ```gleam
 // Enum-like: constructors with no fields
@@ -211,28 +235,17 @@ pub type Shape {
 
 ### Type aliases
 
-Type aliases create alternate names for existing types. They do not create new types and provide no additional type safety. Use them sparingly for readability.
+Type aliases create alternate names for existing types. They provide no additional type safety and do not create new types. Use them sparingly for readability in complex signatures.
 
 ```gleam
 pub type Headers = List(#(String, String))
-pub type UserId = Int
 ```
 
-### Generics (type variables)
+### Generics
 
-Generic type parameters use lowercase names. The convention is short names like `a`, `b`, `e` for abstract parameters, and descriptive names for domain-specific ones.
+Generic type parameters use lowercase names. Short names (`a`, `b`, `e`) for abstract parameters; descriptive names for domain-specific ones.
 
 ```gleam
-pub type Result(value, error) {
-  Ok(value)
-  Error(error)
-}
-
-pub type Option(inner) {
-  Some(inner)
-  None
-}
-
 fn identity(x: a) -> a {
   x
 }
@@ -247,7 +260,7 @@ fn map(result: Result(a, e), fun: fn(a) -> b) -> Result(b, e) {
 
 ### Opaque types
 
-The `pub opaque type` declaration exports the type name but hides its constructors. External modules cannot construct or pattern-match on opaque type values -- they can only interact through the module's public API. Use opaque types to enforce invariants.
+`pub opaque type` exports the type name but hides its constructors. External modules cannot construct or pattern-match on opaque values. Use opaque types to enforce invariants.
 
 ```gleam
 pub opaque type PositiveInt {
@@ -266,139 +279,35 @@ pub fn value(p: PositiveInt) -> Int {
 }
 ```
 
+### Visibility defaults
+
+Functions, types, and constants are private by default. Use `pub` to export. For types, `pub type` exports both the type and its constructors; `pub opaque type` exports only the type name.
+
+```gleam
+fn helper() -> Int { 42 }           // Private
+pub fn api_function() -> Int { helper() }  // Public
+```
+
 ### No null, no exceptions
 
-Gleam has no null, nil-as-absence, or exception system. Absence is modeled with `Option(a)` (which is `Result(a, Nil)`). Failure is modeled with `Result(ok, error)`. This is enforced at the type level -- there are no escape hatches.
+Gleam has no null and no exception system. Optional values use `Option(a)` from `gleam/option` (constructors: `Some(a)` and `None`). Fallible operations use `Result(ok, error)` (constructors: `Ok(ok)` and `Error(error)`). Both are enforced at the type level with no escape hatches.
 
----
+### `Option` vs `Result(_, Nil)` in this project
 
-## 4. Module Design
+`Option(a)` and `Result(a, Nil)` are structurally similar but semantically distinct. In this project, optional fields use `Result(value, Nil)` rather than `Option` because it composes directly with `result.try` and `use` expressions without requiring `option.to_result` conversions. This is visible in the `CompactnessOverride` type where every field is `Result(UnitForms, Nil)` or `Result(String, Nil)`.
 
-### One file, one module
-
-Every `.gleam` file is exactly one module. The module name is derived from its file path relative to `src/`. There is no explicit `module` declaration.
-
-### Default privacy
-
-Functions, types, and constants are private by default. Use the `pub` keyword to export them. This is the reverse of many languages and encourages minimal public APIs.
-
-```gleam
-// Private -- only accessible within this module
-fn helper() -> Int {
-  42
-}
-
-// Public -- accessible from other modules
-pub fn api_function() -> Int {
-  helper()
-}
-```
-
-For types, `pub type` exports both the type and its constructors. `pub opaque type` exports only the type name.
-
-```gleam
-// Constructors exported: callers can create and match
-pub type Color {
-  Red
-  Green
-  Blue
-}
-
-// Only the type name exported: constructors are hidden
-pub opaque type Email {
-  Email(String)
-}
-```
-
-### Qualified imports (preferred)
-
-The default import style uses qualified access via the module name. This is the preferred style in the Gleam community because it makes the origin of every function clear.
-
-```gleam
-import gleam/int
-import gleam/string
-import gleam/list
-
-pub fn format_items(items: List(Int)) -> String {
-  items
-  |> list.map(int.to_string)
-  |> string.join(", ")
-}
-```
-
-### Module aliases
-
-Use `as` to shorten long module paths. Choose meaningful short names.
-
-```gleam
-import gleam/string_tree as st
-import my_app/database/queries as db
-
-let tree = st.new()
-```
-
-### Unqualified imports
-
-Unqualified imports bring specific values or types into scope without a module prefix. Use them sparingly -- primarily for types that appear frequently and for constructors used in pattern matching.
-
-```gleam
-import gleam/option.{type Option, None, Some}
-import sayableage/types.{type AgeLocale, type Gender, Female, Male}
-
-fn describe(opt: Option(String)) -> String {
-  case opt {
-    Some(value) -> value
-    None -> "nothing"
-  }
-}
-```
-
-Import types with the `type` keyword prefix:
-
-```gleam
-import gleam/string_tree.{type StringTree}
-```
-
-### Import organization
-
-Group imports logically: standard library first, then external packages, then internal modules. The formatter does not enforce import ordering, so this is a convention to follow manually.
-
-```gleam
-// Standard library
-import gleam/int
-import gleam/list
-import gleam/string
-
-// External packages
-import gleeunit/should
-
-// Internal modules
-import my_app/formatter
-import my_app/types.{type Config}
-```
+Follow this convention: use `Result(_, Nil)` for optional data that participates in result chains. Use `Option` when interfacing with external libraries that expect it.
 
 ---
 
 ## 5. Pattern Matching
 
-### Case expressions
+### Exhaustive matching preferred
 
-`case` is the primary control flow mechanism in Gleam. There are no `if/else` expressions (booleans are matched with `case`).
-
-```gleam
-case value {
-  0 -> "zero"
-  1 -> "one"
-  n -> "other: " <> int.to_string(n)
-}
-```
-
-### Exhaustive matching
-
-The compiler enforces exhaustive pattern matching. Every possible value must be handled. Do not add a wildcard `_` catch-all unless you genuinely want to handle all remaining cases the same way. Unnecessary wildcards hide bugs when new constructors are added.
+The compiler enforces exhaustive pattern matching. Prefer handling all constructors explicitly over using wildcard `_` catch-alls. Wildcards suppress exhaustiveness checking -- when a new constructor is added to a type, a wildcard silently swallows it instead of producing a compile error.
 
 ```gleam
-// Good: all constructors handled explicitly
+// Preferred: all constructors handled explicitly
 case direction {
   North -> #(0, 1)
   South -> #(0, -1)
@@ -406,30 +315,11 @@ case direction {
   West -> #(-1, 0)
 }
 
-// Risky: if a new Season constructor is added, this silently handles it
-case season {
-  Summer -> "hot"
-  _ -> "not hot"
-}
-```
-
-### Destructuring
-
-Pattern matching destructures custom types, tuples, and lists.
-
-```gleam
-// Record destructuring
-case person {
-  Person(name: name, age: age) -> name <> " is " <> int.to_string(age)
-}
-
-// Tuple destructuring
-let #(x, y, z) = coordinates
-
-// List head-tail
-case items {
-  [] -> "empty"
-  [first, ..rest] -> "first is " <> first
+// Acceptable: wildcards for numeric ranges or genuinely uniform defaults
+case age_in_months {
+  m if m < 2 -> "newborn"
+  m if m < 12 -> "infant"
+  _ -> "older"
 }
 ```
 
@@ -448,22 +338,20 @@ case x, y {
 
 ### Guards
 
-Guards add conditions to pattern arms using `if`. Guards cannot contain function calls, only operators and comparisons.
+Guards add conditions to pattern arms using `if`. Guards cannot contain function calls -- only operators and comparisons.
 
 ```gleam
 case age_in_months {
   m if m < 2 -> "newborn"
   m if m < 12 -> "infant"
   m if m < 36 -> "toddler"
-  m if m < 156 -> "child"
-  m if m < 216 -> "teenager"
-  _ -> "adult"
+  _ -> "older"
 }
 ```
 
-### Alternative patterns
+### Alternative patterns and aliases
 
-Use `|` to match multiple patterns with the same body.
+Use `|` for multiple patterns with the same body. Use `as` to bind a matched value.
 
 ```gleam
 case month {
@@ -472,20 +360,14 @@ case month {
   2 -> 28
   _ -> 30
 }
-```
 
-### Pattern aliases
-
-Bind a matched value to a name with `as`.
-
-```gleam
 case list {
   [_, ..] as non_empty -> process(non_empty)
   [] -> default_value
 }
 ```
 
-### String patterns
+### String prefix matching
 
 Match string prefixes with the `<>` operator.
 
@@ -496,27 +378,13 @@ case greeting {
 }
 ```
 
-### `let assert` for partial matching
-
-`let assert` performs a partial pattern match that crashes (panics) if the pattern does not match. Use it only when you are certain the match will succeed, or in tests.
-
-```gleam
-// In tests: acceptable
-let assert Ok(locale) = get_locale("en")
-
-// With a message explaining why the assertion is safe
-let assert [first, ..] = items as "items is guaranteed non-empty by caller"
-```
-
-Avoid `let assert` in library code. Prefer returning `Result` instead.
-
 ---
 
 ## 6. Error Handling
 
 ### The `Result` type
 
-`Result(value, error)` is the standard way to represent operations that can fail. It has two constructors: `Ok(value)` and `Error(error)`.
+`Result(value, error)` is the standard way to represent fallible operations. Chain them with `result.try` or the `use` keyword (see Section 7).
 
 ```gleam
 pub fn parse_int(s: String) -> Result(Int, String) {
@@ -527,31 +395,70 @@ pub fn parse_int(s: String) -> Result(Int, String) {
 }
 ```
 
-### Chaining with `result.try`
+### Key `result` module functions
 
-`result.try` applies a function to the `Ok` value and short-circuits on `Error`. This is the fundamental way to chain fallible operations.
+This table covers the most commonly used functions. See [gleam/result hexdocs](https://hexdocs.pm/gleam_stdlib/gleam/result.html) for the complete API.
+
+| Function | Purpose |
+|----------|---------|
+| `try` | Chain fallible operations (short-circuits on Error) |
+| `map` | Transform the Ok value |
+| `map_error` | Transform the Error value |
+| `unwrap` | Extract Ok or use a default |
+| `lazy_unwrap` | Extract Ok or compute a default |
+| `flatten` | Unwrap nested Results |
+| `all` | Combine a list of Results into a Result of a list |
+| `values` | Keep only Ok values from a list |
+| `or` | Return the first Ok |
+| `replace` | Replace the Ok value |
+| `is_ok` / `is_error` | Test which variant (useful in assertions) |
+| `nil_error` | Discard the error type, replacing with Nil |
+
+### `let assert` -- tests only
+
+`let assert` performs a partial pattern match that panics on mismatch. Restrict its use to test code. In library code, return `Result` and let callers decide how to handle failure.
 
 ```gleam
-import gleam/result
+// In tests: acceptable
+let assert Ok(locale) = get_locale("en")
 
-fn process(input: String) -> Result(Int, Nil) {
-  input
-  |> int.parse
-  |> result.try(fn(n) {
-    case n > 0 {
-      True -> Ok(n * 2)
-      False -> Error(Nil)
-    }
-  })
+// In library code: return Result instead
+pub fn first(items: List(a)) -> Result(a, Nil) {
+  case items {
+    [first, ..] -> Ok(first)
+    [] -> Error(Nil)
+  }
 }
 ```
 
-### `use` expressions for Result chaining
+### `panic` and `todo`
 
-The `use` keyword is syntactic sugar that eliminates callback nesting. It is the idiomatic way to chain `result.try` calls.
+`panic` crashes the program immediately. Use it only for provably unreachable states. `todo` also crashes but signals unfinished code -- the compiler emits a warning.
 
 ```gleam
-// Without use -- deeply nested
+fn unreachable() -> Nil {
+  panic as "This branch is unreachable because ..."
+}
+
+fn not_yet_done() -> Int {
+  todo as "Implement the scoring algorithm"
+}
+```
+
+Neither should appear in production library code.
+
+---
+
+## 7. Control Flow with `use`
+
+The `use` keyword is Gleam's most powerful control flow tool. It eliminates callback nesting by capturing the remainder of a function body as an implicit continuation. It works with any function whose last parameter is a callback.
+
+### `use` with `result.try` -- chaining fallible operations
+
+This is the most common `use` pattern. Each `use` line short-circuits on `Error`.
+
+```gleam
+// Without use: deeply nested callbacks
 fn process(a: String, b: String) -> Result(Int, Nil) {
   result.try(int.parse(a), fn(x) {
     result.try(int.parse(b), fn(y) {
@@ -560,7 +467,7 @@ fn process(a: String, b: String) -> Result(Int, Nil) {
   })
 }
 
-// With use -- flat and readable
+// With use: flat and readable
 fn process(a: String, b: String) -> Result(Int, Nil) {
   use x <- result.try(int.parse(a))
   use y <- result.try(int.parse(b))
@@ -568,61 +475,71 @@ fn process(a: String, b: String) -> Result(Int, Nil) {
 }
 ```
 
-The `use` pattern works with any function that takes a callback as its last argument. The `<-` arrow binds the callback parameter.
+### `use` with `bool.guard` -- early returns
 
-### Key `result` module functions
-
-| Function | Signature | Purpose |
-|----------|-----------|---------|
-| `try` | `fn(Result(a, e), fn(a) -> Result(b, e)) -> Result(b, e)` | Chain fallible operations |
-| `map` | `fn(Result(a, e), fn(a) -> b) -> Result(b, e)` | Transform the Ok value |
-| `map_error` | `fn(Result(a, e), fn(e) -> f) -> Result(a, f)` | Transform the Error value |
-| `unwrap` | `fn(Result(a, e), a) -> a` | Extract Ok or use default |
-| `lazy_unwrap` | `fn(Result(a, e), fn() -> a) -> a` | Extract Ok or compute default |
-| `flatten` | `fn(Result(Result(a, e), e)) -> Result(a, e)` | Unwrap nested Results |
-| `all` | `fn(List(Result(a, e))) -> Result(List(a), e)` | Combine list of Results |
-| `values` | `fn(List(Result(a, e))) -> List(a)` | Keep only Ok values |
-| `or` | `fn(Result(a, e), Result(a, e)) -> Result(a, e)` | Return first Ok |
-| `replace` | `fn(Result(a, e), b) -> Result(b, e)` | Replace Ok value |
-
-### `panic` and `todo`
-
-`panic` crashes the program immediately. Use it only for genuinely impossible states. `todo` also crashes but signals unfinished code -- the compiler emits a warning for it.
+`bool.guard` is Gleam's equivalent of a guard clause or early return. When the condition is true, it returns the given value immediately. When false, it calls the continuation (the rest of the function body after the `use` line).
 
 ```gleam
-// Acceptable: a state that is provably unreachable
-fn unreachable() -> Nil {
-  panic as "This branch is unreachable because ..."
-}
+import gleam/bool
 
-// During development only -- compiler warns
-fn not_yet_done() -> Int {
-  todo as "Implement the scoring algorithm"
+fn process(input: String) -> Result(Int, Nil) {
+  use n <- result.try(int.parse(input))
+  // If n <= 0, return Error(Nil) immediately.
+  // Otherwise, continue with the rest of the function.
+  use <- bool.guard(when: n <= 0, return: Error(Nil))
+  Ok(n * 2)
 }
 ```
 
-Neither `panic` nor `todo` should appear in production library code. If something can fail, return `Result`.
+This replaces the imperative pattern:
+```
+if (n <= 0) return Error(Nil)
+```
+
+Use `bool.lazy_guard` when the return value is expensive to compute:
+
+```gleam
+use <- bool.lazy_guard(when: need_fallback, return: fn() { compute_fallback() })
+```
+
+### `use` with `list.each` -- iteration with side effects
+
+```gleam
+use item <- list.each(items)
+io.println(item)
+```
+
+### Desugaring rule
+
+Every `use` expression desugars into a function call where everything after the `use` line becomes the callback body. Understanding this desugaring is essential for reading and writing `use` expressions:
+
+```gleam
+// This:
+use x <- result.try(parse(input))
+Ok(x + 1)
+
+// Desugars to:
+result.try(parse(input), fn(x) {
+  Ok(x + 1)
+})
+```
 
 ---
 
-## 7. Functional Patterns
+## 8. Functional Patterns
 
 ### Pipe operator `|>`
 
 The pipe operator passes the left-hand value as the first argument to the right-hand function. It is the defining idiom of Gleam code.
 
 ```gleam
-// Without pipe
-io.println(string.uppercase(string.trim(input)))
-
-// With pipe -- reads top to bottom, left to right
 input
 |> string.trim
 |> string.uppercase
 |> io.println
 ```
 
-When the value needs to be passed as a non-first argument, use a function capture:
+When the value needs to go to a non-first argument, use a function capture:
 
 ```gleam
 "1"
@@ -632,78 +549,42 @@ When the value needs to be passed as a non-first argument, use a function captur
 
 ### Function captures
 
-The `_` placeholder creates a one-argument anonymous function from a multi-argument call.
+The `_` placeholder creates a one-argument anonymous function.
 
 ```gleam
 let add_one = int.add(1, _)      // fn(x) { int.add(1, x) }
 let double = int.multiply(_, 2)  // fn(x) { int.multiply(x, 2) }
 ```
 
-### Higher-order functions
+### Prefer stdlib over manual recursion
 
-Functions are first-class values. Pass them as arguments, return them from functions, and store them in data structures.
-
-```gleam
-fn apply_twice(x: a, f: fn(a) -> a) -> a {
-  x |> f |> f
-}
-
-let result = apply_twice(5, int.add(1, _))  // 7
-```
-
-### List operations
-
-The `gleam/list` module provides the standard functional toolkit. Prefer these over manual recursion.
+Use `list.map`, `list.filter`, `list.fold`, and other standard library functions over manual recursion. They are well-tested, readable, and handle target-specific optimizations.
 
 ```gleam
-import gleam/list
-
-// Transform
 [1, 2, 3] |> list.map(int.multiply(_, 2))          // [2, 4, 6]
-
-// Filter
 [1, 2, 3, 4] |> list.filter(fn(x) { x > 2 })      // [3, 4]
-
-// Reduce
 [1, 2, 3] |> list.fold(0, int.add)                  // 6
-
-// Find
-[1, 2, 3] |> list.find(fn(x) { x > 1 })            // Ok(2)
-
-// Fallible map
-["1", "2", "x"]
-|> list.try_map(int.parse)                           // Error(Nil)
-
-// Filter and transform in one pass
-[Ok(1), Error("x"), Ok(3)]
-|> result.values                                     // [1, 3]
 ```
 
-### Labeled arguments in standard library
+### Use labeled arguments from the stdlib
 
-Gleam's standard library uses labeled arguments extensively for readability. When calling these functions, use the labels.
+The standard library uses labeled arguments for readability. Use them at call sites.
 
 ```gleam
 list.fold(over: items, from: 0, with: int.add)
-list.filter(items, keeping: fn(x) { x > 0 })
 list.sort(items, by: int.compare)
 string.replace(in: text, each: ",", with: " ")
 ```
 
-### Recursion and tail calls
+### Recursion and tail calls: target-dependent
 
-Gleam optimizes tail-recursive functions (where the recursive call is the last expression). Use an accumulator parameter to make recursion tail-recursive.
+When manual recursion is necessary, use an accumulator parameter to make it tail-recursive. Note that tail call optimization depends on the compilation target:
+
+- **Erlang target**: The BEAM VM guarantees tail call optimization. Deep recursion is safe.
+- **JavaScript target**: TCO is not reliably supported (only Safari/JavaScriptCore implements it; V8 and SpiderMonkey do not). For potentially deep recursion targeting JavaScript, prefer stdlib higher-order functions.
 
 ```gleam
-// Not tail-recursive (builds stack)
-fn factorial(n: Int) -> Int {
-  case n {
-    0 | 1 -> 1
-    _ -> n * factorial(n - 1)
-  }
-}
-
-// Tail-recursive (constant stack)
+// Tail-recursive with accumulator
 fn factorial(n: Int) -> Int {
   factorial_loop(n, 1)
 }
@@ -718,45 +599,14 @@ fn factorial_loop(n: Int, acc: Int) -> Int {
 
 ---
 
-## 8. Data Modeling
+## 9. Data Modeling
 
-### Records as single-constructor custom types
+### Make impossible states impossible
 
-A custom type with one constructor and named fields serves as Gleam's record type.
-
-```gleam
-pub type Config {
-  Config(
-    host: String,
-    port: Int,
-    max_connections: Int,
-  )
-}
-```
-
-### Record access
-
-Fields are accessed with dot syntax.
+Design custom types so that invalid states cannot be represented. This is the most important data modeling principle.
 
 ```gleam
-let config = Config(host: "localhost", port: 8080, max_connections: 100)
-let host = config.host
-```
-
-### Record updates
-
-The spread operator `..` creates a new record with some fields changed. It always creates a copy -- records are immutable.
-
-```gleam
-let updated = Config(..config, port: 9090, max_connections: 200)
-```
-
-### Making impossible states impossible
-
-Design custom types so that invalid states cannot be represented. This is the most important data modeling principle in Gleam.
-
-```gleam
-// Bad: nothing prevents setting is_loading=True AND error=Some("...")
+// Bad: nothing prevents is_loading=True AND error=Some("...")
 pub type PageState {
   PageState(
     data: Option(Data),
@@ -773,32 +623,45 @@ pub type PageState {
 }
 ```
 
-### Use custom types instead of dictionaries for known structures
+### Custom types over dictionaries for known structures
 
-When the set of keys is known at compile time, use a custom type, not a `Dict`. Custom types provide compile-time field access checking and exhaustive pattern matching.
+When the set of keys is known at compile time, use a custom type. It provides compile-time field access checking and exhaustive pattern matching.
 
 ```gleam
 // Bad: runtime key lookup, no compile-time guarantees
 let locale = dict.from_list([#("code", "en"), #("name", "English")])
 
-// Good: compile-time checked field access
+// Good: compile-time checked
 pub type Locale {
   Locale(code: String, name: String)
 }
 ```
 
+### Records: single-constructor custom types
+
+A custom type with one constructor and named fields serves as Gleam's record type. Access fields with dot syntax. Use the spread operator `..` to create modified copies.
+
+```gleam
+pub type Config {
+  Config(host: String, port: Int, max_connections: Int)
+}
+
+let config = Config(host: "localhost", port: 8080, max_connections: 100)
+let host = config.host
+let updated = Config(..config, port: 9090)
+```
+
 ### Tuples for small anonymous groupings
 
-Use tuples for temporary groupings of 2-3 values. For anything larger or anything that appears in a public API, use a named custom type.
+Use tuples for temporary groupings of 2-3 values in internal code. For public APIs or anything larger, use a named custom type with self-documenting fields.
 
 ```gleam
 // Fine for internal use
 fn parse_date(s: String) -> Result(#(Int, Int, Int), Nil) {
-  // year, month, day
   // ...
 }
 
-// Better for public APIs -- fields are self-documenting
+// Better for public APIs
 pub type Date {
   Date(year: Int, month: Int, day: Int)
 }
@@ -806,46 +669,35 @@ pub type Date {
 
 ---
 
-## 9. Common Idioms
+## 10. API Design
 
-### `use` expressions beyond Result
+### Design functions for piping
 
-The `use` keyword works with any function whose last parameter is a callback. Common uses include:
+The subject type should be the first argument to enable `|>` piping. Module functions that operate on a type form its "methods."
 
 ```gleam
-// With result.try (most common)
-use value <- result.try(parse(input))
+pub fn new() -> Counter {
+  Counter(0)
+}
 
-// With bool.guard for early returns
-use <- bool.guard(when: list.is_empty(items), return: default)
+pub fn increment(counter: Counter) -> Counter {
+  Counter(counter.value + 1)
+}
 
-// With list.each for iteration with side effects
-use item <- list.each(items)
-io.println(item)
+// Used with pipes
+new() |> increment |> increment
 ```
 
-### Labeled arguments for readable APIs
+### Labeled arguments for clarity
 
-Design public functions with labeled arguments when the purpose of each parameter is not obvious from its type.
-
-```gleam
-// Unclear: what do these strings mean?
-pub fn format(String, String, String) -> String
-
-// Clear: labels document the API
-pub fn format(
-  template template: String,
-  with value: String,
-  locale locale: String,
-) -> String
-```
-
-Labels can differ from internal parameter names. The label is what callers see; the internal name is what the function body uses.
+When the purpose of parameters is not obvious from their types, use labeled arguments. Labels can differ from internal parameter names -- the label is what callers see, the internal name is what the function body uses.
 
 ```gleam
-pub fn replace(in string: String, each pattern: String, with substitute: String) -> String {
-  // `string`, `pattern`, and `substitute` are used in the body
-  // `in`, `each`, and `with` are used at call sites
+pub fn replace(
+  in string: String,
+  each pattern: String,
+  with substitute: String,
+) -> String {
   // ...
 }
 
@@ -853,53 +705,27 @@ pub fn replace(in string: String, each pattern: String, with substitute: String)
 replace(in: text, each: ",", with: " ")
 ```
 
-### Label shorthand
-
-When the variable name matches the label, you can use the shorthand syntax:
+When the variable name matches the label, use the shorthand syntax:
 
 ```gleam
 let quantity = 5.0
 let unit_price = 10.0
 calculate_total(quantity:, unit_price:)
-// Equivalent to: calculate_total(quantity: quantity, unit_price: unit_price)
 ```
 
-### String building with `string_tree`
+### String building
 
-For building strings incrementally (especially in loops), use `gleam/string_tree` instead of repeated `<>` concatenation. `StringTree` uses a tree structure where append and prepend are O(1). The final `to_string` traverses the tree once.
+For building strings incrementally, use `gleam/string_tree` instead of repeated `<>` concatenation. `StringTree` uses a tree structure where append and prepend are O(1). For joining a list of strings, `string.join` is simpler.
 
 ```gleam
-import gleam/string_tree
-
 string_tree.new()
 |> string_tree.append("Hello")
 |> string_tree.append(", ")
 |> string_tree.append("world!")
 |> string_tree.to_string
-// "Hello, world!"
-```
 
-For joining a list of strings, `string.join` is simpler:
-
-```gleam
+// Or simply:
 ["Hello", "world"] |> string.join(", ")
-```
-
-### Bit arrays
-
-Bit arrays provide low-level binary data manipulation with a rich pattern matching syntax.
-
-```gleam
-// Create
-let data = <<1, 2, 3>>
-let text = <<"Hello":utf8>>
-let flags = <<0b1010:size(4)>>
-
-// Pattern match
-case data {
-  <<first, _rest:bytes>> -> first  // 1
-  _ -> 0
-}
 ```
 
 ### Documentation comments
@@ -928,12 +754,12 @@ pub fn format_age(
 }
 ```
 
-### Deprecation annotations
+### Deprecation
 
-Mark deprecated functions with `@deprecated` to generate compiler warnings.
+Mark deprecated functions with `@deprecated`. The message should name the replacement and the version in which the deprecated function will be removed.
 
 ```gleam
-@deprecated("Use format_age instead")
+@deprecated("Use format_age instead. Will be removed in v0.6.0.")
 pub fn old_format(dob: String) -> String {
   // ...
 }
@@ -941,35 +767,39 @@ pub fn old_format(dob: String) -> String {
 
 ---
 
-## 10. Things to Avoid
+## 11. Things to Avoid
 
 ### Unnecessary wildcards in case expressions
 
-Wildcards suppress the compiler's exhaustiveness checking. When a new constructor is added to a type, a wildcard silently swallows it instead of producing a compile error.
+Wildcards suppress exhaustiveness checking. When a new constructor is added, a wildcard silently swallows it instead of producing a compile error. Use them only for genuinely uniform defaults (numeric ranges, string matching).
+
+### `let assert` in library code
+
+Causes a runtime crash on pattern mismatch. Return `Result` in library code; restrict `let assert` to tests.
+
+### `panic` for expected failure modes
+
+`panic` is for provably impossible states. If a function can legitimately fail, return `Result`.
+
+### Importing functions unqualified
+
+Keep functions qualified so readers can tell where they come from. Only import types and constructors unqualified (for type annotations and pattern matching).
 
 ```gleam
-// Avoid: hides missing cases
-case color {
-  Red -> "red"
-  _ -> "not red"
-}
+// Avoid
+import gleam/list.{map, filter, fold}
 
-// Prefer: explicit about all cases
-case color {
-  Red -> "red"
-  Green -> "green"
-  Blue -> "blue"
-}
+// Prefer
+import gleam/list
+list.map(items, transform)
 ```
 
-Use wildcards only when you genuinely intend to handle all remaining cases identically, such as a default branch in a numeric range.
+### Deep nesting
 
-### Excessive nesting
-
-Deep nesting of `case` expressions or callbacks makes code hard to follow. Use `use` expressions, pipe operators, and helper functions to flatten the structure.
+Flatten deeply nested `case` expressions and callbacks using `use` expressions, pipe operators, and helper functions.
 
 ```gleam
-// Avoid: deeply nested
+// Avoid
 fn process(input: String) -> Result(String, Nil) {
   case int.parse(input) {
     Ok(n) ->
@@ -985,7 +815,7 @@ fn process(input: String) -> Result(String, Nil) {
   }
 }
 
-// Prefer: flat with use
+// Prefer
 fn process(input: String) -> Result(String, Nil) {
   use n <- result.try(int.parse(input))
   use <- bool.guard(when: n <= 0, return: Error(Nil))
@@ -996,52 +826,32 @@ fn process(input: String) -> Result(String, Nil) {
 }
 ```
 
-### Using `Dict` for static structure
+### `Dict` for static structures
 
-Dictionaries are for dynamic key-value data. If you know all the keys at compile time, use a custom type instead.
+Dictionaries are for dynamic key-value data. If you know all the keys at compile time, use a custom type.
 
-### `let assert` in library code
+### Matching on booleans when you could match on data
 
-`let assert` causes a runtime crash on pattern mismatch. In library code, return `Result` instead and let callers decide how to handle failure.
-
-```gleam
-// Avoid in library code
-pub fn first(items: List(a)) -> a {
-  let assert [first, ..] = items
-  first
-}
-
-// Prefer: return Result
-pub fn first(items: List(a)) -> Result(a, Nil) {
-  case items {
-    [first, ..] -> Ok(first)
-    [] -> Error(Nil)
-  }
-}
-```
-
-### `panic` for expected failure modes
-
-`panic` is for truly impossible states. If a function can legitimately fail (bad input, missing data, I/O errors), return `Result`.
-
-### Importing everything unqualified
-
-Wholesale unqualified imports make code harder to understand because readers cannot tell where functions come from. Import types and constructors unqualified when needed for pattern matching; keep functions qualified.
+Prefer matching on the underlying sum type rather than deriving a boolean and matching on `True`/`False`. The former is more informative and catches missing cases.
 
 ```gleam
-// Avoid: where does `map` come from?
-import gleam/list.{map, filter, fold}
+// Avoid: matching on a derived boolean
+let is_empty = list.is_empty(items)
+case is_empty {
+  True -> "no items"
+  False -> "has items"
+}
 
-// Prefer: origin is clear
-import gleam/list
-
-list.map(items, transform)
-list.filter(items, keeping: predicate)
+// Prefer: matching on the data directly
+case items {
+  [] -> "no items"
+  [_, ..] -> "has items"
+}
 ```
 
 ### Separate int and float operators
 
-Gleam uses distinct operators for integer and float arithmetic. Mixing them up is a compile error, not a runtime surprise.
+Gleam uses distinct operators for integer and float arithmetic. Mixing them is a compile error.
 
 | Operation | Int | Float |
 |-----------|-----|-------|
@@ -1049,161 +859,63 @@ Gleam uses distinct operators for integer and float arithmetic. Mixing them up i
 | Subtract | `-` | `-.` |
 | Multiply | `*` | `*.` |
 | Divide | `/` | `/.` |
-| Greater | `>` | `>.` |
-| Less | `<` | `<.` |
-| Greater-equal | `>=` | `>=.` |
-| Less-equal | `<=` | `<=.` |
-| Equality | `==` | `==` |
-
-Equality (`==`, `!=`) works across all types using structural comparison.
-
-### No `if/else`
-
-Gleam does not have `if/else` expressions. Use `case` on booleans instead. This is a deliberate language design choice to keep pattern matching as the single control flow mechanism.
-
-```gleam
-// This does not exist in Gleam:
-// if condition { ... } else { ... }
-
-// Use case instead:
-case is_valid {
-  True -> proceed()
-  False -> reject()
-}
-```
-
-### No OOP patterns
-
-Gleam has no classes, inheritance, interfaces, or method syntax. Functions are the only abstraction. If you find yourself wanting methods on a type, write module functions that take the type as their first argument (enabling piping).
-
-```gleam
-// Module functions that work with piping
-pub fn new() -> Counter {
-  Counter(0)
-}
-
-pub fn increment(counter: Counter) -> Counter {
-  Counter(counter.value + 1)
-}
-
-// Used with pipes
-new() |> increment |> increment
-```
+| Compare | `>` `<` `>=` `<=` | `>.` `<.` `>=.` `<=.` |
+| Equality | `==` `!=` | `==` `!=` |
 
 ---
 
-## 11. Tooling
+## 12. Tooling
 
-### `gleam format`
+### Project configuration: `gleam.toml`
 
-Formats all Gleam source files. Non-configurable. Run before every commit.
+`gleam.toml` is the project configuration file, controlling the target platform, dependencies, package metadata, and build settings. This project targets the Erlang platform.
+
+### Core commands
+
+| Command | Purpose |
+|---------|---------|
+| `gleam format` | Format all source files (non-configurable, authoritative) |
+| `gleam format --check` | Check formatting without modifying (CI) |
+| `gleam check` | Type-check without building artifacts (fast validation) |
+| `gleam build` | Compile for the target platform |
+| `gleam build --warnings-as-errors` | Treat warnings as errors (required in CI) |
+| `gleam test` | Run all test functions |
+| `gleam docs build` | Generate HTML documentation from `///` comments |
+| `gleam add <package>` | Add a dependency to `gleam.toml` |
+| `gleam add <package> --dev` | Add a dev dependency |
+| `gleam clean` | Remove build artifacts |
+
+### Target selection
+
+Commands that compile or run code accept a `--target` flag:
 
 ```sh
-gleam format         # Format in-place
-gleam format --check # Check only (CI)
-gleam format --stdin # Format from stdin
-```
-
-### `gleam check`
-
-Type-checks the project without building artifacts. Faster than `gleam build` for quick validation during development.
-
-```sh
-gleam check
-gleam check --target erlang
-gleam check --target javascript
-```
-
-### `gleam build`
-
-Compiles the project for the target platform.
-
-```sh
-gleam build
 gleam build --target erlang
 gleam build --target javascript
-gleam build --warnings-as-errors  # Treat warnings as errors (recommended for CI)
-```
-
-### `gleam test`
-
-Runs all test functions (public functions ending in `_test` in the `test/` directory).
-
-```sh
-gleam test
-gleam test --target erlang
 gleam test --target javascript
 ```
-
-### `gleam docs build`
-
-Generates HTML documentation from `///` and `////` comments. The generated docs follow hexdocs conventions.
-
-```sh
-gleam docs build
-```
-
-### `gleam add`
-
-Adds a dependency to `gleam.toml`.
-
-```sh
-gleam add gleam_json
-gleam add gleeunit --dev
-```
-
-### `gleam clean`
-
-Removes build artifacts.
-
-```sh
-gleam clean
-```
-
-### `gleam lsp`
-
-Runs the language server for editor integration. Provides diagnostics, completions, hover documentation, and go-to-definition.
 
 ### Recommended CI pipeline
 
 ```sh
-gleam format --check   # Formatting is correct
-gleam build --warnings-as-errors  # No warnings
-gleam test             # All tests pass
+gleam format --check
+gleam build --warnings-as-errors
+gleam test
 ```
 
 ---
 
-## 12. References
+## 13. References
 
-### Official documentation
-
-- **Language Tour**: <https://tour.gleam.run/> -- Interactive in-browser introduction covering all language features
-- **Language Tour (single page)**: <https://tour.gleam.run/everything/> -- All language features on one page
-- **Writing Gleam**: <https://gleam.run/writing-gleam/> -- Project creation and development guide
-- **FAQ / Design Philosophy**: <https://gleam.run/frequently-asked-questions/> -- Why Gleam excludes certain features
-- **Command Line Reference**: <https://gleam.run/command-line-reference/> -- All `gleam` CLI commands and flags
-
-### Standard library
-
-- **Standard library docs**: <https://hexdocs.pm/gleam_stdlib/> -- Full API documentation
-- **gleam/result**: <https://hexdocs.pm/gleam_stdlib/gleam/result.html> -- Error handling functions
-- **gleam/list**: <https://hexdocs.pm/gleam_stdlib/gleam/list.html> -- List operations
-- **gleam/string**: <https://hexdocs.pm/gleam_stdlib/gleam/string.html> -- String manipulation
-- **gleam/string_tree**: <https://hexdocs.pm/gleam_stdlib/gleam/string_tree.html> -- Efficient string building
-- **gleam/dict**: <https://hexdocs.pm/gleam_stdlib/gleam/dict.html> -- Dictionary operations
-- **gleam/option**: <https://hexdocs.pm/gleam_stdlib/gleam/option.html> -- Optional values
-
-### Cheatsheets
-
-- **Gleam for Erlang users**: <https://gleam.run/cheatsheets/gleam-for-erlang-users/>
-- **Gleam for Elixir users**: <https://gleam.run/cheatsheets/gleam-for-elixir-users/>
-- **Gleam for Elm users**: <https://gleam.run/cheatsheets/gleam-for-elm-users/>
-- **Gleam for Rust users**: <https://gleam.run/cheatsheets/gleam-for-rust-users/>
-- **Gleam for Python users**: <https://gleam.run/cheatsheets/gleam-for-python-users/>
-
-### Community
-
-- **Package index**: <https://packages.gleam.run> -- Published Gleam packages
-- **Awesome Gleam**: <https://github.com/gleam-lang/awesome-gleam> -- Curated community resources
-- **Gleam GitHub**: <https://github.com/gleam-lang/gleam> -- Language source and issue tracker
+- [Language Tour (single page)](https://tour.gleam.run/everything/) -- All language features on one page
+- [Standard library docs](https://hexdocs.pm/gleam_stdlib/) -- Full API documentation
+- [gleam/result](https://hexdocs.pm/gleam_stdlib/gleam/result.html) -- Error handling functions
+- [gleam/option](https://hexdocs.pm/gleam_stdlib/gleam/option.html) -- Optional values
+- [gleam/list](https://hexdocs.pm/gleam_stdlib/gleam/list.html) -- List operations
+- [gleam/string](https://hexdocs.pm/gleam_stdlib/gleam/string.html) -- String manipulation
+- [gleam/string_tree](https://hexdocs.pm/gleam_stdlib/gleam/string_tree.html) -- Efficient string building
+- [Writing Gleam](https://gleam.run/writing-gleam/) -- Project creation and development guide
+- [FAQ / Design Philosophy](https://gleam.run/frequently-asked-questions/) -- Why Gleam excludes certain features
+- [Command Line Reference](https://gleam.run/command-line-reference/) -- All CLI commands and flags
+- [Package index](https://packages.gleam.run) -- Published Gleam packages
+- [Gleam GitHub](https://github.com/gleam-lang/gleam) -- Language source and issue tracker

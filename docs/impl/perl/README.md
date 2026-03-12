@@ -1,7 +1,8 @@
 # Perl Style Guide
 
-A comprehensive guide to idiomatic Perl coding style and best practices, intended for
-code auditing Perl implementations.
+A guide to idiomatic Perl coding style and best practices for code auditing Perl
+implementations in the Sayable project. This is a zero-dependency library -- all
+recommendations reflect that constraint.
 
 ## Table of Contents
 
@@ -68,21 +69,25 @@ established one fits.
 
 ### Constants
 
-For true constants, use the `constant` pragma or `Readonly` module:
-
-```perl
-use constant MAX_RETRIES => 3;
-
-# Or with Readonly (more flexible, supports arrays/hashes)
-use Readonly;
-Readonly my $MAX_AGE_MONTHS => 6000;
-```
-
-For simple scalar constants, an all-caps `my` variable is acceptable:
+The primary approach for constants is a lexical `my` variable in `ALL_CAPS`:
 
 ```perl
 my $MAX_AGE_MONTHS = 6000;
 ```
+
+This is simple, lexically scoped, interpolates in strings, and works as a hash key without
+surprises.
+
+For true compile-time constants where the value must be inlined by the optimizer, use the
+`constant` pragma:
+
+```perl
+use constant MAX_RETRIES => 3;
+```
+
+Be aware of `use constant` traps: constants are bareword subroutines, so they do not
+interpolate in strings (`"max is MAX_RETRIES"` prints literally) and require explicit
+syntax when used as hash keys (`{ MAX_RETRIES() => 1 }`).
 
 ---
 
@@ -90,11 +95,7 @@ my $MAX_AGE_MONTHS = 6000;
 
 ### Indentation
 
-Use **2 or 4 spaces** per indent level. The `perlstyle` document recommends 4-column
-indentation. Many modern Perl projects use 2 spaces. Pick one and be consistent across the
-entire project.
-
-Do not use tabs for indentation.
+Use **2 spaces** per indent level. Do not use tabs for indentation.
 
 ### Braces
 
@@ -102,22 +103,20 @@ Opening brace on the same line as the keyword (K&R style):
 
 ```perl
 sub format_age {
-    my ($self, $dob, $as_of) = @_;
+  my ($self, $dob, $as_of) = @_;
 
-    if ($months < 3) {
-        return $result;
-    } elsif ($months < 24) {
-        return $other_result;
-    } else {
-        return $fallback;
-    }
+  if ($months < 3) {
+    return $result;
+  } elsif ($months < 24) {
+    return $other_result;
+  } else {
+    return $fallback;
+  }
 }
 ```
 
 The closing brace of a multi-line block lines up with the keyword that opened it.
-
-**Uncuddled elses** -- `} elsif {` and `} else {` go on the same line as the closing
-brace, though some projects place `else` on its own line. Be consistent.
+`} elsif {` and `} else {` go on the same line as the closing brace.
 
 One-line blocks may stay on a single line when short:
 
@@ -142,24 +141,25 @@ Keep lines under **100 characters** as a guideline. Break long lines after an op
 
 ```perl
 my $result = SayableAge::Locale::resolve_unit(
-    $years, $self->{year}, $self->{locale}, $self->{half}
+  $years, $self->{year}, $self->{locale}, $self->{half}
 );
 ```
 
 ### Vertical Alignment
 
-Align corresponding items vertically when it aids readability, particularly in hash
-assignments and similar structures:
+Do not manually align hash values, assignments, or other structures with extra whitespace.
+Alignment creates noisy diffs when keys are added or renamed, makes merge conflicts more
+likely, and reduces the usefulness of `git blame`. Let each line stand on its own:
 
 ```perl
 my $self = bless {
-    locale    => $locale,
-    day       => $day_unit,
-    week      => $week_unit,
-    month     => $month_unit,
-    year      => $year_unit,
-    half      => $half_marker,
-    delimiter => $delimiter,
+  locale => $locale,
+  day => $day_unit,
+  week => $week_unit,
+  month => $month_unit,
+  year => $year_unit,
+  half => $half_marker,
+  delimiter => $delimiter,
 }, $class;
 ```
 
@@ -171,11 +171,24 @@ within a subroutine with a blank line. Separate subroutine definitions with a bl
 ### Perl::Tidy
 
 Automate formatting with [Perl::Tidy](https://metacpan.org/pod/Perl::Tidy). A `.perltidyrc`
-file at the project root captures the team's formatting preferences. Notable flags:
+file at the project root captures the team's formatting preferences.
+
+Example `.perltidyrc`:
+
+```
+-nst     # don't output to STDOUT
+-l=100   # max line length
+-i=2     # 2-space indent
+-ci=2    # continuation indent
+-ce      # cuddled elses
+-bt=1    # brace tightness
+-pt=1    # parenthesis tightness
+```
+
+Notable flags:
 
 | Flag | Meaning |
 |---|---|
-| `-pbp` | Format per *Perl Best Practices* conventions |
 | `-i=N` | Set indent level to N columns |
 | `-l=N` | Maximum line length |
 | `-ci=N` | Continuation indent |
@@ -184,17 +197,9 @@ file at the project root captures the team's formatting preferences. Notable fla
 | `-bt=N` | Brace tightness (0=always space, 2=never space) |
 | `-pt=N` | Parenthesis tightness |
 | `-sbt=N` | Square bracket tightness |
-| `-bbt=N` | Block brace tightness |
 
-Example `.perltidyrc`:
-
-```
--pbp     # Perl Best Practices base
--nst     # don't output to STDOUT
--l=100   # max line length
--i=2     # 2-space indent
--ci=2    # continuation indent
-```
+Do not use `-pbp` as a base. Its defaults (4-space indent, uncuddled elses) conflict
+with this project's conventions.
 
 ---
 
@@ -202,7 +207,7 @@ Example `.perltidyrc`:
 
 ### The Non-Negotiable Three
 
-Every Perl file must begin with these pragmas (or their equivalent):
+Every Perl file must begin with these pragmas:
 
 ```perl
 use strict;
@@ -216,18 +221,37 @@ use utf8;
   questionable constructs. Prefer `use warnings` over the `-w` flag; the pragma is
   lexically scoped while `-w` is global and only applies to the main script.
 - **`use utf8`** -- declares that the source file itself is encoded in UTF-8, allowing
-  non-ASCII characters in string literals and identifiers.
+  non-ASCII characters in string literals and identifiers. Note that `use utf8` affects
+  source encoding only, not I/O. See the UTF-8 I/O section below.
 
-### Modern Perl Version Pragmas
+### UTF-8 I/O
 
-On Perl 5.36+, a single `use v5.36;` enables both `strict` and `warnings` automatically,
-along with modern features like subroutine signatures:
+`use utf8` does not change how filehandles read or write data. Code that outputs Unicode
+(test output, formatted ages in non-Latin scripts) needs explicit encoding on the output
+layer:
 
 ```perl
-use v5.36;
+binmode STDOUT, ':encoding(UTF-8)';
+binmode STDERR, ':encoding(UTF-8)';
 ```
 
-For code that must support older Perl versions, use the explicit three-pragma form.
+Or when opening files:
+
+```perl
+open(my $fh, '>:encoding(UTF-8)', $filename)
+  or croak "Cannot open '$filename': $!";
+```
+
+In test files, `Test::More` output goes through STDOUT. Set `binmode` at the top of the
+test file to avoid "Wide character in print" warnings.
+
+### Minimum Version
+
+This project uses the explicit three-pragma form (`use strict; use warnings; use utf8`)
+for broad compatibility. On Perl 5.36+, `use v5.36` enables `strict` and `warnings`
+automatically, but it does not enable `utf8` -- you would still need `use utf8` separately.
+Since the three-pragma form works on all Perl versions the project supports and is only
+one line longer, prefer it for consistency.
 
 ### Additional Pragmas
 
@@ -235,8 +259,7 @@ For code that must support older Perl versions, use the explicit three-pragma fo
 |---|---|---|
 | `use Carp` | `carp`, `croak`, `confess` | In modules (reports errors from caller's perspective) |
 | `use Exporter` | Symbol export | When a module provides importable functions |
-| `use constant` | Compile-time constants | For simple scalar/list constants |
-| `use feature 'signatures'` | Subroutine signatures | Perl 5.20+ (experimental until 5.36) |
+| `use constant` | Compile-time constants | For values that benefit from compile-time inlining |
 | `use feature 'say'` | `say` function (print + newline) | Perl 5.10+ |
 | `use feature 'state'` | `state` variables | Perl 5.10+ |
 | `no feature 'indirect'` | Disable indirect object syntax | Perl 5.32+ |
@@ -282,13 +305,6 @@ Every module file must end with a true value:
 1;
 ```
 
-Or, on Perl 5.38+, use `module_true`:
-
-```perl
-use v5.38;
-# no trailing 1; needed
-```
-
 ### Exporter
 
 Use `Exporter` to provide importable symbols. Prefer explicit export lists over
@@ -312,83 +328,49 @@ symbol) or `%EXPORT_TAGS` (named groups):
 
 ```perl
 our %EXPORT_TAGS = (
-    all => [qw(resolve_unit resolve_stage)],
+  all => [qw(resolve_unit resolve_stage)],
 );
 our @EXPORT_OK = @{ $EXPORT_TAGS{all} };
 ```
 
 ### Object-Oriented Design
 
-#### `bless`-based OO (Traditional)
+This project uses `bless`-based OO exclusively. It is the simplest approach, requires
+zero dependencies, and is appropriate for lightweight value objects and formatters.
 
-The simplest and zero-dependency approach. Appropriate for lightweight objects:
+For projects that allow dependencies, `Moo` provides declarative OO with attribute
+definitions and type checking. It is not applicable here.
+
+#### Constructor
 
 ```perl
 sub new {
-    my ($class, %args) = @_;
-    my $self = bless {
-        name  => $args{name},
-        value => $args{value} // 0,
-    }, $class;
-    return $self;
-}
-
-sub name {
-    my ($self) = @_;
-    return $self->{name};
+  my ($class, %args) = @_;
+  my $self = bless {
+    name => $args{name},
+    value => $args{value} // 0,
+  }, $class;
+  return $self;
 }
 ```
 
-#### Moo / Moose (Framework OO)
+Accept `$class` as the first argument to support subclassing. Always use `->new()`
+(direct method call), never `new Class` (indirect object notation).
 
-For larger systems, `Moo` (lightweight) or `Moose` (full-featured) provide declarative
-attribute definitions, type checking, roles, and more. These add runtime dependencies,
-so they are unsuitable for zero-dependency libraries:
+#### Accessors
 
-```perl
-package Person;
-use Moo;
-
-has name => (is => 'ro', required => 1);
-has age  => (is => 'rw', default => sub { 0 });
-
-sub greet {
-    my ($self) = @_;
-    return "Hello, I'm " . $self->name;
-}
-```
-
-#### Guidelines
-
-- Use `bless`-based OO for zero-dependency modules and simple data holders.
-- Use `Moo` for non-trivial applications when dependencies are acceptable.
-- Use `Moose` only when you need its advanced features (metaclass protocol, complex
-  type constraints, MOP introspection).
-- Always use `->new()` (direct method call), never `new Class` (indirect object notation).
-- Accept `$class` as the first argument in constructors to support subclassing.
-
-### Accessors
-
-For `bless`-based OO, write explicit accessor methods rather than exposing hash slots
-directly:
+Objects in this project are immutable after construction. Write read-only accessor methods
+rather than exposing hash slots directly:
 
 ```perl
-# Good: accessor method
+# Good: read-only accessor
 sub locale { return $_[0]->{locale} }
 
 # Bad: direct slot access from outside the class
 $formatter->{locale}
 ```
 
-For read-write accessors:
-
-```perl
-sub name {
-    my $self = shift;
-    $self->{name} = shift if @_;
-    return $self->{name};
-}
-```
+Do not write read-write accessors unless mutation is specifically required by the design.
 
 ### POD Documentation
 
@@ -508,15 +490,15 @@ Build complex structures with nested references:
 
 ```perl
 my $locale = {
-    code  => 'en',
-    units => {
-        day   => { one => '{n} day',   other => '{n} days' },
-        week  => { one => '{n} week',  other => '{n} weeks' },
-    },
-    plural => sub {
-        my ($n) = @_;
-        return $n == 1 ? 'one' : 'other';
-    },
+  code => 'en',
+  units => {
+    day => { one => '{n} day', other => '{n} days' },
+    week => { one => '{n} week', other => '{n} weeks' },
+  },
+  plural => sub {
+    my ($n) = @_;
+    return $n == 1 ? 'one' : 'other';
+  },
 };
 ```
 
@@ -534,16 +516,31 @@ Always pass arrays and hashes by reference to avoid flattening:
 ```perl
 # Good
 sub process {
-    my ($array_ref, $hash_ref) = @_;
-    for my $item (@{$array_ref}) { ... }
+  my ($array_ref, $hash_ref) = @_;
+  for my $item (@{$array_ref}) { ... }
 }
 process(\@items, \%config);
 
 # Bad: arrays flatten into a single list
 sub process {
-    my (@items, %config) = @_;   # %config will be empty!
+  my (@items, %config) = @_;   # %config will be empty!
 }
 ```
+
+### Subroutine Argument Unpacking
+
+Use list assignment from `@_` as the standard pattern for unpacking arguments:
+
+```perl
+sub format_age {
+  my ($self, $date_of_birth, $as_of) = @_;
+  ...
+}
+```
+
+Do not use `shift` for argument unpacking unless there is a specific reason (e.g., a
+read-write accessor that checks `@_` after extracting `$self`). The list assignment form
+is non-destructive, explicit about expected parameters, and consistent across the codebase.
 
 ### Slices
 
@@ -569,9 +566,9 @@ reports the error from the caller's perspective rather than the module's:
 use Carp qw(croak carp);
 
 sub new {
-    my ($class, %args) = @_;
-    croak 'locale is required' unless $args{locale};
-    ...
+  my ($class, %args) = @_;
+  croak 'locale is required' unless $args{locale};
+  ...
 }
 ```
 
@@ -594,63 +591,56 @@ Good error messages include:
 
 ```perl
 open my $fh, '<', $filename
-    or croak "Cannot open '$filename' for reading: $!";
+  or croak "Cannot open '$filename' for reading: $!";
 ```
 
 ### eval for Exception Handling
 
-Catch exceptions with `eval { }` blocks:
+Catch exceptions with `eval { }` blocks. Capture `$@` immediately after the `eval`
+block, before any other statement can clobber it:
 
 ```perl
 my $result = eval {
-    potentially_dangerous_operation();
-    1;    # true on success
+  potentially_dangerous_operation();
+  1;    # true on success
 };
+my $error = $@;    # capture immediately -- $@ can be clobbered by destructors
 if (!$result) {
-    my $error = $@;
-    # handle error
+  # handle $error
 }
 ```
 
-The pattern of returning `1` at the end of the `eval` block and checking the return
-value is more reliable than testing `$@` directly, because `$@` can be clobbered by
-intermediate operations.
+The `1;` return value pattern is important: checking the return value of `eval` is more
+reliable than testing `$@` directly, because `$@` can be overwritten by destructors or
+intermediate `eval` calls between the `eval` block and the check. By capturing `$@` on
+the very next line, before the conditional, you minimize the clobber window.
 
-### Try::Tiny
+### Return Values for Expected Failures
 
-For cleaner syntax (at the cost of a dependency), `Try::Tiny` avoids the pitfalls of
-bare `eval`:
-
-```perl
-use Try::Tiny;
-
-try {
-    risky_operation();
-} catch {
-    warn "Operation failed: $_";
-} finally {
-    cleanup();
-};
-```
-
-Note the semicolons after the blocks -- these are function calls, not control structures.
-
-### Return undef for Expected Failures
-
-For operations that can legitimately fail (like parsing optional input), return `undef`
-rather than dying:
+For operations that can legitimately fail (like parsing optional input), return a value
+that signals the failure:
 
 ```perl
 sub _parse_age {
-    my ($date_of_birth, $as_of) = @_;
-    return undef unless defined $date_of_birth && $date_of_birth ne '';
-    ...
+  my ($date_of_birth, $as_of) = @_;
+  return undef unless defined $date_of_birth && $date_of_birth ne '';
+  ...
 }
 ```
 
-Use `return undef` (explicit) rather than bare `return` when you specifically mean to
-return an undefined value. Bare `return` returns an empty list in list context, which
-behaves differently.
+In this project, functions that return failure use `return undef` and are always called in
+scalar context. This is safe and explicit.
+
+Be aware of the tradeoff: `return undef` in list context returns a one-element list
+`(undef)`, which is true in boolean context. Bare `return` returns an empty list in list
+context, which is false. Since this project's functions are called in scalar context, this
+distinction does not apply, but `Perl::Critic`'s `ProhibitExplicitReturnUndef` policy
+(severity 5) will flag `return undef` by default. Disable this policy in `.perlcriticrc`
+with a comment explaining that all affected functions are scalar-context-only:
+
+```ini
+[-Perl::Critic::Policy::Subroutines::ProhibitExplicitReturnUndef]
+```
 
 ### Error Propagation
 
@@ -663,8 +653,9 @@ eval { dangerous(); };
 
 # Good: re-raise with context
 eval { dangerous() };
-if ($@) {
-    croak "Failed during initialization: $@";
+my $error = $@;
+if ($error) {
+  croak "Failed during initialization: $error";
 }
 ```
 
@@ -683,11 +674,11 @@ my @parts = split(/(\d{4})-(\d{2})-(\d{2})/, $date);
 
 # With /x -- self-documenting
 my $date_re = qr{
-    (\d{4})   # year
-    -
-    (\d{2})   # month
-    -
-    (\d{2})   # day
+  (\d{4})   # year
+  -
+  (\d{2})   # month
+  -
+  (\d{2})   # day
 }x;
 ```
 
@@ -699,15 +690,15 @@ Prefer named captures over numbered ones for anything non-trivial:
 
 ```perl
 if ($date =~ m{
-    (?<year>  \d{4} )
-    -
-    (?<month> \d{2} )
-    -
-    (?<day>   \d{2} )
+  (?<year>  \d{4} )
+  -
+  (?<month> \d{2} )
+  -
+  (?<day>   \d{2} )
 }x) {
-    my $year  = $+{year};
-    my $month = $+{month};
-    my $day   = $+{day};
+  my $year  = $+{year};
+  my $month = $+{month};
+  my $day   = $+{day};
 }
 ```
 
@@ -777,7 +768,7 @@ my $num = $1;
 
 # Good: check match result
 if ($string =~ /(\d+)/) {
-    my $num = $1;
+  my $num = $1;
 }
 ```
 
@@ -847,12 +838,12 @@ indented (Perl 5.26+):
 
 ```perl
 sub usage {
-    return <<~'END';
-        Usage: program [options]
-        Options:
-            --help    Show this message
-            --verbose Enable verbose output
-        END
+  return <<~'END';
+    Usage: program [options]
+    Options:
+        --help    Show this message
+        --verbose Enable verbose output
+    END
 }
 ```
 
@@ -902,10 +893,7 @@ side effects (assignments inside branches):
 # Bad: side effects in ternary
 $cond ? ($x = 1) : ($x = 2);
 
-# Good: straightforward if/else
-if ($cond) { $x = 1 } else { $x = 2 }
-
-# Or simply
+# Good: straightforward
 $x = $cond ? 1 : 2;
 ```
 
@@ -933,30 +921,21 @@ die "Cannot open: $!" unless open(my $fh, '<', $file);
 open(my $fh, '<', $file) or die "Cannot open '$file': $!";
 ```
 
-Avoid `unless` with `elsif` or complex conditions -- it becomes hard to reason about:
+**`unless` rules:**
+
+- `unless` is acceptable as a postfix modifier for simple guard clauses:
+  `return undef unless defined $x;`
+- `unless` blocks (`unless (...) { ... }`) should be rewritten as `if (!...)` for clarity.
+- Never use `unless` with `elsif` or with compound conditions -- the double negation is
+  too hard to reason about:
 
 ```perl
-# Bad: double-negation is confusing
+# Bad: double-negation
 unless (!$valid || $expired) { ... }
 
 # Good: positive logic
 if ($valid && !$expired) { ... }
 ```
-
-### Context Sensitivity and wantarray
-
-Perl expressions behave differently in scalar vs. list context. The `wantarray` function
-detects calling context:
-
-```perl
-sub flexible {
-    my @results = compute();
-    return wantarray ? @results : $results[0];
-}
-```
-
-Use `wantarray` sparingly. Most subroutines should have a single, predictable return
-type. Context-sensitive returns can surprise callers.
 
 ### The // (Defined-Or) Operator
 
@@ -973,20 +952,12 @@ my $count = $opts{count} || 10;   # Bug: $opts{count} = 0 gives 10
 my $count = $opts{count} // 10;   # Correct: 0 stays 0
 ```
 
-### Chained Method Calls
+### Context Sensitivity
 
-For method chaining, return `$self`:
-
-```perl
-sub set_locale {
-    my ($self, $locale) = @_;
-    $self->{locale} = $locale;
-    return $self;
-}
-
-# Enables:
-$formatter->set_locale($en)->set_compactness('short');
-```
+Perl expressions behave differently in scalar vs. list context. Functions should have
+a single, predictable return type. Do not use `wantarray` to change return behavior
+based on calling context -- it makes functions unpredictable and has been deprecated
+in recent Perl versions.
 
 ### Boolean Idioms
 
@@ -1037,11 +1008,19 @@ open(my $fh, '<', $file) or die "Cannot open '$file': $!";
 print {$fh} "data";
 ```
 
-When printing to a filehandle stored in a variable, use braces to disambiguate:
+When printing to a filehandle stored in a variable, use braces to disambiguate for
+human readers:
 
 ```perl
-print {$fh} "output\n";    # clear
-print $fh "output\n";      # ambiguous (looks like $fh is the first arg)
+print {$fh} "output\n";    # clear to the reader
+print $fh "output\n";      # works, but looks like $fh is a string argument
+```
+
+When a trailing newline is desired, prefer `say` (requires `use feature 'say'` or
+Perl 5.10+):
+
+```perl
+say {$fh} "output";        # prints "output\n"
 ```
 
 ### Indirect Object Notation
@@ -1073,16 +1052,16 @@ my @upper = map { uc } @words;
 
 # Bad: $_ in nested or long blocks
 for (@records) {
-    for (@{$_->{items}}) {
-        process($_);      # which $_ ?
-    }
+  for (@{$_->{items}}) {
+    process($_);      # which $_ ?
+  }
 }
 
 # Good: explicit variables
 for my $record (@records) {
-    for my $item (@{$record->{items}}) {
-        process($item);
-    }
+  for my $item (@{$record->{items}}) {
+    process($item);
+  }
 }
 ```
 
@@ -1095,10 +1074,10 @@ They are a source of subtle bugs:
 # Bad: prototype does not do what it looks like
 sub add ($$) { return $_[0] + $_[1]; }
 
-# Good: no prototype, use signatures or manual unpacking
+# Good: no prototype, manual unpacking
 sub add {
-    my ($x, $y) = @_;
-    return $x + $y;
+  my ($x, $y) = @_;
+  return $x + $y;
 }
 ```
 
@@ -1158,7 +1137,7 @@ map { print "$_\n" } @items;
 
 # Good: no wasted list
 for my $item (@items) {
-    print "$item\n";
+  print "$item\n";
 }
 ```
 
@@ -1189,8 +1168,8 @@ my $content = <$fh>;
 
 # Good: localize the change
 my $content = do {
-    local $/;
-    <$fh>;
+  local $/;
+  <$fh>;
 };
 ```
 
@@ -1233,6 +1212,9 @@ Start at severity 5 and gradually lower the threshold as the codebase matures.
 severity = 3
 verbose  = %f:%l:%c: %m (%p, severity %s)\n
 
+# This project uses return undef in scalar-context-only functions
+[-Perl::Critic::Policy::Subroutines::ProhibitExplicitReturnUndef]
+
 [Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls]
 severity = 2
 allow = if unless
@@ -1243,7 +1225,8 @@ allowed_values = 0 1 2 -1
 [-Perl::Critic::Policy::Documentation::RequirePodSections]
 ```
 
-Prefix a policy with `-` to disable it entirely.
+Prefix a policy with `-` to disable it entirely. When disabling a policy, include a
+comment explaining why.
 
 **Inline suppression** (use sparingly, with justification):
 
@@ -1271,7 +1254,7 @@ my @days = (0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 Run it from the command line:
 
 ```bash
-perltidy -pbp script.pl              # format per Perl Best Practices
+perltidy script.pl                   # format (output to script.pl.tdy)
 perltidy -b script.pl                # format in-place (backup to .bak)
 perltidy -pro=.perltidyrc script.pl  # use project config
 ```
@@ -1310,7 +1293,7 @@ requires 'Test::More', '0.98';
 requires 'Time::Local';
 
 on 'test' => sub {
-    requires 'Test::Deep';
+  requires 'Test::Deep';
 };
 ```
 
@@ -1354,10 +1337,10 @@ perldoc -v '$_'            # documentation for a variable
 - [perltrap](https://perldoc.perl.org/perltrap) -- Perl traps for the unwary
 - [perlobj](https://perldoc.perl.org/perlobj) -- Perl object reference
 - [perlopentut](https://perldoc.perl.org/perlopentut) -- Perl open tutorial
+- [perlunitut](https://perldoc.perl.org/perlunitut) -- Perl Unicode tutorial
 
 ### Books
 
-- [Perl Best Practices](https://www.oreilly.com/library/view/perl-best-practices/0596001738/) by Damian Conway (O'Reilly, 2005) -- the foundation for Perl::Critic policies
 - [Modern Perl](https://www.modernperlbooks.com/books/modern_perl/) by chromatic -- free online book covering contemporary Perl idioms. See especially [Chapter 11: What to Avoid](https://www.modernperlbooks.com/books/modern_perl/chapter_11.html)
 
 ### CPAN Modules and Tools
@@ -1365,8 +1348,6 @@ perldoc -v '$_'            # documentation for a variable
 - [Perl::Critic](https://metacpan.org/pod/Perl::Critic) -- static code analysis
 - [Perl::Tidy](https://metacpan.org/pod/Perl::Tidy) -- code formatter
 - [Perl::Critic::Policies](https://metacpan.org/release/Perl-Critic) -- complete policy list
-- [Try::Tiny](https://metacpan.org/pod/Try::Tiny) -- exception handling
-- [Moo](https://metacpan.org/pod/Moo) -- lightweight OO framework
 - [App::cpanminus](https://metacpan.org/pod/App::cpanminus) -- CPAN installer
 
 ### Community Resources

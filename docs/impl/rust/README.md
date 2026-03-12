@@ -1,18 +1,24 @@
 # Rust Style Guide
 
-A comprehensive reference for idiomatic Rust coding style and best practices. Intended for code auditing Rust implementations.
+A reference for idiomatic Rust coding style in the Sayable project. Intended for auditing and contributing to the Rust implementation of sayable-age.
+
+## Project constraints
+
+These constraints override any general Rust advice that conflicts with them:
+
+- **Zero runtime dependencies.** The `[dependencies]` section of `Cargo.toml` must remain empty.
+- **`unsafe` is forbidden.** `Cargo.toml` sets `unsafe_code = "forbid"`. No `unsafe` blocks, no `unsafe fn`, no `unsafe impl`.
+- **All implementations must produce identical output.** Formatting logic must match the other 28 language implementations exactly.
 
 ## Sources
 
-This guide synthesizes conventions from the following authoritative references:
+This guide synthesizes conventions from:
 
 - [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) (C-CASE, C-CONV, C-COMMON-TRAITS, etc.)
 - [Rust Style Guide](https://doc.rust-lang.org/nightly/style-guide/) (official formatting rules)
 - [Clippy Lint Index](https://rust-lang.github.io/rust-clippy/master/index.html)
 - [The Rust Programming Language](https://doc.rust-lang.org/book/) ("The Book")
-- [Rust by Example](https://doc.rust-lang.org/rust-by-example/)
-- [Rust Design Patterns](https://rust-unofficial.github.io/patterns/)
-- [RFC 430 — Naming Conventions](https://github.com/rust-lang/rfcs/blob/master/text/0430-finalizing-naming-conventions.md)
+- [RFC 430 -- Naming Conventions](https://github.com/rust-lang/rfcs/blob/master/text/0430-finalizing-naming-conventions.md)
 
 ---
 
@@ -30,22 +36,21 @@ This guide synthesizes conventions from the following authoritative references:
 | Functions | `snake_case` | `format_age` |
 | Methods | `snake_case` | `as_bytes`, `to_string` |
 | Local variables | `snake_case` | `birth_date`, `age_in_days` |
-| Constants | `SCREAMING_SNAKE_CASE` | `MAX_RETRIES`, `DEFAULT_LOCALE` |
-| Statics | `SCREAMING_SNAKE_CASE` | `GLOBAL_ALLOCATOR` |
-| Type parameters | Single uppercase letter or short `CamelCase` | `T`, `U`, `K`, `V`, `Item` |
-| Lifetimes | Short lowercase, prefixed with `'` | `'a`, `'b`, `'src`, `'de` |
-| Macros | `snake_case!` | `vec!`, `println!`, `format_args!` |
-| Feature flags | `kebab-case` in Cargo.toml | `serde`, `std`, `alloc` |
+| Constants | `SCREAMING_SNAKE_CASE` | `MAX_AGE_MONTHS`, `VERSION` |
+| Statics | `SCREAMING_SNAKE_CASE` | `NOW_OVERRIDE` |
+| Type parameters | Single uppercase letter or short `CamelCase` | `T`, `U`, `Item` |
+| Lifetimes | Short lowercase, prefixed with `'` | `'a`, `'b`, `'src` |
+| Macros | `snake_case!` | `vec!`, `println!` |
+| Feature flags | `kebab-case` in Cargo.toml | `serde`, `std` |
 
 ### Acronym Handling
 
-Treat acronyms as single words. In `UpperCamelCase`, only capitalize the first letter. In `snake_case`, lowercase the entire acronym:
+Treat acronyms as single words. In `UpperCamelCase`, capitalize only the first letter. In `snake_case`, lowercase the entire acronym:
 
 ```rust
 // Correct
 struct HttpRequest;
 struct JsonParser;
-fn is_xid_start() -> bool { todo!() }
 
 // Incorrect
 struct HTTPRequest;  // treat HTTP as a word: Http
@@ -54,7 +59,7 @@ struct JSONParser;   // treat JSON as a word: Json
 
 ### Crate Naming
 
-Avoid `-rs` or `-rust` suffixes in crate names. The crate is already Rust; the suffix adds noise:
+Avoid `-rs` or `-rust` suffixes. The crate is already Rust:
 
 ```toml
 # Correct
@@ -69,9 +74,9 @@ name = "sayable-age-rs"
 
 | Prefix | Cost | Ownership | Example |
 |---|---|---|---|
-| `as_` | Free | Borrow `&self` → borrowed view | `str::as_bytes() -> &[u8]` |
-| `to_` | Expensive | Borrow `&self` → new owned value | `str::to_lowercase() -> String` |
-| `into_` | Variable | Consume `self` → new type | `String::into_bytes() -> Vec<u8>` |
+| `as_` | Free | Borrow `&self` -> borrowed view | `str::as_bytes() -> &[u8]` |
+| `to_` | Expensive | Borrow `&self` -> new owned value | `str::to_lowercase() -> String` |
+| `into_` | Variable | Consume `self` -> new type | `String::into_bytes() -> Vec<u8>` |
 | `from_` | Variable | Static constructor | `String::from_utf8(vec) -> Result<String, ...>` |
 | `try_` | Fallible | Returns `Result` or `Option` | `u8::try_from(256i32) -> Result<u8, ...>` |
 
@@ -81,13 +86,8 @@ Omit the `get_` prefix. Name the getter after the field:
 
 ```rust
 impl Config {
-    // Correct
     fn name(&self) -> &str { &self.name }
     fn is_active(&self) -> bool { self.active }
-
-    // Avoid
-    fn get_name(&self) -> &str { &self.name }
-    fn get_is_active(&self) -> bool { self.active }
 }
 ```
 
@@ -95,22 +95,7 @@ Boolean getters use `is_`, `has_`, or `can_` prefixes.
 
 ### Iterator Method Naming (C-ITER)
 
-Collections should provide three iterator methods:
-
-```rust
-impl MyCollection<T> {
-    fn iter(&self) -> Iter<'_, T> { ... }         // yields &T
-    fn iter_mut(&mut self) -> IterMut<'_, T> { ... } // yields &mut T
-}
-
-impl<T> IntoIterator for MyCollection<T> {
-    type Item = T;
-    type IntoIter = IntoIter<T>;
-    fn into_iter(self) -> IntoIter<T> { ... }      // yields T (consuming)
-}
-```
-
-Iterator type names match the method: `iter()` returns `Iter`, `iter_mut()` returns `IterMut`, `into_iter()` returns `IntoIter`.
+Collections should provide `iter()` (yields `&T`), `iter_mut()` (yields `&mut T`), and implement `IntoIterator` (yields `T`, consuming). Iterator type names match the method: `iter()` returns `Iter`, `iter_mut()` returns `IterMut`, `into_iter()` returns `IntoIter`.
 
 ---
 
@@ -118,13 +103,13 @@ Iterator type names match the method: `iter()` returns `Iter`, `iter_mut()` retu
 
 ### rustfmt Defaults
 
-Use `rustfmt` with default settings. The official Rust style guide establishes these rules:
+Use `rustfmt` with default settings:
 
 - **Indentation:** 4 spaces per level. Never tabs.
-- **Maximum line width:** 100 characters.
-- **Trailing commas:** Always use trailing commas in multi-line comma-separated lists.
-- **Trailing whitespace:** None, on any line.
-- **Blank lines:** Zero or one between items and statements (never two or more consecutive blank lines).
+- **Maximum line width:** 100 characters (for both code and comments).
+- **Trailing commas:** Always in multi-line comma-separated lists.
+- **Trailing whitespace:** None.
+- **Blank lines:** At most one between items and statements.
 
 ### Block Indent over Visual Indent
 
@@ -142,21 +127,18 @@ a_function_call(foo,
 
 ### Import Ordering and Grouping
 
-Organize `use` statements in groups separated by blank lines, in this order:
+Organize `use` statements in groups separated by blank lines:
 
 1. `std` / `core` / `alloc` (standard library)
-2. External crate imports
+2. External crate imports (should not exist in this project)
 3. `crate::` (current crate absolute paths)
 4. `self::` and `super::` (relative paths)
 
-Within each group, sort alphabetically. Always use `self` and `super` first within a brace group:
+Within each group, sort alphabetically:
 
 ```rust
 use std::collections::HashMap;
 use std::fmt;
-
-use chrono::NaiveDate;
-use serde::{Deserialize, Serialize};
 
 use crate::locale::AgeLocale;
 use crate::types::PluralCategory;
@@ -164,16 +146,11 @@ use crate::types::PluralCategory;
 
 ### Brace Style
 
-Opening brace on the same line as the item declaration (K&R / Rust style). Closing brace on its own line at the item's indentation level:
+Opening brace on the same line. Closing brace on its own line at the item's indentation level:
 
 ```rust
-fn format_age(birth: NaiveDate, now: NaiveDate) -> String {
+fn format_age(birth: &str, as_of: Option<&str>) -> Option<String> {
     // ...
-}
-
-struct AgeLocale {
-    just_born: &'static str,
-    delimiter: &'static str,
 }
 
 if age_in_days < 14 {
@@ -185,18 +162,18 @@ if age_in_days < 14 {
 
 ### Function Signatures
 
-Single-line when they fit within the line limit. Multi-line with block indent otherwise:
+Single-line when they fit. Multi-line with block indent and trailing comma otherwise:
 
 ```rust
 // Fits on one line
 fn add(a: i32, b: i32) -> i32 { a + b }
 
-// Multi-line: block indent, trailing comma
+// Multi-line
 fn format_age(
-    birth_date: NaiveDate,
-    as_of: NaiveDate,
+    birth_date: &str,
+    as_of: Option<&str>,
     locale: &AgeLocale,
-) -> String {
+) -> Option<String> {
     // ...
 }
 ```
@@ -212,28 +189,20 @@ where
 {
     // ...
 }
-
-impl<T> Formatter for Container<T>
-where
-    T: Display + Clone,
-{
-    // ...
-}
 ```
 
 ### Comments
 
 - Prefer line comments (`//`) over block comments (`/* */`).
 - Comments should be complete sentences: capitalize the first word, end with a period.
-- Doc comments use `///` (outer) or `//!` (inner, for module/crate level only).
-- Line comments should not exceed 80 characters (excluding indentation) or the max line width, whichever is smaller.
+- Doc comments use `///` (outer) or `//!` (inner, for module/crate level).
 - Comments explain *why*, not *what*. If you need to explain what code does, extract it into a named function or variable.
 
 ```rust
 /// Formats a human age from a date of birth and reference date.
 ///
 /// Returns a natural-language string like "6 weeks" or "3 1/2 years".
-pub fn format_age(birth: NaiveDate, now: NaiveDate) -> String {
+pub fn format_age(birth: &str, as_of: Option<&str>) -> Option<String> {
     // Use whole months after 8 weeks to match how parents talk.
     let months = months_between(birth, now);
     // ...
@@ -246,28 +215,23 @@ Use a single `#[derive(...)]` attribute. Place each attribute on its own line ab
 
 ```rust
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
-#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct AgeLocale {
     pub just_born: &'static str,
 }
 ```
 
+Derive order convention: `Debug`, `Clone`, `Copy` (if applicable), `PartialEq`, `Eq`, `PartialOrd`, `Ord`, `Hash`, `Default`.
+
 ---
 
 ## 3. Ownership and Borrowing
-
-### The Three Rules of Ownership
-
-1. Each value has exactly one owner.
-2. When the owner goes out of scope, the value is dropped.
-3. There can be either one mutable reference or any number of immutable references at a time, but not both.
 
 ### Borrowing Guidelines
 
 **Prefer borrowing over ownership when the function does not need to own the data:**
 
 ```rust
-// Correct: borrows the string, does not need ownership
+// Correct: borrows the string
 fn greet(name: &str) {
     println!("Hello, {name}!");
 }
@@ -278,39 +242,30 @@ fn greet(name: String) {
 }
 ```
 
-**Accept `&str` rather than `&String`, and `&[T]` rather than `&Vec<T>`** (C-GENERIC). The borrowed slices are more general because `String` derefs to `str` and `Vec<T>` derefs to `[T]`:
+**Accept `&str` rather than `&String`, and `&[T]` rather than `&Vec<T>`** (C-GENERIC). The borrowed slices are more general:
 
 ```rust
 // Correct: accepts any string-like type
 fn word_count(text: &str) -> usize {
     text.split_whitespace().count()
 }
-
-// Avoid: unnecessarily restrictive
-fn word_count(text: &String) -> usize {
-    text.split_whitespace().count()
-}
 ```
 
-### Clone vs. Borrow (C-CALLER-CONTROL)
+### Taking Ownership
 
-Let the caller decide when to clone. If a function needs ownership, take ownership explicitly rather than accepting a reference and cloning internally:
+When a function needs to store data, use `impl Into<String>` to accept both owned and borrowed inputs ergonomically:
 
 ```rust
-// Correct: caller decides when to clone
-fn store_name(name: String) {
-    // owns the string
-}
-
-// Avoid: hidden clone inside the function
-fn store_name(name: &str) {
-    let owned = name.to_string(); // caller cannot avoid this allocation
+fn store_name(name: impl Into<String>) {
+    let owned = name.into(); // zero-cost if caller passes String, allocates if &str
 }
 ```
+
+For simple internal functions where the caller always has one type, taking `String` or `&str` directly is fine.
 
 ### Lifetime Annotations
 
-Use explicit lifetimes only when the compiler cannot infer them. For simple cases, lifetime elision handles it:
+Use explicit lifetimes only when the compiler cannot infer them:
 
 ```rust
 // Elision works here (one input reference, one output reference)
@@ -318,14 +273,13 @@ fn first_word(s: &str) -> &str {
     s.split_whitespace().next().unwrap_or("")
 }
 
-// Explicit lifetimes needed: two input references, must specify which
-// the output borrows from
+// Explicit lifetimes needed: two input references
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() { x } else { y }
 }
 ```
 
-Prefer short lifetime names (`'a`, `'b`) for generic code. Use descriptive names (`'src`, `'de`, `'input`) when the meaning would otherwise be unclear.
+Prefer short lifetime names (`'a`, `'b`) for generic code. Use descriptive names (`'src`, `'de`) when the meaning would otherwise be unclear.
 
 ### Common Lifetime Patterns
 
@@ -335,15 +289,9 @@ Prefer short lifetime names (`'a`, `'b`) for generic code. Use descriptive names
 struct Excerpt<'a> {
     text: &'a str,
 }
-
-impl<'a> Excerpt<'a> {
-    fn new(text: &'a str) -> Self {
-        Excerpt { text }
-    }
-}
 ```
 
-**The `'static` lifetime:** Use for data that lives for the entire program (string literals, leaked allocations). Do not use `'static` as an escape hatch for lifetime issues.
+**The `'static` lifetime:** Use for data that lives for the entire program (string literals, constants). Do not use `'static` as an escape hatch for lifetime issues.
 
 ---
 
@@ -355,12 +303,14 @@ Use structs for data with named fields. Prefer private fields with public access
 
 ```rust
 // Public fields for simple data containers without invariants
-pub struct Point {
-    pub x: f64,
-    pub y: f64,
+pub struct Units {
+    pub day: UnitForms,
+    pub week: UnitForms,
+    pub month: UnitForms,
+    pub year: UnitForms,
 }
 
-// Private fields when validation is needed (C-STRUCT-PRIVATE)
+// Private fields when validation is needed
 pub struct Age {
     days: u32,
 }
@@ -390,23 +340,21 @@ pub enum PluralCategory {
     Other,
 }
 
-pub enum AgeStage {
-    JustBorn,
-    Weeks(u32),
-    Months { count: u32, half: bool },
-    Years { count: u32, half: bool },
+pub enum UnitForms {
+    Simple(String),
+    Plural(HashMap<PluralCategory, String>),
 }
 ```
 
 ### Newtype Pattern (C-NEWTYPE)
 
-Wrap primitive types to create distinct types that the compiler enforces:
+Wrap primitive types to create distinct types the compiler enforces:
 
 ```rust
 // Without newtype: easy to swap arguments
 fn set_dimensions(width: u32, height: u32) { ... }
 
-// With newtype: compiler prevents mixing them up
+// With newtype: compiler prevents mixing
 struct Width(u32);
 struct Height(u32);
 fn set_dimensions(width: Width, height: Height) { ... }
@@ -418,30 +366,21 @@ Define traits for shared behavior. Keep traits focused on a single responsibilit
 
 ```rust
 pub trait Formatter {
-    fn format(&self, birth: NaiveDate, now: NaiveDate) -> String;
-}
-
-// Provide default implementations when sensible
-pub trait Summary {
-    fn summarize_author(&self) -> String;
-
-    fn summarize(&self) -> String {
-        format!("(Read more from {}...)", self.summarize_author())
-    }
+    fn format(&self, birth: &str, now: &str) -> Option<String>;
 }
 ```
 
 ### Generics and Trait Bounds
 
-Use generics to write flexible code. Prefer `impl Trait` in argument position for simple cases and explicit generics for complex ones:
+Use `impl Trait` in argument position for simple cases. Use explicit generics with `where` clauses for complex ones:
 
 ```rust
-// Simple: impl Trait (C-GENERIC)
+// Simple: impl Trait
 fn print_it(item: &impl Display) {
     println!("{item}");
 }
 
-// Complex: explicit generics with where clause
+// Complex: explicit generics
 fn process<T, U>(input: T, output: &mut U)
 where
     T: AsRef<str>,
@@ -477,44 +416,13 @@ trait Add<Rhs = Self> {
 }
 ```
 
-### PhantomData
-
-Use `PhantomData<T>` when a struct is logically parameterized by `T` but does not physically contain `T`. Common in type-state patterns and FFI wrappers:
-
-```rust
-use std::marker::PhantomData;
-
-struct Locked;
-struct Unlocked;
-
-struct Door<State> {
-    _state: PhantomData<State>,
-}
-
-impl Door<Locked> {
-    fn unlock(self) -> Door<Unlocked> {
-        Door { _state: PhantomData }
-    }
-}
-
-impl Door<Unlocked> {
-    fn lock(self) -> Door<Locked> {
-        Door { _state: PhantomData }
-    }
-
-    fn open(&self) {
-        println!("Door is open");
-    }
-}
-```
-
 ---
 
 ## 5. Error Handling
 
 ### Result and Option
 
-`Result<T, E>` is for operations that can fail. `Option<T>` is for values that may or may not exist. Do not conflate them:
+`Result<T, E>` is for operations that can fail. `Option<T>` is for values that may be absent. Do not conflate them:
 
 ```rust
 // Result: operation can fail with a reason
@@ -530,7 +438,7 @@ fn find_locale(code: &str) -> Option<&AgeLocale> {
 
 ### The ? Operator
 
-Use `?` to propagate errors up the call stack. It replaces verbose `match` blocks:
+Use `?` to propagate errors up the call stack:
 
 ```rust
 fn read_config(path: &Path) -> Result<Config, Box<dyn Error>> {
@@ -542,14 +450,14 @@ fn read_config(path: &Path) -> Result<Config, Box<dyn Error>> {
 
 ### Custom Error Types (C-GOOD-ERR)
 
-Define custom error types with meaningful variants. Implement `std::error::Error`, `Display`, and `Debug`:
+Define custom error types with meaningful variants. Implement `std::error::Error`, `Display`, and `Debug`. Since this project has zero dependencies, implement these traits manually (do not use `thiserror`):
 
 ```rust
 use std::fmt;
 
 #[derive(Debug)]
 pub enum FormatError {
-    InvalidDate { birth: NaiveDate, as_of: NaiveDate },
+    InvalidDate { birth: String, as_of: String },
     UnknownLocale(String),
 }
 
@@ -571,43 +479,33 @@ impl std::error::Error for FormatError {}
 
 Error messages should be lowercase, without trailing punctuation, and without the word "error" (the context already establishes that).
 
-### thiserror and anyhow
+### unwrap() and expect()
 
-For library code, use [`thiserror`](https://docs.rs/thiserror) to reduce boilerplate in custom error types:
+Do not use `unwrap()` or `expect()` on operations whose failure depends on user input or runtime state the caller controls. Return `Result` or `Option` instead.
 
-```rust
-use thiserror::Error;
+`unwrap()` and `expect()` are acceptable when:
 
-#[derive(Debug, Error)]
-pub enum FormatError {
-    #[error("birth date {birth} is after reference date {as_of}")]
-    InvalidDate { birth: NaiveDate, as_of: NaiveDate },
+- **The invariant is provably upheld.** For example, `Mutex::lock().unwrap()` is standard practice because a poisoned mutex indicates a panic on another thread, and propagating the panic is correct. `UNIX_EPOCH` is guaranteed to precede `SystemTime::now()`.
+- **In tests.** Tests should panic on unexpected failures.
+- **In examples and prototypes.** Clarity matters more than robustness in sample code.
 
-    #[error("unknown locale: {0}")]
-    UnknownLocale(String),
-}
-```
-
-For application code (binaries, CLI tools), use [`anyhow`](https://docs.rs/anyhow) for ergonomic error handling without defining custom types:
+When using `unwrap()` or `expect()` in non-test code, add a comment explaining why the value is always `Some`/`Ok`:
 
 ```rust
-use anyhow::{Context, Result};
-
-fn main() -> Result<()> {
-    let config = read_config("config.toml")
-        .context("failed to read configuration")?;
-    Ok(())
-}
+// SystemTime::now() is always after UNIX_EPOCH.
+let secs = SystemTime::now()
+    .duration_since(UNIX_EPOCH)
+    .unwrap()
+    .as_secs();
 ```
 
 ### When to Use What
 
 | Context | Approach |
 |---|---|
-| Library public API | Custom error types (or `thiserror`) |
+| Library public API | Custom error types (manual `Display` + `Error` impls) |
 | Library internals | `Result` with specific error types |
-| Application/binary | `anyhow::Result` for convenience |
-| Prototype/example | `unwrap()` / `expect()` with a reason |
+| Provably infallible operations | `unwrap()` / `expect()` with a comment |
 | Tests | `unwrap()`, `expect()`, or `?` with `Result` return |
 | Impossible states | `unreachable!()` |
 
@@ -634,7 +532,7 @@ fn plural_category(n: u32) -> PluralCategory {
 
 ### if let and let-else
 
-Use `if let` when you care about one variant and want to ignore the rest:
+Use `if let` when you care about one variant:
 
 ```rust
 if let Some(locale) = find_locale("en") {
@@ -683,9 +581,9 @@ match message {
 }
 ```
 
-### Or-Patterns
+### Or-Patterns and Guards
 
-Combine patterns with `|`:
+Combine patterns with `|` and add conditions with match guards:
 
 ```rust
 match category {
@@ -693,13 +591,7 @@ match category {
     PluralCategory::Two => "dual",
     _ => "plural",
 }
-```
 
-### Guards
-
-Use match guards for additional conditions:
-
-```rust
 match age_in_months {
     n if n < 1 => "newborn",
     1 => "1 month",
@@ -729,29 +621,21 @@ match value {
 
 ### File Layout: foo.rs over foo/mod.rs
 
-Prefer the modern file layout. Instead of `foo/mod.rs`, use `foo.rs` alongside a `foo/` directory for submodules:
+Prefer the modern file layout. Instead of `foo/mod.rs`, use `foo.rs` alongside a `foo/` directory:
 
 ```
 src/
   lib.rs
   formatter.rs              # mod formatter
-  formatter/
-    locale.rs               # mod formatter::locale
-    types.rs                # mod formatter::types
+  types.rs                  # mod types
+  locales/                  # mod locales (generated locale files)
+    mod.rs                  # re-exports all locale constants
+    en.rs
+    ja.rs
+    ...
 ```
 
-```rust
-// src/lib.rs
-mod formatter;
-pub use formatter::format_age;
-
-// src/formatter.rs
-mod locale;
-mod types;
-pub use types::AgeLocale;
-```
-
-The `mod.rs` style is still supported but discouraged because multiple `mod.rs` files open in an editor are hard to distinguish.
+The `mod.rs` style is supported but discouraged because multiple `mod.rs` files open in an editor are hard to distinguish. The `locales/` directory is an exception: generated locale files live in a subdirectory with a `mod.rs` barrel, as required by the project's codegen system.
 
 ### Visibility
 
@@ -762,16 +646,15 @@ Default to private. Widen visibility only as needed:
 | (none) | Private to the current module and its children |
 | `pub(crate)` | Visible within the current crate only |
 | `pub(super)` | Visible to the parent module |
-| `pub(in path)` | Visible within a specific ancestor module |
 | `pub` | Fully public (part of the crate's API) |
 
 ```rust
 pub struct AgeLocale {            // public API
-    pub just_born: &'static str,  // public field
+    pub code: String,             // public field
     pub(crate) cache: Vec<String>, // crate-internal
 }
 
-pub(crate) fn compute_months(birth: NaiveDate, now: NaiveDate) -> u32 {
+pub(crate) fn compute_months(birth: &str, now: &str) -> i32 {
     // visible to other modules in this crate, but not to consumers
     todo!()
 }
@@ -779,34 +662,19 @@ pub(crate) fn compute_months(birth: NaiveDate, now: NaiveDate) -> u32 {
 
 ### Re-exports
 
-Use `pub use` to create a clean public API from internal module structure. This decouples the API surface from the file layout:
+Use `pub use` to create a clean public API from internal module structure:
 
 ```rust
 // src/lib.rs
 mod formatter;
-mod locale;
+mod locales;
 mod types;
 
-pub use formatter::format_age;
-pub use locale::AgeLocale;
-pub use types::PluralCategory;
+pub use formatter::{format_age, format_stage, SayableAge, VERSION};
+pub use types::{AgeLocale, Compactness, Gender, PluralCategory, UnitForms};
 ```
 
-### Prelude Pattern
-
-For crates with many commonly-used types, provide an optional prelude module:
-
-```rust
-// src/prelude.rs
-pub use crate::AgeLocale;
-pub use crate::PluralCategory;
-pub use crate::format_age;
-
-// Consumer usage
-use sayable_age::prelude::*;
-```
-
-Use this sparingly. Glob imports reduce readability when overused.
+This decouples the API surface from the file layout. Consumers import from the crate root; internal organization can change without breaking the public API.
 
 ### Module-Level Documentation
 
@@ -819,7 +687,6 @@ Use inner doc comments (`//!`) at the top of each module file:
 //! months, years), delimiters, and plural rules.
 
 use crate::types::PluralCategory;
-// ...
 ```
 
 ---
@@ -828,13 +695,13 @@ use crate::types::PluralCategory;
 
 ### Prefer Iterators over Index Loops
 
-Iterators are idiomatic, avoid off-by-one errors, and the compiler optimizes them aggressively (zero-cost abstractions):
+Iterators are idiomatic, avoid off-by-one errors, and the compiler optimizes them aggressively:
 
 ```rust
-// Idiomatic: iterator
+// Idiomatic
 let sum: i32 = numbers.iter().sum();
 
-// Less idiomatic: index loop
+// Less idiomatic
 let mut sum = 0;
 for i in 0..numbers.len() {
     sum += numbers[i];
@@ -851,22 +718,20 @@ let names: Vec<&str> = people
     .collect();
 ```
 
-| Combinator | Purpose | Example |
-|---|---|---|
-| `map` | Transform each element | `.map(\|x\| x * 2)` |
-| `filter` | Keep elements matching a predicate | `.filter(\|x\| x > &0)` |
-| `filter_map` | Filter and transform in one step | `.filter_map(\|x\| x.parse().ok())` |
-| `flat_map` | Map then flatten nested iterators | `.flat_map(\|x\| x.children())` |
-| `fold` | Accumulate into a single value | `.fold(0, \|acc, x\| acc + x)` |
-| `collect` | Gather into a collection | `.collect::<Vec<_>>()` |
-| `chain` | Concatenate two iterators | `a.iter().chain(b.iter())` |
-| `zip` | Pair elements from two iterators | `keys.iter().zip(values.iter())` |
-| `enumerate` | Add index to each element | `.enumerate()` yields `(usize, T)` |
-| `take` / `skip` | Limit or skip elements | `.take(5)`, `.skip(3)` |
-| `any` / `all` | Short-circuit boolean checks | `.any(\|x\| x > 100)` |
-| `find` | First matching element | `.find(\|x\| x.name == "en")` |
-| `position` | Index of first match | `.position(\|x\| x == target)` |
-| `peekable` | Lookahead without consuming | `.peekable()` then `.peek()` |
+| Combinator | Purpose |
+|---|---|
+| `map` | Transform each element |
+| `filter` | Keep elements matching a predicate |
+| `filter_map` | Filter and transform in one step |
+| `flat_map` | Map then flatten nested iterators |
+| `fold` | Accumulate into a single value |
+| `collect` | Gather into a collection |
+| `chain` | Concatenate two iterators |
+| `zip` | Pair elements from two iterators |
+| `enumerate` | Add index to each element |
+| `take` / `skip` | Limit or skip elements |
+| `any` / `all` | Short-circuit boolean checks |
+| `find` | First matching element |
 
 ### When to Use Loops Instead
 
@@ -874,30 +739,14 @@ Use explicit loops when:
 
 - You need early `break` with a value or complex control flow.
 - The logic involves mutable state that is hard to express functionally.
-- The iterator chain becomes deeply nested and hard to read (more than 4-5 combinators).
-
-```rust
-// A loop is clearer here: complex early-exit logic
-let mut result = None;
-for item in &items {
-    if let Some(value) = item.try_compute() {
-        if value.is_valid() {
-            result = Some(value);
-            break;
-        }
-    }
-}
-```
+- The iterator chain exceeds 4-5 combinators and becomes hard to follow.
 
 ### Collect with Type Annotation
 
 Use the turbofish (`::<>`) or a type annotation when `collect` cannot infer the target type:
 
 ```rust
-// Turbofish on collect
 let names: Vec<String> = input.lines().map(String::from).collect();
-
-// Or let the binding type drive inference
 let lookup: HashMap<&str, u32> = pairs.into_iter().collect();
 ```
 
@@ -911,10 +760,6 @@ for x in v.iter() { /* x: &i32 */ }
 
 // Consumes: v is moved, cannot use after
 for x in v.into_iter() { /* x: i32 */ }
-// v is gone here
-
-// Mutable borrows
-for x in v.iter_mut() { /* x: &mut i32 */ }
 ```
 
 ---
@@ -923,7 +768,7 @@ for x in v.iter_mut() { /* x: &mut i32 */ }
 
 ### From/Into Conversions (C-CONV-TRAITS)
 
-Implement `From` for infallible conversions. `Into` is provided automatically via a blanket impl:
+Implement `From` for infallible conversions. `Into` is provided automatically via a blanket impl. Never implement `Into` or `TryInto` directly:
 
 ```rust
 impl From<NaiveDate> for BirthDate {
@@ -953,19 +798,17 @@ impl TryFrom<&str> for LocaleCode {
 }
 ```
 
-Never implement `Into` or `TryInto` directly; they have blanket impls based on `From` and `TryFrom`.
+### Display and Debug (C-COMMON-TRAITS)
 
-### Display and Debug (C-COMMON-TRAITS, C-DEBUG)
-
-Implement `Display` for user-facing output and `Debug` for developer-facing output. All public types should implement `Debug`:
+All public types should implement `Debug`. Implement `Display` for user-facing output:
 
 ```rust
 use std::fmt;
 
 #[derive(Debug)]  // Debug via derive
 pub struct AgeLocale {
-    pub code: &'static str,
-    pub just_born: &'static str,
+    pub code: String,
+    pub just_born: String,
 }
 
 impl fmt::Display for AgeLocale {
@@ -975,9 +818,21 @@ impl fmt::Display for AgeLocale {
 }
 ```
 
+When a struct contains fields that cannot be derived (like function pointers), implement `Debug` manually:
+
+```rust
+impl std::fmt::Debug for AgeLocale {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("AgeLocale")
+            .field("code", &self.code)
+            .finish()
+    }
+}
+```
+
 ### Default (C-COMMON-TRAITS)
 
-Implement `Default` for types with a natural "empty" or "zero" value. When `Default` is implemented, also provide a `new()` constructor that does the same thing:
+Implement `Default` for types with a natural "empty" or "zero" value. When `Default` is implemented, also provide a `new()` constructor:
 
 ```rust
 #[derive(Debug, Default)]
@@ -993,92 +848,11 @@ impl FormatterConfig {
 }
 ```
 
-### Builder Pattern (C-BUILDER)
-
-Use the builder pattern for types with many optional parameters:
-
-```rust
-pub struct QueryBuilder {
-    locale: String,
-    max_age: Option<u32>,
-    include_half: bool,
-}
-
-impl QueryBuilder {
-    pub fn new(locale: impl Into<String>) -> Self {
-        QueryBuilder {
-            locale: locale.into(),
-            max_age: None,
-            include_half: true,
-        }
-    }
-
-    pub fn max_age(mut self, age: u32) -> Self {
-        self.max_age = Some(age);
-        self
-    }
-
-    pub fn include_half(mut self, include: bool) -> Self {
-        self.include_half = include;
-        self
-    }
-
-    pub fn build(self) -> Query {
-        Query {
-            locale: self.locale,
-            max_age: self.max_age.unwrap_or(150),
-            include_half: self.include_half,
-        }
-    }
-}
-
-// Usage
-let query = QueryBuilder::new("en")
-    .max_age(100)
-    .include_half(false)
-    .build();
-```
-
-### Type-State Pattern
-
-Use zero-sized types and generics to encode state transitions at compile time:
-
-```rust
-struct Draft;
-struct Published;
-
-struct Article<State> {
-    title: String,
-    body: String,
-    _state: PhantomData<State>,
-}
-
-impl Article<Draft> {
-    fn publish(self) -> Article<Published> {
-        Article {
-            title: self.title,
-            body: self.body,
-            _state: PhantomData,
-        }
-    }
-}
-
-impl Article<Published> {
-    fn url(&self) -> String {
-        format!("/articles/{}", self.title)
-    }
-}
-// article.url() only compiles if the article has been published
-```
-
 ### Derive Macros
 
-Derive standard traits eagerly. The Rust orphan rule means you cannot implement traits for types defined in other crates, so derive early (C-COMMON-TRAITS):
+Derive standard traits eagerly. The orphan rule means you cannot implement foreign traits for foreign types later:
 
 ```rust
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
-pub struct LocaleCode(String);
-
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum PluralCategory {
     Zero,
@@ -1090,54 +864,24 @@ pub enum PluralCategory {
 }
 ```
 
-Derive order convention: `Debug`, `Clone`, `Copy` (if applicable), `PartialEq`, `Eq`, `PartialOrd`, `Ord`, `Hash`, `Default`, then third-party derives like `Serialize`, `Deserialize`.
+Derive order convention: `Debug`, `Clone`, `Copy` (if applicable), `PartialEq`, `Eq`, `PartialOrd`, `Ord`, `Hash`, `Default`.
 
 ### Deref and AsRef
 
-Only implement `Deref` for smart pointers (C-DEREF). Use `AsRef` for lightweight borrowing conversions:
+Only implement `Deref` for smart pointers (C-DEREF). For newtypes that are transparent wrappers where you want full access to the inner type's API, `Deref` is pragmatically acceptable. For newtypes that enforce invariants, use `AsRef` or explicit accessor methods:
 
 ```rust
-// Correct: AsRef for "view as" conversions
+// AsRef for "view as" conversions
 impl AsRef<str> for LocaleCode {
     fn as_ref(&self) -> &str {
         &self.0
     }
-}
-
-// Incorrect: Deref for non-smart-pointer types
-// Do not do this — it makes the API confusing
-impl Deref for LocaleCode {
-    type Target = str;
-    fn deref(&self) -> &str { &self.0 }
 }
 ```
 
 ---
 
 ## 10. Things to Avoid
-
-### unwrap() and expect() in Library Code
-
-Never use `unwrap()` or `expect()` in library code. Return `Result` or `Option` to let the caller decide how to handle errors:
-
-```rust
-// Avoid in library code
-fn get_locale(code: &str) -> &AgeLocale {
-    LOCALES.get(code).unwrap() // panics on unknown locale
-}
-
-// Correct: return Option
-fn get_locale(code: &str) -> Option<&AgeLocale> {
-    LOCALES.get(code)
-}
-
-// Or return Result with context
-fn get_locale(code: &str) -> Result<&AgeLocale, FormatError> {
-    LOCALES.get(code).ok_or_else(|| FormatError::UnknownLocale(code.into()))
-}
-```
-
-Reserve `unwrap()` and `expect()` for tests, examples, and cases where you can prove the value is always `Some`/`Ok` (and add a comment explaining why).
 
 ### Unnecessary Clones
 
@@ -1152,73 +896,45 @@ process(&name);
 process(&config.name);
 ```
 
-If the borrow checker rejects code, restructure the code rather than sprinkling `.clone()`. Common fixes: reorder statements, extract into smaller functions, or use separate scopes.
+If the borrow checker rejects code, restructure rather than sprinkling `.clone()`: reorder statements, extract into smaller functions, or use separate scopes.
 
 ### Stringly-Typed APIs (C-CUSTOM-TYPE)
 
 Use enums and newtypes instead of raw strings or booleans for discrete values:
 
 ```rust
-// Avoid: stringly-typed
-fn format(locale: &str, use_half: bool) { ... }
-format("en", true);
+// Avoid: boolean parameter with unclear meaning
+fn format(locale: &AgeLocale, compact: bool) { ... }
 
-// Prefer: type-safe
-fn format(locale: Locale, precision: Precision) { ... }
-format(Locale::English, Precision::Half);
+// Prefer: type-safe enum
+fn format(locale: &AgeLocale, compactness: Compactness) { ... }
 ```
 
-### Arc<Mutex<T>> Overuse
+### Numeric Casts
 
-`Arc<Mutex<T>>` is a code smell in many contexts. Before reaching for it:
-
-1. Can the data be passed by value or reference instead of shared?
-2. Can the architecture be restructured to avoid shared mutable state?
-3. Is message passing (channels) more appropriate?
-4. Would `RwLock` (for read-heavy workloads) or atomics (for simple counters) suffice?
+Prefer `From`/`TryFrom` for conversions where the range is not statically guaranteed:
 
 ```rust
-// Smell: wrapping everything in Arc<Mutex>
-let state = Arc::new(Mutex::new(AppState::new()));
+// Risky: silently truncates
+let x = 256u32 as u8; // x is 0
 
-// Better: use channels for message passing
-let (tx, rx) = mpsc::channel();
-// Or restructure to avoid shared state entirely
+// Safe: explicit conversion
+let x = u8::try_from(256u32); // Err(TryFromIntError)
 ```
 
-### Premature Use of unsafe
-
-Never use `unsafe` without a clear, documented safety invariant. Every `unsafe` block should have a `// SAFETY: ...` comment explaining why the invariant holds:
+`as` casts are acceptable when the range is provably safe and the safety reasoning is documented. The project's `Cargo.toml` configures specific Clippy allows (`cast_possible_truncation`, `cast_possible_wrap`, `cast_sign_loss`) for the date arithmetic, where the value ranges are known:
 
 ```rust
-// Correct: documented safety invariant
-let value = unsafe {
-    // SAFETY: we checked that index < len on the line above,
-    // so this access is within bounds.
-    *slice.get_unchecked(index)
-};
-
-// Avoid: unexplained unsafe
-let value = unsafe { *slice.get_unchecked(index) };
+// Safe: Unix timestamps fit in i64, and year values fit in i32.
+let secs = duration.as_secs() as i64;
 ```
 
 ### Other Anti-Patterns
 
-- **Wildcard imports in non-test code.** Use `use crate::prelude::*` sparingly. Elsewhere, import specific items for clarity.
-- **Complex type aliases hiding ownership.** `type Result<T> = std::result::Result<T, MyError>` in a module is fine. Deeply nested aliases are not.
+- **Wildcard imports in non-test, non-locale code.** The locale barrel module uses wildcard re-exports by design. Elsewhere, import specific items.
 - **Ignoring warnings.** Fix all warnings. Do not use `#[allow(...)]` without a comment explaining why.
-- **Using `as` for numeric casts.** Prefer `From`/`TryFrom` for safe conversions. `as` silently truncates:
-
-    ```rust
-    // Risky: silently truncates
-    let x = 256u32 as u8; // x is 0
-
-    // Safe: explicit conversion
-    let x = u8::try_from(256u32); // Err(TryFromIntError)
-    ```
-
 - **`String` where `&str` suffices.** Accept `&str` in function parameters unless ownership is needed.
-- **Panicking in Drop implementations.** Destructors must not panic (C-DTOR-FAIL). A panic during unwinding causes an abort.
+- **Panicking in Drop implementations.** Destructors must not panic. A panic during unwinding causes an abort.
 - **Returning `()` as an error type.** Always use a meaningful error type:
 
     ```rust
@@ -1235,151 +951,46 @@ let value = unsafe { *slice.get_unchecked(index) };
 
 ### rustfmt
 
-The standard code formatter. Run it on every save and in CI:
+Run on every save and in CI:
 
 ```bash
-# Format all code
-cargo fmt
-
-# Check formatting without modifying (CI mode)
-cargo fmt -- --check
+cargo fmt             # format all code
+cargo fmt -- --check  # check without modifying (CI mode)
 ```
 
-Configure via `rustfmt.toml` at the crate root. Prefer default settings. Common overrides:
+Configure via `rustfmt.toml` at the crate root. Prefer default settings:
 
 ```toml
 # rustfmt.toml
 edition = "2021"
 max_width = 100
-use_small_heuristics = "Default"
 ```
 
 ### Clippy
 
-The official Rust linter with 800+ lints across these categories:
-
-| Category | Default Level | Purpose |
-|---|---|---|
-| `correctness` | deny | Code that is objectively wrong |
-| `suspicious` | warn | Patterns that are likely bugs |
-| `style` | warn | Non-idiomatic code |
-| `complexity` | warn | Unnecessarily complicated code |
-| `perf` | warn | Performance anti-patterns |
-| `pedantic` | allow | Stricter quality guidelines |
-| `nursery` | allow | Experimental lints, may have false positives |
-| `restriction` | allow | Project-specific opt-in rules |
-
-Run Clippy in CI with warnings as errors:
-
-```bash
-# Standard run
-cargo clippy
-
-# CI: deny all warnings
-cargo clippy -- -D warnings
-
-# Enable pedantic lints (recommended for quality-focused projects)
-cargo clippy -- -W clippy::pedantic
-```
-
-Notable lints to be aware of:
-
-```rust
-// clippy::unwrap_used — flags unwrap() calls
-// clippy::expect_used — flags expect() calls
-// clippy::clone_on_ref_ptr — flags Arc/Rc clone via method syntax
-// clippy::cast_lossless — suggests u64::from(x) over x as u64
-// clippy::needless_pass_by_value — suggests borrowing instead of owning
-// clippy::manual_map — suggests map() over if-let-some-wrap
-// clippy::redundant_closure — suggests function pointer over closure
-```
-
-Configure lint levels in `Cargo.toml` or at the crate root:
-
-```rust
-// In lib.rs or main.rs
-#![warn(clippy::pedantic)]
-#![allow(clippy::module_name_repetitions)] // with justification
-```
-
-### cargo audit
-
-Scans dependencies for known security vulnerabilities. Run periodically and in CI:
-
-```bash
-# Install
-cargo install cargo-audit
-
-# Run
-cargo audit
-```
-
-### cargo deny
-
-Comprehensive dependency linter. Checks licenses, bans specific crates, detects duplicate versions, and audits for vulnerabilities:
-
-```bash
-# Install
-cargo install cargo-deny
-
-# Run all checks
-cargo deny check
-
-# Run specific checks
-cargo deny check licenses
-cargo deny check bans
-cargo deny check advisories
-```
-
-Configure via `deny.toml`:
+The official Rust linter. The project configures it in `Cargo.toml`:
 
 ```toml
-# deny.toml
-[licenses]
-allow = ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause"]
-
-[bans]
-multiple-versions = "warn"
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
 ```
 
-### Miri
-
-An interpreter for Rust's mid-level intermediate representation (MIR). Detects undefined behavior in unsafe code:
+Run in CI with warnings as errors:
 
 ```bash
-# Install via rustup
-rustup +nightly component add miri
-
-# Run tests under Miri
-cargo +nightly miri test
+cargo clippy -- -D warnings
 ```
 
-Miri catches:
-- Use-after-free and out-of-bounds access
-- Invalid use of uninitialized data
-- Violation of aliasing rules (Stacked Borrows)
-- Data races (when using `-Zmiri-disable-isolation`)
-- Memory leaks
-
-Use it for any crate that contains `unsafe` code.
+The `Cargo.toml` includes targeted allows for lints that conflict with the codebase's needs (date arithmetic casts, locale re-exports, etc.). Each allow has a comment explaining why. Do not add new allows without justification.
 
 ### cargo test
 
 ```bash
-# Run all tests
-cargo test
-
-# Run a specific test
-cargo test test_format_age
-
-# Run tests with output displayed
-cargo test -- --nocapture
-
-# Run only doc-tests
-cargo test --doc
-
-# Run ignored tests
-cargo test -- --ignored
+cargo test                        # run all tests
+cargo test test_format_age        # run a specific test
+cargo test -- --nocapture         # show stdout during tests
+cargo test --doc                  # run doc-tests only
 ```
 
 ### cargo doc
@@ -1387,56 +998,51 @@ cargo test -- --ignored
 Generate and review documentation:
 
 ```bash
-# Build docs and open in browser
-cargo doc --open
-
-# Build docs with private items visible
-cargo doc --document-private-items
-
-# Check for broken doc links (CI)
-RUSTDOCFLAGS="-D warnings" cargo doc --no-deps
+cargo doc --open                          # build and open in browser
+cargo doc --document-private-items        # include private items
+RUSTDOCFLAGS="-D warnings" cargo doc --no-deps  # check for broken doc links
 ```
 
-### Summary: CI Pipeline
+### CI Pipeline
 
-A minimal CI pipeline for a Rust project:
+The minimum CI pipeline for this project:
 
 ```bash
 cargo fmt -- --check          # formatting
 cargo clippy -- -D warnings   # linting
 cargo test                    # tests
 cargo doc --no-deps           # documentation builds
-cargo audit                   # vulnerability scan
 ```
+
+Note: `cargo audit` and `cargo deny` are unnecessary because this project has zero dependencies. `cargo +nightly miri test` is unnecessary because `unsafe` is forbidden.
 
 ---
 
 ## Quick Reference Checklist
 
-For auditing a Rust implementation, verify:
+### Automated (verified by CI)
 
-- [ ] `cargo fmt -- --check` passes with no changes
-- [ ] `cargo clippy -- -D warnings` passes with no warnings
-- [ ] All public types implement `Debug`
+- [ ] `cargo fmt -- --check` passes
+- [ ] `cargo clippy -- -D warnings` passes (includes pedantic)
+- [ ] `cargo test` passes
+- [ ] `cargo doc --no-deps` builds without warnings
+- [ ] `unsafe_code = "forbid"` remains in `Cargo.toml`
+- [ ] `[dependencies]` section remains empty
+
+### Manual review
+
+- [ ] All public types implement `Debug` (derived or manual)
 - [ ] `Display` implemented where user-facing output is needed
-- [ ] No `unwrap()` or `expect()` in library code (only in tests)
-- [ ] Functions accept `&str` instead of `&String`, `&[T]` instead of `&Vec<T>`
-- [ ] `From` implemented instead of `Into`; `TryFrom` instead of `TryInto`
+- [ ] `unwrap()` / `expect()` in non-test code have comments justifying the invariant
+- [ ] No unnecessary `.clone()` calls -- restructure borrows instead
+- [ ] Lifetimes are explicit only when elision is insufficient
 - [ ] Error types implement `std::error::Error`, `Display`, and `Debug`
 - [ ] Error messages are lowercase without trailing punctuation
-- [ ] No unnecessary `.clone()` calls
-- [ ] Lifetimes are explicit only when elision is insufficient
-- [ ] `unsafe` blocks have `// SAFETY:` comments
-- [ ] Numeric conversions use `From`/`TryFrom`, not `as`
-- [ ] Imports are grouped (std, external, crate) and sorted alphabetically
 - [ ] Naming follows RFC 430 (snake_case functions, CamelCase types, SCREAMING_SNAKE_CASE constants)
 - [ ] Getters omit the `get_` prefix
 - [ ] Conversion methods follow `as_`/`to_`/`into_`/`from_` naming
-- [ ] Acronyms are treated as words (`HttpRequest`, not `HTTPRequest`)
-- [ ] Structs with invariants have private fields and constructors
-- [ ] No `Deref` on non-smart-pointer types
-- [ ] Module file layout uses `foo.rs` over `foo/mod.rs`
+- [ ] Imports are grouped (std, crate) and sorted alphabetically
 - [ ] Visibility is as restricted as possible (`pub(crate)` over `pub` where feasible)
 - [ ] All `#[allow(...)]` annotations have a justifying comment
-- [ ] Doc comments on all public items with examples
+- [ ] Doc comments on all public items
 - [ ] `#[must_use]` on functions where ignoring the return value is likely a bug

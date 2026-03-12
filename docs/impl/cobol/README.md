@@ -42,13 +42,18 @@ trailing hyphens, no consecutive hyphens.
 
 ### 1.2 Data Items
 
-Use prefixes to indicate the storage section or logical grouping:
+**Widely-adopted prefixes** (industry-standard conventions):
 
 | Prefix | Meaning | Example |
 |--------|---------|---------|
 | `WS-` | WORKING-STORAGE item | `WS-EMPLOYEE-NAME` |
 | `LS-` | LOCAL-STORAGE item | `LS-TEMP-COUNTER` |
 | `LK-` | LINKAGE SECTION item | `LK-INPUT-RECORD` |
+
+**Project/shop-level prefixes** (reasonable conventions, but not universal):
+
+| Prefix | Meaning | Example |
+|--------|---------|---------|
 | `PT-` | Constant / parameter | `PT-MAX-RETRIES` |
 | `T01-`, `T02-` | Table / array entries | `T01-PRODUCT-CODE` |
 
@@ -73,8 +78,13 @@ VALIDATE-INPUT-DATE.
 WRITE-DETAIL-LINE.
 ```
 
-When using numeric prefixes for hierarchy, use 4-digit numbers incrementing by 100 or
-1000 at each level:
+Verb-noun naming without numeric prefixes is the simplest approach and works well for
+smaller programs. For larger programs where quick orientation matters, numeric prefixes
+can help. The trade-off: numeric prefixes provide visual hierarchy but create renumbering
+overhead when inserting new sections during maintenance.
+
+When using numeric prefixes, the convention is: top-level paragraphs increment by 1000,
+sub-paragraphs increment by 100 within their parent's range:
 
 ```cobol
 0000-MAIN-CONTROL.
@@ -85,15 +95,6 @@ When using numeric prefixes for hierarchy, use 4-digit numbers incrementing by 1
 2300-UPDATE-DATABASE.
 3000-FINALIZE.
 9000-ERROR-HANDLER.
-```
-
-Exit paragraphs should be named consistently:
-
-```cobol
-2000-PROCESS-RECORDS.
-    ...
-2000-EXIT.
-    EXIT.
 ```
 
 ### 1.4 Condition Names (88-Levels)
@@ -182,8 +183,10 @@ In free format:
 - Statements can start at any column
 - Lines can extend to 256 characters (compiler-dependent)
 
-Free format is recommended for new code. It eliminates column-counting errors and
-improves readability.
+For GnuCOBOL and other compilers that fully support it, free format is recommended for
+new code. It eliminates column-counting errors and improves readability. In mainframe
+environments, check your compiler version and shop standards before switching -- IBM
+Enterprise COBOL did not support free format until V6.3.
 
 ### 2.3 Indentation
 
@@ -260,6 +263,29 @@ COMPUTE WS-TOTAL-AMOUNT =
 *> before calling.
 CALC-JULIAN-DAY.
     ...
+```
+
+### 2.7 Period Placement
+
+In the PROCEDURE DIVISION, place exactly one period at the end of each paragraph.
+Do not use periods mid-paragraph to terminate statements -- use scope terminators
+instead. Place the terminating period on its own line, indented to match the
+paragraph body:
+
+```cobol
+*> Good: one period at end, on its own line
+VALIDATE-INPUT.
+    IF WS-INPUT = SPACES
+        MOVE "EMPTY" TO WS-ERROR-MSG
+        PERFORM REPORT-ERROR
+    END-IF
+    .
+
+*> Bad: period terminates the IF mid-paragraph
+VALIDATE-INPUT.
+    IF WS-INPUT = SPACES
+        MOVE "EMPTY" TO WS-ERROR-MSG.
+    PERFORM REPORT-ERROR.
 ```
 
 ---
@@ -371,11 +397,15 @@ PROCEDURE DIVISION.
 | 02-49 | Subordinate items within a record |
 | 66 | RENAMES clause (aliasing; rarely used) |
 | 77 | Independent elementary items (avoid; use 01 instead) |
+| 78 | Compile-time constants (COBOL 2002+; see [Section 4.6](#46-compile-time-constants)) |
 | 88 | Condition names |
 
-**Best practice for subordinate levels:** Increment by 5 (01, 05, 10, 15, 20) to leave
-room for inserting intermediate levels later. Alternatively, some shops increment by 1
-(01, 02, 03) for compactness.
+**Subordinate level increments:** Two conventions are common. Increment by 5
+(01, 05, 10, 15, 20) for visual distinction between levels, or increment by 1
+(01, 02, 03) for compactness. Both are valid. The traditional rationale for
+increment-by-5 ("leave room for future insertion") is less relevant with modern editors
+and version control; the real benefit is visual hierarchy. Choose one convention per
+project and apply it consistently.
 
 ### 4.2 PICTURE Clauses
 
@@ -391,14 +421,18 @@ room for inserting intermediate levels later. Alternatively, some shops incremen
 
 **Numeric best practices:**
 - Declare numeric items as signed (`S`) unless you know the value is never negative
-- Use odd-length packed decimal (`COMP-3`) for efficiency on mainframes:
-  `PIC S9(7) COMP-3`
-- Use `COMP` / `BINARY` for subscripts and counters for performance
+- Use `COMP` / `BINARY` for subscripts, counters, and general integer arithmetic.
+  On GnuCOBOL (which compiles to native C), `COMP`/`BINARY` maps to native integers
+  and is the fastest numeric type. `COMP-3` (packed decimal) is a mainframe
+  optimization that provides no performance benefit on x86/ARM.
 - Always specify `V` for decimal positions explicitly
 
 **Alphanumeric best practices:**
 - Size fields to their maximum expected content
 - Use `PIC X(n)` rather than `PIC A(n)` unless strict alphabetic validation is needed
+- For fields that will hold UTF-8 data (e.g., locale strings with non-Latin characters),
+  remember that `PIC X(n)` counts bytes, not characters. A multibyte UTF-8 character
+  occupies more than one position. Size these fields generously.
 
 ### 4.3 WORKING-STORAGE vs LOCAL-STORAGE
 
@@ -477,6 +511,25 @@ place) and makes code self-documenting.
 - Declare subscripts as `COMP` or `BINARY` for performance
 - Use REDEFINES to initialize tables with literal values (as shown above)
 
+### 4.6 Compile-Time Constants
+
+COBOL has no language-level immutability for regular data items. A `PIC 9(4) VALUE 6000`
+item can be modified at runtime by any MOVE or arithmetic statement. For values that
+should never change, COBOL 2002 introduced level-78 constants:
+
+```cobol
+78  PT-MAX-AGE-MONTHS         VALUE 6000.
+78  PT-VERSION                VALUE "0.5.0".
+```
+
+Level-78 items are resolved at compile time and cannot be modified at runtime. They do
+not occupy storage. Use them for any value that represents a true constant (limits,
+version strings, enumeration values).
+
+For compilers that do not support level-78, use a VALUE-initialized 01-level item with
+a `PT-` prefix to signal intent, but be aware that the compiler will not enforce
+immutability.
+
 ---
 
 ## 5. Control Flow
@@ -508,7 +561,7 @@ END-PERFORM
 **PERFORM best practices:**
 - Use `PERFORM paragraph-name`, not `PERFORM section-name` (unless using sections
   with EXIT paragraphs for structured scope)
-- Never use `PERFORM para-A THRU para-Z` (see [Section 7](#7-structured-programming))
+- Avoid `PERFORM para-A THRU para-Z` in new code (see [Section 7](#7-structured-programming))
 - Use `PERFORM VARYING` instead of manually incrementing counters
 - Prefer inline PERFORM for short loops (under 5 statements); use out-of-line
   PERFORM for anything longer
@@ -600,30 +653,26 @@ Always use explicit scope terminators for compound statements:
 Explicit scope terminators prevent the "dangling ELSE" problem and make code
 structure unambiguous. They are required for nested compound statements.
 
-### 5.5 Periods
+### 5.5 Arithmetic Safety
 
-In the PROCEDURE DIVISION, place exactly one period at the end of each paragraph.
-Do not use periods mid-paragraph to terminate statements -- use scope terminators
-instead.
+Use `ON SIZE ERROR` with arithmetic statements to catch overflow and truncation:
 
 ```cobol
-*> Good: one period at end
-VALIDATE-INPUT.
-    IF WS-INPUT = SPACES
-        MOVE "EMPTY" TO WS-ERROR-MSG
-        PERFORM REPORT-ERROR
-    END-IF
-    .
+COMPUTE WS-TOTAL = WS-PRICE * WS-QUANTITY
+    ON SIZE ERROR
+        PERFORM HANDLE-OVERFLOW
+END-COMPUTE
 
-*> Bad: period terminates the IF mid-paragraph
-VALIDATE-INPUT.
-    IF WS-INPUT = SPACES
-        MOVE "EMPTY" TO WS-ERROR-MSG.
-    PERFORM REPORT-ERROR.
+ADD WS-AMOUNT TO WS-RUNNING-TOTAL
+    ON SIZE ERROR
+        PERFORM HANDLE-OVERFLOW
+END-ADD
 ```
 
-The trailing period on its own line (after a blank line or with the dot on a line by
-itself) is a common modern convention that makes the paragraph boundary visually clear.
+Without `ON SIZE ERROR`, arithmetic overflow silently truncates the result. This is
+one of the most common sources of production bugs in COBOL. Use it for any calculation
+where overflow is possible -- especially with COMPUTE, which can produce intermediate
+results larger than the target field.
 
 ---
 
@@ -725,11 +774,17 @@ MOVE WS-INPUT(5:) TO WS-REMAINDER
 ### 6.5 Intrinsic Functions for Strings
 
 ```cobol
-*> Trim whitespace
+*> Trim leading and trailing whitespace
 MOVE FUNCTION TRIM(WS-INPUT) TO WS-CLEANED
 
-*> Get length (excluding trailing spaces)
+*> Trim trailing whitespace only
+MOVE FUNCTION TRIM(WS-INPUT TRAILING) TO WS-CLEANED
+
+*> Length excluding leading and trailing spaces
 COMPUTE WS-LEN = FUNCTION LENGTH(FUNCTION TRIM(WS-INPUT))
+
+*> Length excluding trailing spaces only
+COMPUTE WS-LEN = FUNCTION LENGTH(FUNCTION TRIM(WS-INPUT TRAILING))
 
 *> Case conversion
 MOVE FUNCTION UPPER-CASE(WS-INPUT) TO WS-UPPER
@@ -738,6 +793,10 @@ MOVE FUNCTION LOWER-CASE(WS-INPUT) TO WS-LOWER
 *> Reverse
 MOVE FUNCTION REVERSE(WS-INPUT) TO WS-REVERSED
 ```
+
+Note: `FUNCTION TRIM` without a qualifier removes both leading and trailing spaces.
+Use `TRIM(... TRAILING)` or `TRIM(... LEADING)` when you need to preserve whitespace
+on one side.
 
 ---
 
@@ -798,13 +857,11 @@ This is dangerous because:
   PERFORM range
 - It defeats the purpose of named paragraphs as logical units
 
-```cobol
-*> Bad: fragile, invisible coupling
-PERFORM 1000-INIT THRU 1000-EXIT
+Avoid PERFORM THRU in new code. EXIT PARAGRAPH (COBOL 2002+) provides a cleaner
+alternative for the guard-clause patterns that PERFORM THRU traditionally served.
 
-*> Good: explicit, single target
-PERFORM 1000-INIT
-```
+In legacy codebases, `PERFORM para THRU para-EXIT` is an established pattern that is
+safe when the EXIT paragraph is kept adjacent to its parent and contains only `EXIT.`
 
 If you need a multi-step sequence, make it a single paragraph that PERFORMs the steps:
 
@@ -986,22 +1043,30 @@ END-PERFORM
 
 ### 9.6 String Template Replacement
 
-A common pattern for template expansion (replacing `{n}` in a format string):
+A common pattern for template expansion (replacing a marker in a format string).
+Always initialize the tally variable before INSPECT, and compute marker length
+dynamically rather than hardcoding it:
 
 ```cobol
-INSPECT WS-TEMPLATE
+MOVE 0 TO WS-POS
+MOVE FUNCTION LENGTH(FUNCTION TRIM(WS-MARKER))
+    TO WS-MARKER-LEN
+INSPECT WS-TEMPLATE(1:WS-TEMPLATE-LEN)
     TALLYING WS-POS
-    FOR CHARACTERS BEFORE INITIAL "{n}"
+    FOR CHARACTERS BEFORE INITIAL
+    FUNCTION TRIM(WS-MARKER)
 
 *> Build result: prefix + value + suffix
-STRING
-    WS-TEMPLATE(1:WS-POS)
-    FUNCTION TRIM(WS-VALUE)
-    WS-TEMPLATE(WS-POS + 3:
-        WS-TEMPLATE-LEN - WS-POS - 3 + 1)
-    DELIMITED BY SIZE
-    INTO WS-RESULT
-END-STRING
+IF WS-POS < WS-TEMPLATE-LEN
+    STRING
+        WS-TEMPLATE(1:WS-POS)
+        FUNCTION TRIM(WS-VALUE)
+        WS-TEMPLATE(WS-POS + WS-MARKER-LEN + 1:
+            WS-TEMPLATE-LEN - WS-POS - WS-MARKER-LEN)
+        DELIMITED BY SIZE
+        INTO WS-RESULT
+    END-STRING
+END-IF
 ```
 
 ### 9.7 Numeric to String Conversion
@@ -1016,6 +1081,24 @@ Use an edited PICTURE for formatting, then TRIM:
 MOVE WS-NUM-INPUT TO WS-NUM-EDITED
 MOVE FUNCTION TRIM(WS-NUM-EDITED) TO WS-NUM-STRING
 ```
+
+### 9.8 INITIALIZE for Clearing Records
+
+Use `INITIALIZE` to reset a group item's subordinate fields to their category defaults
+(spaces for alphanumeric, zeros for numeric):
+
+```cobol
+INITIALIZE WS-OUTPUT-RECORD
+
+*> Equivalent to (but less error-prone than):
+MOVE SPACES TO WS-OUTPUT-NAME
+MOVE ZEROS  TO WS-OUTPUT-COUNT
+MOVE ZEROS  TO WS-OUTPUT-AMOUNT
+```
+
+`INITIALIZE` is the idiomatic way to prepare a record before populating it. It is less
+error-prone than explicit MOVEs because adding a new field to the record automatically
+includes it in the initialization.
 
 ---
 
@@ -1091,17 +1174,21 @@ or removed.
 ### 10.4 MOVE CORRESPONDING
 
 MOVE CORRESPONDING copies all identically-named elementary items between two group
-items. It is convenient but dangerous:
+items. Use it with caution:
 
-- If a field is added to one group but not the other, it silently does nothing
-- Debugging is difficult because you cannot see which fields were moved
-- If a field name matches accidentally, wrong data is moved
+- Between records with **different structures**, it is dangerous: if a field is added to
+  one group but not the other, it silently does nothing; if a field name matches
+  accidentally, wrong data is moved; debugging is difficult because you cannot see
+  which fields were moved.
+- Between records with **intentionally identical structure** (e.g., copying a record to a
+  backup area), it is safe and reduces the risk of forgetting a field when the record
+  evolves.
 
 ```cobol
-*> Avoid:
+*> Avoid between differently-structured records:
 MOVE CORRESPONDING WS-INPUT-REC TO WS-OUTPUT-REC
 
-*> Prefer explicit MOVEs:
+*> Prefer explicit MOVEs when structures differ:
 MOVE WS-INPUT-ID     TO WS-OUTPUT-ID
 MOVE WS-INPUT-NAME   TO WS-OUTPUT-NAME
 MOVE WS-INPUT-AMOUNT TO WS-OUTPUT-AMOUNT
@@ -1119,7 +1206,7 @@ They have no syntactic effect and reduce readability:
 
 ```cobol
 *> Avoid:
-ADD A, B, C GIVING D.
+ADD A, B, C GIVING D
 
 *> Prefer:
 ADD A B C GIVING D
@@ -1151,16 +1238,20 @@ END-PERFORM
 
 ### 10.9 Hardcoded Literals in Procedure Division
 
-Move magic numbers and strings to named constants in WORKING-STORAGE:
+Move magic numbers and strings to named constants in WORKING-STORAGE. Prefer level-78
+compile-time constants (COBOL 2002+) for values that should never change:
 
 ```cobol
 *> Bad:
 IF WS-MONTHS > 6000
 
-*> Good (constant in WORKING-STORAGE):
-01  PT-MAX-AGE-MONTHS  PIC 9(4) VALUE 6000.
+*> Good (compile-time constant):
+78  PT-MAX-AGE-MONTHS         VALUE 6000.
 ...
 IF WS-MONTHS > PT-MAX-AGE-MONTHS
+
+*> Acceptable (VALUE-initialized data item, but mutable at runtime):
+01  PT-MAX-AGE-MONTHS  PIC 9(4) VALUE 6000.
 ```
 
 ---

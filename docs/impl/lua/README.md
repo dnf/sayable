@@ -1,8 +1,15 @@
 # Lua Style Guide
 
-A comprehensive style guide for auditing Lua implementations. Drawn from
-community conventions, authoritative references, and widely adopted open-source
-standards.
+A style guide for auditing Lua implementations in this project. Drawn from
+community conventions, authoritative references, and the project's own
+codebase patterns.
+
+## Target Lua version
+
+This project targets **Lua 5.1+** compatibility. Do not use features
+exclusive to 5.2+ (`goto`, integer division `//`, bitwise operators) unless
+the project explicitly migrates. The `utf8` standard library (5.3+) is not
+available; see the UTF-8 section for alternatives.
 
 ## Sources
 
@@ -28,10 +35,11 @@ standards.
 5. [Function Design](#5-function-design)
 6. [Error Handling](#6-error-handling)
 7. [String Handling](#7-string-handling)
-8. [Metatables and OOP](#8-metatables-and-oop)
-9. [Common Idioms](#9-common-idioms)
-10. [Things to Avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
+8. [UTF-8 and Multi-byte Strings](#8-utf-8-and-multi-byte-strings)
+9. [Metatables and OOP](#9-metatables-and-oop)
+10. [Common Idioms](#10-common-idioms)
+11. [Things to Avoid](#11-things-to-avoid)
+12. [Tooling](#12-tooling)
 
 ---
 
@@ -44,7 +52,8 @@ standards.
 | Local variables | `snake_case` | `line_count`, `max_retries` |
 | Local functions | `snake_case` | `parse_date`, `is_leap_year` |
 | Module-level functions | `snake_case` | `format_age`, `get_locale` |
-| Module tables | `PascalCase` or single uppercase letter | `SayableAge`, `M` |
+| Local module table (return-table pattern) | Single uppercase letter | `M` |
+| Class tables (prototype/OOP pattern) | `PascalCase` | `Account`, `Point` |
 | Constants | `UPPER_SNAKE_CASE` | `MAX_AGE_MONTHS`, `VERSION` |
 | Boolean variables/functions | `is_` or `has_` prefix | `is_valid`, `has_children` |
 | Loop throwaway variables | `_` (underscore) | `for _, v in ipairs(t) do` |
@@ -54,8 +63,8 @@ standards.
 
 ### Specific guidance
 
-- **Avoid single-letter names** outside of loop variables and very short lambdas.
-  Use descriptive names that convey intent.
+- **Avoid single-letter names** outside of loop variables, very short lambdas,
+  and the local module table `M`.
 - **Match filenames to module names.** A module returned as `sayableage` should
   live in `sayableage.lua`.
 - **Use `_` for intentionally unused values:**
@@ -75,9 +84,9 @@ standards.
 
 ### Indentation
 
-Use **4 spaces** per indentation level. Never use tabs. (Note: the Olivine Labs
-guide recommends 2 spaces. Both are common in the Lua community. The important
-thing is consistency within a project. This project uses 4 spaces.)
+Consistency within a project matters more than any specific width. The Lua
+community is split between 2-space and 4-space indentation. **This project
+uses 4 spaces.** Never use tabs.
 
 ```lua
 local function calculate(x, y)
@@ -135,15 +144,9 @@ local x = 1;
 local y = 2;
 ```
 
-The one exception is disambiguating a function call from a statement when a line
-begins with `(`:
+### String quoting
 
-```lua
-local x = f()
-;(function() end)()  -- semicolon prevents parsing as f()()
-```
-
-This situation is rare and usually indicates the code should be restructured.
+This project uses double quotes for strings. Be consistent.
 
 ### Blank lines
 
@@ -290,18 +293,21 @@ local json = require("cjson")
 
 ### Lazy requires
 
-For modules that are expensive to load or only sometimes needed, require inside
-the function that uses them:
+Lazy requires are acceptable only for large optional subsystems (such as the
+locale registry in this project, which loads 110 locale files). Always include
+a justification comment:
 
 ```lua
 function M.get_locale(code)
+    -- Lazy: locales registry is large and only needed on lookup
     local registry = require("locales.init")
     return registry.get_locale(code)
 end
 ```
 
-This is acceptable but should be documented with a comment if it is not obvious
-why the require is deferred.
+Do not use lazy requires for routine dependencies. They make dependency
+tracking harder and hide a module's true requirements from readers scanning
+the file header.
 
 ### Avoid `module()` and `setfenv()`
 
@@ -341,25 +347,33 @@ end
 ```
 
 The `local function` syntax is syntactic sugar that handles recursive
-self-reference correctly. Prefer it over the variable-assignment form.
+self-reference correctly. Prefer it over the variable-assignment form for
+standalone functions.
 
 ### Forward declarations for mutual recursion
 
-When two local functions call each other, forward-declare:
+When two local functions call each other, forward-declare and use the
+assignment form to keep the local binding visually explicit:
 
 ```lua
 local is_even, is_odd
 
-function is_even(n)
+is_even = function(n)
     if n == 0 then return true end
     return is_odd(n - 1)
 end
 
-function is_odd(n)
+is_odd = function(n)
     if n == 0 then return false end
     return is_even(n - 1)
 end
 ```
+
+Using `function is_even(n)` (without `local`) after a forward declaration
+works because it assigns to the existing local, but it is visually
+indistinguishable from a global function declaration. If someone later removes
+the forward declaration, the functions silently become globals. The assignment
+form makes the relationship explicit.
 
 ### Closures
 
@@ -442,6 +456,21 @@ end
 
 ## 6. Error Handling
 
+### Error taxonomy
+
+| Situation | Approach |
+|-----------|----------|
+| Programming error (bug) | `error()` with descriptive message |
+| Precondition violation | `assert()` or `error(..., 2)` |
+| Expected failure (I/O, parsing) | Return `nil, error_message` |
+| No meaningful result (not an error) | Return `nil` |
+| Calling untrusted/risky code | Wrap in `pcall` or `xpcall` |
+
+The distinction between "expected failure" and "no meaningful result" matters.
+When invalid input is a normal case (like `format_age(nil)`), returning bare
+`nil` is appropriate. When failure carries diagnostic information the caller
+needs (like an I/O error), return `nil, error_message`.
+
 ### pcall and xpcall
 
 Use `pcall` (protected call) to catch errors without crashing:
@@ -493,14 +522,6 @@ local data = assert(load_file(path))  -- crashes with error message if nil
 assert(type(x) == "number", "expected number, got " .. type(x))
 ```
 
-`assert` is equivalent to:
-
-```lua
-if not condition then
-    error(message or "assertion failed!")
-end
-```
-
 ### Error objects vs. strings
 
 For simple cases, string error messages suffice. For structured error handling,
@@ -512,14 +533,6 @@ error("file not found: " .. path)
 
 -- Table errors (structured, for programmatic handling)
 error({ code = "NOT_FOUND", path = path, message = "file not found" })
-
--- Catching structured errors
-local ok, err = pcall(function()
-    error({ code = 121 })
-end)
-if not ok then
-    print(err.code)  --> 121
-end
 ```
 
 ### Return-nil-plus-error pattern
@@ -543,28 +556,20 @@ if not config then
 end
 ```
 
-### When to use which
-
-| Situation | Approach |
-|-----------|----------|
-| Programming error (bug) | `error()` with descriptive message |
-| Precondition violation | `assert()` or `error(..., 2)` |
-| Expected failure (I/O, parsing) | Return `nil, error_message` |
-| Calling untrusted/risky code | Wrap in `pcall` or `xpcall` |
-
 ---
 
 ## 7. String Handling
 
 ### String library basics
 
-Strings in Lua are **immutable**. Every operation creates a new string:
+Strings in Lua are **immutable** byte sequences. Every operation creates a new
+string:
 
 ```lua
 local s = "hello"
 local upper = string.upper(s)      -- "HELLO"
 local sub = string.sub(s, 1, 3)    -- "hel"
-local len = #s                      -- 5 (prefer # over string.len)
+local len = #s                      -- 5 (byte length; prefer # over string.len)
 local rep = string.rep("-", 40)    -- forty dashes
 ```
 
@@ -583,13 +588,20 @@ local y, m, d = s:match("^(%d+)-(%d+)-(%d+)$")
 
 ### string.format
 
-Use `string.format` for formatted output, similar to C's `printf`:
+Use `string.format` for formatted output when you need padding, precision,
+hexadecimal, or multiple substitutions:
 
 ```lua
 local msg = string.format("Name: %s, Age: %d", name, age)
 local hex = string.format("%04x", 255)         -- "00ff"
 local float = string.format("%.2f", 3.14159)   -- "3.14"
 local padded = string.format("%10s", "right")   -- "     right"
+```
+
+For simple string-number concatenation, `..` is idiomatic and clear:
+
+```lua
+local label = "count: " .. count
 ```
 
 ### Patterns (not regex)
@@ -599,14 +611,14 @@ expressions. Key differences:
 
 | Lua Pattern | Meaning |
 |------------|---------|
-| `%a` | Any letter |
+| `%a` | Any ASCII letter |
 | `%d` | Any digit |
-| `%l` | Lowercase letter |
-| `%u` | Uppercase letter |
-| `%w` | Alphanumeric |
+| `%l` | Lowercase ASCII letter |
+| `%u` | Uppercase ASCII letter |
+| `%w` | ASCII alphanumeric |
 | `%s` | Whitespace |
 | `%p` | Punctuation |
-| `.` | Any character |
+| `.` | Any byte |
 | `%A`, `%D`, etc. | Complement (non-letter, non-digit, etc.) |
 
 Repetition modifiers: `+` (1 or more), `*` (0 or more), `-` (0 or more,
@@ -616,11 +628,16 @@ Anchors: `^` (start of string), `$` (end of string).
 
 Magic characters that need `%` escaping: `( ) . % + - * ? [ ^ $`
 
+**Important:** Pattern character classes (`%a`, `%l`, `%u`, `%w`, `%p`) only
+match ASCII characters. They do not match accented Latin characters, Cyrillic,
+Arabic, Hebrew, CJK, or any other non-ASCII code points. See the UTF-8 section
+for handling multi-byte text.
+
 ```lua
--- Match a date string
+-- Match a date string (ASCII digits -- safe)
 local y, m, d = s:match("^(%d+)-(%d+)-(%d+)$")
 
--- Check if a string is a valid identifier
+-- Check if a string is a valid ASCII identifier
 if s:match("^[_%a][_%w]*$") then
     print("valid identifier")
 end
@@ -669,159 +686,69 @@ for i = 1, 1000 do
 end
 ```
 
-### String quoting
+---
 
-Use double quotes for strings by default. Single quotes are also acceptable --
-the important thing is consistency within a project. (The Olivine Labs guide
-recommends single quotes.)
+## 8. UTF-8 and Multi-byte Strings
+
+This project handles 110 locales including Hebrew, Arabic, Amharic, Thai, and
+Chinese. Understanding how Lua handles multi-byte strings is essential.
+
+### Lua strings are byte sequences
+
+Lua strings are sequences of bytes, not characters. All standard string
+operations work on bytes:
+
+```lua
+local s = "cafe\xCC\x81"  -- "cafe" + combining accent (UTF-8 for "cafe\u0301")
+print(#s)                   --> 6 (bytes, not characters)
+print(s:sub(1, 4))          --> "cafe" (works because ASCII chars are single-byte)
+```
+
+### What is safe for UTF-8
+
+These operations work correctly on UTF-8 strings without special handling:
+
+- **Concatenation** (`..`): joining UTF-8 strings produces valid UTF-8
+- **Equality** (`==`): byte-for-byte comparison works if strings are in the
+  same normalization form
+- **`string.find` / `string.match` with literal patterns**: searching for a
+  UTF-8 substring within a UTF-8 string works (bytes match bytes)
+- **`string.format` with `%s`**: inserts the string as-is
+- **`table.concat`**: joins strings without modification
+
+### What is NOT safe for UTF-8
+
+- **`#s`**: returns byte count, not character count
+- **`string.sub(s, i, j)`**: slices at byte positions, can split a multi-byte
+  character
+- **`string.reverse(s)`**: reverses bytes, corrupts multi-byte characters
+- **`string.upper` / `string.lower`**: only works for ASCII letters
+- **Character classes** (`%a`, `%l`, `%u`, `%w`): only match ASCII
+
+### Practical guidance for this project
+
+The locale data in this project consists of pre-formed UTF-8 strings (locale
+labels, unit templates). The formatter substitutes `{n}` placeholders with
+numeric values (ASCII digits) and concatenates the results. This is safe
+because:
+
+1. Template substitution uses `string.gsub` with literal patterns (`{n}`,
+   `{0}`), which are ASCII-only search targets
+2. The replacement values are numeric strings (ASCII digits)
+3. The final assembly uses concatenation (`..`), which preserves UTF-8
+
+Do not use `#`, `string.sub`, `string.reverse`, `string.upper`, or
+`string.lower` on locale strings unless you are certain they contain only ASCII.
 
 ---
 
-## 8. Metatables and OOP
+## 9. Metatables and OOP
 
-### Metatable basics
-
-Every table can have a metatable that defines behavior for operations:
-
-```lua
-local t = {}
-local mt = {}
-setmetatable(t, mt)
-assert(getmetatable(t) == mt)
-```
-
-### Common metamethods
-
-| Metamethod | Triggered by |
-|-----------|-------------|
-| `__index` | Accessing an absent key |
-| `__newindex` | Setting an absent key |
-| `__tostring` | `tostring(obj)` |
-| `__len` | `#obj` |
-| `__eq` | `==` comparison |
-| `__add` | `+` operator |
-| `__sub` | `-` operator |
-| `__mul` | `*` operator |
-| `__concat` | `..` operator |
-| `__call` | Calling as a function |
-| `__metatable` | Protects metatable from access/modification |
-| `__gc` | Garbage collection finalizer (Lua 5.2+) |
-
-### The `__index` metamethod
-
-`__index` is the foundation of Lua's prototype-based OOP. It can be a table
-(for simple inheritance) or a function (for computed lookups):
-
-```lua
--- Table-based __index (simple inheritance)
-local defaults = { x = 0, y = 0, width = 100, height = 100 }
-local mt = { __index = defaults }
-local window = setmetatable({ x = 10, y = 20 }, mt)
-print(window.width)  --> 100 (inherited from defaults)
-
--- Function-based __index (computed lookup)
-local mt = {
-    __index = function(table, key)
-        return defaults[key]
-    end,
-}
-```
-
-### The `__tostring` metamethod
-
-Provide human-readable string representations:
-
-```lua
-local Point = {}
-Point.__index = Point
-
-function Point.new(x, y)
-    return setmetatable({ x = x, y = y }, Point)
-end
-
-function Point:__tostring()
-    return string.format("(%g, %g)", self.x, self.y)
-end
-
-local p = Point.new(3, 4)
-print(p)  --> (3, 4)
-```
-
-### Prototype pattern (class emulation)
-
-The standard OOP pattern in Lua uses a table as both the class and the
-`__index` target:
-
-```lua
-local Account = {}
-Account.__index = Account
-
-function Account.new(balance)
-    return setmetatable({ balance = balance or 0 }, Account)
-end
-
-function Account:deposit(amount)
-    self.balance = self.balance + amount
-end
-
-function Account:withdraw(amount)
-    if amount > self.balance then
-        error("insufficient funds")
-    end
-    self.balance = self.balance - amount
-end
-
--- Usage
-local acct = Account.new(100)
-acct:deposit(50)
-acct:withdraw(30)
-```
-
-### Colon syntax for method calls
-
-The colon `:` is syntactic sugar that passes the table as the first argument
-(`self`):
-
-```lua
--- These are equivalent:
-acct:deposit(50)        -- colon syntax (preferred for methods)
-Account.deposit(acct, 50)  -- dot syntax with explicit self
-
--- Definition equivalence:
-function Account:deposit(amount)    -- colon: implicit self parameter
-function Account.deposit(self, amount)  -- dot: explicit self parameter
-```
-
-**Rule:** Use `:` when the function operates on the object (a method). Use `.`
-when it does not (a plain function or constructor).
-
-### Inheritance
-
-Create subclasses by setting the parent as the metatable's `__index`:
-
-```lua
-local SpecialAccount = setmetatable({}, { __index = Account })
-SpecialAccount.__index = SpecialAccount
-
-function SpecialAccount.new(balance, limit)
-    local instance = Account.new(balance)
-    instance.limit = limit or 0
-    return setmetatable(instance, SpecialAccount)
-end
-
-function SpecialAccount:withdraw(amount)
-    if amount - self.balance >= self.limit then
-        error("insufficient funds")
-    end
-    self.balance = self.balance - amount
-end
-```
-
-### When not to use OOP
-
-Lua is a multi-paradigm language. Not everything needs to be an object. For
-simple data-processing modules, the return-table pattern with plain functions
-is cleaner and more idiomatic:
+This project uses plain function-table modules (the return-table pattern), not
+OOP. Reserve metatables and prototype-based OOP for cases where you genuinely
+need inheritance, operator overloading, or instance-specific state management.
+For data-processing and formatting modules, plain functions are cleaner and more
+idiomatic:
 
 ```lua
 -- Preferred for utility modules: plain functions in a table
@@ -834,52 +761,84 @@ end
 return M
 ```
 
-Reserve metatables and OOP for cases where you need inheritance, operator
-overloading, or instance-specific state management.
+### Colon vs. dot syntax
+
+Even without OOP, understanding the colon/dot distinction matters because
+libraries like Busted use colon syntax:
+
+```lua
+-- Colon syntax passes the table as the first argument (self):
+acct:deposit(50)               -- equivalent to Account.deposit(acct, 50)
+
+-- Dot syntax does not:
+M.format_age(dob, as_of)      -- plain function call, no implicit self
+```
+
+**Rule:** Use `:` when the function operates on the object (a method). Use `.`
+when it does not (a plain function or constructor).
+
+### Reference material
+
+For projects that do use metatables and OOP, see [Programming in Lua,
+Chapter 16: Object-Oriented Programming](https://www.lua.org/pil/16.html) for
+the prototype pattern, `__index`, inheritance, and metamethod reference.
 
 ---
 
-## 9. Common Idioms
+## 10. Common Idioms
 
-### Default values
+### Default values with `or`
 
-Use `or` to provide defaults for `nil` and `false`:
+Use `or` to provide defaults for string and numeric parameters:
 
 ```lua
 local name = input_name or "Anonymous"
 local count = opts and opts.count or 10
 ```
 
-**Caveat:** `or` treats `false` the same as `nil`. If `false` is a valid value,
-use an explicit nil check:
+**Never use `or` for boolean defaults.** The `or` operator treats `false` the
+same as `nil`, so `opts.verbose or true` always returns `true` -- even when
+`opts.verbose` is explicitly `false`. This is a frequent source of bugs:
 
 ```lua
--- When false is a valid value:
+-- BUG: always returns true, even when opts.verbose is false
+local verbose = opts.verbose or true
+
+-- Correct: explicit nil check for boolean defaults
 local verbose
 if opts.verbose ~= nil then
     verbose = opts.verbose
 else
-    verbose = true  -- default
+    verbose = true
 end
 ```
 
-### Ternary pattern
+### Conditional expressions with `and`/`or`
 
-Lua has no ternary operator. Use `and`/`or`:
+Lua has no ternary operator. The `and`/`or` pattern works as a conditional
+expression, but **only when the `and` operand is guaranteed to be truthy**
+(not `false` or `nil`):
 
 ```lua
+-- Safe: both branches are truthy strings
 local label = is_plural and "items" or "item"
 local status = success and "ok" or "failed"
 ```
 
-**Caveat:** This fails if the "true" branch is `false` or `nil`:
+When either branch could be `false` or `nil`, use `if`/`else` instead:
 
 ```lua
--- BUG: returns "default" even when condition is true
+-- BROKEN: returns "default" even when condition is true
 local x = true and false or "default"  --> "default"
-```
 
-For those cases, use an `if`/`else` block.
+-- Correct: use if/else when branches can be falsy
+local x
+if condition then
+    x = false
+else
+    x = "default"
+end
+```
 
 ### ipairs vs. pairs
 
@@ -948,14 +907,6 @@ elseif type(x) == "table" then
 end
 ```
 
-### String method on literals
-
-Wrap string literals in parentheses to call methods:
-
-```lua
-local upper = ("hello"):upper()  -- "HELLO"
-```
-
 ### Numeric for with step
 
 ```lua
@@ -967,7 +918,7 @@ end
 
 ---
 
-## 10. Things to Avoid
+## 11. Things to Avoid
 
 ### Global variables
 
@@ -982,7 +933,7 @@ count = 0
 local count = 0
 ```
 
-Use luacheck to catch accidental globals (warning codes 111, 112, 113).
+Use Luacheck to catch accidental globals (warning codes 111, 112, 113).
 
 ### String concatenation in loops
 
@@ -1002,12 +953,6 @@ for i = 1, n do
 end
 local s = table.concat(parts)
 ```
-
-### rawget/rawset abuse
-
-`rawget` and `rawset` bypass metatables. They have legitimate uses (avoiding
-infinite `__index`/`__newindex` recursion), but using them to circumvent
-metatable behavior elsewhere makes code fragile and hard to reason about.
 
 ### Deeply nested callbacks
 
@@ -1061,8 +1006,7 @@ end
 ### Using `arg` as a parameter name
 
 In Lua 5.0, `arg` was a special implicit variable for varargs. Avoid using it
-as a parameter name to prevent confusion across Lua versions. Use `...`
-(varargs) or a descriptive name instead.
+as a parameter name to prevent confusion across Lua versions.
 
 ### Relying on `#` with non-sequence tables
 
@@ -1075,22 +1019,17 @@ with `nil` holes or non-integer keys produces undefined results.
 To compare table contents, write a deep-equality function or use a testing
 library.
 
-### Overusing `tostring` coercion
+### Using `rawget`/`rawset` outside metamethods
 
-Lua automatically coerces numbers to strings in concatenation contexts, but
-relying on this makes code less clear:
-
-```lua
--- Implicit coercion (works but unclear intent)
-local s = "count: " .. count
-
--- Explicit (preferred when formatting matters)
-local s = string.format("count: %d", count)
-```
+`rawget` and `rawset` bypass metatables. Their primary legitimate use is inside
+`__index` and `__newindex` metamethods to avoid infinite recursion. Using them
+elsewhere to bypass metatable behavior (e.g., circumventing `__newindex`
+validation from outside the class) breaks the abstraction the metatable
+provides and makes the code fragile.
 
 ---
 
-## 11. Tooling
+## 12. Tooling
 
 ### Luacheck
 
@@ -1102,7 +1041,6 @@ linter. It detects:
 - Unreachable code
 - Shadowed variables
 - Line length violations
-- Cyclomatic complexity issues
 - Unbalanced assignments
 
 **Installation:**
@@ -1115,7 +1053,7 @@ luarocks install luacheck
 
 ```lua
 -- .luacheckrc
-std = "lua51+lua52+lua53"
+std = "lua51"
 max_line_length = 100
 
 -- Project-specific globals
@@ -1175,15 +1113,11 @@ end)
 
 Run with: `busted` or `busted --verbose`
 
-### LuaFormatter / StyLua
+### StyLua
 
-- [LuaFormatter](https://github.com/Koihik/LuaFormatter) -- configurable Lua
-  code formatter
-- [StyLua](https://github.com/JohnnyMorganz/StyLua) -- opinionated Lua
-  formatter inspired by rustfmt/prettier (more actively maintained)
-
-Both can enforce consistent indentation, spacing, and line length. StyLua is
-the more modern choice.
+[StyLua](https://github.com/JohnnyMorganz/StyLua) is an opinionated Lua code
+formatter inspired by rustfmt/prettier. It enforces consistent indentation,
+spacing, and line length. It is the most actively maintained Lua formatter.
 
 ### LuaRocks
 
@@ -1215,11 +1149,19 @@ end
 
 ## Quick Reference Checklist
 
-For code auditing, verify the following:
+### Automated checks (Luacheck verifiable)
 
 - [ ] All variables are `local` (no accidental globals)
 - [ ] No unused variables or arguments (without justification)
-- [ ] All `require` calls are at the top of the file and assigned to locals
+- [ ] No unreachable code
+- [ ] No shadowed variables (without justification)
+- [ ] Lines within length limit
+- [ ] Luacheck passes with zero warnings
+
+### Manual review
+
+- [ ] All `require` calls are at the top of the file (lazy requires have
+  justification comments)
 - [ ] Module uses the return-table pattern
 - [ ] Functions are short, focused, and named descriptively
 - [ ] No string concatenation in loops (use `table.concat`)
@@ -1231,4 +1173,5 @@ For code auditing, verify the following:
 - [ ] Colon syntax (`:`) for method definitions and calls
 - [ ] Dot syntax (`.`) for plain functions and constructors
 - [ ] No reliance on `#` for non-sequence tables
-- [ ] Luacheck passes with zero warnings
+- [ ] No `or` used for boolean parameter defaults
+- [ ] UTF-8 locale strings handled with safe operations only

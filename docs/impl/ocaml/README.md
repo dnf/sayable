@@ -1,10 +1,10 @@
 # OCaml Style Guide
 
-A comprehensive reference for idiomatic OCaml coding style and best practices. Intended for code auditing OCaml implementations.
+A practical reference for auditing OCaml implementations in the sayable project. Focuses on conventions that affect correctness, readability, and maintainability in a zero-dependency formatting library.
 
 ## Sources
 
-This guide synthesizes conventions from the following authoritative references:
+This guide draws from:
 
 - [OCaml Programming Guidelines](https://ocaml.org/docs/guidelines) (ocaml.org)
 - [Real World OCaml, 2nd Edition](https://dev.realworldocaml.org/) (Minsky, Madhavapeddy, Hickey)
@@ -22,7 +22,7 @@ This guide synthesizes conventions from the following authoritative references:
 |---|---|---|
 | Modules | UpperCamelCase | `StringMap`, `AgeLocale`, `Formatter` |
 | Module types (signatures) | UpperCamelCase or UPPER_SNAKE | `Comparable`, `S`, `MAP` |
-| Functors | UpperCamelCase, often `Make` | `Map.Make`, `Set.Make`, `Hashtbl.Make` |
+| Functors | UpperCamelCase, often `Make` | `Map.Make`, `Set.Make` |
 | Types | lowercase_with_underscores | `plural_category`, `unit_forms`, `age_locale` |
 | Type variables | `'a`, `'b`, `'key`, `'value` | `'a list`, `('key, 'value) hashtbl` |
 | Variant constructors | UpperCamelCase | `Some`, `None`, `Zero`, `One`, `Other` |
@@ -36,9 +36,8 @@ This guide synthesizes conventions from the following authoritative references:
 
 - **Use underscores to separate words**, not camelCase: `int_of_string`, not `intOfString`. This is the universal OCaml convention.
 - **Capitalize only constructors and module names.** Everything else is lowercase.
-- **Avoid abbreviations** for global identifiers. Write `format_age`, not `fmt_age`. Local variables can be brief: `s` for a string, `n` for an integer, `l` or `xs` for a list.
-- **Avoid confusing single characters.** Do not use `l` (lowercase L) as a variable name -- it is visually indistinct from `1`.
-- **Name the primary type `t`** in a module. Functions that operate on it take `t` as the first argument. This is the universal OCaml/Jane Street convention:
+- **Avoid abbreviations** for global identifiers. Write `format_age`, not `fmt_age`. Local variables can be brief: `s` for a string, `n` for an integer, `l` or `xs` for a list. The single-letter `l` is conventional for list parameters in OCaml (the standard library uses it throughout `List.map f l`, `List.iter f l`, etc.). If your font makes `l` and `1` hard to distinguish, fix your font.
+- **Name the primary type `t`** in a module. Functions that operate on it take `t` as the first argument:
 
 ```ocaml
 module Locale : sig
@@ -55,7 +54,7 @@ val find : 'a list -> f:('a -> bool) -> 'a option
 val find_exn : 'a list -> f:('a -> bool) -> 'a
 ```
 
-- **Use `of` for conversion functions** from one type to another: `string_of_int`, `float_of_string`. The newer Base convention reverses this: `Int.of_string`, `Float.to_string`.
+- **Use stdlib conversion naming** for this project: `string_of_int`, `float_of_string` (target_of_source). This is the OCaml stdlib convention. Codebases that use Jane Street's Base/Core library follow `Module.of_type`/`Module.to_type` instead (`Int.of_string`, `Float.to_string`), but since this project has zero dependencies, stdlib conventions apply.
 - **Use consistent names for similar parameters** across functions:
 
 ```ocaml
@@ -69,22 +68,14 @@ let format_stage locale dob as_of gender = ...
 
 ### ocamlformat
 
-Use [ocamlformat](https://github.com/ocaml-ppx/ocamlformat) for automated formatting. Create a `.ocamlformat` file in the project root:
+Use [ocamlformat](https://github.com/ocaml-ppx/ocamlformat) for automated formatting. Create a `.ocamlformat` file in the project root with the profile and a pinned version:
 
 ```
 profile = default
-version = 0.28.1
+version = <current version from github.com/ocaml-ppx/ocamlformat/releases>
 ```
 
-Available profiles:
-
-| Profile | Description |
-|---|---|
-| `default` | The standard ocamlformat profile; suitable for most projects |
-| `janestreet` | Jane Street conventions; wider lines, more compact |
-| `ocamlformat` | The ocamlformat team's own preferences |
-
-Pin the version in `.ocamlformat` to ensure consistent formatting across environments. Run formatting via `dune fmt` for project-wide application.
+Pin the version to ensure consistent formatting across environments. Run formatting via `dune fmt` for project-wide application. When ocamlformat is in use, most of the formatting rules below are enforced automatically -- they are documented here for understanding, not manual enforcement.
 
 ### Indentation
 
@@ -127,7 +118,7 @@ match expr with
   combine intermediate y
 ```
 
-For nested match expressions, use `begin ... end` to delimit:
+For nested match expressions, use `begin ... end` or parentheses to delimit. Both are acceptable; this project uses `begin ... end`:
 
 ```ocaml
 match outer with
@@ -207,18 +198,6 @@ a < b && c > d
 x land (y lor z)
 ```
 
-Use `begin ... end` rather than parentheses for delimiting multi-expression blocks, especially within match arms and if/then/else:
-
-```ocaml
-if condition then begin
-  side_effect ();
-  compute_result ()
-end else begin
-  other_effect ();
-  other_result ()
-end
-```
-
 ---
 
 ## 3. Type System
@@ -263,16 +242,7 @@ Use functional update syntax for creating modified copies:
 let updated = { original with half = "1/2"; delimiter = " " }
 ```
 
-Mark fields `mutable` only when mutation is genuinely needed:
-
-```ocaml
-type counter = {
-  mutable count : int;
-  name : string;
-}
-```
-
-Enable warning 9 (`#warnings "+9"`) to catch incomplete record patterns. When intentionally ignoring fields, use the underscore wildcard:
+Mark fields `mutable` only when mutation is genuinely needed. Enable warning 9 (`#warnings "+9"`) to catch incomplete record patterns. When intentionally ignoring fields, use the underscore wildcard:
 
 ```ocaml
 let get_code { code; _ } = code
@@ -317,58 +287,7 @@ Type annotations for polymorphic variants use bracket notation:
 | Exhaustiveness checking is critical | Lightweight ad-hoc unions improve conciseness |
 | Refactoring safety matters most | Extensibility across module boundaries is needed |
 
-**Downsides of polymorphic variants:** more complex typing rules, typos in tags compile without error (unlike regular variants), and slightly higher runtime overhead.
-
-### Phantom Types
-
-Phantom types are type parameters that appear in the type definition but not in the data representation. They enforce invariants at the type level:
-
-```ocaml
-type readonly
-type readwrite
-
-type 'a file_handle = { fd : Unix.file_descr }
-
-val open_readonly : string -> readonly file_handle
-val open_readwrite : string -> readwrite file_handle
-val write : readwrite file_handle -> string -> unit  (* only accepts readwrite *)
-val read : _ file_handle -> string                   (* accepts any mode *)
-```
-
-Phantom types are fragile without GADTs because the compiler cannot enforce that constructors produce specific phantom parameters. Use GADTs when the invariant is safety-critical.
-
-### GADTs (Generalized Algebraic Data Types)
-
-GADTs allow each constructor to constrain its result type. Use them when they provide a "big qualitative improvement" to the design:
-
-```ocaml
-type _ expr =
-  | Int : int -> int expr
-  | Bool : bool -> bool expr
-  | Plus : int expr * int expr -> int expr
-  | If : bool expr * 'a expr * 'a expr -> 'a expr
-```
-
-Evaluation functions require locally abstract type annotations:
-
-```ocaml
-let rec eval : type a. a expr -> a = function
-  | Int n -> n
-  | Bool b -> b
-  | Plus (x, y) -> eval x + eval y
-  | If (c, t, e) -> if eval c then eval t else eval e
-```
-
-**When to use GADTs:**
-- Typed expression languages or DSLs
-- Functions whose return type depends on the constructor
-- Existential types (heterogeneous collections)
-- State machine narrowing at the type level
-
-**When to avoid GADTs:**
-- Small, simple programs where the added complexity is not justified
-- When or-patterns are needed (GADTs do not work well with them)
-- When `[@@deriving sexp]` or similar ppx derivations are required
+**Downsides of polymorphic variants:** more complex typing rules, typos in tags compile without error (unlike regular variants), and slightly higher runtime overhead. For this project, regular variants are the right choice.
 
 ### Modules as Types
 
@@ -453,27 +372,7 @@ module Make (Arg : COMPARABLE) : (S with type elt = Arg.t) = struct
 end
 ```
 
-**When to avoid functors:** "For small and simple programs, heavy use of functors is probably a mistake." Use them when the abstraction genuinely earns its weight.
-
-### First-Class Modules
-
-First-class modules are ordinary values that contain modules. They bridge the module and value worlds:
-
-```ocaml
-(* Pack a module into a value *)
-let locale_module = (module English : LOCALE)
-
-(* Unpack back to a module *)
-let (module L) = locale_module in
-L.format_age dob as_of
-```
-
-**Use first-class modules when:**
-- Handler selection depends on runtime values.
-- Multiple interchangeable implementations must be stored in a collection.
-- Runtime module loading/unloading is needed.
-
-**Prefer closures when:** the abstraction is simple and does not require bundling multiple functions or types.
+For small, simple programs (like this project), heavy use of functors is probably a mistake. Use them when the abstraction genuinely earns its weight.
 
 ### Open and Include
 
@@ -487,6 +386,8 @@ let n = length my_list
 (* Prefer *)
 let n = List.length my_list
 ```
+
+**Exception:** opening a project-internal types module (e.g., `open Types`) at the top of an implementation file is standard practice when the types are used pervasively. This is what the sayable-age implementation does, and it is the right call.
 
 **Local opens** are acceptable for narrowing scope:
 
@@ -538,7 +439,7 @@ let to_string = function
   | _ -> "non-zero"
 ```
 
-The only exception: when the catch-all is genuinely the correct semantics for any future additions.
+The only exception: when the catch-all is genuinely the correct semantics for any future additions (e.g., a default/fallback case that should absorb new constructors).
 
 ### Or-Patterns
 
@@ -617,7 +518,7 @@ let handle opt =
 Use match on strings rather than chains of `if ... else if`:
 
 ```ocaml
-(* Good *)
+(* Acceptable for dispatch *)
 let stage_key months =
   match classify_months months with
   | "newborn" -> stages.newborn
@@ -629,13 +530,15 @@ let stage_key months =
 type stage = Newborn | Infant | Toddler | Child | Teenager | Adult
 ```
 
+Note: the sayable-age formatter uses string-based stage dispatch internally because stage keys originate from the spec. This is acceptable when the strings are an internal implementation detail, not part of the public API.
+
 ---
 
 ## 6. Error Handling
 
 ### Three Mechanisms
 
-OCaml provides three approaches to error handling, each with different trade-offs:
+OCaml provides three approaches to error handling:
 
 | Mechanism | Signal | Error detail | Caller must handle? |
 |---|---|---|---|
@@ -659,9 +562,11 @@ match parse_date input with
 | None -> handle_missing ()
 ```
 
+This is the primary error-handling pattern in sayable-age: `format_age` and `format_stage` return `string option`.
+
 ### Result
 
-Use `result` when callers need to know why something failed:
+Use `result` when callers need to know *why* something failed:
 
 ```ocaml
 type format_error =
@@ -685,24 +590,27 @@ let process input =
 
 ### Exceptions
 
-Use exceptions for truly exceptional conditions that are rare and often unrecoverable at the call site:
+**At API boundaries:** never let exceptions escape. Use `option` or `result` in function signatures. Callers cannot see exceptions in the type signature, which makes them invisible failure modes.
+
+**Within a function body:** exceptions are a legitimate and efficient control-flow mechanism in OCaml. Unlike JVM/CLR exceptions, OCaml exceptions do not construct stack traces or allocate on the heap -- `raise` is essentially a `longjmp`. The standard library uses exceptions for control flow pervasively (`Hashtbl.find` raises `Not_found`, `Scanf` uses exceptions for backtracking).
+
+Use local exceptions for early exit from loops or deep recursion when the functional alternative would require threading an option through every recursive call:
 
 ```ocaml
-(* Standard library exceptions *)
-raise Not_found
-raise (Invalid_argument "index out of bounds")
-raise (Failure "unexpected state")
-
-(* Custom exceptions *)
-exception Parse_error of string * int  (* message, position *)
-
-(* Handling *)
-try
-  risky_operation ()
-with
-| Not_found -> fallback_value
-| Parse_error (msg, pos) -> report_error msg pos
+(* Acceptable: exception is raised and caught within the same function *)
+exception Found of node
+let find_in_tree pred root =
+  let rec walk = function
+    | Leaf -> ()
+    | Node (l, v, r) ->
+      if pred v then raise (Found v);
+      walk l; walk r
+  in
+  try walk root; None
+  with Found n -> Some n
 ```
+
+The key rule is locality: if `raise` and `try/with` are in the same lexical scope, this is a pattern, not an anti-pattern.
 
 ### When to Use Which
 
@@ -710,29 +618,16 @@ with
 |---|---|
 | Value may be absent, reason is obvious | `option` |
 | Operation may fail, caller needs error details | `result` |
-| Failure is rare, often unrecoverable | Exception |
-| Returning from a deeply nested computation | Exception (then catch at boundary) |
+| Early exit from a loop or deep recursion (local) | Exception (raised and caught in same function) |
 | Public API boundary | `option` or `result` (never expose exceptions) |
 
 ### Exception Best Practices
 
-- **Never use `try ... with _ -> ...`** (catch-all) except in top-level handlers. Name the exception and handle it specifically or re-raise after cleanup:
-
-```ocaml
-try
-  process ic oc;
-  close_in ic;
-  close_out oc
-with exn ->
-  close_in ic;
-  close_out oc;
-  raise exn
-```
-
+- **Never use `try ... with _ -> ...`** (catch-all) except in top-level handlers. Catch specific exceptions.
 - **Suffix exception-raising functions with `_exn`** to signal their behavior in the name.
 - **Prefer narrow exception handlers.** Catch only the exceptions you expect.
 - **Reuse standard exceptions** (`Not_found`, `Invalid_argument`, `Failure`) when they fit semantically. Define custom exceptions for domain-specific failures.
-- **Use `Exn.protect` or `Fun.protect`** for guaranteed cleanup:
+- **Use `Fun.protect`** for guaranteed cleanup when managing resources:
 
 ```ocaml
 Fun.protect ~finally:(fun () -> close_in ic)
@@ -783,15 +678,28 @@ let result = List.find_opt (fun x -> x > 10) numbers
 (* Sum *)
 let sum = List.fold_left ( + ) 0 numbers
 
-(* Build a string *)
-let csv = List.fold_left
-  (fun acc s -> if acc = "" then s else acc ^ "," ^ s)
-  "" items
-
 (* Build a map *)
 let index = List.fold_left
   (fun acc (k, v) -> StringMap.add k v acc)
   StringMap.empty pairs
+
+(* Collect with a predicate *)
+let evens = List.fold_left
+  (fun acc x -> if x mod 2 = 0 then x :: acc else acc)
+  [] numbers
+  |> List.rev
+```
+
+For joining strings, use `String.concat` directly instead of folding with `^` (which is O(n^2) due to intermediate string allocation):
+
+```ocaml
+(* Good: O(n) *)
+let csv = String.concat "," items
+
+(* Bad: O(n^2) -- each ^ allocates and copies the entire accumulator *)
+let csv = List.fold_left
+  (fun acc s -> if acc = "" then s else acc ^ "," ^ s)
+  "" items
 ```
 
 **Direction:** Use `fold_left` by default (tail-recursive, processes left-to-right). Use `fold_right` only when building right-associative structures (like lists) where the order matters.
@@ -811,14 +719,10 @@ let double_all = List.map (( * ) 2)
 
 ### Function Composition
 
-While OCaml does not have a built-in composition operator, you can define one or use pipe chains:
+While OCaml does not have a built-in composition operator, pipe chains are the idiomatic alternative:
 
 ```ocaml
-(* Pipe chain (preferred -- reads left to right) *)
 let result = x |> f |> g |> h
-
-(* Composition (less common in OCaml) *)
-let compose f g x = f (g x)
 ```
 
 ### Higher-Order Function Idioms
@@ -846,11 +750,12 @@ let has_errors = List.exists is_error results
 
 ### When to Use Mutation
 
-OCaml defaults to immutability, which is "generally easier to reason about, less error prone and more composable." Use mutation when:
+OCaml defaults to immutability, which is generally easier to reason about, less error-prone, and more composable. Use mutation when:
 
 - **Interacting with the outside world** (I/O, system calls, FFI).
 - **Performance requires it** (some algorithms are only efficient with mutable state).
 - **Local, contained mutation** simplifies an otherwise convoluted functional solution.
+- **Imperative algorithms on strings, arrays, or buffers** where indexed access with a mutable cursor is the natural expression (e.g., `string_replace`, `string_contains` in the sayable-age formatter).
 
 ### Refs
 
@@ -862,7 +767,7 @@ let current = !counter       (* read with ! *)
 counter := !counter + 1      (* write with := *)
 ```
 
-**Prefer functional style when possible.** This imperative loop:
+**Prefer functional style when possible.** This imperative accumulation:
 
 ```ocaml
 (* Avoid *)
@@ -916,10 +821,10 @@ for i = 0 to Array.length arr - 1 do
 done
 ```
 
-**While loops** are rarely needed. The official guidelines warn: "A while loop is usually wrong, unless its loop invariant has been explicitly written." Prefer recursion:
+**While loops** are appropriate for imperative algorithms with mutable state, particularly when operating on arrays, buffers, strings, or I/O channels where indexed access with a mutable cursor is natural:
 
 ```ocaml
-(* Acceptable: imperative string search *)
+(* Imperative string search -- while loop is the right tool here *)
 let string_contains ~needle haystack =
   let nlen = String.length needle in
   let hlen = String.length haystack in
@@ -930,25 +835,21 @@ let string_contains ~needle haystack =
     else i := !i + 1
   done;
   !found
-
-(* Better when feasible: recursive *)
-let rec find_index lst target = match lst with
-  | [] -> None
-  | x :: _ when x = target -> Some 0
-  | _ :: rest -> Option.map (( + ) 1) (find_index rest target)
 ```
+
+Prefer recursion or higher-order functions (`List.fold_left`, `Array.iter`, `Seq.iter`) for iteration over data structures. While loops are rarely needed for list processing.
 
 ### Sequencing
 
-Use `;` to sequence expressions that return `unit`. Use `let _ = ...` or `ignore` when discarding a non-unit result:
+Use `;` to sequence expressions that return `unit`. Use `ignore` when discarding a non-unit result:
 
 ```ocaml
 (* Sequencing unit expressions *)
 print_string "hello";
 print_newline ()
 
-(* Discarding a result *)
-ignore (List.map f l);  (* but prefer List.iter when you don't need the result *)
+(* Discarding a result -- but prefer List.iter when you don't need the result *)
+ignore (List.map f l)
 ```
 
 ### Defer Side Effects
@@ -1019,6 +920,8 @@ Use labeled arguments when:
 - Argument meaning is not obvious from position.
 - You want to enable partial application in flexible orders.
 
+Note: the sayable-age implementation does not use labeled arguments in its public API, which is acceptable given the small API surface. An auditor should not flag the absence of labels as a deficiency.
+
 ### Optional Arguments
 
 Optional arguments use `?` and default to `None` unless a default is specified:
@@ -1043,6 +946,23 @@ let wrapper ?compactness locale dob =
 ```
 
 **Place optional arguments before mandatory ones.** An optional argument followed by a non-labeled mandatory argument is erased when the mandatory argument is applied. An optional argument at the end of the parameter list is never erased.
+
+### String Parsing
+
+For a zero-dependency library, manual string parsing with `String.sub` and index arithmetic is standard practice. `Scanf.sscanf` is available in the stdlib but uses exceptions for parse failures, which makes error handling awkward when you want to return `option`. The sayable-age date parser (`Internal.parse_date`) correctly uses manual extraction with explicit bounds checking:
+
+```ocaml
+let parse_date s =
+  if String.length s < 10 then None
+  else if s.[4] <> '-' || s.[7] <> '-' then None
+  else
+    let y_str = String.sub s 0 4 in
+    let m_str = String.sub s 5 2 in
+    let d_str = String.sub s 8 2 in
+    (* validate and convert ... *)
+```
+
+This pattern gives precise control over error handling and avoids exception-based failure modes.
 
 ### Unit Patterns
 
@@ -1080,21 +1000,6 @@ let result = Lazy.force expensive  (* computed once, cached *)
 
 `Obj.magic` bypasses the type system entirely. Never use it in application code. It is reserved for the compiler and runtime internals.
 
-### Exceptions for Control Flow
-
-Do not use exceptions as a general-purpose control flow mechanism. They are for genuinely exceptional situations:
-
-```ocaml
-(* Bad: exception as early return *)
-exception Found of int
-let find_first_positive l =
-  try List.iter (fun x -> if x > 0 then raise (Found x)) l; None
-  with Found x -> Some x
-
-(* Good: use Option *)
-let find_first_positive = List.find_opt (fun x -> x > 0)
-```
-
 ### Stringly-Typed Code
 
 Do not use strings where a variant or other structured type is appropriate:
@@ -1118,7 +1023,7 @@ let format = function
 
 ### Excessive Open
 
-Opening many modules pollutes the namespace and makes it unclear where identifiers come from. Prefer qualified access (`Module.function`) or local opens.
+Opening many modules pollutes the namespace and makes it unclear where identifiers come from. Prefer qualified access (`Module.function`) or local opens. The exception is project-internal types modules (see Section 4).
 
 ### List.hd and List.tl
 
@@ -1138,30 +1043,33 @@ let first = match my_list with
 
 Avoid `| _ -> ...` in match expressions when specific constructor patterns would provide better safety. Catch-all patterns suppress exhaustiveness warnings when new constructors are added.
 
-### Non-Exhaustive Patterns
+### Non-Tail-Recursive Functions on Unbounded Input
 
-Never ignore the compiler's exhaustiveness warnings. Complete every match expression with all constructors listed explicitly, or document why a catch-all is semantically correct.
+Be aware of stack depth. A recursive function that is not tail-recursive will overflow on large inputs:
+
+```ocaml
+(* Not tail-recursive -- stack-overflows on long lists *)
+let rec length = function
+  | [] -> 0
+  | _ :: tl -> 1 + length tl
+
+(* Tail-recursive with accumulator *)
+let length l =
+  let rec aux acc = function
+    | [] -> acc
+    | _ :: tl -> aux (acc + 1) tl
+  in
+  aux 0 l
+
+(* Best: use the standard library *)
+let length = List.length
+```
+
+For the sayable-age codebase, input sizes are small enough that this is not a practical concern, but the principle matters for general OCaml code.
 
 ### Unnecessary Imperative Style
 
-Do not rewrite natural functional patterns in imperative style:
-
-```ocaml
-(* Bad: imperative list length *)
-let list_length l =
-  let l = ref l in
-  let res = ref 0 in
-  while !l <> [] do
-    incr res;
-    l := List.tl !l
-  done;
-  !res
-
-(* Good: functional *)
-let rec list_length = function
-  | [] -> 0
-  | _ :: l -> 1 + list_length l
-```
+Do not rewrite natural functional patterns in imperative style. If `List.fold_left`, `List.map`, or another higher-order function expresses the computation directly, use it instead of `ref` + `while` + mutation.
 
 ### Ignoring Compiler Warnings
 
@@ -1171,20 +1079,13 @@ Treat all compiler warnings seriously. They catch incomplete patterns, unused va
 
 Do not reach for `ref` or mutable fields when a `let` binding or functional update achieves the same result with less complexity.
 
+### O(n^2) String Concatenation
+
+Do not build strings by repeated `^` concatenation in a loop or fold. Each `^` allocates a new string and copies the entire accumulated result. Use `Buffer.add_string` for incremental building, or `String.concat` for joining a list of strings.
+
 ---
 
 ## 11. Tooling
-
-### ocamlformat
-
-Automated code formatter. Pin the version in `.ocamlformat`:
-
-```
-profile = default
-version = 0.28.1
-```
-
-Run with `dune fmt` or `ocamlformat --inplace file.ml`. Integrate into CI to enforce consistent formatting.
 
 ### Dune
 
@@ -1197,6 +1098,7 @@ lib/
   types.ml
   formatter.ml
   formatter.mli
+  internal.ml
 test/
   dune                # (test (name test_main) (libraries my_lib alcotest))
   test_main.ml
@@ -1222,19 +1124,15 @@ Key `dune` stanzas:
  (libraries sayable_age alcotest))
 ```
 
-Use `dune build` to compile, `dune test` to run tests, `dune clean` to remove build artifacts.
+Use `dune build` to compile, `dune test` to run tests, `dune clean` to remove build artifacts, `dune fmt` for formatting.
+
+### ocamlformat
+
+Automated code formatter. Pin the version in `.ocamlformat` and integrate into CI to enforce consistent formatting. Run with `dune fmt` or `ocamlformat --inplace file.ml`.
 
 ### OCaml LSP / Merlin
 
-OCaml LSP (`ocaml-lsp-server`) provides IDE integration: type-on-hover, go-to-definition, completion, error reporting. It uses Merlin under the hood.
-
-Install via opam:
-
-```bash
-opam install ocaml-lsp-server
-```
-
-Merlin configuration is automatically derived from the dune build system -- no manual `.merlin` files needed when using dune.
+OCaml LSP (`ocaml-lsp-server`) provides IDE integration: type-on-hover, go-to-definition, completion, error reporting. It uses Merlin under the hood. Merlin configuration is automatically derived from the dune build system -- no manual `.merlin` files needed.
 
 ### opam
 
@@ -1246,32 +1144,9 @@ opam install alcotest          # Install a test framework
 opam pin add . --no-action     # Pin local package for development
 ```
 
-Use `.opam` files for package metadata:
+### The `unix` Library
 
-```
-opam-version: "2.0"
-name: "sayable-age"
-version: "0.5.0"
-depends: [
-  "ocaml" {>= "4.14"}
-  "dune" {>= "3.0" & build}
-  "alcotest" {with-test}
-]
-```
-
-### ppx (Preprocessing Extensions)
-
-PPX provides compile-time code generation via syntax extensions:
-
-| ppx | Purpose |
-|---|---|
-| `ppx_deriving` | Derive `show`, `eq`, `ord`, `make` from type definitions |
-| `ppx_sexp_conv` | Derive s-expression serialization (Jane Street) |
-| `ppx_inline_test` | Inline test definitions |
-| `ppx_expect` | Expect-test framework |
-| `ppx_let` | Monadic let syntax (`let%bind`, `let%map`) |
-
-Use ppx judiciously. Each ppx adds a compilation dependency and can make error messages harder to understand.
+The sayable-age implementation uses `Unix.gettimeofday` and `Unix.gmtime` for the `today()` function in `internal.ml`. The `unix` library is part of the OCaml distribution (not an opam package), so this does not violate the zero-dependency rule. The usage is isolated to a single function, keeping the pure formatting logic in `formatter.ml` testable without mocking time.
 
 ### odoc
 
@@ -1300,31 +1175,40 @@ Generate docs with `dune build @doc`.
 | ppx_inline_test | Inline tests next to code |
 | ppx_expect | Expect tests (snapshot testing) |
 
-For zero-dependency projects, the stdlib `assert` and manual test runners work well.
+For zero-dependency projects, the stdlib `assert` and manual test runners work well. The sayable-age test suite uses Alcotest (a test-time dependency, not a runtime dependency).
 
 ---
 
 ## Quick Reference Checklist
 
-For auditing an OCaml implementation, verify:
+### General OCaml Quality
 
 - [ ] Names use `snake_case` for values/types, `UpperCamelCase` for modules/constructors
-- [ ] Primary type is named `t` in its module
+- [ ] Primary type is named `t` in its module (when applicable)
 - [ ] `.mli` files exist for public module interfaces
-- [ ] No unnecessary `open` at file scope (qualified access preferred)
+- [ ] No unnecessary `open` at file scope (qualified access or project-internal types opens only)
 - [ ] Pattern matches are exhaustive -- no suppressed warnings
 - [ ] No catch-all `_` where explicit constructors would be safer
-- [ ] `option` or `result` used at API boundaries (not bare exceptions)
+- [ ] `option` or `result` used at API boundaries (no exceptions in public signatures)
 - [ ] Exception-raising functions suffixed with `_exn`
 - [ ] No `Obj.magic` usage
 - [ ] No `List.hd` or `List.tl` (pattern match instead)
 - [ ] Mutable state used only when genuinely needed
-- [ ] `while` loops justified (recursive functions preferred)
+- [ ] Recursive functions on unbounded input are tail-recursive
+- [ ] No O(n^2) string concatenation with `^` in loops
 - [ ] Compiler warnings treated as errors (`-w +a` or equivalent)
-- [ ] `ocamlformat` version pinned and formatting consistent
+- [ ] Formatting consistent (ocamlformat pinned if used)
 - [ ] Dune build files present and correctly structured
 - [ ] Documentation comments in `.mli` files using `(** ... *)` syntax
-- [ ] Zero runtime dependencies (no external opam packages in production)
-- [ ] Labeled arguments used for functions with multiple same-type parameters
-- [ ] Optional arguments placed before mandatory ones
-- [ ] `Fun.protect` or equivalent used for resource cleanup
+
+### Sayable-Age Specific
+
+- [ ] All test cases from `age/config/tests.json` are implemented
+- [ ] Each test is annotated with its canonical test ID from `tests.json`
+- [ ] Zero runtime dependencies (only `unix` from the OCaml distribution)
+- [ ] Generated locale files in `locales/` are untouched (no manual edits)
+- [ ] Generated files carry the DO NOT EDIT banner
+- [ ] Edge cases handled: empty DOB string, future birth dates, age > 6000 months
+- [ ] `format_age` and `format_stage` return `string option` (not exceptions)
+- [ ] Pure formatting logic separated from time-dependent code (`formatter.ml` vs `internal.ml`)
+- [ ] Version constant matches `age/config/version.json`

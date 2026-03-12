@@ -109,6 +109,8 @@ Elm has four special constrained type variables with reserved meaning:
 
 All Elm code should be formatted by [elm-format](https://github.com/avh4/elm-format). It is a zero-configuration formatter (like `gofmt`) that enforces a single consistent style based on the [official Elm style guide](https://elm-lang.org/docs/style-guide). Run it on save; never argue about formatting.
 
+Many formatting decisions -- indentation, body placement, blank lines between declarations, leading-comma style -- are handled automatically by elm-format. The formatting rules described in this section document what elm-format produces, for reference. You do not need to manually enforce these; elm-format does it for you.
+
 ### Indentation
 
 elm-format uses **4-space indentation**. Tabs are never used.
@@ -130,12 +132,13 @@ formatAge loc compactness dob asOf =
 
 ### Top-Level Declarations
 
+elm-format enforces these rules automatically:
+
 - Always include a type annotation on every top-level declaration.
-- Always bring the body of a declaration down one line from the `=` sign.
-- Separate top-level declarations with **two blank lines**.
+- The body of a declaration goes on the line below the `=` sign.
+- Top-level declarations are separated by **two blank lines**.
 
 ```elm
--- Good
 resolveUnit : Int -> UnitForms -> Locale -> String -> String
 resolveUnit count uf loc half =
     ...
@@ -146,28 +149,15 @@ stageLabel stages months =
     ...
 ```
 
-```elm
--- Bad: body on same line as =
-homeDirectory : String
-homeDirectory = "/root/files"
-
--- Bad: only one blank line between declarations
-foo : Int
-foo =
-    1
-
-bar : Int
-bar =
-    2
-```
+Type annotations are the one thing elm-format does not add for you. Always write them by hand on every top-level declaration -- they serve as documentation and catch type errors at the definition site rather than at distant call sites.
 
 ### Line Length
 
-Keep lines under **80 characters**. Longer lines often indicate the code should be broken up. Locale data lines may exceed this, which is acceptable.
+Let elm-format handle line length. If a line feels too long after formatting, it is usually a sign that the expression should be extracted into a named binding or helper function -- not that the line needs manual wrapping. Locale data lines may be long; that is expected.
 
 ### Record Formatting
 
-Use leading commas with the opening brace on the type alias line. Each field on its own line:
+elm-format uses leading commas with the opening brace on the type alias line. Each field on its own line:
 
 ```elm
 type alias Locale =
@@ -190,7 +180,7 @@ This format produces clean diffs: adding or removing a field changes exactly one
 
 ### List Formatting
 
-Use the same leading-comma style for multi-line lists:
+elm-format uses the same leading-comma style for multi-line lists:
 
 ```elm
 imports =
@@ -324,6 +314,8 @@ Phantom types have a type variable that does not appear in any constructor. They
 type Unit a
     = Unit String
 
+-- Meters and Seconds exist only as type-level tags.
+-- Their constructors are intentionally unused.
 type Meters
     = Meters
 
@@ -338,8 +330,13 @@ duration : Unit Seconds
 duration =
     Unit "10"
 
--- The compiler will reject: combine distance duration
--- because Unit Meters /= Unit Seconds
+-- A function that requires both arguments to share the same phantom type:
+add : Unit a -> Unit a -> Unit a
+add (Unit x) (Unit y) =
+    Unit (String.fromInt (Maybe.withDefault 0 (String.toInt x) + Maybe.withDefault 0 (String.toInt y)))
+
+-- add distance duration  -- COMPILER ERROR: Unit Meters /= Unit Seconds
+-- add distance distance  -- OK: both are Unit Meters
 ```
 
 Phantom types are an advanced technique. Use them when you need compile-time guarantees that two values of the same shape represent different quantities.
@@ -419,10 +416,7 @@ import Dict exposing (..)
 
 ### Import Organization
 
-Group imports in this order:
-1. Non-exposing imports (qualified only)
-2. Imports with explicit exposing lists
-3. Wildcard imports (avoid these)
+Sort imports alphabetically by module name. elm-format enforces this automatically. Do not try to group imports manually -- elm-format will undo it.
 
 ### Module Organization
 
@@ -493,14 +487,19 @@ items
     |> List.map .name
 ```
 
-**Do not use a single-step pipeline.** If there is only one transformation, call the function directly:
+**Avoid single-step pipelines when the direct function call reads just as well.** For simple cases, call the function directly:
 
 ```elm
--- Good
+-- Good: direct call for simple cases
 List.map toUpper names
 
--- Bad: unnecessary pipeline
+-- Unnecessary: single-step pipeline adds nothing
 names |> List.map toUpper
+
+-- Acceptable: single-step pipeline when the input is long/complex
+-- and benefits from appearing first for readability
+computeComplexResult model.settings model.data
+    |> Maybe.withDefault fallback
 ```
 
 ### Backward Application (`<|`)
@@ -579,15 +578,19 @@ process items =
         |> String.join ", "
 ```
 
-### Anonymous Functions
+### Anonymous Functions and `always`
 
-Prefer `\_ ->` over `always` for discarding arguments:
+Use `always value` when producing a constant function. Use `\_ -> expr` when discarding a specific argument where the discard is the important semantic point (e.g., an unused event parameter). Both are idiomatic; choose whichever reads more naturally in context:
 
 ```elm
--- Good
-Maybe.map (\_ -> ()) value
+-- Good: always for constant functions
+List.map (always 0) items
 
--- Avoid
+-- Good: lambda when discarding a specific argument
+Html.Events.on "click" (Json.Decode.succeed msg |> Json.Decode.map (\_ -> msg))
+
+-- Either is fine here -- pick one and be consistent
+Maybe.map (\_ -> ()) value
 Maybe.map (always ()) value
 ```
 
@@ -1049,6 +1052,16 @@ type Color = Red | Green | Blue
 setColor : Color -> Widget -> Widget
 ```
 
+### Debug Calls
+
+Never commit `Debug.log`, `Debug.todo`, or `Debug.toString` calls. They are invaluable during development but are runtime hazards in production code:
+
+- `Debug.log` produces console output and can mask performance issues.
+- `Debug.todo` is a runtime crash waiting to happen.
+- Elm 0.19 prevents publishing packages with `Debug` calls, but application code has no such guard.
+
+Use the `NoDebug.Log` and `NoDebug.TodoOrToString` elm-review rules to catch these in CI.
+
 ### Overly Nested Expressions
 
 Deep nesting is a signal to refactor. Extract named functions or use `andThen`:
@@ -1112,18 +1125,6 @@ view model =
         , viewContent model
         , viewFooter model
         ]
-```
-
-### Using `always` Instead of `\_ ->`
-
-The anonymous function `\_ ->` is more recognizable and easier to refactor than `always`:
-
-```elm
--- Prefer
-Maybe.map (\_ -> ()) value
-
--- Avoid
-Maybe.map (always ()) value
 ```
 
 ### Unnecessary Type Aliases for Function Arguments
@@ -1193,6 +1194,7 @@ Key rule packages:
 | [jfmengels/elm-review-simplify](https://github.com/jfmengels/elm-review-simplify) | Simplify expressions (e.g., `List.map identity list` to `list`) |
 | [jfmengels/elm-review-common](https://github.com/jfmengels/elm-review-common) | Common best-practice rules |
 | [jfmengels/elm-review-cognitive-complexity](https://github.com/jfmengels/elm-review-cognitive-complexity) | Flag functions with high cognitive complexity |
+| [jfmengels/elm-review-debug](https://github.com/jfmengels/elm-review-debug) | Prevent `Debug` calls from reaching production |
 
 Recommended starter rules:
 - `NoUnused.Variables` -- reports unused top-level variables, imports, and imported values
@@ -1200,6 +1202,8 @@ Recommended starter rules:
 - `NoUnused.Exports` -- reports exposed functions/types that no other module imports
 - `NoUnused.Dependencies` -- reports dependencies listed in `elm.json` that are never imported
 - `Simplify` -- auto-fixes expressions that can be reduced
+- `NoDebug.Log` -- prevents `Debug.log` from being committed
+- `NoDebug.TodoOrToString` -- prevents `Debug.todo` and `Debug.toString` from being committed
 
 elm-review rules should be discussed and agreed upon by the team. Because errors cannot be easily suppressed, rules must be high quality with few false positives.
 
@@ -1212,7 +1216,7 @@ elm-review rules should be discussed and agreed upon by the team. Because errors
 - Prefer fuzz tests over unit tests when a property should hold for arbitrary inputs.
 - Test modules mirror source modules: `src/Foo.elm` is tested by `tests/FooTest.elm`.
 - Test only the exposed API. Do not expose internal functions just to test them.
-- Use `Expect.equal expected actual` (expected value first).
+- By convention, pass the expected value as the first argument to `Expect.equal` and the actual (computed) value as the second. This is not enforced by the API, but it produces clearer failure messages since elm-test labels the first argument in its diff output.
 
 ```elm
 import Expect
@@ -1234,8 +1238,13 @@ suite =
 
 ### elm.json
 
-`elm.json` is the project manifest. Key points:
-- List only direct dependencies, not transitive ones (Elm manages those automatically).
+`elm.json` is the project manifest. There are two project types with different schemas:
+
+- **Application** (`"type": "application"`): Pins exact dependency versions. Contains both `direct` and `indirect` dependency sections, both managed by `elm install`. Do not manually edit the `indirect` section -- it is auto-maintained.
+- **Package** (`"type": "package"`): Specifies version ranges for dependencies. Allows broader compatibility across Elm ecosystem versions.
+
+Key points:
+- Use `elm install <package>` to add dependencies rather than editing `elm.json` by hand.
 - Keep `source-directories` minimal, typically just `["src"]`.
 - The `elm-version` field constrains which compiler versions can build the project.
 
@@ -1257,6 +1266,7 @@ suite =
 - [elm-review](https://github.com/jfmengels/elm-review) -- static analysis for Elm
 - [elm-review-unused](https://github.com/jfmengels/elm-review-unused)
 - [elm-review-simplify](https://github.com/jfmengels/elm-review-simplify)
+- [elm-review-debug](https://github.com/jfmengels/elm-review-debug) -- prevent Debug calls in production
 - [elm-test](https://github.com/elm-explorations/test) -- the standard test framework
 - [Making Impossible States Impossible](https://www.youtube.com/watch?v=IcgmSRJHu_8) -- Richard Feldman's influential Elm conf talk
 - [Elm Function Operators Guide](https://harfangk.github.io/2018/01/27/elm-function-operators.html)

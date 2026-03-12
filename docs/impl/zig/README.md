@@ -1,6 +1,6 @@
 # Zig Style Guide
 
-A comprehensive reference for idiomatic Zig, compiled from official sources. Use this guide when auditing Zig implementations for correctness, consistency, and adherence to community conventions.
+A practical reference for idiomatic Zig, tailored to the sayable-age project. Covers naming, formatting, type system, error handling, memory patterns, testing, and tooling. When in doubt, follow the [official Zig style guide](https://ziglang.org/documentation/master/#Style-Guide).
 
 ## Sources
 
@@ -9,8 +9,6 @@ A comprehensive reference for idiomatic Zig, compiled from official sources. Use
 - [Zig Standard Library Documentation](https://ziglang.org/documentation/master/std/)
 - [zig.guide (community learning resource)](https://zig.guide/)
 - [Zig GitHub Repository](https://github.com/ziglang/zig)
-- [Andrew Kelley: "The Road to Zig 1.0" (talk)](https://www.youtube.com/watch?v=Unq770vRjV0)
-- [Andrew Kelley: "Zig: A Practical Guide to Applying Modern Techniques" (talk)](https://www.youtube.com/watch?v=Z7ZnHf3BTog)
 
 ---
 
@@ -37,6 +35,25 @@ const UnitForms = union(enum) { simple: []const u8, forms: Forms };
 const FileOpenError = error{ AccessDenied, OutOfMemory, FileNotFound };
 ```
 
+### Constants
+
+The Zig style guide draws a distinction based on how a constant gets its value:
+
+- **`camelCase`** for `const` declarations that hold the result of a `comptime` expression or `@import`
+- **`snake_case`** for `const` declarations that hold a simple literal value
+
+```zig
+// camelCase -- result of @import (comptime)
+const std = @import("std");
+const sayableAge = @import("sayableage.zig");
+
+// snake_case -- simple literal values
+const max_age_months = 6000;
+const version = "0.5.0";
+```
+
+Zig does not use `SCREAMING_SNAKE_CASE`. The `const` keyword already communicates immutability.
+
 ### Variables and Parameters
 
 Use `snake_case` for mutable variables and function parameters.
@@ -47,29 +64,11 @@ var clamped_birthday = if (dob_date.d < last_day) dob_date.d else last_day;
 fn julianDay(year: i32, month: i32, day: i32) i32 { ... }
 ```
 
-### Constants
-
-Use `snake_case` for runtime and compile-time constants. Zig does not use `SCREAMING_SNAKE_CASE` -- the `const` keyword already communicates immutability.
-
-```zig
-const max_age_months = 6000;
-const std = @import("std");
-const version = "0.5.0";
-```
-
-This diverges from many C-family languages. The Zig style guide explicitly uses `camelCase` for constants that are the result of a `comptime` expression and `snake_case` otherwise. In practice, the standard library and community use `snake_case` for module-level constants and `camelCase` for function-scoped values.
-
 ### Struct Fields
 
 Use `snake_case` for struct fields.
 
 ```zig
-const Date = struct {
-    y: i32,
-    m: i32,
-    d: i32,
-};
-
 const Locale = struct {
     code: []const u8,
     plural: *const fn (n: i32) PluralCategory,
@@ -101,7 +100,7 @@ const PluralCategory = enum(u3) {
 
 ### Files
 
-Use `snake_case` for file names, matching the convention for variable and module names.
+Use `snake_case` for file names, matching the convention for module names.
 
 ```
 sayableage.zig
@@ -110,11 +109,11 @@ build.zig
 locales.zig
 ```
 
-File names should match what they export: a file that defines `const SayableAge = struct { ... }` might be named `sayableage.zig`.
+File names should reflect what they export: a file defining the formatter and types is `sayableage.zig`; a file containing tests is `test_format_age.zig`.
 
 ### Comptime Parameters
 
-Use `comptime` keyword before the parameter. The parameter itself follows standard naming: `PascalCase` for types, `snake_case` for values.
+Use the `comptime` keyword before the parameter. The parameter itself follows standard naming: `PascalCase` for types, `snake_case` for values.
 
 ```zig
 fn makeArray(comptime size: usize) [size]u8 { ... }
@@ -133,7 +132,7 @@ test "plural rule selects correct category for Arabic" { ... }
 
 ### Things to Avoid in Names
 
-**No underscore prefixes.** The Zig style guide states: "Refrain from underscore prefixes." Do not use `_private` or `__internal` naming patterns.
+**No underscore prefixes.** The Zig style guide says: "Refrain from underscore prefixes." Do not use `_private` or `__internal` patterns.
 
 ```zig
 // Good
@@ -148,8 +147,8 @@ const _max_buffer = 256;
 The one exception is `_` as a discard name for unused variables or captures:
 
 ```zig
-for (items) |_| { count += 1; }   // Discard the element
-_ = someFunction();                 // Discard the return value
+for (items) |_| { count += 1; }
+_ = someFunction();
 ```
 
 **Avoid redundancy in names.** Do not repeat the container name in its members.
@@ -168,7 +167,7 @@ const Locale = struct {
 };
 ```
 
-**Avoid redundancy in fully-qualified namespaces.** When accessing members through their container, the container name already provides context.
+**Avoid redundancy in fully-qualified namespaces.** The container name already provides context.
 
 ```zig
 // Good
@@ -182,7 +181,45 @@ const cat = PluralCategory.plural_one;
 
 ---
 
-## 2. Code Formatting
+## 2. Visibility
+
+### pub
+
+Only mark declarations `pub` when they are part of the module's public API. Internal helpers, types, and constants should remain private (no `pub`).
+
+```zig
+// Public API -- consumers need these
+pub const Locale = struct { ... };
+pub const PluralCategory = enum(u3) { ... };
+pub fn formatAge(buf: []u8, locale: *const Locale, ...) ?[]const u8 { ... }
+
+// Internal -- not pub
+const Writer = struct { ... };
+const Date = struct { y: i32, m: i32, d: i32 };
+fn parseDate(s: []const u8) ?Date { ... }
+fn julianDay(year: i32, month: i32, day: i32) i32 { ... }
+```
+
+In `build.zig`, only expose modules that consumers need. Test files can `@import` the module under test and access its `pub` declarations.
+
+### Nested pub
+
+Declarations inside a `pub` struct that form part of the API should also be `pub`:
+
+```zig
+pub const UnitForms = union(enum) {
+    simple: []const u8,
+    forms: Forms,
+
+    // Part of the public API for this type
+    pub const Forms = struct { ... };
+    pub fn resolve(self: UnitForms, cat: PluralCategory) ?[]const u8 { ... }
+};
+```
+
+---
+
+## 3. Code Formatting
 
 ### zig fmt
 
@@ -200,19 +237,9 @@ If `zig fmt` produces hard-to-read output, restructure the code rather than addi
 
 Use 4 spaces. No tabs. `zig fmt` enforces this.
 
-```zig
-fn parseDate(s: []const u8) ?Date {
-    if (s.len < 10 or s[4] != '-' or s[7] != '-') return null;
-    const y = parseDigits(s[0..4]) orelse return null;
-    const m = parseDigits(s[5..7]) orelse return null;
-    const d = parseDigits(s[8..10]) orelse return null;
-    return .{ .y = y, .m = m, .d = d };
-}
-```
-
 ### Line Length
 
-There is no hard line length limit in Zig's style guide. `zig fmt` will not wrap long lines. However, aim for readable line lengths (roughly 100-120 characters). Long lines in locale data files are expected and acceptable.
+There is no hard line length limit in Zig's style guide. `zig fmt` will not wrap long lines. Aim for readable line lengths (roughly 100-120 characters). Long lines in generated locale data files are expected and acceptable.
 
 ### Alignment
 
@@ -232,21 +259,11 @@ const x         = 3;
 
 ### Braces
 
-Opening braces go on the same line. Closing braces go on their own line.
-
-```zig
-fn daysInMonth(year: i32, month: i32) i32 {
-    if (month == 2) {
-        return if (@mod(year, 4) == 0 and
-            (@mod(year, 100) != 0 or @mod(year, 400) == 0)) 29 else 28;
-    }
-    return 31;
-}
-```
+Opening braces go on the same line. Closing braces go on their own line. `zig fmt` enforces this.
 
 ### Trailing Commas
 
-Use trailing commas in multi-line struct literals, function calls, and enum definitions. Trailing commas cause `zig fmt` to place each item on its own line.
+Use trailing commas in multi-line struct literals, function calls, and enum definitions. Trailing commas cause `zig fmt` to keep each item on its own line.
 
 ```zig
 // With trailing comma -- zig fmt keeps multi-line
@@ -270,18 +287,15 @@ Use `//` for regular comments. Use `///` for doc comments (attached to the follo
 /// Formats a human-readable age string from date of birth and reference date.
 ///
 /// Returns null if either date is invalid or dob is after as_of.
-pub fn formatAge(buf: []u8, locale: *const Locale, dob: []const u8, as_of: []const u8) ?[]const u8 {
+pub fn formatAge(...) ?[]const u8 {
     // Tier 1: 0 days
-    if (diff_days == 0) {
-        w.writeStr(just_born);
-        return if (w.overflow) null else w.slice();
-    }
+    if (diff_days == 0) { ... }
 }
 ```
 
 ---
 
-## 3. Type System
+## 4. Type System
 
 ### Structs
 
@@ -296,12 +310,12 @@ const Locale = struct {
     delimiter: []const u8,
     just_born: []const u8,
     stages: Stages,
-    short_override: ?CompactnessOverride = null,  // Default value
+    short_override: ?CompactnessOverride = null,
     compact_override: ?CompactnessOverride = null,
 };
 ```
 
-Structs can contain methods (functions that take a `self` parameter) and declarations:
+Structs can contain methods and declarations:
 
 ```zig
 const Writer = struct {
@@ -315,6 +329,10 @@ const Writer = struct {
 
     fn writeStr(self: *Writer, s: []const u8) void {
         if (self.overflow) return;
+        if (self.pos + s.len > self.buf.len) {
+            self.overflow = true;
+            return;
+        }
         @memcpy(self.buf[self.pos..][0..s.len], s);
         self.pos += s.len;
     }
@@ -325,7 +343,7 @@ const Writer = struct {
 };
 ```
 
-Use `self: *Self` for mutating methods, `self: *const Self` or `self: Self` for non-mutating methods. The `Self` type is inferred within the struct scope -- you can also use the struct name explicitly.
+Use `self: *StructName` for mutating methods, `self: *const StructName` or `self: StructName` for non-mutating methods. Use the struct name directly rather than a `const Self = @This();` alias -- the explicit name is clearer, especially in code with nested structs. Reserve `@This()` for generic structs returned from comptime functions, where the struct has no other name.
 
 ### Anonymous Struct Literals
 
@@ -334,32 +352,6 @@ Use `.{ ... }` when the type can be inferred from context:
 ```zig
 return .{ .y = y, .m = m, .d = d };
 return .{ .buf = buf, .pos = 0, .overflow = false };
-```
-
-### Packed Structs
-
-Use `packed struct` for exact memory layout control, such as mapping hardware registers or binary protocols.
-
-```zig
-const Flags = packed struct {
-    enabled: bool,
-    mode: u3,
-    reserved: u4,
-};
-// @sizeOf(Flags) == 1
-```
-
-Fields in packed structs have specific bit offsets. Field access may be less efficient than regular structs due to bit manipulation.
-
-### Extern Structs
-
-Use `extern struct` for C ABI compatibility:
-
-```zig
-const CPoint = extern struct {
-    x: c_int,
-    y: c_int,
-};
 ```
 
 ### Enums
@@ -377,7 +369,7 @@ const PluralCategory = enum(u3) {
 };
 ```
 
-Enums can contain methods and declarations:
+Enums can contain methods:
 
 ```zig
 const Color = enum {
@@ -429,14 +421,7 @@ const UnitForms = union(enum) {
 };
 ```
 
-Switch on tagged unions must be exhaustive (cover all variants) or include an `else` branch:
-
-```zig
-switch (value) {
-    .simple => |s| handleSimple(s),
-    .forms => |f| handleForms(f),
-}
-```
+Switch on tagged unions must be exhaustive (cover all variants) or include an `else` branch.
 
 ### Optional Types
 
@@ -447,23 +432,23 @@ var result: ?[]const u8 = null;
 result = "hello";
 ```
 
-Unwrap with `orelse` to provide a default:
+Unwrap with `orelse` to provide a default or early return:
 
 ```zig
 const value = optional_value orelse "default";
+const date = parseDate(input) orelse return null;
 ```
 
-Unwrap with `.?` (equivalent to `orelse unreachable`):
+Unwrap with `.?` (equivalent to `orelse unreachable`) -- panics if null in safe build modes:
 
 ```zig
-const value = optional_value.?;  // Panics if null in safe modes
+const value = optional_value.?;
 ```
 
-Unwrap with `if`:
+Unwrap with `if` for conditional handling:
 
 ```zig
 if (optional_value) |value| {
-    // value is the unwrapped, non-optional type
     process(value);
 } else {
     // optional_value is null
@@ -498,15 +483,14 @@ const WriteError = error{ DiskFull, ReadOnly };
 const IOError = ReadError || WriteError;
 ```
 
-The global error set `anyerror` contains all possible errors. Avoid it when you can specify a concrete error set.
+The global error set `anyerror` contains all possible errors. Prefer concrete error sets -- they document failure modes and enable exhaustive handling.
 
 ### Comptime Types
 
-`comptime_int` and `comptime_float` are arbitrary-precision types that exist only at compile time. They coerce to concrete types:
+`comptime_int` and `comptime_float` are arbitrary-precision types that exist only at compile time. They coerce to concrete types when assigned to a runtime variable or passed to a runtime parameter:
 
 ```zig
 const x = 42;         // comptime_int, coerces to any integer type
-const y = 3.14;       // comptime_float, coerces to any float type
 const z: u8 = x;      // Coerced to u8
 ```
 
@@ -525,7 +509,7 @@ fn List(comptime T: type) type {
 
 ---
 
-## 4. Error Handling
+## 5. Error Handling
 
 ### try
 
@@ -534,7 +518,6 @@ The `try` keyword unwraps an error union. If the value is an error, it immediate
 ```zig
 fn doWork() !void {
     const result = try riskyOperation();
-    // result is the success value
     process(result);
 }
 ```
@@ -546,13 +529,17 @@ fn doWork() !void {
 The `catch` keyword provides a fallback when an error union contains an error:
 
 ```zig
-const value = riskyOperation() catch 0;  // Default to 0 on error
+// Provide a meaningful default
+const config = loadConfig() catch default_config;
 
+// Handle the error explicitly
 const value = riskyOperation() catch |err| {
-    log.err("Operation failed: {}", .{err});
+    std.log.err("Operation failed: {}", .{err});
     return err;
 };
 ```
+
+Use `catch` with a default value when the fallback genuinely makes sense for the domain. Use `catch` with error propagation or logging when failures need visibility.
 
 ### errdefer
 
@@ -563,7 +550,7 @@ fn createResource() !Resource {
     const handle = try allocate();
     errdefer deallocate(handle);  // Only runs if we return an error below
 
-    try configure(handle);       // If this fails, handle is deallocated
+    try configure(handle);
     return Resource{ .handle = handle };
 }
 ```
@@ -583,12 +570,6 @@ fn parseAndFormat(input: []const u8) ![]const u8 {
 }
 ```
 
-**Use `catch` when you can provide a meaningful fallback:**
-
-```zig
-const config = loadConfig() catch default_config;
-```
-
 **Use error sets to document what can go wrong:**
 
 ```zig
@@ -605,21 +586,20 @@ fn parse(s: []const u8) ParseError!Date { ... }
 
 ---
 
-## 5. Memory Management
+## 6. Memory Management
 
 ### No Hidden Allocations
 
 Zig's standard library never allocates memory behind your back. Every allocation is explicit and requires an allocator parameter. This is a fundamental design principle.
 
 ```zig
-// The allocator is always passed explicitly
 var list = std.ArrayList(u8).init(allocator);
 defer list.deinit();
 ```
 
 ### Allocator Interface
 
-All allocators implement the same `std.mem.Allocator` interface, providing:
+All allocators implement `std.mem.Allocator`, providing:
 
 - `alloc(comptime T: type, n: usize)` -- allocate a slice of `n` items
 - `free(slice)` -- deallocate a previously allocated slice
@@ -631,12 +611,10 @@ All allocators implement the same `std.mem.Allocator` interface, providing:
 | Allocator | Use Case |
 |-----------|----------|
 | `std.testing.allocator` | Tests -- detects leaks automatically |
-| `std.heap.GeneralPurposeAllocator` | General-purpose, safety-focused, detects double-free and use-after-free |
+| `std.heap.GeneralPurposeAllocator` | General-purpose, detects double-free and use-after-free |
 | `std.heap.ArenaAllocator` | Batch allocation with single bulk deallocation |
 | `std.heap.FixedBufferAllocator` | Stack-based, no heap, for embedded or performance-critical code |
 | `std.heap.page_allocator` | OS page allocation, simple but wasteful for small allocations |
-| `std.heap.c_allocator` | Wraps libc malloc/free, requires linking libc |
-| `std.heap.SmpAllocator` | High-performance multi-threaded allocator |
 
 ### Arena Allocators
 
@@ -644,13 +622,12 @@ Arena allocators are ideal when many allocations share the same lifetime. All me
 
 ```zig
 var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
-defer arena.deinit();  // Frees everything at once
+defer arena.deinit();
 const allocator = arena.allocator();
 
-// Many allocations, all freed by arena.deinit()
 const buf1 = try allocator.alloc(u8, 1024);
 const buf2 = try allocator.alloc(u8, 2048);
-// No individual free() calls needed
+// No individual free() calls needed -- arena.deinit() frees everything
 ```
 
 ### defer and errdefer for Cleanup
@@ -660,19 +637,6 @@ Use `defer` to guarantee cleanup regardless of how a scope exits:
 ```zig
 const file = try std.fs.cwd().openFile("data.txt", .{});
 defer file.close();
-// file.close() runs when this scope exits, even on error
-```
-
-Use `errdefer` for cleanup that should only happen on error:
-
-```zig
-fn init(allocator: std.mem.Allocator) !Self {
-    const buf = try allocator.alloc(u8, 1024);
-    errdefer allocator.free(buf);  // Only frees if init returns an error
-
-    try validate(buf);
-    return Self{ .buf = buf };
-}
 ```
 
 Multiple `defer` statements execute in reverse order (LIFO):
@@ -686,7 +650,7 @@ defer std.debug.print("3\n", .{});
 
 ### Stack-Based Buffers
 
-For small, bounded allocations, prefer stack buffers over heap allocation:
+For small, bounded allocations, prefer stack buffers over heap allocation. This avoids allocator overhead entirely and is the standard pattern in formatting and parsing code:
 
 ```zig
 var buf: [256]u8 = undefined;
@@ -695,11 +659,11 @@ writer.writeStr("hello");
 const result = writer.slice();
 ```
 
-This avoids allocator overhead entirely and is common in formatting and parsing code.
+This is the approach used throughout sayable-age: the caller provides a stack buffer, and `formatAge` writes into it, returning a slice of the written portion.
 
 ---
 
-## 6. Slices and Arrays
+## 7. Slices and Arrays
 
 ### Arrays
 
@@ -711,13 +675,6 @@ const zeros: [10]u8 = .{0} ** 10;        // [10]u8, all zeros
 var buf: [256]u8 = undefined;            // Uninitialized buffer
 ```
 
-Arrays have a `.len` field (comptime known) and support indexing:
-
-```zig
-const first = arr[0];
-const last = arr[arr.len - 1];
-```
-
 ### Slices
 
 Slices are runtime-length views into contiguous memory. The type is `[]T` or `[]const T`:
@@ -727,25 +684,11 @@ const arr = [_]u8{ 1, 2, 3, 4, 5 };
 const slice: []const u8 = arr[1..4];  // Elements at indices 1, 2, 3
 ```
 
-Slices have `.len` (runtime) and `.ptr` (pointer to first element):
+Slices have `.len` (runtime) and `.ptr` (pointer to first element).
 
-```zig
-fn process(data: []const u8) void {
-    for (data) |byte| {
-        // ...
-    }
-}
-```
+### Sentinel-Terminated Slices
 
-### Sentinel-Terminated Arrays and Slices
-
-Sentinel-terminated arrays guarantee a specific value at the end:
-
-```zig
-const arr = [_:0]u8{ 1, 2, 3, 4 };  // arr.len == 4, arr[4] == 0
-```
-
-Sentinel-terminated slices use `[:x]T`:
+Sentinel-terminated slices guarantee a specific value at the end. The most common form is null-terminated strings:
 
 ```zig
 const str: [:0]const u8 = "hello";  // Null-terminated string slice
@@ -758,8 +701,9 @@ String literals are `*const [N:0]u8` -- pointers to null-terminated byte arrays.
 ```zig
 const hello = "hello";                    // *const [5:0]u8
 const as_slice: []const u8 = hello;       // Coerce to slice
-const as_ptr: [*:0]const u8 = hello;      // Coerce to sentinel pointer
 ```
+
+Do not assume a `[]const u8` is null-terminated. Only `[:0]const u8` or `[*:0]const u8` carry that guarantee.
 
 ### Array Concatenation and Repetition
 
@@ -770,19 +714,6 @@ const a = [_]u8{ 1, 2 };
 const b = [_]u8{ 3, 4 };
 const c = a ++ b;          // [_]u8{ 1, 2, 3, 4 }
 const d = a ** 3;          // [_]u8{ 1, 2, 1, 2, 1, 2 }
-```
-
-### Multi-Dimensional Arrays
-
-Arrays of arrays for multi-dimensional data:
-
-```zig
-const matrix: [3][4]f32 = .{
-    .{ 1, 0, 0, 0 },
-    .{ 0, 1, 0, 0 },
-    .{ 0, 0, 1, 0 },
-};
-const element = matrix[1][2];  // 0
 ```
 
 ### Bounds Checking
@@ -818,9 +749,17 @@ const last_three = data[data.len - 3..];
 const exact: *const [4]u8 = data[0..4];
 ```
 
+**Multi-object for loops (iterate over multiple sequences in lockstep):**
+
+```zig
+for (keys, values) |key, value| {
+    map.put(key, value);
+}
+```
+
 ---
 
-## 7. Comptime
+## 8. Comptime
 
 ### Compile-Time Evaluation
 
@@ -829,7 +768,7 @@ The `comptime` keyword forces evaluation at compile time. Zig can execute most c
 ```zig
 comptime var x: i32 = 0;
 comptime {
-    x = computeValue();  // Must be deterministic and side-effect free
+    x = computeValue();
 }
 ```
 
@@ -852,7 +791,7 @@ Create generic types by returning types from functions:
 ```zig
 fn Stack(comptime T: type) type {
     return struct {
-        const Self = @This();
+        const Self = @This();  // @This() needed here -- the struct has no other name
         items: []T,
         count: usize,
 
@@ -873,13 +812,7 @@ const std = @import("std");
 const locales = @import("locales/locales.zig");
 ```
 
-Each `@import` of the same path returns the same cached value. `@import` can also load C headers via `@cImport`:
-
-```zig
-const c = @cImport({
-    @cInclude("stdio.h");
-});
-```
+Each `@import` of the same path returns the same cached value.
 
 ### @embedFile
 
@@ -933,7 +866,7 @@ inline fn add(a: i32, b: i32) i32 {
 }
 ```
 
-Use `inline` sparingly -- the compiler usually makes better inlining decisions. It is appropriate when comptime semantics require it (e.g., when returning comptime-known types).
+Use `inline` sparingly -- the compiler usually makes better inlining decisions. It is appropriate when comptime semantics require it (e.g., `inline for` over struct fields, or when returning comptime-known types).
 
 ### @compileError and @compileLog
 
@@ -945,19 +878,30 @@ fn validate(comptime n: usize) void {
 }
 ```
 
-Use `@compileLog` for compile-time debugging (similar to `printf` debugging):
-
-```zig
-comptime {
-    @compileLog("Type is: ", @typeName(T));  // Prints during compilation
-}
-```
-
-Remove all `@compileLog` calls before committing -- they cause compilation to fail.
+Use `@compileLog` for compile-time debugging. Remove all `@compileLog` calls before committing -- they cause compilation to fail.
 
 ---
 
-## 8. Testing
+## 9. Integer Division and Modulo
+
+The codebase relies heavily on integer division and modulo for date arithmetic. Zig provides four builtins, and choosing the wrong one produces incorrect results:
+
+| Builtin | Behavior | Example with (-7, 3) |
+|---------|----------|----------------------|
+| `@divTrunc(a, b)` | Truncates toward zero | -2 |
+| `@divFloor(a, b)` | Rounds toward negative infinity | -3 |
+| `@mod(a, b)` | Euclidean modulo (always non-negative for positive divisor) | 2 |
+| `@rem(a, b)` | Remainder (sign matches dividend) | -1 |
+
+The date arithmetic in sayable-age uses `@divTrunc` and `@mod` because:
+- `@divTrunc` matches the truncating division behavior expected by the Julian day and month-difference calculations
+- `@mod` ensures non-negative remainders when computing leftover days or months
+
+Do not substitute `@rem` for `@mod` or `@divFloor` for `@divTrunc` without verifying the mathematical semantics. The difference matters when negative intermediate values are possible.
+
+---
+
+## 10. Testing
 
 ### Test Blocks
 
@@ -970,6 +914,8 @@ test "addition works" {
     try std.testing.expectEqual(@as(i32, 4), 2 + 2);
 }
 ```
+
+**Note on `expectEqual` and `@as`:** `expectEqual` uses the type of the `expected` argument to determine the comparison type. If `expected` is a `comptime_int` literal (e.g., `4`) and `actual` is an `i32`, you may need `@as(i32, 4)` to coerce the expected value. In newer Zig versions (0.13+), peer type resolution handles more cases automatically.
 
 ### std.testing Functions
 
@@ -984,7 +930,7 @@ test "addition works" {
 
 ### Testing Patterns
 
-**Use `expectEqual` for value comparisons:**
+**Use `expectEqualStrings` for string comparisons:**
 
 ```zig
 test "formatAge returns correct output" {
@@ -1012,7 +958,7 @@ test "division by zero returns error" {
 
 ### Test Allocator
 
-`std.testing.allocator` is a special allocator that automatically detects memory leaks. Tests that leak memory will fail:
+`std.testing.allocator` detects memory leaks automatically. Tests that leak memory will fail:
 
 ```zig
 test "no memory leaks" {
@@ -1026,14 +972,15 @@ test "no memory leaks" {
 ### Running Tests
 
 ```bash
-zig test src/test_format_age.zig           # Run tests in a file
-zig test src/test_format_age.zig --test-filter "formatAge"  # Filter by name
-zig test -O ReleaseSafe src/test_format_age.zig  # Test in ReleaseSafe mode
+zig build test                                          # Run tests via build system
+zig test src/test_format_age.zig                        # Run tests directly
+zig test src/test_format_age.zig --test-filter "age"    # Filter tests by name
+zig test -O ReleaseSafe src/test_format_age.zig         # Test in ReleaseSafe mode
 ```
 
 ### Test Organization
 
-Tests can live in the same file as the code they test or in separate test files. For libraries, keeping tests in the same file near the code they exercise is idiomatic. For large test suites, use separate test files that `@import` the module under test:
+Tests can live in the same file as the code they test or in separate test files. For large test suites (like sayable-age's 217 canonical tests), use separate test files that `@import` the module under test:
 
 ```zig
 // test_format_age.zig
@@ -1042,23 +989,7 @@ const sayableage = @import("sayableage.zig");
 test "format age for newborn" {
     var buf: [256]u8 = undefined;
     const result = sayableage.formatAge(&buf, ...);
-    try std.testing.expectEqualStrings("newborn", result.?);
-}
-```
-
-### Detecting Test Builds
-
-Check if code is running in test mode at compile time:
-
-```zig
-const builtin = @import("builtin");
-
-fn setupLogging() void {
-    if (builtin.is_test) {
-        // Skip logging setup during tests
-        return;
-    }
-    // ...
+    try std.testing.expectEqualStrings("Newborn", result.?);
 }
 ```
 
@@ -1068,6 +999,7 @@ Return `error.SkipZigTest` to skip a test programmatically:
 
 ```zig
 test "platform-specific test" {
+    const builtin = @import("builtin");
     if (builtin.os.tag != .linux) return error.SkipZigTest;
     // Linux-only test code
 }
@@ -1075,11 +1007,19 @@ test "platform-specific test" {
 
 ---
 
-## 9. Common Idioms
+## 11. Common Idioms
+
+### Optional Unwrapping with orelse
+
+The most common pattern for optional handling is `orelse` for early returns:
+
+```zig
+const date = parseDate(input) orelse return null;
+```
 
 ### Optional Unwrapping with if
 
-Use `if` with payload capture to unwrap optionals -- this is the most common pattern:
+Use `if` with payload capture when you need the unwrapped value in a larger block:
 
 ```zig
 if (parseDate(input)) |date| {
@@ -1089,15 +1029,9 @@ if (parseDate(input)) |date| {
 }
 ```
 
-Combine with negation for early returns:
-
-```zig
-const date = parseDate(input) orelse return null;
-```
-
 ### Payload Captures in switch
 
-Switch on tagged unions or enums with payload captures:
+Switch on tagged unions with payload captures:
 
 ```zig
 return switch (self) {
@@ -1150,7 +1084,7 @@ const value = blk: {
 
 ### unreachable
 
-Use `unreachable` to mark code paths that should never execute. In safe modes, hitting `unreachable` is a panic. In unsafe modes, it is undefined behavior:
+Use `unreachable` to mark code paths that should never execute. In safe build modes, hitting `unreachable` is a panic. In unsafe modes, it is undefined behavior:
 
 ```zig
 fn getPluralCategory(n: u3) PluralCategory {
@@ -1172,7 +1106,6 @@ Use `@as` for explicit type coercion when the compiler cannot infer the target t
 
 ```zig
 const x = @as(u32, 42);
-const y = @as(i64, some_i32_value);
 ```
 
 Prefer letting the compiler infer types when possible. Use `@as` only when needed to resolve ambiguity.
@@ -1182,131 +1115,54 @@ Prefer letting the compiler infer types when possible. Use `@as` only when neede
 Use `_ =` to explicitly discard a return value. Zig requires this -- ignoring return values silently is a compile error:
 
 ```zig
-_ = someFunction();  // Explicitly discard the return value
-```
-
-### Sentinel-Terminated to Slice Conversion
-
-Convert C-style null-terminated strings to slices:
-
-```zig
-const c_str: [*:0]const u8 = "hello";
-const slice: []const u8 = std.mem.sliceTo(c_str, 0);
-```
-
-### Multi-Object For Loops
-
-Iterate over multiple sequences in lockstep:
-
-```zig
-for (keys, values) |key, value| {
-    map.put(key, value);
-}
+_ = someFunction();
 ```
 
 ---
 
-## 10. Things to Avoid
+## 12. Things to Avoid
 
-### Using undefined Without Initialization
+### Using undefined Without Subsequent Initialization
 
-`undefined` marks memory as intentionally uninitialized. Using it without subsequently initializing before read is illegal behavior:
+`undefined` marks memory as intentionally uninitialized. Reading it before writing is illegal behavior:
 
 ```zig
-// Dangerous -- if readCount is 0, buf contains undefined data
+// OK -- only accessing the initialized portion
 var buf: [256]u8 = undefined;
 const n = try reader.read(&buf);
-process(buf[0..n]);  // OK -- only accessing initialized portion
+process(buf[0..n]);
 
-// Bad -- accessing undefined memory
+// Bad -- reading undefined memory
 var x: i32 = undefined;
 const y = x + 1;  // Illegal behavior
 ```
 
-In Debug mode, `undefined` memory is filled with `0xAA` bytes to help catch bugs. Do not rely on this -- it is a debugging aid, not a guarantee.
+In Debug mode, `undefined` memory is filled with `0xAA` bytes as a debugging aid. Do not rely on this value.
 
-### @ptrCast Abuse
+### Static Mutable State via Nested Structs
 
-`@ptrCast` changes a pointer's element type. Misuse leads to undefined behavior:
-
-```zig
-// Dangerous -- alignment and type safety violations
-const bytes: []const u8 = getData();
-const ints: []const u32 = @ptrCast(bytes);  // Wrong -- alignment, size
-
-// Prefer -- use @alignCast when needed, or redesign
-```
-
-Only use `@ptrCast` when you understand the memory layout and alignment requirements. Prefer type-safe alternatives.
-
-### Ignoring Error Returns
-
-Zig forces you to handle errors. You cannot silently ignore an error union. However, be mindful of patterns that discard important error information:
+Avoid using nested struct variables to create static mutable buffers. This pattern creates hidden global state that is not thread-safe and returns slices that become invalid on the next call:
 
 ```zig
-// Bad -- silently swallows the error
-const value = riskyOperation() catch 0;
-
-// Better -- log or propagate
-const value = riskyOperation() catch |err| {
-    std.log.err("Operation failed: {}", .{err});
-    return err;
-};
-
-// Best when caller should handle it
-const value = try riskyOperation();
-```
-
-### Sentinel-Terminated Misuse
-
-Do not assume strings are null-terminated. Zig slices (`[]const u8`) do not carry sentinel information:
-
-```zig
-// Bad -- assuming null terminator exists
-fn passToC(s: []const u8) void {
-    c_function(s.ptr);  // s may not be null-terminated!
+// Avoid -- hidden global mutable state, not reentrant
+fn itoa(n: i32) []const u8 {
+    const S = struct {
+        var buf: [12]u8 = undefined;
+    };
+    var w = Writer.init(&S.buf);
+    w.writeInt(n);
+    return w.slice();
 }
 
-// Good -- use sentinel-terminated type
-fn passToC(s: [:0]const u8) void {
-    c_function(s.ptr);  // Guaranteed null-terminated
+// Prefer -- caller provides the buffer
+fn itoa(buf: *[12]u8, n: i32) []const u8 {
+    var w = Writer.init(buf);
+    w.writeInt(n);
+    return w.slice();
 }
 ```
 
-### Using anyerror When a Concrete Error Set Will Do
-
-```zig
-// Avoid -- loses information about what can go wrong
-fn parse(s: []const u8) anyerror!Date { ... }
-
-// Prefer -- documents failure modes
-fn parse(s: []const u8) ParseError!Date { ... }
-```
-
-### usingnamespace
-
-`usingnamespace` imports all declarations from a namespace into the current scope. It makes code harder to understand because the origin of names becomes unclear. The Zig community discourages its use outside of specific C interop scenarios:
-
-```zig
-// Avoid
-usingnamespace @import("std");
-
-// Prefer
-const std = @import("std");
-```
-
-### Unnecessary @intCast Chains
-
-Avoid long chains of casts. Restructure the types to avoid the need:
-
-```zig
-// Bad
-const result: u8 = @intCast(@as(u32, @intCast(@mod(val, 10))) + '0');
-
-// Better -- restructure types or use intermediate variables
-const digit: u32 = @intCast(@mod(val, 10));
-const char: u8 = @intCast(digit + '0');
-```
+If this pattern is used deliberately in a known single-threaded context for convenience, document that constraint with a comment.
 
 ### Global Mutable State
 
@@ -1324,13 +1180,32 @@ fn increment(counter: *u32) void {
 
 The exception is thread-local variables (`threadlocal var`) and variables in test-only code.
 
-### Blocking in async/io_uring Contexts
+### Unnecessary @intCast Chains
 
-If using Zig's async I/O or event loop features, never perform blocking operations (blocking system calls, spin loops). This stalls the entire event loop.
+Avoid long chains of casts. Restructure the types to avoid the need:
+
+```zig
+// Bad
+const result: u8 = @intCast(@as(u32, @intCast(@mod(val, 10))) + '0');
+
+// Better -- use intermediate variables with clear types
+const digit: u32 = @intCast(@mod(val, 10));
+const char: u8 = @intCast(digit + '0');
+```
+
+### Using anyerror When a Concrete Error Set Will Do
+
+```zig
+// Avoid -- loses information about what can go wrong
+fn parse(s: []const u8) anyerror!Date { ... }
+
+// Prefer -- documents failure modes
+fn parse(s: []const u8) ParseError!Date { ... }
+```
 
 ---
 
-## 11. Tooling
+## 13. Tooling
 
 ### zig fmt
 
@@ -1365,76 +1240,51 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const lib = b.addStaticLibrary(.{
-        .name = "sayableage",
+    const sayableage_mod = b.addModule("sayableage", .{
         .root_source_file = b.path("src/sayableage.zig"),
         .target = target,
         .optimize = optimize,
     });
 
-    const tests = b.addTest(.{
+    const test_mod = b.createModule(.{
         .root_source_file = b.path("src/test_format_age.zig"),
         .target = target,
         .optimize = optimize,
+        .imports = &.{
+            .{ .name = "sayableage", .module = sayableage_mod },
+        },
+    });
+
+    const tests = b.addTest(.{
+        .root_module = test_mod,
     });
 
     const run_tests = b.addRunArtifact(tests);
-    const test_step = b.step("test", "Run unit tests");
+    const test_step = b.step("test", "Run all tests");
     test_step.dependOn(&run_tests.step);
 }
 ```
 
-### zig test
-
-Runs tests directly without a build.zig:
-
-```bash
-zig test src/test_format_age.zig                      # Run all tests
-zig test src/test_format_age.zig --test-filter "age"   # Filter tests
-zig test -O ReleaseSafe src/test_format_age.zig        # Test in ReleaseSafe
-zig test -O ReleaseFast src/test_format_age.zig        # Test in ReleaseFast
-```
-
 ### Build Modes
 
-| Mode | Safety Checks | Optimizations | Use Case |
-|------|:---:|:---:|-----------|
-| `Debug` | Yes | None | Development, debugging |
-| `ReleaseSafe` | Yes | Speed | Production with safety |
-| `ReleaseFast` | No | Speed | Maximum performance |
-| `ReleaseSmall` | No | Size | Embedded, WASM |
+| Mode | Safety Checks | Optimizations | Compile Speed | Use Case |
+|------|:---:|:---:|:---:|-----------|
+| `Debug` | Yes | None | Fast | Development, debugging |
+| `ReleaseSafe` | Yes | Speed | Slow | Production with safety |
+| `ReleaseFast` | No | Speed | Slow | Maximum performance |
+| `ReleaseSmall` | No | Size | Slow | Embedded, WASM |
 
-Debug and ReleaseSafe modes:
-- Perform bounds checking on slices and arrays
-- Detect integer overflow
-- Fill `undefined` memory with `0xAA`
-- Capture error return traces
-- Detect null pointer dereferences
-
-**Develop with Debug. Ship with ReleaseSafe unless profiling proves otherwise.** ReleaseFast removes safety checks, so only use it when benchmarks demonstrate a measurable benefit.
-
-### Compiler Diagnostics
-
-Zig's compiler produces detailed error messages with source locations. Error messages include:
-
-- The exact source line and column
-- Type mismatch details (expected vs. found)
-- Notes explaining why a constraint exists
-- Compile error traces through comptime evaluation
-
-When a compile error occurs in generic/comptime code, the compiler shows the full instantiation chain.
+Debug and ReleaseSafe both perform bounds checking, detect integer overflow, fill `undefined` memory with `0xAA`, and capture error return traces. The key difference beyond optimization is compile time: ReleaseSafe runs the full LLVM optimization pipeline and compiles 10-50x slower than Debug. Use Debug for the development edit-compile-test cycle. Use ReleaseSafe for CI and production builds.
 
 ### Cross-Compilation
 
-Zig is a cross-compiler out of the box. Specify the target with `-target`:
+Zig is a cross-compiler out of the box. No separate toolchain installation is needed:
 
 ```bash
 zig build -Dtarget=x86_64-linux-gnu
 zig build -Dtarget=aarch64-macos
 zig build -Dtarget=wasm32-freestanding
 ```
-
-No separate toolchain installation is needed. This is one of Zig's distinguishing features.
 
 ### Caching
 
@@ -1449,7 +1299,8 @@ Zig caches compilation artifacts in `.zig-cache/` (local) and `~/.cache/zig/` (g
 | Types (struct, enum, union, error set) | `PascalCase` |
 | Functions and methods | `camelCase` |
 | Variables and parameters | `snake_case` |
-| Constants | `snake_case` |
+| Constants (comptime / @import result) | `camelCase` |
+| Constants (simple literals) | `snake_case` |
 | Struct fields | `snake_case` |
 | Enum variants | `snake_case` |
 | File names | `snake_case` |

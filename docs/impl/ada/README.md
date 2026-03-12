@@ -2,7 +2,10 @@
 
 A practical reference for auditing Ada code quality in this project. Based on the
 Ada Quality and Style Guide, the GNAT Coding Style guide, and community
-conventions.
+conventions -- adapted for a pure formatting library.
+
+**Target standard:** Ada 2012. All code must compile with GNAT Community Edition
+or GNAT FSF (GCC 12+). Do not use Ada 2022 features without team agreement.
 
 ---
 
@@ -13,11 +16,10 @@ conventions.
 3. [Type System Best Practices](#3-type-system-best-practices)
 4. [Package Design](#4-package-design)
 5. [Error Handling](#5-error-handling)
-6. [Concurrency](#6-concurrency)
-7. [Memory Management](#7-memory-management)
-8. [Common Idioms and Patterns](#8-common-idioms-and-patterns)
-9. [Things to Avoid](#9-things-to-avoid)
-10. [Tooling](#10-tooling)
+6. [Memory and String Handling](#6-memory-and-string-handling)
+7. [Common Idioms and Patterns](#7-common-idioms-and-patterns)
+8. [Things to Avoid](#8-things-to-avoid)
+9. [Tooling](#9-tooling)
 
 ---
 
@@ -157,12 +159,13 @@ Storage_Error   : exception;  --  predefined
 
 ### 1.8 Identifiers to Avoid
 
-Per the GNAT Coding Style guide:
-
-- Do not use `I` as a loop variable (too easily confused with `1`). Use `J` or
-  a descriptive name.
-- Do not use `O` as a variable name (confused with `0`).
-- Do not declare local entities that shadow global ones.
+- For short, simple loops, `I` is acceptable. For loops with longer bodies or
+  where the iteration semantics are non-obvious, prefer a descriptive name
+  (e.g., `Col`, `Month_Idx`).
+- Do not use `O` as a variable name (too easily confused with `0`).
+- Do not declare local entities that shadow predefined or enclosing names. In
+  particular, avoid `Duration` (shadows `Ada.Calendar.Duration`) and `Length`
+  (shadows `Ada.Strings.Unbounded.Length`) as variable names.
 
 ---
 
@@ -241,18 +244,14 @@ attribute designators.
 
 ### 2.6 Comments
 
-A comment starts with `--` followed by **two spaces**:
+Standalone comments start with `--` followed by **two spaces**. End-of-line
+comments (after code on the same line) use one space after `--`. Enable
+`-gnatyc` to enforce standalone comment spacing.
 
 ```ada
---  This is a correct comment
+--  This is a correct standalone comment
 --  Every sentence starts with upper case
 
--- Wrong: only one space after --
-```
-
-One space after `--` is acceptable only for end-of-line comments after code:
-
-```ada
 Months := Months - 1;  -- adjust for partial month
 ```
 
@@ -391,22 +390,16 @@ Buffer_Size    : constant := 16#8000_0000#;
 Pi             : constant := 3.14159_26535_89793;
 ```
 
-### 2.15 Subprogram Body Headers
+### 2.15 Subprogram Body Organization
 
-Each subprogram body should be preceded by a box comment:
+Order subprogram bodies by logical grouping: helper subprograms before the
+subprograms that call them. Within a group, keep related functions together.
+This makes top-to-bottom reading natural and minimizes the need for forward
+declarations.
 
-```ada
--------------------
--- Is_Leap_Year --
--------------------
-
-function Is_Leap_Year (Year : Integer) return Boolean is
-begin
-   ...
-end Is_Leap_Year;
-```
-
-Sort subprogram bodies alphabetically within a package body.
+Separate subprogram bodies with blank lines. If a subprogram body benefits from
+explanatory context beyond what the spec provides, add a comment explaining
+*why* the implementation takes the approach it does.
 
 ---
 
@@ -423,10 +416,14 @@ Distinct types catch category errors at compile time with no runtime cost:
 type Meters is new Float;
 type Seconds is new Float;
 
---  Compiler error: cannot mix Meters and Seconds
 Distance : Meters  := 100.0;
-Duration : Seconds := 9.58;
-Speed    : Float   := Float (Distance) / Float (Duration);  --  explicit
+Elapsed  : Seconds := 9.58;
+
+--  Compiler error: cannot mix Meters and Seconds
+--  Speed : Float := Distance / Elapsed;
+
+--  Explicit conversion required
+Speed : Float := Float (Distance) / Float (Elapsed);
 ```
 
 ### 3.2 Use Subtypes for Constraints
@@ -497,16 +494,20 @@ Has_Form : array (Plural_Category) of Boolean;  --  cannot pass to subprograms
 Use enumeration types or named ranges as index types rather than plain
 `Integer`.
 
-### 3.7 Private Types
+### 3.7 Choosing Type Visibility
 
-When designing a public API, prefer private types. The hierarchy of preference:
+Choose the visibility level that matches the type's semantics:
 
-1. **Limited private** -- most restrictive; no assignment or equality
-2. **Private** -- assignment and equality are available; implementation hidden
-3. **Nonprivate** -- implementation exposed
+- **Nonprivate records** -- for simple data carriers with no invariants. The
+  representation is the interface. This is the right choice for types like
+  `Parse_Result`, `Locale`, and `Unit_Forms` in this project.
+- **Private types** -- when the type has invariants to enforce or when
+  representation changes should not affect clients.
+- **Limited private types** -- for resource-owning types that should not be
+  copied (file handles, locks, connections).
 
-Export only the operations clients need. Restricting the type pushes errors to
-compile time:
+Export only the operations clients need. When a type has invariants, restricting
+visibility pushes violations to compile time:
 
 ```ada
 package Stack is
@@ -524,14 +525,20 @@ end Stack;
 
 ### 3.8 Access Type Discipline
 
-Prefer `not null` access subtypes when a null value is never valid:
+Prefer `not null` access subtypes when a null value is never valid. This catches
+null dereferences at the point of assignment rather than at the point of use:
 
 ```ada
-type Plural_Fn is not null access function (N : Natural) return Plural_Category;
+type Node_Ref is not null access all Node;
 ```
 
-This catches null dereferences at the point of assignment rather than at the
-point of use.
+When a null value is a meaningful state (e.g., an optional callback not yet
+assigned), use a regular access type:
+
+```ada
+type Plural_Fn is access function (N : Natural) return Plural_Category;
+--  Null is valid: locale may not have a plural function assigned yet
+```
 
 ---
 
@@ -604,6 +611,10 @@ end Sayableage_Locales.En;
 Use **private child packages** for internal implementation details that should
 not be visible outside the subsystem.
 
+Prefer child packages over subunits (`separate`). Subunits create maintenance
+problems and confuse dependency tracking. Child packages provide the same
+decomposition benefits with better tooling support.
+
 ### 4.4 Minimize Context Clauses
 
 Minimize `with` clauses on specifications. Move clauses to the body when
@@ -623,27 +634,29 @@ package body Sayableage is ...
 
 ### 4.5 Use Clauses
 
-Minimize `use` clauses. They obscure the origin of names and make maintenance
-harder. Prefer qualified names or package renames:
+Use `use` clauses for packages whose operations appear frequently in the current
+scope. Heavy string-manipulation code benefits from `use Ada.Strings.Unbounded`
+-- qualifying every `To_Unbounded_String`, `To_String`, and `Length` call would
+obscure the actual logic.
+
+Prefer qualified names or renames for packages used only a few times, or when
+the package origin is important for understanding the code:
 
 ```ada
---  Preferred: qualified names
+--  Qualified: makes the origin clear
 Result := Ada.Strings.Fixed.Index (Tmpl, Marker);
 
---  Acceptable: renames for long package names
+--  Renames: shortens verbose names without injecting all names
 package ASF renames Ada.Strings.Fixed;
 Result := ASF.Index (Tmpl, Marker);
 
---  Acceptable: use type for operators
+--  Use type: just the operators, not all names
 use type Ada.Strings.Unbounded.Unbounded_String;
-
---  Use with caution: full use clauses
-use Ada.Strings.Unbounded;  --  many names injected
 ```
 
-When `use` clauses are necessary (e.g., for `Unbounded_String` operations that
-appear frequently), localize them to the smallest scope possible -- the body
-rather than the spec, or a block rather than the entire body.
+Avoid `use` clauses in package specifications, as they inject names into every
+client's namespace. Localize `use` clauses to the body or to a declare block
+when possible.
 
 ---
 
@@ -758,92 +771,14 @@ end Courses;
 
 ---
 
-## 6. Concurrency
+## 6. Memory and String Handling
 
-Ada has first-class concurrency support. While the sayable-age library does not
-use tasking (it is a pure computation library), these guidelines apply to Ada
-code in general.
+### 6.1 Prefer Stack Allocation and Value Semantics
 
-### 6.1 When to Use Tasks vs. Protected Objects
-
-- **Tasks**: model independent threads of control. Use when you have genuinely
-  concurrent activities.
-- **Protected objects**: guard shared data. Use when your primary goal is mutual
-  exclusion or synchronization, not independent computation.
-
-### 6.2 Protected Objects
-
-Protected objects provide mutual exclusion without explicit locking:
-
-```ada
-protected Counter is
-   procedure Increment;
-   function Get return Integer;
-   entry Wait_Until_Nonzero (Value : out Integer);
-private
-   Count : Integer := 0;
-end Counter;
-
-protected body Counter is
-   procedure Increment is
-   begin
-      Count := Count + 1;
-   end Increment;
-
-   function Get return Integer is
-   begin
-      return Count;
-   end Get;
-
-   entry Wait_Until_Nonzero (Value : out Integer)
-     when Count > 0
-   is
-   begin
-      Value := Count;
-   end Wait_Until_Nonzero;
-end Counter;
-```
-
-Guidelines:
-
-- Keep protected operations short -- they block other callers.
-- Entry barriers should depend only on the protected object's own state, not
-  global variables.
-- Encapsulate protected objects in the private part or body of a package.
-
-### 6.3 Task Design
-
-```ada
-task type Worker is
-   entry Start (ID : Positive);
-end Worker;
-
-task body Worker is
-   My_ID : Positive;
-begin
-   accept Start (ID : Positive) do
-      My_ID := ID;
-   end Start;
-   --  Do work after rendezvous
-end Worker;
-```
-
-Guidelines:
-
-- Provide a clean shutdown mechanism (the `terminate` alternative in a
-  `select` or an explicit `Stop` entry).
-- Use `delay until` instead of `delay` for periodic tasks to avoid accumulated
-  drift.
-- Do not access shared variables directly -- use protected objects.
-
----
-
-## 7. Memory Management
-
-### 7.1 Prefer Stack Allocation
-
-Ada encourages value semantics and stack allocation. Use dynamic allocation only
-when the lifetime or size of an object is truly dynamic:
+Ada encourages value semantics and stack allocation. This library uses no
+dynamic allocation beyond what `Unbounded_String` manages internally. Do not
+introduce `new`/`Unchecked_Deallocation` or controlled types -- they are
+unnecessary for this project's scope.
 
 ```ada
 --  Preferred: stack allocation
@@ -852,96 +787,58 @@ declare
 begin
    ...
 end;
-
---  Dynamic: only when necessary
-type String_Access is access String;
-Ptr : String_Access := new String'("hello");
 ```
 
-### 7.2 Access Types
+### 6.2 String Type Choice
 
-Ada has two kinds of access types:
+This library is fundamentally about string manipulation. Use the right string
+type for each role:
 
-- **Pool-specific** (`access T`): can only point to heap-allocated objects.
-- **General** (`access all T`): can also point to aliased stack objects.
+- **`String`** (fixed-length) -- for function parameters and return values.
+  This is the public API surface. Callers should not need to depend on
+  `Ada.Strings.Unbounded`.
+- **`Unbounded_String`** -- for mutable internal state, locale data storage,
+  and intermediate results during string assembly.
+- **Avoid `Bounded_String`** -- it adds complexity (you must choose a bound)
+  with no benefit over `Unbounded_String` in this context.
 
-Use pool-specific access types by default. Use `not null` access subtypes when
-null is never valid:
-
-```ada
-type Node_Access is access Node;
-type Node_Ref is not null access all Node;
-```
-
-### 7.3 Unchecked_Deallocation
-
-Always explicitly deallocate when you are done with a dynamically allocated
-object. This documents intent and prevents leaks:
+Minimize conversions between `String` and `Unbounded_String`. When building a
+result through multiple string operations, work with `Unbounded_String`
+throughout and convert to `String` once at the return point:
 
 ```ada
-with Ada.Unchecked_Deallocation;
-
-procedure Free is new Ada.Unchecked_Deallocation
-  (Object => Node, Name => Node_Access);
-
-Ptr : Node_Access := new Node;
-...
-Free (Ptr);  --  sets Ptr to null
-```
-
-Dangers to avoid:
-
-- **Dangling references**: deallocating while other pointers still reference
-  the object.
-- **Dropped pointers**: losing all references to an allocated object (memory
-  leak).
-
-### 7.4 Controlled Types (RAII)
-
-Use controlled types from `Ada.Finalization` to tie resource management to
-object lifetime. This is Ada's equivalent of RAII:
-
-```ada
-with Ada.Finalization;
-
-package Managed_Resource is
-   type Resource is new Ada.Finalization.Limited_Controlled with private;
-private
-   type Resource is new Ada.Finalization.Limited_Controlled with record
-      Handle : Integer := -1;
-   end record;
-
-   overriding procedure Initialize (R : in out Resource);
-   overriding procedure Finalize   (R : in out Resource);
-end Managed_Resource;
-```
-
-- **`Initialize`**: called on object creation. Acquire resources here.
-- **`Adjust`**: called after assignment (nonlimited only). Implement deep copy.
-- **`Finalize`**: called on object destruction. Release resources here.
-
-Use `Limited_Controlled` for resources that should not be copied (file handles,
-locks, connections).
-
-### 7.5 Storage_Error Handling
-
-When using dynamic allocation, provide handlers for `Storage_Error`:
-
-```ada
+function Resolve_Unit (...) return String is
+   Result_Buf : Unbounded_String;
 begin
-   Ptr := new Large_Array;
-exception
-   when Storage_Error =>
-      --  Handle out-of-memory gracefully
-      raise;
-end;
+   --  Build up Result_Buf with Unbounded operations
+   ...
+   return To_String (Result_Buf);
+end Resolve_Unit;
 ```
+
+### 6.3 Access Types in This Project
+
+The only access types used in this project are `access function` types for
+plural rule callbacks:
+
+```ada
+type Plural_Fn is access function (N : Natural) return Plural_Category;
+
+type Locale is record
+   Plural : Plural_Fn := null;
+   ...
+end record;
+```
+
+The null default is intentional -- locales are built incrementally during
+initialization. Do not add `not null` to `Plural_Fn`; it would prevent
+default initialization of `Locale` records.
 
 ---
 
-## 8. Common Idioms and Patterns
+## 7. Common Idioms and Patterns
 
-### 8.1 Aggregate Initialization
+### 7.1 Aggregate Initialization
 
 Always use aggregates to initialize records and arrays. Aggregates enforce full
 coverage -- every component must be accounted for:
@@ -954,7 +851,7 @@ Empty_Unit : constant Unit_Forms :=
    Forms      => (others => Null_Unbounded_String));
 ```
 
-### 8.2 Named Association in Aggregates
+### 7.2 Named Association in Aggregates
 
 Prefer named association over positional for records and multi-element
 aggregates. Named association is self-documenting and resilient to reordering:
@@ -967,7 +864,7 @@ aggregates. Named association is self-documenting and resilient to reordering:
 (2024, 3, 15, True)
 ```
 
-### 8.3 Short-Circuit Evaluation
+### 7.3 Short-Circuit Evaluation
 
 Use `and then` / `or else` instead of `and` / `or` for boolean expressions
 where the right operand should not be evaluated if the left determines the
@@ -981,7 +878,7 @@ if Ptr /= null and then Ptr.Value > 0 then ...
 Use plain `and`/`or` only when both operands are simple boolean variables or
 constants with no side effects.
 
-### 8.4 Qualified Expressions and Conversions
+### 7.4 Qualified Expressions and Conversions
 
 Use qualified expressions (`Type'(expr)`) to resolve ambiguity. Use type
 conversions (`Type (expr)`) to convert between related types:
@@ -994,7 +891,7 @@ Put (Character'('A'));
 Float_Value := Float (Integer_Value);
 ```
 
-### 8.5 Declare Blocks
+### 7.5 Declare Blocks
 
 Use declare blocks to limit the scope of temporary variables:
 
@@ -1010,7 +907,7 @@ begin
 end;
 ```
 
-### 8.6 Expression Functions
+### 7.6 Expression Functions
 
 For simple one-expression functions, use expression function syntax (Ada 2012):
 
@@ -1019,7 +916,7 @@ function Is_Leap_Year (Year : Integer) return Boolean is
   (Year mod 4 = 0 and then (Year mod 100 /= 0 or else Year mod 400 = 0));
 ```
 
-### 8.7 Renaming Declarations
+### 7.7 Renaming Declarations
 
 Use renames to shorten verbose qualified names without introducing `use`:
 
@@ -1028,7 +925,7 @@ package ASF renames Ada.Strings.Fixed;
 Pos : constant Natural := ASF.Index (Source, Pattern);
 ```
 
-### 8.8 String Handling
+### 7.8 String Handling
 
 Ada strings are fixed-length. For variable-length strings, use
 `Unbounded_String` from `Ada.Strings.Unbounded`:
@@ -1051,7 +948,7 @@ Pos : Natural := Ada.Strings.Fixed.Index (Source, "target");
 Trimmed : String := Ada.Strings.Fixed.Trim (Raw, Ada.Strings.Left);
 ```
 
-### 8.9 Sentinel Values with Subtypes
+### 7.9 Sentinel Values with Subtypes
 
 Define a broader base type and use subtypes to carve out the valid range. The
 broader type allows sentinel or boundary values in algorithms:
@@ -1062,7 +959,7 @@ subtype Valid_Column is Columns range 1 .. Listing_Width;
 --  0 and Listing_Width + 1 can serve as sentinels
 ```
 
-### 8.10 Access-to-Subprogram Types
+### 7.10 Access-to-Subprogram Types
 
 Use access-to-subprogram types for callbacks and strategy patterns:
 
@@ -1077,9 +974,9 @@ end record;
 
 ---
 
-## 9. Things to Avoid
+## 8. Things to Avoid
 
-### 9.1 Programming Ada Like Another Language
+### 8.1 Programming Ada Like Another Language
 
 The most common anti-pattern. Programmers from C, Java, or Python often write
 Ada as if it were their familiar language with different syntax. This subverts
@@ -1090,12 +987,14 @@ Ada's strengths. Specific mistakes:
 - Using pointers (access types) when value semantics suffice.
 - Writing `if X = True then` instead of `if X then`.
 
-### 9.2 Overuse of Use Clauses
+### 8.2 Overuse of Use Clauses
 
-Indiscriminate `use` clauses obscure where names come from and can introduce
-ambiguity as packages evolve. Use qualified names or renames instead.
+Do not add `use` clauses reflexively. Every `use` clause injects names and
+can introduce ambiguity as packages evolve. But do not avoid `use` clauses
+dogmatically either -- see [section 4.5](#45-use-clauses) for when they improve
+readability.
 
-### 9.3 Anonymous Types
+### 8.3 Anonymous Types
 
 Avoid anonymous array types in declarations. They cannot be used as parameter
 types and block refactoring:
@@ -1109,26 +1008,13 @@ type Buffer_Type is array (1 .. 80) of Character;
 Buffer : Buffer_Type;
 ```
 
-### 9.4 Overuse of Unchecked Operations
+### 8.4 Overuse of Unchecked Operations
 
 `Unchecked_Deallocation`, `Unchecked_Conversion`, and `Unchecked_Access` bypass
-Ada's safety guarantees. Use them only when necessary, document why, and
-isolate them in the smallest possible scope:
+Ada's safety guarantees. This project should not need any of them. If you find
+yourself reaching for an unchecked operation, reconsider the design.
 
-```ada
---  Document the justification
-pragma Warnings (Off, "possible aliasing problem");
---  ... unchecked operation ...
-pragma Warnings (On, "possible aliasing problem");
-```
-
-### 9.5 Subunits
-
-Avoid subunits (`separate`). With child packages available since Ada 95, there
-is almost never a reason to use subunits. They create maintenance problems and
-confuse dependency tracking.
-
-### 9.6 Global Mutable State
+### 8.5 Global Mutable State
 
 Avoid mutable variables in package specifications. They can be modified by any
 unit with visibility and cannot be protected or abstracted:
@@ -1146,7 +1032,7 @@ package Global is
 end Global;
 ```
 
-### 9.7 Magic Numbers
+### 8.6 Magic Numbers
 
 Never use unexplained numeric literals in code. Use named constants:
 
@@ -1159,7 +1045,7 @@ Months_Per_13_Years : constant := 156;
 if Months_Val < Months_Per_13_Years then ...
 ```
 
-### 9.8 Catching and Swallowing Exceptions
+### 8.7 Catching and Swallowing Exceptions
 
 Do not catch exceptions without either handling them meaningfully or
 re-raising:
@@ -1173,7 +1059,7 @@ exception
 end;
 ```
 
-### 9.9 Multiple Variables Per Declaration
+### 8.8 Multiple Variables Per Declaration
 
 Do not declare multiple variables in a single declaration that spans multiple
 lines. One declaration per line:
@@ -1191,16 +1077,16 @@ Part1,
 Part2 : Unbounded_String;
 ```
 
-### 9.10 Ignoring Compiler Warnings
+### 8.9 Ignoring Compiler Warnings
 
 Ada compilers produce highly specific warnings. Treat all warnings as errors
 in CI (`-gnatwe`). When suppressing a warning, document the reason.
 
 ---
 
-## 10. Tooling
+## 9. Tooling
 
-### 10.1 GNAT Compiler Flags
+### 9.1 GNAT Compiler Flags
 
 #### Warning Flags
 
@@ -1220,7 +1106,7 @@ the standard set. Individual flags:
 |------|-------|
 | `a` | Attribute casing (mixed case required) |
 | `b` | No trailing blanks |
-| `c` | Comments: two spaces after `--` |
+| `c` | Comments: two spaces after `--` (standalone comments) |
 | `C` | Comments: one space after `--` (alternative to `c`) |
 | `d` | No DOS line terminators |
 | `D` | Identifiers in mixed case |
@@ -1249,7 +1135,8 @@ the standard set. Individual flags:
 | `0`-`9` | Set indentation level (3 is default for `-gnatyy`) |
 
 The default `-gnatyy` enables everything except `B`, `d`, `I`, `L`, `o`, `O`,
-`S`, `u`, and `x`.
+`S`, `u`, and `x`. Note that `-gnatyo` (alphabetical body ordering) is **not**
+in the default set -- this project orders bodies by logical grouping instead.
 
 #### Contract Checking
 
@@ -1257,12 +1144,12 @@ The default `-gnatyy` enables everything except `B`, `d`, `I`, `L`, `o`, `O`,
 |------|---------|
 | `-gnata` | Enable assertion/contract checking at runtime |
 
-### 10.2 GNATformat
+### 9.2 GNATformat
 
 GNATformat is AdaCore's code formatter for Ada. It applies the GNAT Coding
 Style automatically. Use it to enforce consistent formatting across a team.
 
-### 10.3 GNATcheck
+### 9.3 GNATcheck
 
 GNATcheck is a static analysis tool that checks compliance with coding
 standards. It provides over 100 rules covering:
@@ -1272,13 +1159,13 @@ standards. It provides over 100 rules covering:
 - Complexity metrics (nesting depth, cyclomatic complexity)
 - Runtime semantics (tasking, dynamic memory)
 
-### 10.4 GNATprove (SPARK)
+### 9.4 GNATprove (SPARK)
 
 For safety-critical code, GNATprove performs formal verification of SPARK
 subsets of Ada. It can prove absence of runtime errors and verify functional
 contracts.
 
-### 10.5 Recommended Compiler Invocation
+### 9.5 Recommended Compiler Invocation
 
 For development:
 
@@ -1298,7 +1185,8 @@ gnatmake -gnatwa -gnatwe -gnatyy -gnata program.adb
 
 - [Ada Quality and Style Guide](https://ada-lang.io/docs/style-guide/Ada_Style_Guide/) --
   Community-maintained style guide based on the Ada 95 Quality and Style manual,
-  updated for Ada 2012.
+  updated for Ada 2012. Also covers concurrency patterns (Chapter 6) and memory
+  management.
 - [GNAT Coding Style Guide](https://gcc.gnu.org/onlinedocs/gnat-style/) --
   Style conventions used for GNAT compiler development.
 - [Ada Reference Manual](http://www.ada-auth.org/arm.html) -- The official

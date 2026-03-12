@@ -35,12 +35,14 @@ needs while remaining broadly portable:
 - `<inttypes.h>` for portable format specifiers (`PRIu32`, `PRId64`, etc.)
 - Designated initializers (`(struct foo){.x = 1, .y = 2}`)
 - `inline` functions
-- Variable-length arrays (use sparingly -- prefer fixed buffers)
 - `snprintf` with guaranteed null-termination
 
 If the target toolchain supports C11 (`-std=c11`), prefer it for `_Static_assert`,
-`_Noreturn`, and `_Alignas`. Always specify the standard explicitly rather than
-relying on compiler defaults.
+`_Noreturn`, `_Alignas`, and `_Thread_local`. Always specify the standard explicitly
+rather than relying on compiler defaults.
+
+Note: C99 also introduced variable-length arrays (VLAs), but these are discouraged. See
+[Section 10.2](#102-variable-length-arrays-vlas) for why.
 
 ```bash
 # Minimum
@@ -163,7 +165,7 @@ struct SaLocale {
 
 ### 3.1 Indentation
 
-Use **4 spaces** per indentation level. Never mix tabs and spaces.
+Use **4 spaces** per indentation level. Do not use tabs.
 
 The Linux kernel uses 8-space tabs, but most non-kernel C projects have converged on
 4 spaces as a pragmatic default. The critical rule is consistency within a project.
@@ -194,16 +196,9 @@ if (months < 3) {
     /* ... */
 }
 
-// Single-statement bodies: braces are optional for truly simple cases
-if (!s)
+// Always use braces, even for single-statement bodies
+if (!s) {
     return false;
-
-// But always use braces when any branch in an if/else chain is multi-line
-if (condition) {
-    do_something();
-} else {
-    do_other();
-    do_more();
 }
 
 // do-while: closing brace joins the while
@@ -221,6 +216,11 @@ default:
     return "other";
 }
 ```
+
+Always use braces on all control structures (`if`, `else`, `for`, `while`, `do`),
+including single-statement bodies. This eliminates an entire class of maintenance bugs
+(CVE-2014-1266 "goto fail" is the canonical example) at zero cost. MISRA C Rule 15.6
+requires this unconditionally.
 
 ### 3.3 Line Length
 
@@ -288,8 +288,9 @@ static int compute_months(int dob_y, int dob_m, int ref_y, int ref_m, int ref_d,
                           int clamped_birthday)
 {
     int months = (ref_y - dob_y) * 12 + (ref_m - dob_m);
-    if (ref_d < clamped_birthday)
+    if (ref_d < clamped_birthday) {
         months--;
+    }
     return months;
 }
 
@@ -302,12 +303,12 @@ static int compute_diff_days(int dob_y, int dob_m, int dob_d,
 
 ### 3.6 Function Length
 
-Functions should fit on **one or two screens** (roughly 40-80 lines). If a function
-exceeds this, it is doing too much. Extract helpers.
+Aim for **60 lines or fewer** per function. If a function exceeds this, it is likely
+doing too much -- extract helpers.
 
 The NASA/JPL Power of Ten rules restrict functions to no more than 60 lines. The Linux
-kernel guide suggests one or two screenfuls (24-48 lines at 80 columns). The exact
-limit matters less than the principle: each function should do one thing and do it well.
+kernel guide suggests one or two screenfuls. The exact limit matters less than the
+principle: each function should do one thing and do it well.
 
 ---
 
@@ -356,8 +357,8 @@ the toolchain supports it.
 #ifndef SAYABLEAGE_H
 #define SAYABLEAGE_H
 
-#include <stddef.h>
-#include <stdbool.h>
+#include <stddef.h>    /* for size_t */
+#include <stdbool.h>   /* for bool */
 
 typedef struct SaLocale SaLocale;   /* opaque to callers */
 
@@ -376,11 +377,13 @@ struct SaLocale {
     /* ... */
 };
 
-static int parse_date(const char *s, int *y, int *m, int *d) {
+static int parse_date(const char *s, int *y, int *m, int *d)
+{
     /* ... */
 }
 
-int sa_format_age(char *buf, size_t bufsz, const SaLocale *locale, ...) {
+int sa_format_age(char *buf, size_t bufsz, const SaLocale *locale, ...)
+{
     /* ... */
 }
 ```
@@ -402,8 +405,13 @@ Order `#include` directives in groups, separated by blank lines:
 #include <string.h>
 ```
 
-Placing the corresponding header first ensures it is self-contained (it does not
-depend on includes that happen to precede it).
+Placing the corresponding header first ensures it is self-contained -- if it has
+missing includes, compilation fails immediately rather than silently depending on
+standard headers that happened to be included above it.
+
+Note: In freestanding builds (`-ffreestanding`), standard library headers may be
+limited or unavailable. Only `<stddef.h>`, `<stdint.h>`, `<stdbool.h>`,
+`<stdarg.h>`, `<limits.h>`, and `<float.h>` are guaranteed.
 
 ### 4.4 Forward Declarations
 
@@ -520,8 +528,11 @@ non-interactive programs.
 
 - Never use memory after freeing it (use-after-free).
 - Never free memory more than once (double-free).
-- Set pointers to `NULL` after freeing to catch stale access under sanitizers.
 - Never return a pointer to a stack-local variable.
+- Prefer sanitizers (ASan, MSan) to detect use-after-free and double-free at the point
+  of occurrence during testing. Setting pointers to NULL after free is a secondary
+  defense that can mask bugs as easily as it catches them -- use it judiciously when a
+  pointer variable remains in scope long after the free, not as a blanket rule.
 - Use `realloc` carefully -- it can return `NULL` while the original pointer remains
   valid. Always assign to a temporary:
 
@@ -569,8 +580,9 @@ Use integer return codes for functions that can fail. The convention is:
 int sa_format_age(char *buf, size_t bufsz, const SaLocale *locale,
                   SaCompactness compactness, const char *dob, const char *as_of)
 {
-    if (!buf || bufsz == 0 || !locale || !dob)
+    if (!buf || bufsz == 0 || !locale || !dob) {
         return -1;
+    }
     /* ... */
     return 0;
 }
@@ -581,8 +593,9 @@ For functions that return pointers, return `NULL` on failure:
 ```c
 const SaLocale *sa_locale_get(const char *code)
 {
-    if (!code)
+    if (!code) {
         return NULL;
+    }
     /* ... lookup ... */
     return NULL;  /* not found */
 }
@@ -596,8 +609,9 @@ This keeps the happy path at the lowest indentation level:
 ```c
 int process(const char *input, char *output, size_t output_size)
 {
-    if (!input || !output || output_size == 0)
+    if (!input || !output || output_size == 0) {
         return -1;
+    }
 
     /* Happy path follows at base indentation */
     size_t len = strlen(input);
@@ -619,21 +633,26 @@ int do_work(const char *path)
     char *buf = NULL;
 
     fp = fopen(path, "r");
-    if (!fp)
+    if (!fp) {
         goto cleanup;
+    }
 
     buf = malloc(BUFSZ);
-    if (!buf)
+    if (!buf) {
         goto cleanup;
+    }
 
-    if (read_data(fp, buf, BUFSZ) < 0)
+    if (read_data(fp, buf, BUFSZ) < 0) {
         goto cleanup;
+    }
 
     result = 0;
 
 cleanup:
     free(buf);
-    fclose_if_open(fp);
+    if (fp) {
+        fclose(fp);
+    }
     return result;
 }
 ```
@@ -847,22 +866,24 @@ if (written < 0 || (size_t)written >= bufsz) {
 Every string-producing operation must guarantee null-termination. Be especially
 careful with:
 
-- `strncpy` -- does NOT null-terminate if the source is longer than `n`. Prefer
-  `snprintf` or manual termination:
+- `strncpy` -- does NOT null-terminate if the source is longer than `n`, and
+  zero-pads the entire remaining buffer, which is wasteful. **Prefer `snprintf`
+  over `strncpy` in all cases:**
 
 ```c
-/* strncpy pitfall: no null terminator if src >= n */
+/* strncpy pitfalls: no null terminator if src >= n, wasteful zero-padding */
 strncpy(dst, src, sizeof(dst));
-dst[sizeof(dst) - 1] = '\0';  /* manual fix required */
+dst[sizeof(dst) - 1] = '\0';  /* manual fix required -- easy to forget */
 
-/* Better: snprintf always null-terminates */
+/* Better: snprintf always null-terminates, no zero-padding */
 snprintf(dst, sizeof(dst), "%s", src);
 ```
 
 - Hand-rolled string operations must always write `'\0'` at the end:
 
 ```c
-static void wr_str(Writer *w, const char *s) {
+static void wr_str(Writer *w, const char *s)
+{
     size_t len = strlen(s);
     if (w->pos + len < w->cap) {
         memcpy(w->buf + w->pos, s, len);
@@ -902,8 +923,9 @@ The following functions are unsafe and must not be used:
 |-----------------|------------------|
 | `gets`          | `fgets`          |
 | `sprintf`       | `snprintf`       |
-| `strcat`        | `strncat` or `snprintf` |
-| `strcpy`        | `strncpy` + null termination, or `snprintf` |
+| `strcat`        | `snprintf` to append |
+| `strcpy`        | `snprintf(dst, sizeof(dst), "%s", src)` |
+| `strncpy`       | `snprintf` (avoids non-termination and zero-padding pitfalls) |
 | `strtok`        | `strtok_r` (reentrant) |
 | `scanf` (unbounded `%s`) | `scanf` with width limit (`%255s`) or `fgets` + `sscanf` |
 
@@ -937,19 +959,24 @@ struct Widget {
     int height;
 };
 
-Widget *widget_create(int width, int height) {
+Widget *widget_create(int width, int height)
+{
     Widget *w = malloc(sizeof(*w));
-    if (!w) return NULL;
+    if (!w) {
+        return NULL;
+    }
     w->width = width;
     w->height = height;
     return w;
 }
 
-void widget_destroy(Widget *w) {
+void widget_destroy(Widget *w)
+{
     free(w);
 }
 
-int widget_area(const Widget *w) {
+int widget_area(const Widget *w)
+{
     return w->width * w->height;
 }
 ```
@@ -959,23 +986,33 @@ breaking callers.
 
 ### 9.2 Callback Patterns
 
-Use function pointers for customizable behavior. Pair them with a `void *` context
-for type-safe user data:
+Use function pointers for customizable behavior. Pair them with a context pointer
+for user data:
 
 ```c
-typedef void (*EventHandler)(int event_type, void *context);
+/* Read-only context (the common case): use const void * */
+typedef void (*EventHandler)(int event_type, const void *context);
 
-void register_handler(EventHandler handler, void *context);
+/* When the handler must mutate state, use void * and document why */
+typedef void (*MutableEventHandler)(int event_type, void *context);
+```
+
+```c
+void register_handler(EventHandler handler, const void *context);
 
 /* Caller side */
-static void on_click(int event_type, void *context) {
-    Button *btn = context;
-    btn->pressed = true;
+static void on_click(int event_type, const void *context)
+{
+    const Button *btn = context;
+    printf("Button %s clicked\n", btn->label);
 }
 register_handler(on_click, &my_button);
 ```
 
-### 9.3 Compound Literals for Initialization
+Prefer `const void *` for the context parameter. Use `void *` only when the callback
+genuinely needs to mutate the pointed-to data, and document the ownership semantics.
+
+### 9.3 Compound Literals and Zero-Initialization
 
 Use C99 compound literals to initialize structs inline:
 
@@ -990,12 +1027,29 @@ Writer w = (Writer){
 
 Use designated initializers for clarity. Unmentioned fields are zero-initialized.
 
-### 9.4 ARRAY_SIZE Macro
-
-Calculate the number of elements in a stack-allocated array:
+Zero-initialize structs at declaration with `= {0}` unless every member is immediately
+assigned. This prevents information leaks from uninitialized padding bytes and ensures
+pointer members start as NULL:
 
 ```c
-#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
+/* Good: all members start at zero/NULL */
+SaLocale locale = {0};
+
+/* Good: specific fields set, rest zero-initialized */
+SaWriter w = {.buf = buffer, .cap = sizeof(buffer)};
+```
+
+### 9.4 ARRAY_SIZE Macro
+
+Calculate the number of elements in a stack-allocated array. Use the type-safe variant
+that triggers a compile error when accidentally used on a pointer:
+
+```c
+/* Type-safe: compile error if arr is a pointer (GCC/Clang) */
+#define ARRAY_SIZE(arr) \
+    (sizeof(arr) / sizeof((arr)[0]) \
+     + 0 * sizeof(char[1 - 2 * __builtin_types_compatible_p( \
+         __typeof__(arr), __typeof__(&(arr)[0]))]))
 
 int values[] = {10, 20, 30, 40, 50};
 for (size_t i = 0; i < ARRAY_SIZE(values); i++) {
@@ -1003,8 +1057,13 @@ for (size_t i = 0; i < ARRAY_SIZE(values); i++) {
 }
 ```
 
-Never use this on pointers -- it will silently produce the wrong result. Some
-codebases use a type-safe variant that triggers a compile error on pointers.
+If portability beyond GCC/Clang is required, fall back to the simple version and rely
+on code review to catch misuse on pointers:
+
+```c
+/* Portable but not type-safe -- never use on pointers */
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
+```
 
 ### 9.5 Multi-Statement Macros
 
@@ -1026,7 +1085,7 @@ Wrap multi-statement macros in `do { ... } while (0)`:
 ```
 
 This ensures the macro behaves like a single statement and can be used safely in
-`if`/`else` chains without braces.
+`if`/`else` chains.
 
 ### 9.6 Init/Cleanup Function Pairs
 
@@ -1041,7 +1100,8 @@ typedef struct {
     bool overflow;
 } Writer;
 
-static void writer_init(Writer *w, char *buf, size_t cap) {
+static void writer_init(Writer *w, char *buf, size_t cap)
+{
     w->buf = buf;
     w->cap = cap;
     w->pos = 0;
@@ -1064,12 +1124,14 @@ int load_config(const char *path, Config *out)
     char *line = NULL;
 
     fp = fopen(path, "r");
-    if (!fp)
+    if (!fp) {
         goto done;
+    }
 
     line = malloc(MAX_LINE);
-    if (!line)
+    if (!line) {
         goto done;
+    }
 
     /* ... parsing logic ... */
 
@@ -1077,11 +1139,50 @@ int load_config(const char *path, Config *out)
 
 done:
     free(line);
-    if (fp)
+    if (fp) {
         fclose(fp);
+    }
     return rc;
 }
 ```
+
+### 9.8 Thread Safety and Reentrancy
+
+Avoid `static` local buffers in functions that may be called from multiple threads or
+reentrantly. A function like this is neither thread-safe nor reentrant:
+
+```c
+/* NOT thread-safe: concurrent callers share and overwrite the same buffer */
+static const char *itoa(int n)
+{
+    static char buf[12];
+    /* ... write to buf ... */
+    return buf;
+}
+```
+
+Prefer caller-provided buffers:
+
+```c
+/* Thread-safe: each caller provides their own buffer */
+void itoa(int n, char *buf, size_t bufsz)
+{
+    /* ... write to buf ... */
+}
+```
+
+When `static` storage is truly necessary (e.g., lookup tables of constant data),
+document whether the function is thread-safe. If a function uses mutable static
+storage and cannot be refactored, use `_Thread_local` (C11) to give each thread its
+own copy:
+
+```c
+/* C11: thread-local mutable storage */
+static _Thread_local char buf[12];
+```
+
+Note: `_Thread_local` is unavailable in C99. For C99-only targets, document the
+thread-safety limitation and provide a reentrant alternative API.
 
 ---
 
@@ -1098,7 +1199,7 @@ dozens of UB sources. Key ones to guard against:
 - **Null pointer dereference**: Always validate pointers before use.
 - **Buffer overflows**: Always bound array access and string operations.
 - **Use of uninitialized variables**: Initialize all variables at declaration.
-- **Accessing freed memory**: Set pointers to NULL after free.
+- **Accessing freed memory**: Detect with sanitizers during testing.
 - **Strict aliasing violations**: Do not cast between incompatible pointer types.
   Use `memcpy` for type punning:
 
@@ -1116,18 +1217,22 @@ memcpy(&bits, &f, sizeof(bits));
 ### 10.2 Variable-Length Arrays (VLAs)
 
 VLAs can cause stack overflows since their size is not known at compile time. The Linux
-kernel bans them entirely. If you use C99 VLAs, limit them to very small, bounded
-sizes. Prefer fixed-size stack buffers or heap allocation:
+kernel bans them entirely (`-Wvla`). Do not use VLAs. Prefer fixed-size stack buffers
+or heap allocation:
 
 ```c
-/* Risky: unbounded stack allocation */
-void process(int n) {
+/* Dangerous: unbounded stack allocation */
+void process(int n)
+{
     char buf[n];  /* stack overflow if n is large */
 }
 
 /* Safe: bounded stack allocation */
-void process(int n) {
-    if (n > MAX_BUF) return;
+void process(int n)
+{
+    if (n > MAX_BUF) {
+        return;
+    }
     char buf[MAX_BUF];
     /* ... */
 }
@@ -1143,8 +1248,9 @@ control flow and make the code impossible to reason about:
 #define CHECK(x) if (!(x)) return -1
 
 /* Better: visible control flow */
-if (!validate(input))
+if (!validate(input)) {
     return -1;
+}
 ```
 
 ### 10.4 Multiple Side Effects in Arguments
@@ -1162,7 +1268,8 @@ int result = MAX(i++, j);  /* i is incremented twice if i > j */
 Prefer inline functions for type-safe, single-evaluation alternatives:
 
 ```c
-static inline int max_int(int a, int b) {
+static inline int max_int(int a, int b)
+{
     return a > b ? a : b;
 }
 ```
@@ -1188,13 +1295,15 @@ functions, make code harder to test, and prevent thread safety:
 /* Problematic: hidden mutable state */
 static int error_count = 0;
 
-void process(void) {
+void process(void)
+{
     /* ... */
     error_count++;  /* which caller does this affect? */
 }
 
 /* Better: explicit state passing */
-void process(int *error_count) {
+void process(int *error_count)
+{
     /* ... */
     (*error_count)++;
 }
@@ -1209,7 +1318,18 @@ Beyond the banned string functions (Section 8.5), avoid:
 | `atoi`, `atol`, `atof` | No error detection | `strtol`, `strtod` with error checking |
 | `gets` | Cannot limit input | `fgets` |
 | `alloca` | No failure indication, stack overflow | `malloc` or fixed-size stack buffer |
-| `setjmp`/`longjmp` | Bypasses cleanup code, error-prone | Structured error handling with return codes |
+
+### 10.8 setjmp/longjmp
+
+Avoid `setjmp`/`longjmp` in library code. They bypass normal cleanup code paths and
+make resource management error-prone. Prefer structured error handling with return
+codes (Section 6) and the goto cleanup pattern (Section 6.3).
+
+`setjmp`/`longjmp` have legitimate uses in application code (test frameworks, parser
+recovery, coroutines), but require careful discipline around resource cleanup. If you
+use them, ensure every resource acquired between `setjmp` and `longjmp` is either
+released before the jump or tracked in a structure that the `setjmp` return path can
+clean up.
 
 ---
 
@@ -1234,6 +1354,7 @@ Enable comprehensive warnings and treat them as errors during development:
 -Wnested-externs            # Extern declarations inside functions
 -Wimplicit-fallthrough      # Unannotated switch fallthrough
 -Wwrite-strings             # String literal to non-const pointer
+-Wvla                       # Warn on variable-length array usage
 
 # C-specific safety (errors, not warnings)
 -Werror=implicit            # Implicit function declarations
@@ -1259,11 +1380,6 @@ For production builds, enable security-oriented compiler and linker options:
 # Zero-initialize automatic variables
 -ftrivial-auto-var-init=zero
 
-# Conservative optimization assumptions
--fno-strict-overflow
--fno-strict-aliasing
--fno-delete-null-pointer-checks
-
 # Position-independent executables (ASLR)
 -fPIE -pie
 
@@ -1272,10 +1388,31 @@ For production builds, enable security-oriented compiler and linker options:
 -Wl,-z,noexecstack
 ```
 
+### 11.3 Defensive Optimization Flags
+
+These flags disable optimizations that exploit undefined behavior in the C standard.
+Well-written code following this guide should not need them, but they provide a safety
+net for legacy code or codebases in transition:
+
+```bash
+# Disable optimization of signed overflow (UB in standard C)
+-fno-strict-overflow
+
+# Disable strict aliasing optimization (workaround for aliasing violations)
+-fno-strict-aliasing
+
+# Preserve null pointer checks that the standard says are redundant
+-fno-delete-null-pointer-checks
+```
+
+If your code follows the strict aliasing rules (Section 10.1) and never relies on
+signed overflow, you do not need `-fno-strict-aliasing` or `-fno-strict-overflow`.
+Prefer fixing the code over disabling the optimization.
+
 See the [OpenSSF Compiler Options Hardening Guide][openssf-hardening] for a complete,
 maintained list.
 
-### 11.3 Static Analysis
+### 11.4 Static Analysis
 
 Run static analysis tools as part of CI. They catch bugs that compiler warnings miss:
 
@@ -1289,10 +1426,27 @@ scan-build -o reports cc -std=c99 -Wall -c sayableage.c
 ```
 
 - **Clang-Tidy**: Linter with auto-fix capabilities. Checks for readability,
-  modernization, and bug-prone patterns.
+  modernization, and bug-prone patterns. Use a curated set of checks rather than
+  enabling everything:
 
 ```bash
-clang-tidy -checks='*' sayableage.c -- -std=c99
+clang-tidy \
+    -checks='-*,bugprone-*,cert-*,clang-analyzer-*,misc-*,performance-*' \
+    sayableage.c -- -std=c99
+```
+
+For reproducibility, define checks in a `.clang-tidy` file at the project root:
+
+```yaml
+Checks: >
+    -*,
+    bugprone-*,
+    cert-*,
+    clang-analyzer-*,
+    misc-*,
+    performance-*,
+    readability-braces-around-statements
+WarningsAsErrors: '*'
 ```
 
 - **Cppcheck**: Lightweight, false-positive-averse static analyzer.
@@ -1304,7 +1458,7 @@ cppcheck --enable=all --std=c99 --error-exitcode=1 src/
 - **Coverity**, **PVS-Studio**, **CodeQL**: Commercial/enterprise-grade analyzers
   for larger projects.
 
-### 11.4 Sanitizers
+### 11.5 Sanitizers
 
 Sanitizers are runtime instrumentation tools that detect bugs at the moment they occur.
 Use them during testing:
@@ -1347,17 +1501,18 @@ Combine sanitizers during CI:
 cc -std=c99 -g -fsanitize=address,undefined -fno-omit-frame-pointer -o test test.c
 ```
 
-### 11.5 Formatting
+### 11.6 Formatting
 
 Use `clang-format` for consistent, automated formatting. Define a `.clang-format`
 file at the project root:
 
 ```yaml
-BasedOnStyle: LLVM
 IndentWidth: 4
 ColumnLimit: 100
 AllowShortFunctionsOnASingleLine: None
 BreakBeforeBraces: Linux
+SpaceBeforeParens: ControlStatements
+AlignAfterOpenBracket: Align
 ```
 
 Run it automatically in CI or as a pre-commit hook:
@@ -1366,7 +1521,7 @@ Run it automatically in CI or as a pre-commit hook:
 clang-format -i src/*.c include/*.h
 ```
 
-### 11.6 Valgrind
+### 11.7 Valgrind
 
 Valgrind detects memory errors and leaks at runtime without recompilation. It is
 complementary to sanitizers (works on unmodified binaries):

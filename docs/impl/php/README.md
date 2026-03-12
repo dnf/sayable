@@ -1,6 +1,6 @@
 # PHP Style Guide
 
-A comprehensive reference for auditing PHP implementations. Covers naming, formatting, type system, class design, error handling, idiomatic patterns, and tooling. All recommendations align with PSR-1, PSR-12, PER Coding Style 3.0, and community consensus.
+A reference for auditing and writing PHP implementations in this project. Covers naming, formatting, type system, class design, error handling, idiomatic patterns, and tooling. All recommendations align with PSR-1, PER Coding Style 3.0, and community consensus.
 
 ## Table of Contents
 
@@ -13,8 +13,9 @@ A comprehensive reference for auditing PHP implementations. Covers naming, forma
 - [7. Array Handling](#7-array-handling)
 - [8. String Handling](#8-string-handling)
 - [9. Common Idioms](#9-common-idioms)
-- [10. Things to Avoid](#10-things-to-avoid)
-- [11. Tooling](#11-tooling)
+- [10. PHPDoc Annotations](#10-phpdoc-annotations)
+- [11. Things to Avoid](#11-things-to-avoid)
+- [12. Tooling](#12-tooling)
 - [Sources](#sources)
 
 ---
@@ -281,7 +282,7 @@ $longResult = $veryLongConditionExpression
 
 ### Always Use `declare(strict_types=1)`
 
-Every PHP file should begin with strict type enforcement. This prevents silent type coercion and catches bugs at call time.
+Every PHP file must begin with strict type enforcement. This prevents silent type coercion and catches bugs at call time.
 
 ```php
 <?php
@@ -393,7 +394,7 @@ public static function create(): static
     return new static();
 }
 
-// mixed: any type (PHP 8.0+) — avoid when a more specific type is possible
+// mixed: any type (PHP 8.0+) -- avoid when a more specific type is possible
 public function transform(mixed $data): mixed
 {
     // ...
@@ -457,9 +458,20 @@ When multiple modifiers are present, they must follow this order:
 5. Type declaration
 6. Name
 
+Not every combination of modifiers is valid in PHP. Examples of valid combinations:
+
 ```php
-abstract protected static readonly int $value;
+// abstract applies to methods only, not properties
+abstract protected function compute(): int;
+
+// final + visibility + static on a method
 final public static function create(): static {}
+
+// visibility + readonly on a promoted property
+public readonly string $name;
+
+// visibility + static on a property
+private static int $instanceCount = 0;
 ```
 
 ### Constructor Promotion (PHP 8.0+)
@@ -540,7 +552,7 @@ interface Formatter
 
 ### Traits
 
-Use for horizontal code reuse across unrelated classes. Never for state that belongs in a base class.
+Use for horizontal code reuse across classes that do not share an is-a relationship. Traits can carry state -- that is one of their legitimate uses. The anti-pattern is using a trait as a substitute for inheritance when the consuming classes genuinely share a parent type, or accumulating unrelated behaviors in a single trait.
 
 ```php
 trait HasTimestamps
@@ -628,8 +640,8 @@ public function noop(): void {}
 Map namespace prefixes to base directories. The terminating class name maps directly to a `.php` filename (case-sensitive).
 
 ```
-\Sayable\Age\AgeLocale       → src/AgeLocale.php
-\Sayable\Age\Locales\EnUs    → src/Locales/EnUs.php
+\Sayable\Age\AgeLocale       -> src/AgeLocale.php
+\Sayable\Age\Locales\EnUs    -> src/Locales/EnUs.php
 ```
 
 Configured in `composer.json`:
@@ -659,22 +671,29 @@ use const Sayable\Age\VERSION;
 
 Never begin a `use` statement with a leading backslash.
 
-Compound namespaces are allowed but limited to two sub-namespace levels:
+Compound use declarations are permitted. Each import should appear on its own line within the group:
 
 ```php
-// Allowed
 use Vendor\Package\Namespace\{
     SubOne\ClassA,
     SubTwo\ClassB,
     ClassC,
 };
-
-// Not allowed — too deep
-use Vendor\Package\Namespace\{
-    SubOne\SubTwo\ClassA,
-    SubOne\ClassB,
-};
 ```
+
+### Leading Backslash on Global Functions
+
+In namespaced code, call global PHP functions with a leading backslash. This bypasses namespace-relative function lookup, preventing accidental shadowing if a function with the same name is defined in the current namespace.
+
+```php
+// In a namespaced file:
+$len = \strlen($input);
+$parts = \explode('-', $date);
+$result = \intdiv($total, $divisor);
+$now = \date('Y-m-d');
+```
+
+Without the leading backslash, PHP first looks for `SayableAge\strlen()` before falling back to the global `\strlen()`. The leading backslash eliminates that unnecessary lookup.
 
 ### One Class Per File
 
@@ -688,22 +707,22 @@ Each class, interface, trait, or enum resides in its own file. The filename matc
 
 ```
 Throwable (interface)
-├── Error           (engine errors: TypeError, ValueError, etc.)
-└── Exception       (application errors)
-    ├── LogicException
-    │   ├── InvalidArgumentException
-    │   ├── BadMethodCallException
-    │   ├── DomainException
-    │   ├── LengthException
-    │   ├── OutOfRangeException
-    │   └── ...
-    └── RuntimeException
-        ├── OutOfBoundsException
-        ├── OverflowException
-        ├── RangeException
-        ├── UnderflowException
-        ├── UnexpectedValueException
-        └── ...
++-- Error           (engine errors: TypeError, ValueError, etc.)
++-- Exception       (application errors)
+    +-- LogicException
+    |   +-- InvalidArgumentException
+    |   +-- BadMethodCallException
+    |   +-- DomainException
+    |   +-- LengthException
+    |   +-- OutOfRangeException
+    |   +-- ...
+    +-- RuntimeException
+        +-- OutOfBoundsException
+        +-- OverflowException
+        +-- RangeException
+        +-- UnderflowException
+        +-- UnexpectedValueException
+        +-- ...
 ```
 
 ### Use Specific Exception Types
@@ -818,13 +837,13 @@ Prefer array functions over manual loops when the intent is clearer.
 
 ```php
 // Mapping
-$names = array_map(fn(User $u): string => $u->name, $users);
+$names = \array_map(fn(User $u): string => $u->name, $users);
 
 // Filtering
-$adults = array_filter($users, fn(User $u): bool => $u->age >= 18);
+$adults = \array_filter($users, fn(User $u): bool => $u->age >= 18);
 
 // Reducing
-$total = array_reduce($items, fn(int $carry, Item $item): int => $carry + $item->price, 0);
+$total = \array_reduce($items, fn(int $carry, Item $item): int => $carry + $item->price, 0);
 ```
 
 ### Spread Operator (PHP 7.4+ for arrays)
@@ -867,7 +886,7 @@ $message = "Hello, {$user->name}";
 $path = "locales/{$code}.json";
 ```
 
-Use single-quoted strings when no interpolation is needed (marginal performance benefit, but mainly about intent).
+Use single-quoted strings when no interpolation is needed. This signals intent to the reader: the string is literal, no variable expansion will occur.
 
 ```php
 $label = 'No variables here';
@@ -884,7 +903,7 @@ $full = $first . ' ' . $last;
 For building complex strings, prefer `sprintf` over concatenation chains.
 
 ```php
-$msg = sprintf('User %s (ID: %d) logged in at %s', $name, $id, $time);
+$msg = \sprintf('User %s (ID: %d) logged in at %s', $name, $id, $time);
 ```
 
 ### Heredoc and Nowdoc
@@ -905,16 +924,29 @@ $output = <<<EOT
     EOT;
 ```
 
-### Multibyte Strings
+### Byte Operations vs. Character Operations
 
-Use `mb_*` functions for Unicode-safe string operations. Never use `strlen`, `substr`, `strpos` on strings that may contain multibyte characters.
+PHP has two sets of string functions that serve different purposes:
+
+- **Byte-level** (`strlen`, `substr`, `strpos`): Operate on raw bytes. Use for ASCII-only data, fixed-format parsing, protocol handling, and binary operations.
+- **Character-level** (`mb_strlen`, `mb_substr`, `mb_strpos`): Operate on characters respecting encoding. Use for user-facing text that may contain multibyte characters.
+
+Choose the function that matches your intent:
 
 ```php
-$length = mb_strlen($text, 'UTF-8');
-$sub = mb_substr($text, 0, 10, 'UTF-8');
-$pos = mb_strpos($text, $needle, 0, 'UTF-8');
-$upper = mb_strtoupper($text, 'UTF-8');
+// Byte-level: parsing a fixed-format ASCII date string
+// strlen and substr are correct here -- we are checking byte positions
+if (\strlen($s) < 10 || $s[4] !== '-' || $s[7] !== '-') {
+    return null;
+}
+$year = (int) \substr($s, 0, 4);
+
+// Character-level: truncating user-facing text that may contain Unicode
+$truncated = \mb_substr($displayName, 0, 20, 'UTF-8');
+$charCount = \mb_strlen($userInput, 'UTF-8');
 ```
+
+Using `mb_strlen` for byte-level parsing is semantically wrong and slower. Using `strlen` for user-facing Unicode text will give incorrect results for multibyte characters. Match the function to the operation.
 
 ---
 
@@ -944,7 +976,11 @@ $label = match ($category) {
 };
 ```
 
-Use `match(true)` for condition-based branching:
+When matching an enum, exhaustiveness is enforced -- if a case is missing, PHP throws `UnhandledMatchError`. This makes omitting `default` a feature: the compiler tells you when you missed a case.
+
+### `match(true)` for Condition-Based Branching
+
+Use `match(true)` as a concise alternative to `if/elseif` chains when assigning a value based on conditions:
 
 ```php
 $stage = match (true) {
@@ -955,14 +991,16 @@ $stage = match (true) {
 };
 ```
 
+Always include a `default` arm in `match(true)`. Unlike `if/elseif` (which simply falls through with no assignment), an unmatched `match(true)` throws `UnhandledMatchError` at runtime.
+
 ### Arrow Functions (PHP 7.4+)
 
 Single-expression closures. They capture variables from the parent scope by value automatically.
 
 ```php
-$doubled = array_map(fn(int $n): int => $n * 2, $numbers);
+$doubled = \array_map(fn(int $n): int => $n * 2, $numbers);
 
-$filtered = array_filter(
+$filtered = \array_filter(
     $locales,
     fn(AgeLocale $l): bool => $l->code !== 'test',
 );
@@ -980,7 +1018,7 @@ $method = $formatter->format(...);
 $static = Formatter::create(...);
 
 // Use in higher-order functions
-$lengths = array_map(mb_strlen(...), $strings);
+$lengths = \array_map(\mb_strlen(...), $strings);
 ```
 
 ### Named Arguments (PHP 8.0+)
@@ -999,19 +1037,20 @@ $locale = new AgeLocale(
 
 No space between the argument name and colon. One space between colon and value.
 
-### Fibers (PHP 8.1+)
+### Function-Scoped Static Variables
 
-Cooperative multitasking primitive. Use when building async frameworks or coroutines. For application code, prefer higher-level abstractions.
+Use `static` variables inside functions for lazy initialization of values that should persist across calls within a single request (FPM) or process (CLI).
 
 ```php
-$fiber = new Fiber(function (): void {
-    $value = Fiber::suspend('paused');
-    echo "Resumed with: {$value}";
-});
-
-$result = $fiber->start();   // 'paused'
-$fiber->resume('hello');     // "Resumed with: hello"
+function formatAge(?string $dateOfBirth, ?string $asOf = null): ?string
+{
+    static $default = null;
+    $default ??= new SayableAge(Locales::EN());
+    return $default->formatAge($dateOfBirth, $asOf);
+}
 ```
+
+This is appropriate for convenience wrappers that cache a default instance. Be aware of the testing implication: the static variable persists across test cases within the same process. If tests need isolation, provide a reset mechanism or use instance methods instead.
 
 ### Enum Methods and `from`/`tryFrom`
 
@@ -1028,7 +1067,69 @@ $all = Suit::cases(); // [Suit::Hearts, Suit::Diamonds, ...]
 
 ---
 
-## 10. Things to Avoid
+## 10. PHPDoc Annotations
+
+### When to Use PHPDoc
+
+Use native PHP type declarations for everything the language can express. Use PHPDoc annotations only to provide additional type information that PHP's native type system cannot represent and that static analyzers (PHPStan, Psalm) can consume.
+
+### Do Not Duplicate Native Types
+
+If a parameter or return type is fully expressed by the native declaration, do not add a redundant `@param` or `@return`.
+
+```php
+// Bad: PHPDoc duplicates the native type
+/** @param int $count */
+public function format(int $count): string {}
+
+// Good: native type is sufficient, no PHPDoc needed
+public function format(int $count): string {}
+```
+
+### Use PHPDoc for Generic Arrays and Shapes
+
+PHP's `array` type does not express key or value types. Use PHPDoc to describe them.
+
+```php
+/** @var array<string, string>|string */
+private readonly string|array $day;
+
+/**
+ * @param array{int, int} $range  Tuple of [start, end]
+ * @return array<string, AgeLocale>
+ */
+public function loadLocales(array $range): array {}
+```
+
+### Use PHPDoc for Callable Signatures
+
+PHP's `callable` and `Closure` types do not express parameter or return types natively. Use PHPDoc annotations to document them.
+
+```php
+/**
+ * @param Closure(int): PluralCategory $plural
+ * @param (Closure(int): string)|null $formatNumber
+ */
+public function __construct(
+    public readonly Closure $plural,
+    public readonly ?Closure $formatNumber = null,
+) {}
+```
+
+### Use PHPDoc for Return Type Narrowing
+
+When a method's native return type is broad but the actual return is narrower, PHPDoc helps static analyzers and readers.
+
+```php
+/**
+ * @return array{int, int}|null  [months, days] or null if invalid
+ */
+private static function parseAge(?string $dob, ?string $asOf): ?array {}
+```
+
+---
+
+## 11. Things to Avoid
 
 ### Error Suppression Operator (`@`)
 
@@ -1128,42 +1229,13 @@ Do not leave parameters, return types, or properties untyped unless there is a s
 
 ---
 
-## 11. Tooling
+## 12. Tooling
 
-### PHP_CodeSniffer (phpcs)
+### PHP-CS-Fixer (Project Standard)
 
-Detects coding standard violations. Supports PSR-1, PSR-12, PER, and custom rulesets.
-
-```bash
-# Install
-composer require --dev squizlabs/php_codesniffer
-
-# Check
-vendor/bin/phpcs --standard=PSR12 src/
-
-# Fix automatically
-vendor/bin/phpcbf --standard=PSR12 src/
-```
-
-Configuration in `phpcs.xml`:
-
-```xml
-<?xml version="1.0"?>
-<ruleset name="Project">
-    <rule ref="PSR12"/>
-    <file>src</file>
-    <file>tests</file>
-</ruleset>
-```
-
-### PHP-CS-Fixer
-
-Automatically fixes coding style violations. Supports PER, Symfony, and custom rule sets. More configurable and opinionated than phpcs.
+This project uses PHP-CS-Fixer for automated code style enforcement with the `@PER-CS` ruleset.
 
 ```bash
-# Install
-composer require --dev friendsofphp/php-cs-fixer
-
 # Check without modifying
 vendor/bin/php-cs-fixer check
 
@@ -1189,6 +1261,8 @@ return (new PhpCsFixer\Config())
     );
 ```
 
+PHP_CodeSniffer (`phpcs`) is a widely-used alternative that supports PSR-12 and PER rulesets but focuses on detection rather than auto-fixing. If choosing between them, pick one -- running both on the same codebase without careful rule alignment causes conflicts.
+
 ### PHPStan
 
 Static analysis tool. Finds bugs without running code. Rule levels 0 (basic) through 10 (strictest).
@@ -1205,13 +1279,12 @@ Configuration in `phpstan.neon`:
 
 ```neon
 parameters:
-    level: max
+    level: 9
     paths:
         - src
-        - tests
 ```
 
-Recommended: start at level 5 or 6, work toward `max`. Higher levels require more complete type annotations. Level 6 checks return types; level 8 checks union type handling; level 9 checks `mixed` usage.
+This project runs PHPStan at level 9. New code must pass at this level. Level 9 checks `mixed` type usage; level `max` (10) adds the strictest checks. For greenfield projects, starting at level 5 or 6 and working upward is reasonable, but this project's bar is level 9.
 
 ### Psalm
 
@@ -1247,13 +1320,13 @@ Use cases: upgrade PHP version syntax (e.g., `array()` to `[]`), apply coding st
 
 ### Recommended Toolchain
 
-| Purpose              | Tool                    |
-| -------------------- | ----------------------- |
-| Code formatting      | PHP-CS-Fixer or phpcs   |
-| Static analysis      | PHPStan or Psalm        |
-| Automated refactoring| Rector                  |
-| Testing              | PHPUnit                 |
-| Dependency management| Composer                |
+| Purpose               | Tool          |
+| --------------------- | ------------- |
+| Code formatting       | PHP-CS-Fixer  |
+| Static analysis       | PHPStan       |
+| Automated refactoring | Rector        |
+| Testing               | PHPUnit       |
+| Dependency management | Composer      |
 
 Run formatters and static analysis in CI. Treat all warnings as errors.
 

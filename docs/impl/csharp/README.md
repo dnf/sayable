@@ -26,14 +26,14 @@ This guide synthesizes conventions from the following authoritative references:
 | Local functions | PascalCase | `CountQueueItems()` |
 | Namespaces | PascalCase | `CoolStuff.AwesomeFeature` |
 | Constants (fields and locals) | PascalCase | `MaxConnections`, `DefaultTimeout` |
-| Private/internal instance fields | camelCase with `_` prefix | `_workerQueue` |
-| Private/internal static fields | camelCase with `s_` prefix | `s_workerQueue` |
-| Thread-static fields | camelCase with `t_` prefix | `t_timeSpan` |
+| Private/internal fields (instance and static) | camelCase with `_` prefix | `_workerQueue` |
 | Method parameters | camelCase | `someNumber`, `isValid` |
 | Local variables | camelCase | `seattleCustomers`, `currentMax` |
 | Generic type parameters | PascalCase with `T` prefix | `TSession`, `TInput`, `TOutput` |
 | Record positional parameters | PascalCase (they become public properties) | `Person(string FirstName, string LastName)` |
 | Primary constructor params (class/struct) | camelCase | `DataService(IWorkerQueue workerQueue)` |
+
+**Note on `s_` and `t_` prefixes:** The .NET runtime codebase uses `s_` for private static fields and `t_` for thread-static fields. This is appropriate for large, low-level codebases where distinguishing field storage class at a glance matters. For typical application and library code, `_camelCase` for all private fields (instance and static) is the more common convention. Choose one style and be consistent within a project.
 
 ### Naming Principles
 
@@ -74,7 +74,7 @@ public class List<T> { }
 
 ### Indentation and Braces
 
-- Use **four spaces** for indentation. Never use tabs.
+- Use **four spaces** for indentation.
 - Use **Allman style** braces: opening and closing brace each on its own line, aligned with the current indentation level.
 - Write **one statement per line** and **one declaration per line**.
 
@@ -145,13 +145,13 @@ namespace Sayable.Age;
 
 - Use single-line comments (`//`) for brief explanations. Avoid multi-line `/* */` comments.
 - Place comments on a separate line, not at the end of a line of code.
-- Begin with an uppercase letter. End with a period.
+- Begin with an uppercase letter.
 - Insert one space between `//` and the text.
-- Use XML doc comments (`///`) for all public members.
+- Use XML doc comments (`///`) for all public members. XML doc comments should be grammatically complete sentences with proper punctuation, since they generate external documentation.
 - **Comments should explain "why", not "what."** If a comment explains what code does, extract it into a named function or variable instead.
 
 ```csharp
-// Postpone validation until both interrelated properties are set.
+// Postpone validation until both interrelated properties are set
 ```
 
 ---
@@ -218,6 +218,35 @@ When to use records vs. classes:
 public record Point(int X, int Y)
 {
     public double Distance => Math.Sqrt(X * X + Y * Y);
+}
+```
+
+### Primary Constructors (C# 12)
+
+C# 12 extends primary constructors from records to classes and structs. Use them to reduce boilerplate for dependency injection and simple initialization:
+
+```csharp
+public class DataService(IWorkerQueue workerQueue, ILogger<DataService> logger)
+{
+    public void Process()
+    {
+        logger.LogInformation("Processing {Count} items", workerQueue.Count);
+    }
+}
+```
+
+Key considerations:
+
+- **Primary constructor parameters are not fields.** They are captured in a compiler-generated closure. Do not assume they behave like fields for serialization or reflection.
+- **Parameters are mutable** within the class body. If you need immutability, assign to a `readonly` field in the class body.
+- **Prefer primary constructors** for classes whose constructor only assigns parameters to fields (the dependency injection pattern).
+- **Use traditional constructors** when you need validation logic, multiple constructor overloads, or when the parameter-to-field mapping is not one-to-one.
+
+```csharp
+// When you need immutability guarantees, assign to readonly fields
+public class CacheService(IDatabase database)
+{
+    private readonly IDatabase _database = database;
 }
 ```
 
@@ -325,10 +354,11 @@ var container = new LabelledContainer<int> { Label = "Count", Contents = 42 };
 
 ### Sealed Classes
 
-- **Do not seal classes without a good reason.** Sealing prevents extension, which frustrates consumers.
-- Good reasons to seal: static classes, security-sensitive inheritance chains, performance-critical attribute types, classes with many virtual members where sealing the overrides reduces maintenance cost.
-- **Consider sealing overrides** of virtual members to prevent further fragile-base-class problems.
+- **Seal classes unless you have explicitly designed them for inheritance.** Unsealed classes with virtual members create an implicit contract with subclasses that is difficult to maintain correctly. Sealing is the conservative default, and unsealing is a non-breaking change you can make later.
+- Good reasons to unseal: the class is specifically designed as a base class with documented extension points, or you are building a framework where extensibility is a primary goal.
+- **Seal overrides** of virtual members to prevent further fragile-base-class problems downstream.
 - **Do not declare protected or virtual members on sealed types** -- they serve no purpose.
+- Sealing also benefits performance: the JIT can devirtualize calls on sealed types, enabling more aggressive inlining.
 
 ### Interfaces
 
@@ -444,19 +474,90 @@ catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
 - Provide the standard three constructors (parameterless, message, message + inner exception).
 - Make them serializable only if cross-domain marshaling is needed.
 
-### Using Declarations
+### Using Declarations and Statements
 
-Prefer the modern `using` declaration (without braces) over `using` statements:
+Use `using` declarations (without braces) when the resource is needed for the remainder of the method:
 
 ```csharp
-// Preferred: disposal at end of enclosing scope
+// Resource disposed at end of enclosing scope
 using var stream = File.OpenRead(path);
 var content = ReadAll(stream);
+// stream disposed here, when the method returns
+```
 
-// Older style: explicit scope
+Use the braced `using` statement when you need to release the resource before the method ends:
+
+```csharp
+// Resource disposed at end of block, before additional work
+string content;
 using (var stream = File.OpenRead(path))
 {
-    var content = ReadAll(stream);
+    content = ReadAll(stream);
+}
+// stream already disposed -- safe to do additional work without holding the handle
+DoMoreWork(content);
+```
+
+The choice depends on resource lifetime, not stylistic preference. Pick the form that matches when you actually need the resource released.
+
+### Implementing IDisposable
+
+When your type owns unmanaged resources or owns other disposable objects, implement `IDisposable`:
+
+```csharp
+// Sealed class: simple pattern
+public sealed class ResourceHolder : IDisposable
+{
+    private Stream? _stream;
+    private bool _disposed;
+
+    public void Dispose()
+    {
+        if (_disposed) return;
+        _stream?.Dispose();
+        _disposed = true;
+    }
+}
+
+// Unsealed class: full dispose pattern for inheritance
+public class ResourceHolder : IDisposable
+{
+    private bool _disposed;
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+        {
+            // Dispose managed resources
+        }
+        // Release unmanaged resources
+        _disposed = true;
+    }
+
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+}
+```
+
+For types with async cleanup needs, implement `IAsyncDisposable` alongside `IDisposable`:
+
+```csharp
+public sealed class AsyncResourceHolder : IAsyncDisposable, IDisposable
+{
+    public async ValueTask DisposeAsync()
+    {
+        await _connection.CloseAsync();
+        Dispose();
+    }
+
+    public void Dispose()
+    {
+        _connection.Close();
+    }
 }
 ```
 
@@ -472,21 +573,24 @@ using (var stream = File.OpenRead(path))
 ### Task-Based Patterns
 
 - Use `async` and `await` for I/O-bound operations (network, file, database).
-- Use `Task.Run` for CPU-bound work that should not block the calling thread.
+- For CPU-bound work, expose it as a synchronous method and let the caller decide whether to offload with `Task.Run`. Do not wrap synchronous work in `Task.Run` just to provide an async-looking signature.
 - Return `Task` or `Task<T>`, never `void`, from async methods. The only exception: **event handlers must return `async void`**.
 
 ```csharp
-// I/O-bound
+// I/O-bound: naturally async
 public async Task<string> FetchDataAsync(string url)
 {
     return await _httpClient.GetStringAsync(url);
 }
 
-// CPU-bound
-public async Task<DamageResult> CalculateAsync()
+// CPU-bound: expose as synchronous, let caller decide
+public DamageResult CalculateDamage()
 {
-    return await Task.Run(() => CalculateDamageDone());
+    return CalculateDamageDone();
 }
+
+// Caller offloads if needed
+var result = await Task.Run(() => service.CalculateDamage());
 ```
 
 ### Naming
@@ -495,11 +599,12 @@ Append the `Async` suffix to all async method names: `GetDataAsync`, `SaveChange
 
 ### ConfigureAwait
 
-- In **library code**, use `ConfigureAwait(false)` on every `await` to avoid capturing the synchronization context. This prevents deadlocks when library code is called from UI threads.
+- In **library code that may be consumed from UI frameworks** (WPF, WinForms, MAUI) or .NET Framework ASP.NET, use `ConfigureAwait(false)` on every `await` to avoid capturing the synchronization context. This prevents deadlocks when library code is called from threads with a `SynchronizationContext`.
+- In **modern .NET (Core/5+) server applications**, `ConfigureAwait(false)` is unnecessary because ASP.NET Core does not have a `SynchronizationContext`. It is harmless but adds noise.
 - In **application code** (UI handlers, ASP.NET controllers), omit `ConfigureAwait` to stay on the original context.
 
 ```csharp
-// Library code
+// Library code targeting broad audiences
 public async Task<Data> LoadDataAsync()
 {
     var json = await _httpClient.GetStringAsync(url).ConfigureAwait(false);
@@ -527,7 +632,7 @@ public async Task<Report> GenerateReportAsync(CancellationToken cancellationToke
 | `async void` (non-event-handler) | Unobservable exceptions, untestable | Return `Task` |
 | Blocking with `.Result` or `.Wait()` | Deadlocks in UI/ASP.NET contexts | Use `await` |
 | Forgetting `await` on a `Task` | Fire-and-forget; exceptions swallowed | Always `await` or explicitly handle |
-| `Task.Run` in library code | Unnecessary thread pool hops | Use `Task.Run` only in application code |
+| `Task.Run` wrapping sync work in a library | Hides CPU-bound nature from caller, unnecessary thread pool hops | Expose as sync method; let caller use `Task.Run` |
 | Async lambdas in LINQ | Deferred execution causes unexpected timing | Force evaluation with `ToArray()`/`ToList()` |
 
 ### ValueTask
@@ -612,7 +717,7 @@ for (var i = 0; i < 10_000; i++)
 
 ### String Comparison
 
-Always specify a `StringComparison` for culture-sensitive or case-insensitive comparisons. Never rely on the default:
+Explicitly specify `StringComparison` whenever you need case-insensitive or culture-aware comparison. The default ordinal comparison (`==`, `string.Equals(string)`) is appropriate for most cases:
 
 ```csharp
 // Ordinal comparison: fastest, culture-independent
@@ -643,21 +748,24 @@ public State PerformOperation(ReadOnlySpan<char> command) => command switch
 
 ### Implicit Typing (var)
 
-- Use `var` when the type is obvious from the right side of the assignment (constructor call, cast, literal).
-- **Do not** use `var` when the type is unclear from the expression (method return values, complex chains).
-- Use implicit typing for `for` loop variables.
-- **Do not** use implicit typing for `foreach` loop variables (the collection name alone is insufficient to infer the element type clearly).
-- Use `var` for LINQ query results (which may be anonymous types).
+- Use `var` when the type is obvious from the right side of the assignment (constructor call, cast, literal) or readily inferred from context (well-named method returning an obvious type).
+- **Avoid** `var` when the type cannot be readily inferred from the variable name, method name, and surrounding context.
+- Use implicit typing for `for` and `foreach` loop variables when the element type is clear from the collection name.
 
 ```csharp
 // Type is obvious: use var
 var message = "Hello";
 var customers = new List<Customer>();
 var item = (Customer)GetItem();
+var connection = CreateConnection();
+var logger = LoggerFactory.CreateLogger<MyClass>();
+
+// Type is clear from collection name: use var
+foreach (var customer in customers) { }
 
 // Type is not obvious: spell it out
 int count = GetActiveCount();
-Customer current = customers.FirstOrDefault();
+Dictionary<string, List<int>> lookup = BuildIndex();
 ```
 
 ### Null-Conditional and Null-Coalescing Operators
@@ -761,22 +869,7 @@ Mutable static fields create hidden global state, making code harder to test, pa
 
 ### Excessive Inheritance
 
-Favor composition over inheritance. Deep inheritance hierarchies are brittle and hard to follow. Use interfaces and delegation instead:
-
-```csharp
-// Fragile: deep hierarchy
-class Animal { }
-class Mammal : Animal { }
-class Dog : Mammal { }
-class GuideDog : Dog { }
-
-// Better: compose behaviors
-class Dog
-{
-    private readonly IMovement _movement;
-    private readonly IGuideBehavior? _guide;
-}
-```
+Favor composition over inheritance. Deep inheritance hierarchies are brittle because subclasses depend on the implementation details of base class virtual methods. When those details change, subclasses break in subtle ways (the fragile-base-class problem). Prefer interfaces and delegation for polymorphism unless you have a genuine is-a relationship with stable, well-documented extension points.
 
 ### Stringly-Typed Code
 
@@ -792,6 +885,24 @@ void SetStatus(Status status) { }
 SetStatus(Status.Active);
 ```
 
+### Collection Return Types
+
+Return the most specific read-only collection type that serves the caller:
+
+- **`IReadOnlyList<T>`** when callers need count and indexing (the most common case).
+- **`IReadOnlyCollection<T>`** when callers need count but not indexing.
+- **`IEnumerable<T>`** when callers only need to iterate and the data may be lazily produced.
+- Avoid returning `List<T>` or `IList<T>` from public APIs unless the caller genuinely needs to mutate the collection.
+- **Never return `null` from a collection-returning method.** Return an empty collection instead.
+
+```csharp
+// Preferred: caller gets count and index access, but cannot mutate
+public IReadOnlyList<Customer> GetActiveCustomers() { ... }
+
+// Appropriate for lazy/streaming data
+public IEnumerable<LogEntry> ReadLogEntries() { ... }
+```
+
 ### Other Anti-Patterns
 
 - **Catching `System.Exception` broadly.** Catch specific types.
@@ -802,7 +913,6 @@ SetStatus(Status.Active);
 - **Premature optimization** at the expense of readability. Profile first, then optimize.
 - **Magic numbers.** Extract to named constants.
 - **God classes.** Break large classes into cohesive, single-responsibility units.
-- **Returning `null` from collections.** Return an empty collection instead.
 
 ---
 
@@ -902,6 +1012,8 @@ Key CA rule categories to pay attention to:
 
 For auditing a C# implementation, verify:
 
+### Always applicable
+
 - [ ] Nullable reference types enabled (`<Nullable>enable</Nullable>`)
 - [ ] Naming conventions followed (PascalCase for public, `_camelCase` for private fields)
 - [ ] File-scoped namespaces used
@@ -909,15 +1021,20 @@ For auditing a C# implementation, verify:
 - [ ] No `var` where type is ambiguous
 - [ ] Exceptions are specific types, not `System.Exception`
 - [ ] `throw;` not `throw ex;`
-- [ ] `using` declarations for disposables
+- [ ] `using` declarations/statements for disposables with appropriate scoping
 - [ ] Async methods return `Task`/`Task<T>`, not `void`
 - [ ] Async method names end in `Async`
-- [ ] `ConfigureAwait(false)` in library code
 - [ ] No blocking on async (`.Result`, `.Wait()`)
 - [ ] String interpolation over `string.Format`
-- [ ] `StringComparison` specified for comparisons
+- [ ] `StringComparison` specified for case-insensitive or culture-aware comparisons
 - [ ] No mutable public fields (use properties)
 - [ ] No empty catch blocks
 - [ ] Constants are PascalCase, not SCREAMING_CASE
-- [ ] Collection properties return empty, not null
+- [ ] Collection properties return empty, not null; prefer `IReadOnlyList<T>` for return types
 - [ ] XML doc comments on all public APIs
+- [ ] `IDisposable` implemented correctly when owning disposable or unmanaged resources
+
+### Context-dependent
+
+- [ ] `ConfigureAwait(false)` in library code (needed when consumers may have a `SynchronizationContext` -- WPF, WinForms, MAUI, .NET Framework ASP.NET; unnecessary in .NET Core/5+ server-only libraries)
+- [ ] Sealed classes (default to sealed unless explicitly designing for inheritance; relevant for public API surface)

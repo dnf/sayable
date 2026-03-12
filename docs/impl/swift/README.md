@@ -1,17 +1,15 @@
 # Swift Style Guide
 
-A comprehensive reference for idiomatic Swift coding style and best practices. Intended for code auditing Swift implementations.
+A reference for auditing Swift implementations in the Sayable project. This guide is opinionated by design -- it makes decisions rather than presenting menus. Where the Swift community has a dominant convention, this guide adopts it.
 
 ## Sources
 
-This guide synthesizes conventions from the following authoritative references:
+This guide draws from:
 
 - [Swift API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/) -- the foundational naming and API design reference from Swift.org
-- [Google Swift Style Guide](https://google.github.io/swift/) -- formatting, naming, and programming practices from Google's internal standard
-- [Kodeco (Ray Wenderlich) Swift Style Guide](https://github.com/kodecocodes/swift-style-guide) -- community style guide emphasizing clarity, consistency, and brevity
-- [Value and Reference Types (Swift.org)](https://www.swift.org/documentation/articles/value-and-reference-types.html) -- official guidance on structs vs classes
-- [Choosing Between Structures and Classes (Apple)](https://developer.apple.com/documentation/swift/choosing-between-structures-and-classes) -- Apple's decision framework
+- [Google Swift Style Guide](https://google.github.io/swift/) -- formatting, naming, and programming practices
 - [The Swift Programming Language (Swift.org)](https://docs.swift.org/swift-book/) -- the language reference
+- [Value and Reference Types (Swift.org)](https://www.swift.org/documentation/articles/value-and-reference-types.html) -- official guidance on structs vs classes
 - [SwiftLint](https://github.com/realm/SwiftLint) and its [Rule Directory](https://realm.github.io/SwiftLint/rule-directory.html)
 - [SE-0413: Typed throws](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0413-typed-throws.md) -- Swift 6.0 typed error handling
 - [SE-0386: `package` access modifier](https://github.com/swiftlang/swift-evolution/blob/main/proposals/0386-package-access-modifier.md) -- Swift 5.9 package-level access control
@@ -36,7 +34,7 @@ No Hungarian notation or prefix conventions. Swift uses module namespacing, not 
 
 ### Acronyms and Initialisms
 
-Treat acronyms uniformly according to their case position. When an acronym starts a lowerCamelCase name, it is all-lowercase. When it appears elsewhere or in UpperCamelCase, it is all-uppercase:
+Treat acronyms uniformly by case position. All-lowercase when starting a lowerCamelCase name, all-uppercase otherwise:
 
 ```swift
 // Correct
@@ -117,13 +115,11 @@ Use descriptive UpperCamelCase names when the parameter has a meaningful role (`
 
 ### Indentation
 
-- Use **spaces**, not tabs. Two spaces or four spaces per indent level -- pick one and be consistent across the project. The Kodeco guide recommends 2 spaces; the Google guide uses 2 spaces. Apple's standard library uses 2 or 4.
-- Never mix tabs and spaces.
+Use 4 spaces per indent level. This matches Xcode's default, Apple's standard library, the Swift compiler source, and `swift-format`'s default configuration. Never use tabs.
 
 ### Line Length
 
-- **100 characters** maximum per the Google Swift Style Guide. Exceptions: URLs in comments, import statements, and generated code.
-- The Kodeco guide suggests a softer 70-character guideline. Choose a limit and enforce it.
+120 characters maximum. This matches SwiftLint's default warning threshold and accommodates Swift's verbose function signatures without gratuitous wrapping. Exceptions: URLs in comments, import statements, and generated locale data files (which have long lines by nature).
 
 ### Brace Style (K&R)
 
@@ -143,7 +139,7 @@ public struct Formatter {
 
 ### Semicolons
 
-Never use semicolons. Swift does not require them, and they add visual noise.
+Never use semicolons.
 
 ### One Statement Per Line
 
@@ -155,13 +151,7 @@ guard let value = value else { return nil }
 
 ### Import Ordering
 
-Order imports in three groups, separated by blank lines, each group sorted lexicographically:
-
-1. Module/submodule imports (standard library, system frameworks)
-2. Individual declaration imports
-3. `@testable` imports (test files only)
-
-Prefer importing whole modules over individual declarations:
+Imports go at the top of the file, sorted lexicographically. Conditional compilation blocks (`#if canImport`) are ordered by convention (Darwin, then Glibc, then others). `@testable` imports go after regular imports:
 
 ```swift
 #if canImport(Darwin)
@@ -170,12 +160,12 @@ import Darwin
 import Glibc
 #endif
 
-import Foundation
+import Testing
 
 @testable import SayableAge  // test files only
 ```
 
-Do not import both a framework and its parent when the parent re-exports it (e.g., `UIKit` includes `Foundation`).
+Prefer importing whole modules over individual declarations. Do not import both a framework and its parent when the parent re-exports it.
 
 ### Horizontal Whitespace
 
@@ -209,7 +199,7 @@ let keys = [
 
 ### Trailing Closures
 
-- Single closure as the final parameter: always use trailing closure syntax
+- Single closure as the final parameter: use trailing closure syntax
 - Never write empty parentheses with a trailing closure: `map { $0 * 2 }` not `map() { $0 * 2 }`
 - Multiple closure parameters: label all closures; do not use trailing syntax
 
@@ -242,7 +232,7 @@ while (count > 0) { }
 | You want predictable copy semantics | You need inheritance or `deinit` |
 | The type is small and short-lived | You need to conform to `AnyObject`-constrained protocols |
 
-Swift's `Array`, `Dictionary`, `String`, and `Set` are all value types. Structs compose cleanly -- a struct containing only value types automatically has value semantics.
+Standard library collections (`Array`, `Dictionary`, `String`, `Set`) are all value types that use copy-on-write internally for performance.
 
 ### Enums
 
@@ -336,7 +326,7 @@ var result: Optional<String>
 
 ### Void
 
-In function declarations, omit `Void` return types entirely. In closure type signatures, write `Void` explicitly rather than `()`:
+Omit `Void` return types in function declarations. When a return type must be written explicitly (closure type signatures, generic constraints), write `Void` rather than `()`:
 
 ```swift
 // Function: omit Void
@@ -368,7 +358,7 @@ if let userName = response.user?.name {
 
 ### `guard let` for Early Exit
 
-Use `guard` to unwrap optionals that are required for the rest of the function. This keeps the "happy path" unindented:
+Use `guard` to unwrap optionals that are required for the rest of the function. This keeps the happy path unindented:
 
 ```swift
 func formatAge(_ dateOfBirth: String?, _ asOf: String? = nil) -> String? {
@@ -402,10 +392,11 @@ let count = response?.data?.items?.count ?? 0
 
 **Avoid force unwraps in production code.** They crash on `nil` and provide no recovery path.
 
-Acceptable exceptions:
-- Unit tests where a `nil` value indicates a test infrastructure failure
-- Immediately after a check that guarantees non-nil (prefer `guard let` instead)
-- When force-unwrapping, add a comment explaining why it is safe
+Acceptable uses:
+
+- **Unit tests** where a `nil` value indicates a test infrastructure failure
+- **Immediately after a guard** that guarantees non-nil (prefer `guard let` instead)
+- Always add a comment explaining why the force unwrap is safe
 
 ```swift
 // In tests: acceptable
@@ -418,11 +409,10 @@ let name = user.name!  // Crashes if nil -- use guard let instead
 
 ### Implicitly Unwrapped Optionals (`Type!`)
 
-Use sparingly and only when:
+Use sparingly. Acceptable only for two-phase initialization patterns:
 
-- A property is initialized shortly after construction and is always non-nil thereafter (e.g., `@IBOutlet` in UIKit)
+- `@IBOutlet` properties in UIKit
 - Test fixtures initialized in `setUp()`
-- Two-phase initialization patterns where the compiler cannot prove non-nil status
 
 Never let implicitly unwrapped optionals propagate through multiple abstraction layers.
 
@@ -456,9 +446,23 @@ func process(_ value: Encodable & Sendable) { ... }
 typealias SerializableLocale = AgeLocale & Codable & Sendable
 ```
 
-### Organize Conformances in Extensions
+### Organizing Protocol Conformances
 
-Place each protocol conformance in its own extension, separated by `// MARK: -` comments. This keeps conformance methods grouped and visible in Xcode's navigation bar:
+Declare synthesizable conformances (`Equatable`, `Hashable`, `Codable`, `Sendable`, `CaseIterable`) in the type declaration itself:
+
+```swift
+// Good: compiler synthesizes the conformance, all protocols visible at a glance
+public struct AgeLocale: Sendable {
+    public let code: String
+    // ...
+}
+
+public enum PluralCategory: Sendable {
+    case zero, one, two, few, many, other
+}
+```
+
+Use separate extensions with `// MARK: -` comments for protocol conformances that require hand-written method implementations, especially when those implementations are more than a few lines:
 
 ```swift
 struct AgeFormatter {
@@ -468,13 +472,9 @@ struct AgeFormatter {
 // MARK: - CustomStringConvertible
 
 extension AgeFormatter: CustomStringConvertible {
-    var description: String { ... }
-}
-
-// MARK: - Equatable
-
-extension AgeFormatter: Equatable {
-    static func == (lhs: AgeFormatter, rhs: AgeFormatter) -> Bool { ... }
+    var description: String {
+        "AgeFormatter(\(locale.code))"
+    }
 }
 ```
 
@@ -616,6 +616,37 @@ func formatAge(_ dateOfBirth: String?, _ asOf: String? = nil) -> String?
 func formatAge(_ dateOfBirth: String?, _ asOf: String? = nil) throws -> String
 ```
 
+### Never Silently Swallow Errors
+
+Empty catch blocks hide bugs. Handle errors explicitly:
+
+```swift
+// Wrong: silent swallow
+do { try operation() } catch { }
+
+// Wrong: assertionFailure is stripped in release builds -- this silently swallows in production
+do {
+    try operation()
+} catch {
+    assertionFailure("Unexpected error: \(error)")
+}
+
+// Right: if the error is unrecoverable, crash with a message
+do {
+    try operation()
+} catch {
+    fatalError("Unexpected error: \(error)")
+}
+
+// Right: if the error is recoverable, handle it
+do {
+    try operation()
+} catch {
+    log.error("Operation failed: \(error)")
+    return .failure(error)
+}
+```
+
 ---
 
 ## 7. Value Types vs. Reference Types
@@ -646,40 +677,13 @@ print(myDoc.text)  // "Original" -- unaffected
 - **Deinitializers**: when you need cleanup on deallocation (`deinit`)
 - **Objective-C interop**: when bridging to `@objc` APIs
 
-### Copy-on-Write (CoW)
+### Static Stored Properties
 
-Swift's standard library collections (`Array`, `Dictionary`, `Set`, `String`) use copy-on-write internally: copies share storage until one copy is mutated. This makes value semantics efficient.
-
-When implementing your own large value types that wrap a reference-type buffer, implement CoW manually:
+Static stored properties in Swift are lazily initialized on first access and thread-safe (guaranteed by the runtime). They are appropriate for default instances and shared configuration:
 
 ```swift
-struct LargeData {
-    private var storage: StorageRef
-
-    mutating func update(_ value: Int) {
-        if !isKnownUniquelyReferenced(&storage) {
-            storage = storage.copy()
-        }
-        storage.data = value
-    }
-}
-```
-
-### Actors for Concurrent Reference State
-
-When you need shared mutable state in a concurrent context, prefer `actor` over `class` with manual synchronization:
-
-```swift
-actor FormatterCache {
-    private var cache: [String: SayableAgeFormatter] = [:]
-
-    func formatter(for localeCode: String) -> SayableAgeFormatter {
-        if let cached = cache[localeCode] { return cached }
-        let formatter = SayableAgeFormatter(locale(for: localeCode))
-        cache[localeCode] = formatter
-        return formatter
-    }
-}
+// Thread-safe lazy initialization -- no dispatch_once needed
+private static let defaultFormatter = SayableAgeFormatter(Locales.EN)
 ```
 
 ---
@@ -690,7 +694,7 @@ Swift provides six access levels, from most restrictive to most open:
 
 | Level | Scope |
 |---|---|
-| `private` | Enclosing declaration only (including extensions in the same file) |
+| `private` | Enclosing declaration and extensions of that type in the same file |
 | `fileprivate` | Entire source file |
 | `internal` (default) | Entire module |
 | `package` (Swift 5.9+) | Entire package (all modules within the same SwiftPM package) |
@@ -702,7 +706,7 @@ Swift provides six access levels, from most restrictive to most open:
 - **Start restrictive, widen as needed.** Default to `private` for implementation details. Promote to `internal`, `package`, or `public` only when external access is required.
 - **Omitting the access modifier** defaults to `internal`. This is acceptable for module-internal code but be explicit for anything at the module boundary.
 - **Use `public` for library APIs.** Use `open` only when subclassing is an intentional extension point.
-- **Use `private` over `fileprivate`** unless you need access from an extension in the same file that cannot see `private` members. Since Swift 4, `private` is visible to extensions of the same type in the same file, which reduces the need for `fileprivate`.
+- **Use `private`, not `fileprivate`.** Since Swift 4, `private` members are visible to extensions of the same type in the same file. The only case for `fileprivate` is when two distinct types in the same file need to share members -- if you reach for it, consider whether the types belong in separate files.
 - **Use `package`** (SE-0386, Swift 5.9+) to share APIs between modules within the same SwiftPM package without exposing them to external consumers.
 - **Do not use naming conventions** (leading underscores) as a substitute for access control. Use the language's access modifiers.
 
@@ -725,18 +729,19 @@ public struct SayableAgeFormatter: Sendable {
 
 ### Extensions and Access Control
 
-Do not specify access levels on the extension itself. Instead, specify access on each member:
+Both forms are acceptable. Use access-level annotations on the extension when all members share the same level. Use per-member annotations when the extension mixes access levels:
 
 ```swift
-// Preferred: access on members
-extension SayableAgeFormatter {
-    public static func formatAgeDefault(_ dob: String?, _ asOf: String? = nil) -> String? { ... }
-    private static func parseAge(_ dob: String?, _ asOf: String?) -> AgeComponents? { ... }
+// All members public: access on extension is fine
+public extension SayableAgeFormatter {
+    static func formatAgeDefault(_ dob: String?, _ asOf: String? = nil) -> String? { ... }
+    static func formatStageDefault(_ dob: String?, _ asOf: String? = nil, gender: String? = nil) -> String? { ... }
 }
 
-// Avoid: access on extension
-public extension SayableAgeFormatter {
-    static func formatAgeDefault(...) -> String? { ... }
+// Mixed access: annotate each member
+extension SayableAgeFormatter {
+    public func formatStage(_ dob: String?, _ asOf: String? = nil, gender: String? = nil) -> String? { ... }
+    private static func parseAge(_ dob: String?, _ asOf: String?) -> AgeComponents? { ... }
 }
 ```
 
@@ -746,7 +751,7 @@ public extension SayableAgeFormatter {
 
 ### `guard` Statements
 
-Use `guard` for early exits and precondition checks. This keeps the happy path at the top indentation level and avoids the "pyramid of doom":
+Use `guard` for early exits and precondition checks. This keeps the happy path at the top indentation level:
 
 ```swift
 func process(_ input: String?) -> Result {
@@ -773,22 +778,24 @@ func readFile(at path: String) throws -> String {
 }
 ```
 
-`defer` blocks execute in reverse order of their declaration. Prefer a single `defer` near the resource acquisition.
+`defer` blocks execute in reverse order of their declaration. Place `defer` near the resource acquisition.
 
 ### `where` Clauses
 
-Use `where` on `for` loops to fold simple conditions into the loop header:
+Use `where` on `for` loops when the condition is a single, simple predicate and the loop body is short. Use `if` when the condition is complex, when you might need an `else` branch, or when debuggability matters. Both forms are acceptable:
 
 ```swift
-// Preferred: where clause
+// where clause: good for simple filtering
 for item in collection where item.isActive {
     process(item)
 }
 
-// Avoid: if-only body
+// if statement: good when you need an else, or complex conditions
 for item in collection {
-    if item.isActive {
+    if item.isActive && item.priority > threshold {
         process(item)
+    } else {
+        skip(item)
     }
 }
 ```
@@ -844,34 +851,6 @@ let sorted = items.sorted(by: \.priority)
 let adults = people.filter(\.isAdult)
 ```
 
-### Property Wrappers
-
-Property wrappers attach reusable logic to property declarations. Define them with `@propertyWrapper`:
-
-```swift
-@propertyWrapper
-struct Clamped<Value: Comparable> {
-    private var value: Value
-    private let range: ClosedRange<Value>
-
-    var wrappedValue: Value {
-        get { value }
-        set { value = min(max(newValue, range.lowerBound), range.upperBound) }
-    }
-
-    init(wrappedValue: Value, _ range: ClosedRange<Value>) {
-        self.range = range
-        self.value = min(max(wrappedValue, range.lowerBound), range.upperBound)
-    }
-}
-
-struct Settings {
-    @Clamped(0...100) var volume: Int = 50
-}
-```
-
-Keep property wrappers focused on a single responsibility and document their behavior.
-
 ### Computed Properties
 
 Use the shorthand getter when there is no setter:
@@ -891,12 +870,31 @@ var diameter: Double {
 
 ### `Sendable` and Concurrency
 
-Mark types as `Sendable` when they are safe to share across concurrency boundaries. Value types composed entirely of `Sendable` members are implicitly `Sendable`, but explicitly marking the conformance documents the intent:
+Mark types as `Sendable` when they are safe to share across concurrency boundaries. Value types composed entirely of `Sendable` members are implicitly `Sendable`, but explicitly marking the conformance documents the intent and enables compiler verification:
 
 ```swift
 public struct AgeLocale: Sendable { ... }
 public enum PluralCategory: Sendable { ... }
 ```
+
+### String Handling in Zero-Dependency Code
+
+This project avoids Foundation and all runtime dependencies. This means standard string operations like `contains` and `replacingOccurrences(of:with:)` are unavailable. Instead, the codebase uses manual UTF-8 byte-level operations:
+
+```swift
+private func stringContains(_ haystack: String, _ needle: String) -> Bool {
+    let h = Array(haystack.utf8)
+    let n = Array(needle.utf8)
+    // ...byte-level comparison...
+}
+```
+
+When auditing these functions:
+
+- Verify they handle empty strings and strings with multi-byte UTF-8 sequences correctly
+- Verify they handle the case where the needle is longer than the haystack
+- Prefer `String(decoding: bytes, as: UTF8.self)` over `String(bytes:encoding:)` for constructing strings from UTF-8 byte arrays (it is non-optional and always succeeds for valid UTF-8)
+- Within the zero-dependency constraint, these manual implementations are appropriate and expected
 
 ---
 
@@ -951,30 +949,9 @@ func reset() {
 }
 ```
 
-### C-Style `for` Loops
-
-Swift removed C-style `for` loops. Use `for-in` with ranges:
-
-```swift
-for i in 0..<count { ... }
-for i in stride(from: 0, to: 100, by: 5) { ... }
-```
-
 ### Empty Catch Blocks
 
-Never silently swallow errors. At minimum, log or assert:
-
-```swift
-// Wrong
-do { try operation() } catch { }
-
-// Right
-do {
-    try operation()
-} catch {
-    assertionFailure("Unexpected error: \(error)")
-}
-```
+Never silently swallow errors. See section 6 for the correct patterns.
 
 ### Deeply Nested Code
 
@@ -990,15 +967,14 @@ if months < 84 { ... }
 
 // Prefer
 private static let maxAgeMonths = 6000
-private static let halfMarkerThresholdMonths = 84
+private static let halfMarkerMaxMonths = 84
 ```
 
 ### `fallthrough` in Switch
 
-Avoid `fallthrough`. It carries meaning from C but is rarely idiomatic in Swift. Use comma-separated cases for shared behavior:
+Avoid `fallthrough`. Use comma-separated cases for shared behavior:
 
 ```swift
-// Preferred: comma-separated
 switch month {
 case 1, 3, 5, 7, 8, 10, 12: return 31
 case 4, 6, 9, 11: return 30
@@ -1009,7 +985,7 @@ default: return 30
 
 ### Mutable Global State
 
-Avoid mutable global or static variables. They create hidden coupling and break testability. If needed for testing (like a time override), document the purpose clearly and mark appropriately:
+Avoid mutable global or static variables. They create hidden coupling and break testability. If needed for testing (like a time override), isolate the mutation surface and document the purpose:
 
 ```swift
 // Testing hook -- not for production use
@@ -1023,13 +999,13 @@ nonisolated(unsafe) static var _timeNow: () -> (Int, Int, Int) = { ... }
 
 ### SwiftLint
 
-[SwiftLint](https://github.com/realm/SwiftLint) enforces Swift style and conventions. Configure it with a `.swiftlint.yml` file in the project root.
+[SwiftLint](https://github.com/realm/SwiftLint) enforces Swift style and conventions. Configure it with a `.swiftlint.yml` file.
 
 **Key default rules:**
 
 | Rule | What it enforces |
 |---|---|
-| `line_length` | Maximum line length (default 120 warning, 200 error) |
+| `line_length` | Maximum line length (configure to 120) |
 | `type_body_length` | Maximum type body length |
 | `function_body_length` | Maximum function body length |
 | `cyclomatic_complexity` | Limits branching complexity |
@@ -1042,7 +1018,7 @@ nonisolated(unsafe) static var _timeNow: () -> (Int, Int, Int) = { ... }
 | `comma` | Comma spacing |
 | `control_statement` | No parentheses around conditions |
 
-**Valuable opt-in rules** (from [SwiftLee](https://www.avanderlee.com/optimization/swiftlint-optin-rules/)):
+**Valuable opt-in rules:**
 
 | Rule | What it enforces |
 |---|---|
@@ -1057,22 +1033,20 @@ nonisolated(unsafe) static var _timeNow: () -> (Int, Int, Int) = { ... }
 
 ### swift-format
 
-Apple's [swift-format](https://github.com/swiftlang/swift-format) is an official formatting tool. It handles indentation, brace placement, spacing, and other mechanical formatting. It can be run as a formatter (`swift-format format`) or a linter (`swift-format lint`).
-
-Configure via a `.swift-format` configuration file:
+Apple's [swift-format](https://github.com/swiftlang/swift-format) handles mechanical formatting (indentation, brace placement, spacing). Configure via a `.swift-format` file:
 
 ```json
 {
-  "version": 1,
-  "indentation": { "spaces": 4 },
-  "lineLength": 100,
-  "maximumBlankLines": 1,
-  "respectsExistingLineBreaks": true,
-  "indentConditionalCompilationBlocks": true
+    "version": 1,
+    "indentation": { "spaces": 4 },
+    "lineLength": 120,
+    "maximumBlankLines": 1,
+    "respectsExistingLineBreaks": true,
+    "indentConditionalCompilationBlocks": true
 }
 ```
 
-SwiftLint and swift-format can complement each other: swift-format handles mechanical formatting while SwiftLint covers style and correctness rules.
+SwiftLint and swift-format complement each other: swift-format handles mechanical formatting while SwiftLint covers style and correctness rules.
 
 ### Xcode Warnings
 
@@ -1082,8 +1056,6 @@ SwiftLint and swift-format can complement each other: swift-format handles mecha
 
 ### Swift Compiler Diagnostics
 
-The Swift compiler provides increasingly sophisticated diagnostics:
-
 - **Strict concurrency checking**: Enable in Swift 6 mode or with `-strict-concurrency=complete` for pre-migration. This catches data races at compile time.
 - **Sendable checking**: The compiler warns when non-Sendable types cross concurrency boundaries.
 - **Exhaustive switch checking**: The compiler requires all enum cases to be handled (or a `default` clause).
@@ -1091,7 +1063,7 @@ The Swift compiler provides increasingly sophisticated diagnostics:
 
 ### MARK Comments
 
-Use `// MARK: -` to organize code sections. These appear in Xcode's navigation bar and help readers scan large files:
+Use `// MARK: -` to organize code sections in large files. These appear in Xcode's navigation bar:
 
 ```swift
 // MARK: - Properties
@@ -1107,31 +1079,41 @@ Use `// MARK: -` to organize code sections. These appear in Xcode's navigation b
 
 ## Quick Reference Checklist
 
-For auditing a Swift implementation, verify:
+For auditing a Swift implementation, verify these items that require human judgment. Items enforceable by SwiftLint or swift-format are omitted -- configure the tools and let them do their job.
 
-- [ ] Types use UpperCamelCase; everything else uses lowerCamelCase
-- [ ] Enum cases are lowerCamelCase
-- [ ] Acronyms follow uniform casing rules (`utf8`, `HTMLParser`)
+### Naming and API Design
+
 - [ ] Functions with side effects read as imperative verbs; without, as nouns
 - [ ] Mutating/nonmutating pairs follow `-ed`/`-ing` or `form-` conventions
 - [ ] Arguments are labeled for clarity at the call site
-- [ ] Braces follow K&R style (opening on same line)
-- [ ] No semicolons
-- [ ] No unnecessary parentheses around conditions
-- [ ] Imports are ordered and minimal
+- [ ] Parameters are named for their role, not their type
+
+### Type Design
+
 - [ ] Structs are used by default; classes only when reference semantics are needed
-- [ ] Optionals are unwrapped safely (`guard let`, `if let`, `??`)
+- [ ] Synthesizable protocol conformances are declared on the type, not in separate extensions
+- [ ] `Any`/`AnyObject` is not used where generics or protocols would work
+- [ ] The public API surface is minimal -- nothing is `public` that does not need to be
+
+### Safety
+
 - [ ] No force unwraps in production code (or justified with a comment)
 - [ ] No implicitly unwrapped optionals except for two-phase initialization
-- [ ] `Any`/`AnyObject` is not used where generics or protocols would work
-- [ ] Protocol conformances are organized in separate extensions
-- [ ] Error types are enums conforming to `Error`
+- [ ] No empty catch blocks
+- [ ] Error handling uses `fatalError` for unrecoverable errors, not `assertionFailure`
+- [ ] `Sendable` is marked on types shared across concurrency boundaries
+
+### Structure
+
 - [ ] `guard` is used for early exits; happy path is not deeply nested
 - [ ] Access control starts restrictive (`private`) and widens as needed
 - [ ] No mutable global state (or documented testing hooks only)
-- [ ] `Sendable` is marked on types shared across concurrency boundaries
-- [ ] No empty catch blocks
-- [ ] No magic numbers -- constants are named
-- [ ] `self` is omitted when not required
+- [ ] Constants are named, not magic numbers
 - [ ] Comments explain "why", not "what"
-- [ ] SwiftLint or swift-format is configured and passing
+- [ ] String handling functions correctly handle empty strings and multi-byte UTF-8
+
+### Testing
+
+- [ ] Test functions are named descriptively enough to serve as documentation
+- [ ] Force unwraps in tests are acceptable but concentrated at assertion boundaries
+- [ ] Test IDs from `age/config/tests.json` are annotated as comments

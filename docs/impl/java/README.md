@@ -1,6 +1,6 @@
 # Java Style Guide
 
-A comprehensive, actionable reference for writing idiomatic Java. This guide synthesizes conventions from the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html), [Oracle Code Conventions](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html), [Effective Java](https://www.oreilly.com/library/view/effective-java/9780134686097/) (3rd ed., Joshua Bloch), and the [OpenJDK Developer's Guide](https://openjdk.org/guide/). Where sources conflict, this guide follows the Google Java Style Guide unless noted.
+A comprehensive, actionable reference for writing idiomatic Java. This guide synthesizes conventions from the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html), [Oracle Code Conventions](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html), [Effective Java](https://www.oreilly.com/library/view/effective-java/9780134686097/) (3rd ed., Joshua Bloch), and the [OpenJDK Developer's Guide](https://openjdk.org/guide/).
 
 ---
 
@@ -11,12 +11,15 @@ A comprehensive, actionable reference for writing idiomatic Java. This guide syn
 3. [Type System](#3-type-system)
 4. [Class Design](#4-class-design)
 5. [Collections](#5-collections)
-6. [Error Handling](#6-error-handling)
-7. [Streams and Lambdas](#7-streams-and-lambdas)
-8. [String Handling](#8-string-handling)
-9. [Common Idioms](#9-common-idioms)
-10. [Things to Avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
+6. [Null Safety](#6-null-safety)
+7. [Error Handling](#7-error-handling)
+8. [Streams and Lambdas](#8-streams-and-lambdas)
+9. [String Handling](#9-string-handling)
+10. [Common Idioms](#10-common-idioms)
+11. [Documentation](#11-documentation)
+12. [Testing Conventions](#12-testing-conventions)
+13. [Things to Avoid](#13-things-to-avoid)
+14. [Tooling](#14-tooling)
 
 ---
 
@@ -137,9 +140,22 @@ When an English phrase contains acronyms or unusual constructs, apply this deter
 
 ## 2. Code Formatting
 
+### Formatter Choice
+
+Pick **one** automated formatter and let it own all formatting decisions. Do not fight the tool. The two most common choices:
+
+| Formatter | Indent | Line limit | Notes |
+| --------- | ------ | ---------- | ----- |
+| [google-java-format](https://github.com/google/google-java-format) | 2 spaces | 100 chars | No configuration. Deterministic. Matches Google Java Style Guide exactly. |
+| [Palantir Java Format](https://github.com/palantir/palantir-java-format) (via [Spotless](https://github.com/diffplug/spotless)) | 4 spaces | 120 chars | Fork of google-java-format with 4-space indentation. Matches IntelliJ/Oracle defaults. |
+
+If you adopt google-java-format, your indentation is 2 spaces. If you adopt Palantir Java Format, your indentation is 4 spaces. Either is a legitimate choice. What matters is that the formatter, the style guide, and CI all agree.
+
+The manual formatting rules below describe the conventions enforced by most standard formatters. If your formatter makes a different choice, the formatter wins.
+
 ### Indentation
 
-Use **4 spaces** per indent level. Never tabs. (Google style uses 2 spaces; Oracle conventions use 4. This guide follows the Oracle/IntelliJ default of 4 spaces, which is the most common in the Java ecosystem.)
+Use consistent indentation as determined by your formatter. Never tabs.
 
 ### Braces
 
@@ -170,7 +186,7 @@ try {
 
 ### Line Length
 
-Limit lines to **100 characters**. Exceptions:
+Limit lines to **100 characters** (google-java-format default) or **120 characters** (Palantir/IntelliJ default). Match your formatter. Exceptions:
 
 - Package and import statements
 - Long URLs in comments or Javadoc
@@ -179,7 +195,7 @@ Limit lines to **100 characters**. Exceptions:
 
 ### Line Wrapping
 
-When a statement exceeds the line limit, break it at a higher syntactic level. Indent continuation lines by at least **8 spaces** (two indent levels) from the original.
+When a statement exceeds the line limit, break it at a higher syntactic level. Indent continuation lines by at least two indent levels from the original.
 
 ```java
 String result = resolveUnit(years, year, locale, "")
@@ -198,7 +214,7 @@ public AgeLocale(
 }
 ```
 
-For method chains, break before the dot and align or indent:
+For method chains, break before the dot and indent:
 
 ```java
 var result = items.stream()
@@ -209,10 +225,10 @@ var result = items.stream()
 
 ### Import Ordering
 
-Organize imports in two groups separated by a blank line:
+Organize imports in two groups separated by a blank line. The ordering depends on your formatter:
 
-1. **Static imports** (alphabetical)
-2. **Non-static imports** (alphabetical)
+- **google-java-format:** non-static imports first, then static imports
+- **IntelliJ/Palantir:** static imports first, then non-static imports
 
 Within each group, sort alphabetically. Never use wildcard imports (`import java.util.*`).
 
@@ -259,20 +275,6 @@ public protected private
 abstract default static final sealed non-sealed
 transient volatile synchronized native strictfp
 ```
-
-### Google Java Format
-
-[google-java-format](https://github.com/google/google-java-format) is the standard automated formatter. It enforces the Google style (2-space indent, specific wrapping rules) deterministically. If your team uses it, let it own all formatting decisions -- do not fight the tool.
-
-```bash
-# Format a file
-google-java-format --replace src/main/java/sayableage/SayableAge.java
-
-# Check without modifying
-google-java-format --dry-run --set-exit-if-changed src/**/*.java
-```
-
-Integrate it as a pre-commit hook or CI check to eliminate formatting debates.
 
 ---
 
@@ -339,9 +341,11 @@ When to use records vs. classes:
 | Use a record when...                         | Use a class when...                          |
 | -------------------------------------------- | -------------------------------------------- |
 | Data is purely a transparent carrier          | You need mutable state                       |
-| `equals`/`hashCode` should use all fields    | You need custom equality semantics           |
-| No inheritance hierarchy is needed            | You need to extend a class                   |
+| `equals`/`hashCode` should use all components| You need equality that ignores some fields   |
+| No concrete superclass is needed              | You must extend a concrete class             |
 | All fields are part of the public API         | Some fields should be encapsulated           |
+
+Note: records *can* override `equals`/`hashCode`, but their natural strength is component-based equality. If you find yourself overriding equals on a record to exclude components, a class may be a better fit.
 
 ### Sealed Classes and Interfaces (Java 17+)
 
@@ -391,7 +395,7 @@ public enum Compactness {
 
 ### Optional
 
-`Optional<T>` is a return type for methods that may legitimately have no result. It is not a general-purpose replacement for `null`.
+`Optional<T>` is a return type for methods that may legitimately have no result. It makes the possibility of absence explicit in the type system.
 
 ```java
 // Good -- return type signals "might be absent"
@@ -407,10 +411,25 @@ String name = findLocale("en")
 
 Rules for Optional:
 
-- Never use `Optional` as a field type, method parameter, or collection element.
-- Never call `get()` without first checking `isPresent()`. Prefer `orElse()`, `orElseGet()`, `orElseThrow()`, `map()`, or `ifPresent()`.
-- Never return `null` from a method declared to return `Optional`.
+- **Return types:** `Optional` is designed for method return types where absence is a normal outcome.
+- **Fields in traditional classes:** Avoid `Optional` fields. Use `@Nullable` or document nullability instead.
+- **Record components:** `Optional` components are acceptable when the absence of a value is a meaningful part of the domain model (e.g., `record SearchResult(String query, Optional<Integer> totalCount)`). In traditional classes, prefer a nullable field.
+- **Method parameters:** Avoid `Optional` parameters in public APIs. Prefer method overloading or accept nullable parameters with `@Nullable`.
+- **Collection elements:** Never use `Optional` as a collection element. Use `Map.containsKey`, filter out absent values, or use a sentinel value.
+- **Never call `get()` directly.** The `isPresent()`-then-`get()` pattern is equivalent to a null check without the type-safety benefit. Prefer `orElse()`, `orElseGet()`, `orElseThrow()`, `map()`, `flatMap()`, or `ifPresent()`.
+- **Never return `null`** from a method declared to return `Optional`.
 - For primitive values, use `OptionalInt`, `OptionalLong`, `OptionalDouble`.
+
+```java
+// Bad -- isPresent/get is a null check in disguise
+if (locale.isPresent()) {
+    return locale.get().code();
+}
+return "unknown";
+
+// Good -- functional style
+return locale.map(AgeLocale::code).orElse("unknown");
+```
 
 ### var (Local Variable Type Inference, Java 10+)
 
@@ -652,17 +671,62 @@ HashMap<String, Integer> scores = new HashMap<>();
 
 ---
 
-## 6. Error Handling
+## 6. Null Safety
+
+Null is the single largest source of defects in Java codebases. Adopt a consistent null-handling strategy across the project.
+
+### Annotations
+
+Use [JSpecify](https://jspecify.dev/) annotations (`@Nullable`, `@NonNull`) to document nullability in the type system. JSpecify is the emerging standard, backed by Google, JetBrains, and the broader Java ecosystem. If JSpecify is not available, JetBrains annotations (`org.jetbrains.annotations`) or Jakarta annotations (`jakarta.annotation`) are acceptable alternatives.
+
+Mark the package as `@NullMarked` (JSpecify) to establish a non-null-by-default baseline, then annotate only the nullable exceptions:
+
+```java
+@NullMarked
+package sayableage;
+
+import org.jspecify.annotations.NullMarked;
+```
+
+```java
+// Only the nullable parameter needs annotation
+public String formatAge(String dateOfBirth, @Nullable String gender) {
+    // dateOfBirth is non-null by default (from @NullMarked)
+    // gender may be null
+}
+```
+
+### Precondition Validation
+
+Validate non-null parameters at public API boundaries with `Objects.requireNonNull`:
+
+```java
+public SayableAge(AgeLocale locale) {
+    this.locale = Objects.requireNonNull(locale, "locale");
+}
+```
+
+For private/internal methods where the caller is trusted, precondition checks are optional. Use them when null would cause a confusing failure further downstream.
+
+### Helpful NullPointerExceptions
+
+Java 14+ provides helpful NullPointerException messages by default (JEP 358), showing exactly which expression was null. This makes NPEs in production much easier to diagnose. Ensure your runtime does not disable this feature (`-XX:+ShowCodeDetailsInExceptionMessages` is on by default since Java 15).
+
+---
+
+## 7. Error Handling
 
 ### Checked vs. Unchecked Exceptions
 
 | Category                | When to use                                                     |
 | ----------------------- | --------------------------------------------------------------- |
-| Checked (`Exception`)   | Recoverable conditions the caller can reasonably handle (I/O failures, parse errors from user input) |
+| Checked (`Exception`)   | Recoverable conditions the *immediate* caller can reasonably handle (I/O failures, parse errors from user input) |
 | Unchecked (`RuntimeException`) | Programming errors, precondition violations, unrecoverable states |
 | `Error`                 | Never throw or catch. Reserved for JVM-level issues.            |
 
 Effective Java Item 70: "Use checked exceptions for recoverable conditions and runtime exceptions for programming errors."
+
+A pragmatic note: many modern Java frameworks (Spring, Jakarta EE, Hibernate) and JVM languages (Kotlin, Scala) use unchecked exceptions almost exclusively. If your codebase or framework has standardized on unchecked exceptions, follow that convention. The key insight is that checked exceptions are appropriate when the *immediate* caller is expected to handle the failure -- not when the exception must propagate through many layers. Do not introduce checked exceptions into a codebase that has standardized on unchecked ones.
 
 ### Try-with-Resources
 
@@ -748,7 +812,7 @@ try {
 
 ---
 
-## 7. Streams and Lambdas
+## 8. Streams and Lambdas
 
 ### When to Use Streams
 
@@ -771,8 +835,9 @@ Prefer a traditional loop when:
 
 ### Readability Guidelines
 
-- **Keep pipelines short.** Three to five operations is a good ceiling. Extract complex predicates or mappers into named methods.
+- **Keep each operation simple.** Ideally each step is a single method reference or a short lambda. When a lambda exceeds a single expression, extract it into a named method.
 - **One operation per line.** Break the chain so each `.filter()`, `.map()`, `.collect()` is on its own line.
+- **When a pipeline becomes hard to read as a whole,** break it into intermediate variables with descriptive names.
 - **Prefer method references** when they read naturally: `String::toLowerCase`, `Objects::nonNull`. Use lambdas when a method reference would be less clear.
 
 ```java
@@ -861,7 +926,7 @@ items.stream().filter(valid).toList();
 
 ---
 
-## 8. String Handling
+## 9. String Handling
 
 ### Text Blocks (Java 15+)
 
@@ -883,9 +948,23 @@ String sql = """
         """;
 ```
 
+### String Joining
+
+For delimiter-separated concatenation, prefer `String.join()` or `Collectors.joining()`. These are more readable than manual `StringBuilder` or `StringJoiner` for the common case.
+
+```java
+// Best for simple joining
+String result = String.join(", ", names);
+
+// Best for stream pipelines
+String result = items.stream()
+        .map(Item::name)
+        .collect(Collectors.joining(", "));
+```
+
 ### String Concatenation
 
-For simple expressions, `+` concatenation is fine. The compiler optimizes it.
+For simple single-expression concatenation, `+` is fine. Since Java 9 (JEP 280), the compiler uses `invokedynamic` for string concatenation, which the JVM optimizes well.
 
 ```java
 // Fine for simple cases
@@ -895,20 +974,34 @@ return resolveUnit(years, year, locale, "") + delimiter + resolveUnit(rem, month
 
 ### StringBuilder
 
-Use `StringBuilder` when building a string in a loop or across many conditional branches.
+Use `StringBuilder` when building a string with complex conditional logic that does not fit the join-with-delimiter pattern.
 
 ```java
 var sb = new StringBuilder();
-for (var locale : locales) {
-    if (!sb.isEmpty()) {
-        sb.append(", ");
-    }
-    sb.append(locale.code());
+if (years > 0) {
+    sb.append(formatYears(years));
+}
+if (months > 0) {
+    if (!sb.isEmpty()) sb.append(delimiter);
+    sb.append(formatMonths(months));
 }
 return sb.toString();
 ```
 
 Never use `StringBuffer` (the synchronized version) unless you specifically need thread safety, which is almost never.
+
+Do not use `+` or `+=` for string concatenation inside loops -- each iteration creates a new String object. Use `StringBuilder`, `StringJoiner`, `String.join()`, or `Collectors.joining()`.
+
+```java
+// Bad -- O(n^2) string copying
+String result = "";
+for (var item : items) {
+    result += item.name() + ", ";
+}
+
+// Good
+String result = String.join(", ", items.stream().map(Item::name).toList());
+```
 
 ### String.format and formatted
 
@@ -940,7 +1033,7 @@ if (stageKey == "newborn") { }
 
 ---
 
-## 9. Common Idioms
+## 10. Common Idioms
 
 ### Switch Expressions (Java 14+)
 
@@ -1096,7 +1189,128 @@ public int hashCode() {
 
 ---
 
-## 10. Things to Avoid
+## 11. Documentation
+
+### When Javadoc is Required
+
+- **All public and protected types** (classes, interfaces, enums, records).
+- **All public and protected methods**, except trivial accessors and `@Override` methods whose contract is fully defined by the supertype.
+- **Package-private types and methods** do not require Javadoc, but a brief comment is encouraged for non-obvious behavior.
+
+### Javadoc Format
+
+The first sentence is a summary that appears in index pages and IDE tooltips. It should be a concise, complete sentence ending in a period.
+
+```java
+/**
+ * Formats a person's age into a human-readable string using locale-specific rules.
+ *
+ * <p>The output uses the phrasing that native speakers would naturally use,
+ * such as "6 weeks", "14 months", or "3 1/2 years".
+ *
+ * @param dateOfBirth the person's date of birth in ISO 8601 format (yyyy-MM-dd)
+ * @param asOf the reference date to calculate age against
+ * @return the formatted age string, never null
+ * @throws IllegalArgumentException if dateOfBirth is after asOf
+ */
+public String formatAge(String dateOfBirth, String asOf) { }
+```
+
+### What Not to Document
+
+Do not write Javadoc that restates the method signature with no additional information:
+
+```java
+// Bad -- adds nothing
+/**
+ * Gets the code.
+ * @return the code
+ */
+public String code() { return code; }
+
+// Good -- explains what "code" means in this context
+/**
+ * Returns the BCP 47 language tag for this locale (e.g., "en", "fr", "zh-Hans").
+ */
+public String code() { return code; }
+```
+
+### Tags
+
+Use `@param`, `@return`, and `@throws` for non-obvious behavior. Omit them when the method name and types make the contract self-evident.
+
+---
+
+## 12. Testing Conventions
+
+### Test Class and Method Naming
+
+Test classes end with `Test` and live in the same package as the class under test:
+
+```java
+// Production: sayableage/SayableAge.java
+// Test:       sayableage/SayableAgeTest.java
+```
+
+Test methods should describe the scenario and expected outcome. Use `@DisplayName` for human-readable descriptions in test reports:
+
+```java
+@Test
+@DisplayName("formats newborn age as 'just born' when dates are equal")
+void formatsNewbornWhenDatesEqual() { }
+
+@Test
+@DisplayName("uses weeks for ages between 2 and 12 weeks")
+void usesWeeksForTwoToTwelveWeeks() { }
+```
+
+### Assertions
+
+Use JUnit 5 assertions. For complex assertions, consider AssertJ for its fluent API and descriptive failure messages.
+
+```java
+// JUnit 5
+assertEquals("6 weeks", result);
+assertThrows(IllegalArgumentException.class, () -> formatAge("2026-01-01", "2025-01-01"));
+
+// AssertJ (if adopted)
+assertThat(result).isEqualTo("6 weeks");
+assertThat(locales).hasSize(110).extracting("code").contains("en", "fr", "de");
+```
+
+### Test Organization
+
+Group related assertions with `assertAll` to see all failures at once rather than stopping at the first:
+
+```java
+@Test
+void formatAgeComponentsAreCorrect() {
+    var result = calculateAge("2024-01-15", "2026-03-11");
+    assertAll(
+        () -> assertEquals(25, result.months()),
+        () -> assertEquals(24, result.diffDays())
+    );
+}
+```
+
+Use `@Nested` classes to group related tests:
+
+```java
+class SayableAgeTest {
+    @Nested
+    class WhenNewborn { /* ... */ }
+
+    @Nested
+    class WhenWeeksOld { /* ... */ }
+
+    @Nested
+    class WhenMonthsOld { /* ... */ }
+}
+```
+
+---
+
+## 13. Things to Avoid
 
 ### Raw Types
 
@@ -1195,7 +1409,7 @@ Do not catch `Throwable` or `Exception` at the top level as a general error-hand
 
 ### String Concatenation in Loops
 
-Do not use `+` for string concatenation inside loops. Use `StringBuilder` or `StringJoiner`.
+Do not use `+=` for string concatenation inside loops. Use `String.join()`, `Collectors.joining()`, `StringBuilder`, or `StringJoiner`.
 
 ```java
 // Bad -- O(n^2) string copying
@@ -1212,34 +1426,44 @@ for (var item : items) {
 String result = joiner.toString();
 ```
 
-### Boxing in Tight Loops
+### Boxing in Performance-Sensitive Code
 
 Avoid unnecessary autoboxing in performance-sensitive code. Use primitive specializations (`IntStream`, `LongStream`, `ToIntFunction`, etc.).
 
-```java
-// Bad -- boxes every int
-List<Integer> sums = numbers.stream()
-        .map(n -> n + 1)
-        .collect(Collectors.toList());
+When you need a primitive result (sum, count, array), use primitive streams to avoid boxing entirely. When you need a `List<Integer>`, boxing is unavoidable -- focus optimization effort elsewhere.
 
-// Good -- stays in primitives
-int[] sums = IntStream.of(1, 2, 3)
+```java
+// Good -- stays in primitives when a primitive result is needed
+int sum = numbers.stream()
+        .mapToInt(Integer::intValue)
+        .sum();
+
+// Fine -- boxing is unavoidable when you need List<Integer>
+List<Integer> incremented = numbers.stream()
         .map(n -> n + 1)
-        .toArray();
+        .toList();
 ```
 
 ---
 
-## 11. Tooling
+## 14. Tooling
 
-### google-java-format
+### Formatter
 
-The de facto standard for automated Java formatting. Enforces the Google Java Style Guide deterministically.
+Pick one and enforce it in CI. Do not fight the tool.
 
-- **Repository:** [google/google-java-format](https://github.com/google/google-java-format)
-- **Integration:** Available as a CLI, IntelliJ plugin, Maven/Gradle plugin, and pre-commit hook.
-- **Usage:** `google-java-format --replace src/main/java/**/*.java`
-- **CI check:** `google-java-format --dry-run --set-exit-if-changed`
+| Tool | Indent | Config | Integration |
+| ---- | ------ | ------ | ----------- |
+| [google-java-format](https://github.com/google/google-java-format) | 2 spaces | None (opinionated) | CLI, IntelliJ, Maven/Gradle, pre-commit |
+| [Palantir Java Format](https://github.com/palantir/palantir-java-format) via [Spotless](https://github.com/diffplug/spotless) | 4 spaces | Minimal | Maven/Gradle |
+
+```bash
+# google-java-format: format a file
+google-java-format --replace src/main/java/sayableage/SayableAge.java
+
+# google-java-format: check without modifying
+google-java-format --dry-run --set-exit-if-changed src/**/*.java
+```
 
 ### Checkstyle
 
@@ -1284,7 +1508,7 @@ A source-code analyzer that finds common programming flaws: unused variables, em
 
 A robust Java project should run at minimum:
 
-1. **Formatter** (google-java-format) -- eliminates style debates
+1. **Formatter** (google-java-format or Palantir) -- eliminates style debates
 2. **Linter** (Checkstyle) -- enforces conventions beyond formatting
 3. **Bug finder** (Error Prone or SpotBugs) -- catches real defects
 4. **All in CI** -- fail the build on violations
@@ -1298,7 +1522,10 @@ A robust Java project should run at minimum:
 - [Effective Java, 3rd Edition](https://www.oreilly.com/library/view/effective-java/9780134686097/) (Joshua Bloch) -- essential reading for Java design decisions
 - [OpenJDK Developer's Guide](https://openjdk.org/guide/) -- guidelines for contributing to the JDK itself
 - [OpenJDK LVTI Style Guide](https://openjdk.org/projects/amber/guides/lvti-style-guide) -- official `var` usage guidelines
+- [JSpecify](https://jspecify.dev/) -- the emerging standard for null-safety annotations
 - [dev.java/learn](https://dev.java/learn/) -- Oracle's modern Java tutorials (records, sealed classes, pattern matching, streams, lambdas)
+- [JEP 280: Indify String Concatenation](https://openjdk.org/jeps/280) -- how modern Java optimizes string concatenation
+- [JEP 358: Helpful NullPointerExceptions](https://openjdk.org/jeps/358) -- improved NPE messages since Java 14
 - [JEP 361: Switch Expressions](https://openjdk.org/jeps/361) -- specification for switch expressions
 - [JEP 394: Pattern Matching for instanceof](https://openjdk.org/jeps/394) -- specification for pattern matching
 - [JEP 395: Records](https://openjdk.org/jeps/395) -- specification for records

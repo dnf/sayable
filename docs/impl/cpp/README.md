@@ -1,6 +1,6 @@
 # C++ Style Guide
 
-A comprehensive, opinionated style guide for writing modern C++. Intended as an auditing reference for C++ implementations -- covering naming, formatting, idioms, type safety, error handling, templates, and tooling.
+A comprehensive, opinionated style guide for writing modern C++. Intended as an auditing reference for C++ implementations -- covering naming, formatting, idioms, type safety, error handling, templates, testing, and tooling.
 
 **Target standard:** C++17 minimum, C++20 preferred, C++23 features adopted as compiler support matures.
 
@@ -30,7 +30,8 @@ Rule numbers like `[C.21]` or `[F.16]` refer to the C++ Core Guidelines.
 8. [Templates](#8-templates)
 9. [Standard library usage](#9-standard-library-usage)
 10. [Things to avoid](#10-things-to-avoid)
-11. [Tooling](#11-tooling)
+11. [Testing](#11-testing)
+12. [Tooling](#12-tooling)
 
 ---
 
@@ -44,8 +45,8 @@ Rule numbers like `[C.21]` or `[F.16]` refer to the C++ Core Guidelines.
 | Functions           | `snake_case`     | `format_age`, `parse_date`       |
 | Variables (local)   | `snake_case`     | `diff_days`, `total_months`      |
 | Private members     | `snake_case_`    | `locale_`, `delimiter_`          |
-| Constants           | `kPascalCase`    | `kMaxBufferSize`, `kDefaultPort` |
-| Constexpr values    | `kPascalCase`    | `kMaxAgeMonths`                  |
+| Constants           | `PascalCase`     | `MaxBufferSize`, `DefaultPort`   |
+| Constexpr values    | `PascalCase`     | `MaxAgeMonths`, `Version`        |
 | Namespaces          | `lowercase`      | `sayableage`, `locales`          |
 | Template parameters | `PascalCase`     | `T`, `Container`, `Predicate`    |
 | Enum types          | `PascalCase`     | `PluralCategory`, `Compactness`  |
@@ -57,6 +58,7 @@ Rule numbers like `[C.21]` or `[F.16]` refer to the C++ Core Guidelines.
 
 - **Functions use `snake_case`**, aligning with the standard library (`std::make_unique`, `std::to_string`) and the C++ Core Guidelines.
 - **Private members use a trailing underscore** to distinguish them from local variables without Hungarian notation.
+- **Constants use `PascalCase`** without a prefix, consistent with enum values and type names. The compiler enforces constness via `const`/`constexpr` -- a naming prefix adds no safety. `ALL_CAPS` is reserved for macros.
 - **Enum values use `PascalCase`** (scoped enums) rather than `ALL_CAPS`, which is reserved for macros. Scoped enums (`enum class`) already prevent name collisions.
 - **Macros are the only `ALL_CAPS` names.** If you find yourself writing `ALL_CAPS`, ask whether a `constexpr` variable, `inline` function, or template would work instead.
 
@@ -81,9 +83,11 @@ Single-letter names are acceptable only for:
 
 ## 2. Code formatting
 
+All formatting rules in this section should be enforced via `.clang-format` rather than relying on manual review. See the [clang-format](#clang-format) subsection under Tooling.
+
 ### Indentation and braces
 
-- **4 spaces** per indentation level. No tabs.
+- **4 spaces** per indentation level. No tabs. This is a project convention -- enforce it via `.clang-format` with `IndentWidth: 4`.
 - **Opening brace** on the same line as the control structure or declaration.
 - **Closing brace** on its own line, aligned with the opening statement.
 
@@ -376,12 +380,18 @@ struct Value {
 // Good: std::variant is type-safe
 using Value = std::variant<int, std::string>;
 
-// Visit with overloaded lambdas
+// Visit with overloaded lambdas (requires a user-defined helper)
+// Define this utility once in your project:
+template<class... Ts> struct overloaded : Ts... { using Ts::operator()...; };
+template<class... Ts> overloaded(Ts...) -> overloaded<Ts...>;
+
 std::visit(overloaded{
     [](int i)               { process_int(i); },
     [](const std::string& s){ process_string(s); },
 }, value);
 ```
+
+Note: The `overloaded` helper shown above is not part of the standard library. It is a widely-used pattern that must be defined in your codebase. The deduction guide (second line) is required in C++17; in C++20 and later, CTAD handles it automatically.
 
 ### `std::string_view` for non-owning string references
 
@@ -397,13 +407,27 @@ class Bad {
 };
 ```
 
+### String constants
+
+For compile-time string constants in C++17 and later, prefer `inline constexpr std::string_view` over `constexpr const char*`. It carries the string length, works with the `std::string_view` ecosystem, and `inline` ensures a single definition across translation units (avoiding ODR issues in headers).
+
+```cpp
+// Acceptable but limited: no length, no string_view integration
+constexpr const char* Version = "0.5.0";
+
+// Preferred: carries length, works with string_view APIs, ODR-safe in headers
+inline constexpr std::string_view Version = "0.5.0";
+```
+
 ---
 
 ## 5. Header design
 
-### Include guards vs. `#pragma once`
+### Include guards and `#pragma once`
 
-Use traditional include guards. They are portable, work with every compiler, and avoid edge cases with symlinks or network drives that can confuse `#pragma once`.
+Use `#pragma once` for internal and application headers. It has zero maintenance burden and no risk of name collisions from copy-paste errors. Every major compiler (GCC, Clang, MSVC, ICC) has supported it for over a decade.
+
+For public library headers that must compile on exotic or embedded toolchains, use traditional include guards instead:
 
 ```cpp
 #ifndef SAYABLEAGE_TYPES_HPP
@@ -414,15 +438,21 @@ Use traditional include guards. They are portable, work with every compiler, and
 #endif // SAYABLEAGE_TYPES_HPP
 ```
 
-Guard naming convention: `PROJECT_PATH_FILE_HPP`. Use uppercase with underscores.
+Guard naming convention: `PROJECT_PATH_FILE_HPP`. Use uppercase with underscores. The primary risk of traditional guards is duplicate macro names across files -- always derive the name from the full path.
 
 ### Forward declarations
 
-Prefer including the required header over forward declarations. Forward declarations can hide dependencies and break when the forward-declared type changes (e.g., from a class to an alias). Use them judiciously when:
+Use forward declarations when only a pointer, reference, or function signature is needed. Include the full header when you need the complete type definition (for `sizeof`, member access, inheritance, or value semantics). [SF.10]
 
-- Two headers have a circular dependency.
-- Including a heavy header would significantly slow compilation.
-- The declaration only needs a pointer or reference to the type.
+```cpp
+// Forward declaration is sufficient: only a pointer is needed
+class AgeLocale;
+void format(const AgeLocale& locale);
+
+// Full include is required: need the complete definition
+#include "types.hpp"
+AgeLocale locale = load_locale("en");  // value type, needs complete definition
+```
 
 Never forward-declare types from the `std` namespace (undefined behavior).
 
@@ -592,6 +622,16 @@ Within each access level, declare in this order:
 
 ## 7. Error handling
 
+### Error handling strategy by standard version
+
+The right error handling mechanism depends on which C++ standard you target:
+
+| Standard | For expected absence | For recoverable errors with info | For programming errors |
+|----------|---------------------|----------------------------------|----------------------|
+| C++17    | `std::optional`     | Exceptions, or `std::variant<T, Error>` | Exceptions or assertions |
+| C++20    | `std::optional`     | Exceptions, or `std::variant<T, Error>` | Exceptions or assertions |
+| C++23    | `std::optional`     | `std::expected<T, E>`            | Exceptions or assertions |
+
 ### Exceptions
 
 Exceptions are the standard C++ error-reporting mechanism for truly exceptional conditions that a function cannot handle locally. [E.1]
@@ -632,11 +672,14 @@ std::optional<std::string> format_age(const std::string& date_of_birth,
 
 ### `std::expected` (C++23)
 
-For functions where failure is common and carries information, prefer `std::expected` over exceptions. It makes the error path explicit in the type system.
+When targeting C++23 and later, prefer `std::expected` for functions where failure is common and carries information. It makes the error path explicit in the type system.
+
+For C++17/C++20 codebases, use `std::variant<T, Error>` or a simple result struct to achieve a similar pattern. Alternatively, consider the [`tl::expected`](https://github.com/TartanLlama/expected) polyfill library which provides the same API on C++14 and later.
 
 ```cpp
 enum class ParseError { EmptyInput, InvalidFormat, FutureDate };
 
+// C++23: std::expected
 std::expected<AgeComponents, ParseError> parse_age(
     std::string_view date_of_birth,
     std::string_view as_of);
@@ -653,6 +696,10 @@ if (result) {
 auto formatted = parse_age(dob, as_of)
     .and_then(compute_tier)
     .transform(render_string);
+
+// C++17 alternative: variant-based result type
+using ParseResult = std::variant<AgeComponents, ParseError>;
+ParseResult parse_age(std::string_view dob, std::string_view as_of);
 ```
 
 ### `noexcept`
@@ -749,7 +796,7 @@ Use `constexpr` for functions and variables that can be evaluated at compile tim
 
 ```cpp
 // constexpr variable
-constexpr int kMaxAgeMonths = 6000;
+constexpr int MaxAgeMonths = 6000;
 
 // constexpr function: usable at both compile time and runtime
 constexpr int days_in_month(int year, int month) {
@@ -854,6 +901,24 @@ double mean(std::span<const double> values);
 int sum(std::span<const int> data);
 ```
 
+### `std::format` (C++20)
+
+Prefer `std::format` over `iostream` formatting and `sprintf`. It is type-safe, extensible, and avoids the performance pitfalls of `iostream` manipulators.
+
+```cpp
+// Bad: iostream formatting is verbose and stateful
+std::cout << std::setw(4) << std::setfill('0') << month << "-"
+          << std::setw(2) << std::setfill('0') << day << '\n';
+
+// Good: std::format is concise and stateless
+std::cout << std::format("{:04}-{:02}\n", month, day);
+
+// Building strings without streams
+std::string msg = std::format("{} is {} days old", name, days);
+```
+
+Note: `std::format` requires C++20 and a sufficiently recent standard library (libstdc++ 13+, libc++ 17+, MSVC 19.29+). For C++17 codebases, consider the [{fmt}](https://github.com/fmtlib/fmt) library which `std::format` was based on.
+
 ---
 
 ## 10. Things to avoid
@@ -899,7 +964,7 @@ Macros ignore scope, namespaces, and type safety. Prefer:
 
 | Instead of macro...    | Use...                                    |
 |------------------------|-------------------------------------------|
-| `#define PI 3.14159`   | `constexpr double kPi = 3.14159;`         |
+| `#define PI 3.14159`   | `constexpr double Pi = 3.14159;`          |
 | `#define MAX(a,b) ...` | `std::max(a, b)` or a template function   |
 | `#define SQUARE(x) ...`| `constexpr` or `inline` function          |
 | `#define DEBUG_LOG ...` | `if constexpr` or logging library         |
@@ -974,9 +1039,74 @@ public:
 };
 ```
 
+### Ignoring return values
+
+Use `[[nodiscard]]` on functions whose return value should not be silently discarded. This catches a common class of bugs at compile time.
+
+```cpp
+// Bad: caller can silently ignore the result
+std::optional<std::string> format_age(std::string_view dob);
+
+// Good: compiler warns if result is discarded
+[[nodiscard]] std::optional<std::string> format_age(std::string_view dob);
+
+// Apply to an entire class when all return values matter
+class [[nodiscard]] ParseResult { ... };
+```
+
+Mark functions `[[nodiscard]]` when they:
+- Return `std::optional`, error codes, or status values
+- Create newly allocated objects
+- Perform pure computations with no side effects
+- Return iterators or handles that must be used
+
 ---
 
-## 11. Tooling
+## 11. Testing
+
+### Framework
+
+Use a lightweight, header-only test framework such as [Catch2](https://github.com/catchorg/Catch2), [doctest](https://github.com/doctest/doctest), or [GoogleTest](https://github.com/google/googletest). Hand-rolled test macros are acceptable for projects with a zero-dependency constraint, but document the test infrastructure clearly.
+
+### File organization
+
+- Test files live alongside or mirror the source tree: `tests/test_format_age.cpp` or `src/format_age_test.cpp`.
+- Each test file should be self-contained and compilable as a standalone executable.
+- Use the naming convention `test_<module>.cpp` or `<module>_test.cpp` -- pick one and be consistent.
+
+### Test naming
+
+Name tests descriptively. Each test name should read as a sentence describing the expected behavior:
+
+```cpp
+// Good: describes the behavior
+void test_born_today_returns_newborn() { ... }
+void test_future_date_returns_nullopt() { ... }
+void test_exactly_500_years_is_accepted() { ... }
+
+// Bad: vague or redundant
+void test1() { ... }
+void test_format_age() { ... }  // what about format_age?
+```
+
+### Test ID annotations
+
+When tests derive from a canonical test specification (e.g., `tests.json`), annotate each test with its canonical ID:
+
+```cpp
+ASSERT_EQ("born today", format_age("2025-06-15", "2025-06-15"), "Newborn"); // 2.1
+```
+
+### What to test
+
+- All public API functions
+- Edge cases: empty input, boundary values, maximum values, off-by-one scenarios
+- Error paths: invalid input, missing data, future dates
+- Locale-specific behavior when applicable
+
+---
+
+## 12. Tooling
 
 ### Compiler warnings
 
@@ -1011,6 +1141,35 @@ Additional GCC-specific flags worth enabling:
 - `-Wlogical-op` -- suspicious logical operations
 - `-Wuseless-cast` -- unnecessary casts
 - `-Wmisleading-indentation` -- indentation that suggests incorrect control flow
+
+### clang-format
+
+Use [clang-format](https://clang.llvm.org/docs/ClangFormat.html) to enforce all formatting rules automatically. Run it as a pre-commit hook or CI check. Manual formatting review is a waste of engineering time.
+
+Example `.clang-format` configuration encoding the rules from section 2:
+
+```yaml
+---
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 120
+BreakBeforeBraces: Attach
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AlignAfterOpenBracket: Align
+BinPackParameters: false
+BinPackArguments: false
+SpaceBeforeParens: ControlStatements
+FixNamespaceComments: true
+SortIncludes: CaseInsensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^".*'
+    Priority: 1
+  - Regex: '^<.*'
+    Priority: 2
+```
 
 ### clang-tidy
 
@@ -1047,7 +1206,7 @@ Checks: >
   -readability-identifier-length,
   -bugprone-easily-swappable-parameters
 
-WarningsAsErrors: ''
+WarningsAsErrors: '*'
 
 HeaderFilterRegex: 'include/.*'
 
@@ -1061,6 +1220,8 @@ CheckOptions:
   - key: readability-identifier-naming.PrivateMemberSuffix
     value: '_'
 ```
+
+Note: `WarningsAsErrors: '*'` treats all clang-tidy warnings as errors, consistent with the zero-warning philosophy. Set it to `''` only during initial adoption when incrementally fixing existing violations.
 
 ### cppcheck
 
@@ -1084,12 +1245,16 @@ target_link_options(mylib PRIVATE -fsanitize=address)
 target_compile_options(mylib PRIVATE -fsanitize=undefined)
 target_link_options(mylib PRIVATE -fsanitize=undefined)
 
-# Thread Sanitizer: data races (cannot combine with ASan)
+# Memory Sanitizer: uninitialized memory reads (Clang only, not available on macOS)
+target_compile_options(mylib PRIVATE -fsanitize=memory -fno-omit-frame-pointer)
+target_link_options(mylib PRIVATE -fsanitize=memory)
+
+# Thread Sanitizer: data races
 target_compile_options(mylib PRIVATE -fsanitize=thread)
 target_link_options(mylib PRIVATE -fsanitize=thread)
 ```
 
-Run all three in separate CI jobs. ASan and UBSan can be combined; TSan must run separately.
+Run these in separate CI jobs. ASan and UBSan can be combined in a single build (at the cost of ~2-3x slower execution). TSan and MSan must each run separately -- they conflict with ASan and with each other.
 
 ### Compiler Explorer
 
@@ -1097,10 +1262,10 @@ Use [Compiler Explorer (godbolt.org)](https://godbolt.org/) to verify codegen, c
 
 ### Build system
 
-Use **CMake** (3.14+) as the build system. Key CMake hygiene:
+Use **CMake** (3.21+) as the build system. Key CMake hygiene:
 
 ```cmake
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.21)
 project(mylib VERSION 1.0.0 LANGUAGES CXX)
 
 # Require the C++ standard, no extensions
@@ -1118,18 +1283,21 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 Use this checklist when auditing C++ code:
 
-- [ ] **Naming**: Classes `PascalCase`, functions `snake_case`, constants `kPascalCase`, macros `ALL_CAPS`
-- [ ] **Formatting**: Consistent indentation, braces on same line, namespace closing comments
+- [ ] **Naming**: Classes `PascalCase`, functions `snake_case`, constants `PascalCase`, macros `ALL_CAPS`
+- [ ] **Formatting**: Consistent indentation, braces on same line, namespace closing comments, `.clang-format` present
 - [ ] **RAII**: No manual `new`/`delete`, resources bound to object lifetimes
 - [ ] **Move semantics**: Move operations marked `noexcept`, no `std::move` on return values
 - [ ] **Smart pointers**: `unique_ptr` for ownership, raw pointers only for non-owning references
 - [ ] **Const correctness**: `const` on parameters, locals, and member functions where appropriate
 - [ ] **`auto`**: Used where type is obvious, spelled out where it is not
 - [ ] **Error handling**: `std::optional` for absence, exceptions for errors, `noexcept` where guaranteed
-- [ ] **Headers**: Include guards present, self-contained, includes ordered correctly
+- [ ] **`[[nodiscard]]`**: Applied to functions returning `optional`, error codes, or pure computations
+- [ ] **Headers**: Include guards or `#pragma once` present, self-contained, includes ordered correctly
 - [ ] **Classes**: Rule of zero preferred, `explicit` constructors, `struct` for data / `class` for behavior
 - [ ] **No C-style casts**: Named casts only (`static_cast`, `const_cast`, etc.)
 - [ ] **No macros**: Unless genuinely needed (include guards, platform detection)
 - [ ] **Warnings**: `-Wall -Wextra -Wpedantic -Werror` enabled
-- [ ] **Static analysis**: clang-tidy configured and passing
+- [ ] **Static analysis**: clang-tidy configured with `WarningsAsErrors: '*'` and passing
+- [ ] **Formatting**: clang-format configured and enforced in CI
 - [ ] **Standard library**: Algorithms preferred over raw loops, `string_view` for read-only strings
+- [ ] **Tests**: All canonical test cases implemented with ID annotations

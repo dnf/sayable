@@ -108,7 +108,7 @@ library my_library;
 
 ### Unused Callback Parameters
 
-In Dart 3.7+, name unused parameters `_` (wildcard). For earlier versions, use `__` or `___` to avoid collisions.
+In Dart 3.5+, name unused parameters `_` (wildcard). For earlier versions, use `__` or `___` to avoid collisions.
 
 ```dart
 future.onError((_, _) {
@@ -182,7 +182,7 @@ Linter rule: `curly_braces_in_flow_control_structures`
 
 ### Import Ordering
 
-Organize imports in this order, with blank lines between sections. Sort alphabetically within each section.
+Organize imports in this order, with blank lines between sections. Sort alphabetically within each section. Within a package's `lib/` directory, prefer relative imports over `package:` imports for internal files.
 
 ```dart
 // 1. dart: imports
@@ -192,7 +192,7 @@ import 'dart:math';
 // 2. package: imports
 import 'package:test/test.dart';
 
-// 3. Relative imports
+// 3. Relative imports (preferred within the same package)
 import 'types.dart';
 import 'locales/locales.dart';
 
@@ -200,7 +200,7 @@ import 'locales/locales.dart';
 export 'src/format_age.dart';
 ```
 
-Linter rule: `directives_ordering`
+Linter rules: `directives_ordering`, `prefer_relative_imports`
 
 ---
 
@@ -522,6 +522,25 @@ extension MyFancyList<T> on List<T> {
 
 Extensions do not work on `dynamic` types -- they require a known static type.
 
+### Extension Types (Dart 3.3+)
+
+Extension types provide zero-cost wrappers around an existing type, giving it a different interface without runtime overhead. Unlike extension methods (which add methods to an existing type), extension types create a new static type that the compiler enforces.
+
+```dart
+extension type UserId(int id) {
+  bool get isValid => id > 0;
+}
+
+extension type Email(String value) {
+  bool get isValid => value.contains('@');
+}
+
+// Type-safe: cannot accidentally pass UserId where Email is expected
+void sendEmail(Email to) { ... }
+```
+
+Extension types are erased at runtime -- the underlying representation type is all that exists. Use them for lightweight type safety over primitives without the cost of wrapper classes.
+
 ### Class Modifiers (Dart 3.0+)
 
 Use modifiers to control how your class can be used outside its library:
@@ -535,6 +554,25 @@ Use modifiers to control how your class can be used outside its library:
 | `sealed class` | No | No | No (outside library) |
 | `abstract class` | No | Yes | Yes |
 | `mixin class` | Yes | Yes | Yes (as mixin) |
+
+### Sealed Classes and Exhaustive Switching
+
+The primary purpose of `sealed` classes is to enable exhaustive `switch` expressions. The compiler verifies that every subtype is handled, catching missing cases at compile time.
+
+```dart
+sealed class Shape {}
+class Circle extends Shape { final double radius; Circle(this.radius); }
+class Square extends Shape { final double side; Square(this.side); }
+
+// Compiler guarantees all subtypes are handled -- no default needed
+String describe(Shape shape) => switch (shape) {
+  Circle(radius: var r) => 'Circle with radius $r',
+  Square(side: var s) => 'Square with side $s',
+};
+// Adding a new Shape subclass causes a compile error here until handled.
+```
+
+This is especially valuable for modeling closed type hierarchies where the set of variants is fixed.
 
 ### Class Design Anti-Patterns
 
@@ -550,13 +588,13 @@ abstract class Predicate<E> {
 }
 ```
 
-**Avoid classes with only static members.** Use top-level functions and variables. Libraries serve as namespaces in Dart.
+**Prefer top-level functions for utility code.** Libraries serve as namespaces in Dart, so static-only classes are usually unnecessary. However, static-only classes are acceptable when a namespace improves discoverability in large APIs.
 
 ```dart
-// Good
+// Good -- top-level function
 DateTime mostRecent(List<DateTime> dates) { ... }
 
-// Bad
+// Usually unnecessary
 class DateUtils {
   static DateTime mostRecent(List<DateTime> dates) { ... }
 }
@@ -620,7 +658,7 @@ Build collections declaratively with embedded control flow:
 var nav = [
   'Home',
   'Furniture',
-  if (pro498Member) 'Outlet',
+  if (proMember) 'Outlet',
 ];
 
 var listOfStrings = [
@@ -690,7 +728,7 @@ var ints = dynamicList.cast<int>();
 Dart has two hierarchies for throwable objects:
 
 - **`Exception`**: Conditions that a program can reasonably catch and recover from. Thrown for runtime failures external to the program (network errors, file not found, parse failures).
-- **`Error`**: Programmer mistakes and bugs. `ArgumentError`, `StateError`, `RangeError`, `TypeError`, `StackOverflowError`. These should not be caught -- they indicate bugs that must be fixed in code.
+- **`Error`**: Programmer mistakes and bugs. `ArgumentError`, `StateError`, `RangeError`, `TypeError`, `StackOverflowError`. These indicate bugs that should be fixed in code rather than caught.
 
 ### Throwing
 
@@ -747,7 +785,7 @@ try {
 - **AVOID catches without `on` clauses.** Catch-all handlers hide bugs and swallow critical errors like `StackOverflowError`. Always specify the exception type.
 - **DO NOT discard errors.** Log them, display them, or rethrow them. Silent catches mask bugs.
 - **DO throw `Error` only for programmer mistakes.** For runtime conditions, throw `Exception` subtypes.
-- **DO NOT catch `Error` or its subtypes.** Let them propagate and crash. Fix the bug instead.
+- **AVOID catching `Error` or its subtypes in application code.** They indicate programmer mistakes that should be fixed at the source. Catching `Error` is acceptable in infrastructure code (crash reporters, test runners, isolate supervisors) that logs and rethrows or terminates gracefully.
 
 ### Assert
 
@@ -784,26 +822,22 @@ Future<String> readConfig() {
 }
 ```
 
-### When NOT to Use async
+### When to Omit async
 
-Omit `async` if you are only forwarding a Future without awaiting it. Unnecessary `async` adds overhead.
+Omit `async` only when the function body is a single return of an existing Future with no transformation or error handling. In all other cases, prefer `async`/`await` for consistent error propagation and readability.
 
 ```dart
-// Good -- just forwarding
-Future<int> fetchCount() => http.get(uri).then((r) => int.parse(r.body));
+// OK to omit async -- pure forwarding, no transformation
+Future<Response> fetchData() => _client.get(uri);
 
-// Bad -- async adds no value here
+// Use async -- transformation or error handling involved
 Future<int> fetchCount() async {
   final response = await http.get(uri);
   return int.parse(response.body);
 }
-// (Actually the async version is fine if you want try/catch, logging, etc.)
 ```
 
-Use `async` when:
-- You use `await`
-- You want to throw errors asynchronously
-- You want the return value implicitly wrapped in a `Future`
+The overhead of `async` (one state machine allocation) is negligible in practice. When in doubt, use `async`/`await`.
 
 ### Future<void>
 
@@ -889,16 +923,9 @@ if (value is T) { ... }
 
 ---
 
-## 8. Effective Dart Principles
+## 8. Documentation
 
-### Style
-
-- Format with `dart format`. No exceptions.
-- Use `UpperCamelCase` for types, `lowerCamelCase` for everything else.
-- Order imports: `dart:`, `package:`, relative. Sort alphabetically within sections.
-- Prefer 80-character lines.
-
-### Documentation
+### Doc Comments
 
 - Use `///` for doc comments, not `//` or `/** */`.
 - Start with a single-sentence summary, followed by a blank line.
@@ -921,34 +948,6 @@ String? formatAge(String dateOfBirth, [String? asOf]) { ... }
 - Do not use block comments (`/* */`) for documentation.
 - Put doc comments before metadata annotations.
 
-### Usage
-
-- Use adjacent string literals for concatenation: `'Hello ' 'World'`.
-- Prefer interpolation: `'Hi, $name!'` over `'Hi, ' + name + '!'`.
-- Omit braces in interpolation for simple identifiers: `$name` not `${name}`.
-- Use braces when followed by alphanumerics: `${decade}s`.
-- Use function declarations, not variable assignments, to bind named functions.
-- Use tear-offs instead of wrapping in lambdas.
-
-```dart
-// Good -- tear-off
-charCodes.forEach(print);
-
-// Bad -- unnecessary lambda
-charCodes.forEach((code) => print(code));
-```
-
-### Design
-
-- Use terms consistently across an API.
-- Avoid abbreviations unless the abbreviation is more recognized than the full word.
-- Put the most descriptive noun last: `pageCount` not `countOfPages`.
-- Use imperative verbs for side-effecting methods: `list.add()`, `queue.removeFirst()`.
-- Use nouns or non-imperative verbs when the return value is the primary purpose: `list.elementAt(3)`.
-- Do not start method names with `get` -- use a getter or a more specific verb.
-- Name conversion methods `toX()` for copies, `asX()` for views.
-- Follow `[start, end)` conventions for ranges: inclusive start, exclusive end.
-
 ---
 
 ## 9. Common Idioms
@@ -962,8 +961,11 @@ var paint = Paint()
   ..color = Colors.black
   ..strokeCap = StrokeCap.round
   ..strokeWidth = 5.0;
+```
 
-// Null-shorting cascade
+Null-shorting cascade: `?..` at the beginning of a cascade chain short-circuits all subsequent `..` operations in that chain. If the receiver is null, none of the cascade operations execute.
+
+```dart
 querySelector('#confirm')
   ?..text = 'Confirm'
   ..classes.add('important');
@@ -1002,20 +1004,17 @@ const list = [1, 2, 3];   // Deeply immutable
 // list.add(4);            // Runtime error
 ```
 
-Use `final` for local variables that are not reassigned. Use `const` for values known at compile time.
-
-Prefer `final` for fields and local variables to signal immutability:
+Use `final` for local variables that are not reassigned. Use `const` for values known at compile time. Use `var` only for variables that are reassigned.
 
 ```dart
-// Good
+// Good -- final for non-reassigned locals
 final months = age.months;
 final diffDays = age.diffDays;
 
-// Also acceptable per some team conventions
-var months = age.months;  // If team prefers var everywhere
+// Good -- var when reassignment is needed
+var clampedBirthday = dob.$3;
+if (clampedBirthday > lastDay) clampedBirthday = lastDay;
 ```
-
-Choose one convention (`final` for non-reassigned locals vs `var` everywhere) and apply it consistently across the codebase.
 
 Linter rules: `prefer_final_locals`, `prefer_final_fields`
 
@@ -1111,6 +1110,26 @@ class Box {
 
 Linter rule: `unnecessary_this`
 
+### String Handling
+
+- Use adjacent string literals for concatenation: `'Hello ' 'World'`.
+- Prefer interpolation: `'Hi, $name!'` over `'Hi, ' + name + '!'`.
+- Omit braces in interpolation for simple identifiers: `$name` not `${name}`.
+- Use braces when followed by alphanumerics: `${decade}s`.
+
+### Function Declarations and Tear-offs
+
+- Use function declarations, not variable assignments, to bind named functions.
+- Use tear-offs instead of wrapping in lambdas.
+
+```dart
+// Good -- tear-off
+charCodes.forEach(print);
+
+// Bad -- unnecessary lambda
+charCodes.forEach((code) => print(code));
+```
+
 ### Pattern Matching and Records (Dart 3.0+)
 
 Dart 3.0 introduced records (lightweight tuples) and pattern matching.
@@ -1134,6 +1153,17 @@ String describe(Shape shape) => switch (shape) {
   Square(side: var s) => 'Square with side $s',
 };
 ```
+
+### Design Conventions
+
+- Use terms consistently across an API.
+- Avoid abbreviations unless the abbreviation is more recognized than the full word.
+- Put the most descriptive noun last: `pageCount` not `countOfPages`.
+- Use imperative verbs for side-effecting methods: `list.add()`, `queue.removeFirst()`.
+- Use nouns or non-imperative verbs when the return value is the primary purpose: `list.elementAt(3)`.
+- Do not start method names with `get` -- use a getter or a more specific verb.
+- Name conversion methods `toX()` for copies, `asX()` for views.
+- Follow `[start, end)` conventions for ranges: inclusive start, exclusive end.
 
 ---
 
@@ -1163,19 +1193,31 @@ Do not qualify member access with `this.` unless resolving a name conflict. Dart
 
 Do not use `print()` in production code. Use a proper logging framework. `print()` is acceptable in tests, scripts, and examples.
 
-### Storing Computed Values
+### Storing Computed Values in Mutable Classes
 
-AVOID caching computed values in fields unless profiling proves it necessary. Stale caches cause subtle bugs. Compute on demand.
+AVOID caching computed values in fields of mutable classes. Mutation can cause the cached value to become stale, leading to subtle bugs. Compute on demand instead.
 
 ```dart
-// Good
+// Good -- compute on demand in a mutable class
 class Circle {
-  final double radius;
+  double radius;
   Circle(this.radius);
   double get area => pi * radius * radius;
 }
 
-// Bad -- redundant cache
+// Bad -- stale cache risk because radius is mutable
+class Circle {
+  double radius;
+  double area;
+  Circle(this.radius) : area = pi * radius * radius;
+  // area becomes wrong if radius changes
+}
+```
+
+Pre-computing derived values is safe in immutable (all-`final`) classes, since the inputs can never change:
+
+```dart
+// Safe -- all fields are final, no stale-cache risk
 class Circle {
   final double radius;
   final double area;
@@ -1257,10 +1299,10 @@ dart format --set-exit-if-changed .  # Fail in CI if unformatted
 
 ### analysis_options.yaml
 
-Place at the package root. A complete example:
+Place at the package root. A minimal configuration that extends the recommended rule set:
 
 ```yaml
-# Include the recommended rule set (or use package:lints/core.yaml for minimum)
+# Include the recommended rules -- most standard lints are already enabled
 include: package:lints/recommended.yaml
 
 analyzer:
@@ -1275,34 +1317,14 @@ analyzer:
     # Promote specific diagnostics
     missing_return: error
     dead_code: info
-    # Demote if needed (with justification)
-    # todo: ignore
 
 linter:
   rules:
-    # Enable additional rules
+    # Additional rules beyond the recommended set
     - always_declare_return_types
-    - annotate_overrides
-    - avoid_empty_else
-    - avoid_init_to_null
-    - avoid_return_types_on_setters
-    - camel_case_types
-    - constant_identifier_names
-    - curly_braces_in_flow_control_structures
-    - empty_constructor_bodies
-    - library_names
-    - library_prefixes
-    - non_constant_identifier_names
-    - prefer_const_constructors
-    - prefer_final_fields
+    - avoid_dynamic_calls
     - prefer_final_locals
-    - prefer_is_empty
-    - prefer_is_not_empty
-    - slash_for_doc_comments
-    - type_init_formals
-    - unnecessary_const
-    - unnecessary_new
-    - unnecessary_this
+    - prefer_final_fields
 
     # Disable rules from the included set (with justification)
     # some_rule: false
@@ -1310,6 +1332,8 @@ linter:
 formatter:
   page_width: 80
 ```
+
+When not extending a rule set, the full standalone list of rules is available in the [linter rules catalog](https://dart.dev/tools/linter-rules). Only list rules individually when you are not using an `include` -- otherwise you create duplicates that add maintenance burden without benefit.
 
 ### Severity Levels
 
@@ -1363,6 +1387,7 @@ These rules are particularly important when auditing Dart code:
 | `prefer_final_fields` | Mark fields final when not reassigned |
 | `prefer_final_locals` | Mark locals final when not reassigned |
 | `prefer_is_empty` | Use `.isEmpty` not `.length == 0` |
+| `prefer_relative_imports` | Use relative imports within the same package |
 | `slash_for_doc_comments` | Use `///` not `/** */` |
 | `unnecessary_const` | Remove redundant const keywords |
 | `unnecessary_new` | Remove all `new` keywords |

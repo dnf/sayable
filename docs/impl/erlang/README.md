@@ -45,7 +45,7 @@ Use conventional prefixes to signal return types:
 | Prefix | Returns | Example |
 |---|---|---|
 | `is_` | `true \| false` | `is_leap_year(Y)` |
-| `check_` | `{ok, ...} \| {error, ...}` | `check_permissions(User)` |
+| `validate_` | `{ok, ...} \| {error, ...}` | `validate_permissions(User)` |
 | `get_` | Value or crashes | `get_locale(Code)` |
 | `find_` | `{ok, Value} \| error` | `find_user(Id)` |
 
@@ -131,13 +131,16 @@ Use **4 spaces** for indentation. Never use tabs. This is the most common conven
 
 ### Line Length
 
-Keep lines to a maximum of **80 characters**. Erlang automatically concatenates adjacent string literals, which helps break long format strings:
+Keep lines to a maximum of **100 characters**. Erlang's qualified module calls, record access syntax, and prefixed module names are verbose enough that 80 columns leads to excessive line breaks that hurt readability. 100 characters is a practical limit for modern displays and editors.
+
+When long strings are unavoidable, break them with explicit concatenation:
 
 ```erlang
-io:format("Name: ~s, Age: ~w, Phone: ~w~n"
-          "Dictionary: ~w.~n",
-          [Name, Age, Phone, Dict]).
+Message = "Name: " ++ Name ++ ", Age: " ++ integer_to_list(Age)
+    ++ ", Phone: " ++ Phone.
 ```
+
+Note: unlike C, Erlang does **not** automatically concatenate adjacent string literals. You must use `++` or iolists to join strings.
 
 ### Function Clauses
 
@@ -204,7 +207,7 @@ format_tier(_Locale, _Day, _Week, _Month, _Year, _Half, _Delim, JustBorn,
 
 ### Nesting Depth
 
-Limit code to a maximum of **two levels** of indentation. Deeply nested `case`/`if`/`receive` is a code smell. Extract nested logic into helper functions:
+Limit code to a maximum of **three levels** of nesting. Deeply nested `case`/`if`/`receive` is a code smell. Extract nested logic into helper functions:
 
 ```erlang
 %% Bad: deeply nested
@@ -316,22 +319,41 @@ Stages = Locale#locale.stages.
 {locale, _Code, _Plural, Day, _Week, _Month, _Year, _Half, _Delim, _JustBorn, Stages, _, _} = Locale.
 ```
 
-### Avoid `if` Expressions
+### `if` vs. `case`
 
-The `if` expression in Erlang is unusual: it uses guard expressions only, with no pattern matching. Prefer `case` for conditional logic. Reserve `if` for simple guard-based numeric checks:
+The `if` expression evaluates guard expressions only, with no pattern matching. Use `case` when you need to match on values. Use `if` when you have pure guard conditions and nothing to pattern-match against:
 
 ```erlang
-%% Acceptable: simple guard-based branching
-Months = if RD < ClampedBirthday -> Months0 - 1;
-              true -> Months0
-          end.
+%% Good use of if: pure guard conditions
+Months = if
+    RD < ClampedBirthday -> Months0 - 1;
+    true -> Months0
+end.
 
-%% Better when matching is involved: use case
+%% Use case when matching is involved
 case Days > 0 of
     true  -> WStr ++ Delim ++ resolve_unit(Days, Day, Locale, "");
     false -> WStr
 end.
 ```
+
+### Maybe Expressions (OTP 25+)
+
+The `maybe` expression (stabilized in OTP 27) provides a clean way to chain operations that may fail, eliminating the deeply-nested `case` pattern:
+
+```erlang
+%% Clean: sequential operations with early exit on failure
+maybe
+    {ok, Valid} ?= validate(Data),
+    {ok, Result} ?= transform(Valid),
+    {ok, _} ?= store(Result),
+    {ok, done}
+end.
+```
+
+The `?=` operator matches the right-hand side against the pattern on the left. If the match fails, the non-matching value is returned immediately from the `maybe` block. This replaces manual helper-function extraction for linear pipelines of fallible operations.
+
+Note: requires OTP 25+ and the feature must be enabled. In OTP 27 it is enabled by default.
 
 ---
 
@@ -391,7 +413,6 @@ Define custom types for domain concepts:
 -type gender() :: male | female.
 -type unit_forms() :: {simple, string()} | {pluralized, [{plural_category(), string()}]}.
 -type stage_label() :: {neutral, string()} | {gendered, string(), string()}.
--type optional(T) :: nothing | {just, T}.
 ```
 
 Use `-callback` for behaviour specifications instead of the older `behaviour_info/1`:
@@ -430,7 +451,7 @@ If a record is used by only one module, define it in that module, not in a heade
 
 ### Module Size
 
-Keep modules under **400 lines** of source code. If a module exceeds this, split it into smaller modules with clear responsibilities.
+Aim to keep modules under **600 lines** of source code. This is a guideline, not a hard rule. The real measure is cohesion: if every function in the module serves the same responsibility, a larger module is preferable to artificially splitting related logic across multiple modules. If a module grows large and has multiple distinct responsibilities, split it.
 
 ### Function Size
 
@@ -463,6 +484,22 @@ lists:keyfind(Cat, 1, Forms).
 | Maps | Dynamic key-value data; keys unknown at compile time; data crossing module boundaries |
 | Binaries | Raw byte data; strings (prefer binaries over lists for large text) |
 | Proplists | Simple configuration; option lists passed to functions |
+
+### Strings: Lists vs. Binaries
+
+Erlang has two string representations. Pick one convention per project for internal APIs and be consistent.
+
+**List strings** (`"hello"` = `[104,101,108,108,111]`): The traditional Erlang representation. Easy to pattern match and manipulate with list operations. Each character consumes one word (8 bytes on 64-bit), so they are expensive for large text.
+
+**Binary strings** (`<<"hello">>` = `<<104,101,108,108,111>>`): More memory-efficient for large text. Used by most modern libraries (Cowboy, jsx, etc.). Pattern matching uses bit syntax.
+
+**Iolists** (nested lists of integers, binaries, and other iolists): Most I/O functions accept iolists, so you often do not need to convert between representations. Prefer building iolists over repeated string concatenation.
+
+```erlang
+%% Iolist: no conversion needed, efficient
+IoList = [<<"Name: ">>, Name, <<", Age: ">>, integer_to_list(Age)].
+file:write(Fd, IoList).
+```
 
 ### Records
 
@@ -527,6 +564,36 @@ Config2 = Config#{timeout := 10000}.
 
 %% Pattern match
 #{timeout := T, retries := R} = Config.
+```
+
+### Optional Values
+
+The standard Erlang idiom for optional values is `undefined | Value`:
+
+```erlang
+-record(config, {
+    timeout  :: pos_integer() | undefined,
+    retries  :: non_neg_integer() | undefined
+}).
+
+%% Pattern match to extract
+case Config#config.timeout of
+    undefined -> DefaultTimeout;
+    Val       -> Val
+end.
+```
+
+This aligns with OTP conventions and the default value of uninitialized record fields.
+
+**Project convention:** This codebase uses `nothing | {just, Value}` for optional values to distinguish "not set" from potentially valid falsy values. This departs from standard Erlang idiom but is consistent across the project:
+
+```erlang
+-type optional(T) :: nothing | {just, T}.
+
+case Config#config.timeout of
+    nothing     -> DefaultTimeout;
+    {just, Val} -> Val
+end.
 ```
 
 ### Lists vs. Iolists
@@ -678,7 +745,8 @@ handle_cast({set_value, Key, Value}, State) ->
 handle_cast(_Msg, State) ->
     {noreply, State}.
 
-handle_info(_Info, State) ->
+handle_info(Info, State) ->
+    logger:debug("Unexpected message: ~p", [Info]),
     {noreply, State}.
 
 terminate(_Reason, _State) ->
@@ -690,7 +758,7 @@ Key principles:
 - **Always wrap message passing in API functions.** Callers should never send raw messages to a gen_server.
 - **Name the state record** `state` or `#mod_state{}`.
 - **Define `-type state() :: #state{}`** for Dialyzer.
-- **Handle unknown messages** in `handle_call`, `handle_cast`, and `handle_info` to prevent mailbox accumulation.
+- **Handle unknown messages** in `handle_call`, `handle_cast`, and `handle_info` to prevent mailbox accumulation. Log unexpected messages in `handle_info` at `debug` level to aid troubleshooting without creating noise in production.
 - **Use `start_link`** (not `start`) when the process will be supervised.
 
 ### Supervisors
@@ -875,25 +943,6 @@ The foundation of Erlang APIs. Use atoms as the first element to identify the tu
 {signal, What, From, To}
 ```
 
-### Option/Maybe Pattern
-
-Use `nothing | {just, Value}` (or similar) for optional values in records:
-
-```erlang
--type optional(T) :: nothing | {just, T}.
-
--record(config, {
-    timeout  :: optional(pos_integer()),
-    retries  :: optional(non_neg_integer())
-}).
-
-%% Pattern match to extract
-case Config#config.timeout of
-    nothing     -> DefaultTimeout;
-    {just, Val} -> Val
-end.
-```
-
 ### Guard Expressions
 
 Use guards for lightweight conditional dispatch:
@@ -997,10 +1046,10 @@ lookup_unit_form(Cat, Forms) ->
 
 ### Process Dictionary
 
-Never use `put/2`, `get/1`, or `erase/1`. The process dictionary makes functions impure: the same arguments produce different results depending on hidden state. It breaks referential transparency, makes testing difficult, and makes code unpredictable.
+Avoid direct use of `put/2`, `get/1`, and `erase/1` in application code. The process dictionary makes functions impure: the same arguments produce different results depending on hidden state. It breaks referential transparency, makes testing difficult, and makes code unpredictable.
 
 ```erlang
-%% NEVER do this
+%% Don't do this in application code
 put(device, Handle),
 tokenize(Input).  % Secretly reads from process dictionary
 
@@ -1008,24 +1057,28 @@ tokenize(Input).  % Secretly reads from process dictionary
 tokenize(Handle, Input).
 ```
 
+Note: some OTP modules use the process dictionary internally (e.g., `rand` for seed state, `logger` for process metadata). This is acceptable -- the prohibition is on application-level code storing its own state in the process dictionary.
+
 ### Catch-All Clauses That Hide Bugs
 
 A catch-all clause should log or crash, never silently succeed. Swallowing unknown patterns hides bugs:
 
 ```erlang
 %% Bad: silently ignores new message types
-handle_info(_Info, State) ->
+handle_cast(Msg, State) ->
     {noreply, State}.
 
 %% Good: logs unexpected messages
-handle_info(Info, State) ->
-    logger:warning("Unexpected message: ~p", [Info]),
+handle_cast(Msg, State) ->
+    logger:warning("Unexpected cast: ~p", [Msg]),
     {noreply, State}.
 ```
 
+For `handle_info`, where unexpected messages are more common in practice (late replies, monitor notifications), logging at `debug` level is appropriate to avoid noise in production logs.
+
 ### Deep Nesting
 
-Never nest `case`/`if`/`receive` more than two levels deep. Extract into helper functions:
+Never nest `case`/`if`/`receive` more than three levels deep. Extract into helper functions or use `maybe` expressions (OTP 25+):
 
 ```erlang
 %% Bad: three levels of nesting
@@ -1103,7 +1156,7 @@ Zero warnings should be the standard. If you must suppress a warning, document w
 
 ### Dialyzer
 
-[Dialyzer](https://www.erlang.org/doc/apps/dialyzer/dialyzer_chapter) is a static analysis tool that finds type inconsistencies, unreachable code, and unnecessary tests. It uses "success typing" -- it only reports issues it can **prove** will cause runtime failures, so it has no false positives.
+[Dialyzer](https://www.erlang.org/doc/apps/dialyzer/dialyzer_chapter) is a static analysis tool that finds type inconsistencies, unreachable code, and unnecessary tests. It uses "success typing," which gives it a very low false-positive rate -- when Dialyzer reports an issue, it is almost always a genuine problem.
 
 **Setup:**
 
@@ -1124,7 +1177,7 @@ rebar3 dialyzer
 - Define custom `-type` declarations for domain concepts.
 - Use `-opaque` types to hide internal representation from other modules.
 - Export types with `-export_type([my_type/0]).`
-- When Dialyzer complains about your spec, the spec is almost always wrong -- not Dialyzer.
+- When Dialyzer complains about your spec, the spec is almost always wrong -- not Dialyzer. Start by re-examining the spec before assuming a tool bug.
 - Annotate record fields with types.
 
 ### Elvis
@@ -1137,14 +1190,13 @@ rebar3 dialyzer
         #{dirs => ["src"],
           filter => "*.erl",
           rules => [
-              {elvis_style, line_length, #{limit => 80}},
+              {elvis_style, line_length, #{limit => 100}},
               {elvis_style, no_tabs},
               {elvis_style, macro_names},
               {elvis_style, operator_spaces, #{rules => [{right, ","}, {right, "++"}, {left, "++"}]}},
               {elvis_style, nesting_level, #{level => 3}},
               {elvis_style, function_naming_convention, #{regex => "^[a-z]([a-z0-9]*_?)*$"}},
-              {elvis_style, variable_naming_convention, #{regex => "^_?[A-Z][a-zA-Z0-9]*$"}},
-              {elvis_style, no_if_expression}
+              {elvis_style, variable_naming_convention, #{regex => "^_?[A-Z][a-zA-Z0-9]*$"}}
           ]}
     ]}
 ]}].
@@ -1171,7 +1223,7 @@ smoke_test() ->
 
 Best practices:
 
-- **One assertion per test** (or per list element in a test generator). Each test should verify one behavior.
+- **Each test should verify one behavior.** Multiple assertions are fine when they collectively verify a single logical behavior or share necessary setup.
 - **Name tests descriptively.** Use `_test_()` generators with descriptive function names.
 - **Use `?_assertEqual`** (with underscore prefix) inside test generators for lazy evaluation.
 - **Use `?assertEqual`** (without underscore) inside simple `_test` functions.
@@ -1224,10 +1276,10 @@ For auditing an Erlang implementation, verify:
 - [ ] Header files have include guards (`-ifndef`/`-define`/`-endif`)
 - [ ] No `-import` directives; all calls are fully qualified
 - [ ] Pattern matching in function clauses preferred over `case`
-- [ ] No `if` expressions where `case` is more appropriate
-- [ ] Nesting depth at most two levels
+- [ ] `if` used only for pure guard conditions, `case` used when matching values
+- [ ] Nesting depth at most three levels
 - [ ] Functions under 20 lines
-- [ ] No process dictionary usage (`put`/`get`/`erase`)
+- [ ] No direct process dictionary usage (`put`/`get`/`erase`) in application code
 - [ ] Tagged tuples for return values (`{ok, V}`, `{error, R}`)
 - [ ] Tail-recursive server loops
 - [ ] Lists built by prepending, reversed at end
@@ -1236,7 +1288,7 @@ For auditing an Erlang implementation, verify:
 - [ ] Unknown messages in `handle_info` are logged, not silently dropped
 - [ ] `warnings_as_errors` in compiler options
 - [ ] Dialyzer runs clean
-- [ ] Tests use EUnit with one assertion per test
+- [ ] Tests verify one behavior each, with descriptive names
 - [ ] No dynamic `apply` calls without justification
 - [ ] No boolean parameters; use descriptive atoms or separate functions
 - [ ] Comments explain "why", not "what"

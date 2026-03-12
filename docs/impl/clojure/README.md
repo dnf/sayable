@@ -130,7 +130,7 @@ Do not use `SCREAMING_CASE` or `+plus-signs+`.
 (def +max-size+ 10)     ; Common Lisp convention
 ```
 
-### Types, protocols, records: `CapitalCase`
+### Types, protocols, records: `CamelCase`
 
 ```clojure
 ;; good
@@ -143,11 +143,15 @@ Do not use `SCREAMING_CASE` or `+plus-signs+`.
 (defrecord http-request ...)
 ```
 
-Keep acronyms uppercase: `HTTPClient`, `XMLParser`, `JSONCodec`.
+Treat acronyms as words: `HttpClient`, `XmlParser`, `JsonCodec`. All-caps
+acronyms create ambiguous word boundaries (is `HTTPSServer` "HTTPS-Server" or
+"HTTP-SServer"?).
 
 ### Private functions and vars
 
-Mark non-public API explicitly.
+Mark non-public API explicitly. Note that `defn-` is advisory -- it can be
+bypassed via `#'ns/fn`. It serves as documentation of intent, not enforcement.
+To test private functions from test namespaces, use `(#'sut/helper-fn arg)`.
 
 ```clojure
 ;; good
@@ -248,18 +252,20 @@ Align function arguments that span multiple lines beneath the first argument.
   suffix)
 ```
 
-Align `let` bindings and map key-value pairs vertically.
+For `let` bindings, standard single-space separation is the default. Column
+alignment is acceptable when it improves readability in static data definitions,
+but note that `cljfmt` does not produce column alignment by default.
 
 ```clojure
-;; good
-(let [name   (:name person)
-      age    (:age person)
+;; good -- standard spacing (matches cljfmt output)
+(let [name (:name person)
+      age (:age person)
       locale (:locale person)]
   (format-greeting name age locale))
 
-;; acceptable -- no extra alignment
-(let [name (:name person)
-      age (:age person)
+;; acceptable -- column-aligned for readability
+(let [name   (:name person)
+      age    (:age person)
       locale (:locale person)]
   (format-greeting name age locale))
 ```
@@ -345,12 +351,14 @@ sequence pipelines.
 ```
 
 Use `as->` when the threaded value must appear in varying argument positions.
+If you find yourself reaching for `as->`, consider whether named `let` bindings
+would be clearer.
 
 ```clojure
 (as-> [:foo :bar] v
   (map name v)
   (first v)
-  (.substring v 1))
+  (subs v 1))
 ```
 
 Use `some->` and `some->>` to short-circuit on `nil`.
@@ -434,17 +442,20 @@ Prefer `map`, `filter`, `reduce`, `keep`, `some`, `every?`, `group-by`,
 
 ### Use `comp` and `partial` for point-free composition
 
-```clojure
-;; good
-(def positive-even? (every-pred pos? even?))
-(def stringify-keys (partial map name))
+`comp` applies functions right-to-left: the rightmost function runs first.
 
+```clojure
+;; good -- reads right-to-left: lower-case first, then trim
 (def process (comp str/trim str/lower-case))
 (process "  HELLO  ")  ;=> "hello"
 
 ;; acceptable -- explicit fn is fine when clearer
 (defn process [s]
   (-> s str/lower-case str/trim))
+
+;; good
+(def positive-even? (every-pred pos? even?))
+(def stringify-keys (partial map name))
 ```
 
 ### Prefer `reduce` with an explicit accumulator
@@ -508,7 +519,7 @@ functions.
 ### Use keywords as functions for map lookup
 
 ```clojure
-;; good -- keyword as function
+;; good -- keyword as function (composes well with map, filter, etc.)
 (:name person)
 (:age person 0)  ; with default
 
@@ -516,8 +527,11 @@ functions.
 (get person :name)
 (get-in nested [:address :city])
 
-;; bad -- verbose
-(person :name)  ; works but unconventional for maps
+;; less common -- map as function
+;; valid and useful when you want nil maps to fail fast rather than silently
+;; propagating nil, but (:keyword map) is preferred in most contexts because
+;; keywords compose as lookup functions (e.g., (map :name people))
+(person :name)
 ```
 
 ### Maps vs. records
@@ -579,16 +593,17 @@ code forms.
 ### Transducers for performance-critical pipelines
 
 When chaining multiple sequence transformations, transducers eliminate
-intermediate collection allocation.
+intermediate lazy sequence wrapper allocation and process elements in a single
+pass.
 
 ```clojure
-;; lazy sequences -- creates intermediate collections
+;; lazy sequences -- allocates intermediate lazy seq wrappers per step
 (->> data
      (filter valid?)
      (map transform)
      (take 10))
 
-;; transducers -- single pass, no intermediate collections
+;; transducers -- single pass, no intermediate wrappers
 (into []
       (comp (filter valid?)
             (map transform)
@@ -603,8 +618,13 @@ intermediate collection allocation.
   data)
 ```
 
+Note: lazy sequences do not materialize full intermediate collections -- each
+step wraps the previous sequence and computes elements on demand. The transducer
+advantage is reduced per-element allocation overhead and a single traversal pass,
+which matters most for large collections and performance-critical paths.
+
 When to use transducers:
-- Processing large collections where intermediate allocations matter
+- Processing large collections where per-element allocation overhead matters
 - Building reusable transformation pipelines independent of input source
 - Working with core.async channels
 
@@ -612,6 +632,34 @@ When lazy sequences are fine:
 - Small collections
 - When you genuinely need laziness (infinite sequences, early termination)
 - Simple one-off transformations
+
+### Be aware of lazy sequence chunking
+
+Lazy sequences are chunked by default (32 elements at a time). This means
+`(first (map f coll))` may evaluate `f` on up to 32 elements, not just one.
+When side effects or expensive computation make this problematic, use
+transducers or `sequence` with a transducer.
+
+```clojure
+;; surprising -- f runs on 32 elements, not 1
+(first (map side-effecting-fn! large-coll))
+
+;; predictable -- f runs on exactly 1 element
+(first (sequence (map side-effecting-fn!) large-coll))
+```
+
+### Data validation with spec or schema libraries
+
+For validating complex data shapes (locale maps, configuration, API boundaries),
+consider `clojure.spec.alpha` or `malli`:
+
+- **`clojure.spec.alpha`** -- built-in, good for validation, conforming, and
+  generative testing. Best for documenting the shape of data flowing through your
+  system.
+- **`malli`** -- schema-as-data, better error messages, more flexible. Preferred
+  when schemas need to be stored, transmitted, or composed programmatically.
+- **`:pre`/`:post` conditions** -- sufficient for simple type/range checks at
+  function boundaries. Not a substitute for structured schema validation.
 
 ---
 
@@ -666,17 +714,17 @@ risk.
 
 Follow community conventions for core libraries:
 
-| Namespace              | Alias |
-| ---------------------- | ----- |
-| `clojure.string`       | `str` |
-| `clojure.set`          | `set` |
-| `clojure.walk`         | `walk`|
-| `clojure.zip`          | `zip` |
-| `clojure.java.io`      | `io`  |
-| `clojure.java.shell`   | `sh`  |
-| `clojure.pprint`       | `pp`  |
-| `clojure.spec.alpha`   | `s`   |
-| `clojure.edn`          | `edn` |
+| Namespace              | Alias    |
+| ---------------------- | -------- |
+| `clojure.string`       | `str`    |
+| `clojure.set`          | `set`    |
+| `clojure.walk`         | `walk`   |
+| `clojure.zip`          | `zip`    |
+| `clojure.java.io`      | `io`     |
+| `clojure.java.shell`   | `sh`     |
+| `clojure.pprint`       | `pprint` |
+| `clojure.spec.alpha`   | `s`      |
+| `clojure.edn`          | `edn`    |
 
 For project-internal namespaces, remove redundant leading segments:
 
@@ -704,14 +752,16 @@ Group classes by package.
 
 ### Ordering within `ns`
 
-The conventional order is: docstring, `:require`, `:import`. Sort entries
-alphabetically within each clause.
+The conventional order is: docstring, `:require`, `:import`. Within `:require`,
+group namespaces: `clojure.*` and `clojure.java.*` first, then third-party
+libraries, then project namespaces. Sort alphabetically within each group.
 
 ```clojure
 (ns sayableage.formatter
   "Formats human ages into natural language."
   (:require
     [clojure.string :as str]
+
     [sayableage.locale :as locale]
     [sayableage.types :as types])
   (:import
@@ -770,10 +820,13 @@ Reserve `ex-info` for when you need to attach data.
 
 ### Use `with-open` for resources
 
-Guarantees cleanup of anything implementing `java.io.Closeable`.
+Guarantees cleanup of anything implementing `java.io.Closeable`. The `doall`
+call below is critical: without it, `line-seq` returns a lazy sequence that
+holds a reference to the reader. After `with-open` closes the reader, any
+attempt to realize remaining elements would throw an `IOException`.
 
 ```clojure
-;; good
+;; good -- doall forces full realization inside the with-open scope
 (with-open [rdr (io/reader "data.csv")]
   (doall (line-seq rdr)))
 
@@ -1070,7 +1123,9 @@ Use `let` to name intermediate computations. Each binding should add clarity.
   :else        (format-years locale days))
 ```
 
-Always include an `:else` clause (or document why it is intentionally omitted).
+Include an `:else` clause when the function should always return a meaningful
+value. When `nil` is the correct result for unmatched cases, `:else` is
+unnecessary -- Clojure's nil-punning makes this a well-defined behavior.
 
 ### `condp` for repeated predicate application
 
@@ -1159,8 +1214,8 @@ when you need both branches.
 ;; good
 (str quantity half delimiter unit)
 
-;; good for complex formatting
-(format "%d%s%s%s" quantity half delimiter unit)
+;; good for complex formatting with padding or precision
+(format "%04d-%02d-%02d" year month day)
 
 ;; bad -- Java StringBuilder
 (-> (StringBuilder.)
@@ -1305,12 +1360,17 @@ or introduce new syntax.
 
 ### Avoid `count` for emptiness checks
 
+`count` is O(1) for Clojure's persistent vectors, maps, sets, and lists, but
+O(n) for lazy sequences -- and worse, it forces full realization of the lazy
+sequence (which may be infinite). Use `seq` for a uniform, idiomatic emptiness
+check that works correctly across all collection types.
+
 ```clojure
-;; bad -- traverses the entire collection
+;; bad -- forces realization of lazy sequences; non-idiomatic
 (if (> (count coll) 0) ...)
 (if (= (count coll) 0) ...)
 
-;; good -- short-circuits immediately
+;; good -- short-circuits immediately, works with lazy seqs
 (if (seq coll) ...)
 (if (empty? coll) ...)  ; acceptable, though (seq ...) is preferred
 ```
