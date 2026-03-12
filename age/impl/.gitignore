@@ -85,6 +85,10 @@ lisp/*.fasl
 # Lua
 lua/luarocks/
 
+# Nim
+nim/nimcache/
+nim/tests/nimcache/
+
 # OCaml
 ocaml/_build/
 ocaml/_opam/

@@ -41,25 +41,25 @@ Sayable is a family of zero-dependency formatting libraries. Each library tackle
 </tr>
 <tr>
   <td><strong>Languages</strong></td>
-  <td>33</td>
-  <td>33</td>
-  <td>33</td>
-  <td>33</td>
+  <td>44</td>
+  <td>44</td>
+  <td>44</td>
+  <td>44</td>
 </tr>
 <tr>
   <td><strong>Locales</strong></td>
-  <td>159</td>
-  <td>159</td>
-  <td>159</td>
-  <td>159</td>
+  <td>168</td>
+  <td>168</td>
+  <td>168</td>
+  <td>168</td>
 </tr>
 </table>
 
 ### Language support
 
-All 33 languages have identical implementations across all 4 libraries:
+All 44 languages have identical implementations across all 4 libraries:
 
-Ada, C, C#, C++, Clojure, COBOL, Crystal, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Java, Kotlin, Lua, Nim, OCaml, Perl, PHP, Python, R, Ruby, Rust, Scala, Swift, TypeScript, VB.NET, Zig
+Ada, C, C#, C++, Clojure, COBOL, Common Lisp, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Fortran, Gleam, Go, Groovy, Haskell, Janet, Java, Julia, Kotlin, Lua, Nim, OCaml, Pascal, Perl, PHP, Prolog, Python, R, Racket, Raku, Ruby, Rust, Scala, Swift, Tcl, TypeScript, V, VB.NET, Wren, Zig
 
 See the [full compatibility matrix](Compatibility.md).
 

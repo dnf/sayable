@@ -13,6 +13,7 @@ _DISPLAY_NAMES: dict[str, str] = {
     "cpp": "C++",
     "csharp": "C#",
     "fsharp": "F#",
+    "lisp": "Common Lisp",
     "ocaml": "OCaml",
     "php": "PHP",
     "typescript": "TypeScript",

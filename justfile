@@ -154,8 +154,12 @@ test *target:
             elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
                 just build pascal
                 cd age/impl/pascal && ./build/test_format_age
+            elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
+                cd age/impl/crystal && crystal spec
             elif [ "$_target" = "d" ]; then
                 cd age/impl/d && ldc2 -unittest -main -I=source source/sayableage/locale.d source/sayableage/format_age.d source/sayableage/locales.d source/sayableage/test_format_age.d -of=test_runner && ./test_runner
+            elif [ "$_target" = "r" ]; then
+                cd age/impl/r && Rscript tests/testthat.R
             elif [ "$_target" = "racket" ] || [ "$_target" = "rkt" ]; then
                 cd age/impl/racket && raco test test/
             elif [ "$_target" = "prolog" ] || [ "$_target" = "swi" ]; then
@@ -172,6 +176,10 @@ test *target:
                 cd age/impl/wren && wren_cli test_format_age.wren
             elif [ "$_target" = "janet" ] || [ "$_target" = "jt" ]; then
                 cd age/impl/janet && janet test_format_age.janet
+            elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
+                cd age/impl/nim && nimble test -y
+            elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
+                cd age/impl/vbnet && dotnet test
             elif [ "$_target" = "codegen" ]; then
                 cd age && {{python}} -m unittest codegen.test_locale_groups -v
             else
@@ -300,10 +308,16 @@ build *target:
                 cd age/impl/zig && zig build
             elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
                 cd age/impl/pascal && mkdir -p build && fpc -FEbuild -FUbuild -Fulocales -o"build/test_format_age" test_format_age.pas
+            elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
+                cd age/impl/crystal && shards build
             elif [ "$_target" = "d" ]; then
                 cd age/impl/d && ldc2 -I=source source/sayableage/locale.d source/sayableage/format_age.d source/sayableage/locales.d -of=sayableage.o -c
             elif [ "$_target" = "v" ]; then
                 cd age/impl/v && v .
+            elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
+                cd age/impl/nim && nim c --noMain --path:src src/sayable_age/formatter.nim
+            elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
+                cd age/impl/vbnet && dotnet build
             else
                 echo "No build step for: $_target"
             fi
@@ -566,6 +580,14 @@ lint *target:
                 echo "Ada uses -gnatwe (warnings-as-errors) in build (no separate linter)"
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 echo "Zig uses warnings-as-errors in build (no separate linter)"
+            elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
+                echo "Nim uses warnings-as-errors in build (no separate linter)"
+            elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
+                cd age/impl/crystal && crystal tool format --check src/ spec/
+            elif [ "$_target" = "r" ]; then
+                echo "R uses stop() on warnings (no separate linter)"
+            elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
+                echo "VB.NET uses TreatWarningsAsErrors in build (no separate linter)"
             else
                 echo "Unknown target: $_target (try 'just lint help')" >&2
                 exit 1
@@ -698,7 +720,14 @@ clean *target:
         rm -rf age/impl/v/v
     elif [ "$_target" = "lisp" ] || [ "$_target" = "cl" ]; then
         rm -f age/impl/lisp/*.fasl
-    elif [ "$_target" = "go" ] || [ "$_target" = "julia" ] || [ "$_target" = "jl" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ] || [ "$_target" = "tcl" ] || [ "$_target" = "wren" ] || [ "$_target" = "janet" ] || [ "$_target" = "jt" ]; then
+    elif [ "$_target" = "crystal" ] || [ "$_target" = "cr" ]; then
+        rm -rf age/impl/crystal/lib age/impl/crystal/bin age/impl/crystal/.shards
+    elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
+        rm -rf age/impl/nim/nimcache age/impl/nim/tests/nimcache age/impl/nim/src/nimcache
+        find age/impl/nim -type d -name nimcache -exec rm -rf {} + 2>/dev/null || true
+    elif [ "$_target" = "vbnet" ] || [ "$_target" = "vb" ]; then
+        rm -rf age/impl/vbnet/SayableAge/bin age/impl/vbnet/SayableAge/obj age/impl/vbnet/SayableAge.Tests/bin age/impl/vbnet/SayableAge.Tests/obj
+    elif [ "$_target" = "go" ] || [ "$_target" = "julia" ] || [ "$_target" = "jl" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ] || [ "$_target" = "tcl" ] || [ "$_target" = "wren" ] || [ "$_target" = "janet" ] || [ "$_target" = "jt" ] || [ "$_target" = "r" ]; then
         echo "No build artifacts for: $_target"
     else
         echo "Unknown target: $_target (try 'just clean help')" >&2

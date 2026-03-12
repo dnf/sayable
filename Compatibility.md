@@ -54,6 +54,13 @@ Which languages are available for each Sayable library.
   <td><a href="time/impl/cobol/">✅</a></td>
 </tr>
 <tr>
+  <td>Common Lisp</td>
+  <td><a href="age/impl/lisp/">✅</a></td>
+  <td><a href="date/impl/lisp/">✅</a></td>
+  <td><a href="duration/impl/lisp/">✅</a></td>
+  <td><a href="time/impl/lisp/">✅</a></td>
+</tr>
+<tr>
   <td>Crystal</td>
   <td><a href="age/impl/crystal/">✅</a></td>
   <td><a href="date/impl/crystal/">✅</a></td>
@@ -63,9 +70,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>D</td>
   <td><a href="age/impl/d/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/d/">✅</a></td>
+  <td><a href="duration/impl/d/">✅</a></td>
+  <td><a href="time/impl/d/">✅</a></td>
 </tr>
 <tr>
   <td>Dart</td>
@@ -140,9 +147,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Janet</td>
   <td><a href="age/impl/janet/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/janet/">✅</a></td>
+  <td><a href="duration/impl/janet/">✅</a></td>
+  <td><a href="time/impl/janet/">✅</a></td>
 </tr>
 <tr>
   <td>Java</td>
@@ -154,9 +161,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Julia</td>
   <td><a href="age/impl/julia/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/julia/">✅</a></td>
+  <td><a href="duration/impl/julia/">✅</a></td>
+  <td><a href="time/impl/julia/">✅</a></td>
 </tr>
 <tr>
   <td>Kotlin</td>
@@ -164,13 +171,6 @@ Which languages are available for each Sayable library.
   <td><a href="date/impl/kotlin/">✅</a></td>
   <td><a href="duration/impl/kotlin/">✅</a></td>
   <td><a href="time/impl/kotlin/">✅</a></td>
-</tr>
-<tr>
-  <td>Lisp</td>
-  <td><a href="age/impl/lisp/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
 </tr>
 <tr>
   <td>Lua</td>
@@ -196,9 +196,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Pascal</td>
   <td><a href="age/impl/pascal/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/pascal/">✅</a></td>
+  <td><a href="duration/impl/pascal/">✅</a></td>
+  <td><a href="time/impl/pascal/">✅</a></td>
 </tr>
 <tr>
   <td>Perl</td>
@@ -217,9 +217,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Prolog</td>
   <td><a href="age/impl/prolog/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/prolog/">✅</a></td>
+  <td><a href="duration/impl/prolog/">✅</a></td>
+  <td><a href="time/impl/prolog/">✅</a></td>
 </tr>
 <tr>
   <td>Python</td>
@@ -238,16 +238,16 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Racket</td>
   <td><a href="age/impl/racket/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/racket/">✅</a></td>
+  <td><a href="duration/impl/racket/">✅</a></td>
+  <td><a href="time/impl/racket/">✅</a></td>
 </tr>
 <tr>
   <td>Raku</td>
   <td><a href="age/impl/raku/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/raku/">✅</a></td>
+  <td><a href="duration/impl/raku/">✅</a></td>
+  <td><a href="time/impl/raku/">✅</a></td>
 </tr>
 <tr>
   <td>Ruby</td>
@@ -280,9 +280,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Tcl</td>
   <td><a href="age/impl/tcl/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/tcl/">✅</a></td>
+  <td><a href="duration/impl/tcl/">✅</a></td>
+  <td><a href="time/impl/tcl/">✅</a></td>
 </tr>
 <tr>
   <td>TypeScript</td>
@@ -294,9 +294,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>V</td>
   <td><a href="age/impl/v/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/v/">✅</a></td>
+  <td><a href="duration/impl/v/">✅</a></td>
+  <td><a href="time/impl/v/">✅</a></td>
 </tr>
 <tr>
   <td>VB.NET</td>
@@ -308,9 +308,9 @@ Which languages are available for each Sayable library.
 <tr>
   <td>Wren</td>
   <td><a href="age/impl/wren/">✅</a></td>
-  <td>❌</td>
-  <td>❌</td>
-  <td>❌</td>
+  <td><a href="date/impl/wren/">✅</a></td>
+  <td><a href="duration/impl/wren/">✅</a></td>
+  <td><a href="time/impl/wren/">✅</a></td>
 </tr>
 <tr>
   <td>Zig</td>

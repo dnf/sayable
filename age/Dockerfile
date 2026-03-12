@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     lua5.4 \
     luarocks \
     make \
+    nim \
     opam \
     openjdk-17-jdk-headless \
     php-cli \
@@ -43,6 +44,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     php-xml \
     python3 \
     python3-venv \
+    r-base \
     racket \
     rakudo \
     rebar3 \
@@ -56,6 +58,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Clojure CLI
 RUN curl -fsSL https://download.clojure.org/install/linux-install.sh | bash
+
+# Crystal
+RUN curl -fsSL https://crystal-lang.org/install.sh | bash
 
 # Dart SDK
 RUN ARCH="$(dpkg --print-architecture)" && \
@@ -102,6 +107,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # uv (Python package manager)
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 ENV PATH="/root/.local/bin:${PATH}"
+
+# R testing framework (testthat)
+RUN Rscript -e 'install.packages("testthat", repos = "https://cloud.r-project.org")'
 
 # Rust stable via rustup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
