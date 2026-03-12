@@ -1,0 +1,9 @@
+{
+    "name": "sayableage",
+    "description": "Human-friendly age formatting — how parents actually talk about little ones",
+    "version": "0.5.0",
+    "authors": ["Don Neufeld"],
+    "license": "MIT",
+    "sourcePaths": ["source"],
+    "importPaths": ["source"]
+}

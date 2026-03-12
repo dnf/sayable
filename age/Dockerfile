@@ -22,15 +22,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     elixir \
     erlang-dev \
     erlang-tools \
+    fpc \
+    gcc \
     gfortran \
     git \
     gnat \
     gnucobol \
     gnupg \
     gprbuild \
+    julia \
+    ldc \
     liblua5.4-dev \
     lua5.4 \
     luarocks \
+    make \
     opam \
     openjdk-17-jdk-headless \
     php-cli \
@@ -38,9 +43,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     php-xml \
     python3 \
     python3-venv \
+    racket \
+    rakudo \
     rebar3 \
     rlwrap \
     ruby \
+    swi-prolog \
     unzip \
     && rm -rf /var/lib/apt/lists/*
 
@@ -113,6 +121,11 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     else \
       echo "Skipping Elm: no arm64 Linux binary available"; \
     fi
+
+# V
+RUN git clone --depth 1 https://github.com/vlang/v.git /opt/v && \
+    cd /opt/v && make && \
+    ln -s /opt/v/v /usr/local/bin/v
 
 # Zig
 RUN ARCH="$(dpkg --print-architecture)" && \

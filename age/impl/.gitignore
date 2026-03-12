@@ -22,6 +22,10 @@ clojure/.cpcache/
 # COBOL
 cobol/build/
 
+# D
+d/*.o
+d/test_runner
+
 # Dart
 dart/.dart_tool/
 dart/.packages
@@ -65,6 +69,9 @@ haskell/dist-newstyle/
 java/build/
 java/.gradle/
 
+# Julia
+julia/Manifest.toml
+
 # Kotlin
 kotlin/build/
 kotlin/.gradle/
@@ -76,12 +83,24 @@ lua/luarocks/
 ocaml/_build/
 ocaml/_opam/
 
+# Pascal
+pascal/build/
+
 # PHP
 php/vendor/
 php/composer.lock
 php/.phpunit.cache/
 php/.php-cs-fixer.cache
 php/.phpstan.cache/
+
+# Prolog
+prolog/*.qlf
+
+# Racket
+racket/compiled/
+
+# Raku
+raku/.precomp/
 
 # Ruby
 ruby/*.gem
@@ -106,6 +125,9 @@ scala/.gradle/
 # Swift
 swift/.build/
 swift/Package.resolved
+
+# V
+v/sayableage
 
 # VB.NET
 vbnet/SayableAge/bin/

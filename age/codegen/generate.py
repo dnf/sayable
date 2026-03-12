@@ -189,6 +189,24 @@ def _clean_r(selected: set[str], all_codes: set[str], check: bool, diffs: list[s
         _remove_or_check_stale(output_path(code, ROOT), check, diffs)
 
 
+def _clean_d(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.d.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_raku(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.raku.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
+def _clean_v(selected: set[str], all_codes: set[str], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.v.emitter import output_path
+    for code in sorted(all_codes - selected):
+        _remove_or_check_stale(output_path(code, ROOT), check, diffs)
+
+
 _PER_FILE_CLEANERS = {
     "crystal": _clean_crystal,
     "typescript": _clean_typescript,
@@ -209,6 +227,9 @@ _PER_FILE_CLEANERS = {
     "gleam": _clean_gleam,
     "nim": _clean_nim,
     "r": _clean_r,
+    "d": _clean_d,
+    "raku": _clean_raku,
+    "v": _clean_v,
 }
 
 
@@ -603,6 +624,89 @@ def generate_r(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_julia(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.julia.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_d(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.d.emitter import barrel_path, emit_barrel
+
+    # Single-file strategy: all locales in one file (D can't compile 168 separate modules)
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_prolog(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.prolog.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_raku(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.raku.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_v(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.v.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_racket(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.racket.emitter import barrel_path, emit_barrel, emit_locale, output_path
+
+    for loc in locales:
+        path = output_path(loc["code"], ROOT)
+        content = emit_locale(loc)
+        _write_or_check(path, content, check, diffs)
+
+    path = barrel_path(ROOT)
+    content = emit_barrel(locales)
+    _write_or_check(path, content, check, diffs)
+
+
+def generate_pascal(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.pascal.emitter import emit_all, output_path
+
+    # Single-file strategy: all locales in one unit
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 _GENERATORS = {
     "ada": generate_ada,
     "typescript": generate_typescript,
@@ -635,8 +739,15 @@ _GENERATORS = {
     "gleam": generate_gleam,
     "groovy": generate_groovy,
     "nim": generate_nim,
+    "pascal": generate_pascal,
+    "prolog": generate_prolog,
     "r": generate_r,
+    "racket": generate_racket,
     "vbnet": generate_vbnet,
+    "julia": generate_julia,
+    "d": generate_d,
+    "raku": generate_raku,
+    "v": generate_v,
 }
 
 

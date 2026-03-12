@@ -1,0 +1,17 @@
+{
+    "name": "SayableAge",
+    "description": "Human-friendly age formatting — formats ages the way parents actually talk",
+    "version": "0.5.0",
+    "auth": "github:dsifry",
+    "license": "MIT",
+    "provides": {
+        "SayableAge": "lib/SayableAge.rakumod",
+        "SayableAge::Locale": "lib/SayableAge/Locale.rakumod",
+        "SayableAge::Formatter": "lib/SayableAge/Formatter.rakumod",
+        "SayableAge::Locales::Registry": "lib/SayableAge/Locales/Registry.rakumod"
+    },
+    "depends": [],
+    "test-depends": [
+        "Test"
+    ]
+}

@@ -149,6 +149,21 @@ test *target:
                 cd age/impl/ada && gprbuild -P sayableage.gpr -XBUILD_MODE=test $_largs && ./build/test_format_age
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 cd age/impl/zig && zig build test
+            elif [ "$_target" = "julia" ] || [ "$_target" = "jl" ]; then
+                cd age/impl/julia && julia --project -e 'using Pkg; Pkg.test()'
+            elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
+                just build pascal
+                cd age/impl/pascal && ./build/test_format_age
+            elif [ "$_target" = "d" ]; then
+                cd age/impl/d && ldc2 -unittest -main -I=source source/sayableage/locale.d source/sayableage/format_age.d source/sayableage/locales.d source/sayableage/test_format_age.d -of=test_runner && ./test_runner
+            elif [ "$_target" = "racket" ] || [ "$_target" = "rkt" ]; then
+                cd age/impl/racket && raco test test/
+            elif [ "$_target" = "prolog" ] || [ "$_target" = "swi" ]; then
+                cd age/impl/prolog && swipl -g run_tests -t halt test_format_age.pl
+            elif [ "$_target" = "raku" ] || [ "$_target" = "rk" ]; then
+                cd age/impl/raku && prove6 -Ilib t/
+            elif [ "$_target" = "v" ]; then
+                cd age/impl/v && v test .
             elif [ "$_target" = "codegen" ]; then
                 cd age && {{python}} -m unittest codegen.test_locale_groups -v
             else
@@ -275,6 +290,12 @@ build *target:
                 cd age/impl/scala && ./gradlew build
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 cd age/impl/zig && zig build
+            elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
+                cd age/impl/pascal && mkdir -p build && fpc -FEbuild -FUbuild -Fulocales -o"build/test_format_age" test_format_age.pas
+            elif [ "$_target" = "d" ]; then
+                cd age/impl/d && ldc2 -I=source source/sayableage/locale.d source/sayableage/format_age.d source/sayableage/locales.d -of=sayableage.o -c
+            elif [ "$_target" = "v" ]; then
+                cd age/impl/v && v .
             else
                 echo "No build step for: $_target"
             fi
@@ -655,7 +676,19 @@ clean *target:
         rm -rf age/impl/dart/.dart_tool
     elif [ "$_target" = "codegen" ]; then
         find codegen -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
-    elif [ "$_target" = "go" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ]; then
+    elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
+        rm -rf age/impl/pascal/build age/impl/pascal/*.o age/impl/pascal/*.ppu
+    elif [ "$_target" = "d" ]; then
+        rm -rf age/impl/d/.dub age/impl/d/*.o age/impl/d/test_runner
+    elif [ "$_target" = "racket" ] || [ "$_target" = "rkt" ]; then
+        find age/impl/racket -type d -name compiled -exec rm -rf {} + 2>/dev/null || true
+    elif [ "$_target" = "prolog" ] || [ "$_target" = "swi" ]; then
+        rm -f age/impl/prolog/*.qlf
+    elif [ "$_target" = "raku" ] || [ "$_target" = "rk" ]; then
+        rm -rf age/impl/raku/.precomp
+    elif [ "$_target" = "v" ]; then
+        rm -rf age/impl/v/v
+    elif [ "$_target" = "go" ] || [ "$_target" = "julia" ] || [ "$_target" = "jl" ] || [ "$_target" = "lua" ] || [ "$_target" = "lu" ] || [ "$_target" = "ruby" ] || [ "$_target" = "rb" ] || [ "$_target" = "perl" ] || [ "$_target" = "pl" ] || [ "$_target" = "php" ]; then
         echo "No build artifacts for: $_target"
     else
         echo "Unknown target: $_target (try 'just clean help')" >&2
