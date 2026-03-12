@@ -1,71 +1,87 @@
 # Ada
-ada/build/
+impl/ada/build/
 
 # C
-c/build/
+impl/c/build/
 
 # C++
-cpp/build/
+impl/cpp/build/
 
 # C#
-csharp/bin/
-csharp/obj/
+impl/csharp/bin/
+impl/csharp/obj/
 
 # Clojure
-clojure/.cpcache/
+impl/clojure/.cpcache/
 
 # COBOL
-cobol/build/
+impl/cobol/build/
 
 # Crystal
-crystal/sayable-crystal
+impl/crystal/sayable-crystal
 
 # Dart
-dart/.dart_tool/
-dart/pubspec.lock
+impl/dart/.dart_tool/
+impl/dart/pubspec.lock
 
 # Elixir
-elixir/_build/
+impl/elixir/_build/
 
 # Elm
-elm/build/
-elm/elm-stuff/
+impl/elm/build/
+impl/elm/elm-stuff/
 
 # Erlang
-erlang/_build/
+impl/erlang/_build/
 
 # F#
-fsharp/bin/
-fsharp/obj/
+impl/fsharp/bin/
+impl/fsharp/obj/
 
 # Fortran
-fortran/build/
+impl/fortran/build/
 
 # Gleam
-gleam/manifest.toml
+impl/gleam/build/
+impl/gleam/manifest.toml
 
 # Go
-go/sayable
+impl/go/sayable
+
+# Groovy
+impl/groovy/build/
 
 # Haskell
-haskell/dist-newstyle/
+impl/haskell/dist-newstyle/
+
+# Java
+impl/java/build/
+
+# Kotlin
+impl/kotlin/build/
 
 # Nim
-nim/sayable-nim
+impl/nim/sayable-nim
 
 # OCaml
-ocaml/_build/
+impl/ocaml/_build/
+impl/ocaml/bin/
 
 # Rust
-rust/target/
+impl/rust/target/
+
+# Scala
+impl/scala/build/
 
 # Swift
-swift/.build/
-swift/.deps/
+impl/swift/.build/
+impl/swift/.deps/
 
 # VB.NET
-vbnet/bin/
-vbnet/obj/
+impl/vbnet/bin/
+impl/vbnet/obj/
 
 # Zig
-zig/.zig-cache/
+impl/zig/.zig-cache/
+impl/zig/build/
+impl/zig/zig-out/

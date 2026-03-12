@@ -107,6 +107,10 @@ scala/.gradle/
 swift/.build/
 swift/Package.resolved
 
+# VB.NET
+vbnet/SayableAge/bin/
+vbnet/SayableAge/obj/
+
 # Zig
 zig/zig-out/
 zig/.zig-cache/

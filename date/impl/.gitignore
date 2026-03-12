@@ -110,6 +110,10 @@ swift/Package.resolved
 # TypeScript
 typescript/node_modules/
 
+# VB.NET
+vbnet/*/bin/
+vbnet/*/obj/
+
 # Zig
 zig/.zig-cache/
 zig/zig-out/
