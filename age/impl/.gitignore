@@ -127,6 +127,7 @@ racket/compiled/
 
 # Raku
 raku/.precomp/
+raku/lib/.precomp/
 
 # Ruby
 ruby/*.gem
