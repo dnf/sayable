@@ -107,6 +107,13 @@ typescript/package-lock.json
 vbnet/bin/
 vbnet/obj/
 
+# V
+v/age_locales/
+v/build/
+v/date_locales/
+v/duration_locales/
+v/time_locales/
+
 # Zig
 zig/.zig-cache/
 zig/build/

@@ -3,12 +3,16 @@
 //
 // V's module system requires all files in a directory to share the same module
 // name. Since the four Sayable components each have their own `locales` module,
-// the CLI embeds the formatting logic directly rather than importing from
-// component directories. This is the standard approach for V CLI tools that
-// need to combine multiple same-named modules.
+// build.sh copies each component's locales into a uniquely-named module
+// directory (age_locales, date_locales, duration_locales, time_locales) before
+// compilation.
 module main
 
 import os
+import age_locales
+import date_locales
+import duration_locales
+import time_locales
 
 const cli_version = '0.5.0'
 
@@ -166,14 +170,6 @@ fn parse_options(args []string) ([]string, CliOptions) {
 	return positionals, opts
 }
 
-fn handle_result(result ?string) {
-	val := result or {
-		null_result()
-		return
-	}
-	println(val)
-}
-
 fn main() {
 	args := os.args[1..]
 	if args.len == 0 {
@@ -213,34 +209,14 @@ fn main() {
 	}
 }
 
-// The CLI delegates to the individual component libraries via their V test
-// binaries. In a production deployment, this would link against all four
-// component modules. However, since V requires unique module directory names
-// and all four components use `module locales`, direct linking is not possible
-// without renaming modules. Instead, we provide the CLI argument parsing and
-// note that actual formatting requires the component libraries.
-//
-// For the test harness to work, each command function calls the appropriate
-// component runner binary located at the component's impl/v/ directory.
+// --- Age commands ---
 
-fn run_component(component string, args []string) ?string {
-	script_dir := os.dir(os.real_path(os.args[0]))
-	root := os.real_path(os.join_path(script_dir, '..', '..', '..'))
-	mut cmd_args := []string{}
-	cmd_args << args
-	// Build the component runner path
-	runner := os.join_path(root, component, 'impl', 'v', 'runner')
-	if !os.exists(runner) {
-		return none
+fn age_compactness(s string) age_locales.Compactness {
+	return match s {
+		'short' { .short }
+		'compact' { .compact }
+		else { .normal }
 	}
-	r := os.execute('${runner} ${cmd_args.join(" ")}')
-	if r.exit_code == 0 {
-		output := r.output.trim_space()
-		if output.len > 0 {
-			return output
-		}
-	}
-	return none
 }
 
 fn cmd_age(positionals []string, opts CliOptions) {
@@ -251,10 +227,17 @@ fn cmd_age(positionals []string, opts CliOptions) {
 		null_result()
 		return
 	}
-	dob := positionals[0]
+	locale := age_locales.get_locale(opts.locale) or {
+		usage_error("unknown locale '${opts.locale}'")
+		return
+	}
 	as_of := if opts.as_of.len > 0 { opts.as_of } else { today_str() }
-	result := run_component('age', ['age', dob, as_of, opts.locale, opts.compactness])
-	handle_result(result)
+	sa := age_locales.new_sayable_age(&locale, age_compactness(opts.compactness))
+	result := sa.format_age(positionals[0], as_of) or {
+		null_result()
+		return
+	}
+	println(result)
 }
 
 fn cmd_stage(positionals []string, opts CliOptions) {
@@ -265,11 +248,27 @@ fn cmd_stage(positionals []string, opts CliOptions) {
 		null_result()
 		return
 	}
-	dob := positionals[0]
+	locale := age_locales.get_locale(opts.locale) or {
+		usage_error("unknown locale '${opts.locale}'")
+		return
+	}
 	as_of := if opts.as_of.len > 0 { opts.as_of } else { today_str() }
-	result := run_component('age', ['stage', dob, as_of, opts.locale, opts.compactness,
-		opts.gender])
-	handle_result(result)
+	sa := age_locales.new_sayable_age(&locale, age_compactness(opts.compactness))
+	result := sa.format_stage(positionals[0], as_of, opts.gender) or {
+		null_result()
+		return
+	}
+	println(result)
+}
+
+// --- Date commands ---
+
+fn date_compactness(s string) date_locales.Compactness {
+	return match s {
+		'short' { .short }
+		'compact' { .compact }
+		else { .normal }
+	}
 }
 
 fn cmd_date(positionals []string, opts CliOptions) {
@@ -280,10 +279,24 @@ fn cmd_date(positionals []string, opts CliOptions) {
 		null_result()
 		return
 	}
-	date_val := positionals[0]
-	fn_name := if opts.with_year { 'date_with_year' } else { 'date' }
-	result := run_component('date', [fn_name, date_val, opts.locale, opts.compactness])
-	handle_result(result)
+	locale := date_locales.get_date_locale(opts.locale) or {
+		usage_error("unknown locale '${opts.locale}'")
+		return
+	}
+	sd := date_locales.new_sayable_date(&locale, date_compactness(opts.compactness))
+	if opts.with_year {
+		result := sd.format_date_with_year(positionals[0]) or {
+			null_result()
+			return
+		}
+		println(result)
+	} else {
+		result := sd.format_date(positionals[0]) or {
+			null_result()
+			return
+		}
+		println(result)
+	}
 }
 
 fn cmd_relative(positionals []string, opts CliOptions) {
@@ -297,10 +310,26 @@ fn cmd_relative(positionals []string, opts CliOptions) {
 		null_result()
 		return
 	}
-	date_val := positionals[0]
-	result := run_component('date', ['relative', date_val, opts.as_of, opts.locale,
-		opts.compactness])
-	handle_result(result)
+	locale := date_locales.get_date_locale(opts.locale) or {
+		usage_error("unknown locale '${opts.locale}'")
+		return
+	}
+	sd := date_locales.new_sayable_date(&locale, date_compactness(opts.compactness))
+	result := sd.format_relative(positionals[0], opts.as_of) or {
+		null_result()
+		return
+	}
+	println(result)
+}
+
+// --- Time commands ---
+
+fn time_compactness(s string) time_locales.Compactness {
+	return match s {
+		'short' { .short }
+		'compact' { .compact }
+		else { .normal }
+	}
 }
 
 fn cmd_time(positionals []string, opts CliOptions) {
@@ -311,9 +340,26 @@ fn cmd_time(positionals []string, opts CliOptions) {
 		null_result()
 		return
 	}
-	time_val := positionals[0]
-	result := run_component('time', ['time', time_val, opts.locale, opts.compactness])
-	handle_result(result)
+	locale := time_locales.get_time_locale(opts.locale) or {
+		usage_error("unknown locale '${opts.locale}'")
+		return
+	}
+	st := time_locales.new_sayable_time(&locale, time_compactness(opts.compactness))
+	result := st.format_time(positionals[0]) or {
+		null_result()
+		return
+	}
+	println(result)
+}
+
+// --- Duration commands ---
+
+fn duration_compactness(s string) duration_locales.Compactness {
+	return match s {
+		'short' { .short }
+		'compact' { .compact }
+		else { .normal }
+	}
 }
 
 fn cmd_duration(positionals []string, opts CliOptions) {
@@ -324,18 +370,28 @@ fn cmd_duration(positionals []string, opts CliOptions) {
 		null_result()
 		return
 	}
+	locale := duration_locales.get_duration_locale(opts.locale) or {
+		usage_error("unknown locale '${opts.locale}'")
+		return
+	}
+	sd := duration_locales.new_sayable_duration(&locale, duration_compactness(opts.compactness))
 	val := positionals[0]
 	if is_integer(val) {
-		result := run_component('duration', ['duration_secs', val, opts.locale, opts.compactness])
-		handle_result(result)
+		secs := val.int()
+		result := sd.format_duration(secs) or {
+			null_result()
+			return
+		}
+		println(result)
 	} else {
 		if positionals.len < 2 {
 			usage_error("'duration' with timestamps requires start and end arguments")
 		}
-		end_val := positionals[1]
-		result := run_component('duration', ['duration_iso', val, end_val, opts.locale,
-			opts.compactness])
-		handle_result(result)
+		result := sd.format_duration_iso(val, positionals[1]) or {
+			null_result()
+			return
+		}
+		println(result)
 	}
 }
 
@@ -350,9 +406,16 @@ fn cmd_since(positionals []string, opts CliOptions) {
 		null_result()
 		return
 	}
-	start := positionals[0]
-	result := run_component('duration', ['since', start, opts.as_of, opts.locale, opts.compactness])
-	handle_result(result)
+	locale := duration_locales.get_duration_locale(opts.locale) or {
+		usage_error("unknown locale '${opts.locale}'")
+		return
+	}
+	sd := duration_locales.new_sayable_duration(&locale, duration_compactness(opts.compactness))
+	result := sd.format_since(positionals[0], opts.as_of) or {
+		null_result()
+		return
+	}
+	println(result)
 }
 
 fn cmd_until(positionals []string, opts CliOptions) {
@@ -366,10 +429,19 @@ fn cmd_until(positionals []string, opts CliOptions) {
 		null_result()
 		return
 	}
-	target := positionals[0]
-	result := run_component('duration', ['until', target, opts.as_of, opts.locale, opts.compactness])
-	handle_result(result)
+	locale := duration_locales.get_duration_locale(opts.locale) or {
+		usage_error("unknown locale '${opts.locale}'")
+		return
+	}
+	sd := duration_locales.new_sayable_duration(&locale, duration_compactness(opts.compactness))
+	result := sd.format_until(positionals[0], opts.as_of) or {
+		null_result()
+		return
+	}
+	println(result)
 }
+
+// --- Locales command ---
 
 fn cmd_locales() {
 	codes := ['af', 'ak', 'am', 'ar', 'ay', 'az', 'bci', 'be', 'bem', 'bg', 'bi', 'bm',
