@@ -45,7 +45,7 @@ test *target:
         exit 0
     fi
     if [ -z "$_target" ]; then
-        _tools="cli codegen"
+        _tools="codegen"
         args=("check")
         for target in $_ALL_LANGS; do
             [ -z "$target" ] && continue
@@ -937,7 +937,7 @@ retest *target:
         exit 0
     fi
     if [ -z "$_target" ]; then
-        _tools="cli codegen"
+        _tools="codegen"
         args=("check")
         for target in $_ALL_LANGS; do
             [ -z "$target" ] && continue
