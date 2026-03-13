@@ -1,16 +1,16 @@
 #lang racket
 
 (require
-  "../../../age/impl/racket/format-age.rkt"
+  (only-in "../../../age/impl/racket/format-age.rkt" format-age format-stage)
   "../../../age/impl/racket/locale.rkt"
   (prefix-in age: "../../../age/impl/racket/locales/registry.rkt")
-  "../../../date/impl/racket/format-date.rkt"
+  (only-in "../../../date/impl/racket/format-date.rkt" format-date format-date-with-year format-relative)
   "../../../date/impl/racket/locale.rkt"
   (prefix-in date: "../../../date/impl/racket/locales/registry.rkt")
-  "../../../duration/impl/racket/format-duration.rkt"
+  (only-in "../../../duration/impl/racket/format-duration.rkt" format-duration format-since format-until)
   "../../../duration/impl/racket/locale.rkt"
   (prefix-in dur: "../../../duration/impl/racket/locales/registry.rkt")
-  "../../../time/impl/racket/format-time.rkt"
+  (only-in "../../../time/impl/racket/format-time.rkt" format-time)
   "../../../time/impl/racket/locale.rkt"
   (prefix-in time: "../../../time/impl/racket/locales/registry.rkt"))
 
@@ -245,46 +245,21 @@ Options:
         (exit 1))))
 
 (define (cmd-locales)
-  (let* ([codes '()]
-         ;; Collect all locale codes from age registry
-         [all-codes
-          (for/list ([code (in-list (sort (hash-keys (let ()
-                                                        ;; Access the internal all-locales hash
-                                                        ;; by testing each known locale code
-                                                        (define known '())
-                                                        (for ([c (in-list '("af" "ak" "am" "ar" "ay" "az"
-                                                                           "bci" "be" "bem" "bg" "bi" "bm" "bn" "br" "bs"
-                                                                           "ca" "cak" "cs" "cy"
-                                                                           "da" "de"
-                                                                           "ee" "el" "en" "es" "et" "eu"
-                                                                           "fa" "fi" "fil" "fr" "fy"
-                                                                           "ga" "gd" "gl" "gu" "gv"
-                                                                           "ha" "he" "hi" "hr" "hu" "hy"
-                                                                           "id" "ig" "is" "it"
-                                                                           "ja" "jv"
-                                                                           "ka" "ki" "kk" "kl" "km" "kn" "ko" "kri" "ku" "kw" "ky"
-                                                                           "lb" "lg" "ln" "lo" "lt" "lu" "luo" "lv"
-                                                                           "mg" "mi" "mk" "ml" "mn" "mr" "ms" "mt" "my"
-                                                                           "nb" "nd" "ne" "nl" "nn" "nr" "ny"
-                                                                           "om" "or"
-                                                                           "pa" "pcm" "pl" "ps" "pt"
-                                                                           "qu"
-                                                                           "rm" "rn" "ro" "ru" "rw"
-                                                                           "sd" "se" "sg" "si" "sk" "sl" "sn" "so" "sq" "sr" "st" "sv" "sw"
-                                                                           "ta" "te" "tg" "th" "ti" "tk" "tl" "tn" "to" "tpi" "tr" "ts" "tum"
-                                                                           "ug" "uk" "ur" "uz"
-                                                                           "ve" "vi"
-                                                                           "wo"
-                                                                           "xh"
-                                                                           "yao" "yo"
-                                                                           "zh" "zu"))])
-                                                          (when (age:get-locale c)
-                                                            (set! known (cons c known))))
-                                                        (for/hash ([c (in-list known)])
-                                                          (values c #t)))
-                                                     string<?))]) code)])
-    (for ([c (in-list all-codes)])
-      (displayln c))))
+  (for ([code (in-list '("af" "ak" "am" "ar" "ay" "az" "bci" "be" "bem" "bg" "bi" "bm"
+                         "bn" "br" "bs" "ca" "cak" "ceb" "cs" "cy" "da" "de" "din" "dje"
+                         "dv" "dyu" "dz" "ee" "el" "en" "es" "et" "eu" "fa" "fan" "ff"
+                         "fi" "fil" "fj" "fon" "fr" "ga" "gd" "gl" "gn" "gu" "gv" "ha"
+                         "he" "hi" "hmn" "hr" "ht" "hu" "hy" "id" "ig" "is" "it" "ja"
+                         "jv" "ka" "kbp" "kek" "ki" "kk" "kl" "km" "kn" "ko" "kpe" "kri"
+                         "ktu" "ku" "kw" "ky" "lb" "lg" "ln" "lo" "lt" "luo" "lv" "mam"
+                         "men" "mfe" "mg" "mi" "mk" "ml" "mn" "mnk" "mos" "mr" "ms" "mt"
+                         "my" "nb" "nd" "ne" "ng" "nl" "nr" "nso" "nus" "ny" "om" "or"
+                         "pa" "pis" "pl" "pov" "ps" "pt" "qu" "quc" "ro" "ru" "rw" "sar"
+                         "sd" "sg" "shi" "shn" "si" "sk" "sl" "sn" "snk" "so" "sq" "sr"
+                         "ss" "st" "su" "suk" "sv" "sw" "ta" "te" "tem" "tet" "tg" "th"
+                         "ti" "tig" "tk" "tn" "tpi" "tr" "ts" "tum" "tzm" "uk" "umb" "ur"
+                         "uz" "ve" "vi" "vmw" "wo" "xh" "yao" "yo" "yue" "zdj" "zh" "zu"))])
+    (displayln code)))
 
 (define (main)
   (let-values ([(command positionals options) (parse-args (vector->list (current-command-line-arguments)))])

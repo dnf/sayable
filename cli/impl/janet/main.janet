@@ -113,7 +113,7 @@ Options:
   (while (< i (length argv))
     (def arg (in argv i))
     (if (and (= arg "--") (not stop-opts))
-      (do (set stop-opts true) (++ i))
+      (set stop-opts true)
       (if (and (not stop-opts) (string/has-prefix? "-" arg))
         (cond
           (or (= arg "-l") (= arg "--locale"))
