@@ -82,6 +82,16 @@ RUN ARCH="$(dpkg --print-architecture)" && \
     curl -fsSL "https://go.dev/dl/go1.21.13.linux-${ARCH}.tar.gz" | tar -C /usr/local -xz
 ENV PATH="/usr/local/go/bin:${PATH}"
 
+# Goose
+RUN GOOSE_VERSION="v2026.3" && \
+    if [ "$(uname -m)" = "x86_64" ]; then \
+        curl -fsSL "https://github.com/aardappel/goose/releases/download/${GOOSE_VERSION}/goose-${GOOSE_VERSION}-linux-x64.tar.gz" -o /tmp/goose.tar.gz && \
+        mkdir -p /opt/goose && \
+        tar -xzf /tmp/goose.tar.gz -C /opt/goose --strip-components=1 && \
+        rm /tmp/goose.tar.gz && \
+        ln -sf /opt/goose/goose /usr/local/bin/goose; \
+    fi
+
 # Haskell (GHC + cabal) via ghcup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
     BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \

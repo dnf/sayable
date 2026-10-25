@@ -1,0 +1,37 @@
+name: Goose
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux-x64
+          - os: macos-latest
+            platform: macos-arm64
+    env:
+      GOOSE_VERSION: v2026.3
+    defaults:
+      run:
+        working-directory: age/impl/goose
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Goose
+        run: |
+          curl -fsSL "https://github.com/aardappel/goose/releases/download/${GOOSE_VERSION}/goose-${GOOSE_VERSION}-${{ matrix.platform }}.tar.gz" -o "${RUNNER_TEMP}/goose.tar.gz"
+          mkdir -p "${RUNNER_TEMP}/goose"
+          tar -xzf "${RUNNER_TEMP}/goose.tar.gz" -C "${RUNNER_TEMP}/goose" --strip-components=1
+          echo "${RUNNER_TEMP}/goose" >> "${GITHUB_PATH}"
+      - name: Lint
+        run: bash lint.sh
+      - name: Test
+        run: goose tests/test_format_age.goose
+      - name: Build natively and run
+        run: bash build.sh && ./build/test_format_age
