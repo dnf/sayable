@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Canonical test cases for sayable-age. This is the single source of truth — every test case listed here must be implemented in every language. Each implementation translates these specifications into its native test framework.",
-    "totalTests": 217,
+    "totalTests": 234,
     "annotationPatterns": {
       "A": "Comment above the test declaration (TypeScript, Python, Ruby, Kotlin, Java, C#, Swift, Scala)",
       "B": "Trailing comment on table entries (Go, Rust)",
@@ -2325,6 +2325,186 @@
           },
           "expected": null,
           "notes": "Case-sensitive"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Weeks and days across month ends",
+      "description": "Elapsed days are counted across short months and leap-year Februaries before splitting into weeks and days.",
+      "tests": [
+        {
+          "id": "31.1",
+          "input": {
+            "dateOfBirth": "2016-12-31",
+            "asOf": "2017-03-29"
+          },
+          "expected": "12 weeks, 4 days",
+          "notes": "88 days across a 28-day February"
+        },
+        {
+          "id": "31.2",
+          "input": {
+            "dateOfBirth": "1991-11-27",
+            "asOf": "1992-02-25"
+          },
+          "expected": "12 weeks, 6 days",
+          "notes": "90 days across a year end into a leap year"
+        },
+        {
+          "id": "31.3",
+          "input": {
+            "dateOfBirth": "2020-11-30",
+            "asOf": "2021-01-02"
+          },
+          "expected": "4 weeks, 5 days",
+          "notes": "33 days across a year end"
+        },
+        {
+          "id": "31.4",
+          "compactness": "compact",
+          "input": {
+            "dateOfBirth": "2016-12-31",
+            "asOf": "2017-03-29"
+          },
+          "expected": "12w4d",
+          "notes": "Compact form of 31.1"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Half years take their plural form from whole years",
+      "description": "With a half-year marker, the plural category comes from the whole number of years (3½ uses the form for 3), not from the fraction.",
+      "tests": [
+        {
+          "id": "32.1",
+          "locale": "pl",
+          "input": {
+            "dateOfBirth": "2021-06-15",
+            "asOf": "2025-01-15"
+          },
+          "expected": "3 i pół lata",
+          "notes": "Polish 3 is 'few'"
+        },
+        {
+          "id": "32.2",
+          "locale": "pl",
+          "compactness": "short",
+          "input": {
+            "dateOfBirth": "2020-06-15",
+            "asOf": "2025-12-15"
+          },
+          "expected": "5 i pół lat",
+          "notes": "Polish 5 is 'many'"
+        },
+        {
+          "id": "32.3",
+          "locale": "shi",
+          "input": {
+            "dateOfBirth": "2005-06-08",
+            "asOf": "2012-06-07"
+          },
+          "expected": "6 iseggasen d uzgen",
+          "notes": "Tachelhit 6 is 'few'"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Input validation",
+      "description": "Dates must be exactly YYYY-MM-DD and name a real calendar day (Gregorian leap years); anything else, including surrounding whitespace, returns null.",
+      "tests": [
+        {
+          "id": "33.1",
+          "input": {
+            "dateOfBirth": "2025-02-30",
+            "asOf": "2032-06-25"
+          },
+          "expected": null,
+          "notes": "February 30 doesn't exist"
+        },
+        {
+          "id": "33.2",
+          "input": {
+            "dateOfBirth": "2025-13-01",
+            "asOf": "2027-01-31"
+          },
+          "expected": null,
+          "notes": "Month 13"
+        },
+        {
+          "id": "33.3",
+          "input": {
+            "dateOfBirth": "2023-02-29",
+            "asOf": "2025-03-01"
+          },
+          "expected": null,
+          "notes": "February 29 in a non-leap year"
+        },
+        {
+          "id": "33.4",
+          "input": {
+            "dateOfBirth": "2025-06-00",
+            "asOf": "2027-02-25"
+          },
+          "expected": null,
+          "notes": "Day 00"
+        },
+        {
+          "id": "33.5",
+          "input": {
+            "dateOfBirth": "2025-6-1",
+            "asOf": "2027-02-25"
+          },
+          "expected": null,
+          "notes": "Unpadded month and day"
+        },
+        {
+          "id": "33.6",
+          "input": {
+            "dateOfBirth": " 2025-06-01",
+            "asOf": "2027-02-25"
+          },
+          "expected": null,
+          "notes": "Surrounding whitespace"
+        },
+        {
+          "id": "33.7",
+          "input": {
+            "dateOfBirth": "2025-06-15T10:00:00",
+            "asOf": "2027-02-25"
+          },
+          "expected": null,
+          "notes": "A datetime is not a date"
+        },
+        {
+          "id": "33.8",
+          "input": {
+            "dateOfBirth": "2020-01-01",
+            "asOf": "2025-04-31"
+          },
+          "expected": null,
+          "notes": "Invalid asOf"
+        },
+        {
+          "id": "33.9",
+          "method": "formatStage",
+          "input": {
+            "dateOfBirth": "2025-02-30",
+            "asOf": "2027-09-05"
+          },
+          "expected": null,
+          "notes": "formatStage validates too"
+        },
+        {
+          "id": "33.10",
+          "input": {
+            "dateOfBirth": "2024-02-29",
+            "asOf": "2026-03-01"
+          },
+          "expected": "2 years",
+          "notes": "February 29 in a leap year is valid"
         }
       ]
     }

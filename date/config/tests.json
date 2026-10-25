@@ -114,6 +114,45 @@
         {"id": "12.1", "function": "format_date", "input": {"date": "2025-03-15"}, "locale": "es", "expected": "15 de marzo"},
         {"id": "12.2", "function": "format_relative", "input": {"date": "2025-03-17", "asOf": "2025-03-15"}, "locale": "es", "expected": "pasado mañana"}
       ]
+    },
+    {
+      "name": "format_date_with_year",
+      "tests": [
+        {"id": "13.1", "function": "format_date_with_year", "input": {"date": "2018-02-04"}, "locale": "en", "expected": "February 4th, 2018"},
+        {"id": "13.2", "function": "format_date_with_year", "input": {"date": "2025-03-15"}, "locale": "en", "compactness": "short", "expected": "Mar 15, 2025"},
+        {"id": "13.3", "function": "format_date_with_year", "input": {"date": "1997-01-21"}, "locale": "en", "compactness": "compact", "expected": "1/21/97"},
+        {"id": "13.4", "function": "format_date_with_year", "input": {"date": "2007-05-20"}, "locale": "tg", "compactness": "compact", "expected": "20/5/07", "notes": "two-digit year keeps its leading zero"},
+        {"id": "13.5", "function": "format_date_with_year", "input": {"date": "1996-06-21"}, "locale": "fi", "compactness": "short", "expected": "21. kesäkuuta 1996"}
+      ]
+    },
+    {
+      "name": "Short month names (locales that keep the full genitive)",
+      "tests": [
+        {"id": "14.1", "function": "format_date", "input": {"date": "2031-02-15"}, "locale": "sk", "compactness": "short", "expected": "15. februára"},
+        {"id": "14.2", "function": "format_date", "input": {"date": "2025-12-10"}, "locale": "cs", "compactness": "short", "expected": "10. prosince"},
+        {"id": "14.3", "function": "format_date", "input": {"date": "2025-11-05"}, "locale": "uk", "compactness": "short", "expected": "5 листопада"},
+        {"id": "14.4", "function": "format_relative", "input": {"date": "1998-08-08", "asOf": "1998-08-15"}, "locale": "fi", "compactness": "short", "expected": "8. elokuuta"}
+      ]
+    },
+    {
+      "name": "format_relative — short phrases",
+      "tests": [
+        {"id": "15.1", "function": "format_relative", "input": {"date": "2035-12-04", "asOf": "2035-12-02"}, "locale": "kw", "compactness": "short", "expected": "an Mth ma", "notes": "day after tomorrow"},
+        {"id": "15.2", "function": "format_relative", "input": {"date": "2000-01-23", "asOf": "2000-01-25"}, "locale": "mam", "compactness": "short", "expected": "Dom nchi'j", "notes": "day before yesterday"},
+        {"id": "15.3", "function": "format_relative", "input": {"date": "2014-10-24", "asOf": "2014-10-22"}, "locale": "kek", "compactness": "short", "expected": "a'in Vie", "notes": "day after tomorrow"}
+      ]
+    },
+    {
+      "name": "Input validation",
+      "tests": [
+        {"id": "16.1", "function": "format_date", "input": {"date": "2025-02-30"}, "locale": "en", "expected": null, "notes": "February 30 doesn't exist"},
+        {"id": "16.2", "function": "format_date", "input": {"date": "2025-13-01"}, "locale": "en", "expected": null, "notes": "Month 13"},
+        {"id": "16.3", "function": "format_date", "input": {"date": "2025-6-1"}, "locale": "en", "expected": null, "notes": "Unpadded month and day"},
+        {"id": "16.4", "function": "format_date", "input": {"date": " 2025-06-01"}, "locale": "en", "expected": null, "notes": "Surrounding whitespace"},
+        {"id": "16.5", "function": "format_date", "input": {"date": "2025-06-01T10:00:00"}, "locale": "en", "expected": "June 1st", "notes": "An ISO datetime: only the date part is used"},
+        {"id": "16.6", "function": "format_date_with_year", "input": {"date": "2023-02-29"}, "locale": "en", "expected": null, "notes": "February 29 in a non-leap year"},
+        {"id": "16.7", "function": "format_relative", "input": {"date": "2025-03-16", "asOf": "2025-04-31"}, "locale": "en", "expected": null, "notes": "Invalid asOf"}
+      ]
     }
   ]
 }

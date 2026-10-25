@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import calendar
 from datetime import date
 from typing import Literal
 
@@ -14,32 +13,57 @@ __version__ = "0.5.0"
 MAX_AGE_MONTHS = 6000
 
 
+_DIGITS = frozenset("0123456789")
+
+
+def _days_in_month(year: int, month: int) -> int:
+    if month == 2:
+        return 29 if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0 else 28
+    return 30 if month in (4, 6, 9, 11) else 31
+
+
+def _parse_date(s: str) -> tuple[int, int, int] | None:
+    """Parse exactly YYYY-MM-DD naming a real calendar day, else None."""
+    if len(s) != 10 or s[4] != "-" or s[7] != "-":
+        return None
+    if not all(c in _DIGITS for c in s[:4] + s[5:7] + s[8:]):
+        return None
+    year, month, day = int(s[:4]), int(s[5:7]), int(s[8:])
+    if not 1 <= month <= 12 or not 1 <= day <= _days_in_month(year, month):
+        return None
+    return year, month, day
+
+
+def _julian_day(year: int, month: int, day: int) -> int:
+    a = (14 - month) // 12
+    y = year + 4800 - a
+    m = month + 12 * a - 3
+    return day + (153 * m + 2) // 5 + 365 * y + y // 4 - y // 100 + y // 400 - 32045
+
+
 def _parse_age(
     date_of_birth: str | None,
     as_of: str | None = None,
 ) -> tuple[int, int] | None:
     """Parse two YYYY-MM-DD strings into (calendar_months, elapsed_days).
 
-    Returns None if date_of_birth is falsy or in the future relative to as_of.
+    Returns None if either date is missing or invalid, or date_of_birth is
+    after as_of.
     """
     if not date_of_birth:
         return None
+    dob = _parse_date(date_of_birth)
+    ref = _parse_date(as_of) if as_of else (date.today().year, date.today().month, date.today().day)
+    if dob is None or ref is None:
+        return None
+    dob_y, dob_m, dob_d = dob
+    ref_y, ref_m, ref_d = ref
 
-    dob_parts = date_of_birth.split("-")
-    dob_y, dob_m, dob_d = int(dob_parts[0]), int(dob_parts[1]), int(dob_parts[2])
-
-    if as_of:
-        ref_parts = as_of.split("-")
-        ref_y, ref_m, ref_d = int(ref_parts[0]), int(ref_parts[1]), int(ref_parts[2])
-    else:
-        today = date.today()
-        ref_y, ref_m, ref_d = today.year, today.month, today.day
-
-    diff_days = (date(ref_y, ref_m, ref_d) - date(dob_y, dob_m, dob_d)).days
+    diff_days = _julian_day(ref_y, ref_m, ref_d) - _julian_day(dob_y, dob_m, dob_d)
     if diff_days < 0:
         return None
 
-    last_day = calendar.monthrange(ref_y, ref_m)[1]
+    last_day = _days_in_month(ref_y, ref_m)
     clamped_birthday = min(dob_d, last_day)
     months = (ref_y - dob_y) * 12 + (ref_m - dob_m)
     if ref_d < clamped_birthday:

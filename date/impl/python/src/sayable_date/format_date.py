@@ -10,21 +10,23 @@ from sayable_date.locales.en import EN
 __version__ = "0.5.0"
 
 
+_DIGITS = frozenset("0123456789")
+
+
 def _parse_date(s: str) -> tuple[int, int, int] | None:
-    """Parse YYYY-MM-DD or ISO datetime to (year, month, day). Returns None on failure."""
-    if not s:
+    """Parse YYYY-MM-DD, optionally followed by T and a time, to (year, month, day).
+
+    The date must name a real calendar day. Returns None on failure.
+    """
+    if not s or (len(s) != 10 and (len(s) < 10 or s[10] != "T")):
         return None
-    try:
-        date_part = s.split("T")[0] if "T" in s else s
-        parts = date_part.split("-")
-        if len(parts) != 3:
-            return None
-        year, month, day = int(parts[0]), int(parts[1]), int(parts[2])
-        if month < 1 or month > 12 or day < 1 or day > 31:
-            return None
-        return (year, month, day)
-    except (ValueError, IndexError):
+    d = s[:10]
+    if d[4] != "-" or d[7] != "-" or not all(c in _DIGITS for c in d[:4] + d[5:7] + d[8:]):
         return None
+    year, month, day = int(d[:4]), int(d[5:7]), int(d[8:])
+    if not 1 <= month <= 12 or not 1 <= day <= _days_in_month(year, month):
+        return None
+    return (year, month, day)
 
 
 def _is_leap_year(year: int) -> bool:
