@@ -39,7 +39,11 @@ jobs:
       - name: Build CLI
         if: runner.os != 'Windows'
         working-directory: .
-        run: bash cli/impl/mojo/build.sh
+        run: |
+          # TEMPORARY diagnostic: memory over time during the CLI build
+          free -m; nproc
+          vmstat -S M 5 &
+          bash cli/impl/mojo/build.sh
       - name: CLI REPL conformance and harness (single REPL process)
         if: runner.os != 'Windows'
         working-directory: .
