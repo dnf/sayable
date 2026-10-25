@@ -20,6 +20,6 @@ if _needs_build; then
     (cd "${_dir}" && gleam build >/dev/null 2>&1) && touch "${_stamp}"
 fi
 
-exec erl -noshell -pa "${_dir}"/build/dev/erlang/*/ebin \
+exec erl -noinput -pa "${_dir}"/build/dev/erlang/*/ebin \
     -eval "sayable_cli:main(), halt(0)." \
     -extra "$@"
