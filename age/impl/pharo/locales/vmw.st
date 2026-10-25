@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/vmw.json "
 
-"Locale: vmw"
+"Locale: vmw"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 vmw

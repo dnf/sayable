@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/tpi.json "
 
-"Locale: tpi"
+"Locale: tpi"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 tpi

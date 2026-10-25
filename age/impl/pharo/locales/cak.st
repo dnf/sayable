@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/cak.json "
 
-"Locale: cak"
+"Locale: cak"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 cak

@@ -3,7 +3,7 @@
 Object subclass: #SayableAgeLocale
 	instanceVariableNames: 'code plural units half delimiter justBorn stages short compact'
 	classVariableNames: ''
-	package: 'SayableAge'.
+	package: 'SayableAge'!
 
 !SayableAgeLocale methodsFor: 'accessing'!
 code

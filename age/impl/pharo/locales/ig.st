@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/ig.json "
 
-"Locale: ig"
+"Locale: ig"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 ig

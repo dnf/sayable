@@ -3,11 +3,16 @@
 Object subclass: #SayableAge
 	instanceVariableNames: 'locale dayUnit weekUnit monthUnit yearUnit half delimiter justBorn'
 	classVariableNames: 'Version'
-	package: 'SayableAge'.
+	package: 'SayableAge'!
 
-SayableAge class instanceVariableNames: ''.
+SayableAge class instanceVariableNames: ''!
 
-Version := '0.5.0'.
+!SayableAge class methodsFor: 'class initialization'!
+initialize
+	Version := '0.5.0'
+! !
+
+SayableAge initialize!
 
 !SayableAge class methodsFor: 'accessing'!
 version
@@ -172,7 +177,7 @@ parseAge: dateOfBirth asOf: asOfDate
 	| dobParts refParts dobY dobM dobD refY refM refD dobDate refDate diffDays lastDay clampedBirthday months today |
 	(dateOfBirth isNil or: [ dateOfBirth isEmpty ]) ifTrue: [ ^ nil ].
 
-	dobParts := dateOfBirth substrings: $-.
+	dobParts := dateOfBirth substrings: '-'.
 	dobY := dobParts first asInteger.
 	dobM := (dobParts at: 2) asInteger.
 	dobD := dobParts third asInteger.
@@ -184,7 +189,7 @@ parseAge: dateOfBirth asOf: asOfDate
 			refM := today monthIndex.
 			refD := today dayOfMonth ]
 		ifFalse: [
-			refParts := asOfDate substrings: $-.
+			refParts := asOfDate substrings: '-'.
 			refY := refParts first asInteger.
 			refM := (refParts at: 2) asInteger.
 			refD := refParts third asInteger ].

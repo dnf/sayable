@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/umb.json "
 
-"Locale: umb"
+"Locale: umb"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 umb

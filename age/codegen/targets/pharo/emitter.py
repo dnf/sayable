@@ -37,7 +37,7 @@ def emit_locale(data: dict) -> str:
     rule = data["pluralRule"]
 
     lines = [HEADER + locale_source_comment(code, line_prefix='" ', line_suffix=' "')]
-    lines.append(f'"Locale: {code}"')
+    lines.append(f'"Locale: {code}"!')
     lines.append("")
 
     # Plural rule as a block
@@ -101,7 +101,7 @@ def emit_registry(all_locales: list[dict]) -> str:
     """Generate registry.st with lookup methods in chunk format."""
     sorted_locs = sorted(all_locales, key=lambda d: d["code"])
     lines = [HEADER]
-    lines.append('"Locale registry — maps code strings to locale objects."')
+    lines.append('"Locale registry — maps code strings to locale objects."!')
     lines.append("")
 
     # Class-side methods

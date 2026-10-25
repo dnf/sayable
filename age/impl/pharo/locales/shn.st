@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/shn.json "
 
-"Locale: shn"
+"Locale: shn"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 shn

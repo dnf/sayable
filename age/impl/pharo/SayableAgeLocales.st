@@ -4,7 +4,7 @@ Generated locale methods are defined in locales/*.st files."
 Object subclass: #SayableAgeLocales
 	instanceVariableNames: ''
 	classVariableNames: 'Registry'
-	package: 'SayableAge'.
+	package: 'SayableAge'!
 
 !SayableAgeLocales class methodsFor: 'accessing'!
 resetRegistry

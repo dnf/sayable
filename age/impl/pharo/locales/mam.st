@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/mam.json "
 
-"Locale: mam"
+"Locale: mam"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 mam

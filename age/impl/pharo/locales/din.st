@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/din.json "
 
-"Locale: din"
+"Locale: din"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 din

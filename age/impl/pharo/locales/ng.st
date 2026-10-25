@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/ng.json "
 
-"Locale: ng"
+"Locale: ng"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 ng

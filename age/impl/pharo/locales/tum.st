@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/tum.json "
 
-"Locale: tum"
+"Locale: tum"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 tum

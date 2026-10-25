@@ -4,7 +4,7 @@ Uses SUnit framework. Each test annotated with canonical IDs."
 TestCase subclass: #SayableAgeFormatAgeTest
 	instanceVariableNames: ''
 	classVariableNames: ''
-	package: 'SayableAge-Tests'.
+	package: 'SayableAge-Tests'!
 
 !SayableAgeFormatAgeTest methodsFor: 'tests-null'!
 "1.1"
@@ -432,7 +432,7 @@ testJan31Jul316mo
 TestCase subclass: #SayableAgeFormatStageTest
 	instanceVariableNames: ''
 	classVariableNames: ''
-	package: 'SayableAge-Tests'.
+	package: 'SayableAge-Tests'!
 
 !SayableAgeFormatStageTest methodsFor: 'tests-null'!
 "16.1"
@@ -613,7 +613,7 @@ testAdult45Years
 TestCase subclass: #SayableAgeFormatterTest
 	instanceVariableNames: ''
 	classVariableNames: ''
-	package: 'SayableAge-Tests'.
+	package: 'SayableAge-Tests'!
 
 !SayableAgeFormatterTest methodsFor: 'tests-english'!
 "24.1, 24.2, 24.3, 24.4, 24.5, 24.6, 24.7"

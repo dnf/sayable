@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/kri.json "
 
-"Locale: kri"
+"Locale: kri"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 kri

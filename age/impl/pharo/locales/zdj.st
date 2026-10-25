@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/zdj.json "
 
-"Locale: zdj"
+"Locale: zdj"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 zdj

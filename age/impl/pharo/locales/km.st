@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/km.json "
 
-"Locale: km"
+"Locale: km"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 km

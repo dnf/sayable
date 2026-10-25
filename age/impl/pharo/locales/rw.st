@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/rw.json "
 
-"Locale: rw"
+"Locale: rw"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 rw

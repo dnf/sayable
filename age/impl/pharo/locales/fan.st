@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/fan.json "
 
-"Locale: fan"
+"Locale: fan"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 fan

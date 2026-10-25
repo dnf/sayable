@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/tig.json "
 
-"Locale: tig"
+"Locale: tig"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 tig

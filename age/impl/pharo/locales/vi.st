@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/vi.json "
 
-"Locale: vi"
+"Locale: vi"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 vi

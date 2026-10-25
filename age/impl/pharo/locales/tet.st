@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/tet.json "
 
-"Locale: tet"
+"Locale: tet"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 tet

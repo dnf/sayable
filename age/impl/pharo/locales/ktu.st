@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/ktu.json "
 
-"Locale: ktu"
+"Locale: ktu"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 ktu

@@ -9,7 +9,7 @@
 " ╚══════════════════════════════════════════════════════════════╝ "
 " Source: age/locales/src/kek.json "
 
-"Locale: kek"
+"Locale: kek"!
 
 !SayableAgeLocales class methodsFor: 'locales'!
 kek
