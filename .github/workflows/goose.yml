@@ -46,3 +46,19 @@ jobs:
         run: goose tests/test_format_${{ matrix.component }}.goose
       - name: Build natively and run
         run: bash build.sh && ./build/test_format_${{ matrix.component }}
+
+      # Check the real CLI against the canonical spec and the Python
+      # reference, independently of this language's own tests
+      # (docs/testing.md). Once per OS: the CLI links all four libraries.
+      - name: Build CLI
+        if: matrix.component == 'age'
+        working-directory: .
+        run: cli/impl/goose/sayable version
+      - name: CLI harness (single REPL process)
+        if: matrix.component == 'age'
+        working-directory: .
+        run: bash cli/test-harness.sh cli/impl/goose/sayable
+      - name: Fuzz against the Python reference
+        if: matrix.component == 'age'
+        working-directory: .
+        run: python3 cli/fuzz.py --langs goose -n 2000 --invalid-rate 0
