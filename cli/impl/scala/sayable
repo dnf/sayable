@@ -34,6 +34,7 @@ for candidate in \
     "${SCALA_HOME}/libexec/maven2/org/scala-lang/scala3-library_3" \
     "${SCALA_HOME}/maven2/org/scala-lang/scala3-library_3" \
     "${SCALA_HOME}/lib"; do
+    [[ -d "${candidate}" ]] || continue
     jar="$(find "${candidate}" -name 'scala3-library_3-*.jar' 2>/dev/null | head -1)"
     if [[ -n "${jar}" ]]; then
         SCALA3_LIB="${jar}"
@@ -46,6 +47,7 @@ for candidate in \
     "${SCALA_HOME}/libexec/maven2/org/scala-lang/scala-library" \
     "${SCALA_HOME}/maven2/org/scala-lang/scala-library" \
     "${SCALA_HOME}/lib"; do
+    [[ -d "${candidate}" ]] || continue
     jar="$(find "${candidate}" -name 'scala-library-*.jar' 2>/dev/null | head -1)"
     if [[ -n "${jar}" ]]; then
         SCALA2_LIB="${jar}"

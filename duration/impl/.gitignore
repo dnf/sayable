@@ -61,7 +61,6 @@ goose/build/
 # Groovy
 groovy/.gradle/
 groovy/build/
-groovy/gradle/wrapper/gradle-wrapper.jar
 
 # Haskell
 haskell/dist-newstyle/
@@ -72,7 +71,6 @@ janet/build/
 # Java
 java/.gradle/
 java/build/
-java/gradle/wrapper/gradle-wrapper.jar
 
 # Julia
 julia/Manifest.toml
@@ -80,7 +78,6 @@ julia/Manifest.toml
 # Kotlin
 kotlin/.gradle/
 kotlin/build/
-kotlin/gradle/wrapper/gradle-wrapper.jar
 
 # Lisp
 lisp/*.fasl
@@ -142,7 +139,6 @@ rust/target/
 # Scala
 scala/.gradle/
 scala/build/
-scala/gradle/wrapper/gradle-wrapper.jar
 
 # Swift
 swift/.build/

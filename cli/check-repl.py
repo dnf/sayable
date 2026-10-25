@@ -15,8 +15,10 @@ import os
 import selectors
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
+STDERR_TAIL_LINES = 20
 TIMEOUT_SECONDS = 60  # generous: the first request may trigger a JIT or a build
 
 CHECKS = [
@@ -55,8 +57,10 @@ def main() -> int:
     if len(sys.argv) != 2:
         print(__doc__, file=sys.stderr)
         return 2
+    # stderr goes to a file so a failure can show why (CI has nothing else).
+    stderr_log = tempfile.TemporaryFile()
     proc = subprocess.Popen([sys.argv[1], "--repl"], stdin=subprocess.PIPE,
-                            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+                            stdout=subprocess.PIPE, stderr=stderr_log)
     sel = selectors.DefaultSelector()
     sel.register(proc.stdout, selectors.EVENT_READ)
     failures = 0
@@ -101,6 +105,12 @@ def main() -> int:
         print("FAIL end of input: REPL did not exit")
         failures += 1
 
+    if failures:
+        stderr_log.seek(0)
+        tail = stderr_log.read().decode("utf-8", errors="replace").strip().splitlines()[-STDERR_TAIL_LINES:]
+        if tail:
+            print(f"--- last {len(tail)} line(s) of the CLI's stderr ---")
+            print("\n".join(tail))
     print("REPL protocol OK" if failures == 0 else f"{failures} REPL protocol check(s) failed")
     return 0 if failures == 0 else 1
 
