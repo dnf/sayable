@@ -7,7 +7,7 @@ _dir="$(cd "$(dirname "$0")" && pwd)"
 # Build if needed
 if [[ ! -f "${_dir}/build/elm.js" ]]; then
     cd "${_dir}"
-    elm make src/Main.elm --output=build/elm.js --optimize 2>/dev/null
+    elm make src/Main.elm --output=build/elm.js --optimize >&2
 fi
 
 exec node "${_dir}/runner.js" "$@"

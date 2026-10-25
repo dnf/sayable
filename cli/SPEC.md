@@ -191,7 +191,7 @@ The `duration` command determines its mode from the first value argument:
 
 When `-d` / `--as-of` is not provided:
 
-- `age` and `stage`: use today's date (YYYY-MM-DD)
+- `age` and `stage`: use today's date (YYYY-MM-DD); so does `-d null` or `-d ''` (an absent reference date)
 - `relative`, `since`, `until`: the `-d` option is **required** — omitting it is a usage error (exit 2)
 
 ## Example Usage

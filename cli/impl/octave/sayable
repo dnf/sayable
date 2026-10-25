@@ -1,4 +1,4 @@
-#!/usr/bin/env octave --no-gui
+#!/usr/bin/env -S octave --no-gui
 % Sayable CLI — unified command-line interface to all four Sayable components.
 %
 % See cli/SPEC.md for the full specification.
