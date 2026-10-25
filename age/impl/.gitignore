@@ -61,7 +61,6 @@ go/bin/
 # Groovy
 groovy/build/
 groovy/.gradle/
-groovy/gradle/wrapper/gradle-wrapper.jar
 
 # Haskell
 haskell/dist-newstyle/
@@ -69,7 +68,6 @@ haskell/dist-newstyle/
 # Java
 java/build/
 java/.gradle/
-java/gradle/wrapper/gradle-wrapper.jar
 
 # Janet
 janet/build/
@@ -80,7 +78,6 @@ julia/Manifest.toml
 # Kotlin
 kotlin/build/
 kotlin/.gradle/
-kotlin/gradle/wrapper/gradle-wrapper.jar
 
 # Lisp
 lisp/*.fasl
@@ -152,7 +149,6 @@ rust/target/
 # Scala
 scala/build/
 scala/.gradle/
-scala/gradle/wrapper/gradle-wrapper.jar
 
 # Swift
 swift/.build/
@@ -160,7 +156,6 @@ swift/Package.resolved
 
 # TypeScript
 typescript/node_modules/
-typescript/package-lock.json
 
 # V
 v/sayableage
