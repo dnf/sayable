@@ -119,6 +119,9 @@ php/.phpunit.cache/
 php/.php-cs-fixer.cache
 php/.phpstan.cache/
 
+# PowerShell
+powershell/testResults.xml
+
 # Prolog
 prolog/*.qlf
 
