@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install -g elm@latest-0.19.1 elm-test  # match elm-version in every elm.json
+      - run: npm install -g elm elm-test
       - run: elm-test
 
       # Check the real CLI against the canonical spec and the Python
