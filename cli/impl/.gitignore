@@ -96,6 +96,7 @@ pharo/Pharo.image
 pharo/Pharo.changes
 pharo/*.sources
 pharo/pharo-local/
+pharo/PharoDebug.log
 
 # Rust
 rust/target/
