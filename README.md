@@ -4,16 +4,7 @@
 
 *A thoughtful collection of libraries for how humans actually speak.*
 
-<table width="100%" frame="2">
-<tr>
-<td valign="top" style="width:50%">
 Sayable is a family of zero-dependency formatting libraries. Each library tackles a different aspect of human-friendly output — the kind of phrasing people use in conversation, not the kind machines produce.
-</td>
-<td style="width:50%">
-<img style="text-align: center; width:300px;", src="assets/warp-drive.png" alt="Captain, warp drive will be ready in 0 days, 0 hours, 0 minut...">
-</td>
-</tr>
-</table>
 
 ## Libraries
 
@@ -66,6 +57,8 @@ See the [full compatibility matrix](Compatibility.md).
 ### Locale coverage
 
 See the [locale coverage maps](docs/geography/README.md) for a visual breakdown of how well Sayable's locales cover each country's languages.
+
+[![World locale coverage](docs/geography/assets/world.png)](docs/geography/README.md)
 
 ## Design principles
 
