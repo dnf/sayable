@@ -2,6 +2,7 @@
 -export([main/0, main/1]).
 
 -define(VERSION, "0.5.0").
+-define(MAX_REQUEST_BYTES, 65536).
 
 %% A command's exit code and the lines it prints to stdout.
 -type result() :: {0..2, [unicode:chardata()]}.
@@ -35,25 +36,35 @@ dispatch({Command, Positionals, Options}) -> run_command(Command, Positionals, O
 
 %% ── REPL mode (see cli/SPEC.md) ───────────────────────────────────
 
+%% Requests are read from stdin through an fd port, not io:get_line: on
+%% OTP 26/27 the I/O server's line editing treats a tab as completion and
+%% drops it, merging the tab-separated fields when a driver sends one
+%% request at a time. The wrapper starts erl with -noinput so nothing else
+%% reads stdin.
 repl() ->
     ok = io:setopts(standard_io, [binary, {encoding, unicode}]),
-    repl_loop().
+    Stdin = open_port({fd, 0, 1}, [{line, ?MAX_REQUEST_BYTES}, binary, eof, in]),
+    repl_loop(Stdin, <<>>).
 
-repl_loop() ->
-    case io:get_line(standard_io, "") of
-        eof ->
+repl_loop(Stdin, Partial) ->
+    receive
+        {Stdin, {data, {noeol, Chunk}}} ->
+            repl_loop(Stdin, <<Partial/binary, Chunk/binary>>);
+        {Stdin, {data, {eol, Chunk}}} ->
+            answer(<<Partial/binary, Chunk/binary>>),
+            repl_loop(Stdin, <<>>);
+        {Stdin, eof} when Partial =:= <<>> ->
             ok;
-        {error, Reason} ->
-            io:format(standard_error, "error: cannot read request: ~p~n", [Reason]),
-            erlang:halt(1);
-        Line ->
-            {Code, Lines} = run_isolated(request_args(Line)),
-            io:put_chars(standard_io, [integer_to_list(Code), $\t, response_text(Lines), $\n]),
-            repl_loop()
+        {Stdin, eof} ->
+            answer(Partial)
     end.
 
+answer(Line) ->
+    {Code, Lines} = run_isolated(request_args(Line)),
+    io:put_chars(standard_io, [integer_to_list(Code), $\t, response_text(Lines), $\n]).
+
 request_args(Line) ->
-    Fields = binary:split(string:chomp(Line), <<"\t">>, [global]),
+    Fields = binary:split(string:trim(Line, trailing, "\r"), <<"\t">>, [global]),
     [unicode:characters_to_list(Field) || Field <- Fields].
 
 response_text(Lines) ->

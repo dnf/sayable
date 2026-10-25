@@ -84,4 +84,4 @@ if needs_rebuild; then
 fi
 
 # Run the CLI module
-exec erl -noshell -pa "${BUILD_DIR}" -run sayable_cli main -extra "$@"
+exec erl -noinput -pa "${BUILD_DIR}" -run sayable_cli main -extra "$@"

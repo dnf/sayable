@@ -275,7 +275,9 @@ namespace eval ::sayableduration {
 
     proc format_duration {formatter value {end_val ""}} {
         # Handle integer (seconds) mode
-        if {[string is integer -strict $value]} {
+        # Tcl 8.6 `string is integer` rejects values past 32 bits; durations
+        # up to the 500-year ceiling need more, and expr handles big integers.
+        if {[regexp {^-?[0-9]+$} $value]} {
             set seconds $value
             if {$seconds < 0} {
                 return ""
