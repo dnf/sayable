@@ -87,13 +87,18 @@ Options:
 HELP;
 
 /**
- * Print error to stderr and exit with code 2.
+ * A usage error: thrown so one request can fail without ending the process.
+ */
+final class UsageError extends Exception
+{
+}
+
+/**
+ * Abort the current request with a usage error (exit code 2).
  */
 function error(string $msg): never
 {
-    fwrite(STDERR, "error: {$msg}\n");
-    fwrite(STDERR, "Run 'sayable help' for usage.\n");
-    exit(2);
+    throw new UsageError($msg);
 }
 
 /**
@@ -256,7 +261,7 @@ function parseArgs(array $argv): array
  * @param list<string> $positionals
  * @param array<string, mixed> $options
  */
-function cmdAge(array $positionals, array $options): void
+function cmdAge(array $positionals, array $options): ?string
 {
     if (count($positionals) === 0) {
         error('age requires a date-of-birth argument');
@@ -279,17 +284,14 @@ function cmdAge(array $positionals, array $options): void
     $formatter = new SayableAge\SayableAge($locale, ageCompactness($options['compactness']));
     $result = $formatter->formatAge($dob, $asOf);
 
-    if ($result === null) {
-        exit(1);
-    }
-    echo $result . "\n";
+    return $result;
 }
 
 /**
  * @param list<string> $positionals
  * @param array<string, mixed> $options
  */
-function cmdStage(array $positionals, array $options): void
+function cmdStage(array $positionals, array $options): ?string
 {
     if (count($positionals) === 0) {
         error('stage requires a date-of-birth argument');
@@ -314,17 +316,14 @@ function cmdStage(array $positionals, array $options): void
     $formatter = new SayableAge\SayableAge($locale, ageCompactness($options['compactness']));
     $result = $formatter->formatStage($dob, $asOf, $gender);
 
-    if ($result === null) {
-        exit(1);
-    }
-    echo $result . "\n";
+    return $result;
 }
 
 /**
  * @param list<string> $positionals
  * @param array<string, mixed> $options
  */
-function cmdDate(array $positionals, array $options): void
+function cmdDate(array $positionals, array $options): ?string
 {
     if (count($positionals) === 0) {
         error('date requires a date argument');
@@ -345,17 +344,14 @@ function cmdDate(array $positionals, array $options): void
         $result = $formatter->formatDate($dateVal);
     }
 
-    if ($result === null) {
-        exit(1);
-    }
-    echo $result . "\n";
+    return $result;
 }
 
 /**
  * @param list<string> $positionals
  * @param array<string, mixed> $options
  */
-function cmdRelative(array $positionals, array $options): void
+function cmdRelative(array $positionals, array $options): ?string
 {
     if (count($positionals) === 0) {
         error('relative requires a date argument');
@@ -377,17 +373,14 @@ function cmdRelative(array $positionals, array $options): void
     $formatter = new SayableDate\SayableDate($locale, dateCompactness($options['compactness']));
     $result = $formatter->formatRelative($dateVal, $asOf);
 
-    if ($result === null) {
-        exit(1);
-    }
-    echo $result . "\n";
+    return $result;
 }
 
 /**
  * @param list<string> $positionals
  * @param array<string, mixed> $options
  */
-function cmdTime(array $positionals, array $options): void
+function cmdTime(array $positionals, array $options): ?string
 {
     if (count($positionals) === 0) {
         error('time requires a time argument');
@@ -403,17 +396,14 @@ function cmdTime(array $positionals, array $options): void
     $formatter = new SayableTime\SayableTime($locale, timeCompactness($options['compactness']));
     $result = $formatter->formatTime($timeVal);
 
-    if ($result === null) {
-        exit(1);
-    }
-    echo $result . "\n";
+    return $result;
 }
 
 /**
  * @param list<string> $positionals
  * @param array<string, mixed> $options
  */
-function cmdDuration(array $positionals, array $options): void
+function cmdDuration(array $positionals, array $options): ?string
 {
     if (count($positionals) === 0) {
         error('duration requires a value argument');
@@ -429,8 +419,7 @@ function cmdDuration(array $positionals, array $options): void
     $formatter = new SayableDuration\SayableDuration($locale, durationCompactness($options['compactness']));
 
     if ($value === null) {
-        // Null input -> null result
-        exit(1);
+        return null;
     } elseif (isIntegerString($value)) {
         $result = $formatter->formatDuration((int) $value);
     } else {
@@ -440,15 +429,12 @@ function cmdDuration(array $positionals, array $options): void
         }
         $end = nullify($positionals[1]);
         if ($end === null) {
-            exit(1);
+            return null;
         }
         $result = $formatter->formatDurationIso($value, $end);
     }
 
-    if ($result === null) {
-        exit(1);
-    }
-    echo $result . "\n";
+    return $result;
 }
 
 /**
@@ -478,7 +464,7 @@ function isIntegerString(string $s): bool
  * @param list<string> $positionals
  * @param array<string, mixed> $options
  */
-function cmdSince(array $positionals, array $options): void
+function cmdSince(array $positionals, array $options): ?string
 {
     if (count($positionals) === 0) {
         error('since requires a start timestamp argument');
@@ -500,17 +486,14 @@ function cmdSince(array $positionals, array $options): void
     $formatter = new SayableDuration\SayableDuration($locale, durationCompactness($options['compactness']));
     $result = $formatter->formatSince($start, $asOf);
 
-    if ($result === null) {
-        exit(1);
-    }
-    echo $result . "\n";
+    return $result;
 }
 
 /**
  * @param list<string> $positionals
  * @param array<string, mixed> $options
  */
-function cmdUntil(array $positionals, array $options): void
+function cmdUntil(array $positionals, array $options): ?string
 {
     if (count($positionals) === 0) {
         error('until requires a target timestamp argument');
@@ -532,13 +515,10 @@ function cmdUntil(array $positionals, array $options): void
     $formatter = new SayableDuration\SayableDuration($locale, durationCompactness($options['compactness']));
     $result = $formatter->formatUntil($target, $asOf);
 
-    if ($result === null) {
-        exit(1);
-    }
-    echo $result . "\n";
+    return $result;
 }
 
-function cmdLocales(): void
+function cmdLocales(): string
 {
     // Use age locales as the canonical list (all components share the same set)
     $ref = new ReflectionClass(SayableAge\Locales\Locales::class);
@@ -554,52 +534,88 @@ function cmdLocales(): void
         }
     }
     sort($codes);
-    $unique = array_unique($codes);
-    foreach ($unique as $code) {
-        echo $code . "\n";
-    }
+    return implode("\n", array_unique($codes));
 }
 
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
+/**
+ * Run one request.
+ *
+ * @param list<string> $args
+ * @return array{int, ?string} exit code and stdout text (null for no output)
+ */
+function run(array $args): array
+{
+    $commands = [
+        'age' => 'cmdAge',
+        'stage' => 'cmdStage',
+        'date' => 'cmdDate',
+        'relative' => 'cmdRelative',
+        'time' => 'cmdTime',
+        'duration' => 'cmdDuration',
+        'since' => 'cmdSince',
+        'until' => 'cmdUntil',
+    ];
+
+    try {
+        [$command, $positionals, $options] = parseArgs($args);
+
+        if ($command === null) {
+            return [2, HELP];
+        }
+        if ($command === 'help') {
+            return [0, HELP];
+        }
+        if ($command === 'version') {
+            return [0, 'sayable ' . VERSION];
+        }
+        if ($command === 'locales') {
+            return [0, cmdLocales()];
+        }
+        if (!isset($commands[$command])) {
+            error("unknown command '{$command}'");
+        }
+
+        $result = $commands[$command]($positionals, $options);
+        return [$result === null ? 1 : 0, $result];
+    } catch (UsageError $e) {
+        fwrite(STDERR, "error: {$e->getMessage()}\n");
+        fwrite(STDERR, "Run 'sayable help' for usage.\n");
+        return [2, null];
+    }
+}
+
+/**
+ * Answer one tab-separated request per stdin line (see cli/SPEC.md).
+ */
+function repl(): void
+{
+    while (($line = fgets(STDIN)) !== false) {
+        $request = explode("\t", rtrim($line, "\r\n"));
+        try {
+            [$code, $output] = run($request);
+        } catch (Throwable $e) {
+            // A crash exits non-zero in one-shot mode; report it and keep serving.
+            fwrite(STDERR, $e . "\n");
+            [$code, $output] = [1, null];
+        }
+        $output = str_replace("\n", "\t", rtrim($output ?? '', "\n"));
+        fwrite(STDOUT, "{$code}\t{$output}\n");
+        fflush(STDOUT);
+    }
+}
+
 $args = array_slice($argv, 1);
-[$command, $positionals, $options] = parseArgs($args);
-
-if ($command === null) {
-    echo HELP . "\n";
-    exit(2);
-}
-
-if ($command === 'help') {
-    echo HELP . "\n";
+if ($args === ['--repl']) {
+    repl();
     exit(0);
 }
 
-if ($command === 'version') {
-    echo 'sayable ' . VERSION . "\n";
-    exit(0);
+[$code, $output] = run($args);
+if ($output !== null) {
+    echo $output . "\n";
 }
-
-if ($command === 'locales') {
-    cmdLocales();
-    exit(0);
-}
-
-$commands = [
-    'age' => 'cmdAge',
-    'stage' => 'cmdStage',
-    'date' => 'cmdDate',
-    'relative' => 'cmdRelative',
-    'time' => 'cmdTime',
-    'duration' => 'cmdDuration',
-    'since' => 'cmdSince',
-    'until' => 'cmdUntil',
-];
-
-if (!isset($commands[$command])) {
-    error("unknown command '{$command}'");
-}
-
-$commands[$command]($positionals, $options);
+exit($code);

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Wrapper script: builds the Rust CLI if needed, then runs it.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
+BINARY="${SCRIPT_DIR}/target/release/sayable"
+
+if [[ ! -x "${BINARY}" ]]; then
+    bash "${SCRIPT_DIR}/build.sh" >&2
+fi
+
+exec "${BINARY}" "$@"

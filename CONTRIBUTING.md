@@ -86,6 +86,7 @@ Every run captures output to `.logs/<action>/<language>.log` (e.g., `.logs/test/
 - **Deterministic tests.** Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
 - **Zero dependencies.** No runtime dependencies in any language. Pure date arithmetic.
 - **Spec-first testing.** The canonical test specification lives in [`age/config/tests.json`](age/config/tests.json). Add new test cases there first, then implement in all languages.
+- **Don't trust a language's own tests.** Native suites are hand-written per language and can drift. The CLI harness (`just test cli`) runs the canonical spec against every language's CLI from one generated script, and the fuzz test (`just fuzz`) checks that every language gives the same answer to thousands of random requests. See [`docs/testing.md`](docs/testing.md).
 
 ## Discuss before implementing
 
@@ -121,7 +122,7 @@ See [`age/docs/adding-a-locale.md`](age/docs/adding-a-locale.md) for a detailed 
 
 ### Bug fixes
 
-If you find a discrepancy between implementations, file an issue with the input and the differing outputs. All implementations must match the spec in `age/config/tests.json`.
+If you find a discrepancy between implementations, file an issue with the input and the differing outputs. `just fuzz` finds these automatically and prints a reproducible seed. All implementations must match the spec in `age/config/tests.json`.
 
 The fastest way to get a bug fixed is to include a failing test case in the format used by [`age/config/tests.json`](age/config/tests.json). If you can't reproduce it with a specific date pair, we probably can't either.
 
@@ -153,6 +154,7 @@ Locale changes require native speaker verification before merging:
 Before submitting a PR, verify:
 
 - [ ] Tests pass in all affected languages (`just test`)
+- [ ] The CLI harness passes for affected languages (`just test cli <lang>`) and `just fuzz` reports no disagreements
 - [ ] New test cases added to `age/config/tests.json` first (if applicable)
 - [ ] Locale changes reviewed by a native speaker (or self-attested)
 - [ ] Locale changes made in `age/locales/*.json` and regenerated (not hand-edited)

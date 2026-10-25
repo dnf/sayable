@@ -17,10 +17,16 @@ function result = nullify(value)
   endif
 endfunction
 
+% A usage error is raised with this identifier once its message is on stderr,
+% so run_command can answer exit 2 without ending the process.
+function id = usage_error_id()
+  id = 'sayable:usage';
+endfunction
+
 function cli_error(msg)
   fprintf(stderr, 'error: %s\n', msg);
   fprintf(stderr, "Run 'sayable help' for usage.\n");
-  exit(2);
+  error(usage_error_id(), '%s', msg);
 endfunction
 
 function today_str = get_today()
@@ -132,7 +138,7 @@ function [command, positionals, options] = parse_cli_args(args)
   endwhile
 endfunction
 
-function cmd_age(positionals, options)
+function result = cmd_age(positionals, options)
   if (length(positionals) == 0)
     cli_error('age requires a date-of-birth argument');
   endif
@@ -154,13 +160,9 @@ function cmd_age(positionals, options)
   formatter = sayable_age_new(loc, options.compactness);
   result = formatter.format_age(dob, as_of);
 
-  if (isempty(result))
-    exit(1);
-  endif
-  fprintf(stdout, '%s\n', result);
 endfunction
 
-function cmd_stage(positionals, options)
+function result = cmd_stage(positionals, options)
   if (length(positionals) == 0)
     cli_error('stage requires a date-of-birth argument');
   endif
@@ -184,13 +186,9 @@ function cmd_stage(positionals, options)
   formatter = sayable_age_new(loc, options.compactness);
   result = formatter.format_stage(dob, as_of, gender);
 
-  if (isempty(result))
-    exit(1);
-  endif
-  fprintf(stdout, '%s\n', result);
 endfunction
 
-function cmd_date(positionals, options)
+function result = cmd_date(positionals, options)
   if (length(positionals) == 0)
     cli_error('date requires a date argument');
   endif
@@ -210,13 +208,9 @@ function cmd_date(positionals, options)
     result = formatter.format_date(date_val);
   endif
 
-  if (isempty(result))
-    exit(1);
-  endif
-  fprintf(stdout, '%s\n', result);
 endfunction
 
-function cmd_relative(positionals, options)
+function result = cmd_relative(positionals, options)
   if (length(positionals) == 0)
     cli_error('relative requires a date argument');
   endif
@@ -237,13 +231,9 @@ function cmd_relative(positionals, options)
   formatter = sayable_date_new(loc, options.compactness);
   result = formatter.format_relative(date_val, as_of);
 
-  if (isempty(result))
-    exit(1);
-  endif
-  fprintf(stdout, '%s\n', result);
 endfunction
 
-function cmd_time(positionals, options)
+function result = cmd_time(positionals, options)
   if (length(positionals) == 0)
     cli_error('time requires a time argument');
   endif
@@ -258,13 +248,9 @@ function cmd_time(positionals, options)
   formatter = sayable_time_new(loc, options.compactness);
   result = formatter.format_time(time_val);
 
-  if (isempty(result))
-    exit(1);
-  endif
-  fprintf(stdout, '%s\n', result);
 endfunction
 
-function cmd_duration(positionals, options)
+function result = cmd_duration(positionals, options)
   if (length(positionals) == 0)
     cli_error('duration requires a value argument');
   endif
@@ -290,13 +276,9 @@ function cmd_duration(positionals, options)
     result = formatter.format_duration(value, end_val);
   endif
 
-  if (isempty(result))
-    exit(1);
-  endif
-  fprintf(stdout, '%s\n', result);
 endfunction
 
-function cmd_since(positionals, options)
+function result = cmd_since(positionals, options)
   if (length(positionals) == 0)
     cli_error('since requires a start timestamp argument');
   endif
@@ -317,13 +299,9 @@ function cmd_since(positionals, options)
   formatter = sayable_duration_new(loc, options.compactness);
   result = formatter.format_since(start_val, as_of);
 
-  if (isempty(result))
-    exit(1);
-  endif
-  fprintf(stdout, '%s\n', result);
 endfunction
 
-function cmd_until(positionals, options)
+function result = cmd_until(positionals, options)
   if (length(positionals) == 0)
     cli_error('until requires a target timestamp argument');
   endif
@@ -344,13 +322,9 @@ function cmd_until(positionals, options)
   formatter = sayable_duration_new(loc, options.compactness);
   result = formatter.format_until(target, as_of);
 
-  if (isempty(result))
-    exit(1);
-  endif
-  fprintf(stdout, '%s\n', result);
 endfunction
 
-function cmd_locales()
+function output = cmd_locales()
   codes = {
     'af', 'ak', 'am', 'ar', 'ay', 'az', ...
     'bci', 'be', 'bem', 'bg', 'bi', 'bm', 'bn', 'br', 'bs', ...
@@ -379,40 +353,144 @@ function cmd_locales()
     'yao', 'yo', 'yue', ...
     'zdj', 'zh', 'zu'
   };
-  for i = 1:length(codes)
-    fprintf(stdout, '%s\n', codes{i});
-  endfor
+  output = strjoin(codes(:)', "\n");
+endfunction
+
+function v = cli_version()
+  v = '0.5.0';
+endfunction
+
+function text = help_text()
+  text = strjoin({
+    'Usage: sayable <command> [arguments] [options]', ...
+    '', ...
+    'Commands:', ...
+    '  age <dob>              Format an age', ...
+    '  stage <dob>            Get developmental stage', ...
+    '  date <date>            Format a calendar date', ...
+    '  relative <date>        Format a relative date', ...
+    '  time <time>            Format a clock time', ...
+    '  duration <value> [end] Format a duration', ...
+    '  since <start>          Format elapsed time', ...
+    '  until <target>         Format remaining time', ...
+    '  locales                List available locale codes', ...
+    '  version                Show version', ...
+    '  help                   Show this help', ...
+    '', ...
+    'Options:', ...
+    '  -l, --locale <code>    Locale code (default: en)', ...
+    '  -d, --as-of <value>    Reference date/timestamp', ...
+    '      --short            Short compactness', ...
+    '      --compact          Compact compactness', ...
+    '  -g, --gender <m|f>     Gender for stage labels', ...
+    '      --with-year        Include year (date only)', ...
+    '  -h, --help             Show this help', ...
+    '  -v, --version          Show version'}, '\n');
+endfunction
+
+% Run one command as the one-shot CLI would, without printing or exiting.
+% output is [] when the run prints nothing to stdout.
+function [code, output] = run_command(args)
+  try
+    [code, output] = dispatch(args);
+  catch err
+    if (!strcmp(err.identifier, usage_error_id()))
+      rethrow(err);
+    endif
+    code = 2;
+    output = [];
+  end_try_catch
+endfunction
+
+function [code, output] = dispatch(args)
+  [command, positionals, options] = parse_cli_args(args);
+
+  code = 0;
+  if (isempty(command))
+    code = 2;
+    output = help_text();
+  elseif (strcmp(command, 'help'))
+    output = help_text();
+  elseif (strcmp(command, 'version'))
+    output = sprintf('sayable %s', cli_version());
+  elseif (strcmp(command, 'locales'))
+    output = cmd_locales();
+  else
+    output = run_formatter(command, positionals, options);
+    if (isempty(output))
+      code = 1;
+    endif
+  endif
+endfunction
+
+function result = run_formatter(command, positionals, options)
+  switch (command)
+    case 'age'
+      result = cmd_age(positionals, options);
+    case 'stage'
+      result = cmd_stage(positionals, options);
+    case 'date'
+      result = cmd_date(positionals, options);
+    case 'relative'
+      result = cmd_relative(positionals, options);
+    case 'time'
+      result = cmd_time(positionals, options);
+    case 'duration'
+      result = cmd_duration(positionals, options);
+    case 'since'
+      result = cmd_since(positionals, options);
+    case 'until'
+      result = cmd_until(positionals, options);
+    otherwise
+      cli_error(sprintf("unknown command '%s'", command));
+  endswitch
+endfunction
+
+function line = format_response(code, output)
+  text = '';
+  if (!isempty(output))
+    text = strrep(regexprep(output, '\n+$', ''), "\n", "\t");
+  endif
+  line = sprintf('%d\t%s\n', code, text);
+endfunction
+
+% Read one line from stdin without its newline, or return -1 at end of input.
+% fgetl would peek past the newline, blocking until the next request arrives,
+% so the line is read a byte at a time.
+function line = read_request(fid)
+  newline_byte = uint8(10);
+  bytes = zeros(1, 0, 'uint8');
+  byte = fread(fid, 1, 'uint8=>uint8');
+  if (isempty(byte))
+    line = -1;
+    return;
+  endif
+  while (!isempty(byte) && byte != newline_byte)
+    bytes(end + 1) = byte;
+    byte = fread(fid, 1, 'uint8=>uint8');
+  endwhile
+  line = regexprep(char(bytes), '\r$', '');
+endfunction
+
+% Answer one tab-separated request per stdin line (see cli/SPEC.md).
+function repl()
+  line = read_request(stdin);
+  while (ischar(line))
+    try
+      [code, output] = run_command(strsplit(line, "\t", 'CollapseDelimiters', false));
+    catch err
+      % A crash exits 1 in one-shot mode; keep serving.
+      fprintf(stderr, 'error: %s\n', err.message);
+      code = 1;
+      output = [];
+    end_try_catch
+    fputs(stdout, format_response(code, output));
+    fflush(stdout);
+    line = read_request(stdin);
+  endwhile
 endfunction
 
 % ===== MAIN SCRIPT =====
-
-VERSION = '0.5.0';
-
-HELP_TEXT = strjoin({
-  'Usage: sayable <command> [arguments] [options]', ...
-  '', ...
-  'Commands:', ...
-  '  age <dob>              Format an age', ...
-  '  stage <dob>            Get developmental stage', ...
-  '  date <date>            Format a calendar date', ...
-  '  relative <date>        Format a relative date', ...
-  '  time <time>            Format a clock time', ...
-  '  duration <value> [end] Format a duration', ...
-  '  since <start>          Format elapsed time', ...
-  '  until <target>         Format remaining time', ...
-  '  locales                List available locale codes', ...
-  '  version                Show version', ...
-  '  help                   Show this help', ...
-  '', ...
-  'Options:', ...
-  '  -l, --locale <code>    Locale code (default: en)', ...
-  '  -d, --as-of <value>    Reference date/timestamp', ...
-  '      --short            Short compactness', ...
-  '      --compact          Compact compactness', ...
-  '  -g, --gender <m|f>     Gender for stage labels', ...
-  '      --with-year        Include year (date only)', ...
-  '  -h, --help             Show this help', ...
-  '  -v, --version          Show version'}, '\n');
 
 % Resolve project root from this script's location
 script_path = mfilename('fullpath');
@@ -433,46 +511,14 @@ addpath(fullfile(project_root, 'duration', 'impl', 'octave', 'locales'));
 addpath(fullfile(project_root, 'time', 'impl', 'octave'));
 addpath(fullfile(project_root, 'time', 'impl', 'octave', 'locales'));
 
-% Parse command line arguments
 args = argv();
-[command, positionals, options] = parse_cli_args(args);
-
-if (isempty(command))
-  fprintf(stdout, '%s\n', HELP_TEXT);
-  exit(2);
-endif
-
-if (strcmp(command, 'help'))
-  fprintf(stdout, '%s\n', HELP_TEXT);
+if (numel(args) == 1 && strcmp(args{1}, '--repl'))
+  repl();
   exit(0);
 endif
 
-if (strcmp(command, 'version'))
-  fprintf(stdout, 'sayable %s\n', VERSION);
-  exit(0);
+[code, output] = run_command(args);
+if (!isempty(output))
+  fprintf(stdout, '%s\n', output);
 endif
-
-if (strcmp(command, 'locales'))
-  cmd_locales();
-  exit(0);
-endif
-
-if (strcmp(command, 'age'))
-  cmd_age(positionals, options);
-elseif (strcmp(command, 'stage'))
-  cmd_stage(positionals, options);
-elseif (strcmp(command, 'date'))
-  cmd_date(positionals, options);
-elseif (strcmp(command, 'relative'))
-  cmd_relative(positionals, options);
-elseif (strcmp(command, 'time'))
-  cmd_time(positionals, options);
-elseif (strcmp(command, 'duration'))
-  cmd_duration(positionals, options);
-elseif (strcmp(command, 'since'))
-  cmd_since(positionals, options);
-elseif (strcmp(command, 'until'))
-  cmd_until(positionals, options);
-else
-  cli_error(sprintf("unknown command '%s'", command));
-endif
+exit(code);

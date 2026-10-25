@@ -54,10 +54,14 @@ Options:
   -v, --version          Show version
 END
 
+# Usage errors are thrown, so one request can fail without ending the process.
+class X::Sayable::Usage is Exception {
+    has Str $.reason is required;
+    method message(--> Str) { $!reason }
+}
+
 sub cli-error(Str $msg) {
-    $*ERR.say("error: $msg");
-    $*ERR.say("Run 'sayable help' for usage.");
-    exit 2;
+    X::Sayable::Usage.new(reason => $msg).throw;
 }
 
 sub nullify(Str $value) {
@@ -147,7 +151,7 @@ sub cmd-age(@pos, %opts) {
     my $as-of = %opts<as-of>.defined ?? nullify(%opts<as-of>) !! get-today();
     my $f = SayableAge::Formatter.new($locale, compactness => %opts<compactness>);
     my $result = $f.format-age($dob, $as-of);
-    if $result.defined { say $result; } else { exit 1; }
+    return $result;
 }
 
 sub cmd-stage(@pos, %opts) {
@@ -162,7 +166,7 @@ sub cmd-stage(@pos, %opts) {
     my $gender = %opts<gender> // '';
     my $f = SayableAge::Formatter.new($locale, compactness => %opts<compactness>);
     my $result = $f.format-stage($dob, $as-of, gender => $gender);
-    if $result.defined { say $result; } else { exit 1; }
+    return $result;
 }
 
 sub cmd-date(@pos, %opts) {
@@ -180,7 +184,7 @@ sub cmd-date(@pos, %opts) {
     } else {
         $result = $f.format-date($date-val);
     }
-    if $result.defined { say $result; } else { exit 1; }
+    return $result;
 }
 
 sub cmd-relative(@pos, %opts) {
@@ -196,7 +200,7 @@ sub cmd-relative(@pos, %opts) {
 
     my $f = SayableDate::Formatter.new($locale, compactness => %opts<compactness>);
     my $result = $f.format-relative($date-val, as-of => $as-of);
-    if $result.defined { say $result; } else { exit 1; }
+    return $result;
 }
 
 sub cmd-time(@pos, %opts) {
@@ -209,7 +213,7 @@ sub cmd-time(@pos, %opts) {
 
     my $f = SayableTime::Formatter.new($locale, compactness => %opts<compactness>);
     my $result = $f.format-time($time-val);
-    if $result.defined { say $result; } else { exit 1; }
+    return $result;
 }
 
 sub cmd-duration(@pos, %opts) {
@@ -231,7 +235,7 @@ sub cmd-duration(@pos, %opts) {
         my $end = nullify(@pos[1]);
         $result = $f.format-duration($value, $end);
     }
-    if $result.defined { say $result; } else { exit 1; }
+    return $result;
 }
 
 sub cmd-since(@pos, %opts) {
@@ -247,7 +251,7 @@ sub cmd-since(@pos, %opts) {
 
     my $f = SayableDuration::Formatter.new($locale, compactness => %opts<compactness>);
     my $result = $f.format-since($start, $as-of);
-    if $result.defined { say $result; } else { exit 1; }
+    return $result;
 }
 
 sub cmd-until(@pos, %opts) {
@@ -263,36 +267,76 @@ sub cmd-until(@pos, %opts) {
 
     my $f = SayableDuration::Formatter.new($locale, compactness => %opts<compactness>);
     my $result = $f.format-until($target, $as-of);
-    if $result.defined { say $result; } else { exit 1; }
+    return $result;
 }
 
 sub cmd-locales() {
-    say 'en';
+    return 'en';
 }
 
-sub MAIN(*@args) {
-    my @parsed = parse-args(@args);
+# Run one request; returns its exit code and stdout text (a Str type object
+# for no output).
+sub dispatch(@argv) {
+    my @parsed = parse-args(@argv);
     my $command = @parsed[0];
     my @positionals = @parsed[1].list;
     my %options = @parsed[2];
 
-    if !$command.defined {
-        print $HELP;
-        exit 2;
-    }
+    return 2, $HELP.chomp unless $command.defined;
 
-    given $command {
-        when 'help'     { print $HELP; exit 0; }
-        when 'version'  { say "sayable $VERSION"; exit 0; }
-        when 'locales'  { cmd-locales(); exit 0; }
-        when 'age'      { cmd-age(@positionals, %options); }
-        when 'stage'    { cmd-stage(@positionals, %options); }
-        when 'date'     { cmd-date(@positionals, %options); }
-        when 'relative' { cmd-relative(@positionals, %options); }
-        when 'time'     { cmd-time(@positionals, %options); }
-        when 'duration' { cmd-duration(@positionals, %options); }
-        when 'since'    { cmd-since(@positionals, %options); }
-        when 'until'    { cmd-until(@positionals, %options); }
-        default         { cli-error("unknown command '$command'"); }
+    my $result = do given $command {
+        when 'help'     { return 0, $HELP.chomp }
+        when 'version'  { return 0, "sayable $VERSION" }
+        when 'locales'  { return 0, cmd-locales() }
+        when 'age'      { cmd-age(@positionals, %options) }
+        when 'stage'    { cmd-stage(@positionals, %options) }
+        when 'date'     { cmd-date(@positionals, %options) }
+        when 'relative' { cmd-relative(@positionals, %options) }
+        when 'time'     { cmd-time(@positionals, %options) }
+        when 'duration' { cmd-duration(@positionals, %options) }
+        when 'since'    { cmd-since(@positionals, %options) }
+        when 'until'    { cmd-until(@positionals, %options) }
+        default         { cli-error("unknown command '$command'") }
+    };
+    return ($result.defined ?? 0 !! 1), $result;
+}
+
+sub run(@argv) {
+    CATCH {
+        when X::Sayable::Usage {
+            $*ERR.say("error: {.message}");
+            $*ERR.say("Run 'sayable help' for usage.");
+            return 2, Str;
+        }
     }
+    return dispatch(@argv);
+}
+
+# Answer one tab-separated request per stdin line (see cli/SPEC.md).
+sub repl() {
+    $*IN.encoding('utf8');
+    $*OUT.encoding('utf8');
+    for $*IN.lines -> $line {
+        # A crash exits 1 in one-shot mode, so that is the answer unless run returns.
+        my ($code, $output) = 1, Str;
+        {
+            CATCH { default { $*ERR.say(.gist) } }
+            ($code, $output) = run($line.split("\t"));
+        }
+        my $flattened = ($output // '').subst(/\n+ $/, '').subst("\n", "\t", :g);
+        $*OUT.print("$code\t$flattened\n");
+        $*OUT.flush;
+    }
+}
+
+# Raku parses a leading --repl as a named argument, not a positional.
+multi sub MAIN(Bool :$repl!) {
+    repl() if $repl;
+    exit 0;
+}
+
+multi sub MAIN(*@args) {
+    my ($code, $output) = run(@args);
+    say $output if $output.defined;
+    exit $code;
 }

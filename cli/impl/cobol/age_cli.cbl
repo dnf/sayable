@@ -1,11 +1,14 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. AGE-CLI.
+       PROGRAM-ID. AGE-CLI IS INITIAL.
+      *> INITIAL: every CALL starts from fresh WORKING-STORAGE, so
+      *> options and locale fields never leak between REPL requests.
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
 
       *> CLI argument handling
        01 WS-ARG-COUNT         PIC 9(4).
+       01 WS-EMIT-TEXT         PIC X(1024).
        01 WS-ARG-VAL           PIC X(256).
        01 WS-CMD               PIC X(20).
        01 WS-POS1              PIC X(256).
@@ -26,26 +29,180 @@
        01 WS-TODAY-MM          PIC 9(2).
        01 WS-TODAY-DD          PIC 9(2).
 
+      *> Locale codes printed by `sayable locales`, in order.
+       01 WS-LOCALE-CODE-VALUES.
+          05 FILLER            PIC X(3) VALUE "af".
+          05 FILLER            PIC X(3) VALUE "ak".
+          05 FILLER            PIC X(3) VALUE "am".
+          05 FILLER            PIC X(3) VALUE "ar".
+          05 FILLER            PIC X(3) VALUE "az".
+          05 FILLER            PIC X(3) VALUE "bci".
+          05 FILLER            PIC X(3) VALUE "be".
+          05 FILLER            PIC X(3) VALUE "bem".
+          05 FILLER            PIC X(3) VALUE "bg".
+          05 FILLER            PIC X(3) VALUE "bi".
+          05 FILLER            PIC X(3) VALUE "bm".
+          05 FILLER            PIC X(3) VALUE "bn".
+          05 FILLER            PIC X(3) VALUE "br".
+          05 FILLER            PIC X(3) VALUE "bs".
+          05 FILLER            PIC X(3) VALUE "ca".
+          05 FILLER            PIC X(3) VALUE "ceb".
+          05 FILLER            PIC X(3) VALUE "cs".
+          05 FILLER            PIC X(3) VALUE "cy".
+          05 FILLER            PIC X(3) VALUE "da".
+          05 FILLER            PIC X(3) VALUE "de".
+          05 FILLER            PIC X(3) VALUE "din".
+          05 FILLER            PIC X(3) VALUE "dje".
+          05 FILLER            PIC X(3) VALUE "dyu".
+          05 FILLER            PIC X(3) VALUE "ee".
+          05 FILLER            PIC X(3) VALUE "el".
+          05 FILLER            PIC X(3) VALUE "en".
+          05 FILLER            PIC X(3) VALUE "es".
+          05 FILLER            PIC X(3) VALUE "et".
+          05 FILLER            PIC X(3) VALUE "eu".
+          05 FILLER            PIC X(3) VALUE "fa".
+          05 FILLER            PIC X(3) VALUE "fan".
+          05 FILLER            PIC X(3) VALUE "ff".
+          05 FILLER            PIC X(3) VALUE "fi".
+          05 FILLER            PIC X(3) VALUE "fil".
+          05 FILLER            PIC X(3) VALUE "fon".
+          05 FILLER            PIC X(3) VALUE "fr".
+          05 FILLER            PIC X(3) VALUE "ga".
+          05 FILLER            PIC X(3) VALUE "gd".
+          05 FILLER            PIC X(3) VALUE "gl".
+          05 FILLER            PIC X(3) VALUE "gn".
+          05 FILLER            PIC X(3) VALUE "gu".
+          05 FILLER            PIC X(3) VALUE "gv".
+          05 FILLER            PIC X(3) VALUE "ha".
+          05 FILLER            PIC X(3) VALUE "he".
+          05 FILLER            PIC X(3) VALUE "hi".
+          05 FILLER            PIC X(3) VALUE "hr".
+          05 FILLER            PIC X(3) VALUE "ht".
+          05 FILLER            PIC X(3) VALUE "hu".
+          05 FILLER            PIC X(3) VALUE "hy".
+          05 FILLER            PIC X(3) VALUE "id".
+          05 FILLER            PIC X(3) VALUE "ig".
+          05 FILLER            PIC X(3) VALUE "is".
+          05 FILLER            PIC X(3) VALUE "it".
+          05 FILLER            PIC X(3) VALUE "ja".
+          05 FILLER            PIC X(3) VALUE "jv".
+          05 FILLER            PIC X(3) VALUE "ka".
+          05 FILLER            PIC X(3) VALUE "kbp".
+          05 FILLER            PIC X(3) VALUE "kk".
+          05 FILLER            PIC X(3) VALUE "km".
+          05 FILLER            PIC X(3) VALUE "kn".
+          05 FILLER            PIC X(3) VALUE "ko".
+          05 FILLER            PIC X(3) VALUE "kpe".
+          05 FILLER            PIC X(3) VALUE "ktu".
+          05 FILLER            PIC X(3) VALUE "ku".
+          05 FILLER            PIC X(3) VALUE "kw".
+          05 FILLER            PIC X(3) VALUE "ky".
+          05 FILLER            PIC X(3) VALUE "lg".
+          05 FILLER            PIC X(3) VALUE "ln".
+          05 FILLER            PIC X(3) VALUE "lo".
+          05 FILLER            PIC X(3) VALUE "lt".
+          05 FILLER            PIC X(3) VALUE "lv".
+          05 FILLER            PIC X(3) VALUE "men".
+          05 FILLER            PIC X(3) VALUE "mfe".
+          05 FILLER            PIC X(3) VALUE "mg".
+          05 FILLER            PIC X(3) VALUE "mi".
+          05 FILLER            PIC X(3) VALUE "mk".
+          05 FILLER            PIC X(3) VALUE "ml".
+          05 FILLER            PIC X(3) VALUE "mn".
+          05 FILLER            PIC X(3) VALUE "mnk".
+          05 FILLER            PIC X(3) VALUE "mos".
+          05 FILLER            PIC X(3) VALUE "mr".
+          05 FILLER            PIC X(3) VALUE "ms".
+          05 FILLER            PIC X(3) VALUE "mt".
+          05 FILLER            PIC X(3) VALUE "my".
+          05 FILLER            PIC X(3) VALUE "nb".
+          05 FILLER            PIC X(3) VALUE "nd".
+          05 FILLER            PIC X(3) VALUE "ne".
+          05 FILLER            PIC X(3) VALUE "ng".
+          05 FILLER            PIC X(3) VALUE "nl".
+          05 FILLER            PIC X(3) VALUE "nso".
+          05 FILLER            PIC X(3) VALUE "nus".
+          05 FILLER            PIC X(3) VALUE "ny".
+          05 FILLER            PIC X(3) VALUE "om".
+          05 FILLER            PIC X(3) VALUE "or".
+          05 FILLER            PIC X(3) VALUE "pa".
+          05 FILLER            PIC X(3) VALUE "pl".
+          05 FILLER            PIC X(3) VALUE "pov".
+          05 FILLER            PIC X(3) VALUE "ps".
+          05 FILLER            PIC X(3) VALUE "pt".
+          05 FILLER            PIC X(3) VALUE "qu".
+          05 FILLER            PIC X(3) VALUE "ro".
+          05 FILLER            PIC X(3) VALUE "ru".
+          05 FILLER            PIC X(3) VALUE "rw".
+          05 FILLER            PIC X(3) VALUE "sar".
+          05 FILLER            PIC X(3) VALUE "sd".
+          05 FILLER            PIC X(3) VALUE "sg".
+          05 FILLER            PIC X(3) VALUE "shi".
+          05 FILLER            PIC X(3) VALUE "si".
+          05 FILLER            PIC X(3) VALUE "sk".
+          05 FILLER            PIC X(3) VALUE "sl".
+          05 FILLER            PIC X(3) VALUE "sn".
+          05 FILLER            PIC X(3) VALUE "snk".
+          05 FILLER            PIC X(3) VALUE "so".
+          05 FILLER            PIC X(3) VALUE "sq".
+          05 FILLER            PIC X(3) VALUE "sr".
+          05 FILLER            PIC X(3) VALUE "ss".
+          05 FILLER            PIC X(3) VALUE "st".
+          05 FILLER            PIC X(3) VALUE "su".
+          05 FILLER            PIC X(3) VALUE "suk".
+          05 FILLER            PIC X(3) VALUE "sv".
+          05 FILLER            PIC X(3) VALUE "sw".
+          05 FILLER            PIC X(3) VALUE "ta".
+          05 FILLER            PIC X(3) VALUE "te".
+          05 FILLER            PIC X(3) VALUE "tem".
+          05 FILLER            PIC X(3) VALUE "tg".
+          05 FILLER            PIC X(3) VALUE "th".
+          05 FILLER            PIC X(3) VALUE "ti".
+          05 FILLER            PIC X(3) VALUE "tig".
+          05 FILLER            PIC X(3) VALUE "tk".
+          05 FILLER            PIC X(3) VALUE "tn".
+          05 FILLER            PIC X(3) VALUE "tr".
+          05 FILLER            PIC X(3) VALUE "ts".
+          05 FILLER            PIC X(3) VALUE "tzm".
+          05 FILLER            PIC X(3) VALUE "uk".
+          05 FILLER            PIC X(3) VALUE "umb".
+          05 FILLER            PIC X(3) VALUE "ur".
+          05 FILLER            PIC X(3) VALUE "uz".
+          05 FILLER            PIC X(3) VALUE "vi".
+          05 FILLER            PIC X(3) VALUE "vmw".
+          05 FILLER            PIC X(3) VALUE "wo".
+          05 FILLER            PIC X(3) VALUE "xh".
+          05 FILLER            PIC X(3) VALUE "yo".
+          05 FILLER            PIC X(3) VALUE "yue".
+          05 FILLER            PIC X(3) VALUE "zdj".
+          05 FILLER            PIC X(3) VALUE "zh".
+          05 FILLER            PIC X(3) VALUE "zu".
+       01 WS-LOCALE-CODE-TABLE REDEFINES WS-LOCALE-CODE-VALUES.
+          05 WS-LOCALE-CODE    PIC X(3) OCCURS 146 TIMES.
+       01 WS-LOCALE-COUNT      PIC 9(3) VALUE 146.
+       01 WS-LOCALE-IDX        PIC 9(3).
+
        COPY "age/impl/cobol/src/Types.cbl".
 
-       PROCEDURE DIVISION.
+       LINKAGE SECTION.
+       COPY "cli/impl/cobol/request.cpy".
+
+       PROCEDURE DIVISION USING SAYABLE-REQUEST.
        MAIN-PROGRAM.
-           ACCEPT WS-ARG-COUNT FROM ARGUMENT-NUMBER
+           MOVE REQ-ARG-COUNT TO WS-ARG-COUNT
            IF WS-ARG-COUNT < 1
                DISPLAY "error: missing command" UPON SYSERR
-               MOVE 2 TO RETURN-CODE
-               STOP RUN
+               MOVE 2 TO REQ-EXIT-CODE
+               GOBACK
            END-IF
 
       *>   First arg is the command
-           DISPLAY 1 UPON ARGUMENT-NUMBER
-           ACCEPT WS-CMD FROM ARGUMENT-VALUE
+           MOVE REQ-ARG(1) TO WS-CMD
 
       *>   Parse remaining arguments
            MOVE 2 TO WS-ARG-IDX
            PERFORM UNTIL WS-ARG-IDX > WS-ARG-COUNT
-               DISPLAY WS-ARG-IDX UPON ARGUMENT-NUMBER
-               ACCEPT WS-ARG-VAL FROM ARGUMENT-VALUE
+               MOVE REQ-ARG(WS-ARG-IDX) TO WS-ARG-VAL
 
                IF WS-STOP-OPTS = 0
                    AND WS-ARG-VAL(1:2) = "--"
@@ -66,26 +223,20 @@
                            IF WS-ARG-IDX > WS-ARG-COUNT
                                DISPLAY "error: '--locale' requ"
                                    "ires a value" UPON SYSERR
-                               MOVE 2 TO RETURN-CODE
-                               STOP RUN
+                               MOVE 2 TO REQ-EXIT-CODE
+                               GOBACK
                            END-IF
-                           DISPLAY WS-ARG-IDX
-                               UPON ARGUMENT-NUMBER
-                           ACCEPT WS-OPT-LOCALE
-                               FROM ARGUMENT-VALUE
+                           MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-LOCALE
                        WHEN "-d"
                        WHEN "--as-of"
                            ADD 1 TO WS-ARG-IDX
                            IF WS-ARG-IDX > WS-ARG-COUNT
                                DISPLAY "error: '--as-of' requ"
                                    "ires a value" UPON SYSERR
-                               MOVE 2 TO RETURN-CODE
-                               STOP RUN
+                               MOVE 2 TO REQ-EXIT-CODE
+                               GOBACK
                            END-IF
-                           DISPLAY WS-ARG-IDX
-                               UPON ARGUMENT-NUMBER
-                           ACCEPT WS-OPT-AS-OF
-                               FROM ARGUMENT-VALUE
+                           MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-AS-OF
                            MOVE 1 TO WS-OPT-AS-OF-SET
                        WHEN "-g"
                        WHEN "--gender"
@@ -93,13 +244,10 @@
                            IF WS-ARG-IDX > WS-ARG-COUNT
                                DISPLAY "error: '--gender' requ"
                                    "ires a value" UPON SYSERR
-                               MOVE 2 TO RETURN-CODE
-                               STOP RUN
+                               MOVE 2 TO REQ-EXIT-CODE
+                               GOBACK
                            END-IF
-                           DISPLAY WS-ARG-IDX
-                               UPON ARGUMENT-NUMBER
-                           ACCEPT WS-OPT-GENDER
-                               FROM ARGUMENT-VALUE
+                           MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-GENDER
                            MOVE 1 TO WS-OPT-GENDER-SET
                        WHEN "--short"
                            MOVE 1 TO WS-OPT-COMPACTNESS
@@ -112,8 +260,8 @@
                            DISPLAY
                                "Run 'sayable help' for usage."
                                UPON SYSERR
-                           MOVE 2 TO RETURN-CODE
-                           STOP RUN
+                           MOVE 2 TO REQ-EXIT-CODE
+                           GOBACK
                    END-EVALUATE
                ELSE
                    IF WS-POS1-SET = 0
@@ -137,9 +285,9 @@
                        FUNCTION TRIM(WS-CMD) "'" UPON SYSERR
                    DISPLAY "Run 'sayable help' for usage."
                        UPON SYSERR
-                   MOVE 2 TO RETURN-CODE
+                   MOVE 2 TO REQ-EXIT-CODE
            END-EVALUATE
-           STOP RUN.
+           GOBACK.
 
        CMD-AGE.
            IF WS-POS1-SET = 0
@@ -147,19 +295,19 @@
                    " argument" UPON SYSERR
                DISPLAY "Run 'sayable help' for usage."
                    UPON SYSERR
-               MOVE 2 TO RETURN-CODE
+               MOVE 2 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
       *>   Check for null
            IF FUNCTION TRIM(WS-POS1) = "null"
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
       *>   Check for empty string
            IF FUNCTION TRIM(WS-POS1) = SPACES
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
@@ -171,14 +319,14 @@
                    FUNCTION TRIM(WS-OPT-LOCALE) "'" UPON SYSERR
                DISPLAY "Run 'sayable help' for usage."
                    UPON SYSERR
-               MOVE 2 TO RETURN-CODE
+               MOVE 2 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
       *>   Set up as-of
            IF WS-OPT-AS-OF-SET = 1
                IF FUNCTION TRIM(WS-OPT-AS-OF) = "null"
-                   MOVE 1 TO RETURN-CODE
+                   MOVE 1 TO REQ-EXIT-CODE
                    EXIT PARAGRAPH
                END-IF
                MOVE WS-OPT-AS-OF TO WS-FMT-AS-OF
@@ -206,10 +354,11 @@
            PERFORM FORMAT-AGE
 
            IF FUNCTION TRIM(WS-FORMAT-RESULT) = SPACES
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
            ELSE
-               DISPLAY FUNCTION TRIM(WS-FORMAT-RESULT)
-               MOVE 0 TO RETURN-CODE
+               MOVE WS-FORMAT-RESULT TO WS-EMIT-TEXT
+               PERFORM EMIT-LINE
+               MOVE 0 TO REQ-EXIT-CODE
            END-IF
            .
 
@@ -219,20 +368,20 @@
                    " argument" UPON SYSERR
                DISPLAY "Run 'sayable help' for usage."
                    UPON SYSERR
-               MOVE 2 TO RETURN-CODE
+               MOVE 2 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
       *>   Check for null or "undefined"
            IF FUNCTION TRIM(WS-POS1) = "null"
                OR FUNCTION TRIM(WS-POS1) = "undefined"
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
       *>   Check for empty string
            IF FUNCTION TRIM(WS-POS1) = SPACES
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
@@ -244,14 +393,14 @@
                    FUNCTION TRIM(WS-OPT-LOCALE) "'" UPON SYSERR
                DISPLAY "Run 'sayable help' for usage."
                    UPON SYSERR
-               MOVE 2 TO RETURN-CODE
+               MOVE 2 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
       *>   Set up as-of
            IF WS-OPT-AS-OF-SET = 1
                IF FUNCTION TRIM(WS-OPT-AS-OF) = "null"
-                   MOVE 1 TO RETURN-CODE
+                   MOVE 1 TO REQ-EXIT-CODE
                    EXIT PARAGRAPH
                END-IF
                MOVE WS-OPT-AS-OF TO WS-FMT-AS-OF
@@ -284,165 +433,33 @@
            PERFORM FORMAT-STAGE
 
            IF FUNCTION TRIM(WS-STAGE-RESULT) = SPACES
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
            ELSE
-               DISPLAY FUNCTION TRIM(WS-STAGE-RESULT)
-               MOVE 0 TO RETURN-CODE
+               MOVE WS-STAGE-RESULT TO WS-EMIT-TEXT
+               PERFORM EMIT-LINE
+               MOVE 0 TO REQ-EXIT-CODE
            END-IF
            .
 
        CMD-LOCALES.
            PERFORM PRINT-LOCALE-CODES
-           MOVE 0 TO RETURN-CODE
+           MOVE 0 TO REQ-EXIT-CODE
            .
 
        PRINT-LOCALE-CODES.
-           DISPLAY "af"
-           DISPLAY "ak"
-           DISPLAY "am"
-           DISPLAY "ar"
-           DISPLAY "az"
-           DISPLAY "bci"
-           DISPLAY "be"
-           DISPLAY "bem"
-           DISPLAY "bg"
-           DISPLAY "bi"
-           DISPLAY "bm"
-           DISPLAY "bn"
-           DISPLAY "br"
-           DISPLAY "bs"
-           DISPLAY "ca"
-           DISPLAY "ceb"
-           DISPLAY "cs"
-           DISPLAY "cy"
-           DISPLAY "da"
-           DISPLAY "de"
-           DISPLAY "din"
-           DISPLAY "dje"
-           DISPLAY "dyu"
-           DISPLAY "ee"
-           DISPLAY "el"
-           DISPLAY "en"
-           DISPLAY "es"
-           DISPLAY "et"
-           DISPLAY "eu"
-           DISPLAY "fa"
-           DISPLAY "fan"
-           DISPLAY "ff"
-           DISPLAY "fi"
-           DISPLAY "fil"
-           DISPLAY "fon"
-           DISPLAY "fr"
-           DISPLAY "ga"
-           DISPLAY "gd"
-           DISPLAY "gl"
-           DISPLAY "gn"
-           DISPLAY "gu"
-           DISPLAY "gv"
-           DISPLAY "ha"
-           DISPLAY "he"
-           DISPLAY "hi"
-           DISPLAY "hr"
-           DISPLAY "ht"
-           DISPLAY "hu"
-           DISPLAY "hy"
-           DISPLAY "id"
-           DISPLAY "ig"
-           DISPLAY "is"
-           DISPLAY "it"
-           DISPLAY "ja"
-           DISPLAY "jv"
-           DISPLAY "ka"
-           DISPLAY "kbp"
-           DISPLAY "kk"
-           DISPLAY "km"
-           DISPLAY "kn"
-           DISPLAY "ko"
-           DISPLAY "kpe"
-           DISPLAY "ktu"
-           DISPLAY "ku"
-           DISPLAY "kw"
-           DISPLAY "ky"
-           DISPLAY "lg"
-           DISPLAY "ln"
-           DISPLAY "lo"
-           DISPLAY "lt"
-           DISPLAY "lv"
-           DISPLAY "men"
-           DISPLAY "mfe"
-           DISPLAY "mg"
-           DISPLAY "mi"
-           DISPLAY "mk"
-           DISPLAY "ml"
-           DISPLAY "mn"
-           DISPLAY "mnk"
-           DISPLAY "mos"
-           DISPLAY "mr"
-           DISPLAY "ms"
-           DISPLAY "mt"
-           DISPLAY "my"
-           DISPLAY "nb"
-           DISPLAY "nd"
-           DISPLAY "ne"
-           DISPLAY "ng"
-           DISPLAY "nl"
-           DISPLAY "nso"
-           DISPLAY "nus"
-           DISPLAY "ny"
-           DISPLAY "om"
-           DISPLAY "or"
-           DISPLAY "pa"
-           DISPLAY "pl"
-           DISPLAY "pov"
-           DISPLAY "ps"
-           DISPLAY "pt"
-           DISPLAY "qu"
-           DISPLAY "ro"
-           DISPLAY "ru"
-           DISPLAY "rw"
-           DISPLAY "sar"
-           DISPLAY "sd"
-           DISPLAY "sg"
-           DISPLAY "shi"
-           DISPLAY "si"
-           DISPLAY "sk"
-           DISPLAY "sl"
-           DISPLAY "sn"
-           DISPLAY "snk"
-           DISPLAY "so"
-           DISPLAY "sq"
-           DISPLAY "sr"
-           DISPLAY "ss"
-           DISPLAY "st"
-           DISPLAY "su"
-           DISPLAY "suk"
-           DISPLAY "sv"
-           DISPLAY "sw"
-           DISPLAY "ta"
-           DISPLAY "te"
-           DISPLAY "tem"
-           DISPLAY "tg"
-           DISPLAY "th"
-           DISPLAY "ti"
-           DISPLAY "tig"
-           DISPLAY "tk"
-           DISPLAY "tn"
-           DISPLAY "tr"
-           DISPLAY "ts"
-           DISPLAY "tzm"
-           DISPLAY "uk"
-           DISPLAY "umb"
-           DISPLAY "ur"
-           DISPLAY "uz"
-           DISPLAY "vi"
-           DISPLAY "vmw"
-           DISPLAY "wo"
-           DISPLAY "xh"
-           DISPLAY "yo"
-           DISPLAY "yue"
-           DISPLAY "zdj"
-           DISPLAY "zh"
-           DISPLAY "zu"
+           PERFORM VARYING WS-LOCALE-IDX FROM 1 BY 1
+                   UNTIL WS-LOCALE-IDX > WS-LOCALE-COUNT
+               MOVE WS-LOCALE-CODE(WS-LOCALE-IDX) TO WS-EMIT-TEXT
+               PERFORM EMIT-LINE
+           END-PERFORM
+           .
+
+      *> Appends one stdout line to the response.
+       EMIT-LINE.
+           STRING FUNCTION TRIM(WS-EMIT-TEXT) X"0A"
+               DELIMITED BY SIZE
+               INTO REQ-OUTPUT WITH POINTER REQ-OUTPUT-PTR
+           END-STRING
            .
 
        COPY "age/impl/cobol/src/SayableAge.cbl".

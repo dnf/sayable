@@ -12,6 +12,23 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# REPL mode (see cli/SPEC.md). wren_cli 0.4.0 cannot detect end of input
+# without crashing, so the requests are followed by an end marker (0x1C) that
+# main.wren stops at; lines it prefixes with __STDERR__ are moved to stderr.
+if [[ "$#" -eq 1 && "$1" == "--repl" ]]; then
+    _end_of_requests=$'\034'
+    { cat; printf '%s\n' "${_end_of_requests}"; } \
+        | wren_cli "${SCRIPT_DIR}/main.wren" --repl \
+        | while IFS= read -r _line; do
+            if [[ "${_line}" == __STDERR__* ]]; then
+                printf '%s\n' "${_line#__STDERR__}" >&2
+            else
+                printf '%s\n' "${_line}"
+            fi
+        done
+    exit 0
+fi
+
 # Capture all output (wren_cli writes everything to stdout)
 output=$(wren_cli "${SCRIPT_DIR}/main.wren" "$@" 2>/dev/null) || {
     # Fiber.abort was called — check output for our exit protocol

@@ -3,6 +3,8 @@
 # Sayable CLI Test Harness
 # Generated from canonical test JSON files — do not edit by hand.
 # Regenerate: python3 cli/generate-test-harness.py
+#
+# Runs every test through one `<cli> --repl` process (see cli/SPEC.md).
 # ==========================================================================
 set -euo pipefail
 
@@ -30,79 +32,36 @@ else
     _red="" _green="" _yellow="" _reset=""
 fi
 
-# Test helper: expect specific output (exit 0)
-run_test() {
-    local id="$1" expected="$2"
-    shift 2
-    _total=$((_total + 1))
-    local output rc
-    output=$("${CLI}" "$@" 2>/dev/null) && rc=0 || rc=$?
-    if [[ ${rc} -eq 0 && "${output}" == "${expected}" ]]; then
-        _pass=$((_pass + 1))
-    else
-        _fail=$((_fail + 1))
-        printf "${_red}FAIL${_reset} %s: expected %q, got %q (exit %d)\n" "${id}" "${expected}" "${output}" "${rc}"
-    fi
+# Requests are queued, answered by a single `--repl` process, then checked.
+# Request: the CLI arguments joined by tabs. Response: "<exit>\t<output>".
+_tab=$'\t'
+_ids=()
+_kinds=()
+_expects=()
+_requests=""
+
+_queue() {
+    local id="$1" kind="$2" expected="$3"
+    shift 3
+    local IFS="${_tab}"
+    _ids+=("${id}")
+    _kinds+=("${kind}")
+    _expects+=("${expected}")
+    _requests+="$*"$'\n'
 }
 
-# Test helper: expect null result (exit 1, no output)
-run_null() {
-    local id="$1"
-    shift
-    _total=$((_total + 1))
-    local output rc
-    output=$("${CLI}" "$@" 2>/dev/null) && rc=0 || rc=$?
-    if [[ ${rc} -eq 1 && -z "${output}" ]]; then
-        _pass=$((_pass + 1))
-    else
-        _fail=$((_fail + 1))
-        printf "${_red}FAIL${_reset} %s: expected null (exit 1), got exit %d, output: %q\n" "${id}" "${rc}" "${output}"
-    fi
-}
+run_test() { local id="$1" expected="$2"; shift 2; _queue "${id}" test "${expected}" "$@"; }
+run_null() { local id="$1"; shift; _queue "${id}" null "" "$@"; }
+run_regex() { local id="$1" pattern="$2"; shift 2; _queue "${id}" regex "${pattern}" "$@"; }
 
-# Test helper: expect output matching a regex (exit 0)
-run_regex() {
-    local id="$1" pattern="$2"
-    shift 2
-    _total=$((_total + 1))
-    local output rc
-    output=$("${CLI}" "$@" 2>/dev/null) && rc=0 || rc=$?
-    if [[ ${rc} -eq 0 && "${output}" =~ ${pattern} ]]; then
-        _pass=$((_pass + 1))
-    else
-        _fail=$((_fail + 1))
-        printf "${_red}FAIL${_reset} %s: expected match %q, got %q (exit %d)\n" "${id}" "${pattern}" "${output}" "${rc}"
-    fi
-}
-
-# Probe: check if a component is supported
-probe_component() {
-    local cmd="$1"
-    # Try a known-good call; exit 2 means unsupported command
-    "${CLI}" "${cmd}" null 2>/dev/null; local rc=$?
-    [[ ${rc} -ne 2 ]]
-}
-
-# Detect supported components
-_has_age=true
-_has_date=true
-_has_time=true
-_has_duration=true
-
-probe_component age || _has_age=false
-probe_component date || _has_date=false
-probe_component time || _has_time=false
-probe_component duration || _has_duration=false
-
-echo "Testing: ${CLI}"
-echo "Components: age=${_has_age} date=${_has_date} time=${_has_time} duration=${_has_duration}"
-echo ""
+# A component is supported unless probing it is a usage error (exit 2).
+for _component in age date time duration; do
+    _queue "probe:${_component}" probe "" "${_component}" null
+done
 
 # ══════════════════════════════════════════════════════════════
 # AGE COMPONENT
 # ══════════════════════════════════════════════════════════════
-if ${_has_age}; then
-echo "▸ Age tests"
 
 # === Age 1: Null / edge cases ===
 run_null 'age:1.1' age null
@@ -366,15 +325,9 @@ run_test 'age:29.38' '6 ወራት' age 2025-01-15 -d 2025-07-15 -l am
 run_test 'age:29.39' '3 ዓመታት ተኩል' age 2022-06-15 -d 2025-12-15 -l am
 # Skipped: section 30 — Locale lookup by code string
 
-else
-    echo "⊘ Age: not supported, skipping"
-fi
-
 # ══════════════════════════════════════════════════════════════
 # DATE COMPONENT
 # ══════════════════════════════════════════════════════════════
-if ${_has_date}; then
-echo "▸ Date tests"
 
 # === Date: Null / edge cases ===
 run_null 'date:1.1' date null
@@ -451,15 +404,9 @@ run_test 'date:11.2' 'غداً' relative 2025-03-16 -d 2025-03-15 -l ar
 run_test 'date:12.1' '15 de marzo' date 2025-03-15 -l es
 run_test 'date:12.2' 'pasado mañana' relative 2025-03-17 -d 2025-03-15 -l es
 
-else
-    echo "⊘ Date: not supported, skipping"
-fi
-
 # ══════════════════════════════════════════════════════════════
 # TIME COMPONENT
 # ══════════════════════════════════════════════════════════════
-if ${_has_time}; then
-echo "▸ Time tests"
 
 # === Time 1: Null / edge cases ===
 run_null 'time:1.1' time null
@@ -499,15 +446,13 @@ run_test 'time:6.1' 'trois heures et quart' time 15:15 -l fr
 # === Time 7: Locale — Japanese ===
 run_test 'time:7.1' '三時半' time 15:30 -l ja
 
-else
-    echo "⊘ Time: not supported, skipping"
-fi
+# === Time 8: Locale — Finnish (dot separator, short) ===
+run_test 'time:8.1' '14.15' time 14:15 -l fi --short
+run_test 'time:8.2' '0.00' time 00:00 -l fi --short
 
 # ══════════════════════════════════════════════════════════════
 # DURATION COMPONENT
 # ══════════════════════════════════════════════════════════════
-if ${_has_duration}; then
-echo "▸ Duration tests"
 
 # === Duration 1: Null / edge cases ===
 run_null 'dur:1.1' duration null
@@ -596,14 +541,81 @@ run_test 'dur:16.2' '1m, 30s' duration 90 --short
 run_test 'dur:17.1' '1h' duration 3600 --compact
 run_test 'dur:17.2' '1m30s' duration 90 --compact
 
-else
-    echo "⊘ Duration: not supported, skipping"
+# ══════════════════════════════════════════════════════════════
+# RUN AND CHECK
+# ══════════════════════════════════════════════════════════════
+_responses=()
+while IFS= read -r _line; do
+    _responses+=("${_line}")
+done < <(printf '%s' "${_requests}" | "${CLI}" --repl 2>/dev/null || true)
+
+if [[ ${#_responses[@]} -ne ${#_ids[@]} ]]; then
+    printf "${_red}FAIL${_reset} REPL answered %d of %d requests\n" "${#_responses[@]}" "${#_ids[@]}"
+    exit 1
 fi
+
+_has_age=true _has_date=true _has_time=true _has_duration=true
+for _i in "${!_ids[@]}"; do
+    if [[ "${_kinds[_i]}" == probe && "${_responses[_i]%%${_tab}*}" == 2 ]]; then
+        case "${_ids[_i]}" in
+            probe:age) _has_age=false ;;
+            probe:date) _has_date=false ;;
+            probe:time) _has_time=false ;;
+            probe:duration) _has_duration=false ;;
+        esac
+    fi
+done
+
+echo "Testing: ${CLI}"
+echo "Components: age=${_has_age} date=${_has_date} time=${_has_time} duration=${_has_duration}"
+
+_supported() {
+    case "$1" in
+        age:*) ${_has_age} ;;
+        date:*) ${_has_date} ;;
+        time:*) ${_has_time} ;;
+        dur:*) ${_has_duration} ;;
+        *) false ;;
+    esac
+}
+
+for _i in "${!_ids[@]}"; do
+    _id="${_ids[_i]}"
+    _kind="${_kinds[_i]}"
+    _expected="${_expects[_i]}"
+    [[ "${_kind}" == probe ]] && continue
+    if ! _supported "${_id}"; then
+        _skip=$((_skip + 1))
+        continue
+    fi
+    _total=$((_total + 1))
+    _response="${_responses[_i]}"
+    _rc="${_response%%${_tab}*}"
+    _output="${_response#*${_tab}}"
+    case "${_kind}" in
+        test) [[ "${_rc}" == 0 && "${_output}" == "${_expected}" ]] ;;
+        null) [[ "${_rc}" == 1 && -z "${_output}" ]] ;;
+        regex) [[ "${_rc}" == 0 && "${_output}" =~ ${_expected} ]] ;;
+    esac && _ok=true || _ok=false
+    if ${_ok}; then
+        _pass=$((_pass + 1))
+    else
+        _fail=$((_fail + 1))
+        case "${_kind}" in
+            test) printf "${_red}FAIL${_reset} %s: expected %q, got %q (exit %s)\n" "${_id}" "${_expected}" "${_output}" "${_rc}" ;;
+            null) printf "${_red}FAIL${_reset} %s: expected null (exit 1), got exit %s, output: %q\n" "${_id}" "${_rc}" "${_output}" ;;
+            regex) printf "${_red}FAIL${_reset} %s: expected match %q, got %q (exit %s)\n" "${_id}" "${_expected}" "${_output}" "${_rc}" ;;
+        esac
+    fi
+done
 
 # ══════════════════════════════════════════════════════════════
 # SUMMARY
 # ══════════════════════════════════════════════════════════════
 echo
+if [[ ${_skip} -gt 0 ]]; then
+    printf "${_yellow}%d skipped${_reset} (unsupported components)\n" "${_skip}"
+fi
 if [[ ${_fail} -eq 0 ]]; then
     printf "${_green}All %d tests passed.${_reset}\n" "${_total}"
 else

@@ -4,6 +4,8 @@
  * See cli/SPEC.md for the full specification.
  */
 
+import { createInterface } from 'node:readline';
+
 import { SayableAge } from '../../../age/impl/typescript/src/format-age.js';
 import { getLocale as getAgeLocale } from '../../../age/impl/typescript/src/locales/index.js';
 import type { Compactness as AgeCompactness, Gender } from '../../../age/impl/typescript/src/locale.js';
@@ -55,10 +57,19 @@ interface Options {
   withYear: boolean;
 }
 
+/** A usage error: its message is already on stderr; the run exits 2. */
+class UsageError extends Error {}
+
+/** The outcome of one command: what it would exit with and print to stdout. */
+interface RunResult {
+  code: number;
+  output: string | null;
+}
+
 function error(msg: string): never {
   process.stderr.write(`error: ${msg}\n`);
   process.stderr.write("Run 'sayable help' for usage.\n");
-  process.exit(2);
+  throw new UsageError(msg);
 }
 
 function nullify(value: string): string | null {
@@ -159,12 +170,12 @@ function defaultOptions(): Options {
   };
 }
 
-function cmdAge(positionals: string[], options: Options): void {
+function cmdAge(positionals: string[], options: Options): string | null {
   if (positionals.length === 0) error('age requires a date-of-birth argument');
   const dob = nullify(positionals[0]!);
 
   // Guard: the TypeScript age library doesn't reject malformed date strings
-  if (dob !== null && !isValidDate(dob)) process.exit(1);
+  if (dob !== null && !isValidDate(dob)) return null;
 
   const locale = getAgeLocale(options.locale);
   if (!locale) error(`unknown locale '${options.locale}'`);
@@ -180,16 +191,15 @@ function cmdAge(positionals: string[], options: Options): void {
   const formatter = new SayableAge(locale, options.compactness as AgeCompactness);
   const result = formatter.formatAge(dob, asOf);
 
-  if (result === null) process.exit(1);
-  console.log(result);
+  return result;
 }
 
-function cmdStage(positionals: string[], options: Options): void {
+function cmdStage(positionals: string[], options: Options): string | null {
   if (positionals.length === 0) error('stage requires a date-of-birth argument');
   const dob = nullify(positionals[0]!);
 
   // Guard: the TypeScript age library doesn't reject malformed date strings
-  if (dob !== null && !isValidDate(dob)) process.exit(1);
+  if (dob !== null && !isValidDate(dob)) return null;
 
   const locale = getAgeLocale(options.locale);
   if (!locale) error(`unknown locale '${options.locale}'`);
@@ -207,11 +217,10 @@ function cmdStage(positionals: string[], options: Options): void {
   const formatter = new SayableAge(locale, options.compactness as AgeCompactness);
   const result = formatter.formatStage(dob, asOf, gender ?? undefined);
 
-  if (result === null) process.exit(1);
-  console.log(result);
+  return result;
 }
 
-function cmdDate(positionals: string[], options: Options): void {
+function cmdDate(positionals: string[], options: Options): string | null {
   if (positionals.length === 0) error('date requires a date argument');
   const dateVal = nullify(positionals[0]!);
 
@@ -227,11 +236,10 @@ function cmdDate(positionals: string[], options: Options): void {
     result = formatter.formatDate(dateVal);
   }
 
-  if (result === null) process.exit(1);
-  console.log(result);
+  return result;
 }
 
-function cmdRelative(positionals: string[], options: Options): void {
+function cmdRelative(positionals: string[], options: Options): string | null {
   if (positionals.length === 0) error('relative requires a date argument');
   const dateVal = nullify(positionals[0]!);
 
@@ -244,11 +252,10 @@ function cmdRelative(positionals: string[], options: Options): void {
   const formatter = new SayableDate(locale, options.compactness as DateCompactness);
   const result = formatter.formatRelative(dateVal, asOf);
 
-  if (result === null) process.exit(1);
-  console.log(result);
+  return result;
 }
 
-function cmdTime(positionals: string[], options: Options): void {
+function cmdTime(positionals: string[], options: Options): string | null {
   if (positionals.length === 0) error('time requires a time argument');
   const timeVal = nullify(positionals[0]!);
 
@@ -258,11 +265,10 @@ function cmdTime(positionals: string[], options: Options): void {
   const formatter = new SayableTime(locale, options.compactness as TimeCompactness);
   const result = formatter.formatTime(timeVal);
 
-  if (result === null) process.exit(1);
-  console.log(result);
+  return result;
 }
 
-function cmdDuration(positionals: string[], options: Options): void {
+function cmdDuration(positionals: string[], options: Options): string | null {
   if (positionals.length === 0) error('duration requires a value argument');
   const value = nullify(positionals[0]!);
 
@@ -283,11 +289,10 @@ function cmdDuration(positionals: string[], options: Options): void {
     result = formatter.formatDuration(value, end ?? undefined);
   }
 
-  if (result === null) process.exit(1);
-  console.log(result);
+  return result;
 }
 
-function cmdSince(positionals: string[], options: Options): void {
+function cmdSince(positionals: string[], options: Options): string | null {
   if (positionals.length === 0) error('since requires a start timestamp argument');
   const start = nullify(positionals[0]!);
 
@@ -300,11 +305,10 @@ function cmdSince(positionals: string[], options: Options): void {
   const formatter = new SayableDuration(locale, options.compactness as DurationCompactness);
   const result = formatter.formatSince(start, asOf);
 
-  if (result === null) process.exit(1);
-  console.log(result);
+  return result;
 }
 
-function cmdUntil(positionals: string[], options: Options): void {
+function cmdUntil(positionals: string[], options: Options): string | null {
   if (positionals.length === 0) error('until requires a target timestamp argument');
   const target = nullify(positionals[0]!);
 
@@ -317,11 +321,10 @@ function cmdUntil(positionals: string[], options: Options): void {
   const formatter = new SayableDuration(locale, options.compactness as DurationCompactness);
   const result = formatter.formatUntil(target, asOf);
 
-  if (result === null) process.exit(1);
-  console.log(result);
+  return result;
 }
 
-function cmdLocales(): void {
+function cmdLocales(): string {
   // Collect all locale codes from the age locales index (canonical set)
   const allLocales = new Set<string>();
   // Import all locales dynamically by checking what getAgeLocale accepts
@@ -351,13 +354,10 @@ function cmdLocales(): void {
     }
   }
 
-  const sorted = [...allLocales].sort();
-  for (const code of sorted) {
-    console.log(code);
-  }
+  return [...allLocales].sort().join('\n');
 }
 
-const COMMANDS: Record<string, (positionals: string[], options: Options) => void> = {
+const COMMANDS: Record<string, (positionals: string[], options: Options) => string | null> = {
   age: cmdAge,
   stage: cmdStage,
   date: cmdDate,
@@ -368,36 +368,68 @@ const COMMANDS: Record<string, (positionals: string[], options: Options) => void
   until: cmdUntil,
 };
 
-function main(): void {
-  const argv = process.argv.slice(2);
+function dispatch(argv: string[]): RunResult {
   const { command, positionals, options } = parseArgs(argv);
 
-  if (command === null) {
-    console.log(HELP);
-    process.exit(2);
-  }
-
-  if (command === 'help') {
-    console.log(HELP);
-    process.exit(0);
-  }
-
-  if (command === 'version') {
-    console.log(`sayable ${VERSION}`);
-    process.exit(0);
-  }
-
-  if (command === 'locales') {
-    cmdLocales();
-    process.exit(0);
-  }
+  if (command === null) return { code: 2, output: HELP };
+  if (command === 'help') return { code: 0, output: HELP };
+  if (command === 'version') return { code: 0, output: `sayable ${VERSION}` };
+  if (command === 'locales') return { code: 0, output: cmdLocales() };
 
   const handler = COMMANDS[command];
   if (!handler) {
     error(`unknown command '${command}'`);
   }
 
-  handler(positionals, options);
+  const result = handler(positionals, options);
+  return result === null ? { code: 1, output: null } : { code: 0, output: result };
+}
+
+/** Run one command as the one-shot CLI would, without printing or exiting. */
+function run(argv: string[]): RunResult {
+  try {
+    return dispatch(argv);
+  } catch (err) {
+    if (err instanceof UsageError) return { code: 2, output: null };
+    throw err;
+  }
+}
+
+function formatResponse({ code, output }: RunResult): string {
+  return `${code}\t${(output ?? '').replace(/\n+$/, '').replaceAll('\n', '\t')}\n`;
+}
+
+/**
+ * Answer one tab-separated request per stdin line (see cli/SPEC.md).
+ *
+ * Writes to a stream are queued and delivered in order, and Node drains
+ * stdout before it exits on its own, so the loop never calls process.exit.
+ */
+async function repl(): Promise<void> {
+  const lines = createInterface({ input: process.stdin, crlfDelay: Infinity });
+  for await (const line of lines) {
+    let result: RunResult;
+    try {
+      result = run(line.split('\t'));
+    } catch (err) {
+      // A crash exits 1 in one-shot mode; keep serving.
+      process.stderr.write(`${err instanceof Error ? (err.stack ?? err.message) : String(err)}\n`);
+      result = { code: 1, output: null };
+    }
+    process.stdout.write(formatResponse(result));
+  }
+}
+
+function main(): void {
+  const argv = process.argv.slice(2);
+  if (argv.length === 1 && argv[0] === '--repl') {
+    void repl();
+    return;
+  }
+
+  const { code, output } = run(argv);
+  if (output !== null) console.log(output);
+  process.exitCode = code;
 }
 
 main();

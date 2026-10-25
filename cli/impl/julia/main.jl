@@ -52,10 +52,13 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version"""
 
+"""A usage error: its message is already on stderr; the run exits 2."""
+struct UsageError <: Exception end
+
 function cli_error(msg::String)
     println(stderr, "error: $msg")
     println(stderr, "Run 'sayable help' for usage.")
-    exit(2)
+    throw(UsageError())
 end
 
 function nullify(value::String)
@@ -181,10 +184,7 @@ function cmd_age(positionals, options)
     formatter = SayableAge.SayableAgeFormatter(locale, age_compactness(options["compactness"]))
     result = SayableAge.format_age(formatter, dob, as_of)
 
-    if result === nothing
-        exit(1)
-    end
-    println(result)
+    result
 end
 
 function cmd_stage(positionals, options)
@@ -210,10 +210,7 @@ function cmd_stage(positionals, options)
     formatter = SayableAge.SayableAgeFormatter(locale, age_compactness(options["compactness"]))
     result = SayableAge.format_stage(formatter, dob, as_of, gender_str)
 
-    if result === nothing
-        exit(1)
-    end
-    println(result)
+    result
 end
 
 function cmd_date(positionals, options)
@@ -234,10 +231,7 @@ function cmd_date(positionals, options)
         SayableDate.format_date(formatter, date_val)
     end
 
-    if result === nothing
-        exit(1)
-    end
-    println(result)
+    result
 end
 
 function cmd_relative(positionals, options)
@@ -257,10 +251,7 @@ function cmd_relative(positionals, options)
     date_val = is_null ? "" : date_raw
     result = SayableDate.format_relative(formatter, date_val, as_of)
 
-    if result === nothing
-        exit(1)
-    end
-    println(result)
+    result
 end
 
 function cmd_time(positionals, options)
@@ -276,10 +267,7 @@ function cmd_time(positionals, options)
     time_val = is_null ? "" : time_raw
     result = SayableTime.format_time(formatter, time_val)
 
-    if result === nothing
-        exit(1)
-    end
-    println(result)
+    result
 end
 
 function cmd_duration(positionals, options)
@@ -292,10 +280,7 @@ function cmd_duration(positionals, options)
 
     formatter = SayableDuration.SayableDurationFormatter(locale, duration_compactness(options["compactness"]))
 
-    if value_raw == "null"
-        # Null input
-        exit(1)
-    end
+    value_raw == "null" && return nothing
 
     # Check if it's an integer (possibly negative)
     is_integer = all(c -> c == '-' || isdigit(c), value_raw) && !isempty(value_raw)
@@ -310,10 +295,7 @@ function cmd_duration(positionals, options)
         result = SayableDuration.format_duration(formatter, value_raw, end_val)
     end
 
-    if result === nothing
-        exit(1)
-    end
-    println(result)
+    result
 end
 
 function cmd_since(positionals, options)
@@ -333,10 +315,7 @@ function cmd_since(positionals, options)
     start_val = is_null ? "" : start_raw
     result = SayableDuration.format_since(formatter, start_val, as_of)
 
-    if result === nothing
-        exit(1)
-    end
-    println(result)
+    result
 end
 
 function cmd_until(positionals, options)
@@ -356,10 +335,7 @@ function cmd_until(positionals, options)
     target_val = is_null ? "" : target_raw
     result = SayableDuration.format_until(formatter, target_val, as_of)
 
-    if result === nothing
-        exit(1)
-    end
-    println(result)
+    result
 end
 
 function cmd_locales()
@@ -384,50 +360,79 @@ function cmd_locales()
             push!(codes, code)
         end
     end
-    for code in sort(codes)
-        println(code)
+    join(sort(codes), "\n")
+end
+
+const COMMANDS = Dict(
+    "age" => cmd_age,
+    "stage" => cmd_stage,
+    "date" => cmd_date,
+    "relative" => cmd_relative,
+    "time" => cmd_time,
+    "duration" => cmd_duration,
+    "since" => cmd_since,
+    "until" => cmd_until,
+)
+
+function dispatch(argv)
+    command, positionals, options = parse_args(argv)
+
+    command === nothing && return (2, HELP_TEXT)
+    command == "help" && return (0, HELP_TEXT)
+    command == "version" && return (0, "sayable $CLI_VERSION")
+    command == "locales" && return (0, cmd_locales())
+
+    haskey(COMMANDS, command) || cli_error("unknown command '$command'")
+
+    result = COMMANDS[command](positionals, options)
+    result === nothing ? (1, nothing) : (0, result)
+end
+
+"""
+    run_command(argv) -> (exit_code, output)
+
+Run one command as the one-shot CLI would, without printing or exiting.
+`output` is `nothing` when the run prints nothing to stdout.
+"""
+function run_command(argv)
+    try
+        dispatch(argv)
+    catch err
+        err isa UsageError || rethrow()
+        (2, nothing)
+    end
+end
+
+function format_response(code, output)
+    text = replace(rstrip(==('\n'), something(output, "")), '\n' => '\t')
+    "$code\t$text\n"
+end
+
+"""Answer one tab-separated request per stdin line (see cli/SPEC.md)."""
+function repl()
+    for line in eachline(stdin)
+        code, output = try
+            run_command(String.(split(line, '\t')))
+        catch err
+            # A crash exits 1 in one-shot mode; keep serving.
+            showerror(stderr, err, catch_backtrace())
+            println(stderr)
+            (1, nothing)
+        end
+        print(stdout, format_response(code, output))
+        flush(stdout)
     end
 end
 
 function main()
-    command, positionals, options = parse_args(ARGS)
-
-    if command === nothing
-        println(HELP_TEXT)
-        exit(2)
+    if ARGS == ["--repl"]
+        repl()
+        return
     end
 
-    if command == "help"
-        println(HELP_TEXT)
-        exit(0)
-    end
-
-    if command == "version"
-        println("sayable $CLI_VERSION")
-        exit(0)
-    end
-
-    if command == "locales"
-        cmd_locales()
-        exit(0)
-    end
-
-    commands = Dict(
-        "age" => cmd_age,
-        "stage" => cmd_stage,
-        "date" => cmd_date,
-        "relative" => cmd_relative,
-        "time" => cmd_time,
-        "duration" => cmd_duration,
-        "since" => cmd_since,
-        "until" => cmd_until,
-    )
-
-    if !haskey(commands, command)
-        cli_error("unknown command '$command'")
-    end
-
-    commands[command](positionals, options)
+    code, output = run_command(ARGS)
+    output === nothing || println(output)
+    exit(code)
 end
 
 main()

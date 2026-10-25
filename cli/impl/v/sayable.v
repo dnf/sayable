@@ -50,13 +50,30 @@ mut:
 	with_year   bool
 }
 
-fn usage_error(msg string) {
-	eprintln('error: ${msg}')
-	exit(2)
+// Outcome is what one invocation produces: its exit code and stdout text.
+struct Outcome {
+	code   int
+	output string
 }
 
-fn null_result() {
-	exit(1)
+fn usage_error(msg string) Outcome {
+	eprintln('error: ${msg}')
+	return Outcome{
+		code: 2
+	}
+}
+
+fn null_result() Outcome {
+	return Outcome{
+		code: 1
+	}
+}
+
+fn printed(text string) Outcome {
+	return Outcome{
+		code:   0
+		output: text + '\n'
+	}
 }
 
 fn is_null_arg(s string) bool {
@@ -90,7 +107,23 @@ fn is_integer(s string) bool {
 	return true
 }
 
-fn parse_options(args []string) ([]string, CliOptions) {
+// Parsed holds the parsed arguments, or the outcome when parsing already
+// finished the invocation (help, version, or a usage error).
+struct Parsed {
+	positionals []string
+	opts        CliOptions
+	finished    bool
+	outcome     Outcome
+}
+
+fn finished(outcome Outcome) Parsed {
+	return Parsed{
+		finished: true
+		outcome:  outcome
+	}
+}
+
+fn parse_options(args []string) Parsed {
 	mut opts := CliOptions{}
 	mut positionals := []string{}
 	mut i := 0
@@ -106,7 +139,7 @@ fn parse_options(args []string) ([]string, CliOptions) {
 		if !stop_opts && a.starts_with('-') {
 			if a in ['-l', '--locale'] {
 				if i + 1 >= args.len {
-					usage_error("'${a}' requires a value")
+					return finished(usage_error("'${a}' requires a value"))
 				}
 				i++
 				opts.locale = args[i]
@@ -115,7 +148,7 @@ fn parse_options(args []string) ([]string, CliOptions) {
 			}
 			if a in ['-d', '--as-of'] {
 				if i + 1 >= args.len {
-					usage_error("'${a}' requires a value")
+					return finished(usage_error("'${a}' requires a value"))
 				}
 				i++
 				opts.as_of = args[i]
@@ -124,7 +157,7 @@ fn parse_options(args []string) ([]string, CliOptions) {
 			}
 			if a in ['-g', '--gender'] {
 				if i + 1 >= args.len {
-					usage_error("'${a}' requires a value")
+					return finished(usage_error("'${a}' requires a value"))
 				}
 				i++
 				opts.gender = args[i]
@@ -147,12 +180,10 @@ fn parse_options(args []string) ([]string, CliOptions) {
 				continue
 			}
 			if a in ['-h', '--help'] {
-				println(help_text)
-				exit(0)
+				return finished(printed(help_text))
 			}
 			if a in ['-v', '--version'] {
-				println('sayable ${cli_version}')
-				exit(0)
+				return finished(printed('sayable ${cli_version}'))
 			}
 			// Check for negative numbers
 			if a.len > 1 && a[0] == `-` {
@@ -162,41 +193,43 @@ fn parse_options(args []string) ([]string, CliOptions) {
 					continue
 				}
 			}
-			usage_error("unknown option '${a}'")
+			return finished(usage_error("unknown option '${a}'"))
 		}
 		positionals << a
 		i++
 	}
-	return positionals, opts
+	return Parsed{
+		positionals: positionals
+		opts:        opts
+	}
 }
 
-fn main() {
-	args := os.args[1..]
+// run executes one invocation (`args` excludes the program name).
+fn run(args []string) Outcome {
 	if args.len == 0 {
-		println(help_text)
-		exit(0)
+		return printed(help_text)
 	}
 
 	first := args[0]
 	if first in ['-h', '--help', 'help'] {
-		println(help_text)
-		exit(0)
+		return printed(help_text)
 	}
 	if first in ['-v', '--version', 'version'] {
-		println('sayable ${cli_version}')
-		exit(0)
+		return printed('sayable ${cli_version}')
 	}
 
 	if first == 'locales' {
-		cmd_locales()
-		return
+		return cmd_locales()
 	}
 
 	command := first
-	rest := args[1..]
-	positionals, opts := parse_options(rest)
+	parsed := parse_options(args[1..])
+	if parsed.finished {
+		return parsed.outcome
+	}
+	positionals, opts := parsed.positionals, parsed.opts
 
-	match command {
+	return match command {
 		'age' { cmd_age(positionals, opts) }
 		'stage' { cmd_stage(positionals, opts) }
 		'date' { cmd_date(positionals, opts) }
@@ -209,6 +242,32 @@ fn main() {
 	}
 }
 
+// repl answers one tab-separated request per stdin line (see cli/SPEC.md).
+fn repl() {
+	for {
+		line := os.get_raw_line()
+		if line.len == 0 {
+			break
+		}
+		request := line.trim_right('\n').trim_right('\r')
+		outcome := run(request.split('\t'))
+		flat := outcome.output.trim_right('\n').replace('\n', '\t')
+		print('${outcome.code}\t${flat}\n')
+		flush_stdout()
+	}
+}
+
+fn main() {
+	args := os.args[1..]
+	if args == ['--repl'] {
+		repl()
+		return
+	}
+	outcome := run(args)
+	print(outcome.output)
+	exit(outcome.code)
+}
+
 // --- Age commands ---
 
 fn age_compactness(s string) age_locales.Compactness {
@@ -219,46 +278,36 @@ fn age_compactness(s string) age_locales.Compactness {
 	}
 }
 
-fn cmd_age(positionals []string, opts CliOptions) {
+fn cmd_age(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
-		usage_error("'age' requires a date of birth argument")
+		return usage_error("'age' requires a date of birth argument")
 	}
 	if is_null_arg(positionals[0]) {
-		null_result()
-		return
+		return null_result()
 	}
 	locale := age_locales.get_locale(opts.locale) or {
-		usage_error("unknown locale '${opts.locale}'")
-		return
+		return usage_error("unknown locale '${opts.locale}'")
 	}
 	as_of := if opts.as_of.len > 0 { opts.as_of } else { today_str() }
 	sa := age_locales.new_sayable_age(&locale, age_compactness(opts.compactness))
-	result := sa.format_age(positionals[0], as_of) or {
-		null_result()
-		return
-	}
-	println(result)
+	result := sa.format_age(positionals[0], as_of) or { return null_result() }
+	return printed(result)
 }
 
-fn cmd_stage(positionals []string, opts CliOptions) {
+fn cmd_stage(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
-		usage_error("'stage' requires a date of birth argument")
+		return usage_error("'stage' requires a date of birth argument")
 	}
 	if is_null_arg(positionals[0]) {
-		null_result()
-		return
+		return null_result()
 	}
 	locale := age_locales.get_locale(opts.locale) or {
-		usage_error("unknown locale '${opts.locale}'")
-		return
+		return usage_error("unknown locale '${opts.locale}'")
 	}
 	as_of := if opts.as_of.len > 0 { opts.as_of } else { today_str() }
 	sa := age_locales.new_sayable_age(&locale, age_compactness(opts.compactness))
-	result := sa.format_stage(positionals[0], as_of, opts.gender) or {
-		null_result()
-		return
-	}
-	println(result)
+	result := sa.format_stage(positionals[0], as_of, opts.gender) or { return null_result() }
+	return printed(result)
 }
 
 // --- Date commands ---
@@ -271,55 +320,42 @@ fn date_compactness(s string) date_locales.Compactness {
 	}
 }
 
-fn cmd_date(positionals []string, opts CliOptions) {
+fn cmd_date(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
-		usage_error("'date' requires a date argument")
+		return usage_error("'date' requires a date argument")
 	}
 	if is_null_arg(positionals[0]) {
-		null_result()
-		return
+		return null_result()
 	}
 	locale := date_locales.get_date_locale(opts.locale) or {
-		usage_error("unknown locale '${opts.locale}'")
-		return
+		return usage_error("unknown locale '${opts.locale}'")
 	}
 	sd := date_locales.new_sayable_date(&locale, date_compactness(opts.compactness))
 	if opts.with_year {
-		result := sd.format_date_with_year(positionals[0]) or {
-			null_result()
-			return
-		}
-		println(result)
+		result := sd.format_date_with_year(positionals[0]) or { return null_result() }
+		return printed(result)
 	} else {
-		result := sd.format_date(positionals[0]) or {
-			null_result()
-			return
-		}
-		println(result)
+		result := sd.format_date(positionals[0]) or { return null_result() }
+		return printed(result)
 	}
 }
 
-fn cmd_relative(positionals []string, opts CliOptions) {
+fn cmd_relative(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
-		usage_error("'relative' requires a date argument")
+		return usage_error("'relative' requires a date argument")
 	}
 	if opts.as_of.len == 0 {
-		usage_error("'relative' requires --as-of (-d) option")
+		return usage_error("'relative' requires --as-of (-d) option")
 	}
 	if is_null_arg(positionals[0]) {
-		null_result()
-		return
+		return null_result()
 	}
 	locale := date_locales.get_date_locale(opts.locale) or {
-		usage_error("unknown locale '${opts.locale}'")
-		return
+		return usage_error("unknown locale '${opts.locale}'")
 	}
 	sd := date_locales.new_sayable_date(&locale, date_compactness(opts.compactness))
-	result := sd.format_relative(positionals[0], opts.as_of) or {
-		null_result()
-		return
-	}
-	println(result)
+	result := sd.format_relative(positionals[0], opts.as_of) or { return null_result() }
+	return printed(result)
 }
 
 // --- Time commands ---
@@ -332,24 +368,19 @@ fn time_compactness(s string) time_locales.Compactness {
 	}
 }
 
-fn cmd_time(positionals []string, opts CliOptions) {
+fn cmd_time(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
-		usage_error("'time' requires a time argument")
+		return usage_error("'time' requires a time argument")
 	}
 	if is_null_arg(positionals[0]) {
-		null_result()
-		return
+		return null_result()
 	}
 	locale := time_locales.get_time_locale(opts.locale) or {
-		usage_error("unknown locale '${opts.locale}'")
-		return
+		return usage_error("unknown locale '${opts.locale}'")
 	}
 	st := time_locales.new_sayable_time(&locale, time_compactness(opts.compactness))
-	result := st.format_time(positionals[0]) or {
-		null_result()
-		return
-	}
-	println(result)
+	result := st.format_time(positionals[0]) or { return null_result() }
+	return printed(result)
 }
 
 // --- Duration commands ---
@@ -362,102 +393,81 @@ fn duration_compactness(s string) duration_locales.Compactness {
 	}
 }
 
-fn cmd_duration(positionals []string, opts CliOptions) {
+fn cmd_duration(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
-		usage_error("'duration' requires a value argument")
+		return usage_error("'duration' requires a value argument")
 	}
 	if is_null_arg(positionals[0]) {
-		null_result()
-		return
+		return null_result()
 	}
 	locale := duration_locales.get_duration_locale(opts.locale) or {
-		usage_error("unknown locale '${opts.locale}'")
-		return
+		return usage_error("unknown locale '${opts.locale}'")
 	}
 	sd := duration_locales.new_sayable_duration(&locale, duration_compactness(opts.compactness))
 	val := positionals[0]
 	if is_integer(val) {
 		secs := val.int()
-		result := sd.format_duration(secs) or {
-			null_result()
-			return
-		}
-		println(result)
+		result := sd.format_duration(secs) or { return null_result() }
+		return printed(result)
 	} else {
 		if positionals.len < 2 {
-			usage_error("'duration' with timestamps requires start and end arguments")
+			return usage_error("'duration' with timestamps requires start and end arguments")
 		}
-		result := sd.format_duration_iso(val, positionals[1]) or {
-			null_result()
-			return
-		}
-		println(result)
+		result := sd.format_duration_iso(val, positionals[1]) or { return null_result() }
+		return printed(result)
 	}
 }
 
-fn cmd_since(positionals []string, opts CliOptions) {
+fn cmd_since(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
-		usage_error("'since' requires a start argument")
+		return usage_error("'since' requires a start argument")
 	}
 	if opts.as_of.len == 0 {
-		usage_error("'since' requires --as-of (-d) option")
+		return usage_error("'since' requires --as-of (-d) option")
 	}
 	if is_null_arg(positionals[0]) {
-		null_result()
-		return
+		return null_result()
 	}
 	locale := duration_locales.get_duration_locale(opts.locale) or {
-		usage_error("unknown locale '${opts.locale}'")
-		return
+		return usage_error("unknown locale '${opts.locale}'")
 	}
 	sd := duration_locales.new_sayable_duration(&locale, duration_compactness(opts.compactness))
-	result := sd.format_since(positionals[0], opts.as_of) or {
-		null_result()
-		return
-	}
-	println(result)
+	result := sd.format_since(positionals[0], opts.as_of) or { return null_result() }
+	return printed(result)
 }
 
-fn cmd_until(positionals []string, opts CliOptions) {
+fn cmd_until(positionals []string, opts CliOptions) Outcome {
 	if positionals.len < 1 {
-		usage_error("'until' requires a target argument")
+		return usage_error("'until' requires a target argument")
 	}
 	if opts.as_of.len == 0 {
-		usage_error("'until' requires --as-of (-d) option")
+		return usage_error("'until' requires --as-of (-d) option")
 	}
 	if is_null_arg(positionals[0]) {
-		null_result()
-		return
+		return null_result()
 	}
 	locale := duration_locales.get_duration_locale(opts.locale) or {
-		usage_error("unknown locale '${opts.locale}'")
-		return
+		return usage_error("unknown locale '${opts.locale}'")
 	}
 	sd := duration_locales.new_sayable_duration(&locale, duration_compactness(opts.compactness))
-	result := sd.format_until(positionals[0], opts.as_of) or {
-		null_result()
-		return
-	}
-	println(result)
+	result := sd.format_until(positionals[0], opts.as_of) or { return null_result() }
+	return printed(result)
 }
 
 // --- Locales command ---
 
-fn cmd_locales() {
-	codes := ['af', 'ak', 'am', 'ar', 'ay', 'az', 'bci', 'be', 'bem', 'bg', 'bi', 'bm',
-		'bn', 'br', 'bs', 'ca', 'cak', 'ceb', 'cs', 'cy', 'da', 'de', 'din', 'dje', 'dv', 'dyu',
-		'dz', 'ee', 'el', 'en', 'es', 'et', 'eu', 'fa', 'fan', 'ff', 'fi', 'fil', 'fj', 'fon',
-		'fr', 'ga', 'gd', 'gl', 'gn', 'gu', 'gv', 'ha', 'he', 'hi', 'hmn', 'hr', 'ht', 'hu',
-		'hy', 'id', 'ig', 'is', 'it', 'ja', 'jv', 'ka', 'kbp', 'kek', 'ki', 'kk', 'kl', 'km',
-		'kn', 'ko', 'kpe', 'kri', 'ktu', 'ku', 'kw', 'ky', 'lb', 'lg', 'ln', 'lo', 'lt', 'luo',
-		'lv', 'mam', 'men', 'mfe', 'mg', 'mi', 'mk', 'ml', 'mn', 'mnk', 'mos', 'mr', 'ms', 'mt',
-		'my', 'nb', 'nd', 'ne', 'ng', 'nl', 'nr', 'nso', 'nus', 'ny', 'om', 'or', 'pa', 'pis',
-		'pl', 'pov', 'ps', 'pt', 'qu', 'quc', 'ro', 'ru', 'rw', 'sar', 'sd', 'sg', 'shi', 'shn',
-		'si', 'sk', 'sl', 'sn', 'snk', 'so', 'sq', 'sr', 'ss', 'st', 'su', 'suk', 'sv', 'sw',
-		'ta', 'te', 'tem', 'tet', 'tg', 'th', 'ti', 'tig', 'tk', 'tn', 'tpi', 'tr', 'ts', 'tum',
-		'tzm', 'uk', 'umb', 'ur', 'uz', 've', 'vi', 'vmw', 'wo', 'xh', 'yao', 'yo', 'yue', 'zdj',
-		'zh', 'zu']
-	for code in codes {
-		println(code)
-	}
+fn cmd_locales() Outcome {
+	codes := ['af', 'ak', 'am', 'ar', 'ay', 'az', 'bci', 'be', 'bem', 'bg', 'bi', 'bm', 'bn', 'br',
+		'bs', 'ca', 'cak', 'ceb', 'cs', 'cy', 'da', 'de', 'din', 'dje', 'dv', 'dyu', 'dz', 'ee',
+		'el', 'en', 'es', 'et', 'eu', 'fa', 'fan', 'ff', 'fi', 'fil', 'fj', 'fon', 'fr', 'ga',
+		'gd', 'gl', 'gn', 'gu', 'gv', 'ha', 'he', 'hi', 'hmn', 'hr', 'ht', 'hu', 'hy', 'id', 'ig',
+		'is', 'it', 'ja', 'jv', 'ka', 'kbp', 'kek', 'ki', 'kk', 'kl', 'km', 'kn', 'ko', 'kpe',
+		'kri', 'ktu', 'ku', 'kw', 'ky', 'lb', 'lg', 'ln', 'lo', 'lt', 'luo', 'lv', 'mam', 'men',
+		'mfe', 'mg', 'mi', 'mk', 'ml', 'mn', 'mnk', 'mos', 'mr', 'ms', 'mt', 'my', 'nb', 'nd',
+		'ne', 'ng', 'nl', 'nr', 'nso', 'nus', 'ny', 'om', 'or', 'pa', 'pis', 'pl', 'pov', 'ps',
+		'pt', 'qu', 'quc', 'ro', 'ru', 'rw', 'sar', 'sd', 'sg', 'shi', 'shn', 'si', 'sk', 'sl',
+		'sn', 'snk', 'so', 'sq', 'sr', 'ss', 'st', 'su', 'suk', 'sv', 'sw', 'ta', 'te', 'tem',
+		'tet', 'tg', 'th', 'ti', 'tig', 'tk', 'tn', 'tpi', 'tr', 'ts', 'tum', 'tzm', 'uk', 'umb',
+		'ur', 'uz', 've', 'vi', 'vmw', 'wo', 'xh', 'yao', 'yo', 'yue', 'zdj', 'zh', 'zu']
+	return printed(codes.join('\n'))
 }

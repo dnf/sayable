@@ -5,4 +5,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 cd "${SCRIPT_DIR}"
+# `clj` runs under rlwrap, which takes over stdin (hence /dev/null for one-shot
+# runs); the REPL reads its requests from stdin, so it uses plain `clojure`.
+if [[ $# -eq 1 && "$1" == "--repl" ]]; then
+    exec clojure -M -m sayable-cli.core --repl
+fi
 exec clj -M -m sayable-cli.core "$@" < /dev/null

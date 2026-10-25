@@ -110,11 +110,12 @@ local get_date_locale = make_locale_getter(date_dir)
 local get_time_locale = make_locale_getter(time_dir)
 local get_duration_locale = make_locale_getter(duration_dir)
 
--- Print error to stderr and exit with code 2
+-- Usage errors are raised, so one request can fail without ending the process
+local UsageError = {}
+UsageError.__index = UsageError
+
 local function error_exit(msg)
-    io.stderr:write("error: " .. msg .. "\n")
-    io.stderr:write("Run 'sayable help' for usage.\n")
-    os.exit(2)
+    error(setmetatable({ message = msg }, UsageError), 0)
 end
 
 -- Convert the CLI "null" sentinel to Lua nil
@@ -227,10 +228,7 @@ local function cmd_age(positionals, options)
     local formatter = sayableage.new(locale, options.compactness)
     local result = formatter.format_age(dob, as_of)
 
-    if result == nil then
-        os.exit(1)
-    end
-    print(result)
+    return result
 end
 
 local function cmd_stage(positionals, options)
@@ -257,10 +255,7 @@ local function cmd_stage(positionals, options)
     local formatter = sayableage.new(locale, options.compactness)
     local result = formatter.format_stage(dob, as_of, gender)
 
-    if result == nil then
-        os.exit(1)
-    end
-    print(result)
+    return result
 end
 
 local function cmd_date(positionals, options)
@@ -284,10 +279,7 @@ local function cmd_date(positionals, options)
         result = formatter.format_date(date_val)
     end
 
-    if result == nil then
-        os.exit(1)
-    end
-    print(result)
+    return result
 end
 
 local function cmd_relative(positionals, options)
@@ -311,10 +303,7 @@ local function cmd_relative(positionals, options)
     local formatter = sayabledate.new(locale, options.compactness)
     local result = formatter.format_relative(date_val, as_of)
 
-    if result == nil then
-        os.exit(1)
-    end
-    print(result)
+    return result
 end
 
 local function cmd_time(positionals, options)
@@ -332,10 +321,7 @@ local function cmd_time(positionals, options)
     local formatter = sayabletime.new(locale, options.compactness)
     local result = formatter.format_time(time_val)
 
-    if result == nil then
-        os.exit(1)
-    end
-    print(result)
+    return result
 end
 
 local function cmd_duration(positionals, options)
@@ -366,10 +352,7 @@ local function cmd_duration(positionals, options)
         result = formatter.format_duration_iso(value, end_val)
     end
 
-    if result == nil then
-        os.exit(1)
-    end
-    print(result)
+    return result
 end
 
 local function cmd_since(positionals, options)
@@ -393,10 +376,7 @@ local function cmd_since(positionals, options)
     local formatter = sayableduration.new(locale, options.compactness)
     local result = formatter.format_since(start, as_of)
 
-    if result == nil then
-        os.exit(1)
-    end
-    print(result)
+    return result
 end
 
 local function cmd_until(positionals, options)
@@ -420,10 +400,7 @@ local function cmd_until(positionals, options)
     local formatter = sayableduration.new(locale, options.compactness)
     local result = formatter.format_until(target, as_of)
 
-    if result == nil then
-        os.exit(1)
-    end
-    print(result)
+    return result
 end
 
 local function cmd_locales()
@@ -446,9 +423,7 @@ local function cmd_locales()
         "ts", "tzm", "uk", "umb", "ur", "uz", "vi", "vmw", "wo", "xh",
         "yo", "yue", "zdj", "zh", "zu",
     }
-    for _, code in ipairs(codes) do
-        print(code)
-    end
+    return table.concat(codes, "\n")
 end
 
 local COMMANDS = {
@@ -462,32 +437,78 @@ local COMMANDS = {
     ["until"] = cmd_until,
 }
 
+-- Run one request; returns the exit code and stdout text (nil for no output)
+local function dispatch(argv)
+    local command, positionals, options = parse_args(argv)
+
+    if command == nil then return 2, HELP end
+    if command == "help" then return 0, HELP end
+    if command == "version" then return 0, "sayable " .. VERSION end
+    if command == "locales" then return 0, cmd_locales() end
+
+    local cmd_fn = COMMANDS[command]
+    if cmd_fn == nil then
+        error_exit("unknown command '" .. command .. "'")
+    end
+
+    local result = cmd_fn(positionals, options)
+    return result == nil and 1 or 0, result
+end
+
+local function run(argv)
+    local ok, code, output = pcall(dispatch, argv)
+    if ok then
+        return code, output
+    end
+
+    local err = code
+    if getmetatable(err) ~= UsageError then
+        error(err, 0)
+    end
+    io.stderr:write("error: " .. err.message .. "\n")
+    io.stderr:write("Run 'sayable help' for usage.\n")
+    return 2, nil
+end
+
+-- Split on every tab, keeping empty fields (including a trailing one)
+local function split_tabs(line)
+    local fields = {}
+    local start = 1
+    while true do
+        local tab = line:find("\t", start, true)
+        if tab == nil then
+            fields[#fields + 1] = line:sub(start)
+            return fields
+        end
+        fields[#fields + 1] = line:sub(start, tab - 1)
+        start = tab + 1
+    end
+end
+
+-- Answer one tab-separated request per stdin line (see cli/SPEC.md)
+local function repl()
+    for line in io.lines() do
+        local request = split_tabs((line:gsub("\r$", "")))
+        local ok, code, output = pcall(run, request)
+        if not ok then
+            -- A crash exits non-zero in one-shot mode; report it and keep serving
+            io.stderr:write(tostring(code) .. "\n")
+            code, output = 1, nil
+        end
+        local flattened = (output or ""):gsub("\n$", ""):gsub("\n", "\t")
+        io.stdout:write(code, "\t", flattened, "\n")
+        io.stdout:flush()
+    end
+end
+
 -- Main
-local command, positionals, options = parse_args(arg)
-
-if command == nil then
-    print(HELP)
-    os.exit(2)
-end
-
-if command == "help" then
-    print(HELP)
+if #arg == 1 and arg[1] == "--repl" then
+    repl()
     os.exit(0)
 end
 
-if command == "version" then
-    print("sayable " .. VERSION)
-    os.exit(0)
+local code, output = run(arg)
+if output ~= nil then
+    print(output)
 end
-
-if command == "locales" then
-    cmd_locales()
-    os.exit(0)
-end
-
-local cmd_fn = COMMANDS[command]
-if cmd_fn == nil then
-    error_exit("unknown command '" .. command .. "'")
-end
-
-cmd_fn(positionals, options)
+os.exit(code)

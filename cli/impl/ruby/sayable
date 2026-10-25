@@ -47,10 +47,11 @@ HELP = <<~HELP.chomp
     -v, --version          Show version
 HELP
 
+# Raised for usage errors so one request can fail without ending the process.
+class UsageError < StandardError; end
+
 def error(msg)
-  $stderr.puts "error: #{msg}"
-  $stderr.puts "Run 'sayable help' for usage."
-  exit 2
+  raise UsageError, msg
 end
 
 def nullify(value)
@@ -139,12 +140,7 @@ def cmd_age(positionals, options)
   as_of = as_of.nil? ? get_today : nullify(as_of)
 
   formatter = SayableAge::Formatter.new(locale, compactness: options[:compactness])
-  result = formatter.format_age(dob, as_of)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_age(dob, as_of)
 end
 
 def cmd_stage(positionals, options)
@@ -161,12 +157,7 @@ def cmd_stage(positionals, options)
   gender = options[:gender]
 
   formatter = SayableAge::Formatter.new(locale, compactness: options[:compactness])
-  result = formatter.format_stage(dob, as_of, gender: gender)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_stage(dob, as_of, gender: gender)
 end
 
 def cmd_date(positionals, options)
@@ -179,16 +170,11 @@ def cmd_date(positionals, options)
 
   formatter = SayableDate::Formatter.new(locale, compactness: options[:compactness])
 
-  result = if options[:with_year]
-             formatter.format_date_with_year(date_val)
-           else
-             formatter.format_date(date_val)
-           end
-
-  if result.nil?
-    exit 1
+  if options[:with_year]
+    formatter.format_date_with_year(date_val)
+  else
+    formatter.format_date(date_val)
   end
-  puts result
 end
 
 def cmd_relative(positionals, options)
@@ -204,12 +190,7 @@ def cmd_relative(positionals, options)
   error("unknown locale '#{locale_code}'") if locale.nil?
 
   formatter = SayableDate::Formatter.new(locale, compactness: options[:compactness])
-  result = formatter.format_relative(date_val, as_of)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_relative(date_val, as_of)
 end
 
 def cmd_time(positionals, options)
@@ -221,12 +202,7 @@ def cmd_time(positionals, options)
   error("unknown locale '#{locale_code}'") if locale.nil?
 
   formatter = SayableTime::Formatter.new(locale, options[:compactness])
-  result = formatter.format_time(time_val)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_time(time_val)
 end
 
 def cmd_duration(positionals, options)
@@ -249,10 +225,7 @@ def cmd_duration(positionals, options)
     result = formatter.format_duration(value, end_val)
   end
 
-  if result.nil?
-    exit 1
-  end
-  puts result
+  result
 end
 
 def cmd_since(positionals, options)
@@ -268,12 +241,7 @@ def cmd_since(positionals, options)
   error("unknown locale '#{locale_code}'") if locale.nil?
 
   formatter = SayableDuration::Formatter.new(locale, compactness: options[:compactness])
-  result = formatter.format_since(start, as_of)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_since(start, as_of)
 end
 
 def cmd_until(positionals, options)
@@ -289,12 +257,7 @@ def cmd_until(positionals, options)
   error("unknown locale '#{locale_code}'") if locale.nil?
 
   formatter = SayableDuration::Formatter.new(locale, compactness: options[:compactness])
-  result = formatter.format_until(target, as_of)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_until(target, as_of)
 end
 
 def cmd_locales
@@ -304,7 +267,7 @@ def cmd_locales
     obj = SayableAge::Locales.const_get(name)
     codes << obj.code if obj.respond_to?(:code) && obj.code.is_a?(String)
   end
-  codes.uniq.sort.each { |code| puts code }
+  codes.uniq.sort.join("\n")
 end
 
 COMMANDS = {
@@ -318,34 +281,47 @@ COMMANDS = {
   'until' => method(:cmd_until)
 }.freeze
 
+# Runs one request; returns [exit code, stdout text or nil for no output].
+def run(argv)
+  command, positionals, options = parse_args(argv)
+
+  return [2, HELP] if command.nil?
+  return [0, HELP] if command == 'help'
+  return [0, "sayable #{VERSION}"] if command == 'version'
+  return [0, cmd_locales] if command == 'locales'
+
+  error("unknown command '#{command}'") unless COMMANDS.key?(command)
+
+  result = COMMANDS[command].call(positionals, options)
+  [result.nil? ? 1 : 0, result]
+rescue UsageError => e
+  warn "error: #{e.message}"
+  warn "Run 'sayable help' for usage."
+  [2, nil]
+end
+
+# Answers one tab-separated request per stdin line (see cli/SPEC.md).
+def repl
+  $stdin.set_encoding(Encoding::UTF_8)
+  $stdout.set_encoding(Encoding::UTF_8)
+  $stdin.each_line do |line|
+    code, output = begin
+      run(line.chomp.split("\t", -1))
+    rescue StandardError => e # a crash exits 1 in one-shot mode; keep serving
+      warn e.full_message
+      [1, nil]
+    end
+    $stdout.write("#{code}\t#{output.to_s.chomp.tr("\n", "\t")}\n")
+    $stdout.flush
+  end
+end
+
 def main
-  command, positionals, options = parse_args(ARGV)
+  return repl if ARGV == ['--repl']
 
-  if command.nil?
-    puts HELP
-    exit 2
-  end
-
-  if command == 'help'
-    puts HELP
-    exit 0
-  end
-
-  if command == 'version'
-    puts "sayable #{VERSION}"
-    exit 0
-  end
-
-  if command == 'locales'
-    cmd_locales
-    exit 0
-  end
-
-  unless COMMANDS.key?(command)
-    error("unknown command '#{command}'")
-  end
-
-  COMMANDS[command].call(positionals, options)
+  code, output = run(ARGV)
+  puts output unless output.nil?
+  exit code
 end
 
 main

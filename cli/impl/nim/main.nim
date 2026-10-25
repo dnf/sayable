@@ -89,10 +89,14 @@ type
     withYear: bool
 
 
+type UsageError = object of CatchableError
+  ## Raised after a usage error has been reported; the invocation exits 2.
+
+
 proc cliError(msg: string) {.noreturn.} =
   stderr.writeLine("error: " & msg)
   stderr.writeLine("Run 'sayable help' for usage.")
-  quit(2)
+  raise newException(UsageError, msg)
 
 
 proc nullify(value: string): string =
@@ -175,7 +179,7 @@ proc parseArgs(argv: seq[string]): tuple[command: string, positionals: seq[
   (command, positionals, opts)
 
 
-proc cmdAge(positionals: seq[string], opts: Options) =
+proc cmdAge(positionals: seq[string], opts: Options): Option[string] =
   if positionals.len == 0:
     cliError("age requires a date-of-birth argument")
   let dob = nullify(positionals[0])
@@ -198,12 +202,10 @@ proc cmdAge(positionals: seq[string], opts: Options) =
   let formatter = ageFormatter.newSayableAge(locale.get, compactness)
   let res = formatter.formatAge(dob, asOf)
 
-  if res.isNone:
-    quit(1)
-  echo res.get
+  res
 
 
-proc cmdStage(positionals: seq[string], opts: Options) =
+proc cmdStage(positionals: seq[string], opts: Options): Option[string] =
   if positionals.len == 0:
     cliError("stage requires a date-of-birth argument")
   let dob = nullify(positionals[0])
@@ -228,12 +230,10 @@ proc cmdStage(positionals: seq[string], opts: Options) =
   let formatter = ageFormatter.newSayableAge(locale.get, compactness)
   let res = formatter.formatStage(dob, asOf, gender)
 
-  if res.isNone:
-    quit(1)
-  echo res.get
+  res
 
 
-proc cmdDate(positionals: seq[string], opts: Options) =
+proc cmdDate(positionals: seq[string], opts: Options): Option[string] =
   if positionals.len == 0:
     cliError("date requires a date argument")
   let dateVal = nullify(positionals[0])
@@ -254,12 +254,10 @@ proc cmdDate(positionals: seq[string], opts: Options) =
     else:
       formatter.formatDate(dateVal)
 
-  if res.isNone:
-    quit(1)
-  echo res.get
+  res
 
 
-proc cmdRelative(positionals: seq[string], opts: Options) =
+proc cmdRelative(positionals: seq[string], opts: Options): Option[string] =
   if positionals.len == 0:
     cliError("relative requires a date argument")
   let dateVal = nullify(positionals[0])
@@ -280,12 +278,10 @@ proc cmdRelative(positionals: seq[string], opts: Options) =
   let formatter = dateFormatter.newSayableDate(locale.get, compactness)
   let res = formatter.formatRelative(dateVal, asOf)
 
-  if res.isNone:
-    quit(1)
-  echo res.get
+  res
 
 
-proc cmdTime(positionals: seq[string], opts: Options) =
+proc cmdTime(positionals: seq[string], opts: Options): Option[string] =
   if positionals.len == 0:
     cliError("time requires a time argument")
   let timeVal = nullify(positionals[0])
@@ -302,12 +298,10 @@ proc cmdTime(positionals: seq[string], opts: Options) =
   let formatter = timeFormatter.newSayableTime(locale.get, compactness)
   let res = formatter.formatTime(timeVal)
 
-  if res.isNone:
-    quit(1)
-  echo res.get
+  res
 
 
-proc cmdDuration(positionals: seq[string], opts: Options) =
+proc cmdDuration(positionals: seq[string], opts: Options): Option[string] =
   if positionals.len == 0:
     cliError("duration requires a value argument")
   let value = nullify(positionals[0])
@@ -351,12 +345,10 @@ proc cmdDuration(positionals: seq[string], opts: Options) =
       let endVal = nullify(positionals[1])
       res = formatter.formatDurationIso(value, endVal)
 
-  if res.isNone:
-    quit(1)
-  echo res.get
+  res
 
 
-proc cmdSince(positionals: seq[string], opts: Options) =
+proc cmdSince(positionals: seq[string], opts: Options): Option[string] =
   if positionals.len == 0:
     cliError("since requires a start timestamp argument")
   let startVal = nullify(positionals[0])
@@ -377,12 +369,10 @@ proc cmdSince(positionals: seq[string], opts: Options) =
   let formatter = durFormatter.newSayableDuration(locale.get, compactness)
   let res = formatter.formatSince(startVal, asOf)
 
-  if res.isNone:
-    quit(1)
-  echo res.get
+  res
 
 
-proc cmdUntil(positionals: seq[string], opts: Options) =
+proc cmdUntil(positionals: seq[string], opts: Options): Option[string] =
   if positionals.len == 0:
     cliError("until requires a target timestamp argument")
   let target = nullify(positionals[0])
@@ -403,58 +393,74 @@ proc cmdUntil(positionals: seq[string], opts: Options) =
   let formatter = durFormatter.newSayableDuration(locale.get, compactness)
   let res = formatter.formatUntil(target, asOf)
 
-  if res.isNone:
-    quit(1)
-  echo res.get
+  res
 
 
-proc cmdLocales() =
+proc cmdLocales(): string =
   var codes: seq[string] = @[]
   for code in LocaleCodes:
     let locale = ageRegistry.getLocale(code)
     if locale.isSome:
       codes.add(code)
   codes.sort()
-  for code in codes:
-    echo code
+  codes.join("\n") & "\n"
+
+
+proc dispatch(argv: seq[string]): tuple[code: int, output: string] =
+  let (command, positionals, opts) = parseArgs(argv)
+
+  if command.len == 0:
+    return (2, Help & "\n")
+
+  let res = case command
+    of "help": return (0, Help & "\n")
+    of "version": return (0, "sayable " & Version & "\n")
+    of "locales": return (0, cmdLocales())
+    of "age": cmdAge(positionals, opts)
+    of "stage": cmdStage(positionals, opts)
+    of "date": cmdDate(positionals, opts)
+    of "relative": cmdRelative(positionals, opts)
+    of "time": cmdTime(positionals, opts)
+    of "duration": cmdDuration(positionals, opts)
+    of "since": cmdSince(positionals, opts)
+    of "until": cmdUntil(positionals, opts)
+    else: cliError("unknown command '" & command & "'")
+
+  if res.isNone: (1, "") else: (0, res.get & "\n")
+
+
+proc run(argv: seq[string]): tuple[code: int, output: string] =
+  ## Runs one invocation; returns its exit code and the text for stdout.
+  try:
+    dispatch(argv)
+  except UsageError:
+    (2, "")
+
+
+proc repl() =
+  ## Answers one tab-separated request per stdin line (see cli/SPEC.md).
+  var line: string
+  while stdin.readLine(line):
+    var answer: tuple[code: int, output: string]
+    try:
+      answer = run(line.strip(leading = false, chars = {'\r'}).split('\t'))
+    except CatchableError as e:
+      # A one-shot run would crash with exit 1; report it and keep serving.
+      stderr.writeLine("error: " & e.msg)
+      answer = (1, "")
+    let flat = answer.output.strip(leading = false, chars = {'\n'}).replace("\n", "\t")
+    stdout.write($answer.code & "\t" & flat & "\n")
+    stdout.flushFile()
 
 
 proc main() =
   let argv = commandLineParams()
-  let (command, positionals, opts) = parseArgs(argv)
-
-  if command.len == 0:
-    echo Help
-    quit(2)
-
-  case command
-  of "help":
-    echo Help
-    quit(0)
-  of "version":
-    echo "sayable " & Version
-    quit(0)
-  of "locales":
-    cmdLocales()
-    quit(0)
-  of "age":
-    cmdAge(positionals, opts)
-  of "stage":
-    cmdStage(positionals, opts)
-  of "date":
-    cmdDate(positionals, opts)
-  of "relative":
-    cmdRelative(positionals, opts)
-  of "time":
-    cmdTime(positionals, opts)
-  of "duration":
-    cmdDuration(positionals, opts)
-  of "since":
-    cmdSince(positionals, opts)
-  of "until":
-    cmdUntil(positionals, opts)
-  else:
-    cliError("unknown command '" & command & "'")
+  if argv == @["--repl"]:
+    repl()
+    return
+  let (code, output) = run(argv)
+  stdout.write(output)
+  quit(code)
 
 
 main()

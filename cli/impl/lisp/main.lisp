@@ -31,11 +31,15 @@ Options:
 
 ;;; --- Argument parsing ---
 
+(defun cli-exit (code)
+  "End the current command with exit CODE; the caller of DISPATCH decides what exiting means."
+  (throw 'cli-exit code))
+
 (defun cli-error (msg)
   "Print error to stderr and exit with code 2."
   (format *error-output* "error: ~a~%" msg)
   (format *error-output* "Run 'sayable help' for usage.~%")
-  (sb-ext:exit :code 2))
+  (cli-exit 2))
 
 (defun nullify (value)
   "Convert the CLI 'null' sentinel to NIL."
@@ -132,8 +136,8 @@ Options:
            (formatter (sayable-age:make-formatter locale (opt options :compactness)))
            (result (sayable-age:format-age formatter dob as-of)))
       (if result
-          (progn (format t "~a~%" result) (sb-ext:exit :code 0))
-          (sb-ext:exit :code 1)))))
+          (progn (format t "~a~%" result) (cli-exit 0))
+          (cli-exit 1)))))
 
 (defun cmd-stage (positionals options)
   (when (null positionals)
@@ -149,8 +153,8 @@ Options:
            (formatter (sayable-age:make-formatter locale (opt options :compactness)))
            (result (sayable-age:format-stage formatter dob as-of gender)))
       (if result
-          (progn (format t "~a~%" result) (sb-ext:exit :code 0))
-          (sb-ext:exit :code 1)))))
+          (progn (format t "~a~%" result) (cli-exit 0))
+          (cli-exit 1)))))
 
 (defun cmd-date (positionals options)
   (when (null positionals)
@@ -165,8 +169,8 @@ Options:
                        (sayable-date:format-date-with-year formatter date-val)
                        (sayable-date:format-date formatter date-val))))
       (if result
-          (progn (format t "~a~%" result) (sb-ext:exit :code 0))
-          (sb-ext:exit :code 1)))))
+          (progn (format t "~a~%" result) (cli-exit 0))
+          (cli-exit 1)))))
 
 (defun cmd-relative (positionals options)
   (when (null positionals)
@@ -183,8 +187,8 @@ Options:
       (let* ((formatter (sayable-date:make-formatter locale (opt options :compactness)))
              (result (sayable-date:format-relative formatter date-val as-of-val)))
         (if result
-            (progn (format t "~a~%" result) (sb-ext:exit :code 0))
-            (sb-ext:exit :code 1))))))
+            (progn (format t "~a~%" result) (cli-exit 0))
+            (cli-exit 1))))))
 
 (defun cmd-time (positionals options)
   (when (null positionals)
@@ -197,8 +201,8 @@ Options:
     (let* ((formatter (sayable-time:make-formatter locale (opt options :compactness)))
            (result (sayable-time:format-time formatter time-val)))
       (if result
-          (progn (format t "~a~%" result) (sb-ext:exit :code 0))
-          (sb-ext:exit :code 1)))))
+          (progn (format t "~a~%" result) (cli-exit 0))
+          (cli-exit 1)))))
 
 (defun cmd-duration (positionals options)
   (when (null positionals)
@@ -228,8 +232,8 @@ Options:
                 (let ((end (nullify (second positionals))))
                   (sayable-duration:format-duration formatter value end))))))
       (if result
-          (progn (format t "~a~%" result) (sb-ext:exit :code 0))
-          (sb-ext:exit :code 1)))))
+          (progn (format t "~a~%" result) (cli-exit 0))
+          (cli-exit 1)))))
 
 (defun cmd-since (positionals options)
   (when (null positionals)
@@ -246,8 +250,8 @@ Options:
       (let* ((formatter (sayable-duration:make-formatter locale (opt options :compactness)))
              (result (sayable-duration:format-since formatter start as-of-val)))
         (if result
-            (progn (format t "~a~%" result) (sb-ext:exit :code 0))
-            (sb-ext:exit :code 1))))))
+            (progn (format t "~a~%" result) (cli-exit 0))
+            (cli-exit 1))))))
 
 (defun cmd-until (positionals options)
   (when (null positionals)
@@ -264,8 +268,8 @@ Options:
       (let* ((formatter (sayable-duration:make-formatter locale (opt options :compactness)))
              (result (sayable-duration:format-until formatter target as-of-val)))
         (if result
-            (progn (format t "~a~%" result) (sb-ext:exit :code 0))
-            (sb-ext:exit :code 1))))))
+            (progn (format t "~a~%" result) (cli-exit 0))
+            (cli-exit 1))))))
 
 (defun cmd-locales ()
   "List all supported locale codes."
@@ -275,34 +279,82 @@ Options:
       (push (car pair) codes))
     (dolist (code (sort codes #'string<))
       (format t "~a~%" code)))
-  (sb-ext:exit :code 0))
+  (cli-exit 0))
 
 ;;; --- Main entry point ---
 
+(defun dispatch (argv)
+  "Run one command, ending it with CLI-EXIT."
+  (multiple-value-bind (command positionals options) (parse-args argv)
+    (cond
+      ((null command)
+       (format t "~a~%" *help-text*)
+       (cli-exit 2))
+      ((string= command "help")
+       (format t "~a~%" *help-text*)
+       (cli-exit 0))
+      ((string= command "version")
+       (format t "sayable ~a~%" *cli-version*)
+       (cli-exit 0))
+      ((string= command "locales")
+       (cmd-locales))
+      ((string= command "age") (cmd-age positionals options))
+      ((string= command "stage") (cmd-stage positionals options))
+      ((string= command "date") (cmd-date positionals options))
+      ((string= command "relative") (cmd-relative positionals options))
+      ((string= command "time") (cmd-time positionals options))
+      ((string= command "duration") (cmd-duration positionals options))
+      ((string= command "since") (cmd-since positionals options))
+      ((string= command "until") (cmd-until positionals options))
+      (t
+       (cli-error (format nil "unknown command '~a'" command))))))
+
+(defun exit-code-of (argv)
+  "Run one command and return the exit code it ends with."
+  (catch 'cli-exit
+    (dispatch argv)
+    0))
+
+(defun run-isolated (argv)
+  "Run one command, returning (values exit-code stdout-text).
+A crashed one-shot run exits 1, so a crash answers 1 and leaves the REPL serving."
+  (let* ((code 1)
+         (output (with-output-to-string (*standard-output*)
+                   (handler-case (setf code (exit-code-of argv))
+                     (error (e)
+                       (format *error-output* "error: ~a~%" e))))))
+    (values code output)))
+
+(defun split-fields (line)
+  "Split LINE on tabs, keeping empty fields."
+  (loop for start = 0 then (1+ tab)
+        for tab = (position #\Tab line :start start)
+        collect (subseq line start tab)
+        while tab))
+
+(defun strip-carriage-return (line)
+  (let ((end (length line)))
+    (if (and (> end 0) (char= (char line (1- end)) #\Return))
+        (subseq line 0 (1- end))
+        line)))
+
+(defun response-text (output)
+  "OUTPUT without its trailing newline, inner newlines turned into tabs."
+  (substitute #\Tab #\Newline (string-right-trim '(#\Newline) output)))
+
+(defun repl ()
+  "Answer one tab-separated request per stdin line (see cli/SPEC.md)."
+  (loop for line = (read-line *standard-input* nil)
+        while line
+        do (multiple-value-bind (code output)
+               (run-isolated (split-fields (strip-carriage-return line)))
+             (format t "~d~c~a~%" code #\Tab (response-text output))
+             (finish-output))))
+
 (defun main ()
   (let ((argv (rest sb-ext:*posix-argv*)))
-    (multiple-value-bind (command positionals options) (parse-args argv)
-      (cond
-        ((null command)
-         (format t "~a~%" *help-text*)
-         (sb-ext:exit :code 2))
-        ((string= command "help")
-         (format t "~a~%" *help-text*)
-         (sb-ext:exit :code 0))
-        ((string= command "version")
-         (format t "sayable ~a~%" *cli-version*)
-         (sb-ext:exit :code 0))
-        ((string= command "locales")
-         (cmd-locales))
-        ((string= command "age") (cmd-age positionals options))
-        ((string= command "stage") (cmd-stage positionals options))
-        ((string= command "date") (cmd-date positionals options))
-        ((string= command "relative") (cmd-relative positionals options))
-        ((string= command "time") (cmd-time positionals options))
-        ((string= command "duration") (cmd-duration positionals options))
-        ((string= command "since") (cmd-since positionals options))
-        ((string= command "until") (cmd-until positionals options))
-        (t
-         (cli-error (format nil "unknown command '~a'" command)))))))
+    (if (equal argv '("--repl"))
+        (progn (repl) (sb-ext:exit :code 0))
+        (sb-ext:exit :code (exit-code-of argv)))))
 
 (main)

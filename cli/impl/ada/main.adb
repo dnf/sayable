@@ -3,9 +3,11 @@ with Ada.Text_IO;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Fixed;
 with Ada.Calendar;
-with Parenttime;
-with Parenttime_Types;
-with Parenttime_Locales;
+with Ada.Exceptions;
+with GNAT.OS_Lib;
+with Sayableage;
+with Sayableage_Types;
+with Sayableage_Locales;
 with Sayabledate;
 with Sayabledate_Types;
 with Sayabledate_Locales;
@@ -20,7 +22,7 @@ procedure Main is
 
    use Ada.Command_Line;
    use Ada.Text_IO;
-   use type Parenttime_Types.Locale_Access;
+   use type Sayableage_Types.Locale_Access;
    use type Sayabledate_Types.Locale_Access;
    use type Sayabletime_Types.Locale_Access;
    use type Sayableduration_Types.Locale_Access;
@@ -202,6 +204,18 @@ procedure Main is
       Parse_Error   : Boolean := False;
    end record;
 
+   --  A request's arguments: the process command line, or one REPL line.
+   type Arg_List is array (Positive range <>) of Unbounded_String;
+
+   --  Commands write stdout text here so a REPL can answer with it on
+   --  one line; one-shot mode prints it unchanged.
+   Output : Unbounded_String;
+
+   procedure Emit (Line : String) is
+   begin
+      Append (Output, Line & ASCII.LF);
+   end Emit;
+
    procedure Print_Error (Msg : String) is
    begin
       Put_Line (Standard_Error, "error: " & Msg);
@@ -210,30 +224,30 @@ procedure Main is
 
    procedure Print_Help is
    begin
-      Put_Line ("Usage: sayable <command> [arguments] [options]");
-      New_Line;
-      Put_Line ("Commands:");
-      Put_Line ("  age <dob>              Format an age");
-      Put_Line ("  stage <dob>            Get developmental stage");
-      Put_Line ("  date <date>            Format a calendar date");
-      Put_Line ("  relative <date>        Format a relative date");
-      Put_Line ("  time <time>            Format a clock time");
-      Put_Line ("  duration <value> [end] Format a duration");
-      Put_Line ("  since <start>          Format elapsed time");
-      Put_Line ("  until <target>         Format remaining time");
-      Put_Line ("  locales                List available locale codes");
-      Put_Line ("  version                Show version");
-      Put_Line ("  help                   Show this help");
-      New_Line;
-      Put_Line ("Options:");
-      Put_Line ("  -l, --locale <code>    Locale code (default: en)");
-      Put_Line ("  -d, --as-of <value>    Reference date/timestamp");
-      Put_Line ("      --short            Short compactness");
-      Put_Line ("      --compact          Compact compactness");
-      Put_Line ("  -g, --gender <m|f>     Gender for stage labels");
-      Put_Line ("      --with-year        Include year (date only)");
-      Put_Line ("  -h, --help             Show this help");
-      Put_Line ("  -v, --version          Show version");
+      Emit ("Usage: sayable <command> [arguments] [options]");
+      Emit ("");
+      Emit ("Commands:");
+      Emit ("  age <dob>              Format an age");
+      Emit ("  stage <dob>            Get developmental stage");
+      Emit ("  date <date>            Format a calendar date");
+      Emit ("  relative <date>        Format a relative date");
+      Emit ("  time <time>            Format a clock time");
+      Emit ("  duration <value> [end] Format a duration");
+      Emit ("  since <start>          Format elapsed time");
+      Emit ("  until <target>         Format remaining time");
+      Emit ("  locales                List available locale codes");
+      Emit ("  version                Show version");
+      Emit ("  help                   Show this help");
+      Emit ("");
+      Emit ("Options:");
+      Emit ("  -l, --locale <code>    Locale code (default: en)");
+      Emit ("  -d, --as-of <value>    Reference date/timestamp");
+      Emit ("      --short            Short compactness");
+      Emit ("      --compact          Compact compactness");
+      Emit ("  -g, --gender <m|f>     Gender for stage labels");
+      Emit ("      --with-year        Include year (date only)");
+      Emit ("  -h, --help             Show this help");
+      Emit ("  -v, --version          Show version");
    end Print_Help;
 
    function Is_Null (S : String) return Boolean is
@@ -569,20 +583,20 @@ procedure Main is
       return R;
    end Parse_ISO;
 
-   function Parse_Arguments return Parsed_Args is
+   function Parse_Arguments (Argv : Arg_List) return Parsed_Args is
       Args     : Parsed_Args;
       I        : Integer;
       Stop_Opt : Boolean := False;
       Arg      : Unbounded_String;
    begin
-      if Argument_Count = 0 then
+      if Argv'Length = 0 then
          Args.Command := Null_Unbounded_String;
          return Args;
       end if;
 
       --  Check for global flags as first argument
       declare
-         First : constant String := Argument (1);
+         First : constant String := To_String (Argv (1));
       begin
          if First = "-h" or else First = "--help"
            or else First = "help"
@@ -598,11 +612,11 @@ procedure Main is
          end if;
       end;
 
-      Args.Command := To_Unbounded_String (Argument (1));
+      Args.Command := To_Unbounded_String (To_String (Argv (1)));
 
       I := 2;
-      while I <= Argument_Count loop
-         Arg := To_Unbounded_String (Argument (I));
+      while I <= Argv'Last loop
+         Arg := To_Unbounded_String (To_String (Argv (I)));
          declare
             A : constant String := To_String (Arg);
          begin
@@ -616,35 +630,35 @@ procedure Main is
               and then A'Length > 1
             then
                if A = "-l" or else A = "--locale" then
-                  if I + 1 > Argument_Count then
+                  if I + 1 > Argv'Last then
                      Print_Error ("'--locale' requires a value");
                      Args.Parse_Error := True;
                      return Args;
                   end if;
                   I := I + 1;
                   Args.Locale_Code :=
-                    To_Unbounded_String (Argument (I));
+                    To_Unbounded_String (To_String (Argv (I)));
 
                elsif A = "-d" or else A = "--as-of" then
-                  if I + 1 > Argument_Count then
+                  if I + 1 > Argv'Last then
                      Print_Error ("'--as-of' requires a value");
                      Args.Parse_Error := True;
                      return Args;
                   end if;
                   I := I + 1;
                   Args.As_Of :=
-                    To_Unbounded_String (Argument (I));
+                    To_Unbounded_String (To_String (Argv (I)));
                   Args.Has_As_Of := True;
 
                elsif A = "-g" or else A = "--gender" then
-                  if I + 1 > Argument_Count then
+                  if I + 1 > Argv'Last then
                      Print_Error ("'--gender' requires a value");
                      Args.Parse_Error := True;
                      return Args;
                   end if;
                   I := I + 1;
                   Args.Gender :=
-                    To_Unbounded_String (Argument (I));
+                    To_Unbounded_String (To_String (Argv (I)));
 
                elsif A = "--short" then
                   Args.Compactness := Short;
@@ -687,13 +701,13 @@ procedure Main is
 
    function To_Age_Compactness
      (C : Compactness_Kind)
-      return Parenttime_Types.Compactness
+      return Sayableage_Types.Compactness
    is
    begin
       case C is
-         when Normal  => return Parenttime_Types.Normal;
-         when Short   => return Parenttime_Types.Short;
-         when Compact => return Parenttime_Types.Compact;
+         when Normal  => return Sayableage_Types.Normal;
+         when Short   => return Sayableage_Types.Short;
+         when Compact => return Sayableage_Types.Compact;
       end case;
    end To_Age_Compactness;
 
@@ -735,7 +749,7 @@ procedure Main is
 
    --  Command handlers
    function Cmd_Age (Args : Parsed_Args) return Integer is
-      Loc_Ptr : Parenttime_Types.Locale_Access;
+      Loc_Ptr : Sayableage_Types.Locale_Access;
       As_Of   : Unbounded_String;
       Result  : Unbounded_String;
    begin
@@ -756,7 +770,7 @@ procedure Main is
             return 1;
          end if;
 
-         Loc_Ptr := Parenttime_Locales.Get_Locale
+         Loc_Ptr := Sayableage_Locales.Get_Locale
            (To_String (Args.Locale_Code));
          if Loc_Ptr = null then
             Print_Error
@@ -779,7 +793,7 @@ procedure Main is
          end if;
 
          Result := To_Unbounded_String
-           (Parenttime.Format_Age
+           (Sayableage.Format_Age
               (Loc_Ptr.all,
                To_Age_Compactness (Args.Compactness),
                DOB,
@@ -789,13 +803,13 @@ procedure Main is
             return 1;
          end if;
 
-         Put_Line (To_String (Result));
+         Emit (To_String (Result));
          return 0;
       end;
    end Cmd_Age;
 
    function Cmd_Stage (Args : Parsed_Args) return Integer is
-      Loc_Ptr : Parenttime_Types.Locale_Access;
+      Loc_Ptr : Sayableage_Types.Locale_Access;
       As_Of   : Unbounded_String;
       Result  : Unbounded_String;
    begin
@@ -816,7 +830,7 @@ procedure Main is
             return 1;
          end if;
 
-         Loc_Ptr := Parenttime_Locales.Get_Locale
+         Loc_Ptr := Sayableage_Locales.Get_Locale
            (To_String (Args.Locale_Code));
          if Loc_Ptr = null then
             Print_Error
@@ -839,7 +853,7 @@ procedure Main is
          end if;
 
          Result := To_Unbounded_String
-           (Parenttime.Format_Stage
+           (Sayableage.Format_Stage
               (Loc_Ptr.all,
                DOB,
                To_String (As_Of),
@@ -849,7 +863,7 @@ procedure Main is
             return 1;
          end if;
 
-         Put_Line (To_String (Result));
+         Emit (To_String (Result));
          return 0;
       end;
    end Cmd_Stage;
@@ -902,7 +916,7 @@ procedure Main is
             return 1;
          end if;
 
-         Put_Line (To_String (Result));
+         Emit (To_String (Result));
          return 0;
       end;
    end Cmd_Date;
@@ -956,7 +970,7 @@ procedure Main is
                return 1;
             end if;
 
-            Put_Line (To_String (Result));
+            Emit (To_String (Result));
             return 0;
          end;
       end;
@@ -1002,7 +1016,7 @@ procedure Main is
             return 1;
          end if;
 
-         Put_Line (To_String (Result));
+         Emit (To_String (Result));
          return 0;
       end;
    end Cmd_Time;
@@ -1093,7 +1107,7 @@ procedure Main is
             return 1;
          end if;
 
-         Put_Line (To_String (Result));
+         Emit (To_String (Result));
          return 0;
       end;
    end Cmd_Duration;
@@ -1148,7 +1162,7 @@ procedure Main is
                return 1;
             end if;
 
-            Put_Line (To_String (Result));
+            Emit (To_String (Result));
             return 0;
          end;
       end;
@@ -1204,7 +1218,7 @@ procedure Main is
                return 1;
             end if;
 
-            Put_Line (To_String (Result));
+            Emit (To_String (Result));
             return 0;
          end;
       end;
@@ -1213,72 +1227,199 @@ procedure Main is
    procedure Cmd_Locales is
    begin
       for I in All_Locales'Range loop
-         Put_Line (To_String (All_Locales (I)));
+         Emit (To_String (All_Locales (I)));
       end loop;
    end Cmd_Locales;
 
-   Args    : Parsed_Args;
+   --  Runs one request: returns its exit code, leaving its stdout text
+   --  in Output.
+   function Run (Argv : Arg_List) return Integer is
+      Args : constant Parsed_Args := Parse_Arguments (Argv);
+   begin
+      Output := Null_Unbounded_String;
+
+      if Args.Parse_Error then
+         return 2;
+      end if;
+
+      declare
+         C : constant String := To_String (Args.Command);
+      begin
+         if C'Length = 0 then
+            Print_Help;
+            return 2;
+         elsif C = "help" then
+            Print_Help;
+            return 0;
+         elsif C = "version" then
+            Emit ("sayable " & Version);
+            return 0;
+         elsif C = "locales" then
+            Cmd_Locales;
+            return 0;
+         elsif C = "age" then
+            return Cmd_Age (Args);
+         elsif C = "stage" then
+            return Cmd_Stage (Args);
+         elsif C = "date" then
+            return Cmd_Date (Args);
+         elsif C = "relative" then
+            return Cmd_Relative (Args);
+         elsif C = "time" then
+            return Cmd_Time (Args);
+         elsif C = "duration" then
+            return Cmd_Duration (Args);
+         elsif C = "since" then
+            return Cmd_Since (Args);
+         elsif C = "until" then
+            return Cmd_Until (Args);
+         else
+            Print_Error ("unknown command '" & C & "'");
+            return 2;
+         end if;
+      end;
+   end Run;
+
+   function Command_Line_Args return Arg_List is
+      Argv : Arg_List (1 .. Argument_Count);
+   begin
+      for I in Argv'Range loop
+         Argv (I) := To_Unbounded_String (Argument (I));
+      end loop;
+      return Argv;
+   end Command_Line_Args;
+
+   --  Splits on every tab, keeping empty fields: "age" & TAB is
+   --  ("age", "").
+   function Split_Request (Line : String) return Arg_List is
+      Field_Count : constant Positive :=
+        Ada.Strings.Fixed.Count (Line, (1 => ASCII.HT)) + 1;
+      Argv        : Arg_List (1 .. Field_Count);
+      Field_Start : Positive := Line'First;
+      Field       : Positive := 1;
+   begin
+      for I in Line'Range loop
+         if Line (I) = ASCII.HT then
+            Argv (Field) := To_Unbounded_String (Line (Field_Start .. I - 1));
+            Field := Field + 1;
+            Field_Start := I + 1;
+         end if;
+      end loop;
+      Argv (Field) := To_Unbounded_String (Line (Field_Start .. Line'Last));
+      return Argv;
+   end Split_Request;
+
+   --  Formats Output as a response's output field: trailing newline
+   --  dropped, inner newlines turned into tabs.
+   function Output_Field return String is
+      Text : String := To_String (Output);
+      Last : Natural := Text'Last;
+   begin
+      while Last >= Text'First and then Text (Last) = ASCII.LF loop
+         Last := Last - 1;
+      end loop;
+      for I in Text'First .. Last loop
+         if Text (I) = ASCII.LF then
+            Text (I) := ASCII.HT;
+         end if;
+      end loop;
+      return Text (Text'First .. Last);
+   end Output_Field;
+
+   --  Writes Output line by line: Text_IO tracks line ends itself, and a
+   --  raw newline inside Put would leave it adding a spurious one at exit.
+   procedure Print_Output is
+      Text       : constant String := To_String (Output);
+      Line_Start : Positive := Text'First;
+   begin
+      for I in Text'Range loop
+         if Text (I) = ASCII.LF then
+            Put_Line (Text (Line_Start .. I - 1));
+            Line_Start := I + 1;
+         end if;
+      end loop;
+   end Print_Output;
+
+   function Exit_Code_Image (Code : Integer) return String is
+   begin
+      return Ada.Strings.Fixed.Trim (Integer'Image (Code), Ada.Strings.Left);
+   end Exit_Code_Image;
+
+   --  Reads stdin with raw reads rather than Text_IO: Text_IO.Get_Line
+   --  and End_Of_File may read ahead past a line terminator, which would
+   --  block on a request the driver only sends after seeing our answer.
+   Read_Buffer : String (1 .. 4096);
+   Read_Pos    : Positive := 1;
+   Read_Last   : Natural := 0;
+
+   procedure Read_Request
+     (Line : out Unbounded_String; Found : out Boolean)
+   is
+   begin
+      Line := Null_Unbounded_String;
+      Found := False;
+      loop
+         if Read_Pos > Read_Last then
+            declare
+               --  Read returns -1 on error, 0 at end of input.
+               Bytes_Read : constant Integer := GNAT.OS_Lib.Read
+                 (GNAT.OS_Lib.Standin, Read_Buffer'Address,
+                  Read_Buffer'Length);
+            begin
+               Read_Last := Integer'Max (Bytes_Read, 0);
+            end;
+            Read_Pos := 1;
+            exit when Read_Last = 0;
+         end if;
+         Found := True;
+         declare
+            C : constant Character := Read_Buffer (Read_Pos);
+         begin
+            Read_Pos := Read_Pos + 1;
+            exit when C = ASCII.LF;
+            Append (Line, C);
+         end;
+      end loop;
+      if Length (Line) > 0 and then Element (Line, Length (Line)) = ASCII.CR
+      then
+         Delete (Line, Length (Line), Length (Line));
+      end if;
+   end Read_Request;
+
+   function Answer (Line : String) return String is
+      Code : Integer;
+   begin
+      Code := Run (Split_Request (Line));
+      return Exit_Code_Image (Code) & ASCII.HT & Output_Field;
+   exception
+      --  A crashed one-shot run exits 1; the REPL reports it and keeps
+      --  serving.
+      when E : others =>
+         Put_Line (Standard_Error, Ada.Exceptions.Exception_Information (E));
+         return "1" & ASCII.HT;
+   end Answer;
+
+   procedure Repl is
+      Line  : Unbounded_String;
+      Found : Boolean;
+   begin
+      loop
+         Read_Request (Line, Found);
+         exit when not Found;
+         Put_Line (Answer (To_String (Line)));
+         Flush;
+      end loop;
+   end Repl;
+
    Exit_RC : Integer;
-   Cmd     : Unbounded_String;
 
 begin
-   Args := Parse_Arguments;
-
-   if Args.Parse_Error then
-      Set_Exit_Status (Ada.Command_Line.Exit_Status (2));
+   if Argument_Count = 1 and then Argument (1) = "--repl" then
+      Repl;
       return;
    end if;
 
-   Cmd := Args.Command;
-
-   if Length (Cmd) = 0 then
-      Print_Help;
-      Set_Exit_Status (Ada.Command_Line.Exit_Status (2));
-      return;
-   end if;
-
-   declare
-      C : constant String := To_String (Cmd);
-   begin
-      if C = "help" then
-         Print_Help;
-         Set_Exit_Status (Ada.Command_Line.Exit_Status (0));
-         return;
-      end if;
-
-      if C = "version" then
-         Put_Line ("sayable " & Version);
-         Set_Exit_Status (Ada.Command_Line.Exit_Status (0));
-         return;
-      end if;
-
-      if C = "locales" then
-         Cmd_Locales;
-         Set_Exit_Status (Ada.Command_Line.Exit_Status (0));
-         return;
-      end if;
-
-      if C = "age" then
-         Exit_RC := Cmd_Age (Args);
-      elsif C = "stage" then
-         Exit_RC := Cmd_Stage (Args);
-      elsif C = "date" then
-         Exit_RC := Cmd_Date (Args);
-      elsif C = "relative" then
-         Exit_RC := Cmd_Relative (Args);
-      elsif C = "time" then
-         Exit_RC := Cmd_Time (Args);
-      elsif C = "duration" then
-         Exit_RC := Cmd_Duration (Args);
-      elsif C = "since" then
-         Exit_RC := Cmd_Since (Args);
-      elsif C = "until" then
-         Exit_RC := Cmd_Until (Args);
-      else
-         Print_Error ("unknown command '" & C & "'");
-         Exit_RC := 2;
-      end if;
-
-      Set_Exit_Status (Ada.Command_Line.Exit_Status (Exit_RC));
-   end;
+   Exit_RC := Run (Command_Line_Args);
+   Print_Output;
+   Set_Exit_Status (Ada.Command_Line.Exit_Status (Exit_RC));
 end Main;

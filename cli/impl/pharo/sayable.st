@@ -7,11 +7,12 @@ See cli/SPEC.md for the full specification."
   SayableTimeClass SayableTimeLocalesClass
   SayableDurationClass SayableDurationLocalesClass
   version helpText
-  errorExit nullify getToday compactnessSymbol isIntegerString
+  usageErrorClass errorExit nullify getToday compactnessSymbol isIntegerString
   parseArgs
   cmdAge cmdStage cmdDate cmdRelative cmdTime cmdDuration cmdSince cmdUntil cmdLocales
-  rawArgs argv foundSep parsed command positionals options
-  commands handler |
+  commands fixedCommands dispatch runCommand
+  stdin readRequest splitFields formatResponse writeOut repl
+  rawArgs argv foundSep outcome |
 
 "Resolve project root from script location (cli/impl/pharo -> project root).
  Find the .st script path in the command line arguments."
@@ -89,13 +90,21 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version'.
 
-"Helper: print error to stderr and exit 2"
+"A usage error: its message is already on stderr; the run exits 2.
+ Signalling it instead of exiting lets the REPL keep serving."
+usageErrorClass := Error
+	subclass: #SayableUsageError
+	instanceVariableNames: ''
+	classVariableNames: ''
+	package: 'SayableCLI'.
+
+"Helper: print error to stderr and fail the run with exit 2"
 errorExit := [ :msg |
 	Stdio stderr
 		nextPutAll: 'error: '; nextPutAll: msg; nextPut: Character lf;
 		nextPutAll: 'Run ''sayable help'' for usage.'; nextPut: Character lf;
 		flush.
-	Smalltalk exit: 2 ].
+	usageErrorClass new signal: msg ].
 
 "Helper: convert CLI 'null' sentinel to nil"
 nullify := [ :val |
@@ -193,9 +202,7 @@ cmdAge := [ :pos :opts |
 	comp := compactnessSymbol value: (opts at: 'compactness').
 	formatter := SayableAgeClass withLocale: locale compactness: comp.
 	result := formatter formatAge: dob asOf: asOf.
-	result ifNil: [ Smalltalk exit: 1 ].
-	Stdio stdout nextPutAll: result; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
+	result ].
 
 "Command: stage"
 cmdStage := [ :pos :opts |
@@ -213,9 +220,7 @@ cmdStage := [ :pos :opts |
 	comp := compactnessSymbol value: (opts at: 'compactness').
 	formatter := SayableAgeClass withLocale: locale compactness: comp.
 	result := formatter formatStage: dob asOf: asOf gender: gender.
-	result ifNil: [ Smalltalk exit: 1 ].
-	Stdio stdout nextPutAll: result; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
+	result ].
 
 "Command: date"
 cmdDate := [ :pos :opts |
@@ -230,9 +235,7 @@ cmdDate := [ :pos :opts |
 	(opts at: 'with_year')
 		ifTrue: [ result := formatter formatDateWithYear: dateVal ]
 		ifFalse: [ result := formatter formatDate: dateVal ].
-	result ifNil: [ Smalltalk exit: 1 ].
-	Stdio stdout nextPutAll: result; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
+	result ].
 
 "Command: relative"
 cmdRelative := [ :pos :opts |
@@ -248,9 +251,7 @@ cmdRelative := [ :pos :opts |
 	comp := compactnessSymbol value: (opts at: 'compactness').
 	formatter := SayableDateClass withLocale: locale compactness: comp.
 	result := formatter formatRelative: dateVal asOf: asOf.
-	result ifNil: [ Smalltalk exit: 1 ].
-	Stdio stdout nextPutAll: result; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
+	result ].
 
 "Command: time"
 cmdTime := [ :pos :opts |
@@ -263,9 +264,7 @@ cmdTime := [ :pos :opts |
 	comp := compactnessSymbol value: (opts at: 'compactness').
 	formatter := SayableTimeClass withLocale: locale compactness: comp.
 	result := formatter formatTime: timeVal.
-	result ifNil: [ Smalltalk exit: 1 ].
-	Stdio stdout nextPutAll: result; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
+	result ].
 
 "Command: duration"
 cmdDuration := [ :pos :opts |
@@ -287,9 +286,7 @@ cmdDuration := [ :pos :opts |
 					errorExit value: 'duration with timestamps requires start and end arguments' ].
 				endVal := nullify value: (pos at: 2).
 				result := formatter formatDuration: val end: endVal ] ].
-	result ifNil: [ Smalltalk exit: 1 ].
-	Stdio stdout nextPutAll: result; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
+	result ].
 
 "Command: since"
 cmdSince := [ :pos :opts |
@@ -305,9 +302,7 @@ cmdSince := [ :pos :opts |
 	comp := compactnessSymbol value: (opts at: 'compactness').
 	formatter := SayableDurationClass withLocale: locale compactness: comp.
 	result := formatter formatSince: start asOf: asOf.
-	result ifNil: [ Smalltalk exit: 1 ].
-	Stdio stdout nextPutAll: result; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
+	result ].
 
 "Command: until"
 cmdUntil := [ :pos :opts |
@@ -323,17 +318,108 @@ cmdUntil := [ :pos :opts |
 	comp := compactnessSymbol value: (opts at: 'compactness').
 	formatter := SayableDurationClass withLocale: locale compactness: comp.
 	result := formatter formatUntil: target asOf: asOf.
-	result ifNil: [ Smalltalk exit: 1 ].
-	Stdio stdout nextPutAll: result; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
+	result ].
 
 "Command: locales"
 cmdLocales := [
-	| codes |
-	codes := SayableAgeLocalesClass registry keys asSortedCollection.
-	codes do: [ :code |
-		Stdio stdout nextPutAll: code; nextPut: Character lf ].
-	Stdio stdout flush.
+	String streamContents: [ :out |
+		SayableAgeLocalesClass registry keys asSortedCollection
+			do: [ :code | out nextPutAll: code ]
+			separatedBy: [ out nextPut: Character lf ] ] ].
+
+commands := Dictionary newFromPairs: {
+	'age'. cmdAge.
+	'stage'. cmdStage.
+	'date'. cmdDate.
+	'relative'. cmdRelative.
+	'time'. cmdTime.
+	'duration'. cmdDuration.
+	'since'. cmdSince.
+	'until'. cmdUntil }.
+
+"Commands that take no arguments and always succeed"
+fixedCommands := Dictionary newFromPairs: {
+	'help'. [ helpText ].
+	'version'. [ 'sayable ', version ].
+	'locales'. cmdLocales }.
+
+"Run one command; answers { exitCode. stdoutText or nil }"
+dispatch := [ :args |
+	| parsed command fixed handler result |
+	parsed := parseArgs value: args.
+	command := parsed first.
+	command
+		ifNil: [ { 2. helpText } ]
+		ifNotNil: [
+			fixed := fixedCommands at: command ifAbsent: [ nil ].
+			fixed
+				ifNotNil: [ { 0. fixed value } ]
+				ifNil: [
+					handler := commands at: command ifAbsent: [
+						errorExit value: 'unknown command ''', command, '''' ].
+					result := handler value: parsed second value: parsed third.
+					result
+						ifNil: [ { 1. nil } ]
+						ifNotNil: [ { 0. result } ] ] ] ].
+
+"Run one command as the one-shot CLI would, without printing or exiting"
+runCommand := [ :args |
+	[ dispatch value: args ]
+		on: usageErrorClass
+		do: [ :e | e return: { 2. nil } ] ].
+
+"Helper: write a line to stdout and flush it (REPL responses must not wait in a buffer)"
+writeOut := [ :text |
+	Stdio stdout nextPutAll: text; nextPut: Character lf; flush ].
+
+"REPL (see cli/SPEC.md): one tab-separated request per stdin line.
+ Lines are read a byte at a time and decoded as UTF-8, so a request is
+ answered as soon as its newline arrives. Answers nil at end of input."
+stdin := Stdio stdin.
+readRequest := [
+	| bytes byte line |
+	bytes := WriteStream on: ByteArray new.
+	[ byte := stdin next.
+	  byte notNil and: [ byte asInteger ~= 10 ] ]
+		whileTrue: [ bytes nextPut: byte asInteger ].
+	(byte isNil and: [ bytes contents isEmpty ])
+		ifTrue: [ nil ]
+		ifFalse: [
+			line := bytes contents utf8Decoded.
+			(line notEmpty and: [ line last = Character cr ])
+				ifTrue: [ line allButLast ]
+				ifFalse: [ line ] ] ].
+
+"Helper: split on tabs, keeping empty fields ('age<TAB>' is 'age' and '')"
+splitFields := [ :line |
+	| fields start |
+	fields := OrderedCollection new.
+	start := 1.
+	line doWithIndex: [ :char :index |
+		char = Character tab ifTrue: [
+			fields add: (line copyFrom: start to: index - 1).
+			start := index + 1 ] ].
+	fields add: (line copyFrom: start to: line size).
+	fields asArray ].
+
+formatResponse := [ :result |
+	| text |
+	text := result second ifNil: [ '' ].
+	[ text notEmpty and: [ text last = Character lf ] ]
+		whileTrue: [ text := text allButLast ].
+	result first printString, (String with: Character tab),
+		(text copyReplaceAll: (String with: Character lf) with: (String with: Character tab)) ].
+
+repl := [
+	| line response |
+	[ (line := readRequest value) notNil ] whileTrue: [
+		response := [ formatResponse value: (runCommand value: (splitFields value: line)) ]
+			on: Error
+			do: [ :e |
+				"A crash exits 1 in one-shot mode; keep serving."
+				Stdio stderr nextPutAll: e description; nextPut: Character lf; flush.
+				e return: '1', (String with: Character tab) ].
+		writeOut value: response ].
 	Smalltalk exit: 0 ].
 
 "Main: extract user arguments from command line.
@@ -359,36 +445,8 @@ rawArgs do: [ :a |
  (handles alternative invocation patterns)"
 foundSep ifFalse: [ argv := rawArgs asOrderedCollection ].
 
-"Parse and dispatch"
-parsed := parseArgs value: argv asArray.
-command := parsed first.
-positionals := parsed second.
-options := parsed third.
+(argv size = 1 and: [ argv first = '--repl' ]) ifTrue: [ repl value ].
 
-command ifNil: [
-	Stdio stdout nextPutAll: helpText; nextPut: Character lf; flush.
-	Smalltalk exit: 2 ].
-
-command = 'help' ifTrue: [
-	Stdio stdout nextPutAll: helpText; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
-
-command = 'version' ifTrue: [
-	Stdio stdout nextPutAll: 'sayable '; nextPutAll: version; nextPut: Character lf; flush.
-	Smalltalk exit: 0 ].
-
-command = 'locales' ifTrue: [ cmdLocales value ].
-
-commands := Dictionary newFromPairs: {
-	'age'. cmdAge.
-	'stage'. cmdStage.
-	'date'. cmdDate.
-	'relative'. cmdRelative.
-	'time'. cmdTime.
-	'duration'. cmdDuration.
-	'since'. cmdSince.
-	'until'. cmdUntil }.
-
-handler := commands at: command ifAbsent: [ nil ].
-handler ifNil: [ errorExit value: 'unknown command ''', command, '''' ].
-handler value: positionals value: options.
+outcome := runCommand value: argv asArray.
+outcome second ifNotNil: [ :text | writeOut value: text ].
+Smalltalk exit: outcome first.

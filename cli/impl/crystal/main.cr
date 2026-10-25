@@ -37,10 +37,14 @@ Options:
   -v, --version          Show version
 HELP
 
-def cli_error(msg : String)
+# Raised for usage errors so the REPL can answer them without exiting.
+class UsageError < Exception
+end
+
+def cli_error(msg : String) : NoReturn
   STDERR.puts "error: #{msg}"
   STDERR.puts "Run 'sayable help' for usage."
-  exit 2
+  raise UsageError.new(msg)
 end
 
 def nullify(value : String) : String?
@@ -131,7 +135,7 @@ def compactness_symbol(options : Hash(String, String | Bool | Nil)) : Symbol
   end
 end
 
-def cmd_age(positionals : Array(String), options : Hash(String, String | Bool | Nil))
+def cmd_age(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("age requires a date-of-birth argument") if positionals.empty?
   dob = nullify(positionals[0])
 
@@ -147,15 +151,10 @@ def cmd_age(positionals : Array(String), options : Hash(String, String | Bool | 
           end
 
   formatter = SayableAge::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
-  result = formatter.format_age(dob, as_of)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_age(dob, as_of)
 end
 
-def cmd_stage(positionals : Array(String), options : Hash(String, String | Bool | Nil))
+def cmd_stage(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("stage requires a date-of-birth argument") if positionals.empty?
   dob = nullify(positionals[0])
 
@@ -174,15 +173,10 @@ def cmd_stage(positionals : Array(String), options : Hash(String, String | Bool 
   gender = gender_raw.is_a?(String) ? gender_raw : nil
 
   formatter = SayableAge::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
-  result = formatter.format_stage(dob, as_of, gender: gender)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_stage(dob, as_of, gender: gender)
 end
 
-def cmd_date(positionals : Array(String), options : Hash(String, String | Bool | Nil))
+def cmd_date(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("date requires a date argument") if positionals.empty?
   date_val = nullify(positionals[0])
 
@@ -192,19 +186,14 @@ def cmd_date(positionals : Array(String), options : Hash(String, String | Bool |
 
   formatter = SayableDate::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
 
-  result = if options["with_year"] == true
-             formatter.format_date_with_year(date_val)
-           else
-             formatter.format_date(date_val)
-           end
-
-  if result.nil?
-    exit 1
+  if options["with_year"] == true
+    formatter.format_date_with_year(date_val)
+  else
+    formatter.format_date(date_val)
   end
-  puts result
 end
 
-def cmd_relative(positionals : Array(String), options : Hash(String, String | Bool | Nil))
+def cmd_relative(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("relative requires a date argument") if positionals.empty?
   date_val = nullify(positionals[0])
 
@@ -217,15 +206,10 @@ def cmd_relative(positionals : Array(String), options : Hash(String, String | Bo
   cli_error("unknown locale '#{locale_code}'") if locale.nil?
 
   formatter = SayableDate::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
-  result = formatter.format_relative(date_val, as_of)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_relative(date_val, as_of)
 end
 
-def cmd_time(positionals : Array(String), options : Hash(String, String | Bool | Nil))
+def cmd_time(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("time requires a time argument") if positionals.empty?
   time_val = nullify(positionals[0])
 
@@ -234,15 +218,10 @@ def cmd_time(positionals : Array(String), options : Hash(String, String | Bool |
   cli_error("unknown locale '#{locale_code}'") if locale.nil?
 
   formatter = SayableTime::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
-  result = formatter.format_time(time_val)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_time(time_val)
 end
 
-def cmd_duration(positionals : Array(String), options : Hash(String, String | Bool | Nil))
+def cmd_duration(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("duration requires a value argument") if positionals.empty?
   value = nullify(positionals[0])
 
@@ -252,23 +231,18 @@ def cmd_duration(positionals : Array(String), options : Hash(String, String | Bo
 
   formatter = SayableDuration::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
 
-  result = if value.nil?
-             formatter.format_duration(nil.as(Int32?))
-           elsif value.lstrip('-').chars.all?(&.ascii_number?)
-             formatter.format_duration(value.to_i)
-           else
-             cli_error("duration with timestamps requires start and end arguments") if positionals.size < 2
-             end_val = nullify(positionals[1])
-             formatter.format_duration(value, end_val)
-           end
-
-  if result.nil?
-    exit 1
+  if value.nil?
+    formatter.format_duration(nil.as(Int32?))
+  elsif value.lstrip('-').chars.all?(&.ascii_number?)
+    formatter.format_duration(value.to_i)
+  else
+    cli_error("duration with timestamps requires start and end arguments") if positionals.size < 2
+    end_val = nullify(positionals[1])
+    formatter.format_duration(value, end_val)
   end
-  puts result
 end
 
-def cmd_since(positionals : Array(String), options : Hash(String, String | Bool | Nil))
+def cmd_since(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("since requires a start timestamp argument") if positionals.empty?
   start = nullify(positionals[0])
 
@@ -281,15 +255,10 @@ def cmd_since(positionals : Array(String), options : Hash(String, String | Bool 
   cli_error("unknown locale '#{locale_code}'") if locale.nil?
 
   formatter = SayableDuration::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
-  result = formatter.format_since(start, as_of)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_since(start, as_of)
 end
 
-def cmd_until(positionals : Array(String), options : Hash(String, String | Bool | Nil))
+def cmd_until(positionals : Array(String), options : Hash(String, String | Bool | Nil)) : String?
   cli_error("until requires a target timestamp argument") if positionals.empty?
   target = nullify(positionals[0])
 
@@ -302,57 +271,63 @@ def cmd_until(positionals : Array(String), options : Hash(String, String | Bool 
   cli_error("unknown locale '#{locale_code}'") if locale.nil?
 
   formatter = SayableDuration::Formatter.new(locale.not_nil!, compactness: compactness_symbol(options))
-  result = formatter.format_until(target, as_of)
-
-  if result.nil?
-    exit 1
-  end
-  puts result
+  formatter.format_until(target, as_of)
 end
 
-def cmd_locales
+def cmd_locales : String
   codes = [] of String
   # Use age locales as the canonical list
   %w[af ak am ar az bci be bem bg bi bm bn br bs ca ceb cs cy da de din dje dyu ee el en es et eu fa fan ff fi fil fj fon fr ga gd gl gn gu gv ha he hi hr ht hu hy id ig is it ja jv ka kbp kk km kn ko kpe ktu ku kw ky lg ln lo lt lv men mfe mg mi mk ml mn mnk mos mr ms mt my nb nd ne ng nl nso nus ny om or pa pis pl pov ps pt qu ro ru rw sar sd sg shi si sk sl sn snk so sq sr ss st su suk sv sw ta te tem tg th ti tig tk tn tpi tr ts tzm uk umb ur uz vi vmw wo xh yo yue zdj zh zu].each do |code|
     locale = SayableAge::Locales.get(code)
     codes << code if locale
   end
-  codes.sort.each { |code| puts code }
+  codes.sort.join("\n")
 end
 
-command, positionals, options = parse_args(ARGV.to_a)
+# Runs one command and returns its exit code and stdout text (nil when it
+# prints nothing), so one-shot mode and the REPL share the same dispatch.
+def run(argv : Array(String)) : Tuple(Int32, String?)
+  command, positionals, options = parse_args(argv)
+  return {2, HELP} if command.nil?
 
-if command.nil?
-  puts HELP
-  exit 2
+  result = case command
+           when "help"     then return {0, HELP}
+           when "version"  then return {0, "sayable #{VERSION}"}
+           when "locales"  then return {0, cmd_locales}
+           when "age"      then cmd_age(positionals, options)
+           when "stage"    then cmd_stage(positionals, options)
+           when "date"     then cmd_date(positionals, options)
+           when "relative" then cmd_relative(positionals, options)
+           when "time"     then cmd_time(positionals, options)
+           when "duration" then cmd_duration(positionals, options)
+           when "since"    then cmd_since(positionals, options)
+           when "until"    then cmd_until(positionals, options)
+           else                 cli_error("unknown command '#{command}'")
+           end
+  result.nil? ? {1, nil} : {0, result}
+rescue UsageError
+  {2, nil}
 end
 
-case command
-when "help"
-  puts HELP
-  exit 0
-when "version"
-  puts "sayable #{VERSION}"
-  exit 0
-when "locales"
-  cmd_locales
-  exit 0
-when "age"
-  cmd_age(positionals, options)
-when "stage"
-  cmd_stage(positionals, options)
-when "date"
-  cmd_date(positionals, options)
-when "relative"
-  cmd_relative(positionals, options)
-when "time"
-  cmd_time(positionals, options)
-when "duration"
-  cmd_duration(positionals, options)
-when "since"
-  cmd_since(positionals, options)
-when "until"
-  cmd_until(positionals, options)
+# Answers one tab-separated request per stdin line (see cli/SPEC.md).
+def repl
+  STDIN.each_line(chomp: true) do |line|
+    code, output = begin
+      run(line.split('\t', remove_empty: false))
+    rescue ex
+      # A crash exits 1 in one-shot mode; report it and keep serving.
+      STDERR.puts "error: #{ex.message}"
+      {1, nil}
+    end
+    STDOUT.print "#{code}\t#{output.to_s.rstrip('\n').gsub('\n', '\t')}\n"
+    STDOUT.flush
+  end
+end
+
+if ARGV == ["--repl"]
+  repl
 else
-  cli_error("unknown command '#{command}'")
+  code, output = run(ARGV.to_a)
+  puts output unless output.nil?
+  exit code
 end

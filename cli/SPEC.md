@@ -4,7 +4,7 @@ A unified command-line interface to all four Sayable components (age, date, dura
 
 ## Purpose
 
-The CLI serves as a **cross-language test harness**. A single bash script (`test-harness.sh`) drives any conforming CLI binary through every canonical test case, verifying that all implementations produce identical output.
+The CLI serves as a **cross-language test harness**. A single bash script (`test-harness.sh`) drives any conforming CLI binary through every canonical test case through one [REPL](#repl-mode) process, verifying that all implementations produce identical output, and `fuzz.py` compares every CLI's answers to random requests. See [`docs/testing.md`](../docs/testing.md).
 
 ## Binary Name
 
@@ -148,6 +148,25 @@ An empty string `""` is passed as-is (an empty string, distinct from null).
 - Error messages are printed to **stderr**.
 - No decorative output (no labels, no colors, no prefixes). Just the raw formatted string.
 - The `locales` command prints one code per line.
+
+## REPL Mode
+
+`sayable --repl` (as the only argument) answers many requests from one process, so the test harness and the fuzz tester do not pay process startup once per call.
+
+- **Request:** one per line on stdin — the same arguments a one-shot invocation takes, separated by tab characters (`\t`) instead of shell quoting. An empty field is an empty-string argument, so `age<TAB>` is `sayable age ''`. Arguments never contain tabs or newlines.
+- **Response:** exactly one line on stdout per request, `<exit><TAB><output>`, where `<exit>` is the exit code the one-shot invocation would return (0, 1 or 2) and `<output>` is what it would print to stdout with the trailing newline removed and any inner newlines (e.g. `locales`) replaced by tabs. A null result is `1<TAB>` with nothing after the tab.
+- **Flush stdout after every response line**, so a driver can interleave writes and reads.
+- Errors still go to stderr. A usage error answers `2<TAB>` and the REPL keeps reading; so does a blank line (no command).
+- An unexpected failure while handling a request (exception, panic) must not end the REPL: answer `1<TAB>`, as a crashed one-shot run would exit 1, and report the error on stderr.
+- Commands without `-d` still default to today's date, evaluated per request.
+- End of input ends the REPL with exit code 0.
+
+```
+$ printf 'age\t2020-06-15\t-d\t2025-06-15\nage\tnull\t-d\t2025-06-15\nbogus\n' | sayable --repl 2>/dev/null
+0	5 years
+1	
+2	
+```
 
 ## Argument Parsing Rules
 

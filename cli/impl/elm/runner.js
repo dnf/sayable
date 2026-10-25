@@ -34,10 +34,14 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version`;
 
+const path = require('path');
+const readline = require('readline');
+
+/** Ends a request with exit code 2 after `message` is written to stderr. */
+class CliError extends Error {}
+
 function error(msg) {
-  process.stderr.write(`error: ${msg}\n`);
-  process.stderr.write("Run 'sayable help' for usage.\n");
-  process.exit(2);
+  throw new CliError(`error: ${msg}\nRun 'sayable help' for usage.\n`);
 }
 
 function getToday() {
@@ -128,29 +132,63 @@ function defaultOptions() {
 
 const VALID_COMMANDS = ['age', 'stage', 'date', 'relative', 'time', 'duration', 'since', 'until', 'locales', 'version', 'help'];
 
-function main() {
-  const argv = process.argv.slice(2);
+function loadElm() {
+  const elmJsPath = path.join(__dirname, 'build', 'elm.js');
+
+  let elmModule;
+  try {
+    elmModule = require(elmJsPath);
+  } catch (e) {
+    throw new CliError("error: Elm compiled JS not found. Run 'elm make' first.\n");
+  }
+
+  const Elm = elmModule.Elm;
+  if (!Elm || !Elm.Main) {
+    throw new CliError('error: Elm.Main not found in compiled JS.\n');
+  }
+  return Elm;
+}
+
+/** A fresh Elm worker per request, so no state carries over between REPL requests. */
+function runElm(flags) {
+  return new Promise((resolve) => {
+    const app = loadElm().Main.init({ flags: flags });
+    app.ports.sendResult.subscribe(resolve);
+  });
+}
+
+/**
+ * Runs one command. Resolves to the exit code and the stdout text without
+ * its trailing newline (null when nothing is printed).
+ */
+async function run(argv) {
+  try {
+    return await dispatch(argv);
+  } catch (e) {
+    if (!(e instanceof CliError)) throw e;
+    process.stderr.write(e.message);
+    return { exitCode: 2, output: null };
+  }
+}
+
+async function dispatch(argv) {
   const { command, positionals, options } = parseArgs(argv);
 
   if (command === null) {
-    process.stdout.write(HELP + '\n');
-    process.exit(2);
+    return { exitCode: 2, output: HELP };
   }
 
   if (command === 'help') {
-    process.stdout.write(HELP + '\n');
-    process.exit(0);
+    return { exitCode: 0, output: HELP };
   }
 
   if (command === 'version') {
-    process.stdout.write(`sayable ${VERSION}\n`);
-    process.exit(0);
+    return { exitCode: 0, output: `sayable ${VERSION}` };
   }
 
   if (!VALID_COMMANDS.includes(command)) {
     error(`unknown command '${command}'`);
   }
-
   // Validate command-specific requirements before calling Elm
   if (['age', 'stage'].includes(command)) {
     if (positionals.length === 0) error(`${command} requires a date-of-birth argument`);
@@ -206,24 +244,6 @@ function main() {
     }
   }
 
-  // Load and run Elm
-  const path = require('path');
-  const elmJsPath = path.join(__dirname, 'build', 'elm.js');
-
-  let elmModule;
-  try {
-    elmModule = require(elmJsPath);
-  } catch (e) {
-    process.stderr.write(`error: Elm compiled JS not found. Run 'elm make' first.\n`);
-    process.exit(2);
-  }
-
-  const Elm = elmModule.Elm;
-  if (!Elm || !Elm.Main) {
-    process.stderr.write(`error: Elm.Main not found in compiled JS.\n`);
-    process.exit(2);
-  }
-
   const flags = {
     command: command,
     args: elmArgs,
@@ -234,14 +254,41 @@ function main() {
     withYear: options.withYear,
   };
 
-  const app = Elm.Main.init({ flags: flags });
+  const result = await runElm(flags);
+  return { exitCode: result.exitCode, output: result.exitCode === 0 ? result.output : null };
+}
 
-  app.ports.sendResult.subscribe(function(result) {
-    if (result.exitCode === 0) {
-      process.stdout.write(result.output + '\n');
-    }
-    process.exit(result.exitCode);
-  });
+/** A crashed one-shot run exits 1, so a crashed request answers 1 and the REPL keeps serving. */
+async function runIsolated(argv) {
+  try {
+    return await run(argv);
+  } catch (e) {
+    process.stderr.write(`error: ${e && e.stack ? e.stack : e}\n`);
+    return { exitCode: 1, output: null };
+  }
+}
+
+/** Answers one tab-separated request per stdin line (see cli/SPEC.md). */
+async function repl() {
+  const lines = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
+  for await (const line of lines) {
+    const { exitCode, output } = await runIsolated(line.split('\t'));
+    process.stdout.write(`${exitCode}\t${(output ?? '').replace(/\n/g, '\t')}\n`);
+  }
+}
+
+async function main() {
+  const argv = process.argv.slice(2);
+  if (argv.length === 1 && argv[0] === '--repl') {
+    await repl();
+    return;
+  }
+
+  const { exitCode, output } = await run(argv);
+  if (output !== null) {
+    process.stdout.write(output + '\n');
+  }
+  process.exit(exitCode);
 }
 
 main();

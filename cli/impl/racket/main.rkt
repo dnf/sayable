@@ -261,8 +261,8 @@ Options:
                          "uz" "ve" "vi" "vmw" "wo" "xh" "yao" "yo" "yue" "zdj" "zh" "zu"))])
     (displayln code)))
 
-(define (main)
-  (let-values ([(command positionals options) (parse-args (vector->list (current-command-line-arguments)))])
+(define (dispatch argv)
+  (let-values ([(command positionals options) (parse-args argv)])
     (cond
       [(not command)
        (displayln help-text)
@@ -286,4 +286,35 @@ Options:
       [(equal? command "until") (cmd-until positionals options)]
       [else (cli-error (format "unknown command '~a'" command))])))
 
-(main)
+;; Runs one command exactly as a one-shot run would, but returns its exit code
+;; and stdout text instead of exiting. A crash exits 1 in a one-shot run.
+(define (run-captured argv)
+  (define output (open-output-string))
+  (define exit-code
+    (let/ec escape
+      (with-handlers ([exn:fail? (λ (e)
+                                   ((error-display-handler) (exn-message e) e)
+                                   1)])
+        (parameterize ([current-output-port output]
+                       [exit-handler escape])
+          (dispatch argv)
+          0))))
+  (values exit-code (get-output-string output)))
+
+(define (strip-carriage-return line)
+  (string-trim line "\r" #:left? #f #:repeat? #f))
+
+;; Answers one tab-separated request per stdin line (see cli/SPEC.md).
+(define (repl)
+  (for ([line (in-lines (current-input-port) 'linefeed)])
+    (define-values (exit-code output)
+      (run-captured (regexp-split #rx"\t" (strip-carriage-return line))))
+    (printf "~a\t~a\n" exit-code (string-replace (string-trim output "\n" #:left? #f) "\n" "\t"))
+    (flush-output)))
+
+(define (main argv)
+  (if (equal? argv '("--repl"))
+      (repl)
+      (dispatch argv)))
+
+(main (vector->list (current-command-line-arguments)))

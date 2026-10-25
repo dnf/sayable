@@ -811,6 +811,17 @@ install *langs:
 cli *lang:
     just test cli {{lang}}
 
+# Compare every CLI's answers to random requests (see docs/testing.md)
+[group('test')]
+fuzz *args:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    _args=({{args}})
+    if [ "${_args[0]:-}" = "help" ]; then
+        _args=(--help)
+    fi
+    {{python}} cli/fuzz.py ${_args[@]+"${_args[@]}"}
+
 # Internal: test a single CLI language
 [private]
 _test_cli lang:

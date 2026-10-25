@@ -1,9 +1,13 @@
 package main
 
 import (
+	"bufio"
+	"errors"
 	"fmt"
+	"io"
 	"os"
 	"sort"
+	"strings"
 	"time"
 
 	sayableage "github.com/dnf/sayable/age/impl/go"
@@ -54,54 +58,117 @@ type options struct {
 }
 
 func main() {
-	command, positionals, opts := parseArgs(os.Args[1:])
+	if len(os.Args) == 2 && os.Args[1] == "--repl" {
+		repl(os.Stdin, os.Stdout)
+		return
+	}
+	os.Exit(run(os.Args[1:], os.Stdout))
+}
 
-	switch command {
+// run executes one invocation, writing its stdout text to out, and returns
+// the exit code. Usage errors are reported on stderr.
+func run(argv []string, out io.Writer) int {
+	code, err := dispatch(argv, out)
+	var usage usageError
+	if errors.As(err, &usage) {
+		fmt.Fprintf(os.Stderr, "error: %s\n", usage.msg)
+		fmt.Fprintln(os.Stderr, "Run 'sayable help' for usage.")
+		return 2
+	}
+	return code
+}
+
+// command formats its arguments; a nil result is a null result.
+type command func(positionals []string, opts options) (*string, error)
+
+var commands = map[string]command{
+	"age":      cmdAge,
+	"stage":    cmdStage,
+	"date":     cmdDate,
+	"relative": cmdRelative,
+	"time":     cmdTime,
+	"duration": cmdDuration,
+	"since":    cmdSince,
+	"until":    cmdUntil,
+}
+
+func dispatch(argv []string, out io.Writer) (int, error) {
+	name, positionals, opts, err := parseArgs(argv)
+	if err != nil {
+		return 2, err
+	}
+
+	switch name {
 	case "":
-		fmt.Println(helpText)
-		os.Exit(2)
+		fmt.Fprintln(out, helpText)
+		return 2, nil
 	case "help":
-		fmt.Println(helpText)
-		os.Exit(0)
+		fmt.Fprintln(out, helpText)
+		return 0, nil
 	case "version":
-		fmt.Printf("sayable %s\n", version)
-		os.Exit(0)
+		fmt.Fprintf(out, "sayable %s\n", version)
+		return 0, nil
 	case "locales":
-		cmdLocales()
-		os.Exit(0)
-	case "age":
-		cmdAge(positionals, opts)
-	case "stage":
-		cmdStage(positionals, opts)
-	case "date":
-		cmdDate(positionals, opts)
-	case "relative":
-		cmdRelative(positionals, opts)
-	case "time":
-		cmdTime(positionals, opts)
-	case "duration":
-		cmdDuration(positionals, opts)
-	case "since":
-		cmdSince(positionals, opts)
-	case "until":
-		cmdUntil(positionals, opts)
-	default:
-		cliError(fmt.Sprintf("unknown command '%s'", command))
+		cmdLocales(out)
+		return 0, nil
+	}
+
+	cmd, ok := commands[name]
+	if !ok {
+		return 2, usageErrorf("unknown command '%s'", name)
+	}
+	result, err := cmd(positionals, opts)
+	if err != nil {
+		return 2, err
+	}
+	if result == nil {
+		return 1, nil
+	}
+	fmt.Fprintln(out, *result)
+	return 0, nil
+}
+
+// repl answers one tab-separated request per input line (see cli/SPEC.md).
+func repl(in io.Reader, out io.Writer) {
+	scanner := bufio.NewScanner(in)
+	scanner.Buffer(make([]byte, 0, 64*1024), 16*1024*1024)
+	writer := bufio.NewWriter(out)
+	for scanner.Scan() {
+		request := strings.TrimSuffix(scanner.Text(), "\r")
+		code, output := answer(strings.Split(request, "\t"))
+		fmt.Fprintf(writer, "%d\t%s\n", code, output)
+		_ = writer.Flush()
 	}
 }
 
+// answer runs one request and returns its exit code and flattened output.
+// A panic, which would crash a one-shot run with a failure exit, answers 1
+// instead of ending the REPL.
+func answer(argv []string) (code int, output string) {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Fprintf(os.Stderr, "error: %v\n", r)
+			code, output = 1, ""
+		}
+	}()
+	var captured strings.Builder
+	code = run(argv, &captured)
+	output = strings.ReplaceAll(strings.TrimRight(captured.String(), "\n"), "\n", "\t")
+	return code, output
+}
+
 // parseArgs parses CLI arguments into (command, positionals, options).
-func parseArgs(argv []string) (string, []string, options) {
+func parseArgs(argv []string) (string, []string, options, error) {
 	if len(argv) == 0 {
-		return "", nil, options{}
+		return "", nil, options{}, nil
 	}
 
 	// Global flags that can appear as the first argument
 	switch argv[0] {
 	case "-h", "--help", "help":
-		return "help", nil, options{}
+		return "help", nil, options{}, nil
 	case "-v", "--version", "version":
-		return "version", nil, options{}
+		return "version", nil, options{}, nil
 	}
 
 	command := argv[0]
@@ -126,20 +193,20 @@ func parseArgs(argv []string) (string, []string, options) {
 			switch arg {
 			case "-l", "--locale":
 				if i+1 >= len(argv) {
-					cliError(fmt.Sprintf("'%s' requires a value", arg))
+					return "", nil, options{}, usageErrorf("'%s' requires a value", arg)
 				}
 				i++
 				opts.locale = argv[i]
 			case "-d", "--as-of":
 				if i+1 >= len(argv) {
-					cliError(fmt.Sprintf("'%s' requires a value", arg))
+					return "", nil, options{}, usageErrorf("'%s' requires a value", arg)
 				}
 				i++
 				opts.asOf = argv[i]
 				opts.hasAsOf = true
 			case "-g", "--gender":
 				if i+1 >= len(argv) {
-					cliError(fmt.Sprintf("'%s' requires a value", arg))
+					return "", nil, options{}, usageErrorf("'%s' requires a value", arg)
 				}
 				i++
 				opts.gender = argv[i]
@@ -150,11 +217,11 @@ func parseArgs(argv []string) (string, []string, options) {
 			case "--with-year":
 				opts.withYear = true
 			case "-h", "--help":
-				return "help", nil, options{}
+				return "help", nil, options{}, nil
 			case "-v", "--version":
-				return "version", nil, options{}
+				return "version", nil, options{}, nil
 			default:
-				cliError(fmt.Sprintf("unknown option '%s'", arg))
+				return "", nil, options{}, usageErrorf("unknown option '%s'", arg)
 			}
 		} else {
 			positionals = append(positionals, arg)
@@ -163,7 +230,7 @@ func parseArgs(argv []string) (string, []string, options) {
 		i++
 	}
 
-	return command, positionals, opts
+	return command, positionals, opts, nil
 }
 
 // nullify converts the CLI "null" sentinel to empty string (signaling nil).
@@ -175,11 +242,13 @@ func nullify(value string) (string, bool) {
 	return value, false
 }
 
-// cliError prints an error to stderr and exits with code 2.
-func cliError(msg string) {
-	fmt.Fprintf(os.Stderr, "error: %s\n", msg)
-	fmt.Fprintln(os.Stderr, "Run 'sayable help' for usage.")
-	os.Exit(2)
+// usageError is a usage mistake: reported on stderr, exit code 2.
+type usageError struct{ msg string }
+
+func (e usageError) Error() string { return e.msg }
+
+func usageErrorf(format string, args ...any) error {
+	return usageError{fmt.Sprintf(format, args...)}
 }
 
 // getToday returns today's date as YYYY-MM-DD.
@@ -236,15 +305,15 @@ func durationCompactness(s string) sayableduration.Compactness {
 	}
 }
 
-func cmdAge(positionals []string, opts options) {
+func cmdAge(positionals []string, opts options) (*string, error) {
 	if len(positionals) == 0 {
-		cliError("age requires a date-of-birth argument")
+		return nil, usageErrorf("age requires a date-of-birth argument")
 	}
 	dob, isNull := nullify(positionals[0])
 
 	locale := agelocales.GetLocale(opts.locale)
 	if locale == nil {
-		cliError(fmt.Sprintf("unknown locale '%s'", opts.locale))
+		return nil, usageErrorf("unknown locale '%s'", opts.locale)
 	}
 
 	asOf := opts.asOf
@@ -268,21 +337,18 @@ func cmdAge(positionals []string, opts options) {
 		result = formatter.FormatAge(dob, asOf)
 	}
 
-	if result == nil {
-		os.Exit(1)
-	}
-	fmt.Println(*result)
+	return result, nil
 }
 
-func cmdStage(positionals []string, opts options) {
+func cmdStage(positionals []string, opts options) (*string, error) {
 	if len(positionals) == 0 {
-		cliError("stage requires a date-of-birth argument")
+		return nil, usageErrorf("stage requires a date-of-birth argument")
 	}
 	dob, isNull := nullify(positionals[0])
 
 	locale := agelocales.GetLocale(opts.locale)
 	if locale == nil {
-		cliError(fmt.Sprintf("unknown locale '%s'", opts.locale))
+		return nil, usageErrorf("unknown locale '%s'", opts.locale)
 	}
 
 	asOf := opts.asOf
@@ -306,21 +372,18 @@ func cmdStage(positionals []string, opts options) {
 		result = formatter.FormatStage(dob, asOf, opts.gender)
 	}
 
-	if result == nil {
-		os.Exit(1)
-	}
-	fmt.Println(*result)
+	return result, nil
 }
 
-func cmdDate(positionals []string, opts options) {
+func cmdDate(positionals []string, opts options) (*string, error) {
 	if len(positionals) == 0 {
-		cliError("date requires a date argument")
+		return nil, usageErrorf("date requires a date argument")
 	}
 	dateVal, isNull := nullify(positionals[0])
 
 	locale := datelocales.GetLocale(opts.locale)
 	if locale == nil {
-		cliError(fmt.Sprintf("unknown locale '%s'", opts.locale))
+		return nil, usageErrorf("unknown locale '%s'", opts.locale)
 	}
 
 	formatter := sayabledate.NewSayableDate(*locale, dateCompactness(opts.compactness))
@@ -340,26 +403,23 @@ func cmdDate(positionals []string, opts options) {
 		}
 	}
 
-	if result == nil {
-		os.Exit(1)
-	}
-	fmt.Println(*result)
+	return result, nil
 }
 
-func cmdRelative(positionals []string, opts options) {
+func cmdRelative(positionals []string, opts options) (*string, error) {
 	if len(positionals) == 0 {
-		cliError("relative requires a date argument")
+		return nil, usageErrorf("relative requires a date argument")
 	}
 	dateVal, isNull := nullify(positionals[0])
 
 	if !opts.hasAsOf {
-		cliError("relative requires --as-of / -d option")
+		return nil, usageErrorf("relative requires --as-of / -d option")
 	}
 	asOf, asOfNull := nullify(opts.asOf)
 
 	locale := datelocales.GetLocale(opts.locale)
 	if locale == nil {
-		cliError(fmt.Sprintf("unknown locale '%s'", opts.locale))
+		return nil, usageErrorf("unknown locale '%s'", opts.locale)
 	}
 
 	formatter := sayabledate.NewSayableDate(*locale, dateCompactness(opts.compactness))
@@ -371,21 +431,18 @@ func cmdRelative(positionals []string, opts options) {
 		result = formatter.FormatRelative(dateVal, asOf)
 	}
 
-	if result == nil {
-		os.Exit(1)
-	}
-	fmt.Println(*result)
+	return result, nil
 }
 
-func cmdTime(positionals []string, opts options) {
+func cmdTime(positionals []string, opts options) (*string, error) {
 	if len(positionals) == 0 {
-		cliError("time requires a time argument")
+		return nil, usageErrorf("time requires a time argument")
 	}
 	timeVal, isNull := nullify(positionals[0])
 
 	locale := timelocales.GetLocale(opts.locale)
 	if locale == nil {
-		cliError(fmt.Sprintf("unknown locale '%s'", opts.locale))
+		return nil, usageErrorf("unknown locale '%s'", opts.locale)
 	}
 
 	formatter := sayabletime.NewSayableTime(*locale, timeCompactness(opts.compactness))
@@ -397,21 +454,18 @@ func cmdTime(positionals []string, opts options) {
 		result = formatter.FormatTime(timeVal)
 	}
 
-	if result == nil {
-		os.Exit(1)
-	}
-	fmt.Println(*result)
+	return result, nil
 }
 
-func cmdDuration(positionals []string, opts options) {
+func cmdDuration(positionals []string, opts options) (*string, error) {
 	if len(positionals) == 0 {
-		cliError("duration requires a value argument")
+		return nil, usageErrorf("duration requires a value argument")
 	}
 	value, isNull := nullify(positionals[0])
 
 	locale := durationlocales.GetLocale(opts.locale)
 	if locale == nil {
-		cliError(fmt.Sprintf("unknown locale '%s'", opts.locale))
+		return nil, usageErrorf("unknown locale '%s'", opts.locale)
 	}
 
 	formatter := sayableduration.NewSayableDuration(*locale, durationCompactness(opts.compactness))
@@ -426,32 +480,29 @@ func cmdDuration(positionals []string, opts options) {
 	} else {
 		// Timestamp mode: need an end argument
 		if len(positionals) < 2 {
-			cliError("duration with timestamps requires start and end arguments")
+			return nil, usageErrorf("duration with timestamps requires start and end arguments")
 		}
 		end, _ := nullify(positionals[1])
 		result = formatter.FormatDurationISO(value, end)
 	}
 
-	if result == nil {
-		os.Exit(1)
-	}
-	fmt.Println(*result)
+	return result, nil
 }
 
-func cmdSince(positionals []string, opts options) {
+func cmdSince(positionals []string, opts options) (*string, error) {
 	if len(positionals) == 0 {
-		cliError("since requires a start timestamp argument")
+		return nil, usageErrorf("since requires a start timestamp argument")
 	}
 	start, isNull := nullify(positionals[0])
 
 	if !opts.hasAsOf {
-		cliError("since requires --as-of / -d option")
+		return nil, usageErrorf("since requires --as-of / -d option")
 	}
 	asOf, asOfNull := nullify(opts.asOf)
 
 	locale := durationlocales.GetLocale(opts.locale)
 	if locale == nil {
-		cliError(fmt.Sprintf("unknown locale '%s'", opts.locale))
+		return nil, usageErrorf("unknown locale '%s'", opts.locale)
 	}
 
 	formatter := sayableduration.NewSayableDuration(*locale, durationCompactness(opts.compactness))
@@ -463,26 +514,23 @@ func cmdSince(positionals []string, opts options) {
 		result = formatter.FormatSince(start, asOf)
 	}
 
-	if result == nil {
-		os.Exit(1)
-	}
-	fmt.Println(*result)
+	return result, nil
 }
 
-func cmdUntil(positionals []string, opts options) {
+func cmdUntil(positionals []string, opts options) (*string, error) {
 	if len(positionals) == 0 {
-		cliError("until requires a target timestamp argument")
+		return nil, usageErrorf("until requires a target timestamp argument")
 	}
 	target, isNull := nullify(positionals[0])
 
 	if !opts.hasAsOf {
-		cliError("until requires --as-of / -d option")
+		return nil, usageErrorf("until requires --as-of / -d option")
 	}
 	asOf, asOfNull := nullify(opts.asOf)
 
 	locale := durationlocales.GetLocale(opts.locale)
 	if locale == nil {
-		cliError(fmt.Sprintf("unknown locale '%s'", opts.locale))
+		return nil, usageErrorf("unknown locale '%s'", opts.locale)
 	}
 
 	formatter := sayableduration.NewSayableDuration(*locale, durationCompactness(opts.compactness))
@@ -494,10 +542,7 @@ func cmdUntil(positionals []string, opts options) {
 		result = formatter.FormatUntil(target, asOf)
 	}
 
-	if result == nil {
-		os.Exit(1)
-	}
-	fmt.Println(*result)
+	return result, nil
 }
 
 // allLocaleCodes returns all supported locale codes, sorted alphabetically.
@@ -530,12 +575,12 @@ var allLocaleCodes = []string{
 	"zdj", "zh", "zu",
 }
 
-func cmdLocales() {
+func cmdLocales(out io.Writer) {
 	sorted := make([]string, len(allLocaleCodes))
 	copy(sorted, allLocaleCodes)
 	sort.Strings(sorted)
 	for _, code := range sorted {
-		fmt.Println(code)
+		fmt.Fprintln(out, code)
 	}
 }
 

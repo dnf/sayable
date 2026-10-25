@@ -49,10 +49,13 @@ func writeStderr(_ msg: String) {
     }
 }
 
-func error(_ msg: String) -> Never {
+/// A usage error: thrown so the REPL can answer it and keep serving.
+struct UsageError: Error {}
+
+func error(_ msg: String) -> UsageError {
     writeStderr("error: \(msg)")
     writeStderr("Run 'sayable help' for usage.")
-    exit(2)
+    return UsageError()
 }
 
 func nullify(_ value: String) -> String? {
@@ -82,7 +85,7 @@ struct Options {
     var withYear: Bool = false
 }
 
-func parseArgs(_ argv: [String]) -> (String?, [String], Options) {
+func parseArgs(_ argv: [String]) throws -> (String?, [String], Options) {
     if argv.isEmpty {
         return (nil, [], Options())
     }
@@ -113,19 +116,19 @@ func parseArgs(_ argv: [String]) -> (String?, [String], Options) {
         if !stopOpts && arg.hasPrefix("-") {
             if arg == "-l" || arg == "--locale" {
                 if i + 1 >= argv.count {
-                    error("'\(arg)' requires a value")
+                    throw error("'\(arg)' requires a value")
                 }
                 i += 1
                 options.locale = argv[i]
             } else if arg == "-d" || arg == "--as-of" {
                 if i + 1 >= argv.count {
-                    error("'\(arg)' requires a value")
+                    throw error("'\(arg)' requires a value")
                 }
                 i += 1
                 options.asOf = argv[i]
             } else if arg == "-g" || arg == "--gender" {
                 if i + 1 >= argv.count {
-                    error("'\(arg)' requires a value")
+                    throw error("'\(arg)' requires a value")
                 }
                 i += 1
                 options.gender = argv[i]
@@ -140,7 +143,7 @@ func parseArgs(_ argv: [String]) -> (String?, [String], Options) {
             } else if arg == "-v" || arg == "--version" {
                 return ("version", [], Options())
             } else {
-                error("unknown option '\(arg)'")
+                throw error("unknown option '\(arg)'")
             }
         } else {
             positionals.append(arg)
@@ -188,15 +191,15 @@ func durationCompactness(_ s: String) -> SayableDuration.Compactness {
 
 // MARK: - Commands
 
-func cmdAge(_ positionals: [String], _ options: Options) {
+func cmdAge(_ positionals: [String], _ options: Options) throws -> String? {
     if positionals.isEmpty {
-        error("age requires a date-of-birth argument")
+        throw error("age requires a date-of-birth argument")
     }
     let dob = nullify(positionals[0])
 
     let localeCode = options.locale
     guard let locale = SayableAge.Locales.get(localeCode) else {
-        error("unknown locale '\(localeCode)'")
+        throw error("unknown locale '\(localeCode)'")
     }
 
     var asOf: String?
@@ -208,23 +211,18 @@ func cmdAge(_ positionals: [String], _ options: Options) {
 
     let formatter = SayableAgeFormatter(locale, compactness: ageCompactness(options.compactness))
     let result = formatter.formatAge(dob, asOf)
-
-    if let result {
-        print(result)
-    } else {
-        exit(1)
-    }
+    return result
 }
 
-func cmdStage(_ positionals: [String], _ options: Options) {
+func cmdStage(_ positionals: [String], _ options: Options) throws -> String? {
     if positionals.isEmpty {
-        error("stage requires a date-of-birth argument")
+        throw error("stage requires a date-of-birth argument")
     }
     let dob = nullify(positionals[0])
 
     let localeCode = options.locale
     guard let locale = SayableAge.Locales.get(localeCode) else {
-        error("unknown locale '\(localeCode)'")
+        throw error("unknown locale '\(localeCode)'")
     }
 
     var asOf: String?
@@ -238,23 +236,18 @@ func cmdStage(_ positionals: [String], _ options: Options) {
 
     let formatter = SayableAgeFormatter(locale, compactness: ageCompactness(options.compactness))
     let result = formatter.formatStage(dob, asOf, gender: gender)
-
-    if let result {
-        print(result)
-    } else {
-        exit(1)
-    }
+    return result
 }
 
-func cmdDate(_ positionals: [String], _ options: Options) {
+func cmdDate(_ positionals: [String], _ options: Options) throws -> String? {
     if positionals.isEmpty {
-        error("date requires a date argument")
+        throw error("date requires a date argument")
     }
     let dateVal = nullify(positionals[0])
 
     let localeCode = options.locale
     guard let locale = SayableDate.Locales.get(localeCode) else {
-        error("unknown locale '\(localeCode)'")
+        throw error("unknown locale '\(localeCode)'")
     }
 
     let formatter = SayableDateFormatter(locale, compactness: dateCompactness(options.compactness))
@@ -265,70 +258,55 @@ func cmdDate(_ positionals: [String], _ options: Options) {
     } else {
         result = formatter.formatDate(dateVal)
     }
-
-    if let result {
-        print(result)
-    } else {
-        exit(1)
-    }
+    return result
 }
 
-func cmdRelative(_ positionals: [String], _ options: Options) {
+func cmdRelative(_ positionals: [String], _ options: Options) throws -> String? {
     if positionals.isEmpty {
-        error("relative requires a date argument")
+        throw error("relative requires a date argument")
     }
     let dateVal = nullify(positionals[0])
 
     guard let rawAsOf = options.asOf else {
-        error("relative requires --as-of / -d option")
+        throw error("relative requires --as-of / -d option")
     }
     let asOf = nullify(rawAsOf)
 
     let localeCode = options.locale
     guard let locale = SayableDate.Locales.get(localeCode) else {
-        error("unknown locale '\(localeCode)'")
+        throw error("unknown locale '\(localeCode)'")
     }
 
     let formatter = SayableDateFormatter(locale, compactness: dateCompactness(options.compactness))
     let result = formatter.formatRelative(dateVal, asOf: asOf)
-
-    if let result {
-        print(result)
-    } else {
-        exit(1)
-    }
+    return result
 }
 
-func cmdTime(_ positionals: [String], _ options: Options) {
+func cmdTime(_ positionals: [String], _ options: Options) throws -> String? {
     if positionals.isEmpty {
-        error("time requires a time argument")
+        throw error("time requires a time argument")
     }
     let timeVal = nullify(positionals[0])
 
     let localeCode = options.locale
     guard let locale = SayableTime.Locales.get(localeCode) else {
-        error("unknown locale '\(localeCode)'")
+        throw error("unknown locale '\(localeCode)'")
     }
 
     let formatter = SayableTimeFormatter(locale, compactness: timeCompactness(options.compactness))
     let result = formatter.formatTime(timeVal)
-
-    if let result {
-        print(result)
-    } else {
-        exit(1)
-    }
+    return result
 }
 
-func cmdDuration(_ positionals: [String], _ options: Options) {
+func cmdDuration(_ positionals: [String], _ options: Options) throws -> String? {
     if positionals.isEmpty {
-        error("duration requires a value argument")
+        throw error("duration requires a value argument")
     }
     let value = nullify(positionals[0])
 
     let localeCode = options.locale
     guard let locale = SayableDuration.Locales.get(localeCode) else {
-        error("unknown locale '\(localeCode)'")
+        throw error("unknown locale '\(localeCode)'")
     }
 
     let formatter = SayableDurationFormatter(locale, compactness: durationCompactness(options.compactness))
@@ -341,17 +319,12 @@ func cmdDuration(_ positionals: [String], _ options: Options) {
     } else {
         // Timestamp mode: need an end argument
         if positionals.count < 2 {
-            error("duration with timestamps requires start and end arguments")
+            throw error("duration with timestamps requires start and end arguments")
         }
         let end = nullify(positionals[1])
         result = formatter.formatDuration(start: value, end: end)
     }
-
-    if let result {
-        print(result)
-    } else {
-        exit(1)
-    }
+    return result
 }
 
 func isInteger(_ s: String) -> Bool {
@@ -364,102 +337,130 @@ func isInteger(_ s: String) -> Bool {
     return chars.allSatisfy { $0 >= "0" && $0 <= "9" }
 }
 
-func cmdSince(_ positionals: [String], _ options: Options) {
+func cmdSince(_ positionals: [String], _ options: Options) throws -> String? {
     if positionals.isEmpty {
-        error("since requires a start timestamp argument")
+        throw error("since requires a start timestamp argument")
     }
     let start = nullify(positionals[0])
 
     guard let rawAsOf = options.asOf else {
-        error("since requires --as-of / -d option")
+        throw error("since requires --as-of / -d option")
     }
     let asOf = nullify(rawAsOf)
 
     let localeCode = options.locale
     guard let locale = SayableDuration.Locales.get(localeCode) else {
-        error("unknown locale '\(localeCode)'")
+        throw error("unknown locale '\(localeCode)'")
     }
 
     let formatter = SayableDurationFormatter(locale, compactness: durationCompactness(options.compactness))
     let result = formatter.formatSince(start: start, asOf: asOf)
-
-    if let result {
-        print(result)
-    } else {
-        exit(1)
-    }
+    return result
 }
 
-func cmdUntil(_ positionals: [String], _ options: Options) {
+func cmdUntil(_ positionals: [String], _ options: Options) throws -> String? {
     if positionals.isEmpty {
-        error("until requires a target timestamp argument")
+        throw error("until requires a target timestamp argument")
     }
     let target = nullify(positionals[0])
 
     guard let rawAsOf = options.asOf else {
-        error("until requires --as-of / -d option")
+        throw error("until requires --as-of / -d option")
     }
     let asOf = nullify(rawAsOf)
 
     let localeCode = options.locale
     guard let locale = SayableDuration.Locales.get(localeCode) else {
-        error("unknown locale '\(localeCode)'")
+        throw error("unknown locale '\(localeCode)'")
     }
 
     let formatter = SayableDurationFormatter(locale, compactness: durationCompactness(options.compactness))
     let result = formatter.formatUntil(target: target, asOf: asOf)
+    return result
+}
 
-    if let result {
-        print(result)
-    } else {
-        exit(1)
+func cmdLocales() -> String {
+    // Use age locales as the canonical list (all components share the same set)
+    SayableAge.Locales.all.keys.sorted().joined(separator: "\n")
+}
+
+// MARK: - Dispatch
+
+/// The outcome of one command: its exit code and what it prints to stdout
+/// (nil when it prints nothing), shared by one-shot mode and the REPL.
+struct Outcome {
+    let code: Int32
+    let output: String?
+}
+
+func run(_ argv: [String]) -> Outcome {
+    do {
+        let (command, positionals, options) = try parseArgs(argv)
+        guard let command else {
+            return Outcome(code: 2, output: HELP)
+        }
+
+        let result: String?
+        switch command {
+        case "help":
+            return Outcome(code: 0, output: HELP)
+        case "version":
+            return Outcome(code: 0, output: "sayable \(VERSION)")
+        case "locales":
+            return Outcome(code: 0, output: cmdLocales())
+        case "age":
+            result = try cmdAge(positionals, options)
+        case "stage":
+            result = try cmdStage(positionals, options)
+        case "date":
+            result = try cmdDate(positionals, options)
+        case "relative":
+            result = try cmdRelative(positionals, options)
+        case "time":
+            result = try cmdTime(positionals, options)
+        case "duration":
+            result = try cmdDuration(positionals, options)
+        case "since":
+            result = try cmdSince(positionals, options)
+        case "until":
+            result = try cmdUntil(positionals, options)
+        default:
+            throw error("unknown command '\(command)'")
+        }
+        return result.map { Outcome(code: 0, output: $0) } ?? Outcome(code: 1, output: nil)
+    } catch {
+        return Outcome(code: 2, output: nil)
     }
 }
 
-func cmdLocales() {
-    // Use age locales as the canonical list (all components share the same set)
-    let codes = SayableAge.Locales.all.keys.sorted()
-    for code in codes {
-        print(code)
+// MARK: - REPL
+
+/// Answers one tab-separated request per stdin line (see cli/SPEC.md).
+func repl() {
+    while let line = readLine() {
+        let fields = line.split(separator: "\t", omittingEmptySubsequences: false).map(String.init)
+        let outcome = run(fields)
+        let output = (outcome.output ?? "")
+            .split(separator: "\n", omittingEmptySubsequences: false)
+            .joined(separator: "\t")
+        print("\(outcome.code)\t\(output)")
+        // fflush(nil) flushes every stream without touching the C `stdout`
+        // global, which Swift 6 rejects as shared mutable state on Linux.
+        fflush(nil)
     }
 }
 
 // MARK: - Main
 
 let argv = Array(CommandLine.arguments.dropFirst())
-let (command, positionals, options) = parseArgs(argv)
 
-if command == nil {
-    print(HELP)
-    exit(2)
+if argv == ["--repl"] {
+    repl()
+    exit(0)
 }
 
-switch command! {
-case "help":
-    print(HELP)
-    exit(0)
-case "version":
-    print("sayable \(VERSION)")
-    exit(0)
-case "locales":
-    cmdLocales()
-    exit(0)
-case "age":
-    cmdAge(positionals, options)
-case "stage":
-    cmdStage(positionals, options)
-case "date":
-    cmdDate(positionals, options)
-case "relative":
-    cmdRelative(positionals, options)
-case "time":
-    cmdTime(positionals, options)
-case "duration":
-    cmdDuration(positionals, options)
-case "since":
-    cmdSince(positionals, options)
-case "until":
-    cmdUntil(positionals, options)
-default:
-    error("unknown command '\(command!)'")
+let outcome = run(argv)
+if let output = outcome.output {
+    print(output)
 }
+exit(outcome.code)

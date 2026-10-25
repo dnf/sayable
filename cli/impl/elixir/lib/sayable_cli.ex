@@ -30,53 +30,88 @@ defmodule SayableCli do
     -v, --version          Show version\
   """
 
+  defmodule UsageError do
+    @moduledoc false
+    defexception [:message]
+  end
+
+  @type result :: {0..2, [String.t()]}
+
+  def main(["--repl"]) do
+    repl()
+    System.halt(0)
+  end
+
   def main(argv) do
+    {code, lines} = run(argv)
+    Enum.each(lines, &IO.puts/1)
+    System.halt(code)
+  end
+
+  @spec run([String.t()]) :: result()
+  def run(argv) do
     {command, positionals, options} = parse_args(argv)
+    dispatch(command, positionals, options)
+  rescue
+    e in UsageError ->
+      IO.puts(:stderr, "error: #{e.message}")
+      IO.puts(:stderr, "Run 'sayable help' for usage.")
+      {2, []}
+  end
 
-    case command do
-      nil ->
-        IO.puts(@help)
-        System.halt(2)
+  defp dispatch(nil, _positionals, _options), do: {2, [@help]}
+  defp dispatch("help", _positionals, _options), do: {0, [@help]}
+  defp dispatch("version", _positionals, _options), do: {0, ["sayable #{@version}"]}
+  defp dispatch("locales", _positionals, _options), do: {0, locale_codes()}
+  defp dispatch("age", positionals, options), do: cmd_age(positionals, options)
+  defp dispatch("stage", positionals, options), do: cmd_stage(positionals, options)
+  defp dispatch("date", positionals, options), do: cmd_date(positionals, options)
+  defp dispatch("relative", positionals, options), do: cmd_relative(positionals, options)
+  defp dispatch("time", positionals, options), do: cmd_time(positionals, options)
+  defp dispatch("duration", positionals, options), do: cmd_duration(positionals, options)
+  defp dispatch("since", positionals, options), do: cmd_since(positionals, options)
+  defp dispatch("until", positionals, options), do: cmd_until(positionals, options)
+  defp dispatch(other, _positionals, _options), do: error("unknown command '#{other}'")
 
-      "help" ->
-        IO.puts(@help)
-        System.halt(0)
+  # REPL mode (see cli/SPEC.md)
 
-      "version" ->
-        IO.puts("sayable #{@version}")
-        System.halt(0)
+  defp repl do
+    case IO.read(:stdio, :line) do
+      :eof ->
+        :ok
 
-      "locales" ->
-        cmd_locales()
-        System.halt(0)
+      {:error, reason} ->
+        IO.puts(:stderr, "error: cannot read request: #{inspect(reason)}")
+        System.halt(1)
 
-      "age" ->
-        cmd_age(positionals, options)
+      line ->
+        {code, lines} = line |> request_args() |> run_isolated()
 
-      "stage" ->
-        cmd_stage(positionals, options)
+        IO.write([
+          Integer.to_string(code),
+          "\t",
+          Enum.join(lines, "\t") |> String.replace("\n", "\t"),
+          "\n"
+        ])
 
-      "date" ->
-        cmd_date(positionals, options)
-
-      "relative" ->
-        cmd_relative(positionals, options)
-
-      "time" ->
-        cmd_time(positionals, options)
-
-      "duration" ->
-        cmd_duration(positionals, options)
-
-      "since" ->
-        cmd_since(positionals, options)
-
-      "until" ->
-        cmd_until(positionals, options)
-
-      other ->
-        error("unknown command '#{other}'")
+        repl()
     end
+  end
+
+  defp request_args(line) do
+    line
+    |> String.replace_suffix("\n", "")
+    |> String.replace_suffix("\r", "")
+    |> String.split("\t")
+  end
+
+  # A crashed one-shot run exits 1, so a crashed request answers 1 and the REPL keeps serving.
+  defp run_isolated(args) do
+    run(args)
+  catch
+    kind, reason ->
+      IO.puts(:stderr, "error: " <> Exception.format(kind, reason, __STACKTRACE__))
+      {1, []}
   end
 
   # Argument parsing
@@ -89,6 +124,7 @@ defmodule SayableCli do
   defp parse_args([first | _]) when first in ["-v", "--version", "version"],
     do: {"version", [], %{}}
 
+  # An option such as `--help` replaces the whole command, wherever it appears.
   defp parse_args([command | rest]) do
     options = %{
       locale: "en",
@@ -100,6 +136,8 @@ defmodule SayableCli do
 
     {positionals, options} = parse_options(rest, [], options, false)
     {command, positionals, options}
+  catch
+    {:replace_command, replacement} -> {replacement, [], %{}}
   end
 
   defp parse_options([], positionals, options, _stop_opts),
@@ -108,7 +146,8 @@ defmodule SayableCli do
   defp parse_options(["--" | rest], positionals, options, false),
     do: parse_options(rest, positionals, options, true)
 
-  defp parse_options([arg | rest], positionals, options, false) when binary_part(arg, 0, 1) == "-" do
+  defp parse_options([arg | rest], positionals, options, false)
+       when binary_part(arg, 0, 1) == "-" do
     case arg do
       a when a in ["-l", "--locale"] ->
         case rest do
@@ -138,12 +177,10 @@ defmodule SayableCli do
         parse_options(rest, positionals, %{options | with_year: true}, false)
 
       a when a in ["-h", "--help"] ->
-        IO.puts(@help)
-        System.halt(0)
+        throw({:replace_command, "help"})
 
       a when a in ["-v", "--version"] ->
-        IO.puts("sayable #{@version}")
-        System.halt(0)
+        throw({:replace_command, "version"})
 
       _ ->
         error("unknown option '#{arg}'")
@@ -160,11 +197,8 @@ defmodule SayableCli do
 
   # Error helper
 
-  defp error(msg) do
-    IO.puts(:stderr, "error: #{msg}")
-    IO.puts(:stderr, "Run 'sayable help' for usage.")
-    System.halt(2)
-  end
+  # Unwinds to run/1, which reports the message and answers exit code 2.
+  defp error(msg), do: raise(UsageError, msg)
 
   # Today's date
 
@@ -185,246 +219,149 @@ defmodule SayableCli do
   defp parse_gender(nil), do: nil
   defp parse_gender(_), do: nil
 
+  # Command results
+
+  defp formatted({:ok, text}), do: {0, [text]}
+  defp formatted(_null), do: {1, []}
+
+  defp locale(component, locale_code) do
+    case component.get_locale(locale_code) do
+      {:ok, locale} -> locale
+      :error -> error("unknown locale '#{locale_code}'")
+    end
+  end
+
+  defp as_of_or_today(%{as_of: nil}), do: get_today()
+  defp as_of_or_today(%{as_of: raw_as_of}), do: nullify(raw_as_of)
+
+  defp required_as_of(command, %{as_of: nil}),
+    do: error("#{command} requires --as-of / -d option")
+
+  defp required_as_of(_command, %{as_of: raw_as_of}), do: nullify(raw_as_of)
+
   # Command implementations
 
   defp cmd_age([], _options), do: error("age requires a date-of-birth argument")
 
   defp cmd_age([raw_dob | _], options) do
-    dob = nullify(raw_dob)
-    locale_code = options.locale
+    locale = locale(SayableAge, options.locale)
 
-    case SayableAge.get_locale(locale_code) do
-      {:ok, locale} ->
-        as_of =
-          case options.as_of do
-            nil -> get_today()
-            val -> nullify(val)
-          end
-
-        result = SayableAge.format_age(locale, options.compactness, dob, as_of)
-
-        case result do
-          {:ok, text} -> IO.puts(text)
-          :error -> System.halt(1)
-        end
-
-      :error ->
-        error("unknown locale '#{locale_code}'")
-    end
+    formatted(
+      SayableAge.format_age(
+        locale,
+        options.compactness,
+        nullify(raw_dob),
+        as_of_or_today(options)
+      )
+    )
   end
 
   defp cmd_stage([], _options), do: error("stage requires a date-of-birth argument")
 
   defp cmd_stage([raw_dob | _], options) do
-    dob = nullify(raw_dob)
-    locale_code = options.locale
-
-    case SayableAge.get_locale(locale_code) do
-      {:ok, locale} ->
-        as_of =
-          case options.as_of do
-            nil -> get_today()
-            val -> nullify(val)
-          end
-
-        gender = parse_gender(options.gender)
-        result = SayableAge.format_stage(locale, dob, as_of, gender)
-
-        case result do
-          {:ok, text} -> IO.puts(text)
-          :error -> System.halt(1)
-        end
-
-      :error ->
-        error("unknown locale '#{locale_code}'")
-    end
+    locale = locale(SayableAge, options.locale)
+    gender = parse_gender(options.gender)
+    formatted(SayableAge.format_stage(locale, nullify(raw_dob), as_of_or_today(options), gender))
   end
 
   defp cmd_date([], _options), do: error("date requires a date argument")
 
   defp cmd_date([raw_date | _], options) do
     date_val = nullify(raw_date)
-    locale_code = options.locale
+    locale = locale(SayableDate, options.locale)
 
-    case SayableDate.get_locale(locale_code) do
-      {:ok, locale} ->
-        result =
-          if options.with_year do
-            SayableDate.format_date_with_year(locale, options.compactness, date_val)
-          else
-            SayableDate.format_date(locale, options.compactness, date_val)
-          end
-
-        case result do
-          {:ok, text} -> IO.puts(text)
-          nil -> System.halt(1)
-        end
-
-      :error ->
-        error("unknown locale '#{locale_code}'")
+    if options.with_year do
+      formatted(SayableDate.format_date_with_year(locale, options.compactness, date_val))
+    else
+      formatted(SayableDate.format_date(locale, options.compactness, date_val))
     end
   end
 
   defp cmd_relative([], _options), do: error("relative requires a date argument")
 
   defp cmd_relative([raw_date | _], options) do
-    date_val = nullify(raw_date)
-
-    case options.as_of do
-      nil ->
-        error("relative requires --as-of / -d option")
-
-      raw_as_of ->
-        as_of = nullify(raw_as_of)
-        locale_code = options.locale
-
-        case SayableDate.get_locale(locale_code) do
-          {:ok, locale} ->
-            result = SayableDate.format_relative(locale, options.compactness, date_val, as_of)
-
-            case result do
-              {:ok, text} -> IO.puts(text)
-              nil -> System.halt(1)
-            end
-
-          :error ->
-            error("unknown locale '#{locale_code}'")
-        end
-    end
+    as_of = required_as_of("relative", options)
+    locale = locale(SayableDate, options.locale)
+    formatted(SayableDate.format_relative(locale, options.compactness, nullify(raw_date), as_of))
   end
 
   defp cmd_time([], _options), do: error("time requires a time argument")
 
   defp cmd_time([raw_time | _], options) do
-    time_val = nullify(raw_time)
-    locale_code = options.locale
-
-    case SayableTime.get_locale(locale_code) do
-      {:ok, locale} ->
-        result = SayableTime.format_time(locale, options.compactness, time_val)
-
-        case result do
-          {:ok, text} -> IO.puts(text)
-          nil -> System.halt(1)
-        end
-
-      :error ->
-        error("unknown locale '#{locale_code}'")
-    end
+    locale = locale(SayableTime, options.locale)
+    formatted(SayableTime.format_time(locale, options.compactness, nullify(raw_time)))
   end
 
   defp cmd_duration([], _options), do: error("duration requires a value argument")
 
-  defp cmd_duration(positionals, options) do
-    [raw_value | rest] = positionals
+  defp cmd_duration([raw_value | rest], options) do
     value = nullify(raw_value)
-    locale_code = options.locale
+    locale = locale(SayableDuration, options.locale)
 
-    case SayableDuration.get_locale(locale_code) do
-      {:ok, locale} ->
-        result =
-          cond do
-            value == nil ->
-              SayableDuration.format_duration(locale, options.compactness, nil)
+    cond do
+      value == nil ->
+        formatted(SayableDuration.format_duration(locale, options.compactness, nil))
 
-            is_integer_string(value) ->
-              SayableDuration.format_duration(locale, options.compactness, String.to_integer(value))
+      is_integer_string(value) ->
+        formatted(
+          SayableDuration.format_duration(locale, options.compactness, String.to_integer(value))
+        )
 
-            true ->
-              case rest do
-                [] ->
-                  error("duration with timestamps requires start and end arguments")
+      true ->
+        case rest do
+          [] ->
+            error("duration with timestamps requires start and end arguments")
 
-                [raw_end | _] ->
-                  end_val = nullify(raw_end)
-                  SayableDuration.format_duration(locale, options.compactness, value, end_val)
-              end
-          end
-
-        case result do
-          {:ok, text} -> IO.puts(text)
-          nil -> System.halt(1)
+          [raw_end | _] ->
+            formatted(
+              SayableDuration.format_duration(
+                locale,
+                options.compactness,
+                value,
+                nullify(raw_end)
+              )
+            )
         end
-
-      :error ->
-        error("unknown locale '#{locale_code}'")
     end
   end
 
   defp cmd_since([], _options), do: error("since requires a start timestamp argument")
 
   defp cmd_since([raw_start | _], options) do
-    start = nullify(raw_start)
+    as_of = required_as_of("since", options)
+    locale = locale(SayableDuration, options.locale)
 
-    case options.as_of do
-      nil ->
-        error("since requires --as-of / -d option")
-
-      raw_as_of ->
-        as_of = nullify(raw_as_of)
-        locale_code = options.locale
-
-        case SayableDuration.get_locale(locale_code) do
-          {:ok, locale} ->
-            result = SayableDuration.format_since(locale, options.compactness, start, as_of)
-
-            case result do
-              {:ok, text} -> IO.puts(text)
-              nil -> System.halt(1)
-            end
-
-          :error ->
-            error("unknown locale '#{locale_code}'")
-        end
-    end
+    formatted(
+      SayableDuration.format_since(locale, options.compactness, nullify(raw_start), as_of)
+    )
   end
 
   defp cmd_until([], _options), do: error("until requires a target timestamp argument")
 
   defp cmd_until([raw_target | _], options) do
-    target = nullify(raw_target)
+    as_of = required_as_of("until", options)
+    locale = locale(SayableDuration, options.locale)
 
-    case options.as_of do
-      nil ->
-        error("until requires --as-of / -d option")
-
-      raw_as_of ->
-        as_of = nullify(raw_as_of)
-        locale_code = options.locale
-
-        case SayableDuration.get_locale(locale_code) do
-          {:ok, locale} ->
-            result = SayableDuration.format_until(locale, options.compactness, target, as_of)
-
-            case result do
-              {:ok, text} -> IO.puts(text)
-              nil -> System.halt(1)
-            end
-
-          :error ->
-            error("unknown locale '#{locale_code}'")
-        end
-    end
+    formatted(
+      SayableDuration.format_until(locale, options.compactness, nullify(raw_target), as_of)
+    )
   end
 
-  defp cmd_locales do
-    codes =
-      ~w(af ak am ar az bci be bem bg bm bn br bs ca ceb cs cy da de din dje dyu
-         ee el en es et eu fa fan ff fi fil fon fr ga gd gl gn gu gv ha he hi
-         hr ht hu hy id ig is it ja jv ka kbp kk km kn ko kpe ktu ku kw ky lg
-         ln lo lt lv men mfe mg mi mk ml mn mnk mos mr ms mt my nb nd ne ng nl
-         nso nus ny om or pa pl pov ps pt qu ro ru rw sar sd sg shi si sk sl sn
-         snk so sq sr ss st su suk sv sw ta te tem tg th ti tig tk tn tr ts tzm
-         uk umb ur uz vi vmw wo xh yo yue zdj zh zu)
-      |> Enum.filter(fn code ->
-        case SayableAge.get_locale(code) do
-          {:ok, _} -> true
-          :error -> false
-        end
-      end)
-      |> Enum.sort()
-
-    Enum.each(codes, &IO.puts/1)
+  defp locale_codes do
+    ~w(af ak am ar az bci be bem bg bm bn br bs ca ceb cs cy da de din dje dyu
+       ee el en es et eu fa fan ff fi fil fon fr ga gd gl gn gu gv ha he hi
+       hr ht hu hy id ig is it ja jv ka kbp kk km kn ko kpe ktu ku kw ky lg
+       ln lo lt lv men mfe mg mi mk ml mn mnk mos mr ms mt my nb nd ne ng nl
+       nso nus ny om or pa pl pov ps pt qu ro ru rw sar sd sg shi si sk sl sn
+       snk so sq sr ss st su suk sv sw ta te tem tg th ti tig tk tn tr ts tzm
+       uk umb ur uz vi vmw wo xh yo yue zdj zh zu)
+    |> Enum.filter(fn code ->
+      case SayableAge.get_locale(code) do
+        {:ok, _} -> true
+        :error -> false
+      end
+    end)
+    |> Enum.sort()
   end
 
   # Integer detection for duration argument

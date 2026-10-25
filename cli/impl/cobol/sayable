@@ -1,105 +1,12 @@
 #!/usr/bin/env bash
-# Wrapper script: builds the COBOL CLI if needed, then dispatches to the
-# appropriate component binary based on the command.
+# Wrapper script: builds the COBOL CLI if needed, then runs it.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
-BUILD_DIR="${SCRIPT_DIR}/build"
+BINARY="${SCRIPT_DIR}/build/sayable"
 
-VERSION="0.5.0"
-
-# Build if any component binary is missing
-if [[ ! -x "${BUILD_DIR}/age_cli" ]] || \
-   [[ ! -x "${BUILD_DIR}/date_cli" ]] || \
-   [[ ! -x "${BUILD_DIR}/time_cli" ]] || \
-   [[ ! -x "${BUILD_DIR}/duration_cli" ]]; then
+if [[ ! -x "${BINARY}" ]]; then
     bash "${SCRIPT_DIR}/build.sh" >&2
 fi
 
-# No arguments: print help and exit 2
-if [[ $# -eq 0 ]]; then
-    cat <<'HELP'
-Usage: sayable <command> [arguments] [options]
-
-Commands:
-  age <dob>              Format an age
-  stage <dob>            Get developmental stage
-  date <date>            Format a calendar date
-  relative <date>        Format a relative date
-  time <time>            Format a clock time
-  duration <value> [end] Format a duration
-  since <start>          Format elapsed time
-  until <target>         Format remaining time
-  locales                List available locale codes
-  version                Show version
-  help                   Show this help
-
-Options:
-  -l, --locale <code>    Locale code (default: en)
-  -d, --as-of <value>    Reference date/timestamp
-      --short            Short compactness
-      --compact          Compact compactness
-  -g, --gender <m|f>     Gender for stage labels
-      --with-year        Include year (date only)
-  -h, --help             Show this help
-  -v, --version          Show version
-HELP
-    exit 2
-fi
-
-# Check first argument for global flags
-case "${1}" in
-    -h|--help|help)
-        cat <<'HELP'
-Usage: sayable <command> [arguments] [options]
-
-Commands:
-  age <dob>              Format an age
-  stage <dob>            Get developmental stage
-  date <date>            Format a calendar date
-  relative <date>        Format a relative date
-  time <time>            Format a clock time
-  duration <value> [end] Format a duration
-  since <start>          Format elapsed time
-  until <target>         Format remaining time
-  locales                List available locale codes
-  version                Show version
-  help                   Show this help
-
-Options:
-  -l, --locale <code>    Locale code (default: en)
-  -d, --as-of <value>    Reference date/timestamp
-      --short            Short compactness
-      --compact          Compact compactness
-  -g, --gender <m|f>     Gender for stage labels
-      --with-year        Include year (date only)
-  -h, --help             Show this help
-  -v, --version          Show version
-HELP
-        exit 0
-        ;;
-    -v|--version|version)
-        echo "sayable ${VERSION}"
-        exit 0
-        ;;
-    locales)
-        exec "${BUILD_DIR}/age_cli" "$@"
-        ;;
-    age|stage)
-        exec "${BUILD_DIR}/age_cli" "$@"
-        ;;
-    date|relative)
-        exec "${BUILD_DIR}/date_cli" "$@"
-        ;;
-    time)
-        exec "${BUILD_DIR}/time_cli" "$@"
-        ;;
-    duration|since|until)
-        exec "${BUILD_DIR}/duration_cli" "$@"
-        ;;
-    *)
-        echo "error: unknown command '${1}'" >&2
-        echo "Run 'sayable help' for usage." >&2
-        exit 2
-        ;;
-esac
+exec "${BINARY}" "$@"

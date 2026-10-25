@@ -123,21 +123,58 @@ Options:
     End Function
 
     Function Main(args As String()) As Integer
-        Dim parsed = ParseArgs(args)
+        If args.Length = 1 AndAlso args(0) = "--repl" Then
+            Return Repl()
+        End If
+
+        Dim outcome = Run(args)
+        If outcome.Output IsNot Nothing Then
+            Console.WriteLine(outcome.Output)
+        End If
+        Return outcome.ExitCode
+    End Function
+
+    ''' <summary>Answers one tab-separated request per stdin line (see cli/SPEC.md, "REPL Mode").</summary>
+    Private Function Repl() As Integer
+        Dim line = Console.In.ReadLine()
+        While line IsNot Nothing
+            Dim outcome = RunCatchingCrashes(line.Split(ControlChars.Tab))
+            Dim output = If(outcome.Output?.Replace(ControlChars.Lf, ControlChars.Tab), "")
+            Console.Out.Write(outcome.ExitCode & ControlChars.Tab & output & ControlChars.Lf)
+            Console.Out.Flush()
+            line = Console.In.ReadLine()
+        End While
+        Return 0
+    End Function
+
+    ''' <summary>A crash must not end the REPL: the request answers 1 (cli/SPEC.md) and the error goes to stderr.</summary>
+    Private Function RunCatchingCrashes(args As String()) As Outcome
+        Try
+            Return Run(args)
+        Catch e As Exception
+            Console.Error.WriteLine(e)
+            Return New Outcome(1, Nothing)
+        End Try
+    End Function
+
+    Private Function Run(args As String()) As Outcome
+        Dim parsed As ParseResult
+        Try
+            parsed = ParseArgs(args)
+        Catch e As UsageException
+            Return PrintError(e.Message)
+        End Try
         Dim command = parsed.Command
         Dim positionals = parsed.Positionals
         Dim opts = parsed.Opts
 
         Select Case command
             Case Nothing
-                Console.WriteLine(HelpText)
-                Return 2
+                Return New Outcome(2, HelpText)
             Case "help"
-                Console.WriteLine(HelpText)
-                Return 0
+                Return Outcome.Printing(HelpText)
             Case "version"
-                Console.WriteLine("sayable " & VersionStr)
-                Return 0
+                Return Outcome.Printing("sayable " & VersionStr)
             Case "locales"
                 Return CmdLocales()
             Case "age"
@@ -191,19 +228,19 @@ Options:
             If Not stopOpts AndAlso arg.StartsWith("-") Then
                 If arg = "-l" OrElse arg = "--locale" Then
                     If i + 1 >= argv.Length Then
-                        ErrorExit("'" & arg & "' requires a value")
+                        Throw New UsageException("'" & arg & "' requires a value")
                     End If
                     i += 1
                     opts.Locale = argv(i)
                 ElseIf arg = "-d" OrElse arg = "--as-of" Then
                     If i + 1 >= argv.Length Then
-                        ErrorExit("'" & arg & "' requires a value")
+                        Throw New UsageException("'" & arg & "' requires a value")
                     End If
                     i += 1
                     opts.AsOf = argv(i)
                 ElseIf arg = "-g" OrElse arg = "--gender" Then
                     If i + 1 >= argv.Length Then
-                        ErrorExit("'" & arg & "' requires a value")
+                        Throw New UsageException("'" & arg & "' requires a value")
                     End If
                     i += 1
                     opts.Gender = argv(i)
@@ -218,7 +255,7 @@ Options:
                 ElseIf arg = "-v" OrElse arg = "--version" Then
                     Return New ParseResult("version", New List(Of String)(), New Options())
                 Else
-                    ErrorExit("unknown option '" & arg & "'")
+                    Throw New UsageException("unknown option '" & arg & "'")
                 End If
             Else
                 positionals.Add(arg)
@@ -283,7 +320,7 @@ Options:
         End Select
     End Function
 
-    Private Function CmdAge(positionals As List(Of String), opts As Options) As Integer
+    Private Function CmdAge(positionals As List(Of String), opts As Options) As Outcome
         If positionals.Count = 0 Then
             Return PrintError("age requires a date-of-birth argument")
         End If
@@ -307,12 +344,10 @@ Options:
         Dim formatter As New AgeLib.SayableAgeFormatter(locale, ToAgeCompactness(opts.Compactness))
         Dim result = formatter.FormatAge(dob, asOf)
 
-        If result Is Nothing Then Return 1
-        Console.WriteLine(result)
-        Return 0
+        Return Outcome.OfResult(result)
     End Function
 
-    Private Function CmdStage(positionals As List(Of String), opts As Options) As Integer
+    Private Function CmdStage(positionals As List(Of String), opts As Options) As Outcome
         If positionals.Count = 0 Then
             Return PrintError("stage requires a date-of-birth argument")
         End If
@@ -338,12 +373,10 @@ Options:
         Dim formatter As New AgeLib.SayableAgeFormatter(locale, ToAgeCompactness(opts.Compactness))
         Dim result = formatter.FormatStage(dob, asOf, gender)
 
-        If result Is Nothing Then Return 1
-        Console.WriteLine(result)
-        Return 0
+        Return Outcome.OfResult(result)
     End Function
 
-    Private Function CmdDate(positionals As List(Of String), opts As Options) As Integer
+    Private Function CmdDate(positionals As List(Of String), opts As Options) As Outcome
         If positionals.Count = 0 Then
             Return PrintError("date requires a date argument")
         End If
@@ -366,12 +399,10 @@ Options:
             result = formatter.Format(dateVal)
         End If
 
-        If result Is Nothing Then Return 1
-        Console.WriteLine(result)
-        Return 0
+        Return Outcome.OfResult(result)
     End Function
 
-    Private Function CmdRelative(positionals As List(Of String), opts As Options) As Integer
+    Private Function CmdRelative(positionals As List(Of String), opts As Options) As Outcome
         If positionals.Count = 0 Then
             Return PrintError("relative requires a date argument")
         End If
@@ -394,12 +425,10 @@ Options:
         Dim formatter As New DateLib.SayableDate(locale, ToDateCompactness(opts.Compactness))
         Dim result = formatter.Relative(dateVal, asOf)
 
-        If result Is Nothing Then Return 1
-        Console.WriteLine(result)
-        Return 0
+        Return Outcome.OfResult(result)
     End Function
 
-    Private Function CmdTime(positionals As List(Of String), opts As Options) As Integer
+    Private Function CmdTime(positionals As List(Of String), opts As Options) As Outcome
         If positionals.Count = 0 Then
             Return PrintError("time requires a time argument")
         End If
@@ -416,12 +445,10 @@ Options:
         Dim formatter As New TimeLib.SayableTime(locale, ToTimeCompactness(opts.Compactness))
         Dim result = formatter.Format(timeVal)
 
-        If result Is Nothing Then Return 1
-        Console.WriteLine(result)
-        Return 0
+        Return Outcome.OfResult(result)
     End Function
 
-    Private Function CmdDuration(positionals As List(Of String), opts As Options) As Integer
+    Private Function CmdDuration(positionals As List(Of String), opts As Options) As Outcome
         If positionals.Count = 0 Then
             Return PrintError("duration requires a value argument")
         End If
@@ -439,7 +466,7 @@ Options:
 
         Dim result As String
         If value Is Nothing Then
-            Return 1
+            Return Outcome.OfResult(Nothing)
         ElseIf IsInteger(value) Then
             Dim seconds = Integer.Parse(value)
             result = formatter.FormatDuration(seconds)
@@ -451,12 +478,10 @@ Options:
             result = formatter.FormatIso(value, endVal)
         End If
 
-        If result Is Nothing Then Return 1
-        Console.WriteLine(result)
-        Return 0
+        Return Outcome.OfResult(result)
     End Function
 
-    Private Function CmdSince(positionals As List(Of String), opts As Options) As Integer
+    Private Function CmdSince(positionals As List(Of String), opts As Options) As Outcome
         If positionals.Count = 0 Then
             Return PrintError("since requires a start timestamp argument")
         End If
@@ -479,12 +504,10 @@ Options:
         Dim formatter As New DurationLib.SayableDuration(locale, ToDurationCompactness(opts.Compactness))
         Dim result = formatter.Since(start, asOf)
 
-        If result Is Nothing Then Return 1
-        Console.WriteLine(result)
-        Return 0
+        Return Outcome.OfResult(result)
     End Function
 
-    Private Function CmdUntil(positionals As List(Of String), opts As Options) As Integer
+    Private Function CmdUntil(positionals As List(Of String), opts As Options) As Outcome
         If positionals.Count = 0 Then
             Return PrintError("until requires a target timestamp argument")
         End If
@@ -507,20 +530,15 @@ Options:
         Dim formatter As New DurationLib.SayableDuration(locale, ToDurationCompactness(opts.Compactness))
         Dim result = formatter.Until(target, asOf)
 
-        If result Is Nothing Then Return 1
-        Console.WriteLine(result)
-        Return 0
+        Return Outcome.OfResult(result)
     End Function
 
-    Private Function CmdLocales() As Integer
+    Private Function CmdLocales() As Outcome
         Dim codes As New SortedSet(Of String)()
         For Each kvp In GetAgeLocales()
             codes.Add(kvp.Key)
         Next
-        For Each code In codes
-            Console.WriteLine(code)
-        Next
-        Return 0
+        Return Outcome.Printing(String.Join(ControlChars.Lf, codes))
     End Function
 
     Private Function IsInteger(s As String) As Boolean
@@ -536,19 +554,42 @@ Options:
         Return True
     End Function
 
-    Private Function PrintError(msg As String) As Integer
+    Private Function PrintError(msg As String) As Outcome
         Console.Error.WriteLine("error: " & msg)
         Console.Error.WriteLine("Run 'sayable help' for usage.")
-        Return 2
+        Return New Outcome(2, Nothing)
     End Function
 
-    Private Sub ErrorExit(msg As String)
-        Console.Error.WriteLine("error: " & msg)
-        Console.Error.WriteLine("Run 'sayable help' for usage.")
-        Environment.Exit(2)
+End Module
+
+''' <summary>What one invocation prints to stdout (Nothing: nothing) and the code it exits with.</summary>
+Class Outcome
+    Public ReadOnly Property ExitCode As Integer
+    Public ReadOnly Property Output As String
+
+    Public Sub New(exitCode As Integer, output As String)
+        Me.ExitCode = exitCode
+        Me.Output = output
     End Sub
 
-End Module
+    Public Shared Function Printing(output As String) As Outcome
+        Return New Outcome(0, output)
+    End Function
+
+    Public Shared Function OfResult(result As String) As Outcome
+        If result Is Nothing Then Return New Outcome(1, Nothing)
+        Return Printing(result)
+    End Function
+End Class
+
+''' <summary>A usage error found while parsing arguments: reported on stderr, exit code 2.</summary>
+Class UsageException
+    Inherits Exception
+
+    Public Sub New(message As String)
+        MyBase.New(message)
+    End Sub
+End Class
 
 Class ParseResult
     Public ReadOnly Property Command As String

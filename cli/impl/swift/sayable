@@ -31,7 +31,8 @@ needs_build() {
 }
 
 if needs_build; then
-    swift build -c release --package-path "${SCRIPT_DIR}" 2>/dev/null
+    # Build chatter goes to stderr so stdout carries only command output.
+    swift build -c release --package-path "${SCRIPT_DIR}" >&2 2>/dev/null
 fi
 
 exec "${BINARY}" "$@"

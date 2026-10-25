@@ -356,53 +356,109 @@ cmd_locales() {
     done
 }
 
-# --- Main ---
+# Run one request with the one-shot exit code and stdout.
+_main() {
+    _parse_args "$@"
 
-_parse_args "$@"
+    if [ -z "${_command}" ]; then
+        echo "${HELP}"
+        exit 2
+    fi
 
-if [ -z "${_command}" ]; then
-    echo "${HELP}"
-    exit 2
+    case "${_command}" in
+        help)
+            echo "${HELP}"
+            exit 0
+            ;;
+        version)
+            echo "sayable ${VERSION}"
+            exit 0
+            ;;
+        locales)
+            cmd_locales
+            exit 0
+            ;;
+        age)
+            cmd_age
+            ;;
+        stage)
+            cmd_stage
+            ;;
+        date)
+            cmd_date
+            ;;
+        relative)
+            cmd_relative
+            ;;
+        time)
+            cmd_time
+            ;;
+        duration)
+            cmd_duration
+            ;;
+        since)
+            cmd_since
+            ;;
+        until)
+            cmd_until
+            ;;
+        *)
+            _error "unknown command '${_command}'"
+            ;;
+    esac
+}
+
+_tab=$'\t'
+_newline=$'\n'
+_carriage_return=$'\r'
+
+# Split a request line on every tab into _request, keeping empty fields.
+# (read -a would merge consecutive tabs, since tab is IFS whitespace.)
+_split_request() {
+    local rest="$1"
+    _request=()
+    while [[ "${rest}" == *"${_tab}"* ]]; do
+        _request+=("${rest%%"${_tab}"*}")
+        rest="${rest#*"${_tab}"}"
+    done
+    _request+=("${rest}")
+}
+
+# Each formatter call loads its component's locale registry lazily inside its
+# own command substitution, so without this every request re-sources it.
+# Only one component can be preloaded: the registries share function names
+# (_locale_<code>, _plural_<code>), so loading a second would shadow the first.
+# Age is the busiest component, and the others still load lazily per call.
+_preload_age_registry() {
+    _sayableage_ensure_registry
+}
+
+# Answer one tab-separated request per stdin line (see cli/SPEC.md).
+# Each request runs in a subshell so its exit and globals stay contained.
+_repl() {
+    _preload_age_registry
+    local line output code
+    while IFS= read -r line || [ -n "${line}" ]; do
+        _split_request "${line%"${_carriage_return}"}"
+        set +e
+        output=$(set -e; _main "${_request[@]}")
+        code=$?
+        set -e
+        case "${code}" in
+            0|1|2) ;;
+            *)
+                echo "error: request failed with exit code ${code}" >&2
+                code=1
+                ;;
+        esac
+        # Unquoted operands: bash 3.2 keeps quotes in the replacement literally.
+        printf '%s\t%s\n' "${code}" "${output//${_newline}/${_tab}}"
+    done
+}
+
+if [ $# -eq 1 ] && [ "$1" = "--repl" ]; then
+    _repl
+    exit 0
 fi
 
-case "${_command}" in
-    help)
-        echo "${HELP}"
-        exit 0
-        ;;
-    version)
-        echo "sayable ${VERSION}"
-        exit 0
-        ;;
-    locales)
-        cmd_locales
-        exit 0
-        ;;
-    age)
-        cmd_age
-        ;;
-    stage)
-        cmd_stage
-        ;;
-    date)
-        cmd_date
-        ;;
-    relative)
-        cmd_relative
-        ;;
-    time)
-        cmd_time
-        ;;
-    duration)
-        cmd_duration
-        ;;
-    since)
-        cmd_since
-        ;;
-    until)
-        cmd_until
-        ;;
-    *)
-        _error "unknown command '${_command}'"
-        ;;
-esac
+_main "$@"

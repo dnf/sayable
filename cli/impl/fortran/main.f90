@@ -1,5 +1,6 @@
 program sayable_cli
   use iso_c_binding, only: c_int
+  use iso_fortran_env, only: input_unit, output_unit, error_unit
   use sayableage_types
   use sayableage
   use sayableage_locales
@@ -15,11 +16,18 @@ program sayable_cli
   implicit none
 
   character(len=*), parameter :: CLI_VERSION = '0.5.0'
-  integer, parameter :: MAX_ARGS = 32
-  integer, parameter :: MAX_ARG_LEN = 256
+  integer, parameter :: MAX_ARG_LEN = 1024
+  integer, parameter :: MAX_POSITIONALS = 8
+  character(len=1), parameter :: TAB = achar(9)
+  character(len=1), parameter :: NEWLINE = achar(10)
+  character(len=1), parameter :: CARRIAGE_RETURN = achar(13)
+
+  ! The current request's arguments: the command line, or one REPL line.
+  character(len=MAX_ARG_LEN), allocatable :: args(:)
+  integer :: argc
 
   character(len=MAX_ARG_LEN) :: command
-  character(len=MAX_ARG_LEN) :: positionals(8)
+  character(len=MAX_ARG_LEN) :: positionals(MAX_POSITIONALS)
   integer :: pos_count
   character(len=MAX_ARG_LEN) :: locale_code
   character(len=MAX_ARG_LEN) :: as_of_str
@@ -28,70 +36,23 @@ program sayable_cli
   logical :: with_year
   logical :: has_as_of
   logical :: has_gender
+
+  ! Stdout of the current request, lines joined by NEWLINE, so the REPL
+  ! can answer with it on one line.
+  character(len=:), allocatable :: out_text
+  logical :: has_output
+
   integer :: exit_code
 
-  call parse_args()
-  if (len_trim(command) == 0) then
-    call print_help()
-    call exit_program(2)
-  end if
-
-  if (command == 'help') then
-    call print_help()
+  if (is_repl_invocation()) then
+    call repl()
     call exit_program(0)
   end if
 
-  if (command == 'version') then
-    write(*, '(A,A)') 'sayable ', CLI_VERSION
-    call exit_program(0)
-  end if
-
-  if (command == 'locales') then
-    call cmd_locales()
-    call exit_program(0)
-  end if
-
-  if (command == 'age') then
-    call cmd_age(exit_code)
-    call exit_program(exit_code)
-  end if
-
-  if (command == 'stage') then
-    call cmd_stage(exit_code)
-    call exit_program(exit_code)
-  end if
-
-  if (command == 'date') then
-    call cmd_date(exit_code)
-    call exit_program(exit_code)
-  end if
-
-  if (command == 'relative') then
-    call cmd_relative(exit_code)
-    call exit_program(exit_code)
-  end if
-
-  if (command == 'time') then
-    call cmd_time(exit_code)
-    call exit_program(exit_code)
-  end if
-
-  if (command == 'duration') then
-    call cmd_duration(exit_code)
-    call exit_program(exit_code)
-  end if
-
-  if (command == 'since') then
-    call cmd_since(exit_code)
-    call exit_program(exit_code)
-  end if
-
-  if (command == 'until') then
-    call cmd_until(exit_code)
-    call exit_program(exit_code)
-  end if
-
-  call cli_error("unknown command '" // trim(command) // "'")
+  call load_command_line()
+  call run(exit_code)
+  if (has_output) write(output_unit, '(A)') out_text
+  call exit_program(exit_code)
 
 contains
 
@@ -106,38 +67,172 @@ contains
     call c_exit(int(code, c_int))
   end subroutine exit_program
 
-  subroutine cli_error(msg)
+  function is_repl_invocation() result(res)
+    logical :: res
+    character(len=8) :: first
+    integer :: first_len
+    res = .false.
+    if (command_argument_count() /= 1) return
+    call get_command_argument(1, first, first_len)
+    res = (first_len == len('--repl') .and. first == '--repl')
+  end function is_repl_invocation
+
+  subroutine load_command_line()
+    integer :: i
+    argc = command_argument_count()
+    if (allocated(args)) deallocate(args)
+    allocate(args(max(argc, 1)))
+    do i = 1, argc
+      call get_command_argument(i, args(i))
+    end do
+  end subroutine load_command_line
+
+  ! Splits a REPL request on tabs, keeping empty fields.
+  subroutine load_request(line)
+    character(len=*), intent(in) :: line
+    integer :: i, start, field
+    argc = 1
+    do i = 1, len(line)
+      if (line(i:i) == TAB) argc = argc + 1
+    end do
+    if (allocated(args)) deallocate(args)
+    allocate(args(argc))
+    field = 1
+    start = 1
+    do i = 1, len(line)
+      if (line(i:i) == TAB) then
+        args(field) = line(start:i - 1)
+        field = field + 1
+        start = i + 1
+      end if
+    end do
+    args(field) = line(start:)
+  end subroutine load_request
+
+  ! Reads one stdin line of any length; returns .false. at end of input.
+  function read_request_line(line) result(got_line)
+    character(len=:), allocatable, intent(out) :: line
+    logical :: got_line
+    character(len=512) :: chunk
+    integer :: ios, chunk_len
+
+    line = ''
+    got_line = .false.
+    do
+      read(input_unit, '(A)', advance='no', iostat=ios, size=chunk_len) chunk
+      line = line // chunk(1:chunk_len)
+      if (ios == 0) cycle
+      if (is_iostat_eor(ios)) then
+        got_line = .true.
+      else
+        got_line = len(line) > 0
+      end if
+      exit
+    end do
+    if (len(line) > 0) then
+      if (line(len(line):len(line)) == CARRIAGE_RETURN) line = line(1:len(line) - 1)
+    end if
+  end function read_request_line
+
+  subroutine repl()
+    character(len=:), allocatable :: line
+    integer :: rc, i
+
+    do while (read_request_line(line))
+      call load_request(line)
+      call run(rc)
+      do i = 1, len(out_text)
+        if (out_text(i:i) == NEWLINE) out_text(i:i) = TAB
+      end do
+      write(output_unit, '(I0,A,A)') rc, TAB, out_text
+      flush(output_unit)
+    end do
+  end subroutine repl
+
+  subroutine emit(line)
+    character(len=*), intent(in) :: line
+    if (has_output) then
+      out_text = out_text // NEWLINE // line
+    else
+      out_text = line
+      has_output = .true.
+    end if
+  end subroutine emit
+
+  subroutine usage_error(msg, rc)
     character(len=*), intent(in) :: msg
-    write(0, '(A,A)') 'error: ', msg
-    write(0, '(A)') "Run 'sayable help' for usage."
-    call exit_program(2)
-  end subroutine cli_error
+    integer, intent(out) :: rc
+    write(error_unit, '(A,A)') 'error: ', msg
+    write(error_unit, '(A)') "Run 'sayable help' for usage."
+    rc = 2
+  end subroutine usage_error
+
+  ! Runs the request in args(1:argc); output goes to out_text.
+  subroutine run(rc)
+    integer, intent(out) :: rc
+
+    out_text = ''
+    has_output = .false.
+
+    call parse_args(rc)
+    if (rc /= 0) return
+
+    select case (trim(command))
+    case ('')
+      call print_help()
+      rc = 2
+    case ('help')
+      call print_help()
+    case ('version')
+      call emit('sayable ' // CLI_VERSION)
+    case ('locales')
+      call cmd_locales()
+    case ('age')
+      call cmd_age(rc)
+    case ('stage')
+      call cmd_stage(rc)
+    case ('date')
+      call cmd_date(rc)
+    case ('relative')
+      call cmd_relative(rc)
+    case ('time')
+      call cmd_time(rc)
+    case ('duration')
+      call cmd_duration(rc)
+    case ('since')
+      call cmd_since(rc)
+    case ('until')
+      call cmd_until(rc)
+    case default
+      call usage_error("unknown command '" // trim(command) // "'", rc)
+    end select
+  end subroutine run
 
   subroutine print_help()
-    write(*, '(A)') 'Usage: sayable <command> [arguments] [options]'
-    write(*, '(A)') ''
-    write(*, '(A)') 'Commands:'
-    write(*, '(A)') '  age <dob>              Format an age'
-    write(*, '(A)') '  stage <dob>            Get developmental stage'
-    write(*, '(A)') '  date <date>            Format a calendar date'
-    write(*, '(A)') '  relative <date>        Format a relative date'
-    write(*, '(A)') '  time <time>            Format a clock time'
-    write(*, '(A)') '  duration <value> [end] Format a duration'
-    write(*, '(A)') '  since <start>          Format elapsed time'
-    write(*, '(A)') '  until <target>         Format remaining time'
-    write(*, '(A)') '  locales                List available locale codes'
-    write(*, '(A)') '  version                Show version'
-    write(*, '(A)') '  help                   Show this help'
-    write(*, '(A)') ''
-    write(*, '(A)') 'Options:'
-    write(*, '(A)') '  -l, --locale <code>    Locale code (default: en)'
-    write(*, '(A)') '  -d, --as-of <value>    Reference date/timestamp'
-    write(*, '(A)') '      --short            Short compactness'
-    write(*, '(A)') '      --compact          Compact compactness'
-    write(*, '(A)') '  -g, --gender <m|f>     Gender for stage labels'
-    write(*, '(A)') '      --with-year        Include year (date only)'
-    write(*, '(A)') '  -h, --help             Show this help'
-    write(*, '(A)') '  -v, --version          Show version'
+    call emit('Usage: sayable <command> [arguments] [options]')
+    call emit('')
+    call emit('Commands:')
+    call emit('  age <dob>              Format an age')
+    call emit('  stage <dob>            Get developmental stage')
+    call emit('  date <date>            Format a calendar date')
+    call emit('  relative <date>        Format a relative date')
+    call emit('  time <time>            Format a clock time')
+    call emit('  duration <value> [end] Format a duration')
+    call emit('  since <start>          Format elapsed time')
+    call emit('  until <target>         Format remaining time')
+    call emit('  locales                List available locale codes')
+    call emit('  version                Show version')
+    call emit('  help                   Show this help')
+    call emit('')
+    call emit('Options:')
+    call emit('  -l, --locale <code>    Locale code (default: en)')
+    call emit('  -d, --as-of <value>    Reference date/timestamp')
+    call emit('      --short            Short compactness')
+    call emit('      --compact          Compact compactness')
+    call emit('  -g, --gender <m|f>     Gender for stage labels')
+    call emit('      --with-year        Include year (date only)')
+    call emit('  -h, --help             Show this help')
+    call emit('  -v, --version          Show version')
   end subroutine print_help
 
   subroutine get_today(buf)
@@ -197,12 +292,15 @@ contains
     if (neg) val = -val
   end function str_to_int
 
-  subroutine parse_args()
-    integer :: argc, i
+  subroutine parse_args(rc)
+    integer, intent(out) :: rc
+    integer :: i
     character(len=MAX_ARG_LEN) :: arg
     logical :: stop_opts
 
+    rc = 0
     command = ''
+    positionals = ''
     pos_count = 0
     locale_code = 'en'
     as_of_str = ''
@@ -213,10 +311,9 @@ contains
     has_gender = .false.
     stop_opts = .false.
 
-    argc = command_argument_count()
     if (argc == 0) return
 
-    call get_command_argument(1, arg)
+    arg = args(1)
 
     if (arg == '-h' .or. arg == '--help' .or. arg == 'help') then
       command = 'help'
@@ -231,7 +328,7 @@ contains
 
     i = 2
     do while (i <= argc)
-      call get_command_argument(i, arg)
+      arg = args(i)
 
       if (arg == '--' .and. .not. stop_opts) then
         stop_opts = .true.
@@ -241,18 +338,27 @@ contains
 
       if (.not. stop_opts .and. len_trim(arg) > 0 .and. arg(1:1) == '-') then
         if (arg == '-l' .or. arg == '--locale') then
-          if (i + 1 > argc) call cli_error("'--locale' requires a value")
+          if (i + 1 > argc) then
+            call usage_error("'--locale' requires a value", rc)
+            return
+          end if
           i = i + 1
-          call get_command_argument(i, locale_code)
+          locale_code = args(i)
         else if (arg == '-d' .or. arg == '--as-of') then
-          if (i + 1 > argc) call cli_error("'--as-of' requires a value")
+          if (i + 1 > argc) then
+            call usage_error("'--as-of' requires a value", rc)
+            return
+          end if
           i = i + 1
-          call get_command_argument(i, as_of_str)
+          as_of_str = args(i)
           has_as_of = .true.
         else if (arg == '-g' .or. arg == '--gender') then
-          if (i + 1 > argc) call cli_error("'--gender' requires a value")
+          if (i + 1 > argc) then
+            call usage_error("'--gender' requires a value", rc)
+            return
+          end if
           i = i + 1
-          call get_command_argument(i, gender_str)
+          gender_str = args(i)
           has_gender = .true.
         else if (arg == '--short') then
           compactness = 1
@@ -267,11 +373,12 @@ contains
           command = 'version'
           return
         else
-          call cli_error("unknown option '" // trim(arg) // "'")
+          call usage_error("unknown option '" // trim(arg) // "'", rc)
+          return
         end if
       else
         pos_count = pos_count + 1
-        if (pos_count <= 8) positionals(pos_count) = arg
+        if (pos_count <= MAX_POSITIONALS) positionals(pos_count) = arg
       end if
 
       i = i + 1
@@ -285,7 +392,10 @@ contains
     character(len=PT_MAX_STR_LEN) :: result
 
     rc = 0
-    if (pos_count < 1) call cli_error('age requires a date-of-birth argument')
+    if (pos_count < 1) then
+      call usage_error('age requires a date-of-birth argument', rc)
+      return
+    end if
 
     if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
       rc = 1
@@ -294,7 +404,10 @@ contains
     dob = positionals(1)
 
     loc => pt_get_locale(trim(locale_code))
-    if (.not. associated(loc)) call cli_error("unknown locale '" // trim(locale_code) // "'")
+    if (.not. associated(loc)) then
+      call usage_error("unknown locale '" // trim(locale_code) // "'", rc)
+      return
+    end if
 
     if (has_as_of) then
       if (is_null_str(trim(as_of_str))) then
@@ -313,7 +426,7 @@ contains
       return
     end if
 
-    write(*, '(A)') trim(result)
+    call emit(trim(result))
   end subroutine cmd_age
 
   subroutine cmd_stage(rc)
@@ -323,7 +436,10 @@ contains
     character(len=PT_MAX_STR_LEN) :: result
 
     rc = 0
-    if (pos_count < 1) call cli_error('stage requires a date-of-birth argument')
+    if (pos_count < 1) then
+      call usage_error('stage requires a date-of-birth argument', rc)
+      return
+    end if
 
     if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
       rc = 1
@@ -332,7 +448,10 @@ contains
     dob = positionals(1)
 
     loc => pt_get_locale(trim(locale_code))
-    if (.not. associated(loc)) call cli_error("unknown locale '" // trim(locale_code) // "'")
+    if (.not. associated(loc)) then
+      call usage_error("unknown locale '" // trim(locale_code) // "'", rc)
+      return
+    end if
 
     if (has_as_of) then
       if (is_null_str(trim(as_of_str))) then
@@ -355,7 +474,7 @@ contains
       return
     end if
 
-    write(*, '(A)') trim(result)
+    call emit(trim(result))
   end subroutine cmd_stage
 
   subroutine cmd_date(rc)
@@ -365,7 +484,10 @@ contains
     character(len=SD_MAX_STR_LEN) :: result
 
     rc = 0
-    if (pos_count < 1) call cli_error('date requires a date argument')
+    if (pos_count < 1) then
+      call usage_error('date requires a date argument', rc)
+      return
+    end if
 
     if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
       rc = 1
@@ -374,7 +496,10 @@ contains
     date_str = positionals(1)
 
     loc => sd_get_locale(trim(locale_code))
-    if (.not. associated(loc)) call cli_error("unknown locale '" // trim(locale_code) // "'")
+    if (.not. associated(loc)) then
+      call usage_error("unknown locale '" // trim(locale_code) // "'", rc)
+      return
+    end if
 
     if (with_year) then
       result = sd_format_date_with_year(loc, compactness, trim(date_str))
@@ -387,7 +512,7 @@ contains
       return
     end if
 
-    write(*, '(A)') trim(result)
+    call emit(trim(result))
   end subroutine cmd_date
 
   subroutine cmd_relative(rc)
@@ -397,7 +522,10 @@ contains
     character(len=SD_MAX_STR_LEN) :: result
 
     rc = 0
-    if (pos_count < 1) call cli_error('relative requires a date argument')
+    if (pos_count < 1) then
+      call usage_error('relative requires a date argument', rc)
+      return
+    end if
 
     if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
       rc = 1
@@ -405,7 +533,10 @@ contains
     end if
     date_str = positionals(1)
 
-    if (.not. has_as_of) call cli_error('relative requires --as-of / -d option')
+    if (.not. has_as_of) then
+      call usage_error('relative requires --as-of / -d option', rc)
+      return
+    end if
 
     if (is_null_str(trim(as_of_str))) then
       rc = 1
@@ -414,7 +545,10 @@ contains
     ref_date = as_of_str
 
     loc => sd_get_locale(trim(locale_code))
-    if (.not. associated(loc)) call cli_error("unknown locale '" // trim(locale_code) // "'")
+    if (.not. associated(loc)) then
+      call usage_error("unknown locale '" // trim(locale_code) // "'", rc)
+      return
+    end if
 
     result = sd_format_relative(loc, compactness, trim(date_str), trim(ref_date))
 
@@ -423,7 +557,7 @@ contains
       return
     end if
 
-    write(*, '(A)') trim(result)
+    call emit(trim(result))
   end subroutine cmd_relative
 
   subroutine cmd_time(rc)
@@ -433,7 +567,10 @@ contains
     character(len=ST_MAX_STR_LEN) :: result
 
     rc = 0
-    if (pos_count < 1) call cli_error('time requires a time argument')
+    if (pos_count < 1) then
+      call usage_error('time requires a time argument', rc)
+      return
+    end if
 
     if (is_null_str(trim(positionals(1))) .or. len_trim(positionals(1)) == 0) then
       rc = 1
@@ -442,7 +579,10 @@ contains
     time_str = positionals(1)
 
     loc => st_get_locale(trim(locale_code))
-    if (.not. associated(loc)) call cli_error("unknown locale '" // trim(locale_code) // "'")
+    if (.not. associated(loc)) then
+      call usage_error("unknown locale '" // trim(locale_code) // "'", rc)
+      return
+    end if
 
     result = st_format_time(loc, compactness, trim(time_str))
 
@@ -451,7 +591,7 @@ contains
       return
     end if
 
-    write(*, '(A)') trim(result)
+    call emit(trim(result))
   end subroutine cmd_time
 
   subroutine cmd_duration(rc)
@@ -462,7 +602,10 @@ contains
     integer :: seconds
 
     rc = 0
-    if (pos_count < 1) call cli_error('duration requires a value argument')
+    if (pos_count < 1) then
+      call usage_error('duration requires a value argument', rc)
+      return
+    end if
 
     if (is_null_str(trim(positionals(1)))) then
       rc = 1
@@ -471,7 +614,10 @@ contains
     value_str = positionals(1)
 
     loc => dur_get_locale(trim(locale_code))
-    if (.not. associated(loc)) call cli_error("unknown locale '" // trim(locale_code) // "'")
+    if (.not. associated(loc)) then
+      call usage_error("unknown locale '" // trim(locale_code) // "'", rc)
+      return
+    end if
 
     if (is_all_digits(trim(value_str))) then
       seconds = str_to_int(trim(value_str))
@@ -480,7 +626,10 @@ contains
       seconds = str_to_int(trim(value_str))
       result = dur_format_duration(loc, compactness, seconds)
     else
-      if (pos_count < 2) call cli_error('duration with timestamps requires start and end arguments')
+      if (pos_count < 2) then
+        call usage_error('duration with timestamps requires start and end arguments', rc)
+        return
+      end if
       end_str = positionals(2)
       if (is_null_str(trim(end_str))) then
         rc = 1
@@ -494,7 +643,7 @@ contains
       return
     end if
 
-    write(*, '(A)') trim(result)
+    call emit(trim(result))
   end subroutine cmd_duration
 
   subroutine cmd_since(rc)
@@ -504,7 +653,10 @@ contains
     character(len=DUR_MAX_STR_LEN) :: result
 
     rc = 0
-    if (pos_count < 1) call cli_error('since requires a start timestamp argument')
+    if (pos_count < 1) then
+      call usage_error('since requires a start timestamp argument', rc)
+      return
+    end if
 
     if (is_null_str(trim(positionals(1)))) then
       rc = 1
@@ -512,7 +664,10 @@ contains
     end if
     start_str = positionals(1)
 
-    if (.not. has_as_of) call cli_error('since requires --as-of / -d option')
+    if (.not. has_as_of) then
+      call usage_error('since requires --as-of / -d option', rc)
+      return
+    end if
 
     if (is_null_str(trim(as_of_str))) then
       rc = 1
@@ -521,7 +676,10 @@ contains
     ref_str = as_of_str
 
     loc => dur_get_locale(trim(locale_code))
-    if (.not. associated(loc)) call cli_error("unknown locale '" // trim(locale_code) // "'")
+    if (.not. associated(loc)) then
+      call usage_error("unknown locale '" // trim(locale_code) // "'", rc)
+      return
+    end if
 
     result = dur_format_since(loc, compactness, trim(start_str), trim(ref_str))
 
@@ -530,7 +688,7 @@ contains
       return
     end if
 
-    write(*, '(A)') trim(result)
+    call emit(trim(result))
   end subroutine cmd_since
 
   subroutine cmd_until(rc)
@@ -540,7 +698,10 @@ contains
     character(len=DUR_MAX_STR_LEN) :: result
 
     rc = 0
-    if (pos_count < 1) call cli_error('until requires a target timestamp argument')
+    if (pos_count < 1) then
+      call usage_error('until requires a target timestamp argument', rc)
+      return
+    end if
 
     if (is_null_str(trim(positionals(1)))) then
       rc = 1
@@ -548,7 +709,10 @@ contains
     end if
     target_str = positionals(1)
 
-    if (.not. has_as_of) call cli_error('until requires --as-of / -d option')
+    if (.not. has_as_of) then
+      call usage_error('until requires --as-of / -d option', rc)
+      return
+    end if
 
     if (is_null_str(trim(as_of_str))) then
       rc = 1
@@ -557,7 +721,10 @@ contains
     ref_str = as_of_str
 
     loc => dur_get_locale(trim(locale_code))
-    if (.not. associated(loc)) call cli_error("unknown locale '" // trim(locale_code) // "'")
+    if (.not. associated(loc)) then
+      call usage_error("unknown locale '" // trim(locale_code) // "'", rc)
+      return
+    end if
 
     result = dur_format_until(loc, compactness, trim(target_str), trim(ref_str))
 
@@ -566,11 +733,10 @@ contains
       return
     end if
 
-    write(*, '(A)') trim(result)
+    call emit(trim(result))
   end subroutine cmd_until
 
   subroutine cmd_locales()
-    type(pt_locale), pointer :: loc
     ! Sorted list of all locale codes
     character(len=8) :: codes(149)
     integer :: i
@@ -726,7 +892,7 @@ contains
     codes(149) = 'zu'
 
     do i = 1, 149
-      write(*, '(A)') trim(codes(i))
+      call emit(trim(codes(i)))
     end do
   end subroutine cmd_locales
 

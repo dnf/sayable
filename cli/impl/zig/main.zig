@@ -100,15 +100,11 @@ const ParseResult = enum {
     usage_error,
 };
 
-/// Convert a sentinel-terminated pointer to a slice.
-fn span(ptr: [*:0]u8) []const u8 {
-    return std.mem.span(@as([*:0]const u8, ptr));
-}
+/// `argv` excludes the program name.
+fn parseArgs(sink: Sink, argv: []const []const u8, args: *Args) ParseResult {
+    if (argv.len < 1) return .usage_error;
 
-fn parseArgs(raw_argv: [][*:0]u8, args: *Args) ParseResult {
-    if (raw_argv.len < 2) return .usage_error;
-
-    const first = span(raw_argv[1]);
+    const first = argv[0];
     // Global flags as first argument
     if (streql(first, "-h") or streql(first, "--help") or streql(first, "help")) {
         args.command = .help;
@@ -122,14 +118,14 @@ fn parseArgs(raw_argv: [][*:0]u8, args: *Args) ParseResult {
     if (parseCommand(first)) |cmd| {
         args.command = cmd;
     } else {
-        printError("unknown command '", first, "'");
+        sink.printError("unknown command '", first, "'");
         return .usage_error;
     }
 
-    var i: usize = 2;
+    var i: usize = 1;
     var stop_opts = false;
-    while (i < raw_argv.len) : (i += 1) {
-        const arg = span(raw_argv[i]);
+    while (i < argv.len) : (i += 1) {
+        const arg = argv[i];
 
         if (streql(arg, "--") and !stop_opts) {
             stop_opts = true;
@@ -139,25 +135,25 @@ fn parseArgs(raw_argv: [][*:0]u8, args: *Args) ParseResult {
         if (!stop_opts and arg.len > 1 and arg[0] == '-') {
             if (streql(arg, "-l") or streql(arg, "--locale")) {
                 i += 1;
-                if (i >= raw_argv.len) {
-                    printError("'--locale' requires a value", "", "");
+                if (i >= argv.len) {
+                    sink.printError("'--locale' requires a value", "", "");
                     return .usage_error;
                 }
-                args.locale = span(raw_argv[i]);
+                args.locale = argv[i];
             } else if (streql(arg, "-d") or streql(arg, "--as-of")) {
                 i += 1;
-                if (i >= raw_argv.len) {
-                    printError("'--as-of' requires a value", "", "");
+                if (i >= argv.len) {
+                    sink.printError("'--as-of' requires a value", "", "");
                     return .usage_error;
                 }
-                args.as_of = span(raw_argv[i]);
+                args.as_of = argv[i];
             } else if (streql(arg, "-g") or streql(arg, "--gender")) {
                 i += 1;
-                if (i >= raw_argv.len) {
-                    printError("'--gender' requires a value", "", "");
+                if (i >= argv.len) {
+                    sink.printError("'--gender' requires a value", "", "");
                     return .usage_error;
                 }
-                args.gender = span(raw_argv[i]);
+                args.gender = argv[i];
             } else if (streql(arg, "--short")) {
                 args.compactness = .short_mode;
             } else if (streql(arg, "--compact")) {
@@ -171,7 +167,7 @@ fn parseArgs(raw_argv: [][*:0]u8, args: *Args) ParseResult {
                 args.command = .version;
                 return .ok;
             } else {
-                printError("unknown option '", arg, "'");
+                sink.printError("unknown option '", arg, "'");
                 return .usage_error;
             }
         } else {
@@ -187,34 +183,29 @@ fn parseArgs(raw_argv: [][*:0]u8, args: *Args) ParseResult {
 
 // ---- Output helpers ----
 
-const STDOUT_FD = std.posix.STDOUT_FILENO;
-const STDERR_FD = std.posix.STDERR_FILENO;
+/// Where one invocation's output goes: its stdout text to `out`, errors to
+/// stderr. Write failures are ignored, as a CLI has nowhere to report them.
+const Sink = struct {
+    io: std.Io,
+    out: *std.Io.Writer,
 
-fn writeAll(fd: std.posix.fd_t, data: []const u8) void {
-    var written: usize = 0;
-    while (written < data.len) {
-        written += std.posix.write(fd, data[written..]) catch return;
+    fn printError(sink: Sink, prefix: []const u8, arg: []const u8, suffix: []const u8) void {
+        var buf: [1024]u8 = undefined;
+        var stderr = std.Io.File.stderr().writerStreaming(sink.io, &buf);
+        const w = &stderr.interface;
+        w.print("error: {s}{s}{s}\nRun 'sayable help' for usage.\n", .{ prefix, arg, suffix }) catch {};
+        w.flush() catch {};
     }
-}
 
-fn printError(prefix: []const u8, arg: []const u8, suffix: []const u8) void {
-    writeAll(STDERR_FD, "error: ");
-    writeAll(STDERR_FD, prefix);
-    writeAll(STDERR_FD, arg);
-    writeAll(STDERR_FD, suffix);
-    writeAll(STDERR_FD, "\n");
-    writeAll(STDERR_FD, "Run 'sayable help' for usage.\n");
-}
+    fn write(sink: Sink, text: []const u8) void {
+        sink.out.writeAll(text) catch {};
+    }
 
-fn printResult(result: []const u8) void {
-    writeAll(STDOUT_FD, result);
-    writeAll(STDOUT_FD, "\n");
-}
-
-fn printLine(text: []const u8) void {
-    writeAll(STDOUT_FD, text);
-    writeAll(STDOUT_FD, "\n");
-}
+    fn printLine(sink: Sink, text: []const u8) void {
+        sink.write(text);
+        sink.write("\n");
+    }
+};
 
 fn isNull(s: []const u8) bool {
     return streql(s, "null");
@@ -222,15 +213,15 @@ fn isNull(s: []const u8) bool {
 
 // ---- Get today's date ----
 
-fn getToday(buf: *[10]u8) []const u8 {
-    const ts = std.time.timestamp();
+fn getToday(io: std.Io, buf: *[10]u8) []const u8 {
+    const ts = std.Io.Clock.real.now(io).toSeconds();
     const es = std.time.epoch.EpochSeconds{ .secs = @intCast(ts) };
     const ed = es.getEpochDay();
     const yd = ed.calculateYearDay();
     const md = yd.calculateMonthDay();
 
     const year: u32 = @intCast(yd.year);
-    const month: u32 = @intFromEnum(md.month) + 1; // 0-indexed -> 1-indexed
+    const month: u32 = @backingInt(md.month) + 1; // 0-indexed -> 1-indexed
     const day: u32 = md.day_index + 1; // 0-indexed -> 1-indexed
 
     buf[0] = @intCast('0' + year / 1000);
@@ -249,9 +240,9 @@ fn getToday(buf: *[10]u8) []const u8 {
 
 // ---- Command handlers ----
 
-fn cmdAge(args: *const Args) u8 {
+fn cmdAge(sink: Sink, args: *const Args) u8 {
     if (args.pos_count < 1) {
-        printError("age requires a date-of-birth argument", "", "");
+        sink.printError("age requires a date-of-birth argument", "", "");
         return 2;
     }
 
@@ -260,7 +251,7 @@ fn cmdAge(args: *const Args) u8 {
     if (dob_arg.len == 0) return 1;
 
     const locale = sayableage.locales.get(args.locale) orelse {
-        printError("unknown locale '", args.locale, "'");
+        sink.printError("unknown locale '", args.locale, "'");
         return 2;
     };
 
@@ -270,7 +261,7 @@ fn cmdAge(args: *const Args) u8 {
         if (isNull(ao)) return 1;
         as_of = ao;
     } else {
-        as_of = getToday(&today_buf);
+        as_of = getToday(sink.io, &today_buf);
     }
 
     const compactness: sayableage.Compactness = switch (args.compactness) {
@@ -281,13 +272,13 @@ fn cmdAge(args: *const Args) u8 {
 
     var buf: [512]u8 = undefined;
     const result = sayableage.formatAge(&buf, locale, compactness, dob_arg, as_of) orelse return 1;
-    printResult(result);
+    sink.printLine(result);
     return 0;
 }
 
-fn cmdStage(args: *const Args) u8 {
+fn cmdStage(sink: Sink, args: *const Args) u8 {
     if (args.pos_count < 1) {
-        printError("stage requires a date-of-birth argument", "", "");
+        sink.printError("stage requires a date-of-birth argument", "", "");
         return 2;
     }
 
@@ -296,7 +287,7 @@ fn cmdStage(args: *const Args) u8 {
     if (dob_arg.len == 0) return 1;
 
     const locale = sayableage.locales.get(args.locale) orelse {
-        printError("unknown locale '", args.locale, "'");
+        sink.printError("unknown locale '", args.locale, "'");
         return 2;
     };
 
@@ -306,17 +297,17 @@ fn cmdStage(args: *const Args) u8 {
         if (isNull(ao)) return 1;
         as_of = ao;
     } else {
-        as_of = getToday(&today_buf);
+        as_of = getToday(sink.io, &today_buf);
     }
 
     const result = sayableage.formatStage(locale, dob_arg, as_of, args.gender) orelse return 1;
-    printResult(result);
+    sink.printLine(result);
     return 0;
 }
 
-fn cmdDate(args: *const Args) u8 {
+fn cmdDate(sink: Sink, args: *const Args) u8 {
     if (args.pos_count < 1) {
-        printError("date requires a date argument", "", "");
+        sink.printError("date requires a date argument", "", "");
         return 2;
     }
 
@@ -325,7 +316,7 @@ fn cmdDate(args: *const Args) u8 {
     if (date_arg.len == 0) return 1;
 
     const locale = sayabledate.locales.get(args.locale) orelse {
-        printError("unknown locale '", args.locale, "'");
+        sink.printError("unknown locale '", args.locale, "'");
         return 2;
     };
 
@@ -338,17 +329,17 @@ fn cmdDate(args: *const Args) u8 {
     var buf: [512]u8 = undefined;
     if (args.with_year) {
         const result = sayabledate.formatDateWithYear(&buf, locale, compactness, date_arg) orelse return 1;
-        printResult(result);
+        sink.printLine(result);
     } else {
         const result = sayabledate.formatDate(&buf, locale, compactness, date_arg) orelse return 1;
-        printResult(result);
+        sink.printLine(result);
     }
     return 0;
 }
 
-fn cmdRelative(args: *const Args) u8 {
+fn cmdRelative(sink: Sink, args: *const Args) u8 {
     if (args.pos_count < 1) {
-        printError("relative requires a date argument", "", "");
+        sink.printError("relative requires a date argument", "", "");
         return 2;
     }
 
@@ -356,7 +347,7 @@ fn cmdRelative(args: *const Args) u8 {
     if (isNull(date_arg)) return 1;
 
     if (args.as_of == null) {
-        printError("relative requires --as-of / -d option", "", "");
+        sink.printError("relative requires --as-of / -d option", "", "");
         return 2;
     }
 
@@ -364,7 +355,7 @@ fn cmdRelative(args: *const Args) u8 {
     if (isNull(as_of)) return 1;
 
     const locale = sayabledate.locales.get(args.locale) orelse {
-        printError("unknown locale '", args.locale, "'");
+        sink.printError("unknown locale '", args.locale, "'");
         return 2;
     };
 
@@ -376,13 +367,13 @@ fn cmdRelative(args: *const Args) u8 {
 
     var buf: [512]u8 = undefined;
     const result = sayabledate.formatRelative(&buf, locale, compactness, date_arg, as_of) orelse return 1;
-    printResult(result);
+    sink.printLine(result);
     return 0;
 }
 
-fn cmdTime(args: *const Args) u8 {
+fn cmdTime(sink: Sink, args: *const Args) u8 {
     if (args.pos_count < 1) {
-        printError("time requires a time argument", "", "");
+        sink.printError("time requires a time argument", "", "");
         return 2;
     }
 
@@ -391,7 +382,7 @@ fn cmdTime(args: *const Args) u8 {
     if (time_arg.len == 0) return 1;
 
     const locale = sayabletime.locales.get(args.locale) orelse {
-        printError("unknown locale '", args.locale, "'");
+        sink.printError("unknown locale '", args.locale, "'");
         return 2;
     };
 
@@ -403,13 +394,13 @@ fn cmdTime(args: *const Args) u8 {
 
     var buf: [512]u8 = undefined;
     const result = sayabletime.formatTime(&buf, locale, compactness, time_arg) orelse return 1;
-    printResult(result);
+    sink.printLine(result);
     return 0;
 }
 
-fn cmdDuration(args: *const Args) u8 {
+fn cmdDuration(sink: Sink, args: *const Args) u8 {
     if (args.pos_count < 1) {
-        printError("duration requires a value argument", "", "");
+        sink.printError("duration requires a value argument", "", "");
         return 2;
     }
 
@@ -417,7 +408,7 @@ fn cmdDuration(args: *const Args) u8 {
     if (isNull(value_arg)) return 1;
 
     const locale = sayableduration.locales.get(args.locale) orelse {
-        printError("unknown locale '", args.locale, "'");
+        sink.printError("unknown locale '", args.locale, "'");
         return 2;
     };
 
@@ -432,28 +423,28 @@ fn cmdDuration(args: *const Args) u8 {
     if (isNonNegativeInteger(value_arg)) {
         const seconds = parseInteger(value_arg);
         const result = sayableduration.formatDurationSecs(&buf, locale, compactness, seconds) orelse return 1;
-        printResult(result);
+        sink.printLine(result);
     } else if (isNegativeInteger(value_arg)) {
         const seconds = parseSignedInteger(value_arg);
         const result = sayableduration.formatDurationSecs(&buf, locale, compactness, seconds) orelse return 1;
-        printResult(result);
+        sink.printLine(result);
     } else {
         // Timestamp mode
         if (args.pos_count < 2) {
-            printError("duration with timestamps requires start and end arguments", "", "");
+            sink.printError("duration with timestamps requires start and end arguments", "", "");
             return 2;
         }
         const end_arg = args.positionals[1];
         if (isNull(end_arg)) return 1;
         const result = sayableduration.formatDurationISO(&buf, locale, compactness, value_arg, end_arg) orelse return 1;
-        printResult(result);
+        sink.printLine(result);
     }
     return 0;
 }
 
-fn cmdSince(args: *const Args) u8 {
+fn cmdSince(sink: Sink, args: *const Args) u8 {
     if (args.pos_count < 1) {
-        printError("since requires a start timestamp argument", "", "");
+        sink.printError("since requires a start timestamp argument", "", "");
         return 2;
     }
 
@@ -461,7 +452,7 @@ fn cmdSince(args: *const Args) u8 {
     if (isNull(start_arg)) return 1;
 
     if (args.as_of == null) {
-        printError("since requires --as-of / -d option", "", "");
+        sink.printError("since requires --as-of / -d option", "", "");
         return 2;
     }
 
@@ -469,7 +460,7 @@ fn cmdSince(args: *const Args) u8 {
     if (isNull(as_of)) return 1;
 
     const locale = sayableduration.locales.get(args.locale) orelse {
-        printError("unknown locale '", args.locale, "'");
+        sink.printError("unknown locale '", args.locale, "'");
         return 2;
     };
 
@@ -481,13 +472,13 @@ fn cmdSince(args: *const Args) u8 {
 
     var buf: [512]u8 = undefined;
     const result = sayableduration.formatSince(&buf, locale, compactness, start_arg, as_of) orelse return 1;
-    printResult(result);
+    sink.printLine(result);
     return 0;
 }
 
-fn cmdUntil(args: *const Args) u8 {
+fn cmdUntil(sink: Sink, args: *const Args) u8 {
     if (args.pos_count < 1) {
-        printError("until requires a target timestamp argument", "", "");
+        sink.printError("until requires a target timestamp argument", "", "");
         return 2;
     }
 
@@ -495,7 +486,7 @@ fn cmdUntil(args: *const Args) u8 {
     if (isNull(target_arg)) return 1;
 
     if (args.as_of == null) {
-        printError("until requires --as-of / -d option", "", "");
+        sink.printError("until requires --as-of / -d option", "", "");
         return 2;
     }
 
@@ -503,7 +494,7 @@ fn cmdUntil(args: *const Args) u8 {
     if (isNull(as_of)) return 1;
 
     const locale = sayableduration.locales.get(args.locale) orelse {
-        printError("unknown locale '", args.locale, "'");
+        sink.printError("unknown locale '", args.locale, "'");
         return 2;
     };
 
@@ -515,13 +506,13 @@ fn cmdUntil(args: *const Args) u8 {
 
     var buf: [512]u8 = undefined;
     const result = sayableduration.formatUntil(&buf, locale, compactness, target_arg, as_of) orelse return 1;
-    printResult(result);
+    sink.printLine(result);
     return 0;
 }
 
-fn cmdLocales() u8 {
+fn cmdLocales(sink: Sink) u8 {
     for (sayableage.locales.all) |entry| {
-        printLine(entry.code);
+        sink.printLine(entry.code);
     }
     return 0;
 }
@@ -567,40 +558,105 @@ fn parseSignedInteger(s: []const u8) i32 {
     return if (neg) -val else val;
 }
 
-// ---- Main ----
+// ---- Dispatch ----
 
-pub fn main() u8 {
-    const argv = std.os.argv;
-
+/// Runs one invocation (`argv` excludes the program name), writing its stdout
+/// text to `sink.out`; returns the exit code.
+fn run(sink: Sink, argv: []const []const u8) u8 {
     var args = Args{};
-    const parse_result = parseArgs(argv, &args);
+    const parse_result = parseArgs(sink, argv, &args);
 
     if (parse_result == .usage_error) return 2;
 
     const cmd = args.command orelse {
-        writeAll(STDOUT_FD, HELP);
+        sink.write(HELP);
         return 2;
     };
 
     switch (cmd) {
         .help => {
-            writeAll(STDOUT_FD, HELP);
+            sink.write(HELP);
             return 0;
         },
         .version => {
-            writeAll(STDOUT_FD, "sayable ");
-            writeAll(STDOUT_FD, VERSION);
-            writeAll(STDOUT_FD, "\n");
+            sink.printLine("sayable " ++ VERSION);
             return 0;
         },
-        .locales => return cmdLocales(),
-        .age => return cmdAge(&args),
-        .stage => return cmdStage(&args),
-        .date => return cmdDate(&args),
-        .relative => return cmdRelative(&args),
-        .time_cmd => return cmdTime(&args),
-        .duration => return cmdDuration(&args),
-        .since => return cmdSince(&args),
-        .until => return cmdUntil(&args),
+        .locales => return cmdLocales(sink),
+        .age => return cmdAge(sink, &args),
+        .stage => return cmdStage(sink, &args),
+        .date => return cmdDate(sink, &args),
+        .relative => return cmdRelative(sink, &args),
+        .time_cmd => return cmdTime(sink, &args),
+        .duration => return cmdDuration(sink, &args),
+        .since => return cmdSince(sink, &args),
+        .until => return cmdUntil(sink, &args),
     }
+}
+
+// ---- REPL mode (see cli/SPEC.md) ----
+
+/// Large enough for any output (help is the longest), so it never truncates.
+const MAX_OUTPUT = 16 * 1024;
+
+fn answerRequest(io: std.Io, gpa: std.mem.Allocator, request: []const u8, stdout: *std.Io.Writer) !void {
+    var fields: std.ArrayList([]const u8) = .empty;
+    defer fields.deinit(gpa);
+    var it = std.mem.splitScalar(u8, request, '\t');
+    while (it.next()) |field| try fields.append(gpa, field);
+
+    var out_buf: [MAX_OUTPUT]u8 = undefined;
+    var captured: std.Io.Writer = .fixed(&out_buf);
+    const code = run(.{ .io = io, .out = &captured }, fields.items);
+
+    const written = captured.buffered();
+    const output = written[0..std.mem.trimEnd(u8, written, "\n").len];
+    std.mem.replaceScalar(u8, output, '\n', '\t');
+    try stdout.print("{d}\t{s}\n", .{ code, output });
+}
+
+fn repl(io: std.Io, gpa: std.mem.Allocator) !void {
+    var in_buf: [64 * 1024]u8 = undefined;
+    var stdin = std.Io.File.stdin().readerStreaming(io, &in_buf);
+    const reader = &stdin.interface;
+    var out_buf: [4096]u8 = undefined;
+    var stdout = std.Io.File.stdout().writerStreaming(io, &out_buf);
+
+    var line: std.Io.Writer.Allocating = .init(gpa);
+    defer line.deinit();
+    while (true) {
+        line.clearRetainingCapacity();
+        _ = try reader.streamDelimiterEnding(&line.writer, '\n');
+        const at_end = reader.bufferedLen() == 0;
+        if (at_end and line.written().len == 0) break;
+        if (!at_end) reader.toss(1); // the newline
+
+        const request = std.mem.trimEnd(u8, line.written(), "\r");
+        answerRequest(io, gpa, request, &stdout.interface) catch |err| {
+            std.log.err("{t}", .{err});
+            try stdout.interface.writeAll("1\t\n");
+        };
+        try stdout.interface.flush();
+    }
+}
+
+// ---- Main ----
+
+pub fn main(init: std.process.Init) u8 {
+    const argv = init.minimal.args.toSlice(init.arena.allocator()) catch return 1;
+    const user_args: []const []const u8 = argv[1..];
+
+    if (user_args.len == 1 and streql(user_args[0], "--repl")) {
+        repl(init.io, init.gpa) catch |err| {
+            std.log.err("{t}", .{err});
+            return 1;
+        };
+        return 0;
+    }
+
+    var out_buf: [4096]u8 = undefined;
+    var stdout = std.Io.File.stdout().writerStreaming(init.io, &out_buf);
+    const code = run(.{ .io = init.io, .out = &stdout.interface }, user_args);
+    stdout.interface.flush() catch {};
+    return code;
 }

@@ -351,8 +351,9 @@ COMMANDS = {
 }
 
 
-def main():
-    command, positionals, options = parse_args(sys.argv[1:])
+def run(argv):
+    """Run one command; exits via sys.exit like the one-shot CLI."""
+    command, positionals, options = parse_args(argv)
 
     if command is None:
         print(HELP)
@@ -374,6 +375,35 @@ def main():
         error(f"unknown command '{command}'")
 
     COMMANDS[command](positionals, options)
+
+
+def repl():
+    """Answer one tab-separated request per stdin line (see cli/SPEC.md)."""
+    import contextlib
+    import io
+
+    for line in sys.stdin:
+        captured = io.StringIO()
+        code = 0
+        try:
+            with contextlib.redirect_stdout(captured):
+                run(line.rstrip("\n").split("\t"))
+        except SystemExit as exit_:
+            code = exit_.code if isinstance(exit_.code, int) else 2
+        except Exception:  # a crash exits 1 in one-shot mode; keep serving
+            import traceback
+            traceback.print_exc()
+            code = 1
+        output = captured.getvalue().rstrip("\n").replace("\n", "\t")
+        sys.stdout.write(f"{code}\t{output}\n")
+        sys.stdout.flush()
+
+
+def main():
+    if sys.argv[1:] == ["--repl"]:
+        repl()
+    else:
+        run(sys.argv[1:])
 
 
 if __name__ == "__main__":

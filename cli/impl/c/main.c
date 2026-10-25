@@ -1,3 +1,6 @@
+/* getline and open_memstream are POSIX.1-2008, outside strict C11. */
+#define _POSIX_C_SOURCE 200809L
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -114,9 +117,9 @@ static int parse_int(const char *s)
     return neg ? -val : val;
 }
 
-static void print_help(void)
+static void print_help(FILE *out)
 {
-    printf(
+    fprintf(out,
         "Usage: sayable <command> [arguments] [options]\n"
         "\n"
         "Commands:\n"
@@ -239,7 +242,7 @@ static int parse_args(int argc, char *argv[], Args *args)
 
 /* ---- command handlers ---- */
 
-static int cmd_age(const Args *args)
+static int cmd_age(const Args *args, FILE *out)
 {
     const SaLocale *locale;
     char today_buf[11];
@@ -278,11 +281,11 @@ static int cmd_age(const Args *args)
     rc = sa_format_age(buf, sizeof(buf), locale, compactness, dob, as_of);
     if (rc != 0) return 1;
 
-    printf("%s\n", buf);
+    fprintf(out, "%s\n", buf);
     return 0;
 }
 
-static int cmd_stage(const Args *args)
+static int cmd_stage(const Args *args, FILE *out)
 {
     const SaLocale *locale;
     char today_buf[11];
@@ -315,11 +318,11 @@ static int cmd_stage(const Args *args)
     stage = sa_stage(locale, dob, as_of, args->gender);
     if (!stage) return 1;
 
-    printf("%s\n", stage);
+    fprintf(out, "%s\n", stage);
     return 0;
 }
 
-static int cmd_date(const Args *args)
+static int cmd_date(const Args *args, FILE *out)
 {
     const SdDateLocale *locale;
     const char *date_str;
@@ -349,11 +352,11 @@ static int cmd_date(const Args *args)
     rc = sd_format_date(buf, sizeof(buf), locale, compactness, date_str);
     if (rc != 0) return 1;
 
-    printf("%s\n", buf);
+    fprintf(out, "%s\n", buf);
     return 0;
 }
 
-static int cmd_relative(const Args *args)
+static int cmd_relative(const Args *args, FILE *out)
 {
     const SdDateLocale *locale;
     const char *date_str;
@@ -392,11 +395,11 @@ static int cmd_relative(const Args *args)
     rc = sd_format_relative(buf, sizeof(buf), locale, compactness, date_str, as_of);
     if (rc != 0) return 1;
 
-    printf("%s\n", buf);
+    fprintf(out, "%s\n", buf);
     return 0;
 }
 
-static int cmd_time(const Args *args)
+static int cmd_time(const Args *args, FILE *out)
 {
     const StTimeLocale *locale;
     const char *time_str;
@@ -426,11 +429,11 @@ static int cmd_time(const Args *args)
     rc = st_format_time(buf, sizeof(buf), locale, compactness, time_str);
     if (rc != 0) return 1;
 
-    printf("%s\n", buf);
+    fprintf(out, "%s\n", buf);
     return 0;
 }
 
-static int cmd_duration(const Args *args)
+static int cmd_duration(const Args *args, FILE *out)
 {
     const SduDurationLocale *locale;
     const char *value;
@@ -479,11 +482,11 @@ static int cmd_duration(const Args *args)
 
     if (rc != 0) return 1;
 
-    printf("%s\n", buf);
+    fprintf(out, "%s\n", buf);
     return 0;
 }
 
-static int cmd_since(const Args *args)
+static int cmd_since(const Args *args, FILE *out)
 {
     const SduDurationLocale *locale;
     const char *start;
@@ -522,11 +525,11 @@ static int cmd_since(const Args *args)
     rc = sdu_format_since(buf, sizeof(buf), locale, compactness, start, as_of);
     if (rc != 0) return 1;
 
-    printf("%s\n", buf);
+    fprintf(out, "%s\n", buf);
     return 0;
 }
 
-static int cmd_until(const Args *args)
+static int cmd_until(const Args *args, FILE *out)
 {
     const SduDurationLocale *locale;
     const char *target;
@@ -565,21 +568,22 @@ static int cmd_until(const Args *args)
     rc = sdu_format_until(buf, sizeof(buf), locale, compactness, target, as_of);
     if (rc != 0) return 1;
 
-    printf("%s\n", buf);
+    fprintf(out, "%s\n", buf);
     return 0;
 }
 
-static int cmd_locales(void)
+static int cmd_locales(FILE *out)
 {
     int i;
     for (i = 0; i < NUM_LOCALES; i++)
-        printf("%s\n", all_locales[i]->code);
+        fprintf(out, "%s\n", all_locales[i]->code);
     return 0;
 }
 
-/* ---- main ---- */
+/* ---- dispatch ---- */
 
-int main(int argc, char *argv[])
+/* Runs one invocation, writing its stdout text to `out`; returns the exit code. */
+static int run(int argc, char *argv[], FILE *out)
 {
     Args args;
     int parse_rc = parse_args(argc, argv, &args);
@@ -587,30 +591,128 @@ int main(int argc, char *argv[])
     if (parse_rc == -2) return 2;
 
     if (parse_rc == -1 || !args.command) {
-        print_help();
+        print_help(out);
         return 2;
     }
 
     if (streq(args.command, "help")) {
-        print_help();
+        print_help(out);
         return 0;
     }
 
     if (streq(args.command, "version")) {
-        printf("sayable %s\n", VERSION);
+        fprintf(out, "sayable %s\n", VERSION);
         return 0;
     }
 
-    if (streq(args.command, "locales")) return cmd_locales();
-    if (streq(args.command, "age"))      return cmd_age(&args);
-    if (streq(args.command, "stage"))    return cmd_stage(&args);
-    if (streq(args.command, "date"))     return cmd_date(&args);
-    if (streq(args.command, "relative")) return cmd_relative(&args);
-    if (streq(args.command, "time"))     return cmd_time(&args);
-    if (streq(args.command, "duration")) return cmd_duration(&args);
-    if (streq(args.command, "since"))    return cmd_since(&args);
-    if (streq(args.command, "until"))    return cmd_until(&args);
+    if (streq(args.command, "locales")) return cmd_locales(out);
+    if (streq(args.command, "age"))      return cmd_age(&args, out);
+    if (streq(args.command, "stage"))    return cmd_stage(&args, out);
+    if (streq(args.command, "date"))     return cmd_date(&args, out);
+    if (streq(args.command, "relative")) return cmd_relative(&args, out);
+    if (streq(args.command, "time"))     return cmd_time(&args, out);
+    if (streq(args.command, "duration")) return cmd_duration(&args, out);
+    if (streq(args.command, "since"))    return cmd_since(&args, out);
+    if (streq(args.command, "until"))    return cmd_until(&args, out);
 
     error_fmt("unknown command '%s'", args.command);
     return 2;
+}
+
+/* ---- REPL mode (see cli/SPEC.md) ---- */
+
+static void strip_line_ending(char *line)
+{
+    size_t len = strlen(line);
+    if (len > 0 && line[len - 1] == '\n') line[--len] = '\0';
+    if (len > 0 && line[len - 1] == '\r') line[--len] = '\0';
+}
+
+/*
+ * Splits `line` in place on tabs into an argv whose argv[0] is the program
+ * name, as parse_args expects. Empty fields are kept. Caller frees the array.
+ */
+static char **split_request(char *line, int *argc_out)
+{
+    int fields = 1;
+    int argc = 0;
+    char **argv;
+    char *p;
+
+    for (p = line; *p; p++)
+        if (*p == '\t') fields++;
+
+    argv = malloc(sizeof(char *) * (size_t)(fields + 2));
+    if (!argv) return NULL;
+
+    argv[argc++] = "sayable";
+    argv[argc++] = line;
+    for (p = line; *p; p++) {
+        if (*p == '\t') {
+            *p = '\0';
+            argv[argc++] = p + 1;
+        }
+    }
+    argv[argc] = NULL;
+    *argc_out = argc;
+    return argv;
+}
+
+/* Trailing newline dropped, inner newlines become tabs: one response line. */
+static void flatten_output(char *text, size_t len)
+{
+    size_t i;
+    while (len > 0 && text[len - 1] == '\n') text[--len] = '\0';
+    for (i = 0; i < len; i++)
+        if (text[i] == '\n') text[i] = '\t';
+}
+
+static int answer_request(char *line)
+{
+    char **argv;
+    int argc = 0;
+    int code;
+    char *text = NULL;
+    size_t len = 0;
+    FILE *out;
+
+    argv = split_request(line, &argc);
+    out = open_memstream(&text, &len);
+    if (!argv || !out) {
+        fprintf(stderr, "error: out of memory\n");
+        if (out) fclose(out);
+        free(text);
+        free(argv);
+        return 1;
+    }
+
+    code = run(argc, argv, out);
+    fclose(out);
+    flatten_output(text, len);
+    printf("%d\t%s\n", code, text);
+    free(text);
+    free(argv);
+    return 0;
+}
+
+static int repl(void)
+{
+    char *line = NULL;
+    size_t cap = 0;
+
+    while (getline(&line, &cap, stdin) != -1) {
+        strip_line_ending(line);
+        if (answer_request(line) != 0) printf("1\t\n");
+        fflush(stdout);
+    }
+    free(line);
+    return 0;
+}
+
+/* ---- main ---- */
+
+int main(int argc, char *argv[])
+{
+    if (argc == 2 && streq(argv[1], "--repl")) return repl();
+    return run(argc, argv, stdout);
 }

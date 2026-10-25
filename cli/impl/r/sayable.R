@@ -52,10 +52,13 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version"
 
+# Usage errors are signalled as conditions, so one request can fail without
+# ending the process.
 cli_error <- function(msg) {
-  write(paste0("error: ", msg), stderr())
-  write("Run 'sayable help' for usage.", stderr())
-  quit(status = 2, save = "no")
+  stop(structure(
+    class = c("sayable_usage_error", "error", "condition"),
+    list(message = msg, call = NULL)
+  ))
 }
 
 nullify <- function(value) {
@@ -183,8 +186,7 @@ cmd_age <- function(positionals, options) {
   formatter <- sayable_age_new(locale, options$compactness)
   result <- formatter$format_age(dob, as_of)
 
-  if (is.null(result)) quit(status = 1, save = "no")
-  cat(result, "\n", sep = "")
+  result
 }
 
 cmd_stage <- function(positionals, options) {
@@ -207,8 +209,7 @@ cmd_stage <- function(positionals, options) {
   formatter <- sayable_age_new(locale, options$compactness)
   result <- formatter$format_stage(dob, as_of, gender)
 
-  if (is.null(result)) quit(status = 1, save = "no")
-  cat(result, "\n", sep = "")
+  result
 }
 
 cmd_date <- function(positionals, options) {
@@ -227,8 +228,7 @@ cmd_date <- function(positionals, options) {
     result <- formatter$format_date(date_val)
   }
 
-  if (is.null(result)) quit(status = 1, save = "no")
-  cat(result, "\n", sep = "")
+  result
 }
 
 cmd_relative <- function(positionals, options) {
@@ -246,8 +246,7 @@ cmd_relative <- function(positionals, options) {
   formatter <- sayable_date_new(locale, options$compactness)
   result <- formatter$format_relative(date_val, as_of)
 
-  if (is.null(result)) quit(status = 1, save = "no")
-  cat(result, "\n", sep = "")
+  result
 }
 
 cmd_time <- function(positionals, options) {
@@ -261,8 +260,7 @@ cmd_time <- function(positionals, options) {
   formatter <- sayable_time_new(locale, options$compactness)
   result <- formatter$format_time(time_val)
 
-  if (is.null(result)) quit(status = 1, save = "no")
-  cat(result, "\n", sep = "")
+  result
 }
 
 cmd_duration <- function(positionals, options) {
@@ -288,8 +286,7 @@ cmd_duration <- function(positionals, options) {
     result <- formatter$format_duration_iso(value, end_val)
   }
 
-  if (is.null(result)) quit(status = 1, save = "no")
-  cat(result, "\n", sep = "")
+  result
 }
 
 cmd_since <- function(positionals, options) {
@@ -307,8 +304,7 @@ cmd_since <- function(positionals, options) {
   formatter <- sayable_duration_new(locale, options$compactness)
   result <- formatter$format_since(start, as_of)
 
-  if (is.null(result)) quit(status = 1, save = "no")
-  cat(result, "\n", sep = "")
+  result
 }
 
 cmd_until <- function(positionals, options) {
@@ -326,8 +322,7 @@ cmd_until <- function(positionals, options) {
   formatter <- sayable_duration_new(locale, options$compactness)
   result <- formatter$format_until(target, as_of)
 
-  if (is.null(result)) quit(status = 1, save = "no")
-  cat(result, "\n", sep = "")
+  result
 }
 
 cmd_locales <- function() {
@@ -336,39 +331,23 @@ cmd_locales <- function() {
   # Exclude registry.R
   files <- files[files != "registry.R"]
   codes <- sub("\\.R$", "", files)
-  codes <- sort(codes)
-  for (code in codes) {
-    cat(code, "\n", sep = "")
-  }
+  paste(sort(codes), collapse = "\n")
 }
 
-main <- function() {
-  argv <- commandArgs(trailingOnly = TRUE)
+# Run one request; returns its exit code and stdout text (NULL for no output).
+dispatch <- function(argv) {
   parsed <- parse_args(argv)
 
   command <- parsed$command
   positionals <- parsed$positionals
   options <- parsed$options
 
-  if (is.null(command)) {
-    cat(HELP_TEXT, "\n", sep = "")
-    quit(status = 2, save = "no")
-  }
-
-  if (identical(command, "help")) {
-    cat(HELP_TEXT, "\n", sep = "")
-    quit(status = 0, save = "no")
-  }
-
+  if (is.null(command)) return(list(code = 2L, output = HELP_TEXT))
+  if (identical(command, "help")) return(list(code = 0L, output = HELP_TEXT))
   if (identical(command, "version")) {
-    cat("sayable ", VERSION, "\n", sep = "")
-    quit(status = 0, save = "no")
+    return(list(code = 0L, output = paste0("sayable ", VERSION)))
   }
-
-  if (identical(command, "locales")) {
-    cmd_locales()
-    quit(status = 0, save = "no")
-  }
+  if (identical(command, "locales")) return(list(code = 0L, output = cmd_locales()))
 
   commands <- list(
     age = cmd_age,
@@ -385,7 +364,54 @@ main <- function() {
     cli_error(paste0("unknown command '", command, "'"))
   }
 
-  commands[[command]](positionals, options)
+  result <- commands[[command]](positionals, options)
+  list(code = if (is.null(result)) 1L else 0L, output = result)
+}
+
+run <- function(argv) {
+  tryCatch(dispatch(argv), sayable_usage_error = function(e) {
+    write(paste0("error: ", conditionMessage(e)), stderr())
+    write("Run 'sayable help' for usage.", stderr())
+    list(code = 2L, output = NULL)
+  })
+}
+
+# Split on every tab, keeping empty fields: strsplit drops one trailing empty
+# field, so a sentinel tab is appended first.
+split_request <- function(line) {
+  strsplit(paste0(line, "\t"), "\t", fixed = TRUE)[[1]]
+}
+
+# Answer one tab-separated request per stdin line (see cli/SPEC.md).
+repl <- function() {
+  input <- file("stdin", encoding = "UTF-8")
+  open(input)
+  on.exit(close(input))
+  repeat {
+    line <- readLines(input, n = 1, warn = FALSE)
+    if (length(line) == 0) break
+    response <- tryCatch(run(split_request(sub("\r$", "", line))), error = function(e) {
+      # A crash exits 1 in one-shot mode; report it and keep serving.
+      write(conditionMessage(e), stderr())
+      list(code = 1L, output = NULL)
+    })
+    output <- if (is.null(response$output)) "" else response$output
+    output <- gsub("\n", "\t", sub("\n+$", "", output))
+    writeLines(enc2utf8(paste0(response$code, "\t", output)), stdout(), useBytes = TRUE)
+    flush(stdout())
+  }
+}
+
+main <- function() {
+  argv <- commandArgs(trailingOnly = TRUE)
+  if (identical(argv, "--repl")) {
+    repl()
+    quit(status = 0, save = "no")
+  }
+
+  response <- run(argv)
+  if (!is.null(response$output)) cat(response$output, "\n", sep = "")
+  quit(status = response$code, save = "no")
 }
 
 main()

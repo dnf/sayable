@@ -1,3 +1,4 @@
+import java.nio.charset.StandardCharsets
 import java.time.LocalDate
 
 import sayableage.SayableAge
@@ -42,20 +43,88 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version'''
 
+    /** What one invocation prints to stdout (null: nothing) and the code it exits with. */
+    private static final class Outcome {
+        final int exitCode
+        final String output
+
+        Outcome(int exitCode, String output) {
+            this.exitCode = exitCode
+            this.output = output
+        }
+
+        static Outcome printing(String output) {
+            return new Outcome(0, output)
+        }
+
+        static Outcome ofResult(String result) {
+            return result == null ? new Outcome(1, null) : printing(result)
+        }
+    }
+
+    /** A usage error: reported on stderr, exit code 2. */
+    private static final class UsageException extends RuntimeException {
+        UsageException(String message) {
+            super(message)
+        }
+    }
+
     static void main(String[] args) {
+        if (args.length == 1 && args[0] == '--repl') {
+            repl()
+            return
+        }
+
+        Outcome outcome = run(args)
+        if (outcome.output != null) {
+            System.out.println(outcome.output)
+        }
+        System.exit(outcome.exitCode)
+    }
+
+    /** Answers one tab-separated request per stdin line (see cli/SPEC.md, "REPL Mode"). */
+    private static void repl() {
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8))
+        String line
+        while ((line = input.readLine()) != null) {
+            Outcome outcome = runCatchingCrashes(line.split('\t', -1))
+            String output = outcome.output == null ? '' : outcome.output.replace('\n', '\t')
+            System.out.println("${outcome.exitCode}\t${output}")
+            System.out.flush()
+        }
+    }
+
+    /** A crashed one-shot run exits 1, so a crashed request answers 1 and the REPL keeps serving. */
+    private static Outcome runCatchingCrashes(String[] args) {
+        try {
+            return run(args)
+        } catch (RuntimeException e) {
+            e.printStackTrace()
+            return new Outcome(1, null)
+        }
+    }
+
+    private static Outcome run(String[] args) {
+        try {
+            return dispatch(args)
+        } catch (UsageException e) {
+            System.err.println("error: ${e.message}")
+            System.err.println("Run 'sayable help' for usage.")
+            return new Outcome(2, null)
+        }
+    }
+
+    private static Outcome dispatch(String[] args) {
         if (args.length == 0) {
-            System.out.println(HELP)
-            System.exit(2)
+            return new Outcome(2, HELP)
         }
 
         String first = args[0]
         if (first == '-h' || first == '--help' || first == 'help') {
-            System.out.println(HELP)
-            System.exit(0)
+            return Outcome.printing(HELP)
         }
         if (first == '-v' || first == '--version' || first == 'version') {
-            System.out.println("sayable ${VERSION}")
-            System.exit(0)
+            return Outcome.printing("sayable ${VERSION}")
         }
 
         String command = first
@@ -80,19 +149,19 @@ Options:
             if (!stopOpts && arg.startsWith('-')) {
                 if (arg == '-l' || arg == '--locale') {
                     if (i + 1 >= args.length) {
-                        error("'${arg}' requires a value")
+                        throw usage("'${arg}' requires a value")
                     }
                     i++
                     locale = args[i]
                 } else if (arg == '-d' || arg == '--as-of') {
                     if (i + 1 >= args.length) {
-                        error("'${arg}' requires a value")
+                        throw usage("'${arg}' requires a value")
                     }
                     i++
                     asOf = args[i]
                 } else if (arg == '-g' || arg == '--gender') {
                     if (i + 1 >= args.length) {
-                        error("'${arg}' requires a value")
+                        throw usage("'${arg}' requires a value")
                     }
                     i++
                     gender = args[i]
@@ -103,13 +172,11 @@ Options:
                 } else if (arg == '--with-year') {
                     withYear = true
                 } else if (arg == '-h' || arg == '--help') {
-                    System.out.println(HELP)
-                    System.exit(0)
+                    return Outcome.printing(HELP)
                 } else if (arg == '-v' || arg == '--version') {
-                    System.out.println("sayable ${VERSION}")
-                    System.exit(0)
+                    return Outcome.printing("sayable ${VERSION}")
                 } else {
-                    error("unknown option '${arg}'")
+                    throw usage("unknown option '${arg}'")
                 }
             } else {
                 positionals.add(arg)
@@ -119,16 +186,16 @@ Options:
         }
 
         switch (command) {
-            case 'age':      cmdAge(positionals, locale, asOf, compactness); break
-            case 'stage':    cmdStage(positionals, locale, asOf, compactness, gender); break
-            case 'date':     cmdDate(positionals, locale, compactness, withYear); break
-            case 'relative': cmdRelative(positionals, locale, asOf, compactness); break
-            case 'time':     cmdTime(positionals, locale, compactness); break
-            case 'duration': cmdDuration(positionals, locale, compactness); break
-            case 'since':    cmdSince(positionals, locale, asOf, compactness); break
-            case 'until':    cmdUntil(positionals, locale, asOf, compactness); break
-            case 'locales':  cmdLocales(); break
-            default:         error("unknown command '${command}'")
+            case 'age':      return Outcome.ofResult(cmdAge(positionals, locale, asOf, compactness))
+            case 'stage':    return Outcome.ofResult(cmdStage(positionals, locale, asOf, compactness, gender))
+            case 'date':     return Outcome.ofResult(cmdDate(positionals, locale, compactness, withYear))
+            case 'relative': return Outcome.ofResult(cmdRelative(positionals, locale, asOf, compactness))
+            case 'time':     return Outcome.ofResult(cmdTime(positionals, locale, compactness))
+            case 'duration': return Outcome.ofResult(cmdDuration(positionals, locale, compactness))
+            case 'since':    return Outcome.ofResult(cmdSince(positionals, locale, asOf, compactness))
+            case 'until':    return Outcome.ofResult(cmdUntil(positionals, locale, asOf, compactness))
+            case 'locales':  return Outcome.printing(cmdLocales())
+            default:         throw usage("unknown command '${command}'")
         }
     }
 
@@ -136,10 +203,8 @@ Options:
         return value == 'null' ? null : value
     }
 
-    private static void error(String msg) {
-        System.err.println("error: ${msg}")
-        System.err.println("Run 'sayable help' for usage.")
-        System.exit(2)
+    private static UsageException usage(String msg) {
+        return new UsageException(msg)
     }
 
     private static String getToday() {
@@ -178,15 +243,15 @@ Options:
         }
     }
 
-    private static void cmdAge(List<String> positionals, String localeCode, String asOf, String compactness) {
+    private static String cmdAge(List<String> positionals, String localeCode, String asOf, String compactness) {
         if (positionals.isEmpty()) {
-            error('age requires a date-of-birth argument')
+            throw usage('age requires a date-of-birth argument')
         }
         String dob = nullify(positionals[0])
 
         AgeLocale locale = sayableage.locales.Locales.get(localeCode)
         if (locale == null) {
-            error("unknown locale '${localeCode}'")
+            throw usage("unknown locale '${localeCode}'")
         }
 
         if (asOf != null) {
@@ -198,21 +263,18 @@ Options:
         SayableAge formatter = new SayableAge(locale, ageCompactness(compactness))
         String result = formatter.formatAge(dob, asOf)
 
-        if (result == null) {
-            System.exit(1)
-        }
-        System.out.println(result)
+        return result
     }
 
-    private static void cmdStage(List<String> positionals, String localeCode, String asOf, String compactness, String gender) {
+    private static String cmdStage(List<String> positionals, String localeCode, String asOf, String compactness, String gender) {
         if (positionals.isEmpty()) {
-            error('stage requires a date-of-birth argument')
+            throw usage('stage requires a date-of-birth argument')
         }
         String dob = nullify(positionals[0])
 
         AgeLocale locale = sayableage.locales.Locales.get(localeCode)
         if (locale == null) {
-            error("unknown locale '${localeCode}'")
+            throw usage("unknown locale '${localeCode}'")
         }
 
         if (asOf != null) {
@@ -224,21 +286,18 @@ Options:
         SayableAge formatter = new SayableAge(locale, ageCompactness(compactness))
         String result = formatter.formatStage(dob, asOf, gender)
 
-        if (result == null) {
-            System.exit(1)
-        }
-        System.out.println(result)
+        return result
     }
 
-    private static void cmdDate(List<String> positionals, String localeCode, String compactness, boolean withYear) {
+    private static String cmdDate(List<String> positionals, String localeCode, String compactness, boolean withYear) {
         if (positionals.isEmpty()) {
-            error('date requires a date argument')
+            throw usage('date requires a date argument')
         }
         String dateVal = nullify(positionals[0])
 
         DateLocale locale = sayabledate.locales.Locales.get(localeCode)
         if (locale == null) {
-            error("unknown locale '${localeCode}'")
+            throw usage("unknown locale '${localeCode}'")
         }
 
         SayableDate formatter = new SayableDate(locale, dateCompactness(compactness))
@@ -250,66 +309,57 @@ Options:
             result = formatter.formatDate(dateVal)
         }
 
-        if (result == null) {
-            System.exit(1)
-        }
-        System.out.println(result)
+        return result
     }
 
-    private static void cmdRelative(List<String> positionals, String localeCode, String asOf, String compactness) {
+    private static String cmdRelative(List<String> positionals, String localeCode, String asOf, String compactness) {
         if (positionals.isEmpty()) {
-            error('relative requires a date argument')
+            throw usage('relative requires a date argument')
         }
         String dateVal = nullify(positionals[0])
 
         if (asOf == null) {
-            error('relative requires --as-of / -d option')
+            throw usage('relative requires --as-of / -d option')
         }
         asOf = nullify(asOf)
 
         DateLocale locale = sayabledate.locales.Locales.get(localeCode)
         if (locale == null) {
-            error("unknown locale '${localeCode}'")
+            throw usage("unknown locale '${localeCode}'")
         }
 
         SayableDate formatter = new SayableDate(locale, dateCompactness(compactness))
         String result = formatter.formatRelative(dateVal, asOf)
 
-        if (result == null) {
-            System.exit(1)
-        }
-        System.out.println(result)
+        return result
     }
 
-    private static void cmdTime(List<String> positionals, String localeCode, String compactness) {
+    private static String cmdTime(List<String> positionals, String localeCode, String compactness) {
         if (positionals.isEmpty()) {
-            error('time requires a time argument')
+            throw usage('time requires a time argument')
         }
         String timeVal = nullify(positionals[0])
 
         TimeLocale locale = sayabletime.locales.Locales.get(localeCode)
         if (locale == null) {
-            error("unknown locale '${localeCode}'")
+            throw usage("unknown locale '${localeCode}'")
         }
 
         SayableTime formatter = new SayableTime(locale, timeCompactness(compactness))
         String result = formatter.formatTime(timeVal)
 
-        if (result == null) {
-            System.exit(1)
-        }
-        System.out.println(result)
+        return result
     }
 
-    private static void cmdDuration(List<String> positionals, String localeCode, String compactness) {
+    private static String cmdDuration(List<String> positionals, String localeCode, String compactness) {
         if (positionals.isEmpty()) {
-            error('duration requires a value argument')
+            throw usage('duration requires a value argument')
         }
         String value = nullify(positionals[0])
 
         DurationLocale locale = sayableduration.locales.Locales.get(localeCode)
         if (locale == null) {
-            error("unknown locale '${localeCode}'")
+            throw usage("unknown locale '${localeCode}'")
         }
 
         SayableDuration formatter = new SayableDuration(locale, durationCompactness(compactness))
@@ -322,73 +372,61 @@ Options:
             result = formatter.formatDurationSeconds(seconds)
         } else {
             if (positionals.size() < 2) {
-                error('duration with timestamps requires start and end arguments')
+                throw usage('duration with timestamps requires start and end arguments')
             }
             String end = nullify(positionals[1])
             result = formatter.formatDurationIso(value, end)
         }
 
-        if (result == null) {
-            System.exit(1)
-        }
-        System.out.println(result)
+        return result
     }
 
-    private static void cmdSince(List<String> positionals, String localeCode, String asOf, String compactness) {
+    private static String cmdSince(List<String> positionals, String localeCode, String asOf, String compactness) {
         if (positionals.isEmpty()) {
-            error('since requires a start timestamp argument')
+            throw usage('since requires a start timestamp argument')
         }
         String start = nullify(positionals[0])
 
         if (asOf == null) {
-            error('since requires --as-of / -d option')
+            throw usage('since requires --as-of / -d option')
         }
         asOf = nullify(asOf)
 
         DurationLocale locale = sayableduration.locales.Locales.get(localeCode)
         if (locale == null) {
-            error("unknown locale '${localeCode}'")
+            throw usage("unknown locale '${localeCode}'")
         }
 
         SayableDuration formatter = new SayableDuration(locale, durationCompactness(compactness))
         String result = formatter.formatSince(start, asOf)
 
-        if (result == null) {
-            System.exit(1)
-        }
-        System.out.println(result)
+        return result
     }
 
-    private static void cmdUntil(List<String> positionals, String localeCode, String asOf, String compactness) {
+    private static String cmdUntil(List<String> positionals, String localeCode, String asOf, String compactness) {
         if (positionals.isEmpty()) {
-            error('until requires a target timestamp argument')
+            throw usage('until requires a target timestamp argument')
         }
         String target = nullify(positionals[0])
 
         if (asOf == null) {
-            error('until requires --as-of / -d option')
+            throw usage('until requires --as-of / -d option')
         }
         asOf = nullify(asOf)
 
         DurationLocale locale = sayableduration.locales.Locales.get(localeCode)
         if (locale == null) {
-            error("unknown locale '${localeCode}'")
+            throw usage("unknown locale '${localeCode}'")
         }
 
         SayableDuration formatter = new SayableDuration(locale, durationCompactness(compactness))
         String result = formatter.formatUntil(target, asOf)
 
-        if (result == null) {
-            System.exit(1)
-        }
-        System.out.println(result)
+        return result
     }
 
-    private static void cmdLocales() {
-        TreeSet<String> codes = new TreeSet<>(sayableage.locales.Locales.ALL.keySet())
-        for (String code : codes) {
-            System.out.println(code)
-        }
+    private static String cmdLocales() {
+        return new TreeSet<String>(sayableage.locales.Locales.ALL.keySet()).join('\n')
     }
 
     private static boolean isInteger(String s) {
