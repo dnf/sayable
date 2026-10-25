@@ -2,7 +2,7 @@
 {$codepage utf8}
 program sayable;
 
-uses SysUtils,
+uses SysUtils, StrUtils,
      SayableAgeTypes, SayableAge, SayableAgeLocales,
      SayableDateTypes, SayableDate, SayableDateLocales,
      SayableDurationTypes, SayableDuration, SayableDurationLocales,
@@ -11,7 +11,15 @@ uses SysUtils,
 const
   CliVersion = '0.5.0';
 
+type
+  { Raised after a usage error has been reported, so the request answers 2. }
+  EUsageError = class(Exception);
+
 var
+  { The current request's arguments: the command line, or one REPL line. }
+  Args: array of string;
+  { Stdout of the current request, so the REPL can answer on one line. }
+  OutText: string;
   Command: string;
   Positionals: array of string;
   PositionalCount: Integer;
@@ -25,35 +33,40 @@ procedure WriteError(const AMsg: string);
 begin
   WriteLn(StdErr, 'error: ', AMsg);
   WriteLn(StdErr, 'Run ''sayable help'' for usage.');
-  Halt(2);
+  raise EUsageError.Create(AMsg);
+end;
+
+procedure Emit(const ALine: string);
+begin
+  OutText := OutText + ALine + LineEnding;
 end;
 
 procedure PrintHelp;
 begin
-  WriteLn('Usage: sayable <command> [arguments] [options]');
-  WriteLn('');
-  WriteLn('Commands:');
-  WriteLn('  age <dob>              Format an age');
-  WriteLn('  stage <dob>            Get developmental stage');
-  WriteLn('  date <date>            Format a calendar date');
-  WriteLn('  relative <date>        Format a relative date');
-  WriteLn('  time <time>            Format a clock time');
-  WriteLn('  duration <value> [end] Format a duration');
-  WriteLn('  since <start>          Format elapsed time');
-  WriteLn('  until <target>         Format remaining time');
-  WriteLn('  locales                List available locale codes');
-  WriteLn('  version                Show version');
-  WriteLn('  help                   Show this help');
-  WriteLn('');
-  WriteLn('Options:');
-  WriteLn('  -l, --locale <code>    Locale code (default: en)');
-  WriteLn('  -d, --as-of <value>    Reference date/timestamp');
-  WriteLn('      --short            Short compactness');
-  WriteLn('      --compact          Compact compactness');
-  WriteLn('  -g, --gender <m|f>     Gender for stage labels');
-  WriteLn('      --with-year        Include year (date only)');
-  WriteLn('  -h, --help             Show this help');
-  WriteLn('  -v, --version          Show version');
+  Emit('Usage: sayable <command> [arguments] [options]');
+  Emit('');
+  Emit('Commands:');
+  Emit('  age <dob>              Format an age');
+  Emit('  stage <dob>            Get developmental stage');
+  Emit('  date <date>            Format a calendar date');
+  Emit('  relative <date>        Format a relative date');
+  Emit('  time <time>            Format a clock time');
+  Emit('  duration <value> [end] Format a duration');
+  Emit('  since <start>          Format elapsed time');
+  Emit('  until <target>         Format remaining time');
+  Emit('  locales                List available locale codes');
+  Emit('  version                Show version');
+  Emit('  help                   Show this help');
+  Emit('');
+  Emit('Options:');
+  Emit('  -l, --locale <code>    Locale code (default: en)');
+  Emit('  -d, --as-of <value>    Reference date/timestamp');
+  Emit('      --short            Short compactness');
+  Emit('      --compact          Compact compactness');
+  Emit('  -g, --gender <m|f>     Gender for stage labels');
+  Emit('      --with-year        Include year (date only)');
+  Emit('  -h, --help             Show this help');
+  Emit('  -v, --version          Show version');
 end;
 
 function Nullify(const AValue: string): string;
@@ -112,12 +125,10 @@ begin
   OptWithYear := False;
   StopOpts := False;
 
-  if ParamCount = 0 then begin
-    Command := '';
+  if Length(Args) = 0 then
     exit;
-  end;
 
-  Arg := ParamStr(1);
+  Arg := Args[0];
   if (Arg = '-h') or (Arg = '--help') or (Arg = 'help') then begin
     Command := 'help';
     exit;
@@ -128,9 +139,9 @@ begin
   end;
 
   Command := Arg;
-  I := 2;
-  while I <= ParamCount do begin
-    Arg := ParamStr(I);
+  I := 1;
+  while I < Length(Args) do begin
+    Arg := Args[I];
 
     if (Arg = '--') and (not StopOpts) then begin
       StopOpts := True;
@@ -140,19 +151,19 @@ begin
 
     if (not StopOpts) and (Length(Arg) > 0) and (Arg[1] = '-') and (not IsNegativeInt(Arg)) then begin
       if (Arg = '-l') or (Arg = '--locale') then begin
-        if I >= ParamCount then WriteError('''' + Arg + ''' requires a value');
+        if I >= High(Args) then WriteError('''' + Arg + ''' requires a value');
         Inc(I);
-        OptLocale := ParamStr(I);
+        OptLocale := Args[I];
       end
       else if (Arg = '-d') or (Arg = '--as-of') then begin
-        if I >= ParamCount then WriteError('''' + Arg + ''' requires a value');
+        if I >= High(Args) then WriteError('''' + Arg + ''' requires a value');
         Inc(I);
-        OptAsOf := ParamStr(I);
+        OptAsOf := Args[I];
       end
       else if (Arg = '-g') or (Arg = '--gender') then begin
-        if I >= ParamCount then WriteError('''' + Arg + ''' requires a value');
+        if I >= High(Args) then WriteError('''' + Arg + ''' requires a value');
         Inc(I);
-        OptGender := ParamStr(I);
+        OptGender := Args[I];
       end
       else if Arg = '--short' then
         OptCompactness := 'short'
@@ -180,35 +191,35 @@ begin
   end;
 end;
 
-function AgeCompactness: TCompactness;
+function AgeCompactness: SayableAgeTypes.TCompactness;
 begin
-  if OptCompactness = 'short' then Result := csShort
-  else if OptCompactness = 'compact' then Result := csCompact
-  else Result := csNormal;
+  if OptCompactness = 'short' then Result := SayableAgeTypes.csShort
+  else if OptCompactness = 'compact' then Result := SayableAgeTypes.csCompact
+  else Result := SayableAgeTypes.csNormal;
 end;
 
-function DateCompactness: TDateCompactness;
+function DateCompactness: SayableDateTypes.TCompactness;
 begin
-  if OptCompactness = 'short' then Result := dcShort
-  else if OptCompactness = 'compact' then Result := dcCompact
-  else Result := dcNormal;
+  if OptCompactness = 'short' then Result := SayableDateTypes.csShort
+  else if OptCompactness = 'compact' then Result := SayableDateTypes.csCompact
+  else Result := SayableDateTypes.csNormal;
 end;
 
-function DurCompactness: TDurCompactness;
+function DurCompactness: SayableDurationTypes.TCompactness;
 begin
-  if OptCompactness = 'short' then Result := durShort
-  else if OptCompactness = 'compact' then Result := durCompact
-  else Result := durNormal;
+  if OptCompactness = 'short' then Result := SayableDurationTypes.csShort
+  else if OptCompactness = 'compact' then Result := SayableDurationTypes.csCompact
+  else Result := SayableDurationTypes.csNormal;
 end;
 
-function TimeCompact: TTimeCompactness;
+function TimeCompact: SayableTimeTypes.TCompactness;
 begin
-  if OptCompactness = 'short' then Result := tcShort
-  else if OptCompactness = 'compact' then Result := tcCompact
-  else Result := tcNormal;
+  if OptCompactness = 'short' then Result := SayableTimeTypes.csShort
+  else if OptCompactness = 'compact' then Result := SayableTimeTypes.csCompact
+  else Result := SayableTimeTypes.csNormal;
 end;
 
-procedure CmdAge;
+function CmdAge: Integer;
 var
   Loc: TAgeLocale;
   LPtr: TAgeLocalePtr;
@@ -216,7 +227,7 @@ var
 begin
   if PositionalCount < 1 then WriteError('age requires a date-of-birth argument');
 
-  LPtr := GetLocale(OptLocale);
+  LPtr := SayableAge.GetLocale(OptLocale);
   if LPtr = nil then WriteError('unknown locale ''' + OptLocale + '''');
   Loc := LPtr^;
 
@@ -231,12 +242,13 @@ begin
     AsOf := GetTodayStr;
 
   Res := FormatAge(Loc, AgeCompactness, Dob, AsOf);
-  if IsNullResult(Res) then
-    Halt(1);
-  WriteLn(Res);
+  if SayableAge.IsNullResult(Res) then
+    exit(1);
+  Emit(Res);
+  Result := 0;
 end;
 
-procedure CmdStage;
+function CmdStage: Integer;
 var
   Loc: TAgeLocale;
   LPtr: TAgeLocalePtr;
@@ -244,7 +256,7 @@ var
 begin
   if PositionalCount < 1 then WriteError('stage requires a date-of-birth argument');
 
-  LPtr := GetLocale(OptLocale);
+  LPtr := SayableAge.GetLocale(OptLocale);
   if LPtr = nil then WriteError('unknown locale ''' + OptLocale + '''');
   Loc := LPtr^;
 
@@ -260,12 +272,13 @@ begin
 
   Gender := OptGender;
   Res := FormatStage(Loc, Dob, AsOf, Gender);
-  if IsNullResult(Res) then
-    Halt(1);
-  WriteLn(Res);
+  if SayableAge.IsNullResult(Res) then
+    exit(1);
+  Emit(Res);
+  Result := 0;
 end;
 
-procedure CmdDate;
+function CmdDate: Integer;
 var
   Loc: TDateLocale;
   LPtr: TDateLocalePtr;
@@ -273,7 +286,7 @@ var
 begin
   if PositionalCount < 1 then WriteError('date requires a date argument');
 
-  LPtr := GetDateLocale(OptLocale);
+  LPtr := SayableDate.GetLocale(OptLocale);
   if LPtr = nil then WriteError('unknown locale ''' + OptLocale + '''');
   Loc := LPtr^;
 
@@ -287,12 +300,13 @@ begin
   else
     Res := SayableDate.FormatDate(Loc, DateCompactness, DateVal);
 
-  if IsDateNullResult(Res) then
-    Halt(1);
-  WriteLn(Res);
+  if SayableDate.IsNullResult(Res) then
+    exit(1);
+  Emit(Res);
+  Result := 0;
 end;
 
-procedure CmdRelative;
+function CmdRelative: Integer;
 var
   Loc: TDateLocale;
   LPtr: TDateLocalePtr;
@@ -304,7 +318,7 @@ begin
     WriteError('relative requires --as-of / -d option');
   AsOf := Nullify(OptAsOf);
 
-  LPtr := GetDateLocale(OptLocale);
+  LPtr := SayableDate.GetLocale(OptLocale);
   if LPtr = nil then WriteError('unknown locale ''' + OptLocale + '''');
   Loc := LPtr^;
 
@@ -314,12 +328,13 @@ begin
     DateVal := Positionals[0];
 
   Res := FormatRelative(Loc, DateCompactness, DateVal, AsOf);
-  if IsDateNullResult(Res) then
-    Halt(1);
-  WriteLn(Res);
+  if SayableDate.IsNullResult(Res) then
+    exit(1);
+  Emit(Res);
+  Result := 0;
 end;
 
-procedure CmdTime;
+function CmdTime: Integer;
 var
   Loc: TTimeLocale;
   LPtr: TTimeLocalePtr;
@@ -327,7 +342,7 @@ var
 begin
   if PositionalCount < 1 then WriteError('time requires a time argument');
 
-  LPtr := GetTimeLocale(OptLocale);
+  LPtr := SayableTime.GetLocale(OptLocale);
   if LPtr = nil then WriteError('unknown locale ''' + OptLocale + '''');
   Loc := LPtr^;
 
@@ -337,12 +352,13 @@ begin
     TimeVal := Positionals[0];
 
   Res := SayableTime.FormatTime(Loc, TimeCompact, TimeVal);
-  if IsTimeNullResult(Res) then
-    Halt(1);
-  WriteLn(Res);
+  if SayableTime.IsNullResult(Res) then
+    exit(1);
+  Emit(Res);
+  Result := 0;
 end;
 
-procedure CmdDuration;
+function CmdDuration: Integer;
 var
   Loc: TDurationLocale;
   LPtr: TDurationLocalePtr;
@@ -351,15 +367,16 @@ var
 begin
   if PositionalCount < 1 then WriteError('duration requires a value argument');
 
-  LPtr := GetDurLocale(OptLocale);
+  LPtr := SayableDuration.GetLocale(OptLocale);
   if LPtr = nil then WriteError('unknown locale ''' + OptLocale + '''');
   Loc := LPtr^;
 
   if IsNullArg(Positionals[0]) then begin
     Res := FormatDuration(Loc, DurCompactness, -1);
-    if IsDurNullResult(Res) then Halt(1);
-    WriteLn(Res);
-    exit;
+    if SayableDuration.IsNullResult(Res) then
+      exit(1);
+    Emit(Res);
+    exit(0);
   end;
 
   Value := Positionals[0];
@@ -380,12 +397,13 @@ begin
     Res := FormatDurationISO(Loc, DurCompactness, Value, EndVal);
   end;
 
-  if IsDurNullResult(Res) then
-    Halt(1);
-  WriteLn(Res);
+  if SayableDuration.IsNullResult(Res) then
+    exit(1);
+  Emit(Res);
+  Result := 0;
 end;
 
-procedure CmdSince;
+function CmdSince: Integer;
 var
   Loc: TDurationLocale;
   LPtr: TDurationLocalePtr;
@@ -397,7 +415,7 @@ begin
     WriteError('since requires --as-of / -d option');
   AsOf := Nullify(OptAsOf);
 
-  LPtr := GetDurLocale(OptLocale);
+  LPtr := SayableDuration.GetLocale(OptLocale);
   if LPtr = nil then WriteError('unknown locale ''' + OptLocale + '''');
   Loc := LPtr^;
 
@@ -407,12 +425,13 @@ begin
     Start := Positionals[0];
 
   Res := FormatSince(Loc, DurCompactness, Start, AsOf);
-  if IsDurNullResult(Res) then
-    Halt(1);
-  WriteLn(Res);
+  if SayableDuration.IsNullResult(Res) then
+    exit(1);
+  Emit(Res);
+  Result := 0;
 end;
 
-procedure CmdUntil;
+function CmdUntil: Integer;
 var
   Loc: TDurationLocale;
   LPtr: TDurationLocalePtr;
@@ -424,7 +443,7 @@ begin
     WriteError('until requires --as-of / -d option');
   AsOf := Nullify(OptAsOf);
 
-  LPtr := GetDurLocale(OptLocale);
+  LPtr := SayableDuration.GetLocale(OptLocale);
   if LPtr = nil then WriteError('unknown locale ''' + OptLocale + '''');
   Loc := LPtr^;
 
@@ -434,9 +453,10 @@ begin
     Target := Positionals[0];
 
   Res := FormatUntil(Loc, DurCompactness, Target, AsOf);
-  if IsDurNullResult(Res) then
-    Halt(1);
-  WriteLn(Res);
+  if SayableDuration.IsNullResult(Res) then
+    exit(1);
+  Emit(Res);
+  Result := 0;
 end;
 
 procedure CmdLocales;
@@ -621,7 +641,7 @@ begin
   AllCount := 168;
 
   for I := 0 to AllCount - 1 do begin
-    LPtr := GetLocale(AllCodes[I]);
+    LPtr := SayableAge.GetLocale(AllCodes[I]);
     if LPtr <> nil then begin
       Codes[CodeCount] := AllCodes[I];
       Inc(CodeCount);
@@ -629,39 +649,110 @@ begin
   end;
 
   for I := 0 to CodeCount - 1 do
-    WriteLn(Codes[I]);
+    Emit(Codes[I]);
+end;
+
+{ Runs the request in Args, leaving its stdout in OutText; returns the exit
+  code. Unexpected exceptions propagate, so one-shot runs fail as before. }
+function Run: Integer;
+begin
+  OutText := '';
+  Result := 0;
+  try
+    ParseArgs;
+    if Command = '' then begin
+      PrintHelp;
+      Result := 2;
+    end
+    else if Command = 'help' then PrintHelp
+    else if Command = 'version' then Emit('sayable ' + CliVersion)
+    else if Command = 'locales' then CmdLocales
+    else if Command = 'age' then Result := CmdAge
+    else if Command = 'stage' then Result := CmdStage
+    else if Command = 'date' then Result := CmdDate
+    else if Command = 'relative' then Result := CmdRelative
+    else if Command = 'time' then Result := CmdTime
+    else if Command = 'duration' then Result := CmdDuration
+    else if Command = 'since' then Result := CmdSince
+    else if Command = 'until' then Result := CmdUntil
+    else WriteError('unknown command ''' + Command + '''');
+  except
+    on EUsageError do
+      Result := 2;
+  end;
+end;
+
+procedure LoadCommandLine;
+var
+  I: Integer;
+begin
+  SetLength(Args, ParamCount);
+  for I := 1 to ParamCount do
+    Args[I - 1] := ParamStr(I);
+end;
+
+{ Splits a REPL request on tabs, keeping empty fields. }
+procedure LoadRequest(const ALine: string);
+var
+  I, Start: Integer;
+begin
+  SetLength(Args, 0);
+  Start := 1;
+  for I := 1 to Length(ALine) + 1 do
+    if (I > Length(ALine)) or (ALine[I] = #9) then begin
+      SetLength(Args, Length(Args) + 1);
+      Args[High(Args)] := Copy(ALine, Start, I - Start);
+      Start := I + 1;
+    end;
+end;
+
+function StripCarriageReturn(const ALine: string): string;
+begin
+  Result := ALine;
+  if (Result <> '') and (Result[Length(Result)] = #13) then
+    SetLength(Result, Length(Result) - 1);
+end;
+
+{ OutText as a single response field: no trailing newline, inner newlines as tabs. }
+function ResponseText: string;
+begin
+  Result := OutText;
+  if (Result <> '') and (RightStr(Result, Length(LineEnding)) = LineEnding) then
+    SetLength(Result, Length(Result) - Length(LineEnding));
+  Result := StringReplace(Result, LineEnding, #9, [rfReplaceAll]);
+end;
+
+procedure Repl;
+var
+  Line: string;
+  Code: Integer;
+begin
+  while not EOF(Input) do begin
+    ReadLn(Line);
+    LoadRequest(StripCarriageReturn(Line));
+    try
+      Code := Run;
+    except
+      { A crash exits 1 in one-shot mode; report it and keep serving. }
+      on E: Exception do begin
+        WriteLn(StdErr, 'error: ', E.ClassName, ': ', E.Message);
+        OutText := '';
+        Code := 1;
+      end;
+    end;
+    WriteLn(Code, #9, ResponseText);
+    Flush(Output);
+  end;
 end;
 
 begin
-  ParseArgs;
-
-  if Command = '' then begin
-    PrintHelp;
-    Halt(2);
-  end;
-
-  if Command = 'help' then begin
-    PrintHelp;
+  if (ParamCount = 1) and (ParamStr(1) = '--repl') then begin
+    Repl;
     Halt(0);
   end;
 
-  if Command = 'version' then begin
-    WriteLn('sayable ', CliVersion);
-    Halt(0);
-  end;
-
-  if Command = 'locales' then begin
-    CmdLocales;
-    Halt(0);
-  end;
-
-  if Command = 'age' then CmdAge
-  else if Command = 'stage' then CmdStage
-  else if Command = 'date' then CmdDate
-  else if Command = 'relative' then CmdRelative
-  else if Command = 'time' then CmdTime
-  else if Command = 'duration' then CmdDuration
-  else if Command = 'since' then CmdSince
-  else if Command = 'until' then CmdUntil
-  else WriteError('unknown command ''' + Command + '''');
+  LoadCommandLine;
+  ExitCode := Run;
+  Write(OutText);
+  Halt(ExitCode);
 end.

@@ -8,7 +8,8 @@ BIN="${DIR}/dist-newstyle/sayable-cli"
 # Build if binary doesn't exist or Main.hs is newer
 if [[ ! -x "${BIN}" ]] || [[ "${DIR}/Main.hs" -nt "${BIN}" ]]; then
     cd "${DIR}"
-    cabal build exe:sayable-cli --project-file=cabal.project 2>/dev/null
+    # Build chatter goes to stderr so stdout carries only command output.
+    cabal build exe:sayable-cli --project-file=cabal.project >&2 2>/dev/null
     # Find and copy the built binary
     BUILT=$(cabal list-bin exe:sayable-cli --project-file=cabal.project 2>/dev/null)
     mkdir -p "${DIR}/dist-newstyle"

@@ -71,7 +71,6 @@ impl/nim/sayable-nim
 
 # OCaml
 impl/ocaml/_build/
-impl/ocaml/bin/
 
 # Pascal
 impl/pascal/build/

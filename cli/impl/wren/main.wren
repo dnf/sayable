@@ -3,10 +3,13 @@
 //
 // Note: wren_cli 0.4.0 has no Process.exit() or stderr support.
 // Exit codes and stderr are handled by the shell wrapper (sayable).
-// This script uses special output prefixes:
+// A one-shot run uses special output prefixes:
 //   __EXIT_1__ = null result
 //   __EXIT_2__<message> = usage error with message
+// In --repl mode each response is one stdout line, and a line starting with
+// __STDERR__ is a message the wrapper moves to stderr.
 
+import "io" for Stdin, Stdout
 import "os" for Process
 
 import "../../../age/impl/wren/sayableage" for SayableAge
@@ -45,36 +48,53 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version"
 
-class Cli {
-  static errorExit(msg) {
-    System.print("__EXIT_2__%(msg)")
-    Fiber.abort("exit")
-  }
+// A usage error: the run exits 2 after reporting message (null: print help).
+class UsageError {
+  construct new(message) { _message = message }
+  message { _message }
+}
 
-  static nullExit() {
-    System.print("__EXIT_1__")
-    Fiber.abort("exit")
+// The outcome of one command: what it would exit with and print to stdout,
+// and for exit 2 the UsageError that caused it.
+class RunResult {
+  construct new(code, output) {
+    _code = code
+    _output = output
   }
+  construct usage(error) {
+    _code = 2
+    _usageError = error
+  }
+  code { _code }
+  output { _output }
+  usageError { _usageError }
+}
+
+class Cli {
+  static errorExit(msg) { Fiber.abort(UsageError.new(msg)) }
 
   static nullify(value) {
     if (value == "null") return null
     return value
   }
 
+  // Runs one command as the one-shot CLI would, without printing or exiting.
   static run(args) {
-    if (args.count == 0) {
-      System.print("__EXIT_2_HELP__")
-      Fiber.abort("exit")
-    }
+    var fiber = Fiber.new { dispatch(args) }
+    var output = fiber.try()
+    if (fiber.error is UsageError) return RunResult.usage(fiber.error)
+    if (fiber.error != null) Fiber.abort(fiber.error)
+    if (output == null) return RunResult.new(1, null)
+    return RunResult.new(0, output)
+  }
+
+  static dispatch(args) {
+    if (args.count == 0) Fiber.abort(UsageError.new(null))
 
     // Global flags
-    if (args[0] == "-h" || args[0] == "--help" || args[0] == "help") {
-      System.print(HELP)
-      return
-    }
+    if (args[0] == "-h" || args[0] == "--help" || args[0] == "help") return HELP
     if (args[0] == "-v" || args[0] == "--version" || args[0] == "version") {
-      System.print("sayable %(VERSION)")
-      return
+      return "sayable %(VERSION)"
     }
 
     var command = args[0]
@@ -111,11 +131,9 @@ class Cli {
         } else if (a == "--with-year") {
           withYear = true
         } else if (a == "-h" || a == "--help") {
-          System.print(HELP)
-          return
+          return HELP
         } else if (a == "-v" || a == "--version") {
-          System.print("sayable %(VERSION)")
-          return
+          return "sayable %(VERSION)"
         } else {
           errorExit("unknown option '%(a)'")
         }
@@ -125,30 +143,16 @@ class Cli {
       i = i + 1
     }
 
-    if (command == "locales") {
-      cmdLocales()
-      return
-    }
-
-    if (command == "age") {
-      cmdAge(positionals, locale, asOf, compactness)
-    } else if (command == "stage") {
-      cmdStage(positionals, locale, asOf, compactness, gender)
-    } else if (command == "date") {
-      cmdDate(positionals, locale, compactness, withYear)
-    } else if (command == "relative") {
-      cmdRelative(positionals, locale, asOf, compactness)
-    } else if (command == "time") {
-      cmdTime(positionals, locale, compactness)
-    } else if (command == "duration") {
-      cmdDuration(positionals, locale, compactness)
-    } else if (command == "since") {
-      cmdSince(positionals, locale, asOf, compactness)
-    } else if (command == "until") {
-      cmdUntil(positionals, locale, asOf, compactness)
-    } else {
-      errorExit("unknown command '%(command)'")
-    }
+    if (command == "locales") return cmdLocales()
+    if (command == "age") return cmdAge(positionals, locale, asOf, compactness)
+    if (command == "stage") return cmdStage(positionals, locale, asOf, compactness, gender)
+    if (command == "date") return cmdDate(positionals, locale, compactness, withYear)
+    if (command == "relative") return cmdRelative(positionals, locale, asOf, compactness)
+    if (command == "time") return cmdTime(positionals, locale, compactness)
+    if (command == "duration") return cmdDuration(positionals, locale, compactness)
+    if (command == "since") return cmdSince(positionals, locale, asOf, compactness)
+    if (command == "until") return cmdUntil(positionals, locale, asOf, compactness)
+    errorExit("unknown command '%(command)'")
   }
 
   static cmdAge(positionals, localeCode, asOf, compactness) {
@@ -163,11 +167,7 @@ class Cli {
 
     var fmt = SayableAge.new(loc, compactness)
     var result = fmt.formatAge(dob, asOf)
-    if (result == null) {
-      nullExit()
-      return
-    }
-    System.print(result)
+    return result
   }
 
   static cmdStage(positionals, localeCode, asOf, compactness, gender) {
@@ -187,11 +187,7 @@ class Cli {
     } else {
       result = fmt.formatStage(dob, asOf)
     }
-    if (result == null) {
-      nullExit()
-      return
-    }
-    System.print(result)
+    return result
   }
 
   static cmdDate(positionals, localeCode, compactness, withYear) {
@@ -208,11 +204,7 @@ class Cli {
     } else {
       result = fmt.formatDate(dateVal)
     }
-    if (result == null) {
-      nullExit()
-      return
-    }
-    System.print(result)
+    return result
   }
 
   static cmdRelative(positionals, localeCode, asOf, compactness) {
@@ -227,11 +219,7 @@ class Cli {
 
     var fmt = SayableDate.new(loc, compactness)
     var result = fmt.formatRelative(dateVal, asOf)
-    if (result == null) {
-      nullExit()
-      return
-    }
-    System.print(result)
+    return result
   }
 
   static cmdTime(positionals, localeCode, compactness) {
@@ -243,11 +231,7 @@ class Cli {
 
     var fmt = SayableTime.new(loc, compactness)
     var result = fmt.formatTime(timeVal)
-    if (result == null) {
-      nullExit()
-      return
-    }
-    System.print(result)
+    return result
   }
 
   static cmdDuration(positionals, localeCode, compactness) {
@@ -276,11 +260,7 @@ class Cli {
         result = fmt.formatDuration(value, endVal)
       }
     }
-    if (result == null) {
-      nullExit()
-      return
-    }
-    System.print(result)
+    return result
   }
 
   static cmdSince(positionals, localeCode, asOf, compactness) {
@@ -295,11 +275,7 @@ class Cli {
 
     var fmt = SayableDuration.new(loc, compactness)
     var result = fmt.formatSince(start, asOf)
-    if (result == null) {
-      nullExit()
-      return
-    }
-    System.print(result)
+    return result
   }
 
   static cmdUntil(positionals, localeCode, asOf, compactness) {
@@ -314,11 +290,7 @@ class Cli {
 
     var fmt = SayableDuration.new(loc, compactness)
     var result = fmt.formatUntil(target, asOf)
-    if (result == null) {
-      nullExit()
-      return
-    }
-    System.print(result)
+    return result
   }
 
   static cmdLocales() {
@@ -339,9 +311,81 @@ class Cli {
       "tk", "tn", "tr", "ts", "tzm", "uk", "umb", "ur", "uz", "vi",
       "vmw", "wo", "xh", "yo", "yue", "zdj", "zh", "zu"
     ]
-    for (code in codes) {
-      System.print(code)
+    return codes.join("\n")
+  }
+}
+
+// One-shot mode: report the result through the wrapper's output prefixes.
+class OneShot {
+  static run(args) {
+    var result = Cli.run(args)
+    if (result.code == 0) {
+      System.print(result.output)
+    } else if (result.code == 1) {
+      System.print("__EXIT_1__")
+      Fiber.abort("exit")
+    } else if (result.usageError.message == null) {
+      System.print("__EXIT_2_HELP__")
+      Fiber.abort("exit")
+    } else {
+      System.print("__EXIT_2__%(result.usageError.message)")
+      Fiber.abort("exit")
     }
+  }
+}
+
+// Answers one tab-separated request per stdin line (see cli/SPEC.md).
+//
+// wren_cli 0.4.0 cannot tell a blank line from end of input and crashes once
+// stdin closes, so the wrapper ends the input with endOfRequests instead.
+class Repl {
+  static endOfRequests { "\x1c" }
+
+  static run() {
+    while (true) {
+      var line = Stdin.readLine()
+      var isLast = line.endsWith(endOfRequests)
+      if (isLast) line = withoutLastByte(line)
+      if (line.endsWith("\r")) line = withoutLastByte(line)
+      if (!isLast || !line.isEmpty) {
+        System.print(respond(line.split("\t")))
+        Stdout.flush()
+      }
+      if (isLast) return
+    }
+  }
+
+  static respond(args) {
+    var fiber = Fiber.new { Cli.run(args) }
+    var result = fiber.try()
+    if (fiber.error != null) {
+      // A crash exits non-zero in one-shot mode; keep serving.
+      stderr("%(fiber.error)")
+      return "1\t"
+    }
+    if (result.code == 2) {
+      var message = result.usageError.message
+      if (message == null) {
+        for (helpLine in HELP.split("\n")) stderr(helpLine)
+        return "2\t"
+      }
+      stderr("error: %(message)")
+      stderr("Run 'sayable help' for usage.")
+      return "2\t"
+    }
+    return "%(result.code)\t%(tabbed(result.output))"
+  }
+
+  static tabbed(output) {
+    if (output == null) return ""
+    while (output.endsWith("\n")) output = withoutLastByte(output)
+    return output.replace("\n", "\t")
+  }
+
+  static withoutLastByte(text) { text[0...(text.bytes.count - 1)] }
+
+  static stderr(message) {
+    System.print("__STDERR__%(message.replace("\n", " "))")
   }
 }
 
@@ -354,4 +398,8 @@ while (idx < allArgs.count) {
   idx = idx + 1
 }
 
-Cli.run(userArgs)
+if (userArgs.count == 1 && userArgs[0] == "--repl") {
+  Repl.run()
+} else {
+  OneShot.run(userArgs)
+}

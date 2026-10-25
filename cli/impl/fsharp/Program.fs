@@ -46,10 +46,15 @@ let private defaultOptions =
       Gender = None
       WithYear = false }
 
+/// What one invocation prints to stdout (None: nothing) and the code it exits with.
+type private Outcome = { ExitCode: int; Output: string option }
+
+let private printing (output: string) = { ExitCode = 0; Output = Some output }
+
 let private printError (msg: string) =
     eprintfn "error: %s" msg
     eprintfn "Run 'sayable help' for usage."
-    2
+    { ExitCode = 2; Output = None }
 
 let private nullify (s: string) : string option =
     if s = "null" then None else Some s
@@ -97,14 +102,12 @@ let private toDurationCompactness (s: string) : SayableDurationLib.Types.Compact
     | "compact" -> SayableDurationLib.Types.Compactness.Compact
     | _ -> SayableDurationLib.Types.Compactness.Normal
 
-let private printResult (result: string option) : int =
+let private printResult (result: string option) : Outcome =
     match result with
-    | Some s ->
-        printfn "%s" s
-        0
-    | None -> 1
+    | Some s -> printing s
+    | None -> { ExitCode = 1; Output = None }
 
-let private cmdAge (positionals: string list) (opts: Options) : int =
+let private cmdAge (positionals: string list) (opts: Options) : Outcome =
     match positionals with
     | [] -> printError "age requires a date-of-birth argument"
     | dobArg :: _ ->
@@ -119,7 +122,7 @@ let private cmdAge (positionals: string list) (opts: Options) : int =
             let formatter = SayableAgeLib.Formatter.SayableAgeFormatter(locale, toAgeCompactness opts.Compactness)
             printResult (formatter.FormatAge(dob, ?asOf = Some asOf))
 
-let private cmdStage (positionals: string list) (opts: Options) : int =
+let private cmdStage (positionals: string list) (opts: Options) : Outcome =
     match positionals with
     | [] -> printError "stage requires a date-of-birth argument"
     | dobArg :: _ ->
@@ -135,7 +138,7 @@ let private cmdStage (positionals: string list) (opts: Options) : int =
             let formatter = SayableAgeLib.Formatter.SayableAgeFormatter(locale, toAgeCompactness opts.Compactness)
             printResult (formatter.FormatStage(dob, ?asOf = Some asOf, ?gender = Some gender))
 
-let private cmdDate (positionals: string list) (opts: Options) : int =
+let private cmdDate (positionals: string list) (opts: Options) : Outcome =
     match positionals with
     | [] -> printError "date requires a date argument"
     | dateArg :: _ ->
@@ -149,7 +152,7 @@ let private cmdDate (positionals: string list) (opts: Options) : int =
                 else formatter.FormatDate(dateVal)
             printResult result
 
-let private cmdRelative (positionals: string list) (opts: Options) : int =
+let private cmdRelative (positionals: string list) (opts: Options) : Outcome =
     match positionals with
     | [] -> printError "relative requires a date argument"
     | dateArg :: _ ->
@@ -164,7 +167,7 @@ let private cmdRelative (positionals: string list) (opts: Options) : int =
                 let formatter = SayableDateLib.Formatter.SayableDateFormatter(locale, toDateCompactness opts.Compactness)
                 printResult (formatter.FormatRelative(dateVal, asOf))
 
-let private cmdTime (positionals: string list) (opts: Options) : int =
+let private cmdTime (positionals: string list) (opts: Options) : Outcome =
     match positionals with
     | [] -> printError "time requires a time argument"
     | timeArg :: _ ->
@@ -175,7 +178,7 @@ let private cmdTime (positionals: string list) (opts: Options) : int =
             let formatter = SayableTimeLib.Formatter.SayableTimeFormatter(locale, toTimeCompactness opts.Compactness)
             printResult (formatter.FormatTime(timeVal))
 
-let private cmdDuration (positionals: string list) (opts: Options) : int =
+let private cmdDuration (positionals: string list) (opts: Options) : Outcome =
     match positionals with
     | [] -> printError "duration requires a value argument"
     | valueArg :: rest ->
@@ -185,7 +188,7 @@ let private cmdDuration (positionals: string list) (opts: Options) : int =
         | Some locale ->
             let formatter = SayableDurationLib.Formatter.SayableDurationFormatter(locale, toDurationCompactness opts.Compactness)
             match value with
-            | None -> 1
+            | None -> printResult None
             | Some v when isInteger v ->
                 let seconds = Int32.Parse(v)
                 printResult (formatter.FormatDurationSeconds(seconds))
@@ -194,7 +197,7 @@ let private cmdDuration (positionals: string list) (opts: Options) : int =
                 | [] -> printError "duration with timestamps requires start and end arguments"
                 | endArg :: _ -> printResult (formatter.FormatDurationIso(v, endArg))
 
-let private cmdSince (positionals: string list) (opts: Options) : int =
+let private cmdSince (positionals: string list) (opts: Options) : Outcome =
     match positionals with
     | [] -> printError "since requires a start timestamp argument"
     | startArg :: _ ->
@@ -209,7 +212,7 @@ let private cmdSince (positionals: string list) (opts: Options) : int =
                 let formatter = SayableDurationLib.Formatter.SayableDurationFormatter(locale, toDurationCompactness opts.Compactness)
                 printResult (formatter.FormatSince(start, asOf))
 
-let private cmdUntil (positionals: string list) (opts: Options) : int =
+let private cmdUntil (positionals: string list) (opts: Options) : Outcome =
     match positionals with
     | [] -> printError "until requires a target timestamp argument"
     | targetArg :: _ ->
@@ -224,13 +227,13 @@ let private cmdUntil (positionals: string list) (opts: Options) : int =
                 let formatter = SayableDurationLib.Formatter.SayableDurationFormatter(locale, toDurationCompactness opts.Compactness)
                 printResult (formatter.FormatUntil(target, asOf))
 
-let private cmdLocales () : int =
+let private cmdLocales () : Outcome =
     SayableAgeLib.Locales.All
     |> Map.toSeq
     |> Seq.map fst
     |> Seq.sort
-    |> Seq.iter (fun code -> printfn "%s" code)
-    0
+    |> String.concat "\n"
+    |> printing
 
 type private ParseResult =
     | Parsed of command: string * positionals: string list * options: Options
@@ -301,24 +304,14 @@ let private parseArgs (argv: string[]) : ParseResult =
                 | Some cmd -> Parsed(cmd, [], defaultOptions)
                 | None -> Parsed(command, positionals, opts)
 
-[<EntryPoint>]
-let main (argv: string[]) : int =
+let private run (argv: string[]) : Outcome =
     match parseArgs argv with
-    | ParseError msg ->
-        eprintfn "error: %s" msg
-        eprintfn "Run 'sayable help' for usage."
-        2
+    | ParseError msg -> printError msg
     | Parsed(command, positionals, opts) ->
         match command with
-        | "help-no-args" ->
-            printfn "%s" helpText
-            2
-        | "help" ->
-            printfn "%s" helpText
-            0
-        | "version" ->
-            printfn "sayable %s" CliVersion
-            0
+        | "help-no-args" -> { ExitCode = 2; Output = Some helpText }
+        | "help" -> printing helpText
+        | "version" -> printing (sprintf "sayable %s" CliVersion)
         | "locales" -> cmdLocales ()
         | "age" -> cmdAge positionals opts
         | "stage" -> cmdStage positionals opts
@@ -329,3 +322,31 @@ let main (argv: string[]) : int =
         | "since" -> cmdSince positionals opts
         | "until" -> cmdUntil positionals opts
         | _ -> printError (sprintf "unknown command '%s'" command)
+
+/// A crash must not end the REPL: the request answers 1 (cli/SPEC.md) and the error goes to stderr.
+let private runCatchingCrashes (argv: string[]) : Outcome =
+    try
+        run argv
+    with e ->
+        eprintfn "%O" e
+        { ExitCode = 1; Output = None }
+
+/// Answers one tab-separated request per stdin line (see cli/SPEC.md, "REPL Mode").
+let private repl () : int =
+    let mutable line = Console.In.ReadLine()
+    while not (isNull line) do
+        let outcome = runCatchingCrashes (line.Split('\t'))
+        let output = outcome.Output |> Option.map (fun o -> o.Replace('\n', '\t')) |> Option.defaultValue ""
+        Console.Out.Write(sprintf "%d\t%s\n" outcome.ExitCode output)
+        Console.Out.Flush()
+        line <- Console.In.ReadLine()
+    0
+
+[<EntryPoint>]
+let main (argv: string[]) : int =
+    match argv with
+    | [| "--repl" |] -> repl ()
+    | _ ->
+        let outcome = run argv
+        outcome.Output |> Option.iter (printfn "%s")
+        outcome.ExitCode

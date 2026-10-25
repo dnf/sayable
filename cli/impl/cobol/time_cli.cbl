@@ -1,11 +1,14 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. TIME-CLI.
+       PROGRAM-ID. TIME-CLI IS INITIAL.
+      *> INITIAL: every CALL starts from fresh WORKING-STORAGE, so
+      *> options and locale fields never leak between REPL requests.
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
 
       *> CLI argument handling
        01 WS-ARG-COUNT         PIC 9(4).
+       01 WS-EMIT-TEXT         PIC X(1024).
        01 WS-ARG-VAL           PIC X(256).
        01 WS-CMD               PIC X(20).
        01 WS-POS1              PIC X(256).
@@ -17,22 +20,23 @@
 
        COPY "time/impl/cobol/src/Types.cbl".
 
-       PROCEDURE DIVISION.
+       LINKAGE SECTION.
+       COPY "cli/impl/cobol/request.cpy".
+
+       PROCEDURE DIVISION USING SAYABLE-REQUEST.
        MAIN-PROGRAM.
-           ACCEPT WS-ARG-COUNT FROM ARGUMENT-NUMBER
+           MOVE REQ-ARG-COUNT TO WS-ARG-COUNT
            IF WS-ARG-COUNT < 1
                DISPLAY "error: missing command" UPON SYSERR
-               MOVE 2 TO RETURN-CODE
-               STOP RUN
+               MOVE 2 TO REQ-EXIT-CODE
+               GOBACK
            END-IF
 
-           DISPLAY 1 UPON ARGUMENT-NUMBER
-           ACCEPT WS-CMD FROM ARGUMENT-VALUE
+           MOVE REQ-ARG(1) TO WS-CMD
 
            MOVE 2 TO WS-ARG-IDX
            PERFORM UNTIL WS-ARG-IDX > WS-ARG-COUNT
-               DISPLAY WS-ARG-IDX UPON ARGUMENT-NUMBER
-               ACCEPT WS-ARG-VAL FROM ARGUMENT-VALUE
+               MOVE REQ-ARG(WS-ARG-IDX) TO WS-ARG-VAL
 
                IF WS-STOP-OPTS = 0
                    AND WS-ARG-VAL(1:2) = "--"
@@ -53,13 +57,10 @@
                            IF WS-ARG-IDX > WS-ARG-COUNT
                                DISPLAY "error: '--locale' requ"
                                    "ires a value" UPON SYSERR
-                               MOVE 2 TO RETURN-CODE
-                               STOP RUN
+                               MOVE 2 TO REQ-EXIT-CODE
+                               GOBACK
                            END-IF
-                           DISPLAY WS-ARG-IDX
-                               UPON ARGUMENT-NUMBER
-                           ACCEPT WS-OPT-LOCALE
-                               FROM ARGUMENT-VALUE
+                           MOVE REQ-ARG(WS-ARG-IDX) TO WS-OPT-LOCALE
                        WHEN "--short"
                            MOVE 1 TO WS-OPT-COMPACTNESS
                        WHEN "--compact"
@@ -71,8 +72,8 @@
                            DISPLAY
                                "Run 'sayable help' for usage."
                                UPON SYSERR
-                           MOVE 2 TO RETURN-CODE
-                           STOP RUN
+                           MOVE 2 TO REQ-EXIT-CODE
+                           GOBACK
                    END-EVALUATE
                ELSE
                    IF WS-POS1-SET = 0
@@ -91,9 +92,9 @@
                        FUNCTION TRIM(WS-CMD) "'" UPON SYSERR
                    DISPLAY "Run 'sayable help' for usage."
                        UPON SYSERR
-                   MOVE 2 TO RETURN-CODE
+                   MOVE 2 TO REQ-EXIT-CODE
            END-EVALUATE
-           STOP RUN.
+           GOBACK.
 
        CMD-TIME.
            IF WS-POS1-SET = 0
@@ -101,17 +102,17 @@
                    UPON SYSERR
                DISPLAY "Run 'sayable help' for usage."
                    UPON SYSERR
-               MOVE 2 TO RETURN-CODE
+               MOVE 2 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
            IF FUNCTION TRIM(WS-POS1) = "null"
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
            IF FUNCTION TRIM(WS-POS1) = SPACES
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
@@ -122,7 +123,7 @@
                    FUNCTION TRIM(WS-OPT-LOCALE) "'" UPON SYSERR
                DISPLAY "Run 'sayable help' for usage."
                    UPON SYSERR
-               MOVE 2 TO RETURN-CODE
+               MOVE 2 TO REQ-EXIT-CODE
                EXIT PARAGRAPH
            END-IF
 
@@ -131,11 +132,20 @@
            PERFORM FORMAT-TIME
 
            IF FUNCTION TRIM(WS-FORMAT-RESULT) = SPACES
-               MOVE 1 TO RETURN-CODE
+               MOVE 1 TO REQ-EXIT-CODE
            ELSE
-               DISPLAY FUNCTION TRIM(WS-FORMAT-RESULT)
-               MOVE 0 TO RETURN-CODE
+               MOVE WS-FORMAT-RESULT TO WS-EMIT-TEXT
+               PERFORM EMIT-LINE
+               MOVE 0 TO REQ-EXIT-CODE
            END-IF
+           .
+
+      *> Appends one stdout line to the response.
+       EMIT-LINE.
+           STRING FUNCTION TRIM(WS-EMIT-TEXT) X"0A"
+               DELIMITED BY SIZE
+               INTO REQ-OUTPUT WITH POINTER REQ-OUTPUT-PTR
+           END-STRING
            .
 
        COPY "time/impl/cobol/src/SayableTime.cbl".

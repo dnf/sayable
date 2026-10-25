@@ -8,7 +8,8 @@ BINARY="${SCRIPT_DIR}/sayable-crystal"
 
 # Recompile if binary is missing or source is newer
 if [[ ! -f "${BINARY}" ]] || [[ "${SOURCE}" -nt "${BINARY}" ]]; then
-    crystal build "${SOURCE}" -o "${BINARY}" --no-debug 2>&1
+    # Build output goes to stderr so stdout carries only command output.
+    crystal build "${SOURCE}" -o "${BINARY}" --no-debug >&2
 fi
 
 exec "${BINARY}" "$@"

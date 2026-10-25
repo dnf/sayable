@@ -3,7 +3,6 @@
 module main;
 
 import std.typecons : Nullable;
-import core.stdc.stdlib : exit;
 
 // Age
 import sayableage.format_age : SayableAge;
@@ -37,20 +36,16 @@ private void writeStderr(string s) {
     fprintf(stderr, "\n");
 }
 
-/// Write to stdout.
-private void writeStdout(string s) {
-    import core.stdc.stdio : printf;
-    foreach (c; s) {
-        printf("%c", c);
-    }
-    printf("\n");
+/// Thrown after a usage error has been reported; the invocation exits 2.
+private class UsageError : Exception {
+    this(string msg) { super(msg); }
 }
 
-/// Print error and exit with code 2.
+/// Report a usage error on stderr and abandon the invocation.
 private void error(string msg) {
     writeStderr("error: " ~ msg);
     writeStderr("Run 'sayable help' for usage.");
-    exit(2);
+    throw new UsageError(msg);
 }
 
 /// Convert CLI "null" sentinel to empty string.
@@ -147,21 +142,30 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version`;
 
-void main(string[] allArgs) {
-    string[] argv = allArgs[1 .. $];
+/// Run one invocation (`argv` excludes the program name), appending its
+/// stdout text to `output`; returns the exit code.
+int run(string[] argv, ref string output) {
+    try {
+        return dispatch(argv, output);
+    } catch (UsageError) {
+        return 2;
+    }
+}
+
+private int dispatch(string[] argv, ref string output) {
     if (argv.length == 0) {
-        writeStdout(HELP);
-        exit(2);
+        output ~= HELP ~ "\n";
+        return 2;
     }
 
     // Global flags
     if (argv[0] == "-h" || argv[0] == "--help" || argv[0] == "help") {
-        writeStdout(HELP);
-        exit(0);
+        output ~= HELP ~ "\n";
+        return 0;
     }
     if (argv[0] == "-v" || argv[0] == "--version" || argv[0] == "version") {
-        writeStdout("sayable " ~ VERSION);
-        exit(0);
+        output ~= "sayable " ~ VERSION ~ "\n";
+        return 0;
     }
 
     string command = argv[0];
@@ -201,11 +205,11 @@ void main(string[] allArgs) {
             } else if (arg == "--with-year") {
                 opts.withYear = true;
             } else if (arg == "-h" || arg == "--help") {
-                writeStdout(HELP);
-                exit(0);
+                output ~= HELP ~ "\n";
+                return 0;
             } else if (arg == "-v" || arg == "--version") {
-                writeStdout("sayable " ~ VERSION);
-                exit(0);
+                output ~= "sayable " ~ VERSION ~ "\n";
+                return 0;
             } else {
                 error("unknown option '" ~ arg ~ "'");
             }
@@ -215,20 +219,29 @@ void main(string[] allArgs) {
         i++;
     }
 
-    if (command == "locales") { cmdLocales(); exit(0); }
-    if (command == "age") { cmdAge(positionals, opts); return; }
-    if (command == "stage") { cmdStage(positionals, opts); return; }
-    if (command == "date") { cmdDate(positionals, opts); return; }
-    if (command == "relative") { cmdRelative(positionals, opts); return; }
-    if (command == "time") { cmdTime(positionals, opts); return; }
-    if (command == "duration") { cmdDuration(positionals, opts); return; }
-    if (command == "since") { cmdSince(positionals, opts); return; }
-    if (command == "until") { cmdUntil(positionals, opts); return; }
+    if (command == "locales") {
+        output ~= cmdLocales();
+        return 0;
+    }
 
-    error("unknown command '" ~ command ~ "'");
+    Nullable!string result;
+    switch (command) {
+        case "age": result = cmdAge(positionals, opts); break;
+        case "stage": result = cmdStage(positionals, opts); break;
+        case "date": result = cmdDate(positionals, opts); break;
+        case "relative": result = cmdRelative(positionals, opts); break;
+        case "time": result = cmdTime(positionals, opts); break;
+        case "duration": result = cmdDuration(positionals, opts); break;
+        case "since": result = cmdSince(positionals, opts); break;
+        case "until": result = cmdUntil(positionals, opts); break;
+        default: error("unknown command '" ~ command ~ "'");
+    }
+    if (result.isNull) return 1;
+    output ~= result.get ~ "\n";
+    return 0;
 }
 
-void cmdAge(string[] positionals, Options opts) {
+Nullable!string cmdAge(string[] positionals, Options opts) {
     if (positionals.length == 0) error("age requires a date-of-birth argument");
     string dob = nullify(positionals[0]);
 
@@ -249,11 +262,10 @@ void cmdAge(string[] positionals, Options opts) {
 
     auto formatter = SayableAge(*loc, comp);
     auto result = formatter.formatAge(dob, asOf);
-    if (result.isNull) exit(1);
-    writeStdout(result.get);
+    return result;
 }
 
-void cmdStage(string[] positionals, Options opts) {
+Nullable!string cmdStage(string[] positionals, Options opts) {
     if (positionals.length == 0) error("stage requires a date-of-birth argument");
     string dob = nullify(positionals[0]);
 
@@ -274,11 +286,10 @@ void cmdStage(string[] positionals, Options opts) {
 
     auto formatter = SayableAge(*loc, comp);
     auto result = formatter.formatStage(dob, asOf, opts.gender);
-    if (result.isNull) exit(1);
-    writeStdout(result.get);
+    return result;
 }
 
-void cmdDate(string[] positionals, Options opts) {
+Nullable!string cmdDate(string[] positionals, Options opts) {
     if (positionals.length == 0) error("date requires a date argument");
     string dateVal = nullify(positionals[0]);
 
@@ -297,11 +308,10 @@ void cmdDate(string[] positionals, Options opts) {
     } else {
         result = formatter.formatDate(dateVal);
     }
-    if (result.isNull) exit(1);
-    writeStdout(result.get);
+    return result;
 }
 
-void cmdRelative(string[] positionals, Options opts) {
+Nullable!string cmdRelative(string[] positionals, Options opts) {
     if (positionals.length == 0) error("relative requires a date argument");
     string dateVal = nullify(positionals[0]);
 
@@ -318,11 +328,10 @@ void cmdRelative(string[] positionals, Options opts) {
 
     auto formatter = SayableDate(*loc, comp);
     auto result = formatter.formatRelative(dateVal, asOf);
-    if (result.isNull) exit(1);
-    writeStdout(result.get);
+    return result;
 }
 
-void cmdTime(string[] positionals, Options opts) {
+Nullable!string cmdTime(string[] positionals, Options opts) {
     if (positionals.length == 0) error("time requires a time argument");
     string timeVal = nullify(positionals[0]);
 
@@ -336,11 +345,10 @@ void cmdTime(string[] positionals, Options opts) {
 
     auto formatter = SayableTime(*loc, comp);
     auto result = formatter.formatTime(timeVal);
-    if (result.isNull) exit(1);
-    writeStdout(result.get);
+    return result;
 }
 
-void cmdDuration(string[] positionals, Options opts) {
+Nullable!string cmdDuration(string[] positionals, Options opts) {
     if (positionals.length == 0) error("duration requires a value argument");
     string value = nullify(positionals[0]);
 
@@ -356,23 +364,21 @@ void cmdDuration(string[] positionals, Options opts) {
 
     if (value.length == 0) {
         // null input
-        exit(1);
+        return Nullable!string.init;
     } else if (isInteger(value)) {
         int secs = parseInt(value);
         auto result = formatter.formatDuration(secs);
-        if (result.isNull) exit(1);
-        writeStdout(result.get);
+        return result;
     } else {
         // Timestamp mode
         if (positionals.length < 2) error("duration with timestamps requires start and end arguments");
         string end = nullify(positionals[1]);
         auto result = formatter.formatDurationISO(value, end);
-        if (result.isNull) exit(1);
-        writeStdout(result.get);
+        return result;
     }
 }
 
-void cmdSince(string[] positionals, Options opts) {
+Nullable!string cmdSince(string[] positionals, Options opts) {
     if (positionals.length == 0) error("since requires a start timestamp argument");
     string start = nullify(positionals[0]);
 
@@ -389,11 +395,10 @@ void cmdSince(string[] positionals, Options opts) {
 
     auto formatter = SayableDuration(*loc, comp);
     auto result = formatter.formatSince(start, asOf);
-    if (result.isNull) exit(1);
-    writeStdout(result.get);
+    return result;
 }
 
-void cmdUntil(string[] positionals, Options opts) {
+Nullable!string cmdUntil(string[] positionals, Options opts) {
     if (positionals.length == 0) error("until requires a target timestamp argument");
     string target = nullify(positionals[0]);
 
@@ -410,11 +415,10 @@ void cmdUntil(string[] positionals, Options opts) {
 
     auto formatter = SayableDuration(*loc, comp);
     auto result = formatter.formatUntil(target, asOf);
-    if (result.isNull) exit(1);
-    writeStdout(result.get);
+    return result;
 }
 
-void cmdLocales() {
+string cmdLocales() {
     // Use age locales as the canonical list.
     // We need to get all locale codes; since the getLocale function uses a switch,
     // we'll enumerate by trying all common codes. Instead, just import the full
@@ -436,7 +440,66 @@ void cmdLocales() {
         }
         codes[cast(size_t)(j + 1)] = key;
     }
+    string listing;
     foreach (code; codes) {
-        writeStdout(code);
+        listing ~= code ~ "\n";
     }
+    return listing;
+}
+
+/// Split a request line on tabs, keeping empty fields.
+private string[] splitFields(string line) {
+    string[] fields;
+    size_t start = 0;
+    foreach (i, c; line) {
+        if (c == '\t') {
+            fields ~= line[start .. i];
+            start = i + 1;
+        }
+    }
+    fields ~= line[start .. $];
+    return fields;
+}
+
+/// Trailing newline dropped, inner newlines become tabs: one response line.
+private string flatten(string output) {
+    import std.array : replace;
+    import std.string : stripRight;
+    return output.stripRight("\n").replace("\n", "\t");
+}
+
+/// Answer one tab-separated request per stdin line (see cli/SPEC.md).
+private void repl() {
+    import std.stdio : stdin, stdout;
+    import std.string : chomp;
+
+    foreach (line; stdin.byLineCopy) {
+        string output;
+        int code;
+        // Errors too: a crash would end a one-shot run with a failure, but
+        // must not end the REPL.
+        try {
+            code = run(splitFields(line.chomp("\r")), output);
+        } catch (Throwable t) {
+            writeStderr("error: " ~ t.msg);
+            code = 1;
+            output = null;
+        }
+        stdout.writef("%d\t%s\n", code, flatten(output));
+        stdout.flush();
+    }
+}
+
+int main(string[] allArgs) {
+    import std.stdio : stdout;
+
+    string[] argv = allArgs[1 .. $];
+    if (argv == ["--repl"]) {
+        repl();
+        return 0;
+    }
+    string output;
+    immutable code = run(argv, output);
+    stdout.write(output);
+    return code;
 }

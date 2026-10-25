@@ -1,10 +1,11 @@
 module Main (main) where
 
+import Control.Exception (Exception, SomeException, catch, evaluate, fromException, throwIO, try)
 import Data.Char (isDigit)
-import Data.List (sort)
+import Data.List (intercalate, sort)
 import System.Environment (getArgs)
-import System.Exit (ExitCode(..), exitWith, exitSuccess)
-import System.IO (hPutStrLn, stderr)
+import System.Exit (ExitCode(..), exitWith)
+import System.IO (hFlush, hPutStrLn, hSetEncoding, isEOF, stderr, stdin, stdout, utf8)
 
 import qualified SayableAge.Formatter as Age
 import qualified SayableAge.Locales as AgeLocales
@@ -96,17 +97,27 @@ nullify :: String -> Maybe String
 nullify "null" = Nothing
 nullify s      = Just s
 
--- Print error to stderr and exit with code 2
+-- What one command run produces: its exit code and the exact text it
+-- writes to stdout. One-shot mode prints it; the REPL reformats it.
+data Outcome = Outcome Int String
+
+-- Thrown by usageError so the REPL can answer it without exiting.
+data UsageError = UsageError
+    deriving Show
+
+instance Exception UsageError
+
+-- Print error to stderr and abort the command with exit code 2
 usageError :: String -> IO a
 usageError msg = do
     hPutStrLn stderr ("error: " ++ msg)
     hPutStrLn stderr "Run 'sayable help' for usage."
-    exitWith (ExitFailure 2)
+    throwIO UsageError
 
--- Print result or exit 1 for null
-printResult :: Maybe String -> IO ()
-printResult Nothing  = exitWith (ExitFailure 1)
-printResult (Just s) = putStrLn s >> exitSuccess
+-- A formatted line, or exit 1 with no output for null
+printResult :: Maybe String -> IO Outcome
+printResult Nothing  = return (Outcome 1 "")
+printResult (Just s) = return (Outcome 0 (s ++ "\n"))
 
 -- Parse arguments into (command, positionals, options)
 data ParseResult
@@ -199,7 +210,7 @@ readInt s = case reads s of
 
 -- Command handlers
 
-cmdAge :: [String] -> Options -> IO ()
+cmdAge :: [String] -> Options -> IO Outcome
 cmdAge [] _ = usageError "age requires a date-of-birth argument"
 cmdAge (raw:_) opts = do
     let locCode = optLocale opts
@@ -216,7 +227,7 @@ cmdAge (raw:_) opts = do
                     result <- Age.formatAge loc compactness dob mAsOf
                     printResult result
 
-cmdStage :: [String] -> Options -> IO ()
+cmdStage :: [String] -> Options -> IO Outcome
 cmdStage [] _ = usageError "stage requires a date-of-birth argument"
 cmdStage (raw:_) opts = do
     let locCode = optLocale opts
@@ -231,7 +242,7 @@ cmdStage (raw:_) opts = do
                     result <- Age.formatStage loc dob mAsOf gender
                     printResult result
 
-cmdDate :: [String] -> Options -> IO ()
+cmdDate :: [String] -> Options -> IO Outcome
 cmdDate [] _ = usageError "date requires a date argument"
 cmdDate (raw:_) opts = do
     let locCode = optLocale opts
@@ -244,7 +255,7 @@ cmdDate (raw:_) opts = do
                 then printResult (Date.formatDateWithYear loc compactness mDate)
                 else printResult (Date.formatDate loc compactness mDate)
 
-cmdRelative :: [String] -> Options -> IO ()
+cmdRelative :: [String] -> Options -> IO Outcome
 cmdRelative [] _ = usageError "relative requires a date argument"
 cmdRelative (raw:_) opts = do
     case optAsOf opts of
@@ -259,7 +270,7 @@ cmdRelative (raw:_) opts = do
                         mAsOf = nullify asOfRaw
                     printResult (Date.formatRelative loc compactness mDate mAsOf)
 
-cmdTime :: [String] -> Options -> IO ()
+cmdTime :: [String] -> Options -> IO Outcome
 cmdTime [] _ = usageError "time requires a time argument"
 cmdTime (raw:_) opts = do
     let locCode = optLocale opts
@@ -270,7 +281,7 @@ cmdTime (raw:_) opts = do
                 mTime = nullify raw
             printResult (Time.formatTime loc compactness mTime)
 
-cmdDuration :: [String] -> Options -> IO ()
+cmdDuration :: [String] -> Options -> IO Outcome
 cmdDuration [] _ = usageError "duration requires a value argument"
 cmdDuration (raw:rest) opts = do
     let locCode = optLocale opts
@@ -297,7 +308,7 @@ cmdDuration (raw:rest) opts = do
                                 Nothing -> usageError "duration with timestamps requires start and end arguments"
                                 Just endVal -> printResult (Duration.formatDurationIso loc compactness val endVal)
 
-cmdSince :: [String] -> Options -> IO ()
+cmdSince :: [String] -> Options -> IO Outcome
 cmdSince [] _ = usageError "since requires a start timestamp argument"
 cmdSince (raw:_) opts = do
     case optAsOf opts of
@@ -312,7 +323,7 @@ cmdSince (raw:_) opts = do
                         mAsOf = nullify asOfRaw
                     printResult (Duration.formatSince loc compactness mStart mAsOf)
 
-cmdUntil :: [String] -> Options -> IO ()
+cmdUntil :: [String] -> Options -> IO Outcome
 cmdUntil [] _ = usageError "until requires a target timestamp argument"
 cmdUntil (raw:_) opts = do
     case optAsOf opts of
@@ -327,22 +338,19 @@ cmdUntil (raw:_) opts = do
                         mAsOf = nullify asOfRaw
                     printResult (Duration.formatUntil loc compactness mTarget mAsOf)
 
-cmdLocales :: IO ()
-cmdLocales = do
-    mapM_ putStrLn (sort allLocales)
-    exitSuccess
+cmdLocales :: Outcome
+cmdLocales = Outcome 0 (unlines (sort allLocales))
 
-main :: IO ()
-main = do
-    args <- getArgs
+versionOutcome :: Outcome
+versionOutcome = Outcome 0 ("sayable " ++ cliVersion ++ "\n")
+
+-- Run one command (the one-shot argument list) without exiting
+run :: [String] -> IO Outcome
+run args = do
     parsed <- parseArgs args
     case parsed of
-        ParsedHelp -> do
-            putStr helpText
-            exitSuccess
-        ParsedVersion -> do
-            putStrLn ("sayable " ++ cliVersion)
-            exitSuccess
+        ParsedHelp -> return (Outcome 0 helpText)
+        ParsedVersion -> return versionOutcome
         ParsedCommand cmd pos opts ->
             case cmd of
                 "age"      -> cmdAge pos opts
@@ -353,7 +361,71 @@ main = do
                 "duration" -> cmdDuration pos opts
                 "since"    -> cmdSince pos opts
                 "until"    -> cmdUntil pos opts
-                "locales"  -> cmdLocales
-                "help"     -> putStr helpText >> exitSuccess
-                "version"  -> putStrLn ("sayable " ++ cliVersion) >> exitSuccess
+                "locales"  -> return cmdLocales
+                "help"     -> return (Outcome 0 helpText)
+                "version"  -> return versionOutcome
                 _          -> usageError ("unknown command '" ++ cmd ++ "'")
+
+-- Run a request, turning a usage error into exit 2 (other exceptions escape)
+runOrUsageError :: [String] -> IO Outcome
+runOrUsageError args = run args `catch` \UsageError -> return (Outcome 2 "")
+
+-- Split on every tab, keeping empty fields ("age\t" is ["age", ""])
+splitTabs :: String -> [String]
+splitTabs s = case break (== '\t') s of
+    (field, [])       -> [field]
+    (field, _ : rest) -> field : splitTabs rest
+
+stripCarriageReturn :: String -> String
+stripCarriageReturn s
+    | not (null s) && last s == '\r' = init s
+    | otherwise                       = s
+
+-- One response line: "<exit>\t<output>" with the output on a single line
+responseLine :: Outcome -> String
+responseLine (Outcome code out) =
+    show code ++ "\t" ++ intercalate "\t" (lines out)
+
+-- Run a request, turning usage errors into exit 2 and crashes into exit 1.
+-- The output is forced here so errors hidden in lazy results are caught too.
+answer :: [String] -> IO Outcome
+answer args = do
+    attempt <- try (run args >>= \o@(Outcome _ out) -> evaluate (length out) >> return o)
+    case attempt of
+        Right outcome -> return outcome
+        Left err
+            | isUsageError err -> return (Outcome 2 "")
+            | otherwise -> do
+                hPutStrLn stderr ("error: " ++ show err)
+                return (Outcome 1 "")
+
+isUsageError :: SomeException -> Bool
+isUsageError err = case fromException err of
+    Just UsageError -> True
+    Nothing         -> False
+
+-- Answer one tab-separated request per stdin line (see cli/SPEC.md)
+repl :: IO ()
+repl = do
+    hSetEncoding stdin utf8
+    let loop = do
+            eof <- isEOF
+            if eof
+                then return ()
+                else do
+                    line <- getLine
+                    outcome <- answer (splitTabs (stripCarriageReturn line))
+                    putStrLn (responseLine outcome)
+                    hFlush stdout
+                    loop
+    loop
+
+main :: IO ()
+main = do
+    args <- getArgs
+    if args == ["--repl"]
+        then repl
+        else do
+            Outcome code out <- runOrUsageError args
+            putStr out
+            exitWith (if code == 0 then ExitSuccess else ExitFailure code)

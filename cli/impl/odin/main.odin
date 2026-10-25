@@ -3,8 +3,10 @@
 // See cli/SPEC.md for the full specification.
 package main
 
+import "core:bufio"
 import "core:fmt"
 import "core:os"
+import "core:strings"
 import "core:time"
 
 import age "sayable:age/impl/odin"
@@ -56,7 +58,8 @@ str_eq :: proc(a, b: string) -> bool {
     return true
 }
 
-parse_args :: proc(argv: []string) -> (command: string, positionals: [dynamic]string, opts: Options) {
+// `ok` is false after a usage error has been reported.
+parse_args :: proc(argv: []string) -> (command: string, positionals: [dynamic]string, opts: Options, ok: bool) {
     positionals = make([dynamic]string)
     opts = Options{
         locale      = "en",
@@ -64,15 +67,15 @@ parse_args :: proc(argv: []string) -> (command: string, positionals: [dynamic]st
     }
 
     if len(argv) == 0 {
-        return "", positionals, opts
+        return "", positionals, opts, true
     }
 
     // Global flags that can appear as the first argument
     if str_eq(argv[0], "-h") || str_eq(argv[0], "--help") || str_eq(argv[0], "help") {
-        return "help", positionals, opts
+        return "help", positionals, opts, true
     }
     if str_eq(argv[0], "-v") || str_eq(argv[0], "--version") || str_eq(argv[0], "version") {
-        return "version", positionals, opts
+        return "version", positionals, opts, true
     }
 
     command = argv[0]
@@ -92,12 +95,14 @@ parse_args :: proc(argv: []string) -> (command: string, positionals: [dynamic]st
             if str_eq(a, "-l") || str_eq(a, "--locale") {
                 if i + 1 >= len(argv) {
                     cli_error_opt(a, "requires a value")
+                    return "", positionals, opts, false
                 }
                 i += 1
                 opts.locale = argv[i]
             } else if str_eq(a, "-d") || str_eq(a, "--as-of") {
                 if i + 1 >= len(argv) {
                     cli_error_opt(a, "requires a value")
+                    return "", positionals, opts, false
                 }
                 i += 1
                 opts.as_of = argv[i]
@@ -105,6 +110,7 @@ parse_args :: proc(argv: []string) -> (command: string, positionals: [dynamic]st
             } else if str_eq(a, "-g") || str_eq(a, "--gender") {
                 if i + 1 >= len(argv) {
                     cli_error_opt(a, "requires a value")
+                    return "", positionals, opts, false
                 }
                 i += 1
                 opts.gender = argv[i]
@@ -115,11 +121,12 @@ parse_args :: proc(argv: []string) -> (command: string, positionals: [dynamic]st
             } else if str_eq(a, "--with-year") {
                 opts.with_year = true
             } else if str_eq(a, "-h") || str_eq(a, "--help") {
-                return "help", positionals, opts
+                return "help", positionals, opts, true
             } else if str_eq(a, "-v") || str_eq(a, "--version") {
-                return "version", positionals, opts
+                return "version", positionals, opts, true
             } else {
                 cli_error_msg("unknown option '", a, "'")
+                return "", positionals, opts, false
             }
         } else {
             append(&positionals, a)
@@ -128,7 +135,7 @@ parse_args :: proc(argv: []string) -> (command: string, positionals: [dynamic]st
         i += 1
     }
 
-    return command, positionals, opts
+    return command, positionals, opts, true
 }
 
 nullify :: proc(value: string) -> (string, bool) {
@@ -138,26 +145,27 @@ nullify :: proc(value: string) -> (string, bool) {
     return value, false
 }
 
-cli_error :: proc(msg: string) -> ! {
+// The error procs report a usage error and return its exit code.
+cli_error :: proc(msg: string) -> int {
     fmt.eprintln("error:", msg)
     fmt.eprintln("Run 'sayable help' for usage.")
-    os.exit(2)
+    return 2
 }
 
-cli_error_opt :: proc(opt, msg: string) -> ! {
+cli_error_opt :: proc(opt, msg: string) -> int {
     fmt.eprintf("error: '%s' %s\n", opt, msg)
     fmt.eprintln("Run 'sayable help' for usage.")
-    os.exit(2)
+    return 2
 }
 
-cli_error_msg :: proc(parts: ..string) -> ! {
+cli_error_msg :: proc(parts: ..string) -> int {
     fmt.eprint("error: ")
     for p in parts {
         fmt.eprint(p)
     }
     fmt.eprintln()
     fmt.eprintln("Run 'sayable help' for usage.")
-    os.exit(2)
+    return 2
 }
 
 get_today :: proc() -> string {
@@ -237,15 +245,15 @@ parse_int :: proc(s: string) -> int {
     return negative ? -n : n
 }
 
-cmd_age :: proc(positionals: [dynamic]string, opts: Options) {
+cmd_age :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
     if len(positionals) == 0 {
-        cli_error("age requires a date-of-birth argument")
+        return cli_error("age requires a date-of-birth argument")
     }
     dob, is_null := nullify(positionals[0])
 
     locale := age.get_locale(opts.locale)
     if locale == nil {
-        cli_error_msg("unknown locale '", opts.locale, "'")
+        return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
     as_of: string
@@ -264,22 +272,18 @@ cmd_age :: proc(positionals: [dynamic]string, opts: Options) {
         result = age.format_age(buf[:], locale, age_compactness(opts.compactness), dob, as_of)
     }
 
-    if v, ok := result.?; ok {
-        fmt.println(v)
-    } else {
-        os.exit(1)
-    }
+    return print_result(out, result)
 }
 
-cmd_stage :: proc(positionals: [dynamic]string, opts: Options) {
+cmd_stage :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
     if len(positionals) == 0 {
-        cli_error("stage requires a date-of-birth argument")
+        return cli_error("stage requires a date-of-birth argument")
     }
     dob, is_null := nullify(positionals[0])
 
     locale := age.get_locale(opts.locale)
     if locale == nil {
-        cli_error_msg("unknown locale '", opts.locale, "'")
+        return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
     as_of: string
@@ -297,22 +301,18 @@ cmd_stage :: proc(positionals: [dynamic]string, opts: Options) {
         result = age.format_stage(locale, dob, as_of, opts.gender)
     }
 
-    if v, ok := result.?; ok {
-        fmt.println(v)
-    } else {
-        os.exit(1)
-    }
+    return print_result(out, result)
 }
 
-cmd_date :: proc(positionals: [dynamic]string, opts: Options) {
+cmd_date :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
     if len(positionals) == 0 {
-        cli_error("date requires a date argument")
+        return cli_error("date requires a date argument")
     }
     date_val, is_null := nullify(positionals[0])
 
     locale := date.get_locale(opts.locale)
     if locale == nil {
-        cli_error_msg("unknown locale '", opts.locale, "'")
+        return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
     buf: [512]u8
@@ -325,27 +325,23 @@ cmd_date :: proc(positionals: [dynamic]string, opts: Options) {
         result = date.format_date(buf[:], locale, date_compactness(opts.compactness), val)
     }
 
-    if v, ok := result.?; ok {
-        fmt.println(v)
-    } else {
-        os.exit(1)
-    }
+    return print_result(out, result)
 }
 
-cmd_relative :: proc(positionals: [dynamic]string, opts: Options) {
+cmd_relative :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
     if len(positionals) == 0 {
-        cli_error("relative requires a date argument")
+        return cli_error("relative requires a date argument")
     }
     date_val, is_null := nullify(positionals[0])
 
     if !opts.has_as_of {
-        cli_error("relative requires --as-of / -d option")
+        return cli_error("relative requires --as-of / -d option")
     }
     as_of, as_of_null := nullify(opts.as_of)
 
     locale := date.get_locale(opts.locale)
     if locale == nil {
-        cli_error_msg("unknown locale '", opts.locale, "'")
+        return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
     buf: [512]u8
@@ -356,22 +352,18 @@ cmd_relative :: proc(positionals: [dynamic]string, opts: Options) {
         result = date.format_relative(buf[:], locale, date_compactness(opts.compactness), date_val, as_of)
     }
 
-    if v, ok := result.?; ok {
-        fmt.println(v)
-    } else {
-        os.exit(1)
-    }
+    return print_result(out, result)
 }
 
-cmd_time :: proc(positionals: [dynamic]string, opts: Options) {
+cmd_time :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
     if len(positionals) == 0 {
-        cli_error("time requires a time argument")
+        return cli_error("time requires a time argument")
     }
     time_val, is_null := nullify(positionals[0])
 
     locale := tm.get_locale(opts.locale)
     if locale == nil {
-        cli_error_msg("unknown locale '", opts.locale, "'")
+        return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
     buf: [512]u8
@@ -379,22 +371,18 @@ cmd_time :: proc(positionals: [dynamic]string, opts: Options) {
     val := is_null ? "" : time_val
     result = tm.format_time(buf[:], locale, time_compactness(opts.compactness), val)
 
-    if v, ok := result.?; ok {
-        fmt.println(v)
-    } else {
-        os.exit(1)
-    }
+    return print_result(out, result)
 }
 
-cmd_duration :: proc(positionals: [dynamic]string, opts: Options) {
+cmd_duration :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
     if len(positionals) == 0 {
-        cli_error("duration requires a value argument")
+        return cli_error("duration requires a value argument")
     }
     value, is_null := nullify(positionals[0])
 
     locale := dur.get_locale(opts.locale)
     if locale == nil {
-        cli_error_msg("unknown locale '", opts.locale, "'")
+        return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
     buf: [512]u8
@@ -409,33 +397,29 @@ cmd_duration :: proc(positionals: [dynamic]string, opts: Options) {
     } else {
         // Timestamp mode: need an end argument
         if len(positionals) < 2 {
-            cli_error("duration with timestamps requires start and end arguments")
+            return cli_error("duration with timestamps requires start and end arguments")
         }
         end, _ := nullify(positionals[1])
         result = dur.format_duration_iso(buf[:], locale, compact, value, end)
     }
 
-    if v, ok := result.?; ok {
-        fmt.println(v)
-    } else {
-        os.exit(1)
-    }
+    return print_result(out, result)
 }
 
-cmd_since :: proc(positionals: [dynamic]string, opts: Options) {
+cmd_since :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
     if len(positionals) == 0 {
-        cli_error("since requires a start timestamp argument")
+        return cli_error("since requires a start timestamp argument")
     }
     start, is_null := nullify(positionals[0])
 
     if !opts.has_as_of {
-        cli_error("since requires --as-of / -d option")
+        return cli_error("since requires --as-of / -d option")
     }
     as_of, as_of_null := nullify(opts.as_of)
 
     locale := dur.get_locale(opts.locale)
     if locale == nil {
-        cli_error_msg("unknown locale '", opts.locale, "'")
+        return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
     buf: [512]u8
@@ -448,27 +432,23 @@ cmd_since :: proc(positionals: [dynamic]string, opts: Options) {
         result = dur.format_since(buf[:], locale, compact, start, as_of)
     }
 
-    if v, ok := result.?; ok {
-        fmt.println(v)
-    } else {
-        os.exit(1)
-    }
+    return print_result(out, result)
 }
 
-cmd_until :: proc(positionals: [dynamic]string, opts: Options) {
+cmd_until :: proc(out: ^strings.Builder, positionals: [dynamic]string, opts: Options) -> int {
     if len(positionals) == 0 {
-        cli_error("until requires a target timestamp argument")
+        return cli_error("until requires a target timestamp argument")
     }
     target, is_null := nullify(positionals[0])
 
     if !opts.has_as_of {
-        cli_error("until requires --as-of / -d option")
+        return cli_error("until requires --as-of / -d option")
     }
     as_of, as_of_null := nullify(opts.as_of)
 
     locale := dur.get_locale(opts.locale)
     if locale == nil {
-        cli_error_msg("unknown locale '", opts.locale, "'")
+        return cli_error_msg("unknown locale '", opts.locale, "'")
     }
 
     buf: [512]u8
@@ -481,11 +461,7 @@ cmd_until :: proc(positionals: [dynamic]string, opts: Options) {
         result = dur.format_until(buf[:], locale, compact, target, as_of)
     }
 
-    if v, ok := result.?; ok {
-        fmt.println(v)
-    } else {
-        os.exit(1)
-    }
+    return print_result(out, result)
 }
 
 LOCALE_CODES :: [168]string{
@@ -517,53 +493,92 @@ LOCALE_CODES :: [168]string{
     "zdj", "zh", "zu",
 }
 
-cmd_locales :: proc() {
+cmd_locales :: proc(out: ^strings.Builder) {
     for code in LOCALE_CODES {
-        fmt.println(code)
+        fmt.sbprintln(out, code)
+    }
+}
+
+// A null result prints nothing and exits 1.
+print_result :: proc(out: ^strings.Builder, result: Maybe(string)) -> int {
+    v, ok := result.?
+    if !ok do return 1
+    fmt.sbprintln(out, v)
+    return 0
+}
+
+// Runs one invocation, writing its stdout text to `out`; returns the exit code.
+run :: proc(out: ^strings.Builder, args: []string) -> int {
+    command, positionals, opts, ok := parse_args(args)
+    defer delete(positionals)
+    if !ok do return 2
+
+    switch command {
+    case "":
+        fmt.sbprintln(out, HELP)
+        return 2
+    case "help":
+        fmt.sbprintln(out, HELP)
+        return 0
+    case "version":
+        fmt.sbprintf(out, "sayable %s\n", VERSION)
+        return 0
+    case "locales":
+        cmd_locales(out)
+        return 0
+    case "age":
+        return cmd_age(out, positionals, opts)
+    case "stage":
+        return cmd_stage(out, positionals, opts)
+    case "date":
+        return cmd_date(out, positionals, opts)
+    case "relative":
+        return cmd_relative(out, positionals, opts)
+    case "time":
+        return cmd_time(out, positionals, opts)
+    case "duration":
+        return cmd_duration(out, positionals, opts)
+    case "since":
+        return cmd_since(out, positionals, opts)
+    case "until":
+        return cmd_until(out, positionals, opts)
+    }
+    return cli_error_msg("unknown command '", command, "'")
+}
+
+// Answers one tab-separated request per stdin line (see cli/SPEC.md).
+repl :: proc() {
+    reader: bufio.Reader
+    bufio.reader_init(&reader, os.to_reader(os.stdin))
+    defer bufio.reader_destroy(&reader)
+
+    for {
+        line, err := bufio.reader_read_string(&reader, '\n', context.temp_allocator)
+        if len(line) == 0 && err != nil do break
+
+        request := strings.trim_suffix(strings.trim_suffix(line, "\n"), "\r")
+        fields := strings.split(request, "\t", context.temp_allocator)
+
+        out := strings.builder_make(context.temp_allocator)
+        code := run(&out, fields)
+        output := strings.trim_right(strings.to_string(out), "\n")
+        flat, _ := strings.replace_all(output, "\n", "\t", context.temp_allocator)
+
+        fmt.printf("%d\t%s\n", code, flat)
+        os.flush(os.stdout)
+        free_all(context.temp_allocator)
     }
 }
 
 main :: proc() {
     args := os.args[1:]
-    command, positionals, opts := parse_args(args)
-
-    if len(command) == 0 {
-        fmt.println(HELP)
-        os.exit(2)
+    if len(args) == 1 && args[0] == "--repl" {
+        repl()
+        return
     }
 
-    if str_eq(command, "help") {
-        fmt.println(HELP)
-        os.exit(0)
-    }
-
-    if str_eq(command, "version") {
-        fmt.printf("sayable %s\n", VERSION)
-        os.exit(0)
-    }
-
-    if str_eq(command, "locales") {
-        cmd_locales()
-        os.exit(0)
-    }
-
-    if str_eq(command, "age") {
-        cmd_age(positionals, opts)
-    } else if str_eq(command, "stage") {
-        cmd_stage(positionals, opts)
-    } else if str_eq(command, "date") {
-        cmd_date(positionals, opts)
-    } else if str_eq(command, "relative") {
-        cmd_relative(positionals, opts)
-    } else if str_eq(command, "time") {
-        cmd_time(positionals, opts)
-    } else if str_eq(command, "duration") {
-        cmd_duration(positionals, opts)
-    } else if str_eq(command, "since") {
-        cmd_since(positionals, opts)
-    } else if str_eq(command, "until") {
-        cmd_until(positionals, opts)
-    } else {
-        cli_error_msg("unknown command '", command, "'")
-    }
+    out := strings.builder_make()
+    code := run(&out, args)
+    fmt.print(strings.to_string(out))
+    os.exit(code)
 }

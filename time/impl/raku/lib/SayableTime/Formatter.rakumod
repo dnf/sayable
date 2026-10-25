@@ -39,7 +39,7 @@ method format-time(Str $input? --> Str) {
 
 method !format-natural(Int $hour, Int $minute --> Str) {
     my %clock = %.locale<clock>;
-    my $rounded = round-to-5($minute);
+    my $rounded = round-to-five($minute);
     my $h = $hour;
     if $rounded == 60 {
         $rounded = 0;
@@ -89,6 +89,6 @@ method !parse-time(Str $input) {
     return [$hour, $minute];
 }
 
-sub round-to-5(Int $minute --> Int) {
+sub round-to-five(Int $minute --> Int) {
     return (($minute + 2) div 5) * 5;
 }

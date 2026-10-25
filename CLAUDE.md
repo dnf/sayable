@@ -36,6 +36,8 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 | Gen age/Dockerfile | `just dockerfile`                   |
 | Quality check      | `just check`                        |
 | Codegen tests      | `just test codegen`                 |
+| CLI harness        | `just test cli` or `just test cli go` |
+| Cross-language fuzz | `just fuzz` (`just fuzz help`)     |
 | Update metadata    | `just metadata`                     |
 | Maintain docs      | `just maintain docs`                |
 | Clean artifacts    | `just clean` or `just clean <lang>` |
@@ -44,6 +46,7 @@ All output is captured to `.logs/<command>/<language>.log` — both parallel and
 
 - **All implementations must produce identical output.** Changes to formatting logic must be applied to all languages.
 - **Spec-first testing.** New test cases go in `age/config/tests.json` first, then get implemented in all languages. Every test uses explicit `(dateOfBirth, asOf)` date pairs — never "today."
+- **Don't trust per-language test suites alone.** The generated CLI harness (`cli/test-harness.sh`, from `cli/generate-test-harness.py`) runs the canonical tests against every language's CLI through a single `sayable --repl` process, and `just fuzz` (`cli/fuzz.py`) sends random requests to every CLI and fails on any disagreement. Regenerate the harness after changing a `tests.json`. Every CLI must implement the REPL protocol in `cli/SPEC.md`. See [`docs/testing.md`](docs/testing.md).
 - **Canonical test IDs.** Every test must be annotated with the ID(s) from `age/config/tests.json` that it implements — as a comment above the test or inline. This enables cross-language verification that all tests map to their canonical definition.
 - **Zero runtime dependencies.** No exceptions in any language.
 - **Locale data lives in `age/locales/*.json`.** These JSON files are the single source of truth. To change a locale, edit the JSON file and run `just generate locales` to regenerate all language implementations. Never edit generated locale files by hand.

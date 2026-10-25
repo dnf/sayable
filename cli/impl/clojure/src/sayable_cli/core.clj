@@ -2,7 +2,8 @@
   "Sayable CLI -- unified command-line interface to all four Sayable components.
 
   See cli/SPEC.md for the full specification."
-  (:require [sayableage.core :as age]
+  (:require [clojure.string :as str]
+            [sayableage.core :as age]
             [sayableage.locales :as age-locales]
             [sayabledate.core :as date]
             [sayabledate.locales :as date-locales]
@@ -41,12 +42,12 @@ Options:
   -v, --version          Show version")
 
 (defn- cli-error
-  "Print error to stderr and exit with code 2."
+  "Abort the current request with a usage error (exit code 2)."
   [msg]
-  (binding [*out* *err*]
-    (println (str "error: " msg))
-    (println "Run 'sayable help' for usage."))
-  (System/exit 2))
+  (throw (ex-info msg {::usage-error true})))
+
+(defn- usage-error? [e]
+  (::usage-error (ex-data e)))
 
 (defn- nullify
   "Convert the CLI 'null' sentinel to nil."
@@ -168,9 +169,7 @@ Options:
                   (get-today))
           compactness (parse-compactness (:compactness options))
           result (age/format-age locale compactness dob as-of)]
-      (if (nil? result)
-        (System/exit 1)
-        (println result)))))
+      result)))
 
 (defn- cmd-stage [positionals options]
   (when (empty? positionals)
@@ -185,9 +184,7 @@ Options:
                   (get-today))
           gender (parse-gender (:gender options))
           result (age/format-stage locale dob as-of gender)]
-      (if (nil? result)
-        (System/exit 1)
-        (println result)))))
+      result)))
 
 (defn- cmd-date [positionals options]
   (when (empty? positionals)
@@ -201,9 +198,7 @@ Options:
           result (if (:with-year options)
                    (date/format-date-with-year locale compactness date-val)
                    (date/format-date locale compactness date-val))]
-      (if (nil? result)
-        (System/exit 1)
-        (println result)))))
+      result)))
 
 (defn- cmd-relative [positionals options]
   (when (empty? positionals)
@@ -219,9 +214,7 @@ Options:
         (cli-error (str "unknown locale '" locale-code "'")))
       (let [compactness (parse-compactness (:compactness options))
             result (date/format-relative locale compactness date-val as-of)]
-        (if (nil? result)
-          (System/exit 1)
-          (println result))))))
+        result))))
 
 (defn- cmd-time [positionals options]
   (when (empty? positionals)
@@ -233,9 +226,7 @@ Options:
       (cli-error (str "unknown locale '" locale-code "'")))
     (let [compactness (parse-compactness (:compactness options))
           result (time-core/format-time locale compactness time-val)]
-      (if (nil? result)
-        (System/exit 1)
-        (println result)))))
+      result)))
 
 (defn- all-digits?
   "Check if string (with optional leading minus removed) is all digits."
@@ -272,9 +263,7 @@ Options:
                        (cli-error "duration with timestamps requires start and end arguments"))
                      (let [end-val (nullify (nth positionals 1))]
                        (duration/format-duration-iso locale compactness value end-val))))]
-      (if (nil? result)
-        (System/exit 1)
-        (println result)))))
+      result)))
 
 (defn- cmd-since [positionals options]
   (when (empty? positionals)
@@ -290,9 +279,7 @@ Options:
         (cli-error (str "unknown locale '" locale-code "'")))
       (let [compactness (parse-compactness (:compactness options))
             result (duration/format-since locale compactness start as-of)]
-        (if (nil? result)
-          (System/exit 1)
-          (println result))))))
+        result))))
 
 (defn- cmd-until [positionals options]
   (when (empty? positionals)
@@ -308,9 +295,7 @@ Options:
         (cli-error (str "unknown locale '" locale-code "'")))
       (let [compactness (parse-compactness (:compactness options))
             result (duration/format-until locale compactness target as-of)]
-        (if (nil? result)
-          (System/exit 1)
-          (println result))))))
+        result))))
 
 (defn- cmd-locales []
   (let [codes (into (sorted-set)
@@ -344,8 +329,7 @@ Options:
                                                  "ts" "tzm" "uk" "umb" "ur" "uz" "vi" "vmw" "wo" "xh"
                                                  "yo" "yue" "zdj" "zh" "zu"]]
                                        (symbol (str "sayableage.locales." code)))))))]
-    (doseq [code codes]
-      (println code))))
+    (str/join "\n" codes)))
 
 (def ^:private commands
   {"age" cmd-age
@@ -357,28 +341,57 @@ Options:
    "since" cmd-since
    "until" cmd-until})
 
+(defn- run
+  "Run one command, returning [exit-code output]; output is nil when nothing
+  is printed."
+  [argv]
+  (try
+    (let [[command positionals options] (parse-args argv)]
+      (cond
+        (nil? command) [2 help-text]
+        (= command "help") [0 help-text]
+        (= command "version") [0 (str "sayable " version)]
+        (= command "locales") [0 (cmd-locales)]
+
+        (contains? commands command)
+        (if-some [result ((get commands command) positionals options)]
+          [0 result]
+          [1 nil])
+
+        :else
+        (cli-error (str "unknown command '" command "'"))))
+    (catch clojure.lang.ExceptionInfo e
+      (if (usage-error? e)
+        (binding [*out* *err*]
+          (println (str "error: " (ex-message e)))
+          (println "Run 'sayable help' for usage.")
+          [2 nil])
+        (throw e)))))
+
+(defn- run-catching-crashes
+  "A crashed one-shot run exits 1, so a crashed request answers 1 and the
+  REPL keeps serving."
+  [argv]
+  (try
+    (run argv)
+    (catch Exception e
+      (.printStackTrace e)
+      [1 nil])))
+
+(defn- repl
+  "Answer one tab-separated request per stdin line (see cli/SPEC.md,
+  \"REPL Mode\")."
+  []
+  (doseq [line (line-seq (java.io.BufferedReader. *in*))]
+    (let [[code output] (run-catching-crashes (str/split line #"\t" -1))]
+      (println (str code "\t" (some-> output (str/replace "\n" "\t"))))
+      (flush))))
+
 (defn -main [& args]
-  (let [argv (vec args)
-        [command positionals options] (parse-args argv)]
-    (cond
-      (nil? command)
-      (do (println help-text)
-          (System/exit 2))
-
-      (= command "help")
-      (do (println help-text)
-          (System/exit 0))
-
-      (= command "version")
-      (do (println (str "sayable " version))
-          (System/exit 0))
-
-      (= command "locales")
-      (do (cmd-locales)
-          (System/exit 0))
-
-      (contains? commands command)
-      ((get commands command) positionals options)
-
-      :else
-      (cli-error (str "unknown command '" command "'")))))
+  (if (= args ["--repl"])
+    (repl)
+    (let [[code output] (run (vec args))]
+      (when (some? output)
+        (println output))
+      (flush)
+      (System/exit code))))

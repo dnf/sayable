@@ -3,6 +3,8 @@
 #include <ctime>
 #include <iostream>
 #include <optional>
+#include <sstream>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -65,10 +67,15 @@ static constexpr int NUM_LOCALES = sizeof(ALL_LOCALE_CODES) / sizeof(ALL_LOCALE_
 
 // ---------- error helper ----------
 
+// Thrown after a usage error has been reported; the invocation exits 2.
+struct UsageError : std::runtime_error {
+    using std::runtime_error::runtime_error;
+};
+
 [[noreturn]] static void cli_error(const std::string& msg) {
     std::cerr << "error: " << msg << "\n";
     std::cerr << "Run 'sayable help' for usage.\n";
-    std::exit(2);
+    throw UsageError(msg);
 }
 
 // ---------- null sentinel ----------
@@ -128,15 +135,16 @@ struct ParseResult {
     Options options;
 };
 
-static ParseResult parse_args(int argc, char* argv[]) {
+static ParseResult parse_args(const std::vector<std::string>& args) {
     ParseResult result;
+    const auto argc = args.size();
 
-    if (argc < 2) {
+    if (argc == 0) {
         return result;  // empty command
     }
 
     // Global flags as first argument
-    std::string first(argv[1]);
+    const std::string& first = args[0];
     if (first == "-h" || first == "--help" || first == "help") {
         result.command = "help";
         return result;
@@ -149,8 +157,8 @@ static ParseResult parse_args(int argc, char* argv[]) {
     result.command = first;
 
     bool stop_opts = false;
-    for (int i = 2; i < argc; ++i) {
-        std::string arg(argv[i]);
+    for (size_t i = 1; i < argc; ++i) {
+        const std::string& arg = args[i];
 
         if (arg == "--" && !stop_opts) {
             stop_opts = true;
@@ -161,16 +169,16 @@ static ParseResult parse_args(int argc, char* argv[]) {
             if (arg == "-l" || arg == "--locale") {
                 if (i + 1 >= argc) cli_error("'" + arg + "' requires a value");
                 ++i;
-                result.options.locale = argv[i];
+                result.options.locale = args[i];
             } else if (arg == "-d" || arg == "--as-of") {
                 if (i + 1 >= argc) cli_error("'" + arg + "' requires a value");
                 ++i;
-                result.options.as_of = argv[i];
+                result.options.as_of = args[i];
                 result.options.has_as_of = true;
             } else if (arg == "-g" || arg == "--gender") {
                 if (i + 1 >= argc) cli_error("'" + arg + "' requires a value");
                 ++i;
-                result.options.gender = argv[i];
+                result.options.gender = args[i];
             } else if (arg == "--short") {
                 result.options.compactness = "short";
             } else if (arg == "--compact") {
@@ -222,7 +230,7 @@ static sayableduration::Compactness duration_compactness(const std::string& s) {
 
 // ---------- command handlers ----------
 
-static void cmd_age(const std::vector<std::string>& positionals, const Options& opts) {
+static int cmd_age(const std::vector<std::string>& positionals, const Options& opts, std::ostream& out) {
     if (positionals.empty()) cli_error("age requires a date-of-birth argument");
 
     const auto* locale = sayableage::locales::get(opts.locale);
@@ -239,11 +247,12 @@ static void cmd_age(const std::vector<std::string>& positionals, const Options& 
     sayableage::SayableAge formatter(*locale, age_compactness(opts.compactness));
     auto result = formatter.format_age(dob, as_of);
 
-    if (!result.has_value()) std::exit(1);
-    std::cout << result.value() << "\n";
+    if (!result.has_value()) return 1;
+    out << result.value() << "\n";
+    return 0;
 }
 
-static void cmd_stage(const std::vector<std::string>& positionals, const Options& opts) {
+static int cmd_stage(const std::vector<std::string>& positionals, const Options& opts, std::ostream& out) {
     if (positionals.empty()) cli_error("stage requires a date-of-birth argument");
 
     const auto* locale = sayableage::locales::get(opts.locale);
@@ -262,11 +271,12 @@ static void cmd_stage(const std::vector<std::string>& positionals, const Options
     sayableage::SayableAge formatter(*locale, age_compactness(opts.compactness));
     auto result = formatter.format_stage(dob, as_of, gender);
 
-    if (!result.has_value()) std::exit(1);
-    std::cout << result.value() << "\n";
+    if (!result.has_value()) return 1;
+    out << result.value() << "\n";
+    return 0;
 }
 
-static void cmd_date(const std::vector<std::string>& positionals, const Options& opts) {
+static int cmd_date(const std::vector<std::string>& positionals, const Options& opts, std::ostream& out) {
     if (positionals.empty()) cli_error("date requires a date argument");
 
     const auto* locale = sayabledate::locales::get(opts.locale);
@@ -283,11 +293,12 @@ static void cmd_date(const std::vector<std::string>& positionals, const Options&
         result = formatter.format_date(date_val);
     }
 
-    if (!result.has_value()) std::exit(1);
-    std::cout << result.value() << "\n";
+    if (!result.has_value()) return 1;
+    out << result.value() << "\n";
+    return 0;
 }
 
-static void cmd_relative(const std::vector<std::string>& positionals, const Options& opts) {
+static int cmd_relative(const std::vector<std::string>& positionals, const Options& opts, std::ostream& out) {
     if (positionals.empty()) cli_error("relative requires a date argument");
 
     if (!opts.has_as_of) cli_error("relative requires --as-of / -d option");
@@ -301,11 +312,12 @@ static void cmd_relative(const std::vector<std::string>& positionals, const Opti
     sayabledate::SayableDate formatter(*locale, date_compactness(opts.compactness));
     auto result = formatter.format_relative(date_val, as_of);
 
-    if (!result.has_value()) std::exit(1);
-    std::cout << result.value() << "\n";
+    if (!result.has_value()) return 1;
+    out << result.value() << "\n";
+    return 0;
 }
 
-static void cmd_time(const std::vector<std::string>& positionals, const Options& opts) {
+static int cmd_time(const std::vector<std::string>& positionals, const Options& opts, std::ostream& out) {
     if (positionals.empty()) cli_error("time requires a time argument");
 
     const auto* locale = sayabletime::locales::get(opts.locale);
@@ -316,11 +328,12 @@ static void cmd_time(const std::vector<std::string>& positionals, const Options&
     sayabletime::SayableTime formatter(*locale, time_compactness(opts.compactness));
     auto result = formatter.format_time(time_val);
 
-    if (!result.has_value()) std::exit(1);
-    std::cout << result.value() << "\n";
+    if (!result.has_value()) return 1;
+    out << result.value() << "\n";
+    return 0;
 }
 
-static void cmd_duration(const std::vector<std::string>& positionals, const Options& opts) {
+static int cmd_duration(const std::vector<std::string>& positionals, const Options& opts, std::ostream& out) {
     if (positionals.empty()) cli_error("duration requires a value argument");
 
     const auto* locale = sayableduration::locales::get(opts.locale);
@@ -349,11 +362,12 @@ static void cmd_duration(const std::vector<std::string>& positionals, const Opti
         result = formatter.format_duration(start, end);
     }
 
-    if (!result.has_value()) std::exit(1);
-    std::cout << result.value() << "\n";
+    if (!result.has_value()) return 1;
+    out << result.value() << "\n";
+    return 0;
 }
 
-static void cmd_since(const std::vector<std::string>& positionals, const Options& opts) {
+static int cmd_since(const std::vector<std::string>& positionals, const Options& opts, std::ostream& out) {
     if (positionals.empty()) cli_error("since requires a start timestamp argument");
 
     if (!opts.has_as_of) cli_error("since requires --as-of / -d option");
@@ -367,11 +381,12 @@ static void cmd_since(const std::vector<std::string>& positionals, const Options
     sayableduration::SayableDuration formatter(*locale, duration_compactness(opts.compactness));
     auto result = formatter.format_since(start, as_of);
 
-    if (!result.has_value()) std::exit(1);
-    std::cout << result.value() << "\n";
+    if (!result.has_value()) return 1;
+    out << result.value() << "\n";
+    return 0;
 }
 
-static void cmd_until(const std::vector<std::string>& positionals, const Options& opts) {
+static int cmd_until(const std::vector<std::string>& positionals, const Options& opts, std::ostream& out) {
     if (positionals.empty()) cli_error("until requires a target timestamp argument");
 
     if (!opts.has_as_of) cli_error("until requires --as-of / -d option");
@@ -385,60 +400,109 @@ static void cmd_until(const std::vector<std::string>& positionals, const Options
     sayableduration::SayableDuration formatter(*locale, duration_compactness(opts.compactness));
     auto result = formatter.format_until(target, as_of);
 
-    if (!result.has_value()) std::exit(1);
-    std::cout << result.value() << "\n";
+    if (!result.has_value()) return 1;
+    out << result.value() << "\n";
+    return 0;
 }
 
-static void cmd_locales() {
+static void cmd_locales(std::ostream& out) {
     for (int i = 0; i < NUM_LOCALES; ++i) {
-        std::cout << ALL_LOCALE_CODES[i] << "\n";
+        out << ALL_LOCALE_CODES[i] << "\n";
     }
+}
+
+// ---------- dispatch ----------
+
+static int dispatch(const std::vector<std::string>& args, std::ostream& out) {
+    auto parsed = parse_args(args);
+
+    if (parsed.command.empty()) {
+        out << HELP_TEXT << "\n";
+        return 2;
+    }
+
+    if (parsed.command == "help") {
+        out << HELP_TEXT << "\n";
+        return 0;
+    }
+
+    if (parsed.command == "version") {
+        out << "sayable " << VERSION << "\n";
+        return 0;
+    }
+
+    if (parsed.command == "locales") {
+        cmd_locales(out);
+        return 0;
+    }
+
+    const auto& pos = parsed.positionals;
+    const auto& opts = parsed.options;
+    if (parsed.command == "age") return cmd_age(pos, opts, out);
+    if (parsed.command == "stage") return cmd_stage(pos, opts, out);
+    if (parsed.command == "date") return cmd_date(pos, opts, out);
+    if (parsed.command == "relative") return cmd_relative(pos, opts, out);
+    if (parsed.command == "time") return cmd_time(pos, opts, out);
+    if (parsed.command == "duration") return cmd_duration(pos, opts, out);
+    if (parsed.command == "since") return cmd_since(pos, opts, out);
+    if (parsed.command == "until") return cmd_until(pos, opts, out);
+    cli_error("unknown command '" + parsed.command + "'");
+}
+
+// Runs one invocation, writing its stdout text to `out`; returns the exit code.
+static int run(const std::vector<std::string>& args, std::ostream& out) {
+    try {
+        return dispatch(args, out);
+    } catch (const UsageError&) {
+        return 2;
+    }
+}
+
+// ---------- REPL mode (see cli/SPEC.md) ----------
+
+static std::vector<std::string> split_request(const std::string& line) {
+    std::vector<std::string> fields;
+    size_t start = 0;
+    for (;;) {
+        const auto tab = line.find('\t', start);
+        if (tab == std::string::npos) {
+            fields.push_back(line.substr(start));
+            return fields;
+        }
+        fields.push_back(line.substr(start, tab - start));
+        start = tab + 1;
+    }
+}
+
+// Trailing newline dropped, inner newlines become tabs: one response line.
+static std::string flatten_output(std::string text) {
+    while (!text.empty() && text.back() == '\n') text.pop_back();
+    std::replace(text.begin(), text.end(), '\n', '\t');
+    return text;
+}
+
+static int repl() {
+    std::string line;
+    while (std::getline(std::cin, line)) {
+        if (!line.empty() && line.back() == '\r') line.pop_back();
+        std::ostringstream captured;
+        int code = 1;
+        try {
+            code = run(split_request(line), captured);
+        } catch (const std::exception& e) {
+            // A one-shot run would crash here; report it and keep serving.
+            std::cerr << "error: " << e.what() << "\n";
+            captured.str("");
+        }
+        std::cout << code << '\t' << flatten_output(captured.str()) << std::endl;
+    }
+    return 0;
 }
 
 // ---------- main ----------
 
 int main(int argc, char* argv[]) {
-    auto parsed = parse_args(argc, argv);
-
-    if (parsed.command.empty()) {
-        std::cout << HELP_TEXT << "\n";
-        return 2;
-    }
-
-    if (parsed.command == "help") {
-        std::cout << HELP_TEXT << "\n";
-        return 0;
-    }
-
-    if (parsed.command == "version") {
-        std::cout << "sayable " << VERSION << "\n";
-        return 0;
-    }
-
-    if (parsed.command == "locales") {
-        cmd_locales();
-        return 0;
-    }
-
-    if (parsed.command == "age") {
-        cmd_age(parsed.positionals, parsed.options);
-    } else if (parsed.command == "stage") {
-        cmd_stage(parsed.positionals, parsed.options);
-    } else if (parsed.command == "date") {
-        cmd_date(parsed.positionals, parsed.options);
-    } else if (parsed.command == "relative") {
-        cmd_relative(parsed.positionals, parsed.options);
-    } else if (parsed.command == "time") {
-        cmd_time(parsed.positionals, parsed.options);
-    } else if (parsed.command == "duration") {
-        cmd_duration(parsed.positionals, parsed.options);
-    } else if (parsed.command == "since") {
-        cmd_since(parsed.positionals, parsed.options);
-    } else if (parsed.command == "until") {
-        cmd_until(parsed.positionals, parsed.options);
-    } else {
-        cli_error("unknown command '" + parsed.command + "'");
-    }
-
-    return 0;
+    const std::vector<std::string> args(argv + 1, argv + argc);
+    if (args.size() == 1 && args[0] == "--repl") return repl();
+    return run(args, std::cout);
 }

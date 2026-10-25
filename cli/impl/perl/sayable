@@ -59,11 +59,10 @@ Options:
 END_HELP
 chomp $HELP;
 
+# Usage errors are thrown, so one request can fail without ending the process.
 sub error_exit {
     my ($msg) = @_;
-    print STDERR "error: ${msg}\n";
-    print STDERR "Run 'sayable help' for usage.\n";
-    exit(2);
+    die bless { message => $msg }, 'Sayable::UsageError';
 }
 
 sub nullify {
@@ -170,10 +169,7 @@ sub cmd_age {
     my $formatter = SayableAge::Formatter->new($locale, compactness => $options->{compactness});
     my $result = eval { $formatter->format_age($dob, $as_of) };
 
-    unless (defined $result) {
-        exit(1);
-    }
-    print "${result}\n";
+    return $result;
 }
 
 sub cmd_stage {
@@ -197,10 +193,7 @@ sub cmd_stage {
     my $formatter = SayableAge::Formatter->new($locale, compactness => $options->{compactness});
     my $result = eval { $formatter->format_stage($dob, $as_of, gender => $gender) };
 
-    unless (defined $result) {
-        exit(1);
-    }
-    print "${result}\n";
+    return $result;
 }
 
 sub cmd_date {
@@ -221,10 +214,7 @@ sub cmd_date {
         $result = $formatter->format_date($date_val);
     }
 
-    unless (defined $result) {
-        exit(1);
-    }
-    print "${result}\n";
+    return $result;
 }
 
 sub cmd_relative {
@@ -243,10 +233,7 @@ sub cmd_relative {
     my $formatter = SayableDate::Formatter->new($locale, compactness => $options->{compactness});
     my $result = $formatter->format_relative($date_val, as_of => $as_of);
 
-    unless (defined $result) {
-        exit(1);
-    }
-    print "${result}\n";
+    return $result;
 }
 
 sub cmd_time {
@@ -261,10 +248,7 @@ sub cmd_time {
     my $formatter = SayableTime::Formatter->new($locale, compactness => $options->{compactness});
     my $result = $formatter->format_time($time_val);
 
-    unless (defined $result) {
-        exit(1);
-    }
-    print "${result}\n";
+    return $result;
 }
 
 sub cmd_duration {
@@ -292,10 +276,7 @@ sub cmd_duration {
         $result = $formatter->format_duration($value, $end);
     }
 
-    unless (defined $result) {
-        exit(1);
-    }
-    print "${result}\n";
+    return $result;
 }
 
 sub cmd_since {
@@ -314,10 +295,7 @@ sub cmd_since {
     my $formatter = SayableDuration::Formatter->new($locale, compactness => $options->{compactness});
     my $result = $formatter->format_since($start, $as_of);
 
-    unless (defined $result) {
-        exit(1);
-    }
-    print "${result}\n";
+    return $result;
 }
 
 sub cmd_until {
@@ -336,10 +314,7 @@ sub cmd_until {
     my $formatter = SayableDuration::Formatter->new($locale, compactness => $options->{compactness});
     my $result = $formatter->format_until($target, $as_of);
 
-    unless (defined $result) {
-        exit(1);
-    }
-    print "${result}\n";
+    return $result;
 }
 
 sub cmd_locales {
@@ -361,12 +336,7 @@ sub cmd_locales {
         sn snk so sq sr ss st su suk sv sw ta te tem tg th ti tig tk tn tr ts
         tzm uk umb ur uz vi vmw wo xh yo yue zdj zh zu
     );
-    for my $code (sort @all_codes) {
-        my $loc = SayableAge::Locales->get($code);
-        if (defined $loc) {
-            print "${code}\n";
-        }
-    }
+    return join "\n", grep { defined SayableAge::Locales->get($_) } sort @all_codes;
 }
 
 my %COMMANDS = (
@@ -380,34 +350,70 @@ my %COMMANDS = (
     until    => \&cmd_until,
 );
 
+# Runs one request; returns (exit code, stdout text or undef for no output).
+sub run {
+    my @argv = @_;
+    my ($code, $output);
+    my $finished = eval {
+        ($code, $output) = dispatch(@argv);
+        1;
+    };
+    return ($code, $output) if $finished;
+
+    my $err = $@;
+    die $err unless ref $err eq 'Sayable::UsageError';
+    print STDERR "error: $err->{message}\n";
+    print STDERR "Run 'sayable help' for usage.\n";
+    return (2, undef);
+}
+
+sub dispatch {
+    my ($command, $positionals, $options) = parse_args(@_);
+
+    return (2, $HELP) unless defined $command;
+    return (0, $HELP) if $command eq 'help';
+    return (0, "sayable ${VERSION}") if $command eq 'version';
+    return (0, cmd_locales()) if $command eq 'locales';
+
+    error_exit("unknown command '${command}'") unless exists $COMMANDS{$command};
+
+    my $result = $COMMANDS{$command}->($positionals, $options);
+    return (defined $result ? 0 : 1, $result);
+}
+
+# Answers one tab-separated request per stdin line (see cli/SPEC.md).
+sub repl {
+    binmode(STDIN, ':encoding(UTF-8)');
+    local $| = 1;
+    while (my $line = <STDIN>) {
+        $line =~ s/\r?\n\z//;
+        my ($code, $output);
+        my $finished = eval {
+            ($code, $output) = run(split /\t/, $line, -1);
+            1;
+        };
+        unless ($finished) {
+            # A crash exits non-zero in one-shot mode; report it and keep serving.
+            print STDERR $@;
+            ($code, $output) = (1, undef);
+        }
+        $output = defined $output ? $output : '';
+        $output =~ s/\n\z//;
+        $output =~ tr/\n/\t/;
+        print "${code}\t${output}\n";
+    }
+    return;
+}
+
 sub main {
-    my ($command, $positionals, $options) = parse_args(@ARGV);
-
-    unless (defined $command) {
-        print "${HELP}\n";
-        exit(2);
-    }
-
-    if ($command eq 'help') {
-        print "${HELP}\n";
+    if (@ARGV == 1 && $ARGV[0] eq '--repl') {
+        repl();
         exit(0);
     }
 
-    if ($command eq 'version') {
-        print "sayable ${VERSION}\n";
-        exit(0);
-    }
-
-    if ($command eq 'locales') {
-        cmd_locales();
-        exit(0);
-    }
-
-    unless (exists $COMMANDS{$command}) {
-        error_exit("unknown command '${command}'");
-    }
-
-    $COMMANDS{$command}->($positionals, $options);
+    my ($code, $output) = run(@ARGV);
+    print "${output}\n" if defined $output;
+    exit($code);
 }
 
 main();

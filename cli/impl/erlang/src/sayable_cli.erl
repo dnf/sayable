@@ -3,27 +3,69 @@
 
 -define(VERSION, "0.5.0").
 
+%% A command's exit code and the lines it prints to stdout.
+-type result() :: {0..2, [unicode:chardata()]}.
+
 main() ->
     main(init:get_plain_arguments()).
 
+main(["--repl"]) ->
+    repl(),
+    erlang:halt(0);
 main(Args) ->
-    case parse_args(Args) of
-        {help, _, _} ->
-            print_help(),
-            erlang:halt(0);
-        {version, _, _} ->
-            io:format("sayable ~s~n", [?VERSION]),
-            erlang:halt(0);
-        {locales, _, _} ->
-            cmd_locales(),
-            erlang:halt(0);
-        {none, _, _} ->
-            print_help(),
-            erlang:halt(2);
-        {Command, Positionals, Options} ->
-            run_command(Command, Positionals, Options);
-        {error, Msg} ->
-            error_exit(Msg)
+    {Code, Lines} = run(Args),
+    lists:foreach(fun(Line) -> io:format("~ts~n", [Line]) end, Lines),
+    erlang:halt(Code).
+
+-spec run([string()]) -> result().
+run(Args) ->
+    try dispatch(parse_args(Args))
+    catch
+        throw:{usage_error, Msg} ->
+            print_usage_error(Msg),
+            {2, []}
+    end.
+
+dispatch({help, _, _}) -> {0, [help_text()]};
+dispatch({version, _, _}) -> {0, ["sayable " ?VERSION]};
+dispatch({none, _, _}) -> {2, [help_text()]};
+dispatch({error, Msg}) -> usage_error(Msg);
+dispatch({"locales", _, _}) -> {0, collect_locale_codes()};
+dispatch({Command, Positionals, Options}) -> run_command(Command, Positionals, Options).
+
+%% ── REPL mode (see cli/SPEC.md) ───────────────────────────────────
+
+repl() ->
+    ok = io:setopts(standard_io, [binary, {encoding, unicode}]),
+    repl_loop().
+
+repl_loop() ->
+    case io:get_line(standard_io, "") of
+        eof ->
+            ok;
+        {error, Reason} ->
+            io:format(standard_error, "error: cannot read request: ~p~n", [Reason]),
+            erlang:halt(1);
+        Line ->
+            {Code, Lines} = run_isolated(request_args(Line)),
+            io:put_chars(standard_io, [integer_to_list(Code), $\t, response_text(Lines), $\n]),
+            repl_loop()
+    end.
+
+request_args(Line) ->
+    Fields = binary:split(string:chomp(Line), <<"\t">>, [global]),
+    [unicode:characters_to_list(Field) || Field <- Fields].
+
+response_text(Lines) ->
+    string:replace(lists:join("\n", Lines), "\n", "\t", all).
+
+%% A crashed one-shot run exits 1, so a crashed request answers 1 and the REPL keeps serving.
+run_isolated(Args) ->
+    try run(Args)
+    catch
+        Class:Reason:Stack ->
+            io:format(standard_error, "error: ~p~n", [{Class, Reason, Stack}]),
+            {1, []}
     end.
 
 %% ── Argument parsing ──────────────────────────────────────────────
@@ -48,7 +90,7 @@ default_options() ->
       gender => undefined, with_year => false}.
 
 parse_opts([], Command, Pos, Opts, _StopOpts) ->
-    {list_to_atom(Command), lists:reverse(Pos), Opts};
+    {Command, lists:reverse(Pos), Opts};
 parse_opts(["--" | Rest], Command, Pos, Opts, false) ->
     parse_opts(Rest, Command, Pos, Opts, true);
 parse_opts([Arg | Rest], Command, Pos, Opts, false) when hd(Arg) =:= $- ->
@@ -98,246 +140,129 @@ get_today() ->
 
 %% ── Command dispatch ─────────────────────────────────────────────
 
-run_command(age, Positionals, Options) -> cmd_age(Positionals, Options);
-run_command(stage, Positionals, Options) -> cmd_stage(Positionals, Options);
-run_command(date, Positionals, Options) -> cmd_date(Positionals, Options);
-run_command(relative, Positionals, Options) -> cmd_relative(Positionals, Options);
-run_command(time, Positionals, Options) -> cmd_time(Positionals, Options);
-run_command(duration, Positionals, Options) -> cmd_duration(Positionals, Options);
-run_command(since, Positionals, Options) -> cmd_since(Positionals, Options);
-run_command('until', Positionals, Options) -> cmd_until(Positionals, Options);
+run_command("age", Positionals, Options) -> cmd_age(Positionals, Options);
+run_command("stage", Positionals, Options) -> cmd_stage(Positionals, Options);
+run_command("date", Positionals, Options) -> cmd_date(Positionals, Options);
+run_command("relative", Positionals, Options) -> cmd_relative(Positionals, Options);
+run_command("time", Positionals, Options) -> cmd_time(Positionals, Options);
+run_command("duration", Positionals, Options) -> cmd_duration(Positionals, Options);
+run_command("since", Positionals, Options) -> cmd_since(Positionals, Options);
+run_command("until", Positionals, Options) -> cmd_until(Positionals, Options);
 run_command(Command, _Positionals, _Options) ->
-    error_exit("unknown command '" ++ atom_to_list(Command) ++ "'").
+    usage_error("unknown command '" ++ Command ++ "'").
+
+formatted({ok, Text}) -> {0, [Text]};
+formatted(error) -> null_result().
+
+null_result() -> {1, []}.
+
+locale(Component, LocaleCode) ->
+    case Component:get_locale(LocaleCode) of
+        {ok, Locale} -> Locale;
+        error -> usage_error("unknown locale '" ++ LocaleCode ++ "'")
+    end.
+
+as_of_or_today(undefined) -> get_today();
+as_of_or_today(RawAsOf) -> nullify(RawAsOf).
+
+required_as_of(Command, undefined) ->
+    usage_error(Command ++ " requires --as-of / -d option");
+required_as_of(_Command, RawAsOf) ->
+    nullify(RawAsOf).
 
 %% ── Age command ───────────────────────────────────────────────────
 
 cmd_age([], _Options) ->
-    error_exit("age requires a date-of-birth argument");
-cmd_age([RawDob | _], Options) ->
-    Dob = nullify(RawDob),
-    case Dob of
-        undefined ->
-            erlang:halt(1);
-        _ ->
-            #{locale := LocaleCode, as_of := RawAsOf, compactness := Compactness} = Options,
-            case sayableage:get_locale(LocaleCode) of
-                error ->
-                    error_exit("unknown locale '" ++ LocaleCode ++ "'");
-                {ok, Locale} ->
-                    AsOf = case RawAsOf of
-                        undefined -> get_today();
-                        _ -> nullify(RawAsOf)
-                    end,
-                    case sayableage:format_age_pure(Locale, Compactness, Dob, AsOf) of
-                        {ok, Result} ->
-                            io:format("~ts~n", [Result]),
-                            erlang:halt(0);
-                        error ->
-                            erlang:halt(1)
-                    end
-            end
-    end.
+    usage_error("age requires a date-of-birth argument");
+cmd_age(["null" | _], _Options) ->
+    null_result();
+cmd_age([Dob | _], #{locale := LocaleCode, as_of := RawAsOf, compactness := Compactness}) ->
+    Locale = locale(sayableage, LocaleCode),
+    formatted(sayableage:format_age_pure(Locale, Compactness, Dob, as_of_or_today(RawAsOf))).
 
 %% ── Stage command ─────────────────────────────────────────────────
 
 cmd_stage([], _Options) ->
-    error_exit("stage requires a date-of-birth argument");
-cmd_stage([RawDob | _], Options) ->
-    Dob = nullify(RawDob),
-    case Dob of
-        undefined ->
-            erlang:halt(1);
-        _ ->
-            #{locale := LocaleCode, as_of := RawAsOf, compactness := _Compactness,
-              gender := RawGender} = Options,
-            case sayableage:get_locale(LocaleCode) of
-                error ->
-                    error_exit("unknown locale '" ++ LocaleCode ++ "'");
-                {ok, Locale} ->
-                    AsOf = case RawAsOf of
-                        undefined -> get_today();
-                        _ -> nullify(RawAsOf)
-                    end,
-                    Gender = case RawGender of
-                        "m" -> male;
-                        "f" -> female;
-                        _ -> undefined
-                    end,
-                    case sayableage:format_stage_pure(Locale, Dob, AsOf, Gender) of
-                        {ok, Result} ->
-                            io:format("~ts~n", [Result]),
-                            erlang:halt(0);
-                        error ->
-                            erlang:halt(1)
-                    end
-            end
-    end.
+    usage_error("stage requires a date-of-birth argument");
+cmd_stage(["null" | _], _Options) ->
+    null_result();
+cmd_stage([Dob | _], #{locale := LocaleCode, as_of := RawAsOf, gender := RawGender}) ->
+    Locale = locale(sayableage, LocaleCode),
+    Gender = case RawGender of
+        "m" -> male;
+        "f" -> female;
+        _ -> undefined
+    end,
+    formatted(sayableage:format_stage_pure(Locale, Dob, as_of_or_today(RawAsOf), Gender)).
 
 %% ── Date command ──────────────────────────────────────────────────
 
 cmd_date([], _Options) ->
-    error_exit("date requires a date argument");
-cmd_date([RawDate | _], Options) ->
+    usage_error("date requires a date argument");
+cmd_date([RawDate | _], #{locale := LocaleCode, compactness := Compactness, with_year := WithYear}) ->
     DateVal = nullify(RawDate),
-    #{locale := LocaleCode, compactness := Compactness, with_year := WithYear} = Options,
-    case sayabledate:get_locale(LocaleCode) of
-        error ->
-            error_exit("unknown locale '" ++ LocaleCode ++ "'");
-        {ok, Locale} ->
-            Result = case WithYear of
-                true -> sayabledate:format_date_with_year(Locale, Compactness, DateVal);
-                false -> sayabledate:format_date(Locale, Compactness, DateVal)
-            end,
-            case Result of
-                {ok, Output} ->
-                    io:format("~ts~n", [Output]),
-                    erlang:halt(0);
-                error ->
-                    erlang:halt(1)
-            end
-    end.
+    Locale = locale(sayabledate, LocaleCode),
+    formatted(case WithYear of
+        true -> sayabledate:format_date_with_year(Locale, Compactness, DateVal);
+        false -> sayabledate:format_date(Locale, Compactness, DateVal)
+    end).
 
 %% ── Relative command ──────────────────────────────────────────────
 
 cmd_relative([], _Options) ->
-    error_exit("relative requires a date argument");
-cmd_relative([RawDate | _], Options) ->
-    DateVal = nullify(RawDate),
-    #{locale := LocaleCode, as_of := RawAsOf, compactness := Compactness} = Options,
-    case RawAsOf of
-        undefined ->
-            error_exit("relative requires --as-of / -d option");
-        _ ->
-            AsOf = nullify(RawAsOf),
-            case sayabledate:get_locale(LocaleCode) of
-                error ->
-                    error_exit("unknown locale '" ++ LocaleCode ++ "'");
-                {ok, Locale} ->
-                    case sayabledate:format_relative(Locale, Compactness, DateVal, AsOf) of
-                        {ok, Result} ->
-                            io:format("~ts~n", [Result]),
-                            erlang:halt(0);
-                        error ->
-                            erlang:halt(1)
-                    end
-            end
-    end.
+    usage_error("relative requires a date argument");
+cmd_relative([RawDate | _], #{locale := LocaleCode, as_of := RawAsOf, compactness := Compactness}) ->
+    AsOf = required_as_of("relative", RawAsOf),
+    Locale = locale(sayabledate, LocaleCode),
+    formatted(sayabledate:format_relative(Locale, Compactness, nullify(RawDate), AsOf)).
 
 %% ── Time command ──────────────────────────────────────────────────
 
 cmd_time([], _Options) ->
-    error_exit("time requires a time argument");
-cmd_time([RawTime | _], Options) ->
-    TimeVal = nullify(RawTime),
-    #{locale := LocaleCode, compactness := Compactness} = Options,
-    case sayabletime:get_locale(LocaleCode) of
-        error ->
-            error_exit("unknown locale '" ++ LocaleCode ++ "'");
-        {ok, Locale} ->
-            case sayabletime:format_time(Locale, Compactness, TimeVal) of
-                {ok, Result} ->
-                    io:format("~ts~n", [Result]),
-                    erlang:halt(0);
-                error ->
-                    erlang:halt(1)
-            end
-    end.
+    usage_error("time requires a time argument");
+cmd_time([RawTime | _], #{locale := LocaleCode, compactness := Compactness}) ->
+    Locale = locale(sayabletime, LocaleCode),
+    formatted(sayabletime:format_time(Locale, Compactness, nullify(RawTime))).
 
 %% ── Duration command ──────────────────────────────────────────────
 
 cmd_duration([], _Options) ->
-    error_exit("duration requires a value argument");
-cmd_duration([RawValue | RestPos], Options) ->
-    Value = nullify(RawValue),
-    #{locale := LocaleCode, compactness := Compactness} = Options,
-    case sayableduration:get_locale(LocaleCode) of
-        error ->
-            error_exit("unknown locale '" ++ LocaleCode ++ "'");
-        {ok, Locale} ->
-            Result = case Value of
-                undefined ->
-                    sayableduration:format_duration(Locale, Compactness, undefined, undefined);
-                _ ->
-                    case is_integer_string(Value) of
-                        {true, N} ->
-                            sayableduration:format_duration(Locale, Compactness, N, undefined);
-                        false ->
-                            %% Timestamp mode: need end argument
-                            case RestPos of
-                                [] ->
-                                    error_exit("duration with timestamps requires start and end arguments");
-                                [RawEnd | _] ->
-                                    End = nullify(RawEnd),
-                                    sayableduration:format_duration(Locale, Compactness, Value, End)
-                            end
-                    end
-            end,
-            case Result of
-                {ok, Output} ->
-                    io:format("~ts~n", [Output]),
-                    erlang:halt(0);
-                error ->
-                    erlang:halt(1)
+    usage_error("duration requires a value argument");
+cmd_duration([RawValue | RestPos], #{locale := LocaleCode, compactness := Compactness}) ->
+    Locale = locale(sayableduration, LocaleCode),
+    formatted(case nullify(RawValue) of
+        undefined ->
+            sayableduration:format_duration(Locale, Compactness, undefined, undefined);
+        Value ->
+            case {is_integer_string(Value), RestPos} of
+                {{true, Seconds}, _} ->
+                    sayableduration:format_duration(Locale, Compactness, Seconds, undefined);
+                {false, []} ->
+                    usage_error("duration with timestamps requires start and end arguments");
+                {false, [RawEnd | _]} ->
+                    sayableduration:format_duration(Locale, Compactness, Value, nullify(RawEnd))
             end
-    end.
+    end).
 
 %% ── Since command ─────────────────────────────────────────────────
 
 cmd_since([], _Options) ->
-    error_exit("since requires a start timestamp argument");
-cmd_since([RawStart | _], Options) ->
-    Start = nullify(RawStart),
-    #{locale := LocaleCode, as_of := RawAsOf, compactness := Compactness} = Options,
-    case RawAsOf of
-        undefined ->
-            error_exit("since requires --as-of / -d option");
-        _ ->
-            AsOf = nullify(RawAsOf),
-            case sayableduration:get_locale(LocaleCode) of
-                error ->
-                    error_exit("unknown locale '" ++ LocaleCode ++ "'");
-                {ok, Locale} ->
-                    case sayableduration:format_since(Locale, Compactness, Start, AsOf) of
-                        {ok, Result} ->
-                            io:format("~ts~n", [Result]),
-                            erlang:halt(0);
-                        error ->
-                            erlang:halt(1)
-                    end
-            end
-    end.
+    usage_error("since requires a start timestamp argument");
+cmd_since([RawStart | _], #{locale := LocaleCode, as_of := RawAsOf, compactness := Compactness}) ->
+    AsOf = required_as_of("since", RawAsOf),
+    Locale = locale(sayableduration, LocaleCode),
+    formatted(sayableduration:format_since(Locale, Compactness, nullify(RawStart), AsOf)).
 
 %% ── Until command ─────────────────────────────────────────────────
 
 cmd_until([], _Options) ->
-    error_exit("until requires a target timestamp argument");
-cmd_until([RawTarget | _], Options) ->
-    Target = nullify(RawTarget),
-    #{locale := LocaleCode, as_of := RawAsOf, compactness := Compactness} = Options,
-    case RawAsOf of
-        undefined ->
-            error_exit("until requires --as-of / -d option");
-        _ ->
-            AsOf = nullify(RawAsOf),
-            case sayableduration:get_locale(LocaleCode) of
-                error ->
-                    error_exit("unknown locale '" ++ LocaleCode ++ "'");
-                {ok, Locale} ->
-                    case sayableduration:format_until(Locale, Compactness, Target, AsOf) of
-                        {ok, Result} ->
-                            io:format("~ts~n", [Result]),
-                            erlang:halt(0);
-                        error ->
-                            erlang:halt(1)
-                    end
-            end
-    end.
+    usage_error("until requires a target timestamp argument");
+cmd_until([RawTarget | _], #{locale := LocaleCode, as_of := RawAsOf, compactness := Compactness}) ->
+    AsOf = required_as_of("until", RawAsOf),
+    Locale = locale(sayableduration, LocaleCode),
+    formatted(sayableduration:format_until(Locale, Compactness, nullify(RawTarget), AsOf)).
 
 %% ── Locales command ───────────────────────────────────────────────
-
-cmd_locales() ->
-    Codes = collect_locale_codes(),
-    lists:foreach(fun(Code) -> io:format("~s~n", [Code]) end, Codes).
 
 collect_locale_codes() ->
     %% All four components share the same locale codes.
@@ -380,15 +305,17 @@ all_digits(_) -> false.
 
 %% ── Error helpers ─────────────────────────────────────────────────
 
-error_exit(Msg) ->
-    io:format(standard_error, "error: ~s~n", [Msg]),
-    io:format(standard_error, "Run 'sayable help' for usage.~n", []),
-    erlang:halt(2).
+%% Unwinds to run/1, which reports the message and answers exit code 2.
+usage_error(Msg) ->
+    throw({usage_error, Msg}).
+
+print_usage_error(Msg) ->
+    io:format(standard_error, "error: ~ts~n", [Msg]),
+    io:format(standard_error, "Run 'sayable help' for usage.~n", []).
 
 %% ── Help text ─────────────────────────────────────────────────────
 
-print_help() ->
-    io:format(
+help_text() ->
 "Usage: sayable <command> [arguments] [options]
 
 Commands:
@@ -412,4 +339,4 @@ Options:
   -g, --gender <m|f>     Gender for stage labels
       --with-year        Include year (date only)
   -h, --help             Show this help
-  -v, --version          Show version~n", []).
+  -v, --version          Show version".

@@ -80,10 +80,14 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version`)
 
+# Ends the current command; whoever called `exit-code-of` decides what exiting means.
+(defn- cli-exit [code]
+  (return :cli-exit code))
+
 (defn- cli-error [msg]
   (eprintf "error: %s" msg)
   (eprint "Run 'sayable help' for usage.")
-  (os/exit 2))
+  (cli-exit 2))
 
 (defn- nullify [val]
   (if (= val "null") nil val))
@@ -91,7 +95,7 @@ Options:
 (defn- get-today []
   (def t (os/date (os/time) true))
   (string/format "%04d-%02d-%02d"
-                 (+ (t :year) 1900)
+                 (t :year)
                  (+ (t :month) 1)
                  (+ (t :month-day) 1)))
 
@@ -164,7 +168,7 @@ Options:
   (def as-of (if (options :as-of) (nullify (options :as-of)) (get-today)))
   (def pt (age/make-formatter loc (options :compactness)))
   (def result ((pt :format-age) dob as-of))
-  (if (nil? result) (os/exit 1) (print result)))
+  (if (nil? result) (cli-exit 1) (print result)))
 
 (defn- cmd-stage [positionals options]
   (when (= (length positionals) 0)
@@ -177,7 +181,7 @@ Options:
   (def gender (options :gender))
   (def pt (age/make-formatter loc (options :compactness)))
   (def result ((pt :format-stage) dob as-of gender))
-  (if (nil? result) (os/exit 1) (print result)))
+  (if (nil? result) (cli-exit 1) (print result)))
 
 (defn- cmd-date [positionals options]
   (when (= (length positionals) 0)
@@ -191,7 +195,7 @@ Options:
     (if (options :with-year)
       ((pt :format-date-with-year) date-val)
       ((pt :format-date) date-val)))
-  (if (nil? result) (os/exit 1) (print result)))
+  (if (nil? result) (cli-exit 1) (print result)))
 
 (defn- cmd-relative [positionals options]
   (when (= (length positionals) 0)
@@ -205,7 +209,7 @@ Options:
   (when (nil? loc) (cli-error (string "unknown locale '" locale-code "'")))
   (def pt (date/make-formatter loc (options :compactness)))
   (def result ((pt :format-relative) date-val as-of-val))
-  (if (nil? result) (os/exit 1) (print result)))
+  (if (nil? result) (cli-exit 1) (print result)))
 
 (defn- cmd-time [positionals options]
   (when (= (length positionals) 0)
@@ -216,7 +220,7 @@ Options:
   (when (nil? loc) (cli-error (string "unknown locale '" locale-code "'")))
   (def pt (time/make-formatter loc (options :compactness)))
   (def result ((pt :format-time) time-val))
-  (if (nil? result) (os/exit 1) (print result)))
+  (if (nil? result) (cli-exit 1) (print result)))
 
 (defn- cmd-duration [positionals options]
   (when (= (length positionals) 0)
@@ -240,7 +244,7 @@ Options:
             (cli-error "duration with timestamps requires start and end arguments"))
           (def end-val (nullify (in positionals 1)))
           (set result ((pt :format-duration) value end-val))))))
-  (if (nil? result) (os/exit 1) (print result)))
+  (if (nil? result) (cli-exit 1) (print result)))
 
 (defn- cmd-since [positionals options]
   (when (= (length positionals) 0)
@@ -254,7 +258,7 @@ Options:
   (when (nil? loc) (cli-error (string "unknown locale '" locale-code "'")))
   (def pt (dur/make-formatter loc (options :compactness)))
   (def result ((pt :format-since) start as-of-val))
-  (if (nil? result) (os/exit 1) (print result)))
+  (if (nil? result) (cli-exit 1) (print result)))
 
 (defn- cmd-until [positionals options]
   (when (= (length positionals) 0)
@@ -268,7 +272,7 @@ Options:
   (when (nil? loc) (cli-error (string "unknown locale '" locale-code "'")))
   (def pt (dur/make-formatter loc (options :compactness)))
   (def result ((pt :format-until) target as-of-val))
-  (if (nil? result) (os/exit 1) (print result)))
+  (if (nil? result) (cli-exit 1) (print result)))
 
 (defn- cmd-locales []
   (def codes @[])
@@ -292,19 +296,17 @@ Options:
   (each code codes
     (print code)))
 
-(defn main [&]
-  (def argv (dyn :args))
-  (def args (array/slice argv 1))
+(defn- dispatch [args]
   (def [command positionals options] (parse-args args))
 
   (when (nil? command)
     (print help-text)
-    (os/exit 2))
+    (cli-exit 2))
 
   (case command
-    "help" (do (print help-text) (os/exit 0))
-    "version" (do (printf "sayable %s" cli-version) (os/exit 0))
-    "locales" (do (cmd-locales) (os/exit 0))
+    "help" (do (print help-text) (cli-exit 0))
+    "version" (do (printf "sayable %s" cli-version) (cli-exit 0))
+    "locales" (do (cmd-locales) (cli-exit 0))
     "age" (cmd-age positionals options)
     "stage" (cmd-stage positionals options)
     "date" (cmd-date positionals options)
@@ -314,3 +316,40 @@ Options:
     "since" (cmd-since positionals options)
     "until" (cmd-until positionals options)
     (cli-error (string "unknown command '" command "'"))))
+
+(defn- exit-code-of [args]
+  (prompt :cli-exit
+    (dispatch args)
+    0))
+
+# A crashed one-shot run exits 1, so a crashed request answers 1 and the REPL keeps serving.
+(defn- run-isolated [args]
+  (def output @"")
+  (def code
+    (with-dyns [:out output]
+      (try
+        (exit-code-of args)
+        ([err fib]
+          (debug/stacktrace fib err "")
+          1))))
+  [code output])
+
+(defn- request-args [line]
+  (def request (string/trimr line "\n"))
+  (string/split "\t" (if (string/has-suffix? "\r" request) (string/slice request 0 -2) request)))
+
+(defn- response-text [output]
+  (string/replace-all "\n" "\t" (string/trimr output "\n")))
+
+# Answers one tab-separated request per stdin line (see cli/SPEC.md).
+(defn- repl []
+  (loop [line :iterate (file/read stdin :line)]
+    (def [code output] (run-isolated (request-args line)))
+    (file/write stdout (string code "\t" (response-text output) "\n"))
+    (file/flush stdout)))
+
+(defn main [&]
+  (def args (array/slice (dyn :args) 1))
+  (if (deep= args @["--repl"])
+    (repl)
+    (os/exit (exit-code-of args))))

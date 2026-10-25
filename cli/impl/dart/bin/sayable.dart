@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:sayable_age/sayable_age.dart' as age;
@@ -33,10 +34,16 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version''';
 
+/// A usage error: its message is already on stderr; the run exits 2.
+class _UsageError implements Exception {}
+
+/// The outcome of one command: what it would exit with and print to stdout.
+typedef _RunResult = ({int code, String? output});
+
 Never _error(String msg) {
   stderr.writeln('error: $msg');
   stderr.writeln("Run 'sayable help' for usage.");
-  exit(2);
+  throw _UsageError();
 }
 
 String? _nullify(String value) => value == 'null' ? null : value;
@@ -163,7 +170,7 @@ duration.Compactness _durationCompactness(String compactness) {
   return (command: command, positionals: positionals, options: options);
 }
 
-void _cmdAge(List<String> positionals, Map<String, Object> options) {
+String? _cmdAge(List<String> positionals, Map<String, Object> options) {
   if (positionals.isEmpty) _error('age requires a date-of-birth argument');
   final dob = _nullify(positionals[0]);
 
@@ -179,14 +186,13 @@ void _cmdAge(List<String> positionals, Map<String, Object> options) {
     asOfVal = _getToday();
   }
 
-  final formatter = age.SayableAge(locale!, _ageCompactness(options['compactness'] as String));
+  final formatter = age.SayableAge(locale, _ageCompactness(options['compactness'] as String));
   final result = dob == null ? null : formatter.formatAge(dob, asOfVal);
 
-  if (result == null) exit(1);
-  print(result);
+  return result;
 }
 
-void _cmdStage(List<String> positionals, Map<String, Object> options) {
+String? _cmdStage(List<String> positionals, Map<String, Object> options) {
   if (positionals.isEmpty) _error('stage requires a date-of-birth argument');
   final dob = _nullify(positionals[0]);
 
@@ -205,14 +211,13 @@ void _cmdStage(List<String> positionals, Map<String, Object> options) {
   final gender = options['gender'] as String;
   final genderVal = gender.isEmpty ? null : gender;
 
-  final formatter = age.SayableAge(locale!, _ageCompactness(options['compactness'] as String));
+  final formatter = age.SayableAge(locale, _ageCompactness(options['compactness'] as String));
   final result = dob == null ? null : formatter.formatStage(dob, asOfVal, genderVal);
 
-  if (result == null) exit(1);
-  print(result);
+  return result;
 }
 
-void _cmdDate(List<String> positionals, Map<String, Object> options) {
+String? _cmdDate(List<String> positionals, Map<String, Object> options) {
   if (positionals.isEmpty) _error('date requires a date argument');
   final dateVal = _nullify(positionals[0]);
 
@@ -220,7 +225,7 @@ void _cmdDate(List<String> positionals, Map<String, Object> options) {
   final locale = date.getLocale(localeCode);
   if (locale == null) _error("unknown locale '$localeCode'");
 
-  final formatter = date.SayableDate(locale!, _dateCompactness(options['compactness'] as String));
+  final formatter = date.SayableDate(locale, _dateCompactness(options['compactness'] as String));
 
   final withYear = options['with_year'] as bool;
   String? result;
@@ -230,11 +235,10 @@ void _cmdDate(List<String> positionals, Map<String, Object> options) {
     result = formatter.formatDate(dateVal);
   }
 
-  if (result == null) exit(1);
-  print(result);
+  return result;
 }
 
-void _cmdRelative(List<String> positionals, Map<String, Object> options) {
+String? _cmdRelative(List<String> positionals, Map<String, Object> options) {
   if (positionals.isEmpty) _error('relative requires a date argument');
   final dateVal = _nullify(positionals[0]);
 
@@ -246,14 +250,13 @@ void _cmdRelative(List<String> positionals, Map<String, Object> options) {
   final locale = date.getLocale(localeCode);
   if (locale == null) _error("unknown locale '$localeCode'");
 
-  final formatter = date.SayableDate(locale!, _dateCompactness(options['compactness'] as String));
+  final formatter = date.SayableDate(locale, _dateCompactness(options['compactness'] as String));
   final result = formatter.formatRelative(dateVal, asOf: asOfVal);
 
-  if (result == null) exit(1);
-  print(result);
+  return result;
 }
 
-void _cmdTime(List<String> positionals, Map<String, Object> options) {
+String? _cmdTime(List<String> positionals, Map<String, Object> options) {
   if (positionals.isEmpty) _error('time requires a time argument');
   final timeVal = _nullify(positionals[0]);
 
@@ -261,14 +264,13 @@ void _cmdTime(List<String> positionals, Map<String, Object> options) {
   final locale = time.getLocale(localeCode);
   if (locale == null) _error("unknown locale '$localeCode'");
 
-  final formatter = time.SayableTime(locale!, _timeCompactness(options['compactness'] as String));
+  final formatter = time.SayableTime(locale, _timeCompactness(options['compactness'] as String));
   final result = formatter.formatTime(timeVal);
 
-  if (result == null) exit(1);
-  print(result);
+  return result;
 }
 
-void _cmdDuration(List<String> positionals, Map<String, Object> options) {
+String? _cmdDuration(List<String> positionals, Map<String, Object> options) {
   if (positionals.isEmpty) _error('duration requires a value argument');
   final value = _nullify(positionals[0]);
 
@@ -277,7 +279,7 @@ void _cmdDuration(List<String> positionals, Map<String, Object> options) {
   if (locale == null) _error("unknown locale '$localeCode'");
 
   final formatter =
-      duration.SayableDuration(locale!, _durationCompactness(options['compactness'] as String));
+      duration.SayableDuration(locale, _durationCompactness(options['compactness'] as String));
 
   String? result;
   if (value == null) {
@@ -293,8 +295,7 @@ void _cmdDuration(List<String> positionals, Map<String, Object> options) {
     result = formatter.formatDuration(value, end);
   }
 
-  if (result == null) exit(1);
-  print(result);
+  return result;
 }
 
 bool _isInteger(String s) {
@@ -311,7 +312,7 @@ bool _isInteger(String s) {
   return true;
 }
 
-void _cmdSince(List<String> positionals, Map<String, Object> options) {
+String? _cmdSince(List<String> positionals, Map<String, Object> options) {
   if (positionals.isEmpty) _error('since requires a start timestamp argument');
   final start = _nullify(positionals[0]);
 
@@ -324,14 +325,13 @@ void _cmdSince(List<String> positionals, Map<String, Object> options) {
   if (locale == null) _error("unknown locale '$localeCode'");
 
   final formatter =
-      duration.SayableDuration(locale!, _durationCompactness(options['compactness'] as String));
+      duration.SayableDuration(locale, _durationCompactness(options['compactness'] as String));
   final result = formatter.formatSince(start, asOfVal);
 
-  if (result == null) exit(1);
-  print(result);
+  return result;
 }
 
-void _cmdUntil(List<String> positionals, Map<String, Object> options) {
+String? _cmdUntil(List<String> positionals, Map<String, Object> options) {
   if (positionals.isEmpty) _error('until requires a target timestamp argument');
   final target = _nullify(positionals[0]);
 
@@ -344,14 +344,13 @@ void _cmdUntil(List<String> positionals, Map<String, Object> options) {
   if (locale == null) _error("unknown locale '$localeCode'");
 
   final formatter =
-      duration.SayableDuration(locale!, _durationCompactness(options['compactness'] as String));
+      duration.SayableDuration(locale, _durationCompactness(options['compactness'] as String));
   final result = formatter.formatUntil(target, asOfVal);
 
-  if (result == null) exit(1);
-  print(result);
+  return result;
 }
 
-void _cmdLocales() {
+String _cmdLocales() {
   // Collect all locale codes from the age locale registry
   final codes = <String>[];
   const allCodes = [
@@ -376,55 +375,83 @@ void _cmdLocales() {
     }
   }
   codes.sort();
-  for (final code in codes) {
-    print(code);
-  }
+  return codes.join('\n');
 }
 
-void main(List<String> argv) {
+_RunResult _dispatch(List<String> argv) {
   final parsed = _parseArgs(argv);
   final command = parsed.command;
   final positionals = parsed.positionals;
   final options = parsed.options;
 
-  if (command == null) {
-    print(_help);
-    exit(2);
-  }
+  if (command == null) return (code: 2, output: _help);
+  if (command == 'help') return (code: 0, output: _help);
+  if (command == 'version') return (code: 0, output: 'sayable $_version');
+  if (command == 'locales') return (code: 0, output: _cmdLocales());
 
-  if (command == 'help') {
-    print(_help);
-    exit(0);
-  }
-
-  if (command == 'version') {
-    print('sayable $_version');
-    exit(0);
-  }
-
-  if (command == 'locales') {
-    _cmdLocales();
-    exit(0);
-  }
-
+  final String? result;
   switch (command) {
     case 'age':
-      _cmdAge(positionals, options);
+      result = _cmdAge(positionals, options);
     case 'stage':
-      _cmdStage(positionals, options);
+      result = _cmdStage(positionals, options);
     case 'date':
-      _cmdDate(positionals, options);
+      result = _cmdDate(positionals, options);
     case 'relative':
-      _cmdRelative(positionals, options);
+      result = _cmdRelative(positionals, options);
     case 'time':
-      _cmdTime(positionals, options);
+      result = _cmdTime(positionals, options);
     case 'duration':
-      _cmdDuration(positionals, options);
+      result = _cmdDuration(positionals, options);
     case 'since':
-      _cmdSince(positionals, options);
+      result = _cmdSince(positionals, options);
     case 'until':
-      _cmdUntil(positionals, options);
+      result = _cmdUntil(positionals, options);
     default:
       _error("unknown command '$command'");
   }
+  return result == null ? (code: 1, output: null) : (code: 0, output: result);
+}
+
+/// Runs one command as the one-shot CLI would, without printing or exiting.
+_RunResult _run(List<String> argv) {
+  try {
+    return _dispatch(argv);
+  } on _UsageError {
+    return (code: 2, output: null);
+  }
+}
+
+String _formatResponse(_RunResult result) {
+  final output = (result.output ?? '').replaceFirst(RegExp(r'\n+$'), '').replaceAll('\n', '\t');
+  return '${result.code}\t$output\n';
+}
+
+/// Answers one tab-separated request per stdin line (see cli/SPEC.md).
+Future<void> _repl() async {
+  final lines = stdin.transform(utf8.decoder).transform(const LineSplitter());
+  await for (final line in lines) {
+    _RunResult result;
+    try {
+      result = _run(line.split('\t'));
+    } catch (err, stack) {
+      // A crash exits non-zero in one-shot mode; keep serving.
+      stderr.writeln('$err\n$stack');
+      result = (code: 1, output: null);
+    }
+    stdout.write(_formatResponse(result));
+    await stdout.flush();
+  }
+}
+
+Future<void> main(List<String> argv) async {
+  if (argv.length == 1 && argv[0] == '--repl') {
+    stdout.encoding = utf8;
+    await _repl();
+    return;
+  }
+
+  final result = _run(argv);
+  if (result.output != null) print(result.output);
+  exitCode = result.code;
 }

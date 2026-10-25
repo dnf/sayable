@@ -1,4 +1,5 @@
 use std::env;
+use std::io::{self, BufRead, Write};
 use std::process;
 
 use sayable_age::{Compactness as AgeCompactness, Gender, SayableAge};
@@ -44,11 +45,14 @@ struct Options {
     with_year: bool,
 }
 
-/// Print error to stderr and exit with code 2.
-fn error(msg: &str) -> ! {
-    eprintln!("error: {msg}");
-    eprintln!("Run 'sayable help' for usage.");
-    process::exit(2);
+/// A usage error: reported on stderr, exit code 2.
+struct UsageError(String);
+
+/// A command's result: `Ok(Some(text))` prints text, `Ok(None)` is a null result.
+type CmdResult = Result<Option<String>, UsageError>;
+
+fn error(msg: &str) -> UsageError {
+    UsageError(msg.to_string())
 }
 
 /// Convert the CLI "null" sentinel to None.
@@ -61,9 +65,11 @@ fn nullify(value: &str) -> Option<&str> {
 }
 
 /// Parse CLI arguments into (command, positionals, options).
-fn parse_args(args: &[String]) -> (Option<&str>, Vec<&str>, Options) {
+type Parsed<'a> = (Option<&'a str>, Vec<&'a str>, Options);
+
+fn parse_args(args: &[String]) -> Result<Parsed<'_>, UsageError> {
     if args.is_empty() {
-        return (
+        return Ok((
             None,
             Vec::new(),
             Options {
@@ -73,13 +79,13 @@ fn parse_args(args: &[String]) -> (Option<&str>, Vec<&str>, Options) {
                 gender: None,
                 with_year: false,
             },
-        );
+        ));
     }
 
     // Global flags that can appear as the first argument
     let first = args[0].as_str();
     if matches!(first, "-h" | "--help" | "help") {
-        return (
+        return Ok((
             Some("help"),
             Vec::new(),
             Options {
@@ -89,10 +95,10 @@ fn parse_args(args: &[String]) -> (Option<&str>, Vec<&str>, Options) {
                 gender: None,
                 with_year: false,
             },
-        );
+        ));
     }
     if matches!(first, "-v" | "--version" | "version") {
-        return (
+        return Ok((
             Some("version"),
             Vec::new(),
             Options {
@@ -102,7 +108,7 @@ fn parse_args(args: &[String]) -> (Option<&str>, Vec<&str>, Options) {
                 gender: None,
                 with_year: false,
             },
-        );
+        ));
     }
 
     let command = args[0].as_str();
@@ -131,21 +137,21 @@ fn parse_args(args: &[String]) -> (Option<&str>, Vec<&str>, Options) {
             match arg {
                 "-l" | "--locale" => {
                     if i + 1 >= args.len() {
-                        error(&format!("'{arg}' requires a value"));
+                        return Err(error(&format!("'{arg}' requires a value")));
                     }
                     i += 1;
                     opts.locale = args[i].clone();
                 }
                 "-d" | "--as-of" => {
                     if i + 1 >= args.len() {
-                        error(&format!("'{arg}' requires a value"));
+                        return Err(error(&format!("'{arg}' requires a value")));
                     }
                     i += 1;
                     opts.as_of = Some(args[i].clone());
                 }
                 "-g" | "--gender" => {
                     if i + 1 >= args.len() {
-                        error(&format!("'{arg}' requires a value"));
+                        return Err(error(&format!("'{arg}' requires a value")));
                     }
                     i += 1;
                     opts.gender = Some(args[i].clone());
@@ -160,21 +166,13 @@ fn parse_args(args: &[String]) -> (Option<&str>, Vec<&str>, Options) {
                     opts.with_year = true;
                 }
                 "-h" | "--help" => {
-                    return (
-                        Some("help"),
-                        Vec::new(),
-                        opts,
-                    );
+                    return Ok((Some("help"), Vec::new(), opts));
                 }
                 "-v" | "--version" => {
-                    return (
-                        Some("version"),
-                        Vec::new(),
-                        opts,
-                    );
+                    return Ok((Some("version"), Vec::new(), opts));
                 }
                 _ => {
-                    error(&format!("unknown option '{arg}'"));
+                    return Err(error(&format!("unknown option '{arg}'")));
                 }
             }
         } else {
@@ -184,7 +182,7 @@ fn parse_args(args: &[String]) -> (Option<&str>, Vec<&str>, Options) {
         i += 1;
     }
 
-    (Some(command), positionals, opts)
+    Ok((Some(command), positionals, opts))
 }
 
 /// Get today's date as YYYY-MM-DD.
@@ -240,14 +238,14 @@ fn duration_compactness(s: &str) -> DurationCompactness {
     }
 }
 
-fn cmd_age(positionals: &[&str], opts: &Options) {
+fn cmd_age(positionals: &[&str], opts: &Options) -> CmdResult {
     if positionals.is_empty() {
-        error("age requires a date-of-birth argument");
+        return Err(error("age requires a date-of-birth argument"));
     }
     let dob = nullify(positionals[0]);
 
     let locale = sayable_age::locales::get(&opts.locale)
-        .unwrap_or_else(|| error(&format!("unknown locale '{}'", opts.locale)));
+        .ok_or_else(|| error(&format!("unknown locale '{}'", opts.locale)))?;
 
     let as_of = match &opts.as_of {
         Some(v) => match nullify(v) {
@@ -260,25 +258,19 @@ fn cmd_age(positionals: &[&str], opts: &Options) {
     let formatter = SayableAge::new(locale, age_compactness(&opts.compactness));
 
     match dob {
-        Some(dob_str) => {
-            let result = formatter.format_age(dob_str, Some(&as_of));
-            match result {
-                Some(s) => println!("{s}"),
-                None => process::exit(1),
-            }
-        }
-        None => process::exit(1),
+        Some(dob_str) => Ok(formatter.format_age(dob_str, Some(&as_of))),
+        None => Ok(None),
     }
 }
 
-fn cmd_stage(positionals: &[&str], opts: &Options) {
+fn cmd_stage(positionals: &[&str], opts: &Options) -> CmdResult {
     if positionals.is_empty() {
-        error("stage requires a date-of-birth argument");
+        return Err(error("stage requires a date-of-birth argument"));
     }
     let dob = nullify(positionals[0]);
 
     let locale = sayable_age::locales::get(&opts.locale)
-        .unwrap_or_else(|| error(&format!("unknown locale '{}'", opts.locale)));
+        .ok_or_else(|| error(&format!("unknown locale '{}'", opts.locale)))?;
 
     let as_of = match &opts.as_of {
         Some(v) => match nullify(v) {
@@ -296,93 +288,71 @@ fn cmd_stage(positionals: &[&str], opts: &Options) {
     let formatter = SayableAge::new(locale, age_compactness(&opts.compactness));
 
     match dob {
-        Some(dob_str) => {
-            let result = formatter.format_stage(dob_str, Some(&as_of), gender);
-            match result {
-                Some(s) => println!("{s}"),
-                None => process::exit(1),
-            }
-        }
-        None => process::exit(1),
+        Some(dob_str) => Ok(formatter.format_stage(dob_str, Some(&as_of), gender)),
+        None => Ok(None),
     }
 }
 
-fn cmd_date(positionals: &[&str], opts: &Options) {
+fn cmd_date(positionals: &[&str], opts: &Options) -> CmdResult {
     if positionals.is_empty() {
-        error("date requires a date argument");
+        return Err(error("date requires a date argument"));
     }
     let date_val = nullify(positionals[0]);
 
     let locale = sayable_date::locales::get(&opts.locale)
-        .unwrap_or_else(|| error(&format!("unknown locale '{}'", opts.locale)));
+        .ok_or_else(|| error(&format!("unknown locale '{}'", opts.locale)))?;
 
     let formatter = SayableDate::new(locale, date_compactness(&opts.compactness));
 
     match date_val {
         Some(d) => {
-            let result = if opts.with_year {
-                formatter.format_date_with_year(d)
+            if opts.with_year {
+                Ok(formatter.format_date_with_year(d))
             } else {
-                formatter.format_date(d)
-            };
-            match result {
-                Some(s) => println!("{s}"),
-                None => process::exit(1),
+                Ok(formatter.format_date(d))
             }
         }
-        None => process::exit(1),
+        None => Ok(None),
     }
 }
 
-fn cmd_relative(positionals: &[&str], opts: &Options) {
+fn cmd_relative(positionals: &[&str], opts: &Options) -> CmdResult {
     if positionals.is_empty() {
-        error("relative requires a date argument");
+        return Err(error("relative requires a date argument"));
     }
     let date_val = nullify(positionals[0]);
 
     let as_of_raw = match &opts.as_of {
         Some(v) => v.as_str(),
-        None => error("relative requires --as-of / -d option"),
+        None => return Err(error("relative requires --as-of / -d option")),
     };
     let as_of = nullify(as_of_raw);
 
     let locale = sayable_date::locales::get(&opts.locale)
-        .unwrap_or_else(|| error(&format!("unknown locale '{}'", opts.locale)));
+        .ok_or_else(|| error(&format!("unknown locale '{}'", opts.locale)))?;
 
     let formatter = SayableDate::new(locale, date_compactness(&opts.compactness));
 
     match (date_val, as_of) {
-        (Some(d), Some(a)) => {
-            let result = formatter.format_relative(d, a);
-            match result {
-                Some(s) => println!("{s}"),
-                None => process::exit(1),
-            }
-        }
-        _ => process::exit(1),
+        (Some(d), Some(a)) => Ok(formatter.format_relative(d, a)),
+        _ => Ok(None),
     }
 }
 
-fn cmd_time(positionals: &[&str], opts: &Options) {
+fn cmd_time(positionals: &[&str], opts: &Options) -> CmdResult {
     if positionals.is_empty() {
-        error("time requires a time argument");
+        return Err(error("time requires a time argument"));
     }
     let time_val = nullify(positionals[0]);
 
     let locale = sayable_time::locales::get(&opts.locale)
-        .unwrap_or_else(|| error(&format!("unknown locale '{}'", opts.locale)));
+        .ok_or_else(|| error(&format!("unknown locale '{}'", opts.locale)))?;
 
     let formatter = SayableTime::new(locale, time_compactness(&opts.compactness));
 
     match time_val {
-        Some(t) => {
-            let result = formatter.format_time(t);
-            match result {
-                Some(s) => println!("{s}"),
-                None => process::exit(1),
-            }
-        }
-        None => process::exit(1),
+        Some(t) => Ok(formatter.format_time(t)),
+        None => Ok(None),
     }
 }
 
@@ -399,111 +369,88 @@ fn is_integer(s: &str) -> bool {
     bytes[start..].iter().all(|b| b.is_ascii_digit())
 }
 
-fn cmd_duration(positionals: &[&str], opts: &Options) {
+fn cmd_duration(positionals: &[&str], opts: &Options) -> CmdResult {
     if positionals.is_empty() {
-        error("duration requires a value argument");
+        return Err(error("duration requires a value argument"));
     }
     let value = nullify(positionals[0]);
 
     let locale = sayable_duration::locales::get(&opts.locale)
-        .unwrap_or_else(|| error(&format!("unknown locale '{}'", opts.locale)));
+        .ok_or_else(|| error(&format!("unknown locale '{}'", opts.locale)))?;
 
     let formatter = SayableDuration::new(locale, duration_compactness(&opts.compactness));
 
     match value {
-        None => {
-            // null input
-            process::exit(1);
-        }
+        None => Ok(None),
         Some(v) => {
             if is_integer(v) {
                 // Seconds mode
                 let seconds: i32 = v.parse().unwrap_or(-1);
-                let result = formatter.format_duration_seconds(seconds);
-                match result {
-                    Some(s) => println!("{s}"),
-                    None => process::exit(1),
-                }
+                Ok(formatter.format_duration_seconds(seconds))
             } else {
                 // Timestamp mode: need an end argument
                 if positionals.len() < 2 {
-                    error("duration with timestamps requires start and end arguments");
+                    return Err(error(
+                        "duration with timestamps requires start and end arguments",
+                    ));
                 }
                 let end = nullify(positionals[1]);
                 match end {
-                    Some(e) => {
-                        let result = formatter.format_duration_iso(v, e);
-                        match result {
-                            Some(s) => println!("{s}"),
-                            None => process::exit(1),
-                        }
-                    }
-                    None => process::exit(1),
+                    Some(e) => Ok(formatter.format_duration_iso(v, e)),
+                    None => Ok(None),
                 }
             }
         }
     }
 }
 
-fn cmd_since(positionals: &[&str], opts: &Options) {
+fn cmd_since(positionals: &[&str], opts: &Options) -> CmdResult {
     if positionals.is_empty() {
-        error("since requires a start timestamp argument");
+        return Err(error("since requires a start timestamp argument"));
     }
     let start = nullify(positionals[0]);
 
     let as_of_raw = match &opts.as_of {
         Some(v) => v.as_str(),
-        None => error("since requires --as-of / -d option"),
+        None => return Err(error("since requires --as-of / -d option")),
     };
     let as_of = nullify(as_of_raw);
 
     let locale = sayable_duration::locales::get(&opts.locale)
-        .unwrap_or_else(|| error(&format!("unknown locale '{}'", opts.locale)));
+        .ok_or_else(|| error(&format!("unknown locale '{}'", opts.locale)))?;
 
     let formatter = SayableDuration::new(locale, duration_compactness(&opts.compactness));
 
     match (start, as_of) {
-        (Some(s), Some(a)) => {
-            let result = formatter.format_since(s, a);
-            match result {
-                Some(out) => println!("{out}"),
-                None => process::exit(1),
-            }
-        }
-        _ => process::exit(1),
+        (Some(s), Some(a)) => Ok(formatter.format_since(s, a)),
+        _ => Ok(None),
     }
 }
 
-fn cmd_until(positionals: &[&str], opts: &Options) {
+fn cmd_until(positionals: &[&str], opts: &Options) -> CmdResult {
     if positionals.is_empty() {
-        error("until requires a target timestamp argument");
+        return Err(error("until requires a target timestamp argument"));
     }
     let target = nullify(positionals[0]);
 
     let as_of_raw = match &opts.as_of {
         Some(v) => v.as_str(),
-        None => error("until requires --as-of / -d option"),
+        None => return Err(error("until requires --as-of / -d option")),
     };
     let as_of = nullify(as_of_raw);
 
     let locale = sayable_duration::locales::get(&opts.locale)
-        .unwrap_or_else(|| error(&format!("unknown locale '{}'", opts.locale)));
+        .ok_or_else(|| error(&format!("unknown locale '{}'", opts.locale)))?;
 
     let formatter = SayableDuration::new(locale, duration_compactness(&opts.compactness));
 
     match (target, as_of) {
-        (Some(t), Some(a)) => {
-            let result = formatter.format_until(t, a);
-            match result {
-                Some(out) => println!("{out}"),
-                None => process::exit(1),
-            }
-        }
-        _ => process::exit(1),
+        (Some(t), Some(a)) => Ok(formatter.format_until(t, a)),
+        _ => Ok(None),
     }
 }
 
-fn cmd_locales() {
+fn cmd_locales() -> String {
     // All components share the same locale set; use age as canonical source
     let codes = [
         "af", "ak", "am", "ar", "az", "bci", "be", "bem", "bg", "bm",
@@ -522,39 +469,111 @@ fn cmd_locales() {
         "ts", "tzm", "uk", "umb", "ur", "uz", "vi", "vmw", "wo", "xh",
         "yo", "yue", "zdj", "zh", "zu",
     ];
-    for code in codes {
-        println!("{code}");
+    codes.map(|code| format!("{code}\n")).concat()
+}
+
+/// What one invocation produces: its exit code and the text it prints to stdout.
+struct Outcome {
+    code: i32,
+    output: String,
+}
+
+impl Outcome {
+    fn printed(text: String) -> Self {
+        Outcome {
+            code: 0,
+            output: format!("{text}\n"),
+        }
     }
+
+    fn from_result(result: Option<String>) -> Self {
+        match result {
+            Some(text) => Outcome::printed(text),
+            None => Outcome {
+                code: 1,
+                output: String::new(),
+            },
+        }
+    }
+}
+
+fn dispatch(args: &[String]) -> Result<Outcome, UsageError> {
+    let (command, positionals, opts) = parse_args(args)?;
+
+    let result = match command {
+        None => {
+            return Ok(Outcome {
+                code: 2,
+                output: format!("{HELP}\n"),
+            })
+        }
+        Some("help") => return Ok(Outcome::printed(HELP.to_string())),
+        Some("version") => return Ok(Outcome::printed(format!("sayable {VERSION}"))),
+        Some("locales") => {
+            return Ok(Outcome {
+                code: 0,
+                output: cmd_locales(),
+            })
+        }
+        Some("age") => cmd_age(&positionals, &opts)?,
+        Some("stage") => cmd_stage(&positionals, &opts)?,
+        Some("date") => cmd_date(&positionals, &opts)?,
+        Some("relative") => cmd_relative(&positionals, &opts)?,
+        Some("time") => cmd_time(&positionals, &opts)?,
+        Some("duration") => cmd_duration(&positionals, &opts)?,
+        Some("since") => cmd_since(&positionals, &opts)?,
+        Some("until") => cmd_until(&positionals, &opts)?,
+        Some(cmd) => return Err(error(&format!("unknown command '{cmd}'"))),
+    };
+    Ok(Outcome::from_result(result))
+}
+
+/// Runs one invocation; usage errors are reported on stderr here.
+fn run(args: &[String]) -> Outcome {
+    dispatch(args).unwrap_or_else(|UsageError(msg)| {
+        eprintln!("error: {msg}");
+        eprintln!("Run 'sayable help' for usage.");
+        Outcome {
+            code: 2,
+            output: String::new(),
+        }
+    })
+}
+
+/// Trailing newline dropped, inner newlines become tabs: one response line.
+fn flatten(output: &str) -> String {
+    output.trim_end_matches('\n').replace('\n', "\t")
+}
+
+/// Answers one tab-separated request per stdin line (see cli/SPEC.md).
+fn repl() -> io::Result<()> {
+    let stdin = io::stdin();
+    let mut stdout = io::stdout().lock();
+    for line in stdin.lock().lines() {
+        let line = line?;
+        let request = line.strip_suffix('\r').unwrap_or(&line);
+        let args: Vec<String> = request.split('\t').map(str::to_string).collect();
+        // A panic would crash a one-shot run (exit 1); here it must not end the REPL.
+        let outcome = std::panic::catch_unwind(|| run(&args)).unwrap_or(Outcome {
+            code: 1,
+            output: String::new(),
+        });
+        writeln!(stdout, "{}\t{}", outcome.code, flatten(&outcome.output))?;
+        stdout.flush()?;
+    }
+    Ok(())
 }
 
 fn main() {
     let args: Vec<String> = env::args().skip(1).collect();
-    let (command, positionals, opts) = parse_args(&args);
-
-    match command {
-        None => {
-            println!("{HELP}");
-            process::exit(2);
+    if args == ["--repl"] {
+        if let Err(e) = repl() {
+            eprintln!("error: {e}");
+            process::exit(1);
         }
-        Some("help") => {
-            println!("{HELP}");
-        }
-        Some("version") => {
-            println!("sayable {VERSION}");
-        }
-        Some("locales") => {
-            cmd_locales();
-        }
-        Some("age") => cmd_age(&positionals, &opts),
-        Some("stage") => cmd_stage(&positionals, &opts),
-        Some("date") => cmd_date(&positionals, &opts),
-        Some("relative") => cmd_relative(&positionals, &opts),
-        Some("time") => cmd_time(&positionals, &opts),
-        Some("duration") => cmd_duration(&positionals, &opts),
-        Some("since") => cmd_since(&positionals, &opts),
-        Some("until") => cmd_until(&positionals, &opts),
-        Some(cmd) => {
-            error(&format!("unknown command '{cmd}'"));
-        }
+        return;
     }
+    let outcome = run(&args);
+    print!("{}", outcome.output);
+    process::exit(outcome.code);
 }

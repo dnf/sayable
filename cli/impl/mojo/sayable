@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Sayable CLI — Mojo implementation wrapper.
+# Builds build/sayable when it is missing or older than any Mojo source.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
+BIN="${SCRIPT_DIR}/build/sayable"
+
+_is_stale() {
+    [[ ! -x "${BIN}" ]] && return 0
+    [[ -n "$(find "${SCRIPT_DIR}/main.mojo" "${PROJECT_ROOT}"/{age,date,duration,time}/impl/mojo/src \
+        -name '*.mojo' -newer "${BIN}" -print -quit)" ]]
+}
+
+if _is_stale; then
+    "${SCRIPT_DIR}/build.sh" >&2
+fi
+
+exec "${BIN}" "$@"

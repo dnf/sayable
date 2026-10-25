@@ -283,6 +283,121 @@ def emit_duration_tests(sections: list, out: list):
                 out.append(f"run_test 'dur:{tid}' '{shell_escape(str(expected))}' {cli_args}")
 
 
+HARNESS_RUNTIME = r"""
+# Requests are queued, answered by a single `--repl` process, then checked.
+# Request: the CLI arguments joined by tabs. Response: "<exit>\t<output>".
+_tab=$'\t'
+_ids=()
+_kinds=()
+_expects=()
+_requests=""
+
+_queue() {
+    local id="$1" kind="$2" expected="$3"
+    shift 3
+    local IFS="${_tab}"
+    _ids+=("${id}")
+    _kinds+=("${kind}")
+    _expects+=("${expected}")
+    _requests+="$*"$'\n'
+}
+
+run_test() { local id="$1" expected="$2"; shift 2; _queue "${id}" test "${expected}" "$@"; }
+run_null() { local id="$1"; shift; _queue "${id}" null "" "$@"; }
+run_regex() { local id="$1" pattern="$2"; shift 2; _queue "${id}" regex "${pattern}" "$@"; }
+
+# A component is supported unless probing it is a usage error (exit 2).
+for _component in age date time duration; do
+    _queue "probe:${_component}" probe "" "${_component}" null
+done
+"""
+
+HARNESS_CHECK = r"""
+# ══════════════════════════════════════════════════════════════
+# RUN AND CHECK
+# ══════════════════════════════════════════════════════════════
+_responses=()
+while IFS= read -r _line; do
+    _responses+=("${_line}")
+done < <(printf '%s' "${_requests}" | "${CLI}" --repl 2>/dev/null || true)
+
+if [[ ${#_responses[@]} -ne ${#_ids[@]} ]]; then
+    printf "${_red}FAIL${_reset} REPL answered %d of %d requests\n" "${#_responses[@]}" "${#_ids[@]}"
+    exit 1
+fi
+
+_has_age=true _has_date=true _has_time=true _has_duration=true
+for _i in "${!_ids[@]}"; do
+    if [[ "${_kinds[_i]}" == probe && "${_responses[_i]%%${_tab}*}" == 2 ]]; then
+        case "${_ids[_i]}" in
+            probe:age) _has_age=false ;;
+            probe:date) _has_date=false ;;
+            probe:time) _has_time=false ;;
+            probe:duration) _has_duration=false ;;
+        esac
+    fi
+done
+
+echo "Testing: ${CLI}"
+echo "Components: age=${_has_age} date=${_has_date} time=${_has_time} duration=${_has_duration}"
+
+_supported() {
+    case "$1" in
+        age:*) ${_has_age} ;;
+        date:*) ${_has_date} ;;
+        time:*) ${_has_time} ;;
+        dur:*) ${_has_duration} ;;
+        *) false ;;
+    esac
+}
+
+for _i in "${!_ids[@]}"; do
+    _id="${_ids[_i]}"
+    _kind="${_kinds[_i]}"
+    _expected="${_expects[_i]}"
+    [[ "${_kind}" == probe ]] && continue
+    if ! _supported "${_id}"; then
+        _skip=$((_skip + 1))
+        continue
+    fi
+    _total=$((_total + 1))
+    _response="${_responses[_i]}"
+    _rc="${_response%%${_tab}*}"
+    _output="${_response#*${_tab}}"
+    case "${_kind}" in
+        test) [[ "${_rc}" == 0 && "${_output}" == "${_expected}" ]] ;;
+        null) [[ "${_rc}" == 1 && -z "${_output}" ]] ;;
+        regex) [[ "${_rc}" == 0 && "${_output}" =~ ${_expected} ]] ;;
+    esac && _ok=true || _ok=false
+    if ${_ok}; then
+        _pass=$((_pass + 1))
+    else
+        _fail=$((_fail + 1))
+        case "${_kind}" in
+            test) printf "${_red}FAIL${_reset} %s: expected %q, got %q (exit %s)\n" "${_id}" "${_expected}" "${_output}" "${_rc}" ;;
+            null) printf "${_red}FAIL${_reset} %s: expected null (exit 1), got exit %s, output: %q\n" "${_id}" "${_rc}" "${_output}" ;;
+            regex) printf "${_red}FAIL${_reset} %s: expected match %q, got %q (exit %s)\n" "${_id}" "${_expected}" "${_output}" "${_rc}" ;;
+        esac
+    fi
+done
+
+# ══════════════════════════════════════════════════════════════
+# SUMMARY
+# ══════════════════════════════════════════════════════════════
+echo
+if [[ ${_skip} -gt 0 ]]; then
+    printf "${_yellow}%d skipped${_reset} (unsupported components)\n" "${_skip}"
+fi
+if [[ ${_fail} -eq 0 ]]; then
+    printf "${_green}All %d tests passed.${_reset}\n" "${_total}"
+else
+    printf "${_red}%d failed${_reset}, ${_green}%d passed${_reset} out of %d tests.\n" "${_fail}" "${_pass}" "${_total}"
+fi
+
+[[ ${_fail} -eq 0 ]]
+"""
+
+
 def generate():
     out = []
 
@@ -292,6 +407,8 @@ def generate():
     out.append("# Sayable CLI Test Harness")
     out.append("# Generated from canonical test JSON files — do not edit by hand.")
     out.append("# Regenerate: python3 cli/generate-test-harness.py")
+    out.append("#")
+    out.append("# Runs every test through one `<cli> --repl` process (see cli/SPEC.md).")
     out.append("# ==========================================================================")
     out.append("set -euo pipefail")
     out.append("")
@@ -318,184 +435,19 @@ def generate():
     out.append("else")
     out.append('    _red="" _green="" _yellow="" _reset=""')
     out.append("fi")
-    out.append("")
-    out.append("# Test helper: expect specific output (exit 0)")
-    out.append("run_test() {")
-    out.append('    local id="$1" expected="$2"')
-    out.append("    shift 2")
-    out.append('    _total=$((_total + 1))')
-    out.append('    local output rc')
-    out.append('    output=$("${CLI}" "$@" 2>/dev/null) && rc=0 || rc=$?')
-    out.append('    if [[ ${rc} -eq 0 && "${output}" == "${expected}" ]]; then')
-    out.append('        _pass=$((_pass + 1))')
-    out.append("    else")
-    out.append('        _fail=$((_fail + 1))')
-    out.append('        printf "${_red}FAIL${_reset} %s: expected %q, got %q (exit %d)\\n" "${id}" "${expected}" "${output}" "${rc}"')
-    out.append("    fi")
-    out.append("}")
-    out.append("")
-    out.append("# Test helper: expect null result (exit 1, no output)")
-    out.append("run_null() {")
-    out.append('    local id="$1"')
-    out.append("    shift")
-    out.append('    _total=$((_total + 1))')
-    out.append('    local output rc')
-    out.append('    output=$("${CLI}" "$@" 2>/dev/null) && rc=0 || rc=$?')
-    out.append('    if [[ ${rc} -eq 1 && -z "${output}" ]]; then')
-    out.append('        _pass=$((_pass + 1))')
-    out.append("    else")
-    out.append('        _fail=$((_fail + 1))')
-    out.append('        printf "${_red}FAIL${_reset} %s: expected null (exit 1), got exit %d, output: %q\\n" "${id}" "${rc}" "${output}"')
-    out.append("    fi")
-    out.append("}")
-    out.append("")
-    out.append("# Test helper: expect output matching a regex (exit 0)")
-    out.append("run_regex() {")
-    out.append('    local id="$1" pattern="$2"')
-    out.append("    shift 2")
-    out.append('    _total=$((_total + 1))')
-    out.append('    local output rc')
-    out.append('    output=$("${CLI}" "$@" 2>/dev/null) && rc=0 || rc=$?')
-    out.append('    if [[ ${rc} -eq 0 && "${output}" =~ ${pattern} ]]; then')
-    out.append('        _pass=$((_pass + 1))')
-    out.append("    else")
-    out.append('        _fail=$((_fail + 1))')
-    out.append('        printf "${_red}FAIL${_reset} %s: expected match %q, got %q (exit %d)\\n" "${id}" "${pattern}" "${output}" "${rc}"')
-    out.append("    fi")
-    out.append("}")
-    out.append("")
-    out.append("# Probe: check if a component is supported")
-    out.append("probe_component() {")
-    out.append('    local cmd="$1"')
-    out.append('    # Try a known-good call; exit 2 means unsupported command')
-    out.append('    "${CLI}" "${cmd}" null 2>/dev/null; local rc=$?')
-    out.append('    [[ ${rc} -ne 2 ]]')
-    out.append("}")
-    out.append("")
-    out.append("# Detect supported components")
-    out.append("_has_age=true")
-    out.append("_has_date=true")
-    out.append("_has_time=true")
-    out.append("_has_duration=true")
-    out.append("")
-    out.append('probe_component age || _has_age=false')
-    out.append('probe_component date || _has_date=false')
-    out.append('probe_component time || _has_time=false')
-    out.append('probe_component duration || _has_duration=false')
-    out.append("")
-    out.append('echo "Testing: ${CLI}"')
-    out.append('echo "Components: age=${_has_age} date=${_has_date} time=${_has_time} duration=${_has_duration}"')
-    out.append('echo ""')
+    out.extend(HARNESS_RUNTIME.rstrip("\n").split("\n"))
 
-    # ── Age tests ──
-    out.append("")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append("# AGE COMPONENT")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append('if ${_has_age}; then')
-    out.append('echo "▸ Age tests"')
+    for component, emit in (("age", emit_age_tests), ("date", emit_date_tests),
+                            ("time", emit_time_tests), ("duration", emit_duration_tests)):
+        out.append("")
+        out.append("# ══════════════════════════════════════════════════════════════")
+        out.append(f"# {component.upper()} COMPONENT")
+        out.append("# ══════════════════════════════════════════════════════════════")
+        lines = []
+        emit(load_tests(component)["sections"], lines)
+        out.extend(lines)
 
-    age_data = load_tests("age")
-    age_lines = []
-    emit_age_tests(age_data["sections"], age_lines)
-    for line in age_lines:
-        if line.startswith("#"):
-            out.append(line)
-        elif line == "":
-            out.append("")
-        else:
-            out.append(line)
-
-    out.append("")
-    out.append("else")
-    out.append('    echo "⊘ Age: not supported, skipping"')
-    out.append("fi")
-
-    # ── Date tests ──
-    out.append("")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append("# DATE COMPONENT")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append('if ${_has_date}; then')
-    out.append('echo "▸ Date tests"')
-
-    date_data = load_tests("date")
-    date_lines = []
-    emit_date_tests(date_data["sections"], date_lines)
-    for line in date_lines:
-        if line.startswith("#"):
-            out.append(line)
-        elif line == "":
-            out.append("")
-        else:
-            out.append(line)
-
-    out.append("")
-    out.append("else")
-    out.append('    echo "⊘ Date: not supported, skipping"')
-    out.append("fi")
-
-    # ── Time tests ──
-    out.append("")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append("# TIME COMPONENT")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append('if ${_has_time}; then')
-    out.append('echo "▸ Time tests"')
-
-    time_data = load_tests("time")
-    time_lines = []
-    emit_time_tests(time_data["sections"], time_lines)
-    for line in time_lines:
-        if line.startswith("#"):
-            out.append(line)
-        elif line == "":
-            out.append("")
-        else:
-            out.append(line)
-
-    out.append("")
-    out.append("else")
-    out.append('    echo "⊘ Time: not supported, skipping"')
-    out.append("fi")
-
-    # ── Duration tests ──
-    out.append("")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append("# DURATION COMPONENT")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append('if ${_has_duration}; then')
-    out.append('echo "▸ Duration tests"')
-
-    duration_data = load_tests("duration")
-    duration_lines = []
-    emit_duration_tests(duration_data["sections"], duration_lines)
-    for line in duration_lines:
-        if line.startswith("#"):
-            out.append(line)
-        elif line == "":
-            out.append("")
-        else:
-            out.append(line)
-
-    out.append("")
-    out.append("else")
-    out.append('    echo "⊘ Duration: not supported, skipping"')
-    out.append("fi")
-
-    # ── Summary ──
-    out.append("")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append("# SUMMARY")
-    out.append("# ══════════════════════════════════════════════════════════════")
-    out.append("echo")
-    out.append('if [[ ${_fail} -eq 0 ]]; then')
-    out.append('    printf "${_green}All %d tests passed.${_reset}\\n" "${_total}"')
-    out.append("else")
-    out.append('    printf "${_red}%d failed${_reset}, ${_green}%d passed${_reset} out of %d tests.\\n" "${_fail}" "${_pass}" "${_total}"')
-    out.append("fi")
-    out.append("")
-    out.append('[[ ${_fail} -eq 0 ]]')
+    out.extend(HARNESS_CHECK.rstrip("\n").split("\n"))
 
     # Write output
     harness_path = ROOT / "cli" / "test-harness.sh"

@@ -20,20 +20,18 @@ if ! command -v gprbuild &>/dev/null; then
     exit 1
 fi
 
-# Find macOS SDK library path for linker (needed on newer macOS with Alire GNAT)
-SDK_LIB=""
+# Newer macOS with Alire GNAT needs the SDK library path to link. Elsewhere
+# no path is passed: a bare "-L" would swallow the next linker argument.
+LINKER_ARGS=()
 if [[ "$(uname -s)" == "Darwin" ]]; then
     SDK_PATH="$(xcrun --show-sdk-path 2>/dev/null || true)"
     if [[ -n "${SDK_PATH}" ]]; then
-        SDK_LIB="${SDK_PATH}/usr/lib"
+        LINKER_ARGS=(-largs "-L${SDK_PATH}/usr/lib")
     fi
 fi
 
 mkdir -p "${BUILD_DIR}"
 
-# Build using GPR project (handles non-standard file naming)
-gprbuild -P "${SCRIPT_DIR}/sayable_cli.gpr" \
-    -XSDK_LIB="${SDK_LIB}" \
-    -p -q
+gprbuild -P "${SCRIPT_DIR}/sayable_cli.gpr" -p -q ${LINKER_ARGS[@]+"${LINKER_ARGS[@]}"}
 
 echo "Built: ${BUILD_DIR}/main"

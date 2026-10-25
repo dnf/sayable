@@ -44,11 +44,14 @@ Options:
   -v, --version          Show version
 '@
 
+# Usage errors are thrown, so one request can fail without ending the process.
+class SayableUsageError : System.Exception {
+    SayableUsageError([string]$Message) : base($Message) {}
+}
+
 function Show-Error {
     param([string]$Message)
-    [Console]::Error.WriteLine("error: $Message")
-    [Console]::Error.WriteLine("Run 'sayable help' for usage.")
-    exit 2
+    throw [SayableUsageError]::new($Message)
 }
 
 function ConvertTo-NullSentinel {
@@ -169,10 +172,7 @@ function Invoke-AgeCommand {
     $formatter = New-SayableAgeFormatter -Locale $locale -Compactness $Options['compactness']
     $result = Format-SayableAge -Formatter $formatter -DateOfBirth $dob -AsOf $asOf
 
-    if ($null -eq $result) {
-        exit 1
-    }
-    [Console]::WriteLine($result)
+    return $result
 }
 
 function Invoke-StageCommand {
@@ -201,10 +201,7 @@ function Invoke-StageCommand {
     $formatter = New-SayableAgeFormatter -Locale $locale -Compactness $Options['compactness']
     $result = Format-SayableAgeStage -Formatter $formatter -DateOfBirth $dob -AsOf $asOf -Gender $gender
 
-    if ($null -eq $result) {
-        exit 1
-    }
-    [Console]::WriteLine($result)
+    return $result
 }
 
 function Invoke-DateCommand {
@@ -229,10 +226,7 @@ function Invoke-DateCommand {
         $result = Format-SayableDate -Formatter $formatter -Date $dateVal
     }
 
-    if ($null -eq $result) {
-        exit 1
-    }
-    [Console]::WriteLine($result)
+    return $result
 }
 
 function Invoke-RelativeCommand {
@@ -258,10 +252,7 @@ function Invoke-RelativeCommand {
     $formatter = New-SayableDateFormatter -Locale $locale -Compactness $Options['compactness']
     $result = Format-SayableRelativeDate -Formatter $formatter -Date $dateVal -AsOf $asOf
 
-    if ($null -eq $result) {
-        exit 1
-    }
-    [Console]::WriteLine($result)
+    return $result
 }
 
 function Invoke-TimeCommand {
@@ -281,10 +272,7 @@ function Invoke-TimeCommand {
     $formatter = New-SayableTimeFormatter -Locale $locale -Compactness $Options['compactness']
     $result = Format-SayableTime -Formatter $formatter -InputStr $timeVal
 
-    if ($null -eq $result) {
-        exit 1
-    }
-    [Console]::WriteLine($result)
+    return $result
 }
 
 function Invoke-DurationCommand {
@@ -316,10 +304,7 @@ function Invoke-DurationCommand {
         $result = Format-SayableDuration -Formatter $formatter -StartOrSeconds $value -End $end
     }
 
-    if ($null -eq $result) {
-        exit 1
-    }
-    [Console]::WriteLine($result)
+    return $result
 }
 
 function Invoke-SinceCommand {
@@ -345,10 +330,7 @@ function Invoke-SinceCommand {
     $formatter = New-SayableDurationFormatter -Locale $locale -Compactness $Options['compactness']
     $result = Format-SayableSince -Formatter $formatter -Start $start -AsOf $asOf
 
-    if ($null -eq $result) {
-        exit 1
-    }
-    [Console]::WriteLine($result)
+    return $result
 }
 
 function Invoke-UntilCommand {
@@ -374,10 +356,7 @@ function Invoke-UntilCommand {
     $formatter = New-SayableDurationFormatter -Locale $locale -Compactness $Options['compactness']
     $result = Format-SayableUntil -Formatter $formatter -Target $target -AsOf $asOf
 
-    if ($null -eq $result) {
-        exit 1
-    }
-    [Console]::WriteLine($result)
+    return $result
 }
 
 function Invoke-LocalesCommand {
@@ -387,48 +366,81 @@ function Invoke-LocalesCommand {
         Where-Object { $_.Name -ne 'registry.ps1' } |
         ForEach-Object { $_.BaseName } |
         Sort-Object
-    foreach ($code in $codes) {
-        [Console]::WriteLine($code)
+    return $codes -join "`n"
+}
+
+# Run one request; returns its exit code and stdout text ($null for no output).
+function Invoke-Request {
+    param([string[]]$Argv)
+
+    try {
+        $parsed = Read-Arguments $Argv
+        $command = $parsed['Command']
+        $positionals = $parsed['Positionals']
+        $options = $parsed['Options']
+
+        if ($null -eq $command) {
+            return @{ Code = 2; Output = $script:HELP }
+        }
+        if ($command -eq 'help') {
+            return @{ Code = 0; Output = $script:HELP }
+        }
+        if ($command -eq 'version') {
+            return @{ Code = 0; Output = "sayable $script:VERSION" }
+        }
+        if ($command -eq 'locales') {
+            return @{ Code = 0; Output = (Invoke-LocalesCommand) }
+        }
+
+        $result = switch ($command) {
+            'age'      { Invoke-AgeCommand -Positionals $positionals -Options $options }
+            'stage'    { Invoke-StageCommand -Positionals $positionals -Options $options }
+            'date'     { Invoke-DateCommand -Positionals $positionals -Options $options }
+            'relative' { Invoke-RelativeCommand -Positionals $positionals -Options $options }
+            'time'     { Invoke-TimeCommand -Positionals $positionals -Options $options }
+            'duration' { Invoke-DurationCommand -Positionals $positionals -Options $options }
+            'since'    { Invoke-SinceCommand -Positionals $positionals -Options $options }
+            'until'    { Invoke-UntilCommand -Positionals $positionals -Options $options }
+            default    { Show-Error "unknown command '$command'" }
+        }
+        $code = if ($null -eq $result) { 1 } else { 0 }
+        return @{ Code = $code; Output = $result }
+    } catch [SayableUsageError] {
+        [Console]::Error.WriteLine("error: $($_.Exception.Message)")
+        [Console]::Error.WriteLine("Run 'sayable help' for usage.")
+        return @{ Code = 2; Output = $null }
+    }
+}
+
+# Answer one tab-separated request per stdin line (see cli/SPEC.md).
+function Invoke-Repl {
+    $utf8 = [System.Text.UTF8Encoding]::new($false)
+    [Console]::InputEncoding = $utf8
+    [Console]::OutputEncoding = $utf8
+
+    while ($null -ne ($line = [Console]::In.ReadLine())) {
+        try {
+            $response = Invoke-Request $line.Split("`t")
+        } catch {
+            # A crash exits 1 in one-shot mode; report it and keep serving.
+            [Console]::Error.WriteLine($_.ToString())
+            $response = @{ Code = 1; Output = $null }
+        }
+        $output = ([string]$response.Output).TrimEnd("`n").Replace("`n", "`t")
+        [Console]::Out.Write("$($response.Code)`t$output`n")
+        [Console]::Out.Flush()
     }
 }
 
 # Main entry point
-$parsed = Read-Arguments $args
+if ($args.Count -eq 1 -and $args[0] -eq '--repl') {
+    Invoke-Repl
+    exit 0
+}
 
-$command = $parsed['Command']
-$positionals = $parsed['Positionals']
-$options = $parsed['Options']
-
-if ($null -eq $command) {
-    [Console]::Out.Write($script:HELP)
+$response = Invoke-Request $args
+if ($null -ne $response.Output) {
+    [Console]::Out.Write($response.Output)
     [Console]::Out.WriteLine()
-    exit 2
 }
-
-if ($command -eq 'help') {
-    [Console]::Out.Write($script:HELP)
-    [Console]::Out.WriteLine()
-    exit 0
-}
-
-if ($command -eq 'version') {
-    [Console]::WriteLine("sayable $script:VERSION")
-    exit 0
-}
-
-if ($command -eq 'locales') {
-    Invoke-LocalesCommand
-    exit 0
-}
-
-switch ($command) {
-    'age'      { Invoke-AgeCommand -Positionals $positionals -Options $options }
-    'stage'    { Invoke-StageCommand -Positionals $positionals -Options $options }
-    'date'     { Invoke-DateCommand -Positionals $positionals -Options $options }
-    'relative' { Invoke-RelativeCommand -Positionals $positionals -Options $options }
-    'time'     { Invoke-TimeCommand -Positionals $positionals -Options $options }
-    'duration' { Invoke-DurationCommand -Positionals $positionals -Options $options }
-    'since'    { Invoke-SinceCommand -Positionals $positionals -Options $options }
-    'until'    { Invoke-UntilCommand -Positionals $positionals -Options $options }
-    default    { Show-Error "unknown command '$command'" }
-}
+exit $response.Code

@@ -229,11 +229,15 @@ fn _write_stderr(s: String):
     )
 
 
-fn _error(msg: String):
-    """Print error to stderr and exit with code 2."""
+alias USAGE_ERROR = "sayable: usage error"
+
+
+fn _usage_error(msg: String) -> Error:
+    """Print a usage error to stderr; raising the result makes the run exit 2.
+    """
     _write_stderr("error: " + msg)
     _write_stderr("Run 'sayable help' for usage.")
-    exit(2)
+    return Error(USAGE_ERROR)
 
 
 fn _nullify(value: String) -> String:
@@ -351,18 +355,17 @@ struct ParsedArgs(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible)
         self.with_year = False
 
 
-fn _parse_args() -> ParsedArgs:
-    """Parse CLI arguments into structured form."""
+fn _parse_args(args: List[String]) raises -> ParsedArgs:
+    """Parse CLI arguments (without the program name) into structured form."""
     var result = ParsedArgs()
-    var args = argv()
     var argc = len(args)
 
-    if argc < 2:
+    if argc < 1:
         result.command = ""
         return result
 
     # Global flags that can appear as the first argument
-    var first = String(args[1])
+    var first = args[0]
     if first == "-h" or first == "--help" or first == "help":
         result.command = "help"
         return result
@@ -372,10 +375,10 @@ fn _parse_args() -> ParsedArgs:
 
     result.command = first
 
-    var i = 2
+    var i = 1
     var stop_opts = False
     while i < argc:
-        var arg = String(args[i])
+        var arg = args[i]
 
         if arg == "--" and not stop_opts:
             stop_opts = True
@@ -385,20 +388,20 @@ fn _parse_args() -> ParsedArgs:
         if not stop_opts and len(arg) > 0 and arg[0:1] == "-":
             if arg == "-l" or arg == "--locale":
                 if i + 1 >= argc:
-                    _error("'" + arg + "' requires a value")
+                    raise _usage_error("'" + arg + "' requires a value")
                 i += 1
-                result.locale = String(args[i])
+                result.locale = args[i]
             elif arg == "-d" or arg == "--as-of":
                 if i + 1 >= argc:
-                    _error("'" + arg + "' requires a value")
+                    raise _usage_error("'" + arg + "' requires a value")
                 i += 1
-                result.as_of = String(args[i])
+                result.as_of = args[i]
                 result.has_as_of = True
             elif arg == "-g" or arg == "--gender":
                 if i + 1 >= argc:
-                    _error("'" + arg + "' requires a value")
+                    raise _usage_error("'" + arg + "' requires a value")
                 i += 1
-                result.gender = String(args[i])
+                result.gender = args[i]
                 result.has_gender = True
             elif arg == "--short":
                 result.compactness = "short"
@@ -413,7 +416,7 @@ fn _parse_args() -> ParsedArgs:
                 result.command = "version"
                 return result
             else:
-                _error("unknown option '" + arg + "'")
+                raise _usage_error("unknown option '" + arg + "'")
         else:
             if result.num_positionals == 0:
                 result.pos0 = arg
@@ -426,16 +429,16 @@ fn _parse_args() -> ParsedArgs:
     return result
 
 
-fn _cmd_age(args: ParsedArgs):
+fn _cmd_age(args: ParsedArgs) raises -> String:
     """Handle the 'age' command."""
     if args.num_positionals < 1:
-        _error("age requires a date-of-birth argument")
+        raise _usage_error("age requires a date-of-birth argument")
 
     var dob = _nullify(args.pos0)
     var locale_code = args.locale
 
     if not has_age_locale(locale_code):
-        _error("unknown locale '" + locale_code + "'")
+        raise _usage_error("unknown locale '" + locale_code + "'")
 
     var locale = get_age_locale(locale_code)
 
@@ -448,21 +451,19 @@ fn _cmd_age(args: ParsedArgs):
     var formatter = SayableAge(locale, compactness=args.compactness)
     var result = formatter.format_age(dob, as_of)
 
-    if len(result) == 0:
-        exit(1)
-    print(result)
+    return result
 
 
-fn _cmd_stage(args: ParsedArgs):
+fn _cmd_stage(args: ParsedArgs) raises -> String:
     """Handle the 'stage' command."""
     if args.num_positionals < 1:
-        _error("stage requires a date-of-birth argument")
+        raise _usage_error("stage requires a date-of-birth argument")
 
     var dob = _nullify(args.pos0)
     var locale_code = args.locale
 
     if not has_age_locale(locale_code):
-        _error("unknown locale '" + locale_code + "'")
+        raise _usage_error("unknown locale '" + locale_code + "'")
 
     var locale = get_age_locale(locale_code)
 
@@ -481,21 +482,19 @@ fn _cmd_stage(args: ParsedArgs):
     var formatter = SayableAge(locale, compactness=args.compactness)
     var result = formatter.format_stage(dob, as_of, gender)
 
-    if len(result) == 0:
-        exit(1)
-    print(result)
+    return result
 
 
-fn _cmd_date(args: ParsedArgs):
+fn _cmd_date(args: ParsedArgs) raises -> String:
     """Handle the 'date' command."""
     if args.num_positionals < 1:
-        _error("date requires a date argument")
+        raise _usage_error("date requires a date argument")
 
     var date_val = _nullify(args.pos0)
     var locale_code = args.locale
 
     if not has_date_locale(locale_code):
-        _error("unknown locale '" + locale_code + "'")
+        raise _usage_error("unknown locale '" + locale_code + "'")
 
     var locale = get_date_locale(locale_code)
     var formatter = SayableDate(locale, compactness=args.compactness)
@@ -506,53 +505,47 @@ fn _cmd_date(args: ParsedArgs):
     else:
         result = formatter.format_date(date_val)
 
-    if len(result) == 0:
-        exit(1)
-    print(result)
+    return result
 
 
-fn _cmd_relative(args: ParsedArgs):
+fn _cmd_relative(args: ParsedArgs) raises -> String:
     """Handle the 'relative' command."""
     if args.num_positionals < 1:
-        _error("relative requires a date argument")
+        raise _usage_error("relative requires a date argument")
 
     var date_val = _nullify(args.pos0)
 
     if not args.has_as_of:
-        _error("relative requires --as-of / -d option")
+        raise _usage_error("relative requires --as-of / -d option")
     var as_of = _nullify(args.as_of)
 
     var locale_code = args.locale
     if not has_date_locale(locale_code):
-        _error("unknown locale '" + locale_code + "'")
+        raise _usage_error("unknown locale '" + locale_code + "'")
 
     var locale = get_date_locale(locale_code)
     var formatter = SayableDate(locale, compactness=args.compactness)
     var result = formatter.format_relative(date_val, as_of)
 
-    if len(result) == 0:
-        exit(1)
-    print(result)
+    return result
 
 
-fn _cmd_time(args: ParsedArgs):
+fn _cmd_time(args: ParsedArgs) raises -> String:
     """Handle the 'time' command."""
     if args.num_positionals < 1:
-        _error("time requires a time argument")
+        raise _usage_error("time requires a time argument")
 
     var time_val = _nullify(args.pos0)
     var locale_code = args.locale
 
     if not has_time_locale(locale_code):
-        _error("unknown locale '" + locale_code + "'")
+        raise _usage_error("unknown locale '" + locale_code + "'")
 
     var locale = get_time_locale(locale_code)
     var formatter = SayableTime(locale, compactness=args.compactness)
     var result = formatter.format_time(time_val)
 
-    if len(result) == 0:
-        exit(1)
-    print(result)
+    return result
 
 
 fn _is_negative_int(s: String) -> Bool:
@@ -561,19 +554,19 @@ fn _is_negative_int(s: String) -> Bool:
         return False
     if s[0:1] != "-":
         return False
-    return _is_all_digits(s[1:])
+    return _is_all_digits(String(s[1:]))
 
 
-fn _cmd_duration(args: ParsedArgs):
+fn _cmd_duration(args: ParsedArgs) raises -> String:
     """Handle the 'duration' command."""
     if args.num_positionals < 1:
-        _error("duration requires a value argument")
+        raise _usage_error("duration requires a value argument")
 
     var value = _nullify(args.pos0)
     var locale_code = args.locale
 
     if not has_duration_locale(locale_code):
-        _error("unknown locale '" + locale_code + "'")
+        raise _usage_error("unknown locale '" + locale_code + "'")
 
     var locale = get_duration_locale(locale_code)
     var formatter = SayableDuration(locale, compactness=args.compactness)
@@ -585,7 +578,7 @@ fn _cmd_duration(args: ParsedArgs):
         result = formatter.format_duration_seconds(-1)
     elif _is_negative_int(value):
         # Negative integer: pass as negative (returns empty = null)
-        var abs_str = value[1:]
+        var abs_str = String(value[1:])
         var abs_val = _str_to_int(abs_str)
         result = formatter.format_duration_seconds(-abs_val)
     elif _is_all_digits(value):
@@ -595,105 +588,176 @@ fn _cmd_duration(args: ParsedArgs):
     else:
         # Timestamp mode: need an end argument
         if args.num_positionals < 2:
-            _error("duration with timestamps requires start and end arguments")
+            raise _usage_error("duration with timestamps requires start and end arguments")
         var end = _nullify(args.pos1)
         result = formatter.format_duration_iso(value, end)
 
-    if len(result) == 0:
-        exit(1)
-    print(result)
+    return result
 
 
-fn _cmd_since(args: ParsedArgs):
+fn _cmd_since(args: ParsedArgs) raises -> String:
     """Handle the 'since' command."""
     if args.num_positionals < 1:
-        _error("since requires a start timestamp argument")
+        raise _usage_error("since requires a start timestamp argument")
 
     var start = _nullify(args.pos0)
 
     if not args.has_as_of:
-        _error("since requires --as-of / -d option")
+        raise _usage_error("since requires --as-of / -d option")
     var as_of = _nullify(args.as_of)
 
     var locale_code = args.locale
     if not has_duration_locale(locale_code):
-        _error("unknown locale '" + locale_code + "'")
+        raise _usage_error("unknown locale '" + locale_code + "'")
 
     var locale = get_duration_locale(locale_code)
     var formatter = SayableDuration(locale, compactness=args.compactness)
     var result = formatter.format_since(start, as_of)
 
-    if len(result) == 0:
-        exit(1)
-    print(result)
+    return result
 
 
-fn _cmd_until(args: ParsedArgs):
+fn _cmd_until(args: ParsedArgs) raises -> String:
     """Handle the 'until' command."""
     if args.num_positionals < 1:
-        _error("until requires a target timestamp argument")
+        raise _usage_error("until requires a target timestamp argument")
 
     var target = _nullify(args.pos0)
 
     if not args.has_as_of:
-        _error("until requires --as-of / -d option")
+        raise _usage_error("until requires --as-of / -d option")
     var as_of = _nullify(args.as_of)
 
     var locale_code = args.locale
     if not has_duration_locale(locale_code):
-        _error("unknown locale '" + locale_code + "'")
+        raise _usage_error("unknown locale '" + locale_code + "'")
 
     var locale = get_duration_locale(locale_code)
     var formatter = SayableDuration(locale, compactness=args.compactness)
     var result = formatter.format_until(target, as_of)
 
-    if len(result) == 0:
-        exit(1)
-    print(result)
+    return result
 
 
-fn _cmd_locales():
-    """Handle the 'locales' command."""
+fn _locales_text() -> String:
+    """List every locale code, one per line."""
     var codes = _all_locale_codes()
+    var text = String()
     for i in range(len(codes)):
-        print(codes[i])
+        if i > 0:
+            text += "\n"
+        text += codes[i]
+    return text
 
 
-fn main():
-    """Entry point for the sayable CLI."""
-    var args = _parse_args()
+struct RunResult(Copyable, Movable, ImplicitlyCopyable, ImplicitlyDestructible):
+    """What one command would exit with and print to stdout."""
+
+    var code: Int
+    var output: String
+
+    fn __init__(out self, code: Int, output: String):
+        self.code = code
+        self.output = output
+
+
+fn _dispatch(argv: List[String]) raises -> RunResult:
+    """Run one command; usage errors are raised."""
+    var args = _parse_args(argv)
 
     if len(args.command) == 0:
-        print(HELP)
-        exit(2)
-
+        return RunResult(2, HELP)
     if args.command == "help":
-        print(HELP)
-        exit(0)
-
+        return RunResult(0, HELP)
     if args.command == "version":
-        print("sayable " + VERSION)
-        exit(0)
-
+        return RunResult(0, "sayable " + VERSION)
     if args.command == "locales":
-        _cmd_locales()
-        exit(0)
+        return RunResult(0, _locales_text())
 
+    var result: String
     if args.command == "age":
-        _cmd_age(args)
+        result = _cmd_age(args)
     elif args.command == "stage":
-        _cmd_stage(args)
+        result = _cmd_stage(args)
     elif args.command == "date":
-        _cmd_date(args)
+        result = _cmd_date(args)
     elif args.command == "relative":
-        _cmd_relative(args)
+        result = _cmd_relative(args)
     elif args.command == "time":
-        _cmd_time(args)
+        result = _cmd_time(args)
     elif args.command == "duration":
-        _cmd_duration(args)
+        result = _cmd_duration(args)
     elif args.command == "since":
-        _cmd_since(args)
+        result = _cmd_since(args)
     elif args.command == "until":
-        _cmd_until(args)
+        result = _cmd_until(args)
     else:
-        _error("unknown command '" + args.command + "'")
+        raise _usage_error("unknown command '" + args.command + "'")
+
+    if len(result) == 0:
+        return RunResult(1, "")
+    return RunResult(0, result)
+
+
+fn _run(argv: List[String]) raises -> RunResult:
+    """Run one command as the one-shot CLI would, without printing or exiting.
+    """
+    try:
+        return _dispatch(argv)
+    except e:
+        if String(e) == USAGE_ERROR:
+            return RunResult(2, "")
+        raise e^
+
+
+fn _split_fields(line: String) -> List[String]:
+    """Split a request on tabs, keeping empty fields."""
+    var fields = List[String]()
+    for field in line.split("\t"):
+        fields.append(String(field))
+    return fields^
+
+
+fn _strip_line_ending(line: String) -> String:
+    """Drop the trailing newline (and carriage return) from a request."""
+    var end = len(line)
+    while end > 0 and (line[end - 1 : end] == "\n" or line[end - 1 : end] == "\r"):
+        end -= 1
+    return String(line[0:end])
+
+
+fn _repl():
+    """Answer one tab-separated request per stdin line (see cli/SPEC.md)."""
+    while True:
+        var line: String
+        try:
+            line = input()
+        except:
+            return  # end of input
+
+        var response: String
+        try:
+            var result = _run(_split_fields(_strip_line_ending(line)))
+            response = String(result.code) + "\t" + result.output.replace("\n", "\t")
+        except e:
+            # A crash exits 1 in one-shot mode; keep serving.
+            _write_stderr(String(e))
+            response = "1\t"
+        print(response, flush=True)
+
+
+fn main() raises:
+    """Entry point for the sayable CLI."""
+    var args = argv()
+    var user_args = List[String]()
+    for i in range(1, len(args)):
+        user_args.append(String(args[i]))
+
+    if len(user_args) == 1 and user_args[0] == "--repl":
+        _repl()
+        return
+
+    var result = _run(user_args)
+    if len(result.output) > 0:
+        print(result.output)
+    exit(result.code)

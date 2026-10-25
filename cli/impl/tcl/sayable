@@ -44,10 +44,9 @@ Options:
   -h, --help             Show this help
   -v, --version          Show version}
 
+# Usage errors are thrown, so one request can fail without ending the process.
 proc cli_error {msg} {
-    puts stderr "error: $msg"
-    puts stderr "Run 'sayable help' for usage."
-    exit 2
+    throw {SAYABLE USAGE} $msg
 }
 
 proc nullify {value} {
@@ -167,10 +166,7 @@ proc cmd_age {positionals options} {
         set result [::sayableage::format_age $formatter $dob $as_of]
     }
 
-    if {$result eq ""} {
-        exit 1
-    }
-    puts $result
+    return $result
 }
 
 proc cmd_stage {positionals options} {
@@ -204,10 +200,7 @@ proc cmd_stage {positionals options} {
         set result [::sayableage::format_stage $formatter $dob $as_of $gender]
     }
 
-    if {$result eq ""} {
-        exit 1
-    }
-    puts $result
+    return $result
 }
 
 proc cmd_date {positionals options} {
@@ -235,10 +228,7 @@ proc cmd_date {positionals options} {
         set result [::sayabledate::format_date $formatter $date_val]
     }
 
-    if {$result eq ""} {
-        exit 1
-    }
-    puts $result
+    return $result
 }
 
 proc cmd_relative {positionals options} {
@@ -270,10 +260,7 @@ proc cmd_relative {positionals options} {
         set result [::sayabledate::format_relative $formatter $date_val $as_of]
     }
 
-    if {$result eq ""} {
-        exit 1
-    }
-    puts $result
+    return $result
 }
 
 proc cmd_time {positionals options} {
@@ -297,10 +284,7 @@ proc cmd_time {positionals options} {
         set result [::sayabletime::format_time $formatter $time_val]
     }
 
-    if {$result eq ""} {
-        exit 1
-    }
-    puts $result
+    return $result
 }
 
 proc cmd_duration {positionals options} {
@@ -335,10 +319,7 @@ proc cmd_duration {positionals options} {
         }
     }
 
-    if {$result eq ""} {
-        exit 1
-    }
-    puts $result
+    return $result
 }
 
 proc cmd_since {positionals options} {
@@ -370,10 +351,7 @@ proc cmd_since {positionals options} {
         set result [::sayableduration::format_since $formatter $start $as_of]
     }
 
-    if {$result eq ""} {
-        exit 1
-    }
-    puts $result
+    return $result
 }
 
 proc cmd_until {positionals options} {
@@ -405,10 +383,7 @@ proc cmd_until {positionals options} {
         set result [::sayableduration::format_until $formatter $target $as_of]
     }
 
-    if {$result eq ""} {
-        exit 1
-    }
-    puts $result
+    return $result
 }
 
 proc cmd_locales {} {
@@ -418,48 +393,75 @@ proc cmd_locales {} {
     dict for {code _} $::_sayableage_registry {
         lappend codes $code
     }
-    foreach code [lsort $codes] {
-        puts $code
-    }
+    return [join [lsort $codes] "\n"]
 }
 
-# --- Main ---
-proc main {} {
-    global VERSION HELP argv
+# Run one request; returns {exit-code stdout-text}. The Tcl libraries signal
+# a null result with "", so empty text always means "print nothing".
+proc dispatch {argv} {
+    global VERSION HELP
 
     lassign [parse_args $argv] command positionals options
 
-    if {$command eq ""} {
-        puts $HELP
-        exit 2
-    }
-
-    if {$command eq "help"} {
-        puts $HELP
-        exit 0
-    }
-
-    if {$command eq "version"} {
-        puts "sayable $VERSION"
-        exit 0
-    }
-
-    if {$command eq "locales"} {
-        cmd_locales
-        exit 0
-    }
-
     switch -- $command {
-        age       { cmd_age $positionals $options }
-        stage     { cmd_stage $positionals $options }
-        date      { cmd_date $positionals $options }
-        relative  { cmd_relative $positionals $options }
-        time      { cmd_time $positionals $options }
-        duration  { cmd_duration $positionals $options }
-        since     { cmd_since $positionals $options }
-        until     { cmd_until $positionals $options }
+        ""        { return [list 2 $HELP] }
+        help      { return [list 0 $HELP] }
+        version   { return [list 0 "sayable $VERSION"] }
+        locales   { return [list 0 [cmd_locales]] }
+        age       { set result [cmd_age $positionals $options] }
+        stage     { set result [cmd_stage $positionals $options] }
+        date      { set result [cmd_date $positionals $options] }
+        relative  { set result [cmd_relative $positionals $options] }
+        time      { set result [cmd_time $positionals $options] }
+        duration  { set result [cmd_duration $positionals $options] }
+        since     { set result [cmd_since $positionals $options] }
+        until     { set result [cmd_until $positionals $options] }
         default   { cli_error "unknown command '$command'" }
     }
+    return [list [expr {$result eq "" ? 1 : 0}] $result]
+}
+
+proc run {argv} {
+    try {
+        return [dispatch $argv]
+    } trap {SAYABLE USAGE} {msg} {
+        puts stderr "error: $msg"
+        puts stderr "Run 'sayable help' for usage."
+        return [list 2 ""]
+    }
+}
+
+# Answer one tab-separated request per stdin line (see cli/SPEC.md).
+proc repl {} {
+    fconfigure stdin -encoding utf-8 -translation auto
+    fconfigure stdout -encoding utf-8 -translation lf -buffering line
+    while {[gets stdin line] >= 0} {
+        try {
+            lassign [run [split $line "\t"]] code output
+        } on error {msg opts} {
+            # A crash exits non-zero in one-shot mode; report it and keep serving.
+            puts stderr [dict get $opts -errorinfo]
+            lassign [list 1 ""] code output
+        }
+        set flattened [string map {"\n" "\t"} [string trimright $output "\n"]]
+        puts "$code\t$flattened"
+        flush stdout
+    }
+}
+
+proc main {} {
+    global argv
+
+    if {$argv eq [list --repl]} {
+        repl
+        exit 0
+    }
+
+    lassign [run $argv] code output
+    if {$output ne ""} {
+        puts $output
+    }
+    exit $code
 }
 
 main
