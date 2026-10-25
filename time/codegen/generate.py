@@ -332,6 +332,14 @@ def generate_java(locales: list[dict], check: bool, diffs: list[str]) -> None:
     _write_or_check(path, content, check, diffs)
 
 
+def generate_goose(locales: list[dict], check: bool, diffs: list[str]) -> None:
+    from codegen.targets.goose.emitter import emit_all, output_path
+
+    path = output_path(ROOT)
+    content = emit_all(locales)
+    _write_or_check(path, content, check, diffs)
+
+
 def generate_zig(locales: list[dict], check: bool, diffs: list[str]) -> None:
     from codegen.targets.zig.emitter import emit_all, output_path
 
@@ -874,6 +882,7 @@ _GENERATORS = {
     "fsharp": generate_fsharp,
     "gleam": generate_gleam,
     "go": generate_go,
+    "goose": generate_goose,
     "groovy": generate_groovy,
     "haskell": generate_haskell,
     "janet": generate_janet,

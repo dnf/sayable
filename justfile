@@ -170,6 +170,8 @@ test *target:
                     [ -n "$_sdk" ] && _largs="-largs -L$_sdk/usr/lib"
                 fi
                 cd age/impl/ada && gprbuild -P sayableage.gpr -XBUILD_MODE=test $_largs && ./build/test_format_age
+            elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
+                for _c in age date duration time; do (cd "${_c}/impl/goose" && goose "tests/test_format_${_c}.goose"); done
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 cd age/impl/zig && zig build test
             elif [ "$_target" = "julia" ] || [ "$_target" = "jl" ]; then
@@ -343,6 +345,8 @@ build *target:
                 cd age/impl/groovy && ./gradlew build
             elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
                 cd age/impl/scala && ./gradlew build
+            elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
+                for _c in age date duration time; do bash "${_c}/impl/goose/build.sh"; done
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 cd age/impl/zig && zig build
             elif [ "$_target" = "pascal" ] || [ "$_target" = "pas" ]; then
@@ -619,6 +623,8 @@ lint *target:
                 echo "Perl uses strict/warnings (no separate linter)"
             elif [ "$_target" = "ada" ] || [ "$_target" = "ad" ]; then
                 echo "Ada uses -gnatwe (warnings-as-errors) in build (no separate linter)"
+            elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
+                for _c in age date duration time; do bash "${_c}/impl/goose/lint.sh"; done
             elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
                 echo "Zig uses warnings-as-errors in build (no separate linter)"
             elif [ "$_target" = "nim" ] || [ "$_target" = "ni" ]; then
@@ -731,6 +737,8 @@ clean *target:
         rm -rf age/impl/cobol/build
     elif [ "$_target" = "scala" ] || [ "$_target" = "sc" ]; then
         rm -rf age/impl/scala/build src/scala/.gradle
+    elif [ "$_target" = "goose" ] || [ "$_target" = "gs" ]; then
+        rm -rf age/impl/goose/build date/impl/goose/build duration/impl/goose/build time/impl/goose/build
     elif [ "$_target" = "zig" ] || [ "$_target" = "zg" ]; then
         rm -rf age/impl/zig/zig-out src/zig/.zig-cache
     elif [ "$_target" = "elixir" ] || [ "$_target" = "ex" ]; then

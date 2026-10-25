@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Sayable CLI (Goose): builds the native binary when it is missing or
+# older than any Goose source it is built from, then runs it.
+set -euo pipefail
+
+cli_dir="$(cd "$(dirname "$0")" && pwd)"
+root="$(cd "${cli_dir}/../../.." && pwd)"
+binary="${cli_dir}/build/sayable"
+
+needs_build() {
+    [ ! -x "${binary}" ] && return 0
+    [ -n "$(find "${cli_dir}/main.goose" "${root}"/{age,date,duration,time}/impl/goose \
+        -name '*.goose' -newer "${binary}" -print -quit)" ]
+}
+
+if needs_build; then
+    bash "${cli_dir}/build.sh"
+fi
+exec "${binary}" "$@"

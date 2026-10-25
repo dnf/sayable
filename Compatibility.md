@@ -157,6 +157,14 @@ Which languages are available for each Sayable library.
   <td align="center"><a href="cli/impl/go/">✅</a></td>
 </tr>
 <tr>
+  <td>Goose</td>
+  <td align="center"><a href="age/impl/goose/">✅</a></td>
+  <td align="center"><a href="date/impl/goose/">✅</a></td>
+  <td align="center"><a href="duration/impl/goose/">✅</a></td>
+  <td align="center"><a href="time/impl/goose/">✅</a></td>
+  <td align="center"><a href="cli/impl/goose/">✅</a></td>
+</tr>
+<tr>
   <td>Groovy</td>
   <td align="center"><a href="age/impl/groovy/">✅</a></td>
   <td align="center"><a href="date/impl/groovy/">✅</a></td>
