@@ -87,7 +87,7 @@ fn parse_date(s: String) -> DateParts:
     # Parse year (positions 0-3)
     var year = 0
     for i in range(4):
-        var d = _char_to_digit(s[i : i + 1])
+        var d = _char_to_digit(String(s[i : i + 1]))
         if d < 0:
             return result
         year = year * 10 + d
@@ -95,7 +95,7 @@ fn parse_date(s: String) -> DateParts:
     # Parse month (positions 5-6)
     var month = 0
     for i in range(5, 7):
-        var d = _char_to_digit(s[i : i + 1])
+        var d = _char_to_digit(String(s[i : i + 1]))
         if d < 0:
             return result
         month = month * 10 + d
@@ -103,7 +103,7 @@ fn parse_date(s: String) -> DateParts:
     # Parse day (positions 8-9)
     var day = 0
     for i in range(8, 10):
-        var d = _char_to_digit(s[i : i + 1])
+        var d = _char_to_digit(String(s[i : i + 1]))
         if d < 0:
             return result
         day = day * 10 + d
